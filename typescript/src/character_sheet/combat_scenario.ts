@@ -82,21 +82,21 @@ export class CombatScenario {
         rounds: number;
         teamHpPercents: Record<string, number>;
     } {
-        const hp: Map<Creature, number> = new Map();
-        const memberToTeam: Map<Creature, CombatTeam> = new Map();
-        const aliveMembersByTeam: Map<string, Creature[]> = new Map();
+        const hp: Record<string, number> = {};
+        const memberToTeam: Record<string, CombatTeam> = {};
+        const aliveMembersByTeam: Record<string, Creature[]> = {};
         const initialTotalHpByTeam: Record<string, number> = {};
 
         for (const team of this.teams) {
             const aliveMembers: Creature[] = [];
             let teamInitialHp = 0;
             for (const member of team.members) {
-                hp.set(member, member.hit_points);
-                memberToTeam.set(member, team);
+                hp[member.id] = member.hit_points;
+                memberToTeam[member.id] = team;
                 aliveMembers.push(member);
                 teamInitialHp += member.hit_points;
             }
-            aliveMembersByTeam.set(team.name, aliveMembers);
+            aliveMembersByTeam[team.name] = aliveMembers;
             initialTotalHpByTeam[team.name] = teamInitialHp;
         }
 
@@ -105,7 +105,7 @@ export class CombatScenario {
             for (const team of this.teams) {
                 let currentTeamHp = 0;
                 for (const member of team.members) {
-                    currentTeamHp += Math.max(0, hp.get(member)!);
+                    currentTeamHp += Math.max(0, hp[member.id]);
                 }
                 percents[team.name] =
                     initialTotalHpByTeam[team.name] > 0
@@ -127,18 +127,18 @@ export class CombatScenario {
             rounds++;
             for (const { team } of teamInitiatives) {
                 // If this team is dead, skip its turn
-                if (aliveMembersByTeam.get(team.name)!.length === 0) continue;
+                if (aliveMembersByTeam[team.name].length === 0) continue;
 
                 // For each alive member of the team
-                const attackers = [...aliveMembersByTeam.get(team.name)!];
+                const attackers = [...aliveMembersByTeam[team.name]];
                 for (const attacker of attackers) {
-                    if (hp.get(attacker)! <= 0) continue;
+                    if (hp[attacker.id] <= 0) continue;
 
                     // Find potential targets (any member of any other team that is alive)
                     const potentialTargets: Creature[] = [];
-                    for (const [otherTeamName, members] of aliveMembersByTeam.entries()) {
+                    for (const otherTeamName in aliveMembersByTeam) {
                         if (otherTeamName !== team.name) {
-                            potentialTargets.push(...members);
+                            potentialTargets.push(...aliveMembersByTeam[otherTeamName]);
                         }
                     }
 
@@ -148,13 +148,13 @@ export class CombatScenario {
                     const defender = potentialTargets[0];
 
                     const damage = this.resolveAttack(attacker, defender);
-                    const newHp = hp.get(defender)! - damage;
-                    hp.set(defender, newHp);
+                    const newHp = hp[defender.id]! - damage;
+                    hp[defender.id] = newHp;
 
                     if (newHp <= 0) {
                         // Remove from alive members
-                        const defenderTeamName = memberToTeam.get(defender)!.name;
-                        const teamAlive = aliveMembersByTeam.get(defenderTeamName)!;
+                        const defenderTeamName = memberToTeam[defender.id].name;
+                        const teamAlive = aliveMembersByTeam[defenderTeamName];
                         const index = teamAlive.indexOf(defender);
                         if (index > -1) {
                             teamAlive.splice(index, 1);
@@ -162,7 +162,7 @@ export class CombatScenario {
                     }
 
                     // Check for victory (only one team has alive members)
-                    const teamsWithAlive = Array.from(aliveMembersByTeam.entries()).filter(
+                    const teamsWithAlive = Object.entries(aliveMembersByTeam).filter(
                         ([_, members]) => members.length > 0,
                     );
 

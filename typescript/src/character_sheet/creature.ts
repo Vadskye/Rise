@@ -203,6 +203,10 @@ export class Creature implements CreaturePropertyMap {
     this.activeAbilities = {};
   }
 
+  get id(): string {
+    return this.sheet.characterName;
+  }
+
   static new() {
     const sheet = resetDefaultCharacterSheet();
     handleEverything();
