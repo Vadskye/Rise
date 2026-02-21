@@ -655,20 +655,14 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            complexity: 2,
-            name: "Nothing Is Real",
+            complexity: 1,
+            name: "No Need For Violence",
             is_magical: false,
             rank: 7,
             description: r"
-                \begin{activeability}{Nothing Is Real}{Standard action}
-                    \abilitytags \abilitytag{Compulsion}
-                    \rankline
-                    Make an attack vs. Mental against a creature within \shortrange.
-                    \hit The target is \glossterm{briefly} convinced that nothing is real.
-                    It is unable to take any actions and is \unaware of all attacks against it.
-                    If it is \glossterm{injured}, this effect immediately ends.
-                    After this effect ends, the target becomes immune to it until it finishes a \glossterm{short rest}.
-                \end{activeability}
+                Whenever a combat starts, each \glossterm{enemy} that you have been speaking with for at least a round takes a \\minus5 penalty to \glossterm{initiative}.
+                In addition, enemies are \partiallyunaware of your attacks until they take their first turn, even if they can see you clearly.
+                This does not affect creatures that join in future rounds while the combat is already active.
             ",
             modifiers: None,
         },
