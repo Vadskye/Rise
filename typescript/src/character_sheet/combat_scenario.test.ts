@@ -11,13 +11,13 @@ import {
 
 loadAllMonsters();
 
-t.test('CombatScenarioGenerator can create a monster', (t) => {
+t.test('Can create a monster', (t) => {
   const ankheg = getMonster('Ankheg');
   t.equal(ankheg.name, 'Ankheg');
   t.end();
 });
 
-t.test('CombatScenarioGenerator can create a custom character', (t) => {
+t.test('Can create a custom character', (t) => {
   const hero = createCharacter('Hero', 5, 'fighter');
   t.equal(hero.name, 'Hero');
   t.equal(hero.level, 5);
