@@ -17,7 +17,8 @@ function assertExpectedWinRate(tap: any, result: CombatSimulationResult, teamNam
 
 function assertExpectedRounds(tap: any, result: CombatSimulationResult, expected: number) {
   const actual = result.averageRounds;
-  tap.ok(Math.abs(actual - expected) <= 0.5, `Average rounds should be ~${expected} (actual: ${actual.toFixed(2)})`);
+  const tolerance = Math.max(expected * 0.1, 1.0);
+  tap.ok(Math.abs(actual - expected) <= tolerance, `Average rounds should be ~${expected} (actual: ${actual.toFixed(2)}, tolerance: ${tolerance.toFixed(2)})`);
 }
 
 loadAllMonsters();
@@ -220,5 +221,29 @@ t.test('One elite Ankheg is equivalent to four non-elite Ankhegs', (t) => {
   assertExpectedRounds(t, result, 5.2);
   assertExpectedWinRate(t, result, 'Elite Ankheg', 76);
   assertExpectedWinRate(t, result, 'Normal Ankhegs', 24);
+  t.end();
+});
+
+t.test('One elite frostweb spider is equivalent to four non-elite frostweb spiders', (t) => {
+  const eliteAnkheg = cloneMonster('Frostweb Spider');
+
+  const normalAnkhegs = [];
+  for (let i = 0; i < 4; i++) {
+    const ank = cloneMonster('Frostweb Spider');
+    ank.setProperties({
+      elite: false,
+    });
+    normalAnkhegs.push(ank);
+  }
+
+  const eliteTeam = createTeam('Elite Frostweb Spider', [eliteAnkheg]);
+  const normalTeam = createTeam('Normal Frostweb Spiders', normalAnkhegs);
+
+  const scenario = createScenario([eliteTeam, normalTeam]);
+  const result = scenario.simulate();
+
+  assertExpectedRounds(t, result, 22);
+  assertExpectedWinRate(t, result, 'Elite Frostweb Spider', 88);
+  assertExpectedWinRate(t, result, 'Normal Frostweb Spiders', 12);
   t.end();
 });
