@@ -2,7 +2,7 @@ import type { StockCharacters } from '../stock_characters';
 import { Creature } from '../creature';
 
 export function addVotives(stock: StockCharacters) {
-    stock.addCharacter('Pax', (c: Creature) => {
+    stock.addCharacter('Votive', (c: Creature) => {
         c.setRequiredProperties({
             alignment: 'neutral',
             base_class: 'votive',
