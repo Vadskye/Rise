@@ -72,8 +72,8 @@ export class CombatScenario {
     }
 
     private simulateSingleFight(): { winner: string | null, rounds: number, teamHpPercents: Record<string, number> } {
-        const hp: Map<string, number> = new Map();
-        const memberToTeam: Map<string, CombatTeam> = new Map();
+        const hp: Map<Creature, number> = new Map();
+        const memberToTeam: Map<Creature, CombatTeam> = new Map();
         const aliveMembersByTeam: Map<string, Creature[]> = new Map();
         const initialTotalHpByTeam: Record<string, number> = {};
 
@@ -81,8 +81,8 @@ export class CombatScenario {
             const aliveMembers: Creature[] = [];
             let teamInitialHp = 0;
             team.members.forEach(member => {
-                hp.set(member.name, member.hit_points);
-                memberToTeam.set(member.name, team);
+                hp.set(member, member.hit_points);
+                memberToTeam.set(member, team);
                 aliveMembers.push(member);
                 teamInitialHp += member.hit_points;
             });
@@ -95,7 +95,7 @@ export class CombatScenario {
             this.teams.forEach(team => {
                 let currentTeamHp = 0;
                 team.members.forEach(member => {
-                    currentTeamHp += Math.max(0, hp.get(member.name)!);
+                    currentTeamHp += Math.max(0, hp.get(member)!);
                 });
                 percents[team.name] = initialTotalHpByTeam[team.name] > 0
                     ? (currentTeamHp / initialTotalHpByTeam[team.name]) * 100
@@ -121,7 +121,7 @@ export class CombatScenario {
                 // For each alive member of the team
                 const attackers = [...aliveMembersByTeam.get(team.name)!];
                 for (const attacker of attackers) {
-                    if (hp.get(attacker.name)! <= 0) continue;
+                    if (hp.get(attacker)! <= 0) continue;
 
                     // Find potential targets (any member of any other team that is alive)
                     const potentialTargets: Creature[] = [];
@@ -137,12 +137,12 @@ export class CombatScenario {
                     const defender = potentialTargets[0];
 
                     const damage = this.resolveAttack(attacker, defender);
-                    const newHp = hp.get(defender.name)! - damage;
-                    hp.set(defender.name, newHp);
+                    const newHp = hp.get(defender)! - damage;
+                    hp.set(defender, newHp);
 
                     if (newHp <= 0) {
                         // Remove from alive members
-                        const defenderTeamName = memberToTeam.get(defender.name)!.name;
+                        const defenderTeamName = memberToTeam.get(defender)!.name;
                         const teamAlive = aliveMembersByTeam.get(defenderTeamName)!;
                         const index = teamAlive.indexOf(defender);
                         if (index > -1) {
@@ -266,6 +266,24 @@ export class CombatScenarioGenerator {
             throw new Error(`Monster with name "${name}" not found in the grimoire.`);
         }
         return monster;
+    }
+
+    /**
+     * Spawns a new instance of a monster from the grimoire.
+     * This ensures the creature has its own character sheet and state.
+     */
+    public createMonster(name: string): Creature {
+        const baseMonster = this.getMonster(name);
+        return this.createCreature(name, (c) => {
+            c.setProperties({
+                level: baseMonster.level,
+                hit_points: baseMonster.hit_points,
+                accuracy: baseMonster.accuracy,
+                armor_defense: baseMonster.armor_defense,
+                mundane_power: baseMonster.mundane_power,
+                creature_type: baseMonster.creature_type,
+            });
+        });
     }
 
     /**

@@ -119,3 +119,35 @@ t.test('Creatures have independent sheets', (t) => {
     t.not(c1.level, c2.level);
     t.end();
 });
+
+t.test('CombatScenario can simulate teams of multiple monsters', (t) => {
+    const gen = new CombatScenarioGenerator();
+    gen.reset();
+    addBeasts(gen.grimoire);
+
+    // Team A: 2 Carrion Crows, 2 Wargs
+    const teamA_members = [
+        gen.createMonster('Carrion Crow'),
+        gen.createMonster('Carrion Crow'),
+        gen.createMonster('Warg'),
+        gen.createMonster('Warg'),
+    ];
+    const teamA = gen.createTeam('A-Team', teamA_members);
+
+    // Team B: 1 Ankheg, 1 Giant Wasp
+    const teamB_members = [
+        gen.createMonster('Ankheg'),
+        gen.createMonster('Giant Wasp'),
+    ];
+    const teamB = gen.createTeam('B-Team', teamB_members);
+
+    const scenario = gen.createScenario([teamA, teamB]);
+    const result = scenario.simulate(20);
+
+    t.ok(result.averageRounds > 0, 'Average rounds should be positive');
+    t.ok(result.winRates['A-Team'] >= 0, 'A-Team should have a win rate');
+    t.ok(result.winRates['B-Team'] >= 0, 'B-Team should have a win rate');
+    t.ok(result.averageHpPercentRemaining['A-Team'] >= 0, 'A-Team should have avg HP remaining');
+    t.ok(result.averageHpPercentRemaining['B-Team'] >= 0, 'B-Team should have avg HP remaining');
+    t.end();
+});
