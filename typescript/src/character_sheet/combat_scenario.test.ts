@@ -1,17 +1,16 @@
 import t from 'tap';
 import { CombatScenarioGenerator } from './combat_scenario';
-import { addBeasts } from '../monsters/individual_monsters/beasts';
+
+const gen = new CombatScenarioGenerator();
+gen.loadAllMonsters();
 
 t.test('CombatScenarioGenerator can create a monster', (t) => {
-  const gen = new CombatScenarioGenerator();
-  addBeasts(gen.grimoire);
   const ankheg = gen.getMonster('Ankheg');
   t.equal(ankheg.name, 'Ankheg');
   t.end();
 });
 
 t.test('CombatScenarioGenerator can create a custom character', (t) => {
-  const gen = new CombatScenarioGenerator();
   const hero = gen.createCharacter('Hero', 5, 'fighter');
   t.equal(hero.name, 'Hero');
   t.equal(hero.level, 5);
@@ -20,8 +19,6 @@ t.test('CombatScenarioGenerator can create a custom character', (t) => {
 });
 
 t.test('CombatScenario can simulate a fight and report statistics', (t) => {
-  const gen = new CombatScenarioGenerator();
-  addBeasts(gen.grimoire);
   const ankheg = gen.getMonster('Ankheg');
   const wasp = gen.getMonster('Giant Wasp');
 
@@ -40,25 +37,11 @@ t.test('CombatScenario can simulate a fight and report statistics', (t) => {
 });
 
 t.test('CombatScenario can simulate 1 Ankheg vs 10 Wasps', (t) => {
-  const gen = new CombatScenarioGenerator();
-  addBeasts(gen.grimoire);
-
   const ankheg = gen.getMonster('Ankheg');
   const wasps = [];
-  const baseWasp = gen.getMonster('Giant Wasp');
 
   for (let i = 0; i < 10; i++) {
-    wasps.push(
-      gen.createCreature(`Wasp ${i}`, (c) => {
-        c.setProperties({
-          level: baseWasp.level,
-          hit_points: baseWasp.hit_points,
-          accuracy: baseWasp.accuracy,
-          armor_defense: baseWasp.armor_defense,
-          mundane_power: baseWasp.mundane_power,
-        });
-      }),
-    );
+    wasps.push(gen.createMonster('Giant Wasp'));
   }
 
   const waspTeam = gen.createTeam('Wasps', wasps);
@@ -73,26 +56,32 @@ t.test('CombatScenario can simulate 1 Ankheg vs 10 Wasps', (t) => {
   t.end();
 });
 
-t.test('CombatScenario can simulate 1 Ankheg vs 5 Carrion Crows', (t) => {
-  const gen = new CombatScenarioGenerator();
-  addBeasts(gen.grimoire);
+t.test('CombatScenario can simulate 1 Ankheg vs 1 Ankheg', (t) => {
+  const ankheg = gen.getMonster('Ankheg');
+  const ankhegs = [];
 
+  for (let i = 0; i < 1; i++) {
+    ankhegs.push(gen.createMonster('Ankheg'));
+  }
+
+  const ankhegTeam = gen.createTeam('Ankheg Team 1', ankhegs);
+  const ankhegTeam2 = gen.createTeam('Ankheg Team 2', [ankheg]);
+
+  const scenario = gen.createScenario([ankhegTeam, ankhegTeam2]);
+  const result = scenario.simulate(20);
+
+  t.ok(result.averageRounds > 0, 'Average rounds should be positive');
+  t.ok(result.winRates['Ankheg Team 1'] >= 0, 'Ankheg Team 1 should have a win rate');
+  t.ok(result.winRates['Ankheg Team 2'] >= 0, 'Ankheg Team 2 should have a win rate');
+  t.end();
+});
+
+t.test('CombatScenario can simulate 1 Ankheg vs 5 Carrion Crows', (t) => {
   const ankheg = gen.getMonster('Ankheg');
   const crows = [];
-  const baseCrow = gen.getMonster('Carrion Crow');
 
   for (let i = 0; i < 5; i++) {
-    crows.push(
-      gen.createCreature(`Crow ${i}`, (c) => {
-        c.setProperties({
-          level: baseCrow.level,
-          hit_points: baseCrow.hit_points,
-          accuracy: baseCrow.accuracy,
-          armor_defense: baseCrow.armor_defense,
-          mundane_power: baseCrow.mundane_power,
-        });
-      }),
-    );
+    crows.push(gen.createMonster('Carrion Crow'));
   }
 
   const crowTeam = gen.createTeam('Crows', crows);
@@ -108,7 +97,6 @@ t.test('CombatScenario can simulate 1 Ankheg vs 5 Carrion Crows', (t) => {
 });
 
 t.test('Creatures have independent sheets', (t) => {
-  const gen = new CombatScenarioGenerator();
   const c1 = gen.createCreature('C1');
   const c2 = gen.createCreature('C2');
 
@@ -122,9 +110,6 @@ t.test('Creatures have independent sheets', (t) => {
 });
 
 t.test('CombatScenario can simulate teams of multiple monsters', (t) => {
-  const gen = new CombatScenarioGenerator();
-  addBeasts(gen.grimoire);
-
   // Team A: 2 Carrion Crows, 2 Wargs
   const teamA_members = [
     gen.createMonster('Carrion Crow'),
