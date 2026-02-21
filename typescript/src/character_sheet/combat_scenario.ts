@@ -61,7 +61,7 @@ export class CombatScenario {
         }
 
         console.log('--- Combat Simulation Results ---');
-        console.log(`Teams: ${this.teams.map(t => t.name).join(' vs ')}`);
+        console.log(`Teams: ${this.teams.map(t => `${t.members.length} ${t.name}`).join(' vs ')}`);
         console.log(`Average Rounds: ${stats.averageRounds.toFixed(2)}`);
         for (const name in stats.winRates) {
             console.log(`${name} Win Rate: ${stats.winRates[name].toFixed(2)}% | Avg HP Remaining: ${stats.averageHpPercentRemaining[name].toFixed(2)}%`);
