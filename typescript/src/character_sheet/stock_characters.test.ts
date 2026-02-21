@@ -47,7 +47,7 @@ t.test('StockCharacters', (t) => {
             if (char) {
                 const trainingTarget = getMonster('Giant Wasp');
 
-                const charTeam = createTeam('Character Team', [char]);
+                const charTeam = createTeam(name, [char]);
                 const opponentTeam = createTeam('Opponent Team', [trainingTarget]);
 
                 const scenario = createScenario([charTeam, opponentTeam]);

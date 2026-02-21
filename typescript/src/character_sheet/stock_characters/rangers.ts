@@ -2,7 +2,7 @@ import type { StockCharacters } from '../stock_characters';
 import { Creature } from '../creature';
 
 export function addRangers(stock: StockCharacters) {
-    stock.addCharacter('Robin', (c: Creature) => {
+    stock.addCharacter('Ranger', (c: Creature) => {
         c.setRequiredProperties({
             alignment: 'neutral good',
             base_class: 'ranger',

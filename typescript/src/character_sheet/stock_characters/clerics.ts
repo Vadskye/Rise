@@ -2,7 +2,7 @@ import type { StockCharacters } from '../stock_characters';
 import { Creature } from '../creature';
 
 export function addClerics(stock: StockCharacters) {
-    stock.addCharacter('Elena', (c: Creature) => {
+    stock.addCharacter('Cleric', (c: Creature) => {
         c.setRequiredProperties({
             alignment: 'lawful good',
             base_class: 'cleric',
