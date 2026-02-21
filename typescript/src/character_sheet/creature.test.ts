@@ -1,5 +1,6 @@
 import t from 'tap';
 import { Creature } from './creature';
+import { getCurrentCharacterSheet } from './current_character_sheet';
 
 t.test('can set a trained skill', (t) => {
   const creature = Creature.new();
@@ -97,5 +98,27 @@ t.test('can add immunity modifiers', (t) => {
   );
 
   t.equal(creature.immune, 'Cold, Fire');
+  t.end();
+});
+
+t.test('automatic caching works and is cleared on mutation', (t) => {
+  const creature = Creature.new();
+  creature.setProperties({ level: 1 });
+
+  // Access property to cache it
+  const level1 = creature.level;
+  t.equal(level1, 1);
+
+  // Directly modify the underlying sheet without the creature knowing
+  const sheet = getCurrentCharacterSheet();
+  sheet.setProperties({ level: 2 });
+  t.equal(sheet.getPropertyValue('level'), 2);
+  // The creature still thinks its level is 1, because level is cached.
+  t.equal(creature.level, 1);
+
+  // If we modify any statistic of the creature, it should clear the cache.
+  creature.setTrainedSkills(['awareness']);
+  t.equal(creature.level, 2, 'Cache should be cleared after setting any statistic');
+
   t.end();
 });
