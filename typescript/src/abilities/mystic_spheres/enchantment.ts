@@ -5,7 +5,7 @@ export const enchantment: MysticSphere = {
   name: 'Enchantment',
   hasImage: true,
   shortDescription: 'Enchant the minds of your foes and allies.',
-  sources: ['arcane', 'divine', 'soulkeeper'],
+  sources: ['arcane', 'bardic', 'divine', 'soulkeeper'],
 
   cantrips: [
     {

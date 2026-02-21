@@ -4,7 +4,7 @@ import { BARRIER_COOLDOWN, CONDITION_CRIT, MULTIHIT_CRIT } from '../constants';
 export const vivimancy: MysticSphere = {
   name: 'Vivimancy',
   shortDescription: 'Manipulate life energy to aid allies or harm foes.',
-  sources: ['arcane', 'divine', 'nature'],
+  sources: ['arcane', 'bardic', 'divine', 'nature'],
 
   cantrips: [
     {

@@ -5,7 +5,7 @@ export const photomancy: MysticSphere = {
   name: 'Photomancy',
   hasImage: true,
   shortDescription: 'Create and manipulate light to hinder foes and conceal allies.',
-  sources: ['arcane', 'divine', 'nature', 'pact'],
+  sources: ['arcane', 'bardic', 'divine', 'nature', 'pact'],
 
   cantrips: [
     {
