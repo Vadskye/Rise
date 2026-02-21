@@ -676,12 +676,6 @@ def universal_abilities():
                 attack={"accuracy": "@{brawling_accuracy}", "defense": "Fort and Ref", "tags": ["Brawling", "Size-Based"]},
             ),
             universal_ability_button(
-                "Jog",
-                """
-                    You add twice your speed to your available movement.
-                """,
-            ),
-            universal_ability_button(
                 "Jump",
                 f"""
                     As part of movement, you can jump up to [[@{{jump_distance}}]] feet horizontally, and half that distance vertically.
@@ -708,6 +702,12 @@ def universal_abilities():
                 """
                     After using this ability, you increase your fatigue level by two, and you cannot use it again until you finish a short rest.
                     You regain half of your maximum hit points. Then, you remove all conditions affecting you.
+                """,
+            ),
+            universal_ability_button(
+                "Run",
+                """
+                    You add twice your speed to your available movement.
                 """,
             ),
             universal_ability_button(
