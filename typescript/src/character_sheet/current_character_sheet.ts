@@ -14,6 +14,16 @@ export function getCurrentCharacterSheet(): CharacterSheet {
   return characters[currentCharacterName];
 }
 
+export function createCharacterSheet(characterName: string): CharacterSheet {
+  if (characterSheetExists(characterName)) {
+    throw new Error(`Character sheet ${characterName} already exists.`);
+  }
+  characters[characterName] = new CharacterSheet(characterName);
+  setCurrentCharacterSheet(characterName);
+
+  return characters[characterName];
+}
+
 export function characterSheetExists(characterName: string) {
   return characters[characterName] !== undefined;
 }
