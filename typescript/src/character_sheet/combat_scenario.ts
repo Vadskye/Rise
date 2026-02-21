@@ -12,6 +12,7 @@ export interface CombatSimulationResult {
     averageRounds: number;
     winRates: Record<string, number>;
     averageHpPercentRemaining: Record<string, number>;
+    averageHitRates: Record<string, number>;
 }
 
 export interface CombatTeam {
@@ -27,6 +28,8 @@ interface FightState {
     memberToTeam: Record<string, CombatTeam>;
     aliveMembersByTeam: Record<string, Creature[]>;
     initialTotalHpByTeam: Record<string, number>;
+    hitsByTeam: Record<string, number>;
+    attacksByTeam: Record<string, number>;
 }
 
 /**
@@ -72,10 +75,14 @@ export class CombatScenario {
         let totalRounds = 0;
         const wins: Record<string, number> = {};
         const totalHpPercents: Record<string, number> = {};
+        const totalHits: Record<string, number> = {};
+        const totalAttacks: Record<string, number> = {};
 
         for (const t of this.teams) {
             wins[t.name] = 0;
             totalHpPercents[t.name] = 0;
+            totalHits[t.name] = 0;
+            totalAttacks[t.name] = 0;
         }
 
         for (let i = 0; i < iterations; i++) {
@@ -86,21 +93,27 @@ export class CombatScenario {
             }
             for (const name in result.teamHpPercents) {
                 totalHpPercents[name] += result.teamHpPercents[name];
+                totalHits[name] += result.hitsByTeam[name];
+                totalAttacks[name] += result.attacksByTeam[name];
             }
         }
 
         const winRates: Record<string, number> = {};
         const averageHpPercentRemaining: Record<string, number> = {};
+        const averageHitRates: Record<string, number> = {};
 
         for (const name in wins) {
             winRates[name] = (wins[name] / iterations) * 100;
             averageHpPercentRemaining[name] = totalHpPercents[name] / iterations;
+            averageHitRates[name] =
+                totalAttacks[name] > 0 ? (totalHits[name] / totalAttacks[name]) * 100 : 0;
         }
 
         return {
             averageRounds: totalRounds / iterations,
             winRates,
             averageHpPercentRemaining,
+            averageHitRates,
         };
     }
 
@@ -110,7 +123,7 @@ export class CombatScenario {
         console.log(`Average Rounds: ${stats.averageRounds.toFixed(2)}`);
         for (const name in stats.winRates) {
             console.log(
-                `${name} Win Rate: ${stats.winRates[name].toFixed(2)}% | Avg HP Remaining: ${stats.averageHpPercentRemaining[name].toFixed(2)}%`,
+                `${name} Win Rate: ${stats.winRates[name].toFixed(2)}% | Avg HP Remaining: ${stats.averageHpPercentRemaining[name].toFixed(2)}% | Hit Rate: ${stats.averageHitRates[name].toFixed(2)}%`,
             );
         }
         console.log('---------------------------------');
@@ -120,6 +133,8 @@ export class CombatScenario {
         winner: string | null;
         rounds: number;
         teamHpPercents: Record<string, number>;
+        hitsByTeam: Record<string, number>;
+        attacksByTeam: Record<string, number>;
     } {
         const state = this.initializeFightState();
         const teamInitiatives = this.determineTeamInitiative();
@@ -132,12 +147,24 @@ export class CombatScenario {
 
                 const result = this.executeTeamTurn(team, state);
                 if (result.status !== CombatStepStatus.Ongoing) {
-                    return { winner: result.winner, rounds, teamHpPercents: this.getTeamHpPercents(state) };
+                    return {
+                        winner: result.winner,
+                        rounds,
+                        teamHpPercents: this.getTeamHpPercents(state),
+                        hitsByTeam: state.hitsByTeam,
+                        attacksByTeam: state.attacksByTeam,
+                    };
                 }
             }
         }
 
-        return { winner: null, rounds, teamHpPercents: this.getTeamHpPercents(state) };
+        return {
+            winner: null,
+            rounds,
+            teamHpPercents: this.getTeamHpPercents(state),
+            hitsByTeam: state.hitsByTeam,
+            attacksByTeam: state.attacksByTeam,
+        };
     }
 
     private initializeFightState(): FightState {
@@ -145,6 +172,8 @@ export class CombatScenario {
         const memberToTeam: Record<string, CombatTeam> = {};
         const aliveMembersByTeam: Record<string, Creature[]> = {};
         const initialTotalHpByTeam: Record<string, number> = {};
+        const hitsByTeam: Record<string, number> = {};
+        const attacksByTeam: Record<string, number> = {};
 
         for (const team of this.teams) {
             const aliveMembers: Creature[] = [];
@@ -157,9 +186,11 @@ export class CombatScenario {
             }
             aliveMembersByTeam[team.name] = aliveMembers;
             initialTotalHpByTeam[team.name] = teamInitialHp;
+            hitsByTeam[team.name] = 0;
+            attacksByTeam[team.name] = 0;
         }
 
-        return { hp, memberToTeam, aliveMembersByTeam, initialTotalHpByTeam };
+        return { hp, memberToTeam, aliveMembersByTeam, initialTotalHpByTeam, hitsByTeam, attacksByTeam };
     }
 
     private getTeamHpPercents(state: FightState): Record<string, number> {
@@ -209,8 +240,11 @@ export class CombatScenario {
         if (attacker.elite) {
             const areaTargets = this.getPotentialTargets(team, state);
             for (const areaTarget of areaTargets) {
-                const areaDamage = this.resolveAttack(attacker, areaTarget, -2);
-                state.hp[areaTarget.id] -= areaDamage;
+                state.attacksByTeam[team.name]++;
+                const { damage, hit } = this.resolveAttack(attacker, areaTarget, -2);
+                if (hit) state.hitsByTeam[team.name]++;
+
+                state.hp[areaTarget.id] -= damage;
 
                 if (state.hp[areaTarget.id] <= 0) {
                     this.handleCreatureDeath(areaTarget, state);
@@ -225,7 +259,10 @@ export class CombatScenario {
         if (potentialTargetsAfterArea.length === 0) return { status: CombatStepStatus.Ongoing, winner: null };
 
         const defender = this.selectTarget(attacker, potentialTargetsAfterArea, state);
-        const damage = this.resolveAttack(attacker, defender);
+        state.attacksByTeam[team.name]++;
+        const { damage, hit } = this.resolveAttack(attacker, defender);
+        if (hit) state.hitsByTeam[team.name]++;
+
         state.hp[defender.id] -= damage;
 
         if (state.hp[defender.id] <= 0) {
@@ -293,7 +330,7 @@ export class CombatScenario {
         return { status: CombatStepStatus.Ongoing, winner: null };
     }
 
-    private resolveAttack(attacker: Creature, defender: Creature, rankOffset: number = 0): number {
+    private resolveAttack(attacker: Creature, defender: Creature, rankOffset: number = 0): { damage: number; hit: boolean } {
         const roll = this.rollD10(true);
         const accuracy = attacker.accuracy;
         const total = roll + accuracy;
@@ -301,13 +338,13 @@ export class CombatScenario {
 
         if (total >= targetDefense + 10) {
             // Critical Hit: Double damage
-            return this.calculateDamage(attacker, rankOffset) * 2;
+            return { damage: this.calculateDamage(attacker, rankOffset) * 2, hit: true };
         } else if (total >= targetDefense) {
             // Regular Hit
-            return this.calculateDamage(attacker, rankOffset);
+            return { damage: this.calculateDamage(attacker, rankOffset), hit: true };
         }
 
-        return 0; // Miss
+        return { damage: 0, hit: false }; // Miss
     }
 
     private calculateDamage(creature: Creature, rankOffset: number = 0): number {
