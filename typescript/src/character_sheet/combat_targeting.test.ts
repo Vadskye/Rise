@@ -1,18 +1,17 @@
 import t from 'tap';
-import { CombatScenarioGenerator } from './combat_scenario';
+import { createCreature, createTeam, createScenario } from './combat_scenario';
 
 t.test('Target Selection: Ordered', (t) => {
-    const gen = new CombatScenarioGenerator();
-    const attacker = gen.createCreature('Attacker');
+    const attacker = createCreature('Attacker');
     attacker.targetPreference = 'Ordered';
 
-    const target1 = gen.createCreature('Target 1');
-    const target2 = gen.createCreature('Target 2');
+    const target1 = createCreature('Target 1');
+    const target2 = createCreature('Target 2');
 
-    const enemyTeam = gen.createTeam('Enemy', [target1, target2]);
-    const allyTeam = gen.createTeam('Ally', [attacker]);
+    const enemyTeam = createTeam('Enemy', [target1, target2]);
+    const allyTeam = createTeam('Ally', [attacker]);
 
-    const scenario = gen.createScenario([allyTeam, enemyTeam]);
+    const scenario = createScenario([allyTeam, enemyTeam]);
     // @ts-ignore - accessing private for testing
     const selected = (scenario as any).selectTarget(attacker, [target1, target2], (scenario as any).initializeFightState());
 
@@ -21,20 +20,19 @@ t.test('Target Selection: Ordered', (t) => {
 });
 
 t.test('Target Selection: Vulnerable (Defense)', (t) => {
-    const gen = new CombatScenarioGenerator();
-    const attacker = gen.createCreature('Attacker');
+    const attacker = createCreature('Attacker');
     attacker.targetPreference = 'Vulnerable';
 
-    const tank = gen.createCreature('Tank');
+    const tank = createCreature('Tank');
     tank.setProperties({ armor_defense: 25, hit_points: 100 });
 
-    const squishy = gen.createCreature('Squishy');
+    const squishy = createCreature('Squishy');
     squishy.setProperties({ armor_defense: 10, hit_points: 100 });
 
-    const enemyTeam = gen.createTeam('Enemy', [tank, squishy]);
-    const allyTeam = gen.createTeam('Ally', [attacker]);
+    const enemyTeam = createTeam('Enemy', [tank, squishy]);
+    const allyTeam = createTeam('Ally', [attacker]);
 
-    const scenario = gen.createScenario([allyTeam, enemyTeam]);
+    const scenario = createScenario([allyTeam, enemyTeam]);
     // @ts-ignore - accessing private for testing
     const selected = (scenario as any).selectTarget(attacker, [tank, squishy], (scenario as any).initializeFightState());
 
@@ -43,20 +41,19 @@ t.test('Target Selection: Vulnerable (Defense)', (t) => {
 });
 
 t.test('Target Selection: Vulnerable (HP Tie-break)', (t) => {
-    const gen = new CombatScenarioGenerator();
-    const attacker = gen.createCreature('Attacker');
+    const attacker = createCreature('Attacker');
     attacker.targetPreference = 'Vulnerable';
 
-    const target1 = gen.createCreature('Target 1');
+    const target1 = createCreature('Target 1');
     target1.setProperties({ armor_defense: 15, hit_points: 100 });
 
-    const target2 = gen.createCreature('Target 2');
+    const target2 = createCreature('Target 2');
     target2.setProperties({ armor_defense: 15, hit_points: 50 });
 
-    const enemyTeam = gen.createTeam('Enemy', [target1, target2]);
-    const allyTeam = gen.createTeam('Ally', [attacker]);
+    const enemyTeam = createTeam('Enemy', [target1, target2]);
+    const allyTeam = createTeam('Ally', [attacker]);
 
-    const scenario = gen.createScenario([allyTeam, enemyTeam]);
+    const scenario = createScenario([allyTeam, enemyTeam]);
     const state = (scenario as any).initializeFightState();
     state.hp[target1.id] = 100;
     state.hp[target2.id] = 50;
@@ -69,19 +66,18 @@ t.test('Target Selection: Vulnerable (HP Tie-break)', (t) => {
 });
 
 t.test('Target Selection: Random', (t) => {
-    const gen = new CombatScenarioGenerator();
-    const attacker = gen.createCreature('Attacker');
+    const attacker = createCreature('Attacker');
     attacker.targetPreference = 'Random';
 
     const targets = [];
     for (let i = 0; i < 10; i++) {
-        targets.push(gen.createCreature(`Target ${i}`));
+        targets.push(createCreature(`Target ${i}`));
     }
 
-    const enemyTeam = gen.createTeam('Enemy', targets);
-    const allyTeam = gen.createTeam('Ally', [attacker]);
+    const enemyTeam = createTeam('Enemy', targets);
+    const allyTeam = createTeam('Ally', [attacker]);
 
-    const scenario = gen.createScenario([allyTeam, enemyTeam]);
+    const scenario = createScenario([allyTeam, enemyTeam]);
     const state = (scenario as any).initializeFightState();
 
     const selections = new Set();
