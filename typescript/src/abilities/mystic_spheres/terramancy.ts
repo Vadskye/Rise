@@ -18,14 +18,13 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
     {
       name: 'Rocky Carapace',
 
-      // Shielded + steeled is 0.7 EA.
+      // Braced + fortified is 0.8 EA
       effect: `
-        You are \\briefly \\shielded and \\braced.
+        You are \\briefly \\braced and \\fortified.
       `,
       roles: ['turtle'],
       tags: ['Manifestation'],
     },
-    // TODO: add a cantrip
   ],
   spells: [
     {
