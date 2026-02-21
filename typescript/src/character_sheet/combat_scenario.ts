@@ -20,6 +20,16 @@ export interface CombatTeam {
 }
 
 /**
+ * Internal state for a single fight simulation iteration.
+ */
+interface FightState {
+    hp: Record<string, number>;
+    memberToTeam: Record<string, CombatTeam>;
+    aliveMembersByTeam: Record<string, Creature[]>;
+    initialTotalHpByTeam: Record<string, number>;
+}
+
+/**
  * Manages a combat encounter between multiple creatures.
  */
 export class CombatScenario {
@@ -34,9 +44,17 @@ export class CombatScenario {
             throw new Error('Combat requires at least two teams.');
         }
 
+        const stats = this.runSimulationIterations(iterations);
+        this.logSimulationResults(stats);
+
+        return stats;
+    }
+
+    private runSimulationIterations(iterations: number): CombatSimulationResult {
         let totalRounds = 0;
         const wins: Record<string, number> = {};
         const totalHpPercents: Record<string, number> = {};
+
         for (const t of this.teams) {
             wins[t.name] = 0;
             totalHpPercents[t.name] = 0;
@@ -53,17 +71,22 @@ export class CombatScenario {
             }
         }
 
-        const stats: CombatSimulationResult = {
-            averageRounds: totalRounds / iterations,
-            winRates: {},
-            averageHpPercentRemaining: {},
-        };
+        const winRates: Record<string, number> = {};
+        const averageHpPercentRemaining: Record<string, number> = {};
 
         for (const name in wins) {
-            stats.winRates[name] = (wins[name] / iterations) * 100;
-            stats.averageHpPercentRemaining[name] = totalHpPercents[name] / iterations;
+            winRates[name] = (wins[name] / iterations) * 100;
+            averageHpPercentRemaining[name] = totalHpPercents[name] / iterations;
         }
 
+        return {
+            averageRounds: totalRounds / iterations,
+            winRates,
+            averageHpPercentRemaining,
+        };
+    }
+
+    private logSimulationResults(stats: CombatSimulationResult): void {
         console.log('--- Combat Simulation Results ---');
         console.log(`Teams: ${this.teams.map((t) => `${t.members.length} ${t.name}`).join(' vs ')}`);
         console.log(`Average Rounds: ${stats.averageRounds.toFixed(2)}`);
@@ -73,8 +96,6 @@ export class CombatScenario {
             );
         }
         console.log('---------------------------------');
-
-        return stats;
     }
 
     private simulateSingleFight(): {
@@ -82,6 +103,26 @@ export class CombatScenario {
         rounds: number;
         teamHpPercents: Record<string, number>;
     } {
+        const state = this.initializeFightState();
+        const teamInitiatives = this.determineTeamInitiative();
+
+        let rounds = 0;
+        while (rounds < 100) {
+            rounds++;
+            for (const { team } of teamInitiatives) {
+                if (state.aliveMembersByTeam[team.name].length === 0) continue;
+
+                const winner = this.executeTeamTurn(team, state);
+                if (winner !== undefined) {
+                    return { winner, rounds, teamHpPercents: this.getTeamHpPercents(state) };
+                }
+            }
+        }
+
+        return { winner: null, rounds, teamHpPercents: this.getTeamHpPercents(state) };
+    }
+
+    private initializeFightState(): FightState {
         const hp: Record<string, number> = {};
         const memberToTeam: Record<string, CombatTeam> = {};
         const aliveMembersByTeam: Record<string, Creature[]> = {};
@@ -100,83 +141,94 @@ export class CombatScenario {
             initialTotalHpByTeam[team.name] = teamInitialHp;
         }
 
-        const getHpPercents = (): Record<string, number> => {
-            const percents: Record<string, number> = {};
-            for (const team of this.teams) {
-                let currentTeamHp = 0;
-                for (const member of team.members) {
-                    currentTeamHp += Math.max(0, hp[member.id]);
-                }
-                percents[team.name] =
-                    initialTotalHpByTeam[team.name] > 0
-                        ? (currentTeamHp / initialTotalHpByTeam[team.name]) * 100
-                        : 0;
-            }
-            return percents;
-        };
+        return { hp, memberToTeam, aliveMembersByTeam, initialTotalHpByTeam };
+    }
 
-        // Determine initiative order for teams.
+    private getTeamHpPercents(state: FightState): Record<string, number> {
+        const percents: Record<string, number> = {};
+        for (const team of this.teams) {
+            let currentTeamHp = 0;
+            for (const member of team.members) {
+                currentTeamHp += Math.max(0, state.hp[member.id]);
+            }
+            percents[team.name] =
+                state.initialTotalHpByTeam[team.name] > 0
+                    ? (currentTeamHp / state.initialTotalHpByTeam[team.name]) * 100
+                    : 0;
+        }
+        return percents;
+    }
+
+    private determineTeamInitiative(): { team: CombatTeam; initiative: number }[] {
         const teamInitiatives = this.teams.map((team) => ({
             team,
             initiative: this.rollD10(false),
         }));
         teamInitiatives.sort((a, b) => b.initiative - a.initiative);
+        return teamInitiatives;
+    }
 
-        let rounds = 0;
-        while (rounds < 100) {
-            rounds++;
-            for (const { team } of teamInitiatives) {
-                // If this team is dead, skip its turn
-                if (aliveMembersByTeam[team.name].length === 0) continue;
+    private executeTeamTurn(team: CombatTeam, state: FightState): string | null | undefined {
+        const attackers = [...state.aliveMembersByTeam[team.name]];
+        for (const attacker of attackers) {
+            if (state.hp[attacker.id] <= 0) continue;
 
-                // For each alive member of the team
-                const attackers = [...aliveMembersByTeam[team.name]];
-                for (const attacker of attackers) {
-                    if (hp[attacker.id] <= 0) continue;
+            const combatOutcome = this.executeAttackerAction(attacker, team, state);
+            if (combatOutcome !== undefined) return combatOutcome;
+        }
+        return undefined;
+    }
 
-                    // Find potential targets (any member of any other team that is alive)
-                    const potentialTargets: Creature[] = [];
-                    for (const otherTeamName in aliveMembersByTeam) {
-                        if (otherTeamName !== team.name) {
-                            potentialTargets.push(...aliveMembersByTeam[otherTeamName]);
-                        }
-                    }
+    private executeAttackerAction(
+        attacker: Creature,
+        team: CombatTeam,
+        state: FightState,
+    ): string | null | undefined {
+        const potentialTargets = this.getPotentialTargets(team, state);
+        if (potentialTargets.length === 0) return undefined;
 
-                    if (potentialTargets.length === 0) break;
+        const defender = potentialTargets[0]; // Simple targeting: pick the first one
+        const damage = this.resolveAttack(attacker, defender);
+        state.hp[defender.id] -= damage;
 
-                    // Simple targeting: pick the first one
-                    const defender = potentialTargets[0];
-
-                    const damage = this.resolveAttack(attacker, defender);
-                    const newHp = hp[defender.id]! - damage;
-                    hp[defender.id] = newHp;
-
-                    if (newHp <= 0) {
-                        // Remove from alive members
-                        const defenderTeamName = memberToTeam[defender.id].name;
-                        const teamAlive = aliveMembersByTeam[defenderTeamName];
-                        const index = teamAlive.indexOf(defender);
-                        if (index > -1) {
-                            teamAlive.splice(index, 1);
-                        }
-                    }
-
-                    // Check for victory (only one team has alive members)
-                    const teamsWithAlive = Object.entries(aliveMembersByTeam).filter(
-                        ([_, members]) => members.length > 0,
-                    );
-
-                    if (teamsWithAlive.length === 1) {
-                        return { winner: teamsWithAlive[0][0], rounds, teamHpPercents: getHpPercents() };
-                    }
-                    if (teamsWithAlive.length === 0) {
-                        return { winner: null, rounds, teamHpPercents: getHpPercents() };
-                    }
-                }
-            }
+        if (state.hp[defender.id] <= 0) {
+            this.handleCreatureDeath(defender, state);
         }
 
-        return { winner: null, rounds, teamHpPercents: getHpPercents() };
+        return this.checkVictory(state);
+    }
+
+    private getPotentialTargets(team: CombatTeam, state: FightState): Creature[] {
+        const potentialTargets: Creature[] = [];
+        for (const teamName in state.aliveMembersByTeam) {
+            if (teamName !== team.name) {
+                potentialTargets.push(...state.aliveMembersByTeam[teamName]);
+            }
+        }
+        return potentialTargets;
+    }
+
+    private handleCreatureDeath(creature: Creature, state: FightState): void {
+        const teamName = state.memberToTeam[creature.id].name;
+        const teamAlive = state.aliveMembersByTeam[teamName];
+        const index = teamAlive.indexOf(creature);
+        if (index > -1) {
+            teamAlive.splice(index, 1);
+        }
+    }
+
+    private checkVictory(state: FightState): string | null | undefined {
+        const teamsWithAlive = Object.entries(state.aliveMembersByTeam).filter(
+            ([_, members]) => members.length > 0,
+        );
+
+        if (teamsWithAlive.length === 1) {
+            return teamsWithAlive[0][0]; // Winner name
+        }
+        if (teamsWithAlive.length === 0) {
+            return null; // Draw
+        }
+        return undefined; // Continue
     }
 
     private resolveAttack(attacker: Creature, defender: Creature): number {
@@ -202,18 +254,18 @@ export class CombatScenario {
         const halfPower = Math.floor(power / 2);
 
         // Standard targeted medium damage ranks from sheet_worker.ts
-        const diceExpr =
-            {
-                0: `1d4+${halfPower}`,
-                1: `1d6+${halfPower}`,
-                2: `1d10+${halfPower}`,
-                3: `1d8+${power}`,
-                4: `${halfPower}d6`,
-                5: `${halfPower + 1}d6`,
-                6: `${halfPower + 1}d8`,
-                7: `${halfPower + 1}d10`,
-            }[rank] || '1d6';
+        const damageTable: Record<number, string> = {
+            0: `1d4+${halfPower}`,
+            1: `1d6+${halfPower}`,
+            2: `1d10+${halfPower}`,
+            3: `1d8+${power}`,
+            4: `${halfPower}d6`,
+            5: `${halfPower + 1}d6`,
+            6: `${halfPower + 1}d8`,
+            7: `${halfPower + 1}d10`,
+        };
 
+        const diceExpr = damageTable[rank] || '1d6';
         return this.rollDice(diceExpr);
     }
 
