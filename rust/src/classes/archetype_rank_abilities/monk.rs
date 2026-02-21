@@ -500,8 +500,9 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             // This starts out equivalent to a smallsword. We don't want to make this exotic by
             // default, because it would invalidate Esoteric Weaponry.
             description: r"
-                You deal 1d6 damage with the punch/kick \glossterm{natural weapon} (see \pcref{Natural Weapons}).
-                In addition, you treat that weapon as having the \weapontag{Light} weapon tag, which allows you to make dual strikes with it more easily (see \pcref{Dual Strikes}).
+                Your punch/kick \glossterm{natural weapon} becomes a \plus1 accuracy weapon that deals 1d4 damage and has the \weapontag{Light} \glossterm{weapon tag}.
+                Since this bonus is local to the weapon, it is doubled if you make \glossterm{dual strikes} with it.
+                Whenever you make a strike with it, you can freely choose whether it also has the \atSubdual tag.
             ",
             // TODO: selective bonus with only unarmed? It's easy enough to just give people
             // from this archetype weapons
@@ -513,8 +514,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 4,
             description: r"
-                Your punch/kick natural weapon gains a \plus1 accuracy bonus.
-                Since this bonus is local to the weapon, it is doubled if you make \glossterm{dual strikes} with it.
+                Your punch/kick natural weapon deals 1d6 damage.
             ",
             modifiers: None,
         },
@@ -524,7 +524,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 7,
             description: r"
-                Your punch/kick damage increases to 1d8.
+                Your punch/kick natural weapon becomes a \plus2 accuracy weapon.
             ",
             // TODO: At this point, you're probably using unarmed? This is weird.
             modifiers: None,
