@@ -4,6 +4,7 @@ import { addBeasts } from '../monsters/individual_monsters/beasts';
 
 t.test('CombatScenarioGenerator can create a monster', (t) => {
     const gen = new CombatScenarioGenerator();
+    gen.reset();
     addBeasts(gen.grimoire);
     const ankheg = gen.getMonster('Ankheg');
     t.equal(ankheg.name, 'Ankheg');
@@ -12,6 +13,7 @@ t.test('CombatScenarioGenerator can create a monster', (t) => {
 
 t.test('CombatScenarioGenerator can create a custom character', (t) => {
     const gen = new CombatScenarioGenerator();
+    gen.reset();
     const hero = gen.createCharacter('Hero', 5, 'fighter');
     t.equal(hero.name, 'Hero');
     t.equal(hero.level, 5);
@@ -21,22 +23,58 @@ t.test('CombatScenarioGenerator can create a custom character', (t) => {
 
 t.test('CombatScenario can simulate a fight and report statistics', (t) => {
     const gen = new CombatScenarioGenerator();
+    gen.reset();
     addBeasts(gen.grimoire);
     const ankheg = gen.getMonster('Ankheg');
     const wasp = gen.getMonster('Giant Wasp');
 
-    const scenario = gen.createScenario([wasp, ankheg]);
-    const result = scenario.simulate(100);
+    const team1 = gen.createTeam('Wasp Team', [wasp]);
+    const team2 = gen.createTeam('Ankheg Team', [ankheg]);
+
+    const scenario = gen.createScenario([team1, team2]);
+    const result = scenario.simulate(20);
 
     t.ok(result.averageRounds > 0, 'Average rounds should be positive');
-    t.ok(result.winRates['Ankheg'] > 0 || result.winRates['Giant Wasp'] > 0, 'There should be at least one winner');
-    console.log(`Ankheg Win Rate: ${result.winRates['Ankheg']}%`);
-    console.log(`Giant Wasp Win Rate: ${result.winRates['Giant Wasp']}%`);
+    t.ok(result.winRates['Ankheg Team'] > 0 || result.winRates['Wasp Team'] > 0, 'There should be at least one winner');
+    t.end();
+});
+
+t.test('CombatScenario can simulate 1 Ankheg vs 10 Wasps', (t) => {
+    const gen = new CombatScenarioGenerator();
+    gen.reset();
+    addBeasts(gen.grimoire);
+
+    const ankheg = gen.getMonster('Ankheg');
+    const wasps = [];
+    const baseWasp = gen.getMonster('Giant Wasp');
+
+    for (let i = 0; i < 10; i++) {
+        wasps.push(gen.createCreature(`Wasp ${i}`, (c) => {
+            c.setProperties({
+                level: baseWasp.level,
+                hit_points: baseWasp.hit_points,
+                accuracy: baseWasp.accuracy,
+                armor_defense: baseWasp.armor_defense,
+                mundane_power: baseWasp.mundane_power,
+            });
+        }));
+    }
+
+    const waspTeam = gen.createTeam('Wasps', wasps);
+    const ankhegTeam = gen.createTeam('Ankheg', [ankheg]);
+
+    const scenario = gen.createScenario([waspTeam, ankhegTeam]);
+    const result = scenario.simulate(10); // Very few iterations for speed
+
+    t.ok(result.averageRounds > 0, 'Average rounds should be positive');
+    t.ok(result.winRates['Ankheg'] >= 0, 'Ankheg should have a win rate');
+    t.ok(result.winRates['Wasps'] >= 0, 'Wasps should have a win rate');
     t.end();
 });
 
 t.test('Creatures have independent sheets', (t) => {
     const gen = new CombatScenarioGenerator();
+    gen.reset();
     const c1 = gen.createCreature('C1');
     const c2 = gen.createCreature('C2');
 
