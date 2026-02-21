@@ -3,7 +3,8 @@
 It should be possible to calculate the effective action value of combat-relevant attunements.
 Since they start the combat active and aren't removed like enemy conditions, an attunement functions for all 5 rounds of a typical combat. Therefore, action denial buffs start from a baseline of 20 EA, and offensive buffs affect 5 player actions.
 
-As with active buffs, assume that a self-buff works 33% of the time for normal buffs, or 25% of the time for buffs that only affect targeted attacks, like a miss chance.
+Active buffs assume that a defensive effect is relevant 33% of the time normally, or 25% of the time if it's targeted-only. This works because it's generally infeasible to give yourself that buff every round, or it's significantly reducing your damage output, and allied buffs are more expensive. For attunements, it's not clear that this is as true. Defensive attunements will assume they are active 40% of the time normally, or 30% of the time if it's targeted-only. This is
+arbitrary, but a slightly higher value seems correct.
 
 Self-buff spells should have the same EA target as weapons and armor, which is a higher target than apparel with less limited slots. That means:
 
@@ -32,7 +33,7 @@ As with weapons, we treat +2 accuracy as 0.3 EA per hit, so 1.5 EA.
 
 ### Braced: 2.7
 
-If you could be braced as an attunement, it would be 40% action denial that works 33% of the time, so 20 * 0.4 / 3 = 2.7 EA. That's too powerful for a single attunement, but within scope for a deep attunement.
+If you could be braced as an attunement, it would be 40% action denial that works 40% of the time, so 20 * 0.4 * 0.4 = 3.2 EA. That's too powerful for a single attunement, but almost within scope for a deep attunement.
 
 ### Empowered: 2.0
 
@@ -40,11 +41,11 @@ If you could be braced as an attunement, it would be 40% action denial that work
 
 ### Evasion
 
-Assume that 75% of abilities attack Armor and Reflex, 50% of abilities that target you are area attacks, 50% of area attacks that target you miss, and this protects you from the 50% damage that you would take from the miss. That's 20 / 3 * 0.75 * 0.5 * 0.5 * 0.5 = 0.6 EA. That's a lot of assumptions, so call it rank 2 to match rogue, but it's definitely not a deep attunement.
+Assume that 75% of abilities attack Armor and Reflex, 50% of abilities that target you are area attacks, 50% of area attacks that target you miss, and this protects you from the 50% damage that you would take from the miss. That's 20 * 0.4 * 0.75 * 0.5 * 0.5 * 0.5 = 0.75 EA. That's a lot of assumptions, so call it rank 2 to match rogue, but it's definitely not a deep attunement.
 
-### Fortified: 1.5
+### Fortified: 1.6
 
-0.3 EA * 5 actions = 1.5 EA
+40% action denial that applies 50% of the time you are attacked is 20 * 0.4 * 0.4 * 0.5 = 1.6 EA
 
 ### 25% extra damage: 1.25
 
@@ -54,9 +55,9 @@ Assume that 75% of abilities attack Armor and Reflex, 50% of abilities that targ
 
 0.4 EA * 5 actions = 2 EA
 
-### Shielded: 2.0
+### Shielded: 2.4
 
-0.4 EA * 5 actions = 2 EA
+40% action denial that applies 75% of the time you are attacked is 20 * 0.4 * .4 * 0.75 = 2.4 EA
 
 ### Singleton focused: 0.6
 
@@ -269,35 +270,35 @@ Just +1 durability behind the spell version:
 
 40% more HP, so 71% action efficiency, or 29% action denial, so 20 * 0.29 / 3 = 1.9 EA at rank 7, which would require 0.4 EA of detriment to be balanced.
 
-### +1 Armor: 0.75
+### +1 Armor: 1.1
 
-Assuming that 2/3 of enemy attacks target Armor, +1 Armor is 17% action denial that works 2/3 of the time and you are attacked 1/3 of the time, so 20 * .17 * 2 / 3 / 3 = 0.75 EA, so rank 1.
+Assuming that 2/3 of enemy attacks target Armor, +1 Armor is 20% action denial that works 2/3 of the time and you are attacked 40% the time, so 20 * .2 * 2 / 3 * 0.4 = 1.1 EA, so rank 3.
 
-### +2 Armor: 1.5
+### +2 Armor: 2.2
 
 Twice as good as +1 Armor
 
-### +2 Brawn/Fort/Ref/Ment: 0.75
+### +2 Brawn/Fort/Ref/Ment: 1.1
 
-Assuming that 33% of enemy attacks target the defense, +2 is 33% action denial that works 1/3 of the time and you are attacked 1/3 of the time, so 20 / 3 / 3 / 3 = 0.75 EA, so rank 1.
+Assuming that 33% of enemy attacks target the defense, +2 is 40% action denial that works 1/3 of the time and you are attacked 40% of the time, so 20 * 0.4 * 0.4 / 3 = 1.1 EA, so rank 3.
 
-### 20% miss chance: 1.0
+### 20% miss chance: 1.2
 
-20% miss chance is 20% action denial that works 25% of the time, so 20 * 0.25 * 0.2 = 1 EA. That's about rank 3.
+20% miss chance is 20% action denial that works 30% of the time, so 20 * 0.3 * 0.2 = 1.2 EA.
 
-### 20% failure chance: 1.3
+### 20% failure chance: 1.6
 
-20% failure chance is 20% action denial that works 33% of the time, so 1.3 EA. That's about rank 6.
+20% failure chance is 20% action denial that works 40% of the time, so 1.6 EA.
 
-### 50% miss chance
+### 50% miss chance: 3.0
 
-50% miss chance is 50% action denial that works 25% of the time, so 20 * 0.5 * 0.25 = 2.5 EA, which is a rank 5 deep attunement.
+50% miss chance is 50% action denial that works 30% of the time, so 20 * 0.5 * 0.3 = 3 EA
 
-### Steeled: N/A
+### Steeled: 4.0
 
-14% action denial on 33% of attacks is 20 * 0.14 / 3 = 0.9.
+40% action denial on 33% of attacks is 20 * 0.4 / 3 = 2.7.
 
-In practice, you build characters very differently if they can be permanently steeled in ways that seem probably not good for the game, so this is simply disallowed.
+In practice, you build characters very differently if they can be permanently steeled, so give it a 50% increase to 4 EA, which makes it effectively impossible.
 
 ### Regen: Varies
 
