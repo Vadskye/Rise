@@ -1735,7 +1735,7 @@ impl Class {
                         If you choose this domain, you add the \sphere{pyromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Spell Lists}).
 
                         \domainability{Gift} You radiate \glossterm{bright illumination} in a \medarea radius.
-                        You can suppress or resume this illumination as a \glossterm{free action} once per round.
+                        You can suppress or resume this illumination as a \glossterm{free action} once per turn.
                         \magicaldomainability{Aspect} Whenever you use an ability that creates illumination, you can give it the \atFire \glossterm{ability tag}.
                         In addition, your \glossterm{allies} are immune to damage from your \atFire abilities.
                         % TODO: wording

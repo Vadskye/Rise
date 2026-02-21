@@ -153,7 +153,7 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
                     It provides a \plus4 bonus to your Armor defense, a \plus4 bonus to your \glossterm{durability}, and a \plus1 bonus to your \glossterm{vital rolls}.
                     In exchange, the \ability{recover} ability no longer causes you to recover hit points (see \pcref{Recover}).
 
-                    \subcf{Covenant of Bloodsharing} Once per round, when you cause a living creature other than yourself to lose \glossterm{hit points}, you can regain \glossterm{hit points} equal to half your \glossterm{power} (minimum 1).
+                    \subcf{Covenant of Bloodsharing} Once per turn, when you cause a living creature other than yourself to lose \glossterm{hit points}, you can regain \glossterm{hit points} equal to half your \glossterm{power} (minimum 1).
                     In exchange, you are \glossterm{injured} whenever you are below your maximum hit points, regardless of your normal \glossterm{injury point}.
 
                     \subcf{Covenant of Soulcursing} Whenever you would inflict a \glossterm{condition} on a creature that is not already under the effects of a Curse, that effect becomes a Curse on it instead of a condition.
@@ -580,7 +580,7 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
                 If you do, you always treat one weapon you wield as having that property.
                 This applies in addition to any other special material or magical properties.
                 However, it does not stack if the item would already have that property normally.
-                If you wield more than one weapon at a time, you can choose which of your weapons gains this effect as a \glossterm{free action} once per round.
+                If you wield more than one weapon at a time, you can choose which of your weapons gains this effect as a \glossterm{free action} once per turn.
 
                 Whenever you increase your rank in this archetype, you can change which magic weapon property you have with this ability.
             ",

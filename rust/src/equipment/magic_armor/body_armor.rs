@@ -48,7 +48,7 @@ pub fn body_armor() -> Vec<MagicArmor> {
              Only its visual appearance is altered.
              An observer can recognize the armor's true nature with a \glossterm{difficulty value} 15 Awareness check.
 
-             You can suppress or resume this effect as a \glossterm{free action} once per round.
+             You can suppress or resume this effect as a \glossterm{free action} once per turn.
         "),
         upgrades: vec![
             ItemUpgrade::new(3, "Can look and sound like normal clothing", "
