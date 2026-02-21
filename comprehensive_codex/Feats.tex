@@ -113,6 +113,7 @@ They allow more distinct and unique character customization, but also increase g
           \tb{General Feats}\label{General Feats}         & \tb{Prerequisites}               & \tb{Benefits}                              & \tb{Feat Types}   & \tb{Page}                                   \\
           \featref{Ascetic}                               & Wil 1                            & Cannot use items, gain extra archetype     & \tdash            & \featpref{Ascetic}                          \\
           \magicalfeatref{Barbaric Ancestry}              & Str \add Dex \add Con is 3       & Gain aid from barbarian ancestors          & Ancestry          & \featpref{Barbaric Ancestry}                \\
+          \featref{Beef}                                  & Str 3                            & Increase brawn and strength                & \tdash            & \featpref{Beef}                     \\
           \magicalfeatref{Celestial Ancestry}             & Non-evil                         & Gain aspects of celestial beings           & Ancestry, Magical & \featpref{Celestial Ancestry}               \\
           \featref{Chameleon}                             & Trained Disguise, Int 2          & Adapt your archetypes and abilities        & \tdash            & \featpref{Chameleon}                        \\
           \featref{Draconic Ancestry}                     & \tdash                           & Gain aspects of draconic power             & Ancestry          & \featpref{Draconic Ancestry}                \\
@@ -318,7 +319,7 @@ They allow more distinct and unique character customization, but also increase g
     The \glossterm{difficulty value} increases by 5 for each consecutive round that you spend moving in this way.
   \end{feat}
 
-  \begin{magicalfeat}{Barbaric Ancestry}{Ancestry, Magical}
+  \begin{feat}{Barbaric Ancestry}{Ancestry}
     \featpre Strength, Dexterity, and Constitution sum to at least 3
     \parhead{Special} You can only have one Ancestry feat.
 
@@ -345,7 +346,7 @@ They allow more distinct and unique character customization, but also increase g
     You can choose to dismiss it as a \glossterm{free action}.
 
     \ff[18]{Blood of My Ancestors\plus} The vital roll bonus increases to \plus2, and the durability bonus increases to \plus4.
-  \end{magicalfeat}
+  \end{feat}
 
   \begin{feat}{Battle Armory}{Combat}
     \featpre Strength 1, Dexterity 2.
@@ -363,6 +364,21 @@ They allow more distinct and unique character customization, but also increase g
     \magicalff[18]{Magic Armory} You gain an additional \glossterm{attunement point}.
 
     \ff[18]{Versatile Force\plus} The power bonus increases to \plus2.
+  \end{feat}
+
+  \begin{feat}{Beef}{General}
+    \featpre Strength 3.
+
+    \ff[1]{Staggering Brawn} You gain a \plus3 bonus to your Brawn defense.
+
+    \ff[6]{Powerlifter} You gain a \plus1 bonus to your Strength for the purpose of determining your \glossterm{weight limits}.
+
+    \magicalff[6]{Unbound Strength} When you use at least two \glossterm{free hands} to carry burdens, you can carry implausibly cumbersome loads without worrying about volume limits, and without incurring damage to the carried objects as a side effect of transportation.
+    For example, you could pick up an entire house if your \glossterm{weight limit} was high enough, even though a house would normally fall apart under the strain if a creature tried to pick it up.
+
+    \ff[12]{Staggering Brawn\plus} The defense bonus increases to \plus6.
+
+    \ff[18]{Limitless Strength} You gain a \plus1 bonus to your Strength.
   \end{feat}
 
   \begin{feat}{Blindfighter}{Combat}
@@ -1103,14 +1119,12 @@ They allow more distinct and unique character customization, but also increase g
     \featpre Willpower 2.
 
     \ff[1]{Mental Discipline} You gain a \plus3 bonus to your Mental defense.
-    In addition, you automatically detect any \abilitytag{Compulsion} or \abilitytag{Emotion} effects on you which are \abilitytag{Subtle}.
-    This does not make you immune to those effects, but it may help you control your reactions.
 
     \ff[6]{Unclouded Mind} You are immune to being \stunned and \confused.
 
-    \ff[12]{Mental Discipline\plus} The defense bonus from your \textit{mental discipline} ability increases to \plus6.
+    \ff[12]{Mental Discipline\plus} The defense bonus increases to \plus6.
 
-    \ff[18]{Unclouded Mind\plus} You are immune to all \abilitytag{Compulsion} and \abilitytag{Emotion} attacks.
+    \ff[18]{Unclouded Mind\plus} You are immune to \abilitytag{Compulsion} and \abilitytag{Emotion} attacks.
   \end{feat}
 
   \begin{feat}{Juggernaut}{Combat}
@@ -2412,14 +2426,14 @@ They allow more distinct and unique character customization, but also increase g
     \featpre Constitution 2.
 
     \ff[1]{Fortified Body} You gain a \plus3 bonus to your Fortitude defense.
-    In addition, you need half the normal amount of rest and sleep each day to function normally.
+
+    \ff[6]{Durable} You gain a \plus3 bonus to your \glossterm{durability}.
+
+    \ff[6]{Sleepless} You need half the normal amount of rest and sleep each day to function normally.
     For example, a human would only need four hours of sleep per night.
     This does not reduce the time required for you to take a \glossterm{long rest}.
 
-    \ff[6]{Durable} You gain a \plus4 bonus to your \glossterm{durability}.
-
-    \ff[12]{Fortified Body\plus} The defense bonus from your \textit{fortified body} ability increases to \plus6.
-    In addition, you also only need half the normal amount of time to complete a \glossterm{long rest}.
+    \ff[12]{Fortified Body\plus} The defense bonus increases to \plus6.
 
     \ff[18]{Unbreakable} Your Constitution does not increase your \glossterm{injury point}.
   \end{feat}
