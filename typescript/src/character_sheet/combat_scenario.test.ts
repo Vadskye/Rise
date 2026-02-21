@@ -33,7 +33,7 @@ t.test('CombatScenario can simulate a fight and report statistics', (t) => {
   const team2 = createTeam('Ankheg Team', [ankheg]);
 
   const scenario = createScenario([team1, team2]);
-  const result = scenario.simulate(20);
+  const result = scenario.simulate();
 
   t.ok(result.averageRounds > 0, 'Average rounds should be positive');
   t.ok(
@@ -55,7 +55,7 @@ t.test('CombatScenario can simulate 1 Ankheg vs 10 Wasps', (t) => {
   const ankhegTeam = createTeam('Ankheg', [ankheg]);
 
   const scenario = createScenario([waspTeam, ankhegTeam]);
-  const result = scenario.simulate(10); // Very few iterations for speed
+  const result = scenario.simulate();
 
   t.ok(result.averageRounds > 0, 'Average rounds should be positive');
   t.ok(result.winRates['Ankheg'] >= 0, 'Ankheg should have a win rate');
@@ -75,7 +75,7 @@ t.test('CombatScenario can simulate 1 Ankheg vs 1 Ankheg', (t) => {
   const ankhegTeam2 = createTeam('Ankheg Team 2', [ankheg]);
 
   const scenario = createScenario([ankhegTeam, ankhegTeam2]);
-  const result = scenario.simulate(20);
+  const result = scenario.simulate();
 
   t.ok(result.averageRounds > 0, 'Average rounds should be positive');
   t.ok(result.winRates['Ankheg Team 1'] >= 0, 'Ankheg Team 1 should have a win rate');
@@ -95,7 +95,7 @@ t.test('CombatScenario can simulate 1 Ankheg vs 5 Carrion Crows', (t) => {
   const ankhegTeam = createTeam('Ankheg', [ankheg]);
 
   const scenario = createScenario([crowTeam, ankhegTeam]);
-  const result = scenario.simulate(20);
+  const result = scenario.simulate();
 
   t.ok(result.averageRounds > 0, 'Average rounds should be positive');
   t.ok(result.winRates['Ankheg'] >= 0, 'Ankheg should have a win rate');
@@ -131,7 +131,7 @@ t.test('CombatScenario can simulate teams of multiple monsters', (t) => {
   const teamB = createTeam('B-Team', teamB_members);
 
   const scenario = createScenario([teamA, teamB]);
-  const result = scenario.simulate(20);
+  const result = scenario.simulate();
 
   t.ok(result.averageRounds > 0, 'Average rounds should be positive');
   t.ok(result.winRates['A-Team'] >= 0, 'A-Team should have a win rate');
@@ -179,7 +179,7 @@ t.test('Elite monsters hit multiple targets with area attack', (t) => {
 
   // If no area attack, it takes 5 rounds to kill 5 targets (1 target/round).
   // With area attack, it kills one target and damages others, killing them all in ~2 rounds.
-  const result = scenario.simulate(20);
+  const result = scenario.simulate();
   t.ok(result.averageRounds <= 2.5, `Should kill targets quickly (${result.averageRounds} rounds)`);
   t.equal(result.winRates['Elite Team'], 100, 'Elite should always win');
   t.end();
