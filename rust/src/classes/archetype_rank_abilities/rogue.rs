@@ -121,7 +121,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
                 \begin{activeability}{Assassination}{Standard action}
                     \rankline
                     You study a creature within \rngmed range, finding weak points you can take advantage of.
-                    As a \glossterm{brief} effect, whenever you make a \glossterm{strike} against the target while it is adjacent to you and \unaware of the attack, the strike deals double damage.
+                    As a \brief effect, whenever you make a \glossterm{strike} against the target while it is adjacent to you and \unaware of the attack, the strike deals double damage.
                 \end{activeability}
             ",
             modifiers: None,
@@ -181,250 +181,38 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
             complexity: 3,
-            name: "Bardic Performances",
+            name: "Bardic Spells",
             is_magical: true,
             rank: 1,
             description: r"
-                You learn two \textit{bardic performances} from the list below.
-                You can also spend \glossterm{insight points} to learn one additional bardic performance per \glossterm{insight point}.
+                You have the ability to use bardic magic.
+                You gain access to one bardic \glossterm{mystic sphere}, plus the \sphere{universal} mystic sphere (see \pcref{Bardic Mystic Spheres}).
+                You may spend \glossterm{insight points} to gain access to one additional bardic \glossterm{mystic sphere} per two \glossterm{insight points}.
+                You can only learn bardic spells from bardic mystic spheres that you have access to.
 
-                When you use a \textit{bardic performance} ability, you begin a performance using a Perform skill.
-                If you are not trained with that Perform skill, you take a \minus2 accuracy penalty with the bardic performance ability.
+                You automatically learn all \glossterm{cantrips} from each of your mystic spheres.
+                In addition, you learn two rank 1 bardic \glossterm{spells}.
+                You can also spend \glossterm{insight points} to learn one additional rank 1 spell per insight point.
+
+                Bardic spells require you to use a Perform skill that you are trained with.
                 There are four types of performances: dance, instrumental, manipulation, and vocal.
+                For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
                 \begin{raggeditemize}
-                    \item Dance: You use your body to dance or act. This limits your ability to defend yourself, giving you a \minus2 penalty to your Armor and Reflex defenses as a \atSwift effect. Dance performances have the \atVisual tag.
-                    \item Instrumental: You use an instrument to make music. This requires at least one \glossterm{free hand} to use the instrument. Instrumental performances have the \atAuditory tag.
-                    \item Manipulation: You use objects or gestures to perform, such as juggling or puppetry. This requires at least one \glossterm{free hand} to use the objects. Manipulation performances have the \atVisual tag.
-                    \item Vocal: You use your voice to orate or sing. This prevents you from talking or using other abilities with \glossterm{verbal components}. Vocal performances have the \atAuditory tag.
+                    \item Dance: You use your body to dance or act. This limits your ability to defend yourself, which \briefly gives you a \minus2 penalty to your Armor and Reflex defenses each time you cast or sustain the spell. Spells you cast using a dance performance gain the \atVisual tag.
+                    \item Instrumental: You use an instrument to make music. This requires at least one \glossterm{free hand} to use the instrument. Spells you cast using an instrumental performance gain the \atAuditory tag.
+                    \item Manipulation: You use objects or gestures to perform, such as juggling or puppetry. This requires at least one \glossterm{free hand} to use the objects. Spells you cast using a manipulation performance gain the \atVisual tag.
+                    \item Vocal: You use your voice to orate or sing. This prevents you from talking or using other abilities with \glossterm{verbal components}. Spells you cast using a vocal performance gain the \atAuditory tag.
                 \end{raggeditemize}
 
-                The names of bardic performances do not have to precisely match your actual performance.
-                For example, you can use the \textit{palliative poem} ability with a gentle song using Perform (wind instruments) or a distracting joke using Perform (comedy) instead of a poem.
+                Unlike other spellcasters, you cannot \glossterm{attune} to bardic spells.
+                In addition, if a target of a sustained bardic spell stops being able to see or hear you, depending on the nature of your performance, the effect ends for them as if you had stopped sustaining the performance.
 
-                Many bardic performances require you to sustain the performance as a \glossterm{minor action}.
-                When you use a bardic performance ability again while you are already sustaining that same ability, you can increase the number of targets affected by your existing performance rather than starting a separate performance.
-                Sustaining that single performance allows the effect to continue on any number of targets.
-                Using a different bardic performance ability would require starting a separate performance.
-                You can only sustain one bardic performance per round, even if you have multiple minor actions available.
+                When you gain access to a new \glossterm{mystic sphere} or spell \glossterm{rank},
+                    you can forget any number of spells you know to learn that many new spells in exchange,
+                    including spells of the higher rank.
 
-                If a target of a sustained bardic performance ability stop being able to see or hear you, depending on the nature of your performance, the effect ends for them as if you had stopped sustaining the performance.
-                However, targets do not stop being affected by your performance simply by travelling beyond the initial range of the bardic performance ability.
-                {
-                    % Bardic performance power guidelines:
-                    % These generally start from the same rank 1 baseline effect as spells.
-                    % Since there are no higher rank bardic performances, they need more aggressive rank scalings to ensure
-                    % that a rank 7 bardic performance is comparable to a rank 7 spell.
-                    % In general, bardsongs are likely to trade damage or accuracy for increased area.
-                    %
-                    % Bardsong debuffs are interesting, since they can't be removed like conditions, but also can't be stacked.
-                    % For now, they're just ranked in the same way as conditions.
-
-                    % Bards don't pay any EA cost for ally buffs
-
-                    % Primed is 0.8 EA
-                    \begin{magicalactiveability}{Boastful Bravura}{Standard action}
-                        \rankline
-                        You are \glossterm{briefly} \primed.
-
-                        \rankline
-                        \rank{3} You are also \glossterm{briefly} immune to being \frightened.
-                        \rank{5} You are also \glossterm{briefly} immune to being \panicked.
-                        % +0.4 EA
-                        \rank{7} You are also \glossterm{briefly} \empowered.
-                    \end{magicalactiveability}
-
-                    % Everyone fortified is 1 EA
-                    \begin{magicalsustainability}{Cadenza of Courage}{Standard action}
-                        \abilitytags \abilitytag{Emotion}, \abilitytag{Sustain} (standard), \abilitytag{Swift}
-                        \rankline
-                        All \glossterm{allies} who can see or hear your performance are \fortified.
-                        Since this ability has the \atSwift tag, it affects attacks against those allies during the current phase.
-
-                        \rankline
-                        \rank{3} This ability also affects you.
-                        \rank{5} Each target is also immune to being \frightened.
-                        \rank{7} Each target is also immune to being \panicked.
-                    \end{magicalsustainability}
-
-                    % Everyone shielded is 1 EA
-                    \begin{magicalsustainability}{Cantata of Caution}{Standard action}
-                        \abilitytags \abilitytag{Emotion}, \abilitytag{Sustain} (standard), \abilitytag{Swift}
-                        \rankline
-                        All \glossterm{allies} who can see or hear your performance are \shielded.
-                        Since this ability has the \atSwift tag, it affects attacks against those allies during the current phase.
-
-                        \rankline
-                        \rank{3} This ability also affects you.
-                        % TODO: awkward wording
-                        \rank{5} Each target is also immune to being \goaded.
-                        \rank{7} Each target is also immune to being \partiallyunaware.
-                    \end{magicalsustainability}
-
-                    \begin{magicalsustainability}{Cleansing Counterpoint}{Standard action}
-                        \abilitytags \abilitytag{Sustain} (minor)
-                        \rankline
-                        Choose one \glossterm{ally} within \rngmed range.
-                        The target chooses one of its \glossterm{conditions}.
-                        For the duration of your performance, the target is unaffected by that condition.
-
-                        \rankline
-                        \rank{3} You can target an additional \glossterm{ally} within range.
-                        \rank{5} If a target increases its \glossterm{fatigue level} by one, it can remove the chosen effect permanently.
-                        \rank{7} This ability can affect two conditions instead of one.
-                        A target must increase its fatigue level by two to remove both conditions.
-                    \end{magicalsustainability}
-
-                    % r1 area gets drX. Normally, small radius would be r2, but idk bard.
-                    \begin{magicalactiveability}{Crashing Cacaphony}{Standard action}
-                        \rankline
-                        Make an attack vs. Fortitude against all \glossterm{enemies} in a \smallarea radius from you.
-                        \hit \damagerankonelow.
-                        \miss Half damage.
-
-                        \rankline
-                        \rank{2} The damage increases to \damageranktwolow.
-                        \rank{3} The damage increases to \damagerankthreelow.
-                        \rank{4} The damage increases to \damagerankfourlow.
-                        \rank{5} The damage increases to \damagerankfivelow.
-                        \rank{6} The damage increases to \damageranksixlow.
-                        \rank{7} The damage increases to \damageranksevenlow.
-                    \end{magicalactiveability}
-
-                    % Dazzled is 1.8 EA, so we can get away with it with limited scope
-                    \begin{magicalsustainability}{Dazzling Discordance}{Standard action}
-                        \abilitytags \abilitytag{Sustain} (minor)
-                        \rankline
-                        Make an attack vs. Mental against all \glossterm{enemies} within a \tinyarea radius from you.
-                        \hit For the duration of your performance, the target is \dazzled.
-
-                        \rankline
-                        You gain a \plus2 \glossterm{accuracy} bonus with the attack for each rank beyond 2.
-
-                        \rank{2} The area increases to a \medarea radius.
-                    \end{magicalsustainability}
-
-                    \begin{magicalactiveability}{Dirge of Doom}{Standard action}
-                        \abilitytags \abilitytag{Emotion}
-                        \rankline
-                        Make an attack vs. Mental against one creature within \medrange.
-                        \hit \damagerankonelow.
-
-                        \rankline
-                        \rank{2} The damage increases to \damageranktwolow.
-                        \rank{3} The damage increases to \damagerankthreelow.
-                        \rank{4} The damage increases to \damagerankfourlow.
-                        \rank{5} The damage increases to \damagerankfivelow.
-                        \rank{6} The damage increases to \damageranksixlow.
-                        \rank{7} The damage increases to \damageranksevenlow.
-                    \end{magicalactiveability}
-
-                    % Stunned in HP is 1.2 EA, +0.4 for prefire = 1.6 EA. We can do that with limited scope.
-                    \begin{magicalsustainability}{Dizzying Ditty}{Standard action}
-                        \abilitytags \abilitytag{Compulsion}, \abilitytag{Sustain} (minor)
-                        \rankline
-                        Make an attack vs. Mental against all \glossterm{enemies} in a \tinyarea radius from you.
-                        \hit For the duration of your performance, the target is \stunned while it is \glossterm{injured}.
-
-                        \rankline
-                        You gain a \plus2 \glossterm{accuracy} bonus with the attack for each rank beyond 2.
-
-                        \rank{2} The area increases to a \medarea radius.
-                    \end{magicalsustainability}
-
-                    % Any two focused is 1 EA
-                    \begin{magicalsustainability}{Focusing Fantasia}{Standard action}
-                        \abilitytags \abilitytag{Emotion}, \abilitytag{Sustain} (standard)
-                        \rankline
-                        Choose up to two \glossterm{allies} within \shortrange.
-                        For the duration of your performance, each target is \focused.
-
-                        \rankline
-                        % Full 1 EA
-                        \rank{3} You can choose any two allies who can see or hear you, regardless of distance.
-                        % Closer to 1.4 EA from 'all allies'
-                        \rank{5} You can choose a third ally.
-                        % Basically 1.4 EA, bard nonsense
-                        \rank{7} You can choose a fourth ally.
-                    \end{magicalsustainability}
-
-                    % Frightened by you is 1.7 EA, we can get away with it using limited scope
-                    \begin{magicalsustainability}{Frightening Fugue}{Standard action}
-                        \abilitytags \abilitytag{Emotion}, \abilitytag{Sustain} (minor)
-                        \rankline
-                        Make an attack vs. Mental against all \glossterm{enemies} in a \tinyarea radius from you.
-                        \hit For the duration of your performance, the target is \frightened by you.
-
-                        \rankline
-                        You gain a \plus2 \glossterm{accuracy} bonus with the attack for each rank beyond 2.
-
-                        \rank{2} The area increases to a \medarea radius.
-                    \end{magicalsustainability}
-
-                    \begin{magicalsustainability}{Hypnotic Hymn}{Standard action}
-                        \abilitytags \abilitytag{Emotion}, \abilitytag{Sustain} (minor)
-                        \rankline
-                        Make an attack vs. Mental against up to two creatures within \shortrange.
-                        You take a \minus10 penalty to \glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of the last round.
-                        \hit For the duration of your performance, the target is \charmed by you.
-                        This ability does not have the \abilitytag{Subtle} tag, so an observant target may notice it is being influenced either during this effect or after it ends.
-
-                        \rankline
-                        You gain a \plus2 \glossterm{accuracy} bonus with the attack for each rank beyond 1.
-                    \end{magicalsustainability}
-
-                    \begin{magicalsustainability}{Intonation of Ingenuity}{Standard action}
-                        \abilitytags \abilitytag{Emotion}, \abilitytag{Sustain} (minor)
-                        \rankline
-                        Choose one \glossterm{ally} within \rngmed range.
-                        For the duration of your performance, the target gains a \plus1 bonus to \glossterm{checks}.
-
-                        \rankline
-                        \rank{3} The bonus increases to \plus2.
-                        \rank{5} You can choose an additional target within range.
-                        \rank{7} The bonus increases to \plus3.
-                    \end{magicalsustainability}
-
-                    % Healing bonus is normally +1dr. That's stronger on a non-scaling effect, but keep it because it's a class feature.
-                    \begin{magicalactiveability}{Palliative Poem}{Standard action}
-                        \abilitytags \abilitytag{Swift}
-                        \rankline
-                        Choose one living \glossterm{ally} within \medrange.
-                        The target regains 1d8+1d6 \glossterm{hit points} and increases its \glossterm{fatigue level} by one.
-                        In addition, it \glossterm{briefly} gains a \plus2 bonus to its Mental defense.
-
-                        \rankline
-                        \rank{2} The recovery increases to 2d10.
-                        \rank{3} The recovery increases to 3d10.
-                        \rank{4} The recovery increases to 5d8.
-                        \rank{5} The recovery increases to 7d8.
-                        \rank{6} The recovery increases to 8d10.
-                        \rank{7} The recovery increases to 11d10.
-                    \end{magicalactiveability}
-
-                    % Brief goad is 1 EA. We normally don't do crit conversion, but it might make sense here, since there's no good way to do the scaling otherwise.
-                    \begin{magicalsustainability}{Partita of Provocation}{Standard action}
-                        \abilitytags \abilitytag{Emotion}, \abilitytag{Sustain} (minor)
-                        \rankline
-                        Make an attack vs. Mental against all \glossterm{enemies} in a \tinyarea radius from you.
-                        \hit The target is \glossterm{briefly} \goaded by you.
-                        \crit The target is also \glossterm{goaded} by you for the duration of your performance.
-
-                        \rankline
-                        You gain a \plus2 \glossterm{accuracy} bonus with the attack for each rank beyond 1.
-                    \end{magicalsustainability}
-
-                    \begin{magicalsustainability}{Serenade of Serenity}{Standard action}
-                        \abilitytags \abilitytag{Emotion}, \abilitytag{Sustain} (minor)
-                        \rankline
-                        Choose any number of \glossterm{allies} within \medrange.
-                        For the duration of your performance, each target is \impervious to \atCompulsion and \atEmotion attacks.
-
-                        \rankline
-                        \rank{3} At the end of each round, each target removes all \glossterm{conditions} caused by Compulsion and Emotion effects that were not applied during that round.
-                        \rank{5} The range increases to a \distrange.
-                        \rank{7} Each target is \buff{immune} to Compulsion and Emotion attacks.
-                    \end{magicalsustainability}
-                }
+                \advancement The maximum rank of bardic spells that you can learn is equal to your rank in this archetype.
+                Bardic spells also increase in power in unique ways based on your rank in this archetype, as indicated in their descriptions.
             ",
             modifiers: None,
         },
@@ -442,7 +230,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             complexity: 0,
             name: "Bardic Lore+",
             is_magical: true,
-            rank: 6,
+            rank: 5,
             description: r"
                 You gain a \plus2 bonus to all Knowledge skills.
             ",
@@ -462,59 +250,41 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             complexity: 0,
-            name: "Rhythm of War",
-            is_magical: false,
-            rank: 3,
-            description: r"
-                You gain a \plus1 bonus to your \glossterm{magical power} and \glossterm{mundane power}.
-                If you know at least five bardic performances, this bonus increases to \plus2.
-            ",
-            modifiers: Some(vec![Modifier::Power(1)]),
-        },
-        RankAbility {
-            complexity: 2,
-            name: "Virtuoso",
-            is_magical: true,
-            rank: 4,
-            // Has to be minor -> free instead of "sustain two performances at once" to allow bards
-            // to active a second performance as a minor action while sustaining their previous
-            // performance as a free action.
-            description: r"
-                Your bardic performances with the Sustain (minor) tag instead have the Sustain (free) tag.
-                You can still only sustain one bardic performance per round.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            complexity: 0,
-            name: "Critical Eye",
-            is_magical: false,
-            rank: 5,
-            description: r"
-                You are \impervious to \abilitytag{Visual} attacks.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            complexity: 0,
             name: "Steady Beat",
             is_magical: false,
-            rank: 5,
+            rank: 3,
             description: r"
                 You are \buff{immune} to \abilitytag{Auditory} attacks.
             ",
             modifiers: None,
         },
         RankAbility {
-            complexity: 1,
-            name: "All the World's a Stage",
+            complexity: 0,
+            name: "Rhythm of War",
+            is_magical: false,
+            rank: 4,
+            description: r"
+                You gain a \plus1 bonus to your \glossterm{magical power} and \glossterm{mundane power}.
+            ",
+            modifiers: Some(vec![Modifier::Power(1)]),
+        },
+        RankAbility {
+            complexity: 0,
+            name: "Critical Eye",
+            is_magical: false,
+            rank: 6,
+            description: r"
+                You are \impervious to \abilitytag{Visual} attacks.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            complexity: 2,
+            name: "Virtuoso",
             is_magical: true,
             rank: 7,
             description: r"
-                Your targeted \textit{bardic performance} abilities no longer have range limits.
-                Instead, you can target any creatures who can see or hear you, even if you do not have \glossterm{line of sight} or \glossterm{line of effect}.
-                You must still decide who you are intending to target, and attempting to target a nonexistent creature can cause the bardic performance to fail without effect.
-                This does not affect area abilities, and it does not increase the number of targets you can choose.
+                Once per turn, you can \glossterm{sustain} a bardic spell that has the \atSustain (minor) tag as a \glossterm{free action}.
             ",
             modifiers: None,
         },
@@ -600,10 +370,9 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
 
                     \parhead{Mighty Maneuver} You take a \minus1 accuracy penalty, but you deal \glossterm{extra damage} equal to twice your excess rank.
 
-                    \parhead{Mobile Maneuver} You can walk up to 5 feet per excess rank before or after using your chosen maneuver, up to a maximum distance equal to your \glossterm{speed}.
+                    \parhead{Mobile Maneuver} You can move up to 5 feet per excess rank before or after using your chosen maneuver, up to a maximum distance equal to your \glossterm{speed}.
+                    This does not reduce your \glossterm{available movement}.
                     You cannot apply this augment to maneuvers that already allow you to move using one of your movement modes.
-                    This movement is never \abilitytag{Swift}.
-                    If your chosen maneuver is Swift, you can only walk after using the maneuver, not before.
 
                     \parhead{Precise Maneuver} You gain an accuracy bonus equal to your excess rank.
                 }
@@ -805,7 +574,7 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
                 \begin{activeability}{Fool Them Once}{Minor action}
                     \abilitytags \atCompulsion, \atSubtle
                     \abilitycost You cannot use this ability again until you finish a \glossterm{short rest}.
-                    The next time this round that you make an attack or check against one or more creatures, you can use your Deception or Persuasion skill instead of your normal \glossterm{accuracy} or check modifier against those creatures.
+                    The next time this turn that you make an attack or check against one or more creatures, you can use your Deception or Persuasion skill instead of your normal \glossterm{accuracy} or check modifier against those creatures.
                     Each target must be aware of the attack or check.
                     You must use this ability before making the attack or check.
                     If a target is unaware of the attack or check, or is otherwise immune to this ability, you use your normal accuracy or check modifier against that creature.
@@ -881,25 +650,19 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             rank: 5,
             description: r"
                 You can use your \ability{fool them once} ability twice per \glossterm{short rest}.
-                However, after using that ability, you \glossterm{briefly} cannot use it again.
+                However, after using that ability, you can't use it again next round.
             ",
             modifiers: None,
         },
         RankAbility {
-            complexity: 2,
-            name: "Nothing Is Real",
+            complexity: 1,
+            name: "No Need For Violence",
             is_magical: false,
             rank: 7,
             description: r"
-                \begin{activeability}{Nothing Is Real}{Standard action}
-                    \abilitytags \abilitytag{Compulsion}
-                    \rankline
-                    Make an attack vs. Mental against a creature within \shortrange.
-                    \hit The target is \glossterm{briefly} convinced that nothing is real.
-                    It is unable to take any actions and is \unaware of all attacks against it.
-                    If it is \glossterm{injured}, this effect immediately ends.
-                    After this effect ends, the target becomes immune to it until it finishes a \glossterm{short rest}.
-                \end{activeability}
+                Whenever a combat starts, each \glossterm{enemy} that you have been speaking with for at least a round takes a \minus5 penalty to \glossterm{initiative}.
+                In addition, enemies are at least \partiallyunaware of your attacks until they take their first turn, even if they can see you clearly.
+                This does not affect creatures that join in future rounds while the combat is already active.
             ",
             modifiers: None,
         },

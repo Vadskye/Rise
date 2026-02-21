@@ -1,6 +1,6 @@
 import { MysticSphere } from '.';
 import { add_tag_to_sphere } from './add_tag';
-import { BARRIER_COOLDOWN, CONDITION_CRIT, SWIFT_FATIGUE_SELF } from '../constants';
+import { BARRIER_COOLDOWN, CONDITION_CRIT } from '../constants';
 
 export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
   name: 'Aeromancy',
@@ -13,7 +13,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
 
       effect: `
         Choose yourself or an \\glossterm{ally} within \\longrange.
-        The target treats all falls as if they were 30 feet shorter for the purpose of determining \\glossterm{falling damage} this round.
+        Until your next turn, the target treats all falls as if they were 30 feet shorter for the purpose of determining \\glossterm{falling damage}.
       `,
       narrative: `
         The air beneath you suddenly accelerates into a great wind, softening the force of your unexpected fall.
@@ -63,7 +63,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
 
       attack: {
         hit: `
-          The target \\glossterm{briefly} takes a -2 penalty to defenses against \\atAir abilities and projectile \\glossterm{strikes}.
+          The target \\briefly takes a -2 penalty to defenses against \\atAir abilities and projectile \\glossterm{strikes}.
         `,
         targeting: `
           Make an attack vs. Reflex against up to two creatures within \\distrange.
@@ -102,7 +102,6 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
     {
       name: 'Propulsion',
 
-      cost: SWIFT_FATIGUE_SELF,
       effect: `
         Choose either yourself or one unattended object or \\glossterm{ally} within \\medrange.
         If you choose something other than yourself, it must have a \\glossterm{weight category} of Medium or less.
@@ -119,7 +118,6 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
     {
       name: 'Intense Propulsion',
 
-      cost: SWIFT_FATIGUE_SELF,
       functionsLike: {
         name: 'propulsion',
         exceptThat: 'the maximum fling distance increases to 60 feet.',
@@ -127,10 +125,9 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       rank: 4,
       roles: ['mobility'],
     },
-    // Braced is 2.2 EA. Assume that ranged strikes are about 33% of all attacks, so this
-    // is 0.73 EA, which is about right for a rank 1. They aren't actually 33% of attacks,
-    // but it's dangerous to undervalue rare modifiers. Doubled would be 1.5 EA for the
-    // empowered version.
+    // Braced is 3.2 EA. Assume that ranged strikes are about 25% of all attacks, so this
+    // is 0.8 EA. They aren't actually 25% of attacks, but it's dangerous to undervalue
+    // rare modifiers. Doubled would be 1.6 EA for the empowered version.
     {
       name: 'Wind Screen',
 
@@ -222,7 +219,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
 
       attack: {
         hit: `
-          The target is \\glossterm{briefly} \\slowed.
+          The target is \\briefly \\slowed.
         `,
         targeting: `
           Make an attack vs. Brawn against up to three creatures within \\medrange.
@@ -241,7 +238,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
 
       attack: {
         hit: `
-          The target is \\glossterm{briefly} borne aloft by heavy winds.
+          The target is \\briefly borne aloft by heavy winds.
           You \\glossterm{fling} it five feet upwards, where it hovers in \\glossterm{midair}, which normally makes it \\unsteady.
           Although it cannot use a \\glossterm{walk speed} or most other normal movement modes while midair, it gains an average \\glossterm{fly speed} with a 5 foot \\glossterm{height limit} that it intuitively knows how to use.
           Although it can move around in the air with this fly speed, it cannot get lower than 5 feet above the ground.
@@ -397,7 +394,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         targeting: `
           Whenever a creature within \\medrange of you attacks you, make a \\glossterm{reactive attack} vs. Armor against them.
           Any effect which increases this spell's range increases the range of this retaliation by the same amount.
-          You can only make this attack against a given target once per \\glossterm{phase}.
+          You can only make this attack against a given target once per round.
         `,
       },
       // effect: '',
@@ -423,7 +420,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
           A dust devil begins forming in that area.
           Creatures can generally identify what area the dust devil will form in with a DV 10 Awareness check.
 
-          During your next action, the dust devil forms in your chosen area, and you make a \\glossterm{reactive attack} vs. Brawn and Reflex against everything in the area.
+          At the start of your next turn, the dust devil forms in your chosen area, and you make a \\glossterm{reactive attack} vs. Brawn and Reflex against everything in the area.
           If there is not at least thirty feet of open space above your chosen area, this spell fails with no effect.
         `,
       },
@@ -449,7 +446,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
           A tornado begins forming in that area.
           Creatures can generally identify what area the tornado will form in with a DV 10 Awareness check.
 
-          During your next action, the tornado forms in your chosen area, and you make a \\glossterm{reactive attack} vs. Brawn and Reflex against everything in the area.
+          At the start of your next turn, the tornado forms in your chosen area, and you make a \\glossterm{reactive attack} vs. Brawn and Reflex against everything in the area.
           If there is not at least sixty feet of open space above your chosen area, this spell fails with no effect.
         `,
       },
@@ -473,7 +470,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
           A tornado begins forming in that area.
           Creatures can generally identify what area the tornado will form in with a DV 10 Awareness check.
 
-          During your next action, the tornado forms in your chosen area, and you make a \\glossterm{reactive attack} vs. Brawn and Reflex against everything in the area.
+          At the start of your next turn, the tornado forms in your chosen area, and you make a \\glossterm{reactive attack} vs. Brawn and Reflex against everything in the area.
           If there is not at least sixty feet of open space above your chosen area, this spell fails with no effect.
         `,
       },
@@ -715,7 +712,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         halfOnMiss: true,
         targeting: `
           Make an attack vs. Brawn and Reflex against all \\glossterm{enemies} adjacent to you.
-          Then, you are \\glossterm{briefly} \\shielded.
+          Then, you are \\briefly \\shielded.
         `,
       },
       // narrative: '',
@@ -734,7 +731,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         halfOnMiss: true,
         targeting: `
           Make an attack vs. Brawn and Reflex against all \\glossterm{enemies} adjacent to you.
-          Then, you are \\glossterm{briefly} \\shielded.
+          Then, you are \\briefly \\shielded.
         `,
       },
       // narrative: '',
@@ -749,13 +746,11 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
 
       effect: `
         Choose yourself or one \\glossterm{ally} within \\distrange.
-        This round, the target is \\shielded and gains a \\plus2 bonus to all defenses against \\glossterm{ranged} \\glossterm{strikes}.
-        Because this is a \\abilitytag{Swift} ability, it affects attacks against the target during the current phase.
+        The target is \\briefly \\shielded and gains a \\plus2 bonus to all defenses against \\glossterm{ranged} \\glossterm{strikes}.
       `,
       // narrative: '',
-      rank: 1,
+      rank: 2,
       roles: ['turtle'],
-      tags: ['Swift'],
     },
 
     {
@@ -801,8 +796,8 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
 
       effect: `
         Choose yourself or one \\glossterm{ally} within \\distrange.
-        This round, the target gains a \\plus2 accuracy bonus with ranged \\glossterm{strikes} and is \\honed.
-        If you choose yourself, the effect lasts \\glossterm{briefly}.
+        Until your next turn, the target gains a \\plus2 accuracy bonus with ranged \\glossterm{strikes} and is \\honed.
+        If you choose yourself, the effect lasts \\briefly.
       `,
       // narrative: '',
       rank: 2,
@@ -812,17 +807,18 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
     {
       name: 'Building Tempest',
 
+      // Once is 0.9 EA, twice is 1.3 EA
       effect: `
         When you cast this spell, and whenever you sustain it, air loudly rushes around you.
         When you stop sustaining this spell, you gain a benefit based on how many times you sustained it.
         \\begin{mdframedraggeditemize}
-          \\item Never: You are \\shielded this round.
-          \\item Once: You are shielded and \\honed this round.
-          \\item Two or more times: You are shielded and \\primed this round.
+          \\item Never: You are \\briefly \\shielded.
+          \\item Once: You are \\honed this turn and briefly shielded.
+          \\item Two or more times: You are briefly honed and shielded.
         \\end{mdframedraggeditemize}
       `,
       // narrative: '',
-      rank: 2,
+      rank: 3,
       roles: ['focus'],
       type: 'Sustain (minor)',
     },
@@ -830,17 +826,18 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
     {
       name: 'Greater Building Tempest',
 
+      // Once is 1.2 EA, twice is 1.6 EA
       effect: `
         When you cast this spell, and whenever you sustain it, air loudly rushes around you.
         When you stop sustaining this spell, you gain a benefit based on how many times you sustained it.
         \\begin{mdframedraggeditemize}
-          \\item Never: You are \\shielded and \\honed this round.
-          \\item Once: You are shielded and \\primed this round.
-          \\item Two or more times: You are \\primed this round and \\glossterm{briefly} shielded.
+          \\item Never: You are \\primed this turn.
+          \\item Once: You are primed this turn and \\briefly \\shielded.
+          \\item Two or more times: You are primed and \\honed this turn, and briefly shielded.
         \\end{mdframedraggeditemize}
       `,
       // narrative: '',
-      rank: 6,
+      rank: 7,
       roles: ['focus'],
       type: 'Sustain (minor)',
     },

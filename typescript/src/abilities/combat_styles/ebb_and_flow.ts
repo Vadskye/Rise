@@ -10,26 +10,24 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Choose a creature you can see.
-        If that creature tries to attack you this round, you immediately make a melee \\glossterm{strike} with a +2 accuracy bonus against them as a \\glossterm{reactive attack} if possible.
+        Until your next turn, if that creature tries to attack you, you immediately make a melee \\glossterm{strike} with a +2 accuracy bonus against them as a \\glossterm{reactive attack} if possible.
         This attack resolves before the creature's attack, so if you incapacitate it with the strike, its attack does not affect you.
         You can only attack that creature once in this way, even if it attacks you multiple times.
       `,
       rank: 1,
       roles: ['retaliate'],
-      tags: ['Swift'],
     },
 
     {
       name: 'Counter Sweep',
 
       effect: `
-        Whenever a creature attacks you this round, you immediately make a melee \\glossterm{strike} with a +2 accuracy bonus against them as a \\glossterm{reactive attack} if possible.
+        Until your next turn, whenever a creature attacks you , you immediately make a melee \\glossterm{strike} with a +2 accuracy bonus against them as a \\glossterm{reactive attack} if possible.
         This attack resolves before the creature's attack, so if you incapacitate it with the strike, its attack does not affect you.
         You can only attack any individual creature once in this way, even if it attacks you multiple times.
       `,
       rank: 3,
       roles: ['retaliate'],
-      tags: ['Swift'],
     },
 
     {
@@ -37,13 +35,12 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Choose a creature you can see.
-        If that creature attacks you this round, you immediately make two melee \\glossterm{strikes} against them as a \\glossterm{reactive attack} if possible.
+        Until your next turn, if that creature attacks you, you immediately make two melee \\glossterm{strikes} against them as a \\glossterm{reactive attack} if possible.
         These attacks resolve before the creature's attack, so if you incapacitate it with either strike, its attack does not affect you.
         You can only respond once in this way, even if the creature attacks you multiple times.
       `,
       rank: 5,
       roles: ['retaliate'],
-      tags: ['Swift'],
     },
 
     {
@@ -95,7 +92,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} with a +1 accuracy bonus.
-        After making the strike, you \\glossterm{briefly} take a -2 penalty to all defenses against each target of the strike.
+        After making the strike, you \\briefly take a -2 penalty to all defenses against each target of the strike.
       `,
       rank: 1,
       roles: ['burst'],
@@ -106,7 +103,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} with a +2 accuracy bonus that deals double damage.
-        After making the strike, you \\glossterm{briefly} take a -2 penalty to all defenses against each target of either strike.
+        After making the strike, you \\briefly take a -2 penalty to all defenses against each target of either strike.
       `,
       rank: 5,
       roles: ['burst'],
@@ -153,13 +150,12 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Choose a creature you can see.
-        If that creature takes a \\glossterm{standard action} that does not attack you this round, you immediately make a melee \\glossterm{strike} with a +2 accuracy bonus against them as a \\glossterm{reactive attack} if possible.
+        Until your next turn, if that creature takes a \\glossterm{standard action} that does not attack you, you immediately make a melee \\glossterm{strike} with a +2 accuracy bonus against them as a \\glossterm{reactive attack} if possible.
         This attack resolves before the creature's action, so if you incapacitate it with the strike, its action fails.
         You can only attack that creature once in this way, even if it takes multiple standard actions.
       `,
       rank: 1,
       roles: ['burst'],
-      tags: ['Swift'],
     },
 
     {
@@ -180,7 +176,7 @@ export const ebbAndFlow: CombatStyle = {
       // This is a debuff, which is much less reliable, so it's probably fine.
       effect: `
         Choose an \\glossterm{ally}, then make a melee \\glossterm{strike}.
-        \\hit The target takes a -2 penalty to its Armor defense against that ally's attacks this round.
+        \\hit Until your next turn, the target takes a -2 penalty to its Armor defense against that ally's attacks.
       `,
       rank: 1,
       roles: ['trip'],
@@ -194,7 +190,7 @@ export const ebbAndFlow: CombatStyle = {
       // EA here.
       effect: `
         Choose an \\glossterm{ally}, then make a melee \\glossterm{strike} that deals double damage.
-        \\hit The target takes a -4 penalty to its Armor defense against that ally's attacks this round.
+        \\hit Until your next turn, target takes a -4 penalty to its Armor defense against that ally's attacks.
       `,
       rank: 5,
       roles: ['trip'],
@@ -205,7 +201,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a \\glossterm{dual strike} using two weapons (see \\pcref{Dual Strikes}).
-        \\hit You are \\glossterm{briefly} \\focused.
+        \\hit You are \\briefly \\focused.
       `,
       rank: 3,
       roles: ['generator'],
@@ -236,9 +232,10 @@ export const ebbAndFlow: CombatStyle = {
     {
       name: 'Tranquil Kata',
 
+      // 0.5 + 0.4 EA
       effect: `
-        You are \\glossterm{briefly} \\braced.
-        If your location did not change since the start of the round, you are also briefly \\focused.
+        You are \\briefly \\braced.
+        If your location did not change since the start of your turn, you are also briefly \\focused, and your \\glossterm{available movement} is reduced to 0.
       `,
       rank: 3,
       roles: ['focus'],
@@ -248,7 +245,7 @@ export const ebbAndFlow: CombatStyle = {
       name: 'Sharpening Kata',
 
       effect: `
-        If you did not attack last round, you are \\glossterm{briefly} \\focused and \\honed.
+        If you did not attack last round, you are \\briefly \\focused and \\honed.
       `,
       rank: 1,
       roles: ['focus'],
@@ -258,34 +255,32 @@ export const ebbAndFlow: CombatStyle = {
       name: 'Sharpening Kata+',
 
       effect: `
-        If you did not attack last round, you are \\glossterm{briefly} \\primed and \\honed.
+        If you did not attack last round, you are \\briefly \\primed and \\honed.
       `,
       rank: 5,
       roles: ['focus'],
     },
 
-    // 0.7 + 0.3 = 1.0
+    // 0.7 + 0.4 = 1.1
     {
       name: 'Dance of Death',
 
       effect: `
-        If you both dealt damage to another creature and took damage from another creature last round, you are \\glossterm{briefly} \\maximized and \\shielded.
+        If you both dealt damage to another creature and took damage from another creature since the start of your last turn, you are \\briefly \\maximized and \\shielded.
       `,
       rank: 3,
       roles: ['focus'],
     },
 
-    // 0.7 + 0.3 + 0.3 = 1.3
+    // 0.7 + 0.7 = 1.4
     {
       name: 'Dance of Death+',
 
       effect: `
-        If you both dealt damage to another creature and took damage from another creature last round, you are \\glossterm{briefly} \\maximized and \\shielded.
-        Since this ability has the \\atSwift tag, it protects you from attacks during the current phase.
+        If you both dealt damage to another creature and took damage from another creature since the start of your last turn, you \\briefly are \\maximized and take half damage from all sources.
       `,
       rank: 7,
       roles: ['focus'],
-      tags: ['Swift'],
     },
 
     {
@@ -294,7 +289,7 @@ export const ebbAndFlow: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} with a \\minus1 accuracy penalty.
         \\hit If your attack result hits the target's Fortitude defense, the target rumbles.
-        A rumbling creature takes \\damagerankone during your next action.
+        A rumbling creature takes \\damagerankone at the end of its next turn.
       `,
       rank: 3,
       roles: ['burn'],
@@ -306,7 +301,7 @@ export const ebbAndFlow: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} with a \\minus1 accuracy penalty that deals double damage.
         \\hit If your attack result hits the target's Fortitude defense, the target rumbles.
-        A rumbling creature takes \\damagerankfive during your next action.
+        A rumbling creature takes \\damagerankfive at the end of its next turn.
       `,
       rank: 7,
       roles: ['burn'],
@@ -317,7 +312,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} that deals double \\glossterm{weapon damage}.
-        After making the strike, you \\glossterm{briefly} take a \\minus2 penalty to your Armor defense.
+        After making the strike, you \\briefly take a \\minus2 penalty to your Armor defense.
       `,
       rank: 3,
       roles: ['burst'],
@@ -328,7 +323,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} that deals double \\glossterm{weapon damage} and triple damage overall.
-        After making the strike, you \\glossterm{briefly} take a -2 penalty to your Armor defense.
+        After making the strike, you \\briefly take a -2 penalty to your Armor defense.
       `,
       rank: 7,
       roles: ['burst'],
@@ -339,7 +334,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} with \\glossterm{extra damage} equal to 1d4 plus half your \\glossterm{power}.
-        However, you \\glossterm{briefly} take a -2 penalty to your accuracy and defenses after making the strike.
+        However, you \\briefly take a -2 penalty to your accuracy and defenses after making the strike.
       `,
       rank: 3,
       roles: ['burst'],
@@ -350,7 +345,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} with \\damagerankseven \\glossterm{extra damage}.
-        However, you \\glossterm{briefly} take a -2 penalty to your accuracy and defenses after making the strike.
+        However, you \\briefly take a -2 penalty to your accuracy and defenses after making the strike.
       `,
       rank: 7,
       roles: ['burst'],
@@ -361,7 +356,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} that deals quadruple \\glossterm{weapon damage}.
-        After making the strike, you \\glossterm{briefly} take a \\minus2 penalty to all non-Armor defenses.
+        After making the strike, you \\briefly take a \\minus2 penalty to all non-Armor defenses.
       `,
       rank: 5,
       roles: ['burst'],

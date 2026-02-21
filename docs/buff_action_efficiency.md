@@ -10,20 +10,21 @@ By EA:
   Accuracy (+1)  & 0.1  & 0.2  & 0.3     & 0.4 \\
   Accuracy (+2)  & 0.3  & 0.5  & 0.8     & 1.1 \\
   Accuracy (+4)  & 0.6  & 0.9  & 1.5     & 2.1 \\
-  Braced         & 0.4  & 0.6  & 1.0     & 1.4 \\
+  Braced         & 0.5  & 0.8  & 1.2     & 1.6 \\
+  Cover          & 0.5  & 0.8  & 1.2     & 1.6 \\
   Empowered      & 0.4  & 0.6  & 1.0     & 1.4 \\
   Extra damage   & 0.4  & 0.6  & 1.0     & 1.4 \\
   Focused        & 0.4  & 0.6  & 1.0     & 1.4 \\
   Fortified      & 0.3  & 0.5  & 0.7     & 1.0 \\
-  Impervious     & 1.1  & no   & inf     & inf \\
+  Impervious     & 1.3  & no   & inf     & inf \\
   Half damage    & 0.7  & no   & 1.5     & 2.1 \\
   Honed          & 0.4  & 0.6  & 1.0     & 1.4 \\
   Maximized      & 0.7  & no   & 1.8     & 2.8 \\
   Primed         & 0.8  & no   & 2.0     & 3.2 \\
-  Shielded       & 0.3  & 0.5  & 0.7     & 1.0 \\
-  +4 defenses    & 0.9  & 1.4  & inf     & inf \\
-  Single defense & 0.3  & 0.5  & 0.7     & 1.0 \\
-  Steeled        & 0.3  & 0.5  & 0.7     & 1.0 \\
+  Shielded       & 0.4  & 0.6  & 0.9     & 1.2 \\
+  +4 defenses    & 1.1  & 1.6  & inf     & inf \\
+  Single defense & 0.4  & 0.6  & 0.9     & 1.2 \\
+  Steeled        & 0.4  & 0.6  & 1.0     & 1.4 \\
 ```
 "You and all adjacent" can be used instead of "any two in Medium range".
 
@@ -31,49 +32,16 @@ By EA:
 
 Delaying a defensive buff upgrades it to the "ally" column since it can be combined with other effects or prebuffed before a fight.
 
-## Named Buffs
-
-### Braced
-A braced character gains a +2 bonus to all defenses.
-
-### Empowered
-An empowered character deals extra damage equal to its character rank.
-
-### Enraged
-An enraged character must spend a standard action each round to attack.
-Enraged is never inflicted on enemies as a debuff, but can be inflicted on characters as a downside along with other benefits.
-
-### Focused
-A focused character rolls attacks rolls twice and keeps the higher result.
-
-### Fortified
-A fortified character gains a +2 bonus to their Brawn, Fortitude, and Mental defenses.
-
-### Honed
-A honed character gains a +4 accuracy bonus with critical hits.
-
-### Maximized
-A maximized character deals maximum damage.
-
-### Primed
-A primed character automatically explodes on their attacks.
-
-### Shielded
-A shielded character gains a +2 bonus to their Armor and Reflex defenses.
-
-### Steeled
-A steeled characer is immune to critical hits.
-
 ## Calculating Specific Buffs - Single Action
 
 If you give an ally a brief buff, it generally affects them for two actions.
 On the other hand, if you give yourself a brief buff, it generally affects you for one action.
-This is why effects like True Strike aren't brief, and instead say "this round" or "this phase".
+This is why effects like True Strike aren't brief, and instead say "this turn".
 For this section, assume that all buffs only affect the target for a single action.
 
 For protective buffs, assume that a self-buff works 1/3 of the time and an ally buff works 50% of the time. We use 33% instead of 25% because AOE attacks mean the boss targets each party member more than a quarter of the time.
 
-For buffs that increase defenses, start from the "medium defenses" / 50% hit chance baseline. Monsters generally miss more than player characters do. That means a global +2 defense bonus is 1/3 action denial, or 1.3 EA baseline.
+For buffs that increase defenses, start from the "medium defenses" / 50% hit chance baseline. Monsters generally miss more than player characters do. That means a global +2 defense bonus is a 1.6 EA baseline.
 
 For offensive buffs, assume that targeting a single ally is 50% more valuable than targeting yourself because it's easier to stack multiple buffs to create a devastating combo. For AOE offensive buffs, you aren't generally going to get the same multiplicative stacking effect, so assume that one ally is 50% more valuable and the rest are normal effectiveness. Offensive AOE buffs generally won't include you as an effective target, so you get one ally at 50% bonus effect and two allies at regular effect, for a total of 3.5x normal EA.
 
@@ -102,11 +70,11 @@ With +1a, you deal 0.8 + 0.08 = 0.88, which is ~14% more.
 
 This is like honed, but it works all the time instead of only in specific circumstances, and the incremental degree by which each +1 accuracy is a little better than 0.1 adds up over time. Direct accuracy bonuses also stack with everything else, so they should be rare.
 
-### Braced (self): 0.4
+### Braced (self): 0.5
 
-Braced applies 1/3 of the time, so it's 1.3 / 3 = 0.4 EA.
+Braced is 40% action denial from the accuracy calculations and applies 1/3 of the time, so it's 1.6 / 3 = 0.5 EA.
 
-### Braced (ally): 0.7
+### Braced (ally): 0.8
 
 Applies 50% of the time instead of 33% of the time, since you can choose the best target.
 
@@ -170,15 +138,11 @@ Now assume you have a 120% hit rate (+1 vs 0 Armor), so you crit on a 9/10. Expe
 With a reroll, your odds of getting a single crit become 36% and a double crit is 4%, so expected dpr is 1 + 0.36 + 0.04 = 1.4, which is only 15% better. So focused is better on low accuracy targets, which makes sense.
 
 ### Fortified: 0.3 (self), 0.5 (ally), 0.7 (any two), 1.0 (all)
-Same logic as Shielded.
+You are attacked 1/3 of the time, and fortified protects from 50% of enemy attacks, so 1.6 / 3 * 0.5 = 0.3
 
 ### Impervious (self): 1.1
 
-3.3 EA for normal impervious. You are attacked 33% of the time, so 1.1 EA.
-
-### Impervious (ally): 1.7
-
-Applies 50% of the time
++4 defenses is 3.2 EA baseline. Ignoring miss effects means it's relevant about 40% of the time, so 3.2 * 0.4 = 1.3 EA.
 
 ### Half damage (self): 0.7
 
@@ -230,9 +194,13 @@ So your effective hit rate increases by 0.1 * (0.7 + 0.8 + 0.9 + 1 + 0.1 + 0.2 +
 
 Now assume you have an 80% hit rate, so you hit on a 7. From before, this is worth 0.1 * (0.9 + 1 + 0.1..0.7) = 0.47. That takes you from a 0.8 to a 1.27, which is a 59% increase in your odds of hitting. So exploding is stronger when your normal hit rate is low, which makes sense.
 
-### Shielded (self): 0.3
+### Cover (self): 0.5
 
-You are attacked 1/3 of the time, and shielded protects from 75% of enemy attacks, so 1.3 / 3 * .75 = 0.3
+Cover also blocks half on miss, so assume it's relevant 40% of the time instead of the normal 1/3 of thet ime. That makes it 1.6 * 0.4 * 0.75 = 0.5 EA.
+
+### Shielded (self): 0.4
+
+You are attacked 1/3 of the time, and shielded protects from 75% of enemy attacks, so 1.6 / 3 * .75 = 0.4
 
 ### Shielded (ally): 0.5
 
@@ -246,26 +214,34 @@ Applies 75% of the time
 
 Applies 100% of the time
 
-### +4 defenses (self): 0.9
+### +4 defenses (self): 1.1
 
-From the -4 accuracy calculation, +4 defenses is 2/3 action denial when relevant. That's 4 / 3 * 2 / 3 = 0.9
+From the -4 accuracy calculation, +4 defenses is 3.2 EA normally. 3.2 / 3 = 1.1 EA.
 
 ### Single defense (self): 0.3
 You can probably choose the best defense here, so it's pretty close in power to the other defense abilities.
 
-### Steeled (self): 0.3
+### Steeled (self): 0.4
 Assumptions:
 * You are attacked 33% of the time
 * The enemy gets a critical hit 5% of the time (standard 50% hit chance)
-* Critical hits are twice as scary as a regular hit, because they have a disproportionate probability of killing / incapacitating.
+* Critical hits are five times as scary as a regular hit, because they have a disproportionate probability of killing / incapacitating.
 
-With 50% hit chance, expected enemy hits per round is 2 hits + 0.2 crits * 2 (extra scary crits) = 2.4. If you remove crits from that possibility, expected incoming damage is 2. That's about 20% action denial, which has a base value of 4 * 0.2 = 0.8 EA. With the standard assumption that you are targeted by 33% of attacks, that's 0.3 EA as a self-buff.
+With 50% hit chance, expected enemy hits per round is 2 hits + 0.2 crits * 5 (extra scary crits) = 3. If you remove crits from that possibility, expected incoming damage is 2. That's about 33% action denial, which has a base value of 4 * 0.29 = 1.3 EA. With the standard assumption that you are targeted by 33% of attacks, that's 0.4 EA as a self-buff.
 
-### Steeled (ally): 0.5
+If you assume an 80% hit chance, expected enemy hits per round is 3.2 hits + (4 * 0.1 * 0.8 * 5) = 4.8 hits. If you remove crits, expected incoming damage is 3.2. That's about 33% action denial, which is basically the same. So steeled has similar value regardless of hit probability.
 
-### Steeled (any two): 0.7
+### +4 crit defenses (self): 0.3
 
-### Steeled (all): 1.0
+Same assumptions as steeled, but since this isn't an absolute defense, the worst case scenario is still highly dangerous. Assume critical hits are 4x as scary as normal instead of 5x as scary as normal.
+
+Expected enemy hits per round is 2 hits + 4 * 0.1 * 0.5 * 4 = 2.8. With +4 vs crits, 2 hits + 4 * 0.1 * 0.1 * 4 = 2.16. That's about 23% action denial, so 4 * 0.23 = 0.9 EA. On yourself only, it's 0.3 EA.
+
+### +2 crit defenses (self): 0.2
+
+Same assumptions as steeled, but since this isn't an absolute defense, the worst case scenario is still highly dangerous. Assume critical hits are 3x as scary as normal instead of 5x as scary as normal.
+
+Expected enemy hits per round is 2 hits + 4 * 0.1 * 0.5 * 3 = 2.6. With +2 vs crits, 2 hits + 4 * 0.1 * 0.3 * 3 = 2.36. That's about 9% action denial, so 4 * 0.09 = 0.4 EA. On yourself only, it's 0.15 EA.
 
 ## Buff effect scaling
 

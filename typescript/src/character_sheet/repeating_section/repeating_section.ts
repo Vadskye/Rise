@@ -66,6 +66,18 @@ export class RepeatingSection {
     return Object.keys(this.rows).map((rowId) => this.rows[rowId].getPropertyValues(propertyNames));
   }
 
+  public getAllProperties(): Record<string, SimpleValue> {
+    const allProperties: Record<string, SimpleValue> = {};
+    for (const rowId in this.rows) {
+      const rowProperties = this.rows[rowId].getAllProperties();
+      for (const propertyName in rowProperties) {
+        const fullPropertyName = `repeating_${this.sectionName}_${rowId}_${propertyName}`;
+        allProperties[fullPropertyName] = rowProperties[propertyName];
+      }
+    }
+    return allProperties;
+  }
+
   public getRowValue(rowId: string, propertyName: string): SimpleValue {
     return this.getRow(rowId).getProperty(propertyName).value;
   }

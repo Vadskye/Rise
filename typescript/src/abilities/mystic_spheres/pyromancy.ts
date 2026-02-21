@@ -1,11 +1,6 @@
 import { MysticSphere } from '.';
 import { add_tag_to_sphere } from './add_tag';
-import {
-  BARRIER_COOLDOWN,
-  DELAYED_HALF,
-  MULTIHIT_CRIT,
-  TELEPORT_ATTACK_FATIGUE,
-} from '../constants';
+import { BARRIER_COOLDOWN, DELAYED_HALF, MULTIHIT_CRIT } from '../constants';
 
 // TODO: add -accuracy attacks
 export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
@@ -65,7 +60,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       // +5 accuracy bonus is reasonable for a one-off attunement
       effect: `
         Whenever you use a \\atFire ability, you can draw power from one Small or larger \\glossterm{mundane} fire within \\medrange.
-        When you do, you gain a \\plus2 accuracy bonus with that ability this round.
+        When you do, you gain a \\plus2 accuracy bonus with that ability this turn.
         % Med +4, Large +6, Huge +8, Garg +10
         For each size category above Small that you siphon in this way, this accuracy bonus increases by 2, to a maximum of a \\plus10 bonus from a Gargantuan flame.
         Then, if that fire was Medium or smaller, it is extinguished.
@@ -90,7 +85,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         halfOnMiss: true,
         targeting: `
           Make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you.
-          Then, you are \\glossterm{briefly} \\empowered.
+          Then, you are \\briefly \\empowered.
         `,
       },
       rank: 3,
@@ -108,7 +103,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         `,
         halfOnMiss: true,
         targeting: `
-          You are \\glossterm{briefly} \\empowered.
+          You are \\briefly \\empowered.
           Then, make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you.
         `,
       },
@@ -131,7 +126,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         halfOnMiss: true,
         targeting: `
           Make an attack vs. Reflex against yourself and all \\glossterm{enemies} adjacent to you.
-          Then, you are \\glossterm{briefly} \\maximized.
+          Then, you are \\briefly \\maximized.
         `,
       },
       rank: 4,
@@ -150,7 +145,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         halfOnMiss: true,
         targeting: `
           Make an attack vs. Reflex against yourself and all \\glossterm{enemies} adjacent to you.
-          Then, you are \\glossterm{briefly} \\maximized.
+          Then, you are \\briefly \\maximized.
         `,
       },
       rank: 7,
@@ -168,7 +163,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         crit: MULTIHIT_CRIT,
         hit: `
           \\damagerankone.
-          During your next action, the target takes \\damagerankone again.
+          At the end of its next turn, the target takes \\damagerankone again.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -189,8 +184,8 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankfour, and any \\glossterm{extra damage} is doubled.
-          During your next action, the target takes \\damagerankfour again.
+          \\damagerankfour immediately, and again at the end of the target's next turn.
+          Any \\glossterm{extra damage} applies to both the initial damage and the delayed damage.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -217,7 +212,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
           Fire consumes a \\medarea radius \\glossterm{zone} from your location.
           Make an attack vs. Reflex against everything in the area.
           This typically means you include yourself as a target.
-          During your next action, this effect \\glossterm{repeats} in the same area.
+          At the start of your next turn, this effect \\glossterm{repeats} in the same area.
         `,
       },
       rank: 3,
@@ -239,7 +234,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
           Fire consumes a \\largearea radius \\glossterm{zone} from your location.
           Make an attack vs. Reflex against everything in the area.
           This typically means you include yourself as a target.
-          During your next action, this effect \\glossterm{repeats} in the same area.
+          At the start of your next turn, this effect \\glossterm{repeats} in the same area.
         `,
       },
       rank: 6,
@@ -324,7 +319,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       attack: {
         crit: MULTIHIT_CRIT,
-        hit: `\\damagerankone immediately, and again during your next action.`,
+        hit: `\\damagerankone immediately, and again at the end of the target's next turn.`,
         miss: DELAYED_HALF,
         targeting: `
           Make an attack vs. Reflex against everything in a \\smallarea cone from you.
@@ -341,7 +336,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       // Normal immediate damage would be dr5 (3.5 + 1.75dpp)
       attack: {
         crit: MULTIHIT_CRIT,
-        hit: `\\damagerankthree immediately, and again during your next action.`,
+        hit: `\\damagerankthree immediately, and again at the end of the target's next turn.`,
         miss: DELAYED_HALF,
         targeting: `
           Make an attack vs. Reflex against everything in a \\medarea cone from you.
@@ -408,7 +403,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         targeting: `
           For the duration of this spell, you can breathe fire like a dragon as a standard action.
           When you do, make an attack vs. Reflex against everything within a \\medarea cone from you.
-          After you breathe fire, you \\glossterm{briefly} cannot do so again.
+          You can't use this ability again next round.
         `,
       },
       rank: 3,
@@ -438,12 +433,12 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       // +1 effective rank for attune with cooldown
       attack: {
         hit: `
-          \\damageranktwo, and the target is \\glossterm{briefly} \\dazzled.
+          \\damageranktwo, and the target is \\briefly \\dazzled.
         `,
         targeting: `
           You can set creatures on fire simply by staring at them as a standard action.
           When you do, make an attack vs. Fortitude against a creature within \\shortrange.
-          After you stare at a creature in this way, you \\glossterm{briefly} cannot do so again.
+          You can't use this ability again next round.
         `,
       },
       rank: 1,
@@ -459,7 +454,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       functionsLike: {
         name: 'eyes of flame',
         exceptThat:
-          'the damage increases to \\damageranksix, and any \\glossterm{extra damage} is doubled. On a hit, the target also \\glossterm{briefly} treats you as being \\trait{invisible}.',
+          'the damage increases to \\damageranksix, and any \\glossterm{extra damage} is doubled. On a hit, the target also \\briefly treats you as being \\trait{invisible}.',
       },
       rank: 5,
       roles: ['burst', 'softener'],
@@ -495,9 +490,9 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       attack: {
         hit: `\\damagerankone.`,
         targeting: `
-          When you cast this spell, and during each of your subsequent actions, make an attack vs. Fortitude against any creature that you are either grappling or are \\grappled by.
+          At the end of your turn, make an attack vs. Fortitude against any creature that you are either grappling or are \\grappled by.
           In addition, whenever a creature makes a \\glossterm{melee} attack against you using a free hand or natural weapon, make a \\glossterm{reactive attack} vs. Fortitude against them.
-          You can only attack a given target with this spell once per \\glossterm{phase}.
+          You can only attack a given target with this spell once per turn.
         `,
       },
       narrative: `
@@ -605,7 +600,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Reflex against any creature sharing space with it.
           Generally, this is only possible for Large or larger creatures.
           In addition, whenever something passes through the the wall, you make a \\glossterm{reactive attack} vs. Reflex against it.
-          You can only attack a given target with this spell once per round.
+          You can only attack a given target with this spell once per turn.
         `,
       },
       rank: 2,
@@ -645,7 +640,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
           \\damagerankone.
         `,
         injury: `
-          The target takes \\damagerankone again during your next action.
+          The target takes \\damagerankone again at the end of its next turn.
         `,
         targeting: `
           Make an attack vs. Fortitude and Reflex against everything in a \\medarea cone.
@@ -666,7 +661,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
           \\damagerankfour.
         `,
         injury: `
-          The target takes \\damagerankfour again during your next action.
+          The target takes \\damagerankfour again at the end of its next turn.
         `,
         targeting: `
           Make an attack vs. Fortitude and Reflex against everything in a \\medarea cone.
@@ -766,7 +761,6 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       // A Medium line is about r1 normally, which would be dr3. Drop to dr2 for the
       // teleportation.
-      cost: TELEPORT_ATTACK_FATIGUE,
       attack: {
         hit: `\\damageranktwo.`,
         halfOnMiss: true,
@@ -785,7 +779,6 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       // A Large line is about r3 normally, which would be dr5. Drop to dr4 for the
       // teleportation.
-      cost: TELEPORT_ATTACK_FATIGUE,
       attack: {
         hit: `\\damagerankfour.`,
         halfOnMiss: true,
@@ -810,7 +803,6 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
           Whenever you use the \\ability{total defense} or \\ability{recover} ability, you can activate this ability.
           If you do, make an attack vs. Reflex against everything within a \\smallarea radius from you.
           Then, this ability is \\glossterm{dismissed}.
-          Unlike the \\ability{total defense} and \\ability{recover} abilities, this attack is not \\atSwift, so it takes effect during your normal action in the action phase.
         `,
       },
       rank: 2,
@@ -828,8 +820,8 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damageranktwo.
-          During your next action, the target takes \\damageranktwo again, and any \\glossterm{extra damage} also applies to this damage.
+          \\damageranktwo immediately, and again at the end of the target's next turn.
+          Any \\glossterm{extra damage} applies to both the initial damage and the delayed damage.
         `,
         targeting: `
           Make an attack vs. Fortitude with a -4 accuracy penalty against something adjacent to you.
@@ -849,8 +841,8 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankfive.
-          During your next action, the target takes \\damagerankfive again, and any \\glossterm{extra damage} also applies to this damage.
+          \\damagerankfive immediately, and again at the end of the target's next turn.
+          Any \\glossterm{extra damage} applies to both the initial damage and the delayed damage.
         `,
         targeting: `
           Make an attack vs. Fortitude with a -4 accuracy penalty against something adjacent to you.
@@ -871,8 +863,8 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankeight, and any \\glossterm{extra damage} is doubled.
-          During your next action, the target takes \\damagerankeight again, and any \\glossterm{extra damage} also applies to this damage.
+          \\damagerankeight immediately, and again at the end of the target's next turn.
+          Any \\glossterm{extra damage} applies to both the initial damage and the delayed damage.
         `,
         targeting: `
           Make an attack vs. Fortitude with a -4 accuracy penalty against something adjacent to you.
@@ -890,8 +882,8 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damageranktwo.
-          During your next action, the target takes \\damageranktwo again, and any \\glossterm{extra damage} also applies to this damage.
+          \\damageranktwo immediately, and again at the end of the target's next turn.
+          Any \\glossterm{extra damage} applies to both the initial damage and the delayed damage.
         `,
         targeting: `
           Make an attack vs. Fortitude with a -4 accuracy penalty against a living creature within \\medrange.
@@ -908,8 +900,8 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankfive.
-          During your next action, the target takes \\damagerankfive again, and any \\glossterm{extra damage} also applies to this damage.
+          \\damagerankfive immediately, and again at the end of the target's next turn.
+          Any \\glossterm{extra damage} applies to both the initial damage and the delayed damage.
         `,
         targeting: `
           Make an attack vs. Fortitude with a -4 accuracy penalty against a living creature within \\medrange.
@@ -928,14 +920,13 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       attack: {
         hit: `\\damagerankone.`,
         targeting: `
-          You are \\glossterm{briefly} \\empowered.
-          In addition, whenever a creature makes a \\glossterm{melee} attack against you this round, make a \\glossterm{reactive attack} vs. Reflex against them.
+          You are \\briefly \\empowered.
+          As a \\brief effect, whenever a creature makes a \\glossterm{melee} attack against you, make a \\glossterm{reactive attack} vs. Reflex against them.
         `,
       },
       roles: ['generator', 'retaliate'],
       rank: 1,
       scaling: 'damage',
-      tags: ['Swift'],
     },
 
     {
@@ -948,7 +939,6 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       roles: ['generator', 'retaliate'],
       rank: 5,
       scaling: 'damage',
-      tags: ['Swift'],
     },
   ],
 });

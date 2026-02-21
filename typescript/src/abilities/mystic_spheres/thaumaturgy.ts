@@ -4,7 +4,7 @@ import { BARRIER_COOLDOWN, CONDITION_CRIT } from '../constants';
 export const thaumaturgy: MysticSphere = {
   name: 'Thaumaturgy',
   shortDescription: 'Suppress and manipulate magical effects.',
-  sources: ['arcane', 'domain'],
+  sources: ['arcane', 'bardic', 'domain'],
 
   cantrips: [
     {
@@ -268,7 +268,7 @@ export const thaumaturgy: MysticSphere = {
 
       effect: `
         Whenever you cast a non-attunable spell, you can activate this effect as a \\glossterm{minor action}.
-        If you do, the spell \\glossterm{repeats} during your next action.
+        If you do, the spell \\glossterm{repeats} at the start of your next turn.
         After you enhance a spell in this way, this ability is \\glossterm{dismissed}.
       `,
       rank: 4,
@@ -399,28 +399,26 @@ export const thaumaturgy: MysticSphere = {
       name: 'Reflect Magic',
 
       effect: `
-        You are \\braced this round.
-        This is a \\atSwift effect, so it protects you from attacks during the current phase.
-        In addition, whenever a creature within \\medrange of you misses you with a \\magical attack this round, that creature treats itself as a target of that attack in addition to any other targets.
+        You are \\briefly protected by reflective magic.
+        This makes you \\glossterm{braced}.
+        In addition, whenever a creature within \\medrange of you misses you with a \\magical attack, that creature treats itself as a target of that attack in addition to any other targets.
         The attacker cannot choose to reduce its accuracy or damage against itself.
       `,
       rank: 2,
       roles: ['turtle'],
-      tags: ['Swift'],
     },
 
     {
       name: 'Greater Reflect Magic',
 
       effect: `
-        You are \\braced this round.
-        This is a \\atSwift effect, so it protects you from attacks during the current phase.
-        In addition, whenever a creature within \\medrange of you makes a \\magical attack against you this round, that creature treats itself as a target of that attack in addition to any other targets.
+        You are \\briefly protected by reflective magic.
+        This makes you \\glossterm{braced}.
+        In addition, whenever a creature within \\medrange of you makes a \\magical attack against you, that creature treats itself as a target of that attack in addition to any other targets.
         The attacker cannot choose to reduce its accuracy or damage against itself.
       `,
       rank: 7,
       roles: ['turtle'],
-      tags: ['Swift'],
     },
 
     {
@@ -464,7 +462,7 @@ export const thaumaturgy: MysticSphere = {
       name: 'Arcane Surge',
 
       effect: `
-        You are \\glossterm{briefly} \\maximized.
+        You are \\briefly \\maximized.
       `,
       rank: 1,
       roles: ['focus'],
@@ -474,7 +472,7 @@ export const thaumaturgy: MysticSphere = {
       name: 'Greater Arcane Surge',
 
       effect: `
-        You are \\glossterm{briefly} \\maximized and \\empowered.
+        You are \\briefly \\maximized and \\empowered.
       `,
       rank: 6,
       roles: ['focus'],
@@ -486,26 +484,22 @@ export const thaumaturgy: MysticSphere = {
       name: 'Arcane Fuel',
 
       effect: `
-        You take half damage from \\magical effects this round.
-        This is a \\atSwift effect, so it protects you from attacks during the current phase.
-        When you take damage from a magical effect this round, you become \\glossterm{briefly} \\empowered.
+        You \\briefly take half damage from \\magical effects.
+        When you take damage from a magical ability during this effect, you become \\briefly \\empowered.
       `,
       rank: 3,
       roles: ['focus', 'turtle'],
-      tags: ['Swift'],
     },
 
     {
       name: 'Greater Arcane Fuel',
 
       effect: `
-        You take half damage from \\magical effects this round.
-        This is a \\atSwift effect, so it protects you from attacks during the current phase.
-        When you take damage from a magical effect this round, you become \\glossterm{briefly} \\maximized.
+        You \\briefly take half damage from \\magical effects.
+        When you take damage from a magical ability during this effect, you become \\briefly \\maximized.
       `,
       rank: 7,
       roles: ['focus', 'turtle'],
-      tags: ['Swift'],
     },
 
     // +1dr for prereq, -1dr for empowered
@@ -515,7 +509,7 @@ export const thaumaturgy: MysticSphere = {
       attack: {
         hit: `
           \\damagerankthree.
-          You are also \\glossterm{briefly} \\empowered.
+          You are also \\briefly \\empowered.
         `,
         targeting: `
           Make an attack vs. Fortitude against a creature within \\medrange.
@@ -533,7 +527,7 @@ export const thaumaturgy: MysticSphere = {
       attack: {
         hit: `
           \\damageranksix, and any \\glossterm{extra damage} is doubled.
-          You are also \\glossterm{briefly} \\empowered.
+          You are also \\briefly \\empowered.
         `,
         targeting: `
           Make an attack vs. Fortitude against a creature within \\shortrange.
@@ -555,7 +549,7 @@ export const thaumaturgy: MysticSphere = {
           \\damageranksix, and any \\glossterm{extra damage} is doubled.
         `,
         injury: `
-          The target is \\glossterm{briefly} unable to use any \\magical active abilities.
+          The target is \\briefly unable to use any \\magical active abilities.
           This does not prevent its passive or triggered magical abilities from functioning normally.
           Once this effect ends, the target becomes \\glossterm{immune} to it until it takes a \\glossterm{short rest}.
         `,

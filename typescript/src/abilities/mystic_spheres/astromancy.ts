@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { MULTIHIT_CRIT, SWIFT_FATIGUE, SWIFT_FATIGUE_SELF } from '../constants';
+import { MULTIHIT_CRIT } from '../constants';
 
 export const astromancy: MysticSphere = {
   name: 'Astromancy',
@@ -11,7 +11,7 @@ export const astromancy: MysticSphere = {
     Unless otherwise specified, teleporation requires \\glossterm{line of sight}, \\glossterm{line of effect}, and an unoccupied destination on stable ground.
     For details, see \\pcref{Teleportation}.
 
-    \\spheredef{flicker}[flickered] Some spells from this sphere can cause creatures or objects to very briefly \\glossterm{teleport} to other locations.
+    \\spheredef{flicker}[flickered] Some spells from this sphere can cause creatures or objects to temporarily \\glossterm{teleport} to other locations.
     This is called flickering.
     If the space occupied by a flickered target is occupied or otherwise inaccessible when it returns, it instead reappears in the closest available open space.
     Flickering works even if the target is not on stable ground.
@@ -56,7 +56,7 @@ export const astromancy: MysticSphere = {
       name: 'Tactical Translocation',
 
       effect: `
-        Once per round, when you would make a melee \\glossterm{strike} or use an ability that requires \\glossterm{touch} on a creature other than yourself, you can first \\glossterm{teleport} up to 10 feet.
+        Once per turn, when you would make a melee \\glossterm{strike} or use an ability that requires \\glossterm{touch} on a creature other than yourself, you can first \\glossterm{teleport} up to 10 feet.
         Your destination must be adjacent to the target.
       `,
       rank: 3,
@@ -176,7 +176,6 @@ export const astromancy: MysticSphere = {
     {
       name: 'Translocation',
 
-      cost: SWIFT_FATIGUE_SELF,
       effect: `
         Choose either yourself or one unattended object or \\glossterm{ally} within \\medrange.
         If you choose something other than yourself, it must be Medium or smaller.
@@ -192,7 +191,6 @@ export const astromancy: MysticSphere = {
     {
       name: 'Distant Translocation',
 
-      cost: SWIFT_FATIGUE_SELF,
       functionsLike: {
         name: 'translocation',
         exceptThat:
@@ -208,7 +206,6 @@ export const astromancy: MysticSphere = {
     {
       name: 'Giant Translocation',
 
-      cost: SWIFT_FATIGUE_SELF,
       functionsLike: {
         name: 'translocation',
         exceptThat: 'the maximum size increases to Huge.',
@@ -283,7 +280,6 @@ export const astromancy: MysticSphere = {
     {
       name: 'Dimension Door',
 
-      cost: SWIFT_FATIGUE,
       effect: `
         You teleport to an unoccupied destination on a stable surface within 300 feet of you.
         You must clearly visualize the destination's appearance and have an approximate knowledge of its direction and distance from you.
@@ -387,7 +383,7 @@ export const astromancy: MysticSphere = {
         crit: MULTIHIT_CRIT,
         hit: `
           \\damagerankzero.
-          During your next action, the target takes \\damagerankzero again.
+          The target takes \\damagerankzero again at the end of its next turn.
         `,
         targeting: `
           Make an attack vs. Mental against something within \\medrange.
@@ -429,7 +425,7 @@ export const astromancy: MysticSphere = {
       attack: {
         hit: `
           The target \\sphereterm{flickers} to a nearby safe location in the Astral Expanse.
-          When it returns, it takes \\damageranksix, and it is \\glossterm{briefly} \\stunned.
+          When it returns, it takes \\damageranksix, and it is \\briefly \\stunned.
         `,
         targeting: `
           Make an attack vs. Mental against something within \\medrange.
@@ -475,7 +471,7 @@ export const astromancy: MysticSphere = {
       // Ranged slow is 2 EA, so r4.
       attack: {
         hit: `
-          The target is \\glossterm{briefly} \\slowed and unable to fly or glide.
+          The target is \\briefly \\slowed and unable to fly or glide.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{grounded} \\glossterm{enemies} in a \\smallarea radius within \\shortrange.
@@ -510,7 +506,7 @@ export const astromancy: MysticSphere = {
       },
       cost: `
         You must be touching a Small or larger area of water to cast this spell.
-        The water can be in a container you carry, as long as you are touching the container;
+        The water can be in a container you carry, as long as you are touching the container.
       `,
       narrative: `
         You create a connection to Aqua, the ocean planet, and summon a torrent of water.
@@ -520,26 +516,25 @@ export const astromancy: MysticSphere = {
       scaling: 'damage',
       tags: ['Water'],
     },
-    // Scary against melee enemies, hard to calculate EA
-    {
-      name: 'Dimensional Jitter',
+    // {
+    //   name: 'Dimensional Jitter',
 
-      effect: `
-        At the end of each \\glossterm{phase}, you may choose to \\glossterm{teleport} 10 feet horizontally in a random direction.
-      `,
-      narrative: `
-        The squad of furious orcs rush up to you again, ready to strike, but you teleport away from them just before their greataxes reach you.
-        Will they ever learn?
-      `,
-      rank: 5,
-      roles: ['attune'],
-      type: 'Attune',
-    },
+    //   effect: `
+    //     At the end of your turn, you may choose to \\glossterm{teleport} 10 feet horizontally in a random direction.
+    //   `,
+    //   narrative: `
+    //     The squad of furious orcs rush up to you again, ready to strike, but you teleport away from them just before their greataxes reach you.
+    //     Will they ever learn?
+    //   `,
+    //   rank: 5,
+    //   roles: ['attune'],
+    //   type: 'Attune',
+    // },
     {
       name: 'Dimension Walk',
 
       effect: `
-        Once per phase, you can teleport horizontally instead of moving using your \\glossterm{walk speed}.
+        Once during your turn, you can teleport horizontally instead of walking.
         Teleporting a given distance costs movement equal to that distance.
         If this teleportation fails for any reason, you still expend that movement.
       `,
@@ -554,9 +549,9 @@ export const astromancy: MysticSphere = {
       name: 'Astral Instability',
 
       effect: `
-        At the start of each phase, you may \\sphereterm{flicker} to a nearby safe location in the Astral Expanse.
-        You do not return until the end of the round.
-        After you flicker in this way, you \\glossterm{briefly} cannot flicker with this ability again.
+        At the start of your turn, you may \\sphereterm{flicker} to a nearby safe location in the Astral Expanse.
+        You do not return until your next turn.
+        After you flicker in this way, you can't flicker with this ability next round.
       `,
       narrative: `
         Armor and shields can offer some protection, but true defensive mastery comes from not being hit at all.
@@ -583,7 +578,7 @@ export const astromancy: MysticSphere = {
       },
       narrative: `
         The cultists were confident that they were safe behind their defensive wall of zombies.
-        When one of their number was unexpectedly replaced by a raging barbarian, they briefly discovered how wrong they were.
+        When one of their number was unexpectedly replaced by a raging barbarian, they discovered how wrong they were.
       `,
       rank: 4,
       roles: ['mobility'],
@@ -593,7 +588,6 @@ export const astromancy: MysticSphere = {
     {
       name: 'Transposition',
 
-      cost: SWIFT_FATIGUE,
       effect: `
         Choose two creatures from among yourself and your Medium or smaller \\glossterm{allies} within \\medrange.
         Both targets must be within \\shortrange of each other.
@@ -604,7 +598,7 @@ export const astromancy: MysticSphere = {
       `,
       narrative: `
         As your enemies drew close to you, they expected you to panic and run.
-        When you were unexpectedly replaced by a raging barbarian, they briefly discovered how wrong they were.
+        When you were unexpectedly replaced by a raging barbarian, they discovered how wrong they were.
       `,
       rank: 1,
       roles: ['mobility'],
@@ -612,7 +606,6 @@ export const astromancy: MysticSphere = {
     {
       name: 'Giant Transposition',
 
-      cost: SWIFT_FATIGUE,
       functionsLike: {
         name: 'transposition',
         exceptThat: 'the maximum size increases to Huge.',
@@ -664,7 +657,7 @@ export const astromancy: MysticSphere = {
       name: 'Phasestep',
 
       effect: `
-        When you move using one of your movement speeds, you can move through creatures freely.
+        When you move using your \\glossterm{speed}, you can move through creatures freely.
         This does not allow you to move through inanimate objects.
         You must still end your movement in an unoccupied space.
         If you are not able to move normally, such as if you are \\grappled, this spell does not help you.
@@ -709,14 +702,24 @@ export const astromancy: MysticSphere = {
       name: 'Blink',
 
       effect: `
-        All attacks against you this round have a 20\\% \\glossterm{failure chance}.
-        In addition, you gain a +2 bonus to all defenses.
-        This ability has the \\abilitytag{Swift} tag, so it protects you from attacks during the current phase.
+        You \\briefly blink in and out of existence in response to attacks.
+        This causes all attacks against you to have a 50\\% \\glossterm{failure chance}.
       `,
       narrative: `You jump into the Astral Expanse the instant before a sword slashes through the space you left behind.`,
       rank: 1,
       roles: ['turtle'],
-      tags: ['Swift'],
+    },
+    {
+      name: 'Empowered Blink',
+
+      // 0.7 + 0.5 EA, though they have a bit of antisynergy
+      effect: `
+        You \\briefly blink in and out of existence in response to attacks.
+        This makes you \\braced, and causes all attacks against you to have a 50\\% \\glossterm{failure chance}.
+      `,
+      narrative: `You jump into the Astral Expanse the instant before a sword slashes through the space you left behind.`,
+      rank: 6,
+      roles: ['turtle'],
     },
     {
       name: 'Distant Spells',
@@ -751,12 +754,14 @@ export const astromancy: MysticSphere = {
         A shimmering portal appears in each of the two squares.
         Each portal appears as an opaque colored disc five feet in diameter.
 
-        Once per phase, when a Medium or smaller creature or object touches the portal in its square, it passes through that portal.
+        % TODO: solve delaying until the start of the next round to make sure you're the
+        % first one through the portal
+        Once per round, when a Medium or smaller creature or object touches the portal in its square, it passes through that portal.
         If it does, it \\glossterm{teleports} to the portal in the other chosen square, regardless of \\glossterm{line of sight} or \\glossterm{line of effect} between the two portals.
         Objects maintain their speed when passing through the portal, but moving objects have an unpredictable trajectory, so shooting projectiles through a portal is ineffective.
 
         If multiple creatures attempt to pass through the portals simultaneously, they roll \\glossterm{initiative} to determine the first creature into the portal.
-        A creature that attempts to pass through the portal in a phase where the portal was already activated stops its movement in the square with the portal.
+        A creature that attempts to pass through the portal in a round where the portal was already activated stops its movement in the square with the portal.
       `,
       narrative: `
         You create a pair of portals that allow instant passage from one to the other.
@@ -786,7 +791,7 @@ export const astromancy: MysticSphere = {
       functionsLike: {
         name: 'twinned portals',
         exceptThat:
-          'the portals function any number of times per phase intead of only once per phase.',
+          'the portals function any number of times per round intead of only once per round.',
       },
       narrative: `
         You create a pair of portals that allow instant passage from one to the other.

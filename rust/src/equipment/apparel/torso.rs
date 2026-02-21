@@ -20,24 +20,24 @@ fn belts() -> Vec<Apparel> {
     apparel.push(Belt(StandardItem {
         name: String::from("Belt of Regeneration"),
         rank: 3,
-        short_description: String::from("Regain 1d6 hit points per round"),
+        short_description: String::from("Regain 1d6 hit points each turn"),
         description: String::from(
             r"
-            At the end of each round, you regain 1d6 \glossterm{hit points}.
+            At the end of your turn, you regain 1d6 \glossterm{hit points}.
         ",
         ),
         tags: vec![AbilityTag::Attune(AttuneType::Deep)],
         upgrades: vec![
             ItemUpgrade::new(
                 5,
-                "Regain 3d6 hit points per round",
+                "Regain 3d6 hit points each turn",
                 "
                 The healing increases to 3d6.
             ",
             ),
             ItemUpgrade::new(
                 7,
-                "Regain 5d10 hit points per round",
+                "Regain 5d10 hit points each turn",
                 "
                 The healing increases to 5d10.
             ",
@@ -138,7 +138,7 @@ fn belts() -> Vec<Apparel> {
                 The healing increases to $dr7l.
             "),
         ],
-        tags: vec![AbilityTag::Swift, AbilityTag::personal_attunement()],
+        tags: vec![AbilityTag::personal_attunement()],
         ..Apparel::default()
     }));
 
@@ -273,14 +273,14 @@ fn cloaks() -> Vec<Apparel> {
         short_description: String::from("Braced while at zero HP"),
         description: String::from(
             r"
-            While you have no remaining \glossterm{hit points}, you are \braced.
-        ",
+                While you have no remaining \glossterm{hit points}, you are \braced.
+            ",
         ),
         upgrades: vec![ItemUpgrade::new(
             4,
-            "Braced and steeled while at zero HP",
+            "Braced and take half damage while at zero HP",
             r"
-                While you have no remaining \glossterm{hit points}, you are also \steeled.
+                While you have no remaining \glossterm{hit points}, you also take half damage from all sources.
             ",
         )],
         ..Apparel::default()
@@ -365,7 +365,6 @@ fn cloaks() -> Vec<Apparel> {
         short_description: String::from("Deals $dr3l damage when you recover"),
         description: String::from(r"
             Whenever you use the \ability{recover} ability, make an attack vs. Reflex against all \glossterm{enemies} within a \smallarea radius from you.
-            This attack is not \atSwift, even though the \ability{recover} ability is Swift.
             \hit \damagerankthreelow.
             \miss Half damage.
         "),

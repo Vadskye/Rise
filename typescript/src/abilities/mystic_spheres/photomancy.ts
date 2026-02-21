@@ -5,7 +5,7 @@ export const photomancy: MysticSphere = {
   name: 'Photomancy',
   hasImage: true,
   shortDescription: 'Create and manipulate light to hinder foes and conceal allies.',
-  sources: ['arcane', 'divine', 'nature', 'pact'],
+  sources: ['arcane', 'bardic', 'divine', 'nature', 'pact'],
 
   cantrips: [
     {
@@ -62,7 +62,7 @@ export const photomancy: MysticSphere = {
       // The area is rank 2, which is a little awkward.
       attack: {
         hit: `
-          The target is \\glossterm{briefly} \\dazzled and \\stunned.
+          The target is \\briefly \\dazzled and \\stunned.
         `,
         targeting: `
           Make an attack vs. Reflex and Mental against each \\glossterm{enemy} within a \\medarea cone from you.
@@ -130,7 +130,7 @@ export const photomancy: MysticSphere = {
         `,
         targeting: `
           Make an attack vs. Fortitude against all creatures in a \\medarea cone from you.
-          In addition, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around you.
+          In addition, \\glossterm{brilliant illumination} \\briefly fills a 60 foot radius around you.
         `,
       },
       rank: 2,
@@ -150,7 +150,7 @@ export const photomancy: MysticSphere = {
         `,
         targeting: `
           Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\largearea radius from you.
-          In addition, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around the area.
+          In addition, \\glossterm{brilliant illumination} \\briefly fills a 60 foot radius around the area.
         `,
       },
       rank: 4,
@@ -192,7 +192,7 @@ export const photomancy: MysticSphere = {
         `,
         targeting: `
           Make an attack vs. Reflex and Fortitude against something within \\shortrange.
-          Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around a 5 ft. wide straight line between you and the target.
+          Whether you hit or miss, \\glossterm{brilliant illumination} \\briefly fills a 60 foot radius around a 5 ft. wide straight line between you and the target.
         `,
       },
       rank: 1,
@@ -214,7 +214,7 @@ export const photomancy: MysticSphere = {
         `,
         targeting: `
           Make an attack vs. Reflex and Fortitude against something within \\shortrange.
-          Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around a 5 ft. wide straight line between you and the target.
+          Whether you hit or miss, \\glossterm{brilliant illumination} \\briefly fills a 60 foot radius around a 5 ft. wide straight line between you and the target.
         `,
       },
       rank: 4,
@@ -236,7 +236,7 @@ export const photomancy: MysticSphere = {
         `,
         targeting: `
           Make an attack vs. Reflex and Fortitude against something within \\shortrange.
-          Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around a 5 ft. wide straight line between you and the target.
+          Whether you hit or miss, \\glossterm{brilliant illumination} \\briefly fills a 60 foot radius around a 5 ft. wide straight line between you and the target.
         `,
       },
       rank: 7,
@@ -258,8 +258,8 @@ export const photomancy: MysticSphere = {
         `,
         halfOnMiss: true,
         targeting: `
-          When you cast this spell, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius \\glossterm{emanation} around you.
-          During your next action, make a \\glossterm{reactive attack} vs. Fortitude and Reflex against all \\glossterm{enemies} within that area, and brilliant illumination briefly fills a 60 foot radius around that area.
+          When you cast this spell, \\glossterm{brilliant illumination} \\briefly fills a 60 foot radius \\glossterm{emanation} around you.
+          At the start of your next turn, make a \\glossterm{reactive attack} vs. Fortitude and Reflex against all \\glossterm{enemies} within that area, and brilliant illumination briefly fills a 60 foot radius around that area.
         `,
       },
       rank: 5,
@@ -279,9 +279,9 @@ export const photomancy: MysticSphere = {
         halfOnMiss: true,
         targeting: `
           You create a field of light in a \\medarea radius \\glossterm{zone} from your location.
-          \\glossterm{Brilliant illumination} \\glossterm{briefly} fills a 60 foot radius from the area.
+          \\glossterm{Brilliant illumination} \\briefly fills a 60 foot radius from the area.
           Make an attack vs. Fortitude against all \\glossterm{enemies} in the area.
-          During your next action, this effect \\glossterm{repeats} in the same area.
+          At the start of your next turn, this effect \\glossterm{repeats} in the same area.
         `,
       },
       rank: 3,
@@ -316,7 +316,7 @@ export const photomancy: MysticSphere = {
           Each cylinder is 30 feet high.
           Make an attack vs. Reflex against all creatures in any of those areas.
           The areas can overlap, but this does not allow you to make multiple attacks against the same creature.
-          Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius from each area.
+          Whether you hit or miss, \\glossterm{brilliant illumination} \\briefly fills a 60 foot radius from each area.
         `,
       },
       rank: 4,
@@ -331,7 +331,7 @@ export const photomancy: MysticSphere = {
       // use a r5 area, and we drop by 1 rank for the delay.
       attack: {
         hit: `
-          The target is \\glossterm{briefly} \\stunned.
+          The target is \\briefly \\stunned.
         `,
         targeting: `
           You create a \\medarea radius \\glossterm{zone} of multicolored patterns within \\shortrange.
@@ -353,7 +353,7 @@ export const photomancy: MysticSphere = {
         This ability provides no defensive benefit against creatures immune to \\abilitytag{Visual} abilities.
       `,
       narrative: `Your physical outline is distorted so it appears blurred, shifting, and wavering.`,
-      rank: 3,
+      rank: 5,
       roles: ['attune'],
       tags: ['Visual'],
       type: 'Attune',
@@ -362,17 +362,16 @@ export const photomancy: MysticSphere = {
     {
       name: 'Sudden Mirrorswarm',
 
-      // 50% miss chance for 2 rounds of attacks is 8 * 0.5 * 0.25 = 1 EA.
+      // 50% miss chance for 2 rounds of attacks is 8 * 0.5 * 0.3 = 1.2 EA.
       effect: `
-        You can activate this spell as a \\glossterm{free action}.
+        You can activate this spell as a \\glossterm{minor action}.
         When you do, a burst of illusory duplicates appear from your body, each appearing to performing a different action.
-        All \\glossterm{targeted} attacks against you \\glossterm{briefly} have a 50\\% \\glossterm{miss chance}.
-        After that time, this ability is \\glossterm{dismissed}.
+        All \\glossterm{targeted} attacks against you \\briefly have a 50\\% \\glossterm{miss chance}.
+        You can activate this spell twice before it is \\glossterm{dismissed}.
 
-        This is a \\atSwift effect, so it protects you from attacks during the current phase.
-        It provides no defensive benefit against creatures immune to \\abilitytag{Visual} abilities.
+        This ability provides no defensive benefit against creatures immune to \\abilitytag{Visual} abilities.
       `,
-      rank: 3,
+      rank: 4,
       roles: ['attune'],
       tags: ['Visual'],
       type: 'Attune',
@@ -432,7 +431,7 @@ export const photomancy: MysticSphere = {
         exceptThat:
           'the images are recreated immediately after being destroyed, so they never run out.',
       },
-      rank: 5,
+      rank: 7,
       roles: ['attune'],
       tags: ['Visual'],
       type: 'Attune (deep)',
@@ -443,7 +442,7 @@ export const photomancy: MysticSphere = {
 
       effect: `
         You create an illusory duplicate of yourself overlayed on your body.
-        Whenever you move using one of your movement speeds, you may also move the illusory duplicate the same distance in any direction.
+        Whenever you move using your \\glossterm{speed}, you may also move the illusory duplicate the same distance in any direction.
         If the duplicate was sharing a space with you before this movement, onlookers must make a DV 20 Awareness check to identify which is the real you and which is the duplicate.
 
         All of your duplicate's defenses are 0.
@@ -486,7 +485,7 @@ export const photomancy: MysticSphere = {
       // -0.2 EA, or 0.6 total, so r2 total with damage.
       attack: {
         hit: `
-          \\damageranktwolow, and the target \\glossterm{briefly} suffers one of the following effects, chosen randomly: \\dazzled, \\frightened by you, \\goaded by you, or -2 Reflex defense.
+          \\damageranktwolow, and the target \\briefly suffers one of the following effects, chosen randomly: \\dazzled, \\frightened by you, \\goaded by you, or -2 Reflex defense.
         `,
         targeting: `
           Make an attack vs. Reflex against one creature within \\shortrange.
@@ -505,7 +504,7 @@ export const photomancy: MysticSphere = {
       // Baseline would be r2, we increase to with 5 +1 area rank and extended area scaling for a total of area rank 6.
       attack: {
         hit: `
-          \\damagerankfourlow, and the target \\glossterm{briefly} suffers one of the following effects, chosen randomly: \\dazzled, \\frightened by you, \\goaded by you, or -2 Reflex defense.
+          \\damagerankfourlow, and the target \\briefly suffers one of the following effects, chosen randomly: \\dazzled, \\frightened by you, \\goaded by you, or -2 Reflex defense.
         `,
         halfOnMiss: true,
         targeting: `
@@ -521,7 +520,6 @@ export const photomancy: MysticSphere = {
     {
       name: 'Lightbeam Dash',
 
-      cost: 'One optional \\glossterm{fatigue level}. If you pay this cost, the spell becomes \\abilitytag{Swift}.',
       attack: {
         // TODO: dr2 or dr3?
         hit: `\\damagerankthreelow.`,
@@ -540,7 +538,6 @@ export const photomancy: MysticSphere = {
     {
       name: 'Distant Lightbeam Dash',
 
-      cost: 'One optional \\glossterm{fatigue level}. If you pay this cost, the spell becomes \\abilitytag{Swift}.',
       attack: {
         hit: `\\damagerankfivelow.`,
         halfOnMiss: true,
@@ -586,7 +583,7 @@ export const photomancy: MysticSphere = {
       // Reactive brief dazzle is 1.2 EA, and r1 deep attunement is 1.5 EA.
       // That gives us some vague ranks to increase to medarea radius?
       attack: {
-        hit: `The target is \\glossterm{briefly} \\dazzled.`,
+        hit: `The target is \\briefly \\dazzled.`,
         targeting: `
           You are surrounded by a \\medarea radius \\glossterm{emanation} of \\glossterm{brilliant illumination}.
           Whenever an \\glossterm{enemy} enters that area, make a \\glossterm{reactive attack} vs. Fortitude against them.
@@ -660,18 +657,17 @@ export const photomancy: MysticSphere = {
 
       // TODO: actual EA calcs
       attack: {
-        hit: `The target is \\glossterm{briefly} \\dazzled.`,
+        hit: `The target is \\briefly \\dazzled.`,
         halfOnMiss: true,
         targeting: `
-          You are \\braced this round.
-          This is a \\atSwift effect, so it protects you from attacks during the current phase.
-          In addition, whenever a creature makes a \\glossterm{melee} attack against you this round, make a \\glossterm{reactive attack} vs. Reflex against them.
+          You are \\briefly protected by a field of light.
+          The light makes you \\braced.
+          In addition, whenever a creature within \\medrange attacks you, make a \\glossterm{reactive attack} vs. Reflex against them.
         `,
       },
       roles: ['turtle', 'retaliate'],
       rank: 1,
       scaling: 'accuracy',
-      tags: ['Swift'],
     },
 
     {
@@ -683,24 +679,23 @@ export const photomancy: MysticSphere = {
         hit: `The target is \\dazzled as a \\glossterm{condition}.`,
         halfOnMiss: true,
         targeting: `
-          You are \\braced this round.
-          This is a \\atSwift effect, so it protects you from attacks during the current phase.
-          In addition, whenever a creature makes a \\glossterm{melee} attack against you this round, make a \\glossterm{reactive attack} vs. Reflex against them.
+          You are \\briefly protected by a field of light.
+          The light makes you \\braced.
+          In addition, whenever a creature within \\medrange attacks you, make a \\glossterm{reactive attack} vs. Reflex against them.
         `,
       },
       roles: ['turtle', 'retaliate'],
       rank: 5,
       scaling: 'accuracy',
-      tags: ['Swift'],
     },
 
     {
       name: 'Focusing Lens',
 
       effect: `
-        You are \\glossterm{briefly} \\focused.
+        You are \\briefly \\focused.
         In addition, choose something within \\longrange.
-        You \\glossterm{briefly} gain a \\plus2 accuracy bonus against that target.
+        You briefly gain a \\plus2 accuracy bonus against that target.
       `,
       rank: 1,
       roles: ['focus'],
@@ -710,9 +705,9 @@ export const photomancy: MysticSphere = {
       name: 'Greater Focusing Lens',
 
       effect: `
-        You are \\glossterm{briefly} \\focused.
+        You are \\briefly \\focused.
         In addition, choose something within \\distrange.
-        You \\glossterm{briefly} gain a \\plus4 accuracy bonus against that target.
+        You briefly gain a \\plus4 accuracy bonus against that target.
       `,
       rank: 4,
       roles: ['focus'],

@@ -273,7 +273,6 @@ function addBugbears(grimoire: Grimoire) {
           creature.addWeaponMult('heavy flail');
           creature.addManeuver('Weather the Storm', { usageTime: 'elite' });
           creature.addManeuver('Invigoration', { usageTime: 'elite' });
-          creature.addManeuver('Defensive Stance', { usageTime: 'elite' });
         },
       ],
     ],
@@ -856,7 +855,7 @@ function addNecromancers(grimoire: Grimoire) {
               hit: '\\damagerankfour.',
               // A true lifesteal grasp should be rank 6, but that seems strong when they
               // don't have to pay a fatigue cost.
-              injury: 'You regain \\hprankfive at the end of the round.',
+              injury: 'You regain \\hprankfive.',
               targeting: `
               You must have a \\glossterm{free hand} to cast this spell.
 
@@ -913,7 +912,7 @@ function addNecromancers(grimoire: Grimoire) {
                 \\damagerankfive.
               `,
               injury: `
-                You regain \\hprankeight at the end of the round.
+                You regain \\hprankeight.
               `,
               targeting: `
                 Make an attack vs. Fortitude against one living creature within \\medrange.

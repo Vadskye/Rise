@@ -133,7 +133,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                 Your benefits from each element improve.
                 \begin{raggeditemize}
                     \item Air: You gain a slow \glossterm{fly speed} with a maximum height of 15 feet (see \pcref{Flight}).
-                    As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
+                    As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit this turn.
                     \item Earth: You gain a \plus1 bonus to your Brawn defense.
                     \item Fire: You are immune to \atFire attacks.
                     \item Water: Your swim speed increases to average.
@@ -151,7 +151,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                     \abilitytags \abilitytag{Sustain} (attunable, minor)
                     You can control either air, earth, fire, or water within a \hugearea \glossterm{zone} from your location.
                     Each element has different limitations on its ability to move, as described below.
-                    Once per round as a \glossterm{free action}, you can change how you direct your chosen element, but you must still control the same element.
+                    Once per turn as a \glossterm{free action}, you can change how you direct your chosen element, but you must still control the same element.
                     \begin{raggeditemize}
                         \item Air: You can change the wind speed of air by up to 30 miles per hour, to a maximum total speed of 40 miles per hour.
                             If you reduce the air's speed to 0 and then increase it again, you can change the direction the air blows.
@@ -322,7 +322,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                 You can also spend \glossterm{insight points} to learn one additional \textit{wild aspect} per \glossterm{insight point}.
 
                 As a \glossterm{standard action}, you can gain the effects of one wild aspect that you know.
-                You cannot change your wild aspect more than once per round.
+                You cannot change your wild aspect more than once per turn.
                 That effect lasts until you activate a different wild aspect you know or until you dismiss it.
 
                 The abilities in the list below describe the effects of the aspect.
@@ -348,7 +348,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{magicalactiveability}{Form of the Bull}{Standard action}
                         \rankline
-                        You can move your full movement speed when you push a creature with the \ability{shove} ability even if you do not get a critical hit (see \pcref{Shove}).
+                        You can move your full \glossterm{speed} when you push a creature with the \ability{shove} ability.
                         In addition, your head transforms, granting you a gore \glossterm{natural weapon} (see \tref{Natural Weapons}).
 
                         \rankline
@@ -385,7 +385,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         \rankline
                         \rank{4} You grow wings, granting you an average glide speed (see \pcref{Gliding}).
                         \rank{7} You gain an average \glossterm{fly speed} with a maximum height of 30 feet (see \pcref{Flight}).
-                        As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
+                        As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit this turn.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Form of the Hound}{Standard action}
@@ -464,7 +464,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         \rankline
                         You do not gain hunger or thirst while in natural sunlight.
                         When you leave natural sunlight, you continue gaining hunger or thirst at your normal rate, ignoring any time you spent in natural sunlight.
-                        In addition, as long as you are in natural sunlight, you regain hit points equal to half your \glossterm{power} at the end of each round.
+                        In addition, as long as you are in natural sunlight, you regain hit points equal to half your \glossterm{power} at the end of your turn.
                         \rankline
                         % This is about as strong as a r3 deep attunement - class feature plus natural sunlight requirement is probably enough?
                         \rank{4} The healing increases to be equal to your \glossterm{power}.
@@ -621,11 +621,8 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
 
                     % TODO: actual scaling math
                     \rankline
-                    \rank{2} The animal gains a \plus1 bonus to all defenses.
                     \rank{3} The animal's \glossterm{power} becomes equal to your power.
-                    \rank{4} The animal gains a \plus1 \glossterm{accuracy} bonus with \glossterm{strikes}.
                     \rank{5} The animal's strikes deal double \glossterm{weapon damage}.
-                    \rank{6} The accuracy bonus increases to \plus2.
                     \rank{7} The animal's strikes deal triple \glossterm{weapon damage}.
                 \end{magicalattuneability}
 

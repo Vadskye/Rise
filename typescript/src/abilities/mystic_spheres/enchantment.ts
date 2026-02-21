@@ -5,7 +5,7 @@ export const enchantment: MysticSphere = {
   name: 'Enchantment',
   hasImage: true,
   shortDescription: 'Enchant the minds of your foes and allies.',
-  sources: ['arcane', 'divine', 'soulkeeper'],
+  sources: ['arcane', 'bardic', 'divine', 'soulkeeper'],
 
   cantrips: [
     {
@@ -28,11 +28,11 @@ export const enchantment: MysticSphere = {
 
       attack: {
         hit: `
-          During the next round, the target must repeat the same standard action that it took this round if possible.
+          During its next turn, the target must repeat the same standard action that it took during its most recent turn if possible.
           It can choose different targets or otherwise make different decisions about its action, but the action must be the same.
           This does not affect its other actions, such as movement.
           If it is unable to take the same standard action, it can act normally.
-          For example, if the target used the \\ability{recover} ability this round, which can only be used once per short rest, its actions would not be restricted next round.
+          For example, if the target used the \\ability{recover} ability during its most recent turn, its actions would not be restricted next round.
 
           After the target repeats or fails to repeat its action in this way, it becomes immune to this effect until it finishes a \\glossterm{short rest}.
         `,
@@ -122,7 +122,7 @@ export const enchantment: MysticSphere = {
         hit: `
           As a \\glossterm{condition}, the target is compelled to dance.
           It can spend a \\glossterm{move action} to dance, if it is physically capable of dancing.
-          At the end of each movement phase, if the target did not dance during that phase, it takes a -1 penalty to its defenses as the compulsion intensifies.
+          At the end of its turn, if the target did not dance during that turn, it takes a -1 penalty to its defenses as the compulsion intensifies.
           This penalty stacks each round up to a maximum of -4.
           When the target dances, it resets its penalties to 0.
         `,
@@ -160,7 +160,7 @@ export const enchantment: MysticSphere = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          The target is \\glossterm{briefly} \\goaded by you.
+          The target is \\briefly \\goaded by you.
           If it \\glossterm{injured}, it is also goaded by you as a \\glossterm{condition}.
         `,
         targeting: `
@@ -180,7 +180,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         hit: `
-          If the target is \\glossterm{injured}, it is \\glossterm{briefly} \\confused.
+          If the target is \\glossterm{injured}, it is \\briefly \\confused.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius within \\shortrange.
@@ -346,7 +346,7 @@ export const enchantment: MysticSphere = {
       name: 'Fearsome Aura',
 
       attack: {
-        hit: `The target is \\glossterm{briefly} \\frightened by you.`,
+        hit: `The target is \\briefly \\frightened by you.`,
         targeting: `
           Whenever an \\glossterm{enemy} enters a \\medarea radius \\glossterm{emanation} from you, make a \\glossterm{reactive attack} vs. Mental against them with a \\plus2 accuracy bonus.
           After you attack a creature this way, it becomes immune to this attack from you until it finishes a \\glossterm{short rest}.
@@ -365,7 +365,7 @@ export const enchantment: MysticSphere = {
       name: 'Intense Fearsome Aura',
 
       attack: {
-        hit: `The target is \\panicked by you this round.`,
+        hit: `The target is \\panicked by you until your next turn.`,
         targeting: `
           Whenever an \\glossterm{enemy} enters a \\largearea radius \\glossterm{emanation} from you, make a \\glossterm{reactive attack} vs. Mental against them.
           After you attack a creature this way, it becomes immune to this attack from you until it finishes a \\glossterm{short rest}.
@@ -405,7 +405,7 @@ export const enchantment: MysticSphere = {
           This spell has no \\glossterm{verbal components}.
 
           Make an attack vs. Mental against one creature within \\medrange.
-          You take a -10 penalty to \\glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of the last round.
+          You take a -10 penalty to \\glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of your last turn.
         `,
       },
       rank: 3,
@@ -447,7 +447,7 @@ export const enchantment: MysticSphere = {
         `,
         targeting: `
           Make an attack vs. Mental against all creatures in a \\largearea radius from you.
-          You take a -10 penalty to \\glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of the last round.
+          You take a -10 penalty to \\glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of your last turn.
         `,
       },
       rank: 3,
@@ -601,7 +601,7 @@ export const enchantment: MysticSphere = {
       // Don't scale enemy count because action skip scales strongly with enemy count.
       attack: {
         hit: `
-          If the target is \\glossterm{injured}, it \\glossterm{briefly} sees all creatures as its \\glossterm{enemies}.
+          If the target is \\glossterm{injured}, it \\briefly sees all creatures as its \\glossterm{enemies}.
           It is compelled to attack the creature closest to it, choosing randomly between equally close creatures.
           After this effect ends, the target becomes immune to this spell until it finishes a \\glossterm{short rest}.
         `,
@@ -660,14 +660,13 @@ export const enchantment: MysticSphere = {
       effect: `
         Chose yourself or one \\glossterm{ally} within \\medrange.
         The target regains \\glossterm{hit points} equal to 1d8 \\add your power.
-        In addition, it gains a +2 bonus to its Mental defense this round.
+        In addition, it \\briefly gains a +2 bonus to its Mental defense.
       `,
       rank: 2,
       roles: ['healing', 'boon', 'exertion'],
       // Flat would be 1d10, but power scaling means we shouldn't scale too much. TODO:
       // math.
       scaling: { special: 'The recovery increases by 2 for each rank beyond 2.' },
-      tags: ['Swift'],
     },
 
     {
@@ -679,14 +678,13 @@ export const enchantment: MysticSphere = {
       effect: `
         Chose yourself or one \\glossterm{ally} within \\medrange.
         The target regains \\glossterm{hit points} equal to 1d10 plus 1d10 per 2 power.
-        In addition, it gains a +4 bonus to its Mental defense this round.
+        In addition, it \\briefly gains a +4 bonus to its Mental defense.
       `,
       rank: 6,
       roles: ['healing', 'boon', 'exertion'],
       // Flat would be 3d10, but power scaling means we shouldn't scale too much. TODO:
       // math.
       scaling: { special: 'The recovery increases by 1d10 for each rank beyond 6.' },
-      tags: ['Swift'],
     },
     {
       name: 'Speak Only Truth',
@@ -713,7 +711,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         hit: `
-          The target is \\glossterm{briefly} \\frightened by you.
+          The target is \\briefly \\frightened by you.
         `,
         targeting: `
           Whenever an \\glossterm{enemy} enters a \\largearea radius \\glossterm{emanation} from you, make a \\glossterm{reactive attack} vs. Mental against them.
@@ -771,7 +769,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankfive, and the target is \\glossterm{briefly} \\stunned.
+          \\damagerankfive, and the target is \\briefly \\stunned.
         `,
         injury: `
           The target is stunned as a \\glossterm{condition}.
@@ -794,7 +792,7 @@ export const enchantment: MysticSphere = {
       // -1dr for debuff, -1d for +2a
       attack: {
         hit: `
-          \\damagerankthree, and the target \\glossterm{briefly} takes a \\minus2 penalty to its Mental defense.
+          \\damagerankthree, and the target \\briefly takes a \\minus2 penalty to its Mental defense.
         `,
         targeting: `
           Make an attack vs. Mental with a \\plus2 accuracy bonus against one creature within \\medrange.

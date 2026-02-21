@@ -1,6 +1,11 @@
+---
+trigger: model_decision
+description: When interacting with equipment: weapons, armor, magic apparel, and consumables
+---
+
 # Rise Game Knowledge: Equipment
 
-This memory details key aspects of the Rise game system related to equipment, derived from editing `comprehensive_codex/Equipment.tex`. This information is crucial for understanding how items function within the game and for future tasks involving equipment rules.
+This memory details key aspects of the Rise game system related to equipment, derived from editing `comprehensive_codex/Equipment.tex`. This information is useful for understanding how items function within the game.
 
 ## Core Concepts and Interconnections
 
@@ -60,16 +65,29 @@ This memory details key aspects of the Rise game system related to equipment, de
 - **Barding:** Armor for non-humanoid shapes; reduces Armor defense bonus by 2. Must be custom-made.
 - **Multiple Armors:** Cannot benefit from multiple body armor sets. Multiple shields stack encumbrance but use the highest Armor/Reflex bonus; all special properties apply.
 
-### 6. Special Materials (Weapons & Armor)
+### 1.3. Weapon Special Materials
 
-- **Nonmagical Enhancement:** Special materials alter weapon/armor properties without being magical.
-- **Magic Item Incompatibility:** Special material items cannot have magic item properties, but can be `legacy items`.
+Nonmagical weapons can be made from special materials that alter their properties. A weapon made from a special material cannot have magic item properties, but can be `legacy items`.
+
+| Material | Special Effect | Item Rank (Cost) |
+| :--- | :--- | :--- |
+| Adamantine | +2 extra damage, double damage to objects, extra weight | 5 (2,500 gp) |
+| Adamantine, pure | +1d8 extra damage, double damage to objects, extra weight | 8 (312,500 gp) |
+| Cold iron | Harmful to magic-based creatures (e.g., fey) | 2 (20 gp) |
+| Diamondsteel | +1 accuracy with critical hits | 3 (100 gp) |
+| Diamondsteel, pure | +2 accuracy with critical hits | 5 (2,500 gp) |
+| Dragonfang | Deals energy damage (based on dragon type) | 3 (100 gp) |
+| Dragonfang, ancient | +2 extra damage, deals energy damage, grants breath attack | 6 (12,500 gp) |
+| Mithral | Lighter | 4 (500 gp) |
+| Mithral, pure | +1 accuracy, lighter | 7 (12,500 gp) |
+| Silver | Harmful to creatures vulnerable to silver | 2 (20 gp) |
+| Sanctified silver | +2 extra damage, silver vulnerabilities | 6 (12,500 gp) |
+| Starmetal | +2 extra damage, -1 accuracy, extra weight | 3 (100 gp) |
+| Starmetal, pure | +1d6 extra damage, -1 accuracy, extra weight | 6 (12,500 gp) |
+| Voidstone | +1d4 extra damage, extremely heavy, Earth tag | 4 (500 gp) |
+| Voidstone, pure | +1d10 extra damage, extremely heavy, Earth tag | 7 (12,500 gp) |
+
 - **Single Benefit:** A weapon/armor only gains benefits from one special material, even if multiple are present.
-- **Weapon Specifics:**
-    - `Adamantine`: Extra damage, double damage to objects, not `lightweight`.
-    - `Cold Iron`: Vulnerability to fey/demons.
-    - `Diamondsteel`: Accuracy bonus for critical hits.
-    - `Dragonfang`: Energy damage, associated dragon tag.
     - `Mithral`: Reduces weight/encumbrance, can change weapon tags (`Light`, `Versatile Grip`).
     - `Silvered`: Vulnerability to lycanthropes/undead.
     - `Starmetal`: Extra damage, accuracy penalty, not `lightweight`.

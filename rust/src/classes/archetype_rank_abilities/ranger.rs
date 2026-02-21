@@ -44,11 +44,8 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
 
                     % TODO: awkward scaling
                     \rankline
-                    \rank{2} The animal gains a \plus1 bonus to all defenses.
                     \rank{3} The animal's \glossterm{power} becomes equal to your \glossterm{power}.
-                    \rank{4} The animal gains a \plus1 \glossterm{accuracy} bonus with \glossterm{strikes}.
                     \rank{5} The animal's strikes deal double \glossterm{weapon damage}.
-                    \rank{6} The accuracy bonus increases to \plus2.
                     \rank{7} The animal's strikes deal triple \glossterm{weapon damage}.
                 \end{magicalattuneability}
 
@@ -74,7 +71,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
             rank: 7,
             description: r"
                 Your animal companion gains an additional attunement point.
-                In addition, its bonuses to defenses increases to \plus2.
+                In addition, its defense bonus increases to \plus2.
             ",
             modifiers: None,
         },
@@ -89,7 +86,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
                 \begin{activeability}{Tag-Team Takedown}{Standard action}
                     \rankline
                     Make a \glossterm{strike} that deals 1d4 \glossterm{extra damage}.
-                    Your \ability{animal companion} gains the same extra damage this round against each damaged creature.
+                    Your \ability{animal companion} gains the same extra damage this turn against each damaged creature.
 
                     \rankline
                     \rank{4} The extra damage increases to 1d10.
@@ -107,7 +104,6 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
             rank: 6,
             description: r"
                 Whenever you regain \glossterm{hit points}, your animal companion also regains that many hit points.
-                If the healing ability had any limit, such as only healing up to half your maximum hit points, that limit also applies to your animal companion.
             ",
             modifiers: None,
         },
@@ -117,8 +113,8 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                You gain a \plus3 bonus to the Creature Handling skill.
-                In addition, you gain a \plus1 bonus to \glossterm{vital rolls}, and your \ability{animal companion} can remain conscious after suffering a single vital wound (see \pcref{Vital Wounds}).
+                You gain a \plus3 bonus to the Creature Handling skill and a \plus1 bonus to \glossterm{vital rolls}.
+                In addition, your \ability{animal companion} gains a \plus1 bonus to its defenses.
             ",
             modifiers: Some(vec![Modifier::Skill(Skill::CreatureHandling, 3)]),
         },
@@ -129,7 +125,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
             rank: 5,
             description: r"
                 The Creature Handling bonus increases to \plus6.
-                In addition, your animal companion can remain conscious after suffering two vital wounds, and it does not die until it has five vital wounds.
+                In addition, your animal companion's defense bonus increases to \plus2.
             ",
             modifiers: Some(vec![Modifier::Skill(Skill::CreatureHandling, 3)]),
         },
@@ -240,7 +236,6 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
 
 pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
     vec![
-        // This needs to be Swift because of the hunting styles
         RankAbility {
             complexity: 2,
             name: "Quarry",
@@ -248,7 +243,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 \begin{sustainability}{Quarry}{\glossterm{Minor action}}
-                    \abilitytags \abilitytag{Sustain} (attunable, free), \abilitytag{Subtle}, \atSwift
+                    \abilitytags \abilitytag{Sustain} (attunable, free), abilitytag{Subtle}
                     \rankline
                     Choose a creature you can see.
                     That creature becomes your quarry.
@@ -297,7 +292,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                         If your quarry is \glossterm{midair}, the accuracy bonus from \ability{quarry} also applies to all members of your hunting party.
 
                         \rankline
-                        \rank{5} The accuracy bonus also applies if your quarry used a fly or glide speed at any point this round, even if it is currently grounded.
+                        \rank{5} The accuracy bonus also applies if your quarry used a fly or glide speed at any point since your last turn, even if it is currently grounded.
                     \end{magicaltriggeredability}
 
                     \begin{triggeredability}{Coordinated Stealth}{Triggered}
@@ -372,8 +367,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                 \begin{activeability}{No Escape}{Standard action}
                     \rankline
                     Make a strike that deals 1d6 \glossterm{extra damage}.
-                    \hit If the target is your \ability{quarry} and it moved away from you during the movement phase of this round, it is \glossterm{briefly} \slowed.
-                    This applies even if you moved closer to the target, so long as it tried to move away from your original location.
+                    \hit If the target is your \ability{quarry} and it moved away from you since your last turn, it is \glossterm{briefly} \slowed.
                     \injury If the target would be briefly slowed, it is also slowed as a \glossterm{condition}.
 
                     \rankline
@@ -603,9 +597,8 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
                     \parhead{Mighty Maneuver} You take a \minus1 accuracy penalty, but you deal \glossterm{extra damage} equal to twice your excess rank.
 
                     \parhead{Mobile Maneuver} You can walk up to 5 feet per excess rank before or after using your chosen maneuver, up to a maximum distance equal to your \glossterm{speed}.
+                    This does not reduce your \glossterm{available movement}.
                     You cannot apply this augment to maneuvers that already allow you to move using one of your movement modes.
-                    This movement is never \abilitytag{Swift}.
-                    If your chosen maneuver is Swift, you can only walk after using the maneuver, not before.
 
                     \parhead{Precise Maneuver} You gain an accuracy bonus equal to your excess rank.
 

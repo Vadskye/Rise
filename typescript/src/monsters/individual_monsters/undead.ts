@@ -239,7 +239,7 @@ function addGhosts(grimoire: Grimoire) {
               hit: '\\damagerankone.',
               targeting: `
                 Make an attack vs. Mental against all creatures within a \\medarea radius from you.
-                You gain a \\plus4 accuracy bonus if you or any creature in the area suffered an \\glossterm{injury} last round.
+                You gain a \\plus4 accuracy bonus if you or any creature in the area suffered an \\glossterm{injury} since your last turn.
               `,
             },
             tags: ['Auditory'],
@@ -281,7 +281,7 @@ function addGhosts(grimoire: Grimoire) {
             name: 'Entangling Cords',
             attack: {
               hit: `
-                \\damagerankfour, and the target is \\glossterm{briefly} \\slowed.
+                \\damagerankfour, and the target is \\briefly \\slowed.
               `,
               targeting: `
                 Make an attack vs. Brawn against one creature within \\medrange.
@@ -290,7 +290,7 @@ function addGhosts(grimoire: Grimoire) {
             rank: 5,
             tags: ['Manifestation'],
           }),
-          creature.addSpell('Garotte')
+            creature.addSpell('Garotte');
         },
       ],
     ],
@@ -693,7 +693,7 @@ function addVampires(grimoire: Grimoire) {
     \\parhead{Vampire Weaknesses\\sparkle}
     Vampires have a number of specific weaknesses.
     Many vampire weaknesses trigger on exposure to particular substances or circumstances.
-    These weaknesses trigger immediately upon first contact, and are repeated at the start of each \\glossterm{action phase} in subsequent rounds as long as the vampire remains exposed.
+    These weaknesses trigger immediately upon first contact, and are repeated at the start of each of the vampire's subsequent turns as long as the vampire remains exposed.
     \\begin{raggeditemize}
       \\itemhead{Blood Dependence} For every 24 hours that a vampire remains awake without ingesting at least one pint of blood from living creatures, its maximum hit points are reduced by 20.
         If its maximum hit points are reduced to 0 in this way, it dies and withers away into a pile of ash.
@@ -705,7 +705,7 @@ function addVampires(grimoire: Grimoire) {
       \\itemhead{Garlic} A vampire that smells garlic becomes \\frightened by any creatures bearing garlic as a condition.
         In addition, creatures that have eaten garlic recently are treated as not having blood for the purpose of a vampire's abilities, so their blood cannot be drained.
       \\itemhead{Holy Water} A vampire that touches holy water takes 20 damage and becomes \\stunned as a condition if it is not already stunned.
-      \\itemhead{Running Water} A vampire that touches or passes over running water takes 10 damage and \\glossterm{briefly} becomes \\helpless.
+      \\itemhead{Running Water} A vampire that touches or passes over running water takes 10 damage and \\briefly becomes \\helpless.
         This applies as long as the vampire is within 100 feet of the running water, even the water is underground or under a bridge.
         It can use the \\ability{struggle} ability to move despite being helpless, but only towards the closest shore.
       \\itemhead{Silver} Vampires are \\vulnerable to strikes using silver weapons.
@@ -734,7 +734,7 @@ function addVampires(grimoire: Grimoire) {
           weapon: 'bite' as const,
         };
         bloodDrain.effect += `
-          \\injury You regain hit points at the end of the round equal to the hit points the target lost from the strike, ignoring negative hit points and any damage increase from critical hits.
+          \\injury You regain hit points equal to the hit points the target lost from the strike, ignoring negative hit points and any damage increase from critical hits.
         `;
         creature.addCustomManeuver(bloodDrain);
 
@@ -750,7 +750,7 @@ function addVampires(grimoire: Grimoire) {
             `,
             targeting: `
               Make an attack vs. Mental against all humanoid creatures and undead creatures in a \\medarea cone from you.
-              You take a \\minus10 penalty to \\glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of the last round.
+              You take a \\minus10 penalty to \\glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of your last turn.
             `,
           },
           rank: 3,

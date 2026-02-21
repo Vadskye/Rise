@@ -2,6 +2,7 @@ mod archetype_rank_abilities;
 mod archetypes;
 mod basic_class_abilities;
 mod class;
+mod cleric_domains;
 
 pub use archetype_rank_abilities::{archetype_rank_abilities, calc_rank_abilities, RankAbility};
 pub use archetypes::ClassArchetype;

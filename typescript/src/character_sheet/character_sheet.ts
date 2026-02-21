@@ -14,6 +14,11 @@ export class CharacterSheet {
   private properties: Record<string, Property<SimpleValue>>;
   private repeatingSections: Record<string, RepeatingSection>;
   private latestRowId: number | null = null;
+  private static signalCache: Record<string, {
+    changedPropertyNames: string[];
+    clickedButtonNames: string[];
+    hasOpenedTrigger: boolean;
+  }> = {};
 
   constructor(characterName: string) {
     this.buttons = {};
@@ -51,20 +56,43 @@ export class CharacterSheet {
   }
 
   public on(listenString: string, callback: (eventInfo: EventInfo) => void): Unsubscriber {
-    const changedPropertyNames: string[] = [];
-    const clickedButtonNames: string[] = [];
-    for (const triggerName of listenString.split(' ')) {
-      if (triggerName.startsWith('change:')) {
-        changedPropertyNames.push(triggerName.replaceAll('change:', ''));
-      } else if (triggerName.startsWith('clicked:')) {
-        clickedButtonNames.push(triggerName.replaceAll('clicked:', ''));
-      } else {
-        // We don't currently handle anything other than changes, such as deletions
-        // console.log(`Ignoring unsupported trigger name ${triggerName}.`);
+    if (!CharacterSheet.signalCache[listenString]) {
+      const changedPropertyNames: string[] = [];
+      const clickedButtonNames: string[] = [];
+      let hasOpenedTrigger = false;
+
+      for (const triggerName of listenString.split(' ')) {
+        if (triggerName.startsWith('change:')) {
+          changedPropertyNames.push(triggerName.replaceAll('change:', ''));
+        } else if (triggerName.startsWith('clicked:')) {
+          clickedButtonNames.push(triggerName.replaceAll('clicked:', ''));
+        } else if (triggerName === 'sheet:opened') {
+          hasOpenedTrigger = true;
+        } else {
+          // We don't currently handle anything other than changes, such as deletions
+        }
       }
+
+      CharacterSheet.signalCache[listenString] = {
+        changedPropertyNames,
+        clickedButtonNames,
+        hasOpenedTrigger,
+      };
     }
 
+    const { changedPropertyNames, clickedButtonNames, hasOpenedTrigger } =
+      CharacterSheet.signalCache[listenString];
     const unsubscribers: Unsubscriber[] = [];
+
+    if (hasOpenedTrigger) {
+      const openedSignal = this.getButton('sheet:opened').ClickedSignal;
+      unsubscribers.push(
+        openedSignal.on((_, eventInfo: EventInfo) => {
+          callback(eventInfo);
+        }),
+      );
+    }
+
     for (const propertyName of changedPropertyNames) {
       if (propertyName.startsWith('repeating_')) {
         // TODO: we don't handle unsubscribing from repeating sections right now
@@ -77,6 +105,7 @@ export class CharacterSheet {
         );
       }
     }
+
     for (const buttonName of clickedButtonNames) {
       unsubscribers.push(
         this.getButton(buttonName).ClickedSignal.on((_, eventInfo: EventInfo) => {
@@ -90,6 +119,10 @@ export class CharacterSheet {
         unsubscriber();
       }
     };
+  }
+
+  public triggerOpened() {
+    this.clickButton('sheet:opened');
   }
 
   // This is generally more convenient than `on()` when working with known properties.
@@ -176,5 +209,25 @@ export class CharacterSheet {
 
   public getLatestRowId(): string {
     return `${this.latestRowId}`;
+  }
+
+  public getAllProperties(): Record<string, SimpleValue> {
+    const allProperties: Record<string, SimpleValue> = {};
+
+    // Basic properties
+    for (const propertyName in this.properties) {
+      const value = this.properties[propertyName].value;
+      if (value !== undefined) {
+        allProperties[propertyName] = value;
+      }
+    }
+
+    // Repeating section properties
+    for (const sectionName in this.repeatingSections) {
+      const sectionProperties = this.repeatingSections[sectionName].getAllProperties();
+      Object.assign(allProperties, sectionProperties);
+    }
+
+    return allProperties;
   }
 }

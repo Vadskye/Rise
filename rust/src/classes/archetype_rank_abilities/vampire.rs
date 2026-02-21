@@ -9,8 +9,7 @@ pub fn vampire<'a>() -> Vec<RankAbility<'a>> {
             complexity: 2,
             description: r"
                 Whenever you \glossterm{injure} a creature with blood using your bite natural weapon, you can increase your \glossterm{fatigue level} by one.
-                If you do, you regain \glossterm{hit points} at the end of the round.
-                The recovery is equal to the hit points the target lost from the strike, ignoring negative hit points and any damage increase from critical hits.
+                If you do, you regain \glossterm{hit points} equal to the hit points the target lost from the strike, ignoring negative hit points and any damage increase from critical hits.
 
                 Unless otherwise specified, all living creatures have blood.
                 Some nonliving creatures, such as vampires, also have blood.
@@ -51,7 +50,7 @@ pub fn vampire<'a>() -> Vec<RankAbility<'a>> {
                 \abilitytags \abilitytag{Emotion}, \abilitytag{Subtle}, \abilitytag{Sustain} (minor), \abilitytag{Visual}
                 \rankline
                 Make an attack vs. Mental against all humanoid creatures and undead creatures in a \medarea cone from you.
-                You take a \minus10 penalty to \glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of the last round.
+                You take a \minus10 penalty to \glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of your last turn.
                 \hit The target is \charmed by you.
                 Any act by you or by creatures that appear to be your allies that threatens or harms the charmed person breaks the effect.
                 Harming the target is not limited to dealing it damage, but also includes causing it significant subjective discomfort.
