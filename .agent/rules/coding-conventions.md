@@ -6,6 +6,11 @@ globs: "**/*.tex, rust/**/*.rs, typescript/**/*.ts"
 
 # Rise Coding Conventions
 
+## Universal Guidelines
+
+* **Simplicity**: Code should prioritize clarity and simplicity over safety and edge case handling.
+* **Errors Are Fine**: It's better for a program to throw a clear error than to try to continue in the face of unexpected circumstances.
+
 ## LaTeX Conventions
 * **Line Breaks**: Each new sentence in a .tex file should be on a separate line. Long lines are discouraged, though there is no strict line length limit.
 * **Wrapped Terms**: Many LaTeX commands wrap game terminology for formatting or context (e.g., `\glossterm` or `\ability`). Wrap only the **first instance** of that word in each paragraph or ability block. Subsequent uses should be plaintext.
