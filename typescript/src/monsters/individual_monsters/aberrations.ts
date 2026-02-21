@@ -77,6 +77,4 @@ export function addAberrations(grimoire: Grimoire) {
   });
 
   // TODO: add gibbering mouther, since we have the art for it
-
-  
 }

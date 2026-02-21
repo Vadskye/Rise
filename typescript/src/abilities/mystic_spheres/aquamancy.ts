@@ -888,8 +888,8 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       name: 'Protective Bubble Dash',
 
       functionsLike: {
-        name: "waterward",
-        exceptThat: "you also add your \\glossterm{speed} to your \\glossterm{available movement}.",
+        name: 'waterward',
+        exceptThat: 'you also add your \\glossterm{speed} to your \\glossterm{available movement}.',
       },
       rank: 5,
       roles: ['mobility', 'turtle'],

@@ -1,4 +1,9 @@
-import { MysticSphere, mysticSpheres, MysticSphereSource, PRIMARY_MYSTIC_SPHERE_SOURCES } from '@src/abilities/mystic_spheres';
+import {
+  MysticSphere,
+  mysticSpheres,
+  MysticSphereSource,
+  PRIMARY_MYSTIC_SPHERE_SOURCES,
+} from '@src/abilities/mystic_spheres';
 import { titleCase } from 'change-case';
 
 export function generateMysticSphereLists(): string {

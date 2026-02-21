@@ -16,7 +16,7 @@ export function addElementals(grimoire: Grimoire) {
       level: 16,
       size: 'huge',
     });
-    creature.setTrainedSkills(["awareness", "jump"]);
+    creature.setTrainedSkills(['awareness', 'jump']);
     creature.setBaseAttributes([8, 6, 5, -4, 2, 4]);
     creature.addImpervious('Air');
     creature.addImpervious('Earth');
@@ -40,7 +40,11 @@ export function addElementals(grimoire: Grimoire) {
     creature.addSpell('Distant Flame Dash');
     creature.addSpell('Mighty Pyroclasm', { usageTime: 'elite' });
     // Water
-    creature.addManeuver('Forceful Smash', { displayName: 'Tidal Slam', tags: ['Water'], weapon: 'slam' });
+    creature.addManeuver('Forceful Smash', {
+      displayName: 'Tidal Slam',
+      tags: ['Water'],
+      weapon: 'slam',
+    });
     creature.addSpell('Constraining Bubble', { usageTime: 'elite' });
   });
 }

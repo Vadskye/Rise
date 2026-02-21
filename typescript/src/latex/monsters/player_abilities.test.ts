@@ -392,8 +392,7 @@ t.test('restructureStrikeAbility', (t) => {
       const ability = {
         name: 'Test Ability',
         weapon: 'bite',
-        effect:
-          'Make a strike. Then, you are \\briefly \\empowered. Next round, you are \\braced.',
+        effect: 'Make a strike. Then, you are \\briefly \\empowered. Next round, you are \\braced.',
       } as any;
       restructureStrikeAbility(mockCreature, ability);
       t.matchStrict(ability.attack, {

@@ -580,7 +580,14 @@ export const rituals: RitualDefinition[] = [
     },
     usageTime: '24 hours',
     spheres: [
-      'Aquamancy', 'Astromancy', 'Channel Divinity', 'Fabrication', 'Prayer', 'Terramancy', 'Thaumaturgy', 'Verdamancy'
+      'Aquamancy',
+      'Astromancy',
+      'Channel Divinity',
+      'Fabrication',
+      'Prayer',
+      'Terramancy',
+      'Thaumaturgy',
+      'Verdamancy',
     ],
   },
   {
@@ -588,14 +595,21 @@ export const rituals: RitualDefinition[] = [
     rank: 5,
     roles: ['narrative'],
     functionsLike: {
-      name: "forge astral beacon",
-      exceptThat: "the astral beacon is permanent.",
+      name: 'forge astral beacon',
+      exceptThat: 'the astral beacon is permanent.',
     },
     tags: [],
     materialCost: true,
     usageTime: '24 hours',
     spheres: [
-      'Aquamancy', 'Astromancy', 'Channel Divinity', 'Fabrication', 'Prayer', 'Terramancy', 'Thaumaturgy', 'Verdamancy'
+      'Aquamancy',
+      'Astromancy',
+      'Channel Divinity',
+      'Fabrication',
+      'Prayer',
+      'Terramancy',
+      'Thaumaturgy',
+      'Verdamancy',
     ],
   },
   {
