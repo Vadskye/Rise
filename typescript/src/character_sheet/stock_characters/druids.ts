@@ -2,7 +2,7 @@ import type { StockCharacters } from '../stock_characters';
 import { Creature } from '../creature';
 
 export function addDruids(stock: StockCharacters) {
-    stock.addCharacter('Gaia', (c: Creature) => {
+    stock.addCharacter('Druid', (c: Creature) => {
         c.setRequiredProperties({
             alignment: 'neutral',
             base_class: 'druid',

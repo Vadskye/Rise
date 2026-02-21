@@ -1,7 +1,7 @@
 import { StockCharacters } from '../stock_characters';
 
 export function addFighters(stock: StockCharacters) {
-    stock.addCharacter('Havel', (c) => {
+    stock.addCharacter('Fighter', (c) => {
         c.setRequiredProperties({
             alignment: 'lawful neutral',
             base_class: 'fighter',
