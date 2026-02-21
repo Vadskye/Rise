@@ -1,14 +1,14 @@
 import t from 'tap';
-import { StockCharacters } from './stock_characters';
+import { StockCharacters } from '@src/character_sheet/stock_characters';
 import {
     clearAllCharacterSheets,
-} from './current_character_sheet';
+} from '@src/character_sheet/current_character_sheet';
 import {
     loadAllMonsters,
     getMonster,
     createTeam,
     createScenario,
-} from './combat_scenario';
+} from '@src/character_sheet/combat_scenario';
 
 // Pre-load monsters for combat smoke tests
 loadAllMonsters();
