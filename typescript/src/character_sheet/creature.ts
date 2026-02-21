@@ -207,6 +207,14 @@ export class Creature implements CreaturePropertyMap {
     this.activeAbilities = {};
   }
 
+  public clone(newName: string): Creature {
+    const newSheet = this.sheet.clone(newName);
+    const newCreature = new Creature(newSheet);
+    newCreature.activeAbilities = { ...this.activeAbilities };
+    newCreature.targetPreference = this.targetPreference;
+    return newCreature;
+  }
+
   get id(): string {
     return this.sheet.characterName;
   }

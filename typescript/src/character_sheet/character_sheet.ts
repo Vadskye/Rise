@@ -177,4 +177,33 @@ export class CharacterSheet {
   public getLatestRowId(): string {
     return `${this.latestRowId}`;
   }
+
+  public getAllProperties(): Record<string, SimpleValue> {
+    const allProperties: Record<string, SimpleValue> = {};
+
+    // Basic properties
+    for (const propertyName in this.properties) {
+      const value = this.properties[propertyName].value;
+      if (value !== undefined) {
+        allProperties[propertyName] = value;
+      }
+    }
+
+    // Repeating section properties
+    for (const sectionName in this.repeatingSections) {
+      const sectionProperties = this.repeatingSections[sectionName].getAllProperties();
+      Object.assign(allProperties, sectionProperties);
+    }
+
+    return allProperties;
+  }
+
+  public clone(newName: string): CharacterSheet {
+    // We import createCharacterSheet here to avoid circular dependency if it were at top level,
+    // though in this project it's in a separate file.
+    const { createCharacterSheet } = require('./current_character_sheet');
+    const newSheet = createCharacterSheet(newName);
+    newSheet.setProperties(this.getAllProperties());
+    return newSheet;
+  }
 }

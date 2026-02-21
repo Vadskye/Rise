@@ -70,8 +70,11 @@ export class Grimoire {
   }
 
   addMonsterGroup(config: MonsterGroupConfig, initializers: [string, MonsterInitializer][]) {
-    if (this.monsterGroups[config.name] || this.monsters[config.name]) {
-      throw new Error(`Can't add a duplicate monster group with '${config.name}'.`);
+    if (this.monsterGroups[config.name]) {
+      return;
+    }
+    if (this.monsters[config.name]) {
+      throw new Error(`Can't add a monster group named '${config.name}'; a monster with that name already exists.`);
     }
 
     this.monsterGroups[config.name] = {
@@ -111,5 +114,13 @@ export class Grimoire {
 
   getMonster(name: string): Creature | null {
     return this.monsters[name] || null;
+  }
+
+  hasMonster(name: string): boolean {
+    return this.monsters[name] !== undefined;
+  }
+
+  hasMonsterGroup(name: string): boolean {
+    return this.monsterGroups[name] !== undefined;
   }
 }
