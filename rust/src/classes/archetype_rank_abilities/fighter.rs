@@ -554,11 +554,11 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             complexity: 1,
-            name: "Reposition",
+            name: "Take the Lead",
             is_magical: false,
             rank: 2,
             description: r"
-                Once per turn, you may move up to five feet as a \glossterm{free action}.
+                You gain a \plus1 bonus to \glossterm{inititive}.
             ",
             modifiers: None,
         },
@@ -619,11 +619,11 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             complexity: 0,
-            name: "Reposition+",
+            name: "Take the Lead+",
             is_magical: false,
             rank: 6,
             description: r"
-                The maximum movement increases to ten feet.
+                The bonus increases to \plus2.
             ",
             modifiers: None,
         },
