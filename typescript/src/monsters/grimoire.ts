@@ -1,6 +1,7 @@
 import { Creature, KnowledgeResultsConfig } from '@src/character_sheet/creature';
 import { handleEverything } from '@src/character_sheet/sheet_worker';
 import {
+  characterSheetExists,
   getCurrentCharacterSheet,
   setCurrentCharacterSheet,
 } from '@src/character_sheet/current_character_sheet';
@@ -55,6 +56,9 @@ export class Grimoire {
     if (this.monsters[name] || this.monsterGroups[name]) {
       throw new Error(`Can't add a duplicate monster with '${name}'.`);
     }
+    if (characterSheetExists(name)) {
+      throw new Error(`Can't add a duplicate character sheet named '${name}'.`);
+    }
     setCurrentCharacterSheet(name);
     handleEverything();
     const sheet = getCurrentCharacterSheet();
@@ -77,7 +81,11 @@ export class Grimoire {
     };
 
     for (const [monsterName, initializer] of initializers) {
-      setCurrentCharacterSheet(`${config.name}.${monsterName}`);
+      const characterSheetName = `${config.name}.${monsterName}`;
+      if (characterSheetExists(characterSheetName)) {
+        throw new Error(`Can't add a duplicate character sheet named '${characterSheetName}'.`);
+      }
+      setCurrentCharacterSheet(characterSheetName);
       handleEverything();
       const sheet = getCurrentCharacterSheet();
       sheet.setProperties({ name: monsterName });
