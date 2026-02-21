@@ -113,7 +113,6 @@ export function addBeasts(grimoire: Grimoire) {
     });
     creature.addCustomMovementSpeed('Fly (average, 90 ft. limit)');
     creature.setTrainedSkills(['awareness']);
-    creature.setTrainedSkills([]);
     creature.setBaseAttributes([2, 4, -1, -6, 4, 0]);
     creature.addManeuver('Eye Poke', { displayName: 'Peck Out Your Eyes', weapon: 'beak' });
   });
