@@ -202,10 +202,24 @@ export class Creature implements CreaturePropertyMap {
   private activeAbilities: Record<string, ActiveAbility>;
   // Only used by CombatScenario
   public targetPreference: TargetSelectionLogic = 'Ordered';
+  private cachedProperties: Partial<CreaturePropertyMap> = {};
+  // While this is true, property calls will be cached, so they won't be recalculated even if they should be.
+  // This is useful if you know that properties will be frequently accessed without being changed, such as when running combat simulations.
+  private useCache: boolean = false;
 
   constructor(sheet: CharacterSheet) {
     this.sheet = sheet;
     this.activeAbilities = {};
+  }
+
+  public startCaching() {
+    this.useCache = true;
+    this.cachedProperties = {};
+  }
+
+  public stopCaching() {
+    this.useCache = false;
+    this.cachedProperties = {};
   }
 
   public clone(newName: string): Creature {
@@ -333,7 +347,14 @@ export class Creature implements CreaturePropertyMap {
   private getPropertyValue<T extends keyof CreaturePropertyMap>(
     propertyName: T,
   ): CreaturePropertyMap[T] {
-    return this.sheet.getPropertyValues([propertyName])[propertyName];
+    if (this.useCache && this.cachedProperties[propertyName] !== undefined) {
+      return this.cachedProperties[propertyName] as CreaturePropertyMap[T];
+    }
+    const value = this.sheet.getPropertyValues([propertyName])[propertyName];
+    if (this.useCache) {
+      this.cachedProperties[propertyName] = value;
+    }
+    return value as CreaturePropertyMap[T];
   }
 
   getSheetForTesting(): CharacterSheet {
