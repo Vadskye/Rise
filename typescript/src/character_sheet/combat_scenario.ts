@@ -361,94 +361,81 @@ export class CombatScenario {
     }
 }
 
-const sharedGrimoire = new Grimoire();
+export const sharedGrimoire = new Grimoire();
 
 /**
- * Facilitates the creation and setup of combat scenarios.
+ * Loads all monsters from all groups. This may be slow.
  */
-export class CombatScenarioGenerator {
-    public grimoire: Grimoire;
-
-    constructor(grimoire: Grimoire = sharedGrimoire) {
-        this.grimoire = grimoire;
+export function loadAllMonsters(): void {
+    if (sharedGrimoire.getMonsterNames().length === 0) {
+        sharedGrimoire.addAllMonsters();
     }
+}
 
-    /**
-     * Loads all monsters from all groups. This may be slow.
-     */
-    public loadAllMonsters() {
-        if (this.grimoire.getMonsterNames().length === 0) {
-            this.grimoire.addAllMonsters();
-        }
+/**
+ * Retrieves a monster from the grimoire by its name.
+ */
+export function getMonster(name: string): Creature {
+    const monster = sharedGrimoire.getMonster(name);
+    if (!monster) {
+        throw new Error(`Monster with name "${name}" not found in the grimoire.`);
     }
+    return monster;
+}
 
-    /**
-     * Retrieves a monster from the grimoire by its name.
-     * CAUTION: This currently returns the shared instance from the grimoire.
-     * If multiple of the same monster are needed, they will share state.
-     */
-    public getMonster(name: string): Creature {
-        const monster = this.grimoire.getMonster(name);
-        if (!monster) {
-            throw new Error(`Monster with name "${name}" not found in the grimoire.`);
-        }
-        return monster;
+/**
+ * Spawns a new instance of a monster from the grimoire.
+ * This ensures the creature has its own character sheet and state.
+ */
+export function createMonster(name: string): Creature {
+    const baseMonster = getMonster(name);
+    const uniqueId = Math.random().toString(36).substring(7);
+    const uniqueName = `${name}_${uniqueId}`;
+    return baseMonster.clone(uniqueName);
+}
+
+/**
+ * Creates a new creature with the specified name and optional properties.
+ * Ensures the creature has its own character sheet in the global state.
+ */
+export function createCreature(name: string, initializer?: (creature: Creature) => void): Creature {
+    // We use a unique ID to ensure this creature has its own character sheet
+    const uniqueId = Math.random().toString(36).substring(7);
+    const uniqueSheetName = `${name}_${uniqueId}`;
+
+    setCurrentCharacterSheet(uniqueSheetName);
+    const sheet = getCurrentCharacterSheet();
+    sheet.setProperties({ name });
+
+    const creature = new Creature(sheet);
+    if (initializer) {
+        initializer(creature);
     }
+    handleEverything();
 
-    /**
-     * Spawns a new instance of a monster from the grimoire.
-     * This ensures the creature has its own character sheet and state.
-     */
-    public createMonster(name: string): Creature {
-        const baseMonster = this.getMonster(name);
-        const uniqueId = Math.random().toString(36).substring(7);
-        const uniqueName = `${name}_${uniqueId}`;
-        return baseMonster.clone(uniqueName);
-    }
+    return creature;
+}
 
-    /**
-     * Creates a new creature with the specified name and optional properties.
-     * Ensures the creature has its own character sheet in the global state.
-     */
-    public createCreature(name: string, initializer?: (creature: Creature) => void): Creature {
-        // We use a unique ID to ensure this creature has its own character sheet
-        const uniqueId = Math.random().toString(36).substring(7);
-        const uniqueSheetName = `${name}_${uniqueId}`;
+/**
+ * Convenience method to create a character with common properties.
+ */
+export function createCharacter(name: string, level: number, baseClass: RiseBaseClass): Creature {
+    return createCreature(name, (c) => {
+        // Use setRequiredProperties if needed, but setProperties covers most basics
+        c.setProperties({ level, base_class: baseClass });
+    });
+}
 
-        setCurrentCharacterSheet(uniqueSheetName);
-        const sheet = getCurrentCharacterSheet();
-        sheet.setProperties({ name });
+/**
+ * Creates a combat team with the provided name and members.
+ */
+export function createTeam(name: string, members: Creature[]): CombatTeam {
+    return { name, members };
+}
 
-        const creature = new Creature(sheet);
-        if (initializer) {
-            initializer(creature);
-        }
-        handleEverything();
-
-        return creature;
-    }
-
-    /**
-     * Convenience method to create a character with common properties.
-     */
-    public createCharacter(name: string, level: number, baseClass: RiseBaseClass): Creature {
-        return this.createCreature(name, (c) => {
-            // Use setRequiredProperties if needed, but setProperties covers most basics
-            c.setProperties({ level, base_class: baseClass });
-        });
-    }
-
-    /**
-     * Creates a combat team with the provided name and members.
-     */
-    public createTeam(name: string, members: Creature[]): CombatTeam {
-        return { name, members };
-    }
-
-    /**
-     * Creates a combat scenario with the provided teams.
-     */
-    public createScenario(teams: CombatTeam[]): CombatScenario {
-        return new CombatScenario(teams);
-    }
+/**
+ * Creates a combat scenario with the provided teams.
+ */
+export function createScenario(teams: CombatTeam[]): CombatScenario {
+    return new CombatScenario(teams);
 }
