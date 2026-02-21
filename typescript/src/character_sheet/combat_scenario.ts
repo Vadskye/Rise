@@ -1,7 +1,7 @@
 import { Creature } from './creature';
 import { Grimoire } from '../monsters/grimoire';
 import { handleEverything } from './sheet_worker';
-import { setCurrentCharacterSheet, getCurrentCharacterSheet } from './current_character_sheet';
+import { setCurrentCharacterSheet, getCurrentCharacterSheet, clearAllCharacterSheets } from './current_character_sheet';
 import { RiseBaseClass } from './rise_data';
 
 export interface CombatSimulationResult {
@@ -9,30 +9,35 @@ export interface CombatSimulationResult {
     winRates: Record<string, number>;
 }
 
+export interface CombatTeam {
+    name: string;
+    members: Creature[];
+}
+
 /**
  * Manages a combat encounter between multiple creatures.
  */
 export class CombatScenario {
-    constructor(public combatants: Creature[]) { }
+    constructor(public teams: CombatTeam[]) { }
 
     /**
      * Simulates the combat until a victor is determined.
      * Runs multiple iterations to gather statistics.
      */
     public simulate(iterations: number = 1000): CombatSimulationResult {
-        if (this.combatants.length < 2) {
-            throw new Error('Combat requires at least two combatants.');
+        if (this.teams.length < 2) {
+            throw new Error('Combat requires at least two teams.');
         }
 
         let totalRounds = 0;
         const wins: Record<string, number> = {};
-        this.combatants.forEach(c => wins[c.name] = 0);
+        this.teams.forEach(t => wins[t.name] = 0);
 
         for (let i = 0; i < iterations; i++) {
             const result = this.simulateSingleFight();
             totalRounds += result.rounds;
             if (result.winner) {
-                wins[result.winner.name]++;
+                wins[result.winner]++;
             }
         }
 
@@ -46,7 +51,7 @@ export class CombatScenario {
         }
 
         console.log('--- Combat Simulation Results ---');
-        console.log(`Combatants: ${this.combatants.map(c => c.name).join(' vs ')}`);
+        console.log(`Teams: ${this.teams.map(t => t.name).join(' vs ')}`);
         console.log(`Average Rounds: ${stats.averageRounds.toFixed(2)}`);
         for (const name in stats.winRates) {
             console.log(`${name} Win Rate: ${stats.winRates[name].toFixed(2)}%`);
@@ -56,29 +61,77 @@ export class CombatScenario {
         return stats;
     }
 
-    private simulateSingleFight(): { winner: Creature | null, rounds: number } {
+    private simulateSingleFight(): { winner: string | null, rounds: number } {
         const hp: Map<string, number> = new Map();
-        this.combatants.forEach(c => hp.set(c.name, c.hit_points));
+        const memberToTeam: Map<string, CombatTeam> = new Map();
+        const aliveMembersByTeam: Map<string, Creature[]> = new Map();
+
+        this.teams.forEach(team => {
+            const aliveMembers: Creature[] = [];
+            team.members.forEach(member => {
+                hp.set(member.name, member.hit_points);
+                memberToTeam.set(member.name, team);
+                aliveMembers.push(member);
+            });
+            aliveMembersByTeam.set(team.name, aliveMembers);
+        });
+
+        // Determine initiative order for teams.
+        const teamInitiatives = this.teams.map(team => ({
+            team,
+            initiative: this.rollD10(false),
+        }));
+        teamInitiatives.sort((a, b) => b.initiative - a.initiative);
 
         let rounds = 0;
-        while (rounds < 100) { // Limit to 100 rounds to prevent infinity
+        while (rounds < 100) {
             rounds++;
-            for (let i = 0; i < this.combatants.length; i++) {
-                const attacker = this.combatants[i];
-                const defender = this.combatants[(i + 1) % this.combatants.length];
+            for (const { team } of teamInitiatives) {
+                // If this team is dead, skip its turn
+                if (aliveMembersByTeam.get(team.name)!.length === 0) continue;
 
-                if (hp.get(attacker.name)! <= 0) continue;
+                // For each alive member of the team
+                const attackers = [...aliveMembersByTeam.get(team.name)!];
+                for (const attacker of attackers) {
+                    if (hp.get(attacker.name)! <= 0) continue;
 
-                const damage = this.resolveAttack(attacker, defender);
-                hp.set(defender.name, hp.get(defender.name)! - damage);
+                    // Find potential targets (any member of any other team that is alive)
+                    const potentialTargets: Creature[] = [];
+                    for (const [otherTeamName, members] of aliveMembersByTeam.entries()) {
+                        if (otherTeamName !== team.name) {
+                            potentialTargets.push(...members);
+                        }
+                    }
 
-                // Check for victory
-                const alive = this.combatants.filter(c => hp.get(c.name)! > 0);
-                if (alive.length === 1) {
-                    return { winner: alive[0], rounds };
-                }
-                if (alive.length === 0) {
-                    return { winner: null, rounds };
+                    if (potentialTargets.length === 0) break;
+
+                    // Simple targeting: pick the first one
+                    const defender = potentialTargets[0];
+
+                    const damage = this.resolveAttack(attacker, defender);
+                    const newHp = hp.get(defender.name)! - damage;
+                    hp.set(defender.name, newHp);
+
+                    if (newHp <= 0) {
+                        // Remove from alive members
+                        const defenderTeamName = memberToTeam.get(defender.name)!.name;
+                        const teamAlive = aliveMembersByTeam.get(defenderTeamName)!;
+                        const index = teamAlive.indexOf(defender);
+                        if (index > -1) {
+                            teamAlive.splice(index, 1);
+                        }
+                    }
+
+                    // Check for victory (only one team has alive members)
+                    const teamsWithAlive = Array.from(aliveMembersByTeam.entries())
+                        .filter(([_, members]) => members.length > 0);
+
+                    if (teamsWithAlive.length === 1) {
+                        return { winner: teamsWithAlive[0][0], rounds };
+                    }
+                    if (teamsWithAlive.length === 0) {
+                        return { winner: null, rounds };
+                    }
                 }
             }
         }
@@ -161,6 +214,13 @@ export class CombatScenarioGenerator {
     }
 
     /**
+     * Resets the global character sheet state.
+     */
+    public reset() {
+        clearAllCharacterSheets();
+    }
+
+    /**
      * Loads all monsters from all groups. This may be slow.
      */
     public loadAllMonsters() {
@@ -190,7 +250,6 @@ export class CombatScenarioGenerator {
         const uniqueSheetName = `${name}_${uniqueId}`;
 
         setCurrentCharacterSheet(uniqueSheetName);
-        handleEverything();
         const sheet = getCurrentCharacterSheet();
         sheet.setProperties({ name });
 
@@ -198,6 +257,7 @@ export class CombatScenarioGenerator {
         if (initializer) {
             initializer(creature);
         }
+        handleEverything();
 
         return creature;
     }
@@ -213,9 +273,16 @@ export class CombatScenarioGenerator {
     }
 
     /**
-     * Creates a combat scenario with the provided creatures.
+     * Creates a combat team with the provided name and members.
      */
-    public createScenario(combatants: Creature[]): CombatScenario {
-        return new CombatScenario(combatants);
+    public createTeam(name: string, members: Creature[]): CombatTeam {
+        return { name, members };
+    }
+
+    /**
+     * Creates a combat scenario with the provided teams.
+     */
+    public createScenario(teams: CombatTeam[]): CombatScenario {
+        return new CombatScenario(teams);
     }
 }

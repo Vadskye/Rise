@@ -24,6 +24,13 @@ export function resetDefaultCharacterSheet(): CharacterSheet {
   return characters[currentCharacterName];
 }
 
+export function clearAllCharacterSheets() {
+  for (const name in characters) {
+    delete characters[name];
+  }
+  currentCharacterName = 'default';
+}
+
 // export function calculateCurrentCharacterSheet() {
 //   // We need to make sure that a character sheet exists to configure.
 //   getCurrentCharacterSheet();
