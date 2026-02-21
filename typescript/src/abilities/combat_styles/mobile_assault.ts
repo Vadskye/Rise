@@ -10,7 +10,7 @@ export const mobileHunter: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        If your movement during the \\glossterm{movement phase} of this round consisted entirely of moving at least 20 feet in a straight line towards your target, the strike deals deals \\glossterm{extra damage} equal to half your power.
+        If you moved at least 20 feet in a straight line towards your target this turn, the strike deals deals \\glossterm{extra damage} equal to half your power.
       `,
       rank: 3,
       roles: ['burst', 'payoff'],
@@ -19,10 +19,9 @@ export const mobileHunter: CombatStyle = {
     {
       name: 'Adrenaline',
 
-      cost: 'One \\glossterm{fatigue level} (see text).',
+      cost: 'One \\glossterm{fatigue level}, unless you have a \\glossterm{vital wound}.',
       effect: `
-        You \\glossterm{briefly} gain a \\plus10 foot bonus to your \\glossterm{speed} and are \\primed.
-        If you have a \\glossterm{vital wound}, this ability does not increase your fatigue level.
+        You \\briefly gain a \\plus10 foot bonus to your \\glossterm{speed} and are \\primed.
       `,
       rank: 1,
       roles: ['exertion', 'focus'],
@@ -31,10 +30,9 @@ export const mobileHunter: CombatStyle = {
     {
       name: 'Adrenaline+',
 
-      cost: 'One \\glossterm{fatigue level}.',
+      cost: 'One \\glossterm{fatigue level}, unless you have a \\glossterm{vital wound}.',
       effect: `
-        You \\glossterm{briefly} gain a \\plus20 foot bonus to your \\glossterm{speed} and are \\primed.
-        If you have a \\glossterm{vital wound}, this ability does not increase your fatigue level.
+        You \\briefly gain a \\plus20 foot bonus to your \\glossterm{speed} and are \\primed.
       `,
       rank: 5,
       roles: ['exertion', 'focus'],
@@ -44,7 +42,7 @@ export const mobileHunter: CombatStyle = {
       name: 'Reaping Harvest',
 
       effect: `
-        Move up to your speed in a straight line.
+        Move up to your \\glossterm{speed} in a straight line without reducing your \\glossterm{available movement}.
         You can also make a melee \\glossterm{strike}.
         The strike targets all \\glossterm{enemies} adjacent to you at any point during your movement.
       `,
@@ -56,7 +54,7 @@ export const mobileHunter: CombatStyle = {
       name: 'Reaping Harvest+',
 
       effect: `
-        Move up to your speed in a straight line.
+        Move up to your \\glossterm{speed} in a straight line without reducing your \\glossterm{available movement}.
         You can also make a melee \\glossterm{strike} that deals triple damage.
         The strike targets all \\glossterm{enemies} adjacent to you at any point during your movement.
       `,
@@ -89,7 +87,7 @@ export const mobileHunter: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        \\hit If the target is a creature, you \\glossterm{briefly} do not consider it to be an \\glossterm{obstacle} when moving through its space.
+        \\hit If the target is a creature, you \\briefly do not consider it to be an \\glossterm{obstacle} when moving through its space.
         You still cannot end your movement in its space.
       `,
       rank: 1,
@@ -115,8 +113,8 @@ export const mobileHunter: CombatStyle = {
       name: 'Prepared Sprint',
 
       effect: `
-        Your movement speed is \\glossterm{briefly} doubled.
-        However, you cannot use the \\textit{sprint} ability during that time.
+        Your \\glossterm{speed} is \\briefly doubled.
+        However, you cannot use the \\ability{sprint} or \\ability{jog} abilities during that time.
       `,
       rank: 1,
       roles: ['focus'],
@@ -127,7 +125,7 @@ export const mobileHunter: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        Then, you can move up to half your movement speed.
+        Then, you add half your \\glossterm{speed} to your \\glossterm{available movement}.
       `,
       rank: 1,
       roles: ['mobility', 'burst'],
@@ -137,7 +135,7 @@ export const mobileHunter: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        Then, you can move up to your speed.
+        Then, you add your \\glossterm{speed} to your \\glossterm{available movement}.
       `,
       rank: 3,
       roles: ['mobility', 'burst'],
@@ -211,16 +209,13 @@ export const mobileHunter: CombatStyle = {
       name: 'Unbalancing Backstep',
 
       effect: `
-        You are \\braced this round.
+        You are \\briefly \\braced.
         In addition, choose a creature you can see.
         You can move up to 5 feet away from that creature.
-        Whenever that creature misses you with a melee \\glossterm{strike} this round, it takes a -2 penalty to Armor defense during the next round.
+        Until your next turn, whenever that creature misses you with a melee \\glossterm{strike}, it takes a -2 penalty to its Armor defense.
         As normal, this bonus does not stack with itself, even if the same creature misses you with multiple melee attacks.
-
-        The defense bonus and reactive penalty trigger are \\abilitytag{Swift} effects, but not the movement.
       `,
       rank: 1,
-      tags: ['Swift (see text)'],
       roles: ['turtle'],
     },
 
@@ -229,8 +224,9 @@ export const mobileHunter: CombatStyle = {
       name: 'Fearsome Rushdown',
 
       effect: `
-        Move up to half your movement speed and make a melee \\glossterm{strike} that deals double damage.
-        \\hit If your attack result also hits the target's Mental defense, it is \\glossterm{briefly} \\frightened by you.
+        Move up to half your \\glossterm{speed} without reducing your \\glossterm{available movement}.
+        Then, make a melee \\glossterm{strike} that deals double damage.
+        \\hit If your attack result also hits the target's Mental defense, it is \\briefly \\frightened by you.
       `,
       rank: 5,
       tags: ['Emotion'],
@@ -242,8 +238,9 @@ export const mobileHunter: CombatStyle = {
 
       // assume movement is worth 0.6 EA or so
       effect: `
-        Move up to half your movement speed and make a melee \\glossterm{strike} that deals triple damage.
-        \\hit The target \\glossterm{briefly} treats you as being \\trait{invisible}.
+        Move up to half your movement speed without reducing your \\glossterm{available movement}.
+        Then, make a \\glossterm{strike} that deals triple damage.
+        \\hit The target \\briefly treats you as being \\trait{invisible}.
       `,
       rank: 7,
       tags: ['Emotion'],
@@ -254,7 +251,7 @@ export const mobileHunter: CombatStyle = {
       name: 'Frenzied Charge',
 
       effect: `
-        After using this ability, you \\glossterm{briefly} take a \\minus4 penalty to all defenses.
+        After using this ability, you \\briefly take a \\minus4 penalty to all defenses.
 
         Move up to your speed in a single straight line.
         At the end of your movement, you can make a melee \\glossterm{strike} that deals double damage.

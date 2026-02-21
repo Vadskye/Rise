@@ -46,33 +46,34 @@ The combat rules also generally cover situations where time and precise position
   The GM can explain how vital wounds work in more detail if it comes up.
   Vital wounds can only be removed with an 8 hour rest, or with some rare abilities.
 
-\section{Tracking Time in Combat}
+\section{Combat Time}
   Combat takes place in a series of \glossterm{rounds}, which represent about six seconds of time.
-  Each round of a combat is divided into two \glossterm{phases}: the movement phase and the action phase.
-  After both phases are complete, the round ends and the next round begins.
+  During each round, each creature in the combat takes one \glossterm{turn}.
+  The order of those turns is determined by rolling \glossterm{initiative} (see \pcref{Initiative}).
+  Once everyone has taken a turn, the round ends and the next round begins.
 
-  During the movement phase, everyone can use a \glossterm{move action}.
-  Move actions can be used to move, but not to attack.
-  During the action phase, everyone can use a \glossterm{standard action} and a \glossterm{minor action}.
-  Most abilities require a standard action, including all normal attacks.
-  Minor actions are less common, and are typically used as part of the text of specific abilities.
-  There are also \glossterm{free actions}, which aren't generally used for specific player abilities.
-  You can take any number of free actions during both the movement and action phase.
+  During your turn, you can take one \glossterm{move action}, one \glossterm{minor action}, and one \glossterm{standard action}.
+  You can also take any number of \glossterm{free actions}.
+  Once you have taken all of the actions you intend to take, your turn is done.
 
-  You and your fellow player characters will take turns during each phase, but you can act in any order among yourselves.
-  The GM might ask each player in turn what they plan to do, or players could decide for themselves what they want to do and tell the GM whenever they have decided.
-  It depends how the GM wants to run the game.
+  You typically share a turn with other members of your party rather than having your own turn to yourself.
 
-  While your characters take actions, your enemies will also take their own actions.
-  Their actions resolve simultaneously with your actions.
-  The GM will typically tell you what your enemies did after all of the players have finished their actions.
+  \subsection{Initiative}\label{Initiative}
+    You can roll your own initiative, or you can choose an ally to lead you.
+    If you choose an ally to lead you, you use whatever their initiative result is.
+
+    Initiative order proceeds from the highest initiative result to the lowest.
+    All allies that are together in the initiative order, with no enemies between them, form an \glossterm{initiative group}.
+    Within an initiative group, you and your allies share a single turn.
+    This means you can all take actions in any order.
 
 \section{Movement}\label{Movement}
-  As a \glossterm{move action}, your character can move up to their speed along the ground.
-  Most characters have a movement speed of 30 feet, but your character sheet will tell you your speed.
-  You tell the GM which location you want to move to, or which creature you want to move next to.
-  If you move during the action phase, you can sprint, which doubles your movement speed.
-  Enemies will still get a chance to attack you from your original position even if you move during the action phase, so you can't dodge attacks that way.
+  Your \glossterm{speed} is how far you can move during a typical round.
+  At the start of your turn, your \glossterm{available movement} becomes equal to your speed.
+  As a \glossterm{move action}, you can use your available movement to move up to that distance.
+
+  If you need to move farther, you can sprint as a \glossterm{free action}, which increases your \glossterm{fatigue level} by one but doubles your available movement.
+  Alternatively, you can jog as a \glossterm{standard action}, which triples your available movement but typically means you can't take other useful actions in the same turn.
 
   You might be playing with a gridded battlemap with figures for each character, or you might be just imagining the world.
   Movement on a grid or hex map is typically more precise and tactical, while purely mental scenes tend to be more loose about exact distances and positioning.
@@ -84,18 +85,20 @@ The combat rules also generally cover situations where time and precise position
   These won't generally be written on your sheet explicitly because they are the same for everyone.
   However, it can be useful to know that they exist.
   If you find yourself using one of these abilities often, consider adding it to your character sheet.
+  Unless otherwise noted, these abilities require a \glossterm{standard action} to use.
 
   % Keep in sync with ToC/Combat.tex
   \begin{raggeditemize}
-    \item Charge: Move and make a strike with a weapon, but suffer a brief \minus2 penalty to defenses afterwards.
+    \item Charge: Move and make a strike with a weapon, but suffer a \minus2 penalty to defenses afterwards.
     \item Desperate Exertion: Reroll any attack or check with a \plus2 bonus, but you gain two \glossterm{fatigue levels}.
     \item Escape Grapple: Stop being grappled.
     \item Grapple: Start grappling with a foe.
     \item Maintain Grapple: Continue grappling with a foe as a \glossterm{free action}.
+    \item Jog: Triples your available movement.
     \item Recover: Regain half of your maximum hit points and remove all conditions. However, you gain two fatigue levels, and you can only do it once per fight.
     \item Shove: Push a foe up to half your speed.
-    \item Sprint: Move at double speed. Costs one fatigue during the movement phase, but is free during the action phase.
-    \item Total Defense: Gain a \plus2 bonus to all defenses this round.
+    \item Sprint: Doubles your available movement as a \glossterm{free action}, but increases your \glossterm{fatigue level} by one.
+    \item Total Defense: Gain a \plus2 bonus to all defenses.
     \item Throw: Throw a creature or object you're holding.
     \item Trip: Knock a foe \prone.
   \end{raggeditemize}

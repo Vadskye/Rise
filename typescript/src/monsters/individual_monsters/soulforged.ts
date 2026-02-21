@@ -149,7 +149,7 @@ function addAngels(grimoire: Grimoire) {
           creature.addRituals(['Channel Divinity', 'Revelation']);
           creature.addSpell('Baffling Visions', { usageTime: 'elite' });
           creature.addSpell('Clairvoyance', { usageTime: 'elite' });
-          creature.addSpell('Foresee Distant Safety', { usageTime: 'elite' });
+          creature.addSpell('Foresee Safety', { usageTime: 'elite' });
         },
       ],
       [
@@ -320,7 +320,7 @@ function addDemonspawn(grimoire: Grimoire) {
           creature.addPassiveAbility({
             name: 'Soulfire',
             effect: `
-              Whenever the $name \\glossterm{injures} a creature, that creature is \\glossterm{briefly} unable to regain \\glossterm{hit points}.
+              Whenever the $name \\glossterm{injures} a creature, that creature is \\briefly unable to regain \\glossterm{hit points}.
             `,
             isMagical: true,
           });

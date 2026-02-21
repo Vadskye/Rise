@@ -11,7 +11,7 @@ pub fn dragon<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 \begin{activeability}{Dragon Breath}{Standard action}
-                    \abilitycost You \glossterm{briefly} cannot use this ability again.
+                    \abilitycost You can't use this ability next round.
                     \rankline
                     This ability's tag depends on your dragon type (see Dragon Types, above).
                     Make an attack vs. Reflex against everything in the area defined by your dragon type.
@@ -41,7 +41,7 @@ pub fn dragon<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your wings grow larger, granting you a limited ability to fly.
                 You gain a slow \glossterm{fly speed} with a maximum height of 10 feet (see \pcref{Flight}).
-                As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
+                As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit this turn.
             ",
             modifiers: None,
         },

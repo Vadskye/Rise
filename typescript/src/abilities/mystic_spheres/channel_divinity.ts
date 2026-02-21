@@ -32,7 +32,7 @@ export const channelDivinity: MysticSphere = {
       cost: 'One \\glossterm{fatigue level}.',
       effect: `
         At the end of the next round, you become infused with divine power.
-        This causes you to regain \\hprankfour, and you become \\glossterm{briefly} \\focused.
+        This causes you to regain \\hprankfour, and you become \\briefly \\focused.
       `,
       roles: ['focus', 'healing', 'exertion'],
       rank: 4,
@@ -45,7 +45,7 @@ export const channelDivinity: MysticSphere = {
 
       effect: `
         At the end of the next round, you become infused with divine power.
-        This causes you to \\glossterm{briefly} gain a \\plus2 bonus to your Mental defense and become \\focused.
+        This causes you to \\briefly gain a \\plus2 bonus to your Mental defense and become \\focused.
       `,
       rank: 1,
       roles: ['focus', 'turtle'],
@@ -73,7 +73,7 @@ export const channelDivinity: MysticSphere = {
 
       effect: `
         At the end of the next round, you become infused with divine power.
-        This causes you to to be \\glossterm{briefly} \\primed.
+        This causes you to to be \\briefly \\primed.
       `,
       rank: 7,
       roles: ['focus'],
@@ -101,25 +101,21 @@ export const channelDivinity: MysticSphere = {
       name: 'Endure Tribulation',
 
       effect: `
-        You take half damage from all sources this round.
-        Because this is a \\abilitytag{Swift} ability, it affects attacks against you during the current phase.
+        You take \\briefly take half damage from all sources.
       `,
       rank: 1,
       roles: ['turtle'],
-      tags: ['Swift'],
     },
 
     {
       name: 'Embrace Tribulation',
 
       effect: `
-        You take half damage from all sources this round.
-        Because this is a \\abilitytag{Swift} ability, it affects attacks against you during the current phase.
-        If an attack \\glossterm{injures} you this round, you become \\primed next round.
+        You \\briefly take half damage from all sources.
+        If an enemy attack \\glossterm{injures} you during this effect, you become \\briefly \\primed.
       `,
       rank: 6,
       roles: ['turtle', 'focus', 'retaliate'],
-      tags: ['Swift'],
     },
 
     {
@@ -216,7 +212,7 @@ export const channelDivinity: MysticSphere = {
 
       attack: {
         hit: `
-          The target is \\glossterm{briefly} \\frightened by you.
+          The target is \\briefly \\frightened by you.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
@@ -234,11 +230,11 @@ export const channelDivinity: MysticSphere = {
 
       attack: {
         hit: `
-          The target is \\glossterm{briefly} \\frightened by you.
+          The target is \\briefly \\frightened by you.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
-          This attack \\glossterm{repeats} during your next action.
+          At the start of your next turn, this attack \\glossterm{repeats} in the same area.
         `,
       },
       rank: 4,
@@ -371,20 +367,9 @@ export const channelDivinity: MysticSphere = {
       effect: `
         You are \\shielded.
       `,
-      rank: 2,
+      rank: 3,
       roles: ['attune'],
       type: 'Attune (deep)',
-    },
-
-    {
-      name: 'Efficient Shield of Faith',
-
-      effect: `
-        You are \\shielded.
-      `,
-      rank: 7,
-      roles: ['attune'],
-      type: 'Attune',
     },
 
     {
@@ -393,7 +378,7 @@ export const channelDivinity: MysticSphere = {
       effect: `
         You are \\braced.
       `,
-      rank: 4,
+      rank: 6,
       roles: ['attune'],
       type: 'Attune (deep)',
     },
@@ -440,11 +425,11 @@ export const channelDivinity: MysticSphere = {
 
       attack: {
         hit: `
-          The target is \\glossterm{briefly} \\stunned.
+          The target is \\briefly \\stunned.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
-          Then, you are \\glossterm{briefly} \\empowered.
+          Then, you are \\briefly \\empowered.
         `,
       },
       rank: 5,
@@ -460,12 +445,12 @@ export const channelDivinity: MysticSphere = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          The target is \\glossterm{briefly} \\deafened.
+          The target is \\briefly \\deafened.
           If it is \\glossterm{injured}, it is also deafened as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
-          Then, you are \\glossterm{briefly} \\empowered.
+          Then, you are \\briefly \\empowered.
         `,
       },
       rank: 1,
@@ -479,7 +464,7 @@ export const channelDivinity: MysticSphere = {
 
       attack: {
         hit: `
-          If the target is \\glossterm{injured}, an interdiction \\glossterm{briefly} divides it from everything outside itself.
+          If the target is \\glossterm{injured}, an interdiction \\briefly divides it from everything outside itself.
           No ability can have \\glossterm{line of effect} to or from it, even abilities that can pass pass through solid objects.
           After the interdiction ends, the target becomes immune to this effect until it finishes a \\glossterm{short rest}.
         `,
@@ -519,7 +504,7 @@ export const channelDivinity: MysticSphere = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          The target is \\glossterm{briefly} \\goaded by you.
+          The target is \\briefly \\goaded by you.
           If it was \\glossterm{injured} by the strike, it is also goaded by you as a \\glossterm{condition}.
         `,
         targeting: `
@@ -541,7 +526,7 @@ export const channelDivinity: MysticSphere = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          The target is \\glossterm{briefly} \\dazzled.
+          The target is \\briefly \\dazzled.
           If it was \\glossterm{injured} by the strike, it is also dazzled as a \\glossterm{condition}.
         `,
         targeting: `

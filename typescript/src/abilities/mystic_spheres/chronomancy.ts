@@ -54,18 +54,6 @@ export const chronomancy: MysticSphere = {
       type: 'Attune',
     },
     {
-      name: 'Instant Reversal -- Movement',
-
-      effect: `
-        At the end of each movement phase, you can use this ability to rewind time to the start of the movement phase.
-        All other creatures make the same movements, but you can change your movement based on your knowledge of their previous movements.
-        After you rewind time in this way, this ability is \\glossterm{dismissed}.
-      `,
-      rank: 1,
-      roles: ['attune'],
-      type: 'Attune',
-    },
-    {
       name: 'Instant Reversal -- Decision',
 
       effect: `
@@ -179,11 +167,11 @@ export const chronomancy: MysticSphere = {
       // condition, so 1.9 EA, which is about rank 4.
       attack: {
         hit: `
-          If the target is \\glossterm{injured}, it becomes \\glossterm{briefly} frozen in time.
+          If the target is \\glossterm{injured}, it becomes \\briefly frozen in time.
           It becomes completely immune to all damage, attacks, and effects of any kind.
           In addition, it cannot act in any way, and the duration of other effects on it does not expire.
           At the end of the next round, it returns to normal, with no awareness of the intervening time.
-          After it returns to normal, it \\glossterm{briefly} becomes immune to this effect.
+          After it returns to normal, it becomes immune to this effect until it finishes a \\glossterm{short rest}.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius within \\shortrange.
@@ -202,7 +190,7 @@ export const chronomancy: MysticSphere = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          The target \\glossterm{briefly} \\slowed.
+          The target is \\briefly \\slowed.
           If it is \\glossterm{injured}, is also slowed as a \\glossterm{condition}.
         `,
         targeting: `
@@ -258,26 +246,22 @@ export const chronomancy: MysticSphere = {
 
       cost: BRIEF_COOLDOWN,
       effect: `
-        You are \\braced this round.
-        In addition, you can move up to half your \\glossterm{speed}.
-        This defense bonus is \\atSwift, so it protects you against attacks during the current phase, but the movement is not Swift.
+        You are \\briefly \\braced.
+        In addition, you add half your \\glossterm{speed} to your \\glossterm{available movement}.
       `,
       rank: 1,
       roles: ['turtle', 'mobility'],
-      tags: ['Swift (see text)'],
     },
     {
       name: 'Distant Accelerated Dodge',
 
-      // TODO: full EA math. What is sprint + total defense worth?
+      // TODO: full EA math. What is jog + total defense worth?
       effect: `
-        You are \\braced this round.
-        In addition, you can move up to twice your \\glossterm{speed}.
-        This defense bonus is \\atSwift, so it protects you against attacks during the current phase, but the movement is not Swift.
+        You are \\briefly \\braced.
+        In addition, you add twice your \\glossterm{speed} to your \\glossterm{available movement}.
       `,
       rank: 5,
       roles: ['turtle'],
-      tags: ['Swift (see text)'],
     },
 
     {
@@ -304,7 +288,7 @@ export const chronomancy: MysticSphere = {
         crit: CONDITION_CRIT,
         hit: `
           As a \\glossterm{condition}, the target randomly slows down.
-          At the start of each round, if it \\glossterm{injured}, it has a 50\\% chance to be \\slowed during that round.
+          At the start of each round, if the target is \\glossterm{injured}, it has a 50\\% chance to be \\slowed during that round.
         `,
         targeting: `
           Make an attack vs. Mental against up to two creatures in \\shortrange.
@@ -369,7 +353,7 @@ export const chronomancy: MysticSphere = {
 
       // TODO: EA math
       usageTime: 'minor',
-      cost: 'One \\glossterm{fatigue level}, and you \\glossterm{briefly} cannot cast this spell again.',
+      cost: "One \\glossterm{fatigue level}, and you can't cast this spell next round.",
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
         You reach into a possible future and create a duplicate of the target.
@@ -401,9 +385,7 @@ export const chronomancy: MysticSphere = {
         The target is placed into stasis.
         While in stasis, it cannot be targeted, moved, damaged, or otherwise affected in any way, and a creature is \\glossterm{unconscious}.
 
-        % TODO: wording
         This effect normally lasts as long as you \\glossterm{sustain} it.
-        Since releasing sustained effects is \\atSwift, it can attack and be attacked during the action phase when you release it from stasis.
         If you use this ability on yourself, it instead lasts for a number of rounds you choose when you cast the spell, up to a maximum of five rounds.
       `,
       rank: 3,
@@ -538,7 +520,7 @@ export const chronomancy: MysticSphere = {
         Your mind remains active during this time, and you are the only one aware of the stoppage of time.
         You cannot move or take any actions other than to observe your surroundings.
         In addition, you can release the time freeze as a \\glossterm{free action}.
-        When this spell ends, time resumes in the same phase that it was originally frozen.
+        When this spell ends, time resumes in the same moment that it was originally frozen.
 
         After casting this spell, you cannot cast it again until you finish a \\glossterm{short rest}.
       `,
@@ -623,7 +605,6 @@ export const chronomancy: MysticSphere = {
       // At rank 3, expected power is about 6. dr3 is 4.5+6 = 10.5 healing, and dr4 would
       // be 5.5+7 = 12.5 healing.
       scaling: { special: 'The recovery increases by +2 for each rank beyond 2.' },
-      tags: ['Swift'],
     },
 
     {
@@ -636,7 +617,6 @@ export const chronomancy: MysticSphere = {
       rank: 5,
       roles: ['healing', 'exertion'],
       scaling: { special: 'The recovery increases by 1d8 for each rank beyond 5.' },
-      tags: ['Swift'],
     },
 
     // Deafened hp is 0.5 EA. dazzled hp is 0.7 EA. Combined is 1.2 EA, plus brief is 1.6
@@ -647,7 +627,7 @@ export const chronomancy: MysticSphere = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          The target is \\glossterm{briefly} \\deafened and \\dazzled.
+          The target is \\briefly \\deafened and \\dazzled.
           If it is \\glossterm{injured}, it is also deafened and dazzled as a single \\glossterm{condition}.
         `,
         targeting: `
@@ -716,9 +696,9 @@ export const chronomancy: MysticSphere = {
       name: 'Pour Time Sideways',
 
       effect: `
-        You are \\glossterm{briefly} locked in stasis.
+        You are \\briefly locked in stasis.
         While in stasis, you are \\debuff{unconscious} and cannot be targeted, moved, damaged, or otherwise affected in any way.
-        In the round after your stasis ends, you can take an extra \\glossterm{move action} during the \\glossterm{movement phase} and an extra \\glossterm{minor action} during the \\glossterm{action phase}.
+        In the round after your stasis ends, you can take an extra \\glossterm{move action} and an extra \\glossterm{minor action} during your turn.
       `,
       rank: 2,
       roles: ['focus'],
@@ -729,10 +709,10 @@ export const chronomancy: MysticSphere = {
       name: 'Greater Pour Time Sideways',
 
       effect: `
-        You are \\glossterm{briefly} locked in stasis.
+        You are \\briefly locked in stasis.
         While in stasis, you are \\debuff{unconscious} and cannot be targeted, moved, damaged, or otherwise affected in any way.
-        In the round after your stasis ends, you cannot take any actions during the \\glossterm{movement phase}.
-        However, you can take an extra standard action during that round's \\glossterm{action phase}.
+        In the round after your stasis ends, you cannot take any \\glossterm{move actions}, and your \\glossterm{available movement} is zero.
+        However, you can take an extra standard action during your turn.
       `,
       rank: 6,
       roles: ['focus'],
@@ -744,11 +724,11 @@ export const chronomancy: MysticSphere = {
       cost: MINOR_FATIGUE,
       effect: `
         Choose yourself or one Medium or smaller \\glossterm{ally} within \\medrange.
-        The target becomes \\glossterm{briefly} frozen in time.
+        The target becomes \\briefly frozen in time.
         It becomes completely immune to all damage, attacks, and effects of any kind.
         In addition, it cannot act in any way, and the duration of other effects on it does not expire.
         At the end of the next round, it returns to normal, with no awareness of the intervening time.
-        After it returns to normal, it \\glossterm{briefly} becomes immune to this effect.
+        After it returns to normal, it becomes immune to this effect until it finishes a \\glossterm{short rest}.
       `,
       roles: ['boon'],
       rank: 2,
@@ -758,31 +738,27 @@ export const chronomancy: MysticSphere = {
       },
     },
 
-    // 0.8 EA
+    // 0.5 + 0.4 EA
     {
       name: 'Time Ebbs and Flows',
 
+      // Keep wording up to date based on brief ending at start/end of turn
       effect: `
-        You are \\braced this round.
-        Next round, you are \\focused.
-        This defense bonus is \\atSwift, so it protects you against attacks during the current phase.
+        You are \\briefly \\braced. When that effect ends, you become \\briefly \\focused.
       `,
-      rank: 1,
+      rank: 2,
       roles: ['turtle', 'focus'],
-      tags: ['Swift'],
     },
 
+    // 0.5 + 0.8 EA
     {
       name: 'Time Bends and Twists',
 
       effect: `
-        You are \\braced this round.
-        Next round, you are \\primed.
-        This defense bonus is \\atSwift, so it protects you against attacks during the current phase.
+        You are \\glossterm{briefly} \\braced. When that effect ends, you become \\briefly \\primed.
       `,
-      rank: 6,
+      rank: 7,
       roles: ['turtle', 'focus'],
-      tags: ['Swift'],
     },
   ],
 };

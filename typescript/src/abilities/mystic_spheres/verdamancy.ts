@@ -33,7 +33,7 @@ export const verdamancy: MysticSphere = {
       // Ranged slow is 2.1 EA, or r5, or r4 with limited scope.
       attack: {
         hit: `
-          The target is \\glossterm{briefly} \\slowed.
+          The target is \\briefly \\slowed.
         `,
         targeting: `
           Make an attack vs. Brawn against up to two \\glossterm{grounded} creatures within \\medrange.
@@ -89,7 +89,7 @@ export const verdamancy: MysticSphere = {
         targeting: `
           Make an attack vs. Brawn against one \\glossterm{grounded} creature within \\shortrange.
           You gain a +2 accuracy bonus if the target is in \\glossterm{undergrowth}.
-          After you attack, \\glossterm{light undergrowth} \\glossterm{briefly} fills the target's space and all adjacent spaces.
+          After you attack, \\glossterm{light undergrowth} \\briefly fills the target's space and all adjacent spaces.
         `,
       },
       rank: 1,
@@ -109,7 +109,7 @@ export const verdamancy: MysticSphere = {
         targeting: `
           Make an attack vs. Brawn against one \\glossterm{grounded} creature within \\shortrange.
           You gain a +2 accuracy bonus if the target is in \\glossterm{undergrowth}.
-          After you attack, \\glossterm{light undergrowth} \\glossterm{briefly} fills the target's space and all adjacent spaces.
+          After you attack, \\glossterm{light undergrowth} \\briefly fills the target's space and all adjacent spaces.
         `,
       },
       rank: 6,
@@ -324,7 +324,7 @@ export const verdamancy: MysticSphere = {
         targeting: `
           You create a patch of growing fruit in a \\smallarea radius \\glossterm{zone} within \\shortrange.
           The patch becomes \\glossterm{light undergrowth} if there was no undergrowth there, and any existing light undergrowth becomes \\glossterm{heavy undergrowth}.
-          During your next action, the fruits explode, and you make a \\glossterm{reactive attack} vs. Armor against all creatures in the area.
+          At the start of your next turn, the fruits explode, and you make a \\glossterm{reactive attack} vs. Armor against all creatures in the area.
           When the fruits explode, the undergrowth disappears.
         `,
       },
@@ -373,8 +373,8 @@ export const verdamancy: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damageranktwo immediately, and again during your next action.
-          Whenever it takes damage in this way, \\glossterm{light undergrowth} \\glossterm{briefly} fills its space and all adjacent spaces.
+          \\damageranktwo immediately, and again at the end of the target's next action.
+          Whenever it takes damage in this way, \\glossterm{light undergrowth} \\briefly fills its space and all adjacent spaces.
         `,
         targeting: `
           Make an attack vs. Reflex and Fortitude against one creature within \\shortrange.
@@ -456,7 +456,7 @@ export const verdamancy: MysticSphere = {
 
           Creatures can pass through the wall, though it costs five extra feet of movement to move through the wall.
           Whenever anything passes through the wall, make a \\glossterm{reactive attack} vs. Armor against it.
-          You can only make this attack against a given target once per \\glossterm{phase}.
+          You can only make this attack against a given target once per turn.
         `,
         halfOnMiss: true,
       },
@@ -517,7 +517,7 @@ export const verdamancy: MysticSphere = {
         `,
         targeting: `
           Make an attack vs. Fortitude against one living creature or plant within \\shortrange.
-          In addition, you create a \\medarea radius \\glossterm{zone} around the target that persists \\glossterm{briefly}.
+          In addition, you create a \\medarea radius \\glossterm{zone} around the target that persists \\briefly.
           All \\glossterm{undergrowth} in that area shrivels away into the ground, reemerging when the effect ends.
           If the target is a plant, including plant creatures, you gain a \\plus10 accuracy bonus with the attack.
         `,
@@ -532,7 +532,8 @@ export const verdamancy: MysticSphere = {
 
       functionsLike: {
         name: 'blight',
-        exceptThat: 'the damage increases to \\damageranksix, and it can kill objects that are Gargantuan or smaller.',
+        exceptThat:
+          'the damage increases to \\damageranksix, and it can kill objects that are Gargantuan or smaller.',
       },
       roles: ['burst'],
       rank: 6,
@@ -658,7 +659,7 @@ export const verdamancy: MysticSphere = {
 
       attack: {
         hit: `
-          A Huge grove of trees grows around the target, \\glossterm{briefly} trapping it inside the grove.
+          A Huge grove of trees grows around the target, \\briefly trapping it inside the grove.
           While it is trapped, it does not have \\glossterm{line of sight} or \\glossterm{line of effect} to any creature other than itself.
 
           The grove has \\glossterm{hit points} equal to five times your \\glossterm{power}, all of its defenses are 5, and it is destroyed when its hit points become negative.
@@ -674,31 +675,33 @@ export const verdamancy: MysticSphere = {
       rank: 7,
     },
 
-    // Any two shielded is 0.7, any two 0.4 EA is 1 EA.
+    // Any two shielded is 0.9 EA. Short range to make it rank 1 to avoid conflicting with
+    // thorns
     {
       name: 'Vineward',
 
       effect: `
-        Choose up to two creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each target has \\glossterm{cover} from all attacks this round.
+        Choose up to two creatures from among yourself and your \\glossterm{allies} within \\shortrange.
+        Each target is \\briefly \\shielded.
       `,
       rank: 1,
       roles: ['boon'],
-      tags: ['Manifestation', 'Swift'],
+      tags: ['Manifestation'],
     },
 
+    // TODO: gap with vineward is weird. med area would be rank 4 or rank 5?
     {
       name: 'Mass Vineward',
 
       effect: `
-        You and all \\glossterm{allies} within a \\largearea radius from you have \\glossterm{cover} from all attacks this round.
+        You and all \\glossterm{allies} within a \\largearea radius from you are \\briefly \\shielded.
       `,
-      rank: 4,
+      rank: 6,
       roles: ['boon'],
-      tags: ['Manifestation', 'Swift'],
+      tags: ['Manifestation'],
     },
 
-    // Shielded is 0.3 EA.
+    // Shielded is 0.4 EA.
     // Reactive damage takes up half the EA budget, so ~0.4 EA here.
     {
       name: 'Thorns',
@@ -706,14 +709,15 @@ export const verdamancy: MysticSphere = {
       attack: {
         hit: `\\damageranktwo.`,
         targeting: `
-          You have \\glossterm{cover} from all attacks this round.
-          In addition, whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-\\weapontag{Long} weapon this round, make a \\glossterm{reactive attack} vs. Armor against them.
+          You are \\briefly covered in thorns.
+          The thorns grant you \\glossterm{cover} from all attacks.
+          In addition, whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-\\weapontag{Long} weapon, make a \\glossterm{reactive attack} vs. Armor against them.
         `,
       },
       rank: 2,
       roles: ['focus'],
       scaling: 'damage',
-      tags: ['Manifestation', 'Swift'],
+      tags: ['Manifestation'],
     },
 
     {
@@ -726,7 +730,7 @@ export const verdamancy: MysticSphere = {
       rank: 5,
       roles: ['focus'],
       scaling: 'damage',
-      tags: ['Manifestation', 'Swift'],
+      tags: ['Manifestation'],
     },
 
     {
@@ -737,14 +741,15 @@ export const verdamancy: MysticSphere = {
         hit: `\\damagerankone.`,
         targeting: `
           Choose one creature from among yourself and your \\glossterm{allies} within \\medrange.
-          The target has \\glossterm{cover} from all attacks this round.
-          In addition, whenever a creature makes a \\glossterm{melee} attack against it using a free hand or non-\\weapontag{Long} weapon this round, make a \\glossterm{reactive attack} vs. Armor against the attacking creature.
+          The target is \\briefly covered in thorns.
+          The thorns grant it \\glossterm{cover} from all attacks.
+          In addition, whenever a creature makes a \\glossterm{melee} attack against it using a free hand or non-\\weapontag{Long} weapon, make a \\glossterm{reactive attack} vs. Armor against the attacking creature.
         `,
       },
       rank: 3,
       roles: ['boon'],
       scaling: 'damage',
-      tags: ['Manifestation', 'Swift'],
+      tags: ['Manifestation'],
     },
 
     {
@@ -757,7 +762,7 @@ export const verdamancy: MysticSphere = {
       rank: 6,
       roles: ['boon'],
       scaling: 'damage',
-      tags: ['Manifestation', 'Swift'],
+      tags: ['Manifestation'],
     },
     {
       name: 'Treeclub',

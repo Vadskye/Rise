@@ -219,7 +219,7 @@ fn thrown_attacks() -> Vec<Tool> {
         description: r"
             You can throw this item as a standard action.
             When you do, make an attack vs. Reflex and Fortitude against something within \shortrange.
-            \hit $dr3l damage immediately, and again during your next action.
+            \hit $dr3l damage immediately, and again at the end of the target's next turn.
         ".to_string(),
         tags: vec![AbilityTag::Acid],
         upgrades: vec![

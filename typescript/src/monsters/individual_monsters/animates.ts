@@ -300,7 +300,7 @@ function addGolems(grimoire: Grimoire) {
               hit: '2d6+7 damage.',
               targeting: `
               The $name makes two melee \\glossterm{strikes}.
-              If either strike hits and its attack result also hits the target's Reflex defense, the target \\glossterm{briefly} treats the $name as \\glossterm{invisible}.
+              If either strike hits and its attack result also hits the target's Reflex defense, the target \\briefly treats the $name as \\glossterm{invisible}.
             `,
             },
           });
@@ -520,7 +520,7 @@ function addTreants(grimoire: Grimoire) {
             effect: `
               Make a \\glossterm{strike} with a \\minus1 accuracy penalty.
               \\hit If your attack result hits the target's Fortitude defense, the target festers.
-              A festering creature takes \\damagerankone during your next action.
+              A festering creature takes \\damagerankone at the end of its next turn.
             `,
           });
           creature.addWeaponMult('greatclub');

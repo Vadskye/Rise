@@ -45,7 +45,6 @@ pub fn potions() -> Vec<Tool> {
             When you drink this \glossterm<potion>, you regain $dr3l hit points and increase your \glossterm{fatigue level} by one.
             In addition, if you have a \glossterm{vital wound} gith a \glossterm{vital roll} of 0 or -1, you treat that vital roll as a 1 instead (see \pcref{Vital Wounds}).
         ".to_string(),
-        tags: vec![AbilityTag::Swift],
         upgrades: vec![
             ItemUpgrade::new(2, "Restores $dr5l hit points and mitigates vital wounds", r"
                 The healing increases to $dr5l, and the minimum vital roll affected improves to -2.
@@ -101,6 +100,7 @@ pub fn potions() -> Vec<Tool> {
     // R6: 1.0 EA
     // R8: 1.1 EA
 
+    // 0.4 + 0.3
     potions.push(Tool {
         name: "Invigorating Potion".to_string(),
         rank: 1,
@@ -108,12 +108,6 @@ pub fn potions() -> Vec<Tool> {
         description: r"
             When you drink this \glossterm<potion>, you are \glossterm{briefly} \empowered and \fortified.
         ".to_string(),
-        upgrades: vec![
-            // Double fortify is 0.6
-            ItemUpgrade::new(6, "Grants brief power and fortification", r"
-                This gains the \atSwift tag, so it protects you against attacks during the current phase.
-            "),
-        ],
         ..potion()
     });
 
@@ -131,26 +125,23 @@ pub fn potions() -> Vec<Tool> {
     potions.push(Tool {
         name: "Fortifying Potion".to_string(),
         rank: 1,
-        short_description: "Grants brief fortification".to_string(),
+        short_description: "Restores $dr3l hit points and fortifies".to_string(),
         description: r"
-            When you drink this \glossterm<potion>, you are \glossterm{briefly} \fortified.
-            This has the \atSwift tag, so it protects you against attacks during the current phase.
+            When you drink this \glossterm<potion>, you regain $dr3l hit points and increase your \glossterm{fatigue level} by one.
+            In addition, you are \glossterm{briefly} \fortified.
         "
         .to_string(),
-        tags: vec![AbilityTag::Swift],
-        ..potion()
-    });
-
-    potions.push(Tool {
-        name: "Shielding Potion".to_string(),
-        rank: 1,
-        short_description: "Grants brief shielding".to_string(),
-        description: r"
-            When you drink this \glossterm<potion>, you are \glossterm{briefly} \shielded.
-            This has the \atSwift tag, so it protects you against attacks during the current phase.
-        "
-        .to_string(),
-        tags: vec![AbilityTag::Swift],
+        upgrades: vec![
+            ItemUpgrade::new(3, "Restores $dr5l hit points and fortifies", r"
+                The healing increases to $dr5l.
+            "),
+            ItemUpgrade::new(5, "Restores $dr7l hit points and fortifies", r"
+                The healing increases to $dr7l.
+            "),
+            ItemUpgrade::new(7, "Restores $dr9l hit points and fortifies", r"
+                The healing increases to $dr9l.
+            "),
+        ],
         ..potion()
     });
 
@@ -164,6 +155,8 @@ pub fn potions() -> Vec<Tool> {
         ..potion()
     });
 
+    // Honed + steeled is 0.8 EA, but they combine poorly since they are both circumstantial,
+    // so call it 0.7 EA.
     potions.push(Tool {
         name: "Potion of Sharpened Steel".to_string(),
         rank: 1,

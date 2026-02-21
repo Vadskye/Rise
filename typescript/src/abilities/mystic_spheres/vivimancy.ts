@@ -4,7 +4,7 @@ import { BARRIER_COOLDOWN, CONDITION_CRIT, MULTIHIT_CRIT } from '../constants';
 export const vivimancy: MysticSphere = {
   name: 'Vivimancy',
   shortDescription: 'Manipulate life energy to aid allies or harm foes.',
-  sources: ['arcane', 'divine', 'nature'],
+  sources: ['arcane', 'bardic', 'divine', 'nature'],
 
   cantrips: [
     {
@@ -33,7 +33,7 @@ export const vivimancy: MysticSphere = {
         `,
         injury: `
           You can increase your \\glossterm{fatigue level} by one. 
-          If you do, you regain \\hprankfour at the end of the round.
+          If you do, you regain \\hprankfour.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -80,7 +80,7 @@ export const vivimancy: MysticSphere = {
         `,
         injury: `
           You can increase your \\glossterm{fatigue level} by one.
-          If you do, you regain \\hprankfive at the end of the round.
+          If you do, you regain \\hprankfive.
         `,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\medrange.
@@ -127,7 +127,6 @@ export const vivimancy: MysticSphere = {
       rank: 1,
       roles: ['healing', 'exertion'],
       scaling: 'healing',
-      tags: ['Swift'],
     },
 
     {
@@ -142,7 +141,6 @@ export const vivimancy: MysticSphere = {
       rank: 4,
       roles: ['healing', 'exertion'],
       scaling: 'healing',
-      tags: ['Swift'],
     },
 
     {
@@ -157,7 +155,6 @@ export const vivimancy: MysticSphere = {
       `,
       rank: 7,
       roles: ['healing', 'exertion'],
-      tags: ['Swift'],
     },
 
     {
@@ -170,12 +167,11 @@ export const vivimancy: MysticSphere = {
       cost: 'One \\glossterm{fatigue level}.',
       effect: `
         You inscribe a circle in a \\medarea radius \\glossterm{zone} from you.
-        During your next action, each living creature in the area regains \\hprankthree.
+        At the start of your next turn, each living creature in the area regains \\hprankthree.
       `,
       rank: 3,
       roles: ['healing', 'exertion'],
       scaling: 'healing',
-      tags: ['Swift'],
     },
 
     {
@@ -184,12 +180,11 @@ export const vivimancy: MysticSphere = {
       cost: 'One \\glossterm{fatigue level}.',
       effect: `
         You inscribe a circle in a \\medarea radius \\glossterm{zone} from you.
-        During your next action, each living creature in the area regains \\hpranksix.
+        At the start of your next turn, each living creature in the area regains \\hpranksix.
       `,
       rank: 6,
       roles: ['healing', 'exertion'],
       scaling: 'healing',
-      tags: ['Swift'],
     },
 
     // TODO: What level can vital wounds usually be removed?
@@ -273,7 +268,7 @@ export const vivimancy: MysticSphere = {
         halfOnMiss: true,
         targeting: `
           You inscribe a circle in a \\medarea radius \\glossterm{zone} from your location.
-          During your next action, make a \\glossterm{reactive attack} vs. Fortitude against all living creatures in the area.
+          At the start of your next turn, make a \\glossterm{reactive attack} vs. Fortitude against all living creatures in the area.
         `,
       },
       rank: 3,
@@ -295,7 +290,7 @@ export const vivimancy: MysticSphere = {
         halfOnMiss: true,
         targeting: `
           You inscribe a circle in a \\medarea radius \\glossterm{zone} from your location.
-          During your next action, make a \\glossterm{reactive attack} vs. Fortitude against all living creatures in the area.
+          At the start of your next turn, make a \\glossterm{reactive attack} vs. Fortitude against all living creatures in the area.
         `,
       },
       rank: 6,
@@ -477,7 +472,7 @@ export const vivimancy: MysticSphere = {
         crit: MULTIHIT_CRIT,
         hit: `
           \\damagerankthree, and the target's life becomes linked to yours as a \\glossterm{condition}.
-          At the end of each subsequent round, if you lost hit points during that round, the target takes \\damagerankthree.
+          At the end of each of your subsequent turns, if you lost hit points since your last turn, the target takes \\damagerankthree.
         `,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\shortrange.
@@ -497,7 +492,7 @@ export const vivimancy: MysticSphere = {
         crit: MULTIHIT_CRIT,
         hit: `
           \\damageranksix, and the target's life becomes linked to yours as a \\glossterm{condition}.
-          At the end of each subsequent round, if you lost hit points during that round, the target takes \\damageranksix.
+          At the end of each of your subsequent turns, if you lost hit points since your last turn, the target takes \\damageranksix.
         `,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\shortrange.
@@ -519,7 +514,7 @@ export const vivimancy: MysticSphere = {
         halfOnMiss: true,
         targeting: `
           When you cast this spell, your life energy begins to surge.
-          During your next action, make a \\glossterm{reactive attack} vs. Fortitude against all living \\glossterm{enemies} within a \\smallarea radius from you.
+          At the start of your next turn, make a \\glossterm{reactive attack} vs. Fortitude against all living \\glossterm{enemies} within a \\smallarea radius from you.
           If you are at full hit points at that time, you gain a \\plus4 accuracy bonus with this attack.
         `,
       },
@@ -682,7 +677,7 @@ export const vivimancy: MysticSphere = {
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Fortitude against any living creature sharing space with it.
           Generally, this is only possible for Large or larger creatures.
           In addition, whenever a living creature passes through the the wall, you make a \\glossterm{reactive attack} vs. Fortitude against it.
-          You can only attack a given target with this spell once per round.
+          You can only attack a given target with this spell once per turn.
         `,
       },
       rank: 2,
@@ -764,7 +759,7 @@ export const vivimancy: MysticSphere = {
       name: 'Putrefying Blast',
 
       attack: {
-        hit: `The target is \\glossterm{briefly} \\stunned.`,
+        hit: `The target is \\briefly \\stunned.`,
         targeting: `
           Make an attack vs. Fortitude against all \\glossterm{enemies} within a \\medarea cone from you.
         `,
@@ -783,7 +778,7 @@ export const vivimancy: MysticSphere = {
         hit: `The target is \\stunned as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Fortitude against all \\glossterm{enemies} within a \\largearea cone from you.
-          Then, you are \\glossterm{briefly} \\stunned.
+          Then, you are \\briefly \\stunned.
         `,
       },
       rank: 7,
@@ -796,7 +791,7 @@ export const vivimancy: MysticSphere = {
 
       attack: {
         hit: `\\damageranktwo.`,
-        injury: `You are \\glossterm{briefly} \\empowered.`,
+        injury: `You are \\briefly \\empowered.`,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\shortrange.
         `,
@@ -811,7 +806,7 @@ export const vivimancy: MysticSphere = {
 
       attack: {
         hit: `\\damagerankfive, and any \\glossterm{extra damage} is doubled.`,
-        injury: `You are \\glossterm{briefly} \\empowered.`,
+        injury: `You are \\briefly \\empowered.`,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\shortrange.
         `,
@@ -828,13 +823,12 @@ export const vivimancy: MysticSphere = {
       // is enough for 0.4 ranks of buff.
       attack: {
         hit: `
-          The target \\glossterm{briefly} takes a -2 penalty to the chosen defense.
+          The target \\briefly takes a -2 penalty to the chosen defense.
         `,
         targeting: `
           Choose one of the five defenses: Armor, Brawn, Fortitude, Reflex, or Mental.
           Make an attack vs. Fortitude against up to two creatures within \\shortrange.
-          Then, you \\glossterm{briefly} gain a +2 bonus to that defense.
-          Since this ability does not have the \\atSwift tag, it does not protect you from attacks during the current phase.
+          Then, you \\briefly gain a +2 bonus to that defense.
         `,
       },
       rank: 1,
@@ -849,9 +843,8 @@ export const vivimancy: MysticSphere = {
       // brace is conditional.
       attack: {
         hit: `
-          The target is \\glossterm{briefly} \\stunned.
-          Then, you are briefly \\braced.
-          Since this ability does not have the \\atSwift tag, it does not protect you from attacks during the current phase.
+          The target is \\briefly \\stunned.
+          Then, you are \\briefly \\braced.
         `,
         targeting: `
           Make an attack vs. Fortitude against up to two creatures within \\shortrange.

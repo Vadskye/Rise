@@ -113,6 +113,7 @@ They allow more distinct and unique character customization, but also increase g
           \tb{General Feats}\label{General Feats}         & \tb{Prerequisites}               & \tb{Benefits}                              & \tb{Feat Types}   & \tb{Page}                                   \\
           \featref{Ascetic}                               & Wil 1                            & Cannot use items, gain extra archetype     & \tdash            & \featpref{Ascetic}                          \\
           \magicalfeatref{Barbaric Ancestry}              & Str \add Dex \add Con is 3       & Gain aid from barbarian ancestors          & Ancestry          & \featpref{Barbaric Ancestry}                \\
+          \featref{Beef}                                  & Str 3                            & Increase brawn and strength                & \tdash            & \featpref{Beef}                     \\
           \magicalfeatref{Celestial Ancestry}             & Non-evil                         & Gain aspects of celestial beings           & Ancestry, Magical & \featpref{Celestial Ancestry}               \\
           \featref{Chameleon}                             & Trained Disguise, Int 2          & Adapt your archetypes and abilities        & \tdash            & \featpref{Chameleon}                        \\
           \featref{Draconic Ancestry}                     & \tdash                           & Gain aspects of draconic power             & Ancestry          & \featpref{Draconic Ancestry}                \\
@@ -232,7 +233,7 @@ They allow more distinct and unique character customization, but also increase g
     That extra target cannot already be a target of the strike.
     If the two bolts have different properties, you choose which target is affected by which bolt when you shoot the crossbow.
 
-    \ff[12]{Rapid Reload\plus} Once per round, you can reload a crossbow that would normally require a standard action to reload as a \glossterm{free action}.
+    \ff[12]{Rapid Reload\plus} Once per turn, you can reload a crossbow that would normally require a standard action to reload as a \glossterm{free action}.
     When you do, you increase your \glossterm{fatigue level} by one.
     You can combine this with reloading the same crossbow as a standard action if the crossbow would need multiple standard actions to reload.
 
@@ -314,18 +315,17 @@ They allow more distinct and unique character customization, but also increase g
     \end{raggeditemize}
 
     Success means you move along the surface.
-    Failure means you fall through the surface, and you cannot use this ability again during the current phase.
+    Failure means you fall through the surface, and you cannot use this ability again this turn.
     The \glossterm{difficulty value} increases by 5 for each consecutive round that you spend moving in this way.
   \end{feat}
 
-  \begin{magicalfeat}{Barbaric Ancestry}{Ancestry, Magical}
+  \begin{feat}{Barbaric Ancestry}{Ancestry}
     \featpre Strength, Dexterity, and Constitution sum to at least 3
     \parhead{Special} You can only have one Ancestry feat.
 
     % Better than Cleave in large group fights where you have time to prebuff, worse otherwise
     \magicalff[1]{Ancestral Battlecry}
     \begin{magicalactiveability}{Ancestral Battlecry}{Standard action}
-      \abilitytags \atSwift
       \abilitycost You can increase your \glossterm{fatigue level} by one to use this ability as a \glossterm{minor action}.
       \rankline
       Three ghostly spirits of your ancestors appear around you.
@@ -333,7 +333,7 @@ They allow more distinct and unique character customization, but also increase g
       Whenever you make a melee \glossterm{strike}, each spirit mimics you.
       For each spirit that mimics you, the strike can affect an additional secondary target of your choice within 15 foot \glossterm{range} of you, even if you are not adjacent to it.
 
-      At the end of each subsequent round after you use this ability, one of the spirits disappears.
+      At the end of each of your subsequent turns after you use this ability, one of the spirits disappears.
       When all of the spirits have disappeared, this effect ends.
     \end{magicalactiveability}
 
@@ -346,24 +346,39 @@ They allow more distinct and unique character customization, but also increase g
     You can choose to dismiss it as a \glossterm{free action}.
 
     \ff[18]{Blood of My Ancestors\plus} The vital roll bonus increases to \plus2, and the durability bonus increases to \plus4.
-  \end{magicalfeat}
+  \end{feat}
 
   \begin{feat}{Battle Armory}{Combat}
     \featpre Strength 1, Dexterity 2.
 
     \ff[1]{Mobile Armory} You can store up to ten items for easy access on your body, rather than five (see \pcref{Storing Items}).
 
-    \ff[1]{Overburdened Quickdraw} Once per round, you can draw or sheathe any non-shield weapon as a \glossterm{free action}.
+    \ff[1]{Overburdened Quickdraw} Once per turn, you can draw or sheathe any non-shield weapon as a \glossterm{free action}.
     This does not count against your normal one free action \glossterm{object manipulation} per round (see \pcref{Manipulating Objects}).
     If you have the Armed and Ready fighter ability with the same effect, you can use both free actions separately, allowing you to draw or sheathe two weapons per round as a free action.
 
-    \magicalff[6]{Rapid Attunement} Once per round, you can use the \ability{item attunement} ability to attune to a weapon or armor as a \glossterm{free action} (see \pcref{Item Attunement}).
+    \magicalff[6]{Rapid Attunement} Once per turn, you can use the \ability{item attunement} ability to attune to a weapon or armor as a \glossterm{free action} (see \pcref{Item Attunement}).
 
     \ff[12]{Versatile Force} You gain a \plus1 bonus to your \glossterm{magical power} and \glossterm{mundane power}.
 
     \magicalff[18]{Magic Armory} You gain an additional \glossterm{attunement point}.
 
     \ff[18]{Versatile Force\plus} The power bonus increases to \plus2.
+  \end{feat}
+
+  \begin{feat}{Beef}{General}
+    \featpre Strength 3.
+
+    \ff[1]{Staggering Brawn} You gain a \plus3 bonus to your Brawn defense.
+
+    \ff[6]{Powerlifter} You gain a \plus1 bonus to your Strength for the purpose of determining your \glossterm{weight limits}.
+
+    \magicalff[6]{Unbound Strength} When you use at least two \glossterm{free hands} to carry burdens, you can carry implausibly cumbersome loads without worrying about volume limits, and without incurring damage to the carried objects as a side effect of transportation.
+    For example, you could pick up an entire house if your \glossterm{weight limit} was high enough, even though a house would normally fall apart under the strain if a creature tried to pick it up.
+
+    \ff[12]{Staggering Brawn\plus} The defense bonus increases to \plus6.
+
+    \ff[18]{Limitless Strength} You gain a \plus1 bonus to your Strength.
   \end{feat}
 
   \begin{feat}{Blindfighter}{Combat}
@@ -443,21 +458,22 @@ They allow more distinct and unique character customization, but also increase g
   \begin{feat}{Brawler}{Combat}
     \featpre Strength 1, Dexterity 1.
 
-    \ff[1]{Unarmed Warrior} You deal 1d6 damage with the punch/kick \glossterm{natural weapon} (see \pcref{Natural Weapons}).
-    In addition, you treat that weapon as having the \weapontag{Light} weapon tag, which allows you to make dual strikes with it more easily (see \pcref{Dual Strikes}).
-    This ability does not stack with the ability of the same name from the Perfected Form monk archetype (see \pcref{Perfected Form}).
-
     \ff[1]{Brawling Expertise} You gain a \plus1 bonus to your \glossterm{brawling accuracy} (see \pcref{Brawling Accuracy}).
+
+    \ff[1]{Unarmed Warrior} Your punch/kick \glossterm{natural weapon} becomes a \plus1 accuracy weapon that deals 1d4 damage and has the \weapontag{Light} \glossterm{weapon tag}.
+    Since this bonus is local to the weapon, it is doubled if you make \glossterm{dual strikes} with it.
+    Whenever you make a strike with it, you can freely choose whether it also has the \atSubdual tag.
+    This effect does not stack with the ability of the same name from the Perfected Form monk archetype (see \pcref{Perfected Form}).
 
     \ff[6]{Larger than Life} You are treated as one size category larger than your actual size for the purpose of \atSizeBased \atBrawling abilities.
 
-    \ff[12]{Unarmed Warrior\plus} The damage increases to 1d8.
+    \ff[12]{Unarmed Warrior\plus} The damage increases to 1d6.
 
     \ff[12]{Brawling Expertise\plus} The bonus from your \textit{brawling expertise} ability increases to \plus2.
 
     \ff[18]{Grapple Supremacy} When you grapple a target with the \textit{grapple} ability, you automatically take control of the grapple (see \pcref{Controlling a Grapple}).
 
-    \ff[18]{Unarmed Warrior\plus\plus} The damage increases to 1d10.
+    \ff[18]{Unarmed Warrior\plus\plus} The damage increases to 1d8.
   \end{feat}
 
   \begin{magicalfeat}{Celestial Ancestry}{Ancestry, Magical}
@@ -466,7 +482,6 @@ They allow more distinct and unique character customization, but also increase g
 
     \magicalff[1]{Celestial Benevolence}
     \begin{magicalactiveability}{Celestial Benevolence}{Standard action}
-        \abilitytags \abilitytag{Swift}
         \rankline
         Choose an \glossterm{ally} within \shortrange.
         While the target is within \shortrange of you, it takes half damage from all damaging effects (minimum 1).
@@ -478,24 +493,32 @@ They allow more distinct and unique character customization, but also increase g
         While this ability is active, you cannot be affected by other creatures using this ability on you.
     \end{magicalactiveability}
 
+    % Treat as r1 area, which is a little cheating but makes the damage scaling easier
     \magicalff[6]{Scouring Light}
-    \begin{magicalactiveability}{Scouring Light}{Standard action}
-      \abilitycost You \glossterm{briefly} cannot use this ability again.
+    \begin{magicalsustainability}{Scouring Light}{Standard action}
+      \abilitytags \abilitytag{Sustain} (standard)
       \rankline
-      Make an attack vs. Reflex against all enemies in a \medarealong, 10 ft. wide line from you.
-      Whether you hit or miss, each target suffers a \minus2 penalty to its Armor and Reflex defenses this round, and you \glossterm{briefly} radiate \glossterm{brilliant illumination} in a \medarea radius from you.
-      \hit \damageranktwo.
+      When you use or sustain this ability, you \briefly radiate \glossterm{brilliant illumination} in a \medarea radius from you.
+      Then, make an attack vs. Reflex against all enemies in an area.
+      The area depends on how many times you have sustained this ability:
+      \begin{raggeditemize}
+        \item Never: \medarealong, 5 ft. wide line
+        \item Once: \medarealong, 10 ft. wide line
+        \item Two or more times: \areamed radius
+      \end{raggeditemize}
+      \hit \damagerankthree.
+      \miss Half damage.
       \rankline
-      \featlevel{9} The damage increases to \damagerankthree.
-      \featlevel{12} The damage increases to \damagerankfour.
-      \featlevel{15} The damage increases to \damagerankfive.
-      \featlevel{18} The damage increases to \damageranksix.
-      \featlevel{21} The damage increases to \damagerankseven.
-    \end{magicalactiveability}
+      \featlevel{9} The damage increases to \damagerankfour.
+      \featlevel{12} The damage increases to \damagerankfive.
+      \featlevel{15} The damage increases to \damageranksix.
+      \featlevel{18} The damage increases to \damagerankseven.
+      \featlevel{21} The damage increases to \damagerankeight.
+    \end{magicalsustainability}
 
     \magicalff[12]{Angel Wings} You gain feathery wings that sprout from your back.
     These wings grant you a slow \glossterm{fly speed} with a maximum height of 15 feet (see \pcref{Flight}).
-    As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
+    As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit this turn.
     The wings themselves are \glossterm{mundane}, but the ability to fly and glide with them is \magical.
 
     \magicalff[18]{Angel Wings\plus} The height limit increases to 30 feet.
@@ -507,7 +530,7 @@ They allow more distinct and unique character customization, but also increase g
     \featpre Disguise as a trained skill, Intelligence 2.
 
     \ff[1]{Adaptive Specialty} As a \glossterm{free action}, if you do not already have an adaptive specialty active, you can choose an adaptive specialty from the list below.
-    You immediately gain the benefits of that adaptive specialty as a \atSwift effect.
+    You immediately gain the benefits of that adaptive specialty.
     Whenever you finish a \glossterm{short rest}, you can deactivate your adaptive specialty, losing all of its benefits.
     \begin{raggeditemize}
       \item Martial: You become proficient with all non-exotic weapons and an additional armor \glossterm{usage class} of your choice.
@@ -524,7 +547,7 @@ They allow more distinct and unique character customization, but also increase g
     These three archetypes are your adaptive archetypes.
 
     As a \glossterm{free action}, if you do not already have an adaptive archetype active, you can choose one of your adaptive archetypes.
-    You immediately gain all benefits of that archetype as a \atSwift effect.
+    You immediately gain all benefits of that archetype.
     Whenever you finish a \glossterm{short rest}, you can deactivate your adaptive archetype, losing all of its benefits.
     You must track which choices you made for each archetype that you lose access to in this way, such as which spells and maneuvers you learned.
     When you regain access to that archetype, you must make the same choices.
@@ -696,7 +719,7 @@ They allow more distinct and unique character customization, but also increase g
     % that would normally be appropriate for a d(R-1) spell.
     \ff[6]{Draconic Breath}
     \begin{activeability}{Draconic Breath}{Standard action}
-      \abilitycost You \glossterm{briefly} cannot use this ability again.
+      \abilitycost You can't use this ability next round.
       \rankline
       This ability's tag matches your dragon's associated tag.
       Make an attack vs. Reflex against everything in the area defined by the type of dragon from your \textit{draconic ancestry} ability (see \trefnp{Dragon Types}).
@@ -724,7 +747,7 @@ They allow more distinct and unique character customization, but also increase g
     % TODO: figure out a way to differentiate these from angel wings
     \ff[12]{Draconic Wings} You gain leathery wings that sprout from your back.
     These wings grant you a slow \glossterm{fly speed} with a maximum height of 15 feet (see \pcref{Flight}).
-    As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
+    As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit this turn.
     The wings themselves are \glossterm{mundane}, but the ability to fly and glide with them is \magical.
 
     \ff[18]{Scales\plus} The Armor defense bonus from your \textit{scales} ability increases to \plus2.
@@ -735,8 +758,8 @@ They allow more distinct and unique character customization, but also increase g
   \begin{feat}{Duelist}{Combat}
     \featpre Dexterity 2, Perception 1.
 
-    \ff[1]{Duel Focus} At the start of each round, you may choose a creature you can see.
-    During that round, you gain a \plus1 bonus to your defenses against that creature's attacks.
+    \ff[1]{Duel Focus} At the start of your turn, you may choose a creature you can see.
+    Until your next turn, you gain a \plus1 bonus to your defenses against that creature's attacks.
 
     \ff[6]{Deliver the Duel}
     \begin{activeability}{Deliver the Duel}{Standard action}
@@ -818,7 +841,7 @@ They allow more distinct and unique character customization, but also increase g
     When you do, you increase your \glossterm{fatigue level} by one, and you may freely choose the random result.
     You can use this ability after seeing what your result would have been.
     \glossterm{Vital rolls} and your \ability{sudden entropy} ability cannot be affected by this ability.
-    After using this ability, you \glossterm{briefly} cannot use it again.
+    After using this ability, you can't use it again next round.
   \end{magicalfeat}
 
   \begin{feat}{Executioner}{Combat}
@@ -837,7 +860,7 @@ They allow more distinct and unique character customization, but also increase g
 
     \ff[12]{Finishing Blow\plus} The accuracy bonus increases to \plus2.
 
-    \ff[18]{Death is Coming} Whenever you deal damage to a creature that is marked for execution, you are \glossterm{briefly} \honed.
+    \ff[18]{Death is Coming} Whenever you deal damage to a creature that is marked for execution, you are \briefly \honed.
   \end{feat}
 
   \begin{feat}{Fateweaver}{General, Magical}
@@ -887,7 +910,7 @@ They allow more distinct and unique character customization, but also increase g
 
     \ff[6]{Rapid Escape} You can escape bindings and use the \ability{escape grapple} ability as a \glossterm{move action}, rather than as a standard action.
 
-    \ff[6]{Rapid Squeeze} Your movement speed is not reduced while \squeezing.
+    \ff[6]{Rapid Squeeze} Your \glossterm{speed} is not reduced while \squeezing.
 
     \ff[12]{Specialization\plus} The bonus from your \textit{specialization} ability increases to \plus4.
 
@@ -945,10 +968,7 @@ They allow more distinct and unique character customization, but also increase g
     \magicalff[1]{Ghost Shroud} Your Constitution does not increase your \glossterm{injury point} (see \pcref{Injury Point}).
     You can also use the lower of your Dexterity and Willpower in place of your Constitution to determine your \glossterm{hit points}.
 
-    \magicalff[1]{Ghost Step} When you use the \textit{sprint} ability, you can become \trait{invisible} during that phase (see \pcref{Invisible}, and \pcref{Sprint}).
-    This usually makes it impossible for creatures to react to your movement, such as by using the \ability{block} or \ability{follow} abilities (see \pcref{Movement Abilities}).
-    This ability has the \abilitytag{Swift} tag, so it affects attacks against you during the current phase.
-    After using this ability, you \glossterm{briefly} cannot use it again.
+    \magicalff[1]{Ghost Step} When you use the \ability{jog} or \ability{sprint} abilities, you can become \trait{invisible} until the end of your turn (see \pcref{Jog}, and \pcref{Sprint}).
 
     % as rank 3 maneuver, except for hitting Reflex defense
     \magicalff[6]{Spectral Slice}
@@ -957,7 +977,7 @@ They allow more distinct and unique character customization, but also increase g
       Make a melee \glossterm{strike}.
       The attack is made against the target's Reflex defense instead of its Armor defense.
       You use the higher of your \glossterm{magical power} and your \glossterm{mundane power} to determine your damage with this ability (see \pcref{Power}).
-      \hit If your attack also hits the target's Fortitude defense, it is \glossterm{briefly} \slowed.
+      \hit If your attack also hits the target's Fortitude defense, it is \briefly \slowed.
       \injury If your attack also hits the target's Fortitude defense, it is \slowed as a \glossterm{condition}.
 
       \rankline
@@ -967,10 +987,8 @@ They allow more distinct and unique character customization, but also increase g
       \featlevel{18} The extra damage increases to 4d6 \add your \glossterm{power}.
     \end{magicalactiveability}
 
-    \magicalff[12]{Ghost Step\plus} When you use your \textit{ghost step} ability, you can also become \trait{incorporeal} for the duration of the movement.
-    This ability has the \abilitytag{Swift} tag, so it grants you the defensive benefits of being incorporeal during the current phase.
-    % TODO: wording
-    If you choose not to become incorporeal, you do not have to wait \glossterm{briefly} before being able to use your \textit{ghost step} ability again.
+    \magicalff[12]{Ghost Step\plus} When you use the \ability{jog} or \ability{sprint} abilities, you can become \trait{incorporeal} until the end of your turn.
+    While you are incorporeal in this way, you gain an average fly speed.
 
     \magicalff[12]{Spectral Shield} You are \impervious to all attacks by \trait{incorporeal} creatures.
 
@@ -992,7 +1010,7 @@ They allow more distinct and unique character customization, but also increase g
 
     \ff[18]{Smash Apart} Whenever you deal damage to a creature or object with a melee strike using a weapon you hold in two hands, you can \glossterm{push} that creature or object up to 15 feet in a straight line directly away from you.
     If the creature gained an \glossterm{injury} from your attack, you \glossterm{fling} it instead of pushing it.
-    You can only move any individual creature or object in this way once per round.
+    You can only move any individual creature or object in this way once per turn.
     This is a \atSizeBased effect.
   \end{feat}
 
@@ -1013,9 +1031,8 @@ They allow more distinct and unique character customization, but also increase g
       Make a \glossterm{brawling attack} vs. Brawn against one creature or object adjacent to you.
       If you hit, and you are strong enough to carry the target, you \glossterm{fling} it up to 10 feet directly upwards.
       This leaves it \glossterm{midair}, which normally makes it \unsteady.
-      On a critical hit, the maximum fling distance is doubled.
       You can then jump up to their height, assuming it is within your maximum jump height.
-      This jump ignores the normal limit on jumping farther than your base speed would allow.
+      This jump does not reduce your \glossterm{available movement}.
 
       Whether you hit or missed with the first attack, you can then make a melee \glossterm{strike} against the target.
       The flinging attack has the \atBrawling tag, but the strike does not.
@@ -1039,7 +1056,7 @@ They allow more distinct and unique character customization, but also increase g
     \ff[18]{Heavenly Descent}
     \begin{triggeredability}{Heavenly Descent}{Triggered}
       Once per round, when you land from an intentional jump, you can make an attack vs. Fortitude against each \glossterm{enemy} adjacent to you that is shorter than the apex of that jump.
-      \hit The target is \glossterm{briefly} \stunned.
+      \hit The target is \briefly \stunned.
     \end{triggeredability}
   \end{feat}
 
@@ -1103,20 +1120,18 @@ They allow more distinct and unique character customization, but also increase g
     \featpre Willpower 2.
 
     \ff[1]{Mental Discipline} You gain a \plus3 bonus to your Mental defense.
-    In addition, you automatically detect any \abilitytag{Compulsion} or \abilitytag{Emotion} effects on you which are \abilitytag{Subtle}.
-    This does not make you immune to those effects, but it may help you control your reactions.
 
     \ff[6]{Unclouded Mind} You are immune to being \stunned and \confused.
 
-    \ff[12]{Mental Discipline\plus} The defense bonus from your \textit{mental discipline} ability increases to \plus6.
+    \ff[12]{Mental Discipline\plus} The defense bonus increases to \plus6.
 
-    \ff[18]{Unclouded Mind\plus} You are immune to all \abilitytag{Compulsion} and \abilitytag{Emotion} attacks.
+    \ff[18]{Unclouded Mind\plus} You are immune to \abilitytag{Compulsion} and \abilitytag{Emotion} attacks.
   \end{feat}
 
   \begin{feat}{Juggernaut}{Combat}
     \featpre Strength 1, Constitution 2.
 
-    \ff[1]{Unstoppable} You are immune to being \slowed, and your movement speed is not reduced by \glossterm{difficult terrain}.
+    \ff[1]{Unstoppable} You are immune to being \slowed, and your \glossterm{speed} is not reduced by \glossterm{difficult terrain}.
     You can also move through spaces occupied by enemies, but you must still end your movement in an unoccupied space.
 
     % A normal 30' line from self would be about r0 or r1. If we assume r1, this gets drX damage.
@@ -1172,7 +1187,7 @@ They allow more distinct and unique character customization, but also increase g
       \abilitytags \atAuditory
       \rankline
       Choose an \glossterm{ally} within \medrange.
-      The target becomes \focused and gains a \plus1 accuracy bonus this round.
+      The target becomes \focused and gains a \plus1 accuracy bonus until your next turn.
 
       \rankline
       % 0.7 base EA, or 1.1 on an ally.
@@ -1181,22 +1196,11 @@ They allow more distinct and unique character customization, but also increase g
       \featlevel{18} The accuracy bonus increases to \plus3.
     \end{activeability}
 
-    \ff[6]{Encouraging Presence} As long as you are conscious, your \glossterm{allies} who can see or hear you are immune to being \frightened and \panicked.
+    \ff[6]{Combat Leader} You gain a \plus1 bonus to \glossterm{initiative}.
 
-    \ff[12]{Bolster}
-    % Assume empower affects 3 ally actions, so it's ~1.2 EA.
-    % We add a brief cooldown to make it more reasonable.
-    \begin{activeability}{Bolster}{Standard action}
-      \abilitytags \atAuditory, \abilitytag{Emotion}, \abilitytag{Swift}
-      \abilitycost You \glossterm{briefly} cannot use this ability again.
-      \rankline
-      Each \glossterm{ally} within a \largearea radius from you is either \empowered or \steeled this round.
-      You must make the same choice for all allies. 
-      \rankline
-      \featlevel{18} Each target is both empowered and steeled this round.
-    \end{activeability}
+    \ff[12]{Encouraging Presence} As long as you are conscious, your \glossterm{allies} who can see or hear you are immune to being \frightened and \panicked.
 
-    \ff[18]{Stabilizing Presence} As long as you are conscious, your \glossterm{allies} who can see or hear gain a \plus2 bonus to their \glossterm{vital rolls}.
+    \ff[18]{Combat Leader+} The bonus increases to \plus2.
   \end{feat}
 
   \begin{magicalfeat}{Legacy Item}{General}
@@ -1225,10 +1229,7 @@ They allow more distinct and unique character customization, but also increase g
   \begin{feat}{Living Weapon}{Combat}
     \featpre Strength and Constitution sum to at least 3
 
-    \ff[1]{Made of Iron} You gain a \plus4 bonus to your defenses when determining whether an attack gets a \glossterm{critical hit} against you instead of a normal hit.
-
-    \ff[1]{My Body Is My Weapon} You deal 1d8 damage with the punch/kick \glossterm{natural weapon}.
-    In addition, you treat that weapon as having the \weapontag{Light} weapon tag, which allows you to make dual strikes with it more easily (see \pcref{Dual Strikes}).
+    \ff[1]{My Body Is My Weapon} Your punch/kick \glossterm{natural weapon} becomes a \plus0 accuracy weapon that deals 1d8 damage and has the \weapontag{Light} \glossterm{weapon tag}.
     If you also have the Unarmed Warrior ability from the monk class or Brawler feat, you choose which style of punch/kick weapon to use whenever you make a \glossterm{strike}.
 
     \magicalff[6]{Consume Weapon} Whenever you destroy a magical weapon, you can permanently consume its magical property.
@@ -1236,11 +1237,11 @@ They allow more distinct and unique character customization, but also increase g
     The property applies to all \glossterm{natural weapons} you use.
     You can only attune to one property that you have consumed in this way at a time.
 
-    \ff[12]{Forged in the Flame of Life} You gain a \plus1 bonus to your Constitution.
+    \ff[12]{Made of Iron} You gain a \plus2 bonus to your defenses when determining whether an attack gets a \glossterm{critical hit} against you instead of a normal hit.
 
     \ff[12]{My Body Is My Weapon\plus} The damage increases to 1d10.
 
-    \ff[18]{Made of Steel} You are \steeled.
+    \ff[18]{Made of Iron\plus} The defense bonus increases to \plus4.
 
     \ff[18]{My Body Is My Weapon\plus\plus} The damage increases to 2d6.
   \end{feat}
@@ -1322,7 +1323,6 @@ They allow more distinct and unique character customization, but also increase g
     % rank 3 equivalent, so dr5 healing
     \ff[6]{Healing Touch}
     \begin{activeability}{Healing Touch}{Standard action}
-      \abilitytags \abilitytag{Swift}
       \abilitycost One \glossterm{fatigue level} from the target.
       \rankline
       Choose yourself or a living \glossterm{ally} you \glossterm{touch}.
@@ -1378,7 +1378,7 @@ They allow more distinct and unique character customization, but also increase g
       The spell takes effect even if the strike misses.
       Any attacks you make for the spell are \glossterm{reactive attacks}, and are rolled separately from your attack roll with the strike.
 
-      After the spell takes effect, you \glossterm{briefly} cannot trigger any more spells you imbued this ability, and this ability ends.
+      After the spell takes effect, you can't trigger any more spells you imbued this ability until after next round.
       If you fire multiple projectiles imbued with this ability at once, one of the spells takes effect and the others do not.
     \end{magicalattuneability}
 
@@ -1405,11 +1405,11 @@ They allow more distinct and unique character customization, but also increase g
       \item Chaining: The spell \glossterm{chains} once.
         You can only apply this augment to \glossterm{targeted} damaging spells.
       \item Delayed: The spell does not take effect immediately.
-        Instead, it \glossterm{repeats} during your next action.
+        Instead, it \glossterm{repeats} at the start of your next turn.
       \item Dominating: You use your Willpower in place of your Perception to determine your \glossterm{accuracy} with the spell.
         You can only apply this augment to non-damaging spells with the \atCompulsion tag.
       \item Finesse: You use your Dexterity in place of your Perception to determine your \glossterm{accuracy} with the spell.
-        However, when you cast the spell, you take a \minus1 penalty to your Armor and Reflex defenses that round as a \atSwift effect.
+        However, when you cast the spell, you \briefly take a \minus1 penalty to your Armor and Reflex defenses.
       \item Point Blank: You gain a \plus1 \glossterm{enhancement bonus} to accuracy with the spell against each target that is within half the spell's maximum \glossterm{range} from you.
         You can only apply this augment to \glossterm{targeted} spells with a defined range.
       \item Sanguine: You use your Constitution in place of your Willpower to determine your \glossterm{magical power} with the spell.
@@ -1526,34 +1526,17 @@ They allow more distinct and unique character customization, but also increase g
   \begin{feat}{Precognition}{General}
     \featpre Intelligence 3.
 
-    \ff[1]{Foresight} You gain a \plus2 bonus to Awareness checks.
+    \ff[1]{Foresight} You gain a \plus2 bonus to Awareness.
     In addition, you are never fully \unaware, though you can still be \partiallyunaware.
 
     \ff[1]{Precognitive Offense} You can add your Intelligence to your \glossterm{mundane power} instead of your Strength (see \pcref{Power}).
 
-    \ff[6]{Combat Prediction}
-    \begin{sustainability}{Combat Prediction}{Standard action}
-      \abilitytags \abilitytag{Subtle}, \abilitytag{Sustain} (minor)
-      \rankline
-      Choose a creature within \longrange.
-      That creature's intentions become obvious to you as long as you sustain this ability.
-      This gives you a \plus1 bonus to \glossterm{accuracy} and \glossterm{defenses} against that creature.
+    \ff[6]{Combat Prediction} You gain a \plus1 bonus to \glossterm{initiative}.
 
-      In addition, when you choose your action during each phase, you can do so after learning the result of the actions the target took during that phase.
-      This includes learning whether its attacks hit, and any obvious effects of those attacks.
-      You do not gain any knowledge of actions that have no obvious signs, such as purely mental actions, or actions which you are not observant enough to notice.
-      You cannot communicate your understanding of the creature's actions to your allies before they decide their actions.
-    \end{sustainability}
+    \ff[12]{Foresight\plus} The bonus increases to \plus4.
+    In addition, you are never \partiallyunaware.
 
-    \ff[12]{Mobile Foresight} During the \glossterm{movement phase}, you choose your action after all other creatures have chosen their actions.
-    When you choose your action, you have insight into the actions chosen by any creatures within \longrange that you can see.
-    This insight gives you the same information as the insight from your \textit{combat prediction} ability, except that it only provides information about their actions during the movement phase.
-    You choose your actions simultaneously with any other creatures who have a similar ability.
-
-    Knowing another creature's action does not automatically allow you to interrupt that action.
-    If you want to interrupt an action, such as by blocking a creature's intended movement, you must make an \glossterm{initiative} check as normal.
-
-    \ff[18]{Combat Prediction\plus} The bonuses from your \textit{combat prediction} ability increase to \plus2.
+    \ff[18]{Combat Prediction\plus} The bonus increases to \plus2.
   \end{feat}
 
   \begin{magicalfeat}{Prepared Spellcasting}{Magical, Spell}
@@ -1585,9 +1568,7 @@ They allow more distinct and unique character customization, but also increase g
 
     \ff[1]{Lightning Reflexes} You gain a \plus3 bonus to your Reflex defense.
 
-    \ff[1]{Sidestep} If you have \glossterm{speed} remaining after the \glossterm{movement phase}, you may use that movement speed during the \glossterm{action phase} as a \glossterm{free action} once per round.
-    You cannot carry over more than five feet of movement in this way.
-    If you have the Reposition fighter ability with the same effect, you instead increase the amount of movement you can carry over with that ability by five feet.
+    \ff[1]{Sidestep} Once per turn, you can move up to five feet as a \glossterm{free action}.
 
     \ff[6]{Evasive Reaction} You take no damage when an area ability attacks and misses your Armor or Reflex defense.
     This does not protect you from any non-damaging effects of those abilities, or from abilities that affect multiple specific targets without affecting an area.
@@ -1595,8 +1576,7 @@ They allow more distinct and unique character customization, but also increase g
 
     \ff[12]{Lightning Reflexes\plus} The bonus from your \textit{lightning reflexes} ability increases to \plus6.
 
-    \ff[12]{Sidestep\plus} The movement you can carry over with your \textit{sidestep} ability increases to ten feet.
-    If you have the Reposition fighter ability, you instead increase the amount of movement you can carry over with that ability by ten feet.
+    \ff[12]{Sidestep\plus} The maximum movement increases to ten feet.
 
     \ff[18]{Evasive Reaction\plus} This ability also protects you from area attacks against your Brawn, Fortitude, and Mental defenses.
     If you have the \textit{evasion\plus} monk or rogue ability with the same effect as this ability, you also gain a \plus2 bonus to your Brawn, Fortitude, and Mental defenses against area attacks.
@@ -1607,21 +1587,20 @@ They allow more distinct and unique character customization, but also increase g
 
     \ff[1]{Regenerative Recovery}
     \begin{activeability}{Regenerative Recovery}{Standard action}
-      \abilitytags \abilitytag{Swift}
       \abilitycost One \glossterm{fatigue level}.
       \rankline
-      You regain \damagerankthreelow \glossterm{hit points}.
-      If you gained any \glossterm{vital wounds} during the previous round, your healing with this ability is doubled.
-      If this would heal you above your maximum hit points, any excess healing applies at the end of the next round.
+      You regain \hprankthreelow.
+      If you gained any \glossterm{vital wounds} since your last turn, your healing with this ability is doubled.
+      If this would heal you above your maximum hit points, any excess healing applies at the end of your next turn.
       Any excess healing at that point is lost.
 
       \rankline
-      \featlevel{3} The healing increases to \damagerankfourlow.
-      \featlevel{6} The healing increases to \damagerankfivelow.
-      \featlevel{9} The healing increases to \damageranksixlow.
-      \featlevel{12} The healing increases to \damageranksevenlow.
-      \featlevel{15} The healing increases to \damagerankeightlow.
-      \featlevel{18} The healing increases to \damagerankninelow.
+      \featlevel{3} The healing increases to \hprankfourlow.
+      \featlevel{6} The healing increases to \hprankfivelow.
+      \featlevel{9} The healing increases to \hpranksixlow.
+      \featlevel{12} The healing increases to \hpranksevenlow.
+      \featlevel{15} The healing increases to \hprankeightlow.
+      \featlevel{18} The healing increases to \hprankninelow.
     \end{activeability}
 
     \ff[6]{Diehard} You gain a \plus3 bonus to \glossterm{vital rolls}.
@@ -1667,13 +1646,12 @@ They allow more distinct and unique character customization, but also increase g
         \rankline
         Make a \glossterm{strike} using a shield.
         If your Armor defense is higher than the target's Armor defense against this attack, the strike deals double damage.
-        Otherwise, the strike deals \glossterm{extra damage} equal to half your \glossterm{power}.
 
         \rankline
         \featlevel{9} You gain a \plus1 accuracy bonus with the strike.
-        \featlevel{12} If your Armor defense is higher than the target's Armor defense, the strike deals triple damage. Otherwise, the extra damage increases to be equal to your power.
+        \featlevel{12} The strike deals double \glossterm{weapon damage}.
         \featlevel{15} The accuracy bonus increases to \plus2.
-        \featlevel{18} If your Armor defense is higher than the target's Armor defense, the strike deals 1d8 \glossterm{extra damage}. Otherwise, the extra damage increases to 2d8 \add your \glossterm{power}.
+        \featlevel{18} If your Armor defense is higher than the target's Armor defense, the strike deals triple damage.
     \end{activeability}
 
     \ff[12]{Shield Expertise\plus} Both Armor defense bonuses from this ability increase to \plus2.
@@ -1711,20 +1689,21 @@ They allow more distinct and unique character customization, but also increase g
     \begin{sustainability}{Aim}{Standard action}
       \abilitytags \abilitytag{Subtle}, \abilitytag{Sustain} (minor)
       \rankline
-      You are \glossterm{briefly} \focused.
+      You are \briefly \focused.
       In addition, choose a creature or object you can see.
       You gain a \plus1 accuracy bonus against the target as long as you sustain this ability.
 
       If you lose sight of the target for a full round, this effect ends.
     \end{sustainability}
 
-    \ff[6]{Steady Shot} If your location has not changed since the start of the round, you reduce your \glossterm{longshot penalty} by 2.
+    \ff[6]{Steady Shot} You can steady your aim as a \glossterm{move action}.
+    This reduces your \glossterm{longshot penalty} by 2 this turn and reduces your \glossterm{available movement} to 0.
 
     \ff[12]{Sniper's Precision} You gain a \plus1 \glossterm{accuracy} bonus with ranged \glossterm{strikes}.
 
-    \ff[18]{Aim\plus} When you use this ability, you are also \glossterm{briefly} \honed.
+    \ff[18]{Aim\plus} When you use this ability, you are also \briefly \honed.
 
-    \ff[18]{Steady Shot\plus} If your location has not changed since the start of the round, your ranged \glossterm{strikes} ignore \glossterm{cover} and \glossterm{concealment}.
+    \ff[18]{Steady Shot\plus} This ability also causes your ranged \glossterm{strikes} to ignore \glossterm{cover} and \glossterm{concealment}.
   \end{feat}
 
   \begin{feat}{Social Insight Specialization}{Skill}
@@ -1763,7 +1742,7 @@ They allow more distinct and unique character customization, but also increase g
 
     \magicalff[6]{Spellstrike}
     \begin{magicalactiveability}{Spellstrike}{Standard action}
-      \abilitycost You \glossterm{briefly} cannot use this ability again.
+      \abilitycost You can't use this ability next round.
       \rankline
       You cast a spell and make a \glossterm{mundane} melee \glossterm{strike}, in either order.
       % TODO: clarify how this interacts with double standard action spells.
@@ -1838,7 +1817,7 @@ They allow more distinct and unique character customization, but also increase g
     When you gain access to a new rank of spells, you can replace your current spell affected by this metamagic with a new spell of that rank.
 
     \magicalff[12]{Airborne} You gain a slow \glossterm{fly speed} with a maximum height of 15 feet (see \pcref{Flight}).
-    As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
+    As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit this turn.
     In addition, you gain a \plus15 foot bonus to the height limit of any fly speed you gain from \sphere{Aeromancy} spells.
 
     \magicalff[18]{Distant Winds\plus} The range bonus from your \textit{distant winds} ability increases to \plus30 feet.
@@ -1847,7 +1826,7 @@ They allow more distinct and unique character customization, but also increase g
   \begin{magicalfeat}{Sphere Focus: Aquamancy}{Casting, Magical}
     \featpre Access to the \sphere{Aquamancy} \glossterm{mystic sphere}.
 
-    \magicalff[1]{Aquatic Propulsion} Once per round, after you make an attack with a spell from the \sphere{Aquamancy} \glossterm{mystic sphere}, you can \glossterm{push} yourself up to 10 feet.
+    \magicalff[1]{Aquatic Propulsion} Once per turn, after you make an attack with a spell from the \sphere{Aquamancy} \glossterm{mystic sphere}, you can \glossterm{push} yourself up to 10 feet.
     You can also use this ability with \glossterm{strikes} using natural weapons from that sphere, such as from the \spell{aqueous tentacle} spell.
     The attack does not have to hit for you to use this ability.
 
@@ -1866,9 +1845,11 @@ They allow more distinct and unique character customization, but also increase g
     When you gain access to a new rank of spells, you can replace your current spell affected by this metamagic with a new spell of that rank.
 
     \magicalff[12]{Partially Liquid} You gain a \plus3 \glossterm{enhancement bonus} to the Flexibility skill.
-    In addition, you gain a \plus4 bonus to your defenses when determining whether a \glossterm{strike} gets a \glossterm{critical hit} against you instead of a normal hit.
+    In addition, you gain a \plus2 bonus to your defenses when determining whether an attack gets a \glossterm{critical hit} against you instead of a normal hit.
 
-    \magicalff[18]{Partially Liquid\plus} You are immune to \glossterm{critical hits} from \glossterm{strikes}.
+    \magicalff[18]{Aquatic Propulsion\plus} The push distance increases to 20 feet.
+
+    \magicalff[18]{Partially Liquid\plus} The defense bonus increases to \plus4.
   \end{magicalfeat}
 
   \begin{magicalfeat}{Sphere Focus: Astromancy}{Casting, Magical}
@@ -1933,14 +1914,14 @@ They allow more distinct and unique character customization, but also increase g
     \magicalff[6]{Quickened Chronomancy} You learn an additional spell from the \sphere{Chronomancy} mystic sphere.
     The spell can be up to rank 3, even if you do not have access to rank 3 spells.
     You can cast the spell as a \glossterm{minor action} if you have not already cast a spell that round.
-    When you do, you \glossterm{briefly} become \slowed and cannot take standard actions.
+    When you do, you \briefly become \slowed and cannot take standard actions.
 
     This is a metamagic effect, so you cannot apply another metamagic to the same spell.
     When you gain access to a new rank of spells, you can replace your current spell affected by this metamagic with a new spell of that rank.
 
-    \magicalff[12]{Thief of Time} Whenever you cast a spell from the \sphere{Chronomancy} mystic sphere that deals damage to another creature or causes another creature to be \slowed, you \glossterm{briefly} gain a \plus10 foot bonus to your \glossterm{speed}.
+    \magicalff[12]{Thief of Time} Whenever you cast a spell from the \sphere{Chronomancy} mystic sphere that deals damage to another creature or causes another creature to be \slowed, you \briefly gain a \plus10 foot bonus to your \glossterm{speed}.
 
-    \magicalff[18]{Accelerated Mind\plus} Once per round, you can perform a purely mental action that would normally require a \glossterm{minor action} as a \glossterm{free action}.
+    \magicalff[18]{Accelerated Mind\plus} Once per turn, you can perform a purely mental action that would normally require a \glossterm{minor action} as a \glossterm{free action}.
     This can be used to sustain spells or perform other magical feats.
     However, you cannot use the same ability twice in the same round.
     In addition, the speed increase for long-term tasks from your \textit{accelerated mind} ability increases to five times normal speed.
@@ -2071,7 +2052,8 @@ They allow more distinct and unique character customization, but also increase g
 
     \magicalff[12]{Augmented Body\plus} The bonus increases to \plus2.
 
-    \magicalff[18]{Malleable Flesh} You gain a \plus10 bonus to your defenses when determining whether a \glossterm{strike} gets a \glossterm{critical hit} against you instead of a normal hit.
+    \magicalff[18]{Malleable Flesh} Whenever you make a \glossterm{vital roll}, you can increase or decrease the result by up to 2.
+    In addition, you gain a \plus2 bonus to your defenses when determining whether an attack gets a \glossterm{critical hit} against you instead of a normal hit.
   \end{magicalfeat}
 
   % TODO: redesign
@@ -2109,7 +2091,7 @@ They allow more distinct and unique character customization, but also increase g
     \magicalff[6]{Overheated Pyromancy} You learn an additional spell from the \sphere{Pyromancy} mystic sphere.
     The spell can be up to rank 3, even if you do not have access to rank 3 spells.
     You gain a \plus1 accuracy bonus with the spell, and it deals \glossterm{extra damage} equal to your \glossterm{character rank}.
-    However, after you cast the spell, you become \glossterm{briefly} \vulnerable to \atCold attacks.
+    However, after you cast the spell, you become \briefly \vulnerable to \atCold attacks.
 
     This is a metamagic effect, so you cannot apply another metamagic to the same spell.
     When you gain access to a new rank of spells, you can replace your current spell affected by this metamagic with a new spell of that rank.
@@ -2133,11 +2115,11 @@ They allow more distinct and unique character customization, but also increase g
     The spell can be up to rank 3, even if you do not have access to rank 3 spells.
     As a \glossterm{minor action}, you can foresee the future of casting that spell.
     When you do, roll 1d10 and record the result.
-    If you cast the spell, then the first time you attack with it this round, you must use this die result for the attack roll.
+    If you cast the spell, then the first time you attack with it this turn, you must use this die result for the attack roll.
     This does not tell you whether your attack will hit, only high your roll will be.
     A 10 explodes as normal, but only when you actually cast the spell and make the attack, not when foreseeing the future.
-    If you don't like the result, you can simply choose not to cast the spell this round, and the die result is ignored.
-    Either way, you \glossterm{briefly} cannot use this ability again.
+    If you don't like the result, you can simply choose not to cast the spell this turn, and the die result is ignored.
+    Either way, you can't use this ability next round.
 
     This is a metamagic effect, so you cannot apply another metamagic to the same spell.
     When you gain access to a new rank of spells, you can replace your current spell affected by this metamagic with a new spell of that rank.
@@ -2221,14 +2203,14 @@ They allow more distinct and unique character customization, but also increase g
 
     \magicalff[12]{Countermagic}
     \begin{magicalactiveability}{Countermagic}{Standard action}
-      \abilitytags \abilitytag{Subtle}, \abilitytag{Swift}
-      \abilitycost You \glossterm{briefly} cannot use this ability again.
+      \abilitytags \abilitytag{Subtle}
+      \abilitycost You can't use this ability next round.
       \rankline
       Choose a creature within \rngmed range of you.
-      If the target uses a \magical ability as a standard action or \glossterm{elite action} this round, that ability has no effect.
+      Until your next turn, if the target uses a \magical ability as a standard action or \glossterm{elite action}, that ability has no effect.
       When you negate an ability in this way, if that ability's rank was higher than your \glossterm{character rank}, you increase your \glossterm{fatigue level} by one.
 
-      If a creature is capable of using multiple abilities during a single phase, only the first ability it uses can be countered.
+      If a creature is capable of using multiple abilities during a single turn, only the first ability it uses can be countered.
       This is common for \glossterm{elite} monsters.
     \end{magicalactiveability}
 
@@ -2293,7 +2275,7 @@ They allow more distinct and unique character customization, but also increase g
 
     \magicalff[6]{Sprouting Spell} You learn an additional spell.
     The spell can be up to rank 3, even if you do not have access to rank 3 spells.
-    Whenever you cast that spell, plants \glossterm{briefly} grow on the ground where the spell takes effect.
+    Whenever you cast that spell, plants \briefly grow on the ground where the spell takes effect.
     They appear within the area for area spells, or in all spaces occupied by each target of the spell for targeted spells.
     Bare ground creates \glossterm{light undergrowth}, and existing light undergrowth becomes \glossterm{heavy undergrowth}.
     The plants grow before the spell takes effect, so they can improve the effectiveness of some \sphere{verdamancy} spells.
@@ -2303,7 +2285,7 @@ They allow more distinct and unique character customization, but also increase g
 
     \magicalff[12]{Verdant Army} Your \glossterm{allies} who can see or hear you also gain the benefit of your \textit{verdant allies} ability.
 
-    \magicalff[18]{Sprouting Step} At the start of each phase, if you are \glossterm{grounded} and not already in undergrowth, \glossterm{light undergrowth} grows in your space.
+    \magicalff[18]{Sprouting Step} At the start of your turn, if you are \glossterm{grounded} and not already in undergrowth, \glossterm{light undergrowth} grows in your space.
     The undergrowth lasts until you leave that space.
   \end{magicalfeat}
 
@@ -2318,7 +2300,7 @@ They allow more distinct and unique character customization, but also increase g
     \magicalff[6]{Reaping Spell} You learn an additional spell.
     The spell can be up to rank 3, even if you do not have access to rank 3 spells.
     It gains a \plus5 \glossterm{accuracy} bonus against \glossterm{injured} creatures.
-    When you kill a Medium or larger living creature with the spell, you are \glossterm{briefly} \empowered.
+    When you kill a Medium or larger living creature with the spell, you are \briefly \empowered.
 
     This is a metamagic effect, so you cannot apply another metamagic to the same spell.
     When you gain access to a new rank of spells, you can replace your current spell affected by this metamagic with a new spell of that rank.
@@ -2359,17 +2341,16 @@ They allow more distinct and unique character customization, but also increase g
   \begin{feat}{Swiftrunner}{General}
     \featpre Dexterity 3.
 
-    \ff[1]{Rapid Movement} You gain a \plus10 foot bonus to your \glossterm{speed} during the \glossterm{action phase}.
+    \ff[1]{Burst of Speed} Once per turn, when you use the \ability{sprint} or \ability{jog} abilities, you gain additional \glossterm{available movement} equal to your speed.
 
-    \ff[1]{Sprinter} When you use the \ability{sprint} ability, you can move up to triple your movement speed.
+    \ff[6]{Rapid Movement} You gain a \plus10 foot bonus to your \glossterm{speed}.
 
-    \ff[6]{Rapid Movement\plus} The speed bonus applies all the time, rather than only during the action phase.
-
-    \ff[6]{Water Runner} During your movement with the \textit{sprint} ability, you can move on water and similar liquids as if they were solid ground.
-
+    % TODO: doesn't actually help overland movement, which is odd given the name
     \ff[12]{Long-Distance Runner} You gain a \plus2 bonus to your \glossterm{fatigue tolerance}.
 
-    \magicalff[18]{Cloud Runner} During your movement with the \textit{sprint} ability, you can move on clouds, fog, and similar gaseous substances as if they were solid ground.
+    \ff[12]{Water Runner} When you use the \ability{sprint} or \ability{jog} ability, you can move on water and similar liquids as if they were solid ground during that turn.
+
+    \magicalff[18]{Cloud Runner} When you use the \ability{sprint} or \ability{jog} ability, you can clouds, fog, and similar gaseous substances as if they were solid ground during that turn.
 
     \ff[18]{Rapid Movement\plus\plus} The speed bonus increases to \plus20 feet.
   \end{feat}
@@ -2392,24 +2373,22 @@ They allow more distinct and unique character customization, but also increase g
     \magicalff[1]{Telepathy} You gain \glossterm{telepathy} with a 120 foot range (see \pcref{Telepathy}).
     If you already have telepathy, the range of your telepathy increases by 120 feet.
 
-    \magicalff[6]{Telepathic Tribulation}
-    \begin{magicalactiveability}{Telepathic Tribulation}{Standard action}
-      \abilitytags \abilitytag{Compulsion}
+    \magicalff[6]{Mindbreak}
+    \begin{magicalactiveability}{Mindbreak}{Standard action}
+      \abilitycost You \glossterm{briefly} lose your \glossterm{telepathy}, and you can't use this ability next round.
+      \abilitytags \abilitytag{Compulsion}, \abilitytag{Subdual}
       \rankline
       Make an attack vs. Mental against one creature within half the maximum range of your \glossterm{telepathy}.
       You gain an accuracy bonus with this attack equal to half the sum of your Intelligence and Willpower.
-      \hit \damagerankone.
+      \hit \damageranktwo.
       \injury The target becomes \stunned as a \glossterm{condition}.
 
       \rankline
-      % increase to d2
-      \featlevel{9} The damage bonus from your power increases to be equal to your power.
-      % increase to d3ish
-      \featlevel{12} The base damage increases to 1d10.
-      % increase to d4ish
-      \featlevel{15} The damage bonus increases to 1d6 per 3 power.
-      % at r7, can upgrade condition
-      \featlevel{18} The target becomes \confused instead of stunned.
+      \featlevel{9} The damage increases to \damagerankthree.
+      \featlevel{12} The damage increases to \damagerankfour.
+      \featlevel{15} The damage increases to \damagerankfive.
+      \featlevel{18} The damage increases to \damageranksix.
+      \featlevel{21} The damage increases to \damagerankseven, and the target becomes \confused instead of stunned.
     \end{magicalactiveability}
 
     \magicalff[12]{Read Mind}
@@ -2417,7 +2396,7 @@ They allow more distinct and unique character customization, but also increase g
       \abilitytags \abilitytag{Emotion}, \abilitytag{Subtle}, \abilitytag{Sustain} (standard)
       \rankline
       Make an attack vs. Mental against a creature within half the maximum range of your \glossterm{telepathy}.
-      You use your full Intelligence or Willpower in place of half your Perception to determine your accuracy with this attack (see \pcref{Accuracy}).
+      You gain an accuracy bonus with this attack equal to half the sum of your Intelligence and Willpower.
       Whether you hit or miss, you cannot attack the target with this ability again until it finishes a \glossterm{short rest}.
       \hit You know the target's current thoughts and emotions.
       In addition to the obvious effects, this grants you a \plus5 bonus to Deception, Persuasion, Intimidate, and Social Insight attacks and checks against the target.
@@ -2446,14 +2425,14 @@ They allow more distinct and unique character customization, but also increase g
     \featpre Constitution 2.
 
     \ff[1]{Fortified Body} You gain a \plus3 bonus to your Fortitude defense.
-    In addition, you need half the normal amount of rest and sleep each day to function normally.
+
+    \ff[6]{Durable} You gain a \plus3 bonus to your \glossterm{durability}.
+
+    \ff[6]{Sleepless} You need half the normal amount of rest and sleep each day to function normally.
     For example, a human would only need four hours of sleep per night.
     This does not reduce the time required for you to take a \glossterm{long rest}.
 
-    \ff[6]{Durable} You gain a \plus4 bonus to your \glossterm{durability}.
-
-    \ff[12]{Fortified Body\plus} The defense bonus from your \textit{fortified body} ability increases to \plus6.
-    In addition, you also only need half the normal amount of time to complete a \glossterm{long rest}.
+    \ff[12]{Fortified Body\plus} The defense bonus increases to \plus6.
 
     \ff[18]{Unbreakable} Your Constitution does not increase your \glossterm{injury point}.
   \end{feat}
@@ -2470,19 +2449,13 @@ They allow more distinct and unique character customization, but also increase g
 
     At the end of the next round after you use this ability, the arrow and alchemical item are destroyed.
 
-    \ff[6]{Carom} Whenever you make a \glossterm{strike} with an arrow, you can have it bounce off of one obstacle before it reaches its destination.
-    You use the square on the obstacle that you bounce off of as a \glossterm{targeting proxy} for your strike.
-    The obstacle takes no damage, but it must be at least Small size and stable.
-    You measure the total distance travelled by the arrow from you to the obstacle, and from the obstacle to the target, to determine the range of your attack.
+    \ff[6]{Carom} Whenever you make a \glossterm{strike} with an arrow, you can give the strike an additional \glossterm{secondary target} within 15 feet of the primary target.
+    That extra target cannot already be a target of the strike.
+    You take a \minus1 accuracy with the strike against both targets when you use this ability.
 
-    You take a \minus2 accuracy penalty with the strike when you use this ability.
-    If you cannot see the target, you suffer the normal 50\% miss chance for making a blind targeted attack.
+    \ff[12]{Alchemical Arrow\plus} You can use this ability as a \glossterm{minor action} if the alchemical item is at least two ranks lower than your character rank.
 
-    \ff[12]{Alchemical Arrow\plus} When you use an alchemical item with a rank lower than your character rank, the alchemical arrow lasts for ten minutes before it is destroyed.
-    This can allow you to prepare multiple alchemical arrows before combat.
-    You still cannot recover alchemical items from arrows prepared with this ability, so preparing an alchemical arrow always consumes the item.
-
-    \ff[18]{Carom\plus} You no longer take an accuracy penalty when you use this ability.
+    \ff[18]{Carom\plus} The number of secondary targets increases to two, and the maximum distance between the primary target and each secondary target increases to 30 feet.
   \end{feat}
 
   \begin{magicalfeat}{Twinhand Spellcaster}{Casting, Magical}
@@ -2493,7 +2466,7 @@ They allow more distinct and unique character customization, but also increase g
 
     \magicalff[6]{Twinspell}
     \begin{magicalactiveability}{Twinspell}{Standard action}
-      \abilitycost One \glossterm{fatigue level}, and you \glossterm{briefly} cannot use this ability again.
+      \abilitycost One \glossterm{fatigue level}, and you can't use this ability next round.
       \rankline
       You can only use this ability if you have two \glossterm{free hands} and are not using a magic implement.
 
@@ -2517,7 +2490,7 @@ They allow more distinct and unique character customization, but also increase g
     You can use \glossterm{natural weapons} to meet this condition, such as claws, as long as your hand is exclusively dedicated to using the natural weapon and not holding or being used for anything else.
     Several abilities from this feat only function while you are twin-wielding.
 
-    \ff[1]{Twin-Weapon Stance} At the start of each round, you can enter one of the stances below or change which stance you are in.
+    \ff[1]{Twin-Weapon Stance} At the start of your turn, you can enter one of the stances below or change which stance you are in.
     You can maintain that stance as long as you are twin-wielding.
     % TODO: do fancy balance math
     \begin{raggeditemize}

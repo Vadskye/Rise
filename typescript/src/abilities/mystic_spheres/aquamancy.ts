@@ -1,6 +1,6 @@
 import { MysticSphere } from '.';
 import { add_tag_to_sphere } from './add_tag';
-import { BARRIER_COOLDOWN, CONDITION_CRIT, SWIFT_FATIGUE_SELF } from '../constants';
+import { BARRIER_COOLDOWN, CONDITION_CRIT } from '../constants';
 
 const WATER_ACCURACY_BONUS =
   'You gain a +2 accuracy bonus with the attack if there is a Large or larger body of water within \\shortrange.';
@@ -34,8 +34,8 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       usageTime: 'minor',
       effect: `
         Choose yourself or an \\glossterm{ally} within \\medrange.
-        The target is \\glossterm{briefly} healed by water.
-        During this spell's effect, the target can draw restorative power from water by drinking at least one ounce of clean water as a standard action.
+        The target is \\briefly healed by water.
+        During this effect, the target can draw restorative power from water by drinking at least one ounce of clean water as a standard action.
         % dr3l
         When it does, it regains 2d10 hit points and increases its \\glossterm{fatigue level} by one.
       `,
@@ -61,8 +61,8 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       usageTime: 'minor',
       effect: `
         Choose yourself or an \\glossterm{ally} within \\medrange.
-        The target is \\glossterm{briefly} purified by water.
-        During this spell's effect, the target can cleanse itself by drinking at least one ounce of clean water as a standard action.
+        The target is \\briefly purified by water.
+        During this effect, the target can cleanse itself by drinking at least one ounce of clean water as a standard action.
         When it does, it removes one \\glossterm{condition} affecting it.
       `,
       rank: 3,
@@ -125,7 +125,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       // -1 rank for limited scope
       attack: {
         hit: `
-          The target is \\glossterm{briefly} surrounded by a bubble of water.
+          The target is \\briefly surrounded by a bubble of water.
           It cannot breathe air, fly, or glide, but it can use its other movement modes normally.
           If it does not have a \\glossterm{swim speed}, it is \\unsteady (see \\pcref{Fighting in Water}).
         `,
@@ -203,7 +203,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       // No standard calculation for either the self-stun or the "must have previously
       // hit" requirement. Assume those combine to give about +2 ranks of power, which are
       // split between +1dr and +2a.
-      cost: 'You \\glossterm{briefly} cannot use this ability and are \\stunned.',
+      cost: "You can't use this ability next round and are \\briefly stunned.",
       attack: {
         hit: `
           \\damagerankfour.
@@ -222,7 +222,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: 'Mighty Water Hammer',
 
-      cost: 'You \\glossterm{briefly} cannot use this ability and are \\stunned.',
+      cost: "You can't use this ability next round and are \\briefly stunned.",
       attack: {
         hit: `
           \\damagerankseven.
@@ -428,7 +428,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       name: 'Misty Shroud',
 
       effect: `
-        At the end of each round, fog \\glossterm{briefly} fills a \\smallarea radius \\glossterm{zone} from you.
+        At the end of your turn, fog \\briefly fills a \\smallarea radius \\glossterm{zone} from you.
         This fog does not fully block sight, but it provides \\glossterm{concealment}.
         There is no time gap between the disappearance of the old fog and the appearance of the new fog, so you can keep continuous fog cover by staying in the same place or moving slowly.
       `,
@@ -608,7 +608,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
 
       // TODO: proper EA calculation
       effect: `
-        When you move using one of your movement speeds, you can \\glossterm{shapeshift} into a rushing flow of water with a volume roughly equal to your normal volume until your movement is complete.
+        When you move using your \\glossterm{speed}, you can \\glossterm{shapeshift} into a rushing flow of water with a volume roughly equal to your normal volume until your movement is complete.
         You can only transform into water in this way once during your movement, and you return to your normal form at the end of the movement.
 
         While transformed into water, you may move wherever water could go.
@@ -674,8 +674,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         You surround yourself in a bubble of water.
         This has the following effects:
         \\begin{mdframeditemize}
-          \\item You are \\shielded.
-          \\item You are \\impervious to \\atFire attacks.
+          \\item You are \\impervious to \\atFire attacks, but \\vulnerable to \\atCold and \\atElectricity attacks.
           \\item If you have a walk speed, it becomes slow.
           \\item If you have a swim speed, you can use it to move around on land.
           \\item You are always submerged in water, so you are \\unsteady if you do not have a swim speed (see \\pcref{Fighting In Water}).
@@ -684,6 +683,19 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       `,
       // narrative: '',
       rank: 2,
+      roles: ['attune'],
+      type: 'Attune',
+    },
+    {
+      name: 'Sturdy Personal Aquarium',
+
+      // Permanent cover is 3.2 EA, which is just out of range for a rank 7.
+      functionsLike: {
+        name: 'personal aquarium',
+        exceptThat: 'you also have \\glossterm{cover} from all attacks.',
+      },
+      // narrative: '',
+      rank: 7,
       roles: ['attune'],
       type: 'Attune (deep)',
     },
@@ -822,12 +834,9 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: 'Sudden Liquification',
 
-      // TODO: steeled is weird
       effect: `
-        When you would suffer a \\glossterm{critical hit}, this spell automatically activates.
-        When it does, your body liquifies in an instant, limiting the damage to vital areas.
-        This causes the critical hit to become only a regular hit, and you remain \\glossterm{briefly} \\steeled.
-        Then, this ability is \\glossterm{dismissed}.
+        Whenever a damaging attack would get a \\glossterm{critical hit} against you, you automatically become \\glossterm{briefly} \\steeled, protecting you from the triggering attack.
+        Then, this effect is \\glossterm{dismissed}.
       `,
       rank: 1,
       roles: ['attune'],
@@ -836,7 +845,6 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: "River's Passage",
 
-      cost: SWIFT_FATIGUE_SELF,
       effect: `
         Choose either yourself or one unattended object or \\glossterm{ally} within \\medrange.
         If you choose something other than yourself, it must have a \\glossterm{weight category} of Medium or less.
@@ -852,7 +860,6 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: "Intense River's Passage",
 
-      cost: SWIFT_FATIGUE_SELF,
       functionsLike: {
         name: "River's Passage",
         exceptThat: 'the maximum push distance increases to 60 feet.',
@@ -862,71 +869,59 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       tags: ['Manifestation'],
     },
     {
-      name: 'Waterward',
+      name: 'Protective Bubble',
 
-      // Shielded alone is on the weaker side, so add impervious to fire
+      // Cover is 0.5 EA.
+      // Fire impervious is about 0.3 EA??
       effect: `
-        You are \\glossterm{briefly} \\impervious to \\atFire attacks and \\shielded.
-        This is a \\atSwift effect, so it protects you from attacks during the current phase.
+        You are \\briefly surrounded by a protective bubble of water.
+        The bubble makes you \\impervious to \\atFire and grants you \\glossterm{cover} against all attacks.
       `,
       rank: 1,
       roles: ['turtle'],
-      tags: ['Manifestation', 'Swift'],
+      tags: ['Manifestation'],
     },
     {
-      name: 'Waterward Dash',
+      name: 'Protective Bubble Dash',
 
-      // Cover is basically shielded, but also prevents half on miss
-      // Call that equal to braced.
-      effect: `
-        You are \\glossterm{briefly} \\impervious to \\atFire attacks and \\shielded.
-        In addition, you can move up to your speed during your action.
-        The protection is \\atSwift, but the movement is not.
-      `,
+      functionsLike: {
+        name: 'waterward',
+        exceptThat: 'you also add your \\glossterm{speed} to your \\glossterm{available movement}.',
+      },
       rank: 5,
       roles: ['mobility', 'turtle'],
-      tags: ['Manifestation', 'Swift (see text)'],
-    },
-    {
-      name: 'Expanded Waterward',
-
-      // You and all adjacent isn't as flexible as "any two", but it's similarly strong.
-      effect: `
-        This round, you and all \\glossterm{allies} adjacent to you are \\impervious to \\atFire attacks and \\shielded.
-        This is a \\atSwift effect, so it protects each target from attacks during the current phase.
-      `,
-      rank: 4,
-      // Normally we don't combine boon and turtle, but this is a bit weird since it
-      // always affects you and only sometimes affects allies.
-      roles: ['boon', 'turtle'],
-      tags: ['Manifestation', 'Swift'],
+      tags: ['Manifestation'],
     },
     {
       name: 'Rising Tide',
 
+      // Once: 0.7 EA
+      // Twice: 0.7 + 0.3
       effect: `
         When you cast this spell, and whenever you sustain it, water loudly swirls and crashes around you.
         When you stop sustaining this spell, you gain a benefit based on how many times you sustained it.
         \\begin{mdframedraggeditemize}
-          \\item Never: You are \\empowered this round.
-          \\item Once: You are \\maximized this round.
-          \\item Two or more times: You are maximized and \\fortified this round.
+          \\item Never: You are \\empowered this turn.
+          \\item Once: You are \\maximized this turn.
+          \\item Two or more times: You are maximized this turn and \\briefly \\fortified.
         \\end{mdframedraggeditemize}
       `,
-      rank: 2,
+      rank: 1,
       roles: ['focus'],
       type: 'Sustain (minor)',
     },
     {
       name: 'Greater Rising Tide',
 
+      // Once: 0.7 + 0.3
+      // Twice: 0.7 + 0.4 + 0.3
       effect: `
         When you cast this spell, and whenever you sustain it, water loudly swirls and crashes around you.
         When you stop sustaining this spell, you gain a benefit based on how many times you sustained it.
         \\begin{mdframedraggeditemize}
-          \\item Never: You are \\empowered and \\fortified this round.
-          \\item Once: You are \\maximized and fortified this round.
-          \\item Two or more times: You are maximized this round and \\glossterm{briefly} fortified.
+          \\item Never: You are \\empowered this turn and \\briefly \\fortified.
+          \\item Once: You are \\maximized this turn and briefly fortified.
+          \\item Two or more times: You are maximized and empowered this turn, and briefly fortified.
         \\end{mdframedraggeditemize}
       `,
       rank: 6,

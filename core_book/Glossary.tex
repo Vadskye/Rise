@@ -12,9 +12,6 @@ For details, see \pcref{Ability Tags}.
 \glossdef{accuracy} The bonus added to an \glossterm{attack roll}.
 For details, see \pcref{Accuracy}.
 
-\glossdef{action phase} The action phase is the second of two \glossterm{phases} in a combat \glossterm{round}.
-During the action phase, creatures can \glossterm{attack}, cast \glossterm{spells}, and take other major combat actions.
-
 \glossdef{alchemical item} An alchemical item is any item created using the Craft (alchemy) skill.
 This includes firebombs, potions, and many other items.
 
@@ -75,6 +72,10 @@ For details, see \pcref{Attuned Abilities}.
 \glossdef{attunement point}[Attunement points] Attunement points allow you to \glossterm{attune} to effects such as spells or items.
 For details, see \pcref{Attunement Points}, and \pcref{Attuned Abilities}.
 
+\glossdef{available movement} Your available movement is the maximum distance you can move during the current round.
+At the start of your turn, it becomes equal to your \glossterm{speed}.
+For details, see \pcref{Movement Speed}.
+
 \glossdef{barding} Armor designed for non-humanoid creatures is called barding.
 The Armor defense bonus provided by barding is 2 lower than normal.
 For details, see \pcref{Barding}.
@@ -94,7 +95,8 @@ For details, see \pcref{Brawling Accuracy}.
 For details, see \pcref{Brawling Accuracy}.
 
 \glossdef{briefly}[brief] An effect that lasts briefly is called a brief effect.
-A brief effect lasts through the end of the next round after the effect was applied.
+A brief effect lasts until the end of the next turn of the creature that created it.
+If a brief effect is not created by a creature, it lasts until the end of the next round.
 
 \glosssynonym{Bright illumination}
 \glossdef{bright illumination} In an area with bright illumination, creatures can see clearly.
@@ -185,6 +187,7 @@ If a corpse is \glossterm{destroyed}, it can no longer be treated as a corpse.
 
 \glossdef{cover} Cover represents any obstacle that physically prevents you from striking your target, such as a tree or intervening creature.
 It grants a \plus2 bonus to Armor, Brawn, and Reflex defenses.
+In addition, attacks that miss you hit the obstacle instead.
 For details, see \pcref{Cover}.
 
 \glossdef{critical hit}[critical hits] An attack that beats the target's defense by 10 or more gets a critical hit.
@@ -324,13 +327,12 @@ There are two types of forced movement: \glossterm{push} and \glossterm{fling}.
 Although \glossterm{teleportation} can cause a creature's location to change unwillingly, it is not considered a type of forced movement.
 
 \glossdef{free action}[Free action] A free action is one of the four action types (see \pcref{Actions}).
-Each round, you can take any number of free actions.
-Free actions can be taken in any phase.
-For details, see \pcref{Free Actions}.
+You can take any number of free actions during each of your turns.
+For details, see \pcref{Actions}.
 
 \glossdef{free hand} A free hand is a hand or similarly dexterous appendage that is not currently being used for any purpose.
 Many abilities require a free hand to use.
-You cannot use the same hand for two different purposes in the same \glossterm{phase}.
+You cannot use the same hand for two different purposes in the same turn.
 
 \glossdef{glide speed}[glide] A creature with a glide speed can glide through the air.
 It cannot fly upwards, but it can travel forward while it descends, and it descends at a significantly reduced rate.
@@ -375,9 +377,14 @@ For example, if you become immune to poison, you would remove all poisons affect
 Common examples include doors and wine bottles.
 For details, see \pcref{Improvised Weapons}.
 
-\glossdef{initiative} When multiple creatures take mutually impossible actions simultaneously, such as racing to be the first one to a door, they must roll initiative checks to determine who completes the action first.
-Your initiative modifier is equal to your Dexterity.
-For details, see \pcref{Conflicting Actions}.
+\glossdef{initiative} Initiative determines the order in which creatures take their turns in combat.
+Allies with no enemies between them in the initiative order form an \glossterm{initiative group}.
+For details, see \pcref{Initiative}.
+
+\glossdef{initiative group}[initiative groups] Allied creatures with no enemies between them in the initiative order are bundled into initiative groups.
+Each initiative group gets a single shared turn.
+Within that turn, creatures can take their actions in any order.
+For details, see \pcref{Initiative Groups}.
 
 \glosssynonym{injured}
 \glossdef{injury}[injuries] If your remaining hit points are at or below your \glossterm{injury point}, you are \glossterm{injured} (see \pcref{Injury}).
@@ -469,11 +476,11 @@ Similarly, an object is generally considered metallic if it has an exposed piece
 \glossdef{midair} Most creatures are \unsteady while they are in the air and unable to touch the ground and move normally.
 This applies even if the creature has a fly speed or glide speed.
 However, it does not apply to creatures who are native to the air, such as birds and monsters with no defined walk speed.
-It also does not apply to creatures who intentionally jump until after they begin falling, which happens at the end of the round.
-This means you can jump into the air during the movement phase and attack in midair during the action phase without becoming unsteady.
+It also does not apply to creatures who intentionally jump until after they begin falling, which happens at the end of their turn.
+This means you can jump into the air and attack in the same turn without becoming unsteady.
 
 \glossdef{minor action}[Minor action] A minor action is one of the four action types (see \pcref{Actions}).
-You can take one minor action each \glossterm{round} during the \glossterm{action phase}.
+You can take one minor action during each of your turns.
 For details, see \pcref{Actions}.
 
 \glossdef{miss chance}[miss chances] If you have a miss chance with an \glossterm{attack}, you have a random chance to miss with the attack.
@@ -486,17 +493,13 @@ See \pcref{Movement and Positioning}, for details.
 For specific \glossterm{move actions}, see \pcref{Movement Abilities}.
 
 \glossdef{move action}[Move action] A move action is one of the four action types (see \pcref{Actions}).
-You can use one move action during the \glossterm{movement phase} of each round.
+You can use one move action during your turn.
 Almost all move actions change your location on the battlefield.
-For details, see \pcref{Movement and Positioning}.
+For details, see \pcref{Basic Movement}.
 
 \glossdef{movement mode}[movement modes] A movement mode is a method of moving from one location to another.
 The most common mode is a \glossterm{walk speed}.
 For details, see \pcref{Movement Modes}.
-
-\glossdef{movement phase} The movement phase is the first of two \glossterm{phases} in a combat \glossterm{round}.
-During the movement phase, creatures can take \glossterm{move actions} (see \pcref{Movement and Positioning}).
-The movement phase is followed by the \glossterm{action phase}.
 
 \glossdef{multiclass} A multiclass character can gain access to \glossterm{archetypes} and other abilities from multiple classes.
 For details, see \pcref{Multiclass Characters}.
@@ -527,10 +530,6 @@ For details, see \pcref{Obstacles}.
 
 \glossdef{Perception} Perception is an \glossterm{attribute} that describes your ability to observe and be aware of your surroundings.
 For details, see \pcref{Perception}.
-
-\glossdef{phase}[phases] A phase is part of the combat \glossterm{round}.
-There are two phases: the \glossterm{movement phase} and the \glossterm{action phase}.
-For details, see \pcref{Phases}.
 
 \glossdef{planar rift}[planar rifts] A planar rift is a location where the boundaries between planes are unusually thin.
 Planar rifts can be used to travel between planes using the appropriate rituals.
@@ -596,7 +595,7 @@ They are described in \tref{Rare Languages}.
 You cannot modify it in any way, and it is not improved if you are \empowered, \focused, \maximized, or \primed.
 For example, you cannot use the \ability{desperate exertion} ability to reroll a reactive attack, or add an extra target with a \weapontag{Sweeping} weapon.
 
-If you would make multiple reactive attacks during the same phase with the same ability against different targets, use the same attack roll for each target.
+If you would make multiple reactive attacks with the same ability against multiple targets during the same turn, use the same attack roll for each target.
 A reactive attack can never be triggered by a reactive attack or reactive check.
 
 \glossdef{reactive check} A reactive check is a \glossterm{check} that you make during the resolution of another creature's actions.
@@ -639,7 +638,8 @@ For details, see \pcref{Resurrection}.
 For details, see \pcref{Spell and Ritual Mechanics}.
 
 \glossdef{round}[rounds] Combat takes place in a series of rounds, which represent about six seconds of action.
-Rounds are divided into two \glossterm{phases}: the \glossterm{movement phase}, and the \glossterm{action phase}.
+During each round, you will get a turn where you can take actions.
+For details, see \pcref{Combat Time}.
 
 \glossdef{secondary target} Some abilities that affect multiple targets distinguish between their primary and secondary targets.
 For details, see \pcref{Primary and Secondary Targets}.
@@ -694,7 +694,8 @@ For convenience, your space is measured in five-foot \glossterm{squares}.
 Medium creatures occupy space equal to a single five-foot square.
 For details, see \pcref{Size Categories}.
 
-\glossdef{speed} Your speed represents the number of feet you can move with a single movement (see \pcref{Movement and Positioning}).
+\glossdef{speed} Your speed indicates how far you can move during a typical round.
+For details, see \pcref{Movement Speed}.
 
 \glossdef{spell}[Spell] A spell is a discrete \magical ability with combat-relevant effects.
 For details, see \pcref{Spells}.
@@ -708,7 +709,7 @@ However, some effects, such as a cleric's domains, can add spells to a character
 Many areas are measured in squares for convenience.
 
 \glossdef{standard action} A standard action is one of the four action types (see \pcref{Actions}).
-You can take one standard action each \glossterm{round} during the \glossterm{action phase}.
+You can take one standard action during each of your turns.
 For details, see \pcref{Actions}.
 
 \glossdef{Strength} Strength is an \glossterm{attribute} that measures your muscle and physical power.
@@ -716,7 +717,7 @@ For details, see \pcref{Strength}.
 
 \glossdef{strike}[strikes] A strike is a single physical attack with a weapon.
 It is the most common type of attack.
-You can make a strike as a \glossterm{standard action} in the \glossterm{action phase}.
+You can make a strike as a \glossterm{standard action}.
 For details, see \pcref{Strikes}.
 
 \glossdef{subdual damage} Subdual damage is a special kind of damage that can't kill you.
@@ -727,11 +728,8 @@ For details, see \pcref{Subdual Damage}.
 
 \glossdef{sustain}[sustained] Some abilities last as long as you sustain them.
 Each ability specifies a particular action that is required to sustain the ability, such as a \glossterm{minor action}.
-When \abilitytag{Swift} abilities resolve during each \glossterm{action phase}, the ability is dismissed unless you take the action to sustain the ability that round.
+At the start of your turn, the ability is dismissed unless you take the action to sustain the ability that round.
 For details, see \pcref{Sustained Abilities}.
-
-\glossdef{Swift} An ability with this \glossterm{ability tag} resolves its effects before other actions in the same phase.
-For details, see \pcref{Swift Abilities}.
 
 \glossdef{swim speed} A creature with a swim speed can move at that speed while swimming, and being underwater does not make it \unsteady.
 For details, see \pcref{Movement Modes}.

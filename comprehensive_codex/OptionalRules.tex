@@ -92,7 +92,7 @@ They can also provide more detailed character customization options, increasing 
     \subsubsection{Ascendant Ranks}
 
       \magicalepicfate{1}{Energetic Soul} Whenever you use an ability, you can give that ability the \atCold, \atElectricity, and \atFire tags.
-      In addition, whenever you take or deal damage from an ability that has any of those tags while not \trait{incorporeal}, you and your equipment \glossterm{briefly} become incorporeal.
+      In addition, whenever you take or deal damage from an ability that has any of those tags while not \trait{incorporeal}, you and your equipment \briefly become incorporeal.
       While you are incorporeal in this way, you gain an average \glossterm{fly speed} and lose all other movement modes (see \pcref{Flight}).
       This flight has a \glossterm{height limit} of 60 feet.
       In this form you are considered native to the air, so flying in this way does not make you \unsteady.
@@ -153,7 +153,8 @@ They can also provide more detailed character customization options, increasing 
       Your lifesense and lifesight can also penetrate up to 1 foot of any solid material.
 
       \epicfate{3}{Burgeoning Life} Your maximum hit points are doubled.
-      In addition, whenever you regain hit points, you regain the same number of hit points at the end of the next round.
+      % Is start of turn or end of turn better?
+      In addition, whenever you regain hit points, you regain the same number of hit points at the end of your next turn.
       This ability does not trigger itself.
 
       % Low impact because rank 4 is when Lifebond allows you to protect all of your rank 7 allies freely
@@ -279,7 +280,7 @@ They can also provide more detailed character customization options, increasing 
       \epicfate{2}{Heroic Intervention} As a \glossterm{standard action}, you may choose any number of \glossterm{allies} within \longrange.
       Whenever a chosen creature would be attacked, that attack is made against you instead.
       If the attack would have targeted both you and that ally, the attack only targets you once, not twice.
-      This ability has the \abilitytag{Swift} tag, and it lasts until you dismiss it as a \glossterm{free action}.
+      This ability lasts until you dismiss it as a \glossterm{free action}.
 
       \epicfate{3}{Invincible Hero} You gain a \plus4 bonus to all defenses.
       In addition, you cannot be \vulnerable for any reason.
@@ -330,9 +331,9 @@ They can also provide more detailed character customization options, increasing 
 
       \epicfate{4}{Two Heads Are Better Than One} You grow a second head.
       Whenever you gain a \glossterm{condition}, you choose which head gains the condition, with the restriction that the chosen head must not already have more conditions than the other head.
-      At the start of each round, you can choose which heads are active during that round.
+      At the start of your turn, you can choose which heads are active until your next turn.
       You are only subject to the effects of the conditions affecting active heads.
-      If you choose for both heads to be active, you can use an extra \glossterm{minor action} during the \glossterm{action phase}.
+      If you choose for both heads to be active, you can use an extra \glossterm{minor action} during your turn.
 
       \epicfate{5}{Regenerative Immortality} You can regenerate from any wounds, even lethal ones.
       When you die, your \textit{regeneration} ability continues functioning.
@@ -447,27 +448,27 @@ They can also provide more detailed character customization options, increasing 
 
     \subsubsection{Undying Ranks}
 
-      \magicalepicfate{1}{Life After Death} If you die from any cause other than old age, you automatically resurrect according to nature of your chosen path to immortality.
+      \epicfate{1}{Death Familiarity} You become so familiar with the trauma of injury and death that your mind and body adapt to it.
+      You ignore all vital wound effects other than death, and you no longer suffer a penalty when you \glossterm{resurrect}.
+
+      \magicalepicfate{2}{Life After Death} If you die from any cause other than old age, you automatically resurrect according to nature of your chosen path to immortality.
       For example, you can have a phylactery regenerate a new body for you like a lich, or you can create clones of yourself or golems that you inhabit if your first body dies.
       You must always return in a new body of some sort.
 
       Your specific form of immortality determines where you return, such as at the site of your death or at your personal sanctum.
       However, it cannot be based on the location or state of your old corpse, since that corpse is no longer ``you''.
-      The timing of your resurrection may also differ based on your immortality, but you cannot complete your resurrection sooner than one day after the time of your death. After you resurrect in this way, this ability does not function for one week, allowing you to be killed normally.
+      Your corpse can still be used for ordinary resurrection methods before this process completes.
+      The timing of your resurrection may also differ based on your immortality, but you cannot complete your resurrection sooner than one day after the time of your death. After you resurrect in this way, this ability does not function for 48 hours, allowing you to be killed normally.
 
       This immortality may change your base species, such as if you become a lich or move your body into a flesh golem. If it does, you retain all benefits and modifiers from your original species other than size, and you gain the effects of the new species in addition.
 
-      \epicfate{2}{Death Familiarity} You become so familiar with the trauma of injury and death that your mind and body adapt to it.
-      You ignore all vital wound effects other than death, and you no longer suffer a penalty when you \glossterm{resurrect}.
-      In addition, the time of your vulnerability to true death after resurrection is reduced to 48 hours.
-
-      \magicalepicfate{3}{Artificial Life} Whenever you resurrect with your \textit{life after death} ability, your new body gains a \plus2 bonus to two random attributes.
-      The attributes are randomized differently for each new body, though you can choose one attribute to exclude from this randomization.
+      \magicalepicfate{3}{Artificial Life} Whenever you resurrect with your \textit{life after death} ability, your new body gains a \plus2 bonus to two attributes of your choice.
+      The attributes are determined differently for each new body.
       In addition, that resurrection functions even if the cause of your death was old age, and you can control the physical age of your new body.
 
       \epicfate{4}{Deathcaller} You are deeply familiar with death, and know how to most effectively inflict it on others.
-      Whenever you cause a living creature to lose at least half its hit points in a single round, you may kill that creature outright.
-      In addition, your \textit{artificial life} ability grants a bonus to three random attributes instead of two random attributes.
+      Whenever you cause a living creature to lose at least half its hit points in a single turn, you may kill that creature outright.
+      In addition, your \textit{artificial life} ability affects three attributes of your choice.
 
       \magicalepicfate{5}{True Immortality} You become fully immortal. There is no time limit after the resurrection from your \textit{life after death} ability where you become vulnerable to a true death. In addition, the resurrection can complete as quickly as one minute after your death. If a physical component limits your immortality, such as a phylactery, it can no longer be damaged or destroyed without the direct intervention of a rank 5 Slayer.
 
@@ -483,16 +484,6 @@ They can also provide more detailed character customization options, increasing 
         However, they still require both \glossterm{verbal components} and \glossterm{somatic components} to cast spells from the anointed class (see \pcref{Ability Usage Components}).
       \item They must choose either \sphere{channel divinity} or \sphere{prayer} as one of their mystic spheres, replacing the normal list from the Soulkeeper Spheres ability.
       \item An anointed cannot choose the \textit{blessings of the abyss} archetype. However, the \textit{domain influence} cleric archetype is considered to be part of their class, and they may choose that archetype without spending insight points to multiclass.
-    \end{raggeditemize}
-
-  \subsection{Bard}
-    A bard is a rogue with the ability to perform magical feats through music.
-    It is unclear whether bards actually draw power from music in the same way that druids draw power from nature, or whether they simply channel their innate magical talent through music.
-    The bard class functions like the rogue class, with the following exceptions:
-    \begin{raggeditemize}
-      \item A bard cannot choose the \textit{assassin} archetype. However, the \textit{arcane magic} sorcerer archetype is considered to be part of their class, and they may choose that archetype without spending insight points to multiclass.
-      \item A bard casts spells without \glossterm{somatic components}.
-      \item A bard can only cast spells while sustaining a performance with the Perform skill. This performance can be either a mundane performance or a \textit{bardic performance} ability.
     \end{raggeditemize}
 
   \subsection{Blighter}

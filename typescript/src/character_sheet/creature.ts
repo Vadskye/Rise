@@ -3,6 +3,7 @@ import {
   getCurrentCharacterSheet,
   setCurrentCharacterSheet,
   resetDefaultCharacterSheet,
+  createCharacterSheet,
 } from '@src/character_sheet/current_character_sheet';
 import { handleEverything, MonsterAttackUsageTime } from '@src/character_sheet/sheet_worker';
 import {
@@ -46,6 +47,8 @@ import {
   BodyArmor,
   Shield,
 } from '@src/monsters/equipment';
+
+export type TargetSelectionLogic = 'Random' | 'Ordered' | 'Vulnerable';
 
 // TODO: this should probably be in a `knowledge.ts` file
 export interface KnowledgeResultConfig {
@@ -98,7 +101,7 @@ type CalcExplanation =
   | 'mental_explanation'
   | 'reflex_explanation';
 
-// TODO: this is poorly organized in the sheet. Senses and movement speeds are both
+// TODO: this is poorly organized in the sheet. Senses and speeds are both
 // grouped under the `movement_speed_i_name` bucket.
 export type CustomMovementSpeed =
   | 'movement_speed_0_name'
@@ -197,10 +200,32 @@ export interface PoisonDefinition {
 export class Creature implements CreaturePropertyMap {
   private sheet: CharacterSheet;
   private activeAbilities: Record<string, ActiveAbility>;
+  // Only used by CombatScenario
+  public targetPreference: TargetSelectionLogic = 'Ordered';
+  private cachedProperties: Partial<CreaturePropertyMap> = {};
 
   constructor(sheet: CharacterSheet) {
     this.sheet = sheet;
     this.activeAbilities = {};
+  }
+
+  private clearCache() {
+    this.cachedProperties = {};
+  }
+
+
+  public clone(newName: string): Creature {
+    const newSheet = createCharacterSheet(newName);
+    newSheet.setProperties(this.sheet.getAllProperties())
+    handleEverything();
+    const newCreature = new Creature(newSheet);
+    newCreature.activeAbilities = { ...this.activeAbilities };
+    newCreature.targetPreference = this.targetPreference;
+    return newCreature;
+  }
+
+  get id(): string {
+    return this.sheet.characterName;
   }
 
   static new() {
@@ -314,7 +339,12 @@ export class Creature implements CreaturePropertyMap {
   private getPropertyValue<T extends keyof CreaturePropertyMap>(
     propertyName: T,
   ): CreaturePropertyMap[T] {
-    return this.sheet.getPropertyValues([propertyName])[propertyName];
+    if (this.cachedProperties[propertyName] !== undefined) {
+      return this.cachedProperties[propertyName] as CreaturePropertyMap[T];
+    }
+    const value = this.sheet.getPropertyValues([propertyName])[propertyName];
+    this.cachedProperties[propertyName] = value;
+    return value as CreaturePropertyMap[T];
   }
 
   getSheetForTesting(): CharacterSheet {
@@ -345,6 +375,7 @@ export class Creature implements CreaturePropertyMap {
       this.sheet.setProperties({ [`weapon_${weaponIndex}_name`]: '' });
       weaponIndex += 1;
     }
+    this.clearCache();
   }
 
   setEquippedArmor({ bodyArmor, shield }: { bodyArmor?: BodyArmor; shield?: Shield }) {
@@ -596,6 +627,7 @@ export class Creature implements CreaturePropertyMap {
       }
     }
     this.sheet.setProperties(attrs);
+    this.clearCache();
   }
 
   addPassiveAbility({ name, effect, isMagical }: PassiveAbility) {
@@ -605,6 +637,7 @@ export class Creature implements CreaturePropertyMap {
       [`${prefix}_is_magical`]: Boolean(isMagical),
       [`${prefix}_ability_effects`]: effect,
     });
+    this.clearCache();
   }
 
   getPassiveAbilities(): PassiveAbility[] {
@@ -784,6 +817,7 @@ export class Creature implements CreaturePropertyMap {
 
   setProperties(properties: Partial<CreaturePropertyMap>) {
     this.sheet.setProperties(properties);
+    this.clearCache();
   }
 
   // TODO: support missing attributes, such as for mindless creatures
@@ -821,6 +855,7 @@ export class Creature implements CreaturePropertyMap {
       props[`repeating_trainedskills_${rowId}_trained_skill`] = skillName;
     }
     this.sheet.setProperties(props);
+    this.clearCache();
   }
 
   getSizeBasedSweepingTag(): RiseWeaponTag | null {

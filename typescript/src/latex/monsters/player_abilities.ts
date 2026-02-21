@@ -15,11 +15,6 @@ import {
   getWeaponPowerMultiplier,
   MonsterWeapon,
 } from '@src/monsters/weapons';
-import {
-  TELEPORT_ATTACK_FATIGUE,
-  SWIFT_FATIGUE,
-  SWIFT_FATIGUE_SELF,
-} from '@src/abilities/constants';
 import { addAccuracyToEffect } from '@src/latex/monsters/replace_placeholders';
 
 // It's the same except that `effect` and `weapon` are mandatory.
@@ -941,8 +936,6 @@ function reformatAbilityCost(ability: Pick<ActiveAbility, 'cost'>) {
   }
 
   if (ability.cost === 'One optional \\glossterm{fatigue level} (see text).') {
-    delete ability.cost;
-  } else if ([TELEPORT_ATTACK_FATIGUE, SWIFT_FATIGUE, SWIFT_FATIGUE_SELF].includes(ability.cost)) {
     delete ability.cost;
   } else {
     ability.cost = ability.cost.replace(

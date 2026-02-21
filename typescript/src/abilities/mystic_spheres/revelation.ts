@@ -4,14 +4,14 @@ import { CONDITION_CRIT, MINOR_FATIGUE } from '../constants';
 export const revelation: MysticSphere = {
   name: 'Revelation',
   shortDescription: 'Share visions of the present and future, granting insight or combat prowess.',
-  sources: ['arcane', 'divine', 'soulkeeper'],
+  sources: ['arcane', 'bardic', 'divine', 'soulkeeper'],
 
   cantrips: [
     {
       name: 'Reveal Sensation',
 
       effect: `
-        You \\glossterm{briefly} gain a +3 \\glossterm{enhancement bonus} to Awareness checks.
+        You \\briefly gain a +3 \\glossterm{enhancement bonus} to Awareness checks.
       `,
       roles: ['narrative'],
       scaling: {
@@ -19,7 +19,6 @@ export const revelation: MysticSphere = {
         4: `The bonus increases to +5.`,
         6: `The bonus increases to +6.`,
       },
-      tags: ['Swift'],
     },
   ],
   spells: [
@@ -39,9 +38,8 @@ export const revelation: MysticSphere = {
 
       // Any two focused is 1 EA. Drop to r2 for the prereq.
       effect: `
-        Choose up to two creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each target that missed a creature with an attack becomes \\focused this round.
-        If you target yourself, this effect lasts \\glossterm{briefly} on you instead of only this round.
+        Choose up to two \\glossterm{allies} within \\medrange.
+        Each target that missed an enemy with an attack this round becomes \\briefly \\focused.
       `,
       rank: 2,
       roles: ['boon'],
@@ -51,22 +49,23 @@ export const revelation: MysticSphere = {
     {
       name: 'Foresee Safety',
 
+      // Delay makes effects 50% stronger
+      // 0.5 base * 1.5 = 0.75
       effect: `
-        You become \\glossterm{briefly} \\braced.
-        This is a \\atSwift effect, so it protects you from attacks during the current phase.
+        At the end of your next turn, you become \\briefly \\braced.
       `,
       rank: 1,
       roles: ['turtle'],
-      tags: ['Subtle', 'Swift'],
+      tags: ['Subtle'],
     },
 
     {
-      name: 'Foresee Distant Safety',
+      name: 'Greater Foresee Safety',
 
       effect: `
-        At the start of the next round, you become \\glossterm{briefly} \\braced.
+        At the end of your next turn, you become \\briefly \\braced, and you cannot be \\partiallyunaware or \\unaware of attacks.
       `,
-      rank: 5,
+      rank: 4,
       roles: ['turtle'],
       tags: ['Subtle'],
     },
@@ -74,21 +73,35 @@ export const revelation: MysticSphere = {
     {
       name: 'Foresee Victory',
 
+      // (0.4 + 0.1) * 1.5 = 0.75
       effect: `
-        You become \\glossterm{briefly} \\primed.
+        At the end of your next turn, you \\briefly become \\focused and gain a \\plus1 \\glossterm{accuracy} bonus.
       `,
-      rank: 2,
+      rank: 1,
       roles: ['focus'],
       tags: ['Subtle'],
     },
 
     {
-      name: 'Foresee Distant Victory',
+      name: 'Greater Foresee Victory',
 
+      // (0.4 + 0.3) * 1.5 = 1.05
       effect: `
-        At the end of the next round, you become \\primed during the following round.
+        At the end of your next turn, you \\briefly become \\focused and gain a \\plus2 \\glossterm{accuracy} bonus.
       `,
-      rank: 6,
+      rank: 4,
+      roles: ['focus'],
+      tags: ['Subtle'],
+    },
+
+    {
+      name: 'Foresee Primacy',
+
+      // 0.8 * 1.5 = 1.2
+      effect: `
+        At the end of your next turn, you become \\briefly \\primed.
+      `,
+      rank: 7,
       roles: ['focus'],
       tags: ['Subtle'],
     },
@@ -99,11 +112,10 @@ export const revelation: MysticSphere = {
       // Ally focus and +1 accuracy is 0.8 EA.
       effect: `
         Choose one \\glossterm{ally} within \\medrange.
-        The target becomes \\focused and gains a \\plus1 accuracy bonus this round.
+        The target \\briefly becomes \\focused and gains a \\plus1 accuracy bonus.
       `,
       rank: 1,
       roles: ['boon'],
-      tags: [],
     },
 
     {
@@ -111,8 +123,8 @@ export const revelation: MysticSphere = {
 
       // Ally focus and +2 accuracy is 1.1 EA.
       effect: `
-        Choose one \\glossterm{ally} within \\medrange.
-        The target becomes \\focused and gains a \\plus2 accuracy bonus this round.
+        Choose one \\glossterm{ally} within \\longrange.
+        The target \\briefly becomes \\focused and gains a \\plus2 accuracy bonus.
       `,
       rank: 6,
       roles: ['boon'],
@@ -126,11 +138,11 @@ export const revelation: MysticSphere = {
 
       attack: {
         hit: `
-          The target is \\glossterm{briefly} \\frightened of you.
+          The target is \\briefly \\frightened of you.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
-          Then, you are \\glossterm{briefly} \\focused.
+          Then, you are \\briefly \\focused.
         `,
       },
       narrative: `
@@ -162,8 +174,8 @@ export const revelation: MysticSphere = {
       // 0.8 EA in theory, but focused and honed aren't optimal together since focused is
       // better on low accuracy and honed is better on high accuracy
       effect: `
-        At the start of each phase, you can choose to become \\focused and \\honed during that phase.
-        At the end of that phase, this ability is \\glossterm{dismissed}.
+        At the start of your turn, you can choose to become \\focused and \\honed during that turn.
+        Then, this ability is \\glossterm{dismissed}.
       `,
       narrative: `
         You can intuitively perceive your foes' weaknesses.
@@ -187,28 +199,29 @@ export const revelation: MysticSphere = {
       type: 'Attune (target)',
     },
 
-    // Double braced is 0.8 EA
     {
       name: 'Precognitive Defense',
 
+      // Automatic steel is very strong, even if it's only for one round
       effect: `
-        You can activate this ability as a \\glossterm{minor action}.
-        When you do, your attunement to this effect ends and you become \\glossterm{briefly} \\braced.
-        This is a \\atSwift effect, so it protects you from attacks during the current phase.
+        You can activate this ability as a \\glossterm{free action}.
+        When you do, your attunement to this effect ends and you become \\briefly \\steeled.
+        If an attack would get a \\glossterm{critical hit} against you, this effect automatically activates, protecting you from the triggering attack.
       `,
-      rank: 2,
+      rank: 1,
       roles: ['attune'],
       type: 'Attune',
     },
 
-    // Double braced + steeled is 1.2 EA
     {
       name: 'Greater Precognitive Defense',
 
+      // Unclear how to calculate EA, since most of the power comes from the automatic
+      // trigger on steeled
       effect: `
-        You can activate this ability as a \\glossterm{minor action}.
-        When you do, your attunement to this effect ends and you become \\glossterm{briefly} \\braced and \\steeled.
-        This is a \\atSwift effect, so it protects you from attacks during the current phase.
+        You can activate this ability as a \\glossterm{free action}.
+        When you do, your attunement to this effect ends and you \\briefly \\braced and \\steeled.
+        If an attack would get a \\glossterm{critical hit} against you, this effect automatically activates, protecting you from the triggering attack.
       `,
       rank: 7,
       roles: ['attune'],
@@ -217,23 +230,23 @@ export const revelation: MysticSphere = {
 
     // TODO: calculate EA for skill bonuses
     {
-      name: 'Precognitive Competence',
+      name: 'Universal Insight',
 
       effect: `
-        You gain a +2 \\glossterm{enhancement bonus} to all skills.
+        You gain a +1 \\glossterm{enhancement bonus} to all skills.
       `,
-      rank: 3,
+      rank: 2,
       roles: ['attune'],
       type: 'Attune',
     },
 
     {
-      name: 'Greater Precognitive Competence',
+      name: 'Greater Universal Insight',
 
       effect: `
-        You gain a +3 \\glossterm{enhancement bonus} to all skills.
+        You gain a +2 \\glossterm{enhancement bonus} to all skills.
       `,
-      rank: 6,
+      rank: 5,
       roles: ['attune'],
       type: 'Attune',
     },
@@ -359,7 +372,7 @@ export const revelation: MysticSphere = {
 
       // brief dazzle is 0.6, so zone is 1.6 = rank 2. Trade +1 rank for +2 area rank.
       attack: {
-        hit: `The target is \\glossterm{briefly} \\dazzled.`,
+        hit: `The target is \\briefly \\dazzled.`,
         targeting: `
           You create a field of hallucinatory visions in a \\smallarea radius \\glossterm{zone} within \\shortrange.
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Mental against all \\glossterm{enemies} in the area.
@@ -376,7 +389,7 @@ export const revelation: MysticSphere = {
 
       effect: `
         A \\glossterm{scrying sensor} appears floating in the air in any unoccupied square within \\medrange.
-        At the start of each round, you choose whether you see and hear from this sensor or from your body.
+        At the start of your turn, you choose whether you see and hear from this sensor or from your body.
 
         While viewing through the sensor, your observation ability is the same as your normal body, except that the sensor does not share the benefits of any \\magical effects that improve your vision.
         You otherwise act normally, though you may have difficulty moving or taking actions if the sensor cannot see your body or your intended targets, effectively making you \\blinded.
@@ -401,7 +414,7 @@ export const revelation: MysticSphere = {
         You must specify a distance and direction to target a location you cannot see.
         This can allow you to cast the spell beyond walls and similar obstacles.
 
-        At the start of each round, you choose whether you see and hear from this sensor or from your body.
+        At the start of your turn, you choose whether you see and hear from this sensor or from your body.
         While viewing through the sensor, your observation ability is the same as your normal body, except that it does not share the benefits of any \\magical effects that improve your vision.
         You otherwise act normally, though you may have difficulty moving or taking actions if the sensor cannot see your body or your intended targets, effectively making you \\blinded.
 
@@ -419,7 +432,7 @@ export const revelation: MysticSphere = {
       effect: `
         Choose one magical sensor within \\medrange.
         A \\glossterm{scrying sensor} appears at the location of the source of the ability that created the chosen sensor.
-        At the start of each round, you choose whether you see and hear from this sensor or from your body.
+        At the start of your turn, you choose whether you see and hear from this sensor or from your body.
         While viewing through the sensor, your observation ability is the same as your normal body, except that it does not share the benefits of any \\magical effects that improve your vision.
         You otherwise act normally, though you may have difficulty moving or taking actions if the sensor cannot see your body or your intended targets, effectively making you \\blinded.
 
@@ -499,7 +512,7 @@ export const revelation: MysticSphere = {
 
           While using the target's senses, you can choose any creatures you see as intended targets to continue the chain.
           Whenever the currently affected creature touches an intended target, you make a \\glossterm{reactive attack} vs. Mental against the new creature.
-          You can only make this attack against a given target once per \\glossterm{phase}.
+          You can only make this attack against a given target once per round.
           On a hit, the touched creature becomes the new target of this spell and the condition is transferred to it.
           On a miss, the condition remains on the previous creature.
         `,
@@ -559,19 +572,20 @@ export const revelation: MysticSphere = {
     {
       name: 'Behold the Lurking Danger',
 
+      // All would be 1.2 EA, give it -2r for excluding you.
       effect: `
-        All \\glossterm{allies} within a \\largearea radius from you are \\shielded this round.
+        All \\glossterm{allies} within a \\largearea radius from you are \\briefly \\shielded.
       `,
-      rank: 4,
+      rank: 5,
       roles: ['boon'],
     },
 
-    // 1.2 EA for "all except you"
     {
       name: 'Behold the Narrow Path',
 
+      // All would be 1.4 EA, give it -2r for excluding you.
       effect: `
-        All \\glossterm{allies} within a \\largearea radius from you are \\honed this round.
+        All \\glossterm{allies} within a \\largearea radius from you are \\honed until your next turn.
       `,
       rank: 7,
       roles: ['boon'],
@@ -583,7 +597,7 @@ export const revelation: MysticSphere = {
 
       attack: {
         hit: `
-          If the target is \\glossterm{injured}, it is \\glossterm{briefly} \\confused.
+          If the target is \\glossterm{injured}, it is \\briefly \\confused.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} within a \\largearea radius from you.

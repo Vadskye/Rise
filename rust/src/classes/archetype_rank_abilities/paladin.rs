@@ -13,7 +13,6 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
                 Your devotion to your alignment affects the world around you, bringing it closer to your ideals.
                 You constantly radiate an aura in a \areamed radius \glossterm{emanation} from you.
                 You can create the aura as a \glossterm{free action}, and it lasts until it is dismissed.
-                Creating the aura has the \abilitytag{Swift} ability tag.
 
                 Whenever you create the aura, you can choose which creatures within the area are affected by the aura.
                 You can choose whether it affects any combination of yourself, your \glossterm{allies}, your \glossterm{enemies}, and other creatures.
@@ -243,7 +242,6 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 % dr3 for touch range, free poison because class feature
                 \begin{magicalactiveability}{Lay on Hands}{Standard action}
-                    \abilitytags \abilitytag{Swift}
                     \abilitycost One \glossterm{fatigue level}.
                     \rankline
                     Choose yourself or a living \glossterm{ally} you touch.

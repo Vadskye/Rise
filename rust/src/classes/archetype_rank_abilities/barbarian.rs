@@ -14,7 +14,6 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 \begin{activeability}{Second Wind}{\glossterm{Minor action}}
-                    \abilitytags \atSwift
                     \abilitycost Two \glossterm{fatigue levels}, and you cannot use this ability again until you finish a \glossterm{short rest}.
                     \rankline
                     You regain half of your maximum \glossterm{hit points}.
@@ -55,11 +54,9 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 \begin{activeability}{Resilient Blow}{Standard action}
-                    \abilitytags \atSwift (see text)
                     \rankline
                     Make a melee \glossterm{strike}.
-                    In addition, whenever you would lose hit points that are below your \glossterm{injury point} this round, you lose half that many hit points instead (minimum 1).
-                    This effect is \atSwift, but the strike is not.
+                    As a \glossterm{brief} effect, whenever you would lose hit points that are below your \glossterm{injury point}, you lose half that many hit points instead (minimum 1).
 
                     \rankline
                     \rank{4} You gain a \plus1 accuracy bonus with the strike.
@@ -119,8 +116,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                 For most barbarians, this represents entering a furious rage.
                 Some barbarians instead enter a joyous battle trance or undergo a partial physical transformation into a more fearsome form.
                 \begin{sustainability}{Rage}{\glossterm{Free action}}
-                    \abilitytags \atEmotion, \atSustain (free), \atSwift
-                    \abilitycost One \glossterm{fatigue level}.
+                    \abilitytags \atEmotion, \atSustain (minor)
                     \rankline
                     For the duration of this ability, you gain the following benefits and drawbacks:
                     \begin{raggeditemize}
@@ -129,7 +125,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                         \item You are \enraged.
                     \end{raggeditemize}
 
-                    Because this ability has the \atSwift tag, the defense penalties apply to attacks against you during the current phase.
+                    When this ability ends, you are \glossterm{briefly} \stunned.
                 \end{sustainability}
             ",
             modifiers: Some(vec![
@@ -251,9 +247,9 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain your choice of one of the following benefits:
                 \begin{raggeditemize}
-                    \item Climb: A \glossterm{climb speed} 10 feet slower than your \glossterm{base speed}.
+                    \item Climb: A slow \glossterm{climb speed}.
                     \item Jump: A \plus10 foot bonus to your maximum horizontal jump distance.
-                    \item Swim: A \glossterm{swim speed} 10 feet slower than your \glossterm{base speed}.
+                    \item Swim: A slow \glossterm{swim speed}.
                 \end{raggeditemize}
 
                 You can invest up to two additional \glossterm{insight points} into this ability.
@@ -322,8 +318,8 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 7,
             description: r"
-                You can use the \ability{sprint} ability during the \glossterm{movement phase} without increasing your \glossterm{fatigue level}.
-                After using this ability, you \glossterm{briefly} cannot use it again.
+                Once per turn, you can use the \ability{sprint} ability without increasing your \glossterm{fatigue level}.
+                After using this ability, you can't use it again next round.
             ",
             modifiers: None,
         },
@@ -456,7 +452,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
 
                 \subcf{Bear} You add half your Constitution to your \glossterm{mundane power}.
 
-                \subcf{Crocodile} Once per round, when you damage a creature with a melee \glossterm{strike}, you can use this ability to \glossterm{push} it up to 5 feet into unoccupied space.
+                \subcf{Crocodile} Once per turn, when you damage a creature with a melee \glossterm{strike}, you can use this ability to \glossterm{push} it up to 5 feet into unoccupied space.
                 This is a \abilitytag{Size-Based} ability, so it has no effect on creatures that are two or more size categories larger than you.
 
                 \subcf{Eagle} You gain \sense{low-light vision}, allowing you to see in \glossterm{dim illumination} (see \pcref{Low-light Vision}).
@@ -519,7 +515,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             // TODO: run this through the spreadsheet
             description: r"
-                At the end of each round, if you attacked a creature other than yourself that round, you gain a frenzy point.
+                At the end of your turn, if you attacked a creature other than yourself that turn, you gain a frenzy point.
                 Otherwise, you lose a frenzy point.
                 You can have a maximum of 4 frenzy points and a minimum of 0.
                 Frenzy points increase the power of your \ability{feral frenzy} ability.
@@ -561,8 +557,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
                     \itemhead{Bear} \plus2 Endurance and \plus1 to your \glossterm{vital rolls}.
                     \itemhead{Crocodile} \plus2 Stealth and you can hold your breath ten times as long as normal (see \pcref{Endurance}).
                     \itemhead{Eagle} \plus2 Awareness and \plus10 feet to your maximum horizontal jump distance (see \pcref{Jumping}).
-                    \itemhead{Lion} \plus2 Intimidate and \plus10 feet to your \glossterm{speed} while you are affected by the \ability{sprint} ability.
-                        This speed bonus is doubled as normal for that ability.
+                    \itemhead{Lion} \plus2 Intimidate and \plus20 feet to your \glossterm{available movement} while you are affected by the \ability{sprint} ability.
                     \itemhead{Shark} \plus2 Swim and you gain the \sense{scent} ability (see \pcref{Tracking}).
                 \end{raggeditemize}
             ",
@@ -582,7 +577,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
                     \itemhead{Bear} \plus4 Endurance and \plus2 to your \glossterm{vital rolls}.
                     \itemhead{Crocodile} \plus4 Stealth and you can hold your breath indefinitely, though you cannot rest while holding your breath.
                     \itemhead{Eagle} \plus4 Awareness and \plus20 feet to your maximum horizontal jump distance.
-                    \itemhead{Lion} \plus4 Intimidate and the movement speed bonus applies at all times, not only while sprinting.
+                    \itemhead{Lion} \plus4 Intimidate and you gain a \plus10 foot bonus to your \glossterm{speed}.
                     \itemhead{Shark} \plus4 Swim, \plus2 Survival, and \plus2 Awareness.
                 \end{raggeditemize}
             ",

@@ -685,15 +685,15 @@ def universal_abilities():
             universal_ability_button(
                 "Maintain Grapple",
                 """
-                    Make a brawling attack using a free hand. This attack has no immediate effect. The attack result determines how difficult it is for a creature to escape the grapple during the current round using the escape grapple ability.
+                    Make a brawling attack using a free hand. This attack has no immediate effect. The attack result determines how difficult it is for enemies to escape your grapple.
                 """,
-                attack={"accuracy": "@{brawling_accuracy}", "defense": "None", "tags": ["Brawling", "Swift"]},
+                attack={"accuracy": "@{brawling_accuracy}", "defense": "None", "tags": ["Brawling"]},
             ),
             universal_ability_button(
                 "Ready Reaction",
                 """
-                    When you use this ability, you declare another standard action that you intend to take during this phase as soon as it becomes possible.
-                    If that action becomes possible during this phase, it happens.
+                    When you use this ability, you declare another standard action that you intend to take as soon as it becomes possible.
+                    If that action becomes possible before your next turn, it happens.
                     Otherwise, your action is wasted.
                 """,
             ),
@@ -703,30 +703,33 @@ def universal_abilities():
                     After using this ability, you increase your fatigue level by two, and you cannot use it again until you finish a short rest.
                     You regain half of your maximum hit points. Then, you remove all conditions affecting you.
                 """,
-                tags=["Swift"],
+            ),
+            universal_ability_button(
+                "Run",
+                """
+                    You add twice your speed to your available movement.
+                """,
             ),
             universal_ability_button(
                 "Shove",
                 """
                     Choose either one adjacent creature or all creatures grappling you. Make a brawling attack with a free hand against each target.
-                    On a hit, you can move up to half your movement speed in a straight line, pushing each target as you move.
+                    On a hit, you can move up to half your speed in a straight line, pushing each target as you move.
                  """,
                 attack={"accuracy": "@{brawling_accuracy}", "defense": "Fort", "tags": ["Brawling", "Size-Based"]},
             ),
             universal_ability_button(
                 "Sprint",
                 """
-                    You move up to double your normal speed.
-                    After you use this ability during the movement phase, you increase your fatigue level by one.
-                    Using this ability during the action phase does not cost fatigue.
+                    You add your speed to your available movement.
+                    This is a free action and increases your fatigue level by one.
                 """,
             ),
             universal_ability_button(
                 "Total Defense",
                 """
-                    You gain a +2 bonus to your defenses this round. Because this ability has the Swift tag, this protects you from attacks during the current phase.
+                    You briefly gain a +2 bonus to your defenses.
                 """,
-                tags=["Swift"],
             ),
             universal_ability_button(
                 "Throw",

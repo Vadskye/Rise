@@ -36,7 +36,7 @@ t.test('genKnowledgeText', (t) => {
       creature_type: 'undead',
       knowledge_result_easy: 'Easy result',
       level: 20,
-      name: "Test Monster",
+      name: 'Test Monster',
       knowledge_result_hard: 'Hard result',
     });
 

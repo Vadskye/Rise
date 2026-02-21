@@ -1,6 +1,8 @@
 import { Creature, KnowledgeResultsConfig } from '@src/character_sheet/creature';
 import { handleEverything } from '@src/character_sheet/sheet_worker';
 import {
+  characterSheetExists,
+  createCharacterSheet,
   getCurrentCharacterSheet,
   setCurrentCharacterSheet,
 } from '@src/character_sheet/current_character_sheet';
@@ -55,19 +57,26 @@ export class Grimoire {
     if (this.monsters[name] || this.monsterGroups[name]) {
       throw new Error(`Can't add a duplicate monster with '${name}'.`);
     }
-    setCurrentCharacterSheet(name);
-    handleEverything();
-    const sheet = getCurrentCharacterSheet();
+    if (characterSheetExists(name)) {
+      throw new Error(`Can't add a duplicate character sheet named '${name}'.`);
+    }
+    const sheet = createCharacterSheet(name);
     sheet.setProperties({ name });
     this.monsters[name] = new Creature(sheet);
     initializer(this.monsters[name]);
+
+    handleEverything();
+    sheet.triggerOpened();
 
     this.monsters[name].checkValidMonster();
   }
 
   addMonsterGroup(config: MonsterGroupConfig, initializers: [string, MonsterInitializer][]) {
-    if (this.monsterGroups[config.name] || this.monsters[config.name]) {
-      throw new Error(`Can't add a duplicate monster group with '${config.name}'.`);
+    if (this.monsterGroups[config.name]) {
+      return;
+    }
+    if (this.monsters[config.name]) {
+      throw new Error(`Can't add a monster group named '${config.name}'; a monster with that name already exists.`);
     }
 
     this.monsterGroups[config.name] = {
@@ -77,15 +86,19 @@ export class Grimoire {
     };
 
     for (const [monsterName, initializer] of initializers) {
-      setCurrentCharacterSheet(`${config.name}.${monsterName}`);
-      handleEverything();
-      const sheet = getCurrentCharacterSheet();
+      const characterSheetName = `${config.name}.${monsterName}`;
+      if (characterSheetExists(characterSheetName)) {
+        throw new Error(`Can't add a duplicate character sheet named '${characterSheetName}'.`);
+      }
+      const sheet = createCharacterSheet(characterSheetName);
       sheet.setProperties({ name: monsterName });
       const creature = new Creature(sheet);
       initializer(creature);
       if (config.sharedInitializer) {
         config.sharedInitializer(creature);
       }
+      handleEverything();
+      sheet.triggerOpened();
       this.monsterGroups[config.name].monsters.push(creature);
     }
   }
@@ -104,5 +117,13 @@ export class Grimoire {
 
   getMonster(name: string): Creature | null {
     return this.monsters[name] || null;
+  }
+
+  hasMonster(name: string): boolean {
+    return this.monsters[name] !== undefined;
+  }
+
+  hasMonsterGroup(name: string): boolean {
+    return this.monsterGroups[name] !== undefined;
   }
 }
