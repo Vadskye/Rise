@@ -244,9 +244,10 @@ export const ripAndTear: CombatStyle = {
     {
       name: 'Spinning Steel',
 
+      // This is maybe too strong?
       effect: `
         You are \\briefly \\steeled.
-        Make a melee \\glossterm{strike}.
+        Make a melee \\glossterm{strike} with a \\minus1 accuracy penalty.
         The strike targets all \\glossterm{enemies} adjacent to you.
       `,
       rank: 3,
@@ -258,7 +259,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         You are \\briefly \\steeled.
-        Make a melee \\glossterm{strike} that deals triple damage.
+        Make a melee \\glossterm{strike} that deals double damage.
         The strike targets all \\glossterm{enemies} adjacent to you.
       `,
       rank: 7,

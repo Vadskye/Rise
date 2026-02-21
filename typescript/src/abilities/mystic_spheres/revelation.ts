@@ -49,8 +49,10 @@ export const revelation: MysticSphere = {
     {
       name: 'Foresee Safety',
 
+      // Delay makes effects 50% stronger
+      // 0.5 base * 1.5 = 0.75
       effect: `
-        At the end of your next turn, you become \\briefly \\braced and \\steeled.
+        At the end of your next turn, you become \\briefly \\braced.
       `,
       rank: 1,
       roles: ['turtle'],
@@ -61,7 +63,7 @@ export const revelation: MysticSphere = {
       name: 'Greater Foresee Safety',
 
       effect: `
-        At the end of your next turn, you become \\briefly \\braced and \\shielded.
+        At the end of your next turn, you become \\briefly \\braced, and you cannot be \\partiallyunaware or \\unaware of attacks.
       `,
       rank: 4,
       roles: ['turtle'],
@@ -71,10 +73,11 @@ export const revelation: MysticSphere = {
     {
       name: 'Foresee Victory',
 
+      // (0.4 + 0.1) * 1.5 = 0.75
       effect: `
-        At the end of your next turn, you become \\briefly \\primed.
+        At the end of your next turn, you \\briefly become \\focused and gain a \\plus1 \\glossterm{accuracy} bonus.
       `,
-      rank: 2,
+      rank: 1,
       roles: ['focus'],
       tags: ['Subtle'],
     },
@@ -82,8 +85,21 @@ export const revelation: MysticSphere = {
     {
       name: 'Greater Foresee Victory',
 
+      // (0.4 + 0.3) * 1.5 = 1.05
       effect: `
-        At the end of your next turn, you become \\briefly \\primed and \\honed.
+        At the end of your next turn, you \\briefly become \\focused and gain a \\plus2 \\glossterm{accuracy} bonus.
+      `,
+      rank: 4,
+      roles: ['focus'],
+      tags: ['Subtle'],
+    },
+
+    {
+      name: 'Foresee Primacy',
+
+      // 0.8 * 1.5 = 1.2
+      effect: `
+        At the end of your next turn, you become \\briefly \\primed.
       `,
       rank: 7,
       roles: ['focus'],

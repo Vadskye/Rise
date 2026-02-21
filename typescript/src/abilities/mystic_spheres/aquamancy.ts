@@ -834,12 +834,9 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: 'Sudden Liquification',
 
-      // TODO: steeled is weird
       effect: `
-        When you would suffer a \\glossterm{critical hit}, this spell automatically activates.
-        When it does, your body liquifies in an instant, limiting the damage to vital areas.
-        This causes the critical hit to become only a regular hit, and you remain \\briefly \\steeled.
-        Then, this ability is \\glossterm{dismissed}.
+        Whenever a damaging attack would get a \\glossterm{critical hit} against you, you automatically become \\glossterm{briefly} \\steeled, protecting you from the triggering attack.
+        Then, this effect is \\glossterm{dismissed}.
       `,
       rank: 1,
       roles: ['attune'],
