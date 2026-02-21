@@ -17,7 +17,7 @@ function assertExpectedWinRate(tap: any, result: CombatSimulationResult, teamNam
 
 function assertExpectedRounds(tap: any, result: CombatSimulationResult, expected: number) {
   const actual = result.averageRounds;
-  tap.ok(Math.abs(actual - expected) <= 1.0, `Average rounds should be ~${expected} (actual: ${actual.toFixed(2)})`);
+  tap.ok(Math.abs(actual - expected) <= 0.5, `Average rounds should be ~${expected} (actual: ${actual.toFixed(2)})`);
 }
 
 loadAllMonsters();
@@ -195,5 +195,30 @@ t.test('Elite monsters hit multiple targets with area attack', (t) => {
   const result = scenario.simulate();
   assertExpectedRounds(t, result, 1.0);
   assertExpectedWinRate(t, result, 'Elite Team', 100);
+  t.end();
+});
+
+// The *goal* of Rise is to make these are equivalent, but in practice that's not true yet, as the test assertions capture.
+t.test('One elite Ankheg is equivalent to four non-elite Ankhegs', (t) => {
+  const eliteAnkheg = cloneMonster('Ankheg');
+
+  const normalAnkhegs = [];
+  for (let i = 0; i < 4; i++) {
+    const ank = cloneMonster('Ankheg');
+    ank.setProperties({
+      elite: false,
+    });
+    normalAnkhegs.push(ank);
+  }
+
+  const eliteTeam = createTeam('Elite Ankheg', [eliteAnkheg]);
+  const normalTeam = createTeam('Normal Ankhegs', normalAnkhegs);
+
+  const scenario = createScenario([eliteTeam, normalTeam]);
+  const result = scenario.simulate();
+
+  assertExpectedRounds(t, result, 5.2);
+  assertExpectedWinRate(t, result, 'Elite Ankheg', 76);
+  assertExpectedWinRate(t, result, 'Normal Ankhegs', 24);
   t.end();
 });
