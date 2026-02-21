@@ -31,7 +31,7 @@ As with weapons, we treat +2 accuracy as 0.3 EA per hit, so 1.5 EA.
 
 ### Singleton +5 accuracy: 0.7
 
-### Braced: 2.7
+### Braced: 3.2
 
 If you could be braced as an attunement, it would be 40% action denial that works 40% of the time, so 20 * 0.4 * 0.4 = 3.2 EA. That's too powerful for a single attunement, but almost within scope for a deep attunement.
 

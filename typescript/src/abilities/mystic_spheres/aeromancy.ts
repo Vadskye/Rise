@@ -125,9 +125,9 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       rank: 4,
       roles: ['mobility'],
     },
-    // Braced is 2.7 EA. Assume that ranged strikes are about 25% of all attacks, so this
-    // is 0.7 EA. They aren't actually 25% of attacks, but it's dangerous to undervalue
-    // rare modifiers. Doubled would be 1.4 EA for the empowered version.
+    // Braced is 3.2 EA. Assume that ranged strikes are about 25% of all attacks, so this
+    // is 0.8 EA. They aren't actually 25% of attacks, but it's dangerous to undervalue
+    // rare modifiers. Doubled would be 1.6 EA for the empowered version.
     {
       name: 'Wind Screen',
 

@@ -353,7 +353,7 @@ export const photomancy: MysticSphere = {
         This ability provides no defensive benefit against creatures immune to \\abilitytag{Visual} abilities.
       `,
       narrative: `Your physical outline is distorted so it appears blurred, shifting, and wavering.`,
-      rank: 3,
+      rank: 5,
       roles: ['attune'],
       tags: ['Visual'],
       type: 'Attune',
@@ -362,7 +362,7 @@ export const photomancy: MysticSphere = {
     {
       name: 'Sudden Mirrorswarm',
 
-      // 50% miss chance for 2 rounds of attacks is 8 * 0.5 * 0.25 = 1 EA.
+      // 50% miss chance for 2 rounds of attacks is 8 * 0.5 * 0.3 = 1.2 EA.
       effect: `
         You can activate this spell as a \\glossterm{minor action}.
         When you do, a burst of illusory duplicates appear from your body, each appearing to performing a different action.
@@ -371,7 +371,7 @@ export const photomancy: MysticSphere = {
 
         This ability provides no defensive benefit against creatures immune to \\abilitytag{Visual} abilities.
       `,
-      rank: 3,
+      rank: 4,
       roles: ['attune'],
       tags: ['Visual'],
       type: 'Attune',
@@ -431,7 +431,7 @@ export const photomancy: MysticSphere = {
         exceptThat:
           'the images are recreated immediately after being destroyed, so they never run out.',
       },
-      rank: 5,
+      rank: 7,
       roles: ['attune'],
       tags: ['Visual'],
       type: 'Attune (deep)',

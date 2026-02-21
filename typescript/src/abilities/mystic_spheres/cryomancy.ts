@@ -205,8 +205,8 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
     {
       name: 'Icy Shell',
 
-      // Permanent shielded is 2 EA.
-      // Assume that you have DR for ~50% of rounds, so this is worth 1 EA.
+      // Permanent shielded is 2.4 EA.
+      // Assume that you have DR for ~50% of rounds, so this is worth 1.2 EA.
       effect: `
         You are \\shielded.
         At the end of each round, if you took damage from a \\atFire ability that round or are \\glossterm{injured}, you can spend an \\glossterm{ice crystal}.
@@ -214,7 +214,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       `,
       narrative:
         'Layers of ice form around you, shielding you from attacks until they are destroyed.',
-      rank: 3,
+      rank: 4,
       roles: ['attune'],
       tags: ['Manifestation'],
       type: 'Attune',
@@ -223,8 +223,8 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
     {
       name: 'Enduring Icy Shell',
 
-      // Permanent shielded is 2 EA.
-      // Assume that you have DR for 3/5 of rounds, so this is worth 1.2 EA.
+      // Permanent shielded is 2.4 EA.
+      // Assume that you have DR for ~60% of rounds, so this is worth 1.5 EA.
       effect: `
         You are \\shielded.
         At the end of each round, if you took damage from a \\atFire ability that round or are \\glossterm{injured}, you can spend an \\glossterm{ice crystal}.
@@ -233,7 +233,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       `,
       narrative:
         'Layers of ice form around you, shielding you from attacks until they are destroyed.',
-      rank: 6,
+      rank: 7,
       roles: ['attune'],
       tags: ['Manifestation'],
       type: 'Attune',
