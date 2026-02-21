@@ -203,7 +203,7 @@ pub fn shields() -> Vec<MagicArmor> {
 
     armor.push(Shield(StandardItem {
         name: String::from("Shield of Shielding"),
-        rank: 3,
+        rank: 4,
         short_description: String::from("Shields you"),
         description: String::from(
             r"
@@ -216,7 +216,7 @@ pub fn shields() -> Vec<MagicArmor> {
 
     armor.push(Shield(StandardItem {
         name: String::from("Covering Shield"),
-        rank: 6,
+        rank: 7,
         short_description: String::from("Grants you cover"),
         description: String::from(
             r"
