@@ -387,7 +387,7 @@ export function getMonster(name: string): Creature {
  * Spawns a new instance of a monster from the grimoire.
  * This ensures the creature has its own character sheet and state.
  */
-export function createMonster(name: string): Creature {
+export function cloneMonster(name: string): Creature {
     const baseMonster = getMonster(name);
     const uniqueId = Math.random().toString(36).substring(7);
     const uniqueName = `${name}_${uniqueId}`;
