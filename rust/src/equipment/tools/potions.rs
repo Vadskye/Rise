@@ -155,6 +155,8 @@ pub fn potions() -> Vec<Tool> {
         ..potion()
     });
 
+    // Honed + steeled is 0.8 EA, but they combine poorly since they are both circumstantial,
+    // so call it 0.7 EA.
     potions.push(Tool {
         name: "Potion of Sharpened Steel".to_string(),
         rank: 1,
