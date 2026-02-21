@@ -3,6 +3,7 @@ import {
   getCurrentCharacterSheet,
   setCurrentCharacterSheet,
   resetDefaultCharacterSheet,
+  createCharacterSheet,
 } from '@src/character_sheet/current_character_sheet';
 import { handleEverything, MonsterAttackUsageTime } from '@src/character_sheet/sheet_worker';
 import {
@@ -208,7 +209,9 @@ export class Creature implements CreaturePropertyMap {
   }
 
   public clone(newName: string): Creature {
-    const newSheet = this.sheet.clone(newName);
+    const newSheet = createCharacterSheet(newName);
+    newSheet.setProperties(this.sheet.getAllProperties())
+    handleEverything();
     const newCreature = new Creature(newSheet);
     newCreature.activeAbilities = { ...this.activeAbilities };
     newCreature.targetPreference = this.targetPreference;
