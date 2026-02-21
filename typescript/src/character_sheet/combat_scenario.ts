@@ -327,7 +327,10 @@ export class CombatScenario {
             7: `${halfPower + 1}d10`,
         };
 
-        const diceExpr = damageTable[rank] || '1d6';
+        const diceExpr = damageTable[rank];
+        if (!diceExpr) {
+            throw new Error(`Unknown rank: ${rank}`);
+        }
         return this.rollDice(diceExpr);
     }
 
