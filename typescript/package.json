@@ -33,14 +33,14 @@
   "license": "OGL",
   "scripts": {
     "clean": "rm src/**/*.js",
-    "coverage": "tsc --incremental && NODE_OPTIONS='--import tsx' tap --exclude=**/*.js --coverage-report=text",
-    "explain_monster": "tsc --incremental && NODE_OPTIONS='--import tsx' node src/scripts/explain_monster.js",
-    "script": "tsc --incremental && node --enable-source-maps -r tsconfig-paths/register",
-    "maneuver_ranks": "tsc --incremental && NODE_OPTIONS='--import tsx' node src/scripts/maneuver_rank_breakdown.js",
-    "maneuver_roles": "tsc --incremental && NODE_OPTIONS='--import tsx' node src/scripts/maneuver_role_breakdown.js",
-    "spell_ranks": "tsc --incremental && NODE_OPTIONS='--import tsx' node src/scripts/spell_rank_breakdown.js",
-    "spell_roles": "tsc --incremental && NODE_OPTIONS='--import tsx' node src/scripts/spell_role_breakdown.js",
-    "tap": "tsc --incremental && NODE_OPTIONS='--import tsx' tap --exclude=**/*.js",
-    "test": "tsc --incremental && NODE_OPTIONS='--import tsx' tap --exclude=**/*.js"
+    "coverage": "npx tsc --incremental && npx tap --node-arg=--import=tsx --exclude=**/*.js --coverage-report=text",
+    "explain_monster": "npx tsc --incremental && node --import tsx src/scripts/explain_monster.js",
+    "script": "npx tsc --incremental && node --enable-source-maps -r tsconfig-paths/register",
+    "maneuver_ranks": "npx tsc --incremental && node --import tsx src/scripts/maneuver_rank_breakdown.js",
+    "maneuver_roles": "npx tsc --incremental && node --import tsx src/scripts/maneuver_role_breakdown.js",
+    "spell_ranks": "npx tsc --incremental && node --import tsx src/scripts/spell_rank_breakdown.js",
+    "spell_roles": "npx tsc --incremental && node --import tsx src/scripts/spell_role_breakdown.js",
+    "tap": "npx tsc --incremental && npx tap --node-arg=--import=tsx --exclude=**/*.js",
+    "test": "npx tsc --incremental && npx tap --node-arg=--import=tsx --exclude=**/*.js"
   }
 }
