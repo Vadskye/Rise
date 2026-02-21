@@ -99,18 +99,6 @@ export const prayer: MysticSphere = {
     },
 
     {
-      name: 'Boon of Tempered Steel',
-
-      // Honed + steeled is theoretically 0.9 EA, but it's rare that you'll actually
-      // benefit from both, so this can be r1.
-      effect: `
-        One \\glossterm{ally} within \\medrange is \\honed and \\steeled until your next turn.
-      `,
-      rank: 1,
-      roles: ['boon'],
-    },
-
-    {
       name: 'Boon of Deadly Fortune',
 
       // Any two honed is 1 EA, though it seems unlikely that two party members can gain
@@ -130,10 +118,21 @@ export const prayer: MysticSphere = {
       name: 'Boon of Living Steel',
 
       effect: `
-        Choose one \\glossterm{ally} within \\medrange.
-        The target is \\briefly \\fortified and \\steeled.
+        One \\glossterm{ally} within \\medrange is \\steeled until your next turn.
       `,
       rank: 1,
+      roles: ['boon'],
+    },
+
+    {
+      name: 'Boon of Tempered Steel',
+
+      // Honed + steeled is theoretically 1.4 EA, but it's rare that you'll actually
+      // benefit from both, so this can be r6.
+      effect: `
+        One \\glossterm{ally} within \\medrange is \\honed and \\steeled until your next turn.
+      `,
+      rank: 6,
       roles: ['boon'],
     },
 
@@ -143,7 +142,7 @@ export const prayer: MysticSphere = {
 
       // 1 EA on an ally
       effect: `
-        When you cast this spell, a holy light emanates fro you like a torch.
+        When you cast this spell, a holy light emanates from you like a torch.
         Illuminated objects seem more solid and secure.
         Next round, you can spend a standard action to protect you and all \\glossterm{allies} within a \\largearea radius.
         Each target \\briefly takes half damage from all sources.

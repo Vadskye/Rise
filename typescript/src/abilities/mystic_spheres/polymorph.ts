@@ -662,10 +662,12 @@ export const polymorph: MysticSphere = {
     {
       name: 'Greater Sudden Jellification',
 
+      // Half damage from all sources already mitigates the downside risk of steeled, so
+      // treat it as only 0.5 EA instead of 0.8 EA. That gives a sum of 1.2 EA.
       effect: `
         You \\briefly are \\steeled and take half damage from all sources.
       `,
-      rank: 4,
+      rank: 7,
       roles: ['turtle'],
     },
 
