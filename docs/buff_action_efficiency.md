@@ -24,7 +24,7 @@ By EA:
   Shielded       & 0.4  & 0.6  & 0.9     & 1.2 \\
   +4 defenses    & 1.1  & 1.6  & inf     & inf \\
   Single defense & 0.4  & 0.6  & 0.9     & 1.2 \\
-  Steeled        & 0.5  & 0.8  & 1.2     & 1.6 \\
+  Steeled        & 0.4  & 0.6  & 1.0     & 1.4 \\
 ```
 "You and all adjacent" can be used instead of "any two in Medium range".
 
@@ -221,15 +221,27 @@ From the -4 accuracy calculation, +4 defenses is 3.2 EA normally. 3.2 / 3 = 1.1 
 ### Single defense (self): 0.3
 You can probably choose the best defense here, so it's pretty close in power to the other defense abilities.
 
-### Steeled (self): 0.5
+### Steeled (self): 0.4
 Assumptions:
 * You are attacked 33% of the time
 * The enemy gets a critical hit 5% of the time (standard 50% hit chance)
-* Critical hits are four times as scary as a regular hit, because they have a disproportionate probability of killing / incapacitating.
+* Critical hits are five times as scary as a regular hit, because they have a disproportionate probability of killing / incapacitating.
 
-With 50% hit chance, expected enemy hits per round is 2 hits + 0.2 crits * 4 (extra scary crits) = 2.8. If you remove crits from that possibility, expected incoming damage is 2. That's about 40% action denial, which has a base value of 4 * 0.4 = 1.6 EA. With the standard assumption that you are targeted by 33% of attacks, that's 0.5 EA as a self-buff.
+With 50% hit chance, expected enemy hits per round is 2 hits + 0.2 crits * 5 (extra scary crits) = 3. If you remove crits from that possibility, expected incoming damage is 2. That's about 33% action denial, which has a base value of 4 * 0.29 = 1.3 EA. With the standard assumption that you are targeted by 33% of attacks, that's 0.4 EA as a self-buff.
 
-If you assume an 80% hit chance, expected enemy hits per round is 3.2 hits + (4 * 0.1 * 0.8 * 4) = 4.5 hits. If you remove crits, expected incoming damage is 3.2. That's about 40% action denial, which is basically the same. So steeled has similar value regardless of hit probability.
+If you assume an 80% hit chance, expected enemy hits per round is 3.2 hits + (4 * 0.1 * 0.8 * 5) = 4.8 hits. If you remove crits, expected incoming damage is 3.2. That's about 33% action denial, which is basically the same. So steeled has similar value regardless of hit probability.
+
+### +4 crit defenses (self): 0.3
+
+Same assumptions as steeled, but since this isn't an absolute defense, the worst case scenario is still highly dangerous. Assume critical hits are 4x as scary as normal instead of 5x as scary as normal.
+
+Expected enemy hits per round is 2 hits + 4 * 0.1 * 0.5 * 4 = 2.8. With +4 vs crits, 2 hits + 4 * 0.1 * 0.1 * 4 = 2.16. That's about 23% action denial, so 4 * 0.23 = 0.9 EA. On yourself only, it's 0.3 EA.
+
+### +2 crit defenses (self): 0.2
+
+Same assumptions as steeled, but since this isn't an absolute defense, the worst case scenario is still highly dangerous. Assume critical hits are 3x as scary as normal instead of 5x as scary as normal.
+
+Expected enemy hits per round is 2 hits + 4 * 0.1 * 0.5 * 3 = 2.6. With +2 vs crits, 2 hits + 4 * 0.1 * 0.3 * 3 = 2.36. That's about 9% action denial, so 4 * 0.09 = 0.4 EA. On yourself only, it's 0.15 EA.
 
 ## Buff effect scaling
 

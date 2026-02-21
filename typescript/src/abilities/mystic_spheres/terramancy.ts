@@ -588,18 +588,27 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       type: 'Attune',
     },
 
-    // Permanent steeled is 0.9 EA.
-    // Assume that you have some DR in 3 of the 5 rounds, maybe because you recovered.
-    // That makes this worth 0.5 EA?
     {
       name: 'Steelskin',
 
       effect: `
-        You are \\steeled.
-        At the end of each round, if you are \\glossterm{injured}, this effect is \\glossterm{suppressed}.
-        When you stop being injured, this effect is immediately resumed.
+        Whenever a damaging attack would get a \\glossterm{critical hit} against you, you automatically become \\glossterm{briefly} \\steeled, protecting you from the triggering attack.
+        Then, this effect is \\glossterm{dismissed}.
       `,
       rank: 1,
+      roles: ['attune'],
+      tags: ['Manifestation'],
+      type: 'Attune',
+    },
+
+    {
+      name: 'Greater Steelskin',
+
+      effect: `
+        Whenever a damaging attack would get a \\glossterm{critical hit} against you, you automatically become \\glossterm{briefly} \\steeled and \\fortified, protecting you from the triggering attack.
+        Then, this effect is \\glossterm{dismissed}.
+      `,
+      rank: 5,
       roles: ['attune'],
       tags: ['Manifestation'],
       type: 'Attune',
@@ -758,19 +767,6 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       type: 'Sustain (attunable, minor)',
     },
 
-    {
-      name: 'Desperate Stoneskin',
-
-      effect: `
-        Whenever you use the \\ability{total defense} or \\ability{recover} ability, you can activate this ability.
-        If you do, your body becomes \\briefly covered in stone, and this ability is \\glossterm{dismissed}.
-        This makes you \\fortified and \\steeled.
-      `,
-      rank: 1,
-      roles: ['attune'],
-      tags: ['Manifestation'],
-      type: 'Attune',
-    },
     {
       name: 'Tremorsense',
 

@@ -296,9 +296,21 @@ Assuming that 33% of enemy attacks target the defense, +2 is 40% action denial t
 
 ### Steeled: 4.0
 
-40% action denial on 33% of attacks is 20 * 0.4 / 3 = 2.7.
+33% action denial on 40% of attacks is 20 / 3 * 0.4 = 2.7.
 
 In practice, you build characters very differently if they can be permanently steeled, so give it a 50% increase to 4 EA, which makes it effectively impossible.
+
+### +4 vs crits: 2.3
+
+23% action denial on 40% of attacks is 20 * 0.23 * 0.4 = 1.8.
+
+As with steeled, this is closer to +4 defenses for characters with exceptionally low defenses, and it lets you build characters differently. Since you can still be crit, call it a 25% bonus for permanency, so 2.3 EA.
+
+### +2 vs crits: 0.9
+
+9% action denial on 40% of attacks is 20 * 0.09 * 0.4 = 0.7.
+
+As with steeled, this is closer to +4 defenses for characters with exceptionally low defenses, and it lets you build characters differently. Since you can still be crit, call it a 25% bonus for permanency, so 0.9 EA.
 
 ### Regen: Varies
 

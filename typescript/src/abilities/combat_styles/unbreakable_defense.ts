@@ -191,9 +191,9 @@ export const unbreakableDefense: CombatStyle = {
     {
       name: 'Sinews of Steel',
 
-      // 0.3 + 0.7 EA
+      // 0.5 + 0.4 EA
       effect: `
-        You are \\briefly \\steeled and \\maximized.
+        You are \\briefly \\steeled and \\empowered.
       `,
       rank: 3,
       roles: ['turtle'],
@@ -202,9 +202,9 @@ export const unbreakableDefense: CombatStyle = {
     {
       name: 'Sinews of Steel+',
 
-      // 0.3 + 0.3 + 0.7
+      // 0.5 + 0.7 EA
       effect: `
-        You are \\briefly \\steeled, \\fortified, and \\maximized.
+        You are \\briefly \\steeled and \\maximized.
       `,
       rank: 7,
       roles: ['focus'],

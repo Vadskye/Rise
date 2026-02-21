@@ -276,7 +276,7 @@ export const heraldOfWar: CombatStyle = {
       name: 'Stand Firm',
 
       effect: `
-        One \\glossterm{ally} within \\medrange is \\briefly \\fortified and \\steeled.
+        Up to two \\glossterm{allies} within \\medrange are \\briefly \\fortified.
       `,
       rank: 1,
       roles: ['boon'],
@@ -287,7 +287,7 @@ export const heraldOfWar: CombatStyle = {
       name: 'Stand Firm+',
 
       effect: `
-        Up to two \\glossterm{allies} within \\medrange are \\briefly \\fortified and \\steeled.
+        You and all \\glossterm{allies} within a \\largearea radius are \\briefly \\fortified.
       `,
       rank: 5,
       roles: ['boon'],
