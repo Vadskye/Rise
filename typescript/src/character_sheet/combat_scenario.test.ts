@@ -5,7 +5,7 @@ import {
   createCharacter,
   createTeam,
   createScenario,
-  createMonster,
+  cloneMonster,
   createCreature,
 } from './combat_scenario';
 
@@ -48,7 +48,7 @@ t.test('CombatScenario can simulate 1 Ankheg vs 10 Wasps', (t) => {
   const wasps = [];
 
   for (let i = 0; i < 10; i++) {
-    wasps.push(createMonster('Giant Wasp'));
+    wasps.push(cloneMonster('Giant Wasp'));
   }
 
   const waspTeam = createTeam('Wasps', wasps);
@@ -68,7 +68,7 @@ t.test('CombatScenario can simulate 1 Ankheg vs 1 Ankheg', (t) => {
   const ankhegs = [];
 
   for (let i = 0; i < 1; i++) {
-    ankhegs.push(createMonster('Ankheg'));
+    ankhegs.push(cloneMonster('Ankheg'));
   }
 
   const ankhegTeam = createTeam('Ankheg Team 1', ankhegs);
@@ -88,7 +88,7 @@ t.test('CombatScenario can simulate 1 Ankheg vs 5 Carrion Crows', (t) => {
   const crows = [];
 
   for (let i = 0; i < 5; i++) {
-    crows.push(createMonster('Carrion Crow'));
+    crows.push(cloneMonster('Carrion Crow'));
   }
 
   const crowTeam = createTeam('Crows', crows);
@@ -119,15 +119,15 @@ t.test('Creatures have independent sheets', (t) => {
 t.test('CombatScenario can simulate teams of multiple monsters', (t) => {
   // Team A: 2 Carrion Crows, 2 Wargs
   const teamA_members = [
-    createMonster('Carrion Crow'),
-    createMonster('Carrion Crow'),
-    createMonster('Warg'),
-    createMonster('Warg'),
+    cloneMonster('Carrion Crow'),
+    cloneMonster('Carrion Crow'),
+    cloneMonster('Warg'),
+    cloneMonster('Warg'),
   ];
   const teamA = createTeam('A-Team', teamA_members);
 
   // Team B: 1 Ankheg, 1 Giant Wasp
-  const teamB_members = [createMonster('Ankheg'), createMonster('Giant Wasp')];
+  const teamB_members = [cloneMonster('Ankheg'), cloneMonster('Giant Wasp')];
   const teamB = createTeam('B-Team', teamB_members);
 
   const scenario = createScenario([teamA, teamB]);
