@@ -418,14 +418,17 @@ t.test('can calculate jump distance', (t) => {
       speed_permanent_modifier: 10,
       strength_at_creation: 0,
     });
-    getAttrs(['horizontal_jump_distance', 'horizontal_jump_distance_explanation', 'speed'], (attrs) => {
-      t.match(attrs, {
-        speed: 40,
-        horizontal_jump_distance: 5,
-        horizontal_jump_distance_explanation: '+5 (base speed / 4)',
-      });
-      t.end();
-    });
+    getAttrs(
+      ['horizontal_jump_distance', 'horizontal_jump_distance_explanation', 'speed'],
+      (attrs) => {
+        t.match(attrs, {
+          speed: 40,
+          horizontal_jump_distance: 5,
+          horizontal_jump_distance_explanation: '+5 (base speed / 4)',
+        });
+        t.end();
+      },
+    );
   });
 
   t.end();

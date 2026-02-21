@@ -532,7 +532,8 @@ export const verdamancy: MysticSphere = {
 
       functionsLike: {
         name: 'blight',
-        exceptThat: 'the damage increases to \\damageranksix, and it can kill objects that are Gargantuan or smaller.',
+        exceptThat:
+          'the damage increases to \\damageranksix, and it can kill objects that are Gargantuan or smaller.',
       },
       roles: ['burst'],
       rank: 6,
