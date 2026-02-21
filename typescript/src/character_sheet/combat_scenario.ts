@@ -204,7 +204,26 @@ export class CombatScenario {
         const potentialTargets = this.getPotentialTargets(team, state);
         if (potentialTargets.length === 0) return { status: CombatStepStatus.Ongoing, winner: null };
 
-        const defender = this.selectTarget(attacker, potentialTargets, state);
+        // Elite Area Attack
+        if (attacker.elite) {
+            const areaTargets = this.getPotentialTargets(team, state);
+            for (const areaTarget of areaTargets) {
+                const areaDamage = this.resolveAttack(attacker, areaTarget, -2);
+                state.hp[areaTarget.id] -= areaDamage;
+
+                if (state.hp[areaTarget.id] <= 0) {
+                    this.handleCreatureDeath(areaTarget, state);
+                }
+            }
+            const areaResult = this.checkVictory(state);
+            if (areaResult.status !== CombatStepStatus.Ongoing) return areaResult;
+        }
+
+        // Standard Attack
+        const potentialTargetsAfterArea = this.getPotentialTargets(team, state);
+        if (potentialTargetsAfterArea.length === 0) return { status: CombatStepStatus.Ongoing, winner: null };
+
+        const defender = this.selectTarget(attacker, potentialTargetsAfterArea, state);
         const damage = this.resolveAttack(attacker, defender);
         state.hp[defender.id] -= damage;
 
@@ -273,7 +292,7 @@ export class CombatScenario {
         return { status: CombatStepStatus.Ongoing, winner: null };
     }
 
-    private resolveAttack(attacker: Creature, defender: Creature): number {
+    private resolveAttack(attacker: Creature, defender: Creature, rankOffset: number = 0): number {
         const roll = this.rollD10(true);
         const accuracy = attacker.accuracy;
         const total = roll + accuracy;
@@ -281,22 +300,23 @@ export class CombatScenario {
 
         if (total >= targetDefense + 10) {
             // Critical Hit: Double damage
-            return this.calculateDamage(attacker) * 2;
+            return this.calculateDamage(attacker, rankOffset) * 2;
         } else if (total >= targetDefense) {
             // Regular Hit
-            return this.calculateDamage(attacker);
+            return this.calculateDamage(attacker, rankOffset);
         }
 
         return 0; // Miss
     }
 
-    private calculateDamage(creature: Creature): number {
-        const rank = Math.max(0, Math.min(7, Math.floor((creature.level + 2) / 3)));
+    private calculateDamage(creature: Creature, rankOffset: number = 0): number {
+        const rank = Math.floor((creature.level + 2) / 3) + rankOffset;
         const power = creature.mundane_power;
         const halfPower = Math.floor(power / 2);
 
         // Standard targeted medium damage ranks from sheet_worker.ts
         const damageTable: Record<number, string> = {
+            [-1]: String(halfPower),
             0: `1d4+${halfPower}`,
             1: `1d6+${halfPower}`,
             2: `1d10+${halfPower}`,
