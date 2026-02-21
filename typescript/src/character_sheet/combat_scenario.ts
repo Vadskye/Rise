@@ -7,6 +7,7 @@ import { RiseBaseClass } from './rise_data';
 export interface CombatSimulationResult {
     averageRounds: number;
     winRates: Record<string, number>;
+    averageHpPercentRemaining: Record<string, number>;
 }
 
 export interface CombatTeam {
@@ -31,7 +32,11 @@ export class CombatScenario {
 
         let totalRounds = 0;
         const wins: Record<string, number> = {};
-        this.teams.forEach(t => wins[t.name] = 0);
+        const totalHpPercents: Record<string, number> = {};
+        this.teams.forEach(t => {
+            wins[t.name] = 0;
+            totalHpPercents[t.name] = 0;
+        });
 
         for (let i = 0; i < iterations; i++) {
             const result = this.simulateSingleFight();
@@ -39,42 +44,65 @@ export class CombatScenario {
             if (result.winner) {
                 wins[result.winner]++;
             }
+            for (const name in result.teamHpPercents) {
+                totalHpPercents[name] += result.teamHpPercents[name];
+            }
         }
 
         const stats: CombatSimulationResult = {
             averageRounds: totalRounds / iterations,
-            winRates: {}
+            winRates: {},
+            averageHpPercentRemaining: {}
         };
 
         for (const name in wins) {
             stats.winRates[name] = (wins[name] / iterations) * 100;
+            stats.averageHpPercentRemaining[name] = totalHpPercents[name] / iterations;
         }
 
         console.log('--- Combat Simulation Results ---');
         console.log(`Teams: ${this.teams.map(t => t.name).join(' vs ')}`);
         console.log(`Average Rounds: ${stats.averageRounds.toFixed(2)}`);
         for (const name in stats.winRates) {
-            console.log(`${name} Win Rate: ${stats.winRates[name].toFixed(2)}%`);
+            console.log(`${name} Win Rate: ${stats.winRates[name].toFixed(2)}% | Avg HP Remaining: ${stats.averageHpPercentRemaining[name].toFixed(2)}%`);
         }
         console.log('---------------------------------');
 
         return stats;
     }
 
-    private simulateSingleFight(): { winner: string | null, rounds: number } {
+    private simulateSingleFight(): { winner: string | null, rounds: number, teamHpPercents: Record<string, number> } {
         const hp: Map<string, number> = new Map();
         const memberToTeam: Map<string, CombatTeam> = new Map();
         const aliveMembersByTeam: Map<string, Creature[]> = new Map();
+        const initialTotalHpByTeam: Record<string, number> = {};
 
         this.teams.forEach(team => {
             const aliveMembers: Creature[] = [];
+            let teamInitialHp = 0;
             team.members.forEach(member => {
                 hp.set(member.name, member.hit_points);
                 memberToTeam.set(member.name, team);
                 aliveMembers.push(member);
+                teamInitialHp += member.hit_points;
             });
             aliveMembersByTeam.set(team.name, aliveMembers);
+            initialTotalHpByTeam[team.name] = teamInitialHp;
         });
+
+        const getHpPercents = (): Record<string, number> => {
+            const percents: Record<string, number> = {};
+            this.teams.forEach(team => {
+                let currentTeamHp = 0;
+                team.members.forEach(member => {
+                    currentTeamHp += Math.max(0, hp.get(member.name)!);
+                });
+                percents[team.name] = initialTotalHpByTeam[team.name] > 0
+                    ? (currentTeamHp / initialTotalHpByTeam[team.name]) * 100
+                    : 0;
+            });
+            return percents;
+        };
 
         // Determine initiative order for teams.
         const teamInitiatives = this.teams.map(team => ({
@@ -127,16 +155,16 @@ export class CombatScenario {
                         .filter(([_, members]) => members.length > 0);
 
                     if (teamsWithAlive.length === 1) {
-                        return { winner: teamsWithAlive[0][0], rounds };
+                        return { winner: teamsWithAlive[0][0], rounds, teamHpPercents: getHpPercents() };
                     }
                     if (teamsWithAlive.length === 0) {
-                        return { winner: null, rounds };
+                        return { winner: null, rounds, teamHpPercents: getHpPercents() };
                     }
                 }
             }
         }
 
-        return { winner: null, rounds };
+        return { winner: null, rounds, teamHpPercents: getHpPercents() };
     }
 
     private resolveAttack(attacker: Creature, defender: Creature): number {

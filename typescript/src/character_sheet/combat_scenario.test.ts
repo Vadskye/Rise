@@ -72,6 +72,39 @@ t.test('CombatScenario can simulate 1 Ankheg vs 10 Wasps', (t) => {
     t.end();
 });
 
+t.test('CombatScenario can simulate 1 Ankheg vs 5 Wasps', (t) => {
+    const gen = new CombatScenarioGenerator();
+    gen.reset();
+    addBeasts(gen.grimoire);
+
+    const ankheg = gen.getMonster('Ankheg');
+    const wasps = [];
+    const baseWasp = gen.getMonster('Giant Wasp');
+
+    for (let i = 0; i < 5; i++) {
+        wasps.push(gen.createCreature(`Wasp ${i}`, (c) => {
+            c.setProperties({
+                level: baseWasp.level,
+                hit_points: baseWasp.hit_points,
+                accuracy: baseWasp.accuracy,
+                armor_defense: baseWasp.armor_defense,
+                mundane_power: baseWasp.mundane_power,
+            });
+        }));
+    }
+
+    const waspTeam = gen.createTeam('Wasps', wasps);
+    const ankhegTeam = gen.createTeam('Ankheg', [ankheg]);
+
+    const scenario = gen.createScenario([waspTeam, ankhegTeam]);
+    const result = scenario.simulate(20);
+
+    t.ok(result.averageRounds > 0, 'Average rounds should be positive');
+    t.ok(result.winRates['Ankheg'] >= 0, 'Ankheg should have a win rate');
+    t.ok(result.winRates['Wasps'] >= 0, 'Wasps should have a win rate');
+    t.end();
+});
+
 t.test('Creatures have independent sheets', (t) => {
     const gen = new CombatScenarioGenerator();
     gen.reset();
