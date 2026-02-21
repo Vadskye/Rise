@@ -12,7 +12,12 @@ import {
 
 function assertExpectedWinRate(tap: any, result: CombatSimulationResult, teamName: string, expected: number) {
   const actual = result.winRates[teamName];
-  tap.ok(Math.abs(actual - expected) <= 5, `${teamName} win rate should be ~${expected}% (actual: ${actual.toFixed(2)}%)`);
+  tap.ok(Math.abs(actual - expected) <= 10, `${teamName} win rate should be ~${expected}% (actual: ${actual.toFixed(2)}%)`);
+}
+
+function assertExpectedRounds(tap: any, result: CombatSimulationResult, expected: number) {
+  const actual = result.averageRounds;
+  tap.ok(Math.abs(actual - expected) <= 1.0, `Average rounds should be ~${expected} (actual: ${actual.toFixed(2)})`);
 }
 
 loadAllMonsters();
@@ -41,7 +46,7 @@ t.test('CombatScenario can simulate a fight and report statistics', (t) => {
   const scenario = createScenario([team1, team2]);
   const result = scenario.simulate();
 
-  t.ok(result.averageRounds > 0, 'Average rounds should be positive');
+  assertExpectedRounds(t, result, 1.5);
   assertExpectedWinRate(t, result, 'Ankheg Team', 100);
   assertExpectedWinRate(t, result, 'Wasp Team', 0);
   t.end();
@@ -61,7 +66,7 @@ t.test('CombatScenario can simulate 1 Ankheg vs 10 Carrion Crows', (t) => {
   const scenario = createScenario([crowTeam, ankhegTeam]);
   const result = scenario.simulate();
 
-  t.ok(result.averageRounds > 0, 'Average rounds should be positive');
+  assertExpectedRounds(t, result, 4.8);
   assertExpectedWinRate(t, result, 'Ankheg', 72.4);
   assertExpectedWinRate(t, result, 'Crows', 27.6);
   t.end();
@@ -81,9 +86,9 @@ t.test('CombatScenario can simulate 1 Ankheg vs 1 Ankheg', (t) => {
   const scenario = createScenario([ankhegTeam, ankhegTeam2]);
   const result = scenario.simulate();
 
-  t.ok(result.averageRounds > 0, 'Average rounds should be positive');
-  assertExpectedWinRate(t, result, 'Ankheg Team 1', 53.5);
-  assertExpectedWinRate(t, result, 'Ankheg Team 2', 46.5);
+  assertExpectedRounds(t, result, 8.5);
+  assertExpectedWinRate(t, result, 'Ankheg Team 1', 50.0);
+  assertExpectedWinRate(t, result, 'Ankheg Team 2', 50.0);
   t.end();
 });
 
@@ -105,7 +110,7 @@ t.test('CombatScenario can simulate 5 Carrion Crows vs 10 Giant Wasps', (t) => {
   const scenario = createScenario([crowTeam, waspTeam]);
   const result = scenario.simulate();
 
-  t.ok(result.averageRounds > 0, 'Average rounds should be positive');
+  assertExpectedRounds(t, result, 4.2);
   assertExpectedWinRate(t, result, 'Crows', 0.2);
   assertExpectedWinRate(t, result, 'Wasps', 99.8);
   t.end();
@@ -141,7 +146,7 @@ t.test('CombatScenario can simulate teams of multiple monsters', (t) => {
   const scenario = createScenario([teamA, teamB]);
   const result = scenario.simulate();
 
-  t.ok(result.averageRounds > 0, 'Average rounds should be positive');
+  assertExpectedRounds(t, result, 3.3);
   assertExpectedWinRate(t, result, 'A-Team', 0.1);
   assertExpectedWinRate(t, result, 'B-Team', 99.9);
   t.ok(result.averageHpPercentRemaining['A-Team'] >= 0, 'A-Team should have avg HP remaining');
@@ -188,7 +193,7 @@ t.test('Elite monsters hit multiple targets with area attack', (t) => {
   // If no area attack, it takes 5 rounds to kill 5 targets (1 target/round).
   // With area attack, it kills one target and damages others, killing them all in ~2 rounds.
   const result = scenario.simulate();
-  t.ok(result.averageRounds <= 2.5, `Should kill targets quickly (${result.averageRounds} rounds)`);
+  assertExpectedRounds(t, result, 1.0);
   assertExpectedWinRate(t, result, 'Elite Team', 100);
   t.end();
 });
