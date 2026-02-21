@@ -141,7 +141,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                Once per round, you can draw or sheathe any non-shield weapon as a \glossterm{free action}.
+                Once per turn, you can draw or sheathe any non-shield weapon as a \glossterm{free action}.
                 This does not count against your normal one free action \glossterm{object manipulation} per round (see \pcref{Manipulating Objects}).
             ",
             modifiers: None,

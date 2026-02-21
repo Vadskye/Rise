@@ -23,7 +23,7 @@ pub fn staffs() -> Vec<Implement> {
         rank: 2,
         short_description: String::from(r"Heals you when you heal allies"),
         description: String::from(r"
-            Once per round, when you cause a creature other yourself to regain \glossterm<hit points> using a \magical ability, you can activate this item.
+            Once per turn, when you cause a creature other yourself to regain \glossterm<hit points> using a \magical ability, you can activate this item.
             When you do, you also regain that many hit points.
             In addition, you increase your \glossterm<fatigue level> by one.
         "),

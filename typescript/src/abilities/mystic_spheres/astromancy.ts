@@ -56,7 +56,7 @@ export const astromancy: MysticSphere = {
       name: 'Tactical Translocation',
 
       effect: `
-        Once per round, when you would make a melee \\glossterm{strike} or use an ability that requires \\glossterm{touch} on a creature other than yourself, you can first \\glossterm{teleport} up to 10 feet.
+        Once per turn, when you would make a melee \\glossterm{strike} or use an ability that requires \\glossterm{touch} on a creature other than yourself, you can first \\glossterm{teleport} up to 10 feet.
         Your destination must be adjacent to the target.
       `,
       rank: 3,
