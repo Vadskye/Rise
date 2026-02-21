@@ -4,7 +4,6 @@ import { addBeasts } from '../monsters/individual_monsters/beasts';
 
 t.test('CombatScenarioGenerator can create a monster', (t) => {
   const gen = new CombatScenarioGenerator();
-  gen.reset();
   addBeasts(gen.grimoire);
   const ankheg = gen.getMonster('Ankheg');
   t.equal(ankheg.name, 'Ankheg');
@@ -13,7 +12,6 @@ t.test('CombatScenarioGenerator can create a monster', (t) => {
 
 t.test('CombatScenarioGenerator can create a custom character', (t) => {
   const gen = new CombatScenarioGenerator();
-  gen.reset();
   const hero = gen.createCharacter('Hero', 5, 'fighter');
   t.equal(hero.name, 'Hero');
   t.equal(hero.level, 5);
@@ -23,7 +21,6 @@ t.test('CombatScenarioGenerator can create a custom character', (t) => {
 
 t.test('CombatScenario can simulate a fight and report statistics', (t) => {
   const gen = new CombatScenarioGenerator();
-  gen.reset();
   addBeasts(gen.grimoire);
   const ankheg = gen.getMonster('Ankheg');
   const wasp = gen.getMonster('Giant Wasp');
@@ -44,7 +41,6 @@ t.test('CombatScenario can simulate a fight and report statistics', (t) => {
 
 t.test('CombatScenario can simulate 1 Ankheg vs 10 Wasps', (t) => {
   const gen = new CombatScenarioGenerator();
-  gen.reset();
   addBeasts(gen.grimoire);
 
   const ankheg = gen.getMonster('Ankheg');
@@ -79,7 +75,6 @@ t.test('CombatScenario can simulate 1 Ankheg vs 10 Wasps', (t) => {
 
 t.test('CombatScenario can simulate 1 Ankheg vs 5 Wasps', (t) => {
   const gen = new CombatScenarioGenerator();
-  gen.reset();
   addBeasts(gen.grimoire);
 
   const ankheg = gen.getMonster('Ankheg');
@@ -114,7 +109,6 @@ t.test('CombatScenario can simulate 1 Ankheg vs 5 Wasps', (t) => {
 
 t.test('Creatures have independent sheets', (t) => {
   const gen = new CombatScenarioGenerator();
-  gen.reset();
   const c1 = gen.createCreature('C1');
   const c2 = gen.createCreature('C2');
 
@@ -129,7 +123,6 @@ t.test('Creatures have independent sheets', (t) => {
 
 t.test('CombatScenario can simulate teams of multiple monsters', (t) => {
   const gen = new CombatScenarioGenerator();
-  gen.reset();
   addBeasts(gen.grimoire);
 
   // Team A: 2 Carrion Crows, 2 Wargs

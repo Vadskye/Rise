@@ -252,12 +252,6 @@ export class CombatScenarioGenerator {
 
     constructor() {
         this.grimoire = new Grimoire();
-    }
-
-    /**
-     * Resets the global character sheet state.
-     */
-    public reset() {
         clearAllCharacterSheets();
     }
 
