@@ -290,7 +290,7 @@ function addGhosts(grimoire: Grimoire) {
             rank: 5,
             tags: ['Manifestation'],
           }),
-          creature.addSpell('Garotte')
+            creature.addSpell('Garotte');
         },
       ],
     ],

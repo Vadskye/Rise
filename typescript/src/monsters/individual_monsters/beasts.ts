@@ -488,7 +488,7 @@ export function addBeasts(grimoire: Grimoire) {
         It leaps upon its foes and bashes them to death in a fury.
       `,
     });
-    creature.setTrainedSkills(['jump', "stealth"]);
+    creature.setTrainedSkills(['jump', 'stealth']);
     creature.setBaseAttributes([8, 6, 1, -6, 2, -2]);
     creature.addManeuver('Leap Slam');
     creature.addWeaponMult('fists');
@@ -504,11 +504,11 @@ export function addBeasts(grimoire: Grimoire) {
         `,
       },
     });
-    creature.addWeaponMult('fists', { displayName: "More Fists", usageTime: 'elite' });
+    creature.addWeaponMult('fists', { displayName: 'More Fists', usageTime: 'elite' });
     creature.addManeuver('Mighty Roar', { usageTime: 'elite' });
     creature.addManeuver('Fearsome Roar', { usageTime: 'elite' });
     creature.addPassiveAbility({
-      name: "Four Arms",
+      name: 'Four Arms',
       effect: `
         The $name has four arms.
         When it initiates a grapple while not already grappling a creature, it automatically controls the grapple.
