@@ -577,7 +577,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
                     \itemhead{Bear} \plus4 Endurance and \plus2 to your \glossterm{vital rolls}.
                     \itemhead{Crocodile} \plus4 Stealth and you can hold your breath indefinitely, though you cannot rest while holding your breath.
                     \itemhead{Eagle} \plus4 Awareness and \plus20 feet to your maximum horizontal jump distance.
-                    \itemhead{Lion} \plus4 Intimidate and you gain a \plus10 foot bonus to your \\glossterm{speed}.
+                    \itemhead{Lion} \plus4 Intimidate and you gain a \plus10 foot bonus to your \glossterm{speed}.
                     \itemhead{Shark} \plus4 Swim, \plus2 Survival, and \plus2 Awareness.
                 \end{raggeditemize}
             ",
