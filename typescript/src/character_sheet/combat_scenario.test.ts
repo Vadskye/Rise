@@ -1,17 +1,24 @@
 import t from 'tap';
-import { CombatScenarioGenerator } from './combat_scenario';
+import {
+  loadAllMonsters,
+  getMonster,
+  createCharacter,
+  createTeam,
+  createScenario,
+  createMonster,
+  createCreature,
+} from './combat_scenario';
 
-const gen = new CombatScenarioGenerator();
-gen.loadAllMonsters();
+loadAllMonsters();
 
 t.test('CombatScenarioGenerator can create a monster', (t) => {
-  const ankheg = gen.getMonster('Ankheg');
+  const ankheg = getMonster('Ankheg');
   t.equal(ankheg.name, 'Ankheg');
   t.end();
 });
 
 t.test('CombatScenarioGenerator can create a custom character', (t) => {
-  const hero = gen.createCharacter('Hero', 5, 'fighter');
+  const hero = createCharacter('Hero', 5, 'fighter');
   t.equal(hero.name, 'Hero');
   t.equal(hero.level, 5);
   t.equal(hero.base_class, 'fighter');
@@ -19,13 +26,13 @@ t.test('CombatScenarioGenerator can create a custom character', (t) => {
 });
 
 t.test('CombatScenario can simulate a fight and report statistics', (t) => {
-  const ankheg = gen.getMonster('Ankheg');
-  const wasp = gen.getMonster('Giant Wasp');
+  const ankheg = getMonster('Ankheg');
+  const wasp = getMonster('Giant Wasp');
 
-  const team1 = gen.createTeam('Wasp Team', [wasp]);
-  const team2 = gen.createTeam('Ankheg Team', [ankheg]);
+  const team1 = createTeam('Wasp Team', [wasp]);
+  const team2 = createTeam('Ankheg Team', [ankheg]);
 
-  const scenario = gen.createScenario([team1, team2]);
+  const scenario = createScenario([team1, team2]);
   const result = scenario.simulate(20);
 
   t.ok(result.averageRounds > 0, 'Average rounds should be positive');
@@ -37,17 +44,17 @@ t.test('CombatScenario can simulate a fight and report statistics', (t) => {
 });
 
 t.test('CombatScenario can simulate 1 Ankheg vs 10 Wasps', (t) => {
-  const ankheg = gen.getMonster('Ankheg');
+  const ankheg = getMonster('Ankheg');
   const wasps = [];
 
   for (let i = 0; i < 10; i++) {
-    wasps.push(gen.createMonster('Giant Wasp'));
+    wasps.push(createMonster('Giant Wasp'));
   }
 
-  const waspTeam = gen.createTeam('Wasps', wasps);
-  const ankhegTeam = gen.createTeam('Ankheg', [ankheg]);
+  const waspTeam = createTeam('Wasps', wasps);
+  const ankhegTeam = createTeam('Ankheg', [ankheg]);
 
-  const scenario = gen.createScenario([waspTeam, ankhegTeam]);
+  const scenario = createScenario([waspTeam, ankhegTeam]);
   const result = scenario.simulate(10); // Very few iterations for speed
 
   t.ok(result.averageRounds > 0, 'Average rounds should be positive');
@@ -57,17 +64,17 @@ t.test('CombatScenario can simulate 1 Ankheg vs 10 Wasps', (t) => {
 });
 
 t.test('CombatScenario can simulate 1 Ankheg vs 1 Ankheg', (t) => {
-  const ankheg = gen.getMonster('Ankheg');
+  const ankheg = getMonster('Ankheg');
   const ankhegs = [];
 
   for (let i = 0; i < 1; i++) {
-    ankhegs.push(gen.createMonster('Ankheg'));
+    ankhegs.push(createMonster('Ankheg'));
   }
 
-  const ankhegTeam = gen.createTeam('Ankheg Team 1', ankhegs);
-  const ankhegTeam2 = gen.createTeam('Ankheg Team 2', [ankheg]);
+  const ankhegTeam = createTeam('Ankheg Team 1', ankhegs);
+  const ankhegTeam2 = createTeam('Ankheg Team 2', [ankheg]);
 
-  const scenario = gen.createScenario([ankhegTeam, ankhegTeam2]);
+  const scenario = createScenario([ankhegTeam, ankhegTeam2]);
   const result = scenario.simulate(20);
 
   t.ok(result.averageRounds > 0, 'Average rounds should be positive');
@@ -77,17 +84,17 @@ t.test('CombatScenario can simulate 1 Ankheg vs 1 Ankheg', (t) => {
 });
 
 t.test('CombatScenario can simulate 1 Ankheg vs 5 Carrion Crows', (t) => {
-  const ankheg = gen.getMonster('Ankheg');
+  const ankheg = getMonster('Ankheg');
   const crows = [];
 
   for (let i = 0; i < 5; i++) {
-    crows.push(gen.createMonster('Carrion Crow'));
+    crows.push(createMonster('Carrion Crow'));
   }
 
-  const crowTeam = gen.createTeam('Crows', crows);
-  const ankhegTeam = gen.createTeam('Ankheg', [ankheg]);
+  const crowTeam = createTeam('Crows', crows);
+  const ankhegTeam = createTeam('Ankheg', [ankheg]);
 
-  const scenario = gen.createScenario([crowTeam, ankhegTeam]);
+  const scenario = createScenario([crowTeam, ankhegTeam]);
   const result = scenario.simulate(20);
 
   t.ok(result.averageRounds > 0, 'Average rounds should be positive');
@@ -97,8 +104,8 @@ t.test('CombatScenario can simulate 1 Ankheg vs 5 Carrion Crows', (t) => {
 });
 
 t.test('Creatures have independent sheets', (t) => {
-  const c1 = gen.createCreature('C1');
-  const c2 = gen.createCreature('C2');
+  const c1 = createCreature('C1');
+  const c2 = createCreature('C2');
 
   c1.setProperties({ level: 10 });
   c2.setProperties({ level: 20 });
@@ -112,18 +119,18 @@ t.test('Creatures have independent sheets', (t) => {
 t.test('CombatScenario can simulate teams of multiple monsters', (t) => {
   // Team A: 2 Carrion Crows, 2 Wargs
   const teamA_members = [
-    gen.createMonster('Carrion Crow'),
-    gen.createMonster('Carrion Crow'),
-    gen.createMonster('Warg'),
-    gen.createMonster('Warg'),
+    createMonster('Carrion Crow'),
+    createMonster('Carrion Crow'),
+    createMonster('Warg'),
+    createMonster('Warg'),
   ];
-  const teamA = gen.createTeam('A-Team', teamA_members);
+  const teamA = createTeam('A-Team', teamA_members);
 
   // Team B: 1 Ankheg, 1 Giant Wasp
-  const teamB_members = [gen.createMonster('Ankheg'), gen.createMonster('Giant Wasp')];
-  const teamB = gen.createTeam('B-Team', teamB_members);
+  const teamB_members = [createMonster('Ankheg'), createMonster('Giant Wasp')];
+  const teamB = createTeam('B-Team', teamB_members);
 
-  const scenario = gen.createScenario([teamA, teamB]);
+  const scenario = createScenario([teamA, teamB]);
   const result = scenario.simulate(20);
 
   t.ok(result.averageRounds > 0, 'Average rounds should be positive');
@@ -135,10 +142,8 @@ t.test('CombatScenario can simulate teams of multiple monsters', (t) => {
 });
 
 t.test('Elite monsters hit multiple targets with area attack', (t) => {
-  const gen = new CombatScenarioGenerator();
-
   // Create an elite level 4 monster (Ankheg-like)
-  const elite = gen.createCreature('Elite', (c) => {
+  const elite = createCreature('Elite', (c) => {
     c.setRequiredProperties({
       alignment: 'neutral',
       base_class: 'brute',
@@ -158,7 +163,7 @@ t.test('Elite monsters hit multiple targets with area attack', (t) => {
   const targets = [];
   for (let i = 0; i < 5; i++) {
     targets.push(
-      gen.createCreature(`Target ${i}`, (c) => {
+      createCreature(`Target ${i}`, (c) => {
         c.setProperties({
           hit_points: 10,
           armor_defense: 0,
@@ -167,10 +172,10 @@ t.test('Elite monsters hit multiple targets with area attack', (t) => {
     );
   }
 
-  const team1 = gen.createTeam('Elite Team', [elite]);
-  const team2 = gen.createTeam('Target Team', targets);
+  const team1 = createTeam('Elite Team', [elite]);
+  const team2 = createTeam('Target Team', targets);
 
-  const scenario = gen.createScenario([team1, team2]);
+  const scenario = createScenario([team1, team2]);
 
   // If no area attack, it takes 5 rounds to kill 5 targets (1 target/round).
   // With area attack, it kills one target and damages others, killing them all in ~2 rounds.
