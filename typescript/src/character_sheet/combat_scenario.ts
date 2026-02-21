@@ -61,7 +61,20 @@ export class CombatScenario {
             throw new Error('Combat requires at least two teams.');
         }
 
+        for (const team of this.teams) {
+            for (const member of team.members) {
+                member.startCaching();
+            }
+        }
+
         const stats = this.runSimulationIterations(iterations);
+
+        for (const team of this.teams) {
+            for (const member of team.members) {
+                member.stopCaching();
+            }
+        }
+
         this.logSimulationResults(stats);
 
         return stats;

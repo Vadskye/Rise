@@ -61,10 +61,12 @@ export class Grimoire {
       throw new Error(`Can't add a duplicate character sheet named '${name}'.`);
     }
     const sheet = createCharacterSheet(name);
-    handleEverything();
     sheet.setProperties({ name });
     this.monsters[name] = new Creature(sheet);
     initializer(this.monsters[name]);
+
+    handleEverything();
+    sheet.triggerOpened();
 
     this.monsters[name].checkValidMonster();
   }
@@ -89,13 +91,14 @@ export class Grimoire {
         throw new Error(`Can't add a duplicate character sheet named '${characterSheetName}'.`);
       }
       const sheet = createCharacterSheet(characterSheetName);
-      handleEverything();
       sheet.setProperties({ name: monsterName });
       const creature = new Creature(sheet);
       initializer(creature);
       if (config.sharedInitializer) {
         config.sharedInitializer(creature);
       }
+      handleEverything();
+      sheet.triggerOpened();
       this.monsterGroups[config.name].monsters.push(creature);
     }
   }
