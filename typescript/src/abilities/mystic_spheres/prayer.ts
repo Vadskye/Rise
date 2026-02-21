@@ -113,12 +113,13 @@ export const prayer: MysticSphere = {
       tags: [],
     },
 
-    // Steeled + fortified is 0.8 EA on an ally
+    // Steeled is 0.6 EA on an ally
     {
       name: 'Boon of Living Steel',
 
       effect: `
-        One \\glossterm{ally} within \\medrange is \\steeled until your next turn.
+        Choose one \\glossterm{ally} within \\medrange.
+        Until your next turn, the target is \\steeled and gains a \\plus1 \\glossterm{accuracy} bonus.
       `,
       rank: 1,
       roles: ['boon'],
@@ -127,12 +128,12 @@ export const prayer: MysticSphere = {
     {
       name: 'Boon of Tempered Steel',
 
-      // Honed + steeled is theoretically 1.4 EA, but it's rare that you'll actually
-      // benefit from both, so this can be r6.
+      // Honed + steeled is theoretically 1.2 EA, but it's rare that you'll actually
+      // benefit from both, so this can be r5.
       effect: `
         One \\glossterm{ally} within \\medrange is \\honed and \\steeled until your next turn.
       `,
-      rank: 6,
+      rank: 5,
       roles: ['boon'],
     },
 
