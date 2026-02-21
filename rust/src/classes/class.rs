@@ -1536,7 +1536,7 @@ impl Class {
     // TODO: organize this in a way that makes sense
     fn latex_suffix(&self) -> &str {
         match self {
-            Self::Cleric => cleric_domains::cleric_domains_suffix(),
+            Self::Cleric => cleric_domains::cleric_domains(),
             Self::Druid => {
                 r"
                 \subsection{Ex-Druids}

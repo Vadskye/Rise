@@ -1,4 +1,4 @@
-pub fn cleric_domains_suffix() -> &'static str {
+pub fn cleric_domains() -> &'static str {
     r"
                 \newpage
                 \subsection{Cleric Domain Abilities}\label{Cleric Domain Abilities}
