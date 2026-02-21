@@ -361,22 +361,25 @@ export class CombatScenario {
     }
 }
 
+const sharedGrimoire = new Grimoire();
+
 /**
  * Facilitates the creation and setup of combat scenarios.
  */
 export class CombatScenarioGenerator {
     public grimoire: Grimoire;
 
-    constructor() {
-        this.grimoire = new Grimoire();
-        clearAllCharacterSheets();
+    constructor(grimoire: Grimoire = sharedGrimoire) {
+        this.grimoire = grimoire;
     }
 
     /**
      * Loads all monsters from all groups. This may be slow.
      */
     public loadAllMonsters() {
-        this.grimoire.addAllMonsters();
+        if (this.grimoire.getMonsterNames().length === 0) {
+            this.grimoire.addAllMonsters();
+        }
     }
 
     /**
@@ -398,16 +401,9 @@ export class CombatScenarioGenerator {
      */
     public createMonster(name: string): Creature {
         const baseMonster = this.getMonster(name);
-        return this.createCreature(name, (c) => {
-            c.setProperties({
-                level: baseMonster.level,
-                hit_points: baseMonster.hit_points,
-                accuracy: baseMonster.accuracy,
-                armor_defense: baseMonster.armor_defense,
-                mundane_power: baseMonster.mundane_power,
-                creature_type: baseMonster.creature_type,
-            });
-        });
+        const uniqueId = Math.random().toString(36).substring(7);
+        const uniqueName = `${name}_${uniqueId}`;
+        return baseMonster.clone(uniqueName);
     }
 
     /**
