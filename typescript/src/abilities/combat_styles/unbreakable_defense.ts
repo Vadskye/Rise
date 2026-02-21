@@ -206,7 +206,7 @@ export const unbreakableDefense: CombatStyle = {
       effect: `
         You are \\briefly \\steeled and \\maximized.
       `,
-      rank: 6,
+      rank: 7,
       roles: ['focus'],
     },
 
