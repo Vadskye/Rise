@@ -720,9 +720,9 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       functionsLike: {
         name: 'stonefist',
         exceptThat:
-          'the damage dealt by the weapon increases to 2d6, and it gains the \\abilitytag{Impact} weapon tag (see \\pcref{Weapon Tags}).',
+          'the damage dealt by the weapon increases to 2d6.',
       },
-      rank: 6,
+      rank: 5,
       roles: ['attune'],
       tags: ['Manifestation'],
       type: 'Attune',
