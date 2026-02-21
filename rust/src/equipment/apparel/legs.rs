@@ -54,13 +54,13 @@ fn boots() -> Vec<Apparel> {
         short_description: String::from("Can very briefly walk on air"),
         description: String::from(r"
             You can activate these boots as a \glossterm<free action>.
-            When you do, you may treat air as if it were solid ground to your feet for the rest of the current phase.
+            When you do, you may treat air as if it were solid ground to your feet during this turn.
             You may selectively choose when to treat the air as solid ground, allowing you to walk or jump on air freely.
             These boots cannot be activated again until you land on a solid surface capable of supporting your weight.
         "),
         upgrades: vec![
             ItemUpgrade::new(6, "Can briefly walk on air", r"
-                The effect lasts \glossterm<briefly> instead of only during the current phase.
+                The effect lasts \glossterm<briefly> instead of only during the current turn.
             "),
         ],
         ..Apparel::default()
@@ -87,12 +87,12 @@ fn boots() -> Vec<Apparel> {
         rank: 3,
         short_description: String::from("Redirects personal gravity to adjacent objects"),
         description: String::from(r"
-            Once per round, while you are within 5 feet of an \glossterm<unattended> object at least one size category larger than you, you can activate these boots as a \glossterm<free action>.
+            Once per turn, while you are within 5 feet of an \glossterm<unattended> object at least one size category larger than you, you can activate these boots as a \glossterm<free action>.
             When you do, gravity pulls you towards that surface instead of in the normal direction.
             This allows you to walk normally on walls or even ceilings.
 
             Whenever you change the direction that gravity pulls you, you must make a \glossterm<difficulty value> 10 Balance check to keep your feet.
-            Failure means you fall \prone and your movement for that phase ends.
+            Failure means you fall \prone and your movement ends.
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Redirects personal gravity to nearby objects", "
@@ -247,7 +247,7 @@ fn boots() -> Vec<Apparel> {
         description: String::from(r"
             Whenever you jump, you can activate these boots (see \pcref{Jumping}).
             When you do, you increase your \glossterm<fatigue level> by one.
-            In exchange, your maximum jump height is equal to your maximum horizontal jump distance, and you can land in midair at any point during your jump this round.
+            In exchange, your maximum jump height is equal to your maximum horizontal jump distance, and you can land in midair at any point during your jump this turn.
             You can \glossterm<briefly> levitate in that location as if you were standing on solid ground.
 
             These boots cannot be activated again until you spend a full round on a solid surface capable of supporting your weight.
@@ -265,16 +265,11 @@ fn boots() -> Vec<Apparel> {
         rank: 4,
         short_description: String::from("Can sprint without exertion"),
         description: String::from(r"
-            Whenever you use the \ability{sprint} ability during the \glossterm{movement phase}, you can activate these boots.
-            When you do, you do not increase your \glossterm{fatigue level} from using that \ability{sprint} ability.
+            Whenever you use the \ability{sprint} ability, you can activate these boots.
+            When you do, that ability does not increase your \glossterm{fatigue level}.
 
             After you activate these boots, you cannot do so again until you spend a full round without making a \glossterm{movement}.
         "),
-        upgrades: vec![
-            ItemUpgrade::new(7, "Can sprint without exertion", "
-                You can activate the boots again after you spend a movement phase without making a movement, rather than a full round.
-            "),
-        ],
         ..Apparel::default()
     }));
 

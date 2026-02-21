@@ -14,6 +14,20 @@ export function getCurrentCharacterSheet(): CharacterSheet {
   return characters[currentCharacterName];
 }
 
+export function createCharacterSheet(characterName: string): CharacterSheet {
+  if (characterSheetExists(characterName)) {
+    throw new Error(`Character sheet ${characterName} already exists.`);
+  }
+  characters[characterName] = new CharacterSheet(characterName);
+  setCurrentCharacterSheet(characterName);
+
+  return characters[characterName];
+}
+
+export function characterSheetExists(characterName: string) {
+  return characters[characterName] !== undefined;
+}
+
 export function setCurrentCharacterSheet(characterName: string) {
   currentCharacterName = characterName;
 }
@@ -22,6 +36,13 @@ export function resetDefaultCharacterSheet(): CharacterSheet {
   currentCharacterName = 'default';
   characters[currentCharacterName] = new CharacterSheet(currentCharacterName);
   return characters[currentCharacterName];
+}
+
+export function clearAllCharacterSheets() {
+  for (const name in characters) {
+    delete characters[name];
+  }
+  currentCharacterName = 'default';
 }
 
 // export function calculateCurrentCharacterSheet() {

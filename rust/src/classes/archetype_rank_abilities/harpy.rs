@@ -13,7 +13,7 @@ pub fn harpy<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     Make an attack vs. Mental against a creature within \longrange.
                     In addition, you begin a vocal performance (see \pcref{Performance Types}).
-                    \hit As a \glossterm{condition}, the target must move towards you as best it can during each \glossterm{movement phase}.
+                    \hit As a \glossterm{condition}, the target must move towards you as best it can during each of its turns.
                     In addition, it cannot move farther away from you at any time, except as necessary to get closer to you (such as to avoid an intervening obstacle).
                     It can otherwise act freely, and is still able to attack you and your allies.
 
@@ -42,7 +42,7 @@ pub fn harpy<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 You gain a slow \glossterm{fly speed} with a maximum height of 10 feet (see \pcref{Flight}).
-                As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
+                As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit this turn.
             ",
             modifiers: None,
         },

@@ -343,7 +343,7 @@
       Since it has no legs, it is immune to being \prone, but it also cannot jump.
     \magicalitemhead{Flight} The incarnation's only movement mode is an average \glossterm{fly speed} with a 5 foot height limit (see \pcref{Aerial Movement}).
       Since it is native to the air, flying does not penalize its Armor or Reflex defenses.
-      It is also \trait{floating}, so it does not need to fly every phase to avoid falling.
+      It is also \trait{floating}, so it does not need to fly every turn to avoid falling.
     \itemhead{Ram} The incarnation gains a ram \glossterm{natural weapon}.
       It deals 1d6 damage and has the \weapontag{Resonating} weapon tag (see \pcref{Weapon Tags}).
     \itemhead{Uniform Composition} The incarnation is immune to \glossterm{critical hits} from \glossterm{strikes}.
@@ -470,7 +470,7 @@
     \itemhead{Tree Appearance} When a sapling stays perfectly still, observers must make a DV 15 Awareness check to recognize that it is not an ordinary tree.
       Careful observers may still notice that the ordinary tree has appeared where no tree used to be, so they may be suspicious of a sapling even if they do not pass this check.
     \itemhead{Unhurried and Unfaltering} Saplings have a \minus10 penalty to their \glossterm{speed}.
-      However, a sapling's movement speed cannot be more than 10 feet slower than its \glossterm{base speed}, even while \slowed or under similar effects, except with the \ability{ingrain} ability.
+      However, a sapling's \glossterm{speed} cannot be more than 10 feet slower than its \glossterm{base speed}, even while \slowed or under similar effects, except with the \ability{ingrain} ability.
       In addition, saplings are unaffected by \glossterm{difficult terrain} from inanimate natural sources, such as \glossterm{heavy undergrowth}.
   \end{raggeditemize}
   \parhead{Automatic Languages} Common, Sylvan.
@@ -516,13 +516,12 @@
         \miss Half damage.
 
         \rankline
-        % Stay at drX-1, approximately
-        \rank{2} The base damage increases to 1d6.
-        \rank{3} The damage bonus from your power increases to be equal to your power.
-        \rank{4} The base damage increases to 1d8.
-        \rank{5} The base damage increases to 2d6.
-        \rank{6} The damage bonus increases to 1d6 per 2 power.
-        \rank{7} The damage bonus increases to 1d8 per 2 power.
+        \rank{2} The damage increases to \damagerankone.
+        \rank{3} The damage increases to \damageranktwo.
+        \rank{4} The damage increases to \damagerankthree.
+        \rank{5} The damage increases to \damagerankfour.
+        \rank{6} The damage increases to \damagerankfive.
+        \rank{7} The damage increases to \damageranksix.
       \end{magicalactiveability}
 
     \magicalcf{Tif}[2]{Infernal Ancestry} You deepen your connection to a particular aspect of your demonic ancestry.
@@ -536,20 +535,20 @@
           In addition, you gain a \plus1 bonus to your \glossterm{mundane power}.
       \end{raggeditemize}
 
-    \magicalcf{Tif}[3]{Abysswalker} Once per phase, you can teleport horizontally instead of moving using your \glossterm{walk speed}.
+    \magicalcf{Tif}[3]{Abysswalker} Once per turn, you can teleport horizontally instead of moving using your \glossterm{walk speed}.
     Teleporting a given distance costs movement equal to twice that distance.
     If this teleportation fails for any reason, you still expend that movement.
 
     \magicalcf{Tif}[4]{Infernal Ancestry+} The benefits of your \textit{infernal ancestry} ability improve.
       \begin{raggeditemize}
         % Normally, double defense is +1dr and burn is +1dr. This is more damage than that, but it's also a class feature, so it's probably fine?
-        \item Hellfire Conduit: If your \ability{abyssal hop} ability also hits a target's Fortitude defense, you can repeat the attack against that target during your next action.
+        \item Hellfire Conduit: If your \ability{abyssal hop} ability also hits a target's Fortitude defense, you can \glossterm{repeat} the attack against that target at the start of your next turn.
         \item Tempting Allure: You can charm creatures.
           \begin{magicalactiveability}{Charming Temptation}{Standard action}
             \abilitytags \abilitytag{Emotion}, \abilitytag{Subtle}
             \rankline
             Make an attack vs. Mental against a humanoid creature within \medrange.
-            You take a \minus10 penalty to \glossterm{accuracy} with this attack against creatures that have made an attack or been attacked since the start of the last round.
+            You take a \minus10 penalty to \glossterm{accuracy} with this attack against creatures that have made an attack or been attacked since the start of your last turn.
             \hit The target is \charmed by you until it takes a \glossterm{long rest}.
             Any act by you or by creatures that appear to be your allies that threatens or harms the charmed person breaks the effect.
             Harming the target is not limited to dealing it damage, but also includes causing it significant subjective discomfort.
@@ -564,7 +563,7 @@
     \cf{Tif}[5]{Infernal Resilience} You gain a \plus1 bonus to your Fortitude, Reflex, and Mental defenses.
 
     \magicalcf{Tif}[6]{Abysswalker+} Teleporting a given distance only costs movement equal to that distance.
-    In addition, you can teleport in this way any number of times per phase.
+    In addition, you can teleport in this way any number of times per turn.
 
     \magicalcf{Tif}[7]{Infernal Ancestry++} The benefits of your \textit{infernal ancestry} ability reach their peak.
       \begin{raggeditemize}
@@ -687,7 +686,7 @@
   \parhead{Attributes} \plus1 Strength and Dexterity, \minus1 Constitution.
   \parhead{Special Abilities}
   \begin{raggeditemize}
-    \itemhead{Climb Speed} Vampires have a \glossterm{climb speed} 10 feet slower than their \glossterm{base speed}.
+    \itemhead{Climb Speed} Vampires have a slow \glossterm{climb speed}.
     \itemhead{Darkvision} Vampires have \sense{darkvision} with a 90 foot range, allowing them to see in complete darkness (see \pcref{Darkvision}).
     \itemhead{Fangs} Vampires have a bite natural weapon (see \tref{Natural Weapons}).
       These fangs retract when not in use, so vampires cannot be identified as non-human by their fangs unless they choose to expose them.
@@ -704,7 +703,7 @@
   \parhead{Vampire Weaknesses\sparkle}
   Vampires have a number of specific weaknesses.
   Many vampire weaknesses trigger on exposure to particular substances or circumstances.
-  These weaknesses trigger immediately upon first contact, and are repeated at the start of each \glossterm{action phase} in subsequent rounds as long as the vampire remains exposed.
+  These weaknesses trigger immediately upon first contact, and are repeated at the start of each of the vampire's subsequent turns as long as the vampire remains exposed.
   \begin{raggeditemize}
     \itemhead{Blood Dependence} For every 24 hours that a vampire remains awake without ingesting at least one pint of blood from living creatures, its maximum hit points are reduced by 20.
       If its maximum hit points are reduced to 0 in this way, it dies and withers away into a pile of ash.
@@ -716,7 +715,7 @@
     \itemhead{Garlic} A vampire that smells garlic becomes \frightened by any creatures bearing garlic as a condition.
       In addition, creatures that have eaten garlic recently are treated as not having blood for the purpose of a vampire's abilities, so their blood cannot be drained.
     \itemhead{Holy Water} A vampire that touches holy water takes 20 damage and becomes \stunned as a condition if it is not already stunned.
-    \itemhead{Running Water} A vampire that touches or passes over running water takes 10 damage and \glossterm{briefly} becomes \helpless.
+    \itemhead{Running Water} A vampire that touches or passes over running water takes 10 damage and \briefly becomes \helpless.
       This applies as long as the vampire is within 100 feet of the running water, even the water is underground or under a bridge.
       It can use the \ability{struggle} ability to move despite being helpless, but only towards the closest shore.
     \itemhead{Silver} Vampires are \vulnerable to strikes using silver weapons.

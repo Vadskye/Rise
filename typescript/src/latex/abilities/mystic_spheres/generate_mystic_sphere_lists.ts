@@ -1,9 +1,13 @@
-import { MysticSphere, mysticSpheres, MysticSphereSource } from '@src/abilities/mystic_spheres';
+import {
+  MysticSphere,
+  mysticSpheres,
+  MysticSphereSource,
+  PRIMARY_MYSTIC_SPHERE_SOURCES,
+} from '@src/abilities/mystic_spheres';
 import { titleCase } from 'change-case';
 
 export function generateMysticSphereLists(): string {
-  const sources: MysticSphereSource[] = ['arcane', 'divine', 'nature', 'pact'];
-  return sources.map(generateSourceList).join('\n');
+  return PRIMARY_MYSTIC_SPHERE_SOURCES.map(generateSourceList).join('\n');
 }
 
 function generateSourceList(source: MysticSphereSource): string {

@@ -71,11 +71,9 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             rank: 4,
             description: r"
                 \begin{activeability}{Cleansing Discipline}{Standard action}
-                    \abilitytags \abilitytag{Swift}
                     \abilitycost You can increase your \glossterm{fatigue level} by one to use this ability as a \glossterm{minor action}.
                     \rankline
                     Remove all \glossterm{conditions} affecting you.
-                    Because this ability has the \abilitytag{Swift} tag, the removed conditions do not affect you during the current phase.
                     In addition, you \glossterm{briefly} become immune to all conditions.
                 \end{activeability}
             ",
@@ -143,7 +141,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                Once per round, you can draw or sheathe any non-shield weapon as a \glossterm{free action}.
+                Once per turn, you can draw or sheathe any non-shield weapon as a \glossterm{free action}.
                 This does not count against your normal one free action \glossterm{object manipulation} per round (see \pcref{Manipulating Objects}).
             ",
             modifiers: None,
@@ -297,8 +295,7 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
                     However, you cannot get a \glossterm{critical hit}.
                     You can only apply this augment to maneuvers which deal damage and can inflict a \glossterm{condition}.
 
-                    \parhead{Defensive Maneuver} You gain a bonus to your Armor defense equal to half your excess rank (minimum 1) when you use the maneuver.
-                    This is an \abilitytag{Swift} effect, so it protects you from attacks against you during the current phase.
+                    \parhead{Defensive Maneuver} You \glossterm{briefly} gain a bonus to your Armor defense equal to half your excess rank (minimum 1) when you use the maneuver.
                     You can only apply this augment to maneuvers which cause you to make a \glossterm{strike}.
 
                     \parhead{Mighty Maneuver} You take a \minus1 accuracy penalty, but you deal \glossterm{extra damage} equal to twice your excess rank.
@@ -449,7 +446,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
 
                 {
                     \begin{sustainability}{Dogpile}{\glossterm{Minor action}}
-                        \abilitytags \abilitytag{Sustain} (free), \abilitytag{Swift}
+                        \abilitytags \abilitytag{Sustain} (free)
                         \rankline
                         Two targets gain a \plus2 accuracy bonus with the \ability{grapple} and \ability{maintain grapple} abilities (see \pcref{Universal Combat Abilities}).
 
@@ -459,7 +456,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                     \end{sustainability}
 
                     \begin{sustainability}{Duck and Cover}{\glossterm{Minor action}}
-                        \abilitytags \abilitytag{Sustain} (free), \abilitytag{Swift}
+                        \abilitytags \abilitytag{Sustain} (free)
                         \rankline
                         Choose two targets.
                         Each target gains a \plus1 bonus to its defenses against ranged \glossterm{strikes}.
@@ -470,7 +467,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                     \end{sustainability}
 
                     \begin{sustainability}{Follow My Lead}{\glossterm{Minor action}}
-                        \abilitytags \abilitytag{Sustain} (free), \abilitytag{Swift}
+                        \abilitytags \abilitytag{Sustain} (free)
                         \rankline
                         One adjacent \glossterm{ally} gains a \plus1 accuracy bonus against any creature that you hit with a \glossterm{strike} during the current round.
 
@@ -480,7 +477,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                     \end{sustainability}
 
                     \begin{sustainability}{Group Up}{\glossterm{Minor action}}
-                        \abilitytags \abilitytag{Sustain} (free), \abilitytag{Swift}
+                        \abilitytags \abilitytag{Sustain} (free)
                         \rankline
                         Two targets each gain a \plus1 bonus to their Armor defense if they are adjacent to each other.
 
@@ -490,7 +487,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                     \end{sustainability}
 
                     \begin{sustainability}{Hold The Line}{\glossterm{Minor action}}
-                        \abilitytags \abilitytag{Sustain} (free), \abilitytag{Swift}
+                        \abilitytags \abilitytag{Sustain} (free)
                         \rankline
                         Choose two targets.
                         Your \glossterm{enemies} move at half speed while adjacent to either of those targets.
@@ -501,7 +498,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                     \end{sustainability}
 
                     \begin{sustainability}{Hunker Down}{\glossterm{Minor action}}
-                        \abilitytags \abilitytag{Sustain} (free), \abilitytag{Swift}
+                        \abilitytags \abilitytag{Sustain} (free)
                         \rankline
                         Two targets gain a \plus2 bonus to their Brawn defense against \atBrawling abilities.
 
@@ -511,11 +508,10 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                     \end{sustainability}
 
                     \begin{sustainability}{Keep Moving}{\glossterm{Minor action}}
-                        \abilitytags \abilitytag{Sustain} (free), \abilitytag{Swift}
+                        \abilitytags \abilitytag{Sustain} (free)
                         \rankline
                         Choose two targets.
-                        Each target that ended the \glossterm{movement phase} at least twenty feet away from where it started the round
-                            gains a \plus1 bonus to its Armor defense this round.
+                        Whenever a target ends a \glossterm{move action} at least twenty feet away from where it started the move action, it \glossterm{briefly} gains a \plus1 bonus to its Armor defense.
 
                         \rankline
                         \rank{4} Each target affected by the Armor defense bonus also gains a \plus1 bonus to its Reflex defense.
@@ -523,7 +519,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                     \end{sustainability}
 
                     \begin{sustainability}{Lead From the Front}{\glossterm{Minor action}}
-                        \abilitytags \abilitytag{Sustain} (free), \abilitytag{Swift}
+                        \abilitytags \abilitytag{Sustain} (free)
                         \rankline
                         One \glossterm{ally} gains a \plus1 bonus to all defenses against \glossterm{enemies} that you are adjacent to.
 
@@ -533,21 +529,20 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                     \end{sustainability}
 
                     \begin{sustainability}{Rush}{\glossterm{Minor action}}
-                        \abilitytags \abilitytag{Sustain} (free), \abilitytag{Swift}
+                        \abilitytags \abilitytag{Sustain} (free)
                         \rankline
-                        Each target gains a \plus5 foot bonus to its \glossterm{speed} during any phase that it uses the \textit{sprint} ability.
-                        This bonus is doubled as normal by the sprint ability.
+                        Whenever a target uses the \ability{sprint} ability, it gains \plus10 feet of \glossterm{available movement}.
 
                         \rankline
-                        \rank{4} The speed bonus increases to \plus10 feet.
-                        \rank{7} The speed bonus increases to \plus15 feet.
+                        \rank{4} The speed bonus increases to \plus20 feet.
+                        \rank{7} The speed bonus increases to \plus30 feet.
                     \end{sustainability}
 
                     \begin{sustainability}{Stand Your Ground}{\glossterm{Minor action}}
-                        \abilitytags \abilitytag{Sustain} (free), \abilitytag{Swift}
+                        \abilitytags \abilitytag{Sustain} (free)
                         \rankline
                         Choose two targets.
-                        Each target that ended the \glossterm{movement phase} without changing its location this round gains a \plus1 bonus to its Armor defense until its location changes.
+                        At the end of each target's turn, if it did not change its location during that turn, it gains a \plus1 bonus to its Armor defense until its location changes.
 
                         \rankline
                         \rank{4} Each target affected by the Armor defense bonus also gains a \plus1 bonus to its Brawn defense.
@@ -559,12 +554,11 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             complexity: 1,
-            name: "Reposition",
+            name: "Take the Lead",
             is_magical: false,
             rank: 2,
             description: r"
-                If you have \glossterm{speed} remaining after the \glossterm{movement phase}, you may use some of that movement during the \glossterm{action phase} as a \glossterm{free action} once per round.
-                You cannot carry over more than five feet of movement in this way.
+                You gain a \plus1 bonus to \glossterm{inititive}.
             ",
             modifiers: None,
         },
@@ -598,7 +592,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             rank: 4,
             description: r"
                 \begin{sustainability}{Shifting Stance}{\glossterm{Minor action}}
-                    \abilitytags \abilitytag{Sustain} (free), \abilitytag{Swift}
+                    \abilitytags \abilitytag{Sustain} (free)
                     \rankline
                     You gain one of the following benefits:
                     \begin{raggeditemize}
@@ -625,11 +619,11 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             complexity: 0,
-            name: "Reposition+",
+            name: "Take the Lead+",
             is_magical: false,
             rank: 6,
             description: r"
-                The maximum movement speed that you can carry over with this ability increases to fifteen feet.
+                The bonus increases to \plus2.
             ",
             modifiers: None,
         },

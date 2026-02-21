@@ -25,7 +25,7 @@ pub fn melee() -> Vec<MagicWeapon> {
         description: String::from(
             r"
                 You can draw this weapon as a \glossterm{free action} that does not count as an object manipulation (see \pcref{Manipulating Objects}).
-                When you draw this weapon, if you did not also sheathe it this round, you gain a \plus1 \glossterm{enhancement bonus} to \glossterm{accuracy} with strikes using it this round.
+                When you draw this weapon, if you did not also sheathe it this turn, you gain a \plus1 \glossterm{enhancement bonus} to \glossterm{accuracy} with strikes using it this turn.
             ",
         ),
         upgrades: vec![

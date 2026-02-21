@@ -414,42 +414,6 @@ impl StrikeAbility {
         .plus_accuracy(rank - 2)
     }
 
-    pub fn reaping_harvest(rank: i32, weapon: Weapon) -> Self {
-        assert_melee("Reaping Harvest", &weapon);
-        Self {
-            effect: r"
-                The $name moves up to half its movement speed in a straight line.
-                It can also make a $accuracy strike vs. Armor with its $weapon.
-                The strike targets all \glossterm{enemies} adjacent to it at any point during its movement.
-                \hit $fullweapondamage.
-                \miss Half damage.
-            "
-            .to_string(),
-            name: strike_prefix("Reaping Harvest --", &weapon),
-            weapon,
-            ..Default::default()
-        }
-        .plus_accuracy(rank - 3)
-    }
-
-    pub fn reaping_harvest_plus(rank: i32, weapon: Weapon) -> Self {
-        assert_melee("Reaping Harvest+", &weapon);
-        Self {
-            effect: r"
-                The $name moves up to its movement speed in a straight line.
-                It can also make a $accuracy strike vs. Armor with its $weapon.
-                The strike targets all \glossterm{enemies} adjacent to it at any point during its movement.
-                \hit $damage*2 damage.
-                \miss Half damage.
-            "
-            .to_string(),
-            name: strike_prefix("Reaping Harvest --", &weapon),
-            weapon,
-            ..Default::default()
-        }
-        .plus_accuracy(rank - 3)
-    }
-
     pub fn rushed_strike(rank: i32, weapon: Weapon) -> Self {
         Self {
             effect: r"

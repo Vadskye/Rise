@@ -1,6 +1,6 @@
 import { MysticSphere } from '.';
 import { add_tag_to_sphere } from './add_tag';
-import { CONDITION_CRIT, SWIFT_FATIGUE } from '../constants';
+import { CONDITION_CRIT } from '../constants';
 
 export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
   name: 'Electromancy',
@@ -204,7 +204,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          The target is \\glossterm{briefly} \\stunned.
+          The target is \\briefly \\stunned.
           If it is \\glossterm{injured}, it is also \\stunned as a \\glossterm{condition}.
         `,
         targeting: `
@@ -224,13 +224,12 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       effect: `
         Chose yourself or one \\glossterm{ally} within \\shortrange.
         The target regains 1d6 \\glossterm{hit points} plus 1d6 per 2 power.
-        In addition, it is \\impervious to \\atElectricity attacks this round.
+        In addition, it is \\briefly \\impervious to \\atElectricity attacks.
       `,
       rank: 3,
       roles: ['healing', 'boon', 'exertion'],
       // Slightly weaker scaling than dr5l, but better to keep with d6
       scaling: { special: 'The recovery increases by 2d6 for each rank beyond 3.' },
-      tags: ['Swift'],
     },
 
     {
@@ -241,12 +240,11 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       effect: `
         Chose yourself or one \\glossterm{ally} within \\shortrange.
         The target regains 1d6 \\glossterm{hit points} plus 1d6 per power.
-        In addition, it is \\glossterm{immune} to \\atElectricity attacks this round.
+        In addition, it is \\briefly \\glossterm{immune} to \\atElectricity attacks.
       `,
       rank: 6,
       roles: ['healing', 'boon', 'exertion'],
       scaling: { special: 'The recovery increases by 6d6 for each rank beyond 6.' },
-      tags: ['Swift'],
     },
 
     {
@@ -397,7 +395,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         halfOnMiss: true,
         targeting: `
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Reflex against everything in an area.
-          If you sustained this spell this round, or if you are outside in a storm, the area is a \\largearealong, 5 ft. wide vertical line within \\longrange.
+          If you sustained this spell this turn, or if you are outside in a storm, the area is a \\largearealong, 5 ft. wide vertical line within \\longrange.
           Otherwise, it is a \\medarealong, 5 ft. wide vertical line within \\medrange.
         `,
       },
@@ -445,7 +443,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         targeting: `
           For the duration of this spell, you can breathe electricity like a dragon as a standard action.
           When you do, make an attack vs. Reflex against everything within a \\largearealong, 5 ft. wide line from you.
-          After you use breathe electricity, you \\glossterm{briefly} cannot do so again.
+          You can't use this ability again next round.
         `,
       },
       rank: 3,
@@ -555,7 +553,6 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
     {
       name: 'Thunderdash',
 
-      cost: SWIFT_FATIGUE,
       attack: {
         hit: `\\damageranktwo.`,
         halfOnMiss: true,
@@ -598,7 +595,6 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
     {
       name: 'Distant Thunderdash',
 
-      cost: SWIFT_FATIGUE,
       attack: {
         hit: `\\damagerankfour.`,
         halfOnMiss: true,
@@ -679,9 +675,9 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         When you cast this spell, and whenever you sustain it, electricity loudly arcs and crackles around you.
         When you stop sustaining this spell, you gain a benefit based on how many times you sustained it.
         \\begin{mdframedraggeditemize}
-          \\item Never: You are \\empowered this round.
-          \\item Once: This round, you are empowered and your abilities that \\glossterm{chain} can chain an additional time.
-          \\item Two or more times: This round, you are empowered and all of your \\glossterm{targeted} abilities can chain an additional time.
+          \\item Never: You are \\empowered this turn.
+          \\item Once: This turn, you are empowered and your abilities that \\glossterm{chain} can chain an additional time.
+          \\item Two or more times: This turn, you are empowered and all of your \\glossterm{targeted} abilities can chain an additional time.
         \\end{mdframedraggeditemize}
       `,
       rank: 2,
@@ -696,9 +692,9 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         When you cast this spell, and whenever you sustain it, electricity loudly arcs and crackles around you.
         When you stop sustaining this spell, you gain a benefit based on how many times you sustained it.
         \\begin{mdframedraggeditemize}
-          \\item Never: You are \\maximized this round.
-          \\item Once: This round, you are maximized and your abilities that \\glossterm{chain} can chain an additional time.
-          \\item Two or more times: This round, you are maximized and all of your \\glossterm{targeted} abilities can chain an additional time.
+          \\item Never: You are \\maximized this turn.
+          \\item Once: This turn, you are maximized and your abilities that \\glossterm{chain} can chain an additional time.
+          \\item Two or more times: This turn, you are maximized and all of your \\glossterm{targeted} abilities can chain an additional time.
         \\end{mdframedraggeditemize}
       `,
       rank: 6,
@@ -714,16 +710,14 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       attack: {
         hit: `\\damagerankone.`,
         targeting: `
-          You are \\braced this round.
-          This is a \\atSwift effect, so it protects you from attacks during the current phase.
-          In addition, whenever a creature makes a \\glossterm{melee} attack against you this round, make a \\glossterm{reactive attack} vs. Fortitude against them.
+          You are \\briefly \\braced.
+          Until your next turn, whenever a creature makes a \\glossterm{melee} attack against you, make a \\glossterm{reactive attack} vs. Fortitude against them.
           If the target is \\glossterm{metallic} or used a \\glossterm{metallic} weapon to make the attack, you gain a \\plus2 accuracy bonus with this attack.
         `,
       },
       roles: ['turtle', 'retaliate'],
       rank: 1,
       scaling: 'damage',
-      tags: ['Swift'],
     },
 
     {
@@ -736,7 +730,6 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       roles: ['turtle', 'retaliate'],
       rank: 5,
       scaling: 'damage',
-      tags: ['Swift'],
     },
   ],
 });

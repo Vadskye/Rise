@@ -318,10 +318,8 @@ These rules could also be used for other types of vehicles, such as flying ships
     For example, ship that is 200 feet long and 40 feet wide would be considered Colossal.
 
 \section{Ship Movement}
-  This section defines the rules that ships use to move, which are not identical to character movement.
-  Real ships have a great deal of momentum, and their movement speed and direction cannot be quickly adjusted.
-  This is too much of a hassle to represent fully, so Rise uses significantly simplified ship movement mechanics.
-  However, ships still have more movement constraints than characters, including a concept of ship heading.
+  Once per round, a ship can take one \glossterm{move action} on the pilot's turn.
+  A ship with no pilot does not move normally, though it may drift.
 
   \subsection{Ship Heading}
     A ship's heading always points in one of the eight standard cardinal directions: north, northeast, east, and so on.
@@ -340,10 +338,6 @@ These rules could also be used for other types of vehicles, such as flying ships
       First, the ship must not have used more than half its movement during the previous round to travel forward.
       Second, the ship's speed is halved while travelling in reverse.
 
-  \subsection{Movement Timing}
-    Ships automatically move up to their movement speed during the \glossterm{movement phase}.
-    They cannot move during the \glossterm{action phase}.
-
 \section{Ship Armor}\label{Ship Armor}
   Like characters, ships can have varying degrees of armor.
   Typically, even a heavily armored ship will not be literally covered in metal sheets.
@@ -355,13 +349,13 @@ These rules could also be used for other types of vehicles, such as flying ships
     \item Medium armor: Ships with medium armor gain a \plus2 bonus to Armor defense.
       In addition, they have 50\% more hit points than a normal ship.
       However, they add only half their Dexterity bonus to their Armor defense.
-      In addition, their movement speed is calculated as if they were one size category smaller (see \pcref{Ship Size}).
+      In addition, their \glossterm{speed} is calculated as if they were one size category smaller (see \pcref{Ship Size}).
       Only Huge and larger ships can have medium armor.
     \item Heavy armor: Ships with heavy armor gain a \plus3 bonus to Armor defense.
       In addition, they have twice the hit points of a normal ship.
       % Note that this doesn't perfectly match character heavy armor
       However, they do not add their Dexterity bonus to their armor defense.
-      In addition, their movement speed is calculated as if they were two size categories smaller (see \pcref{Ship Size}).
+      In addition, their \glossterm{speed} is calculated as if they were two size categories smaller (see \pcref{Ship Size}).
       Only Gargantuan and larger ships can have heavy armor.
   \end{raggeditemize}
 
@@ -521,7 +515,7 @@ These rules could also be used for other types of vehicles, such as flying ships
 \section{Crew Roles}\label{Crew Roles}
   Ships depend on their crew to function.
   There are many jobs that are necessary to make large ships function, including sailors, rowers, cooks, pages, and more.
-  Fully defining life on a ship is outside the scope of this brief introduction to ship combat.
+  Fully defining life on a ship is outside the scope of this simplified version of ship combat.
   However, some roles have outsized influence on the ship's effectiveness, such as the ship's captain and pilot.
   These roles provide a way for player characters to meaningfully influence the outcome of ship battles, even if their personal combat talents are irrelevant at that scale.
 
@@ -557,10 +551,10 @@ These rules could also be used for other types of vehicles, such as flying ships
 
         You choose one of the following benefits:
         \begin{raggeditemize}
-          \item Evasion: The ship \glossterm{briefly} gains a \plus1 bonus to all defenses.
-          \item Travel: The ship \glossterm{briefly} gains a \plus10 foot bonus to its movement speed.
-          \item Weapons: Attacks with the ship's weapons \glossterm{briefly} gain a \plus1 accuracy bonus.
-          \item Desperate Rally: The ship \glossterm{briefly} gains the Evasion, Travel, and Weapons benefits from this ability.
+          \item Evasion: The ship \briefly gains a \plus1 bonus to all defenses.
+          \item Travel: The ship \briefly gains a \plus10 foot bonus to its \glossterm{speed}.
+          \item Weapons: Attacks with the ship's weapons \briefly gain a \plus1 accuracy bonus.
+          \item Desperate Rally: The ship \briefly gains the Evasion, Travel, and Weapons benefits from this ability.
             However, it increases its strain level by one.
         \end{raggeditemize}
 
@@ -635,9 +629,8 @@ These rules could also be used for other types of vehicles, such as flying ships
       \end{raggeditemize}
 
     \cf{Gun}[3]{Weapons Coordination} As a \glossterm{minor action}, you can choose one ship weapon whose crew can see or hear you.
-      That weapon gains your benefits from this crew role this round as if you were the one firing it.
+      Until your next turn, that weapon gains your benefits from this crew role as if you were the one firing it.
       You cannot apply this ability to a weapon that is already benefiting from another gunner's effects.
-      This ability has the \abilitytag{Swift} tag.
 
     \cf{Gun}[4]{Mighty Weaponry} The ship gains a \plus1 bonus to its Strength.
 
@@ -690,12 +683,11 @@ These rules could also be used for other types of vehicles, such as flying ships
     They generally stay at the ship's wheel, but they may also direct the cut of sails or the direction of rowing.
 
     \cf{Pil}[1]{Desperate Sprint} As a standard action, you can increase the ship's strain level by one.
-      If you do, the ship moves up to its speed during this action phase.
+      If you do, the ship moves up to its speed without reducing its \glossterm{available movement}.
       Any ship can only be affected by this ability once per round.
 
     \cf{Pil}[2]{Evasive Maneuvers} As a standard action, you can choose one enemy ship you are aware of.
-      Your ship gains a \plus1 bonus to its Armor and Reflex defenses against that enemy ship this round.
-      This ability has the \ability{Swift} tag.
+      Your ship \briefly gains a \plus1 bonus to its Armor and Reflex defenses against that ship.
 
     \cf{Pil}[3]{Hard Turn} The ship's turning speed is reduced by 10 feet, to a minimum of 10 feet.
       In addition, whenever the ship moves, you can increase the ship's strain level by one.
@@ -707,7 +699,7 @@ These rules could also be used for other types of vehicles, such as flying ships
 
     \cf{Pil}[6]{Hard Turn+} The turning speed reduction increases to 20 feet.
 
-    \cf{Pil}[7]{Desperate Sprint+} When you use this ability, the ship also doubles its movement speed during the next movement phase.
+    \cf{Pil}[7]{Desperate Sprint+} When you use this ability, the ship also \briefly gains a \plus20 bonus to its speed.
 
   \subsection{Warder}
     This role is responsible for directly protecting the ship from danger with magic.
@@ -717,8 +709,7 @@ These rules could also be used for other types of vehicles, such as flying ships
     Most mystic spheres that have spells that affect objects can be used to justify this role.
     However, highly specialized mystic spheres like \sphere{enchantment} or \sphere{vivimancy} may not be sufficient.
 
-    \cf{Wrd}[1]{Active Defense} As a standard action, you can give the ship a \plus2 bonus to all defenses during the current round.
-      This ability has the \pcref{Swift} tag.
+    \cf{Wrd}[1]{Active Defense} As a standard action, you can \briefly give the ship a \plus2 bonus to all defenses.
       It has no effect if the ship is already protected by another warder using this ability.
 
     \cf{Wrd}[2]{Specialized Ward} As a standard action, you can activate one of the following effects.

@@ -71,7 +71,7 @@ pub fn shields() -> Vec<MagicArmor> {
 
     // +2 Armor is 1.5 EA. This is active less than half the time, so r1 is fine.
     armor.push(Shield(StandardItem {
-        name: String::from("Covering Shield"),
+        name: String::from("Turtle Shield"),
         rank: 1,
         short_description: String::from("Grants +2 Armor during total defense"),
         description: String::from(r"
@@ -159,7 +159,8 @@ pub fn shields() -> Vec<MagicArmor> {
         short_description: String::from(r"Can reflect magical attacks"),
         description: String::from(r"
             Whenever you use the \ability<total defense> ability, you can activate this shield.
-            When you do, any \glossterm<targeted> \magical abilities that target you this round also target the creature using that ability in addition to you.
+            When you do, the shield \glossterm{briefly} reflects magic.
+            Any \glossterm<targeted> \magical abilities that target you also target the creature using that ability in addition to you.
             It cannot choose to reduce its accuracy or damage against itself.
             Any other targets of the ability are affected normally.
         "),
@@ -181,7 +182,7 @@ pub fn shields() -> Vec<MagicArmor> {
 
             When you activate the shield, make an attack vs. Fortitude against all creatures within a \medarea cone.
             Your minimum accuracy is $accuracy.
-            After using this ability, you \glossterm{briefly} cannot use it again.
+            After using this ability, you can't use it again next round.
 
             \hit The target slowly turns to stone as a \glossterm{condition}.
             While it is \glossterm{injured}, it is \slowed.
@@ -202,21 +203,27 @@ pub fn shields() -> Vec<MagicArmor> {
 
     armor.push(Shield(StandardItem {
         name: String::from("Shield of Shielding"),
-        rank: 1,
+        rank: 4,
         short_description: String::from("Shields you"),
         description: String::from(
             r"
-            You are \shielded.
-        ",
+                You are \shielded.
+            ",
         ),
         tags: vec![AbilityTag::Attune(AttuneType::Deep)],
-        upgrades: vec![ItemUpgrade::new(
-            7,
-            "Shields you",
+        ..MagicArmor::default()
+    }));
+
+    armor.push(Shield(StandardItem {
+        name: String::from("Covering Shield"),
+        rank: 7,
+        short_description: String::from("Grants you cover"),
+        description: String::from(
             r"
-                This item does not require \glossterm{deep attunement}.
+                You have \glossterm{cover} from all attacks.
             ",
-        )],
+        ),
+        tags: vec![AbilityTag::Attune(AttuneType::Deep)],
         ..MagicArmor::default()
     }));
 

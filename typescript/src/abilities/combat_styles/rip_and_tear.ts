@@ -23,7 +23,7 @@ export const ripAndTear: CombatStyle = {
       effect: `
         Make a \\glossterm{strike}.
         \\injury If the target is not wearing metal body armor, it bleeds.
-        A bleeding creature takes the same damage from the strike again during your next action.
+        A bleeding creature takes the same damage from the strike again at the end of its next turn.
       `,
       rank: 3,
       roles: ['burst'],
@@ -35,7 +35,7 @@ export const ripAndTear: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} that deals six times \\glossterm{weapon damage}.
         \\injury If the target is not wearing metal body armor, it bleeds.
-        A bleeding creature takes the same damage from the strike again during your next action.
+        A bleeding creature takes the same damage from the strike again at the end of its next turn.
       `,
       rank: 7,
       roles: ['burst'],
@@ -83,7 +83,7 @@ export const ripAndTear: CombatStyle = {
         Make a \\glossterm{dual strike} (see \\pcref{Dual Strikes}).
         You \\glossterm{reroll} the attack roll once and keep the lower result.
         \\hit The target bleeds.
-        A bleeding creature takes damage equal to the damage it took from the strike during your next action.
+        A bleeding creature takes damage equal to the damage it took from the strike at the end of its next turn.
       `,
       rank: 3,
       roles: ['burn'],
@@ -96,7 +96,7 @@ export const ripAndTear: CombatStyle = {
       effect: `
         Make a melee \\glossterm{dual strike} (see \\pcref{Dual Strikes}).
         \\hit The target bleeds.
-        A bleeding creature takes damage equal to 2d6 \\add your \\glossterm{power} during your next action.
+        A bleeding creature takes damage equal to 2d6 \\add your \\glossterm{power} at the end of its next turn.
         \\crit ${MULTIHIT_CRIT}
       `,
       rank: 5,
@@ -109,7 +109,7 @@ export const ripAndTear: CombatStyle = {
       effect: `
         Make a strike.
         \\hit The target burns.
-        A burning creature takes damage equal to half your power during your next action.
+        A burning creature takes damage equal to half your power at the end of its next turn.
         \\crit ${MULTIHIT_CRIT}
       `,
       rank: 3,
@@ -123,7 +123,7 @@ export const ripAndTear: CombatStyle = {
       effect: `
         Make a strike that deals double damage.
         \\hit The target burns.
-        A burning creature takes \\damagerankfour during your next action.
+        A burning creature takes \\damagerankfour at the end of its next turn.
         \\crit ${MULTIHIT_CRIT}
       `,
       rank: 7,
@@ -190,7 +190,7 @@ export const ripAndTear: CombatStyle = {
         The strike targets all \\glossterm{enemies} adjacent to you.
         You cannot use the \\textit{desperate exertion} ability to affect this strike.
         Each creature hit by the strike bleeds.
-        A bleeding creature takes damage equal to half your \\glossterm{power} during your next action.
+        A bleeding creature takes damage equal to half your \\glossterm{power} at the end of its next turn.
         \\crit ${MULTIHIT_CRIT}
       `,
       rank: 1,
@@ -206,7 +206,7 @@ export const ripAndTear: CombatStyle = {
         The strike targets all \\glossterm{enemies} adjacent to you.
         You cannot use the \\textit{desperate exertion} ability to affect this strike.
         Each creature hit by the strike bleeds.
-        A bleeding creature takes damage equal to your \\glossterm{power} during your next action.
+        A bleeding creature takes damage equal to your \\glossterm{power} at the end of its next turn.
         \\crit ${MULTIHIT_CRIT}
       `,
       rank: 5,
@@ -219,7 +219,7 @@ export const ripAndTear: CombatStyle = {
       effect: `
         Make a \\glossterm{strike}.
         \\injury The target bleeds.
-        A bleeding creature takes damage equal to half your \\glossterm{power} during your next action.
+        A bleeding creature takes damage equal to half your \\glossterm{power} at the end of its next turn.
         \\crit ${MULTIHIT_CRIT}
       `,
       rank: 1,
@@ -244,29 +244,26 @@ export const ripAndTear: CombatStyle = {
     {
       name: 'Spinning Steel',
 
+      // This is maybe too strong?
       effect: `
-        You are \\steeled this round.
-        Make a melee \\glossterm{strike}.
+        You are \\briefly \\steeled.
+        Make a melee \\glossterm{strike} with a \\minus1 accuracy penalty.
         The strike targets all \\glossterm{enemies} adjacent to you.
-        The steel is a \\atSwift effect, but the strike is not.
       `,
       rank: 3,
       roles: ['clear', 'turtle'],
-      tags: ['Swift (see text)'],
     },
 
     {
       name: 'Spinning Steel+',
 
       effect: `
-        You are \\steeled this round.
-        Make a melee \\glossterm{strike} that deals triple damage.
+        You are \\briefly \\steeled.
+        Make a melee \\glossterm{strike} that deals double damage.
         The strike targets all \\glossterm{enemies} adjacent to you.
-        The steel is a \\atSwift effect, but the strike is not.
       `,
       rank: 7,
       roles: ['clear', 'turtle'],
-      tags: ['Swift (see text)'],
     },
 
     {
@@ -309,7 +306,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        \\injury You are \\glossterm{briefly} \\empowered.
+        \\injury You are \\briefly \\empowered.
       `,
       // narrative: '',
       rank: 1,
@@ -321,7 +318,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} that deals double damage.
-        \\injury You are \\glossterm{briefly} \\empowered.
+        \\injury You are \\briefly \\empowered.
       `,
       // narrative: '',
       rank: 5,
@@ -333,7 +330,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         You may choose to lose a quarter of your maximum hit points.
-        Then, if you are \\glossterm{injured}, you become \\glossterm{briefly} \\primed and \\empowered.
+        Then, if you are \\glossterm{injured}, you become \\briefly \\primed and \\empowered.
       `,
       // narrative: '',
       rank: 3,

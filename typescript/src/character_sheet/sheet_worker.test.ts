@@ -418,14 +418,17 @@ t.test('can calculate jump distance', (t) => {
       speed_permanent_modifier: 10,
       strength_at_creation: 0,
     });
-    getAttrs(['horizontal_jump_distance', 'horizontal_jump_distance_explanation', 'speed'], (attrs) => {
-      t.match(attrs, {
-        speed: 40,
-        horizontal_jump_distance: 5,
-        horizontal_jump_distance_explanation: '+5 (base speed / 4)',
-      });
-      t.end();
-    });
+    getAttrs(
+      ['horizontal_jump_distance', 'horizontal_jump_distance_explanation', 'speed'],
+      (attrs) => {
+        t.match(attrs, {
+          speed: 40,
+          horizontal_jump_distance: 5,
+          horizontal_jump_distance_explanation: '+5 (base speed / 4)',
+        });
+        t.end();
+      },
+    );
   });
 
   t.end();
@@ -551,6 +554,25 @@ t.test('can calculate brawling accuracy', (t) => {
       t.match(attrs, {
         brawling_accuracy: 5,
         brawling_accuracy_explanation: '+5 (level)',
+      });
+      t.end();
+    });
+  });
+
+  t.end();
+});
+
+t.test('can calculate initiative', (t) => {
+  t.test('with custom modifiers', (t) => {
+    setAttrs({
+      dexterity_at_creation: 4,
+      initiative_permanent_modifier: 2,
+      initiative_permanent_explanation: 'Combat Prediction Feat',
+    });
+    getAttrs(['initiative', 'initiative_explanation'], (attrs) => {
+      t.match(attrs, {
+        initiative: 2,
+        initiative_explanation: 'Combat Prediction Feat',
       });
       t.end();
     });

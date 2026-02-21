@@ -1,3 +1,8 @@
+---
+trigger: model_decision
+description: When you need rules for character creation or core character statistics like attributes
+---
+
 # Rise Character System Overview
 
 This document summarizes the core rules and mechanics for character definition and progression in Rise, derived from `comprehensive_codex/Characters.tex`.
@@ -30,15 +35,18 @@ Character creation blends thematic and mechanical decisions, typically following
 
 ### 2.2. Combat Statistics
 
-*   **Accuracy:** Number added to attack rolls. Normally half (level + Perception).
-    *   **Brawling Accuracy:** Used for \glossterm{brawling attacks}. Normally half (level + Strength). General accuracy modifiers apply; some abilities affect only brawling accuracy.
+*   **Accuracy:** Number added to attack rolls.
+    *   **Formula:** `floor((Level + Perception) / 2)`
+    *   **Brawling Accuracy:** Used for \glossterm{brawling attacks}.
+    *   **Brawling Formula:** `floor((Level + Strength) / 2)`
+    *   **Note:** General accuracy modifiers (like weapon bonuses) apply on top of this base.
 *   **Defenses (AD, Brawn, Reflex, Fortitude, Mental):** Value needed to hit.
+    *   **Calculation:** `floor(Level / 2) + primary attribute + class/equipment bonuses`
     *   **Armor Defense (AD):** Physical attacks (e.g., sword). Most common.
     *   **Brawn Defense:** Physical restraint/control (e.g., grappling).
     *   **Reflex Defense:** Dodging/evading (e.g., area attacks).
     *   **Fortitude Defense:** Attacks against body/life (e.g., poisons).
     *   **Mental Defense:** Attacks against mind (e.g., mind manipulation).
-    *   **Calculation:** Half level + primary attribute + class/equipment bonuses.
 *   **Encumbrance:** Penalty from armor to Dexterity-based checks and Strength-based skill checks (not direct Strength checks).
 *   **Hit Points:** Measures how much damage a character can take before dying. Defined by class, increase with level and Constitution. Cannot be less than 1. Represent resilience, luck, and determination, not literal injury.
 *   **Injury Point:** 
@@ -64,29 +72,48 @@ Character creation blends thematic and mechanical decisions, typically following
 
 ### 4.1. Size Categories
 
-*   Affects \glossterm{space}, \glossterm{base speed}, attributes, and noticeability.
-*   **Space:** Area controlled in combat. Humanoids typically 5x5 ft. (one \glossterm{square}). Larger than physical body for maneuvering. Multiple smaller creatures can occupy a single square.
-*   **Base Speed:** Movement distance based on size category.
-*   **Other Effects:** Affects some skills/abilities (e.g., immunity to \atSizeBased abilities from much smaller creatures).
-*   **Very Small Creatures:** Multiple can occupy a single square (e.g., 4 Small, 25 Tiny, 100 Diminutive, 400 Fine; more if flying). Creatures two size categories smaller are not obstacles.
-*   **Very Large Creatures:** Occupy multiple squares. Creatures two size categories larger are not obstacles. Weapons are automatically \weapontag{Sweeping} (Huge+).
+| Size | Space | Base Speed | Weight Limits | Brawn | Reflex | Stealth | Weapons |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Fine | 1/4 ft. | 10 ft. | -4 Str | -4 | +4 | +16 | - |
+| Diminutive | 1/2 ft. | 10 ft. | -3 Str | -3 | +3 | +12 | - |
+| Tiny | 1 ft. | 20 ft. | -2 Str | -2 | +2 | +8 | - |
+| Small | 2-1/2 ft. | 20 ft. | -1 Str | -1 | +1 | +4 | - |
+| Medium | 5 ft. | 30 ft. | - | - | - | - | - |
+| Large | 10 ft. | 40 ft. | +1 Str | +1 | -1 | -4 | - |
+| Huge | 20 ft. | 50 ft. | +2 Str | +2 | -2 | -8 | Sweeping (1) |
+| Gargantuan | 40 ft. | 60 ft. | +3 Str | +3 | -3 | -12 | Sweeping (2) |
+| Colossal | 80+ ft. | 80 ft. | +4 Str | +4 | -4 | -16 | Sweeping (4) |
 
-### 4.2. Weight Limits
+### 4.2. Weight Limits by Strength
 
-*   Determined by Strength (see \trefnp{Weight Limits by Strength}).
-*   Measured in \glossterm{weight categories}.
-*   **Carrying Capacity:** Max weight held without penalty. Beyond this, objects can be pushed/dragged.
-*   **General Rule:** Ignore weight of objects lighter than your maximum weight category. 8 objects of one category = 1 object of next heavier category.
-*   **Modifiers:** Large/small creatures gain Strength bonus for weight limits. Multi-legged creatures carry/push/drag twice as much.
+| Strength | Carrying Capacity | Push/Drag |
+| :--- | :--- | :--- |
+| -2 | Tiny x8 | Small x8 |
+| -1 | Small x2 | Medium x2 |
+| 0 | Small x4 | Medium x4 |
+| 1 | Small x8 | Medium x8 |
+| 2 | Medium x2 | Large x2 |
+| 3 | Medium x4 | Large x4 |
+| 4 | Medium x8 | Large x8 |
+| 5 | Large x2 | Huge x2 |
 
 ### 4.3. Weight Categories
 
-*   Use same terms as \glossterm{size categories} (see \tref{Weight Categories}). Generally, a creature's weight category matches its size category.
-*   **Lightweight/Heavyweight:** Objects can be one category lighter/heavier than their size category.
+| Weight Category | Falling Damage Die | Average Weight |
+| :--- | :--- | :--- |
+| Fine | - | 1/2 oz. |
+| Diminutive | - | 1/4 lb. |
+| Tiny | 1d2 | 2 lb. |
+| Small | 1d6 | 15 lb. |
+| Medium | 1d8 | 120 lb. |
+| Large | 1d10 | 1,000 lb. |
+| Huge | 2d6 | 8,000 lb. |
+| Gargantuan | 2d8 | 64,000 lb. |
+| Colossal | 2d10 | 512,000 lb. |
 
 ### 4.4. Falling Damage
 
-*   Falling creatures/objects descend 300 ft./phase. Take damage on impact; obstacle takes half damage (max of falling object's HP).
+*   Falling creatures/objects descend 300 ft./round. Take damage on impact; obstacle takes half damage (max of falling object's HP).
 *   Damage based on \glossterm{weight category} (see \tref{Weight Categories}). Roll damage die once per 10 ft. fallen (max 300 ft.). No damage for falls < 10 ft.
 *   Intentional falls are 10 ft. shorter. Jumping falls measure from 10 ft. below jump start.
 
@@ -96,9 +123,25 @@ Character creation blends thematic and mechanical decisions, typically following
 *   **Minimum and Maximum Modifiers:** Bonuses with max values apply last. If multiple maxes, use lowest. If value already exceeds max, ignore bonus. Minimums apply after all other modifiers.
 *   **Doubling and Halving:** Normal doubling/halving applies. If a single effect doubles something twice, it becomes three times the original value (not four).
 *   **Changing Statistics:** Changes take effect immediately. Loss of prerequisites (e.g., Intelligence reduction) results in immediate loss of relevant abilities until within new limits.
-*   **Rounding:** Round down fractional numbers. For negative numbers, round away from 0.
+*   **Rounding:** 
+    *   In general, round down fractional numbers (use `floor`).
+    *   For negative numbers, round **away from 0**. For example, `-2.5` becomes `-3`.
 
-## 6. Character Advancement and Gaining Levels
+## 6. Formula Quick Reference
+
+| Statistic | Formula | Primary Attribute |
+| :--- | :--- | :--- |
+| **Accuracy** | `floor((Level + Per) / 2)` | Perception |
+| **Brawling Acc** | `floor((Level + Str) / 2)` | Strength |
+| **Defenses** | `floor(Level / 2) + Attr + Bonus` | (See 2.2) |
+| **Mundane Power** | `floor(Level / 2) + Str` | Strength |
+| **Magical Power** | `floor(Level / 2) + Wil` | Willpower |
+| **Fatigue Tolerance** | `3 + Con` (standard) | Constitution |
+
+> [!IMPORTANT]
+> Some class tables include a "Bonus" column equal to `floor(Level / 2)`. This is the same value used in the formulas above; it is not an additional bonus to be added on top of the `half level` component already present in the Power or Defense calculations.
+
+## 7. Character Advancement and Gaining Levels
 
 *   Gaining experience leads to leveling up, granting abilities (see \trefnp{Character Advancement and Gaining Levels}).
 *   **Per-Level Increases:** Hit Points, archetype rank, accuracy (may), power (even levels), trained skills bonus (even levels), defenses (even levels).
@@ -112,44 +155,3 @@ Character creation blends thematic and mechanical decisions, typically following
 
 *   General indication of overall power, determined by level.
 *   Maximum rank in any individual archetype equals character rank.
-
-### 6.2. Legacy Items
-
-*   **Purpose:** Items gain magical properties with character advancement.
-*   **Acquisition:** At 6th level, choose a weapon, body armor, shield, apparel, or implement. Gains a rank 3 or lower magic item property.
-*   **Attunement:** No attunement required, but \glossterm{deep attunement} properties reduce maximum attunement points.
-*   **Properties:** Retains normal properties. Can be imbued/reforged like mundane items. Property must be appropriate for item category (e.g., amulet can gain boot effects).
-*   **Scaling:** Improves at 12th (rank 5 property) and 18th (rank 7 property) levels.
-*   **Loss/Destruction:** Must be retrieved if lost. If destroyed, a new item of the same type can be designated after a \glossterm{long rest}.
-*   **Unique Legacy Items:** Players can work with GMs to create custom magical effects reflecting character personality/powers.
-
-## 7. Narrative Elements
-
-### 7.1. Alignment
-
-*   **Types:** Lawful Good, Neutral Good, Chaotic Good, Lawful Neutral, Neutral, Chaotic Neutral, Lawful Evil, Neutral Evil, Chaotic Evil.
-*   **Purpose:** Tool for character development, broad framework for personality/philosophy.
-*   **Spectrum:** Not binary. Angels/demons are "pure." Population ratios: ~50% Neutral, ~25% Good, ~25% Evil (similar for Law/Chaos). Distribution varies (e.g., humanoids more good/lawful, monsters more chaotic/evil).
-*   **Good vs. Evil:** Defined by intent.
-    *   **Good:** Altruistic intentions, respect/empathy for others.
-    *   **Evil:** Selfish intentions, prioritizing personal desires over others' known needs.
-    *   **Neutral:** Neither consistently altruistic nor selfish. Intentions not involving others, or for mandatory needs, are neutral. Non-sapient beings are typically neutral.
-*   **Law vs. Chaos:**
-    *   **Law:** Values consistency, adheres to rules (external or self-imposed).
-    *   **Chaos:** Values flexibility/freedom, decisions based on immediate thoughts/feelings.
-    *   **Neutral:** Neither exceptionally consistent nor inconsistent. Non-sapient beings are typically neutral.
-
-### 7.2. Backgrounds
-
-*   **Purpose:** Character history before campaign. Explains statistics narratively.
-*   **Structure:** Benefits and flaws. Choosing a benefit requires a flaw. Mixed backgrounds provide both. Generally, limit to one benefit/flaw or one mixed background.
-*   **Acquisition:** Can be acquired during campaign at GM's discretion.
-*   **Relevance:** Primarily relevant where reputation is known.
-*   **Examples (Benefits):** Criminal Connections, Folk Hero, Guild Member, Mysterious Heirloom, Landed, Noble.
-*   **Examples (Flaws):** Escapee, Indebted, Nemesis, Repulsive, Wanted.
-*   **Examples (Mixed):** Scion.
-
-### 7.3. Personal Appearance
-
-*   **Age:** Typical ages by species (Adulthood, Middle Age, Old, Venerable, Maximum Age). Old/Venerable characters incur attribute penalties/bonuses.
-*   **Height and Weight:** Typical values vary by species.

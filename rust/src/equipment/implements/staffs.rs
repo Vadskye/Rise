@@ -23,10 +23,9 @@ pub fn staffs() -> Vec<Implement> {
         rank: 2,
         short_description: String::from(r"Heals you when you heal allies"),
         description: String::from(r"
-            Once per round, when you cause a creature other yourself to regain \glossterm<hit points> using a \magical ability, you can activate this item.
+            Once per turn, when you cause a creature other yourself to regain \glossterm<hit points> using a \magical ability, you can activate this item.
             When you do, you also regain that many hit points.
             In addition, you increase your \glossterm<fatigue level> by one.
-            This ability has the \abilitytag<Swift> tag if you use it to affect healing with a Swift ability.
         "),
         ..Implement::default()
     }));
@@ -318,7 +317,7 @@ pub fn staffs() -> Vec<Implement> {
         short_description: String::from(r"Can exert to repeat effect"),
         description: String::from(r"
             Whenever you use a non-attunable \magical ability, you may activate this staff.
-            When you do, the ability \glossterm{repeats} during your next action.
+            When you do, the ability \glossterm{repeats} at the start of your next turn.
             In addition, you increase your \glossterm<fatigue level> by one, and you \glossterm<briefly> cannot activate this effect again.
         "),
         ..Implement::default()
@@ -490,7 +489,7 @@ pub fn staffs() -> Vec<Implement> {
             \begin{raggeditemize}
                 \item All \magical abilities you use have the \atFire tag.
                 \item Whenever you hit a creature with \magical ability, the creature burns.
-                    It takes 1d6 damage during your next action.
+                    It takes 1d6 damage at the end of its next turn.
                     This damage is doubled by critical hits and attacks that deal double damage.
                 \item It sheds light in a 15 foot radius of \glossterm{bright illumination}.
             \end{raggeditemize}

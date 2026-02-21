@@ -468,9 +468,17 @@ def core_statistics(destination):
                 },
             ),
             sidelabeled_number_input(
-                "Speed",
+                subtlebutton(
+                    {
+                        "class": "initiative-button",
+                        "name": "roll_initiative",
+                        "type": "roll",
+                        "value": "@{character_name} rolls initiative: [[d10+@{initiative}]]",
+                    },
+                    "Initiative",
+                ),
                 input_attributes={
-                    "name": f"speed",
+                    "name": f"initiative",
                     "readonly": True,
                 },
             ),
@@ -484,6 +492,16 @@ def movement(destination):
         [
             flex_row({"class": "standard-movements"}, [
                 sidelabel(
+                    "Speed",
+                    text_input({
+                        "readonly": True,
+                        "name": "speed",
+                    }),
+                    attributes = {
+                        "class": "speed",
+                    },
+                ),
+                sidelabel(
                     "Jump",
                     text_input({
                         "readonly": True,
@@ -496,7 +514,7 @@ def movement(destination):
             ]),
             flex_row({"class": "blank-movements"}, [
                 text_input({"class": "movement-speed-name", "name": f"movement_speed_{i}_name"})
-                for i in range(5)
+                for i in range(4)
             ]),
         ],
     )

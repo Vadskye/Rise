@@ -57,8 +57,8 @@ fn amulets() -> Vec<Apparel> {
         ..Apparel::default()
     }));
 
-    // +1 Armor and Reflex is half of Shielded, so 0.8 EA.
-    // But rage requirement means it's about 75% effective, so about 0.6 EA.
+    // +1 Armor and Reflex is half of Shielded, so 1 EA.
+    // But rage requirement means it's about 2/3 effectiveness, so about 0.7 EA.
     apparel.push(Amulet(StandardItem {
         name: String::from("Amulet of Controlled Rage"),
         rank: 2,
@@ -67,7 +67,7 @@ fn amulets() -> Vec<Apparel> {
             Your penalties to Armor and Reflex defense from using the \ability{rage} barbarian ability are reduced by 1.
         "),
         upgrades: vec![
-            // Shielded is normally 1.6 EA, or 1.2 with rage requirement.
+            // Shielded is normally 2 EA, or 1.3 with rage requirement.
             ItemUpgrade::new(7, r"Removes defense penalties from \ability{rage}", r"
                 The penalty reduction increases to 2, which normally removes the defense penalty entirely.
             "),

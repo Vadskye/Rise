@@ -1,3 +1,8 @@
+---
+trigger: glob
+globs: "character_sheet/**, typescript/src/character_sheet/**"
+---
+
 # Rise Character Sheet
 
 ## Sheet Worker

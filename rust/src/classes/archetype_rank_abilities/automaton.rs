@@ -79,7 +79,7 @@ pub fn automaton<'a>() -> Vec<RankAbility<'a>> {
                 \begin{activeability}{Sharpening Slash}{Standard action}
                     \rankline
                     Make a \glossterm{strike} that deals \glossterm{extra damage} equal to half your \glossterm{power}.
-                    Then, if you did not get a critical hit with the strike, you are \glossterm{briefly} \honed.
+                    Then, if you did not get a critical hit with the strike, you are \briefly \honed.
 
                     \rankline
                     \rank{4} The strike deals double \glossterm{weapon damage}.

@@ -21,9 +21,10 @@ export const telekinesis: MysticSphere = {
         You can telekinetically control the target object as if you were holding it in a single extra hand.
         Your maximum modifier to \\glossterm{accuracy} and checks using the object is equal to your rank with this cantrip.
 
-        During the movement phase, you can move the target up to 15 feet in any direction, to a maximum \\glossterm{height limit} of 5 feet.
+        Once per turn as a \\glossterm{free action}, you can move the target up to 15 feet in any direction, to a maximum \\glossterm{height limit} of 5 feet.
         Your \\glossterm{weight limits} are calculated as if your Strength was \\minus1, so you can carry a Small object normally or push a Medium object at half speed.
-        At the end of each round, if the target is outside of this ability's range, this ability is \\glossterm{dismissed}.
+        % TODO: should this be a start of turn trigger or an "anytime" trigger?
+        At the start of your turn, if the target is outside of this ability's range, this ability is \\glossterm{dismissed}.
 
         Although you can control the object's motion, you do not have it equipped.
         This means that a shield does not grant you its defense bonus, a magic ring does not grant its benefits to you, and so on.
@@ -58,10 +59,10 @@ export const telekinesis: MysticSphere = {
       // call it 2 EA. The Strength check is worth -2 ranks, probably.
       attack: {
         hit: `
-          The target is \\glossterm{briefly} unable to move closer to you without effort.
+          The target is \\briefly unable to move closer to you without effort.
           This does not impede its movement unless its movement would bring it closer to you while it is within \\medrange of you.
           As part of the movement, it can make a Strength check with a \\glossterm{difficulty value} of 6.
-          If it succeeds, its movement towards you costs double the normal movement speed.
+          If it succeeds, its movement towards you costs double the normal \\glossterm{available movement}.
           Otherwise, it is unable to move towards you, and that part of its movement is wasted.
       `,
         targeting: `
@@ -92,27 +93,22 @@ export const telekinesis: MysticSphere = {
 
       // 0.7 EA
       effect: `
-        You take half damage from all sources this round.
-        Because this is a \\abilitytag{Swift} ability, it affects attacks against you during the current phase.
+        You \\briefly take half damage from all sources.
       `,
       rank: 1,
       roles: ['turtle'],
       // narrative: '',
-      tags: ['Swift'],
     },
 
     {
       name: 'Greater Kinetic Ablation',
 
-      // 0.3 + 0.7 EA
+      // 0.4 + 0.7 EA
       effect: `
-        You are \\shielded and take half damage from all sources this round.
-        Because this is a \\abilitytag{Swift} ability, it affects attacks against you during the current phase.
+        You \\briefly are \\shielded and take half damage from all sources.
       `,
-      rank: 4,
+      rank: 6,
       roles: ['turtle'],
-      // narrative: '',
-      tags: ['Swift'],
     },
 
     // This is slightly above rate because requiring objects is annoying.
@@ -181,27 +177,25 @@ export const telekinesis: MysticSphere = {
     {
       name: 'Kinetic Discharge',
 
-      // Baseline would be dr2 for enemies-only Small radius. Drop to dr1 for kinetic
-      // charge mechanic and delay, which functionally makes it a non-action.
+      // Baseline would be dr3 for enemies-only Small radius. Drop to dr2 for kinetic
+      // charge accuracy mechanic, increase to dr3 since the damage is delayed.
       attack: {
         hit: `
-          \\damagerankone.
+          \\damagerankthree.
         `,
         halfOnMiss: true,
         targeting: `
-          This spell has no immediate effect.
-          Whenever you take damage during this spell's effect, you gain a kinetic charge.
-          This is a \\abilitytag{Swift} effect, so you build up kinetic charges during the first round that you cast this spell.
-          During your next action after you stop sustaining this spell, make a \\glossterm{reactive attack} vs. Brawn against all \\glossterm{enemies} in a \\medarea radius from you.
-          You gain an accuracy bonus with this attack equal to the number of kinetic charges you built up, to a maximum of +4.
+          You \\briefly build up energy.
+          Whenever you take damage during that time, you gain a kinetic charge.
 
-          If you build up 8 kinetic charges, you immediately stop sustaining this spell, and the attack targets you and all creatures in a \\medarea radius from you.
+          When that effect ends, make a \\glossterm{reactive attack} vs. Brawn against all \\glossterm{enemies} in a \\smallarea radius from you.
+          You gain an accuracy bonus with this attack equal to the number of kinetic charges you built up, to a maximum of +4.
+          If you built up 5 or more kinetic charges, the area increases to a \\smallarea radius.
         `,
       },
       rank: 3,
       roles: ['clear'],
       scaling: 'damage',
-      tags: ['Sustain (minor)', 'Swift (see text)'],
     },
 
     {
@@ -209,12 +203,11 @@ export const telekinesis: MysticSphere = {
 
       functionsLike: {
         name: 'kinetic discharge',
-        exceptThat: 'the damage increases to \\damagerankfour.',
+        exceptThat: 'the damage increases to \\damagerankfive.',
       },
       rank: 6,
       roles: ['clear'],
       scaling: 'damage',
-      tags: ['Sustain (minor)', 'Swift (see text)'],
     },
 
     // Baseline for a double defense r0 area is drX+2, or crX+1 with drX+1. A 15' cone
@@ -400,29 +393,26 @@ export const telekinesis: MysticSphere = {
     {
       name: 'Kinetic Redirection',
 
+      // Shielded is 0.4 EA, redirect is ???
       effect: `
-        You are \\shielded this round.
-        In addition, whenever a creature misses you with a melee \\glossterm{strike} this round, it treats itself as a target of that strike in addition to any other targets.
+        You are \\briefly \\shielded.
+        In addition, whenever a creature misses you with a melee \\glossterm{strike} during that effect, it treats itself as a target of that strike in addition to any other targets.
         It cannot choose to reduce its accuracy or damage against itself.
-        This ability is \\abilitytag{Swift}, so it protects you from attacks in the current phase.
       `,
-      rank: 2,
+      rank: 1,
       roles: ['turtle'],
-      tags: ['Swift'],
     },
 
     {
       name: 'Greater Kinetic Redirection',
 
       effect: `
-        You are \\shielded this round.
-        In addition, whenever a creature attacks you with a melee \\glossterm{strike} this round, it treats itself as a target of that strike in addition to any other targets.
+        You are \\briefly \\shielded.
+        In addition, whenever a creature attacks you with a melee \\glossterm{strike} during that effect, it treats itself as a target of that strike in addition to any other targets.
         It cannot choose to reduce its accuracy or damage against itself.
-        This ability is \\abilitytag{Swift}, so it protects you from attacks in the current phase.
       `,
       rank: 7,
       roles: ['turtle'],
-      tags: ['Swift'],
     },
 
     {
@@ -573,31 +563,17 @@ export const telekinesis: MysticSphere = {
       type: 'Attune (deep)',
     },
 
-    // Any two shielded is 0.7 EA, or 1.4 EA if the brief works on both targets. Assume
-    // that it works on one of the two targets, so ~1 EA.
+    // Ally shielded is 0.6 EA. Ally empowered is 0.6 EA. The damage requirement means we
+    // can try it at rank 5.
     {
       name: 'Kinetic Shield',
 
       effect: `
-        Choose up to two creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each target is \\shielded this round.
-        Each target that is hit by a \\glossterm{strike} this round is also \\shielded next round.
-        Because this is a \\abilitytag{Swift} ability, it affects attacks against each target during the current phase.
+        Choose yourself or one \\glossterm{ally} within \\medrange.
+        The target is \\briefly \\shielded.
+        During the effect, if the target takes damage, it is \\briefly \\empowered.
       `,
-      rank: 3,
-      roles: ['boon'],
-    },
-
-    {
-      name: 'Greater Kinetic Shield',
-
-      effect: `
-        Choose up to two creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each target is \\shielded this round.
-        Each target that takes damage this round is also \\shielded next round.
-        Because this is a \\abilitytag{Swift} ability, it affects attacks against each target during the current phase.
-      `,
-      rank: 7,
+      rank: 5,
       roles: ['boon'],
     },
 
@@ -608,7 +584,7 @@ export const telekinesis: MysticSphere = {
       attack: {
         hit: `
           The target is unable to enter the spell's area for the rest of the round.
-          The rest of its movement in the current phase is cancelled.
+          The rest of its movement is cancelled.
         `,
         targeting: `
           When you cast this spell, you create a repulsive field in a \\smallarea radius \\glossterm{zone} from your location.
@@ -629,7 +605,7 @@ export const telekinesis: MysticSphere = {
         crit: MULTIHIT_CRIT,
         hit: `
           \\damagerankone.
-          During your next action, the target takes \\damagerankone again.
+          The target takes \\damagerankone again at the end of its next turn.
         `,
         targeting: `
           Make an attack vs. Brawn against something within \\shortrange.
@@ -646,8 +622,9 @@ export const telekinesis: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankfour, and any \\glossterm{extra damage} is doubled.
-          During your next action, the target takes \\damagerankfour again.
+          \\damagerankfour.
+          The target takes \\damagerankfour again at the end of its next turn.
+          Any \\glossterm{extra damage} also applies to this delayed damage.
         `,
         targeting: `
           Make an attack vs. Brawn against something within \\shortrange.
@@ -664,8 +641,10 @@ export const telekinesis: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damageranksix, and any \\glossterm{extra damage} is doubled.
-          During your next action, the target takes \\damagerankfive.
+          \\damageranksix.
+          The target takes \\damageranksix again at the end of its next turn.
+          Any \\glossterm{extra damage} also applies to this delayed damage.
+
           If the target takes a \\glossterm{vital wound} from either instance of damage that leaves it unconscious, it is crushed into a small sphere and immediately dies.
           The sphere left behind is three size categories smaller than the original creature.
         `,
@@ -703,7 +682,6 @@ export const telekinesis: MysticSphere = {
       effect: `
         Whenever you use the \\ability{total defense} or \\ability{recover} ability, you can activate this ability.
         If you do, you move 20 feet up into the air and levitate there.
-        This movement is \\atSwift, so it can help you avoid attacks during the current phase.
         While levitating in this way, your telekinesis provides you with a stable platform to maneuver, so you are not \\unsteady.
         At the end of the round, you descend 20 feet without taking \\glossterm{falling damage}, then this ability is \\glossterm{dismissed}.
       `,
@@ -780,7 +758,7 @@ export const telekinesis: MysticSphere = {
 
       attack: {
         hit: `\\damagerankthree.`,
-        injury: 'The target is \\glossterm{briefly} \\stunned.',
+        injury: 'The target is \\briefly \\stunned.',
         targeting: `
           Make an attack vs. Brawn against something within \\shortrange.
         `,
@@ -798,7 +776,7 @@ export const telekinesis: MysticSphere = {
       attack: {
         hit: `
           \\damagerankseven, and any \\glossterm{extra damage} is doubled.
-          The target is also \\glossterm{briefly} \\stunned.
+          The target is also \\briefly \\stunned.
         `,
         injury: 'The target is \\stunned as a \\glossterm{condition}.',
         targeting: `

@@ -314,8 +314,7 @@ export const rituals: RitualDefinition[] = [
     effect: `
       Choose up to six ritual participants.
       Each target gains an average \\glossterm{fly speed} with a 15 foot \\glossterm{height limit} (see \\pcref{Flight}).
-      If it uses a \\glossterm{standard action} or is dealt damage, it is \\glossterm{briefly} unable to take any actions and this ability is \\glossterm{dismissed}.
-      It can still use a \\glossterm{move action} in place of a standard action during the action phase without ending this effect.
+      If it uses a \\glossterm{standard action} or is dealt damage, it can't take any actions next round and this ability is \\glossterm{dismissed}.
     `,
     // narrative: '',
     rank: 4,
@@ -330,8 +329,7 @@ export const rituals: RitualDefinition[] = [
     effect: `
       Choose up to six ritual participants.
       Each target gains a fast \\glossterm{fly speed} with a 15 foot \\glossterm{height limit} (see \\pcref{Flight}).
-      If it uses a \\glossterm{standard action} or is dealt damage, it is \\glossterm{briefly} unable to take any actions and this ability is \\glossterm{dismissed}.
-      It can still use a \\glossterm{move action} in place of a standard action during the action phase without ending this effect.
+      If it uses a \\glossterm{standard action} or is dealt damage, it can't take any actions next round and this ability is \\glossterm{dismissed}.
     `,
     // narrative: '',
     rank: 7,
@@ -526,7 +524,7 @@ export const rituals: RitualDefinition[] = [
   //   effect: `
   //     Choose any number of Medium or smaller ritual participants.
   //     Each target can \\glossterm{teleport} up to 60 feet as a \\glossterm{movement}.
-  //     If it attacks or is dealt damage, it is \\glossterm{briefly} unable to take any actions and this ability is \\glossterm{dismissed}.
+  //     If it uses a \\glossterm{standard action} or is dealt damage, it can't take any actions next round and this ability is \\glossterm{dismissed}.
   //   `,
   //   tags: [],
   //   usageTime: 'one hour',
@@ -582,7 +580,14 @@ export const rituals: RitualDefinition[] = [
     },
     usageTime: '24 hours',
     spheres: [
-      'Aquamancy', 'Astromancy', 'Channel Divinity', 'Fabrication', 'Prayer', 'Terramancy', 'Thaumaturgy', 'Verdamancy'
+      'Aquamancy',
+      'Astromancy',
+      'Channel Divinity',
+      'Fabrication',
+      'Prayer',
+      'Terramancy',
+      'Thaumaturgy',
+      'Verdamancy',
     ],
   },
   {
@@ -590,14 +595,21 @@ export const rituals: RitualDefinition[] = [
     rank: 5,
     roles: ['narrative'],
     functionsLike: {
-      name: "forge astral beacon",
-      exceptThat: "the astral beacon is permanent.",
+      name: 'forge astral beacon',
+      exceptThat: 'the astral beacon is permanent.',
     },
     tags: [],
     materialCost: true,
     usageTime: '24 hours',
     spheres: [
-      'Aquamancy', 'Astromancy', 'Channel Divinity', 'Fabrication', 'Prayer', 'Terramancy', 'Thaumaturgy', 'Verdamancy'
+      'Aquamancy',
+      'Astromancy',
+      'Channel Divinity',
+      'Fabrication',
+      'Prayer',
+      'Terramancy',
+      'Thaumaturgy',
+      'Verdamancy',
     ],
   },
   {
@@ -746,7 +758,7 @@ export const rituals: RitualDefinition[] = [
       When you perform this ritual, you specify a course of action that you could hypothetically take during the next hour.
       At the end of the ritual, a version of yourself from an hour into the future appears.
       That person is a version of yourself who took your described course of action.
-      You can visibly observe any changes in their appearance, and they can briefly gesture to indicate whether they recommend following that action, but no words can be exchanged.
+      You can visibly observe any changes in their appearance, and they have a few seconds to gesture to indicate whether they recommend following that action, but no words can be exchanged.
 
       If no version of yourself appears, it is likely that you would not survive taking your proposed course of action.
       The future is variable and chaotic, so making the same decisions does not guarantee the same results as your future self, but it should be likely to have a similar outcome.
@@ -805,8 +817,7 @@ export const rituals: RitualDefinition[] = [
     effect: `
       Choose up to six ritual participants.
       Each target gains a +30 foot \\glossterm{enhancement bonus} to its \\glossterm{speed}.
-      If it uses a \\glossterm{standard action} or is dealt damage, it is \\glossterm{briefly} unable to take any actions and this ability is \\glossterm{dismissed}.
-      It can still use a \\glossterm{move action} in place of a standard action during the action phase without ending this effect.
+      If it uses a \\glossterm{standard action} or is dealt damage, it can't take any actions next round and this ability is \\glossterm{dismissed}.
     `,
     tags: [],
     usageTime: 'one minute',
@@ -948,12 +959,12 @@ export const rituals: RitualDefinition[] = [
 
       The animal will attempt to travel to that destination to the best of its ability, following the directions you have given it.
       It will not willingly part with its message until it reaches its destination.
-      Once it reaches its destination, it will wait until it observes a valid recipient, leaving the destination only briefly as necessary to sustain itself.
+      Once it reaches its destination, it will wait until it observes a valid recipient, leaving the destination only as necessary to sustain itself.
       When the animal has delivered its message, this ability is \\glossterm{dismissed}, allowing you to know that the message has been delivered.
       `,
       targeting: `
         Make an attack vs. Mental against one Small or Tiny animal within \\medrange.
-        You take a -10 penalty to \\glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of the last round.
+        You take a -10 penalty to \\glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of your last turn.
       `,
     },
     rank: 2,
@@ -1821,10 +1832,12 @@ export const rituals: RitualDefinition[] = [
 
     usageTime: 'one hour',
     attack: {
-      hit: `A scrying sensor appears in the target's space.
-      This sensor functions like the sensor created by the \\spell{mystic eye} spell, except that you cannot move the sensor manually.
-      Instead, it automatically tries to follow the target to stay in its space.
-      At the end of each phase, if the sensor is not in the target's space, this effect is \\glossterm{dismissed}.`,
+      hit: `
+        A scrying sensor appears in the target's space.
+        This sensor functions like the sensor created by the \\spell{mystic eye} spell, except that you cannot move the sensor manually.
+        Instead, it automatically tries to follow the target to stay in its space.
+        If the target teleports, turns invisible, or otherwise becomes impossible for the sensor to follow normally, this effect is \\glossterm{dismissed}.
+      `,
       targeting: `
         Make an attack vs. Mental against one creature within 500 miles of you.
         You do not need \\glossterm{line of sight} or \\glossterm{line of effect} to the target.
@@ -2691,7 +2704,7 @@ export const rituals: RitualDefinition[] = [
       This illuminates dark areas, but does not suppress brighter light.
       Unlike normal light, this light is completely invisible outside of the radius that it illuminates.
 
-      Once per round, you can adjust the illumination you provide as a \\glossterm{free action} with the \\atSwift tag.
+      Once per turn, you can adjust the illumination you provide as a \\glossterm{free action}.
       You can choose one of the following effects:
       \\begin{raggeditemize}
         \\item Suppress the light

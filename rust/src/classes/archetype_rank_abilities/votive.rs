@@ -107,7 +107,7 @@ pub fn pactbound_warrior<'a>() -> Vec<RankAbility<'a>> {
                     You do not have to spend time casting the spell, but each target must still meet any targeting requirements for the spell, such as range or touch.
 
                     You can only apply this augment to maneuvers which cause you to make a melee \glossterm{strike}, and you must choose a different spell each time you apply this augment to a maneuver.
-                    After you use this maneuver, you \glossterm{briefly} cannot use any spellfused maneuver again.
+                    After you use this maneuver, you can't use any spellfused maneuver next round.
                 }
             ",
             modifiers: None,
@@ -153,7 +153,7 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
                     It provides a \plus4 bonus to your Armor defense, a \plus4 bonus to your \glossterm{durability}, and a \plus1 bonus to your \glossterm{vital rolls}.
                     In exchange, the \ability{recover} ability no longer causes you to recover hit points (see \pcref{Recover}).
 
-                    \subcf{Covenant of Bloodsharing} At the end of each round, if you caused a living creature other than yourself to lose \glossterm{hit points} during that round, you regain \glossterm{hit points} equal to half your \glossterm{power} (minimum 1).
+                    \subcf{Covenant of Bloodsharing} Once per turn, when you cause a living creature other than yourself to lose \glossterm{hit points}, you can regain \glossterm{hit points} equal to half your \glossterm{power} (minimum 1).
                     In exchange, you are \glossterm{injured} whenever you are below your maximum hit points, regardless of your normal \glossterm{injury point}.
 
                     \subcf{Covenant of Soulcursing} Whenever you would inflict a \glossterm{condition} on a creature that is not already under the effects of a Curse, that effect becomes a Curse on it instead of a condition.
@@ -241,12 +241,11 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your connection to your soulkeeper deepens, allowing you to send a fragment of your soul through the link in exchange for aid.
                 \begin{magicalactiveability}{Exchange Soul Fragment}{Standard action}
-                    \abilitytags \abilitytag{Swift}
                     \abilitycost One \glossterm{fatigue level}.
                     \rankline
                     You regain \hprankthree.
                     In addition, you may remove a \glossterm{condition} affecting you.
-                    This effect \glossterm{repeats} at the end of the current round.
+                    This effect \glossterm{repeats} at the start of your next turn.
 
                     \rankline
                     \rank{4} The recovery increases to \hprankfour.
@@ -581,7 +580,7 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
                 If you do, you always treat one weapon you wield as having that property.
                 This applies in addition to any other special material or magical properties.
                 However, it does not stack if the item would already have that property normally.
-                If you wield more than one weapon at a time, you can choose which of your weapons gains this effect as a \glossterm{free action} once per round.
+                If you wield more than one weapon at a time, you can choose which of your weapons gains this effect as a \glossterm{free action} once per turn.
 
                 Whenever you increase your rank in this archetype, you can change which magic weapon property you have with this ability.
             ",

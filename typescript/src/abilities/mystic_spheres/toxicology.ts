@@ -39,7 +39,7 @@ export const toxicology: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankone immediately, and again during your next action.
+          \\damagerankone immediately, and again at the end of the target's next turn.
           This damage is doubled if the target is an object that is not \\glossterm{metallic}.
         `,
         targeting: `
@@ -282,7 +282,7 @@ export const toxicology: MysticSphere = {
         hit: `\\damagerankone.`,
         halfOnMiss: true,
         targeting: `
-          Once per round, when you lose \\glossterm{hit points} during the \\glossterm{action phase}, make a \\glossterm{reactive attack} vs. Reflex against all \\glossterm{enemies} adjacent to you.
+          The first time you lose \\glossterm{hit points} each round, make a \\glossterm{reactive attack} vs. Reflex against all \\glossterm{enemies} adjacent to you.
         `,
       },
       narrative: `
@@ -305,7 +305,7 @@ export const toxicology: MysticSphere = {
         hit: `\\damagerankfour.`,
         halfOnMiss: true,
         targeting: `
-          Once per round, when you lose \\glossterm{hit points} during the \\glossterm{action phase}, make a \\glossterm{reactive attack} vs. Reflex against all \\glossterm{enemies} in a \\smallarea radius from you.
+          The first time you lose \\glossterm{hit points} each round, make a \\glossterm{reactive attack} vs. Reflex against all \\glossterm{enemies} in a \\smallarea radius from you.
         `,
       },
       narrative: `
@@ -325,7 +325,7 @@ export const toxicology: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankone immediately, and again during your next action.
+          \\damagerankone immediately, and again at the end of the target's next turn.
           This damage is doubled if the target is an object that is not \\glossterm{metallic}.
         `,
         targeting: `
@@ -344,8 +344,9 @@ export const toxicology: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankfour immediately, and again during your next action.
+          \\damagerankfour immediately, and again at the end of the target's next turn.
           This damage is doubled if the target is an object that is not \\glossterm{metallic}.
+          Any \\glossterm{extra damage} applies to both the initial damage and the delayed damage.
         `,
         targeting: `
           Make an attack vs. Fortitude against something within \\shortrange.
@@ -414,13 +415,13 @@ export const toxicology: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankthree immediately, and again during your next action.
+          \\damagerankthree immediately, and again at the end of the target's next turn.
         `,
         halfOnMiss: true,
         targeting: `
           For the duration of this spell, you can breathe acid like a dragon as a standard action.
           When you do, make an attack vs. Fortitude and Reflex against everything in a \\medarea cone from you.
-          After you use breathe acid, you \\glossterm{briefly} cannot do so again.
+          You can't use this ability again next round.
         `,
       },
       rank: 3,
@@ -455,7 +456,7 @@ export const toxicology: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damageranktwo immediately, and again during your next action.
+          \\damageranktwo immediately, and again at the end of the target's next turn.
         `,
         halfOnMiss: true,
         targeting: `
@@ -463,7 +464,7 @@ export const toxicology: MysticSphere = {
           Acid rain appears in the sky over that area, falling down towards it.
           Creatures can generally identify what area the rain will fall into with a DV 10 Awareness check.
 
-          During your next action, the rain falls in your chosen area, and you make a \\glossterm{reactive attack} vs. Fortitude and Reflex against everything in a \\medarea radius of your chosen location.
+          At the start of your next turn, the rain falls in your chosen area, and you make a \\glossterm{reactive attack} vs. Fortitude and Reflex against everything in a \\medarea radius of your chosen location.
           If there is not at least fifty feet of open space above your chosen area, this spell fails with no effect.
           This attack does not damage thin \\glossterm{walls} in the area.
         `,
@@ -496,12 +497,11 @@ export const toxicology: MysticSphere = {
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\shortrange.
         The target regains \\hprankthree.
-        In addition, it removes all \\glossterm{poisons} affecting it and becomes \\glossterm{briefly} \\glossterm{immune} to poisons.
+        In addition, it removes all \\glossterm{poisons} affecting it and becomes \\briefly \\glossterm{immune} to poisons.
       `,
       rank: 1,
       roles: ['healing', 'exertion'],
       scaling: 'healing',
-      tags: ['Swift'],
     },
 
     {
@@ -515,7 +515,6 @@ export const toxicology: MysticSphere = {
       rank: 4,
       scaling: 'healing',
       roles: ['healing', 'exertion'],
-      tags: ['Swift'],
     },
 
     {
@@ -652,14 +651,30 @@ export const toxicology: MysticSphere = {
       tags: ['Manifestation'],
     },
 
-    // Self-only double brace is 0.8 EA.
+    // Self-only brace is 0.5 EA.
+    // Minor action activation doubles the EA?
     {
       name: 'Bracing Concoction',
 
       effect: `
         You create a potion in an empty vial or similar container within \\shortrange.
-        A creature can drink the potion as a standard action using a \\glossterm{free hand}.
-        When a living creature drinks the potion, it becomes \\braced for the next two rounds.
+        A creature can drink the potion as a \\glossterm{minor action} using a \\glossterm{free hand}.
+        When a living creature drinks the potion, it becomes \\briefly \\braced.
+      `,
+      rank: 4,
+      roles: ['boon'],
+      type: 'Sustain (attunable, minor)',
+      tags: ['Manifestation'],
+    },
+
+    // Self-only minor action empower is 0.8 EA?
+    {
+      name: 'Empowering Concoction',
+
+      effect: `
+        You create a potion in an empty vial or similar container within \\shortrange.
+        A creature can drink the potion as a \\glossterm{minor action} using a \\glossterm{free hand}.
+        When a living creature drinks the potion, it becomes \\empowered that turn.
       `,
       rank: 1,
       roles: ['boon'],
@@ -667,14 +682,15 @@ export const toxicology: MysticSphere = {
       tags: ['Manifestation'],
     },
 
-    // Self-only double empower is 0.8 EA.
+    // Self-only minor action focus is 0.8 EA. Arbitrarily kick this up from empowering
+    // concoction since it's more versatile and we want a decent rank spread.
     {
-      name: 'Empowering Concoction',
+      name: 'Focusing Concoction',
 
       effect: `
         You create a potion in an empty vial or similar container within \\shortrange.
-        A creature can drink the potion as a standard action using a \\glossterm{free hand}.
-        When a living creature drinks the potion, it becomes \\empowered for the next two rounds.
+        A creature can drink the potion as a \\glossterm{minor action} action using a \\glossterm{free hand}.
+        When a living creature drinks the potion, it becomes \\focused that turn.
       `,
       rank: 2,
       roles: ['boon'],
@@ -682,30 +698,14 @@ export const toxicology: MysticSphere = {
       tags: ['Manifestation'],
     },
 
-    // Self-only double focus is 0.8 EA. Arbitrarily kick this up from empowering
-    // concoction since it's more versatile and we want a decent rank spread.
-    {
-      name: 'Focusing Concoction',
-
-      effect: `
-        You create a potion in an empty vial or similar container within \\shortrange.
-        A creature can drink the potion as a standard action using a \\glossterm{free hand}.
-        When a living creature drinks the potion, it becomes \\focused for the next two rounds.
-      `,
-      rank: 3,
-      roles: ['boon'],
-      type: 'Sustain (attunable, minor)',
-      tags: ['Manifestation'],
-    },
-
-    // Self-only double maximize is 1.4 EA, so this needs downsides to function
+    // Self-only minor action maximize is 1.4 EA, so this needs downsides to function
     {
       name: 'Maximal Concoction',
 
       effect: `
         You create a potion in an empty vial or similar container within \\shortrange.
-        A creature can drink the potion as a standard action using a \\glossterm{free hand}.
-        When a living creature drinks the potion, it becomes \\maximized and \\stunned for the next two rounds.
+        A creature can drink the potion as a \\glossterm{minor action} using a \\glossterm{free hand}.
+        When a living creature drinks the potion, it becomes \\maximized and \\stunned until its next turn.
         When that effect ends, it takes \\damagerankfivelow.
       `,
       rank: 5,
@@ -720,8 +720,8 @@ export const toxicology: MysticSphere = {
 
       effect: `
         You create a potion in an empty vial or similar container within \\shortrange.
-        A creature can drink the potion as a standard action using a \\glossterm{free hand}.
-        When a living creature drinks the potion, it becomes \\primed and \\stunned for the next two rounds.
+        A creature can drink the potion as a \\glossterm{minor action} using a \\glossterm{free hand}.
+        When a living creature drinks the potion, it becomes \\primed and \\stunned until its next turn.
         When that effect ends, it takes \\damageranksevenlow.
       `,
       rank: 7,
@@ -737,7 +737,7 @@ export const toxicology: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankone, and the target is \\glossterm{briefly} \\dazzled.
+          \\damagerankone, and the target is \\briefly \\dazzled.
         `,
         halfOnMiss: true,
         targeting: `

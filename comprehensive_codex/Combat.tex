@@ -60,7 +60,7 @@
     Some attacks specifically double any extra damage that applies to them.
 
     Extra damage only applies once per attack roll to any individual creature.
-    For example, the \spell{corrosive grasp} spell deals damage immediately, and again during your next action.
+    For example, the \spell{caustic grasp} spell deals damage immediately, and again at the end of the target's next turn.
     Because both of those damage instances are caused by a single attack roll, extra damage only applies to the first damage instance.
     However, a \spell{wall of fire} would apply extra damage each time a creature passes through it, since a separate attack is made for each instance of damage.
 
@@ -90,14 +90,12 @@
     This is usually indicated by ``Injury:'' text in their descriptions.
 
   \subsection{Negative Hit Points}\label{Negative Hit Points}
-    You can have negative hit points, but only briefly.
+    You can have negative hit points, but only temporarily.
     When your hit points drop below 0, you gain a \glossterm{vital wound} (see \pcref{Vital Wounds}).
     You gain an additional vital wound for each increment of half your maximum hit points that you reach in negative hit points.
 
-    If you would regain \glossterm{hit points} while you have negative hit points, you first reset your hit points to 0 before applying the healing.
-    In addition, your hit points are reset to 0 at the end of the round if they are still negative.
-    This is checked after applying all healing and damage that takes place at the end of the round.
-    This also resets vital wound thresholds, which means you'll suffer a vital wound if your hit points go negative again in the next round.
+    At the start of your turn, your hit points are reset to 0 if they are still negative.
+    This also resets your vital wound thresholds, which means you'll suffer a vital wound if your hit points go negative again afterwards.
 
   \subsection{Subdual Damage}\label{Subdual Damage}
     Some attacks and environmental effects deal subdual damage.
@@ -151,232 +149,132 @@
   This section explains how time passes in combat.
 
   \subsection{Rounds}\label{Rounds}
-
     Combat takes place in a series of \glossterm{rounds}, which represent about six seconds of time.
-    Each round of a combat is divided into two \glossterm{phases}: the movement phase and the action phase (see \pcref{Phases}).
-    After both phases are complete, the round ends and the next round begins.
+    During each round, each creature in the combat takes one \glossterm{turn}.
+    The order of those turns is determined by rolling \glossterm{initiative} (see \pcref{Initiative}).
+    Once everyone has taken a turn, the round ends and the next round begins.
 
-  \subsection{Phases}\label{Phases}
+  \subsection{Turns}\label{Turns}
+    During your turn, you can take one \glossterm{move action}, one \glossterm{minor action}, and one \glossterm{standard action}.
+    You can also take any number of \glossterm{free actions}.
+    Once you have taken all of the actions you intend to take, your turn is done.
 
-    There are two \glossterm{phases} in each round: a \glossterm{movement phase} and an \glossterm{action phase}.
-    Each phase specifies the types of actions that can be taken during that phase.
-    As a special case, \glossterm{free actions} may be taken during any phase.
+    You typically share a turn with other members of your party rather than having your own turn to yourself.
+    For details, see \pcref{Initiative Groups}.
 
-    Phases do not represent a specific amount of time.
-    In the narrative universe of Rise, movements and actions are intertwined and can happen simultaneously, just as in real life.
-    Phases are simply a useful abstraction to keep combat organized.
-
-    \subsubsection{The Movement Phase}\label{The Movement Phase}
-      During the \glossterm{movement phase}, you can use one \glossterm{move action}.
-      The most common movement is the \textit{hustle} ability, which allows you to move a distance equal to your \glossterm{speed}.
-      For details, see \pcref{Movement and Positioning}.
-
-    \subsubsection{The Action Phase}\label{The Action Phase}
-      During the \glossterm{action phase}, you can use one \glossterm{minor action} and one \glossterm{standard action}.
-      Alternatively, you can use a \glossterm{move action} or an additional \glossterm{minor action} in place of your standard action.
-      Most of the time, you will simply use a single standard action.
-
-  \subsection{Actions}\label{Actions}
-
-    You can take actions in combat to defeat your foes.
-    There are four types of actions: \glossterm{standard actions}, \glossterm{move actions}, \glossterm{minor actions}, and \glossterm{free actions}.
-    % TODO: define conflicting action limits (drawing a sword and sheathing a shield?)
-
-    \subsubsection{Standard Actions}\label{Standard Actions}
-      Most significant activities require a \glossterm{standard action}.
-      This includes attacking with a weapon, casting a \glossterm{spell}, and using many special abilities.
-      Using a standard action generally takes about three seconds of time within the game, and it requires most of your attention during that time.
-
-      You can take one standard action during the \glossterm{action phase} of each round.
-
-    \subsubsection{Move Actions}\label{Move Actions}
-      Almost all move actions change your location on the battlefield.
-      For details, see \pcref{Movement and Positioning}.
-
-    \subsubsection{Minor Actions}\label{Minor Actions}
-      Some special abilities that take a small amount of time or attention require a \glossterm{minor action}.
-      You can take a minor action in the middle of other actions.
-      You cannot use a \glossterm{minor action} during the \glossterm{movement phase}.
-
-      You can take one minor action during the \glossterm{action phase} of each round.
-      In addition, you can choose to replace your standard action during the action phase with an additional minor action.
-      However, you cannot use the same minor action twice in a single round unless an ability specifies otherwise.
-
-    \subsubsection{Free Actions}\label{Free Actions}
-      Some activities that take very little time or attention require a \glossterm{free action}.
-      You can take a free action during any phase, and between other actions on your turn.
-
-      You can take any number of free actions per round, within reason.
-      Some free action abilities specify a limit on how often they can be used.
-      For example, manipulating objects is a free action, but you can only manipulate an object as a free action once per round (see \pcref{Manipulating Objects}).
-
-  \subsection{Resolving Actions}\label{Resolving Actions}
-
-    Actions in combat are partially sequential, and partially simultaneous.
-    You and your \glossterm{allies} who can see or otherwise communicate with each other generally act as a single \glossterm{allied group}.
-    One at a time, each person in the allied group declares their actions, rolls all relevant dice, and applies the results appropriately.
-    You can freely choose the order in which people act within the allied group, as long as everyone agrees with the order chosen.
-    If one of your allies acts before you, you can learn the result of their action before deciding your own action.
-    For example, if they knock an enemy \prone, that enemy would suffer the appropriate defense penalties against your attacks.
-
-    Although your actions resolve sequentially within your allied group, they resolve simultaneously with the actions of anyone outside your allied group.
-    Essentially, you locally resolve the effects of your actions within your allied group, but those actions do not globally resolve until later.
-    This means that you cannot interrupt enemy actions, even by killing them.
-    You generally won't know what actions your enemies will take until after you have already resolved your actions.
-    Just like you can't interrupt their actions, they also can't interrupt your actions.
-
-    Once all allied groups have locally resolved their actions, the results of all those actions are announced.
-    Then, each allied group updates their own status to reflect the actions that all of the other allied groups took during the same phase.
-    When resolving these effects, assume that actions outside of your allied group resolve before actions inside of your allied group, as long as they don't alter the effects of your own actions.
-    For example, you cannot avoid an enemy attack simply by moving away from them.
-    However, an enemy's attack does not interrupt your movement - even if it knocks you unconscious.
-    You simply fall unconscious at your new location after the movement.
-
-    Once all of the actions have been globally resolved, the phase ends.
-    In a typical combat, this just means that the GM will tell you what the monsters did to you after you tell the GM what you did to them.
-
-    With this system, it's possible for two combatants to kill each other during the same phase, leaving both dead!
-    This might seem strange if you're used to other games that always resolve one action at a time.
-    However, this situation is not uncommon in fantasy fiction, and it's certainly possible in real life.
-
-    \subsubsection{Delayed and Repeated Effects}
-      Some abilities cause additional attacks or effects ``during your next action'' or ``during each of your subsequent actions''.
-      Your action happens when you take your turn during the \glossterm{action phase}.
-      You can choose when those effects happen during that turn.
-      Typically, you would resolve them first so you know their results, but you can do that after your other actions if you want.
-      You can't split those automatic effects from your other actions in the turn order, just like you can't take your \glossterm{minor action} separately from your \glossterm{standard action}.
-
-    \subsubsection{Swift Abilities}\label{Swift Abilities}
-      Abilities with the \abilitytag{Swift} tag resolve differently from most actions.
-      Swift abilities resolve before all non-Swift abilities, so they can change the results of your enemy's actions.
-      However, Swift abilities are always simple, and cannot interrupt actions or make attack rolls.
-      You declare Swift abilities during your normal turn within your allied group, and you don't have to go first within your group or do anything special to use them.
-
-      For example, the \ability{total defense} ability gives you a bonus to your defenses during the current phase.
-      That ability has to resolve before your enemies attack you during that phase, or else it would be pointless.
-      Some abilities have only part of their effect resolve early.
-      For example, the \textit{reckless attack} ability immediately reduces your defenses, which affects attacks against you during the current phase, and makes a \glossterm{strike} with the normal timing.
-
-    \subsubsection{Action Resolution Summary}
-      This is a comprehensive list of all possible action timings in case it is particularly important.
-      In practice, you should almost never need to care about this detail, and doing things slightly out of order generally doesn't matter.
-
-      \begin{enumerate*}
-        \item Round begins - ``start of round'' resolve globally
-        \item Movement phase begins - ``start of phase'' effects resolve globally
-        \item Movements resolve globally, using \glossterm{initiative} checks when strictly necessary
-        \item Movement phase ends - ``end of phase'' effects resolve globally
-        \item Action phase begins - ``start of phase'' effects resolve globally
-        \item \abilitytag{Swift} abilities resolve globally
-        \item Actions of your allied group resolve locally
-        \item Actions of other allied groups resolve locally
-        \item Actions of each allied group are announced, and resolve globally
-        \item Action phase ends - ``end of phase'' effects resolve globally
-        \item Round ends - ``end of round'' effects resolve globally
-      \end{enumerate*}
-
-    \subsubsection{Deciding Action Order}\label{Deciding Action Order}
-      Try not to spend too much time on the exact order of everyone's actions within your allied group.
-      Most of the time, the exact order doesn't matter.
-      It's generally fine to just start rolling dice if you already know what you're going to do, and just act in the order that people decide their actions.
-      The GM can help resolve situations where this is ambiguous.
-
-    \subsubsection{Multi-Group Battles}\label{Multi-Group Battles}
-      Sometimes, there might be more than two groups in a battle.
-      This works in basically the same way as a two-sided battle.
-      Each allied group resolves sequentially with itself, but simultaneously with all enemy groups.
-      It's possible for two different groups to attack and kill the same creature, which wastes some of their actions.
-      That's a natural consequence of not coordinating effectively.
-
-    \subsubsection{Group Size Limits}\label{Group Size Limits}
-      There is a limit to how many creatures can coordinate in combat.
-      In general, no more than twenty creatures can constitute an allied group that resolves sequentially with itself.
-      Larger groups than that are still allies, but they must resolve actions within their group without perfect knowledge of or coordination with other allied groups.
-
+  % TODO: move to a more relevant location
   \subsection{Simultaneous Damage and Healing}\label{Simultaneous Damage and Healing}
-    If you regain hit points and take damage simultaneously, apply all damaging effects before applying any healing effects.
-    This means you gain and apply the effects of any vital wounds before you are healed.
-    Most healing abilities are \abilitytag{Swift}, so this situation should be uncommon.
+    If you regain hit points and take damage simultaneously, add together all of the modifiers to your hit points before checking if you gained a vital wound or exceeded your maximum hit points.
+    For example, suppose you end your turn with 5 hit points out of a maximum of 10.
+    At the end of your turn, you regenerate to heal 20 hit points and burn for 10 damage.
+    You would end up at 10 hit points, having not gained a vital wound.
 
-  \subsection{Conflicting Actions}\label{Conflicting Actions}
-    Sometimes, actions that occur in the same phase can be mutually impossible.
-    Almost all conflicting actions are the result of competing movements.
-    When actions conflict, each creature involved rolls an \glossterm{initiative} check.
-    Your initiative modifier is equal to your Dexterity.
+\section{Initiative}\label{Initiative}
+  When combat starts, you can act independently, or you can choose an \glossterm{ally} that you can see and hear to lead you.
+  If you act independently, you roll \glossterm{initiative}.
+  Initiative is neither an attack nor \glossterm{check}.
+  You just roll 1d10 and keep the result.
+  A few special abilities can give you a bonus to your initiative.
 
-    % This may be too complicated?
-    Starting from the highest check result and continuing to the lowest, each creature immediately resolves its chosen action.
-    Creatures that resolve their action afterward accomplish as much of their intended action as possible before being blocked or otherwise prevented.
-    For example, if three different creatures attempt to move into the same space, only the creature with the highest initiative check would actually enter that space.
-    The other two creatures would take their intended path, but they would interrupt their movement when they cannot proceed farther, generally because they run into the space occupied by the first creature.
+  If you choose an ally to lead you, you use the result of their initiative check instead of rolling yourself.
+  Either way, this determines your initiative result.
 
-    In general, directly conflicting actions are rare.
-    Most movements do not conflict - even reactive movements, such as when one creature attempts to follow a withdrawing creature.
-    In that case, no initiative check is necessary.
-    Both creatures simply move as far as they can, and the creatures' relative \glossterm{speeds} determine who is more successful.
+  Initiative order proceeds from the highest initiative result to the lowest.
+  If two creatures have the same initiative result, the higher initiative modifier wins.
+  If they are still tied, they independently roll initiative against each other to determine who acts first.
 
-    This does make it possible for creatures to be ``stranded'' out of melee range of any attackers.
-    Player characters are normally allowed to break this symmetry by reactively using the \textit{sprint} ability, while monsters cannot sprint.
-    This can help prevent melee characters from feeling stuck or useless.
-    In addition, the \ability{charge} universal ability can be helpful in such cases.
+  If you lead your allies during initiative, you must clearly and obviously communicate with them.
+  This generally requires motion and noise which make your presence known to enemies.
+  A \glossterm{difficulty value} 5 Awareness check is enough to recognize your presence and identify that you are acting as a leader.
+  Similarly, you can identify the leader in enemy groups with a DV 5 Awareness check.
 
-    \subsubsection{Only One Movement Per Phase}\label{Only One Movement Per Phase}
-      Any effects that would change the same creature's location in the same phase are conflicting, and only one is applied.
-      For example, you can't move your full speed onto a mount, and then have that mount move with you in the same phase.
-      You also can't move and then have an ally pick you up or shove you to move you farther.
-      Only the first effect that would change your location is applied, and all other effects are ignored.
-      % TODO: how do self-movements interact with forced movement imposed by enemies in the same phase?
+  \subsection{Initiative Groups}\label{Initiative Groups}
+    Once everyone in a combat has determined their initiative order, allies with no enemies between them in the initiative order are bundled into initiative groups.
+    Each initiative group gets a single shared turn.
+    Within that turn, each creature in the initiative group can take actions in any order.
+
+    Once you have started an action, you must complete it before any creature in the initiative group can take another action.
+    As a special case, you can use \glossterm{free actions} and \glossterm{minor actions} during the resolution of your own \glossterm{move actions}.
+    For example, you can walk up to a door, open it, and continue through the door (see \pcref{Manipulating Objects}).
+    However, you can't move up to a creature, use a standard action to attack it, and move away with the same move action.
+
+    After all creatures in an initiative group taken all of their intended actions, the next initiative group can act.
+    Since your whole initiative group shares a turn, effects that last "until the end of your turn" last until the end of your full initiative group's turn, regardless of when you take your actions during that turn.
+
+  \subsection{Initiative Example}
+    Alice, Bob, Carol, and Dave are player characters in an adventuring party.
+    They come across a group of goblins led by a troll.
+    Alice and Dave decide to act independently, while Bob declares Carol as his leader.
+    The goblins all declare the troll as their leader.
+
+    When initiative is rolled, Alice rolls an 4, Dave rolls a 6, the goblin shaman rolls a 7, and Carol rolls a 9.
+    Bob and the individual goblins don't roll initiative, since they designated leaders.
+    Alice and Dave are grouped together, since there are no enemies between them.
+    There are three turns in the final combat order:
+
+    \begin{enumerate}
+      \item Bob and Carol
+      \item The troll and goblins
+      \item Alice and Dave
+    \end{enumerate}
+
+  \subsection{Deciding Action Order}\label{Deciding Action Order}
+    Try not to spend too much time on the exact order of everyone's actions within your initiative group.
+    Most of the time, the exact order doesn't matter.
+    It's generally fine to just start rolling dice if you already know what you're going to do, and just act in the order that people decide their actions.
+    The GM can help resolve situations where this is ambiguous.
+
+  \subsection{Delaying Your Turn}
+    You can freely delay your turn in a round to join a later initiative group.
+    However, you can't join in the middle of an enemy initiative group to try to break it up.
+    You can only join allied initiative groups or create a new initiative group after an already existing enemy initiative group.
+
+    When you delay your turn, any effects that would have happened at the start or end of your turn still happen at your original initiative order.
+    You can't extend the duration of \brief effects by delaying your turn.
+
+  % TODO: solve the peasant railgun in a sequential initiative system
+  % \subsection{Group Size Limits}\label{Group Size Limits}
+  %   There is a limit to how many creatures can coordinate in combat.
+  %   In general, no more than twenty creatures can constitute an initiative group.
+  %   Larger groups than that are still allies, but they must resolve actions within their group without perfect knowledge of or coordination with other allied groups.
 
 % TODO: Clean up this wording, this whole section is awkward with the movement -> move action change
-\section{Movement and Positioning}\label{Movement and Positioning}
+\section{Basic Movement}\label{Basic Movement}
   This section describes how creatures move and position themselves in combat.
 
-  \subsection{Move Actions}\label{Move Actions}
-    During each \glossterm{movement phase}, you can use one \glossterm{move action}.
-    You can also move during the \glossterm{action phase} with the \ability{sprint} ability (see \pcref{Sprint}), or by taking a \glossterm{move action} in place of your standard action.
-    Most move actions change your location on the battlefield.
-
   \subsection{Movement Speed}\label{Movement Speed}
-    If an ability references your ``speed'' without additional details, it is referring to your movement speed.
-    Your total movement speed is normally equal to your \glossterm{base speed}, which is derived from your size (see \pcref{Size in Combat}).
-    Some abilities can modify your movement speed.
-    At the start of each phase, your available movement speed becomes equal to your total movement speed.
-    Any movement you make during that phase subtracts from your available movement speed until it reaches 0.
+    Your \glossterm{speed} is how far you can move during a typical round.
+    Your speed is normally equal to your \glossterm{base speed}, which is derived from your size (see \pcref{Size in Combat}).
+    Some abilities can modify your speed.
+    At the start of your turn, your available movement becomes equal to your speed.
+    Any movement you make subtracts from your available movement until it reaches 0, which prevents you from moving farther.
+    Some abilities can increase your available movement, including above your speed.
 
     Almost all creatures have a walking movement mode, which represents their ability to move across mostly flat terrain.
     For details about other forms of movement, such as flying and swimming, see \pcref{Movement Modes}.
 
-    You can take \glossterm{free actions} and \glossterm{minor actions} in the middle of movement.
-    For example, you can walk up to a door, open it, and continue through the door (see \pcref{Manipulating Objects}).
+    \subsubsection{Shared Movement Limits}\label{Shared Movement Limits}
+      Any non-forced movement that moves you subtracts from your available movement, even if you aren't the one causing the movement.
+      If your available movement reaches zero, you can't be moved any farther by non-forced movement, even if you're being carried by an ally.
+      For example, you can't move your full speed onto a mount and then have that mount move with you in the same round.
+      You can still be moved by \glossterm{push}, \glossterm{fling}, and teleportation effects.
 
-  \subsection{Movement Abilities}\label{Movement Abilities}
-
-    Almost all creatures can use these abilities to move around a battlefield.
+  \subsection{Move Action Abilities}\label{Move Action Abilities}
+    Each of these abilities requires a \glossterm{move action} to use.
     The most common movement ability is \ability{hustle}, which simply moves you to a location.
     You could think of characters as using the hustle ability whenever they move while not actively engaged in combat, but it's not generally useful to think about narrative movements in terms of combat abilities.
 
-    Other movement abilities are reactive, allowing you to move automatically in response to the movement of other creatures.
-    For example, you can try to follow a creature wherever it goes that round.
-    In all cases, if you run out of movement speed before accomplishing your intended task, you simply stop where you ran out of movement.
-
-    The \ability{block}, \ability{follow}, and \ability{withdraw} reactive abilities are specifically described below.
-    However, you can come up with other reactive movements.
-    The main requirement is that a reactive movement must have a simple criterion for determining how you move based on easily observable events.
-    Secondarily, reactive movements should be simple to resolve.
-    If you find yourself rolling a lot of initiative checks to get through the movement phase, you're probably trying to make overly complicated movements.
-
     \begin{activeability}{Block}{Move action}
-      \abilitytags \abilitytag{Swift}
       \rankline
       When you use this ability, choose a creature you can see.
-      During the current phase, whenever that creature attempts to move from a space adjacent to you into another space adjacent to you, you can attempt to block its movement.
-      This includes a creature whose path takes it through two consecutive spaces adjacent to you, even if neither the creature's location at the start of the phase nor its intended location at the end of the phase are adjacent to you.
-      When you do, make an opposed \glossterm{initiative} check against the target.
-      If you beat it on the initiative check, it must spend additional movement equal to one of your relevant movement speeds to move from its space.
+      Until your next turn, the next time the target attempts to move out of a space adjacent to you, you attempt to block its movement.
+      When you do, make an opposed \glossterm{initiative} check against it.
+      If you beat it on the initiative check, it must spend additional movement equal to your available movement in order to move from its space.
+      This consumes all of your available movement.
       If it cannot, it stops moving.
       This represents you automatically repositioning yourself to block its movement.
 
-      If a creature has the ability to move through your space, it is unaffected by this additional movement cost.
+      If a creature has the ability to move through your space, or if you stop being able to see it and react to its movements, it is unaffected by this additional movement cost.
       If multiple creatures are able to block the same creature from moving, it must pay all additional movement costs, which generally keeps it stuck in place.
     \end{activeability}
 
@@ -385,131 +283,31 @@
       This ability requires touching a solid vertical surface with two \glossterm{free hands}, or with one free hand if you take a \minus5 penalty to your Climb check.
       Make a Climb check to move along the surface.
       The \glossterm{difficulty value} is based on the surface (see \pcref{Climb}).
-      Success means that you move along the surface to a location, up to a maximum distance equal to the vertical size of your space (see \pcref{Size Categories}).
-      Critical success means the maximum distance you can move is doubled.
+      Success means that you move along the surface to a location.
+
+      % TODO: a slow climb speed technically subtracts more from your available movement than not having a climb speed?
+      If you have a climb speed, you use that to determine the maximum distance you can move with this ability.
+      Otherwise, you move a maximum distance equal to the vertical size of your space (see \pcref{Size Categories}).
+      Critical success means you can use twice the vertical size of your space instead.
     \end{activeability}
 
-    \begin{activeability}{Follow}{Move action}
-      \rankline
-      Choose a creature you can see, and the maximum distance you want to follow it at.
-      During the current phase, you automatically move such that your distance to the target is no greater than your desired follow distance, up to the limit of your relevant movement speed.
-
-      If the target uses an ability that makes it impossible for you to follow its movement, such as teleporting or disappearing from your sight, it is harder for you to follow its movement.
-      If you can see its destination, such as if it teleported to a different location within your \glossterm{line of sight}, you must beat the target on an opposed \glossterm{initiative} check.
-      Success means that you can follow its movement normally.
-      If you fail at the initiative check, or if you cannot tell where the target went, you complete your movement as if the creature was still at the location where it disappeared.
-    \end{activeability}
-
+    % TODO: weird wording
     \begin{activeability}{Hustle}{Move action}
       \rankline
       Choose a path that you want to travel.
-      You travel that path, up to the limit of your relevant movement speed.
+      You travel that path, up to the limit of your available movement.
     \end{activeability}
 
     \begin{activeability}{Swim Forward}{Move action}
       \rankline
-      This ability requires being immersed in a liquid like water and using two \glossterm{free hands}, or with one free hand if you take a \minus5 penalty to your Swim check.
+      This ability requires being immersed in a liquid like water and using two \glossterm{free hands}, or using one free hand if you take a \minus5 penalty to your Swim check.
       Make a Swim check to move through the liquid.
       The \glossterm{difficulty value} is based on the turbulence of the liquid (see \pcref{Swim}).
-      Success means that you move through the liquid, up to a maximum distance equal to a quarter of the \glossterm{base speed} for your size (see \pcref{Size Categories}).
-      Critical success means the maximum distance you can move increases to half of your base speed.
+
+      If you have a swim speed, you use that to determine the maximum distance you can move with this ability.
+      Otherwise, you move a maximum distance equal to a quarter of your \glossterm{base speed}.
+      Critical success means the maximum distance increases to half of your base speed.
     \end{activeability}
-
-    \begin{activeability}{Withdraw}{Move action}
-      \rankline
-      This ability functions like the \textit{follow} ability, except that you specify a minimum distance between you and the target instead of a maximum distance.
-      In addition, you can specify multiple targets and try to keep away from all of them.
-    \end{activeability}
-
-  \subsection{Movement Modes}\label{Movement Modes}
-    A \glossterm{movement mode} is a method of moving from one location to another.
-    The most common movement mode is walking, which allows creatures to move across the ground.
-    In addition, some abilities grant creatures the ability to move in unusual ways.
-    These forms of movement are described here.
-    Each of your movement modes has an associated \glossterm{speed category} (see \pcref{Movement Speed}).
-
-    \parhead{Burrowing}
-    A creature with a \glossterm{burrow speed} can move through solid dirt and loose earth in any direction, even vertically.
-    Unless otherwise noted, a burrow speed does not allow a creature to travel through rock or harder substances.
-    It does not leave behind a usable tunnel for other creatures.
-
-    While burrowing, the earth and dirt around you usually blocks \glossterm{line of sight} and \glossterm{line of effect}, preventing you from using ranged attacks of any kind.
-    You can partially emerge from a surface while burrowing.
-    While partially emerged, you have \glossterm{cover} against all attacks but can otherwise fight normally.
-
-    \parhead{Climbing}
-    A creature with a \glossterm{climb speed} can move along vertical surfaces.
-    It must still make a Climb check to move in challenging conditions, such as slippery walls (see \pcref{Climb}).
-    A creature that is climbing without a \glossterm{climb speed} takes a \minus2 penalty to its \glossterm{accuracy} and Armor and Reflex defenses.
-
-    \parhead{Flying}
-    A creature with a \glossterm{fly speed} can fly through the air both horizontally and vertically.
-    Flying is more complicated than some other movement modes.
-    For details, see \pcref{Aerial Movement}.
-
-    \parhead{Gliding}\nonsectionlabel{Gliding}
-    A creature with a glide speed can glide through the air in a strictly descending path.
-    Gliding is more complicated than some other movement modes.
-    For details, see \pcref{Aerial Movement}.
-
-    \parhead{Swimming}
-    A creature with a \glossterm{swim speed} can move through liquids like water.
-    It must still make a Swim check to move in challenging conditions, such as stormy seas (see \pcref{Swim}).
-    A creature that is in water without a \glossterm{swim speed} takes a \minus2 penalty to its \glossterm{accuracy} and Armor and Reflex defenses.
-    For details, see \pcref{Fighting In Water}.
-
-    \parhead{Walking}
-    A creature with a walk speed can move across mostly flat surfaces, like the ground.
-
-  \subsection{Speed Categories}\label{Speed Categories}
-    A creature may move particularly slowly with one movement mode and more quickly with a different movement mode.
-    There are three speed categories: fast, average, and slow.
-    If an ability gives you an alternate movement mode and doesn't specify a speed category, you move at average speed with that movement mode.
-    \begin{raggeditemize}
-      \item Fast: Moving 10 feet with this movement mode costs 5 feet from the creature's speed.
-        The first square costs 5 feet of speed, and then it gets the second square for free.
-        When moving on diagonals, the first two diagonals each cost 5 feet of speed and the third one is free.
-      \item Average: Moving 5 feet with this movement mode costs 5 feet from the creature's speed.
-        When moving on diagonals, the first diagonal costs 5 feet of movement and the second costs 10.
-      \item Slow: Moving 5 feet with this movement mode costs 10 feet from the creature's speed.
-        When moving on diagonals, each diagonal costs 15 feet of movement.
-    \end{raggeditemize}
-
-  \subsection{Combining Movement Modes}
-    You can move using multiple different movement modes in the same phase in any order.
-    Each distance moved subtracts from your available speed during that phase, using the appropriate modifiers for fast or slow movement modes.
-
-    For example, assume you have a 40 foot base speed, an average walk speed, and a slow swim speed.
-    If you swim 10 feet, that would cost 20 feet of movement.
-    You could then use your remaining speed to walk 20 feet, for a total of 30 feet travelled.
-
-  \subsection{Jumping}\label{Jumping}
-    Creatures with legs can jump as part of movement.
-    When you jump, choose a destination square where your jump ends.
-    You must be touching a solid surface to jump.
-
-    % Human with 0 strength jumps 5 feet.
-    % Human with 2 strength jumps 15 feet.
-    % Human with 4 strength jumps 25 feet, which is almost a world record.
-    A jump's maximum horizontal distance is normally equal to a quarter of your \glossterm{base speed} plus 5 feet per 2 Strength.
-    Modifiers to your current speed, such as the \ability{sprint} ability, do not affect your jumping distance.
-    If you are trained with the Jump skill, the distance you add from your Strength is instead equal to 5 feet per Strength, to a minimum of \plus5 feet.
-    A jump's maximum vertical height is equal to half your maximum horizontal distance.
-    Note that if you jump 20 feet into the air or more, you may take falling damage when you land (see \pcref{Falling Damage}).
-    % TODO: minimum jump height? too complicated?
-
-    If your destination square is in midair, you do not start falling until the next phase.
-    This allows you to jump during the movement phase and act in midair during the action phase.
-    Unlike normal for being \glossterm{midair}, you do not suffer penalties to your Armor and Reflex defense for being partway through a jump that you initiated.
-    Narratively, this represents you timing your jump so you can take a useful action while jumping.
-    You don't just hover in midair.
-
-  \subsection{Jumping Speed Limits}
-    The maximum distance that you can travel by jumping is equal to your remaining \glossterm{speed} during the current phase.
-    This distance is measured only for the farthest extent that you travel from your starting location, not for a round trip or for the entire distance travelled along the arc of your jump.
-    This limits both your maximum horizontal distance and your maximum vertical height.
-    For example, if your speed is thirty feet and you start by walking ten feet, you can jump no more than twenty feet forward, or fifteen feet forward and five feet vertically, and so on.
-    If your jump distance is extremely high and your speed is low, you may need to use the \ability{sprint} ability to make use of your full jumping potential (see \pcref{Sprint}).
 
   \subsection{Measuring Movement}
 
@@ -550,7 +348,97 @@
     Light undergrowth provides \glossterm{concealment}.
 
     \subparhead{Heavy Undergrowth}\nonsectionlabel{Heavy Undergrowth}
-    Heavy undergrowth provides \glossterm{concealment} and is \glossterm{difficult terrain}, which increases the movement cost required to move out of each square by 5 feet.
+    Heavy undergrowth provides \glossterm{concealment} and is \glossterm{difficult terrain}.
+
+\section{Advanced Movement}
+
+  \subsection{Movement Modes}\label{Movement Modes}
+    A \glossterm{movement mode} is a method of moving from one location to another.
+    The most common movement mode is walking, which allows creatures to move across the ground.
+    In addition, some abilities grant creatures the ability to move in unusual ways.
+    These forms of movement are described here.
+    Each of your movement modes has an associated \glossterm{speed category} (see \pcref{Speed Categories}).
+
+    \parhead{Burrowing}
+    A creature with a \glossterm{burrow speed} can move through solid dirt and loose earth in any direction, even vertically.
+    Unless otherwise noted, a burrow speed does not allow a creature to travel through rock or harder substances.
+    It does not leave behind a usable tunnel for other creatures.
+
+    While burrowing, the earth and dirt around you usually blocks \glossterm{line of sight} and \glossterm{line of effect}, preventing you from using ranged attacks of any kind.
+    You can partially emerge from a surface while burrowing.
+    While partially emerged, you have \glossterm{cover} against all attacks but can otherwise fight normally.
+
+    \parhead{Climbing}
+    A creature with a \glossterm{climb speed} can move along vertical surfaces.
+    It must still make a Climb check to move in challenging conditions, such as slippery walls (see \pcref{Climb}).
+    A creature that is climbing without a \glossterm{climb speed} takes a \minus2 penalty to its \glossterm{accuracy} and Armor and Reflex defenses.
+
+    \parhead{Flying}
+    A creature with a \glossterm{fly speed} can fly through the air both horizontally and vertically.
+    Flying is more complicated than some other movement modes.
+    For details, see \pcref{Aerial Movement}.
+
+    \parhead{Gliding}\nonsectionlabel{Gliding}
+    A creature with a glide speed can glide through the air in a strictly descending path.
+    Gliding is more complicated than some other movement modes.
+    For details, see \pcref{Aerial Movement}.
+
+    \parhead{Swimming}
+    A creature with a \glossterm{swim speed} can move through liquids like water.
+    It must still make a Swim check to move in challenging conditions, such as stormy seas (see \pcref{Swim}).
+    A creature that is in water without a \glossterm{swim speed} takes a \minus2 penalty to its \glossterm{accuracy} and Armor and Reflex defenses.
+    For details, see \pcref{Fighting In Water}.
+
+    \parhead{Walking}
+    A creature with a walk speed can move across mostly flat surfaces, like the ground.
+
+  \subsection{Speed Categories}\label{Speed Categories}
+    A creature may move particularly slowly with one movement mode and more quickly with a different movement mode.
+    There are three speed categories: fast, average, and slow.
+    If an ability gives you an alternate movement mode and doesn't specify a speed category, you move at average speed with that movement mode.
+    \begin{raggeditemize}
+      \item Fast: Moving 10 feet with this movement mode costs 5 feet from your speed.
+        The first square costs 5 feet of speed, and then it gets the second square for free.
+        When moving on diagonals, the first two diagonals each cost 5 feet of speed and the third one is free.
+      \item Average: Moving 5 feet with this movement mode costs 5 feet from your speed.
+        When moving on diagonals, the first diagonal costs 5 feet of movement and the second costs 10.
+      \item Slow: Moving 5 feet with this movement mode costs 10 feet from your speed.
+        When moving on diagonals, each diagonal costs 15 feet of movement.
+    \end{raggeditemize}
+
+  \subsection{Combining Movement Modes}
+    You can move using multiple different movement modes in the same turn in any order.
+    Each distance moved subtracts from your available movement during that turn, using the appropriate modifiers for fast or slow movement modes.
+
+    For example, assume you have a 40 foot base speed, an average walk speed, and a slow swim speed.
+    If you swim 10 feet, that would cost 20 feet of movement.
+    You could then use your remaining speed to walk 20 feet, for a total of 30 feet travelled.
+
+  \subsection{Jumping}\label{Jumping}
+    Creatures with legs can jump as part of movement.
+    When you jump, choose a destination square where your jump ends.
+    You must be touching a solid surface to jump.
+
+    % Human with 0 strength jumps 5 feet.
+    % Human with 2 strength jumps 15 feet.
+    % Human with 4 strength jumps 25 feet, which is almost a world record.
+    A jump's maximum horizontal distance is normally equal to a quarter of your \glossterm{base speed} plus 5 feet per 2 Strength.
+    Modifiers to your available movement, such as the \ability{sprint} ability, do not affect your jumping distance.
+    If you are trained with the Jump skill, the distance you add from your Strength is instead equal to 5 feet per Strength, to a minimum of \plus5 feet.
+    A jump's maximum vertical height is equal to half your maximum horizontal distance.
+    Note that if you jump 20 feet into the air or more, you may take falling damage when you land (see \pcref{Falling Damage}).
+    % TODO: minimum jump height? too complicated?
+
+    If your destination square is in midair, you do not start falling until the end of your turn.
+    This allows you to jump using a \glossterm{move action} and then take a \glossterm{standard action} while midair.
+    Unlike normal for being \glossterm{midair}, you do not suffer penalties to your Armor and Reflex defense for being partway through a jump that you initiated.
+
+    \subsubsection{Jumping Speed Limits}
+      Movement while jumping subtracts from your \glossterm{available movement} just like any other movement.
+      This distance is measured only for the farthest extent that you travel from your starting location, not for a round trip or for the entire distance travelled along the arc of your jump.
+      This limits both your maximum horizontal distance and your maximum vertical height.
+      For example, if your speed is thirty feet and you start by walking ten feet, you can jump no more than twenty feet forward, or fifteen feet forward and five feet vertically, and so on.
+      If your jump distance is extremely high and your speed is low, you may need to use the \ability{sprint} ability to make use of your full jumping potential (see \pcref{Sprint}).
 
   \subsection{Squeezing}\label{Squeezing}
     In some cases, you may have to squeeze into or through an area that isn't as wide as the space you take up.
@@ -558,8 +446,8 @@
     While \squeezing, you take a \minus2 penalty to your Armor and Reflex defenses.
     You can squeeze into tighter spaces with the Flexibility skill (see \pcref{Flexibility}).
 
-    Squeezing is only checked at the start of each phase.
-    If you temporarily enter a creature's space during a phase and leave it during that same phase, neither you nor that creature are ever squeezing.
+    Squeezing is only checked at the start of each turn.
+    If you temporarily enter a creature's space during a turn and leave it during that same turn, neither you nor that creature are ever squeezing.
 
     Creatures that take up multiple squares take up half their normal number of squares while squeezing.
     For example, a Large creature who normally takes up four spaces takes up two spaces while squeezing.
@@ -605,8 +493,8 @@
   Any land-based creature takes a \minus4 penalty to its Armor and Reflex defenses while it is \glossterm{midair}, even if it has a fly speed or glide speed.
   This penalty does not apply to creatures who are native to the air, such as birds and monsters with a fly or glide speed but no walk speed.
 
-  A flying or gliding creature must make a \glossterm{movement} using its fly or glide speed during both the \glossterm{movement phase} and the \glossterm{action phase}.
-  If it does not move during a phase, it falls by 300 feet at the end of that phase (see \pcref{Falling Damage}).
+  A flying or gliding creature must make a \glossterm{movement} using its fly or glide speed during its turn.
+  If it does not move during a turn, it falls by 300 feet at the end of that turn (see \pcref{Falling Damage}).
   \trait{Floating} creatures do not fall in this way.
 
   All \glossterm{mundane} flight abilities require air to push against, so they do not function in places without an atmosphere.
@@ -624,7 +512,7 @@
 
   \subsection{Flight}\label{Flight}
     A creature with a fly speed can use a \glossterm{movement} to move up to its fly speed in any direction, even vertically.
-    It can also remain in place, though it must still make a \glossterm{movement} each phase to avoid falling.
+    It can also remain in place, though it must still make a \glossterm{movement} each turn to avoid falling.
 
     \parhead{Height Limit}\nonsectionlabel{Height Limit} Most abilities that grant a fly speed also have a height limit for the maximum height you can easily reach with that fly speed.
     This height measures your maximum distance above a supporting object.
@@ -746,17 +634,18 @@
   \begin{dtable!*}
     \lcaption{Universal Combat Abilities}
     \begin{dtabularx}{\textwidth}{l l X l}
-      \tb{Ability}       & \tb{Usage Time}  & \tb{Brief Description}                        & \tb{Tags}                                      \tableheaderrule
+      \tb{Ability}       & \tb{Usage Time}  & \tb{Short Description}                        & \tb{Tags}                                      \tableheaderrule
       Charge             & Standard         & Move and make a strike                        & \tdash                                         \\
       Desperate Exertion & Non-action       & Reroll an attack or check with a \plus2 bonus & \tdash                                         \\
       Escape Grapple     & Standard         & Stop being grappled                           & \abilitytag{Brawling}                          \\
       Grapple            & Standard         & Start grappling with a foe                    & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
-      Maintain Grapple   & Free action      & Continue grappling with a foe                 & \abilitytag{Brawling}, \abilitytag{Swift}      \\
+      Maintain Grapple   & Free action      & Continue grappling with a foe                 & \abilitytag{Brawling}                          \\
       Ready Reaction     & Standard         & Ready an action                               & \tdash                                         \\
-      Recover            & Standard         & Regain HP, remove conditions                  & \abilitytag{Swift}                             \\
+      Recover            & Standard         & Regain HP, remove conditions                  & \tdash                                         \\
+      Run                & Standard         & Triple your available movement                & \tdash                                         \\
       Shove              & Move or standard & Move a foe                                    & \abilitytag{Brawling}                          \\
-      Sprint             & Move or standard & Move at double speed                          & \tdash                                         \\
-      Total Defense      & Standard         & Gain \plus2 to all defenses                   & \abilitytag{Swift}                             \\
+      Sprint             & Free             & Double your available movement                & \tdash                                         \\
+      Total Defense      & Standard         & Gain \plus2 to all defenses                   & \tdash                                         \\
       Throw              & Standard         & Throw a held object                           & \tdash                                         \\
       Trip               & Standard         & Trip a foe                                    & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
     \end{dtabularx}
@@ -764,8 +653,7 @@
 
   \begin{activeability}{Charge}{Standard action}
     \rankline
-    After using this ability, you \glossterm{briefly} take a \minus2 penalty to all defenses.
-    Since this ability does not have the \abilitytag{Swift} tag, it does not affect attacks against you during the current phase.
+    After using this ability, you \briefly take a \minus2 penalty to all defenses.
 
     Move up to your speed in a single straight line.
     At the end of your movement, you can make a melee \glossterm{strike}.
@@ -791,7 +679,7 @@
     Make a \glossterm{brawling attack} against any number of creatures that you are grappled by.
     You can use the Flexibility skill in place of your brawling accuracy (see \pcref{Flexibility}).
 
-    The defense of each creature is equal to the attack result of its \ability{maintain grapple} ability this round, or 0 if it did not use that ability.
+    The defense of each creature is equal to the attack result of its \ability{maintain grapple} ability, or 0 if it did not use that ability.
     % TODO: awkward wording
     For each target, if you hit that target with this attack, it stops being grappled by you and you stop being grappled by it.
   \end{activeability}
@@ -807,40 +695,42 @@
   \end{activeability}
 
   \begin{activeability}{Maintain Grapple}{\glossterm{Free action}}
-    \abilitytags \abilitytag{Brawling}, \abilitytag{Swift}
+    \abilitytags \abilitytag{Brawling}
     \rankline
     % TODO: Awkward wording
-    You can use this ability once per round while you are grappling another creature.
+    You can use this ability once per turn while you are grappling another creature.
 
     Make a \glossterm{brawling attack} against each creature that you are grappling (see \pcref{Grappling}).
     This attack has no immediate effect.
-    The result of this roll determines how difficult it is for a creature to escape the grapple during the current round using the \textit{escape grapple} ability.
+    The result of this roll \briefly determines how difficult it is for a creature to escape the grapple using the \textit{escape grapple} ability.
     If you do not use this ability while you are in a grapple, creatures can easily escape the grapple with the \textit{escape grapple} ability.
   \end{activeability}
 
   \begin{activeability}{Ready Reaction}{Standard action}
-    \abilitytags \atSwift
     \rankline
-    When you use this ability, you declare another standard action that you intend to take during this phase as soon as it becomes possible.
+    When you use this ability, you declare another standard action that you intend to take as soon as it becomes possible.
     For example, you could declare your intent to make a melee strike against a creature that is not close to you, or cast a targeted spell on an enemy that you can't see behind a wall.
 
-    While your enemies are resolving their actions, if your intended action ever becomes possible, it happens.
-    Otherwise, you do nothing.
+    Until your next turn, if your intended action ever becomes possible, it happens.
     Any attacks you make in this way are \glossterm{reactive attacks}, so you can't use the \ability{desperate exertion} ability or similar effects.
     Your reaction resolves after the enemy has fully completed their action, even if the completion of that action would make your ability impossible again.
-    This means that you can't use this ability to kill an enemy before their attack hits you, and an enemy can't invalidate your reaction by briefly moving in range and then moving back out again.
+    This means that you can't use this ability to kill an enemy before their attack hits you, and an enemy can't invalidate your reaction by moving in range and then moving back out again in the same turn.
 
+    % TODO: you can become immune to reactions if you ready *all* of your actions
     You cannot react to the readied reaction of another creature.
     If your reaction becomes possible only as a result of the readied reaction of another creature, you do nothing.
   \end{activeability}
 
   \begin{activeability}{Recover}{Standard action}
-    \abilitytags \abilitytag{Swift}
     \abilitycost Two \glossterm{fatigue levels}, and you cannot use this ability again until you finish a \glossterm{short rest}.
     \rankline
     You regain half of your maximum \glossterm{hit points}.
     Then, you remove all \glossterm{conditions} affecting you.
-    Because this ability has the \abilitytag{Swift} tag, the removed conditions do not affect you during the current phase.
+  \end{activeability}
+
+  \begin{activeability}{Run}{Standard action}
+    \rankline
+    You add twice your \glossterm{speed} to your \glossterm{available movement}.
   \end{activeability}
 
   \begin{activeability}{Shove}{Standard action}
@@ -853,29 +743,17 @@
     Make a \glossterm{brawling attack} vs. Brawn against each target.
     If a target is not able to use any of its movement speeds, such as if it is being carried by a flying creature, its defense is treated as 0.
 
-    % Critical hit shove should be equivalent to moving without any limitation.
-    % This represents 
-    \hit You can move up to half your movement speed.
+    % Can't use crit for extra movement here to limit your ability to push party members in excess of their normal speed.
+    \hit You can move up to half your \glossterm{speed}, reducing your \glossterm{available movement} as normal.
     During this movement, you can \glossterm{push} each target 5 feet for each 5 feet that you move.
     If you push a target so it stops being adjacent to you, you stop being able to push it further.
     When pushing a target off of a ledge, if you move with the target over the edge to fall with them, it cannot make the normal reactive Climb check to grab the ledge (see \pcref{Push Effects}).
-    \crit If you are strong enough to carry the target, you can move up to your full movement speed.
   \end{activeability}
 
-  \begin{activeability}{Sprint}{Standard action}
-    % It's important that this can only be used with movements
-    % to prevent it from being abused with abilities like Shove?
-    % Is that clear in the text?
-    \abilitycost You can increase your \glossterm{fatigue level} by one to use this ability as a \glossterm{move action}.
+  \begin{activeability}{Sprint}{Free action}
+    \abilitycost One \glossterm{fatigue level}. You can only use this ability once per turn.
     \rankline
-    % TODO: Awkward wording
-    You can immediately take a \glossterm{move action} other than this ability.
-    For the duration of that movement, you double your speed.
-
-    You can use this ability in the middle of a phase after noticing that your movement is insufficient to keep up with an enemy's reactive movement (see \pcref{Movement Abilities}).
-    % TODO: flip this to penaltize the carried creature? But then it allows the old grapple nonsense
-    Normally, you cannot carry or move another creature in any way while using this ability.
-    If you use this ability, you must leave those creatures behind without moving them unless they spend a standard action to cling to you.
+    You add your \glossterm{speed} to your \glossterm{available movement}.
   \end{activeability}
 
   % Is this a fling effect? What happens if you throw someone into a wall?
@@ -897,10 +775,8 @@
   \end{activeability}
 
   \begin{activeability}{Total Defense}{Standard action}
-    \abilitytags \abilitytag{Swift}
     \rankline
-    You are \braced this round.
-    Because this ability has the \abilitytag{Swift} tag, this protects you from attacks during the current phase.
+    You are \briefly \braced.
   \end{activeability}
 
   \begin{activeability}{Trip}{Standard action}
@@ -1002,13 +878,10 @@
 
     Cover represents any obstacle that physically prevents you from striking your target, such as a tree or intervening creature.
     A creature or object behind cover gains a \plus2 bonus to Armor, Brawn, and Reflex defenses.
-    If an attack would miss the defense of a creature or object behind cover, the attack is applied to the obstacle instead of the intended target.
+    If an attack against any of those defenses would miss the defense of a creature or object behind cover, the attack is applied to the obstacle instead of the intended target.
     In the case of area attacks, this cannot cause an individual creature or object to be targeted or attacked twice by the same ability.
     This can protect creatures behind cover from attacks that deal damage on a miss.
     In addition, a creature behind cover can hide (see \pcref{Stealth}).
-
-    Cover is only relevant if the attacker has \glossterm{line of effect} to its target (see \pcref{Line of Effect}).
-    If you don't have line of effect, you generally can't attack the target at all, so the defense bonuses from cover don't matter.
 
     \subsubsection{Measuring Cover}
       To measure cover for a particular attack, draw a cone from the attack's point of origin to the two closest corners of the target's space.
@@ -1083,9 +956,6 @@
     Any creature that is not aware of the combat continues taking whatever actions it would normally be taking until it becomes aware of the combat.
     It is usually \unaware of all attacks until that point, though creatures expecting imminent attack may be \partiallyunaware.
 
-    If a surprise attack begins a combat, the creatures who initiate the attack can choose which phase to start in.
-    Generally, they should start in \glossterm{action phase}, though sometimes the \glossterm{movement phase} is more advantageous for the attackers.
-
     % TODO: This is a bad name; organize these better
 \section{Special Combat Rules}
 
@@ -1109,7 +979,7 @@
 
   \subsection{Mounted Combat}\label{Mounted Combat}
     \parhead{Horses in Combat} Warhorses and warponies can serve readily as combat steeds. Light horses, ponies, and heavy horses, however, are frightened by combat.
-    At the start of each round, you must make a \glossterm{difficulty value} 10 Ride check to control such a horse.
+    At the start of your turn, you must make a \glossterm{difficulty value} 10 Ride check to control such a horse.
     Success means you can act normally that round, directing the horse's movements as if it was trained for combat.
     Failure means that the horse acts of its own volition that round, usually fleeing in panic.
 
@@ -1135,7 +1005,7 @@
     Each creature you interact with in Rise is either an \glossterm{ally}, an \glossterm{enemy}, or neither.
     Some beneficial abilities only affect allies, and some offensive abilities only affect enemies.
 
-    You can choose how you consider each creature at the start of each \glossterm{phase}.
+    You can choose how you consider each creature at the start of your turn.
     You cannot consider yourself an \glossterm{ally} or an \glossterm{enemy}.
     While you are \unconscious, you treat all creatures as \glossterm{allies}.
 
@@ -1424,10 +1294,8 @@
     Sustained abilities have the \abilitytag{Sustain} tag.
     They last as long as you take an action to sustain them each round.
     The type of action required is always specified in the ability's tag, such as ``Sustain (standard)'' for a standard action, or in the ability's description.
-    Sustaining an ability is a \atSwift effect.
 
-    At the start of each \glossterm{action phase}, the ability is dismissed unless you take the appropriate action to sustain the ability.
-    This happens before your normal turn, so you and your allies can't gain the benefits of a sustained ability without you sustaining it.
+    At the start of your turn, the ability is dismissed unless you take the appropriate action to sustain the ability.
 
     Taking an action to sustain an ability only allows you to sustain a single use of that ability.
     While you have a sustained ability active, you can't sustain that same ability again, so using the ability twice does not allow you to sustain two instances of it.

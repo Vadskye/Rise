@@ -18,15 +18,13 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
     {
       name: 'Rocky Carapace',
 
-      // Double steeled + single defense would be 1 EA, but steeled and defense bonuses
-      // are slightly awkward together?
+      // Braced + fortified is 0.8 EA
       effect: `
-        You \\glossterm{briefly} are \\steeled and gain a +2 bonus to your Armor defense.
+        You are \\briefly \\braced and \\fortified.
       `,
       roles: ['turtle'],
-      tags: ['Manifestation', 'Swift'],
+      tags: ['Manifestation'],
     },
-    // TODO: add a cantrip
   ],
   spells: [
     {
@@ -71,7 +69,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         targeting: `
           When you cast this spell, you create a boulder in midair above your space and choose a target within \\medrange.
           If the area above you is occupied, this spell fails without effect.
-          During your next action, if that target is still within \\medrange, make a \\glossterm{reactive attack} vs. Armor against it.
+          At the start of your next turn, if that target is still within \\medrange, make a \\glossterm{reactive attack} vs. Armor against it.
           Otherwise, the boulder disappears and this spell is wasted.
         `,
       },
@@ -97,7 +95,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
 
           A meteor appears at the top of the area.
           Creatures can generally identify what area the meteor will fall into with a DV 10 Awareness check.
-          During your next action, the meteor crashes into the ground, and you make a \\glossterm{reactive attack} vs. Armor and Reflex against everything in a \\medarea radius of your chosen location.
+          At the start of your next turn, the meteor crashes into the ground, and you make a \\glossterm{reactive attack} vs. Armor and Reflex against everything in a \\medarea radius of your chosen location.
           Creatures under overhanging structures may have \\glossterm{cover} from the attack or be entirely excluded from the effect based on their location.
         `,
       },
@@ -297,19 +295,21 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
     {
       name: 'Stoneward',
 
+      // 0.5 + 0.4 EA
       effect: `
-         If you are \\glossterm{grounded} on stone, you are \\glossterm{briefly} \\braced and \\steeled.
+         If you are \\glossterm{grounded} on stone, you are \\briefly \\braced and \\fortified.
       `,
       rank: 2,
-      roles: ['focus'],
+      roles: ['turtle'],
     },
 
     {
       name: 'Draw Upon The Deepest Earth',
 
+      // 0.5 + 0.7 EA
       effect: `
-         If you are \\glossterm{grounded} on stone, you are \\glossterm{briefly} \\braced and \\maximized.
-         However, your movement speed is also \\glossterm{briefly} halved.
+         If you are \\glossterm{grounded} on stone, you are \\briefly \\braced and \\maximized.
+         However, your \\glossterm{speed} is also briefly halved.
       `,
       rank: 5,
       roles: ['focus'],
@@ -329,7 +329,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         targeting: `
           The earth shakes in a \\medarea radius \\glossterm{zone} from your location.
           Make an attack vs. Brawn and Reflex against everything in the area that is \\glossterm{grounded}.
-          During your next action, this effect \\glossterm{repeats} in the same area.
+          At the start of your next turn, this effect \\glossterm{repeats} in the same area.
         `,
       },
       narrative: `
@@ -354,7 +354,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         targeting: `
           The earth shakes in a \\medarea radius \\glossterm{zone} from your location.
           Make an attack vs. Reflex and Brawn against everything in the area that is \\glossterm{grounded}.
-          During your next action, this effect \\glossterm{repeats} in the same area.
+          At the start of your next turn, this effect \\glossterm{repeats} in the same area.
         `,
       },
       narrative: `
@@ -378,7 +378,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         targeting: `
           The earth shakes in a \\largearea radius \\glossterm{zone} from your location.
           Make an attack vs. Reflex and Brawn against everything in the area that is \\glossterm{grounded}.
-          During your next action, this effect \\glossterm{repeats} in the same area.
+          At the start of your next turn, this effect \\glossterm{repeats} in the same area.
         `,
       },
       narrative: `
@@ -398,7 +398,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankfive, and the target is \\glossterm{briefly} \\slowed.
+          \\damagerankfive, and the target is \\briefly \\slowed.
         `,
         injury: `
           If the target was already slowed by this ability, it is also swallowed by the earth as a \\glossterm{condition}.
@@ -492,7 +492,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       // 2.6 EA as sustain (minor). That's a rank 7 effect.
       attack: {
         hit: `
-          The target is \\glossterm{briefly} \\slowed.
+          The target is \\briefly \\slowed.
         `,
         targeting: `
           You create an area of intense gravity in a \\medarea radius \\glossterm{zone} within \\medrange.
@@ -588,18 +588,27 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       type: 'Attune',
     },
 
-    // Permanent steeled is 0.9 EA.
-    // Assume that you have some DR in 3 of the 5 rounds, maybe because you recovered.
-    // That makes this worth 0.5 EA?
     {
       name: 'Steelskin',
 
       effect: `
-        You are \\steeled.
-        At the end of each round, if you are \\glossterm{injured}, this effect is \\glossterm{suppressed}.
-        When you stop being injured, this effect is immediately resumed.
+        Whenever a damaging attack would get a \\glossterm{critical hit} against you, you automatically become \\glossterm{briefly} \\steeled, protecting you from the triggering attack.
+        Then, this effect is \\glossterm{dismissed}.
       `,
       rank: 1,
+      roles: ['attune'],
+      tags: ['Manifestation'],
+      type: 'Attune',
+    },
+
+    {
+      name: 'Greater Steelskin',
+
+      effect: `
+        Whenever a damaging attack would get a \\glossterm{critical hit} against you, you automatically become \\glossterm{briefly} \\steeled and \\fortified, protecting you from the triggering attack.
+        Then, this effect is \\glossterm{dismissed}.
+      `,
+      rank: 5,
       roles: ['attune'],
       tags: ['Manifestation'],
       type: 'Attune',
@@ -650,12 +659,12 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       name: 'Personal Gravitation',
 
       effect: `
-        Once per phase, while you are within 5 feet of an \\glossterm{unattended} object at least one size category larger than you, you can adjust your personal gravity as a \\glossterm{free action}.
+        Once during your turn, while you are within 5 feet of an \\glossterm{unattended} object at least one size category larger than you, you can adjust your personal gravity as a \\glossterm{free action}.
         When you do, gravity pulls you towards that object instead of in the normal direction.
         This allows you to walk normally on walls or even ceilings.
 
         Whenever you change the direction that gravity pulls you, you must make a \\glossterm{difficulty value} 10 Balance check to keep your feet.
-        Failure means you fall \\prone and your movement for that phase ends.
+        Failure means you fall \\prone and your movement ends.
       `,
       rank: 2,
       roles: ['attune'],
@@ -711,9 +720,9 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       functionsLike: {
         name: 'stonefist',
         exceptThat:
-          'the damage dealt by the weapon increases to 2d6, and it gains the \\abilitytag{Impact} weapon tag (see \\pcref{Weapon Tags}).',
+          'the damage dealt by the weapon increases to 2d6.',
       },
-      rank: 6,
+      rank: 5,
       roles: ['attune'],
       tags: ['Manifestation'],
       type: 'Attune',
@@ -758,20 +767,6 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       type: 'Sustain (attunable, minor)',
     },
 
-    {
-      name: 'Desperate Stoneskin',
-
-      effect: `
-        Whenever you use the \\ability{total defense} or \\ability{recover} ability, you can activate this ability.
-        If you do, your body becomes covered in stone for the rest of the round, and this ability is \\glossterm{dismissed}.
-        This makes you \\fortified and \\steeled.
-        This is a \\atSwift effect, so it protects you from attacks during the current phase.
-      `,
-      rank: 1,
-      roles: ['attune'],
-      tags: ['Manifestation'],
-      type: 'Attune',
-    },
     {
       name: 'Tremorsense',
 
@@ -818,33 +813,28 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       type: 'Attune (target)',
     },
 
-    // Double ally shield is 1 EA. We can do that at r1 with the downside.
+    // Any two shielded is 0.9 EA
     {
       name: 'Earthen Shield',
 
       effect: `
-        Choose yourself or an \\glossterm{ally} within \\medrange.
-        The target must be \\glossterm{grounded}.
-        It is \\glossterm{briefly} \\shielded.
-        If it moves from its location or stops being grounded, this effect immediately ends.
-        Because this is a \\abilitytag{Swift} ability, it affects attacks against the target during the current phase.
+        Choose up to two \\glossterm{grounded} creatures from among yourself and your \\glossterm{allies} within \\medrange.
+        Each target is \\briefly \\shielded.
+        If a target moves from its location or stops being grounded, this effect immediately ends on it.
       `,
       rank: 1,
       roles: ['boon'],
     },
 
-    // Double any two shielded is 1.4 EA
     {
-      name: 'Twinned Earthen Shield',
+      name: 'Mass Earthen Shield',
 
       effect: `
-        Choose up to two creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each target must be \\glossterm{grounded}.
-        Each is \\glossterm{briefly} \\shielded.
+        Choose up to five \\glossterm{grounded} creatures from among yourself and your \\glossterm{allies} within \\medrange.
+        Each target is \\briefly \\shielded.
         If a target moves from its location or stops being grounded, this effect immediately ends on it.
-        Because this is a \\abilitytag{Swift} ability, it affects attacks against each target during the current phase.
       `,
-      rank: 6,
+      rank: 5,
       roles: ['boon'],
     },
   ],

@@ -25,6 +25,7 @@
   Common Brawling abilities are described in \pcref{Universal Combat Abilities}.
 
   \abilitytagdef{Clinch} You gain a \plus2 accuracy bonus with this ability against creatures that are \grappled by you or are grappling you.
+  Clinch is also a \glossterm{weapon tag}.
 
   \abilitytagdef{Cold} Cold abilities draw energy out of the environment to cause their effects.
 
@@ -56,8 +57,10 @@
   \abilitytagdef{Impact} When you miss by 4 or less with a damaging Impact ability, you still deal half damage.
   The attack is still treated as a miss, and it has no effects other than immediate damage.
   For example, the target does not suffer any conditions that would normally result from a successful hit with the ability.
+  Impact is also a \glossterm{weapon tag}.
 
   \abilitytagdef{Keen} You gain a \plus2 \glossterm{accuracy} bonus with this ability for the purpose of determining whether you get a \glossterm{critical hit}.
+  Keen is also a \glossterm{weapon tag}.
 
   \abilitytagdef{Manifestation} Manifestation abilities create temporary constructs formed from raw magical energy.
   Objects and creatures created with Manifestation abilities seem real on the surface, but they have no internal structure.
@@ -84,6 +87,7 @@
   For details, see \pcref{Spell and Ritual Mechanics}.
 
   \abilitytagdef{Subdual} All damage dealt by this ability is \glossterm{subdual damage} (see \pcref{Subdual Damage}).
+  Subdual is also a \glossterm{weapon tag}.
 
   \abilitytagdef{Subtle} Subtle abilities have no visual or otherwise perceivable manifestation.
   Creatures successfully affected by Subtle abilities do not generally know that they are being influenced.
@@ -94,9 +98,6 @@
   The tag includes an action type, such as (minor), which indicates the type of action required to sustain the ability.
   If it also includes ``attunable'', you can choose to \glossterm{attune} to the effect instead of sustaining it every round.
   For details, see \pcref{Sustained Abilities}.
-
-  \abilitytagdef{Swift} Swift abilities take effect before non-Swift abilities used during the same phase.
-  For details, see \pcref{Swift Abilities}.
 
   \abilitytagdef{Trap} Trap abilities create triggered effects that punish trespassing.
   They create a powerful magical resonance around themselves that inhibits other barriers from being formed.
@@ -271,8 +272,8 @@
   While squeezing, a creature moves at half speed and takes a \minus2 penalty to its Armor and Reflex defenses.
   For details, see \pcref{Squeezing}.
 
-  \buffdef{steeled} A steeled creature cannot receive critical hits.
-  If an attack against it would be a critical hit, the attack is a normal hit instead.
+  \buffdef{steeled} A steeled creature takes no additional damage from \glossterm{critical hits}.
+  Any other special effects from critical hits, such a condition that must be removed multiple times, still function normally.
 
   \debuffdef{stunned} A stunned creature takes a \minus2 penalty to all defenses.
   This does not stack with the \confused effect.
@@ -579,5 +580,4 @@
   % TODO: should undead heal from vivimancy effects? Is it worth introducing a new damage type just for that?
   % Similarly, undead are always considered living creatures for the purpose of effects that would normally deal damage to living creatures.
   % Whenever they would take damage from an ability that normally only affects living creatures, they instead regain hit points equal to the damage that they would have taken. 
-  % This ability does not have the \abilitytag{Swift} tag, so it resolves after incoming attacks during the current phase.
   % Any other effects beyond simple damage are ignored.

@@ -386,7 +386,7 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                 \begin{columntable}
                     \begin{dtabularx}{\textwidth}{l X}
                         \tb{Roll} & \tb{Effect} \tableheaderrule
-                        1 & The spell has no immediate effect, but it \glossterm{repeats} during your next action \\
+                        1 & The spell has no immediate effect, but it \glossterm{repeats} at the start of your next turn \\
                         2 & You are a target of the spell in addition to any other targets, but with a -4 accuracy penalty against yourself \\
                         3 & Your first attack roll with the spell only \glossterm{explodes} on a 1 or 2 \\
                         4 & You gain a \plus10 \glossterm{accuracy} bonus with the spell, but cannot get a \glossterm{critical hit} \\
@@ -396,7 +396,7 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                         8 & The spell deals \glossterm{extra damage} equal to your rank in this archetype \\
                         9 & Each target hit by the spell is \glossterm{briefly} \confused, \braced, and \focused \\
                         10 & Your first attack roll with the spell \glossterm{explodes} on any value, not just on a 10 \\
-                        11\plus & The spell \glossterm{repeats} during your next action \\
+                        11\plus & The spell \glossterm{repeats} at the start of your next turn \\
                     \end{dtabularx}
                 \end{columntable}
 

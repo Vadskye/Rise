@@ -17,6 +17,17 @@ export class RepeatingSectionRow {
     return values;
   }
 
+  public getAllProperties(): Record<string, SimpleValue> {
+    const values: Record<string, SimpleValue> = {};
+    for (const propertyName in this.properties) {
+      const value = this.properties[propertyName].value;
+      if (value !== undefined) {
+        values[propertyName] = value;
+      }
+    }
+    return values;
+  }
+
   public getProperty(propertyName: string): Property<SimpleValue> {
     if (propertyName.startsWith('repeating_')) {
       throw new Error(

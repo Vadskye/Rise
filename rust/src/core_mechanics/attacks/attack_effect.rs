@@ -103,7 +103,6 @@ impl DamageEffect {
             format!(
                 "
                     If any creature is \\glossterm<injured> by this attack, {regain} {effect}
-                    This ability does not have the \\abilitytag<Swift> tag, so it resolves after attacks during the current phase.
                 ",
                 effect = effect.description(attacker),
                 regain = "you regain",
@@ -163,7 +162,7 @@ impl DamageOverTimeEffect {
         return format!(
             "
                 {narrative_text} {duration}.
-                {the_subject} takes {damage} immediately and during each subsequent \\glossterm<action phase>.
+                {the_subject} takes {damage} immediately and at the end of its subsequent turns.
 
                 {removal}
             ",
@@ -248,7 +247,7 @@ pub struct HealingEffect {
 impl HealingEffect {
     fn description(&self, healer: &Creature) -> String {
         format!(
-            "{dice}{modifier} hit points at the end of the round.",
+            "{dice}{modifier} hit points.",
             dice = self
                 .healing_dice
                 // .add(healer.calc_damage_increments(false))
@@ -293,7 +292,7 @@ impl PoisonEffect {
                 \\glossterm<poisoned>.
                 As long as it is poisoned, it is {debuffs}.
 
-                During each subsequent \\glossterm<action phase>, make an attack with the same accuracy against each poisoned creature's Fortitude defense, as normal for poisons (see \\pcref<Poison>).
+                At the end of each of the target's turns, make an attack with the same accuracy against its Fortitude defense, as normal for poisons (see \\pcref<Poison>).
                 {third_stage}
             ",
             debuffs = debuffs,

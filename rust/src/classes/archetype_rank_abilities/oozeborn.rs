@@ -50,7 +50,7 @@ pub fn oozeborn<'a>() -> Vec<RankAbility<'a>> {
             name: "Amorphous Form+",
             complexity: 2,
             description: r"
-              You gain a \plus4 bonus to your defenses when determining whether a \glossterm{strike} gets a \glossterm{critical hit} against you instead of a normal hit.
+              You gain a \plus2 bonus to your defenses when determining whether an attack gets a \glossterm{critical hit} against you instead of a normal hit.
               In addition, your \ability{mold body} ability loses the \abilitytag{Sustain} (free) tag.
               Instead, it lasts until you choose to \glossterm{dismiss} it.
               This allows you to maintain your shape while unconscious.
@@ -115,7 +115,7 @@ pub fn oozeborn<'a>() -> Vec<RankAbility<'a>> {
             name: "Amorphous Form++",
             complexity: 0,
             description: r"
-                The defense bonus against critical hits from strikes increases to \plus10.
+                The defense bonus against critical hits increases to \plus4.
             ",
             is_magical: false,
             modifiers: None,

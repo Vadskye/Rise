@@ -139,7 +139,6 @@ export function spellEffect(spell: ActiveAbility | Ritual): string | null {
 }
 
 export function ritualSpheres(ritual: Ritual): string | null {
-
   const effects = ritual.sphereEffects
     ? `
       \\noindent Mystic sphere effects:
@@ -154,10 +153,10 @@ export function ritualSpheres(ritual: Ritual): string | null {
     `
     : '';
 
-    const sphereNames = [...ritual.spheres];
-    sphereNames.sort();
+  const sphereNames = [...ritual.spheres];
+  sphereNames.sort();
 
-    return `
+  return `
       Mystic spheres: ${sphereNames.join(', ')}
 
       ${effects}

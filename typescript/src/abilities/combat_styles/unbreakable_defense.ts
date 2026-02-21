@@ -15,16 +15,13 @@ export const unbreakableDefense: CombatStyle = {
           you gain an additional +2 bonus to your Armor defense if you are using a melee weapon.
           This bonus is considered to come from a shield, and does not stack with the benefits of using a shield.
           In addition, choose a creature you can see.
-          Whenever that creature misses you with a melee \\glossterm{strike} this round, it \\glossterm{briefly} takes a -2 penalty to Armor defense.
+          Until your next turn, whenever that creature misses you with a melee \\glossterm{strike}, it \\briefly takes a -2 penalty to Armor defense.
           As normal, this bonus does not stack with itself, even if the same creature misses you with multiple melee attacks.
-          The defense bonus from this ability is \\abilitytag{Swift}, so it protects you from attacks in the current phase.
-          However, the penalty imposed on attackers is not Swift.
         `,
         name: 'total defense',
       },
       rank: 1,
       roles: ['turtle'],
-      tags: ['Swift (see text)'],
     },
 
     {
@@ -35,15 +32,12 @@ export const unbreakableDefense: CombatStyle = {
         exceptThat: `
           you gain an additional +2 bonus to your Armor defense if you are using a melee weapon.
           This bonus is considered to come from a shield, and does not stack with the benefits of using a shield.
-          In addition, whenever a creature misses you with a melee \\glossterm{strike} this round, it becomes \\dazzled as a \\glossterm{condition}.
-          This ability is \\abilitytag{Swift}, so it protects you from attacks in the current phase.
-          However, the penalty imposed on attackers is not Swift.
+          Until your next turn, whenever a creature misses you with a melee \\glossterm{strike}, it becomes \\dazzled as a \\glossterm{condition}.
         `,
         name: 'total defense',
       },
       rank: 5,
       roles: ['turtle'],
-      tags: ['Swift (see text)'],
     },
 
     {
@@ -55,15 +49,13 @@ export const unbreakableDefense: CombatStyle = {
           you gain an additional +2 bonus to your Armor defense if you are using a melee weapon.
           This bonus is considered to come from a shield, and does not stack with the benefits of using a shield.
           In addition, choose a creature you can see.
-          Whenever that creature misses with a melee \\glossterm{strike} this round, it treats itself as a target of that strike in addition to any other targets.
+          Until your next turn, whenever that creature misses with a melee \\glossterm{strike}, it treats itself as a target of that strike in addition to any other targets.
           It cannot choose to reduce its accuracy or damage against itself.
-          This ability is \\abilitytag{Swift}, so it protects you from attacks in the current phase.
         `,
         name: 'total defense',
       },
       rank: 3,
       roles: ['turtle'],
-      tags: ['Swift'],
     },
 
     {
@@ -74,27 +66,34 @@ export const unbreakableDefense: CombatStyle = {
         exceptThat: `
           you gain an additional +2 bonus to Armor defense if you are not using a shield.
           In addition, choose one creature you can see.
-          Whenever that creature misses you with a \\glossterm{targeted} attack this round, it treats itself as a target of that attack in addition to any other targets.
-          This ability is \\abilitytag{Swift}, so it protects you from attacks in the current phase.
+          Until your next turn, whenever that creature misses you with a \\glossterm{targeted} attack, it treats itself as a target of that attack in addition to any other targets.
         `,
         name: 'total defense',
       },
       rank: 7,
       roles: ['turtle'],
-      tags: ['Swift'],
     },
 
     {
       name: 'Brace for Impact',
 
-      // 1.1 EA
+      // 0.5 + 0.7 EA, but they have antisynergy
       effect: `
-        You are \\impervious to all damage this round.
-        Because this is a \\abilitytag{Swift} ability, it affects attacks against you during the current phase.
+        You \\briefly are \\braced and take half damage from all sources.
       `,
       rank: 5,
       roles: ['turtle'],
-      tags: ['Swift'],
+    },
+
+    {
+      name: 'Unbreakable Bastion',
+
+      // 1.3 EA
+      effect: `
+        You are \\briefly \\impervious to all damage.
+      `,
+      rank: 7,
+      roles: ['turtle'],
     },
 
     {
@@ -102,38 +101,32 @@ export const unbreakableDefense: CombatStyle = {
 
       // 0.7 EA
       effect: `
-        You take half damage from all sources this round.
-        Because this is a \\abilitytag{Swift} ability, it affects attacks against you during the current phase.
+        You \\briefly take half damage from all sources.
       `,
       rank: 1,
       roles: ['turtle'],
-      tags: ['Swift'],
     },
 
     {
       name: 'Shield Bash',
 
       effect: `
-        You are \\shielded this round.
+        You are \\briefly \\shielded.
         Make a melee \\glossterm{strike} with a -1 accuracy penalty using a shield.
-        The shielding is a \\atSwift effect, but the strike is not.
       `,
       rank: 1,
       roles: ['turtle'],
-      tags: ['Swift (see text)'],
     },
 
     {
       name: 'Shield Bash+',
 
       effect: `
-        You are \\shielded this round.
+        You are \\briefly \\shielded.
         Make a melee \\glossterm{strike} that deals double damage using a shield.
-        The shielding is a \\atSwift effect, but the strike is not.
       `,
       rank: 5,
       roles: ['turtle'],
-      tags: ['Swift (see text)'],
     },
 
     // +0.4ea as a bonus for requiring shield
@@ -142,7 +135,7 @@ export const unbreakableDefense: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} using a shield.
-        \\hit The target is \\glossterm{briefly} \\stunned.
+        \\hit The target is \\briefly \\stunned.
       `,
       rank: 3,
       roles: ['softener'],
@@ -176,7 +169,7 @@ export const unbreakableDefense: CombatStyle = {
       cost: 'One \\glossterm{fatigue level}.',
       effect: `
         Make a strike.
-        In addition, you regain \\hprankthree at the end of the round.
+        In addition, you regain \\hprankthree.
       `,
       rank: 3,
       roles: ['healing'],
@@ -189,33 +182,29 @@ export const unbreakableDefense: CombatStyle = {
       cost: 'One \\glossterm{fatigue level}.',
       effect: `
         Make a \\glossterm{strike} that deals double damage.
-        In addition, you regain \\hprankseven at the end of the round.
+        In addition, you regain \\hprankseven.
       `,
       rank: 7,
       roles: ['healing'],
     },
 
-    // Fortified + steeled is 0.5 EA, so double it to 1 EA.
     {
       name: 'Sinews of Steel',
 
+      // 0.4 + 0.4 EA
       effect: `
-        You are \\glossterm{briefly} \\fortified and \\steeled.
-        This ability has the \\abilitytag{Swift} tag, so it affects attacks against you during the current phase.
+        You are \\briefly \\steeled and \\empowered.
       `,
-      rank: 3,
+      rank: 1,
       roles: ['turtle'],
-      tags: ['Swift'],
     },
 
     {
       name: 'Sinews of Steel+',
 
-      // 1.4 EA, though you're unlikely to benefit from all of these equally, so it's
-      // probably fine.
+      // 0.4 + 0.7 EA
       effect: `
-        You are \\glossterm{briefly} \\empowered, \\fortified, and \\steeled.
-        This ability has the \\abilitytag{Swift} tag, so it affects attacks against you during the current phase.
+        You are \\briefly \\steeled and \\maximized.
       `,
       rank: 7,
       roles: ['focus'],
@@ -226,7 +215,7 @@ export const unbreakableDefense: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        After making the strike, you can choose to either be \\glossterm{briefly} \\fortified or \\glossterm{briefly} \\shielded.
+        After making the strike, you can choose to either be \\briefly \\fortified or briefly \\shielded.
       `,
       rank: 3,
       roles: ['generator', 'turtle'],
@@ -237,8 +226,7 @@ export const unbreakableDefense: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} with a -1 accuracy penalty that deals triple damage.
-        Then, you can choose to either be \\glossterm{briefly} \\fortified or \\glossterm{briefly} \\shielded.
-        This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks against you during the current phase.
+        Then, you can choose to either be \\briefly \\fortified or briefly \\shielded.
       `,
       rank: 7,
       roles: ['generator'],
@@ -250,7 +238,7 @@ export const unbreakableDefense: CombatStyle = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          The target is \\glossterm{briefly} \\goaded by you.
+          The target is \\briefly \\goaded by you.
           If it is \\glossterm{injured}, it is also goaded by you as a \\glossterm{condition}.
         `,
         targeting: `
@@ -280,32 +268,17 @@ export const unbreakableDefense: CombatStyle = {
     },
 
     {
-      name: 'Defensive Stance',
-
-      // Theoretically 3 rounds of shielded, so 0.9 EA.
-      effect: `
-        You become \\glossterm{briefly} \\shielded.
-        Next round, if you take damage that round, you become \\glossterm{briefly} \\shielded again.
-        This ability has the \\abilitytag{Swift} tag, so it affects attacks against you during the current phase.
-      `,
-      rank: 1,
-      roles: ['focus'],
-      tags: ['Swift'],
-    },
-
-    {
       name: 'Invigoration',
 
       // Pure healing would be dr3, so dr2 for empower
       cost: 'One \\glossterm{fatigue level}.',
       effect: `
-        You are \\glossterm{briefly} empowered.
+        You are \\briefly empowered.
         In addition, you regain \\hpranktwo.
       `,
       rank: 1,
       roles: ['focus', 'healing'],
       scaling: 'healing',
-      tags: ['Swift'],
     },
 
     {
@@ -314,13 +287,12 @@ export const unbreakableDefense: CombatStyle = {
       // Pure healing would be dr3, so dr2 for empower
       cost: 'One \\glossterm{fatigue level}.',
       effect: `
-        You are \\glossterm{briefly} empowered.
+        You are \\briefly empowered.
         In addition, you regain \\hpranksix.
       `,
       rank: 5,
       roles: ['focus', 'healing'],
       scaling: 'healing',
-      tags: ['Swift'],
     },
 
     {
@@ -328,7 +300,7 @@ export const unbreakableDefense: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} that deals double damage.
-        After making the strike, you are \\glossterm{briefly} \\fortified.
+        After making the strike, you are \\briefly \\fortified.
       `,
       rank: 5,
       roles: ['generator', 'turtle'],
@@ -339,7 +311,7 @@ export const unbreakableDefense: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} that deals triple damage.
-        \\hit You are \\glossterm{briefly} \\braced.
+        \\hit You are \\briefly \\braced.
       `,
       rank: 7,
       roles: ['generator', 'turtle'],

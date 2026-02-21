@@ -1,4 +1,5 @@
 import { MysticSphere } from '.';
+import { BRIEF_COOLDOWN } from '@src/abilities/constants';
 
 // Normally, curses would be +0.4 EA, because immunity to condition removal is powerful.
 // This sphere is limited and has few attacks, so it gets curses at only +0.2 EA.
@@ -12,12 +13,10 @@ export const prayer: MysticSphere = {
       // "Any two" fortify is 0.7 EA.
       effect: `
         Choose two \\glossterm{allies} within \\medrange.
-        Each target is \\fortified this round.
-        Because this ability has the \\abilitytag{Swift} tag, this protects each target from attacks during the current phase.
+        Each target is \\briefly \\fortified.
       `,
       name: 'Fortifying Boon',
       roles: ['boon'],
-      tags: ['Swift'],
     },
   ],
   spells: [
@@ -75,14 +74,13 @@ export const prayer: MysticSphere = {
     {
       name: 'Boon of Aggression',
 
-      // Ally focused + empowered is 1.2 EA. Drop a rank for enraged, though that is
-      // basically irrelevant.
+      cost: BRIEF_COOLDOWN,
+      // Ally maximized is dangerous, but we try it out at rank 7 with a downside.
       effect: `
         Choose one \\glossterm{ally} within \\medrange.
-        The target is \\focused and \\empowered this round.
-        In addition, it is \\glossterm{briefly} \\enraged.
+        The target is \\maximized and \\enraged until your next turn.
       `,
-      rank: 6,
+      rank: 7,
       roles: ['boon'],
       tags: [],
     },
@@ -93,25 +91,11 @@ export const prayer: MysticSphere = {
       // "any two" is 1.0 EA
       effect: `
         Choose up to two \\glossterm{allies} within \\medrange.
-        Each target is \\focused this round.
+        Each target is \\focused until your next turn.
       `,
       rank: 4,
       roles: ['boon'],
       tags: [],
-    },
-
-    {
-      name: 'Boon of Tempered Steel',
-
-      // Honed + steeled is theoretically 0.9 EA, but it's rare that you'll actually
-      // benefit from both, so this can be r1.
-      effect: `
-        One \\glossterm{ally} within \\medrange is \\honed and \\steeled this round.
-        Because this ability has the \\abilitytag{Swift} tag, this protects each target from attacks during the current phase.
-      `,
-      rank: 1,
-      roles: ['boon'],
-      tags: ['Swift'],
     },
 
     {
@@ -122,25 +106,35 @@ export const prayer: MysticSphere = {
       // reasonable.
       effect: `
         Choose two \\glossterm{allies} within \\medrange.
-        Each target is \\honed this round.
+        Each target is \\honed until your next turn.
       `,
       rank: 3,
       roles: ['boon'],
       tags: [],
     },
 
-    // Steeled + fortified is 0.8 EA on an ally
+    // Steeled is 0.6 EA on an ally
     {
       name: 'Boon of Living Steel',
 
       effect: `
         Choose one \\glossterm{ally} within \\medrange.
-        The target is \\fortified and \\steeled this round.
-        Because this ability has the \\abilitytag{Swift} tag, this protects the target from attacks during the current phase.
+        Until your next turn, the target is \\steeled and gains a \\plus1 \\glossterm{accuracy} bonus.
       `,
       rank: 1,
       roles: ['boon'],
-      tags: ['Swift'],
+    },
+
+    {
+      name: 'Boon of Tempered Steel',
+
+      // Honed + steeled is theoretically 1.2 EA, but it's rare that you'll actually
+      // benefit from both, so this can be r5.
+      effect: `
+        One \\glossterm{ally} within \\medrange is \\honed and \\steeled until your next turn.
+      `,
+      rank: 5,
+      roles: ['boon'],
     },
 
     // All half damage is 2.1 EA
@@ -149,15 +143,13 @@ export const prayer: MysticSphere = {
 
       // 1 EA on an ally
       effect: `
-        When you cast this spell, a holy light emanates fro you like a torch.
+        When you cast this spell, a holy light emanates from you like a torch.
         Illuminated objects seem more solid and secure.
         Next round, you can spend a standard action to protect you and all \\glossterm{allies} within a \\largearea radius.
-        Each target takes half damage from all effects.
-        This is a \\atSwift effect, so it protects each target from attacks during that phase.
+        Each target \\briefly takes half damage from all sources.
       `,
       rank: 6,
       roles: ['boon'],
-      tags: ['Swift (see text)'],
     },
 
     // Any two maximized is 1.8 EA
@@ -168,7 +160,7 @@ export const prayer: MysticSphere = {
         When you cast this spell, a holy light emanates from you like a torch.
         The light casts sharp and dangerous-looking shadows.
         Next round, you can spend a standard action to choose two \\glossterm{allies} within \\medrange.
-        Each target is \\maximized this round.
+        Each target is \\maximized until your next turn.
       `,
       rank: 4,
       roles: ['boon'],
@@ -178,30 +170,27 @@ export const prayer: MysticSphere = {
     {
       name: 'Boon of Protection',
 
-      // Choosing between shielded and fortified is almost as good as braced, which is 1
+      // Choosing between shielded and fortified is almost as good as braced, which is 1.2
       // EA for any two. But you can't target yourself with this.
       effect: `
         Choose up to two \\glossterm{allies} within \\medrange.
-        Each target is either \\fortified or \\shielded this round.
+        Each target is \\briefly either \\fortified or \\shielded.
         You must make the same choice for each target.
-        Because this ability has the \\abilitytag{Swift} tag, this protects each target from attacks during the current phase.
       `,
-      rank: 1,
+      rank: 3,
       roles: ['boon'],
-      tags: ['Swift'],
     },
 
     {
       name: 'Mass Boon of Protection',
 
-      // All braced is 1.3 EA, but you can't target yourself with this.
+      // All braced is 1.6 EA, but you can't target yourself with this.
       functionsLike: {
         name: 'boon of protection',
         exceptThat: 'you can target up to five \\glossterm{allies}.',
       },
-      rank: 5,
+      rank: 7,
       roles: ['boon'],
-      tags: ['Swift'],
     },
 
     {
@@ -345,19 +334,18 @@ export const prayer: MysticSphere = {
     {
       name: 'Boon of Shielding',
 
-      // Any two shielded is 0.5 EA, so we reduce the healing to dr2.
+      // Ally shielded is 0.6 EA, so we reduce the healing to dr2.
       // TODO: more clear guidelines on how healing interacts with buffs, and who pays the
       // fatigue for this sort of effect.
       cost: 'One \\glossterm{fatigue level}.',
       // dr3
       effect: `
-        Choose two \\glossterm{allies} within \\medrange.
-        Each target is \\shielded this round and regains \\hpranktwo.
+        Choose one \\glossterm{ally} within \\medrange.
+        The target regains \\hpranktwo and is \\briefly \\shielded.
       `,
-      rank: 2,
+      rank: 1,
       roles: ['healing', 'boon', 'exertion'],
       scaling: 'healing',
-      tags: ['Swift'],
     },
 
     {
@@ -365,12 +353,11 @@ export const prayer: MysticSphere = {
 
       functionsLike: {
         name: 'boon of shielding',
-        exceptThat: 'the recovery increases to \\hpranksix.',
+        exceptThat: 'the recovery increases to \\hprankfive.',
       },
-      rank: 5,
+      rank: 4,
       roles: ['healing', 'boon', 'exertion'],
       scaling: 'healing',
-      tags: ['Swift'],
     },
 
     {
@@ -387,7 +374,6 @@ export const prayer: MysticSphere = {
       // This is very strong scaling because of the AOE nature of the spell; no need for
       // a greater version of the spell.
       scaling: { special: 'The recovery increases by 1d8 for each rank beyond 3.' },
-      tags: ['Swift'],
     },
 
     {
@@ -397,7 +383,7 @@ export const prayer: MysticSphere = {
       effect: `
         Make a \\glossterm{strike}.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
-        Then, you \\glossterm{briefly} gain a +2 bonus to your Mental defense.
+        Then, you \\briefly gain a +2 bonus to your Mental defense.
       `,
       rank: 1,
       roles: ['burst'],
@@ -409,7 +395,7 @@ export const prayer: MysticSphere = {
       effect: `
         Make a \\glossterm{strike} that deals double damage.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
-        Then, you \\glossterm{briefly} gain a +2 bonus to your Mental defense.
+        Then, you \\briefly gain a +2 bonus to your Mental defense.
       `,
       rank: 5,
       roles: ['burst'],

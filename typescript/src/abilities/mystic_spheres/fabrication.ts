@@ -59,15 +59,14 @@ export const fabrication: MysticSphere = {
       tags: ['Manifestation'],
       type: 'Sustain (attunable, minor)',
     },
-    // Shielded is 0.3, cover is ~0.4, so 0.7 total?
+    // Shielded is 0.4, cover is 0.5, so 0.9 total?
     {
       name: 'Desperate Shieldwall',
 
       effect: `
         You can activate this effect as a \\glossterm{minor action}.
-        When you do, your attunement to this effect ends and you create a wall of indestructible shields around you until the end of the round.
+        When you do, your attunement to this effect ends and you \\briefly create a wall of indestructible shields around you.
         The shields make you \\shielded and give you \\glossterm{cover} from all attacks.
-        This is a \\atSwift effect, so it protects you from attacks during the current phase.
       `,
       rank: 1,
       roles: ['attune'],
@@ -84,8 +83,7 @@ export const fabrication: MysticSphere = {
         It is automatically strapped to your arm and cannot be detached.
         This allows you to use it immediately, but prevents you from using that hand for any other purpose.
 
-        This is a \\atSwift effect, so the shield protects you from attacks during the current phase.
-        The shield automatically disappears at the end of the round, but you can summon it again in future rounds.
+        The shield automatically disappears at the start of your next turn, but you can summon it as long as this ability lasts.
       `,
       rank: 2,
       roles: ['attune'],
@@ -196,7 +194,7 @@ export const fabrication: MysticSphere = {
         `,
         targeting: `
           When you cast this spell, you create a ballista bolt in midair within your space and choose a target within \\longrange.
-          During your next action, if that target is still within \\longrange, make a \\glossterm{reactive attack} vs. Armor with a -2 accuracy penalty against it.
+          At the start of your next turn, if that target is still within \\longrange, make a \\glossterm{reactive attack} vs. Armor with a -2 accuracy penalty against it.
           Otherwise, the bolt disappears and this spell is wasted.
         `,
       },
@@ -232,7 +230,7 @@ export const fabrication: MysticSphere = {
         halfOnMiss: false,
         targeting: `
           When you cast this spell, you create a greataxe in midair within your space.
-          During your next action, make a \\glossterm{reactive attack} vs. Armor with the axe against up to two targets adjacent to you.
+          At the start of your next turn, make a \\glossterm{reactive attack} vs. Armor with the axe against up to two targets adjacent to you.
         `,
       },
       rank: 1,
@@ -306,7 +304,7 @@ export const fabrication: MysticSphere = {
 
           A rain of arrows appears at the top of the area.
           Creatures can generally identify what area the arrows will fall into with a DV 10 Awareness check.
-          During your next action, the arrows fall through the area, and you make a \\glossterm{reactive attack} vs. Armor against everything in the area.
+          At the start of your next turn, the arrows fall through the area, and you make a \\glossterm{reactive attack} vs. Armor against everything in the area.
           This attack does not damage thin \\glossterm{walls} in the area.
           Creatures under overhanging structures may have \\glossterm{cover} from the attack or be entirely excluded from the effect based on their location.
         `,
@@ -452,7 +450,7 @@ export const fabrication: MysticSphere = {
           They can generally be noticed with a \\glossterm{difficulty value} 8 Awareness check.
 
           Whenever a \\glossterm{grounded} creature moves into any of the squares, unless the creature moves at half speed to avoid the danger, you make a \\glossterm{reactive attack} vs. Armor against them.
-          You cannot make this attack against the same creature more than once per \\glossterm{phase}.
+          You can only attack a given target with this spell once per round.
           Caltrops may not be effective against creatures with an unusual anatomy.
         `,
       },
@@ -574,9 +572,9 @@ export const fabrication: MysticSphere = {
       attack: {
         hit: `The target falls \\prone.`,
         targeting: `
-          You \\glossterm{briefly} coat everything in a \\smallarea radius \\glossterm{zone} within \\shortrange in grease.
+          You \\briefly coat everything in a \\smallarea radius \\glossterm{zone} within \\shortrange in grease.
           Make an attack vs. Reflex against all Large or smaller \\glossterm{grounded} creatures in the area.
-          During your next action, this effect \\glossterm{repeats}.
+          At the start of your next turn, this effect \\glossterm{repeats} in the same area.
         `,
       },
       rank: 5,
@@ -593,7 +591,7 @@ export const fabrication: MysticSphere = {
 
       attack: {
         hit: `
-          The target falls \\prone, and is \\glossterm{briefly} \\vulnerable to \\atFire attacks.
+          The target falls \\prone, and is \\briefly \\vulnerable to \\atFire attacks.
           This vulnerability ends if it takes damage from a \\atFire attack.
         `,
         targeting: `
@@ -844,7 +842,7 @@ export const fabrication: MysticSphere = {
 
         The sphere is immobile, so it normally prevents you from leaving the area.
         You cannot \\glossterm{dismiss} it.
-        It disappears as a \\atSwift effect if you stop sustaining it, as normal for sustained abilities.
+        It disappears if you stop sustaining it, as normal for sustained abilities.
 
         The field as a whole has \\glossterm{hit points} equal to twice your \\glossterm{power}, and is destroyed when its hit points become negative.
         It is also destroyed if you leave the area by any means.
@@ -1003,12 +1001,10 @@ export const fabrication: MysticSphere = {
       name: 'Omnishield',
 
       effect: `
-        You and all \\glossterm{allies} within a \\largearea radius from you are \\shielded this round.
-        This is a \\atSwift effect, so it protects each target from attacks during the current phase.
+        You and all \\glossterm{allies} within a \\largearea radius from you are \\shielded until your next turn.
       `,
-      rank: 4,
+      rank: 7,
       roles: ['boon', 'turtle'],
-      tags: ['Swift'],
     },
 
     {
@@ -1023,7 +1019,7 @@ export const fabrication: MysticSphere = {
         targeting: `
           You create a sawblade in a \\tinyarea radius \\glossterm{zone} within \\shortrange.
           Make an attack vs. Armor against everything in the area.
-          During your next action, this effect \\glossterm{repeats} in the same area.
+          At the start of your next turn, this effect \\glossterm{repeats} in the same area.
         `,
       },
       roles: ['clear'],
@@ -1044,7 +1040,7 @@ export const fabrication: MysticSphere = {
         targeting: `
           You create a sawblade in a \\tinyarea radius \\glossterm{zone} within \\shortrange.
           Make an attack vs. Armor against everything in the area.
-          During your next action, this effect \\glossterm{repeats} in the same area.
+          At the start of your next turn, this effect \\glossterm{repeats} in the same area.
         `,
       },
       roles: ['clear'],

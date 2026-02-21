@@ -359,9 +359,8 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 Whenever you cast a spell, you can use this ability to make the spell's incantations more nuanced and complex.
-                If you do, you gain a \plus1 accuracy bonus with the spell this round.
-                However, you take a \minus2 penalty to all defenses this round.
-                This defense penalty is \abilitytag{Swift}.
+                If you do, you gain a \plus1 accuracy bonus with the spell this turn.
+                However, you \glossterm{briefly} take a \minus2 penalty to all defenses.
             ",
             modifiers: Some(vec![
                 Modifier::Accuracy(1),
@@ -504,7 +503,6 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                 \subcf{Transmutation} The \sphere{chronomancy}, \sphere{polymorph}, and \sphere{terramancy} mystic spheres.
                     If you specialize in this school, you gain a \plus2 bonus to your Brawn, Fortitude, Reflex, or Mental defense.
                     You can change which defense this bonus applies to as a \glossterm{minor action}.
-                    This ability has the \abilitytag{Swift} tag, so it protects you from attacks during the current phase.
             ",
             // Assume evocation
             modifiers: Some(vec![Modifier::Power(2)]),

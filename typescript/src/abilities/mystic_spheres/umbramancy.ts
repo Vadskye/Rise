@@ -1,10 +1,10 @@
 import { MysticSphere } from '.';
-import { BARRIER_COOLDOWN, CONDITION_CRIT, SWIFT_FATIGUE } from '../constants';
+import { BARRIER_COOLDOWN, CONDITION_CRIT } from '../constants';
 
 export const umbramancy: MysticSphere = {
   name: 'Umbramancy',
   shortDescription: 'Manipulate shadows to conceal allies and inhibit foes.',
-  sources: ['arcane', 'nature'],
+  sources: ['arcane', 'bardic', 'nature'],
   // Spells that manipulate your shadow to attack enemies target Brawn/Fortitude.
   // Spells that manipulate the shadows of enemies target Mental.
   // Umbramancy spells deal flat damage, like photomancy spells.
@@ -31,7 +31,7 @@ export const umbramancy: MysticSphere = {
       effect: `
         This spell has no \\glossterm{verbal components} or \\glossterm{somatic components}.
 
-        You \\glossterm{briefly} gain a +3 \\glossterm{enhancement bonus} to the Stealth skill.
+        You \\briefly gain a +3 \\glossterm{enhancement bonus} to the Stealth skill.
         If you stop being \\glossterm{shadowed} at any point, this effect immediately ends.
       `,
       roles: ['narrative'],
@@ -114,7 +114,7 @@ export const umbramancy: MysticSphere = {
         targeting: `
           You create a field of dark miasma in a \\medarea radius \\glossterm{zone} from you.
           Make an attack vs. Fortitude against all \\glossterm{shadowed} \\glossterm{enemies} in the area.
-          During your next action, this effect \\glossterm{repeats} in the same area.
+          At the start of your next turn, this effect \\glossterm{repeats} in the same area.
         `,
       },
       rank: 3,
@@ -197,7 +197,7 @@ export const umbramancy: MysticSphere = {
       // Brief slowed is 2 EA ranged, so r4, or r3 shadowed.
       attack: {
         hit: `
-          The target is \\glossterm{briefly} \\slowed.
+          The target is \\briefly \\slowed.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{shadowed} creatures in a \\smallarea radius within \\shortrange.
@@ -240,7 +240,7 @@ export const umbramancy: MysticSphere = {
         Your physical form becomes blurred and shifts in and out of existence.
         This is not a mere trick of the light, but an alteration of reality to make your existence more ambiguous.
       `,
-      rank: 1,
+      rank: 2,
       roles: ['attune'],
       type: 'Attune (deep)',
     },
@@ -250,7 +250,7 @@ export const umbramancy: MysticSphere = {
       effect: `
         While you are \\glossterm{shadowed}, attacks against you have a 20\\% \\glossterm{failure chance}.
       `,
-      rank: 6,
+      rank: 7,
       roles: ['attune'],
       type: 'Attune',
     },
@@ -330,7 +330,6 @@ export const umbramancy: MysticSphere = {
     {
       name: 'Shadowstep',
 
-      cost: SWIFT_FATIGUE,
       effect: `
         You must be \\glossterm{shadowed} to cast this spell.
         It has no \\glossterm{verbal components}.
@@ -354,7 +353,6 @@ export const umbramancy: MysticSphere = {
       functionsLike: {
         exceptThat: `
           you can also make a \\glossterm{strike} at your destination.
-          The strike is not \\abilitytag{Swift}, even if you make the teleportation Swift.
           You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
           In addition, this spell does not have \\glossterm{somatic components}.
         `,
@@ -371,7 +369,6 @@ export const umbramancy: MysticSphere = {
       functionsLike: {
         exceptThat: `
           you can also make a \\glossterm{strike} at your destination.
-          The strike is not \\abilitytag{Swift}, even if you make the teleportation Swift.
           You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
           In addition, you can repeat the teleportation and strike.
 
@@ -394,11 +391,12 @@ export const umbramancy: MysticSphere = {
           \\damageranksevenlow.
         `,
         injury: `
-          The target becomes \\glossterm{briefly} \\slowed.
-          If it was already slowed with this effect and your attack result hits its Mental defense, you also control its movement during the next movement phase.
-          It cannot take any actions during the movement phase, and as a \\glossterm{move action}, you can cause it to move up to its normal speed.
+          The target becomes \\briefly \\slowed.
+          If it was already slowed with this effect and your attack result hits its Mental defense, you also briefly control its movement.
+          You decide where it moves.
+          On its turn, it must spend a \\glossterm{move action} to follow the path you defined for it.
           During this movement, its movement is not reduced by being slowed.
-          After this effect ends, you cannot control its movement again until it takes a \\glossterm{short rest}.
+          After this effect ends, you cannot control its movement again until it finishes a \\glossterm{short rest}.
 
           If the target enters \\glossterm{brilliant illumination}, the effect automatically ends.
         `,
@@ -422,11 +420,11 @@ export const umbramancy: MysticSphere = {
           \\item You can freely move through space occupied by other creatures, and other creatures can freely move through your space.
           \\item While you in a space occupied by an \\glossterm{shadowed} \\glossterm{ally}, you have \\glossterm{concealment}, and you can use the \\textit{hide} ability without moving in a way that causes observers to lose sight of you (see \\pcref{Stealth}).
           \\item You gain a slow \\glossterm{climb speed}, and you can climb without using any hands.
-          \\item You are always treated as being \\prone, though your movement speed is not reduced.
+          \\item You are always treated as being \\prone, though your \\glossterm{speed} is not reduced.
         \\end{raggeditemize}
 
         At the end of each round, if you are not \\glossterm{shadowed}, this effect is \\glossterm{suppressed} and you return to your normal size and shape.
-        If doing so is impossible, such as if you are in a space too small to contain your body, you gain a \\glossterm{vital wound} and this effect persists \\glossterm{briefly}.
+        If doing so is impossible, such as if you are in a space too small to contain your body, you gain a \\glossterm{vital wound} and this effect persists \\briefly.
         This form offers you no special immunity to damage, as creatures can simply attack the shadow.
 
         You can suppress or resume this ability as a \\glossterm{free action}.
@@ -470,34 +468,18 @@ export const umbramancy: MysticSphere = {
     //   type: 'Attune',
     // },
 
+    // 0.8 EA
+    // TODO: Upgrade
     {
       name: 'Shadow Cloak',
 
       effect: `
         You must be \\glossterm{shadowed} to cast this spell.
 
-        All attacks against you and all \\glossterm{shadowed} allies within a \\largearea radius from you have a 20\\% \\glossterm{failure chance} this round.
-        This ability has the \\abilitytag{Swift} tag, so it affects attacks during the current phase.
+        All attacks against you and all \\glossterm{shadowed} allies within a \\largearea radius from you \\briefly have a 20\\% \\glossterm{failure chance}.
       `,
       rank: 2,
       roles: ['boon', 'turtle'],
-      tags: ['Swift'],
-    },
-
-    // 1.1 EA
-    {
-      name: 'Enduring Shadow Cloak',
-
-      effect: `
-        You must be \\glossterm{shadowed} to cast this spell.
-
-        All attacks against all \\glossterm{shadowed} allies within a \\largearea radius from you have a 20\\% \\glossterm{failure chance} this round.
-        In addition, all attacks against you \\glossterm{briefly} have a 20\\% failure chance.
-        This ability has the \\abilitytag{Swift} tag, so it affects attacks during the current phase.
-      `,
-      rank: 6,
-      roles: ['boon', 'turtle'],
-      tags: ['Swift'],
     },
 
     {
@@ -505,13 +487,11 @@ export const umbramancy: MysticSphere = {
 
       // 50% action denial against 50% of enemy attacks = 1 EA.
       effect: `
-        All attacks against you have a 50\\% \\glossterm{failure chance} this round.
-        This ability has the \\abilitytag{Swift} tag, so it affects attacks during the current phase.
-        If you are currently \\glossterm{shadowed}, you are also \\glossterm{briefly} \\empowered.
+        All attacks against you \\briefly have a 50\\% \\glossterm{failure chance}.
+        If you are currently \\glossterm{shadowed}, you are also \\briefly \\empowered.
       `,
       rank: 6,
       roles: ['focus'],
-      tags: ['Swift'],
     },
 
     {
@@ -520,11 +500,10 @@ export const umbramancy: MysticSphere = {
       // get r3 area.
       name: 'Fearsome Shadow Cloak',
       attack: {
-        hit: `The target is \\glossterm{briefly} \\frightened of you.`,
+        hit: `The target is \\briefly \\frightened of you.`,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
-          In addition, all attacks against you \\glossterm{briefly} have a 20\\% \\glossterm{failure chance}.
-          Since this ability does not have the \\abilitytag{Swift} tag, it does not affect attacks against you during the current phase.
+          In addition, all attacks against you \\briefly have a 20\\% \\glossterm{failure chance}.
         `,
       },
       rank: 2,
@@ -558,7 +537,7 @@ export const umbramancy: MysticSphere = {
       attack: {
         hit: `
           The target suffers no immediate effect.
-          At the end of the next round, if it is \\glossterm{shadowed}, it becomes \\glossterm{briefly} \\frightened by all creatures.
+          At the end of the next round, if it is \\glossterm{shadowed}, it becomes \\briefly \\frightened by all creatures.
         `,
         targeting: `
           Make an attack vs. Mental against up to two creatures within \\medrange.
@@ -582,7 +561,7 @@ export const umbramancy: MysticSphere = {
         Your shadow is constantly hiding and requires a \\glossterm{difficulty value} 15 Awareness check to notice.
         That check is modified by all normal Awareness modifiers to notice a hiding creature, such as requiring cover or concealment.
 
-        At the start of each round, you choose whether you see from your shadow or from your body.
+        At the start of your turn, you choose whether you see from your shadow or from your body.
         While viewing through your shadow, your observation ability is the same as your normal body, except that it does not share the benefits of any \\magical effects that improve your vision.
         You otherwise act normally, though you may have difficulty moving or taking actions if the shadow cannot see your body or your intended targets, effectively making you \\blinded.
       `,
@@ -611,7 +590,7 @@ export const umbramancy: MysticSphere = {
         hit: `\\damagerankfivelow, and any \\glossterm{extra damage} is doubled.`,
         targeting: `
           You must be \\glossterm{shadowed} to cast this spell.
-          After you cast this spell, you \\glossterm{briefly} cannot be \\glossterm{shadowed} for any reason.
+          After you cast this spell, you \\briefly cannot be \\glossterm{shadowed} for any reason.
 
           Make an attack vs. Fortitude against a creature within \\shortrange.
         `,
@@ -651,7 +630,7 @@ export const umbramancy: MysticSphere = {
       name: 'Shadowguide',
       effect: `
         Choose up to two \\glossterm{shadowed} \\glossterm{allies} within \\medrange.
-        Each target is \\focused this round.
+        Each target is \\focused until your next turn.
       `,
       rank: 4,
       roles: ['boon'],
@@ -662,7 +641,7 @@ export const umbramancy: MysticSphere = {
     {
       name: 'Greater Shadowguide',
       effect: `
-        All \\glossterm{shadowed} \\glossterm{allies} within a \\largearea radius of you are \\focused this round.
+        All \\glossterm{shadowed} \\glossterm{allies} within a \\largearea radius of you are \\focused until your next turn.
       `,
       rank: 7,
       roles: ['boon'],
@@ -674,12 +653,10 @@ export const umbramancy: MysticSphere = {
       effect: `
         You must be \\glossterm{shadowed} to cast this spell.
 
-        Attacks against you have a 50\\% \\glossterm{failure chance} this round.
-        This ability has the \\abilitytag{Swift} tag, so it affects attacks during the current phase.
+        Attacks against you \\briefly have a 50\\% \\glossterm{failure chance}.
       `,
       rank: 1,
       roles: ['turtle'],
-      tags: ['Swift'],
     },
 
     // 1.1 EA, but conditional
@@ -688,13 +665,11 @@ export const umbramancy: MysticSphere = {
       effect: `
         You must be \\glossterm{shadowed} to cast this spell.
 
-        Attacks against you have a 50\\% \\glossterm{failure chance} this round.
-        When an attack against you fails in this way, you become \\glossterm{briefly} \\empowered.
-        This ability has the \\abilitytag{Swift} tag, so it affects attacks against you during the current phase.
+        Attacks against you \\briefly have a 50\\% \\glossterm{failure chance}.
+        When an attack against you fails in this way, you become \\briefly \\empowered.
       `,
       rank: 5,
       roles: ['generator', 'turtle'],
-      tags: ['Swift'],
     },
 
     // 0.7 EA for personal protection. That's not a full rank 2 effect, so say we get +1dr
@@ -711,7 +686,7 @@ export const umbramancy: MysticSphere = {
           You must be \\glossterm{shadowed} to cast this spell.
 
           When you cast this spell, you wrap yourself in shadow.
-          All attacks against you \\glossterm{briefly} have a 50\\% \\glossterm{failure chance}.
+          All attacks against you \\briefly have a 50\\% \\glossterm{failure chance}.
           Next round, you can spend a \\glossterm{standard action} to \\glossterm{teleport} to a location within \\shortrange.
           If you do, make an attack vs. Fortitude against each \\glossterm{enemy} adjacent to you.
         `,

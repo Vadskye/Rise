@@ -32,7 +32,7 @@ export const polymorph: MysticSphere = {
 
         Make a \\glossterm{mundane} melee \\glossterm{strike} using \\glossterm{natural weapons}.
         If the target takes damage and is living, it bleeds.
-        A bleeding creature takes damage equal to half your power during your next action.
+        A bleeding creature takes damage equal to half your power at the end of its next turn.
         This bleeding damage is doubled on a critical hit.
       `,
       rank: 3,
@@ -58,7 +58,7 @@ export const polymorph: MysticSphere = {
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        You become \\empowered this round.
+        You become \\empowered this turn.
         Make a \\glossterm{mundane} melee \\glossterm{strike} with a -2 accuracy penalty using \\glossterm{natural weapons}.
       `,
       rank: 1,
@@ -71,7 +71,7 @@ export const polymorph: MysticSphere = {
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        You become \\maximized this round.
+        You become \\maximized this turn.
         Make a \\glossterm{mundane} melee \\glossterm{strike} with a -2 accuracy penalty using \\glossterm{natural weapons}.
         The strike deals double damage.
       `,
@@ -116,9 +116,9 @@ export const polymorph: MysticSphere = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          The target is \\glossterm{briefly} \\confused.
+          The target is \\briefly \\confused.
           If it is \\glossterm{injured} and was already confused by this ability, it also \\glossterm{shapeshifts} into a Tiny squirrel as a \\glossterm{condition}.
-          Squirrels have a 30 foot movement speed, an average climb speed, and a bite natural weapon.
+          Squirrels have a 30 foot \\glossterm{speed}, an average climb speed, and a bite natural weapon.
           They cannot speak and have no \\glossterm{free hands}.
           If the target takes damage, this condition is removed.
         `,
@@ -325,7 +325,6 @@ export const polymorph: MysticSphere = {
       rank: 2,
       roles: ['healing', 'exertion'],
       scaling: { special: 'The recovery increases by +2 for each rank beyond 2.' },
-      tags: ['Swift'],
     },
 
     {
@@ -338,7 +337,6 @@ export const polymorph: MysticSphere = {
       rank: 5,
       roles: ['healing', 'exertion'],
       scaling: { special: 'The recovery increases by 1d8 for each rank beyond 5.' },
-      tags: ['Swift'],
     },
 
     {
@@ -350,7 +348,7 @@ export const polymorph: MysticSphere = {
       // best as an emergency button and this requires planning.
       effect: `
         Choose yourself or one living \\glossterm{ally} within \\shortrange.
-        The target \\glossterm{briefly} regains 1d8 \\glossterm{hit points} +1 per \\glossterm{power} at the end of each round.
+        The target \\briefly regains 1d8 \\glossterm{hit points} +1 per \\glossterm{power} at the end of each of its turns.
       `,
       rank: 3,
       roles: ['healing', 'exertion'],
@@ -366,7 +364,7 @@ export const polymorph: MysticSphere = {
       // 3 version.
       effect: `
         Choose yourself or one living \\glossterm{ally} within \\shortrange.
-        The target \\glossterm{briefly} regains \\glossterm{hit points} equal to 1d10 per 2 \\glossterm{power} at the end of each round.
+        The target \\briefly regains \\glossterm{hit points} equal to 1d10 per 2 \\glossterm{power} at the end of each of its turns.
       `,
       rank: 6,
       roles: ['healing', 'exertion'],
@@ -382,7 +380,7 @@ export const polymorph: MysticSphere = {
           \\damagerankone.
         `,
         injury: `
-          The target takes \\damagerankone during your next action.
+          The target takes \\damagerankone at the end of its next turn.
         `,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\shortrange.
@@ -557,7 +555,8 @@ export const polymorph: MysticSphere = {
           \\damagerankthree.
         `,
         injury: `
-          The target takes \\damagerankthree during your next action.
+          The target takes \\damagerankthree at the end of its next turn.
+          Any \\glossterm{extra damage} also applies to this delayed damage.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -598,7 +597,7 @@ export const polymorph: MysticSphere = {
       effect: `
         When you cast this spell, you choose your eyes, nose, mouth, or ears.
         You gain a duplicate copy of that organ anywhere on your body.
-        You can only use one of them at a time, but you can change which one is active once per round as a \\glossterm{free action}.
+        You can only use one of them at a time, but you can change which one is active once per turn as a \\glossterm{free action}.
 
         You can sustain or attune to this spell multiple times.
         Each time, you must choose a different organ to copy.
@@ -650,29 +649,27 @@ export const polymorph: MysticSphere = {
       type: 'Sustain (attunable, minor)',
     },
 
-    // 0.4 + 2 * 0.2 EA
     {
       name: 'Sudden Jellification',
 
       effect: `
-        You are \\braced this round and \\glossterm{briefly} \\steeled.
-        This is a \\atSwift effect, so it protects you from attacks during the current phase.
+        You \\briefly take half damage from all sources.
       `,
       rank: 1,
       roles: ['turtle'],
-      tags: ['Swift'],
     },
 
     {
       name: 'Greater Sudden Jellification',
 
+      // Half damage from all sources already protects you from catastrophic incoming
+      // damage like steeled does, so treat steeled as 0.3 EA instead of 0.4 EA.
+      // That gives a sum of 0.7 + 0.3 = 1 EA.
       effect: `
-        You are \\glossterm{briefly} \\steeled and \\braced.
-        This is a \\atSwift effect, so it protects you from attacks during the current phase.
+        You \\briefly are \\steeled and take half damage from all sources.
       `,
-      rank: 6,
+      rank: 4,
       roles: ['turtle'],
-      tags: ['Swift'],
     },
 
     // Ally empower is 0.6 EA. Long is about +1a, so about 0.2 EA.
@@ -681,12 +678,11 @@ export const polymorph: MysticSphere = {
 
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
-        This round, the target is \\empowered and all of its melee \\glossterm{strikes} gain the \\weapontag{Long} \\glossterm{weapon tag}.
-        If you choose yourself, the effect lasts \\glossterm{briefly}.
+        Until your next turn, the target is \\empowered and all of its melee \\glossterm{strikes} gain the \\weapontag{Long} \\glossterm{weapon tag}.
+        If you choose yourself, the effect lasts \\briefly.
       `,
       rank: 2,
       roles: ['boon'],
-      tags: ['Swift'],
     },
 
     // Any two empower is 1 EA, and any two accuracy is about 0.3 EA.
@@ -700,7 +696,6 @@ export const polymorph: MysticSphere = {
       },
       rank: 7,
       roles: ['boon'],
-      tags: ['Swift'],
     },
 
     {

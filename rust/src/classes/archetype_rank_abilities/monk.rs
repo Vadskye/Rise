@@ -205,10 +205,9 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
 
                     \parhead{Mighty Maneuver} You take a \minus1 accuracy penalty, but you deal \glossterm{extra damage} equal to twice your excess rank.
 
-                    \parhead{Mobile Maneuver} You can walk up to 5 feet per excess rank before or after using your chosen maneuver, up to a maximum distance equal to your speed.
+                    \parhead{Mobile Maneuver} You can walk up to 5 feet per excess rank before or after using your chosen maneuver, up to a maximum distance equal to your \glossterm{speed}.
+                    This does not reduce your \glossterm{available movement}.
                     You cannot apply this augment to maneuvers that already allow you to move using one of your movement modes.
-                    This movement is never \abilitytag{Swift}.
-                    If your chosen maneuver is Swift, you can only walk after using the maneuver, not before.
 
                     \parhead{Precise Maneuver} You gain an accuracy bonus equal to your excess rank.
                 }
@@ -285,13 +284,13 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                 Choose two \textit{ki manifestations} from the list below.
                 You can also spend \glossterm{insight points} to learn one additional \textit{ki manifestation} per \glossterm{insight point}.
 
-                After you use a \textit{ki manifestation}, you \glossterm{briefly} cannot use a \textit{ki manifestation} again.
+                You can only use one \textit{ki manifestation} per round.
+                After you use a \textit{ki manifestation}, you can't use any \textit{ki manifestation} again next round.
                 {
                     \begin{magicalactiveability}{Abandon the Fragile Self}{Free action}
-                        \abilitytags \abilitytag{Swift}
                         \rankline
-                        You can negate one \glossterm{condition} that would be applied to you this phase.
-                        In exchange, you take a \minus2 penalty to \glossterm{defenses} this phase.
+                        The first time you would gain a \glossterm{condition} before your next turn, you negate that condition.
+                        In exchange, you take a \minus2 penalty to \glossterm{defenses} until your next turn.
 
                         \rankline
                         \rank{5} The defense penalty is reduced to \minus1.
@@ -299,8 +298,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{magicalactiveability}{Burst of Blinding Speed}{Free action}
                         \rankline
-                        You gain a \plus10 foot bonus to your \glossterm{speed} this phase.
-                        In exchange, you cannot use the \ability{sprint} ability this phase.
+                        You increase your \glossterm{available speed} by 10 feet this turn.
+                        In exchange, you cannot use the \ability{sprint} ability this turn.
 
                         \rankline
                         \rank{5} The speed bonus increases to \plus20 feet.
@@ -308,7 +307,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{magicalactiveability}{Calm the Inner Tempest}{Free action}
                         \rankline
-                        You gain a \plus4 bonus to the Endurance skill this round (see \pcref{Endurance}).
+                        You gain a \plus4 bonus to the Endurance skill this turn (see \pcref{Endurance}).
 
                         \rankline
                         \rank{5} The bonus increases to \plus6.
@@ -316,7 +315,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{magicalactiveability}{Extend the Flow of Ki}{Free action}
                         \rankline
-                        Your melee \glossterm{strikes} gain the \weapontag{Long} weapon tag this round, allowing you to attack targets up to 10 feet away from you (see \pcref{Weapon Tags}).
+                        Your melee \glossterm{strikes} gain the \weapontag{Long} weapon tag this turn, allowing you to attack targets up to 10 feet away from you (see \pcref{Weapon Tags}).
 
                         \rankline
                         \rank{5} You can attack enemies up to 15 feet away from you.
@@ -330,7 +329,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         If your \glossterm{line of effect} to your destination is blocked, or if this teleportation would somehow place you inside a solid object, your teleportation is cancelled and you remain where you are.
 
                         Teleporting a given distance costs movement equal to twice that distance.
-                        For example, if you have a 30 foot movement speed, you can move 10 feet, teleport 5 feet, and move an additional 10 feet before your movement ends.
+                        For example, if you have a 30 foot \glossterm{speed}, you can move 10 feet, teleport 5 feet, and move an additional 10 feet before your movement ends.
                         If you are unable to use your walk speed, you also cannot move with this ability.
 
                         \rankline
@@ -339,8 +338,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{magicalactiveability}{Flurry of a Thousand Cuts}{Free action}
                         \rankline
-                        When you make a \glossterm{strike} this round, you \glossterm{reroll} the attack roll once and take the higher result.
-                        However, you cannot get a \glossterm{critical hit} with strikes.
+                        When you make a \glossterm{strike} this turn, you \glossterm{reroll} the attack roll once and take the higher result.
+                        However, you cannot get a \glossterm{critical hit} with strikes this turn.
 
                         \rankline
                         \rank{5} You also gain a \plus1 \glossterm{accuracy} bonus with strikes.
@@ -348,7 +347,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{magicalactiveability}{Hear the Rustling Wings}{Free action}
                         \rankline
-                        You gain a \plus4 bonus to the Awareness skill this round (see \pcref{Awareness}).
+                        You \briefly gain a \plus4 bonus to the Awareness skill (see \pcref{Awareness}).
 
                         \rankline
                         \rank{5} The bonus increases to \plus6.
@@ -356,7 +355,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{magicalactiveability}{Kindle the Living Flame}{Free action}
                         \rankline
-                        Your \glossterm{strikes} have the \atFire tag this round.
+                        Your \glossterm{strikes} have the \atFire tag this turn.
 
                         \rankline
                         \rank{5} This effect lasts \glossterm{briefly}.
@@ -372,7 +371,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{magicalactiveability}{Rest Atop the Precipice}{Free action}
                         \rankline
-                        You gain a \plus4 bonus to the Balance skill this round (see \pcref{Balance}).
+                        You gain a \plus4 bonus to the Balance skill this turn (see \pcref{Balance}).
 
                         \rankline
                         \rank{5} The bonus increases to \plus6.
@@ -380,28 +379,26 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{magicalactiveability}{Scale the Highest Tower}{Free action}
                         \rankline
-                        You gain a \plus4 bonus to the Climb skill this round (see \pcref{Climb}).
-                        % TODO: is this wording correct?
+                        You gain a \plus4 bonus to the Climb skill this turn (see \pcref{Climb}).
 
                         \rankline
                         \rank{5} The bonus increases to \plus6.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Shelter from Falling Rain}{Free action}
-                        \abilitytags \abilitytag{Swift}
                         \rankline
                         You gain a \plus2 bonus to your defenses against ranged \glossterm{strikes}.
-                        However, you take a \minus2 penalty to your defenses against melee \glossterm{strikes}.
+                        However, you \glossterm{briefly} take a \minus2 penalty to your defenses against melee \glossterm{strikes}.
 
                         \rankline
                         \rank{5} The bonus increases to \plus3.
                     \end{magicalactiveability}
 
+                    % TODO: Solve ready action failure chance cheat
                     \begin{magicalactiveability}{Step Between the Mystic Worlds}{Free action}
-                        \abilitytags \abilitytag{Swift}
                         \rankline
-                        All attacks against you have a 20\% \glossterm{failure chance} this round.
-                        However, your attacks also have a 20\% failure chance this round.
+                        All attacks against you \glossterm{briefly} have a 20\% \glossterm{failure chance}.
+                        However, your attacks also \glossterm{briefly} have a 20\% failure chance.
 
                         \rankline
                         \rank{5} The failure chance for attacks against you increases to 30\%.
@@ -409,17 +406,16 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{magicalactiveability}{Thread the Eye of the Storm}{Free action}
                         \rankline
-                        You reduce your \glossterm{longshot penalty} with thrown weapons by 2 this round (see \pcref{Weapon Range Limits}).
+                        You reduce your \glossterm{longshot penalty} with thrown weapons by 2 this turn (see \pcref{Weapon Range Limits}).
 
                         \rankline
                         \rank{5} The penalty reduction increases to 3.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Surpass the Mortal Limits}{Free action}
-                        \abilitytags \abilitytag{Swift}
                         \rankline
-                        You can add your Willpower to all \glossterm{checks} you make this phase that are based on Strength, Dexterity, or Constitution.
-                        However, you take a \minus2 penalty to Strength, Dexterity, and Constitution checks during the next round.
+                        You can add your Willpower to all \glossterm{checks} you make this turn that are based on Strength, Dexterity, or Constitution.
+                        However, you \glossterm{briefly} take a \minus2 penalty to Strength, Dexterity, and Constitution checks.
 
                         \rankline
                         \rank{5} The penalty during the next round is removed.
@@ -504,8 +500,9 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             // This starts out equivalent to a smallsword. We don't want to make this exotic by
             // default, because it would invalidate Esoteric Weaponry.
             description: r"
-                You deal 1d6 damage with the punch/kick \glossterm{natural weapon} (see \pcref{Natural Weapons}).
-                In addition, you treat that weapon as having the \weapontag{Light} weapon tag, which allows you to make dual strikes with it more easily (see \pcref{Dual Strikes}).
+                Your punch/kick \glossterm{natural weapon} becomes a \plus1 accuracy weapon that deals 1d4 damage and has the \weapontag{Light} \glossterm{weapon tag}.
+                Since this bonus is local to the weapon, it is doubled if you make \glossterm{dual strikes} with it.
+                Whenever you make a strike with it, you can freely choose whether it also has the \atSubdual tag.
             ",
             // TODO: selective bonus with only unarmed? It's easy enough to just give people
             // from this archetype weapons
@@ -517,8 +514,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 4,
             description: r"
-                Your punch/kick natural weapon gains a \plus1 accuracy bonus.
-                Since this bonus is local to the weapon, it is doubled if you make \glossterm{dual strikes} with it.
+                Your punch/kick natural weapon deals 1d6 damage.
             ",
             modifiers: None,
         },
@@ -528,7 +524,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 7,
             description: r"
-                Your punch/kick damage increases to 1d8.
+                Your punch/kick natural weapon becomes a \plus2 accuracy weapon.
             ",
             // TODO: At this point, you're probably using unarmed? This is weird.
             modifiers: None,

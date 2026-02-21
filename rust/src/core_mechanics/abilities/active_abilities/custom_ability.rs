@@ -72,7 +72,7 @@ impl CustomAbility {
             effect: format!(
                 "
                     The $name chooses an ally within \\medrange.
-                    Whenever the target makes a strike this round, it gains a \\plus{accuracy_modifier} \\glossterm<accuracy> bonus and \\glossterm<rerolls> once, keeping the higher result.
+                    Until the $name's next turn, whenever the target makes a strike, it gains a \\plus{accuracy_modifier} \\glossterm<accuracy> bonus and \\glossterm<rerolls> once, keeping the higher result.
                 ",
                 // r1: +2, r3: +3, etc.
                 accuracy_modifier = 1 + ((rank + 1) / 2),
@@ -296,13 +296,12 @@ impl CustomAbility {
     pub fn reflect_magic() -> Self {
         Self {
             effect: "
-                The $name gains a +2 bonus to all defenses this round.
-                In addition, whenever a creature within \\medrange of it misses it with a \\magical attack this round, that creature treats itself as a target of that strike in addition to any other targets.
+                The $name \\glossterm{briefly} gains a +2 bonus to all defenses.
+                In addition, whenever a creature within \\medrange of it misses it with a \\magical attack during this effect, that creature treats itself as a target of that strike in addition to any other targets.
                 The attacker cannot choose to reduce its accuracy or damage against itself.
             ".to_string(),
             is_magical: true,
             name: "Reflect Magic".to_string(),
-            tags: vec![AbilityTag::Swift],
             ..Default::default()
         }
     }
@@ -340,7 +339,7 @@ impl CustomAbility {
         Self {
             effect: "
                 The $name makes a $accuracy attack vs. Reflex against everything in a \\largearea cone from it.
-                After it uses this ability, it \\glossterm{briefly} cannot use it again.
+                After it uses this ability, it can't use it again next round.
                 \\hit $dr2 damage.
                 \\miss Half damage.
             ".to_string(),
@@ -376,7 +375,7 @@ impl CustomAbility {
             effect: format!(
                 "
                     The $name chooses an ally within \\medrange.
-                    The first time the target makes a strike this round, it gains a \\plus{accuracy_modifier} \\glossterm<accuracy> bonus and \\glossterm<rerolls> once, keeping the higher result.
+                    Until the $name's next turn, the first time the target makes a strike, it gains a \\plus{accuracy_modifier} \\glossterm<accuracy> bonus and \\glossterm<rerolls> once, keeping the higher result.
                 ",
                 // r1: +1, r3: +2, etc.
                 accuracy_modifier = ((rank + 1) / 2),
@@ -440,7 +439,7 @@ impl CustomAbility {
             ),
             is_magical: true,
             name: "Restoration".to_string(),
-            tags: vec![AbilityTag::Swift],
+            tags: vec![],
             usage_time: UsageTime::Standard,
         }
     }
