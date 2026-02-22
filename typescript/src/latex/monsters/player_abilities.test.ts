@@ -237,6 +237,24 @@ t.test('calculateStrikeDamage', (t) => {
     t.end();
   });
 
+  t.test('with extra damage equal to power', (t) => {
+    const ability = {
+      weapon: 'bite',
+      effect: 'Make a strike that deals extra damage equal to your power.',
+    } as any;
+    t.equal(calculateStrikeDamage(mockCreature, ability, false), '1d8+20');
+    t.end();
+  });
+
+  t.test('with extra damage equal to half your power', (t) => {
+    const ability = {
+      weapon: 'bite',
+      effect: 'Make a strike that deals extra damage equal to half your power.',
+    } as any;
+    t.equal(calculateStrikeDamage(mockCreature, ability, false), '1d8+15');
+    t.end();
+  });
+
   t.end();
 });
 
