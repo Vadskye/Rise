@@ -18,8 +18,7 @@ export function addFighters(stock: StockCharacters) {
       intelligence_at_creation: 0,
       willpower_at_creation: 0,
     });
-    c.addManeuver('Weapon Mult 1', { displayName: 'Strike' });
-    c.setEquippedArmor({ bodyArmor: 'scale', shield: 'standard shield' });
-    c.addWeapon('battleaxe');
+    c.setEquippedArmor({ shield: 'standard shield' });
+    c.addWeaponMult('broadsword');
   });
 }

@@ -19,7 +19,6 @@ export function addBarbarians(stock: StockCharacters) {
       intelligence_at_creation: 0,
       willpower_at_creation: 0,
     });
-    c.addManeuver('Wild Swing');
-    c.addWeapon('greataxe');
+    c.addWeaponMult('greataxe');
   });
 }
