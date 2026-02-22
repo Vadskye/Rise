@@ -8,7 +8,7 @@ import {
   cloneMonster,
   createCreature,
   CombatSimulationResult,
-} from './combat_scenario';
+} from '@src/combat/combat_scenario';
 
 function assertExpectedWinRate(
   tap: any,

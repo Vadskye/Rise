@@ -1,6 +1,6 @@
-import { Grimoire } from '../monsters/grimoire';
-import { Creature } from '../character_sheet/creature';
-import { createTeam, createScenario } from '../character_sheet/combat_scenario';
+import { Grimoire } from '@src/monsters/grimoire';
+import { Creature } from '@src/character_sheet/creature';
+import { createTeam, createScenario } from '@src/combat/combat_scenario';
 
 /**
  * Calculates the average hit rate of monsters against themselves.
