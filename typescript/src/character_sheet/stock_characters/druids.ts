@@ -19,8 +19,7 @@ export function addDruids(stock: StockCharacters) {
       dexterity_at_creation: 0,
       intelligence_at_creation: 0,
     });
-    // 'Vinestorm' is a rank 1 spell in 'Verdamancy' sphere
-    c.addSpell('Vinestorm');
-    c.addWeapon('club');
+    c.setEquippedArmor({ shield: 'standard shield' });
+    c.addWeaponMult('sickle');
   });
 }

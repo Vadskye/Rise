@@ -19,8 +19,6 @@ export function addMonks(stock: StockCharacters) {
       intelligence_at_creation: 0,
       perception_at_creation: 0,
     });
-    // 'Whirlwind' is a rank 1 maneuver in 'Flurry of Blows' style
-    c.addManeuver('Whirlwind');
-    c.addWeapon('fists');
+    c.addWeaponMult('fists');
   });
 }
