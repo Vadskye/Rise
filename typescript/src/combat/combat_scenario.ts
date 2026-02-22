@@ -14,6 +14,7 @@ import {
   MonsterWeapon,
   MONSTER_WEAPONS,
 } from '@src/monsters/weapons';
+import { ActiveAbility } from '@src/abilities/active_abilities';
 
 export interface CombatSimulationResult {
   averageRounds: number;
@@ -255,7 +256,9 @@ export class CombatScenario {
       const areaTargets = this.getPotentialTargets(team, state);
       for (const areaTarget of areaTargets) {
         state.attacksByTeam[team.name]++;
-        const { damage, hit } = this.resolveAttack(attacker, areaTarget, -2);
+        // Area attacks for elites are currently generic; we can keep them that way for now
+        // or refine them later.
+        const { damage, hit } = this.resolveAttack(attacker, areaTarget, undefined, -2);
         if (hit) state.hitsByTeam[team.name]++;
 
         state.hp[areaTarget.id] -= damage;
@@ -275,7 +278,12 @@ export class CombatScenario {
 
     const defender = this.selectTarget(attacker, potentialTargetsAfterArea, state);
     state.attacksByTeam[team.name]++;
-    const { damage, hit } = this.resolveAttack(attacker, defender);
+
+    // If the monster has any active weapon-based abilities, arbitrarily choose the first.
+    // In the future, we should find the best ability and use it.
+    const explicitAbility = attacker.getActiveAbilities().filter((ability) => ability.weapon)[0];
+
+    const { damage, hit } = this.resolveAttack(attacker, defender, explicitAbility);
     if (hit) state.hitsByTeam[team.name]++;
 
     state.hp[defender.id] -= damage;
@@ -348,14 +356,14 @@ export class CombatScenario {
   private resolveAttack(
     attacker: Creature,
     defender: Creature,
+    explicitAbility?: ActiveAbility,
     rankOffset: number = 0,
   ): { damage: number; hit: boolean } {
     const roll = this.rollD10(true);
     let accuracy = attacker.accuracy;
 
-    const weaponName = attacker.weapon_0_name as MonsterWeapon;
-    if (MONSTER_WEAPONS.has(weaponName)) {
-      accuracy += getWeaponAccuracy(weaponName);
+    if (explicitAbility?.weapon) {
+      accuracy += getWeaponAccuracy(explicitAbility.weapon);
     }
 
     const total = roll + accuracy;
@@ -363,29 +371,29 @@ export class CombatScenario {
 
     if (total >= targetDefense + 10) {
       // Critical Hit: Double damage
-      return { damage: this.calculateDamage(attacker, rankOffset) * 2, hit: true };
+      return { damage: this.calculateDamage(attacker, explicitAbility, rankOffset) * 2, hit: true };
     } else if (total >= targetDefense) {
       // Regular Hit
-      return { damage: this.calculateDamage(attacker, rankOffset), hit: true };
+      return { damage: this.calculateDamage(attacker, explicitAbility, rankOffset), hit: true };
     }
 
     return { damage: 0, hit: false }; // Miss
   }
 
-  private calculateDamage(creature: Creature, rankOffset: number = 0): number {
+  private calculateDamage(
+    creature: Creature,
+    explicitAbility?: ActiveAbility,
+    rankOffset: number = 0,
+  ): number {
     // For now, we ignore the fact that attacks should theoretically be intrinsically either magical or mundane, and we just use the highest power on the premise that monsters should generally have abilities that use their highest power.
     const power = Math.max(creature.mundane_power, creature.magical_power);
     const rank = Math.floor((creature.level + 2) / 3) + rankOffset;
     const halfPower = Math.floor(power / 2);
 
-    const weaponName = creature.weapon_0_name as MonsterWeapon;
-    // TODO: scale weapon damage based on a standard maneuver for the given rank
-    if (MONSTER_WEAPONS.has(weaponName)) {
-      const dice = getWeaponDamageDice(weaponName);
-      const multiplier = getWeaponPowerMultiplier(weaponName);
-      const bonus = Math.floor(power * multiplier);
-      const diceExpr = `${dice.count}d${dice.size}${bonus >= 0 ? '+' : ''}${bonus}`;
-      return this.rollDice(diceExpr);
+    if (explicitAbility && explicitAbility.kind === 'maneuver' && explicitAbility.weapon) {
+      // For now, we ignore the text of the ability and just do a normal strike.
+      // In the future, we should parse maneuver text like we do to write monster text in the Tome of Guidance.
+      return this.calculateWeaponBaseDamage(creature, explicitAbility.weapon, power);
     }
 
     // Standard targeted medium damage ranks from sheet_worker.ts
@@ -405,6 +413,18 @@ export class CombatScenario {
     if (!diceExpr) {
       throw new Error(`Unknown rank: ${rank}`);
     }
+    return this.rollDice(diceExpr);
+  }
+
+  private calculateWeaponBaseDamage(
+    creature: Creature,
+    weaponName: MonsterWeapon,
+    power: number,
+  ): number {
+    const dice = getWeaponDamageDice(weaponName);
+    const multiplier = getWeaponPowerMultiplier(weaponName);
+    const bonus = Math.floor(power * multiplier);
+    const diceExpr = `${dice.count}d${dice.size}${bonus >= 0 ? '+' : ''}${bonus}`;
     return this.rollDice(diceExpr);
   }
 

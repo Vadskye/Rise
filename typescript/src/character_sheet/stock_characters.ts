@@ -17,6 +17,7 @@ import { addRogues } from '@src/character_sheet/stock_characters/rogues';
 import { addSorcerers } from '@src/character_sheet/stock_characters/sorcerers';
 import { addVotives } from '@src/character_sheet/stock_characters/votives';
 import { addWizards } from '@src/character_sheet/stock_characters/wizards';
+import { addMisc } from '@src/character_sheet/stock_characters/misc';
 
 type CharacterInitializer = (creature: Creature) => void;
 
@@ -39,6 +40,7 @@ export class StockCharacters {
     addSorcerers(this);
     addVotives(this);
     addWizards(this);
+    addMisc(this);
   }
 
   addCharacter(name: string, initializer: CharacterInitializer) {

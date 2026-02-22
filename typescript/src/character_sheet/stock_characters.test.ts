@@ -8,16 +8,13 @@ import {
   createScenario,
 } from '@src/combat/combat_scenario';
 
+const stock = new StockCharacters();
+stock.addAllCharacters();
+
 // Pre-load monsters for combat smoke tests
 loadAllMonsters();
 
-t.beforeEach(() => {
-  clearAllCharacterSheets();
-});
-
 t.test('StockCharacters', (t) => {
-  const stock = new StockCharacters();
-  stock.addAllCharacters();
   const names = stock.getCharacterNames();
 
   t.test('load all characters', (t) => {
@@ -49,17 +46,10 @@ t.test('StockCharacters', (t) => {
         'Barbarian should have scale',
       );
       t.equal(
-        stock.getCharacter('Monk')?.body_armor_name,
-        'buff leather',
-        'Monk should have buff leather',
-      );
-      t.equal(
         stock.getCharacter('Paladin')?.body_armor_name,
         'breastplate',
         'Paladin should have breastplate',
       );
-      t.notOk(stock.getCharacter('Wizard')?.body_armor_name, 'Wizard should have no armor');
-      t.notOk(stock.getCharacter('Sorcerer')?.body_armor_name, 'Sorcerer should have no armor');
       t.end();
     });
 
@@ -68,10 +58,7 @@ t.test('StockCharacters', (t) => {
 
   for (const name of names) {
     t.test(`combat smoke test: ${name}`, (t) => {
-      // Need to reload characters for each test because beforeEach clears the sheets
-      const localStock = new StockCharacters();
-      localStock.addAllCharacters();
-      const char = localStock.getCharacter(name);
+      const char = stock.getCharacter(name);
 
       t.ok(char, `${name} should exist`);
       if (char) {

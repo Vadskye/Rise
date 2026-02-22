@@ -10,6 +10,11 @@ import {
   createCreature,
   CombatSimulationResult,
 } from '@src/combat/combat_scenario';
+import {
+  clearAllCharacterSheets,
+  resetDefaultCharacterSheet,
+} from '@src/character_sheet/current_character_sheet';
+import { handleEverything } from '@src/character_sheet/sheet_worker';
 
 function assertExpectedWinRate(
   tap: any,
@@ -34,6 +39,9 @@ function assertExpectedRounds(tap: any, result: CombatSimulationResult, expected
 }
 
 loadAllMonsters();
+
+const stock = new StockCharacters();
+stock.addAllCharacters();
 
 t.test('Can create a monster', (t) => {
   const ankheg = getMonster('Ankheg');
@@ -79,9 +87,9 @@ t.test('CombatScenario can simulate 1 Ankheg vs 10 Carrion Crows', (t) => {
   const scenario = createScenario([crowTeam, ankhegTeam]);
   const result = scenario.simulate();
 
-  assertExpectedRounds(t, result, 4.8);
-  assertExpectedWinRate(t, result, 'Ankheg', 72.4);
-  assertExpectedWinRate(t, result, 'Crows', 27.6);
+  assertExpectedRounds(t, result, 3);
+  assertExpectedWinRate(t, result, 'Ankheg', 20);
+  assertExpectedWinRate(t, result, 'Crows', 80);
   t.end();
 });
 
@@ -99,7 +107,7 @@ t.test('CombatScenario can simulate 1 Ankheg vs 1 Ankheg', (t) => {
   const scenario = createScenario([ankhegTeam, ankhegTeam2]);
   const result = scenario.simulate();
 
-  assertExpectedRounds(t, result, 8.5);
+  assertExpectedRounds(t, result, 7.1);
   assertExpectedWinRate(t, result, 'Ankheg Team 1', 50.0);
   assertExpectedWinRate(t, result, 'Ankheg Team 2', 50.0);
   t.end();
@@ -232,8 +240,8 @@ t.test('One elite Ankheg is equivalent to four non-elite Ankhegs', (t) => {
   const result = scenario.simulate(500);
 
   assertExpectedRounds(t, result, 5.2);
-  assertExpectedWinRate(t, result, 'Elite Ankheg', 70);
-  assertExpectedWinRate(t, result, 'Normal Ankhegs', 30);
+  assertExpectedWinRate(t, result, 'Elite Ankheg', 52);
+  assertExpectedWinRate(t, result, 'Normal Ankhegs', 48);
   t.end();
 });
 
@@ -255,26 +263,15 @@ t.test('One elite frostweb spider is equivalent to four non-elite frostweb spide
   const scenario = createScenario([eliteTeam, normalTeam]);
   const result = scenario.simulate();
 
-  assertExpectedRounds(t, result, 22);
+  assertExpectedRounds(t, result, 24);
   assertExpectedWinRate(t, result, 'Elite Frostweb Spider', 88);
   assertExpectedWinRate(t, result, 'Normal Frostweb Spiders', 12);
   t.end();
 });
 
 t.test('Characters with equipped weapons use weapon stats for accuracy and damage', (t) => {
-  const stock = new StockCharacters();
-  stock.addAllCharacters();
   const barbarian = stock.getCharacter('Barbarian')!;
-
-  // Create a target with 0 armor defense so we always hit
-  const target = createCreature('Target', (c) => {
-    c.setProperties({
-      perception_at_creation: -100,
-      constitution_at_creation: 90, // 90 from con, 10 from base calc = 100 total HP
-      armor_defense: 1,
-      level: 1,
-    });
-  });
+  const target = stock.getCharacter('Target Dummy')!;
 
   const team1 = createTeam('Barbarian Team', [barbarian]);
   const team2 = createTeam('Target Team', [target]);
