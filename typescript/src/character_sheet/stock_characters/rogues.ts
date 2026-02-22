@@ -19,8 +19,7 @@ export function addRogues(stock: StockCharacters) {
       strength_at_creation: 0,
       willpower_at_creation: 0,
     });
-    // 'Sneak Attack 1' is a rank 1 maneuver in 'Monster Maneuvers' style
-    c.addManeuver('Sneak Attack 1', { displayName: 'Sneak Attack' });
-    c.addWeapon('smallswords');
+    c.addSneakAttack('smallswords');
+    c.addWeaponMult('smallswords');
   });
 }

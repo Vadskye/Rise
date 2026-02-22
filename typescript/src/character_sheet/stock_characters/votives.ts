@@ -19,8 +19,7 @@ export function addVotives(stock: StockCharacters) {
       dexterity_at_creation: 0,
       intelligence_at_creation: 0,
     });
-    // 'Consecrated Blow' is a rank 1 spell in 'Prayer' sphere
-    c.addSpell('Consecrated Blow');
-    c.addWeapon('spear');
+    c.setEquippedArmor({ shield: 'standard shield' });
+    c.addWeaponMult('broadsword');
   });
 }

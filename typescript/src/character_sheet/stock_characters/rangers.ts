@@ -19,8 +19,6 @@ export function addRangers(stock: StockCharacters) {
       intelligence_at_creation: 0,
       willpower_at_creation: 0,
     });
-    // Rangers often have "Mobile Hunter" or similar maneuvers
-    c.addManeuver('Weapon Mult 1', { displayName: 'Archer Strike' });
-    c.addWeapon('longbow');
+    c.addWeaponMult('smallswords');
   });
 }
