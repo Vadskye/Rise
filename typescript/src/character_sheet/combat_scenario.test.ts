@@ -10,15 +10,26 @@ import {
   CombatSimulationResult,
 } from './combat_scenario';
 
-function assertExpectedWinRate(tap: any, result: CombatSimulationResult, teamName: string, expected: number) {
+function assertExpectedWinRate(
+  tap: any,
+  result: CombatSimulationResult,
+  teamName: string,
+  expected: number,
+) {
   const actual = result.winRates[teamName];
-  tap.ok(Math.abs(actual - expected) <= 10, `${teamName} win rate should be ~${expected}% (actual: ${actual.toFixed(2)}%)`);
+  tap.ok(
+    Math.abs(actual - expected) <= 10,
+    `${teamName} win rate should be ~${expected}% (actual: ${actual.toFixed(2)}%)`,
+  );
 }
 
 function assertExpectedRounds(tap: any, result: CombatSimulationResult, expected: number) {
   const actual = result.averageRounds;
   const tolerance = Math.max(expected * 0.1, 1.0);
-  tap.ok(Math.abs(actual - expected) <= tolerance, `Average rounds should be ~${expected} (actual: ${actual.toFixed(2)}, tolerance: ${tolerance.toFixed(2)})`);
+  tap.ok(
+    Math.abs(actual - expected) <= tolerance,
+    `Average rounds should be ~${expected} (actual: ${actual.toFixed(2)}, tolerance: ${tolerance.toFixed(2)})`,
+  );
 }
 
 loadAllMonsters();

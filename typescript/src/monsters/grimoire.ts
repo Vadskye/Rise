@@ -76,7 +76,9 @@ export class Grimoire {
       return;
     }
     if (this.monsters[config.name]) {
-      throw new Error(`Can't add a monster group named '${config.name}'; a monster with that name already exists.`);
+      throw new Error(
+        `Can't add a monster group named '${config.name}'; a monster with that name already exists.`,
+      );
     }
 
     this.monsterGroups[config.name] = {
