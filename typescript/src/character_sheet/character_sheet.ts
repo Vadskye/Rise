@@ -14,11 +14,14 @@ export class CharacterSheet {
   private properties: Record<string, Property<SimpleValue>>;
   private repeatingSections: Record<string, RepeatingSection>;
   private latestRowId: number | null = null;
-  private static signalCache: Record<string, {
-    changedPropertyNames: string[];
-    clickedButtonNames: string[];
-    hasOpenedTrigger: boolean;
-  }> = {};
+  private static signalCache: Record<
+    string,
+    {
+      changedPropertyNames: string[];
+      clickedButtonNames: string[];
+      hasOpenedTrigger: boolean;
+    }
+  > = {};
 
   constructor(characterName: string) {
     this.buttons = {};

@@ -719,8 +719,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       // Three upgrades above a normal weapon. TODO figure out whether this is balanced??
       functionsLike: {
         name: 'stonefist',
-        exceptThat:
-          'the damage dealt by the weapon increases to 2d6.',
+        exceptThat: 'the damage dealt by the weapon increases to 2d6.',
       },
       rank: 5,
       roles: ['attune'],
