@@ -304,9 +304,6 @@ t.test('High level characters use correct multipliers for maneuvers', (t) => {
   // A max rank weapon mult maneuver has 13 power, 6x weapon damage, extra damage equal to power.
   // Damage on a normal hit is 6d8 + 26 = 53. Damage per attack is 106.
   // So expected rounds is 1000 / 106 = 9.43.
-
-  // However, there's a bug where the maneuver parsing doesn't work for scaling extra damage.
-  // This means it's only doing 6d8+13 = 40 damage, so 80 per round. 1000 / 80 = 12.5 rounds.
-  assertExpectedRounds(t, result, 12.5);
+  assertExpectedRounds(t, result, 9.43);
   t.end();
 });
