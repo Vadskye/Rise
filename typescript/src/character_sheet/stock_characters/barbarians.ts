@@ -20,7 +20,6 @@ export function addBarbarians(stock: StockCharacters) {
       willpower_at_creation: 0,
     });
     c.addManeuver('Wild Swing');
-    // Greataxe is implicit in some maneuvers but better to be explicit if not using a specific maneuver weapon
     c.addWeapon('greataxe');
   });
 }

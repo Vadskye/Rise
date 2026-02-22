@@ -822,6 +822,7 @@ export class Creature implements CreaturePropertyMap {
   // the cache is reset. The time cost of `.clearCache` is ~0, so even in a function that
   // sets multiple sheet properties, there's no advantage in `.setProperties` directly.
   setProperties(properties: Partial<CreaturePropertyMap>) {
+    setCurrentCharacterSheet(this.sheet.characterName);
     this.sheet.setProperties(properties);
     this.clearCache();
   }
