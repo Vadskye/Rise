@@ -143,7 +143,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     insight_points: 1,
     class_skill_count: 4,
     proficiencies:
-      "Light armor, leather lamellar armor, standard shields, shepherd's axe, scimitars, and sickles",
+      "Light armor, leather lamellar armor, standard shields, shepherd's axe, and scythe",
   },
   fighter: {
     armor_defense: 1,
