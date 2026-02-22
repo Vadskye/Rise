@@ -4,6 +4,7 @@ const MONSTER_WEAPONS_LIST = [
   'battleaxe',
   'beak',
   'bite',
+  'broadsword',
   'claws',
   'club',
   'darts',
@@ -42,6 +43,7 @@ export function getWeaponTag(weaponName: MonsterWeapon): string | null {
     battleaxe: 'Keen',
     beak: null,
     bite: null,
+    broadsword: null,
     claws: null, // These have the Light tag, but that's irrelevant for running monsters.
     club: null,
     darts: 'Thrown (30/60)',
@@ -86,6 +88,7 @@ export function isManufactured(weaponName: MonsterWeapon): boolean {
     battleaxe: true,
     beak: false,
     bite: false,
+    broadsword: true,
     claws: false,
     club: true,
     darts: true,
@@ -121,6 +124,7 @@ export function getWeaponDamageDice(weaponName: MonsterWeapon): DicePool {
     battleaxe: xdy(1, 6),
     beak: xdy(1, 6),
     bite: xdy(1, 8),
+    broadsword: xdy(1, 6),
     claws: xdy(2, 4),
     club: xdy(1, 6),
     darts: xdy(2, 4),
@@ -156,6 +160,7 @@ export function getWeaponAccuracy(weaponName: MonsterWeapon): number {
     battleaxe: 0,
     beak: 1,
     bite: 0,
+    broadsword: 1,
     claws: 2,
     club: 0,
     darts: 0, // +3 light offsets -3 dual strike
@@ -193,6 +198,7 @@ export function getWeaponPowerMultiplier(weaponName: MonsterWeapon): 0.5 | 1 {
       battleaxe: 0.5, // Assume one-handing.
       beak: 1,
       bite: 1,
+      broadsword: 0.5, // Assume one-handing.
       claws: 0.5,
       club: 0.5,
       darts: 0.5,
