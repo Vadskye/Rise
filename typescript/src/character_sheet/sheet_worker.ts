@@ -995,10 +995,10 @@ function handleArmorDefense() {
       const totalValue = Math.max(
         0,
         beforeEquipment +
-        v.body_armor_defense +
-        v.shield_defense +
-        v.misc +
-        v.all_defenses_vital_wound_modifier,
+          v.body_armor_defense +
+          v.shield_defense +
+          v.misc +
+          v.all_defenses_vital_wound_modifier,
       );
 
       setAttrs({
@@ -1130,26 +1130,31 @@ function handleAttributes() {
 }
 
 function handleAttunedEffects() {
-  on('change:repeating_attunedmodifiers remove:repeating_attunedmodifiers sheet:opened', function () {
-    getSectionIDs('repeating_attunedmodifiers', (repeatingSectionIds) => {
-      const isActiveIds = repeatingSectionIds.map(
-        (id) => `repeating_attunedmodifiers_${id}_is_active`,
-      );
-      const isDeepIds = repeatingSectionIds.map((id) => `repeating_attunedmodifiers_${id}_is_deep`);
-      getAttrs(isActiveIds.concat(isDeepIds), (values) => {
-        let attunedCount = 0;
-        for (const id of repeatingSectionIds) {
-          if (values[`repeating_attunedmodifiers_${id}_is_active`] === '1') {
-            const attuneCost = values[`repeating_attunedmodifiers_${id}_is_deep`] === '1' ? 2 : 1;
-            attunedCount += attuneCost;
+  on(
+    'change:repeating_attunedmodifiers remove:repeating_attunedmodifiers sheet:opened',
+    function () {
+      getSectionIDs('repeating_attunedmodifiers', (repeatingSectionIds) => {
+        const isActiveIds = repeatingSectionIds.map(
+          (id) => `repeating_attunedmodifiers_${id}_is_active`,
+        );
+        const isDeepIds = repeatingSectionIds.map(
+          (id) => `repeating_attunedmodifiers_${id}_is_deep`,
+        );
+        getAttrs(isActiveIds.concat(isDeepIds), (values) => {
+          let attunedCount = 0;
+          for (const id of repeatingSectionIds) {
+            if (values[`repeating_attunedmodifiers_${id}_is_active`] === '1') {
+              const attuneCost = values[`repeating_attunedmodifiers_${id}_is_deep`] === '1' ? 2 : 1;
+              attunedCount += attuneCost;
+            }
           }
-        }
-        setAttrs({
-          active_attunement_count: attunedCount,
+          setAttrs({
+            active_attunement_count: attunedCount,
+          });
         });
       });
-    });
-  });
+    },
+  );
 }
 
 function handleAttunementPoints() {
@@ -2344,12 +2349,12 @@ function handleNonArmorDefense(defense: string, attribute: string) {
       let totalValue = Math.max(
         0,
         levelModifier +
-        monsterModifier +
-        sizeModifier +
-        shieldModifier +
-        attributeModifier +
-        v.misc +
-        v.all_defenses_vital_wound_modifier,
+          monsterModifier +
+          sizeModifier +
+          shieldModifier +
+          attributeModifier +
+          v.misc +
+          v.all_defenses_vital_wound_modifier,
       );
 
       setAttrs({
@@ -2783,7 +2788,7 @@ function handleOtherDamagingAttacks() {
   // Local other damaging attack change
   on(
     'change:repeating_otherdamagingattacks:attack_damage_dice' +
-    ' change:repeating_otherdamagingattacks:is_magical',
+      ' change:repeating_otherdamagingattacks:is_magical',
     function () {
       getOdaDamageDiceAttrs('repeating_otherdamagingattacks', (parsed) => {
         setCalculatedDicePool('repeating_otherdamagingattacks', parsed);
@@ -3307,11 +3312,11 @@ function handleTypescriptMonsterCreation() {
     effect: string;
     name: string;
     type:
-    | 'repeating_strikeattacks'
-    | 'repeating_otherdamagingattacks'
-    | 'repeating_nondamagingattacks'
-    | 'repeating_abilities'
-    | 'repeating_passiveabilities';
+      | 'repeating_strikeattacks'
+      | 'repeating_otherdamagingattacks'
+      | 'repeating_nondamagingattacks'
+      | 'repeating_abilities'
+      | 'repeating_passiveabilities';
   }
 
   function generateTypescriptMonster(v: any, allAbilityKeys: AbilityKey[]) {
