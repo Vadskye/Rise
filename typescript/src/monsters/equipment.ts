@@ -18,6 +18,8 @@ const BODY_ARMORS_LIST = [
   'breastplate',
   'half plate',
   'full plate',
+  'mage armor',
+  'ki barrier',
 ] as const;
 export type BodyArmor = (typeof BODY_ARMORS_LIST)[number];
 export const BODY_ARMORS = new Set(BODY_ARMORS_LIST);

@@ -19,6 +19,7 @@ export function addMonks(stock: StockCharacters) {
       intelligence_at_creation: 0,
       perception_at_creation: 0,
     });
+    c.setEquippedArmor({ bodyArmor: 'ki barrier' });
     c.addWeaponMult('fists');
   });
 }

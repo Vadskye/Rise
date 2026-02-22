@@ -19,7 +19,6 @@ export function addSorcerers(stock: StockCharacters) {
       strength_at_creation: 0,
       intelligence_at_creation: 0,
     });
-    // 'Eyes of Flame' is a rank 1 spell in 'Pyromancy' sphere
-    c.addSpell('Eyes of Flame');
+    c.setEquippedArmor({ bodyArmor: 'mage armor' });
   });
 }
