@@ -15,7 +15,7 @@ import {
   MONSTER_WEAPONS,
 } from '@src/monsters/weapons';
 import { ActiveAbility } from '@src/abilities/active_abilities';
-import { calculateStrikeDamage } from '@src/abilities/maneuver_parser';
+import { calculateStrikeDamage } from '@src/latex/monsters/player_abilities';
 
 export interface CombatSimulationResult {
   averageRounds: number;
