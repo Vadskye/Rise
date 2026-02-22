@@ -47,6 +47,7 @@ import {
   BodyArmor,
   Shield,
 } from '@src/monsters/equipment';
+import { SimpleValue } from './sheet_worker';
 
 export type TargetSelectionLogic = 'Random' | 'Ordered' | 'Vulnerable';
 
@@ -74,6 +75,8 @@ type NumericCreatureProperty =
   | 'injury_point'
   | 'mundane_power'
   | 'magical_power'
+  | 'shield_accuracy'
+  | 'shield_reflex'
   | 'speed'
   | RiseAttribute
   | RiseAttributeModifier
@@ -81,9 +84,11 @@ type NumericCreatureProperty =
   | RiseSkill
   | RiseJumpDistance;
 type StringCreatureProperty =
+  | 'body_armor_name'
   | 'description'
   | 'monster_type'
   | 'name'
+  | 'shield_name'
   | 'weapon_0_name'
   | 'weapon_1_name'
   | 'weapon_2_name'
@@ -360,29 +365,28 @@ export class Creature implements CreaturePropertyMap {
     let weaponIndex = 0;
     for (const item of items) {
       if (isBodyArmor(item)) {
-        this.sheet.setProperties(generateBodyArmorProperties(item));
+        this.setProperties(generateBodyArmorProperties(item));
       } else if (isShield(item)) {
-        this.sheet.setProperties(generateShieldProperties(item));
+        this.setProperties(generateShieldProperties(item));
       } else {
         const key = `weapon_${weaponIndex}_name`;
-        this.sheet.setProperties({ [key]: item });
+        this.setProperties({ [key]: item });
         weaponIndex += 1;
       }
     }
     // Clear any remaining weapons
     while (weaponIndex <= 3) {
-      this.sheet.setProperties({ [`weapon_${weaponIndex}_name`]: '' });
+      this.setProperties({ [`weapon_${weaponIndex}_name`]: '' });
       weaponIndex += 1;
     }
-    this.clearCache();
   }
 
   setEquippedArmor({ bodyArmor, shield }: { bodyArmor?: BodyArmor; shield?: Shield }) {
     if (bodyArmor) {
-      this.sheet.setProperties(generateBodyArmorProperties(bodyArmor));
+      this.setProperties(generateBodyArmorProperties(bodyArmor));
     }
     if (shield) {
-      this.sheet.setProperties(generateShieldProperties(shield));
+      this.setProperties(generateShieldProperties(shield));
     }
   }
 
@@ -395,7 +399,7 @@ export class Creature implements CreaturePropertyMap {
       if (existingWeapon === weapon) {
         return;
       } else if (!existingWeapon) {
-        this.sheet.setProperties({ [key]: weapon });
+        this.setProperties({ [key]: weapon });
         return;
       }
     }
@@ -625,18 +629,16 @@ export class Creature implements CreaturePropertyMap {
         attrs[`${prefix}_value${i}`] = config.numericEffects[i].modifier;
       }
     }
-    this.sheet.setProperties(attrs);
-    this.clearCache();
+    this.setProperties(attrs);
   }
 
   addPassiveAbility({ name, effect, isMagical }: PassiveAbility) {
     const prefix = `repeating_passiveabilities_${this.sheet.generateRowId()}`;
-    this.sheet.setProperties({
+    this.setProperties({
       [`${prefix}_ability_name`]: name,
       [`${prefix}_is_magical`]: Boolean(isMagical),
       [`${prefix}_ability_effects`]: effect,
     });
-    this.clearCache();
   }
 
   getPassiveAbilities(): PassiveAbility[] {
@@ -814,6 +816,9 @@ export class Creature implements CreaturePropertyMap {
     }
   }
 
+  // Always use this instead of calling `this.sheet.setProperties` directly to ensure that
+  // the cache is reset. The time cost of `.clearCache` is ~0, so even in a function that
+  // sets multiple sheet properties, there's no advantage in `.setProperties` directly.
   setProperties(properties: Partial<CreaturePropertyMap>) {
     this.sheet.setProperties(properties);
     this.clearCache();
@@ -853,8 +858,7 @@ export class Creature implements CreaturePropertyMap {
       const rowId = this.sheet.generateRowId();
       props[`repeating_trainedskills_${rowId}_trained_skill`] = skillName;
     }
-    this.sheet.setProperties(props);
-    this.clearCache();
+    this.setProperties(props);
   }
 
   getSizeBasedSweepingTag(): RiseWeaponTag | null {
@@ -1369,6 +1373,22 @@ export class Creature implements CreaturePropertyMap {
 
   public get monster_type() {
     return this.getPropertyValue('monster_type');
+  }
+
+  public get shield_accuracy() {
+    return this.getPropertyValue('shield_accuracy');
+  }
+
+  public get shield_reflex() {
+    return this.getPropertyValue('shield_reflex');
+  }
+
+  public get body_armor_name() {
+    return this.getPropertyValue('body_armor_name');
+  }
+
+  public get shield_name() {
+    return this.getPropertyValue('shield_name');
   }
 }
 

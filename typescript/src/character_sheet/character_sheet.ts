@@ -124,8 +124,9 @@ export class CharacterSheet {
     };
   }
 
-  public triggerOpened() {
+  public triggerRecalculation() {
     this.clickButton('sheet:opened');
+    this.setProperties({level: this.getPropertyValue('level')});
   }
 
   // This is generally more convenient than `on()` when working with known properties.

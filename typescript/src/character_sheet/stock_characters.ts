@@ -52,7 +52,7 @@ export class StockCharacters {
     initializer(this.characters[name]);
 
     handleEverything();
-    sheet.triggerOpened();
+    sheet.triggerRecalculation();
   }
 
   getCharacter(name: string): Creature | null {
