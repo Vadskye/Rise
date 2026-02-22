@@ -19,7 +19,6 @@ export function addWizards(stock: StockCharacters) {
       strength_at_creation: 0,
       dexterity_at_creation: 0,
     });
-    // 'Windblast' is a rank 1 spell in 'Aeromancy' sphere
-    c.addSpell('Windblast');
+    c.setEquippedArmor({ bodyArmor: 'mage armor' });
   });
 }
