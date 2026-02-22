@@ -6,7 +6,14 @@ import {
   getCurrentCharacterSheet,
   clearAllCharacterSheets,
 } from '@src/character_sheet/current_character_sheet';
-import { RiseBaseClass } from '@src/character_sheet/rise_data';
+import { RiseBaseClass, RiseWeaponTag } from '@src/character_sheet/rise_data';
+import {
+  getWeaponAccuracy,
+  getWeaponDamageDice,
+  getWeaponPowerMultiplier,
+  MonsterWeapon,
+  MONSTER_WEAPONS,
+} from '@src/monsters/weapons';
 
 export interface CombatSimulationResult {
   averageRounds: number;
@@ -59,7 +66,7 @@ export class CombatScenario {
    * Simulates the combat until a victor is determined.
    * Runs multiple iterations to gather statistics.
    */
-  public simulate(iterations: number = 100): CombatSimulationResult {
+  public simulate(iterations: number = 200): CombatSimulationResult {
     if (this.teams.length < 2) {
       throw new Error('Combat requires at least two teams.');
     }
@@ -344,7 +351,13 @@ export class CombatScenario {
     rankOffset: number = 0,
   ): { damage: number; hit: boolean } {
     const roll = this.rollD10(true);
-    const accuracy = attacker.accuracy;
+    let accuracy = attacker.accuracy;
+
+    const weaponName = attacker.weapon_0_name as MonsterWeapon;
+    if (MONSTER_WEAPONS.has(weaponName)) {
+      accuracy += getWeaponAccuracy(weaponName);
+    }
+
     const total = roll + accuracy;
     const targetDefense = defender.armor_defense;
 
@@ -360,9 +373,20 @@ export class CombatScenario {
   }
 
   private calculateDamage(creature: Creature, rankOffset: number = 0): number {
+    // For now, we ignore the fact that attacks should theoretically be intrinsically either magical or mundane, and we just use the highest power on the premise that monsters should generally have abilities that use their highest power.
+    const power = Math.max(creature.mundane_power, creature.magical_power);
     const rank = Math.floor((creature.level + 2) / 3) + rankOffset;
-    const power = creature.mundane_power;
     const halfPower = Math.floor(power / 2);
+
+    const weaponName = creature.weapon_0_name as MonsterWeapon;
+    // TODO: scale weapon damage based on a standard maneuver for the given rank
+    if (MONSTER_WEAPONS.has(weaponName)) {
+      const dice = getWeaponDamageDice(weaponName);
+      const multiplier = getWeaponPowerMultiplier(weaponName);
+      const bonus = Math.floor(power * multiplier);
+      const diceExpr = `${dice.count}d${dice.size}${bonus >= 0 ? '+' : ''}${bonus}`;
+      return this.rollDice(diceExpr);
+    }
 
     // Standard targeted medium damage ranks from sheet_worker.ts
     const damageTable: Record<number, string> = {
@@ -458,10 +482,11 @@ export function createCreature(name: string, initializer?: (creature: Creature) 
   sheet.setProperties({ name });
 
   const creature = new Creature(sheet);
+  handleEverything();
+
   if (initializer) {
     initializer(creature);
   }
-  handleEverything();
 
   return creature;
 }
