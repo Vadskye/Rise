@@ -1,12 +1,12 @@
-import { Creature } from './creature';
-import { Grimoire } from '../monsters/grimoire';
-import { handleEverything } from './sheet_worker';
+import { Creature } from '@src/character_sheet/creature';
+import { Grimoire } from '@src/monsters/grimoire';
+import { handleEverything } from '@src/character_sheet/sheet_worker';
 import {
   setCurrentCharacterSheet,
   getCurrentCharacterSheet,
   clearAllCharacterSheets,
-} from './current_character_sheet';
-import { RiseBaseClass } from './rise_data';
+} from '@src/character_sheet/current_character_sheet';
+import { RiseBaseClass } from '@src/character_sheet/rise_data';
 
 export interface CombatSimulationResult {
   averageRounds: number;

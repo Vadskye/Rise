@@ -1,5 +1,5 @@
 import t from 'tap';
-import { createCreature, createTeam, createScenario } from './combat_scenario';
+import { createCreature, createTeam, createScenario } from '@src/combat/combat_scenario';
 
 t.test('Target Selection: Ordered', (t) => {
   const attacker = createCreature('Attacker');

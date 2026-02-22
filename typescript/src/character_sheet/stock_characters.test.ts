@@ -6,7 +6,7 @@ import {
   getMonster,
   createTeam,
   createScenario,
-} from '@src/character_sheet/combat_scenario';
+} from '@src/combat/combat_scenario';
 
 // Pre-load monsters for combat smoke tests
 loadAllMonsters();
