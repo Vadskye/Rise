@@ -64,9 +64,9 @@ export class Grimoire {
     sheet.setProperties({ name });
     this.monsters[name] = new Creature(sheet);
     initializer(this.monsters[name]);
-
     handleEverything();
-    sheet.triggerOpened();
+
+    sheet.triggerRecalculation();
 
     this.monsters[name].checkValidMonster();
   }
@@ -100,7 +100,7 @@ export class Grimoire {
         config.sharedInitializer(creature);
       }
       handleEverything();
-      sheet.triggerOpened();
+      sheet.triggerRecalculation();
       this.monsterGroups[config.name].monsters.push(creature);
     }
   }
