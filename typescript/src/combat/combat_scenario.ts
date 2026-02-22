@@ -74,7 +74,7 @@ export class CombatScenario {
 
     const stats = this.runSimulationIterations(iterations);
 
-    this.logSimulationResults(stats);
+    // this.logSimulationResults(stats);
 
     return stats;
   }

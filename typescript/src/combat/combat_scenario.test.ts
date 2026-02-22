@@ -285,3 +285,30 @@ t.test('Characters with equipped weapons use weapon stats for accuracy and damag
   assertExpectedRounds(t, result, 12.1);
   t.end();
 });
+
+// This is demonstrating current behavior, not "correct" behavior. Ideally, high level characters would use the correct
+// multipliers for their maneuvers.
+t.test('High level characters still use normal strikes', (t) => {
+  const barbarian = stock.getCharacter('Barbarian')!;
+  barbarian.setProperties({
+    level: 21,
+    // Offset the accuracy bonus from increasing level to 21
+    shield_accuracy: -10,
+  });
+  // Re-add the weapon mult to add the higher rank version
+  barbarian.resetActiveAbilities();
+  barbarian.addWeaponMult('greataxe');
+  const target = stock.getCharacter('Target Dummy')!;
+
+  const team1 = createTeam('Barbarian Team', [barbarian]);
+  const team2 = createTeam('Target Team', [target]);
+
+  const scenario = createScenario([team1, team2]);
+  const result = scenario.simulate();
+
+  t.equal(result.averageHitRates['Barbarian Team'], 100, 'Barbarian should hit 100% of the time');
+  // 1.1x hit damage per round, 13 power, so 1d8+13 damage per hit. That's 19.25 damage per round, which is 5.2 rounds to kill.
+  // Although this is faster than a level 1 barbarian, it's much slower than we'd get if the barbarian was correctly calculating weapon multipliers from its maneuver.
+  assertExpectedRounds(t, result, 5.2);
+  t.end();
+});
