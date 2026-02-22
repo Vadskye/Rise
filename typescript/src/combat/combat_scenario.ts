@@ -15,6 +15,7 @@ import {
   MONSTER_WEAPONS,
 } from '@src/monsters/weapons';
 import { ActiveAbility } from '@src/abilities/active_abilities';
+import { calculateStrikeDamage } from '@src/abilities/maneuver_parser';
 
 export interface CombatSimulationResult {
   averageRounds: number;
@@ -380,7 +381,7 @@ export class CombatScenario {
     return { damage: 0, hit: false }; // Miss
   }
 
-  private calculateDamage(
+  public calculateDamage(
     creature: Creature,
     explicitAbility?: ActiveAbility,
     rankOffset: number = 0,
@@ -391,9 +392,8 @@ export class CombatScenario {
     const halfPower = Math.floor(power / 2);
 
     if (explicitAbility && explicitAbility.kind === 'maneuver' && explicitAbility.weapon) {
-      // For now, we ignore the text of the ability and just do a normal strike.
-      // In the future, we should parse maneuver text like we do to write monster text in the Tome of Guidance.
-      return this.calculateWeaponBaseDamage(creature, explicitAbility.weapon, power);
+      const diceExpr = calculateStrikeDamage(creature, explicitAbility, explicitAbility.isMagical);
+      return this.rollDice(diceExpr);
     }
 
     // Standard targeted medium damage ranks from sheet_worker.ts

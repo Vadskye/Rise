@@ -24,7 +24,6 @@ t.test('StockCharacters', (t) => {
       const char = stock.getCharacter(name);
       t.ok(char, `Character ${name} should exist`);
       if (char) {
-        t.equal(char.level, 1, `${name} should be level 1`);
         t.ok(char.hit_points > 0, `${name} should have hit points`);
       }
     }

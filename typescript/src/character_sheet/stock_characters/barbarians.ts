@@ -21,4 +21,24 @@ export function addBarbarians(stock: StockCharacters) {
     });
     c.addWeaponMult('greataxe');
   });
+
+  stock.addCharacter('Barbarian 21', (c: Creature) => {
+    c.setRequiredProperties({
+      alignment: 'chaotic neutral',
+      base_class: 'barbarian',
+      elite: false,
+      creature_type: 'mortal',
+      level: 21,
+      size: 'medium',
+    });
+    c.setProperties({
+      strength_at_creation: 3,
+      constitution_at_creation: 2,
+      dexterity_at_creation: 2,
+      perception_at_creation: 1,
+      intelligence_at_creation: 0,
+      willpower_at_creation: 0,
+    });
+    c.addWeaponMult('greataxe');
+  });
 }

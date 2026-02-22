@@ -131,7 +131,7 @@ t.test('CombatScenario can simulate 5 Carrion Crows vs 10 Giant Wasps', (t) => {
   const scenario = createScenario([crowTeam, waspTeam]);
   const result = scenario.simulate();
 
-  assertExpectedRounds(t, result, 4.2);
+  assertExpectedRounds(t, result, 3.5);
   assertExpectedWinRate(t, result, 'Crows', 0.2);
   assertExpectedWinRate(t, result, 'Wasps', 99.8);
   t.end();
@@ -263,7 +263,7 @@ t.test('One elite frostweb spider is equivalent to four non-elite frostweb spide
   const scenario = createScenario([eliteTeam, normalTeam]);
   const result = scenario.simulate();
 
-  assertExpectedRounds(t, result, 24);
+  assertExpectedRounds(t, result, 21.0);
   assertExpectedWinRate(t, result, 'Elite Frostweb Spider', 88);
   assertExpectedWinRate(t, result, 'Normal Frostweb Spiders', 12);
   t.end();
@@ -286,18 +286,10 @@ t.test('Characters with equipped weapons use weapon stats for accuracy and damag
   t.end();
 });
 
-// This is demonstrating current behavior, not "correct" behavior. Ideally, high level characters would use the correct
-// multipliers for their maneuvers.
-t.test('High level characters still use normal strikes', (t) => {
-  const barbarian = stock.getCharacter('Barbarian')!;
-  barbarian.setProperties({
-    level: 21,
-    // Offset the accuracy bonus from increasing level to 21
-    shield_accuracy: -10,
-  });
-  // Re-add the weapon mult to add the higher rank version
-  barbarian.resetActiveAbilities();
-  barbarian.addWeaponMult('greataxe');
+// This is demonstrating correct behavior. Now that maneuver details are parsed, high level characters
+// use the correct multipliers for their maneuvers.
+t.test('High level characters use correct multipliers for maneuvers', (t) => {
+  const barbarian = stock.getCharacter('Barbarian 21')!;
   const target = stock.getCharacter('Target Dummy')!;
 
   const team1 = createTeam('Barbarian Team', [barbarian]);
@@ -307,8 +299,11 @@ t.test('High level characters still use normal strikes', (t) => {
   const result = scenario.simulate();
 
   t.equal(result.averageHitRates['Barbarian Team'], 100, 'Barbarian should hit 100% of the time');
-  // 1.1x hit damage per round, 13 power, so 1d8+13 damage per hit. That's 19.25 damage per round, which is 5.2 rounds to kill.
-  // Although this is faster than a level 1 barbarian, it's much slower than we'd get if the barbarian was correctly calculating weapon multipliers from its maneuver.
-  assertExpectedRounds(t, result, 5.2);
+  // 11 accuracy vs defense 0 means 100% crits. Since the combat simulator ignores double-crits,
+  // we can simply use double damage.
+  // A max rank weapon mult maneuver has 13 power, 6x weapon damage, extra damage equal to power.
+  // Damage on a normal hit is 6d8 + 26 = 53. Damage per attack is 106.
+  // So expected rounds is 1.
+  assertExpectedRounds(t, result, 1);
   t.end();
 });
