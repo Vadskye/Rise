@@ -1,6 +1,8 @@
 import roll20shim from './roll20_shim';
 const { on, getAttrs, setAttrs, getSectionIDs, generateRowID, removeRepeatingRow } = roll20shim;
 
+// This file has to be a massive monolith to ensure compatibility with Roll20, which
+// requires the sheet worker to be uploaded as a single JS file.
 export type SimpleValue = boolean | number | string | null | undefined;
 export interface EventInfo {
   newValue: SimpleValue | undefined;
