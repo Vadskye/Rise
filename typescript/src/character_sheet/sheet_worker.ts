@@ -995,10 +995,10 @@ function handleArmorDefense() {
       const totalValue = Math.max(
         0,
         beforeEquipment +
-          v.body_armor_defense +
-          v.shield_defense +
-          v.misc +
-          v.all_defenses_vital_wound_modifier,
+        v.body_armor_defense +
+        v.shield_defense +
+        v.misc +
+        v.all_defenses_vital_wound_modifier,
       );
 
       setAttrs({
@@ -1130,7 +1130,7 @@ function handleAttributes() {
 }
 
 function handleAttunedEffects() {
-  on('change:repeating_attunedmodifiers remove:repeating_attunedmodifiers', function () {
+  on('change:repeating_attunedmodifiers remove:repeating_attunedmodifiers sheet:opened', function () {
     getSectionIDs('repeating_attunedmodifiers', (repeatingSectionIds) => {
       const isActiveIds = repeatingSectionIds.map(
         (id) => `repeating_attunedmodifiers_${id}_is_active`,
@@ -2344,12 +2344,12 @@ function handleNonArmorDefense(defense: string, attribute: string) {
       let totalValue = Math.max(
         0,
         levelModifier +
-          monsterModifier +
-          sizeModifier +
-          shieldModifier +
-          attributeModifier +
-          v.misc +
-          v.all_defenses_vital_wound_modifier,
+        monsterModifier +
+        sizeModifier +
+        shieldModifier +
+        attributeModifier +
+        v.misc +
+        v.all_defenses_vital_wound_modifier,
       );
 
       setAttrs({
@@ -2600,6 +2600,27 @@ function handleTrainedSkills() {
     setAttrs(attrs);
   });
 
+  on('sheet:opened', () => {
+    getSectionIDs('repeating_trainedskills', (ids) => {
+      const keys = ids.map((id) => `repeating_trainedskills_${id}_trained_skill`);
+      getAttrs(keys, (attrs) => {
+        const setValues: Attrs = {};
+        for (const skill of ALL_SKILLS) {
+          setValues[`${skill}_is_trained`] = '0';
+        }
+        for (const id of ids) {
+          const skillName = formatParseableSkillName(
+            attrs[`repeating_trainedskills_${id}_trained_skill`],
+          );
+          if (skillName) {
+            setValues[`${skillName}_is_trained`] = '1';
+          }
+        }
+        setAttrs(setValues);
+      });
+    });
+  });
+
   const skillsAreTrained = ALL_SKILLS.map(
     (s) => s.toLowerCase().replaceAll(' ', '_') + '_is_trained',
   );
@@ -2762,7 +2783,7 @@ function handleOtherDamagingAttacks() {
   // Local other damaging attack change
   on(
     'change:repeating_otherdamagingattacks:attack_damage_dice' +
-      ' change:repeating_otherdamagingattacks:is_magical',
+    ' change:repeating_otherdamagingattacks:is_magical',
     function () {
       getOdaDamageDiceAttrs('repeating_otherdamagingattacks', (parsed) => {
         setCalculatedDicePool('repeating_otherdamagingattacks', parsed);
@@ -3018,7 +3039,7 @@ function handleVitalWounds() {
   });
 
   on(
-    'change:repeating_vitalwounds:vital_wound_roll remove:repeating_vitalwounds',
+    'change:repeating_vitalwounds:vital_wound_roll remove:repeating_vitalwounds sheet:opened',
     function (eventInfo) {
       getSectionIDs('repeating_vitalwounds', (repeatingSectionIds) => {
         // Not sure if this is necessary
@@ -3097,7 +3118,7 @@ function handleVitalWounds() {
               value: speed_penalty,
             }),
           };
-          if (eventInfo.triggerName != 'remove:repeating_vitalwounds') {
+          if (eventInfo.triggerName.includes('change:repeating_vitalwounds')) {
             let effect_id = eventInfo.sourceAttribute.replaceAll('_roll', '_effect');
             attrs[effect_id] = calcVitalWoundEffect(Number(eventInfo.newValue));
           }
@@ -3285,11 +3306,11 @@ function handleTypescriptMonsterCreation() {
     effect: string;
     name: string;
     type:
-      | 'repeating_strikeattacks'
-      | 'repeating_otherdamagingattacks'
-      | 'repeating_nondamagingattacks'
-      | 'repeating_abilities'
-      | 'repeating_passiveabilities';
+    | 'repeating_strikeattacks'
+    | 'repeating_otherdamagingattacks'
+    | 'repeating_nondamagingattacks'
+    | 'repeating_abilities'
+    | 'repeating_passiveabilities';
   }
 
   function generateTypescriptMonster(v: any, allAbilityKeys: AbilityKey[]) {
