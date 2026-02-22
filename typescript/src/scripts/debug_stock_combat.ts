@@ -1,6 +1,6 @@
 import { StockCharacters } from '@src/character_sheet/stock_characters';
 import { CombatScenario, createTeam } from '@src/combat/combat_scenario';
-import { calculateStrikeDamage } from '@src/abilities/maneuver_parser';
+import { calculateStrikeDamage } from '@src/latex/monsters/player_abilities';
 import { Creature } from '@src/character_sheet/creature';
 import cli from 'commander';
 

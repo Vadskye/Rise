@@ -1,6 +1,7 @@
 import t from 'tap';
-import { calculateStrikeDamage, standardizeModifierSign } from '@src/abilities/maneuver_parser';
 import {
+  calculateStrikeDamage,
+  standardizeModifierSign,
   convertAbilityToMonsterLatex,
   reformatAttackTargeting,
   reformatAsMonsterAbility,
