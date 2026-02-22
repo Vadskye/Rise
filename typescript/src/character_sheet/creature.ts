@@ -177,8 +177,10 @@ export interface MonsterAbilityOptions {
   weapon?: MonsterWeapon;
 }
 
-interface NonScaledCustomMonsterAbility
-  extends Omit<ActiveAbility, 'isMagical' | 'kind' | 'rank' | 'roles' | 'scaling'> {
+interface NonScaledCustomMonsterAbility extends Omit<
+  ActiveAbility,
+  'isMagical' | 'kind' | 'rank' | 'roles' | 'scaling'
+> {
   isMagical?: boolean;
   usageTime?: MonsterAttackUsageTime;
 }
