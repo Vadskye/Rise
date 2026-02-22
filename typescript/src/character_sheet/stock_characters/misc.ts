@@ -9,4 +9,12 @@ export function addMisc(stock: StockCharacters) {
       level: 1,
     });
   });
+
+  stock.addCharacter('Target Dummy 1000', (c: Creature) => {
+    c.setProperties({
+      perception_at_creation: -100,
+      constitution_at_creation: 990, // 1000 total HP
+      level: 1,
+    });
+  });
 }
