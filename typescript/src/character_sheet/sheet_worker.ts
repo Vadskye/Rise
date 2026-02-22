@@ -3118,7 +3118,8 @@ function handleVitalWounds() {
               value: speed_penalty,
             }),
           };
-          if (eventInfo.triggerName.includes('change:repeating_vitalwounds')) {
+          // Sheet:opened and remove events don't include this
+          if (eventInfo.triggerName.includes('vital_wound_roll')) {
             let effect_id = eventInfo.sourceAttribute.replaceAll('_roll', '_effect');
             attrs[effect_id] = calcVitalWoundEffect(Number(eventInfo.newValue));
           }
