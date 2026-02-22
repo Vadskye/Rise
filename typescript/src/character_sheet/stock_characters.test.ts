@@ -31,6 +31,38 @@ t.test('StockCharacters', (t) => {
         t.ok(char.hit_points > 0, `${name} should have hit points`);
       }
     }
+    t.test('automated armor selection', (t) => {
+      t.equal(
+        stock.getCharacter('Fighter')?.body_armor_name,
+        'breastplate',
+        'Fighter should have breastplate',
+      );
+      t.equal(stock.getCharacter('Cleric')?.body_armor_name, 'scale', 'Cleric should have scale');
+      t.equal(
+        stock.getCharacter('Druid')?.body_armor_name,
+        'buff leather',
+        'Druid should have buff leather',
+      );
+      t.equal(
+        stock.getCharacter('Barbarian')?.body_armor_name,
+        'scale',
+        'Barbarian should have scale',
+      );
+      t.equal(
+        stock.getCharacter('Monk')?.body_armor_name,
+        'buff leather',
+        'Monk should have buff leather',
+      );
+      t.equal(
+        stock.getCharacter('Paladin')?.body_armor_name,
+        'breastplate',
+        'Paladin should have breastplate',
+      );
+      t.notOk(stock.getCharacter('Wizard')?.body_armor_name, 'Wizard should have no armor');
+      t.notOk(stock.getCharacter('Sorcerer')?.body_armor_name, 'Sorcerer should have no armor');
+      t.end();
+    });
+
     t.end();
   });
 
