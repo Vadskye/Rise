@@ -1,8 +1,8 @@
 import { Creature } from '@src/character_sheet/creature';
 import { handleEverything } from '@src/character_sheet/sheet_worker';
 import {
-    characterSheetExists,
-    createCharacterSheet,
+  characterSheetExists,
+  createCharacterSheet,
 } from '@src/character_sheet/current_character_sheet';
 import { addBarbarians } from '@src/character_sheet/stock_characters/barbarians';
 import { addClerics } from '@src/character_sheet/stock_characters/clerics';
@@ -19,51 +19,51 @@ import { addWizards } from '@src/character_sheet/stock_characters/wizards';
 type CharacterInitializer = (creature: Creature) => void;
 
 export class StockCharacters {
-    private characters: Record<string, Creature>;
+  private characters: Record<string, Creature>;
 
-    constructor() {
-        this.characters = {};
+  constructor() {
+    this.characters = {};
+  }
+
+  addAllCharacters() {
+    addBarbarians(this);
+    addFighters(this);
+    addMonks(this);
+    addRangers(this);
+    addRogues(this);
+    addClerics(this);
+    addDruids(this);
+    addPaladins(this);
+    addSorcerers(this);
+    addVotives(this);
+    addWizards(this);
+  }
+
+  addCharacter(name: string, initializer: CharacterInitializer) {
+    if (this.characters[name]) {
+      throw new Error(`Can't add a duplicate character with '${name}'.`);
     }
-
-    addAllCharacters() {
-        addBarbarians(this);
-        addFighters(this);
-        addMonks(this);
-        addRangers(this);
-        addRogues(this);
-        addClerics(this);
-        addDruids(this);
-        addPaladins(this);
-        addSorcerers(this);
-        addVotives(this);
-        addWizards(this);
+    if (characterSheetExists(name)) {
+      throw new Error(`Can't add a duplicate character sheet named '${name}'.`);
     }
+    const sheet = createCharacterSheet(name);
+    sheet.setProperties({ name });
+    this.characters[name] = new Creature(sheet);
+    initializer(this.characters[name]);
 
-    addCharacter(name: string, initializer: CharacterInitializer) {
-        if (this.characters[name]) {
-            throw new Error(`Can't add a duplicate character with '${name}'.`);
-        }
-        if (characterSheetExists(name)) {
-            throw new Error(`Can't add a duplicate character sheet named '${name}'.`);
-        }
-        const sheet = createCharacterSheet(name);
-        sheet.setProperties({ name });
-        this.characters[name] = new Creature(sheet);
-        initializer(this.characters[name]);
+    handleEverything();
+    sheet.triggerOpened();
+  }
 
-        handleEverything();
-        sheet.triggerOpened();
-    }
+  getCharacter(name: string): Creature | null {
+    return this.characters[name] || null;
+  }
 
-    getCharacter(name: string): Creature | null {
-        return this.characters[name] || null;
-    }
+  getCharacterNames(): string[] {
+    return Object.keys(this.characters);
+  }
 
-    getCharacterNames(): string[] {
-        return Object.keys(this.characters);
-    }
-
-    hasCharacter(name: string): boolean {
-        return this.characters[name] !== undefined;
-    }
+  hasCharacter(name: string): boolean {
+    return this.characters[name] !== undefined;
+  }
 }

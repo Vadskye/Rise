@@ -213,10 +213,9 @@ export class Creature implements CreaturePropertyMap {
     this.cachedProperties = {};
   }
 
-
   public clone(newName: string): Creature {
     const newSheet = createCharacterSheet(newName);
-    newSheet.setProperties(this.sheet.getAllProperties())
+    newSheet.setProperties(this.sheet.getAllProperties());
     handleEverything();
     const newCreature = new Creature(newSheet);
     newCreature.activeAbilities = { ...this.activeAbilities };
