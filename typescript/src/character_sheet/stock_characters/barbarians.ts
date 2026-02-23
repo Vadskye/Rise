@@ -2,43 +2,32 @@ import type { StockCharacters } from '../stock_characters';
 import { Creature } from '../creature';
 
 export function addBarbarians(stock: StockCharacters) {
-  stock.addCharacter('Barbarian', (c: Creature) => {
-    c.setRequiredProperties({
-      alignment: 'chaotic neutral',
-      base_class: 'barbarian',
-      elite: false,
-      creature_type: 'mortal',
-      level: 1,
-      size: 'medium',
-    });
-    c.setProperties({
-      strength_at_creation: 3,
-      constitution_at_creation: 2,
-      dexterity_at_creation: 2,
-      perception_at_creation: 1,
-      intelligence_at_creation: 0,
-      willpower_at_creation: 0,
-    });
-    c.addWeaponMult('greataxe');
-  });
+  stock.addCharacter('Barbarian', (c) => applyBarbarianBase(c, 1));
+  stock.addCharacter('Barbarian 4', (c) => applyBarbarianBase(c, 4));
+  stock.addCharacter('Barbarian 7', (c) => applyBarbarianBase(c, 7));
+  stock.addCharacter('Barbarian 10', (c) => applyBarbarianBase(c, 10));
+  stock.addCharacter('Barbarian 13', (c) => applyBarbarianBase(c, 13));
+  stock.addCharacter('Barbarian 16', (c) => applyBarbarianBase(c, 16));
+  stock.addCharacter('Barbarian 19', (c) => applyBarbarianBase(c, 19));
+  stock.addCharacter('Barbarian 21', (c) => applyBarbarianBase(c, 21));
+}
 
-  stock.addCharacter('Barbarian 21', (c: Creature) => {
-    c.setRequiredProperties({
-      alignment: 'chaotic neutral',
-      base_class: 'barbarian',
-      elite: false,
-      creature_type: 'mortal',
-      level: 21,
-      size: 'medium',
-    });
-    c.setProperties({
-      strength_at_creation: 3,
-      constitution_at_creation: 2,
-      dexterity_at_creation: 2,
-      perception_at_creation: 1,
-      intelligence_at_creation: 0,
-      willpower_at_creation: 0,
-    });
-    c.addWeaponMult('greataxe');
+function applyBarbarianBase(c: Creature, level: number) {
+  c.setRequiredProperties({
+    alignment: 'chaotic neutral',
+    base_class: 'barbarian',
+    elite: false,
+    creature_type: 'mortal',
+    level: level,
+    size: 'medium',
   });
+  c.setProperties({
+    strength_at_creation: 3,
+    constitution_at_creation: 2,
+    dexterity_at_creation: 2,
+    perception_at_creation: 1,
+    intelligence_at_creation: 0,
+    willpower_at_creation: 0,
+  });
+  c.addWeaponMult('greataxe');
 }
