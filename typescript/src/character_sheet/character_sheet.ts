@@ -193,6 +193,7 @@ export class CharacterSheet {
 
   // Note that we currently can't handle attribute removal like Roll20 does, just
   // attribute changes.
+  // Note that *derived* attributes like `accuracy`, `hit_points`, and `armor_defense` can't be meaningfully set using this function. Direct changes to those properties will be immediately overwritten by automatic calculation. Instead, use modifiers to customize character statistics.
   public setProperties(attrs: Record<string, SimpleValue>): void {
     for (const propertyName of Object.keys(attrs)) {
       if (propertyName.startsWith('repeating_')) {
