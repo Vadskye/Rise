@@ -16,6 +16,8 @@ import {
 } from '@src/monsters/weapons';
 import { ActiveAbility } from '@src/abilities/active_abilities';
 import { calculateStrikeDamage } from '@src/latex/monsters/player_abilities';
+import { CombatStepResult, CombatStepStatus, executeTeamTurn } from '@src/combat/combat_round';
+import { rollD10 } from '@src/combat/dice';
 
 export interface CombatSimulationResult {
   averageRounds: number;
@@ -30,32 +32,15 @@ export interface CombatTeam {
 }
 
 /**
- * Internal state for a single fight simulation iteration.
+ * State for a single fight simulation iteration.
  */
-interface FightState {
-  hp: Record<string, number>;
-  memberToTeam: Record<string, CombatTeam>;
+export interface FightState {
   aliveMembersByTeam: Record<string, Creature[]>;
-  initialTotalHpByTeam: Record<string, number>;
-  hitsByTeam: Record<string, number>;
   attacksByTeam: Record<string, number>;
-}
-
-/**
- * Outcome of a single combat step or action.
- */
-enum CombatStepStatus {
-  Ongoing,
-  Victory,
-  Draw,
-}
-
-/**
- * Result of a single combat action, tracking status and potential winner.
- */
-interface CombatStepResult {
-  status: CombatStepStatus;
-  winner: string | null;
+  hitsByTeam: Record<string, number>;
+  hp: Record<string, number>;
+  initialTotalHpByTeam: Record<string, number>;
+  memberToTeam: Record<string, CombatTeam>;
 }
 
 /**
@@ -154,7 +139,7 @@ export class CombatScenario {
       for (const { team } of teamInitiatives) {
         if (state.aliveMembersByTeam[team.name].length === 0) continue;
 
-        const result = this.executeTeamTurn(team, state);
+        const result = executeTeamTurn(team, state);
         if (result.status !== CombatStepStatus.Ongoing) {
           return {
             winner: result.winner,
@@ -176,7 +161,7 @@ export class CombatScenario {
     };
   }
 
-  private initializeFightState(): FightState {
+  public initializeFightState(): FightState {
     const hp: Record<string, number> = {};
     const memberToTeam: Record<string, CombatTeam> = {};
     const aliveMembersByTeam: Record<string, Creature[]> = {};
@@ -227,231 +212,10 @@ export class CombatScenario {
   private determineTeamInitiative(): { team: CombatTeam; initiative: number }[] {
     const teamInitiatives = this.teams.map((team) => ({
       team,
-      initiative: this.rollD10(false),
+      initiative: rollD10(false),
     }));
     teamInitiatives.sort((a, b) => b.initiative - a.initiative);
     return teamInitiatives;
-  }
-
-  private executeTeamTurn(team: CombatTeam, state: FightState): CombatStepResult {
-    const attackers = [...state.aliveMembersByTeam[team.name]];
-    for (const attacker of attackers) {
-      if (state.hp[attacker.id] <= 0) continue;
-
-      const result = this.executeAttackerAction(attacker, team, state);
-      if (result.status !== CombatStepStatus.Ongoing) return result;
-    }
-    return { status: CombatStepStatus.Ongoing, winner: null };
-  }
-
-  private executeAttackerAction(
-    attacker: Creature,
-    team: CombatTeam,
-    state: FightState,
-  ): CombatStepResult {
-    const potentialTargets = this.getPotentialTargets(team, state);
-    if (potentialTargets.length === 0) return { status: CombatStepStatus.Ongoing, winner: null };
-
-    // Elite Area Attack
-    if (attacker.elite) {
-      const areaTargets = this.getPotentialTargets(team, state);
-      for (const areaTarget of areaTargets) {
-        state.attacksByTeam[team.name]++;
-        // Area attacks for elites are currently generic; we can keep them that way for now
-        // or refine them later.
-        const { damage, hit } = this.resolveAttack(attacker, areaTarget, undefined, -2);
-        if (hit) state.hitsByTeam[team.name]++;
-
-        state.hp[areaTarget.id] -= damage;
-
-        if (state.hp[areaTarget.id] <= 0) {
-          this.handleCreatureDeath(areaTarget, state);
-        }
-      }
-      const areaResult = this.checkVictory(state);
-      if (areaResult.status !== CombatStepStatus.Ongoing) return areaResult;
-    }
-
-    // Standard Attack
-    const potentialTargetsAfterArea = this.getPotentialTargets(team, state);
-    if (potentialTargetsAfterArea.length === 0)
-      return { status: CombatStepStatus.Ongoing, winner: null };
-
-    const defender = this.selectTarget(attacker, potentialTargetsAfterArea, state);
-    state.attacksByTeam[team.name]++;
-
-    // If the monster has any active weapon-based abilities, arbitrarily choose the first.
-    // In the future, we should find the best ability and use it.
-    const explicitAbility = attacker.getActiveAbilities().filter((ability) => ability.weapon)[0];
-
-    const { damage, hit } = this.resolveAttack(attacker, defender, explicitAbility);
-    if (hit) state.hitsByTeam[team.name]++;
-
-    state.hp[defender.id] -= damage;
-
-    if (state.hp[defender.id] <= 0) {
-      this.handleCreatureDeath(defender, state);
-    }
-
-    return this.checkVictory(state);
-  }
-
-  private selectTarget(attacker: Creature, targets: Creature[], state: FightState): Creature {
-    const logic = attacker.targetPreference;
-
-    if (logic === 'Random') {
-      const index = Math.floor(Math.random() * targets.length);
-      return targets[index];
-    } else if (logic === 'Vulnerable') {
-      // Sort by armor_defense (lowest first), then by current HP (lowest first)
-      const sorted = [...targets].sort((a, b) => {
-        const defA = a.armor_defense;
-        const defB = b.armor_defense;
-        if (defA !== defB) return defA - defB;
-
-        const hpA = state.hp[a.id];
-        const hpB = state.hp[b.id];
-        return hpA - hpB;
-      });
-      return sorted[0];
-    } else if (logic === 'Ordered') {
-      return targets[0];
-    }
-
-    throw new Error(`Unknown target preference: ${logic}`);
-  }
-
-  private getPotentialTargets(team: CombatTeam, state: FightState): Creature[] {
-    const potentialTargets: Creature[] = [];
-    for (const teamName in state.aliveMembersByTeam) {
-      if (teamName !== team.name) {
-        potentialTargets.push(...state.aliveMembersByTeam[teamName]);
-      }
-    }
-    return potentialTargets;
-  }
-
-  private handleCreatureDeath(creature: Creature, state: FightState): void {
-    const teamName = state.memberToTeam[creature.id].name;
-    const teamAlive = state.aliveMembersByTeam[teamName];
-    const index = teamAlive.indexOf(creature);
-    if (index > -1) {
-      teamAlive.splice(index, 1);
-    }
-  }
-
-  private checkVictory(state: FightState): CombatStepResult {
-    const teamsWithAlive = Object.entries(state.aliveMembersByTeam).filter(
-      ([_, members]) => members.length > 0,
-    );
-
-    if (teamsWithAlive.length === 1) {
-      return { status: CombatStepStatus.Victory, winner: teamsWithAlive[0][0] };
-    }
-    if (teamsWithAlive.length === 0) {
-      return { status: CombatStepStatus.Draw, winner: null };
-    }
-    return { status: CombatStepStatus.Ongoing, winner: null };
-  }
-
-  private resolveAttack(
-    attacker: Creature,
-    defender: Creature,
-    explicitAbility?: ActiveAbility,
-    rankOffset: number = 0,
-  ): { damage: number; hit: boolean } {
-    const roll = this.rollD10(true);
-    let accuracy = attacker.accuracy;
-
-    if (explicitAbility?.weapon) {
-      accuracy += getWeaponAccuracy(explicitAbility.weapon);
-    }
-
-    const total = roll + accuracy;
-    const targetDefense = defender.armor_defense;
-
-    if (total >= targetDefense + 10) {
-      // Critical Hit: Double damage
-      return { damage: this.calculateDamage(attacker, explicitAbility, rankOffset) * 2, hit: true };
-    } else if (total >= targetDefense) {
-      // Regular Hit
-      return { damage: this.calculateDamage(attacker, explicitAbility, rankOffset), hit: true };
-    }
-
-    return { damage: 0, hit: false }; // Miss
-  }
-
-  public calculateDamage(
-    creature: Creature,
-    explicitAbility?: ActiveAbility,
-    rankOffset: number = 0,
-  ): number {
-    // For now, we ignore the fact that attacks should theoretically be intrinsically either magical or mundane, and we just use the highest power on the premise that monsters should generally have abilities that use their highest power.
-    const power = Math.max(creature.mundane_power, creature.magical_power);
-    const rank = Math.floor((creature.level + 2) / 3) + rankOffset;
-    const halfPower = Math.floor(power / 2);
-
-    if (explicitAbility && explicitAbility.kind === 'maneuver' && explicitAbility.weapon) {
-      const diceExpr = calculateStrikeDamage(creature, explicitAbility, explicitAbility.isMagical);
-      return this.rollDice(diceExpr);
-    }
-
-    // Standard targeted medium damage ranks from sheet_worker.ts
-    const damageTable: Record<number, string> = {
-      [-1]: String(halfPower),
-      0: `1d4+${halfPower}`,
-      1: `1d6+${halfPower}`,
-      2: `1d10+${halfPower}`,
-      3: `1d8+${power}`,
-      4: `${halfPower}d6`,
-      5: `${halfPower + 1}d6`,
-      6: `${halfPower + 1}d8`,
-      7: `${halfPower + 1}d10`,
-    };
-
-    const diceExpr = damageTable[rank];
-    if (!diceExpr) {
-      throw new Error(`Unknown rank: ${rank}`);
-    }
-    return this.rollDice(diceExpr);
-  }
-
-  private calculateWeaponBaseDamage(
-    creature: Creature,
-    weaponName: MonsterWeapon,
-    power: number,
-  ): number {
-    const dice = getWeaponDamageDice(weaponName);
-    const multiplier = getWeaponPowerMultiplier(weaponName);
-    const bonus = Math.floor(power * multiplier);
-    const diceExpr = `${dice.count}d${dice.size}${bonus >= 0 ? '+' : ''}${bonus}`;
-    return this.rollDice(diceExpr);
-  }
-
-  private rollD10(exploding: boolean): number {
-    const firstRoll = Math.floor(Math.random() * 10) + 1;
-    if (exploding && firstRoll === 10) {
-      const secondRoll = Math.floor(Math.random() * 10) + 1;
-      return 10 + secondRoll;
-    }
-    return firstRoll;
-  }
-
-  private rollDice(expression: string): number {
-    const match = expression.match(/^(\d+)d(\d+)([+-]\d+)?$/);
-    if (!match) {
-      return parseInt(expression, 10) || 0;
-    }
-
-    const count = parseInt(match[1], 10);
-    const sides = parseInt(match[2], 10);
-    const bonus = match[3] ? parseInt(match[3], 10) : 0;
-
-    let total = 0;
-    for (let i = 0; i < count; i++) {
-      total += Math.floor(Math.random() * sides) + 1;
-    }
-    return total + bonus;
   }
 }
 
