@@ -438,7 +438,7 @@ export const polymorph: MysticSphere = {
         `,
         targeting: `
           When you cast this spell, the flesh on your body writhes.
-          Next round, you can spend a \\glossterm{standard action} to make an attack vs. Fortitude against a creature within \\shortrange.
+          During your next turn, you can spend a \\glossterm{standard action} to make an attack vs. Fortitude against a creature within \\shortrange.
         `,
       },
       rank: 2,
@@ -458,7 +458,7 @@ export const polymorph: MysticSphere = {
         `,
         targeting: `
           When you cast this spell, the flesh on your body writhes.
-          Next round, you can spend a \\glossterm{standard action} to make an attack vs. Fortitude against a creature within \\shortrange.
+          During your next turn, you can spend a \\glossterm{standard action} to make an attack vs. Fortitude against a creature within \\shortrange.
         `,
       },
       rank: 6,

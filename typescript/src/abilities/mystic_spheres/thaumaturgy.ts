@@ -610,7 +610,7 @@ export const thaumaturgy: MysticSphere = {
         `,
         targeting: `
           When you cast this spell, magical energy visibly coalesces around you, causing you to radiate multicolored light as a torch.
-          Next round, you can spend a \\glossterm{standard action} to make an attack vs. Mental against each \\glossterm{enemy} within a \\medarea radius from you.
+          During your next turn, you can spend a \\glossterm{standard action} to make an attack vs. Mental against each \\glossterm{enemy} within a \\medarea radius from you.
           If you do, each of your \\glossterm{allies} in the area becomes \\empowered during that round.
         `,
       },
