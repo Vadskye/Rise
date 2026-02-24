@@ -1,7 +1,6 @@
 import { StockCharacters } from '@src/character_sheet/stock_characters';
-import { CombatScenario, createTeam } from '@src/combat/combat_scenario';
+import { calculateDamage } from '@src/combat/combat_round';
 import { calculateStrikeDamage } from '@src/latex/monsters/player_abilities';
-import { Creature } from '@src/character_sheet/creature';
 import cli from 'commander';
 
 async function main({ character, level }: { character?: string; level?: number }) {
@@ -31,21 +30,16 @@ async function main({ character, level }: { character?: string; level?: number }
     console.log(`Mundane Power: ${character.mundane_power}`);
     console.log(`Magical Power: ${character.magical_power}`);
 
-    const scenario = new CombatScenario([
-      createTeam('Self', [character]),
-      createTeam('Target', [stock.getCharacter('Target Dummy')!]),
-    ]);
-
     const abilities = character.getActiveAbilities().filter((a) => a.weapon);
 
     if (abilities.length === 0) {
-      const damage = scenario.calculateDamage(character);
+      const damage = calculateDamage(character);
       console.log(`Standard Damage (No Ability): ~${damage} (random roll)`);
     } else {
       for (const ability of abilities) {
         const samples: number[] = [];
         for (let i = 0; i < 10; i++) {
-          samples.push(scenario.calculateDamage(character, ability));
+          samples.push(calculateDamage(character, ability));
         }
         console.log(`Generic accuracy: ${character.accuracy}`);
         console.log(`Ability: ${ability.name}`);
