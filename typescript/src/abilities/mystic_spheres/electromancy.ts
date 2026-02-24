@@ -480,7 +480,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
           You can move the ball up to 30 feet in any direction, even vertically, as a \\glossterm{minor action}.
           When you create the ball, and once during each of your actions, make an attack vs. Reflex against everything in its space.
 
-          At the end of each round, if the ball is more than 120 feet from you, it disappears.
+          At the end of your turn, if the ball is more than 120 feet from you, it disappears.
           You can recreate it in an unoccupied space within \\medrange as a minor action.
         `,
         // halfOnMiss: true,
@@ -582,7 +582,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
           It lasts as long as you sustain this spell.
           As a \\glossterm{move action}, you can move the duplicate up to your \\glossterm{speed} as long as you can see it.
           It can move freely through spaces occupied by creatures, but it cannot pass through solid objects.
-          When you stop sustaining this spell, you make an attack vs. Reflex against everything in the path it took that round, and you \\glossterm{teleport} to its final location.
+          When you stop sustaining this spell, you make an attack vs. Reflex against everything in the path it took that turn, and you \\glossterm{teleport} to its final location.
           You do not need \\glossterm{line of sight} or \\glossterm{line of effect} for this teleportation.
         `,
       },

@@ -254,7 +254,7 @@ export const thaumaturgy: MysticSphere = {
 
       effect: `
         Whenever you cast a non-attunable spell, you can activate this effect as a \\glossterm{minor action}.
-        If you do, you become \\focused and \\honed for the rest of that round.
+        If you do, you become \\focused and \\honed for the rest of that turn.
         After you enhance a spell in this way, this ability is \\glossterm{dismissed}.
       `,
       rank: 1,
@@ -363,7 +363,7 @@ export const thaumaturgy: MysticSphere = {
       name: 'Delay Teleportation',
 
       effect: `
-        Whenever a creature or object would teleport into a \\hugearea radius \\glossterm{emanation} from you from outside of that area, that teleportation is delayed by a round.
+        Whenever a creature or object would teleport into a \\hugearea radius \\glossterm{emanation} from you from outside of that area, that teleportation is delayed until its next turn.
         The teleporting creature or object remains stuck in the Astral Expanse and can take no actions during that time.
         % TODO: should they experience a delay?
         Creatures delayed in this way do not experience a delay, though they may be able to deduce that they were delayed based on observable evidence.
@@ -571,7 +571,6 @@ export const thaumaturgy: MysticSphere = {
           You weave a trap into the target's magic.
           If it uses a \\magical ability as a standard action or \\glossterm{elite action}, it takes \\damagerankfour.
           After it takes damage in this way, this effect ends.
-          It cannot trigger this trap in the same round that you cast this spell.
         `,
         targeting: `
           Make an attack vs. Mental against a creature within \\medrange.
@@ -611,7 +610,7 @@ export const thaumaturgy: MysticSphere = {
         targeting: `
           When you cast this spell, magical energy visibly coalesces around you, causing you to radiate multicolored light as a torch.
           During your next turn, you can spend a \\glossterm{standard action} to make an attack vs. Mental against each \\glossterm{enemy} within a \\medarea radius from you.
-          If you do, each of your \\glossterm{allies} in the area becomes \\empowered during that round.
+          If you do, each of your \\glossterm{allies} in the area becomes \\empowered until your next turn.
         `,
       },
       rank: 3,

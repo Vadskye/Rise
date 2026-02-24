@@ -15,7 +15,7 @@ export const fabrication: MysticSphere = {
         You make a Craft check to create an object of Tiny size or smaller.
         The object appears in your hand or at your feet.
         It must be made of nonliving, nonmagical, nonreactive vegetable matter, such as wood or cloth.
-        At the end of each round, this ability is \\glossterm{dismissed} if you are not within \\medrange of the item.
+        At the end of your turn, this ability is \\glossterm{dismissed} if you are not within \\medrange of the item.
       `,
       roles: ['narrative'],
       tags: ['Manifestation'],
@@ -341,7 +341,7 @@ export const fabrication: MysticSphere = {
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Armor against any creature sharing space with it.
           Generally, this is only possible for Large or larger creatures.
           In addition, whenever something passes through the the wall, you make a \\glossterm{reactive attack} vs. Armor against it.
-          You can only attack a given target with this spell once per round.
+          You can only attack a given target with this spell once per turn.
         `,
       },
       rank: 2,
@@ -450,7 +450,7 @@ export const fabrication: MysticSphere = {
           They can generally be noticed with a \\glossterm{difficulty value} 8 Awareness check.
 
           Whenever a \\glossterm{grounded} creature moves into any of the squares, unless the creature moves at half speed to avoid the danger, you make a \\glossterm{reactive attack} vs. Armor against them.
-          You can only attack a given target with this spell once per round.
+          You can only attack a given target with this spell once per turn.
           Caltrops may not be effective against creatures with an unusual anatomy.
         `,
       },
@@ -486,7 +486,7 @@ export const fabrication: MysticSphere = {
         You can create \\glossterm{mundane} special ammunition of any type that you are proficient with.
         However, the item's rank cannot exceed half your spellcasting rank with this spell (minimum 0).
 
-        The arrow persists until the end of the round, at which point it disappears.
+        The arrow persists until the end of your turn, at which point it disappears.
       `,
       rank: 1,
       // A little awkward since this is a minor action spell, which is very unusual.
@@ -506,7 +506,7 @@ export const fabrication: MysticSphere = {
           Make an attack vs. Armor against each creature in the area.
           Whenever a creature enters the area, you make a \\glossterm{reactive attack} vs. Armor against it.
           Finally, during each of your subsequent actions, you make a \\glossterm{reactive attack} vs. Armor against each creature in the area.
-          You can only attack a given target with this spell once per round.
+          You can only attack a given target with this spell once per turn.
         `,
       },
       rank: 3,
@@ -635,7 +635,7 @@ export const fabrication: MysticSphere = {
         This spell has no \\glossterm{somatic components}.
 
         You create an ordinary nonmagical weapon that you are proficient with your hand or hands.
-        The weapon persists until the end of the round, at which point it disappears.
+        The weapon persists until the end of your turn, at which point it disappears.
       `,
       rank: 1,
       // A little awkward since this is a minor action spell, which is very unusual.
@@ -672,7 +672,7 @@ export const fabrication: MysticSphere = {
 
         Make a \\magical melee \\glossterm{strike}.
         The strike targets all \\glossterm{enemies} in a \\smallarea cone from you.
-        For each previous consecutive round in which you used this ability, you gain a +2 accuracy bonus with the strike, up to a maximum of +4.
+        For each previous consecutive turn in which you used this ability, you gain a +2 accuracy bonus with the strike, up to a maximum of +4.
         \\miss Half damage.
       `,
       rank: 2,

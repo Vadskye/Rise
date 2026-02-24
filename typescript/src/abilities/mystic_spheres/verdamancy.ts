@@ -576,7 +576,7 @@ export const verdamancy: MysticSphere = {
       name: 'Flourishing Grass',
 
       effect: `
-        At the end of each round, you may choose to cause grass to extend out onto the ground in a \\smallarea radius around you.
+        At the end of your turn, you may choose to cause grass to extend out onto the ground in a \\smallarea radius around you.
         When you do, that area becomes covered in \\glossterm{light undergrowth}.
         Whenever your location changes by any means, the grass retreats back to your body.
       `,

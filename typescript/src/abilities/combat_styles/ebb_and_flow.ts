@@ -48,7 +48,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        You gain a +2 accuracy bonus with the strike against all creatures that you missed with a \\glossterm{strike} last round.
+        You gain a +2 accuracy bonus with the strike against all creatures that you missed with a \\glossterm{strike} since your last turn.
       `,
       rank: 1,
       roles: ['payoff'],
@@ -59,7 +59,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} that deals double damage.
-        You gain a +2 accuracy bonus with the strike against all creatures that you missed with a \\glossterm{strike} last round.
+        You gain a +2 accuracy bonus with the strike against all creatures that you missed with a \\glossterm{strike} since your last turn.
       `,
       rank: 5,
       roles: ['payoff'],
@@ -70,7 +70,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} with a -2 accuracy penalty.
-        The strike deals \\glossterm{extra damage} equal to your power against each target that you dealt damage to with a \\glossterm{strike} last round.
+        The strike deals \\glossterm{extra damage} equal to your power against each target that you dealt damage to with a \\glossterm{strike} during your last turn.
       `,
       rank: 3,
       roles: ['payoff'],
@@ -81,7 +81,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} with a -2 accuracy penalty that deals quadruple \\glossterm{weapon damage}.
-        The strike deals \\damageranksix \\glossterm{extra damage} against each target that you dealt damage to with a \\glossterm{strike} last round.
+        The strike deals \\damageranksix \\glossterm{extra damage} against each target that you dealt damage to with a \\glossterm{strike} during your last turn.
       `,
       rank: 7,
       roles: ['payoff'],
@@ -110,7 +110,7 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     // We normally assume a boss fight lasts 20 player actions, or 5 personal actions, so
-    // using this on round 1 would affect your next 4 actions. We normally consider +4
+    // using this on turn 1 would affect your next 4 actions. We normally consider +4
     // accuracy to be worth 0.6 EA, but it's hard to get the full value out of this and
     // you can't combo it with a big swing, so it's fine to treat it as 0.4 EA or so.
     {
@@ -127,7 +127,7 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     // If you used this on your first two rounds, you'd theoretically get an additional 0.3 EA of
-    // value, but your first round buff would also have been spent on one round of a
+    // value, but your first turn buff would also have been spent on one turn of a
     // relatively low damage maneuver, so assume the stacking just takes this to 0.6 EA.
     // That means this gets double weapon damage instead of the more common double damage
     // for a rank 5 maneuver.
@@ -163,7 +163,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        It deals double damage if you did not make any attacks last round and regained \\glossterm{hit points} last round.
+        It deals double damage if you did not make any attacks during your last turn and regained \\glossterm{hit points} during your last turn.
       `,
       roles: ['payoff'],
       rank: 3,
@@ -212,7 +212,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        You get a +1 accuracy bonus with the strike if the target already took damage from one of your \\glossterm{allies} during the current round.
+        You get a +1 accuracy bonus with the strike if the target already took damage from one of your \\glossterm{allies} since your last turn.
       `,
       rank: 1,
       roles: ['payoff'],
@@ -223,7 +223,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} that deals double damage.
-        You get a +1 accuracy bonus with the strike if the target already took damage from one of your \\glossterm{allies} during the current round.
+        You get a +1 accuracy bonus with the strike if the target already took damage from one of your \\glossterm{allies} since your last turn.
       `,
       rank: 5,
       roles: ['payoff'],
@@ -245,7 +245,7 @@ export const ebbAndFlow: CombatStyle = {
       name: 'Sharpening Kata',
 
       effect: `
-        If you did not attack last round, you are \\briefly \\focused and \\honed.
+        If you did not attack during your last turn, you are \\briefly \\focused and \\honed.
       `,
       rank: 1,
       roles: ['focus'],
@@ -255,7 +255,7 @@ export const ebbAndFlow: CombatStyle = {
       name: 'Sharpening Kata+',
 
       effect: `
-        If you did not attack last round, you are \\briefly \\primed and \\honed.
+        If you did not attack during your last turn, you are \\briefly \\primed and \\honed.
       `,
       rank: 5,
       roles: ['focus'],

@@ -199,7 +199,7 @@ export const prayer: MysticSphere = {
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
         Each target is \\impervious to \\glossterm{poisons}.
-        In addition, at the end of each round, it automatically gains one success to resist an active poison affecting it that was not applied during that round.
+        In addition, at the end of its turn, it automatically gains one success to resist an active poison affecting it.
       `,
       rank: 2,
       roles: ['attune'],
@@ -212,7 +212,7 @@ export const prayer: MysticSphere = {
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
         Each target is \\impervious to \\abilitytag{Compulsion} and \\abilitytag{Emotion} effects.
-        In addition, at the end of each round, it automatically removes one \\glossterm{condition} from a Compulsion or Emotion effect that was not applied during that round.
+        In addition, at the end of its turn, it automatically removes one \\glossterm{condition} from a Compulsion or Emotion effect.
       `,
       rank: 3,
       roles: ['attune'],
@@ -309,7 +309,7 @@ export const prayer: MysticSphere = {
       cost: 'See text.',
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        At the end of each round, each target may remove one \\glossterm{condition} of its choice affecting it.
+        At the end of its turn, each target may remove one \\glossterm{condition} of its choice affecting it.
         Whenever it does, it increases its \\glossterm{fatigue level} by one.
       `,
       rank: 7,

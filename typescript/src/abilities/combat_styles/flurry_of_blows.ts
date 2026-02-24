@@ -102,7 +102,7 @@ export const flurryOfBlows: CombatStyle = {
       effect: `
         Make two ranged \\glossterm{strikes} using \\weapontag{Projectile} weapons.
         You take a -5 accuracy penalty with both strikes, and any \\glossterm{longshot penalty} that applies to the strikes is doubled.
-        For each previous consecutive round that you used this ability in the same location, you reduce this accuracy penalty by 1.
+        For each previous consecutive turn that you used this ability in the same location, you reduce this accuracy penalty by 1.
       `,
       rank: 3,
       roles: ['ramp'],
@@ -367,7 +367,7 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Building Storm',
 
       effect: `
-        If you hit with a strike last round, you are \\briefly \\primed.
+        If you hit with a strike during your last turn, you are \\briefly \\primed.
       `,
       rank: 1,
       roles: ['focus'],
@@ -378,7 +378,7 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         You are \\briefly \\primed.
-        If you hit with at least two strikes last round, you are also briefly \\focused.
+        If you hit with at least two strikes during your last turn, you are also briefly \\focused.
       `,
       rank: 5,
       roles: ['focus'],

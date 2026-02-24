@@ -474,7 +474,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
           The line cannot intersect itself, and you must designate one end of the line as the head of the flame serpent and the other end as the tail of the flame serpent.
 
           Whenever you sustain this spell, you can repeat this attack in a new line.
-          The tail of the new line must be adjacent to the head of the old line, and it cannot intersect any space occupied by the line in the previous round.
+          The tail of the new line must be adjacent to the head of the old line, and it cannot intersect any space occupied by the line during your last turn.
         `,
       },
       rank: 5,

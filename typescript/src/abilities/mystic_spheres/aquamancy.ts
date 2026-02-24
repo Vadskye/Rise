@@ -210,7 +210,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         `,
         targeting: `
           Make an attack vs. Fortitude with a \\plus2 accuracy bonus against something within \\shortrange.
-          This attack automatically fails unless you hit the target with a \\atWater attack last round.
+          This attack automatically fails unless you hit the target with a \\atWater attack during your last turn.
           ${WATER_ACCURACY_BONUS}
         `,
       },
@@ -229,7 +229,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         `,
         targeting: `
           Make an attack vs. Fortitude with a \\plus2 accuracy bonus against something within \\shortrange.
-          This attack automatically fails unless you hit the target with a \\atWater attack last round.
+          This attack automatically fails unless you hit the target with a \\atWater attack during your last turn.
           ${WATER_ACCURACY_BONUS}
         `,
       },

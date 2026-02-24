@@ -364,14 +364,14 @@ export const astromancy: MysticSphere = {
         targeting: `
           You create a chaotic planar rupture at a location within \\longrange.
           Its area increases over time.
-          It affects a \\medarea radius \\glossterm{zone} in the first round, a \\largearea radius in the second round, and a \\hugearea radius in all subsequent rounds.
-          Any effect which increases or changes this spell's area affects all of its areas equally, not just the area in the first round.
+          It affects a \\medarea radius \\glossterm{zone} in the first turn, a \\largearea radius in the second turn, and a \\hugearea radius in all subsequent turns.
+          Any effect which increases or changes this spell's area affects all of its areas equally, not just the area in the first turn.
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Mental against all creatures in the area.
         `,
       },
       rank: 7,
       roles: ['wildfire'],
-      type: 'Sustain (attunable, standard)',
+      type: 'Sustain (standard)',
     },
     {
       name: 'Conjoined Conjuration -- Ignis',
@@ -449,7 +449,7 @@ export const astromancy: MysticSphere = {
           Each target of this spell must be knocked back in the same direction.
 
           You can leave the target \\glossterm{midair} after the fling, which usually makes it \\unsteady.
-          It normally falls at the end of the round, potentially causing it to take \\glossterm{falling damage} (see \\pcref{Falling Damage}).
+          It normally falls at the end of its turn, potentially causing it to take \\glossterm{falling damage} (see \\pcref{Falling Damage}).
         `,
         targeting: `
           Make an attack vs. Mental against up to two creatures within \\longrange that each have a \\glossterm{weight category} of Medium or lighter.
@@ -692,8 +692,8 @@ export const astromancy: MysticSphere = {
       effect: `
         Choose yourself or one Medium or smaller \\glossterm{ally} or \\glossterm{unattended} object within \\medrange.
         You \\sphereterm{flicker} the target into a nearby safe location in the Astral Expanse.
-        When you cast this spell, you choose how many rounds the target spends in the Astral Expanse, up to a maximum of five rounds.
-        It returns at the end of the last round.
+        When you cast this spell, you choose how many turns the target spends in the Astral Expanse, up to a maximum of five turns.
+        It returns at the end of the last turn.
       `,
       rank: 2,
       roles: ['boon'],
