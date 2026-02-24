@@ -1,5 +1,6 @@
 import t from 'tap';
 import { createCreature, createTeam, createScenario } from '@src/combat/combat_scenario';
+import { selectTarget } from '@src/combat/combat_targeting';
 
 t.test('Target Selection: Ordered', (t) => {
   const attacker = createCreature('Attacker');
@@ -12,11 +13,10 @@ t.test('Target Selection: Ordered', (t) => {
   const allyTeam = createTeam('Ally', [attacker]);
 
   const scenario = createScenario([allyTeam, enemyTeam]);
-  // @ts-ignore - accessing private for testing
-  const selected = (scenario as any).selectTarget(
+  const selected = selectTarget(
     attacker,
     [target1, target2],
-    (scenario as any).initializeFightState(),
+    scenario.initializeFightState(),
   );
 
   t.equal(selected.id, target1.id, 'Should select the first target in the list');
@@ -37,11 +37,10 @@ t.test('Target Selection: Vulnerable (Defense)', (t) => {
   const allyTeam = createTeam('Ally', [attacker]);
 
   const scenario = createScenario([allyTeam, enemyTeam]);
-  // @ts-ignore - accessing private for testing
-  const selected = (scenario as any).selectTarget(
+  const selected = selectTarget(
     attacker,
     [tank, squishy],
-    (scenario as any).initializeFightState(),
+    scenario.initializeFightState(),
   );
 
   t.equal(selected.id, squishy.id, 'Should select the target with the lowest defense');
@@ -62,12 +61,11 @@ t.test('Target Selection: Vulnerable (HP Tie-break)', (t) => {
   const allyTeam = createTeam('Ally', [attacker]);
 
   const scenario = createScenario([allyTeam, enemyTeam]);
-  const state = (scenario as any).initializeFightState();
+  const state = scenario.initializeFightState();
   state.hp[target1.id] = 100;
   state.hp[target2.id] = 50;
 
-  // @ts-ignore - accessing private for testing
-  const selected = (scenario as any).selectTarget(attacker, [target1, target2], state);
+  const selected = selectTarget(attacker, [target1, target2], state);
 
   t.equal(
     selected.id,
@@ -90,12 +88,11 @@ t.test('Target Selection: Random', (t) => {
   const allyTeam = createTeam('Ally', [attacker]);
 
   const scenario = createScenario([allyTeam, enemyTeam]);
-  const state = (scenario as any).initializeFightState();
+  const state = scenario.initializeFightState();
 
   const selections = new Set();
   for (let i = 0; i < 100; i++) {
-    // @ts-ignore - accessing private for testing
-    const selected = (scenario as any).selectTarget(attacker, targets, state);
+    const selected = selectTarget(attacker, targets, state);
     selections.add(selected.id);
   }
 
