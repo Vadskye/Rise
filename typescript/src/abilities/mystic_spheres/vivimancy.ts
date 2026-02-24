@@ -12,7 +12,7 @@ export const vivimancy: MysticSphere = {
 
       cost: 'One \\glossterm{fatigue level}.',
       effect: `
-        At the end of each round, you regain hit points equal to your \\glossterm{power} (minimum 1).
+        At the end of your turn, you regain hit points equal to your \\glossterm{power} (minimum 1).
       `,
       roles: ['healing', 'exertion'],
       type: 'Sustain (standard)',
@@ -710,7 +710,7 @@ export const vivimancy: MysticSphere = {
 
       cost: 'See text.',
       effect: `
-        At the end of each round, if the target's \\glossterm{fatigue level} does not exceed its \\glossterm{fatigue tolerance}, it automatically removes one of its \\glossterm{vital wounds}.
+        At the end of its turn, if the target's \\glossterm{fatigue level} does not exceed its \\glossterm{fatigue tolerance}, it automatically removes one of its \\glossterm{vital wounds}.
         It can choose to stop this regeneration if it is conscious, but the regeneration happens automatically if it is unconscious due to vital wounds.
         For each vital wound removed in this way, it increases its \\glossterm{fatigue level} by three.
       `,
@@ -723,7 +723,7 @@ export const vivimancy: MysticSphere = {
       name: 'Regeneration',
 
       effect: `
-        At the end of each round, you regain hit points equal to half your \\glossterm{power}.
+        At the end of your turn, you regain hit points equal to half your \\glossterm{power}.
       `,
       rank: 3,
       roles: ['healing'],
@@ -735,7 +735,7 @@ export const vivimancy: MysticSphere = {
       name: 'Greater Regeneration',
 
       effect: `
-        At the end of each round, you regain \\hpranktwo.
+        At the end of your turn, you regain \\hpranktwo.
       `,
       rank: 5,
       roles: ['healing'],
@@ -747,7 +747,7 @@ export const vivimancy: MysticSphere = {
       name: 'Supreme Regeneration',
 
       effect: `
-        At the end of each round, you regain \\hprankfive.
+        At the end of your turn, you regain \\hprankfive.
       `,
       rank: 7,
       roles: ['healing'],

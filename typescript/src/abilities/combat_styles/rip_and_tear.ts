@@ -226,7 +226,7 @@ export const ripAndTear: CombatStyle = {
       roles: ['execute'],
     },
 
-    // With only a single extra round of damage, this is 36% more damage than baseline.
+    // With only a single extra turn of damage, this is 36% more damage than baseline.
     // That's almost on par for an injury-only attack.
     {
       name: 'Bloodletter+',

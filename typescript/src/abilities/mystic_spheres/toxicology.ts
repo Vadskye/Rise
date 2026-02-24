@@ -282,7 +282,8 @@ export const toxicology: MysticSphere = {
         hit: `\\damagerankone.`,
         halfOnMiss: true,
         targeting: `
-          The first time you lose \\glossterm{hit points} each round, make a \\glossterm{reactive attack} vs. Reflex against all \\glossterm{enemies} adjacent to you.
+          Whenever you lose \\glossterm{hit points}, make a \\glossterm{reactive attack} vs. Reflex against all \\glossterm{enemies} adjacent to you.
+          This effect can't trigger again until your next turn.
         `,
       },
       narrative: `
@@ -305,7 +306,8 @@ export const toxicology: MysticSphere = {
         hit: `\\damagerankfour.`,
         halfOnMiss: true,
         targeting: `
-          The first time you lose \\glossterm{hit points} each round, make a \\glossterm{reactive attack} vs. Reflex against all \\glossterm{enemies} in a \\smallarea radius from you.
+          Whenever you \\glossterm{hit points}, make a \\glossterm{reactive attack} vs. Reflex against all \\glossterm{enemies} in a \\smallarea radius from you.
+          This effect can't trigger again until your next turn.
         `,
       },
       narrative: `
@@ -618,12 +620,12 @@ export const toxicology: MysticSphere = {
     {
       name: 'Regenerative Fungus',
 
-      // Normal healing would be 40% of HP total, with 20% of that per round.
+      // Normal healing would be 40% of HP total, with 20% of that per turn.
       // The vital wound cost is worth +25% healing, so 50% of HP.
-      // Base HP is 45, so 22.5 total, or 4.5/round. We bump that to 5.5 to allow using a
+      // Base HP is 45, so 22.5 total, or 4.5/turn. We bump that to 5.5 to allow using a
       // standard scaling.
       effect: `
-        At the end of each round, fungus grows rapidly in your body to close your wounds, causing you to regain \\hprankonelow.
+        At the end of your turn, fungus grows rapidly in your body to close your wounds, causing you to regain \\hprankonelow.
         However, you take a \\minus1 penalty to your \\glossterm{vital rolls}.
       `,
       rank: 3,
@@ -636,16 +638,16 @@ export const toxicology: MysticSphere = {
     {
       name: 'Greater Regenerative Fungus',
 
-      // Normal healing would be 60% of HP, with 20% of that per round.
+      // Normal healing would be 60% of HP, with 20% of that per turn.
       // Vital wound cost is +25% healing, so 75% of HP.
-      // Base HP is 91, so 68 total, or 13.5/round.
+      // Base HP is 91, so 68 total, or 13.5/turn.
       effect: `
-        At the end of each round, fungus grows rapidly in your body to close your wounds, causing you to regain 4d6 hit points.
+        At the end of your turn, fungus grows rapidly in your body to close your wounds, causing you to regain 4d6 hit points.
         However, you take a \\minus1 penalty to your \\glossterm{vital rolls}.
       `,
       rank: 5,
       roles: ['attune', 'healing'],
-      // At rank 6, base HP is 126, so 94 total, or 19/round.
+      // At rank 6, base HP is 126, so 94 total, or 19/turn.
       scaling: { special: 'The healing increases by 2d6 for each rank beyond 5.' },
       type: 'Attune (deep)',
       tags: ['Manifestation'],

@@ -112,7 +112,7 @@ export const enchantment: MysticSphere = {
       name: 'Dance',
 
       // Assuming they never dance, this is roughly stunned, which is 3 EA.
-      // Assuming they dance every other round, this is 0.75 EA from defense debuff and 25%
+      // Assuming they dance every other turn, this is 0.75 EA from defense debuff and 25%
       // action denial from anti-movement, which is 0.75 EA + 3 EA = 3.75 EA??
       // But letting the target choose between those two options makes it weaker than
       // stunned with a slower ramp time, so call it 2.6 EA. That's r7, or r6 limited
@@ -123,7 +123,7 @@ export const enchantment: MysticSphere = {
           As a \\glossterm{condition}, the target is compelled to dance.
           It can spend a \\glossterm{move action} to dance, if it is physically capable of dancing.
           At the end of its turn, if the target did not dance during that turn, it takes a -1 penalty to its defenses as the compulsion intensifies.
-          This penalty stacks each round up to a maximum of -4.
+          This penalty stacks each turn up to a maximum of -4.
           When the target dances, it resets its penalties to 0.
         `,
         targeting: `
@@ -359,8 +359,8 @@ export const enchantment: MysticSphere = {
       type: 'Attune (deep)',
     },
 
-    // Panicked by you for only a single round is worth about 0.7 EA for the Mental
-    // defense, plus 1.5 EA from a single round of action denial, so 2.2 EA.
+    // Panicked by you for only a single turn is worth about 0.7 EA for the Mental
+    // defense, plus 1.5 EA from a single turn of action denial, so 2.2 EA.
     {
       name: 'Intense Fearsome Aura',
 
