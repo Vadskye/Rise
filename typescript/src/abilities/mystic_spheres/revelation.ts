@@ -39,7 +39,7 @@ export const revelation: MysticSphere = {
       // Any two focused is 1 EA. Drop to r2 for the prereq.
       effect: `
         Choose up to two \\glossterm{allies} within \\medrange.
-        Each target that missed an enemy with an attack this round becomes \\briefly \\focused.
+        Each target that missed an enemy with an attack since your last turn becomes \\briefly \\focused.
       `,
       rank: 2,
       roles: ['boon'],
@@ -559,7 +559,7 @@ export const revelation: MysticSphere = {
         `,
         targeting: `
           When you cast this spell, visions of possible futures visibly cloud around you.
-          Next round, you can spend a \\glossterm{standard action} to make an attack vs. Mental against up to two creatures within \\shortrange.
+          During your next turn, you can spend a \\glossterm{standard action} to make an attack vs. Mental against up to two creatures within \\shortrange.
         `,
       },
 

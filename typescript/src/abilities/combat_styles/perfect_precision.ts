@@ -305,7 +305,7 @@ export const perfectPrecision: CombatStyle = {
       // 0.8 EA baseline, 1.2 EA if you hit the condition
       effect: `
         You become \\briefly \\focused and \\honed.
-        During the next round, if you get a critical hit with a strike, you become \\briefly honed again.
+        During your next turn, if you get a critical hit with a strike, you become \\briefly honed again.
       `,
       rank: 5,
       roles: ['focus'],

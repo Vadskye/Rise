@@ -286,7 +286,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
           When you cast this spell, you create a Fine bead of fire in midair at a location in \\shortrange.
           The bead sheds light like a torch.
           It is immune to most forms of damage, but if it takes damage from a \\atCold ability, it is destroyed and this spell has no further effect.
-          At the end of the next round, the bead explodes, and you make an attack vs. Reflex against everything in a \\medarea radius of it.
+          At the end of your next turn, the bead explodes, and you make an attack vs. Reflex against everything in a \\medarea radius of it.
         `,
       },
       rank: 4,
@@ -403,7 +403,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         targeting: `
           For the duration of this spell, you can breathe fire like a dragon as a standard action.
           When you do, make an attack vs. Reflex against everything within a \\medarea cone from you.
-          You can't use this ability again next round.
+          You \\briefly can't use this ability again.
         `,
       },
       rank: 3,
@@ -438,7 +438,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         targeting: `
           You can set creatures on fire simply by staring at them as a standard action.
           When you do, make an attack vs. Fortitude against a creature within \\shortrange.
-          You can't use this ability again next round.
+          You \\briefly can't use this ability again.
         `,
       },
       rank: 1,
@@ -741,7 +741,9 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       effect: `
         You embody the soul of the undying phoenix.
         If you die, your body and equipment catch fire and are instantly burned to ash.
-        At the end of the next round after you died, you return to life with all of your equipment intact.
+        However, you continue tracking your turn in combat.
+        At the start of your next turn, you are \\glossterm{resurrected} in the open space closest to where you died with all of your equipment intact.
+        Unlike normal, resurrecting in this way does not impose any penalties on you.
         Your return in the same state in which you died, with three exceptions:
         \\begin{raggeditemize}
           \\item You return at full \\glossterm{hit points}, with all of your conditions removed.

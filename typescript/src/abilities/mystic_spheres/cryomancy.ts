@@ -17,7 +17,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
     Many spells from this mystic sphere become stronger if you spend ice crystals, and some spells generate ice crystals.
     You can normally have a maximum of three ice crystals.
     They grow on your body, but do not impede your movements or actions in any way.
-    At the end of each round, if you did not gain or spend any ice crystals that round, one of your ice crystals melts.
+    At the end of your turn, if you did not gain or spend any ice crystals that turn, one of your ice crystals melts.
   `,
   cantrips: [
     {
@@ -25,7 +25,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
 
       effect: `
         If you have no \\glossterm{ice crystals}, you gain one ice crystal.
-        If you have exactly one ice crystal, it does not melt this round.
+        If you have exactly one ice crystal, it does not melt this turn.
       `,
       roles: ['focus'],
     },
@@ -44,7 +44,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         `,
         injury: `
           The target slowly begins freezing as a \\glossterm{condition}.
-          After your action next round, it becomes \\slowed.
+          At the end of your next turn, it becomes \\slowed.
           If you spent an ice crystal, it becomes \\slowed immediately.
         `,
         targeting: `
@@ -176,7 +176,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       effect: `
         You can move on top of water as if it were land.
         This also works on other liquids that can be frozen like water.
-        At the end of each round, if you are standing on a Medium or larger freezable liquid and have no \\glossterm{ice crystals}, you gain an ice crystal.
+        At the end of your turn, if you are standing on a Medium or larger freezable liquid and have no \\glossterm{ice crystals}, you gain an ice crystal.
       `,
       rank: 2,
       roles: ['attune'],
@@ -206,33 +206,27 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       name: 'Icy Shell',
 
       // Permanent shielded is 2.4 EA.
-      // Assume that you have DR for ~50% of rounds, so this is worth 1.2 EA.
+      // Assume that you have DR for ~2/3 of rounds, so this is worth 1.6 EA.
       effect: `
         You are \\shielded.
-        At the end of each round, if you took damage from a \\atFire ability that round or are \\glossterm{injured}, you can spend an \\glossterm{ice crystal}.
+        At the start of your turn, if you took damage from a \\atFire ability since your last turn or are \\glossterm{injured}, you can spend an \\glossterm{ice crystal}.
         If you do not, this ability is \\glossterm{dismisssed}.
       `,
       narrative:
         'Layers of ice form around you, shielding you from attacks until they are destroyed.',
-      rank: 4,
+      rank: 1,
       roles: ['attune'],
       tags: ['Manifestation'],
-      type: 'Attune',
+      type: 'Attune (deep)',
     },
 
     {
-      name: 'Enduring Icy Shell',
+      name: 'Efficient Icy Shell',
 
-      // Permanent shielded is 2.4 EA.
-      // Assume that you have DR for ~60% of rounds, so this is worth 1.5 EA.
-      effect: `
-        You are \\shielded.
-        At the end of each round, if you took damage from a \\atFire ability that round or are \\glossterm{injured}, you can spend an \\glossterm{ice crystal}.
-        If you do not, this effect is \\glossterm{suppressed}.
-        When you stop being \\glossterm{injured}, this effect is immediately resumed.
-      `,
-      narrative:
-        'Layers of ice form around you, shielding you from attacks until they are destroyed.',
+      functionsLike: {
+        name: 'icy shell',
+        exceptThat: 'it is a normal attunement instead of a \\glossterm{deep attunement}.',
+      },
       rank: 7,
       roles: ['attune'],
       tags: ['Manifestation'],
@@ -376,7 +370,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         First, any \\glossterm{strikes} made with a weapon created with this ability have the \\atCold tag.
         Second, any creature wearing body armor created with this ability is \\impervious to \\atFire attacks.
         Third, whenever a creature using items from this ability loses \\glossterm{hit points} from a \\atFire attack, all of the items they are holding from this ability disappear.
-        The items reappear at the end of the next round.
+        The items reappear at the end of that creature's next turn.
       `,
       rank: 1,
       roles: ['attune'],
@@ -402,7 +396,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         targeting: `
           For the duration of this spell, you can breathe cold like a dragon as a standard action.
           When you do, make an attack vs. Fortitude against everything in a \\medarea cone from you.
-          You can't use this ability again next round.
+          You \\briefly can't use this ability again.
 
           If any Medium or larger creatures lose \\glossterm{hit points} from this spell, you gain an \\glossterm{ice crystal}.
         `,
@@ -484,7 +478,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         Nothing can pass through the wall until it is destroyed.
 
         The wall has \\glossterm{hit points} equal to your \\glossterm{power}.
-        If it is destroyed, it automatically reforms at the end of the next round, ignoring any occupied spaces that would block the wall from reforming.
+        If it is destroyed, it automatically reforms at the end of your next turn, ignoring any occupied spaces that would block the wall from reforming.
       `,
       rank: 1,
       scaling: {
@@ -508,7 +502,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         Nothing can pass through the sphere until it is destroyed.
 
         The sphere as a whole has \\glossterm{hit points} equal to your \\glossterm{power}.
-        If it is destroyed, it automatically reforms at the end of the next round, ignoring any occupied spaces that would block the wall from reforming.
+        If it is destroyed, it automatically reforms at the end of your next turn, ignoring any occupied spaces that would block the wall from reforming.
       `,
       rank: 4,
       roles: ['barrier'],
@@ -625,7 +619,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         `,
         targeting: `
           When you cast this spell, ice forms on your body and the air chills around you.
-          Next round, you can spend a \\glossterm{standard action} to make an attack vs. Fortitude against something within \\shortrange.
+          During your next turn, you can spend a \\glossterm{standard action} to make an attack vs. Fortitude against something within \\shortrange.
         `,
       },
       rank: 2,
@@ -647,7 +641,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         `,
         targeting: `
           When you cast this spell, ice forms on your body and the air chills around you.
-          Next round, you can spend a \\glossterm{standard action} to make an attack vs. Fortitude against something within \\shortrange.
+          During your next turn, you can spend a \\glossterm{standard action} to make an attack vs. Fortitude against something within \\shortrange.
         `,
       },
       rank: 7,
