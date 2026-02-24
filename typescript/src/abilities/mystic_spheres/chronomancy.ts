@@ -288,7 +288,7 @@ export const chronomancy: MysticSphere = {
         crit: CONDITION_CRIT,
         hit: `
           As a \\glossterm{condition}, the target randomly slows down.
-          At the start of each round, if the target is \\glossterm{injured}, it has a 50\\% chance to be \\slowed during that round.
+          At the start of its turn, if the target is \\glossterm{injured}, it has a 50\\% chance to be \\slowed until its next turn.
         `,
         targeting: `
           Make an attack vs. Mental against up to two creatures in \\shortrange.
@@ -315,7 +315,7 @@ export const chronomancy: MysticSphere = {
 
       effect: `
         You gain a +10 foot \\glossterm{enhancement bonus} to your \\glossterm{speed}.
-        In addition, you can take two \\glossterm{minor actions} each round instead of one.
+        You can also take an additional \\glossterm{minor action} each turn.
       `,
       rank: 7,
       roles: ['attune'],
@@ -550,7 +550,7 @@ export const chronomancy: MysticSphere = {
       effect: `
         You can change your appearance or equipment with superhuman speed.
         This has no effect on any creatures other than yourself.
-        This can have any one of the following effects, which are completed at the end of the current round regardless of the time they would normally take:
+        This can have any one of the following effects, which are completed at the end of your turn regardless of the time they would normally take:
         \\begin{mdframeditemize}
           \\item You can take off your body armor or clothing, along with any weapons or shields you have equipped.
             You can leave the items on the ground in your square or stow them in an available location, such as in a backpack you wear.
@@ -597,7 +597,7 @@ export const chronomancy: MysticSphere = {
       effect: `
         Chose yourself or one \\glossterm{ally} within \\shortrange.
         The target regains 1d8 \\glossterm{hit points} \\plus1 per power.
-        This recovery is doubled for each consecutive round that you have cast this spell on the same target.
+        This recovery is doubled for each consecutive turn that you have cast this spell on the same target.
       `,
       rank: 2,
       roles: ['healing', 'exertion'],
@@ -697,7 +697,7 @@ export const chronomancy: MysticSphere = {
       effect: `
         You are \\briefly locked in stasis.
         While in stasis, you are \\debuff{unconscious} and cannot be targeted, moved, damaged, or otherwise affected in any way.
-        In the round after your stasis ends, you can take an extra \\glossterm{move action} and an extra \\glossterm{minor action} during your turn.
+        During your next turn after the stasis ends, you can take an extra \\glossterm{minor action} during your turn, and you add your \\glossterm{speed} to your \\glossterm{available movement}.
       `,
       rank: 2,
       roles: ['focus'],
@@ -710,8 +710,8 @@ export const chronomancy: MysticSphere = {
       effect: `
         You are \\briefly locked in stasis.
         While in stasis, you are \\debuff{unconscious} and cannot be targeted, moved, damaged, or otherwise affected in any way.
-        In the round after your stasis ends, you cannot take any \\glossterm{move actions}, and your \\glossterm{available movement} is zero.
-        However, you can take an extra standard action during your turn.
+        During your next turn after the stasis ends, you cannot take any \\glossterm{move actions}, and your \\glossterm{available movement} is zero.
+        However, you can take an extra standard action that turn.
       `,
       rank: 6,
       roles: ['focus'],

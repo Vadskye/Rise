@@ -110,7 +110,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         Moving the target upwards costs twice the normal movement cost.
 
         If you leave the target \\glossterm{midair}, it is normally \\unsteady until it lands.
-        It normally falls at the end of the round, causing it to take \\glossterm{falling damage} (see \\pcref{Falling Damage}).
+        It normally falls at the end of its turn, causing it to take \\glossterm{falling damage} (see \\pcref{Falling Damage}).
       `,
       rank: 1,
       roles: ['mobility'],
@@ -265,7 +265,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
           Each target of this spell must be knocked back in the same direction.
 
           You can leave the target \\glossterm{midair} after the fling, which usually makes it \\unsteady.
-          It normally falls at the end of the round, potentially causing it to take \\glossterm{falling damage} (see \\pcref{Falling Damage}).
+          It normally falls at the end of its turn, potentially causing it to take \\glossterm{falling damage} (see \\pcref{Falling Damage}).
         `,
         targeting: `
           Make an attack vs. Brawn against up to two creatures within \\medrange that each have a \\glossterm{weight category} of Medium or lighter.
@@ -288,7 +288,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
           Each target of this spell must be knocked back in the same direction.
 
           You can leave the target \\glossterm{midair} after the fling, which usually makes it \\unsteady.
-          It normally falls at the end of the round, potentially causing it to take \\glossterm{falling damage} (see \\pcref{Falling Damage}).
+          It normally falls at the end of its turn, potentially causing it to take \\glossterm{falling damage} (see \\pcref{Falling Damage}).
         `,
         targeting: `
           Make an attack vs. Brawn against up to three creatures within \\medrange that each have a \\glossterm{weight category} of Large or lighter.
@@ -394,7 +394,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         targeting: `
           Whenever a creature within \\medrange of you attacks you, make a \\glossterm{reactive attack} vs. Armor against them.
           Any effect which increases this spell's range increases the range of this retaliation by the same amount.
-          You can only make this attack against a given target once per round.
+          You can only make this attack against a given target once per turn.
         `,
       },
       // effect: '',
@@ -574,8 +574,8 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         targeting: `
           You create a dust storm in a \\glossterm{zone} around you.
           The area affected by the storm increases over time.
-          It affects a \\largearea radius in the first round, a \\hugearea radius in the second round, and a \\gargarea radius in all subsequent rounds.
-          Any effect which increases or changes this spell's area affects all of its areas equally, not just the area in the first round.
+          It affects a \\largearea radius in the first turn, a \\hugearea radius in the second turn, and a \\gargarea radius in all subsequent turns.
+          Any effect which increases or changes this spell's area affects all of its areas equally, not just the area in the first turn.
 
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Reflex against all \\glossterm{enemies} in the area.
         `,

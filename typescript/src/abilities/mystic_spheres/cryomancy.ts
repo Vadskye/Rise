@@ -662,7 +662,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         targeting: `
           Make an attack vs. Fortitude against everything in a \\medarealong, 5 ft.\\ wide line from you.
           At the start of your next turn, make an attack vs. Fortitude against everything in a \\medarealong, 5 ft.\\ wide line that continues straight from the end of the previous line.
-          At the end of that round, you gain an \\glossterm{ice crystal}.
+          At the end of that turn, you gain an \\glossterm{ice crystal}.
         `,
       },
       rank: 2,
@@ -698,7 +698,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
     {
       name: 'Greater Ice Shield',
 
-      // Cover is 0.5 EA. Adding a round of maximized is +0.7 EA, so 1.2 EA, which
+      // Cover is 0.5 EA. Adding a turn of maximized is +0.7 EA, so 1.2 EA, which
       // is fine for an optional ice crystal.
       cost: OPTIONAL_ICE_CRYSTAL,
       effect: `

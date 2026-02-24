@@ -467,7 +467,9 @@ export const rituals: RitualDefinition[] = [
       If it encounters an immovable obstacle with 10 or more hardness, the planar rift stops its expansion in that direction.
 
       This ritual cannot be \\glossterm{sustained} for more than 10 minutes, and is automatically dismissed at the end of that time.
-      When this ritual ends for any reason, the planar rift spends a round slowly closing, allowing anything currently in transit to choose which side of the rift it wants to end up on.
+      When this ritual ends for any reason, the planar rift slowly closes, allowing anything currently in transit to choose which side of the rift it wants to end up on.
+      % TODO: clarify that it tracks the turn that caused it to start closing?
+      At the end of the next turn after it started closing, it finishes closing.
       Anything still in the middle when it closes is severed cleanly in half.
 
       You must specify the planar rift's destination with a precise mental image of its appearance.
@@ -623,7 +625,7 @@ export const rituals: RitualDefinition[] = [
 
       If the astral beacon does not have enough open space to contain your group, the ritual has no immediate effect.
       You can continue the ritual for any length of time.
-      At the end of each round during this continuation, if the astral beacon has room for your group, the teleportation succeeds and the ritual ends.
+      At the end of each of your turns during this continuation, if the astral beacon has room for your group, the teleportation succeeds and the ritual ends.
     `,
     sphereEffects: teleportSphereEffects,
     tags: [],
@@ -787,7 +789,7 @@ export const rituals: RitualDefinition[] = [
     usageTime: 'one hour',
     effect: `
       Choose one Medium or smaller container.
-      Any inanimate, \\glossterm{unattended} object placed into the container enters a state of temporal stasis at the end of the round.
+      Any inanimate, \\glossterm{unattended} object placed into the container enters a state of temporal stasis.
       While in stasis, an object cannot be targeted, moved, damaged, or otherwise affected by outside forces in any way.
       If the container is destroyed, this ability is \\glossterm{dismissed}.
     `,
@@ -2139,9 +2141,9 @@ export const rituals: RitualDefinition[] = [
     usageTime: 'one minute',
     effect: `
       Choose up to five creatures within \\medrange from among you and your \\glossterm{allies}.
-      At the end of each round, the footprints, scent, and other tracks left by each target during that round are magically concealed.
+      At the end of each target's turn, the footprints, scent, and other tracks left by that target during that turn are magically concealed.
       This increases the \\glossterm{difficulty value} to follow the trail by 10, but does not prevent creatures from seeing or smelling each target normally in combat.
-      At the end of each round, if any target is outside of \\longrange from you, the effect is broken for that target and its trail is revealed.
+      At the end of your turn, if any target is outside of \\longrange from you, the effect is broken for that target and its trail is revealed.
     `,
     rank: 2,
     roles: ['attune'],
@@ -2909,13 +2911,13 @@ export const rituals: RitualDefinition[] = [
     usageTime: 'one minute',
     effect: `
       You create a tidy area in a \\glossterm{shapeable} \\medarea radius \\glossterm{zone} from your location.
-      At the end of each round, all dirt, grime, and other blemishes on \\glossterm{unattended} objects within the area are cleansed.
+      At the end of your turn, all dirt, grime, and other blemishes on \\glossterm{unattended} objects within the area are cleansed.
     `,
     rank: 2,
     roles: ['narrative'],
     sphereEffects: {
       Polymorph: `
-        All unattended objects in the area also regain one hit point at the end of each round.
+        All unattended objects in the area also regain one hit point at the end of your turn.
         This can remove nicks, scratches, and similar damage.
         It does not restore \\glossterm{broken} or \\glossterm{destroyed} objects.
       `,
@@ -2985,7 +2987,7 @@ export const rituals: RitualDefinition[] = [
       targeting: `
         The area within an \\largearea radius \\glossterm{shapeable} \\glossterm{zone} from your location becomes a sanctuary.
         Whenever a creature enters the area, make a \\glossterm{reactive attack} vs. Mental with a \\plus10 accuracy bonus against that creature.
-        At the end of each round, this attack is repeated against each unaffected creature in the area.
+        At the end of your turn, this attack is repeated against each unaffected creature in the area.
       `,
     },
     rank: 3,
@@ -3090,7 +3092,7 @@ export const rituals: RitualDefinition[] = [
     usageTime: 'one hour',
     functionsLike: {
       name: 'control weather',
-      // 30 feet/round = 5 feet / second = 300 feet/min = 3,000 feet / 10 min,
+      // 30 feet/6 seconds = 5 feet / second = 300 feet/min = 3,000 feet / 10 min,
       // which is less than the 10,000 foot radius.
       exceptThat: `
         the area becomes a cylinder-shaped \\glossterm{emanation} from you with a two mile radius.

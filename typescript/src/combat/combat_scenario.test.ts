@@ -211,8 +211,8 @@ t.test('Elite monsters hit multiple targets with area attack', (t) => {
 
   const scenario = createScenario([team1, team2]);
 
-  // If no area attack, it takes 5 rounds to kill 5 targets (1 target/round).
-  // With area attack, it kills one target and damages others, killing them all in ~2 rounds.
+  // If no area attack, it takes 5 turns to kill 5 targets (1 target/turn).
+  // With area attack, it kills them all in one turn.
   const result = scenario.simulate();
   assertExpectedRounds(t, result, 1.0);
   assertExpectedWinRate(t, result, 'Elite Team', 100);
@@ -281,7 +281,7 @@ t.test('Characters with equipped weapons use weapon stats for accuracy and damag
 
   // Barbarian has 1 accuracy vs defense 1, which is 100% hit and 10% crit
   t.equal(result.averageHitRates['Barbarian Team'], 100, 'Barbarian should hit 100% of the time');
-  // 1.1x hit damage per round, 3 power, so 1d8+3 damage per hit. That's 8.25 damage per round, which is 12.1 rounds to kill.
+  // 1.1x hit damage per turn, 3 power, so 1d8+3 damage per hit. That's 8.25 damage per turn, which is 12.1 rounds to kill.
   assertExpectedRounds(t, result, 12.1);
   t.end();
 });

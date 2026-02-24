@@ -149,7 +149,7 @@ function replaceGenericTerms(
   replace(/\bafter your strike\b/g, 'after its strike');
   replace(/\byou control the\b/g, 'the $name controls the');
   // Normally we replace 'hit' with 'hits', but not if it was referring to the past tense.
-  replace(/\bIf you hit(.*?)last round\b/g, (_, context) => `If the $name hit${context}last round`);
+  replace(/\bIf you hit(.*?)last turn\b/g, (_, context) => `If the $name hit${context}last turn`);
   replace(/\bIf you hit\b/g, 'If the $name hits');
   replace(/\bif you hit\b/g, 'if the $name hits');
   replace(/\bIf you get\b/g, 'If the $name gets');

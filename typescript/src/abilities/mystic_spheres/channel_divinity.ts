@@ -128,7 +128,7 @@ export const channelDivinity: MysticSphere = {
         `,
         targeting: `
           Make an attack vs. Mental against something within \\shortrange.
-          You gain a +3 accuracy bonus if the target attacked you or one of your \\glossterm{allies} during the previous round.
+          You gain a +3 accuracy bonus if the target attacked you or one of your \\glossterm{allies} since your last turn.
         `,
       },
       rank: 2,
@@ -146,7 +146,7 @@ export const channelDivinity: MysticSphere = {
         `,
         targeting: `
           Make an attack vs. Mental against something within \\shortrange.
-          You gain a +3 accuracy bonus if the target attacked you or one of your \\glossterm{allies} during the previous round.
+          You gain a +3 accuracy bonus if the target attacked you or one of your \\glossterm{allies} since your last turn.
         `,
       },
       rank: 5,

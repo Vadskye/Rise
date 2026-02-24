@@ -271,7 +271,7 @@ export const photomancy: MysticSphere = {
       name: 'Radiant Field',
 
       // Enemies in medium radius from self is r3 area, which would have base dr2.
-      // Damage each round is -1dr. But since we're using flat damage, -2dr is -1dr flat.
+      // Damage each turn is -1dr. But since we're using flat damage, -2dr is -1dr flat.
       attack: {
         hit: `
           \\damageranktwolow.
@@ -449,7 +449,7 @@ export const photomancy: MysticSphere = {
         It has all of the same properties as you do when considering whether it is a valid target for attacks.
         For example, if you are living, your duplicate can also be affected by abilities that only work on living creatures.
         When it is hit by a \\glossterm{targeted} attack, it is destroyed.
-        At the end of each round, if the duplicate is outside of \\medrange from you, it is destroyed.
+        At the end of your turn, if the duplicate is outside of \\medrange from you, it is destroyed.
         This ability is \\glossterm{dismissed} when your duplicate is destroyed.
       `,
       rank: 2,

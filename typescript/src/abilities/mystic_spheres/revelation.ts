@@ -202,7 +202,7 @@ export const revelation: MysticSphere = {
     {
       name: 'Precognitive Defense',
 
-      // Automatic steel is very strong, even if it's only for one round
+      // Automatic steel is very strong, even if it's only for one turn
       effect: `
         You can activate this ability as a \\glossterm{free action}.
         When you do, your attunement to this effect ends and you become \\briefly \\steeled.
@@ -396,7 +396,7 @@ export const revelation: MysticSphere = {
 
         If undisturbed, the sensor floats in the air in its position.
         As a \\glossterm{movement}, you can move the sensor up to 30 feet in any direction, even vertically.
-        At the end of each round, if the sensor is not within 120 feet from you, it is destroyed.
+        At the end of your turn, if the sensor is not within 120 feet from you, it is destroyed.
         This distance check ignores \\glossterm{line of sight} and \\glossterm{line of effect}.
       `,
       rank: 2,
@@ -512,7 +512,7 @@ export const revelation: MysticSphere = {
 
           While using the target's senses, you can choose any creatures you see as intended targets to continue the chain.
           Whenever the currently affected creature touches an intended target, you make a \\glossterm{reactive attack} vs. Mental against the new creature.
-          You can only make this attack against a given target once per round.
+          You can only make this attack against a given target once per turn.
           On a hit, the touched creature becomes the new target of this spell and the condition is transferred to it.
           On a miss, the condition remains on the previous creature.
         `,

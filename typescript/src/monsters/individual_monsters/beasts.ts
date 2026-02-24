@@ -372,7 +372,7 @@ export function addBeasts(grimoire: Grimoire) {
       effect: `
         The $name makes a $accuracy attack vs. Reflex against against one non-adjacent creature within \\distrange.
         \\hit The target becomes marked as a condition.
-        If the $name loses sight of the target for a full round, this effect ends.
+        If the $name spends its full turn without being able to see the target, this effect ends.
         The $name gains a +2 bonus to accuracy and defenses against all targets that it has marked in this way.
       `,
       name: 'Eagle Eye',

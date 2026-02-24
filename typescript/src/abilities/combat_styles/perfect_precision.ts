@@ -259,7 +259,7 @@ export const perfectPrecision: CombatStyle = {
         Make a melee \\glossterm{strike} that deals triple damage.
         \\hit If your attack result also hits the target's Fortitude defense, it takes a \\minus1 penalty to all defenses as a \\glossterm{condition}.
         A creature can have up to four instances of this condition on it at once, and the penalty from each instance stacks.
-        Any individual creature can only gain one instance of this condition per round, even if multiple creatures use this ability on it.
+        Any individual creature can only gain one instance of this condition per turn, even if multiple creatures use this ability on it.
       `,
       rank: 7,
       roles: ['softener'],

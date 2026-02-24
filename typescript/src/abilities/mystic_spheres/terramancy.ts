@@ -475,8 +475,8 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         name: 'earthbind',
         exceptThat: `
           as part of the same condition, the target is also \\slowed while it is \\glossterm{injured}.
-          At the start of each round, the target can make a DV 10 Strength check.
-          Success means that it stops being slowed during that round.
+          At the start of its turn, the target can make a DV 10 Strength check.
+          Success means that it stops being slowed during that turn.
         `,
       },
       rank: 7,
@@ -624,8 +624,8 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         targeting: `
           You create a volcano at a \\glossterm{grounded} location within \\shortrange.
           The area affected by the volcano increases over time.
-          It affects a \\smallarea radius \\glossterm{zone} in the first round, a \\medarea radius in the second round, and a \\largearea radius in all subsequent rounds.
-          Any effect which increases or changes this spell's area affects all of its areas equally, not just the area in the first round.
+          It affects a \\smallarea radius \\glossterm{zone} in the first turn, a \\medarea radius in the second turn, and a \\largearea radius in all subsequent turns.
+          Any effect which increases or changes this spell's area affects all of its areas equally, not just the area in the first turn.
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Reflex against everything in the area.
         `,
       },

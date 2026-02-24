@@ -134,8 +134,8 @@ export const umbramancy: MysticSphere = {
         halfOnMiss: true,
         targeting: `
           You create a spreading field of dark miasma in a \\glossterm{zone} from you.
-          It affects a \\medarea radius \\glossterm{zone} in the first round, a \\largearea radius in the second round, and a \\hugearea radius in all subsequent rounds.
-          Any effect which increases or changes this spell's area affects all of its areas equally, not just the area in the first round.
+          It affects a \\medarea radius \\glossterm{zone} in the first turn, a \\largearea radius in the second turn, and a \\hugearea radius in all subsequent turns.
+          Any effect which increases or changes this spell's area affects all of its areas equally, not just the area in the first turn.
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Fortitude against all \\glossterm{enemies} in the area.
         `,
       },
@@ -423,7 +423,7 @@ export const umbramancy: MysticSphere = {
           \\item You are always treated as being \\prone, though your \\glossterm{speed} is not reduced.
         \\end{raggeditemize}
 
-        At the end of each round, if you are not \\glossterm{shadowed}, this effect is \\glossterm{suppressed} and you return to your normal size and shape.
+        At the end of your turn, if you are not \\glossterm{shadowed}, this effect is \\glossterm{suppressed} and you return to your normal size and shape.
         If doing so is impossible, such as if you are in a space too small to contain your body, you gain a \\glossterm{vital wound} and this effect persists \\briefly.
         This form offers you no special immunity to damage, as creatures can simply attack the shadow.
 
@@ -513,7 +513,7 @@ export const umbramancy: MysticSphere = {
     {
       name: 'Shadowfeed',
       effect: `
-        At the end of each round, if you are \\glossterm{shadowed}, you regain \\hprankzero.
+        At the end of your turn, if you are \\glossterm{shadowed}, you regain \\hprankzero.
       `,
       rank: 4,
       roles: ['attune', 'healing'],
@@ -524,7 +524,7 @@ export const umbramancy: MysticSphere = {
     {
       name: 'Greater Shadowfeed',
       effect: `
-        At the end of each round, if you are \\glossterm{shadowed}, you regain \\hprankthree.
+        At the end of your turn, if you are \\glossterm{shadowed}, you regain \\hprankthree.
       `,
       rank: 6,
       roles: ['attune', 'healing'],
