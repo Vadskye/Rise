@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+SAVE_OUTPUT=0
+ARGS=()
+
+for arg in "$@"; do
+    if [ "$arg" == "--save_output" ]; then
+        SAVE_OUTPUT=1
+    else
+        ARGS+=("$arg")
+    fi
+done
+
+if [ $SAVE_OUTPUT -eq 1 ]; then
+    npm run test "${ARGS[@]}" 2>&1 | tee test_output.txt
+else
+    npm run test "${ARGS[@]}"
+fi
