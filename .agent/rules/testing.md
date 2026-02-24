@@ -13,15 +13,9 @@ Tests are located in the `typescript/src/` directory and use the `tap` framework
 To ensure tests run correctly on both Windows and Unix-like systems, always use the following npm scripts:
 
 * `npm run test`: Runs all tests.
-* `npm run tap -- <path/to/test.ts>`: Runs a specific test file.
+* `npm run test -- <path/to/test.ts>`: Runs a specific test file.
 
 These scripts are configured to use `npx tap --node-arg=--import=tsx`, which correctly sets up the TypeScript loader without requiring shell-specific environment variable syntax.
-
-### Manual Test Execution
-If you need to run tests manually without `npm run`, use:
-```bash
-npx tap --node-arg=--import=tsx src/path/to/test.ts
-```
 
 ## Writing Tests
 * **Imports**: Use `import t from 'tap';` for the test harness.
