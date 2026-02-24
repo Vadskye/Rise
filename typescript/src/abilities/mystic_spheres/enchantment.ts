@@ -32,7 +32,7 @@ export const enchantment: MysticSphere = {
           It can choose different targets or otherwise make different decisions about its action, but the action must be the same.
           This does not affect its other actions, such as movement.
           If it is unable to take the same standard action, it can act normally.
-          For example, if the target used the \\ability{recover} ability during its most recent turn, its actions would not be restricted next round.
+          For example, if the target used the \\ability{recover} ability during its most recent turn, its actions would not be restricted during its next turn.
 
           After the target repeats or fails to repeat its action in this way, it becomes immune to this effect until it finishes a \\glossterm{short rest}.
         `,

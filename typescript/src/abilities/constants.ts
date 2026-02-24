@@ -9,7 +9,7 @@ export const EXCEPT_NOT_DEEP =
   'it has the \\abilitytag{Attune} tag instead of \\abilitytag{Attune} (deep).';
 export const BARRIER_COOLDOWN =
   'You \\glossterm{briefly} cannot use this ability or any other \\atBarrier ability.';
-export const BRIEF_COOLDOWN = "You can't use this ability next round.";
+export const BRIEF_COOLDOWN = "You \\briefly can't use this ability again.";
 
 export const ABILITY_ROLES = [
   'attune', // Buff that lasts as long as you stay attuned.
@@ -24,7 +24,7 @@ export const ABILITY_ROLES = [
   'exertion', // Spend fatigue for more powerful effects (or, rarely, spend other resources like vital wounds)
   'flash', // Brief or one-round debuff that affects multiple targets, typically in an area. Does not require injury.
   'focus', // Brief offensive buff on yourself. If an ability makes an attack, it is not a focus ability, though it may be a generator.
-  'generator', // Attack and gain a brief buff on yourself that is typically offensive. The buff must last after the effect of the attack, typically for the next round.
+  'generator', // Attack and gain a brief buff on yourself that is typically offensive. The buff must last after the effect of the attack, typically for its next turn.
   'hazard', // Create a persistent battlefield hazard, such as a zone that deals damage each round
   'healing', // Regain hit points
   'kite', // Move away from enemies and make a ranged attack, or prevent enemies from moving closer

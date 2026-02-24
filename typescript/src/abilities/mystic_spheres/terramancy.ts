@@ -516,7 +516,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         A typical Large wall made of earth has 50 hit points, 5 \\glossterm{hardness}, and a Sunder DV of 20.
 
         The fortifications form slowly, rather than instantly.
-        The structure becomes complete at the end of the next round after this spell is cast.
+        The structure becomes complete at the end of your next turn.
         This makes it difficult to trap creatures within structures formed.
       `,
       rank: 4,

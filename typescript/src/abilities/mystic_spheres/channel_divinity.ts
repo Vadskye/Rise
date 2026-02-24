@@ -31,7 +31,7 @@ export const channelDivinity: MysticSphere = {
       // when used as a pre-combat buff.
       cost: 'One \\glossterm{fatigue level}.',
       effect: `
-        At the end of the next round, you become infused with divine power.
+        At the end of your next turn, you become infused with divine power.
         This causes you to regain \\hprankfour, and you become \\briefly \\focused.
       `,
       roles: ['focus', 'healing', 'exertion'],
@@ -44,7 +44,7 @@ export const channelDivinity: MysticSphere = {
       name: 'Triumph of the Faithful',
 
       effect: `
-        At the end of the next round, you become infused with divine power.
+        At the end of your next turn, you become infused with divine power.
         This causes you to \\briefly gain a \\plus2 bonus to your Mental defense and become \\focused.
       `,
       rank: 1,
@@ -59,7 +59,7 @@ export const channelDivinity: MysticSphere = {
       // healing
       cost: 'One \\glossterm{fatigue level}.',
       effect: `
-        At the end of the next round, you become infused with divine power.
+        At the end of your next turn, you become infused with divine power.
         This causes you to regain \\hprankfour.
       `,
       roles: ['healing', 'exertion'],
@@ -72,7 +72,7 @@ export const channelDivinity: MysticSphere = {
       name: 'Vengeance of the Faithful',
 
       effect: `
-        At the end of the next round, you become infused with divine power.
+        At the end of your next turn, you become infused with divine power.
         This causes you to to be \\briefly \\primed.
       `,
       rank: 7,
@@ -568,7 +568,7 @@ export const channelDivinity: MysticSphere = {
         `,
         targeting: `
           When you cast this spell, you begin visibly glowing with divine power.
-          Next round, you can spend a \\glossterm{standard action} to \\glossterm{touch} a creature with a \\glossterm{free hand}.
+          During your next turn, you can spend a \\glossterm{standard action} to \\glossterm{touch} a creature with a \\glossterm{free hand}.
           When you do, make an attack vs. Mental against that creature.
         `,
       },
@@ -590,7 +590,7 @@ export const channelDivinity: MysticSphere = {
         `,
         targeting: `
           When you cast this spell, you begin visibly glowing with divine power.
-          Next round, you can spend a \\glossterm{standard action} to \\glossterm{touch} a creature with a \\glossterm{free hand}.
+          During your next turn, you can spend a \\glossterm{standard action} to \\glossterm{touch} a creature with a \\glossterm{free hand}.
           When you do, make an attack vs. Mental against that creature.
         `,
       },

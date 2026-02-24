@@ -145,7 +145,7 @@ export const prayer: MysticSphere = {
       effect: `
         When you cast this spell, a holy light emanates from you like a torch.
         Illuminated objects seem more solid and secure.
-        Next round, you can spend a standard action to protect you and all \\glossterm{allies} within a \\largearea radius.
+        During your next turn, you can spend a standard action to protect you and all \\glossterm{allies} within a \\largearea radius.
         Each target \\briefly takes half damage from all sources.
       `,
       rank: 6,
@@ -159,7 +159,7 @@ export const prayer: MysticSphere = {
       effect: `
         When you cast this spell, a holy light emanates from you like a torch.
         The light casts sharp and dangerous-looking shadows.
-        Next round, you can spend a standard action to choose two \\glossterm{allies} within \\medrange.
+        During your next turn, you can spend a standard action to choose two \\glossterm{allies} within \\medrange.
         Each target is \\maximized until your next turn.
       `,
       rank: 4,

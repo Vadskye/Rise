@@ -537,7 +537,7 @@ export const umbramancy: MysticSphere = {
       attack: {
         hit: `
           The target suffers no immediate effect.
-          At the end of the next round, if it is \\glossterm{shadowed}, it becomes \\briefly \\frightened by all creatures.
+          At the end of its next turn, if it is \\glossterm{shadowed}, it becomes \\briefly \\frightened by all creatures.
         `,
         targeting: `
           Make an attack vs. Mental against up to two creatures within \\medrange.
@@ -687,7 +687,7 @@ export const umbramancy: MysticSphere = {
 
           When you cast this spell, you wrap yourself in shadow.
           All attacks against you \\briefly have a 50\\% \\glossterm{failure chance}.
-          Next round, you can spend a \\glossterm{standard action} to \\glossterm{teleport} to a location within \\shortrange.
+          During your next turn, you can spend a \\glossterm{standard action} to \\glossterm{teleport} to a location within \\shortrange.
           If you do, make an attack vs. Fortitude against each \\glossterm{enemy} adjacent to you.
         `,
       },

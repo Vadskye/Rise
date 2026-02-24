@@ -728,7 +728,7 @@ export const photomancy: MysticSphere = {
         `,
         targeting: `
           When you cast this spell, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around you.
-          Next round, you can spend a \\glossterm{standard action} to make an attack vs. Fortitude against something within \\shortrange.
+          During your next turn, you can spend a \\glossterm{standard action} to make an attack vs. Fortitude against something within \\shortrange.
         `,
       },
 

@@ -421,7 +421,7 @@ export const toxicology: MysticSphere = {
         targeting: `
           For the duration of this spell, you can breathe acid like a dragon as a standard action.
           When you do, make an attack vs. Fortitude and Reflex against everything in a \\medarea cone from you.
-          You can't use this ability again next round.
+          You \\briefly can't use this ability again.
         `,
       },
       rank: 3,

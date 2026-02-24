@@ -126,7 +126,7 @@ export const chronomancy: MysticSphere = {
         This spell has no \\glossterm{somatic components}.
 
         When you cast this spell, time begins to visibly twist and warp around you.
-        Next round, you can spend a \\glossterm{standard action} to make two \\glossterm{mundane} melee \\glossterm{strikes}.
+        During your next turn, you can spend a \\glossterm{standard action} to make two \\glossterm{mundane} melee \\glossterm{strikes}.
         Each strike deals double damage.
         You can reroll the attack roll for the strike up to four times, keeping the highest result.
       `,
@@ -170,7 +170,7 @@ export const chronomancy: MysticSphere = {
           If the target is \\glossterm{injured}, it becomes \\briefly frozen in time.
           It becomes completely immune to all damage, attacks, and effects of any kind.
           In addition, it cannot act in any way, and the duration of other effects on it does not expire.
-          At the end of the next round, it returns to normal, with no awareness of the intervening time.
+          At the end of your next turn, it returns to normal, with no awareness of the intervening time.
           After it returns to normal, it becomes immune to this effect until it finishes a \\glossterm{short rest}.
         `,
         targeting: `
@@ -353,22 +353,21 @@ export const chronomancy: MysticSphere = {
 
       // TODO: EA math
       usageTime: 'minor',
-      cost: "One \\glossterm{fatigue level}, and you can't cast this spell next round.",
+      cost: "One \\glossterm{fatigue level}, and you \\briefly can't use this ability again.",
       effect: `
-        Choose yourself or one \\glossterm{ally} within \\medrange.
+        Choose one \\glossterm{ally} within \\medrange.
         You reach into a possible future and create a duplicate of the target.
         The duplicate is identical in all ways to the target when the spell resolves.
 
-        The target and its duplicate can act during the next round.
-        At the end of that round, the target and its duplicate cease to exist.
-        During that round, time does not pass for the target.
-        At the end of the following round, the target reappears in the place where it ceased to exist.
-        If that space is occupied, it appears in the closest unoccupied space.
-        When the target reappears, its condition is unchanged from when it left.
+        Until your next turn, the duplicate can act during the target's turn.
+        At the start of your next turn, the target and its duplicate \\briefly cease to exist.
+        During that time, time does not pass for the target.
+        It reappears in the closest unoccupied space to the location where it disappeared.
+        The target's condition is unchanged from when it left.
         Its \\glossterm{hit points}, conditions, and all other statistics are unaffected, regardless of any damage or other negative effects suffered by the duplicate.
 
         The duplicate is fragile, and its actions are limited.
-        It cannot use abilities that have limitations on their usage, such as only being usable once per short rest.
+        It cannot use abilities that have additional costs or limitations on their usage, such as only being usable once per short rest.
         It cannot use abilities that would increase its \\glossterm{fatigue level}, cause it to lose hit points, or otherwise directly suffer negative consequences as a cost of the action.
         If it loses any \\glossterm{hit points}, it ceases to exist.
       `,
@@ -727,7 +726,9 @@ export const chronomancy: MysticSphere = {
         The target becomes \\briefly frozen in time.
         It becomes completely immune to all damage, attacks, and effects of any kind.
         In addition, it cannot act in any way, and the duration of other effects on it does not expire.
-        At the end of the next round, it returns to normal, with no awareness of the intervening time.
+        If you choose yourself, you still track your turn in combat.
+
+        At the end of your next turn, the target returns to normal, with no awareness of the intervening time.
         After it returns to normal, it becomes immune to this effect until it finishes a \\glossterm{short rest}.
       `,
       roles: ['boon'],

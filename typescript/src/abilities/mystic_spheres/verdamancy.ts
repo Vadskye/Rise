@@ -634,7 +634,7 @@ export const verdamancy: MysticSphere = {
       effect: `
         Choose a \\tinyarea \\glossterm{zone} within \\medrange.
         A flower begins to grow in the center of the area.
-        At the end of the next round, each living \\glossterm{ally} within the area regains \\hpranktwo.
+        At the end of your next turn, each living \\glossterm{ally} within the area regains \\hpranktwo.
       `,
       rank: 1,
       scaling: 'healing',

@@ -314,7 +314,7 @@ export const rituals: RitualDefinition[] = [
     effect: `
       Choose up to six ritual participants.
       Each target gains an average \\glossterm{fly speed} with a 15 foot \\glossterm{height limit} (see \\pcref{Flight}).
-      If it uses a \\glossterm{standard action} or is dealt damage, it can't take any actions next round and this ability is \\glossterm{dismissed}.
+      If it uses a \\glossterm{standard action} or is dealt damage, it \\briefly can't take any actions and this ability is \\glossterm{dismissed}.
     `,
     // narrative: '',
     rank: 4,
@@ -329,7 +329,7 @@ export const rituals: RitualDefinition[] = [
     effect: `
       Choose up to six ritual participants.
       Each target gains a fast \\glossterm{fly speed} with a 15 foot \\glossterm{height limit} (see \\pcref{Flight}).
-      If it uses a \\glossterm{standard action} or is dealt damage, it can't take any actions next round and this ability is \\glossterm{dismissed}.
+      If it uses a \\glossterm{standard action} or is dealt damage, it \\briefly can't take any actions and this ability is \\glossterm{dismissed}.
     `,
     // narrative: '',
     rank: 7,
@@ -524,7 +524,7 @@ export const rituals: RitualDefinition[] = [
   //   effect: `
   //     Choose any number of Medium or smaller ritual participants.
   //     Each target can \\glossterm{teleport} up to 60 feet as a \\glossterm{movement}.
-  //     If it uses a \\glossterm{standard action} or is dealt damage, it can't take any actions next round and this ability is \\glossterm{dismissed}.
+  //     If it uses a \\glossterm{standard action} or is dealt damage, it \\briefly can't take any actions and this ability is \\glossterm{dismissed}.
   //   `,
   //   tags: [],
   //   usageTime: 'one hour',
@@ -817,7 +817,7 @@ export const rituals: RitualDefinition[] = [
     effect: `
       Choose up to six ritual participants.
       Each target gains a +30 foot \\glossterm{enhancement bonus} to its \\glossterm{speed}.
-      If it uses a \\glossterm{standard action} or is dealt damage, it can't take any actions next round and this ability is \\glossterm{dismissed}.
+      If it uses a \\glossterm{standard action} or is dealt damage, it \\briefly can't take any actions and this ability is \\glossterm{dismissed}.
     `,
     tags: [],
     usageTime: 'one minute',
@@ -2290,7 +2290,7 @@ export const rituals: RitualDefinition[] = [
     effect: `
       Choose yourself or one \\glossterm{ally} within \\medrange.
       All of the target's \\glossterm{vital wounds} are healed.
-      In addition, any of the target's severed body parts or missing organs grow back by the end of the next round.
+      In addition, any of the target's severed body parts or missing organs grow back by the end of its next turn.
     `,
     rank: 3,
     roles: ['narrative'],

@@ -134,7 +134,7 @@ export const astromancy: MysticSphere = {
       attack: {
         hit: `
           If the target is \\glossterm{injured}, it \\sphereterm{flickers} to a nearby safe location in the Astral Expanse.
-          It does not return until the end of the next round.
+          It does not return until the end of your next turn.
           After it returns, it becomes immune to flickering in this way until it finishes a \\glossterm{short rest}.
         `,
         targeting: `
@@ -158,7 +158,7 @@ export const astromancy: MysticSphere = {
       attack: {
         hit: `
           The target \\sphereterm{flickers} to a nearby safe location in the Astral Expanse.
-          It does not return until the end of the next round.
+          It does not return until the end of your next turn.
           After it returns, it becomes immune to flickering in this way until it finishes a \\glossterm{short rest}.
         `,
         targeting: `
@@ -551,7 +551,7 @@ export const astromancy: MysticSphere = {
       effect: `
         At the start of your turn, you may \\sphereterm{flicker} to a nearby safe location in the Astral Expanse.
         You do not return until your next turn.
-        After you flicker in this way, you can't flicker with this ability next round.
+        After you flicker in this way, you \\briefly can't flicker with this ability.
       `,
       narrative: `
         Armor and shields can offer some protection, but true defensive mastery comes from not being hit at all.
@@ -754,14 +754,13 @@ export const astromancy: MysticSphere = {
         A shimmering portal appears in each of the two squares.
         Each portal appears as an opaque colored disc five feet in diameter.
 
-        % TODO: solve delaying until the start of the next round to make sure you're the
-        % first one through the portal
-        Once per round, when a Medium or smaller creature or object touches the portal in its square, it passes through that portal.
+        When a Medium or smaller creature or object touches the portal in its square, it passes through that portal.
         If it does, it \\glossterm{teleports} to the portal in the other chosen square, regardless of \\glossterm{line of sight} or \\glossterm{line of effect} between the two portals.
         Objects maintain their speed when passing through the portal, but moving objects have an unpredictable trajectory, so shooting projectiles through a portal is ineffective.
 
+        After something passes through the portal, nothing else can pass through the portal until your next turn.
         If multiple creatures attempt to pass through the portals simultaneously, they roll \\glossterm{initiative} to determine the first creature into the portal.
-        A creature that attempts to pass through the portal in a round where the portal was already activated stops its movement in the square with the portal.
+        A creature that attempts to pass through the portal when it was already activated stops its movement in the square with the portal.
       `,
       narrative: `
         You create a pair of portals that allow instant passage from one to the other.
@@ -791,7 +790,7 @@ export const astromancy: MysticSphere = {
       functionsLike: {
         name: 'twinned portals',
         exceptThat:
-          'the portals function any number of times per round intead of only once per round.',
+          'the portals function any number of times before your next turn.',
       },
       narrative: `
         You create a pair of portals that allow instant passage from one to the other.
