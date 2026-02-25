@@ -90,12 +90,12 @@ impl StandardPassiveAbility {
                 name: "Construct".to_string(),
             },
             Self::ConditionRemoval => PassiveAbility {
-                description: r"The $name can remove conditions at the end of each round (see \pcref{Monster Conditions}).".to_string(),
+                description: r"The $name can remove conditions at the end of its turn (see \pcref{Monster Conditions}).".to_string(),
                 is_magical: false,
                 name: "Condition Removal".to_string(),
             },
             Self::EliteActions => PassiveAbility {
-                description: r"The $name can use an additional \abilitytag{Elite} ability each round.".to_string(),
+                description: r"The $name can use an additional \abilitytag{Elite} ability each turn.".to_string(),
                 is_magical: false,
                 name: "Elite Actions".to_string(),
             },

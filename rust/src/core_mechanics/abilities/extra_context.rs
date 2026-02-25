@@ -39,7 +39,7 @@ impl Cooldown {
         };
         if use_you {
             let until = match self {
-                Self::Brief(_) => format!("can't use {} next round", it),
+                Self::Brief(_) => format!("\\briefly can't use {} again", it),
                 Self::ShortRest(_) => format!(
                     "can't use {} again until you finish a \\glossterm<short rest>",
                     it
@@ -55,7 +55,7 @@ impl Cooldown {
             ))
         } else {
             let until = match self {
-                Self::Brief(_) => format!("can't use {} next round", it),
+                Self::Brief(_) => format!("\\briefly can't use {} again", it),
                 Self::ShortRest(_) => format!(
                     "cannot use {} again until it finishes a \\glossterm<short rest>",
                     it

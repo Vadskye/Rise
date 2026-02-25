@@ -51,7 +51,7 @@ fn belts() -> Vec<Apparel> {
         rank: 6,
         short_description: String::from("Automatically exert to remove vital wounds"),
         description: String::from(r"
-            At the end of each round, if your \glossterm<fatigue level> does not exceed your \glossterm<fatigue tolerance>, you automatically remove one of your \glossterm<vital wounds>.
+            At the end of your turn, if your \glossterm<fatigue level> does not exceed your \glossterm<fatigue tolerance>, you automatically remove one of your \glossterm<vital wounds>.
             You can choose to stop this regeneration if you are conscious, but it happens automatically if you are unconscious due to vital wounds.
             When you remove a vital wound in this way, you increase your \glossterm<fatigue level> by three.
         "),
@@ -414,7 +414,7 @@ fn cloaks() -> Vec<Apparel> {
         rank: 4,
         short_description: String::from("Fills nearby area with fog"),
         description: String::from(r"
-            At the end of each round, fog \glossterm<briefly> fills a \smallarea radius zone from you.
+            At the end of your turn, fog \glossterm<briefly> fills a \smallarea radius zone from you.
             This fog does not fully block sight, but it provides \glossterm<concealment>.
             There is no time gap between the disappearance of the old fog and the appearance of the new fog, so you can keep continuous fog cover by staying in the same place or moving slowly.
         "),

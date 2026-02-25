@@ -277,23 +277,23 @@ pub fn body_armor() -> Vec<MagicArmor> {
     armor.push(Body(StandardItem {
         name: String::from("Armor of Transfusion"),
         rank: 3,
-        short_description: String::from("Regain 2d8 HP per round"),
+        short_description: String::from("Regain 2d8 HP per turn"),
         description: String::from(
             r"
-            At the end of each round, you regain 2d8 \glossterm{hit points}.
+            At the end of your turn, you regain 2d8 \glossterm{hit points}.
         ",
         ),
         upgrades: vec![
             ItemUpgrade::new(
                 5,
-                "Regain 4d10 HP per round",
+                "Regain 4d10 HP per turn",
                 "
                 The healing increases to 4d10.
             ",
             ),
             ItemUpgrade::new(
                 7,
-                "Regain 8d10 HP per round",
+                "Regain 8d10 HP per turn",
                 "
                 The healing increases to 8d10.
             ",

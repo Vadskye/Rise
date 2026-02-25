@@ -14,7 +14,7 @@ pub fn dryad<'a>() -> Vec<RankAbility<'a>> {
                 While partially melded, the tree provides \glossterm{cover} against all attacks against you.
                 While fully melded, the tree blocks \glossterm{line of sight} or \glossterm{line of effect} between you and the outside world as long as it remains intact.
 
-                At the end of each round, if you are fully or partially melded with a tree that you are bonded with using your \textit{tree bond} ability, you regain hit points equal to half your maximum hit points.
+                At the end of your turn, if you are fully or partially melded with a tree that you are bonded with using your \textit{tree bond} ability, you regain hit points equal to half your maximum hit points.
             ",
             modifiers: None,
         },

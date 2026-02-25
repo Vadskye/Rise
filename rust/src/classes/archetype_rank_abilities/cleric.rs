@@ -346,7 +346,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
-                At the end of each round, you automatically learn the identity and location of each living \glossterm{ally} within \longrange of you that was \glossterm{injured} during that round.
+                At the start of your turn, you automatically learn the identity and location of each living \glossterm{ally} within \longrange of you that was \glossterm{injured} since your last turn.
                 In addition, you can choose to \glossterm{teleport} to any one of those allies.
                 You arrive in the unoccupied square on solid ground closest to that ally.
             ",

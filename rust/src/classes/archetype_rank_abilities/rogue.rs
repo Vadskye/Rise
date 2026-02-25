@@ -650,7 +650,7 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             rank: 5,
             description: r"
                 You can use your \ability{fool them once} ability twice per \glossterm{short rest}.
-                However, after using that ability, you can't use it again next round.
+                However, after using that ability, you \riefly can't use it again.
             ",
             modifiers: None,
         },
@@ -660,7 +660,7 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 7,
             description: r"
-                Whenever a combat starts, each \glossterm{enemy} that you have been speaking with for at least a round takes a \minus5 penalty to \glossterm{initiative}.
+                Whenever a combat starts, each \glossterm{enemy} that you have been speaking with for at least six seconds takes a \minus5 penalty to \glossterm{initiative}.
                 In addition, enemies are at least \partiallyunaware of your attacks until they take their first turn, even if they can see you clearly.
                 This does not affect creatures that join in future rounds while the combat is already active.
             ",

@@ -188,8 +188,8 @@ fn amulets() -> Vec<Apparel> {
         rank: 3,
         short_description: String::from(r"Grants +1 accuracy with \ability<smite> when avenging allies"),
         description: String::from(r"
-            When you use the \ability<smite> paladin ability, you gain a +1 \glossterm<accuracy> bonus against creatures that dealt damage to one of your \glossterm<allies> during the previous round.
-            This accuracy bonus is doubled if the target caused one of your allies to gain a vital wound during the previous round.
+            When you use the \ability<smite> paladin ability, you gain a +1 \glossterm<accuracy> bonus against creatures that dealt damage to one of your \glossterm<allies> since your last turn.
+            This accuracy bonus is doubled if the target caused one of your allies to gain a vital wound since your last turn.
         "),
         upgrades: vec![
             ItemUpgrade::new(7, r"Grants +2 accuracy with \ability<smite> when avenging allies", r"

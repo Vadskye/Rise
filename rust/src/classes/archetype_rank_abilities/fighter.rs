@@ -142,7 +142,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 Once per turn, you can draw or sheathe any non-shield weapon as a \glossterm{free action}.
-                This does not count against your normal one free action \glossterm{object manipulation} per round (see \pcref{Manipulating Objects}).
+                This does not count against your normal one free action \glossterm{object manipulation} per turn (see \pcref{Manipulating Objects}).
             ",
             modifiers: None,
         },
@@ -288,7 +288,7 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
                 Whenever you increase your rank in this archetype, you can change your augments.
                 However, you must still apply them to rank 1 martial maneuvers.
                 {
-                    \parhead{Counter Maneuver} You gain an accuracy bonus equal to twice your excess rank against creatures who made a \glossterm{strike} against you during the previous round.
+                    \parhead{Counter Maneuver} You gain an accuracy bonus equal to twice your excess rank against creatures who made a \glossterm{strike} against you since your last turn.
                     You can only apply this augment to maneuvers which cause you to make a \glossterm{strike}.
 
                     \parhead{Debilitating Maneuver} You gain an accuracy bonus equal to twice your excess rank.
@@ -469,7 +469,9 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                     \begin{sustainability}{Follow My Lead}{\glossterm{Minor action}}
                         \abilitytags \abilitytag{Sustain} (free)
                         \rankline
-                        One adjacent \glossterm{ally} gains a \plus1 accuracy bonus against any creature that you hit with a \glossterm{strike} during the current round.
+                        Choose one adjacent \glossterm{ally}.
+                        Whenever you hit a creature with a \glossterm{strike}, that ally gains a \plus1 accuracy bonus against that creature until your next turn.
+                        As normal, this bonus does not stack with itself.
 
                         \rankline
                         \rank{4} The ally can be within \shortrange.

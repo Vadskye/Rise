@@ -332,8 +332,8 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
                 You gain an additional \glossterm{attunement point} that can only be used to attune to the \ability{contingency} ability.
                 In addition, you can attune to the \ability{contingency} ability up to three times.
                 Each contingency must have a different associated spell and triggering condition.
-                Only one contigency can trigger each round.
-                If multiple contingencies would activate simultaneously, choose one to activate randomly.
+                Whenever one of your contingencies triggers, your other contingencies \briefly cannot trigger.
+                If multiple contingencies would activate simultaneously, randomly choose only one to activate.
             ",
             modifiers: None,
         },
@@ -384,7 +384,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                     \parhead{Calculated Spell} Choose an arcane \glossterm{spell} you know.
                         As a \glossterm{minor action}, you can calculate the effect that the spell would have.
                         When you do, roll 1d10.
-                        If you cast that spell that round, you use that die result as your accuracy roll for any attacks that round, exploding as normal if the die result was a 10.
+                        If you cast that spell this turn, you use that die result as your accuracy roll for any attacks this turn, exploding as normal if the die result was a 10.
                         After calculating in this way, you \glossterm{briefly} cannot do so again, whether or not you cast the spell.
                         You cannot choose this ability multiple times.
                     \parhead{Distant Spell} Choose an arcane \glossterm{spell} you know with a standard \glossterm{range}: \shortrangeless, \medrangeless, \longrangeless, \distrangeless, or \extrangeless.

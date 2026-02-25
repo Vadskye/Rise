@@ -37,7 +37,7 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
                 When you jump, you can land in midair as if it was solid ground.
                 Your landing location has a \glossterm{height limit} of 30 feet, like a fly speed (see \pcref{Flight}).
                 You cannot walk in the air, but you can continue jumping or remain in place.
-                The air holds you until the end of the current round, at which point you fall normally.
+                The air holds you until the end of your turn, at which point you fall normally.
                 After you land on air in this way, you \glossterm{briefly} cannot do so again.
             ",
             modifiers: None,
@@ -196,7 +196,7 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
                 Whenever you increase your rank in this archetype, you can change your augments.
                 However, you must still apply them to rank 1 esoteric maneuvers.
                 {
-                    \parhead{Counter Maneuver} You gain an accuracy bonus equal to twice your excess rank against creatures who made a \glossterm{strike} against you during the previous round.
+                    \parhead{Counter Maneuver} You gain an accuracy bonus equal to twice your excess rank against creatures who made a \glossterm{strike} against you since your last turn.
                     You can only apply this augment to maneuvers which cause you to make a \glossterm{strike}.
 
                     \parhead{Debilitating Maneuver} You gain an accuracy bonus equal to twice your excess rank.
@@ -284,8 +284,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                 Choose two \textit{ki manifestations} from the list below.
                 You can also spend \glossterm{insight points} to learn one additional \textit{ki manifestation} per \glossterm{insight point}.
 
-                You can only use one \textit{ki manifestation} per round.
-                After you use a \textit{ki manifestation}, you can't use any \textit{ki manifestation} again next round.
+                You can only use one \textit{ki manifestation} per turn.
+                After you use a \textit{ki manifestation}, you \briefly can't use any \textit{ki manifestation} again.
                 {
                     \begin{magicalactiveability}{Abandon the Fragile Self}{Free action}
                         \rankline
@@ -418,7 +418,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         However, you \glossterm{briefly} take a \minus2 penalty to Strength, Dexterity, and Constitution checks.
 
                         \rankline
-                        \rank{5} The penalty during the next round is removed.
+                        \rank{5} The brief penalty is removed.
                     \end{magicalactiveability}
 
                     % TODO: add more
@@ -482,8 +482,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
-                After using a \textit{ki manifestation}, you can use a different \textit{ki manifestation} next round.
-                You still cannot use the same \textit{ki manifestation} in two consecutive rounds.
+                After using a \textit{ki manifestation}, you can use a different \textit{ki manifestation} during your next turn.
+                You still cannot use the same \textit{ki manifestation} in two consecutive turns.
             ",
             modifiers: None,
         },

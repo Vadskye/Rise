@@ -171,9 +171,9 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
 
     // Assume you already have a 70% chance to hit and +4 accuracy with crits.
     // +4 accuracy for crits means you crit on a 10.
-    // You normally have 0.7 + 0.2*0.5 + 0.1 = 0.9x hit damage per round.
+    // You normally have 0.7 + 0.2*0.5 + 0.1 = 0.9x hit damage per turn.
     // With an Unbalanced weapon, you hit on a 5+ and crit on a 8+.
-    // That means 0.6 + 0.2*0.5 + 0.3 = 1x hit damage per round.
+    // That means 0.6 + 0.2*0.5 + 0.3 = 1x hit damage per turn.
     //
     // Assume you have a 120% hit chance (+1 vs 0 Armor, so you crit on 9/10).
     // Hit 100%, crit 20%, double crit 0.02 = 1.22 dpr.
@@ -213,7 +213,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         description: String::from(r"
             You can feed this weapon your blood as a \glossterm{minor action}.
             When you do, you lose 4 \glossterm{hit points}.
-            In exchange, you deal 1d4 \glossterm{extra damage} with strikes using this weapon during the current round.
+            In exchange, you deal 1d4 \glossterm{extra damage} with strikes using this weapon this turn.
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Can spend 8 HP for +1d10 damage", r"
@@ -262,7 +262,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         rank: 2,
         short_description: String::from(r"Steals HP"),
         description: String::from(r"
-            At the end of each round, if you \glossterm{injured} a living creature other than yourself with a \glossterm{strike} using this weapon that round, you regain 1d6 hit points.
+            The first time each turn that you \glossterm{injure} a living creature other than yourself with a \glossterm{strike} using this weapon, you regain 1d6 hit points.
         "),
         tags: vec![AbilityTag::Attune(AttuneType::Deep)],
         upgrades: vec![
