@@ -110,7 +110,7 @@ function getPotentialTargets(team: CombatTeam, state: FightState): Creature[] {
   return potentialTargets;
 }
 
-function handleCreatureDeath(creature: Creature, state: FightState): void {
+export function handleCreatureDeath(creature: Creature, state: FightState): void {
   const teamName = state.memberToTeam[creature.id].name;
   const teamAlive = state.aliveMembersByTeam[teamName];
   const index = teamAlive.indexOf(creature);
@@ -119,7 +119,7 @@ function handleCreatureDeath(creature: Creature, state: FightState): void {
   }
 }
 
-function checkVictory(state: FightState): CombatStepResult {
+export function checkVictory(state: FightState): CombatStepResult {
   const teamsWithAlive = Object.entries(state.aliveMembersByTeam).filter(
     ([_, members]) => members.length > 0,
   );
@@ -133,7 +133,7 @@ function checkVictory(state: FightState): CombatStepResult {
   return { status: CombatStepStatus.Ongoing, winner: null };
 }
 
-function resolveAttack(
+export function resolveAttack(
   attacker: Creature,
   defender: Creature,
   explicitAbility?: ActiveAbility,
