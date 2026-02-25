@@ -48,7 +48,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        You gain a +2 accuracy bonus with the strike against all creatures that you missed with a \\glossterm{strike} since your last turn.
+        You gain a +2 accuracy bonus with the strike against all creatures that you missed with a \\glossterm{strike} during your last turn.
       `,
       rank: 1,
       roles: ['payoff'],
@@ -59,7 +59,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} that deals double damage.
-        You gain a +2 accuracy bonus with the strike against all creatures that you missed with a \\glossterm{strike} since your last turn.
+        You gain a +2 accuracy bonus with the strike against all creatures that you missed with a \\glossterm{strike} during your last turn.
       `,
       rank: 5,
       roles: ['payoff'],

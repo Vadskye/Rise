@@ -164,7 +164,7 @@ fn circlets() -> Vec<Apparel> {
             These appear to be a pair of simple spectacles.
             As a standard action, you can don the glasses and activate their effect.
             While active, the glasses force your eyes to look at only the most surprising or unexpected thing in your field of view.
-            If that thing leaves your field of view, the glasses find a new thing to focus on at the end of the next round.
+            If that thing leaves your field of view, the glasses find a new thing to focus on at the start of your next turn.
 
             Each pair of glasses of novelty has its own perspective on what is surprising or unexpected, and the glasses have no memory of anything you learn or previous things they have seen.
             You can remove the glasses as a normal object interaction, which deactivates their effect.

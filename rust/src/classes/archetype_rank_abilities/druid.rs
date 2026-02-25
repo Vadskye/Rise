@@ -156,9 +156,9 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                         \item Air: You can change the wind speed of air by up to 30 miles per hour, to a maximum total speed of 40 miles per hour.
                             If you reduce the air's speed to 0 and then increase it again, you can change the direction the air blows.
                         % TODO: clarify how this works
-                        \item Earth: You can reshape earth or unworked stone at a rate of up to one foot per round.
+                        \item Earth: You can reshape earth or unworked stone at a rate of up to one foot per turn.
                         \item Fire: You can make fire leap up to 60 feet between combustible materials, suppress fire so it smolders without being extinguished, or snuff out fire entirely.
-                        \item Water: You can change the speed of water by up to 30 feet per round, to a maximum total speed of 40 feet per round.
+                        \item Water: You can change the speed of water by up to 30 feet per turn, to a maximum total speed of 40 feet per turn.
                             If you reduce the water's speed to 0 and then increase it again, you can change the direction the water flows.
                     \end{raggeditemize}
                 \end{magicalsustainability}
@@ -241,7 +241,7 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                         It gains the \atFire tag.
                         When you cast the spell, it \glossterm{briefly} creates a \glossterm{zone} of flames in its area. 
                         If the spell does not normally affect an area, the flames appear in the space of each target.
-                        During the next round, the spell's effect \glossterm{repeats} in that area.
+                        At the end of your next turn, the spell's effect \glossterm{repeats} in that area.
                         The repeat deals half damage.
                         You can choose this ability multiple times, choosing a different spell each time.
                     \parhead{Rituals} You gain the ability to perform nature rituals to create unique magical effects (see \pcref{Spell and Ritual Mechanics}).

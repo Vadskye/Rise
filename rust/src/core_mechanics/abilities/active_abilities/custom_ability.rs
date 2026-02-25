@@ -339,7 +339,7 @@ impl CustomAbility {
         Self {
             effect: "
                 The $name makes a $accuracy attack vs. Reflex against everything in a \\largearea cone from it.
-                After it uses this ability, it can't use it again next round.
+                After it uses this ability, it \\briefly can't use it again.
                 \\hit $dr2 damage.
                 \\miss Half damage.
             ".to_string(),

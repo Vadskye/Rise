@@ -10,8 +10,8 @@ pub fn treant<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                At the end of each round while you are \ability{ingrained}, you regain hit points equal to your rank in this archetype, and you may choose to remove a \glossterm{condition}.
-                If you do, you increase your \glossterm{fatigue level} by one.
+                At the end of your turn while you are \ability{ingrained}, you regain hit points equal to your rank in this archetype, and you may choose to remove a \glossterm{condition}.
+                If you remove a condition, you increase your \glossterm{fatigue level} by one.
             ",
             modifiers: None,
         },

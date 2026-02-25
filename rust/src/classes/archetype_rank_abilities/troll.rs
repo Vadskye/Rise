@@ -6,7 +6,8 @@ pub fn troll<'a>() -> Vec<RankAbility<'a>> {
             name: "Regeneration",
             complexity: 1,
             description: r"
-                At the end of each round, if you did not take damage from a \atAcid or \atFire ability that round, you regain hit points equal to your rank in this archetype.
+                At the end of your turn, you regain hit points equal to your rank in this archetype.
+                Whenever you take damage from a \atAcid or \atFire ability, this effect is \briefly suppressed.
             ",
             is_magical: false,
             modifiers: None,
@@ -56,7 +57,6 @@ pub fn troll<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The recovery increases to twice your rank in this archetype.
                 In addition, you also automatically remove one \glossterm{vital wound}.
-                You can choose to suppress this healing, and it does not function if you took damage from a \atAcid or \atFire ability that round.
                 While you are unconscious, this automatically removes your most severe vital wound.
                 Whenever you remove a vital wound in this way, you increase your \glossterm{fatigue level} by three.
             ",

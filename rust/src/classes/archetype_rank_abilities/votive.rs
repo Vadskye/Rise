@@ -107,7 +107,7 @@ pub fn pactbound_warrior<'a>() -> Vec<RankAbility<'a>> {
                     You do not have to spend time casting the spell, but each target must still meet any targeting requirements for the spell, such as range or touch.
 
                     You can only apply this augment to maneuvers which cause you to make a melee \glossterm{strike}, and you must choose a different spell each time you apply this augment to a maneuver.
-                    After you use this maneuver, you can't use any spellfused maneuver next round.
+                    After you use this maneuver, you \briefly can't use any spellfused maneuvers.
                 }
             ",
             modifiers: None,
@@ -269,7 +269,7 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
                     You are \glossterm{briefly} \empowered.
                     Then, you may remove one of your \glossterm{vital wounds}.
                     If you remove a vital wound in this way, you increase your \glossterm{fatigue level} by two.
-                    This effect \glossterm{repeats} at the end of the current round.
+                    This effect \glossterm{repeats} at the end of your next turn.
                 \end{magicalactiveability}
             ",
             modifiers: None,
@@ -381,7 +381,7 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 {
                     \parhead{Desperate Spell} Choose a pact \glossterm{spell} you know.
                         When you cast the spell, you may choose to increase your \glossterm{fatigue level} by one.
-                        If you do, you become \empowered and \focused that round.
+                        If you do, you become \empowered and \focused that turn.
                         However, you cannot use the \ability{desperate exertion} ability to affect the spell.
                         You can choose this ability multiple times, choosing a different spell each time.
                     \parhead{Distant Spell} Choose a pact \glossterm{spell} you know with a standard \glossterm{range}: \shortrangeless, \medrangeless, \longrangeless, \distrangeless, or \extrangeless.
@@ -496,7 +496,7 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
 
                 \subcf{Devil -- Specialized Torment} You gain a \plus4 accuracy bonus for the purpose of determining whether your attacks get a \glossterm{critical hit} against creatures that are \vulnerable to the attack.
 
-                \subcf{Fae -- Free Spirit} At the end of each round, you have a 50\% chance to remove a random \glossterm{poison} or \glossterm{condition} affecting you.
+                \subcf{Fae -- Free Spirit} At the end of your turn, you have a 50\% chance to remove a random \glossterm{poison} or \glossterm{condition} affecting you.
                 This ability is \glossterm{briefly} disabled whenever you take damage from a cold iron weapon.
                 
                 \subcf{Moirai -- Inexorable} You gain a \plus2 bonus to all \glossterm{checks}.

@@ -48,7 +48,7 @@ pub fn ranged() -> Vec<MagicWeapon> {
         rank: 1,
         short_description: String::from(r"Flies back to you after being thrown"),
         description: String::from(r"
-            After being thrown, this weapon flies back into your hand at the end of the current round as long as it is still \glossterm<unattended>.
+            After being thrown, this weapon flies back into your hand at the end of your turn as long as it is still \glossterm<unattended>.
             If you can't catch it, the weapon drops to the ground in the square from which it was thrown.
         "),
         ..MagicWeapon::default()
