@@ -9,7 +9,7 @@ pub fn incarnation<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 \begin{magicalactiveability}{Essence Spike}{Standard action}
-                    \abilitycost You can't use this ability next round.
+                    \abilitycost You \briefly can't use this ability.
                     \abilitytags The tag of your \ability{essence infusion}.
                     \rankline
                     Make an attack against something within \medrange.
@@ -114,7 +114,7 @@ pub fn incarnation<'a>() -> Vec<RankAbility<'a>> {
             rank: 7,
             description: r"
                 \begin{magicalactiveability}{Essence Incarnate}{Standard action}
-                    \abilitycost One \glossterm{fatigue level}, and you can't use this ability next round.
+                    \abilitycost One \glossterm{fatigue level}, and you \briefly can't use this ability.
                     \rankline
                     You gain a benefit depending on whether you are tethered or untethered:
                     \begin{raggeditemize}

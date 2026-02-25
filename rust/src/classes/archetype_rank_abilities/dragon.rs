@@ -11,7 +11,7 @@ pub fn dragon<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 \begin{activeability}{Dragon Breath}{Standard action}
-                    \abilitycost You can't use this ability next round.
+                    \abilitycost You \briefly can't use this ability again.
                     \rankline
                     This ability's tag depends on your dragon type (see Dragon Types, above).
                     Make an attack vs. Reflex against everything in the area defined by your dragon type.

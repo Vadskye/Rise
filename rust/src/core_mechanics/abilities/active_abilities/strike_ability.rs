@@ -354,7 +354,7 @@ impl StrikeAbility {
         Self {
             effect: r"
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
-                It gains a +2 accuracy bonus with this strike against each creature that it missed with a strike last round.
+                It gains a +2 accuracy bonus with this strike against each creature that it missed with a strike during its last turn.
                 \hit $fullweapondamage.
             ".to_string(),
             name: strike_prefix("Redeeming", &weapon),
@@ -371,7 +371,7 @@ impl StrikeAbility {
         Self {
             effect: r"
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
-                For each previous consecutive round in which it used this ability, it can make an additional strike, up to a maximum of two extra strikes.
+                For each previous consecutive turn in which it used this ability, it can make an additional strike, up to a maximum of two extra strikes.
                 \hit $fullweapondamage.
             ".to_string(),
             name: strike_prefix("Frenzied", &weapon),
@@ -385,7 +385,7 @@ impl StrikeAbility {
         Self {
             effect: r"
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
-                For each previous consecutive round in which it used this ability, it gains a +2 accuracy bonus with the strike, up to a maximum of +4.
+                For each previous consecutive turn in which it used this ability, it gains a +2 accuracy bonus with the strike, up to a maximum of +4.
                 \hit $fullweapondamage.
             ".to_string(),
             name: strike_prefix("Frenzied", &weapon),

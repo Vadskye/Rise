@@ -14,9 +14,9 @@ fn poison() -> Tool {
 
 // The baseline for a consumable item of rank X is a spell of rank X+2.
 //
-// Normally, a "this round and next round" spell at Medium range is drX-2.
-// "Every poison stage" is worse than "this round and next round" because it isn't
-// guaranteed to deal damage next round, but it's better because it can deal damage three times
+// Normally, a "this turn and next turn" spell at Medium range is drX-2.
+// "Every poison stage" is worse than "this turn and next turn" because it isn't
+// guaranteed to deal damage next turn, but it's better because it can deal damage three times
 // total instead of twice, so call it equivalent.
 // Since poison deals flat damage, that translates to drX-1.
 // Apply -1dr if the poison is not removed at the second escalation.

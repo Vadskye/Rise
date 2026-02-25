@@ -407,7 +407,7 @@ impl StandardAttack {
                 // TODO: replace with "grappled by or natural weapon attack"
                 targeting: Targeting::MadeMeleeAttack,
             }.attack(),
-            // TODO: repeat the damage next round, rather than immediately
+            // TODO: repeat the damage next turn, rather than immediately
             Self::Pyrohemia(rank) => SimpleSpell {
                 accuracy: *rank - 2,
                 crit: None,

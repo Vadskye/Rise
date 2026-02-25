@@ -94,10 +94,12 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             name: "Unbreakable",
             is_magical: false,
             rank: 7,
+            // TODO: timing wording is a bit awkward
             description: r"
-                Your hit points cannot decrease by more than 100 during each round.
+                At the start of your turn, note your current hit points.
+                Your hit points can't go lower than 100 less than that value until your next turn.
                 This includes hit point loss below 0 hit points.
-                Any excess damage beyond that point does not reduce your hit points, but it does offset any healing you receive during the same round.
+                Any excess damage beyond that point does not reduce your hit points, but it does offset any healing you receive before your next turn.
                 Attacks with special effects, such as inflicting conditions on you, still treat you as if you lost hit points from the attack.
             ",
             modifiers: None,
@@ -154,7 +156,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                 \begin{activeability}{Aggravated Violence}{Standard action}
                     \rankline
                     Make a melee \glossterm{strike}.
-                    The strike deals double damage against any creature that dealt damage to you during the previous round.
+                    The strike deals double damage against any creature that dealt damage to you since your last turn.
 
                     \rankline
                     \rank{4} You gain a \plus1 accuracy bonus with the strike.
@@ -319,7 +321,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             rank: 7,
             description: r"
                 Once per turn, you can use the \ability{sprint} ability without increasing your \glossterm{fatigue level}.
-                After using this ability, you can't use it again next round.
+                After using this ability, you \briefly can't use it again.
             ",
             modifiers: None,
         },
@@ -526,8 +528,8 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
 
                     % TODO: wonky scaling, but nothing too insane after the initial rank 3 power spike
                     \rankline
-                    \rank{4} You gain a \plus2 accuracy bonus with the first strike you make with this ability each round.
-                    \rank{5} The second strike you make with this ability each round deals double damage.
+                    \rank{4} You gain a \plus2 accuracy bonus with the first strike you make with this ability each turn.
+                    \rank{5} The second strike you make with this ability each turn deals double damage.
                     \rank{6} The accuracy bonus applies to both strikes.
                     \rank{7} Both strikes deal 1d8 \glossterm{extra damage}.
                 \end{activeability}

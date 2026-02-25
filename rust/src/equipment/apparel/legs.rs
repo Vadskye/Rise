@@ -156,7 +156,7 @@ fn boots() -> Vec<Apparel> {
             You treat the surface of all liquids as if they were firm ground.
             Your feet hover about an inch above the liquid's surface, allowing you to traverse dangerous liquids without harm as long as the surface is calm.
 
-            If you are below the surface of the liquid, you rise towards the surface at a rate of 60 feet per round.
+            If you are below the surface of the liquid, you rise towards the surface at a rate of 60 feet per turn.
             Thick liquids, such as mud and lava, may cause you to rise more slowly.
         "),
         tags: vec![AbilityTag::Water, AbilityTag::personal_attunement()],
@@ -250,7 +250,7 @@ fn boots() -> Vec<Apparel> {
             In exchange, your maximum jump height is equal to your maximum horizontal jump distance, and you can land in midair at any point during your jump this turn.
             You can \glossterm<briefly> levitate in that location as if you were standing on solid ground.
 
-            These boots cannot be activated again until you spend a full round on a solid surface capable of supporting your weight.
+            These boots cannot be activated again until you spend your full turn on a solid surface capable of supporting your weight.
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Can levitate after jumping", "
@@ -268,7 +268,7 @@ fn boots() -> Vec<Apparel> {
             Whenever you use the \ability{sprint} ability, you can activate these boots.
             When you do, that ability does not increase your \glossterm{fatigue level}.
 
-            After you activate these boots, you cannot do so again until you spend a full round without making a \glossterm{movement}.
+            After you activate these boots, you cannot do so again until you spend your full turn without making a \glossterm{movement}.
         "),
         ..Apparel::default()
     }));
