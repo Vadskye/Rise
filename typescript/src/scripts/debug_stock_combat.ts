@@ -1,5 +1,5 @@
 import { StockCharacters } from '@src/character_sheet/stock_characters';
-import { calculateDamage } from '@src/combat/combat_round';
+import { calculateDamage } from '@src/combat/combat_turn';
 import { calculateStrikeDamage } from '@src/latex/monsters/player_abilities';
 import cli from 'commander';
 

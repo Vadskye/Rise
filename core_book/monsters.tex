@@ -127,7 +127,7 @@ This chapter describes the rules for monsters, and the combat statistics for a v
       \item Elite monsters have three times the \glossterm{hit points} of standard monsters.
       \item Elite monsters can have a maximum starting attribute of 6 (see \pcref{Monster Attributes}).
         % elite actions should be about as strong as regular actions, so 2x more damage
-      \item Elite monsters can take an additional \glossterm{elite action} each round (see \pcref{Elite Actions}).
+      \item Elite monsters can take an additional \glossterm{elite action} each turn (see \pcref{Elite Actions}).
       \item Elite monsters automatically remove \glossterm{conditions} (see \pcref{Monster Conditions}).
     \end{raggeditemize}
 
@@ -145,24 +145,13 @@ This chapter describes the rules for monsters, and the combat statistics for a v
 
     % The timing here is important.
     % If the monster could remove conditions as an action on its turn, then offensive debuffs would have a chance to be removed before they ever affected the monster's actions.
-    % Conditions should never be worse than brief effects, so this has to be an end of round trigger.
+    % Conditions should never be worse than brief effects, so this has to be an end of turn trigger.
     \begin{triggeredability}{Elite Cleanse}{Triggered}
       \rankline
       At the end of its turn, the monster rolls 1d10.
       On an 6 or higher, it can remove one \glossterm{condition}.
       On a 10, it can also remove a different condition.
     \end{triggeredability}
-
-    Whenever an elite monster gains a unique condition, it is added to a ``condition track''.
-    The first condition is to the first slot in the track, the second condition is added to the second slot, and so on.
-    If a monster gains two instances of the same condition, they are put in the same location on the track.
-
-    At the end of each round, each elite monster rolls 1d6.
-    If the result matches an existing condition on its condition track, that condition is removed unless all instances of that condition were gained during the current round.
-    When a monster has multiple copies of the same condition, only one instance of that condition is removed, so it may have to roll the same number multiple times to fully remove the condition.
-    If a location on the condition track becomes empty, all of the conditions to the right of that location shift down by 1.
-    This means the highest occupied number on the condition track should always match the number of unique conditions the monster has.
-    The oldest condition should always be number 1, and the most recent condition should have the highest occupied number on the track.
 
   \subsection{Monster Resources}
     Monsters have no resources, and their fatigue tolerance is 0.
@@ -207,11 +196,11 @@ This chapter describes the rules for monsters, and the combat statistics for a v
     All monsters are able to make movements and take free actions, minor actions, and standard actions in the same way as player characters.
 
     \subsubsection{Elite Actions}\label{Elite Actions}
-      Elite monsters can take an additional \glossterm{elite action} each round.
+      Elite monsters can take an additional \glossterm{elite action} each turn.
       Every elite monster has at least one special ability that requires an elite action to use.
       Elite actions cannot be converted into standard or minor actions, and elite monsters cannot use a standard action to use abilities that require an elite action.
 
-      In general, elite monsters should be designed to attack multiple different PCs in every round.
+      In general, elite monsters should be designed to attack multiple different PCs in every turn.
       If the full damage output of an elite monster is brought to bear on a single PC, it will likely kill that PC quickly, taking a player out of the fight too early.
       Alternately, if that PC is able to avoid or resist the damage, it will trivialize the fight and remove the sense of danger.
       Instead, damage should be spread throughout the party to ensure that multiple people feel threatened and have to adjust their actions based on their personal danger tolerance.

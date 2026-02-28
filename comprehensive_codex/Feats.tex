@@ -223,7 +223,7 @@ They allow more distinct and unique character customization, but also increase g
     \featpre Dexterity 2, Perception 1.
 
     \ff[1]{Rapid Reload} Crossbows that normally require a \glossterm{minor action} for you to reload instead take a non-action, like bows.
-    This allows you to reload them any number of times per round.
+    This allows you to reload them any number of times per turn.
     You must still have a free hand, if one would normally be required.
 
     \ff[1]{Steady Bolts} You reduce your \glossterm{longshot penalty} with crossbows by 1.
@@ -315,8 +315,8 @@ They allow more distinct and unique character customization, but also increase g
     \end{raggeditemize}
 
     Success means you move along the surface.
-    Failure means you fall through the surface, and you cannot use this ability again this turn.
-    The \glossterm{difficulty value} increases by 5 for each consecutive round that you spend moving in this way.
+    Failure means you fall through the surface, and you can't use this ability again this turn.
+    The \glossterm{difficulty value} increases by 5 for each consecutive turn that you spend moving in this way.
   \end{feat}
 
   \begin{feat}{Barbaric Ancestry}{Ancestry}
@@ -354,8 +354,8 @@ They allow more distinct and unique character customization, but also increase g
     \ff[1]{Mobile Armory} You can store up to ten items for easy access on your body, rather than five (see \pcref{Storing Items}).
 
     \ff[1]{Overburdened Quickdraw} Once per turn, you can draw or sheathe any non-shield weapon as a \glossterm{free action}.
-    This does not count against your normal one free action \glossterm{object manipulation} per round (see \pcref{Manipulating Objects}).
-    If you have the Armed and Ready fighter ability with the same effect, you can use both free actions separately, allowing you to draw or sheathe two weapons per round as a free action.
+    This does not count against your normal one free action \glossterm{object manipulation} per turn (see \pcref{Manipulating Objects}).
+    If you have the Armed and Ready fighter ability with the same effect, you can use both free actions separately, allowing you to draw or sheathe two weapons per turn as a free action.
 
     \magicalff[6]{Rapid Attunement} Once per turn, you can use the \ability{item attunement} ability to attune to a weapon or armor as a \glossterm{free action} (see \pcref{Item Attunement}).
 
@@ -574,7 +574,7 @@ They allow more distinct and unique character customization, but also increase g
     \ff[12]{Specialization\plus} The bonus from your \textit{specialization} ability increases to \plus4.
 
     % TODO: wording
-    \ff[18]{Endless Creature Climb} You do not suffer a cumulative \minus2 penalty to your accuracy with the creature climb ability for each round you spend climbing (see \pcref{Creature Climb}).
+    \ff[18]{Endless Creature Climb} You do not suffer a cumulative penalty to your accuracy with the creature climb ability for each turn you spend climbing (see \pcref{Creature Climb}).
   \end{feat}
 
   \begin{feat}{Craft Specialization}{Skill}
@@ -633,7 +633,7 @@ They allow more distinct and unique character customization, but also increase g
       Whenever you speak, you can say the same words with two different vocal patterns, such as tone or accent, though you cannot significantly change the volume.
       You can freely choose which creatures hear which pattern, treating all creatures you are not aware of as a single group.
 
-      You can freely choose different vocal patterns each round that you sustain this ability.
+      You can freely choose different vocal patterns each turn that you sustain this ability.
 
       \rankline
       \featlevel{12} You can speak entirely different words with your two voices.
@@ -719,7 +719,7 @@ They allow more distinct and unique character customization, but also increase g
     % that would normally be appropriate for a d(R-1) spell.
     \ff[6]{Draconic Breath}
     \begin{activeability}{Draconic Breath}{Standard action}
-      \abilitycost You can't use this ability next round.
+      \abilitycost You \briefly can't use this ability again.
       \rankline
       This ability's tag matches your dragon's associated tag.
       Make an attack vs. Reflex against everything in the area defined by the type of dragon from your \textit{draconic ancestry} ability (see \trefnp{Dragon Types}).
@@ -790,9 +790,9 @@ They allow more distinct and unique character customization, but also increase g
     \ff[1]{Specialization} You gain a \plus2 bonus to the Endurance skill.
 
     \ff[6]{Delay Condition} Whenever you gain a \glossterm{condition}, you can make an Endurance check.
-    The \glossterm{difficulty value} starts at 10 and increases by 5 in each subsequent round.
+    The \glossterm{difficulty value} starts at 10 and increases by 5 in your subsequent turns.
     Success means that you do not suffer the effects of the condition.
-    You must repeat this check at the end of each subsequent round to continue to delay the effects of the condition.
+    You must repeat this check at the end of your subsequent turns to continue to delay the effects of the condition.
     Failure means that the condition has its normal effect on you.
 
     You can only delay one of your conditions in this way.
@@ -841,7 +841,7 @@ They allow more distinct and unique character customization, but also increase g
     When you do, you increase your \glossterm{fatigue level} by one, and you may freely choose the random result.
     You can use this ability after seeing what your result would have been.
     \glossterm{Vital rolls} and your \ability{sudden entropy} ability cannot be affected by this ability.
-    After using this ability, you can't use it again next round.
+    After using this ability, you \briefly can't use it again.
   \end{magicalfeat}
 
   \begin{feat}{Executioner}{Combat}
@@ -1055,7 +1055,7 @@ They allow more distinct and unique character customization, but also increase g
 
     \ff[18]{Heavenly Descent}
     \begin{triggeredability}{Heavenly Descent}{Triggered}
-      Once per round, when you land from an intentional jump, you can make an attack vs. Fortitude against each \glossterm{enemy} adjacent to you that is shorter than the apex of that jump.
+      Once per turn, when you land from an intentional jump, you can make an attack vs. Fortitude against each \glossterm{enemy} adjacent to you that is shorter than the apex of that jump.
       \hit The target is \briefly \stunned.
     \end{triggeredability}
   \end{feat}
@@ -1349,7 +1349,7 @@ They allow more distinct and unique character customization, but also increase g
     \magicalff[1]{Mental Casting} You connect to the magical essence of the universe differently from other spellcasters, allowing you to cast spells with purely mental effort.
     None of your spells have \glossterm{somatic components} or \glossterm{verbal components}.
 
-    \magicalff[6]{Fractured Mind} Once per round, you can sustain an ability with the \abilitytag{Sustain} (minor) tag as a \glossterm{free action}.
+    \magicalff[6]{Fractured Mind} Once per turn, you can sustain an ability with the \abilitytag{Sustain} (minor) tag as a \glossterm{free action}.
 
     \magicalff[12]{Potent Mind} You gain a \plus1 bonus to your \glossterm{magical power}.
 
@@ -1378,7 +1378,7 @@ They allow more distinct and unique character customization, but also increase g
       The spell takes effect even if the strike misses.
       Any attacks you make for the spell are \glossterm{reactive attacks}, and are rolled separately from your attack roll with the strike.
 
-      After the spell takes effect, you can't trigger any more spells you imbued this ability until after next round.
+      After the spell takes effect, you \briefly can't trigger any more spells you imbued this ability.
       If you fire multiple projectiles imbued with this ability at once, one of the spells takes effect and the others do not.
     \end{magicalattuneability}
 
@@ -1445,7 +1445,7 @@ They allow more distinct and unique character customization, but also increase g
       \begin{raggeditemize}
         \item The target has any \magical abilities.
         \item The target is currently \glossterm{attuned} to any effects.
-        \item The target used a \magical ability as a \glossterm{standard action} or \glossterm{elite action} during the previous round.
+        \item The target used a \magical ability as a \glossterm{standard action} or \glossterm{elite action} during its last turn.
       \end{raggeditemize}
 
       \rankline
@@ -1458,7 +1458,7 @@ They allow more distinct and unique character customization, but also increase g
     \ff[6]{Mundane Resilience} You gain a \plus1 bonus to your \glossterm{durability} and non-Armor \glossterm{defenses}.
 
     \ff[12]{Disruptive Presence} Whenever an \glossterm{enemy} within an \smallarea radius from you uses a \magical ability as a standard action or \glossterm{elite action}, the ability has a 20\% chance to fail with no effect.
-    This can only affect any individual creature once per round, so a creature that uses two magical abilities will have no failure chance on the second ability it uses.
+    This can only affect any individual creature once per turn, so a creature that uses two magical abilities will have no failure chance on the second ability it uses.
     If that enemy's \glossterm{character rank} is less than your character rank, this failure chance increases to 50\%.
     This cannot cause passive abilities or triggered abilities to fail.
     Although this ability is \glossterm{mundane}, it still affects \trait{intangible} creatures.
@@ -1693,7 +1693,7 @@ They allow more distinct and unique character customization, but also increase g
       In addition, choose a creature or object you can see.
       You gain a \plus1 accuracy bonus against the target as long as you sustain this ability.
 
-      If you lose sight of the target for a full round, this effect ends.
+      At the end of your turn, if you never saw the target that turn, this effect ends.
     \end{sustainability}
 
     \ff[6]{Steady Shot} You can steady your aim as a \glossterm{move action}.
@@ -1742,7 +1742,7 @@ They allow more distinct and unique character customization, but also increase g
 
     \magicalff[6]{Spellstrike}
     \begin{magicalactiveability}{Spellstrike}{Standard action}
-      \abilitycost You can't use this ability next round.
+      \abilitycost You \briefly can't use this ability again.
       \rankline
       You cast a spell and make a \glossterm{mundane} melee \glossterm{strike}, in either order.
       % TODO: clarify how this interacts with double standard action spells.
@@ -1835,7 +1835,7 @@ They allow more distinct and unique character customization, but also increase g
     The spell can be up to rank 3, even if you do not have access to rank 3 spells.
     It gains the \atWater tag.
     When you miss an attack with the spell, a film of water forms over the target's body in a thin bubble.
-    At the end of the next round, the attack \glossterm{repeats} on the target if the bubble remains.
+    At the end of your next turn, the attack \glossterm{repeats} on the target if the bubble remains.
     If you miss with this repeat, the bubble does not reform.
 
     The bubble can be removed early if the target drops \prone and rolls around on the ground as a \glossterm{move action}.
@@ -1913,7 +1913,7 @@ They allow more distinct and unique character customization, but also increase g
 
     \magicalff[6]{Quickened Chronomancy} You learn an additional spell from the \sphere{Chronomancy} mystic sphere.
     The spell can be up to rank 3, even if you do not have access to rank 3 spells.
-    You can cast the spell as a \glossterm{minor action} if you have not already cast a spell that round.
+    You can cast the spell as a \glossterm{minor action} if you have not already cast a spell that turn.
     When you do, you \briefly become \slowed and cannot take standard actions.
 
     This is a metamagic effect, so you cannot apply another metamagic to the same spell.
@@ -1923,7 +1923,7 @@ They allow more distinct and unique character customization, but also increase g
 
     \magicalff[18]{Accelerated Mind\plus} Once per turn, you can perform a purely mental action that would normally require a \glossterm{minor action} as a \glossterm{free action}.
     This can be used to sustain spells or perform other magical feats.
-    However, you cannot use the same ability twice in the same round.
+    However, you cannot use the same ability twice in the same turn.
     In addition, the speed increase for long-term tasks from your \textit{accelerated mind} ability increases to five times normal speed.
   \end{magicalfeat}
 
@@ -1938,7 +1938,7 @@ They allow more distinct and unique character customization, but also increase g
 
     \magicalff[12]{Frozen Blood} You are immune to \atCold and \atPoison attacks.
 
-    \magicalff[18]{Budding Crystals} At the end of each round, if you have no ice crystals and did not spend any ice crystals that round, you gain an ice crystal.
+    \magicalff[18]{Budding Crystals} At the end of your turn, if you have no ice crystals and did not spend any ice crystals that turn, you gain an ice crystal.
   \end{magicalfeat}
 
   \begin{magicalfeat}{Sphere Focus: Electromancy}{Casting, Magical}
@@ -1958,7 +1958,7 @@ They allow more distinct and unique character customization, but also increase g
     \magicalff[12]{Electricity Immunity} You are \buff{immune} to \atElectricity attacks.
 
     \magicalff[12]{Static Buildup} Whenever you use the \ability{sprint} ability, you gain a \plus1 accuracy bonus with your next spell from the \sphere{Electromancy} mystic sphere.
-    This bonus disappears if not used before the end of the next round.
+    At the end of your next turn, this bonus ends.
 
     \magicalff[18]{Extra Chain} All of your \glossterm{targeted} \sphere{Electromancy} spells \glossterm{chain} one additional time, even if they did not originally chain.
     If your \textit{chaining spell} ability affects a non-\sphere{Electromancy} spell, it also chains two additional times instead of only one.
@@ -2119,7 +2119,7 @@ They allow more distinct and unique character customization, but also increase g
     This does not tell you whether your attack will hit, only high your roll will be.
     A 10 explodes as normal, but only when you actually cast the spell and make the attack, not when foreseeing the future.
     If you don't like the result, you can simply choose not to cast the spell this turn, and the die result is ignored.
-    Either way, you can't use this ability next round.
+    Either way, you \briefly can't use this ability again.
 
     This is a metamagic effect, so you cannot apply another metamagic to the same spell.
     When you gain access to a new rank of spells, you can replace your current spell affected by this metamagic with a new spell of that rank.
@@ -2204,7 +2204,7 @@ They allow more distinct and unique character customization, but also increase g
     \magicalff[12]{Countermagic}
     \begin{magicalactiveability}{Countermagic}{Standard action}
       \abilitytags \abilitytag{Subtle}
-      \abilitycost You can't use this ability next round.
+      \abilitycost You \briefly can't use this ability again.
       \rankline
       Choose a creature within \rngmed range of you.
       Until your next turn, if the target uses a \magical ability as a standard action or \glossterm{elite action}, that ability has no effect.
@@ -2375,7 +2375,7 @@ They allow more distinct and unique character customization, but also increase g
 
     \magicalff[6]{Mindbreak}
     \begin{magicalactiveability}{Mindbreak}{Standard action}
-      \abilitycost You \glossterm{briefly} lose your \glossterm{telepathy}, and you can't use this ability next round.
+      \abilitycost You \briefly lose your \glossterm{telepathy}, and you \briefly can't use this ability again.
       \abilitytags \abilitytag{Compulsion}, \abilitytag{Subdual}
       \rankline
       Make an attack vs. Mental against one creature within half the maximum range of your \glossterm{telepathy}.
@@ -2405,7 +2405,7 @@ They allow more distinct and unique character customization, but also increase g
       However, creatures often think about questions they are asked, and their thoughts may reveal much more than their words.
       \crit You can also delve through the target's mind to answer a specific question.
       You can pose a question to it mentally and search its mind to know the exact answer to that question.
-      This takes five rounds of continuous concentration, and you can only get answers to one such question each time you use this ability.
+      This takes five turns of continuous concentration, and you can only get answers to one such question each time you use this ability.
       The process of searching a creature's mind in this way is no easier to notice than normal for a \abilitytag{Subtle} ability.
 
       \rankline
@@ -2447,7 +2447,7 @@ They allow more distinct and unique character customization, but also increase g
     The alchemical item makes its own attack roll separately from the attack roll for the strike.
     You can intentionally miss with the arrow while still delivering the alchemical item to its intended target, allowing you to apply healing potions and similar effects from a distance.
 
-    At the end of the next round after you use this ability, the arrow and alchemical item are destroyed.
+    At the end of your next turn after you use this ability, the arrow and alchemical item are destroyed.
 
     \ff[6]{Carom} Whenever you make a \glossterm{strike} with an arrow, you can give the strike an additional \glossterm{secondary target} within 15 feet of the primary target.
     That extra target cannot already be a target of the strike.
@@ -2466,7 +2466,7 @@ They allow more distinct and unique character customization, but also increase g
 
     \magicalff[6]{Twinspell}
     \begin{magicalactiveability}{Twinspell}{Standard action}
-      \abilitycost One \glossterm{fatigue level}, and you can't use this ability next round.
+      \abilitycost One \glossterm{fatigue level}, and you \briefly can't use this ability again.
       \rankline
       You can only use this ability if you have two \glossterm{free hands} and are not using a magic implement.
 

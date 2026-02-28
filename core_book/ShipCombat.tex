@@ -67,7 +67,7 @@ These rules could also be used for other types of vehicles, such as flying ships
       \item Elite ships have three times the \glossterm{hit points} of standard ships.
         % \item Elite ships can have a maximum starting attribute of 6 (see \pcref{Ship Attributes}).
         % elite actions should be about as strong as regular actions, so 2x more damage
-      \item Elite ships can take an additional \glossterm{elite action} each round, just like elite monsters.
+      \item Elite ships can take an additional \glossterm{elite action} each turn, just like elite monsters.
       \item Elite ships automatically remove \glossterm{conditions}, just like elite monsters (see \pcref{Monster Conditions}).
     \end{raggeditemize}
 
@@ -318,8 +318,8 @@ These rules could also be used for other types of vehicles, such as flying ships
     For example, ship that is 200 feet long and 40 feet wide would be considered Colossal.
 
 \section{Ship Movement}
-  Once per round, a ship can take one \glossterm{move action} on the pilot's turn.
-  A ship with no pilot does not move normally, though it may drift.
+  A ship can take one \glossterm{move action} on the pilot's turn.
+  Ships without a pilot do not move normally, though they may drift.
 
   \subsection{Ship Heading}
     A ship's heading always points in one of the eight standard cardinal directions: north, northeast, east, and so on.
@@ -335,7 +335,7 @@ These rules could also be used for other types of vehicles, such as flying ships
     \subsubsection{Reversing}
       A ship can travel in reverse, allowing it to move within a 90 degree cone centered around the opposite direction of its heading.
       This has two restrictions.
-      First, the ship must not have used more than half its movement during the previous round to travel forward.
+      First, the ship must not have used more than half its movement during its previous turn to travel forward.
       Second, the ship's speed is halved while travelling in reverse.
 
 \section{Ship Armor}\label{Ship Armor}
@@ -442,14 +442,14 @@ These rules could also be used for other types of vehicles, such as flying ships
     \weapontagdef{Mystic} This weapon can only be crewed by creatures capable of casting spells.
     The minimum spell rank of each creature must be no more than two lower than this weapon's item rank.
 
-    % +1dr for Slow Reload to Slow Load, +1dr for (1) to (2), then +1dr for each subsequent round
-    \weapontagdef{Slow Load} This weapon requires multiple rounds to load before it can fire.
-    The number of rounds required to finish loading before it can be fired is indicated in its description.
-    For example, a weapon with Slow Load (1) could be fired every other round.
-    Only rounds where the weapon is being fully crewed count towards this load time.
+    % +1dr for Slow Reload to Slow Load, +1dr for (1) to (2), then +1dr for each subsequent turn
+    \weapontagdef{Slow Load} This weapon requires multiple turns to load before it can fire.
+    The number of turns required to finish loading before it can be fired is indicated in its description.
+    For example, a weapon with Slow Load (1) could be fired every other turn.
+    Only turns where the weapon is being fully crewed count towards this load time.
 
     \weapontagdef{Volatile} This weapon must be fired immediately after being loaded.
-    If it is not fired during the round after its loading time is completed, the loading is wasted, and the weapon must be loaded again before it can fire.
+    If it is not fired during the turn after its loading time is completed, the loading is wasted, and the weapon must be loaded again before it can fire.
 
     % This replaces the automatic monster progression
 \section{Ship Enhancements}\label{Ship Enhancements}
@@ -529,10 +529,7 @@ These rules could also be used for other types of vehicles, such as flying ships
   Even the best pilot cannot dodge incoming fire with ease on a lifeboat.
   The maximum crew role rank for all crew on a ship is equal to the ship's item rank (see \pcref{Wealth and Item Ranks}).
 
-  A sufficiently large ship can have more than one member of each crew role.
-  This does not mean that the ship literally has multiple captains or pilots.
-  Instead, the ship would have a hierarchy.
-  It might have a boatswain and boatswain's mate, or a pilot and pilot's mate, with both characters able to fully use their crew role abilities.
+  A sufficiently large ship can have more than one member of each crew role other than pilot.
   Colossal ships can have two people for each crew role, Behemoth ships can have three, and Titan ships can have four.
 
   % TODO: do "ship-related" effects need to be defined in more detail?
@@ -559,7 +556,7 @@ These rules could also be used for other types of vehicles, such as flying ships
         \end{raggeditemize}
 
         You can only use this ability while you are in an appropriate location so that relevant crew can see or hear you.
-        Changing your location to be able to provide a different benefit with this ability typically takes one full round of movement for each size category by which the ship is larger than Huge.
+        Changing your location to be able to provide a different benefit with this ability typically takes one turn of movement for each size category by which the ship is larger than Huge.
         Specific ships may be easier or more difficult to navigate, at the GM's discretion.
         You cannot provide more than one benefit with this ability at once, even if you are perfectly located on the ship.
       \end{activeability}
@@ -681,10 +678,10 @@ These rules could also be used for other types of vehicles, such as flying ships
   \subsection{Pilot}
     This role is responsible for steering the ship.
     They generally stay at the ship's wheel, but they may also direct the cut of sails or the direction of rowing.
+    A ship can only have one pilot.
 
     \cf{Pil}[1]{Desperate Sprint} As a standard action, you can increase the ship's strain level by one.
       If you do, the ship moves up to its speed without reducing its \glossterm{available movement}.
-      Any ship can only be affected by this ability once per round.
 
     \cf{Pil}[2]{Evasive Maneuvers} As a standard action, you can choose one enemy ship you are aware of.
       Your ship \briefly gains a \plus1 bonus to its Armor and Reflex defenses against that ship.
@@ -716,7 +713,7 @@ These rules could also be used for other types of vehicles, such as flying ships
       This ability has the \abilitytag{Sustain} (minor) tag.
       \begin{raggeditemize}
         \item Desperate Fortification: Whenever the ship would take damage, that damage is halved.
-          At the end of each round, if the ship took damage in excess of your rank in this crew role that round, it increases its strain level by two.
+          At the end of your turn, if the ship took damage in excess of your rank in this crew role since your last turn, it increases its strain level by two.
         \item Enhance Armor: The ship gains a \plus1 \glossterm{enhancement bonus} to its Armor defense.
         \item Enhance Resilience: The ship gains a \plus2 \glossterm{enhancement bonus} to its Brawn and Fortitude defenses.
         \item Mystic Ward: The ship gains a \plus2 \glossterm{enhancement bonus} to all defenses against \magical attacks.
