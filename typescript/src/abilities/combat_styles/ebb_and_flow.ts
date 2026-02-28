@@ -126,7 +126,7 @@ export const ebbAndFlow: CombatStyle = {
       roles: ['ramp'],
     },
 
-    // If you used this on your first two rounds, you'd theoretically get an additional 0.3 EA of
+    // If you used this on your first two turns, you'd theoretically get an additional 0.3 EA of
     // value, but your first turn buff would also have been spent on one turn of a
     // relatively low damage maneuver, so assume the stacking just takes this to 0.6 EA.
     // That means this gets double weapon damage instead of the more common double damage

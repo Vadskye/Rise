@@ -16,11 +16,11 @@ import {
 } from '@src/monsters/weapons';
 import { ActiveAbility } from '@src/abilities/active_abilities';
 import { calculateStrikeDamage } from '@src/latex/monsters/player_abilities';
-import { CombatStepResult, CombatStepStatus, executeTeamTurn } from '@src/combat/combat_round';
+import { CombatStepResult, CombatStepStatus, executeTeamTurn } from '@src/combat/combat_turn';
 import { rollD10 } from '@src/combat/dice';
 
 export interface CombatSimulationResult {
-  averageRounds: number;
+  averageTurns: number;
   winRates: Record<string, number>;
   averageHpPercentRemaining: Record<string, number>;
   averageHitRates: Record<string, number>;
@@ -66,7 +66,7 @@ export class CombatScenario {
   }
 
   private runSimulationIterations(iterations: number): CombatSimulationResult {
-    let totalRounds = 0;
+    let totalTurns = 0;
     const wins: Record<string, number> = {};
     const totalHpPercents: Record<string, number> = {};
     const totalHits: Record<string, number> = {};
@@ -81,7 +81,7 @@ export class CombatScenario {
 
     for (let i = 0; i < iterations; i++) {
       const result = this.simulateSingleFight();
-      totalRounds += result.rounds;
+      totalTurns += result.turns;
       if (result.winner) {
         wins[result.winner]++;
       }
@@ -104,7 +104,7 @@ export class CombatScenario {
     }
 
     return {
-      averageRounds: totalRounds / iterations,
+      averageTurns: totalTurns / iterations,
       winRates,
       averageHpPercentRemaining,
       averageHitRates,
@@ -114,7 +114,7 @@ export class CombatScenario {
   private logSimulationResults(stats: CombatSimulationResult): void {
     console.log('--- Combat Simulation Results ---');
     console.log(`Teams: ${this.teams.map((t) => `${t.members.length} ${t.name}`).join(' vs ')}`);
-    console.log(`Average Rounds: ${stats.averageRounds.toFixed(2)}`);
+    console.log(`Average Turns: ${stats.averageTurns.toFixed(2)}`);
     for (const name in stats.winRates) {
       console.log(
         `${name} Win Rate: ${stats.winRates[name].toFixed(2)}% | Avg HP Remaining: ${stats.averageHpPercentRemaining[name].toFixed(2)}% | Hit Rate: ${stats.averageHitRates[name].toFixed(2)}%`,
@@ -125,7 +125,7 @@ export class CombatScenario {
 
   private simulateSingleFight(): {
     winner: string | null;
-    rounds: number;
+    turns: number;
     teamHpPercents: Record<string, number>;
     hitsByTeam: Record<string, number>;
     attacksByTeam: Record<string, number>;
@@ -133,9 +133,9 @@ export class CombatScenario {
     const state = this.initializeFightState();
     const teamInitiatives = this.determineTeamInitiative();
 
-    let rounds = 0;
-    while (rounds < 100) {
-      rounds++;
+    let turns = 0;
+    while (turns < 100) {
+      turns++;
       for (const { team } of teamInitiatives) {
         if (state.aliveMembersByTeam[team.name].length === 0) continue;
 
@@ -143,7 +143,7 @@ export class CombatScenario {
         if (result.status !== CombatStepStatus.Ongoing) {
           return {
             winner: result.winner,
-            rounds,
+            turns,
             teamHpPercents: this.getTeamHpPercents(state),
             hitsByTeam: state.hitsByTeam,
             attacksByTeam: state.attacksByTeam,
@@ -154,7 +154,7 @@ export class CombatScenario {
 
     return {
       winner: null,
-      rounds,
+      turns,
       teamHpPercents: this.getTeamHpPercents(state),
       hitsByTeam: state.hitsByTeam,
       attacksByTeam: state.attacksByTeam,

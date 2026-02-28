@@ -1,4 +1,4 @@
-level,monster_count,blue_hit_probability,red_hit_probability,blue_damage_per_round,blue_living_count,blue_rounds_to_live,blue_survival_percent,rounds,red_damage_per_round,red_living_count,red_rounds_to_live,red_survival_percent
+level,monster_count,blue_hit_probability,red_hit_probability,blue_damage_per_turn,blue_living_count,blue_turns_to_live,blue_survival_percent,turns,red_damage_per_turn,red_living_count,red_turns_to_live,red_survival_percent
 1,1,0.7,0.6,19,4,6.75,0.7927927927927928,2.0,11,0,2.0,0.0
 1,2,0.7,0.7,19,4,4.5,0.7657657657657657,2.0,16,0,2.0,0.0
 1,4,0.7,0.6,23,4,4.75,0.6756756756756757,3.0,18,0,2.25,0.0
