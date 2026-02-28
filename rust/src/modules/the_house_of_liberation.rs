@@ -99,7 +99,7 @@ pub fn generate_module() -> Module {
             The guards have a -5 penalty to Awareness during their meal, or a +0 bonus after the meal.
             Hearing the attempts at that distance has a DV of 4.
             The party can accept a -2 penalty to the Strength check to increase the DV of this Awareness check by 2, but the Stealth skill doesn't help.
-            Roll Awareness once for the guards during each round that the party spends attempting to break down the door.
+            Roll Awareness once for the guards during each turn that the party spends attempting to break down the door.
             Success means that they hear something odd and will send two guards to investigate if the meal is still happening, or four guards after the meal.
 
             Alternately, the door hinges can be disabled with a DV 13 Devices check.
@@ -135,7 +135,7 @@ pub fn generate_module() -> Module {
             Hearing the combat at that distance has a DV of 2.
             If the party lures the skeletons into Room 1 for the fight, the DV for the guards to hear the combat increases to 4.
             The party can further increase the DV to 6 if they close the doors of their cell.
-            Roll Awareness once for the guards during each round of combat.
+            Roll Awareness once for the guards during each turn of combat.
             Success means that they hear something odd and will send two guards to investigate if the meal is still happening, or four guards after the meal.
 
             In the unlikely event that the skeletons defeat the party, they leave their unconscious or dead bodies in the hall and return to patrolling.

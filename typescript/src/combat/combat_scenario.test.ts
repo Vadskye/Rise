@@ -29,12 +29,12 @@ function assertExpectedWinRate(
   );
 }
 
-function assertExpectedRounds(tap: any, result: CombatSimulationResult, expected: number) {
-  const actual = result.averageRounds;
+function assertExpectedTurnsCount(tap: any, result: CombatSimulationResult, expected: number) {
+  const actual = result.averageTurns;
   const tolerance = Math.max(expected * 0.1, 1.0);
   tap.ok(
     Math.abs(actual - expected) <= tolerance,
-    `Average rounds should be ~${expected} (actual: ${actual.toFixed(2)}, tolerance: ${tolerance.toFixed(2)})`,
+    `Average turns should be ~${expected} (actual: ${actual.toFixed(2)}, tolerance: ${tolerance.toFixed(2)})`,
   );
 }
 
@@ -67,7 +67,7 @@ t.test('CombatScenario can simulate a fight and report statistics', (t) => {
   const scenario = createScenario([team1, team2]);
   const result = scenario.simulate();
 
-  assertExpectedRounds(t, result, 1.5);
+  assertExpectedTurnsCount(t, result, 1.5);
   assertExpectedWinRate(t, result, 'Ankheg Team', 100);
   assertExpectedWinRate(t, result, 'Wasp Team', 0);
   t.end();
@@ -87,7 +87,7 @@ t.test('CombatScenario can simulate 1 Ankheg vs 10 Carrion Crows', (t) => {
   const scenario = createScenario([crowTeam, ankhegTeam]);
   const result = scenario.simulate();
 
-  assertExpectedRounds(t, result, 3);
+  assertExpectedTurnsCount(t, result, 3);
   assertExpectedWinRate(t, result, 'Ankheg', 20);
   assertExpectedWinRate(t, result, 'Crows', 80);
   t.end();
@@ -107,7 +107,7 @@ t.test('CombatScenario can simulate 1 Ankheg vs 1 Ankheg', (t) => {
   const scenario = createScenario([ankhegTeam, ankhegTeam2]);
   const result = scenario.simulate();
 
-  assertExpectedRounds(t, result, 7.1);
+  assertExpectedTurnsCount(t, result, 7.1);
   assertExpectedWinRate(t, result, 'Ankheg Team 1', 50.0);
   assertExpectedWinRate(t, result, 'Ankheg Team 2', 50.0);
   t.end();
@@ -131,7 +131,7 @@ t.test('CombatScenario can simulate 5 Carrion Crows vs 10 Giant Wasps', (t) => {
   const scenario = createScenario([crowTeam, waspTeam]);
   const result = scenario.simulate();
 
-  assertExpectedRounds(t, result, 3.5);
+  assertExpectedTurnsCount(t, result, 3.5);
   assertExpectedWinRate(t, result, 'Crows', 0.2);
   assertExpectedWinRate(t, result, 'Wasps', 99.8);
   t.end();
@@ -167,7 +167,7 @@ t.test('CombatScenario can simulate teams of multiple monsters', (t) => {
   const scenario = createScenario([teamA, teamB]);
   const result = scenario.simulate();
 
-  assertExpectedRounds(t, result, 3.3);
+  assertExpectedTurnsCount(t, result, 3.3);
   assertExpectedWinRate(t, result, 'A-Team', 0.1);
   assertExpectedWinRate(t, result, 'B-Team', 99.9);
   t.ok(result.averageHpPercentRemaining['A-Team'] >= 0, 'A-Team should have avg HP remaining');
@@ -214,7 +214,7 @@ t.test('Elite monsters hit multiple targets with area attack', (t) => {
   // If no area attack, it takes 5 turns to kill 5 targets (1 target/turn).
   // With area attack, it kills them all in one turn.
   const result = scenario.simulate();
-  assertExpectedRounds(t, result, 1.0);
+  assertExpectedTurnsCount(t, result, 1.0);
   assertExpectedWinRate(t, result, 'Elite Team', 100);
   t.end();
 });
@@ -239,7 +239,7 @@ t.test('One elite Ankheg is equivalent to four non-elite Ankhegs', (t) => {
   // This scenario is particularly flaky due to its complexity
   const result = scenario.simulate(500);
 
-  assertExpectedRounds(t, result, 5.2);
+  assertExpectedTurnsCount(t, result, 5.2);
   assertExpectedWinRate(t, result, 'Elite Ankheg', 52);
   assertExpectedWinRate(t, result, 'Normal Ankhegs', 48);
   t.end();
@@ -263,7 +263,7 @@ t.test('One elite frostweb spider is equivalent to four non-elite frostweb spide
   const scenario = createScenario([eliteTeam, normalTeam]);
   const result = scenario.simulate();
 
-  assertExpectedRounds(t, result, 21.0);
+  assertExpectedTurnsCount(t, result, 21.0);
   assertExpectedWinRate(t, result, 'Elite Frostweb Spider', 88);
   assertExpectedWinRate(t, result, 'Normal Frostweb Spiders', 12);
   t.end();
@@ -281,8 +281,8 @@ t.test('Characters with equipped weapons use weapon stats for accuracy and damag
 
   // Barbarian has 1 accuracy vs defense 1, which is 100% hit and 10% crit
   t.equal(result.averageHitRates['Barbarian Team'], 100, 'Barbarian should hit 100% of the time');
-  // 1.1x hit damage per turn, 3 power, so 1d8+3 damage per hit. That's 8.25 damage per turn, which is 12.1 rounds to kill.
-  assertExpectedRounds(t, result, 12.1);
+  // 1.1x hit damage per turn, 3 power, so 1d8+3 damage per hit. That's 8.25 damage per turn, which is 12.1 turns to kill.
+  assertExpectedTurnsCount(t, result, 12.1);
   t.end();
 });
 
@@ -303,7 +303,7 @@ t.test('High level characters use correct multipliers for maneuvers', (t) => {
   // we can assume double damage.
   // A max rank weapon mult maneuver has 13 power, 6x weapon damage, extra damage equal to power.
   // Damage on a normal hit is 6d8 + 26 = 53. Damage per attack is 106.
-  // So expected rounds is 1000 / 106 = 9.43.
-  assertExpectedRounds(t, result, 9.43);
+  // So expected turns is 1000 / 106 = 9.43.
+  assertExpectedTurnsCount(t, result, 9.43);
   t.end();
 });

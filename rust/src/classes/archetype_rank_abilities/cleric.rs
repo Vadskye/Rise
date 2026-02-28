@@ -446,7 +446,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             rank: 4,
             description: r"
                 Your \glossterm{allies} who can hear you in a fight are immune to being \stunned.
-                You must say inspiring words every few rounds to grant your allies this effect, though they can be brief, so this does not take an action.
+                You must say inspiring words every few turns to grant your allies this effect, though they can be brief, so this does not take an action.
             ",
             // TODO: figure out allies-only buffs
             modifiers: None,
