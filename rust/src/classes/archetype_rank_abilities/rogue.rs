@@ -662,7 +662,7 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Whenever a combat starts, each \glossterm{enemy} that you have been speaking with for at least six seconds takes a \minus5 penalty to \glossterm{initiative}.
                 In addition, enemies are at least \partiallyunaware of your attacks until they take their first turn, even if they can see you clearly.
-                This does not affect creatures that join in future rounds while the combat is already active.
+                This does not affect creatures that join while the combat is already active.
             ",
             modifiers: None,
         },

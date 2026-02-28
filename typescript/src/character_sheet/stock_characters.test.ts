@@ -70,7 +70,7 @@ t.test('StockCharacters', (t) => {
         // Just 10 iterations for a smoke test
         const result = scenario.simulate(10);
 
-        t.ok(result.averageRounds > 0, 'Simulation should complete some rounds');
+        t.ok(result.averageTurns > 0, 'Simulation should complete some turns');
         t.ok((result.winRates['Character Team'] ?? 0) >= 0, 'Win rate should be a valid number');
       }
       t.end();
