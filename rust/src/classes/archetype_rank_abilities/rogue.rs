@@ -650,7 +650,7 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             rank: 5,
             description: r"
                 You can use your \ability{fool them once} ability twice per \glossterm{short rest}.
-                However, after using that ability, you \riefly can't use it again.
+                However, after using that ability, you \briefly can't use it again.
             ",
             modifiers: None,
         },
