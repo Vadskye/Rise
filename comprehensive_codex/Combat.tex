@@ -148,75 +148,66 @@
 \section{Combat Time}\label{Combat Time}
   This section explains how time passes in combat.
 
-  \subsection{Rounds}\label{Rounds}
-    Combat takes place in a series of \glossterm{rounds}, which represent about six seconds of time.
-    During each round, each creature in the combat takes one \glossterm{turn}.
-    The order of those turns is determined by rolling \glossterm{initiative} (see \pcref{Initiative}).
-    Once everyone has taken a turn, the round ends and the next round begins.
-
   \subsection{Turns}\label{Turns}
+    Combat takes place in a series of \glossterm{turns}.
+    You and your allies can share the same turn.
+    Narratively, the time between each of your turns represents about six seconds.
     During your turn, you can take one \glossterm{move action}, one \glossterm{minor action}, and one \glossterm{standard action}.
     You can also take any number of \glossterm{free actions}.
-    Once you have taken all of the actions you intend to take, your turn is done.
+    Once you and any allies sharing your turn have taken all of the actions they intend to take, that turn is done, and the next creature's turn begins.
 
-    You typically share a turn with other members of your party rather than having your own turn to yourself.
-    For details, see \pcref{Initiative Groups}.
+    Turn order in combat is determined by rolling \glossterm{initiative} (see \pcref{Initiative}).
 
-  % TODO: move to a more relevant location
-  \subsection{Simultaneous Damage and Healing}\label{Simultaneous Damage and Healing}
-    If you regain hit points and take damage simultaneously, add together all of the modifiers to your hit points before checking if you gained a vital wound or exceeded your maximum hit points.
-    For example, suppose you end your turn with 5 hit points out of a maximum of 10.
-    At the end of your turn, you regenerate to heal 20 hit points and burn for 10 damage.
-    You would end up at 10 hit points, having not gained a vital wound.
+  \subsection{Initiative}\label{Initiative}
+    When combat starts, you can act independently, or you can choose an \glossterm{ally} that you can see and hear to lead you.
+    If you act independently, you roll \glossterm{initiative}.
+    Initiative is neither an attack nor \glossterm{check}.
+    You just roll 1d10 and keep the result.
+    A few special abilities can give you a bonus to your initiative.
 
-\section{Initiative}\label{Initiative}
-  When combat starts, you can act independently, or you can choose an \glossterm{ally} that you can see and hear to lead you.
-  If you act independently, you roll \glossterm{initiative}.
-  Initiative is neither an attack nor \glossterm{check}.
-  You just roll 1d10 and keep the result.
-  A few special abilities can give you a bonus to your initiative.
+    If you choose an ally to lead you, you use the result of their initiative check instead of rolling yourself.
+    Either way, this determines your initiative result.
 
-  If you choose an ally to lead you, you use the result of their initiative check instead of rolling yourself.
-  Either way, this determines your initiative result.
+    Initiative order proceeds from the highest initiative result to the lowest.
+    If two creatures have the same initiative result, the higher initiative modifier wins.
+    If they are still tied, they independently roll initiative against each other to determine who acts first.
 
-  Initiative order proceeds from the highest initiative result to the lowest.
-  If two creatures have the same initiative result, the higher initiative modifier wins.
-  If they are still tied, they independently roll initiative against each other to determine who acts first.
+    If you lead your allies during initiative, you must clearly and obviously communicate with them.
+    This generally requires motion and noise which make your presence known to enemies.
+    A \glossterm{difficulty value} 5 Awareness check is enough to recognize your presence and identify that you are acting as a leader.
+    Similarly, you can identify the leader in enemy groups with a DV 5 Awareness check.
 
-  If you lead your allies during initiative, you must clearly and obviously communicate with them.
-  This generally requires motion and noise which make your presence known to enemies.
-  A \glossterm{difficulty value} 5 Awareness check is enough to recognize your presence and identify that you are acting as a leader.
-  Similarly, you can identify the leader in enemy groups with a DV 5 Awareness check.
+    \subsubsection{Initiative Groups}\label{Initiative Groups}
+      Once everyone in a combat has determined their initiative order, allies with no enemies between them in the initiative order are bundled into initiative groups.
+      Each initiative group gets a single shared turn.
+      Within that turn, each creature in the initiative group can take actions in any order.
 
-  \subsection{Initiative Groups}\label{Initiative Groups}
-    Once everyone in a combat has determined their initiative order, allies with no enemies between them in the initiative order are bundled into initiative groups.
-    Each initiative group gets a single shared turn.
-    Within that turn, each creature in the initiative group can take actions in any order.
+      Once you have started an action, you must complete it before any creature in the initiative group can take another action.
+      As a special case, you can use \glossterm{free actions} and \glossterm{minor actions} during the resolution of your own \glossterm{move actions}.
+      For example, you can walk up to a door, open it, and continue through the door (see \pcref{Manipulating Objects}).
+      However, you can't move up to a creature, use a standard action to attack it, and move away with the same move action.
 
-    Once you have started an action, you must complete it before any creature in the initiative group can take another action.
-    As a special case, you can use \glossterm{free actions} and \glossterm{minor actions} during the resolution of your own \glossterm{move actions}.
-    For example, you can walk up to a door, open it, and continue through the door (see \pcref{Manipulating Objects}).
-    However, you can't move up to a creature, use a standard action to attack it, and move away with the same move action.
+      After all creatures in an initiative group taken all of their intended actions, the next initiative group can act.
+      Since your whole initiative group shares a turn, effects that last "until the end of your turn" last until the end of your full initiative group's turn, regardless of when you take your actions during that turn.
 
-    After all creatures in an initiative group taken all of their intended actions, the next initiative group can act.
-    Since your whole initiative group shares a turn, effects that last "until the end of your turn" last until the end of your full initiative group's turn, regardless of when you take your actions during that turn.
+    \subsubsection{Initiative Example}
+      Alice, Bob, Carol, and Dave are player characters in an adventuring party.
+      They come across a group of goblins led by a troll.
+      Alice and Dave decide to act independently, while Bob declares Carol as his leader.
+      The goblins all declare the troll as their leader.
 
-  \subsection{Initiative Example}
-    Alice, Bob, Carol, and Dave are player characters in an adventuring party.
-    They come across a group of goblins led by a troll.
-    Alice and Dave decide to act independently, while Bob declares Carol as his leader.
-    The goblins all declare the troll as their leader.
+      When initiative is rolled, Alice rolls an 4, Dave rolls a 6, the goblin shaman rolls a 7, and Carol rolls a 9.
+      Bob and the individual goblins don't roll initiative, since they designated leaders.
+      Bob and Carol go first as a group, followed by the troll and goblins as a group.
+      Alice and Dave are grouped together, since there are no enemies between them.
+      In addition, Bob and Carol's \textit{next} turn joins that group, since there are no enemies between them.
+      This means that after Bob and Carol's first turn together, there are only two alternating turns for the rest of combat.
 
-    When initiative is rolled, Alice rolls an 4, Dave rolls a 6, the goblin shaman rolls a 7, and Carol rolls a 9.
-    Bob and the individual goblins don't roll initiative, since they designated leaders.
-    Alice and Dave are grouped together, since there are no enemies between them.
-    There are three turns in the final combat order:
-
-    \begin{enumerate}
-      \item Bob and Carol
-      \item The troll and goblins
-      \item Alice and Dave
-    \end{enumerate}
+      \begin{enumerate}
+        \item Bob and Carol (once)
+        \item The troll and goblins (every time)
+        \item Alice, Bob, Carol, and Dave (every time)
+      \end{enumerate}
 
   \subsection{Deciding Action Order}\label{Deciding Action Order}
     Try not to spend too much time on the exact order of everyone's actions within your initiative group.
@@ -225,12 +216,19 @@
     The GM can help resolve situations where this is ambiguous.
 
   \subsection{Delaying Your Turn}
-    You can freely delay your turn in a round to join a later initiative group.
+    You can freely delay your turn to join a later initiative group.
     However, you can't join in the middle of an enemy initiative group to try to break it up.
     You can only join allied initiative groups or create a new initiative group after an already existing enemy initiative group.
 
     When you delay your turn, any effects that would have happened at the start or end of your turn still happen at your original initiative order.
     You can't extend the duration of \brief effects by delaying your turn.
+
+  % TODO: move to a more relevant location
+  \subsection{Simultaneous Damage and Healing}\label{Simultaneous Damage and Healing}
+    If you regain hit points and take damage simultaneously, add together all of the modifiers to your hit points before checking if you gained a vital wound or exceeded your maximum hit points.
+    For example, suppose you end your turn with 5 hit points out of a maximum of 10.
+    At the end of your turn, you regenerate to heal 20 hit points and burn for 10 damage.
+    You would end up at 10 hit points, having not gained a vital wound.
 
   % TODO: solve the peasant railgun in a sequential initiative system
   % \subsection{Group Size Limits}\label{Group Size Limits}
@@ -243,7 +241,7 @@
   This section describes how creatures move and position themselves in combat.
 
   \subsection{Movement Speed}\label{Movement Speed}
-    Your \glossterm{speed} is how far you can move during a typical round.
+    Your \glossterm{speed} is how far you can normally move during your turn.
     Your speed is normally equal to your \glossterm{base speed}, which is derived from your size (see \pcref{Size in Combat}).
     Some abilities can modify your speed.
     At the start of your turn, your available movement becomes equal to your speed.
@@ -256,7 +254,7 @@
     \subsubsection{Shared Movement Limits}\label{Shared Movement Limits}
       Any non-forced movement that moves you subtracts from your available movement, even if you aren't the one causing the movement.
       If your available movement reaches zero, you can't be moved any farther by non-forced movement, even if you're being carried by an ally.
-      For example, you can't move your full speed onto a mount and then have that mount move with you in the same round.
+      For example, you can't move your full speed onto a mount and then have that mount move with you in the same turn.
       You can still be moved by \glossterm{push}, \glossterm{fling}, and teleportation effects.
 
   \subsection{Move Action Abilities}\label{Move Action Abilities}
@@ -483,7 +481,7 @@
       Unless otherwise noted, a fling effect can move a creature in any direction, even vertically.
       A creature moving as a result of a fling effect does not have to be supported during the movement by solid ground.
       This can allow you to fling creatures off of cliffs without allowing them to save themselves.
-      If you fling a creature vertically, it is typically \unsteady until it lands at the end of the round.
+      If you fling a creature vertically, it is typically \unsteady until it lands at the end of its turn.
 
 \section{Aerial Movement}\label{Aerial Movement}
   Creatures with a fly speed or glide speed can move in midair to some degree.
@@ -980,8 +978,8 @@
   \subsection{Mounted Combat}\label{Mounted Combat}
     \parhead{Horses in Combat} Warhorses and warponies can serve readily as combat steeds. Light horses, ponies, and heavy horses, however, are frightened by combat.
     At the start of your turn, you must make a \glossterm{difficulty value} 10 Ride check to control such a horse.
-    Success means you can act normally that round, directing the horse's movements as if it was trained for combat.
-    Failure means that the horse acts of its own volition that round, usually fleeing in panic.
+    Success means you can act normally that turn, directing the horse's movements as if it was trained for combat.
+    Failure means that the horse acts of its own volition that turn, usually fleeing in panic.
 
     \parhead{Space} A horse (not a pony) is a Large creature, and thus takes up a space 10 feet (2 squares) across. While mounted, you share your mount's space completely. Anyone who is close enough to hit your mount can attack either you or your mount.
 
@@ -990,9 +988,9 @@
     \parhead{Flying Mounts} Flying mounts are harder to ride and control than terrestrial mounts.
     The \glossterm{difficulty value} for all Ride checks on a mount using a fly speed is increased by 10.
 
-    \parhead{Combat while Mounted} You must make a \glossterm{difficulty value} 5 Ride check one per round as a \glossterm{free action} while riding a mount.
+    \parhead{Combat while Mounted} You must make a \glossterm{difficulty value} 5 Ride check at the start of your turn while riding a mount.
     Success means you can guide and stay on your mount without using your hands.
-    Failure means you must use one \glossterm{free hand} to control your mount, or you fall off if you cannot free a hand.
+    Failure means you must use one \glossterm{free hand} to control your mount during that turn, or you fall off if you cannot free a hand.
 
     \parhead{If Your Mount Falls in Battle} If your mount falls, you fall to the ground with it.
 
