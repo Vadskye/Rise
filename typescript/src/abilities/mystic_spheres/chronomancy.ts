@@ -385,7 +385,7 @@ export const chronomancy: MysticSphere = {
         While in stasis, it cannot be targeted, moved, damaged, or otherwise affected in any way, and a creature is \\glossterm{unconscious}.
 
         This effect normally lasts as long as you \\glossterm{sustain} it.
-        If you use this ability on yourself, it instead lasts for a number of rounds you choose when you cast the spell, up to a maximum of five rounds.
+        If you use this ability on yourself, it instead lasts for a number of turns you choose when you cast the spell, up to a maximum of five turns.
       `,
       rank: 3,
       roles: ['boon'],
@@ -470,7 +470,7 @@ export const chronomancy: MysticSphere = {
       // TODO: EA math
       cost: 'One \\glossterm{fatigue level}, and you are \\stunned as a \\glossterm{condition}. You also cannot cast this spell again until you finish a \\glossterm{short rest}.',
       effect: `
-        You can take two full rounds of actions immediately.
+        You can take two turns of actions immediately.
         During this time, all other creatures and objects are fixed in time, and cannot be targeted, moved, damaged, or otherwise affected by outside forces in any way.
         You can still affect yourself and create areas or new effects.
         When this effect ends, you are \\stunned as a \\glossterm{condition}.
@@ -514,7 +514,7 @@ export const chronomancy: MysticSphere = {
       usageTime: 'minor',
       effect: `
         You accelerate your mind to incredible speed, allowing you to process information quickly.
-        From your perspective, you freeze time for five rounds.
+        From your perspective, you freeze time for five turns.
         During this time, all creatures and objects are fixed in time, and cannot be targeted, moved, damaged, or otherwise affected by outside forces in any way.
         Your mind remains active during this time, and you are the only one aware of the stoppage of time.
         You cannot move or take any actions other than to observe your surroundings.

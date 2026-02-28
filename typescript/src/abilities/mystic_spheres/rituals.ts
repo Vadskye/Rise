@@ -1757,7 +1757,7 @@ export const rituals: RitualDefinition[] = [
       If you specify its appearance incorrectly, or if the target has changed its appearance, you may accidentally target a different creature, or the ritual may simply fail.
 
       You send the target a short verbal message.
-      The message must be twenty-five words or less, and speaking the message must not take longer than five rounds.
+      The message must be twenty-five words or less, and speaking the message must not take longer than five turns.
 
       After the target receives the message, it may reply with a message of the same length as long as the ritual's effect continues.
       Once it speaks twenty-five words, or you stop sustaining the effect, the effect ends.
