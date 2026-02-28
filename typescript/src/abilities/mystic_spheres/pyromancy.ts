@@ -201,7 +201,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Pyroclasm',
 
-      // A normal r1 area would deal dr3 immediate damage, or dr2 damage over two rounds.
+      // A normal r1 area would deal dr3 immediate damage, or dr2 damage over two turns.
       // This gets +1dr for self-targeting and ability to escape the second hit.
       attack: {
         hit: `
@@ -223,7 +223,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Mighty Pyroclasm',
 
-      // A normal R3 area would deal dr5 immediate damage, or dr3 over two rounds.
+      // A normal R3 area would deal dr5 immediate damage, or dr3 over two turns.
       // This gets +1dr for self-targeting and ability to escape the second hit.
       attack: {
         hit: `

@@ -362,7 +362,7 @@ export const photomancy: MysticSphere = {
     {
       name: 'Sudden Mirrorswarm',
 
-      // 50% miss chance for 2 rounds of attacks is 8 * 0.5 * 0.3 = 1.2 EA.
+      // 50% miss chance for 2 turns of attacks is 8 * 0.5 * 0.3 = 1.2 EA.
       effect: `
         You can activate this spell as a \\glossterm{minor action}.
         When you do, a burst of illusory duplicates appear from your body, each appearing to performing a different action.
