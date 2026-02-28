@@ -45,23 +45,21 @@ export const ripAndTear: CombatStyle = {
       name: 'Brow Gash',
 
       effect: `
-        Make a \\glossterm{strike}.
-        \\injury The target becomes \\dazzled as a \\glossterm{condition}.
+        Make a melee \\glossterm{strike}.
+        \\injury If your attack result hits the target's Fortitude defense, it becomes \\dazzled as a \\glossterm{condition}.
       `,
-      rank: 3,
+      rank: 1,
       roles: ['maim'],
     },
 
     {
       name: 'Painful Brow Gash',
 
-      // Should be 1.8 EA and r7 only gets you 1.6, but the combo is less than the sum of
-      // its parts?
       effect: `
-        Make a \\glossterm{strike} that deals triple damage.
-        \\injury The target becomes \\dazzled and \\stunned as a single \\glossterm{condition}.
+        Make a melee \\glossterm{strike} that deals double damage.
+        \\injury If your attack result hits the target's Fortitude defense, it becomes \\dazzled and \\stunned as a single \\glossterm{condition}.
       `,
-      rank: 7,
+      rank: 5,
       roles: ['maim'],
     },
 
