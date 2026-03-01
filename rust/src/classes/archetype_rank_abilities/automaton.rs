@@ -35,7 +35,6 @@ pub fn automaton<'a>() -> Vec<RankAbility<'a>> {
                 If you lose your original armor parts, you can create or buy new parts that are suited to your body.
                 These parts are considered a Rank 1 (40 gp) item.
             ",
-            modifiers: None, // Too complex for simple modifiers, description handles it
         },
         RankAbility {
             complexity: 1,
@@ -68,7 +67,6 @@ pub fn automaton<'a>() -> Vec<RankAbility<'a>> {
                 If you lose your original arm and weapon parts, you can create or buy new parts that are suited to your body.
                 These parts are considered a Rank 1 (40 gp) item.
             ",
-            modifiers: None, // Too complex for simple modifiers, description handles it
         },
         RankAbility {
             complexity: 2,
@@ -88,7 +86,6 @@ pub fn automaton<'a>() -> Vec<RankAbility<'a>> {
                     \rank{7} The extra damage increases to 1d6 per 2 \glossterm{power}.
                 \end{activeability}
             ",
-            modifiers: None, // Damage scaling handled by description
         },
         RankAbility {
             complexity: 1,
@@ -102,7 +99,6 @@ pub fn automaton<'a>() -> Vec<RankAbility<'a>> {
                 For example, you could embed one set of magic boots into your feet and then wear another pair of magic boots over them.
                 You also gain an additional \glossterm{attunement point} that you can only use to attune to items embedded into your body.
             ",
-            modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
         RankAbility {
             complexity: 1,
@@ -120,7 +116,6 @@ pub fn automaton<'a>() -> Vec<RankAbility<'a>> {
                 This requires a \glossterm{difficulty value} 20 \glossterm{extended check} using a Craft skill appropriate to the composition of your body.
                 The parts required to perform this feat are considered a consumable Rank 5 (5,000 gp) item.
             ",
-            modifiers: None, // Complex effect, description handles it
         },
         RankAbility {
             complexity: 1,
@@ -130,7 +125,6 @@ pub fn automaton<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You become immune to \abilitytag{Compulsion} and \abilitytag{Emotion} attacks.
             ",
-            modifiers: None, // Immunity, description handles it
         },
         RankAbility {
             complexity: 1,
@@ -141,7 +135,6 @@ pub fn automaton<'a>() -> Vec<RankAbility<'a>> {
                 You are always \honed.
                 When an ability would cause you to become honed, such as your \ability{sharpening slash} ability, you become \empowered instead.
             ",
-            modifiers: None, // Complex effect, description handles it
         },
     ]
 }

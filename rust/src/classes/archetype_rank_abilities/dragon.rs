@@ -31,7 +31,6 @@ pub fn dragon<'a>() -> Vec<RankAbility<'a>> {
                     \rank{7} The damage increases to \damagerankseven.
                 \end{activeability}
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -43,7 +42,6 @@ pub fn dragon<'a>() -> Vec<RankAbility<'a>> {
                 You gain a slow \glossterm{fly speed} with a maximum height of 10 feet (see \pcref{Flight}).
                 As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit this turn.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -53,7 +51,6 @@ pub fn dragon<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your Armor defense.
             ",
-            modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]),
         },
         RankAbility {
             complexity: 0,
@@ -66,12 +63,6 @@ pub fn dragon<'a>() -> Vec<RankAbility<'a>> {
                 You reduce your Dexterity by 1 and increase your Strength by 2.
                 In addition, you gain a \plus1 bonus to your \glossterm{magical power} and \glossterm{mundane power}.
             ",
-            modifiers: Some(vec![
-                Modifier::BaseSpeed(10),
-                Modifier::Attribute(Attribute::Dexterity, -1),
-                Modifier::Attribute(Attribute::Strength, 2),
-                Modifier::Power(1),
-            ]),
         },
         RankAbility {
             complexity: 0,
@@ -81,7 +72,6 @@ pub fn dragon<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The Armor bonus from your \textit{draconic body} ability increases to \plus2.
             ",
-            modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]),
         },
         RankAbility {
             complexity: 1,
@@ -91,7 +81,6 @@ pub fn dragon<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The maximum height increases to 30 feet, and the speed increases to average.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -105,12 +94,6 @@ pub fn dragon<'a>() -> Vec<RankAbility<'a>> {
                 You also gain a tail slam \glossterm{natural weapon}.
                 It deals 1d8 damage and has the \abilitytag{Impact} weapon tag (see \pcref{Weapon Tags}).
             ",
-            modifiers: Some(vec![
-                Modifier::BaseSpeed(10),
-                Modifier::Attribute(Attribute::Dexterity, -1),
-                Modifier::Attribute(Attribute::Strength, 1),
-                Modifier::Power(1),
-            ]),
         },
     ]
 }

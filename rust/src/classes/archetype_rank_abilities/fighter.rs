@@ -1,7 +1,5 @@
 use super::standard_modifiers::add_standard_maneuver_modifiers;
 use crate::classes::archetype_rank_abilities::RankAbility;
-use crate::core_mechanics::{Attribute, Defense, Resource};
-use crate::creatures::Modifier;
 
 pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
     vec![
@@ -15,7 +13,6 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
                 This includes the defense and speed penalties from being \slowed, the accuracy and Mental defense penalty from being \frightened, and so on.
                 It does not include permanent effects, such as if you are intrinsically \vulnerable to attacks.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -25,10 +22,6 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus2 bonus to your Mental defense and \glossterm{fatigue tolerance}.
             ",
-            modifiers: Some(vec![
-                Modifier::Defense(Defense::Mental, 2),
-                Modifier::Resource(Resource::FatigueTolerance, 2),
-            ]),
         },
         RankAbility {
             complexity: 0,
@@ -38,10 +31,6 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonuses increase to \plus4.
             ",
-            modifiers: Some(vec![
-                Modifier::Defense(Defense::Mental, 2),
-                Modifier::Resource(Resource::FatigueTolerance, 2),
-            ]),
         },
         RankAbility {
             complexity: 2,
@@ -62,7 +51,6 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
                     \rank{7} The extra damage increases to 1d6 per 2 power.
                 \end{activeability}
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -77,7 +65,6 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
                     In addition, you \glossterm{briefly} become immune to all conditions.
                 \end{activeability}
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -88,7 +75,6 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
                 You \glossterm{briefly} ignore the vital wound effect of each vital wound you gain.
                 While a vital wound is delayed in this way, you do not suffer any effects from its specific vital wound effect, but you still consider it when calculating your penalties to \glossterm{vital rolls}.
             ",
-            modifiers: None,
         },
         RankAbility {
             // This retroactively removes some of the complexity of the earlier abilities
@@ -99,7 +85,6 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You are immune to \glossterm{conditions}.
             ",
-            modifiers: None,
         },
     ]
 }
@@ -115,7 +100,6 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
                 You can gain proficiency with \glossterm{exotic weapons} at the cost of one \glossterm{insight point} per weapon group (see \pcref{Exotic Weapons}).
                 You must already be proficient with all non-exotic weapons from that weapon group.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -133,7 +117,6 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
                 \end{raggeditemize}
             ",
             // Assume light armor, since it's the easiest to represent
-            modifiers: Some(vec![Modifier::BaseSpeed(10)]),
         },
         RankAbility {
             complexity: 1,
@@ -144,7 +127,6 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
                 Once per turn, you can draw or sheathe any non-shield weapon as a \glossterm{free action}.
                 This does not count against your normal one free action \glossterm{object manipulation} per turn (see \pcref{Manipulating Objects}).
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -166,7 +148,6 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
                     \rank{7} The strike deals eight times weapon damage.
                 \end{activeability}
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -176,7 +157,6 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 While wearing body armor, you gain a \plus1 bonus to your Armor defense.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 3,
@@ -186,7 +166,6 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Whenever you draw a weapon or don a shield, you can attune to it as a \glossterm{free action} (see \pcref{Item Attunement}).
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -196,7 +175,6 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 \glossterm{accuracy} bonus with \glossterm{strikes}.
             ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
             complexity: 1,
@@ -212,7 +190,6 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
                     \item Heavy: You double your armor's \glossterm{durability} bonus.
                 \end{raggeditemize}
             ",
-            modifiers: None,
         },
     ]
 }
@@ -239,7 +216,6 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
 
                 \advancement Some martial maneuvers also increase in power in unique ways based on your rank in this archetype, as indicated in their descriptions.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -249,7 +225,6 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain access to rank 3 martial maneuvers.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -259,7 +234,6 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain access to rank 5 martial maneuvers.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -269,7 +243,6 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain access to rank 7 martial maneuvers.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -303,7 +276,6 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
                     \parhead{Precise Maneuver} You gain an accuracy bonus equal to your excess rank.
                 }
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -313,7 +285,6 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can also choose an augment for each of your rank 3 martial maneuvers.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -323,7 +294,6 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can also choose an augment for each of your rank 5 martial maneuvers.
             ",
-            modifiers: None,
         },
     ];
     add_standard_maneuver_modifiers(&mut abilities);
@@ -341,7 +311,6 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to all defenses.
             ",
-            modifiers: Some(vec![Modifier::AllDefenses(1)]),
         },
         RankAbility {
             complexity: 0,
@@ -351,7 +320,6 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your Armor defense and one other defense of your choice.
             ",
-            modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]), // And one other defense of choice
         },
         RankAbility {
             complexity: 2,
@@ -363,7 +331,6 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
                 This does not affect creatures who are moving in a straight line directly towards you.
                 It also has no effect on enemies that are able to move through your space freely, such as \trait{incorporeal} or very large creatures.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -373,7 +340,6 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The area affected by this ability increases to a \medarea radius \glossterm{emanation} from you, and the maximum size category increases to Gargantuan.
             ",
-            modifiers: None,
         },
         // Goaded as a condition is 2.6 EA, and a r3 strike should only give 0.8 EA. The double
         // attack is kind of enough, plus the class ability benefit.
@@ -398,7 +364,6 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
                     \rank{7} The strike deals triple damage.
                 \end{activeability}
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -408,7 +373,6 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your Constitution.
             ",
-            modifiers: Some(vec![Modifier::Attribute(Attribute::Constitution, 1)]),
         },
         RankAbility {
             complexity: 1,
@@ -418,7 +382,6 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Each creature that is suffering penalties for being \goaded by you takes an additional \minus2 \glossterm{accuracy} penalty against creatures other than you.
             ",
-            modifiers: None,
         },
     ]
 }
@@ -552,7 +515,6 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                     \end{sustainability}
                 }
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -562,7 +524,6 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to \glossterm{inititive}.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -585,7 +546,6 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                     \rank{7} The extra damage increases to be equal to your \glossterm{power}, and you can move up to your full speed.
                 \end{activeability}
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -607,7 +567,6 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                 \end{sustainability}
             ",
             // Arbitrarily assume offense
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
             complexity: 1,
@@ -617,7 +576,6 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your Intelligence.
             ",
-            modifiers: Some(vec![Modifier::Attribute(Attribute::Intelligence, 1)]),
         },
         RankAbility {
             complexity: 0,
@@ -627,7 +585,6 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus increases to \plus2.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -637,7 +594,6 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus for each stance increases to \plus2.
             ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
     ]
 }

@@ -13,7 +13,6 @@ pub fn treant<'a>() -> Vec<RankAbility<'a>> {
                 At the end of your turn while you are \ability{ingrained}, you regain hit points equal to your rank in this archetype, and you may choose to remove a \glossterm{condition}.
                 If you remove a condition, you increase your \glossterm{fatigue level} by one.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -23,7 +22,6 @@ pub fn treant<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus3 bonus to your \glossterm{durability}.
             ",
-            modifiers: Some(vec![Modifier::Durability(3)]),
         },
         RankAbility {
             complexity: 2,
@@ -54,7 +52,6 @@ pub fn treant<'a>() -> Vec<RankAbility<'a>> {
                     \rank{7} 2d10 damage.
                 \end{magicalactiveability}
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -66,10 +63,6 @@ pub fn treant<'a>() -> Vec<RankAbility<'a>> {
                 Unlike normal for increasing your size, this does not increase your \glossterm{base speed}.
                 You also gain a \plus1 bonus to your Strength, and a \minus1 penalty to your Dexterity.
             ",
-            modifiers: Some(vec![
-                Modifier::Attribute(Attribute::Strength, 1),
-                Modifier::Attribute(Attribute::Dexterity, -1),
-            ]),
         },
         RankAbility {
             complexity: 1,
@@ -80,7 +73,6 @@ pub fn treant<'a>() -> Vec<RankAbility<'a>> {
                 The healing from your \textit{nourishing ingrain} ability increases to three times your rank in this archetype.
                 In addition, removing a condition with that ability no longer increases your fatigue level.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -90,7 +82,6 @@ pub fn treant<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The durability bonus increases to \plus5.
             ",
-            modifiers: Some(vec![Modifier::Durability(2)]),
         },
         RankAbility {
             complexity: 0,
@@ -103,11 +94,6 @@ pub fn treant<'a>() -> Vec<RankAbility<'a>> {
                 Your normal \\glossterm{speed} is still only 30 feet due to the penalty from \textit{unhurried and unfaltering}.
                 The modifiers to Strength and Dexterity increase to \plus2 and \minus2, respectively.
             ",
-            modifiers: Some(vec![
-                Modifier::BaseSpeed(10),
-                Modifier::Attribute(Attribute::Strength, 1),
-                Modifier::Attribute(Attribute::Dexterity, -1),
-            ]),
         },
     ]
 }

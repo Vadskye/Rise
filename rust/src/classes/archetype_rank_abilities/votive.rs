@@ -32,7 +32,6 @@ pub fn pactbound_warrior<'a>() -> Vec<RankAbility<'a>> {
 
                 \advancement Some pact maneuvers also increase in power in unique ways based on your rank in this archetype, as indicated in their descriptions.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -42,7 +41,6 @@ pub fn pactbound_warrior<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain access to rank 3 pact maneuvers.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -52,7 +50,6 @@ pub fn pactbound_warrior<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain access to rank 5 pact maneuvers.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -62,7 +59,6 @@ pub fn pactbound_warrior<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain access to rank 7 pact maneuvers.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -74,7 +70,6 @@ pub fn pactbound_warrior<'a>() -> Vec<RankAbility<'a>> {
                 All \glossterm{strikes} you make are \magical abilities.
                 This means you use your \glossterm{magical power} to determine your damage instead of your \glossterm{mundane power} (see \pcref{Power}).
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -110,7 +105,6 @@ pub fn pactbound_warrior<'a>() -> Vec<RankAbility<'a>> {
                     After you use this maneuver, you \briefly can't use any spellfused maneuvers.
                 }
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -120,7 +114,6 @@ pub fn pactbound_warrior<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can also choose an augment for each of your rank 3 pact maneuvers.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -130,7 +123,6 @@ pub fn pactbound_warrior<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can also choose an augment for each of your rank 5 pact maneuvers.
             ",
-            modifiers: None,
         },
     ];
     add_standard_maneuver_modifiers(&mut abilities);
@@ -166,11 +158,6 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
                 }
             ",
             // Assume covenant of bloodforging and already wearing light armor
-            modifiers: Some(vec![
-                Modifier::Defense(Defense::Armor, 2),
-                Modifier::Durability(2),
-                Modifier::VitalRoll(1),
-            ]),
         },
         RankAbility {
             complexity: 0,
@@ -187,7 +174,6 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
                     \subcf{Covenant of Soulcursing} You can convert conditions into Curse effects against creatures that already have a single Curse effect active on them.
                 }
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -205,7 +191,6 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
                     \parhead{Covenant of Soulcursing} You can convert conditions into Curse effects with this ability regardless of the number of Curse effects active on the target.
                 }
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -217,11 +202,6 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
                 If you do, you take a \minus1 penalty to your \glossterm{fatigue tolerance}.
                 Otherwise, you gain a \plus2 bonus to your \glossterm{fatigue tolerance}.
             ",
-            modifiers: Some(vec![
-                Modifier::Power(2),
-                // TODO: add FatigueTolerance modifier
-                // Modifier::FatigueTolerance(-1),
-            ]),
         },
         RankAbility {
             complexity: 0,
@@ -231,7 +211,6 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus you chose increases to \plus4.
             ",
-            modifiers: Some(vec![Modifier::Power(2)]),
         },
         RankAbility {
             complexity: 2,
@@ -254,7 +233,6 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
                     \rank{7} The recovery increases to \hprankseven.
                 \end{magicalactiveability}
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -272,7 +250,6 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
                     This effect \glossterm{repeats} at the end of your next turn.
                 \end{magicalactiveability}
             ",
-            modifiers: None,
         },
     ]
 }
@@ -308,7 +285,6 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
                 \advancement The maximum rank of pact spells that you can learn is equal to your rank in this archetype.
                 Pact spells also increase in power in unique ways based on your rank in this archetype, as indicated in their descriptions.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -332,7 +308,6 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
                     \itemhead{Precursor} Chronomancy, Polymorph
                 \end{raggeditemize}
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -342,7 +317,6 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your \glossterm{durability}.
             ",
-            modifiers: Some(vec![Modifier::Durability(1)]),
         },
     ];
     add_standard_spell_modifiers(&mut abilities);
@@ -364,7 +338,6 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 If your hit points would be reduced below 1 in this way, your body and soul are ripped through the planes directly into your soulkeeper's realm.
                 This is invariably lethal, and leaves no corpse behind.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -400,7 +373,6 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                         You can choose this ability multiple times, choosing a different spell each time.
                 }
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -410,7 +382,6 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain an additional metamagic ability.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -420,7 +391,6 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You learn an additional pact spell.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -430,7 +400,6 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your Willpower.
             ",
-            modifiers: Some(vec![Modifier::Attribute(Attribute::Willpower, 1)]),
         },
         RankAbility {
             complexity: 1,
@@ -440,7 +409,6 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain an additional \glossterm{attunement point}.
             ",
-            modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
         RankAbility {
             complexity: 1,
@@ -450,10 +418,6 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your \glossterm{accuracy} and \glossterm{fatigue tolerance}.
             ",
-            modifiers: Some(vec![
-                Modifier::Accuracy(1),
-                Modifier::Resource(Resource::FatigueTolerance, 1),
-            ]),
         },
     ]
 }
@@ -484,7 +448,6 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
                 In addition, you gain a tentacle \glossterm{natural weapon} (see \pcref{Natural Weapons}).
                 It deals 1d6 damage, has the \weapontag{Maneuverable} weapon tag, and does not require a \glossterm{free hand}.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -505,7 +468,6 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
                 \subcf{Precursor -- Grotesque} You gain a \plus1 bonus to your Constitution.
                 In addition, your tentacle gains the \weapontag{Sweeping} (1) \glossterm{weapon tag} (see \pcref{Weapon Tags}).
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -524,7 +486,6 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
                 \subcf{Precursor -- Burgeoning\plus} The durability bonus increases to \plus4.
                 In addition, your tentacle now deals 1d10 damage.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -554,7 +515,6 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
                     However, whenever you cast the spell, you \glossterm{briefly} take a \minus2 penalty to all defenses.
                 }
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -565,7 +525,6 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
                 You learn an additional spell with this ability.
                 It can be up to rank 5, even if you do not have access to rank 5 spells.
             ",
-            modifiers: None,
         },
         RankAbility {
             // Assume pact magic, so ignore complexity
@@ -584,7 +543,6 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
 
                 Whenever you increase your rank in this archetype, you can change which magic weapon property you have with this ability.
             ",
-            modifiers: None,
         },
         RankAbility {
             // Assume pact magic, so ignore complexity
@@ -601,7 +559,6 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
 
                 Whenever you increase your rank in this archetype, you can change which magic body armor property you have with this ability.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -612,7 +569,6 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
                 You gain a \plus3 bonus to your \glossterm{durability}.
                 In addition, you take half the normal penalties for being \glossterm{resurrected} (see \pcref{Resurrection}).
             ",
-            modifiers: Some(vec![Modifier::Durability(3)]),
         },
         RankAbility {
             complexity: 1,
@@ -623,7 +579,6 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
                 The durability bonus increases to \plus5.
                 In addition, you take no penalties for being \glossterm{resurrected}.
             ",
-            modifiers: Some(vec![Modifier::Durability(2)]),
         },
     ]
 }
