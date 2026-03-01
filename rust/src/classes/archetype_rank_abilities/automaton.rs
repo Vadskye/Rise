@@ -1,6 +1,6 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
-use crate::core_mechanics::Resource;
-use crate::creatures::Modifier;
+
+
 
 pub fn automaton<'a>() -> Vec<RankAbility<'a>> {
     vec![

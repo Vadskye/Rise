@@ -1,6 +1,6 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
-use crate::core_mechanics::Defense;
-use crate::creatures::Modifier;
+
+
 
 pub fn vampire<'a>() -> Vec<RankAbility<'a>> {
     vec![
