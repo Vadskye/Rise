@@ -79,6 +79,7 @@ type NumericCreatureProperty =
   | 'shield_accuracy'
   | 'shield_reflex'
   | 'speed'
+  | 'vital_rolls'
   | RiseAttribute
   | RiseAttributeModifier
   | RiseDefense
@@ -1420,6 +1421,10 @@ export class Creature implements CreaturePropertyMap {
 
   public get shield_name() {
     return this.getPropertyValue('shield_name');
+  }
+
+  public get vital_rolls() {
+    return this.getPropertyValue('vital_rolls');
   }
 }
 
