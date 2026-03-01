@@ -12,7 +12,7 @@ pub struct Character {
 
 impl Character {
     // archetypes should be provided in the order that they should be ranked up
-    pub fn new(class: Class, level: i32, archetypes: [ClassArchetype; 3]) -> Character {
+    pub fn new(class: Class, level: i32, _archetypes: [ClassArchetype; 3]) -> Character {
         let mut creature = creature::Creature::new(level);
 
         for defense in Defense::all() {
