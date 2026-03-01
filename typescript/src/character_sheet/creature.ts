@@ -67,6 +67,7 @@ type CustomCreatureProperty = 'base_class' | 'creature_type' | 'role' | 'size';
 
 type NumericCreatureProperty =
   | 'accuracy'
+  | 'accuracy_with_strikes'
   | 'brawling_accuracy'
   | 'land_speed'
   | 'level'
@@ -162,6 +163,12 @@ export interface CustomModifierConfig {
   name?: string;
   numericEffects?: CustomModifierNumericEffect[];
   vulnerable?: string;
+}
+
+export interface SimpleModifierConfig {
+  name: string;
+  statistic: NumericCreatureProperty; 
+  value: number;
 }
 
 export interface CustomModifierNumericEffect {
@@ -634,6 +641,18 @@ export class Creature implements CreaturePropertyMap {
     this.setProperties(attrs);
   }
 
+  addSimpleModifier(config: SimpleModifierConfig) {
+    this.addCustomModifier({
+      name: config.name,
+      numericEffects: [
+        {
+          modifier: config.value,
+          statistic: config.statistic,
+        },
+      ],
+    });
+  }
+
   addPassiveAbility({ name, effect, isMagical }: PassiveAbility) {
     const prefix = `repeating_passiveabilities_${this.sheet.generateRowId()}`;
     this.setProperties({
@@ -953,6 +972,10 @@ export class Creature implements CreaturePropertyMap {
 
   public get accuracy() {
     return this.getPropertyValue('accuracy');
+  }
+
+  public get accuracy_with_strikes() {
+    return this.getPropertyValue('accuracy_with_strikes');
   }
 
   public get brawling_accuracy() {
