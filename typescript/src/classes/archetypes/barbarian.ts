@@ -42,8 +42,8 @@ export function battleforgedResilience(creature: Creature, rank: number) {
 
   if (rank >= 4) {
     creature.addSimpleModifier({
-      name: "Primal Resilience",
-      statistic: "constitution",
+      name: 'Primal Resilience',
+      statistic: 'constitution',
       value: 1,
     });
   }
@@ -91,13 +91,13 @@ export function battlerager(creature: Creature, rank: number) {
       bonusFromWillpower += 1;
     }
     creature.addSimpleModifier({
-      name: "Amplified Anger+",
+      name: 'Amplified Anger+',
       statistic: 'mundane_power',
       value: 2 + bonusFromWillpower,
     });
   } else if (rank >= 2) {
     creature.addSimpleModifier({
-      name: "Amplified Anger",
+      name: 'Amplified Anger',
       statistic: 'mundane_power',
       value: creature.willpower >= 3 ? 2 : 1,
     });
@@ -109,7 +109,7 @@ export function battlerager(creature: Creature, rank: number) {
 
   if (rank >= 4) {
     creature.addSimpleModifier({
-      name: "Primal Brawn",
+      name: 'Primal Brawn',
       statistic: 'strength',
       value: 1,
     });
@@ -123,6 +123,81 @@ export function battlerager(creature: Creature, rank: number) {
     // Assume you always choose to increase your size, and that you start from Medium.
     // Technically we should check creature.size and increase it by one step, but I'm
     // lazy.
-    creature.setProperties({size: 'large'});
+    creature.setProperties({ size: 'large' });
+  }
+}
+
+export function outlandSavage(creature: Creature, rank: number) {
+  if (rank >= 1) {
+    creature.addSimpleModifier({
+      name: 'Savage Precision',
+      statistic: 'brawling_accuracy',
+      value: 1,
+    });
+  }
+
+  if (rank >= 4) {
+    creature.addSimpleModifier({
+      name: 'Primal Agility',
+      statistic: 'dexterity',
+      value: 1,
+    });
+  }
+
+  if (rank >= 5) {
+    creature.addSimpleModifier({
+      name: 'Outlandish Speed',
+      statistic: 'speed',
+      value: 10,
+    });
+  }
+}
+
+export function primalWarrior(creature: Creature, rank: number) {
+  // Primal Warrior adds maneuvers and augments to maneuvers.
+  // These don't have static statistical modifiers that we represent here.
+}
+
+export function totemist(creature: Creature, rank: number) {
+  // Bear Totem
+  if (rank >= 1) {
+    creature.addSimpleModifier({
+      name: 'Totem Animal (Bear)',
+      statistic: 'mundane_power',
+      value: Math.floor(creature.constitution / 2),
+    });
+  }
+
+  if (rank >= 2) {
+    // Animal Instincts
+    creature.addCustomModifier({
+      name: 'Animal Instincts (Bear)',
+      numericEffects: [
+        {
+          statistic: 'endurance',
+          modifier: rank >= 6 ? 4 : 2,
+        },
+        {
+          statistic: 'vital_rolls',
+          modifier: rank >= 6 ? 2 : 1,
+        },
+      ],
+    });
+  }
+
+  if (rank >= 5) {
+    creature.addSimpleModifier({
+      name: 'Animal Ferocity',
+      statistic: 'accuracy',
+      value: 1,
+    });
+  }
+
+  if (rank >= 7) {
+    creature.addSimpleModifier({
+      name: 'Totem Animal++ (Bear)',
+      statistic: 'constitution',
+      value: 1,
+    });
   }
 }
