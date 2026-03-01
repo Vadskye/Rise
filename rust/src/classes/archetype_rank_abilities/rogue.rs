@@ -1,8 +1,8 @@
 use super::standard_modifiers::add_standard_maneuver_modifiers;
 use crate::classes::archetype_rank_abilities::RankAbility;
-use crate::core_mechanics::{Attribute, DamageDice, Resource};
-use crate::creatures::Modifier;
-use crate::skills::{KnowledgeSubskill, Skill};
+
+
+
 
 pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
     let mut abilities = vec![

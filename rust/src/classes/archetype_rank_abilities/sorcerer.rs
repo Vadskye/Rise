@@ -1,6 +1,6 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
-use crate::core_mechanics::{Attribute, Defense, Resource};
-use crate::creatures::Modifier;
+
+
 
 use super::standard_modifiers::add_standard_spell_modifiers;
 
