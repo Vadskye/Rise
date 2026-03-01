@@ -33,7 +33,6 @@ pub fn incarnation<'a>() -> Vec<RankAbility<'a>> {
                     \rank{7} The damage increases to \damagerankeight.
                 \end{magicalactiveability}
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -48,7 +47,6 @@ pub fn incarnation<'a>() -> Vec<RankAbility<'a>> {
                     Otherwise, you are \glossterm{briefly} \maximized.
                 \end{magicalactiveability}
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -66,7 +64,6 @@ pub fn incarnation<'a>() -> Vec<RankAbility<'a>> {
                     In addition, whenever you use the \ability{sprint} or \ability{jog} abilities, you can become \trait{intangible} for the rest of your turn.
                 \end{raggeditemize}
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -76,7 +73,6 @@ pub fn incarnation<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus to an attribute that you gain from being an incarnate increases to \plus2.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -87,7 +83,6 @@ pub fn incarnation<'a>() -> Vec<RankAbility<'a>> {
                 You become \glossterm{immune} instead of impervious to attacks with your \textit{essence infusion} tag.
                 In addition, you gain a \plus1 accuracy bonus with all abilities which have that tag.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -103,7 +98,6 @@ pub fn incarnation<'a>() -> Vec<RankAbility<'a>> {
                     In addition, you gain a \plus1 bonus to your \glossterm{mundane power} and \glossterm{magical power}.
                 \end{raggeditemize}
             ",
-            modifiers: None,
         },
         // Tethered: 1.6 EA if you meet the condition, which is easy
         // Untethered: ???
@@ -130,7 +124,6 @@ pub fn incarnation<'a>() -> Vec<RankAbility<'a>> {
                     {}
                 \end{magicalactiveability}
             ",
-            modifiers: None,
         },
     ]
 }

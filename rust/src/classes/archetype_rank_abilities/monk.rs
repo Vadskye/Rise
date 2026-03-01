@@ -15,7 +15,6 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
                 Your maximum jumping height is equal to your maximum horizontal jump distance, rather than half that distance (see \pcref{Jumping}).
                 You can also use Willpower in place of Strength to determine your horizontal jump distance.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -26,7 +25,6 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
                 You gain a \plus10 bonus to your maximum horizontal jump distance.
                 In addition, you are immune to \glossterm{falling damage}.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -40,7 +38,6 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
                 The air holds you until the end of your turn, at which point you fall normally.
                 After you land on air in this way, you \glossterm{briefly} cannot do so again.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -52,7 +49,6 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
                 This does not protect you from any non-damaging effects of those abilities, or from abilities that affect multiple specific targets without affecting an area.
                 If you have the \textit{evasion} rogue ability with the same effect as this ability, you also gain a \plus2 bonus to your Armor and Reflex defenses against area abilities.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -62,7 +58,6 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 This ability also protects you from area attacks against your Brawn, Fortitude, and Mental defenses.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -86,7 +81,6 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
                     \rank{7} The extra damage increases to 4d6 \add half \glossterm{power}.
                 \end{activeability}
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -96,7 +90,6 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus10 foot bonus to your \glossterm{speed}.
             ",
-            modifiers: Some(vec![Modifier::MovementSpeed(MovementMode::Land, 10)]),
         },
         RankAbility {
             complexity: 1,
@@ -108,7 +101,6 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
                 Flying using this fly speed does not cause you to suffer penalties for being \glossterm{midair}.
                 While flying, you can jump as if you were on solid ground, allowing you to rapidly gain height and change directions unexpectedly.
             ",
-            modifiers: None,
         },
     ]
 }
@@ -135,7 +127,6 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
 
                 \advancement Some esoteric maneuvers also increase in power in unique ways based on your rank in this archetype, as indicated in their descriptions.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -147,7 +138,6 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
                 You must already be proficient with all non-exotic monk weapons.
             ",
             // This is an abstraction of the effect of exotic weapons being better
-            modifiers: Some(vec![Modifier::ExtraDamage(DamageDice::new(0))]),
         },
         RankAbility {
             complexity: 1,
@@ -157,7 +147,6 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain access to rank 3 esoteric maneuvers.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -167,7 +156,6 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain access to rank 5 esoteric maneuvers.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -177,7 +165,6 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain access to rank 7 esoteric maneuvers.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -212,7 +199,6 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
                     \parhead{Precise Maneuver} You gain an accuracy bonus equal to your excess rank.
                 }
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -222,7 +208,6 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can also choose an augment for each of your rank 3 esoteric maneuvers.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -232,7 +217,6 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can also choose an augment for each of your rank 5 esoteric maneuvers.
             ",
-            modifiers: None,
         },
     ];
     add_standard_maneuver_modifiers(&mut abilities);
@@ -251,7 +235,6 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                 This allows you to use your \glossterm{magical power} to determine your damage instead of your \glossterm{mundane power} (see \pcref{Power}).
             ",
             // TODO: use higher of Str/Wil for strikes
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -269,10 +252,6 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             ",
             // This only works if everyone with this archetype doesn't equip actual armor, since
             // the system won't know not to stack the effects
-            modifiers: Some(vec![
-                Modifier::Defense(Defense::Armor, 2),
-                Modifier::Durability(3),
-            ]),
         },
         RankAbility {
             complexity: 3,
@@ -424,7 +403,6 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                     % TODO: add more
                 }
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -451,7 +429,6 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                     \rank{7} The strike deals triple damage.
                 \end{magicalactiveability}
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -464,7 +441,6 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                 If you are already impervious to attacks with that ability tag, you become immune instead.
                 Whenever you make a strike \magical with this ability, you can choose to give it that tag.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -474,7 +450,6 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your Willpower.
             ",
-            modifiers: Some(vec![Modifier::Attribute(Attribute::Willpower, 1)]),
         },
         RankAbility {
             complexity: 1,
@@ -485,7 +460,6 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                 After using a \textit{ki manifestation}, you can use a different \textit{ki manifestation} during your next turn.
                 You still cannot use the same \textit{ki manifestation} in two consecutive turns.
             ",
-            modifiers: None,
         },
     ]
 }
@@ -506,7 +480,6 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             ",
             // TODO: selective bonus with only unarmed? It's easy enough to just give people
             // from this archetype weapons
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -516,7 +489,6 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your punch/kick natural weapon deals 1d6 damage.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -527,7 +499,6 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
                 Your punch/kick natural weapon becomes a \plus2 accuracy weapon.
             ",
             // TODO: At this point, you're probably using unarmed? This is weird.
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -537,10 +508,6 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your Armor and Reflex defenses while you are not wearing medium or heavy body armor.
             ",
-            modifiers: Some(vec![
-                Modifier::Defense(Defense::Armor, 1),
-                Modifier::Defense(Defense::Reflex, 1),
-            ]),
         },
         RankAbility {
             complexity: 1,
@@ -550,7 +517,6 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 While you are not wearing medium or heavy body armor, you are immune to being \slowed, and your movement is not slowed by \glossterm{difficult terrain}.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -560,10 +526,6 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The defense bonus increases to \plus2.
             ",
-            modifiers: Some(vec![
-                Modifier::Defense(Defense::Armor, 1),
-                Modifier::Defense(Defense::Reflex, 1),
-            ]),
         },
         RankAbility {
             complexity: 1,
@@ -574,7 +536,6 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
                 You gain a \plus1 bonus to your \glossterm{mundane power} and \glossterm{magical power}.
                 If each of your Strength, Dexterity, and Constitution are 3 or higher, this bonus increases to \plus2.
             ",
-            modifiers: Some(vec![Modifier::Power(1)]),
         },
         RankAbility {
             complexity: 1,
@@ -585,7 +546,6 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
                 The bonus increases to \plus2, or to \plus3 if you meet the attribute requirement.
             ",
             // Assume the attribute requirement is not met
-            modifiers: Some(vec![Modifier::Power(1)]),
         },
         RankAbility {
             complexity: 0,
@@ -596,7 +556,6 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
                 Choose a physical \glossterm{attribute}: Strength, Dexterity, or Constitution (see \pcref{Attributes}).
                 You gain a \plus1 bonus to that attribute.
             ",
-            modifiers: Some(vec![Modifier::Attribute(Attribute::Dexterity, 1)]),
         },
         RankAbility {
             complexity: 0,
@@ -606,10 +565,6 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus applies to all physical attributes, not just the one you chose.
             ",
-            modifiers: Some(vec![
-                Modifier::Attribute(Attribute::Strength, 1),
-                Modifier::Attribute(Attribute::Constitution, 1),
-            ]),
         },
     ]
 }
@@ -626,7 +581,6 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
                 You gain \sense{lifesense} with a 120 foot range, allowing you to sense the location of living things without light (see \pcref{Lifesense}).
                 In addition, you gain \sense{lifesight} with a 30 foot range, allowing you to see living things without light (see \pcref{Lifesight}).
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -637,7 +591,6 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
                 You gain a \plus2 bonus to your \glossterm{durability}.
                 In addition, you gain a \plus1 bonus to your \glossterm{vital rolls} (see \pcref{Vital Wounds}).
             ",
-            modifiers: Some(vec![Modifier::Durability(2), Modifier::VitalRoll(1)]),
         },
         RankAbility {
             complexity: 0,
@@ -647,7 +600,6 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The durability bonus increases to +4.
             ",
-            modifiers: Some(vec![Modifier::Durability(2)]),
         },
         RankAbility {
             complexity: 1,
@@ -658,7 +610,6 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
                 You are immune to being \stunned and \confused.
             ",
             // TODO: represent immunities?
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -669,7 +620,6 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
                 You are immune to \abilitytag{Emotion} attacks.
                 In addition, you are immune to being \frightened and \panicked.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -682,7 +632,6 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
                 In addition, you no longer take penalties to your attributes for aging, and cannot be magically aged.
                 You still die of old age when your time is up.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -692,7 +641,6 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The range of your lifesense increases by 240 feet, and the range of your lifesight increases by 60 feet.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -702,7 +650,6 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You are immune to \glossterm{conditions}.
             ",
-            modifiers: None,
         },
     ]
 }

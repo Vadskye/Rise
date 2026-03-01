@@ -14,7 +14,6 @@ pub fn oozeborn<'a>() -> Vec<RankAbility<'a>> {
                 This does not affect damage you deal with manufactured weapons.
             ",
             is_magical: false,
-            modifiers: None,
             rank: 1,
         },
         RankAbility {
@@ -27,7 +26,6 @@ pub fn oozeborn<'a>() -> Vec<RankAbility<'a>> {
               If you already have the blindsight ability, you increase its range by 15 feet.
             ",
             is_magical: false,
-            modifiers: None,
             rank: 2,
         },
         RankAbility {
@@ -43,7 +41,6 @@ pub fn oozeborn<'a>() -> Vec<RankAbility<'a>> {
               \end{activeability}
             ",
             is_magical: false,
-            modifiers: None,
             rank: 2,
         },
         RankAbility {
@@ -56,7 +53,6 @@ pub fn oozeborn<'a>() -> Vec<RankAbility<'a>> {
               This allows you to maintain your shape while unconscious.
             ",
             is_magical: false,
-            modifiers: None,
             rank: 3,
         },
         RankAbility {
@@ -66,7 +62,6 @@ pub fn oozeborn<'a>() -> Vec<RankAbility<'a>> {
                 You reduce your penalties for \squeezing by 1.
             ",
             is_magical: false,
-            modifiers: None,
             rank: 3,
         },
         RankAbility {
@@ -76,7 +71,6 @@ pub fn oozeborn<'a>() -> Vec<RankAbility<'a>> {
                 The damage dealt by your pseudopod increases to 1d10.
             ",
             is_magical: false,
-            modifiers: None,
             rank: 4,
         },
         RankAbility {
@@ -86,7 +80,6 @@ pub fn oozeborn<'a>() -> Vec<RankAbility<'a>> {
                 You are \buff{immune} to \atAcid and \atPoison attacks.
             ",
             is_magical: false,
-            modifiers: None,
             rank: 4,
         },
         RankAbility {
@@ -97,7 +90,6 @@ pub fn oozeborn<'a>() -> Vec<RankAbility<'a>> {
               In addition, the range of your \sense{blindsight} increases by 15 feet.
             ",
             is_magical: false,
-            modifiers: None,
             rank: 5,
         },
         RankAbility {
@@ -108,7 +100,6 @@ pub fn oozeborn<'a>() -> Vec<RankAbility<'a>> {
                 In addition, you may absorb \glossterm{allies} with that ability in addition to unattended objects.
             ",
             is_magical: false,
-            modifiers: None,
             rank: 5,
         },
         RankAbility {
@@ -118,7 +109,6 @@ pub fn oozeborn<'a>() -> Vec<RankAbility<'a>> {
                 The defense bonus against critical hits increases to \plus4.
             ",
             is_magical: false,
-            modifiers: None,
             rank: 6,
         },
         RankAbility {
@@ -129,7 +119,6 @@ pub fn oozeborn<'a>() -> Vec<RankAbility<'a>> {
               This means you take no penalties for squeezing unless you use the \ability{tight squeeze} ability (see \pcref{Flexibility}).
             ",
             is_magical: false,
-            modifiers: None,
             rank: 6,
         },
         RankAbility {
@@ -144,7 +133,6 @@ pub fn oozeborn<'a>() -> Vec<RankAbility<'a>> {
               You can use any of your arms as a pseudopod natural weapon, and your pseudopods gain the \weapontag{Light} weapon tag (see \pcref{Weapon Tags}).
             ",
             is_magical: false,
-            modifiers: None,
             rank: 7,
         },
     ]

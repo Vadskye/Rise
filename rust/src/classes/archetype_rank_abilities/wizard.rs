@@ -35,7 +35,6 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
                 Unlike normal for insight points, this does not directly grant you any additional abilities known.
                 Instead, for each insight point invested, the number of items you can maintain simultaneously with this ability increases by one.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -69,7 +68,6 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
                     This only counts as one item for the purpose of determining the number of items you can maintain with that ability.
                 }
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -79,7 +77,6 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain an additional alchemical discovery ability.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -89,7 +86,6 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain an additional alchemical discovery ability.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -99,7 +95,6 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 \glossterm{accuracy} bonus with alchemical items.
             ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
             complexity: 1,
@@ -110,7 +105,6 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
                 You gain a \plus1 bonus to your Fortitude defense.
                 In addition, you are immune to \atPoison attacks.
             ",
-            modifiers: Some(vec![Modifier::Defense(Defense::Fortitude, 1)]),
         },
         RankAbility {
             complexity: 0,
@@ -121,7 +115,6 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
                 You gain a \plus1 bonus to your Constitution.
                 In addition, you are immune to \atAcid attacks.
             ",
-            modifiers: Some(vec![Modifier::Attribute(Attribute::Constitution, 1)]),
         },
         RankAbility {
             complexity: 1,
@@ -131,7 +124,6 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can drink up to two doses of potions, elixirs, and other drinkable alchemical items as part of the same standard action.
             ",
-            modifiers: None,
         },
     ]
 }
@@ -163,7 +155,6 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
                 \advancement The maximum rank of arcane spells that you can learn is equal to your rank in this archetype.
                 Arcane spells also increase in power in unique ways based on your rank in this archetype, as indicated in their descriptions.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -186,10 +177,6 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
                 \end{magicalactiveability}
             ",
             // Assuming no other armor
-            modifiers: Some(vec![
-                Modifier::Defense(Defense::Armor, 2),
-                Modifier::Durability(2),
-            ]),
         },
     ];
     add_standard_spell_modifiers(&mut abilities);
@@ -208,7 +195,6 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
                 The maximum \glossterm{rank} of arcane ritual you can learn or perform is equal to the maximum rank of arcane spell that you can cast.
                 In addition, you automatically learn one free arcane ritual of each rank you have access to, including new ranks as you gain access to them.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -218,7 +204,6 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You learn an additional spell from any arcane \glossterm{mystic sphere} that you have access to.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -259,7 +244,6 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
                     \par You cannot choose this insight multiple times.
                 }
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -269,7 +253,6 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain an additional scholastic insight.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -279,7 +262,6 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain an additional scholastic insight.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -311,7 +293,6 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
                     You cannot alter those decisions when the contingency takes effect.
                 \end{magicalattuneability}
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -321,7 +302,6 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 When your \ability{contingency} activates, you only increase your fatigue level by one.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -335,7 +315,6 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
                 Whenever one of your contingencies triggers, your other contingencies \briefly cannot trigger.
                 If multiple contingencies would activate simultaneously, randomly choose only one to activate.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -345,7 +324,6 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Whenever you lead a ritual, it requires half the normal number of \glossterm{fatigue levels} and half the normal time to complete, to a minimum of one fatigue level.
             ",
-            modifiers: None,
         },
     ]
 }
@@ -362,11 +340,6 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 If you do, you gain a \plus1 accuracy bonus with the spell this turn.
                 However, you \glossterm{briefly} take a \minus2 penalty to all defenses.
             ",
-            modifiers: Some(vec![
-                Modifier::Accuracy(1),
-                Modifier::Defense(Defense::Armor, -2),
-                Modifier::Defense(Defense::Reflex, -2),
-            ]),
         },
         RankAbility {
             complexity: 2,
@@ -403,7 +376,6 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                         You can choose this ability multiple times, choosing a different spell each time.
                 }
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -413,7 +385,6 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain an additional metamagic ability.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -423,7 +394,6 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can spend \glossterm{insight points} to learn one additional metamagic ability per insight point.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -433,7 +403,6 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You learn an additional arcane spell.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -443,7 +412,6 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your Intelligence.
             ",
-            modifiers: Some(vec![Modifier::Attribute(Attribute::Intelligence, 1)]),
         },
         RankAbility {
             complexity: 1,
@@ -453,7 +421,6 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain an additional \glossterm{attunement point}.
             ",
-            modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
         RankAbility {
             complexity: 1,
@@ -463,10 +430,6 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your \glossterm{accuracy} and Mental defense.
             ",
-            modifiers: Some(vec![
-                Modifier::Accuracy(1),
-                Modifier::Defense(Defense::Mental, 1),
-            ]),
         },
     ]
 }
@@ -505,7 +468,6 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                     You can change which defense this bonus applies to as a \glossterm{minor action}.
             ",
             // Assume evocation
-            modifiers: Some(vec![Modifier::Power(2)]),
         },
         RankAbility {
             complexity: 0,
@@ -528,7 +490,6 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                     \subcf{Transmutation} The defense bonus increases to \plus3.
                 }
             ",
-            modifiers: Some(vec![Modifier::Power(3)]),
         },
         RankAbility {
             complexity: 0,
@@ -551,7 +512,6 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                     \subcf{Transmutation} The defense bonus increases to \plus4.
                 }
             ",
-            modifiers: Some(vec![Modifier::Power(4)]),
         },
         RankAbility {
             complexity: 1,
@@ -561,7 +521,6 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You learn an additional spell from any mystic sphere within your chosen school, even if you do not have access to that mystic sphere.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -573,7 +532,6 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                 If you already know at least three spells from all mystic spheres within your chosen school, you can instead gain an additional \glossterm{attunement point}.
                 You can only use this attunement point to \glossterm{attune} to spells from your chosen school.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -597,7 +555,6 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                 }
             ",
             // TODO: represent this somehow?
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -621,7 +578,6 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                 }
             ",
             // TODO: represent this somehow?
-            modifiers: None,
         },
     ]
 }

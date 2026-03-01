@@ -1,4 +1,4 @@
-use crate::classes::{calc_rank_abilities, Class, ClassArchetype};
+use crate::classes::{Class, ClassArchetype};
 use crate::core_mechanics::{Attribute, Defense, HasAttributes, HasResources, Resource};
 use crate::creatures::{creature, latex, HasModifiers, Modifier};
 use crate::equipment::{Armor, ArmorMaterial, ArmorUsageClass, HasArmor, StandardWeapon, Weapon};
@@ -14,18 +14,6 @@ impl Character {
     // archetypes should be provided in the order that they should be ranked up
     pub fn new(class: Class, level: i32, archetypes: [ClassArchetype; 3]) -> Character {
         let mut creature = creature::Creature::new(level);
-
-        for rank_ability in calc_rank_abilities(level, &archetypes) {
-            if let Some(rank_modifiers) = rank_ability.modifiers {
-                for modifier in rank_modifiers {
-                    creature.add_modifier(
-                        modifier.clone(),
-                        Some(rank_ability.name),
-                        Some(rank_ability.rank),
-                    );
-                }
-            }
-        }
 
         for defense in Defense::all() {
             let bonus = class.defense_bonus(&defense);

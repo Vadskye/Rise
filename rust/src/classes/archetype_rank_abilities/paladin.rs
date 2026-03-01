@@ -35,7 +35,6 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             ",
             // Most auras loosely correlate to +0.5 accuracy in an AOE? For power level purposes,
             // approximate as a personal +1 accuracy.
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
             complexity: 1,
@@ -54,7 +53,6 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
                 % 0.7a per ally
                 \subcf{Law} The effect triggers on rolling either a 1 or a 2.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -72,7 +70,6 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
                 \subparhead{Law} The effect triggers on rolling anything less than a 5.
             ",
             // Another awkward approximation
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
             complexity: 1,
@@ -87,7 +84,6 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
                 \subparhead{Good} You are immune to \atCurse attacks and being \dominated.
                 \subparhead{Law} You are immune to \atEmotion attacks.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -97,7 +93,6 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 This immunity is shared with your \glossterm{allies} within the area of your \textit{aligned aura}.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -107,7 +102,6 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your \glossterm{magical power} and \glossterm{mundane power}.
             ",
-            modifiers: Some(vec![Modifier::Power(1)]),
         },
         RankAbility {
             complexity: 0,
@@ -117,7 +111,6 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The power bonuses increase to \plus2.
             ",
-            modifiers: Some(vec![Modifier::Power(1)]),
         },
     ]
 }
@@ -148,7 +141,6 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
                 \advancement The maximum rank of divine spells that you can learn is equal to your rank in this archetype.
                 Divine spells also increase in power in unique ways based on your rank in this archetype, as indicated in their descriptions.
             ",
-        modifiers: None,
     }]
 }
 
@@ -162,7 +154,6 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Whenever you cast a \glossterm{targeted} spell that does not have the \abilitytag{Attune} or \abilitytag{Sustain} tags, you may add yourself or a creature adjacent to you as a \glossterm{secondary target} of the spell.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -174,7 +165,6 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
                 You do not have to have access to that mystic sphere.
                 When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -184,7 +174,6 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You learn an additional spell with this ability.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -194,7 +183,6 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can add a second \glossterm{secondary target}, and each additional target can be within 10 feet instead of adjacent to you.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -204,7 +192,6 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your Willpower.
             ",
-            modifiers: Some(vec![Modifier::Attribute(Attribute::Willpower, 1)]),
         },
         RankAbility {
             complexity: 1,
@@ -214,7 +201,6 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain an additional \glossterm{attunement point}.
             ",
-            modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
         RankAbility {
             complexity: 1,
@@ -224,10 +210,6 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your \glossterm{accuracy} and Armor defense.
             ",
-            modifiers: Some(vec![
-                Modifier::Accuracy(1),
-                Modifier::Defense(Defense::Armor, 1),
-            ]),
         },
     ]
 }
@@ -259,7 +241,6 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
                 \end{magicalactiveability}
 
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -271,7 +252,6 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
                 If you do, you increase your \glossterm{fatigue level} by two.
                 Otherwise, you are \glossterm{briefly} \focused.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -282,7 +262,6 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
                 You gain a \plus2 bonus to your \glossterm{durability}.
                 In addition, you gain a \plus1 bonus to your \glossterm{vital rolls} (see \pcref{Vital Wounds}).
             ",
-            modifiers: Some(vec![Modifier::Durability(2), Modifier::VitalRoll(1)]),
         },
         RankAbility {
             complexity: 0,
@@ -292,7 +271,6 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 This durability bonus increases to \plus4, and the vital roll bonus increases to \plus2.
             ",
-            modifiers: Some(vec![Modifier::Durability(2), Modifier::VitalRoll(1)]),
         },
         RankAbility {
             complexity: 0,
@@ -302,10 +280,6 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your Armor and Fortitude defenses.
             ",
-            modifiers: Some(vec![
-                Modifier::Defense(Defense::Armor, 1),
-                Modifier::Defense(Defense::Fortitude, 1),
-            ]),
         },
         RankAbility {
             complexity: 0,
@@ -315,7 +289,6 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your Constitution.
             ",
-            modifiers: Some(vec![Modifier::Attribute(Attribute::Constitution, 1)]),
         },
         RankAbility {
             complexity: 1,
@@ -326,7 +299,6 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
                 Each vital wound you suffer only causes a \minus1 penalty to \glossterm{vital rolls} instead of the normal \minus2 penalty.
                 In addition, whenever you gain a vital wound, you remove one of your \glossterm{fatigue levels}.
             ",
-            modifiers: None,
         },
     ]
 }
@@ -359,7 +331,6 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
                 \end{magicalactiveability}
             ",
             // TODO: represent special attacks
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -379,7 +350,6 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
                     \rank{6} The area changes to a \largearea radius instead of a cone.
                 \end{magicalactiveability}
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -389,7 +359,6 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You are immune to being \frightened and \panicked.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 3,
@@ -400,7 +369,6 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
                 Whenever you miss a creature with a \glossterm{strike}, you \glossterm{briefly} reroll your attack rolls against that creature once and keep the higher result.
                 This does not affect your attack rolls against other creatures.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -410,7 +378,6 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 \glossterm{accuracy} bonus.
             ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
             complexity: 1,
@@ -420,7 +387,6 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You are immune to being \dazzled and \blinded.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -443,7 +409,6 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
                     Persecution of those who share your ideals can lead you to fall and become an ex-paladin.
                 \end{magicalactiveability}
             ",
-            modifiers: None,
         },
     ]
 }

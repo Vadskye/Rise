@@ -29,7 +29,6 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
                 \advancement The maximum rank of divine spells that you can learn is equal to your rank in this archetype.
                 Divine spells also increase in power in unique ways based on your rank in this archetype, as indicated in their descriptions.
             ",
-        modifiers: None,
     }]
 }
 
@@ -43,7 +42,6 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus2 bonus to your Knowledge (religion) skill and a \plus1 bonus to your \glossterm{magical power}.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -78,7 +76,6 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                         You can choose this ability multiple times, choosing a different spell each time.
                 }
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -88,7 +85,6 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You learn an additional divine spell.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -98,7 +94,6 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain an additional metamagic ability.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -108,7 +103,6 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your Willpower.
             ",
-            modifiers: Some(vec![Modifier::Attribute(Attribute::Willpower, 1)]),
         },
         RankAbility {
             complexity: 1,
@@ -118,7 +112,6 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain an additional \glossterm{attunement point}.
             ",
-            modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
         RankAbility {
             complexity: 1,
@@ -128,10 +121,6 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your \glossterm{accuracy} and Mental defense.
             ",
-            modifiers: Some(vec![
-                Modifier::Accuracy(1),
-                Modifier::Defense(Defense::Mental, 1),
-            ]),
         },
     ]
 }
@@ -178,7 +167,6 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
             ",
             // Domain gifts are weird; most don't have direct statistical benefits, so this is
             // mostly irrelevant.
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -190,7 +178,6 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
                 You gain the domain aspect ability for one of your domains (see \pcref{Cleric Domain Abilities}).
             ",
             // Domain aspects are also weird. Some give statistical benfits, but many don't
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -200,7 +187,6 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain the domain aspect for another one of your domains.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -211,7 +197,6 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
                 Each domain has a corresponding domain essence.
                 You gain the domain essence for one of your domains (see \pcref{Cleric Domain Abilities}).
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -221,7 +206,6 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain the domain essence for another one of your domains.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -246,7 +230,6 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
                     If you perform an extraordinary service for your deity, you may gain the ability to request an additional miracle, at your deity's discretion.
                 \end{magicalactiveability}
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -257,7 +240,6 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
                 Each domain has a corresponding \ability{domain mastery}.
                 You gain the domain mastery for both of your domains (see \pcref{Cleric Domain Abilities}).
             ",
-            modifiers: None,
         },
     ]
 }
@@ -286,7 +268,6 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                     \rank{7} The base healing increases to 2d10, and the bonus healing increases to 1d10 per power.
                 \end{magicalactiveability}
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -297,13 +278,6 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                 You gain a \plus1 bonus to all defenses.
                 Whenever you attack or deal damage to a living creature, you \glossterm{briefly} lose this bonus.
             ",
-            modifiers: Some(vec![
-                Modifier::Defense(Defense::Armor, 1),
-                Modifier::Defense(Defense::Brawn, 1),
-                Modifier::Defense(Defense::Fortitude, 1),
-                Modifier::Defense(Defense::Reflex, 1),
-                Modifier::Defense(Defense::Mental, 1),
-            ]),
         },
         RankAbility {
             complexity: 0,
@@ -313,13 +287,6 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The defense bonus increases to \plus2.
             ",
-            modifiers: Some(vec![
-                Modifier::Defense(Defense::Armor, 1),
-                Modifier::Defense(Defense::Brawn, 1),
-                Modifier::Defense(Defense::Fortitude, 1),
-                Modifier::Defense(Defense::Reflex, 1),
-                Modifier::Defense(Defense::Mental, 1),
-            ]),
         },
         RankAbility {
             complexity: 2,
@@ -338,7 +305,6 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                     \rank{7} The target can remove an additional \glossterm{vital wound}.
                 \end{magicalactiveability}
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -350,7 +316,6 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                 In addition, you can choose to \glossterm{teleport} to any one of those allies.
                 You arrive in the unoccupied square on solid ground closest to that ally.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -360,7 +325,6 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 This ability no longer requires \glossterm{line of sight} or \glossterm{line of effect}, and the range increases to \extrange.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -375,7 +339,6 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                     If it belongs to a creature that has been dead for no more than 1 minute, that creature is \glossterm{resurrected} (see \pcref{Resurrection}).
                 \end{magicalactiveability}
             ",
-            modifiers: None,
         },
     ]
 }
@@ -403,7 +366,6 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                     \rank{7} Each target is stunned as a condition regardless of whether it is injured.
                 \end{activeability}
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -414,7 +376,6 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                 You gain a \plus2 bonus to the Persuasion skill.
                 In addition, you are immune to being \stunned.
             ",
-            modifiers: Some(vec![Modifier::Skill(Skill::Persuasion, 2)]),
         },
         RankAbility {
             complexity: 1,
@@ -425,7 +386,6 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                 The Persuasion bonus increases to \plus4.
                 In addition, you are immune to being \confused.
             ",
-            modifiers: Some(vec![Modifier::Skill(Skill::Persuasion, 2)]),
         },
         RankAbility {
             complexity: 2,
@@ -437,7 +397,6 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                 If you do, it gains the \atAuditory tag.
                 The standard areas are \tinyarea, \smallarea, \medarea, \largearea, \hugearea, and \gargarea.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -449,7 +408,6 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                 You must say inspiring words every few turns to grant your allies this effect, though they can be brief, so this does not take an action.
             ",
             // TODO: figure out allies-only buffs
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -459,7 +417,6 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your \glossterm{allies} also take half damage from abilities that you modify in this way.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -472,7 +429,6 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                 Instead, they must only be able to hear you clearly.
                 This does not affect abilities that do not have a defined range measured in feet, such as abilities that require \glossterm{touch}.
             ",
-            modifiers: None,
         },
     ]
 }

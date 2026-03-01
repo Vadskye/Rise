@@ -31,7 +31,6 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
                 \advancement The maximum rank of arcane spells that you can learn is equal to your rank in this archetype.
                 Arcane spells also increase in power in unique ways based on your rank in this archetype, as indicated in their descriptions.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -54,10 +53,6 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
                 \end{magicalactiveability}
             ",
             // Assuming no other armor
-            modifiers: Some(vec![
-                Modifier::Defense(Defense::Armor, 2),
-                Modifier::Durability(2),
-            ]),
         },
     ];
     add_standard_spell_modifiers(&mut abilities);
@@ -75,7 +70,6 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 You gain a \plus1 bonus to your \glossterm{magical power}.
                 If your Constitution is 4 or higher, you gain an additional \plus1 bonus.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -111,7 +105,6 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                         You can choose this ability multiple times, choosing a different spell each time.
                 }
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -121,7 +114,6 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain an additional metamagic ability.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -131,7 +123,6 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You learn an additional arcane spell.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -141,7 +132,6 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your Willpower.
             ",
-            modifiers: Some(vec![Modifier::Attribute(Attribute::Willpower, 1)]),
         },
         RankAbility {
             complexity: 1,
@@ -151,7 +141,6 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain an additional \glossterm{attunement point}.
             ",
-            modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
         RankAbility {
             complexity: 1,
@@ -161,10 +150,6 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your \glossterm{accuracy} and Fortitude defense.
             ",
-            modifiers: Some(vec![
-                Modifier::Accuracy(1),
-                Modifier::Defense(Defense::Fortitude, 1),
-            ]),
         },
     ]
 }
@@ -198,7 +183,6 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
                     \end{dtabularx}
                 \end{columntable}
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -208,7 +192,6 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You learn a spell from your dragon's \glossterm{mystic sphere}, even if you do not have access to that mystic sphere.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -218,7 +201,6 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a +3 bonus to your \glossterm{durability}.
             ",
-            modifiers: Some(vec![Modifier::Durability(3)]),
         },
         RankAbility {
             complexity: 0,
@@ -228,7 +210,6 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The durability bonus increases to +5.
             ",
-            modifiers: Some(vec![Modifier::Durability(2)]),
         },
         RankAbility {
             complexity: 1,
@@ -238,7 +219,6 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 accuracy bonus with any ability that has your dragon's associated ability tag.
             ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
             complexity: 0,
@@ -248,7 +228,6 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your Constitution.
             ",
-            modifiers: Some(vec![Modifier::Attribute(Attribute::Constitution, 1)]),
         },
         RankAbility {
             complexity: 0,
@@ -258,7 +237,6 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You become immune to attacks that have your dragon's associated ability tag.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -268,10 +246,6 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your Intelligence and Willpower.
             ",
-            modifiers: Some(vec![
-                Modifier::Attribute(Attribute::Intelligence, 1),
-                Modifier::Attribute(Attribute::Willpower, 1),
-            ]),
         },
     ]
 }
@@ -286,7 +260,6 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 None of your arcane spells have \glossterm{somatic components} or \glossterm{verbal components}.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -298,7 +271,6 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
             ",
             // TODO: figure out stacking limitations? For now, this conflicts with magic items, so
             // treat it like you have extra attunement points instead.
-            modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 2)]),
         },
         RankAbility {
             complexity: 0,
@@ -308,7 +280,6 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 \glossterm{enhancement bonus} to a different attribute of your choice.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -329,7 +300,6 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
                 This means it remains traced until you finish a \glossterm{long rest}.
                 When you persist an ability in this way, you stop persisting any other traced abilities.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -342,7 +312,6 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
                 If you persist a fourth ability, you choose which persisted ability to remove.
                 You still lose all persisted abilities when you finish a long rest.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -354,7 +323,6 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
                 You must still have it on your person, such as in a pocket or strapped to your back, and you must still be attuned to it to gain its benefits.
                 This ability only affects one implement at a time.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -365,7 +333,6 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
                 You gain a \plus2 bonus to your defenses against \magical attacks.
                 In addition, you are immune to magical attacks from creatures that are rank 5 or lower.
             ",
-            modifiers: None,
         },
     ]
 }
@@ -405,7 +372,6 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                 Any wildspell effects that do not make sense for a particular spell have no effect.
             ",
             // TODO: define extra damage modifier for scaling
-            modifiers: Some(vec![Modifier::Power(2)]),
         },
         RankAbility {
             complexity: 0,
@@ -415,7 +381,6 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus2 bonus to the wild magic roll.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -427,7 +392,6 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                 The spell does not have to be from a mystic sphere on the arcane mystic sphere list.
                 As normal, you can change which spell you learn with this ability as you gain access to new spell ranks.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -437,7 +401,6 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You learn an additional spell with this ability.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -448,7 +411,6 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                 You gain a \plus2 bonus to the roll when you use the \ability{desperate exertion} ability.
                 This bonus stacks with the normal \plus2 bonus provided by that ability.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -459,7 +421,6 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                 If you use the \textit{desperate exertion} ability on a spell affected by this ability, you can reroll the wild magic roll for that spell in addition to the normal effects of the \textit{desperate exertion} ability.
                 You do not gain any bonus to the wild magic reroll.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -469,7 +430,6 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Once per \glossterm{short rest}, you can use the \ability{desperate exertion} ability without increasing your \glossterm{fatigue level}.
             ",
-            modifiers: None,
         },
     ]
 }

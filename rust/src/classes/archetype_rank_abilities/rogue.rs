@@ -1,6 +1,5 @@
 use super::standard_modifiers::add_standard_maneuver_modifiers;
 use crate::classes::archetype_rank_abilities::RankAbility;
-use crate::core_mechanics::attacks::Maneuver;
 use crate::core_mechanics::{Attribute, DamageDice, Resource};
 use crate::creatures::Modifier;
 use crate::skills::{KnowledgeSubskill, Skill};
@@ -30,7 +29,6 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
                     \rank{7} The extra damage increases to 8d10.
                 \end{activeability}
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -42,7 +40,6 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
                 You must already be proficient with all Compact and Light non-exotic weapons.
             ",
             // This is an abstraction of the effect of exotic weapons being better
-            modifiers: Some(vec![Modifier::ExtraDamage(DamageDice::new(0))]),
         },
         RankAbility {
             complexity: 1,
@@ -53,7 +50,6 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
                 You take no damage when an area ability attacks and misses your Armor or Reflex defense.
                 This does not protect you from any non-damaging effects of those abilities, or from abilities that affect multiple specific targets without affecting an area.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -63,7 +59,6 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 This ability also protects you from area attacks against your Brawn, Fortitude, and Mental defenses.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -90,7 +85,6 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
                     Each time, you can choose a different sense group.
                 \end{attuneability}
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -100,7 +94,6 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Each time you attune to this ability, you can choose up to three of the possible sense groups rather than only one.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -110,7 +103,6 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your Dexterity.
             ",
-            modifiers: Some(vec![Modifier::Attribute(Attribute::Dexterity, 1)]),
         },
         RankAbility {
             complexity: 2,
@@ -124,7 +116,6 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
                     As a \brief effect, whenever you make a \glossterm{strike} against the target while it is adjacent to you and \unaware of the attack, the strike deals double damage.
                 \end{activeability}
             ",
-            modifiers: None,
         },
     ];
     add_sneak_attack(&mut abilities);
@@ -136,7 +127,6 @@ fn add_sneak_attack(abilities: &mut Vec<RankAbility<'_>>) {
         abilities.append(&mut vec![RankAbility {
             name: "Sneak Attack Scaling",
             rank,
-            modifiers: Some(vec![Modifier::Maneuver(Maneuver::SneakAttack(rank))]),
             ..Default::default()
         }]);
     }
@@ -214,7 +204,6 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 \advancement The maximum rank of bardic spells that you can learn is equal to your rank in this archetype.
                 Bardic spells also increase in power in unique ways based on your rank in this archetype, as indicated in their descriptions.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -224,7 +213,6 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a bonus equal to your rank in this archetype to Knowledge skills that you are untrained in (see \pcref{Trained Skills}).
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -234,19 +222,6 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus2 bonus to all Knowledge skills.
             ",
-            modifiers: Some(vec![Modifier::Skill(
-                Skill::Knowledge(vec![
-                    KnowledgeSubskill::Arcana,
-                    KnowledgeSubskill::Dungeoneering,
-                    KnowledgeSubskill::Engineering,
-                    KnowledgeSubskill::Items,
-                    KnowledgeSubskill::Local,
-                    KnowledgeSubskill::Nature,
-                    KnowledgeSubskill::Planes,
-                    KnowledgeSubskill::Religion,
-                ]),
-                2,
-            )]),
         },
         RankAbility {
             complexity: 0,
@@ -256,7 +231,6 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You are \buff{immune} to \abilitytag{Auditory} attacks.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -266,7 +240,6 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your \glossterm{magical power} and \glossterm{mundane power}.
             ",
-            modifiers: Some(vec![Modifier::Power(1)]),
         },
         RankAbility {
             complexity: 0,
@@ -276,7 +249,6 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You are \impervious to \abilitytag{Visual} attacks.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -286,7 +258,6 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Once per turn, you can \glossterm{sustain} a bardic spell that has the \atSustain (minor) tag as a \glossterm{free action}.
             ",
-            modifiers: None,
         },
     ]
 }
@@ -313,7 +284,6 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
 
                 \advancement Some trick maneuvers also increase in power in unique ways based on your rank in this archetype, as indicated in their descriptions.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -323,7 +293,6 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain access to rank 3 trick maneuvers.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -333,7 +302,6 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain access to rank 5 trick maneuvers.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -343,7 +311,6 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain access to rank 7 trick maneuvers.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -377,7 +344,6 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
                     \parhead{Precise Maneuver} You gain an accuracy bonus equal to your excess rank.
                 }
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -387,7 +353,6 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can also choose an augment for each of your rank 3 trick maneuvers.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -397,7 +362,6 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can also choose an augment for each of your rank 5 trick maneuvers.
             ",
-            modifiers: None,
         },
     ];
     add_standard_maneuver_modifiers(&mut abilities);
@@ -415,7 +379,6 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
                 You gain two additional \glossterm{insight points}.
                 In addition, you can spend insight points to gain one additional \glossterm{trained skill} per insight point.
             ",
-            modifiers: Some(vec![Modifier::Resource(Resource::InsightPoint, 2)]),
         },
         RankAbility {
             complexity: 1,
@@ -425,44 +388,6 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to all skills.
             ",
-            modifiers: Some(vec![
-                Modifier::Resource(Resource::TrainedSkill, 1),
-                Modifier::Skill(Skill::Awareness, 1),
-                Modifier::Skill(Skill::Balance, 1),
-                Modifier::Skill(Skill::Climb, 1),
-                Modifier::Skill(Skill::Craft, 1),
-                Modifier::Skill(Skill::CreatureHandling, 1),
-                Modifier::Skill(Skill::Deception, 1),
-                Modifier::Skill(Skill::Deduction, 1),
-                Modifier::Skill(Skill::Devices, 1),
-                Modifier::Skill(Skill::Disguise, 1),
-                Modifier::Skill(Skill::Endurance, 1),
-                Modifier::Skill(Skill::Flexibility, 1),
-                Modifier::Skill(Skill::Intimidate, 1),
-                Modifier::Skill(
-                    Skill::Knowledge(vec![
-                        KnowledgeSubskill::Arcana,
-                        KnowledgeSubskill::Dungeoneering,
-                        KnowledgeSubskill::Engineering,
-                        KnowledgeSubskill::Items,
-                        KnowledgeSubskill::Local,
-                        KnowledgeSubskill::Nature,
-                        KnowledgeSubskill::Planes,
-                        KnowledgeSubskill::Religion,
-                    ]),
-                    1,
-                ),
-                Modifier::Skill(Skill::Medicine, 1),
-                Modifier::Skill(Skill::Perform, 1),
-                Modifier::Skill(Skill::Persuasion, 1),
-                Modifier::Skill(Skill::Profession, 1),
-                Modifier::Skill(Skill::Ride, 1),
-                Modifier::Skill(Skill::SleightOfHand, 1),
-                Modifier::Skill(Skill::SocialInsight, 1),
-                Modifier::Skill(Skill::Stealth, 1),
-                Modifier::Skill(Skill::Survival, 1),
-                Modifier::Skill(Skill::Swim, 1),
-            ]),
         },
         RankAbility {
             complexity: 2,
@@ -475,7 +400,6 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
                 In addition, you gain an additional \glossterm{attunement point}.
                 You can only use this attunement point to \glossterm{attune} to magic wands.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -485,7 +409,6 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to all of your defenses that are lower than your highest defense.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -496,44 +419,6 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
                 The skill bonus increases to \plus2.
                 In addition, using the \ability{desperate exertion} ability to affect a skill check only increases your \glossterm{fatigue level} by one.
             ",
-            modifiers: Some(vec![
-                Modifier::Resource(Resource::TrainedSkill, 1),
-                Modifier::Skill(Skill::Awareness, 1),
-                Modifier::Skill(Skill::Balance, 1),
-                Modifier::Skill(Skill::Climb, 1),
-                Modifier::Skill(Skill::Craft, 1),
-                Modifier::Skill(Skill::CreatureHandling, 1),
-                Modifier::Skill(Skill::Deception, 1),
-                Modifier::Skill(Skill::Deduction, 1),
-                Modifier::Skill(Skill::Devices, 1),
-                Modifier::Skill(Skill::Disguise, 1),
-                Modifier::Skill(Skill::Endurance, 1),
-                Modifier::Skill(Skill::Flexibility, 1),
-                Modifier::Skill(Skill::Intimidate, 1),
-                Modifier::Skill(
-                    Skill::Knowledge(vec![
-                        KnowledgeSubskill::Arcana,
-                        KnowledgeSubskill::Dungeoneering,
-                        KnowledgeSubskill::Engineering,
-                        KnowledgeSubskill::Items,
-                        KnowledgeSubskill::Local,
-                        KnowledgeSubskill::Nature,
-                        KnowledgeSubskill::Planes,
-                        KnowledgeSubskill::Religion,
-                    ]),
-                    1,
-                ),
-                Modifier::Skill(Skill::Medicine, 1),
-                Modifier::Skill(Skill::Perform, 1),
-                Modifier::Skill(Skill::Persuasion, 1),
-                Modifier::Skill(Skill::Profession, 1),
-                Modifier::Skill(Skill::Ride, 1),
-                Modifier::Skill(Skill::SleightOfHand, 1),
-                Modifier::Skill(Skill::SocialInsight, 1),
-                Modifier::Skill(Skill::Stealth, 1),
-                Modifier::Skill(Skill::Survival, 1),
-                Modifier::Skill(Skill::Swim, 1),
-            ]),
         },
         RankAbility {
             complexity: 0,
@@ -544,7 +429,6 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
                 You gain a \plus1 bonus to an attribute of your choice.
             ",
             // Arbitrarily choose Dex, which should be good for rogues
-            modifiers: Some(vec![Modifier::Attribute(Attribute::Dexterity, 1)]),
         },
         RankAbility {
             complexity: 0,
@@ -555,10 +439,6 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
                 You gain a \plus1 bonus to two attributes of your choice.
             ",
             // Arbitrarily choose Intelligence
-            modifiers: Some(vec![
-                Modifier::Attribute(Attribute::Intelligence, 1),
-                Modifier::Attribute(Attribute::Perception, 1),
-            ]),
         },
     ]
 }
@@ -581,7 +461,6 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                 \end{activeability}
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -591,11 +470,6 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus2 bonus to your Deception, Persuasion, and Social Insight skills.
             ",
-            modifiers: Some(vec![
-                Modifier::Skill(Skill::Deception, 2),
-                Modifier::Skill(Skill::Persuasion, 2),
-                Modifier::Skill(Skill::SocialInsight, 2),
-            ]),
         },
         RankAbility {
             complexity: 0,
@@ -605,11 +479,6 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus increases to \plus4.
             ",
-            modifiers: Some(vec![
-                Modifier::Skill(Skill::Deception, 2),
-                Modifier::Skill(Skill::Persuasion, 2),
-                Modifier::Skill(Skill::SocialInsight, 2),
-            ]),
         },
         RankAbility {
             complexity: 2,
@@ -631,7 +500,6 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
                     You gain a \plus2 \glossterm{accuracy} bonus with the attack for each rank beyond 3.
                 \end{activeability}
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -641,7 +509,6 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus2 bonus to your Mental defense, and you are \impervious to \atEmotion attacks.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -652,7 +519,6 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
                 You can use your \ability{fool them once} ability twice per \glossterm{short rest}.
                 However, after using that ability, you \briefly can't use it again.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -664,7 +530,6 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
                 In addition, enemies are at least \partiallyunaware of your attacks until they take their first turn, even if they can see you clearly.
                 This does not affect creatures that join while the combat is already active.
             ",
-            modifiers: None,
         },
     ]
 }

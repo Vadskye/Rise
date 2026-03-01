@@ -19,7 +19,6 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
                     You regain half of your maximum \glossterm{hit points}.
                 \end{activeability}
             ",
-            modifiers: None,
         },
         // A normal rank 2 ability would give +3 durability. This gives +2HP for +4 IP.
         RankAbility {
@@ -31,7 +30,6 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
                 You gain a \plus4 bonus to your \glossterm{durability} (see \pcref{Durability}).
                 However, you also increase your \glossterm{injury point} by 4.
             ",
-            modifiers: None,
         },
         // A normal rank 6 ability would give +5 durability. This gives +18 HP for +18 IP.
         RankAbility {
@@ -42,7 +40,6 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The durability bonus increases to \plus8, and the injury point bonus increases to 20.
             ",
-            modifiers: None,
         },
         // Half HP damage is roughly half as effective as half damage, so 0.4 EA.
         // A maneuver can get 0.4 EA buff on hit, so this class feature can give a 0.4 EA buff
@@ -65,7 +62,6 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
                     \rank{7} The strike deals triple damage instead of double damage.
                 \end{activeability}
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -75,7 +71,6 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your Constitution.
             ",
-            modifiers: Some(vec![Modifier::Attribute(Attribute::Constitution, 1)]),
         },
         RankAbility {
             complexity: 1,
@@ -87,7 +82,6 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
                 In addition, when you use the \ability{recover} ability, you can also remove a \glossterm{vital wound}.
                 When you do, you increase your \glossterm{fatigue level} by two.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -102,7 +96,6 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
                 Any excess damage beyond that point does not reduce your hit points, but it does offset any healing you receive before your next turn.
                 Attacks with special effects, such as inflicting conditions on you, still treat you as if you lost hit points from the attack.
             ",
-            modifiers: None,
         },
     ]
 }
@@ -130,11 +123,6 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                     When this ability ends, you are \glossterm{briefly} \stunned.
                 \end{sustainability}
             ",
-            modifiers: Some(vec![
-                Modifier::Accuracy(2),
-                Modifier::Defense(Defense::Armor, -2),
-                Modifier::Defense(Defense::Reflex, -2),
-            ]),
         },
         RankAbility {
             complexity: 0,
@@ -145,7 +133,6 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                 You gain a \plus1 bonus to your \glossterm{mundane power}.
                 If your Willpower is 3 or higher, you gain an additional \plus1 bonus.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -166,7 +153,6 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                 \end{activeability}
             ",
             // This is too inconsistent to add as a generally usable strike
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -176,7 +162,6 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your Strength.
             ",
-            modifiers: Some(vec![Modifier::Attribute(Attribute::Strength, 1)]),
         },
         RankAbility {
             complexity: 1,
@@ -187,7 +172,6 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                 During your \ability{rage} ability, you are unaffected by all \glossterm{vital wound} effects except for unconsciousness and death.
                 Each vital wound still causes the normal \minus2 penalty to \glossterm{vital rolls}.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -198,7 +182,6 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                 The power bonus increases to \plus2.
                 If your Willpower is 6 or higher, you gain an additional \plus1 bonus.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -212,7 +195,6 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                 Since this is a \glossterm{mundane} ability, it stacks with other size-increasing effects (see \pcref{Stacking Rules}).
             ",
             // TODO: fully represent an increased size category
-            modifiers: Some(vec![Modifier::BaseSpeed(10)]),
         },
     ]
 }
@@ -229,7 +211,6 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
                 You must already be proficient with all non-exotic weapons from that weapon group.
             ",
             // This is an abstraction of the effect of exotic weapons being better
-            modifiers: Some(vec![Modifier::ExtraDamage(DamageDice::new(0))]),
         },
         RankAbility {
             complexity: 0,
@@ -239,7 +220,6 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your \glossterm{brawling accuracy} (see \pcref{Brawling Accuracy}).
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -257,7 +237,6 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
                 You can invest up to two additional \glossterm{insight points} into this ability.
                 For each insight point, you can choose a different one of these benefits.
             ",
-            modifiers: Some(vec![Modifier::MovementSpeed(MovementMode::Land, 10)]),
         },
         RankAbility {
             complexity: 2,
@@ -280,7 +259,6 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
                     \rank{7} The strike deals quadruple \glossterm{weapon damage}.
                 \end{activeability}
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -290,7 +268,6 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your Dexterity.
             ",
-            modifiers: Some(vec![Modifier::Attribute(Attribute::Dexterity, 1)]),
         },
         RankAbility {
             complexity: 0,
@@ -300,7 +277,6 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus10 foot bonus to your \glossterm{speed}.
             ",
-            modifiers: Some(vec![Modifier::MovementSpeed(MovementMode::Land, 10)]),
         },
         RankAbility {
             complexity: 1,
@@ -312,7 +288,6 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
                 You may treat all non-projectile weapons you use as if they had the chosen tag.
                 If you choose the Thrown weapon tag, it does not affect your \glossterm{natural weapons}.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -323,7 +298,6 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
                 Once per turn, you can use the \ability{sprint} ability without increasing your \glossterm{fatigue level}.
                 After using this ability, you \briefly can't use it again.
             ",
-            modifiers: None,
         },
     ]
 }
@@ -350,7 +324,6 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
 
                 \advancement Some primal maneuvers also increase in power in unique ways based on your rank in this archetype, as indicated in their descriptions.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -360,7 +333,6 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain access to rank 3 primal maneuvers.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -370,7 +342,6 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain access to rank 5 primal maneuvers.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -380,7 +351,6 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain access to rank 7 primal maneuvers.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -414,7 +384,6 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
                     You can only apply this augment to maneuvers that affect an area.
                 }
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -424,7 +393,6 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can also choose an augment for each of your rank 3 primal maneuvers.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -434,7 +402,6 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can also choose an augment for each of your rank 5 primal maneuvers.
             ",
-            modifiers: None,
         },
     ];
     add_standard_maneuver_modifiers(&mut abilities);
@@ -465,7 +432,6 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
                 \subcf{Shark} You gain a \plus1 \glossterm{accuracy} bonus against creatures that are \glossterm{injured}.
             ",
             // For convenience in balancing, assume lion totem instead of representing each totem
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
             // Varies between animal
@@ -487,7 +453,6 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
 
                 \subcf{Shark} The accuracy bonus increases to \plus2.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -508,7 +473,6 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
 
                 \subcf{Shark} The accuracy bonus increases to \plus3.
             ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
             complexity: 2,
@@ -534,7 +498,6 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
                     \rank{7} Both strikes deal 1d8 \glossterm{extra damage}.
                 \end{activeability}
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -545,7 +508,6 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
                 You gain a \plus1 accuracy bonus.
             ",
             // TODO: figure out how to represent this
-            modifiers: None,
         },
         RankAbility {
             // Varies between animals
@@ -563,10 +525,6 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
                     \itemhead{Shark} \plus2 Swim and you gain the \sense{scent} ability (see \pcref{Tracking}).
                 \end{raggeditemize}
             ",
-            modifiers: Some(vec![
-                // Arbitrarily stick with Lion
-                Modifier::Skill(Skill::Intimidate, 2),
-            ]),
         },
         RankAbility {
             complexity: 0,
@@ -583,11 +541,6 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
                     \itemhead{Shark} \plus4 Swim, \plus2 Survival, and \plus2 Awareness.
                 \end{raggeditemize}
             ",
-            modifiers: Some(vec![
-                Modifier::Skill(Skill::CreatureHandling, 2),
-                // Arbitrarily stick with Lion
-                Modifier::Skill(Skill::Intimidate, 2),
-            ]),
         },
     ]
 }

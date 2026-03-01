@@ -15,7 +15,6 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                 You do not have to have access to that mystic sphere.
                 As normal, you can change which spell you learn with this ability as you gain access to new spell ranks.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -25,7 +24,6 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You learn an additional spell with this ability.
             ",
-            modifiers: None,
         },
         // Like Smite, but only adds half Str instead of full Str and has extra tags
         RankAbility {
@@ -50,7 +48,6 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                     \rank{7} The extra damage increases to 1d6 per 2 power.
                 \end{magicalactiveability}
             ",
-            modifiers: Some(vec![Modifier::Maneuver(Maneuver::ElementalStrike(1))]),
         },
         RankAbility {
             // Ignore complexity, assume you are a caster
@@ -61,7 +58,6 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 If you do not have access to nature magic, you become \impervious to \atAir, \atEarth, and \atWater attacks.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -69,7 +65,6 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: "",
-            modifiers: Some(vec![Modifier::Maneuver(Maneuver::ElementalStrike(3))]),
         },
         RankAbility {
             complexity: 0,
@@ -77,7 +72,6 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 5,
             description: "",
-            modifiers: Some(vec![Modifier::Maneuver(Maneuver::ElementalStrike(5))]),
         },
         RankAbility {
             complexity: 0,
@@ -85,7 +79,6 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: "",
-            modifiers: Some(vec![Modifier::Maneuver(Maneuver::ElementalStrike(7))]),
         },
         RankAbility {
             complexity: 0,
@@ -95,7 +88,6 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your \glossterm{magical power} and \glossterm{mundane power}.
             ",
-            modifiers: Some(vec![Modifier::Power(1)]),
         },
         RankAbility {
             complexity: 0,
@@ -105,7 +97,6 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The power bonuses increase to \plus2.
             ",
-            modifiers: Some(vec![Modifier::Power(1)]),
         },
         RankAbility {
             complexity: 2,
@@ -122,7 +113,6 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                 \end{raggeditemize}
             ",
             // TODO: represent movement speeds
-            modifiers: Some(vec![Modifier::Defense(Defense::Fortitude, 1)]),
         },
         RankAbility {
             complexity: 2,
@@ -139,7 +129,6 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                     \item Water: Your swim speed increases to average.
                 \end{raggeditemize}
             ",
-            modifiers: Some(vec![Modifier::Defense(Defense::Brawn, 1)]),
         },
         RankAbility {
             complexity: 2,
@@ -163,7 +152,6 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                     \end{raggeditemize}
                 \end{magicalsustainability}
             ",
-            modifiers: None,
         },
     ]
 }
@@ -194,7 +182,6 @@ pub fn nature_magic<'a>() -> Vec<RankAbility<'a>> {
                 \advancement The maximum rank of nature spells that you can learn is equal to your rank in this archetype.
                 Nature spells also increase in power in unique ways based on your rank in this archetype, as indicated in their descriptions.
             ",
-        modifiers: None,
     }]
 }
 
@@ -209,7 +196,6 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 Whenever you cast a spell, you may use a Small or larger living plant within \shortrange of you as a \glossterm{targeting proxy}.
                 This means the spell determines its targets as if you were in the plant's location, which can allow you to affect targets outside your normal range.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -251,7 +237,6 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                         You cannot choose this ability multiple times.
                 }
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -261,7 +246,6 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain an additional metamagic ability.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -271,7 +255,6 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You learn an additional nature spell.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -281,7 +264,6 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your Perception.
             ",
-            modifiers: Some(vec![Modifier::Attribute(Attribute::Perception, 1)]),
         },
         RankAbility {
             complexity: 1,
@@ -291,7 +273,6 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain an additional \glossterm{attunement point}.
             ",
-            modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
         RankAbility {
             complexity: 1,
@@ -301,10 +282,6 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your \glossterm{accuracy} and Mental defense.
             ",
-            modifiers: Some(vec![
-                Modifier::Accuracy(1),
-                Modifier::Defense(Defense::Mental, 1),
-            ]),
         },
     ]
 }
@@ -486,7 +463,6 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             ",
             // Arbitrarily choose Bear form, since it's easy to represent? Unclear.
             // TODO: no way to represent natural weapons.
-            modifiers: Some(vec![Modifier::Defense(Defense::Fortitude, 2)]),
         },
         RankAbility {
             complexity: 1,
@@ -502,10 +478,6 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                     You gain a \plus1 \glossterm{enhancement bonus} to that attribute.
                 \end{magicalattuneability}
             ",
-            modifiers: Some(vec![
-                Modifier::Attribute(Attribute::Constitution, 1),
-                Modifier::Resource(Resource::AttunementPoint, -1),
-            ]),
         },
         RankAbility {
             complexity: 0,
@@ -516,7 +488,6 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                 This ability loses the \abilitytag{Attune} tag.
                 Instead, it lasts until you use it again.
             ",
-            modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
         // TODO: damage math
         RankAbility {
@@ -540,7 +511,6 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                     \rank{7} You deal double damage by default, or triple damage if you attack three defenses.
                 \end{magicalactiveability}
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -555,7 +525,6 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                 The armor regains its normal shape if you take it off.
                 For details about shapeshifting, see \pcref{Shapeshifting}.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -565,10 +534,6 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus2 bonus to your Fortitude defense and a \plus1 bonus to your \glossterm{vital rolls}.
             ",
-            modifiers: Some(vec![
-                Modifier::Defense(Defense::Fortitude, 2),
-                Modifier::VitalRoll(1),
-            ]),
         },
         RankAbility {
             complexity: 2,
@@ -580,7 +545,6 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                 When you do, you increase your \glossterm{fatigue level} by two.
                 This hybrid aspect only lasts for ten minutes, at which point you choose which single aspect remains active.
             ",
-            modifiers: None,
         },
     ]
 }
@@ -650,7 +614,6 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
                 \end{raggeditemize}
             ",
             // TODO: represent a whole extra creature???
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -662,7 +625,6 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
                 Increasing its size gives it a \plus1 Brawn defense bonus, a \plus1 bonus to Strength for the purpose of determining its \glossterm{weight limits}, a \minus1 Reflex defense penalty, and a \minus4 penalty to the Stealth skill.
                 It also increases its \glossterm{base speed} (see \pcref{Size Categories}).
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -680,7 +642,6 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
                     Wary and cunning animals are likely to be terse and evasive, while stupid ones tend to make inane comments and are unlikely to say or understand anything of use.
                 \end{magicalsustainability}
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -691,7 +652,6 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
                 When you use this ability, you may target any living creature that knows at least one language.
                 If you target a non-animal in this way, you do not gain the ability to speak with and understand the speech of other creatures of the target's species.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -704,7 +664,6 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
                 For example, if you are attacked while in a forest, nearby birds might start harassing your foes, at the GM's discretion.
                 If any protected target attacks a creature that this ability protects you from, this ability is \glossterm{suppressed} until you finish a \glossterm{long rest}.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -715,7 +674,6 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
                 % TODO: does this need a glossterm? These are only defined fully in the Grimoire of Guidance.
                 This ability also protects you and your allies from plant animates, elemental animates, and all summoned creatures.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -728,7 +686,6 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
                 In addition, you can cast \abilitytag{Attune} spells on your \ability{natural servant} if it is within \shortrange of you.
                 When you do, the natural servant attunes to the spell intead of you, as if the spell was an \abilitytag{Attune} (target) spell.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -738,7 +695,6 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your natural servant gains an additional attunement point.
             ",
-            modifiers: None,
         },
     ]
 }
