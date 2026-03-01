@@ -18,7 +18,6 @@ pub fn naiad<'a>() -> Vec<RankAbility<'a>> {
                 If your bonded water becomes contaminated or shrinks below the minimum size, these bonuses are inverted into penalties until you sever the bond.
                 You can passively observe the general health and status of water you are bonded to, including knowing when significant pollutants enter the water and when the water grows or shrinks significantly.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -29,7 +28,6 @@ pub fn naiad<'a>() -> Vec<RankAbility<'a>> {
                 While your \textit{water bond} is active, all of your \magical attacks have the \atWater tag.
                 In addition, whenever you use a \magical \atWater ability, you can choose to \glossterm{exclude} your \glossterm{allies} from it.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -41,7 +39,6 @@ pub fn naiad<'a>() -> Vec<RankAbility<'a>> {
                 This generally means that you can create a Small body of water with half a minute of work.
                 In addition, you do not consider casting that cantrip to be strenuous activity, so you can cast it continuously for longer than five minutes (see \pcref{Maintain Exertion}).
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -62,7 +59,6 @@ pub fn naiad<'a>() -> Vec<RankAbility<'a>> {
                     In addition, you gain a \plus2 \glossterm{enhancement bonus} to the Deception and Stealth skills.
                 \end{raggeditemize}
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -74,7 +70,6 @@ pub fn naiad<'a>() -> Vec<RankAbility<'a>> {
                 When you do, you do not require \glossterm{verbal components} or \glossterm{somatic components}, and you use your rank in this archetype as your your spellcasting rank.
                 In addition, it has the \atAttune tag instead of the \atAttune (deep) tag.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -84,7 +79,6 @@ pub fn naiad<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonuses from your \textit{enchanting appearance} ability increase to \plus4.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -96,7 +90,6 @@ pub fn naiad<'a>() -> Vec<RankAbility<'a>> {
                 This generally means that you can create a Medium body of water with one minute of work, or a Gargantuan body of water with 8 hours of work.
                 You can bond with a body of water you create with this ability just like any other body of water.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -113,7 +106,6 @@ pub fn naiad<'a>() -> Vec<RankAbility<'a>> {
                     In addition, the skill bonuses increase to \plus4.
                 \end{raggeditemize}
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -126,7 +118,6 @@ pub fn naiad<'a>() -> Vec<RankAbility<'a>> {
                 The entire body of water is continuously purified, as if by the \spell{purify water} ability, with contaminants shunted to the outside.
                 It can still be physically destroyed with sufficient effort.
             ",
-            modifiers: None,
         },
     ]
 }

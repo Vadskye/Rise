@@ -16,7 +16,6 @@ pub fn dryad<'a>() -> Vec<RankAbility<'a>> {
 
                 At the end of your turn, if you are fully or partially melded with a tree that you are bonded with using your \textit{tree bond} ability, you regain hit points equal to half your maximum hit points.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -30,7 +29,6 @@ pub fn dryad<'a>() -> Vec<RankAbility<'a>> {
                 Plants do not have complex thought processes, but can provide information about events that have happened near them.
                 In general, plants can remember events that happened within the most recent quarter of their lifespan.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -42,7 +40,6 @@ pub fn dryad<'a>() -> Vec<RankAbility<'a>> {
                 Teleporting a given distance costs movement equal to half that distance.
                 If this teleportation fails for any reason, you still expend that movement.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -65,7 +62,6 @@ pub fn dryad<'a>() -> Vec<RankAbility<'a>> {
                     \noindent The attack's \glossterm{accuracy} increases by \plus2 for each rank beyond 4.
                 \end{magicalsustainability}
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -77,7 +73,6 @@ pub fn dryad<'a>() -> Vec<RankAbility<'a>> {
                 The cumulative age of all trees in the grove must be at least a thousand years, and the grove must fit within a 500 foot radius.
                 While bonded to a grove, the bonuses from your \textit{tree bond} and \textit{enchanting appearance} abilities double.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -90,7 +85,6 @@ pub fn dryad<'a>() -> Vec<RankAbility<'a>> {
                 Attacks against the tree simultaneously affect both you and the tree.
                 You and the tree are both \impervious to damaging attacks, but \vulnerable to \atFire attacks and cold iron weapons.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -105,7 +99,6 @@ pub fn dryad<'a>() -> Vec<RankAbility<'a>> {
                 When the acorn lands, a tree immediately grows in that space.
                 The tree has a five foot diameter trunk and grows vertically until it reaches a hundred feet tall or until it encounters a solid obstacle preventing its growth.
             ",
-            modifiers: None,
         },
     ]
 }

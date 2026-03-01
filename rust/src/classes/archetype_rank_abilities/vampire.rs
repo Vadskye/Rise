@@ -15,7 +15,6 @@ pub fn vampire<'a>() -> Vec<RankAbility<'a>> {
                 Some nonliving creatures, such as vampires, also have blood.
             ",
             is_magical: false,
-            modifiers: None,
             rank: 1,
         },
         RankAbility {
@@ -26,7 +25,6 @@ pub fn vampire<'a>() -> Vec<RankAbility<'a>> {
                 In addition, damage dealt using your bite natural weapon does not wake sleeping creatures unless you inflict a vital wound.
             ",
             is_magical: false,
-            modifiers: None,
             rank: 2,
         },
         RankAbility {
@@ -39,7 +37,6 @@ pub fn vampire<'a>() -> Vec<RankAbility<'a>> {
                 You can only have one home coffin at a time.
             ",
             is_magical: true,
-            modifiers: None,
             rank: 2,
         },
         RankAbility {
@@ -61,7 +58,6 @@ pub fn vampire<'a>() -> Vec<RankAbility<'a>> {
               \end{magicalsustainability}
             ",
             is_magical: true,
-            modifiers: None,
             rank: 3,
         },
         RankAbility {
@@ -87,7 +83,6 @@ pub fn vampire<'a>() -> Vec<RankAbility<'a>> {
               \end{magicalattuneability}
             ",
             is_magical: true,
-            modifiers: None,
             rank: 4,
         },
         RankAbility {
@@ -99,20 +94,12 @@ pub fn vampire<'a>() -> Vec<RankAbility<'a>> {
                 Only the destruction of your home coffin or the total annihilation of your corpse can prevent your return.
             ",
             is_magical: true,
-            modifiers: None,
             rank: 5,
         },
         RankAbility {
             complexity: 0,
             description: r"You gain a +1 bonus to your Armor, Brawn, Reflex, and Mental defenses. However, you take a -2 penalty to your Fortitude defense.",
             is_magical: false,
-            modifiers: Some(vec![
-                Modifier::Defense(Defense::Armor, 1),
-                Modifier::Defense(Defense::Brawn, 1),
-                Modifier::Defense(Defense::Reflex, 1),
-                Modifier::Defense(Defense::Mental, 1),
-                Modifier::Defense(Defense::Fortitude, -2),
-            ]),
             rank: 5,
             name: "Unholy Resilience",
         },
@@ -136,7 +123,6 @@ pub fn vampire<'a>() -> Vec<RankAbility<'a>> {
               \end{magicalactiveability}
             ",
             is_magical: true,
-            modifiers: None,
             rank: 6,
         },
         RankAbility {
@@ -147,7 +133,6 @@ pub fn vampire<'a>() -> Vec<RankAbility<'a>> {
                 After you do, you \glossterm{briefly} cannot do so again.
             ",
             is_magical: true,
-            modifiers: None,
             rank: 7,
         },
         RankAbility {
@@ -158,7 +143,6 @@ pub fn vampire<'a>() -> Vec<RankAbility<'a>> {
                 This can allow you to travel with one coffin while keeping others safe for emergencies.
             ",
             is_magical: true,
-            modifiers: None,
             rank: 7,
         },
     ]

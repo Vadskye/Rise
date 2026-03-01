@@ -51,7 +51,6 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
 
             ",
             // TODO: represent extra creature?
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -62,7 +61,6 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
                 Your animal companion gains an \glossterm{attunement point}.
                 In addition, it gains a \plus1 bonus to its \glossterm{defenses}.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -73,7 +71,6 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
                 Your animal companion gains an additional attunement point.
                 In addition, its defense bonus increases to \plus2.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -95,7 +92,6 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
                     \rank{7} The extra damage increases to 2d10 \add your \glossterm{power}.
                 \end{activeability}
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -105,7 +101,6 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Whenever you regain \glossterm{hit points}, your animal companion also regains that many hit points.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -116,7 +111,6 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
                 You gain a \plus3 bonus to the Creature Handling skill and a \plus1 bonus to \glossterm{vital rolls}.
                 In addition, your \ability{animal companion} gains a \plus1 bonus to its defenses.
             ",
-            modifiers: Some(vec![Modifier::Skill(Skill::CreatureHandling, 3)]),
         },
         RankAbility {
             complexity: 0,
@@ -127,7 +121,6 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
                 The Creature Handling bonus increases to \plus6.
                 In addition, your animal companion's defense bonus increases to \plus2.
             ",
-            modifiers: Some(vec![Modifier::Skill(Skill::CreatureHandling, 3)]),
         },
     ]
 }
@@ -143,7 +136,6 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
                 You gain two additional \glossterm{insight points}.
                 In addition, you can spend insight points to gain one additional Knowledge \glossterm{trained skill} per insight point.
             ",
-            modifiers: Some(vec![Modifier::AllDefenses(1)]),
         },
         RankAbility {
             complexity: 1,
@@ -155,7 +147,6 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
                 You must already be proficient with all non-exotic weapons from that weapon group.
             ",
             // This is an abstraction of the effect of exotic weapons being better
-            modifiers: Some(vec![Modifier::ExtraDamage(DamageDice::new(0))]),
         },
         RankAbility {
             complexity: 0,
@@ -165,7 +156,6 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 \glossterm{accuracy} bonus against creatures associated with Knowledge skills that you are trained with.
             ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
             complexity: 0,
@@ -175,7 +165,6 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus2 bonus to all defenses against creatures associated with Knowledge skills that you are trained with.
             ",
-            modifiers: Some(vec![Modifier::AllDefenses(2)]),
         },
         RankAbility {
             complexity: 1,
@@ -187,7 +176,6 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
                 This also applies during overland travel.
                 In addition, each ally who can see or hear you can use half of your skill modifier in place of its own for the Balance, Climb, Survival, and Swim skills.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -198,7 +186,6 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
                 You and your \glossterm{allies} who can see or hear you take no damage when an area ability attacks and misses a target's Armor or Reflex defense.
                 This does not protect creatures from any non-damaging effects of those abilities, or from abilities that affect multiple specific targets without affecting an area.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -208,7 +195,6 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your Constitution.
             ",
-            modifiers: Some(vec![Modifier::Attribute(Attribute::Constitution, 1)]),
         },
         RankAbility {
             complexity: 2,
@@ -229,7 +215,6 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
                     \rank{7} If the strike would deal double damage, it deals triple damage instead.
                 \end{activeability}
             ",
-            modifiers: None,
         },
     ]
 }
@@ -251,7 +236,6 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                 \end{sustainability}
             ",
             // TODO: this also affects allies
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
             complexity: 0,
@@ -261,7 +245,6 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The accuracy bonus from your \ability{quarry} ability increases to \plus2.
             ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
             complexity: 3,
@@ -354,7 +337,6 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                     \end{triggeredability}
                 }
             ",
-            modifiers: None,
         },
         // Brief ranged slow is 2 EA, or 2.4 EA with injury effect Normal rank 3 would be strike and 1.2 EA.
         // That's enough of a buff to justify the class feature + movement trigger.
@@ -377,7 +359,6 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                     \rank{7} The extra damage increases to 1d6 per 2 power.
                 \end{activeability}
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -387,7 +368,6 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your Dexterity.
             ",
-            modifiers: Some(vec![Modifier::Attribute(Attribute::Dexterity, 1)]),
         },
         RankAbility {
             complexity: 0,
@@ -399,7 +379,6 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                 In addition, whenever your quarry \glossterm{teleports}, you automatically know the distance and direction of the teleport if you can see them.
                 If you are following their tracks, you can track where they teleported to in the same way.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -410,7 +389,6 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                 While your \ability{quarry} ability is active, if your quarry is aware of you, it is \frightened of you.
                 This is an \atEmotion effect.
             ",
-            modifiers: None,
         },
     ]
 }
@@ -428,7 +406,6 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
                 In addition, you gain \sense{darkvision} with a 60 foot range, allowing you to see in complete darkness (see \pcref{Darkvision}).
                 If you already have that ability, you increase its range by 60 feet.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -440,7 +417,6 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
                 In addition, the range of your darkvision increases by 120 feet.
                 Your darkvision is also not disabled in \glossterm{bright illumination} or when you become \dazzled.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -450,7 +426,6 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus10 foot bonus to your \glossterm{speed}.
             ",
-            modifiers: Some(vec![Modifier::MovementSpeed(MovementMode::Land, 10)]),
         },
         RankAbility {
             complexity: 0,
@@ -460,7 +435,6 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The speed bonus increases to \plus20 feet.
             ",
-            modifiers: Some(vec![Modifier::MovementSpeed(MovementMode::Land, 10)]),
         },
         RankAbility {
             complexity: 2,
@@ -480,7 +454,6 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
                     \rank{7} The extra damage increases to 5d6 \add half \glossterm{power}.
                 \end{activeability}
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -490,7 +463,6 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your Perception.
             ",
-            modifiers: Some(vec![Modifier::Attribute(Attribute::Perception, 1)]),
         },
         RankAbility {
             complexity: 1,
@@ -504,7 +476,6 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
                 In addition, you gain \sense{blindsight} with a 60 foot range, allowing you to see without light (see \pcref{Blindsight}).
                 If you already have the blindsight ability, you increase its range by 60 feet.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -514,7 +485,6 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus10 bonus to the Awareness skill.
             ",
-            modifiers: None,
         },
     ]
 }
@@ -541,7 +511,6 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
 
                 \advancement Some wild maneuvers also increase in power in unique ways based on your rank in this archetype, as indicated in their descriptions.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -551,7 +520,6 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain access to rank 3 wild maneuvers.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -561,7 +529,6 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain access to rank 5 wild maneuvers.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -571,7 +538,6 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain access to rank 7 wild maneuvers.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -607,7 +573,6 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
                     You can only apply this augment to maneuvers that affect an area.
                 }
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -617,7 +582,6 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can also choose an augment for each of your rank 3 wild maneuvers.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -627,7 +591,6 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can also choose an augment for each of your rank 5 wild maneuvers.
             ",
-            modifiers: None,
         },
     ];
     add_standard_maneuver_modifiers(&mut abilities);

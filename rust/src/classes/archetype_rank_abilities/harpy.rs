@@ -33,7 +33,6 @@ pub fn harpy<'a>() -> Vec<RankAbility<'a>> {
                     \rank{7} The maximum number of targets increases to 5.
                 \end{magicalactiveability}
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -44,7 +43,6 @@ pub fn harpy<'a>() -> Vec<RankAbility<'a>> {
                 You gain a slow \glossterm{fly speed} with a maximum height of 10 feet (see \pcref{Flight}).
                 As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit this turn.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -54,7 +52,6 @@ pub fn harpy<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your talons deal 1d6 damage.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -64,7 +61,6 @@ pub fn harpy<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The Armor defense bonus increases to \plus3, and the Balance bonus increases to \plus8.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -86,7 +82,6 @@ pub fn harpy<'a>() -> Vec<RankAbility<'a>> {
                     \rank{6} The area increases to a \largearea radius.
                 \end{magicalsustainability}
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -96,7 +91,6 @@ pub fn harpy<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus2 accuracy bonus against creatures that are affected by either your \ability{luring song} or \ability{siren song} ability.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -106,7 +100,6 @@ pub fn harpy<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You reduce the penalties to your Armor and Reflex defenses from gliding or flying by 2.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -116,7 +109,6 @@ pub fn harpy<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your maximum height increases to 30 feet, and the speed increases to average.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -126,7 +118,6 @@ pub fn harpy<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your talons deal 1d8 damage and gain the \abilitytag{Keen} \glossterm{ability tag}.
             ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -136,7 +127,6 @@ pub fn harpy<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus5 \glossterm{accuracy} bonus with your \ability{luring song} and \ability{siren song} abilities.
             ",
-            modifiers: None,
         },
     ]
 }

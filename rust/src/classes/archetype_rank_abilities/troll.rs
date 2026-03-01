@@ -10,7 +10,6 @@ pub fn troll<'a>() -> Vec<RankAbility<'a>> {
                 Whenever you take damage from a \atAcid or \atFire ability, this effect is \briefly suppressed.
             ",
             is_magical: false,
-            modifiers: None,
             rank: 1,
         },
         RankAbility {
@@ -21,7 +20,6 @@ pub fn troll<'a>() -> Vec<RankAbility<'a>> {
                 In addition, you gain a \plus1 bonus to your \glossterm{vital rolls} (see \pcref{Vital Wounds}).
             ",
             is_magical: false,
-            modifiers: None,
             rank: 2,
         },
         RankAbility {
@@ -38,7 +36,6 @@ pub fn troll<'a>() -> Vec<RankAbility<'a>> {
                 \end{raggeditemize}
             ",
             is_magical: false,
-            modifiers: None,
             rank: 3,
         },
         RankAbility {
@@ -48,7 +45,6 @@ pub fn troll<'a>() -> Vec<RankAbility<'a>> {
                 Your bite natural weapon deals 1d10 damage instead of the normal 1d8.
             ",
             is_magical: false,
-            modifiers: None,
             rank: 3,
         },
         RankAbility {
@@ -61,7 +57,6 @@ pub fn troll<'a>() -> Vec<RankAbility<'a>> {
                 Whenever you remove a vital wound in this way, you increase your \glossterm{fatigue level} by three.
             ",
             is_magical: false,
-            modifiers: None,
             rank: 4,
         },
         RankAbility {
@@ -72,7 +67,6 @@ pub fn troll<'a>() -> Vec<RankAbility<'a>> {
                 This increases your \glossterm{base speed} to 40 feet, among other effects (see \pcref{Size and Weight}).
             ",
             is_magical: false,
-            modifiers: None,
             rank: 5,
         },
         RankAbility {
@@ -88,7 +82,6 @@ pub fn troll<'a>() -> Vec<RankAbility<'a>> {
                 \end{raggeditemize}
             ",
             is_magical: false,
-            modifiers: None,
             rank: 6,
         },
         RankAbility {
@@ -98,7 +91,6 @@ pub fn troll<'a>() -> Vec<RankAbility<'a>> {
                 Your bite natural weapon deals 2d6 damage instead of the normal 1d8.
             ",
             is_magical: false,
-            modifiers: None,
             rank: 6,
         },
         RankAbility {
@@ -109,7 +101,6 @@ pub fn troll<'a>() -> Vec<RankAbility<'a>> {
                 In addition, removing a vital wound with this ability only increases your fatigue level by two.
             ",
             is_magical: false,
-            modifiers: None,
             rank: 7,
         },
     ]

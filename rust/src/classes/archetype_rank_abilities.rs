@@ -1,5 +1,4 @@
 use crate::classes::ClassArchetype;
-use crate::creatures::Modifier;
 use titlecase::titlecase;
 
 mod automaton;
@@ -49,7 +48,6 @@ pub struct RankAbility<'a> {
     pub complexity: i32,
     pub description: &'a str,
     pub is_magical: bool,
-    pub modifiers: Option<Vec<Modifier>>,
     pub rank: i32,
     pub name: &'a str,
 }
