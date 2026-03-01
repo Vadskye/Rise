@@ -91,7 +91,7 @@ pub fn treant<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your size category increases to Huge.
                 This increases your \glossterm{base speed} to 40 feet.
-                Your normal \\glossterm{speed} is still only 30 feet due to the penalty from \textit{unhurried and unfaltering}.
+                Your normal \glossterm{speed} is still only 30 feet due to the penalty from \textit{unhurried and unfaltering}.
                 The modifiers to Strength and Dexterity increase to \plus2 and \minus2, respectively.
             ",
         },
