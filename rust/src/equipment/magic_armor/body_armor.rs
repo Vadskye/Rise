@@ -305,15 +305,15 @@ pub fn body_armor() -> Vec<MagicArmor> {
 
     armor.push(Body(StandardItem {
         name: String::from("Fortifying Armor"),
-        rank: 1,
+        rank: 2,
         short_description: String::from("Fortifies you if you have 3 Con"),
         description: String::from(r"
             If your Constitution is at least 3, you are \fortified.
         "),
         tags: vec![AbilityTag::Attune(AttuneType::Deep)],
         upgrades: vec![
-            ItemUpgrade::new(7, "Fortifies you if you have 5 Con", r"
-                This item does not require \glossterm{deep attunement}, but it requires 5 Constitution.
+            ItemUpgrade::new(7, "Fortifies you if you have 6 Con", r"
+                This item does not require \glossterm{deep attunement}, but it requires 6 Constitution.
             "),
         ],
         ..MagicArmor::default()
