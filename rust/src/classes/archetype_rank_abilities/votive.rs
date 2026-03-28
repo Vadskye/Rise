@@ -93,7 +93,7 @@ pub fn pactbound_warrior<'a>() -> Vec<RankAbility<'a>> {
 
                     \parhead{Reckless Maneuver} You gain an accuracy bonus equal to twice your excess rank.
                     However, you \glossterm{briefly} take a \minus4 penalty to your defenses after you use the maneuver.
-                    You can only apply this augment to maneuvers which cause you to make a melee \glossterm{strike}.
+                    You can only apply this augment to maneuvers which cause you to make a melee \glossterm{strike} or \glossterm{brawling attack}.
 
                     \parhead{Spellfused Maneuver\sparkle} Choose a \glossterm{ranged} pact spell you know that does not have the \atAttune or \atSustain tags.
                     Its rank most not exceed your excess rank with the maneuver.
