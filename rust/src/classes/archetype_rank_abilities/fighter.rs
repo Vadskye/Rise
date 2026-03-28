@@ -271,7 +271,7 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
                     \parhead{Defensive Maneuver} You \glossterm{briefly} gain a bonus to your Armor defense equal to half your excess rank (minimum 1) when you use the maneuver.
                     You can only apply this augment to maneuvers which cause you to make a \glossterm{strike}.
 
-                    \parhead{Mighty Maneuver} You take a \minus1 accuracy penalty, but you deal \glossterm{extra damage} equal to twice your excess rank.
+                    \parhead{Mighty Maneuver} You deal \glossterm{extra damage} equal to twice your excess rank.
 
                     \parhead{Precise Maneuver} You gain an accuracy bonus equal to your excess rank.
                 }
