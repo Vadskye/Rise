@@ -114,7 +114,7 @@ export const mobileHunter: CombatStyle = {
 
       effect: `
         Your \\glossterm{speed} is \\briefly doubled.
-        However, you cannot use the \\ability{sprint} or \\ability{jog} abilities during that time.
+        However, you cannot use the \\ability{run} or \\ability{sprint} abilities during that time.
       `,
       rank: 1,
       roles: ['focus'],
