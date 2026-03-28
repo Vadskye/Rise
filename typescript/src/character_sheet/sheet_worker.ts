@@ -51,18 +51,18 @@ interface BaseClassModifier {
 // However, armor_usage_class needs custom handling in `handleArmorDefense`.
 const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   // ROLES
-  // High durability, high IP, medium defenses.
+  // High durability, high IP, baseline defenses.
   brute: {
-    armor_defense: 4,
+    armor_defense: 3,
     durability: 6,
     injury_point_multiplier: 0.75,
-    brawn: 5,
-    fortitude: 4,
-    reflex: 4,
+    brawn: 3,
+    fortitude: 3,
+    reflex: 3,
     mental: 3,
     fatigue_tolerance: 0,
   },
-  // Well rounded
+  // Well rounded; +1 to all defenses, +2 durability.
   leader: {
     armor_defense: 4,
     durability: 4,
@@ -73,37 +73,37 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     mental: 4,
     fatigue_tolerance: 0,
   },
-  // Low durability, high defenses
+  // Agile; +1 Armor and Reflex.
   skirmisher: {
-    armor_defense: 5,
-    durability: 2,
-    injury_point_multiplier: 0.5,
-    brawn: 4,
-    fortitude: 4,
-    reflex: 5,
-    mental: 4,
-    fatigue_tolerance: 0,
-  },
-  // Low durability, weak defenses; must have stronger special abilities
-  sniper: {
-    armor_defense: 3,
+    armor_defense: 4,
     durability: 2,
     injury_point_multiplier: 0.5,
     brawn: 3,
     fortitude: 3,
     reflex: 4,
-    mental: 4,
+    mental: 3,
     fatigue_tolerance: 0,
   },
-  // Polarized defenses, low IP; generally strong, should have weaker special abilities
+  // Fragile; baseline statistics.
+  sniper: {
+    armor_defense: 3,
+    durability: 2,
+    injury_point_multiplier: 0.75,
+    brawn: 3,
+    fortitude: 3,
+    reflex: 3,
+    mental: 3,
+    fatigue_tolerance: 0,
+  },
+  // Tanky; +1 Armor and Fortitude, +2 durability.
   warrior: {
-    armor_defense: 5,
+    armor_defense: 4,
     durability: 4,
     injury_point_multiplier: 0.333,
-    brawn: 4,
-    fortitude: 5,
+    brawn: 3,
+    fortitude: 4,
     reflex: 3,
-    mental: 4,
+    mental: 3,
     fatigue_tolerance: 0,
   },
 
@@ -754,16 +754,11 @@ function handleResources() {
 }
 
 function calcAccuracyCrScaling(level: number, elite?: boolean) {
-  if (!elite) {
-    return 0;
-  }
   let levelScaling = 0;
-  if (elite) {
-    let levels_with_accuracy_bonuses = [13, 21];
-    for (const bonus_level of levels_with_accuracy_bonuses) {
-      if (level >= bonus_level) {
-        levelScaling += 1;
-      }
+  let levels_with_accuracy_bonuses = [13, 21];
+  for (const bonus_level of levels_with_accuracy_bonuses) {
+    if (level >= bonus_level) {
+      levelScaling += 1;
     }
   }
 
@@ -2455,6 +2450,7 @@ function calcMonsterPowerBonus(level: number) {
   } else if (level >= 5) {
     return 1;
   }
+  return 0;
 }
 
 function handleSize() {
