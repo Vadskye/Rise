@@ -16,7 +16,7 @@ export type RiseCreatureType =
   | 'mortal'
   | 'soulforged'
   | 'undead';
-export type RiseRole = 'Brute' | 'Skirmisher' | 'Warrior' | 'Sniper' | 'Mystic' | 'Leader';
+export type RiseRole = 'Brute' | 'Skirmisher' | 'Warrior' | 'Sniper' | 'Leader';
 export type RiseBaseClass =
   | 'barbarian'
   | 'cleric'
