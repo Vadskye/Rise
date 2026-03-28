@@ -371,12 +371,12 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
                 {
                     \parhead{Finishing Maneuver} You gain an accuracy bonus equal to twice your excess rank against creatures who are \glossterm{injured}.
 
-                    \parhead{Mighty Maneuver} You take a \minus1 accuracy penalty, but you deal \glossterm{extra damage} equal to twice your excess rank.
+                    \parhead{Mighty Maneuver} You deal \glossterm{extra damage} equal to twice your excess rank.
 
                     \parhead{Precise Maneuver} You gain an accuracy bonus equal to your excess rank.
 
-                    \parhead{Reckless Maneuver} You deal \glossterm{extra damage} equal to twice your excess rank.
-                    However, you \glossterm{briefly} take a \minus4 penalty to your defenses after you use the maneuver.
+                    \parhead{Reckless Maneuver}You gain an accuracy bonus equal to twice your excess rank. 
+                    However, you \glossterm{briefly} take a \minus2 penalty to your defenses after you use the maneuver.
                     You can only apply this augment to maneuvers which cause you to make a melee \glossterm{strike} or \glossterm{brawling attack}.
 
                     \parhead{Widened Maneuver} The area affected by your chosen maneuver doubles.
