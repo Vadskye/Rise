@@ -22,9 +22,8 @@ pub fn harpy<'a>() -> Vec<RankAbility<'a>> {
                     However, it is not compelled to take actions that are guaranteed to damage harm it, such as jumping off of a cliff.
                     If it cannot make any progress towards you, it remains in place.
 
-                    If you attack the target with any ability other than this one, or if you stop your vocal performance, this effect is automatically broken.
+                    If the target notices you attacking it with any ability other than this one, or if you stop your vocal performance, this effect is automatically broken.
                     When this effect ends, the target becomes immune to this effect until it finishes a \glossterm{short rest}.
-                    \crit The condition must be removed twice before the effect ends.
 
                     \rankline
                     The attack's \glossterm{accuracy} increases by \plus1 for each rank beyond 1.
@@ -51,7 +50,7 @@ pub fn harpy<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                Your talons deal 1d6 damage.
+                Your talons deal 1d6 damage and gain the \abilitytag{Keen} \glossterm{ability tag}.
             ",
         },
         RankAbility {
@@ -99,7 +98,7 @@ pub fn harpy<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                You reduce the penalties to your Armor and Reflex defenses from gliding or flying by 2.
+                You reduce the penalties to your Armor and Reflex defenses for being \glossterm{midair} by 2.
             ",
         },
         RankAbility {
@@ -117,7 +116,7 @@ pub fn harpy<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 7,
             description: r"
-                Your talons deal 1d8 damage and gain the \abilitytag{Keen} \glossterm{ability tag}.
+                Your talons deal 1d8 damage.
             ",
         },
         RankAbility {
@@ -126,7 +125,8 @@ pub fn harpy<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
-                You gain a \plus5 \glossterm{accuracy} bonus with your \ability{luring song} and \ability{siren song} abilities.
+                You gain a \plus5 \glossterm{accuracy} bonus with your \ability{luring song} and \ability{siren song} abilities, and they gain the \atSubtle tag.
+                Targets still observe your performance, but they do not realize they are being magically compelled, which can change how they react to you.
             ",
         },
     ]
