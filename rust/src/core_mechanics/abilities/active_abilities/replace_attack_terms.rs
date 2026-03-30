@@ -93,7 +93,7 @@ fn replace_damage_terms(
     let mut replaced_effect = effect.to_string();
     // Find each block of "$damage". This is only relevant for strike-based attacks, so it would be
     // an error if this didn't include a weapon.
-    let damage_pattern = Regex::new(r"\$damage(\*\d)?\b").unwrap();
+    let damage_pattern = Regex::new(r"\$damage(\*\d+)?\b").unwrap();
     // $damage never has local modifiers, so we don't need to pay attention to the captured text
     for damage_match in damage_pattern.find_iter(&replaced_effect.clone()) {
         let parsed_text = calc_weapon_damage(damage_match, creature, is_magical, weapon.unwrap());
@@ -107,7 +107,7 @@ fn replace_damage_terms(
 fn replace_damage_rank_terms(effect: &str, creature: &Creature, is_magical: bool) -> String {
     let mut replaced_effect = effect.to_string();
 
-    let damage_pattern = Regex::new(r"\$dr\d[hl]?\b").unwrap();
+    let damage_pattern = Regex::new(r"\$dr\d+[hl]?\b").unwrap();
     for damage_match in damage_pattern.find_iter(&replaced_effect.clone()) {
         // TODO: figure out how to trim the leading "$"
         let parsed_damage_effect = SimpleDamageEffect::from_string(damage_match.as_str());
@@ -152,7 +152,7 @@ fn replace_weapon_name_terms(effect: &str, weapon: &Option<&Weapon>) -> String {
 fn replace_extra_damage_terms(effect: &str, creature: &Creature, is_magical: bool) -> String {
     let mut replaced_effect = effect.to_string();
 
-    let extra_damage_pattern = Regex::new(r"\$d(\d)p(\d)").unwrap();
+    let extra_damage_pattern = Regex::new(r"\$d(\d+)p(\d+)").unwrap();
     for (_, [die_size, per_power]) in extra_damage_pattern
         .captures_iter(effect)
         .map(|c| c.extract())
@@ -255,7 +255,7 @@ fn calc_weapon_damage(
     weapon: &Weapon,
 ) -> String {
     // Handle damage multipliers
-    let multiplier_pattern = Regex::new(r"\$damage\*?(\d)?\b").unwrap();
+    let multiplier_pattern = Regex::new(r"\$damage\*?(\d+)?\b").unwrap();
     let multiplier_captures = multiplier_pattern.captures(damage_match.as_str()).unwrap();
     let multiplier = if let Some(multiplier_match) = multiplier_captures.get(1) {
         multiplier_match.as_str().parse::<i32>().unwrap()
