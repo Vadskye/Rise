@@ -681,9 +681,9 @@ export const telekinesis: MysticSphere = {
 
       effect: `
         Whenever you use the \\ability{total defense} or \\ability{recover} ability, you can activate this ability.
-        If you do, you move 20 feet up into the air and levitate there.
+        If you do, you move 20 feet up into the air and \\briefly levitate there.
         While levitating in this way, your telekinesis provides you with a stable platform to maneuver, so you are not \\unsteady.
-        At the end of your turn, you descend 20 feet without taking \\glossterm{falling damage}, then this ability is \\glossterm{dismissed}.
+        When this effect ends, you descend 20 feet without taking \\glossterm{falling damage}, then this ability is \\glossterm{dismissed}.
       `,
       rank: 1,
       roles: ['attune'],
