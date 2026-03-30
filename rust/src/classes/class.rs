@@ -1517,7 +1517,7 @@ impl Class {
 
                         \parhead{Precursors}
                         The precursors are ancient aberrations that now live in the Eternal Void.
-                        They generally despite the mortals and deities that replaced them, though their current goals are inscrutable.
+                        They generally despise the mortals and deities that replaced them, though their current goals are inscrutable.
                         Precursor pacts impose no restrictions on you in life, but they are the only pacts which are guaranteed to claim your soul.
                         While you are dead, your soul will be constantly pulled away from your afterlife towards the Eternal Void.
                         You can fight this pull to remain in your afterlife for a time.
