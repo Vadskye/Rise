@@ -13,9 +13,10 @@ pub fn harpy<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     Make an attack vs. Mental against a creature within \longrange.
                     In addition, you begin a vocal performance (see \pcref{Performance Types}).
-                    \hit As a \glossterm{condition}, the target must move towards you as best it can during each of its turns.
+                    \hit As a \glossterm{condition}, the target must use all of its \glossterm{available movement} to move towards you as best it can during each of its turns.
                     In addition, it cannot move farther away from you at any time, except as necessary to get closer to you (such as to avoid an intervening obstacle).
                     It can otherwise act freely, and is still able to attack you and your allies.
+                    It is not required to use abilities that would increase its available movement.
 
                     The target will risk danger to reach you, such as moving towards your allies or swimming through rough water.
                     However, it is not compelled to take actions that are guaranteed to damage harm it, such as jumping off of a cliff.
