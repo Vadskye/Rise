@@ -2303,11 +2303,13 @@ function handleMonsterToggles() {
         setAttrs({
           chat_color: 'monster',
           elite: v.monster_type === 'elite',
+          is_monster: true,
           player_chat_color: v.chat_color,
         });
       } else {
         setAttrs({
           chat_color: v.player_chat_color || 'black',
+          is_monster: false,
         });
       }
     },
