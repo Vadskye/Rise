@@ -1,8 +1,5 @@
-use crate::classes::archetype_rank_abilities::RankAbility;
-
-
-
 use super::standard_modifiers::add_standard_maneuver_modifiers;
+use crate::classes::archetype_rank_abilities::RankAbility;
 
 pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
     vec![

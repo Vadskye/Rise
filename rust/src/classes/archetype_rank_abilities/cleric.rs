@@ -1,8 +1,5 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
 
-
-
-
 pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
     vec![RankAbility {
         complexity: 4,
