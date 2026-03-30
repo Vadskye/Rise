@@ -228,7 +228,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 \begin{sustainability}{Quarry}{\glossterm{Minor action}}
-                    \abilitytags \abilitytag{Sustain} (attunable, free), abilitytag{Subtle}
+                    \abilitytags \abilitytag{Sustain} (attunable, free), \abilitytag{Subtle}
                     \rankline
                     Choose a creature you can see.
                     That creature becomes your quarry.
