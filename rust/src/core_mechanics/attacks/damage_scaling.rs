@@ -134,6 +134,17 @@ impl DamageScaling {
         }
     }
 
+    pub fn dr10() -> Self {
+        Self {
+            base_dice: DicePool::xdy(2, 10),
+            power_scalings: vec![PowerScaling {
+                dice: Some(DicePool::d10()),
+                power_per_dice: 1,
+                power_per_plus1_modifier: 0,
+            }],
+        }
+    }
+
     pub fn dr(rank: i32) -> Self {
         match rank {
             0 => Self::dr0(),
@@ -146,6 +157,7 @@ impl DamageScaling {
             7 => Self::dr7(),
             8 => Self::dr8(),
             9 => Self::dr9(),
+            10 => Self::dr10(),
             _ => panic!("Unable to find equivalent dr() for rank {}", rank),
         }
     }
@@ -223,6 +235,13 @@ impl DamageScaling {
         }
     }
 
+    pub fn dr10l() -> Self {
+        Self {
+            base_dice: DicePool::xdy(22, 10),
+            power_scalings: vec![],
+        }
+    }
+
     pub fn drl(rank: i32) -> Self {
         match rank {
             0 => Self::dr0l(),
@@ -235,6 +254,7 @@ impl DamageScaling {
             7 => Self::dr7l(),
             8 => Self::dr8l(),
             9 => Self::dr9l(),
+            10 => Self::dr10l(),
             _ => panic!("Unable to find equivalent drl() for rank {}", rank),
         }
     }
