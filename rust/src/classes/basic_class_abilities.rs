@@ -339,7 +339,9 @@ fn generate_latex_starting_items(class: &Class) -> String {
     } else if class
         .armor_proficiencies()
         .usage_classes
-        .contains(&ArmorUsageClass::Light)
+        .contains(&ArmorUsageClass::Light) && class.weapon_proficiencies().simple_weapons
+        // Checking simple weapons is a bit of a hack, but it lets us detect classes that can't use
+        // normal weapons, which generally means they can't use shields either.
     {
         "\\item A buckler"
     } else {
