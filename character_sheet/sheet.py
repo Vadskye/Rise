@@ -47,7 +47,7 @@ def main(destination):
             ]
         ):
             page = i + 1
-            with open(f"paper_sheet/page{page}.html", "w") as fh:
+            with open(f"paper_sheet/page{page}.html", "w", encoding="utf-8") as fh:
                 fh.write(
                     "".join(
                         [
@@ -61,7 +61,7 @@ def main(destination):
                 )
             call(["lessc", f"{name}.less", f"paper_sheet/page{page}.css"])
     else:
-        with open("roll20.html", "w") as fh:
+        with open("roll20.html", "w", encoding="utf-8") as fh:
             fh.write(sheet_worker.generate_script())
             fh.write(
                 cgi.div(
@@ -82,7 +82,7 @@ def main(destination):
             )
 
         class_pattern = re.compile(r"\.([a-z\-]+)\b")
-        with open("roll20.less", "w") as output_file:
+        with open("roll20.less", "w", encoding="utf-8") as output_file:
             for filename in [
                 "sheet",
                 "first_page",
@@ -95,7 +95,7 @@ def main(destination):
                 "reference_page",
                 "roll20_custom",
             ]:
-                with open(filename + ".less", "r") as input_file:
+                with open(filename + ".less", "r", encoding="utf-8") as input_file:
                     if filename not in ["sheet", "roll20_custom"]:
                         output_file.write(f"div.page.{filename.replace('_', '-')} {{\n")
                     for line in input_file:

@@ -2545,7 +2545,7 @@ function handleTrainedSkills() {
         attrs[`${prefix}_subskill_modifier_name`] = `${skillWithSubskill}_${subskill}`;
         const fullSkillDescriptor = uppercaseFirstLetter(skillWithSubskill) + ` (${subskill})`;
         attrs[`${prefix}_subskill_button`] =
-          `@{character_name} uses ${fullSkillDescriptor}:` + ` [[d10 + @{${trainedSkill}}]]`;
+          `@{character_name} uses ${fullSkillDescriptor}:` + ` [[@{check_die} + @{${trainedSkill}}]]`;
         attrs[`${prefix}_subskill_name`] = `(${subskill})`;
         attrs[`${eventInfo.triggerName}_front_rowid`] = rowId;
       }
