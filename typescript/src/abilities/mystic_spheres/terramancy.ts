@@ -200,11 +200,6 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       effect: `
         While you are \\glossterm{grounded}, you are immune to \\glossterm{push}, \\glossterm{fling}, and \\glossterm{teleport} effects from attacks.
       `,
-        In addition, as long as you are within 30 feet of stable ground, you are always considered either \\glossterm{grounded} or not grounded, whichever is more beneficial for you.
-
-        For example, you would not take damage from the \\spell{earthquake} spell.
-        You must still stand on appropriate materials for effects like \\spell{rock throw} which require a specific type of grounding.
-      `,
       rank: 1,
       roles: ['attune'],
       type: 'Attune',
