@@ -1311,3 +1311,11 @@
   \subsection{Permanent Abilities}
     Some abilities last permanently.
     Such abilities never expire on their own, but can be \glossterm{dismissed} or removed by other abilities appropriately.
+
+% TODO: move this to a better location, figure out edge cases and object destruction.
+\section{Simultaneous Duplicate Effects}
+  Sometimes, multiple identical effects will happen simultaneously.
+  For example, a creature might drink a liquid containing multiple doses of the same type of poison, or a pile of firebombs may explode simultaneously.
+  In all such cases, the effects don't simply stack.
+  Instead, any relevant attack gains a \plus2 accuracy bonus for each time that the number of sources doubles.
+  For example, a pile of eight firebombs that all go off at once would deal the damage of a single firebomb, but with a +6 accuracy bonus to the attack.
