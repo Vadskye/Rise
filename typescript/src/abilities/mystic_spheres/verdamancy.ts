@@ -34,7 +34,7 @@ export const verdamancy: MysticSphere = {
       attack: {
         hit: `
           The target is \\briefly \\slowed.
-          This effect is immediately removed if the target takes damage from a \atAcid or \atFire ability.
+          This effect is immediately removed if the target takes damage from a \\atAcid or \\atFire ability.
         `,
         targeting: `
           Make an attack vs. Brawn against up to two \\glossterm{grounded} creatures within \\medrange.
