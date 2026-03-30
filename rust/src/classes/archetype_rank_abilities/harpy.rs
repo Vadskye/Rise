@@ -42,6 +42,7 @@ pub fn harpy<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a slow \glossterm{fly speed} with a maximum height of 10 feet (see \pcref{Flight}).
                 As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit this turn.
+                In addition, you reduce the penalties to your Armor and Reflex defenses for being \glossterm{midair} by 1.
             ",
         },
         RankAbility {
@@ -94,20 +95,12 @@ pub fn harpy<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             complexity: 1,
-            name: "Agile Flight",
-            is_magical: false,
-            rank: 6,
-            description: r"
-                You reduce the penalties to your Armor and Reflex defenses for being \glossterm{midair} by 2.
-            ",
-        },
-        RankAbility {
-            complexity: 1,
             name: "Harpy Wings+",
             is_magical: false,
             rank: 6,
             description: r"
                 Your maximum height increases to 30 feet, and the speed increases to average.
+                In addition, the penalty reduction increases to 2.
             ",
         },
         RankAbility {
