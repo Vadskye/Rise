@@ -400,7 +400,7 @@ export const thaumaturgy: MysticSphere = {
 
       effect: `
         You are \\briefly protected by reflective magic.
-        This makes you \\glossterm{braced}.
+        This makes you \\braced.
         In addition, whenever a creature within \\medrange of you misses you with a \\magical attack, that creature treats itself as a target of that attack in addition to any other targets.
         The attacker cannot choose to reduce its accuracy or damage against itself.
       `,
@@ -413,7 +413,7 @@ export const thaumaturgy: MysticSphere = {
 
       effect: `
         You are \\briefly protected by reflective magic.
-        This makes you \\glossterm{braced}.
+        This makes you \\braced.
         In addition, whenever a creature within \\medrange of you makes a \\magical attack against you, that creature treats itself as a target of that attack in addition to any other targets.
         The attacker cannot choose to reduce its accuracy or damage against itself.
       `,
