@@ -16,11 +16,19 @@ pub fn troll<'a>() -> Vec<RankAbility<'a>> {
             name: "Tough Hide",
             complexity: 1,
             description: r"
-                You gain a \plus2 bonus to your \glossterm{durability}.
-                In addition, you gain a \plus1 bonus to your \glossterm{vital rolls} (see \pcref{Vital Wounds}).
+                You gain a bonus to your maximum hit points equal to your \glossterm{durability}.
             ",
             is_magical: false,
             rank: 2,
+        },
+        RankAbility {
+            name: "Tough Hide+",
+            complexity: 1,
+            description: r"
+                The hit point bonus increases to twice your \glossterm{durability}.
+            ",
+            is_magical: false,
+            rank: 6,
         },
         RankAbility {
             name: "Subspecies Specialization",

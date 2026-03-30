@@ -20,7 +20,7 @@ pub fn treant<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                You gain a \plus3 bonus to your \glossterm{durability}.
+                You gain a \plus1 bonus to your Brawn defense and a \plus2 bonus to your Fortitude defense.
             ",
         },
         RankAbility {
