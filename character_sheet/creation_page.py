@@ -366,6 +366,7 @@ def creation_guidance():
                 False,
             ),
             feats_step(),
+            special_rules_step(),
         ],
     )
 
@@ -521,6 +522,38 @@ def feats_step():
             {"class": "repeating_feats"},
             labeled_text_input("Feat name", input_attributes={"name": "feat_name"}),
         ),
+    )
+
+def special_rules_step():
+    return creation_step(
+        "Special Rules",
+        """
+            In some cases, your character may have special rules that change the core behavior of the character sheet.
+            You can configure them here.
+        """,
+        [
+            underlabel(
+                "Attack die",
+                select(
+                    {"class": "attack-die", "name": "attack_die"},
+                    [
+                        option({"value": "d10!"}, "Normal"),
+                        option({"value": "d12!>10"}, "Barbarian Rage Variant"),
+                        option({"value": "d8"}, "Moirai Votive"),
+                    ],
+                ),
+            ),
+            underlabel(
+                "Check die",
+                select(
+                    {"class": "check-die", "name": "check_die"},
+                    [
+                        option({"value": "d10"}, "Normal"),
+                        option({"value": "d8"}, "Moirai Votive"),
+                    ],
+                ),
+            ),
+        ],
     )
 
 def monster_creation():
