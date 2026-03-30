@@ -481,7 +481,7 @@ export const vivimancy: MysticSphere = {
       rank: 4,
       roles: ['burn'],
       scaling: {
-        special: 'Both instances of damage increase by 1d6 for each rank beyond 3.',
+        special: 'Both instances of damage increase by 1d6 for each rank beyond 4.',
       },
     },
 
