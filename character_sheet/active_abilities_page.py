@@ -579,7 +579,7 @@ def weapon_attack_button(i):
         + i
         + "_name}}}"
         + " @{targeting_text}"
-        + " {{Attack=[[d10!+@{accuracy}+@{accuracy_with_strikes}+@{weapon_"
+        + " {{Attack=[[@{attack_die}+@{accuracy}+@{accuracy_with_strikes}+@{weapon_"
         + i
         + "_accuracy}+@{attack_accuracy}]] vs @{attack_defense_text}}}"
         + " {{Damage="
@@ -603,7 +603,7 @@ def attack_button_text(damage_text=None):
         + " {{title=@{attack_name}}}"
         + " {{subtitle=@{character_name}}}"
         + " @{targeting_text}"
-        + " {{Attack=[[d10!+@{accuracy}+@{attack_accuracy}]] vs @{attack_defense_text}}}"
+        + " {{Attack=[[@{attack_die}+@{accuracy}+@{attack_accuracy}]] vs @{attack_defense_text}}}"
         + ((" {{Damage=" + damage_text + "}}") if damage_text else "")
         + " {{color=@{chat_color}}}"
         + " @{tags_text}"
@@ -625,7 +625,7 @@ def universal_ability_button(name, effect, attack=None, tags=None):
                     + " {{subtitle=@{character_name}}}"
                     + tags_text
                     + (
-                        f" {{{{Attack=[[d10!+{attack['accuracy']}]] vs {attack['defense']}}}}}"
+                        f" {{{{Attack=[[@{{attack_die}}+{attack['accuracy']}]] vs {attack['defense']}}}}}"
                         if attack
                         else ""
                     )
