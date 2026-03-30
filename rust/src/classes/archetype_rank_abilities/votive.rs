@@ -445,7 +445,7 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
                 \subcf{Moirai -- Inevitable} You gain a \plus2 \glossterm{accuracy} bonus.
                 However, you roll 1d8 instead of 1d10 for attack rolls, and your attack rolls cannot \glossterm{explode}.
 
-                \subcf{Precursor -- Burgeoning} You gain a \plus2 bonus to your \glossterm{durability} and a \plus1 bonus to your \glossterm{brawling accuracy}.
+                \subcf{Precursor -- Burgeoning} You can use your Constitution in place of your Strength to determine your \glossterm{brawling accuracy}.
                 In addition, you gain a tentacle \glossterm{natural weapon} (see \pcref{Natural Weapons}).
                 It deals 1d6 damage, has the \weapontag{Maneuverable} weapon tag, and does not require a \glossterm{free hand}.
             ",
