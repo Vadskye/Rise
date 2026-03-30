@@ -96,10 +96,11 @@ pub fn pactbound_warrior<'a>() -> Vec<RankAbility<'a>> {
                     You can only apply this augment to maneuvers which cause you to make a melee \glossterm{strike} or \glossterm{brawling attack}.
 
                     \parhead{Spellfused Maneuver\sparkle} Choose a \glossterm{ranged} pact spell you know that does not have the \atAttune or \atSustain tags.
-                    Its rank most not exceed your excess rank with the maneuver.
-                    You treat your rank with that spell as being equal to your excess rank, which limits the bonuses it gains from rank scaling.
+                    Its rank must not exceed your excess rank with the maneuver.
                     Each target of the maneuver is also affected by that spell, using separate attack rolls for the spell and maneuver.
-                    You do not have to spend time casting the spell, but each target must still meet any targeting requirements for the spell, such as range or touch.
+                    Your attack with the spell is a \glossterm{reactive attack}.
+                    You do not spend time casting the spell, but each target must still meet any targeting requirements for the spell, such as being a living creature.
+                    You treat your rank with that spell as being equal to your excess rank, which limits the bonuses it gains from rank scaling.
 
                     You can only apply this augment to maneuvers which cause you to make a melee \glossterm{strike}, and you must choose a different spell each time you apply this augment to a maneuver.
                     After you use this maneuver, you \briefly can't use any spellfused maneuvers.
@@ -499,9 +500,10 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
                 This is a metamagic effect, so the spell cannot have other metamagic applied to it.
                 When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
                 {
-                    \subcf{Devil -- Tormenting Spell} Each creature hit by the spell becomes tormented by the spell as a \glossterm{condition}.
+                    \subcf{Devil -- Tormenting Spell} One creature hit by the spell becomes tormented by the spell as a \glossterm{condition}.
                     If it is \glossterm{injured} while it is tormented, the spell \glossterm{repeats} on that creature, and all instances of the condition are removed.
                     You gain a \plus2 accuracy bonus with the repeat for each additional instance of this condition, but the spell still only repeats once.
+                    After the spell repeats on a creature in this way, it is immune to being tormented by this ability until it finishes a \glossterm{short rest}.
 
                     \subcf{Fae -- Hidden Spell} The spell does not have \glossterm{verbal components} or \glossterm{somatic components}.
                     In addition, if it does not deal damage, it gains the \atSubtle tag.
