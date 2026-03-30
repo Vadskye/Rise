@@ -57,7 +57,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
                     \parhead{Efficient Crafting} You do not need an alchemist's lab to craft alchemical items (see \pcref{Crafting Items}).
                     In addition, you reduce the \glossterm{difficulty value} to craft alchemical items by 5.
                     % TODO: wording, and does this even matter? Affects sunrods and elixirs.
-                    \parhead{Enduring Construction} The duration of alchemical items you create is tripled, to a maximum of an additional 16 hours.
+                    \parhead{Enduring Construction} The duration of effects from alchemical items you create is tripled, to a maximum of an additional 16 hours.
                     % In addition, alchemical items that last for a fixed number of uses have that number of uses doubled.
                     \parhead{Expanded Construction} The area affected by any alchemical item you create is doubled.
                     \parhead{Explosive Construction} Whenever you create an alchemical item that deals damage, you can enhance its destructive potential.
