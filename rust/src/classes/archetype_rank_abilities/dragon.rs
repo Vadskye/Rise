@@ -1,7 +1,5 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
 
-
-
 pub fn dragon<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
