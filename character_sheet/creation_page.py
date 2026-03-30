@@ -538,8 +538,8 @@ def special_rules_step():
                     {"class": "attack-die", "name": "attack_die"},
                     [
                         option({"value": "d10!"}, "Normal"),
-                        option({"value": "d12!>10"}, "Barbarian Rage Variant"),
-                        option({"value": "d8"}, "Moirai Votive"),
+                        option({"value": "d12!>10"}, "Barbarian rage variant"),
+                        option({"value": "d8"}, "Moirai votive"),
                     ],
                 ),
             ),
@@ -549,7 +549,8 @@ def special_rules_step():
                     {"class": "check-die", "name": "check_die"},
                     [
                         option({"value": "d10"}, "Normal"),
-                        option({"value": "d8"}, "Moirai Votive"),
+                        option({"value": "d10!"}, "Chaos domain cleric"),
+                        option({"value": "d8"}, "Moirai votive"),
                     ],
                 ),
             ),
