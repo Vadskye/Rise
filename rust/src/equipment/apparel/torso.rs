@@ -78,23 +78,6 @@ fn belts() -> Vec<Apparel> {
     }));
 
     apparel.push(Belt(StandardItem {
-        name: String::from("Belt of Health"),
-        rank: 1,
-        short_description: String::from("Grants +1 durability"),
-        description: String::from(
-            r"
-            You gain a +1 \glossterm<enhancement bonus> to your \glossterm{durability}.
-        ",
-        ),
-        upgrades: vec![
-            ItemUpgrade::new(3, "Grants +2 durability", "The bonus increases to +2."),
-            ItemUpgrade::new(5, "Grants +3 durability", "The bonus increases to +3."),
-            ItemUpgrade::new(7, "Grants +4 durability", "The bonus increases to +4."),
-        ],
-        ..Apparel::default()
-    }));
-
-    apparel.push(Belt(StandardItem {
         name: String::from("Lifekeeping Belt"),
         rank: 1,
         short_description: String::from("Grants +1 to vital rolls"),

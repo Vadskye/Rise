@@ -198,13 +198,14 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       name: 'Earthen Anchor',
 
       effect: `
-        You are immune to \\glossterm{push}, \\glossterm{fling}, and \\glossterm{teleport} effects from attacks, unless the effects come from an attack that scores a \\glossterm{critical hit}.
-        In addition, you are always considered either \\glossterm{grounded} or not grounded, whichever is more beneficial for you.
+        While you are \\glossterm{grounded}, you are immune to \\glossterm{push}, \\glossterm{fling}, and \\glossterm{teleport} effects from attacks.
+      `,
+        In addition, as long as you are within 30 feet of stable ground, you are always considered either \\glossterm{grounded} or not grounded, whichever is more beneficial for you.
 
         For example, you would not take damage from the \\spell{earthquake} spell.
         You must still stand on appropriate materials for effects like \\spell{rock throw} which require a specific type of grounding.
       `,
-      rank: 2,
+      rank: 1,
       roles: ['attune'],
       type: 'Attune',
     },
@@ -216,9 +217,26 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         mass: true,
         name: 'earthen anchor',
       },
-      rank: 5,
+      rank: 4,
       roles: ['attune'],
       type: 'Attune (target)',
+    },
+
+    {
+      name: 'Deep Earthen Anchor',
+
+      functionsLike: {
+        name: 'earthen anchor',
+        exceptThat: `
+          as long as you are within 30 feet of stable ground, you are always considered either \\glossterm{grounded} or not grounded, whichever is more beneficial for you.
+
+          For example, you would not take damage from the \\spell{earthquake} spell.
+          You must still stand on appropriate materials for effects like \\spell{rock throw} which require a specific type of grounding.
+        `,
+      },
+      rank: 5,
+      roles: ['attune'],
+      type: 'Attune',
     },
 
     {
