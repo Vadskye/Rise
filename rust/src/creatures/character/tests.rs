@@ -1,4 +1,5 @@
 use super::*;
+use crate::classes::calc_rank_abilities;
 use crate::core_mechanics::attacks::HasAttacks;
 use crate::core_mechanics::HasDefenses;
 use creature::Creature;
