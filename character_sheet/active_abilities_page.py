@@ -27,7 +27,6 @@ from cgi_simple import (
 )
 from sheet_data import ATTRIBUTES, DEFENSES, ATTRIBUTE_SKILLS, SUBSKILLS
 import re
-from old_attacks import old_attacks
 
 
 def create_page(destination):
@@ -72,8 +71,6 @@ def create_page(destination):
                 {"class": f"repeating_nondamagingattacks"},
                 nondamaging_attack(),
             ),
-            # Old attacks for backwards compatibility
-            # *old_attacks(),
             flex_wrapper(div({"class": "section-header"}, "Other Active Abilities")),
             fieldset(
                 {"class": f"repeating_abilities"},
