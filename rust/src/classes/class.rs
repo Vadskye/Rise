@@ -215,6 +215,7 @@ impl Class {
             ],
             Self::Cleric => vec![
                 Skill::Awareness,
+                Skill::Craft,
                 Skill::Deception,
                 Skill::Deduction,
                 Skill::Intimidate,
@@ -324,6 +325,7 @@ impl Class {
             // Assume tethered
             Self::Incarnation => vec![
                 Skill::Climb,
+                Skill::Craft,
                 Skill::Jump,
                 Skill::Balance,
                 Skill::Flexibility,
@@ -341,6 +343,7 @@ impl Class {
                 Skill::Awareness,
                 Skill::Balance,
                 Skill::Climb,
+                Skill::Craft,
                 Skill::CreatureHandling,
                 Skill::Deception,
                 Skill::Deduction,
@@ -360,6 +363,7 @@ impl Class {
             Self::Naiad => vec![
                 Skill::Awareness,
                 Skill::Balance,
+                Skill::Craft,
                 Skill::CreatureHandling,
                 Skill::Deception,
                 Skill::Deduction,
@@ -390,6 +394,7 @@ impl Class {
             ],
             Self::Paladin => vec![
                 Skill::Awareness,
+                Skill::Craft,
                 Skill::Deception,
                 Skill::Deduction,
                 Skill::Endurance,
@@ -448,6 +453,7 @@ impl Class {
             ],
             Self::Sorcerer => vec![
                 Skill::Awareness,
+                Skill::Craft,
                 Skill::Deception,
                 Skill::Deduction,
                 Skill::Endurance,
@@ -500,6 +506,7 @@ impl Class {
             ],
             Self::Votive => vec![
                 Skill::Awareness,
+                Skill::Craft,
                 Skill::Deception,
                 Skill::Deduction,
                 Skill::Disguise,
