@@ -369,7 +369,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         An item created with this spell functions like a normal item of its type, with three exceptions.
         First, any \\glossterm{strikes} made with a weapon created with this ability have the \\atCold tag.
         Second, any creature wearing body armor created with this ability is \\impervious to \\atFire attacks.
-        Third, whenever a creature using items from this ability loses \\glossterm{hit points} from a \\atFire attack, all of the items they are holding from this ability disappear.
+        Third, whenever a creature using items from this ability is \\glossterm{injured} by a \\atFire attack, all of their items from this ability disappear.
         The items reappear at the end of that creature's next turn.
       `,
       rank: 1,
