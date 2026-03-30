@@ -574,27 +574,6 @@ def boring_stuff(destination):
                                 ),
                             ),
                             underlabel(
-                                "Attack die",
-                                select(
-                                    {"class": "attack-die", "name": "attack_die"},
-                                    [
-                                        option({"value": "d10!"}, "Normal"),
-                                        option({"value": "d12!>9"}, "Barbarian Rage Variant"),
-                                        option({"value": "d8"}, "Moirai Votive"),
-                                    ],
-                                ),
-                            ),
-                            underlabel(
-                                "Check die",
-                                select(
-                                    {"class": "check-die", "name": "check_die"},
-                                    [
-                                        option({"value": "d10"}, "Normal"),
-                                        option({"value": "d8"}, "Moirai Votive"),
-                                    ],
-                                ),
-                            ),
-                            underlabel(
                                 "Chat color",
                                 select(
                                     {"class": "chat-color", "name": "chat_color"},
