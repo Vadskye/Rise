@@ -1,6 +1,14 @@
 .creation-guidance {
-    .is-monster:checked + .creation-step {
-        display: none;
+    .player-only {
+        .is-monster:checked + .creation-step {
+            display: none;
+        }
+    }
+
+    .monster-only {
+        .is-monster:not(:checked) + .creation-step {
+            display: none;
+        }
     }
 
     .creation-step {

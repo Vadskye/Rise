@@ -45,7 +45,6 @@ def create_page(destination):
                 This tab is used to create your character.
             """,
             creation_guidance(),
-            monster_creation(),
             subskill_rowids(),
         ],
     )
@@ -61,7 +60,7 @@ def creation_guidance():
                     Choose a short phrase that describes the core concept of your character.
                 """,
                 text_input({"name": "concept"}),
-                False,
+                visibility='player only',
             ),
             creation_step(
                 "Goals",
@@ -69,7 +68,7 @@ def creation_guidance():
                     Choose your character's motivations and goals.
                 """,
                 textarea({"name": "motivation_and_goals"}),
-                False,
+                visibility='player only',
             ),
             creation_step(
                 "Species",
@@ -114,8 +113,9 @@ def creation_guidance():
                         option({"value": "vampire"}, "(Vampire)"),
                     ],
                 ),
-                False,
+                visibility='player only',
             ),
+            monster_type(),
             creation_step(
                 "Size",
                 """
@@ -147,7 +147,7 @@ def creation_guidance():
                     Choose the languages your character can speak.
                 """,
                 text_input({"name": "languages"}),
-                False,
+                visibility='both',
             ),
             creation_step(
                 "Attributes",
@@ -290,7 +290,7 @@ def creation_guidance():
                         for i in range(4)
                     ]
                 ),
-                False,
+                visibility='player only',
             ),
             insight_points_step(),
             skills_step(),
@@ -301,7 +301,7 @@ def creation_guidance():
                     It automatically calculates proficiencies from your base class.
                 """,
                 "",
-                False,
+                visibility='player only',
             ),
             creation_step(
                 "Items",
@@ -310,7 +310,7 @@ def creation_guidance():
                     Over time, you'll find many more items, so you should go to the <b>Items</b> tab to record your choices.
                 """,
                 "",
-                False,
+                visibility='player only',
             ),
             creation_step(
                 "Personality",
@@ -319,7 +319,7 @@ def creation_guidance():
                     This can be vague, and it can change over time, but it can be useful to record something as a guide.
                 """,
                 textarea({"class": "personality", "name": "personality"}),
-                False,
+                visibility='player only',
             ),
             creation_step(
                 "Background",
@@ -328,7 +328,7 @@ def creation_guidance():
                     This can be as sparse or extensive as you want; there's no one right way to create a character.
                 """,
                 textarea({"class": "background", "name": "background"}),
-                False,
+                visibility='player only',
             ),
             creation_step(
                 "Appearance",
@@ -337,7 +337,7 @@ def creation_guidance():
                     This can be as sparse or extensive as you want; there's no one right way to create a character.
                 """,
                 textarea({"class": "appearance", "name": "appearance"}),
-                False,
+                visibility='player only',
             ),
             creation_step(
                 "Alignment",
@@ -346,7 +346,7 @@ def creation_guidance():
                     You can decide to stay neutral along either or both alignment dimensions.
                 """,
                 textarea({"class": "alignment", "name": "alignment"}),
-                False,
+                visibility='both',
             ),
             creation_step(
                 "Name",
@@ -354,7 +354,7 @@ def creation_guidance():
                     Choose your character's name.
                 """,
                 text_input({"name": "character_name"}),
-                False,
+                visibility='player only',
             ),
             creation_step(
                 "Finishing up",
@@ -363,7 +363,7 @@ def creation_guidance():
                     You can also choose a chat color for your abilities there, which will help you stand out from other characters in the game.
                 """,
                 "",
-                False,
+                visibility='player only',
             ),
             feats_step(),
             special_rules_step(),
@@ -371,7 +371,8 @@ def creation_guidance():
     )
 
 
-def creation_step(header, explanation, mechanics, enabled_for_monsters=True):
+# Visibility: 'both', 'player only', or 'monster only'
+def creation_step(header, explanation, mechanics, visibility="both"):
     row = flex_row(
         {"class": "creation-step"},
         [
@@ -379,10 +380,10 @@ def creation_step(header, explanation, mechanics, enabled_for_monsters=True):
             div({"class": "mechanics"}, mechanics),
         ]
     )
-    if enabled_for_monsters:
-        return div([row])
+    if visibility == 'both':
+        return row
     else:
-        return div([
+        return div({"class": visibility.replace(' ', '-')}, [
             checkbox({
                 "class": "hidden is-monster",
                 "name": f"is_monster",
@@ -413,7 +414,7 @@ def insight_points_step():
             As a reminder, you have {max_insight_points} total insight points.
         """,
         textarea({"name": "insight_points_tracking"}),
-        False,
+        visibility='player only',
     )
 
 
@@ -436,6 +437,7 @@ def skills_step():
             {"class": "repeating_trainedskills"},
             trained_skill(),
         ),
+        visibility='both',
     )
 
 
@@ -522,6 +524,7 @@ def feats_step():
             {"class": "repeating_feats"},
             labeled_text_input("Feat name", input_attributes={"name": "feat_name"}),
         ),
+        visibility='player only'
     )
 
 def special_rules_step():
@@ -555,25 +558,30 @@ def special_rules_step():
                 ),
             ),
         ],
+        visibility='player only',
     )
 
-def monster_creation():
-    return div([
-        checkbox({
-            "class": "hidden is-monster",
-            "name": f"is_monster",
-            "readonly": True,
-            "value": "1",
-        }),
-        flex_col(
-            {"class": "monster-creation"},
-            [
-                div({"class": "section-header"}, "Monster Ability Generation"),
-                monster_attack(),
-                div({"class": "explanation"}, "This will automatically generate a reasonable but boring ability. You will need to choose which defense it targets, give it any relevant ability tags, and potentially add flavor text."),
-            ],
-        ),
-    ])
+def monster_type():
+    return creation_step(
+        "Monster Type",
+        "You can note the type of the monster here.",
+        [
+            select(
+                {"class": "monster-type", "name": "monster_type"},
+                [
+                    option({"value": ""}, ""),
+                    option({"value": "aberration"}, "Aberration"),
+                    option({"value": "animate"}, "Animate"),
+                    option({"value": "beast"}, "Beast"),
+                    option({"value": "elemental"}, "Elemental"),
+                    option({"value": "humanoid"}, "Humanoid"),
+                    option({"value": "souforged"}, "Soulforged"),
+                    option({"value": "undead"}, "Undead"),
+                ],
+            ),
+        ],
+        visibility="monster only",
+    )
 
 
 def monster_attack():
