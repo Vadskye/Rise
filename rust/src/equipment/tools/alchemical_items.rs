@@ -478,7 +478,7 @@ fn thrown_attacks() -> Vec<Tool> {
                 3,
                 "Throw to slow an injured creature",
                 r"
-                    The range increases to \\longrange.
+                    The range increases to \longrange.
                 ",
             ),
         ],
@@ -504,7 +504,7 @@ fn thrown_attacks() -> Vec<Tool> {
                 7,
                 "Throw to deal $dr9l damage and slow",
                 r"
-                    The range increases to \\medrange, and the damage increases to $dr9l.
+                    The range increases to \medrange, and the damage increases to $dr9l.
                 ",
             ),
         ],
@@ -519,7 +519,7 @@ fn thrown_attacks() -> Vec<Tool> {
         description: r"
             You can throw this item as a standard action.
             When you do, make an attack vs. Reflex against one Large or smaller creature within \shortrange.
-            \\hit The target is \glossterm{briefly} \slowed.
+            \hit The target is \glossterm{briefly} \slowed.
             This effect is immediately removed if the target takes damage from a \atAcid or \atFire ability.
         ".to_string(),
         upgrades: vec![
