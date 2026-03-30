@@ -45,27 +45,27 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
                 You learn how to create alchemical items more effectively.
                 You gain your choice of one of the following benefits.
                 Each benefit can only be chosen once.
-                You may spend \glossterm{insight points} to gain access to one additional alchemical discovery per two insight points.
 
                 You can only apply one of your alchemical discoveries whenever you create an item.
                 For example, if you had both the Aerodynamic Construction and Expanded Construction discoveries, you could not create an item with both double throwing range and double area.
                 You would have to choose which alchemical discovery to apply when creating the item.
                 {
                     \parhead{Advanced Workshop} You can use your \ability{portable workshop} ability to create items with a rank equal to your rank in this archetype.
+                    However, each item you create in this way counts as three items for the purpose of determining how many items you can sustain with that ability.
                     \parhead{Aerodynamic Construction} You double the range of thrown alchemical items you create.
                         This does not affect alchemical items that are not designed to be thrown.
                     \parhead{Efficient Crafting} You do not need an alchemist's lab to craft alchemical items (see \pcref{Crafting Items}).
                     In addition, you reduce the \glossterm{difficulty value} to craft alchemical items by 5.
-                    % TODO: wording, and does this even matter? Affects sunrods.
-                    \parhead{Enduring Construction} The duration of alchemical items you create is doubled.
-                    In addition, alchemical items that last for a fixed number of uses have that number of uses doubled.
+                    % TODO: wording, and does this even matter? Affects sunrods and elixirs.
+                    \parhead{Enduring Construction} The duration of alchemical items you create is tripled, to a maximum of an additional 16 hours.
+                    % In addition, alchemical items that last for a fixed number of uses have that number of uses doubled.
                     \parhead{Expanded Construction} The area affected by any alchemical item you create is doubled.
                     \parhead{Explosive Construction} Whenever you create an alchemical item that deals damage, you can enhance its destructive potential.
                     Attacks with the item gain a \plus2 accuracy bonus.
                     However, if the attacker rolls a 1 or 2 on the attack roll, the item targets them in addition to any other targets, dealing them half damage.
                     Ignore dice rolled for \glossterm{explosions} for this purpose.
-                    \parhead{Repetitive Construction} Whenever you use your \ability{portable workshop} ability, you can create two copies of the same alchemical item.
-                    This only counts as one item for the purpose of determining the number of items you can maintain with that ability.
+                    \parhead{Repetitive Construction} Whenever you use your \ability{portable workshop} ability, you can create three copies of the same alchemical item.
+                    They only count as two items for the purpose of determining the number of items you can maintain with that ability.
                 }
             ",
         },
@@ -110,7 +110,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             complexity: 0,
             name: "Alchemical Tolerance+",
             is_magical: true,
-            rank: 7,
+            rank: 5,
             description: r"
                 You gain a \plus1 bonus to your Constitution.
                 In addition, you are immune to \atAcid attacks.
@@ -120,7 +120,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             complexity: 1,
             name: "Experienced Quaffing",
             is_magical: false,
-            rank: 5,
+            rank: 7,
             description: r"
                 You can drink up to two doses of potions, elixirs, and other drinkable alchemical items as part of the same standard action.
             ",
