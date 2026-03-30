@@ -2,6 +2,7 @@ use crate::core_mechanics::abilities::AbilityTag;
 use crate::equipment::latex_table::{TableRow, ToTableRows};
 use crate::equipment::{item_latex, latex_table, ItemRarity, ItemUpgrade, StandardItem};
 mod alchemical_items;
+mod elixirs;
 mod kits;
 mod mounts;
 mod objects;
@@ -110,6 +111,7 @@ pub fn all_tools(consumable: Option<bool>, rarity_filter: Option<ItemRarity>) ->
     let mut tools = vec![];
 
     tools.append(&mut alchemical_items::alchemical_items());
+    tools.append(&mut elixirs::elixirs());
     tools.append(&mut kits::kits());
     tools.append(&mut mounts::mounts());
     tools.append(&mut objects::objects());

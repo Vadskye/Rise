@@ -58,6 +58,7 @@ impl SimpleDamageEffect {
             "$dr7l" => Self::dr7l(),
             "$dr8l" => Self::dr8l(),
             "$dr9l" => Self::dr9l(),
+            "$dr10l" => Self::dr10l(),
             _ => panic!("Unable to parse damage string: '{}'", text),
         }
     }
@@ -109,6 +110,10 @@ impl SimpleDamageEffect {
         Self::from_damage_scaling(DamageScaling::dr9())
     }
 
+    pub fn dr10() -> DamageEffect {
+        Self::from_damage_scaling(DamageScaling::dr10())
+    }
+
     pub fn dr(rank: i32) -> DamageEffect {
         match rank {
             0 => Self::dr0(),
@@ -121,6 +126,7 @@ impl SimpleDamageEffect {
             7 => Self::dr7(),
             8 => Self::dr8(),
             9 => Self::dr9(),
+            10 => Self::dr10(),
             _ => panic!("Unable to find equivalent dr() for rank {}", rank),
         }
     }
@@ -168,6 +174,10 @@ impl SimpleDamageEffect {
         Self::from_damage_scaling(DamageScaling::dr9l())
     }
 
+    pub fn dr10l() -> DamageEffect {
+        Self::from_damage_scaling(DamageScaling::dr10l())
+    }
+
     pub fn drl(rank: i32) -> DamageEffect {
         match rank {
             0 => Self::dr0l(),
@@ -180,6 +190,7 @@ impl SimpleDamageEffect {
             7 => Self::dr7l(),
             8 => Self::dr8l(),
             9 => Self::dr9l(),
+            10 => Self::dr10l(),
             _ => panic!("Unable to find equivalent drl() for rank {}", rank),
         }
     }

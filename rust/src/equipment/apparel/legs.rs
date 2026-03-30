@@ -20,10 +20,11 @@ fn boots() -> Vec<Apparel> {
         rank: 3,
         short_description: String::from("Deals your falling damage to enemies"),
         description: String::from(r"
-            As a standard action, you can jump as normal while activating these boots (see \pcref{Jumping}).
+            You can activate these boots as a \glossterm{standard action}.
+            You must be midair from an intentional jump to activate them (see \pcref{Jumping}).
             When you land from the jump, make an attack vs. Reflex against everything within a \smallarea radius from you.
             \hit You deal the target bludgeoning damage equal to the damage you took from falling.
-            If you reduce or avoid the falling damage, that also affects you damage you deal with these boots.
+            If you reduce or avoid the falling damage, that also affects the damage you deal with these boots.
             \crit Each target also falls \prone.
             This attack does not deal increased damage on a critical hit.
         "),

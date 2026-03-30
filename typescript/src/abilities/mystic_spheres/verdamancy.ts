@@ -34,6 +34,7 @@ export const verdamancy: MysticSphere = {
       attack: {
         hit: `
           The target is \\briefly \\slowed.
+          This effect is immediately removed if the target takes damage from a \atAcid or \atFire ability.
         `,
         targeting: `
           Make an attack vs. Brawn against up to two \\glossterm{grounded} creatures within \\medrange.
@@ -60,7 +61,7 @@ export const verdamancy: MysticSphere = {
           The target is \\slowed as a \\glossterm{condition}.
           This condition can be removed if the target makes a \\glossterm{difficulty value} 8 Strength check as a \\glossterm{move action} to break the plants.
           If the target makes this check as a standard action, it gains a +5 bonus.
-          In addition, this condition is removed if the target takes damage from a \\atFire ability.
+          In addition, this condition is removed if the target takes damage from a \\atAcid or \\atFire ability.
         `,
         targeting: `
           Make an attack vs. Brawn against each \\glossterm{grounded} creature in a \\smallarea radius within \\shortrange.
