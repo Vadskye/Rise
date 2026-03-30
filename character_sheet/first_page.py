@@ -174,7 +174,7 @@ def attribute_section(attribute, destination):
                             {
                                 "name": f"roll_{attribute}",
                                 "type": "roll",
-                                "value": f"@{{character_name}} rolls {attribute.capitalize()}: [[d10+{attribute_modifier}]]",
+                                "value": f"@{{character_name}} rolls {attribute.capitalize()}: [[@{{check_die}}+{attribute_modifier}]]",
                             },
                             attribute.capitalize(),
                         ),
@@ -205,7 +205,7 @@ def skill_box(name, destination):
                     "class": "skill-button",
                     "name": f"roll_skill_{modifier_key}",
                     "type": "roll",
-                    "value": f"@{{character_name}} uses {name}: [[d10 + @{{{modifier_key}_total}}]]",
+                    "value": f"@{{character_name}} uses {name}: [[@{{check_die}} + @{{{modifier_key}_total}}]]",
                 },
                 name,
             ),
@@ -315,7 +315,7 @@ def untrained_subskill_box(display_name, parseable_name):
                     "type": "roll",
                     "value": "@{character_name} uses "
                     + display_name
-                    + " (untrained): [[d10 + @{"
+                    + " (untrained): [[@{check_die} + @{"
                     + parseable_name
                     + "_untrained}]]",
                 },
@@ -473,7 +473,7 @@ def core_statistics(destination):
                         "class": "initiative-button",
                         "name": "roll_initiative",
                         "type": "roll",
-                        "value": "@{character_name} rolls initiative: [[d10+@{initiative}]]",
+                        "value": "@{character_name} rolls initiative: [[@{check_die}+@{initiative}]]",
                     },
                     "Initiative",
                 ),
@@ -570,6 +570,27 @@ def boring_stuff(destination):
                                         option({"value": ""}, ""),
                                         option({"value": "normal"}, "Normal"),
                                         option({"value": "elite"}, "Elite"),
+                                    ],
+                                ),
+                            ),
+                            underlabel(
+                                "Attack die",
+                                select(
+                                    {"class": "attack-die", "name": "attack_die"},
+                                    [
+                                        option({"value": "d10!"}, "Normal"),
+                                        option({"value": "d12!>9"}, "Barbarian Rage Variant"),
+                                        option({"value": "d8"}, "Moirai Votive"),
+                                    ],
+                                ),
+                            ),
+                            underlabel(
+                                "Check die",
+                                select(
+                                    {"class": "check-die", "name": "check_die"},
+                                    [
+                                        option({"value": "d10"}, "Normal"),
+                                        option({"value": "d8"}, "Moirai Votive"),
                                     ],
                                 ),
                             ),
