@@ -61,27 +61,18 @@ pub fn body_armor() -> Vec<MagicArmor> {
     armor.push(Body(StandardItem {
         name: String::from("Stonebody Armor"),
         rank: 2,
-        short_description: String::from("Grants +4 durability, but slower and heavier"),
+        short_description: String::from("Grants +2 Brawn and Fortitude, but slower and heavier"),
         description: String::from(
             r"
-            You gain a +4 \glossterm<enhancement bonus> to your \glossterm{durability}.
+            You gain a +2 \glossterm<enhancement bonus> to your Brawn and Fortitude defenses.
             However, you take a -10 foot penalty to your speed with all movement modes.
         ",
         ),
         upgrades: vec![
             ItemUpgrade::new(
-                4,
-                "Grants +6 durability, but slower and heavier",
-                "
-                The bonus increases to +6.
-            ",
-            ),
-            ItemUpgrade::new(
-                6,
-                "Grants +8 durability, but slower and heavier",
-                "
-                The bonus increases to +8.
-            ",
+                5,
+                "Grants +3 Brawn and Fortitude, but slower and heavier",
+                "The defense bonuses increase to +3.",
             ),
         ],
         ..MagicArmor::default()
@@ -177,7 +168,7 @@ pub fn body_armor() -> Vec<MagicArmor> {
         short_description: String::from("Grants +5 durability, but -1 vital rolls"),
         description: String::from(
             r"
-                You gain a +5 \glossterm{enhancement bonus} to your \glossterm{durability.}
+                You gain a +5 \glossterm{enhancement bonus} to your \glossterm{durability}.
                 However, you also take a \minus1 penalty to your \glossterm{vital rolls}.
             ",
         ),
