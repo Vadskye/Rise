@@ -572,10 +572,20 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
 pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
+            complexity: 0,
+            name: "Transcend Frailty",
+            is_magical: false,
+            rank: 1,
+            description: r"
+                You gain a \plus1 bonus to your Fortitude and Mental defenses. 
+                In addition, you gain a \plus1 bonus to your \glossterm{vital rolls} (see \pcref{Vital Wounds}).
+            ",
+        },
+        RankAbility {
             complexity: 1,
             name: "Feel the Flow of Life",
             is_magical: true,
-            rank: 1,
+            rank: 2,
             description: r"
                 You become so attuned to the natural energy of life that you can sense it even when sight fails you.
                 You gain \sense{lifesense} with a 120 foot range, allowing you to sense the location of living things without light (see \pcref{Lifesense}).
@@ -583,42 +593,22 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             ",
         },
         RankAbility {
-            complexity: 0,
-            name: "Transcend Frailty",
-            is_magical: false,
-            rank: 2,
-            description: r"
-                You gain a \plus2 bonus to your \glossterm{durability}.
-                In addition, you gain a \plus1 bonus to your \glossterm{vital rolls} (see \pcref{Vital Wounds}).
-            ",
-        },
-        RankAbility {
-            complexity: 0,
-            name: "Transcend Frailty+",
-            is_magical: false,
-            rank: 6,
-            description: r"
-                The durability bonus increases to +4.
-            ",
-        },
-        RankAbility {
-            complexity: 1,
-            name: "Transcend Uncertainty",
-            is_magical: false,
-            rank: 3,
-            description: r"
-                You are immune to being \stunned and \confused.
-            ",
-            // TODO: represent immunities?
-        },
-        RankAbility {
             complexity: 1,
             name: "Transcend Emotion",
             is_magical: false,
-            rank: 4,
+            rank: 3,
             description: r"
                 You are immune to \abilitytag{Emotion} attacks.
-                In addition, you are immune to being \frightened and \panicked.
+                In addition, you are immune to being \frightened, \panicked, and \goaded.
+            ",
+        },
+        RankAbility {
+            complexity: 1,
+            name: "Transcend Fatigue",
+            is_magical: false,
+            rank: 4,
+            description: r"
+                You gain a bonus to your \glossterm{fatigue tolerance} equal to your rank in this archetype.
             ",
         },
         RankAbility {
