@@ -265,8 +265,8 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
                     You can only apply this augment to maneuvers which cause you to make a \glossterm{strike}.
 
                     \parhead{Debilitating Maneuver} You gain an accuracy bonus equal to twice your excess rank.
-                    However, you cannot get a \glossterm{critical hit}.
-                    You can only apply this augment to maneuvers which deal damage and can inflict a \glossterm{condition}.
+                    However, the maneuver deals half damage.
+                    You can only apply this augment to maneuvers that can deal damage.
 
                     \parhead{Defensive Maneuver} You \glossterm{briefly} gain a bonus to your Armor defense equal to half your excess rank (minimum 1) when you use the maneuver.
                     You can only apply this augment to maneuvers which cause you to make a \glossterm{strike}.

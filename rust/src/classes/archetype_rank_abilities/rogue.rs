@@ -330,8 +330,8 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
                 However, you must still apply them to rank 1 trick maneuvers.
                 {
                     \parhead{Debilitating Maneuver} You gain an accuracy bonus equal to twice your excess rank.
-                    However, you cannot get a \glossterm{critical hit}.
-                    You can only apply this augment to maneuvers which deal damage and can inflict a \glossterm{condition}.
+                    However, the maneuver deals half damage.
+                    You can only apply this augment to maneuvers that can deal damage.
 
                     \parhead{Finishing Maneuver} You gain an accuracy bonus equal to twice your excess rank against creatures who are \glossterm{injured}.
 
