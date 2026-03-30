@@ -27,22 +27,25 @@ pub fn potions() -> Vec<Tool> {
         ..potion()
     });
 
-    // rank 3 personal healing spell would be dr5l
+    // rank 2 personal healing spell would be dr4l
     potions.push(Tool {
         name: "Potion of Healing".to_string(),
-        rank: 1,
-        short_description: "Restores $dr5l hit points and mitigates vital wounds".to_string(),
+        rank: 0,
+        short_description: "Restores $dr4l hit points and mitigates vital wounds".to_string(),
         description: r"
-            When you drink this \glossterm<potion>, you regain $dr5l hit points and increase your \glossterm{fatigue level} by one.
-            In addition, if you have a \glossterm{vital wound} gith a \glossterm{vital roll} of 0 or -1, you treat that vital roll as a 1 instead (see \pcref{Vital Wounds}).
+            When you drink this \glossterm<potion>, you regain $dr4l hit points and increase your \glossterm{fatigue level} by one.
+            In addition, you can increase one of your \glossterm{vital wounds} with a \glossterm{vital roll} of 0 to be equal to 1 instead (see \pcref{Vital Wounds}).
         ".to_string(),
         upgrades: vec![
+            ItemUpgrade::new(1, "Restores $dr5l hit points and mitigates vital wounds", r"
+                The healing increases to $dr5l, and the minimum vital roll affected improves to \minus1.
+            "),
             // Rank 6 personal healing spell would be dr8l
             ItemUpgrade::new(3, "Restores $dr8l hit points and mitigates vital wounds", r"
-                The healing increases to $dr8l, and the minimum vital roll affected improves to -2.
+                The healing increases to $dr8l, and the minimum vital roll affected improves to \minus2.
             "),
             ItemUpgrade::new(5, "Restores $dr10l hit points and mitigates vital wounds", r"
-                The healing increases to $dr10l, and the minimum vital roll affected improves to -3.
+                The healing increases to $dr10l, and the minimum vital roll affected improves to \minus3.
             "),
         ],
         ..potion()
