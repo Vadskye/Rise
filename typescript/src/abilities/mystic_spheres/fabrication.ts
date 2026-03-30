@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { BARRIER_COOLDOWN, MINOR_FATIGUE } from '../constants';
+import { BARRIER_COOLDOWN } from '../constants';
 
 export const fabrication: MysticSphere = {
   name: 'Fabrication',
@@ -77,7 +77,7 @@ export const fabrication: MysticSphere = {
       name: 'Instant Shield',
 
       effect: `
-        You can activate this effect as a \\glossterm{minor action}.
+        At the start of your turn, you can choose to activate this spell.
         When you do, you create a shield that you are proficient with in one \\glossterm{free hand}.
         The shield can be a standard shield or tower shield, and you can choose whether it is spiked.
         It is automatically strapped to your arm and cannot be detached.
@@ -230,7 +230,7 @@ export const fabrication: MysticSphere = {
         halfOnMiss: false,
         targeting: `
           When you cast this spell, you create a greataxe in midair within your space.
-          At the start of your next turn, make a \\glossterm{reactive attack} vs. Armor with the axe against up to two targets adjacent to you.
+          At the end of your next turn, make a \\glossterm{reactive attack} vs. Armor with the axe against up to two targets adjacent to you.
         `,
       },
       rank: 1,
@@ -384,21 +384,6 @@ export const fabrication: MysticSphere = {
       roles: ['barrier', 'hazard'],
       scaling: 'damage',
       tags: ['Barrier', 'Manifestation'],
-      type: 'Sustain (attunable, minor)',
-    },
-
-    {
-      name: 'Personal Weapon',
-
-      cost: MINOR_FATIGUE,
-      functionsLike: {
-        name: 'forge',
-        exceptThat:
-          'you can only create a weapon, and this spell has the \\atSustain (attunable, minor) tag instead of the \\atAttune tag.',
-      },
-      rank: 1,
-      roles: ['attune'],
-      tags: ['Manifestation'],
       type: 'Sustain (attunable, minor)',
     },
 
