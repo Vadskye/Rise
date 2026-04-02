@@ -554,7 +554,7 @@ export const astromancy: MysticSphere = {
         After you flicker in this way, you \\briefly can't flicker with this ability.
       `,
       narrative: `
-        Armor and shields can offer some protection, but true defensive mastery comes from not being hit at all.
+        Armor can offer some protection, but true defensive mastery comes from not being hit at all.
         Few people send themselves to another plane just to avoid danger, but it's a virtually unbeatable defense.
       `,
       rank: 3,
