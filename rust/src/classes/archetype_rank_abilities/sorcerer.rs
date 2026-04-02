@@ -1,8 +1,5 @@
-use crate::classes::archetype_rank_abilities::RankAbility;
-
-
-
 use super::standard_modifiers::add_standard_spell_modifiers;
+use crate::classes::archetype_rank_abilities::RankAbility;
 
 pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
     let mut abilities = vec![
