@@ -539,7 +539,7 @@ const SKILLS_BY_ATTRIBUTE: Record<string, string[]> = {
     'survival',
   ],
   willpower: [],
-  other: ['intimidate', 'profession'],
+  other: ['intimidate', 'profession', 'profession_untrained'],
 };
 
 const ALL_SKILLS = Object.values(SKILLS_BY_ATTRIBUTE).flat();
@@ -2720,7 +2720,7 @@ function handleSkills() {
       onGet({
         variables: {
           boolean: [`${skill}_is_trained`],
-          miscName: skill,
+          miscName: skill === 'profession_untrained' ? 'profession' : skill,
           numeric,
           string: [`${skill}_subskill_rowid`],
         },
@@ -2778,6 +2778,7 @@ function handleSubskillValue(section: string, attribute: string) {
 
   onGet({
     variables: {
+      miscName: section,
       numeric,
     },
     callback: (v) => {
@@ -2790,6 +2791,7 @@ function handleSubskillValue(section: string, attribute: string) {
         const skillValue =
           fromTraining +
           attributeModifier +
+          v.misc +
           sumCustomModifiers(v, 'all_skills') -
           v.fatigue_penalty +
           armorModifier;
