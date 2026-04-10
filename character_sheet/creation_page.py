@@ -505,13 +505,6 @@ def trained_skill():
             ),
             text_input(
                 {
-                    "class": "subskill-name",
-                    "name": "subskill_name",
-                    "placeholder": "Profession subskill",
-                }
-            ),
-            text_input(
-                {
                     "class": "hidden",
                     "name": "last_trained_skill",
                     "readonly": True,
@@ -529,6 +522,13 @@ def trained_skill():
                 input_attributes={
                     "name": "is_class_skill",
                 },
+            ),
+            text_input(
+                {
+                    "class": "subskill-name",
+                    "name": "subskill_name",
+                    "placeholder": "Profession subskill",
+                }
             ),
         ]
     )
