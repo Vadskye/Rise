@@ -2568,9 +2568,13 @@ function handleTrainedSkills() {
             attrs[`${oldTrainedSkill}_is_trained`] = '0';
           }
 
+
           let untrainedFromRootSkill = null;
           for (const skillWithSubskill of SKILLS_WITH_SUBSKILLS) {
             if (trainedSkill && trainedSkill.startsWith(skillWithSubskill)) {
+              console.log('trainedSkill', trainedSkill);
+              const modifierAttrName = trainedSkill.startsWith('profession') ? 'subskill_modifier' : trainedSkill;
+              const manualAttributeReminder = trainedSkill.startsWith('profession') ? " + a relevant attribute" : "";
               const subskill = trainedSkill.replace(skillWithSubskill + '_', '');
               const rowId = generateRowID();
               const prefix = `repeating_${skillWithSubskill}subskills_${rowId}`;
@@ -2578,7 +2582,7 @@ function handleTrainedSkills() {
               const fullSkillDescriptor =
                 uppercaseFirstLetter(skillWithSubskill) + ` (${subskill})`;
               attrs[`${prefix}_subskill_button`] =
-                `@{character_name} uses ${fullSkillDescriptor}:` + ` [[@{check_die} + @{${trainedSkill}}]]`;
+                `@{character_name} uses ${fullSkillDescriptor}:` + ` [[@{check_die} + @{${modifierAttrName}}]]${manualAttributeReminder}`;
               attrs[`${prefix}_subskill_name`] = `(${subskill})`;
               attrs[`${prefix}_subskill_modifier_name`] = `${skillWithSubskill}_${subskill}`;
               attrs[rowIdKey] = rowId;
