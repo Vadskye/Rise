@@ -196,6 +196,7 @@ def skill_box(name, destination):
     if name in SUBSKILLS:
         return subskill_section(name, destination)
 
+    manualAttributeReminder = ' + a relevant attribute' if name == 'Intimidate' else ''
     modifier_key = get_modifier_key(name)
     return flex_row(
         {"class": "skill-box"},
@@ -205,7 +206,7 @@ def skill_box(name, destination):
                     "class": "skill-button",
                     "name": f"roll_skill_{modifier_key}",
                     "type": "roll",
-                    "value": f"@{{character_name}} uses {name}: [[@{{check_die}} + @{{{modifier_key}_total}}]]",
+                    "value": f"@{{character_name}} uses {name}: [[@{{check_die}} + @{{{modifier_key}_total}}]]{manualAttributeReminder}",
                 },
                 name,
             ),
