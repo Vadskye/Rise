@@ -63,6 +63,10 @@
             column-gap: 1em;
             justify-content: space-between;
             margin-bottom: 0.1em;
+
+            .has-subskill:not(:checked) ~ .subskill-name {
+                display: none;
+            }
         }
     }
 }
