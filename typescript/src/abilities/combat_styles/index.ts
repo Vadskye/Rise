@@ -3,7 +3,7 @@ import { dirtyFighting } from './dirty_fighting';
 import { ebbAndFlow } from './ebb_and_flow';
 import { flurryOfBlows } from './flurry_of_blows';
 import { heraldOfWar } from './herald_of_war';
-import { mobileHunter } from './mobile_assault';
+import { mobileHunter } from './mobile_hunter';
 import { perfectPrecision } from './perfect_precision';
 import { ripAndTear } from './rip_and_tear';
 import { monsterManeuvers } from './monster_maneuvers';
