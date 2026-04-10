@@ -496,6 +496,27 @@ def trained_skill():
                     option({"value": "Swim"}, "Swim"),
                 ],
             ),
+            checkbox(
+                {
+                    "class": "hidden has-subskill",
+                    "name": "has_subskill",
+                    "value": "1",
+                }
+            ),
+            text_input(
+                {
+                    "class": "subskill-name",
+                    "name": "subskill_name",
+                    "placeholder": "Profession subskill",
+                }
+            ),
+            text_input(
+                {
+                    "class": "hidden",
+                    "name": "last_trained_skill",
+                    "readonly": True,
+                }
+            ),
             text_input(
                 {
                     "class": "hidden",

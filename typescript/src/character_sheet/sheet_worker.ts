@@ -544,7 +544,7 @@ const SKILLS_BY_ATTRIBUTE: Record<string, string[]> = {
 
 const ALL_SKILLS = Object.values(SKILLS_BY_ATTRIBUTE).flat();
 
-const SKILLS_WITH_SUBSKILLS = ['craft', 'knowledge'];
+const SKILLS_WITH_SUBSKILLS = ['craft', 'knowledge', 'profession'];
 
 const KNOWABLE_CONCEPTS = [
   'bardic_performances',
@@ -2525,81 +2525,128 @@ function handleSkillPoints() {
 }
 
 function handleTrainedSkills() {
-  on(`change:repeating_trainedskills`, function (eventInfo) {
-    const trainedSkill = formatParseableSkillName(eventInfo.newValue);
-    const untrainedSkill = formatParseableSkillName(eventInfo.previousValue);
+  on(
+    `change:repeating_trainedskills:trained_skill change:repeating_trainedskills:subskill_name`,
+    function (eventInfo) {
+      const triggerParts = eventInfo.triggerName.split('_');
+      const rowPrefix =
+        triggerParts.length >= 3 ? triggerParts.slice(0, 3).join('_') : eventInfo.triggerName;
+      const rowIdKey = `${rowPrefix}_front_rowid`;
+      const lastSkillKey = `${rowPrefix}_last_trained_skill`;
 
-    const attrs: Attrs = {};
-    const triggerParts = eventInfo.triggerName.split('_');
-    const rowPrefix = triggerParts.length >= 3 ? triggerParts.slice(0, 3).join('_') : eventInfo.triggerName;
-    const rowIdKey = `${rowPrefix}_front_rowid`;
-    if (trainedSkill) {
-      attrs[`${trainedSkill}_is_trained`] = '1';
-    }
-    if (untrainedSkill && untrainedSkill !== trainedSkill) {
-      attrs[`${untrainedSkill}_is_trained`] = '0';
-    }
+      getAttrs(
+        [`${rowPrefix}_trained_skill`, `${rowPrefix}_subskill_name`, rowIdKey, lastSkillKey],
+        (v) => {
+          let trainedSkillRaw = v[`${rowPrefix}_trained_skill`];
+          let subskillName = v[`${rowPrefix}_subskill_name`];
+          const oldTrainedSkill = v[lastSkillKey];
 
-    let untrainedFromRootSkill = null;
-    for (const skillWithSubskill of SKILLS_WITH_SUBSKILLS) {
-      if (trainedSkill && trainedSkill.startsWith(skillWithSubskill)) {
-        const subskill = trainedSkill.replace(skillWithSubskill + '_', '');
-        const rowId = generateRowID();
-        const prefix = `repeating_${skillWithSubskill}subskills_${rowId}`;
-        attrs[`${trainedSkill}_subskill_rowid`] = rowId;
-        const fullSkillDescriptor = uppercaseFirstLetter(skillWithSubskill) + ` (${subskill})`;
-        attrs[`${prefix}_subskill_button`] =
-          `@{character_name} uses ${fullSkillDescriptor}:` + ` [[@{check_die} + @{${trainedSkill}}]]`;
-        attrs[`${prefix}_subskill_name`] = `(${subskill})`;
-        attrs[`${prefix}_subskill_modifier_name`] = `${skillWithSubskill}_${subskill}`;
-        attrs[rowIdKey] = rowId;
-      }
+          if (
+            subskillName &&
+            (trainedSkillRaw === 'Profession' ||
+              trainedSkillRaw === 'Craft' ||
+              trainedSkillRaw === 'Knowledge')
+          ) {
+            if (!trainedSkillRaw.includes('(')) {
+              trainedSkillRaw = `${trainedSkillRaw} (${subskillName})`;
+            }
+          }
 
-      if (
-        untrainedSkill &&
-        untrainedSkill !== trainedSkill &&
-        untrainedSkill.startsWith(skillWithSubskill)
-      ) {
-        untrainedFromRootSkill = skillWithSubskill;
-      }
-    }
+          const trainedSkill = formatParseableSkillName(trainedSkillRaw);
+          if (trainedSkill === oldTrainedSkill) return;
 
-    // Need to resolve the whole getAttrs flow before calling setAttrs
-    if (untrainedFromRootSkill) {
-      getAttrs([rowIdKey], (v) => {
-        const rowId = v[rowIdKey];
-        if (rowId) {
-          removeRepeatingRow(`repeating_${untrainedFromRootSkill}subskills_${rowId}`);
-        }
-        attrs[`${untrainedSkill}_subskill_rowid`] = '';
-        setAttrs(attrs);
-      });
-    } else {
-      setAttrs(attrs);
-    }
-  });
+          const attrs: Attrs = {};
+          attrs[lastSkillKey] = trainedSkill || '';
+
+          const baseSkill = trainedSkillRaw ? trainedSkillRaw.split(' ')[0] : '';
+          attrs[`${rowPrefix}_has_subskill`] = baseSkill === 'Profession' ? '1' : '0';
+
+          if (trainedSkill) {
+            attrs[`${trainedSkill}_is_trained`] = '1';
+          }
+          if (oldTrainedSkill && oldTrainedSkill !== trainedSkill) {
+            attrs[`${oldTrainedSkill}_is_trained`] = '0';
+          }
+
+          let untrainedFromRootSkill = null;
+          for (const skillWithSubskill of SKILLS_WITH_SUBSKILLS) {
+            if (trainedSkill && trainedSkill.startsWith(skillWithSubskill)) {
+              const subskill = trainedSkill.replace(skillWithSubskill + '_', '');
+              const rowId = generateRowID();
+              const prefix = `repeating_${skillWithSubskill}subskills_${rowId}`;
+              attrs[`${trainedSkill}_subskill_rowid`] = rowId;
+              const fullSkillDescriptor =
+                uppercaseFirstLetter(skillWithSubskill) + ` (${subskill})`;
+              attrs[`${prefix}_subskill_button`] =
+                `@{character_name} uses ${fullSkillDescriptor}:` + ` [[@{check_die} + @{${trainedSkill}}]]`;
+              attrs[`${prefix}_subskill_name`] = `(${subskill})`;
+              attrs[`${prefix}_subskill_modifier_name`] = `${skillWithSubskill}_${subskill}`;
+              attrs[rowIdKey] = rowId;
+            }
+
+            if (
+              oldTrainedSkill &&
+              oldTrainedSkill !== trainedSkill &&
+              oldTrainedSkill.startsWith(skillWithSubskill)
+            ) {
+              untrainedFromRootSkill = skillWithSubskill;
+            }
+          }
+
+          // Need to resolve the whole getAttrs flow before calling setAttrs
+          if (untrainedFromRootSkill) {
+            const rowId = v[rowIdKey];
+            if (rowId) {
+              removeRepeatingRow(`repeating_${untrainedFromRootSkill}subskills_${rowId}`);
+            }
+            attrs[`${oldTrainedSkill}_subskill_rowid`] = '';
+            setAttrs(attrs);
+          } else {
+            setAttrs(attrs);
+          }
+        },
+      );
+    },
+  );
 
   on(`remove:repeating_trainedskills`, function (eventInfo) {
-    const skillNameKey = Object.keys(eventInfo.removedInfo).find((k) =>
-      k.endsWith('trained_skill'),
-    );
+    const removed = eventInfo.removedInfo;
+    const skillNameKey = Object.keys(removed).find((k) => k.endsWith('trained_skill'));
+    const subskillNameKey = Object.keys(removed).find((k) => k.endsWith('subskill_name'));
+
     if (!skillNameKey) {
       throw new Error('Could not find skillNameKey for trained skill removal');
     }
-    const untrainedSkill = formatParseableSkillName(eventInfo.removedInfo[skillNameKey]);
+
+    let trainedSkillRaw = removed[skillNameKey];
+    const subskillName = subskillNameKey ? removed[subskillNameKey] : '';
+
+    if (
+      subskillName &&
+      (trainedSkillRaw === 'Profession' ||
+        trainedSkillRaw === 'Craft' ||
+        trainedSkillRaw === 'Knowledge')
+    ) {
+      if (!trainedSkillRaw.includes('(')) {
+        trainedSkillRaw = `${trainedSkillRaw} (${subskillName})`;
+      }
+    }
+
+    const untrainedSkill = formatParseableSkillName(trainedSkillRaw);
     if (!untrainedSkill) {
       return;
     }
+
     const attrs = {
       [`${untrainedSkill}_is_trained`]: '0',
     };
     for (const skillWithSubskill of SKILLS_WITH_SUBSKILLS) {
       if (untrainedSkill.startsWith(skillWithSubskill)) {
-        const rowIdKey = Object.keys(eventInfo.removedInfo).find(
-          (k) => k.endsWith('front_rowid') && eventInfo.removedInfo[k],
+        const rowIdKey = Object.keys(removed).find(
+          (k) => k.endsWith('front_rowid') && removed[k],
         );
         if (rowIdKey) {
-          const rowId = eventInfo.removedInfo[rowIdKey];
+          const rowId = removed[rowIdKey];
           removeRepeatingRow(`repeating_${skillWithSubskill}subskills_${rowId}`);
         }
         attrs[`${untrainedSkill}_subskill_rowid`] = '';
@@ -2617,12 +2664,14 @@ function handleTrainedSkills() {
           setValues[`${skill}_is_trained`] = '0';
         }
         for (const id of ids) {
-          const skillName = formatParseableSkillName(
-            attrs[`repeating_trainedskills_${id}_trained_skill`],
-          );
+          const rawName = attrs[`repeating_trainedskills_${id}_trained_skill`];
+          const skillName = formatParseableSkillName(rawName);
           if (skillName) {
             setValues[`${skillName}_is_trained`] = '1';
           }
+          const baseSkill = rawName ? rawName.split(' ')[0] : '';
+          setValues[`repeating_trainedskills_${id}_has_subskill`] =
+            baseSkill === 'Profession' ? '1' : '0';
         }
         setAttrs(setValues);
       });
@@ -2712,6 +2761,46 @@ function handleSkills() {
       });
     }
   }
+
+  handleSubskillValue('craft', 'intelligence');
+  handleSubskillValue('knowledge', 'intelligence');
+  handleSubskillValue('profession', 'other');
+}
+
+function handleSubskillValue(section: string, attribute: string) {
+  const numeric = ['level', 'fatigue_penalty', ...customModifierNames('all_skills')];
+  if (attribute !== 'other') {
+    numeric.push(attribute);
+  }
+  if (attribute === 'dexterity') {
+    numeric.push('armor_dex_skill_modifier');
+  }
+
+  onGet({
+    variables: {
+      numeric,
+    },
+    callback: (v) => {
+      getSectionIDs(`repeating_${section}subskills`, (ids) => {
+        const attrs: Attrs = {};
+        const fromTraining = 3 + Math.floor(v.level / 2);
+        const armorModifier = v.armor_dex_skill_modifier || 0;
+        const attributeModifier = attribute === 'other' ? 0 : v[attribute] || 0;
+
+        const skillValue =
+          fromTraining +
+          attributeModifier +
+          sumCustomModifiers(v, 'all_skills') -
+          v.fatigue_penalty +
+          armorModifier;
+
+        for (const id of ids) {
+          attrs[`repeating_${section}subskills_${id}_subskill_modifier`] = skillValue;
+        }
+        setAttrs(attrs);
+      });
+    },
+  });
 }
 
 function handleSpecialDefenses() {
