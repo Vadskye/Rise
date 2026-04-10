@@ -67,6 +67,15 @@
             .has-subskill:not(:checked) ~ .subskill-name {
                 display: none;
             }
+
+            .subskill-name {
+                // Some overlap with the "class" box is fake, and this connects
+                // it better visually.
+                margin-top: -10px;
+                padding-top: 0;
+                margin-bottom: 5px;
+                width: 220px;
+            }
         }
     }
 }
