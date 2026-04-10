@@ -645,8 +645,8 @@ def universal_abilities():
             universal_ability_button(
                 "Charge",
                 """
-                    After using this ability, you briefly take a -2 penalty to all defenses.
-                    Move up to your speed in a single straight line. At the end of your movement, you can make a melee strike from your new location.
+                    After using this ability, you take a -2 penalty to all defenses until your next turn.
+                    Move up to your speed in a single straight line without reducing your available movement. At the end of this movement, you can make a melee strike from your new location.
                 """,
             ),
             universal_ability_button(
