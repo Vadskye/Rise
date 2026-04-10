@@ -22,6 +22,7 @@ export const mobileHunter: CombatStyle = {
       cost: 'One \\glossterm{fatigue level}, unless you have a \\glossterm{vital wound}.',
       effect: `
         You \\briefly gain a \\plus10 foot bonus to your \\glossterm{speed} and are \\primed.
+        \longreminder{This doesn't increase your \\glossterm{available movement} this turn.}
       `,
       rank: 1,
       roles: ['exertion', 'focus'],
@@ -33,6 +34,7 @@ export const mobileHunter: CombatStyle = {
       cost: 'One \\glossterm{fatigue level}, unless you have a \\glossterm{vital wound}.',
       effect: `
         You \\briefly gain a \\plus20 foot bonus to your \\glossterm{speed} and are \\primed.
+        \longreminder{This doesn't increase your \\glossterm{available movement} this turn.}
       `,
       rank: 5,
       roles: ['exertion', 'focus'],
@@ -66,7 +68,8 @@ export const mobileHunter: CombatStyle = {
       name: 'Rushdown',
 
       effect: `
-        You can move up to half your speed, then make a melee \\glossterm{strike}.
+        You can move up to half your speed without reducing your \\glossterm{available movement}.
+        Then, you can make a melee \\glossterm{strike}.
       `,
       rank: 1,
       roles: ['dive'],
@@ -76,7 +79,8 @@ export const mobileHunter: CombatStyle = {
       name: 'Mighty Rushdown',
 
       effect: `
-        You can move up to your speed, then make a melee \\glossterm{strike} with a \\minus2 accuracy penalty that deals double \\glossterm{weapon damage}.
+        You can move up to your speed without reducing your \\glossterm{available movement}.
+        Then, you can make a melee \\glossterm{strike} with a \\minus2 accuracy penalty that deals double \\glossterm{weapon damage}.
       `,
       rank: 3,
       roles: ['dive'],
@@ -115,6 +119,7 @@ export const mobileHunter: CombatStyle = {
       effect: `
         Your \\glossterm{speed} is \\briefly doubled.
         However, you cannot use the \\ability{run} or \\ability{sprint} abilities during that time.
+        \longreminder{This doesn't increase your \\glossterm{available movement} this turn.}
       `,
       rank: 1,
       roles: ['focus'],
