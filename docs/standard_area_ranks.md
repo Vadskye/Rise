@@ -8,7 +8,7 @@ Rank 0 areas (4-8 squares):
   * Small cone from self (6/7s)
 * Line:
   * Small, 10' wide line from self (6s)
-  * Medium, 5' wide line from self (6s; rare due to unusual range)
+  * Medium, 5' wide line from self (6s)
 * Radius:
   * Small radius from self (24s)
     * This is obviously a larger area than a cone or line, but is also much harder to aim to only hit enemies

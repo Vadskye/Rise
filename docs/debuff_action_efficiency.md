@@ -119,13 +119,17 @@ These are EA modifiers, as opposed to rank modifiers that apply after calculatin
 
 ## Debuff Area
 
-All of the effective action calculations assume that every enemy in the fight is affected by the debuff. For that reason, a "standard" debuff affects a large area: a rank X spell uses a rank X area (see Area Tiers, below).
+All of the effective action calculations assume that every enemy in the fight is affected by the debuff. For that reason, a "standard" debuff affects a large area: a rank X spell uses a rank X area, to a minimum of rank 3.
 
 ### Limited Scope Debuffs
 
 You can apply a stronger debuff if you are willing to affect fewer enemies. There are three versions of a limited scope debuff:
 * Rank - 1: Rank X / 2 area, to a minimum of rank 0
 * Rank - 2: Single target melee range
+
+### Expanded Area
+
+Normally, debuff areas can't reach beyond 60' from self. If you pay 0.2 EA, you can get access to longer range areas.  
 
 ## Defense penalties
 

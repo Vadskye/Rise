@@ -17,12 +17,11 @@ If it's a damage plus debuff spell, reduce the listed damage rank by 1.
   * drX+2 in melee range
 * Rank X, where X >= 2:
   * drX-1 in Long range
-  * drX-1 in RX area, ignoring extreme areas
+  * drX-1 in R3 area
 * Rank X, where X >= 3:
   * drX-2 in Distant range
-  * drX-2 in RX area, including extreme areas
 * Rank X, where X >= 4:
-  * drX-1 in R(X-3) area, including extreme areas
+  * drX-2 in RX area
 
 #### Flat damage
 
