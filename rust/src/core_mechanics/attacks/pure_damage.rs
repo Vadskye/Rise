@@ -83,18 +83,4 @@ impl PureDamageManeuver {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::creatures::Creature;
-    use crate::latex_formatting::remove_indentation;
-
-    fn get_basic_creature() -> Creature {
-        Creature::new(1)
-    }
-
-    fn get_ability_latex(config: PureDamageAbility) -> String {
-        remove_indentation(&config.attack().latex_ability_block(&get_basic_creature()))
-    }
-
-    fn get_maneuver_latex(config: PureDamageManeuver) -> String {
-        remove_indentation(&config.attack().latex_ability_block(&get_basic_creature()))
-    }
 }
