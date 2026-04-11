@@ -142,6 +142,11 @@ impl Maneuver {
                         power_per_dice: 2,
                         power_per_plus1_modifier: 0,
                     }),
+                    8 => d.power_scalings.push(PowerScaling {
+                        dice: Some(DicePool::d10()),
+                        power_per_dice: 2,
+                        power_per_plus1_modifier: 0,
+                    }),
                     _ => {},
                 }),
             Self::GenericTripleDamage => weapon
