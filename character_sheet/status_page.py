@@ -2,7 +2,6 @@ from cgi_simple import (
     button,
     checkbox,
     div,
-    equation,
     fieldset,
     flex_col,
     flex_row,
@@ -12,14 +11,11 @@ from cgi_simple import (
     labeled_text_input,
     number_input,
     option,
-    plus,
     select,
-    sidelabel,
     span,
     subtlebutton,
     textarea,
     text_input,
-    this_or_that,
     underlabel,
     underlabeled_checkbox,
     underlabel_spaced,
@@ -195,7 +191,7 @@ def debuffs():
     )
 
 
-def debuff(name, representable=True):
+def debuff(name: str, representable: bool = True) -> str:
     debuff_class = "representable-debuff" if representable else "unrepresentable-debuff"
     return label(
         {"class": "debuff-active-label"},
@@ -212,7 +208,7 @@ def debuff(name, representable=True):
     )
 
 
-def debuff_explanation(debuff):
+def debuff_explanation(debuff: str) -> str:
     return {
         "blinded": "50% miss chance",
         "confused": "-2 defenses and randomly attack or defend",
@@ -317,7 +313,7 @@ def custom_modifier(show_toggle: bool | str, show_text: bool) -> tuple[str]:
     )
 
 
-def custom_statistic(i):
+def custom_statistic(i: str) -> str:
     return flex_row(
         {"class": "custom-statistic"},
         [
