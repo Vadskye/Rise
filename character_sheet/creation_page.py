@@ -1,3 +1,4 @@
+from __future__ import annotations
 from cgi_simple import (
     button,
     checkbox,
@@ -36,8 +37,11 @@ from sheet_data import (
 )
 import re
 
+# type: ignore[reportUnusedImport]
+_ = (ATTRIBUTE_SHORTHAND, ATTRIBUTE_SKILLS, ATTRIBUTES, ROLL20_CALC, SUBSKILLS, re)
 
-def create_page(destination):
+
+def create_page(_destination: str) -> str:
     return flex_col(
         {"class": "page creation-page"},
         [
@@ -50,7 +54,7 @@ def create_page(destination):
     )
 
 
-def creation_guidance():
+def creation_guidance() -> str:
     return flex_col(
         {"class": "creation-guidance"},
         [
@@ -60,7 +64,7 @@ def creation_guidance():
                     Choose a short phrase that describes the core concept of your character.
                 """,
                 text_input({"name": "concept"}),
-                visibility='player only',
+                visibility="player only",
             ),
             creation_step(
                 "Goals",
@@ -68,7 +72,7 @@ def creation_guidance():
                     Choose your character's motivations and goals.
                 """,
                 textarea({"name": "motivation_and_goals"}),
-                visibility='player only',
+                visibility="player only",
             ),
             creation_step(
                 "Species",
@@ -113,7 +117,7 @@ def creation_guidance():
                         option({"value": "vampire"}, "(Vampire)"),
                     ],
                 ),
-                visibility='player only',
+                visibility="player only",
             ),
             monster_type(),
             creation_step(
@@ -147,7 +151,7 @@ def creation_guidance():
                     Choose the languages your character can speak.
                 """,
                 text_input({"name": "languages"}),
-                visibility='both',
+                visibility="both",
             ),
             creation_step(
                 "Attributes",
@@ -164,24 +168,24 @@ def creation_guidance():
                         {"class": "attributes"},
                         [
                             labeled_number_input(
-                                "Str", input_attributes={"name": f"strength_at_creation"}
+                                "Str", input_attributes={"name": "strength_at_creation"}
                             ),
                             labeled_number_input(
-                                "Dex", input_attributes={"name": f"dexterity_at_creation"}
+                                "Dex", input_attributes={"name": "dexterity_at_creation"}
                             ),
                             labeled_number_input(
                                 "Con",
-                                input_attributes={"name": f"constitution_at_creation"},
+                                input_attributes={"name": "constitution_at_creation"},
                             ),
                             labeled_number_input(
                                 "Int",
-                                input_attributes={"name": f"intelligence_at_creation"},
+                                input_attributes={"name": "intelligence_at_creation"},
                             ),
                             labeled_number_input(
-                                "Per", input_attributes={"name": f"perception_at_creation"}
+                                "Per", input_attributes={"name": "perception_at_creation"}
                             ),
                             labeled_number_input(
-                                "Wil", input_attributes={"name": f"willpower_at_creation"}
+                                "Wil", input_attributes={"name": "willpower_at_creation"}
                             ),
                         ],
                     ),
@@ -189,24 +193,24 @@ def creation_guidance():
                         {"class": "attribute-scaling"},
                         [
                             labeled_number_input(
-                                "+Str", input_attributes={"name": f"strength_level_scaling"}
+                                "+Str", input_attributes={"name": "strength_level_scaling"}
                             ),
                             labeled_number_input(
-                                "+Dex", input_attributes={"name": f"dexterity_level_scaling"}
+                                "+Dex", input_attributes={"name": "dexterity_level_scaling"}
                             ),
                             labeled_number_input(
                                 "+Con",
-                                input_attributes={"name": f"constitution_level_scaling"},
+                                input_attributes={"name": "constitution_level_scaling"},
                             ),
                             labeled_number_input(
                                 "+Int",
-                                input_attributes={"name": f"intelligence_level_scaling"},
+                                input_attributes={"name": "intelligence_level_scaling"},
                             ),
                             labeled_number_input(
-                                "+Per", input_attributes={"name": f"perception_level_scaling"}
+                                "+Per", input_attributes={"name": "perception_level_scaling"}
                             ),
                             labeled_number_input(
-                                "+Wil", input_attributes={"name": f"willpower_level_scaling"}
+                                "+Wil", input_attributes={"name": "willpower_level_scaling"}
                             ),
                         ],
                     ),
@@ -290,7 +294,7 @@ def creation_guidance():
                         for i in range(4)
                     ]
                 ),
-                visibility='player only',
+                visibility="player only",
             ),
             insight_points_step(),
             skills_step(),
@@ -301,7 +305,7 @@ def creation_guidance():
                     It automatically calculates proficiencies from your base class.
                 """,
                 "",
-                visibility='player only',
+                visibility="player only",
             ),
             creation_step(
                 "Items",
@@ -310,7 +314,7 @@ def creation_guidance():
                     Over time, you'll find many more items, so you should go to the <b>Items</b> tab to record your choices.
                 """,
                 "",
-                visibility='player only',
+                visibility="player only",
             ),
             creation_step(
                 "Personality",
@@ -319,7 +323,7 @@ def creation_guidance():
                     This can be vague, and it can change over time, but it can be useful to record something as a guide.
                 """,
                 textarea({"class": "personality", "name": "personality"}),
-                visibility='player only',
+                visibility="player only",
             ),
             creation_step(
                 "Background",
@@ -328,7 +332,7 @@ def creation_guidance():
                     This can be as sparse or extensive as you want; there's no one right way to create a character.
                 """,
                 textarea({"class": "background", "name": "background"}),
-                visibility='player only',
+                visibility="player only",
             ),
             creation_step(
                 "Appearance",
@@ -337,7 +341,7 @@ def creation_guidance():
                     This can be as sparse or extensive as you want; there's no one right way to create a character.
                 """,
                 textarea({"class": "appearance", "name": "appearance"}),
-                visibility='player only',
+                visibility="player only",
             ),
             creation_step(
                 "Alignment",
@@ -346,7 +350,7 @@ def creation_guidance():
                     You can decide to stay neutral along either or both alignment dimensions.
                 """,
                 textarea({"class": "alignment", "name": "alignment"}),
-                visibility='both',
+                visibility="both",
             ),
             creation_step(
                 "Name",
@@ -354,7 +358,7 @@ def creation_guidance():
                     Choose your character's name.
                 """,
                 text_input({"name": "character_name"}),
-                visibility='player only',
+                visibility="player only",
             ),
             creation_step(
                 "Finishing up",
@@ -363,7 +367,7 @@ def creation_guidance():
                     You can also choose a chat color for your abilities there, which will help you stand out from other characters in the game.
                 """,
                 "",
-                visibility='player only',
+                visibility="player only",
             ),
             feats_step(),
             special_rules_step(),
@@ -372,29 +376,36 @@ def creation_guidance():
 
 
 # Visibility: 'both', 'player only', or 'monster only'
-def creation_step(header, explanation, mechanics, visibility="both"):
+def creation_step(
+    header: str, explanation: str, mechanics: str | list[str], visibility: str = "both"
+) -> str:
     row = flex_row(
         {"class": "creation-step"},
         [
             div({"class": "explanation"}, f"<b>{header}:</b> " + explanation),
             div({"class": "mechanics"}, mechanics),
-        ]
+        ],
     )
-    if visibility == 'both':
+    if visibility == "both":
         return row
     else:
-        return div({"class": visibility.replace(' ', '-')}, [
-            checkbox({
-                "class": "hidden is-monster",
-                "name": f"is_monster",
-                "readonly": True,
-                "value": "1",
-            }),
-            row,
-        ])
+        return div(
+            {"class": visibility.replace(" ", "-")},
+            [
+                checkbox(
+                    {
+                        "class": "hidden is-monster",
+                        "name": "is_monster",
+                        "readonly": True,
+                        "value": "1",
+                    }
+                ),
+                row,
+            ],
+        )
 
 
-def insight_points_step():
+def insight_points_step() -> str:
     max_insight_points = text_input(
         {"class": "inline-number", "readonly": True, "name": "insight_points"}
     )
@@ -414,11 +425,11 @@ def insight_points_step():
             As a reminder, you have {max_insight_points} total insight points.
         """,
         textarea({"name": "insight_points_tracking"}),
-        visibility='player only',
+        visibility="player only",
     )
 
 
-def skills_step():
+def skills_step() -> str:
     class_skills = text_input(
         {"class": "inline-number", "readonly": True, "name": "class_skill_count"}
     )
@@ -437,11 +448,11 @@ def skills_step():
             {"class": "repeating_trainedskills"},
             trained_skill(),
         ),
-        visibility='both',
+        visibility="both",
     )
 
 
-def trained_skill():
+def trained_skill() -> str:
     return flex_row(
         {"class": "skill-row"},
         [
@@ -530,11 +541,11 @@ def trained_skill():
                     "placeholder": "Profession subskill",
                 }
             ),
-        ]
+        ],
     )
 
 
-def feats_step():
+def feats_step() -> str:
     return creation_step(
         "Feats",
         """
@@ -545,10 +556,11 @@ def feats_step():
             {"class": "repeating_feats"},
             labeled_text_input("Feat name", input_attributes={"name": "feat_name"}),
         ),
-        visibility='player only'
+        visibility="player only",
     )
 
-def special_rules_step():
+
+def special_rules_step() -> str:
     return creation_step(
         "Special Rules",
         """
@@ -579,10 +591,11 @@ def special_rules_step():
                 ),
             ),
         ],
-        visibility='player only',
+        visibility="player only",
     )
 
-def monster_type():
+
+def monster_type() -> str:
     return creation_step(
         "Monster Type",
         "You can note the type of the monster here.",
@@ -605,107 +618,112 @@ def monster_type():
     )
 
 
-def monster_attack():
-    return flex_row({"class": "monster-attack"}, [
-        labeled_text_input(
-            "Name",
-            {"class": "monster-attack-name"},
-            {"name": "monster_attack_name"},
-        ),
-        underlabel(
-            "Accuracy",
-            select(
-                {
-                    "class": "monster-attack-accuracy",
-                    "name": "monster_attack_accuracy",
-                },
-                [
-                    option({"value": "normal"}, "Normal"),
-                    option({"value": "low_accuracy"}, "Low"),
-                    option({"value": "high_accuracy"}, "High"),
-                ]
+def monster_attack() -> str:
+    return flex_row(
+        {"class": "monster_attack"},
+        [
+            labeled_text_input(
+                "Name",
+                {"class": "monster-attack-name"},
+                {"name": "monster_attack_name"},
             ),
-        ),
-        underlabel(
-            "Targeting",
-            select(
-                {
-                    "class": "monster-attack-targeting",
-                    "name": "monster_attack_targeting",
-                },
-                [
-                    option({"value": "targeted_medium"}, "Targeted (Medium range)"),
-                    option({"value": "targeted_touch"}, "Targeted (Touch)"),
-                    option({"value": "targeted_short"}, "Targeted (Short range)"),
-                    option({"value": "targeted_long"}, "Targeted (Long range)"),
-                    option({"value": "small_area"}, "Small area"),
-                    option({"value": "large_area"}, "Large area"),
-                ]
+            underlabel(
+                "Accuracy",
+                select(
+                    {
+                        "class": "monster-attack-accuracy",
+                        "name": "monster_attack_accuracy",
+                    },
+                    [
+                        option({"value": "normal"}, "Normal"),
+                        option({"value": "low_accuracy"}, "Low"),
+                        option({"value": "high_accuracy"}, "High"),
+                    ],
+                ),
             ),
-        ),
-        underlabel(
-            "Area Shape",
-            select(
-                {
-                    "class": "monster-attack-area-shape",
-                    "name": "monster_attack_area_shape",
-                },
-                [
-                    option({"value": "default"}, "Default"),
-                    option({"value": "cone"}, "Cone"),
-                    option({"value": "line"}, "Line"),
-                    option({"value": "radius_from_self"}, "Radius from self"),
-                    option({"value": "radius_at_range"}, "Radius at range"),
-                ]
+            underlabel(
+                "Targeting",
+                select(
+                    {
+                        "class": "monster-attack-targeting",
+                        "name": "monster_attack_targeting",
+                    },
+                    [
+                        option({"value": "targeted_medium"}, "Targeted (Medium range)"),
+                        option({"value": "targeted_touch"}, "Targeted (Touch)"),
+                        option({"value": "targeted_short"}, "Targeted (Short range)"),
+                        option({"value": "targeted_long"}, "Targeted (Long range)"),
+                        option({"value": "small_area"}, "Small area"),
+                        option({"value": "large_area"}, "Large area"),
+                    ],
+                ),
             ),
-        ),
-        underlabel(
-            "Effect",
-            select(
-                {
-                    "class": "monster-attack-effect",
-                    "name": "monster_attack_effect",
-                },
-                [
-                    option({"value": "damage"}, "Damage"),
-                    option({"value": "dazzled"}, "T1 Debuff (Dazzled)"),
-                    option({"value": "frightened"}, "T2 Debuff (Frightened)"),
-                    option({"value": "stunned"}, "T3 Debuff (Stunned)"),
-                    option({"value": "confused"}, "T4 Debuff (Confused)"),
-                ]
+            underlabel(
+                "Area Shape",
+                select(
+                    {
+                        "class": "monster-attack-area-shape",
+                        "name": "monster_attack_area_shape",
+                    },
+                    [
+                        option({"value": "default"}, "Default"),
+                        option({"value": "cone"}, "Cone"),
+                        option({"value": "line"}, "Line"),
+                        option({"value": "radius_from_self"}, "Radius from self"),
+                        option({"value": "radius_at_range"}, "Radius at range"),
+                    ],
+                ),
             ),
-        ),
-        underlabeled_checkbox(
-            "Magical?",
-            {"class": "monster-attack-is-magical"},
-            {"name": "monster_attack_is_magical"},
-        ),
-        button(
-            {
-                "class": "create-monster-attack",
-                "name": "act_createmonsterattack",
-                "type": "action",
-            },
-            "Create ability",
-        ),
-        checkbox({
-            "class": "hidden can-undo",
-            "name": f"monster_attack_can_undo",
-            "readonly": True,
-            "value": "1",
-        }),
-        button(
-            {
-                "class": "undo-monster-attack",
-                "name": "act_undomonsterattack",
-                "type": "action",
-            },
-            "Undo",
-        ),
-    ])
+            underlabel(
+                "Effect",
+                select(
+                    {
+                        "class": "monster-attack-effect",
+                        "name": "monster_attack_effect",
+                    },
+                    [
+                        option({"value": "damage"}, "Damage"),
+                        option({"value": "dazzled"}, "T1 Debuff (Dazzled)"),
+                        option({"value": "frightened"}, "T2 Debuff (Frightened)"),
+                        option({"value": "stunned"}, "T3 Debuff (Stunned)"),
+                        option({"value": "confused"}, "T4 Debuff (Confused)"),
+                    ],
+                ),
+            ),
+            underlabeled_checkbox(
+                "Magical?",
+                {"class": "monster-attack-is-magical"},
+                {"name": "monster_attack_is_magical"},
+            ),
+            button(
+                {
+                    "class": "create-monster-attack",
+                    "name": "act_createmonsterattack",
+                    "type": "action",
+                },
+                "Create ability",
+            ),
+            checkbox(
+                {
+                    "class": "hidden can-undo",
+                    "name": "monster_attack_can_undo",
+                    "readonly": True,
+                    "value": "1",
+                }
+            ),
+            button(
+                {
+                    "class": "undo-monster-attack",
+                    "name": "act_undomonsterattack",
+                    "type": "action",
+                },
+                "Undo",
+            ),
+        ],
+    )
 
 
-def subskill_rowids():
+def subskill_rowids() -> str:
     return span(
         {"class": "hidden"},
         [

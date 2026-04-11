@@ -1,3 +1,4 @@
+from __future__ import annotations
 from cgi_simple import (
     button,
     checkbox,
@@ -22,12 +23,11 @@ from cgi_simple import (
     ul,
     underlabel,
 )
-from sheet_worker import standard_damage_at_power
 from sheet_data import KNOWABLE_CONCEPTS
 from get_modifier_key import get_modifier_key
 
 
-def create_page(_destination):
+def create_page(_destination: str) -> str:
     return flex_col(
         {"class": "page calculation-page"},
         [
@@ -52,7 +52,7 @@ def create_page(_destination):
     )
 
 
-def stat_row(statistic_name, display_name=None, is_hideable=False, explanation_key=None):
+def stat_row(statistic_name: str, display_name: str | None = None, is_hideable: bool = False, explanation_key: str | None = None) -> str:
     if display_name is None:
         display_name = statistic_name
     parseable = get_modifier_key(statistic_name)
@@ -96,7 +96,7 @@ def stat_row(statistic_name, display_name=None, is_hideable=False, explanation_k
         return statistic_row
 
 
-def abilities_known():
+def abilities_known() -> str:
     return div(
         [
             div({"class": "section-header"}, "Abilities Known"),
@@ -104,7 +104,7 @@ def abilities_known():
         ]
     )
 
-def non_attribute():
+def non_attribute() -> str:
     return div(
         [
             div({"class": "section-header"}, "Non-Attribute Statistics"),
@@ -115,7 +115,7 @@ def non_attribute():
         ]
     )
 
-def strength_based():
+def strength_based() -> str:
     return div(
         [
             div({"class": "section-header"}, "Strength-Based"),
@@ -128,7 +128,7 @@ def strength_based():
         ]
     )
 
-def dexterity_based():
+def dexterity_based() -> str:
     return div(
         [
             div({"class": "section-header"}, "Dexterity-Based"),
@@ -137,7 +137,7 @@ def dexterity_based():
         ]
     )
 
-def constitution_based():
+def constitution_based() -> str:
     return div(
         [
             div({"class": "section-header"}, "Constitution-Based"),
@@ -149,7 +149,7 @@ def constitution_based():
         ]
     )
 
-def intelligence_based():
+def intelligence_based() -> str:
     return div(
         [
             div({"class": "section-header"}, "Intelligence-Based"),
@@ -158,7 +158,7 @@ def intelligence_based():
         ]
     )
 
-def perception_based():
+def perception_based() -> str:
     return div(
         [
             div({"class": "section-header"}, "Perception-Based"),
@@ -168,7 +168,7 @@ def perception_based():
     )
 
 
-def willpower_based():
+def willpower_based() -> str:
     return div(
         [
             div({"class": "section-header"}, "Willpower-Based"),

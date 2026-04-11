@@ -1,3 +1,4 @@
+from __future__ import annotations
 from cgi_simple import (
     button,
     checkbox,
@@ -35,13 +36,15 @@ from attributes.intelligence import calc_insight_points, calc_trained_skills
 from attributes.perception import calc_accuracy, calc_blank_accuracy
 from attributes.willpower import calc_magical_power, calc_mental
 
-def create_page(destination):
+
+def create_page(destination: str) -> str:
     if destination == "roll20":
         return roll20_items_page(destination)
     else:
         return paper_items_page(destination)
 
-def roll20_items_page(destination):
+
+def roll20_items_page(destination: str) -> str:
     return flex_col(
         {"class": "page items-page"},
         [
@@ -56,14 +59,17 @@ def roll20_items_page(destination):
             armor(destination, "Body armor"),
             armor(destination, "Shield"),
             div({"class": "section-header"}, "Weapons"),
-            div({"class": "weapons-explanation"}, f"""
+            div(
+                {"class": "weapons-explanation"},
+                f"""
                 As a reminder, your magical✨ power is {number_reminder("magical_power")}and your mundane power is {number_reminder("mundane_power")}.
-            """),
+            """,
+            ),
             weapons(destination),
             div({"class": "section-header"}, "Legacy Item (Deprecated)"),
             legacy_item(destination),
             div({"class": "section-header"}, "Attuned Abilities and Equipment"),
-            # Maximum number of attunement points: 
+            # Maximum number of attunement points:
             # 4 from class
             # 2 from two archetypes that each grant an attunement point
             # Anyone with six attunement points would almost certainly have at
@@ -76,13 +82,14 @@ def roll20_items_page(destination):
                         {"class": "repeating_attunedmodifiers"},
                         custom_modifier(show_toggle="deep", show_text=True),
                     ),
-                ]
+                ],
             ),
             *inventory(),
         ],
     )
 
-def paper_items_page(destination):
+
+def paper_items_page(destination: str) -> str:
     return flex_col(
         {"class": "page items-page"},
         [
@@ -92,14 +99,13 @@ def paper_items_page(destination):
             div({"class": "section-header"}, "Weapons"),
             weapons(destination),
             div({"class": "section-header"}, "Attuned Abilities and Equipment"),
-            # Maximum number of attunement points: 
+            # Maximum number of attunement points:
             # 5 from class
             # 2 from two archetypes that each grant an attunement point
             # Anyone with six attunement points would almost certainly have at
             # least one deep attunement, right? Hopefully?
             div(
-                {"class": "attunement-abilities"},
-                [attunement() for _ in range(6)]
+                {"class": "attunement-abilities"}, [attunement() for _ in range(6)]
             ),
             flex_row({"class": "calcs"}, [
                 calc_offense(),
@@ -109,7 +115,8 @@ def paper_items_page(destination):
         ],
     )
 
-def inventory():
+
+def inventory() -> list[str]:
     return [
         div({"class": "section-header"}, "Inventory"),
         wealth_items(),
@@ -118,7 +125,7 @@ def inventory():
     ]
 
 
-def calc_offense():
+def calc_offense() -> str:
     return flex_col(
         {"class": "calc-offense"},
         [
@@ -133,7 +140,8 @@ def calc_offense():
         ],
     )
 
-def calc_defense():
+
+def calc_defense() -> str:
     return flex_col(
         {"class": "calc-defense"},
         [
@@ -150,7 +158,8 @@ def calc_defense():
         ],
     )
 
-def calc_survival():
+
+def calc_survival() -> str:
     return flex_col(
         {"class": "calc-survival"},
         [
@@ -162,7 +171,8 @@ def calc_survival():
         ],
     )
 
-def attuned_effects_tracker():
+
+def attuned_effects_tracker() -> str:
     return sidelabel(
         "Attuned effects",
         flex_row(
@@ -186,14 +196,20 @@ def attuned_effects_tracker():
                         }
                     ),
                 ),
-                number_input({"class": "hidden", "name": "active_attunement_count", "readonly": True}),
+                number_input(
+                    {
+                        "class": "hidden",
+                        "name": "active_attunement_count",
+                        "readonly": True,
+                    }
+                ),
             ],
         ),
         {"class": "attune-points"},
     )
 
 
-def attunement():
+def attunement() -> str:
     return flex_row(
         {"class": "attunement"},
         [
@@ -216,48 +232,54 @@ def attunement():
     )
 
 
-def equipment():
+def equipment() -> str:
     return flex_row(
         [
             labeled_text_input(
                 "Name",
                 {"class": "equipment-name"},
-                {"name": f"equipment_name"},
+                {"name": "equipment_name"},
             ),
             labeled_text_input(
                 "Effects",
                 {"class": "equipment-effects"},
-                {"name": f"equipment_effects"},
+                {"name": "equipment_effects"},
             ),
         ]
     )
 
 
-def proficiencies():
+def proficiencies() -> list[str]:
     return [
         div({"class": "section-header"}, "Proficiences"),
         flex_row(
             {"class": "proficiencies"},
             [
-                flex_col({"class": "class-proficiencies"}, [
-                labeled_text_input(
-                    "Base class",
-                    input_attributes={"readonly": True, "name": "base_class_proficiencies"},
+                flex_col(
+                    {"class": "class-proficiencies"},
+                    [
+                        labeled_text_input(
+                            "Base class",
+                            input_attributes={
+                                "readonly": True,
+                                "name": "base_class_proficiencies",
+                            },
+                        ),
+                        labeled_text_input(
+                            "Weapons", input_attributes={"name": "weapon_groups"}
+                        ),
+                    ],
                 ),
-                labeled_text_input(
-                    "Weapons", input_attributes={"name": "weapon_groups"}
-                ),
-                ]),
                 labeled_textarea(
-                    "Other proficiencies", input_attributes={"name": "other_proficiencies"}
+                    "Other proficiencies",
+                    input_attributes={"name": "other_proficiencies"},
                 ),
             ],
-        )
+        ),
     ]
 
 
-def legacy_item(destination):
-    text_shape = labeled_textarea if destination == "paper" else labeled_text_input
+def legacy_item(destination: str) -> str:
     return flex_row(
         {"class": "attunement legacy-item"},
         [
@@ -271,6 +293,11 @@ def legacy_item(destination):
                 {"class": "attunement-effect"},
                 {"class": "legacy-item-effect", "name": "legacy_item_effect"},
             ),
+            # fieldset(
+            #     {"class": "repeating_legacymodifiers"},
+            #     custom_modifier(show_toggle=False, show_text=False),
+            # ),
+            # Wait, the fieldset was there in original. I'll keep it.
             fieldset(
                 {"class": "repeating_legacymodifiers"},
                 custom_modifier(show_toggle=False, show_text=False),
@@ -279,7 +306,7 @@ def legacy_item(destination):
     )
 
 
-def armor(destination, armor_type):
+def armor(destination: str, armor_type: str) -> str:
     parseable_type = armor_type.lower().replace(" ", "_")
 
     body_armor_dr = labeled_number_input(
@@ -288,40 +315,40 @@ def armor(destination, armor_type):
             "class": "body-armor-durability",
             "title": "Not including any attuned effects",
         },
-        input_attributes={"name": parseable_type + "_durability"},
+        input_attributes={"name": f"{parseable_type}_durability"},
     )
     shield_reflex = labeled_number_input(
         "Reflex",
         {
             "class": "shield-reflex",
         },
-        input_attributes={"name": parseable_type + "_reflex"},
+        input_attributes={"name": f"{parseable_type}_reflex"},
     )
     shield_accuracy = labeled_number_input(
         "Accuracy",
         {
             "class": "shield-accuracy",
         },
-        input_attributes={"name": parseable_type + "_accuracy"},
+        input_attributes={"name": f"{parseable_type}_accuracy"},
     )
     body_armor_vitals = labeled_number_input(
         "Vital rolls",
         {"class": "armor-vital-rolls"},
-        input_attributes={"name": parseable_type + "_vital_rolls"},
+        input_attributes={"name": f"{parseable_type}_vital_rolls"},
     )
 
     return flex_row(
         {"class": "armor-definition"},
         [
             labeled_text_input(
-                armor_type + " name",
+                f"{armor_type} name",
                 {"class": "name"},
-                {"name": parseable_type + "_name"},
+                {"name": f"{parseable_type}_name"},
             ),
             labeled_number_input(
                 "Armor",
                 {"class": "armor-defense"},
-                input_attributes={"name": parseable_type + "_defense"},
+                input_attributes={"name": f"{parseable_type}_defense"},
             ),
             (
                 body_armor_dr
@@ -337,7 +364,7 @@ def armor(destination, armor_type):
                 labeled_number_input(
                     "Speed mod",
                     {"class": "armor-speed"},
-                    input_attributes={"name": parseable_type + "_speed"},
+                    input_attributes={"name": f"{parseable_type}_speed"},
                 )
                 if armor_type == "Body armor"
                 else div()
@@ -345,13 +372,13 @@ def armor(destination, armor_type):
             labeled_number_input(
                 "Dex Skills",
                 {"class": "armor-dex-skills"},
-                input_attributes={"name": parseable_type + "_dex_skill_modifier"},
+                input_attributes={"name": f"{parseable_type}_dex_skill_modifier"},
             ),
             (
                 underlabel(
                     "Usage Class",
                     select(
-                        {"name": parseable_type + "_usage_class"},
+                        {"name": f"{parseable_type}_usage_class"},
                         [
                             option({"value": "none"}, ""),
                             option({"value": "light"}, "Light"),
@@ -368,91 +395,113 @@ def armor(destination, armor_type):
     )
 
 
-def weapons(destination):
-    return div({"class": "weapons"}, [weapon(str(i), destination) for i in range(4)])
+def weapons(destination: str) -> str:
+    return div(
+        {"class": "weapons"}, [weapon(str(i), destination) for i in range(4)]
+    )
 
 
-def weapon(i, destination):
+def weapon(i: str, destination: str) -> str:
     if destination == "paper":
         return paper_weapon()
     else:
         return roll20_weapon(i)
 
-def roll20_weapon(i):
+
+def roll20_weapon(i: str) -> str:
     return flex_col(
         {"class": "weapon"},
         [
             flex_row(
                 {"class": "weapon-input"},
                 [
-                labeled_text_input(
-                    "Name", {"class": "weapon-name"}, {"name": f"weapon_{i}_name"}
-                ),
-                labeled_number_input(
-                    "Accuracy",
-                    {"class": "weapon-accuracy"},
-                    {"name": f"weapon_{i}_accuracy"},
-                ),
-                labeled_text_input(
-                    "Base damage",
-                    {"class": "weapon-damage-dice"},
-                    {"name": f"weapon_{i}_damage_dice"},
-                ),
-                labeled_text_input(
-                    "Extra damage",
-                    {"class": "weapon-damage-dice"},
-                    {"name": f"weapon_{i}_extra_damage"},
-                ),
-                underlabeled_checkbox(
-                    "Two-handed?",
-                    None,
-                    {"class": "is-heavy", "name": f"weapon_{i}_heavy"},
-                ),
-                underlabeled_checkbox(
-                    "Ignore power for damage?",
-                    None,
-                    {"class": "ignore-power", "name": f"weapon_{i}_ignore_power"},
-                ),
-                # We need these two for sheet_worker calcs
-                text_input({
-                    "class": "hidden",
-                    "name": f"weapon_{i}_magical_power_damage",
-                    "readonly": True,
-                }),
-                text_input({
-                    "class": "hidden",
-                    "name": f"weapon_{i}_mundane_power_damage",
-                    "readonly": True,
-                }),
-            ]),
+                    labeled_text_input(
+                        "Name",
+                        {"class": "weapon-name"},
+                        {"name": f"weapon_{i}_name"},
+                    ),
+                    labeled_number_input(
+                        "Accuracy",
+                        {"class": "weapon-accuracy"},
+                        {"name": f"weapon_{i}_accuracy"},
+                    ),
+                    labeled_text_input(
+                        "Base damage",
+                        {"class": "weapon-damage-dice"},
+                        {"name": f"weapon_{i}_damage_dice"},
+                    ),
+                    labeled_text_input(
+                        "Extra damage",
+                        {"class": "weapon-damage-dice"},
+                        {"name": f"weapon_{i}_extra_damage"},
+                    ),
+                    underlabeled_checkbox(
+                        "Two-handed?",
+                        None,
+                        {"class": "is-heavy", "name": f"weapon_{i}_heavy"},
+                    ),
+                    underlabeled_checkbox(
+                        "Ignore power for damage?",
+                        None,
+                        {"class": "ignore-power", "name": f"weapon_{i}_ignore_power"},
+                    ),
+                    # We need these two for sheet_worker calcs
+                    text_input(
+                        {
+                            "class": "hidden",
+                            "name": f"weapon_{i}_magical_power_damage",
+                            "readonly": True,
+                        }
+                    ),
+                    text_input(
+                        {
+                            "class": "hidden",
+                            "name": f"weapon_{i}_mundane_power_damage",
+                            "readonly": True,
+                        }
+                    ),
+                ],
+            ),
             flex_row(
                 {"class": "weapon-calcs"},
                 [
-                labeled_text_input(
-                    "Tags", {"class": "weapon-tags"}, {"name": f"weapon_{i}_tags"}
-                ),
-                flex_row({"class": "calculated-weapon-damage"}, [
                     labeled_text_input(
-                        "Magical damage",
-                        {"class": "weapon-damage-dice"},
-                        input_attributes={"readonly": True, "name": f"weapon_{i}_magical_damage_total"},
+                        "Tags", {"class": "weapon-tags"}, {"name": f"weapon_{i}_tags"}
                     ),
-                    labeled_text_input(
-                        "Mundane damage",
-                        {"class": "weapon-damage-dice"},
-                        input_attributes={"readonly": True, "name": f"weapon_{i}_mundane_damage_total"},
+                    flex_row(
+                        {"class": "calculated-weapon-damage"},
+                        [
+                            labeled_text_input(
+                                "Magical damage",
+                                {"class": "weapon-damage-dice"},
+                                input_attributes={
+                                    "readonly": True,
+                                    "name": f"weapon_{i}_magical_damage_total",
+                                },
+                            ),
+                            labeled_text_input(
+                                "Mundane damage",
+                                {"class": "weapon-damage-dice"},
+                                input_attributes={
+                                    "readonly": True,
+                                    "name": f"weapon_{i}_mundane_damage_total",
+                                },
+                            ),
+                        ],
                     ),
-                ]),
-            ]),
-        ]
+                ],
+            ),
+        ],
     )
 
-def paper_weapon():
+
+def paper_weapon() -> str:
     return flex_row(
         {"class": "weapon"},
         [
             labeled_text_input(
-                "Name", {"class": "weapon-name"},
+                "Name",
+                {"class": "weapon-name"},
             ),
             labeled_number_input(
                 "Accuracy",
@@ -467,12 +516,14 @@ def paper_weapon():
                 {"class": "weapon-damage-dice"},
             ),
             labeled_text_input(
-                "Tags", {"class": "weapon-tags"},
+                "Tags",
+                {"class": "weapon-tags"},
             ),
         ],
     )
 
-def wealth_items():
+
+def wealth_items() -> str:
     return flex_row(
         {"class": "wealth-items"},
         [
@@ -487,14 +538,16 @@ def wealth_items():
         ],
     )
 
-def wealth_item_of_rank(rank):
-        return labeled_number_input(
-            f"Rank {rank}",
-            {"class": "wealth-item"},
-            {"name": f"wealth_item_rank_{rank}"},
-        )
 
-def calc_weight_limits():
+def wealth_item_of_rank(rank: int) -> str:
+    return labeled_number_input(
+        f"Rank {rank}",
+        {"class": "wealth-item"},
+        {"name": f"wealth_item_rank_{rank}"},
+    )
+
+
+def calc_weight_limits() -> str:
     return flex_row(
         {"class": "weight-limits"},
         [
@@ -515,7 +568,8 @@ def calc_weight_limits():
         ],
     )
 
-def calc_extra_damage():
+
+def calc_extra_damage() -> str:
     return flex_row(
         [
             div({"class": "calc-header"}, "Extra damage"),
@@ -527,7 +581,8 @@ def calc_extra_damage():
         ]
     )
 
-def calc_speed():
+
+def calc_speed() -> str:
     return flex_row(
         [
             div({"class": "calc-header"}, "Speed"),
@@ -554,7 +609,8 @@ def calc_speed():
         ]
     )
 
-def calc_vital_rolls():
+
+def calc_vital_rolls() -> str:
     return flex_row(
         [
             div({"class": "calc-header"}, "Vital rolls"),
