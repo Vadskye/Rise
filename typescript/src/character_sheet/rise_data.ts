@@ -186,6 +186,7 @@ const RISE_TRAITS_LIST = [
   'animal',
   'beast',
   'construct',
+  'eyeless',
   'floating',
   'ghost',
   'humanoid',
@@ -203,6 +204,7 @@ const RISE_TRAITS_LIST = [
   'sightless',
   'simple-minded',
   'soulless',
+  'swarm',
   'telepathy',
 ] as const;
 export type RiseTrait = (typeof RISE_TRAITS_LIST)[number];
