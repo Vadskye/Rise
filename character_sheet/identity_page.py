@@ -1,21 +1,14 @@
-from __future__ import annotations
 from cgi_simple import (
     checkbox,
     div,
-    equation,
-    plus,
     ensure_valid_attributes_and_contents,
-    fieldset,
     flex_col,
     flex_row,
-    flex_wrapper,
     labeled_textarea,
     labeled_number_input,
     labeled_text_input,
-    number_input,
     textarea,
     text_input,
-    underlabel,
 )
 from sheet_data import KNOWABLE_CONCEPTS
 from get_modifier_key import get_modifier_key

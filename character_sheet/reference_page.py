@@ -1,28 +1,12 @@
 from cgi_simple import (
     button,
-    checkbox,
     div,
-    equation,
-    fieldset,
     flex_col,
     flex_row,
     flex_wrapper,
-    labeled_number_input,
-    labeled_text_input,
-    li,
-    minus,
-    number_input,
-    ol,
     p,
-    plus,
-    radio_input,
-    span,
     textarea,
-    text_input,
-    ul,
-    underlabel,
 )
-from sheet_worker import standard_damage_at_power
 
 
 def create_page(_destination: str) -> str:
@@ -78,7 +62,7 @@ def vital_wound_chart():
     )
 
 
-def vital_roll_effect(roll):
+def vital_roll_effect(roll: int | str) -> str:
     return {
         0: "Unconscious, die after a minute",
         1: "Unconscious below half HP",
@@ -143,7 +127,7 @@ def weight_limits():
     )
 
 
-def carrying_capacity(strength):
+def carrying_capacity(strength: int) -> str:
     return {
         -2: "Small x2",
         -1: "Small x4",
