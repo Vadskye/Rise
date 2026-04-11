@@ -30,7 +30,7 @@ from typing import Callable
 
 from items_page import inventory
 
-def create_page(_destination: str) -> str:
+def create_page(_destination: str = "paper") -> str:
     return flex_col(
         {"class": "page attribute-page"},
         [

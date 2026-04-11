@@ -25,7 +25,7 @@ from cgi_simple import (
 from sheet_worker import standard_damage_at_power
 
 
-def create_page(_destination):
+def create_page(_destination: str) -> str:
     return flex_col(
         {"class": "page reference-page"},
         [

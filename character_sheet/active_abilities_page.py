@@ -7,20 +7,12 @@ from cgi_simple import (
     flex_col,
     flex_row,
     flex_wrapper,
-    freeform_number_input,
-    invisiblebutton,
-    label,
-    labeled_number_input,
     labeled_textarea,
     labeled_text_input,
     number_input,
-    number_reminder,
     option,
     select,
-    sidelabel,
     span,
-    subtlebutton,
-    textarea,
     text_input,
     underlabel,
     underlabeled_checkbox,
@@ -617,8 +609,8 @@ def universal_ability_button(
     tags: list[str] | None = None,
 ) -> str:
     actual_tags: list[str] = []
-    if attack and "tags" in attack:
-        attack_tags = attack["tags"]
+    if attack:
+        attack_tags = attack.get("tags")
         if isinstance(attack_tags, list):
             actual_tags.extend(str(t) for t in attack_tags)
     if tags:
