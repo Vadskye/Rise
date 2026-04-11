@@ -82,5 +82,4 @@ impl PureDamageManeuver {
 
 #[cfg(test)]
 mod tests {
-    use super::*;
 }

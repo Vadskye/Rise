@@ -1,14 +1,10 @@
-from cgi_simple import (
-    button,
+from .cgi_simple import (
     checkbox,
     div,
     fieldset,
     flex_col,
     flex_row,
     flex_wrapper,
-    freeform_number_input,
-    invisiblebutton,
-    label,
     sidelabeled_number_input,
     labeled_textarea,
     labeled_text_input,
@@ -21,25 +17,19 @@ from cgi_simple import (
     text_input,
     textarea,
     underlabel,
-    underlabeled_checkbox,
     underlabel_spaced,
 )
-from active_abilities_page import (
+from .active_abilities_page import (
     ability,
-    attack_button_text,
-    construct_damage_text,
-    other_damaging_attack_button_text,
-    crit_damage_button,
     strike_based_attack,
     other_damaging_attack,
     nondamaging_attack,
 )
-from sheet_data import ATTRIBUTES, DEFENSES, ATTRIBUTE_SKILLS, SUBSKILLS
-from get_modifier_key import get_modifier_key
-import re
+from .sheet_data import ATTRIBUTES, DEFENSES, ATTRIBUTE_SKILLS, SUBSKILLS
+from .get_modifier_key import get_modifier_key
 
 
-def create_page(destination):
+def create_page(destination: str) -> str:
     return flex_col(
         {"class": "page first-page"},
         [
@@ -76,14 +66,14 @@ def create_page(destination):
     )
 
 
-def paper_abilities():
+def paper_abilities() -> list[str]:
     return [
         div({"class": "section-header"}, "Attacks and Active Abilities"),
-        *[paper_ability() for i in range(8)],
+        *[paper_ability() for _ in range(8)],
     ]
 
 
-def paper_ability():
+def paper_ability() -> str:
     return flex_row(
         {"class": "paper-ability"},
         [
@@ -93,7 +83,7 @@ def paper_ability():
     )
 
 
-def roll20_abilities():
+def roll20_abilities() -> str:
     return div({"class": "all-abilities"}, [
         div({"class": "section-header"}, "Weapon-Based Strikes"),
         flex_row(
@@ -138,7 +128,7 @@ def roll20_abilities():
     ])
 
 
-def attributes_and_skills(destination):
+def attributes_and_skills(destination: str) -> str:
     return flex_col(
         {"class": "attributes-and-skills"},
         [
@@ -160,7 +150,7 @@ def attributes_and_skills(destination):
     )
 
 
-def attribute_section(attribute, destination):
+def attribute_section(attribute: str, destination: str) -> str:
     attribute_modifier = f"@{{{attribute}}}"
     return flex_col(
         {"class": f"{attribute} attribute-section"},
@@ -192,7 +182,7 @@ def attribute_section(attribute, destination):
     )
 
 
-def skill_box(name, destination):
+def skill_box(name: str, destination: str) -> str:
     if name in SUBSKILLS:
         return subskill_section(name, destination)
 
@@ -220,7 +210,7 @@ def skill_box(name, destination):
     )
 
 
-def subskill_section(name, destination):
+def subskill_section(name: str, destination: str) -> str:
     modifier_key = get_modifier_key(name)
 
     if destination == "paper":
@@ -263,13 +253,13 @@ def subskill_section(name, destination):
                 untrained_subskill_box(name, modifier_key),
                 fieldset(
                     {"class": f"repeating_{modifier_key}subskills"},
-                    subskill_box(name, modifier_key),
+                    subskill_box(modifier_key),
                 ),
             ]
         )
 
 
-def subskill_box(display_name, parseable_name):
+def subskill_box(parseable_name: str) -> str:
     return flex_row(
         {"class": f"skill-box {parseable_name}-box"},
         [
@@ -305,7 +295,7 @@ def subskill_box(display_name, parseable_name):
     )
 
 
-def untrained_subskill_box(display_name, parseable_name):
+def untrained_subskill_box(display_name: str, parseable_name: str) -> str:
     return flex_row(
         {"class": f"skill-box {parseable_name}-box"},
         [
@@ -332,7 +322,7 @@ def untrained_subskill_box(display_name, parseable_name):
     )
 
 
-def statistics_header(destination):
+def statistics_header(destination: str) -> str:
     return "".join(
         [
             flex_row(
@@ -346,7 +336,7 @@ def statistics_header(destination):
     )
 
 
-def defenses():
+def defenses() -> str:
     return flex_col(
         {"class": "defenses"},
         [
@@ -407,7 +397,7 @@ def defenses():
 
 
 
-def core_statistics(destination):
+def core_statistics(destination: str) -> str:
     return flex_col(
         {"class": "core-statistics"},
         [
@@ -487,7 +477,7 @@ def core_statistics(destination):
     )
 
 
-def movement(destination):
+def movement(_destination: str) -> str:
     return flex_row(
         {"class": "movement"},
         [
@@ -521,7 +511,7 @@ def movement(destination):
     )
 
 
-def temporary_modifier_toggle():
+def temporary_modifier_toggle() -> str:
     return flex_row(
         {"class": "custom-modifier-toggle"},
         [
@@ -531,7 +521,7 @@ def temporary_modifier_toggle():
     )
 
 
-def boring_stuff(destination):
+def boring_stuff(destination: str) -> str:
     return div(
         {"class": "boring-stuff"},
         [
