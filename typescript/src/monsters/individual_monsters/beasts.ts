@@ -290,6 +290,59 @@ export function addBeasts(grimoire: Grimoire) {
     creature.addSpell('Putrefying Blast', { displayName: 'Maggot Breath' });
   });
 
+  grimoire.addMonster('Grumblegrub', (creature: Creature) => {
+    creature.setRequiredProperties({
+      alignment: 'neutral',
+      base_class: 'brute',
+      elite: false,
+      creature_type: 'mortal',
+      level: 1,
+      size: 'tiny',
+    });
+    creature.addTrait('beast');
+    creature.setKnowledgeResults({
+      normal: `
+        Grumblegrubs are a Tiny worms that can eat almost anything.
+        They are particularly drawn to the smell of corpses. 
+        Their name comes from the noise they make while eating, which sounds like someone grumbling grumpily.
+      `,
+      hard: `
+        Grumblegrubs fear fire, which quickly burns away their greasy bodies.
+      `,
+    });
+    creature.addVulnerability('Fire');
+    creature.setTrainedSkills(['climb']);
+    creature.setBaseAttributes([-2, 2, -2, -8, 2, -4]);
+    creature.addTrait('legless');
+    creature.addTrait('eyeless');
+    creature.addCustomSense('Tremorsight (30 ft.)');
+    creature.addCustomSense('Tremorsense (60 ft.)');
+
+    creature.addLatchOn('bite');
+  });
+
+  grimoire.addMonster('Grumblegrub Swarm', (creature: Creature) => {
+    creature.setRequiredProperties({
+      alignment: 'neutral',
+      base_class: 'brute',
+      elite: false,
+      creature_type: 'mortal',
+      level: 4,
+      size: 'medium',
+    });
+    creature.addTrait('beast');
+    creature.addTrait('swarm');
+    creature.addVulnerability('Fire');
+    creature.setTrainedSkills(['climb']);
+    creature.setBaseAttributes([-1, 4, -1, -8, 2, -4]);
+    creature.addTrait('eyeless');
+    creature.addTrait('legless');
+    creature.addCustomSense('Tremorsight (30 ft.)');
+    creature.addCustomSense('Tremorsense (60 ft.)');
+
+    creature.addLatchOn('bite');
+  });
+
   grimoire.addMonster('Darkmantle', (creature: Creature) => {
     creature.setRequiredProperties({
       alignment: 'neutral',
