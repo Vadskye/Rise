@@ -1,3 +1,4 @@
+from __future__ import annotations
 from cgi_simple import (
     checkbox,
     div,
@@ -19,7 +20,8 @@ from cgi_simple import (
 from sheet_data import KNOWABLE_CONCEPTS
 from get_modifier_key import get_modifier_key
 
-def create_page(destination):
+
+def create_page(destination: str) -> str:
     return flex_col(
         {"class": "page identity-page"},
         [
@@ -35,10 +37,6 @@ def create_page(destination):
             else paper_abilities_summary(),
             div({"class": "section-header"}, "Abilities Known"),
             abilities_known(),
-            # calc_combat_styles(),
-            # calc_maneuvers(),
-            # calc_spheres(),
-            # calc_spells(),
             div({"class": "section-header"}, "Insight Points"),
             flex_row(
                 {"class": "insight-points-row"},
@@ -61,17 +59,17 @@ def create_page(destination):
     )
 
 
-def basic_info():
+def basic_info() -> str:
     return "".join(
         [
             div({"class": "section-header"}, "Species Info"),
-            labeled_text_input("Species", input_attributes={"name": f"species"}),
-            labeled_text_input("Size", input_attributes={"name": f"size"}),
+            labeled_text_input("Species", input_attributes={"name": "species"}),
+            labeled_text_input("Size", input_attributes={"name": "size"}),
             labeled_text_input(
                 "Languages known", input_attributes={"name": "language_proficiencies"}
             ),
             div({"class": "section-header"}, "Class Info"),
-            labeled_text_input("Class", input_attributes={"name": f"class"}),
+            labeled_text_input("Class", input_attributes={"name": "class"}),
             labeled_textarea(
                 "Armor proficiencies", input_attributes={"name": "prof_armor"}
             ),
@@ -82,7 +80,7 @@ def basic_info():
     )
 
 
-def feats_summary():
+def feats_summary() -> str:
     return "".join(
         [
             div({"class": "section-header"}, "Feats"),
@@ -91,23 +89,23 @@ def feats_summary():
     )
 
 
-def paper_abilities_summary():
+def paper_abilities_summary() -> str:
     return div(
         {"class": "abilities"},
         [
             div({"class": "section-header"}, "Passive Abilities"),
-            *[passive_ability() for i in range(10)],
+            *[passive_ability() for _ in range(10)],
         ],
     )
 
 
-def roll20_abilities_summary():
+def roll20_abilities_summary() -> str:
     # Roll20 tracks passive abilities on the active abilities page.
     # TODO: clean up that naming...
     return div()
 
 
-def passive_ability():
+def passive_ability() -> str:
     return flex_row(
         {"class": "passive-ability-row"},
         [
@@ -115,21 +113,21 @@ def passive_ability():
                 "Name",
                 {"class": "ability-name"},
                 input_attributes={
-                    "name": f"ability_name",
+                    "name": "ability_name",
                 },
             ),
             labeled_text_input(
                 "Effects",
                 {"class": "ability-effects"},
                 input_attributes={
-                    "name": f"ability_effects",
+                    "name": "ability_effects",
                 },
             ),
         ],
     )
 
 
-def feat_row(i):
+def feat_row(i: int) -> str:
     return flex_row(
         {"class": "summary-row"},
         [
@@ -138,19 +136,26 @@ def feat_row(i):
     )
 
 
-def subsection_header(attributes=None, contents=None):
-    attributes, contents = ensure_valid_attributes_and_contents(attributes, contents)
-    attributes["class"] = "subsection-header " + attributes.get("class", "")
-    return flex_col(attributes, contents)
+def subsection_header(
+    attributes: dict[str, object] | None = None,
+    contents: str | list[str] | None = None,
+) -> str:
+    final_attributes, final_contents = ensure_valid_attributes_and_contents(
+        attributes, contents
+    )
+    final_attributes["class"] = "subsection-header " + str(
+        final_attributes.get("class", "")
+    )
+    return flex_col(final_attributes, final_contents)
 
 
-def abilities_known():
+def abilities_known() -> str:
     return flex_row(
         {"class": "abilities-known"}, [ability_known(c) for c in KNOWABLE_CONCEPTS]
     )
 
 
-def ability_known(concept):
+def ability_known(concept: str) -> str:
     parseable_concept = get_modifier_key(concept)
 
     return flex_row(
