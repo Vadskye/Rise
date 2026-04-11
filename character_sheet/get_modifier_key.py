@@ -1,8 +1,8 @@
-from typing import Dict
-from .sheet_data import KNOWABLE_CONCEPTS
+from __future__ import annotations
+from sheet_data import KNOWABLE_CONCEPTS
 
-def generate_special_modifier_keys() -> Dict[str, str]:
-    keys = {}
+def generate_special_modifier_keys() -> dict[str, str]:
+    keys: dict[str, str] = {}
     for a in KNOWABLE_CONCEPTS:
         parseable = a.lower().replace(' ', '_')
         keys[parseable] = parseable + '_known'
