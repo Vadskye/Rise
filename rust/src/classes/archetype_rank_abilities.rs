@@ -71,7 +71,7 @@ impl RankAbility<'_> {
     }
 }
 
-pub fn archetype_rank_abilities(archetype: &ClassArchetype) -> Vec<RankAbility> {
+pub fn archetype_rank_abilities(archetype: &ClassArchetype) -> Vec<RankAbility<'_>> {
     match archetype {
         ClassArchetype::Blank => vec![],
         // Barbarian
@@ -155,7 +155,7 @@ pub fn archetype_rank_abilities(archetype: &ClassArchetype) -> Vec<RankAbility> 
 }
 
 pub fn calc_rank_abilities(level: i32, archetypes: &[ClassArchetype; 3]) -> Vec<RankAbility<'_>> {
-    let mut rank_abilities: Vec<RankAbility> = vec![];
+    let mut rank_abilities: Vec<RankAbility<'_>> = vec![];
     for i in 0..level {
         rank_abilities.append(
             archetypes[(i % 3) as usize]

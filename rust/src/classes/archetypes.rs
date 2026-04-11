@@ -268,7 +268,7 @@ impl ClassArchetype {
         complexity
     }
 
-    pub fn abilities_at_rank(&self, rank: i32) -> Vec<RankAbility> {
+    pub fn abilities_at_rank(&self, rank: i32) -> Vec<RankAbility<'_>> {
         return archetype_rank_abilities(self)
             .into_iter()
             .filter(|a| a.rank == rank)
@@ -277,7 +277,7 @@ impl ClassArchetype {
 
     // Rank abilities with description == "" should be invisible, and are only used for
     // calculating modifier values.
-    pub fn visible_abilities_at_rank(&self, rank: i32) -> Vec<RankAbility> {
+    pub fn visible_abilities_at_rank(&self, rank: i32) -> Vec<RankAbility<'_>> {
         return self
             .abilities_at_rank(rank)
             .into_iter()
