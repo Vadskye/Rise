@@ -17,13 +17,12 @@ If it's a damage plus debuff spell, reduce the listed damage rank by 1.
   * drX+2 in melee range
 * Rank X, where X >= 2:
   * drX-1 in Long range
-  * drX-1 in R(X/2) area, to a minimum of R2 area
-  * Debuff rank X+1 in R(X/2) area
+  * drX-1 in RX area, ignoring extreme areas
 * Rank X, where X >= 3:
   * drX-2 in Distant range
-  * drX-2 in RX area, ignoring extreme areas
-* Rank X, where X >= 5:
-  * drX-3 in RX area, including extreme areas
+  * drX-2 in RX area, including extreme areas
+* Rank X, where X >= 4:
+  * drX-1 in R(X-3) area, including extreme areas
 
 #### Flat damage
 
@@ -65,3 +64,7 @@ This category of ability has no immediate effect, and allows you to make a speci
 Delayed damage normally deals +1d, but that assumes that you're making an attack on an active target, so it doesn't allow precombat usage. This type of effect can be used precombat, which is dangerous. It also scales unusually well with buffs or single-ability enhancements.
 
 Therefore, this type of ability doesn't get the +1d delayed damage modifier, and it simply deals double damage relative to a single attack. In addition, it must have no longer than short range to make it more difficult to initiate combat with it.
+
+### Cooldowns
+
+Some class abilities give you standard action abilities with a brief cooldown. Those abilities gain +1 effective rank, so a rank 1 character with a brief cooldown ability would have its area/damage/debuff calculated as a rank 2 spell.

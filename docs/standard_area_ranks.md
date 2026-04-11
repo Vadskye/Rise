@@ -3,74 +3,72 @@
 Rank -1 areas (why would these exist?):
 * Small line, 5' wide from self
 
-Rank 0 areas:
+Rank 0 areas (4-8 squares):
 * Cone:
-  * Small cone from self
+  * Small cone from self (6/7s)
 * Line:
-  * Small, 10' wide line from self
-  * Medium, 5' wide line from self (rare due to unusual range for r0)
+  * Small, 10' wide line from self (6s)
+  * Medium, 5' wide line from self (6s; rare due to unusual range)
 * Radius:
-  * Small radius from self
+  * Small radius from self (24s)
     * This is obviously a larger area than a cone or line, but is also much harder to aim to only hit enemies
-  * Enemies in Tiny radius from self
+  * Enemies in Tiny radius from self (4s)
     * There is no such thing as "everything adjacent to you", because it's easy to make that functionally enemies-only on a grid system, but that's really annoying in practice.
 
-Rank 1 areas:
+Rank 1 areas (~12 squares):
 * Cone:
-  * Medium cone from self
-  * Two Small cones from self
+  * Two Small cones from self (12/14s)
 * Line:
-  * Medium, 10' wide line from self
-  * Two Small, 10' wide lines from self
+  * Medium, 10' wide line from self (12s)
+  * Two Small, 10' wide lines from self (12s)
 * Radius:
-  * Medium radius from self
+  * Tiny radius in Short range (4s)
 * Targets:
   * Up to two creatures in Short range
 
-Rank 2 areas:
+Rank 2 areas (~24 squares):
 * Cone:
-  * Two Medium cones from self
+  * Medium cone from self (24s)
 * Line:
-  * Two Medium, 10' wide lines from self
-  * Large, 5' wide line from self (rare due to unusual range for r2)
+  * Two Medium, 10' wide lines from self (24s)
+  * Large, 5' wide line from self (12s)
 * Radius:
-  * (no change) Medium radius from self
-  * Tiny radius in Short range (rare, since Tiny radius is so close to single target)
+  * Medium radius from self
 * Targets:
   * Up to three creatures in Short range
   * Up to two creatures in Medium range
 
 Rank 3 areas:
 * Cone:
-  * Large cone from self
+  * (unchanged) Medium cone from self (24s)
 * Line:
-  * Large line, 10' wide from self
-  * (unchanged) Two Medium, 10' wide lines from self
+  * Large line, 10' wide from self (24s)
+  * (unchanged) Two Medium, 10' wide lines from self (24s)
 * Radius:
-  * Large radius from self
-  * Small radius in Short range
+  * (unchanged) Medium radius from self
+  * Small radius in Short range (24s)
 * Targets:
   * Up to four creatures in Short range
   * (unchanged) Up to two creatures in Medium range
 
-After rank 3, spells have mostly reached their maximum range, since they are not allowed to go past 60 feet by default. Instead, area scaling comes from splitting areas.
-
 Rank 4 areas:
 * Cone:
-  * Two Large cones from self
+  * Large cone
 * Line:
-  * (unchanged) Two Medium, 10' wide lines from self
+  * Two Large, 10' wide lines from self
+  * Large, 15' wide line from self?
 * Radius
+  * Large radius from self
   * Medium radius in Short range (discouraged due to self-inclusion)
 * Targets:
   * Any number of creatures in Short range (equivalent to enemies-only Medium radius)
   * Up to three creatures in Medium range
 
+After rank 4, spells have mostly reached their maximum range, since they are not allowed to go past 60 feet by default. Instead, area scaling comes from splitting areas.
+
 Rank 5 areas:
 * Cone:
-  * (unchanged) Two Large cones from self
-* Line:
-  * Two Large, 10' wide lines from self
+  * Two Large cones from self
 * Radius:
   * Two Small radii in Short range
   * Two Tiny radii in Med range
@@ -79,39 +77,44 @@ Rank 5 areas:
 
 ## Extended Area Scaling
 
-To use areas that extend beyond 60', you have to pay a -1 rank cost. This reduces the damage dealt by the spell and the debuff tier (if any), but you still use the spell's normal rank for calculating its area. In exchange, you get access to the following additional rank scaling options:
+To use areas that extend beyond 60', you have to pay a -1 rank cost for debuff effect. Damaging effects have a slightly different tradeoff (see `damaging_abilities.md`). In exchange, you get access to the following additional rank scaling options:
 
-Rank 3 areas:
+Rank 2 areas:
 * Radius:
-  * Tiny radius in Med range (only for splitting)
+  * Tiny radius in Med range
 
 Rank 4 areas:
+* Line:
+  * Huge line, 10' wide from self
 * Radius:
   * Small radius in Medium range
 
 Rank 5 areas:
-* Cone:
-  * Huge cone from self
 * Line:
   * Huge line, 15' wide from self
 * Radius:
-  * Huge radius from self
   * Medium radius in Medium range
   * Small radius in Long range
 
 Rank 6 areas:
-* Radius:
-  * Medium radius in Long range
-
-Rank 7 areas:
 * Cone:
-  * Gargantuan cone from self
+  * Huge cone from self
 * Line:
   * Gargantuan line, 15' wide from self
 * Radius:
-  * Gargantuan radius from self
+  * Huge radius from self
+  * Medium radius in Long range
+
+Rank 7 areas:
+* Radius:
   * Large radius in Medium range (a little odd, basically requires enemies-only)
   * Medium radius in Distant range
+
+Rank 8 areas:
+* Cone:
+  * Gargantuan cone
+* Radius:
+  * Gargantuan radius from self
 
 ## Area Rank Modifiers
 
