@@ -235,7 +235,7 @@ def debuff_explanation(debuff):
     }[debuff]
 
 
-def custom_modifier(show_toggle, show_text):
+def custom_modifier(show_toggle: bool | str, show_text: bool) -> tuple[str]:
     return (
         flex_row(
             {"class": "custom-modifier"},

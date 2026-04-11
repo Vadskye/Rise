@@ -1,41 +1,21 @@
 from cgi_simple import (
-    checkbox,
     div,
     equation,
-    fieldset,
+    equation_misc_repeat,
     flex_col,
     flex_row,
-    flex_wrapper,
     labeled_textarea,
     labeled_text_input,
-    labeled_number_input,
-    li,
-    minus,
     number_input,
-    ol,
-    option,
-    p,
     plus,
-    select,
-    sidelabel,
-    span,
-    textarea,
-    text_input,
-    ul,
     underlabel,
-    underlabeled_checkbox,
 )
 
-from sheet_data import (
-    ATTRIBUTE_SHORTHAND,
-    ATTRIBUTE_SKILLS,
-    ATTRIBUTES,
-    SUBSKILLS,
-)
+
 from attribute_page import (
     calc_resources
 )
-import re
+
 
 
 def create_page(_destination: str) -> str:
@@ -71,7 +51,7 @@ def creation_guidance():
         ],
     )
 
-def self_class_textarea(name):
+def self_class_textarea(name: str) -> str:
     parseable_name = name.lower().replace(" ", "-")
     return labeled_textarea(
         name,
@@ -84,7 +64,7 @@ def abilities():
         {"class": "abilities"},
         [
             div({"class": "section-header"}, "Passive Abilities and Traits"),
-            *[passive_ability() for i in range(14)],
+            *[passive_ability() for _ in range(14)],
             div({"class": "section-header"}, "Resources"),
             flex_row({"class": "resources"}, [
                 calc_resources(),

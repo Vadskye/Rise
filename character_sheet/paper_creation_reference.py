@@ -1,30 +1,9 @@
 from cgi_simple import (
     bold,
-    checkbox,
     div,
-    equation,
-    fieldset,
     flex_col,
     flex_row,
-    flex_wrapper,
-    labeled_textarea,
-    labeled_text_input,
-    labeled_number_input,
-    li,
-    minus,
-    number_input,
-    ol,
-    option,
-    p,
-    plus,
-    select,
-    sidelabel,
     span,
-    textarea,
-    text_input,
-    ul,
-    underlabel,
-    underlabeled_checkbox,
 )
 
 def create_page(_destination: str) -> str:
@@ -49,7 +28,7 @@ def create_page(_destination: str) -> str:
         ]),
     )
 
-def creation_step(i, title, short_description, extra_detail=None):
+def creation_step(i: int, title: str, short_description: str, extra_detail: str | None = None) -> str:
     if extra_detail:
         extra_detail = span({"class": "extra-detail"}, extra_detail)
     else:
@@ -65,28 +44,28 @@ def creation_step(i, title, short_description, extra_detail=None):
         ],
     )
 
-def concept(nth):
+def concept(nth: int) -> str:
     return creation_step(
         nth,
         "Concept",
         'Record a short phrase that describes your character concept on Page 2.',
     )
 
-def motivation_and_goal(nth):
+def motivation_and_goal(nth: int) -> str:
     return creation_step(
         nth,
         "Motivation and goals",
         'What is your character trying to achieve, and why? Record it on Page 2.',
     )
 
-def species(nth):
+def species(nth: int) -> str:
     return creation_step(
         nth,
         "Species",
         """Record your character's species on Page 2. Record any numeric modifiers it gives you on Page 4 and any other abilities on Page 2.""",
     )
 
-def attributes(nth):
+def attributes(nth: int) -> str:
     return creation_step(
         nth,
         "Attributes",
@@ -98,7 +77,7 @@ def attributes(nth):
         """,
     )
 
-def base_class(nth):
+def base_class(nth: int) -> str:
     return creation_step(
         nth,
         "Base Class",
@@ -110,7 +89,7 @@ def base_class(nth):
         """,
     )
 
-def class_archetype(nth):
+def class_archetype(nth: int) -> str:
     return creation_step(
         nth,
         "Class Archetype",
@@ -119,7 +98,7 @@ def class_archetype(nth):
         """,
     )
 
-def items(nth):
+def items(nth: int) -> str:
     return creation_step(
         nth,
         "Items and Equipment",
@@ -129,7 +108,7 @@ def items(nth):
         """,
     )
 
-def combat(nth):
+def combat(nth: int) -> str:
     return creation_step(
         nth,
         "Statistics and Resources",
@@ -142,7 +121,7 @@ def combat(nth):
     )
 
 
-def resources(nth):
+def resources(nth: int) -> str:
     return creation_step(
         nth,
         "Insight Points and Abilities",
@@ -157,7 +136,7 @@ def resources(nth):
         """,
     )
 
-def skills(nth):
+def skills(nth: int) -> str:
     return creation_step(
         nth,
         "Skills",
@@ -168,7 +147,7 @@ def skills(nth):
         """,
     )
 
-def background(nth):
+def background(nth: int) -> str:
     return creation_step(
         nth,
         "Background",
@@ -180,7 +159,7 @@ def background(nth):
         """,
     )
 
-def description(nth):
+def description(nth: int) -> str:
     return creation_step(
         nth,
         "Character Description",
@@ -192,7 +171,7 @@ def description(nth):
         """,
     )
 
-def alignment(nth):
+def alignment(nth: int) -> str:
     return creation_step(
         nth,
         "Alignment",
@@ -204,7 +183,7 @@ def alignment(nth):
         """,
     )
 
-def name(nth):
+def name(nth: int) -> str:
     return creation_step(
         nth,
         "Name",

@@ -1,7 +1,4 @@
-from __future__ import annotations
 from cgi_simple import (
-    button,
-    checkbox,
     div,
     equation,
     equation_misc,
@@ -9,8 +6,6 @@ from cgi_simple import (
     fieldset,
     flex_col,
     flex_row,
-    flex_wrapper,
-    label,
     labeled_number_input,
     labeled_text_input,
     labeled_textarea,
@@ -26,13 +21,11 @@ from cgi_simple import (
     text_input,
     underlabel,
     underlabeled_checkbox,
-    underlabel_spaced,
 )
 from status_page import custom_modifier
-from attributes.strength import calc_brawling_accuracy, calc_brawn, calc_mundane_power, calc_jump_distance
+from attributes.strength import calc_brawling_accuracy, calc_brawn, calc_mundane_power
 from attributes.dexterity import calc_armor, calc_reflex
-from attributes.constitution import calc_fatigue_tolerance, calc_fortitude, calc_hit_points, calc_durability, calc_injury_point
-from attributes.intelligence import calc_insight_points, calc_trained_skills
+from attributes.constitution import calc_fortitude, calc_hit_points, calc_durability, calc_injury_point
 from attributes.perception import calc_accuracy, calc_blank_accuracy
 from attributes.willpower import calc_magical_power, calc_mental
 
@@ -279,7 +272,7 @@ def proficiencies() -> list[str]:
     ]
 
 
-def legacy_item(destination: str) -> str:
+def legacy_item(_destination: str) -> str:
     return flex_row(
         {"class": "attunement legacy-item"},
         [
