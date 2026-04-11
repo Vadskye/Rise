@@ -1,8 +1,8 @@
+from __future__ import annotations
 from cgi_simple import (
     checkbox,
     div,
     equation,
-    equation_misc,
     equation_misc_repeat,
     fieldset,
     flex_col,
@@ -12,29 +12,25 @@ from cgi_simple import (
     minus,
     number_input,
     plus,
-    span,
-    text_input,
     underlabel,
 )
 from sheet_data import (
     ATTRIBUTE_SHORTHAND,
     ATTRIBUTE_SKILLS,
-    ATTRIBUTES,
-    ROLL20_CALC,
     SUBSKILLS,
 )
-from sheet_worker import standard_damage_at_power
 from attributes.strength import calc_brawling_accuracy, calc_brawn, calc_mundane_power, calc_jump_distance
 from attributes.dexterity import calc_armor, calc_reflex
-from attributes.constitution import calc_fatigue_tolerance, calc_fortitude, calc_hit_points, calc_durability, calc_injury_point
+from attributes.constitution import calc_fatigue_tolerance, calc_fortitude, calc_hit_points
 from attributes.intelligence import calc_insight_points, calc_trained_skills
 from attributes.perception import calc_accuracy, calc_blank_accuracy
 from attributes.willpower import calc_magical_power, calc_mental
 import re
+from typing import Callable
 
 from items_page import inventory
 
-def create_page(destination):
+def create_page(_destination: str) -> str:
     return flex_col(
         {"class": "page attribute-page"},
         [
@@ -70,7 +66,7 @@ def create_page(destination):
         ],
     )
 
-def calc_resources():
+def calc_resources() -> str:
     return flex_col(
         {"class": "calc-resources"},
         [
@@ -87,7 +83,7 @@ def calc_resources():
         ],
     )
 
-def calc_attribute(attribute_name):
+def calc_attribute(attribute_name: str) -> str:
     attribute_lower = attribute_name.lower()
     return "".join(
         [
@@ -120,10 +116,10 @@ def calc_attribute(attribute_name):
         ]
     )
 
-def calc_skill(skill_name, attribute=None):
+def calc_skill(skill_name: str, attribute: str | None = None) -> str:
     visible_skill_name = re.sub("\\d", "", skill_name).capitalize()
     skill_parsable = skill_name.lower().replace(" ", "_")
-    attribute_shorthand = ATTRIBUTE_SHORTHAND[attribute] if attribute else None
+    attribute_shorthand = ATTRIBUTE_SHORTHAND.get(attribute or "")
 
     skill_row = flex_row(
         {"class": f"skill-row {skill_parsable}-row"},
@@ -163,7 +159,7 @@ def calc_skill(skill_name, attribute=None):
         return skill_row
 
 
-def calc_skill_equation_components(skill_parsable, attribute):
+def calc_skill_equation_components(skill_parsable: str, attribute: str | None) -> list[str]:
     if attribute == "other":
         return [
             underlabel("Attr", number_input()),
@@ -182,7 +178,7 @@ def calc_skill_equation_components(skill_parsable, attribute):
         ]
     else:
         standard_prefix = [
-            underlabel(ATTRIBUTE_SHORTHAND[attribute], number_input()),
+            underlabel(ATTRIBUTE_SHORTHAND.get(attribute or "") or "Attr", number_input()),
             plus(),
             underlabel(
                 "Train",
@@ -211,7 +207,7 @@ def calc_skill_equation_components(skill_parsable, attribute):
             ]
 
 
-def display_skills_for_attribute(attribute, display_function):
+def display_skills_for_attribute(attribute: str, display_function: Callable[[str, str | None], str]) -> str:
     return div({"class": "trained-skills"},
         [
             display_function(skill_name, attribute.lower())
@@ -219,7 +215,7 @@ def display_skills_for_attribute(attribute, display_function):
         ],
     )
 
-def calc_strength_based():
+def calc_strength_based() -> str:
     return flex_col(
         {"class": "calc-strength-based"},
         [
@@ -232,7 +228,7 @@ def calc_strength_based():
         ],
     )
 
-def calc_dexterity_based():
+def calc_dexterity_based() -> str:
     return flex_col(
         {"class": "calc-dexterity-based"},
         [
@@ -243,7 +239,7 @@ def calc_dexterity_based():
         ],
     )
 
-def calc_constitution_based():
+def calc_constitution_based() -> str:
     return flex_col(
         {"class": "calc-constitution-based"},
         [
@@ -255,7 +251,7 @@ def calc_constitution_based():
         ],
     )
 
-def calc_intelligence_based():
+def calc_intelligence_based() -> str:
     return flex_col(
         {"class": "calc-intelligence-based"},
         [
@@ -267,7 +263,7 @@ def calc_intelligence_based():
     )
 
 
-def calc_perception_based():
+def calc_perception_based() -> str:
     return flex_col(
         {"class": "calc-perception-based"},
         [
@@ -278,7 +274,7 @@ def calc_perception_based():
         ],
     )
 
-def calc_willpower_based():
+def calc_willpower_based() -> str:
     return flex_col(
         {"class": "calc-willpower-based"},
         [
@@ -290,7 +286,7 @@ def calc_willpower_based():
     )
 
 
-def calc_attunement_points():
+def calc_attunement_points() -> str:
     return flex_row(
         [
             div({"class": "calc-header"}, "Attune points"),
@@ -316,7 +312,7 @@ def calc_attunement_points():
     )
 
 
-def calc_combat_styles():
+def calc_combat_styles() -> str:
     return flex_row(
         [
             div({"class": "calc-header"}, "Combat styles"),
@@ -338,7 +334,7 @@ def calc_combat_styles():
         ]
     )
 
-def calc_maneuvers():
+def calc_maneuvers() -> str:
     return flex_row(
         [
             div({"class": "calc-header"}, "Maneuvers"),
@@ -360,7 +356,7 @@ def calc_maneuvers():
         ]
     )
 
-def calc_mystic_spheres():
+def calc_mystic_spheres() -> str:
     return flex_row(
         [
             div({"class": "calc-header"}, "Mystic spheres"),
@@ -382,7 +378,7 @@ def calc_mystic_spheres():
         ]
     )
 
-def calc_spells():
+def calc_spells() -> str:
     return flex_row(
         [
             div({"class": "calc-header"}, "Spells"),
@@ -405,7 +401,7 @@ def calc_spells():
     )
 
 
-def calc_blank_resource():
+def calc_blank_resource() -> str:
     return flex_row(
         [
             div({"class": "calc-header"}, div({"class": "calc-blank-header"}, "")),
