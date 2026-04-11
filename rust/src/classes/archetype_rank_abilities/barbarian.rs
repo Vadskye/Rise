@@ -16,7 +16,7 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
                 \end{activeability}
             ",
         },
-        // A normal rank 2 ability would give +3 durability. This gives +2HP for +4 IP.
+        // This gives flat durability to encourage barbarins with less armor.
         RankAbility {
             complexity: 0,
             name: "Battle-Scarred",
@@ -25,6 +25,7 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus4 bonus to your \glossterm{durability} (see \pcref{Durability}).
                 However, you also increase your \glossterm{injury point} by 4.
+                If your Constitution is 4 or higher, you gain an additional \plus2 durability bonus.
             ",
         },
         // A normal rank 6 ability would give +5 durability. This gives +18 HP for +18 IP.
@@ -35,6 +36,7 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             rank: 6,
             description: r"
                 The durability bonus increases to \plus8, and the injury point bonus increases to 20.
+                If your Constitution is 7 or higher, you gain an additional \plus2 durability bonus.
             ",
         },
         // Half HP damage is roughly half as effective as half damage, so 0.4 EA.

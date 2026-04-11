@@ -439,7 +439,8 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
                 \subcf{Devil -- Calculating} You gain a bonus to your \glossterm{mundane power} and \glossterm{magical power} equal to half your Intelligence.
 
                 \subcf{Fae -- Unconcerned} You gain a \plus1 bonus to \glossterm{accuracy} and all \glossterm{checks}.
-                However, you cannot use the \ability{desperate exertion} ability.
+                However, you cannot increase your fatigue to use the \ability{desperate exertion} ability.
+                You can still use it with \ability{desperate pact} or other similar abilities. 
 
                 % 1d10! is about 6.1 accuracy, and 1d8+2 is 6.5 accuracy.
                 \subcf{Moirai -- Inevitable} You gain a \plus2 \glossterm{accuracy} bonus.

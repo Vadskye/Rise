@@ -43,14 +43,29 @@ export function addHumanoids(grimoire: Grimoire) {
     });
     creature.setKnowledgeResults({
       normal: `
-        A minotaur is a Large bull-headed creature.
-        Minotaurs are known for their poor sense of direction.
-        They have a tendency to become trapped in dungeons of even moderate complexity.
+        Minotaurs are typically ten feet tall, with muscular arms and legs covered in thick fur.
+        Instead of a human head, they have the head of a bull, with large horns.
+        They are known for their poor sense of direction.
+        Even an only moderately complex dungeon can be enough to trap a minotaur for weeks as they try to find their way out.
+      `,
+      hard: `
+        While trapped, minotaurs are generally furious at their surroundings, and can sometimes be found pointlessly attacking obstacles in frustration.
+        Even if offered help, they may be too angry to listen to reason without a violent confrontation.
+        However, in their homes or on open roads, they can be amiable and even helpful.
       `,
     });
     creature.setTrainedSkills(['awareness']);
     creature.setBaseAttributes([6, 0, 4, -2, 0, 1]);
     creature.addCustomSense('Darkvision (60 ft.)');
+    creature.addPassiveAbility({
+      name: "Directionless",
+      effect: `
+        Minotaurs are easily lost.
+        They suffer a \minus10 penalty to Survival checks to follow tracks or navigate wilderness (see \\pcref{Survival}). 
+        In addition, whenever they choose a direction to travel in while in an enclosed space, they choose randomly, except that they do not return through the direction they came from.
+        This makes it extremely difficult for minotaurs to navigate enclosed spaces.
+      `,
+    });
 
     // Horns are standard, smashing is elite.
     creature.addManeuver('Mighty Rushdown', { displayName: 'Charging Gore', weapon: 'horn' });
@@ -98,9 +113,9 @@ function addBandits(grimoire: Grimoire) {
           });
           creature.setKnowledgeResults({
             normal: `
-            Army deserters have abandoned their past life in an army and struck out on their own.
-            Since the punishments for desertion are typically harsh, they have little to lose.
-          `,
+              Army deserters have abandoned their past life in an army and struck out on their own.
+              Since the punishments for desertion are typically harsh, they have little to lose.
+            `,
           });
           creature.setTrainedSkills(['endurance']);
           creature.setBaseAttributes([2, 0, 2, 0, 1, 0]);
@@ -491,8 +506,17 @@ function addGoblins(grimoire: Grimoire) {
       name: 'Goblins',
       knowledge: {
         normal: `
-          Goblins are common throughout civilization.
-          They are typically found in small groups, preying on travelers or isolated settlements.
+          Goblins are small, green-skinned humanoid creatures.
+          They are generally cowardly and selfish.
+          It's rare to see a goblin alone.
+          They tend to gather into small groups of scavengers that try to take what's left after stronger creatures fight.
+          However, if they believe they have an advantage in combat, they can be terrifyingly aggressive.
+        `,
+        hard: `
+          Goblins are easy to bully, and they love brute strength.
+          However, they are naturally disloyal, so they can easily abandon their alleged leader if they perceive weakness or just think they can do better elsewhere.
+          Only ceatures that are both strong and unintelligent, like ogres and trolls, are typically accompanied by goblin minions.
+          
         `,
       },
       sharedInitializer: (creature: Creature) => {
@@ -501,7 +525,7 @@ function addGoblins(grimoire: Grimoire) {
     },
     [
       [
-        'Goblin Warrior',
+        'Goblin Skirmisher',
         (creature: Creature) => {
           creature.setRequiredProperties({
             alignment: 'chaotic evil',
@@ -645,6 +669,17 @@ function addKobolds(grimoire: Grimoire) {
     effect: `
       The $name is \\impervious to the tag associated with the dragon it swore to serve.
     `,
+    knowledge: {
+      normal: `
+        Although kobolds can be found in civilization, many kobolds live out in the wilds.
+        They are coordinated and brave fighters as long as they have a leader present to guide them.
+        If their leader falls, they will generally try to flee and regroup.
+      `,
+      hard: `
+        Kobolds must respect their leader for more than brute strength.
+        They always prefer to serve dragons if possible, but cunning and charismatic creatures can convince kobolds to form temporary alliances out of mutual interest.
+      `,
+    },
   };
 
   grimoire.addMonsterGroup(

@@ -290,6 +290,7 @@ export class Creature implements CreaturePropertyMap {
         animal: 'knowledge_nature',
         beast: 'knowledge_nature',
         construct: 'knowledge_arcana',
+        eyeless: null,
         floating: null,
         ghost: 'knowledge_souls',
         humanoid: 'knowledge_local',
@@ -307,6 +308,7 @@ export class Creature implements CreaturePropertyMap {
         sightless: null,
         'simple-minded': null,
         soulless: null,
+        swarm: null,
         telepathy: null,
       };
 
@@ -566,6 +568,28 @@ export class Creature implements CreaturePropertyMap {
     });
   }
 
+  addLatchOn(
+    weapon: MonsterWeapon,
+    { displayName, isMagical, tags, usageTime }: Omit<MonsterAbilityOptions, 'weapon'> = {},
+  ) {
+    displayName = displayName || format.titleCase(weapon);
+    const maneuver = getWeaponMultByRank(this.calculateRank());
+    const dv = 10 + this.strength;
+    maneuver.effect += `
+      \\hit The $name becomes \\glossterm{attached} to the target.
+      It can be removed forcibly with a \\glossterm{difficulty value} ${dv} Strength check as a \\glossterm{minor action}.
+    `;
+    this.addActiveAbility({
+      kind: 'maneuver',
+      tags,
+      ...getWeaponMultByRank(this.calculateRank()),
+      name: 'Latch On',
+      isMagical: Boolean(isMagical),
+      usageTime,
+      weapon,
+    });
+  }
+
   addSneakAttack(
     weapon: MonsterWeapon,
     { displayName, isMagical, tags, usageTime }: Omit<MonsterAbilityOptions, 'weapon'> = {},
@@ -771,17 +795,19 @@ export class Creature implements CreaturePropertyMap {
   }
 
   addTrait(traitName: RiseTrait) {
-    // TODO: add fancy logic for some traits to have special effects
     const modifier: CustomModifierConfig = { name: traitName };
 
     if (this.hasTrait(traitName)) {
       console.warn(`${this.name}: Adding trait '${traitName}' that already exists.`);
+      return;
     }
 
     if (traitName === 'construct') {
       this.addTrait('mindless');
       this.addTrait('nonliving');
       this.addTrait('soulless');
+    } else if (traitName === 'eyeless') {
+      modifier.immune = 'Visual';
     } else if (traitName === 'ghost') {
       this.addTrait('incorporeal');
       modifier.impervious = 'Cold, Earth';
@@ -807,6 +833,9 @@ export class Creature implements CreaturePropertyMap {
       modifier.vulnerable = 'Fire';
     } else if (traitName === 'quadrupedal') {
       modifier.numericEffects = [{ modifier: 10, statistic: 'speed' }];
+    } else if (traitName === 'swarm') {
+      modifier.impervious = 'Targeted';
+      modifier.vulnerable = 'Area';
     }
     this.addCustomModifier(modifier);
   }
