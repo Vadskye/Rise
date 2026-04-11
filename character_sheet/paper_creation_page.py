@@ -38,7 +38,7 @@ from attribute_page import (
 import re
 
 
-def create_page(destination):
+def create_page(_destination: str) -> str:
     return flex_col(
         {"class": "page creation-page"},
         flex_row([

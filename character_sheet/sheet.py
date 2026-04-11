@@ -22,16 +22,14 @@ import os
 import shutil
 from typing import Literal
 
-try:
-    if len(sys.argv) > 1 and sys.argv[1] == "pretty":
-        cgi.is_pretty = True
-except IndexError:
-    pass
+if len(sys.argv) > 1 and sys.argv[1] == "pretty":
+    cgi.is_pretty = True
+    _ = sys.argv.pop(1)
 
 
 @click.command()
 @click.option("-d", "--destination", type=click.Choice(["paper", "roll20"]), default="paper")
-def main(destination: Literal["paper", "roll20"]) -> None:
+def main(destination: Literal["paper", "roll20"] = "paper") -> None:
 
     cgi.DESTINATION = destination
 
@@ -50,7 +48,7 @@ def main(destination: Literal["paper", "roll20"]) -> None:
         ):
             page = i + 1
             with open(f"paper_sheet/page{page}.html", "w", encoding="utf-8") as fh:
-                fh.write(
+                _ = fh.write(
                     "".join(
                         [
                             debug_stylesheets(page, destination),

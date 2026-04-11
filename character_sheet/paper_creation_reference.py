@@ -27,7 +27,7 @@ from cgi_simple import (
     underlabeled_checkbox,
 )
 
-def create_page(_destination):
+def create_page(_destination: str) -> str:
     return flex_col(
         {"class": "page creation-reference-page"},
         flex_row([
