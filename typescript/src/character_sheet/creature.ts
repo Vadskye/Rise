@@ -290,6 +290,7 @@ export class Creature implements CreaturePropertyMap {
         animal: 'knowledge_nature',
         beast: 'knowledge_nature',
         construct: 'knowledge_arcana',
+        eyeless: null,
         floating: null,
         ghost: 'knowledge_souls',
         humanoid: 'knowledge_local',
@@ -307,6 +308,7 @@ export class Creature implements CreaturePropertyMap {
         sightless: null,
         'simple-minded': null,
         soulless: null,
+        swarm: null,
         telepathy: null,
       };
 
