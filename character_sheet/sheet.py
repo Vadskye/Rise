@@ -18,6 +18,8 @@ import paper_creation_reference
 import creation_page
 from subprocess import call
 import sys
+import os
+import shutil
 from typing import Literal
 
 try:
@@ -34,8 +36,9 @@ def main(destination: Literal["paper", "roll20"]) -> None:
     cgi.DESTINATION = destination
 
     if destination == "paper":
-        _ = call(["lessc", "sheet.less", "paper_sheet/sheet.css"])
-        _ = call(["lessc", "paper_sheet.less", "paper_sheet/paper_sheet.css"])
+        os.makedirs("paper_sheet", exist_ok=True)
+        run_lessc("sheet.less", "paper_sheet/sheet.css")
+        run_lessc("paper_sheet.less", "paper_sheet/paper_sheet.css")
         for i, (name, module) in enumerate(
             [
                 ("first_page", first_page),
@@ -58,7 +61,7 @@ def main(destination: Literal["paper", "roll20"]) -> None:
                     )
                     + "\n"
                 )
-            _ = call(["lessc", f"{name}.less", f"paper_sheet/page{page}.css"])
+            _ = run_lessc(f"{name}.less", f"paper_sheet/page{page}.css")
     else:
         with open("roll20.html", "w", encoding="utf-8") as fh:
             _ = fh.write(sheet_worker.generate_script())
@@ -104,7 +107,18 @@ def main(destination: Literal["paper", "roll20"]) -> None:
             _ = output_file.write(rolltemplate.rolltemplate_css())
             _ = output_file.write("\n")
 
-        _ = call(["lessc", "roll20.less", "roll20.css"])
+        run_lessc("roll20.less", "roll20.css")
+
+
+def run_lessc(input_file: str, output_file: str) -> None:
+    # Try finding lessc in PATH
+    lessc = shutil.which("lessc")
+    if lessc:
+        _ = call([lessc, input_file, output_file])
+    else:
+        # Fallback to npx lessc
+        # shell=True is often required on Windows for npx/npm since they are cmd/batch files
+        _ = call(["npx", "-p", "less", "lessc", input_file, output_file], shell=(os.name == "nt"))
 
 
 def debug_stylesheets(page_number: int, destination: str) -> str:
