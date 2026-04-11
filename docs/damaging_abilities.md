@@ -1,69 +1,77 @@
 # Damaging Abilities
 
-## Damaging Ability Area
+## Damage Rank Calculations
 
-Because area size scales strongly with rank, at low ranks, a single-target ability may be more versatile than an area ability. What is the crossover point?
+A damaging ability's Damage Rank (dr) is determined by its ability rank plus or minus the "costs" of its range, area, and special effects.
 
-### Damage by ability rank
+Formula: Damage Rank = Ability Rank - (Target/Area Cost) - (Effect Costs) + (Budget Bonuses)
 
-If it's a damage plus debuff spell, reduce the listed damage rank by 1.
+### Target and Area Costs
 
-* Rank X:
-  * drX in Med range
-  * drX in R1 area
-  * drX+1 in Short range
-  * Debuff rank X+1 in Short range
-  * drX+1 in R0 area
-  * drX+2 in melee range
-* Rank X, where X >= 2:
-  * drX-1 in Long range
-  * drX-1 in R3 area
-* Rank X, where X >= 3:
-  * drX-2 in Distant range
-* Rank X, where X >= 4:
-  * drX-2 in RX area
+| Cost | Single Target | Area (Rank) | Examples                                               |
+| :--- | :------------ | :---------- | :----------------------------------------------------- |
+| -2   | Melee         | —           | Burning Grasp                                          |
+| -1   | Short         | R0          | Small cone from self, Enemies in Tiny radius from self |
+| 0    | Medium        | R1          | Tiny radius in Short range, Medium line from self      |
+| +1   | Long          | R2 / R3     | Small radius in Short range, Medium radius from self   |
+| +2   | Distant       | R4 / R5     | Medium radius in Medium range, Large radius from self  |
+| +3   | —             | R6 / R7     | Large radius in Medium range, Huge radius from self    |
 
-#### Flat damage
+#### Defense Penalties
 
-Flat damage effects suffer more for using lower rank damage scaling. Halve all modifiers to relative damage rank for flat damage effects, rounded down. That means:
+Single-target attacks against Reflex defense incur a +1 cost (-1 dr) because Reflex is unusually low for large monsters.
 
-* drX in Short range (so don't use Short range without special stuff)
-* drX+1 in melee range
-* drX-1 in Distant range
-* drX-1 in RX area, ignoring extreme areas
+### Effect Costs
 
-### Damage for Sustain (minor) zones
-
-A sustain (minor) zone must be a ranged radius effect or wall. It deals -2dr as a full size radius, or -1dr as a wall or limited scope (half area level to minimum of r2) area.
+| Cost | Effect Category          | Specifics                                             |
+| :--- | :----------------------- | :---------------------------------------------------- |
+| +2   | Sustain (minor) zone     | Full size radius or emanation                         |
+| +1   | Sustain (minor) zone     | Wall or limited scope (half area level)               |
+| +2   | Damage over time         | "Immediately and next round" (drX-2)                  |
+| +2   | DoT condition (Move)     | "As a condition" with Move action removal (drX-2)     |
+| +3   | DoT condition (Standard) | "As a condition" with Standard action removal (drX-3) |
+| +1   | Debuff                   | If the spell includes a debuff (Rank X+1)             |
 
 Reasoning: A typical sustain (minor) radius will hit the same target about twice, which makes -2dr a reasonable penalty, though it has significant possible upside for long fights.
 
-### Damage over time
+#### Double standard actions
 
-* "Immediately and next round" is drX-2
-* "As a condition" is drX-2 if it has move action DV 10 removal
-* "As a condition" is drX-3 if it has standard action DV 10 removal
-
-### Injury-only damage
-
-Damage that only works on injured targets should be about +40% damage, which is roughly +2dr.
-If it deals one tick of damage then checks for another damage tick on injury, neither drX-1 (0.8 + 0.8 = 1.6x) or drX-2 (0.6 + 0.6 = 1.2x) fits perfectly. There are two options:
-* Medium range / AOE: -1dr for injury bonus damge
-* Short range: -1dr for *delayed* injury bonus damage (so drX=rank overall)
-* Touch range: -2dr for injury bonus damage
-
-### Delayed damage
-
-Inescapably delayed damage gains +1dr.
-Escapably delayed damage, such as damage that happens one round later in a fixed area, gains +2dr as long as it is not enemies-only. If it is enemies-only, then it's functionally inescapably delayed damage, so it only gains +1dr.
-
-### Delayed double standard action
 This category of ability has no immediate effect, and allows you to make a special attack with a standard action next round.
 
 Delayed damage normally deals +1d, but that assumes that you're making an attack on an active target, so it doesn't allow precombat usage. This type of effect can be used precombat, which is dangerous. It also scales unusually well with buffs or single-ability enhancements.
 
 Therefore, this type of ability doesn't get the +1d delayed damage modifier, and it simply deals double damage relative to a single attack. In addition, it must have no longer than short range to make it more difficult to initiate combat with it.
 
-### Cooldowns
+#### Buff Costs
 
-Some class abilities give you standard action abilities with a brief cooldown. Those abilities gain +1 effective rank, so a rank 1 character with a brief cooldown ability would have its area/damage/debuff calculated as a rank 2 spell.
+Buffs granted by a damaging ability cost budget based on their Effective Actions (EA). For details, see `buff_action_efficiency.md`.
+
+### Budget Bonuses
+
+| Bonus | Category            | Specifics                                              |
+| :---- | :------------------ | :----------------------------------------------------- |
+| +1    | Cooldown            | For permanent or attuned abilities only                |
+| +1    | Fatigue Cost        | Paying a fatigue level adds +1 to budget               |
+| +1    | Self-Hit Penalty    | If an area ability must include the caster as a target |
+| +1    | Escapable Damage    | If a repeat or delayed hit is easily escapable         |
+| +1    | Inescapably Delayed | Damage that happens 1 round later (not escapable)      |
+| +2    | Escapably Delayed   | Damage that happens 1 round later (escapable)          |
+
+### Injury and Flat Damage
+
+#### Injury-only damage
+
+Damage that only works on injured targets gains a -2 cost (+2 dr) bonus.
+
+- Medium range / AOE: +1 dr for injury bonus damage
+- Short range: +1 dr for _delayed_ injury bonus damage (so drX=rank overall)
+- Touch range: +2 dr for injury bonus damage
+
+#### Flat damage
+
+Flat damage effects suffer more for using lower rank damage scaling. Halve all modifiers to relative damage rank for flat damage effects, rounded down.
+
+- drX in Short range (budget -1)
+- drX+1 in melee range (budget -2)
+- drX-1 in Distant range (budget +2)
+- drX-1 in RX area (budget +2), ignoring extreme areas
