@@ -1,4 +1,5 @@
-from .cgi_simple import (
+from __future__ import annotations
+from cgi_simple import (
     checkbox,
     div,
     fieldset,
@@ -19,14 +20,14 @@ from .cgi_simple import (
     underlabel,
     underlabel_spaced,
 )
-from .active_abilities_page import (
+from active_abilities_page import (
     ability,
     strike_based_attack,
     other_damaging_attack,
     nondamaging_attack,
 )
-from .sheet_data import ATTRIBUTES, DEFENSES, ATTRIBUTE_SKILLS, SUBSKILLS
-from .get_modifier_key import get_modifier_key
+from sheet_data import ATTRIBUTES, DEFENSES, ATTRIBUTE_SKILLS, SUBSKILLS
+from get_modifier_key import get_modifier_key
 
 
 def create_page(destination: str) -> str:

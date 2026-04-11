@@ -1,0 +1,9 @@
+{
+  "include": ["character_sheet"],
+  "executionEnvironments": [
+    {
+      "root": "character_sheet"
+    }
+  ],
+  "reportImplicitRelativeImport": "none"
+}

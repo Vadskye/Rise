@@ -1,49 +1,48 @@
 #!/usr/bin/env python3
-
+from __future__ import annotations
 import click
 import cgi_simple as cgi
 import first_page
 import active_abilities_page
 import rolltemplate
-import re
+import header_bar
+import sheet_worker
+import items_page
+import calculation_page
+import reference_page
+import status_page
 import identity_page
 import attribute_page
 import paper_creation_page
 import paper_creation_reference
 import creation_page
-import header_bar
-import sheet_worker
-import paper_skills_page
-import items_page
-import calculation_page
-import reference_page
-import status_page
 from subprocess import call
 import sys
+from typing import Literal
 
 try:
-    if sys.argv[1] == "pretty":
+    if len(sys.argv) > 1 and sys.argv[1] == "pretty":
         cgi.is_pretty = True
 except IndexError:
     pass
 
 
 @click.command()
-@click.option("-d", "--destination", default="paper")
-def main(destination):
+@click.option("-d", "--destination", type=click.Choice(["paper", "roll20"]), default="paper")
+def main(destination: Literal["paper", "roll20"]) -> None:
 
     cgi.DESTINATION = destination
 
     if destination == "paper":
-        call(["lessc", f"sheet.less", f"paper_sheet/sheet.css"])
-        call(["lessc", f"paper_sheet.less", f"paper_sheet/paper_sheet.css"])
+        _ = call(["lessc", "sheet.less", "paper_sheet/sheet.css"])
+        _ = call(["lessc", "paper_sheet.less", "paper_sheet/paper_sheet.css"])
         for i, (name, module) in enumerate(
             [
-                ["first_page", first_page],
-                ["paper_creation_page", paper_creation_page],
-                ["items_page", items_page],
-                ["attribute_page", attribute_page],
-                ["paper_creation_reference", paper_creation_reference],
+                ("first_page", first_page),
+                ("paper_creation_page", paper_creation_page),
+                ("items_page", items_page),
+                ("attribute_page", attribute_page),
+                ("paper_creation_reference", paper_creation_reference),
             ]
         ):
             page = i + 1
@@ -59,11 +58,11 @@ def main(destination):
                     )
                     + "\n"
                 )
-            call(["lessc", f"{name}.less", f"paper_sheet/page{page}.css"])
+            _ = call(["lessc", f"{name}.less", f"paper_sheet/page{page}.css"])
     else:
         with open("roll20.html", "w", encoding="utf-8") as fh:
-            fh.write(sheet_worker.generate_script())
-            fh.write(
+            _ = fh.write(sheet_worker.generate_script())
+            _ = fh.write(
                 cgi.div(
                     {"class": "full-sheet"},
                     [
@@ -81,7 +80,6 @@ def main(destination):
                 )
             )
 
-        class_pattern = re.compile(r"\.([a-z\-]+)\b")
         with open("roll20.less", "w", encoding="utf-8") as output_file:
             for filename in [
                 "sheet",
@@ -97,19 +95,19 @@ def main(destination):
             ]:
                 with open(filename + ".less", "r", encoding="utf-8") as input_file:
                     if filename not in ["sheet", "roll20_custom"]:
-                        output_file.write(f"div.page.{filename.replace('_', '-')} {{\n")
+                        _ = output_file.write(f"div.page.{filename.replace('_', '-')} {{\n")
                     for line in input_file:
-                        output_file.write(line)
+                        _ = output_file.write(line)
                     if filename not in ["sheet", "roll20_custom"]:
-                        output_file.write("\n}")
-                output_file.write("\n\n")
-            output_file.write(rolltemplate.rolltemplate_css())
-            output_file.write("\n")
+                        _ = output_file.write("\n}")
+                _ = output_file.write("\n\n")
+            _ = output_file.write(rolltemplate.rolltemplate_css())
+            _ = output_file.write("\n")
 
-        call(["lessc", "roll20.less", "roll20.css"])
+        _ = call(["lessc", "roll20.less", "roll20.css"])
 
 
-def debug_stylesheets(page_number, destination):
+def debug_stylesheets(page_number: int, destination: str) -> str:
 
     if destination == "paper":
         return "<!DOCTYPE html>" + cgi.head(
@@ -140,7 +138,7 @@ def debug_stylesheets(page_number, destination):
         raise Exception("Unknown destination '" + destination + "'")
 
 
-def debug_html_wrapper(html, destination):
+def debug_html_wrapper(html: str, destination: str) -> str:
     if destination == "paper":
         return cgi.div(
             {
@@ -158,4 +156,4 @@ def debug_html_wrapper(html, destination):
 
 
 if __name__ == "__main__":
-    main(None)
+    main()  # type: ignore

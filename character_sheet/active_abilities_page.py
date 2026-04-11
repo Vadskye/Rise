@@ -1,3 +1,4 @@
+from __future__ import annotations
 from cgi_simple import (
     button,
     checkbox,
@@ -28,8 +29,11 @@ from cgi_simple import (
 from sheet_data import ATTRIBUTES, DEFENSES, ATTRIBUTE_SKILLS, SUBSKILLS
 import re
 
+# type: ignore[reportUnusedImport]
+_ = (ATTRIBUTES, DEFENSES, ATTRIBUTE_SKILLS, SUBSKILLS, re)
 
-def create_page(destination):
+
+def create_page(_destination: str) -> str:
     magical_power = text_input(
         {"class": "inline-number", "readonly": True, "name": "magical_power"}
     )
@@ -93,9 +97,8 @@ def create_page(destination):
     )
 
 
-def ability():
+def ability() -> str:
     # TODO: make this legacy less dumb
-    ability_number = 0
     return flex_row(
         {"class": "ability"},
         [
@@ -207,7 +210,7 @@ def ability():
     )
 
 
-def passive_ability():
+def passive_ability() -> str:
     return flex_row(
         {"class": "passive-ability"},
         [
@@ -259,7 +262,7 @@ def passive_ability():
     )
 
 
-def paper_attack():
+def paper_attack() -> str:
     return flex_row(
         {"class": "attack"},
         [
@@ -280,7 +283,9 @@ def paper_attack():
     )
 
 
-def shared_attack_framework(calcs=[], buttons=[]):
+def shared_attack_framework(calcs: list[str] | None = None, buttons: list[str] | None = None) -> str:
+    calcs = calcs or []
+    buttons = buttons or []
     return flex_row(
         {"class": "attack"},
         [
@@ -333,7 +338,7 @@ def shared_attack_framework(calcs=[], buttons=[]):
     )
 
 
-def strike_based_attack():
+def strike_based_attack() -> str:
     return shared_attack_framework(
         [
             labeled_textarea(
@@ -394,7 +399,7 @@ def strike_based_attack():
         ],
     )
 
-def weapon_exists_checkbox(i):
+def weapon_exists_checkbox(i: int) -> str:
     return checkbox({
         "class": f"hidden weapon-exists weapon-{i}",
         "name": f"weapon_{i}_exists_local",
@@ -403,15 +408,15 @@ def weapon_exists_checkbox(i):
     })
 
 
-def weapon_buttons(i):
-    i = str(i)
+def weapon_buttons(i: int) -> list[str]:
+    idx = str(i)
     return [
         button(
             {
                 "class": "attack-roll",
-                "name": f"use_ability_" + i,
+                "name": f"use_ability_{idx}",
                 "type": "roll",
-                "value": weapon_attack_button(i),
+                "value": weapon_attack_button(idx),
             },
             # This has to use value instead of the more common `readonly`
             # approach because it's referencing a value outside of the current
@@ -419,27 +424,27 @@ def weapon_buttons(i):
             text_input(
                 {
                     "disabled": True,
-                    "name": "weapon_attack_name_" + i,
-                    "value": "@{weapon_" + i + "_name}",
+                    "name": f"weapon_attack_name_{idx}",
+                    "value": f"@{{weapon_{idx}_name}}",
                 }
             ),
         ),
         crit_damage_button(
-            "@{weapon_" + i + "_total_damage}",
-            "crit_" + i,
-            " - @{weapon_" + i + "_name}",
+            f"@{{weapon_{idx}_total_damage}}",
+            f"crit_{idx}",
+            f" - @{{weapon_{idx}_name}}",
         ),
         text_input(
             {
                 "class": "readonly-disabled strike-total-damage",
-                "name": f"weapon_{i}_total_damage",
+                "name": f"weapon_{idx}_total_damage",
                 "readonly": True,
             }
         ),
     ]
 
 
-def other_damaging_attack():
+def other_damaging_attack() -> str:
     return shared_attack_framework(
         [
             labeled_textarea(
@@ -491,7 +496,7 @@ def other_damaging_attack():
     )
 
 
-def other_damaging_attack_button_text():
+def other_damaging_attack_button_text() -> str:
     return attack_button_text(
         construct_damage_text(
             "@{calculated_dice_pool}",
@@ -500,7 +505,7 @@ def other_damaging_attack_button_text():
     )
 
 
-def nondamaging_attack():
+def nondamaging_attack() -> str:
     return shared_attack_framework(
         [
             underlabeled_checkbox(
@@ -537,7 +542,7 @@ def nondamaging_attack():
     )
 
 
-def crit_damage_button(crit_damage_calculation, name, subtitle_suffix=""):
+def crit_damage_button(crit_damage_calculation: str, name: str, subtitle_suffix: str = "") -> str:
     return button(
         {
             "class": "hidden",
@@ -559,7 +564,7 @@ def crit_damage_button(crit_damage_calculation, name, subtitle_suffix=""):
     )
 
 
-def construct_damage_text(normal_damage, crit_damage_button):
+def construct_damage_text(normal_damage: str, crit_damage_button: str) -> str:
     return (
         " [["
         + normal_damage
@@ -570,34 +575,27 @@ def construct_damage_text(normal_damage, crit_damage_button):
     )
 
 
-def weapon_attack_button(i):
-    i = str(i)
+def weapon_attack_button(i: str) -> str:
     return (
         "&{template:custom}"
         + " {{title=@{attack_name}}}"
-        + " {{subtitle=@{character_name} - @{weapon_"
-        + i
-        + "_name}}}"
+        + f" {{{{subtitle=@{{character_name}} - @{{weapon_{i}_name}}}}}}"
         + " @{targeting_text}"
-        + " {{Attack=[[@{attack_die}+@{accuracy}+@{accuracy_with_strikes}+@{weapon_"
-        + i
-        + "_accuracy}+@{attack_accuracy}]] vs @{attack_defense_text}}}"
+        + f" {{{{Attack=[[@{{attack_die}}+@{{accuracy}}+@{{accuracy_with_strikes}}+@{{weapon_{i}_accuracy}}+@{{attack_accuracy}}]] vs @{{attack_defense_text}}}}}}"
         + " {{Damage="
         + construct_damage_text(
-            "@{weapon_" + i + "_total_damage}",
-            "repeating_strikeattacks_crit_" + i,
+            f"@{{weapon_{i}_total_damage}}",
+            f"repeating_strikeattacks_crit_{i}",
         )
         + "}}"
-        + " {{Tags=@{weapon_"
-        + i
-        + "_tags}}}"
+        + f" {{{{Tags=@{{weapon_{i}_tags}}}}}}"
         + " {{color=@{chat_color}}}"
         + " @{attack_headers}"
         + " {{desc=@{attack_effect}}}"
     )
 
 
-def attack_button_text(damage_text=None):
+def attack_button_text(damage_text: str | None = None) -> str:
     return (
         "&{template:custom}"
         + " {{title=@{attack_name}}}"
@@ -612,9 +610,28 @@ def attack_button_text(damage_text=None):
     )
 
 
-def universal_ability_button(name, effect, attack=None, tags=None):
-    tags = attack.get("tags", []) if attack else (tags or [])
-    tags_text = f" {{{{Tags={', '.join(tags)}}}}}" if len(tags) > 0 else ""
+def universal_ability_button(
+    name: str,
+    effect: str,
+    attack: dict[str, object] | None = None,
+    tags: list[str] | None = None,
+) -> str:
+    actual_tags: list[str] = []
+    if attack and "tags" in attack:
+        attack_tags = attack["tags"]
+        if isinstance(attack_tags, list):
+            actual_tags.extend(str(t) for t in attack_tags)
+    if tags:
+        actual_tags.extend(tags)
+
+    tags_text = f" {{{{Tags={', '.join(actual_tags)}}}}}" if actual_tags else ""
+    
+    attack_text = ""
+    if attack:
+        acc = str(attack.get("accuracy", ""))
+        dfn = str(attack.get("defense", ""))
+        attack_text = f" {{{{Attack=[[@{{attack_die}}+{acc}]] vs {dfn}}}}}"
+
     return div(
         button(
             {
@@ -624,11 +641,7 @@ def universal_ability_button(name, effect, attack=None, tags=None):
                     + f" {{{{title={name}}}}}"
                     + " {{subtitle=@{character_name}}}"
                     + tags_text
-                    + (
-                        f" {{{{Attack=[[@{{attack_die}}+{attack['accuracy']}]] vs {attack['defense']}}}}}"
-                        if attack
-                        else ""
-                    )
+                    + attack_text
                     + " {{color=@{chat_color}}}"
                     + f" {{{{desc={effect.strip()}}}}}"
                 ),
@@ -638,7 +651,7 @@ def universal_ability_button(name, effect, attack=None, tags=None):
     )
 
 
-def universal_abilities():
+def universal_abilities() -> str:
     return flex_row(
         {"class": "universal_abilities"},
         [
