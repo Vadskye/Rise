@@ -1,6 +1,7 @@
-from sheet_data import KNOWABLE_CONCEPTS
+from typing import Dict
+from .sheet_data import KNOWABLE_CONCEPTS
 
-def generate_special_modifier_keys():
+def generate_special_modifier_keys() -> Dict[str, str]:
     keys = {}
     for a in KNOWABLE_CONCEPTS:
         parseable = a.lower().replace(' ', '_')
@@ -19,6 +20,6 @@ SPECIAL_MODIFIER_KEYS = generate_special_modifier_keys()
 # misc key used for that modifier. Most modifiers don't require special
 # handling here, but there are tricky cases which are handled as part of
 # `generate_special_modifier_keys`.
-def get_modifier_key(name):
+def get_modifier_key(name: str) -> str:
     parseable = name.lower().replace(' ', '_')
     return SPECIAL_MODIFIER_KEYS.get(parseable, parseable)
