@@ -381,14 +381,12 @@
 
   \traitdef{Animal}{animal}
   Animals are simple, \glossterm{mundane} \creaturetype{mortals}.
-  They have flesh, blood, skin, and bones, and their bodies are made from organic matter.
   They cannot have \magical abilities, and cannot have an Intelligence above \minus8.
   The Creature Handling skill is more effective on animals, as indicated in that skill's description.
 
   \traitdef{Beast}{beast}
-  Beasts are typically more complex than animals, with a maximum Intelligence of \minus5.
+  Beasts are \creaturetype{mortals} that are typically more complex than animals, with a maximum Intelligence of \minus5.
   Unlike animals, they can have \magical abilities.
-  They have flesh, blood, skin, and bones, and their bodies are made from organic matter.
   Beasts are typically found in the wilderness, and seem to naturally avoid civilized areas.
 
   % TODO: should constructs regain hit points when they rest?
@@ -415,16 +413,14 @@
   Some creatures can freely choose whether they float, potentially allowing them to glide.
 
   \traitdef{Humanoid}{humanoid}
-  A humanoid is an intelligent creature with two arms and two legs.
-  Humanoids can have magical abilities, but are usually not intrinsically magical.
-  They have flesh, blood, skin, and bones, and their bodies are made from organic matter.
+  Humanoid creatures have two arms, two legs, and one head.
   Most civilized creatures and societies are predominantly humanoid.
 
   \traitdef{Ghost}{ghost}
   A ghost is the soul of a deceased creature that lingered after death instead of proceeding to its proper afterlife.
   Ghosts are \trait{incorporeal} and \impervious to \atCold and \atEarth abilities.
   However, they are \vulnerable to \atFire abilities.
-  Despite being incorporeal, they are affected normally by even \glossterm{mundane} Fire effects.
+  Despite being incorporeal, they are affected by even \glossterm{mundane} Fire effects.
 
   \traitdef{Immortal}{immortal}
   An immortal creature can never die of old age.
@@ -537,6 +533,11 @@
   Although it may have a mind capable of intelligent thought and emotion, its opinions and thinking patterns are utterly fixed, without possibility of change.
   If it dies, it cannot be \glossterm{resurrected}.
 
+  \traitdef{Swarm}{swarm}
+  A swarm is a collection of smaller creatures that are mechanically treated as a single larger creature.
+  Swarms are \impervious to \glossterm{targeted} abilities and \vulnerable to \glossterm{area} abilities.
+  They can freely share space with other non-swarm creatures, and this does not cause the swarm or the creature in its space to be \squeezing.
+
 \newpage
 \section{Creature Types}\label{Creature Tags}
 
@@ -563,7 +564,9 @@
   Since dragons never stop growing in size or strength, elder dragons are some of the most powerful creatures in existence.
 
   \creaturetypedef{Mortal}{mortal}
-  A mortal is a creature with a body made from the composite essence of many planes and a soul.
+  Mortals have bodies made from organic matter with flesh, blood, skin, and bones.
+  Their bodies deteriorate over time, and they eventually die of old age.
+  When they do, the soul native to the body typically goes to an appropriate afterlife.
   Most creatures in the universe are mortals, including all of the common species.
 
   \creaturetypedef{Soulforged}{soulforged}
