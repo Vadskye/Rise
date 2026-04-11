@@ -1,4 +1,5 @@
 from __future__ import annotations
+from typing import cast
 from cgi_simple import (
     button,
     checkbox,
@@ -612,7 +613,7 @@ def universal_ability_button(
     if attack:
         attack_tags = attack.get("tags")
         if isinstance(attack_tags, list):
-            actual_tags.extend(str(t) for t in attack_tags)
+            actual_tags.extend(str(t) for t in cast(list[object], attack_tags))
     if tags:
         actual_tags.extend(tags)
 

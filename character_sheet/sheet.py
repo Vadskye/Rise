@@ -53,7 +53,7 @@ def main(destination: Literal["paper", "roll20"] = "paper") -> None:
                         [
                             debug_stylesheets(page, destination),
                             debug_html_wrapper(
-                                module.create_page(destination), destination
+                                module.create_page(destination), destination # type: ignore
                             ),
                         ]
                     )

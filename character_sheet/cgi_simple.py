@@ -26,7 +26,7 @@ def ensure_valid_attributes_and_contents(
     if attributes is None:
         pass
     elif isinstance(attributes, dict):
-        final_attributes = cast(dict[str, Any], attributes)
+        final_attributes = cast(dict[str, object], attributes)
     else:
         if contents is None:
             contents = attributes
@@ -42,7 +42,7 @@ def ensure_valid_attributes_and_contents(
     elif isinstance(contents, str):
         final_contents = [contents.strip()]
     elif isinstance(contents, list):
-        final_contents = [str(c) for c in cast(list[Any], contents)]
+        final_contents = [str(c) for c in cast(list[object], contents)]
     else:
         final_contents = [str(contents)]
 
@@ -577,28 +577,28 @@ def label(attributes: dict[str, object] | None, text: str) -> str:
 
 
 def ol(
-    attributes: dict[str, object] | None = None,
+    attributes: dict[str, object] | object | None = None,
     contents: str | list[str] | object | None = None
 ) -> str:
     return html_tag("ol", attributes, contents)
 
 
 def ul(
-    attributes: dict[str, object] | None = None,
+    attributes: dict[str, object] | object | None = None,
     contents: str | list[str] | object | None = None
 ) -> str:
     return html_tag("ul", attributes, contents)
 
 
 def li(
-    attributes: dict[str, object] | None = None,
+    attributes: dict[str, object] | object | None = None,
     contents: str | list[str] | object | None = None
 ) -> str:
     return html_tag("li", attributes, contents)
 
 
 def p(
-    attributes: dict[str, object] | None = None,
+    attributes: dict[str, object] | object | None = None,
     contents: str | list[str] | object | None = None
 ) -> str:
     return html_tag("p", attributes, contents)
