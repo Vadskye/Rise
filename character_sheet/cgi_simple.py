@@ -571,9 +571,11 @@ def underlabeled_checkbox(
     )
 
 
-def label(attributes: dict[str, object] | None, text: str) -> str:
-    attributes = attributes or dict()
-    return html_tag("label", attributes, text)
+def label(
+    attributes: dict[str, object] | object | None = None,
+    contents: str | list[str] | object | None = None,
+) -> str:
+    return html_tag("label", attributes, contents)
 
 
 def ol(
