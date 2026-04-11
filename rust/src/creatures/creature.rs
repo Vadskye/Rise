@@ -88,25 +88,39 @@ impl Creature {
         // This differs slightly from the actual maneuver-granting archetypes because it can
         // grant GenericExtraDamage at ranks 2/4/6. This behavior is preferable when testing
         // math, and fully defined characters shouldn't need to use this function at all.
-        let mut new_maneuvers = vec![Maneuver::GenericExtraDamage(self.rank())];
-        if self.rank() >= 1 {
+        let rank = self.rank();
+        let mut new_maneuvers = vec![];
+        if rank >= 1 {
             new_maneuvers.push(Maneuver::GenericAccuracy);
             new_maneuvers.push(Maneuver::CertainStrike);
             new_maneuvers.push(Maneuver::PowerStrike);
         }
-        if self.rank() >= 5 {
+        if rank >= 5 {
             new_maneuvers.push(Maneuver::CertainStrikePlus);
             new_maneuvers.push(Maneuver::PowerStrikePlus);
         }
-        if self.rank() >= 7 {
+
+        new_maneuvers.push(Maneuver::GenericExtraDamage(rank));
+
+        if rank >= 7 {
             new_maneuvers.push(Maneuver::GenericTripleDamage);
         }
+
         for maneuver in new_maneuvers.into_iter() {
-            self.add_modifier(
-                Modifier::Maneuver(maneuver),
-                Some("Standard Maneuvers"),
-                None,
-            );
+            // Avoid adding duplicate maneuvers if this is called multiple times (e.g. for every
+            // rank ability that grants maneuvers).
+            let already_has_maneuver = self.get_modifiers().iter().any(|m| match m {
+                Modifier::Maneuver(existing_m) => existing_m.name() == maneuver.name(),
+                _ => false,
+            });
+
+            if !already_has_maneuver {
+                self.add_modifier(
+                    Modifier::Maneuver(maneuver),
+                    Some("Standard Maneuvers"),
+                    None,
+                );
+            }
         }
     }
 
