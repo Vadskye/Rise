@@ -1,6 +1,6 @@
 from __future__ import annotations
 from collections.abc import Iterable, Callable
-from typing import Literal
+from typing import Literal, cast, Any
 
 is_pretty = True
 input_name_prefix: str | None = None
@@ -26,7 +26,7 @@ def ensure_valid_attributes_and_contents(
     if attributes is None:
         pass
     elif isinstance(attributes, dict):
-        final_attributes = attributes
+        final_attributes = cast(dict[str, Any], attributes)
     else:
         if contents is None:
             contents = attributes
@@ -42,7 +42,7 @@ def ensure_valid_attributes_and_contents(
     elif isinstance(contents, str):
         final_contents = [contents.strip()]
     elif isinstance(contents, list):
-        final_contents = [str(c) for c in contents]
+        final_contents = [str(c) for c in cast(list[Any], contents)]
     else:
         final_contents = [str(contents)]
 
