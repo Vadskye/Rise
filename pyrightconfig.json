@@ -1,5 +1,6 @@
 {
   "include": ["character_sheet"],
+  "extraPaths": ["character_sheet"],
   "executionEnvironments": [
     {
       "root": "character_sheet"
