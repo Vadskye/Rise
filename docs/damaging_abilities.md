@@ -6,7 +6,7 @@ A damaging ability's Damage Rank (dr) is determined by its ability rank plus or 
 
 Formula: Damage Rank = Ability Rank - (Target/Area Cost) - (Effect Costs) + (Budget Bonuses)
 
-### Target and Area Costs
+### Targeting Costs
 
 | Cost | Single Target | Area (Rank) | Examples                                               |
 | :--- | :------------ | :---------- | :----------------------------------------------------- |
@@ -23,14 +23,17 @@ Single-target attacks against Reflex defense incur a +1 cost (-1 dr) because Ref
 
 ### Effect Costs
 
-| Cost | Effect Category          | Specifics                                             |
-| :--- | :----------------------- | :---------------------------------------------------- |
-| +2   | Sustain (minor) zone     | Full size radius or emanation                         |
-| +1   | Sustain (minor) zone     | Wall or limited scope (half area level)               |
-| +2   | Damage over time         | "Immediately and next round" (drX-2)                  |
-| +2   | DoT condition (Move)     | "As a condition" with Move action removal (drX-2)     |
-| +3   | DoT condition (Standard) | "As a condition" with Standard action removal (drX-3) |
-| +1   | Debuff                   | If the spell includes a debuff (Rank X+1)             |
+| Cost | Effect Category           | Specifics                                                 |
+| :--- | :------------------------ | :-------------------------------------------------------- |
+| +2   | Sustain (minor) zone      | Full size radius or emanation                             |
+| +1   | Sustain (minor) zone      | Wall or limited scope (half area level)                   |
+| +2   | Damage over time          | "Immediately and next round" (drX-2)                      |
+| +2   | DoT condition (Move)      | "As a condition" with Move action removal (drX-2)         |
+| +3   | DoT condition (Standard)  | "As a condition" with Standard action removal (drX-3)     |
+| +1   | Debuff                    | If the spell includes a debuff (Rank X+1)                 |
+| -2   | Injury-only               | Spell only affects injured targets                        |
+| +1   | Injury-only double damage | Immediate for most areas, delayed if targeting cost is -1 |
+| +2   | Injury-only double damage | Only for touch range                                      |
 
 Reasoning: A typical sustain (minor) radius will hit the same target about twice, which makes -2dr a reasonable penalty, though it has significant possible upside for long fights.
 
@@ -50,12 +53,15 @@ Buffs granted by a damaging ability cost budget based on their Effective Actions
 
 | Bonus | Category            | Specifics                                              |
 | :---- | :------------------ | :----------------------------------------------------- |
-| +1    | Cooldown            | For permanent or attuned abilities only                |
+| +1    | Cooldown            | For permanent abilities only                           |
+| +1    | Attune (R1-4)       | Standard action attack granted by attunement           |
+| +2    | Attune (R5+)        | Standard action attack granted by attunement           |
 | +1    | Fatigue Cost        | Paying a fatigue level adds +1 to budget               |
 | +1    | Self-Hit Penalty    | If an area ability must include the caster as a target |
 | +1    | Escapable Damage    | If a repeat or delayed hit is easily escapable         |
 | +1    | Inescapably Delayed | Damage that happens 1 round later (not escapable)      |
 | +2    | Escapably Delayed   | Damage that happens 1 round later (escapable)          |
+| +1    | Double defense      | Must hit two separate defenses to succeed              |
 
 ### Injury and Flat Damage
 
