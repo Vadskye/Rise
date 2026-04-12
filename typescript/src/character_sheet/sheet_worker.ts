@@ -811,13 +811,13 @@ function handleAccuracy() {
     variables: {
       miscName: 'accuracy',
       numeric: ['level', 'perception', 'fatigue_penalty', 'shield_accuracy'],
-      boolean: ['elite'],
+      boolean: ['elite', 'is_monster'],
     },
     callback: (v) => {
       const levelModifier = v.level / 2;
       const perceptionModifier = v.perception / 2;
       const levelishModifier = Math.floor(levelModifier + perceptionModifier);
-      const crModifier = calcAccuracyCrScaling(v.level, v.elite);
+      const crModifier = v.is_monster ? calcAccuracyCrScaling(v.level, v.elite) : 0;
       const accuracy =
         v.misc + levelishModifier + crModifier + v.shield_accuracy - v.fatigue_penalty;
       setAttrs({
@@ -827,7 +827,7 @@ function handleAccuracy() {
           { name: 'Per', value: perceptionModifier },
           { name: 'Shield', value: v.shield_accuracy },
           { name: 'fatigue', value: -v.fatigue_penalty },
-          { name: 'CR', value: crModifier },
+          { name: 'Monster', value: crModifier },
         ]),
       });
     },
@@ -895,13 +895,13 @@ function handleBrawlingAccuracy() {
     variables: {
       miscName: 'brawling_accuracy',
       numeric: ['level', 'strength', 'fatigue_penalty', ...accuracyMiscVariables],
-      boolean: ['elite'],
+      boolean: ['elite', 'is_monster'],
     },
     callback: (v) => {
       const levelModifier = v.level / 2;
       const strengthModifier = v.strength / 2;
       const levelishModifier = levelModifier + strengthModifier;
-      const monsterModifier = calcAccuracyCrScaling(v.level, v.elite);
+      const monsterModifier = v.is_monster ? calcAccuracyCrScaling(v.level, v.elite) : 0;
 
       let accuracyMiscModifier = 0;
       for (const varName of accuracyMiscVariables) {
