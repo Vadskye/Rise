@@ -77,7 +77,10 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Stoke the Fires',
 
-      // -2dr for empower buff
+      // Rank 3 Spell
+      // Area: Enemies in Tiny radius from self (R0, cost -1)
+      // Buff: Briefly Empowered (0.4 EA guaranteed, cost 2)
+      // Result: 3 - (-1) - 2 = dr2
       attack: {
         hit: `
           \\damageranktwo.
@@ -96,10 +99,13 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Stoke the Bonfire',
 
-      // -3dr for pre-applied empower buff
+      // Rank 6 Spell
+      // Area: Enemies in Tiny radius from self (R0, cost -1)
+      // Buff: Briefly Empowered (0.4 EA guaranteed, cost 2)
+      // Result: 6 - (-1) - 2 = dr5
       attack: {
         hit: `
-          \\damagerankfour.
+          \\damagerankfive.
         `,
         halfOnMiss: true,
         targeting: `
@@ -115,9 +121,11 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Desperate Kindling',
 
-      // Normally, a maximizing spell would require drX-3 damage and would only work on
-      // hit. This pays self-targeting instead of on-hit, and gets drX+1 from the fatigue
-      // level, for a total of drX-2.
+      // Rank 4 Spell
+      // Area: Small radius from self (R0, cost -1)
+      // Bonus: Fatigue Level (+1), Self-Hit (+1)
+      // Buff: Briefly Maximized (0.7 EA guaranteed, cost 4)
+      // Result: 4 - (-1) - 4 + 2 = dr3
       cost: 'One \\glossterm{fatigue level}.',
       attack: {
         hit: `
@@ -137,6 +145,11 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Desperate Pyre',
 
+      // Rank 7 Spell
+      // Area: Small radius from self (R0, cost -1)
+      // Bonus: Fatigue Level (+1), Self-Hit (+1)
+      // Buff: Briefly Maximized (0.7 EA guaranteed, cost 4)
+      // Result: 7 - (-1) - 4 + 2 = dr6
       cost: 'One \\glossterm{fatigue level}.',
       attack: {
         hit: `
@@ -201,8 +214,10 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Pyroclasm',
 
-      // A normal r1 area would deal dr3 immediate damage, or dr2 damage over two turns.
-      // This gets +1dr for self-targeting and ability to escape the second hit.
+      // Rank 3 Spell
+      // Area: Med radius from self (R2, cost 1)
+      // Mod: DoT (-2), Self-hit bonus (+1), Escapable (+1)
+      // Result: 3 - 1 - 0 = dr2
       attack: {
         hit: `
           \\damageranktwo.
@@ -223,8 +238,10 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Mighty Pyroclasm',
 
-      // A normal R3 area would deal dr5 immediate damage, or dr3 over two turns.
-      // This gets +1dr for self-targeting and ability to escape the second hit.
+      // Rank 6 Spell
+      // Area: Large radius from self (R4, cost 2)
+      // Mod: Twice (-2), Self-hit bonus (+1), Escapable (+1)
+      // Result: 6 - 2 - 0 = dr4
       attack: {
         hit: `
           \\damagerankfour.
@@ -245,11 +262,14 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Fireball',
 
+      // Rank 3 Spell
+      // Area: Small radius in Short range (R3, cost 1)
+      // Result: 3 - 1 = dr2
       attack: {
         hit: `\\damageranktwo.`,
         halfOnMiss: true,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\tinyarea radius within \\shortrange.
+          Make an attack vs. Reflex against everything in a \\smallarea radius within \\shortrange.
         `,
       },
 
@@ -261,6 +281,9 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Split Fireball',
 
+      // Rank 5 Spell
+      // Area: Two Tiny radii in Short range (R4, cost 1)
+      // Result: 5 - 1 = dr4
       attack: {
         hit: `\\damagerankfour.`,
         halfOnMiss: true,
@@ -297,6 +320,9 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Immolating Fireball',
 
+      // Rank 6 Spell
+      // Area: Small radius in Short range (R3, cost 1)
+      // Result: 6 - 1 = dr5
       attack: {
         hit: `
           \\damagerankfive.
@@ -306,7 +332,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         `,
         halfOnMiss: true,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\tinyarea radius within \\shortrange.
+          Make an attack vs. Reflex against everything in a \\smallarea radius within \\shortrange.
         `,
       },
       rank: 6,
@@ -333,13 +359,16 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Mighty Fan of Flames',
 
-      // Normal immediate damage would be dr5 (3.5 + 1.75dpp)
+      // Rank 5 Spell
+      // Area: Small cone from you (R0, cost -1)
+      // Mod: DoT (-2)
+      // Result: 5 - (-1) - 2 = dr4 (twice)
       attack: {
         crit: MULTIHIT_CRIT,
-        hit: `\\damagerankthree immediately, and again at the end of the target's next turn.`,
+        hit: `\\damagerankfour immediately, and again at the end of the target's next turn.`,
         miss: DELAYED_HALF,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\medarea cone from you.
+          Make an attack vs. Reflex against everything in a \\smallarea cone from you.
         `,
       },
       rank: 5,
@@ -350,6 +379,10 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Ignition',
 
+      // Rank 2 Spell
+      // Range: Short (cost -1)
+      // Mod: Condition (Move removal) (-2)
+      // Result: 2 + 1 - 2 = dr1
       attack: {
         crit: `All damage from the condition is doubled, not just the initial damage.`,
         hit: `
@@ -361,7 +394,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
           This condition is automatically removed if the target takes damage from a \\atCold or \\atWater ability.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange.
+          Make an attack vs. Fortitude against one creature within \\shortrange.
         `,
       },
       rank: 2,
@@ -374,7 +407,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       functionsLike: {
         name: 'ignition',
-        exceptThat: 'the damage increases to \\damagerankfour.',
+        exceptThat: 'the damage increases to \\damagerankthree.',
       },
       rank: 4,
       roles: ['burn'],
@@ -397,8 +430,10 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Flame Breath',
 
+      // Target is +33% damage from a rank 3 attunement.
+      // Normal medarea cone would be r2 damage = 10, r3 would be 13, perfect.
       attack: {
-        hit: `\\damagerankfour.`,
+        hit: `\\damagerankthree.`,
         halfOnMiss: true,
         targeting: `
           For the duration of this spell, you can breathe fire like a dragon as a standard action.
@@ -415,10 +450,12 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Massive Flame Breath',
 
+      // Target is +46% damage from a rank 6 attunement.
+      // Normal large cone would be r4 damage = 26, r6 would be 38, perfect.
       functionsLike: {
         name: 'flame breath',
         exceptThat: `
-          the damage increases to \\damagerankseven, and the area increases to a \\largearea cone from you.
+          the damage increases to \\damageranksix, and the area increases to a \\largearea cone from you.
         `,
       },
       rank: 6,
@@ -631,8 +668,12 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Pyrohemia',
 
-      // Normal damage for a medium cone is dr1, so dr0 with the HP clause, and dr1 with
-      // Reflex + Fort defenses.
+      // Rank 1 spell
+      // Area: Med cone (R2, +1 cost)
+      // Mods: Injury-only double damage (+1 cost), double defense (+1 budget)
+      // Injury-only damage combines poorly with area, so we give this a free +1dr.
+      // Result: 1 - 1 - 1 + 1 + 1 = dr1
+
       attack: {
         crit: MULTIHIT_CRIT,
         miss: DELAYED_HALF,
@@ -816,14 +857,11 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Combustion',
 
-      // Baseline for melee range is dr3.
-      // With -4 accuracy, dr5, which is 3.5 + 1.75dpp.
-      // Double dr2 is 5 + 2dpp.
+      // There's no way to make power scaling work out for DoT at level 1, so this
+      // has to deal immediate damage.
       attack: {
-        crit: MULTIHIT_CRIT,
         hit: `
-          \\damageranktwo immediately, and again at the end of the target's next turn.
-          Any \\glossterm{extra damage} applies to both the initial damage and the delayed damage.
+          \\damagerankfive.
         `,
         targeting: `
           Make an attack vs. Fortitude with a -4 accuracy penalty against something adjacent to you.
@@ -837,14 +875,9 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Mighty Combustion',
 
-      // Baseline for melee range is dr6.
-      // With -4 accuracy, dr8, which is 3.5 + 3.5dpp.
-      // Double dr5 is 7 + 3.5dpp.
       attack: {
-        crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankfive immediately, and again at the end of the target's next turn.
-          Any \\glossterm{extra damage} applies to both the initial damage and the delayed damage.
+          \\damagerankeight.
         `,
         targeting: `
           Make an attack vs. Fortitude with a -4 accuracy penalty against something adjacent to you.
@@ -860,8 +893,8 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       // Baseline for melee range is dr9.
       // With -4 accuracy, dr11, which is undefined.
-      // Combustion and Mighty Combustion ended up at drX+1, so this can probably do the
-      // same.
+      // Combustion and Mighty Combustion would end up at drX+1 as DoT,
+      // so this can probably do the same.
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
