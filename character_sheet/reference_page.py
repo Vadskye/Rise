@@ -1,3 +1,4 @@
+from __future__ import annotations
 from cgi_simple import (
     button,
     div,
