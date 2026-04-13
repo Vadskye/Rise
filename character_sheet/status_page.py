@@ -232,85 +232,83 @@ def debuff_explanation(debuff: str) -> str:
     }[debuff]
 
 
-def custom_modifier(show_toggle: bool | str, show_text: bool) -> tuple[str]:
-    return (
-        flex_row(
-            {"class": "custom-modifier"},
-            [
-                flex_col(
-                    {"class": "custom-modifier-toggles"},
-                    [
-                        underlabeled_checkbox(
-                            "Active?",
-                            None,
-                            {"class": "is-active", "name": "is_active"},
-                        ),
-                        underlabeled_checkbox(
-                            "Deep?",
-                            None,
-                            {"class": "is-deep", "name": "is_deep"},
-                        )
-                        if show_toggle == "deep"
-                        else "",
-                    ],
-                )
-                if show_toggle
-                else "",
-                flex_row(
-                    {"class": "custom-modifier-details"},
-                    [
-                        flex_row(
-                            {"class": "text-prefix"},
-                            [
+def custom_modifier(show_toggle: bool | str, show_text: bool) -> str:
+    return flex_row(
+        {"class": "custom-modifier"},
+        [
+            flex_col(
+                {"class": "custom-modifier-toggles"},
+                [
+                    underlabeled_checkbox(
+                        "Active?",
+                        None,
+                        {"class": "is-active", "name": "is_active"},
+                    ),
+                    underlabeled_checkbox(
+                        "Deep?",
+                        None,
+                        {"class": "is-deep", "name": "is_deep"},
+                    )
+                    if show_toggle == "deep"
+                    else "",
+                ],
+            )
+            if show_toggle
+            else "",
+            flex_row(
+                {"class": "custom-modifier-details"},
+                [
+                    flex_row(
+                        {"class": "text-prefix"},
+                        [
+                            labeled_text_input(
+                                "Name",
+                                {"class": "name"},
+                                {"name": "name"},
+                            ),
+                            (
                                 labeled_text_input(
-                                    "Name",
-                                    {"class": "name"},
-                                    {"name": "name"},
-                                ),
-                                (
-                                    labeled_text_input(
-                                        "Effect",
-                                        {"class": "effect"},
-                                        {"name": "effect"},
-                                    )
-                                    if show_text
-                                    else ""
-                                ),
-                            ],
-                        ),
-                        flex_row(
-                            {"class": "custom-modifier-dropdowns"},
-                            [custom_statistic(str(i)) for i in range(0, 3)],
-                        ),
-                    ],
-                ),
-                flex_row(
-                    {"class": "custom-modifier-special-effects"},
-                    [
-                        labeled_text_input(
-                            "Immune",
-                            {"class": "immune"},
-                            {"name": "immune"},
-                        ),
-                        labeled_text_input(
-                            "Impervious",
-                            {"class": "impervious"},
-                            {"name": "impervious"},
-                        ),
-                        labeled_text_input(
-                            "Vulnerable",
-                            {"class": "vulnerable"},
-                            {"name": "vulnerable"},
-                        ),
-                        labeled_text_input(
-                            "Extra attack text",
-                            {"class": "attack-header"},
-                            {"name": "attack_header"},
-                        ),
-                    ],
-                )
-            ],
-        ),
+                                    "Effect",
+                                    {"class": "effect"},
+                                    {"name": "effect"},
+                                )
+                                if show_text
+                                else ""
+                            ),
+                        ],
+                    ),
+                    flex_row(
+                        {"class": "custom-modifier-dropdowns"},
+                        [custom_statistic(str(i)) for i in range(0, 3)],
+                    ),
+                ],
+            ),
+            flex_row(
+                {"class": "custom-modifier-special-effects"},
+                [
+                    labeled_text_input(
+                        "Immune",
+                        {"class": "immune"},
+                        {"name": "immune"},
+                    ),
+                    labeled_text_input(
+                        "Impervious",
+                        {"class": "impervious"},
+                        {"name": "impervious"},
+                    ),
+                    labeled_text_input(
+                        "Vulnerable",
+                        {"class": "vulnerable"},
+                        {"name": "vulnerable"},
+                    ),
+                    labeled_text_input(
+                        "Extra attack text",
+                        {"class": "attack-header"},
+                        {"name": "attack_header"},
+                    ),
+                ],
+            )
+        ],
     )
 
 
