@@ -1,5 +1,6 @@
 {
   "include": ["character_sheet"],
+  "exclude": ["comprehensive_codex", "core_book", "docs", "html_book", "lib", "rust", "typescript", "utils"],
   "extraPaths": ["character_sheet"],
   "executionEnvironments": [
     {
