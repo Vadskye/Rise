@@ -9,7 +9,6 @@ use super::Modifier;
 pub enum ModifierBundle {
     Amorphous,
     Incorporeal,
-    Intangible,
     Legless,
     Lifeless,
     Mindless,
@@ -52,18 +51,6 @@ impl ModifierBundle {
                     description: r"
                       The $name is \trait{incorporeal} (see \pcref{Incorporeal}).
                       It does not have a physical body, can enter or pass through solid objects.
-                    ".to_string(),
-                    is_magical: false,
-                    name: "Incorporeal".to_string(),
-                }),
-            ],
-            Self::Intangible => vec![
-                Modifier::Immune(SpecialDefenseType::Mundane),
-                Modifier::Immune(SpecialDefenseType::AbilityTag(AbilityTag::Brawling)),
-                Modifier::PassiveAbility(PassiveAbility {
-                    description: r"
-                      The $name is \trait{intangible} (see \pcref{Intangible}).
-                      It cannot be touched or interacted with physically.
                     ".to_string(),
                     is_magical: false,
                     name: "Incorporeal".to_string(),

@@ -296,7 +296,6 @@ export class Creature implements CreaturePropertyMap {
         humanoid: 'knowledge_local',
         incorporeal: null,
         indwelt: 'knowledge_souls',
-        intangible: null,
         invisible: null,
         legless: null,
         mindless: null,
@@ -814,8 +813,6 @@ export class Creature implements CreaturePropertyMap {
       modifier.vulnerable = 'Fire';
     } else if (traitName === 'incorporeal') {
       this.addTrait('floating');
-      this.addTrait('intangible');
-    } else if (traitName === 'intangible') {
       modifier.immune = '\\atCreation, \\atManifestation, \\glossterm{mundane}';
       modifier.numericEffects = [{ modifier: 5, statistic: 'stealth' }];
     } else if (traitName === 'mindless') {

@@ -192,7 +192,6 @@ const RISE_TRAITS_LIST = [
   'humanoid',
   'incorporeal',
   'indwelt',
-  'intangible',
   'invisible',
   'legless',
   'mindless',

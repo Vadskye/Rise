@@ -216,13 +216,13 @@ fn cloaks() -> Vec<Apparel> {
     apparel.push(Cloak(StandardItem {
         name: String::from("Ghost Shroud"),
         rank: 2,
-        short_description: String::from("Grants limited ability to hit ghostly creatures"),
+        short_description: String::from("Grants limited ability to hit incorporeal creatures"),
         description: String::from(r"
-            Creatures that are \trait<intangible> or \trait<incorporeal> are only \impervious to your \glossterm{mundane} abilities rather than immune to them.
+            Creatures that are \trait<incorporeal> are only \impervious to your \glossterm{mundane} abilities rather than immune to them.
         "),
         upgrades: vec![
-            ItemUpgrade::new(5, "Grants ability to hit intangible creatures", "
-                Intangible and incorporeal creatures are not impervious to your mundane abilities.
+            ItemUpgrade::new(5, "Grants ability to hit incorporeal creatures", "
+                Incorporeal creatures are not impervious to your mundane abilities.
             "),
         ],
         ..Apparel::default()

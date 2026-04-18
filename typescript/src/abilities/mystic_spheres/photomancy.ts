@@ -402,13 +402,11 @@ export const photomancy: MysticSphere = {
       type: 'Sustain (attunable, minor)',
     },
 
-    // Rank 5 version is unlimited. It's not obvious how to downscale that correctly to
-    // rank 1, but 3 images seems about right.
     {
       name: 'Mirror Image',
 
       effect: `
-        Three illusory duplicates appear around you that mirror your every move.
+        Two illusory duplicates appear around you that mirror your every move.
         The duplicates shift chaotically in your space, making it difficult to hit you.
 
         All \\glossterm{targeted} attacks against you have a 50\\% \\glossterm{miss chance}.
@@ -419,6 +417,11 @@ export const photomancy: MysticSphere = {
       `,
       rank: 1,
       roles: ['attune'],
+      scaling: {
+        3: `The number of duplicates increases to three.`,
+        5: `The number of duplicates increases to four.`,
+        7: `The number of duplicates increases to five.`,
+      },
       tags: ['Visual'],
       type: 'Attune (deep)',
     },
