@@ -95,6 +95,7 @@ export class Grimoire {
       const sheet = createCharacterSheet(characterSheetName);
       sheet.setProperties({ name: monsterName });
       const creature = new Creature(sheet);
+      // Some shared initializer logic can depend on the monster's rank, so initializing here can help.
       initializer(creature);
       if (config.sharedInitializer) {
         config.sharedInitializer(creature);

@@ -34,6 +34,7 @@ type OtherSectionName = (typeof OTHER_SECTION_NAMES)[number];
 const OTHER_SECTION_NAMES = [
   'knowledgesubskills',
   'craftsubskills',
+  'professionsubskills',
   'trainedskills',
   'vitalwounds',
 ] as const;
