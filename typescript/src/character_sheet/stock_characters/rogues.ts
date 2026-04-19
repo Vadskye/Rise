@@ -7,7 +7,8 @@ export function addRogues(stock: StockCharacters) {
       alignment: 'chaotic neutral',
       base_class: 'rogue',
       elite: false,
-      creature_type: 'mortal',
+      creature_origin: 'natural',
+      creature_type: 'humanoid',
       level: 1,
       size: 'medium',
     });

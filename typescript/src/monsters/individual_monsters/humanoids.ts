@@ -1,13 +1,18 @@
 import { Grimoire } from '@src/monsters/grimoire';
 import { Creature } from '@src/character_sheet/creature';
 
+const originAndType = {
+  creature_origin: 'natural',
+  creature_type: 'humanoid',
+} as const;
+
 export function addHumanoids(grimoire: Grimoire) {
   grimoire.addMonster('Choker', (creature: Creature) => {
     creature.setRequiredProperties({
+      ...originAndType,
       alignment: 'chaotic evil',
       base_class: 'brute',
       elite: false,
-      creature_type: 'mortal',
       level: 4,
       size: 'medium',
     });
@@ -19,7 +24,6 @@ export function addHumanoids(grimoire: Grimoire) {
         They live to hear the desperate gasping for breath and crunching of bones that their powerful arms can inflict on their prey.
       `,
     });
-    creature.addTrait('humanoid');
     creature.setTrainedSkills(['awareness', 'climb', 'stealth']);
     creature.addCustomSense('Darkvision (60 ft.)');
     creature.addCustomMovementSpeed('Climb (slow)');
@@ -30,14 +34,13 @@ export function addHumanoids(grimoire: Grimoire) {
 
   grimoire.addMonster('Minotaur', (creature: Creature) => {
     creature.setRequiredProperties({
+      ...originAndType,
       alignment: 'neutral',
       base_class: 'brute',
       elite: true,
-      creature_type: 'mortal',
       level: 7,
       size: 'large',
     });
-    creature.addTrait('humanoid');
     creature.setProperties({
       has_art: true,
     });
@@ -58,10 +61,10 @@ export function addHumanoids(grimoire: Grimoire) {
     creature.setBaseAttributes([6, 0, 4, -2, 0, 1]);
     creature.addCustomSense('Darkvision (60 ft.)');
     creature.addPassiveAbility({
-      name: "Directionless",
+      name: 'Directionless',
       effect: `
         Minotaurs are easily lost.
-        They suffer a \minus10 penalty to Survival checks to follow tracks or navigate wilderness (see \\pcref{Survival}). 
+        They suffer a \\minus10 penalty to Survival checks to follow tracks or navigate wilderness (see \\pcref{Survival}). 
         In addition, whenever they choose a direction to travel in while in an enclosed space, they choose randomly, except that they do not return through the direction they came from.
         This makes it extremely difficult for minotaurs to navigate enclosed spaces.
       `,
@@ -92,19 +95,16 @@ function addBandits(grimoire: Grimoire) {
     {
       name: 'Bandits',
       hasArt: false,
-      sharedInitializer: (creature: Creature) => {
-        creature.addTrait('humanoid');
-      },
     },
     [
       [
         'Army Deserter',
         (creature: Creature) => {
           creature.setRequiredProperties({
+            ...originAndType,
             alignment: 'neutral evil',
             base_class: 'warrior',
             elite: false,
-            creature_type: 'mortal',
             level: 1,
             size: 'medium',
           });
@@ -131,10 +131,10 @@ function addBandits(grimoire: Grimoire) {
         'Veteran Archer',
         (creature: Creature) => {
           creature.setRequiredProperties({
+            ...originAndType,
             alignment: 'neutral evil',
             base_class: 'sniper',
             elite: false,
-            creature_type: 'mortal',
             level: 3,
             size: 'medium',
           });
@@ -154,10 +154,10 @@ function addBandits(grimoire: Grimoire) {
         'Renegade Bolter',
         (creature: Creature) => {
           creature.setRequiredProperties({
+            ...originAndType,
             alignment: 'neutral evil',
             base_class: 'sniper',
             elite: false,
-            creature_type: 'mortal',
             level: 4,
             size: 'medium',
           });
@@ -197,7 +197,6 @@ function addBugbears(grimoire: Grimoire) {
         `,
       },
       sharedInitializer: (creature: Creature) => {
-        creature.addTrait('humanoid');
         creature.setTrainedSkills(['endurance']);
       },
     },
@@ -206,10 +205,10 @@ function addBugbears(grimoire: Grimoire) {
         'Bugbear Raider',
         (creature: Creature) => {
           creature.setRequiredProperties({
+            ...originAndType,
             alignment: 'chaotic evil',
             base_class: 'warrior',
             elite: false,
-            creature_type: 'mortal',
             level: 4,
             size: 'medium',
           });
@@ -228,10 +227,10 @@ function addBugbears(grimoire: Grimoire) {
         'Bugbear Shaman',
         (creature: Creature) => {
           creature.setRequiredProperties({
+            ...originAndType,
             alignment: 'chaotic evil',
             base_class: 'leader',
             elite: false,
-            creature_type: 'mortal',
             level: 4,
             size: 'medium',
           });
@@ -252,10 +251,10 @@ function addBugbears(grimoire: Grimoire) {
         'Bugbear Growl',
         (creature: Creature) => {
           creature.setRequiredProperties({
+            ...originAndType,
             alignment: 'chaotic evil',
             base_class: 'warrior',
             elite: false,
-            creature_type: 'mortal',
             level: 2,
             size: 'medium',
           });
@@ -273,10 +272,10 @@ function addBugbears(grimoire: Grimoire) {
         'Bugbear Chief',
         (creature: Creature) => {
           creature.setRequiredProperties({
+            ...originAndType,
             alignment: 'neutral evil',
             base_class: 'leader',
             elite: true,
-            creature_type: 'mortal',
             level: 6,
             size: 'medium',
           });
@@ -299,19 +298,16 @@ function addCultists(grimoire: Grimoire) {
     {
       name: 'Cultists',
       hasArt: false,
-      sharedInitializer: (creature: Creature) => {
-        creature.addTrait('humanoid');
-      },
     },
     [
       [
         'Death Cultist',
         (creature: Creature) => {
           creature.setRequiredProperties({
+            ...originAndType,
             alignment: 'lawful evil',
             base_class: 'sniper',
             elite: false,
-            creature_type: 'mortal',
             level: 1,
             size: 'medium',
           });
@@ -326,10 +322,10 @@ function addCultists(grimoire: Grimoire) {
         'Pyromaniac',
         (creature: Creature) => {
           creature.setRequiredProperties({
+            ...originAndType,
             alignment: 'chaotic evil',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'mortal',
             level: 4,
             size: 'medium',
           });
@@ -347,10 +343,10 @@ function addCultists(grimoire: Grimoire) {
         'Arsonist',
         (creature: Creature) => {
           creature.setRequiredProperties({
+            ...originAndType,
             alignment: 'chaotic evil',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'mortal',
             level: 6,
             size: 'medium',
           });
@@ -402,19 +398,16 @@ function addGiants(grimoire: Grimoire) {
           The object may also deal less damage than a boulder depending on its construction.
         `,
       },
-      sharedInitializer: (creature: Creature) => {
-        creature.addTrait('humanoid');
-      },
     },
     [
       [
         'Hill Giant',
         (creature: Creature) => {
           creature.setRequiredProperties({
+            ...originAndType,
             alignment: 'chaotic evil',
             base_class: 'brute',
             elite: false,
-            creature_type: 'mortal',
             level: 10,
             size: 'huge',
           });
@@ -446,10 +439,10 @@ function addGiants(grimoire: Grimoire) {
         'Stone Giant',
         (creature: Creature) => {
           creature.setRequiredProperties({
+            ...originAndType,
             alignment: 'neutral',
             base_class: 'warrior',
             elite: true,
-            creature_type: 'mortal',
             level: 11,
             size: 'gargantuan',
           });
@@ -480,10 +473,10 @@ function addGiants(grimoire: Grimoire) {
         'Stone Giant Elder',
         (creature: Creature) => {
           creature.setRequiredProperties({
+            ...originAndType,
             alignment: 'neutral',
             base_class: 'warrior',
             elite: true,
-            creature_type: 'mortal',
             level: 15,
             size: 'gargantuan',
           });
@@ -519,19 +512,16 @@ function addGoblins(grimoire: Grimoire) {
           
         `,
       },
-      sharedInitializer: (creature: Creature) => {
-        creature.addTrait('humanoid');
-      },
     },
     [
       [
         'Goblin Skirmisher',
         (creature: Creature) => {
           creature.setRequiredProperties({
+            ...originAndType,
             alignment: 'chaotic evil',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'mortal',
             level: 1,
             size: 'medium',
           });
@@ -549,10 +539,10 @@ function addGoblins(grimoire: Grimoire) {
         'Wolf Rider',
         (creature: Creature) => {
           creature.setRequiredProperties({
+            ...originAndType,
             alignment: 'chaotic evil',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'mortal',
             level: 3,
             size: 'medium',
           });
@@ -571,10 +561,10 @@ function addGoblins(grimoire: Grimoire) {
         'Goblin Shaman',
         (creature: Creature) => {
           creature.setRequiredProperties({
+            ...originAndType,
             alignment: 'chaotic evil',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'mortal',
             level: 1,
             size: 'medium',
           });
@@ -614,7 +604,6 @@ function addLizardfolk(grimoire: Grimoire) {
       },
       sharedInitializer: (creature: Creature) => {
         creature.addTrait('amphibious');
-        creature.addTrait('humanoid');
         creature.addCustomMovementSpeed('Land (normal)');
         creature.addCustomMovementSpeed('Swim (normal)');
         creature.setEquippedArmor({
@@ -628,10 +617,10 @@ function addLizardfolk(grimoire: Grimoire) {
         'Lizardfolk Grunt',
         (creature: Creature) => {
           creature.setRequiredProperties({
+            ...originAndType,
             alignment: 'neutral',
             base_class: 'warrior',
             elite: false,
-            creature_type: 'mortal',
             level: 3,
             size: 'medium',
           });
@@ -645,10 +634,10 @@ function addLizardfolk(grimoire: Grimoire) {
         'Lizardfolk Champion',
         (creature: Creature) => {
           creature.setRequiredProperties({
+            ...originAndType,
             alignment: 'neutral',
             base_class: 'warrior',
             elite: false,
-            creature_type: 'mortal',
             level: 5,
             size: 'medium',
           });
@@ -686,7 +675,6 @@ function addKobolds(grimoire: Grimoire) {
     {
       name: 'Kobolds',
       sharedInitializer: (creature) => {
-        creature.addTrait('humanoid');
         creature.setTrainedSkills(['awareness', 'stealth']);
       },
     },
@@ -695,9 +683,9 @@ function addKobolds(grimoire: Grimoire) {
         'Nipper',
         (creature: Creature) => {
           creature.setRequiredProperties({
+            ...originAndType,
             alignment: 'lawful neutral',
             base_class: 'skirmisher',
-            creature_type: 'mortal',
             elite: false,
             level: 2,
             size: 'medium',
@@ -712,9 +700,9 @@ function addKobolds(grimoire: Grimoire) {
         'Snipper',
         (creature: Creature) => {
           creature.setRequiredProperties({
+            ...originAndType,
             alignment: 'lawful neutral',
             base_class: 'sniper',
-            creature_type: 'mortal',
             elite: false,
             level: 2,
             size: 'medium',
@@ -729,10 +717,10 @@ function addKobolds(grimoire: Grimoire) {
         'Yipper',
         (creature: Creature) => {
           creature.setRequiredProperties({
+            ...originAndType,
             alignment: 'lawful neutral',
             base_class: 'leader',
             elite: false,
-            creature_type: 'mortal',
             level: 3,
             size: 'medium',
           });
@@ -750,9 +738,9 @@ function addKobolds(grimoire: Grimoire) {
         'Dragonsworn Nipper',
         (creature: Creature) => {
           creature.setRequiredProperties({
+            ...originAndType,
             alignment: 'lawful neutral',
             base_class: 'skirmisher',
-            creature_type: 'mortal',
             elite: false,
             level: 11,
             size: 'medium',
@@ -769,9 +757,9 @@ function addKobolds(grimoire: Grimoire) {
         'Dragonsworn Snipper',
         (creature: Creature) => {
           creature.setRequiredProperties({
+            ...originAndType,
             alignment: 'lawful neutral',
             base_class: 'sniper',
-            creature_type: 'mortal',
             elite: false,
             level: 12,
             size: 'medium',
@@ -789,10 +777,10 @@ function addKobolds(grimoire: Grimoire) {
         'Dragonsworn Yipper',
         (creature: Creature) => {
           creature.setRequiredProperties({
+            ...originAndType,
             alignment: 'lawful neutral',
             base_class: 'leader',
             elite: false,
-            creature_type: 'mortal',
             level: 13,
             size: 'medium',
           });
@@ -824,19 +812,16 @@ function addNecromancers(grimoire: Grimoire) {
           They are reviled in most societies, both for their desecration of the dead and for the harm their magic can do to souls.
         `,
       },
-      sharedInitializer: (creature: Creature) => {
-        creature.addTrait('humanoid');
-      },
     },
     [
       [
         'Graverobber',
         (creature: Creature) => {
           creature.setRequiredProperties({
+            ...originAndType,
             alignment: 'chaotic evil',
             base_class: 'leader',
             elite: true,
-            creature_type: 'mortal',
             level: 4,
             size: 'medium',
           });
@@ -855,10 +840,10 @@ function addNecromancers(grimoire: Grimoire) {
         'Lichbound',
         (creature: Creature) => {
           creature.setRequiredProperties({
+            ...originAndType,
             alignment: 'lawful evil',
             base_class: 'leader',
             elite: true,
-            creature_type: 'mortal',
             level: 8,
             size: 'medium',
           });
@@ -910,10 +895,10 @@ function addNecromancers(grimoire: Grimoire) {
         'Idoris, Queen of the Dead',
         (creature: Creature) => {
           creature.setRequiredProperties({
+            ...originAndType,
             alignment: 'lawful neutral',
             base_class: 'leader',
             elite: true,
-            creature_type: 'mortal',
             level: 18,
             size: 'medium',
           });
@@ -980,19 +965,16 @@ function addOgres(grimoire: Grimoire) {
           Ogres use massive clubs in battle to tenderize their meat instead of wastefully hacking off bits.
         `,
       },
-      sharedInitializer: (creature: Creature) => {
-        creature.addTrait('humanoid');
-      },
     },
     [
       [
         'Ogre Ganger',
         (creature: Creature) => {
           creature.setRequiredProperties({
+            ...originAndType,
             alignment: 'chaotic evil',
             base_class: 'brute',
             elite: false,
-            creature_type: 'mortal',
             level: 5,
             size: 'large',
           });
@@ -1014,10 +996,10 @@ function addOgres(grimoire: Grimoire) {
         'Ogre Menace',
         (creature: Creature) => {
           creature.setRequiredProperties({
+            ...originAndType,
             alignment: 'chaotic evil',
             base_class: 'brute',
             elite: false,
-            creature_type: 'mortal',
             level: 8,
             size: 'large',
           });
@@ -1042,10 +1024,10 @@ function addOgres(grimoire: Grimoire) {
         'Ogre Mage',
         (creature: Creature) => {
           creature.setRequiredProperties({
+            ...originAndType,
             alignment: 'chaotic evil',
             base_class: 'sniper',
             elite: false,
-            creature_type: 'mortal',
             level: 8,
             size: 'large',
           });
@@ -1072,10 +1054,10 @@ function addOgres(grimoire: Grimoire) {
         'Ogre Skullclaimer',
         (creature: Creature) => {
           creature.setRequiredProperties({
+            ...originAndType,
             alignment: 'chaotic evil',
             base_class: 'brute',
             elite: true,
-            creature_type: 'mortal',
             level: 9,
             size: 'large',
           });
@@ -1125,7 +1107,6 @@ function addOrcs(grimoire: Grimoire) {
         `,
       },
       sharedInitializer: (creature: Creature) => {
-        creature.addTrait('humanoid');
         creature.setTrainedSkills(['endurance']);
         creature.addCustomSense('Darkvision (60 ft.)');
       },
@@ -1135,10 +1116,10 @@ function addOrcs(grimoire: Grimoire) {
         'Orc Peon',
         (creature: Creature) => {
           creature.setRequiredProperties({
+            ...originAndType,
             alignment: 'lawful evil',
             base_class: 'brute',
             elite: false,
-            creature_type: 'mortal',
             level: 1,
             size: 'medium',
           });
@@ -1161,10 +1142,10 @@ function addOrcs(grimoire: Grimoire) {
         'Orc Grunt',
         (creature: Creature) => {
           creature.setRequiredProperties({
+            ...originAndType,
             alignment: 'lawful evil',
             base_class: 'brute',
             elite: false,
-            creature_type: 'mortal',
             level: 2,
             size: 'medium',
           });
@@ -1185,10 +1166,10 @@ function addOrcs(grimoire: Grimoire) {
         'Orc Butcher',
         (creature: Creature) => {
           creature.setRequiredProperties({
+            ...originAndType,
             alignment: 'lawful evil',
             base_class: 'brute',
             elite: false,
-            creature_type: 'mortal',
             level: 3,
             size: 'medium',
           });
@@ -1217,10 +1198,10 @@ function addOrcs(grimoire: Grimoire) {
         'Orc Veteran',
         (creature: Creature) => {
           creature.setRequiredProperties({
+            ...originAndType,
             alignment: 'lawful evil',
             base_class: 'brute',
             elite: false,
-            creature_type: 'mortal',
             level: 5,
             size: 'medium',
           });
@@ -1243,10 +1224,10 @@ function addOrcs(grimoire: Grimoire) {
         'Orc Clan Chief',
         (creature: Creature) => {
           creature.setRequiredProperties({
+            ...originAndType,
             alignment: 'lawful evil',
             base_class: 'leader',
             elite: true,
-            creature_type: 'mortal',
             level: 7,
             size: 'medium',
           });
@@ -1270,10 +1251,10 @@ function addOrcs(grimoire: Grimoire) {
         'Orc Shaman',
         (creature: Creature) => {
           creature.setRequiredProperties({
+            ...originAndType,
             alignment: 'lawful evil',
             base_class: 'leader',
             elite: false,
-            creature_type: 'mortal',
             level: 2,
             size: 'medium',
           });
@@ -1313,19 +1294,16 @@ function addTownsfolk(grimoire: Grimoire) {
           They are typically found in small groups, preying on travelers or isolated settlements.
         `,
       },
-      sharedInitializer: (creature: Creature) => {
-        creature.addTrait('humanoid');
-      },
     },
     [
       [
         'Town Guard',
         (creature: Creature) => {
           creature.setRequiredProperties({
+            ...originAndType,
             alignment: 'lawful neutral',
             base_class: 'warrior',
             elite: false,
-            creature_type: 'mortal',
             level: 1,
             size: 'medium',
           });
@@ -1351,10 +1329,10 @@ function addTownsfolk(grimoire: Grimoire) {
         'Town Healer',
         (creature: Creature) => {
           creature.setRequiredProperties({
+            ...originAndType,
             alignment: 'neutral',
             base_class: 'leader',
             elite: false,
-            creature_type: 'mortal',
             level: 2,
             size: 'medium',
           });
