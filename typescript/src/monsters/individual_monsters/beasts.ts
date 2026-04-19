@@ -8,14 +8,14 @@ export function addBeasts(grimoire: Grimoire) {
       alignment: 'neutral',
       base_class: 'skirmisher',
       elite: true,
-      creature_type: 'mortal',
+      creature_origin: 'natural',
+      creature_type: 'beast',
       level: 4,
       size: 'large',
     });
     creature.setProperties({
       has_art: true,
     });
-    creature.addTrait('beast');
     creature.setKnowledgeResults({
       normal: `
         An ankheg is a Large burrowing ant-like creature with large mandibles and a taste for fresh meat.
@@ -65,12 +65,12 @@ export function addBeasts(grimoire: Grimoire) {
       alignment: 'neutral',
       base_class: 'skirmisher',
       elite: false,
-      creature_type: 'mortal',
+      creature_origin: 'natural',
+      creature_type: 'beast',
       level: 1,
       size: 'large',
     });
     creature.setProperties({ has_art: true });
-    creature.addTrait('beast');
     creature.setKnowledgeResults({
       normal: `
         A giant wasp is a Large insect resembling a normal wasp.
@@ -100,11 +100,11 @@ export function addBeasts(grimoire: Grimoire) {
       alignment: 'neutral',
       base_class: 'skirmisher',
       elite: false,
-      creature_type: 'mortal',
+      creature_origin: 'natural',
+      creature_type: 'beast',
       level: 3,
       size: 'small',
     });
-    creature.addTrait('beast');
     creature.setKnowledgeResults({
       normal: `
         Carrion crows are larger and stronger than ordinary crows.
@@ -122,11 +122,11 @@ export function addBeasts(grimoire: Grimoire) {
       alignment: 'neutral',
       base_class: 'skirmisher',
       elite: true,
-      creature_type: 'mortal',
+      creature_origin: 'natural',
+      creature_type: 'beast',
       level: 12,
       size: 'large',
     });
-    creature.addTrait('beast');
     creature.setProperties({ has_art: true });
     creature.setTrainedSkills(['awareness', 'balance', 'climb']);
     creature.setBaseAttributes([4, 8, 2, -5, 3, 2]);
@@ -138,7 +138,6 @@ export function addBeasts(grimoire: Grimoire) {
       name: 'frostweb spider venom',
       it: `
           makes the target \\slowed while the poison lasts.
-
           The second escalation also inflicts a \\glossterm{vital wound} with a unique vital wound effect.
           Instead of making a \\glossterm{vital roll} for the \\glossterm{vital wound}, the target's blood runs cold.
           % TODO: is this measured from the target's turn or the spider's turn?
@@ -189,11 +188,11 @@ export function addBeasts(grimoire: Grimoire) {
       alignment: 'neutral',
       base_class: 'skirmisher',
       elite: false,
-      creature_type: 'mortal',
+      creature_origin: 'natural',
+      creature_type: 'beast',
       level: 2,
       size: 'medium',
     });
-    creature.addTrait('beast');
     creature.setTrainedSkills(['awareness', 'survival']);
     creature.setBaseAttributes([3, 2, 1, -5, 2, -1]);
     creature.addTrait('quadrupedal');
@@ -207,11 +206,11 @@ export function addBeasts(grimoire: Grimoire) {
       alignment: 'neutral',
       base_class: 'brute',
       elite: false,
-      creature_type: 'mortal',
+      creature_origin: 'natural',
+      creature_type: 'beast',
       level: 7,
       size: 'large',
     });
-    creature.addTrait('beast');
     creature.setProperties({
       has_art: true,
     });
@@ -250,11 +249,11 @@ export function addBeasts(grimoire: Grimoire) {
       alignment: 'neutral',
       base_class: 'brute',
       elite: true,
-      creature_type: 'mortal',
+      creature_origin: 'natural',
+      creature_type: 'beast',
       level: 7,
       size: 'large',
     });
-    creature.addTrait('beast');
     creature.setProperties({
       has_art: true,
     });
@@ -295,11 +294,11 @@ export function addBeasts(grimoire: Grimoire) {
       alignment: 'neutral',
       base_class: 'brute',
       elite: false,
-      creature_type: 'mortal',
+      creature_origin: 'natural',
+      creature_type: 'beast',
       level: 1,
       size: 'tiny',
     });
-    creature.addTrait('beast');
     creature.setKnowledgeResults({
       normal: `
         Grumblegrubs are a Tiny worms that can eat almost anything.
@@ -314,7 +313,7 @@ export function addBeasts(grimoire: Grimoire) {
     creature.setTrainedSkills(['climb']);
     creature.setBaseAttributes([-2, 2, -2, -8, 2, -4]);
     creature.addTrait('legless');
-    creature.addTrait('eyeless');
+    creature.addTrait('sightless');
     creature.addCustomSense('Tremorsight (30 ft.)');
     creature.addCustomSense('Tremorsense (60 ft.)');
 
@@ -326,16 +325,16 @@ export function addBeasts(grimoire: Grimoire) {
       alignment: 'neutral',
       base_class: 'brute',
       elite: false,
-      creature_type: 'mortal',
+      creature_origin: 'natural',
+      creature_type: 'beast',
       level: 4,
       size: 'medium',
     });
-    creature.addTrait('beast');
     creature.addTrait('swarm');
     creature.addVulnerability('Fire');
     creature.setTrainedSkills(['climb']);
     creature.setBaseAttributes([-1, 4, -1, -8, 2, -4]);
-    creature.addTrait('eyeless');
+    creature.addTrait('sightless');
     creature.addTrait('legless');
     creature.addCustomSense('Tremorsight (30 ft.)');
     creature.addCustomSense('Tremorsense (60 ft.)');
@@ -348,13 +347,13 @@ export function addBeasts(grimoire: Grimoire) {
       alignment: 'neutral',
       base_class: 'skirmisher',
       elite: false,
-      creature_type: 'mortal',
+      creature_origin: 'natural',
+      creature_type: 'beast',
       level: 2,
       size: 'small',
     });
     // TODO: darkmantles should fall under dungeoneering. We probably need a standard
     // "environment" term...
-    creature.addTrait('beast');
     creature.setProperties({
       has_art: true,
     });
@@ -367,7 +366,7 @@ export function addBeasts(grimoire: Grimoire) {
         Darkmantles hang from ceilings using a muscular "foot" at the top of their bodies.
         They can look like a stalactite by holding their tentacles stiffly under themeselves, or like a lump of rock by spreading their tentacles so the membrane between them covers their bodies.
         Their shell and skin usually resemble limestone, but a darkmantle can change its color to match almost any type of stony background.
-
+ 
         A darkmantle that misses its initial attack often climbs away and tries to drop on the opponent again if there is a conveniently placed wall.
         Otherwise, it tries to climb its opponent's body to suffocate its head.
         Darkmantles move very slowly, so they rely heavily on stealth to ambush their foes.
@@ -387,11 +386,11 @@ export function addBeasts(grimoire: Grimoire) {
       alignment: 'neutral',
       base_class: 'skirmisher',
       elite: true,
-      creature_type: 'mortal',
+      creature_origin: 'natural',
+      creature_type: 'beast',
       level: 5,
       size: 'large',
     });
-    creature.addTrait('beast');
     creature.setProperties({
       has_art: true,
     });
@@ -438,7 +437,8 @@ export function addBeasts(grimoire: Grimoire) {
       alignment: 'neutral',
       base_class: 'skirmisher',
       elite: true,
-      creature_type: 'mortal',
+      creature_origin: 'natural',
+      creature_type: 'beast',
       level: 7,
       size: 'huge',
     });
@@ -449,7 +449,6 @@ export function addBeasts(grimoire: Grimoire) {
         Beyond that range, they cannot see, though they can still identify the existence and location of creatures at great range by sound.
       `,
     });
-    creature.addTrait('beast');
     creature.setTrainedSkills(['awareness', 'stealth']);
     creature.setBaseAttributes([5, 2, 4, -5, 6, 0]);
     // TODO: Add Sightless modifiers
@@ -487,11 +486,11 @@ export function addBeasts(grimoire: Grimoire) {
       alignment: 'neutral',
       base_class: 'brute',
       elite: false,
-      creature_type: 'mortal',
+      creature_origin: 'natural',
+      creature_type: 'beast',
       level: 5,
       size: 'medium',
     });
-    creature.addTrait('beast');
     creature.setProperties({ has_art: true });
     creature.setKnowledgeResults({
       normal: `
@@ -530,7 +529,8 @@ export function addBeasts(grimoire: Grimoire) {
       alignment: 'neutral',
       base_class: 'brute',
       elite: true,
-      creature_type: 'mortal',
+      creature_origin: 'natural',
+      creature_type: 'beast',
       level: 9,
       size: 'large',
     });
@@ -583,9 +583,6 @@ function addAnimals(grimoire: Grimoire) {
           They are easier to influence with the Creature Handling skill than other creatures.
         `,
       },
-      sharedInitializer: (creature: Creature) => {
-        creature.addTrait('animal');
-      },
     },
     [
       [
@@ -594,8 +591,9 @@ function addAnimals(grimoire: Grimoire) {
           creature.setRequiredProperties({
             alignment: 'neutral',
             base_class: 'skirmisher',
+            creature_origin: 'natural',
+            creature_type: 'animal',
             elite: false,
-            creature_type: 'mortal',
             level: 1,
             size: 'medium',
           });
@@ -621,8 +619,9 @@ function addAnimals(grimoire: Grimoire) {
           creature.setRequiredProperties({
             alignment: 'neutral',
             base_class: 'warrior',
+            creature_origin: 'natural',
+            creature_type: 'animal',
             elite: false,
-            creature_type: 'mortal',
             level: 1,
             size: 'medium',
           });
@@ -649,8 +648,9 @@ function addAnimals(grimoire: Grimoire) {
           creature.setRequiredProperties({
             alignment: 'neutral',
             base_class: 'brute',
+            creature_origin: 'natural',
+            creature_type: 'animal',
             elite: true,
-            creature_type: 'mortal',
             level: 1,
             size: 'medium',
           });
@@ -675,8 +675,9 @@ function addAnimals(grimoire: Grimoire) {
           creature.setRequiredProperties({
             alignment: 'neutral',
             base_class: 'brute',
+            creature_origin: 'natural',
+            creature_type: 'animal',
             elite: true,
-            creature_type: 'mortal',
             level: 3,
             size: 'large',
           });
@@ -703,8 +704,9 @@ function addAnimals(grimoire: Grimoire) {
           creature.setRequiredProperties({
             alignment: 'neutral',
             base_class: 'brute',
+            creature_origin: 'natural',
+            creature_type: 'animal',
             elite: false,
-            creature_type: 'mortal',
             level: 1,
             size: 'large',
           });
@@ -725,8 +727,9 @@ function addAnimals(grimoire: Grimoire) {
           creature.setRequiredProperties({
             alignment: 'neutral',
             base_class: 'skirmisher',
+            creature_origin: 'natural',
+            creature_type: 'animal',
             elite: false,
-            creature_type: 'mortal',
             level: 1,
             size: 'small',
           });
@@ -743,8 +746,9 @@ function addAnimals(grimoire: Grimoire) {
           creature.setRequiredProperties({
             alignment: 'neutral',
             base_class: 'skirmisher',
+            creature_origin: 'natural',
+            creature_type: 'animal',
             elite: false,
-            creature_type: 'mortal',
             level: 1,
             size: 'medium',
           });
@@ -773,8 +777,9 @@ function addAnimals(grimoire: Grimoire) {
           creature.setRequiredProperties({
             alignment: 'neutral',
             base_class: 'brute',
+            creature_origin: 'natural',
+            creature_type: 'animal',
             elite: false,
-            creature_type: 'mortal',
             level: 2,
             size: 'large',
           });
@@ -796,8 +801,9 @@ function addAnimals(grimoire: Grimoire) {
           creature.setRequiredProperties({
             alignment: 'neutral',
             base_class: 'skirmisher',
+            creature_origin: 'natural',
+            creature_type: 'animal',
             elite: false,
-            creature_type: 'mortal',
             level: 2,
             size: 'large',
           });
@@ -815,8 +821,9 @@ function addAnimals(grimoire: Grimoire) {
           creature.setRequiredProperties({
             alignment: 'neutral',
             base_class: 'brute',
+            creature_origin: 'natural',
+            creature_type: 'animal',
             elite: false,
-            creature_type: 'mortal',
             level: 2,
             size: 'medium',
           });
@@ -832,8 +839,9 @@ function addAnimals(grimoire: Grimoire) {
           creature.setRequiredProperties({
             alignment: 'neutral',
             base_class: 'skirmisher',
+            creature_origin: 'natural',
+            creature_type: 'animal',
             elite: false,
-            creature_type: 'mortal',
             level: 3,
             size: 'large',
           });
@@ -862,9 +870,6 @@ function addDireAnimals(grimoire: Grimoire) {
           Like animals, they are more susceptible to the Creature Handling skill, though their aggression makes any lapse in control more dangerous.
         `,
       },
-      sharedInitializer: (creature: Creature) => {
-        creature.addTrait('animal');
-      },
     },
     [
       [
@@ -873,8 +878,9 @@ function addDireAnimals(grimoire: Grimoire) {
           creature.setRequiredProperties({
             alignment: 'neutral',
             base_class: 'skirmisher',
+            creature_origin: 'natural',
+            creature_type: 'animal',
             elite: false,
-            creature_type: 'mortal',
             level: 1,
             size: 'small',
           });
@@ -901,8 +907,9 @@ function addDireAnimals(grimoire: Grimoire) {
           creature.setRequiredProperties({
             alignment: 'neutral',
             base_class: 'skirmisher',
+            creature_origin: 'natural',
+            creature_type: 'animal',
             elite: false,
-            creature_type: 'mortal',
             level: 4,
             size: 'large',
           });
@@ -953,7 +960,6 @@ function addIchorTainted(grimoire: Grimoire) {
         `,
       },
       sharedInitializer: (creature: Creature) => {
-        creature.addTrait('beast');
         creature.addCustomModifier({
           name: 'Ichor',
           immune: 'Critical hits',
@@ -973,8 +979,9 @@ function addIchorTainted(grimoire: Grimoire) {
           creature.setRequiredProperties({
             alignment: 'neutral',
             base_class: 'brute',
+            creature_origin: 'natural',
+            creature_type: 'animal',
             elite: true,
-            creature_type: 'mortal',
             level: 7,
             size: 'medium',
           });
@@ -993,8 +1000,9 @@ function addIchorTainted(grimoire: Grimoire) {
           creature.setRequiredProperties({
             alignment: 'neutral',
             base_class: 'brute',
+            creature_origin: 'natural',
+            creature_type: 'animal',
             elite: true,
-            creature_type: 'mortal',
             level: 9,
             size: 'large',
           });
@@ -1013,8 +1021,9 @@ function addIchorTainted(grimoire: Grimoire) {
           creature.setRequiredProperties({
             alignment: 'neutral',
             base_class: 'skirmisher',
+            creature_origin: 'natural',
+            creature_type: 'animal',
             elite: false,
-            creature_type: 'mortal',
             level: 7,
             size: 'medium',
           });

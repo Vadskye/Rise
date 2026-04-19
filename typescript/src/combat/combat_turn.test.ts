@@ -106,7 +106,8 @@ t.test('executeAttackerAction - elite area attack', (t) => {
       alignment: 'neutral',
       base_class: 'skirmisher',
       elite: true,
-      creature_type: 'mortal',
+      creature_origin: 'natural',
+      creature_type: 'humanoid',
       level: 4,
       size: 'large',
     });

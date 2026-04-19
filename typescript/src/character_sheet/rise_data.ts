@@ -9,13 +9,21 @@ export type RiseAlignment =
   | 'neutral evil'
   | 'chaotic evil';
 
+export type RiseCreatureOrigin = 'artificial' | 'natural' | 'undead';
 export type RiseCreatureType =
   | 'aberration'
-  | 'animate'
+  | 'animal'
+  | 'beast'
+  | 'construct'
   | 'dragon'
-  | 'mortal'
-  | 'soulforged'
-  | 'undead';
+  | 'fey'
+  | 'ghost'
+  | 'humanoid'
+  | 'indwelt'
+  | 'insect'
+  | 'ooze'
+  | 'plant'
+  | 'soulforged';
 export type RiseRole = 'Brute' | 'Skirmisher' | 'Warrior' | 'Sniper' | 'Leader';
 export type RiseBaseClass =
   | 'barbarian'
@@ -182,27 +190,27 @@ export type RiseWeaponTag = string;
 // instead of a List.
 const RISE_TRAITS_LIST = [
   'amphibious',
-  'amorphous',
-  'animal',
-  'beast',
-  'construct',
-  'eyeless',
+  'blooded',
+  'bloodless',
+  'corporeal',
+  'dynamic',
+  'ensouled',
   'floating',
-  'ghost',
-  'humanoid',
+  'immortal',
   'incorporeal',
-  'indwelt',
   'invisible',
   'legless',
+  'living',
   'mindless',
+  'mortal',
   'multipedal',
   'nonliving',
-  'plant',
   'quadrupedal',
   'scent',
   'sightless',
   'simple-minded',
   'soulless',
+  'static',
   'swarm',
   'telepathy',
 ] as const;

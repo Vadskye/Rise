@@ -182,7 +182,8 @@ t.test('Elite monsters hit multiple targets with area attack', (t) => {
       alignment: 'neutral',
       base_class: 'brute',
       elite: true,
-      creature_type: 'mortal',
+      creature_origin: 'natural',
+      creature_type: 'humanoid',
       level: 4,
       size: 'large',
     });

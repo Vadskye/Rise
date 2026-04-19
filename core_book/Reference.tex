@@ -411,15 +411,6 @@
   A floating creature above the height limit for its fly speed falls down until its fly speed becomes functional again, which does not cause it to take \glossterm{falling damage}.
   Some creatures can freely choose whether they float, potentially allowing them to glide.
 
-  \traitdef{Humanoid}{humanoid}
-  Humanoid creatures have two arms, two legs, and one head.
-  Most civilized creatures and societies are predominantly humanoid.
-
-  \traitdef{Ghost}{ghost}
-  A ghost is the soul of a deceased creature that lingered after death instead of proceeding to its proper afterlife.
-  Ghosts are \trait{incorporeal} and \impervious to \atCold and \atEarth abilities.
-  However, they are \vulnerable to \atFire abilities.
-  Despite being incorporeal, they are affected by even \glossterm{mundane} Fire effects.
 
   \traitdef{Immortal}{immortal}
   An immortal creature can never die of old age.
@@ -505,9 +496,11 @@
   Simple-minded creatures are immune to \abilitytag{Emotion} abilities.
   However, they are \vulnerable to \abilitytag{Compulsion} attacks.
 
+  \traitdef{Sighted}{sighted}
+  A sighted creature uses light to see, typically using eyes.
+
   \traitdef{Sightless}{sightless}
-  A sightless creature cannot see, and typically lacks eyes.
-  It is permanently \blinded.
+  A sightless creature does not use light to see, making it permanently \blinded.
   Most sightless creatures have special senses, such as \sense{blindsight}, that allow them to attack and defend themselves normally.
 
   \traitdef{Soulless}{soulless}
@@ -541,13 +534,13 @@
   Artificial creatures are composed of matter that would not ordinarily support life, such as metal, water, or \glossterm{essentia}.
   Common artificial creatures include constructs, elementals, and demons.
 
-  Artificial creatures normally have the following traits: \trait{bloodless}, \trait{corporeal}, \trait{dynamic}, \trait{immortal}, \trait{nonliving}.
+  Artificial creatures normally have the following traits: \trait{bloodless}, \trait{corporeal}, \trait{dynamic}, \trait{immortal}, \trait{nonliving}, \trait{sighted}.
 
   \creatureorigindef{Natural}{natural}
   Natural creatures are composed of biological matter that naturally supports life. 
   Most creatures are natural, including humans, animals, and dragons.
 
-  Natural creatures normally have the following traits: \trait{blooded}, \trait{corporeal}, \trait{dynamic}, \trait{living}, \trait{mortal}.
+  Natural creatures normally have the following traits: \trait{blooded}, \trait{corporeal}, \trait{dynamic}, \trait{living}, \trait{mortal}, \trait{sighted}.
 
   \creatureorigindef{Undead}{undead}
   Undead are creatures that are made from the corpse or spirit of a dead creature.
@@ -559,7 +552,7 @@
   Any other effects beyond simple hit point recovery are ignored.
   For example, if a cleric uses their \ability{divine aid} ability to heal an undead creature, the undead would take damage, but it would not gain any bonus to its defenses.
 
-  Undead creatures normally have the following traits: \trait{bloodless}, \trait{corporeal}, \trait{dynamic}, \trait{immortal}, \trait{nonliving}.
+  Undead creatures normally have the following traits: \trait{bloodless}, \trait{corporeal}, \trait{dynamic}, \trait{immortal}, \trait{nonliving}, \trait{sighted}.
 
   % TODO: should undead heal from vivimancy effects? Is it worth introducing a new damage type just for that?
   % Similarly, undead are always considered living creatures for the purpose of effects that would normally deal damage to living creatures.
@@ -616,6 +609,20 @@
 
   Fey normally have the following traits: \trait{ensouled}, \trait{immortal}.
 
+  \creaturetypedef{Ghost}{ghost}
+  A ghost is the soul of a deceased creature that lingered after death instead of proceeding to its proper afterlife.
+  Ghosts are \trait{incorporeal} and \impervious to \atCold and \atEarth abilities.
+  However, they are \vulnerable to \atFire abilities.
+  Despite being incorporeal, they are affected by even \glossterm{mundane} Fire effects.
+
+  Ghosts normally have the following traits: \trait{ensouled}, \trait{incorporeal}.
+
+  \creaturetypedef{Humanoid}{humanoid}
+  Humanoid creatures have two arms, two legs, and one head.
+  Most civilized creatures and societies are predominantly humanoid.
+
+  Humanoids normally have the following traits: \trait{ensouled}.
+
   \traitdef{Indwelt}{indwelt}
   An indwelt is a creature that is made of non-sapient matter.
   Its inanimate body was awakened to a semblance of life by connection to an external soul.
@@ -631,9 +638,35 @@
   If the body of an indwelt is made of organic matter, it is \trait{dynamic} and \trait{living}.
   Otherwise, it is \trait{static} and \trait{nonliving}.
 
+  \creaturetypedef{Insect}{insect}
+  Insects are multi-legged invertebrates that often have a tough exoskeleton.
+  They generally have highly organized social structures.
+  Even \trait{simple-minded} insects can be capable of highly coordinated behavior in groups.
+
+  Insects normally have the following traits: \trait{ensouled}.
+
+  \creaturetypedef{Ooze}{ooze}
+  Oozes are amorphous, gelatinous creatures that lack defined organs or skeletons.
+
+  Oozes normally have the following traits: \trait{simple-minded}, \trait{soulless}.
+
   \traitdef{Plant}{plant}
   Plants are alive, but do not have flesh or blood.
   They are \vulnerable to \atFire abilities.
   Some plants are creatures, but most plants are living \glossterm{objects}.
 
   Plants normally have the following traits: \trait{bloodless}, \trait{living}, \trait{soulless}.
+
+\traitdef{Soulforged}{soulforged}
+  A soulforged is a creature made from the essentia of a Spiritual Plane.
+  They are called soulforged because they are made of essentia, which comes from souls.
+  Most such creatures do not have their own souls.
+  They are agents of deities and other powerful figures, used to enforce their will.
+
+  When a soulforged is destroyed, its essentia is absorbed by the plane it is on.
+  This is one reason that soulforged creatures rarely leave their home plane, since dying on other planes is a net loss of essentia to their creators.
+  If a soulforged has a soul and a strong will, the soul travels to its home plane like mortal souls do.
+  It can generally make a new body for itself within a week if it died on another plane, or within a day if it died on its home plane.
+  Soulforged that die without a soul, or with a soul too weak to reconstitute itself, do not reform.
+
+  Soulforged normally have the following traits: \trait{bloodless}, \trait{immortal}, \trait{nonliving}, \trait{soulless}.

@@ -7,7 +7,8 @@ export function addAnimates(grimoire: Grimoire) {
       alignment: 'neutral evil',
       base_class: 'skirmisher',
       elite: true,
-      creature_type: 'animate',
+      creature_origin: 'artificial',
+      creature_type: 'construct',
       level: 4,
       size: 'medium',
     });
@@ -44,7 +45,8 @@ export function addAnimates(grimoire: Grimoire) {
       alignment: 'neutral',
       base_class: 'brute',
       elite: true,
-      creature_type: 'animate',
+      creature_origin: 'natural',
+      creature_type: 'ooze',
       level: 5,
       size: 'large',
     });
@@ -142,7 +144,8 @@ function addAnimatedObjects(grimoire: Grimoire) {
           creature.setRequiredProperties({
             alignment: 'neutral',
             base_class: 'brute',
-            creature_type: 'animate',
+            creature_origin: 'artificial',
+            creature_type: 'construct',
             level: 1,
             elite: false,
             size: 'tiny',
@@ -157,7 +160,8 @@ function addAnimatedObjects(grimoire: Grimoire) {
           creature.setRequiredProperties({
             alignment: 'neutral',
             base_class: 'brute',
-            creature_type: 'animate',
+            creature_origin: 'artificial',
+            creature_type: 'construct',
             level: 1,
             elite: false,
             size: 'small',
@@ -172,7 +176,8 @@ function addAnimatedObjects(grimoire: Grimoire) {
           creature.setRequiredProperties({
             alignment: 'neutral',
             base_class: 'brute',
-            creature_type: 'animate',
+            creature_origin: 'artificial',
+            creature_type: 'construct',
             level: 2,
             elite: false,
             size: 'medium',
@@ -187,7 +192,8 @@ function addAnimatedObjects(grimoire: Grimoire) {
           creature.setRequiredProperties({
             alignment: 'neutral',
             base_class: 'brute',
-            creature_type: 'animate',
+            creature_origin: 'artificial',
+            creature_type: 'construct',
             level: 4,
             elite: false,
             size: 'large',
@@ -202,7 +208,8 @@ function addAnimatedObjects(grimoire: Grimoire) {
           creature.setRequiredProperties({
             alignment: 'neutral',
             base_class: 'brute',
-            creature_type: 'animate',
+            creature_origin: 'artificial',
+            creature_type: 'construct',
             level: 7,
             elite: false,
             size: 'huge',
@@ -217,7 +224,8 @@ function addAnimatedObjects(grimoire: Grimoire) {
           creature.setRequiredProperties({
             alignment: 'neutral',
             base_class: 'brute',
-            creature_type: 'animate',
+            creature_origin: 'artificial',
+            creature_type: 'construct',
             level: 9,
             elite: false,
             size: 'gargantuan',
@@ -232,7 +240,8 @@ function addAnimatedObjects(grimoire: Grimoire) {
           creature.setRequiredProperties({
             alignment: 'neutral',
             base_class: 'brute',
-            creature_type: 'animate',
+            creature_origin: 'artificial',
+            creature_type: 'construct',
             level: 11,
             elite: false,
             size: 'colossal',
@@ -251,7 +260,7 @@ function addGolems(grimoire: Grimoire) {
       name: 'Golems',
       hasArt: false,
       sharedInitializer: (creature: Creature) => {
-        creature.addTrait('construct');
+        // Trait 'construct' is removed, origin/type handle traits now
       },
     },
     [
@@ -262,7 +271,8 @@ function addGolems(grimoire: Grimoire) {
             alignment: 'lawful neutral',
             base_class: 'brute',
             elite: false,
-            creature_type: 'animate',
+            creature_origin: 'artificial',
+            creature_type: 'construct',
             level: 5,
             size: 'medium',
           });
@@ -279,7 +289,8 @@ function addGolems(grimoire: Grimoire) {
             alignment: 'lawful neutral',
             base_class: 'skirmisher',
             elite: true,
-            creature_type: 'animate',
+            creature_origin: 'artificial',
+            creature_type: 'construct',
             level: 14,
             size: 'medium',
           });
@@ -316,7 +327,8 @@ function addGolems(grimoire: Grimoire) {
             alignment: 'lawful neutral',
             base_class: 'warrior',
             elite: true,
-            creature_type: 'animate',
+            creature_origin: 'artificial',
+            creature_type: 'construct',
             level: 17,
             size: 'medium',
           });
@@ -356,7 +368,8 @@ function addGolems(grimoire: Grimoire) {
             alignment: 'lawful neutral',
             base_class: 'warrior',
             elite: true,
-            creature_type: 'animate',
+            creature_origin: 'artificial',
+            creature_type: 'construct',
             level: 20,
             size: 'medium',
           });
@@ -415,7 +428,7 @@ function addTreants(grimoire: Grimoire) {
       sharedInitializer: (creature: Creature) => {
         creature.addCustomMovementSpeed('Land (slow)');
         creature.setTrainedSkills(['awareness']);
-        creature.addTrait('indwelt');
+        // Indwelt trait removed, handled by indwelt type or plant type + vulnerability
         creature.addVulnerability('Fire');
       },
     },
@@ -427,7 +440,8 @@ function addTreants(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'warrior',
             elite: true,
-            creature_type: 'animate',
+            creature_origin: 'natural',
+            creature_type: 'plant',
             level: 5,
             size: 'large',
           });
@@ -450,7 +464,8 @@ function addTreants(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'warrior',
             elite: true,
-            creature_type: 'animate',
+            creature_origin: 'natural',
+            creature_type: 'plant',
             level: 6,
             size: 'large',
           });
@@ -475,7 +490,8 @@ function addTreants(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'warrior',
             elite: false,
-            creature_type: 'animate',
+            creature_origin: 'natural',
+            creature_type: 'plant',
             level: 7,
             size: 'large',
           });
@@ -501,7 +517,8 @@ function addTreants(grimoire: Grimoire) {
             alignment: 'neutral evil',
             base_class: 'warrior',
             elite: false,
-            creature_type: 'animate',
+            creature_origin: 'natural',
+            creature_type: 'plant',
             level: 8,
             size: 'large',
           });
@@ -536,7 +553,8 @@ function addTreants(grimoire: Grimoire) {
             alignment: 'neutral good',
             base_class: 'warrior',
             elite: false,
-            creature_type: 'animate',
+            creature_origin: 'natural',
+            creature_type: 'plant',
             level: 9,
             size: 'huge',
           });
@@ -567,7 +585,8 @@ function addTreants(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'warrior',
             elite: false,
-            creature_type: 'animate',
+            creature_origin: 'natural',
+            creature_type: 'plant',
             level: 10,
             size: 'huge',
           });
@@ -597,7 +616,8 @@ function addTreants(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'warrior',
             elite: false,
-            creature_type: 'animate',
+            creature_origin: 'natural',
+            creature_type: 'plant',
             level: 11,
             size: 'huge',
           });
