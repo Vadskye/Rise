@@ -7,7 +7,8 @@ export function addMonks(stock: StockCharacters) {
       alignment: 'lawful neutral',
       base_class: 'monk',
       elite: false,
-      creature_type: 'mortal',
+      creature_origin: 'natural',
+      creature_type: 'humanoid',
       level: 1,
       size: 'medium',
     });

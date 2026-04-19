@@ -7,13 +7,14 @@ t.test('convertMonsterToLatex', (t) => {
     const creature = Creature.new();
     creature.setProperties({
       base_class: 'warrior',
-      creature_type: 'mortal',
+      creature_origin: 'natural',
+      creature_type: 'humanoid',
       level: 1,
       name: 'Test Monster',
       size: 'medium',
     });
     const latexOutput = convertMonsterToLatex(creature);
-    t.ok(latexOutput.includes('monsubsection{Test Monster}{Level 1 Warrior}{Medium mortal}'));
+    t.ok(latexOutput.includes('monsubsection{Test Monster}{Level 1 Warrior}{Medium humanoid}'));
     t.ok(latexOutput.includes('\\begin{monsterstatistics}'));
     t.ok(latexOutput.includes('\\end{monsterstatistics}'));
     t.ok(latexOutput.includes('\\monsterabilitiesheader{Test Monster}'));
@@ -25,7 +26,7 @@ t.test('convertMonsterToLatex', (t) => {
 t.test('genKnowledgeText', (t) => {
   t.test('can generate empty knowledge', (t) => {
     const creature = Creature.new();
-    creature.setProperties({ creature_type: 'mortal' });
+    creature.setProperties({ creature_type: 'humanoid' });
     t.equal(genKnowledgeText(creature.getKnowledgeResultConfig()), '');
     t.end();
   });
@@ -33,7 +34,7 @@ t.test('genKnowledgeText', (t) => {
   t.test('Can generate meaningful knowledge', (t) => {
     const creature = Creature.new();
     creature.setProperties({
-      creature_type: 'undead',
+      creature_type: 'humanoid',
       knowledge_result_easy: 'Easy result',
       level: 20,
       name: 'Test Monster',

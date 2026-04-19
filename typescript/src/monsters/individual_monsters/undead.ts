@@ -9,7 +9,8 @@ export function addUndead(grimoire: Grimoire) {
       alignment: 'neutral evil',
       base_class: 'warrior',
       elite: true,
-      creature_type: 'undead',
+      creature_origin: 'undead',
+      creature_type: 'plant',
       level: 8,
       size: 'huge',
     });
@@ -21,7 +22,6 @@ export function addUndead(grimoire: Grimoire) {
     });
     creature.setTrainedSkills(['awareness']);
     creature.setBaseAttributes([7, -2, 5, -5, 2, 2]);
-    creature.addTrait('plant');
 
     creature.addWeaponMult('fists');
     creature.addGrapplingStrike('fists');
@@ -35,7 +35,8 @@ export function addUndead(grimoire: Grimoire) {
       alignment: 'neutral evil',
       base_class: 'brute',
       elite: true,
-      creature_type: 'undead',
+      creature_origin: 'undead',
+      creature_type: 'humanoid',
       level: 8,
       size: 'large',
     });
@@ -107,7 +108,8 @@ function addFleshwrought(grimoire: Grimoire) {
             alignment: 'neutral evil',
             base_class: 'brute',
             elite: true,
-            creature_type: 'undead',
+            creature_origin: 'undead',
+            creature_type: 'construct',
             level: 16,
             size: 'large',
           });
@@ -142,7 +144,8 @@ function addFleshwrought(grimoire: Grimoire) {
             alignment: 'neutral evil',
             base_class: 'warrior',
             elite: false,
-            creature_type: 'undead',
+            creature_origin: 'undead',
+            creature_type: 'construct',
             level: 8,
             size: 'medium',
           });
@@ -172,7 +175,6 @@ function addGhosts(grimoire: Grimoire) {
         `,
       },
       sharedInitializer: (creature: Creature) => {
-        creature.addTrait('ghost');
         creature.addCustomSense('Darkvision (90 ft.)');
         creature.addCustomMovementSpeed('Fly (average, 30 ft. limit)');
       },
@@ -185,7 +187,8 @@ function addGhosts(grimoire: Grimoire) {
             alignment: 'neutral evil',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'undead',
+            creature_origin: 'undead',
+            creature_type: 'ghost',
             level: 4,
             size: 'medium',
           });
@@ -218,7 +221,8 @@ function addGhosts(grimoire: Grimoire) {
             alignment: 'neutral evil',
             base_class: 'skirmisher',
             elite: true,
-            creature_type: 'undead',
+            creature_origin: 'undead',
+            creature_type: 'ghost',
             level: 5,
             size: 'large',
           });
@@ -267,7 +271,8 @@ function addGhosts(grimoire: Grimoire) {
             alignment: 'neutral evil',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'undead',
+            creature_origin: 'undead',
+            creature_type: 'ghost',
             level: 14,
             size: 'medium',
           });
@@ -333,7 +338,8 @@ function addGhouls(grimoire: Grimoire) {
             alignment: 'neutral evil',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'undead',
+            creature_origin: 'undead',
+            creature_type: 'humanoid',
             level: 3,
             size: 'medium',
           });
@@ -355,7 +361,8 @@ function addGhouls(grimoire: Grimoire) {
             alignment: 'neutral evil',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'undead',
+            creature_origin: 'undead',
+            creature_type: 'humanoid',
             level: 6,
             size: 'medium',
           });
@@ -400,7 +407,8 @@ function addHalfsouls(grimoire: Grimoire) {
             alignment: 'chaotic neutral',
             base_class: 'sniper',
             elite: true,
-            creature_type: 'undead',
+            creature_origin: 'undead',
+            creature_type: 'humanoid',
             level: 15,
             size: 'medium',
           });
@@ -445,11 +453,11 @@ function addLiches(grimoire: Grimoire) {
         \\parhead{Phylactery \\sparkle} Every lich contains their soul in their phylactery.
           Most phylacteries are valuable gems, but other objects are possible.
           A phylactery must be at least Tiny in size.
-
+ 
           Liches can commune with their phylacteries to allow their souls to temporarily inhabit their bodies.
           This allows their soul to process the memories stored in their body, allowing the lich to improve its skills and change its mind.
           A lich that never communes with its phylactery suffers no direct consequences, but is also incapable of increasing its personal power.
-
+ 
           When a lich dies, the phylactery creates a new body for the lich after 24 hours.
           The new body has no memory of what happened to the original body since the last time the lich communed with its phylactery.
       `,
@@ -484,7 +492,8 @@ function addLiches(grimoire: Grimoire) {
             alignment: 'chaotic evil',
             base_class: 'sniper',
             elite: true,
-            creature_type: 'undead',
+            creature_origin: 'undead',
+            creature_type: 'humanoid',
             level: 17,
             size: 'medium',
           });
@@ -519,9 +528,9 @@ function addSkeletons(grimoire: Grimoire) {
   const requiredProperties = {
     alignment: 'neutral evil',
     elite: false,
-    creature_type: 'undead',
+    creature_origin: 'undead',
+    creature_type: 'humanoid',
   } as const;
-
   grimoire.addMonsterGroup(
     {
       name: 'Skeletons',
@@ -535,7 +544,7 @@ function addSkeletons(grimoire: Grimoire) {
         normal: `
           Skeletons retain none of the specific physical or magical abilities of the original creature.
           They are capable of using armor and weapons, and have a minimal degree of self-preservation, but they lack any understanding of tactics.
-
+ 
           Skeletons are sometimes created naturally near areas of recent mass death, such as battlefields where the corpses were not removed.
         `,
         legendary: `
@@ -543,7 +552,7 @@ function addSkeletons(grimoire: Grimoire) {
           The soul splinter created this way is used to give the skeleton its agency.
           This is painful for the dead creature in its afterlife.
           The more powerful the soul, the more powerful the corresponding skeleton.
-
+ 
           Creating a skeleton requires a larger soul splinter than creating a zombie.
           This larger splinter compensates for the greater decay of the corpse and grants skeletons a slightly greater effective intelligence.
           However, skeletons still retain none of the original creature's personality.
@@ -680,15 +689,15 @@ function addVampires(grimoire: Grimoire) {
         \\item Rat: While in its rat form, the vampire gains \\trait{scent} and \\trait{low-light vision}.
           It cannot speak and has no \\glossterm{free hands}, but it has four legs, making it \\trait{quadrupedal}.
       \\end{raggeditemize}
-
+ 
       In either non-humanoid form, the vampire is unable to take any standard actions, but it can still take \\glossterm{move actions} in place of standard actions.
       Since it has no \\glossterm{walk speed} in those forms, flying does not make it \\unsteady.
       The vampire cannot use this ability while \\helpless.
     \\end{magicalattuneability}
-
+ 
     \\parhead{Gentle Fangs} Whenever a vampire deal damage using its bite natural weapon, it can choose not to reduce the target's hit points below 0, or it can treat the damage as \\glossterm{subdual damage}.
     In addition, damage dealt using a vampire's bite natural weapon does not wake sleeping creatures unless it inflicts a vital wound.
-
+ 
     \\parhead{Vampire Weaknesses\\sparkle}
     Vampires have a number of specific weaknesses.
     Many vampire weaknesses trigger on exposure to particular substances or circumstances.
@@ -723,7 +732,6 @@ function addVampires(grimoire: Grimoire) {
       name: 'Vampires',
       description: vampireDescription,
       sharedInitializer: (creature: Creature) => {
-        creature.addTrait('humanoid');
         creature.addVulnerability('Silver weapons');
         creature.addCustomSense('Darkvision (120 ft.)');
 
@@ -767,7 +775,8 @@ function addVampires(grimoire: Grimoire) {
             alignment: 'neutral evil',
             base_class: 'skirmisher',
             elite: true,
-            creature_type: 'undead',
+            creature_origin: 'undead',
+            creature_type: 'humanoid',
             level: 5,
             size: 'medium',
           });
@@ -793,17 +802,18 @@ function addVampires(grimoire: Grimoire) {
             alignment: 'lawful evil',
             base_class: 'skirmisher',
             elite: true,
-            creature_type: 'undead',
+            creature_origin: 'undead',
+            creature_type: 'humanoid',
             level: 10,
             size: 'medium',
           });
           creature.setKnowledgeResults({
             normal: `
-            True vampires have fully awakened their vampiric potential.
-            They have abandoned the world of the living and embraced their need for blood.
-          `,
+              True vampires have fully awakened their vampiric potential.
+              They have abandoned the world of the living and embraced their need for blood.
+            `,
           });
-          creature.setTrainedSkills(['awareness', 'intimidate', 'social_insight', 'persuasion']);
+          creature.setTrainedSkills(['awareness', 'intimidate', 'persuasion', 'social_insight']);
           creature.setBaseAttributes([5, 6, 2, 4, 4, 4]);
         },
       ],
@@ -814,15 +824,16 @@ function addVampires(grimoire: Grimoire) {
             alignment: 'lawful evil',
             base_class: 'skirmisher',
             elite: true,
-            creature_type: 'undead',
+            creature_origin: 'undead',
+            creature_type: 'humanoid',
             level: 16,
             size: 'medium',
           });
           creature.setKnowledgeResults({
             normal: `
-            Vampire lords are some of the most powerful undead.
-            They can command legions of followers and vast fortunes that they have developed over centuries.
-          `,
+              Vampire lords are some of the most powerful undead.
+              They can command legions of followers and vast fortunes that they have developed over centuries.
+            `,
           });
           creature.setTrainedSkills(['awareness', 'intimidate', 'social_insight', 'persuasion']);
           creature.setBaseAttributes([4, 6, 2, 5, 5, 5]);
@@ -856,7 +867,8 @@ function addZombies(grimoire: Grimoire) {
     alignment: 'neutral evil',
     base_class: 'brute',
     elite: false,
-    creature_type: 'undead',
+    creature_origin: 'undead',
+    creature_type: 'humanoid',
   } as const;
 
   grimoire.addMonsterGroup(

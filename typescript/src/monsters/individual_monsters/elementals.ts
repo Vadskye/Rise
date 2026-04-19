@@ -12,7 +12,8 @@ export function addElementals(grimoire: Grimoire) {
       alignment: 'neutral',
       base_class: 'leader',
       elite: true,
-      creature_type: 'animate',
+      creature_origin: 'artificial',
+      creature_type: 'construct',
       level: 16,
       size: 'huge',
     });
@@ -109,7 +110,8 @@ function addAirElementals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'animate',
+            creature_origin: 'artificial',
+            creature_type: 'construct',
             level: 4,
             size: 'small',
           });
@@ -123,7 +125,8 @@ function addAirElementals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'animate',
+            creature_origin: 'artificial',
+            creature_type: 'construct',
             level: 8,
             size: 'medium',
           });
@@ -137,7 +140,8 @@ function addAirElementals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'animate',
+            creature_origin: 'artificial',
+            creature_type: 'construct',
             level: 12,
             size: 'large',
           });
@@ -151,7 +155,8 @@ function addAirElementals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'animate',
+            creature_origin: 'artificial',
+            creature_type: 'construct',
             level: 16,
             size: 'large',
           });
@@ -165,7 +170,8 @@ function addAirElementals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'animate',
+            creature_origin: 'artificial',
+            creature_type: 'construct',
             level: 20,
             size: 'huge',
           });
@@ -218,7 +224,8 @@ function addFireElementals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'animate',
+            creature_origin: 'artificial',
+            creature_type: 'construct',
             level: 4,
             size: 'small',
           });
@@ -232,7 +239,8 @@ function addFireElementals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'animate',
+            creature_origin: 'artificial',
+            creature_type: 'construct',
             level: 8,
             size: 'medium',
           });
@@ -246,7 +254,8 @@ function addFireElementals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'animate',
+            creature_origin: 'artificial',
+            creature_type: 'construct',
             level: 12,
             size: 'large',
           });
@@ -260,7 +269,8 @@ function addFireElementals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'animate',
+            creature_origin: 'artificial',
+            creature_type: 'construct',
             level: 16,
             size: 'large',
           });
@@ -274,7 +284,8 @@ function addFireElementals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'animate',
+            creature_origin: 'artificial',
+            creature_type: 'construct',
             level: 20,
             size: 'huge',
           });
@@ -330,7 +341,8 @@ function addMagmaElementals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'warrior',
             elite: false,
-            creature_type: 'soulforged',
+            creature_origin: 'artificial',
+            creature_type: 'construct',
             level: 6,
             size: 'medium',
           });
@@ -344,7 +356,8 @@ function addMagmaElementals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'warrior',
             elite: false,
-            creature_type: 'soulforged',
+            creature_origin: 'artificial',
+            creature_type: 'construct',
             level: 12,
             size: 'large',
           });
@@ -358,7 +371,8 @@ function addMagmaElementals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'warrior',
             elite: false,
-            creature_type: 'soulforged',
+            creature_origin: 'artificial',
+            creature_type: 'construct',
             level: 18,
             size: 'huge',
           });

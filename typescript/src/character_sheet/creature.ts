@@ -13,6 +13,7 @@ import {
   RiseBaseClass,
   RiseCraftSkill,
   RISE_CRAFT_SKILLS,
+  RiseCreatureOrigin,
   RiseCreatureType,
   RiseDebuff,
   RiseDefense,
@@ -48,6 +49,7 @@ import {
   Shield,
 } from '@src/monsters/equipment';
 import { SimpleValue } from './sheet_worker';
+import { KNOWLEDGE_BY_ORIGIN, KNOWLEDGE_BY_TYPE } from './knowledge';
 
 export type TargetSelectionLogic = 'Random' | 'Ordered' | 'Vulnerable';
 
@@ -63,7 +65,7 @@ export interface KnowledgeResultConfig {
 }
 
 // These have unique typedefs beyond the standard string/number/bool
-type CustomCreatureProperty = 'base_class' | 'creature_type' | 'role' | 'size';
+type CustomCreatureProperty = 'base_class' | 'creature_origin' | 'creature_type' | 'role' | 'size';
 
 type NumericCreatureProperty =
   | 'accuracy'
@@ -132,6 +134,7 @@ export interface KnowledgeResultsConfig {
 export type CreaturePropertyMap = {
   alignment: RiseAlignment;
   base_class: RiseBaseClass;
+  creature_origin: RiseCreatureOrigin;
   creature_type: RiseCreatureType;
   role: RiseRole;
   size: RiseSize;
@@ -143,6 +146,7 @@ export type CreatureRequiredProperties =
   | 'alignment'
   | 'base_class'
   | 'elite'
+  | 'creature_origin'
   | 'creature_type'
   | 'size'
   | 'level';
@@ -168,7 +172,7 @@ export interface CustomModifierConfig {
 
 export interface SimpleModifierConfig {
   name: string;
-  statistic: NumericCreatureProperty; 
+  statistic: NumericCreatureProperty;
   value: number;
 }
 
@@ -265,57 +269,17 @@ export class Creature implements CreaturePropertyMap {
   // own knowledge skills.
   // TODO: redesign creature types and tags; plants should use knowledge (nature), etc.
   getRelevantKnowledge(): RiseKnowledgeSkill {
-    if (!this.creature_type) {
+    const knowledgeFromOrigin = KNOWLEDGE_BY_ORIGIN[this.creature_origin];
+    const knowledgeFromType = KNOWLEDGE_BY_TYPE[this.creature_type];
+    const defaultKnowledge = knowledgeFromType || knowledgeFromOrigin;
+
+    if (!defaultKnowledge) {
       throw new Error(
-        `Unable to get relevant knowledge for creature ${this.name} with no creature type.`,
+        `Unable to get relevant knowledge for creature ${this.name} with origin ${this.creature_origin} and type ${this.creature_type}.`,
       );
     }
-
-    const defaultKnowledge = {
-      aberration: 'knowledge_dungeoneering' as const,
-      animate: 'knowledge_arcana' as const,
-      dragon: 'knowledge_arcana' as const,
-      mortal: 'knowledge_local' as const,
-      soulforged: 'knowledge_souls' as const,
-      undead: 'knowledge_souls' as const,
-    }[this.creature_type];
-    // TODO: determine correct knowledge based on checking traits like Animal.
     // TODO: return more than one valid knowledge skill. For now, just return the first
     // that matches, which is dumb.
-
-    for (const trait of this.getStandardTraits()) {
-      const traitToKnowledgeMap: Record<RiseTrait, RiseKnowledgeSkill | null> = {
-        amorphous: null,
-        amphibious: null,
-        animal: 'knowledge_nature',
-        beast: 'knowledge_nature',
-        construct: 'knowledge_arcana',
-        eyeless: null,
-        floating: null,
-        ghost: 'knowledge_souls',
-        humanoid: 'knowledge_local',
-        incorporeal: null,
-        indwelt: 'knowledge_souls',
-        invisible: null,
-        legless: null,
-        mindless: null,
-        multipedal: null,
-        nonliving: null,
-        plant: 'knowledge_nature',
-        quadrupedal: null,
-        scent: null,
-        sightless: null,
-        'simple-minded': null,
-        soulless: null,
-        swarm: null,
-        telepathy: null,
-      };
-
-      const traitBasedKnowledge = traitToKnowledgeMap[trait];
-      if (traitBasedKnowledge) {
-        return traitBasedKnowledge;
-      }
-    }
 
     return defaultKnowledge;
   }
@@ -801,17 +765,7 @@ export class Creature implements CreaturePropertyMap {
       return;
     }
 
-    if (traitName === 'construct') {
-      this.addTrait('mindless');
-      this.addTrait('nonliving');
-      this.addTrait('soulless');
-    } else if (traitName === 'eyeless') {
-      modifier.immune = 'Visual';
-    } else if (traitName === 'ghost') {
-      this.addTrait('incorporeal');
-      modifier.impervious = 'Cold, Earth';
-      modifier.vulnerable = 'Fire';
-    } else if (traitName === 'incorporeal') {
+    if (traitName === 'incorporeal') {
       this.addTrait('floating');
       modifier.immune = '\\atCreation, \\atManifestation, \\glossterm{mundane}';
       modifier.numericEffects = [{ modifier: 5, statistic: 'stealth' }];
@@ -826,8 +780,6 @@ export class Creature implements CreaturePropertyMap {
       modifier.immune = 'Prone';
       // No way to mark inability to jump. Just don't give legless creatures the
       // Jump skill as a trained skill and it shouldn't appear in the book, though.
-    } else if (traitName === 'plant') {
-      modifier.vulnerable = 'Fire';
     } else if (traitName === 'quadrupedal') {
       modifier.numericEffects = [{ modifier: 10, statistic: 'speed' }];
     } else if (traitName === 'swarm') {
@@ -855,6 +807,7 @@ export class Creature implements CreaturePropertyMap {
       ...properties,
       monster_type: properties.elite ? 'elite' : 'normal',
     });
+
     // TODO: this is a bit of a hack, since it's possible to define a monster as being
     // elite without calling this function. However, it's unlikely that we'd do that, so
     // this is fine for now.
@@ -862,11 +815,11 @@ export class Creature implements CreaturePropertyMap {
       this.addManeuver('Elite Cleanse');
     }
 
-    if (properties.creature_type === 'soulforged') {
-      this.addTrait('nonliving');
-    } else if (properties.creature_type === 'undead') {
-      this.addTrait('nonliving');
-    }
+    // TODO: Currently, monsters can apply individual traits that would conflict with the
+    // default traits here. If they do, the monster can end up with the modifiers from
+    // both conflicting traits. To fix that, traits should be added to
+    // `setRequiredProperties` instead of using `addTrait`.
+    this.applyStandardTraits();
   }
 
   // Always use this instead of calling `this.sheet.setProperties` directly to ensure that
@@ -946,10 +899,10 @@ export class Creature implements CreaturePropertyMap {
       this.warn('Has no trained skills');
     }
 
-    if (this.intelligence > -8 && this.hasTrait('animal')) {
+    if (this.intelligence > -8 && this.creature_type === 'animal') {
       this.warn('Animal should have an Intelligence of -8 or less');
     }
-    if (this.intelligence > -5 && this.hasTrait('beast')) {
+    if (this.intelligence > -5 && this.creature_type === 'beast') {
       this.warn('Beast should have an Intelligence of -5 or less');
     }
   }
@@ -977,7 +930,11 @@ export class Creature implements CreaturePropertyMap {
     return this.getPropertyValue('base_class');
   }
 
-  public get creature_type() {
+  public get creature_origin(): RiseCreatureOrigin {
+    return this.getPropertyValue('creature_origin');
+  }
+
+  public get creature_type(): RiseCreatureType {
     return this.getPropertyValue('creature_type');
   }
 
@@ -1452,6 +1409,113 @@ export class Creature implements CreaturePropertyMap {
   public get vital_rolls() {
     return this.getPropertyValue('vital_rolls');
   }
+
+  public applyStandardTraits() {
+    const classificationTraits = this.getStandardTraitsForClassification();
+    const existingTraits = this.getStandardTraits();
+
+    for (const trait of classificationTraits) {
+      // Individual monster traits override everything else.
+      const hasConflictingTrait = existingTraits.some((existing) =>
+        areTraitsConflicting(trait, existing),
+      );
+      if (!this.hasTrait(trait) && !hasConflictingTrait) {
+        this.addTrait(trait);
+      }
+    }
+
+    if (this.creature_type === 'ghost') {
+      if (!this.getModifierNames().includes('Ghostly Nature')) {
+        this.addCustomModifier({
+          name: 'Ghostly Nature',
+          impervious: 'Cold, Earth',
+          vulnerable: 'Fire',
+        });
+      }
+    }
+
+    if (this.creature_type === 'plant') {
+      if (!this.getModifierNames().includes('Plant Nature')) {
+        this.addCustomModifier({
+          name: 'Plant Nature',
+          vulnerable: 'Fire',
+        });
+      }
+    }
+  }
+
+  public getStandardTraitsForClassification(): RiseTrait[] {
+    let traits: RiseTrait[] = [];
+
+    // Traits by Origin
+    switch (this.creature_origin) {
+      case 'artificial':
+        traits.push('bloodless', 'corporeal', 'dynamic', 'immortal', 'nonliving');
+        break;
+      case 'natural':
+        traits.push('blooded', 'corporeal', 'dynamic', 'living', 'mortal');
+        break;
+      case 'undead':
+        traits.push('bloodless', 'corporeal', 'dynamic', 'immortal', 'nonliving');
+        break;
+    }
+
+    // Traits by Type
+    const typeTraits: RiseTrait[] = [];
+    switch (this.creature_type) {
+      case 'aberration':
+      case 'animal':
+      case 'beast':
+        typeTraits.push('ensouled');
+        break;
+      case 'construct':
+        typeTraits.push('mindless', 'nonliving', 'soulless', 'static');
+        break;
+      case 'dragon':
+      case 'fey':
+        typeTraits.push('ensouled', 'immortal');
+        break;
+      case 'ghost':
+        typeTraits.push('ensouled', 'incorporeal');
+        break;
+      case 'humanoid':
+      case 'indwelt':
+      case 'insect':
+        typeTraits.push('ensouled');
+        break;
+      case 'ooze':
+        typeTraits.push('simple-minded', 'soulless');
+        break;
+      case 'plant':
+        typeTraits.push('bloodless', 'living', 'soulless');
+        break;
+    }
+
+    // Type traits override origin traits
+    for (const typeTrait of typeTraits) {
+      traits = traits.filter((t) => !areTraitsConflicting(t, typeTrait));
+      traits.push(typeTrait);
+    }
+
+    // Deduplicate and return
+    return Array.from(new Set(traits));
+  }
+}
+
+const TRAIT_CONFLICTS: [RiseTrait, RiseTrait][] = [
+  ['blooded', 'bloodless'],
+  ['corporeal', 'incorporeal'],
+  ['ensouled', 'soulless'],
+  ['living', 'nonliving'],
+  ['mortal', 'immortal'],
+  ['dynamic', 'static'],
+];
+
+function areTraitsConflicting(traitA: RiseTrait, traitB: RiseTrait): boolean {
+  if (traitA === traitB) return false;
+  return TRAIT_CONFLICTS.some(
+    ([t1, t2]) => (traitA === t1 && traitB === t2) || (traitA === t2 && traitB === t1),
+  );
 }
 
 function formatNumericModifier(modifier?: number): string {

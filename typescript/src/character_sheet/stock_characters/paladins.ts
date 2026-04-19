@@ -7,7 +7,8 @@ export function addPaladins(stock: StockCharacters) {
       alignment: 'lawful good',
       base_class: 'paladin',
       elite: false,
-      creature_type: 'mortal',
+      creature_origin: 'natural',
+      creature_type: 'humanoid',
       level: 1,
       size: 'medium',
     });

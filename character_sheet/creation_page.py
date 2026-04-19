@@ -587,22 +587,47 @@ def special_rules_step() -> str:
 
 def monster_type() -> str:
     return creation_step(
-        "Monster Type",
-        "You can note the type of the monster here.",
+        "Creature Classification",
+        "Select the creature's origin and type.",
         [
-            select(
-                {"class": "monster-type", "name": "monster_type"},
+            flex_row(
                 [
-                    option({"value": ""}, ""),
-                    option({"value": "aberration"}, "Aberration"),
-                    option({"value": "animate"}, "Animate"),
-                    option({"value": "beast"}, "Beast"),
-                    option({"value": "elemental"}, "Elemental"),
-                    option({"value": "humanoid"}, "Humanoid"),
-                    option({"value": "souforged"}, "Soulforged"),
-                    option({"value": "undead"}, "Undead"),
-                ],
-            ),
+                    underlabel(
+                        "Origin",
+                        select(
+                            {"class": "creature-origin", "name": "creature_origin"},
+                            [
+                                option({"value": ""}, ""),
+                                option({"value": "artificial"}, "Artificial"),
+                                option({"value": "natural"}, "Natural"),
+                                option({"value": "undead"}, "Undead"),
+                            ],
+                        ),
+                    ),
+                    underlabel(
+                        "Type",
+                        select(
+                            {"class": "creature-type", "name": "creature_type"},
+                            [
+                                option({"value": ""}, ""),
+                                option({"value": "aberration"}, "Aberration"),
+                                option({"value": "animal"}, "Animal"),
+                                option({"value": "beast"}, "Beast"),
+                                option({"value": "construct"}, "Construct"),
+                                option({"value": "dragon"}, "Dragon"),
+                                option({"value": "fey"}, "Fey"),
+                                option({"value": "ghost"}, "Ghost"),
+                                option({"value": "humanoid"}, "Humanoid"),
+                                option({"value": "indwelt"}, "Indwelt"),
+                                option({"value": "insect"}, "Insect"),
+                                option({"value": "ooze"}, "Ooze"),
+                                option({"value": "plant"}, "Plant"),
+                                option({"value": "soulforged"}, "Soulforged"),
+                            ],
+                        ),
+                    ),
+                ]
+            )
         ],
         visibility="monster only",
     )

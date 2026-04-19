@@ -7,7 +7,8 @@ export function addDruids(stock: StockCharacters) {
       alignment: 'neutral',
       base_class: 'druid',
       elite: false,
-      creature_type: 'mortal',
+      creature_origin: 'natural',
+      creature_type: 'humanoid',
       level: 1,
       size: 'medium',
     });
