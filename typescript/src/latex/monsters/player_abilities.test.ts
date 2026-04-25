@@ -410,13 +410,14 @@ t.test('restructureStrikeAbility', (t) => {
       const ability = {
         name: 'Test Ability',
         weapon: 'bite',
-        effect: 'Make a strike. Then, you are \\briefly \\empowered. At the end of your next turn, you are \\briefly \\braced.',
+        effect:
+          'Make a strike. Then, you are \\briefly \\empowered. At the end of your next turn, you are \\briefly \\braced.',
       } as any;
       restructureStrikeAbility(mockCreature, ability);
       t.matchStrict(ability.attack, {
         hit: '1d8+10 damage.',
         targeting:
-          "The $name makes a $accuracy melee strike vs. Armor with its bite. Then, it is \\briefly \\buff{empowered} \\reminder{\\plus3 damage}. At the end of its next turn, the $name is \\briefly \\braced.",
+          'The $name makes a $accuracy melee strike vs. Armor with its bite. Then, it is \\briefly \\buff{empowered} \\reminder{\\plus3 damage}. At the end of its next turn, it is \\briefly \\braced.',
       });
       t.end();
     });
@@ -426,13 +427,13 @@ t.test('restructureStrikeAbility', (t) => {
         name: 'Test Ability',
         weapon: 'talons',
         effect:
-          'Make a strike with a +1 accuracy bonus. Then, you are \\briefly \\empowered. At the end of your next turn, you are \\braced.',
+          'Make a strike with a +1 accuracy bonus. Then, you are \\briefly \\empowered. At the end of your next turn, you are \\briefly \\braced.',
       } as any;
       restructureStrikeAbility(mockCreature, ability);
       t.matchStrict(ability.attack, {
         hit: '2d4+5 damage.',
         targeting:
-          "The $name makes a $accuracy+3 melee strike vs. Armor with its talons. Then, it is \\briefly \\buff{empowered} \\reminder{\\plus3 damage}. At the end of its next turn, the $name is \\briefly \\braced.",
+          'The $name makes a $accuracy+3 melee strike vs. Armor with its talons. Then, it is \\briefly \\buff{empowered} \\reminder{\\plus3 damage}. At the end of its next turn, it is \\briefly \\braced.',
       });
       t.end();
     });
@@ -520,8 +521,8 @@ t.test('restructureStrikeAbility', (t) => {
       restructureStrikeAbility(mockCreature, ability);
       t.matchStrict(ability.attack, {
         hit: '1d8+10 damage.',
-        targeting: `The $name makes a $accuracy melee strike vs. Armor with its bite.
-          If the target is \\prone, the strike deals double damage.`,
+        targeting:
+          'The $name makes a $accuracy melee strike vs. Armor with its bite. If the target is \\prone, the strike deals double damage.',
       });
       t.end();
     });
@@ -544,7 +545,7 @@ t.test('restructureStrikeAbility', (t) => {
           miss: undefined,
           injury: undefined,
           targeting:
-            'The $name can move up to its \\glossterm{speed}, then it makes a $accuracy-2 melee strike vs. Armor with its bite.',
+            'The $name can move up to its \\glossterm{speed} without reducing its available movement. Then, it can make a $accuracy-2 melee strike vs. Armor with its bite.',
         },
         isMagical: false,
         kind: 'maneuver',
