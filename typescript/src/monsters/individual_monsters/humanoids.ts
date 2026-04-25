@@ -71,7 +71,7 @@ export function addHumanoids(grimoire: Grimoire) {
     });
 
     // Horns are standard, smashing is elite.
-    creature.addManeuver('Mighty Rushdown', { displayName: 'Charging Gore', weapon: 'horn' });
+    creature.addManeuver('Mighty Charge', { displayName: 'Charging Gore', weapon: 'horn' });
     creature.addWeaponMult('horn', { displayName: 'Gore' });
     creature.addManeuver('Chokeslam', { usageTime: 'elite' });
     creature.addManeuver('Ground Stomp', { usageTime: 'elite' });
@@ -528,7 +528,7 @@ function addGoblins(grimoire: Grimoire) {
           creature.setTrainedSkills(['awareness']);
           creature.setBaseAttributes([-1, 4, 0, -2, 2, -2]);
           creature.addWeaponMult('spear');
-          creature.addManeuver('Rushdown', { weapon: 'spear' });
+          creature.addManeuver('Charge', { weapon: 'spear' });
           creature.setEquippedArmor({
             bodyArmor: 'buff leather',
             shield: 'buckler',
