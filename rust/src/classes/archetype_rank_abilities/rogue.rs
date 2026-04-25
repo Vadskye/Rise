@@ -11,7 +11,8 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 \begin{activeability}{Sneak Attack}{Standard action}
                     \rankline
-                    Make a \glossterm{strike} with a \weapontag{Light} or \weapontag{Compact} weapon against a creature within \shortrange (see \pcref{Weapon Tags}).
+                    Make a \glossterm{strike} against a creature within \shortrange (see \pcref{Weapon Tags}).
+                    The srike must only use \weapontag{Light} or \weapontag{Compact} weapons.
 
                     The strike deals 1d4 \glossterm{extra damage} if the target is \unaware or \partiallyunaware of your attack, or if they are adjacent to one of your \glossterm{allies}.
                     This extra damage is doubled if the target is fully unaware of your attack.
