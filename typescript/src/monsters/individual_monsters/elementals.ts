@@ -19,10 +19,10 @@ export function addElementals(grimoire: Grimoire) {
     });
     creature.setTrainedSkills(['awareness', 'jump']);
     creature.setBaseAttributes([8, 6, 5, -4, 2, 4]);
-    creature.addImpervious('Air');
-    creature.addImpervious('Earth');
-    creature.addImpervious('Fire');
-    creature.addImpervious('Water');
+    creature.addResistant('Air');
+    creature.addResistant('Earth');
+    creature.addResistant('Fire');
+    creature.addResistant('Water');
     creature.setKnowledgeResults({
       normal: `
         Fusion elementals are a hybrid of the four common elemental types: air, earth, fire, and water.
@@ -54,7 +54,7 @@ function addAirElementals(grimoire: Grimoire) {
   function airElemental(creature: Creature) {
     creature.addTrait('floating');
     creature.addTrait('simple-minded');
-    creature.addImpervious('Air');
+    creature.addResistant('Air');
     creature.addVulnerability('Earth');
     creature.addVulnerability('Electricity');
     creature.addPassiveAbility({
@@ -187,7 +187,7 @@ function addFireElementals(grimoire: Grimoire) {
     const rank = creature.calculateRank();
     creature.addTrait('simple-minded');
     creature.addImmunity('Fire');
-    creature.addImpervious('Cold');
+    creature.addResistant('Cold');
     creature.addVulnerability('Water');
     creature.addSpell('Combustion');
     if (rank >= 2) {
@@ -299,9 +299,9 @@ function addFireElementals(grimoire: Grimoire) {
 function addMagmaElementals(grimoire: Grimoire) {
   function magmaElemental(creature: Creature) {
     creature.addTrait('simple-minded');
-    creature.addImpervious('Earth');
+    creature.addResistant('Earth');
     creature.addImmunity('Fire');
-    creature.addImpervious('Cold');
+    creature.addResistant('Cold');
     creature.addVulnerability('Acid');
     creature.addVulnerability('Water');
 

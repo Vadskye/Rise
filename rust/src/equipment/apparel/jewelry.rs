@@ -404,14 +404,14 @@ fn rings() -> Vec<Apparel> {
     apparel.push(Ring(StandardItem {
         name: String::from("Ring of the True Form"),
         rank: 2,
-        short_description: String::from("Impervious to form-altering attacks"),
+        short_description: String::from("Resistant to form-altering attacks"),
         description: String::from(r"
-            You are \impervious to attacks from the \sphere<polymorph> sphere.
+            You are \resistant to attacks from the \sphere<polymorph> sphere.
             This bonus also applies against other attacks that significantly alter your physical form, such as an aboleth's slime.
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Immune to form-altering attacks", r"
-                You become immune instead of impervious.
+                You become immune instead of resistant.
             "),
         ],
         ..Apparel::default()

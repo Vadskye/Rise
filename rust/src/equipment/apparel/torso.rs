@@ -61,17 +61,17 @@ fn belts() -> Vec<Apparel> {
     apparel.push(Belt(StandardItem {
         name: String::from("Poisonbane Belt"),
         rank: 2,
-        short_description: String::from("Impervious to poisons"),
+        short_description: String::from("Resistant to poisons"),
         description: String::from(
             r"
-            You are \impervious to \glossterm{poisons} and poison damage.
+            You are \resistant to \glossterm{poisons} and poison damage.
         ",
         ),
         upgrades: vec![ItemUpgrade::new(
             5,
             "Immune to poisons",
             r"
-                You become immune instead of impervious.
+                You become immune instead of resistant.
             ",
         )],
         ..Apparel::default()
@@ -218,11 +218,11 @@ fn cloaks() -> Vec<Apparel> {
         rank: 2,
         short_description: String::from("Grants limited ability to hit incorporeal creatures"),
         description: String::from(r"
-            Creatures that are \trait<incorporeal> are only \impervious to your \glossterm{mundane} abilities rather than immune to them.
+            Creatures that are \trait<incorporeal> are only \resistant to your \glossterm{mundane} abilities rather than immune to them.
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Grants ability to hit incorporeal creatures", "
-                Incorporeal creatures are not impervious to your mundane abilities.
+                Incorporeal creatures are not resistant to your mundane abilities.
             "),
         ],
         ..Apparel::default()
@@ -272,13 +272,13 @@ fn cloaks() -> Vec<Apparel> {
     apparel.push(Cloak(StandardItem {
         name: String::from("Cloak of Nondetection"),
         rank: 2,
-        short_description: String::from("Impervious to magical detection"),
+        short_description: String::from("Resistant to magical detection"),
         description: String::from(r"
-            You are \impervious to attacks with the \abilitytag<Detection> or \abilitytag<Scrying> tags.
+            You are \resistant to attacks with the \abilitytag<Detection> or \abilitytag<Scrying> tags.
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Immune to magical detection", "
-                You are immune instead of impervious.
+                You are immune instead of resistant.
                 This does not help against abilities that do not make attacks, so you can still be seen in scrying sensors that are not targeted on you personally.
             "),
         ],

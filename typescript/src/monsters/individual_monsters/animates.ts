@@ -376,7 +376,7 @@ function addGolems(grimoire: Grimoire) {
           creature.setTrainedSkills([]);
           creature.addCustomMovementSpeed('Burrow (average)');
           creature.addImmunity('Earth');
-          creature.addImpervious('Electricity');
+          creature.addResistant('Electricity');
           creature.addVulnerability('Acid');
           creature.setBaseAttributes([13, 2, 10, 0, 6, 10]);
           creature.addPassiveAbility({

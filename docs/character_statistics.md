@@ -23,7 +23,7 @@ It's useful as a reminder of what kinds of bonuses can be granted by classes and
 * Vital wound effects
 * Armor proficiency
 * Attributes (Dex/Con/Wil)
-* Tag impervious/immune
+* Tag resistant/immune
 
 ## Mobility
 * Additional movement mode

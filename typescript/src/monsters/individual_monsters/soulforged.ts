@@ -208,7 +208,7 @@ function addDemonspawn(grimoire: Grimoire) {
         `,
       },
       sharedInitializer: (creature: Creature) => {
-        creature.addImpervious('Fire');
+        creature.addResistant('Fire');
         creature.addTrait('bloodless');
         creature.addTrait('immortal');
         creature.addTrait('nonliving');

@@ -656,7 +656,7 @@ function addKobolds(grimoire: Grimoire) {
   const dragonsworn = {
     name: 'Dragonsworn',
     effect: `
-      The $name is \\impervious to the tag associated with the dragon it swore to serve.
+      The $name is \\resistant to the tag associated with the dragon it swore to serve.
     `,
     knowledge: {
       normal: `
@@ -747,7 +747,7 @@ function addKobolds(grimoire: Grimoire) {
           });
           creature.addPassiveAbility(dragonsworn);
           creature.setEquippedArmor({ bodyArmor: 'buff leather' });
-          creature.addImpervious('Varies');
+          creature.addResistant('Varies');
           creature.setBaseAttributes([0, 6, 4, 0, 4, 2]);
           creature.addSneakAttack('smallswords', { displayName: 'Sneaky Nip' });
           creature.addSneakAttack('darts', { displayName: 'Sneaky Darts' });
@@ -767,7 +767,7 @@ function addKobolds(grimoire: Grimoire) {
           creature.setBaseAttributes([0, 6, 2, 0, 6, 2]);
           creature.setEquippedArmor({ bodyArmor: 'buff leather' });
           creature.addPassiveAbility(dragonsworn);
-          creature.addImpervious('Varies');
+          creature.addResistant('Varies');
           creature.addWeaponMult('longbow');
           creature.addManeuver('Distant Shot', { weapon: 'longbow' });
           creature.addManeuver('Pure Precision', { weapon: 'longbow' });
@@ -790,7 +790,7 @@ function addKobolds(grimoire: Grimoire) {
             shield: 'buckler',
           });
           creature.addPassiveAbility(dragonsworn);
-          creature.addImpervious('Varies');
+          creature.addResistant('Varies');
           creature.addWeaponMult('spear');
           creature.addManeuver('Directing Shout');
           creature.addManeuver('Stunning Shout+');
