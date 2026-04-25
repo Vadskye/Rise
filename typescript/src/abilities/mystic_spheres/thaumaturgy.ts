@@ -11,10 +11,9 @@ export const thaumaturgy: MysticSphere = {
       name: 'Detect Magic',
 
       effect: `
-        Choose a \\arealarge cone from you.
-        You know whether any \\magical effects exist in the area.
-        This includes active spell effects, magical items, and any other magic that is currently affecting the area or creatures in the area.
-        It does not include passive magical abilities on creatures in the area, such as the ability to cast spells.
+        Choose an object you \\glossterm{touch}.
+        You know whether any \\magical effects affect the object.
+        This includes active spell effects, intrinsically magical items, and any other magic that is currently affecting the objct.
         It also does not provide any information about the number or location of those magical effects.
       `,
       roles: ['narrative'],
