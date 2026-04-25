@@ -214,6 +214,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
             You can feed this weapon your blood as a \glossterm{minor action}.
             When you do, you lose 4 \glossterm{hit points}.
             In exchange, you deal 1d4 \glossterm{extra damage} with strikes using this weapon this turn.
+            You must be \trait{blooded} to activate this weapon.
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Can spend 8 HP for +1d10 damage", r"
