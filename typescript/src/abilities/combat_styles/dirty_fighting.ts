@@ -379,10 +379,21 @@ export const dirtyFighting: CombatStyle = {
       name: 'Eye Poke',
 
       effect: `
-        Make a \\glossterm{strike}.
-        \\hit If your attack result also hits the target's Fortitude defense, it is \\briefly \\dazzled.
+        Make a melee \\glossterm{strike}.
+        \\hit The target is \\briefly \\dazzled.
       `,
       rank: 1,
+      roles: ['softener'],
+    },
+
+    {
+      name: 'Eye Poke+',
+
+      effect: `
+        Make a melee \\glossterm{strike} that deals triple damage.
+        \\hit The target is \\dazzled as a \\glossterm{condition}.
+      `,
+      rank: 7,
       roles: ['softener'],
     },
 
