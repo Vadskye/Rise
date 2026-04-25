@@ -130,9 +130,10 @@ function addFleshwrought(grimoire: Grimoire) {
               After it does, it removes all instances of this condition.
             `,
               targeting: `
-              Make an attack vs. Fortitude against all adjacent living creatures.
+              Make an attack vs. Fortitude against all adjacent creatures.
             `,
             },
+            tags: ['Life'],
             usageTime: 'elite',
           });
         },
@@ -703,7 +704,7 @@ function addVampires(grimoire: Grimoire) {
     Many vampire weaknesses trigger on exposure to particular substances or circumstances.
     These weaknesses trigger immediately upon first contact, and are repeated at the start of each of the vampire's subsequent turns as long as the vampire remains exposed.
     \\begin{raggeditemize}
-      \\itemhead{Blood Dependence} For every 24 hours that a vampire remains awake without ingesting at least one pint of blood from living creatures, its maximum hit points are reduced by 20.
+      \\itemhead{Blood Dependence} For every 24 hours that a vampire remains awake without ingesting at least one pint of blood, its maximum hit points are reduced by 20.
         If its maximum hit points are reduced to 0 in this way, it dies and withers away into a pile of ash.
         This penalty is removed as soon as the vampire drinks a pint of blood.
         A vampire can enter a torpor to survive without blood.

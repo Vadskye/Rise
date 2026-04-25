@@ -630,7 +630,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 \begin{magicalsustainability}{Animal Speech}{Standard action}
-                    \abilitytags \abilitytag{Sustain} (minor)
+                    \abilitytags \atLife, \abilitytag{Sustain} (minor)
                     \rankline
                     Choose an animal within \rnglong range.
                     You can speak to and understand the speech of the target animal, and any other animals of the same species.

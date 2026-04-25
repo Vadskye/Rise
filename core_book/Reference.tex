@@ -479,7 +479,8 @@
 
   \traitdef{Nonliving}{nonliving}
   A nonliving creature or object is neither alive nor undead.
-  It does not need to eat, drink, or sleep, and is immune to \atPoison effects.
+  It is immune to \atLife effects and \atPoison effects.
+  It is unaffected by the Medicine skill, even if it is \trait{dynamic}.
 
   % \traitdef{Planebound}{planebound}
   % A planebound creature cannot leave a specific plane by any means.
@@ -512,7 +513,14 @@
   \traitdef{Static}{static}
   A static creature does not need to eat, drink, or sleep.
   It does not regain hit points or remove vital wounds when it rests, and is unaffected by the Medicine skill.
-  Any damage it takes must be physically repaired like a damaged object, typically with relevant raw materials and the use of the Craft skill.
+  Any damage it takes must be physically repaired like a damaged object using a relevant Craft skill, as described below.
+  The \glossterm{difficulty value} for these Craft checks is equal to 5 \add twice the creature's rank (minimum DV 2).
+  Unlike when creating new, the time required for these repairs is not reduced by beating the Craft DV by 10 or more.
+  \begin{itemize}
+    \item A short rest requires 10 minutes of work and a Craft check.
+    \item A long rest requires 8 hours of work and a Craft check.
+    \item Removing a vital wound requires 8 hours of work, a Craft check, and raw materials with a value one rank lower than the creature's rank (minimum rank 0, or 1 gp). This also grants the benefits of a long rest.  
+  \end{itemize}
 
   \traitdef{Swarm}{swarm}
   A swarm is a collection of smaller creatures that are mechanically treated as a single larger creature.
@@ -553,7 +561,7 @@
   Any other effects beyond simple hit point recovery are ignored.
   For example, if a cleric uses their \ability{divine aid} ability to heal an undead creature, the undead would take damage, but it would not gain any bonus to its defenses.
 
-  Undead creatures normally have the following traits: \trait{bloodless}, \trait{corporeal}, \trait{dynamic}, \trait{immortal}, \trait{nonliving}, \trait{sighted}.
+  Undead creatures normally have the following traits: \trait{bloodless}, \trait{corporeal}, \trait{immortal}, \trait{nonliving}, \trait{sighted}, \trait{static}.
 
   % TODO: should undead heal from vivimancy effects? Is it worth introducing a new damage type just for that?
   % Similarly, undead are always considered living creatures for the purpose of effects that would normally deal damage to living creatures.

@@ -14,6 +14,7 @@ pub enum AbilityTag {
     Electricity,
     Emotion,
     Fire,
+    Life,
     Manifestation,
     Poison,
     Scrying,

@@ -2041,7 +2041,8 @@ They allow more distinct and unique character customization, but also increase g
 
     \magicalff[6]{Fleshbending Spell} You learn an additional spell.
     The spell can be up to rank 3, even if you do not have access to rank 3 spells.
-    When you attack with the spell, compare your attack result to the Fortitude defense of each living target.
+    It gains the \atLife tag.
+    When you attack with the spell, compare your attack result to the Fortitude defense of each target.
     On a hit, that target takes a \minus4 penalty to its other defenses against that spell.
 
     This is a metamagic effect, so you cannot apply another metamagic to the same spell.
@@ -2229,7 +2230,8 @@ They allow more distinct and unique character customization, but also increase g
 
     \magicalff[6]{Venomous Spell} You learn an additional spell.
     The spell can be up to rank 3, even if you do not have access to rank 3 spells.
-    Whenever you damage a living creature with that spell, you can cause the creature to become poisoned with your choice of one of the poisons you store with your \textit{poisonous blood} ability.
+    It gains the \atPoison tag.
+    Whenever you damage a creature with that spell, you can cause the creature to become poisoned with your choice of one of the poisons you store with your \textit{poisonous blood} ability.
     This expends the dose of that poison.
     You can poison multiple creatures simultaneously in this way, but it costs one poison dose per creature affected.
 
@@ -2290,7 +2292,7 @@ They allow more distinct and unique character customization, but also increase g
     \featpre Access to the \sphere{Vivimancy} \glossterm{mystic sphere}.
 
     % Should this be more specific, like "animates"?
-    \magicalff[1]{Hidden Life} You can treat nonliving creatures other than undead as if they were living creatures for the purpose of your abilities from the \sphere{Vivimancy} \glossterm{mystic sphere}.
+    \magicalff[1]{Hidden Life} Your \atLife abilities from the \sphere{Vivimancy} \glossterm{mystic sphere} affect nonliving creatures other than undead, even if those creatures would normally be immune to \atLife abilities.
 
     \magicalff[1]{Personal Vitality} You gain a \plus2 bonus to your \glossterm{durability}.
 
@@ -2302,8 +2304,7 @@ They allow more distinct and unique character customization, but also increase g
     This is a metamagic effect, so you cannot apply another metamagic to the same spell.
     When you gain access to a new rank of spells, you can replace your current spell affected by this metamagic with a new spell of that rank.
 
-    \magicalff[12]{Life Suppression} You are no longer considered a living creature for the purpose of attacks against you.
-    This means that attacks which only affect living creatures have no effect against you.
+    \magicalff[12]{Life Suppression} You are immune to \atLife attacks.
 
     \magicalff[18]{Personal Vitality\plus} The durability bonus increases to \plus5.
   \end{magicalfeat}

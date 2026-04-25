@@ -782,7 +782,7 @@ export class Creature implements CreaturePropertyMap {
       // Jump skill as a trained skill and it shouldn't appear in the book, though.
       modifier.immune = 'Prone';
     } else if (traitName === 'nonliving') {
-      modifier.immune = 'Poison'
+      modifier.immune = 'Life, Poison'
     } else if (traitName === 'quadrupedal') {
       modifier.numericEffects = [{ modifier: 10, statistic: 'speed' }];
       modifier.resistant = 'Trip';
