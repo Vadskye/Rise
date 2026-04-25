@@ -396,7 +396,7 @@ function addHalfsouls(grimoire: Grimoire) {
         `,
       },
       sharedInitializer: (creature) => {
-        creature.addImpervious('Emotion');
+        creature.addResistant('Emotion');
       },
     },
     [

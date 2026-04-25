@@ -244,7 +244,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                You are \impervious to \abilitytag{Visual} attacks.
+                You are \resistant to \abilitytag{Visual} attacks.
             ",
         },
         RankAbility {
@@ -504,7 +504,7 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
-                You gain a \plus2 bonus to your Mental defense, and you are \impervious to \atEmotion attacks.
+                You gain a \plus2 bonus to your Mental defense, and you are \resistant to \atEmotion attacks.
             ",
         },
         RankAbility {

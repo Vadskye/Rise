@@ -83,7 +83,7 @@ pub fn dryad<'a>() -> Vec<RankAbility<'a>> {
                 When you meld with a tree using your \textit{tree stride} ability, you can fully unite with it.
                 When you do, you have \glossterm{line of sight} and \glossterm{line of effect} from all areas of the tree simultaneously, as if you were everywhere in the tree's body.
                 Attacks against the tree simultaneously affect both you and the tree.
-                You and the tree are both \impervious to damaging attacks, but \vulnerable to \atFire attacks and cold iron weapons.
+                You and the tree are both \resistant to damaging attacks, but \vulnerable to \atFire attacks and cold iron weapons.
             ",
         },
         RankAbility {

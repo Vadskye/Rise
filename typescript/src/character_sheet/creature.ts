@@ -164,7 +164,7 @@ export type RiseDefenseHumanReadable = 'Armor' | 'Brawn' | 'Fortitude' | 'Reflex
 
 export interface CustomModifierConfig {
   immune?: string;
-  impervious?: string;
+  resistant?: string;
   name?: string;
   numericEffects?: CustomModifierNumericEffect[];
   vulnerable?: string;
@@ -616,7 +616,7 @@ export class Creature implements CreaturePropertyMap {
     const prefix = `repeating_permanentmodifiers_${this.sheet.generateRowId()}`;
     const attrs: Record<string, string | number | undefined> = {
       [`${prefix}_immune`]: config.immune,
-      [`${prefix}_impervious`]: config.impervious,
+      [`${prefix}_resistant`]: config.resistant,
       [`${prefix}_vulnerable`]: config.vulnerable,
       [`${prefix}_name`]: config.name || 'Invisible',
     };
@@ -689,9 +689,9 @@ export class Creature implements CreaturePropertyMap {
     });
   }
 
-  addImpervious(imperviousTo: string) {
+  addResistant(resistantTo: string) {
     this.addCustomModifier({
-      impervious: imperviousTo,
+      resistant: resistantTo,
     });
   }
 
@@ -783,9 +783,9 @@ export class Creature implements CreaturePropertyMap {
       // Jump skill as a trained skill and it shouldn't appear in the book, though.
     } else if (traitName === 'quadrupedal') {
       modifier.numericEffects = [{ modifier: 10, statistic: 'speed' }];
-      modifier.impervious = 'Trip';
+      modifier.resistant = 'Trip';
     } else if (traitName === 'swarm') {
-      modifier.impervious = 'Targeted';
+      modifier.resistant = 'Targeted';
       modifier.vulnerable = 'Area';
     }
     this.addCustomModifier(modifier);
@@ -1328,8 +1328,8 @@ export class Creature implements CreaturePropertyMap {
     return this.getPropertyValue('immune');
   }
 
-  public get impervious() {
-    return this.getPropertyValue('impervious');
+  public get resistant() {
+    return this.getPropertyValue('resistant');
   }
 
   public get vulnerable() {
@@ -1430,7 +1430,7 @@ export class Creature implements CreaturePropertyMap {
       if (!this.getModifierNames().includes('Ghostly Nature')) {
         this.addCustomModifier({
           name: 'Ghostly Nature',
-          impervious: 'Cold, Earth',
+          resistant: 'Cold, Earth',
           vulnerable: 'Fire',
         });
       }

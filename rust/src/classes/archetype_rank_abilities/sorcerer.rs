@@ -161,7 +161,7 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Choose a type of dragon from among the dragons on \trefnp{Draconic Bloodline Types}.
                 You have the blood of that type of dragon in your veins.
-                You are \impervious to attacks with that dragon's associated ability tag.
+                You are \resistant to attacks with that dragon's associated ability tag.
 
                 \begin{columntable}
                     \columncaption{Draconic Bloodline Types}

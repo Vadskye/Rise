@@ -11,7 +11,7 @@
   For details, see \pcref{Attuned Abilities}.
 
   \abilitytagdef{Auditory} Auditory abilities use sound to cause their effects.
-  Covering or plugging your ears makes you \impervious to Auditory attacks.
+  Covering or plugging your ears makes you \resistant to Auditory attacks.
   Objects and \deafened creatures are immune to Auditory abilities.
   Auditory abilities only require a DV 0 Awareness check to notice.
 
@@ -119,7 +119,7 @@
   Visual abilities only require a DV 0 Awareness check to notice.
 
   Anything that cannot see a Visual effect is immune to it.
-  Simply closing your eyes only makes you \impervious to Visual effects.
+  Simply closing your eyes only makes you \resistant to Visual effects.
   Completely covering your eyes, such as with your hands or with a blindfold, makes you immune.
   Special vision abilities that replace normal vision entirely, such as \sense{blindsight} and \sense{tremorsense}, are unable to perceive Visual effects.
 
@@ -229,15 +229,6 @@
   However, being immune to a particular effect of an attack does not make you immune to the rest of the attack's effects.
   For example, if you are immune to being \stunned, you still take full damage from an attack that deals damage and stuns you.
 
-  \buffdef{impervious}
-  % Are there any other things you can be impervious to?
-  A creature can be impervious to a particular ability tag.
-  Creatures gain a \plus4 bonus to all defenses against attacks that they are impervious to.
-  In addition, they take no damage if the attack misses, even if the attack would normally deal half damage on a miss.
-  If an attack has multiple tags, a creature is impervious to the attack if it is impervious to any of the attack's tags.
-  % There shouldn't be any conditional tags like this
-  % For attacks with random effects, such as the \spell{chromatic orb} spell, determine the random effect before determining if the creature is impervious.
-
   \buffdef{maximized} A maximized creature deals maximum damage whenever it deals damage.
   This only affects damage caused directly by the creature, just like \glossterm{extra damage}.
   For example, a maximized creature that \glossterm{flings} a creature does not maximize the impact damage from the fling, if any.
@@ -275,6 +266,15 @@
   This generally requires one \glossterm{free hand}.
   Standing up from a prone position costs half of the creature's speed during that movement.
 
+  \buffdef{resistant}
+  % Are there any other things you can be resistant to?
+  A creature can be resistant to a particular ability tag.
+  Creatures gain a \plus4 bonus to all defenses against attacks that they are resistant to.
+  In addition, they take no damage if the attack misses, even if the attack would normally deal half damage on a miss.
+  If an attack has multiple tags, a creature is resistant to the attack if it is resistant to any of the attack's tags.
+  % There shouldn't be any conditional tags like this
+  % For attacks with random effects, such as the \spell{chromatic orb} spell, determine the random effect before determining if the creature is resistant.
+
   \buffdef{shielded} A shielded creature gains a \plus2 bonus to its Armor and Reflex defenses.
 
   \debuffdef{slowed} A slowed creature has a \minus10 foot penalty to its \glossterm{speed} and takes a \minus2 penalty to its Armor and Reflex defenses.
@@ -307,7 +307,7 @@
   % Are there any other kinds of vulnerabilities besides tags and silver / cold iron?
   A creature can be vulnerable to a particular ability tag or weapon special material.
   It takes a \minus4 penalty to all defenses against attacks with that tag, or attacks using weapons that it is vulnerable to.
-  If a creature would be both vulnerable and \impervious to an ability, it is treated as vulnerable and not impervious.
+  If a creature would be both vulnerable and \resistant to an ability, it is treated as vulnerable and not resistant.
   However, an immune creature is still immune.
   % For attacks with random effects, such as the \ability{sudden entropy} ability from the Entropist feat, determine the random effect before determining if the creature is vulnerable.
 
@@ -488,7 +488,7 @@
 
   \traitdef{Quadrupedal}{quadrupedal}
   A quadrupedal creature typically uses four legs to move.
-  Quadrupedal creatures gain a \plus10 foot bonus to their \glossterm{speed} and are \impervious to the \ability{trip} ability.
+  Quadrupedal creatures gain a \plus10 foot bonus to their \glossterm{speed} and are \resistant to the \ability{trip} ability.
 
   \traitdef{Simple-Minded}{simple-minded}
   A simple-minded creature has an incompletely functioning mind.
@@ -516,7 +516,7 @@
 
   \traitdef{Swarm}{swarm}
   A swarm is a collection of smaller creatures that are mechanically treated as a single larger creature.
-  Swarms are \impervious to \glossterm{targeted} abilities and \vulnerable to \glossterm{area} abilities.
+  Swarms are \resistant to \glossterm{targeted} abilities and \vulnerable to \glossterm{area} abilities.
   They can freely share space with other non-swarm creatures, and this does not cause the swarm or the creature in its space to be \squeezing.
 
 \newpage
@@ -612,7 +612,7 @@
 
   \creaturetypedef{Ghost}{ghost}
   A ghost is the soul of a deceased creature that lingered after death instead of proceeding to its proper afterlife.
-  Ghosts are \trait{incorporeal} and \impervious to \atCold and \atEarth abilities.
+  Ghosts are \trait{incorporeal} and \resistant to \atCold and \atEarth abilities.
   However, they are \vulnerable to \atFire abilities.
   Despite being incorporeal, they are affected by even \glossterm{mundane} Fire effects.
 

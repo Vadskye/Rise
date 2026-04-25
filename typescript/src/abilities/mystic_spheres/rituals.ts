@@ -374,7 +374,7 @@ export const rituals: RitualDefinition[] = [
     effect: `
       Torrential rain begins falling out of thin air within a \\glossterm{shapeable} \\largearea radius \\glossterm{zone} within \\longrange.
       The rain extinguishes minor fires such as campfires and torches on contact.
-      Everything in the area is \\impervious to \\atFire attacks.
+      Everything in the area is \\resistant to \\atFire attacks.
     `,
     rank: 1,
     roles: ['narrative'],

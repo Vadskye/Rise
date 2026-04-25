@@ -53,7 +53,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
-                If you do not have access to nature magic, you become \impervious to \atAir, \atEarth, and \atWater attacks.
+                If you do not have access to nature magic, you become \resistant to \atAir, \atEarth, and \atWater attacks.
             ",
         },
         RankAbility {
@@ -105,7 +105,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                 \begin{raggeditemize}
                     \item Air: You gain a slow \glossterm{glide speed} (see \pcref{Aerial Movement}).
                     \item Earth: You gain a \plus1 bonus to your Fortitude defense.
-                    \item Fire: You are \impervious to \atFire attacks.
+                    \item Fire: You are \resistant to \atFire attacks.
                     \item Water: You gain a slow \glossterm{swim speed}.
                 \end{raggeditemize}
             ",

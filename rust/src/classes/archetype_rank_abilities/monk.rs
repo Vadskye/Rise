@@ -434,8 +434,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             rank: 5,
             description: r"
                 Choose one type of energy: \atCold, \atElectricity, or \atFire.
-                You become \impervious to attacks with that ability tag.
-                If you are already impervious to attacks with that ability tag, you become immune instead.
+                You become \resistant to attacks with that ability tag.
+                If you are already resistant to attacks with that ability tag, you become immune instead.
                 Whenever you make a strike \magical with this ability, you can choose to give it that tag.
             ",
         },

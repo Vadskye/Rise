@@ -79,7 +79,7 @@ pub fn incarnation<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 5,
             description: r"
-                You become \glossterm{immune} instead of impervious to attacks with your \textit{essence infusion} tag.
+                You become \glossterm{immune} instead of resistant to attacks with your \textit{essence infusion} tag.
                 In addition, you gain a \plus1 accuracy bonus with all abilities which have that tag.
             ",
         },

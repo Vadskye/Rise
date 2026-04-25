@@ -416,7 +416,7 @@ The miss chance applies to roughly 25% of boss attacks. Since blindness is worse
 
 ### Vulnerable: 3.5
 
-Following the logic of being stunned, being vulnerable to all damage would be worth 2.8 action effectiveness. Add 25% effectiveness because it negates impervious/immune, so 3.5 EA.
+Following the logic of being stunned, being vulnerable to all damage would be worth 2.8 action effectiveness. Add 25% effectiveness because it negates resistant/immune, so 3.5 EA.
 
 ## Debuff Condition Action Effectiveness
 Assume that a normal group combat lasts for 16 player effective actions, and a typical boss fight lasts for 20 player effective actions. If you apply a condition to a boss on round 1, it will have the opportunity to remove that condition during rounds 2, 3, and 4. On average, the condition lasts for 2 + 0.6 + (0.6)^2 + (0.6)^3 = 3.18 rounds.
@@ -514,7 +514,7 @@ The defense penalty applies to 3 party attacks, so it provides 0.6 action effect
 The blindness is 14 * 0.25 * 0.75 = 2.6 effective actions. The brief effect gets a 25% boost here, but a condition is easier to game by having only the invisible person stick around to fight, so give it a 50% boost to 3.9.
 
 ### Vulnerable: 7.5
-Double stunned, plus 25% effectiveness for negating impervious/immune.
+Double stunned, plus 25% effectiveness for negating resistant/immune.
 
 ## Injury Condition Effectiveness
 

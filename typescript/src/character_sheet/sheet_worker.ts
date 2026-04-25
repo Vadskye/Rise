@@ -1379,8 +1379,8 @@ function handleCustomModifiers() {
         const formatNameId = (id: string) => `repeating_${modifierType}modifiers_${id}_name`;
 
         const formatImmuneId = (id: string) => `repeating_${modifierType}modifiers_${id}_immune`;
-        const formatImperviousId = (id: string) =>
-          `repeating_${modifierType}modifiers_${id}_impervious`;
+        const formatResistantId = (id: string) =>
+          `repeating_${modifierType}modifiers_${id}_resistant`;
         const formatVulnerableId = (id: string) =>
           `repeating_${modifierType}modifiers_${id}_vulnerable`;
 
@@ -1402,7 +1402,7 @@ function handleCustomModifiers() {
             fullAttributeIds.push(formatIsActiveId(id));
             fullAttributeIds.push(formatNameId(id));
             fullAttributeIds.push(formatImmuneId(id));
-            fullAttributeIds.push(formatImperviousId(id));
+            fullAttributeIds.push(formatResistantId(id));
             fullAttributeIds.push(formatVulnerableId(id));
             fullAttributeIds.push(formatAttackHeaderId(id));
             for (let i = 0; i < nestedCustomStatisticCount; i++) {
@@ -1417,7 +1417,7 @@ function handleCustomModifiers() {
             // modifiers, such as "all_defenses", can affect multiple statistics.
             const namedModifierMap = new NamedModifierMap();
             const immuneTo: string[] = [];
-            const imperviousTo: string[] = [];
+            const resistantTo: string[] = [];
             const vulnerableTo: string[] = [];
             const attackHeaders: string[] = [];
 
@@ -1443,8 +1443,8 @@ function handleCustomModifiers() {
                 if (values[formatImmuneId(id)]) {
                   immuneTo.push(values[formatImmuneId(id)]);
                 }
-                if (values[formatImperviousId(id)]) {
-                  imperviousTo.push(values[formatImperviousId(id)]);
+                if (values[formatResistantId(id)]) {
+                  resistantTo.push(values[formatResistantId(id)]);
                 }
                 if (values[formatVulnerableId(id)]) {
                   vulnerableTo.push(values[formatVulnerableId(id)]);
@@ -1459,7 +1459,7 @@ function handleCustomModifiers() {
             }
             const attrs: Attrs = {
               [formatModifierKey('immune')]: immuneTo.join(', '),
-              [formatModifierKey('impervious')]: imperviousTo.join(', '),
+              [formatModifierKey('resistant')]: resistantTo.join(', '),
               [formatModifierKey('vulnerable')]: vulnerableTo.join(', '),
               // This semicolon gets replaced in handleAttackHeaders()
               [formatModifierKey('attack_headers')]: attackHeaders.join(';'),
@@ -2969,7 +2969,7 @@ function handleSubskillValue(section: string, attribute: string) {
 }
 
 function handleSpecialDefenses() {
-  const specialDefenses = ['immune', 'impervious', 'vulnerable'];
+  const specialDefenses = ['immune', 'resistant', 'vulnerable'];
   const stringVars = [];
   for (const specialDefense of specialDefenses) {
     for (const customModifierType of CUSTOM_MODIFIER_TYPES) {
