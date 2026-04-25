@@ -1,120 +1,121 @@
 .creation-guidance {
-    .player-only {
-        .is-monster:checked + .creation-step {
-            display: none;
-        }
+  .player-only {
+    .is-monster:checked + .creation-step {
+      display: none;
+    }
+  }
+
+  .monster-only {
+    .is-monster:not(:checked) + .creation-step {
+      display: none;
+    }
+  }
+
+  .creation-step {
+    justify-content: space-between;
+    padding-top: 1em;
+    border-top: 1px solid gray;
+    margin-top: 1em;
+
+    .explanation {
+      flex-grow: 1;
+      margin-right: 2em;
+      width: 20em;
     }
 
-    .monster-only {
-        .is-monster:not(:checked) + .creation-step {
-            display: none;
-        }
+    .mechanics {
+      width: 20em;
     }
 
-    .creation-step {
-        justify-content: space-between;
-        padding-top: 1em;
-        border-top: 1px solid gray;
-        margin-top: 1em;
-
-        .explanation {
-            flex-grow: 1;
-            margin-right: 2em;
-            width: 20em;
-        }
-
-        .mechanics {
-            width: 20em;
-        }
-
-        .attributes, .attribute-scaling {
-            margin-top: 0;
-            margin-bottom: 0;
-            justify-content: space-between;
-        }
-
-        .archetype-name {
-            flex-grow: 1;
-            margin-right: 1em;
-        }
-
-        .total-trainable-skills {
-            justify-content: center;
-            margin-bottom: 0.5em;
-            > .number-label {
-                flex-grow: 0;
-            }
-        }
-
-        .base-class {
-            // Needs to be long enough for "(Monster - Skirmisher)"
-            width: 13em;
-        }
-
-        .species {
-            width: 10em;
-        }
-
-        .size {
-            width: 8em;
-        }
-
-        .skill-row {
-            column-gap: 1em;
-            justify-content: space-between;
-            margin-bottom: 0.1em;
-
-            .has-subskill:not(:checked) ~ .subskill-name {
-                display: none;
-            }
-
-            .subskill-name {
-                // Some overlap with the "class" box is fake, and this connects
-                // it better visually.
-                margin-top: -10px;
-                padding-top: 0;
-                margin-bottom: 5px;
-                width: 220px;
-            }
-        }
+    .attributes,
+    .attribute-scaling {
+      margin-top: 0;
+      margin-bottom: 0;
+      justify-content: space-between;
     }
+
+    .archetype-name {
+      flex-grow: 1;
+      margin-right: 1em;
+    }
+
+    .total-trainable-skills {
+      justify-content: center;
+      margin-bottom: 0.5em;
+      > .number-label {
+        flex-grow: 0;
+      }
+    }
+
+    .base-class {
+      // Needs to be long enough for "(Monster - Skirmisher)"
+      width: 13em;
+    }
+
+    .species {
+      width: 10em;
+    }
+
+    .size {
+      width: 8em;
+    }
+
+    .skill-row {
+      column-gap: 1em;
+      justify-content: space-between;
+      margin-bottom: 0.1em;
+
+      .has-subskill:not(:checked) ~ .subskill-name {
+        display: none;
+      }
+
+      .subskill-name {
+        // Some overlap with the "class" box is fake, and this connects
+        // it better visually.
+        margin-top: -10px;
+        padding-top: 0;
+        margin-bottom: 5px;
+        width: 220px;
+      }
+    }
+  }
 }
 
 .is-monster:not(:checked) + .monster-creation {
-    display: none;
+  display: none;
 }
 
 .monster-creation {
-    .monster-attack {
-        gap: 0.25em;
-        justify-content: space-between;
+  .monster-attack {
+    gap: 0.25em;
+    justify-content: space-between;
 
-        .monster-attack-accuracy {
-            width: 5.5em;
-        }
-
-        .monster-attack-targeting {
-            width: 10em;
-        }
-
-        .monster-attack-area-shape {
-            width: 10em;
-        }
-
-        .monster-attack-effect {
-            width: 10em;
-        }
-
-        .monster-attack-defense {
-            width: 6em; // Matches defense width on Abilities page
-        }
-
-        .monster-attack-name {
-            width: 12em; // Shorter than Abilities page
-        }
-
-        .can-undo:not(:checked) + .undo-monster-attack {
-            display: none;
-        }
+    .monster-attack-accuracy {
+      width: 5.5em;
     }
+
+    .monster-attack-targeting {
+      width: 10em;
+    }
+
+    .monster-attack-area-shape {
+      width: 10em;
+    }
+
+    .monster-attack-effect {
+      width: 10em;
+    }
+
+    .monster-attack-defense {
+      width: 6em; // Matches defense width on Abilities page
+    }
+
+    .monster-attack-name {
+      width: 12em; // Shorter than Abilities page
+    }
+
+    .can-undo:not(:checked) + .undo-monster-attack {
+      display: none;
+    }
+  }
 }
