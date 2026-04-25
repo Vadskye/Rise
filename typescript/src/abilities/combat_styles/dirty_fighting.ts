@@ -91,7 +91,7 @@ export const dirtyFighting: CombatStyle = {
       },
       rank: 3,
       roles: ['trip'],
-      tags: ['Brawling'],
+      tags: ['Brawling', 'Physical'],
     },
 
     {
@@ -122,7 +122,7 @@ export const dirtyFighting: CombatStyle = {
       },
       rank: 1,
       roles: ['burst', 'payoff'],
-      tags: ['Brawling'],
+      tags: ['Brawling', 'Physical'],
     },
 
     {
@@ -136,7 +136,7 @@ export const dirtyFighting: CombatStyle = {
       },
       rank: 5,
       roles: ['burst', 'payoff'],
-      tags: ['Brawling'],
+      tags: ['Brawling', 'Physical'],
     },
 
     {
@@ -202,7 +202,7 @@ export const dirtyFighting: CombatStyle = {
       },
       rank: 5,
       roles: ['maim', 'payoff'],
-      tags: ['Brawling'],
+      tags: ['Brawling', 'Physical'],
     },
 
     {
@@ -217,7 +217,7 @@ export const dirtyFighting: CombatStyle = {
       },
       rank: 3,
       roles: ['softener'],
-      tags: ['Brawling'],
+      tags: ['Brawling', 'Physical'],
     },
 
     {
@@ -301,7 +301,7 @@ export const dirtyFighting: CombatStyle = {
       },
       rank: 7,
       roles: ['burst', 'maim'],
-      tags: ['Brawling'],
+      tags: ['Brawling', 'Physical'],
     },
 
     {
