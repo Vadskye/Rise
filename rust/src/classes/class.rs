@@ -1468,7 +1468,7 @@ impl Class {
                     \subsection{Special Class Abilities}
 
                     \magicalcf{War}{Soul Pact}
-                    To become a votive, you must make a pact with a creature capable of sharing its power with you.
+                    To become a votive, you must be \trait{ensouled} and make a pact with a creature capable of sharing its power with you.
                     That creature is called your soulkeeper, and it will claim your soul for a period of time following your death.
                     Your soulkeeper may gain other benefits after your death as well.
                     In exchange, it will grant you power during your mortal life.
