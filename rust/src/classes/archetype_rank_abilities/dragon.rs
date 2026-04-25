@@ -29,7 +29,7 @@ pub fn dragon<'a>() -> Vec<RankAbility<'a>> {
                     \rank{5} The damage increases to \damagerankfive.
                     \rank{6} The damage increases to \damageranksix.
                     \rank{7} The damage increases to \damagerankseven, and the area increases.
-                    A line breath weapon becomes a \areagargantuan, 15 ft.\ wide line.
+                    A line breath weapon becomes a \areagarg, 15 ft.\ wide line.
                     A cone breath weapon becomes a \arealarge cone.
                 \end{activeability}
             ",
