@@ -501,6 +501,7 @@ impl StrikeAbility {
             "
             .to_string(),
             name: strike_prefix("Bloodletting", &weapon),
+            tags: vec![AbilityTag::Blood],
             weapon,
             ..Default::default()
         }.plus_accuracy(rank - 1)

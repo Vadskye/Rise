@@ -569,6 +569,7 @@ export const polymorph: MysticSphere = {
       rank: 3,
       roles: ['burn'],
       scaling: 'damage',
+      tags: ['Blood'],
     },
 
     {

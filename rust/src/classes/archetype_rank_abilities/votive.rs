@@ -145,6 +145,7 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
                     This functions like light body armor.
                     It provides a \plus4 bonus to your Armor defense, a \plus4 bonus to your \glossterm{durability}, and a \plus1 bonus to your \glossterm{vital rolls}.
                     In exchange, the \ability{recover} ability no longer causes you to recover hit points (see \pcref{Recover}).
+                    You must be \trait{blooded} to choose this covenant.
 
                     \subcf{Covenant of Bloodsharing} Once per turn, when you cause a \trait{blooded} creature other than yourself to lose \glossterm{hit points}, you can regain \glossterm{hit points} equal to half your \glossterm{power} (minimum 1).
                     In exchange, you are \glossterm{injured} whenever you are below your maximum hit points, regardless of your normal \glossterm{injury point}.
@@ -154,7 +155,7 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
                     It is removed when the creature finishes a \glossterm{short rest}.
                     If the condition would normally have a special way to remove it, such as the \spell{ignition} spell, that also removes the curse.
 
-                    In exchange, whenever you would gain a \glossterm{condition} that you are not \buff{immune} to, that effect becomes a \abilitytag{Curse} on you instead of a condition.
+                    In exchange, whenever you would gain a \glossterm{condition} that you are not \buff{immune} to, that effect becomes a \atCurse on you instead of a condition.
                     If you were already affected by a Curse from this ability, the old Curse becomes a condition instead.
                     Whenever you finish a \glossterm{short rest}, you remove any Curse affecting you as a result of this ability.
                 }

@@ -65,6 +65,7 @@ pub fn cleric_domains() -> &'static str {
                         \domainability{Aspect} You gain a \plus1 accuracy bonus with abilities that inflict \glossterm{conditions}.
                         \magicaldomainability{Essence} You gain the \ability{blood sacrifice} ability.
                         \begin{magicalactiveability}{Blood Sacrifice}{Standard action}
+                            \abilitytags \atBlood
                             \rankline
                             Choose an \glossterm{ally} you \glossterm{touch}.
                             Whenever you would lose \glossterm{hit points} while you are adjacent to that ally, it loses half of those hit points in place of you.
