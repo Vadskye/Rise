@@ -330,6 +330,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Kindle the Living Flame}{Free action}
+                        \abilitytags \atFire
                         \rankline
                         Your \glossterm{strikes} have the \atFire tag this turn.
 
@@ -371,6 +372,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                     \end{magicalactiveability}
 
                     % TODO: Solve ready action failure chance cheat
+                    % TODO: this should be disabled by dimension lock effects, but it's not currently considered teleportation
                     \begin{magicalactiveability}{Step Between the Mystic Worlds}{Free action}
                         \rankline
                         All attacks against you \glossterm{briefly} have a 20\% \glossterm{failure chance}.

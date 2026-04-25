@@ -237,6 +237,7 @@ export const polymorph: MysticSphere = {
       rank: 4,
       roles: ['burst'],
       scaling: 'damage',
+      tags: ['Physical'],
     },
 
     {
@@ -251,6 +252,7 @@ export const polymorph: MysticSphere = {
       rank: 7,
       roles: ['burst'],
       scaling: 'damage',
+      tags: ['Physical'],
     },
 
     {

@@ -388,7 +388,7 @@ impl ClassArchetype {
                 This archetype improves your senses and overall scouting ability.
             ",
             Self::WildernessWarrior => r"
-                This archetype grants you abilities to use in combat and improves your physical skills.
+                This archetype grants you wild abilities to use in combat.
             ",
             // Rogue
             Self::Assassin => r"
@@ -398,7 +398,7 @@ impl ClassArchetype {
                 This archetype grants you the ability to inspire your allies and impair your foes with musical performances.
             ",
             Self::CombatTrickster => r"
-                This archetype grants you abilities to use in combat and improves your combat prowess.
+                This archetype grants you tricky abilities to use in combat.
             ",
             Self::JackOfAllTrades => r"
                 This archetype improves your skills and versatility.

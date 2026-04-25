@@ -176,7 +176,7 @@ fn amulets() -> Vec<Apparel> {
         rank: 5,
         short_description: String::from(r"Improves \ability<perfect body> on your lowest attribute"),
         description: String::from(r"
-            If you have the \ability<perfect body> monk ability, you gain a +1 \glossterm{enhancement bonus} to your lowest physical attribute.
+            If you have the \ability<perfect body> monk ability, you gain a +1 \glossterm{enhancement bonus} to your lowest physical attribute: Strength, Dexterity, or Constitution.
             If your two lowest physical attributes are equal, this amulet has no effect.
         "),
         ..Apparel::default()
@@ -407,7 +407,7 @@ fn rings() -> Vec<Apparel> {
         short_description: String::from("Resistant to form-altering attacks"),
         description: String::from(r"
             You are \resistant to attacks from the \sphere<polymorph> sphere.
-            This bonus also applies against other attacks that significantly alter your physical form, such as an aboleth's slime.
+            This bonus also applies against other attacks that significantly alter your shape, such as an aboleth's slime.
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Immune to form-altering attacks", r"

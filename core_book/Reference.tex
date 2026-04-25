@@ -70,10 +70,13 @@
   \abilitytagdef{Life} Life abilities only affect living things.
   Undead and nonliving objects are immune to Life abilities.
 
-  \abilitytagdef{Manifestation} Manifestation abilities create temporary constructs formed from raw magical energy.
-  Objects and creatures created with Manifestation abilities seem real on the surface, but they have no internal structure.
+  \abilitytagdef{Manifestation} Manifestation abilities create temporary creatures and objects formed from raw magical energy.
+  Something created with a Manifestation ability seems real on the surface, but it has no internal structure.
   A \glossterm{difficulty value} 5 Knowledge (items) or relevant Craft check reveals that a manifested item is a magical fabrication rather than an ordinary item.
-  When an object or creature created by a Manifestation ability is destroyed or killed, or when the duration of the ability that created it ends, it disappears without a trace.
+  When something created by a Manifestation ability is destroyed or killed, or when the duration of the ability that created it ends, it disappears without a trace.
+
+  \abilitytagdef{Physical} Physical abilities affect physical objects and creatures.
+  They do not affect and cannot be used by \trait{incorporeal} creatures.
 
   \abilitytagdef{Ritual} Ritual abilities have a number of shared properties.
   For details, see \pcref{Spell and Ritual Mechanics}.
@@ -420,7 +423,7 @@
 
   \traitdef{Incorporeal}{incorporeal}
   An incorporeal creature does not have a physical body.
-  It gains the following benefits:
+  Being incorporeal has the following effects:
   \begin{itemize}
     \item Always \trait{floating}
     \item \plus5 bonus to Stealth 
@@ -428,7 +431,8 @@
     \item Cannot be \glossterm{touched}
     \item Cannot be detected by \sense{tremorsense} or \sense{tremorsight}
     \item Immune to \squeezing and \glossterm{difficult terrain}
-    \item Immune to \atBrawling, \atCreation, \atManifestation, and all \glossterm{mundane} abilities
+    \item Immune to \atBrawling, \atCreation, \atManifestation, and \atPhysical abilities
+    \item Unable to use \atPhysical abilities
   \end{itemize}
 
   Incorporeal creatures ignore any other effects which would only make sense for creatures with a physical body, such as setting off pressure plates for traps.
