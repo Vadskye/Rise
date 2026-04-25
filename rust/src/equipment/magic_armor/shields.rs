@@ -136,6 +136,7 @@ pub fn shields() -> Vec<MagicArmor> {
         description: String::from(r"
             Whenever you would be affected by a \glossterm<condition>, you have a 50\% chance to avoid gaining that condition.
             This does not prevent any other effects of the attack.
+            You must be \trait{ensouled} to attune to this item.
         "),
         ..MagicArmor::default()
     }));
