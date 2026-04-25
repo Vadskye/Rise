@@ -747,12 +747,6 @@ def universal_abilities() -> str:
                 """,
             ),
             universal_ability_button(
-                "Total Defense",
-                """
-                    You briefly gain a +2 bonus to your defenses.
-                """,
-            ),
-            universal_ability_button(
                 "Throw",
                 """
                     You throw a creature or object 15 feet plus 5 feet per 2 Strength.
