@@ -417,13 +417,13 @@ impl CustomAbility {
         Self {
             ability_type: AbilityType::Normal,
             effect: "
-                The $name makes a $accuracy attack vs. Fortitude against one living creature within \\shortrange.
+                The $name makes a $accuracy attack vs. Fortitude against one creature within \\shortrange.
                 \\hit $dr1 damage.
                 \\injury The target takes an additional $dr1 damage.
             ".to_string(),
             is_magical: true,
             name: "Inflict Wound".to_string(),
-            tags: vec![],
+            tags: vec![AbilityTag::Life],
             usage_time: UsageTime::Standard,
         }.plus_accuracy(rank - 1)
     }

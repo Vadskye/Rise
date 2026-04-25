@@ -51,18 +51,19 @@
 \section{Automaton}
   An automaton appears to be a humanoid construct, like a golem.
   Its body is made from some combination of stone, wood, and metal.
-  However, its artificial body is inhabited by a true soul, making it an \trait{indwelt} (see \pcref{Indwelt}).
+  However, its artificial body is inhabited by a true soul, making it a \creaturetype{indwelt} (see \pcref{Indwelt}).
 
+  \parhead{Creature Type} Unlike most other playable species, an automaton is a \creatureorigin{artificial} \creaturetype{humanoid} \creaturetype{indwelt} instead of a \creatureorigin{natural} humanoid.
   \parhead{Size} Medium.
   \parhead{Attributes} \plus1 Constitution or Intelligence, \minus1 Dexterity.
   \parhead{Special Abilities}
   \begin{raggeditemize}
-    \itemhead{Artificial Life} Automatons are not alive. They are invalid targets for abilities that only affect living creatures, including poisons and most healing abilities. In addition, they do not need to eat, drink, or sleep.
+    \itemhead{Artificial Life} Automatons are \trait{nonliving}, so they are immune to \atLife effects and \atPoison effects.
     \itemhead{Automaton Archetype} Automatons only gain two class archetypes instead of three.
       Instead, they treat the Automaton archetype as one of their archetypes, and they gain ranks in it just like they gain ranks in class archetypes.
-    \itemhead{Manual Repair} A Craft skill relevant to the automaton's body can be used to achieve the same effects that the Medicine skill would have on a living creature.
-    \itemhead{Mechanical Body} Automatons are considered both objects and creatures, and are affected by abilities which affect either.
-      They are always considered to be \glossterm{attended} by themselves, so they are never affected by abilities that only affect unattended objects, even while unconscious.
+    \itemhead{Mechanical Body} Automatons are \trait{static}, so they do not need to eat, drink, or sleep. 
+      They do not regain hit points or remove vital wounds when they rest, and they are unaffected by the Medicine skill.
+      Any damage it takes must be physically repaired like a damaged object using a relevant Craft skill.
     \itemhead{Mechanical Intuition} Automatons gain a \plus2 bonus to the Devices skill and one Craft skill of their choice.
   \end{raggeditemize}
 
@@ -119,7 +120,7 @@
   Ancient dragons are magical creatures of immense power and wisdom, and are far more powerful than any ordinary character of the same level.
   However, young dragons can be played as characters, though their unique abilities do pose unique challenges.
 
-  \parhead{Creature Type} Unlike most other playable species, dragons are magical beasts instead of humanoids.
+  \parhead{Creature Type} Unlike most other playable species, a dragon is a \creaturetype{dragon} instead of a \creaturetype{humanoid}.
   \parhead{Size} Small. This gives a dragon a 20 foot \glossterm{base speed} and a \plus1 bonus to their Reflex defense, among other effects (see \pcref{Size Categories}).
   \parhead{Attributes} \minus1 Strength, \plus1 to any of Constitution, Intelligence, or Willpower.
   \parhead{Special Abilities}
@@ -681,7 +682,7 @@
   Instead, they may prefer to maintain a small handful of spawn to serve them with no possibility of betrayal.
   A vampire with a soul powerful enough to command many dependent spawn is called a vampire lord.
 
-  \parhead{Creature Type} Unlike most other playable species, vampires are undead instead of humanoids.
+  \parhead{Creature Type} Unlike most other playable species, a vampire is an \creatureorigin{undead} \creaturetype{humanoid} instead of a \creatureorigin{natural} humanoid.
   \parhead{Size} Medium.
   \parhead{Attributes} \plus1 Strength and Dexterity, \minus1 Constitution.
   \parhead{Special Abilities}
@@ -692,9 +693,7 @@
       These fangs retract when not in use, so vampires cannot be identified as non-human by their fangs unless they choose to expose them.
     \itemhead{Undead} Vampires are \trait{undead} instead of \trait{living}, and they take damage from most healing effects (see \pcref{Undead})).
       Since they are not living, they are immune to \atPoison effects.
-    \itemhead{Unnatural Life} Unlike most undead creatures, vampires share some aspects of living creatures.
-      They must breathe air, and they must sleep as much as humans do.
-      They are \trait{humanoid}, have blood, and visibly bleed when injured.
+    \itemhead{Unnatural Life} Unlike most undead creatures, vampires are \trait{blooded}, \trait{dynamic}, and can be affected by the Medicine skill. 
     \itemhead{Unnatural Charm} Vampires gain a \plus2 bonus to the Persuasion skill.
     \itemhead{Vampire Archetype} Vampires only gain two class archetypes instead of three.
       Instead, they treat the Vampire archetype as one of their archetypes, and they gain ranks in it just like they gain ranks in class archetypes.
@@ -705,7 +704,7 @@
   Many vampire weaknesses trigger on exposure to particular substances or circumstances.
   These weaknesses trigger immediately upon first contact, and are repeated at the start of each of the vampire's subsequent turns as long as the vampire remains exposed.
   \begin{raggeditemize}
-    \itemhead{Blood Dependence} For every 24 hours that a vampire remains awake without ingesting at least one pint of blood from living creatures, its maximum hit points are reduced by 20.
+    \itemhead{Blood Dependence} For every 24 hours that a vampire remains awake without ingesting at least one pint of blood, its maximum hit points are reduced by 20.
       If its maximum hit points are reduced to 0 in this way, it dies and withers away into a pile of ash.
       This penalty is removed as soon as the vampire drinks a pint of blood.
       A vampire can enter a torpor to survive without blood.

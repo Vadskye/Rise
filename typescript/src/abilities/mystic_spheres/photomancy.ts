@@ -452,7 +452,7 @@ export const photomancy: MysticSphere = {
 
         All of your duplicate's defenses are 0.
         It has all of the same properties as you do when considering whether it is a valid target for attacks.
-        For example, if you are living, your duplicate can also be affected by abilities that only work on living creatures.
+        For example, if you are living, your duplicate can also be affected by \\atLife abilities.
         When it is hit by a \\glossterm{targeted} attack, it is destroyed.
         At the end of your turn, if the duplicate is outside of \\medrange from you, it is destroyed.
         This ability is \\glossterm{dismissed} when your duplicate is destroyed.

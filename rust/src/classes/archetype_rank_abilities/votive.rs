@@ -146,8 +146,9 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
                     It provides a \plus4 bonus to your Armor defense, a \plus4 bonus to your \glossterm{durability}, and a \plus1 bonus to your \glossterm{vital rolls}.
                     In exchange, the \ability{recover} ability no longer causes you to recover hit points (see \pcref{Recover}).
 
-                    \subcf{Covenant of Bloodsharing} Once per turn, when you cause a living creature other than yourself to lose \glossterm{hit points}, you can regain \glossterm{hit points} equal to half your \glossterm{power} (minimum 1).
+                    \subcf{Covenant of Bloodsharing} Once per turn, when you cause a \trait{blooded} creature other than yourself to lose \glossterm{hit points}, you can regain \glossterm{hit points} equal to half your \glossterm{power} (minimum 1).
                     In exchange, you are \glossterm{injured} whenever you are below your maximum hit points, regardless of your normal \glossterm{injury point}.
+                    You must be \trait{blooded} to choose this covenant.
 
                     \subcf{Covenant of Soulcursing} Whenever you would inflict a \glossterm{condition} on a creature that is not already under the effects of a Curse, that effect becomes a Curse on it instead of a condition.
                     It is removed when the creature finishes a \glossterm{short rest}.

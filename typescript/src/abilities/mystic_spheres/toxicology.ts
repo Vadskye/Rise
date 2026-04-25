@@ -21,7 +21,7 @@ export const toxicology: MysticSphere = {
           In addition, the target removes one of its successes to remove the poison, if any.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one living creature within \\medrange.
+          Make an attack vs. Fortitude against one creature within \\medrange.
           If the target is not currently poisoned, this ability has no effect.
         `,
       },
@@ -80,7 +80,7 @@ export const toxicology: MysticSphere = {
           The second escalation also deals \\damageranktwolow.
         `,
         targeting: `
-          Make an attack vs. Fortitude against up to two living creatures within \\shortrange.
+          Make an attack vs. Fortitude against up to two creatures within \\shortrange.
         `,
       },
       rank: 1,
@@ -102,7 +102,7 @@ export const toxicology: MysticSphere = {
           The second escalation also deals \\damagerankthreelow.
         `,
         targeting: `
-          Make an attack vs. Fortitude with a \\plus2 accuracy bonus against up to two living creatures within \\medrange.
+          Make an attack vs. Fortitude with a \\plus2 accuracy bonus against up to two creatures within \\medrange.
         `,
       },
       rank: 2,
@@ -125,7 +125,7 @@ export const toxicology: MysticSphere = {
           It deals \\damagerankthreelow immediately and with each escalation.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one living creature within \\medrange.
+          Make an attack vs. Fortitude against one creature within \\medrange.
         `,
       },
       rank: 2,
@@ -146,7 +146,7 @@ export const toxicology: MysticSphere = {
           The second escalation also ends the poison.
         `,
         targeting: `
-          Make an attack vs. Fortitude with a \\plus4 accuracy bonus against one living creature within \\medrange.
+          Make an attack vs. Fortitude with a \\plus4 accuracy bonus against one creature within \\medrange.
         `,
       },
       rank: 3,
@@ -166,7 +166,7 @@ export const toxicology: MysticSphere = {
           It deals \\damagerankfivelow immediately and with each escalation.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one living creature within \\medrange.
+          Make an attack vs. Fortitude against one creature within \\medrange.
         `,
       },
       rank: 4,
@@ -186,7 +186,7 @@ export const toxicology: MysticSphere = {
           It deals \\damageranksixlow immediately and with each escalation.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one living creature within \\medrange.
+          Make an attack vs. Fortitude against one creature within \\medrange.
         `,
       },
       rank: 5,
@@ -210,7 +210,7 @@ export const toxicology: MysticSphere = {
           The second escalation also ends the poison.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one living creature within \\medrange.
+          Make an attack vs. Fortitude against one creature within \\medrange.
         `,
       },
       rank: 1,
@@ -231,7 +231,7 @@ export const toxicology: MysticSphere = {
           The second escalation also ends the poison.
         `,
         targeting: `
-          Make an attack vs. Fortitude with a \\minus3 accuracy penalty against one living creature within \\medrange.
+          Make an attack vs. Fortitude with a \\minus3 accuracy penalty against one creature within \\medrange.
         `,
       },
       rank: 2,
@@ -251,7 +251,7 @@ export const toxicology: MysticSphere = {
           It deals \\damagerankthreelow immediately and with each escalation.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one living creature within \\medrange.
+          Make an attack vs. Fortitude against one creature within \\medrange.
         `,
       },
       rank: 4,
@@ -497,13 +497,14 @@ export const toxicology: MysticSphere = {
       cost: 'One \\glossterm{fatigue level} from the target.',
       // +1dr for short range, +1dr for healing bonus, so dr3.
       effect: `
-        Choose yourself or a living \\glossterm{ally} within \\shortrange.
+        Choose yourself or an \\glossterm{ally} within \\shortrange.
         The target regains \\hprankthree.
         In addition, it removes all \\glossterm{poisons} affecting it and becomes \\briefly \\glossterm{immune} to poisons.
       `,
       rank: 1,
       roles: ['healing', 'exertion'],
       scaling: 'healing',
+      tags: ['Life'],
     },
 
     {
@@ -517,6 +518,7 @@ export const toxicology: MysticSphere = {
       rank: 4,
       scaling: 'healing',
       roles: ['healing', 'exertion'],
+      tags: ['Life'],
     },
 
     {
@@ -524,7 +526,7 @@ export const toxicology: MysticSphere = {
 
       cost: 'Two \\glossterm{fatigue levels} from the target.',
       effect: `
-        Choose yourself or a living \\glossterm{ally} you \\glossterm{touch}.
+        Choose yourself or an \\glossterm{ally} you \\glossterm{touch}.
         The target removes one of its \\glossterm{vital wounds}.
         If it is unconscious, you choose which vital wound is removed.
         Then, it gains a \\glossterm{vital wound} that imposes a -2 penalty to its Fortitude defense (see \\tref{Vital Wound Effects}).
@@ -554,10 +556,11 @@ export const toxicology: MysticSphere = {
 
       cost: 'One \\glossterm{fatigue level} from the target.',
       effect: `
-        You or a living \\glossterm{ally} you \\glossterm{touch} can remove a \\glossterm{condition}.
+        You or an \\glossterm{ally} you \\glossterm{touch} can remove a \\glossterm{condition}.
       `,
       rank: 3,
       roles: ['cleanse', 'exertion'],
+      tags: ['Life'],
     },
 
     // Frightened by you is 2.1 EA, or 1.4 EA with move action removal, which is r1.
@@ -574,7 +577,7 @@ export const toxicology: MysticSphere = {
           Dropping \\prone as part of this action gives a +5 bonus to this check.
         `,
         targeting: `
-          Make an attack vs. Mental against up to two living creatures within \\shortrange.
+          Make an attack vs. Mental against up to two creatures within \\shortrange.
         `,
       },
       roles: ['softener'],
@@ -596,7 +599,7 @@ export const toxicology: MysticSphere = {
           Dropping \\prone as part of this action gives a +5 bonus to this check.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one living creature within \\shortrange.
+          Make an attack vs. Fortitude against one creature within \\shortrange.
         `,
       },
       rank: 3,
@@ -632,7 +635,7 @@ export const toxicology: MysticSphere = {
       roles: ['attune', 'healing'],
       scaling: 'healing',
       type: 'Attune (deep)',
-      tags: ['Manifestation'],
+      tags: ['Life', 'Manifestation'],
     },
 
     {
@@ -650,7 +653,7 @@ export const toxicology: MysticSphere = {
       // At rank 6, base HP is 126, so 94 total, or 19/turn.
       scaling: { special: 'The healing increases by 2d6 for each rank beyond 5.' },
       type: 'Attune (deep)',
-      tags: ['Manifestation'],
+      tags: ['Life', 'Manifestation'],
     },
 
     // Self-only brace is 0.5 EA.
@@ -661,7 +664,7 @@ export const toxicology: MysticSphere = {
       effect: `
         You create a potion in an empty vial or similar container within \\shortrange.
         A creature can drink the potion as a \\glossterm{minor action} using a \\glossterm{free hand}.
-        When a living creature drinks the potion, it becomes \\briefly \\braced.
+        When a creature drinks the potion, it becomes \\briefly \\braced.
       `,
       rank: 4,
       roles: ['boon'],
@@ -676,7 +679,7 @@ export const toxicology: MysticSphere = {
       effect: `
         You create a potion in an empty vial or similar container within \\shortrange.
         A creature can drink the potion as a \\glossterm{minor action} using a \\glossterm{free hand}.
-        When a living creature drinks the potion, it becomes \\empowered that turn.
+        When a creature drinks the potion, it becomes \\empowered that turn.
       `,
       rank: 1,
       roles: ['boon'],
@@ -692,7 +695,7 @@ export const toxicology: MysticSphere = {
       effect: `
         You create a potion in an empty vial or similar container within \\shortrange.
         A creature can drink the potion as a \\glossterm{minor action} action using a \\glossterm{free hand}.
-        When a living creature drinks the potion, it becomes \\focused that turn.
+        When a creature drinks the potion, it becomes \\focused that turn.
       `,
       rank: 2,
       roles: ['boon'],
@@ -707,7 +710,7 @@ export const toxicology: MysticSphere = {
       effect: `
         You create a potion in an empty vial or similar container within \\shortrange.
         A creature can drink the potion as a \\glossterm{minor action} using a \\glossterm{free hand}.
-        When a living creature drinks the potion, it becomes \\maximized and \\stunned until its next turn.
+        When a creature drinks the potion, it becomes \\maximized and \\stunned until its next turn.
         When that effect ends, it takes \\damagerankfivelow.
       `,
       rank: 5,
@@ -723,7 +726,7 @@ export const toxicology: MysticSphere = {
       effect: `
         You create a potion in an empty vial or similar container within \\shortrange.
         A creature can drink the potion as a \\glossterm{minor action} using a \\glossterm{free hand}.
-        When a living creature drinks the potion, it becomes \\primed and \\stunned until its next turn.
+        When a creature drinks the potion, it becomes \\primed and \\stunned until its next turn.
         When that effect ends, it takes \\damageranksevenlow.
       `,
       rank: 7,
@@ -743,13 +746,13 @@ export const toxicology: MysticSphere = {
         `,
         halfOnMiss: true,
         targeting: `
-          Make an attack vs. Fortitude against all living creatures in a \\medarea radius \\glossterm{zone} within \\medrange.
+          Make an attack vs. Fortitude against all creatures in a \\medarea radius \\glossterm{zone} within \\medrange.
         `,
       },
       rank: 4,
       roles: ['clear', 'flash'],
       scaling: 'damage',
-      tags: ['Manifestation'],
+      tags: ['Life', 'Manifestation'],
     },
     // TODO: add a version of the Toxic weapon effect as a spell in this sphere.
     // What differentiates that spell from the generic weapon property?

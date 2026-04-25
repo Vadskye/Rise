@@ -224,7 +224,7 @@ export const polymorph: MysticSphere = {
       attack: {
         hit: `
           \\damagerankseven, and any \\glossterm{extra damage} is doubled.
-          This damage is \\maximized if the target is a \\trait{nonliving} \\glossterm{object}.
+          This damage is \\maximized if the target is an object or \\trait{static} creature.
           If this damage reduces an object to zero hit points, or gives a creature a vital wound that knocks it unconscious, the target is completely disintegrated.
           Only a fine dust remains.
           A disintegrated creature's equipment is unaffected.
@@ -316,15 +316,15 @@ export const polymorph: MysticSphere = {
       name: 'Mending',
 
       cost: 'One \\glossterm{fatigue level} from the target if it is a creature.',
-      // dr3 from short range. No healing buff since this is more versatile and in an odd
-      // sphere for healing.
+      // dr4 from touch range. No healing buff since this is in an odd sphere for
+      // healing and lacks the normal Life tag.
       effect: `
-        Chose yourself, or one \\glossterm{ally} or \\glossterm{unattended} object within \\shortrange.
-        The target regains 1d8 \\glossterm{hit points} \\plus1 per \\glossterm{power}.
+        Chose yourself, or one \\glossterm{ally} or \\glossterm{unattended} object you \\glossterm{touch}.
+        The target regains \\hprankfour.
       `,
       rank: 2,
       roles: ['healing', 'exertion'],
-      scaling: { special: 'The recovery increases by +2 for each rank beyond 2.' },
+      scaling: 'healing'
     },
 
     {
@@ -332,11 +332,11 @@ export const polymorph: MysticSphere = {
 
       functionsLike: {
         name: 'mending',
-        exceptThat: 'the recovery increases to 2d8 plus 1d8 per 3 power.',
+        exceptThat: 'the recovery increases to \\hprankseven.',
       },
       rank: 5,
       roles: ['healing', 'exertion'],
-      scaling: { special: 'The recovery increases by 1d8 for each rank beyond 5.' },
+      scaling: 'healing',
     },
 
     {
@@ -383,12 +383,13 @@ export const polymorph: MysticSphere = {
           The target takes \\damagerankone at the end of its next turn.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one living creature within \\shortrange.
+          Make an attack vs. Fortitude against one creature within \\shortrange.
         `,
       },
       rank: 1,
       roles: ['burn', 'execute'],
       scaling: 'damage',
+      tags: ['Blood'],
     },
 
     {
@@ -402,6 +403,7 @@ export const polymorph: MysticSphere = {
       rank: 4,
       roles: ['burn', 'execute'],
       scaling: 'damage',
+      tags: ['Blood'],
     },
 
     {

@@ -614,8 +614,7 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 5,
             description: r"
-                You are no longer considered a living creature for the purpose of attacks against you.
-                This means that attacks which only affect living creatures have no effect against you.
+                You are immune to \atLife attacks.
                 In addition, you no longer take penalties to your attributes for aging, and cannot be magically aged.
                 You still die of old age when your time is up.
             ",

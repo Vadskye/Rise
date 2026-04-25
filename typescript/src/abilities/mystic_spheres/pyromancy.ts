@@ -921,12 +921,13 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
           Any \\glossterm{extra damage} applies to both the initial damage and the delayed damage.
         `,
         targeting: `
-          Make an attack vs. Fortitude with a -4 accuracy penalty against a living creature within \\medrange.
+          Make an attack vs. Fortitude with a -4 accuracy penalty against a creature within \\medrange.
         `,
       },
       rank: 3,
       roles: ['burn'],
       scaling: 'damage',
+      tags: ['Life'],
     },
     {
       name: 'Mighty Living Pyre',
@@ -939,12 +940,13 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
           Any \\glossterm{extra damage} applies to both the initial damage and the delayed damage.
         `,
         targeting: `
-          Make an attack vs. Fortitude with a -4 accuracy penalty against a living creature within \\medrange.
+          Make an attack vs. Fortitude with a -4 accuracy penalty against a creature within \\medrange.
         `,
       },
       rank: 6,
       roles: ['burn'],
       scaling: 'damage',
+      tags: ['Life'],
     },
 
     {
