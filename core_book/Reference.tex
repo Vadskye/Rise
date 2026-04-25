@@ -75,6 +75,9 @@
   A \glossterm{difficulty value} 5 Knowledge (items) or relevant Craft check reveals that a manifested item is a magical fabrication rather than an ordinary item.
   When something created by a Manifestation ability is destroyed or killed, or when the duration of the ability that created it ends, it disappears without a trace.
 
+  % Abilities are tagged as Physical if it seems like they shouldn't have any effect on incorporeal creatures.
+  % Note that abilities that make strike are *not* generally tagged as physical.
+  % Strikes are normally tagged as Physical themselves, but some special abilities make strike not be Physical, so we rely on the strike itself to be tagged.
   \abilitytagdef{Physical} Physical abilities affect physical objects and creatures.
   They do not affect and cannot be used by \trait{incorporeal} creatures.
 
@@ -90,6 +93,9 @@
 
   \abilitytagdef{Size-Based} Size-Based abilities are limited based on your own size.
   They have no effect on creatures or objects that are two or more size categories larger than you.
+
+  \abilitytagdef{Soul} Soul abilities manipulate souls.
+  They have no effect on \trait{soulless} creatures and objects.
 
   \abilitytagdef{Speech} Speech abilities use words to achieve their ends.
   You must specify a language when using a Speech effect, and the language must be one you know (or have memorized the correct words to say). They have no effect on objects or creatures that do not understand the chosen language.
@@ -415,7 +421,6 @@
   A floating creature above the height limit for its fly speed falls down until its fly speed becomes functional again, which does not cause it to take \glossterm{falling damage}.
   Some creatures can freely choose whether they float, potentially allowing them to glide.
 
-
   \traitdef{Immortal}{immortal}
   An immortal creature can never die of old age.
   Most immortal creatures can still be killed and need to take actions to sustain their life, such as eating and drinking.
@@ -511,6 +516,7 @@
 
   \traitdef{Soulless}{soulless}
   A soulless creature does not have a soul.
+  It is immune to \atSoul abilities.
   Although it may have a mind capable of intelligent thought and emotion, its opinions and thinking patterns are utterly fixed, without possibility of change.
   If it dies, it cannot be \glossterm{resurrected}.
 

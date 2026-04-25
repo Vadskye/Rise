@@ -238,6 +238,7 @@ export const rituals: RitualDefinition[] = [
     rank: 3,
     roles: ['narrative'],
     spheres: ['Astromancy', 'Prayer', 'Revelation', 'Vivimancy'],
+    tags: ['Soul'],
   },
   {
     name: 'Extended Commune with the Dead',
@@ -254,6 +255,7 @@ export const rituals: RitualDefinition[] = [
     tags: [],
     usageTime: '24 hours',
     spheres: ['Astromancy', 'Prayer', 'Revelation', 'Vivimancy'],
+    tags: ['Soul'],
   },
   {
     name: 'Limited Air Supply',
@@ -2266,6 +2268,7 @@ export const rituals: RitualDefinition[] = [
     rank: 3,
     roles: ['narrative'],
     spheres: ['Astromancy', 'Prayer', 'Revelation', 'Vivimancy'],
+    tags: ['Soul'],
   },
 
   {
@@ -2283,6 +2286,7 @@ export const rituals: RitualDefinition[] = [
     rank: 6,
     roles: ['narrative'],
     spheres: ['Astromancy', 'Prayer', 'Revelation', 'Vivimancy'],
+    tags: ['Soul'],
   },
 
   {
@@ -2312,6 +2316,7 @@ export const rituals: RitualDefinition[] = [
     rank: 3,
     roles: ['narrative'],
     spheres: ['Chronomancy', 'Electromancy', 'Prayer', 'Toxicology', 'Vivimancy'],
+    tags: ['Soul'],
   },
 
   {
@@ -2328,6 +2333,7 @@ export const rituals: RitualDefinition[] = [
     rank: 5,
     roles: ['narrative'],
     spheres: ['Chronomancy', 'Prayer', 'Toxicology', 'Vivimancy'],
+    tags: ['Soul'],
   },
 
   {
@@ -2344,6 +2350,7 @@ export const rituals: RitualDefinition[] = [
     rank: 7,
     roles: ['narrative'],
     spheres: ['Chronomancy', 'Prayer', 'Vivimancy'],
+    tags: ['Soul'],
   },
 
   {
@@ -2382,7 +2389,7 @@ export const rituals: RitualDefinition[] = [
           \\end{dtabularx}
       \\end{columntable}
     `,
-    tags: ['Creation'],
+    tags: ['Creation', 'Soul'],
     spheres: ['Chronomancy', 'Prayer', 'Vivimancy'],
   },
 
@@ -2403,6 +2410,7 @@ export const rituals: RitualDefinition[] = [
     rank: 3,
     roles: ['narrative'],
     spheres: ['Prayer', 'Thaumaturgy', 'Vivimancy'],
+    tags: ['Soul'],
   },
 
   {
@@ -2417,6 +2425,7 @@ export const rituals: RitualDefinition[] = [
     rank: 5,
     roles: ['narrative'],
     spheres: ['Prayer', 'Thaumaturgy', 'Vivimancy'],
+    tags: ['Soul'],
   },
 
   // TODO: prohibit druid necromancers???
@@ -2443,6 +2452,7 @@ export const rituals: RitualDefinition[] = [
     rank: 3,
     roles: ['narrative'],
     spheres: ['Vivimancy'],
+    tags: ['Soul'],
   },
   {
     name: 'Command Undead',
@@ -2461,6 +2471,7 @@ export const rituals: RitualDefinition[] = [
     `,
     rank: 3,
     roles: ['attune'],
+    tags: ['Soul'],
     type: 'Attune (deep)',
     spheres: ['Vivimancy'],
   },
@@ -2491,6 +2502,7 @@ export const rituals: RitualDefinition[] = [
     },
     rank: 5,
     roles: ['attune'],
+    tags: ['Soul'],
     type: 'Attune (deep)',
     spheres: ['Vivimancy'],
   },
