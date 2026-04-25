@@ -64,17 +64,6 @@ export const ripAndTear: CombatStyle = {
     },
 
     {
-      name: 'Hamstring',
-
-      effect: `
-        Make a melee \\glossterm{strike} that deals double damage.
-        \\injury The target becomes \\slowed as a \\glossterm{condition}.
-      `,
-      rank: 5,
-      roles: ['maim'],
-    },
-
-    {
       name: 'Two-Weapon Rend',
 
       effect: `
