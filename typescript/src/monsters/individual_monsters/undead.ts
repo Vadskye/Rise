@@ -631,7 +631,7 @@ function addSkeletons(grimoire: Grimoire) {
             shield: 'standard shield',
           });
           creature.addWeaponMult('lance');
-          creature.addManeuver('Rushdown', { weapon: 'lance' });
+          creature.addManeuver('Charge', { weapon: 'lance' });
         },
       ],
       [

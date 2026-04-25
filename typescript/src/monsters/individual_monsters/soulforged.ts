@@ -249,7 +249,7 @@ function addDemonspawn(grimoire: Grimoire) {
 
           creature.addWeaponMult('fists');
           creature.addManeuver('Gutshot', { usageTime: 'elite', weapon: 'fists' });
-          creature.addManeuver('Rushdown', { usageTime: 'elite', weapon: 'fists' });
+          creature.addManeuver('Charge', { usageTime: 'elite', weapon: 'fists' });
           creature.addManeuver('Whirlwind', { usageTime: 'elite', weapon: 'fists' });
         },
       ],

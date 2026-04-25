@@ -418,7 +418,7 @@ export function addBeasts(grimoire: Grimoire) {
     });
 
     creature.addWeaponMult('bite');
-    creature.addManeuver('Mighty Rushdown', { displayName: 'Rushdown', weapon: 'bite' });
+    creature.addManeuver('Mighty Charge', { displayName: 'Charge', weapon: 'bite' });
 
     creature.addCustomManeuver({
       effect: `
