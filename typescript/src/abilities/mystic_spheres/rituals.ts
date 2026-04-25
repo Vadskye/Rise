@@ -252,7 +252,6 @@ export const rituals: RitualDefinition[] = [
     },
     rank: 6,
     roles: ['narrative'],
-    tags: [],
     usageTime: '24 hours',
     spheres: ['Astromancy', 'Prayer', 'Revelation', 'Vivimancy'],
     tags: ['Soul'],
