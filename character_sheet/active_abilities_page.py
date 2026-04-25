@@ -690,7 +690,7 @@ def universal_abilities() -> str:
             universal_ability_button(
                 "Escape Grapple",
                 """
-                    Make a brawling attack against any number of creatures that you are grappled by. The defense of each creature is equal to the result of its maintain grapple ability. If a creature did not use that ability during the current round, its defense against this ability is 0.
+                    Make a brawling attack vs. Brawn against any number of creatures that you are grappled by.
                     For each target, if you hit that target with this attack, it stops being grappled by you and you stop being grappled by it.
                 """,
                 attack={"accuracy": "@{brawling_accuracy}", "defense": "Special", "tags": ["Brawling"]},
@@ -709,13 +709,6 @@ def universal_abilities() -> str:
                     As part of movement, you can jump up to [[@{{jump_distance}}]] feet horizontally, and half that distance vertically.
                     You cannot jump farther than your speed.
                 """,
-            ),
-            universal_ability_button(
-                "Maintain Grapple",
-                """
-                    Make a brawling attack using a free hand. This attack has no immediate effect. The attack result determines how difficult it is for enemies to escape your grapple.
-                """,
-                attack={"accuracy": "@{brawling_accuracy}", "defense": "None", "tags": ["Brawling"]},
             ),
             universal_ability_button(
                 "Ready Reaction",

@@ -649,7 +649,6 @@
       Desperate Exertion & Non-action       & Reroll an attack or check with a \plus2 bonus & \tdash                                         \\
       Escape Grapple     & Standard         & Stop being grappled                           & \abilitytag{Brawling}                          \\
       Grapple            & Standard         & Start grappling with a foe                    & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
-      Maintain Grapple   & Free action      & Continue grappling with a foe                 & \abilitytag{Brawling}                          \\
       Ready Reaction     & Standard         & Ready an action                               & \tdash                                         \\
       Recover            & Standard         & Regain HP, remove conditions                  & \tdash                                         \\
       Run                & Standard         & Triple your available movement                & \tdash                                         \\
@@ -687,10 +686,8 @@
   \begin{activeability}{Escape Grapple}{Standard action}
     \abilitytags \abilitytag{Brawling}
     \rankline
-    Make a \glossterm{brawling attack} against any number of creatures that you are grappled by.
+    Make a \glossterm{brawling attack} vs. Brawn against any number of creatures that you are grappled by.
     You can use the Flexibility skill in place of your brawling accuracy (see \pcref{Flexibility}).
-
-    The defense of each creature is equal to the attack result of its \ability{maintain grapple} ability, or 0 if it did not use that ability.
     % TODO: awkward wording
     For each target, if you hit that target with this attack, it stops being grappled by you and you stop being grappled by it.
   \end{activeability}
@@ -703,18 +700,6 @@
     \hit You and the target are \grappled by each other.
     For details, see \pcref{Grappling}.
     \crit You also control the grapple (see \pcref{Controlling a Grapple}).
-  \end{activeability}
-
-  \begin{activeability}{Maintain Grapple}{\glossterm{Free action}}
-    \abilitytags \abilitytag{Brawling}
-    \rankline
-    % TODO: Awkward wording
-    You can use this ability once per turn while you are grappling another creature.
-
-    Make a \glossterm{brawling attack} against each creature that you are grappling (see \pcref{Grappling}).
-    This attack has no immediate effect.
-    The result of this roll \briefly determines how difficult it is for a creature to escape the grapple using the \textit{escape grapple} ability.
-    If you do not use this ability while you are in a grapple, creatures can easily escape the grapple with the \textit{escape grapple} ability.
   \end{activeability}
 
   \begin{activeability}{Ready Reaction}{Standard action}
@@ -810,7 +795,8 @@
       \item You cannot move unless you \glossterm{push} all creatures grappling you, such as with the \ability{shove} ability (see \pcref{Shove}).
         In addition, you cannot \glossterm{push} a creature grappling with you so it stops being adjacent to you.
         However, you can use the \ability{shove} ability to affect creatures you are grappling with as a \glossterm{move action} instead of as a standard action.
-      \item You can use the \ability{escape grapple} and \ability{maintain grapple} abilities to stop or continue grappling (see \pcref{Universal Combat Abilities}).
+      \item You can use the \ability{escape grapple} ability to stop grappling (see \pcref{Universal Combat Abilities}).
+      \item You can attempt to release the grapple as a \glossterm{free action}. If each other creature you are grappling with used \ability{escape grapple} ability or attempted to release the grapple in this way since your last turn, the grapple immediately ends for all participants. Otherwise, it continues.
     \end{raggeditemize}
 
     \subsubsection{Controlling a Grapple}\label{Controlling a Grapple}
@@ -819,7 +805,7 @@
 
       If you control a grapple, you gain two benefits.
       First, you do not take the normal \minus2 penalty to Armor and Reflex defenses for being in a grapple.
-      Second, you can escape the grapple as a \glossterm{free action}, without having to use the normal \ability{escape grapple} ability.
+      Second, you can release the grapple as a \glossterm{free action} regardless of whether the other participants want to leave the grapple.
 
       To take control of an existing grapple, you can use the \textit{grapple} ability.
       If you hit against the controlling creature, no creature has control of the grapple.
