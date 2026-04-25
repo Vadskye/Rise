@@ -62,6 +62,7 @@ function replaceGenericTerms(
   );
 
   replace(/\byour next action\b/g, 'its next action');
+  replace(/\byour next turn\b/g, 'its next turn');
   replace(/\byour attack result\b/g, 'the attack result');
   replace(/\byou (touch\b|\\glossterm{touch})/g, 'it \\glossterm{touches}');
   replace(/\byou are\b/g, 'it is');
@@ -136,6 +137,10 @@ function replaceGenericTerms(
   replace(/\bChoose yourself or\b/g, 'The $name chooses itself or');
   replace(/\byou can choose\b/g, 'the $name can choose');
   replace(/\byour (allies\b|\\glossterm{allies})/g, 'its allies');
+  replace(
+    /\byour (available movement\b|\\glossterm{available movement})/g,
+    'its available movement',
+  );
   replace(/\$name(.*?)the \$name\b/g, (_, mid) => `$name${mid}it`);
   replace(/\bYou must be (alive|\\glossterm{alive}) to (cast this spell|use this ability)\./g, '');
   replace(/\bthe \$name, the \$name\b/g, 'the $name, it');
@@ -444,6 +449,8 @@ export function restructureStrikeAbility(monster: Creature, ability: StrikeActiv
   // *before* processing it makes some of our processing easier. For example, we can
   // reliably use `$name` in regex rather than something like `(you|$name)`.
   ability.effect = replaceGenericTerms(monster, ability, ability.effect);
+  // Normalize whitespace
+  ability.effect = ability.effect.replace(/\s+/g, ' ').trim();
 
   // Perform generic replacements that matter regardless of which hit/injury/targeting
   // segment they correspond to.

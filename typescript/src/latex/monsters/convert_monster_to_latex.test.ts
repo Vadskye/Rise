@@ -14,10 +14,13 @@ t.test('convertMonsterToLatex', (t) => {
       size: 'medium',
     });
     const latexOutput = convertMonsterToLatex(creature);
-    t.ok(latexOutput.includes('monsubsection{Test Monster}{Level 1 Warrior}{Medium humanoid}'));
-    t.ok(latexOutput.includes('\\begin{monsterstatistics}'));
-    t.ok(latexOutput.includes('\\end{monsterstatistics}'));
-    t.ok(latexOutput.includes('\\monsterabilitiesheader{Test Monster}'));
+    t.match(
+      latexOutput,
+      'monsubsection{Test Monster}{Level 1 Warrior}{Medium Natural Humanoid}',
+    );
+    t.match(latexOutput, '\\begin{monsterstatistics}');
+    t.match(latexOutput, '\\end{monsterstatistics}');
+    t.match(latexOutput, '\\monsterabilitiesheader{Test Monster}');
     t.end();
   });
   t.end();
@@ -45,8 +48,8 @@ t.test('genKnowledgeText', (t) => {
       genKnowledgeText(creature.getKnowledgeResultConfig()),
       `
       \\monsterknowledgeheader{Test Monster}
-      \\par Souls DV 10: Easy result
-\\par Souls DV 20: Hard result
+      \\par Local DV 10: Easy result
+\\par Local DV 20: Hard result
     `,
     );
     t.end();
