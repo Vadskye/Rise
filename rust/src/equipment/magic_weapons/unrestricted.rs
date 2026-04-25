@@ -17,7 +17,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         rank: 3,
         short_description: String::from(r"Grants +2 accuracy when you injure a foe"),
         description: String::from(r"
-            Whenever you \glossterm{injure} a living creature with a strike using this weapon, you \glossterm{briefly} gain a +2 accuracy bonus with \glossterm{strikes} against that creature.
+            Whenever you \glossterm{injure} a \trait{blooded} creature with a strike using this weapon, you \glossterm{briefly} gain a +2 accuracy bonus with \glossterm{strikes} against that creature.
             As normal, this bonus does not stack with itself, even if you injure the same creature multiple times.
         "),
         upgrades: vec![
@@ -262,13 +262,13 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         rank: 2,
         short_description: String::from(r"Steals HP"),
         description: String::from(r"
-            The first time each turn that you \glossterm{injure} a living creature other than yourself with a \glossterm{strike} using this weapon, you regain 1d6 hit points.
+            The first time each turn that you \glossterm{injure} a \trait{blooded} creature other than yourself with a \glossterm{strike} using this weapon, you regain 1d6 hit points.
         "),
         tags: vec![AbilityTag::Attune(AttuneType::Deep)],
         upgrades: vec![
             // -1dr for no downsides or requirements and the healing effect
             ItemUpgrade::new(4, "Deals +2 damage and steals HP", r"
-                The weapon also deals 2 \glossterm{extra damage} to living creatures, and the healing increases to 2d10.
+                The weapon also deals 2 \glossterm{extra damage} to blooded creatures, and the healing increases to 2d10.
             "),
             ItemUpgrade::new(6, "Deals +1d6 damage and steals HP", r"
                 The \glossterm{extra damage} increases to 1d6, and the healing increases to 5d10.

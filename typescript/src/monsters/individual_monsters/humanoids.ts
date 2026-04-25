@@ -861,9 +861,8 @@ function addNecromancers(grimoire: Grimoire) {
           creature.addPassiveAbility({
             name: 'Life Suppression',
             effect: `
-            Although the $name is alive, it is not considered a living creature for the purpose of attacks against it.
-            This means that attacks which only affect living creatures have no effect on it.
-          `,
+              The $name is immune to \atLife attacks.
+            `,
           });
 
           // Immediate damage is standard action, debuff / buildup is elite action
@@ -879,9 +878,10 @@ function addNecromancers(grimoire: Grimoire) {
               targeting: `
               You must have a \\glossterm{free hand} to cast this spell.
 
-              Make an attack vs. Fortitude against a living creature you \\glossterm{touch}.
+              Make an attack vs. Fortitude against a creature you \\glossterm{touch}.
             `,
             },
+            tags: ['Life'],
           });
 
           creature.addSpell('Circle of Death', { usageTime: 'elite' });
@@ -935,10 +935,11 @@ function addNecromancers(grimoire: Grimoire) {
                 You regain \\hprankeight.
               `,
               targeting: `
-                Make an attack vs. Fortitude against one living creature within \\medrange.
+                Make an attack vs. Fortitude against one creature within \\medrange.
               `,
             },
             rank: 6,
+            tags: ['Life'],
           });
         },
       ],
