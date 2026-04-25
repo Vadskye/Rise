@@ -728,7 +728,8 @@ def universal_abilities() -> str:
             universal_ability_button(
                 "Run",
                 """
-                    You add twice your speed to your available movement.
+                    You add your speed to your available movement.
+                    At the start of your next turn, you add your speed to your available movement again.
                 """,
             ),
             universal_ability_button(
