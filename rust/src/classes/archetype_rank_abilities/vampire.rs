@@ -8,11 +8,8 @@ pub fn vampire<'a>() -> Vec<RankAbility<'a>> {
             name: "Blood Drain",
             complexity: 2,
             description: r"
-                Whenever you \glossterm{injure} a creature with blood using your bite natural weapon, you can increase your \glossterm{fatigue level} by one.
+                Whenever you \glossterm{injure} a \trait{blooded} creature with blood using your bite natural weapon, you can increase your \glossterm{fatigue level} by one.
                 If you do, you regain \glossterm{hit points} equal to the hit points the target lost from the strike, ignoring negative hit points and any damage increase from critical hits.
-
-                Unless otherwise specified, all living creatures have blood.
-                Some nonliving creatures, such as vampires, also have blood.
             ",
             is_magical: false,
             rank: 1,
@@ -67,14 +64,13 @@ pub fn vampire<'a>() -> Vec<RankAbility<'a>> {
               \begin{magicalattuneability}{Creature of the Night}{Standard action}
                 \abilitytags \abilitytag{Attune}
                 \rankline
-                You \glossterm{shapeshift} into the form of a Tiny bat, a Medium cloud of mist, or your normal humanoid form.
+                You \glossterm{shapeshift} into the form of a Tiny bat, a Tiny rat, or your normal humanoid form.
                 \begin{raggeditemize}
                   \item Bat: While in your bat form, you gain \sense{blindsense} (120 ft.) and \sense{blindsight} (30 ft.).
                     You cannot speak and have no \glossterm{free hands}.
                     All of your normal movement modes are replaced with an average fly speed with a 60 ft. height limit.
-                  \item Mist: While in your mist form, you become \trait{floating}, \trait{intangible}, and \trait{legless}.
-                    You cannot speak and have no \glossterm{free hands}.
-                    All of your normal movement modes are replaced with a slow \glossterm{fly speed} with a 30 foot \glossterm{height limit} (see \pcref{Flight}).
+                  \item Rat: While in your rat form, you gain \trait{scent} and \trait{low-light vision}.
+                    You cannot speak and have no \glossterm{free hands}, but you have four legs, making you \trait{quadrupedal}.
                 \end{raggeditemize}
 
                 In either non-humanoid form, you are unable to take any standard actions, but you can still take \glossterm{move actions} in place of standard actions.

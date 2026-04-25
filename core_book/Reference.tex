@@ -11,7 +11,7 @@
   For details, see \pcref{Attuned Abilities}.
 
   \abilitytagdef{Auditory} Auditory abilities use sound to cause their effects.
-  Covering or plugging your ears makes you \impervious to Auditory attacks.
+  Covering or plugging your ears makes you \resistant to Auditory attacks.
   Objects and \deafened creatures are immune to Auditory abilities.
   Auditory abilities only require a DV 0 Awareness check to notice.
 
@@ -19,6 +19,9 @@
   They create a powerful magical resonance around themselves that inhibits other barriers from being formed.
   % TODO: awkward wording
   Any part of a Barrier ability that would extend within 5 feet of an already active Barrier ability is not created, unless the new barrier simply extends an already existing wall along its length.
+
+  \abilitytagdef{Blood} Blood abilities manipulate the target's blood.
+  They only work on \trait{blooded} creatures.
 
   \abilitytagdef{Brawling} Brawling abilities rely on brute force in hand to hand combat.
   Many Brawling abilities use your \glossterm{brawling accuracy} instead of your normal \glossterm{accuracy}.
@@ -28,7 +31,7 @@
   \abilitytagdef{Clinch} You gain a \plus2 accuracy bonus with this ability against creatures that are \grappled by you or are grappling you.
   Clinch is also a \glossterm{weapon tag}.
 
-  \abilitytagdef{Cold} Cold abilities draw energy out of the environment to cause their effects.
+  \abilitytagdef{Cold} Cold abilities draw energy out of their targets to cause their effects.
 
   \abilitytagdef{Compulsion} Compulsion abilities forcibly alter a creature's actions, but do not necessarily affect its opinions or personality.
   They have no effect on anything without a mind.
@@ -64,10 +67,19 @@
   \abilitytagdef{Keen} You gain a \plus2 \glossterm{accuracy} bonus with this ability for the purpose of determining whether you get a \glossterm{critical hit}.
   Keen is also a \glossterm{weapon tag}.
 
-  \abilitytagdef{Manifestation} Manifestation abilities create temporary constructs formed from raw magical energy.
-  Objects and creatures created with Manifestation abilities seem real on the surface, but they have no internal structure.
+  \abilitytagdef{Life} Life abilities only affect living things.
+  Undead and nonliving objects are immune to Life abilities.
+
+  \abilitytagdef{Manifestation} Manifestation abilities create temporary creatures and objects formed from raw magical energy.
+  Something created with a Manifestation ability seems real on the surface, but it has no internal structure.
   A \glossterm{difficulty value} 5 Knowledge (items) or relevant Craft check reveals that a manifested item is a magical fabrication rather than an ordinary item.
-  When an object or creature created by a Manifestation ability is destroyed or killed, or when the duration of the ability that created it ends, it disappears without a trace.
+  When something created by a Manifestation ability is destroyed or killed, or when the duration of the ability that created it ends, it disappears without a trace.
+
+  % Abilities are tagged as Physical if it seems like they shouldn't have any effect on incorporeal creatures.
+  % Note that abilities that make strike are *not* generally tagged as physical.
+  % Strikes are normally tagged as Physical themselves, but some special abilities make strike not be Physical, so we rely on the strike itself to be tagged.
+  \abilitytagdef{Physical} Physical abilities affect physical objects and creatures.
+  They do not affect and cannot be used by \trait{incorporeal} creatures.
 
   \abilitytagdef{Ritual} Ritual abilities have a number of shared properties.
   For details, see \pcref{Spell and Ritual Mechanics}.
@@ -81,6 +93,9 @@
 
   \abilitytagdef{Size-Based} Size-Based abilities are limited based on your own size.
   They have no effect on creatures or objects that are two or more size categories larger than you.
+
+  \abilitytagdef{Soul} Soul abilities manipulate souls.
+  They have no effect on \trait{soulless} creatures and objects.
 
   \abilitytagdef{Speech} Speech abilities use words to achieve their ends.
   You must specify a language when using a Speech effect, and the language must be one you know (or have memorized the correct words to say). They have no effect on objects or creatures that do not understand the chosen language.
@@ -113,7 +128,7 @@
   Visual abilities only require a DV 0 Awareness check to notice.
 
   Anything that cannot see a Visual effect is immune to it.
-  Simply closing your eyes only makes you \impervious to Visual effects.
+  Simply closing your eyes only makes you \resistant to Visual effects.
   Completely covering your eyes, such as with your hands or with a blindfold, makes you immune.
   Special vision abilities that replace normal vision entirely, such as \sense{blindsight} and \sense{tremorsense}, are unable to perceive Visual effects.
 
@@ -202,7 +217,8 @@
     \item You cannot move unless you \glossterm{push} all creatures grappling you, such as with the \ability{shove} ability (see \pcref{Shove}).
       In addition, you cannot \glossterm{push} a creature grappling with you so it stops being adjacent to you.
       However, you can use the \ability{shove} ability to affect creatures you are grappling with as a \glossterm{move action} instead of as a standard action.
-    \item You can use the \ability{escape grapple} and \ability{maintain grapple} abilities to stop or continue grappling (see \pcref{Universal Combat Abilities}).
+      \item You can use the \ability{escape grapple} ability to stop grappling (see \pcref{Universal Combat Abilities}).
+      \item You can attempt to release the grapple as a \glossterm{free action}. If each other creature you are grappling with used \ability{escape grapple} ability or attempted to release the grapple in this way since your last turn, the grapple immediately ends for all participants. Otherwise, it continues.
   \end{raggeditemize}
 
   \debuffdef{helpless} A helpless creature is unable to move or defend itself.
@@ -222,15 +238,6 @@
   However, being immune to a particular effect of an attack does not make you immune to the rest of the attack's effects.
   For example, if you are immune to being \stunned, you still take full damage from an attack that deals damage and stuns you.
 
-  \buffdef{impervious}
-  % Are there any other things you can be impervious to?
-  A creature can be impervious to a particular ability tag.
-  Creatures gain a \plus4 bonus to all defenses against attacks that they are impervious to.
-  In addition, they take no damage if the attack misses, even if the attack would normally deal half damage on a miss.
-  If an attack has multiple tags, a creature is impervious to the attack if it is impervious to any of the attack's tags.
-  % There shouldn't be any conditional tags like this
-  % For attacks with random effects, such as the \spell{chromatic orb} spell, determine the random effect before determining if the creature is impervious.
-
   \buffdef{maximized} A maximized creature deals maximum damage whenever it deals damage.
   This only affects damage caused directly by the creature, just like \glossterm{extra damage}.
   For example, a maximized creature that \glossterm{flings} a creature does not maximize the impact damage from the fling, if any.
@@ -242,11 +249,11 @@
   If the source of a panicked creature's fear is \glossterm{defeated}, this effect is broken.
   Being panicked is always an \abilitytag{Emotion} effect, even if it is caused by an ability that does not have that tag.
 
-  \debuffdef{partially unaware} A creature that is partially unaware knows that something is nearby, but is missing information about the exact location or nature of the creature, object, or attack it is partially unaware of.
-  Creatures take a \minus2 penalty to all defenses against attacks that they are partially unaware of.
+  \debuffdef{partially unaware} Creatures take a \minus2 penalty to all defenses against attacks that they are partially unaware of.
   They have a 50\% miss chance with \glossterm{targeted} attacks against creatures and objects that they are partially unaware of, and they can only attempt to target creatures and objects that they know the location of.
-
   These penalties do not stack with the penalties for being \unaware or \unsteady.
+
+  A creature that knows that it is in danger and is attempting to defend itself, but does not know the exact location or nature of its attackers, is partially unaware of attacks against it.
   For details, see \pcref{Awareness and Surprise}.
 
   \buffdef{primed} A primed creature automatically \glossterm{explodes} on the first die when making attack rolls (see \pcref{Exploding Dice}).
@@ -267,6 +274,15 @@
   A creature can stand up from being prone as part of a \glossterm{movement}.
   This generally requires one \glossterm{free hand}.
   Standing up from a prone position costs half of the creature's speed during that movement.
+
+  \buffdef{resistant}
+  % Are there any other things you can be resistant to?
+  A creature can be resistant to a particular ability tag.
+  Creatures gain a \plus4 bonus to all defenses against attacks that they are resistant to.
+  In addition, they take no damage if the attack misses, even if the attack would normally deal half damage on a miss.
+  If an attack has multiple tags, a creature is resistant to the attack if it is resistant to any of the attack's tags.
+  % There shouldn't be any conditional tags like this
+  % For attacks with random effects, such as the \spell{chromatic orb} spell, determine the random effect before determining if the creature is resistant.
 
   \buffdef{shielded} A shielded creature gains a \plus2 bonus to its Armor and Reflex defenses.
 
@@ -300,7 +316,7 @@
   % Are there any other kinds of vulnerabilities besides tags and silver / cold iron?
   A creature can be vulnerable to a particular ability tag or weapon special material.
   It takes a \minus4 penalty to all defenses against attacks with that tag, or attacks using weapons that it is vulnerable to.
-  If a creature would be both vulnerable and \impervious to an ability, it is treated as vulnerable and not impervious.
+  If a creature would be both vulnerable and \resistant to an ability, it is treated as vulnerable and not resistant.
   However, an immune creature is still immune.
   % For attacks with random effects, such as the \ability{sudden entropy} ability from the Entropist feat, determine the random effect before determining if the creature is vulnerable.
 
@@ -379,31 +395,24 @@
   \traitdef{Amphibious}{amphibious}
   An amphibious creature can hold its breath ten times longer than normal (see \pcref{Endurance}).
 
-  \traitdef{Animal}{animal}
-  Animals are simple, \glossterm{mundane} \creaturetype{mortals}.
-  They cannot have \magical abilities, and cannot have an Intelligence above \minus8.
-  The Creature Handling skill is more effective on animals, as indicated in that skill's description.
+  \traitdef{Blooded}{blooded}
+  A blooded creature has blood.
+  It is affected normally by \atBlood abilities.
 
-  \traitdef{Beast}{beast}
-  Beasts are \creaturetype{mortals} that are typically more complex than animals, with a maximum Intelligence of \minus5.
-  Unlike animals, they can have \magical abilities.
-  Beasts are typically found in the wilderness, and seem to naturally avoid civilized areas.
+  \traitdef{Bloodless}{bloodless}
+  A bloodless creature does not have blood.
+  It is immune to \atBlood abilities.
 
-  % TODO: should constructs regain hit points when they rest?
-  \traitdef{Construct}{construct} A construct is a creature that is made of non-sapient matter.
-  Its inanimate body is given a semblance of life and sentience by some form of magic.
-  Like other creatures, they can move and follow instructions.
-  However, they lack agency and cannot make independent decisions.
-  They are \trait{mindless}, \trait{nonliving}, and \trait{soulless}.
-  They do not need to eat, drink, or sleep.
+  \traitdef{Corporeal}{corporeal}
+  A corporeal creature has a physical body.
+  If its body is sufficiently damaged, it will die or otherwise cease functioning.
 
-  Constructs are not affected by the Medicine skill, and do not normally remove \glossterm{vital wounds} when they take a \glossterm{long rest}.
-  Instead, their vital wounds must be repaired manually.
-  This functions like \ability{accelerate recovery} ability from the Medicine skill, except that it uses an appropriate Craft skill and raw materials appropriate to the construct's construction.
+  \traitdef{Dynamic}{dynamic}
+  A dynamic creature needs to eat, drink, and sleep.
+  It heals normally when it rests, and is affected normally by the Medicine skill.
 
-  % TODO: What makes fey unique? Are they lawful or chaotic?
-  \traitdef{Fey}{fey}
-  Fey are intrinsically \magical creatures that are \vulnerable to cold iron weapons.
+  \traitdef{Ensouled}{ensouled} Ensouled creatures have \glossterm{souls}.
+  When an ensouled creature dies, the soul native to its body typically goes to an appropriate afterlife.
 
   \traitdef{Floating}{floating}
   A floating creature is only affected weakly by gravity.
@@ -412,16 +421,6 @@
   A floating creature above the height limit for its fly speed falls down until its fly speed becomes functional again, which does not cause it to take \glossterm{falling damage}.
   Some creatures can freely choose whether they float, potentially allowing them to glide.
 
-  \traitdef{Humanoid}{humanoid}
-  Humanoid creatures have two arms, two legs, and one head.
-  Most civilized creatures and societies are predominantly humanoid.
-
-  \traitdef{Ghost}{ghost}
-  A ghost is the soul of a deceased creature that lingered after death instead of proceeding to its proper afterlife.
-  Ghosts are \trait{incorporeal} and \impervious to \atCold and \atEarth abilities.
-  However, they are \vulnerable to \atFire abilities.
-  Despite being incorporeal, they are affected by even \glossterm{mundane} Fire effects.
-
   \traitdef{Immortal}{immortal}
   An immortal creature can never die of old age.
   Most immortal creatures can still be killed and need to take actions to sustain their life, such as eating and drinking.
@@ -429,41 +428,29 @@
 
   \traitdef{Incorporeal}{incorporeal}
   An incorporeal creature does not have a physical body.
-  It is both \trait{intangible} and \trait{floating}.
-  In addition, it can enter or pass through solid objects.
-  It must remain adjacent to the object's exterior at all times.
+  Being incorporeal has the following effects:
+  \begin{itemize}
+    \item Always \trait{floating}
+    \item \plus5 bonus to Stealth 
+    \item An average \glossterm{fly speed} with no \glossterm{height limit}, but no other movement modes
+    \item Cannot be \glossterm{touched}
+    \item Cannot be detected by \sense{tremorsense} or \sense{tremorsight}
+    \item Immune to \squeezing and \glossterm{difficult terrain}
+    \item Immune to \atBrawling, \atCreation, \atManifestation, \atPhysical, and all \glossterm{mundane} abilities
+    \item Unable to use any \glossterm{mundane} \atPhysical abilities
+  \end{itemize}
+
+  Incorporeal creatures ignore any other effects which would only make sense for creatures with a physical body, such as setting off pressure plates for traps.
+  They can also enter or pass through solid objects.
+  They must remain adjacent to the object's exterior at all times.
 
   While an incorporeal creature is inside of an object, it can choose whether it is completely enveloped or partially contained.
   If it is completely enveloped, it does not have \glossterm{line of sight} or \glossterm{line of effect} outside of the object, limiting its ability to attack.
   If it is partially contained, it has \glossterm{cover}, but can otherwise attack and be attacked normally.
 
-  \traitdef{Indwelt}{indwelt}
-  An indwelt is a creature that is made of non-sapient matter.
-  Its inanimate body was awakened to life by connection to an external soul.
-  Unlike constructs, indwelt have agency and true intelligence.
-
-  The soul of an indwelt has no connection to the matter that composes its body.
-  This contrasts with undead, which always maintain a connection between a body and its original soul.
-  As a result, an indwelt's connection to its physical body is weak.
-  If an indwelt is killed, it can be resurrected, but its previous body is not considered its corpse in the same way that a human's dead body is.
-  This means it cannot be resurrected by magic that uses the corpse of the deceased creature.
-
-  Indwelt are alive if their base matter is alive, but not if their base matter is dead or inorganic.
-  If they are alive, they need to eat, drink, and sleep.
-
-  \traitdef{Intangible}{intangible}
-  An intangible creature has a physical body that is gaseous or otherwise difficult to touch.
-  It cannot be \glossterm{touched}, and is never considered to be \squeezing.
-  % Should this reference Armor defense? What abilities target Armor defense that should affect a ghost?
-  % Answer: Smite, spellblade, ki monk, and so on. But it would be useful to find a way to exclude Polymorph.
-  It is \buff{immune} to \glossterm{mundane}, \atCreation, and \atManifestation abilities.
-  It gains a \plus5 bonus to Stealth and ignores the effects of abilities that only work if it has a corporeal body.
-  This includes all \abilitytag{Brawling} abilities, \glossterm{difficult terrain}, being detected by \sense{tremorsense}, setting off pressure plates, and so on.
-  It can move freely through spaces occupied by enemies, but cannot pass through solid objects.
-
-  Many intangible creatures have no Strength attribute.
-  If an intangible creature has a Strength attribute, it has some ability to manipulate the physical world despite being intangible.
-  Unless otherwise noted, an intangible creature with a Strength attribute may selectively choose whether it wants to interact with physical objects.
+  Many incorporeal creatures have no Strength attribute.
+  If an incorporeal creature has a Strength attribute, it has some ability to manipulate the physical world despite being incorporeal.
+  Unless otherwise noted, an incorporeal creature with a Strength attribute may selectively choose whether it wants to interact with physical objects.
 
   \traitdef{Invisible}{invisible}
   An invisible creature or object cannot be seen with light.
@@ -478,9 +465,7 @@
 
   \traitdef{Living}{living}
   A living thing has life, which means that it can change and adapt over time.
-  Most creatures are living, but undead and some animates are not.
-  % Is this the right place for this text?
-  Since most creatures are living, this trait is normally omitted from monster descriptions.
+  Living creatures have distinct organs in their body.
 
   \traitdef{Mindless}{mindless}
   A mindless creature lacks a normal mind.
@@ -494,27 +479,26 @@
   A mindless creature has no soul, so if it dies, it cannot be resurrected.
   Mindless creatures are immune to \abilitytag{Compulsion} and \abilitytag{Emotion} abilities.
 
+  \traitdef{Mortal}{mortal} Mortal creatures eventually die of old age.
+  Their bodies deteriorate over time.
+
   \traitdef{Multipedal}{multipedal}
   A multipedal creature typically uses more than four legs to move.
-  Multipedal creatures gain a \plus10 foot bonus to their \glossterm{speed} and a \plus5 bonus to the Balance skill.
+  Multipedal creatures gain a \plus10 foot bonus to their \glossterm{speed}, a \plus5 bonus to the Balance skill, and are immune to the \ability{trip} ability.
 
   \traitdef{Nonliving}{nonliving}
   A nonliving creature or object is neither alive nor undead.
-  It does not need to eat, drink, or sleep.
+  It is immune to \atLife effects and \atPoison effects.
+  It is unaffected by the Medicine skill, even if it is \trait{dynamic}.
 
   % \traitdef{Planebound}{planebound}
   % A planebound creature cannot leave a specific plane by any means.
   % Effects which would cause it to leave that plane have no effect on that creature.
   % Most planebound creatures are \creaturetype{soulforged} creatures from that plane.
 
-  \traitdef{Plant}{plant}
-  A plant is alive, but it does not have flesh or blood.
-  Plants are \vulnerable to \atFire abilities.
-  Some plants are creatures, but most plants are living \glossterm{objects}.
-
   \traitdef{Quadrupedal}{quadrupedal}
   A quadrupedal creature typically uses four legs to move.
-  Quadrupedal creatures gain a \plus10 foot bonus to their \glossterm{speed}.
+  Quadrupedal creatures gain a \plus10 foot bonus to their \glossterm{speed} and are \resistant to the \ability{trip} ability.
 
   \traitdef{Simple-Minded}{simple-minded}
   A simple-minded creature has an incompletely functioning mind.
@@ -523,69 +507,174 @@
   Simple-minded creatures are immune to \abilitytag{Emotion} abilities.
   However, they are \vulnerable to \abilitytag{Compulsion} attacks.
 
+  \traitdef{Sighted}{sighted}
+  A sighted creature uses light to see, typically using eyes.
+
   \traitdef{Sightless}{sightless}
-  A sightless creature cannot see, and typically lacks eyes.
-  It is permanently \blinded.
+  A sightless creature does not use light to see, making it permanently \blinded.
   Most sightless creatures have special senses, such as \sense{blindsight}, that allow them to attack and defend themselves normally.
 
   \traitdef{Soulless}{soulless}
   A soulless creature does not have a soul.
+  It is immune to \atSoul abilities.
   Although it may have a mind capable of intelligent thought and emotion, its opinions and thinking patterns are utterly fixed, without possibility of change.
   If it dies, it cannot be \glossterm{resurrected}.
 
+  \traitdef{Static}{static}
+  A static creature does not need to eat, drink, or sleep.
+  It does not regain hit points or remove vital wounds when it rests, and is unaffected by the Medicine skill.
+  Any damage it takes must be physically repaired like a damaged object using a relevant Craft skill, as described below.
+  The \glossterm{difficulty value} for these Craft checks is equal to 5 \add twice the creature's rank (minimum DV 2).
+  Unlike when creating new, the time required for these repairs is not reduced by beating the Craft DV by 10 or more.
+  \begin{itemize}
+    \item A short rest requires 10 minutes of work and a Craft check.
+    \item A long rest requires 8 hours of work and a Craft check.
+    \item Removing a vital wound requires 8 hours of work, a Craft check, and raw materials with a value one rank lower than the creature's rank (minimum rank 0, or 1 gp). This also grants the benefits of a long rest.  
+  \end{itemize}
+
   \traitdef{Swarm}{swarm}
   A swarm is a collection of smaller creatures that are mechanically treated as a single larger creature.
-  Swarms are \impervious to \glossterm{targeted} abilities and \vulnerable to \glossterm{area} abilities.
+  Swarms are \resistant to \glossterm{targeted} abilities and \vulnerable to \glossterm{area} abilities.
   They can freely share space with other non-swarm creatures, and this does not cause the swarm or the creature in its space to be \squeezing.
 
 \newpage
-\section{Creature Types}\label{Creature Tags}
+\section{Creature Origins}\label{Creature Origins}
+  % Affected by origin:
+  % mortal/immortal
+  % living/nonliving
 
-  Each creature has a type.
-  Unlike traits, which are defined above, creature tags are intrinsic properties of a creature that cannot be granted or removed temporarily by any means.
-  Each creature type has a defined narrative implication, and some creature types have special effects that are relevant in combat.
+  % Unaffected by origin:
+  % Ensouled/soulless
 
-  % TODO: weird place for this?
-  Unless otherwise noted in a creature's type or description, it is a \trait{living} creature with a body, mind, and soul.
-  It needs to eat, drink, and sleep, and it dies of old age eventually.
+  Each creature has exactly one origin.
+  Unlike traits, which are defined above, an origin is an intrinsic property of a creature that cannot be granted or removed temporarily by any means.
+  Unless otherwise specified, all creatures have the following default traits: \trait{blooded}, \trait{corporeal}, \trait{dynamic}, \trait{ensouled}, \trait{living}, \trait{mortal}, and \trait{sighted}.
 
-  \creaturetypedef{Aberration}{aberration}
-  Aberrations have souls that are owned by the Precursors in the Eternal Void.
-  When an aberration dies, its soul drifts through the Astral Expanse for centuries until it finally returns to the Eternal Void.
+  \creatureorigindef{Artificial}{artificial}
+  Artificial creatures are composed of matter that would not ordinarily support life, such as metal, water, or \glossterm{essentia}.
+  Common artificial creatures include constructs, elementals, and demons.
 
-  \creaturetypedef{Animate}{animate}
-  Animates are creatures composed of matter that would not ordinarily support complex life, such as wood or stone.
-  Common types of animates include constructs, elementals, and oozes.
+  Artificial creatures normally have the following traits: \trait{bloodless}, \trait{immortal}, and \trait{nonliving}.
 
-  % Is this a subcategory of beast?
-  \creaturetypedef{Dragon}{dragon} A dragon is a powerful magical creature with four legs and two wings.
-  Dragons are \creaturetype{immortal} creatures that can feed on magic and valuable metals, including gold. 
-  They are known for their vast hoards of wealth.
-  Since dragons never stop growing in size or strength, elder dragons are some of the most powerful creatures in existence.
+  \creatureorigindef{Natural}{natural}
+  Natural creatures are composed of biological matter that naturally supports life. 
+  Most creatures are natural, including humans, animals, and dragons.
 
-  \creaturetypedef{Mortal}{mortal}
-  Mortals have bodies made from organic matter with flesh, blood, skin, and bones.
-  Their bodies deteriorate over time, and they eventually die of old age.
-  When they do, the soul native to the body typically goes to an appropriate afterlife.
-  Most creatures in the universe are mortals, including all of the common species.
 
-  \creaturetypedef{Soulforged}{soulforged}
-  A soulforged is a creature that is made of \glossterm{essentia}, or soul residue.
-  It is \trait{nonliving}.
-  Most soulforged are from the Spiritual Planes, which are made of essentia (see \pcref{Spiritual Planes}).
-
-  \creaturetypedef{Undead}{undead}
+  \creatureorigindef{Undead}{undead}
   Undead are creatures that are made from the corpse or spirit of a dead creature.
   They are animated by some part of the soul of the original creature.
 
-  Although undead are \trait{nonliving}, they are affected in unusual ways by effects that directly manipulate life energy.
-  They can be targeted as if they were living \glossterm{allies} by \magical effects that would cause living creatures to regain \glossterm{hit points}.
-  Whenever they would regain \glossterm{hit points} from an ability that normally only affects living creatures, they instead take damage equal to the hit points that they would have regained, ignoring any hit point maximum the ability would normally have.
-
+  Although undead are \trait{nonliving}, they are damaged by some forms of healing.
+  Undead can be targeted as if they were living \glossterm{allies} by \magical \atLife effects.
+  If a \magical \atLife ability would cause an undead to regain hit points, it instead takes damage equal to the hit points that it would have regained. 
   Any other effects beyond simple hit point recovery are ignored.
   For example, if a cleric uses their \ability{divine aid} ability to heal an undead creature, the undead would take damage, but it would not gain any bonus to its defenses.
+
+  Undead creatures normally have the following traits: \trait{bloodless}, \trait{immortal}, \trait{nonliving}, and \trait{static}.
 
   % TODO: should undead heal from vivimancy effects? Is it worth introducing a new damage type just for that?
   % Similarly, undead are always considered living creatures for the purpose of effects that would normally deal damage to living creatures.
   % Whenever they would take damage from an ability that normally only affects living creatures, they instead regain hit points equal to the damage that they would have taken. 
   % Any other effects beyond simple damage are ignored.
+
+\subsection{Creature Types}\label{Creature Types}
+
+  Each creature has one or more creature types.
+
+  \creaturetypedef{Aberration}{aberration}
+  Aberrations have souls that are owned by the Precursors in the Eternal Void.
+  When an aberration dies, its soul drifts through the Astral Expanse for centuries until it finally returns to the Eternal Void.
+
+  \traitdef{Animal}{animal}
+  Animals are simple, \glossterm{mundane} creatures.
+  They cannot have \magical abilities, and cannot have an Intelligence above \minus8.
+  The Creature Handling skill is more effective on animals, as indicated in that skill's description.
+
+  \traitdef{Beast}{beast}
+  Beasts are fairly unintelligent creatures, but they are smarter or more magical than animals.
+  They have a maximum Intelligence of \minus5, and are incapable of speech or language.
+  Beasts are typically found in the wilderness, and seem to naturally avoid civilized areas.
+
+  % TODO: should constructs regain hit points when they rest?
+  \traitdef{Construct}{construct} A construct is a creature that is made of non-sapient matter.
+  Its inanimate body is given a semblance of life and sentience by some form of magic.
+  Like other creatures, they can move and follow instructions.
+  However, they lack agency and cannot make independent decisions.
+  Instead, they simply follow the instructions they were given when created.
+  A construct's Intelligence reflects the complexity and nuance of the instruction it was given.
+
+  Constructs normally have the following traits: \trait{mindless}, \trait{nonliving}, \trait{soulless}, \trait{static}.
+
+  Constructs are not affected by the Medicine skill, and do not normally remove \glossterm{vital wounds} when they take a \glossterm{long rest}.
+  Instead, their vital wounds must be repaired manually.
+  This functions like \ability{accelerate recovery} ability from the Medicine skill, except that it uses an appropriate Craft skill and raw materials appropriate to the construct's construction.
+
+  \creaturetypedef{Dragon}{dragon} A dragon is a powerful magical creature with four legs and two wings.
+  Dragons can feed on magic and valuable metals, including gold. 
+  They are known for their vast hoards of wealth.
+  Since dragons never stop growing in size or strength, elder dragons are some of the most powerful creatures in existence.
+
+  Dragons normally have the following traits: \trait{immortal}.
+
+  % TODO: What makes fey unique? They are defined as chaotic in the votive section, but why?
+  \traitdef{Fey}{fey} Fey are chaotic creatures that are highly magical.
+
+  Fey normally have the following traits: \trait{immortal}.
+
+  \creaturetypedef{Ghost}{ghost}
+  A ghost is the soul of a deceased creature that lingered after death instead of proceeding to its proper afterlife.
+  Ghosts are \trait{incorporeal} and \resistant to \atCold and \atEarth abilities.
+  However, they are \vulnerable to \atFire abilities.
+  Despite being incorporeal, they are affected by even \glossterm{mundane} Fire effects.
+
+  Ghosts normally have the following traits: \trait{bloodless}, \trait{immortal}, \trait{incorporeal}.
+
+  \creaturetypedef{Humanoid}{humanoid}
+  Humanoid creatures have two arms, two legs, and one head.
+  Most civilized creatures and societies are predominantly humanoid.
+
+  \traitdef{Indwelt}{indwelt}
+  An indwelt is a creature that is made of non-sapient matter.
+  Its inanimate body was awakened to a semblance of life by connection to an external soul.
+  Unlike constructs, indwelt have agency and true intelligence.
+
+  The soul of an indwelt did not originally belong to to the matter that composes its body.
+  This contrasts with undead, which always maintain a connection between a body and its original soul.
+  As a result, an indwelt's connection to its physical body is weak.
+  If an indwelt is killed, it can be resurrected, but its previous body is not considered its corpse in the same way that a human's dead body is.
+  This means it cannot be resurrected by magic that uses the corpse of the deceased creature.
+
+  If the body of an indwelt is made of organic matter, it is \trait{dynamic} and \trait{living}.
+  Otherwise, it is \trait{static} and \trait{nonliving}.
+
+  \creaturetypedef{Insect}{insect}
+  Insects are multi-legged invertebrates that often have a tough exoskeleton.
+  They generally have highly organized social structures.
+  Even \trait{simple-minded} insects can be capable of highly coordinated behavior in groups.
+
+  \creaturetypedef{Ooze}{ooze}
+  Oozes are amorphous, gelatinous creatures that lack defined organs or skeletons.
+
+  Oozes normally have the following traits: \trait{simple-minded}, \trait{soulless}.
+
+  \traitdef{Plant}{plant}
+  Plants are alive, but do not have flesh or blood.
+  They are \vulnerable to \atFire abilities.
+  Some plants are creatures, but most plants are living \glossterm{objects}.
+
+  Plants normally have the following traits: \trait{bloodless}, \trait{soulless}.
+
+\traitdef{Soulforged}{soulforged}
+  A soulforged is a creature made from the essentia of a Spiritual Plane.
+  They are called soulforged because they are made of essentia, which comes from souls.
+  Most such creatures do not have their own souls.
+  They are agents of deities and other powerful figures, used to enforce their will.
+
+  When a soulforged is destroyed, its essentia is absorbed by the plane it is on.
+  This is one reason that soulforged creatures rarely leave their home plane, since dying on other planes is a net loss of essentia to their creators.
+  If a soulforged has a soul and a strong will, the soul travels to its home plane like mortal souls do.
+  It can generally make a new body for itself within a week if it died on another plane, or within a day if it died on its home plane.
+  Soulforged that die without a soul, or with a soul too weak to reconstitute itself, do not reform.
+
+  Soulforged normally have the following traits: \trait{bloodless}, \trait{immortal}, \trait{nonliving}, \trait{soulless}.

@@ -429,6 +429,13 @@ def weapon_buttons(i: int) -> list[str]:
         ),
         text_input(
             {
+                "class": "readonly-disabled strike-total-accuracy",
+                "name": f"weapon_{idx}_total_accuracy",
+                "readonly": True,
+            }
+        ),
+        text_input(
+            {
                 "class": "readonly-disabled strike-total-damage",
                 "name": f"weapon_{idx}_total_damage",
                 "readonly": True,
@@ -474,6 +481,15 @@ def other_damaging_attack() -> str:
                         }
                     ),
                 ])
+            ),
+            labeled_text_input(
+                "Total accuracy",
+                {"class": "total-accuracy"},
+                {
+                    "class": "readonly-disabled",
+                    "readonly": True,
+                    "name": "calculated_accuracy",
+                },
             ),
             labeled_text_input(
                 "Total damage",
@@ -529,7 +545,16 @@ def nondamaging_attack() -> str:
                             "name": "attack_name",
                         }
                     ),
-                ])
+                ]),
+            ),
+            labeled_text_input(
+                "Total accuracy",
+                {"class": "total-accuracy"},
+                {
+                    "class": "readonly-disabled",
+                    "readonly": True,
+                    "name": "calculated_accuracy",
+                },
             ),
         ],
     )
@@ -649,13 +674,6 @@ def universal_abilities() -> str:
         {"class": "universal_abilities"},
         [
             universal_ability_button(
-                "Charge",
-                """
-                    After using this ability, you take a -2 penalty to all defenses until your next turn.
-                    Move up to your speed in a single straight line without reducing your available movement. At the end of this movement, you can make a melee strike from your new location.
-                """,
-            ),
-            universal_ability_button(
                 "Desperate Exertion",
                 """
                     You reroll any attack or check you just made and gain a +2 bonus.
@@ -665,7 +683,7 @@ def universal_abilities() -> str:
             universal_ability_button(
                 "Escape Grapple",
                 """
-                    Make a brawling attack against any number of creatures that you are grappled by. The defense of each creature is equal to the result of its maintain grapple ability. If a creature did not use that ability during the current round, its defense against this ability is 0.
+                    Make a brawling attack vs. Brawn against any number of creatures that you are grappled by.
                     For each target, if you hit that target with this attack, it stops being grappled by you and you stop being grappled by it.
                 """,
                 attack={"accuracy": "@{brawling_accuracy}", "defense": "Special", "tags": ["Brawling"]},
@@ -686,13 +704,6 @@ def universal_abilities() -> str:
                 """,
             ),
             universal_ability_button(
-                "Maintain Grapple",
-                """
-                    Make a brawling attack using a free hand. This attack has no immediate effect. The attack result determines how difficult it is for enemies to escape your grapple.
-                """,
-                attack={"accuracy": "@{brawling_accuracy}", "defense": "None", "tags": ["Brawling"]},
-            ),
-            universal_ability_button(
                 "Ready Reaction",
                 """
                     When you use this ability, you declare another standard action that you intend to take as soon as it becomes possible.
@@ -710,7 +721,8 @@ def universal_abilities() -> str:
             universal_ability_button(
                 "Run",
                 """
-                    You add twice your speed to your available movement.
+                    You add your speed to your available movement.
+                    At the start of your next turn, you add your speed to your available movement again.
                 """,
             ),
             universal_ability_button(
@@ -729,12 +741,6 @@ def universal_abilities() -> str:
                 """,
             ),
             universal_ability_button(
-                "Total Defense",
-                """
-                    You briefly gain a +2 bonus to your defenses.
-                """,
-            ),
-            universal_ability_button(
                 "Throw",
                 """
                     You throw a creature or object 15 feet plus 5 feet per 2 Strength.
@@ -749,7 +755,7 @@ def universal_abilities() -> str:
                     Make a brawling attack vs. Brawn with a free hand against an adjacent creature.
                     On a hit, the target becomes prone.
                  """,
-                attack={"accuracy": "@{accuracy}", "defense": "Fort", "tags": ["Brawling", "Size-Based"]},
+                attack={"accuracy": "@{accuracy}", "defense": "Fort", "tags": ["Brawling"]},
             ),
         ],
     )

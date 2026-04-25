@@ -292,9 +292,9 @@ def custom_modifier(show_toggle: bool | str, show_text: bool) -> str:
                         {"name": "immune"},
                     ),
                     labeled_text_input(
-                        "Impervious",
-                        {"class": "impervious"},
-                        {"name": "impervious"},
+                        "Resistant",
+                        {"class": "resistant"},
+                        {"name": "resistant"},
                     ),
                     labeled_text_input(
                         "Vulnerable",

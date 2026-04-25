@@ -17,7 +17,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         rank: 3,
         short_description: String::from(r"Grants +2 accuracy when you injure a foe"),
         description: String::from(r"
-            Whenever you \glossterm{injure} a living creature with a strike using this weapon, you \glossterm{briefly} gain a +2 accuracy bonus with \glossterm{strikes} against that creature.
+            Whenever you \glossterm{injure} a \trait{blooded} creature with a strike using this weapon, you \glossterm{briefly} gain a +2 accuracy bonus with \glossterm{strikes} against that creature.
             As normal, this bonus does not stack with itself, even if you injure the same creature multiple times.
         "),
         upgrades: vec![
@@ -214,6 +214,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
             You can feed this weapon your blood as a \glossterm{minor action}.
             When you do, you lose 4 \glossterm{hit points}.
             In exchange, you deal 1d4 \glossterm{extra damage} with strikes using this weapon this turn.
+            You must be \trait{blooded} to activate this weapon.
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Can spend 8 HP for +1d10 damage", r"
@@ -262,13 +263,13 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         rank: 2,
         short_description: String::from(r"Steals HP"),
         description: String::from(r"
-            The first time each turn that you \glossterm{injure} a living creature other than yourself with a \glossterm{strike} using this weapon, you regain 1d6 hit points.
+            The first time each turn that you \glossterm{injure} a \trait{blooded} creature other than yourself with a \glossterm{strike} using this weapon, you regain 1d6 hit points.
         "),
         tags: vec![AbilityTag::Attune(AttuneType::Deep)],
         upgrades: vec![
             // -1dr for no downsides or requirements and the healing effect
             ItemUpgrade::new(4, "Deals +2 damage and steals HP", r"
-                The weapon also deals 2 \glossterm{extra damage} to living creatures, and the healing increases to 2d10.
+                The weapon also deals 2 \glossterm{extra damage} to blooded creatures, and the healing increases to 2d10.
             "),
             ItemUpgrade::new(6, "Deals +1d6 damage and steals HP", r"
                 The \glossterm{extra damage} increases to 1d6, and the healing increases to 5d10.
@@ -481,10 +482,9 @@ fn utility_weapons() -> Vec<MagicWeapon> {
         short_description: String::from(r"Deals delayed damage"),
         description: String::from(r"
             This weapon is transluscent and has no physical presence for anyone except you.
-            It has no effect on anything without a soul, such as an object or construct.
-            Creatures with a soul cannot be \impervious or \buff{immune} to damage from this weapon.
 
-            Attacks with this weapon deal no damage immediately.
+            Strikes with this weapon have the \atSoul tag and do not have the \atPhysical tag.
+            They deal no damage immediately.
             This means that any effects which trigger when you deal damage with the attack, such as conditions, do not happen.
             Instead, the damage is delayed.
             Damage that would be dealt by the weapon can be delayed indefinitely.

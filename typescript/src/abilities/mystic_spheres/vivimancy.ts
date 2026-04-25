@@ -38,7 +38,7 @@ export const vivimancy: MysticSphere = {
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
-          Make an attack vs. Fortitude against a living creature you \\glossterm{touch}.
+          Make an attack vs. Fortitude against a creature you \\glossterm{touch}.
         `,
       },
       rank: 1,
@@ -47,7 +47,7 @@ export const vivimancy: MysticSphere = {
         special:
           'For each rank beyond 1, the damage increases by 1d6 and the healing increases by 1d10.',
       },
-      tags: [],
+      tags: ["Life"],
     },
 
     {
@@ -66,7 +66,7 @@ export const vivimancy: MysticSphere = {
         special:
           'For each rank beyond 4, the damage increases by 2d6 and the healing increases by 3d10.',
       },
-      tags: [],
+      tags: ["Life"],
     },
 
     {
@@ -83,7 +83,7 @@ export const vivimancy: MysticSphere = {
           If you do, you regain \\hprankfive.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one living creature within \\medrange.
+          Make an attack vs. Fortitude against one creature within \\medrange.
         `,
       },
       rank: 2,
@@ -92,7 +92,7 @@ export const vivimancy: MysticSphere = {
         special:
           'For each rank beyond 2, the damage increases by 2 and the healing increases by 2d8.',
       },
-      tags: [],
+      tags: ["Life"],
     },
 
     {
@@ -111,7 +111,7 @@ export const vivimancy: MysticSphere = {
         special:
           'For each rank beyond 6, the damage increases by 2d8 and the healing increases by 4d8.',
       },
-      tags: [],
+      tags: ['Life'],
     },
 
     {
@@ -120,13 +120,14 @@ export const vivimancy: MysticSphere = {
       cost: 'One \\glossterm{fatigue level} from the target.',
       // dr2 for short range, +1dr from healing bonus
       effect: `
-        Choose yourself or a living \\glossterm{ally} within \\shortrange.
+        Choose yourself or an \\glossterm{ally} within \\shortrange.
         % dr1
         The target regains \\hprankthree.
       `,
       rank: 1,
       roles: ['healing', 'exertion'],
       scaling: 'healing',
+      tags: ['Life'],
     },
 
     {
@@ -135,12 +136,13 @@ export const vivimancy: MysticSphere = {
       cost: 'One \\glossterm{fatigue level} from the target.',
       // dr5 for short range, +1dr from healing bonus
       effect: `
-        Choose yourself or a living \\glossterm{ally} within \\shortrange.
+        Choose yourself or an \\glossterm{ally} within \\shortrange.
         The target regains \\hpranksix.
       `,
       rank: 4,
       roles: ['healing', 'exertion'],
       scaling: 'healing',
+      tags: ['Life'],
     },
 
     {
@@ -150,11 +152,12 @@ export const vivimancy: MysticSphere = {
       // dr8 for short range, +1dr from healing bonus. Use drh to really reward
       // investment.
       effect: `
-        Choose yourself or a living \\glossterm{ally} within \\shortrange.
+        Choose yourself or an \\glossterm{ally} within \\shortrange.
         The target regains \\hpranknine.
       `,
       rank: 7,
       roles: ['healing', 'exertion'],
+      tags: ['Life'],
     },
 
     {
@@ -167,11 +170,12 @@ export const vivimancy: MysticSphere = {
       cost: 'One \\glossterm{fatigue level}.',
       effect: `
         You inscribe a circle in a \\medarea radius \\glossterm{zone} from you.
-        At the start of your next turn, each living creature in the area regains \\hprankthree.
+        At the start of your next turn, each creature in the area regains \\hprankthree.
       `,
       rank: 3,
       roles: ['healing', 'exertion'],
       scaling: 'healing',
+      tags: ['Life'],
     },
 
     {
@@ -180,11 +184,12 @@ export const vivimancy: MysticSphere = {
       cost: 'One \\glossterm{fatigue level}.',
       effect: `
         You inscribe a circle in a \\medarea radius \\glossterm{zone} from you.
-        At the start of your next turn, each living creature in the area regains \\hpranksix.
+        At the start of your next turn, each creature in the area regains \\hpranksix.
       `,
       rank: 6,
       roles: ['healing', 'exertion'],
       scaling: 'healing',
+      tags: ['Life'],
     },
 
     // TODO: What level can vital wounds usually be removed?
@@ -193,12 +198,13 @@ export const vivimancy: MysticSphere = {
 
       cost: 'Three \\glossterm{fatigue levels} from the target.',
       effect: `
-        Choose yourself or a living \\glossterm{ally} within \\medrange.
+        Choose yourself or an \\glossterm{ally} within \\medrange.
         The target regains \\hprankeight and removes one of its \\glossterm{vital wounds}.
       `,
       rank: 5,
       roles: ['healing', 'exertion'],
       scaling: 'healing',
+      tags: ['Life'],
     },
 
     {
@@ -214,12 +220,13 @@ export const vivimancy: MysticSphere = {
           \\damagerankone again.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one living creature within \\medrange.
+          Make an attack vs. Fortitude against one creature within \\medrange.
         `,
       },
       rank: 2,
       roles: ['execute'],
       scaling: 'damage',
+      tags: ['Life'],
     },
 
     {
@@ -268,12 +275,13 @@ export const vivimancy: MysticSphere = {
         halfOnMiss: true,
         targeting: `
           You inscribe a circle in a \\medarea radius \\glossterm{zone} from your location.
-          At the start of your next turn, make a \\glossterm{reactive attack} vs. Fortitude against all living creatures in the area.
+          At the start of your next turn, make a \\glossterm{reactive attack} vs. Fortitude against all creatures in the area.
         `,
       },
       rank: 3,
       roles: ['clear', 'execute'],
       scaling: 'damage',
+      tags: ['Life'],
     },
 
     {
@@ -290,12 +298,13 @@ export const vivimancy: MysticSphere = {
         halfOnMiss: true,
         targeting: `
           You inscribe a circle in a \\medarea radius \\glossterm{zone} from your location.
-          At the start of your next turn, make a \\glossterm{reactive attack} vs. Fortitude against all living creatures in the area.
+          At the start of your next turn, make a \\glossterm{reactive attack} vs. Fortitude against all creatures in the area.
         `,
       },
       rank: 6,
       roles: ['clear', 'execute'],
       scaling: 'damage',
+      tags: ['Life'],
     },
 
     {
@@ -329,12 +338,13 @@ export const vivimancy: MysticSphere = {
           Any \\glossterm{extra damage} is not limited by your hit points.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one living creature within \\medrange.
+          Make an attack vs. Fortitude against one creature within \\medrange.
         `,
       },
       roles: ['execute'],
       rank: 3,
       scaling: 'damage',
+      tags: ['Blood'],
     },
 
     {
@@ -345,11 +355,12 @@ export const vivimancy: MysticSphere = {
           If the target is \\glossterm{injured}, it takes damage equal to half your maximum hit points.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one living creature within \\medrange.
+          Make an attack vs. Fortitude against one creature within \\medrange.
         `,
       },
       rank: 7,
       roles: ['execute'],
+      tags: ['Blood'],
     },
 
     {
@@ -360,7 +371,7 @@ export const vivimancy: MysticSphere = {
 
         Whenever you cast a non-attunable spell, you can activate this effect as a \\glossterm{minor action}.
         If you do, the spell deals 1d8 \\glossterm{extra damage} when it deals damage for the first time.
-        In addition, the spell can target objects and nonliving creatures as if they were living creatures.
+        In addition, the spell loses the \\atLife tag if it had that tag.
         However, you also lose 2 hit points.
 
         You can increase this hit point loss to be equal to half your maximum hit points.
@@ -471,11 +482,11 @@ export const vivimancy: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankthree, and the target's life becomes linked to yours as a \\glossterm{condition}.
+          \\damagerankthree, and the target's blood becomes linked to yours as a \\glossterm{condition}.
           At the end of each of your subsequent turns, if you lost hit points since your last turn, the target takes \\damagerankthree.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one living creature within \\shortrange.
+          Make an attack vs. Fortitude against one creature within \\shortrange.
         `,
       },
       rank: 4,
@@ -483,6 +494,7 @@ export const vivimancy: MysticSphere = {
       scaling: {
         special: 'Both instances of damage increase by 1d6 for each rank beyond 4.',
       },
+      tags: ['Blood'],
     },
 
     {
@@ -491,15 +503,16 @@ export const vivimancy: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damageranksix, and the target's life becomes linked to yours as a \\glossterm{condition}.
+          \\damageranksix, and the target's blood becomes linked to yours as a \\glossterm{condition}.
           At the end of each of your subsequent turns, if you lost hit points since your last turn, the target takes \\damageranksix.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one living creature within \\shortrange.
+          Make an attack vs. Fortitude against one creature within \\shortrange.
         `,
       },
       rank: 7,
       roles: ['burn'],
+      tags: ['Blood'],
     },
 
     {
@@ -514,13 +527,14 @@ export const vivimancy: MysticSphere = {
         halfOnMiss: true,
         targeting: `
           When you cast this spell, your life energy begins to surge.
-          At the start of your next turn, make a \\glossterm{reactive attack} vs. Fortitude against all living \\glossterm{enemies} within a \\smallarea radius from you.
+          At the start of your next turn, make a \\glossterm{reactive attack} vs. Fortitude against all \\glossterm{enemies} within a \\smallarea radius from you.
           If you are at full hit points at that time, you gain a \\plus4 accuracy bonus with this attack.
         `,
       },
       rank: 3,
       roles: ['clear'],
       scaling: 'damage',
+      tags: ['Life'],
     },
 
     {
@@ -534,6 +548,7 @@ export const vivimancy: MysticSphere = {
       rank: 6,
       roles: ['clear'],
       scaling: 'damage',
+      tags: ['Life'],
     },
 
     // r2 area is drX-1. Calculate as a rank 4 spell, then subtract a full rank for the corpse
@@ -674,16 +689,16 @@ export const vivimancy: MysticSphere = {
         halfOnMiss: true,
         targeting: `
           You create a \\medarealong \\glossterm{wall} within \\medrange.
-          When you cast this spell, and during each of your subsequent actions, make an attack vs. Fortitude against any living creature sharing space with it.
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Fortitude against any creature sharing space with it.
           Generally, this is only possible for Large or larger creatures.
-          In addition, whenever a living creature passes through the the wall, you make a \\glossterm{reactive attack} vs. Fortitude against it.
+          In addition, whenever a creature passes through the the wall, you make a \\glossterm{reactive attack} vs. Fortitude against it.
           You can only attack a given target with this spell once per turn.
         `,
       },
       rank: 2,
       roles: ['hazard'],
       scaling: 'damage',
-      tags: ['Barrier'],
+      tags: ['Barrier', 'Life'],
       type: 'Sustain (attunable, minor)',
     },
 
@@ -793,12 +808,13 @@ export const vivimancy: MysticSphere = {
         hit: `\\damageranktwo.`,
         injury: `You are \\briefly \\empowered.`,
         targeting: `
-          Make an attack vs. Fortitude against one living creature within \\shortrange.
+          Make an attack vs. Fortitude against one creature within \\shortrange.
         `,
       },
       rank: 1,
       roles: ['burst', 'generator'],
       scaling: 'damage',
+      tags: ['Life'],
     },
 
     {
@@ -808,12 +824,13 @@ export const vivimancy: MysticSphere = {
         hit: `\\damagerankfive, and any \\glossterm{extra damage} is doubled.`,
         injury: `You are \\briefly \\empowered.`,
         targeting: `
-          Make an attack vs. Fortitude against one living creature within \\shortrange.
+          Make an attack vs. Fortitude against one creature within \\shortrange.
         `,
       },
       rank: 4,
       roles: ['burst', 'generator'],
       scaling: 'damage',
+      tags: ['Life'],
     },
 
     {

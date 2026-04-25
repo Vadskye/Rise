@@ -8,7 +8,7 @@ export const polymorph: MysticSphere = {
   sources: ['arcane', 'nature', 'soulkeeper'],
   specialRules: `
     This mystic sphere manipulates the physical bodies of creatures, objects, or both.
-    Anything that does not have a physical body, such as an \\trait{intangible} creature, is immune to all abilities from this mystic sphere.
+    Anything that does not have a physical body, such as an \\trait{incorporeal} creature, is immune to all abilities from this mystic sphere.
   `,
 
   cantrips: [
@@ -21,6 +21,7 @@ export const polymorph: MysticSphere = {
       `,
       roles: ['attune'],
       // no scaling; unclear what scaling could exist
+      tags: ['Physical'],
       type: 'Sustain (attunable, minor)',
     },
   ],
@@ -129,6 +130,7 @@ export const polymorph: MysticSphere = {
       rank: 7,
       roles: ['maim'],
       scaling: 'accuracy',
+      tags: ['Physical'],
     },
 
     {
@@ -141,6 +143,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 2,
       roles: ['attune'],
+      tags: ['Physical'],
       type: 'Attune',
     },
 
@@ -155,6 +158,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 7,
       roles: ['attune'],
+      tags: ['Physical'],
       type: 'Attune',
     },
 
@@ -169,6 +173,7 @@ export const polymorph: MysticSphere = {
       // narrative: '',
       rank: 4,
       roles: ['attune'],
+      tags: ['Physical'],
       type: 'Attune (target)',
     },
 
@@ -185,6 +190,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 3,
       roles: ['attune'],
+      tags: ['Physical'],
       type: 'Attune',
     },
 
@@ -201,6 +207,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 7,
       roles: ['attune'],
+      tags: ['Physical'],
       type: 'Attune',
     },
 
@@ -215,6 +222,7 @@ export const polymorph: MysticSphere = {
       // narrative: '',
       rank: 5,
       roles: ['attune'],
+      tags: ['Physical'],
       type: 'Attune (target)',
     },
 
@@ -224,7 +232,7 @@ export const polymorph: MysticSphere = {
       attack: {
         hit: `
           \\damagerankseven, and any \\glossterm{extra damage} is doubled.
-          This damage is \\maximized if the target is a \\trait{nonliving} \\glossterm{object}.
+          This damage is \\maximized if the target is an object or \\trait{static} creature.
           If this damage reduces an object to zero hit points, or gives a creature a vital wound that knocks it unconscious, the target is completely disintegrated.
           Only a fine dust remains.
           A disintegrated creature's equipment is unaffected.
@@ -237,6 +245,7 @@ export const polymorph: MysticSphere = {
       rank: 4,
       roles: ['burst'],
       scaling: 'damage',
+      tags: ['Physical'],
     },
 
     {
@@ -251,6 +260,7 @@ export const polymorph: MysticSphere = {
       rank: 7,
       roles: ['burst'],
       scaling: 'damage',
+      tags: ['Physical'],
     },
 
     {
@@ -269,6 +279,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 4,
       roles: ['mobility'],
+      tags: ['Physical'],
       type: 'Attune',
     },
 
@@ -292,6 +303,7 @@ export const polymorph: MysticSphere = {
         5: `The maximum size of the object increases to Large.`,
         7: `The maximum size of the object increases to Huge.`,
       },
+      tags: ['Physical'],
       type: 'Sustain (attunable, minor)',
     },
 
@@ -309,6 +321,7 @@ export const polymorph: MysticSphere = {
         5: `The bonus increases to +5.`,
         7: `The bonus increases to +6.`,
       },
+      tags: ['Physical'],
       type: 'Attune',
     },
 
@@ -316,15 +329,16 @@ export const polymorph: MysticSphere = {
       name: 'Mending',
 
       cost: 'One \\glossterm{fatigue level} from the target if it is a creature.',
-      // dr3 from short range. No healing buff since this is more versatile and in an odd
-      // sphere for healing.
+      // dr4 from touch range. No healing buff since this is in an odd sphere for
+      // healing and lacks the normal Life tag.
       effect: `
-        Chose yourself, or one \\glossterm{ally} or \\glossterm{unattended} object within \\shortrange.
-        The target regains 1d8 \\glossterm{hit points} \\plus1 per \\glossterm{power}.
+        Chose yourself, or one \\glossterm{ally} or \\glossterm{unattended} object you \\glossterm{touch}.
+        The target regains \\hprankfour.
       `,
       rank: 2,
       roles: ['healing', 'exertion'],
-      scaling: { special: 'The recovery increases by +2 for each rank beyond 2.' },
+      scaling: 'healing',
+      tags: ['Physical'],
     },
 
     {
@@ -332,11 +346,12 @@ export const polymorph: MysticSphere = {
 
       functionsLike: {
         name: 'mending',
-        exceptThat: 'the recovery increases to 2d8 plus 1d8 per 3 power.',
+        exceptThat: 'the recovery increases to \\hprankseven.',
       },
       rank: 5,
       roles: ['healing', 'exertion'],
-      scaling: { special: 'The recovery increases by 1d8 for each rank beyond 5.' },
+      scaling: 'healing',
+      tags: ['Physical'],
     },
 
     {
@@ -353,6 +368,7 @@ export const polymorph: MysticSphere = {
       rank: 3,
       roles: ['healing', 'exertion'],
       scaling: { special: 'The healing increases by +2 for each rank beyond 3.' },
+      tags: ['Physical'],
     },
 
     {
@@ -369,6 +385,7 @@ export const polymorph: MysticSphere = {
       rank: 6,
       roles: ['healing', 'exertion'],
       scaling: { special: 'The healing increases by 2d8 for each rank beyond 6.' },
+      tags: ['Physical'],
     },
 
     {
@@ -383,12 +400,13 @@ export const polymorph: MysticSphere = {
           The target takes \\damagerankone at the end of its next turn.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one living creature within \\shortrange.
+          Make an attack vs. Fortitude against one creature within \\shortrange.
         `,
       },
       rank: 1,
       roles: ['burn', 'execute'],
       scaling: 'damage',
+      tags: ['Blood', 'Physical'],
     },
 
     {
@@ -402,6 +420,7 @@ export const polymorph: MysticSphere = {
       rank: 4,
       roles: ['burn', 'execute'],
       scaling: 'damage',
+      tags: ['Blood', 'Physical'],
     },
 
     {
@@ -412,6 +431,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 4,
       roles: ['attune'],
+      tags: ['Physical'],
       type: 'Attune',
     },
 
@@ -424,6 +444,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 4,
       roles: ['cleanse'],
+      tags: ['Physical'],
     },
 
     {
@@ -444,6 +465,7 @@ export const polymorph: MysticSphere = {
       rank: 2,
       roles: ['burst', 'maim'],
       scaling: 'damage',
+      tags: ['Physical'],
     },
 
     {
@@ -464,6 +486,7 @@ export const polymorph: MysticSphere = {
       rank: 6,
       roles: ['burst', 'maim'],
       scaling: 'damage',
+      tags: ['Physical'],
     },
 
     {
@@ -483,6 +506,7 @@ export const polymorph: MysticSphere = {
       rank: 6,
       roles: ['maim'],
       scaling: 'accuracy',
+      tags: ['Physical'],
     },
 
     {
@@ -504,6 +528,7 @@ export const polymorph: MysticSphere = {
       rank: 7,
       roles: ['maim'],
       scaling: 'damage',
+      tags: ['Physical'],
     },
 
     {
@@ -525,6 +550,7 @@ export const polymorph: MysticSphere = {
       rank: 1,
       roles: ['burst'],
       scaling: 'damage',
+      tags: ['Physical'],
     },
 
     {
@@ -543,6 +569,7 @@ export const polymorph: MysticSphere = {
       rank: 4,
       roles: ['burst'],
       scaling: 'damage',
+      tags: ['Physical'],
     },
 
     {
@@ -567,6 +594,7 @@ export const polymorph: MysticSphere = {
       rank: 3,
       roles: ['burn'],
       scaling: 'damage',
+      tags: ['Blood', 'Physical'],
     },
 
     {
@@ -589,6 +617,7 @@ export const polymorph: MysticSphere = {
       rank: 5,
       roles: ['maim'],
       scaling: 'damage',
+      tags: ['Physical'],
     },
 
     {
@@ -604,6 +633,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 2,
       roles: ['narrative'],
+      tags: ['Physical'],
       type: 'Sustain (attunable, minor)',
     },
     {
@@ -617,7 +647,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 2,
       roles: ['attune'],
-      tags: [],
+      tags: ['Physical'],
       type: 'Sustain (attunable, minor)',
     },
     {
@@ -631,7 +661,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 3,
       roles: ['attune'],
-      tags: [],
+      tags: ['Physical'],
       type: 'Sustain (attunable, minor)',
     },
     {
@@ -645,7 +675,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 5,
       roles: ['attune'],
-      tags: [],
+      tags: ['Physical'],
       type: 'Sustain (attunable, minor)',
     },
 
@@ -657,6 +687,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 1,
       roles: ['turtle'],
+      tags: ['Physical'],
     },
 
     {
@@ -670,6 +701,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 4,
       roles: ['turtle'],
+      tags: ['Physical'],
     },
 
     // Ally empower is 0.6 EA. Long is about +1a, so about 0.2 EA.
@@ -683,6 +715,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 2,
       roles: ['boon'],
+      tags: ['Physical'],
     },
 
     // Any two empower is 1 EA, and any two accuracy is about 0.3 EA.
@@ -696,6 +729,7 @@ export const polymorph: MysticSphere = {
       },
       rank: 7,
       roles: ['boon'],
+      tags: ['Physical'],
     },
 
     {
@@ -713,6 +747,7 @@ export const polymorph: MysticSphere = {
       rank: 2,
       roles: ['softener'],
       scaling: 'accuracy',
+      tags: ['Physical'],
     },
 
     // Base rank is r3. Add +1 for extended area and +1 for more area, so area rank is 6.
@@ -731,6 +766,7 @@ export const polymorph: MysticSphere = {
       rank: 5,
       roles: ['softener'],
       scaling: 'accuracy',
+      tags: ['Physical'],
     },
   ],
 };

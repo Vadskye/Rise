@@ -95,7 +95,7 @@ pub enum SpecialDefenseType {
 
 pub struct SpecialDefenses {
     pub immune: Vec<SpecialDefenseType>,
-    pub impervious: Vec<SpecialDefenseType>,
+    pub resistant: Vec<SpecialDefenseType>,
     pub vulnerable: Vec<SpecialDefenseType>,
 }
 
@@ -103,7 +103,7 @@ impl SpecialDefenses {
     pub fn new() -> Self {
         Self {
             immune: vec![],
-            impervious: vec![],
+            resistant: vec![],
             vulnerable: vec![],
         }
     }
@@ -223,8 +223,8 @@ where
         for modifier in self.get_modifiers_by_type(ModifierType::SpecialDefense) {
             if let Modifier::Immune(def) = modifier {
                 special_defenses.immune.push(def.clone());
-            } else if let Modifier::Impervious(def) = modifier {
-                special_defenses.impervious.push(def.clone());
+            } else if let Modifier::Resistant(def) = modifier {
+                special_defenses.resistant.push(def.clone());
             } else if let Modifier::Vulnerable(def) = modifier {
                 special_defenses.vulnerable.push(def.clone());
             }

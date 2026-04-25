@@ -60,8 +60,7 @@ pub fn incarnation<'a>() -> Vec<RankAbility<'a>> {
                     The spell must have your \textit{essence infusion} tag, and it must not be a \glossterm{deep attunement}.
                     You gain the effect of that spell on you permanently.
                     If the spell disables itself, you gain its benefit again after 10 minutes.
-                    \item Untethered: The height limit of your fly speed increases to 10 feet.
-                    In addition, whenever you use the \ability{sprint} or \ability{run} abilities, you can become \trait{intangible} for the rest of your turn.
+                    \item Untethered: The height limit of your fly speed increases to 15 feet.
                 \end{raggeditemize}
             ",
         },
@@ -80,7 +79,7 @@ pub fn incarnation<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 5,
             description: r"
-                You become \glossterm{immune} instead of impervious to attacks with your \textit{essence infusion} tag.
+                You become \glossterm{immune} instead of resistant to attacks with your \textit{essence infusion} tag.
                 In addition, you gain a \plus1 accuracy bonus with all abilities which have that tag.
             ",
         },
@@ -94,7 +93,7 @@ pub fn incarnation<'a>() -> Vec<RankAbility<'a>> {
                 \begin{raggeditemize}
                     \item Tethered: You can choose up to two spells with a combined rank of 4 or less.
                     % TODO: weak?
-                    \item Untethered: The height limit of your fly speed increases to 20 feet.
+                    \item Untethered: The height limit of your fly speed increases to 30 feet.
                     In addition, you gain a \plus1 bonus to your \glossterm{mundane power} and \glossterm{magical power}.
                 \end{raggeditemize}
             ",

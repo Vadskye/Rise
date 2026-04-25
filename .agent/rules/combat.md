@@ -26,7 +26,7 @@ This is a Gemini-generated summary of the Rise combat rules defined in `comprehe
 *   **Split Strikes:** A dual strike variant that deals half damage but targets an additional creature.
 
 **Universal Abilities & Conditions:**
-*   There are Universal Combat Abilities like Charge, Grapple, Shove, Sprint, and Recover, which can be used by all characters regardless of their class.
+*   There are Universal Combat Abilities like Grapple, Shove, Sprint, and Recover, which can be used by all characters regardless of their class.
 *   Vision and Light rules define illumination levels (Bright, Shadowy, Brilliant, Total Darkness), affecting visibility and miss chances against unseen/concealed foes.
 *   Obstacles and Cover rules detail Line of Sight (LOS) and Line of Effect (LOE), and how cover provides defense bonuses.
 *   Awareness and Surprise mechanics differentiate between Aware, Unaware, and Partially Unaware states, impacting defense and combat initiation.

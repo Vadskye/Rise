@@ -11,10 +11,11 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 \begin{activeability}{Sneak Attack}{Standard action}
                     \rankline
-                    Make a \glossterm{strike} with a \weapontag{Light} or \weapontag{Compact} weapon against a creature within \shortrange (see \pcref{Weapon Tags}).
+                    Make a \glossterm{strike} against a creature within \shortrange (see \pcref{Weapon Tags}).
+                    The srike must only use \weapontag{Light} or \weapontag{Compact} weapons.
 
                     The strike deals 1d4 \glossterm{extra damage} if the target is \unaware or \partiallyunaware of your attack, or if they are adjacent to one of your \glossterm{allies}.
-                    This extra damage is doubled if the target is fully unaware of your attack.
+                    This extra damage is doubled if the target was fully unaware of you at the start of your turn.
                     It does not apply if the target is immune to \glossterm{critical hits}.
 
                     \rankline
@@ -244,7 +245,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                You are \impervious to \abilitytag{Visual} attacks.
+                You are \resistant to \abilitytag{Visual} attacks.
             ",
         },
         RankAbility {
@@ -484,13 +485,13 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 \begin{activeability}{What's That Over There}{Standard action}
-                    \abilitytags \abilitytag{Compulsion}
+                    \abilitytags \atCompulsion, \atVisual
                     \rankline
                     Make a attack vs. Mental against a creature within \medrange.
                     In addition, choose a location on stable ground within range.
                     \hit As a \glossterm{brief} effect, the target is compelled to move to the location you chose if it can do so safely.
                     It must spend its \glossterm{movement} and \glossterm{standard action} to move to that location, or if it is already there, to do nothing except observe the location carefully.
-                    It can use any other actions, including \glossterm{elite actions}, as normal.
+                    After this movement it can use any other actions, including \glossterm{elite actions}, as normal.
                     After this effect ends, the target becomes immune to it until it finishes a \glossterm{short rest}.
 
                     \rankline
@@ -504,7 +505,7 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
-                You gain a \plus2 bonus to your Mental defense, and you are \impervious to \atEmotion attacks.
+                You gain a \plus2 bonus to your Mental defense, and you are \resistant to \atEmotion attacks.
             ",
         },
         RankAbility {

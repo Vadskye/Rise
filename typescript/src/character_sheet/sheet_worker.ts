@@ -420,6 +420,60 @@ interface OnGetOptions {
   variablesWithoutListen?: Partial<OnGetVariables>;
 }
 
+/**
+ * Convenience function for setting up Roll20 sheet worker listeners and fetching their associated values.
+ *
+ * Under the hood, `onGet` performs three crucial tasks:
+ * 1. It automatically builds `change:` event listeners for all properties provided in `variables`.
+ * 2. By default, it also listens to `sheet:opened` and `change:level` events,
+ *    since `level` is typically factored into most derived character statistics.
+ * 3. When an event fires, it automatically calls `getAttrs` to fetch the values for all properties
+ *    in `variables` AND `variablesWithoutListen`, supplying them nicely parsed to your `callback`.
+ *
+ * **WARNING: Using `onGet` with Repeating Sections**
+ * Roll20 has special "contextual" behavior when calling `getAttrs` with generic, un-indexed repeating property names
+ * (e.g. `repeating_strikeattacks_attack_accuracy`). If the event originated from a specific repeating row
+ * (like `change:repeating_strikeattacks:attack_accuracy`), Roll20 automatically resolves the generic property name
+ * to that specific row's value.
+ *
+ * However, if the event did NOT originate from a repeating row (such as `change:accuracy`, `change:level`,
+ * or `sheet:opened`), Roll20 (and our local test simulator) cannot resolve generic repeating properties because
+ * there is no row context. In this case, `getAttrs` will fail or throw an "ambiguous property definition" error.
+ *
+ * To safely calculate derived statistics for repeating rows, you must separate local triggers from global triggers:
+ *
+ * **Pattern 1: Local triggers (Row properties changing)**
+ * When a repeating row property changes, you only want to recalculate for that specific row.
+ * Put the local properties in `variables`, but put global dependencies in `variablesWithoutListen`.
+ * Also be sure to set `includeLevel` and `runOnSheetOpen` to false. This ensures that global changes
+ * do NOT trigger the local row callback without context.
+ * ```typescript
+ * onGet({
+ *   variables: { numeric: ['repeating_strikeattacks_attack_accuracy'] },
+ *   options: {
+ *     includeLevel: false,
+ *     runOnSheetOpen: false,
+ *     variablesWithoutListen: { numeric: ['accuracy'] }
+ *   },
+ *   callback: (v) => { ... }
+ * });
+ * ```
+ *
+ * **Pattern 2: Global triggers (Global properties changing)**
+ * When a global property like `level` or `accuracy` changes, you must recalculate for ALL rows.
+ * Put the global properties in `variables`, and inside the callback, explicitly iterate over
+ * the rows using `getSectionIDs` and fetch the fully-qualified row properties yourself.
+ * ```typescript
+ * onGet({
+ *   variables: { numeric: ['accuracy'] },
+ *   callback: (v) => {
+ *     getSectionIDs('repeating_strikeattacks', (ids) => {
+ *       // ... construct fully qualified keys and call getAttrs ...
+ *     });
+ *   }
+ * });
+ * ```
+ */
 function onGet(args: {
   variables: Partial<OnGetVariables>;
   options?: OnGetOptions;
@@ -716,6 +770,7 @@ export function handleEverything() {
 function handleCoreStatistics() {
   handleAccuracy();
   handleAccuracyWithStrikes();
+  handleActiveAbilitiesAccuracy();
   handleBrawlingAccuracy();
   handleCharacterNameSanitization();
   handleDefenses();
@@ -863,6 +918,108 @@ function handleAccuracyWithStrikes() {
       });
     },
   });
+}
+
+function handleActiveAbilitiesAccuracy() {
+  function formatAccuracyValue(val: number) {
+    return val >= 0 ? `+${val}` : `${val}`;
+  }
+  const strikeGlobals = ['accuracy', 'accuracy_with_strikes'];
+  for (let i = 0; i < supportedWeaponCount; i++) {
+    strikeGlobals.push(`weapon_${i}_accuracy`);
+  }
+
+  onGet({
+    variables: { numeric: strikeGlobals },
+    callback: (v) => {
+      getSectionIDs('repeating_strikeattacks', (ids) => {
+        if (!ids.length) return;
+        const keys = ids.map((id) => `repeating_strikeattacks_${id}_attack_accuracy`);
+        getAttrs(keys, (localAttrs) => {
+          const attrs: Attrs = {};
+          for (const id of ids) {
+            const attackAcc = Number(
+              localAttrs[`repeating_strikeattacks_${id}_attack_accuracy`] || 0,
+            );
+            for (let i = 0; i < supportedWeaponCount; i++) {
+              attrs[`repeating_strikeattacks_${id}_weapon_${i}_total_accuracy`] =
+                formatAccuracyValue(
+                  v.accuracy + v.accuracy_with_strikes + attackAcc + v[`weapon_${i}_accuracy`],
+                );
+            }
+          }
+          setAttrs(attrs);
+        });
+      });
+
+      for (const section of ['repeating_otherdamagingattacks', 'repeating_nondamagingattacks']) {
+        getSectionIDs(section, (ids) => {
+          if (!ids.length) return;
+          const keys = ids.map((id) => `${section}_${id}_attack_accuracy`);
+          getAttrs(keys, (localAttrs) => {
+            const attrs: Attrs = {};
+            for (const id of ids) {
+              const attackAcc = Number(localAttrs[`${section}_${id}_attack_accuracy`] || 0);
+              attrs[`${section}_${id}_calculated_accuracy`] = formatAccuracyValue(
+                v.accuracy + attackAcc,
+              );
+            }
+            setAttrs(attrs);
+          });
+        });
+      }
+    },
+  });
+
+  // Local changes for strike attacks
+  onGet({
+    variables: { numeric: ['repeating_strikeattacks_attack_accuracy'] },
+    options: {
+      includeLevel: false,
+      runOnSheetOpen: false,
+      variablesWithoutListen: { numeric: strikeGlobals },
+    },
+    callback: (v) => {
+      const triggerParts = v.eventInfo.triggerName.split('_');
+      const sectionId = triggerParts.length >= 3 ? triggerParts[2] : '';
+      if (!sectionId) return;
+
+      const attrs: Attrs = {};
+      for (let i = 0; i < supportedWeaponCount; i++) {
+        attrs[`repeating_strikeattacks_${sectionId}_weapon_${i}_total_accuracy`] =
+          formatAccuracyValue(
+            v.accuracy +
+              v.accuracy_with_strikes +
+              v.repeating_strikeattacks_attack_accuracy +
+              v[`weapon_${i}_accuracy`],
+          );
+      }
+      setAttrs(attrs);
+    },
+  });
+
+  // Local changes for other sections
+  for (const section of ['repeating_otherdamagingattacks', 'repeating_nondamagingattacks']) {
+    onGet({
+      variables: { numeric: [`${section}_attack_accuracy`] },
+      options: {
+        includeLevel: false,
+        runOnSheetOpen: false,
+        variablesWithoutListen: { numeric: ['accuracy'] },
+      },
+      callback: (v) => {
+        const triggerParts = v.eventInfo.triggerName.split('_');
+        const sectionId = triggerParts.length >= 3 ? triggerParts[2] : '';
+        if (!sectionId) return;
+
+        setAttrs({
+          [`${section}_${sectionId}_calculated_accuracy`]: formatAccuracyValue(
+            v.accuracy + v[`${section}_attack_accuracy`],
+          ),
+        });
+      },
+    });
+  }
 }
 
 function handleAttackHeaders() {
@@ -1222,8 +1379,8 @@ function handleCustomModifiers() {
         const formatNameId = (id: string) => `repeating_${modifierType}modifiers_${id}_name`;
 
         const formatImmuneId = (id: string) => `repeating_${modifierType}modifiers_${id}_immune`;
-        const formatImperviousId = (id: string) =>
-          `repeating_${modifierType}modifiers_${id}_impervious`;
+        const formatResistantId = (id: string) =>
+          `repeating_${modifierType}modifiers_${id}_resistant`;
         const formatVulnerableId = (id: string) =>
           `repeating_${modifierType}modifiers_${id}_vulnerable`;
 
@@ -1245,7 +1402,7 @@ function handleCustomModifiers() {
             fullAttributeIds.push(formatIsActiveId(id));
             fullAttributeIds.push(formatNameId(id));
             fullAttributeIds.push(formatImmuneId(id));
-            fullAttributeIds.push(formatImperviousId(id));
+            fullAttributeIds.push(formatResistantId(id));
             fullAttributeIds.push(formatVulnerableId(id));
             fullAttributeIds.push(formatAttackHeaderId(id));
             for (let i = 0; i < nestedCustomStatisticCount; i++) {
@@ -1260,7 +1417,7 @@ function handleCustomModifiers() {
             // modifiers, such as "all_defenses", can affect multiple statistics.
             const namedModifierMap = new NamedModifierMap();
             const immuneTo: string[] = [];
-            const imperviousTo: string[] = [];
+            const resistantTo: string[] = [];
             const vulnerableTo: string[] = [];
             const attackHeaders: string[] = [];
 
@@ -1286,8 +1443,8 @@ function handleCustomModifiers() {
                 if (values[formatImmuneId(id)]) {
                   immuneTo.push(values[formatImmuneId(id)]);
                 }
-                if (values[formatImperviousId(id)]) {
-                  imperviousTo.push(values[formatImperviousId(id)]);
+                if (values[formatResistantId(id)]) {
+                  resistantTo.push(values[formatResistantId(id)]);
                 }
                 if (values[formatVulnerableId(id)]) {
                   vulnerableTo.push(values[formatVulnerableId(id)]);
@@ -1302,7 +1459,7 @@ function handleCustomModifiers() {
             }
             const attrs: Attrs = {
               [formatModifierKey('immune')]: immuneTo.join(', '),
-              [formatModifierKey('impervious')]: imperviousTo.join(', '),
+              [formatModifierKey('resistant')]: resistantTo.join(', '),
               [formatModifierKey('vulnerable')]: vulnerableTo.join(', '),
               // This semicolon gets replaced in handleAttackHeaders()
               [formatModifierKey('attack_headers')]: attackHeaders.join(';'),
@@ -2568,13 +2725,16 @@ function handleTrainedSkills() {
             attrs[`${oldTrainedSkill}_is_trained`] = '0';
           }
 
-
           let untrainedFromRootSkill = null;
           for (const skillWithSubskill of SKILLS_WITH_SUBSKILLS) {
             if (trainedSkill && trainedSkill.startsWith(skillWithSubskill)) {
               console.log('trainedSkill', trainedSkill);
-              const modifierAttrName = trainedSkill.startsWith('profession') ? 'subskill_modifier' : trainedSkill;
-              const manualAttributeReminder = trainedSkill.startsWith('profession') ? " + a relevant attribute" : "";
+              const modifierAttrName = trainedSkill.startsWith('profession')
+                ? 'subskill_modifier'
+                : trainedSkill;
+              const manualAttributeReminder = trainedSkill.startsWith('profession')
+                ? ' + a relevant attribute'
+                : '';
               const subskill = trainedSkill.replace(skillWithSubskill + '_', '');
               const rowId = generateRowID();
               const prefix = `repeating_${skillWithSubskill}subskills_${rowId}`;
@@ -2582,7 +2742,8 @@ function handleTrainedSkills() {
               const fullSkillDescriptor =
                 uppercaseFirstLetter(skillWithSubskill) + ` (${subskill})`;
               attrs[`${prefix}_subskill_button`] =
-                `@{character_name} uses ${fullSkillDescriptor}:` + ` [[@{check_die} + @{${modifierAttrName}}]]${manualAttributeReminder}`;
+                `@{character_name} uses ${fullSkillDescriptor}:` +
+                ` [[@{check_die} + @{${modifierAttrName}}]]${manualAttributeReminder}`;
               attrs[`${prefix}_subskill_name`] = `(${subskill})`;
               attrs[`${prefix}_subskill_modifier_name`] = `${skillWithSubskill}_${subskill}`;
               attrs[rowIdKey] = rowId;
@@ -2646,9 +2807,7 @@ function handleTrainedSkills() {
     };
     for (const skillWithSubskill of SKILLS_WITH_SUBSKILLS) {
       if (untrainedSkill.startsWith(skillWithSubskill)) {
-        const rowIdKey = Object.keys(removed).find(
-          (k) => k.endsWith('front_rowid') && removed[k],
-        );
+        const rowIdKey = Object.keys(removed).find((k) => k.endsWith('front_rowid') && removed[k]);
         if (rowIdKey) {
           const rowId = removed[rowIdKey];
           removeRepeatingRow(`repeating_${skillWithSubskill}subskills_${rowId}`);
@@ -2810,7 +2969,7 @@ function handleSubskillValue(section: string, attribute: string) {
 }
 
 function handleSpecialDefenses() {
-  const specialDefenses = ['immune', 'impervious', 'vulnerable'];
+  const specialDefenses = ['immune', 'resistant', 'vulnerable'];
   const stringVars = [];
   for (const specialDefense of specialDefenses) {
     for (const customModifierType of CUSTOM_MODIFIER_TYPES) {
@@ -3000,9 +3159,12 @@ function handleStrikeAttacks() {
   // Local strike attack change
   on(
     'change:repeating_strikeattacks:attack_name change:repeating_strikeattacks:is_magical change:repeating_strikeattacks:attack_extra_damage change:repeating_strikeattacks:weapon_damage_multiplier change:repeating_strikeattacks:damage_multiplier',
-    function () {
-      getStrikeAttrs('', (parsed: StrikeAttackAttrs) => {
-        setStrikeTotalDamage('', parsed);
+    function (eventInfo) {
+      const triggerParts = eventInfo.triggerName.split('_');
+      // For a trigger like "repeating_strikeattacks_-1_attack_extra_damage", we want the section ID "-1"
+      const sectionId = triggerParts.length >= 3 ? triggerParts[2] : '';
+      getStrikeAttrs(sectionId, (parsed: StrikeAttackAttrs) => {
+        setStrikeTotalDamage(sectionId, parsed);
       });
     },
   );

@@ -36,6 +36,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 \begin{magicalactiveability}{Mage Armor}{Standard action}
+                    \abilitytags \atManifestation
                     \rankline
                     You create a translucent suit of magical armor on your body and over your hands.
                     This functions like body armor that provides a \plus2 bonus to your Armor defense and \glossterm{durability}.
@@ -161,7 +162,7 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Choose a type of dragon from among the dragons on \trefnp{Draconic Bloodline Types}.
                 You have the blood of that type of dragon in your veins.
-                You are \impervious to attacks with that dragon's associated ability tag.
+                You are \resistant to attacks with that dragon's associated ability tag.
 
                 \begin{columntable}
                     \columncaption{Draconic Bloodline Types}
@@ -356,9 +357,9 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                         4 & You gain a \plus10 \glossterm{accuracy} bonus with the spell, but cannot get a \glossterm{critical hit} \\
                         5 & The spell gains the \atCold, \atElectricity, and \atFire ability tags \\
                         6 & The spell's area is doubled \\
-                        7 & The spell \glossterm{chains} once to the unaffected \glossterm{enemy} that is closest to one of the spell's \glossterm{primary targets}, choosing randomly between equally close creatures \\
-                        8 & The spell deals \glossterm{extra damage} equal to your rank in this archetype \\
-                        9 & Each target hit by the spell is \glossterm{briefly} \confused, \braced, and \focused \\
+                        7 & Each target hit by the spell is \glossterm{briefly} \confused, \braced, and \focused \\
+                        8 & The spell \glossterm{chains} once to the unaffected \glossterm{enemy} that is closest to one of the spell's \glossterm{primary targets}, choosing randomly between equally close creatures \\
+                        9 & The spell deals \glossterm{extra damage} equal to your rank in this archetype \\
                         10 & Your first attack roll with the spell \glossterm{explodes} on any value, not just on a 10 \\
                         11\plus & The spell \glossterm{repeats} at the start of your next turn \\
                     \end{dtabularx}

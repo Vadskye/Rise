@@ -220,7 +220,7 @@ export const verdamancy: MysticSphere = {
           The second escalation also ends the poison.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one living creature you \\glossterm{touch}.
+          Make an attack vs. Fortitude against one creature you \\glossterm{touch}.
         `,
       },
       rank: 1,
@@ -241,7 +241,7 @@ export const verdamancy: MysticSphere = {
           The second escalation also ends the poison.
         `,
         targeting: `
-          Make an attack vs. Fortitude with a \\plus4 accuracy bonus against one living creature you \\glossterm{touch}.
+          Make an attack vs. Fortitude with a \\plus4 accuracy bonus against one creature you \\glossterm{touch}.
         `,
       },
       rank: 2,
@@ -262,7 +262,7 @@ export const verdamancy: MysticSphere = {
           The second escalation also ends the poison.
         `,
         targeting: `
-          Make an attack vs. Fortitude with a \\minus3 accuracy bonus against one living creature you \\glossterm{touch}.
+          Make an attack vs. Fortitude with a \\minus3 accuracy bonus against one creature you \\glossterm{touch}.
         `,
       },
       rank: 3,
@@ -283,7 +283,7 @@ export const verdamancy: MysticSphere = {
           The second escalation also ends the poison.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one living creature you \\glossterm{touch}.
+          Make an attack vs. Fortitude against one creature you \\glossterm{touch}.
         `,
       },
       rank: 4,
@@ -303,7 +303,7 @@ export const verdamancy: MysticSphere = {
           It deals \\damagerankfivelow immediately and with each escalation.
         `,
         targeting: `
-          Make an attack vs. Fortitude with a \\plus1 accuracy bonus against one living creature you \\glossterm{touch}.
+          Make an attack vs. Fortitude with a \\plus1 accuracy bonus against one creature you \\glossterm{touch}.
         `,
       },
       rank: 6,
@@ -517,7 +517,7 @@ export const verdamancy: MysticSphere = {
           If the target is a Large or smaller object, it immediately dies.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one living creature or plant within \\shortrange.
+          Make an attack vs. Fortitude against one creature or plant within \\shortrange.
           In addition, you create a \\medarea radius \\glossterm{zone} around the target that persists \\briefly.
           All \\glossterm{undergrowth} in that area shrivels away into the ground, reemerging when the effect ends.
           If the target is a plant, including plant creatures, you gain a \\plus10 accuracy bonus with the attack.
@@ -526,6 +526,7 @@ export const verdamancy: MysticSphere = {
       rank: 2,
       roles: ['burst'],
       scaling: 'damage',
+      tags: ['Life'],
     },
 
     {
@@ -539,6 +540,7 @@ export const verdamancy: MysticSphere = {
       roles: ['burst'],
       rank: 6,
       scaling: 'damage',
+      tags: ['Life'],
     },
 
     {
@@ -635,12 +637,12 @@ export const verdamancy: MysticSphere = {
       effect: `
         Choose a \\tinyarea \\glossterm{zone} within \\medrange.
         A flower begins to grow in the center of the area.
-        At the end of your next turn, each living \\glossterm{ally} within the area regains \\hpranktwo.
+        At the end of your next turn, each \\glossterm{ally} within the area regains \\hpranktwo.
       `,
       rank: 1,
       scaling: 'healing',
       roles: ['healing', 'exertion'],
-      tags: ['Manifestation'],
+      tags: ['Life', 'Manifestation'],
     },
     {
       name: 'Greater Healing Bloom',

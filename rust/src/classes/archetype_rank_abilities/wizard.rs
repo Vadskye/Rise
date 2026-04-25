@@ -163,6 +163,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 \begin{magicalactiveability}{Mage Armor}{Standard action}
+                    \abilitytags \atManifestation
                     \rankline
                     You create a translucent suit of magical armor on your body and over your hands.
                     This functions like body armor that provides a \plus2 bonus to your Armor defense and \glossterm{durability}.
@@ -545,13 +546,13 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
 
                     \subcf{Conjuration} You passively flicker into the Astral Expanse, causing all \glossterm{targeted} attacks against you to have a 10\% \glossterm{failure chance}.
 
-                    \subcf{Evocation} You are \impervious to attacks from your choice of one of the following tags: \atCold, \atElectricity, or \atFire.
+                    \subcf{Evocation} You are \resistant to attacks from your choice of one of the following tags: \atCold, \atElectricity, or \atFire.
 
                     \subcf{Illusion} You are immune to being \dazzled and \blinded.
 
                     \subcf{Transmutation} You gain a \plus1 bonus to \glossterm{vital rolls}.
 
-                    \subcf{Necromancy} Whenever you \glossterm{injure} a creature, you \glossterm{briefly} become \impervious to their attacks.
+                    \subcf{Necromancy} Whenever you \glossterm{injure} a creature, you \glossterm{briefly} become \resistant to their attacks.
                 }
             ",
             // TODO: represent this somehow?
@@ -568,13 +569,13 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
 
                     \subcf{Conjuration} The failure chance increases to 20\%.
 
-                    \subcf{Evocation} You are \impervious to \atCold, \atElectricity, and \atFire attacks.
+                    \subcf{Evocation} You are \resistant to \atCold, \atElectricity, and \atFire attacks.
 
                     \subcf{Illusion} You are immune to \abilitytag{Emotion} and \abilitytag{Visual} attacks.
 
                     \subcf{Transmutation} The vital roll bonus increases to \plus2.
 
-                    \subcf{Necromancy} You are \trait{impervious} to attacks from \glossterm{injured} creatures and undead creatures.
+                    \subcf{Necromancy} You are \resistant to attacks from \glossterm{injured} creatures and undead creatures.
                 }
             ",
             // TODO: represent this somehow?

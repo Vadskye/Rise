@@ -20,6 +20,18 @@ export const dirtyFighting: CombatStyle = {
     },
 
     {
+      name: 'Cheap Shot',
+
+      // Rank 3 Unrestricted allows 1.2 EA debuff.
+      effect: `
+        Make a \\glossterm{strike}.
+        \\hit The target is \\briefly \\goaded by you.
+      `,
+      rank: 3,
+      roles: ['softener'],
+    },
+
+    {
       name: 'Quivering Palm',
 
       // A melee range injury-only spell would be dr9, or 9 + 4.5dpp.
@@ -63,7 +75,7 @@ export const dirtyFighting: CombatStyle = {
       },
       rank: 5,
       roles: ['trip'],
-      tags: ['Brawling'],
+      tags: ['Brawling', 'Physical'],
     },
 
     // Normal melee damage would be dr5, -1dr for brawling, -1dr for
@@ -79,7 +91,7 @@ export const dirtyFighting: CombatStyle = {
       },
       rank: 3,
       roles: ['trip'],
-      tags: ['Brawling'],
+      tags: ['Brawling', 'Physical'],
     },
 
     {
@@ -94,7 +106,7 @@ export const dirtyFighting: CombatStyle = {
       },
       rank: 3,
       roles: ['softener', 'trip'],
-      tags: ['Brawling'],
+      tags: ['Brawling', 'Physical'],
     },
 
     {
@@ -110,7 +122,7 @@ export const dirtyFighting: CombatStyle = {
       },
       rank: 1,
       roles: ['burst', 'payoff'],
-      tags: ['Brawling'],
+      tags: ['Brawling', 'Physical'],
     },
 
     {
@@ -124,7 +136,7 @@ export const dirtyFighting: CombatStyle = {
       },
       rank: 5,
       roles: ['burst', 'payoff'],
-      tags: ['Brawling'],
+      tags: ['Brawling', 'Physical'],
     },
 
     {
@@ -154,7 +166,7 @@ export const dirtyFighting: CombatStyle = {
       roles: ['burst', 'payoff'],
       // This doesn't need to be size-based because grappling already is size-based.
       // If you can grapple above your size, we don't need to block this maneuver.
-      tags: ['Brawling'],
+      tags: ['Brawling', 'Physical'],
     },
 
     {
@@ -174,7 +186,7 @@ export const dirtyFighting: CombatStyle = {
       roles: ['burst', 'payoff'],
       // This doesn't need to be size-based because grappling already is size-based.
       // If you can grapple above your size, we don't need to block this maneuver.
-      tags: ['Brawling'],
+      tags: ['Brawling', 'Physical'],
     },
 
     {
@@ -190,7 +202,7 @@ export const dirtyFighting: CombatStyle = {
       },
       rank: 5,
       roles: ['maim', 'payoff'],
-      tags: ['Brawling'],
+      tags: ['Brawling', 'Physical'],
     },
 
     {
@@ -205,7 +217,7 @@ export const dirtyFighting: CombatStyle = {
       },
       rank: 3,
       roles: ['softener'],
-      tags: ['Brawling'],
+      tags: ['Brawling', 'Physical'],
     },
 
     {
@@ -220,7 +232,7 @@ export const dirtyFighting: CombatStyle = {
       },
       rank: 3,
       roles: ['softener'],
-      tags: ['Brawling'],
+      tags: ['Brawling', 'Physical'],
     },
 
     {
@@ -235,7 +247,7 @@ export const dirtyFighting: CombatStyle = {
       },
       rank: 7,
       roles: ['softener'],
-      tags: ['Brawling'],
+      tags: ['Brawling', 'Physical'],
     },
 
     // Price as "stunned as a condition" in melee range; grappled requirement offsets
@@ -255,7 +267,7 @@ export const dirtyFighting: CombatStyle = {
       },
       rank: 7,
       roles: ['maim'],
-      tags: ['Brawling'],
+      tags: ['Brawling', 'Physical'],
     },
 
     {
@@ -273,7 +285,7 @@ export const dirtyFighting: CombatStyle = {
       },
       rank: 3,
       roles: ['maim'],
-      tags: ['Brawling'],
+      tags: ['Brawling', 'Physical'],
     },
 
     {
@@ -289,7 +301,7 @@ export const dirtyFighting: CombatStyle = {
       },
       rank: 7,
       roles: ['burst', 'maim'],
-      tags: ['Brawling'],
+      tags: ['Brawling', 'Physical'],
     },
 
     {
@@ -367,10 +379,66 @@ export const dirtyFighting: CombatStyle = {
       name: 'Eye Poke',
 
       effect: `
-        Make a \\glossterm{strike}.
-        \\hit If your attack result also hits the target's Fortitude defense, it is \\briefly \\dazzled.
+        Make a melee \\glossterm{strike}.
+        \\hit The target is \\briefly \\dazzled.
       `,
       rank: 1,
+      roles: ['softener'],
+    },
+
+    {
+      name: 'Eye Poke+',
+
+      effect: `
+        Make a melee \\glossterm{strike} that deals triple damage.
+        \\hit The target is \\dazzled as a \\glossterm{condition}.
+      `,
+      rank: 7,
+      roles: ['softener'],
+    },
+
+    {
+      name: 'Ear Clap',
+
+      effect: `
+        Make a melee \\glossterm{strike}.
+        \\hit The target is \\briefly \\deafened.
+        \\injury The target is deafened as a \\glossterm{condition}.
+      `,
+      rank: 1,
+      roles: ['softener'],
+    },
+
+    {
+      name: 'Ear Clap+',
+
+      effect: `
+        Make a melee \\glossterm{strike}.
+        \\hit The target is \\deafened as a \\glossterm{condition}.
+      `,
+      rank: 3,
+      roles: ['softener'],
+    },
+
+    {
+      name: 'Spook',
+
+      effect: `
+        Make a melee \\glossterm{strike}.
+        \\hit If your attack result hits the target's Mental defense, it is \\briefly \\frightened by you.
+      `,
+      rank: 1,
+      roles: ['softener'],
+    },
+
+    {
+      name: 'Spook+',
+
+      effect: `
+        Make a melee \\glossterm{strike} that deals triple damage.
+        \\hit If your attack result hits the target's Mental defense, it is \\frightened by you as a \\glossterm{condition}.
+      `,
+      rank: 7,
       roles: ['softener'],
     },
 
@@ -382,6 +450,17 @@ export const dirtyFighting: CombatStyle = {
         \\injury If your attack result also hits the target's Fortitude defense, it is \\briefly \\blinded.
       `,
       rank: 7,
+      roles: ['maim'],
+    },
+
+    {
+      name: 'Headcrack',
+
+      effect: `
+        Make a melee \\glossterm{strike} that deals double damage.
+        \\injury If your attack result hits the target's Fortitude defense, it is \\briefly \\confused.
+      `,
+      rank: 5,
       roles: ['maim'],
     },
 
@@ -465,6 +544,18 @@ export const dirtyFighting: CombatStyle = {
     },
 
     {
+      name: 'Kidney Shot',
+
+      effect: `
+        Make a melee \\glossterm{strike}.
+        \\hit If your attack result hits the target's Fortitude defense, it is \\briefly \\stunned.
+        \\injury If your attack result hits the target's Fortitude defense, it is stunned as a \\glossterm{condition}.
+      `,
+      rank: 3,
+      roles: ['maim'],
+    },
+
+    {
       name: 'Crush the Fallen',
 
       effect: `
@@ -484,6 +575,39 @@ export const dirtyFighting: CombatStyle = {
       `,
       rank: 5,
       roles: ['payoff'],
+    },
+
+    {
+      name: 'Injection',
+
+      effect: `
+        Make a \\glossterm{strike}.
+        \\hit You gain a +3 accuracy bonus with contact-based and injury-based poisons delivered with the strike.
+      `,
+      rank: 1,
+      roles: ['softener'],
+    },
+
+    {
+      name: 'Injection+',
+
+      effect: `
+        Make a \\glossterm{strike} that deals double damage.
+        \\hit You gain a +4 accuracy bonus with contact-based and injury-based poisons delivered with the strike.
+      `,
+      rank: 5,
+      roles: ['softener'],
+    },
+
+    {
+      name: 'Hamstring',
+
+      effect: `
+        Make a melee \\glossterm{strike} that deals double damage.
+        \\injury The target becomes \\slowed as a \\glossterm{condition}.
+      `,
+      rank: 5,
+      roles: ['maim'],
     },
   ],
 };
