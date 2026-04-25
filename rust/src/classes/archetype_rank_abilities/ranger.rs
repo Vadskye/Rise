@@ -263,11 +263,10 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                 {
                     \begin{magicaltriggeredability}{Anchoring}{Triggered}
                         \rankline
-                        As long as your quarry is adjacent to any member of your hunting party, it cannot travel extradimensionally.
-                        This prevents all \glossterm{teleportation} effects.
+                        As long as your quarry is within \medrange of any member of your hunting party, it cannot \glossterm{teleport}.
 
                         \rankline
-                        \rank{5} This effect instead applies if your quarry is within \medrange of any member of your hunting party.
+                        \rank{5} The range increases to \distrange.
                     \end{magicaltriggeredability}
 
                     \begin{magicaltriggeredability}{Bring Down}{Triggered}
@@ -289,10 +288,10 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                     \begin{triggeredability}{Decoy}{Triggered}
                         \abilitytags \abilitytag{Emotion}
                         \rankline
-                        If you are adjacent to your quarry, it is \goaded by you.
+                        If your quarry is within \shortrange of you, it is \goaded by you.
 
                         \rankline
-                        \rank{5} This effect instead applies if your quarry is within \shortrange of you.
+                        \rank{5} This effect instead applies if your quarry is within \medrange of you.
                     \end{triggeredability}
 
                     \begin{magicaltriggeredability}{Distraction}{Triggered}
@@ -317,7 +316,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                         If your quarry is Gargantuan or larger, the accuracy bonus from \ability{quarry} also applies to all members of your hunting party that are adjacent to it.
 
                         \rankline
-                        \rank{5} The accuracy bonus applies regardless of distance from your quarry.
+                        \rank{5} The accuracy bonus instead applies to each member that is within \medrange of it.
                     \end{magicaltriggeredability}
 
                     \begin{triggeredability}{Vigilant}{Triggered}
@@ -330,10 +329,10 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{triggeredability}{Wolfpack}{Triggered}
                         \rankline
-                        While your quarry is adjacent to at least three members of your hunting party, each adjacent \glossterm{ally} gains a \plus1 accuracy bonus against it.
+                        While your quarry is adjacent to at least two members of your hunting party, each adjacent \glossterm{ally} gains a \plus1 accuracy bonus against it.
 
                         \rankline
-                        \rank{5} This effect instead applies if your quarry is adjacent to at least two members of your hunting party.
+                        \rank{5} This effect instead applies if your quarry is within \shortrange of at least two members of your hunting party.
                     \end{triggeredability}
                 }
             ",
