@@ -309,7 +309,7 @@ export const toxicology: MysticSphere = {
         targeting: `
           Whenever you \\glossterm{hit points}, make a \\glossterm{reactive attack} vs. Reflex against all \\glossterm{enemies} in a \\smallarea radius from you.
           This effect can't trigger again until your next turn.
-          You must be \trait{blooded} to attune to this spell.
+          You must be \\trait{blooded} to attune to this spell.
         `,
       },
       narrative: `
