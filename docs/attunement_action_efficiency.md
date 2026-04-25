@@ -133,7 +133,7 @@ Assume that the trigger for the damage will happen exactly once per fight and is
 * Rank 6: dr6
 * Rank 7: dr7
 
-If the reaction is hard to trigger, such as requiring total defense or recover, it gets +1 rank on the above scale.
+If the reaction is hard to trigger, such as requiring recover, it gets +1 rank on the above scale.
 
 Singleton echo/repeat is rank 5 / 125% on this scale because it's more versatile than a simple damage value.
 

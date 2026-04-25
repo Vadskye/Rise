@@ -843,7 +843,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         `,
         halfOnMiss: true,
         targeting: `
-          Whenever you use the \\ability{total defense} or \\ability{recover} ability, you can activate this ability.
+          Whenever you use the \\ability{recover} ability, you can activate this ability.
           If you do, make an attack vs. Reflex against everything within a \\smallarea radius from you.
           Then, this ability is \\glossterm{dismissed}.
         `,
