@@ -755,7 +755,7 @@ def universal_abilities() -> str:
                     Make a brawling attack vs. Brawn with a free hand against an adjacent creature.
                     On a hit, the target becomes prone.
                  """,
-                attack={"accuracy": "@{accuracy}", "defense": "Fort", "tags": ["Brawling", "Size-Based"]},
+                attack={"accuracy": "@{accuracy}", "defense": "Fort", "tags": ["Brawling"]},
             ),
         ],
     )
