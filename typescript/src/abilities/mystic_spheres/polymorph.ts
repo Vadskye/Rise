@@ -21,6 +21,7 @@ export const polymorph: MysticSphere = {
       `,
       roles: ['attune'],
       // no scaling; unclear what scaling could exist
+      tags: ['Physical'],
       type: 'Sustain (attunable, minor)',
     },
   ],
@@ -129,6 +130,7 @@ export const polymorph: MysticSphere = {
       rank: 7,
       roles: ['maim'],
       scaling: 'accuracy',
+      tags: ['Physical'],
     },
 
     {
@@ -141,6 +143,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 2,
       roles: ['attune'],
+      tags: ['Physical'],
       type: 'Attune',
     },
 
@@ -155,6 +158,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 7,
       roles: ['attune'],
+      tags: ['Physical'],
       type: 'Attune',
     },
 
@@ -169,6 +173,7 @@ export const polymorph: MysticSphere = {
       // narrative: '',
       rank: 4,
       roles: ['attune'],
+      tags: ['Physical'],
       type: 'Attune (target)',
     },
 
@@ -185,6 +190,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 3,
       roles: ['attune'],
+      tags: ['Physical'],
       type: 'Attune',
     },
 
@@ -201,6 +207,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 7,
       roles: ['attune'],
+      tags: ['Physical'],
       type: 'Attune',
     },
 
@@ -215,6 +222,7 @@ export const polymorph: MysticSphere = {
       // narrative: '',
       rank: 5,
       roles: ['attune'],
+      tags: ['Physical'],
       type: 'Attune (target)',
     },
 
@@ -271,6 +279,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 4,
       roles: ['mobility'],
+      tags: ['Physical'],
       type: 'Attune',
     },
 
@@ -294,6 +303,7 @@ export const polymorph: MysticSphere = {
         5: `The maximum size of the object increases to Large.`,
         7: `The maximum size of the object increases to Huge.`,
       },
+      tags: ['Physical'],
       type: 'Sustain (attunable, minor)',
     },
 
@@ -311,6 +321,7 @@ export const polymorph: MysticSphere = {
         5: `The bonus increases to +5.`,
         7: `The bonus increases to +6.`,
       },
+      tags: ['Physical'],
       type: 'Attune',
     },
 
@@ -326,7 +337,8 @@ export const polymorph: MysticSphere = {
       `,
       rank: 2,
       roles: ['healing', 'exertion'],
-      scaling: 'healing'
+      scaling: 'healing',
+      tags: ['Physical'],
     },
 
     {
@@ -339,6 +351,7 @@ export const polymorph: MysticSphere = {
       rank: 5,
       roles: ['healing', 'exertion'],
       scaling: 'healing',
+      tags: ['Physical'],
     },
 
     {
@@ -355,6 +368,7 @@ export const polymorph: MysticSphere = {
       rank: 3,
       roles: ['healing', 'exertion'],
       scaling: { special: 'The healing increases by +2 for each rank beyond 3.' },
+      tags: ['Physical'],
     },
 
     {
@@ -371,6 +385,7 @@ export const polymorph: MysticSphere = {
       rank: 6,
       roles: ['healing', 'exertion'],
       scaling: { special: 'The healing increases by 2d8 for each rank beyond 6.' },
+      tags: ['Physical'],
     },
 
     {
@@ -391,7 +406,7 @@ export const polymorph: MysticSphere = {
       rank: 1,
       roles: ['burn', 'execute'],
       scaling: 'damage',
-      tags: ['Blood'],
+      tags: ['Blood', 'Physical'],
     },
 
     {
@@ -405,7 +420,7 @@ export const polymorph: MysticSphere = {
       rank: 4,
       roles: ['burn', 'execute'],
       scaling: 'damage',
-      tags: ['Blood'],
+      tags: ['Blood', 'Physical'],
     },
 
     {
@@ -416,6 +431,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 4,
       roles: ['attune'],
+      tags: ['Physical'],
       type: 'Attune',
     },
 
@@ -428,6 +444,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 4,
       roles: ['cleanse'],
+      tags: ['Physical'],
     },
 
     {
@@ -448,6 +465,7 @@ export const polymorph: MysticSphere = {
       rank: 2,
       roles: ['burst', 'maim'],
       scaling: 'damage',
+      tags: ['Physical'],
     },
 
     {
@@ -468,6 +486,7 @@ export const polymorph: MysticSphere = {
       rank: 6,
       roles: ['burst', 'maim'],
       scaling: 'damage',
+      tags: ['Physical'],
     },
 
     {
@@ -487,6 +506,7 @@ export const polymorph: MysticSphere = {
       rank: 6,
       roles: ['maim'],
       scaling: 'accuracy',
+      tags: ['Physical'],
     },
 
     {
@@ -508,6 +528,7 @@ export const polymorph: MysticSphere = {
       rank: 7,
       roles: ['maim'],
       scaling: 'damage',
+      tags: ['Physical'],
     },
 
     {
@@ -529,6 +550,7 @@ export const polymorph: MysticSphere = {
       rank: 1,
       roles: ['burst'],
       scaling: 'damage',
+      tags: ['Physical'],
     },
 
     {
@@ -547,6 +569,7 @@ export const polymorph: MysticSphere = {
       rank: 4,
       roles: ['burst'],
       scaling: 'damage',
+      tags: ['Physical'],
     },
 
     {
@@ -571,7 +594,7 @@ export const polymorph: MysticSphere = {
       rank: 3,
       roles: ['burn'],
       scaling: 'damage',
-      tags: ['Blood'],
+      tags: ['Blood', 'Physical'],
     },
 
     {
@@ -594,6 +617,7 @@ export const polymorph: MysticSphere = {
       rank: 5,
       roles: ['maim'],
       scaling: 'damage',
+      tags: ['Physical'],
     },
 
     {
@@ -609,6 +633,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 2,
       roles: ['narrative'],
+      tags: ['Physical'],
       type: 'Sustain (attunable, minor)',
     },
     {
@@ -622,7 +647,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 2,
       roles: ['attune'],
-      tags: [],
+      tags: ['Physical'],
       type: 'Sustain (attunable, minor)',
     },
     {
@@ -636,7 +661,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 3,
       roles: ['attune'],
-      tags: [],
+      tags: ['Physical'],
       type: 'Sustain (attunable, minor)',
     },
     {
@@ -650,7 +675,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 5,
       roles: ['attune'],
-      tags: [],
+      tags: ['Physical'],
       type: 'Sustain (attunable, minor)',
     },
 
@@ -662,6 +687,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 1,
       roles: ['turtle'],
+      tags: ['Physical'],
     },
 
     {
@@ -675,6 +701,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 4,
       roles: ['turtle'],
+      tags: ['Physical'],
     },
 
     // Ally empower is 0.6 EA. Long is about +1a, so about 0.2 EA.
@@ -688,6 +715,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 2,
       roles: ['boon'],
+      tags: ['Physical'],
     },
 
     // Any two empower is 1 EA, and any two accuracy is about 0.3 EA.
@@ -701,6 +729,7 @@ export const polymorph: MysticSphere = {
       },
       rank: 7,
       roles: ['boon'],
+      tags: ['Physical'],
     },
 
     {
@@ -718,6 +747,7 @@ export const polymorph: MysticSphere = {
       rank: 2,
       roles: ['softener'],
       scaling: 'accuracy',
+      tags: ['Physical'],
     },
 
     // Base rank is r3. Add +1 for extended area and +1 for more area, so area rank is 6.
@@ -736,6 +766,7 @@ export const polymorph: MysticSphere = {
       rank: 5,
       roles: ['softener'],
       scaling: 'accuracy',
+      tags: ['Physical'],
     },
   ],
 };
