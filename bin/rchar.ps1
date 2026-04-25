@@ -45,5 +45,7 @@ Write-Host "Generating Roll20 character sheet..." -ForegroundColor Cyan
 python sheet.py -d roll20
 if ($LASTEXITCODE -ne 0) { Write-Error "Roll20 sheet generation failed." }
 
-Write-Host "Done!" -ForegroundColor Green
+# 4. Transfer files
+& "$PSScriptRoot\rtransfer.ps1"
+
 Set-Location -Path $repoRoot
