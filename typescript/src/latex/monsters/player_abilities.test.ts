@@ -531,9 +531,9 @@ t.test('restructureStrikeAbility', (t) => {
   });
 
   t.test('standard maneuvers', (t) => {
-    t.test('Mighty Rushdown', (t) => {
+    t.test('Mighty Charge', (t) => {
       const maneuver = standardizeManeuver({
-        ...getManeuverByName('Mighty Rushdown'),
+        ...getManeuverByName('Mighty Charge'),
         weapon: 'bite',
       }) as StrikeActiveAbility;
       restructureStrikeAbility(mockCreature, maneuver);
@@ -549,7 +549,7 @@ t.test('restructureStrikeAbility', (t) => {
         },
         isMagical: false,
         kind: 'maneuver',
-        name: 'Mighty Rushdown',
+        name: 'Mighty Charge',
         rank: 3,
         roles: ['dive'],
         tags: ['Sweeping (1)'],
