@@ -20,6 +20,18 @@ export const dirtyFighting: CombatStyle = {
     },
 
     {
+      name: 'Cheap Shot',
+
+      // Rank 3 Unrestricted allows 1.2 EA debuff.
+      effect: `
+        Make a \\glossterm{strike}.
+        \\hit The target is \\briefly \\goaded by you.
+      `,
+      rank: 3,
+      roles: ['softener'],
+    },
+
+    {
       name: 'Quivering Palm',
 
       // A melee range injury-only spell would be dr9, or 9 + 4.5dpp.
@@ -375,6 +387,51 @@ export const dirtyFighting: CombatStyle = {
     },
 
     {
+      name: 'Ear Clap',
+
+      effect: `
+        Make a melee \\glossterm{strike}.
+        \\hit The target is \\briefly \\deafened.
+        \\injury The target is deafened as a \\glossterm{condition}.
+      `,
+      rank: 1,
+      roles: ['softener'],
+    },
+
+    {
+      name: 'Ear Clap+',
+
+      effect: `
+        Make a melee \\glossterm{strike}.
+        \\hit The target is \\deafened as a \\glossterm{condition}.
+      `,
+      rank: 3,
+      roles: ['softener'],
+    },
+
+    {
+      name: 'Spook',
+
+      effect: `
+        Make a melee \\glossterm{strike}.
+        \\hit If your attack result hits the target's Mental defense, it is \\briefly \\frightened by you.
+      `,
+      rank: 1,
+      roles: ['softener'],
+    },
+
+    {
+      name: 'Spook+',
+
+      effect: `
+        Make a melee \\glossterm{strike} that deals triple damage.
+        \\hit If your attack result hits the target's Mental defense, it is \\frightened by you as a \\glossterm{condition}.
+      `,
+      rank: 7,
+      roles: ['softener'],
+    },
+
+    {
       name: 'Eye Gouge',
 
       effect: `
@@ -382,6 +439,17 @@ export const dirtyFighting: CombatStyle = {
         \\injury If your attack result also hits the target's Fortitude defense, it is \\briefly \\blinded.
       `,
       rank: 7,
+      roles: ['maim'],
+    },
+
+    {
+      name: 'Headcrack',
+
+      effect: `
+        Make a melee \\glossterm{strike} that deals double damage.
+        \\injury If your attack result hits the target's Fortitude defense, it is \\briefly \\confused.
+      `,
+      rank: 5,
       roles: ['maim'],
     },
 
@@ -461,6 +529,18 @@ export const dirtyFighting: CombatStyle = {
         \\injury If your attack result hits the target's Fortitude defense, it is stunned as a \\glossterm{condition}.
       `,
       rank: 5,
+      roles: ['maim'],
+    },
+
+    {
+      name: 'Kidney Shot',
+
+      effect: `
+        Make a melee \\glossterm{strike}.
+        \\hit If your attack result hits the target's Fortitude defense, it is \\briefly \\stunned.
+        \\injury If your attack result hits the target's Fortitude defense, it is stunned as a \\glossterm{condition}.
+      `,
+      rank: 3,
       roles: ['maim'],
     },
 
