@@ -548,18 +548,18 @@
 
   Each creature has exactly one origin.
   Unlike traits, which are defined above, an origin is an intrinsic property of a creature that cannot be granted or removed temporarily by any means.
+  Unless otherwise specified, all creatures have the following default traits: \trait{blooded}, \trait{corporeal}, \trait{dynamic}, \trait{ensouled}, \trait{living}, \trait{mortal}, and \trait{sighted}.
 
   \creatureorigindef{Artificial}{artificial}
   Artificial creatures are composed of matter that would not ordinarily support life, such as metal, water, or \glossterm{essentia}.
   Common artificial creatures include constructs, elementals, and demons.
 
-  Artificial creatures normally have the following traits: \trait{bloodless}, \trait{corporeal}, \trait{dynamic}, \trait{immortal}, \trait{nonliving}, \trait{sighted}.
+  Artificial creatures normally have the following traits: \trait{bloodless}, \trait{immortal}, and \trait{nonliving}.
 
   \creatureorigindef{Natural}{natural}
   Natural creatures are composed of biological matter that naturally supports life. 
   Most creatures are natural, including humans, animals, and dragons.
 
-  Natural creatures normally have the following traits: \trait{blooded}, \trait{corporeal}, \trait{dynamic}, \trait{living}, \trait{mortal}, \trait{sighted}.
 
   \creatureorigindef{Undead}{undead}
   Undead are creatures that are made from the corpse or spirit of a dead creature.
@@ -571,7 +571,7 @@
   Any other effects beyond simple hit point recovery are ignored.
   For example, if a cleric uses their \ability{divine aid} ability to heal an undead creature, the undead would take damage, but it would not gain any bonus to its defenses.
 
-  Undead creatures normally have the following traits: \trait{bloodless}, \trait{corporeal}, \trait{immortal}, \trait{nonliving}, \trait{sighted}, \trait{static}.
+  Undead creatures normally have the following traits: \trait{bloodless}, \trait{immortal}, \trait{nonliving}, and \trait{static}.
 
   % TODO: should undead heal from vivimancy effects? Is it worth introducing a new damage type just for that?
   % Similarly, undead are always considered living creatures for the purpose of effects that would normally deal damage to living creatures.
@@ -586,21 +586,15 @@
   Aberrations have souls that are owned by the Precursors in the Eternal Void.
   When an aberration dies, its soul drifts through the Astral Expanse for centuries until it finally returns to the Eternal Void.
 
-  Aberrations normally have the following traits: \trait{ensouled}.
-
   \traitdef{Animal}{animal}
   Animals are simple, \glossterm{mundane} creatures.
   They cannot have \magical abilities, and cannot have an Intelligence above \minus8.
   The Creature Handling skill is more effective on animals, as indicated in that skill's description.
 
-  Animals normally have the following traits: \trait{ensouled}.
-
   \traitdef{Beast}{beast}
   Beasts are fairly unintelligent creatures, but they are smarter or more magical than animals.
   They have a maximum Intelligence of \minus5, and are incapable of speech or language.
   Beasts are typically found in the wilderness, and seem to naturally avoid civilized areas.
-
-  Beasts normally have the following traits: \trait{ensouled}.
 
   % TODO: should constructs regain hit points when they rest?
   \traitdef{Construct}{construct} A construct is a creature that is made of non-sapient matter.
@@ -621,12 +615,12 @@
   They are known for their vast hoards of wealth.
   Since dragons never stop growing in size or strength, elder dragons are some of the most powerful creatures in existence.
 
-  Dragons normally have the following traits: \trait{ensouled}, \trait{immortal}.
+  Dragons normally have the following traits: \trait{immortal}.
 
   % TODO: What makes fey unique? They are defined as chaotic in the votive section, but why?
   \traitdef{Fey}{fey} Fey are chaotic creatures that are highly magical.
 
-  Fey normally have the following traits: \trait{ensouled}, \trait{immortal}.
+  Fey normally have the following traits: \trait{immortal}.
 
   \creaturetypedef{Ghost}{ghost}
   A ghost is the soul of a deceased creature that lingered after death instead of proceeding to its proper afterlife.
@@ -634,13 +628,11 @@
   However, they are \vulnerable to \atFire abilities.
   Despite being incorporeal, they are affected by even \glossterm{mundane} Fire effects.
 
-  Ghosts normally have the following traits: \trait{ensouled}, \trait{incorporeal}.
+  Ghosts normally have the following traits: \trait{bloodless}, \trait{immortal}, \trait{incorporeal}.
 
   \creaturetypedef{Humanoid}{humanoid}
   Humanoid creatures have two arms, two legs, and one head.
   Most civilized creatures and societies are predominantly humanoid.
-
-  Humanoids normally have the following traits: \trait{ensouled}.
 
   \traitdef{Indwelt}{indwelt}
   An indwelt is a creature that is made of non-sapient matter.
@@ -653,7 +645,6 @@
   If an indwelt is killed, it can be resurrected, but its previous body is not considered its corpse in the same way that a human's dead body is.
   This means it cannot be resurrected by magic that uses the corpse of the deceased creature.
 
-  Indwelt normally have the following traits: \trait{ensouled}.
   If the body of an indwelt is made of organic matter, it is \trait{dynamic} and \trait{living}.
   Otherwise, it is \trait{static} and \trait{nonliving}.
 
@@ -661,8 +652,6 @@
   Insects are multi-legged invertebrates that often have a tough exoskeleton.
   They generally have highly organized social structures.
   Even \trait{simple-minded} insects can be capable of highly coordinated behavior in groups.
-
-  Insects normally have the following traits: \trait{ensouled}.
 
   \creaturetypedef{Ooze}{ooze}
   Oozes are amorphous, gelatinous creatures that lack defined organs or skeletons.
@@ -674,7 +663,7 @@
   They are \vulnerable to \atFire abilities.
   Some plants are creatures, but most plants are living \glossterm{objects}.
 
-  Plants normally have the following traits: \trait{bloodless}, \trait{living}, \trait{soulless}.
+  Plants normally have the following traits: \trait{bloodless}, \trait{soulless}.
 
 \traitdef{Soulforged}{soulforged}
   A soulforged is a creature made from the essentia of a Spiritual Plane.

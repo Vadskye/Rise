@@ -207,6 +207,7 @@ const RISE_TRAITS_LIST = [
   'nonliving',
   'quadrupedal',
   'scent',
+  'sighted',
   'sightless',
   'simple-minded',
   'soulless',

@@ -277,7 +277,16 @@ function genEquipmentText(monster: Creature): string {
 }
 
 function genTraitsText(monster: Creature): string {
-  const traits = monster.getStandardTraits();
+  const defaultTraits = [
+    'blooded',
+    'corporeal',
+    'dynamic',
+    'ensouled',
+    'living',
+    'mortal',
+    'sighted',
+  ];
+  const traits = monster.getStandardTraits().filter((t) => !defaultTraits.includes(t));
   if (traits.length === 0) {
     return '';
   }
