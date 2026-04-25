@@ -490,7 +490,7 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
                     In addition, choose a location on stable ground within range.
                     \hit As a \glossterm{brief} effect, the target is compelled to move to the location you chose if it can do so safely.
                     It must spend its \glossterm{movement} and \glossterm{standard action} to move to that location, or if it is already there, to do nothing except observe the location carefully.
-                    It can use any other actions, including \glossterm{elite actions}, as normal.
+                    After this movement it can use any other actions, including \glossterm{elite actions}, as normal.
                     After this effect ends, the target becomes immune to it until it finishes a \glossterm{short rest}.
 
                     \rankline
