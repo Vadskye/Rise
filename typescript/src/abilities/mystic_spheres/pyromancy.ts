@@ -548,13 +548,13 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       functionsLike: {
         name: 'personal ignition',
-        exceptThat: 'the damage increases to \\damagerankthree.',
+        exceptThat: 'the damage increases to \\damagerankfour.',
       },
       narrative: `
         You catch on fire.
         This does not cause you any harm, as the flames burn around your body without burning you.
       `,
-      rank: 5,
+      rank: 6,
       roles: ['attune'],
       scaling: 'damage',
       type: 'Attune (deep)',
