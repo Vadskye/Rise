@@ -139,7 +139,7 @@ export function addBeasts(grimoire: Grimoire) {
       it: `
           makes the target \\slowed while the poison lasts.
           The second escalation also inflicts a \\glossterm{vital wound} with a unique vital wound effect.
-          Instead of making a \\glossterm{vital roll} for the \\glossterm{vital wound}, the target's blood runs cold.
+          Instead of making a \\glossterm{vital roll} for the \\glossterm{vital wound}, the target becomes deathly cold.
           % TODO: is this measured from the target's turn or the spider's turn?
           Whenever it takes damage from a \\atCold ability, it becomes \\briefly \\helpless.
           This effect lasts until the vital wound is removed.
@@ -517,9 +517,10 @@ export function addBeasts(grimoire: Grimoire) {
     creature.addCustomManeuver({
       effect: `
         Make a \\glossterm{strike}.
-        \\injury If the target has blood, the $name regains \\hpranktwo.
+        \\injury The $name regains \\hpranktwo.
       `,
       name: 'Leech Life',
+      tags: ['Blood'],
       weapon: 'bite',
     });
   });
