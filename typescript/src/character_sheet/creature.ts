@@ -1449,19 +1449,25 @@ export class Creature implements CreaturePropertyMap {
   }
 
   public getStandardTraitsForClassification(): RiseTrait[] {
-    let traits: RiseTrait[] = [];
+    let traits: RiseTrait[] = ['blooded', 'corporeal', 'dynamic', 'ensouled', 'living', 'mortal', 'sighted'];
 
-    // Traits by Origin
+    // Origin Traits
+    const originTraits: RiseTrait[] = [];
     switch (this.creature_origin) {
       case 'artificial':
-        traits.push('bloodless', 'corporeal', 'dynamic', 'immortal', 'nonliving');
+        originTraits.push('bloodless', 'immortal', 'nonliving');
         break;
       case 'natural':
-        traits.push('blooded', 'corporeal', 'dynamic', 'living', 'mortal');
         break;
       case 'undead':
-        traits.push('bloodless', 'corporeal', 'dynamic', 'immortal', 'nonliving');
+        originTraits.push('bloodless', 'immortal', 'nonliving');
         break;
+    }
+
+    // Origin traits override default traits
+    for (const originTrait of originTraits) {
+      traits = traits.filter((t) => !areTraitsConflicting(t, originTrait));
+      traits.push(originTrait);
     }
 
     // Traits by Type
@@ -1470,28 +1476,26 @@ export class Creature implements CreaturePropertyMap {
       case 'aberration':
       case 'animal':
       case 'beast':
-        typeTraits.push('ensouled');
         break;
       case 'construct':
         typeTraits.push('mindless', 'nonliving', 'soulless', 'static');
         break;
       case 'dragon':
       case 'fey':
-        typeTraits.push('ensouled', 'immortal');
+        typeTraits.push('immortal');
         break;
       case 'ghost':
-        typeTraits.push('ensouled', 'incorporeal');
+        typeTraits.push('incorporeal');
         break;
       case 'humanoid':
       case 'indwelt':
       case 'insect':
-        typeTraits.push('ensouled');
         break;
       case 'ooze':
         typeTraits.push('simple-minded', 'soulless');
         break;
       case 'plant':
-        typeTraits.push('bloodless', 'living', 'soulless');
+        typeTraits.push('bloodless', 'soulless');
         break;
     }
 
@@ -1513,6 +1517,7 @@ const TRAIT_CONFLICTS: [RiseTrait, RiseTrait][] = [
   ['living', 'nonliving'],
   ['mortal', 'immortal'],
   ['dynamic', 'static'],
+  ['sighted', 'sightless'],
 ];
 
 function areTraitsConflicting(traitA: RiseTrait, traitB: RiseTrait): boolean {
