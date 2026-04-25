@@ -645,7 +645,6 @@
     \lcaption{Universal Combat Abilities}
     \begin{dtabularx}{\textwidth}{l l X l}
       \tb{Ability}       & \tb{Usage Time}  & \tb{Short Description}                        & \tb{Tags}                                      \tableheaderrule
-      Charge             & Standard         & Move and make a strike                        & \tdash                                         \\
       Desperate Exertion & Non-action       & Reroll an attack or check with a \plus2 bonus & \tdash                                         \\
       Escape Grapple     & Standard         & Stop being grappled                           & \abilitytag{Brawling}                          \\
       Grapple            & Standard         & Start grappling with a foe                    & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
@@ -658,18 +657,6 @@
       Trip               & Standard         & Trip a foe                                    & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
     \end{dtabularx}
   \end{dtable!*}
-
-  % TODO: it would be nice if this removed your available movement to avoid yoyoing, but the wording is awkward.
-  \begin{activeability}{Charge}{Standard action}
-    \rankline
-    After using this ability, you take a \minus2 penalty to all defenses until your next turn.
-
-    Move up to your speed in a single straight line without reducing your \glossterm{available movement}.
-    At the end of this movement, you can make a melee \glossterm{strike}.
-    \rankline
-    \featlevel{12} The strike deals double damage.
-    \featlevel{18} The strike deals triple damage.
-  \end{activeability}
 
   \begin{triggeredability}{Desperate Exertion}{Triggered (see text)}
     \par \noindent Cost: Two \glossterm{fatigue levels}.
