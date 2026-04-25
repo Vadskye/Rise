@@ -258,7 +258,7 @@ export const mobileHunter: CombatStyle = {
       },
       rank: 3,
       roles: ['clear', 'dive'],
-      tags: ['Earth'],
+      tags: ['Earth', 'Physical'],
     },
 
     {
@@ -270,7 +270,7 @@ export const mobileHunter: CombatStyle = {
       },
       rank: 7,
       roles: ['clear', 'dive'],
-      tags: ['Earth'],
+      tags: ['Earth', 'Physical'],
     },
   ],
 };
