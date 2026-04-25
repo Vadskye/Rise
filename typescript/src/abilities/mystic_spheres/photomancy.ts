@@ -402,6 +402,8 @@ export const photomancy: MysticSphere = {
       type: 'Sustain (attunable, minor)',
     },
 
+    // Rank 7 version is unlimited. It's not obvious how to downscale that correctly to
+    // rank 1.
     {
       name: 'Mirror Image',
 
@@ -418,9 +420,9 @@ export const photomancy: MysticSphere = {
       rank: 1,
       roles: ['attune'],
       scaling: {
-        3: `The number of duplicates increases to three.`,
-        5: `The number of duplicates increases to four.`,
-        7: `The number of duplicates increases to five.`,
+        3: 'The number of illusory duplicates increases to three.',
+        5: 'The number of illusory duplicates increases to four.',
+        7: 'The number of illusory duplicates increases to five.',
       },
       tags: ['Visual'],
       type: 'Attune (deep)',
