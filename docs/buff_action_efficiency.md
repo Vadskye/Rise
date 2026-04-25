@@ -17,7 +17,7 @@ By EA:
   Extra damage   & 0.4  & 0.6  & 1.0     & 1.4 \\
   Focused        & 0.4  & 0.6  & 1.0     & 1.4 \\
   Fortified      & 0.3  & 0.5  & 0.7     & 1.0 \\
-  Impervious     & 1.3  & no   & inf     & inf \\
+  Resistant     & 1.3  & no   & inf     & inf \\
   Half damage    & 0.7  & no   & 1.5     & 2.1 \\
   Honed          & 0.4  & 0.6  & 1.0     & 1.4 \\
   Maximized      & 0.7  & no   & 1.8     & 2.8 \\
@@ -147,7 +147,7 @@ With a reroll, your odds of getting a single crit become 36% and a double crit i
 
 You are attacked 1/3 of the time, and fortified protects from 50% of enemy attacks, so 1.6 / 3 \* 0.5 = 0.3
 
-### Impervious (self): 1.1
+### Resistant (self): 1.1
 
 +4 defenses is 3.2 EA baseline. Ignoring miss effects means it's relevant about 40% of the time, so 3.2 \* 0.4 = 1.3 EA.
 

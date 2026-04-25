@@ -26,7 +26,7 @@ export function convertMonsterToLatex(monster: Creature, parentGroupName?: strin
     monster.description || knowledgeText ? '\\vspace{0.5em}' : '\\vspace{0.25em}';
 
   const monsterContext1 = `Level ${monster.level} ${format.uppercaseFirst(monster.base_class)}${eliteText}`;
-  const monsterContext2 = `${format.uppercaseFirst(monster.size)} ${monster.creature_type}`;
+  const monsterContext2 = `${format.uppercaseFirst(monster.size)} ${monster.creature_origin}${monster.creature_type ? ' ' + monster.creature_type : ''}`;
 
   // This still has various like $name and $accuracy.
   const latexWithPlaceholders = `
@@ -140,7 +140,7 @@ function genDefensiveStatisticsText(monster: Creature): string {
 function genSpecialDefenseModifiersText(monster: Creature) {
   return [
     ['Immune', monster.immune],
-    ['Impervious', monster.impervious],
+    ['Resistant', monster.resistant],
     ['Vulnerable', monster.vulnerable],
   ]
     .filter((sd) => sd[1])
@@ -277,7 +277,16 @@ function genEquipmentText(monster: Creature): string {
 }
 
 function genTraitsText(monster: Creature): string {
-  const traits = monster.getStandardTraits();
+  const defaultTraits = [
+    'blooded',
+    'corporeal',
+    'dynamic',
+    'ensouled',
+    'living',
+    'mortal',
+    'sighted',
+  ];
+  const traits = monster.getStandardTraits().filter((t) => !defaultTraits.includes(t));
   if (traits.length === 0) {
     return '';
   }

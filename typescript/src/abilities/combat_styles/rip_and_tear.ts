@@ -27,6 +27,7 @@ export const ripAndTear: CombatStyle = {
       `,
       rank: 3,
       roles: ['burst'],
+      tags: ['Blood'],
     },
 
     {
@@ -39,6 +40,7 @@ export const ripAndTear: CombatStyle = {
       `,
       rank: 7,
       roles: ['burst'],
+      tags: ['Blood'],
     },
 
     {
@@ -64,17 +66,6 @@ export const ripAndTear: CombatStyle = {
     },
 
     {
-      name: 'Hamstring',
-
-      effect: `
-        Make a melee \\glossterm{strike} that deals double damage.
-        \\injury The target becomes \\slowed as a \\glossterm{condition}.
-      `,
-      rank: 5,
-      roles: ['maim'],
-    },
-
-    {
       name: 'Two-Weapon Rend',
 
       effect: `
@@ -85,6 +76,7 @@ export const ripAndTear: CombatStyle = {
       `,
       rank: 3,
       roles: ['burn'],
+      tags: ['Blood'],
     },
 
     {
@@ -99,6 +91,7 @@ export const ripAndTear: CombatStyle = {
       `,
       rank: 5,
       roles: ['burn'],
+      tags: ['Blood'],
     },
 
     {
@@ -193,6 +186,7 @@ export const ripAndTear: CombatStyle = {
       `,
       rank: 1,
       roles: ['wildfire'],
+      tags: ['Blood'],
     },
 
     {
@@ -209,6 +203,7 @@ export const ripAndTear: CombatStyle = {
       `,
       rank: 5,
       roles: ['wildfire'],
+      tags: ['Blood'],
     },
 
     {
@@ -222,6 +217,7 @@ export const ripAndTear: CombatStyle = {
       `,
       rank: 1,
       roles: ['execute'],
+      tags: ['Blood'],
     },
 
     // With only a single extra turn of damage, this is 36% more damage than baseline.
@@ -237,6 +233,7 @@ export const ripAndTear: CombatStyle = {
       `,
       rank: 5,
       roles: ['execute'],
+      tags: ['Blood'],
     },
 
     {
@@ -309,6 +306,7 @@ export const ripAndTear: CombatStyle = {
       // narrative: '',
       rank: 1,
       roles: ['generator'],
+      tags: ['Blood'],
     },
 
     {
@@ -321,6 +319,7 @@ export const ripAndTear: CombatStyle = {
       // narrative: '',
       rank: 5,
       roles: ['generator'],
+      tags: ['Blood'],
     },
 
     {
@@ -333,6 +332,7 @@ export const ripAndTear: CombatStyle = {
       // narrative: '',
       rank: 3,
       roles: ['focus'],
+      tags: ['Blood'],
     },
   ],
 };

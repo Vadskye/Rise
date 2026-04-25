@@ -31,7 +31,7 @@ pub struct RankAbility<'a> {
     //  * numerical upgrade to existing ability
     // 1:
     //  * removal of a universal limitation (recover limit)
-    //  * conditional defense (impervious)
+    //  * conditional defense (resistant)
     //  * statistical benefit with limited scope (Brawling, exotic weapons, accuracy with crits)
     //  * attunement point
     // 2:

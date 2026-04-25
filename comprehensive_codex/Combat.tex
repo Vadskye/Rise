@@ -210,6 +210,17 @@
         \item Alice, Bob, Carol, and Dave (every time)
       \end{enumerate}
 
+  \subsection{Surprise and Pre-Combat Actions}
+    In some circumstances, one or more groups may be aware that combat will happen before it actually starts.
+    For example, a creature at a tense negotiation may secretly drink a potion before a fight breaks out.
+    This can also cover scenarios where one group actively initiates combat, such as by breaking down a door or attempting an assassination.
+
+    In such cases, everyone who is pre-aware of combat rolls initiative, ignoring creatures not yet aware of the combat.
+    If only one allied group is pre-aware of combat and they can communicate effectively, you can skip rolling initiative, since they'll all be joined into a single turn anyway.
+    Once all pre-aware creatures have taken their turns, decide whether the other creatures are aware that combat has started.
+    If they are, they roll initiative and join the combat, with the winner of that initiative roll taking their turn immediately.
+    Otherwies, they take a turn doing whatever they would normally do outside of combat, such as talking amongst themselves, and this process repeats.
+
   \subsection{Deciding Action Order}\label{Deciding Action Order}
     Try not to spend too much time on the exact order of everyone's actions within your initiative group.
     Most of the time, the exact order doesn't matter.
@@ -258,12 +269,14 @@
       For example, you can't move your full speed onto a mount and then have that mount move with you in the same turn.
       You can still be moved by \glossterm{push}, \glossterm{fling}, and teleportation effects.
 
+  % Pure movement abilities don't have Physical if they can be used by incorporeal creatures
   \subsection{Move Action Abilities}\label{Move Action Abilities}
     Each of these abilities requires a \glossterm{move action} to use.
     The most common movement ability is \ability{hustle}, which simply moves you to a location.
     You could think of characters as using the hustle ability whenever they move while not actively engaged in combat, but it's not generally useful to think about narrative movements in terms of combat abilities.
 
     \begin{activeability}{Block}{Move action}
+      \abilitytags \atPhysical
       \rankline
       When you use this ability, choose a creature you can see.
       Until your next turn, the next time the target attempts to move out of a space adjacent to you, you attempt to block its movement.
@@ -278,6 +291,7 @@
     \end{activeability}
 
     \begin{activeability}{Climb Forward}{Move action}
+      \abilitytags \atPhysical
       \rankline
       This ability requires touching a solid vertical surface with two \glossterm{free hands}, or with one free hand if you take a \minus5 penalty to your Climb check.
       Make a Climb check to move along the surface.
@@ -298,6 +312,7 @@
     \end{activeability}
 
     \begin{activeability}{Swim Forward}{Move action}
+      \abilitytags \atPhysical
       \rankline
       This ability requires being immersed in a liquid like water and using two \glossterm{free hands}, or using one free hand if you take a \minus5 penalty to your Swim check.
       Make a Swim check to move through the liquid.
@@ -546,6 +561,7 @@
   The rules for strikes listed here simply define the normal behavior.
 
   \begin{activeability}{Basic Strike -- Melee}{Standard action}
+    \abilitytags \atPhysical
     \rankline
     Make a \glossterm{melee} attack vs. Armor using a weapon against something adjacent to you.
     You must have \glossterm{line of effect} to the target.
@@ -554,6 +570,7 @@
   \end{activeability}
 
   \begin{activeability}{Basic Strike -- Projectile}{Standard action}
+    \abilitytags \atPhysical
     \rankline
     Make a \glossterm{ranged} attack vs. Armor using a \weapontag{Projectile} weapon against something that you have \glossterm{line of effect} to.
     If the target is adjacent to you, you take a \minus4 accuracy penalty.
@@ -562,6 +579,7 @@
   \end{activeability}
 
   \begin{activeability}{Basic Strike -- Thrown}{Standard action}
+    \abilitytags \atPhysical
     \rankline
     Make a \glossterm{ranged} attack vs. Armor using a non-\weapontag{Projectile} weapon against something that you have \glossterm{line of effect} to.
     If the weapon has the \weapontag{Thrown} weapon tag, use its defined \glossterm{range limits}.
@@ -633,31 +651,19 @@
   \begin{dtable!*}
     \lcaption{Universal Combat Abilities}
     \begin{dtabularx}{\textwidth}{l l X l}
-      \tb{Ability}       & \tb{Usage Time}  & \tb{Short Description}                        & \tb{Tags}                                      \tableheaderrule
-      Charge             & Standard         & Move and make a strike                        & \tdash                                         \\
-      Desperate Exertion & Non-action       & Reroll an attack or check with a \plus2 bonus & \tdash                                         \\
-      Escape Grapple     & Standard         & Stop being grappled                           & \abilitytag{Brawling}                          \\
-      Grapple            & Standard         & Start grappling with a foe                    & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
-      Maintain Grapple   & Free action      & Continue grappling with a foe                 & \abilitytag{Brawling}                          \\
-      Ready Reaction     & Standard         & Ready an action                               & \tdash                                         \\
-      Recover            & Standard         & Regain HP, remove conditions                  & \tdash                                         \\
-      Run                & Standard         & Triple your available movement                & \tdash                                         \\
-      Shove              & Move or standard & Move a foe                                    & \abilitytag{Brawling}                          \\
-      Sprint             & Free             & Double your available movement                & \tdash                                         \\
-      Total Defense      & Standard         & Gain \plus2 to all defenses                   & \tdash                                         \\
-      Throw              & Standard         & Throw a held object                           & \tdash                                         \\
-      Trip               & Standard         & Trip a foe                                    & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
+      \tb{Ability}       & \tb{Usage Time}  & \tb{Short Description}                        & \tb{Tags}                              \tableheaderrule
+      Desperate Exertion & Non-action       & Reroll an attack or check with a \plus2 bonus & \tdash                                 \\
+      Escape Grapple     & Standard         & Stop being grappled                           & \atBrawling, \atPhysical               \\
+      Grapple            & Standard         & Start grappling with a foe                    & \atBrawling, \atPhysical, \atSizeBased \\
+      Ready Reaction     & Standard         & Ready an action                               & \tdash                                 \\
+      Recover            & Standard         & Regain HP, remove conditions                  & \tdash                                 \\
+      Run                & Standard         & Briefly double your available movement        & \tdash                                 \\
+      Shove              & Move or standard & Move a foe                                    & \atBrawling, \atPhysical               \\
+      Sprint             & Free             & Double your available movement                & \tdash                                 \\
+      Throw              & Standard         & Throw a held object                           & \tdash                                 \\
+      Trip               & Standard         & Trip a foe                                    & \atBrawling, \atPhysical                \\
     \end{dtabularx}
   \end{dtable!*}
-
-  % TODO: it would be nice if this removed your available movement to avoid yoyoing, but the wording is awkward.
-  \begin{activeability}{Charge}{Standard action}
-    \rankline
-    After using this ability, you take a \minus2 penalty to all defenses until your next turn.
-
-    Move up to your speed in a single straight line without reducing your \glossterm{available movement}.
-    At the end of this movement, you can make a melee \glossterm{strike}.
-  \end{activeability}
 
   \begin{triggeredability}{Desperate Exertion}{Triggered (see text)}
     \par \noindent Cost: Two \glossterm{fatigue levels}.
@@ -674,36 +680,22 @@
   \end{triggeredability}
 
   \begin{activeability}{Escape Grapple}{Standard action}
-    \abilitytags \abilitytag{Brawling}
+    \abilitytags \atBrawling, \atPhysical
     \rankline
-    Make a \glossterm{brawling attack} against any number of creatures that you are grappled by.
+    Make a \glossterm{brawling attack} vs. Brawn against any number of creatures that you are grappled by.
     You can use the Flexibility skill in place of your brawling accuracy (see \pcref{Flexibility}).
-
-    The defense of each creature is equal to the attack result of its \ability{maintain grapple} ability, or 0 if it did not use that ability.
     % TODO: awkward wording
     For each target, if you hit that target with this attack, it stops being grappled by you and you stop being grappled by it.
   \end{activeability}
 
   \begin{activeability}{Grapple}{Standard action}
-    \abilitytags \abilitytag{Brawling}, \abilitytag{Size-Based}
+    \abilitytags \atBrawling, \atPhysical, \atSizeBased
     \rankline
     Make a \glossterm{brawling attack} with a free hand against the Brawn and Reflex defenses of one creature you \glossterm{touch}.
 
     \hit You and the target are \grappled by each other.
     For details, see \pcref{Grappling}.
     \crit You also control the grapple (see \pcref{Controlling a Grapple}).
-  \end{activeability}
-
-  \begin{activeability}{Maintain Grapple}{\glossterm{Free action}}
-    \abilitytags \abilitytag{Brawling}
-    \rankline
-    % TODO: Awkward wording
-    You can use this ability once per turn while you are grappling another creature.
-
-    Make a \glossterm{brawling attack} against each creature that you are grappling (see \pcref{Grappling}).
-    This attack has no immediate effect.
-    The result of this roll \briefly determines how difficult it is for a creature to escape the grapple using the \textit{escape grapple} ability.
-    If you do not use this ability while you are in a grapple, creatures can easily escape the grapple with the \textit{escape grapple} ability.
   \end{activeability}
 
   \begin{activeability}{Ready Reaction}{Standard action}
@@ -730,11 +722,12 @@
 
   \begin{activeability}{Run}{Standard action}
     \rankline
-    You add twice your \glossterm{speed} to your \glossterm{available movement}.
+    Add your \glossterm{speed} to your \glossterm{available movement}.
+    At the start of your next turn, add your speed to your available movement again.
   \end{activeability}
 
   \begin{activeability}{Shove}{Standard action}
-    \abilitytags \abilitytag{Brawling}
+    \abilitytags \atBrawling, \atPhysical
     \rankline
     If you are grappling or being grappled by a creature, you can use this ability as a \glossterm{move action}, and it affects all creatures grappling with you (see \pcref{Grappling}).
     Otherwise, the target is something you \glossterm{touch}.
@@ -758,7 +751,7 @@
 
   % Is this a fling effect? What happens if you throw someone into a wall?
   \begin{activeability}{Throw}{Standard action}
-    \abilitytags \abilitytag{Brawling}
+    \abilitytags \atBrawling, \atPhysical
     \rankline
     You throw an object or creature you hold in at least one hand.
     The object's \glossterm{weight category} must be below the maximum weight category you can lift normally (see \pcref{Weight Categories}).
@@ -774,13 +767,8 @@
     That attack roll is rolled separately from the attack roll to throw an unwilling creature, if any.
   \end{activeability}
 
-  \begin{activeability}{Total Defense}{Standard action}
-    \rankline
-    You are \briefly \braced.
-  \end{activeability}
-
   \begin{activeability}{Trip}{Standard action}
-    \abilitytags \abilitytag{Brawling}, \abilitytag{Size-Based}
+    \abilitytags \atBrawling, \atPhysical
     \rankline
     Make a \glossterm{brawling attack} vs. Brawn using a free hand against a creature you \glossterm{touch}.
     \hit The target becomes \prone.
@@ -799,7 +787,8 @@
       \item You cannot move unless you \glossterm{push} all creatures grappling you, such as with the \ability{shove} ability (see \pcref{Shove}).
         In addition, you cannot \glossterm{push} a creature grappling with you so it stops being adjacent to you.
         However, you can use the \ability{shove} ability to affect creatures you are grappling with as a \glossterm{move action} instead of as a standard action.
-      \item You can use the \ability{escape grapple} and \ability{maintain grapple} abilities to stop or continue grappling (see \pcref{Universal Combat Abilities}).
+      \item You can use the \ability{escape grapple} ability to stop grappling (see \pcref{Universal Combat Abilities}).
+      \item You can attempt to release the grapple as a \glossterm{free action}. If each other creature you are grappling with used \ability{escape grapple} ability or attempted to release the grapple in this way since your last turn, the grapple immediately ends for all participants. Otherwise, it continues.
     \end{raggeditemize}
 
     \subsubsection{Controlling a Grapple}\label{Controlling a Grapple}
@@ -808,7 +797,7 @@
 
       If you control a grapple, you gain two benefits.
       First, you do not take the normal \minus2 penalty to Armor and Reflex defenses for being in a grapple.
-      Second, you can escape the grapple as a \glossterm{free action}, without having to use the normal \ability{escape grapple} ability.
+      Second, you can release the grapple as a \glossterm{free action} regardless of whether the other participants want to leave the grapple.
 
       To take control of an existing grapple, you can use the \textit{grapple} ability.
       If you hit against the controlling creature, no creature has control of the grapple.
@@ -1037,7 +1026,7 @@
     Some magical abilities can have effects that are mundane.
     If so, they will be described as mundane explicitly, and you use your \glossterm{mundane power} instead of your \glossterm{magical power} with the ability to determine its effects (see \pcref{Ability Power}).
     For example, the \spell{twisting claw} spell causes you to make a \glossterm{mundane} strike.
-    That strike would use your \glossterm{mundane power}, and it would be unable to affect \trait{intangible} creatures.
+    That strike would use your \glossterm{mundane power}, and it would be unable to affect \trait{incorporeal} creatures.
     A monk with the \ability{ki energy} ability would be able to convert that strike to be \magical instead of mundane, just like they can convert any other mundane strike.
 
   \subsection{Ability Range}\label{Ability Range}
@@ -1080,7 +1069,7 @@
   \subsection{Touch Range}
     Some abilities affect creatures or objects that you touch.
     You can generally touch an adjacent creature as long as you have a \glossterm{free hand}, even if it is an enemy, though this has no mechanical effect unless an ability says it does.
-    Some creatures cannot be touched, such as \trait{incorporeal} and \trait{intangible} creatures.
+    Some creatures cannot be touched, such as \trait{incorporeal} creatures.
 
   \subsection{Noticing Abilities}
     Using an ability normally requires some obvious effort or action on your character's part.
@@ -1114,7 +1103,7 @@
 
     \subsubsection{Invalid Targets}
       You can always attempt to use a \glossterm{targeted} ability on an invalid target.
-      For example, you can try to cast a healing spell on a rock if you want, even if the healing spell only affects living creatures.
+      For example, you can try to cast a healing spell on a rock if you want, even if the healing spell has the \atLife tag and says it can only target creatures.
       If the target is still invalid when the ability resolves, the ability has no effect on that target.
       However, it still affects any other targets of the ability normally.
 

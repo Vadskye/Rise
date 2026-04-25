@@ -122,7 +122,7 @@ pub fn staffs() -> Vec<Implement> {
         rank: 3,
         short_description: String::from(r"Grants +2 accuracy when you injure a foe"),
         description: String::from(r"
-            Whenever you \glossterm{injure} a creature with a \magical ability, you \glossterm{briefly} gain a +2 accuracy bonus against that creature.
+            Whenever you \glossterm{injure} a \trait{blooded} creature with a \magical ability, you \glossterm{briefly} gain a +2 accuracy bonus against that creature.
             As normal, this bonus does not stack with itself, even if you injure the same creature multiple times.
         "),
         upgrades: vec![

@@ -687,12 +687,12 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       name: 'Mistform',
 
       effect: `
-        You \\glossterm{shapeshift} into a cloud of mist.
-        This makes you \\trait{floating}, \\trait{intangible}, and \\trait{legless}.
+        You \\glossterm{shapeshift} into a dense cloud of mist.
+        This makes you \\trait{floating} and \\trait{legless}.
         You cannot speak and you have no \\glossterm{free hands}.
         All of your normal movement modes are replaced with a slow \\glossterm{fly speed} with a 30 foot \\glossterm{height limit} (see \\pcref{Flight}).
         Since you have no \\glossterm{walk speed}, flying in this way does not make you \\unsteady.
-        You are unable to take any standard actions other than sustaining this effect, but you can still take \\glossterm{move actions} in place of standard actions.
+        You are unable to take any standard actions other than sustaining this effect.
       `,
       rank: 4,
       roles: ['attune'],

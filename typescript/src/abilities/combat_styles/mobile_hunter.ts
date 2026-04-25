@@ -65,19 +65,9 @@ export const mobileHunter: CombatStyle = {
     },
 
     {
-      name: 'Rushdown',
+      name: 'Mighty Charge',
 
-      effect: `
-        You can move up to half your speed without reducing your \\glossterm{available movement}.
-        Then, you can make a melee \\glossterm{strike}.
-      `,
-      rank: 1,
-      roles: ['dive'],
-    },
-
-    {
-      name: 'Mighty Rushdown',
-
+      cost: `Your available movement, if any, is reduced to zero.`,
       effect: `
         You can move up to your speed without reducing your \\glossterm{available movement}.
         Then, you can make a melee \\glossterm{strike} with a \\minus2 accuracy penalty that deals double \\glossterm{weapon damage}.
@@ -99,30 +89,16 @@ export const mobileHunter: CombatStyle = {
     },
 
     {
-      name: 'Sprinting Charge',
+      name: 'Charge',
 
-      cost: 'One \\glossterm{fatigue level}.',
-      functionsLike: {
-        abilityType: 'ability',
-        exceptThat: `
-          you can move up to twice your speed instead of up to your speed, and the defense penalty is removed.
-        `,
-        name: 'charge',
-      },
-      rank: 1,
-      roles: ['exertion', 'dive'],
-    },
-
-    {
-      name: 'Prepared Sprint',
-
+      // Mostly irrelevant for intended usage, but makes it hard to yoyo
+      cost: `Your available movement, if any, is reduced to zero.`,
       effect: `
-        Your \\glossterm{speed} is \\briefly doubled.
-        However, you cannot use the \\ability{run} or \\ability{sprint} abilities during that time.
-        \longreminder{This doesn't increase your \\glossterm{available movement} this turn.}
+        Move up to your speed in a single straight line without reducing your \\glossterm{available movement}.
+        At the end of this movement, you can make a melee \\glossterm{strike}.
       `,
       rank: 1,
-      roles: ['focus'],
+      roles: ['dive'],
     },
 
     {
@@ -225,8 +201,9 @@ export const mobileHunter: CombatStyle = {
 
     // assume movement is worth 0.6 EA or so
     {
-      name: 'Fearsome Rushdown',
+      name: 'Fearsome Charge',
 
+      cost: `Your available movement, if any, is reduced to zero.`,
       effect: `
         Move up to half your \\glossterm{speed} without reducing your \\glossterm{available movement}.
         Then, make a melee \\glossterm{strike} that deals double damage.
@@ -238,9 +215,10 @@ export const mobileHunter: CombatStyle = {
     },
 
     {
-      name: 'Eyeflash Rushdown',
+      name: 'Eyeflash Charge',
 
       // assume movement is worth 0.6 EA or so
+      cost: `Your available movement, if any, is reduced to zero.`,
       effect: `
         Move up to half your movement speed without reducing your \\glossterm{available movement}.
         Then, make a \\glossterm{strike} that deals triple damage.
@@ -280,7 +258,7 @@ export const mobileHunter: CombatStyle = {
       },
       rank: 3,
       roles: ['clear', 'dive'],
-      tags: ['Earth'],
+      tags: ['Earth', 'Physical'],
     },
 
     {
@@ -292,7 +270,7 @@ export const mobileHunter: CombatStyle = {
       },
       rank: 7,
       roles: ['clear', 'dive'],
-      tags: ['Earth'],
+      tags: ['Earth', 'Physical'],
     },
   ],
 };

@@ -122,6 +122,19 @@
     \label{#1}
 }
 
+\DeclareDocumentCommand{\creatureorigin}{o m}
+{
+    \IfValueTF{#1}
+    {\termlink[#1]{#2}{creatureorigin}}
+    {\termlink{#2}{creatureorigin}}
+}
+\DeclareDocumentCommand{\creatureorigindef}{m m}
+{
+    \termdef{#1}[#2]{creatureorigin}
+    \label{#1}
+}
+
+
 \DeclareDocumentCommand{\creaturetype}{o m}
 {
     \IfValueTF{#1}
@@ -133,6 +146,19 @@
     \termdef{#1}[#2]{creaturetype}
     \label{#1}
 }
+
+\DeclareDocumentCommand{\creaturesubtype}{o m}
+{
+    \IfValueTF{#1}
+    {\termlink[#1]{#2}{creaturesubtype}}
+    {\termlink{#2}{creaturesubtype}}
+}
+\DeclareDocumentCommand{\creaturesubtypedef}{m m}
+{
+    \termdef{#1}[#2]{creaturesubtype}
+    \label{#1}
+}
+
 
 \DeclareDocumentCommand{\glossterm}{o m}
 {

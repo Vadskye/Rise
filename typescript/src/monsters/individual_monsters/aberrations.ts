@@ -7,6 +7,7 @@ export function addAberrations(grimoire: Grimoire) {
       alignment: 'neutral evil',
       base_class: 'leader',
       elite: true,
+      creature_origin: 'natural',
       creature_type: 'aberration',
       level: 12,
       size: 'huge',

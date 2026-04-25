@@ -25,14 +25,14 @@ pub fn elixirs() -> Vec<Tool> {
     elixirs.push(Tool {
         name: "Antitoxin Elixir".to_string(),
         rank: 1,
-        short_description: "Impervious to poison".to_string(),
+        short_description: "Resistant to poison".to_string(),
         description: String::from(r"
-            When you drink this \glossterm<potion>, if you \glossterm<attune> to its effects, you become \impervious to \atPoison effects.
+            When you drink this \glossterm<potion>, if you \glossterm<attune> to its effects, you become \resistant to \atPoison effects.
             This effect expires after 10 minutes.
         "),
         upgrades: vec![
             ItemUpgrade::new(4, "Immune to poison", r"
-                You become immune instead of impervious.
+                You become immune instead of resistant.
             "),
         ],
         ..elixir()
@@ -79,14 +79,14 @@ pub fn elixirs() -> Vec<Tool> {
     elixirs.push(Tool {
         name: "Fireproof Elixir".to_string(),
         rank: 1,
-        short_description: "Impervious to fire".to_string(),
+        short_description: "Resistant to fire".to_string(),
         description: r"
-            When you drink this \glossterm<potion>, if you \glossterm<attune> to its effects, you become \impervious to \atFire effects.
+            When you drink this \glossterm<potion>, if you \glossterm<attune> to its effects, you become \resistant to \atFire effects.
             This effect expires after 10 minutes.
         ".to_string(),
         upgrades: vec![
             ItemUpgrade::new(4, "Immune to fire", r"
-                You become immune instead of impervious.
+                You become immune instead of resistant.
             "),
         ],
         ..elixir()

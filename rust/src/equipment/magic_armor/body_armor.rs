@@ -199,6 +199,7 @@ pub fn body_armor() -> Vec<MagicArmor> {
             r"
             You gain a +5 \glossterm<enhancement bonus> to your \glossterm{durability}.
             However, you take a -2 penalty to your \glossterm{power} with all abilities.
+            You must be \trait{ensouled} to attune to this item.
         ",
         ),
         upgrades: vec![
@@ -240,6 +241,7 @@ pub fn body_armor() -> Vec<MagicArmor> {
             r"
             Your maximum \glossterm<hit points> are halved.
             However, you are immune to \glossterm<conditions>.
+            You must be \trait{ensouled} to attune to this item.
         ",
         ),
         ..MagicArmor::default()

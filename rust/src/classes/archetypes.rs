@@ -296,7 +296,7 @@ impl ClassArchetype {
             Self::BattleforgedResilience => "This archetype improves your durability in combat.",
             Self::Battlerager => "This archetype grants you a devastating rage, improving your combat prowess.",
             Self::OutlandSavage => "This archetype improves your mobility and combat prowess with direct, brutal abilities.",
-            Self::PrimalWarrior => "This archetype grants you abilities to use in combat and improves your physical skills.",
+            Self::PrimalWarrior => "This archetype grants you powerful abilities to use in combat.",
             Self::Totemist => "This archetype allows you to embody the spirits of apex predators to improve your combat ability.",
             // Cleric
             Self::ClericDivineMagic => "
@@ -388,7 +388,7 @@ impl ClassArchetype {
                 This archetype improves your senses and overall scouting ability.
             ",
             Self::WildernessWarrior => r"
-                This archetype grants you abilities to use in combat and improves your physical skills.
+                This archetype grants you wild abilities to use in combat.
             ",
             // Rogue
             Self::Assassin => r"
@@ -398,7 +398,7 @@ impl ClassArchetype {
                 This archetype grants you the ability to inspire your allies and impair your foes with musical performances.
             ",
             Self::CombatTrickster => r"
-                This archetype grants you abilities to use in combat and improves your combat prowess.
+                This archetype grants you tricky abilities to use in combat.
             ",
             Self::JackOfAllTrades => r"
                 This archetype improves your skills and versatility.

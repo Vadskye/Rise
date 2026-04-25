@@ -58,7 +58,7 @@ export const bruteForce: CombatStyle = {
       },
       rank: 1,
       roles: ['clear'],
-      tags: ['Earth'],
+      tags: ['Earth', 'Physical'],
     },
 
     {
@@ -73,7 +73,7 @@ export const bruteForce: CombatStyle = {
       },
       rank: 5,
       roles: ['clear'],
-      tags: ['Earth'],
+      tags: ['Earth', 'Physical'],
     },
 
     {
@@ -103,7 +103,7 @@ export const bruteForce: CombatStyle = {
       },
       rank: 3,
       roles: ['clear', 'generator'],
-      tags: ['Earth'],
+      tags: ['Earth', 'Physical'],
     },
 
     {
@@ -331,7 +331,7 @@ export const bruteForce: CombatStyle = {
       },
       rank: 3,
       roles: ['burst'],
-      tags: ['Brawling'],
+      tags: ['Brawling', 'Physical'],
     },
 
     {
@@ -346,7 +346,7 @@ export const bruteForce: CombatStyle = {
       },
       rank: 7,
       roles: ['burst'],
-      tags: ['Brawling'],
+      tags: ['Brawling', 'Physical'],
     },
 
     // -1dr for brawling attack, +1dr for stun, -1dr for accuracy.
@@ -367,7 +367,7 @@ export const bruteForce: CombatStyle = {
       },
       rank: 1,
       roles: ['burst'],
-      tags: ['Brawling'],
+      tags: ['Brawling', 'Physical'],
     },
 
     {
@@ -382,7 +382,7 @@ export const bruteForce: CombatStyle = {
       },
       rank: 5,
       roles: ['burst'],
-      tags: ['Brawling'],
+      tags: ['Brawling', 'Physical'],
     },
 
     {

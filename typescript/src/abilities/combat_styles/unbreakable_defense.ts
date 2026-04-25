@@ -9,17 +9,9 @@ export const unbreakableDefense: CombatStyle = {
     {
       name: 'Parry',
 
-      functionsLike: {
-        abilityType: 'ability',
-        exceptThat: `
-          you gain an additional +2 bonus to your Armor defense if you are using a melee weapon.
-          This bonus is considered to come from a shield, and does not stack with the benefits of using a shield.
-          In addition, choose a creature you can see.
-          Until your next turn, whenever that creature misses you with a melee \\glossterm{strike}, it \\briefly takes a -2 penalty to Armor defense.
-          As normal, this bonus does not stack with itself, even if the same creature misses you with multiple melee attacks.
-        `,
-        name: 'total defense',
-      },
+      effect: `
+        If you are wielding a melee weapon, you are \\glossterm{briefly} \\braced and \\shielded.
+      `,
       rank: 1,
       roles: ['turtle'],
     },
@@ -30,11 +22,10 @@ export const unbreakableDefense: CombatStyle = {
       functionsLike: {
         abilityType: 'ability',
         exceptThat: `
-          you gain an additional +2 bonus to your Armor defense if you are using a melee weapon.
-          This bonus is considered to come from a shield, and does not stack with the benefits of using a shield.
-          Until your next turn, whenever a creature misses you with a melee \\glossterm{strike}, it becomes \\dazzled as a \\glossterm{condition}.
+          when you use this ability, choose a creature you can see.
+          Until your next turn, whenever that creature misses you with a melee \\glossterm{strike}, it becomes \\dazzled as a \\glossterm{condition}.
         `,
-        name: 'total defense',
+        name: 'parry',
       },
       rank: 5,
       roles: ['turtle'],
@@ -46,13 +37,11 @@ export const unbreakableDefense: CombatStyle = {
       functionsLike: {
         abilityType: 'ability',
         exceptThat: `
-          you gain an additional +2 bonus to your Armor defense if you are using a melee weapon.
-          This bonus is considered to come from a shield, and does not stack with the benefits of using a shield.
-          In addition, choose a creature you can see.
+          when you use this ability, choose a creature you can see.
           Until your next turn, whenever that creature misses with a melee \\glossterm{strike}, it treats itself as a target of that strike in addition to any other targets.
           It cannot choose to reduce its accuracy or damage against itself.
         `,
-        name: 'total defense',
+        name: 'parry',
       },
       rank: 3,
       roles: ['turtle'],
@@ -64,11 +53,10 @@ export const unbreakableDefense: CombatStyle = {
       functionsLike: {
         abilityType: 'ability',
         exceptThat: `
-          you gain an additional +2 bonus to Armor defense if you are not using a shield.
-          In addition, choose one creature you can see.
+          when you use this ability, choose a creature you can see.
           Until your next turn, whenever that creature misses you with a \\glossterm{targeted} attack, it treats itself as a target of that attack in addition to any other targets.
         `,
-        name: 'total defense',
+        name: 'parry',
       },
       rank: 7,
       roles: ['turtle'],
@@ -90,7 +78,7 @@ export const unbreakableDefense: CombatStyle = {
 
       // 1.3 EA
       effect: `
-        You are \\briefly \\impervious to all damage.
+        You are \\briefly \\resistant to all damage.
       `,
       rank: 7,
       roles: ['turtle'],

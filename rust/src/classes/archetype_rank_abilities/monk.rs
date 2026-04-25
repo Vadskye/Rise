@@ -330,6 +330,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Kindle the Living Flame}{Free action}
+                        \abilitytags \atFire
                         \rankline
                         Your \glossterm{strikes} have the \atFire tag this turn.
 
@@ -371,6 +372,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                     \end{magicalactiveability}
 
                     % TODO: Solve ready action failure chance cheat
+                    % TODO: this should be disabled by dimension lock effects, but it's not currently considered teleportation
                     \begin{magicalactiveability}{Step Between the Mystic Worlds}{Free action}
                         \rankline
                         All attacks against you \glossterm{briefly} have a 20\% \glossterm{failure chance}.
@@ -434,8 +436,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             rank: 5,
             description: r"
                 Choose one type of energy: \atCold, \atElectricity, or \atFire.
-                You become \impervious to attacks with that ability tag.
-                If you are already impervious to attacks with that ability tag, you become immune instead.
+                You become \resistant to attacks with that ability tag.
+                If you are already resistant to attacks with that ability tag, you become immune instead.
                 Whenever you make a strike \magical with this ability, you can choose to give it that tag.
             ",
         },
@@ -614,8 +616,7 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 5,
             description: r"
-                You are no longer considered a living creature for the purpose of attacks against you.
-                This means that attacks which only affect living creatures have no effect against you.
+                You are immune to \atLife attacks.
                 In addition, you no longer take penalties to your attributes for aging, and cannot be magically aged.
                 You still die of old age when your time is up.
             ",

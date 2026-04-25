@@ -21,6 +21,9 @@ function addAngels(grimoire: Grimoire) {
       teleportRange = '\\medrange';
     }
 
+    creature.addTrait('bloodless');
+    creature.addTrait('immortal');
+    creature.addTrait('nonliving');
     creature.addTrait('soulless');
     creature.addImmunity('Frightened');
     creature.addImmunity('Panicked');
@@ -74,6 +77,7 @@ function addAngels(grimoire: Grimoire) {
             alignment: 'neutral good',
             base_class: 'leader',
             elite: true,
+            creature_origin: 'artificial',
             creature_type: 'soulforged',
             level: 16,
             size: 'huge',
@@ -107,6 +111,7 @@ function addAngels(grimoire: Grimoire) {
             alignment: 'lawful good',
             base_class: 'warrior',
             elite: true,
+            creature_origin: 'artificial',
             creature_type: 'soulforged',
             level: 13,
             size: 'large',
@@ -131,7 +136,7 @@ function addAngels(grimoire: Grimoire) {
               They were shocked when a justicar suddenly appeared in front of them, and prepared to fight for their lives.
               However, the justicar ignored them.
               Instead, it killed the ancient wizard of the tower and disappeared, leaving the spoils to the evildoers who broke the seal.
-
+ 
               This is the morality of a justicar.
               They consider only truly immense evils to be worthy of their attention, and ignore all lesser sins.
             `,
@@ -158,6 +163,7 @@ function addAngels(grimoire: Grimoire) {
             alignment: 'neutral good',
             base_class: 'skirmisher',
             elite: true,
+            creature_origin: 'artificial',
             creature_type: 'soulforged',
             level: 10,
             size: 'large',
@@ -202,7 +208,10 @@ function addDemonspawn(grimoire: Grimoire) {
         `,
       },
       sharedInitializer: (creature: Creature) => {
-        creature.addImpervious('Fire');
+        creature.addResistant('Fire');
+        creature.addTrait('bloodless');
+        creature.addTrait('immortal');
+        creature.addTrait('nonliving');
         creature.addTrait('soulless');
         creature.addVulnerability('Cold iron weapons');
       },
@@ -214,8 +223,9 @@ function addDemonspawn(grimoire: Grimoire) {
           creature.setRequiredProperties({
             alignment: 'chaotic evil',
             base_class: 'brute',
-            elite: true,
+            creature_origin: 'artificial',
             creature_type: 'soulforged',
+            elite: true,
             level: 5,
             size: 'large',
           });
@@ -239,7 +249,7 @@ function addDemonspawn(grimoire: Grimoire) {
 
           creature.addWeaponMult('fists');
           creature.addManeuver('Gutshot', { usageTime: 'elite', weapon: 'fists' });
-          creature.addManeuver('Rushdown', { usageTime: 'elite', weapon: 'fists' });
+          creature.addManeuver('Charge', { usageTime: 'elite', weapon: 'fists' });
           creature.addManeuver('Whirlwind', { usageTime: 'elite', weapon: 'fists' });
         },
       ],
@@ -249,8 +259,9 @@ function addDemonspawn(grimoire: Grimoire) {
           creature.setRequiredProperties({
             alignment: 'neutral evil',
             base_class: 'warrior',
-            elite: true,
+            creature_origin: 'artificial',
             creature_type: 'soulforged',
+            elite: true,
             level: 7,
             size: 'medium',
           });
@@ -307,8 +318,9 @@ function addDemonspawn(grimoire: Grimoire) {
           creature.setRequiredProperties({
             alignment: 'chaotic evil',
             base_class: 'sniper',
-            elite: true,
+            creature_origin: 'artificial',
             creature_type: 'soulforged',
+            elite: true,
             level: 14,
             size: 'large',
           });
@@ -319,7 +331,7 @@ function addDemonspawn(grimoire: Grimoire) {
           creature.addPassiveAbility({
             name: 'Soulfire',
             effect: `
-              Whenever the $name \\glossterm{injures} a creature, that creature is \\briefly unable to regain \\glossterm{hit points}.
+              Whenever the $name \\glossterm{injures} an \\glossterm{ensouled} creature, that creature is \\briefly unable to regain \\glossterm{hit points}.
             `,
             isMagical: true,
           });
@@ -338,8 +350,9 @@ function addDemonspawn(grimoire: Grimoire) {
           creature.setRequiredProperties({
             alignment: 'chaotic evil',
             base_class: 'skirmisher',
-            elite: true,
+            creature_origin: 'artificial',
             creature_type: 'soulforged',
+            elite: true,
             level: 11,
             size: 'large',
           });
@@ -377,10 +390,14 @@ function addImps(grimoire: Grimoire) {
             alignment: 'chaotic evil',
             base_class: 'skirmisher',
             elite: false,
+            creature_origin: 'artificial',
             creature_type: 'soulforged',
             level: 5,
             size: 'small',
           });
+          creature.addTrait('bloodless');
+          creature.addTrait('immortal');
+          creature.addTrait('nonliving');
           creature.addTrait('soulless');
           creature.setBaseAttributes([3, 5, 2, 1, 0, -2]);
           creature.addWeaponMult('fists', { tags: ['Fire'] });

@@ -265,7 +265,7 @@ Our benchmark ranks are 2/8/14/20. Each character has one rank-appropriate item,
 
 * Fighter (+0 level)
   * L2: 7 = 1 (level) + 6 (layered hide)
-  * L8: 23 = 7 (level) + 10 (full plate) + 6 (resistant armor)
+  * L8: 23 = 7 (level) + 10 (full plate) + 6 (durable armor)
   * L14: 60 = 16 (level) + 40 (adamantine full plate) + 4 (ring of protection)
   * L20: 119 = 31 (level) + 80 (pure adamantine full plate) + 8 (ring of protection)
 * Cleric (+2 level)
@@ -275,9 +275,9 @@ Our benchmark ranks are 2/8/14/20. Each character has one rank-appropriate item,
   * L20: 108 = 40 (level) + 36 (ancient dragonscale breastplate) + 32 (mantle of faith)
 * Rogue (+0 level)
   * L2: 4 = 1 (level) + 3 (chain shirt)
-  * L8: 16 = 7 (level) + 3 (chain shirt) + 6 (resistant armor)
-  * L14: 34 = 16 (level) + 6 (resistant+ chain shirt) + 12 (resistant+ armor)
-  * L20: 67 = 31 (level) + 12 (resistant++ chain shirt) + 24 (resistant++ armor)
+  * L8: 16 = 7 (level) + 3 (chain shirt) + 6 (durable armor)
+  * L14: 34 = 16 (level) + 6 (durable+ chain shirt) + 12 (durable+ armor)
+  * L20: 67 = 31 (level) + 12 (durable++ chain shirt) + 24 (durable++ armor)
 * Monk (+4 level)
   * L2: 8 = 5 (level) + 3 (ki barrier)
   * L8: 25 = 12 (level) + 9 (ki barrier)    + 4 (ring of protection)
@@ -293,7 +293,7 @@ Our benchmark ranks are 2/8/14/20. Each character has one rank-appropriate item,
 
 * Fighter
   * L2: 8 = 8 (layered hide)
-  * L8: 18 = 12 (full plate) + 6 (resistant armor)
+  * L8: 18 = 12 (full plate) + 6 (durable armor)
   * L14: 52 = 48 (adamantine full plate) + 4 (ring of protection)
   * L20: 104 = 96 (pure adamantine full plate) + 8 (ring of protection)
 * Cleric
@@ -303,9 +303,9 @@ Our benchmark ranks are 2/8/14/20. Each character has one rank-appropriate item,
   * L20: 80 = 48 (ancient dragonscale breastplate) + 32 (mantle of faith)
 * Rogue
   * L2: 5 = 5 (chain shirt)
-  * L8: 11 = 5 (chain shirt) + 6 (resistant effect)
-  * L14: 22 = 10 (resistant+ chain shirt) + 12 (resistant+ effect)
-  * L20: 44 = 20 (resistant++ chain shirt) + 24 (resistant++ effect)
+  * L8: 11 = 5 (chain shirt) + 6 (durable effect)
+  * L14: 22 = 10 (durable+ chain shirt) + 12 (durable+ effect)
+  * L20: 44 = 20 (durable++ chain shirt) + 24 (durable++ effect)
 * Sorcerer
   * L2: 3 = 3 (mage armor)
   * L8: 16 = 12 (mage armor) + 4 (ring of protection)

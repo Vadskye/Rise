@@ -32,7 +32,7 @@ function addFormians(grimoire: Grimoire) {
       `,
       isMagical: true,
     });
-    creature.addImpervious('Earth');
+    creature.addResistant('Earth');
     creature.addTrait('multipedal');
   }
 
@@ -71,7 +71,8 @@ function addFormians(grimoire: Grimoire) {
             alignment: 'lawful neutral',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'mortal',
+            creature_origin: 'natural',
+            creature_type: 'insect',
             level: 1,
             size: 'medium',
           });
@@ -100,7 +101,8 @@ function addFormians(grimoire: Grimoire) {
             alignment: 'lawful neutral',
             base_class: 'warrior',
             elite: false,
-            creature_type: 'mortal',
+            creature_origin: 'natural',
+            creature_type: 'insect',
             level: 5,
             size: 'medium',
           });
@@ -133,7 +135,8 @@ function addFormians(grimoire: Grimoire) {
             alignment: 'lawful neutral',
             base_class: 'warrior',
             elite: false,
-            creature_type: 'mortal',
+            creature_origin: 'natural',
+            creature_type: 'insect',
             level: 9,
             size: 'medium',
           });

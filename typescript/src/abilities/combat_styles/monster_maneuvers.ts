@@ -121,7 +121,7 @@ export const monsterManeuvers: CombatStyle = {
       },
       rank: 1,
       roles: ['softener'],
-      tags: ['Brawling', 'Size-Based'],
+      tags: ['Brawling', 'Physical', 'Size-Based'],
     },
     // Same as Trip universal ability
     {
@@ -134,7 +134,7 @@ export const monsterManeuvers: CombatStyle = {
       },
       rank: 1,
       roles: ['trip'],
-      tags: ['Brawling', 'Size-Based'],
+      tags: ['Brawling', 'Physical'],
     },
 
     // Ignore range limits, assume a melee strike.

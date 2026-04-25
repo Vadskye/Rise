@@ -7,7 +7,8 @@ export function addRangers(stock: StockCharacters) {
       alignment: 'neutral good',
       base_class: 'ranger',
       elite: false,
-      creature_type: 'mortal',
+      creature_origin: 'natural',
+      creature_type: 'humanoid',
       level: 1,
       size: 'medium',
     });

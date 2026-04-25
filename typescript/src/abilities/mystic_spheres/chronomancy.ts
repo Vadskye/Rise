@@ -255,7 +255,7 @@ export const chronomancy: MysticSphere = {
     {
       name: 'Distant Accelerated Dodge',
 
-      // TODO: full EA math. What is run + total defense worth?
+      // TODO: full EA math. What is run + braced worth?
       effect: `
         You are \\briefly \\braced.
         In addition, you add twice your \\glossterm{speed} to your \\glossterm{available movement}.
@@ -665,7 +665,7 @@ export const chronomancy: MysticSphere = {
           \\damagerankthree.
         `,
         targeting: `
-          Make an attack vs. Fortitude with a -4 accuracy penalty against one living creature within \\medrange.
+          Make an attack vs. Fortitude with a -4 accuracy penalty against one \\trait{mortal} creature within \\medrange.
           You gain a +2 accuracy bonus against creatures that are too young or too old to be ordinary adults.
         `,
       },
@@ -680,7 +680,7 @@ export const chronomancy: MysticSphere = {
           \\damageranksix, and any \\glossterm{extra damage} is doubled.
         `,
         targeting: `
-          Make an attack vs. Fortitude with a -4 accuracy penalty against one living creature within \\medrange.
+          Make an attack vs. Fortitude with a -4 accuracy penalty against one \\trait{mortal} creature within \\medrange.
           You gain a +2 accuracy bonus against creatures that are too young or too old to be ordinary adults.
         `,
       },

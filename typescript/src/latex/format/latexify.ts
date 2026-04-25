@@ -23,7 +23,7 @@ export function latexify(text: string): string {
 
   warnIfPattern(
     text,
-    /glossterm.(braced|empowered|focused|fortified|honed|maximized|primed|shielded|steeled|impervious|vulnerable)/,
+    /glossterm.(braced|empowered|focused|fortified|honed|maximized|primed|shielded|steeled|resistant|vulnerable)/,
     'contains glossterm{buff}',
   );
 
