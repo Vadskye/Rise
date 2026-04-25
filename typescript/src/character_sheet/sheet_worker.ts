@@ -420,6 +420,60 @@ interface OnGetOptions {
   variablesWithoutListen?: Partial<OnGetVariables>;
 }
 
+/**
+ * Convenience function for setting up Roll20 sheet worker listeners and fetching their associated values.
+ *
+ * Under the hood, `onGet` performs three crucial tasks:
+ * 1. It automatically builds `change:` event listeners for all properties provided in `variables`.
+ * 2. By default, it also listens to `sheet:opened` and `change:level` events,
+ *    since `level` is typically factored into most derived character statistics.
+ * 3. When an event fires, it automatically calls `getAttrs` to fetch the values for all properties
+ *    in `variables` AND `variablesWithoutListen`, supplying them nicely parsed to your `callback`.
+ *
+ * **WARNING: Using `onGet` with Repeating Sections**
+ * Roll20 has special "contextual" behavior when calling `getAttrs` with generic, un-indexed repeating property names
+ * (e.g. `repeating_strikeattacks_attack_accuracy`). If the event originated from a specific repeating row
+ * (like `change:repeating_strikeattacks:attack_accuracy`), Roll20 automatically resolves the generic property name
+ * to that specific row's value.
+ *
+ * However, if the event did NOT originate from a repeating row (such as `change:accuracy`, `change:level`,
+ * or `sheet:opened`), Roll20 (and our local test simulator) cannot resolve generic repeating properties because
+ * there is no row context. In this case, `getAttrs` will fail or throw an "ambiguous property definition" error.
+ *
+ * To safely calculate derived statistics for repeating rows, you must separate local triggers from global triggers:
+ *
+ * **Pattern 1: Local triggers (Row properties changing)**
+ * When a repeating row property changes, you only want to recalculate for that specific row.
+ * Put the local properties in `variables`, but put global dependencies in `variablesWithoutListen`.
+ * Also be sure to set `includeLevel` and `runOnSheetOpen` to false. This ensures that global changes
+ * do NOT trigger the local row callback without context.
+ * ```typescript
+ * onGet({
+ *   variables: { numeric: ['repeating_strikeattacks_attack_accuracy'] },
+ *   options: {
+ *     includeLevel: false,
+ *     runOnSheetOpen: false,
+ *     variablesWithoutListen: { numeric: ['accuracy'] }
+ *   },
+ *   callback: (v) => { ... }
+ * });
+ * ```
+ *
+ * **Pattern 2: Global triggers (Global properties changing)**
+ * When a global property like `level` or `accuracy` changes, you must recalculate for ALL rows.
+ * Put the global properties in `variables`, and inside the callback, explicitly iterate over
+ * the rows using `getSectionIDs` and fetch the fully-qualified row properties yourself.
+ * ```typescript
+ * onGet({
+ *   variables: { numeric: ['accuracy'] },
+ *   callback: (v) => {
+ *     getSectionIDs('repeating_strikeattacks', (ids) => {
+ *       // ... construct fully qualified keys and call getAttrs ...
+ *     });
+ *   }
+ * });
+ * ```
+ */
 function onGet(args: {
   variables: Partial<OnGetVariables>;
   options?: OnGetOptions;
