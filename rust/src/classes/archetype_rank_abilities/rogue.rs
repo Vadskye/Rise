@@ -484,7 +484,7 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 \begin{activeability}{What's That Over There}{Standard action}
-                    \abilitytags \abilitytag{Compulsion}
+                    \abilitytags \atCompulsion, \atVisual
                     \rankline
                     Make a attack vs. Mental against a creature within \medrange.
                     In addition, choose a location on stable ground within range.
