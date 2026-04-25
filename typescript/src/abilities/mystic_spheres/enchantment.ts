@@ -642,7 +642,7 @@ export const enchantment: MysticSphere = {
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\shortrange.
-          You gain a +4 accuracy bonus if the target has a negative Intelligence.
+          You gain a +4 accuracy bonus if the target has an Intelligence of 1 or less.
         `,
       },
       rank: 5,
