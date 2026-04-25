@@ -165,7 +165,7 @@ export const heraldOfWar: CombatStyle = {
       },
       rank: 1,
       roles: ['clear'],
-      tags: ['Auditory'],
+      tags: ['Auditory', 'Physical'],
     },
 
     {
@@ -180,7 +180,7 @@ export const heraldOfWar: CombatStyle = {
       },
       rank: 5,
       roles: ['clear'],
-      tags: ['Auditory'],
+      tags: ['Auditory', 'Physical'],
     },
 
     {
@@ -196,7 +196,7 @@ export const heraldOfWar: CombatStyle = {
       },
       rank: 1,
       roles: ['softener'],
-      tags: ['Auditory'],
+      tags: ['Auditory', 'Physical'],
     },
 
     {
@@ -213,7 +213,7 @@ export const heraldOfWar: CombatStyle = {
       },
       rank: 5,
       roles: ['softener'],
-      tags: ['Auditory'],
+      tags: ['Auditory', 'Physical'],
     },
 
     {
