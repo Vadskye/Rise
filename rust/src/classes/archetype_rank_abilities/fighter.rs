@@ -411,11 +411,11 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                     \begin{sustainability}{Dogpile}{\glossterm{Minor action}}
                         \abilitytags \abilitytag{Sustain} (free)
                         \rankline
-                        Two targets gain a \plus2 accuracy bonus with the \ability{grapple} and \ability{maintain grapple} abilities (see \pcref{Universal Combat Abilities}).
+                        Two targets each gain a \plus2 accuracy bonus with the \ability{grapple} ability and a \plus2 bonus to their Brawn defense against \atBrawling abilities (see \pcref{Universal Combat Abilities}).
 
                         \rankline
-                        \rank{4} The bonus increases to \plus3.
-                        \rank{7} The bonus increases to \plus4.
+                        \rank{4} The bonuses increases to \plus3.
+                        \rank{7} The bonuses increases to \plus4.
                     \end{sustainability}
 
                     \begin{sustainability}{Duck and Cover}{\glossterm{Minor action}}
@@ -460,16 +460,6 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                         \rankline
                         \rank{4} The effect persists for an additional five feet of the enemy's movement after they stop being adjacent to either targets.
                         \rank{7} The extra distance increases to 10 feet.
-                    \end{sustainability}
-
-                    \begin{sustainability}{Hunker Down}{\glossterm{Minor action}}
-                        \abilitytags \abilitytag{Sustain} (free)
-                        \rankline
-                        Two targets gain a \plus2 bonus to their Brawn defense against \atBrawling abilities.
-
-                        \rankline
-                        \rank{4} The bonus increases to \plus3.
-                        \rank{7} The bonus increases to \plus4.
                     \end{sustainability}
 
                     \begin{sustainability}{Keep Moving}{\glossterm{Minor action}}
