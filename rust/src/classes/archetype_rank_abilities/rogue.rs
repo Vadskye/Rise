@@ -15,7 +15,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
                     The srike must only use \weapontag{Light} or \weapontag{Compact} weapons.
 
                     The strike deals 1d4 \glossterm{extra damage} if the target is \unaware or \partiallyunaware of your attack, or if they are adjacent to one of your \glossterm{allies}.
-                    This extra damage is doubled if the target is fully unaware of your attack.
+                    This extra damage is doubled if the target was fully unaware of you at the start of your turn.
                     It does not apply if the target is immune to \glossterm{critical hits}.
 
                     \rankline
