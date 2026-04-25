@@ -674,13 +674,6 @@ def universal_abilities() -> str:
         {"class": "universal_abilities"},
         [
             universal_ability_button(
-                "Charge",
-                """
-                    After using this ability, you take a -2 penalty to all defenses until your next turn.
-                    Move up to your speed in a single straight line without reducing your available movement. At the end of this movement, you can make a melee strike from your new location.
-                """,
-            ),
-            universal_ability_button(
                 "Desperate Exertion",
                 """
                     You reroll any attack or check you just made and gain a +2 bonus.
