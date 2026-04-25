@@ -3000,9 +3000,12 @@ function handleStrikeAttacks() {
   // Local strike attack change
   on(
     'change:repeating_strikeattacks:attack_name change:repeating_strikeattacks:is_magical change:repeating_strikeattacks:attack_extra_damage change:repeating_strikeattacks:weapon_damage_multiplier change:repeating_strikeattacks:damage_multiplier',
-    function () {
-      getStrikeAttrs('', (parsed: StrikeAttackAttrs) => {
-        setStrikeTotalDamage('', parsed);
+    function (eventInfo) {
+      const triggerParts = eventInfo.triggerName.split('_');
+      // For a trigger like "repeating_strikeattacks_-1_attack_extra_damage", we want the section ID "-1"
+      const sectionId = triggerParts.length >= 3 ? triggerParts[2] : '';
+      getStrikeAttrs(sectionId, (parsed: StrikeAttackAttrs) => {
+        setStrikeTotalDamage(sectionId, parsed);
       });
     },
   );
