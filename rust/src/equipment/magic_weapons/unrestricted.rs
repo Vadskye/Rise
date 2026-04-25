@@ -482,10 +482,9 @@ fn utility_weapons() -> Vec<MagicWeapon> {
         short_description: String::from(r"Deals delayed damage"),
         description: String::from(r"
             This weapon is transluscent and has no physical presence for anyone except you.
-            It has no effect on anything without a soul, such as an object or construct.
-            Creatures with a soul cannot be \resistant or \buff{immune} to damage from this weapon.
 
-            Attacks with this weapon deal no damage immediately.
+            Strikes with this weapon have the \atSoul tag and do not have the \atPhysical tag.
+            They deal no damage immediately.
             This means that any effects which trigger when you deal damage with the attack, such as conditions, do not happen.
             Instead, the damage is delayed.
             Damage that would be dealt by the weapon can be delayed indefinitely.
