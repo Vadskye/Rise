@@ -145,15 +145,17 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
                     This functions like light body armor.
                     It provides a \plus4 bonus to your Armor defense, a \plus4 bonus to your \glossterm{durability}, and a \plus1 bonus to your \glossterm{vital rolls}.
                     In exchange, the \ability{recover} ability no longer causes you to recover hit points (see \pcref{Recover}).
+                    You must be \trait{blooded} to choose this covenant.
 
-                    \subcf{Covenant of Bloodsharing} Once per turn, when you cause a living creature other than yourself to lose \glossterm{hit points}, you can regain \glossterm{hit points} equal to half your \glossterm{power} (minimum 1).
+                    \subcf{Covenant of Bloodsharing} Once per turn, when you cause a \trait{blooded} creature other than yourself to lose \glossterm{hit points}, you can regain \glossterm{hit points} equal to half your \glossterm{power} (minimum 1).
                     In exchange, you are \glossterm{injured} whenever you are below your maximum hit points, regardless of your normal \glossterm{injury point}.
+                    You must be \trait{blooded} to choose this covenant.
 
-                    \subcf{Covenant of Soulcursing} Whenever you would inflict a \glossterm{condition} on a creature that is not already under the effects of a Curse, that effect becomes a Curse on it instead of a condition.
+                    \subcf{Covenant of Soulcursing} Whenever you would inflict a \glossterm{condition} on an \trait{ensouled} creature that is not already under the effects of a Curse, that effect becomes a Curse on it instead of a condition.
                     It is removed when the creature finishes a \glossterm{short rest}.
                     If the condition would normally have a special way to remove it, such as the \spell{ignition} spell, that also removes the curse.
 
-                    In exchange, whenever you would gain a \glossterm{condition} that you are not \buff{immune} to, that effect becomes a \abilitytag{Curse} on you instead of a condition.
+                    In exchange, whenever you would gain a \glossterm{condition} that you are not \buff{immune} to, that effect becomes a \atCurse on you instead of a condition.
                     If you were already affected by a Curse from this ability, the old Curse becomes a condition instead.
                     Whenever you finish a \glossterm{short rest}, you remove any Curse affecting you as a result of this ability.
                 }
@@ -221,6 +223,7 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your connection to your soulkeeper deepens, allowing you to send a fragment of your soul through the link in exchange for aid.
                 \begin{magicalactiveability}{Exchange Soul Fragment}{Standard action}
+                    \abilitytags \atSoul
                     \abilitycost One \glossterm{fatigue level}.
                     \rankline
                     You regain \hprankthree.
@@ -243,6 +246,7 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your connection to your soulkeeper deepens, allowing you to send a larger fragment of your soul through the link fragment in exchange for greater aid.
                 \begin{magicalactiveability}{Exchange Vitality}{Standard action}
+                    \abilitytags \atSoul
                     \abilitycost See text.
                     \rankline
                     You are \glossterm{briefly} \empowered.

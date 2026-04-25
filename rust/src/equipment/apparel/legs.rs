@@ -305,24 +305,5 @@ fn boots() -> Vec<Apparel> {
         ..Apparel::default()
     }));
 
-    apparel.push(Boots(StandardItem {
-        name: String::from("Charging Boots"),
-        rank: 1,
-        short_description: String::from("Reduces penalties for charging by 1"),
-        description: String::from(
-            r"
-                You reduce your defense penalties from using the \ability<charge> ability by 1.
-            ",
-        ),
-        upgrades: vec![ItemUpgrade::new(
-            3,
-            "Removes penalties for charging",
-            r"
-                You do not take defense penalties from using the \ability<charge> ability.
-            ",
-        )],
-        ..Apparel::default()
-    }));
-
     apparel
 }

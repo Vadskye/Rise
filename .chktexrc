@@ -395,7 +395,7 @@ Silent
     \add \sub \tind
     \areatiny \areasmall \areamed \arealarge \areahuge \areagarg
     \spellsuccess \spellfailure \spelleffect \spelldur \spellcritical \spellspecial
-    \spellnotes \norepeatspellnotes \physicalspellnotes \forcespellnotes \dismissable \norepeatnotes \destructivespellnotes \subtlespellnotes \cursespellnotes \spelltime \sizingspellnotes \firespellnotes \fogspellnotes \fogwindspellnotes \sensorspellnotes
+    \spellnotes \norepeatspellnotes \dismissable \norepeatnotes \spelltime
     \frightened \panicked \unaware \staggered \stunned \taunted \confused \slowed \confusionexplanation \deafened \charmed \dominated \helpless \blinded \grappled \disabled \prone
     \degree
     \durshort \durmed \durlong \durext \durbrief \durpersonallong

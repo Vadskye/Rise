@@ -34,6 +34,7 @@ type OtherSectionName = (typeof OTHER_SECTION_NAMES)[number];
 const OTHER_SECTION_NAMES = [
   'knowledgesubskills',
   'craftsubskills',
+  'professionsubskills',
   'trainedskills',
   'vitalwounds',
 ] as const;
@@ -102,10 +103,29 @@ export class RepeatingSection {
         `Repeating section ${this.sectionName} cannot handle change to ${fullPropertyName}`,
       );
     } else if (rowPropertyName) {
-      // In Roll20, this automatically embeds some sort of context about which row
-      // triggered the listener, allowing triggers to implicitly carry information about
-      // the relevant row ID. We don't replicate that behavior, so these listeners would
-      // simply break if we included them.
+      // Wrap the callback to inject the full context that Roll20 would provide
+      const wrappedCallback = (rowId: string) => (eventInfo: EventInfo) => {
+        const fullPropertyName = `repeating_${this.sectionName}_${rowId}_${rowPropertyName}`;
+        callback({
+          ...eventInfo,
+          sourceAttribute: fullPropertyName,
+          triggerName: fullPropertyName,
+        });
+      };
+      
+      this.listeners.push({ rowPropertyName, callback });
+      const unsubscribers: (() => void)[] = [];
+      for (const rowId in this.rows) {
+        unsubscribers.push(this.rows[rowId].onChange(rowPropertyName, wrappedCallback(rowId)));
+      }
+      return () => {
+        for (const unsub of unsubscribers) {
+          unsub();
+        }
+        this.listeners = this.listeners.filter(
+          (l) => l.callback !== callback || l.rowPropertyName !== rowPropertyName
+        );
+      };
     } else {
       return this.SetSignal.on((_, eventInfo: EventInfo) => {
         callback(eventInfo);
@@ -144,15 +164,23 @@ export class RepeatingSection {
 
   private getRow(rowId: string) {
     if (!this.rows[rowId]) {
-      this.rows[rowId] = this.createRow();
+      this.rows[rowId] = this.createRow(rowId);
     }
     return this.rows[rowId];
   }
 
-  private createRow() {
+  private createRow(rowId: string) {
     const row = new RepeatingSectionRow();
     for (const listener of this.listeners) {
-      row.onChange(listener.rowPropertyName, listener.callback);
+      const wrappedCallback = (eventInfo: EventInfo) => {
+        const fullPropertyName = `repeating_${this.sectionName}_${rowId}_${listener.rowPropertyName}`;
+        listener.callback({
+          ...eventInfo,
+          sourceAttribute: fullPropertyName,
+          triggerName: fullPropertyName,
+        });
+      };
+      row.onChange(listener.rowPropertyName, wrappedCallback);
     }
 
     return row;

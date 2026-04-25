@@ -5,7 +5,7 @@ pub fn cleric_domains() -> &'static str {
                     These domain abilities can be granted by the \textit{domain influence} cleric archetype.
 
                     \subsubsection{Chaos Domain}
-                        \domainability{Gift} You are \impervious to \atCompulsion attacks.
+                        \domainability{Gift} You are \resistant to \atCompulsion attacks.
                         \magicaldomainability{Aspect} Your skill checks can explode, like attacks (see \pcref{Exploding Attacks}).
                         Unlike attacks, your skill checks can only explode once.
                         This only applies the first time you attempt a task.
@@ -55,7 +55,7 @@ pub fn cleric_domains() -> &'static str {
                     \subsubsection{Earth Domain}
                         If you choose this domain, you add the \sphere{terramancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Spell Lists}).
 
-                        \domainability{Gift} You are \impervious to Earth attacks.
+                        \domainability{Gift} You are \resistant to Earth attacks.
                         \domainability{Aspect} You gain a \plus1 bonus to your Brawn and Fortitude defenses.
                         \domainability{Essence} While you are \glossterm{grounded}, you are immune to \glossterm{push}, \glossterm{fling}, and \glossterm{teleport} effects from attacks, and you are immune to being \slowed.
                         \domainability{Mastery} While you are \glossterm{grounded}, you gain a \plus1 accuracy bonus.
@@ -65,6 +65,7 @@ pub fn cleric_domains() -> &'static str {
                         \domainability{Aspect} You gain a \plus1 accuracy bonus with abilities that inflict \glossterm{conditions}.
                         \magicaldomainability{Essence} You gain the \ability{blood sacrifice} ability.
                         \begin{magicalactiveability}{Blood Sacrifice}{Standard action}
+                            \abilitytags \atBlood
                             \rankline
                             Choose an \glossterm{ally} you \glossterm{touch}.
                             Whenever you would lose \glossterm{hit points} while you are adjacent to that ally, it loses half of those hit points in place of you.
@@ -106,7 +107,7 @@ pub fn cleric_domains() -> &'static str {
                         \domainability{Mastery} You gain a \plus1 bonus to your Brawn, Fortitude, Mental, and Reflex defenses.
 
                     \subsubsection{Law Domain}
-                        \domainability{Gift} You are \impervious to \atEmotion attacks.
+                        \domainability{Gift} You are \resistant to \atEmotion attacks.
                         \magicaldomainability{Aspect} When you roll a 1 on an \glossterm{attack roll}, it is treated as if you had rolled a 6.
                         This does not affect bonus dice rolled for exploding attacks (see \pcref{Exploding Attacks}).
                         \magicaldomainability{Essence} You gain the \ability{compel law} ability.
@@ -187,7 +188,7 @@ pub fn cleric_domains() -> &'static str {
                     \subsubsection{Storm Domain}
                         If you choose this domain, you add the \sphere{electromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Spell Lists}).
 
-                        \magicaldomainability{Gift} You are \impervious to \atElectricity attacks.
+                        \magicaldomainability{Gift} You are \resistant to \atElectricity attacks.
                         \magicaldomainability{Essence} Whenever you use a damaging \atElectricity ability that affects an area, you \glossterm{repeat} that ability at the start of your next turn.
                         The repeat has the \atAuditory tag instead of the \atElectricity tag, deals half damage, and affects each \glossterm{enemy} adjacent to you instead of its normal targets.
                         \magicaldomainability{Aspect} The repeat from this domain's essence also triggers when you \glossterm{chain} to yourself with a damaging \atElectricity ability.
@@ -221,8 +222,8 @@ pub fn cleric_domains() -> &'static str {
                         \domainability{Gift} You gain a \plus1 bonus to the Deception, Disguise, and Stealth skills.
                         \magicaldomainability{Aspect} Whenever a \atCompulsion or \atEmotion attack misses you, you learn the effect it would have had if it had succeeded.
                         Creatures that miss you in this way believe that their attack hit, though they may realize the truth if you do not act appropriately.
-                        \magicaldomainability{Essence} You are \impervious to \atCompulsion and \atEmotion attacks.
-                        If you would already be impervious to either tag, you become immune to attacks with that tag instead.
+                        \magicaldomainability{Essence} You are \resistant to \atCompulsion and \atEmotion attacks.
+                        If you would already be resistant to either tag, you become immune to attacks with that tag instead.
                         % This seems like it's a complicated muddle of weird and possibly hilarious edge cases
                         \magicaldomainability{Mastery} The skill bonuses increase to \plus2.
                         In addition, you are undetectable to all \magical abilities.

@@ -6,7 +6,8 @@ export function addFighters(stock: StockCharacters) {
       alignment: 'lawful neutral',
       base_class: 'fighter',
       elite: false,
-      creature_type: 'mortal',
+      creature_origin: 'natural',
+      creature_type: 'humanoid',
       level: 1,
       size: 'medium',
     });

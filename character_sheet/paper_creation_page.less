@@ -1,56 +1,63 @@
 // Need this extra layer of precision to override settings in sheet.less
 div.full-sheet {
-    .creation-guidance {
-        width: 16em;
+  .creation-guidance {
+    width: 16em;
 
-        > div {
-            padding-right: 0.2em;
-        }
-
-        textarea {
-            width: 17.2em;
-        }
-
-        .species-and-size {
-            gap: 1em;
-
-            .species, .size {
-                flex-grow: 1;
-            }
-        }
-
-        .description, .equipment-proficiencies, .archetypes, .combat-styles-and-mystic-spheres, .background, .other-ability-groups, .feats {
-            height: 7em;
-        }
+    > div {
+      padding-right: 0.2em;
     }
-    .abilities {
-        margin-left: 0.25em;
+
+    textarea {
+      width: 17.2em;
+    }
+
+    .species-and-size {
+      gap: 1em;
+
+      .species,
+      .size {
         flex-grow: 1;
-
-        .ability-name {
-            width: 10em;
-        }
-        .ability-effects {
-            margin-left: 0.25em;
-            flex-grow: 1;
-        }
+      }
     }
 
-    .resources {
-        gap: 1em;
-
-        .abilities-chosen-wrapper {
-            flex-grow: 1;
-
-            .abilities-chosen {
-                height: 340px;
-            }
-        }
+    .description,
+    .equipment-proficiencies,
+    .archetypes,
+    .combat-styles-and-mystic-spheres,
+    .background,
+    .other-ability-groups,
+    .feats {
+      height: 7em;
     }
+  }
+  .abilities {
+    margin-left: 0.25em;
+    flex-grow: 1;
 
-    .calc-blank-header {
-        align-self: end;
-        width: 7em;
-        border-bottom: 1px solid black;
+    .ability-name {
+      width: 10em;
     }
+    .ability-effects {
+      margin-left: 0.25em;
+      flex-grow: 1;
+    }
+  }
+
+  .resources {
+    gap: 1em;
+
+    .abilities-chosen-wrapper {
+      flex-grow: 1;
+
+      .abilities-chosen {
+        height: 340px;
+      }
+    }
+  }
+
+  .calc-blank-header {
+    align-self: end;
+    width: 7em;
+    border-bottom: 1px solid black;
+  }
 }

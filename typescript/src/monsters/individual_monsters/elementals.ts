@@ -12,16 +12,17 @@ export function addElementals(grimoire: Grimoire) {
       alignment: 'neutral',
       base_class: 'leader',
       elite: true,
-      creature_type: 'animate',
+      creature_origin: 'artificial',
+      creature_type: 'construct',
       level: 16,
       size: 'huge',
     });
     creature.setTrainedSkills(['awareness', 'jump']);
     creature.setBaseAttributes([8, 6, 5, -4, 2, 4]);
-    creature.addImpervious('Air');
-    creature.addImpervious('Earth');
-    creature.addImpervious('Fire');
-    creature.addImpervious('Water');
+    creature.addResistant('Air');
+    creature.addResistant('Earth');
+    creature.addResistant('Fire');
+    creature.addResistant('Water');
     creature.setKnowledgeResults({
       normal: `
         Fusion elementals are a hybrid of the four common elemental types: air, earth, fire, and water.
@@ -53,7 +54,7 @@ function addAirElementals(grimoire: Grimoire) {
   function airElemental(creature: Creature) {
     creature.addTrait('floating');
     creature.addTrait('simple-minded');
-    creature.addImpervious('Air');
+    creature.addResistant('Air');
     creature.addVulnerability('Earth');
     creature.addVulnerability('Electricity');
     creature.addPassiveAbility({
@@ -109,7 +110,8 @@ function addAirElementals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'animate',
+            creature_origin: 'artificial',
+            creature_type: 'construct',
             level: 4,
             size: 'small',
           });
@@ -123,7 +125,8 @@ function addAirElementals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'animate',
+            creature_origin: 'artificial',
+            creature_type: 'construct',
             level: 8,
             size: 'medium',
           });
@@ -137,7 +140,8 @@ function addAirElementals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'animate',
+            creature_origin: 'artificial',
+            creature_type: 'construct',
             level: 12,
             size: 'large',
           });
@@ -151,7 +155,8 @@ function addAirElementals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'animate',
+            creature_origin: 'artificial',
+            creature_type: 'construct',
             level: 16,
             size: 'large',
           });
@@ -165,7 +170,8 @@ function addAirElementals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'animate',
+            creature_origin: 'artificial',
+            creature_type: 'construct',
             level: 20,
             size: 'huge',
           });
@@ -181,7 +187,7 @@ function addFireElementals(grimoire: Grimoire) {
     const rank = creature.calculateRank();
     creature.addTrait('simple-minded');
     creature.addImmunity('Fire');
-    creature.addImpervious('Cold');
+    creature.addResistant('Cold');
     creature.addVulnerability('Water');
     creature.addSpell('Combustion');
     if (rank >= 2) {
@@ -218,7 +224,8 @@ function addFireElementals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'animate',
+            creature_origin: 'artificial',
+            creature_type: 'construct',
             level: 4,
             size: 'small',
           });
@@ -232,7 +239,8 @@ function addFireElementals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'animate',
+            creature_origin: 'artificial',
+            creature_type: 'construct',
             level: 8,
             size: 'medium',
           });
@@ -246,7 +254,8 @@ function addFireElementals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'animate',
+            creature_origin: 'artificial',
+            creature_type: 'construct',
             level: 12,
             size: 'large',
           });
@@ -260,7 +269,8 @@ function addFireElementals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'animate',
+            creature_origin: 'artificial',
+            creature_type: 'construct',
             level: 16,
             size: 'large',
           });
@@ -274,7 +284,8 @@ function addFireElementals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'animate',
+            creature_origin: 'artificial',
+            creature_type: 'construct',
             level: 20,
             size: 'huge',
           });
@@ -288,9 +299,9 @@ function addFireElementals(grimoire: Grimoire) {
 function addMagmaElementals(grimoire: Grimoire) {
   function magmaElemental(creature: Creature) {
     creature.addTrait('simple-minded');
-    creature.addImpervious('Earth');
+    creature.addResistant('Earth');
     creature.addImmunity('Fire');
-    creature.addImpervious('Cold');
+    creature.addResistant('Cold');
     creature.addVulnerability('Acid');
     creature.addVulnerability('Water');
 
@@ -330,7 +341,8 @@ function addMagmaElementals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'warrior',
             elite: false,
-            creature_type: 'soulforged',
+            creature_origin: 'artificial',
+            creature_type: 'construct',
             level: 6,
             size: 'medium',
           });
@@ -344,7 +356,8 @@ function addMagmaElementals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'warrior',
             elite: false,
-            creature_type: 'soulforged',
+            creature_origin: 'artificial',
+            creature_type: 'construct',
             level: 12,
             size: 'large',
           });
@@ -358,7 +371,8 @@ function addMagmaElementals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'warrior',
             elite: false,
-            creature_type: 'soulforged',
+            creature_origin: 'artificial',
+            creature_type: 'construct',
             level: 18,
             size: 'huge',
           });

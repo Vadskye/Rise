@@ -407,7 +407,7 @@ They allow more distinct and unique character customization, but also increase g
   % Rank 5 wizard: 38 HP, 4 casts
   % Rank 7 wizard: 76 HP, 4 casts
   \begin{magicalfeat}{Blood Magic}{Casting, Magical}
-    \featpre Access to a \glossterm{mystic sphere}, Constitution 2.
+    \featpre Access to a \glossterm{mystic sphere}, Constitution 2, \trait{blooded}.
 
     \magicalff[1]{Bloodspell} Whenever you cast a spell, you may use this ability.
     When you do, you gain a \plus1 accuracy bonus with the spell.
@@ -458,7 +458,7 @@ They allow more distinct and unique character customization, but also increase g
   \begin{feat}{Brawler}{Combat}
     \featpre Strength 1, Dexterity 1.
 
-    \ff[1]{Brawling Expertise} You gain a \plus1 bonus to your \glossterm{brawling accuracy} (see \pcref{Brawling Accuracy}).
+    \ff[1]{Brawling Expertise} You gain a \plus1 bonus to your Brawn defense and your \glossterm{brawling accuracy} (see \pcref{Brawling Accuracy}).
 
     \ff[1]{Unarmed Warrior} Your punch/kick \glossterm{natural weapon} becomes a \plus1 accuracy weapon that deals 1d4 damage and has the \weapontag{Light} \glossterm{weapon tag}.
     Since this bonus is local to the weapon, it is doubled if you make \glossterm{dual strikes} with it.
@@ -688,7 +688,7 @@ They allow more distinct and unique character customization, but also increase g
 
     \ff[1]{Draconic Ancestry} Choose a type of dragon from among the dragons on \trefnp{Dragon Types}.
     You have the blood of that type of dragon in your veins.
-    You are \impervious to attacks with that dragon's associated tag.
+    You are \resistant to attacks with that dragon's associated tag.
 
     \begin{columntable}
       \columncaption{Dragon Types}
@@ -987,7 +987,7 @@ They allow more distinct and unique character customization, but also increase g
     \magicalff[12]{Ghost Step\plus} When you use the \ability{run} or \ability{sprint} abilities, you can become \trait{incorporeal} until the end of your turn.
     While you are incorporeal in this way, you gain an average fly speed.
 
-    \magicalff[12]{Spectral Shield} You are \impervious to all attacks by \trait{incorporeal} creatures.
+    \magicalff[12]{Spectral Shield} You are \resistant to all attacks by \trait{incorporeal} creatures.
 
     \magicalff[18]{Half Spirit} Your \glossterm{injury point} is set to 0, so you are only \glossterm{injured} while you have no remaining hit points.
   \end{magicalfeat}
@@ -1023,7 +1023,7 @@ They allow more distinct and unique character customization, but also increase g
     % It also has highly varied effects based on the target's size category, dealing less damage to small creatures and failing completely against large creatures.
     \ff[6]{Call to Heaven}
     \begin{activeability}{Call to Heaven}{Standard action}
-      \abilitytags \atBrawling (see text)
+      \abilitytags \atBrawling (see text), \atPhysical
       \rankline
       Make a \glossterm{brawling attack} vs. Brawn against one creature or object adjacent to you.
       If you hit, and you are strong enough to carry the target, you \glossterm{fling} it up to 10 feet directly upwards.
@@ -1134,7 +1134,7 @@ They allow more distinct and unique character customization, but also increase g
     % A normal 30' line from self would be about r0 or r1. If we assume r1, this gets drX damage.
     \ff[6]{Trample}
     \begin{activeability}{Trample}{Standard action}
-      \abilitytags \abilitytag{Brawling}, \abilitytag{Size-Based}
+      \abilitytags \abilitytag{Brawling}, \atPhysical, \abilitytag{Size-Based}
       \rankline
       Move up to your speed in a straight line.
       Then, make a \glossterm{brawling attack} vs. Brawn against each creature whose space you moved through in this way.
@@ -1458,7 +1458,7 @@ They allow more distinct and unique character customization, but also increase g
     This can only affect any individual creature once per turn, so a creature that uses two magical abilities will have no failure chance on the second ability it uses.
     If that enemy's \glossterm{character rank} is less than your character rank, this failure chance increases to 50\%.
     This cannot cause passive abilities or triggered abilities to fail.
-    Although this ability is \glossterm{mundane}, it still affects \trait{intangible} creatures.
+    Although this ability is \glossterm{mundane}, it still affects \trait{incorporeal} creatures.
 
     \ff[12]{Mundane Resilience\plus} The bonuses increases to \plus2.
 
@@ -1941,7 +1941,7 @@ They allow more distinct and unique character customization, but also increase g
   \begin{magicalfeat}{Sphere Focus: Electromancy}{Casting, Magical}
     \featpre Access to the \sphere{Electromancy} \glossterm{mystic sphere}.
 
-    \magicalff[1]{Electricity Tolerance} You are \impervious to \atElectricity attacks.
+    \magicalff[1]{Electricity Tolerance} You are \resistant to \atElectricity attacks.
 
     \magicalff[1]{Extended Chain} The distance that your abilities can \glossterm{chain} increases by 15 feet.
 
@@ -1954,8 +1954,8 @@ They allow more distinct and unique character customization, but also increase g
 
     \magicalff[12]{Electricity Immunity} You are \buff{immune} to \atElectricity attacks.
 
-    \magicalff[12]{Static Buildup} Whenever you use the \ability{sprint} ability, you gain a \plus1 accuracy bonus with your next spell from the \sphere{Electromancy} mystic sphere.
-    At the end of your next turn, this bonus ends.
+    \magicalff[12]{Static Buildup} Whenever you use the \ability{run} or \ability{sprint} ability, you gain a \plus1 accuracy bonus with your next spell from the \sphere{Electromancy} mystic sphere.
+    At the end of your next turn, this bonus ends if it was not used.
 
     \magicalff[18]{Extra Chain} All of your \glossterm{targeted} \sphere{Electromancy} spells \glossterm{chain} one additional time, even if they did not originally chain.
     If your \textit{chaining spell} ability affects a non-\sphere{Electromancy} spell, it also chains two additional times instead of only one.
@@ -1968,7 +1968,7 @@ They allow more distinct and unique character customization, but also increase g
     In addition, the \glossterm{difficulty value} to observe the effects of your \abilitytag{Emotion} abilities with the Awareness and Social Insight skills increases by 10.
 
     \magicalff[6]{Mind Fragments} When you use a \magical ability that has the \abilitytag{Emotion} tag, you can affect creatures that are immune to that ability due to being \trait{mindless} or \trait{simple-minded}.
-    You treat those creatures as being \impervious instead of immune.
+    You treat those creatures as being \resistant instead of immune.
     This does not allow you to affect creatures who are immune to those abilities for other reasons.
 
     \magicalff[12]{Implanted Spell} You learn an additional \glossterm{targeted} spell with the \atCompulsion or \atEmotion tags.
@@ -1985,7 +1985,7 @@ They allow more distinct and unique character customization, but also increase g
     \magicalff[18]{Hidden Influence\plus} The accuracy bonus from your \textit{hidden influence} ability also applies against \partiallyunaware creatures.
     In addition, the \glossterm{difficulty value} increase from that ability increases to \plus20.
 
-    \magicalff[18]{Mind Fragments\plus} You no longer treat those creatures as being impervious.
+    \magicalff[18]{Mind Fragments\plus} You no longer treat those creatures as being resistant.
   \end{magicalfeat}
 
   \begin{magicalfeat}{Sphere Focus: Fabrication}{Casting, Magical}
@@ -2041,7 +2041,8 @@ They allow more distinct and unique character customization, but also increase g
 
     \magicalff[6]{Fleshbending Spell} You learn an additional spell.
     The spell can be up to rank 3, even if you do not have access to rank 3 spells.
-    When you attack with the spell, compare your attack result to the Fortitude defense of each living target.
+    It gains the \atLife tag.
+    When you attack with the spell, compare your attack result to the Fortitude defense of each target.
     On a hit, that target takes a \minus4 penalty to its other defenses against that spell.
 
     This is a metamagic effect, so you cannot apply another metamagic to the same spell.
@@ -2079,7 +2080,7 @@ They allow more distinct and unique character customization, but also increase g
   \begin{magicalfeat}{Sphere Focus: Pyromancy}{Casting, Magical}
     \featpre Access to the \sphere{Pyromancy} \glossterm{mystic sphere}.
 
-    \magicalff[1]{Fire Tolerance} You are \impervious to \atFire attacks.
+    \magicalff[1]{Fire Tolerance} You are \resistant to \atFire attacks.
 
     \magicalff[1]{Spreading Flame} Whenever you cast a spell from the \sphere{Pyromancy} \glossterm{mystic sphere} with a standard area, you can increase its area to the next standard area category, to a maximum of a Gargantuan area.
     If you do, the spell deals no damage against targets that it misses, even if it would normally deal half damage.
@@ -2229,7 +2230,8 @@ They allow more distinct and unique character customization, but also increase g
 
     \magicalff[6]{Venomous Spell} You learn an additional spell.
     The spell can be up to rank 3, even if you do not have access to rank 3 spells.
-    Whenever you damage a living creature with that spell, you can cause the creature to become poisoned with your choice of one of the poisons you store with your \textit{poisonous blood} ability.
+    It gains the \atPoison tag.
+    Whenever you damage a creature with that spell, you can cause the creature to become poisoned with your choice of one of the poisons you store with your \textit{poisonous blood} ability.
     This expends the dose of that poison.
     You can poison multiple creatures simultaneously in this way, but it costs one poison dose per creature affected.
 
@@ -2290,7 +2292,7 @@ They allow more distinct and unique character customization, but also increase g
     \featpre Access to the \sphere{Vivimancy} \glossterm{mystic sphere}.
 
     % Should this be more specific, like "animates"?
-    \magicalff[1]{Hidden Life} You can treat nonliving creatures other than undead as if they were living creatures for the purpose of your abilities from the \sphere{Vivimancy} \glossterm{mystic sphere}.
+    \magicalff[1]{Hidden Life} Your \atLife abilities from the \sphere{Vivimancy} \glossterm{mystic sphere} affect nonliving creatures other than undead, even if those creatures would normally be immune to \atLife abilities.
 
     \magicalff[1]{Personal Vitality} You gain a \plus2 bonus to your \glossterm{durability}.
 
@@ -2302,8 +2304,7 @@ They allow more distinct and unique character customization, but also increase g
     This is a metamagic effect, so you cannot apply another metamagic to the same spell.
     When you gain access to a new rank of spells, you can replace your current spell affected by this metamagic with a new spell of that rank.
 
-    \magicalff[12]{Life Suppression} You are no longer considered a living creature for the purpose of attacks against you.
-    This means that attacks which only affect living creatures have no effect against you.
+    \magicalff[12]{Life Suppression} You are immune to \atLife attacks.
 
     \magicalff[18]{Personal Vitality\plus} The durability bonus increases to \plus5.
   \end{magicalfeat}

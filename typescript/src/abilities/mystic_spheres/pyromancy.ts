@@ -548,13 +548,13 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       functionsLike: {
         name: 'personal ignition',
-        exceptThat: 'the damage increases to \\damagerankthree.',
+        exceptThat: 'the damage increases to \\damagerankfour.',
       },
       narrative: `
         You catch on fire.
         This does not cause you any harm, as the flames burn around your body without burning you.
       `,
-      rank: 5,
+      rank: 6,
       roles: ['attune'],
       scaling: 'damage',
       type: 'Attune (deep)',
@@ -843,7 +843,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         `,
         halfOnMiss: true,
         targeting: `
-          Whenever you use the \\ability{total defense} or \\ability{recover} ability, you can activate this ability.
+          Whenever you use the \\ability{recover} ability, you can activate this ability.
           If you do, make an attack vs. Reflex against everything within a \\smallarea radius from you.
           Then, this ability is \\glossterm{dismissed}.
         `,
@@ -921,12 +921,13 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
           Any \\glossterm{extra damage} applies to both the initial damage and the delayed damage.
         `,
         targeting: `
-          Make an attack vs. Fortitude with a -4 accuracy penalty against a living creature within \\medrange.
+          Make an attack vs. Fortitude with a -4 accuracy penalty against a creature within \\medrange.
         `,
       },
       rank: 3,
       roles: ['burn'],
       scaling: 'damage',
+      tags: ['Life'],
     },
     {
       name: 'Mighty Living Pyre',
@@ -939,12 +940,13 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
           Any \\glossterm{extra damage} applies to both the initial damage and the delayed damage.
         `,
         targeting: `
-          Make an attack vs. Fortitude with a -4 accuracy penalty against a living creature within \\medrange.
+          Make an attack vs. Fortitude with a -4 accuracy penalty against a creature within \\medrange.
         `,
       },
       rank: 6,
       roles: ['burn'],
       scaling: 'damage',
+      tags: ['Life'],
     },
 
     {

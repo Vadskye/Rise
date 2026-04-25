@@ -69,18 +69,6 @@ pub fn shields() -> Vec<MagicArmor> {
         ..MagicArmor::default()
     }));
 
-    // +2 Armor is 1.5 EA. This is active less than half the time, so r1 is fine.
-    armor.push(Shield(StandardItem {
-        name: String::from("Turtle Shield"),
-        rank: 1,
-        short_description: String::from("Grants +2 Armor during total defense"),
-        description: String::from(r"
-            When you use the \textit<total defense> ability, you gain a +2 bonus to Armor defense in addition to the normal bonuses from taking that action (see \pcref<Total Defense>).
-            This property cannot be applied to tower shields.
-        "),
-        ..MagicArmor::default()
-    }));
-
     // Normally, +1 tag would be rank 4. Since this only works on shields, it can be rank 3.
     armor.push(Shield(StandardItem {
         name: String::from("Impact Shield"),
@@ -148,6 +136,7 @@ pub fn shields() -> Vec<MagicArmor> {
         description: String::from(r"
             Whenever you would be affected by a \glossterm<condition>, you have a 50\% chance to avoid gaining that condition.
             This does not prevent any other effects of the attack.
+            You must be \trait{ensouled} to attune to this item.
         "),
         ..MagicArmor::default()
     }));
@@ -158,7 +147,7 @@ pub fn shields() -> Vec<MagicArmor> {
         rank: 4,
         short_description: String::from(r"Can reflect magical attacks"),
         description: String::from(r"
-            Whenever you use the \ability<total defense> ability, you can activate this shield.
+            You can activate this shield as a \glossterm{standard action}.
             When you do, the shield \glossterm{briefly} reflects magic.
             Any \glossterm<targeted> \magical abilities that target you also target the creature using that ability in addition to you.
             It cannot choose to reduce its accuracy or damage against itself.
