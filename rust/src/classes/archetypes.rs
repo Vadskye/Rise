@@ -296,7 +296,7 @@ impl ClassArchetype {
             Self::BattleforgedResilience => "This archetype improves your durability in combat.",
             Self::Battlerager => "This archetype grants you a devastating rage, improving your combat prowess.",
             Self::OutlandSavage => "This archetype improves your mobility and combat prowess with direct, brutal abilities.",
-            Self::PrimalWarrior => "This archetype grants you abilities to use in combat and improves your physical skills.",
+            Self::PrimalWarrior => "This archetype grants you powerful abilities to use in combat.",
             Self::Totemist => "This archetype allows you to embody the spirits of apex predators to improve your combat ability.",
             // Cleric
             Self::ClericDivineMagic => "
