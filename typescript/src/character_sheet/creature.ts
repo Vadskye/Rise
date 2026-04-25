@@ -778,9 +778,11 @@ export class Creature implements CreaturePropertyMap {
       ];
       modifier.immune = 'Trip';
     } else if (traitName === 'legless') {
-      modifier.immune = 'Prone';
       // No way to mark inability to jump. Just don't give legless creatures the
       // Jump skill as a trained skill and it shouldn't appear in the book, though.
+      modifier.immune = 'Prone';
+    } else if (traitName === 'nonliving') {
+      modifier.immune = 'Poison'
     } else if (traitName === 'quadrupedal') {
       modifier.numericEffects = [{ modifier: 10, statistic: 'speed' }];
       modifier.resistant = 'Trip';
