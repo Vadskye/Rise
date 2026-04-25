@@ -536,7 +536,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       scaling: {
         6: `
           You can also construct fortifications from stone.
-          This makes them more resistant to attack and allows the construction of more complex structures.
+          This makes them more difficult to damage and allows the construction of more complex structures.
           A typical Large wall made of stone has 50 hit points, 10 \\glossterm{hardness}, and a Sunder DV of 25.
         `,
       },
