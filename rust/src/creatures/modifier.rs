@@ -37,7 +37,7 @@ pub enum Modifier {
     StrikeDamageDice(i32),
     VitalRoll(i32),
     Immune(SpecialDefenseType),
-    Impervious(SpecialDefenseType),
+    Resistant(SpecialDefenseType),
     Vulnerable(SpecialDefenseType),
 }
 
@@ -83,7 +83,7 @@ impl Modifier {
             Self::ExtraDamage(v) => format!("{} {}", self.name(), v.to_string()),
             Self::HitPoints(v) => format!("{} {}", self.name(), v),
             Self::Immune(t) => format!("{} to {}", self.name(), t.description()),
-            Self::Impervious(t) => format!("{} to {}", self.name(), t.description()),
+            Self::Resistant(t) => format!("{} to {}", self.name(), t.description()),
             Self::InjuryPoint(v) => format!("{} {}", self.name(), v),
             Self::MagicalPower(v) => format!("{} {}", self.name(), v),
             Self::Mindless => self.name(),
@@ -113,7 +113,7 @@ impl Modifier {
             Self::ExtraDamage(_) => "extra damage".to_string(),
             Self::HitPoints(_) => "HP".to_string(),
             Self::Immune(t) => format!("immune to {}", t.description()),
-            Self::Impervious(t) => format!("impervious to {}", t.description()),
+            Self::Resistant(t) => format!("resistant to {}", t.description()),
             Self::InjuryPoint(_) => "injury point".to_string(),
             Self::MagicalPower(_) => "magical power".to_string(),
             Self::Maneuver(m) => format!("maneuver {}", m.name()),
@@ -143,7 +143,7 @@ impl Modifier {
             Self::ExtraDamage(_) => ModifierType::ExtraDamage,
             Self::HitPoints(_) => ModifierType::HitPoints,
             Self::Immune(_) => ModifierType::SpecialDefense,
-            Self::Impervious(_) => ModifierType::SpecialDefense,
+            Self::Resistant(_) => ModifierType::SpecialDefense,
             Self::InjuryPoint(_) => ModifierType::InjuryPoint,
             Self::MagicalPower(_) => ModifierType::MagicalPower,
             Self::Maneuver(_) => ModifierType::Maneuver,
@@ -197,7 +197,7 @@ impl Modifier {
             Self::ExtraDamage(v) => v.average_damage() as i32,
             Self::HitPoints(v) => *v,
             Self::Immune(_) => 0,
-            Self::Impervious(_) => 0,
+            Self::Resistant(_) => 0,
             Self::InjuryPoint(v) => *v,
             Self::MagicalPower(v) => *v,
             Self::Maneuver(_) => 0,
@@ -232,8 +232,8 @@ impl Modifier {
     pub fn immune_debuff(d: Debuff) -> Self {
         Self::Immune(SpecialDefenseType::Debuff(d))
     }
-    pub fn impervious_tag(at: AbilityTag) -> Self {
-        Self::Impervious(SpecialDefenseType::AbilityTag(at))
+    pub fn resistant_tag(at: AbilityTag) -> Self {
+        Self::Resistant(SpecialDefenseType::AbilityTag(at))
     }
     pub fn vulnerable_tag(at: AbilityTag) -> Self {
         Self::Vulnerable(SpecialDefenseType::AbilityTag(at))

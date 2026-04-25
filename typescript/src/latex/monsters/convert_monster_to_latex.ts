@@ -140,7 +140,7 @@ function genDefensiveStatisticsText(monster: Creature): string {
 function genSpecialDefenseModifiersText(monster: Creature) {
   return [
     ['Immune', monster.immune],
-    ['Impervious', monster.impervious],
+    ['Resistant', monster.resistant],
     ['Vulnerable', monster.vulnerable],
   ]
     .filter((sd) => sd[1])

@@ -78,7 +78,7 @@ export const unbreakableDefense: CombatStyle = {
 
       // 1.3 EA
       effect: `
-        You are \\briefly \\impervious to all damage.
+        You are \\briefly \\resistant to all damage.
       `,
       rank: 7,
       roles: ['turtle'],

@@ -95,7 +95,7 @@ Nonmagical weapons can be made from special materials that alter their propertie
     - `Adamantine`: Heavier, increased `damage resistance` and `encumbrance`.
     - `Cold Iron`: Bonus to defenses vs. magic, reduced Armor defense.
     - `Diamondsteel`: Bonus to defenses vs. critical hits.
-    - `Dragonhide/Dragonscale`: Impervious/immune to specific energy types.
+    - `Dragonhide/Dragonscale`: Resistant/immune to specific energy types.
     - `Elvenweave/Mithral`: Reduces `encumbrance`.
     - `Shadeweave`: Reduced `encumbrance`/DR, Stealth bonus.
     - `Starmetal`: Heavier, increased `damage resistance` and `encumbrance`.

@@ -198,7 +198,7 @@ export const prayer: MysticSphere = {
 
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each target is \\impervious to \\glossterm{poisons}.
+        Each target is \\resistant to \\glossterm{poisons}.
         In addition, at the end of its turn, it automatically gains one success to resist an active poison affecting it.
       `,
       rank: 2,
@@ -211,7 +211,7 @@ export const prayer: MysticSphere = {
 
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each target is \\impervious to \\abilitytag{Compulsion} and \\abilitytag{Emotion} effects.
+        Each target is \\resistant to \\abilitytag{Compulsion} and \\abilitytag{Emotion} effects.
         In addition, at the end of its turn, it automatically removes one \\glossterm{condition} from a Compulsion or Emotion effect.
       `,
       rank: 3,

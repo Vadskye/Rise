@@ -334,7 +334,7 @@ export const revelation: MysticSphere = {
         crit: CONDITION_CRIT,
         hit: `
           As a \\glossterm{condition}, the target's vulnerabilities become clear for all to see.
-          Anyone looking at it intuitively knows everything that it is \\vulnerable, \\impervious, and immune to.
+          Anyone looking at it intuitively knows everything that it is \\vulnerable, \\resistant, and immune to.
         `,
         targeting: `
           Make an attack vs. Mental with a +4 accuracy bonus against one creature or object within \\longrange.

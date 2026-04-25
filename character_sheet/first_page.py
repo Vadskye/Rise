@@ -374,10 +374,10 @@ def defenses() -> str:
                                 }),
                             ),
                             sidelabel(
-                                "Imperv",
+                                "Resist",
                                 textarea({
-                                    "class": "impervious",
-                                    "name": "impervious",
+                                    "class": "resistant",
+                                    "name": "resistant",
                                     "readonly": True,
                                 }),
                             ),

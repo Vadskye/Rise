@@ -32,7 +32,7 @@ function addFormians(grimoire: Grimoire) {
       `,
       isMagical: true,
     });
-    creature.addImpervious('Earth');
+    creature.addResistant('Earth');
     creature.addTrait('multipedal');
   }
 
