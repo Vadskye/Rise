@@ -716,6 +716,7 @@ export function handleEverything() {
 function handleCoreStatistics() {
   handleAccuracy();
   handleAccuracyWithStrikes();
+  handleActiveAbilitiesAccuracy();
   handleBrawlingAccuracy();
   handleCharacterNameSanitization();
   handleDefenses();
@@ -863,6 +864,108 @@ function handleAccuracyWithStrikes() {
       });
     },
   });
+}
+
+function handleActiveAbilitiesAccuracy() {
+  function formatAccuracyValue(val: number) {
+    return val >= 0 ? `+${val}` : `${val}`;
+  }
+  const strikeGlobals = ['accuracy', 'accuracy_with_strikes'];
+  for (let i = 0; i < supportedWeaponCount; i++) {
+    strikeGlobals.push(`weapon_${i}_accuracy`);
+  }
+
+  onGet({
+    variables: { numeric: strikeGlobals },
+    callback: (v) => {
+      getSectionIDs('repeating_strikeattacks', (ids) => {
+        if (!ids.length) return;
+        const keys = ids.map((id) => `repeating_strikeattacks_${id}_attack_accuracy`);
+        getAttrs(keys, (localAttrs) => {
+          const attrs: Attrs = {};
+          for (const id of ids) {
+            const attackAcc = Number(
+              localAttrs[`repeating_strikeattacks_${id}_attack_accuracy`] || 0,
+            );
+            for (let i = 0; i < supportedWeaponCount; i++) {
+              attrs[`repeating_strikeattacks_${id}_weapon_${i}_total_accuracy`] =
+                formatAccuracyValue(
+                  v.accuracy + v.accuracy_with_strikes + attackAcc + v[`weapon_${i}_accuracy`],
+                );
+            }
+          }
+          setAttrs(attrs);
+        });
+      });
+
+      for (const section of ['repeating_otherdamagingattacks', 'repeating_nondamagingattacks']) {
+        getSectionIDs(section, (ids) => {
+          if (!ids.length) return;
+          const keys = ids.map((id) => `${section}_${id}_attack_accuracy`);
+          getAttrs(keys, (localAttrs) => {
+            const attrs: Attrs = {};
+            for (const id of ids) {
+              const attackAcc = Number(localAttrs[`${section}_${id}_attack_accuracy`] || 0);
+              attrs[`${section}_${id}_calculated_accuracy`] = formatAccuracyValue(
+                v.accuracy + attackAcc,
+              );
+            }
+            setAttrs(attrs);
+          });
+        });
+      }
+    },
+  });
+
+  // Local changes for strike attacks
+  onGet({
+    variables: { numeric: ['repeating_strikeattacks_attack_accuracy'] },
+    options: {
+      includeLevel: false,
+      runOnSheetOpen: false,
+      variablesWithoutListen: { numeric: strikeGlobals },
+    },
+    callback: (v) => {
+      const triggerParts = v.eventInfo.triggerName.split('_');
+      const sectionId = triggerParts.length >= 3 ? triggerParts[2] : '';
+      if (!sectionId) return;
+
+      const attrs: Attrs = {};
+      for (let i = 0; i < supportedWeaponCount; i++) {
+        attrs[`repeating_strikeattacks_${sectionId}_weapon_${i}_total_accuracy`] =
+          formatAccuracyValue(
+            v.accuracy +
+              v.accuracy_with_strikes +
+              v.repeating_strikeattacks_attack_accuracy +
+              v[`weapon_${i}_accuracy`],
+          );
+      }
+      setAttrs(attrs);
+    },
+  });
+
+  // Local changes for other sections
+  for (const section of ['repeating_otherdamagingattacks', 'repeating_nondamagingattacks']) {
+    onGet({
+      variables: { numeric: [`${section}_attack_accuracy`] },
+      options: {
+        includeLevel: false,
+        runOnSheetOpen: false,
+        variablesWithoutListen: { numeric: ['accuracy'] },
+      },
+      callback: (v) => {
+        const triggerParts = v.eventInfo.triggerName.split('_');
+        const sectionId = triggerParts.length >= 3 ? triggerParts[2] : '';
+        if (!sectionId) return;
+
+        setAttrs({
+          [`${section}_${sectionId}_calculated_accuracy`]: formatAccuracyValue(
+            v.accuracy + v[`${section}_attack_accuracy`],
+          ),
+        });
+      },
+    });
+  }
 }
 
 function handleAttackHeaders() {
@@ -2568,13 +2671,16 @@ function handleTrainedSkills() {
             attrs[`${oldTrainedSkill}_is_trained`] = '0';
           }
 
-
           let untrainedFromRootSkill = null;
           for (const skillWithSubskill of SKILLS_WITH_SUBSKILLS) {
             if (trainedSkill && trainedSkill.startsWith(skillWithSubskill)) {
               console.log('trainedSkill', trainedSkill);
-              const modifierAttrName = trainedSkill.startsWith('profession') ? 'subskill_modifier' : trainedSkill;
-              const manualAttributeReminder = trainedSkill.startsWith('profession') ? " + a relevant attribute" : "";
+              const modifierAttrName = trainedSkill.startsWith('profession')
+                ? 'subskill_modifier'
+                : trainedSkill;
+              const manualAttributeReminder = trainedSkill.startsWith('profession')
+                ? ' + a relevant attribute'
+                : '';
               const subskill = trainedSkill.replace(skillWithSubskill + '_', '');
               const rowId = generateRowID();
               const prefix = `repeating_${skillWithSubskill}subskills_${rowId}`;
@@ -2582,7 +2688,8 @@ function handleTrainedSkills() {
               const fullSkillDescriptor =
                 uppercaseFirstLetter(skillWithSubskill) + ` (${subskill})`;
               attrs[`${prefix}_subskill_button`] =
-                `@{character_name} uses ${fullSkillDescriptor}:` + ` [[@{check_die} + @{${modifierAttrName}}]]${manualAttributeReminder}`;
+                `@{character_name} uses ${fullSkillDescriptor}:` +
+                ` [[@{check_die} + @{${modifierAttrName}}]]${manualAttributeReminder}`;
               attrs[`${prefix}_subskill_name`] = `(${subskill})`;
               attrs[`${prefix}_subskill_modifier_name`] = `${skillWithSubskill}_${subskill}`;
               attrs[rowIdKey] = rowId;
@@ -2646,9 +2753,7 @@ function handleTrainedSkills() {
     };
     for (const skillWithSubskill of SKILLS_WITH_SUBSKILLS) {
       if (untrainedSkill.startsWith(skillWithSubskill)) {
-        const rowIdKey = Object.keys(removed).find(
-          (k) => k.endsWith('front_rowid') && removed[k],
-        );
+        const rowIdKey = Object.keys(removed).find((k) => k.endsWith('front_rowid') && removed[k]);
         if (rowIdKey) {
           const rowId = removed[rowIdKey];
           removeRepeatingRow(`repeating_${skillWithSubskill}subskills_${rowId}`);

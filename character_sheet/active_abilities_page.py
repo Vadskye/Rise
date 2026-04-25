@@ -429,6 +429,13 @@ def weapon_buttons(i: int) -> list[str]:
         ),
         text_input(
             {
+                "class": "readonly-disabled strike-total-accuracy",
+                "name": f"weapon_{idx}_total_accuracy",
+                "readonly": True,
+            }
+        ),
+        text_input(
+            {
                 "class": "readonly-disabled strike-total-damage",
                 "name": f"weapon_{idx}_total_damage",
                 "readonly": True,
@@ -474,6 +481,15 @@ def other_damaging_attack() -> str:
                         }
                     ),
                 ])
+            ),
+            labeled_text_input(
+                "Total accuracy",
+                {"class": "total-accuracy"},
+                {
+                    "class": "readonly-disabled",
+                    "readonly": True,
+                    "name": "calculated_accuracy",
+                },
             ),
             labeled_text_input(
                 "Total damage",
@@ -529,7 +545,16 @@ def nondamaging_attack() -> str:
                             "name": "attack_name",
                         }
                     ),
-                ])
+                ]),
+            ),
+            labeled_text_input(
+                "Total accuracy",
+                {"class": "total-accuracy"},
+                {
+                    "class": "readonly-disabled",
+                    "readonly": True,
+                    "name": "calculated_accuracy",
+                },
             ),
         ],
     )
