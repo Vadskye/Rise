@@ -356,9 +356,9 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                         4 & You gain a \plus10 \glossterm{accuracy} bonus with the spell, but cannot get a \glossterm{critical hit} \\
                         5 & The spell gains the \atCold, \atElectricity, and \atFire ability tags \\
                         6 & The spell's area is doubled \\
-                        7 & The spell \glossterm{chains} once to the unaffected \glossterm{enemy} that is closest to one of the spell's \glossterm{primary targets}, choosing randomly between equally close creatures \\
-                        8 & The spell deals \glossterm{extra damage} equal to your rank in this archetype \\
-                        9 & Each target hit by the spell is \glossterm{briefly} \confused, \braced, and \focused \\
+                        7 & Each target hit by the spell is \glossterm{briefly} \confused, \braced, and \focused \\
+                        8 & The spell \glossterm{chains} once to the unaffected \glossterm{enemy} that is closest to one of the spell's \glossterm{primary targets}, choosing randomly between equally close creatures \\
+                        9 & The spell deals \glossterm{extra damage} equal to your rank in this archetype \\
                         10 & Your first attack roll with the spell \glossterm{explodes} on any value, not just on a 10 \\
                         11\plus & The spell \glossterm{repeats} at the start of your next turn \\
                     \end{dtabularx}
