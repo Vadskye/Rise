@@ -651,7 +651,7 @@
       Grapple            & Standard         & Start grappling with a foe                    & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
       Ready Reaction     & Standard         & Ready an action                               & \tdash                                         \\
       Recover            & Standard         & Regain HP, remove conditions                  & \tdash                                         \\
-      Run                & Standard         & Triple your available movement                & \tdash                                         \\
+      Run                & Standard         & Briefly double your available movement        & \tdash                                         \\
       Shove              & Move or standard & Move a foe                                    & \abilitytag{Brawling}                          \\
       Sprint             & Free             & Double your available movement                & \tdash                                         \\
       Throw              & Standard         & Throw a held object                           & \tdash                                         \\
@@ -666,6 +666,9 @@
 
     Move up to your speed in a single straight line without reducing your \glossterm{available movement}.
     At the end of this movement, you can make a melee \glossterm{strike}.
+    \rankline
+    \featlevel{12} The strike deals double damage.
+    \featlevel{18} The strike deals triple damage.
   \end{activeability}
 
   \begin{triggeredability}{Desperate Exertion}{Triggered (see text)}
@@ -725,7 +728,8 @@
 
   \begin{activeability}{Run}{Standard action}
     \rankline
-    You add twice your \glossterm{speed} to your \glossterm{available movement}.
+    Add your \glossterm{speed} to your \glossterm{available movement}.
+    At the start of your next turn, add your speed to your available movement again.
   \end{activeability}
 
   \begin{activeability}{Shove}{Standard action}
