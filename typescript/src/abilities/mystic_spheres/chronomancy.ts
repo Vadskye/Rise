@@ -255,7 +255,7 @@ export const chronomancy: MysticSphere = {
     {
       name: 'Distant Accelerated Dodge',
 
-      // TODO: full EA math. What is run + total defense worth?
+      // TODO: full EA math. What is run + braced worth?
       effect: `
         You are \\briefly \\braced.
         In addition, you add twice your \\glossterm{speed} to your \\glossterm{available movement}.
