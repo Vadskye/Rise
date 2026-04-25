@@ -1,484 +1,523 @@
 .subskill-header {
-    margin-top: 0.25em;
-    text-align: right;
-    margin-right: 3em;
+  margin-top: 0.25em;
+  text-align: right;
+  margin-right: 3em;
 }
 
-.perform-box, .craft-box, .knowledge-box {
-    .subskill-name {
-        font-size: 12px;
-        padding-right: 0;
-    }
+.perform-box,
+.craft-box,
+.knowledge-box {
+  .subskill-name {
+    font-size: 12px;
+    padding-right: 0;
+  }
 
-    .subtle-button {
-        text-align: right;
-        > button > input {
-            text-align: right;
-        }
+  .subtle-button {
+    text-align: right;
+    > button > input {
+      text-align: right;
     }
+  }
 
+  width: 8em;
+
+  input[type="text"] {
     width: 8em;
-
-    input[type=text] {
-        width: 8em;
-    }
+  }
 }
 
 .skill-box {
-    width: 100%;
-    align-items: center;
-    justify-content: flex-end;
-    margin-top: 0.1em;
-    margin-bottom: 0.1em;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
 
-    .subskill-name {
-        box-shadow: none;
-    }
+  .subskill-name {
+    box-shadow: none;
+  }
 
-    .skill-button {
-        font-size: 1em;
-        margin-right: 0.1em;
-    }
+  .skill-button {
+    font-size: 1em;
+    margin-right: 0.1em;
+  }
 
-    input[type=number] {
-        box-shadow: 0 0 2px 1px #999 inset;
-        height: 1.5em;
-        margin-left: 0.25em;
-    }
+  input[type="number"] {
+    box-shadow: 0 0 2px 1px #999 inset;
+    height: 1.5em;
+    margin-left: 0.25em;
+  }
 
-    .number-label {
-        font-size: 1em;
-        text-align: right;
-    }
+  .number-label {
+    font-size: 1em;
+    text-align: right;
+  }
 }
 
 .skill-box.freeform-number-input {
-    justify-content: flex-end;
+  justify-content: flex-end;
 }
 
-.skill-box.freeform-number-input > input[type=text] {
-    flex-grow: 0;
-    width: 7em;
+.skill-box.freeform-number-input > input[type="text"] {
+  flex-grow: 0;
+  width: 7em;
 }
 
 .action-point-header {
-    margin-bottom: 0 !important;
-    text-align: center;
+  margin-bottom: 0 !important;
+  text-align: center;
 }
 
 /* make resources the same height as other columns */
 .all-statistics div.action-point-wrapper {
-    margin-bottom: 0.1em;
+  margin-bottom: 0.1em;
 }
 
 .action-point-wrapper {
-    justify-content: space-around;
+  justify-content: space-around;
 }
 
 /* section-specific formatting */
 
 .main-body {
-    flex-grow: 1;
-    width: 45em;
+  flex-grow: 1;
+  width: 45em;
 }
 
 .defenses {
-    flex-grow: 1;
-    .defenses-row {
-        justify-content: space-between;
-        .special-defenses {
-            justify-content: space-around;
-            flex-grow: 1;
-            margin-left: 4px;
-            margin-right: 2px;
-            height: 155px;
-            width: 10em;
-        }
-    }
-
+  flex-grow: 1;
+  .defenses-row {
+    justify-content: space-between;
     .special-defenses {
-        .sidelabeled-number-input {
-            .number-label {
-                flex-grow: 0;
-                width: 4em;
-            }
-        }
+      justify-content: space-around;
+      flex-grow: 1;
+      margin-left: 4px;
+      margin-right: 2px;
+      height: 155px;
+      width: 10em;
     }
+  }
 
-    .immune, .impervious, .vulnerable {
-        background-color: inherit;
-        border: 0;
-        cursor: inherit;
-        flex-grow: 1;
-        font-size: 0.9em;
-        height: 2.5em;
-        line-height: 1.2em;
-        width: 8em;
-        padding-top: 0;
-        padding-bottom: 0;
-        overflow: hidden;
+  .special-defenses {
+    .sidelabeled-number-input {
+      .number-label {
+        flex-grow: 0;
+        width: 4em;
+      }
     }
+  }
 
-    ::-webkit-scrollbar {
-        display: none;
-    }
+  .immune,
+  .impervious,
+  .vulnerable {
+    background-color: inherit;
+    border: 0;
+    cursor: inherit;
+    flex-grow: 1;
+    font-size: 0.9em;
+    height: 2.5em;
+    line-height: 1.2em;
+    width: 8em;
+    padding-top: 0;
+    padding-bottom: 0;
+    overflow: hidden;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
 }
 .movement {
-    .standard-movements {
-        margin-right: 0.5em;
-        input {
-            width: 2em;
-        }
-
-        .jump-distance input[type=text] {
-            width: 3.25em;
-        }
+  .standard-movements {
+    margin-right: 0.5em;
+    input {
+      width: 2em;
     }
 
-    .blank-movements {
-        flex-grow: 1;
-        column-gap: 1em;
-        justify-content: space-between;
-        align-items: baseline;
-
-        .freeform-number-input {
-            flex-grow: 1;
-        }
-
-        .movement-speed-name {
-            flex-grow: 1;
-            width: 5em;
-        }
+    .jump-distance input[type="text"] {
+      width: 3.25em;
     }
+  }
+
+  .blank-movements {
+    flex-grow: 1;
+    column-gap: 1em;
+    justify-content: space-between;
+    align-items: baseline;
+
+    .freeform-number-input {
+      flex-grow: 1;
+    }
+
+    .movement-speed-name {
+      flex-grow: 1;
+      width: 5em;
+    }
+  }
 }
 
-.first-page > div, .all-statistics > div, .boring-row div {
-    margin-left: 0.2em;
-    margin-right: 0.2em;
+.first-page > div,
+.all-statistics > div,
+.boring-row div {
+  margin-left: 0.2em;
+  margin-right: 0.2em;
 }
-.first-page > div:first-child, .passive-ability-row > div:first-child, .all-statistics > div:first-child, .boring-row div:first-child, .active-ability > div:first-child, .attack > div:first-child {
-    margin-left: 0;
+.first-page > div:first-child,
+.passive-ability-row > div:first-child,
+.all-statistics > div:first-child,
+.boring-row div:first-child,
+.active-ability > div:first-child,
+.attack > div:first-child {
+  margin-left: 0;
 }
-.first-page > div:last-child, .passive-ability-row > div:last-child, .all-statistics > div:last-child, .boring-row div:last-child, .active-ability > div:last-child, .attack > div:last-child {
-    margin-right: 0;
+.first-page > div:last-child,
+.passive-ability-row > div:last-child,
+.all-statistics > div:last-child,
+.boring-row div:last-child,
+.active-ability > div:last-child,
+.attack > div:last-child {
+  margin-right: 0;
 }
 
-.standard-defenses > div, .resources > div, .hit-points > div {
-    margin-bottom: 0.1em;
+.standard-defenses > div,
+.resources > div,
+.hit-points > div {
+  margin-bottom: 0.1em;
 }
 
 .attribute {
-    margin-bottom: 0.25em;
+  margin-bottom: 0.25em;
 }
 
 .attribute-section {
-    margin-bottom: 0.75em;
+  margin-bottom: 0.75em;
 
-    .attribute {
-        align-items: center;
-        justify-content: space-between;
-        text-align: center;
+  .attribute {
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
 
-        .underlabeled {
-            margin-left: 0.5em;
-        }
+    .underlabeled {
+      margin-left: 0.5em;
     }
+  }
 }
 .attribute-section:nth-child(4) {
-    margin-bottom: 0.4em;
+  margin-bottom: 0.4em;
 }
 .attribute-section:nth-child(7) {
-    margin-bottom: 0.25em;
+  margin-bottom: 0.25em;
 }
 
 .other-skills {
-    .attribute {
-        justify-content: center;
-    }
+  .attribute {
+    justify-content: center;
+  }
 }
 
 .resource-row div {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 .all-statistics .number-label {
-    font-size: 1.25em;
+  font-size: 1.25em;
 }
 
-.core-statistics > .flex-row, .standard-defenses > .flex-row, .movement > .flex-row {
-    margin-top: 0.2em;
-    margin-bottom: 0.2em;
+.core-statistics > .flex-row,
+.standard-defenses > .flex-row,
+.movement > .flex-row {
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
 }
 
-.attacks .section-header, .attributes-and-skills .section-header, .all-statistics .section-header {
-    margin-top: 0;
+.attacks .section-header,
+.attributes-and-skills .section-header,
+.all-statistics .section-header {
+  margin-top: 0;
 }
 
 .core-statistics-split {
-    align-items: center;
+  align-items: center;
 }
 
 .core-statistics-separator {
-    text-align: center;
-    width: 1em;
+  text-align: center;
+  width: 1em;
 }
 
 .all-abilities {
-    .repcontainer {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-content: flex-start;
-        align-items: flex-start;
-        width: 100%;
+  .repcontainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+  }
+  .repitem {
+    font-size: 16px;
+    input {
+      font-size: 16px;
     }
+  }
+
+  // Weapons want to use the entire width.
+  .weapon-based-strikes .repitem {
+    width: 100%;
+  }
+
+  // Other attacks want to match the name width displayed on the Active
+  // page. However, specifying a precise width here causes odd
+  // behavior, so we use percentages instead.
+  .other-damaging-attacks,
+  .debuffs,
+  .other-abilities {
     .repitem {
-        font-size: 16px;
-        input {
-            font-size: 16px;
-        }
+      width: 48%;
+      flex-grow: 1;
+      max-width: 50%;
     }
+  }
 
-    // Weapons want to use the entire width.
-    .weapon-based-strikes .repitem {
-        width: 100%;
-    }
+  .repcontrol_add,
+  .repcontrol_del,
+  .repcontrol_edit {
+    // This can have an element-specific "display: inline-block" if someone
+    // toggles Modify on and off, so we resort to dumber means to
+    left: -10000px;
+    position: absolute;
+    visibility: hidden;
+  }
 
-    // Other attacks want to match the name width displayed on the Active
-    // page. However, specifying a precise width here causes odd
-    // behavior, so we use percentages instead.
-    .other-damaging-attacks, .debuffs, .other-abilities {
-        .repitem {
-            width: 48%;
-            flex-grow: 1;
-            max-width: 50%;
-        }
-    }
+  .weapon-based-strikes {
+    gap: 0.5em;
+    // We want to display the attack name, but nothing else from .attack-prefix
+    .attack-prefix {
+      border-right: 1px solid grey;
+      width: 25%;
 
-    .repcontrol_add, .repcontrol_del, .repcontrol_edit {
-        // This can have an element-specific "display: inline-block" if someone
-        // toggles Modify on and off, so we resort to dumber means to 
-        left: -10000px;
-        position: absolute;
-        visibility: hidden;
-    }
+      .attack-calcs {
+        display: none;
+      }
 
-    .weapon-based-strikes {
-        gap: 0.5em;
-        // We want to display the attack name, but nothing else from .attack-prefix
-        .attack-prefix {
-            border-right: 1px solid grey;
-            width: 25%;
+      .attack-name input {
+        pointer-events: none;
+      }
 
-            .attack-calcs {
-                display: none;
-            }
-
-            .attack-name input {
-                pointer-events: none;
-            }
-
-            .attack-name .under-label {
-                display: none;
-            }
-        }
-
-        .attack-buttons {
-            flex-basis: 70%;
-            flex-grow: 1;
-            flex-direction: row;
-            gap: 0.5em;
-
-            // Only show the weapon buttons if those weapons exist
-            .weapon-exists:not(:checked) + .specific-weapon-button {
-                display: none;
-            }
-
-            .specific-weapon-button {
-                flex-basis: 20%;
-                flex-grow: 1;
-            }
-
-            .strike-total-damage {
-                display: none;
-            }
-        }
-    }
-
-    .other-damaging-attacks, .debuffs, .other-abilities {
-        .attack-prefix {
-            display: none;
-        }
-
-        // .attack-roll {
-        //     align-items: center;
-        // }
-
-        .attack-buttons {
-            flex-grow: 1;
-        }
-    }
-
-    .weapon-based-strikes, .other-damaging-attacks, .debuffs, .other-abilities {
-        button {
-            align-items: baseline;
-            background: none;
-            border: 0;
-            box-shadow: none;
-            display: flex;
-            width: 100%;
-        }
-        .attack-label, .ability-name-dynamic, .attack-name input, .specific-weapon-button input {
-            background: none;
-            box-shadow: none;
-            pointer-events: none;
-            margin-left: 0.1em;
-            padding: 0;
-        }
-        .attack-effect, .active-ability-effect {
-            display: none;
-        }
-    }
-
-    .attack, .ability {
-        margin-right: 1em;
-    }
-
-    .custom-modifier-toggle {
-        input[type=text] {
-            box-shadow: none;
-            cursor: inherit;
-            // Should match length on Status page
-            width: 15em;
-        }
-    }
-    // Should match length on Abilities page
-    .active-ability-button input[type="text"] {
-        width: 15em;
+      .attack-name .under-label {
+        display: none;
+      }
     }
 
     .attack-buttons {
-        .ability-name-options {
-            flex-grow: 1;
+      flex-basis: 70%;
+      flex-grow: 1;
+      flex-direction: row;
+      gap: 0.5em;
 
-            .ability-name-fixed {
-                display: none;
-            }
-        }
+      // Only show the weapon buttons if those weapons exist
+      .weapon-exists:not(:checked) + .specific-weapon-button {
+        display: none;
+      }
 
-        > .labeled-text-input {
-            display: none;
-        }
+      .specific-weapon-button {
+        flex-basis: 20%;
+        flex-grow: 1;
+      }
+
+      .strike-total-damage {
+        display: none;
+      }
     }
+  }
+
+  .other-damaging-attacks,
+  .debuffs,
+  .other-abilities {
+    .attack-prefix {
+      display: none;
+    }
+
+    // .attack-roll {
+    //     align-items: center;
+    // }
+
+    .attack-buttons {
+      flex-grow: 1;
+    }
+  }
+
+  .weapon-based-strikes,
+  .other-damaging-attacks,
+  .debuffs,
+  .other-abilities {
+    button {
+      align-items: baseline;
+      background: none;
+      border: 0;
+      box-shadow: none;
+      display: flex;
+      width: 100%;
+    }
+    .attack-label,
+    .ability-name-dynamic,
+    .attack-name input,
+    .specific-weapon-button input {
+      background: none;
+      box-shadow: none;
+      pointer-events: none;
+      margin-left: 0.1em;
+      padding: 0;
+    }
+    .attack-effect,
+    .active-ability-effect {
+      display: none;
+    }
+  }
+
+  .attack,
+  .ability {
+    margin-right: 1em;
+  }
+
+  .custom-modifier-toggle {
+    input[type="text"] {
+      box-shadow: none;
+      cursor: inherit;
+      // Should match length on Status page
+      width: 15em;
+    }
+  }
+  // Should match length on Abilities page
+  .active-ability-button input[type="text"] {
+    width: 15em;
+  }
+
+  .attack-buttons {
+    .ability-name-options {
+      flex-grow: 1;
+
+      .ability-name-fixed {
+        display: none;
+      }
+    }
+
+    > .labeled-text-input {
+      display: none;
+    }
+  }
 }
 
 .monster-type {
-    width: 5em;
+  width: 5em;
 }
 
-.level-input input[type=number] {
-    width: 40px;
+.level-input input[type="number"] {
+  width: 40px;
 }
 
 .sidebar {
-    width: 12em;
+  width: 12em;
 }
 
 .sidebar .repcontrol {
-    display: none;
+  display: none;
 }
 
 .paper-ability {
-    .ability-name {
-        width: 12em;
-        margin-right: 0.25em;
-        margin-top: 0.25em;
-    }
-    .ability-effect {
-        flex-grow: 1;
-    }
-    textarea {
-        height: 3em;
-        width: calc(100% - 0.5em);
-    }
+  .ability-name {
+    width: 12em;
+    margin-right: 0.25em;
+    margin-top: 0.25em;
+  }
+  .ability-effect {
+    flex-grow: 1;
+  }
+  textarea {
+    height: 3em;
+    width: calc(100% - 0.5em);
+  }
 }
 
 .paper {
-    .main-body {
-        margin-left: 0.5em;
-        width: 25em;
-        margin-right: 0.25em;
-    }
+  .main-body {
+    margin-left: 0.5em;
+    width: 25em;
+    margin-right: 0.25em;
+  }
 
-    .useful-notes, .useful-notes-header {
-        display: none;
-    }
+  .useful-notes,
+  .useful-notes-header {
+    display: none;
+  }
 
-    .attribute-section {
-        margin-bottom: 1em;
-    }
+  .attribute-section {
+    margin-bottom: 1em;
+  }
 
-    /* Shrink the attributes and skills so they can fit on one page */
-    .attributes-and-skills {
-        font-size: 10pt;
+  /* Shrink the attributes and skills so they can fit on one page */
+  .attributes-and-skills {
+    font-size: 10pt;
 
-        .section-header {
-            // match the other headers
-            font-size: 18.75px;
-        }
+    .section-header {
+      // match the other headers
+      font-size: 18.75px;
     }
-    .skill-box .skill-button {
-        margin-left: 0;
-        font-size: 10pt;
-    }
-    .knowledge-box .subtle-button {
-        width: 11.25em;
-        margin: 0;
-    }
+  }
+  .skill-box .skill-button {
+    margin-left: 0;
+    font-size: 10pt;
+  }
+  .knowledge-box .subtle-button {
+    width: 11.25em;
+    margin: 0;
+  }
 
-    /* Hide the "current / max" pattern */
-    .core-statistics-split {
-        :nth-child(1), :nth-child(2) {
-            display: none;
-        }
+  /* Hide the "current / max" pattern */
+  .core-statistics-split {
+    :nth-child(1),
+    :nth-child(2) {
+      display: none;
     }
+  }
 
-    /* Give the special defenses a little more poof */
-    .standard-defenses {
-        margin-right: 0.25em;
+  /* Give the special defenses a little more poof */
+  .standard-defenses {
+    margin-right: 0.25em;
+  }
+
+  /* Make the craft/knowledge/persuasion subskills full width */
+  fieldset .subtle-button {
+    flex-grow: 1;
+    padding-right: 0.25em;
+
+    button {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+
+      input[type="text"] {
+        width: 100%;
+      }
     }
+  }
 
-    /* Make the craft/knowledge/persuasion subskills full width */
-    fieldset .subtle-button {
-        flex-grow: 1;
-        padding-right: 0.25em;
-
-        button {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-
-            input[type=text] {
-                width: 100%;
-            }
-        }
+  /* Make the attributes bigger */
+  .attribute {
+    button,
+    .other-skills {
+      font-size: 1.2em;
     }
+  }
 
-    /* Make the attributes bigger */
-    .attribute {
-        button, .other-skills {
-            font-size: 1.2em;
-        }
-    }
-
-    /* Shrink the ability text boxes */
-    .ability-effect textarea {
-        height: 4em;
-    }
+  /* Shrink the ability text boxes */
+  .ability-effect textarea {
+    height: 4em;
+  }
 }
 
 .initiative-button {
-    // match other labels in the same section
-    font-size: 17.5px;
+  // match other labels in the same section
+  font-size: 17.5px;
 }

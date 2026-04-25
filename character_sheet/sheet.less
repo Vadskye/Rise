@@ -1,356 +1,362 @@
 div.full-sheet {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
 
-    p {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    }
+  p {
+    font-family:
+      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+      Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol", "Noto Color Emoji";
+  }
 
-    font-size: 15px;
-    overflow: visible;
+  font-size: 15px;
+  overflow: visible;
+  margin: 0;
+  padding: 0;
+
+  input[type="text"] {
+    box-shadow: 0 -2px 2px -2px black inset;
+  }
+
+  input[type="number"].fake-text {
+    box-shadow: 0 -2px 2px -2px black inset;
+    border: 0;
+    width: 100%;
+  }
+
+  input[type="checkbox"] {
+    height: 1em;
+    width: 1em;
+  }
+
+  .equation {
     margin: 0;
-    padding: 0;
+    flex-grow: 1;
 
-    input[type=text] {
-        box-shadow: 0 -2px 2px -2px black inset;
+    > .flex-col {
+      width: 35px;
+    }
+    > .flex-col.equation-result {
+      width: 40px;
+
+      > input[type="number"] {
+        width: 40px;
+      }
+    }
+    // Firefox only
+    @-moz-document url-prefix() {
+      > .flex-col {
+        width: 40px;
+      }
+      > .flex-col.equation-result {
+        width: 45px;
+
+        > input[type="number"] {
+          width: 45px;
+        }
+      }
     }
 
-    input[type=number].fake-text {
-        box-shadow: 0 -2px 2px -2px black inset;
-        border: 0;
+    > .flex-col.equation-glue {
+      display: flex;
+      justify-content: center;
+      height: 1.6em;
+      width: 15px;
+      text-align: center;
+      align-items: center;
+    }
+
+    .equation-text {
+      display: flex;
+      justify-content: center;
+      height: 1.6em;
+      text-align: center;
+      align-items: center;
+      margin-left: 0.25em;
+      margin-right: 0.25em;
+    }
+    .equation-math {
+      font-size: 1em;
+    }
+
+    input[type="text"].invisible-text-input {
+      font-size: 0.8em;
+      padding-top: 0;
+    }
+
+    .equation-misc {
+      // make box shadows less intense for optional fields
+      box-shadow: 0 0 2px 0px black inset;
+    }
+  }
+
+  textarea {
+    // Since textareas have a full border, they want to look lighter than
+    // normal black.
+    border: 1px solid #555555;
+    margin-bottom: 0px;
+    // it seems like textareas naturally bleed into their surroundings due to
+    // the weird behavior of their padding
+    width: calc(100% - 1em);
+  }
+
+  .underlabeled-checkbox {
+    align-items: center;
+
+    input[type="checkbox"] {
+      font-size: 1.25em;
+      margin-bottom: 0.08em;
+    }
+  }
+
+  .equation {
+    > .calc-fraction {
+      display: flex;
+      font-size: 75%;
+      flex-direction: column;
+      width: 10px;
+
+      .calc-numerator {
+        border-bottom: 1px solid black;
+        width: 0.6em;
+      }
+    }
+
+    > .flex-col.calc-fractional-value {
+      // seems to line up the fractional value with two regular width
+      // inputs
+      width: 65px;
+
+      input {
         width: 100%;
+      }
     }
 
-    input[type=checkbox] {
-        height: 1em;
-        width: 1em;
+    > .flex-col.calc-double-wide-value {
+      // seems to line up two regular width inputs
+      width: 75px;
+
+      input {
+        width: 100%;
+      }
+    }
+  }
+
+  // Inventory and wealth can be on either the paper attribute page or the
+  // items page in roll20
+
+  .wealth-items {
+    justify-content: space-between;
+
+    .wealth-items-label {
+      font-size: 1.1em;
     }
 
-    .equation {
-      margin: 0;
-      flex-grow: 1;
-
-        > .flex-col {
-            width: 35px;
-        }
-        > .flex-col.equation-result {
-            width: 40px;
-
-            > input[type=number] {
-                width: 40px;
-            }
-        }
-        // Firefox only
-        @-moz-document url-prefix() { 
-            > .flex-col {
-                width: 40px;
-            }
-            > .flex-col.equation-result {
-                width: 45px;
-
-                > input[type=number] {
-                    width: 45px;
-                }
-            }
-        }
-
-
-        > .flex-col.equation-glue {
-          display: flex;
-          justify-content: center;
-          height: 1.6em;
-          width: 15px;
-          text-align: center;
-          align-items: center;
-        }
-
-        .equation-text {
-          display: flex;
-          justify-content: center;
-          height: 1.6em;
-          text-align: center;
-          align-items: center;
-          margin-left: 0.25em;
-          margin-right: 0.25em;
-        }
-        .equation-math {
-          font-size: 1em;
-        }
-
-        input[type=text].invisible-text-input {
-            font-size: 0.8em;
-            padding-top: 0;
-        }
-
-        .equation-misc {
-            // make box shadows less intense for optional fields
-            box-shadow: 0 0 2px 0px black inset;
-        }
+    .currency {
+      width: 10em;
     }
+  }
 
-    textarea {
-        // Since textareas have a full border, they want to look lighter than
-        // normal black.
-        border: 1px solid #555555;
-        margin-bottom: 0px;
-        // it seems like textareas naturally bleed into their surroundings due to
-        // the weird behavior of their padding
-        width: calc(100% - 1em);
-    }
+  .weight-limits {
+    gap: 1em;
+  }
 
-    .underlabeled-checkbox {
-        align-items: center;
-
-        input[type=checkbox] {
-            font-size: 1.25em;
-            margin-bottom: 0.08em;
-        }
-    }
-
-    .equation {
-        > .calc-fraction {
-            display: flex;
-            font-size: 75%;
-            flex-direction: column;
-            width: 10px;
-
-            .calc-numerator {
-                border-bottom: 1px solid black;
-                width: 0.6em;
-            }
-        }
-
-        > .flex-col.calc-fractional-value {
-            // seems to line up the fractional value with two regular width
-            // inputs
-            width: 65px;
-
-            input {
-                width: 100%;
-            }
-        }
-
-        > .flex-col.calc-double-wide-value {
-            // seems to line up two regular width inputs
-            width: 75px;
-
-            input {
-                width: 100%;
-            }
-        }
-    }
-
-    // Inventory and wealth can be on either the paper attribute page or the
-    // items page in roll20
-
-    .wealth-items {
-        justify-content: space-between;
-
-        .wealth-items-label {
-            font-size: 1.1em;
-        }
-
-        .currency {
-            width: 10em;
-        }
-    }
-
-    .weight-limits {
-        gap: 1em;
-    }
-
-    .inventory {
-        height: 8em;
-    }
+  .inventory {
+    height: 8em;
+  }
 }
 
 div.paper.full-sheet .inventory {
-    height: 16em;
+  height: 16em;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
-div, span {
-    box-sizing: border-box;
+div,
+span {
+  box-sizing: border-box;
 }
 
 /* row/col system */
 
 .flex-row {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-content: flex-start;
-    align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
 }
 
 .flex-col {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-content: flex-start;
-    align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
 }
 
 .flex-col > div {
-    width: 100%;
+  width: 100%;
 }
 
 /* text and input formatting */
 
-.sidelabeled-number-input, .freeform-number-input {
-    align-items: center;
+.sidelabeled-number-input,
+.freeform-number-input {
+  align-items: center;
 }
 
 .sidelabeled-number-input .number-label {
-    margin-left: 0.4em;
-    margin-right: 0.4em;
-    text-align: center;
+  margin-left: 0.4em;
+  margin-right: 0.4em;
+  text-align: center;
 }
 .number-label {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 input {
-    font-size: 0.8em; /* override browser default */
+  font-size: 0.8em; /* override browser default */
 }
 
-input[type=text] {
-    padding-top: 0.25em;
-    padding-bottom: 0.25em;
-    line-height: 1em;
-    border: 0;
-    box-shadow: 0 -2px 1px -2px #000000 inset;
-    background-color: inherit;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+input[type="text"] {
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  line-height: 1em;
+  border: 0;
+  box-shadow: 0 -2px 1px -2px #000000 inset;
+  background-color: inherit;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-input[type=number], input[type=text].fake-number {
-    padding-top: 0.25em;
-    padding-bottom: 0.25em;
-    line-height: 1em;
-    width: 2.5em;
-    border: 0;
-    box-shadow: 0 0 2px 1px inset;
-    text-align: center;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+input[type="number"],
+input[type="text"].fake-number {
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  line-height: 1em;
+  width: 2.5em;
+  border: 0;
+  box-shadow: 0 0 2px 1px inset;
+  text-align: center;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-.freeform-number-input input[type=text] {
-    flex-grow: 1;
-    width: auto;
-    margin-left: 0.25em;
-    margin-right: 0.25em;
+.freeform-number-input input[type="text"] {
+  flex-grow: 1;
+  width: auto;
+  margin-left: 0.25em;
+  margin-right: 0.25em;
 }
 
 .under-label {
-    font-size: 0.65em;
-    margin-bottom: 0;
-    text-align: center;
+  font-size: 0.65em;
+  margin-bottom: 0;
+  text-align: center;
 }
 
-input[type=text] {
-    width: 100%;
+input[type="text"] {
+  width: 100%;
 }
 
 .section-header {
-    margin-top: 0.25em;
-    margin-bottom: 0.25em;
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
 }
 
 /* hackery to allow underlabels to bleed into surrounding area */
 .underlabeled {
-    position: relative;
-    padding-bottom: 1.1em;
-    align-items: center;
+  position: relative;
+  padding-bottom: 1.1em;
+  align-items: center;
 }
 .underlabeled > .under-label {
-    position: absolute;
-    bottom: 0;
-    white-space: nowrap;
+  position: absolute;
+  bottom: 0;
+  white-space: nowrap;
 }
 
 /* Rise-specific formatting */
 
 .section-header {
-    font-size: 1.25em;
-    font-weight: 600;
-    text-align: center;
-    background-color: #FFF0C8;
-    padding-left: 0.25em;
-    padding-right: 0.25em;
-    border-radius: 0.5em;
+  font-size: 1.25em;
+  font-weight: 600;
+  text-align: center;
+  background-color: #fff0c8;
+  padding-left: 0.25em;
+  padding-right: 0.25em;
+  border-radius: 0.5em;
 }
 
 .rise-title {
-    font-family: "Old English Text MT";
-    text-align: center;
-    font-size: 3em;
-    margin-top: 0;
-    margin-left: 0.1em;
-    margin-bottom: -5px; /* no dropping letters makes this work */
+  font-family: "Old English Text MT";
+  text-align: center;
+  font-size: 3em;
+  margin-top: 0;
+  margin-left: 0.1em;
+  margin-bottom: -5px; /* no dropping letters makes this work */
 }
 
 .blank-input {
-    padding-top: 0.25em;
+  padding-top: 0.25em;
 }
 
 .boring-stuff {
-    flex-grow: 1;
-    margin-left: 0.5em;
+  flex-grow: 1;
+  margin-left: 0.5em;
 }
 
 .header-bar {
-    align-items: flex-end;
+  align-items: flex-end;
 }
 
 .boring-row {
-    > div {
-        margin-left: 0.1em;
-        margin-right: 0.1em;
-    }
-    > div:nth-child(1) {
-        margin-left: 0;
-    }
-    .character-name {
-        flex-grow: 2;
-    }
-    .player-name {
-        flex-grow: 1;
-    }
-    .experience {
-        width: 6em;
-    }
-    .level-input {
-        flex-basis: 2em;
-        flex-grow: 0;
-    }
-    .monster-type-input {
-        flex-basis: 3em;
-        flex-grow: 0;
-    }
+  > div {
+    margin-left: 0.1em;
+    margin-right: 0.1em;
+  }
+  > div:nth-child(1) {
+    margin-left: 0;
+  }
+  .character-name {
+    flex-grow: 2;
+  }
+  .player-name {
+    flex-grow: 1;
+  }
+  .experience {
+    width: 6em;
+  }
+  .level-input {
+    flex-basis: 2em;
+    flex-grow: 0;
+  }
+  .monster-type-input {
+    flex-basis: 3em;
+    flex-grow: 0;
+  }
 }
 
 .labeled-text-input {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 
-    > textarea {
-        margin-bottom: 0;
-    }
+  > textarea {
+    margin-bottom: 0;
+  }
 }
 
 .underlabeled select {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
-
-
 
 .calc-header {
   font-weight: 600;
@@ -365,8 +371,9 @@ input[type=text] {
 }
 
 // .tab-explanation is for roll20, and .page-explanation is for paper
-.tab-explanation, .page-explanation {
-    align-self: center;
-    margin-bottom: 0.5em;
-    max-width: 600px;
+.tab-explanation,
+.page-explanation {
+  align-self: center;
+  margin-bottom: 0.5em;
+  max-width: 600px;
 }
