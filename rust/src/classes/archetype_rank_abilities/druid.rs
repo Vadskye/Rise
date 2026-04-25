@@ -311,6 +311,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
 
                 {
                     \begin{magicalactiveability}{Form of the Bear}{Standard action}
+                        \abilitytags \atPhysical
                         \rankline
                         You gain a \plus1 bonus to your Fortitude defense and vital rolls.
                         In addition, your mouth and hands transform, granting you a bite and two claw \glossterm{natural weapons} (see \tref{Natural Weapons}).
@@ -321,6 +322,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Form of the Bull}{Standard action}
+                        \abilitytags \atPhysical
                         \rankline
                         You can move your full \glossterm{speed} when you push a creature with the \ability{shove} ability.
                         In addition, your head transforms, granting you a gore \glossterm{natural weapon} (see \tref{Natural Weapons}).
@@ -331,6 +333,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Form of the Constrictor}{Standard action}
+                        \abilitytags \atPhysical
                         \rankline
                         You gain a \plus1 accuracy bonus with the \textit{grapple} ability and a \plus1 bonus to your Brawn defense.
                         In addition, you can contort your body, allowing it to act as a free hand for the purpose of using the \textit{grapple} ability and grapple actions even if you do not have a free hand.
@@ -342,6 +345,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Form of the Fish}{Standard action}
+                        \abilitytags \atPhysical
                         \rankline
                         You gain an average \glossterm{swim speed}.
                         In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
@@ -352,6 +356,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Form of the Hawk}{Standard action}
+                        \abilitytags \atPhysical
                         \rankline
                         You gain \sense{low-light vision}, allowing you to see in \glossterm{dim illumination} (see \pcref{Low-light Vision}).
                         In addition, you gain a \plus3 \glossterm{enhancement bonus} to the Awareness skill.
@@ -363,6 +368,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Form of the Hound}{Standard action}
+                        \abilitytags \atPhysical
                         \rankline
                         You gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
                         In addition, you have the ability to move on all four limbs.
@@ -380,6 +386,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
 
                     % Seems boring? What abilities would make sense?
                     \begin{magicalactiveability}{Form of the Monkey}{Standard action}
+                        \abilitytags \atPhysical
                         \rankline
                         You gain an average \glossterm{climb speed}.
                         In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
@@ -390,6 +397,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Form of the Rat}{Standard action}
+                        \abilitytags \atPhysical
                         \rankline
                         You gain a \plus2 \glossterm{enhancement bonus} to the Flexibility and Stealth skills.
                         In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
@@ -400,6 +408,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Form of the Viper}{Standard action}
+                        \abilitytags \atPhysical
                         \rankline
                         You do not need to use \glossterm{free hands} to climb (see \pcref{Climb}).
                         In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
@@ -413,6 +422,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Form of the Wolf}{Standard action}
+                        \abilitytags \atPhysical
                         \rankline
                         You gain a \plus1 \glossterm{enhancement bonus} to \glossterm{accuracy} against creatures that are adjacent to both you and one of your \glossterm{allies}.
                         In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
@@ -423,6 +433,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Myriad Form}{Standard action}
+                        \abilitytags \atPhysical
                         \rankline
                         If you have Disguise as a \glossterm{trained skill}, you gain a \plus3 \glossterm{enhancement bonus} to it.
                         Otherwise, you are treated as being trained in that skill.
@@ -435,6 +446,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Photosynthesis}{Standard action}
+                        \abilitytags \atPhysical
                         \rankline
                         You do not gain hunger or thirst while in natural sunlight.
                         When you leave natural sunlight, you continue gaining hunger or thirst at your normal rate, ignoring any time you spent in natural sunlight.
@@ -447,6 +459,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Plantspeaker}{Standard action}
+                        \abilitytags \atPhysical
                         \rankline
                         Your speed is not reduced when moving in \glossterm{heavy undergrowth}.
                         In addition, you can ignore \glossterm{cover} and \glossterm{concealment} from plants whenever doing so would be beneficial to you, as the plants move out of the way to help you.

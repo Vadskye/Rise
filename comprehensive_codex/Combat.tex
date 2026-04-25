@@ -269,12 +269,14 @@
       For example, you can't move your full speed onto a mount and then have that mount move with you in the same turn.
       You can still be moved by \glossterm{push}, \glossterm{fling}, and teleportation effects.
 
+  % Pure movement abilities don't have Physical if they can be used by incorporeal creatures
   \subsection{Move Action Abilities}\label{Move Action Abilities}
     Each of these abilities requires a \glossterm{move action} to use.
     The most common movement ability is \ability{hustle}, which simply moves you to a location.
     You could think of characters as using the hustle ability whenever they move while not actively engaged in combat, but it's not generally useful to think about narrative movements in terms of combat abilities.
 
     \begin{activeability}{Block}{Move action}
+      \abilitytags \atPhysical
       \rankline
       When you use this ability, choose a creature you can see.
       Until your next turn, the next time the target attempts to move out of a space adjacent to you, you attempt to block its movement.
@@ -289,6 +291,7 @@
     \end{activeability}
 
     \begin{activeability}{Climb Forward}{Move action}
+      \abilitytags \atPhysical
       \rankline
       This ability requires touching a solid vertical surface with two \glossterm{free hands}, or with one free hand if you take a \minus5 penalty to your Climb check.
       Make a Climb check to move along the surface.
@@ -309,6 +312,7 @@
     \end{activeability}
 
     \begin{activeability}{Swim Forward}{Move action}
+      \abilitytags \atPhysical
       \rankline
       This ability requires being immersed in a liquid like water and using two \glossterm{free hands}, or using one free hand if you take a \minus5 penalty to your Swim check.
       Make a Swim check to move through the liquid.
@@ -557,6 +561,7 @@
   The rules for strikes listed here simply define the normal behavior.
 
   \begin{activeability}{Basic Strike -- Melee}{Standard action}
+    \abilitytags \atPhysical
     \rankline
     Make a \glossterm{melee} attack vs. Armor using a weapon against something adjacent to you.
     You must have \glossterm{line of effect} to the target.
@@ -565,6 +570,7 @@
   \end{activeability}
 
   \begin{activeability}{Basic Strike -- Projectile}{Standard action}
+    \abilitytags \atPhysical
     \rankline
     Make a \glossterm{ranged} attack vs. Armor using a \weapontag{Projectile} weapon against something that you have \glossterm{line of effect} to.
     If the target is adjacent to you, you take a \minus4 accuracy penalty.
@@ -573,6 +579,7 @@
   \end{activeability}
 
   \begin{activeability}{Basic Strike -- Thrown}{Standard action}
+    \abilitytags \atPhysical
     \rankline
     Make a \glossterm{ranged} attack vs. Armor using a non-\weapontag{Projectile} weapon against something that you have \glossterm{line of effect} to.
     If the weapon has the \weapontag{Thrown} weapon tag, use its defined \glossterm{range limits}.
@@ -644,17 +651,17 @@
   \begin{dtable!*}
     \lcaption{Universal Combat Abilities}
     \begin{dtabularx}{\textwidth}{l l X l}
-      \tb{Ability}       & \tb{Usage Time}  & \tb{Short Description}                        & \tb{Tags}                                      \tableheaderrule
-      Desperate Exertion & Non-action       & Reroll an attack or check with a \plus2 bonus & \tdash                                         \\
-      Escape Grapple     & Standard         & Stop being grappled                           & \abilitytag{Brawling}                          \\
-      Grapple            & Standard         & Start grappling with a foe                    & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
-      Ready Reaction     & Standard         & Ready an action                               & \tdash                                         \\
-      Recover            & Standard         & Regain HP, remove conditions                  & \tdash                                         \\
-      Run                & Standard         & Briefly double your available movement        & \tdash                                         \\
-      Shove              & Move or standard & Move a foe                                    & \abilitytag{Brawling}                          \\
-      Sprint             & Free             & Double your available movement                & \tdash                                         \\
-      Throw              & Standard         & Throw a held object                           & \tdash                                         \\
-      Trip               & Standard         & Trip a foe                                    & \abilitytag{Brawling}                          \\
+      \tb{Ability}       & \tb{Usage Time}  & \tb{Short Description}                        & \tb{Tags}                              \tableheaderrule
+      Desperate Exertion & Non-action       & Reroll an attack or check with a \plus2 bonus & \tdash                                 \\
+      Escape Grapple     & Standard         & Stop being grappled                           & \atBrawling, \atPhysical               \\
+      Grapple            & Standard         & Start grappling with a foe                    & \atBrawling, \atPhysical, \atSizeBased \\
+      Ready Reaction     & Standard         & Ready an action                               & \tdash                                 \\
+      Recover            & Standard         & Regain HP, remove conditions                  & \tdash                                 \\
+      Run                & Standard         & Briefly double your available movement        & \tdash                                 \\
+      Shove              & Move or standard & Move a foe                                    & \atBrawling, \atPhysical               \\
+      Sprint             & Free             & Double your available movement                & \tdash                                 \\
+      Throw              & Standard         & Throw a held object                           & \tdash                                 \\
+      Trip               & Standard         & Trip a foe                                    & \atBrawling, \atPhyical                \\
     \end{dtabularx}
   \end{dtable!*}
 
@@ -673,7 +680,7 @@
   \end{triggeredability}
 
   \begin{activeability}{Escape Grapple}{Standard action}
-    \abilitytags \abilitytag{Brawling}
+    \abilitytags \atBrawling, \atPhysical
     \rankline
     Make a \glossterm{brawling attack} vs. Brawn against any number of creatures that you are grappled by.
     You can use the Flexibility skill in place of your brawling accuracy (see \pcref{Flexibility}).
@@ -682,7 +689,7 @@
   \end{activeability}
 
   \begin{activeability}{Grapple}{Standard action}
-    \abilitytags \abilitytag{Brawling}, \abilitytag{Size-Based}
+    \abilitytags \atBrawling, \atPhysical, \atSizeBased
     \rankline
     Make a \glossterm{brawling attack} with a free hand against the Brawn and Reflex defenses of one creature you \glossterm{touch}.
 
@@ -720,7 +727,7 @@
   \end{activeability}
 
   \begin{activeability}{Shove}{Standard action}
-    \abilitytags \abilitytag{Brawling}
+    \abilitytags \atBrawling, \atPhysical
     \rankline
     If you are grappling or being grappled by a creature, you can use this ability as a \glossterm{move action}, and it affects all creatures grappling with you (see \pcref{Grappling}).
     Otherwise, the target is something you \glossterm{touch}.
@@ -744,7 +751,7 @@
 
   % Is this a fling effect? What happens if you throw someone into a wall?
   \begin{activeability}{Throw}{Standard action}
-    \abilitytags \abilitytag{Brawling}
+    \abilitytags \atBrawling, \atPhysical
     \rankline
     You throw an object or creature you hold in at least one hand.
     The object's \glossterm{weight category} must be below the maximum weight category you can lift normally (see \pcref{Weight Categories}).
@@ -761,7 +768,7 @@
   \end{activeability}
 
   \begin{activeability}{Trip}{Standard action}
-    \abilitytags \abilitytag{Brawling}
+    \abilitytags \atBrawling, \atPhysical
     \rankline
     Make a \glossterm{brawling attack} vs. Brawn using a free hand against a creature you \glossterm{touch}.
     \hit The target becomes \prone.
