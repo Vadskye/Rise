@@ -485,5 +485,27 @@ export const dirtyFighting: CombatStyle = {
       rank: 5,
       roles: ['payoff'],
     },
+
+    {
+      name: 'Injection',
+
+      effect: `
+        Make a \\glossterm{strike}.
+        \\hit You gain a +3 accuracy bonus with contact-based and injury-based poisons delivered with the strike.
+      `,
+      rank: 1,
+      roles: ['softener'],
+    },
+
+    {
+      name: 'Injection+',
+
+      effect: `
+        Make a \\glossterm{strike} that deals double damage.
+        \\hit You gain a +4 accuracy bonus with contact-based and injury-based poisons delivered with the strike.
+      `,
+      rank: 5,
+      roles: ['softener'],
+    },
   ],
 };
