@@ -75,7 +75,7 @@ export const dirtyFighting: CombatStyle = {
       },
       rank: 5,
       roles: ['trip'],
-      tags: ['Brawling'],
+      tags: ['Brawling', 'Physical'],
     },
 
     // Normal melee damage would be dr5, -1dr for brawling, -1dr for
@@ -106,7 +106,7 @@ export const dirtyFighting: CombatStyle = {
       },
       rank: 3,
       roles: ['softener', 'trip'],
-      tags: ['Brawling'],
+      tags: ['Brawling', 'Physical'],
     },
 
     {
@@ -166,7 +166,7 @@ export const dirtyFighting: CombatStyle = {
       roles: ['burst', 'payoff'],
       // This doesn't need to be size-based because grappling already is size-based.
       // If you can grapple above your size, we don't need to block this maneuver.
-      tags: ['Brawling'],
+      tags: ['Brawling', 'Physical'],
     },
 
     {
@@ -186,7 +186,7 @@ export const dirtyFighting: CombatStyle = {
       roles: ['burst', 'payoff'],
       // This doesn't need to be size-based because grappling already is size-based.
       // If you can grapple above your size, we don't need to block this maneuver.
-      tags: ['Brawling'],
+      tags: ['Brawling', 'Physical'],
     },
 
     {
@@ -232,7 +232,7 @@ export const dirtyFighting: CombatStyle = {
       },
       rank: 3,
       roles: ['softener'],
-      tags: ['Brawling'],
+      tags: ['Brawling', 'Physical'],
     },
 
     {
@@ -247,7 +247,7 @@ export const dirtyFighting: CombatStyle = {
       },
       rank: 7,
       roles: ['softener'],
-      tags: ['Brawling'],
+      tags: ['Brawling', 'Physical'],
     },
 
     // Price as "stunned as a condition" in melee range; grappled requirement offsets
@@ -267,7 +267,7 @@ export const dirtyFighting: CombatStyle = {
       },
       rank: 7,
       roles: ['maim'],
-      tags: ['Brawling'],
+      tags: ['Brawling', 'Physical'],
     },
 
     {
@@ -285,7 +285,7 @@ export const dirtyFighting: CombatStyle = {
       },
       rank: 3,
       roles: ['maim'],
-      tags: ['Brawling'],
+      tags: ['Brawling', 'Physical'],
     },
 
     {
