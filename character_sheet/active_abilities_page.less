@@ -1,174 +1,181 @@
-.power-reminder {
-}
-
 .passive-ability-row > div {
+  flex-grow: 1;
+}
+
+.active-ability-effect,
+.attack-effect,
+.passive-ability-effect {
+  margin-left: 0.5em;
+  flex-grow: 1;
+
+  > textarea {
+    height: 8em;
+  }
+}
+
+.active-ability-name,
+.attack-prefix {
+  width: 16em;
+}
+
+.weapon-damage-multiplier,
+.damage-multiplier {
+  width: 4em;
+}
+
+.attack-name input[type="text"],
+.active-ability-name input[type="text"] {
+  font-weight: 600;
+}
+
+.attack,
+.ability {
+  margin-bottom: 0.25em;
+}
+
+.attack,
+.ability {
+  .attack-is-targeted,
+  .attack-is-magical {
+    align-content: center;
+
+    > input {
+      margin-top: 0.25em;
+    }
+  }
+
+  .attack-buttons {
+    .attack-roll {
+      width: 70px;
+      margin-bottom: 0.25em;
+
+      > input[type="text"] {
+        background: none;
+        border: 0;
+        box-shadow: none;
+        cursor: pointer;
+        font-size: 14px;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        width: 130px;
+        z-index: 0;
+      }
+    }
+
+    // Only show the weapon buttons if those weapons exist
+    .weapon-exists:not(:checked) + .specific-weapon-button {
+      display: none;
+    }
+    .specific-weapon-button {
+      .attack-roll {
+        width: 140px;
+      }
+    }
+    button[type="roll"]:before {
+      content: none;
+    }
+
+    .total-damage {
+      align-items: center;
+      width: 6em;
+    }
+  }
+
+  .attack-calcs {
+    justify-content: space-between;
+
+    textarea {
+      height: 1.5em;
+      line-height: 1.25em;
+      padding: 0.15em;
+    }
+
+    .input-dice textarea {
+      width: 6.5em;
+    }
+  }
+  .input-tags {
     flex-grow: 1;
-}
+    // This seems to extend farther than it should, which is weird
+    margin-right: 0.75em;
 
-.active-ability-effect, .attack-effect, .passive-ability-effect {
-    margin-left: 0.5em;
-    flex-grow: 1;
-
-    > textarea {
-        height: 8em;
+    textarea {
+      width: 100%;
     }
-}
-
-.active-ability-name, .attack-prefix {
-    width: 16em;
-}
-
-.weapon-damage-multiplier, .damage-multiplier {
-    width: 4em;
-}
-
-.attack-name input[type=text], .active-ability-name input[type=text] {
-    font-weight: 600;
-}
-
-.attack, .ability {
-    margin-bottom: 0.25em;
-}
-
-.attack, .ability {
-    .attack-is-targeted, .attack-is-magical {
-        align-content: center;
-        
-        > input {
-            margin-top: 0.25em;
-        }
-    }
-
-    .attack-buttons {
-        .attack-roll {
-            width: 70px;
-            margin-bottom: 0.25em;
-
-            > input[type=text] {
-                background: none;
-                border: 0;
-                box-shadow: none;
-                cursor: pointer;
-                font-size: 14px;
-                margin: 0;
-                padding: 0;
-                text-align: center;
-                width: 130px;
-                z-index: 0;
-            }
-        }
-
-        // Only show the weapon buttons if those weapons exist
-        .weapon-exists:not(:checked) + .specific-weapon-button {
-            display: none;
-        }
-        .specific-weapon-button {
-            .attack-roll {
-                width: 140px;
-            }
-        }
-        button[type=roll]:before {
-            content: none;
-        }
-
-        .total-damage {
-            align-items: center;
-            width: 6em;
-        }
-    }
-
-    .attack-calcs {
-        justify-content: space-between;
-
-        textarea {
-            height: 1.5em;
-            line-height: 1.25em;
-            padding: 0.15em;
-        }
-
-        .input-dice textarea {
-            width: 6.5em;
-        }
-    }
-    .input-tags {
-        flex-grow: 1;
-        // This seems to extend farther than it should, which is weird
-        margin-right: 0.75em;
-
-        textarea {
-            width: 100%;
-        }
-    }
+  }
 }
 
 .attack-info {
-    margin-bottom: 0.25em;
+  margin-bottom: 0.25em;
 }
 
-.passive-abilities, .all-statistics {
-    margin-bottom: 0.5em;
+.passive-abilities,
+.all-statistics {
+  margin-bottom: 0.5em;
 }
 
 .attack-info {
-    justify-content: space-around;
+  justify-content: space-around;
 }
 
 .attack-info .number-label {
-    font-size: 1.25em;
+  font-size: 1.25em;
 }
 
 .attack {
-    .attack-bonus {
-        width: 3em;
-    }
+  .attack-bonus {
+    width: 3em;
+  }
 
-    .attack-defense {
-        width: 6em;
-    }
+  .attack-defense {
+    width: 6em;
+  }
 }
 
 .attack-power {
-    width: 5em;
+  width: 5em;
 }
 
 .universal_abilities {
-    div {
-        flex-basis: 14em;
-        margin-bottom: 0.5em;
-    }
+  div {
+    flex-basis: 14em;
+    margin-bottom: 0.5em;
+  }
 }
 
 .prefix-suffix {
-    > div {
-        flex-basis: 10em;
-        flex-grow: 1;
-    }
+  > div {
+    flex-basis: 10em;
+    flex-grow: 1;
+  }
 
-    > div:nth-child(1) {
-        margin-right: 1em;
-    }
+  > div:nth-child(1) {
+    margin-right: 1em;
+  }
 }
 
-.repeating_otherdamagingattacks, .repeating_nondamagingattacks {
-    .attack-buttons {
-        width: 155px;
-    }
+.repeating_otherdamagingattacks,
+.repeating_nondamagingattacks {
+  .attack-buttons {
+    width: 155px;
+  }
 }
 
 .repeating_strikeattacks .attack-buttons {
-    width: 235px;
+  width: 235px;
 }
 
 .strike-dropdown {
-    display: none;
+  display: none;
 }
 
 .strike-total-damage {
-    font-size: 75%;
-    width: 8em;
-    height: 2.5em;
+  font-size: 75%;
+  width: 8em;
+  height: 2.5em;
 }
 
 .ability-name-dynamic {
-    display: none;
+  display: none;
 }

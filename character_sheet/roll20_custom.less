@@ -1,171 +1,175 @@
 .ui-dialog .tab-content .charsheet {
-    padding: 0;
+  padding: 0;
 }
 
 div.full-sheet {
-    .chat-color {
-        margin-bottom: 4px;
-        width: 8em;
+  .chat-color {
+    margin-bottom: 4px;
+    width: 8em;
+  }
+
+  .boring-row {
+    .level-input {
+      flex-basis: 3em;
+    }
+  }
+
+  .first-page {
+    .sidebar {
+      margin-right: 0.25em;
+    }
+  }
+
+  .second-page {
+    .calc-header {
+      width: 9em;
+    }
+    .skill-labels {
+      .skill-row {
+        .skill-training {
+          width: 1em;
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  input[type="number"]:disabled::-webkit-inner-spin-button,
+  input[type="number"]:disabled::-webkit-outer-spin-button,
+  input[type="number"]:read-only::-webkit-inner-spin-button,
+  input[type="number"]:read-only::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    display: none;
+    margin: 0;
+  }
+
+  input[type="number"]:disabled,
+  input[type="number"]:read-only {
+    -moz-appearance: textfield;
+  }
+
+  .under-label {
+    font-size: 0.8em;
+  }
+
+  .page {
+    margin-top: 0.5em;
+    display: none;
+    font-size: 14px;
+    overflow: visible;
+    margin-bottom: 1em;
+
+    input {
+      font-size: 14px;
     }
 
-    .boring-row {
-        .level-input {
-            flex-basis: 3em;
-        }
+    input[type="number"] {
+      width: 40px;
     }
 
-    .first-page {
-        .sidebar {
-            margin-right: 0.25em;
-        }
+    input[type="number"].large-number-input {
+      -moz-appearance: textfield;
     }
 
-    .second-page {
-        .calc-header {
-            width: 9em;
-        }
-        .skill-labels {
-            .skill-row {
-                .skill-training {
-                    width: 1em;
-                    padding: 0;
-                }
-            }
-        }
+    input[type="number"].large-number-input::-webkit-inner-spin-button,
+    input[type="number"].large-number-input::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      display: none;
+      margin: 0;
     }
 
-    input[type=number]:disabled::-webkit-inner-spin-button,
-    input[type=number]:disabled::-webkit-outer-spin-button,
-    input[type=number]:read-only::-webkit-inner-spin-button,
-    input[type=number]:read-only::-webkit-outer-spin-button {
+    .large-number-equation {
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
+
+      input[type="number"]::-webkit-inner-spin-button,
+      input[type="number"]::-webkit-outer-spin-button {
         -webkit-appearance: none;
         display: none;
         margin: 0;
+      }
     }
 
-    input[type=number]:disabled, input[type=number]:read-only {
-        -moz-appearance: textfield;
+    // Firefox only
+    @-moz-document url-prefix() {
+      input[type="number"] {
+        width: 40px;
+      }
     }
 
-    .under-label {
-        font-size: 0.8em;
+    input[type="number"]:disabled,
+    input[type="number"]:read-only {
+      box-shadow: none;
+      border: none;
+      cursor: inherit;
+      font-family: inherit;
+      font-size: 16px;
+      margin: 0;
+      background: inherit;
+      border-radius: 5px;
+      padding: 2px;
+      pointer-events: none;
     }
+  }
 
-    .page {
-        margin-top: 0.5em;
-        display: none;
-        font-size: 14px;
-        overflow: visible;
-        margin-bottom: 1em;
+  // fix buttons that have nested inputs in firefox
+  button > input:disabled,
+  button > input:read-only {
+    pointer-events: none;
+  }
 
-        input {
-            font-size: 14px;
-        }
+  // center alignment looks nicer, but causes weird cascade effects
+  // .full-sheet {
+  //     text-align: center;
+  // }
 
-        input[type=number] {
-            width: 40px;
-        }
+  .subtle-button > button[type="roll"],
+  .invisible-button > button[type="roll"] {
+    background: none;
+    border: 0;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+    text-shadow: none;
+  }
 
-        input[type=number].large-number-input {
-            -moz-appearance: textfield;
-        }
+  .subtle-button > button[type="roll"]:before {
+    margin-right: 0.1em;
+  }
 
-        input[type=number].large-number-input::-webkit-inner-spin-button,
-        input[type=number].large-number-input::-webkit-outer-spin-button {
-            -webkit-appearance: none;
-            display: none;
-            margin: 0;
-        }
+  .invisible-button > button[type="roll"]:before {
+    content: none;
+  }
 
-        .large-number-equation {
-            input[type=number] {
-                -moz-appearance: textfield;
-            }
+  textarea {
+    height: 6em;
+    resize: vertical;
+  }
 
-            input[type=number]::-webkit-inner-spin-button,
-            input[type=number]::-webkit-outer-spin-button {
-                -webkit-appearance: none;
-                display: none;
-                margin: 0;
-            }
-        }
+  input[type="checkbox"] {
+    margin-top: 0.4em;
+  }
 
-        // Firefox only
-        @-moz-document url-prefix() { 
-            input[type=number] {
-                width: 40px;
-            }
-        }
-
-        input[type=number]:disabled, input[type=number]:read-only {
-            box-shadow: none;
-            border: none;
-            cursor: inherit;
-            font-family: inherit;
-            font-size: 16px;
-            margin: 0;
-            background: inherit;
-            border-radius: 5px;
-            padding: 2px;
-            pointer-events: none;
-        }
+  input[type="checkbox"].is-monster:not(:checked) ~ .page {
+    .typescript {
+      display: none;
     }
+  }
 
-    // fix buttons that have nested inputs in firefox
-    button > input:disabled, button > input:read-only {
-        pointer-events: none;
+  input[type="checkbox"].is-monster:checked ~ .page {
+    .typescript {
+      display: flex;
     }
+  }
 
-    // center alignment looks nicer, but causes weird cascade effects
-    // .full-sheet {
-    //     text-align: center;
-    // }
-
-    .subtle-button > button[type=roll], .invisible-button > button[type=roll] {
-        background: none;
-        border: 0;
-        box-shadow: none;
-        margin: 0;
-        padding: 0;
-        text-shadow: none;
-    }
-
-    .subtle-button > button[type=roll]:before {
-        margin-right: 0.1em;
-    }
-
-    .invisible-button > button[type=roll]:before {
-        content: none;
-    }
-
-    textarea {
-        height: 6em;
-        resize: vertical;
-    }
-
-    input[type=checkbox] {
-        margin-top: 0.4em;
-    }
-
-    input[type=checkbox].is-monster:not(:checked) ~ .page {
-        .typescript {
-            display: none;
-        }
-    }
-
-    input[type=checkbox].is-monster:checked ~ .page {
-        .typescript {
-            display: flex;
-        }
-    }
-
-    .inline-number {
-        cursor: inherit;
-        padding-bottom: 2px;
-        text-align: center;
-        width: 1.75em;
-        vertical-align: baseline;
-    }
+  .inline-number {
+    cursor: inherit;
+    padding-bottom: 2px;
+    text-align: center;
+    width: 1.75em;
+    vertical-align: baseline;
+  }
 }
 
 // Make nav buttons a fixed row.
@@ -173,175 +177,190 @@ div.full-sheet {
 // be siblings of the actual pages, so we have to style them and space them
 // individually.
 div.full-sheet {
-    padding-bottom: 2.5em;
-    position: relative;
+  padding-bottom: 2.5em;
+  position: relative;
 
-    .nav-bar {
-        background: white;
-        box-shadow: 0 -6px 6px -6px gray;
-        height: 3em;
-        left: 0px;
-        position: fixed;
-        bottom: 0px;
-        width: calc(100% - 10px);
-        z-index: 1;
-    }
+  .nav-bar {
+    background: white;
+    box-shadow: 0 -6px 6px -6px gray;
+    height: 3em;
+    left: 0px;
+    position: fixed;
+    bottom: 0px;
+    width: calc(100% - 10px);
+    z-index: 1;
+  }
 
-    .nav-button, .nav-button-label {
-        position: fixed;
-        bottom: 0px;
-    }
-    input:nth-of-type(1), span:nth-of-type(1) {
-        left: 10px;
-    }
-    input:nth-of-type(2), span:nth-of-type(2) {
-        left: 110px;
-    }
-    input:nth-of-type(3), span:nth-of-type(3) {
-        left: 210px;
-    }
-    input:nth-of-type(4), span:nth-of-type(4) {
-        left: 310px;
-    }
-    input:nth-of-type(5), span:nth-of-type(5) {
-        left: 410px;
-    }
-    input:nth-of-type(6), span:nth-of-type(6) {
-        left: 510px;
-    }
-    input:nth-of-type(7), span:nth-of-type(7) {
-        left: 610px;
-    }
-    input:nth-of-type(8), span:nth-of-type(8) {
-        left: 710px;
-    }
-    input:nth-of-type(9), span:nth-of-type(9) {
-        left: 810px;
-    }
-    input:nth-of-type(10), span:nth-of-type(10) {
-        left: 910px;
-    }
+  .nav-button,
+  .nav-button-label {
+    position: fixed;
+    bottom: 0px;
+  }
+  input:nth-of-type(1),
+  span:nth-of-type(1) {
+    left: 10px;
+  }
+  input:nth-of-type(2),
+  span:nth-of-type(2) {
+    left: 110px;
+  }
+  input:nth-of-type(3),
+  span:nth-of-type(3) {
+    left: 210px;
+  }
+  input:nth-of-type(4),
+  span:nth-of-type(4) {
+    left: 310px;
+  }
+  input:nth-of-type(5),
+  span:nth-of-type(5) {
+    left: 410px;
+  }
+  input:nth-of-type(6),
+  span:nth-of-type(6) {
+    left: 510px;
+  }
+  input:nth-of-type(7),
+  span:nth-of-type(7) {
+    left: 610px;
+  }
+  input:nth-of-type(8),
+  span:nth-of-type(8) {
+    left: 710px;
+  }
+  input:nth-of-type(9),
+  span:nth-of-type(9) {
+    left: 810px;
+  }
+  input:nth-of-type(10),
+  span:nth-of-type(10) {
+    left: 910px;
+  }
 
-    input[type=radio].nav-button-page1:checked ~ .first-page,
-    input[type=radio].nav-button-active:checked ~ .active-abilities-page,
-    input[type=radio].nav-button-page2:checked ~ .creation-page,
-    input[type=radio].nav-button-page3:checked ~ .status-page,
-    input[type=radio].nav-button-page4:checked ~ .items-page,
-    input[type=radio].nav-button-page5:checked ~ .identity-page,
-    input[type=radio].nav-button-page6:checked ~ .calculation-page,
-    input[type=radio].nav-button-page7:checked ~ .reference-page {
-        display: flex;
-    }
+  input[type="radio"].nav-button-page1:checked ~ .first-page,
+  input[type="radio"].nav-button-active:checked ~ .active-abilities-page,
+  input[type="radio"].nav-button-page2:checked ~ .creation-page,
+  input[type="radio"].nav-button-page3:checked ~ .status-page,
+  input[type="radio"].nav-button-page4:checked ~ .items-page,
+  input[type="radio"].nav-button-page5:checked ~ .identity-page,
+  input[type="radio"].nav-button-page6:checked ~ .calculation-page,
+  input[type="radio"].nav-button-page7:checked ~ .reference-page {
+    display: flex;
+  }
 
-    input[type=radio].nav-button:checked + .nav-button-label {
-        background: #f0c860;
-    }
+  input[type="radio"].nav-button:checked + .nav-button-label {
+    background: #f0c860;
+  }
 
-    input.nav-button {
-        border: 0;
-        height: 3em;
-        opacity: 0;
-        width: 7.4em;
-        z-index: 3;
-    }
+  input.nav-button {
+    border: 0;
+    height: 3em;
+    opacity: 0;
+    width: 7.4em;
+    z-index: 3;
+  }
 
-    .nav-button-label {
-        background: #FFF0C8;
-        border: 1px solid black;
-        border-radius: 6px;
-        font-size: 1.25em;
-        font-weight: 600;
-        height: 2em;
-        padding: 0.25em;
-        text-align: center;
-        width: 4.8em;
-        z-index: 2;
-    }
+  .nav-button-label {
+    background: #fff0c8;
+    border: 1px solid black;
+    border-radius: 6px;
+    font-size: 1.25em;
+    font-weight: 600;
+    height: 2em;
+    padding: 0.25em;
+    text-align: center;
+    width: 4.8em;
+    z-index: 2;
+  }
 
-    .nav-button:hover + .nav-button-label {
-        background: #f0c860;
-    }
+  .nav-button:hover + .nav-button-label {
+    background: #f0c860;
+  }
 
-    input[type=text].readonly-disabled {
-        background-color: #f5f5f5;
-        border: 1px solid #ccc;
-        box-shadow: 0 0 2px 1px inset;
-        cursor: default;
-        padding-top: 0.25em;
-        padding-bottom: 0.25em;
-        line-height: 1em;
-        text-align: center;
-    }
+  input[type="text"].readonly-disabled {
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 2px 1px inset;
+    cursor: default;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    line-height: 1em;
+    text-align: center;
+  }
 }
 .ui-dialog .charsheet {
-    padding-top: 0;
+  padding-top: 0;
 }
-
 
 // Make sure that the controls show up over the custom modifiers
 .repcontainer > .repitem > .itemcontrol {
-    z-index: 1;
+  z-index: 1;
 }
 
 // This has to be here instead of in status_page or items_page because custom
 // modifiers are shared between both pages
 .custom-modifier {
-    justify-content: space-between;
-    margin-bottom: 0.5em;
-    column-gap: 0.5em;
+  justify-content: space-between;
+  margin-bottom: 0.5em;
+  column-gap: 0.5em;
 
-    .custom-modifier-details, .custom-modifier-dropdowns, .custom-modifier-special-effects {
-        column-gap: 1em;
+  .custom-modifier-details,
+  .custom-modifier-dropdowns,
+  .custom-modifier-special-effects {
+    column-gap: 1em;
+  }
+
+  .custom-modifier-dropdowns,
+  .custom-modifier-special-effects {
+    flex-grow: 1;
+  }
+
+  .custom-modifier-special-effects {
+    margin-top: -0.5em;
+  }
+
+  .custom-modifier-special-effects {
+    .immune,
+    .impervious,
+    .vulnerable {
+      flex-grow: 1;
+    }
+    // Need to be fixed to limit recommended size of extra text
+    .attack-header {
+      width: 14em;
+    }
+  }
+
+  .text-prefix {
+    .underlabeled-checkbox {
+      margin-right: 0.5em;
     }
 
-    .custom-modifier-dropdowns, .custom-modifier-special-effects {
-        flex-grow: 1;
+    .effect {
+      flex-grow: 1;
     }
+  }
 
-    .custom-modifier-special-effects {
-        margin-top: -0.5em;
-    }
+  .custom-modifier-toggles {
+    gap: 0.5em;
+  }
 
-    .custom-modifier-special-effects {
-        .immune, .impervious, .vulnerable {
-            flex-grow: 1;
-        }
-        // Need to be fixed to limit recommended size of extra text
-        .attack-header {
-            width: 14em;
-        }
-    }
+  .custom-modifier-details {
+    flex-grow: 1;
+  }
 
-    .text-prefix {
-        .underlabeled-checkbox {
-            margin-right: 0.5em;
-        }
+  .custom-statistic {
+    flex-grow: 1;
+  }
 
-        .effect {
-            flex-grow: 1;
-        }
-    }
+  .name {
+    // this is longer than the length on the Core page, which may be bad?
+    width: 15em;
+  }
 
-    .custom-modifier-toggles {
-        gap: 0.5em;
-    }
-
-    .custom-modifier-details {
-        flex-grow: 1;
-    }
-
-    .custom-statistic {
-        flex-grow: 1;
-    }
-
-    .name {
-        // this is longer than the length on the Core page, which may be bad?
-        width: 15em;
-    }
-
-    select {
-        flex-grow: 1;
-        margin-right: 0.25em;
-        width: 10em;
-    }
+  select {
+    flex-grow: 1;
+    margin-right: 0.25em;
+    width: 10em;
+  }
 }

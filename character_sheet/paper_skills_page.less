@@ -6,90 +6,90 @@
   font-weight: 600;
 }
 .skill-name {
-    flex-basis: 9em;
-    text-align: center;
-    width: 9em;
+  flex-basis: 9em;
+  text-align: center;
+  width: 9em;
 }
 .section-header {
-    margin-top: 0.5em;
+  margin-top: 0.5em;
 }
 .trained-skills {
-    margin-top: 1em;
+  margin-top: 1em;
 
-    .trained-skills-label {
-        margin-right: 0.5em;
-        font-size: 1.2em;
-    }
+  .trained-skills-label {
+    margin-right: 0.5em;
+    font-size: 1.2em;
+  }
 }
 .skill-row {
-    .calc-header {
-        justify-content: right;
-        margin-right: 0.5em;
-        margin-top: 0.25em;
-        width: 12em;
+  .calc-header {
+    justify-content: right;
+    margin-right: 0.5em;
+    margin-top: 0.25em;
+    width: 12em;
 
-        input[type=text] {
-            margin-left: 0.25em;
-            max-width: 8em;
-        }
+    input[type="text"] {
+      margin-left: 0.25em;
+      max-width: 8em;
     }
-    .skill-points-row {
-        margin-right: 0.25em;
+  }
+  .skill-points-row {
+    margin-right: 0.25em;
 
-        .underlabeled {
-            margin-right: 0.5em;
-        }
+    .underlabeled {
+      margin-right: 0.5em;
     }
-    input[type=checkbox] {
-        font-size: 1.25em;
-    }
-    .skill-training {
-        text-align: center;
-        width: 6em;
-    }
-    .is-class-skill {
-        margin-right: 0.5em;
-    }
+  }
+  input[type="checkbox"] {
+    font-size: 1.25em;
+  }
+  .skill-training {
+    text-align: center;
+    width: 6em;
+  }
+  .is-class-skill {
+    margin-right: 0.5em;
+  }
 }
 
 .paper {
-    .skill-megarow {
-        justify-content: space-between;
+  .skill-megarow {
+    justify-content: space-between;
+  }
+  .skill-column {
+    > div:nth-child(1) {
+      margin-top: 0;
     }
-    .skill-column {
-        > div:nth-child(1) {
-            margin-top: 0;
-        }
+  }
+  .skill-column.-left {
+    width: 48%;
+  }
+  .skill-column.-right {
+    width: 51.5%;
+  }
+  .skill-row {
+    .calc-header {
+      flex-grow: 1;
+      width: 8em;
     }
-    .skill-column.-left {
-        width: 48%;
+    .is-class-skill {
+      margin-right: 0.25em;
     }
-    .skill-column.-right {
-        width: 51.5%;
+    .skill-points-row .underlabeled {
+      margin-right: 0.25em;
     }
-    .skill-row {
-        .calc-header {
-            flex-grow: 1;
-            width: 8em;
-        }
-        .is-class-skill {
-            margin-right: 0.25em;
-        }
-        .skill-points-row .underlabeled {
-            margin-right: 0.25em;
-        }
-    }
-    .skill-with-subskill {
-        align-items: flex-end;
-        margin-bottom: 0.5em;
-    }
-    .subskills-trained {
-        margin-right: 0.5em;
-        width: 20em;
-    }
+  }
+  .skill-with-subskill {
+    align-items: flex-end;
+    margin-bottom: 0.5em;
+  }
+  .subskills-trained {
+    margin-right: 0.5em;
+    width: 20em;
+  }
 }
 
 .trained-skills-separator {
-    text-align: center;
-    width: 15px;
+  text-align: center;
+  width: 15px;
 }

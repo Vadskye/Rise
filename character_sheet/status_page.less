@@ -1,69 +1,69 @@
 .debuff-active-label {
-    display: inline;
-    font-size: 12px;
-    font-weight: normal;
+  display: inline;
+  font-size: 12px;
+  font-weight: normal;
 
-    > input {
-        vertical-align: initial;
-    }
+  > input {
+    vertical-align: initial;
+  }
 
-    > span {
-        margin-left: 0.2em;
-    }
+  > span {
+    margin-left: 0.2em;
+  }
 
-    .unrepresentable-debuff {
-        font-style: italic;
-    }
+  .unrepresentable-debuff {
+    font-style: italic;
+  }
 }
 
 .standard-modifiers {
-    > div {
-        margin-left: 0.25em;
+  > div {
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+  }
+
+  .circumstances {
+    width: 20em;
+  }
+
+  .debuffs {
+    width: 16em;
+  }
+
+  .circumstances .debuff-active-label {
+    width: 10em;
+  }
+
+  .debuffs .debuff-active-label {
+    width: 8em;
+  }
+
+  .debuff-list {
+    justify-content: space-between;
+  }
+
+  .vital-wounds {
+    flex-grow: 1;
+
+    .vital-roll-row {
+      justify-content: center;
+      margin-bottom: 0.5em;
+
+      button {
         margin-right: 0.25em;
+      }
     }
 
-    .circumstances {
-        width: 20em;
+    .vital-wound-effect {
+      flex-grow: 1;
     }
 
-    .debuffs {
-        width: 16em;
+    .vital-wound-announce {
+      font-size: 1em;
     }
 
-    .circumstances .debuff-active-label {
-        width: 10em;
+    .vital-wound-roll {
+      margin-right: 0.5em;
     }
-
-    .debuffs .debuff-active-label {
-        width: 8em;
-    }
-
-    .debuff-list {
-        justify-content: space-between;
-    }
-
-    .vital-wounds {
-        flex-grow: 1;
-
-        .vital-roll-row {
-            justify-content: center;
-            margin-bottom: 0.5em;
-
-            button {
-                margin-right: 0.25em;
-            }
-        }
-
-        .vital-wound-effect {
-            flex-grow: 1;
-        }
-
-        .vital-wound-announce {
-            font-size: 1em;
-        }
-
-        .vital-wound-roll {
-            margin-right: 0.5em;
-        }
-    }
+  }
 }
