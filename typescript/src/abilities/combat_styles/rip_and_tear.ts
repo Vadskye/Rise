@@ -27,6 +27,7 @@ export const ripAndTear: CombatStyle = {
       `,
       rank: 3,
       roles: ['burst'],
+      tags: ['Blood'],
     },
 
     {
@@ -39,6 +40,7 @@ export const ripAndTear: CombatStyle = {
       `,
       rank: 7,
       roles: ['burst'],
+      tags: ['Blood'],
     },
 
     {
@@ -74,6 +76,7 @@ export const ripAndTear: CombatStyle = {
       `,
       rank: 3,
       roles: ['burn'],
+      tags: ['Blood'],
     },
 
     {
@@ -88,6 +91,7 @@ export const ripAndTear: CombatStyle = {
       `,
       rank: 5,
       roles: ['burn'],
+      tags: ['Blood'],
     },
 
     {
