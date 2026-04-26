@@ -155,6 +155,9 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
     {
       name: 'Windslash',
 
+      // Rank 3 Spell
+      // Area: Up to two targets within Long range (R3, mod -1)
+      // Result: 3 - 1 = dr2
       attack: {
         hit: `
           \\damageranktwo.
@@ -172,6 +175,9 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
     {
       name: 'Mighty Windslash',
 
+      // Rank 6 Spell
+      // Area: Up to two targets within Long range (R3, mod -1)
+      // Result: 6 - 1 = dr5
       attack: {
         hit: `
           \\damagerankfive.
@@ -189,6 +195,9 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
     {
       name: 'Windsnipe',
 
+      // Rank 4 Spell
+      // Range: Distant (mod -2)
+      // Result: 4 - 2 = dr2
       attack: {
         hit: `
           \\damageranktwo.
@@ -203,6 +212,9 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
     {
       name: 'Mighty Windsnipe',
 
+      // Rank 7 Spell
+      // Range: Distant (mod -2)
+      // Result: 7 - 2 = dr5
       attack: {
         hit: `
           \\damagerankfive.
@@ -387,6 +399,11 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
     {
       name: 'Retributive Winds',
 
+      // Rank 5 Spell
+      // Range: Medium (mod 0)
+      // Bonus: Reactive attack (mod -1)
+      // Bonus: Retaliation range scaling (mod -1)
+      // Result: 5 - 1 - 1 = dr3
       attack: {
         hit: `
           \\damagerankthree.
@@ -407,9 +424,12 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
     {
       name: 'Call Dust Devil',
 
-      // Rank 3 spell would normally have dr1 and r3 area.
-      // Then add +2dr for avoidable delay and +1dr for double defense.
-      // The open area requirement is a cost for stacking this much +damage.
+      // Rank 3 Spell
+      // Area: Small radius in Short range (R3, mod -1)
+      // Bonus: Escapably Delayed (mod +2)
+      // Bonus: Double defense (mod +1)
+      // Limitation: Open space requirement (mod -1)
+      // Result: 3 - 1 + 2 + 1 - 1 = dr4
       attack: {
         hit: `
           \\damagerankfour.
@@ -430,12 +450,15 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       scaling: 'damage',
     },
 
-    // Rank 5 spell would normally have dr3 and r5 area, or dr2 and r5 area with extended
-    // area. Then add +2dr for avoidable delay and +1dr for double defense.
-    // The open area requirement is a cost for stacking this much +damage.
     {
       name: 'Call Tornado',
 
+      // Rank 5 Spell
+      // Area: Medium radius in Medium range (R5, mod -2)
+      // Bonus: Escapably Delayed (mod +2)
+      // Bonus: Double defense (mod +1)
+      // Limitation: Open space requirement (mod -1)
+      // Result: 5 - 2 + 2 + 1 - 1 = dr5
       attack: {
         hit: `
           \\damagerankfive.
@@ -458,8 +481,11 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
     {
       name: 'Call Massive Tornado',
 
-      // We only get +1dr from the "avoidable" delay because it really isn't that
-      // avoidable anymore
+      // Rank 7 Spell
+      // Area: Large radius in Medium range (R7, mod -3)
+      // Bonus: Escapably Delayed (mod +1 - Large area makes it harder to avoid)
+      // Bonus: Double defense (mod +1)
+      // Result: 7 - 3 + 1 + 1 = dr6
       attack: {
         hit: `
           \\damageranksix.
@@ -486,6 +512,12 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
     {
       name: 'Hurricane',
 
+      // Rank 4 Spell
+      // Area: Medium radius from self (R2)
+      // Bonus: Enemies only (radius from self, +2 Area Rank) -> R4 area (mod -2)
+      // Bonus: Double defense (mod +1)
+      // Effect: Debuff (Push 15' clockwise) (mod 0 - unusually weak)
+      // Result: 4 - 2 + 1 - 0 = dr3
       attack: {
         hit: `
           \\damagerankthree.
@@ -505,9 +537,15 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
     {
       name: 'Massive Hurricane',
 
+      // Rank 6 Spell
+      // Area: Large radius from self (R4)
+      // Bonus: Enemies only (radius from self, +2 Area Rank) -> R6 area (mod -3)
+      // Bonus: Double defense (mod +1)
+      // Effect: Debuff (Push 15' clockwise) (mod 0 - unusually weak)
+      // Result: 6 - 3 + 1 - 0 = dr4
       attack: {
         hit: `
-          \\damagerankfive.
+          \\damagerankfour.
           In addition, the target is \\glossterm{pushed} 15 feet clockwise around you.
           Its final position should be the same distance from you as its starting position.
         `,
@@ -633,9 +671,13 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
     {
       name: 'Windblast',
 
+      // Rank 1 Spell
+      // Area: Medium cone from self (R2, mod -1)
+      // Bonus: Double defense (mod +1)
+      // Result: 1 - 1 + 1 = dr1
       attack: {
         hit: `
-          \\damageranktwo.
+          \\damagerankone.
         `,
         halfOnMiss: true,
         targeting: `
@@ -650,9 +692,13 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
     {
       name: 'Mighty Windblast',
 
+      // Rank 4 Spell
+      // Area: Medium cone from self (R2, mod -1)
+      // Bonus: Double defense (mod +1)
+      // Result: 4 - 1 + 1 = dr4
       attack: {
         hit: `
-          \\damagerankfive.
+          \\damagerankfour.
         `,
         halfOnMiss: true,
         targeting: `
@@ -668,9 +714,13 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
     {
       name: 'Massive Windblast',
 
+      // Rank 6 Spell
+      // Area: Large cone from self (R4, mod -2)
+      // Bonus: Double defense (mod +1)
+      // Result: 6 - 2 + 1 = dr5
       attack: {
         hit: `
-          \\damageranksix.
+          \\damagerankfive.
         `,
         halfOnMiss: true,
         targeting: `
@@ -703,8 +753,11 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
     {
       name: 'Shielding Windblast',
 
-      // dr-2 for buff effect. Tiny radius from self is r0, so that would normally be
-      // drX+1, or drX+2 for double defense.
+      // Rank 2 Spell
+      // Area: Tiny radius from self, enemies only (R0, mod +1)
+      // Bonus: Double defense (mod +1)
+      // Effect: Briefly Shielded (0.4 EA, mod -2)
+      // Result: 2 + 1 + 1 - 2 = dr2
       attack: {
         hit: `
           \\damageranktwo.
@@ -724,6 +777,11 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
     {
       name: 'Mighty Shielding Windblast',
 
+      // Rank 5 Spell
+      // Area: Tiny radius from self, enemies only (R0, mod +1)
+      // Bonus: Double defense (mod +1)
+      // Effect: Briefly Shielded (0.4 EA, mod -2)
+      // Result: 5 + 1 + 1 - 2 = dr5
       attack: {
         hit: `
           \\damagerankfive.
@@ -756,12 +814,17 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
     {
       name: 'Asphyxiate',
 
+      // Rank 2 Spell
+      // Range: Medium (mod 0)
+      // Bonus: Accuracy Penalty (-42) (mod +1)
+      // Limitation: Breathers only (mod 0 - too common to affect damage)
+      // Result: 2 + 1 = dr3
       attack: {
         hit: `
-          \\damagerankfour.
+          \\damagerankthree.
         `,
         targeting: `
-          Make an attack vs. Fortitude with a \\minus4 accuracy penalty against one creature within \\medrange.
+          Make an attack vs. Fortitude with a \\minus2 accuracy penalty against one creature within \\medrange.
           If the target does not need to breathe air, this attack has no effect.
         `,
       },
@@ -774,6 +837,10 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
     {
       name: 'Mighty Asphyxiate',
 
+      // Rank 5 Spell
+      // Bonus: Accuracy Penalty (-4) (mod +2)
+      // Limitation: Breathers only (mod 0 - too common to affect damage)
+      // Result: 5 + 2 = dr7
       attack: {
         hit: `
           \\damagerankseven, and any \\glossterm{extra damage} is doubled.
