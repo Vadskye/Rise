@@ -125,7 +125,7 @@ export const toxicology: MysticSphere = {
           It deals \\damagerankthreelow immediately and with each escalation.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange.
+          Make an attack vs. Fortitude with a \\plus1 accuracy bonus against one creature within \\medrange.
         `,
       },
       rank: 2,
@@ -143,10 +143,9 @@ export const toxicology: MysticSphere = {
           If the target is \\glossterm{injured}, it becomes \\glossterm{poisoned} by wyvern venom (see \\pcref{Poison}).
           The poison's accuracy is equal to your accuracy with this spell.
           It deals \\damagerankthreelow immediately and with each escalation.
-          The second escalation also ends the poison.
         `,
         targeting: `
-          Make an attack vs. Fortitude with a \\plus4 accuracy bonus against one creature within \\medrange.
+          Make an attack vs. Fortitude with a \\plus1 accuracy bonus against one creature within \\medrange.
         `,
       },
       rank: 3,
@@ -163,10 +162,10 @@ export const toxicology: MysticSphere = {
         hit: `
           If the target is \\glossterm{injured}, it becomes \\glossterm{poisoned} by blood leech venom (see \\pcref{Poison}).
           The poison's accuracy is equal to your accuracy with this spell.
-          It deals \\damagerankfivelow immediately and with each escalation.
+          It deals \\damagerankfourlow immediately and with each escalation.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange.
+          Make an attack vs. Fortitude with a \\plus5 accuracy bonus against one creature within \\medrange.
         `,
       },
       rank: 4,
@@ -186,7 +185,7 @@ export const toxicology: MysticSphere = {
           It deals \\damageranksixlow immediately and with each escalation.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange.
+          Make an attack vs. Fortitude with a \\plus1 accuracy bonus against one creature within \\medrange.
         `,
       },
       rank: 5,
@@ -207,7 +206,6 @@ export const toxicology: MysticSphere = {
           The target becomes \\glossterm{poisoned} by jellyfish extract (see \\pcref{Poison}).
           The poison's accuracy is equal to your accuracy with this spell.
           It deals \\damagerankzerolow immediately and with each escalation.
-          The second escalation also ends the poison.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
@@ -228,7 +226,6 @@ export const toxicology: MysticSphere = {
           The target becomes \\glossterm{poisoned} by tree frog coating (see \\pcref{Poison}).
           The poison's accuracy is equal to your accuracy with this spell.
           It deals \\damageranktwolow immediately and with each escalation.
-          The second escalation also ends the poison.
         `,
         targeting: `
           Make an attack vs. Fortitude with a \\minus3 accuracy penalty against one creature within \\medrange.
