@@ -77,8 +77,6 @@ Rank 4 areas [Budget +2]:
   - Medium range, chain twice
   - Short range, chain five times
 
-After rank 4, spells have mostly reached their maximum range, since they are not allowed to go past 60 feet by default. Instead, area scaling comes from splitting areas.
-
 Rank 5 areas [Budget +2]:
 
 - Cone:
@@ -91,7 +89,7 @@ Rank 5 areas [Budget +2]:
 
 ## Extended Area Scaling
 
-To use areas that extend beyond 60', you have to pay a -1 rank cost for debuff effect. Damaging effects have a slightly different tradeoff (see `damaging_abilities.md`). In exchange, you get access to the following additional rank scaling options:
+For debuff spells to use areas that extend beyond 60', you have to pay a -1 rank cost for debuff effect. Damaging effects have a slightly different tradeoff (see `damaging_abilities.md`). In exchange, you get access to the following additional rank scaling options:
 
 Rank 2 areas:
 
