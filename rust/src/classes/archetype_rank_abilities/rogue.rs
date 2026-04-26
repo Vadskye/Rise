@@ -12,19 +12,19 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
                 \begin{activeability}{Sneak Attack}{Standard action}
                     \rankline
                     Make a \glossterm{strike} against a creature within \shortrange (see \pcref{Weapon Tags}).
-                    The srike must only use \weapontag{Light} or \weapontag{Compact} weapons.
+                    The strike must only use \weapontag{Light} or \weapontag{Compact} weapons.
 
                     The strike deals 1d4 \glossterm{extra damage} if the target is \unaware or \partiallyunaware of your attack, or if they are adjacent to one of your \glossterm{allies}.
-                    This extra damage is doubled if the target was fully unaware of you at the start of your turn.
                     It does not apply if the target is immune to \glossterm{critical hits}.
+                    If the target was fully unaware of you at the start of your turn, the strike deals double damage.
 
                     \rankline
                     \rank{2} The extra damage increases to 1d6.
                     \rank{3} The extra damage increases to 1d10.
-                    \rank{4} The extra damage increases to 2d8.
-                    \rank{5} The extra damage increases to 3d10.
-                    \rank{6} The extra damage increases to 5d10.
-                    \rank{7} The extra damage increases to 8d10.
+                    \rank{4} The strike deals double \glossterm{weapon damage}.
+                    \rank{5} The extra damage increases to 3d8.
+                    \rank{6} The strike deals triple \glossterm{weapon damage}, and the extra damage increases to 4d8.
+                    \rank{7} The extra damage increases to 6d10.
                 \end{activeability}
             ",
         },
@@ -112,6 +112,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     You study a creature within \rngmed range, finding weak points you can take advantage of.
                     As a \brief effect, whenever you make a \glossterm{strike} against the target while it is adjacent to you and \unaware of the attack, the strike deals double damage.
+                    This is multiplicative with the doubling from \ability{sneak attack}, for a total of four times normal damage.
                 \end{activeability}
             ",
         },
