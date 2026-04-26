@@ -152,7 +152,10 @@ export const fabrication: MysticSphere = {
     {
       name: 'Mystic Blast Arrow',
 
-      // -1dr for range, +1dr for double defense
+      // Rank 2 Spell
+      // Range: Long (mod -1)
+      // Mod: Double Defense (+1)
+      // Result: 2 - 1 + 1 = dr2
       attack: {
         hit: `
           \\damageranktwo.
@@ -169,7 +172,10 @@ export const fabrication: MysticSphere = {
     {
       name: 'Mighty Mystic Blast Arrow',
 
-      // -1dr for range, +1dr for double defense
+      // Rank 5 Spell
+      // Range: Long (mod -1)
+      // Mod: Double Defense (+1)
+      // Result: 5 - 1 + 1 = dr5
       attack: {
         hit: `
           \\damagerankfive, and any \\glossterm{extra damage} is doubled.
@@ -187,7 +193,10 @@ export const fabrication: MysticSphere = {
     {
       name: 'Mystic Artillery',
 
-      // -1dr for long range, +1dr for delay, +1dr for -2a
+      // Rank 1 Spell
+      // Range: Long (mod -1)
+      // Mod: Inescapably Delayed (+1), -2 Accuracy Penalty (+1)
+      // Result: 1 - 1 + 1 + 1 = dr2
       attack: {
         hit: `
           \\damageranktwo.
@@ -207,6 +216,10 @@ export const fabrication: MysticSphere = {
     {
       name: 'Mighty Mystic Artillery',
 
+      // Rank 4 Spell
+      // Range: Long (mod -1)
+      // Mod: Inescapably Delayed (+1), -2 Accuracy Penalty (+1)
+      // Result: 4 - 1 + 1 + 1 = dr5
       functionsLike: {
         name: 'mystic artillery',
         exceptThat:
@@ -221,8 +234,10 @@ export const fabrication: MysticSphere = {
     {
       name: "Executioner's Axe",
 
-      // drX+1 for r0 area, +1dr for delay, Keen for only two targets
-      // Since dr4 has such strong power scaling, this would really rather be dr3 or dr5.
+      // Rank 1 Spell
+      // Area: Multi-target (max 2) (mod 0)
+      // Mod: Cleave Bonus (+1), Inescapably Delayed (+1)
+      // Result: 1 + 0 + 1 + 1 = dr3
       attack: {
         hit: `
           \\damagerankthree.
@@ -242,6 +257,10 @@ export const fabrication: MysticSphere = {
     {
       name: "Mighty Executioner's Axe",
 
+      // Rank 4 Spell
+      // Area: Multi-target (max 2) (mod 0)
+      // Mod: Cleave Bonus (+1), Inescapably Delayed (+1)
+      // Result: 4 + 0 + 1 + 1 = dr6
       functionsLike: {
         name: "executioner's axe",
         exceptThat:
@@ -256,9 +275,9 @@ export const fabrication: MysticSphere = {
     {
       name: 'Whirlwind of Blades',
 
-      // drX+1 in r0 area.
-      // This needs to be sufficiently different from executioner's axe, so it affects a
-      // larger area.
+      // Rank 4 Spell
+      // Area: Small area radius from self (R0, mod +1)
+      // Result: 4 + 1 = dr5
       attack: {
         hit: `\\damagerankfive.`,
         halfOnMiss: true,
@@ -275,6 +294,9 @@ export const fabrication: MysticSphere = {
     {
       name: 'Mighty Whirlwind of Blades',
 
+      // Rank 7 Spell
+      // Area: Small area radius from self (R0, mod +1)
+      // Result: 7 + 1 = dr8
       attack: {
         hit: `\\damagerankeight.`,
         halfOnMiss: true,
@@ -291,7 +313,10 @@ export const fabrication: MysticSphere = {
     {
       name: 'Rain of Arrows',
 
-      // -2dr for normal full area damage, +2dr for avoidable delay, -1dr for extended range
+      // Rank 4 Spell
+      // Area: Small radius in Medium range (R4, mod -2)
+      // Mod: Avoidable Delay (+1)
+      // Result: 4 - 2 + 1 = dr3
       attack: {
         hit: `
           \\damagerankthree.
@@ -318,6 +343,10 @@ export const fabrication: MysticSphere = {
     {
       name: 'Massive Rain of Arrows',
 
+      // Rank 7 Spell
+      // Area: Medium radius in Distant range (R5, mod -2)
+      // Mod: Avoidable Delay (+1)
+      // Result: 7 - 2 + 1 = dr6
       functionsLike: {
         name: 'rain of arrows',
         exceptThat:
@@ -332,6 +361,10 @@ export const fabrication: MysticSphere = {
       name: 'Blade Barrier',
 
       cost: BARRIER_COOLDOWN,
+      // Rank 2 Spell
+      // Area: Medium wall (R2, mod -1)
+      // Mod: Sustain Wall (-1), Reactive (+1)
+      // Result: 2 - 1 - 1 + 1 = dr1
       attack: {
         hit: `\\damagerankone.`,
         halfOnMiss: true,
@@ -355,6 +388,10 @@ export const fabrication: MysticSphere = {
       name: 'Mighty Blade Barrier',
 
       cost: BARRIER_COOLDOWN,
+      // Rank 5 Spell
+      // Area: Large wall (R3, mod -1)
+      // Mod: Sustain Wall (-1), Reactive (+2)
+      // Result: 5 - 1 - 1 + 2 = dr5
       functionsLike: {
         exceptThat: `
           the damage increases to \\damagerankfive.
@@ -373,6 +410,10 @@ export const fabrication: MysticSphere = {
       name: 'Blade Perimeter',
 
       cost: BARRIER_COOLDOWN,
+      // Rank 3 Spell
+      // Area: Medium wall radius (R3, mod -1)
+      // Mod: Sustain Wall (-1), Reactive (+1)
+      // Result: 3 - 1 - 1 + 1 = dr2
       functionsLike: {
         exceptThat: `
           the area changes to a \\medarea radius \\glossterm{wall}.
@@ -449,6 +490,9 @@ export const fabrication: MysticSphere = {
     {
       name: 'Mighty Caltrops',
 
+      // Rank 5 Spell
+      // Mod: Hazard (-1)
+      // Result: 5 - 1 = dr4
       functionsLike: {
         name: 'caltrops',
         exceptThat: 'the damage increases to \\damagerankfour.',
@@ -484,6 +528,10 @@ export const fabrication: MysticSphere = {
     {
       name: 'Dagger Cloud',
 
+      // Rank 3 Spell
+      // Area: Tiny area in Short range (R2, mod -1)
+      // Mod: Sustain (minor) zone (limited scope) (-1)
+      // Result: 3 - 1 - 1 = dr1
       attack: {
         hit: `\\damagerankone.`,
         targeting: `
@@ -503,6 +551,10 @@ export const fabrication: MysticSphere = {
     {
       name: 'Blade Cloud',
 
+      // Rank 6 Spell
+      // Area: Small area in Short range (R3, mod -1)
+      // Mod: Sustain (minor) zone (limited scope) (-1)
+      // Result: 6 - 1 - 1 = dr4
       functionsLike: {
         name: 'dagger cloud',
         exceptThat:
@@ -517,6 +569,10 @@ export const fabrication: MysticSphere = {
     {
       name: 'Daggerswarm',
 
+      // Rank 5 Spell
+      // Range: Short (mod +1)
+      // Mod: Sustain single target (-2), -2 Accuracy Penalty (+1), No extra damage (-2)
+      // Result: 5 + 1 - 2 + 1 - 2 = dr3
       attack: {
         hit: `\\damagerankthree. All sources of \\glossterm{extra damage} do not apply to this attack.`,
         targeting: `
@@ -652,6 +708,9 @@ export const fabrication: MysticSphere = {
     {
       name: 'Bladeshard Blast',
 
+      // Rank 2 Spell
+      // Area: Small area cone from self (R0, mod +1)
+      // Result: Multi-target melee strike
       effect: `
         This spell has no \\glossterm{somatic components}.
 
@@ -675,6 +734,9 @@ export const fabrication: MysticSphere = {
     {
       name: 'Mighty Bladeshard Blast',
 
+      // Rank 5 Spell
+      // Area: Small area cone from self (R0, mod +1)
+      // Result: Multi-target melee strike
       functionsLike: {
         name: 'blade barrage',
         exceptThat: 'the strike deals double damage.',
