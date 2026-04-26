@@ -861,14 +861,14 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       // has to deal immediate damage.
       attack: {
         hit: `
-          \\damagerankfive.
+          \\damagerankfour.
         `,
         targeting: `
-          Make an attack vs. Fortitude with a -4 accuracy penalty against something adjacent to you.
+          Make an attack vs. Fortitude with a -2 accuracy penalty against something adjacent to you.
         `,
       },
       rank: 1,
-      roles: ['burn'],
+      roles: ['burst'],
       scaling: 'damage',
     },
 
@@ -877,14 +877,14 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       attack: {
         hit: `
-          \\damagerankeight.
+          \\damagerankeight, and any \\glossterm{extra damage} is doubled.
         `,
         targeting: `
           Make an attack vs. Fortitude with a -4 accuracy penalty against something adjacent to you.
         `,
       },
       rank: 4,
-      roles: ['burn'],
+      roles: ['burst'],
       scaling: 'damage',
     },
 
