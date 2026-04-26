@@ -4,7 +4,7 @@ Rank -1 areas (why would these exist?):
 
 - Small line, 5' wide from self
 
-Rank 0 areas (4-8 squares) [Budget -1]:
+Rank 0 areas (4-8 squares) [Damage Mod +1]:
 
 - Cone:
   - Small cone from self (6/7s)
@@ -19,7 +19,7 @@ Rank 0 areas (4-8 squares) [Budget -1]:
 - Targets:
   - Melee range, chain once
 
-Rank 1 areas (~12 squares) [Budget 0]:
+Rank 1 areas (~12 squares) [Damage Mod 0]:
 
 - Cone:
   - Two Small cones from self (12/14s)
@@ -33,7 +33,7 @@ Rank 1 areas (~12 squares) [Budget 0]:
   - Up to two creatures in Short range
   - Short range, chain once
 
-Rank 2 areas (~24 squares) [Budget +1]:
+Rank 2 areas (~24 squares) [Damage Mod -1]:
 
 - Cone:
   - Medium cone from self (24s)
@@ -46,7 +46,7 @@ Rank 2 areas (~24 squares) [Budget +1]:
   - Up to three creatures in Short range
   - Up to two creatures in Medium range
 
-Rank 3 areas [Budget +1]:
+Rank 3 areas [Damage Mod -1]:
 
 - Cone:
   - (unchanged) Medium cone from self (24s)
@@ -63,7 +63,7 @@ Rank 3 areas [Budget +1]:
   - (unchanged) Up to two creatures in Medium range
   - Medium range, chain once
 
-Rank 4 areas [Budget +2]:
+Rank 4 areas [Damage Mod -2]:
 
 - Cone:
   - Large cone
@@ -79,7 +79,7 @@ Rank 4 areas [Budget +2]:
   - Medium range, chain twice
   - Short range, chain five times
 
-Rank 5 areas [Budget +2]:
+Rank 5 areas [Damage Mod -2]:
 
 - Cone:
   - Two Large cones from self
