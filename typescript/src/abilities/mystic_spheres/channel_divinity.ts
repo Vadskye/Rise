@@ -121,7 +121,10 @@ export const channelDivinity: MysticSphere = {
     {
       name: 'Retributive Judgment',
 
-      // close range for accuracy
+      // Rank 2 Spell
+      // Range: Short (mod +1)
+      // Bonus: Accuracy Bonus (+3) (mod -1)
+      // Result: 2 + 1 - 1 = dr2
       attack: {
         hit: `
           \\damageranktwo.
@@ -139,7 +142,10 @@ export const channelDivinity: MysticSphere = {
     {
       name: 'Mighty Retributive Judgment',
 
-      // close range for accuracy
+      // Rank 5 Spell
+      // Range: Short (mod +1)
+      // Bonus: Accuracy Bonus (+3) (mod -1)
+      // Result: 5 + 1 - 1 = dr5
       attack: {
         hit: `
           \\damagerankfive, and any \\glossterm{extra damage} is doubled.
@@ -157,6 +163,10 @@ export const channelDivinity: MysticSphere = {
     {
       name: 'Word of Faith',
 
+      // Rank 2 Spell
+      // Area: Small radius from self (R0)
+      // Bonus: Enemies only (radius from self, +2 Area Rank) -> R2 area (mod -1)
+      // Result: 2 - 1 = dr1
       attack: {
         hit: `
           \\damagerankone.
@@ -174,16 +184,20 @@ export const channelDivinity: MysticSphere = {
     {
       name: 'Massive Word of Faith',
 
+      // Rank 7 Spell
+      // Area: Large radius from self (R4)
+      // Bonus: Enemies only (radius from self, +2 Area Rank) -> R6 area (mod -3)
+      // Result: 7 - 3 = dr4
       attack: {
         hit: `
-          \\damagerankthree.
+          \\damagerankfour.
         `,
         halfOnMiss: true,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
         `,
       },
-      rank: 5,
+      rank: 7,
       roles: ['clear'],
       scaling: 'damage',
     },
@@ -191,16 +205,20 @@ export const channelDivinity: MysticSphere = {
     {
       name: 'Mighty Word of Faith',
 
+      // Rank 5 Spell
+      // Area: Small radius from self (R0)
+      // Bonus: Enemies only (radius from self, +2 Area Rank) -> R2 area (mod -1)
+      // Result: 5 - 1 = dr4
       attack: {
         hit: `
-          \\damagerankfive.
+          \\damagerankfour.
         `,
         halfOnMiss: true,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
         `,
       },
-      rank: 6,
+      rank: 5,
       roles: ['clear'],
       scaling: 'damage',
     },
@@ -383,11 +401,13 @@ export const channelDivinity: MysticSphere = {
       type: 'Attune (deep)',
     },
 
-    // dr4 is 1.75dpp.
-    // dr2 * 1.5 is 3.75 + 1.5dpp.
     {
       name: 'Unerring Judgment',
 
+      // Rank 4 Spell
+      // Range: Medium (mod 0)
+      // Bonus: Accuracy Bonus (+5) (mod -2)
+      // Result: 4 - 2 = dr2
       attack: {
         hit: `
           \\damageranktwo.
@@ -401,11 +421,13 @@ export const channelDivinity: MysticSphere = {
       scaling: 'damage',
     },
 
-    // dr7 is 5.5 + 2.75dpp.
-    // dr5 * 1.5 is 5.25 + 2.6dpp.
     {
       name: 'Mighty Unerring Judgment',
 
+      // Rank 7 Spell
+      // Range: Medium (mod 0)
+      // Bonus: Accuracy Bonus (+5) (mod -2)
+      // Result: 7 - 2 = dr5
       attack: {
         hit: `
           \\damagerankfive, and any \\glossterm{extra damage} is doubled.
@@ -555,12 +577,12 @@ export const channelDivinity: MysticSphere = {
       type: 'Attune',
     },
 
-    // Stunned as a condition is 3 EA, or 4 EA with damage, so 2 EA as a double action.
-    // Expected damage for two debuff + damage spells would be 2x dr4. dr6 seems like a
-    // reasonable approximation.
     {
       name: 'Touch of God',
 
+      // Stunned as a condition is 3 EA, or 4 EA with damage, so 2 EA as a double action.
+      // Expected damage for two debuff + damage spells would be 2x dr4. dr6 seems like a
+      // reasonable approximation.
       attack: {
         hit: `
           \\damageranksix, and any \\glossterm{extra damage} is doubled.
@@ -576,13 +598,13 @@ export const channelDivinity: MysticSphere = {
       roles: ['burst', 'softener'],
       scaling: 'damage',
     },
-    // We have an extra 0.8 EA available. Without doing proper math, that seems like we
-    // can increase the damage by +1dr.
-    // Expected damage for two debuff + damage spells would be 2x dr7. dr10 is almost
-    // exactly the same.
     {
       name: 'Mighty Touch of God',
 
+      // We have an extra 0.8 EA available. Without doing proper math, that seems like we
+      // can increase the damage by +1dr.
+      // Expected damage for two debuff + damage spells would be 2x dr7. dr10 is almost
+      // exactly the same.
       attack: {
         hit: `
           \\damagerankten, and any \\glossterm{extra damage} is tripled.
