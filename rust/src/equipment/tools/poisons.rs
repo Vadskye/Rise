@@ -19,7 +19,6 @@ fn poison() -> Tool {
 // guaranteed to deal damage next turn, but it's better because it can deal damage three times
 // total instead of twice, so call it equivalent.
 // Since poison deals flat damage, that translates to drX-1.
-// Apply -1dr if the poison is not removed at the second escalation.
 //
 // Damage that only applies against injured targets is weak as a concept, and will rarely reach a
 // very high escalation count, so it is not removed on second escalation like normal poison damage.
@@ -65,7 +64,6 @@ pub fn poisons() -> Vec<Tool> {
             r"
                 The poison's accuracy is $consumableaccuracy.
                 It inflicts $dr1l damage immediately and with each escalation.
-                The second escalation also ends the poison.
             ",
         ),
         ..poison()
@@ -82,7 +80,6 @@ pub fn poisons() -> Vec<Tool> {
             r"
                 The poison's accuracy is $consumableaccuracy-3.
                 It inflicts $dr4l damage immediately and with each escalation.
-                The second escalation also ends the poison.
             ",
         ),
         ..poison()
@@ -100,7 +97,6 @@ pub fn poisons() -> Vec<Tool> {
             r"
                 The poison's accuracy is $consumableaccuracy+4.
                 It inflicts $dr1l damage immediately and with each escalation.
-                The second escalation also ends the poison.
             ",
         ),
         ..poison()
@@ -117,7 +113,6 @@ pub fn poisons() -> Vec<Tool> {
             r"
                 The poison's accuracy is $consumableaccuracy.
                 It inflicts $dr0l damage immediately and with each escalation.
-                The second escalation also ends the poison.
             ",
         ),
         ..poison()
@@ -134,7 +129,6 @@ pub fn poisons() -> Vec<Tool> {
             r"
                 The poison's accuracy is $consumableaccuracy.
                 It inflicts $dr1l damage immediately and with each escalation.
-                The second escalation also ends the poison.
             ",
         ),
         ..poison()
@@ -151,7 +145,6 @@ pub fn poisons() -> Vec<Tool> {
             r"
                 The poison's accuracy is $consumableaccuracy-3.
                 It inflicts $dr2l damage immediately and with each escalation.
-                The second escalation also ends the poison.
             ",
         ),
         ..poison()
@@ -167,7 +160,6 @@ pub fn poisons() -> Vec<Tool> {
             r"
                 The poison's accuracy is $consumableaccuracy.
                 It inflicts $dr4l damage immediately and with each escalation.
-                The second escalation also ends the poison.
             ",
         ),
         ..poison()
@@ -184,7 +176,6 @@ pub fn poisons() -> Vec<Tool> {
             r"
                 The poison's accuracy is $consumableaccuracy.
                 It inflicts $dr3l damage immediately and with each escalation.
-                The second escalation also ends the poison.
             ",
         ),
         ..poison()
@@ -194,13 +185,13 @@ pub fn poisons() -> Vec<Tool> {
     poisons.push(Tool {
         name: "Poison, Dragon Bile".to_string(),
         rank: 4,
-        short_description: "Endlessly deals $dr2l damage".to_string(),
+        short_description: "Repeatedly deals $dr3l damage".to_string(),
         description: poison_description(
             Contact,
             Liquid,
             r"
                 The poison's accuracy is $consumableaccuracy.
-                It inflicts $dr2l damage immediately and with each escalation.
+                It inflicts $dr3l damage immediately and with each escalation.
             ",
         ),
         ..poison()
@@ -222,17 +213,16 @@ pub fn poisons() -> Vec<Tool> {
         ..poison()
     });
 
-    // -1dr for endless damage
     poisons.push(Tool {
         name: "Poison, Black Lotus".to_string(),
         rank: 6,
-        short_description: "Endlessly deals $dr4l damage".to_string(),
+        short_description: "Repeatedly deals $dr5l damage".to_string(),
         description: poison_description(
             Contact,
             Liquid,
             r"
                 The poison's accuracy is $consumableaccuracy.
-                It inflicts $dr4l damage per \glossterm<poison stage>.
+                It inflicts $dr5l damage immediately and with each escalation.
             ",
         ),
         ..poison()
@@ -245,7 +235,7 @@ pub fn poisons() -> Vec<Tool> {
 
 // These are stored in a separate function since they have different scaling.
 // The baseline damage over time for a liquid injury poison would be drX+3 non-flat, or about drX+1.5 flat.
-// That's a bit high, so generally add +1 accuracy or make the poison endless. 
+// That's a bit high, so generally add +1 accuracy.
 fn injury_poisons() -> Vec<Tool> {
     let mut poisons = vec![];
 
@@ -284,12 +274,12 @@ fn injury_poisons() -> Vec<Tool> {
     poisons.push(Tool {
         name: "Poison, Black Adder Venom".to_string(),
         rank: 2,
-        short_description: "Endlessly deals $dr3l damage".to_string(),
+        short_description: "Repeatedly deals $dr3l damage".to_string(),
         description: poison_description(
             Injury,
             Liquid,
             r"
-                The poison's accuracy is $consumableaccuracy.
+                The poison's accuracy is $consumableaccuracy+1.
                 It inflicts $dr3l damage immediately and with each escalation.
             ",
         ),
@@ -299,28 +289,29 @@ fn injury_poisons() -> Vec<Tool> {
     poisons.push(Tool {
         name: "Poison, Wyvern Venom".to_string(),
         rank: 3,
-        short_description: "Endlessly deals $dr3l damage".to_string(),
+        short_description: "Repeatedly deals $dr3l damage".to_string(),
         description: poison_description(
             Injury,
             Liquid,
             r"
-                The poison's accuracy is $consumableaccuracy+4.
+                The poison's accuracy is $consumableaccuracy+1.
                 It inflicts $dr3l damage immediately and with each escalation.
             ",
         ),
         ..poison()
     });
 
+    // -1dr (flat) for +4a
     poisons.push(Tool {
         name: "Poison, Blood Leech Venom".to_string(),
         rank: 4,
-        short_description: "Endlessly deals $dr5l damage".to_string(),
+        short_description: "Repeatedly deals $dr4l damage".to_string(),
         description: poison_description(
             Injury,
             Liquid,
             r"
-                The poison's accuracy is $consumableaccuracy.
-                It inflicts $dr5l damage immediately and with each escalation.
+                The poison's accuracy is $consumableaccuracy+5.
+                It inflicts $dr4l damage immediately and with each escalation.
             ",
         ),
         ..poison()
@@ -329,12 +320,12 @@ fn injury_poisons() -> Vec<Tool> {
     poisons.push(Tool {
         name: "Poison, Purple Worm Venom".to_string(),
         rank: 5,
-        short_description: "Endlessly deals $dr6l damage".to_string(),
+        short_description: "Repeatedly deals $dr6l damage".to_string(),
         description: poison_description(
             Injury,
             Liquid,
             r"
-                The poison's accuracy is $consumableaccuracy.
+                The poison's accuracy is $consumableaccuracy+1.
                 It inflicts $dr6l damage immediately and with each escalation.
             ",
         ),
