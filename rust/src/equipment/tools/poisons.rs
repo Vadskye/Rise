@@ -46,10 +46,10 @@ fn poison() -> Tool {
 // Its effective spell rank is X+1 for contact and ingestion (which can be blocked by holding
 // breath, which is sometimes beneficial to make them asymmetric).
 //
-// Applying a debuff only on the third escalation is not quite as big of a penalty as injured-only,
-// but it's significant. Injured is 0.4x, say that third escalation is x0.67 EA.
+// Applying a debuff only on the second escalation is not quite as big of a penalty as injured-only,
+// but it's significant. Injured is 0.4x, say that second escalation is x0.67 EA.
 // It could possibly be lower, but this gives room to include damage so the poison does something
-// before the third escalation debuff.
+// before the second escalation debuff.
 // So stunned is 2 EA or r4.
 pub fn poisons() -> Vec<Tool> {
     let mut poisons = vec![];
@@ -177,7 +177,7 @@ pub fn poisons() -> Vec<Tool> {
     poisons.push(Tool {
         name: "Poison, Arsenic".to_string(),
         rank: 2,
-        short_description: "Repeatedly deals $dr4l damage".to_string(),
+        short_description: "Repeatedly deals $dr3l damage".to_string(),
         description: poison_description(
             Ingestion,
             Powder,
@@ -194,13 +194,13 @@ pub fn poisons() -> Vec<Tool> {
     poisons.push(Tool {
         name: "Poison, Dragon Bile".to_string(),
         rank: 4,
-        short_description: "Endlessly deals $dr3l damage".to_string(),
+        short_description: "Endlessly deals $dr2l damage".to_string(),
         description: poison_description(
             Contact,
             Liquid,
             r"
                 The poison's accuracy is $consumableaccuracy.
-                It inflicts $dr3l damage immediately and with each escalation.
+                It inflicts $dr2l damage immediately and with each escalation.
             ",
         ),
         ..poison()
@@ -222,17 +222,17 @@ pub fn poisons() -> Vec<Tool> {
         ..poison()
     });
 
-    // -1dr for +1a, endless damage
+    // -1dr for endless damage
     poisons.push(Tool {
         name: "Poison, Black Lotus".to_string(),
         rank: 6,
-        short_description: "Endlessly deals $dr5l damage".to_string(),
+        short_description: "Endlessly deals $dr4l damage".to_string(),
         description: poison_description(
             Contact,
             Liquid,
             r"
-                The poison's accuracy is $consumableaccuracy+1.
-                It inflicts $dr5l damage per \glossterm<poison stage>.
+                The poison's accuracy is $consumableaccuracy.
+                It inflicts $dr4l damage per \glossterm<poison stage>.
             ",
         ),
         ..poison()
@@ -244,8 +244,8 @@ pub fn poisons() -> Vec<Tool> {
 }
 
 // These are stored in a separate function since they have different scaling.
-// The baseline damage over time for a liquid injury poison would be drX+3.
-// That's a bit absurd, so generally add +1 accuracy or make the poison endless.
+// The baseline damage over time for a liquid injury poison would be drX+3 non-flat, or about drX+1.5 flat.
+// That's a bit high, so generally add +1 accuracy or make the poison endless. 
 fn injury_poisons() -> Vec<Tool> {
     let mut poisons = vec![];
 
