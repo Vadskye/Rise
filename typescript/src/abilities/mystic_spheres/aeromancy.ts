@@ -846,7 +846,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
           \\damagerankseven, and any \\glossterm{extra damage} is doubled.
         `,
         targeting: `
-          Make an attack vs. Fortitude with a \\minus4 accuracy penalty against one creature within \\distrange.
+          Make an attack vs. Fortitude with a \\minus4 accuracy penalty against one creature within \\medrange.
           If the target does not need to breathe air, this attack has no effect.
         `,
       },
