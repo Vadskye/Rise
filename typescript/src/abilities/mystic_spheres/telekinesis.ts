@@ -115,6 +115,10 @@ export const telekinesis: MysticSphere = {
     {
       name: 'Fling Object',
 
+      // Rank 1 Spell
+      // Range: Medium (mod 0)
+      // Result: 1 + 0 = dr1
+      // (This is slightly above rate because requiring objects is annoying)
       attack: {
         hit: `
           The target and the thrown object each take \\damagerankone.
@@ -136,6 +140,9 @@ export const telekinesis: MysticSphere = {
     {
       name: 'Mighty Fling Object',
 
+      // Rank 4 Spell
+      // Range: Medium (mod 0)
+      // Result: 4 + 0 = dr4
       attack: {
         hit: `
           The target and the thrown object each take \\damagerankfour.
@@ -190,7 +197,7 @@ export const telekinesis: MysticSphere = {
 
           When that effect ends, make a \\glossterm{reactive attack} vs. Brawn against all \\glossterm{enemies} in a \\smallarea radius from you.
           You gain an accuracy bonus with this attack equal to the number of kinetic charges you built up, to a maximum of +4.
-          If you built up 5 or more kinetic charges, the area increases to a \\smallarea radius.
+          If you built up 5 or more kinetic charges, the area increases to a \\medarea radius.
         `,
       },
       rank: 3,
@@ -203,7 +210,7 @@ export const telekinesis: MysticSphere = {
 
       functionsLike: {
         name: 'kinetic discharge',
-        exceptThat: 'the damage increases to \\damagerankfive.',
+        exceptThat: 'the damage increases to \\damageranksix.',
       },
       rank: 6,
       roles: ['clear'],
@@ -216,6 +223,10 @@ export const telekinesis: MysticSphere = {
     {
       name: 'Blastwave',
 
+      // Rank 2 Spell
+      // Area: Small cone from self (R0, mod +1)
+      // Effect: Debuff (-1), Double defense (+1)
+      // Result: 2 + 1 - 1 + 1 = dr3
       attack: {
         hit: `
           \\damagerankthree.
@@ -236,8 +247,12 @@ export const telekinesis: MysticSphere = {
     {
       name: 'Mighty Blastwave',
 
-      // We don't calculate the size limitation into fling officially, but removing
-      // the limitation here has some value added.
+      // Rank 4 Spell
+      // Area: Small cone from self (R0, mod +1)
+      // Effect: Debuff (-1), Double defense (+1)
+      // Result: 4 + 1 - 1 + 1 = dr5
+      // (We don't calculate the size limitation into fling officially, but removing
+      // the limitation here has some value added.)
       attack: {
         hit: `
           \\damagerankfive.
@@ -258,10 +273,15 @@ export const telekinesis: MysticSphere = {
     {
       name: 'Massive Blastwave',
 
-      // Correct debuff tier here would be 1.6 EA, so we're missing 0.7 EA of debuff value with just a 15' fling. Add the size-based doubling to compensate.
+      // Rank 6 Spell
+      // Area: Large cone from self (R4, mod -2)
+      // Effect: Debuff (-1), Double defense (+1)
+      // Result: 6 - 2 - 1 + 1 = dr4
+      // (Correct debuff tier here would be 1.6 EA, so we're missing 0.7 EA of debuff value
+      // with just a 15' fling. Add the size-based doubling to compensate.)
       attack: {
         hit: `
-          \\damageranksix.
+          \\damagerankfour.
         `,
         injury: `
           You \\glossterm{fling} the target up to 15 feet away from you.
@@ -601,6 +621,10 @@ export const telekinesis: MysticSphere = {
     {
       name: 'Compression',
 
+      // Rank 2 Spell
+      // Range: Short (mod +1)
+      // Effect: DoT (-2)
+      // Result: 2 + 1 - 2 = dr1
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
@@ -619,6 +643,10 @@ export const telekinesis: MysticSphere = {
     {
       name: 'Mighty Compression',
 
+      // Rank 5 Spell
+      // Range: Short (mod +1)
+      // Effect: DoT (-2)
+      // Result: 5 + 1 - 2 = dr4
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
@@ -638,6 +666,10 @@ export const telekinesis: MysticSphere = {
     {
       name: 'Implosion',
 
+      // Rank 7 Spell
+      // Range: Short (mod +1)
+      // Effect: DoT (-2)
+      // Result: 7 + 1 - 2 = dr6
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
@@ -693,6 +725,10 @@ export const telekinesis: MysticSphere = {
     {
       name: 'Neck Snap',
 
+      // Rank 5 Spell
+      // Range: Medium (mod 0)
+      // Mod: -4 accuracy penalty (+2)
+      // Result: 5 + 0 + 2 = dr7
       attack: {
         hit: `
           \\damagerankseven, and any \\glossterm{extra damage} is doubled.
@@ -756,6 +792,11 @@ export const telekinesis: MysticSphere = {
     {
       name: 'Kinetic Cudgel',
 
+      // Rank 3 Spell
+      // Range: Short (+1)
+      // Effect: Debuff (-1)
+      // Result: 3 + 1 - 1 = dr3
+      // (Original design: brief injury stun is 4d. Limited scope drops to rank 3.)
       attack: {
         hit: `\\damagerankthree.`,
         injury: 'The target is \\briefly \\stunned.',
@@ -773,6 +814,10 @@ export const telekinesis: MysticSphere = {
     {
       name: 'Mighty Kinetic Cudgel',
 
+      // Rank 7 Spell
+      // Range: Short (+1)
+      // Effect: Debuff (-1)
+      // Result: 7 + 1 - 1 = dr7
       attack: {
         hit: `
           \\damagerankseven, and any \\glossterm{extra damage} is doubled.

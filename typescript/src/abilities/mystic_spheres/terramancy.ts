@@ -30,7 +30,10 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
     {
       name: 'Rock Throw',
 
-      // +1r for +2acc
+      // Rank 1 Spell
+      // Range: Short (+1)
+      // Mod: Accuracy Bonus (-1)
+      // Result: 1 + 1 - 1 = dr1
       attack: {
         hit: `\\damagerankone.`,
         targeting: `
@@ -47,7 +50,10 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
     {
       name: 'Mighty Rock Throw',
 
-      // +1r for +2acc
+      // Rank 4 Spell
+      // Range: Short (+1)
+      // Mod: Accuracy Bonus (-1)
+      // Result: 4 + 1 - 1 = dr4
       attack: {
         hit: `\\damagerankfour.`,
         targeting: `
@@ -64,6 +70,11 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
     {
       name: 'Boulder Heave',
 
+      // Rank 2 Spell
+      // Range: Medium (0)
+      // Mod: Escapably Delayed (+1)
+      // Result: 2 + 0 + 1 = dr3
+      // (Uses +1 for delay due to failure condition and being a standard action start)
       attack: {
         hit: `\\damagerankthree.`,
         targeting: `
@@ -82,9 +93,11 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
     {
       name: 'Meteor',
 
-      // Rank 4 spell would normally have dr2 and r4 area. Add +2dr for avoidable delay
-      // and +1dr for double defense.
-      // The open area requirement is a cost for stacking this much +damage.
+      // Rank 4 Spell
+      // Area: Med radius in Med range (R4, mod -2)
+      // Mod: Escapably Delayed (+2), Double Defense (+1)
+      // Result: 4 - 2 + 2 + 1 = dr5
+      // (The open area requirement is a cost for stacking this much +damage.)
       attack: {
         hit: `\\damagerankfive.`,
         halfOnMiss: true,
@@ -108,6 +121,10 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
     {
       name: 'Mighty Meteor',
 
+      // Rank 7 Spell
+      // Area: Med radius in Med range (R4, mod -2)
+      // Mod: Escapably Delayed (+2), Double Defense (+1)
+      // Result: 7 - 2 + 2 + 1 = dr8
       functionsLike: {
         name: 'meteor',
         exceptThat: `
@@ -123,8 +140,11 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
     {
       name: 'Crushing Gravity',
 
-      // This doesn't pay a cost for its accuracy bonus because it's just offsetting the
-      // intrinsic bonus that larger creatures get to their Brawn.
+      // Rank 3 Spell
+      // Range: Medium (0)
+      // Result: 3 + 0 = dr3
+      // (Original design: This doesn't pay a cost for its accuracy bonus because it's
+      // just offsetting the intrinsic bonus that larger creatures get to their Brawn.)
       attack: {
         hit: `
           \\damagerankthree.
@@ -143,6 +163,9 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
     {
       name: 'Mighty Crushing Gravity',
 
+      // Rank 6 Spell
+      // Range: Medium (0)
+      // Result: 6 + 0 = dr6
       attack: {
         hit: `
           \\damageranksix, and any \\glossterm{extra damage} is doubled.
@@ -160,8 +183,10 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
     {
       name: 'Rockshard Blast',
 
-      // A r0 area is drX+1, and this gets drX+2 for double defense, then -1dr for the
-      // accuracy bonus
+      // Rank 1 Spell
+      // Area: Small cone from self (R0, mod +1)
+      // Mod: Double Defense (+1), Accuracy Bonus (-1)
+      // Result: 1 + 1 + 1 - 1 = dr2
       attack: {
         hit: `\\damageranktwo.`,
         halfOnMiss: true,
@@ -179,8 +204,12 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
     {
       name: 'Mighty Rockshard Blast',
 
+      // Rank 4 Spell
+      // Area: Med cone from self (R2, mod -1)
+      // Mod: Double Defense (+1), Accuracy Bonus (-1)
+      // Result: 4 - 1 + 1 - 1 = dr3
       attack: {
-        hit: `\\damagerankfour.`,
+        hit: `\\damagerankthree.`,
         halfOnMiss: true,
         targeting: `
           Make an attack vs. Armor and Reflex against everything in a \\medarea cone from you.
@@ -237,6 +266,10 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
     {
       name: 'Earthspike',
 
+      // Rank 3 Spell
+      // Range: Short (+1)
+      // Mod: Double Defense (+1)
+      // Result: 3 + 1 + 1 = dr5
       attack: {
         hit: `
           \\damagerankfive, and any \\glossterm{extra damage} is doubled.
@@ -254,6 +287,10 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
     {
       name: 'Mighty Earthspike',
 
+      // Rank 6 Spell
+      // Range: Short (+1)
+      // Mod: Double Defense (+1)
+      // Result: 6 + 1 + 1 = dr8
       attack: {
         hit: `
           \\damagerankeight, and any \\glossterm{extra damage} is doubled.
@@ -630,7 +667,10 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
     {
       name: 'Volcano',
 
-      // treat as short range med radius, which is a t3 area
+      // Rank 3 Spell
+      // Area: Small radius in Short range (R3, mod -1)
+      // Mod: Sustain Zone (-2), Escapable (+1)
+      // Result: 3 - 1 - 2 + 1 = dr1
       attack: {
         hit: `\\damagerankone.`,
         halfOnMiss: true,
@@ -654,6 +694,10 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
     {
       name: 'Mighty Volcano',
 
+      // Rank 6 Spell
+      // Area: Small radius in Short range (R3, mod -1)
+      // Mod: Sustain Zone (-2), Escapable (+1)
+      // Result: 6 - 1 - 2 + 1 = dr4
       functionsLike: {
         name: 'volcano',
         exceptThat: 'the damage increases to \\damagerankfour.',
