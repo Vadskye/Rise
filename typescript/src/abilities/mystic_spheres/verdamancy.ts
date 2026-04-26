@@ -217,7 +217,6 @@ export const verdamancy: MysticSphere = {
           The target becomes \\glossterm{poisoned} by snakeroot (see \\pcref{Poison}).
           The poison's accuracy is equal to your accuracy with this spell.
           It deals \\damagerankonelow immediately and with each escalation.
-          The second escalation also ends the poison.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature you \\glossterm{touch}.
@@ -238,7 +237,6 @@ export const verdamancy: MysticSphere = {
           The target becomes \\glossterm{poisoned} by wolfsbane (see \\pcref{Poison}).
           The poison's accuracy is equal to your accuracy with this spell.
           It deals \\damagerankonelow immediately and with each escalation.
-          The second escalation also ends the poison.
         `,
         targeting: `
           Make an attack vs. Fortitude with a \\plus4 accuracy bonus against one creature you \\glossterm{touch}.
@@ -259,10 +257,9 @@ export const verdamancy: MysticSphere = {
           The target becomes \\glossterm{poisoned} by nightshade (see \\pcref{Poison}).
           The poison's accuracy is equal to your accuracy with this spell.
           It deals \\damagerankfourlow immediately and with each escalation.
-          The second escalation also ends the poison.
         `,
         targeting: `
-          Make an attack vs. Fortitude with a \\minus3 accuracy bonus against one creature you \\glossterm{touch}.
+          Make an attack vs. Fortitude with a \\minus3 accuracy penalty against one creature you \\glossterm{touch}.
         `,
       },
       rank: 3,
@@ -280,7 +277,6 @@ export const verdamancy: MysticSphere = {
           The target becomes \\glossterm{poisoned} by bloodroot (see \\pcref{Poison}).
           The poison's accuracy is equal to your accuracy with this spell.
           It deals \\damagerankfourlow immediately and with each escalation.
-          The second escalation also ends the poison.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature you \\glossterm{touch}.
@@ -303,7 +299,7 @@ export const verdamancy: MysticSphere = {
           It deals \\damagerankfivelow immediately and with each escalation.
         `,
         targeting: `
-          Make an attack vs. Fortitude with a \\plus1 accuracy bonus against one creature you \\glossterm{touch}.
+          Make an attack vs. Fortitude against one creature you \\glossterm{touch}.
         `,
       },
       rank: 6,
