@@ -28,6 +28,7 @@ Rank 1 areas (~12 squares) [Budget 0]:
   - Tiny radius in Short range (4s)
 - Targets:
   - Up to two creatures in Short range
+  - Short range, chain once
 
 Rank 2 areas (~24 squares) [Budget +1]:
 
@@ -41,6 +42,7 @@ Rank 2 areas (~24 squares) [Budget +1]:
 - Targets:
   - Up to three creatures in Short range
   - Up to two creatures in Medium range
+  - Short range, chain twice
 
 Rank 3 areas [Budget +1]:
 
@@ -55,9 +57,11 @@ Rank 3 areas [Budget +1]:
   - Two Tiny radii in Short range (8s)
 - Targets:
   - Up to four creatures in Short range
+  - Short range, chain three times
   - (unchanged) Up to two creatures in Medium range
+  - Medium range, chain once
 
-Rank 4 areas:
+Rank 4 areas [Budget +2]:
 
 - Cone:
   - Large cone
@@ -70,10 +74,12 @@ Rank 4 areas:
 - Targets:
   - Any number of creatures in Short range (equivalent to enemies-only Medium radius)
   - Up to three creatures in Medium range
+  - Medium range, chain twice
+  - Short range, chain five times
 
 After rank 4, spells have mostly reached their maximum range, since they are not allowed to go past 60 feet by default. Instead, area scaling comes from splitting areas.
 
-Rank 5 areas:
+Rank 5 areas [Budget +2]:
 
 - Cone:
   - Two Large cones from self
