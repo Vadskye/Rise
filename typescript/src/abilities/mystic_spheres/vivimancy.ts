@@ -47,12 +47,16 @@ export const vivimancy: MysticSphere = {
         special:
           'For each rank beyond 1, the damage increases by 1d6 and the healing increases by 1d10.',
       },
-      tags: ["Life"],
+      tags: ['Life'],
     },
 
     {
       name: 'Mighty Lifesteal Grasp',
 
+      // Rank 4 Spell
+      // Range: Melee (+2)
+      // Effect: Healing (-1)
+      // Result: 4 + 2 - 1 = dr5
       functionsLike: {
         name: 'lifesteal grasp',
         exceptThat: `
@@ -66,13 +70,12 @@ export const vivimancy: MysticSphere = {
         special:
           'For each rank beyond 4, the damage increases by 2d6 and the healing increases by 3d10.',
       },
-      tags: ["Life"],
+      tags: ['Life'],
     },
 
     {
       name: 'Lifesteal',
 
-      cost: 'One optional \\glossterm{fatigue level} (see text).',
       // -1dr for healing. Healing is drX+3, as lifesteal grasp.
       attack: {
         hit: `
@@ -92,12 +95,16 @@ export const vivimancy: MysticSphere = {
         special:
           'For each rank beyond 2, the damage increases by 2 and the healing increases by 2d8.',
       },
-      tags: ["Life"],
+      tags: ['Life'],
     },
 
     {
       name: 'Mighty Lifesteal',
 
+      // Rank 6 Spell
+      // Range: Medium (0)
+      // Effect: Healing (-1)
+      // Result: 6 + 0 - 1 = dr5
       functionsLike: {
         name: 'lifesteal',
         exceptThat: `
@@ -210,7 +217,10 @@ export const vivimancy: MysticSphere = {
     {
       name: 'Inflict Wound',
 
-      // Normal short range would be dr3. Drop by -1dr for the injury effect.
+      // Rank 2 Spell
+      // Range: Medium (0)
+      // Mod: Injury Damage (-1)
+      // Result: 2 + 0 - 1 = dr1
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
@@ -232,10 +242,13 @@ export const vivimancy: MysticSphere = {
     {
       name: 'Mighty Inflict Wound',
 
+      // Rank 5 Spell
+      // Range: Medium (0)
+      // Mod: Injury Penalty (-1)
+      // Result: 5 + 0 - 1 = dr4
       functionsLike: {
         name: 'inflict wound',
-        exceptThat:
-          'both damage instances increase to \\damagerankfive, and any \\glossterm{extra damage} applies to both the initial damage and the injury damage.',
+        exceptThat: 'both damage instances increase to \\damagerankfour.',
       },
       rank: 5,
       roles: ['execute'],
@@ -262,15 +275,18 @@ export const vivimancy: MysticSphere = {
     {
       name: 'Circle of Death',
 
-      // r1 area is drX normally. Drop by -1dr for injury effect, then +2dr for escapably
-      // delayed damage.
+      // Rank 3 Spell
+      // Area: Med radius from self (R2, mod -1)
+      // Bonus: Escapably Delayed (+2)
+      // Mod: Injury Damage (-1)
+      // Result: 3 - 1 + 2 - 1 = dr3
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankfour.
+          \\damagerankthree.
         `,
         injury: `
-          \\damagerankfour again.
+          \\damagerankthree again.
         `,
         halfOnMiss: true,
         targeting: `
@@ -287,13 +303,18 @@ export const vivimancy: MysticSphere = {
     {
       name: 'Mighty Circle of Death',
 
+      // Rank 6 Spell
+      // Area: Med radius from self (R2, mod -1)
+      // Bonus: Escapably Delayed (+2)
+      // Mod: Injury Damage (-1)
+      // Result: 6 - 1 + 2 - 1 = dr6
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankseven.
+          \\damageranksix.
         `,
         injury: `
-          \\damagerankseven again.
+          \\damageranksix again.
         `,
         halfOnMiss: true,
         targeting: `
@@ -393,7 +414,10 @@ export const vivimancy: MysticSphere = {
     {
       name: 'Lifetap Slash',
 
-      // +1dr due to self damage
+      // Rank 2 Spell
+      // Range: Medium (0)
+      // Bonus: Self Damage (+1)
+      // Result: 2 + 0 + 1 = dr3
       attack: {
         hit: `\\damagerankthree.`,
         targeting: `
@@ -413,7 +437,10 @@ export const vivimancy: MysticSphere = {
     {
       name: 'Mighty Lifetap Slash',
 
-      // +1dr due to self damage
+      // Rank 5 Spell
+      // Range: Medium (0)
+      // Bonus: Self Damage (+1)
+      // Result: 5 + 0 + 1 = dr6
       attack: {
         hit: `\\damageranksix, and any \\glossterm{extra damage} is doubled.`,
         targeting: `
@@ -433,9 +460,12 @@ export const vivimancy: MysticSphere = {
     {
       name: 'Lifetap Blast',
 
-      // r1 area is normally drX. Add +1dr due to self damage.
+      // Rank 3 Spell
+      // Area: Med cone from self (R2, mod -1)
+      // Bonus: Self Damage (+1)
+      // Result: 3 - 1 + 1 = dr3
       attack: {
-        hit: `\\damagerankfour.`,
+        hit: `\\damagerankthree.`,
         halfOnMiss: true,
         targeting: `
           You must be alive to cast this spell.
@@ -454,14 +484,13 @@ export const vivimancy: MysticSphere = {
     {
       name: 'Mighty Lifetap Blast',
 
-      // +1dr due to self damage
       attack: {
-        hit: `\\damagerankseven.`,
+        hit: `\\damageranksix.`,
         halfOnMiss: true,
         targeting: `
           You must be alive to cast this spell.
 
-          Make an attack vs. Reflex against everything within a \\largearea cone from you.
+          Make an attack vs. Reflex against everything within a \\medarea cone from you.
           Whether the attack hits or misses, you lose \\glossterm{hit points} equal to your \\glossterm{power}.
           Alternately, you can increase this hit point loss to be equal to half your maximum hit points.
           If you do, you gain a +5 accuracy bonus with the attack.
@@ -518,8 +547,10 @@ export const vivimancy: MysticSphere = {
     {
       name: 'Lifebomb',
 
-      // r2 area is drX-1.
-      // +1dr for barely avoidable delay.
+      // Rank 3 Spell
+      // Area: Enemies in Small radius from self (R4, mod -2)
+      // Bonus: Escapably Delayed (+2)
+      // Result: 3 - 2 + 2 = dr3
       attack: {
         hit: `
           \\damagerankthree.
@@ -540,6 +571,10 @@ export const vivimancy: MysticSphere = {
     {
       name: 'Massive Lifebomb',
 
+      // Rank 6 Spell
+      // Area: Enemies in Med radius from self (R4, mod -2)
+      // Bonus: Escapably Delayed (+2)
+      // Result: 6 - 2 + 2 = dr6
       functionsLike: {
         name: 'Lifebomb',
         exceptThat:
@@ -551,13 +586,15 @@ export const vivimancy: MysticSphere = {
       tags: ['Life'],
     },
 
-    // r2 area is drX-1. Calculate as a rank 4 spell, then subtract a full rank for the corpse
-    // requirement.
     {
       name: 'Corpse Explosion',
 
+      // Rank 3 Spell
+      // Area: Tiny radius from corpse (R1, mod 0)
+      // Mod: Corpse requirement (+1)
+      // Result: 3 + 0 + 1 = dr4
       attack: {
-        hit: `\\damagerankthree.`,
+        hit: `\\damagerankfour.`,
         halfOnMiss: true,
         targeting: `
           Choose one Small or larger \\glossterm{unattended} \\glossterm{corpse} within \\shortrange.
@@ -577,6 +614,10 @@ export const vivimancy: MysticSphere = {
     {
       name: 'Mighty Corpse Explosion',
 
+      // Rank 6 Spell
+      // Area: Small radius from corpse (R3, mod -1)
+      // Mod: Corpse requirement (+1)
+      // Result: 6 - 1 + 1 = dr6
       functionsLike: {
         name: 'corpse explosion',
         exceptThat:
@@ -683,9 +724,8 @@ export const vivimancy: MysticSphere = {
     {
       name: 'Enervating Wall',
 
-      cost: BARRIER_COOLDOWN,
       attack: {
-        hit: `\\damagerankone.`,
+        hit: `\\damageranktwo.`,
         halfOnMiss: true,
         targeting: `
           You create a \\medarealong \\glossterm{wall} within \\medrange.
@@ -804,11 +844,12 @@ export const vivimancy: MysticSphere = {
     {
       name: 'Drain Life',
 
+      // This pays no cost for the brief empower, which is a little weird.
       attack: {
-        hit: `\\damageranktwo.`,
+        hit: `\\damagerankone.`,
         injury: `You are \\briefly \\empowered.`,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\shortrange.
+          Make an attack vs. Fortitude against one creature within \\medrange.
         `,
       },
       rank: 1,
@@ -821,10 +862,10 @@ export const vivimancy: MysticSphere = {
       name: 'Mighty Drain Life',
 
       attack: {
-        hit: `\\damagerankfive, and any \\glossterm{extra damage} is doubled.`,
+        hit: `\\damagerankfour.`,
         injury: `You are \\briefly \\empowered.`,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\shortrange.
+          Make an attack vs. Fortitude against one creature within \\medrange.
         `,
       },
       rank: 4,
