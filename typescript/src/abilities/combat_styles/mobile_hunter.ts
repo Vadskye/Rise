@@ -22,7 +22,7 @@ export const mobileHunter: CombatStyle = {
       cost: 'One \\glossterm{fatigue level}, unless you have a \\glossterm{vital wound}.',
       effect: `
         You \\briefly gain a \\plus10 foot bonus to your \\glossterm{speed} and are \\primed.
-        \longreminder{This doesn't increase your \\glossterm{available movement} this turn.}
+        \\longreminder{This doesn't increase your \\glossterm{available movement} this turn.}
       `,
       rank: 1,
       roles: ['exertion', 'focus'],
@@ -34,7 +34,7 @@ export const mobileHunter: CombatStyle = {
       cost: 'One \\glossterm{fatigue level}, unless you have a \\glossterm{vital wound}.',
       effect: `
         You \\briefly gain a \\plus20 foot bonus to your \\glossterm{speed} and are \\primed.
-        \longreminder{This doesn't increase your \\glossterm{available movement} this turn.}
+        \\longreminder{This doesn't increase your \\glossterm{available movement} this turn.}
       `,
       rank: 5,
       roles: ['exertion', 'focus'],
