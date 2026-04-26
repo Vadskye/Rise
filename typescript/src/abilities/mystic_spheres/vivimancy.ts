@@ -724,6 +724,7 @@ export const vivimancy: MysticSphere = {
     {
       name: 'Enervating Wall',
 
+      cost: BARRIER_COOLDOWN,
       attack: {
         hit: `\\damageranktwo.`,
         halfOnMiss: true,
