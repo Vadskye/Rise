@@ -251,11 +251,10 @@ export const polymorph: MysticSphere = {
     {
       name: 'Mighty Disintegrate',
 
-      // -1dr for nonliving maximization
-
       functionsLike: {
         name: 'disintegrate',
-        exceptThat: 'the damage increases to \\damagerankten.',
+        exceptThat:
+          'the damage increases to \\damagerankten, and any \\glossterm{extra damage} is tripled.',
       },
       rank: 7,
       roles: ['burst'],
@@ -512,7 +511,10 @@ export const polymorph: MysticSphere = {
     {
       name: 'Flense',
 
-      // -1r for limited scope, -1r for Reflex extra gives 3 EA, or 2 after damage
+      // Rank 7 Spell
+      // Area: Small radius in Medium range (R4, mod -2)
+      // Mod: Double Defense (+1), Debuff (-1)
+      // Result: 7 - 2 + 1 - 1 = dr5
       attack: {
         hit: `
           \\damagerankfive, and any \\glossterm{extra damage} is doubled.
@@ -600,7 +602,6 @@ export const polymorph: MysticSphere = {
     {
       name: 'Impaling Fleshspike',
 
-      // HP slow with damage requires 2.6 EA, or r7. Melee range allows that at r5.
       attack: {
         hit: `
           \\damageranksix, and any \\glossterm{extra damage} is doubled.

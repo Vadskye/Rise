@@ -238,6 +238,8 @@ export const fabrication: MysticSphere = {
       // Area: Multi-target (max 2) (mod 0)
       // Mod: Cleave Bonus (+1), Inescapably Delayed (+1)
       // Result: 1 + 0 + 1 + 1 = dr3
+      // Keen for only two targets.
+      // Since dr4 has such strong power scaling, this would really rather be dr3 or dr5.
       attack: {
         hit: `
           \\damagerankthree.
@@ -278,6 +280,8 @@ export const fabrication: MysticSphere = {
       // Rank 4 Spell
       // Area: Small area radius from self (R0, mod +1)
       // Result: 4 + 1 = dr5
+      // This needs to be sufficiently different from executioner's axe, so it affects a
+      // larger area.
       attack: {
         hit: `\\damagerankfive.`,
         halfOnMiss: true,
