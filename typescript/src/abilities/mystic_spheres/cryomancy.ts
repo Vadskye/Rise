@@ -36,10 +36,13 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
   spells: [
     {
       name: 'Freezing Grasp',
-
       // Melee HP slow is normally 1.5 EA. Drop to 1.0 EA for delay, since delay is
       // particularly punishing if they already have to lose HP. With damage, that's 2
       // EA, so rank 4, or rank 2 in melee.
+      // Rank 3 Spell
+      // Range: Melee (mod +2)
+      // Mod: Debuff (-1)
+      // Result: 3 + 2 - 1 = dr4
       attack: {
         hit: `
           \\damagerankfour.
@@ -62,6 +65,10 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
     {
       name: 'Rapid Freezing Grasp',
 
+      // Rank 6 Spell
+      // Range: Melee (mod +2)
+      // Mod: Debuff (-1)
+      // Result: 6 + 2 - 1 = dr7
       attack: {
         hit: `
           \\damagerankseven, and any \\glossterm{extra damage} is doubled.
@@ -83,6 +90,9 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
     {
       name: 'Cone of Cold',
 
+      // Rank 2 Spell
+      // Area: Medium cone from self (R2, mod -1)
+      // Result: 2 - 1 = dr1
       attack: {
         hit: `\\damagerankone.`,
         halfOnMiss: true,
@@ -99,6 +109,9 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
     {
       name: 'Mighty Cone of Cold',
 
+      // Rank 5 Spell
+      // Area: Medium cone from self (R2, mod -1)
+      // Result: 5 - 1 = dr4
       attack: {
         hit: `\\damagerankfour.`,
         halfOnMiss: true,
@@ -135,6 +148,10 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       name: 'Icicle',
 
       cost: OPTIONAL_ICE_CRYSTAL,
+      // Rank 1 Spell
+      // Range: Medium (mod 0)
+      // Mod: Double Defense (+1)
+      // Result: 1 + 0 + 1 = dr2
       attack: {
         hit: `
           \\damageranktwo.
@@ -154,6 +171,10 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       name: 'Mighty Icicle',
 
       cost: OPTIONAL_ICE_CRYSTAL,
+      // Rank 4 Spell
+      // Range: Medium (mod 0)
+      // Mod: Double Defense (+1)
+      // Result: 4 + 0 + 1 = dr5
       attack: {
         hit: `
           \\damagerankfive, and any \\glossterm{extra damage} is doubled.
@@ -235,7 +256,10 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
     {
       name: 'Frostbite',
 
-      // +1dr for delay, +1dr for short range
+      // Rank 2 Spell
+      // Range: Short (mod +1)
+      // Mod: Inescapably Delayed (+1)
+      // Result: 2 + 1 + 1 = dr4
       attack: {
         hit: `
           The target feels a growing chill.
@@ -255,6 +279,10 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
     {
       name: 'Mighty Frostbite',
 
+      // Rank 6 Spell
+      // Range: Short (mod +1)
+      // Mod: Inescapably Delayed (+1)
+      // Result: 6 + 1 + 1 = dr8
       attack: {
         hit: `
           The target feels a growing chill.
@@ -274,11 +302,14 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
     {
       name: 'Hailstorm',
 
-      // -2dr for large area, -1dr for repeated damage, +1dr for double defense
+      // Rank 4 Spell
+      // Area: Small radius in Short range (R3, mod -1)
+      // Mod: Repeated (escapable) (-1), Double defense (+1)
+      // Result: 4 - 1 - 1 + 1 = dr3
       cost: OPTIONAL_ICE_CRYSTAL,
       attack: {
         hit: `
-          \\damageranktwo.
+          \\damagerankthree.
         `,
         halfOnMiss: true,
         targeting: `
@@ -296,14 +327,17 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
     {
       name: 'Massive Hailstorm',
 
-      // -2dr for large area, -1dr for repeated damage, +1dr for double defense
+      // Rank 7 Spell
+      // Area: Medium radius in Medium range (R5, mod -2)
+      // Mod: Repeated (escapable) (-1), Double defense (+1)
+      // Result: 7 - 2 - 1 + 1 = dr5
       attack: {
         hit: `
           \\damagerankfive.
         `,
         halfOnMiss: true,
         targeting: `
-          Choose a \\medarea radius within \\longrange.
+          Choose a \\medarea radius within \\medrange.
           Make an attack vs. Armor and Fortitude against everything in the area.
           If you spent an \\glossterm{ice crystal}, you only need to hit each target's Armor defense.
           At the start of your next turn, this effect \\glossterm{repeats} in the same area.
@@ -385,7 +419,10 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
     {
       name: 'Frost Breath',
 
-      // +1dr for delay
+      // Rank 3 Spell
+      // Area: Medium cone from self (R2, mod -1)
+      // Mod: Inescapably Delayed (+1), Attune (R1-4) (+1)
+      // Result: 3 - 1 + 1 + 1 = dr4
       attack: {
         hit: `
           The target feels a growing chill.
@@ -409,6 +446,10 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
     {
       name: 'Mighty Frost Breath',
 
+      // Rank 6 Spell
+      // Area: Medium cone from self (R2, mod -1)
+      // Mod: Inescapably Delayed (+1), Attune (R5+) (+2), Generator (-1)
+      // Result: 6 - 1 + 1 + 2 - 1 = dr7
       functionsLike: {
         name: 'frost breath',
         exceptThat: `
@@ -424,9 +465,11 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
     {
       name: 'Icicle Carapace',
 
-      // Common reactive damage
+      // Rank 4 Spell
+      // Mod: Reactive (-1), Double Defense (+1)
+      // Result: 4 - 1 + 1 = dr4
       attack: {
-        hit: `\\damagerankthree.`,
+        hit: `\\damagerankfour.`,
         targeting: `
           Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-\\weapontag{Long} weapon, make a \\glossterm{reactive attack} vs. Armor and Fortitude against them.
         `,
@@ -442,6 +485,9 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
     {
       name: 'Mighty Icicle Carapace',
 
+      // Rank 7 Spell
+      // Mod: Reactive (-1), Double Defense (+1)
+      // Result: 7 - 1 + 1 = dr7
       attack: {
         hit: `\\damagerankseven.`,
         targeting: `
@@ -608,6 +654,10 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       name: 'Bonechill',
 
       cost: 'One \\glossterm{ice crystal}.',
+      // Rank 2 Spell
+      // Range: Short (mod +1)
+      // Mod: Double Action (+2)
+      // Result: 2 + 1 + 2 = dr5
       attack: {
         hit: `
           \\damagerankfive, and any \\glossterm{extra damage} is doubled.
@@ -633,6 +683,10 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       name: 'Mighty Bonechill',
 
       cost: 'One \\glossterm{ice crystal}.',
+      // Rank 7 Spell
+      // Range: Short (mod +1)
+      // Mod: Double Action (+2)
+      // Result: 7 + 1 + 2 = dr10
       attack: {
         hit: `
           \\damagerankten, and any \\glossterm{extra damage} is tripled.
@@ -651,8 +705,10 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
     {
       name: 'Creeping Frost',
 
-      // Call it a r1 area, so drX. -1dr for extra area that almost never matters is
-      // painful, so also give a delayed ice crystal.
+      // Rank 2 Spell
+      // Area: Medium 5 ft. wide line from self (R0, mod +1)
+      // Mod: Repeated (escapable) (-1)
+      // Result: 2 + 1 - 1 = dr2
       attack: {
         hit: `
           \\damageranktwo.
@@ -672,6 +728,10 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
     {
       name: 'Mighty Creeping Frost',
 
+      // Rank 5 Spell
+      // Area: Medium 5 ft. wide line from self (R0, mod +1)
+      // Mod: Repeated (escapable) (-1)
+      // Result: 5 + 1 - 1 = dr5
       functionsLike: {
         name: 'creeping frost',
         exceptThat: 'the damage increases to \\damagerankfive.',
