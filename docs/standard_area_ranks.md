@@ -16,6 +16,8 @@ Rank 0 areas (4-8 squares) [Budget -1]:
     - This is obviously a larger area than a cone or line, but is also much harder to aim to only hit enemies
   - Enemies in Tiny radius from self (4s)
     - There is no such thing as "everything adjacent to you", because it's easy to make that functionally enemies-only on a grid system, but that's really annoying in practice.
+- Targets:
+  - Melee range, chain once
 
 Rank 1 areas (~12 squares) [Budget 0]:
 
@@ -27,6 +29,7 @@ Rank 1 areas (~12 squares) [Budget 0]:
 - Radius:
   - Tiny radius in Short range (4s)
 - Targets:
+  - Melee range, chain twice
   - Up to two creatures in Short range
   - Short range, chain once
 
@@ -42,7 +45,6 @@ Rank 2 areas (~24 squares) [Budget +1]:
 - Targets:
   - Up to three creatures in Short range
   - Up to two creatures in Medium range
-  - Short range, chain twice
 
 Rank 3 areas [Budget +1]:
 
@@ -57,7 +59,7 @@ Rank 3 areas [Budget +1]:
   - Two Tiny radii in Short range (8s)
 - Targets:
   - Up to four creatures in Short range
-  - Short range, chain three times
+  - Short range, chain twice
   - (unchanged) Up to two creatures in Medium range
   - Medium range, chain once
 
