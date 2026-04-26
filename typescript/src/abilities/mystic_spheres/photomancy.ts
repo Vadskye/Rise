@@ -185,7 +185,10 @@ export const photomancy: MysticSphere = {
     {
       name: 'Searing Light',
 
-      //
+      // Rank 1 Spell
+      // Range: Short (mod +1)
+      // Mod: Double Defense (+1)
+      // Result: 1 + 1 + 1 = dr3, flat (low) -> dr2
       attack: {
         hit: `
           \\damageranktwolow.
@@ -203,7 +206,10 @@ export const photomancy: MysticSphere = {
     {
       name: 'Solar Ray',
 
-      // No rank modifier for true sunlight
+      // Rank 4 Spell
+      // Range: Short (mod +1)
+      // Mod: Double Defense (+1)
+      // Result: 4 + 1 + 1 = dr6, flat (low) -> dr5
       attack: {
         hit: `
           \\damagerankfivelow, and any \\glossterm{extra damage} is doubled.
@@ -224,8 +230,6 @@ export const photomancy: MysticSphere = {
 
     {
       name: 'Mighty Solar Ray',
-
-      // No rank modifier for true sunlight
       attack: {
         hit: `
           \\damagerankeightlow, and any \\glossterm{extra damage} is tripled.
@@ -245,7 +249,6 @@ export const photomancy: MysticSphere = {
 
     {
       name: 'Solar Flare',
-
       // +1dr for not really escapable delay, +1dr for Fortitude and Reflex. Since this
       // deals flat damage, that adds up to +1 flat damage rank. The base damage rank for
       // a full area flat damage spell is -1dr, so this is just drX total.
@@ -295,7 +298,7 @@ export const photomancy: MysticSphere = {
       functionsLike: {
         name: 'radiant field',
         exceptThat:
-          'the area increases to a \\largearea radius \\glossterm{zone}, and the damage increases to \\damagerankfivelow.',
+          'the area increases to a \\largearea radius \\glossterm{zone}, and the damage increases to \\damagerankfourlow.',
       },
       rank: 6,
       roles: ['wildfire'],
@@ -305,7 +308,7 @@ export const photomancy: MysticSphere = {
       name: 'Pillars of Light',
 
       // This is basically an enemies-only large radius, but a
-      // little worse, so call it a r4 area.
+      // little worse, so call it a r5 area.
       attack: {
         hit: `
           \\damagerankthreelow.
@@ -506,7 +509,6 @@ export const photomancy: MysticSphere = {
     {
       name: 'Massive Chromatic Orb',
 
-      // Baseline would be r2, we increase to with 5 +1 area rank and extended area scaling for a total of area rank 6.
       attack: {
         hit: `
           \\damagerankfourlow, and the target \\briefly suffers one of the following effects, chosen randomly: \\dazzled, \\frightened by you, \\goaded by you, or -2 Reflex defense.
@@ -525,6 +527,10 @@ export const photomancy: MysticSphere = {
     {
       name: 'Lightbeam Dash',
 
+      // Rank 3 Spell
+      // Area: Medium line from self (R0, mod +1)
+      // Mod: Teleport Cost (-1)
+      // Result: 3 + 1 - 1 = dr3, flat (low) -> dr3 (represented as dr3low)
       attack: {
         // TODO: dr2 or dr3?
         hit: `\\damagerankthreelow.`,
@@ -543,6 +549,10 @@ export const photomancy: MysticSphere = {
     {
       name: 'Distant Lightbeam Dash',
 
+      // Rank 6 Spell
+      // Area: Long line from self (R1, mod 0)
+      // Mod: Teleport Cost (-1), No half damage on miss (-1)
+      // Result: 6 + 0 - 1 - 1 = dr4, flat (low) -> dr4 (represented as dr5low)
       attack: {
         hit: `\\damagerankfivelow.`,
         halfOnMiss: true,
@@ -605,6 +615,9 @@ export const photomancy: MysticSphere = {
     {
       name: 'Reflective Lightbeam',
 
+      // Rank 3 Spell
+      // Area: Large line from self (R3, mod -1)
+      // Result: 3 - 1 = dr2, flat (low) -> dr1 (represented as dr2low)
       attack: {
         hit: `\\damageranktwolow.`,
         halfOnMiss: true,
@@ -622,6 +635,9 @@ export const photomancy: MysticSphere = {
     {
       name: 'Mighty Reflective Lightbeam',
 
+      // Rank 6 Spell
+      // Area: Large line from self (R3, mod -1)
+      // Result: 6 - 1 = dr5, flat (low) -> dr4 (represented as dr5low)
       functionsLike: {
         name: 'reflective lightbeam',
         exceptThat:
