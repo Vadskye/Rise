@@ -62,6 +62,8 @@ Buffs granted by a damaging ability cost budget based on their Effective Actions
 | +1    | Inescapably Delayed | Damage that happens 1 round later (not escapable)      |
 | +2    | Escapably Delayed   | Damage that happens 1 round later (escapable)          |
 | +1    | Double defense      | Must hit two separate defenses to succeed              |
+| +1    | Accuracy Penalty    | Attack is made with a -2 accuracy penalty              |
+| +2    | Accuracy Penalty    | Attack is made with a -4 accuracy penalty              |
 
 ### Injury and Flat Damage
 
