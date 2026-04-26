@@ -12,7 +12,10 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
   // Two modes for ice crystal spenders:
   // * Base spell is normal rank, ice crystal makes it +1 rank stronger (example: +2 accuracy)
   // * Base spell is -1 rank below baseline power, ice crystal makes it +2 ranks above baseline power (example: +4 accuracy)
-  // Generating an ice crystal reduces a spell's effective rank by 1.
+  // Two modes for ice crystal generators:
+  // * Base spell is normal rank, generate an ice crystal conditionally (about 25% of the time)
+  // * Base spell is -1 rank below baseline power, always generate an ice crystal
+  // Narratively, ice crystal *spenders* generally create physical ice, while ice crystal *generators* generally directly lower temperature.
   specialRules: `
     Many spells from this mystic sphere become stronger if you spend ice crystals, and some spells generate ice crystals.
     You can normally have a maximum of three ice crystals.
@@ -37,15 +40,13 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       // Melee HP slow is normally 1.5 EA. Drop to 1.0 EA for delay, since delay is
       // particularly punishing if they already have to lose HP. With damage, that's 2
       // EA, so rank 4, or rank 2 in melee.
-      cost: OPTIONAL_ICE_CRYSTAL,
       attack: {
         hit: `
-          \\damagerankthree.
+          \\damagerankfour.
         `,
         injury: `
           The target slowly begins freezing as a \\glossterm{condition}.
-          At the end of your next turn, it becomes \\slowed.
-          If you spent an ice crystal, it becomes \\slowed immediately.
+          At the end of your next turn, it becomes \\slowed and you gain an \\glossterm{ice crystal}.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -61,22 +62,20 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
     {
       name: 'Rapid Freezing Grasp',
 
-      cost: OPTIONAL_ICE_CRYSTAL,
       attack: {
         hit: `
-          \\damagerankfive.
+          \\damagerankseven, and any \\glossterm{extra damage} is doubled.
         `,
         injury: `
-          The target becomes \\slowed as a \\glossterm{condition}.
+          The target becomes \\slowed as a \\glossterm{condition}, and you gain an \\glossterm{ice crystal}.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
           Make an attack vs. Fortitude against something you \\glossterm{touch}.
-          If you spent an ice crystal, you gain a \\plus2 accuracy bonus with the attack.
         `,
       },
-      rank: 5,
+      rank: 6,
       roles: ['maim'],
       scaling: 'damage',
     },
@@ -85,14 +84,14 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       name: 'Cone of Cold',
 
       attack: {
-        hit: `\\damageranktwo.`,
+        hit: `\\damagerankone.`,
         halfOnMiss: true,
         targeting: `
-          Make an attack vs. Fortitude against everything in a \\smallarea cone from you.
-          If you have no \\glossterm{ice crystals}, you gain an ice crystal.
+          Make an attack vs. Fortitude against everything in a \\medarea cone from you.
+          If the area includes at least three spaces occupied by living creatures or other heat sources, you gain an \\glossterm{ice crystal}.
         `,
       },
-      rank: 1,
+      rank: 2,
       roles: ['clear', 'generator'],
       scaling: 'damage',
     },
@@ -105,7 +104,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         halfOnMiss: true,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\medarea cone from you.
-          If you have no \\glossterm{ice crystals}, you gain an ice crystal.
+          If the area includes at least three spaces occupied by living creatures or other heat sources, you gain an \glossterm{ice crystal}.
         `,
       },
       rank: 5,
@@ -390,7 +389,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       attack: {
         hit: `
           The target feels a growing chill.
-          At the end of its next turn, it takes \\damagerankfive.
+          At the end of its next turn, it takes \\damagerankfour.
         `,
         halfOnMiss: true,
         targeting: `
@@ -413,7 +412,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       functionsLike: {
         name: 'frost breath',
         exceptThat: `
-          the damage increases to \\damagerankeight, and the area increases to a \\largearea cone.
+          the damage increases to \\damagerankseven.
         `,
       },
       rank: 6,

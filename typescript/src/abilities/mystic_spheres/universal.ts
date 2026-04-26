@@ -99,7 +99,7 @@ export const universal: MysticSphere = {
       name: 'Mystic Blast',
 
       attack: {
-        hit: `\\damageranktwo.`,
+        hit: `\\damagerankone.`,
         halfOnMiss: true,
         targeting: `
           Make an attack vs. Reflex and one other defense against everything in a \\medarea cone from you.
@@ -111,17 +111,17 @@ export const universal: MysticSphere = {
       scaling: 'damage',
     },
     {
-      name: 'Massive Mystic Blast',
+      name: 'Mighty Mystic Blast',
 
       attack: {
-        hit: `\\damageranktwo.`,
+        hit: `\\damagerankfour.`,
         halfOnMiss: true,
         targeting: `
-          Make an attack vs. Reflex and one other defense against everything in a \\largearea cone from you.
+          Make an attack vs. Reflex and one other defense against everything in a \\medarea cone from you.
           The valid targets for this spell, and the extra defense you attack, depend on the mystic sphere you learn this spell with (see \\tref{Universal Mystic Spheres}).
         `,
       },
-      rank: 3,
+      rank: 4,
       roles: ['clear'],
       scaling: 'damage',
     },
