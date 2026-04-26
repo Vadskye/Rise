@@ -465,11 +465,8 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
     {
       name: 'Icicle Carapace',
 
-      // Rank 4 Spell
-      // Mod: Reactive (-1), Double Defense (+1)
-      // Result: 4 - 1 + 1 = dr4
       attack: {
-        hit: `\\damagerankfour.`,
+        hit: `\\damagerankthree.`,
         targeting: `
           Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-\\weapontag{Long} weapon, make a \\glossterm{reactive attack} vs. Armor and Fortitude against them.
         `,
@@ -485,9 +482,6 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
     {
       name: 'Mighty Icicle Carapace',
 
-      // Rank 7 Spell
-      // Mod: Reactive (-1), Double Defense (+1)
-      // Result: 7 - 1 + 1 = dr7
       attack: {
         hit: `\\damagerankseven.`,
         targeting: `
