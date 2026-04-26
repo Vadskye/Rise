@@ -10,9 +10,9 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
   shortDescription: 'Drain heat to injure and freeze foes.',
   sources: ['arcane', 'nature', 'pact'],
   // Two modes for ice crystal spenders:
-  // * Base spell is normal rank, ice crystal makes it +1 rank stronger (+2 accuracy)
-  // * Base spell is -1 rank, ice crystal makes it +2 ranks stronger
-  // Generating an ice crystal reduces a spell's rank by 1.
+  // * Base spell is normal rank, ice crystal makes it +1 rank stronger (example: +2 accuracy)
+  // * Base spell is -1 rank below baseline power, ice crystal makes it +2 ranks above baseline power (example: +4 accuracy)
+  // Generating an ice crystal reduces a spell's effective rank by 1.
   specialRules: `
     Many spells from this mystic sphere become stronger if you spend ice crystals, and some spells generate ice crystals.
     You can normally have a maximum of three ice crystals.
