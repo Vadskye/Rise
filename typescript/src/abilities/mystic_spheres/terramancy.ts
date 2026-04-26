@@ -205,14 +205,14 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       name: 'Mighty Rockshard Blast',
 
       // Rank 4 Spell
-      // Area: Med cone from self (R2, mod -1)
+      // Area: Small cone from self (R0, mod +1)
       // Mod: Double Defense (+1), Accuracy Bonus (-1)
-      // Result: 4 - 1 + 1 - 1 = dr3
+      // Result: 4 + 1 + 1 - 1 = dr5
       attack: {
-        hit: `\\damagerankthree.`,
+        hit: `\\damagerankfive.`,
         halfOnMiss: true,
         targeting: `
-          Make an attack vs. Armor and Reflex against everything in a \\medarea cone from you.
+          Make an attack vs. Armor and Reflex against everything in a \\smallarea cone from you.
           You gain a +2 \\glossterm{accuracy} bonus if you are \\glossterm{grounded} on stone.
         `,
       },
