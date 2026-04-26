@@ -30,7 +30,7 @@ Single-target attacks against Reflex defense incur a -1 modifier (-1 dr) because
 | -2              | Damage over time          | "Immediately and next round" (drX-2)                      |
 | -2              | DoT condition (Move)      | "As a condition" with Move action removal (drX-2)         |
 | -3              | DoT condition (Standard)  | "As a condition" with Standard action removal (drX-3)     |
-| -1              | Debuff                    | If the spell includes a debuff (Rank X+1)                 |
+| -1              | Debuff                    | If the spell includes a debuff (drX-1)                    |
 | +2              | Injury-only               | Spell only affects injured targets                        |
 | -1              | Injury-only double damage | Immediate for most areas, delayed if targeting cost is -1 |
 | -2              | Injury-only double damage | Only for touch range                                      |
