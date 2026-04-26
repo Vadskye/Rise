@@ -69,8 +69,10 @@ pub fn vampire<'a>() -> Vec<RankAbility<'a>> {
                   \item Bat: While in your bat form, you gain \sense{blindsense} (120 ft.) and \sense{blindsight} (30 ft.).
                     You cannot speak and have no \glossterm{free hands}.
                     All of your normal movement modes are replaced with an average fly speed with a 60 ft. height limit.
+                    Since you are Tiny, your base speed is reduced to 20 feet.
                   \item Rat: While in your rat form, you gain \trait{scent} and \trait{low-light vision}.
                     You cannot speak and have no \glossterm{free hands}, but you have four legs, making you \trait{quadrupedal}.
+                    Since you are Tiny, your base speed is reduced to 20 feet, for a total speed of 30 feet.
                 \end{raggeditemize}
 
                 In either non-humanoid form, you are unable to take any standard actions, but you can still take \glossterm{move actions} in place of standard actions.
