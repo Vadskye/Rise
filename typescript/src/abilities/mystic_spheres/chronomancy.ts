@@ -660,6 +660,12 @@ export const chronomancy: MysticSphere = {
     },
     {
       name: 'Unstable Aging',
+
+      // Rank 1 Spell
+      // Range: Medium (mod 0)
+      // Bonus: Accuracy Penalty (-4) (mod +2)
+      // Limitation: Mortal creatures only (mod 0 - too common to affect damage)
+      // Result: 1 + 0 + 2 = dr3
       attack: {
         hit: `
           \\damagerankthree.
@@ -675,6 +681,12 @@ export const chronomancy: MysticSphere = {
     },
     {
       name: 'Mighty Unstable Aging',
+
+      // Rank 4 Spell
+      // Range: Medium (mod 0)
+      // Bonus: Accuracy Penalty (-4) (mod +2)
+      // Limitation: Mortal creatures only (mod 0 - too common to affect damage)
+      // Result: 4 + 0 + 2 = dr6
       attack: {
         hit: `
           \\damageranksix, and any \\glossterm{extra damage} is doubled.
