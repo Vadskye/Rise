@@ -83,7 +83,9 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: 'Desiccate',
 
-      // No penalty for the extremely rare bonus
+      // Rank 2 Spell
+      // Range: Short (mod +1)
+      // Result: 2 + 1 = dr3
       attack: {
         hit: `
           \\damagerankthree.
@@ -100,17 +102,19 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: 'Mighty Desiccate',
 
-      // No penalty for the extremely rare bonus
+      // Rank 5 Spell
+      // Range: Short (mod +1)
+      // Result: 5 + 1 = dr6
       attack: {
         hit: `
-          \\damagerankseven.
+          \\damageranksix.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
           You gain a +4 accuracy bonus if the target is native to water, which is typically true for creatures with a swim speed and no walk speed.
         `,
       },
-      rank: 6,
+      rank: 5,
       roles: ['burst'],
       scaling: 'damage',
     },
@@ -164,6 +168,10 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: 'Crashing Wave',
 
+      // Rank 1 Spell
+      // Area: Medium 10' wide line from self (R1, mod 0)
+      // Bonus: Double defense (mod +1)
+      // Result: 1 + 0 + 1 = dr2
       attack: {
         hit: `
           \\damageranktwo.
@@ -182,6 +190,10 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: 'Mighty Crashing Wave',
 
+      // Rank 4 Spell
+      // Area: Medium 10' wide line from self (R1, mod 0)
+      // Bonus: Double defense (mod +1)
+      // Result: 4 + 0 + 1 = dr5
       attack: {
         hit: `
           \\damagerankfive.
@@ -241,7 +253,9 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: 'Surfing Slam',
 
-      // Treat this as a short range attack. Moving is sometimes good, sometimes bad.
+      // Rank 2 Spell
+      // Range: Short (mod +1 - treated as Short despite "Touch" due to mobility)
+      // Result: 2 + 1 = dr3
       attack: {
         hit: `
           \\damagerankthree.
@@ -259,7 +273,9 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: 'Mighty Surfing Slam',
 
-      // Treat this as a short range attack. Moving is sometimes good, sometimes bad.
+      // Rank 5 Spell
+      // Range: Short (mod +1)
+      // Result: 5 + 1 = dr6
       attack: {
         hit: `
           \\damageranksix.
@@ -277,6 +293,11 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: 'Fountain',
 
+      // Rank 3 Spell
+      // Area: Small radius from self (R0)
+      // Bonus: Enemies only (radius from self, +2 Area Rank) -> R2 area (mod -1)
+      // Bonus: Double defense (mod +1)
+      // Result: 3 - 1 + 1 = dr3
       attack: {
         hit: `
           \\damagerankthree.
@@ -295,6 +316,11 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: 'Mighty Fountain',
 
+      // Rank 6 Spell
+      // Area: Small radius from self (R0)
+      // Bonus: Enemies only (radius from self, +2 Area Rank) -> R2 area (mod -1)
+      // Bonus: Double defense (mod +1)
+      // Result: 6 - 1 + 1 = dr6
       attack: {
         hit: `
           \\damageranksix.
@@ -358,8 +384,11 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: 'Raging River',
 
-      // Ranged push is 0.9 EA, so damaging ranged push is 1.9 EA. Round down to 1.8 since
-      // this is less than Medium range. +1 rank for Sustain (attunable, standard)?
+      // Rank 4 Spell
+      // Area: Medium 10' wide line from self (R1, mod 0)
+      // Effect: Debuff (Push 15') (mod -1)
+      // Effect: Sustain (attunable, standard) (mod -1)
+      // Result: 4 + 0 - 1 - 1 = dr2
       attack: {
         hit: `
           \\damageranktwo.
@@ -383,6 +412,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       name: 'Geyser',
 
       // -1r for reflex single target area, -1r for sustain minor in tiny area?
+
       attack: {
         hit: `
           \\damagerankone.
@@ -504,7 +534,10 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: 'Water Whip',
 
-      // -1dr for push
+      // Rank 1 Spell
+      // Range: Short (mod +1)
+      // Effect: Debuff (Push 15') (mod -1)
+      // Result: 1 + 1 - 1 = dr1
       attack: {
         hit: `
           \\damagerankone.
@@ -524,7 +557,10 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: 'Intense Water Whip',
 
-      // -1dr for push
+      // Rank 4 Spell
+      // Range: Short (mod +1)
+      // Effect: Debuff (Push 30') (mod -1)
+      // Result: 4 + 1 - 1 = dr4
       attack: {
         hit: `
           \\damagerankfour.
@@ -629,6 +665,10 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: 'Aquajet Grasp',
 
+      // Rank 1 Spell
+      // Range: Melee (mod +2)
+      // Effect: Debuff (Fling 15') (mod -1)
+      // Result: 1 + 2 - 1 = dr2
       attack: {
         hit: `
           \\damageranktwo.
@@ -652,6 +692,10 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: 'Intense Aquajet Grasp',
 
+      // Rank 6 Spell
+      // Range: Melee (mod +2)
+      // Effect: Debuff (Fling 30') (mod -1)
+      // Result: 6 + 2 - 1 = dr7
       functionsLike: {
         name: 'aquajet grasp',
         exceptThat:
@@ -787,7 +831,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       name: 'Drowning Grasp',
 
       // Touch range would normally be dr4.
-      // Drop to dr3 for accuracy and rarely releavnt condition.
+      // Drop to dr3 for accuracy and rarely relevant condition.
       attack: {
         hit: `
           \\damageranktwo.
