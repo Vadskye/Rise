@@ -78,9 +78,9 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       name: 'Stoke the Fires',
 
       // Rank 3 Spell
-      // Area: Enemies in Tiny radius from self (R0, cost -1)
-      // Buff: Briefly Empowered (0.4 EA guaranteed, cost 2)
-      // Result: 3 - (-1) - 2 = dr2
+      // Area: Enemies in Tiny radius from self (R0, mod +1)
+      // Buff: Briefly Empowered (0.4 EA guaranteed, mod -2)
+      // Result: 3 + 1 - 2 = dr2
       attack: {
         hit: `
           \\damageranktwo.
@@ -100,9 +100,9 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       name: 'Stoke the Bonfire',
 
       // Rank 6 Spell
-      // Area: Enemies in Tiny radius from self (R0, cost -1)
-      // Buff: Briefly Empowered (0.4 EA guaranteed, cost 2)
-      // Result: 6 - (-1) - 2 = dr5
+      // Area: Enemies in Tiny radius from self (R0, mod +1)
+      // Buff: Briefly Empowered (0.4 EA guaranteed, mod -2)
+      // Result: 6 + 1 - 2 = dr5
       attack: {
         hit: `
           \\damagerankfive.
@@ -122,10 +122,10 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       name: 'Desperate Kindling',
 
       // Rank 4 Spell
-      // Area: Small radius from self (R0, cost -1)
-      // Bonus: Fatigue Level (+1), Self-Hit (+1)
-      // Buff: Briefly Maximized (0.7 EA guaranteed, cost 4)
-      // Result: 4 - (-1) - 4 + 2 = dr3
+      // Area: Small radius from self (R0, mod +1)
+      // Bonus: Fatigue Level (mod +1), Self-Hit (mod +1)
+      // Buff: Briefly Maximized (0.7 EA guaranteed, mod -4)
+      // Result: 4 + 1 - 4 + 2 = dr3
       cost: 'One \\glossterm{fatigue level}.',
       attack: {
         hit: `
@@ -146,10 +146,10 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       name: 'Desperate Pyre',
 
       // Rank 7 Spell
-      // Area: Small radius from self (R0, cost -1)
-      // Bonus: Fatigue Level (+1), Self-Hit (+1)
-      // Buff: Briefly Maximized (0.7 EA guaranteed, cost 4)
-      // Result: 7 - (-1) - 4 + 2 = dr6
+      // Area: Small radius from self (R0, mod +1)
+      // Mod: Fatigue Level (mod +1), Self-Hit (mod +1)
+      // Buff: Briefly Maximized (0.7 EA guaranteed, mod -4)
+      // Result: 7 + 1 - 4 + 2 = dr6
       cost: 'One \\glossterm{fatigue level}.',
       attack: {
         hit: `
@@ -215,9 +215,9 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       name: 'Pyroclasm',
 
       // Rank 3 Spell
-      // Area: Med radius from self (R2, cost 1)
-      // Mod: DoT (-2), Self-hit bonus (+1), Escapable (+1)
-      // Result: 3 - 1 - 0 = dr2
+      // Area: Med radius from self (R2, mod -1)
+      // Mod: DoT (mod -2), Self-hit (mod +1), Escapable (mod +1)
+      // Result: 3 - 1 - 2 + 1 + 1 = dr2
       attack: {
         hit: `
           \\damageranktwo.
@@ -239,9 +239,9 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       name: 'Mighty Pyroclasm',
 
       // Rank 6 Spell
-      // Area: Large radius from self (R4, cost 2)
-      // Mod: Twice (-2), Self-hit bonus (+1), Escapable (+1)
-      // Result: 6 - 2 - 0 = dr4
+      // Area: Large radius from self (R4, mod -2)
+      // Mod: Twice (mod -2), Self-hit (mod +1), Escapable (mod +1)
+      // Result: 6 - 2 - 2 + 1 + 1 = dr4
       attack: {
         hit: `
           \\damagerankfour.
@@ -263,7 +263,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       name: 'Fireball',
 
       // Rank 3 Spell
-      // Area: Small radius in Short range (R3, cost 1)
+      // Area: Small radius in Short range (R3, mod -1)
       // Result: 3 - 1 = dr2
       attack: {
         hit: `\\damageranktwo.`,
@@ -282,7 +282,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       name: 'Split Fireball',
 
       // Rank 5 Spell
-      // Area: Two Tiny radii in Short range (R4, cost 1)
+      // Area: Two Tiny radii in Short range (R3, mod -1)
       // Result: 5 - 1 = dr4
       attack: {
         hit: `\\damagerankfour.`,
@@ -321,7 +321,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       name: 'Immolating Fireball',
 
       // Rank 6 Spell
-      // Area: Small radius in Short range (R3, cost 1)
+      // Area: Small radius in Short range (R3, mod -1)
       // Result: 6 - 1 = dr5
       attack: {
         hit: `
@@ -360,9 +360,9 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       name: 'Mighty Fan of Flames',
 
       // Rank 5 Spell
-      // Area: Small cone from you (R0, cost -1)
+      // Area: Small cone from you (R0, mod +1)
       // Mod: DoT (-2)
-      // Result: 5 - (-1) - 2 = dr4 (twice)
+      // Result: 5 + 1 - 2 = dr4 (twice)
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `\\damagerankfour immediately, and again at the end of the target's next turn.`,
@@ -380,7 +380,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       name: 'Ignition',
 
       // Rank 2 Spell
-      // Range: Short (cost -1)
+      // Range: Short (mod +1)
       // Mod: Condition (Move removal) (-2)
       // Result: 2 + 1 - 2 = dr1
       attack: {
@@ -669,8 +669,8 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       name: 'Pyrohemia',
 
       // Rank 1 spell
-      // Area: Med cone (R2, +1 cost)
-      // Mods: Injury-only double damage (+1 cost), double defense (+1 budget)
+      // Area: Med cone (R2, mod -1)
+      // Mods: Injury-only double damage (mod -1), double defense (mod +1)
       // Injury-only damage combines poorly with area, so we give this a free +1dr.
       // Result: 1 - 1 - 1 + 1 + 1 = dr1
 
