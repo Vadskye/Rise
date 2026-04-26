@@ -116,7 +116,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       name: 'Lightning Bolt',
 
       // Rank 3 Spell
-      // Area: Large line, 5 ft. wide from self (R2, cost +1)
+      // Area: Large line, 5 ft. wide from self (R2, mod -1)
       // Result: 3 - 1 = dr2
       attack: {
         hit: `\\damageranktwo.`,
@@ -130,7 +130,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       scaling: 'damage',
     },
     // Rank 5 Spell
-    // Area: Huge line, 15 ft. wide from self (R5, cost +2)
+    // Area: Huge line, 15 ft. wide from self (R5, mod -2)
     // Result: 5 - 2 = dr3
     {
       name: 'Massive Lightning Bolt',
@@ -151,8 +151,8 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       name: 'Arcing Grasp',
 
       // Rank 1 Spell
-      // Rank 0 area (cost -1)
-      // Result: 1 - (-1) = dr2
+      // Rank 0 area (mod +1)
+      // Result: 1 + 1 = dr2
       attack: {
         hit: `\\damageranktwo.`,
         targeting: `
@@ -171,8 +171,8 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       name: 'Mighty Arcing Grasp',
 
       // Rank 4 Spell
-      // Rank 0 area (cost -1)
-      // Result: 4 - (-1) = dr5
+      // Rank 0 area (mod +1)
+      // Result: 4 + 1 = dr5
       attack: {
         hit: `\\damagerankfive, and any \\glossterm{extra damage} is doubled.`,
         targeting: `
@@ -259,7 +259,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       name: 'Arc',
 
       // Rank 1 Spell
-      // Area: Short range, chain once (R1, cost 0)
+      // Area: Short range, chain once (R1, mod -0)
       // Result: 1 - 0 = dr1
       attack: {
         hit: `
@@ -280,7 +280,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       name: 'Multiarc',
 
       // Rank 3 Spell
-      // Area: Short range, chain twice (R2, cost +1)
+      // Area: Short range, chain twice (R2, mod -1)
       // Result: 3 - 1 = dr2
       attack: {
         hit: `
@@ -301,7 +301,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       name: 'Mighty Arc',
 
       // Rank 5 Spell
-      // Area: Short range, chain once (R1, cost 0)
+      // Area: Short range, chain once (R1, mod -0)
       // Result: 5 - 0 = dr5
       attack: {
         hit: `\\damagerankfive, and any \\glossterm{extra damage} is doubled.`,
@@ -320,8 +320,8 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       name: 'Electromagnetic Arc',
 
       // Rank 4 Spell
-      // Area: Short range, chain twice (R2, cost +1)
-      // Mod: Metallic properties increase to Rank 3 Area (+1 budget cost)
+      // Area: Short range, chain twice (R2, mod -1)
+      // Mod: Metallic properties increase to Rank 3 Area (mod -1)
       // Result: 4 - 1 = dr3
       attack: {
         hit: `\\damagerankthree.`,
@@ -342,8 +342,8 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       name: 'Mighty Electromagnetic Arc',
 
       // Rank 7 Spell
-      // Area: Short range, chain twice (R2, cost +1)
-      // Mod: Metallic properties increase to Rank 3 Area (+1 budget cost)
+      // Area: Short range, chain twice (R2, mod -1)
+      // Mod: Metallic properties increase to Rank 3 Area (mod -1)
       // Result: 7 - 1 = dr6
       functionsLike: {
         name: 'electromagnetic arc',
@@ -370,7 +370,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       name: 'Chain Lightning',
 
       // Rank 4 Spell
-      // Area: Short range, chain five times (R4, cost +2)
+      // Area: Short range, chain five times (R4, mod -2)
       // Result: 4 - 2 = dr2
       attack: {
         hit: `\\damageranktwo.`,
@@ -408,7 +408,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       name: 'Call Lightning',
 
       // Rank 3 Spell
-      // Area: Large line, 5 ft. wide within Long range (R2, cost +1)
+      // Area: Large line, 5 ft. wide within Long range (R2, mod -1)
       // (This spell has an unusual area structure that doesn't perfectly match standards)
       // Result: 3 - 1 = dr2
       // TODO: redesign as attunement?
@@ -435,7 +435,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       name: 'Mighty Call Lightning',
 
       // Rank 6 Spell
-      // Area: Large line, 5 ft. wide within Long range (R2, cost +1)
+      // Area: Large line, 5 ft. wide within Long range (R2, mod -1)
       // Result: 6 - 1 = dr5
       functionsLike: {
         name: 'call lightning',
@@ -465,8 +465,8 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       name: 'Lightning Breath',
 
       // Rank 3 Spell
-      // Area: Large line, 5 ft. wide from self (R2, cost +1)
-      // Mod: Attune (R1-4) (+1 budget bonus)
+      // Area: Large line, 5 ft. wide from self (R2, mod -1)
+      // Mod: Attune (R1-4) (mod +1)
       // Result: 3 - 1 + 1 = dr3
       attack: {
         hit: `\\damagerankthree.`,
@@ -487,8 +487,8 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       name: 'Mighty Lightning Breath',
 
       // Rank 6 Spell
-      // Area: Large line, 10 ft. wide from self (R3, cost +1)
-      // Mod: Attune (R5+) (+2 budget bonus)
+      // Area: Large line, 10 ft. wide from self (R3, mod -1)
+      // Mod: Attune (R5+) (mod +2)
       // Result: 6 - 1 + 2 = dr7
       functionsLike: {
         name: 'lightning breath',
@@ -506,8 +506,8 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       name: 'Ball Lightning',
 
       // Rank 4 Spell
-      // Area: Medium size space in Medium range (R0, cost -1)
-      // Result: 4 - (-1) = dr5
+      // Area: Medium size space in Medium range (R0, mod +1)
+      // Result: 4 + 1 = dr5
       // As a minor action attack, this deals ~40% damage, so we use dr0
       // TODO: clean up wording
       attack: {
@@ -568,9 +568,9 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       name: 'Electrocute',
 
       // Rank 2 Spell
-      // Range: Short (cost -1)
-      // Mod: -4 accuracy penalty (+2 budget bonus)
-      // Result: 2 - (-1) + 2 = dr5
+      // Range: Short (mod +1)
+      // Mod: -4 accuracy penalty (mod +2)
+      // Result: 2 + 1 + 2 = dr5
       attack: {
         // add trivial extra benefit for fun
         hit: `
@@ -591,9 +591,9 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       name: 'Mighty Electrocute',
 
       // Rank 5 Spell
-      // Range: Short (cost -1)
-      // Mod: -4 accuracy penalty (+2 budget bonus)
-      // Result: 5 - (-1) + 2 = dr8
+      // Range: Short (mod +1)
+      // Mod: -4 accuracy penalty (mod +2)
+      // Result: 5 + 1 + 2 = dr8
       functionsLike: {
         name: 'electrocute',
         exceptThat: 'the damage increases to \\damagerankeight.',
@@ -607,9 +607,9 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       name: 'Thunderdash',
 
       // Rank 3 Spell
-      // Area: Medium 5 ft. wide line from self (R0, cost -1)
-      // Mod: Teleport buff cost (estimated at 2 EA, cost +2)
-      // Result: 3 - (-1) - 2 = dr2
+      // Area: Medium 5 ft. wide line from self (R0, mod +1)
+      // Mod: Teleport buff cost (estimated at 2 EA, mod -2)
+      // Result: 3 + 1 - 2 = dr2
       attack: {
         hit: `\\damageranktwo.`,
         halfOnMiss: true,
@@ -653,8 +653,8 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       name: 'Distant Thunderdash',
 
       // Rank 6 Spell
-      // Area: Large 5 ft. wide line from self (R2, cost +1)
-      // Mod: Teleport buff cost (estimated at 1 EA, cost +1)
+      // Area: Large 5 ft. wide line from self (R2, mod -1)
+      // Mod: Teleport buff cost (estimated at 1 EA, mod -1)
       // Result: 6 - 1 - 1 = dr4
       attack: {
         hit: `\\damagerankfour.`,
@@ -767,9 +767,9 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       name: 'Static Shock',
 
       // Rank 1 Spell
-      // Range: Melee (cost -2)
-      // Mod: braced (1.0 EA, cost +2)
-      // Result: 1 - (-2) - 2 = dr1
+      // Range: Melee (mod +2)
+      // Mod: braced (1.0 EA, mod -2)
+      // Result: 1 + 2 - 2 = dr1
       attack: {
         hit: `\\damagerankone.`,
         targeting: `
@@ -787,9 +787,9 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       name: 'Mighty Static Shock',
 
       // Rank 5 Spell
-      // Range: Melee (cost -2)
-      // Mod: Condition (braced) (1.0 EA, cost +2)
-      // Result: 5 - (-2) - 2 = dr5
+      // Range: Melee (mod +2)
+      // Mod: Condition (braced) (1.0 EA, mod -2)
+      // Result: 5 + 2 - 2 = dr5
       functionsLike: {
         name: 'static shock',
         exceptThat: 'the damage increases to \\damagerankfive.',
