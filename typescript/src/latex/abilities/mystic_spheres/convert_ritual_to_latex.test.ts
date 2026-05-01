@@ -14,7 +14,7 @@ t.test('convertRitualToLatex', (t) => {
       fatigueCost: true,
     };
     const latex = convertRitualToLatex(ritual);
-    t.match(latex, /This ritual requires one \\glossterm\{fatigue level\} from its participants\./);
+    t.match(latex, /\\abilitycost one \\glossterm\{fatigue level\} from its participants\./);
     t.end();
   });
 
@@ -45,7 +45,7 @@ t.test('convertRitualToLatex', (t) => {
     };
     const latex = convertRitualToLatex(ritual);
     // 2^2 * 2 = 8
-    t.match(latex, /This ritual requires 8 \\glossterm\{fatigue levels\} from its participants\./);
+    t.match(latex, /\\abilitycost 8 \\glossterm\{fatigue levels\} from its participants\./);
     t.end();
   });
 
