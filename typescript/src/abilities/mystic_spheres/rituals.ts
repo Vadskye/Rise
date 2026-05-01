@@ -2769,7 +2769,7 @@ export const rituals: RitualDefinition[] = [
         A successful Awareness check that beats your Disguise check only reveals that your body's appearance has been magically altered.
       `,
     },
-    tags: ['Sustain (attunable, minor)'],
+    type: 'Sustain (attunable, minor)',
     spheres: ['Photomancy', 'Polymorph'],
   },
   {
@@ -2785,7 +2785,7 @@ export const rituals: RitualDefinition[] = [
     },
     rank: 4,
     roles: ['narrative'],
-    tags: ['Sustain (attunable, minor)'],
+    type: 'Sustain (attunable, minor)',
     spheres: ['Photomancy', 'Polymorph'],
   },
   {
@@ -2872,7 +2872,7 @@ export const rituals: RitualDefinition[] = [
       5: `You can increase the radius to a \\largearea radius.`,
       7: `You can increase the radius to a \\hugearea radius.`,
     },
-    tags: ['Sustain (attunable, minor)'],
+    type: 'Sustain (attunable, minor)',
     spheres: ['Umbramancy'],
   },
 
@@ -2901,7 +2901,7 @@ export const rituals: RitualDefinition[] = [
       4: `You can also change the area to a \\largearea radius.`,
       6: `You can also change the area to a \\hugearea radius.`,
     },
-    tags: ['Sustain (attunable, minor)'],
+    type: 'Sustain (attunable, minor)',
     spheres: ['Umbramancy'],
   },
   {
@@ -2943,7 +2943,7 @@ export const rituals: RitualDefinition[] = [
         Earth can tell you whether there exist underground tunnels within the area, but any sort of detailed mapping is beyond its ability to communicate.
       `,
     },
-    tags: ['Sustain (attunable, minor)'],
+    type: 'Sustain (attunable, minor)',
     spheres: ['Aeromancy', 'Aquamancy', 'Pyromancy', 'Terramancy'],
   },
 
