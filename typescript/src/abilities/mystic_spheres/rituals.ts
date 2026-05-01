@@ -46,7 +46,7 @@ export const rituals: RitualDefinition[] = [
   },
 
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Temporary Reinforcement',
 
     usageTime: 'one minute',
@@ -85,7 +85,7 @@ export const rituals: RitualDefinition[] = [
   },
 
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Bless Water',
 
     usageTime: 'one minute',
@@ -128,7 +128,7 @@ export const rituals: RitualDefinition[] = [
   },
 
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Curse Water',
 
     usageTime: 'one minute',
@@ -171,7 +171,7 @@ export const rituals: RitualDefinition[] = [
   },
 
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Consecrated Ground',
 
     usageTime: 'one hour',
@@ -274,7 +274,7 @@ export const rituals: RitualDefinition[] = [
     tags: ['Soul'],
   },
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Limited Air Supply',
 
     usageTime: 'one minute',
@@ -295,7 +295,7 @@ export const rituals: RitualDefinition[] = [
     spheres: ['Aeromancy', 'Aquamancy', 'Polymorph'],
   },
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Air Supply',
 
     usageTime: 'one minute',
@@ -314,7 +314,7 @@ export const rituals: RitualDefinition[] = [
     spheres: ['Aeromancy', 'Aquamancy', 'Polymorph'],
   },
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Gentle Descent',
 
     usageTime: 'one minute',
@@ -329,7 +329,7 @@ export const rituals: RitualDefinition[] = [
     spheres: ['Aeromancy', 'Polymorph', 'Telekinesis'],
   },
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Overland Flight',
 
     usageTime: 'one minute',
@@ -345,7 +345,7 @@ export const rituals: RitualDefinition[] = [
     spheres: ['Aeromancy', 'Polymorph', 'Telekinesis'],
   },
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Rapid Overland Flight',
 
     usageTime: 'one hour',
@@ -361,7 +361,7 @@ export const rituals: RitualDefinition[] = [
     spheres: ['Aeromancy', 'Polymorph', 'Telekinesis'],
   },
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Manipulate Water',
 
     usageTime: 'one minute',
@@ -379,7 +379,7 @@ export const rituals: RitualDefinition[] = [
     spheres: ['Aquamancy'],
   },
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Greater Manipulate Water',
 
     usageTime: 'one minute',
@@ -393,7 +393,7 @@ export const rituals: RitualDefinition[] = [
     spheres: ['Aquamancy'],
   },
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Rainstorm',
 
     usageTime: 'one minute',
@@ -452,7 +452,7 @@ export const rituals: RitualDefinition[] = [
     spheres: ['Aquamancy', 'Revelation'],
   },
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Fins',
 
     usageTime: 'one minute',
@@ -468,7 +468,7 @@ export const rituals: RitualDefinition[] = [
     spheres: ['Aquamancy', 'Polymorph'],
   },
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Spider Climb',
 
     usageTime: 'one minute',
@@ -757,7 +757,7 @@ export const rituals: RitualDefinition[] = [
     spheres: ['Astromancy'],
   },
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Accelerated Reading',
 
     usageTime: 'one minute',
@@ -771,7 +771,7 @@ export const rituals: RitualDefinition[] = [
     spheres: ['Chronomancy', 'Revelation'],
   },
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Greater Accelerated Reading',
 
     usageTime: 'one minute',
@@ -785,7 +785,7 @@ export const rituals: RitualDefinition[] = [
     spheres: ['Chronomancy', 'Revelation'],
   },
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Preservation',
 
     usageTime: 'one minute',
@@ -855,7 +855,7 @@ export const rituals: RitualDefinition[] = [
     spheres: ['Chronomancy'],
   },
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Stasis Chamber',
 
     usageTime: 'one hour',
@@ -884,7 +884,7 @@ export const rituals: RitualDefinition[] = [
     spheres: ['Chronomancy'],
   },
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Overland Haste',
     rank: 3,
     roles: ['attune'],
@@ -901,7 +901,7 @@ export const rituals: RitualDefinition[] = [
     spheres: ['Chronomancy', 'Electromancy', 'Polymorph'],
   },
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Rapid Overland Haste',
     rank: 5,
     roles: ['attune'],
@@ -960,7 +960,7 @@ export const rituals: RitualDefinition[] = [
     spheres: ['Chronomancy'],
   },
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Cold Tolerance',
 
     usageTime: 'one minute',
@@ -977,7 +977,7 @@ export const rituals: RitualDefinition[] = [
     spheres: ['Cryomancy', 'Polymorph', 'Pyromancy'],
   },
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Cold Snap',
 
     usageTime: 'one hour',
@@ -995,7 +995,7 @@ export const rituals: RitualDefinition[] = [
   },
 
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Intense Cold Snap',
 
     usageTime: 'one hour',
@@ -1029,7 +1029,7 @@ export const rituals: RitualDefinition[] = [
   },
 
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Animal Messenger',
 
     usageTime: 'one minute',
@@ -1113,7 +1113,7 @@ export const rituals: RitualDefinition[] = [
     spheres: ['Enchantment'],
   },
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Manifest Equipment',
 
     usageTime: 'one hour',
@@ -1143,7 +1143,7 @@ export const rituals: RitualDefinition[] = [
     spheres: ['Cryomancy', 'Fabrication', 'Terramancy'],
   },
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Manifest Object',
 
     usageTime: 'one hour',
@@ -1254,7 +1254,7 @@ export const rituals: RitualDefinition[] = [
   },
 
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Ammunition Stockpile',
 
     usageTime: 'one hour',
@@ -1270,7 +1270,7 @@ export const rituals: RitualDefinition[] = [
     spheres: ['Cryomancy', 'Fabrication', 'Verdamancy'],
   },
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Tiny Hut',
 
     usageTime: 'one minute',
@@ -1292,7 +1292,7 @@ export const rituals: RitualDefinition[] = [
   },
 
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Mystic Cage',
 
     usageTime: 'one hour',
@@ -1323,7 +1323,7 @@ export const rituals: RitualDefinition[] = [
   },
 
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Continuous Light',
 
     usageTime: 'one minute',
@@ -1344,7 +1344,7 @@ export const rituals: RitualDefinition[] = [
   },
 
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Brilliant Light',
 
     usageTime: 'one minute',
@@ -1383,7 +1383,7 @@ export const rituals: RitualDefinition[] = [
   },
 
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Bestow Darkvision',
 
     usageTime: 'one minute',
@@ -1400,7 +1400,7 @@ export const rituals: RitualDefinition[] = [
   },
 
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Bestow Low-Light Vision',
 
     usageTime: 'one minute',
@@ -1416,7 +1416,7 @@ export const rituals: RitualDefinition[] = [
   },
 
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Bestow Scent',
 
     usageTime: 'one minute',
@@ -1433,7 +1433,7 @@ export const rituals: RitualDefinition[] = [
   },
 
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Create Handholds',
 
     usageTime: 'one minute',
@@ -1504,7 +1504,7 @@ export const rituals: RitualDefinition[] = [
   // },
 
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Meld Shut',
 
     usageTime: 'one hour',
@@ -1532,7 +1532,7 @@ export const rituals: RitualDefinition[] = [
   },
 
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Enlarged Meld Shut',
 
     usageTime: 'one hour',
@@ -1549,7 +1549,7 @@ export const rituals: RitualDefinition[] = [
   },
 
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Gills',
 
     usageTime: 'one minute',
@@ -1564,7 +1564,7 @@ export const rituals: RitualDefinition[] = [
     spheres: ['Aquamancy', 'Polymorph'],
   },
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Heat Tolerance',
 
     usageTime: 'one minute',
@@ -1582,7 +1582,7 @@ export const rituals: RitualDefinition[] = [
   },
 
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Heat Wave',
 
     usageTime: 'one hour',
@@ -1601,7 +1601,7 @@ export const rituals: RitualDefinition[] = [
   },
 
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Intense Heat Wave',
 
     usageTime: 'one hour',
@@ -1640,7 +1640,7 @@ export const rituals: RitualDefinition[] = [
   },
 
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Explosive Runes',
 
     usageTime: 'one hour',
@@ -1674,7 +1674,7 @@ export const rituals: RitualDefinition[] = [
     spheres: ['Fabrication', 'Thaumaturgy'],
   },
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Reveal True Form',
 
     usageTime: 'one hour',
@@ -1750,7 +1750,7 @@ export const rituals: RitualDefinition[] = [
   },
 
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Alarm',
 
     usageTime: 'one minute',
@@ -1771,7 +1771,7 @@ export const rituals: RitualDefinition[] = [
   },
 
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Track Item',
 
     usageTime: 'one hour',
@@ -1787,7 +1787,7 @@ export const rituals: RitualDefinition[] = [
   },
 
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Track Fine Item',
 
     usageTime: 'one hour',
@@ -1868,7 +1868,7 @@ export const rituals: RitualDefinition[] = [
   },
 
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Sending',
 
     usageTime: 'one hour',
@@ -1902,7 +1902,7 @@ export const rituals: RitualDefinition[] = [
   },
 
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Rapid Sending',
 
     usageTime: 'one minute',
@@ -1925,7 +1925,7 @@ export const rituals: RitualDefinition[] = [
   },
 
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Telepathic Bond',
 
     usageTime: 'one minute',
@@ -2066,7 +2066,7 @@ export const rituals: RitualDefinition[] = [
     spheres: ['Aeromancy', 'Prayer', 'Revelation', 'Terramancy', 'Verdamancy'],
   },
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Find the Lost',
 
     usageTime: 'one hour',
@@ -2085,7 +2085,7 @@ export const rituals: RitualDefinition[] = [
     spheres: ['Aeromancy', 'Prayer', 'Revelation', 'Terramancy', 'Verdamancy'],
   },
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Efficient Find the Path',
 
     usageTime: 'one hour',
@@ -2101,7 +2101,7 @@ export const rituals: RitualDefinition[] = [
     spheres: ['Aeromancy', 'Prayer', 'Revelation'],
   },
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Seal Shut',
 
     usageTime: 'one minute',
@@ -2121,7 +2121,7 @@ export const rituals: RitualDefinition[] = [
   },
 
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Greater Seal Shut',
 
     usageTime: 'one minute',
@@ -2242,7 +2242,7 @@ export const rituals: RitualDefinition[] = [
     spheres: ['Fabrication', 'Toxicology'],
   },
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Sunlight Ward',
 
     usageTime: 'one hour',
@@ -2260,7 +2260,7 @@ export const rituals: RitualDefinition[] = [
     spheres: ['Photomancy', 'Terramancy', 'Umbramancy'],
   },
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Sunlight Ward+',
 
     usageTime: 'one hour',
@@ -2275,7 +2275,7 @@ export const rituals: RitualDefinition[] = [
   },
 
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Conceal Trail',
 
     usageTime: 'one minute',
@@ -2609,7 +2609,7 @@ export const rituals: RitualDefinition[] = [
     tags: ['Soul'],
   },
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Command Undead',
 
     usageTime: 'one hour',
@@ -2632,7 +2632,7 @@ export const rituals: RitualDefinition[] = [
   },
 
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'One Who Lives in Death',
 
     usageTime: 'one minute',
@@ -2648,7 +2648,7 @@ export const rituals: RitualDefinition[] = [
 
   // TODO: math
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Command Undead Horde',
 
     usageTime: 'one hour',
@@ -2680,7 +2680,7 @@ export const rituals: RitualDefinition[] = [
     spheres: ['Revelation', 'Verdamancy'],
   },
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Manipulate Air',
 
     usageTime: 'one minute',
@@ -2703,7 +2703,7 @@ export const rituals: RitualDefinition[] = [
     type: 'Sustain (attunable, minor)',
   },
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Chill Air',
 
     usageTime: 'one minute',
@@ -2723,7 +2723,7 @@ export const rituals: RitualDefinition[] = [
     type: 'Sustain (attunable, minor)',
   },
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Magnetize',
 
     usageTime: 'one minute',
@@ -2744,7 +2744,7 @@ export const rituals: RitualDefinition[] = [
     type: 'Sustain (attunable, minor)',
   },
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Sculpt Appearance',
 
     usageTime: 'one minute',
@@ -2773,7 +2773,7 @@ export const rituals: RitualDefinition[] = [
     spheres: ['Photomancy', 'Polymorph'],
   },
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Malleable Sculpt Appearance',
 
     usageTime: 'one minute',
@@ -2822,7 +2822,7 @@ export const rituals: RitualDefinition[] = [
     spheres: ['Cryomancy', 'Polymorph', 'Terramancy'],
   },
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Heat Air',
 
     usageTime: 'one minute',
@@ -2842,7 +2842,7 @@ export const rituals: RitualDefinition[] = [
     spheres: ['Pyromancy'],
   },
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Reveal Truth',
 
     usageTime: 'one minute',
@@ -2855,7 +2855,7 @@ export const rituals: RitualDefinition[] = [
     spheres: ['Revelation'],
   },
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Darklantern',
 
     usageTime: 'one minute',
@@ -2877,7 +2877,7 @@ export const rituals: RitualDefinition[] = [
   },
 
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Beacon of Darkness',
 
     usageTime: 'one minute',
@@ -2905,7 +2905,7 @@ export const rituals: RitualDefinition[] = [
     spheres: ['Umbramancy'],
   },
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Commune with Elements',
 
     usageTime: 'one minute',
@@ -2973,7 +2973,7 @@ export const rituals: RitualDefinition[] = [
     spheres: ['Thaumaturgy', 'Universal'],
   },
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Comprehend Languages',
     usageTime: 'one minute',
     effect: `
@@ -2987,7 +2987,7 @@ export const rituals: RitualDefinition[] = [
     spheres: ['Enchantment', 'Revelation'],
   },
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Comprehend Rare Languages',
     usageTime: 'one minute',
     effect: `
@@ -3068,7 +3068,7 @@ export const rituals: RitualDefinition[] = [
   },
   // TODO: add higher rank versions that can hold more or take more varied actions?
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Animated Attendant',
     usageTime: 'one minute',
     effect: `
@@ -3096,7 +3096,7 @@ export const rituals: RitualDefinition[] = [
   },
 
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Tidy',
     usageTime: 'one minute',
     effect: `
@@ -3137,7 +3137,7 @@ export const rituals: RitualDefinition[] = [
     spheres: ['Astromancy', 'Chronomancy'],
   },
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Memory Palace',
 
     usageTime: 'one minute',
@@ -3151,7 +3151,7 @@ export const rituals: RitualDefinition[] = [
     type: 'Sustain (attunable, standard)',
   },
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Soothing Presence',
 
     usageTime: 'one minute',
@@ -3169,7 +3169,7 @@ export const rituals: RitualDefinition[] = [
     type: 'Sustain (attunable, minor)',
   },
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Sanctuary',
 
     usageTime: 'one hour',
@@ -3208,7 +3208,7 @@ export const rituals: RitualDefinition[] = [
     spheres: ['Enchantment', 'Prayer'],
   },
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Reveal Deception',
 
     usageTime: 'one minute',
@@ -3223,7 +3223,7 @@ export const rituals: RitualDefinition[] = [
     type: 'Sustain (attunable, minor)',
   },
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Bind Object',
     usageTime: 'one hour',
     effect: `
@@ -3251,7 +3251,7 @@ export const rituals: RitualDefinition[] = [
     type: 'Attune (target)',
   },
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Control Weather',
 
     usageTime: 'one minute',
@@ -3285,7 +3285,7 @@ export const rituals: RitualDefinition[] = [
     type: 'Attune (deep)',
   },
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Aura of Weather Control',
 
     usageTime: 'one hour',
@@ -3307,7 +3307,7 @@ export const rituals: RitualDefinition[] = [
     type: 'Attune (deep)',
   },
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Massive Control Weather',
 
     usageTime: 'one minute',
@@ -3325,7 +3325,7 @@ export const rituals: RitualDefinition[] = [
   },
 
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Purge Invisibility',
 
     usageTime: 'one minute',
@@ -3436,7 +3436,7 @@ export const rituals: RitualDefinition[] = [
   },
 
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Steady Forge',
     rank: 2,
     roles: ['narrative'],
@@ -3455,7 +3455,7 @@ export const rituals: RitualDefinition[] = [
   },
 
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Compass',
     rank: 1,
     roles: ['narrative'],
@@ -3469,7 +3469,7 @@ export const rituals: RitualDefinition[] = [
   },
 
   {
-    fatigueCost: true,
+    fatigueCost: false,
     name: 'Floating Platform',
     rank: 2,
     roles: ['narrative'],
