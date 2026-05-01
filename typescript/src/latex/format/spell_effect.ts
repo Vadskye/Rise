@@ -79,7 +79,7 @@ function assertHasCorrectHalfDamage(attack: ActiveAbilityAttack, effectName: str
 export function spellEffect(spell: ActiveAbility | Ritual): string | null {
   try {
     let fatiguePointsText = '';
-    if (spell.kind === 'ritual') {
+    if (spell.kind === 'ritual' && spell.fatigueCost !== false) {
       const fatigueLevel =
         spell.usageTime === '24 hours' || spell.usageTime === 'one week'
           ? `${Math.pow(spell.rank || 0, 2) * 2} \\glossterm{fatigue levels}`
