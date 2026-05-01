@@ -1,6 +1,6 @@
 ---
 trigger: model_decision
-description: When interacting with spells, spellcasting, or mystic spheres
+description: When interacting with spells, rituals, spellcasting, or mystic spheres
 ---
 
 # Spells and Spellcasting
@@ -14,6 +14,7 @@ Spells and spellcasting are generally defined in `comprehensive_codex/MysticSphe
 Each spell has a role defining its primary function in combat. A spell's role relates to how characters spend their standard actions in combat.
 
 ### List of Roles
+
 The list of roles is defined in `typescript/src/mystic_spheres/index.ts`. A summary of the roles is given below:
 
 - `attune`: A buff that lasts as long as you stay attuned. (Primary role for persistent effects).
@@ -47,26 +48,42 @@ The list of roles is defined in `typescript/src/mystic_spheres/index.ts`. A summ
 - `wildfire`: Damage over time against multiple targets, typically in an area (AOE).
 
 ## Magic Sources
+
 There are four magic sources:
+
 - **Arcane:** Sorcerers and Wizards. Requires verbal and somatic components.
 - **Divine:** Clerics and Paladins. Requires verbal components.
 - **Nature:** Druids. Requires verbal components.
 - **Pact:** Votives. Requires verbal and somatic components.
 
 ## Casting Components
+
 - **Verbal:** Speaking clearly. 20% failure if deafened.
 - **Somatic:** Free hand required. Cannot be used if grappled or restrained.
 
 ## Rituals
+
 Rituals are powerful magical effects that take time and fatigue to perform.
+
 - **Fatigue Cost:** Every ritual takes at least 1 fatigue level.
 - **Leader:** Must have access to the ritual's sphere and be able to cast spells of its rank.
 - **Time:** At least 1 minute, often much longer.
 - **Participation:** Non-leaders can participate to help share the fatigue cost. Requires verbal and somatic components.
 - **Ritual Books:** Used to learn and store rituals.
 
+## LaTeX Rendering & Ability Formatting
+
+The TypeScript project generates LaTeX for spells and rituals.
+
+- **Standard Prefix (`spellTypePrefix`):** Handles tags, ranks, and costs. It is idiomatic to use the `cost` field of an `ActiveAbility` for any associated costs, which renders using the `\abilitycost` command.
+- **Ritual Fatigue:** For rituals, the fatigue and material costs are automatically calculated and rendered as an `\abilitycost` prefix if `fatigueCost` is true and no explicit `cost` is provided. This logic resides in `spellTypePrefix.ts`.
+- **Effect Description (`spellEffect`):** Should strictly contain the ability's effects and should not include cost-related suffixes or prefixes, as these are handled by the standard prefix.
+
+
 Note: Attuned effects generally only have the 'attune' role, even if they would otherwise fit other roles (e.g., a spell that grants a persistent bonus is just an 'attune' spell, not a 'boon attune' spell).
+
 - `wildfire`: Damage over time against multiple targets, typically in an area (AOE).
 
 ### Attuned Effects
-Roles are defined in terms of how characters spend standard actions. Long duration buff spells are generally not cast in the middle of combat, so their specific effects generally don't change a character's standard actions. For that reason, spells that require attunement will generally *only* have the 'attune' role, rather than any more specific roles based on their effects.
+
+Roles are defined in terms of how characters spend standard actions. Long duration buff spells are generally not cast in the middle of combat, so their specific effects generally don't change a character's standard actions. For that reason, spells that require attunement will generally _only_ have the 'attune' role, rather than any more specific roles based on their effects.
