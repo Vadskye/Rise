@@ -79,6 +79,8 @@ function assertHasCorrectHalfDamage(attack: ActiveAbilityAttack, effectName: str
 export function spellEffect(spell: ActiveAbility | Ritual): string | null {
   try {
     let fatiguePointsText = '';
+    // Rituals can have a fatigue cost based on their rank and casting time.
+    // This is toggled by the fatigueCost property.
     if (spell.kind === 'ritual' && spell.fatigueCost !== false) {
       const fatigueLevel =
         spell.usageTime === '24 hours' || spell.usageTime === 'one week'
