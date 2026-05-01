@@ -39,6 +39,7 @@
     "maneuver_ranks": "npx tsc --incremental && node --import tsx src/scripts/maneuver_rank_breakdown.js",
     "maneuver_roles": "npx tsc --incremental && node --import tsx src/scripts/maneuver_role_breakdown.js",
     "spell_ranks": "npx tsc --incremental && node --import tsx src/scripts/spell_rank_breakdown.js",
+    "ritual_ranks": "npx tsc --incremental && node --import tsx src/scripts/ritual_rank_breakdown.js",
     "spell_roles": "npx tsc --incremental && node --import tsx src/scripts/spell_role_breakdown.js",
     "tap": "npx tsc --incremental && npx tap --node-arg=--import=tsx --exclude=**/*.js",
     "test": "npx tsc --incremental && npx tap --node-arg=--import=tsx --exclude=**/*.js"
