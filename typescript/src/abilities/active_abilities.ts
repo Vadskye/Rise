@@ -60,13 +60,17 @@ export interface CantripDefinition extends Omit<ActiveAbility, 'isMagical' | 'ki
 export type SpellDefinition = Omit<ActiveAbility, 'isMagical' | 'kind'>;
 
 export type RitualCastingTime = '24 hours' | 'one minute' | 'one hour' | 'special' | 'one week';
-export interface Ritual extends Omit<ActiveAbility, 'kind' | 'usageTime'>, RitualDefinition {
+export interface Ritual extends RitualDefinition {
   kind: 'ritual';
+  isMagical: true;
 }
 
 // This is the type used to write rituals. It's missing some
 // inferrable data fields that are shared between all rituals.
 export interface RitualDefinition extends Omit<ActiveAbility, 'isMagical' | 'kind' | 'usageTime'> {
+  // Every ritual must explicitly define whether it costs fatigue.
+  // This is used by the LaTeX generator to determine whether to include the standard
+  // ritual fatigue cost text to the ability description.
   fatigueCost: boolean;
   materialCost?: boolean;
   sphereEffects?: Partial<Record<SphereName, string>>;
