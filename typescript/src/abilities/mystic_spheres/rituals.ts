@@ -2842,7 +2842,7 @@ export const rituals: RitualDefinition[] = [
     spheres: ['Pyromancy'],
   },
   {
-    fatigueCost: false,
+    fatigueCost: true,
     name: 'Reveal Truth',
 
     usageTime: 'one minute',
