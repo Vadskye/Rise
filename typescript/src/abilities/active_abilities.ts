@@ -13,6 +13,7 @@ export interface ActiveAbility {
   effect?: string;
   forMonster?: boolean;
   functionsLike?: FunctionsLike;
+  fatigueCost?: boolean;
   isMagical: boolean;
   kind: ActiveAbilityKind;
   materialCost?: boolean;
@@ -66,6 +67,7 @@ export interface Ritual extends Omit<ActiveAbility, 'kind' | 'usageTime'>, Ritua
 // This is the type used to write rituals. It's missing some
 // inferrable data fields that are shared between all rituals.
 export interface RitualDefinition extends Omit<ActiveAbility, 'isMagical' | 'kind' | 'usageTime'> {
+  fatigueCost: boolean;
   materialCost?: boolean;
   sphereEffects?: Partial<Record<SphereName, string>>;
   spheres: SphereName[];
