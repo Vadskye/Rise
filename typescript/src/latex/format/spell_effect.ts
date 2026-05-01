@@ -78,19 +78,6 @@ function assertHasCorrectHalfDamage(attack: ActiveAbilityAttack, effectName: str
 
 export function spellEffect(spell: ActiveAbility | Ritual): string | null {
   try {
-    let fatiguePointsText = '';
-    // Rituals can have a fatigue cost based on their rank and casting time.
-    // This is toggled by the fatigueCost property.
-    if (spell.kind === 'ritual' && spell.fatigueCost !== false) {
-      const fatigueLevel =
-        spell.usageTime === '24 hours' || spell.usageTime === 'one week'
-          ? `${Math.pow(spell.rank || 0, 2) * 2} \\glossterm{fatigue levels}`
-          : 'one \\glossterm{fatigue level}';
-      const materialCostText = spell.materialCost
-        ? ` and the consumption of diamond dust with the equivalent value of a rank ${spell.rank} item (${calculateGp(spell.rank)})`
-        : '';
-      fatiguePointsText = `\n\nThis ritual requires ${fatigueLevel} from its participants${materialCostText}.`;
-    }
 
     if (spell.attack) {
       assertEndsWithPeriod(spell.attack.targeting, spell.name);
@@ -102,7 +89,7 @@ export function spellEffect(spell: ActiveAbility | Ritual): string | null {
       assertDoesNotUseEachTarget(spell.attack, spell.name);
       // The terminal % prevents a double-space in weird edge cases
       return `
-        ${spell.attack.targeting.trim() + fatiguePointsText}%
+        ${spell.attack.targeting.trim()}%
         \\vspace{0.25em}
         \\hit ${spell.attack.hit.trim()}
         ${spell.attack.injury ? `\\injury ${spell.attack.injury.trim()}` : ''}
@@ -111,12 +98,7 @@ export function spellEffect(spell: ActiveAbility | Ritual): string | null {
         ${spell.attack.miss ? `\\miss ${spell.attack.miss}` : ''}
       `;
     } else if (spell.effect) {
-      return fatiguePointsText
-        ? `
-          ${spell.effect}
-          ${fatiguePointsText}
-        `.trim()
-        : spell.effect.trim();
+      return spell.effect.trim();
     } else if (spell.functionsLike) {
       const exceptThat = deriveExceptThat(spell.functionsLike);
 
@@ -127,7 +109,6 @@ export function spellEffect(spell: ActiveAbility | Ritual): string | null {
 
       return `
         This ${spell.kind} functions like the \\${referencedCategory}{${spell.functionsLike.name.toLowerCase()}} ${referencedCategory}, except that ${exceptThat.trim()}
-        ${fatiguePointsText}
       `.trim();
     } else {
       return null;
@@ -177,20 +158,3 @@ function deriveExceptThat(functionsLike: FunctionsLike) {
   }
 }
 
-function calculateGp(itemRank?: ActiveAbilityRank): string {
-  if (itemRank === null || itemRank === undefined) {
-    throw new Error('Cannot calculate gp for missing rank');
-  }
-  return (
-    {
-      0: '10 gp or less',
-      1: '40 gp',
-      2: '200 gp',
-      3: '1,000 gp',
-      4: '5,000 gp',
-      5: '25,000 gp',
-      6: '125,000 gp',
-      7: '625,000 gp',
-    }[itemRank] || ''
-  );
-}

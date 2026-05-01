@@ -2,7 +2,18 @@ import { ActiveAbility, ActiveAbilityRank, Ritual } from '@src/abilities';
 import { formatTagLatex } from '@src/latex/format/ability_tag';
 
 export function spellTypePrefix(
-  spell: Pick<ActiveAbility, 'usageTime' | 'cost' | 'name' | 'tags' | 'type' | 'rank'>,
+  spell: Pick<
+    ActiveAbility,
+    | 'usageTime'
+    | 'cost'
+    | 'name'
+    | 'tags'
+    | 'type'
+    | 'rank'
+    | 'kind'
+    | 'fatigueCost'
+    | 'materialCost'
+  >,
   omitRank?: boolean,
 ): string {
   const tags = spell.tags || [];
@@ -27,14 +38,44 @@ export function spellTypePrefix(
 
   const tagsAndRank = generateTagsAndRank(tagsText, spell.rank, omitRank);
 
-  if (spell.cost) {
-    if (spell.cost.trim().slice(-1) !== '.') {
+  let cost = spell.cost;
+  if (!cost && spell.kind === 'ritual' && spell.fatigueCost !== false) {
+    const fatigueLevel =
+      spell.usageTime === '24 hours' || spell.usageTime === 'one week'
+        ? `${Math.pow(spell.rank || 0, 2) * 2} \\glossterm{fatigue levels}`
+        : 'one \\glossterm{fatigue level}';
+    const materialCostText = spell.materialCost
+      ? ` and the consumption of diamond dust with the equivalent value of a rank ${spell.rank} item (${calculateGp(spell.rank)})`
+      : '';
+    cost = `${fatigueLevel} from the ritual's participants${materialCostText}.`;
+  }
+
+  if (cost) {
+    if (cost.trim().slice(-1) !== '.') {
       console.error(`Ability '${spell.name}' cost should end in a period.`);
     }
-    return tagsAndRank + '\n' + `\\abilitycost ${spell.cost}`;
+    return tagsAndRank + '\n' + `\\abilitycost ${cost}`;
   } else {
     return tagsAndRank;
   }
+}
+
+function calculateGp(itemRank?: ActiveAbilityRank): string {
+  if (itemRank === null || itemRank === undefined) {
+    throw new Error('Cannot calculate gp for missing rank');
+  }
+  return (
+    {
+      0: '10 gp or less',
+      1: '40 gp',
+      2: '200 gp',
+      3: '1,000 gp',
+      4: '5,000 gp',
+      5: '25,000 gp',
+      6: '125,000 gp',
+      7: '625,000 gp',
+    }[itemRank] || ''
+  );
 }
 
 export function generateTagsAndRank(
