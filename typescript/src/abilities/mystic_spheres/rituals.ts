@@ -5,9 +5,13 @@ const resurrectionSphereEffects = {
 };
 const teleportSphereEffects = {
   ['Aeromancy']: 'Both your destination and current location must be outdoors.',
+  ['Aquamancy']:
+    'Both your destination and current location must be within \\medrange of a Gargantuan or larger active body of water.',
   ['Channel Divinity']:
     'Either your destination or current location must be a temple or equivalent holy site to your source of divine power.',
   ['Electromancy']: 'Both your destination and current location must be outdoors.',
+  Pyromancy:
+    'Both your destination and current location must be within \\medrange of a Large or larger active fire.',
   Verdamancy:
     'As part of the ritual, each target must touch a living plant at least one size category larger than themselves. The destination must have a plant at least one size category larger than the largest target. Each target emerges that plant after teleporting.',
 };
@@ -565,11 +569,11 @@ export const rituals: RitualDefinition[] = [
     materialCost: true,
     sphereEffects: {
       Aquamancy: `
-        The astral beacon must be within a Huge or larger body of water.
+        The astral beacon must be within a Gargantuan or larger body of water.
         If the water is moved or destroyed, the astral beacon is destroyed.
       `,
       Pyromancy: `
-        The astral beacon must be anchored to a Medium or larger active fire.
+        The astral beacon must be anchored to a Large or larger active fire.
         While the fire is extinguished, the astral beacon is inactive, but it becomes active again if the fire is rekindled.
       `,
       Terramancy: `
@@ -588,6 +592,7 @@ export const rituals: RitualDefinition[] = [
       'Channel Divinity',
       'Fabrication',
       'Prayer',
+      'Pyromancy',
       'Terramancy',
       'Thaumaturgy',
       'Verdamancy',
@@ -610,6 +615,7 @@ export const rituals: RitualDefinition[] = [
       'Channel Divinity',
       'Fabrication',
       'Prayer',
+      'Pyromancy',
       'Terramancy',
       'Thaumaturgy',
       'Verdamancy',
@@ -631,7 +637,15 @@ export const rituals: RitualDefinition[] = [
     sphereEffects: teleportSphereEffects,
     tags: [],
     usageTime: 'one hour',
-    spheres: ['Aeromancy', 'Astromancy', 'Channel Divinity', 'Electromancy', 'Verdamancy'],
+    spheres: [
+      'Aeromancy',
+      'Aquamancy',
+      'Astromancy',
+      'Channel Divinity',
+      'Electromancy',
+      'Pyromancy',
+      'Verdamancy',
+    ],
   },
   {
     name: 'Distant Translocation',
@@ -653,7 +667,15 @@ export const rituals: RitualDefinition[] = [
     sphereEffects: teleportSphereEffects,
     tags: [],
     usageTime: '24 hours',
-    spheres: ['Aeromancy', 'Astromancy', 'Channel Divinity', 'Electromancy', 'Verdamancy'],
+    spheres: [
+      'Aeromancy',
+      'Aquamancy',
+      'Astromancy',
+      'Channel Divinity',
+      'Electromancy',
+      'Pyromancy',
+      'Verdamancy',
+    ],
   },
 
   {
@@ -671,7 +693,15 @@ export const rituals: RitualDefinition[] = [
     roles: ['narrative'],
     tags: [],
     usageTime: 'one hour',
-    spheres: ['Aeromancy', 'Astromancy', 'Channel Divinity', 'Electromancy', 'Verdamancy'],
+    spheres: [
+      'Aeromancy',
+      'Aquamancy',
+      'Astromancy',
+      'Channel Divinity',
+      'Electromancy',
+      'Pyromancy',
+      'Verdamancy',
+    ],
   },
   {
     name: 'Astral Chest',
@@ -3199,5 +3229,90 @@ export const rituals: RitualDefinition[] = [
       Terramancy: 'Both sides of the planar rift must be no more than 60 feet above stable ground.',
     },
     spheres: ['Astromancy', 'Chronomancy', 'Prayer', 'Terramancy', 'Thaumaturgy'],
+  },
+
+  {
+    name: 'Shrouded Treasure',
+    rank: 2,
+    roles: ['narrative'],
+    usageTime: '24 hours',
+    tags: ['Visual'],
+    effect: `
+      Choose one Medium or smaller object within \\medrange.
+      The object must have an opening and be able to contain other objects, like a bag or box.
+      Objects inside the container are \\glossterm{invisible}.
+      Creatures inside the container can be seen normally.
+
+      This effect is permanent.
+    `,
+    sphereEffects: {
+      Photomancy: "The container's opening emits light as a torch.",
+      Umbramancy: "The container's opening is shrouded in darkness.",
+    },
+    spheres: ['Photomancy', 'Umbramancy'],
+  },
+
+  {
+    name: 'Eternal Flame',
+    rank: 1,
+    roles: ['narrative'],
+    usageTime: '24 hours',
+    tags: ['Fire'],
+    effect: `
+      You create a Tiny flame on a flammable object within \\medrange.
+      The flame burns without fuel and cannot be extinguished by wind, water, or lack of air.
+      It sheds light like a torch and provides an appropriate amount of heat.
+      This does not damage or ignite the flammable object.
+
+      This effect is permanent.
+      If the object is placed in a situation where it can't burn effectively, such as underwater, the effect is \\glossterm{suppressed} until the flame can burn again.
+    `,
+    spheres: ['Pyromancy'],
+  },
+
+  {
+    name: 'Steady Forge',
+    rank: 2,
+    roles: ['narrative'],
+    usageTime: 'one minute',
+    tags: ['Fire'],
+    type: 'Attune',
+    effect: `
+      You stabilize the heat output of a forge or similar crafting tool that uses heat.
+      This gives anyone using the crafting tool a \\plus3 \\glossterm{enhancement bonus} to Craft checks.
+    `,
+    spheres: ['Pyromancy'],
+    scaling: {
+      5: 'The bonus increases to \\plus4.',
+      7: 'The bonus increases to \\plus5.',
+    },
+  },
+
+  {
+    name: 'Compass',
+    rank: 1,
+    roles: ['narrative'],
+    type: 'Attune',
+    usageTime: 'one minute',
+    effect: `
+      You always know which direction is true north.
+      This gives you a \\plus3 \\glossterm{enhancement bonus} to Survival checks to avoid getting lost.
+    `,
+    spheres: ['Electromancy', 'Revelation'],
+  },
+
+  {
+    name: 'Floating Platform',
+    rank: 2,
+    roles: ['narrative'],
+    usageTime: 'one minute',
+    type: 'Sustain (attunable, minor)',
+    effect: `
+      You create a circular platform of telekinetic force within \\shortrange that is 5 feet in diameter.
+      It must be no more than 30 feet above solid ground.
+      The platform is solid and can support a Medium weights.
+      It remains fixed in place unless destroyed.
+    `,
+    spheres: ['Telekinesis'],
   },
 ];
