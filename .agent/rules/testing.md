@@ -22,3 +22,8 @@ These scripts are configured to use `npx tap --node-arg=--import=tsx`, which cor
 * **Imports**: Use `import t from 'tap';` for the test harness.
 * **Mocks/Shims**: Be aware of the `roll20_shim.ts` if testing code that interacts with the Roll20 environment.
 * **Database/Grimoire**: Extensive monsters can cause timeouts. When testing monster-related logic, prefer loading only the necessary groups or individual monsters using their specific `addX` functions (e.g., `addBeasts(gen.grimoire)`) rather than `grimoire.addAllMonsters()`.
+
+## TypeScript Development & Test Execution
+
+* **Stale JS Files**: Be aware that compiled `.js` files in the `src/` directory can sometimes interfere with testing when using `tsx` or `ts-node`. If changes don't seem to be reflecting during execution or testing, clean up any existing `.js` and `.js.map` files in the `src/` directory.
+* **Path Aliases**: The TypeScript project uses `@src/` as a path alias for `src/`. When adding new files or tests, ensure that imports respect this mapping to maintain consistency across the codebase.
