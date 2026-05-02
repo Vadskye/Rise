@@ -319,7 +319,7 @@ pub fn objects() -> Vec<Tool> {
         rank: 2,
         short_description: "Points the way to a bonded location".to_string(),
         description: r"
-            This Diminuitive stone bonds itself to its current location whenever it rests on the ground for an hour.
+            This Diminutive stone bonds itself to its current location whenever it rests on the ground for an hour.
             When you drop the stone, it curves in the air to fall towards its most recently bonded location, regardless of distance or intervening obstacles.
         ".to_string(),
         rarity: ItemRarity::Relic,
@@ -413,7 +413,7 @@ pub fn objects() -> Vec<Tool> {
         rank: 1,
         short_description: "Always stays cold".to_string(),
         description: r"
-            This Diminuitive stone is always just below freezing, regardless of the ambient temperature.
+            This Diminutive stone is always just below freezing, regardless of the ambient temperature.
             Given enough time in a confined space, it can freeze surrounding water, but it is not harmful to touch normally.
         ".to_string(),
         rarity: ItemRarity::Relic,
