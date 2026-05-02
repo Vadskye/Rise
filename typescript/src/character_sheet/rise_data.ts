@@ -64,7 +64,7 @@ export type RiseBaseClass =
 // All lowercase to match the values in creation_page.py
 export type RiseSize =
   | 'fine'
-  | 'diminuitive'
+  | 'diminutive'
   | 'tiny'
   | 'small'
   | 'medium'

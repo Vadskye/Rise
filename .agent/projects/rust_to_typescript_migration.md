@@ -1,7 +1,23 @@
 # Project: Rust to TypeScript Migration
 
+## Progress Tracker
+
+- [x] **Phase 1: Core Infrastructure & Shared Utilities**
+- [ ] **Phase 2: Creature & Modifier System**
+- [ ] **Phase 3: Equipment System Migration**
+- [ ] **Phase 4: Class & Archetype Migration**
+- [ ] **Phase 5: Module Migration**
+- [ ] **Phase 6: Integration & Verification**
+- [ ] **Phase 7: Cleanup**
+
 ## Goal
 Migrate all Rust-based LaTeX generation logic in the `Rise` repository to the TypeScript project. This includes core game mechanics, equipment, classes, modules, and shared utilities. The goal is bit-for-bit parity in the generated `.tex` files.
+
+## Principles
+
+- **String Unions over Enums**: Use TypeScript string literal unions instead of enums to match existing codebase conventions and leverage TypeScript's string checking.
+- **Unified Models**: Use `typescript/src/character_sheet/creature.ts` and `sheet_worker.ts` as the absolute source of truth for all character statistics and calculations. Do not duplicate logic for size-based modifiers, attribute modifiers, etc.
+- **Separation of Concerns**: Keep LaTeX generation logic separate from the core data models.
 
 ## User Review Required
 
@@ -26,19 +42,19 @@ Review and extend existing utilities in `typescript/src/latex/format/`. These sh
 
 ### Shared Game Types
 Create or extend `typescript/src/types/core.ts` for constants used across the system:
-- Attributes (Strength, Dexterity, Constitution, Intelligence, Perception, Willpower) — port from `rust/src/core_mechanics/attributes.rs`
-- Defenses (Armor, Fortitude, Reflex, Mental) — port from `rust/src/core_mechanics/defenses.rs`
-- Skills (24 skills with attribute mappings, categories, knowledge subskills) — port from `rust/src/skills.rs`
-- Sizes (Fine through Colossal with base speeds) — port from `rust/src/core_mechanics/sizes.rs`
-- Senses — port from `rust/src/core_mechanics/senses.rs`
-- Resources — port from `rust/src/core_mechanics/resources.rs`
-- Tags — port from `rust/src/core_mechanics/tag.rs`
-- Debuffs — port from `rust/src/core_mechanics/debuffs.rs`
-- Damage dice and dice pools — port from `rust/src/core_mechanics/damage_dice.rs` and `dice_pool.rs`
-- Movement modes and speeds — port from `rust/src/core_mechanics/movement.rs`
-- Passive abilities — port from `rust/src/core_mechanics/passive_abilities.rs`
-- Vital wounds — port from `rust/src/core_mechanics/vital_wounds.rs`
-- Damage absorption — port from `rust/src/core_mechanics/damage_absorption.rs`
+- Attributes (Strength, Dexterity, etc.) — use `RiseAttribute` from `rise_data.ts`.
+- Defenses (Armor, Fortitude, etc.) — use `RiseDefense` from `rise_data.ts`.
+- Skills (24 skills with attribute mappings) — use `RiseSkill` from `rise_data.ts` and metadata from `creature.ts`.
+- Sizes (Fine through Colossal) — use `RiseSize` from `rise_data.ts` (correcting any misspellings) and calculations from `sheet_worker.ts`.
+- Senses
+- Resources
+- Tags — use `RiseTag`
+- Debuffs — use `RiseDebuff`
+- Damage dice and dice pools — port from `rust/src/core_mechanics/damage_dice.rs` and `dice_pool.rs` (these are generation-specific).
+- Movement modes and speeds — use `creature.ts` / `sheet_worker.ts`.
+- Passive abilities
+- Vital wounds
+- Damage absorption
 
 ---
 

@@ -18,6 +18,8 @@ export function latexify(text: string): string {
 
   warnIfPattern(text, /[^\\]hprank.*/, 'contains unprefixed hprank');
 
+  warnIfPattern(text, /\r.*/, 'contains carriage return');
+
   // This can happen if I write something like "\\damageranktwo damage".
   warnIfPattern(text, /damage damage/, 'contains "damage damage"');
 
@@ -35,7 +37,7 @@ export function latexify(text: string): string {
     .replace(/ \+ /g, ' \\add ')
     .replace(/\+(\d)/g, '\\plus$1')
     .replace(/ - (\d)/g, ' \\sub $1')
-    .replace(/-(\d)/, '\\minus$1');
+    .replace(/ -(\d)/g, ' \\minus$1');
 }
 
 function warnIfPattern(text: string, pattern: RegExp, explanation: string) {
