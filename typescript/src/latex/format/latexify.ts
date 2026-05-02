@@ -37,7 +37,8 @@ export function latexify(text: string): string {
     .replace(/ \+ /g, ' \\add ')
     .replace(/\+(\d)/g, '\\plus$1')
     .replace(/ - (\d)/g, ' \\sub $1')
-    .replace(/ -(\d)/g, ' \\minus$1');
+    .replace(/ -(\d)/g, ' \\minus$1')
+    .replace(/(\d)%/g, '$1\\%');
 }
 
 function warnIfPattern(text: string, pattern: RegExp, explanation: string) {

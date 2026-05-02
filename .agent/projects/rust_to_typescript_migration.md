@@ -6,7 +6,7 @@
 - [x] **Phase 2: Creature & Modifier System**
 - [ ] **Phase 3: Equipment System Migration**
   - [x] **Phase 3.1: Equipment Infrastructure & Armor**
-  - [ ] **Phase 3.2: Held Items (Weapons & Implements)**
+  - [x] **Phase 3.2: Held Items (Weapons & Implements)**
   - [ ] **Phase 3.3: Apparel**
   - [ ] **Phase 3.4: Consumables (Potions, Alchemical Items, Poisons)**
   - [ ] **Phase 3.5: Tools**
@@ -22,12 +22,12 @@ To maintain a consistent and transparent record of the migration progress, the f
 1. **Progress Tracker**: Update the high-level `Progress Tracker` section in this file at the end of each task to reflect completed phases.
 2. **Granular Tasks**: Use the `task.md` artifact in the App Data Directory to track specific, immediate sub-tasks during an active session.
 3. **Walkthroughs**: Document significant architectural changes and completed milestones in the `walkthrough.md` artifact.
-4. **Verification**: Mark phases as complete only after bit-for-bit parity (or acceptable normalized parity) has been verified.
+4. **Verification**: Mark phases as complete only after normalized semantic parity (ignoring irrelevant whitespace) has been verified.
 5. **Test Pass Guarantee**: A phase is not considered complete until `npm run test` is fully passing in the TypeScript project. This ensures that new features haven't introduced regressions.
 
 ## Goal
 
-Migrate all Rust-based LaTeX generation logic in the `Rise` repository to the TypeScript project. This includes core game mechanics, equipment, classes, modules, and shared utilities. The goal is bit-for-bit parity in the generated `.tex` files.
+Migrate all Rust-based LaTeX generation logic in the `Rise` repository to the TypeScript project. This includes core game mechanics, equipment, classes, modules, and shared utilities. The goal is normalized semantic parity (ignoring irrelevant whitespace) in the generated `.tex` files.
 
 ## Principles
 
@@ -61,7 +61,6 @@ Review and extend existing utilities in `typescript/src/latex/format/`. These sh
 ### Shared Game Types
 
 Create or extend `typescript/src/types/core.ts` for constants used across the system:
-
 
 - Attributes (Strength, Dexterity, etc.) — use `RiseAttribute` from `rise_data.ts`.
 - Defenses (Armor, Fortitude, etc.) — use `RiseDefense` from `rise_data.ts`.
@@ -143,19 +142,19 @@ Item descriptions use `$accuracy`, `$damage`, `$dr4`, `$mundanepower`, etc. — 
 
 #### Rust-to-TypeScript Function Mapping
 
-| Rust Function | TypeScript Equivalent | Location |
-| :--- | :--- | :--- |
+| Rust Function            | TypeScript Equivalent   | Location                                 |
+| :----------------------- | :---------------------- | :--------------------------------------- |
 | `replace_attack_terms()` | `replacePlaceholders()` | `latex/monsters/replace_placeholders.ts` |
-| `item_creature()` | `getItemCreature()` | `equipment/item_creature.ts` |
-| `item_price()` | `getItemPrice()` | `equipment/item_price.ts` |
-| `rank_and_price_text()` | `getRankAndPriceText()` | `equipment/item_price.ts` |
-| `item_latex()` | `itemLatex()` | `equipment/latex/item_latex.ts` |
-| `TableRow::from_item()` | `fromItem()` | `equipment/latex/latex_table.ts` |
-| `TableRow::to_latex()` | `rowToLatex()` | `equipment/latex/latex_table.ts` |
-| `longtable()` | `longtable()` | `equipment/latex/latex_table.ts` |
-| `longtable_percentile()` | `longtablePercentile()` | `equipment/latex/latex_table.ts` |
-| `standard_sort()` | `standardSort()` | `equipment/latex/latex_table.ts` |
-| `latexify()` | `latexify()` | `latex/format/latexify.ts` |
+| `item_creature()`        | `getItemCreature()`     | `equipment/item_creature.ts`             |
+| `item_price()`           | `getItemPrice()`        | `equipment/item_price.ts`                |
+| `rank_and_price_text()`  | `getRankAndPriceText()` | `equipment/item_price.ts`                |
+| `item_latex()`           | `itemLatex()`           | `equipment/latex/item_latex.ts`          |
+| `TableRow::from_item()`  | `fromItem()`            | `equipment/latex/latex_table.ts`         |
+| `TableRow::to_latex()`   | `rowToLatex()`          | `equipment/latex/latex_table.ts`         |
+| `longtable()`            | `longtable()`           | `equipment/latex/latex_table.ts`         |
+| `longtable_percentile()` | `longtablePercentile()` | `equipment/latex/latex_table.ts`         |
+| `standard_sort()`        | `standardSort()`        | `equipment/latex/latex_table.ts`         |
+| `latexify()`             | `latexify()`            | `latex/format/latexify.ts`               |
 
 #### StandardItem and Tags
 
@@ -181,14 +180,14 @@ Port the core equipment infrastructure (used by all sub-phases):
 - `rust/src/equipment/magic_armor/` → `body_armor.rs`, `shields.rs`
 - LaTeX output: `magic_armor.tex`, `magic_armor_table.tex`
 
-### Phase 3.2: Held Items (Weapons & Implements)
+### Phase 3.2: Held Items (Weapons & Implements) ✅
 
 Each sub-phase only needs to port the **data definitions and any category-specific logic** (e.g., crafting text strings, `ToTableRows` implementations). The shared infrastructure (`itemLatex()`, `fromItem()`, `longtable()`, `replacePlaceholders()`, etc.) was completed in Phase 3.1.
 
 - `rust/src/equipment/weapons.rs` → `Weapon` stats, tags, groups, and materials
 - `rust/src/equipment/magic_weapons/` → `melee.rs`, `ranged.rs`, `unrestricted.rs`
 - `rust/src/equipment/implements/` → `rods.rs`, `staffs.rs`, `wands.rs`
-- LaTeX output: `magic_weapons.tex`, `magic_weapons_table.tex`, `implements.tex`, `implements_table.tex`
+- LaTeX output: `magic_weapons.tex`, `magic_weapons_table.tex`, `implements.tex`, `implements_table.tex` [✅ Verified Tables]
 
 ### Phase 3.3: Apparel
 
@@ -294,14 +293,48 @@ Update `bin/rtgen` and `bin/rtgen.ps1` to include the new generation commands.
 
 ### Verification Strategy
 
-1. **Capture baseline snapshots**: Before starting migration work, run `generate_rust_files.fish` and save all generated `.tex` files as a reference baseline.
-2. **Per-phase verification**: After completing each phase, diff the specific outputs that phase covers rather than waiting until the end:
-   - Phase 3: diff each equipment `.tex` file
-   - Phase 4: diff `classes.tex` and each uncommon species `.tex` file
-   - Phase 5: diff `modules.tex`
-3. **Whitespace normalization**: Account for possible whitespace-only differences between Rust and TypeScript `latexify` implementations during comparison.
-4. **Validation warnings**: Port the Rust `eprintln!` validation checks (e.g., item descriptions starting with "as an action", damage types in short descriptions) as `console.warn` calls in TypeScript.
-5. **Parity gate**: Fix any discrepancies until `diff` shows zero meaningful changes for each output file.
+#### How to Run a Comparison
+
+This is the canonical workflow for comparing Rust vs TypeScript output for any equipment category. Follow it exactly — do not read source files speculatively.
+
+**Step 1: Generate the Rust baseline** (run from `rust/` directory)
+
+```powershell
+cargo run --bin item_latex -- --category <CATEGORY> --table > rust_<category>_table.txt
+cargo run --bin item_latex -- --category <CATEGORY> --descriptions > rust_<category>_descriptions.txt
+```
+
+Valid `--category` values: `implements`, `apparel`, `magic armor`, `magic weapons`, `consumable tools`, `permanent tools`, `relics`, `everything`.
+
+**Step 2: Generate the TypeScript output** (run from `typescript/` directory)
+
+```powershell
+npx tsx src/scripts/compare_equipment.ts --category <category> --table > ts_<category>_table.txt
+npx tsx src/scripts/compare_equipment.ts --category <category> --descriptions > ts_<category>_descriptions.txt
+```
+
+(See `typescript/src/scripts/compare_equipment.ts` — create this script if it does not exist.)
+
+**Step 3: Diff using the normalize-aware script**
+
+```powershell
+node typescript/src/scripts/verify_latex.js rust_<category>_table.txt ts_<category>_table.txt
+node typescript/src/scripts/verify_latex.js rust_<category>_descriptions.txt ts_<category>_descriptions.txt
+```
+
+The `verify_latex.js` script normalizes whitespace and encoding differences before comparing. Any remaining difference is a semantic discrepancy that must be fixed.
+
+**Step 4: Fix discrepancies, then re-run Step 3 until clean.**
+
+> [!IMPORTANT]
+> Do NOT read Rust or TypeScript source files to reason about what the output _should_ be. Run both generators and compare the actual output. The diff tells you exactly what to fix.
+
+#### Other Verification Notes
+
+- **Whitespace normalization**: `verify_latex.js` normalizes all whitespace, so insignificant formatting differences are ignored.
+- **Encoding**: PowerShell redirects may produce UTF-16LE. `verify_latex.js` handles this automatically.
+- **Validation warnings**: Port the Rust `eprintln!` validation checks (e.g., item descriptions starting with "as an action", damage types in short descriptions) as `console.warn` calls in TypeScript.
+- **Parity gate**: A phase is complete only when `verify_latex.js` reports `MATCH` for all relevant files.
 
 ---
 
