@@ -5,6 +5,11 @@
 - [x] **Phase 1: Core Infrastructure & Shared Utilities**
 - [x] **Phase 2: Creature & Modifier System**
 - [ ] **Phase 3: Equipment System Migration**
+  - [x] **Phase 3.1: Equipment Infrastructure & Armor**
+  - [ ] **Phase 3.2: Held Items (Weapons & Implements)**
+  - [ ] **Phase 3.3: Apparel**
+  - [ ] **Phase 3.4: Consumables (Potions, Alchemical Items, Poisons)**
+  - [ ] **Phase 3.5: Tools**
 - [ ] **Phase 4: Class & Archetype Migration**
 - [ ] **Phase 5: Module Migration**
 - [ ] **Phase 6: Integration & Verification**
@@ -118,58 +123,52 @@ Port from `rust/src/creatures/creature.rs`:
 
 ## Phase 3: Equipment System Migration
 
-### Supporting Types
+> [!NOTE]
+> Phase 3 is split into several sub-phases due to the volume of equipment data.
 
-Port the equipment infrastructure:
+### Phase 3.1: Equipment Infrastructure & Armor
 
-- `rust/src/equipment/item_rarity.rs` → `ItemRarity` (Common, Uncommon, Rare, etc.)
-- `rust/src/equipment/item_price.rs` → `item_price()`, `rank_and_price_text()` (price is derived from rank + rarity)
-- `rust/src/equipment/item_upgrade.rs` → `ItemUpgrade` struct (rank, short_description, description)
-- `rust/src/equipment/item_creature.rs` → `item_creature()` factory (creates synthetic `Creature` for `replace_attack_terms`)
-- `rust/src/equipment/poison.rs` → `Exposure`, `Form` enums and `poison_description()` function
+#### Supporting Types & Logic
 
-### Data Structures
+Port the core equipment infrastructure (used by all sub-phases):
 
-Define interfaces in `typescript/src/equipment/types.ts`:
+- `rust/src/equipment/item_rarity.rs` → `ItemRarity` (Common, Relic)
+- `rust/src/equipment/item_price.rs` → `item_price()`, `rank_and_price_text()`
+- `rust/src/equipment/item_upgrade.rs` → `ItemUpgrade` struct
+- `rust/src/equipment/item_creature.rs` → `item_creature()` factory
+- `rust/src/equipment/item_latex.rs` → `item_latex()` formatting logic
+- `rust/src/equipment/latex_table.ts` → `longtable` helpers
 
-- `StandardItem`: name, rank, rarity (`ItemRarity`), description, short_description, magical (bool), upgrades (`ItemUpgrade[]`), tags (`AbilityTag[]`)
-- `Weapon`: base weapon stats (damage, accuracy, tags, group, material) — from `rust/src/equipment/weapons.rs` (20KB)
-- `Armor`: base armor stats (defense, usage class, material) — from `rust/src/equipment/armor.rs`
-- Static factory methods: `attribute_item()`, `skill_item()`, `reliable_skill_item()`
+#### Armor Data & Logic
 
-### LaTeX Generation
+- `rust/src/equipment/armor.rs` → `Armor` stats, materials, and definitions
+- `rust/src/equipment/magic_armor/` → `body_armor.rs`, `shields.rs`
+- LaTeX output: `magic_armor.tex`, `magic_armor_table.tex`
 
-Port from `rust/src/equipment/`:
+### Phase 3.2: Held Items (Weapons & Implements)
 
-- `item_latex.rs` → `item_latex()` function generating `\begin{magicalattuneitem}` / `\begin{passiveitem}` blocks, including upgrade sections with `\upgraderank` and description validation warnings
-- `latex_table.rs` → `TableRow`, `longtable()`, `longtable_percentile()` (with percentile range calculation for random loot), `standard_sort()`, `table_header()`
+- `rust/src/equipment/weapons.rs` → `Weapon` stats, tags, groups, and materials
+- `rust/src/equipment/magic_weapons/` → `melee.rs`, `ranged.rs`, `unrestricted.rs`
+- `rust/src/equipment/implements/` → `rods.rs`, `staffs.rs`, `wands.rs`
+- LaTeX output: `magic_weapons.tex`, `magic_weapons_table.tex`, `implements.tex`, `implements_table.tex`
 
-### Data Porting
+### Phase 3.3: Apparel
 
-Migrate all item data. Note that several Rust files have subdirectories with multiple files:
+- `rust/src/equipment/apparel/` → `arms.rs`, `head.rs`, `jewelry.rs`, `legs.rs`, `torso.rs`
+- LaTeX output: `apparel.tex`, `apparel_table.tex`
 
-- `rust/src/equipment/apparel/` (arms.rs, head.rs, jewelry.rs, legs.rs, torso.rs) → `typescript/src/equipment/data/apparel/`
-- `rust/src/equipment/implements/` (rods.rs, staffs.rs, wands.rs) → `typescript/src/equipment/data/implements/`
-- `rust/src/equipment/magic_armor/` (body_armor.rs, shields.rs) → `typescript/src/equipment/data/magic_armor/`
-- `rust/src/equipment/magic_weapons/` (melee.rs, ranged.rs, unrestricted.rs) → `typescript/src/equipment/data/magic_weapons/`
-- `rust/src/equipment/tools/` (alchemical_items.rs, elixirs.rs, kits.rs, mounts.rs, objects.rs, poisons.rs, potions.rs, traps.rs) → `typescript/src/equipment/data/tools/`
-- `rust/src/equipment/relics.rs` → `typescript/src/equipment/data/relics.ts`
-- `rust/src/equipment/everything.rs` → `typescript/src/equipment/data/everything.ts` (combined table)
+### Phase 3.4: Consumables (Potions, Alchemical Items, Poisons)
 
-### Output Files
+- `rust/src/equipment/poison.rs` → `Exposure`, `Form`, and description logic
+- `rust/src/equipment/tools/` → `alchemical_items.rs`, `elixirs.rs`, `poisons.rs`, `potions.rs`
+- LaTeX output: `consumable_tools.tex`, `consumable_tools_table.tex`
 
-Equipment generates the following `.tex` files (preserving the Rust output destinations):
+### Phase 3.5: Tools & Relics
 
-| Output File                                           | Directory                        | Content                |
-| :---------------------------------------------------- | :------------------------------- | :--------------------- |
-| `apparel.tex` / `apparel_table.tex`                   | `comprehensive_codex/generated/` | Descriptions and table |
-| `implements.tex` / `implements_table.tex`             | `comprehensive_codex/generated/` | Descriptions and table |
-| `magic_armor.tex` / `magic_armor_table.tex`           | `comprehensive_codex/generated/` | Descriptions and table |
-| `magic_weapons.tex` / `magic_weapons_table.tex`       | `comprehensive_codex/generated/` | Descriptions and table |
-| `consumable_tools.tex` / `consumable_tools_table.tex` | `comprehensive_codex/generated/` | Descriptions and table |
-| `permanent_tools.tex` / `permanent_tools_table.tex`   | `comprehensive_codex/generated/` | Descriptions and table |
-| `relics.tex` / `relics_table.tex`                     | `core_book/generated/`           | Descriptions and table |
-| `everything_table.tex`                                | `core_book/generated/`           | Combined table         |
+- `rust/src/equipment/tools/` → `kits.rs`, `mounts.rs`, `objects.rs`, `traps.rs`
+- `rust/src/equipment/relics.rs` → `relics.ts`
+- `rust/src/equipment/everything.rs` → Combined table logic
+- LaTeX output: `permanent_tools.tex`, `permanent_tools_table.tex`, `relics.tex`, `relics_table.tex`, `everything_table.tex`
 
 ---
 

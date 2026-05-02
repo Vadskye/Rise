@@ -10,6 +10,7 @@ export type Attribute = RiseAttribute;
 export type Defense = RiseDefense;
 export type Size = RiseSize;
 export type Debuff = RiseDebuff;
+export type Tag = RiseTag;
 
 export const ATTRIBUTES: Attribute[] = [
   'strength',
