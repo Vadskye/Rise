@@ -126,7 +126,43 @@ Port from `rust/src/creatures/creature.rs`:
 > [!NOTE]
 > Phase 3 is split into several sub-phases due to the volume of equipment data.
 
-### Phase 3.1: Equipment Infrastructure & Armor
+### Key Implementation Notes (Lessons from Phase 3.1)
+
+#### Placeholder Replacement
+
+Item descriptions use `$accuracy`, `$damage`, `$dr4`, `$mundanepower`, etc. — the same placeholder system used by monster abilities. The Rust code calls `replace_attack_terms()` for this; the TypeScript equivalent is `replacePlaceholders()` from `typescript/src/latex/monsters/replace_placeholders.ts`.
+
+- **Both item descriptions and table row short descriptions** go through placeholder replacement. The Rust `item_latex.rs` calls `replace_attack_terms()` on descriptions, and `latex_table.rs` calls it on table rows.
+- The TypeScript `replacePlaceholders()` function requires a `Creature` with a **non-empty, title-cased name** (it calls `replaceNames()` which throws on lowercase/undefined names). The `getItemCreature()` factory must set a name (currently `"The Item"`) via `creature.setProperties()`, not `creature.setRequiredProperties()` (which doesn't accept `name`).
+- Pass `{ isMagical: item.magical }` as the `ReplacementContext` to ensure the correct power type (mundane vs magical) is used for damage calculations.
+
+#### Format Differences: Tables vs Item Blocks
+
+- **Table rows** use the raw `getRankAndPriceText()` output directly (e.g., `2 (20 gp)`).
+- **Item blocks** (`item_latex.ts`) prefix it with `Rank` (e.g., `Rank 2 (20 gp)`). This is baked into the `\begin{magicalattuneitem}{Name}{Rank ...}` format string, not into `getRankAndPriceText()` itself.
+
+#### Rust-to-TypeScript Function Mapping
+
+| Rust Function | TypeScript Equivalent | Location |
+| :--- | :--- | :--- |
+| `replace_attack_terms()` | `replacePlaceholders()` | `latex/monsters/replace_placeholders.ts` |
+| `item_creature()` | `getItemCreature()` | `equipment/item_creature.ts` |
+| `item_price()` | `getItemPrice()` | `equipment/item_price.ts` |
+| `rank_and_price_text()` | `getRankAndPriceText()` | `equipment/item_price.ts` |
+| `item_latex()` | `itemLatex()` | `equipment/latex/item_latex.ts` |
+| `TableRow::from_item()` | `fromItem()` | `equipment/latex/latex_table.ts` |
+| `TableRow::to_latex()` | `rowToLatex()` | `equipment/latex/latex_table.ts` |
+| `longtable()` | `longtable()` | `equipment/latex/latex_table.ts` |
+| `longtable_percentile()` | `longtablePercentile()` | `equipment/latex/latex_table.ts` |
+| `standard_sort()` | `standardSort()` | `equipment/latex/latex_table.ts` |
+| `latexify()` | `latexify()` | `latex/format/latexify.ts` |
+
+#### StandardItem and Tags
+
+- `StandardItem.tags` uses `ActiveAbility['tags']` (the same tag type used by abilities). Tag values like `"Attune"`, `"Attune (deep)"`, `"Attune (target)"` are string literals, not a separate enum. The `formatTagLatex()` function from `latex/format` handles rendering these as `\abilitytag{Attune}` etc.
+- The Rust `AbilityTag` enum (with variants like `Attune(AttuneType)`) maps to simple strings in TypeScript. Check `isAttuned` by testing `tag.toLowerCase().includes('attune')`.
+
+### Phase 3.1: Equipment Infrastructure & Armor ✅
 
 #### Supporting Types & Logic
 
@@ -137,7 +173,7 @@ Port the core equipment infrastructure (used by all sub-phases):
 - `rust/src/equipment/item_upgrade.rs` → `ItemUpgrade` struct
 - `rust/src/equipment/item_creature.rs` → `item_creature()` factory
 - `rust/src/equipment/item_latex.rs` → `item_latex()` formatting logic
-- `rust/src/equipment/latex_table.ts` → `longtable` helpers
+- `rust/src/equipment/latex_table.rs` → `longtable` helpers
 
 #### Armor Data & Logic
 
@@ -146,6 +182,8 @@ Port the core equipment infrastructure (used by all sub-phases):
 - LaTeX output: `magic_armor.tex`, `magic_armor_table.tex`
 
 ### Phase 3.2: Held Items (Weapons & Implements)
+
+Each sub-phase only needs to port the **data definitions and any category-specific logic** (e.g., crafting text strings, `ToTableRows` implementations). The shared infrastructure (`itemLatex()`, `fromItem()`, `longtable()`, `replacePlaceholders()`, etc.) was completed in Phase 3.1.
 
 - `rust/src/equipment/weapons.rs` → `Weapon` stats, tags, groups, and materials
 - `rust/src/equipment/magic_weapons/` → `melee.rs`, `ranged.rs`, `unrestricted.rs`
