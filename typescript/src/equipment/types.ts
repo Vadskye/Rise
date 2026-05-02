@@ -43,10 +43,22 @@ export type MagicArmor =
   | { kind: 'Body', item: StandardItem }
   | { kind: 'Shield', item: StandardItem };
 
+export type MagicWeapon =
+  | { kind: 'Melee', item: StandardItem }
+  | { kind: 'Ranged', item: StandardItem }
+  | { kind: 'Unrestricted', item: StandardItem };
+
+export type Implement =
+  | { kind: 'Rod', item: StandardItem }
+  | { kind: 'Staff', item: StandardItem }
+  | { kind: 'Wand', item: StandardItem };
+
+import { DicePool } from '../types/dice_pool';
+
 export interface Weapon {
   name: string;
   accuracy: number;
-  damage_dice: string; // We'll use string for now or DicePool if we can import it
+  damage_dice: DicePool;
   tags: WeaponTag[];
 }
 
