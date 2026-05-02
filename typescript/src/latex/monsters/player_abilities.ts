@@ -15,7 +15,10 @@ import {
   getWeaponPowerMultiplier,
   MonsterWeapon,
 } from '@src/monsters/weapons';
-import { addAccuracyToEffect } from '@src/latex/monsters/replace_placeholders';
+import {
+  addAccuracyToEffect,
+  replaceAbilityPlaceholders,
+} from '@src/latex/monsters/replace_placeholders';
 
 // It's the same except that `effect` and `weapon` are mandatory.
 export interface StrikeActiveAbility extends Omit<ActiveAbility, 'effect' | 'weapon'> {
@@ -37,6 +40,10 @@ export function convertSpellToMonsterLatex(monster: Creature, spell: SpellDefini
 export function convertAbilityToMonsterLatex(monster: Creature, ability: ActiveAbility): string {
   let latex = convertAbilityToLatex(reformatAsMonsterAbility(monster, ability), true);
   latex = replaceGenericTerms(monster, ability, latex);
+  latex = replaceAbilityPlaceholders(monster, latex, {
+    isMagical: ability.isMagical,
+    weapon: ability.weapon,
+  });
   checkSuccessfullyConverted(latex, monster.name, ability.name);
   return latex;
 }

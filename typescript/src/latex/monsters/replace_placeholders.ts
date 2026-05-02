@@ -1,18 +1,131 @@
 import { Creature } from '@src/character_sheet/creature';
+import {
+  MonsterWeapon,
+  getWeaponDamageDice,
+  getWeaponPowerMultiplier,
+  getWeaponAccuracy as getWeaponAccuracyFromWeapons,
+} from '@src/monsters/weapons';
+import { DamageScaling, DicePool, PowerScaling } from '@src/types/attack';
 
-export function replacePlaceholders(monster: Creature, latex: string) {
-  latex = replaceNames(latex, monster.name);
-  latex = replaceAccuracyTerms(latex, monster);
+export interface ReplacementContext {
+  isMagical?: boolean;
+  weapon?: MonsterWeapon;
+}
 
-  if (latex.includes('$')) {
-    const contextMatch = latex.match(/(.{10}\$.{10})/);
-    const context = contextMatch ? contextMatch[1] : 'Unclear context';
+export function replacePlaceholders(monster: Creature, latex: string, context: ReplacementContext = {}) {
+  // Use a specialized pass for ability-specific context, and a general pass for monster-wide terms.
+  // We keep them separate so that individual ability conversion (used in tests) can choose 
+  // whether to resolve monster-wide terms like $name.
+  latex = replaceAbilityPlaceholders(monster, latex, context);
+  latex = replaceMonsterPlaceholders(monster, latex);
+
+  if (latex.includes('$') && !latex.includes('\\$')) {
+    const contextMatch = latex.match(/(.{0,10}\$.{0,10})/);
+    const contextStr = contextMatch ? contextMatch[1] : 'Unclear context';
     console.warn(
-      `replace_placeholders.ts: Unable to replace all placeholder text for ${monster.name}: '${context}'`,
+      `replace_placeholders.ts: Unable to replace all placeholder text for ${monster.name}: '${contextStr}'`,
     );
   }
 
   return latex;
+}
+
+export function replaceAbilityPlaceholders(monster: Creature, latex: string, context: ReplacementContext) {
+  const isMagical = context.isMagical ?? false;
+  
+  latex = replacePowerTerms(latex, monster, isMagical);
+  latex = replaceDamageRankTerms(latex, monster, isMagical);
+  latex = replaceScalingDamageTerms(latex, monster, isMagical);
+  latex = replaceDamageTerms(latex, monster, isMagical, context.weapon);
+  latex = replaceAccuracyTerms(latex, monster, getWeaponAccuracy(context.weapon));
+  
+  return latex;
+}
+
+export function replaceMonsterPlaceholders(monster: Creature, latex: string) {
+  latex = replaceNames(latex, monster.name);
+  latex = replaceFullWeaponDamageTerms(latex);
+  latex = replaceAccuracyTerms(latex, monster);
+  latex = replaceConsumableAccuracyTerms(latex, monster);
+  latex = replacePowerTerms(latex, monster, false); // Default to mundane for generic monster text
+  return latex;
+}
+
+// Internal helper for replaceAccuracyTerms to handle weapon accuracy
+function getWeaponAccuracy(weapon?: MonsterWeapon): number {
+  if (!weapon) return 0;
+  try {
+    // We need to import this from weapons.ts
+    return getWeaponAccuracyFromWeapons(weapon);
+  } catch (e) {
+    return 0;
+  }
+}
+
+function replaceFullWeaponDamageTerms(latex: string): string {
+  return latex.replaceAll('$fullweapondamage', '$damage damage');
+}
+
+export function replaceDamageRankTerms(
+  latex: string,
+  creature: Creature,
+  isMagical: boolean,
+): string {
+  const drPattern = /\$dr(\d+)(l)?\b/g;
+  return latex.replaceAll(drPattern, (_, rank, low) => {
+    try {
+      const scaling = low ? DamageScaling.drl(Number(rank)) : DamageScaling.dr(Number(rank));
+      return creature.calcDamageDice(scaling, isMagical, false).toString();
+    } catch (e) {
+      return `$dr${rank}${low || ''}`;
+    }
+  });
+}
+
+export function replaceScalingDamageTerms(
+  latex: string,
+  creature: Creature,
+  isMagical: boolean,
+): string {
+  const scalingPattern = /\$d(\d+)p(\d+)/g;
+  return latex.replaceAll(scalingPattern, (_, dieSize, perPower) => {
+    const scaling = new DamageScaling(DicePool.empty(), [
+      {
+        dice: DicePool.xdy(1, Number(dieSize)),
+        powerPerDice: Number(perPower),
+        powerPerPlus1Modifier: 0,
+      },
+    ]);
+    return creature.calcDamageDice(scaling, isMagical, false).toString();
+  });
+}
+
+export function replaceDamageTerms(
+  latex: string,
+  creature: Creature,
+  isMagical: boolean,
+  weapon?: MonsterWeapon,
+): string {
+  const damagePattern = /\$damage(\*\d+)?\b/g;
+  return latex.replaceAll(damagePattern, (match, multiplierStr) => {
+    if (!weapon) return match;
+    const multiplier = multiplierStr ? Number(multiplierStr.substring(1)) : 1;
+
+    const baseDice = getWeaponDamageDice(weapon);
+    const powerMultiplier = getWeaponPowerMultiplier(weapon);
+    const relevantPower = creature.getRelevantPower(isMagical);
+
+    // Create a DicePool from the weapon's base stats
+    const dice = [];
+    for (let i = 0; i < baseDice.count; i++) {
+      dice.push({ size: baseDice.size });
+    }
+    const pool = new DicePool(dice)
+      .addModifier(Math.floor(relevantPower * powerMultiplier))
+      .multiply(multiplier);
+
+    return pool.toString();
+  });
 }
 
 function replaceNames(monsterLatex: string, monsterName: string): string {
@@ -127,4 +240,26 @@ function parseAccuracyMatch({
   // Format the output: "+5" for positive, "-5" for negative.
   const accuracySign = currentAccuracy >= 0 ? '+' : '';
   return `${accuracySign}${currentAccuracy}`;
+}
+
+export function replaceConsumableAccuracyTerms(latex: string, creature: Creature): string {
+  const consumableAccuracyPattern = /\$consumableaccuracy([+-]?)(\d*)\b/g;
+
+  return latex.replaceAll(consumableAccuracyPattern, (_, modifierSign, modifierValueStr) => {
+    const modifierValue = modifierValueStr ? Number(modifierValueStr) : 0;
+    // Consumables always get a +3 accuracy bonus in addition to creature's base accuracy
+    return parseAccuracyMatch({
+      creatureAccuracy: creature.accuracy + 3,
+      modifierSign,
+      modifierValue,
+    });
+  });
+}
+
+export function replacePowerTerms(latex: string, creature: Creature, isMagical: boolean): string {
+  const power = isMagical ? creature.magical_power : creature.mundane_power;
+  return latex
+    .replaceAll('$mundanepower', creature.mundane_power.toString())
+    .replaceAll('$magicalpower', creature.magical_power.toString())
+    .replaceAll('$power', power.toString());
 }

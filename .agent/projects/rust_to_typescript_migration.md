@@ -3,12 +3,22 @@
 ## Progress Tracker
 
 - [x] **Phase 1: Core Infrastructure & Shared Utilities**
-- [ ] **Phase 2: Creature & Modifier System**
+- [x] **Phase 2: Creature & Modifier System**
 - [ ] **Phase 3: Equipment System Migration**
 - [ ] **Phase 4: Class & Archetype Migration**
 - [ ] **Phase 5: Module Migration**
 - [ ] **Phase 6: Integration & Verification**
 - [ ] **Phase 7: Cleanup**
+
+## Progress Tracking Methodology
+
+To maintain a consistent and transparent record of the migration progress, the following protocol must be followed:
+
+1. **Progress Tracker**: Update the high-level `Progress Tracker` section in this file at the end of each task to reflect completed phases.
+2. **Granular Tasks**: Use the `task.md` artifact in the App Data Directory to track specific, immediate sub-tasks during an active session.
+3. **Walkthroughs**: Document significant architectural changes and completed milestones in the `walkthrough.md` artifact.
+4. **Verification**: Mark phases as complete only after bit-for-bit parity (or acceptable normalized parity) has been verified.
+5. **Test Pass Guarantee**: A phase is not considered complete until `npm run test` is fully passing in the TypeScript project. This ensures that new features haven't introduced regressions.
 
 ## Goal
 
