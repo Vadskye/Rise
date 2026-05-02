@@ -38,6 +38,7 @@ import {
   PassiveAbility,
   ActiveAbilityScaling,
 } from '@src/abilities';
+import { DicePool, DamageScaling } from '@src/types/attack';
 import * as format from '@src/latex/format';
 import {
   EquippedItem,
@@ -782,7 +783,7 @@ export class Creature implements CreaturePropertyMap {
       // Jump skill as a trained skill and it shouldn't appear in the book, though.
       modifier.immune = 'Prone';
     } else if (traitName === 'nonliving') {
-      modifier.immune = 'Life, Poison'
+      modifier.immune = 'Life, Poison';
     } else if (traitName === 'quadrupedal') {
       modifier.numericEffects = [{ modifier: 10, statistic: 'speed' }];
       modifier.resistant = 'Trip';
@@ -996,6 +997,16 @@ export class Creature implements CreaturePropertyMap {
 
   public get strength() {
     return this.getPropertyValue('strength');
+  }
+
+  public calcDamageDice(scaling: DamageScaling, isMagical: boolean, isStrike: boolean): DicePool {
+    const power = this.getRelevantPower(isMagical);
+    let pool = scaling.scaledPool(power);
+    if (isStrike) {
+      // TODO: Port StrikeDamageDice modifier logic if needed.
+      // For now, we assume no additional strike damage modifiers beyond scaling.
+    }
+    return pool;
   }
 
   public get dexterity() {
@@ -1449,7 +1460,15 @@ export class Creature implements CreaturePropertyMap {
   }
 
   public getStandardTraitsForClassification(): RiseTrait[] {
-    let traits: RiseTrait[] = ['blooded', 'corporeal', 'dynamic', 'ensouled', 'living', 'mortal', 'sighted'];
+    let traits: RiseTrait[] = [
+      'blooded',
+      'corporeal',
+      'dynamic',
+      'ensouled',
+      'living',
+      'mortal',
+      'sighted',
+    ];
 
     // Origin Traits
     const originTraits: RiseTrait[] = [];
