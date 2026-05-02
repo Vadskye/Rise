@@ -875,7 +875,7 @@ export class Creature implements CreaturePropertyMap {
   getSizeBasedSweepingTag(): RiseWeaponTag | null {
     return {
       fine: null,
-      diminuitive: null,
+      diminutive: null,
       tiny: null,
       small: null,
       medium: null,
