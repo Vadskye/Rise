@@ -64,12 +64,17 @@ function tableCaption(caption: string): string {
   return `\\lcaption{${caption}} \\\\`;
 }
 
-export function tableHeader(nameText: string, withCategory: boolean, withPercentile: boolean): string {
-  const categoryPart = withCategory ? `& \\tb{Type} ` : '';
+export function tableHeader(
+  nameText: string,
+  withCategory: boolean,
+  withPercentile: boolean,
+): string {
+  const categorySeparator = withCategory ? '&' : '';
+  const categoryColumnName = withCategory ? ' \\tb{Type}' : '';
   const pageOrPercentile = withPercentile ? '\\tb{d100}' : '\\tb{Page}';
 
   return `
-    \\tb{${nameText}} ${categoryPart}& \\tb{Description} & \\tb{Rank (Cost)} & ${pageOrPercentile} \\tableheaderrule
+    \\tb{${nameText}}${categorySeparator}${categoryColumnName} & \\tb{Description} & \\tb{Rank (Cost)} & ${pageOrPercentile} \\tableheaderrule
   `.trim();
 }
 
@@ -88,7 +93,7 @@ export function standardSort(rows: TableRow[]): void {
 
 export function longtable(caption: string, rows: TableRow[], withCategory: boolean): string {
   const categoryAndEffects = withCategory ? 'p{5em} p{20em}' : 'p{26em}';
-  
+
   const content = `
 \\begin{longtablewrapper}
 \\begin{longtable}{p{17em} ${categoryAndEffects} p{6em} p{3em}}
@@ -102,9 +107,13 @@ export function longtable(caption: string, rows: TableRow[], withCategory: boole
   return latexify(content);
 }
 
-export function longtablePercentile(caption: string, rows: TableRow[], withCategory: boolean): string {
-  const percentileRows: { range: string, row: TableRow }[] = [];
-  
+export function longtablePercentile(
+  caption: string,
+  rows: TableRow[],
+  withCategory: boolean,
+): string {
+  const percentileRows: { range: string; row: TableRow }[] = [];
+
   for (let rank = -1; rank <= 8; rank++) {
     const rowsAtRank = rows.filter((r) => r.rank === rank);
     const distinctItemCount = rowsAtRank.length;

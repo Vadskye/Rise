@@ -17,11 +17,12 @@ export function itemLatex(item: StandardItem, craftingText: string): string {
   const rankAndPrice = getRankAndPriceText(item.rank, item.rarity);
 
   const creature = getItemCreature(item.rank);
-  const description = replacePlaceholders(creature, item.description, { isMagical: item.magical });
+  const description = replacePlaceholders(creature, item.description.trim(), {
+    isMagical: item.magical,
+  });
 
-  const upgradesSection = item.upgrades.length > 0 
-    ? `\\rankline\n${latexUpgradesSection(item)}` 
-    : '';
+  const upgradesSection =
+    item.upgrades.length > 0 ? `\\rankline\n${latexUpgradesSection(item)}` : '';
 
   const latex = `
 \\begin{${magicalPrefix}${abilityType}}{${item.name}}{Rank ${rankAndPrice}}
@@ -30,7 +31,7 @@ export function itemLatex(item: StandardItem, craftingText: string): string {
   ${description}
   ${upgradesSection}
 \\end{${magicalPrefix}${abilityType}}
-  `.trim();
+  `;
 
   return latexify(latex);
 }
@@ -51,13 +52,20 @@ function validateShortDescription(item: StandardItem) {
 function latexUpgradesSection(item: StandardItem): string {
   if (item.upgrades.length === 0) return '';
 
-  return item.upgrades.map((upgrade, i) => {
-    const upgradeTier = i + 1;
-    const upgradeName = `${item.name}${'+'.repeat(upgradeTier)}`;
-    const rankAndPrice = getRankAndPriceText(upgrade.rank, item.rarity);
-    const creature = getItemCreature(upgrade.rank);
-    const description = replacePlaceholders(creature, upgrade.description, { isMagical: item.magical });
+  return item.upgrades
+    .map((upgrade, i) => {
+      const upgradeTier = i + 1;
+      const upgradeName = `${item.name}${'+'.repeat(upgradeTier)}`;
+      const rankAndPrice = getRankAndPriceText(upgrade.rank, item.rarity);
+      const creature = getItemCreature(upgrade.rank);
+      const description = replacePlaceholders(creature, upgrade.description.trim(), {
+        isMagical: item.magical,
+      });
 
-    return `\\upgraderank{${upgradeName}}{${rankAndPrice}} ${description}`;
-  }).join('\n');
+      return `
+      \\upgraderank{${upgradeName}}{${rankAndPrice}} 
+      ${description}
+    `;
+    })
+    .join('');
 }

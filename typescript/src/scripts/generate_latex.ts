@@ -11,6 +11,14 @@ import {
   generateRitualDescriptions,
 } from '@src/latex';
 import { mysticSpheres } from '@src/abilities/mystic_spheres';
+import {
+  generateMagicArmorDescriptions,
+  generateMagicArmorTables,
+  generateMagicWeaponsDescriptions,
+  generateMagicWeaponsTables,
+  generateImplementsDescriptions,
+  generateImplementsTables,
+} from '@src/equipment/latex';
 import cli from 'commander';
 import fs from 'fs';
 
@@ -34,6 +42,18 @@ function generateLatex(latexType: string): string {
     latex = generateCombatStyleSummaries();
   } else if (latexType === 'combat_style_descriptions') {
     latex = combatStyles.map(convertCombatStyleToLatex).join('\n\\newpage\n');
+  } else if (latexType === 'equipment_magic_armor_descriptions') {
+    latex = generateMagicArmorDescriptions();
+  } else if (latexType === 'equipment_magic_armor_tables') {
+    latex = generateMagicArmorTables();
+  } else if (latexType === 'equipment_magic_weapons_descriptions') {
+    latex = generateMagicWeaponsDescriptions();
+  } else if (latexType === 'equipment_magic_weapons_tables') {
+    latex = generateMagicWeaponsTables();
+  } else if (latexType === 'equipment_implements_descriptions') {
+    latex = generateImplementsDescriptions();
+  } else if (latexType === 'equipment_implements_tables') {
+    latex = generateImplementsTables();
   } else {
     throw new Error(`Unrecognized latexType: '${latexType}'`);
   }

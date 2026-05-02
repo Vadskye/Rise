@@ -71,7 +71,10 @@ export function getItemCreature(rank: number): Creature {
     size: 'medium',
     level: level,
   });
-  creature.setProperties({ name: 'The Item' });
+  // setRequiredProperties sets monster_type to 'normal', which makes is_monster=true
+  // and applies CR accuracy scaling. Item creatures should not use monster scaling —
+  // clear monster_type so is_monster stays false, matching Rust item_creature behavior.
+  creature.setProperties({ name: 'The Item', monster_type: '' });
 
   creature.addSimpleModifier({
     name: 'Item Scaling Perception',
