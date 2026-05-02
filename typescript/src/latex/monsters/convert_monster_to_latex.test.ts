@@ -16,7 +16,7 @@ t.test('convertMonsterToLatex', (t) => {
     const latexOutput = convertMonsterToLatex(creature);
     t.match(
       latexOutput,
-      'monsubsection{Test Monster}{Level 1 Warrior}{Medium Natural Humanoid}',
+      'monsubsection{Test Monster}{Level 1 Warrior}{Medium natural humanoid}',
     );
     t.match(latexOutput, '\\begin{monsterstatistics}');
     t.match(latexOutput, '\\end{monsterstatistics}');
