@@ -301,7 +301,7 @@ t.test('convertAbilityToMonsterLatex', (t) => {
     t.equal(
       convertAbilityToMonsterLatex(simpleCreature, ability),
       `\\begin{activeability}*{Grapple}{Standard action}
-      \\abilitytags \\abilitytag{Brawling}, \\abilitytag{Size-Based}
+      \\abilitytags \\abilitytag{Brawling}, \\abilitytag{Physical}, \\abilitytag{Size-Based}
       \\rankline
       \\hypertargetraised{maneuver:Grapple}{}%
       \\hypertargetraised{maneuver:grapple}{}%
@@ -324,7 +324,7 @@ t.test('convertAbilityToMonsterLatex', (t) => {
     t.equal(
       convertAbilityToMonsterLatex(simpleCreature, ability),
       `\\begin{activeability}*{Piledriver}{Standard action}
-      \\abilitytags \\abilitytag{Brawling}
+      \\abilitytags \\abilitytag{Brawling}, \\abilitytag{Physical}
       \\rankline
       \\hypertargetraised{maneuver:Piledriver}{}%
       \\hypertargetraised{maneuver:piledriver}{}%
@@ -539,6 +539,7 @@ t.test('restructureStrikeAbility', (t) => {
       restructureStrikeAbility(mockCreature, maneuver);
 
       t.matchOnlyStrict(maneuver, {
+        cost: 'Your available movement, if any, is reduced to zero.',
         attack: {
           crit: undefined,
           hit: '2d8+10 damage.',
