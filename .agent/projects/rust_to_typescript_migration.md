@@ -47,6 +47,7 @@ Review and extend existing utilities in `typescript/src/latex/format/`. These sh
 
 Create or extend `typescript/src/types/core.ts` for constants used across the system:
 
+
 - Attributes (Strength, Dexterity, etc.) — use `RiseAttribute` from `rise_data.ts`.
 - Defenses (Armor, Fortitude, etc.) — use `RiseDefense` from `rise_data.ts`.
 - Skills (24 skills with attribute mappings) — use `RiseSkill` from `rise_data.ts` and metadata from `creature.ts`.
@@ -57,7 +58,7 @@ Create or extend `typescript/src/types/core.ts` for constants used across the sy
 - Debuffs — use `RiseDebuff`
 - Damage dice and dice pools — port from `rust/src/core_mechanics/damage_dice.rs` and `dice_pool.rs` (these are generation-specific).
 - Movement modes and speeds — use `creature.ts` / `sheet_worker.ts`.
-- Passive abilitiess
+- Passive abilities
 - Vital wounds
 - Damage absorption
 
