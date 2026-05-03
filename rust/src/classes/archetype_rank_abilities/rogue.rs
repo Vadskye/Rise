@@ -109,6 +109,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             rank: 5,
             description: r"
                 \begin{activeability}{Assassination}{Standard action}
+                    \abilitytags \atSubtle
                     \rankline
                     You study a creature within \rngmed range, finding weak points you can take advantage of.
                     As a \brief effect, whenever you make a \glossterm{strike} against the target while it is adjacent to you and \unaware of the attack, the strike deals double damage.
