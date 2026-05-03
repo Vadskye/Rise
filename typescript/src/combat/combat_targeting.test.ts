@@ -13,11 +13,7 @@ t.test('Target Selection: Ordered', (t) => {
   const allyTeam = createTeam('Ally', [attacker]);
 
   const scenario = createScenario([allyTeam, enemyTeam]);
-  const selected = selectTarget(
-    attacker,
-    [target1, target2],
-    scenario.initializeFightState(),
-  );
+  const selected = selectTarget(attacker, [target1, target2], scenario.initializeFightState());
 
   t.equal(selected.id, target1.id, 'Should select the first target in the list');
   t.end();
@@ -37,11 +33,7 @@ t.test('Target Selection: Vulnerable (Defense)', (t) => {
   const allyTeam = createTeam('Ally', [attacker]);
 
   const scenario = createScenario([allyTeam, enemyTeam]);
-  const selected = selectTarget(
-    attacker,
-    [tank, squishy],
-    scenario.initializeFightState(),
-  );
+  const selected = selectTarget(attacker, [tank, squishy], scenario.initializeFightState());
 
   t.equal(selected.id, squishy.id, 'Should select the target with the lowest defense');
   t.end();
