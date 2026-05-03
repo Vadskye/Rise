@@ -1,6 +1,7 @@
 import { allMagicArmor } from '../data/magic_armor';
 import { allMagicWeapons } from '../data/magic_weapons';
 import { allImplements } from '../data/implements';
+import { allApparel, apparelLatex, apparelTable } from '../apparel';
 import { itemLatex } from './item_latex';
 import { fromItem, standardSort, longtable, longtablePercentile } from './latex_table';
 
@@ -55,4 +56,13 @@ export function generateImplementsTables(): string {
   const rows = allImplements().flatMap(m => fromItem(m.item, false, m.kind));
   standardSort(rows);
   return longtable('Implements', rows, true);
+}
+
+export function generateApparelDescriptions(): string {
+  const items = allApparel('Common');
+  return items.map(a => apparelLatex(a)).join('\n');
+}
+
+export function generateApparelTables(): string {
+  return apparelTable();
 }
