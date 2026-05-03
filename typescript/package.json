@@ -45,6 +45,7 @@
     "tap": "npx tsc --incremental && npx tap --node-arg=--import=tsx --exclude=**/*.js",
     "test": "npx tsc --incremental && npx tap --node-arg=--import=tsx --exclude=**/*.js",
     "prettier": "prettier --write \"src/**/*.ts\"",
-    "lint": "eslint \"src/**/*.ts\""
+    "lint": "eslint \"src/**/*.ts\"",
+    "format_archetype": "npx tsx src/scripts/format_archetype_description.ts"
   }
 }
