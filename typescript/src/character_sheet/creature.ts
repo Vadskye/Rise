@@ -83,6 +83,9 @@ type NumericCreatureProperty =
   | 'shield_reflex'
   | 'speed'
   | 'vital_rolls'
+  | 'fatigue_tolerance'
+  | 'initiative'
+  | 'all_skills'
   | RiseAttribute
   | RiseAttributeModifier
   | RiseDefense

@@ -63,7 +63,7 @@ export function combatDisciplineAbilities(): RankAbility[] {
           \\abilitycost You can increase your \\glossterm{fatigue level} by one to use this ability as a \\glossterm{minor action}.
           \\rankline
           Remove all \\glossterm{conditions} affecting you.
-          In addition, you \\briefly become immune to all conditions.
+          In addition, you \\glossterm{briefly} become immune to all conditions.
         \\end{activeability}
       `,
     },
@@ -73,7 +73,7 @@ export function combatDisciplineAbilities(): RankAbility[] {
       isMagical: false,
       rank: 6,
       description: `
-        You \\briefly ignore the vital wound effect of each vital wound you gain.
+        You \\glossterm{briefly} ignore the vital wound effect of each vital wound you gain.
         While a vital wound is delayed in this way, you do not suffer any effects from its specific vital wound effect, but you still consider it when calculating your penalties to \\glossterm{vital rolls}.
       `,
     },
@@ -267,7 +267,7 @@ export function martialMasteryAbilities(): RankAbility[] {
         However, the maneuver deals half damage.
         You can only apply this augment to maneuvers that can deal damage.
 
-        \\parhead{Defensive Maneuver} You \\briefly gain a bonus to your Armor defense equal to half your excess rank (minimum 1) when you use the maneuver.
+        \\parhead{Defensive Maneuver} You \\glossterm{briefly} gain a bonus to your Armor defense equal to half your excess rank (minimum 1) when you use the maneuver.
         You can only apply this augment to maneuvers which cause you to make a \\glossterm{strike}.
 
         \\parhead{Mighty Maneuver} You deal \\glossterm{extra damage} equal to twice your excess rank.
@@ -588,7 +588,7 @@ export function combatDiscipline(creature: Creature, rank: number) {
       name: 'Enduring Discipline',
       numericEffects: [
         {
-          statistic: 'mental_defense',
+          statistic: 'mental',
           modifier: rank >= 5 ? 4 : 2,
         },
         {
@@ -639,7 +639,7 @@ export function sentinel(creature: Creature, rank: number) {
         { statistic: 'armor_defense', modifier: 1 },
         { statistic: 'fortitude', modifier: 1 },
         { statistic: 'reflex', modifier: 1 },
-        { statistic: 'mental_defense', modifier: 1 },
+        { statistic: 'mental', modifier: 1 },
       ],
     });
   }
@@ -684,7 +684,7 @@ export function tactician(creature: Creature, rank: number) {
         { statistic: 'armor_defense', modifier: rank >= 7 ? 2 : 1 },
         { statistic: 'fortitude', modifier: rank >= 7 ? 2 : 1 },
         { statistic: 'reflex', modifier: rank >= 7 ? 2 : 1 },
-        { statistic: 'mental_defense', modifier: rank >= 7 ? 2 : 1 },
+        { statistic: 'mental', modifier: rank >= 7 ? 2 : 1 },
       ],
     });
   }
