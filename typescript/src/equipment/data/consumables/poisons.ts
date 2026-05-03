@@ -30,7 +30,7 @@ export function poisons(): Tool[] {
         `
           The poison's accuracy is $consumableaccuracy.
           It inflicts $dr1l damage immediately and with each escalation.
-        `
+        `,
       ),
     }),
     createPoison({
@@ -43,7 +43,7 @@ export function poisons(): Tool[] {
         `
           The poison's accuracy is $consumableaccuracy-3.
           It inflicts $dr4l damage immediately and with each escalation.
-        `
+        `,
       ),
     }),
     createPoison({
@@ -56,7 +56,7 @@ export function poisons(): Tool[] {
         `
           The poison's accuracy is $consumableaccuracy+4.
           It inflicts $dr1l damage immediately and with each escalation.
-        `
+        `,
       ),
     }),
     createPoison({
@@ -69,7 +69,7 @@ export function poisons(): Tool[] {
         `
           The poison's accuracy is $consumableaccuracy.
           It inflicts $dr0l damage immediately and with each escalation.
-        `
+        `,
       ),
     }),
     createPoison({
@@ -82,7 +82,7 @@ export function poisons(): Tool[] {
         `
           The poison's accuracy is $consumableaccuracy.
           It inflicts $dr1l damage immediately and with each escalation.
-        `
+        `,
       ),
     }),
     createPoison({
@@ -95,7 +95,7 @@ export function poisons(): Tool[] {
         `
           The poison's accuracy is $consumableaccuracy-3.
           It inflicts $dr2l damage immediately and with each escalation.
-        `
+        `,
       ),
     }),
     createPoison({
@@ -108,7 +108,7 @@ export function poisons(): Tool[] {
         `
           The poison's accuracy is $consumableaccuracy.
           It inflicts $dr4l damage immediately and with each escalation.
-        `
+        `,
       ),
     }),
     createPoison({
@@ -121,7 +121,7 @@ export function poisons(): Tool[] {
         `
           The poison's accuracy is $consumableaccuracy.
           It inflicts $dr3l damage immediately and with each escalation.
-        `
+        `,
       ),
     }),
     createPoison({
@@ -134,7 +134,7 @@ export function poisons(): Tool[] {
         `
           The poison's accuracy is $consumableaccuracy.
           It inflicts $dr3l damage immediately and with each escalation.
-        `
+        `,
       ),
     }),
     createPoison({
@@ -148,7 +148,7 @@ export function poisons(): Tool[] {
           The poison's accuracy is $consumableaccuracy.
           It inflicts $dr2l damage immediately and with each escalation.
           The second escalation also makes the target \\stunned.
-        `
+        `,
       ),
     }),
     createPoison({
@@ -161,7 +161,7 @@ export function poisons(): Tool[] {
         `
           The poison's accuracy is $consumableaccuracy.
           It inflicts $dr5l damage immediately and with each escalation.
-        `
+        `,
       ),
     }),
     ...injuryPoisons(),
@@ -181,7 +181,7 @@ function injuryPoisons(): Tool[] {
           The poison's accuracy is $consumableaccuracy.
           A poisoned creature is \\stunned while the poison lasts.
           The second escalation also inflicts $dr2l damage.
-        `
+        `,
       ),
     }),
     createPoison({
@@ -195,7 +195,7 @@ function injuryPoisons(): Tool[] {
           The poison's accuracy is $consumableaccuracy+2.
           A poisoned creature is \\slowed while the poison lasts.
           The second escalation also inflicts $dr3l damage.
-        `
+        `,
       ),
     }),
     createPoison({
@@ -208,7 +208,7 @@ function injuryPoisons(): Tool[] {
         `
           The poison's accuracy is $consumableaccuracy+1.
           It inflicts $dr3l damage immediately and with each escalation.
-        `
+        `,
       ),
     }),
     createPoison({
@@ -221,7 +221,7 @@ function injuryPoisons(): Tool[] {
         `
           The poison's accuracy is $consumableaccuracy+1.
           It inflicts $dr3l damage immediately and with each escalation.
-        `
+        `,
       ),
     }),
     createPoison({
@@ -234,7 +234,7 @@ function injuryPoisons(): Tool[] {
         `
           The poison's accuracy is $consumableaccuracy+5.
           It inflicts $dr4l damage immediately and with each escalation.
-        `
+        `,
       ),
     }),
     createPoison({
@@ -247,7 +247,7 @@ function injuryPoisons(): Tool[] {
         `
           The poison's accuracy is $consumableaccuracy+1.
           It inflicts $dr6l damage immediately and with each escalation.
-        `
+        `,
       ),
     }),
   ];
