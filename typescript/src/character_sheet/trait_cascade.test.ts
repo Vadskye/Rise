@@ -26,7 +26,7 @@ t.test('individual monster overrides type/origin traits', (t) => {
   const creature = Creature.new();
   // Add incorporeal explicitly
   creature.addTrait('incorporeal');
-  
+
   // Set as natural origin animal type (normally both would imply corporeal)
   creature.setRequiredProperties({
     alignment: 'neutral',
