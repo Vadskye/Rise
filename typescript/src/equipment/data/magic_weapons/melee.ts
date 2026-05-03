@@ -1,6 +1,9 @@
 import { MagicWeapon, StandardItem } from '../../types';
 
-function melee(item: Omit<StandardItem, 'magical' | 'rarity' | 'tags' | 'upgrades'> & Partial<Pick<StandardItem, 'upgrades' | 'tags'>>): MagicWeapon {
+function melee(
+  item: Omit<StandardItem, 'magical' | 'rarity' | 'tags' | 'upgrades'> &
+    Partial<Pick<StandardItem, 'upgrades' | 'tags'>>,
+): MagicWeapon {
   return {
     kind: 'Melee',
     item: {
@@ -9,46 +12,55 @@ function melee(item: Omit<StandardItem, 'magical' | 'rarity' | 'tags' | 'upgrade
       tags: item.tags || ['Attune'],
       upgrades: item.upgrades || [],
       ...item,
-    }
+    },
   };
 }
 
 export const magicMeleeWeapons = (): MagicWeapon[] => [
   melee({
-    name: "Steady",
+    name: 'Steady',
     rank: 2,
-    short_description: "No accuracy penalty while unsteady",
-    description: "You do not take an accuracy penalty with attacks using this weapon while \\unsteady.",
+    short_description: 'No accuracy penalty while unsteady',
+    description:
+      'You do not take an accuracy penalty with attacks using this weapon while \\unsteady.',
     tags: ['Water', 'Attune'],
   }),
   melee({
-    name: "Eager",
+    name: 'Eager',
     rank: 3,
-    short_description: "Can be drawn quickly, +1 accuracy when drawn",
+    short_description: 'Can be drawn quickly, +1 accuracy when drawn',
     description: `
       You can draw this weapon as a \\glossterm{free action} that does not count as an object manipulation (see \\pcref{Manipulating Objects}).
       When you draw this weapon, if you did not also sheathe it this turn, you gain a \\plus1 \\glossterm{enhancement bonus} to \\glossterm{accuracy} with strikes using it this turn.
     `,
     upgrades: [
-      { rank: 7, short_description: "Can be drawn quickly, +2 accuracy when drawn", description: "The accuracy bonus increases to +2." },
+      {
+        rank: 7,
+        short_description: 'Can be drawn quickly, +2 accuracy when drawn',
+        description: 'The accuracy bonus increases to +2.',
+      },
     ],
   }),
   melee({
-    name: "Reckless",
+    name: 'Reckless',
     rank: 2,
-    short_description: "Grants +1 accuracy and -1 defenses in melee",
+    short_description: 'Grants +1 accuracy and -1 defenses in melee',
     description: `
       You gain a +1 \\glossterm{enhancement bonus} to \\glossterm{accuracy} with \\glossterm{melee} strikes using this weapon.
       However, you also take a -1 penalty to all defenses against creatures adjacent to you.
     `,
     upgrades: [
-      { rank: 6, short_description: "Grants +2 accuracy and -1 defenses in melee", description: "The bonus increases to +2." },
+      {
+        rank: 6,
+        short_description: 'Grants +2 accuracy and -1 defenses in melee',
+        description: 'The bonus increases to +2.',
+      },
     ],
   }),
   melee({
-    name: "Vorpal",
+    name: 'Vorpal',
     rank: 7,
-    short_description: "+1d8 damage, can decapitate foes",
+    short_description: '+1d8 damage, can decapitate foes',
     description: `
       Strikes with this weapon deal 1d8 \\glossterm{extra damage}.
 

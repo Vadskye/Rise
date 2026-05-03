@@ -3,8 +3,4 @@ import { rods } from './rods';
 import { staffs } from './staffs';
 import { wands } from './wands';
 
-export const allImplements = (): Implement[] => [
-  ...rods(),
-  ...staffs(),
-  ...wands(),
-];
+export const allImplements = (): Implement[] => [...rods(), ...staffs(), ...wands()];

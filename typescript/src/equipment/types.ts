@@ -39,19 +39,19 @@ export function getUpgradeItems(item: StandardItem): StandardItem[] {
 import { ArmorUsageClass, ArmorMaterial } from './armor';
 export { ArmorUsageClass, ArmorMaterial };
 
-export type MagicArmor = 
-  | { kind: 'Body', item: StandardItem }
-  | { kind: 'Shield', item: StandardItem };
+export type MagicArmor =
+  | { kind: 'Body'; item: StandardItem }
+  | { kind: 'Shield'; item: StandardItem };
 
 export type MagicWeapon =
-  | { kind: 'Melee', item: StandardItem }
-  | { kind: 'Ranged', item: StandardItem }
-  | { kind: 'Unrestricted', item: StandardItem };
+  | { kind: 'Melee'; item: StandardItem }
+  | { kind: 'Ranged'; item: StandardItem }
+  | { kind: 'Unrestricted'; item: StandardItem };
 
 export type Implement =
-  | { kind: 'Rod', item: StandardItem }
-  | { kind: 'Staff', item: StandardItem }
-  | { kind: 'Wand', item: StandardItem };
+  | { kind: 'Rod'; item: StandardItem }
+  | { kind: 'Staff'; item: StandardItem }
+  | { kind: 'Wand'; item: StandardItem };
 
 import { DicePool } from '../types/dice_pool';
 
@@ -74,11 +74,11 @@ export type WeaponTag =
   | 'Maneuverable'
   | 'Mounted'
   | 'Parrying'
-  | { kind: 'Projectile', close: number, long: number }
+  | { kind: 'Projectile'; close: number; long: number }
   | 'Resonating'
-  | { kind: 'Sweeping', count: number }
+  | { kind: 'Sweeping'; count: number }
   | 'Subdual'
-  | { kind: 'Thrown', close: number, long: number }
+  | { kind: 'Thrown'; close: number; long: number }
   | 'Versatile Grip';
 
 export type Exposure = 'contact' | 'ingestion' | 'injury';

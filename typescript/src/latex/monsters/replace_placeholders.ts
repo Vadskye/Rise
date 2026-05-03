@@ -12,9 +12,13 @@ export interface ReplacementContext {
   weapon?: MonsterWeapon;
 }
 
-export function replacePlaceholders(monster: Creature, latex: string, context: ReplacementContext = {}) {
+export function replacePlaceholders(
+  monster: Creature,
+  latex: string,
+  context: ReplacementContext = {},
+) {
   // Use a specialized pass for ability-specific context, and a general pass for monster-wide terms.
-  // We keep them separate so that individual ability conversion (used in tests) can choose 
+  // We keep them separate so that individual ability conversion (used in tests) can choose
   // whether to resolve monster-wide terms like $name.
   latex = replaceAbilityPlaceholders(monster, latex, context);
   latex = replaceMonsterPlaceholders(monster, latex);
@@ -30,15 +34,19 @@ export function replacePlaceholders(monster: Creature, latex: string, context: R
   return latex;
 }
 
-export function replaceAbilityPlaceholders(monster: Creature, latex: string, context: ReplacementContext) {
+export function replaceAbilityPlaceholders(
+  monster: Creature,
+  latex: string,
+  context: ReplacementContext,
+) {
   const isMagical = context.isMagical ?? false;
-  
+
   latex = replacePowerTerms(latex, monster, isMagical);
   latex = replaceDamageRankTerms(latex, monster, isMagical);
   latex = replaceScalingDamageTerms(latex, monster, isMagical);
   latex = replaceDamageTerms(latex, monster, isMagical, context.weapon);
   latex = replaceAccuracyTerms(latex, monster, getWeaponAccuracy(context.weapon));
-  
+
   return latex;
 }
 

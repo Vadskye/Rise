@@ -2,17 +2,17 @@ export type ArmorUsageClass = 'light' | 'medium' | 'heavy';
 
 export type ArmorMaterial =
   | { kind: 'normal' }
-  | { kind: 'magic', bonus: number }
+  | { kind: 'magic'; bonus: number }
   | { kind: 'adamantine' }
   | { kind: 'pure adamantine' }
   | { kind: 'cold iron' }
   | { kind: 'pure cold iron' }
   | { kind: 'diamondsteel' }
   | { kind: 'pure diamondsteel' }
-  | { kind: 'dragonhide', color: string }
-  | { kind: 'pure dragonhide', color: string }
-  | { kind: 'dragonscale', color: string }
-  | { kind: 'pure dragonscale', color: string }
+  | { kind: 'dragonhide'; color: string }
+  | { kind: 'pure dragonhide'; color: string }
+  | { kind: 'dragonscale'; color: string }
+  | { kind: 'pure dragonscale'; color: string }
   | { kind: 'elvenweave' }
   | { kind: 'pure elvenweave' }
   | { kind: 'mithral' }
@@ -79,12 +79,23 @@ export function getArmorMaterialDefinition(material: ArmorMaterial) {
 }
 
 export type ArmorKind =
-  | 'BuffLeather' | 'MailShirt' | 'Rawhide' | 'Buckler'
-  | 'LeatherLamellar' | 'Scale' | 'Brigandine' | 'StandardShield'
-  | 'Breastplate' | 'HalfPlate' | 'FullPlate' | 'TowerShield';
+  | 'BuffLeather'
+  | 'MailShirt'
+  | 'Rawhide'
+  | 'Buckler'
+  | 'LeatherLamellar'
+  | 'Scale'
+  | 'Brigandine'
+  | 'StandardShield'
+  | 'Breastplate'
+  | 'HalfPlate'
+  | 'FullPlate'
+  | 'TowerShield';
 
 export function getArmorBaseDefinition(kind: ArmorKind, material?: ArmorMaterial): ArmorDefinition {
-  const matDef = material ? getArmorMaterialDefinition(material) : { durabilityModifier: 0, name: 'normal', itemRank: 0 };
+  const matDef = material
+    ? getArmorMaterialDefinition(material)
+    : { durabilityModifier: 0, name: 'normal', itemRank: 0 };
   const calcDurability = (base: number) => base + matDef.durabilityModifier;
 
   switch (kind) {

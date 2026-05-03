@@ -5,21 +5,36 @@ import { PowerScaling } from '../types/power_scaling';
 export function formatWeaponTagLatex(tag: WeaponTag): string {
   if (typeof tag === 'string') {
     switch (tag) {
-      case 'Ammunition': return '\\weapontag{Ammunition}';
-      case 'Clinch': return '\\abilitytag{Clinch}';
-      case 'Compact': return '\\weapontag{Compact}';
-      case 'Heavy': return '\\weapontag{Heavy}';
-      case 'Impact': return '\\abilitytag{Impact}';
-      case 'Keen': return '\\abilitytag{Keen}';
-      case 'Light': return '\\weapontag{Light}';
-      case 'Long': return '\\weapontag{Long}';
-      case 'Maneuverable': return '\\weapontag{Maneuverable}';
-      case 'Mounted': return '\\weapontag{Mounted}';
-      case 'Parrying': return '\\weapontag{Parrying}';
-      case 'Resonating': return '\\weapontag{Resonating}';
-      case 'Subdual': return '\\abilitytag{Subdual}';
-      case 'Versatile Grip': return '\\weapontag{Versatile Grip}';
-      default: return `\\weapontag{${tag}}`;
+      case 'Ammunition':
+        return '\\weapontag{Ammunition}';
+      case 'Clinch':
+        return '\\abilitytag{Clinch}';
+      case 'Compact':
+        return '\\weapontag{Compact}';
+      case 'Heavy':
+        return '\\weapontag{Heavy}';
+      case 'Impact':
+        return '\\abilitytag{Impact}';
+      case 'Keen':
+        return '\\abilitytag{Keen}';
+      case 'Light':
+        return '\\weapontag{Light}';
+      case 'Long':
+        return '\\weapontag{Long}';
+      case 'Maneuverable':
+        return '\\weapontag{Maneuverable}';
+      case 'Mounted':
+        return '\\weapontag{Mounted}';
+      case 'Parrying':
+        return '\\weapontag{Parrying}';
+      case 'Resonating':
+        return '\\weapontag{Resonating}';
+      case 'Subdual':
+        return '\\abilitytag{Subdual}';
+      case 'Versatile Grip':
+        return '\\weapontag{Versatile Grip}';
+      default:
+        return `\\weapontag{${tag}}`;
     }
   } else {
     switch (tag.kind) {
@@ -36,21 +51,36 @@ export function formatWeaponTagLatex(tag: WeaponTag): string {
 export function isWeaponTagVisibleInMonster(tag: WeaponTag): boolean {
   if (typeof tag === 'string') {
     switch (tag) {
-      case 'Ammunition': return false;
-      case 'Clinch': return true;
-      case 'Compact': return true;
-      case 'Heavy': return false;
-      case 'Impact': return true;
-      case 'Keen': return true;
-      case 'Light': return true;
-      case 'Long': return true;
-      case 'Maneuverable': return true;
-      case 'Mounted': return false;
-      case 'Parrying': return true;
-      case 'Resonating': return true;
-      case 'Subdual': return true;
-      case 'Versatile Grip': return false;
-      default: return true;
+      case 'Ammunition':
+        return false;
+      case 'Clinch':
+        return true;
+      case 'Compact':
+        return true;
+      case 'Heavy':
+        return false;
+      case 'Impact':
+        return true;
+      case 'Keen':
+        return true;
+      case 'Light':
+        return true;
+      case 'Long':
+        return true;
+      case 'Maneuverable':
+        return true;
+      case 'Mounted':
+        return false;
+      case 'Parrying':
+        return true;
+      case 'Resonating':
+        return true;
+      case 'Subdual':
+        return true;
+      case 'Versatile Grip':
+        return false;
+      default:
+        return true;
     }
   } else {
     return true; // Projectile, Sweeping, Thrown are all visible
@@ -360,8 +390,8 @@ export type WeaponMaterial =
   | 'Normal'
   | 'Diamondsteel'
   | 'Pure Diamondsteel'
-  | { kind: 'Dragonfang', color: string }
-  | { kind: 'Ancient Dragonfang', color: string }
+  | { kind: 'Dragonfang'; color: string }
+  | { kind: 'Ancient Dragonfang'; color: string }
   | 'Mithral'
   | 'Pure Mithral'
   | 'Silver';
@@ -371,8 +401,10 @@ export function getWeaponMaterialName(material: WeaponMaterial): string {
     return material.toLowerCase();
   } else {
     switch (material.kind) {
-      case 'Dragonfang': return `${material.color} dragonfang`;
-      case 'Ancient Dragonfang': return `${material.color} ancient dragonfang`;
+      case 'Dragonfang':
+        return `${material.color} dragonfang`;
+      case 'Ancient Dragonfang':
+        return `${material.color} ancient dragonfang`;
     }
   }
 }
