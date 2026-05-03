@@ -318,11 +318,11 @@ npx tsx src/scripts/compare_equipment.ts --category <category> --descriptions > 
 **Step 3: Diff using the normalize-aware script**
 
 ```powershell
-node typescript/src/scripts/verify_latex.js rust_<category>_table.txt ts_<category>_table.txt
-node typescript/src/scripts/verify_latex.js rust_<category>_descriptions.txt ts_<category>_descriptions.txt
+npx tsx typescript/src/scripts/verify_latex_parity.ts rust_<category>_table.txt ts_<category>_table.txt
+npx tsx typescript/src/scripts/verify_latex_parity.ts rust_<category>_descriptions.txt ts_<category>_descriptions.txt
 ```
 
-The `verify_latex.js` script normalizes whitespace and encoding differences before comparing. Any remaining difference is a semantic discrepancy that must be fixed.
+The `verify_latex_parity.ts` script normalizes whitespace and encoding differences before comparing. Any remaining difference is a semantic discrepancy that must be fixed.
 
 **Step 4: Fix discrepancies, then re-run Step 3 until clean.**
 
@@ -331,10 +331,10 @@ The `verify_latex.js` script normalizes whitespace and encoding differences befo
 
 #### Other Verification Notes
 
-- **Whitespace normalization**: `verify_latex.js` normalizes all whitespace, so insignificant formatting differences are ignored.
-- **Encoding**: PowerShell redirects may produce UTF-16LE. `verify_latex.js` handles this automatically.
+- **Whitespace normalization**: `verify_latex_parity.ts` normalizes all whitespace, so insignificant formatting differences are ignored.
+- **Encoding**: PowerShell redirects may produce UTF-16LE. `verify_latex_parity.ts` handles this automatically.
 - **Validation warnings**: Port the Rust `eprintln!` validation checks (e.g., item descriptions starting with "as an action", damage types in short descriptions) as `console.warn` calls in TypeScript.
-- **Parity gate**: A phase is complete only when `verify_latex.js` reports `MATCH` for all relevant files.
+- **Parity gate**: A phase is complete only when `verify_latex_parity.ts` reports `MATCH` for all relevant files.
 
 ---
 
