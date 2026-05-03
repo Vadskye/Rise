@@ -112,7 +112,7 @@ export class RepeatingSection {
           triggerName: fullPropertyName,
         });
       };
-      
+
       this.listeners.push({ rowPropertyName, callback });
       const unsubscribers: (() => void)[] = [];
       for (const rowId in this.rows) {
@@ -123,7 +123,7 @@ export class RepeatingSection {
           unsub();
         }
         this.listeners = this.listeners.filter(
-          (l) => l.callback !== callback || l.rowPropertyName !== rowPropertyName
+          (l) => l.callback !== callback || l.rowPropertyName !== rowPropertyName,
         );
       };
     } else {
