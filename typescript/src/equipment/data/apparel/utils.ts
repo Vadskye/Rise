@@ -13,7 +13,7 @@ export function attributeItem(name: string, attribute: Attribute): StandardItem 
       {
         rank: 7,
         short_description: `Grants +2 ${attribute}`,
-        description: "The bonus increases to +2.",
+        description: 'The bonus increases to +2.',
       },
     ],
     tags: ['Attune (deep)'],
@@ -32,7 +32,7 @@ export function skillItem(name: string, skill: string): StandardItem {
       {
         rank: 6,
         short_description: `Grants +5 ${skill}`,
-        description: "The bonus increases to +5.",
+        description: 'The bonus increases to +5.',
       },
     ],
     tags: ['Attune'],
@@ -51,7 +51,7 @@ export function reliableSkillItem(name: string, skills: string, summary: string)
       {
         rank: 4,
         short_description: `Can reroll 3 or less with ${summary} skills`,
-        description: "You can also reroll when you roll a 2 or 3.",
+        description: 'You can also reroll when you roll a 2 or 3.',
       },
     ],
     tags: ['Attune'],

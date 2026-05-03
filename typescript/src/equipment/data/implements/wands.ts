@@ -1,6 +1,9 @@
 import { Implement, StandardItem } from '../../types';
 
-function wand(item: Omit<StandardItem, 'magical' | 'rarity' | 'tags' | 'upgrades'> & Partial<Pick<StandardItem, 'upgrades' | 'tags'>>): Implement {
+function wand(
+  item: Omit<StandardItem, 'magical' | 'rarity' | 'tags' | 'upgrades'> &
+    Partial<Pick<StandardItem, 'upgrades' | 'tags'>>,
+): Implement {
   return {
     kind: 'Wand',
     item: {
@@ -9,16 +12,16 @@ function wand(item: Omit<StandardItem, 'magical' | 'rarity' | 'tags' | 'upgrades
       tags: item.tags || ['Attune'],
       upgrades: item.upgrades || [],
       ...item,
-    }
+    },
   };
 }
 
 export const wands = (): Implement[] => {
   const items: Implement[] = [
     wand({
-      name: "Spell Wand, 1st",
+      name: 'Spell Wand, 1st',
       rank: 1,
-      short_description: "Grants knowledge of a rank 1 spell",
+      short_description: 'Grants knowledge of a rank 1 spell',
       description: `
         This wand grants you knowledge of a single rank 1 spell.
         Each wand is associated with a specific spell.
@@ -31,26 +34,30 @@ export const wands = (): Implement[] => {
       `,
     }),
     wand({
-      name: "Spell Wand, 2nd",
+      name: 'Spell Wand, 2nd',
       rank: 2,
-      short_description: "Grants knowledge of a rank 2 spell",
-      description: "This item functions like a \\mitem{spell wand}, except that it grants knowledge of a single rank 2 spell.",
+      short_description: 'Grants knowledge of a rank 2 spell',
+      description:
+        'This item functions like a \\mitem{spell wand}, except that it grants knowledge of a single rank 2 spell.',
     }),
     wand({
-      name: "Spell Wand, 3rd",
+      name: 'Spell Wand, 3rd',
       rank: 3,
-      short_description: "Grants knowledge of a rank 3 spell",
-      description: "This item functions like a \\mitem{spell wand}, except that it grants knowledge of a single rank 3 spell.",
+      short_description: 'Grants knowledge of a rank 3 spell',
+      description:
+        'This item functions like a \\mitem{spell wand}, except that it grants knowledge of a single rank 3 spell.',
     }),
   ];
 
   const nth = (rank: number) => {
-    items.push(wand({
-      name: `Spell Wand, ${rank}th`,
-      rank,
-      short_description: `Grants knowledge of a rank ${rank} spell`,
-      description: `This item functions like a \\mitem{spell wand}, except that it grants knowledge of a single rank ${rank} spell.`,
-    }));
+    items.push(
+      wand({
+        name: `Spell Wand, ${rank}th`,
+        rank,
+        short_description: `Grants knowledge of a rank ${rank} spell`,
+        description: `This item functions like a \\mitem{spell wand}, except that it grants knowledge of a single rank ${rank} spell.`,
+      }),
+    );
   };
 
   nth(4);

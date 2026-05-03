@@ -9,9 +9,9 @@ export function head(): Apparel[] {
     {
       kind: 'Veil',
       item: {
-        name: "Whispering Veil",
+        name: 'Whispering Veil',
         rank: 3,
-        short_description: "Hear distant sounds on the wind",
+        short_description: 'Hear distant sounds on the wind',
         description: `
             This gossamer veil seems to whisper continuously.
             While you wear it over your head, you can hear faint, indistinct sounds carried on the wind.
@@ -21,7 +21,7 @@ export function head(): Apparel[] {
         upgrades: [],
         tags: ['Air', 'Auditory', 'Attune'],
         rarity: 'Relic',
-      }
+      },
     },
   ];
 }
@@ -33,7 +33,7 @@ function circlets(): Apparel[] {
       item: {
         name: "Blind Seer's Circlet",
         rank: 2,
-        short_description: "Increases range of blindsense and blindsight",
+        short_description: 'Increases range of blindsense and blindsight',
         description: `
             If you have \\trait{blindsense}, you increase its range by 30 feet.
             If you have \\trait{blindsight}, you increase its range by 15 feet.
@@ -42,27 +42,29 @@ function circlets(): Apparel[] {
         upgrades: [
           {
             rank: 4,
-            short_description: "Increases range of blindsense and blindsight",
-            description: "Your blindsense increases by 60 feet, and your blindsight increases by 30 feet.",
+            short_description: 'Increases range of blindsense and blindsight',
+            description:
+              'Your blindsense increases by 60 feet, and your blindsight increases by 30 feet.',
           },
           {
             rank: 6,
-            short_description: "Increases range of blindsense and blindsight",
-            description: "Your blindsense increases by 120 feet, and your blindsight increases by 60 feet.",
+            short_description: 'Increases range of blindsense and blindsight',
+            description:
+              'Your blindsense increases by 120 feet, and your blindsight increases by 60 feet.',
           },
         ],
         tags: ['Attune'],
         rarity: 'Common',
-      }
+      },
     },
-    { kind: 'Circlet', item: skillItem("Ruler's Circlet", "Persuasion") },
-    { kind: 'Circlet', item: skillItem("Imperious Circlet", "Intimidate") },
+    { kind: 'Circlet', item: skillItem("Ruler's Circlet", 'Persuasion') },
+    { kind: 'Circlet', item: skillItem('Imperious Circlet', 'Intimidate') },
     {
       kind: 'Circlet',
       item: {
-        name: "Ocular Circlet",
+        name: 'Ocular Circlet',
         rank: 2,
-        short_description: "Can allow you to see at distance",
+        short_description: 'Can allow you to see at distance',
         description: `
             You can activate this item as a standard action.
             When you do, a \\glossterm{scrying sensor} appears floating in the air in an unoccupied square within \\medrange.
@@ -76,25 +78,27 @@ function circlets(): Apparel[] {
         upgrades: [
           {
             rank: 4,
-            short_description: "Can allow you to quickly see at distance",
-            description: "You can activate the item and sustain its effect as a \\glossterm{minor action}.",
+            short_description: 'Can allow you to quickly see at distance',
+            description:
+              'You can activate the item and sustain its effect as a \\glossterm{minor action}.',
           },
           {
             rank: 6,
-            short_description: "Can allow you to quickly see at distance",
-            description: "You can activate the item and sustain its effect as a \\glossterm{free action} once per turn.",
+            short_description: 'Can allow you to quickly see at distance',
+            description:
+              'You can activate the item and sustain its effect as a \\glossterm{free action} once per turn.',
           },
         ],
         tags: ['Scrying', 'Attune'],
         rarity: 'Common',
-      }
+      },
     },
     {
       kind: 'Circlet',
       item: {
-        name: "Circlet of Desperate Visions",
+        name: 'Circlet of Desperate Visions',
         rank: 1,
-        short_description: "Grants lingering benefits from \\ability{desperate exertion}",
+        short_description: 'Grants lingering benefits from \\ability{desperate exertion}',
         description: `
             Whenever you use the \\ability{desperate exertion} ability, you become \\glossterm{briefly} \\focused.
             This does not affect the initial ability that you used \\ability{desperate exertion} to change.
@@ -103,29 +107,43 @@ function circlets(): Apparel[] {
         upgrades: [
           {
             rank: 4,
-            short_description: "Grants lingering benefits from \\ability{desperate exertion}",
-            description: "You are also \\glossterm{briefly} \\honed.",
+            short_description: 'Grants lingering benefits from \\ability{desperate exertion}',
+            description: 'You are also \\glossterm{briefly} \\honed.',
           },
           {
             rank: 7,
-            short_description: "Grants lingering benefits from \\ability{desperate exertion}",
-            description: "You are also \\glossterm{briefly} \\empowered.",
+            short_description: 'Grants lingering benefits from \\ability{desperate exertion}',
+            description: 'You are also \\glossterm{briefly} \\empowered.',
           },
         ],
         tags: ['Attune'],
         rarity: 'Common',
-      }
+      },
     },
-    { kind: 'Circlet', item: reliableSkillItem("Circlet of Reliable Observation", "Awareness, Social Insight, or Survival", "observation-based") },
-    { kind: 'Circlet', item: reliableSkillItem("Circlet of Reliable Intuition", "Deduction, Knowledge, or Medicine", "intuition-based") },
-    { kind: 'Circlet', item: attributeItem("Circlet of Perception", 'perception') },
-    { kind: 'Circlet', item: attributeItem("Circlet of Willpower", 'willpower') },
+    {
+      kind: 'Circlet',
+      item: reliableSkillItem(
+        'Circlet of Reliable Observation',
+        'Awareness, Social Insight, or Survival',
+        'observation-based',
+      ),
+    },
+    {
+      kind: 'Circlet',
+      item: reliableSkillItem(
+        'Circlet of Reliable Intuition',
+        'Deduction, Knowledge, or Medicine',
+        'intuition-based',
+      ),
+    },
+    { kind: 'Circlet', item: attributeItem('Circlet of Perception', 'perception') },
+    { kind: 'Circlet', item: attributeItem('Circlet of Willpower', 'willpower') },
     {
       kind: 'Circlet',
       item: {
-        name: "Mask of Many Faces",
+        name: 'Mask of Many Faces',
         rank: 2,
-        short_description: "Copies the appearance of a familiar face",
+        short_description: 'Copies the appearance of a familiar face',
         description: `
             This is a blank porcelain mask.
             As a standard action, you can don the mask while envisioning a face familiar to you.
@@ -137,14 +155,14 @@ function circlets(): Apparel[] {
         upgrades: [],
         tags: ['Visual', 'Attune'],
         rarity: 'Relic',
-      }
+      },
     },
     {
       kind: 'Circlet',
       item: {
-        name: "Glasses of Novelty",
+        name: 'Glasses of Novelty',
         rank: 3,
-        short_description: "Notices small, seemingly insignificant details",
+        short_description: 'Notices small, seemingly insignificant details',
         description: `
             These appear to be a pair of simple spectacles.
             As a standard action, you can don the glasses and activate their effect.
@@ -158,14 +176,14 @@ function circlets(): Apparel[] {
         upgrades: [],
         tags: ['Visual', 'Attune'],
         rarity: 'Relic',
-      }
+      },
     },
     {
       kind: 'Circlet',
       item: {
-        name: "Crown of Flowers",
+        name: 'Crown of Flowers',
         rank: 2,
-        short_description: "Appear friendly to small animals",
+        short_description: 'Appear friendly to small animals',
         description: `
             While wearing this crown, wild animals that are Small or smaller perceive you to be friendly and nonthreatening.
             This does not grant you an ability to command them, though you can use Creature Handling as normal.
@@ -174,7 +192,7 @@ function circlets(): Apparel[] {
         upgrades: [],
         tags: ['Emotion', 'Attune'],
         rarity: 'Relic',
-      }
+      },
     },
   ];
 }
@@ -184,9 +202,9 @@ function crowns(): Apparel[] {
     {
       kind: 'Crown',
       item: {
-        name: "Radiant Crown",
+        name: 'Radiant Crown',
         rank: 1,
-        short_description: "Emits light",
+        short_description: 'Emits light',
         description: `
             This crown sheds \\glossterm{bright illumination} in a \\medarea radius.
             You can touch the crown as a \\glossterm{minor action} to suppress or resume the light.
@@ -195,30 +213,30 @@ function crowns(): Apparel[] {
         upgrades: [
           {
             rank: 3,
-            short_description: "Emits great light",
-            description: "The area increases to a \\largearea radius.",
+            short_description: 'Emits great light',
+            description: 'The area increases to a \\largearea radius.',
           },
           {
             rank: 5,
-            short_description: "Emits vast light",
-            description: "The area increases to a \\hugearea radius.",
+            short_description: 'Emits vast light',
+            description: 'The area increases to a \\hugearea radius.',
           },
           {
             rank: 7,
-            short_description: "Emits massive light",
-            description: "The area increases to a \\gargarea radius.",
+            short_description: 'Emits massive light',
+            description: 'The area increases to a \\gargarea radius.',
           },
         ],
         tags: ['Visual', 'Attune'],
         rarity: 'Common',
-      }
+      },
     },
     {
       kind: 'Crown',
       item: {
-        name: "Solar Crown",
+        name: 'Solar Crown',
         rank: 4,
-        short_description: "Sheds brilliant light",
+        short_description: 'Sheds brilliant light',
         description: `
             This crown sheds \\glossterm{brilliant illumination} in a \\medarea radius.
             You can touch the crown as a \\glossterm{minor action} to suppress or resume the light.
@@ -227,20 +245,20 @@ function crowns(): Apparel[] {
         upgrades: [
           {
             rank: 6,
-            short_description: "Sheds brilliant light",
-            description: "The area increases to a \\hugearea radius.",
+            short_description: 'Sheds brilliant light',
+            description: 'The area increases to a \\hugearea radius.',
           },
         ],
         tags: ['Visual', 'Attune'],
         rarity: 'Common',
-      }
+      },
     },
     {
       kind: 'Crown',
       item: {
-        name: "Crown of Flame",
+        name: 'Crown of Flame',
         rank: 3,
-        short_description: "Can deal $dr3l damage around you",
+        short_description: 'Can deal $dr3l damage around you',
         description: `
             This crown constantly burns harmlessly, emitting \\glossterm{bright illumination} in a \\smallarea radius.
             You can touch the crown as a standard action to activate it.
@@ -254,25 +272,27 @@ function crowns(): Apparel[] {
         upgrades: [
           {
             rank: 5,
-            short_description: "Can deal $dr5l damage around you",
-            description: "The minimum accuracy increases to $accuracy, and the damage increases to $dr5l.",
+            short_description: 'Can deal $dr5l damage around you',
+            description:
+              'The minimum accuracy increases to $accuracy, and the damage increases to $dr5l.',
           },
           {
             rank: 7,
-            short_description: "Can deal $dr7l damage around you",
-            description: "The minimum accuracy increases to $accuracy, and the damage increases to $dr7l.",
+            short_description: 'Can deal $dr7l damage around you',
+            description:
+              'The minimum accuracy increases to $accuracy, and the damage increases to $dr7l.',
           },
         ],
         tags: ['Fire', 'Attune'],
         rarity: 'Common',
-      }
+      },
     },
     {
       kind: 'Crown',
       item: {
-        name: "Crown of Thunder",
+        name: 'Crown of Thunder',
         rank: 5,
-        short_description: "Continously deafens nearby enemies",
+        short_description: 'Continously deafens nearby enemies',
         description: `
             The crown constantly emits a low-pitched rumbling.
             To you and your \\glossterm{allies}, the sound is barely perceptible.
@@ -283,14 +303,14 @@ function crowns(): Apparel[] {
         upgrades: [],
         tags: ['Visual', 'Attune'],
         rarity: 'Common',
-      }
+      },
     },
     {
       kind: 'Crown',
       item: {
         name: "Challenger's Crown",
         rank: 3,
-        short_description: "Increases accuracy penalty on goaded foes by 1",
+        short_description: 'Increases accuracy penalty on goaded foes by 1',
         description: `
             Each creature suffering penalties for being \\goaded by you takes an additional -1 \\glossterm{accuracy} penalty against creatures other than you.
         `,
@@ -298,13 +318,13 @@ function crowns(): Apparel[] {
         upgrades: [
           {
             rank: 6,
-            short_description: "Increases accuracy penalty on goaded foes by 2",
-            description: "The penalty increases to -2.",
+            short_description: 'Increases accuracy penalty on goaded foes by 2',
+            description: 'The penalty increases to -2.',
           },
         ],
         tags: ['Compulsion', 'Attune'],
         rarity: 'Common',
-      }
+      },
     },
   ];
 }
@@ -314,9 +334,9 @@ function blindfolds(): Apparel[] {
     {
       kind: 'Blindfold',
       item: {
-        name: "Blindfold of the Third Eye",
+        name: 'Blindfold of the Third Eye',
         rank: 3,
-        short_description: "Grants blindsight, blindsense, and blindness",
+        short_description: 'Grants blindsight, blindsense, and blindness',
         description: `
             While you wear this blindfold covering your eyes, you gain \\trait{blindsight} with a 15 foot range and \\trait{blindsense} with a 60 foot range.
             You are also blind, as normal for wearing a blindfold.
@@ -326,18 +346,20 @@ function blindfolds(): Apparel[] {
         upgrades: [
           {
             rank: 5,
-            short_description: "Grants blindsight, blindsense, and blindness",
-            description: "The blindsense increases to 120 feet, and the blindsight increases to 30 feet.",
+            short_description: 'Grants blindsight, blindsense, and blindness',
+            description:
+              'The blindsense increases to 120 feet, and the blindsight increases to 30 feet.',
           },
           {
             rank: 7,
-            short_description: "Grants blindsight, blindsense, and blindness",
-            description: "The blindsense increases to 240 feet, and the blindsight increases to 60 feet.",
+            short_description: 'Grants blindsight, blindsense, and blindness',
+            description:
+              'The blindsense increases to 240 feet, and the blindsight increases to 60 feet.',
           },
         ],
         tags: ['Attune'],
         rarity: 'Common',
-      }
+      },
     },
   ];
 }

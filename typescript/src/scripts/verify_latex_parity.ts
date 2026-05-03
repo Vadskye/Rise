@@ -48,7 +48,7 @@ export function normalize(content: string): string {
  * We split on spaces to produce comparable units.
  */
 export function tokenize(normalized: string): string[] {
-  return normalized.split(' ').filter(t => t.length > 0);
+  return normalized.split(' ').filter((t) => t.length > 0);
 }
 
 /**
@@ -100,7 +100,11 @@ export function verify(rustFile: string, tsFile: string): boolean {
 
   // Show up to MAX_DIFF_TOKENS additional mismatches
   let shown = 1;
-  for (let i = diffIdx + 1; i < Math.min(rustTokens.length, tsTokens.length) && shown < MAX_DIFF_TOKENS; i++) {
+  for (
+    let i = diffIdx + 1;
+    i < Math.min(rustTokens.length, tsTokens.length) && shown < MAX_DIFF_TOKENS;
+    i++
+  ) {
     if (rustTokens[i] !== tsTokens[i]) {
       console.log(`   Also differs at token #${i}: Rust="${rustTokens[i]}" TS="${tsTokens[i]}"`);
       shown++;
@@ -120,4 +124,3 @@ if (require.main === module) {
   const matched = verify(args[0], args[1]);
   process.exit(matched ? 0 : 1);
 }
-

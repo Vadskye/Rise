@@ -38,13 +38,7 @@ export function getAttributeShorthand(attr: Attribute): string {
   }
 }
 
-export const DEFENSES: Defense[] = [
-  'armor_defense',
-  'brawn',
-  'fortitude',
-  'mental',
-  'reflex',
-];
+export const DEFENSES: Defense[] = ['armor_defense', 'brawn', 'fortitude', 'mental', 'reflex'];
 
 export function getDefenseShorthand(defense: Defense): string {
   switch (defense) {
@@ -128,11 +122,21 @@ export class DamageDice {
     return new DamageDice(count, size, increments);
   }
 
-  static d3() { return DamageDice.new(2); }
-  static d4() { return DamageDice.new(3); }
-  static d6() { return DamageDice.new(4); }
-  static d8() { return DamageDice.new(5); }
-  static d10() { return DamageDice.new(6); }
+  static d3() {
+    return DamageDice.new(2);
+  }
+  static d4() {
+    return DamageDice.new(3);
+  }
+  static d6() {
+    return DamageDice.new(4);
+  }
+  static d8() {
+    return DamageDice.new(5);
+  }
+  static d10() {
+    return DamageDice.new(6);
+  }
 
   add(increments: number): DamageDice {
     const newDice = DamageDice.new(this.increments + increments);

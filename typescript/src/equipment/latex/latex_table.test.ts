@@ -10,7 +10,7 @@ const mockItem: StandardItem = {
   short_description: 'A test item.',
   description: 'This is a test item.',
   upgrades: [
-    { rank: 3, short_description: 'Improved test item.', description: 'Now it is better.' }
+    { rank: 3, short_description: 'Improved test item.', description: 'Now it is better.' },
   ],
   tags: [],
 };
@@ -28,10 +28,38 @@ t.test('fromItem', (t) => {
 
 t.test('standardSort', (t) => {
   const rows: TableRow[] = [
-    { name: 'B', rank: 2, consumable: false, magical: false, rarity: 'Common', short_description: '' },
-    { name: 'A', rank: 2, consumable: false, magical: false, rarity: 'Common', short_description: '' },
-    { name: 'C', rank: 1, consumable: false, magical: false, rarity: 'Common', short_description: '' },
-    { name: 'D', rank: 1, consumable: true, magical: false, rarity: 'Common', short_description: '' },
+    {
+      name: 'B',
+      rank: 2,
+      consumable: false,
+      magical: false,
+      rarity: 'Common',
+      short_description: '',
+    },
+    {
+      name: 'A',
+      rank: 2,
+      consumable: false,
+      magical: false,
+      rarity: 'Common',
+      short_description: '',
+    },
+    {
+      name: 'C',
+      rank: 1,
+      consumable: false,
+      magical: false,
+      rarity: 'Common',
+      short_description: '',
+    },
+    {
+      name: 'D',
+      rank: 1,
+      consumable: true,
+      magical: false,
+      rarity: 'Common',
+      short_description: '',
+    },
   ];
 
   standardSort(rows);
@@ -55,7 +83,7 @@ t.test('rowToLatex', (t) => {
   };
 
   const latex = rowToLatex(row);
-  
+
   t.match(latex, /\\itemref{Magic Shield}\\sparkle & Shield/);
   t.match(latex, /& Grants \+2 defense\./);
   t.match(latex, /& 2 \(20 gp\)/);
@@ -65,7 +93,14 @@ t.test('rowToLatex', (t) => {
 
 t.test('longtable', (t) => {
   const rows: TableRow[] = [
-    { name: 'Item 1', rank: 1, consumable: false, magical: false, rarity: 'Common', short_description: 'Desc 1' },
+    {
+      name: 'Item 1',
+      rank: 1,
+      consumable: false,
+      magical: false,
+      rarity: 'Common',
+      short_description: 'Desc 1',
+    },
   ];
 
   const latex = longtable('Test Caption', rows, false);

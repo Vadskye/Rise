@@ -1,10 +1,10 @@
 /**
  * compare_equipment.ts
- * 
+ *
  * Generates equipment LaTeX output from the TypeScript pipeline.
  * Mirrors the interface of the Rust `item_latex` binary so outputs can be diffed
  * using verify_latex.js.
- * 
+ *
  * Usage (from typescript/ directory):
  *   npx tsx src/scripts/compare_equipment.ts --category implements --table
  *   npx tsx src/scripts/compare_equipment.ts --category implements --descriptions
@@ -42,7 +42,9 @@ function parseArgs(): { category: string; mode: 'table' | 'descriptions' } {
 
   if (!category) {
     console.error('Error: --category is required');
-    console.error('Valid values: implements, magic armor, magic weapons, apparel, consumable tools, permanent tools');
+    console.error(
+      'Valid values: implements, magic armor, magic weapons, apparel, consumable tools, permanent tools',
+    );
     process.exit(1);
   }
 

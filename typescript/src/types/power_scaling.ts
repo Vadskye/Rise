@@ -4,7 +4,7 @@ export class PowerScaling {
   constructor(
     public readonly dice: DicePool | null,
     public readonly powerPerDice: number,
-    public readonly powerPerPlus1Modifier: number
+    public readonly powerPerPlus1Modifier: number,
   ) {}
 
   static standardWeaponScaling(): PowerScaling {
@@ -12,9 +12,6 @@ export class PowerScaling {
   }
 
   static heavyWeaponScalings(): PowerScaling[] {
-    return [
-      PowerScaling.standardWeaponScaling(),
-      new PowerScaling(null, 0, 3),
-    ];
+    return [PowerScaling.standardWeaponScaling(), new PowerScaling(null, 0, 3)];
   }
 }
