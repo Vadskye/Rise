@@ -276,7 +276,7 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 5,
             description: r"
-                You gain a \plus1 \glossterm{enhancement bonus} to a different attribute of your choice.
+                You gain a \plus1 \glossterm{enhancement bonus} to an attribute of your choice other than Constitution.
             ",
         },
         RankAbility {
