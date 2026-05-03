@@ -100,3 +100,17 @@ export type ApparelKind =
   | 'Veil';
 
 export type Apparel = { kind: ApparelKind; item: StandardItem };
+
+export type ToolCategory =
+  | 'Alchemical'
+  | { kind: 'Kit'; subskill: string }
+  | 'Mount'
+  | { kind: 'Permanent'; subskill: string }
+  | 'Poison'
+  | 'Potion'
+  | { kind: 'Trap'; subskill: string };
+
+export interface Tool {
+  category: ToolCategory;
+  item: StandardItem;
+}

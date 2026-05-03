@@ -4,12 +4,12 @@
 
 - [x] **Phase 1: Core Infrastructure & Shared Utilities**
 - [x] **Phase 2: Creature & Modifier System**
-- [ ] **Phase 3: Equipment System Migration**
+- [x] **Phase 3: Equipment System Migration**
   - [x] **Phase 3.1: Equipment Infrastructure & Armor**
   - [x] **Phase 3.2: Held Items (Weapons & Implements)**
   - [x] **Phase 3.3: Apparel**
-  - [ ] **Phase 3.4: Consumables (Potions, Alchemical Items, Poisons)**
-  - [ ] **Phase 3.5: Tools**
+  - [x] **Phase 3.4: Consumables (Potions, Alchemical Items, Poisons)**
+  - [x] **Phase 3.5: Tools & Relics**
 - [ ] **Phase 4: Class & Archetype Migration**
 - [ ] **Phase 5: Module Migration**
 - [ ] **Phase 6: Integration & Verification**
