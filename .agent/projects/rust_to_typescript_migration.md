@@ -13,9 +13,11 @@
 - [ ] **Phase 4: Class & Archetype Migration**
   - [x] **Phase 4.1: Core Types & Standard Modifiers**
   - [x] **Phase 4.2: Core Martial Archetypes**
-  - [ ] **Phase 4.3: Core Spellcasting Archetypes**
-  - [ ] **Phase 4.4: Uncommon Martial Archetypes**
-  - [ ] **Phase 4.5: Uncommon Spellcasting Archetypes**
+  - [x] **Phase 4.3: Core Spellcasting Archetypes**
+  - [x] **Phase 4.4: Uncommon Martial Archetypes**
+  - [x] **Phase 4.5: Uncommon Spellcasting Archetypes**
+  - [ ] **Phase 4.6: Cleric Domains**
+  - [ ] **Phase 4.7: Class Metadata & Base Class LaTeX Generation**
 - [ ] **Phase 5: Module Migration**
 - [ ] **Phase 6: Integration & Verification**
 - [ ] **Phase 7: Cleanup**
@@ -230,33 +232,33 @@ Archetype rank ability descriptions must be formatted as code in the TypeScript 
 - **Formatting Script**: Use `npm run format_archetype -- --class-name=<name>` to consistently reformat an archetype file (e.g., `npm run format_archetype -- --class-name=barbarian`). This script handles proper LaTeX block indentation.
 - **Conversion Logic**: The `metadata.ts` file contains a `cleanDescription` helper that automatically trims and dedents these descriptions during LaTeX generation.
 
-### Phase 4.2: Core Martial Archetype Rank Abilities
+### Phase 4.2: Core Martial Archetype Rank Abilities ✅
 
 Port the martial core class archetype definitions:
 
 - barbarian, fighter, monk, ranger, rogue
 
-### Phase 4.3: Core Spellcasting Archetype Rank Abilities
+### Phase 4.3: Core Spellcasting Archetype Rank Abilities ✅
 
 Port the spellcasting core class archetype definitions:
 
 - cleric, druid, paladin, sorcerer, votive, wizard
 
-### Phase 4.4: Uncommon Martial Archetype Rank Abilities
+### Phase 4.4: Uncommon Martial Archetype Rank Abilities ✅
 
 Port the martial uncommon species class archetype definitions:
 
 - automaton, dragon, dryad, harpy, incarnation, naiad, oozeborn, treant, troll, vampire
 
-### Phase 4.5: Uncommon Spellcasting Archetype Rank Abilities
+### Phase 4.5: Uncommon Spellcasting Archetype Rank Abilities ✅
 
 (No uncommon species classes currently implement standard spellcasting.)
 
-### Cleric Domains
+### Phase 4.6: Cleric Domains
 
 Port `rust/src/classes/cleric_domains.rs` (24KB) — cleric domain definitions and LaTeX generation.
 
-### Class Metadata
+### Phase 4.7: Class Metadata & Base Class LaTeX Generation
 
 Port `rust/src/classes/class.rs` (80KB) and `rust/src/classes/archetypes.rs` (25KB) to `typescript/src/classes/metadata.ts`:
 

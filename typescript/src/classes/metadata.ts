@@ -5,6 +5,23 @@ import * as fighter from './archetypes/fighter';
 import * as monk from './archetypes/monk';
 import * as ranger from './archetypes/ranger';
 import * as rogue from './archetypes/rogue';
+import * as cleric from './archetypes/cleric';
+import * as druid from './archetypes/druid';
+import * as paladin from './archetypes/paladin';
+import * as sorcerer from './archetypes/sorcerer';
+import * as votive from './archetypes/votive';
+import * as wizard from './archetypes/wizard';
+import * as automaton from './archetypes/automaton';
+import * as dragon from './archetypes/dragon';
+import * as dryad from './archetypes/dryad';
+import * as harpy from './archetypes/harpy';
+import * as incarnation from './archetypes/incarnation';
+import * as naiad from './archetypes/naiad';
+import * as oozeborn from './archetypes/oozeborn';
+import * as treant from './archetypes/treant';
+import * as troll from './archetypes/troll';
+import * as vampire from './archetypes/vampire';
+
 
 export function getClassName(cls: Class): string {
   // Rust returns lowercase name
@@ -607,6 +624,100 @@ export function getArchetypeRankAbilities(archetype: ClassArchetype): RankAbilit
     case 'SuaveScoundrel':
       return rogue.suaveScoundrelAbilities();
 
+    // Cleric
+    case 'ClericDivineMagic':
+      return cleric.divineMagicAbilities();
+    case 'DivineSpellMastery':
+      return cleric.divineSpellMasteryAbilities();
+    case 'DomainInfluence':
+      return cleric.domainInfluenceAbilities();
+    case 'Healer':
+      return cleric.healerAbilities();
+    case 'Preacher':
+      return cleric.preacherAbilities();
+
+    // Druid
+    case 'Elementalist':
+      return druid.elementalistAbilities();
+    case 'NatureMagic':
+      return druid.natureMagicAbilities();
+    case 'NatureSpellMastery':
+      return druid.natureSpellMasteryAbilities();
+    case 'Shifter':
+      return druid.shifterAbilities();
+    case 'Wildspeaker':
+      return druid.wildspeakerAbilities();
+
+    // Paladin
+    case 'DevotedParagon':
+      return paladin.devotedParagonAbilities();
+    case 'PaladinDivineMagic':
+      return paladin.divineMagicAbilities();
+    case 'DivineSpellExpertise':
+      return paladin.divineSpellExpertiseAbilities();
+    case 'StalwartGuardian':
+      return paladin.stalwartGuardianAbilities();
+    case 'ZealousWarrior':
+      return paladin.zealousWarriorAbilities();
+
+    // Sorcerer
+    case 'SorcererArcaneMagic':
+      return sorcerer.arcaneMagicAbilities();
+    case 'SorcererArcaneSpellMastery':
+      return sorcerer.arcaneSpellMasteryAbilities();
+    case 'DraconicMagic':
+      return sorcerer.draconicMagicAbilities();
+    case 'InnateArcanist':
+      return sorcerer.innateArcanistAbilities();
+    case 'WildMagic':
+      return sorcerer.wildMagicAbilities();
+
+    // Votive
+    case 'CovenantKeeper':
+      return votive.covenantKeeperAbilities();
+    case 'PactMagic':
+      return votive.pactMagicAbilities();
+    case 'PactSpellMastery':
+      return votive.pactSpellMasteryAbilities();
+    case 'PactboundWarrior':
+      return votive.pactboundWarriorAbilities();
+    case 'Soulforged':
+      return votive.soulforgedAbilities();
+
+    // Wizard
+    case 'Alchemist':
+      return wizard.alchemistAbilities();
+    case 'WizardArcaneMagic':
+      return wizard.arcaneMagicAbilities();
+    case 'WizardArcaneSpellMastery':
+      return wizard.arcaneSpellMasteryAbilities();
+    case 'ArcaneScholar':
+      return wizard.arcaneScholarAbilities();
+    case 'SchoolSpecialist':
+      return wizard.schoolSpecialistAbilities();
+
+    // Uncommon species
+    case 'Automaton':
+      return automaton.automatonAbilities();
+    case 'Dragon':
+      return dragon.dragonAbilities();
+    case 'Dryad':
+      return dryad.dryadAbilities();
+    case 'Harpy':
+      return harpy.harpyAbilities();
+    case 'Incarnation':
+      return incarnation.incarnationAbilities();
+    case 'Naiad':
+      return naiad.naiadAbilities();
+    case 'Oozeborn':
+      return oozeborn.oozebornAbilities();
+    case 'Treant':
+      return treant.treantAbilities();
+    case 'Troll':
+      return troll.trollAbilities();
+    case 'Vampire':
+      return vampire.vampireAbilities();
+
     default:
       return [];
   }
@@ -616,7 +727,7 @@ export function latexClassFeature(ability: RankAbility, classShorthand: string):
   const magical = ability.isMagical ? '[\\sparkle]' : '';
   const description = cleanDescription(ability.description);
   return `
-\\cf<${classShorthand}>[${ability.rank}]<${titleCase(ability.name)}>${magical}
+\\cf<${classShorthand}>[${ability.rank}]<${ability.name}>${magical}
 ${description}
 `.trim();
 }

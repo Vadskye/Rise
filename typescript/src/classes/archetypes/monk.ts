@@ -268,7 +268,7 @@ export function kiAbilities(): RankAbility[] {
         \\begin{magicalactiveability}{Burst of Blinding Speed}{Free action}
           \\rankline
           You increase your \\glossterm{available speed} by 10 feet this turn.
-          In exchange, you cannot use the \\ability{sprint} this turn.
+          In exchange, you cannot use the \\ability{sprint} ability this turn.
 
           \\rankline
           \\rank{5} The speed bonus increases to \\plus20 feet.
@@ -357,7 +357,7 @@ export function kiAbilities(): RankAbility[] {
         \\begin{magicalactiveability}{Shelter from Falling Rain}{Free action}
           \\rankline
           You gain a \\plus2 bonus to your defenses against ranged \\glossterm{strikes}.
-          However, you \\briefly take a \\minus2 penalty to your defenses against melee \\glossterm{strikes}.
+          However, you \\glossterm{briefly} take a \\minus2 penalty to your defenses against melee \\glossterm{strikes}.
 
           \\rankline
           \\rank{5} The bonus increases to \\plus3.
@@ -365,11 +365,11 @@ export function kiAbilities(): RankAbility[] {
 
         \\begin{magicalactiveability}{Step Between the Mystic Worlds}{Free action}
           \\rankline
-          All attacks against you \\briefly have a 20% \\glossterm{failure chance}.
-          However, your attacks also \\briefly have a 20% failure chance.
+          All attacks against you \\glossterm{briefly} have a 20\\% \\glossterm{failure chance}.
+          However, your attacks also \\glossterm{briefly} have a 20\\% failure chance.
 
           \\rankline
-          \\rank{5} The failure chance for attacks against you increases to 30%.
+          \\rank{5} The failure chance for attacks against you increases to 30\\%.
         \\end{magicalactiveability}
 
         \\begin{magicalactiveability}{Thread the Eye of the Storm}{Free action}
@@ -383,7 +383,7 @@ export function kiAbilities(): RankAbility[] {
         \\begin{magicalactiveability}{Surpass the Mortal Limits}{Free action}
           \\rankline
           You can add your Willpower to all \\glossterm{checks} you make this turn that are based on Strength, Dexterity, or Constitution.
-          However, you \\briefly take a \\minus2 penalty to Strength, Dexterity, and Constitution checks.
+          However, you \\glossterm{briefly} take a \\minus2 penalty to Strength, Dexterity, and Constitution checks.
 
           \\rankline
           \\rank{5} The brief penalty is removed.
@@ -707,7 +707,7 @@ export function transcendentSage(creature: Creature, rank: number) {
       name: 'Transcend Frailty',
       numericEffects: [
         { statistic: 'fortitude', modifier: 1 },
-        { statistic: 'mental_defense', modifier: 1 },
+        { statistic: 'mental', modifier: 1 },
         { statistic: 'vital_rolls', modifier: 1 },
       ],
     });
