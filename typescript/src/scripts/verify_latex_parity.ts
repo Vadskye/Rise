@@ -37,7 +37,7 @@ export function readFileNormalized(path: string): string {
  */
 export function normalize(content: string): string {
   return content
-    .replace(/%.*$/gm, '') // Strip LaTeX comments
+    .replace(/(?<!\\)%.*$/gm, '') // Strip LaTeX comments, ignoring escaped \%
     .replace(/ft\.\\ /g, 'ft. ') // Normalize 'ft.\ ' to 'ft. '
     .replace(/\s+/g, ' ')
     .trim();
@@ -107,6 +107,8 @@ export function verify(rustFile: string, tsFile: string): boolean {
   ) {
     if (rustTokens[i] !== tsTokens[i]) {
       console.log(`   Also differs at token #${i}: Rust="${rustTokens[i]}" TS="${tsTokens[i]}"`);
+      console.log(`   Rust: ${contextWindow(rustTokens, i)}`);
+      console.log(`   TS:   ${contextWindow(tsTokens, i)}\n`);
       shown++;
     }
   }

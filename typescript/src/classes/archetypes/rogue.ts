@@ -575,7 +575,7 @@ export function suaveScoundrel(creature: Creature, rank: number) {
   if (rank >= 4) {
     creature.addSimpleModifier({
       name: 'Slippery Mind',
-      statistic: 'mental_defense',
+      statistic: 'mental',
       value: 2,
     });
   }

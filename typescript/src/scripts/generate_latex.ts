@@ -10,6 +10,7 @@ import {
   generateMysticSphereSpellSummaries,
   generateRitualDescriptions,
 } from '@src/latex';
+import { generateArchetypeDescriptions } from '@src/latex/classes';
 import { mysticSpheres } from '@src/abilities/mystic_spheres';
 import {
   generateMagicArmorDescriptions,
@@ -45,6 +46,8 @@ function generateLatex(latexType: string): string {
     latex = mysticSpheres.map(convertMysticSphereToLatex).join('\n\\newpage\n');
   } else if (latexType === 'ritual_descriptions') {
     latex = generateRitualDescriptions();
+  } else if (latexType === 'archetype_descriptions') {
+    latex = generateArchetypeDescriptions();
   } else if (latexType === 'combat_style_lists') {
     latex = generateCombatStyleLists();
   } else if (latexType === 'combat_style_summaries') {

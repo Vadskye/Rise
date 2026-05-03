@@ -1,0 +1,486 @@
+import { Creature } from '@src/character_sheet/creature';
+import { RankAbility } from '../types';
+
+export function divineMagicAbilities(): RankAbility[] {
+  return [
+    {
+      complexity: 4,
+      name: 'Divine Spells',
+      isMagical: true,
+      rank: 1,
+      description: `
+        Your deity grants you the ability to use divine magic.
+        You gain access to one divine \\glossterm{mystic sphere}, plus the \\sphere{universal} mystic sphere (see \\pcref{Divine Mystic Spheres}).
+        You may spend \\glossterm{insight points} to gain access to one additional divine \\glossterm{mystic sphere} per two \\glossterm{insight points}.
+        You can only learn divine spells from divine mystic spheres that you have access to.
+
+        You automatically learn all \\glossterm{cantrips} from each of your mystic spheres.
+        In addition, you learn two rank 1 divine \\glossterm{spells}.
+        You can also spend \\glossterm{insight points} to learn one additional rank 1 spell per insight point.
+
+        Divine spells require \\glossterm{verbal components} to cast (see \\pcref{Ability Usage Components}).
+        For details about mystic spheres and casting spells, see \\pcref{Spell and Ritual Mechanics}.
+
+        When you gain access to a new \\glossterm{mystic sphere} or spell \\glossterm{rank},
+        you can forget any number of spells you know to learn that many new spells in exchange,
+        including spells of the higher rank.
+
+        \\advancement The maximum rank of divine spells that you can learn is equal to your rank in this archetype.
+        Divine spells also increase in power in unique ways based on your rank in this archetype, as indicated in their descriptions.
+      `,
+    },
+  ];
+}
+
+export function divineSpellMasteryAbilities(): RankAbility[] {
+  return [
+    {
+      complexity: 1,
+      name: 'Divine Vessel',
+      isMagical: true,
+      rank: 1,
+      description: `
+        You gain a \\plus2 bonus to your Knowledge (religion) skill and a \\plus1 bonus to your \\glossterm{magical power}.
+      `,
+    },
+    {
+      complexity: 2,
+      name: 'Metamagic',
+      isMagical: true,
+      rank: 2,
+      description: `
+        You learn how to further refine your spellcasting abilities.
+        Choose two metamagic abilities from the list below.
+
+        Some metamagic abilities affect specific spells.
+        Each individual spell can only have one metamagic applied.
+        Whenever you learn a new spell, you may change which specific spells your metamagic abilities affect.
+        {
+        \\parhead{Distant Spell} Choose a divine \\glossterm{spell} you know with a standard \\glossterm{range}: \\shortrangeless, \\medrangeless, \\longrangeless, \\distrangeless, or \\extrangeless.
+        You increase that spell's range to the next standard range category, to a maximum of Extreme range.
+        You can choose this ability multiple times, choosing a different spell each time.
+        \\parhead{Precise Spell} Choose a divine \\glossterm{spell} you know.
+        You gain a \\plus1 accuracy bonus with that spell.
+        You can choose this ability multiple times, choosing a different spell each time.
+        \\parhead{Rituals} You gain the ability to perform divine rituals to create unique magical effects (see \\pcref{Spell and Ritual Mechanics}).
+        The maximum \\glossterm{rank} of divine ritual you can learn or perform is equal to the maximum \\glossterm{rank} of divine spell that you can cast.
+        When you gain this ability, you can memorize a rank 1 divine ritual from any divine mystic sphere you have access to.
+        Whenever you gain access to a new spellcasting rank, you can memorize an additional ritual of that rank or lower.
+        You cannot choose this ability multiple times.
+        \\parhead{Smiting Spell} Choose a damaging divine \\glossterm{spell} you know.
+        It deals \\glossterm{extra damage} equal to your rank in this archetype.
+        In addition, your \\glossterm{allies} are immune to damage from that spell.
+        You can choose this ability multiple times, choosing a different spell each time.
+        \\parhead{Widened Spell} Choose a divine \\glossterm{spell} you know with a standard \\glossterm{area}: \\tinyarea, \\smallarea, \\medarea, \\largearea, \\hugearea, or \\gargarea.
+        You increase that spell's area to the next standard area category, to a maximum of a Gargantuan area.
+        You can choose this ability multiple times, choosing a different spell each time.
+        }
+      `,
+    },
+    {
+      complexity: 2,
+      name: 'Spell Knowledge',
+      isMagical: true,
+      rank: 3,
+      description: `
+        You learn an additional divine spell.
+      `,
+    },
+    {
+      complexity: 0,
+      name: 'Spell-Trained Mind',
+      isMagical: true,
+      rank: 4,
+      description: `
+        You gain a \\plus1 bonus to your Willpower.
+      `,
+    },
+    {
+      complexity: 1,
+      name: 'Metamagic+',
+      isMagical: true,
+      rank: 5,
+      description: `
+        You gain an additional metamagic ability.
+      `,
+    },
+    {
+      complexity: 1,
+      name: 'Attunement Point',
+      isMagical: true,
+      rank: 6,
+      description: `
+        You gain an additional \\glossterm{attunement point}.
+      `,
+    },
+    {
+      complexity: 1,
+      name: 'Experienced Spellcaster',
+      isMagical: true,
+      rank: 7,
+      description: `
+        You gain a \\plus1 bonus to your \\glossterm{accuracy} and Mental defense.
+      `,
+    },
+  ];
+}
+
+export function domainInfluenceAbilities(): RankAbility[] {
+  return [
+    {
+      complexity: 2,
+      name: 'Domain Gifts',
+      isMagical: false,
+      rank: 1,
+      description: `
+        You choose two domains which represent your personal spiritual inclinations.
+        You must choose your domains from among those your deity offers.
+        The domains are listed below.
+
+        Each domain has a corresponding domain gift.
+        A domain gift is a passive ability that reinforces your ability to embody your domain.
+        You gain the domain gift for both of your domains (see \\pcref{Cleric Domain Abilities}).
+
+        \\begin{raggeditemize}
+          \\item{Chaos}
+          \\item{Death}
+          \\item{Destiny}
+          \\item{Destruction}
+          \\item{Earth}
+          \\item{Evil}
+          \\item{Forge}
+          \\item{Good}
+          \\item{Knowledge}
+          \\item{Law}
+          \\item{Life}
+          \\item{Magic}
+          \\item{Ocean}
+          \\item{Protection}
+          \\item{Sky}
+          \\item{Storm}
+          \\item{Sun}
+          \\item{Travel}
+          \\item{Trickery}
+          \\item{War}
+          \\item{Wild}
+        \\end{raggeditemize}
+      `,
+    },
+    {
+      complexity: 1,
+      name: 'Domain Aspect',
+      isMagical: false,
+      rank: 2,
+      description: `
+        Each domain has a corresponding domain aspect.
+        You gain the domain aspect ability for one of your domains (see \\pcref{Cleric Domain Abilities}).
+      `,
+    },
+    {
+      complexity: 1,
+      name: 'Domain Aspect+',
+      isMagical: false,
+      rank: 3,
+      description: `
+        You gain the domain aspect for another one of your domains.
+      `,
+    },
+    {
+      complexity: 2,
+      name: 'Domain Essence',
+      isMagical: false,
+      rank: 4,
+      description: `
+        Each domain has a corresponding domain essence.
+        You gain the domain essence for one of your domains (see \\pcref{Cleric Domain Abilities}).
+      `,
+    },
+    {
+      complexity: 1,
+      name: 'Domain Essence+',
+      isMagical: false,
+      rank: 5,
+      description: `
+        You gain the domain essence for another one of your domains.
+      `,
+    },
+    {
+      complexity: 2,
+      name: 'Miracle',
+      isMagical: true,
+      rank: 6,
+      description: `
+        You can request a \\ability{miracle} as a standard action.
+        \\begin{magicalactiveability}{Miracle}{Standard action}
+          \\abilitycost Two \\glossterm{fatigue levels}, and you cannot use it again for a week.
+          You mentally specify a request to your deity, and your deity fulfills that request in the manner it sees fit.
+          At your deity's discretion, this can emulate the effects of any non-attunable divine spell, or have any other effect of a similar power level.
+          A miracle can also mimic the effects of many non-attunable rituals.
+          However, rituals that require expensive material components or 24 hours to perform may require a similar investment of time or materials from you for the miracle to succeed.
+
+          Miracles are most effective when your request is directly related to your domains, and more generally your deity's domains and purview.
+          Requesting a miracle outside that scope may limit its power.
+          Your request does not have to be extremely specific, since deities prefer to have leeway to act as they see fit, but they should not be overly broad or vague.
+          If the deity has a direct interest in your situation, the miracle may be of unusual power.
+          On the other hand, if your deity sees your request as unbefitting of its involvement or contrary to its goals, the miracle may be weaker or even fail.
+
+          If you perform an extraordinary service for your deity, you may gain the ability to request an additional miracle, at your deity's discretion.
+        \\end{magicalactiveability}
+      `,
+    },
+    {
+      complexity: 1,
+      name: 'Domain Masteries',
+      isMagical: false,
+      rank: 7,
+      description: `
+        Each domain has a corresponding \\ability{domain mastery}.
+        You gain the domain mastery for both of your domains (see \\pcref{Cleric Domain Abilities}).
+      `,
+    },
+  ];
+}
+
+export function healerAbilities(): RankAbility[] {
+  return [
+    {
+      complexity: 2,
+      name: 'Divine Aid',
+      isMagical: true,
+      rank: 1,
+      description: `
+        \\begin{magicalactiveability}{Divine Aid}{Standard action}
+          \\abilitycost One \\glossterm{fatigue level}.
+          \\rankline
+          Choose yourself or one adjacent living \\glossterm{ally}.
+          The target regains \\hprankfour.
+          In addition, if the target is an \\glossterm{ally}, it becomes \\glossterm{briefly} \\braced.
+
+          \\rankline
+          \\rank{3} The bonus healing increases to 1d8 per 2 power.
+          \\rank{4} The bonus healing increases to 1d6 per power.
+          \\rank{5} The base healing increases to 2d6.
+          \\rank{6} The bonus healing increases to 1d8 per power.
+          \\rank{7} The base healing increases to 2d10, and the bonus healing increases to 1d10 per power.
+        \\end{magicalactiveability}
+      `,
+    },
+    {
+      complexity: 1,
+      name: "Healer's Grace",
+      isMagical: true,
+      rank: 2,
+      description: `
+        You gain a \\plus1 bonus to all defenses.
+        Whenever you attack or deal damage to a living creature, you \\glossterm{briefly} lose this bonus.
+      `,
+    },
+    {
+      complexity: 2,
+      name: 'Vital Restoration',
+      isMagical: true,
+      rank: 3,
+      description: `
+        \\begin{magicalactiveability}{Vital Restoration}{Standard action}
+          \\abilitycost Three \\glossterm{fatigue levels}.
+          \\rankline
+          Choose yourself or one adjacent living \\glossterm{ally}.
+          The target removes one of its \\glossterm{vital wounds}.
+
+          \\rankline
+          \\rank{5} If the target's \\glossterm{character rank} is lower than your rank in this archetype, this ability only costs one fatigue level.
+          \\rank{7} The target can remove an additional \\glossterm{vital wound}.
+        \\end{magicalactiveability}
+      `,
+    },
+    {
+      complexity: 2,
+      name: 'Called to the Needy',
+      isMagical: true,
+      rank: 4,
+      description: `
+        At the start of your turn, you automatically learn the identity and location of each living \\glossterm{ally} within \\longrange of you that was \\glossterm{injured} since your last turn.
+        In addition, you can choose to \\glossterm{teleport} to any one of those allies.
+        You arrive in the unoccupied square on solid ground closest to that ally.
+      `,
+    },
+    {
+      complexity: 0,
+      name: "Healer's Grace+",
+      isMagical: true,
+      rank: 5,
+      description: `
+        The defense bonus increases to \\plus2.
+      `,
+    },
+    {
+      complexity: 2,
+      name: 'Revivify',
+      isMagical: true,
+      rank: 6,
+      description: `
+        \\begin{magicalactiveability}{Revivify}{Standard action}
+          \\abilitycost Four \\glossterm{fatigue levels}, and you cannot use this ability again until you finish a \\glossterm{long rest}.
+          \\rankline
+          Choose one intact corpse within \\shortrange.
+          If it belongs to a creature that has been dead for no more than 1 minute, that creature is \\glossterm{resurrected} (see \\pcref{Resurrection}).
+        \\end{magicalactiveability}
+      `,
+    },
+    {
+      complexity: 0,
+      name: 'Called to the Needy+',
+      isMagical: true,
+      rank: 7,
+      description: `
+        This ability no longer requires \\glossterm{line of sight} or \\glossterm{line of effect}, and the range increases to \\extrange.
+      `,
+    },
+  ];
+}
+
+export function preacherAbilities(): RankAbility[] {
+  return [
+    {
+      complexity: 2,
+      name: 'Denounce the Heathens',
+      isMagical: false,
+      rank: 1,
+      description: `
+        \\begin{activeability}{Denounce the Heathens}{Standard action}
+          \\abilitytags \\abilitytag{Auditory}, \\abilitytag{Emotion}
+          \\rankline
+          Make an attack vs. Mental against all \\glossterm{enemies} within a \\medarea radius from you.
+          For each target, if this is your first time using this ability against that target since you finished a \\glossterm{short rest}, your \\glossterm{accuracy} is equal to your Persuasion skill.
+          \\hit The target is \\glossterm{briefly} \\stunned.
+
+          \\rankline
+          \\rank{3} Each \\glossterm{injured} target is stunned as a \\glossterm{condition} instead of only briefly.
+          \\rank{5} You always use your Persuasion skill to determine your accuracy with this attack.
+          \\rank{7} Each target is stunned as a condition regardless of whether it is injured.
+        \\end{activeability}
+      `,
+    },
+    {
+      complexity: 1,
+      name: 'Persuasive Certainty',
+      isMagical: false,
+      rank: 2,
+      description: `
+        You gain a \\plus2 bonus to the Persuasion skill.
+        In addition, you are immune to being \\stunned.
+      `,
+    },
+    {
+      complexity: 2,
+      name: 'Spread the Word',
+      isMagical: false,
+      rank: 3,
+      description: `
+        Whenever you use a \\magical or \\atAuditory ability that affects a standard area, you can increase its area to the next standard area category, to a maximum of a Gargantuan area.
+        If you do, it gains the \\atAuditory tag.
+        The standard areas are \\tinyarea, \\smallarea, \\medarea, \\largearea, \\hugearea, and \\gargarea.
+      `,
+    },
+    {
+      complexity: 2,
+      name: 'Steady Oration',
+      isMagical: false,
+      rank: 4,
+      description: `
+        Your \\glossterm{allies} who can hear you in a fight are immune to being \\stunned.
+        You must say inspiring words every few turns to grant your allies this effect, though they can be brief, so this does not take an action.
+      `,
+    },
+    {
+      complexity: 1,
+      name: 'Persuasive Certainty+',
+      isMagical: false,
+      rank: 5,
+      description: `
+        The Persuasion bonus increases to \\plus4.
+        In addition, you are immune to being \\confused.
+      `,
+    },
+    {
+      complexity: 2,
+      name: 'Spread the Word+',
+      isMagical: false,
+      rank: 6,
+      description: `
+        Your \\glossterm{allies} also take half damage from abilities that you modify in this way.
+      `,
+    },
+    {
+      complexity: 2,
+      name: 'Name the Faithful',
+      isMagical: false,
+      rank: 7,
+      description: `
+        Whenever you use a \\magical or \\atAuditory ability to target one or more \\glossterm{allies} within a \\glossterm{range}, you can call each target by their name instead of choosing your targets normally.
+        If you do, you double your range with that ability, and you do not need \\glossterm{line of sight} or \\glossterm{line of effect} to the named targets.
+        Instead, they must only be able to hear you clearly.
+        This does not affect abilities that do not have a defined range measured in feet, such as abilities that require \\glossterm{touch}.
+      `,
+    },
+  ];
+}
+
+export function divineMagic(creature: Creature, rank: number) {}
+
+export function divineSpellMastery(creature: Creature, rank: number) {
+  if (rank >= 1) {
+    creature.addCustomModifier({
+      name: 'Divine Vessel',
+      numericEffects: [
+        { statistic: 'knowledge_religion', modifier: 2 },
+        { statistic: 'magical_power', modifier: 1 },
+      ],
+    });
+  }
+
+  if (rank >= 4) {
+    creature.addSimpleModifier({
+      name: 'Spell-Trained Mind',
+      statistic: 'willpower',
+      value: 1,
+    });
+  }
+
+  if (rank >= 7) {
+    creature.addCustomModifier({
+      name: 'Experienced Spellcaster',
+      numericEffects: [
+        { statistic: 'accuracy', modifier: 1 },
+        { statistic: 'mental_defense', modifier: 1 },
+      ],
+    });
+  }
+}
+
+export function domainInfluence(creature: Creature, rank: number) {}
+
+export function healer(creature: Creature, rank: number) {
+  if (rank >= 2) {
+    const bonus = rank >= 5 ? 2 : 1;
+    creature.addCustomModifier({
+      name: "Healer's Grace",
+      numericEffects: [
+        { statistic: 'armor_defense', modifier: bonus },
+        { statistic: 'fortitude', modifier: bonus },
+        { statistic: 'reflex', modifier: bonus },
+        { statistic: 'mental_defense', modifier: bonus },
+      ],
+    });
+  }
+}
+
+export function preacher(creature: Creature, rank: number) {
+  if (rank >= 2) {
+    creature.addSimpleModifier({
+      name: 'Persuasive Certainty',
+      statistic: 'persuasion',
+      value: rank >= 5 ? 4 : 2,
+    });
+  }
+}
