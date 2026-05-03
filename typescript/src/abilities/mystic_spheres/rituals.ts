@@ -384,7 +384,7 @@ export const rituals: RitualDefinition[] = [
 
     usageTime: 'one minute',
     functionsLike: {
-    name: 'manipulate water',
+      name: 'manipulate water',
       exceptThat: 'the maximum speed change increases to 20 miles per hour.',
     },
     rank: 6,
@@ -633,7 +633,7 @@ export const rituals: RitualDefinition[] = [
     rank: 5,
     roles: ['narrative'],
     functionsLike: {
-    name: 'forge astral beacon',
+      name: 'forge astral beacon',
       exceptThat: 'the astral beacon is permanent.',
     },
     tags: [],
@@ -812,7 +812,7 @@ export const rituals: RitualDefinition[] = [
 
     usageTime: 'one minute',
     functionsLike: {
-    name: 'gentle repose',
+      name: 'gentle repose',
       exceptThat: 'the effect lasts for one year.',
     },
     materialCost: true,
@@ -846,7 +846,7 @@ export const rituals: RitualDefinition[] = [
 
     usageTime: 'one hour',
     functionsLike: {
-    name: 'observe the future',
+      name: 'observe the future',
       exceptThat: 'the duplicate can answer up to three yes or no questions before disappearing.',
     },
     rank: 5,
@@ -876,7 +876,7 @@ export const rituals: RitualDefinition[] = [
 
     usageTime: '24 hours',
     functionsLike: {
-    name: 'stasis chamber',
+      name: 'stasis chamber',
       exceptThat: 'the effect lasts for one year.',
     },
     rank: 5,
@@ -1368,7 +1368,7 @@ export const rituals: RitualDefinition[] = [
 
     usageTime: 'one hour',
     functionsLike: {
-    name: 'continuous light',
+      name: 'continuous light',
       exceptThat: 'the effect lasts for one year.',
     },
     materialCost: true,
@@ -1792,7 +1792,7 @@ export const rituals: RitualDefinition[] = [
 
     usageTime: 'one hour',
     functionsLike: {
-    name: 'track item',
+      name: 'track item',
       exceptThat: 'the item can be of any size category.',
     },
     rank: 4,
@@ -2265,7 +2265,7 @@ export const rituals: RitualDefinition[] = [
 
     usageTime: 'one hour',
     functionsLike: {
-    name: 'sunlight ward',
+      name: 'sunlight ward',
       exceptThat: 'the target is also protected from \\magical effects that mimic sunlight.',
     },
     rank: 6,
@@ -2422,7 +2422,7 @@ export const rituals: RitualDefinition[] = [
 
     usageTime: 'one hour',
     functionsLike: {
-    name: 'corpse communion',
+      name: 'corpse communion',
       exceptThat: `
         the corpse can answer with a single full sentence, rather than only with "yes" or "no".
         In addition, the ritual only requires a piece of the corpse, not an intact mouth.
@@ -2571,7 +2571,7 @@ export const rituals: RitualDefinition[] = [
 
     usageTime: '24 hours',
     functionsLike: {
-    name: 'soul bind',
+      name: 'soul bind',
       exceptThat:
         "the creature's soul is removed from its intended afterlife and fully trapped within the gem. In addition, the gem must be at least rank 5 (2,500 gp).",
     },
@@ -2653,7 +2653,7 @@ export const rituals: RitualDefinition[] = [
 
     usageTime: 'one hour',
     functionsLike: {
-    name: 'command undead',
+      name: 'command undead',
       exceptThat:
         'it affects up to ten targets, and the \\glossterm{character rank} of each target must be at least three lower than your rank with this ritual.',
     },
@@ -3021,7 +3021,7 @@ export const rituals: RitualDefinition[] = [
     name: 'Greater Memory Echo',
     usageTime: 'one hour',
     functionsLike: {
-    name: 'memory echo',
+      name: 'memory echo',
       exceptThat: `
         the vision is more clear, so the maximum check result you can get on Awareness or similar checks increases to 10.
         In addition, it includes sound.
@@ -3290,7 +3290,7 @@ export const rituals: RitualDefinition[] = [
 
     usageTime: 'one hour',
     functionsLike: {
-    name: 'control weather',
+      name: 'control weather',
       // 30 feet/6 seconds = 5 feet / second = 300 feet/min = 3,000 feet / 10 min,
       // which is less than the 10,000 foot radius.
       exceptThat: `
@@ -3312,7 +3312,7 @@ export const rituals: RitualDefinition[] = [
 
     usageTime: 'one minute',
     functionsLike: {
-    name: 'control weather',
+      name: 'control weather',
       exceptThat:
         'the area increases to a ten mile radius, and the weather changes take effect after only one minute rather than ten minutes.',
     },

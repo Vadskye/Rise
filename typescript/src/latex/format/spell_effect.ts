@@ -78,7 +78,6 @@ function assertHasCorrectHalfDamage(attack: ActiveAbilityAttack, effectName: str
 
 export function spellEffect(spell: ActiveAbility | Ritual): string | null {
   try {
-
     if (spell.attack) {
       assertEndsWithPeriod(spell.attack.targeting, spell.name);
       assertEndsWithPeriod(spell.attack.hit, spell.name);
@@ -157,4 +156,3 @@ function deriveExceptThat(functionsLike: FunctionsLike) {
     throw new Error(`Cannot derive exceptThat from functionsLike: ${functionsLike}`);
   }
 }
-
