@@ -4,6 +4,10 @@ import { getItemCreature } from '../item_creature';
 import { replacePlaceholders } from '../../latex/monsters/replace_placeholders';
 import { formatTagLatex, latexify } from '../../latex/format';
 
+/**
+ * Generates the LaTeX block for an item, including placeholder replacement.
+ * @param craftingText LaTeX string for the "Craft" line (e.g., "Craft (alchemy)").
+ */
 export function itemLatex(item: StandardItem, craftingText: string): string {
   validateDescription(item);
   validateShortDescription(item);
@@ -36,6 +40,9 @@ export function itemLatex(item: StandardItem, craftingText: string): string {
   return latexify(latex);
 }
 
+/**
+ * Flags descriptions starting with "as an action", which usually require specific costs.
+ */
 function validateDescription(item: StandardItem) {
   const trimDesc = item.description.trim();
   if (/^As a.*action.*you can/i.test(trimDesc) && !/^[^.]*strike/i.test(trimDesc)) {
@@ -43,12 +50,18 @@ function validateDescription(item: StandardItem) {
   }
 }
 
+/**
+ * Flags damage types in short descriptions; these should be in the main description.
+ */
 function validateShortDescription(item: StandardItem) {
   if (/\d \w+ damage/.test(item.short_description)) {
     console.warn(`Item ${item.name} includes a damage type in its short description`);
   }
 }
 
+/**
+ * Renders higher-rank upgrades as \upgraderank blocks.
+ */
 function latexUpgradesSection(item: StandardItem): string {
   if (item.upgrades.length === 0) return '';
 

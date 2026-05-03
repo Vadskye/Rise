@@ -6,20 +6,29 @@ export type ItemRarity = 'Common' | 'Relic';
 export interface ItemUpgrade {
   description: string;
   rank: number;
+  /** Summary description used in tables. */
   short_description: string;
 }
 
 export interface StandardItem {
+  /** Main descriptive text for the item's LaTeX block. */
   description: string;
+  /** Summary used in equipment tables. */
   short_description: string;
+  /** Affects the LaTeX environment used for the item block. */
   magical: boolean;
   name: string;
+  /** Used for pricing and scaling calculations. */
   rank: number;
   rarity: ItemRarity;
+  /** Variants of this item at higher ranks. */
   upgrades: ItemUpgrade[];
   tags: ActiveAbility['tags'];
 }
 
+/**
+ * Expands an item into its upgrade variants, adding the '+' suffix to their names.
+ */
 export function getUpgradeItems(item: StandardItem): StandardItem[] {
   return item.upgrades.map((upgrade, i) => {
     const upgradeTier = i + 1;
@@ -81,7 +90,9 @@ export type WeaponTag =
   | { kind: 'Thrown'; close: number; long: number }
   | 'Versatile Grip';
 
+/** Method of delivery for a poison. */
 export type Exposure = 'contact' | 'ingestion' | 'injury';
+/** Physical state/packaging of a poison. */
 export type PoisonForm = 'gas' | 'liquid' | 'pellet' | 'powder';
 
 export type ApparelKind =

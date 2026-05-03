@@ -9,6 +9,9 @@ import { permanentToolsDescriptions, permanentToolsTable } from './tools';
 import { generateRelicDescriptions, generateRelicsTable } from './relics';
 import { generateEverythingTable } from './everything';
 
+/**
+ * Items are sorted alphabetically by name.
+ */
 export function generateMagicArmorDescriptions(): string {
   const items = allMagicArmor().sort((a, b) => a.item.name.localeCompare(b.item.name));
   return items
@@ -20,6 +23,9 @@ export function generateMagicArmorDescriptions(): string {
     .join('\n');
 }
 
+/**
+ * Produces separate longtables for "Magic Body Armor" and "Magic Shields".
+ */
 export function generateMagicArmorTables(): string {
   const allArmor = allMagicArmor();
 
@@ -40,6 +46,9 @@ export function generateMagicArmorTables(): string {
   );
 }
 
+/**
+ * Items are sorted alphabetically by name.
+ */
 export function generateMagicWeaponsDescriptions(): string {
   const items = allMagicWeapons().sort((a, b) => a.item.name.localeCompare(b.item.name));
   return items.map((m) => itemLatex(m.item, 'Craft (as base weapon)')).join('\n');
@@ -51,6 +60,9 @@ export function generateMagicWeaponsTables(): string {
   return longtable('Magic Weapons', rows, false);
 }
 
+/**
+ * Handles rods, staffs, and wands, sorted alphabetically by name.
+ */
 export function generateImplementsDescriptions(): string {
   const items = allImplements().sort((a, b) => a.item.name.localeCompare(b.item.name));
   return items
