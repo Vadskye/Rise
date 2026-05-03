@@ -5,10 +5,5 @@ import { objects } from './objects';
 import { traps } from './traps';
 
 export function tools(): Tool[] {
-  return [
-    ...kits(),
-    ...mounts(),
-    ...objects(),
-    ...traps(),
-  ];
+  return [...kits(), ...mounts(), ...objects(), ...traps()];
 }

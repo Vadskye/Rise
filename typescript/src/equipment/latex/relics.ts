@@ -44,9 +44,7 @@ export function generateRelicDescriptions(): string {
 export function generateRelicsTable(): string {
   const rows: table.TableRow[] = [];
 
-  rows.push(
-    ...allApparel('Relic').flatMap((a) => table.fromItem(a.item, false, a.kind)),
-  );
+  rows.push(...allApparel('Relic').flatMap((a) => table.fromItem(a.item, false, a.kind)));
   rows.push(
     ...allMagicArmor()
       .filter((m) => m.item.rarity === 'Relic')

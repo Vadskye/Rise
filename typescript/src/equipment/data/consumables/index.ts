@@ -5,10 +5,5 @@ import { poisons } from './poisons';
 import { potions } from './potions';
 
 export function consumables(): Tool[] {
-  return [
-    ...alchemicalItems(),
-    ...elixirs(),
-    ...poisons(),
-    ...potions(),
-  ];
+  return [...alchemicalItems(), ...elixirs(), ...poisons(), ...potions()];
 }
