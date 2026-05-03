@@ -789,8 +789,7 @@ export const astromancy: MysticSphere = {
 
       functionsLike: {
         name: 'twinned portals',
-        exceptThat:
-          'the portals function any number of times before your next turn.',
+        exceptThat: 'the portals function any number of times before your next turn.',
       },
       narrative: `
         You create a pair of portals that allow instant passage from one to the other.

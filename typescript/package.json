@@ -19,7 +19,8 @@
     "tslint": "^5.20.1",
     "tsx": "^4.19.0",
     "typescript": "^5.5.4",
-    "typescript-eslint": "^8.3.0"
+    "typescript-eslint": "^8.3.0",
+    "prettier": "^3.3.3"
   },
   "dependencies": {
     "change-case": "^3.1.0",
@@ -42,6 +43,7 @@
     "ritual_ranks": "npx tsc --incremental && node --import tsx src/scripts/ritual_rank_breakdown.js",
     "spell_roles": "npx tsc --incremental && node --import tsx src/scripts/spell_role_breakdown.js",
     "tap": "npx tsc --incremental && npx tap --node-arg=--import=tsx --exclude=**/*.js",
-    "test": "npx tsc --incremental && npx tap --node-arg=--import=tsx --exclude=**/*.js"
+    "test": "npx tsc --incremental && npx tap --node-arg=--import=tsx --exclude=**/*.js",
+    "prettier": "prettier --write \"src/**/*.ts\""
   }
 }

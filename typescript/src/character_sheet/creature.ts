@@ -782,7 +782,7 @@ export class Creature implements CreaturePropertyMap {
       // Jump skill as a trained skill and it shouldn't appear in the book, though.
       modifier.immune = 'Prone';
     } else if (traitName === 'nonliving') {
-      modifier.immune = 'Life, Poison'
+      modifier.immune = 'Life, Poison';
     } else if (traitName === 'quadrupedal') {
       modifier.numericEffects = [{ modifier: 10, statistic: 'speed' }];
       modifier.resistant = 'Trip';
@@ -1449,7 +1449,15 @@ export class Creature implements CreaturePropertyMap {
   }
 
   public getStandardTraitsForClassification(): RiseTrait[] {
-    let traits: RiseTrait[] = ['blooded', 'corporeal', 'dynamic', 'ensouled', 'living', 'mortal', 'sighted'];
+    let traits: RiseTrait[] = [
+      'blooded',
+      'corporeal',
+      'dynamic',
+      'ensouled',
+      'living',
+      'mortal',
+      'sighted',
+    ];
 
     // Origin Traits
     const originTraits: RiseTrait[] = [];
