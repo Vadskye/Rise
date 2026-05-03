@@ -85,9 +85,13 @@ export function standardSort(rows: TableRow[]): void {
     // Secondary: Consumability (consumables first)
     if (a.consumable !== b.consumable) return a.consumable ? -1 : 1;
     // Tertiary: Category
-    if (a.category !== b.category) return (a.category || '').localeCompare(b.category || '');
+    if (a.category !== b.category) {
+      const catA = a.category || '';
+      const catB = b.category || '';
+      return catA < catB ? -1 : 1;
+    }
     // Final: Name
-    return a.name.localeCompare(b.name);
+    return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
   });
 }
 
