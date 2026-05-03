@@ -83,3 +83,20 @@ export type WeaponTag =
 
 export type Exposure = 'contact' | 'ingestion' | 'injury';
 export type PoisonForm = 'gas' | 'liquid' | 'pellet' | 'powder';
+
+export type ApparelKind =
+  | 'Amulet'
+  | 'Belt'
+  | 'Blindfold'
+  | 'Boots'
+  | 'Bracers'
+  | 'Circlet'
+  | 'Cloak'
+  | 'Crown'
+  | 'Gauntlets'
+  | 'Gloves'
+  | 'Ring'
+  | 'Tattoo'
+  | 'Veil';
+
+export type Apparel = { kind: ApparelKind; item: StandardItem };

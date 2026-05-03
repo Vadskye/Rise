@@ -7,7 +7,7 @@
 - [ ] **Phase 3: Equipment System Migration**
   - [x] **Phase 3.1: Equipment Infrastructure & Armor**
   - [x] **Phase 3.2: Held Items (Weapons & Implements)**
-  - [ ] **Phase 3.3: Apparel**
+  - [x] **Phase 3.3: Apparel**
   - [ ] **Phase 3.4: Consumables (Potions, Alchemical Items, Poisons)**
   - [ ] **Phase 3.5: Tools**
 - [ ] **Phase 4: Class & Archetype Migration**
@@ -34,6 +34,7 @@ Migrate all Rust-based LaTeX generation logic in the `Rise` repository to the Ty
 - **String Unions over Enums**: Use TypeScript string literal unions instead of enums to match existing codebase conventions and leverage TypeScript's string checking.
 - **Unified Models**: Use `typescript/src/character_sheet/creature.ts` and `sheet_worker.ts` as the absolute source of truth for all character statistics and calculations. Do not duplicate logic for size-based modifiers, attribute modifiers, etc.
 - **Separation of Concerns**: Keep LaTeX generation logic separate from the core data models.
+- **LaTeX Braces over Angle Brackets**: Use standard LaTeX curly braces `{}` in TypeScript code. Do not port the Rust `<>` hack (used to avoid Rust string interpolation conflicts). LaTeX generation utilities like `latexify` should NOT convert angle brackets to braces.
 
 ## User Review Required
 

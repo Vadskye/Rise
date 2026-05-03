@@ -20,6 +20,8 @@ import {
   generateMagicArmorTables,
   generateMagicWeaponsDescriptions,
   generateMagicWeaponsTables,
+  generateApparelDescriptions,
+  generateApparelTables,
 } from '../equipment/latex/generate';
 
 function parseArgs(): { category: string; mode: 'table' | 'descriptions' } {
@@ -60,10 +62,12 @@ function generate(category: string, mode: 'table' | 'descriptions'): string {
       return mode === 'table' ? generateMagicArmorTables() : generateMagicArmorDescriptions();
     case 'magic weapons':
       return mode === 'table' ? generateMagicWeaponsTables() : generateMagicWeaponsDescriptions();
+    case 'apparel':
+      return mode === 'table' ? generateApparelTables() : generateApparelDescriptions();
     default:
       console.error(`Error: unrecognized category '${category}'`);
-      console.error('Valid values: implements, magic armor, magic weapons');
-      console.error('(apparel, consumable tools, permanent tools not yet migrated)');
+      console.error('Valid values: implements, magic armor, magic weapons, apparel');
+      console.error('(consumable tools, permanent tools not yet migrated)');
       process.exit(1);
   }
 }
