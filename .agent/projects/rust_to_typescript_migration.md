@@ -12,7 +12,7 @@
   - [x] **Phase 3.5: Tools & Relics**
 - [ ] **Phase 4: Class & Archetype Migration**
   - [x] **Phase 4.1: Core Types & Standard Modifiers**
-  - [ ] **Phase 4.2: Core Martial Archetypes**
+  - [x] **Phase 4.2: Core Martial Archetypes**
   - [ ] **Phase 4.3: Core Spellcasting Archetypes**
   - [ ] **Phase 4.4: Uncommon Martial Archetypes**
   - [ ] **Phase 4.5: Uncommon Spellcasting Archetypes**
@@ -221,19 +221,31 @@ Each sub-phase only needs to port the **data definitions and any category-specif
 
 Port `rust/src/classes/archetype_rank_abilities/standard_modifiers.rs` first as a shared utility used by many archetype files.
 
+### Indentation & Formatting
+
+Archetype rank ability descriptions must be formatted as code in the TypeScript source files.
+
+- **Base Indentation**: The description content should be indented with 8 spaces relative to the file.
+- **Block Indentation**: Content within `\begin{...}` blocks must have an additional 2 spaces of indentation.
+- **Formatting Script**: Use `npm run format_archetype -- --class-name=<name>` to consistently reformat an archetype file (e.g., `npm run format_archetype -- --class-name=barbarian`). This script handles proper LaTeX block indentation.
+- **Conversion Logic**: The `metadata.ts` file contains a `cleanDescription` helper that automatically trims and dedents these descriptions during LaTeX generation.
+
 ### Phase 4.2: Core Martial Archetype Rank Abilities
 
 Port the martial core class archetype definitions:
+
 - barbarian, fighter, monk, ranger, rogue
 
 ### Phase 4.3: Core Spellcasting Archetype Rank Abilities
 
 Port the spellcasting core class archetype definitions:
+
 - cleric, druid, paladin, sorcerer, votive, wizard
 
 ### Phase 4.4: Uncommon Martial Archetype Rank Abilities
 
 Port the martial uncommon species class archetype definitions:
+
 - automaton, dragon, dryad, harpy, incarnation, naiad, oozeborn, treant, troll, vampire
 
 ### Phase 4.5: Uncommon Spellcasting Archetype Rank Abilities

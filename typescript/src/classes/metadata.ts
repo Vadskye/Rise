@@ -1,5 +1,10 @@
 import { Class, ClassArchetype, RankAbility } from './types';
 import { titleCase } from '@src/latex/format/title_case';
+import * as barbarian from './archetypes/barbarian';
+import * as fighter from './archetypes/fighter';
+import * as monk from './archetypes/monk';
+import * as ranger from './archetypes/ranger';
+import * as rogue from './archetypes/rogue';
 
 export function getClassName(cls: Class): string {
   // Rust returns lowercase name
@@ -541,26 +546,104 @@ export function isArchetypeMagical(archetype: ClassArchetype): boolean {
 
 // Placeholder for the ability getter
 export function getArchetypeRankAbilities(archetype: ClassArchetype): RankAbility[] {
-  if (archetype === 'Totemist') {
-    return [
-      {
-        complexity: 2,
-        name: 'Totem Animal',
-        isMagical: false,
-        rank: 1,
-        description: 'You gain the strength of a totem animal.',
-      },
-    ];
+  switch (archetype) {
+    // Barbarian
+    case 'BattleforgedResilience':
+      return barbarian.battleforgedResilienceAbilities();
+    case 'Battlerager':
+      return barbarian.battleragerAbilities();
+    case 'OutlandSavage':
+      return barbarian.outlandSavageAbilities();
+    case 'PrimalWarrior':
+      return barbarian.primalWarriorAbilities();
+    case 'Totemist':
+      return barbarian.totemistAbilities();
+
+    // Fighter
+    case 'CombatDiscipline':
+      return fighter.combatDisciplineAbilities();
+    case 'EquipmentTraining':
+      return fighter.equipmentTrainingAbilities();
+    case 'MartialMastery':
+      return fighter.martialMasteryAbilities();
+    case 'Sentinel':
+      return fighter.sentinelAbilities();
+    case 'Tactician':
+      return fighter.tacticianAbilities();
+
+    // Monk
+    case 'Airdancer':
+      return monk.airdancerAbilities();
+    case 'EsotericWarrior':
+      return monk.esotericWarriorAbilities();
+    case 'Ki':
+      return monk.kiAbilities();
+    case 'PerfectedForm':
+      return monk.perfectedFormAbilities();
+    case 'TranscendentSage':
+      return monk.transcendentSageAbilities();
+
+    // Ranger
+    case 'Beastmaster':
+      return ranger.beastmasterAbilities();
+    case 'BoundaryWarden':
+      return ranger.boundaryWardenAbilities();
+    case 'Huntmaster':
+      return ranger.huntmasterAbilities();
+    case 'Scout':
+      return ranger.scoutAbilities();
+    case 'WildernessWarrior':
+      return ranger.wildernessWarriorAbilities();
+
+    // Rogue
+    case 'Assassin':
+      return rogue.assassinAbilities();
+    case 'BardicMusic':
+      return rogue.bardicMusicAbilities();
+    case 'CombatTrickster':
+      return rogue.combatTricksterAbilities();
+    case 'JackOfAllTrades':
+      return rogue.jackOfAllTradesAbilities();
+    case 'SuaveScoundrel':
+      return rogue.suaveScoundrelAbilities();
+
+    default:
+      return [];
   }
-  return [];
 }
 
 export function latexClassFeature(ability: RankAbility, classShorthand: string): string {
   const magical = ability.isMagical ? '[\\sparkle]' : '';
+  const description = cleanDescription(ability.description);
   return `
 \\cf<${classShorthand}>[${ability.rank}]<${titleCase(ability.name)}>${magical}
-${ability.description}
+${description}
 `.trim();
+}
+
+function cleanDescription(description: string): string {
+  const lines = description.split('\n');
+  // Remove leading and trailing empty lines
+  while (lines.length > 0 && lines[0].trim() === '') {
+    lines.shift();
+  }
+  while (lines.length > 0 && lines[lines.length - 1].trim() === '') {
+    lines.pop();
+  }
+  if (lines.length === 0) return '';
+
+  // Find minimum indentation of non-empty lines
+  const minIndent = lines
+    .filter((line) => line.trim() !== '')
+    .reduce((min, line) => {
+      const match = line.match(/^ */);
+      const indent = match ? match[0].length : 0;
+      return Math.min(min, indent);
+    }, Infinity);
+
+  if (minIndent === Infinity) return lines.join('\n');
+
+  return lines.map((line) => (line.trim() === '' ? '' : line.slice(minIndent))).join('\n');
 }
 
 export function latexArchetypeDescription(archetype: ClassArchetype): string {
