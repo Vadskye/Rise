@@ -1,6 +1,17 @@
 import t from 'tap';
-import { getClassName, getClassShorthand, getArchetypeClass, getArchetypeName, getArchetypeShortDescription, latexClassFeature, latexArchetypeDescription } from './metadata';
-import { addStandardSpellModifiers, addStandardManeuverModifiers } from './definitions/standard_modifiers';
+import {
+  getClassName,
+  getClassShorthand,
+  getArchetypeClass,
+  getArchetypeName,
+  getArchetypeShortDescription,
+  latexClassFeature,
+  latexArchetypeDescription,
+} from './metadata';
+import {
+  addStandardSpellModifiers,
+  addStandardManeuverModifiers,
+} from './definitions/standard_modifiers';
 import { RankAbility } from './types';
 
 t.test('Classes Metadata', (t) => {
