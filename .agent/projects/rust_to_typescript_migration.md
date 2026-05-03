@@ -11,6 +11,11 @@
   - [x] **Phase 3.4: Consumables (Potions, Alchemical Items, Poisons)**
   - [x] **Phase 3.5: Tools & Relics**
 - [ ] **Phase 4: Class & Archetype Migration**
+  - [x] **Phase 4.1: Core Types & Standard Modifiers**
+  - [ ] **Phase 4.2: Core Martial Archetypes**
+  - [ ] **Phase 4.3: Core Spellcasting Archetypes**
+  - [ ] **Phase 4.4: Uncommon Martial Archetypes**
+  - [ ] **Phase 4.5: Uncommon Spellcasting Archetypes**
 - [ ] **Phase 5: Module Migration**
 - [ ] **Phase 6: Integration & Verification**
 - [ ] **Phase 7: Cleanup**
@@ -212,17 +217,28 @@ Each sub-phase only needs to port the **data definitions and any category-specif
 
 ## Phase 4: Class & Archetype Migration
 
-### Standard Modifiers Utility
+### Standard Modifiers Utility ✅
 
 Port `rust/src/classes/archetype_rank_abilities/standard_modifiers.rs` first as a shared utility used by many archetype files.
 
-### Archetype Rank Abilities
+### Phase 4.2: Core Martial Archetype Rank Abilities
 
-Port each of the 22 Rust files in `rust/src/classes/archetype_rank_abilities/` to corresponding TypeScript files in `typescript/src/classes/definitions/`:
+Port the martial core class archetype definitions:
+- barbarian, fighter, monk, ranger, rogue
 
-- 11 core classes: barbarian, cleric, druid, fighter, monk, paladin, ranger, rogue, sorcerer, votive, wizard
-- 10 uncommon species classes: automaton, dragon, dryad, harpy, incarnation, naiad, oozeborn, treant, troll, vampire
-- 1 utility: `standard_modifiers.ts`
+### Phase 4.3: Core Spellcasting Archetype Rank Abilities
+
+Port the spellcasting core class archetype definitions:
+- cleric, druid, paladin, sorcerer, votive, wizard
+
+### Phase 4.4: Uncommon Martial Archetype Rank Abilities
+
+Port the martial uncommon species class archetype definitions:
+- automaton, dragon, dryad, harpy, incarnation, naiad, oozeborn, treant, troll, vampire
+
+### Phase 4.5: Uncommon Spellcasting Archetype Rank Abilities
+
+(No uncommon species classes currently implement standard spellcasting.)
 
 ### Cleric Domains
 
