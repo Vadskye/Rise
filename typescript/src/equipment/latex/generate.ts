@@ -3,7 +3,11 @@ import { allMagicWeapons } from '../data/magic_weapons';
 import { allImplements } from '../data/implements';
 import { allApparel, apparelLatex, apparelTable } from '../apparel';
 import { itemLatex } from './item_latex';
-import { fromItem, standardSort, longtable, longtablePercentile } from './latex_table';
+import { fromItem, standardSort, longtable } from './latex_table';
+import { consumableToolsDescriptions, consumableToolsTable } from './consumables';
+import { permanentToolsDescriptions, permanentToolsTable } from './tools';
+import { generateRelicDescriptions, generateRelicsTable } from './relics';
+import { generateEverythingTable } from './everything';
 
 export function generateMagicArmorDescriptions(): string {
   const items = allMagicArmor().sort((a, b) => a.item.name.localeCompare(b.item.name));
@@ -74,3 +78,13 @@ export function generateApparelDescriptions(): string {
 export function generateApparelTables(): string {
   return apparelTable();
 }
+
+export {
+  consumableToolsDescriptions as generateConsumableToolsDescriptions,
+  consumableToolsTable as generateConsumableToolsTables,
+  permanentToolsDescriptions as generatePermanentToolsDescriptions,
+  permanentToolsTable as generatePermanentToolsTables,
+  generateRelicDescriptions,
+  generateRelicsTable,
+  generateEverythingTable,
+};

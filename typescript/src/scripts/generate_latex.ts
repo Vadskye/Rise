@@ -18,6 +18,15 @@ import {
   generateMagicWeaponsTables,
   generateImplementsDescriptions,
   generateImplementsTables,
+  generateApparelDescriptions,
+  generateApparelTables,
+  generateConsumableToolsDescriptions,
+  generateConsumableToolsTables,
+  generatePermanentToolsDescriptions,
+  generatePermanentToolsTables,
+  generateRelicDescriptions,
+  generateRelicsTable,
+  generateEverythingTable,
 } from '@src/equipment/latex';
 import cli from 'commander';
 import fs from 'fs';
@@ -54,6 +63,24 @@ function generateLatex(latexType: string): string {
     latex = generateImplementsDescriptions();
   } else if (latexType === 'equipment_implements_tables') {
     latex = generateImplementsTables();
+  } else if (latexType === 'equipment_apparel_descriptions') {
+    latex = generateApparelDescriptions();
+  } else if (latexType === 'equipment_apparel_tables') {
+    latex = generateApparelTables();
+  } else if (latexType === 'equipment_consumable_tools_descriptions') {
+    latex = generateConsumableToolsDescriptions();
+  } else if (latexType === 'equipment_consumable_tools_tables') {
+    latex = generateConsumableToolsTables();
+  } else if (latexType === 'equipment_permanent_tools_descriptions') {
+    latex = generatePermanentToolsDescriptions();
+  } else if (latexType === 'equipment_permanent_tools_tables') {
+    latex = generatePermanentToolsTables();
+  } else if (latexType === 'equipment_relic_descriptions') {
+    latex = generateRelicDescriptions();
+  } else if (latexType === 'equipment_relic_tables') {
+    latex = generateRelicsTable();
+  } else if (latexType === 'equipment_everything_table') {
+    latex = generateEverythingTable();
   } else {
     throw new Error(`Unrecognized latexType: '${latexType}'`);
   }
