@@ -16,16 +16,18 @@ export function allMagicArmor(rarityFilter?: ItemRarity): MagicArmor[] {
 
 export function magicArmorLatex(rarityFilter?: ItemRarity): string {
   const armor = allMagicArmor(rarityFilter);
-  return armor.map((a) => {
-    const craftMaterials = a.kind === 'Body' ? 'bone, leather, or metal' : 'bone, metal, or wood';
-    const category = a.kind === 'Body' ? 'Body armor' : 'Shield';
-    return itemLatex(a.item, `${category} -- Craft (${craftMaterials})`);
-  }).join('\n\n');
+  return armor
+    .map((a) => {
+      const craftMaterials = a.kind === 'Body' ? 'bone, leather, or metal' : 'bone, metal, or wood';
+      const category = a.kind === 'Body' ? 'Body armor' : 'Shield';
+      return itemLatex(a.item, `${category} -- Craft (${craftMaterials})`);
+    })
+    .join('\n\n');
 }
 
 export function magicArmorTable(): string {
   const allArmor = allMagicArmor('Common');
-  
+
   const bodyRows = allArmor
     .filter((a) => a.kind === 'Body')
     .flatMap((a) => latexTable.fromItem(a.item, false, 'Body armor'));

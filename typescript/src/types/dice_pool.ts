@@ -17,11 +17,21 @@ export class Die {
     }
   }
 
-  static d3() { return Die.new(3); }
-  static d4() { return Die.new(4); }
-  static d6() { return Die.new(6); }
-  static d8() { return Die.new(8); }
-  static d10() { return Die.new(10); }
+  static d3() {
+    return Die.new(3);
+  }
+  static d4() {
+    return Die.new(4);
+  }
+  static d6() {
+    return Die.new(6);
+  }
+  static d8() {
+    return Die.new(8);
+  }
+  static d10() {
+    return Die.new(10);
+  }
 
   toString(): string {
     return `1d${this.size}`;
@@ -34,18 +44,28 @@ export class DicePool {
     public readonly flatModifier: number = 0,
     public readonly maximized: boolean = false,
     public readonly multiplier: number = 1,
-    public readonly weak: boolean = false
+    public readonly weak: boolean = false,
   ) {}
 
   static newDie(die: Die): DicePool {
     return new DicePool([die]);
   }
 
-  static d3() { return DicePool.xdy(1, 3); }
-  static d4() { return DicePool.xdy(1, 4); }
-  static d6() { return DicePool.xdy(1, 6); }
-  static d8() { return DicePool.xdy(1, 8); }
-  static d10() { return DicePool.xdy(1, 10); }
+  static d3() {
+    return DicePool.xdy(1, 3);
+  }
+  static d4() {
+    return DicePool.xdy(1, 4);
+  }
+  static d6() {
+    return DicePool.xdy(1, 6);
+  }
+  static d8() {
+    return DicePool.xdy(1, 8);
+  }
+  static d10() {
+    return DicePool.xdy(1, 10);
+  }
 
   static empty(): DicePool {
     return new DicePool([]);
@@ -65,19 +85,13 @@ export class DicePool {
       this.flatModifier * 2,
       this.maximized,
       this.multiplier,
-      this.weak
+      this.weak,
     );
   }
 
   addDice(extraDice: Die[]): DicePool {
     const newDice = [...this.dice, ...extraDice].sort((a, b) => a.size - b.size);
-    return new DicePool(
-      newDice,
-      this.flatModifier,
-      this.maximized,
-      this.multiplier,
-      this.weak
-    );
+    return new DicePool(newDice, this.flatModifier, this.maximized, this.multiplier, this.weak);
   }
 
   addDie(die: Die): DicePool {
@@ -90,7 +104,7 @@ export class DicePool {
       this.flatModifier + flatModifier,
       this.maximized,
       this.multiplier,
-      this.weak
+      this.weak,
     );
   }
 
@@ -120,7 +134,7 @@ export class DicePool {
       return sum.toString();
     } else {
       const diceTexts: string[] = containedSizes.map(
-        (s) => `${(counts.get(s) || 0) * this.multiplier}d${s}`
+        (s) => `${(counts.get(s) || 0) * this.multiplier}d${s}`,
       );
       const modifier = Math.floor(this.calcFlatModifier());
       if (modifier !== 0) {
@@ -145,33 +159,15 @@ export class DicePool {
   }
 
   multiply(multiplier: number): DicePool {
-    return new DicePool(
-      this.dice,
-      this.flatModifier,
-      this.maximized,
-      multiplier,
-      this.weak
-    );
+    return new DicePool(this.dice, this.flatModifier, this.maximized, multiplier, this.weak);
   }
 
   maximize(): DicePool {
-    return new DicePool(
-      this.dice,
-      this.flatModifier,
-      true,
-      this.multiplier,
-      this.weak
-    );
+    return new DicePool(this.dice, this.flatModifier, true, this.multiplier, this.weak);
   }
 
   makeWeak(): DicePool {
-    return new DicePool(
-      this.dice,
-      this.flatModifier,
-      this.maximized,
-      this.multiplier,
-      true
-    );
+    return new DicePool(this.dice, this.flatModifier, this.maximized, this.multiplier, true);
   }
 
   calcScaledPool(powerScalings: PowerScaling[], power: number): DicePool {
@@ -185,11 +181,11 @@ export class DicePool {
     }
 
     combinedPool = new DicePool(
-        this.dice,
-        flatModifier,
-        this.maximized,
-        this.multiplier,
-        this.weak
+      this.dice,
+      flatModifier,
+      this.maximized,
+      this.multiplier,
+      this.weak,
     );
 
     for (const scaling of powerScalings) {
