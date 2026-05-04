@@ -302,12 +302,12 @@ Port `rust/src/classes/basic_class_abilities.rs` (13KB) and the formatting logic
 
 ---
 
-## Phase 5: Module Migration
+## Phase 5: Module Migration [COMPLETED]
 
 Port `rust/src/modules/` to `typescript/src/modules/`:
 
-- `Module` struct (introduction, name, description) and `to_latex()` method
-- `the_house_of_liberation.rs` (16KB) → `typescript/src/modules/the_house_of_liberation.ts`
+- [x] `Module` struct (introduction, name, description) and `to_latex()` method
+- [x] `the_house_of_liberation.rs` (16KB) → `typescript/src/modules/the_house_of_liberation.ts`
 - The module contains embedded creature references (skeleton_guard, orc_butcher, human_cleric, human_warrior) that currently render as empty strings — preserve this behavior or implement the creature formatting.
 
 ### Output Files
@@ -321,23 +321,17 @@ Port `rust/src/modules/` to `typescript/src/modules/`:
 
 ---
 
-## Phase 6: Integration & Verification
+## Phase 6: Integration & Verification [COMPLETED]
 
 ### Integration
 
-Add new generation commands to `typescript/src/scripts/generate_latex.ts` for all migrated categories:
-
-- Equipment descriptions and tables (apparel, implements, magic armor, magic weapons, consumable tools, permanent tools, relics, everything)
-- Classes chapter
-- Uncommon species classes
-- Modules chapter
-
-Update `bin/rtgen` and `bin/rtgen.ps1` to include the new generation commands.
-
-> [!IMPORTANT]
-> `typescript/src/scripts/generate_latex.ts` must be extended to support categories and flags (descriptions vs tables) for equipment, matching the functionality of the Rust `item_latex` binary. Alternatively, create granular `--type` values for each combination (e.g., `equipment_apparel_descriptions`, `equipment_apparel_table`).
+- [x] Add new generation commands to `typescript/src/scripts/generate_latex.ts` for all migrated categories.
+- [x] Update `bin/rtgen` and `bin/rtgen.ps1` to include the new generation commands.
+- [x] Implement uncommon species classes generation script.
 
 ### Verification Strategy
+
+- [x] Verify full pipeline execution and parity with legacy outputs.
 
 #### How to Run a Comparison
 

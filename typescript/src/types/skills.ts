@@ -49,6 +49,7 @@ export const SKILL_METADATA: Record<Skill, SkillMetadata> = {
   knowledge_local: { attribute: 'intelligence', category: SkillCategory.Other },
   knowledge_nature: { attribute: 'intelligence', category: SkillCategory.Other },
   knowledge_planes: { attribute: 'intelligence', category: SkillCategory.Other },
+  knowledge_religion: { attribute: 'intelligence', category: SkillCategory.Other },
   knowledge_souls: { attribute: 'intelligence', category: SkillCategory.Other },
   knowledge_untrained: { attribute: 'intelligence', category: SkillCategory.Other },
   medicine: { attribute: 'intelligence', category: SkillCategory.Other },

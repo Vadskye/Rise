@@ -994,6 +994,18 @@ export class Creature implements CreaturePropertyMap {
     return this.getPropertyValue('mundane_power');
   }
 
+  public get fatigue_tolerance() {
+    return this.getPropertyValue('fatigue_tolerance');
+  }
+
+  public get initiative() {
+    return this.getPropertyValue('initiative');
+  }
+
+  public get all_skills() {
+    return this.getPropertyValue('all_skills');
+  }
+
   public get elite() {
     return this.getPropertyValue('elite');
   }
@@ -1242,6 +1254,10 @@ export class Creature implements CreaturePropertyMap {
 
   public get knowledge_planes() {
     return this.getPropertyValue('knowledge_planes');
+  }
+
+  public get knowledge_religion() {
+    return this.getPropertyValue('knowledge_religion');
   }
 
   public get knowledge_souls() {

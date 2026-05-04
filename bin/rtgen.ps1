@@ -33,14 +33,33 @@ Write-Host "Generating LaTeX files..." -ForegroundColor Cyan
 
 $tasks = @(
     @{ type = "monster_descriptions"; output = "..\core_book\generated\monster_descriptions.tex" },
+    @{ type = "modules"; output = "..\core_book\generated\modules.tex" },
     @{ type = "mystic_sphere_lists"; output = "..\comprehensive_codex\generated\mystic_sphere_lists.tex" },
     @{ type = "mystic_sphere_spell_summaries"; output = "..\comprehensive_codex\generated\mystic_sphere_spell_summaries.tex" },
     @{ type = "mystic_sphere_ritual_summaries"; output = "..\comprehensive_codex\generated\mystic_sphere_ritual_summaries.tex" },
     @{ type = "mystic_sphere_descriptions"; output = "..\comprehensive_codex\generated\mystic_sphere_descriptions.tex" },
     @{ type = "ritual_descriptions"; output = "..\comprehensive_codex\generated\ritual_descriptions.tex" },
+    @{ type = "archetype_descriptions"; output = "..\comprehensive_codex\generated\archetype_descriptions.tex" },
+    @{ type = "classes_chapter"; output = "..\comprehensive_codex\generated\classes.tex" },
     @{ type = "combat_style_lists"; output = "..\comprehensive_codex\generated\combat_style_lists.tex" },
     @{ type = "combat_style_summaries"; output = "..\comprehensive_codex\generated\combat_style_summaries.tex" },
-    @{ type = "combat_style_descriptions"; output = "..\comprehensive_codex\generated\combat_style_descriptions.tex" }
+    @{ type = "combat_style_descriptions"; output = "..\comprehensive_codex\generated\combat_style_descriptions.tex" },
+    # Equipment
+    @{ type = "equipment_magic_armor_descriptions"; output = "..\comprehensive_codex\generated\magic_armor.tex" },
+    @{ type = "equipment_magic_armor_tables"; output = "..\comprehensive_codex\generated\magic_armor_table.tex" },
+    @{ type = "equipment_magic_weapons_descriptions"; output = "..\comprehensive_codex\generated\magic_weapons.tex" },
+    @{ type = "equipment_magic_weapons_tables"; output = "..\comprehensive_codex\generated\magic_weapons_table.tex" },
+    @{ type = "equipment_implements_descriptions"; output = "..\comprehensive_codex\generated\implements.tex" },
+    @{ type = "equipment_implements_tables"; output = "..\comprehensive_codex\generated\implements_table.tex" },
+    @{ type = "equipment_apparel_descriptions"; output = "..\comprehensive_codex\generated\apparel.tex" },
+    @{ type = "equipment_apparel_tables"; output = "..\comprehensive_codex\generated\apparel_table.tex" },
+    @{ type = "equipment_consumable_tools_descriptions"; output = "..\comprehensive_codex\generated\consumable_tools.tex" },
+    @{ type = "equipment_consumable_tools_tables"; output = "..\comprehensive_codex\generated\consumable_tools_table.tex" },
+    @{ type = "equipment_permanent_tools_descriptions"; output = "..\comprehensive_codex\generated\permanent_tools.tex" },
+    @{ type = "equipment_permanent_tools_tables"; output = "..\comprehensive_codex\generated\permanent_tools_table.tex" },
+    @{ type = "equipment_relic_descriptions"; output = "..\comprehensive_codex\generated\relics.tex" },
+    @{ type = "equipment_relic_tables"; output = "..\comprehensive_codex\generated\relics_table.tex" },
+    @{ type = "equipment_everything_table"; output = "..\comprehensive_codex\generated\everything_table.tex" }
 )
 
 foreach ($task in $tasks) {
@@ -51,6 +70,13 @@ foreach ($task in $tasks) {
         Write-Error "Failed to generate $($task.type)."
         exit $LASTEXITCODE
     }
+}
+
+Write-Host "Generating uncommon species classes..." -ForegroundColor Gray
+npm run script -- src/scripts/generate_uncommon_species_classes.js
+if ($LASTEXITCODE -ne 0) {
+    Write-Error "Failed to generate uncommon species classes."
+    exit $LASTEXITCODE
 }
 
 Set-Location -Path $repoRoot

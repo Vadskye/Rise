@@ -1,5 +1,9 @@
 import { ClassArchetype } from '@src/classes/types';
-import { latexArchetypeDescription } from '@src/classes/metadata';
+import {
+  getCoreClasses,
+  latexArchetypeDescription,
+  latexClassSection,
+} from '@src/classes/metadata';
 
 export function generateArchetypeDescriptions(): string {
   const archetypes: ClassArchetype[] = [
@@ -83,4 +87,8 @@ export function generateArchetypeDescriptions(): string {
   ];
 
   return archetypes.map(latexArchetypeDescription).join('\n\\newpage\n');
+}
+
+export function generateClassesChapter(): string {
+  return getCoreClasses().map(latexClassSection).join('\n');
 }
