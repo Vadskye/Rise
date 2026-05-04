@@ -1,6 +1,9 @@
 import { Creature } from '@src/character_sheet/creature';
 import { RankAbility } from '../types';
-import { addStandardManeuverModifiers, addStandardSpellModifiers } from '../definitions/standard_modifiers';
+import {
+  addStandardManeuverModifiers,
+  addStandardSpellModifiers,
+} from '../definitions/standard_modifiers';
 
 export function pactboundWarriorAbilities(): RankAbility[] {
   const abilities: RankAbility[] = [

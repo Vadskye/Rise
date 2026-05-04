@@ -589,9 +589,7 @@ export function beastmaster(creature: Creature, rank: number) {
   if (rank >= 2) {
     creature.addCustomModifier({
       name: 'Beast Bond',
-      numericEffects: [
-        { statistic: 'vital_rolls', modifier: 1 },
-      ],
+      numericEffects: [{ statistic: 'vital_rolls', modifier: 1 }],
     });
   }
 }

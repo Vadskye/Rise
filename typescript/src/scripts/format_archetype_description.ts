@@ -31,11 +31,11 @@ function formatDescription(text: string): string {
   const lines = text.trim().split('\n');
   let currentIndent = 0;
   const BASE_INDENT = '        '; // 8 spaces for the description block
-  const STEP_INDENT = '  ';       // 2 spaces for nested blocks
+  const STEP_INDENT = '  '; // 2 spaces for nested blocks
 
   const formattedLines = lines.map((line) => {
     const trimmedLine = line.trim();
-    
+
     // Decrement indent before the line if it's an \end
     if (trimmedLine.includes('\\end{') || trimmedLine.includes('\\\\end{')) {
       currentIndent = Math.max(0, currentIndent - 1);
@@ -45,8 +45,10 @@ function formatDescription(text: string): string {
     const result = trimmedLine === '' ? '' : indent + trimmedLine;
 
     // Increment indent after the line if it's a \begin
-    if ((trimmedLine.includes('\\begin{') || trimmedLine.includes('\\\\begin{')) && 
-        !(trimmedLine.includes('\\end{') || trimmedLine.includes('\\\\end{'))) {
+    if (
+      (trimmedLine.includes('\\begin{') || trimmedLine.includes('\\\\begin{')) &&
+      !(trimmedLine.includes('\\end{') || trimmedLine.includes('\\\\end{'))
+    ) {
       currentIndent++;
     }
 
