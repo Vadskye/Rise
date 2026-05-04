@@ -86,6 +86,7 @@ export function getClassSkills(cls: Class): RiseSkill[] {
         'knowledge_items',
         'knowledge_local',
         'knowledge_planes',
+        'knowledge_religion',
         'medicine',
         'persuasion',
         'social_insight',
@@ -266,6 +267,7 @@ export function getClassSkills(cls: Class): RiseSkill[] {
         'endurance',
         'intimidate',
         'knowledge_local',
+        'knowledge_religion',
         'medicine',
         'persuasion',
         'ride',
@@ -291,6 +293,7 @@ export function getClassSkills(cls: Class): RiseSkill[] {
         'knowledge_local',
         'knowledge_nature',
         'knowledge_planes',
+        'knowledge_religion',
         'knowledge_souls',
         'medicine',
         'persuasion',
@@ -372,6 +375,7 @@ export function getClassSkills(cls: Class): RiseSkill[] {
         'intimidate',
         'jump',
         'knowledge_dungeoneering',
+        'knowledge_religion',
         'persuasion',
         'social_insight',
         'stealth',
@@ -387,6 +391,7 @@ export function getClassSkills(cls: Class): RiseSkill[] {
         'knowledge_arcana',
         'knowledge_items',
         'knowledge_planes',
+        'knowledge_religion',
         'persuasion',
         'ride',
         'social_insight',
@@ -406,6 +411,7 @@ export function getClassSkills(cls: Class): RiseSkill[] {
         'knowledge_local',
         'knowledge_nature',
         'knowledge_planes',
+        'knowledge_religion',
         'knowledge_souls',
         'persuasion',
       ];
@@ -1214,12 +1220,19 @@ export function isUncommonClass(cls: Class): boolean {
 
 
 export function calculateClassPointTotal(cls: Class): number {
+  const skills = getClassSkills(cls);
+  // Group knowledge skills into a single "Knowledge" skill for point calculation to match Rust logic
+  const uniqueSkillGroups = new Set(
+    skills.map((s) => (s.startsWith('knowledge_') ? 'knowledge' : s)),
+  );
+  const skillCount = uniqueSkillGroups.size;
+
   return (
     getClassAttunementPoints(cls) * 6 +
     getClassFatigueTolerance(cls) * 2 +
     getClassInsightPoints(cls) * 3 +
     getClassTrainedSkills(cls) * 2 +
-    Math.round(getClassSkills(cls).length / 8.0) +
+    Math.round(skillCount / 8.0) +
     Math.max(0, getClassArmorProficiencies(cls).usage_classes.length - 1) +
     (getClassWeaponProficiencies(cls).custom_weapons ? 1 : 0) +
     (getClassWeaponProficiencies(cls).non_exotic_weapons ? 2 : 0) +
