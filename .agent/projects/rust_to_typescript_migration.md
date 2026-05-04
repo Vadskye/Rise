@@ -16,8 +16,8 @@
   - [x] **Phase 4.3: Core Spellcasting Archetypes**
   - [x] **Phase 4.4: Uncommon Martial Archetypes**
   - [x] **Phase 4.5: Uncommon Spellcasting Archetypes**
-  - [ ] **Phase 4.6: Cleric Domains**
-  - [ ] **Phase 4.7: Class Metadata & Base Class LaTeX Generation**
+  - [x] **Phase 4.6: Cleric Domains**
+  - [x] **Phase 4.7: Class Metadata & Base Class LaTeX Generation**
 - [ ] **Phase 5: Module Migration**
 - [ ] **Phase 6: Integration & Verification**
 - [ ] **Phase 7: Cleanup**
@@ -218,6 +218,21 @@ Each sub-phase only needs to port the **data definitions and any category-specif
 ---
 
 ## Phase 4: Class & Archetype Migration
+
+### Key Implementation Notes (Lessons from Phase 4.1-4.7)
+
+#### Indentation in Template Literals
+A major challenge when porting raw LaTeX text (such as class narratives) into TypeScript was maintaining exact indentation for the final output to achieve bit-for-bit parity. Rust uses 4-space string literals that naturally preserve formatting. In TypeScript, multi-line template literals introduce relative leading whitespace based on the code's indentation. 
+- **Solution**: Use a robust `dedent` utility function that accepts an optional `baseIndent` argument. This allows you to write clean TypeScript code while uniformly stripping common leading whitespace and re-applying exactly the spacing needed for the final LaTeX output (e.g., 8 spaces for narrative paragraphs).
+
+#### Escaping Backticks in TypeScript
+LaTeX frequently uses sequences like \`\`ki'' for quotation marks. When writing these sequences inside TypeScript template literals, the literal backticks conflict with the template literal syntax and must be escaped.
+- **Correct approach**: Use `\`` (backslash + backtick) to escape a literal backtick inside a template literal. For example, `\`\`ki''` safely produces the desired `\`\`ki''` output. 
+- **Anti-pattern**: Avoid over-escaping (e.g., `\\\`\\``). This sequence evaluates to an escaped backslash followed by an unescaped backtick, terminating the template literal prematurely and causing build failures (e.g., `TransformError` in `tsx`).
+
+#### Script Execution and Module Imports
+When executing standalone verification scripts (like `verify_classes.ts`) directly via `tsx` or `ts-node` during the migration process, absolute path aliases (e.g., `@src/...`) may result in `MODULE_NOT_FOUND` errors if the path resolution isn't actively injected into the execution context.
+- **Solution**: Use relative imports (e.g., `../equipment/armor` instead of `@src/equipment/armor`) in metadata and utility files that will be imported by these standalone CLI verification scripts. This ensures smooth, out-of-the-box execution for parity testing.
 
 ### Standard Modifiers Utility ✅
 

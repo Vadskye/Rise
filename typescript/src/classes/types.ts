@@ -108,3 +108,16 @@ export interface RankAbility {
   rank: number;
   name: string;
 }
+
+import { ArmorKind, ArmorUsageClass } from '../equipment/armor';
+
+export interface ArmorProficiencies {
+  specific_armors?: ArmorKind[];
+  usage_classes: ArmorUsageClass[];
+}
+
+export interface WeaponProficiencies {
+  custom_weapons?: string;
+  simple_weapons: boolean;
+  non_exotic_weapons: boolean;
+}
