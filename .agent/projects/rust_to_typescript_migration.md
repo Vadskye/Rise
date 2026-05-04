@@ -10,9 +10,9 @@
   - [x] **Phase 3.3: Apparel**
   - [x] **Phase 3.4: Consumables (Potions, Alchemical Items, Poisons)**
   - [x] **Phase 3.5: Tools & Relics**
-- [ ] **Phase 4: Class & Archetype Migration** (See [rust_to_typescript_classes.md](./rust_to_typescript_classes.md))
-- [ ] **Phase 5: Module Migration**
-- [ ] **Phase 6: Integration & Verification**
+- [x] **Phase 4: Class & Archetype Migration** (See [rust_to_typescript_classes.md](./rust_to_typescript_classes.md))
+- [x] **Phase 5: Module Migration**
+- [x] **Phase 6: Integration & Verification**
 - [ ] **Phase 7: Cleanup**
 
 ## Progress Tracking Methodology
@@ -321,3 +321,20 @@ The `verify_latex_parity.ts` script normalizes whitespace and encoding differenc
 | Modifier system is Rust-idiomatic (enums with data)      | Medium   | Use TypeScript discriminated unions                                                               |
 | `latexify` regex behavior may differ between Rust and TS | Medium   | Port existing Rust tests; add edge case tests                                                     |
 | Existing TS creature model conflicts with ported logic   | High     | Use `character_sheet/creature.ts` as the baseline; refactor carefully to separate math from LaTeX |
+
+## Post-Migration Opportunities
+
+With the Rust-to-TypeScript migration complete and bit-for-bit parity achieved, there are several opportunities for future improvement that were deferred to maintain strict legacy compatibility:
+
+### 1. Fix Legacy Bugs and Typos
+To ensure exact parity with the Rust output, several known bugs and typos were intentionally preserved in the TypeScript migration. These should now be reviewed and fixed:
+- **Incarnation Skills:** The `Craft` skill is listed twice in the Incarnation's class skills.
+- **Item Descriptions:** The `Composite Staff, 3rd` incorrectly states "Rank 2" in its description instead of "Rank 3".
+- **Skill Grouping Order:** The Cleric's Knowledge sub-skills are ordered non-alphabetically (`Religion` before `Planes`).
+- **Capitalization:** `Sleight of Hand` is hardcoded to lowercase the "of" to match the legacy `titlecase` library's specific behavior.
+
+### 2. TypeScript Code Organization and Refactoring
+Now that the logic is fully ported, the TypeScript codebase can be refactored for better maintainability without the constraint of matching the Rust architecture:
+- **Unify Data Models:** Further unify the LaTeX generation data models with the Roll20 character sheet models (`creature.ts`) where appropriate, reducing duplication.
+- **Refactor `replacePlaceholders`:** The `replacePlaceholders` logic (ported from `replace_attack_terms`) is highly complex and relies on regex replacements against a dummy `Creature` instance. This could be redesigned to be more robust and less coupled to string manipulation.
+- **Remove Redundant Sorts/Formats:** Remove specialized sorting or formatting logic that only exists to mimic the exact quirks of the Rust output (e.g., bypassing `.sort()` for specific sub-skill lists).
