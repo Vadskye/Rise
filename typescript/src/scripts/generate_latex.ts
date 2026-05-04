@@ -11,6 +11,7 @@ import {
   generateRitualDescriptions,
 } from '@src/latex';
 import { generateArchetypeDescriptions, generateClassesChapter } from '@src/latex/classes';
+import { validateClassPoints } from '../classes/metadata';
 import { mysticSpheres } from '@src/abilities/mystic_spheres';
 import {
   generateMagicArmorDescriptions,
@@ -99,6 +100,9 @@ function generateLatex(latexType: string): string {
 }
 
 function main(latexType: string, outputFilename?: string) {
+  if (latexType === 'classes_chapter') {
+    validateClassPoints();
+  }
   const latex = generateLatex(latexType);
   if (outputFilename) {
     fs.writeFileSync(outputFilename, latex);

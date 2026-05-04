@@ -517,6 +517,26 @@ export function getClassVitalRollBonus(cls: Class): number {
   }
 }
 
+export function getClassAttunementPoints(cls: Class): number {
+  switch (cls) {
+    case 'Cleric':
+    case 'Dragon':
+    case 'Druid':
+    case 'Dryad':
+    case 'Harpy':
+    case 'Incarnation':
+    case 'Naiad':
+    case 'Paladin':
+    case 'Sorcerer':
+    case 'Vampire':
+    case 'Votive':
+    case 'Wizard':
+      return 5;
+    default:
+      return 4;
+  }
+}
+
 export function getClassArmorProficiencies(cls: Class): ArmorProficiencies {
   switch (cls) {
     case 'Automaton':
@@ -1184,8 +1204,48 @@ export function getUncommonClasses(): Class[] {
   ];
 }
 
+export function getAllClasses(): Class[] {
+  return [...getCoreClasses(), ...getUncommonClasses()];
+}
+
 export function isUncommonClass(cls: Class): boolean {
   return !getCoreClasses().includes(cls);
+}
+
+
+export function calculateClassPointTotal(cls: Class): number {
+  return (
+    getClassAttunementPoints(cls) * 6 +
+    getClassFatigueTolerance(cls) * 2 +
+    getClassInsightPoints(cls) * 3 +
+    getClassTrainedSkills(cls) * 2 +
+    Math.round(getClassSkills(cls).length / 8.0) +
+    Math.max(0, getClassArmorProficiencies(cls).usage_classes.length - 1) +
+    (getClassWeaponProficiencies(cls).custom_weapons ? 1 : 0) +
+    (getClassWeaponProficiencies(cls).non_exotic_weapons ? 2 : 0) +
+    2 *
+      (getClassDefenseBonus(cls, 'brawn') +
+        getClassDefenseBonus(cls, 'fortitude') +
+        getClassDefenseBonus(cls, 'reflex') +
+        getClassDefenseBonus(cls, 'mental')) +
+    getClassDefenseBonus(cls, 'armor_defense') * 4 +
+    getClassVitalRollBonus(cls) * 4
+  );
+}
+
+export function validateClassPoints() {
+  const expectedPoints = 71;
+  for (const cls of getAllClasses()) {
+    const actualPoints = calculateClassPointTotal(cls);
+    const classExpectedPoints = expectedPoints + (isUncommonClass(cls) ? 2 : 0);
+    const tooWeak = actualPoints < classExpectedPoints;
+    const tooStrong = actualPoints > classExpectedPoints + 1;
+    if (tooWeak || tooStrong) {
+      console.warn(
+        `Class ${cls.toLowerCase()} has ${actualPoints} points; expected ${classExpectedPoints}`,
+      );
+    }
+  }
 }
 
 export function getArchetypeClass(archetype: ClassArchetype): Class {
@@ -2116,7 +2176,7 @@ function latexResources(cls: Class): string {
   return `
         \\cf<${getClassShorthand(cls)}><Resources>
         \\begin<raggeditemize>
-            \\item \\glossterm<Attunement points>: 2 (see \\pcref<Attunement Points>).
+            \\item \\glossterm<Attunement points>: ${getClassAttunementPoints(cls)} (see \\pcref<Attunement Points>).
             \\item \\glossterm<Fatigue tolerance>: ${getClassFatigueTolerance(cls)} \\add your Constitution (see \\pcref<Fatigue>).
             \\item \\glossterm<Insight points>: ${getClassInsightPoints(cls)} \\add your Intelligence (see \\pcref<Insight Points>).
             \\item \\glossterm<Trained skills>: ${getClassTrainedSkills(cls)} from among your \\glossterm<class skills>, plus additional trained skills equal to your Intelligence if it is positive (see \\pcref<Skills>).
@@ -2334,6 +2394,7 @@ function latexStartingItems(cls: Class): string {
             ${weaponText}
             ${shieldText}
             \\item A standard adventuring kit (see \\pcref<Standard Adventuring Kit>).
+            \\item A rank 0 wealth item (1 gp)
         \\end<raggeditemize>
     `;
 }

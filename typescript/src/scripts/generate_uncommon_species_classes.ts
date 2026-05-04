@@ -4,11 +4,13 @@ import {
   latexBasicClassAbilities,
   getArchetypesForClass,
   latexifyClass,
+  validateClassPoints,
 } from '../classes/metadata';
 import fs from 'fs';
 import path from 'path';
 
 function main() {
+  validateClassPoints();
   const classes = getUncommonClasses();
   const outputDir = path.resolve(__dirname, '../../../comprehensive_codex/generated/');
   if (!fs.existsSync(outputDir)) {

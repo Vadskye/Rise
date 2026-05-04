@@ -3,7 +3,10 @@ import {
   getCoreClasses,
   latexArchetypeDescription,
   latexClassSection,
+  validateClassPoints,
 } from '@src/classes/metadata';
+
+export { validateClassPoints };
 
 export function generateArchetypeDescriptions(): string {
   const archetypes: ClassArchetype[] = [

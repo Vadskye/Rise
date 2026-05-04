@@ -280,6 +280,21 @@ Port `rust/src/classes/class.rs` (80KB) and `rust/src/classes/archetypes.rs` (25
 - `Class` struct with `core_classes()`, `uncommon_classes()`, `latex_section()`, `validate_points()`
 - `ClassArchetype` struct with `latex_description()`
 
+#### Ongoing Work: Discrepancy Resolution in `metadata.ts`
+
+The initial migration of `metadata.ts` resulted in inaccurate values for several class properties compared to the authoritative Rust source (`class.rs`). To achieve parity, the following helper functions must be refactored:
+
+- **`getClassFatigueTolerance`**: Many classes are missing their correct value of 3 (defaulting to 2 instead).
+- **`getClassInsightPoints`**: The value of 1 is missing for many classes.
+- **`getClassTrainedSkills`**: The returned counts do not match the number of skills defined in the Rust source.
+- **`getClassSkills`**: The arrays of skills are significantly truncated compared to the Rust source (e.g., Rogue has 13 skills in TS instead of 22).
+- **`getClassVitalRollBonus`**: The bonus of 1 for Incarnation, Oozeborn, and Troll is missing.
+- **`validateClassPoints`**: Needs to match the Rust validation logic which allows a +1 leeway (`actual_points > class_expected_points + 1`).
+
+Note: `getClassDefenseBonus` was initially suspected to be incorrect, but has been verified to correctly implement the `baseBonus + classBonus` logic.
+
+The goal is to update these functions to perfectly match the logic and values in `rust/src/classes/class.rs`, enabling accurate class point validation (71 points for core, 73 for uncommon).
+
 ### LaTeX Generation
 
 Port `rust/src/classes/basic_class_abilities.rs` (13KB) and the formatting logic in `rust/src/classes/archetypes.rs`:
