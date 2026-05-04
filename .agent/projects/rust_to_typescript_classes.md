@@ -58,11 +58,11 @@ Port the martial uncommon species class archetype definitions:
 
 (No uncommon species classes currently implement standard spellcasting.)
 
-### Phase 4.6: Cleric Domains
+### Phase 4.6: Cleric Domains ✅
 
 Port `rust/src/classes/cleric_domains.rs` (24KB) — cleric domain definitions and LaTeX generation.
 
-### Phase 4.7: Class Metadata & Base Class LaTeX Generation
+### Phase 4.7: Class Metadata & Base Class LaTeX Generation ✅
 
 Port `rust/src/classes/class.rs` (80KB) and `rust/src/classes/archetypes.rs` (25KB) to `typescript/src/classes/metadata.ts`:
 
