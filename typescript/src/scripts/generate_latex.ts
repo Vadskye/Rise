@@ -10,7 +10,7 @@ import {
   generateMysticSphereSpellSummaries,
   generateRitualDescriptions,
 } from '@src/latex';
-import { generateArchetypeDescriptions } from '@src/latex/classes';
+import { generateArchetypeDescriptions, generateClassesChapter } from '@src/latex/classes';
 import { mysticSpheres } from '@src/abilities/mystic_spheres';
 import {
   generateMagicArmorDescriptions,
@@ -29,6 +29,7 @@ import {
   generateRelicsTable,
   generateEverythingTable,
 } from '@src/equipment/latex';
+import { getAllModules, moduleToLatex } from '@src/modules';
 import cli from 'commander';
 import fs from 'fs';
 
@@ -48,6 +49,8 @@ function generateLatex(latexType: string): string {
     latex = generateRitualDescriptions();
   } else if (latexType === 'archetype_descriptions') {
     latex = generateArchetypeDescriptions();
+  } else if (latexType === 'classes_chapter') {
+    latex = generateClassesChapter();
   } else if (latexType === 'combat_style_lists') {
     latex = generateCombatStyleLists();
   } else if (latexType === 'combat_style_summaries') {
@@ -84,6 +87,11 @@ function generateLatex(latexType: string): string {
     latex = generateRelicsTable();
   } else if (latexType === 'equipment_everything_table') {
     latex = generateEverythingTable();
+  } else if (latexType === 'modules') {
+    latex = getAllModules()
+      .sort((a, b) => a.name.localeCompare(b.name))
+      .map(moduleToLatex)
+      .join('\n');
   } else {
     throw new Error(`Unrecognized latexType: '${latexType}'`);
   }

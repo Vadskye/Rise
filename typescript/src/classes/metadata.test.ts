@@ -60,7 +60,7 @@ t.test('Classes Metadata', (t) => {
     t.match(output, '\\archetypedef<Bbn><Totemist>');
     t.match(output, 'This archetype allows you to embody the spirits of apex predators');
     t.match(output, '\\cf<Bbn>[1]<Totem Animal>');
-    t.match(output, 'You gain the strength of a totem animal.');
+    t.match(output, 'You choose a totem animal that represents you.');
     t.end();
   });
 
