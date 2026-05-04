@@ -7,6 +7,7 @@ import {
 } from './types';
 import { RiseSkill, RiseDefense, RiseAlignment } from '../character_sheet/rise_data';
 import { ArmorKind, ArmorUsageClass } from '../equipment/armor';
+import { dedent } from '../util/dedent';
 
 import { titleCase } from '../latex/format/title_case';
 import * as barbarian from './archetypes/barbarian';
@@ -39,6 +40,7 @@ export function getClassName(cls: Class): string {
 export function getClassAlignment(cls: Class): string {
   return 'Any';
 }
+
 
 export function getClassSkills(cls: Class): RiseSkill[] {
   switch (cls) {
@@ -599,34 +601,6 @@ export function getClassWeaponProficiencies(cls: Class): WeaponProficiencies {
   }
 }
 
-function dedent(text: string, indentSpaces: number = 0): string {
-  const lines = text.split('\n');
-  if (lines.length === 0) return '';
-
-  // Find minimum indentation of non-empty lines (excluding the first line if it's empty)
-  let minIndent = Infinity;
-  const startIdx = lines[0].trim() === '' ? 1 : 0;
-  for (let i = startIdx; i < lines.length; i++) {
-    const line = lines[i];
-    if (line.trim() === '') continue;
-    const indent = line.search(/\S/);
-    if (indent !== -1 && indent < minIndent) {
-      minIndent = indent;
-    }
-  }
-
-  if (minIndent === Infinity) return text.trim();
-
-  const indentStr = ' '.repeat(indentSpaces);
-  return lines
-    .slice(startIdx)
-    .map((line) => {
-      const trimmed = line.slice(minIndent);
-      return trimmed === '' ? '' : indentStr + trimmed;
-    })
-    .join('\n')
-    .trim();
-}
 
 export function getClassNarrativeText(cls: Class): string {
   switch (cls) {
@@ -1192,6 +1166,21 @@ export function getCoreClasses(): Class[] {
     'Sorcerer',
     'Votive',
     'Wizard',
+  ];
+}
+
+export function getUncommonClasses(): Class[] {
+  return [
+    'Automaton',
+    'Dragon',
+    'Dryad',
+    'Harpy',
+    'Incarnation',
+    'Naiad',
+    'Oozeborn',
+    'Treant',
+    'Troll',
+    'Vampire',
   ];
 }
 
@@ -1909,7 +1898,7 @@ export function universalCharacterProgressionAtLevel(level: number): string {
 }
 
 export function latexBaseClassTable(cls: Class): string {
-  return latexify(`
+  return latexifyClass(`
         \\begin<columntable>
             \\begin<dtabularx><\\columnwidth><l l l l ${'>{\\lcol}X'}>
                 \\tb<Level> & \\tb<Rank> & \\tb<Durability> & \\tb<Bonus>\\fn<1> & \\tb<Special> \\tableheaderrule
@@ -1945,7 +1934,7 @@ export function latexArchetypeTable(cls: Class): string {
     })
     .join(' & ');
 
-  return latexify(`
+  return latexifyClass(`
         \\begin<dtable!*>
             \\lcaption<${titleCase(getClassName(cls))} Archetypes>
             \\begin<dtabularx><\\textwidth><l ${archetypeColumns}>
@@ -1956,7 +1945,7 @@ export function latexArchetypeTable(cls: Class): string {
     `);
 }
 
-function getArchetypesForClass(cls: Class): ClassArchetype[] {
+export function getArchetypesForClass(cls: Class): ClassArchetype[] {
   // Find all archetypes where getArchetypeClass(a) === cls
   // This is a bit inefficient but works.
   // Actually, we can just hardcode for now as in Rust.
@@ -2078,7 +2067,7 @@ function generateAbilityNamesByArchetypeRank(cls: Class): string[] {
   return abilitiesByRank;
 }
 
-function latexify(text: string): string {
+export function latexifyClass(text: string): string {
   return text
     .trim()
     .replace(/</g, '{')
@@ -2102,7 +2091,7 @@ function joinStrList(strings: string[]): string {
 }
 
 export function latexBasicClassAbilities(cls: Class): string {
-  return latexify(`
+  return latexifyClass(`
         \\subsection<Base Class Effects>
 
         If you choose ${getClassName(cls)} as your \\glossterm<base class>, you gain the following benefits.
@@ -2157,7 +2146,7 @@ function latexDefenses(cls: Class): string {
   const customModifierText =
     customModifiers.length > 0 ? `In addition, you gain ${joinStrList(customModifiers)}.` : '';
 
-  return latexify(`
+  return latexifyClass(`
         \\cf<${getClassShorthand(cls)}><Defenses>
         You gain a \\plus3 bonus to your ${plus3DefenseText} defenses.
         ${customModifierText}
@@ -2354,7 +2343,7 @@ export function latexClassSection(cls: Class): string {
   const archetypeNames = joinStrList(archetypes.map(getArchetypeName));
   const classNameTitle = titleCase(getClassName(cls));
 
-  return latexify(`
+  return latexifyClass(`
         \\newpage
         \\section<${classNameTitle}>\\label<${classNameTitle}>
 

@@ -153,6 +153,7 @@ export const RISE_KNOWLEDGE_SKILLS = [
   'knowledge_local',
   'knowledge_nature',
   'knowledge_planes',
+  'knowledge_religion',
   'knowledge_souls',
   'knowledge_untrained',
 ] as const;

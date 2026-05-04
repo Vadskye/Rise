@@ -452,7 +452,7 @@ export function divineSpellMastery(creature: Creature, rank: number) {
       name: 'Experienced Spellcaster',
       numericEffects: [
         { statistic: 'accuracy', modifier: 1 },
-        { statistic: 'mental_defense', modifier: 1 },
+        { statistic: 'mental', modifier: 1 },
       ],
     });
   }
@@ -469,7 +469,7 @@ export function healer(creature: Creature, rank: number) {
         { statistic: 'armor_defense', modifier: bonus },
         { statistic: 'fortitude', modifier: bonus },
         { statistic: 'reflex', modifier: bonus },
-        { statistic: 'mental_defense', modifier: bonus },
+        { statistic: 'mental', modifier: bonus },
       ],
     });
   }
