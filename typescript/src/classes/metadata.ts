@@ -85,8 +85,8 @@ export function getClassSkills(cls: Class): RiseSkill[] {
         'knowledge_arcana',
         'knowledge_items',
         'knowledge_local',
-        'knowledge_planes',
         'knowledge_religion',
+        'knowledge_planes',
         'medicine',
         'persuasion',
         'social_insight',
@@ -196,6 +196,7 @@ export function getClassSkills(cls: Class): RiseSkill[] {
         'balance',
         'flexibility',
         'endurance',
+        'craft_untrained',
         'knowledge_arcana',
         'knowledge_nature',
         'knowledge_planes',
@@ -294,7 +295,6 @@ export function getClassSkills(cls: Class): RiseSkill[] {
         'knowledge_nature',
         'knowledge_planes',
         'knowledge_religion',
-        'knowledge_souls',
         'medicine',
         'persuasion',
         'ride',
@@ -412,7 +412,6 @@ export function getClassSkills(cls: Class): RiseSkill[] {
         'knowledge_nature',
         'knowledge_planes',
         'knowledge_religion',
-        'knowledge_souls',
         'persuasion',
       ];
     default:
@@ -1127,6 +1126,18 @@ export function getClassSuffix(cls: Class): string {
   switch (cls) {
     case 'Cleric':
       return clericDomains();
+    case 'Druid':
+      return `
+        \\subsection{Ex-Druids}
+        A druid who ceases to revere nature or who changes to a prohibited alignment loses all \\magical druid class abilities.
+        They cannot thereafter gain levels as a druid until they atone for their transgressions.
+      `;
+    case 'Paladin':
+      return `
+        \\subsection{Ex-Paladins}
+        If you cease to follow your devoted alignment, you lose all \\magical paladin class abilities.
+        If your atone for your misdeeds and resume the service of your devoted alignment, you can regain your abilities.
+      `;
     default:
       return '';
   }
@@ -2063,9 +2074,9 @@ export function getArchetypesForClass(cls: Class): ClassArchetype[] {
       return ['CovenantKeeper', 'PactMagic', 'PactSpellMastery', 'PactboundWarrior', 'Soulforged'];
     case 'Wizard':
       return [
-        'Alchemist',
         'WizardArcaneMagic',
         'WizardArcaneSpellMastery',
+        'Alchemist',
         'ArcaneScholar',
         'SchoolSpecialist',
       ];
@@ -2308,7 +2319,7 @@ function latexClassSkills(cls: Class): string {
     const skillsForAttr = skills.filter((s) => SKILL_METADATA[s].attribute === attr);
     if (skillsForAttr.length > 0) {
       attributeTexts.push(
-        `\\item \\subparhead<${attr.charAt(0).toUpperCase() + attr.slice(1)}> ${skillsForAttr.map(formatSkillName).join(', ')}.`,
+        `\\item \\subparhead<${attr.charAt(0).toUpperCase() + attr.slice(1)}> ${formatSkillList(skillsForAttr)}.`,
       );
     }
   }
@@ -2316,7 +2327,7 @@ function latexClassSkills(cls: Class): string {
   const skillsWithoutAttr = skills.filter((s) => SKILL_METADATA[s].attribute === null);
   if (skillsWithoutAttr.length > 0) {
     attributeTexts.push(
-      `\\item \\subparhead<Other> ${skillsWithoutAttr.map(formatSkillName).join(', ')}.`,
+      `\\item \\subparhead<Other> ${formatSkillList(skillsWithoutAttr)}.`,
     );
   }
 
@@ -2330,7 +2341,48 @@ function latexClassSkills(cls: Class): string {
     `;
 }
 
+function formatSkillList(skills: RiseSkill[]): string {
+  const knowledgeSkills = skills.filter((s) => s.startsWith('knowledge_'));
+  const otherSkills = skills.filter((s) => !s.startsWith('knowledge_'));
+
+  const formatted: string[] = otherSkills.map(formatSkillName);
+
+  if (knowledgeSkills.length > 0) {
+    const subskills = knowledgeSkills.map((s) =>
+      s.replace('knowledge_', '').replace(/_/g, ' '),
+    );
+
+    const rustAllSubskills = [
+      'arcana',
+      'dungeoneering',
+      'engineering',
+      'items',
+      'local',
+      'nature',
+      'planes',
+      'religion',
+    ];
+    const isRustAll =
+      rustAllSubskills.length === subskills.length &&
+      rustAllSubskills.every((s) => subskills.includes(s));
+
+    if (isRustAll) {
+      formatted.push('Knowledge (all kinds, taken individually)');
+    } else {
+      formatted.push(`Knowledge (${subskills.join(', ')})`);
+    }
+  }
+
+  return formatted.sort().join(', ');
+}
+
 function formatSkillName(skill: RiseSkill): string {
+  if (skill === 'craft_untrained') {
+    return 'Craft';
+  }
+  if (skill === 'sleight_of_hand') {
+    return 'Sleight of Hand';
+  }
   return skill
     .split('_')
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
