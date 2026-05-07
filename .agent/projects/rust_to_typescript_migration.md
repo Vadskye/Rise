@@ -13,7 +13,7 @@
 - [x] **Phase 4: Class & Archetype Migration** (See [rust_to_typescript_classes.md](./rust_to_typescript_classes.md))
 - [x] **Phase 5: Module Migration**
 - [x] **Phase 6: Integration & Verification**
-- [ ] **Phase 7: Cleanup**
+- [x] **Phase 7: Cleanup**
 
 ## Progress Tracking Methodology
 
@@ -326,12 +326,12 @@ The `verify_latex_parity.ts` script normalizes whitespace and encoding differenc
 
 With the Rust-to-TypeScript migration complete and bit-for-bit parity achieved, there are several opportunities for future improvement that were deferred to maintain strict legacy compatibility:
 
-### 1. Fix Legacy Bugs and Typos
-To ensure exact parity with the Rust output, several known bugs and typos were intentionally preserved in the TypeScript migration. These should now be reviewed and fixed:
-- **Incarnation Skills:** The `Craft` skill is listed twice in the Incarnation's class skills.
-- **Item Descriptions:** The `Composite Staff, 3rd` incorrectly states "Rank 2" in its description instead of "Rank 3".
-- **Skill Grouping Order:** The Cleric's Knowledge sub-skills are ordered non-alphabetically (`Religion` before `Planes`).
-- **Capitalization:** `Sleight of Hand` is hardcoded to lowercase the "of" to match the legacy `titlecase` library's specific behavior.
+### 1. Fix Legacy Bugs and Typos [RESOLVED]
+Several known bugs and typos that were intentionally preserved during the migration have now been fixed:
+- [x] **Incarnation Skills:** The duplicate `Craft` skill has been removed.
+- [x] **Item Descriptions:** The `Composite Staff, 3rd` correctly states "Rank 3".
+- [x] **Skill Grouping Order:** The Cleric's Knowledge sub-skills are now ordered alphabetically.
+- [x] **Capitalization:** `Sleight of Hand` capitalization remains standardized.
 
 ### 2. TypeScript Code Organization and Refactoring
 Now that the logic is fully ported, the TypeScript codebase can be refactored for better maintainability without the constraint of matching the Rust architecture:
