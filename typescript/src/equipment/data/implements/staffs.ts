@@ -43,7 +43,7 @@ function compositeStaffs(): Implement[] {
       rank: 5,
       short_description: 'Has two rank 3 or lower properties',
       description: `
-        This staff has two different magic implement properties that are rank 2 or lower.
+        This staff has two different magic implement properties that are rank 3 or lower.
         Each property must not already require a \\glossterm{deep attunement}.
       `,
       tags: ['Attune (deep)'],
