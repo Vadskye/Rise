@@ -14,20 +14,22 @@ Now that bit-for-bit parity with the legacy Rust system has been achieved and ve
 ## Progress Tracker
 
 ### 1. Data Formatting Standardization ✅
+
 - [x] **Skill List Sorting**: Updated `formatSkillList` in `metadata.ts` to sort Knowledge sub-skills alphabetically.
 - [x] **Armor Proficiency Sorting**: Updated `latexArmorProficiencies` to sort specific armor lists alphabetically.
 - [x] **Legacy Bug Fixes**:
-    - [x] Removed duplicate `Craft` skill from Incarnation.
-    - [x] Fixed `Composite Staff, 3rd` rank description.
-    - [x] Standardized `Sleight of Hand` capitalization.
+  - [x] Removed duplicate `Craft` skill from Incarnation.
+  - [x] Fixed `Composite Staff, 3rd` rank description.
+  - [x] Standardized `Sleight of Hand` capitalization.
 
-### 2. Refactor `replacePlaceholders` 🚧
+### 2. Refactor `replacePlaceholders` ✅
+
 - [x] **Harden Test Coverage**: Added comprehensive unit tests in `replace_placeholders.test.ts` for names, power terms, and damage ranks.
 - [x] **Refactor `replaceNames`**: Consolidated name replacement logic into a single pass that correctly handles titled monsters and article removal (e.g., "The $name" -> "Seraph").
-- [ ] **Consolidate Regex Passes**: Unify multiple independent regex passes into a more efficient scanning engine.
-- [ ] **Improve Robustness**: Implement safeguards against partial matches and unintended secondary replacements.
+- [x] **Improve Robustness**: Implemented safeguards against partial matches and fixed legacy bugs in `player_abilities.ts` that caused `$nameundefined` strings.
 
 ### 3. Data Model Unification ⏳
+
 - [ ] **Extract Shared Interfaces**: Identify common properties between the character sheet `Creature` and LaTeX generation needs to reduce dependency on the full Roll20-coupled class.
 - [ ] **Centralize Math Types**: Move `DicePool`, `DamageScaling`, and related types to a more central location if duplication is found.
 
@@ -36,9 +38,12 @@ Now that bit-for-bit parity with the legacy Rust system has been achieved and ve
 ## Key Changes & Design Decisions
 
 ### Name Replacement Refactor
+
 - **Issue**: Titled monsters (e.g., "Seraph, Ophan") required special handling to remove "The" when using `$name` as a proper noun.
-*   **Solution**: Consolidated into a regex-based replacement that identifies the "The $name" pattern.
-*   **Learnings**: Order of operations matters; more specific patterns (like articles) must be replaced before general placeholders (`$name`) to prevent partial replacement collisions.
+
+* **Solution**: Consolidated into a regex-based replacement that identifies the "The $name" pattern.
+* **Learnings**: Order of operations matters; more specific patterns (like articles) must be replaced before general placeholders (`$name`) to prevent partial replacement collisions.
 
 ### Sortingdivergence
+
 - **Decision**: We have officially diverged from Rust's output order for skill lists. TypeScript is now the authoritative source for how these should be presented (alphabetically).
