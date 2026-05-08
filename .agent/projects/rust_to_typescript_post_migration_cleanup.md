@@ -22,16 +22,18 @@ Now that bit-for-bit parity with the legacy Rust system has been achieved and ve
   - [x] Fixed `Composite Staff, 3rd` rank description.
   - [x] Standardized `Sleight of Hand` capitalization.
 
-### 2. Refactor `replacePlaceholders` ✅
+### 2. Refactor `replacePlaceholders` ⏳
 
 - [x] **Harden Test Coverage**: Added comprehensive unit tests in `replace_placeholders.test.ts` for names, power terms, and damage ranks.
-- [x] **Refactor `replaceNames`**: Consolidated name replacement logic into a single pass that correctly handles titled monsters and article removal (e.g., "The $name" -> "Seraph").
-- [x] **Improve Robustness**: Implemented safeguards against partial matches and fixed legacy bugs in `player_abilities.ts` that caused `$nameundefined` strings.
+- [ ] **Improve Robustness**: Implement safeguards against partial matches and fix legacy bugs in `player_abilities.ts` that caused `$nameundefined` strings.
+- [ ] **Remove Premature Evaluation**: `player_abilities.ts` eagerly evaluates damage ranks (e.g., `\damagerankfourlow`) by calling `calculateDamage`. It should instead normalize these to `$dr4l` placeholders and delegate the math to the unified `replaceDamageRankTerms` engine in `replace_placeholders.ts`.
 
 ### 3. Data Model Unification ⏳
 
 - [ ] **Extract Shared Interfaces**: Identify common properties between the character sheet `Creature` and LaTeX generation needs to reduce dependency on the full Roll20-coupled class.
 - [ ] **Centralize Math Types**: Move `DicePool`, `DamageScaling`, and related types to a more central location if duplication is found.
+- [ ] **Remove Redundant Damage Logic**: `player_abilities.ts` has an ad-hoc `calculateDamage` method that manually re-implements damage scaling (constructing dice strings). This is redundant and should be replaced by the canonical `DamageScaling.dr(rank)` and `DamageScaling.drl(rank)` methods in `types/attack.ts`.
+- [ ] **Remove Ad-Hoc Text Parsing**: `player_abilities.ts` uses hardcoded maps (e.g., `parseDamageRank` with its "Don't laugh at me" comment, `numericMultiplier`) to convert text strings like "two" and "half" into numbers. This requires further investigation to see if upstream data can be structured better to avoid parsing English words from regex matches.
 
 ---
 
@@ -44,6 +46,14 @@ Now that bit-for-bit parity with the legacy Rust system has been achieved and ve
 * **Solution**: Consolidated into a regex-based replacement that identifies the "The $name" pattern.
 * **Learnings**: Order of operations matters; more specific patterns (like articles) must be replaced before general placeholders (`$name`) to prevent partial replacement collisions.
 
-### Sortingdivergence
+### Sorting divergence
 
 - **Decision**: We have officially diverged from Rust's output order for skill lists. TypeScript is now the authoritative source for how these should be presented (alphabetically).
+
+### Identified Architectural Issues
+
+During a critical review of the TypeScript implementation following the migration, several overlapping and redundant structures were identified, primarily stemming from a literal port of Rust string-manipulation patterns that ignored the unified core models.
+
+- **Ad-Hoc Text Parsing**: The `typescript/src/latex/monsters/player_abilities.ts` file contains hardcoded dictionary maps (`parseDamageRank` and `numericMultiplier`) to parse English words (e.g., "two", "half") into integers. This is a fragile pattern (acknowledged by a "Don't laugh at me" comment) that stems from extracting information from raw text via regex rather than working with structured data types. It requires refactoring to use robust parsing or upstream data restructuring.
+- **Redundant Damage Scaling**: `player_abilities.ts` manually constructs dice strings (e.g., `1d8+...d6`) within `calculateDamage`, fully duplicating the canonical `DamageScaling` logic in `typescript/src/types/attack.ts`. This bypasses the unified game logic models in favor of ad-hoc string building.
+- **Premature Evaluation of Placeholders**: `replaceDamageText` within `player_abilities.ts` attempts to immediately resolve LaTeX damage placeholders (like `\damagerankfourlow`) into final strings. This circumvents the central placeholder engine (`replace_placeholders.ts`), which already possesses a `replaceDamageRankTerms` function designed specifically to resolve `$dr4l` placeholders via the unified `DamageScaling` logic. The system should instead normalize the LaTeX terms to the standard placeholder format and delegate the calculation.
