@@ -55,7 +55,7 @@ export function replaceMonsterPlaceholders(monster: Creature, latex: string) {
   latex = replaceFullWeaponDamageTerms(latex);
   latex = replaceAccuracyTerms(latex, monster);
   latex = replaceConsumableAccuracyTerms(latex, monster);
-  latex = replacePowerTerms(latex, monster, false); // Default to mundane for generic monster text
+  latex = replacePowerTerms(latex, monster);
   return latex;
 }
 
@@ -266,10 +266,16 @@ export function replaceConsumableAccuracyTerms(latex: string, creature: Creature
   });
 }
 
-export function replacePowerTerms(latex: string, creature: Creature, isMagical: boolean): string {
-  const power = isMagical ? creature.magical_power : creature.mundane_power;
+export function replacePowerTerms(latex: string, creature: Creature, isMagical?: boolean): string {
+  if (isMagical === undefined) {
+    if (latex.includes('$power')) {
+      console.warn(`Unable to parse ambiguous $power term for ${creature.name}`);
+    }
+  } else {
+    const power = isMagical ? creature.magical_power : creature.mundane_power;
+    latex = latex.replaceAll('$power', power.toString());
+  }
   return latex
     .replaceAll('$mundanepower', creature.mundane_power.toString())
-    .replaceAll('$magicalpower', creature.magical_power.toString())
-    .replaceAll('$power', power.toString());
+    .replaceAll('$magicalpower', creature.magical_power.toString());
 }
