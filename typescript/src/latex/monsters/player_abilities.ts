@@ -120,7 +120,7 @@ function replaceGenericTerms(
   replace(/\bIn addition, you regain\b/g, 'In addition, the $name regains');
   replace(/\b([yY])ou( briefly| \\glossterm{briefly})? take\b/g, (_, capital, briefly) => {
     const the = capital === 'Y' ? 'The' : 'the';
-    return `${the} $name${briefly} takes`;
+    return `${the} $name${briefly || ''} takes`;
   });
   replace(/\bYou reduce your\b/g, 'The $name reduces its');
   replace(/\bYou inscribe\b/g, 'The $name inscribes');
