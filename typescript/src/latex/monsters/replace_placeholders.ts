@@ -5,7 +5,8 @@ import {
   getWeaponPowerMultiplier,
   getWeaponAccuracy as getWeaponAccuracyFromWeapons,
 } from '@src/monsters/weapons';
-import { DamageScaling, DicePool, PowerScaling } from '@src/types/attack';
+import { DamageScaling } from '@src/types/attack';
+import { DicePool, PowerScaling } from '@src/core_mechanics/dice_pool';
 
 export interface ReplacementContext {
   isMagical?: boolean;
