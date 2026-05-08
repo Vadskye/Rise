@@ -140,21 +140,23 @@ function replaceNames(monsterLatex: string, monsterName: string): string {
   if (monsterName === monsterName.toLowerCase()) {
     throw new Error(`Monster ${monsterName} has lowercase name, but should be title case`);
   }
-  // Some monsters have a comma that indicates a title for the creature.
-  // In that case, the $name text should only use the creature's base name, ignoring its
-  // longer title.
-  const nameIsTitle = /,/.test(monsterName);
-  if (nameIsTitle) {
-    const displayName = monsterName.replace(/,.*/, '');
-    const lowercaseDisplayName = displayName.toLowerCase();
-    return monsterLatex
-      .replaceAll('$Name', displayName)
-      .replaceAll('The $name', displayName)
-      .replaceAll('the $name', lowercaseDisplayName);
-  } else {
-    const lowercaseName = monsterName.toLowerCase();
-    return monsterLatex.replaceAll('$Name', monsterName).replaceAll('$name', lowercaseName);
+
+  // Some monsters have a comma that indicates a title (e.g., "Seraph, Ophan").
+  // In that case, we use the base name (everything before the comma).
+  const isTitle = monsterName.includes(',');
+  const displayName = monsterName.split(',')[0];
+  const lowercaseDisplayName = displayName.toLowerCase();
+
+  let result = monsterLatex.replaceAll('$Name', displayName);
+
+  if (isTitle) {
+    // For titled monsters, we remove the article: "The $name" -> "DisplayName"
+    result = result.replaceAll(/the \$name/gi, (match) => {
+      return match.startsWith('T') ? displayName : lowercaseDisplayName;
+    });
   }
+
+  return result.replaceAll('$name', lowercaseDisplayName);
 }
 
 export function addAccuracyToEffect(modifier: number, effect: string, name: string): string {

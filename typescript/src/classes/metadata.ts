@@ -41,7 +41,6 @@ export function getClassAlignment(cls: Class): string {
   return 'Any';
 }
 
-
 export function getClassSkills(cls: Class): RiseSkill[] {
   switch (cls) {
     case 'Automaton':
@@ -624,7 +623,6 @@ export function getClassWeaponProficiencies(cls: Class): WeaponProficiencies {
       return { simple_weapons: false, non_exotic_weapons: false };
   }
 }
-
 
 export function getClassNarrativeText(cls: Class): string {
   switch (cls) {
@@ -1227,7 +1225,6 @@ export function getAllClasses(): Class[] {
 export function isUncommonClass(cls: Class): boolean {
   return !getCoreClasses().includes(cls);
 }
-
 
 export function calculateClassPointTotal(cls: Class): number {
   const skills = getClassSkills(cls);
@@ -2258,7 +2255,7 @@ function latexArmorProficiencies(cls: Class): string {
     // This is simplified compared to Rust which has a way to get names from armor kinds
     const usageClasses = joinStrList(prof.usage_classes);
     const specificArmors = joinStrList(
-      prof.specific_armors.map((a) =>
+      prof.specific_armors.sort().map((a) =>
         a
           .replace(/([A-Z])/g, ' $1')
           .trim()
@@ -2325,9 +2322,7 @@ function latexClassSkills(cls: Class): string {
 
   const skillsWithoutAttr = skills.filter((s) => SKILL_METADATA[s].attribute === null);
   if (skillsWithoutAttr.length > 0) {
-    attributeTexts.push(
-      `\\item \\subparhead<Other> ${formatSkillList(skillsWithoutAttr)}.`,
-    );
+    attributeTexts.push(`\\item \\subparhead<Other> ${formatSkillList(skillsWithoutAttr)}.`);
   }
 
   return `
@@ -2347,9 +2342,9 @@ function formatSkillList(skills: RiseSkill[]): string {
   const formatted: string[] = otherSkills.map(formatSkillName);
 
   if (knowledgeSkills.length > 0) {
-    const subskills = knowledgeSkills.map((s) =>
-      s.replace('knowledge_', '').replace(/_/g, ' '),
-    );
+    const subskills = knowledgeSkills
+      .map((s) => s.replace('knowledge_', '').replace(/_/g, ' '))
+      .sort();
 
     const rustAllSubskills = [
       'arcana',

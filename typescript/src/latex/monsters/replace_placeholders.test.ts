@@ -1,4 +1,4 @@
-import { addAccuracyToEffect, replaceAccuracyTerms } from './replace_placeholders';
+import { addAccuracyToEffect, replaceAccuracyTerms, replaceMonsterPlaceholders, replacePowerTerms, replaceDamageRankTerms } from './replace_placeholders';
 import t from 'tap';
 
 t.test('addAccuracyToEffect', (t) => {
@@ -155,6 +155,98 @@ t.test('replaceAccuracyTerms', (t) => {
 
   t.test('replaces $brawlingaccuracy', (t) => {
     t.equal(replaceAccuracyTerms('$brawlingaccuracy vs. Brawn', mockCreature), '+10 vs. Brawn');
+    t.end();
+  });
+
+  t.end();
+});
+
+t.test('replaceNames (via replaceMonsterPlaceholders)', (t) => {
+  const mockCreature = (name: string) =>
+    ({
+      name,
+      accuracy: 0,
+      mundane_power: 0,
+      magical_power: 0,
+    }) as any;
+
+  t.test('simple name replacement', (t) => {
+    const creature = mockCreature('Goblin');
+    const input = 'The $name is here. $Name is angry.';
+    const expected = 'The goblin is here. Goblin is angry.';
+    const result = replaceMonsterPlaceholders(creature, input);
+    t.match(result, expected);
+    t.end();
+  });
+
+  t.test('titled name replacement (comma)', (t) => {
+    const creature = mockCreature('Seraph, Ophan');
+    const input = 'The $name is here. $Name is divine. When the $name speaks...';
+    // For titled monsters, "The $name" -> "Seraph" and "the $name" -> "seraph"
+    const expected = 'Seraph is here. Seraph is divine. When seraph speaks...';
+    const result = replaceMonsterPlaceholders(creature, input);
+    t.match(result, expected);
+    t.end();
+  });
+
+  t.test('name with no article', (t) => {
+    const creature = mockCreature('Aboleth');
+    const input = 'Attack $name.';
+    const expected = 'Attack aboleth.';
+    const result = replaceMonsterPlaceholders(creature, input);
+    t.match(result, expected);
+    t.end();
+  });
+
+  t.end();
+});
+
+t.test('replacePowerTerms', (t) => {
+  const mockCreature = {
+    mundane_power: 3,
+    magical_power: 5,
+  } as any;
+
+  t.test('replaces $mundanepower', (t) => {
+    t.equal(replacePowerTerms('Deal $mundanepower damage', mockCreature, false), 'Deal 3 damage');
+    t.end();
+  });
+
+  t.test('replaces $magicalpower', (t) => {
+    t.equal(replacePowerTerms('Deal $magicalpower damage', mockCreature, false), 'Deal 5 damage');
+    t.end();
+  });
+
+  t.test('replaces $power (mundane context)', (t) => {
+    t.equal(replacePowerTerms('Deal $power damage', mockCreature, false), 'Deal 3 damage');
+    t.end();
+  });
+
+  t.test('replaces $power (magical context)', (t) => {
+    t.equal(replacePowerTerms('Deal $power damage', mockCreature, true), 'Deal 5 damage');
+    t.end();
+  });
+
+  t.end();
+});
+
+  t.test('replaceDamageRankTerms', (t) => {
+  const mockCreature = {
+    calcDamageDice: (scaling: any) => {
+      // Use base dice size as a proxy to distinguish scaling types in tests
+      if (scaling.baseDice.dice[0]?.size === 6) return '1d6+2';
+      if (scaling.baseDice.dice[0]?.size === 10) return '1d4+1';
+      return '0';
+    },
+  } as any;
+
+  t.test('replaces $dr1', (t) => {
+    t.equal(replaceDamageRankTerms('Deal $dr1 damage', mockCreature, false), 'Deal 1d6+2 damage');
+    t.end();
+  });
+
+  t.test('replaces $dr1l', (t) => {
+    t.equal(replaceDamageRankTerms('Deal $dr1l damage', mockCreature, false), 'Deal 1d4+1 damage');
     t.end();
   });
 

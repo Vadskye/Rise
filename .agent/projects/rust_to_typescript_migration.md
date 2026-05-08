@@ -333,8 +333,6 @@ Several known bugs and typos that were intentionally preserved during the migrat
 - [x] **Skill Grouping Order:** The Cleric's Knowledge sub-skills are now ordered alphabetically.
 - [x] **Capitalization:** `Sleight of Hand` capitalization remains standardized.
 
-### 2. TypeScript Code Organization and Refactoring
-Now that the logic is fully ported, the TypeScript codebase can be refactored for better maintainability without the constraint of matching the Rust architecture:
-- **Unify Data Models:** Further unify the LaTeX generation data models with the Roll20 character sheet models (`creature.ts`) where appropriate, reducing duplication.
-- **Refactor `replacePlaceholders`:** The `replacePlaceholders` logic (ported from `replace_attack_terms`) is highly complex and relies on regex replacements against a dummy `Creature` instance. This could be redesigned to be more robust and less coupled to string manipulation.
-- **Remove Redundant Sorts/Formats:** Remove specialized sorting or formatting logic that only exists to mimic the exact quirks of the Rust output (e.g., bypassing `.sort()` for specific sub-skill lists).
+### 2. Post-Migration Cleanup & Refactoring
+With the initial migration complete, ongoing cleanup and refactoring work is tracked in the following dedicated project file:
+- @[.agent/projects/rust_to_typescript_post_migration_cleanup.md]
