@@ -38,7 +38,8 @@ import {
   PassiveAbility,
   ActiveAbilityScaling,
 } from '@src/abilities';
-import { DicePool, DamageScaling } from '@src/types/attack';
+import { DamageScaling } from '@src/types/attack';
+import { DicePool } from '@src/core_mechanics/dice_pool';
 import * as format from '@src/latex/format';
 import {
   EquippedItem,
