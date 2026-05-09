@@ -4,7 +4,8 @@ import {
   RankAbility,
 } from './types';
 import { titleCase } from '../latex/format/title_case';
-import { getClassName, getClassShorthand, latexifyClass } from './metadata';
+import { getClassName, getClassShorthand } from './metadata';
+import { latexifyClass } from '../latex/format/latexify_class';
 
 import * as barbarian from './archetypes/barbarian';
 import * as fighter from './archetypes/fighter';
