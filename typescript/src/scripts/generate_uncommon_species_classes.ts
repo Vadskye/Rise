@@ -7,7 +7,7 @@ import {
 } from '../classes/archetypes';
 import {
   latexBasicClassAbilities,
-  latexifyClass,
+  latexify,
   latexArchetypeDescription,
 } from '../latex/classes';
 import fs from 'fs';
@@ -28,7 +28,7 @@ function main() {
     const archetypes = getArchetypesForClass(cls);
     const archetype = archetypes[0];
 
-    const content = latexifyClass(`
+    const content = latexify(`
       ${latexArchetypeDescription(archetype)}
 
       ${latexBasicClassAbilities(cls)}

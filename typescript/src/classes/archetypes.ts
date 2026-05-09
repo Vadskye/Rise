@@ -5,7 +5,7 @@ import {
 } from './types';
 import { titleCase } from '../latex/format/title_case';
 import { getClassName, getClassShorthand } from './metadata';
-import { latexifyClass } from '../latex/format/latexify_class';
+import { latexify } from '../latex/format/latexify';
 
 import * as barbarian from './archetypes/barbarian';
 import * as fighter from './archetypes/fighter';
@@ -657,7 +657,7 @@ export function latexClassFeature(ability: RankAbility, classShorthand: string):
   const magical = ability.isMagical ? '[\\sparkle]' : '';
   const description = cleanDescription(ability.description);
   return `
-\\cf<${classShorthand}>[${ability.rank}]<${ability.name}>${magical}
+\\cf{${classShorthand}}[${ability.rank}]{${ability.name}}${magical}
 ${description}
 `.trim();
 }
@@ -700,7 +700,7 @@ export function latexArchetypeDescription(archetype: ClassArchetype): string {
   const magicalSparkle = isArchetypeMagical(archetype) ? '*' : '';
 
   return `
-\\archetypedef${magicalSparkle}<${classShorthand}><${titleCase(getArchetypeName(archetype))}>
+\\archetypedef${magicalSparkle}{${classShorthand}}{${titleCase(getArchetypeName(archetype))}}
 ${getArchetypeShortDescription(archetype)}
 
 ${abilityDescriptions.join('\n\n')}
@@ -713,18 +713,18 @@ export function latexArchetypeTable(cls: Class): string {
   const archetypeHeaders = archetypes
     .map((a) => {
       const magical = isArchetypeMagical(a) ? '*' : '';
-      return `\\tb<\\archetyperef${magical}<${getClassShorthand(cls)}><${getArchetypeName(a)}>>`;
+      return `\\tb{\\archetyperef${magical}{${getClassShorthand(cls)}}{${getArchetypeName(a)}}}`;
     })
     .join(' & ');
 
-  return latexifyClass(`
-        \\begin<dtable!*>
-            \\lcaption<${titleCase(getClassName(cls))} Archetypes>
-            \\begin<dtabularx><\\textwidth><l ${archetypeColumns}>
-                \\tb<Rank> & ${archetypeHeaders} \\tableheaderrule
+  return latexify(`
+        \\begin{dtable!*}
+            \\lcaption{${titleCase(getClassName(cls))} Archetypes}
+            \\begin{dtabularx}{\\textwidth}{l ${archetypeColumns}}
+                \\tb{Rank} & ${archetypeHeaders} \\tableheaderrule
                 ${latexArchetypeRankTableRows(cls)}
-            \\end<dtabularx>
-        \\end<dtable!*>
+            \\end{dtabularx}
+        \\end{dtable!*}
     `);
 }
 
