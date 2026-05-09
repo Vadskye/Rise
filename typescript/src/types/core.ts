@@ -1,74 +1,15 @@
 import {
-  RiseAttribute,
-  RiseDefense,
   RiseSize,
   RiseDebuff,
   RiseTag,
 } from '../character_sheet/rise_data';
 
-export type Attribute = RiseAttribute;
-export type Defense = RiseDefense;
+export * from '../core_mechanics/attributes';
+import { Attribute, Defense } from '../core_mechanics/attributes';
+
 export type Size = RiseSize;
 export type Debuff = RiseDebuff;
 export type Tag = RiseTag;
-
-export const ATTRIBUTES: Attribute[] = [
-  'strength',
-  'dexterity',
-  'constitution',
-  'intelligence',
-  'perception',
-  'willpower',
-];
-
-export function getAttributeShorthand(attr: Attribute): string {
-  switch (attr) {
-    case 'strength':
-      return 'Str';
-    case 'dexterity':
-      return 'Dex';
-    case 'constitution':
-      return 'Con';
-    case 'intelligence':
-      return 'Int';
-    case 'perception':
-      return 'Per';
-    case 'willpower':
-      return 'Wil';
-  }
-}
-
-export const DEFENSES: Defense[] = ['armor_defense', 'brawn', 'fortitude', 'mental', 'reflex'];
-
-export function getDefenseShorthand(defense: Defense): string {
-  switch (defense) {
-    case 'armor_defense':
-      return 'Armor';
-    case 'brawn':
-      return 'Brn';
-    case 'fortitude':
-      return 'Fort';
-    case 'mental':
-      return 'Ment';
-    case 'reflex':
-      return 'Ref';
-  }
-}
-
-export function getDefenseAttribute(defense: Defense): Attribute | null {
-  switch (defense) {
-    case 'brawn':
-      return 'strength';
-    case 'fortitude':
-      return 'constitution';
-    case 'mental':
-      return 'willpower';
-    case 'reflex':
-      return 'dexterity';
-    default:
-      return null;
-  }
-}
 
 export class DamageDice {
   constructor(

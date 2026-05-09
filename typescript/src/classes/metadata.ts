@@ -5,7 +5,8 @@ import {
   ArmorProficiencies,
   WeaponProficiencies,
 } from './types';
-import { RiseSkill, RiseDefense, RiseAlignment } from '../character_sheet/rise_data';
+import { RiseSkill, RiseAlignment } from '../character_sheet/rise_data';
+import { RISE_ATTRIBUTES, RiseDefense } from '../core_mechanics/attributes';
 import { ArmorKind, ArmorUsageClass } from '../equipment/armor';
 import { dedent } from '../util/dedent';
 
@@ -2302,16 +2303,8 @@ function latexWeaponProficiencies(cls: Class): string {
 function latexClassSkills(cls: Class): string {
   const skills = getClassSkills(cls);
   const attributeTexts: string[] = [];
-  const attributes: RiseAttribute[] = [
-    'strength',
-    'dexterity',
-    'constitution',
-    'intelligence',
-    'perception',
-    'willpower',
-  ];
 
-  for (const attr of attributes) {
+  for (const attr of RISE_ATTRIBUTES) {
     const skillsForAttr = skills.filter((s) => SKILL_METADATA[s].attribute === attr);
     if (skillsForAttr.length > 0) {
       attributeTexts.push(

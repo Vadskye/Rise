@@ -76,28 +76,7 @@ export type RiseSize =
 // TODO: list all debuffs if we ever actually care
 export type RiseDebuff = 'climbing';
 
-export type RiseAttribute =
-  | 'strength'
-  | 'dexterity'
-  | 'constitution'
-  | 'intelligence'
-  | 'perception'
-  | 'willpower';
-export type RiseAttributeModifier =
-  | 'strength_at_creation'
-  | 'strength_level_scaling'
-  | 'dexterity_at_creation'
-  | 'dexterity_level_scaling'
-  | 'constitution_at_creation'
-  | 'constitution_level_scaling'
-  | 'intelligence_at_creation'
-  | 'intelligence_level_scaling'
-  | 'perception_at_creation'
-  | 'perception_level_scaling'
-  | 'willpower_at_creation'
-  | 'willpower_level_scaling';
-// TODO: make these consistent; it's weird that only armor has the '_defense' suffix
-export type RiseDefense = 'armor_defense' | 'brawn' | 'fortitude' | 'reflex' | 'mental';
+export * from '../core_mechanics/attributes';
 
 export type RiseJumpDistance =
   | 'combined_jump_distance'
