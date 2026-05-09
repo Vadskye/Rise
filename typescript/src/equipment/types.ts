@@ -62,7 +62,7 @@ export type Implement =
   | { kind: 'Staff'; item: StandardItem }
   | { kind: 'Wand'; item: StandardItem };
 
-import { DicePool } from '../types/dice_pool';
+import { DicePool } from '../core_mechanics/dice_pool';
 
 export interface Weapon {
   name: string;

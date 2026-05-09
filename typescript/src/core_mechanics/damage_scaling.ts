@@ -1,4 +1,5 @@
-import { DicePool, PowerScaling } from './dice_pool';
+import { DicePool } from './dice_pool';
+import type { PowerScaling } from './power_scaling';
 
 export interface ExcessRankScaling {
   dicePerRank?: DicePool;

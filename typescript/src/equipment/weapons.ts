@@ -1,6 +1,10 @@
-import { DicePool, Die } from '../types/dice_pool';
+import { DicePool } from '../core_mechanics/dice_pool';
 import { Weapon, WeaponTag } from './types';
-import { PowerScaling } from '../types/power_scaling';
+import {
+  PowerScaling,
+  standardWeaponScaling,
+  heavyWeaponScalings,
+} from '../core_mechanics/power_scaling';
 
 export function formatWeaponTagLatex(tag: WeaponTag): string {
   if (typeof tag === 'string') {
@@ -377,9 +381,9 @@ export function getStandardWeapon(kind: StandardWeapon): Weapon {
 
 export function getWeaponPowerScalings(weapon: Weapon): PowerScaling[] {
   if (weapon.tags.includes('Heavy')) {
-    return PowerScaling.heavyWeaponScalings();
+    return heavyWeaponScalings();
   } else {
-    return [PowerScaling.standardWeaponScaling()];
+    return [standardWeaponScaling()];
   }
 }
 
