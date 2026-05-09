@@ -1623,6 +1623,10 @@ function handleDebuffs() {
         minus2('grappled', 'armor_defense');
         minus2('grappled', 'reflex');
       }
+      if (v.midair) {
+        minus4('midair', 'armor_defense');
+        minus4('midair', 'reflex');
+      }
       // TODO: figure out how to add "half speed" modifier
       if (v.squeezing) {
         minus2('squeezing', 'armor_defense');
