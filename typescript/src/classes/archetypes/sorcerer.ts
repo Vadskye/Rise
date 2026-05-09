@@ -305,7 +305,7 @@ export function innateArcanist(): RankAbility[] {
       isMagical: true,
       rank: 5,
       description: `
-        You gain a \\plus1 \\glossterm{enhancement bonus} to a different attribute of your choice.
+        You gain a \\plus1 \\glossterm{enhancement bonus} to an attribute of your choice other than Constitution.
       `,
     },
     {
