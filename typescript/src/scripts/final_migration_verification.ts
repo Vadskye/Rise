@@ -192,7 +192,9 @@ function main() {
       const match = verify(rustPath, tsPath);
       results.push({ name: filename, match });
     } else {
-      console.error(`Missing files for ${cls}: Rust=${fs.existsSync(rustPath)}, TS=${fs.existsSync(tsPath)}`);
+      console.error(
+        `Missing files for ${cls}: Rust=${fs.existsSync(rustPath)}, TS=${fs.existsSync(tsPath)}`,
+      );
       results.push({ name: filename, match: false });
     }
   }
