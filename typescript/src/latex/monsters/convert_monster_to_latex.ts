@@ -4,7 +4,7 @@ import {
   RISE_SENSE_SKILLS,
   RISE_SOCIAL_SKILLS,
   RISE_OTHER_SKILLS,
-} from '@src/character_sheet/rise_data';
+} from '@src/core_mechanics/skills';
 import { Creature, KnowledgeResultConfig } from '@src/character_sheet/creature';
 import * as format from '@src/latex/format';
 import { caseInsensitiveSort } from '@src/util/sort';
