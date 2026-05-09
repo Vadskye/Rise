@@ -509,33 +509,34 @@
       If you fling a creature vertically, it is typically \unsteady until it lands at the end of its turn.
 
 \section{Aerial Movement}\label{Aerial Movement}
-  Creatures with a fly speed or glide speed can move in midair to some degree.
+  Creatures with a fly speed or glide speed can move in midair.
   To use a fly or glide speed, a creature must not exceed its maximum \glossterm{carrying capacity} (see \pcref{Weight Limits}).
 
-  While \glossterm{midair}, land-based creatures cannot move to defend themselves effectively.
-  Any land-based creature takes a \minus4 penalty to its Armor and Reflex defenses while it is \glossterm{midair}, even if it has a fly speed or glide speed.
+  While \glossterm{midair}, land-based creatures are \unsteady, even if they have a fly or glide speed.
   This penalty does not apply to creatures who are native to the air, such as birds and monsters with a fly or glide speed but no walk speed.
 
-  A flying or gliding creature must make a \glossterm{movement} using its fly or glide speed during its turn.
-  If it does not move during a turn, it falls by 300 feet at the end of that turn (see \pcref{Falling Damage}).
+  \parhead{Falling and Catching Falls}
+  If a flying or gliding creature becomes \helpless or chooses to fall, it falls like any other creature (see \pcref{Falling Damage}).
   \trait{Floating} creatures do not fall in this way.
+
+  A flying or gliding creature can catch itself while falling as a \glossterm{move action}.
+  This consumes all of its \glossterm{available movement} for the turn, but does not cause any \glossterm{falling damage}.
+  If it enters the air willingly, such as by jumping, starting to fly or glide does not require a move action or reduce its available movement.
 
   All \glossterm{mundane} flight abilities require air to push against, so they do not function in places without an atmosphere.
   Magical flight abilities function without air.
 
   \subsection{Gliding}\label{Gliding}
-    A creature with a glide speed can use a \glossterm{move action} to fall slowly while controlling its direction.
-    When it glides, it moves up to its glide speed in any horizontal direction.
-    It also must descend 10 feet.
-    This descent does not count against its distance moved during the movement.
+    A creature with a glide speed can move horizontally, but not vertically, in midair using normal movement abilities.
+    At the end of each of its turns, it descends 10 feet.
+    This descent does not count against its \glossterm{available movement} during its turn.
 
     In order to glide, a creature must be able to fall.
     Since \trait{floating} creatures cannot fall, they also cannot glide.
     Gliding is impossible in areas without significant gravity, such as in space.
 
   \subsection{Flight}\label{Flight}
-    A creature with a fly speed can use a \glossterm{movement} to move up to its fly speed in any direction, even vertically.
-    It can also remain in place, though it must still make a \glossterm{movement} each turn to avoid falling.
+    A creature with a fly speed can move both horizontally and vertically in midair using normal movement abilities.
 
     \parhead{Height Limit}\nonsectionlabel{Height Limit} Most abilities that grant a fly speed also have a height limit for the maximum height you can easily reach with that fly speed.
     This height measures your maximum distance above a supporting object.
@@ -551,7 +552,7 @@
       While this ability is active, your maximum height with your fly speed is quadrupled.
       When this ability ends, if you are above your maximum height, you fall.
 
-      Some creatures that are native to the air or unusually powerful can sustain this ability indefinitely, such albatrosses.
+      Some creatures that are native to the air or unusually powerful can sustain this ability indefinitely without exertion, such as albatrosses.
     \end{sustainability}
 
 \section{Strikes}\label{Strikes}
