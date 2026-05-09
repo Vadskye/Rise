@@ -2,7 +2,7 @@ import { Creature } from '@src/character_sheet/creature';
 import { RankAbility } from '../types';
 import { addStandardManeuverModifiers } from '../definitions/standard_modifiers';
 
-export function combatDisciplineAbilities(): RankAbility[] {
+export function combatDiscipline(): RankAbility[] {
   return [
     {
       complexity: 1,
@@ -89,7 +89,7 @@ export function combatDisciplineAbilities(): RankAbility[] {
   ];
 }
 
-export function equipmentTrainingAbilities(): RankAbility[] {
+export function equipmentTraining(): RankAbility[] {
   return [
     {
       complexity: 1,
@@ -193,7 +193,7 @@ export function equipmentTrainingAbilities(): RankAbility[] {
   ];
 }
 
-export function martialMasteryAbilities(): RankAbility[] {
+export function martialMastery(): RankAbility[] {
   const abilities: RankAbility[] = [
     {
       complexity: 3,
@@ -299,7 +299,7 @@ export function martialMasteryAbilities(): RankAbility[] {
   return abilities;
 }
 
-export function sentinelAbilities(): RankAbility[] {
+export function sentinel(): RankAbility[] {
   return [
     {
       complexity: 0,
@@ -381,7 +381,7 @@ export function sentinelAbilities(): RankAbility[] {
   ];
 }
 
-export function tacticianAbilities(): RankAbility[] {
+export function tactician(): RankAbility[] {
   return [
     {
       complexity: 3,
@@ -582,7 +582,7 @@ export function tacticianAbilities(): RankAbility[] {
   ];
 }
 
-export function combatDiscipline(creature: Creature, rank: number) {
+export function combatDisciplineModifiers(creature: Creature, rank: number) {
   if (rank >= 2) {
     creature.addCustomModifier({
       name: 'Enduring Discipline',
@@ -600,7 +600,7 @@ export function combatDiscipline(creature: Creature, rank: number) {
   }
 }
 
-export function equipmentTraining(creature: Creature, rank: number) {
+export function equipmentTrainingModifiers(creature: Creature, rank: number) {
   if (rank >= 1) {
     // Assume light/unarmored usage for Expertise bonus
     creature.addSimpleModifier({
@@ -627,11 +627,11 @@ export function equipmentTraining(creature: Creature, rank: number) {
   }
 }
 
-export function martialMastery(_creature: Creature, _rank: number) {
+export function martialMasteryModifiers(_creature: Creature, _rank: number) {
   // Martial Mastery adds maneuvers.
 }
 
-export function sentinel(creature: Creature, rank: number) {
+export function sentinelModifiers(creature: Creature, rank: number) {
   if (rank >= 1) {
     creature.addCustomModifier({
       name: 'Bulwark',
@@ -667,7 +667,7 @@ export function sentinel(creature: Creature, rank: number) {
   }
 }
 
-export function tactician(creature: Creature, rank: number) {
+export function tacticianModifiers(creature: Creature, rank: number) {
   if (rank >= 2) {
     creature.addSimpleModifier({
       name: 'Take the Lead',

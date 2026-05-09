@@ -2,7 +2,7 @@ import { Creature } from '@src/character_sheet/creature';
 import { RankAbility } from '../types';
 import { addStandardSpellModifiers } from '../definitions/standard_modifiers';
 
-export function arcaneMagicAbilities(): RankAbility[] {
+export function arcaneMagic(): RankAbility[] {
   const abilities: RankAbility[] = [
     {
       complexity: 4,
@@ -57,7 +57,7 @@ export function arcaneMagicAbilities(): RankAbility[] {
   return abilities;
 }
 
-export function arcaneSpellMasteryAbilities(): RankAbility[] {
+export function arcaneSpellMastery(): RankAbility[] {
   return [
     {
       complexity: 1,
@@ -152,7 +152,7 @@ export function arcaneSpellMasteryAbilities(): RankAbility[] {
   ];
 }
 
-export function draconicMagicAbilities(): RankAbility[] {
+export function draconicMagic(): RankAbility[] {
   return [
     {
       complexity: 1,
@@ -248,7 +248,7 @@ export function draconicMagicAbilities(): RankAbility[] {
   ];
 }
 
-export function innateArcanistAbilities(): RankAbility[] {
+export function innateArcanist(): RankAbility[] {
   return [
     {
       complexity: 1,
@@ -333,7 +333,7 @@ export function innateArcanistAbilities(): RankAbility[] {
   ];
 }
 
-export function wildMagicAbilities(): RankAbility[] {
+export function wildMagic(): RankAbility[] {
   return [
     {
       complexity: 2,
@@ -429,7 +429,7 @@ export function wildMagicAbilities(): RankAbility[] {
   ];
 }
 
-export function arcaneMagic(creature: Creature, rank: number) {
+export function arcaneMagicModifiers(creature: Creature, rank: number) {
   if (rank >= 1) {
     creature.addCustomModifier({
       name: 'Mage Armor',
@@ -441,7 +441,7 @@ export function arcaneMagic(creature: Creature, rank: number) {
   }
 }
 
-export function arcaneSpellMastery(creature: Creature, rank: number) {
+export function arcaneSpellMasteryModifiers(creature: Creature, rank: number) {
   if (rank >= 1) {
     // Assuming Con requirement is met for simplicity
     creature.addSimpleModifier({
@@ -470,7 +470,7 @@ export function arcaneSpellMastery(creature: Creature, rank: number) {
   }
 }
 
-export function draconicMagic(creature: Creature, rank: number) {
+export function draconicMagicModifiers(creature: Creature, rank: number) {
   if (rank >= 2) {
     creature.addSimpleModifier({
       name: 'Draconic Hide',
@@ -498,7 +498,7 @@ export function draconicMagic(creature: Creature, rank: number) {
   }
 }
 
-export function innateArcanist(creature: Creature, rank: number) {
+export function innateArcanistModifiers(creature: Creature, rank: number) {
   if (rank >= 2) {
     creature.addSimpleModifier({
       name: 'Arcane Infusion (Constitution)',
@@ -528,4 +528,4 @@ export function innateArcanist(creature: Creature, rank: number) {
   }
 }
 
-export function wildMagic(creature: Creature, rank: number) {}
+export function wildMagicModifiers(_creature: Creature, _rank: number) {}

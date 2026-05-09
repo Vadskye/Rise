@@ -1,7 +1,7 @@
 import { Creature } from '@src/character_sheet/creature';
 import { RankAbility } from '../types';
 
-export function elementalistAbilities(): RankAbility[] {
+export function elementalist(): RankAbility[] {
   return [
     {
       complexity: 2,
@@ -150,7 +150,7 @@ export function elementalistAbilities(): RankAbility[] {
   ];
 }
 
-export function natureMagicAbilities(): RankAbility[] {
+export function natureMagic(): RankAbility[] {
   return [
     {
       complexity: 4,
@@ -181,7 +181,7 @@ export function natureMagicAbilities(): RankAbility[] {
   ];
 }
 
-export function natureSpellMasteryAbilities(): RankAbility[] {
+export function natureSpellMastery(): RankAbility[] {
   return [
     {
       complexity: 1,
@@ -282,7 +282,7 @@ export function natureSpellMasteryAbilities(): RankAbility[] {
   ];
 }
 
-export function shifterAbilities(): RankAbility[] {
+export function shifter(): RankAbility[] {
   return [
     {
       complexity: 3,
@@ -553,7 +553,7 @@ export function shifterAbilities(): RankAbility[] {
   ];
 }
 
-export function wildspeakerAbilities(): RankAbility[] {
+export function wildspeaker(): RankAbility[] {
   return [
     {
       complexity: 2,
@@ -702,7 +702,7 @@ export function wildspeakerAbilities(): RankAbility[] {
   ];
 }
 
-export function elementalist(creature: Creature, rank: number) {
+export function elementalistModifiers(creature: Creature, rank: number) {
   if (rank >= 2) {
     creature.addSimpleModifier({
       name: 'Elemental Balance (Earth)',
@@ -731,9 +731,9 @@ export function elementalist(creature: Creature, rank: number) {
   }
 }
 
-export function natureMagic(_creature: Creature, _rank: number) {}
+export function natureMagicModifiers(_creature: Creature, _rank: number) {}
 
-export function natureSpellMastery(creature: Creature, rank: number) {
+export function natureSpellMasteryModifiers(creature: Creature, rank: number) {
   if (rank >= 4) {
     creature.addSimpleModifier({
       name: 'Spell-Trained Senses',
@@ -753,7 +753,7 @@ export function natureSpellMastery(creature: Creature, rank: number) {
   }
 }
 
-export function shifter(creature: Creature, rank: number) {
+export function shifterModifiers(creature: Creature, rank: number) {
   if (rank >= 2) {
     creature.addSimpleModifier({
       name: 'Shift Body (Strength)',
@@ -773,4 +773,4 @@ export function shifter(creature: Creature, rank: number) {
   }
 }
 
-export function wildspeaker(_creature: Creature, _rank: number) {}
+export function wildspeakerModifiers(_creature: Creature, _rank: number) {}

@@ -1,7 +1,7 @@
 import { Creature } from '@src/character_sheet/creature';
 import { RankAbility } from '../types';
 
-export function divineMagicAbilities(): RankAbility[] {
+export function divineMagic(): RankAbility[] {
   return [
     {
       complexity: 4,
@@ -32,7 +32,7 @@ export function divineMagicAbilities(): RankAbility[] {
   ];
 }
 
-export function divineSpellMasteryAbilities(): RankAbility[] {
+export function divineSpellMastery(): RankAbility[] {
   return [
     {
       complexity: 1,
@@ -125,7 +125,7 @@ export function divineSpellMasteryAbilities(): RankAbility[] {
   ];
 }
 
-export function domainInfluenceAbilities(): RankAbility[] {
+export function domainInfluence(): RankAbility[] {
   return [
     {
       complexity: 2,
@@ -241,7 +241,7 @@ export function domainInfluenceAbilities(): RankAbility[] {
   ];
 }
 
-export function healerAbilities(): RankAbility[] {
+export function healer(): RankAbility[] {
   return [
     {
       complexity: 2,
@@ -339,7 +339,7 @@ export function healerAbilities(): RankAbility[] {
   ];
 }
 
-export function preacherAbilities(): RankAbility[] {
+export function preacher(): RankAbility[] {
   return [
     {
       complexity: 2,
@@ -426,9 +426,9 @@ export function preacherAbilities(): RankAbility[] {
   ];
 }
 
-export function divineMagic(_creature: Creature, _rank: number) {}
+export function divineMagicModifiers(_creature: Creature, _rank: number) {}
 
-export function divineSpellMastery(creature: Creature, rank: number) {
+export function divineSpellMasteryModifiers(creature: Creature, rank: number) {
   if (rank >= 1) {
     creature.addCustomModifier({
       name: 'Divine Vessel',
@@ -458,9 +458,9 @@ export function divineSpellMastery(creature: Creature, rank: number) {
   }
 }
 
-export function domainInfluence(_creature: Creature, _rank: number) {}
+export function domainInfluenceModifiers(_creature: Creature, _rank: number) {}
 
-export function healer(creature: Creature, rank: number) {
+export function healerModifiers(creature: Creature, rank: number) {
   if (rank >= 2) {
     const bonus = rank >= 5 ? 2 : 1;
     creature.addCustomModifier({
@@ -475,7 +475,7 @@ export function healer(creature: Creature, rank: number) {
   }
 }
 
-export function preacher(creature: Creature, rank: number) {
+export function preacherModifiers(creature: Creature, rank: number) {
   if (rank >= 2) {
     creature.addSimpleModifier({
       name: 'Persuasive Certainty',

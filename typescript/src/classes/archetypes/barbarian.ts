@@ -2,7 +2,7 @@ import { Creature } from '@src/character_sheet/creature';
 import { RankAbility } from '../types';
 import { addStandardManeuverModifiers } from '../definitions/standard_modifiers';
 
-export function battleforgedResilienceAbilities(): RankAbility[] {
+export function battleforgedResilience(): RankAbility[] {
   return [
     {
       complexity: 2,
@@ -93,7 +93,7 @@ export function battleforgedResilienceAbilities(): RankAbility[] {
   ];
 }
 
-export function battleragerAbilities(): RankAbility[] {
+export function battlerager(): RankAbility[] {
   return [
     {
       complexity: 2,
@@ -190,7 +190,7 @@ export function battleragerAbilities(): RankAbility[] {
   ];
 }
 
-export function outlandSavageAbilities(): RankAbility[] {
+export function outlandSavage(): RankAbility[] {
   return [
     {
       complexity: 1,
@@ -292,7 +292,7 @@ export function outlandSavageAbilities(): RankAbility[] {
   ];
 }
 
-export function primalWarriorAbilities(): RankAbility[] {
+export function primalWarrior(): RankAbility[] {
   const abilities: RankAbility[] = [
     {
       complexity: 3,
@@ -398,7 +398,7 @@ export function primalWarriorAbilities(): RankAbility[] {
   return abilities;
 }
 
-export function totemistAbilities(): RankAbility[] {
+export function totemist(): RankAbility[] {
   return [
     {
       complexity: 2,
@@ -528,7 +528,7 @@ export function totemistAbilities(): RankAbility[] {
   ];
 }
 
-export function battleforgedResilience(creature: Creature, rank: number) {
+export function battleforgedResilienceModifiers(creature: Creature, rank: number) {
   if (rank >= 1) {
     // Second Wind doesn't have a clear combat effect
   }
@@ -585,7 +585,7 @@ export function battleforgedResilience(creature: Creature, rank: number) {
   }
 }
 
-export function battlerager(creature: Creature, rank: number) {
+export function battleragerModifiers(creature: Creature, rank: number) {
   if (rank >= 1) {
     // Assume rage is constantly active
     creature.addCustomModifier({
@@ -655,7 +655,7 @@ export function battlerager(creature: Creature, rank: number) {
   }
 }
 
-export function outlandSavage(creature: Creature, rank: number) {
+export function outlandSavageModifiers(creature: Creature, rank: number) {
   if (rank >= 1) {
     creature.addSimpleModifier({
       name: 'Savage Precision',
@@ -681,12 +681,12 @@ export function outlandSavage(creature: Creature, rank: number) {
   }
 }
 
-export function primalWarrior(_creature: Creature, _rank: number) {
+export function primalWarriorModifiers(_creature: Creature, _rank: number) {
   // Primal Warrior adds maneuvers and augments to maneuvers.
   // These don't have static statistical modifiers that we represent here.
 }
 
-export function totemist(creature: Creature, rank: number) {
+export function totemistModifiers(creature: Creature, rank: number) {
   // Bear Totem
   if (rank >= 1) {
     creature.addSimpleModifier({
