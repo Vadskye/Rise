@@ -48,7 +48,7 @@
       \itemhead{Low-light Vision} A hybrid wolf has \sense{low-light vision}, allowing it to see clearly in \glossterm{dim illumination} (see \pcref{Low-light Vision}).
     \end{raggeditemize}
 
-\section{Automaton}
+\section{Automaton}\label{Automaton}
   An automaton appears to be a humanoid construct, like a golem.
   Its body is made from some combination of stone, wood, and metal.
   However, its artificial body is inhabited by a true soul, making it a \creaturetype{indwelt} (see \pcref{Indwelt}).
@@ -116,7 +116,51 @@
   \parhead{Bonus Languages} Any.
   \parhead{Automatic Languages} Common, any two \glossterm{common languages}.
 
-\section{Dragon}
+\section{Chimera}
+  A chimera is a unique creature that combines the characteristics of three different species.
+  This fusion results in a creature that possesses the archetypes of all three of its component species.
+  Chimeras are magical in nature, but their exact origin is unclear.
+  All attempts to intentionally create chimeras have failed.
+
+  All of a chimera's component species must either be \creatureorigin{natural} or have the same non-natural creature origin.
+  This means that you can't be an automaton vampire chimera.
+
+  \parhead{Creature Type} A chimera has all creature types of its component species. It is \creatureorigin{natural} unless one of its component species changes that.
+  \parhead{Size} Medium.
+  \parhead{Attributes} A chimera gains the attribute modifiers of any one of its component species.
+  \parhead{Special Abilities}
+  \begin{raggeditemize}
+    \itemhead{Chimera Archetypes} A chimera chooses three different species that have a dedicated species archetype.
+      The chimera treats those three species archetypes as its three archetypes.
+      It does not normally gain any class archetypes.
+    \itemhead{Species Abilities} A chimera gains some abilities from each of its three component species, as described in \tref{Chimera Species Abilities}.
+    It gains all listed benefits and drawbacks of each species, except that any numeric bonuses from these abilities do not stack with each other.
+    If body parts are removed by a species, any abilities from other species that require those body parts are also removed.
+    For example, a dragon harpy chimera would have two sets of wings, talons, and a bite natural weapon.
+    However, it would not have claws, since its arms were removed by the harpy Wings ability.
+    The Armor defense bonus from Draconic Scales would not stack with the Armor defense bonus from Winged Agility.
+  \end{raggeditemize}
+  \parhead{Automatic Languages} Common.
+
+  \begin{dtable}
+    \lcaption{Chimera Species Abilities}\label{Chimera Species Abilities}
+    \begin{dtabularx}{\columnwidth}{l >{\lcol}X}
+      \tb{Species} & \tb{Abilities} \tableheaderrule
+      Automaton    & Artificial Life, Mechanical Body (see \pcref{Automaton}) \\
+      Dragon       & Draconic Scales, Draconic Weapons, Draconic Wings, Dragon Type, Limited Equipment (see \pcref{Dragon}) \\
+      Dryad        & Tree Bond, Fey Vulnerability, Verdant Flourishing (see \pcref{Dryaidi}) \\
+      Harpy        & Limited Equipment, Prehensile Talons, Wings, Winged Agility (see \pcref{Harpy}) \\
+      Incarnation  & Essence Infusion, Essence Vulnerability (see \pcref{Incarnation}) \\
+      Naiadi       & Aquatic Essence, Enchanting Appearance, Fey Vulnerability, Water Affinity (see \pcref{Naiadi}) \\
+      Oozeborn     & Acidic Body, Amorphous Form (see \pcref{Oozeborn}) \\
+      Tiefling     & Demonic Prejudice, Hellfire Tolerance, Infernal Presence (see \pcref{Tiefling}) \\
+      Sapling      & Barkskin, Ingrain, Limited Equipment, Made of Wood, Unhurried and Unfaltering (see \pcref{Sapling}) \\
+      Troll        & Bite, Fungal Resilience, Fungal Vulnerabilities, Hard to Kill (see \pcref{Troll}) \\
+      Vampire      & Climb Speed, Fangs, Undead, Vampire Weaknesses (see \pcref{Vampire}) \\
+    \end{dtabularx}
+  \end{dtable}
+
+\section{Dragon}\label{Dragon}
   Ancient dragons are magical creatures of immense power and wisdom, and are far more powerful than any ordinary character of the same level.
   However, young dragons can be played as characters, though their unique abilities do pose unique challenges.
 
@@ -203,7 +247,7 @@
   \end{raggeditemize}
   \parhead{Automatic Languages} Common, Elven, Undercommon
 
-\section{Dryaidi}
+\section{Dryaidi}\label{Dryaidi}
 
   Dryaidi are humanoid creatures with plantlike characteristics.
   They might have leaves instead of hair, a green skin tone, or rough, barky skin.
@@ -275,7 +319,7 @@
   \parhead{Species Feat Options}
   \parhead{Automatic Languages} Common, Sylvan, and any one \glossterm{common language} (see \tref{Common Languages}).
 
-\section{Harpy}
+\section{Harpy}\label{Harpy}
   Harpies are winged creatures with the upper body of a humanoid and the lower body of a bird.
   Most harpies are female, but male harpies do exist.
 
@@ -301,7 +345,7 @@
 % TODO: make sure this is the same as the explicit latex here before removing the explicit latex.
 \input{generated/harpy.tex}
 
-\section{Incarnation}
+\section{Incarnation}\label{Incarnation}
 
   An incarnation is a physical embodiment of an element or form of energy, like an elemental.
   Unlike elementals, incarnations are alive and have souls.
@@ -372,7 +416,7 @@
   \end{raggeditemize}
   \parhead{Automatic Languages} Common, any one \glossterm{common language}.
 
-\section{Naiadi}
+\section{Naiadi}\label{Naiadi}
   Naiadi are humanoid creatures descended from water spirits called naiads.
   Most naiadi are unusually physically appealing, but show no other outward signs of their heritage.
 
@@ -397,7 +441,7 @@
 
 \input{generated/naiad.tex}
 
-\sectiongraphic*{Oozeborn}{width=\columnwidth}{classes/oozeborn}
+\sectiongraphic*{Oozeborn}{width=\columnwidth}{classes/oozeborn}\label{Oozeborn}
   Oozeborn are ooze creatures that have gained true sentience through a strange quirk of their birth.
   They are very rare to see in civilized lands, as most oozeborn lack the opportunity to discover more than the dark caves in which they were spawned.
   Since they often grow up without mentorship from any civilized creature, oozeborn tend to have odd mannerisms and a poor ability to mask their emotions, even after spending years in civilization.
@@ -443,7 +487,7 @@
 
 \input{generated/oozeborn.tex}
 
-\section{Sapling}
+\section{Sapling}\label{Sapling}
 
   Saplings are young treants that have left their forest home in search of adventure.
   They tend to be slow to think and act, but resilient once they have made up their mind.
@@ -478,7 +522,7 @@
 
 \input{generated/treant.tex}
 
-\sectiongraphic*{Tiefling}{width=\columnwidth}{optional rules/tiefling}
+\sectiongraphic*{Tiefling}{width=\columnwidth}{optional rules/tiefling}\label{Tiefling}
 
   Tieflings are humanoid creatures descended from fiends.
   They inherit a tendency towards evil from their ancestors, and are therefore viewed with great suspicion by most civilized societies.
@@ -606,7 +650,7 @@
       %         \item \subparhead{Other} Deception, Intimidate, Perform, Persuasion.
       %     \end{raggeditemize}
 
-\section{Troll}
+\section{Troll}\label{Troll}
   Trolls are large, ugly giants with tusks.
   They are famous for their supernatural regeneration abilities.
   A troll can survive even dismemberment, regrowing severed limbs over time.
@@ -650,7 +694,7 @@
 
 \input{generated/troll.tex}
 
-\section{Vampire}
+\section{Vampire}\label{Vampire}
   A vampire is an undead creature that must drink the blood of living creatures to survive.
   Unlike most undead creatures, vampires appear to be alive and human, allowing them to act normally in society.
   Vampires have great power, but also many dangerous weaknesses.
