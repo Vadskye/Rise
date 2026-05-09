@@ -5,7 +5,6 @@ import { allApparel, apparelLatex } from '../apparel';
 import { allTools } from '../data/all_tools';
 import { itemLatex } from './item_latex';
 import * as table from './latex_table';
-import { ToolCategory } from '../types';
 import { getToolCategoryName, getToolCraftingLatex } from './tools';
 
 export function generateRelicDescriptions(): string {

@@ -418,7 +418,7 @@ export function devotedParagonModifiers(creature: Creature, rank: number) {
   }
 }
 
-export function divineMagicModifiers(creature: Creature, rank: number) {}
+export function divineMagicModifiers(_creature: Creature, _rank: number) {}
 
 export function divineSpellExpertiseModifiers(creature: Creature, rank: number) {
   if (rank >= 3) {

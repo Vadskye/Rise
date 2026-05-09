@@ -1,4 +1,4 @@
-import { RiseCreatureOrigin, RiseCreatureType, RiseTrait } from '@src/character_sheet/rise_data';
+import { RiseCreatureOrigin, RiseCreatureType } from '@src/character_sheet/rise_data';
 import { RiseKnowledgeSkill } from '@src/core_mechanics/skills';
 
 export const KNOWLEDGE_BY_ORIGIN: Record<RiseCreatureOrigin, RiseKnowledgeSkill> = {

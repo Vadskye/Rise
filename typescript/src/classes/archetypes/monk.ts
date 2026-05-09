@@ -634,7 +634,7 @@ export function airdancerModifiers(creature: Creature, rank: number) {
   }
 }
 
-export function esotericWarriorModifiers(creature: Creature, rank: number) {
+export function esotericWarriorModifiers(_creature: Creature, _rank: number) {
   // Maneuvers
 }
 

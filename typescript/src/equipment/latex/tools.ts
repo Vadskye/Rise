@@ -1,4 +1,4 @@
-import { Tool, ToolCategory } from '../types';
+import { ToolCategory } from '../types';
 import { allTools } from '../data/all_tools';
 import * as table from './latex_table';
 import { itemLatex } from './item_latex';

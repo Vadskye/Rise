@@ -4,7 +4,6 @@ import { allImplements } from '../data/implements';
 import { allApparel } from '../apparel';
 import { allTools } from '../data/all_tools';
 import * as table from './latex_table';
-import { ToolCategory } from '../types';
 import { getToolCategoryName } from './tools';
 
 export function generateEverythingTable(): string {

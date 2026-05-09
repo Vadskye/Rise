@@ -666,7 +666,7 @@ t.test('can calculate vital rolls', (t) => {
 });
 
 t.test('can handle strike attacks', (t) => {
-  const supportedWeaponCount = 4;
+  // const supportedWeaponCount = 4;
 
   t.test('calculates total damage for a single weapon strike attack', (t) => {
     // Set initial character and weapon attributes
