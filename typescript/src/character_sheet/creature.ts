@@ -8,15 +8,12 @@ import {
 import { handleEverything, MonsterAttackUsageTime } from '@src/character_sheet/sheet_worker';
 import {
   RiseAlignment,
-  RiseAttribute,
-  RiseAttributeModifier,
   RiseBaseClass,
   RiseCraftSkill,
   RISE_CRAFT_SKILLS,
   RiseCreatureOrigin,
   RiseCreatureType,
   RiseDebuff,
-  RiseDefense,
   RiseJumpDistance,
   RiseKnowledgeSkill,
   RISE_KNOWLEDGE_SKILLS,
@@ -29,6 +26,12 @@ import {
   RiseTrait,
   isTrait,
 } from '@src/character_sheet/rise_data';
+import {
+  RISE_ATTRIBUTES,
+  RiseAttribute,
+  RiseAttributeModifier,
+  RiseDefense,
+} from '@src/core_mechanics/attributes';
 import { getManeuverByName, getWeaponMultByRank } from '@src/abilities/combat_styles';
 import { getSpellByName, SphereName } from '@src/abilities/mystic_spheres';
 import { MonsterWeapon, isManufactured, getWeaponTag } from '@src/monsters/weapons';
