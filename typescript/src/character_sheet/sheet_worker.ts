@@ -1968,7 +1968,9 @@ function handleJumpDistance() {
       const base_speed = v.base_speed || 30;
       const base_speed_modifier = roundToFiveFootIncrements(base_speed / 4);
       const strength_modifier =
-        v.jump_level > 0 ? Math.max(5, v.strength * 5) : Math.floor(v.strength / 2) * 5;
+        v.jump_level > 0
+          ? Math.max(5, v.strength * 5)
+          : Math.max(0, Math.floor(v.strength / 2) * 5);
       const horizontalDistance = Math.max(0, base_speed_modifier + strength_modifier + v.misc);
       // TODO: add support for float like air
       const verticalDistance = roundToFiveFootIncrements(horizontalDistance / 2);
