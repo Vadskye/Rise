@@ -43,7 +43,7 @@ export function harpy(): RankAbility[] {
       description: `
         You gain a slow \\glossterm{fly speed} with a maximum height of 10 feet (see \\pcref{Flight}).
         As a \\glossterm{free action}, you can increase your \\glossterm{fatigue level} by one to ignore this height limit this turn.
-        In addition, you reduce the penalties to your Armor and Reflex defenses for being \\glossterm{midair} by 2.
+        In addition, while you are able to use your wings, you reduce your accuracy penalty for being \\unsteady by 1.
       `,
     },
     {
@@ -101,6 +101,7 @@ export function harpy(): RankAbility[] {
       rank: 6,
       description: `
         Your fly speed increases to average, and its maximum height increases to 30 feet.
+        In addition, while you are able to use your wings, you reduce your defense penalties for being \\unsteady by 1.
       `,
     },
     {
