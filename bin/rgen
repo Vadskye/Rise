@@ -50,8 +50,6 @@ mkdir -p core_book/generated
 rm core_book/generated/*
 mkdir -p comprehensive_codex/generated
 rm comprehensive_codex/generated/*
-g rust
-./src/bin/generate_rust_files.fish
 
 rtgen
 

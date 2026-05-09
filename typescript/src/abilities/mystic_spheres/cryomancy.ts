@@ -117,7 +117,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         halfOnMiss: true,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\medarea cone from you.
-          If the area includes at least three spaces occupied by living creatures or other heat sources, you gain an \glossterm{ice crystal}.
+          If the area includes at least three spaces occupied by living creatures or other heat sources, you gain an \\glossterm{ice crystal}.
         `,
       },
       rank: 5,
