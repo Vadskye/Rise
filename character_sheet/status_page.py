@@ -159,7 +159,6 @@ def circumstances():
             ),
             flex_col(
                 [
-                    debuff("midair"),
                     debuff("squeezing"),
                     debuff("unaware"),
                     debuff("unsteady"),
@@ -217,7 +216,6 @@ def debuff_explanation(debuff: str) -> str:
         "dazzled": "20% miss chance, no special vision",
         "deafened": "20% verbal spell failure",
         "dominated": "must obey commands",
-        "midair": "-4 Armor and Reflex",
         "frightened": "-2 Mental, -2 accuracy vs. source",
         "goaded": "-2 accuracy vs. other creatures",
         "grappled": "-2 Armor and Ref, can't move normally",
