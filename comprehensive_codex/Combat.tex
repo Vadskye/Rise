@@ -452,9 +452,8 @@
     Note that if you jump 20 feet into the air or more, you may take falling damage when you land (see \pcref{Falling Damage}).
     % TODO: minimum jump height? too complicated?
 
-    If your destination square is in midair, you do not start falling until the end of your turn.
-    This allows you to jump using a \glossterm{move action} and then take a \glossterm{standard action} while midair.
-    Unlike normal for being \glossterm{midair}, you do not suffer penalties to your Armor and Reflex defense for being partway through a jump that you initiated.
+    If your destination square is \glossterm{midair}, you do not start falling or become \unsteady until the end of your turn.
+    This allows you to jump using a \glossterm{move action} and then take a \glossterm{standard action} while midair without penalty.
 
     \subsubsection{Jumping Speed Limits}
       Movement while jumping subtracts from your \glossterm{available movement} just like any other movement.
@@ -514,6 +513,7 @@
 
   While \glossterm{midair}, land-based creatures are \unsteady, even if they have a fly or glide speed.
   This penalty does not apply to creatures who are native to the air, such as birds and monsters with a fly or glide speed but no walk speed.
+  If you jump into the air intentionally, you don't become unsteady until the end of your turn (see \pcref{Jumping}).
 
   \parhead{Falling and Catching Falls}
   If a flying or gliding creature becomes \helpless or chooses to fall, it falls like any other creature (see \pcref{Falling Damage}).
