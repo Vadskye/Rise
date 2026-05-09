@@ -41,16 +41,23 @@
       This means you keep rolling until you get a number less than 10, then sum all of the rolls.
 
 % TODO: wording, and does this need to be a full section
-\section{Calculating Damage}
-  Normally, the abilities you use will tell you how to calculate your damage.
-  This section explains some special circumstances which can change how your damage is calculated.
+\section{Calculating Damage}\label{Calculating Damage}
+  Most damaging abilities tell you how much damage they deal in their description, such as "\damagerankone".
+  This section explains some common damage calculations.
 
-  % TODO: can any ability modify weapon damage?
-  \subsection{Weapon Damage}\label{Weapon Damage}
-    \glossterm{Strikes} deal damage based on the weapon you use them with.
-    Your \glossterm{weapon damage} is normally equal to the weapon's damage die or dice, as defined in the Equipment chapter (see \pcref{Weapons}).
-    Some abilities multiply your weapon damage with a particular strike.
-    That does not multiply other damage dealt by the strike, such as the damage from your \glossterm{power} or any \glossterm{extra damage}.
+  \subsection{Strike Damage}\label{Strike Damage}
+    When you hit with a \glossterm{strike}, you deal damage equal your \glossterm{weapon damage} plus half your relevant \glossterm{power}.
+    This is called your \glossterm{strike damage}.
+
+    If a \magical ability causes you to make a strike, you use your \glossterm{magical power}.
+    Otherwise, you use your \glossterm{mundane power}.
+    If you are using a \weapontag{Heavy} or \weapontag{Versatile Grip} weapon in two hands, you add your full power instead (see \pcref{Weapon Tags}).
+
+    % TODO: can any ability modify weapon damage?
+    \subsubsection{Weapon Damage}\label{Weapon Damage}
+      Your \glossterm{weapon damage} is normally equal to your weapon's damage die or dice, as defined in the Equipment chapter (see \pcref{Weapons}).
+      Some abilities multiply your weapon damage with a particular strike.
+      That does not multiply other damage dealt by the strike, such as the damage from your \glossterm{power} or any \glossterm{extra damage}.
 
   \subsection{Extra Damage}\label{Extra Damage}
     Some abilities add \glossterm{extra damage} to your damaging attacks.
@@ -102,7 +109,7 @@
     Subdual damage works in the same way as normal damage, except it cannot inflict \glossterm{vital wounds}.
     If an attack that deals subdual damage would inflict a vital wound, the target increases its \glossterm{fatigue level} by three instead.
     Whenever you make a \glossterm{strike}, you can choose to deal subdual damage instead of normal damage.
-    If you do, you deal half damage with the strike.
+    If you do, the strike deals half damage.
 
 \sectiongraphic*{Vital Wounds}{width=\columnwidth}{combat/vital wounds}
 
@@ -551,11 +558,6 @@
   Many abilities allow you to make one or more strikes.
   Whenever you make a strike, you can choose which kind of strike to make.
 
-  Your \glossterm{accuracy} with a strike adds the accuracy modifier from the weapon you are attacking with.
-  Your \glossterm{damage} with a strike is normally equal to your \glossterm{weapon damage} with the weapon you hit with, plus half your relevant \glossterm{power}.
-  If a \magical ability causes you to make a strike, you use your \glossterm{magical power}.
-  Otherwise, you use your \glossterm{mundane power}.
-
   There are many special rules that can modify how you make strikes.
   For example, \glossterm{dual strikes} allow you to attack with two weapons instead of one.
   The rules for strikes listed here simply define the normal behavior.
@@ -564,28 +566,31 @@
     \abilitytags \atPhysical
     \rankline
     Make a \glossterm{melee} attack vs. Armor using a weapon against something adjacent to you.
+    You add your weapon's accuracy modifier to this attack.
     You must have \glossterm{line of effect} to the target.
     % TODO: wording
-    \hit You deal the target damage equal to your \glossterm{weapon damage} plus half your \glossterm{mundane power}.
+    \hit You deal the target your \glossterm{strike damage} (see \pcref{Strike Damage}).
   \end{activeability}
 
   \begin{activeability}{Basic Strike -- Projectile}{Standard action}
     \abilitytags \atPhysical
     \rankline
     Make a \glossterm{ranged} attack vs. Armor using a \weapontag{Projectile} weapon against something that you have \glossterm{line of effect} to.
+    You add your weapon's accuracy modifier to this attack.
     If the target is adjacent to you, you take a \minus4 accuracy penalty.
     If the target is at \glossterm{long range} from you, your accuracy takes a \minus4 \glossterm{longshot penalty} (see \pcref{Weapon Range Limits}).
-    \hit You deal the target damage equal to your \glossterm{weapon damage} plus half your \glossterm{mundane power}.
+    \hit You deal the target your \glossterm{strike damage} (see \pcref{Strike Damage}).
   \end{activeability}
 
   \begin{activeability}{Basic Strike -- Thrown}{Standard action}
     \abilitytags \atPhysical
     \rankline
     Make a \glossterm{ranged} attack vs. Armor using a non-\weapontag{Projectile} weapon against something that you have \glossterm{line of effect} to.
+    You add your weapon's accuracy modifier to this attack.
     If the weapon has the \weapontag{Thrown} weapon tag, use its defined \glossterm{range limits}.
     Otherwise, your range limits are 10/20, and you take a \minus2 accuracy penalty since you are not \glossterm{proficient} with that usage of the weapon (see \pcref{Weapon Proficiency}).
     If the target is at \glossterm{long range} from you, your accuracy takes a \minus4 \glossterm{longshot penalty} (see \pcref{Weapon Range Limits}).
-    \hit You deal the target damage equal to your \glossterm{weapon damage} plus half your \glossterm{mundane power}.
+    \hit You deal the target your \glossterm{strike damage} (see \pcref{Strike Damage}).
   \end{activeability}
 
   \subsection{Dual Strikes}\label{Dual Strikes}
