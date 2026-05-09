@@ -26,9 +26,9 @@ import {
 import { latexClassSkills, getClassTrainedSkills } from '@src/classes/class_skills';
 import { titleCase } from '@src/latex/format/title_case';
 import { joinStringList } from '@src/latex/format/join_string_list';
-import { latexifyClass } from '@src/latex/format/latexify_class';
+import { latexify } from '@src/latex/format/latexify';
 
-export { validateClassPoints, latexifyClass, latexArchetypeDescription };
+export { validateClassPoints, latexify, latexArchetypeDescription };
 
 export function generateArchetypeDescriptions(): string {
   const archetypes: ClassArchetype[] = [
@@ -146,14 +146,14 @@ export function universalCharacterProgressionAtLevel(level: number): string {
 }
 
 export function latexBaseClassTable(cls: Class): string {
-  return latexifyClass(`
-        \\begin<columntable>
-            \\begin<dtabularx><\\columnwidth><l l l l ${'>{\\lcol}X'}>
-                \\tb<Level> & \\tb<Rank> & \\tb<Durability> & \\tb<Bonus>\\fn<1> & \\tb<Special> \\tableheaderrule
+  return latexify(`
+        \\begin{columntable}
+            \\begin{dtabularx}{\\columnwidth}{l l l l ${'>{\\lcol}X'}}
+                \\tb{Level} & \\tb{Rank} & \\tb{Durability} & \\tb{Bonus}\\fn{1} & \\tb{Special} \\tableheaderrule
                 ${latexBaseClassTableRows(cls)}
-            \\end<dtabularx>
-            1. This bonus applies to your \\glossterm<accuracy>, \\magical power, mundane power, trained skills, and defenses. \\
-        \\end<columntable>
+            \\end{dtabularx}
+            1. This bonus applies to your \\glossterm{accuracy}, \\magical power, mundane power, trained skills, and defenses. \\
+        \\end{columntable}
     `);
 }
 
@@ -177,10 +177,10 @@ function modifierHelper(val: number): string {
 }
 
 export function latexBasicClassAbilities(cls: Class): string {
-  return latexifyClass(`
-        \\subsection<Base Class Effects>
+  return latexify(`
+        \\subsection{Base Class Effects}
 
-        If you choose ${getClassName(cls)} as your \\glossterm<base class>, you gain the following benefits.
+        If you choose ${getClassName(cls)} as your \\glossterm{base class}, you gain the following benefits.
 
         ${latexBaseClassTable(cls)}
 
@@ -232,8 +232,8 @@ function latexDefenses(cls: Class): string {
   const customModifierText =
     customModifiers.length > 0 ? `In addition, you gain ${joinStringList(customModifiers)}.` : '';
 
-  return latexifyClass(`
-        \\cf<${getClassShorthand(cls)}><Defenses>
+  return latexify(`
+        \\cf{${getClassShorthand(cls)}}{Defenses}
         You gain a \\plus3 bonus to your ${plus3DefenseText} defenses.
         ${customModifierText}
     `);
@@ -381,19 +381,19 @@ export function latexClassSection(cls: Class): string {
   const archetypeNames = joinStringList(archetypes.map(getArchetypeName));
   const classNameTitle = titleCase(getClassName(cls));
 
-  return latexifyClass(`
+  return latexify(`
         \\newpage
-        \\section<${classNameTitle}>\\label<${classNameTitle}>
+        \\section{${classNameTitle}}\\label{${classNameTitle}}
 
-        \\includegraphics[width=\\columnwidth]<classes/${getClassName(cls).toLowerCase()}>
+        \\includegraphics[width=\\columnwidth]{classes/${getClassName(cls).toLowerCase()}}
 
         ${latexArchetypeTable(cls)}
 
         ${getClassNarrativeText(cls)}
 
-        \\classbasics<Alignment> ${getClassAlignment(cls)}.
+        \\classbasics{Alignment} ${getClassAlignment(cls)}.
 
-        \\classbasics<Archetypes> ${classNameTitle}s have the ${archetypeNames} archetypes.
+        \\classbasics{Archetypes} ${classNameTitle}s have the ${archetypeNames} archetypes.
 
         ${latexBasicClassAbilities(cls)}
 

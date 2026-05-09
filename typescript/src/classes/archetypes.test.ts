@@ -34,16 +34,16 @@ t.test('Archetypes', (t) => {
       description: 'Ability description.',
     };
     const output = latexClassFeature(ability, 'Bbn');
-    t.match(output, '\\cf<Bbn>[3]<Test Ability>[\\sparkle]');
+    t.match(output, '\\cf{Bbn}[3]{Test Ability}[\\sparkle]');
     t.match(output, 'Ability description.');
     t.end();
   });
 
   t.test('latexArchetypeDescription matches Rust format', (t) => {
     const output = latexArchetypeDescription('Totemist');
-    t.match(output, '\\archetypedef<Bbn><Totemist>');
+    t.match(output, '\\archetypedef{Bbn}{Totemist}');
     t.match(output, 'This archetype allows you to embody the spirits of apex predators');
-    t.match(output, '\\cf<Bbn>[1]<Totem Animal>');
+    t.match(output, '\\cf{Bbn}[1]{Totem Animal}');
     t.match(output, 'You choose a totem animal that represents you.');
     t.end();
   });
