@@ -3,16 +3,12 @@ import {
   ArmorProficiencies,
   WeaponProficiencies,
 } from './types';
-import { RiseSkill } from '../core_mechanics/skills';
 import { RiseDefense } from '../core_mechanics/attributes';
-import { ArmorKind, ArmorUsageClass } from '../equipment/armor';
-import { dedent } from '../util/dedent';
 import {
   getClassTrainedSkills,
   latexClassSkills,
 } from './class_skills';
 import { clericDomains } from './cleric_domains';
-import { titleCase } from '../latex/format/title_case';
 import { joinStringList } from '../latex/format/join_string_list';
 import { latexify } from '../latex/format/latexify';
 
@@ -21,7 +17,7 @@ export function getClassName(cls: Class): string {
   return cls.toLowerCase();
 }
 
-export function getClassAlignment(cls: Class): string {
+export function getClassAlignment(_cls: Class): string {
   return 'Any';
 }
 
@@ -453,7 +449,7 @@ export function latexBaseClassTable(cls: Class): string {
     `);
 }
 
-function latexBaseClassTableRows(cls: Class): string {
+function latexBaseClassTableRows(_cls: Class): string {
   const rows: string[] = [];
   for (let level = 1; level <= 21; level++) {
     const rank = Math.floor((level + 2) / 3);

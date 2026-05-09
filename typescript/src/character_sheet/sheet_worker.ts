@@ -810,7 +810,7 @@ function handleResources() {
 
 function calcAccuracyCrScaling(level: number, elite?: boolean) {
   let levelScaling = 0;
-  let levels_with_accuracy_bonuses = [13, 21];
+  const levels_with_accuracy_bonuses = [13, 21];
   for (const bonus_level of levels_with_accuracy_bonuses) {
     if (level >= bonus_level) {
       levelScaling += 1;
@@ -826,7 +826,7 @@ function calcDefenseMonsterScaling(level: number, isMonster: boolean, elite: boo
   }
   let levelScaling = 0;
   if (isMonster) {
-    let levels_with_defense_bonuses = [7, 19];
+    const levels_with_defense_bonuses = [7, 19];
     for (const bonus_level of levels_with_defense_bonuses) {
       if (level >= bonus_level) {
         levelScaling += 1;
@@ -1121,7 +1121,7 @@ function handleArmorDefense() {
       const isMonster = Boolean(v.monster_type);
       // calculate attributeModifier
       let attributeModifier = 0;
-      let all_usage_classes = [v.body_armor_usage_class, v.shield_usage_class];
+      const all_usage_classes = [v.body_armor_usage_class, v.shield_usage_class];
       // Monsters only add half dex. They could still get set to zero dex by heavy armor.
       if (isMonster) {
         all_usage_classes.push('medium');
@@ -1609,7 +1609,7 @@ function handleDebuffs() {
     callback: (v) => {
       const debuffHeaders = [];
 
-      let namedModifierMap = new NamedModifierMap();
+      const namedModifierMap = new NamedModifierMap();
 
       const minus2 = (cause: string, statistic: string) =>
         namedModifierMap.addNamedModifier(statistic, cause, -2);
@@ -1833,7 +1833,7 @@ function handleHitPoints() {
 
       const hpFromDurability = v.durability * rankMultiplier;
 
-      let crMultiplier = v.elite ? 3 : 1;
+      const crMultiplier = v.elite ? 3 : 1;
 
       const flatHp = 10;
       const playerTotalHp = flatHp + hpFromDurability + v.misc;
@@ -1849,7 +1849,7 @@ function handleHitPoints() {
         hit_points_max: monsterTotalHp,
         hit_points_maximum: monsterTotalHp,
       };
-      let shouldSetCurrentHp =
+      const shouldSetCurrentHp =
         monsterTotalHp < v.hit_points ||
         v.hit_points === v.hit_points_maximum ||
         !v.hit_points_maximum;
@@ -2500,7 +2500,7 @@ function handleNonArmorDefense(defense: string, attribute: string) {
       const shieldModifier = defense === 'reflex' ? v.shield_reflex : 0;
       // Monsters only apply half attribute modifier
       const attributeModifier = isMonster ? Math.floor(v[attribute] / 2) : v[attribute];
-      let totalValue = Math.max(
+      const totalValue = Math.max(
         0,
         levelModifier +
           monsterModifier +
@@ -2695,7 +2695,7 @@ function handleTrainedSkills() {
         [`${rowPrefix}_trained_skill`, `${rowPrefix}_subskill_name`, rowIdKey, lastSkillKey],
         (v) => {
           let trainedSkillRaw = v[`${rowPrefix}_trained_skill`];
-          let subskillName = v[`${rowPrefix}_subskill_name`];
+          const subskillName = v[`${rowPrefix}_subskill_name`];
           const oldTrainedSkill = v[lastSkillKey];
 
           if (
@@ -2865,7 +2865,7 @@ function handleTrainedSkills() {
 
 function handleSkills() {
   for (const attribute of Object.keys(SKILLS_BY_ATTRIBUTE)) {
-    for (let skill of SKILLS_BY_ATTRIBUTE[attribute]) {
+    for (const skill of SKILLS_BY_ATTRIBUTE[attribute]) {
       const numeric = [
         'fatigue_penalty',
         'level',
@@ -3314,15 +3314,15 @@ function handleVitalWounds() {
           (id) => `repeating_vitalwounds_${id}_vital_wound_roll`,
         );
         getAttrs(vitalWoundRollIds, (values) => {
-          let rolls = Object.values(values);
-          let accuracy_penalty = -countRolls(rolls, 2);
-          let speed_penalty = countRolls(rolls, 3) * -5;
-          let fatigue_tolerance_penalty = -countRolls(rolls, 4) * 2;
-          let all_defenses_penalty = -countRolls(rolls, 5);
-          let brawn_penalty = -countRolls(rolls, 6) * 2;
-          let fortitude_penalty = -countRolls(rolls, 7) * 2;
-          let reflex_penalty = -countRolls(rolls, 8) * 2;
-          let mental_penalty = -countRolls(rolls, 9) * 2;
+          const rolls = Object.values(values);
+          const accuracy_penalty = -countRolls(rolls, 2);
+          const speed_penalty = countRolls(rolls, 3) * -5;
+          const fatigue_tolerance_penalty = -countRolls(rolls, 4) * 2;
+          const all_defenses_penalty = -countRolls(rolls, 5);
+          const brawn_penalty = -countRolls(rolls, 6) * 2;
+          const fortitude_penalty = -countRolls(rolls, 7) * 2;
+          const reflex_penalty = -countRolls(rolls, 8) * 2;
+          const mental_penalty = -countRolls(rolls, 9) * 2;
 
           const attrs: Attrs = {
             vital_wound_count: repeatingSectionIds.length,
@@ -3385,7 +3385,7 @@ function handleVitalWounds() {
           };
           // Sheet:opened and remove events don't include this
           if (eventInfo.triggerName.includes('vital_wound_roll')) {
-            let effect_id = eventInfo.sourceAttribute.replaceAll('_roll', '_effect');
+            const effect_id = eventInfo.sourceAttribute.replaceAll('_roll', '_effect');
             attrs[effect_id] = calcVitalWoundEffect(Number(eventInfo.newValue));
           }
           setAttrs(attrs);

@@ -1,4 +1,4 @@
-import { ActiveAbility, ActiveAbilityRank, Ritual } from '@src/abilities';
+import { ActiveAbility, ActiveAbilityRank } from '@src/abilities';
 import { formatTagLatex } from '@src/latex/format/ability_tag';
 
 export function spellTypePrefix(

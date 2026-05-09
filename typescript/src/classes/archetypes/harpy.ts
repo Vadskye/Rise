@@ -125,6 +125,6 @@ export function harpyAbilities(): RankAbility[] {
   ];
 }
 
-export function harpy(creature: Creature, rank: number) {
+export function harpy(_creature: Creature, _rank: number) {
   // Harpy wings and talons
 }

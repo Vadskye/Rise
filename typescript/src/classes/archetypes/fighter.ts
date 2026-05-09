@@ -627,7 +627,7 @@ export function equipmentTraining(creature: Creature, rank: number) {
   }
 }
 
-export function martialMastery(creature: Creature, rank: number) {
+export function martialMastery(_creature: Creature, _rank: number) {
   // Martial Mastery adds maneuvers.
 }
 

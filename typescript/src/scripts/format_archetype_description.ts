@@ -22,7 +22,7 @@ if (!fs.existsSync(filePath)) {
   process.exit(1);
 }
 
-let content = fs.readFileSync(filePath, 'utf8');
+const content = fs.readFileSync(filePath, 'utf8');
 
 /**
  * Formats a single LaTeX description block with proper indentation.

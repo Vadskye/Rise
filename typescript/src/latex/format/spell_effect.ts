@@ -1,6 +1,5 @@
 import { Ritual } from '@src/abilities';
 import {
-  ActiveAbilityRank,
   ActiveAbility,
   ActiveAbilityAttack,
   FunctionsLike,

@@ -1,22 +1,11 @@
 import {
   Class,
-  ClassArchetype,
-  RankAbility,
-  ArmorProficiencies,
-  WeaponProficiencies,
 } from './types';
-import { RiseSkill } from '../core_mechanics/skills';
-import { RiseDefense } from '../core_mechanics/attributes';
-import { ArmorKind, ArmorUsageClass } from '../equipment/armor';
 import { dedent } from '../util/dedent';
 import {
   getClassSkills,
   getClassTrainedSkills,
 } from './class_skills';
-
-import {
-  getArchetypesForClass,
-} from './archetypes';
 
 import {
   getClassName,

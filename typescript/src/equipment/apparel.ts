@@ -61,7 +61,7 @@ export function allApparel(rarityFilter?: ItemRarity): Apparel[] {
 
 export function apparelTable(): string {
   const commonApparel = allApparel('Common');
-  let rows: TableRow[] = commonApparel.flatMap((a) => fromItem(a.item, false, a.kind));
+  const rows: TableRow[] = commonApparel.flatMap((a) => fromItem(a.item, false, a.kind));
 
   standardSort(rows);
 
