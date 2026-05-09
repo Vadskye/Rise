@@ -1,8 +1,4 @@
-export interface PowerScaling {
-  dice?: DicePool;
-  powerPerDice: number;
-  powerPerPlus1Modifier: number;
-}
+import type { PowerScaling } from './power_scaling';
 
 export class DicePool {
   constructor(
@@ -15,6 +11,10 @@ export class DicePool {
 
   static empty(): DicePool {
     return new DicePool([]);
+  }
+
+  static newDie(die: { size: number }): DicePool {
+    return new DicePool([die]);
   }
 
   static xdy(count: number, size: number): DicePool {
@@ -50,6 +50,10 @@ export class DicePool {
     return new DicePool(newDice, this.flatModifier, this.maximized, this.multiplier, this.weak);
   }
 
+  addDie(size: number): DicePool {
+    return this.addDice([{ size }]);
+  }
+
   addModifier(flatModifier: number): DicePool {
     return new DicePool(
       this.dice,
@@ -62,6 +66,24 @@ export class DicePool {
 
   multiply(multiplier: number): DicePool {
     return new DicePool(this.dice, this.flatModifier, this.maximized, multiplier, this.weak);
+  }
+
+  maximize(): DicePool {
+    return new DicePool(this.dice, this.flatModifier, true, this.multiplier, this.weak);
+  }
+
+  makeWeak(): DicePool {
+    return new DicePool(this.dice, this.flatModifier, this.maximized, this.multiplier, true);
+  }
+
+  eliteDouble(): DicePool {
+    return new DicePool(
+      [...this.dice, ...this.dice].sort((a, b) => a.size - b.size),
+      this.flatModifier * 2,
+      this.maximized,
+      this.multiplier,
+      this.weak,
+    );
   }
 
   private calcFlatModifier(): number {
@@ -104,6 +126,20 @@ export class DicePool {
       }
       return diceTexts.join('+').replace(/\+-/g, '-');
     }
+  }
+
+  averageDamage(): number {
+    let sum = 0;
+    for (const die of this.dice) {
+      if (this.maximized) {
+        sum += die.size;
+      } else {
+        sum += (die.size + 1) / 2;
+      }
+    }
+    sum *= this.multiplier;
+    sum += this.flatModifier * this.multiplier * (this.weak ? 0.5 : 1);
+    return sum;
   }
 
   calcScaledPool(powerScalings: PowerScaling[], power: number): DicePool {
