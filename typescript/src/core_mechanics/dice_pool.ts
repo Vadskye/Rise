@@ -92,7 +92,7 @@ export class DicePool {
       );
       const modifier = this.calcFlatModifier();
       if (modifier !== 0) {
-        diceTexts.push(modifier > 0 ? `${modifier}` : `${modifier}`);
+        diceTexts.push(`${modifier}`);
       }
       return diceTexts.join('+').replace(/\+-/g, '-');
     }
