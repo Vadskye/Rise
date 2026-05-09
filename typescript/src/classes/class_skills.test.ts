@@ -30,9 +30,9 @@ t.test('Class Skills Logic', (t) => {
 
   t.test('latexClassSkills returns expected LaTeX output', (t) => {
     const output = latexClassSkills('Barbarian', 'Bbn');
-    t.match(output, '\\cf<Bbn><Class Skills>');
-    t.match(output, 'You have the following \\glossterm<class skills>:');
-    t.match(output, '\\subparhead<Strength> Climb, Jump, Swim.');
+    t.match(output, '\\cf{Bbn}{Class Skills}');
+    t.match(output, 'You have the following \\glossterm{class skills}:');
+    t.match(output, '\\subparhead{Strength} Climb, Jump, Swim.');
     t.end();
   });
 
