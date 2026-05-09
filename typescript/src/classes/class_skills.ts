@@ -419,23 +419,23 @@ export function latexClassSkills(cls: Class, classShorthand: string): string {
     const skillsForAttr = skills.filter((s) => SKILL_METADATA[s].attribute === attr);
     if (skillsForAttr.length > 0) {
       attributeTexts.push(
-        `\\item \\subparhead<${attr.charAt(0).toUpperCase() + attr.slice(1)}> ${formatSkillList(skillsForAttr)}.`,
+        `\\item \\subparhead{${attr.charAt(0).toUpperCase() + attr.slice(1)}} ${formatSkillList(skillsForAttr)}.`,
       );
     }
   }
 
   const skillsWithoutAttr = skills.filter((s) => SKILL_METADATA[s].attribute === null);
   if (skillsWithoutAttr.length > 0) {
-    attributeTexts.push(`\\item \\subparhead<Other> ${formatSkillList(skillsWithoutAttr)}.`);
+    attributeTexts.push(`\\item \\subparhead{Other} ${formatSkillList(skillsWithoutAttr)}.`);
   }
 
   return `
-        \\cf<${classShorthand}><Class Skills>
-        You have the following \\glossterm<class skills>:
+        \\cf{${classShorthand}}{Class Skills}
+        You have the following \\glossterm{class skills}:
 
-        \\begin<raggeditemize>
+        \\begin{raggeditemize}
             ${attributeTexts.join('\n            ')}
-        \\end<raggeditemize>
+        \\end{raggeditemize}
     `;
 }
 
