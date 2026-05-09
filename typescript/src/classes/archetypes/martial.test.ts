@@ -1,5 +1,5 @@
 import tap from 'tap';
-import { getArchetypeRankAbilities } from '../metadata';
+import { getArchetypeRankAbilities } from '../archetypes';
 
 tap.test('Barbarian Archetypes', (t) => {
   t.equal(getArchetypeRankAbilities('BattleforgedResilience').length, 7);

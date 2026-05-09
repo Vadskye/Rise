@@ -1,10 +1,10 @@
 import { ClassArchetype } from '@src/classes/types';
 import {
   getCoreClasses,
-  latexArchetypeDescription,
   latexClassSection,
   validateClassPoints,
 } from '@src/classes/metadata';
+import { latexArchetypeDescription } from '@src/classes/archetypes';
 
 export { validateClassPoints };
 
