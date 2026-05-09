@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { BARRIER_COOLDOWN, CONDITION_CRIT } from '../constants';
+import { BARRIER_COOLDOWN } from '../constants';
 
 export const thaumaturgy: MysticSphere = {
   name: 'Thaumaturgy',

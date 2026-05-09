@@ -21,7 +21,7 @@ export function getSectionIDs(
   return getCurrentCharacterSheet().getSectionIDs(sectionPrefix as any, callback);
 }
 
-export function randomInteger(max: number): number {
+export function randomInteger(_max: number): number {
   // TODO: realistic implementation
   return 4;
 }
@@ -30,7 +30,7 @@ export function generateRowID(): string {
   return getCurrentCharacterSheet().generateRowId();
 }
 
-export function removeRepeatingRow(rowKey: string): void {
+export function removeRepeatingRow(_rowKey: string): void {
   // TODO: realistic implementation
 }
 

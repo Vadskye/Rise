@@ -10,11 +10,7 @@ import {
   createCreature,
   CombatSimulationResult,
 } from '@src/combat/combat_scenario';
-import {
-  clearAllCharacterSheets,
-  resetDefaultCharacterSheet,
-} from '@src/character_sheet/current_character_sheet';
-import { handleEverything } from '@src/character_sheet/sheet_worker';
+
 
 function assertExpectedWinRate(
   tap: any,
