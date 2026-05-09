@@ -640,6 +640,6 @@ export function scoutModifiers(creature: Creature, rank: number) {
   }
 }
 
-export function wildernessWarriorModifiers(creature: Creature, rank: number) {
+export function wildernessWarriorModifiers(_creature: Creature, _rank: number) {
   // Maneuvers
 }

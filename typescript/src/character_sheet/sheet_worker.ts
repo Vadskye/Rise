@@ -808,7 +808,7 @@ function handleResources() {
   handleTrainedSkills();
 }
 
-function calcAccuracyCrScaling(level: number, elite?: boolean) {
+function calcAccuracyCrScaling(level: number, _elite?: boolean) {
   let levelScaling = 0;
   const levels_with_accuracy_bonuses = [13, 21];
   for (const bonus_level of levels_with_accuracy_bonuses) {

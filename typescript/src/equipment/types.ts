@@ -1,4 +1,4 @@
-import { Attribute, Defense, Tag } from '../types/core';
+
 import { ActiveAbility } from '../abilities';
 
 export type ItemRarity = 'Common' | 'Relic';

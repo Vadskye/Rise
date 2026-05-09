@@ -520,7 +520,7 @@ export function bardicMusicModifiers(creature: Creature, rank: number) {
   }
 }
 
-export function combatTricksterModifiers(creature: Creature, rank: number) {
+export function combatTricksterModifiers(_creature: Creature, _rank: number) {
   // Maneuvers
 }
 
