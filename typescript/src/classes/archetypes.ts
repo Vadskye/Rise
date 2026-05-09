@@ -496,157 +496,157 @@ export function getArchetypeRankAbilities(archetype: ClassArchetype): RankAbilit
   switch (archetype) {
     // Barbarian
     case 'BattleforgedResilience':
-      return barbarian.battleforgedResilienceAbilities();
+      return barbarian.battleforgedResilience();
     case 'Battlerager':
-      return barbarian.battleragerAbilities();
+      return barbarian.battlerager();
     case 'OutlandSavage':
-      return barbarian.outlandSavageAbilities();
+      return barbarian.outlandSavage();
     case 'PrimalWarrior':
-      return barbarian.primalWarriorAbilities();
+      return barbarian.primalWarrior();
     case 'Totemist':
-      return barbarian.totemistAbilities();
+      return barbarian.totemist();
 
     // Fighter
     case 'CombatDiscipline':
-      return fighter.combatDisciplineAbilities();
+      return fighter.combatDiscipline();
     case 'EquipmentTraining':
-      return fighter.equipmentTrainingAbilities();
+      return fighter.equipmentTraining();
     case 'MartialMastery':
-      return fighter.martialMasteryAbilities();
+      return fighter.martialMastery();
     case 'Sentinel':
-      return fighter.sentinelAbilities();
+      return fighter.sentinel();
     case 'Tactician':
-      return fighter.tacticianAbilities();
+      return fighter.tactician();
 
     // Monk
     case 'Airdancer':
-      return monk.airdancerAbilities();
+      return monk.airdancer();
     case 'EsotericWarrior':
-      return monk.esotericWarriorAbilities();
+      return monk.esotericWarrior();
     case 'Ki':
-      return monk.kiAbilities();
+      return monk.ki();
     case 'PerfectedForm':
-      return monk.perfectedFormAbilities();
+      return monk.perfectedForm();
     case 'TranscendentSage':
-      return monk.transcendentSageAbilities();
+      return monk.transcendentSage();
 
     // Ranger
     case 'Beastmaster':
-      return ranger.beastmasterAbilities();
+      return ranger.beastmaster();
     case 'BoundaryWarden':
-      return ranger.boundaryWardenAbilities();
+      return ranger.boundaryWarden();
     case 'Huntmaster':
-      return ranger.huntmasterAbilities();
+      return ranger.huntmaster();
     case 'Scout':
-      return ranger.scoutAbilities();
+      return ranger.scout();
     case 'WildernessWarrior':
-      return ranger.wildernessWarriorAbilities();
+      return ranger.wildernessWarrior();
 
     // Rogue
     case 'Assassin':
-      return rogue.assassinAbilities();
+      return rogue.assassin();
     case 'BardicMusic':
-      return rogue.bardicMusicAbilities();
+      return rogue.bardicMusic();
     case 'CombatTrickster':
-      return rogue.combatTricksterAbilities();
+      return rogue.combatTrickster();
     case 'JackOfAllTrades':
-      return rogue.jackOfAllTradesAbilities();
+      return rogue.jackOfAllTrades();
     case 'SuaveScoundrel':
-      return rogue.suaveScoundrelAbilities();
+      return rogue.suaveScoundrel();
 
     // Cleric
     case 'ClericDivineMagic':
-      return cleric.divineMagicAbilities();
+      return cleric.divineMagic();
     case 'DivineSpellMastery':
-      return cleric.divineSpellMasteryAbilities();
+      return cleric.divineSpellMastery();
     case 'DomainInfluence':
-      return cleric.domainInfluenceAbilities();
+      return cleric.domainInfluence();
     case 'Healer':
-      return cleric.healerAbilities();
+      return cleric.healer();
     case 'Preacher':
-      return cleric.preacherAbilities();
+      return cleric.preacher();
 
     // Druid
     case 'Elementalist':
-      return druid.elementalistAbilities();
+      return druid.elementalist();
     case 'NatureMagic':
-      return druid.natureMagicAbilities();
+      return druid.natureMagic();
     case 'NatureSpellMastery':
-      return druid.natureSpellMasteryAbilities();
+      return druid.natureSpellMastery();
     case 'Shifter':
-      return druid.shifterAbilities();
+      return druid.shifter();
     case 'Wildspeaker':
-      return druid.wildspeakerAbilities();
+      return druid.wildspeaker();
 
     // Paladin
     case 'DevotedParagon':
-      return paladin.devotedParagonAbilities();
+      return paladin.devotedParagon();
     case 'PaladinDivineMagic':
-      return paladin.divineMagicAbilities();
+      return paladin.divineMagic();
     case 'DivineSpellExpertise':
-      return paladin.divineSpellExpertiseAbilities();
+      return paladin.divineSpellExpertise();
     case 'StalwartGuardian':
-      return paladin.stalwartGuardianAbilities();
+      return paladin.stalwartGuardian();
     case 'ZealousWarrior':
-      return paladin.zealousWarriorAbilities();
+      return paladin.zealousWarrior();
 
     // Sorcerer
     case 'SorcererArcaneMagic':
-      return sorcerer.arcaneMagicAbilities();
+      return sorcerer.arcaneMagic();
     case 'SorcererArcaneSpellMastery':
-      return sorcerer.arcaneSpellMasteryAbilities();
+      return sorcerer.arcaneSpellMastery();
     case 'DraconicMagic':
-      return sorcerer.draconicMagicAbilities();
+      return sorcerer.draconicMagic();
     case 'InnateArcanist':
-      return sorcerer.innateArcanistAbilities();
+      return sorcerer.innateArcanist();
     case 'WildMagic':
-      return sorcerer.wildMagicAbilities();
+      return sorcerer.wildMagic();
 
     // Votive
     case 'CovenantKeeper':
-      return votive.covenantKeeperAbilities();
+      return votive.covenantKeeper();
     case 'PactMagic':
-      return votive.pactMagicAbilities();
+      return votive.pactMagic();
     case 'PactSpellMastery':
-      return votive.pactSpellMasteryAbilities();
+      return votive.pactSpellMastery();
     case 'PactboundWarrior':
-      return votive.pactboundWarriorAbilities();
+      return votive.pactboundWarrior();
     case 'Soulforged':
-      return votive.soulforgedAbilities();
+      return votive.soulforged();
 
     // Wizard
     case 'Alchemist':
-      return wizard.alchemistAbilities();
+      return wizard.alchemist();
     case 'WizardArcaneMagic':
-      return wizard.arcaneMagicAbilities();
+      return wizard.arcaneMagic();
     case 'WizardArcaneSpellMastery':
-      return wizard.arcaneSpellMasteryAbilities();
+      return wizard.arcaneSpellMastery();
     case 'ArcaneScholar':
-      return wizard.arcaneScholarAbilities();
+      return wizard.arcaneScholar();
     case 'SchoolSpecialist':
-      return wizard.schoolSpecialistAbilities();
+      return wizard.schoolSpecialist();
 
     // Uncommon species
     case 'Automaton':
-      return automaton.automatonAbilities();
+      return automaton.automaton();
     case 'Dragon':
-      return dragon.dragonAbilities();
+      return dragon.dragon();
     case 'Dryad':
-      return dryad.dryadAbilities();
+      return dryad.dryad();
     case 'Harpy':
-      return harpy.harpyAbilities();
+      return harpy.harpy();
     case 'Incarnation':
-      return incarnation.incarnationAbilities();
+      return incarnation.incarnation();
     case 'Naiad':
-      return naiad.naiadAbilities();
+      return naiad.naiad();
     case 'Oozeborn':
-      return oozeborn.oozebornAbilities();
+      return oozeborn.oozeborn();
     case 'Treant':
-      return treant.treantAbilities();
+      return treant.treant();
     case 'Troll':
-      return troll.trollAbilities();
+      return troll.troll();
     case 'Vampire':
-      return vampire.vampireAbilities();
+      return vampire.vampire();
 
     default:
       return [];

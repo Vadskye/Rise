@@ -1,7 +1,7 @@
 import { Creature } from '@src/character_sheet/creature';
 import { RankAbility } from '../types';
 
-export function treantAbilities(): RankAbility[] {
+export function treant(): RankAbility[] {
   return [
     {
       complexity: 1,
@@ -97,7 +97,7 @@ export function treantAbilities(): RankAbility[] {
   ];
 }
 
-export function treant(creature: Creature, rank: number) {
+export function treantModifiers(creature: Creature, rank: number) {
   // Sturdy as the Mighty Oak
   if (rank >= 2) {
     creature.addSimpleModifier({

@@ -2,7 +2,7 @@ import { Creature } from '@src/character_sheet/creature';
 import { RankAbility } from '../types';
 import { addStandardManeuverModifiers } from '../definitions/standard_modifiers';
 
-export function assassinAbilities(): RankAbility[] {
+export function assassin(): RankAbility[] {
   const abilities: RankAbility[] = [
     {
       complexity: 2,
@@ -133,7 +133,7 @@ function addSneakAttack(abilities: RankAbility[]) {
   }
 }
 
-export function bardicMusicAbilities(): RankAbility[] {
+export function bardicMusic(): RankAbility[] {
   return [
     {
       complexity: 3,
@@ -228,7 +228,7 @@ export function bardicMusicAbilities(): RankAbility[] {
   ];
 }
 
-export function combatTricksterAbilities(): RankAbility[] {
+export function combatTrickster(): RankAbility[] {
   const abilities: RankAbility[] = [
     {
       complexity: 3,
@@ -334,7 +334,7 @@ export function combatTricksterAbilities(): RankAbility[] {
   return abilities;
 }
 
-export function jackOfAllTradesAbilities(): RankAbility[] {
+export function jackOfAllTrades(): RankAbility[] {
   return [
     {
       complexity: 2,
@@ -407,7 +407,7 @@ export function jackOfAllTradesAbilities(): RankAbility[] {
   ];
 }
 
-export function suaveScoundrelAbilities(): RankAbility[] {
+export function suaveScoundrel(): RankAbility[] {
   return [
     {
       complexity: 2,
@@ -498,7 +498,7 @@ export function suaveScoundrelAbilities(): RankAbility[] {
   ];
 }
 
-export function assassin(creature: Creature, rank: number) {
+export function assassinModifiers(creature: Creature, rank: number) {
   if (rank >= 4) {
     creature.addSimpleModifier({
       name: "Assassin's Grace",
@@ -508,7 +508,7 @@ export function assassin(creature: Creature, rank: number) {
   }
 }
 
-export function bardicMusic(creature: Creature, rank: number) {
+export function bardicMusicModifiers(creature: Creature, rank: number) {
   if (rank >= 4) {
     creature.addCustomModifier({
       name: 'Rhythm of War',
@@ -520,11 +520,11 @@ export function bardicMusic(creature: Creature, rank: number) {
   }
 }
 
-export function combatTrickster(creature: Creature, rank: number) {
+export function combatTricksterModifiers(creature: Creature, rank: number) {
   // Maneuvers
 }
 
-export function jackOfAllTrades(creature: Creature, rank: number) {
+export function jackOfAllTradesModifiers(creature: Creature, rank: number) {
   if (rank >= 2) {
     creature.addSimpleModifier({
       name: 'Skill Exemplar',
@@ -559,7 +559,7 @@ export function jackOfAllTrades(creature: Creature, rank: number) {
   }
 }
 
-export function suaveScoundrel(creature: Creature, rank: number) {
+export function suaveScoundrelModifiers(creature: Creature, rank: number) {
   if (rank >= 2) {
     const bonus = rank >= 6 ? 4 : 2;
     creature.addCustomModifier({

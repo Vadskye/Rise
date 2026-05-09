@@ -1,7 +1,7 @@
 import { Creature } from '@src/character_sheet/creature';
 import { RankAbility } from '../types';
 
-export function dragonAbilities(): RankAbility[] {
+export function dragon(): RankAbility[] {
   return [
     {
       complexity: 2,
@@ -112,7 +112,7 @@ export function dragonAbilities(): RankAbility[] {
   ];
 }
 
-export function dragon(creature: Creature, rank: number) {
+export function dragonModifiers(creature: Creature, rank: number) {
   // Draconic Power
   if (rank >= 2) {
     creature.addSimpleModifier({

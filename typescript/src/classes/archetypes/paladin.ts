@@ -1,7 +1,7 @@
 import { Creature } from '@src/character_sheet/creature';
 import { RankAbility } from '../types';
 
-export function devotedParagonAbilities(): RankAbility[] {
+export function devotedParagon(): RankAbility[] {
   return [
     {
       complexity: 2,
@@ -111,7 +111,7 @@ export function devotedParagonAbilities(): RankAbility[] {
   ];
 }
 
-export function divineMagicAbilities(): RankAbility[] {
+export function divineMagic(): RankAbility[] {
   return [
     {
       complexity: 4,
@@ -142,7 +142,7 @@ export function divineMagicAbilities(): RankAbility[] {
   ];
 }
 
-export function divineSpellExpertiseAbilities(): RankAbility[] {
+export function divineSpellExpertise(): RankAbility[] {
   return [
     {
       complexity: 2,
@@ -212,7 +212,7 @@ export function divineSpellExpertiseAbilities(): RankAbility[] {
   ];
 }
 
-export function stalwartGuardianAbilities(): RankAbility[] {
+export function stalwartGuardian(): RankAbility[] {
   return [
     {
       complexity: 2,
@@ -299,7 +299,7 @@ export function stalwartGuardianAbilities(): RankAbility[] {
   ];
 }
 
-export function zealousWarriorAbilities(): RankAbility[] {
+export function zealousWarrior(): RankAbility[] {
   return [
     {
       complexity: 2,
@@ -405,7 +405,7 @@ export function zealousWarriorAbilities(): RankAbility[] {
   ];
 }
 
-export function devotedParagon(creature: Creature, rank: number) {
+export function devotedParagonModifiers(creature: Creature, rank: number) {
   if (rank >= 3) {
     const bonus = rank >= 6 ? 2 : 1;
     creature.addCustomModifier({
@@ -418,9 +418,9 @@ export function devotedParagon(creature: Creature, rank: number) {
   }
 }
 
-export function divineMagic(creature: Creature, rank: number) {}
+export function divineMagicModifiers(creature: Creature, rank: number) {}
 
-export function divineSpellExpertise(creature: Creature, rank: number) {
+export function divineSpellExpertiseModifiers(creature: Creature, rank: number) {
   if (rank >= 3) {
     creature.addSimpleModifier({
       name: 'Spell-Trained Mind',
@@ -440,7 +440,7 @@ export function divineSpellExpertise(creature: Creature, rank: number) {
   }
 }
 
-export function stalwartGuardian(creature: Creature, rank: number) {
+export function stalwartGuardianModifiers(creature: Creature, rank: number) {
   if (rank >= 2) {
     const bonus = rank >= 5 ? 2 : 1;
     creature.addCustomModifier({
@@ -471,7 +471,7 @@ export function stalwartGuardian(creature: Creature, rank: number) {
   }
 }
 
-export function zealousWarrior(creature: Creature, rank: number) {
+export function zealousWarriorModifiers(creature: Creature, rank: number) {
   if (rank >= 5) {
     creature.addSimpleModifier({
       name: 'Zealous Offense',

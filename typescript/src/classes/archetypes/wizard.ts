@@ -2,7 +2,7 @@ import { Creature } from '@src/character_sheet/creature';
 import { RankAbility } from '../types';
 import { addStandardSpellModifiers } from '../definitions/standard_modifiers';
 
-export function alchemistAbilities(): RankAbility[] {
+export function alchemist(): RankAbility[] {
   return [
     {
       complexity: 3,
@@ -126,7 +126,7 @@ export function alchemistAbilities(): RankAbility[] {
   ];
 }
 
-export function arcaneMagicAbilities(): RankAbility[] {
+export function arcaneMagic(): RankAbility[] {
   const abilities: RankAbility[] = [
     {
       complexity: 4,
@@ -181,7 +181,7 @@ export function arcaneMagicAbilities(): RankAbility[] {
   return abilities;
 }
 
-export function arcaneScholarAbilities(): RankAbility[] {
+export function arcaneScholar(): RankAbility[] {
   return [
     {
       complexity: 1,
@@ -326,7 +326,7 @@ export function arcaneScholarAbilities(): RankAbility[] {
   ];
 }
 
-export function arcaneSpellMasteryAbilities(): RankAbility[] {
+export function arcaneSpellMastery(): RankAbility[] {
   return [
     {
       complexity: 2,
@@ -432,7 +432,7 @@ export function arcaneSpellMasteryAbilities(): RankAbility[] {
   ];
 }
 
-export function schoolSpecialistAbilities(): RankAbility[] {
+export function schoolSpecialist(): RankAbility[] {
   return [
     {
       complexity: 1,
@@ -577,7 +577,7 @@ export function schoolSpecialistAbilities(): RankAbility[] {
   ];
 }
 
-export function alchemist(creature: Creature, rank: number) {
+export function alchemistModifiers(creature: Creature, rank: number) {
   if (rank >= 3) {
     creature.addSimpleModifier({
       name: 'Alchemical Tolerance',
@@ -595,7 +595,7 @@ export function alchemist(creature: Creature, rank: number) {
   }
 }
 
-export function arcaneMagic(creature: Creature, rank: number) {
+export function arcaneMagicModifiers(creature: Creature, rank: number) {
   if (rank >= 1) {
     creature.addCustomModifier({
       name: 'Mage Armor',
@@ -607,9 +607,9 @@ export function arcaneMagic(creature: Creature, rank: number) {
   }
 }
 
-export function arcaneScholar(creature: Creature, rank: number) {}
+export function arcaneScholarModifiers(_creature: Creature, _rank: number) {}
 
-export function arcaneSpellMastery(creature: Creature, rank: number) {
+export function arcaneSpellMasteryModifiers(creature: Creature, rank: number) {
   if (rank >= 4) {
     creature.addSimpleModifier({
       name: 'Spell-Trained Understanding',
@@ -629,7 +629,7 @@ export function arcaneSpellMastery(creature: Creature, rank: number) {
   }
 }
 
-export function schoolSpecialist(creature: Creature, rank: number) {
+export function schoolSpecialistModifiers(creature: Creature, rank: number) {
   // Assuming Evocation for simplicity
   if (rank >= 1) {
     creature.addSimpleModifier({

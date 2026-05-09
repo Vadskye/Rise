@@ -1,7 +1,7 @@
 import { Creature } from '@src/character_sheet/creature';
 import { RankAbility } from '../types';
 
-export function harpyAbilities(): RankAbility[] {
+export function harpy(): RankAbility[] {
   return [
     {
       complexity: 2,
@@ -125,6 +125,6 @@ export function harpyAbilities(): RankAbility[] {
   ];
 }
 
-export function harpy(_creature: Creature, _rank: number) {
+export function harpyModifiers(_creature: Creature, _rank: number) {
   // Harpy wings and talons
 }
