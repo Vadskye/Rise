@@ -1,13 +1,15 @@
 import {
   getUncommonClasses,
-  latexBasicClassAbilities,
-  latexifyClass,
   validateClassPoints,
 } from '../classes/metadata';
 import {
-  latexArchetypeDescription,
   getArchetypesForClass,
 } from '../classes/archetypes';
+import {
+  latexBasicClassAbilities,
+  latexifyClass,
+  latexArchetypeDescription,
+} from '../latex/classes';
 import fs from 'fs';
 import path from 'path';
 
