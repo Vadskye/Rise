@@ -61,7 +61,6 @@ export function dragon(): RankAbility[] {
       description: `
         Your wings grow larger, granting you a limited ability to fly.
         You gain an average \\glossterm{fly speed} with a maximum height of 10 feet (see \\pcref{Flight}).
-        As a \\glossterm{free action}, you can increase your \\glossterm{fatigue level} by one to ignore this height limit this turn.
       `,
     },
     {

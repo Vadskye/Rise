@@ -176,7 +176,6 @@ export function clericDomains(): string {
         \\magicaldomainability{Aspect} You gain an average \\glossterm{glide speed} (see \\pcref{Gliding}).
         In addition, you take half damage from \\glossterm{falling damage}.
         \\magicaldomainability{Essence} You gain a slow \\glossterm{fly speed} with a maximum height of 15 feet (see \\pcref{Flight}).
-        As a \\glossterm{free action}, you can increase your \\glossterm{fatigue level} by one to ignore this height limit this turn.
         \\magicaldomainability{Mastery} Your fly speed improves to average speed, with a maximum height of 30 feet.
 
         \\subsubsection{Storm Domain}
