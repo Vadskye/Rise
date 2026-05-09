@@ -1,10 +1,5 @@
 import { Ritual } from '@src/abilities';
-import {
-  ActiveAbilityRank,
-  ActiveAbility,
-  ActiveAbilityAttack,
-  FunctionsLike,
-} from '@src/abilities/active_abilities';
+import { ActiveAbility, ActiveAbilityAttack, FunctionsLike } from '@src/abilities/active_abilities';
 
 export function assertEndsWithPeriod(text: string | null | undefined, effectName: string): void {
   if (text && !(text.trim().endsWith('.') || text.trim().endsWith('end{mdframeditemize}'))) {

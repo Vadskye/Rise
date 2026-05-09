@@ -15,7 +15,12 @@ import {
   getWeaponPowerMultiplier,
   MonsterWeapon,
 } from '@src/monsters/weapons';
-import { addAccuracyToEffect } from '@src/latex/monsters/replace_placeholders';
+import {
+  addAccuracyToEffect,
+  replaceAbilityPlaceholders,
+} from '@src/latex/monsters/replace_placeholders';
+import { DamageScaling } from '@src/core_mechanics/damage_scaling';
+import { DicePool } from '@src/core_mechanics/dice_pool';
 
 // It's the same except that `effect` and `weapon` are mandatory.
 export interface StrikeActiveAbility extends Omit<ActiveAbility, 'effect' | 'weapon'> {
@@ -37,6 +42,10 @@ export function convertSpellToMonsterLatex(monster: Creature, spell: SpellDefini
 export function convertAbilityToMonsterLatex(monster: Creature, ability: ActiveAbility): string {
   let latex = convertAbilityToLatex(reformatAsMonsterAbility(monster, ability), true);
   latex = replaceGenericTerms(monster, ability, latex);
+  latex = replaceAbilityPlaceholders(monster, latex, {
+    isMagical: ability.isMagical,
+    weapon: ability.weapon,
+  });
   checkSuccessfullyConverted(latex, monster.name, ability.name);
   return latex;
 }
@@ -113,7 +122,7 @@ function replaceGenericTerms(
   replace(/\bIn addition, you regain\b/g, 'In addition, the $name regains');
   replace(/\b([yY])ou( briefly| \\glossterm{briefly})? take\b/g, (_, capital, briefly) => {
     const the = capital === 'Y' ? 'The' : 'the';
-    return `${the} $name${briefly} takes`;
+    return `${the} $name${briefly || ''} takes`;
   });
   replace(/\bYou reduce your\b/g, 'The $name reduces its');
   replace(/\bYou inscribe\b/g, 'The $name inscribes');
@@ -755,6 +764,7 @@ function parseDamageRank(rankText: string): DamageRank {
 // rank.
 // Despite the name, the exact same calculations are used for both HP and damage, so this
 // handles both.
+
 export function calculateDamage(
   monster: Creature,
   ability: ActiveAbility,
@@ -762,84 +772,14 @@ export function calculateDamage(
   lowPowerScaling: boolean,
 ): string {
   const excessRank = Math.max(0, monster.calculateRank() - ability.rank);
+  const scaling = lowPowerScaling ? DamageScaling.drl(damageRank) : DamageScaling.dr(damageRank);
+  const relevantPower = monster.getRelevantPower(ability.isMagical);
 
-  if (lowPowerScaling) {
-    const damageDice = {
-      0: '1d6',
-      1: '1d10',
-      2: `1d8+${1 + excessRank}d6`,
-      3: `${2 + excessRank}d10`,
-      4: `${3 + excessRank}d10`,
-      5: `${5 + 2 * excessRank}d8`,
-      6: `${7 + 3 * excessRank}d8`,
-      7: `${8 + 3 * excessRank}d10`,
-      8: `${11 + 5 * excessRank}d10`,
-      9: `${16 + 6 * excessRank}d10`,
-      10: `${22 + 8 * excessRank}d10`,
-    }[damageRank];
-
-    const flatDamage =
-      {
-        0: excessRank,
-        1: 2 * excessRank,
-      }[damageRank as number] || 0;
-
-    if (flatDamage) {
-      return `${damageDice}\\plus${flatDamage}`;
-    } else {
-      return `${damageDice}`;
-    }
-  } else {
-    // Normally, you'd calculate the "base" damage dice first, then add on the extra dice
-    // from rank scaling. But we don't want to do dice pool math here. Instead, we can
-    // calculate the effective power that each excess rank provides.
-    //
-    // In the special case of ranks 2 and 3, this doesn't work, since those add dice that
-    // aren't normally part of the power scaling.
-    const bonusPowerPerExcessRank = {
-      0: 2,
-      1: 4,
-      2: 0,
-      3: 0,
-      4: 2,
-      5: 2,
-      6: 4,
-      7: 4,
-      8: 4,
-      9: 4,
-      10: 4,
-    }[damageRank];
-    const effectivePower =
-      monster.getRelevantPower(ability.isMagical) + excessRank * bonusPowerPerExcessRank;
-
-    const damageDice = {
-      0: '1d4',
-      1: '1d6',
-      2: excessRank ? `1d10\\plus${excessRank}d6` : '1d10',
-      3: excessRank ? `1d8\\plus${excessRank}d6` : '1d8',
-      4: `${Math.floor(effectivePower / 2)}d6`,
-      5: `${Math.floor(effectivePower / 2 + 1)}d6`,
-      6: `${Math.floor(effectivePower / 2 + 1)}d8`,
-      7: `${Math.floor(effectivePower / 2 + 1)}d10`,
-      8: `${Math.floor(effectivePower + 1)}d6`,
-      9: `${Math.floor(effectivePower + 2)}d8`,
-      10: `${Math.floor(effectivePower + 2)}d10`,
-    }[damageRank];
-
-    const flatDamage =
-      {
-        0: Math.floor(effectivePower / 2),
-        1: Math.floor(effectivePower / 2),
-        2: Math.floor(effectivePower / 2),
-        3: effectivePower,
-      }[damageRank as number] || 0;
-
-    if (flatDamage) {
-      return `${damageDice}\\plus${flatDamage}`;
-    } else {
-      return `${damageDice}`;
-    }
-  }
+  return scaling
+    .scaledPool(relevantPower, excessRank)
+    .toString()
+    .replace(/\+/g, '\\plus')
+    .replace(/-/g, '\\minus');
 }
 
 function reformatAbilityCost(ability: Pick<ActiveAbility, 'cost'>) {
@@ -894,7 +834,7 @@ export function calculateStrikeDamage(
   const strikeSentence: string = strikeSentenceMatch[1];
 
   let globalDamageMultiplier = 1;
-  let globalMultiplierMatch = strikeSentence.match(/deals (double|triple|quadruple) damage/);
+  const globalMultiplierMatch = strikeSentence.match(/deals (double|triple|quadruple) damage/);
   if (globalMultiplierMatch) {
     globalDamageMultiplier =
       {
@@ -910,7 +850,7 @@ export function calculateStrikeDamage(
   }
 
   let weaponDamageMultiplier = 1;
-  let weaponMultiplierMatch = strikeSentence.match(
+  const weaponMultiplierMatch = strikeSentence.match(
     /deals (double|triple|quadruple|five times|six times|seven times|eight times) (\\glossterm{weapon damage}|weapon damage)/,
   );
   if (weaponMultiplierMatch) {
@@ -971,12 +911,7 @@ export function calculateStrikeDamage(
 
   const damageFromPower =
     globalDamageMultiplier * (Math.floor(relevantPower * powerMultiplier) + extraFlatDamage);
-  let damageFromPowerText = '';
-  if (damageFromPower > 0) {
-    damageFromPowerText = `+${damageFromPower}`;
-  } else if (damageFromPower < 0) {
-    damageFromPowerText = `${damageFromPower}`;
-  }
-
-  return `${damageDice.count * globalDamageMultiplier}d${damageDice.size}${damageFromPowerText}`;
+  const diceCount = damageDice.count * globalDamageMultiplier;
+  const pool = DicePool.xdyPlus(diceCount, damageDice.size, damageFromPower);
+  return pool.toString();
 }
