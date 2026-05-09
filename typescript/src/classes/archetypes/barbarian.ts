@@ -110,6 +110,7 @@ export function battlerager(): RankAbility[] {
           \\begin{raggeditemize}
             \\item You gain a \\plus2 accuracy bonus with \\glossterm{mundane} abilities that are not \\weapontag{Projectile} strikes.
             \\item You take a \\minus2 penalty to your Armor and Reflex defenses.
+            \\item You are \\steeled.
             \\item You are \\enraged.
           \\end{raggeditemize}
 
