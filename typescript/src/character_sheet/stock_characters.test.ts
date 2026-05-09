@@ -1,6 +1,6 @@
 import t from 'tap';
 import { StockCharacters } from '@src/character_sheet/stock_characters';
-import { clearAllCharacterSheets } from '@src/character_sheet/current_character_sheet';
+
 import {
   loadAllMonsters,
   getMonster,

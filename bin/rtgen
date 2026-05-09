@@ -6,11 +6,33 @@ tsc --incremental; or exit 1
 # TODO: keep building the Typescript version of the monster manual so this can
 # be enabled.
 npm run script -- src/scripts/generate_latex.js -t monster_descriptions -o ../core_book/generated/monster_descriptions.tex
+npm run script -- src/scripts/generate_latex.js -t modules -o ../core_book/generated/modules.tex
 npm run script -- src/scripts/generate_latex.js -t mystic_sphere_lists -o ../comprehensive_codex/generated/mystic_sphere_lists.tex
 npm run script -- src/scripts/generate_latex.js -t mystic_sphere_spell_summaries -o ../comprehensive_codex/generated/mystic_sphere_spell_summaries.tex
 npm run script -- src/scripts/generate_latex.js -t mystic_sphere_ritual_summaries -o ../comprehensive_codex/generated/mystic_sphere_ritual_summaries.tex
 npm run script -- src/scripts/generate_latex.js -t mystic_sphere_descriptions -o ../comprehensive_codex/generated/mystic_sphere_descriptions.tex
 npm run script -- src/scripts/generate_latex.js -t ritual_descriptions -o ../comprehensive_codex/generated/ritual_descriptions.tex
+npm run script -- src/scripts/generate_latex.js -t archetype_descriptions -o ../comprehensive_codex/generated/archetype_descriptions.tex
+npm run script -- src/scripts/generate_latex.js -t classes_chapter -o ../comprehensive_codex/generated/classes.tex
 npm run script -- src/scripts/generate_latex.js -t combat_style_lists -o ../comprehensive_codex/generated/combat_style_lists.tex
 npm run script -- src/scripts/generate_latex.js -t combat_style_summaries -o ../comprehensive_codex/generated/combat_style_summaries.tex
 npm run script -- src/scripts/generate_latex.js -t combat_style_descriptions -o ../comprehensive_codex/generated/combat_style_descriptions.tex
+
+# Equipment
+npm run script -- src/scripts/generate_latex.js -t equipment_magic_armor_descriptions -o ../comprehensive_codex/generated/magic_armor.tex
+npm run script -- src/scripts/generate_latex.js -t equipment_magic_armor_tables -o ../comprehensive_codex/generated/magic_armor_table.tex
+npm run script -- src/scripts/generate_latex.js -t equipment_magic_weapons_descriptions -o ../comprehensive_codex/generated/magic_weapons.tex
+npm run script -- src/scripts/generate_latex.js -t equipment_magic_weapons_tables -o ../comprehensive_codex/generated/magic_weapons_table.tex
+npm run script -- src/scripts/generate_latex.js -t equipment_implements_descriptions -o ../comprehensive_codex/generated/implements.tex
+npm run script -- src/scripts/generate_latex.js -t equipment_implements_tables -o ../comprehensive_codex/generated/implements_table.tex
+npm run script -- src/scripts/generate_latex.js -t equipment_apparel_descriptions -o ../comprehensive_codex/generated/apparel.tex
+npm run script -- src/scripts/generate_latex.js -t equipment_apparel_tables -o ../comprehensive_codex/generated/apparel_table.tex
+npm run script -- src/scripts/generate_latex.js -t equipment_consumable_tools_descriptions -o ../comprehensive_codex/generated/consumable_tools.tex
+npm run script -- src/scripts/generate_latex.js -t equipment_consumable_tools_tables -o ../comprehensive_codex/generated/consumable_tools_table.tex
+npm run script -- src/scripts/generate_latex.js -t equipment_permanent_tools_descriptions -o ../comprehensive_codex/generated/permanent_tools.tex
+npm run script -- src/scripts/generate_latex.js -t equipment_permanent_tools_tables -o ../comprehensive_codex/generated/permanent_tools_table.tex
+npm run script -- src/scripts/generate_latex.js -t equipment_relic_descriptions -o ../comprehensive_codex/generated/relics.tex
+npm run script -- src/scripts/generate_latex.js -t equipment_relic_tables -o ../comprehensive_codex/generated/relics_table.tex
+npm run script -- src/scripts/generate_latex.js -t equipment_everything_table -o ../comprehensive_codex/generated/everything_table.tex
+
+npm run script -- src/scripts/generate_uncommon_species_classes.js

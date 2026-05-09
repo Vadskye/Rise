@@ -861,7 +861,7 @@ function addNecromancers(grimoire: Grimoire) {
           creature.addPassiveAbility({
             name: 'Life Suppression',
             effect: `
-              The $name is immune to \atLife attacks.
+              The $name is immune to \\atLife attacks.
             `,
           });
 

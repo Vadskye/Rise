@@ -1,20 +1,6 @@
 import { Creature } from '@src/character_sheet/creature';
 import { CombatTeam, FightState } from '@src/combat/combat_scenario';
-import { Grimoire } from '@src/monsters/grimoire';
-import { handleEverything } from '@src/character_sheet/sheet_worker';
-import {
-  setCurrentCharacterSheet,
-  getCurrentCharacterSheet,
-  clearAllCharacterSheets,
-} from '@src/character_sheet/current_character_sheet';
-import { RiseBaseClass, RiseWeaponTag } from '@src/character_sheet/rise_data';
-import {
-  getWeaponAccuracy,
-  getWeaponDamageDice,
-  getWeaponPowerMultiplier,
-  MonsterWeapon,
-  MONSTER_WEAPONS,
-} from '@src/monsters/weapons';
+import { getWeaponAccuracy } from '@src/monsters/weapons';
 import { ActiveAbility } from '@src/abilities/active_abilities';
 import { calculateStrikeDamage } from '@src/latex/monsters/player_abilities';
 import { rollD10, rollDice } from '@src/combat/dice';

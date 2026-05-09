@@ -34,9 +34,9 @@ t.test('text replacement', (t) => {
     t.end();
   });
 
-  t.test('should replace "-" followed by a digit with "minus" and the digit', (t) => {
-    t.equal(latexify('-5'), '\\minus5');
-    t.equal(latexify('word-6'), 'word\\minus6');
+  t.test('should replace " -" followed by a digit with "minus" and the digit', (t) => {
+    t.equal(latexify(' -5'), ' \\minus5');
+    t.equal(latexify('word -6'), 'word \\minus6');
     t.matchOnlyStrict(capturedWarnings, []);
     t.end();
   });

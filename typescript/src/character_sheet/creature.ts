@@ -8,27 +8,27 @@ import {
 import { handleEverything, MonsterAttackUsageTime } from '@src/character_sheet/sheet_worker';
 import {
   RiseAlignment,
-  RiseAttribute,
-  RiseAttributeModifier,
   RiseBaseClass,
-  RiseCraftSkill,
-  RISE_CRAFT_SKILLS,
   RiseCreatureOrigin,
   RiseCreatureType,
   RiseDebuff,
-  RiseDefense,
-  RiseJumpDistance,
-  RiseKnowledgeSkill,
-  RISE_KNOWLEDGE_SKILLS,
   RiseRole,
   RiseSize,
-  RiseSkill,
   RiseSpecialDefense,
   RiseTag,
   RiseWeaponTag,
   RiseTrait,
   isTrait,
 } from '@src/character_sheet/rise_data';
+import {
+  RiseCraftSkill,
+  RISE_CRAFT_SKILLS,
+  RiseJumpDistance,
+  RiseKnowledgeSkill,
+  RISE_KNOWLEDGE_SKILLS,
+  RiseSkill,
+} from '@src/core_mechanics/skills';
+import { RiseAttribute, RiseAttributeModifier, RiseDefense } from '@src/core_mechanics/attributes';
 import { getManeuverByName, getWeaponMultByRank } from '@src/abilities/combat_styles';
 import { getSpellByName, SphereName } from '@src/abilities/mystic_spheres';
 import { MonsterWeapon, isManufactured, getWeaponTag } from '@src/monsters/weapons';
@@ -38,6 +38,8 @@ import {
   PassiveAbility,
   ActiveAbilityScaling,
 } from '@src/abilities';
+import { DamageScaling } from '@src/core_mechanics/damage_scaling';
+import { DicePool } from '@src/core_mechanics/dice_pool';
 import * as format from '@src/latex/format';
 import {
   EquippedItem,
@@ -48,7 +50,6 @@ import {
   BodyArmor,
   Shield,
 } from '@src/monsters/equipment';
-import { SimpleValue } from './sheet_worker';
 import { KNOWLEDGE_BY_ORIGIN, KNOWLEDGE_BY_TYPE } from './knowledge';
 
 export type TargetSelectionLogic = 'Random' | 'Ordered' | 'Vulnerable';
@@ -82,6 +83,9 @@ type NumericCreatureProperty =
   | 'shield_reflex'
   | 'speed'
   | 'vital_rolls'
+  | 'fatigue_tolerance'
+  | 'initiative'
+  | 'all_skills'
   | RiseAttribute
   | RiseAttributeModifier
   | RiseDefense
@@ -546,7 +550,7 @@ export class Creature implements CreaturePropertyMap {
       kind: 'maneuver',
       tags,
       ...getWeaponMultByRank(this.calculateRank()),
-      name: 'Latch On',
+      name: displayName,
       isMagical: Boolean(isMagical),
       usageTime,
       weapon,
@@ -875,7 +879,7 @@ export class Creature implements CreaturePropertyMap {
   getSizeBasedSweepingTag(): RiseWeaponTag | null {
     return {
       fine: null,
-      diminuitive: null,
+      diminutive: null,
       tiny: null,
       small: null,
       medium: null,
@@ -990,12 +994,34 @@ export class Creature implements CreaturePropertyMap {
     return this.getPropertyValue('mundane_power');
   }
 
+  public get fatigue_tolerance() {
+    return this.getPropertyValue('fatigue_tolerance');
+  }
+
+  public get initiative() {
+    return this.getPropertyValue('initiative');
+  }
+
+  public get all_skills() {
+    return this.getPropertyValue('all_skills');
+  }
+
   public get elite() {
     return this.getPropertyValue('elite');
   }
 
   public get strength() {
     return this.getPropertyValue('strength');
+  }
+
+  public calcDamageDice(scaling: DamageScaling, isMagical: boolean, isStrike: boolean): DicePool {
+    const power = this.getRelevantPower(isMagical);
+    const pool = scaling.scaledPool(power);
+    if (isStrike) {
+      // TODO: Port StrikeDamageDice modifier logic if needed.
+      // For now, we assume no additional strike damage modifiers beyond scaling.
+    }
+    return pool;
   }
 
   public get dexterity() {
@@ -1228,6 +1254,10 @@ export class Creature implements CreaturePropertyMap {
 
   public get knowledge_planes() {
     return this.getPropertyValue('knowledge_planes');
+  }
+
+  public get knowledge_religion() {
+    return this.getPropertyValue('knowledge_religion');
   }
 
   public get knowledge_souls() {
