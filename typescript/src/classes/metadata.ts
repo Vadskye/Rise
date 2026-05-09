@@ -1,11 +1,6 @@
-import {
-  Class,
-} from './types';
+import { Class } from './types';
 import { dedent } from '../util/dedent';
-import {
-  getClassSkills,
-  getClassTrainedSkills,
-} from './class_skills';
+import { getClassSkills, getClassTrainedSkills } from './class_skills';
 
 import {
   getClassName,

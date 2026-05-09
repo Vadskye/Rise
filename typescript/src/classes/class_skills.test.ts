@@ -1,9 +1,5 @@
 import t from 'tap';
-import {
-  getClassSkills,
-  getClassTrainedSkills,
-  latexClassSkills,
-} from './class_skills';
+import { getClassSkills, getClassTrainedSkills, latexClassSkills } from './class_skills';
 
 t.test('Class Skills Logic', (t) => {
   t.test('getClassSkills returns expected skills for Barbarian', (t) => {
