@@ -6,10 +6,12 @@ import {
   getArchetypesForClass,
 } from '../classes/archetypes';
 import {
-  latexBasicClassAbilities,
   latexify,
   latexArchetypeDescription,
 } from '../latex/classes';
+import {
+  latexBasicClassAbilities,
+} from '../classes/base_class_abilities';
 import fs from 'fs';
 import path from 'path';
 
