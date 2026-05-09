@@ -109,6 +109,7 @@ export function assassin(): RankAbility[] {
       rank: 5,
       description: `
         \\begin{activeability}{Assassination}{Standard action}
+          \\abilitytags \\atSubtle
           \\rankline
           You study a creature within \\rngmed range, finding weak points you can take advantage of.
           As a \\brief effect, whenever you make a \\glossterm{strike} against the target while it is adjacent to you and \\unaware of the attack, the strike deals double damage.
