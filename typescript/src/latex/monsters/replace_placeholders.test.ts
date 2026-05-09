@@ -57,7 +57,8 @@ t.test('Accuracy Replacement', (t) => {
 
     t.test('throws error for multiple accuracy placeholders', (t) => {
       t.throws(
-        () => addAccuracyToEffect(1, 'Attack with $accuracy and $accuracy accuracy', 'arbitrary name'),
+        () =>
+          addAccuracyToEffect(1, 'Attack with $accuracy and $accuracy accuracy', 'arbitrary name'),
         new Error('Cannot add accuracy to ability arbitrary name: more than one $accuracy present'),
         'should throw an error for multiple accuracy placeholders',
       );
@@ -153,7 +154,10 @@ t.test('Accuracy Replacement', (t) => {
 
     t.test('replaces multiple $accuracy terms', (t) => {
       t.equal(
-        replaceAccuracyTerms('First $accuracy, then $accuracy+1, finally $accuracy-2', mockCreature),
+        replaceAccuracyTerms(
+          'First $accuracy, then $accuracy+1, finally $accuracy-2',
+          mockCreature,
+        ),
         'First +5, then +6, finally +3',
         'should replace multiple accuracy terms correctly',
       );
@@ -257,7 +261,10 @@ t.test('Damage Replacement', (t) => {
     });
 
     t.test('replaces $dr1l', (t) => {
-      t.equal(replaceDamageRankTerms('Deal $dr1l damage', mockCreature, false), 'Deal 1d4+1 damage');
+      t.equal(
+        replaceDamageRankTerms('Deal $dr1l damage', mockCreature, false),
+        'Deal 1d4+1 damage',
+      );
       t.end();
     });
 
