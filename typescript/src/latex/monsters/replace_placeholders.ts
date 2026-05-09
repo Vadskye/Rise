@@ -66,7 +66,7 @@ function getWeaponAccuracy(weapon?: MonsterWeapon): number {
   try {
     // We need to import this from weapons.ts
     return getWeaponAccuracyFromWeapons(weapon);
-  } catch (e) {
+  } catch (_e) {
     return 0;
   }
 }
@@ -85,7 +85,7 @@ export function replaceDamageRankTerms(
     try {
       const scaling = low ? DamageScaling.drl(Number(rank)) : DamageScaling.dr(Number(rank));
       return creature.calcDamageDice(scaling, isMagical, false).toString();
-    } catch (e) {
+    } catch (_e) {
       return `$dr${rank}${low || ''}`;
     }
   });

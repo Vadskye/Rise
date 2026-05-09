@@ -104,6 +104,6 @@ export function dryadAbilities(): RankAbility[] {
   ];
 }
 
-export function dryad(creature: Creature, rank: number) {
+export function dryad(_creature: Creature, _rank: number) {
   // Dryad abilities are mostly utility or conditional.
 }

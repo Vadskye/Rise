@@ -29,7 +29,6 @@ import {
   RiseSkill,
 } from '@src/core_mechanics/skills';
 import {
-  RISE_ATTRIBUTES,
   RiseAttribute,
   RiseAttributeModifier,
   RiseDefense,
@@ -55,7 +54,6 @@ import {
   BodyArmor,
   Shield,
 } from '@src/monsters/equipment';
-import { SimpleValue } from './sheet_worker';
 import { KNOWLEDGE_BY_ORIGIN, KNOWLEDGE_BY_TYPE } from './knowledge';
 
 export type TargetSelectionLogic = 'Random' | 'Ordered' | 'Vulnerable';
@@ -556,7 +554,7 @@ export class Creature implements CreaturePropertyMap {
       kind: 'maneuver',
       tags,
       ...getWeaponMultByRank(this.calculateRank()),
-      name: 'Latch On',
+      name: displayName,
       isMagical: Boolean(isMagical),
       usageTime,
       weapon,
@@ -1022,7 +1020,7 @@ export class Creature implements CreaturePropertyMap {
 
   public calcDamageDice(scaling: DamageScaling, isMagical: boolean, isStrike: boolean): DicePool {
     const power = this.getRelevantPower(isMagical);
-    let pool = scaling.scaledPool(power);
+    const pool = scaling.scaledPool(power);
     if (isStrike) {
       // TODO: Port StrikeDamageDice modifier logic if needed.
       // For now, we assume no additional strike damage modifiers beyond scaling.

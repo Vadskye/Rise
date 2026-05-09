@@ -779,7 +779,7 @@ export function calculateDamage(
     .scaledPool(relevantPower, excessRank)
     .toString()
     .replace(/\+/g, '\\plus')
-    .replace(/\-/g, '\\minus');
+    .replace(/-/g, '\\minus');
 }
 
 function reformatAbilityCost(ability: Pick<ActiveAbility, 'cost'>) {
@@ -834,7 +834,7 @@ export function calculateStrikeDamage(
   const strikeSentence: string = strikeSentenceMatch[1];
 
   let globalDamageMultiplier = 1;
-  let globalMultiplierMatch = strikeSentence.match(/deals (double|triple|quadruple) damage/);
+  const globalMultiplierMatch = strikeSentence.match(/deals (double|triple|quadruple) damage/);
   if (globalMultiplierMatch) {
     globalDamageMultiplier =
       {
@@ -850,7 +850,7 @@ export function calculateStrikeDamage(
   }
 
   let weaponDamageMultiplier = 1;
-  let weaponMultiplierMatch = strikeSentence.match(
+  const weaponMultiplierMatch = strikeSentence.match(
     /deals (double|triple|quadruple|five times|six times|seven times|eight times) (\\glossterm{weapon damage}|weapon damage)/,
   );
   if (weaponMultiplierMatch) {

@@ -280,7 +280,7 @@ t.test('Integration / Unified Engine', (t) => {
     accuracy: 5,
     mundane_power: 3,
     magical_power: 1,
-    calcDamageDice: (scaling: any) => '1d6+2',
+    calcDamageDice: (_scaling: any) => '1d6+2',
   } as any;
 
   t.test('replaces adjacent placeholders', (t) => {
@@ -296,7 +296,6 @@ t.test('Integration / Unified Engine', (t) => {
     // $fullweapondamage becomes "$damage damage", but $damage should NOT be replaced in the same pass if it's monster-wide
     // Wait, in my implementation I changed it to replace $fullweapondamage with the actual calculation directly if context.weapon is provided.
     // Let's test with a weapon.
-    const context = { weapon: 'bite' as any };
     // We need to mock getWeaponDamageDice and getWeaponPowerMultiplier since they are imported
     // But we are testing the unified engine's ability to handle the match.
     // Actually, I'll just test that it handles multiple types in one string.

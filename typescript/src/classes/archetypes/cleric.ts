@@ -426,7 +426,7 @@ export function preacherAbilities(): RankAbility[] {
   ];
 }
 
-export function divineMagic(creature: Creature, rank: number) {}
+export function divineMagic(_creature: Creature, _rank: number) {}
 
 export function divineSpellMastery(creature: Creature, rank: number) {
   if (rank >= 1) {
@@ -458,7 +458,7 @@ export function divineSpellMastery(creature: Creature, rank: number) {
   }
 }
 
-export function domainInfluence(creature: Creature, rank: number) {}
+export function domainInfluence(_creature: Creature, _rank: number) {}
 
 export function healer(creature: Creature, rank: number) {
   if (rank >= 2) {

@@ -1,10 +1,7 @@
 import { Class, ClassArchetype } from '@src/classes/types';
-import { RiseDefense } from '@src/core_mechanics/attributes';
 import {
   getClassName,
   getClassAlignment,
-  getClassDefenseBonus,
-  getClassShorthand,
   getCoreClasses,
   validateClassPoints,
   getClassNarrativeText,
@@ -12,14 +9,7 @@ import {
 import {
   getClassSpecialAbilities,
   getClassSuffix,
-  universalCharacterProgressionAtLevel,
-  latexBaseClassTable,
   latexBasicClassAbilities,
-  latexResources,
-  latexDefenses,
-  latexArmorProficiencies,
-  latexWeaponProficiencies,
-  latexStartingItems,
 } from '@src/classes/base_class_abilities';
 import {
   getArchetypesForClass,
@@ -27,7 +17,6 @@ import {
   latexArchetypeTable,
   latexArchetypeDescription,
 } from '@src/classes/archetypes';
-import { latexClassSkills } from '@src/classes/class_skills';
 import { titleCase } from '@src/latex/format/title_case';
 import { joinStringList } from '@src/latex/format/join_string_list';
 import { latexify } from '@src/latex/format/latexify';

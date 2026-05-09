@@ -681,7 +681,7 @@ export function outlandSavage(creature: Creature, rank: number) {
   }
 }
 
-export function primalWarrior(creature: Creature, rank: number) {
+export function primalWarrior(_creature: Creature, _rank: number) {
   // Primal Warrior adds maneuvers and augments to maneuvers.
   // These don't have static statistical modifiers that we represent here.
 }

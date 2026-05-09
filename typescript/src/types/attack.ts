@@ -1,7 +1,4 @@
-import { DicePool } from '../core_mechanics/dice_pool';
-import type { PowerScaling } from '../core_mechanics/power_scaling';
 import { DamageScaling } from '../core_mechanics/damage_scaling';
-import { DamageDice } from './core';
 export type AttackEffect =
   | { kind: 'Damage'; damage: DamageScaling }
   | { kind: 'Push'; distance: number }
