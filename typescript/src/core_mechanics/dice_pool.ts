@@ -91,10 +91,8 @@ export class DicePool {
         (size) => `${counts[size] * this.multiplier}d${size}`,
       );
       const modifier = this.calcFlatModifier();
-      if (modifier > 0) {
-        diceTexts.push(`+${modifier}`);
-      } else if (modifier < 0) {
-        diceTexts.push(`${modifier}`);
+      if (modifier !== 0) {
+        diceTexts.push(modifier > 0 ? `${modifier}` : `${modifier}`);
       }
       return diceTexts.join('+').replace(/\+-/g, '-');
     }

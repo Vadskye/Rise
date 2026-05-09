@@ -331,7 +331,7 @@ t.test('convertAbilityToMonsterLatex', (t) => {
       \\noindent
       The $name makes a +7 attack vs. Brawn using a \\glossterm{free hand} against a creature it is \\glossterm{grappling}.%
         \\vspace{0.25em}
-        \\hit 1d8\\plus3d6\\plus10 damage.% 
+        \\hit 3d6\\plus1d8\\plus10 damage.% 
       \\vspace{0.1em}%
     \\end{activeability}`,
     );
@@ -677,14 +677,14 @@ t.test('calculateDamage', (t) => {
   t.test('dr3 as a rank 3 creature using a rank 1 ability', (t) => {
     const ability = { rank: 1, isMagical: false } as any;
     // +6 from scaling
-    t.equal(calculateDamage(rank3Creature, ability, 3, false), '1d8\\plus2d6\\plus10');
+    t.equal(calculateDamage(rank3Creature, ability, 3, false), '2d6\\plus1d8\\plus10');
     t.end();
   });
 
   t.test('dr3 as a rank 6 creature', (t) => {
     const ability = { rank: 3, isMagical: false } as any;
     // +9 from scaling
-    t.equal(calculateDamage(rank6Creature, ability, 3, false), '1d8\\plus3d6\\plus10');
+    t.equal(calculateDamage(rank6Creature, ability, 3, false), '3d6\\plus1d8\\plus10');
     t.end();
   });
 
