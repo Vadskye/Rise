@@ -30,29 +30,21 @@ export class DamageScaling {
   static dr(rank: number): DamageScaling {
     switch (rank) {
       case 0:
-        return new DamageScaling(
-          DicePool.d4(),
-          [{ powerPerDice: 0, powerPerPlus1Modifier: 2 }],
-          { flatDamagePerRank: 1 },
-        );
+        return new DamageScaling(DicePool.d4(), [{ powerPerDice: 0, powerPerPlus1Modifier: 2 }], {
+          flatDamagePerRank: 1,
+        });
       case 1:
-        return new DamageScaling(
-          DicePool.d6(),
-          [{ powerPerDice: 0, powerPerPlus1Modifier: 2 }],
-          { flatDamagePerRank: 2 },
-        );
+        return new DamageScaling(DicePool.d6(), [{ powerPerDice: 0, powerPerPlus1Modifier: 2 }], {
+          flatDamagePerRank: 2,
+        });
       case 2:
-        return new DamageScaling(
-          DicePool.d10(),
-          [{ powerPerDice: 0, powerPerPlus1Modifier: 2 }],
-          { dicePerRank: DicePool.d6() },
-        );
+        return new DamageScaling(DicePool.d10(), [{ powerPerDice: 0, powerPerPlus1Modifier: 2 }], {
+          dicePerRank: DicePool.d6(),
+        });
       case 3:
-        return new DamageScaling(
-          DicePool.d8(),
-          [{ powerPerDice: 0, powerPerPlus1Modifier: 1 }],
-          { dicePerRank: DicePool.d6() },
-        );
+        return new DamageScaling(DicePool.d8(), [{ powerPerDice: 0, powerPerPlus1Modifier: 1 }], {
+          dicePerRank: DicePool.d6(),
+        });
       case 4:
         return new DamageScaling(
           DicePool.empty(),
