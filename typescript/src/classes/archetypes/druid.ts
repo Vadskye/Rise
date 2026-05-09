@@ -133,7 +133,6 @@ export function elementalist(): RankAbility[] {
         Your benefits from each element improve.
         \\begin{raggeditemize}
           \\item Air: You gain a slow \\glossterm{fly speed} with a maximum height of 15 feet (see \\pcref{Flight}).
-          As a \\glossterm{free action}, you can increase your \\glossterm{fatigue level} by one to ignore this height limit this turn.
           \\item Earth: You gain a \\plus1 bonus to your Brawn defense.
           \\item Fire: You are immune to \\atFire attacks.
           \\item Water: Your swim speed increases to average.
@@ -363,7 +362,6 @@ export function shifter(): RankAbility[] {
           \\rankline
           \\rank{4} You grow wings, granting you an average glide speed (see \\pcref{Gliding}).
           \\rank{7} You gain an average \\glossterm{fly speed} with a maximum height of 30 feet (see \\pcref{Flight}).
-          As a \\glossterm{free action}, you can increase your \\glossterm{fatigue level} by one to ignore this height limit this turn.
         \\end{magicalactiveability}
 
         \\begin{magicalactiveability}{Form of the Hound}{Standard action}
