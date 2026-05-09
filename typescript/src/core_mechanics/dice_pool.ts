@@ -87,12 +87,16 @@ export class DicePool {
       sum += this.calcFlatModifier();
       return sum.toString();
     } else {
-      const diceTexts: string[] = containedSizes.map(
-        (size) => `${counts[size] * this.multiplier}d${size}`,
-      );
+      const diceTexts: string[] = containedSizes
+        .map((size) => {
+          const count = counts[size] * this.multiplier;
+          return count !== 0 ? `${count}d${size}` : '';
+        })
+        .filter((t) => t !== '');
+
       const modifier = this.calcFlatModifier();
-      if (modifier !== 0) {
-        diceTexts.push(`${modifier}`);
+      if (modifier !== 0 || diceTexts.length === 0) {
+        diceTexts.push(modifier.toString());
       }
       return diceTexts.join('+').replace(/\+-/g, '-');
     }
