@@ -731,7 +731,7 @@ export function elementalist(creature: Creature, rank: number) {
   }
 }
 
-export function natureMagic(creature: Creature, rank: number) {}
+export function natureMagic(_creature: Creature, _rank: number) {}
 
 export function natureSpellMastery(creature: Creature, rank: number) {
   if (rank >= 4) {
@@ -773,4 +773,4 @@ export function shifter(creature: Creature, rank: number) {
   }
 }
 
-export function wildspeaker(creature: Creature, rank: number) {}
+export function wildspeaker(_creature: Creature, _rank: number) {}

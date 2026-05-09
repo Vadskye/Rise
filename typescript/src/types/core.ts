@@ -5,7 +5,7 @@ import {
 } from '../character_sheet/rise_data';
 
 export * from '../core_mechanics/attributes';
-import { Attribute, Defense } from '../core_mechanics/attributes';
+import { Defense } from '../core_mechanics/attributes';
 
 export type Size = RiseSize;
 export type Debuff = RiseDebuff;

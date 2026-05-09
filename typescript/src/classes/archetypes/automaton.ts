@@ -138,6 +138,6 @@ export function automatonAbilities(): RankAbility[] {
   ];
 }
 
-export function automaton(creature: Creature, rank: number) {
+export function automaton(_creature: Creature, _rank: number) {
   // Automaton abilities mostly relate to equipment configuration and recovery.
 }

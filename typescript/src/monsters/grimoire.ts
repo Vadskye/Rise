@@ -3,8 +3,6 @@ import { handleEverything } from '@src/character_sheet/sheet_worker';
 import {
   characterSheetExists,
   createCharacterSheet,
-  getCurrentCharacterSheet,
-  setCurrentCharacterSheet,
 } from '@src/character_sheet/current_character_sheet';
 import { addAberrations } from '@src/monsters/individual_monsters/aberrations';
 import { addAliens } from '@src/monsters/individual_monsters/aliens';

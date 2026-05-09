@@ -259,7 +259,7 @@ function addGolems(grimoire: Grimoire) {
     {
       name: 'Golems',
       hasArt: false,
-      sharedInitializer: (creature: Creature) => {
+      sharedInitializer: (_creature: Creature) => {
         // Trait 'construct' is removed, origin/type handle traits now
       },
     },

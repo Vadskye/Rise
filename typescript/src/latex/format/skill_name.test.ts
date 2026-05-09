@@ -38,9 +38,9 @@ tap.test('skillName', (t) => {
   t.equal(skillName('knowledge_untrained'), 'Knowledge');
 
   // Potential future skills or generic handling
-  // @ts-ignore
+  // @ts-expect-error: profession_baker is not a standard skill id
   t.equal(skillName('profession_baker'), 'Profession (baker)');
-  // @ts-ignore
+  // @ts-expect-error: perform_acting is not a standard skill id
   t.equal(skillName('perform_acting'), 'Perform (acting)');
 
   t.end();
