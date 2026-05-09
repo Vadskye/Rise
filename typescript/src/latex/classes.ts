@@ -200,13 +200,13 @@ export function latexBasicClassAbilities(cls: Class): string {
 
 function latexResources(cls: Class): string {
   return `
-        \\cf<${getClassShorthand(cls)}><Resources>
-        \\begin<raggeditemize>
-            \\item \\glossterm<Attunement points>: ${getClassAttunementPoints(cls)} (see \\pcref<Attunement Points>).
-            \\item \\glossterm<Fatigue tolerance>: ${getClassFatigueTolerance(cls)} \\add your Constitution (see \\pcref<Fatigue>).
-            \\item \\glossterm<Insight points>: ${getClassInsightPoints(cls)} \\add your Intelligence (see \\pcref<Insight Points>).
-            \\item \\glossterm<Trained skills>: ${getClassTrainedSkills(cls)} from among your \\glossterm<class skills>, plus additional trained skills equal to your Intelligence if it is positive (see \\pcref<Skills>).
-        \\end<raggeditemize>
+        \\cf{${getClassShorthand(cls)}}{Resources}
+        \\begin{raggeditemize}
+            \\item \\glossterm{Attunement points}: ${getClassAttunementPoints(cls)} (see \\pcref{Attunement Points}).
+            \\item \\glossterm{Fatigue tolerance}: ${getClassFatigueTolerance(cls)} \\add your Constitution (see \\pcref{Fatigue}).
+            \\item \\glossterm{Insight points}: ${getClassInsightPoints(cls)} \\add your Intelligence (see \\pcref{Insight Points}).
+            \\item \\glossterm{Trained skills}: ${getClassTrainedSkills(cls)} from among your \\glossterm{class skills}, plus additional trained skills equal to your Intelligence if it is positive (see \\pcref{Skills}).
+        \\end{raggeditemize}
     `;
 }
 
@@ -225,7 +225,7 @@ function latexDefenses(cls: Class): string {
 
   if (getClassVitalRollBonus(cls) > 0) {
     customModifiers.push(
-      `a \\plus${getClassVitalRollBonus(cls)} bonus to your \\glossterm<vital rolls>`,
+      `a \\plus${getClassVitalRollBonus(cls)} bonus to your \\glossterm{vital rolls}`,
     );
   }
 
@@ -273,7 +273,7 @@ function latexArmorProficiencies(cls: Class): string {
   }
 
   return `
-        \\cf<${getClassShorthand(cls)}><Armor Proficiencies>
+        \\cf{${getClassShorthand(cls)}}{Armor Proficiencies}
         ${profText}
     `;
 }
@@ -299,7 +299,7 @@ function latexWeaponProficiencies(cls: Class): string {
   }
 
   return `
-        \\cf<${getClassShorthand(cls)}><Weapon Proficiencies>
+        \\cf{${getClassShorthand(cls)}}{Weapon Proficiencies}
         ${profText}
     `;
 }
@@ -363,16 +363,16 @@ function latexStartingItems(cls: Class): string {
   }
 
   return `
-        \\cf<${getClassShorthand(cls)}><Starting Items and Equipment>
+        \\cf{${getClassShorthand(cls)}}{Starting Items and Equipment}
         You can start with the following items and equipment:
 
-        \\begin<raggeditemize>
+        \\begin{raggeditemize}
             ${rank1ItemText}
             ${weaponText}
             ${shieldText}
-            \\item A standard adventuring kit (see \\pcref<Standard Adventuring Kit>).
+            \\item A standard adventuring kit (see \\pcref{Standard Adventuring Kit}).
             \\item A rank 0 wealth item (1 gp)
-        \\end<raggeditemize>
+        \\end{raggeditemize}
     `;
 }
 
