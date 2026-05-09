@@ -217,14 +217,12 @@ export function arcaneScholar(): RankAbility[] {
         \\parhead{Arcane Tattoo} You gain a \\plus3 bonus to your Brawn, Fortitude, Reflex, or Mental defense.
         \\par You can choose this insight multiple times, choosing a different defense each time.
 
-        \\parhead{Esoteric Spell Knowledge} You learn a single spell from any arcane \\glossterm{mystic sphere}.
-        You do not not need to have access to that mystic sphere.
-        This does not grant you access to that mystic sphere for any other purposes.
-        Whenever you gain access to a new mystic sphere or spell rank, you may choose a different spell with this ability.
-        \\par You can choose this insight multiple times, learning an additional spell each time.
-
         \\parhead{Expanded Sphere Access} You gain access to a new \\glossterm{mystic sphere}.
         \\par You can choose this insight multiple times, gaining access to an additional mystic sphere each time.
+
+        \\parhead{Ritual Master} You are exceptionally skilled at performing rituals quickly and efficiently.
+        When you initiate a ritual, the time required and fatigue level cost to complete that ritual is halved.
+        This cannot reduce the ritual's fatigue level cost to zero.
 
         \\parhead{Soulwoven Spell} Choose a rank 1 spell you know with the \\atAttune tag that is not a \\glossterm{deep attunement}.
         That spell becomes permanently active on you without requiring an \\glossterm{attunement point}.
@@ -294,11 +292,11 @@ export function arcaneScholar(): RankAbility[] {
     },
     {
       complexity: 1,
-      name: 'Ritual Leader',
+      name: "Scholar's Mind",
       isMagical: true,
       rank: 5,
       description: `
-        Whenever you lead a ritual, it requires half the normal number of \\glossterm{fatigue levels} and half the normal time to complete, to a minimum of one fatigue level.
+        You gain a \\plus1 bonus to your Intelligence.
       `,
     },
     {
@@ -607,7 +605,15 @@ export function arcaneMagicModifiers(creature: Creature, rank: number) {
   }
 }
 
-export function arcaneScholarModifiers(_creature: Creature, _rank: number) {}
+export function arcaneScholarModifiers(creature: Creature, rank: number) {
+  if (rank >= 5) {
+    creature.addSimpleModifier({
+      name: "Scholar's Mind",
+      statistic: 'intelligence',
+      value: 1,
+    });
+  }
+}
 
 export function arcaneSpellMasteryModifiers(creature: Creature, rank: number) {
   if (rank >= 4) {
