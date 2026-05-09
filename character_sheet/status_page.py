@@ -159,6 +159,7 @@ def circumstances():
             ),
             flex_col(
                 [
+                    debuff("midair"),
                     debuff("squeezing"),
                     debuff("unaware"),
                     debuff("unsteady"),
