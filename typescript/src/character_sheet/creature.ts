@@ -28,11 +28,7 @@ import {
   RISE_KNOWLEDGE_SKILLS,
   RiseSkill,
 } from '@src/core_mechanics/skills';
-import {
-  RiseAttribute,
-  RiseAttributeModifier,
-  RiseDefense,
-} from '@src/core_mechanics/attributes';
+import { RiseAttribute, RiseAttributeModifier, RiseDefense } from '@src/core_mechanics/attributes';
 import { getManeuverByName, getWeaponMultByRank } from '@src/abilities/combat_styles';
 import { getSpellByName, SphereName } from '@src/abilities/mystic_spheres';
 import { MonsterWeapon, isManufactured, getWeaponTag } from '@src/monsters/weapons';

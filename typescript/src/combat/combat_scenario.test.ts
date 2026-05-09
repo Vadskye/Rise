@@ -11,7 +11,6 @@ import {
   CombatSimulationResult,
 } from '@src/combat/combat_scenario';
 
-
 function assertExpectedWinRate(
   tap: any,
   result: CombatSimulationResult,

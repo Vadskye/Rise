@@ -1,8 +1,4 @@
-import {
-  Class,
-  ClassArchetype,
-  RankAbility,
-} from './types';
+import { Class, ClassArchetype, RankAbility } from './types';
 import { titleCase } from '../latex/format/title_case';
 import { getClassName, getClassShorthand } from './metadata';
 import { latexify } from '../latex/format/latexify';

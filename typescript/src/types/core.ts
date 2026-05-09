@@ -1,8 +1,4 @@
-import {
-  RiseSize,
-  RiseDebuff,
-  RiseTag,
-} from '../character_sheet/rise_data';
+import { RiseSize, RiseDebuff, RiseTag } from '../character_sheet/rise_data';
 
 export * from '../core_mechanics/attributes';
 import { Defense } from '../core_mechanics/attributes';

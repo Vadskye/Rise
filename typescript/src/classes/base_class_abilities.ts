@@ -1,13 +1,6 @@
-import {
-  Class,
-  ArmorProficiencies,
-  WeaponProficiencies,
-} from './types';
+import { Class, ArmorProficiencies, WeaponProficiencies } from './types';
 import { RiseDefense } from '../core_mechanics/attributes';
-import {
-  getClassTrainedSkills,
-  latexClassSkills,
-} from './class_skills';
+import { getClassTrainedSkills, latexClassSkills } from './class_skills';
 import { clericDomains } from './cleric_domains';
 import { joinStringList } from '../latex/format/join_string_list';
 import { latexify } from '../latex/format/latexify';
