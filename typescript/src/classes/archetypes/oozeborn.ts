@@ -1,7 +1,7 @@
 import { Creature } from '@src/character_sheet/creature';
 import { RankAbility } from '../types';
 
-export function oozebornAbilities(): RankAbility[] {
+export function oozeborn(): RankAbility[] {
   return [
     {
       complexity: 1,
@@ -139,7 +139,7 @@ export function oozebornAbilities(): RankAbility[] {
   ];
 }
 
-export function oozeborn(creature: Creature, rank: number) {
+export function oozebornModifiers(creature: Creature, rank: number) {
   // Amorphous Form
   if (rank >= 6) {
     // Defense bonus against critical hits is +4

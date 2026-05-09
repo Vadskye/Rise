@@ -1,7 +1,7 @@
 import { Creature } from '@src/character_sheet/creature';
 import { RankAbility } from '../types';
 
-export function trollAbilities(): RankAbility[] {
+export function troll(): RankAbility[] {
   return [
     {
       complexity: 1,
@@ -115,7 +115,7 @@ export function trollAbilities(): RankAbility[] {
   ];
 }
 
-export function troll(creature: Creature, rank: number) {
+export function trollModifiers(creature: Creature, rank: number) {
   // Tough Hide
   if (rank >= 6) {
     creature.addSimpleModifier({

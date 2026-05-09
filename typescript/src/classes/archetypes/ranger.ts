@@ -2,7 +2,7 @@ import { Creature } from '@src/character_sheet/creature';
 import { RankAbility } from '../types';
 import { addStandardManeuverModifiers } from '../definitions/standard_modifiers';
 
-export function beastmasterAbilities(): RankAbility[] {
+export function beastmaster(): RankAbility[] {
   return [
     {
       complexity: 2,
@@ -119,7 +119,7 @@ export function beastmasterAbilities(): RankAbility[] {
   ];
 }
 
-export function boundaryWardenAbilities(): RankAbility[] {
+export function boundaryWarden(): RankAbility[] {
   return [
     {
       complexity: 2,
@@ -211,7 +211,7 @@ export function boundaryWardenAbilities(): RankAbility[] {
   ];
 }
 
-export function huntmasterAbilities(): RankAbility[] {
+export function huntmaster(): RankAbility[] {
   return [
     {
       complexity: 2,
@@ -381,7 +381,7 @@ export function huntmasterAbilities(): RankAbility[] {
   ];
 }
 
-export function scoutAbilities(): RankAbility[] {
+export function scout(): RankAbility[] {
   return [
     {
       complexity: 1,
@@ -477,7 +477,7 @@ export function scoutAbilities(): RankAbility[] {
   ];
 }
 
-export function wildernessWarriorAbilities(): RankAbility[] {
+export function wildernessWarrior(): RankAbility[] {
   const abilities: RankAbility[] = [
     {
       complexity: 3,
@@ -585,7 +585,7 @@ export function wildernessWarriorAbilities(): RankAbility[] {
   return abilities;
 }
 
-export function beastmaster(creature: Creature, rank: number) {
+export function beastmasterModifiers(creature: Creature, rank: number) {
   if (rank >= 2) {
     creature.addCustomModifier({
       name: 'Beast Bond',
@@ -594,7 +594,7 @@ export function beastmaster(creature: Creature, rank: number) {
   }
 }
 
-export function boundaryWarden(creature: Creature, rank: number) {
+export function boundaryWardenModifiers(creature: Creature, rank: number) {
   if (rank >= 5) {
     creature.addSimpleModifier({
       name: 'Steadfast Warden',
@@ -604,7 +604,7 @@ export function boundaryWarden(creature: Creature, rank: number) {
   }
 }
 
-export function huntmaster(creature: Creature, rank: number) {
+export function huntmasterModifiers(creature: Creature, rank: number) {
   if (rank >= 1) {
     creature.addSimpleModifier({
       name: 'Quarry (Accuracy)',
@@ -622,7 +622,7 @@ export function huntmaster(creature: Creature, rank: number) {
   }
 }
 
-export function scout(creature: Creature, rank: number) {
+export function scoutModifiers(creature: Creature, rank: number) {
   if (rank >= 2) {
     creature.addSimpleModifier({
       name: 'Swift Step',
@@ -640,6 +640,6 @@ export function scout(creature: Creature, rank: number) {
   }
 }
 
-export function wildernessWarrior(creature: Creature, rank: number) {
+export function wildernessWarriorModifiers(creature: Creature, rank: number) {
   // Maneuvers
 }

@@ -2,7 +2,7 @@ import { Creature } from '@src/character_sheet/creature';
 import { RankAbility } from '../types';
 import { addStandardManeuverModifiers } from '../definitions/standard_modifiers';
 
-export function airdancerAbilities(): RankAbility[] {
+export function airdancer(): RankAbility[] {
   return [
     {
       complexity: 1,
@@ -99,7 +99,7 @@ export function airdancerAbilities(): RankAbility[] {
   ];
 }
 
-export function esotericWarriorAbilities(): RankAbility[] {
+export function esotericWarrior(): RankAbility[] {
   const abilities: RankAbility[] = [
     {
       complexity: 3,
@@ -216,7 +216,7 @@ export function esotericWarriorAbilities(): RankAbility[] {
   return abilities;
 }
 
-export function kiAbilities(): RankAbility[] {
+export function ki(): RankAbility[] {
   return [
     {
       complexity: 1,
@@ -451,7 +451,7 @@ export function kiAbilities(): RankAbility[] {
   ];
 }
 
-export function perfectedFormAbilities(): RankAbility[] {
+export function perfectedForm(): RankAbility[] {
   return [
     {
       complexity: 0,
@@ -550,7 +550,7 @@ export function perfectedFormAbilities(): RankAbility[] {
   ];
 }
 
-export function transcendentSageAbilities(): RankAbility[] {
+export function transcendentSage(): RankAbility[] {
   return [
     {
       complexity: 0,
@@ -624,7 +624,7 @@ export function transcendentSageAbilities(): RankAbility[] {
   ];
 }
 
-export function airdancer(creature: Creature, rank: number) {
+export function airdancerModifiers(creature: Creature, rank: number) {
   if (rank >= 6) {
     creature.addSimpleModifier({
       name: 'Move Like Wind',
@@ -634,11 +634,11 @@ export function airdancer(creature: Creature, rank: number) {
   }
 }
 
-export function esotericWarrior(creature: Creature, rank: number) {
+export function esotericWarriorModifiers(creature: Creature, rank: number) {
   // Maneuvers
 }
 
-export function ki(creature: Creature, rank: number) {
+export function kiModifiers(creature: Creature, rank: number) {
   if (rank >= 1) {
     // Ki Barrier
     creature.addCustomModifier({
@@ -659,7 +659,7 @@ export function ki(creature: Creature, rank: number) {
   }
 }
 
-export function perfectedForm(creature: Creature, rank: number) {
+export function perfectedFormModifiers(creature: Creature, rank: number) {
   if (rank >= 1) {
     creature.addCustomModifier({
       name: 'Unhindered Agility',
@@ -701,7 +701,7 @@ export function perfectedForm(creature: Creature, rank: number) {
   }
 }
 
-export function transcendentSage(creature: Creature, rank: number) {
+export function transcendentSageModifiers(creature: Creature, rank: number) {
   if (rank >= 1) {
     creature.addCustomModifier({
       name: 'Transcend Frailty',

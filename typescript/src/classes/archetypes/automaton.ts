@@ -1,7 +1,7 @@
 import { Creature } from '@src/character_sheet/creature';
 import { RankAbility } from '../types';
 
-export function automatonAbilities(): RankAbility[] {
+export function automaton(): RankAbility[] {
   return [
     {
       complexity: 1,
@@ -138,6 +138,6 @@ export function automatonAbilities(): RankAbility[] {
   ];
 }
 
-export function automaton(_creature: Creature, _rank: number) {
+export function automatonModifiers(_creature: Creature, _rank: number) {
   // Automaton abilities mostly relate to equipment configuration and recovery.
 }

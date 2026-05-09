@@ -1,7 +1,7 @@
 import { Creature } from '@src/character_sheet/creature';
 import { RankAbility } from '../types';
 
-export function incarnationAbilities(): RankAbility[] {
+export function incarnation(): RankAbility[] {
   return [
     {
       complexity: 2,
@@ -123,7 +123,7 @@ export function incarnationAbilities(): RankAbility[] {
   ];
 }
 
-export function incarnation(creature: Creature, rank: number) {
+export function incarnationModifiers(creature: Creature, rank: number) {
   // Essence Exemplar
   if (rank >= 4) {
     // This is a bit tricky because we don't know which attribute was chosen.

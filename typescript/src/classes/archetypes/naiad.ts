@@ -1,7 +1,7 @@
 import { Creature } from '@src/character_sheet/creature';
 import { RankAbility } from '../types';
 
-export function naiadAbilities(): RankAbility[] {
+export function naiad(): RankAbility[] {
   return [
     {
       complexity: 2,
@@ -123,7 +123,7 @@ export function naiadAbilities(): RankAbility[] {
   ];
 }
 
-export function naiad(creature: Creature, rank: number) {
+export function naiadModifiers(creature: Creature, rank: number) {
   // Water Bond
   if (rank >= 7) {
     creature.addSimpleModifier({

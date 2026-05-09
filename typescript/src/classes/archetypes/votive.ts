@@ -5,7 +5,7 @@ import {
   addStandardSpellModifiers,
 } from '../definitions/standard_modifiers';
 
-export function pactboundWarriorAbilities(): RankAbility[] {
+export function pactboundWarrior(): RankAbility[] {
   const abilities: RankAbility[] = [
     {
       complexity: 3,
@@ -131,7 +131,7 @@ export function pactboundWarriorAbilities(): RankAbility[] {
   return abilities;
 }
 
-export function covenantKeeperAbilities(): RankAbility[] {
+export function covenantKeeper(): RankAbility[] {
   return [
     {
       complexity: 2,
@@ -259,7 +259,7 @@ export function covenantKeeperAbilities(): RankAbility[] {
   ];
 }
 
-export function pactMagicAbilities(): RankAbility[] {
+export function pactMagic(): RankAbility[] {
   const abilities: RankAbility[] = [
     {
       complexity: 4,
@@ -324,7 +324,7 @@ export function pactMagicAbilities(): RankAbility[] {
   return abilities;
 }
 
-export function pactSpellMasteryAbilities(): RankAbility[] {
+export function pactSpellMastery(): RankAbility[] {
   return [
     {
       complexity: 1,
@@ -423,7 +423,7 @@ export function pactSpellMasteryAbilities(): RankAbility[] {
   ];
 }
 
-export function soulforgedAbilities(): RankAbility[] {
+export function soulforged(): RankAbility[] {
   return [
     {
       complexity: 1,
@@ -580,9 +580,9 @@ export function soulforgedAbilities(): RankAbility[] {
   ];
 }
 
-export function pactboundWarrior(creature: Creature, rank: number) {}
+export function pactboundWarriorModifiers(_creature: Creature, _rank: number) {}
 
-export function covenantKeeper(creature: Creature, rank: number) {
+export function covenantKeeperModifiers(creature: Creature, rank: number) {
   if (rank >= 2) {
     creature.addSimpleModifier({
       name: 'Covenant of Power (Fatigue)',
@@ -592,7 +592,7 @@ export function covenantKeeper(creature: Creature, rank: number) {
   }
 }
 
-export function pactMagic(creature: Creature, rank: number) {
+export function pactMagicModifiers(creature: Creature, rank: number) {
   if (rank >= 1) {
     creature.addSimpleModifier({
       name: 'Survival Pact',
@@ -602,7 +602,7 @@ export function pactMagic(creature: Creature, rank: number) {
   }
 }
 
-export function pactSpellMastery(creature: Creature, rank: number) {
+export function pactSpellMasteryModifiers(creature: Creature, rank: number) {
   if (rank >= 4) {
     creature.addSimpleModifier({
       name: 'Spell-Trained Mind',
@@ -622,7 +622,7 @@ export function pactSpellMastery(creature: Creature, rank: number) {
   }
 }
 
-export function soulforged(creature: Creature, rank: number) {
+export function soulforgedModifiers(creature: Creature, rank: number) {
   // Generic modifiers
   if (rank >= 3) {
     creature.addSimpleModifier({

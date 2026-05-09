@@ -1,7 +1,7 @@
 import { Creature } from '@src/character_sheet/creature';
 import { RankAbility } from '../types';
 
-export function vampireAbilities(): RankAbility[] {
+export function vampire(): RankAbility[] {
   return [
     {
       complexity: 2,
@@ -146,7 +146,7 @@ export function vampireAbilities(): RankAbility[] {
   ];
 }
 
-export function vampire(creature: Creature, rank: number) {
+export function vampireModifiers(creature: Creature, rank: number) {
   // Unholy Resilience
   if (rank >= 5) {
     creature.addCustomModifier({

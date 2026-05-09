@@ -1,7 +1,7 @@
 import { Creature } from '@src/character_sheet/creature';
 import { RankAbility } from '../types';
 
-export function dryadAbilities(): RankAbility[] {
+export function dryad(): RankAbility[] {
   return [
     {
       complexity: 2,
@@ -104,6 +104,6 @@ export function dryadAbilities(): RankAbility[] {
   ];
 }
 
-export function dryad(_creature: Creature, _rank: number) {
+export function dryadModifiers(_creature: Creature, _rank: number) {
   // Dryad abilities are mostly utility or conditional.
 }
