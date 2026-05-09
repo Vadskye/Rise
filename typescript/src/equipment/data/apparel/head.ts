@@ -253,34 +253,36 @@ function crowns(): Apparel[] {
         rarity: 'Common',
       },
     },
+    // Rank 3 attunement is +33% damage over baseline. Normal for a small radius at rank 3
+    // would be dr4. With the attunement bonus, dr4l is reasonable.
     {
       kind: 'Crown',
       item: {
         name: 'Crown of Flame',
         rank: 3,
-        short_description: 'Can deal $dr3l damage around you',
+        short_description: 'Can deal $dr4l damage around you',
         description: `
             This crown constantly burns harmlessly, emitting \\glossterm{bright illumination} in a \\smallarea radius.
             You can touch the crown as a standard action to activate it.
-            When you do, a burst of flame erupts around you.
+            When you do, a burst of flame erupts around you, and you \\glossterm{briefly} can't use this ability again.
             Make an attack vs. Reflex against everything in a \\smallarea radius from you.
             Your minimum accuracy is $accuracy.
-            \\hit $dr3l damage.
+            \\hit $dr4l damage.
             \\miss Half damage.
         `,
         magical: true,
         upgrades: [
           {
             rank: 5,
-            short_description: 'Can deal $dr5l damage around you',
+            short_description: 'Can deal $dr6l damage around you',
             description:
-              'The minimum accuracy increases to $accuracy, and the damage increases to $dr5l.',
+              'The minimum accuracy increases to $accuracy, and the damage increases to $dr6l.',
           },
           {
             rank: 7,
-            short_description: 'Can deal $dr7l damage around you',
+            short_description: 'Can deal $dr8l damage around you',
             description:
-              'The minimum accuracy increases to $accuracy, and the damage increases to $dr7l.',
+              'The minimum accuracy increases to $accuracy, and the damage increases to $dr8l.',
           },
         ],
         tags: ['Fire', 'Attune'],
