@@ -80,7 +80,6 @@ export * from '../core_mechanics/attributes';
 
 export * from '../core_mechanics/skills';
 
-
 export type RiseSpecialDefense = 'immune' | 'resistant' | 'vulnerable';
 
 // TODO: list them all individually?

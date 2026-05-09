@@ -1,4 +1,3 @@
-
 import { ActiveAbility } from '../abilities';
 
 export type ItemRarity = 'Common' | 'Relic';
