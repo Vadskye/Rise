@@ -9,23 +9,25 @@ import { handleEverything, MonsterAttackUsageTime } from '@src/character_sheet/s
 import {
   RiseAlignment,
   RiseBaseClass,
-  RiseCraftSkill,
-  RISE_CRAFT_SKILLS,
   RiseCreatureOrigin,
   RiseCreatureType,
   RiseDebuff,
-  RiseJumpDistance,
-  RiseKnowledgeSkill,
-  RISE_KNOWLEDGE_SKILLS,
   RiseRole,
   RiseSize,
-  RiseSkill,
   RiseSpecialDefense,
   RiseTag,
   RiseWeaponTag,
   RiseTrait,
   isTrait,
 } from '@src/character_sheet/rise_data';
+import {
+  RiseCraftSkill,
+  RISE_CRAFT_SKILLS,
+  RiseJumpDistance,
+  RiseKnowledgeSkill,
+  RISE_KNOWLEDGE_SKILLS,
+  RiseSkill,
+} from '@src/core_mechanics/skills';
 import {
   RISE_ATTRIBUTES,
   RiseAttribute,

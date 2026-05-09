@@ -5,7 +5,7 @@ import {
   ArmorProficiencies,
   WeaponProficiencies,
 } from './types';
-import { RiseSkill, RiseAlignment } from '../character_sheet/rise_data';
+import { RiseSkill, SKILL_METADATA } from '../core_mechanics/skills';
 import { RISE_ATTRIBUTES, RiseDefense } from '../core_mechanics/attributes';
 import { ArmorKind, ArmorUsageClass } from '../equipment/armor';
 import { dedent } from '../util/dedent';
@@ -2363,20 +2363,12 @@ function formatSkillList(skills: RiseSkill[]): string {
   return formatted.sort().join(', ');
 }
 
+import { skillName } from '../latex/format/skill_name';
+
 function formatSkillName(skill: RiseSkill): string {
-  if (skill === 'craft_untrained') {
-    return 'Craft';
-  }
-  if (skill === 'sleight_of_hand') {
-    return 'Sleight of Hand';
-  }
-  return skill
-    .split('_')
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' ');
+  return skillName(skill);
 }
 
-import { SKILL_METADATA } from '../types/skills';
 import { RiseAttribute } from '../character_sheet/rise_data';
 
 function latexStartingItems(cls: Class): string {
