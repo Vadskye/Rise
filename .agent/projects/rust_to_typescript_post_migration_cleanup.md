@@ -25,7 +25,6 @@ Now that bit-for-bit parity with the legacy Rust system has been achieved and ve
 ### 2. Refactor `replacePlaceholders` ⏳
 
 - [x] **Harden Test Coverage**: Added comprehensive unit tests in `replace_placeholders.test.ts` for names, power terms, and damage ranks.
-- [ ] **Remove Premature Evaluation**: `player_abilities.ts` eagerly evaluates damage ranks (e.g., `\damagerankfourlow`) by calling `calculateDamage`. It should instead normalize these to `$dr4l` placeholders and delegate the math to the unified `replaceDamageRankTerms` engine in `replace_placeholders.ts`.
 
 ### 3. Data Model Unification ⏳
 

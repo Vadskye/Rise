@@ -72,11 +72,15 @@ export class DicePool {
   }
 
   static xdy(count: number, size: number): DicePool {
+    return DicePool.xdyPlus(count, size, 0);
+  }
+
+  static xdyPlus(count: number, size: number, flatModifier: number): DicePool {
     const dice: Die[] = [];
     for (let i = 0; i < count; i++) {
       dice.push(Die.new(size));
     }
-    return new DicePool(dice);
+    return new DicePool(dice, flatModifier);
   }
 
   eliteDouble(): DicePool {

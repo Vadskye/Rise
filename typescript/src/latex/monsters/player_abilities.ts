@@ -912,6 +912,6 @@ export function calculateStrikeDamage(
   const damageFromPower =
     globalDamageMultiplier * (Math.floor(relevantPower * powerMultiplier) + extraFlatDamage);
   const diceCount = damageDice.count * globalDamageMultiplier;
-  const pool = new DicePool(Array(diceCount).fill({ size: damageDice.size }), damageFromPower);
+  const pool = DicePool.xdyPlus(diceCount, damageDice.size, damageFromPower);
   return pool.toString();
 }
