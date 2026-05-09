@@ -16,8 +16,7 @@ export function assassin(): RankAbility[] {
           The strike must only use \\weapontag{Light} or \\weapontag{Compact} weapons.
 
           The strike deals 1d4 \\glossterm{extra damage} if the target is \\unaware or \\partiallyunaware of your attack, or if they are adjacent to one of your \\glossterm{allies}.
-          It does not apply if the target is immune to \\glossterm{critical hits}.
-          If the target was fully unaware of you at the start of your turn, the strike deals double damage.
+          If the target didn't know you were present in the combat at the start of your turn, the strike deals double damage.
 
           \\rankline
           \\rank{2} The extra damage increases to 1d6.
