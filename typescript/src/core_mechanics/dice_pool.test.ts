@@ -5,6 +5,7 @@ test('DicePool.toString', (t) => {
   t.test('simple dice', (t) => {
     t.equal(DicePool.xdy(1, 6).toString(), '1d6');
     t.equal(DicePool.xdy(2, 8).toString(), '2d8');
+    t.equal(DicePool.xdyPlus(1, 10, 5).toString(), '1d10+5');
     t.end();
   });
 
