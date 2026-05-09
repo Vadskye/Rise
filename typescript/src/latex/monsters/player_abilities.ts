@@ -20,6 +20,7 @@ import {
   replaceAbilityPlaceholders,
 } from '@src/latex/monsters/replace_placeholders';
 import { DamageScaling } from '@src/core_mechanics/damage_scaling';
+import { DicePool } from '@src/core_mechanics/dice_pool';
 
 // It's the same except that `effect` and `weapon` are mandatory.
 export interface StrikeActiveAbility extends Omit<ActiveAbility, 'effect' | 'weapon'> {
@@ -910,12 +911,7 @@ export function calculateStrikeDamage(
 
   const damageFromPower =
     globalDamageMultiplier * (Math.floor(relevantPower * powerMultiplier) + extraFlatDamage);
-  let damageFromPowerText = '';
-  if (damageFromPower > 0) {
-    damageFromPowerText = `+${damageFromPower}`;
-  } else if (damageFromPower < 0) {
-    damageFromPowerText = `${damageFromPower}`;
-  }
-
-  return `${damageDice.count * globalDamageMultiplier}d${damageDice.size}${damageFromPowerText}`;
+  const diceCount = damageDice.count * globalDamageMultiplier;
+  const pool = new DicePool(Array(diceCount).fill({ size: damageDice.size }), damageFromPower);
+  return pool.toString();
 }
