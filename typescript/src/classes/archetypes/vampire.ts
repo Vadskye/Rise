@@ -30,6 +30,7 @@ export function vampire(): RankAbility[] {
       rank: 2,
       description: `
         You can designate a coffin as your home coffin by completing a long rest in it every day for a week.
+        The coffin must be sized and shaped appropriately for you to sleep in while completely enclosed in the coffin.
         When you take a \\glossterm{long rest} in your home coffin, you recover two \\glossterm{vital wounds} instead of one.
         In addition, you can cross running water without penalty while in your home coffin.
         You can only have one home coffin at a time.
