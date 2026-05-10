@@ -691,18 +691,21 @@ They allow more distinct and unique character customization, but also increase g
 
     \begin{columntable}
       \columncaption{Dragon Types}
-      \begin{dtabularx}{\columnwidth}{l >{\lcol}X >{\lcol}X}
-        \tb{Dragon} & \tb{Tag} & \tb{Breath Weapon} \tableheaderrule
-        Black       & \atAcid             & \areamed, 5 ft. wide line \\
-        Blue        & \atElectricity      & \areamed, 5 ft. wide line \\
-        Brass       & \atFire             & \areamed, 5 ft. wide line \\
-        Bronze      & \atElectricity      & \areamed, 5 ft. wide line \\
-        Copper      & \atAcid             & \areamed, 5 ft. wide line \\
-        Gold        & \atFire             & \areasmall cone           \\
-        Green       & \atAcid             & \areasmall cone           \\
-        Red         & \atFire             & \areasmall cone           \\
-        Silver      & \atCold             & \areasmall cone           \\
-        White       & \atCold             & \areasmall cone           \\
+      \begin{dtabularx}{\columnwidth}{l >{\lcol}X >{\lcol}X >{\lcol}X}
+      \tb{Dragon} & \tb{Tag}       & \tb{Source} & \tb{Breath Weapon}        \tableheaderrule
+        Black     & \atAcid        & Mundane     & \areamed, 5 ft. wide line \\
+        Blue      & \atElectricity & Mundane     & \areamed, 5 ft. wide line \\
+        Crystal   & \atVisual      & Magical     & \areamed, 5 ft. wide line \\
+        Dream     & \atEmotion     & Magical     & \areamed, 5 ft. wide line \\
+        Gold      & \atFire        & Magical     & \areamed, 5 ft. wide line \\
+        Gore      & \atBlood       & Magical     & \areasmall cone           \\
+        Hex       & \atCurse       & Magical     & \areasmall cone           \\
+        Obsidian  & \atEarth       & Mundane     & \areasmall cone           \\
+        Pearl     & \atWater       & Magical     & \areamed, 5 ft. wide line \\
+        Red       & \atFire        & Mundane     & \areasmall cone           \\
+        White     & \atCold        & Mundane     & \areasmall cone           \\
+        Wraith    & \atSoul        & Magical     & \areamed, 5 ft. wide line \\
+        Zephyr    & \atAir         & Mundane     & \areasmall cone           \\
       \end{dtabularx}
     \end{columntable}
 
@@ -718,6 +721,7 @@ They allow more distinct and unique character customization, but also increase g
       \abilitycost You \briefly can't use this ability again.
       \rankline
       This ability's tag matches your dragon's associated tag.
+      If your dragon's source is \magical, this ability is also magical, which means you use your \glossterm{magical power} for damage instead of your mundane power.
       Make an attack vs. Reflex against everything in the area defined by the type of dragon from your \textit{draconic ancestry} ability (see \trefnp{Dragon Types}).
       \hit \damagerankthree.
       \miss Half damage.

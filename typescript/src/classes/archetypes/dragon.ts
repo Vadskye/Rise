@@ -12,7 +12,8 @@ export function dragon(): RankAbility[] {
         \\begin{activeability}{Dragon Breath}{Standard action}
           \\abilitycost You \\briefly can't use this ability again.
           \\rankline
-          This ability's tag depends on your dragon type (see \\pcref{Dragon Types}).
+          This ability's tag depends on your dragon type (see \\pcref{Dragon Species Types}).
+          If your dragon's source is \magical, this ability is also magical, which means you use your \glossterm{magical power} for damage instead of your mundane power.
           Make an attack vs. Reflex against everything in the area defined by your dragon type.
           \\hit \\damageranktwo.
           \\miss Half damage.
