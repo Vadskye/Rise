@@ -254,15 +254,18 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       name: 'Surfing Slam',
 
       // Rank 2 Spell
-      // Range: Short (mod +1 - treated as Short despite "Touch" due to mobility)
-      // Result: 2 + 1 = dr3
+      // Range: Touch (+2dr instead of +1dr)
+      // Result: 2 + 2 = dr4
       attack: {
         hit: `
-          \\damagerankthree.
+          \\damagerankfour.
+        `,
+        injury: `
+          The target falls \\prone.
         `,
         targeting: `
-          Move up to your speed with your \\glossterm{walk speed} or \\glossterm{swim speed}.
-          Then, make an attack vs. Armor against something you \\glossterm{touch}.
+          Move in a straight line, reducing your \\glossterm{available movement} as normal.
+          At the end of your movement, if you travelled at least 20 feet using your walk speed or swim speed, make an attack vs. Armor against something you \\glossterm{touch}.
         `,
       },
       rank: 2,
@@ -274,15 +277,18 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       name: 'Mighty Surfing Slam',
 
       // Rank 5 Spell
-      // Range: Short (mod +1)
-      // Result: 5 + 1 = dr6
+      // Range: Touch (+2dr)
+      // Result: 5 + 2 = dr7
       attack: {
         hit: `
-          \\damageranksix.
+          \\damagerankseven.
+        `,
+        injury: `
+          The target falls \\prone and is \\briefly \\stunned.
         `,
         targeting: `
-          Move up to your speed with your \\glossterm{walk speed} or \\glossterm{swim speed}.
-          Then, make an attack vs. Armor against something you \\glossterm{touch}.
+          Move in a straight line, reducing your \\glossterm{available movement} as normal.
+          At the end of your movement, if you travelled at least 20 feet using your walk speed or swim speed, make an attack vs. Armor against something you \\glossterm{touch}.
         `,
       },
       rank: 5,
