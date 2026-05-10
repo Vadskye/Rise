@@ -412,7 +412,7 @@ export function suaveScoundrel(): RankAbility[] {
     {
       complexity: 2,
       name: 'Fool Them Once',
-      isMagical: true,
+      isMagical: false,
       rank: 1,
       description: `
         \\begin{activeability}{Fool Them Once}{Minor action}
@@ -429,7 +429,7 @@ export function suaveScoundrel(): RankAbility[] {
     {
       complexity: 0,
       name: 'Silver Tongue',
-      isMagical: true,
+      isMagical: false,
       rank: 2,
       description: `
         You gain a \\plus2 bonus to your Deception, Persuasion, and Social Insight skills.
@@ -468,7 +468,7 @@ export function suaveScoundrel(): RankAbility[] {
     {
       complexity: 0,
       name: 'Slippery Mind',
-      isMagical: true,
+      isMagical: false,
       rank: 4,
       description: `
         You gain a \\plus2 bonus to your Mental defense, and you are \\resistant to \\atEmotion attacks.

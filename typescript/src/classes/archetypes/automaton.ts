@@ -70,7 +70,7 @@ export function automaton(): RankAbility[] {
     {
       complexity: 2,
       name: 'Sharpening Slash',
-      isMagical: true,
+      isMagical: false,
       rank: 3,
       description: `
         \\begin{activeability}{Sharpening Slash}{Standard action}
