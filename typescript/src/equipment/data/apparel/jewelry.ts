@@ -475,7 +475,7 @@ function rings(): Apparel[] {
       kind: 'Ring',
       item: {
         name: 'Baneswallow Ring',
-        rank: 3,
+        rank: 2,
         short_description: 'Can exert and remove a condition to gain power',
         description: `
             You can activate this ring as a standard action.
@@ -487,7 +487,7 @@ function rings(): Apparel[] {
         magical: true,
         upgrades: [
           {
-            rank: 5,
+            rank: 4,
             short_description: 'Can remove a condition to gain power',
             description: 'Activating this ring does not increase your fatigue level.',
           },
@@ -632,7 +632,7 @@ function rings(): Apparel[] {
       kind: 'Ring',
       item: {
         name: 'Cleansing Ring',
-        rank: 2,
+        rank: 1,
         short_description: 'Can exert to remove a condition',
         description: `
             You can activate this ring as a standard action.
@@ -643,7 +643,7 @@ function rings(): Apparel[] {
         magical: true,
         upgrades: [
           {
-            rank: 4,
+            rank: 3,
             short_description: 'Can remove a condition',
             description: 'Activating this item does not increase your fatigue level.',
           },
@@ -662,16 +662,10 @@ function rings(): Apparel[] {
             You can activate this ring as a \\glossterm{minor action}.
             When you do, you remove one \\glossterm{condition} affecting you.
 
-            After you activate this item, you increase your \\glossterm{fatigue level} by two.
+            After you activate this item, you increase your \\glossterm{fatigue level} by one.
         `,
         magical: true,
-        upgrades: [
-          {
-            rank: 7,
-            short_description: 'Can exert to quickly remove a condition',
-            description: 'Activating this item only increases your fatigue level by one.',
-          },
-        ],
+        upgrades: [],
         tags: ['Attune'],
         rarity: 'Common',
       },

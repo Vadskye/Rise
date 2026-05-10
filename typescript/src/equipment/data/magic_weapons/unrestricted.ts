@@ -154,7 +154,7 @@ function utilityWeapons(): MagicWeapon[] {
       rank: 3,
       short_description: 'Can briefly teleport next to struck creature',
       description: `
-        As a standard action, you can make a \\glossterm{strike} using this weapon.
+        As a standard action, you can make a \\glossterm{strike} using this weapon, and you \\glossterm{briefly} cannot do so again.
         Each creature you hit with the strike \\glossterm{briefly} has a dimensional trace applied to it.
         While the dimensional trace lasts, you can activate this weapon as a \\glossterm{minor action}.
         When you do, you \\glossterm{teleport} into the closest unoccupied square adjacent to a traced creature, if such a space exists within \\medrange.
@@ -184,7 +184,7 @@ function utilityWeapons(): MagicWeapon[] {
       rank: 2,
       short_description: 'Can prevent teleportation',
       description: `
-        As a standard action, you can make a mundane \\glossterm{strike} using this weapon.
+        As a standard action, you can make a mundane \\glossterm{strike} using this weapon, and you \\glossterm{briefly} cannot do so again.
         On a hit, the target \\glossterm{briefly} cannot be \\glossterm{teleported}.
         An object subject to this effect is left behind if it is carried by a creature that teleports.
       `,
@@ -574,7 +574,7 @@ export const magicUnrestrictedWeapons = (): MagicWeapon[] => [
     rank: 1,
     short_description: 'Can attack Mental defense',
     description: `
-      As a standard action, you can make a mundane \\glossterm{strike} using this weapon that is imbued with psychic power.
+      As a standard action, you can make a mundane \\glossterm{strike} using this weapon that is imbued with psychic power, and you \\glossterm{briefly} cannot do so again.
       The strike is made against the target's Mental defense instead of its Armor defense, and it gains the \\atCompulsion tag.
     `,
   }),
@@ -611,7 +611,7 @@ export const magicUnrestrictedWeapons = (): MagicWeapon[] => [
     rank: 1,
     short_description: 'Can attack Fortitude defense',
     description: `
-      As a standard action, you can make a mundane \\glossterm{strike} using this weapon that transforms the striking surface to poison.
+      As a standard action, you can make a mundane \\glossterm{strike} using this weapon that transforms the striking surface to poison, and you \\glossterm{briefly} cannot do so again.
       The strike is made against the target's Fortitude defense instead of its Armor defense, and it gains the \\atPoison tag.
     `,
     tags: ['Poison', 'Attune'],

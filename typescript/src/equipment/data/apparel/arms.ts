@@ -73,10 +73,10 @@ function bracers(): Apparel[] {
         short_description: 'Can push nearby creatures back',
         description: `
             You can activate these bracers as a standard action.
-            When you do, they emit a telekinetic burst of force.
-            Make an attack vs. Brawn against all \\glossterm{enemies} within a \\medarea radius from you.
+            When you do, they emit a telekinetic burst of force, and you \\glossterm{briefly} cannot activate them again.
+            Make an attack vs. Brawn against all \\glossterm{enemies} within a \\smallarea radius from you.
             Your minimum accuracy is $accuracy.
-            \\hit You \\glossterm{push} the target 15 feet in a straight line directly away from you.
+            \\hit You \\glossterm{push} the target 30 feet in a straight line directly away from you.
             If the target is \\glossterm{injured}, you \\glossterm{fling} it instead of pushing it.
         `,
         magical: true,
@@ -84,7 +84,7 @@ function bracers(): Apparel[] {
           {
             rank: 3,
             short_description: 'Can push nearby creatures back',
-            description: `The minimum accuracy increases to $accuracy and the push or fling distance increases to 30 feet.`,
+            description: `The minimum accuracy increases to $accuracy and the area increases to a \\largearea radius from you.`,
           },
           {
             rank: 6,
@@ -196,32 +196,37 @@ function gauntlets(): Apparel[] {
         rarity: 'Common',
       },
     },
+    // Short range is dr3. At rank 2, dr3 would normally deal ~11 damage. Item attunement bonus should deal about 29% more.
+    // dr4l is 3d10 = 16.5, which is too high. dr3l with 3 str would be 14, which is about right.
     {
       kind: 'Gauntlets',
       item: {
         name: 'Slinging Gauntlets',
         rank: 2,
-        short_description: 'Can deal $dr3l damage',
+        short_description: 'Can throw a rock to deal Strength-based damage',
         description: `
             You can activate these gauntlets as a standard action.
             When you do, a rock appears in one \\glossterm{free hand}, and you can immediately throw it at anything within \\shortrange.
             Make an attack against the target's Armor defense.
-            \\hit $dr3l bludgeoning damage.
+            After you activate this item, you \\glossterm{briefly} cannot do so again.
+            \\hit \\damagerankthreelow plus your Strength.
         `,
         magical: true,
         upgrades: [
+          // dr5 at rank 4 is ~23. dr5l is 22.5. With 4 str, 30.5 damage, so 32% more.
           {
             rank: 4,
-            short_description: 'Can deal $dr5l bludgeoning damage',
-            description: 'The damage increases to $dr5l.',
+            short_description: 'Can throw a rock to deal Strength-based damage',
+            description: 'The damage increases to $dr5l plus twice Strength.',
           },
+          // dr7 at rank 6 is ~47. dr7l is 44. With 5 str, 64 damage, so 36% more.
           {
             rank: 6,
-            short_description: 'Can deal $dr7l bludgeoning damage',
-            description: 'The damage increases to $dr7l.',
+            short_description: 'Can throw a rock to deal Strength-based damage',
+            description: 'The damage increases to $dr7l plus four times Strength.',
           },
         ],
-        tags: ['Attune'],
+        tags: ['Attune', 'Manifestation', 'Physical'],
         rarity: 'Common',
       },
     },
