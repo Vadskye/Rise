@@ -210,13 +210,19 @@ export const photomancy: MysticSphere = {
       // Range: Short (mod +1)
       // Mod: Double Defense (+1)
       // Result: 4 + 1 + 1 = dr6, flat (low) -> dr5
+      // dr6 at rank 4 is 29 damage. 90% of that, which is the normal flat target, is 26.
+      // dr5l is 22 damage, which is lower than ideal.
+      // dr6 at rank 5 with one rank upgrade is 32.5 + 9 = 41.5.
+      // dr5l at rank 5 with one rank upgrade is 22 + 13.5 = 35.5, which is closer to expectation.
+
+      // All of that is a complicated way to say that this gets a trivial debuff for free.
       attack: {
         hit: `
           \\damagerankfivelow, and any \\glossterm{extra damage} is doubled.
         `,
         injury: `
-          The target suffers consequences as if it had been struck by a beam of natural sunlight.
-          This can be deadly for some creatures.
+          The target is \\glossterm{briefly} \\dazzled, and it suffers consequences as if it had been struck by a beam of natural sunlight.
+          This can be dangerous for some creatures.
         `,
         targeting: `
           Make an attack vs. Reflex and Fortitude against something within \\shortrange.
@@ -230,13 +236,16 @@ export const photomancy: MysticSphere = {
 
     {
       name: 'Mighty Solar Ray',
+
+      // dr9 at rank 7 is 85 damage.
+      // dr8l is 66, which is much lower, so this gets a major debuff.
       attack: {
         hit: `
           \\damagerankeightlow, and any \\glossterm{extra damage} is tripled.
         `,
         injury: `
-          The target suffers consequences as if it had been struck by a beam of natural sunlight.
-          This can be deadly for some creatures.
+          The target is \\glossterm{briefly} \\blinded, and it suffers consequences as if it had been struck by a beam of natural sunlight.
+          This can be dangerous for some creatures.
         `,
         targeting: `
           Make an attack vs. Reflex and Fortitude against something within \\shortrange.
@@ -249,15 +258,16 @@ export const photomancy: MysticSphere = {
 
     {
       name: 'Solar Flare',
-      // +1dr for not really escapable delay, +1dr for Fortitude and Reflex. Since this
-      // deals flat damage, that adds up to +1 flat damage rank. The base damage rank for
-      // a full area flat damage spell is -1dr, so this is just drX total.
+      // +1dr for not really escapable delay, +1dr for Fortitude and Reflex.
+      // Large enemies-only area is -3dr, so base damage is dr4.
+      // dr4 at rank 5 is 22 damage, or a 20 damage target for flat damage. dr4l is 16 damage, which is low, so add a debuff.
       attack: {
         hit: `
-          \\damagerankfivelow.
+          \\damagerankfourlow.
         `,
         injury: `
-          The target suffers consequences as if it had been struck by a beam of natural sunlight, which can be deadly for some creatures.
+          The target is \\glossterm{briefly} \\dazzled, and it suffers consequences as if it had been struck by a beam of natural sunlight.
+          This can be dangerous for some creatures.
         `,
         halfOnMiss: true,
         targeting: `
@@ -309,6 +319,7 @@ export const photomancy: MysticSphere = {
 
       // This is basically an enemies-only large radius, but a
       // little worse, so call it a r5 area.
+      // That's -2dr, so normal damage would be dr2, or dr3l.
       attack: {
         hit: `
           \\damagerankthreelow.

@@ -126,7 +126,7 @@ export const shields = (): MagicArmor[] => [
     short_description: 'Can reflect magical attacks',
     description: `
       You can activate this shield as a \\glossterm{standard action}.
-      When you do, the shield \\glossterm{briefly} reflects magic.
+      When you do, the shield \\glossterm{briefly} reflects magic, and you \\glossterm{briefly} cannot activate it again.
       Any \\glossterm{targeted} \\magical abilities that target you also target the creature using that ability in addition to you.
       It cannot choose to reduce its accuracy or damage against itself.
       Any other targets of the ability are affected normally.

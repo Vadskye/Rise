@@ -14,16 +14,31 @@ function boots(): Apparel[] {
         rank: 3,
         short_description: 'Deals your falling damage to enemies',
         description: `
-            You can activate these boots as a \\glossterm{standard action}.
-            You must be midair from an intentional jump to activate them (see \\pcref{Jumping}).
-            When you land from the jump, make an attack vs. Reflex against everything within a \\smallarea radius from you.
-            \\hit You deal the target bludgeoning damage equal to the damage you took from falling.
+            You can activate these boots as a \\glossterm{standard action} while \\glossterm{midair}.
+            At the end of your turn, if you land on the ground from falling, make a \\glossterm{reactive attack} vs. Brawn against everything within a \\smallarea radius from you.
+            Your minimum accuracy is $accuracy.
+            After you activate these boots, you \\glossterm{briefly} cannot do so again.
+            \\hit You deal the target damage equal to the damage you took from falling.
             If you reduce or avoid the falling damage, that also affects the damage you deal with these boots.
+            \\miss Half damage.
             \\crit Each target also falls \\prone.
             This attack does not deal increased damage on a critical hit.
         `,
         magical: true,
-        upgrades: [],
+        upgrades: [
+          {
+            rank: 5,
+            short_description: 'Deals your falling damage to enemies',
+            description:
+              'Your minimum accuracy increases to $accuracy, and the attack only affects enemies in the area.',
+          },
+          {
+            rank: 7,
+            short_description: 'Deals your falling damage to enemies',
+            description:
+              'Your minimum accuracy increases to $accuracy, and the area increases to a \\largearea radius from you.',
+          },
+        ],
         tags: ['Attune'],
         rarity: 'Common',
       },
@@ -281,6 +296,7 @@ function boots(): Apparel[] {
         description: `
             You can activate these boots as a standard action.
             When you do, you increase your \\glossterm{fatigue level} by one and teleport horizontally exactly 25 miles in a direction you specify.
+            After you activate these boots, you \\glossterm{briefly} cannot do so again.
             If this would place you within a solid object or otherwise impossible space, the boots will shunt you up to 1,000 feet in any direction to the closest available space.
             If there is no available space within 1,000 feet of your intended destination, the effect fails and you take 4d6 damage.
         `,
