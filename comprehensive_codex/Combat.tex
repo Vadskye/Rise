@@ -1205,8 +1205,17 @@
   \subsection{Impossible Abilities}
     When you try to use an ability in an impossible way, it simply fails with no effect.
     This can happen if all targets are invalid, such as if you attempt to use an ability that only affects creatures on an object.
+    It can also happen if the effects are impossible, such as enlarging a creature that is already in a confined space that leaves it no room to expand.
     An ability that has a mixture of valid and invalid targets will generally affect the valid targets normally while ignoring the invalid targets.
     However, if the ability changes its effects based on the number of targets or otherwise would rely on the invalid targets for its choices, such as a spell that swaps the positions of multiple creatures, the entire ability fails.
+
+  \subsection{Impossible Consequences of Ending Abilities}
+    Sometimes, abilities can end in a way that creates normally impossible circumstances.
+    Since this results from an ability \textit{ending} instead of being used, the ability must still end, and the rules for using impossible abilities don't apply.
+    Instead, everything involved in the impossible situation immediately takes the minimum amount of damage required to make the situation possible again.
+
+    For example, if you are in a confined space and your \spell{shrink} spell ends, you may find yourself in a space too small to contain your normal body.
+    You and the containing object would both take the amount of damage required to either kill you or destroy the containing object, whichever amount of damage is smaller.
 
   \subsection{Combining Effects}
     Abilities do not generally affect the way another abilities function.
@@ -1228,15 +1237,15 @@
     Many of these tags have no game effect by themselves, but they govern how the ability interacts with spells, other abilities, unusual creatures, and so on.
     For a list of ability tags, see \pcref{Ability Tags}.
 
-  \subsection{Dismissal}\label{Dismissal}
-    When an ability is \glossterm{dismissed}, all of its lingering effects immediately end.
-    Any \magical ability with a duration can normally be dismissed, but \glossterm{mundane} abilities cannot be dismissed.
-    You can dismiss an ability as a \glossterm{free action} that requires only mental effort.
-
   \subsection{Rank Upgrades}
     Many abilities automatically become more effective as your rank with a relevant archetype increases.
     Some abilities from feats have similar wording, but increase their power based on your level rather than your rank.
     Rank upgrades and level upgrades are always optional, so you can choose to use the ability as if your rank or level was lower.
+
+  \subsection{Dismissal}\label{Dismissal}
+    When an ability is \glossterm{dismissed}, all of its lingering effects immediately end.
+    Any \magical ability with a duration can normally be dismissed, but \glossterm{mundane} abilities cannot be dismissed.
+    You can dismiss an ability as a \glossterm{free action} that requires only mental effort.
 
 \section{Ability Durations}\label{Ability Durations}
 
