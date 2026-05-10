@@ -487,7 +487,7 @@ export function shifter(): RankAbility[] {
     {
       complexity: 2,
       name: 'Shifting Claw',
-      isMagical: false,
+      isMagical: true,
       rank: 3,
       description: `
         \\begin{magicalactiveability}{Shifting Claw}{Standard action}
