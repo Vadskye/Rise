@@ -432,8 +432,11 @@ export function scout(): RankAbility[] {
       description: `
         \\begin{activeability}{Ambush}{Standard action}
           \\rankline
-          Move up to half your speed and make a \\glossterm{strike} that deals 1d4 \\glossterm{extra damage}.
-          You gain a \\plus2 accuracy bonus if the target is \\unaware or \\partiallyunaware of your attack.
+          Move up to your speed, reducing your \\glossterm{available movement} normally.
+          Then, you can make a \\glossterm{strike} that deals 1d4 \\glossterm{extra damage}.
+          If the target was \\partiallyunaware or \\unaware of you before your movement, they remain so until after your strike.
+          From an observer's perspective, the movement and the strike happen simultaneously in a blur of motion.
+          In addition, you gain a \\plus2 accuracy bonus if the target is partially or fully unaware of your attack.
 
           \\rankline
           \\rank{4} The strike deals double \\glossterm{weapon damage}.
