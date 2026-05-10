@@ -37,7 +37,7 @@ export function pactboundWarrior(): RankAbility[] {
     {
       complexity: 1,
       name: 'Soulblade',
-      isMagical: false,
+      isMagical: true,
       rank: 1,
       description: `
         The pact you made to gain martial prowess infuses your weaponry with mystic power.

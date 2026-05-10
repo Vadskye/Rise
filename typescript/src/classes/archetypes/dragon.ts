@@ -6,13 +6,13 @@ export function dragon(): RankAbility[] {
     {
       complexity: 2,
       name: 'Dragon Breath',
-      isMagical: true,
+      isMagical: false,
       rank: 1,
       description: `
         \\begin{activeability}{Dragon Breath}{Standard action}
           \\abilitycost You \\briefly can't use this ability again.
           \\rankline
-          This ability's tag depends on your dragon type (see Dragon Types, above).
+          This ability's tag depends on your dragon type (see \\pcref{Dragon Types}).
           Make an attack vs. Reflex against everything in the area defined by your dragon type.
           \\hit \\damageranktwo.
           \\miss Half damage.
