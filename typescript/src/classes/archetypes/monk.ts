@@ -65,7 +65,7 @@ export function airdancer(): RankAbility[] {
       description: `
         \\begin{activeability}{Death From Above}{Standard action}
           \\rankline
-          You jump and move as normal for the jump (see \\pcref{Jumping}).
+          You jump up to your \\glossterm{speed} without reducing your \\glossterm{available movement} (see \\pcref{Jumping}).
           In addition, you can make a \\glossterm{strike} that deals 1d6 \\glossterm{extra damage} at any point during that jump.
 
           \\rankline

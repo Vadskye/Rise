@@ -237,7 +237,7 @@ export function outlandSavage(): RankAbility[] {
       description: `
         \\begin{activeability}{Savage Rush}{Standard action}
           \\rankline
-          Move up to your speed.
+          Move up to your speed without reducing your \\glossterm{available movement}.
           During this movement, you can pass through spaces occupied by your \\glossterm{enemies} as if they were unoccupied.
           You must still end your movement in an unoccupied space.
           At any two points during this movement, you may make a melee \\glossterm{strike}.

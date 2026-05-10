@@ -125,24 +125,27 @@ export const mobileHunter: CombatStyle = {
     {
       name: 'Flash Sweep',
 
+      // Think of this as a rank 1 area, so drX.
+      // It gets +2 accuracy, so drX-1.
+      // That's about 20 damage vs 22 for a dr4 spell used at rank 5.
       effect: `
-        You can move in a straight line up to your \\glossterm{speed}.
+        You can move in a straight line, reducing your \\glossterm{available movement} as normal.
         During this movement, you move too quickly to be seen, making you \\trait{invisible}.
-        While still invisible, you can make a melee \\glossterm{strike} that deals double \\glossterm{weapon damage}.
+        While still invisible, you can make a melee \\glossterm{strike} that deals triple weapon damage.
         The strike targets all \\glossterm{enemies} adjacent to you at any point during your movement.
         After making the strike, you become visible at your destination.
       `,
       rank: 5,
-      roles: ['clear'],
+      roles: ['clear', 'dive'],
     },
 
     {
       name: 'Flash Flurry',
 
       effect: `
-        You can move in a straight line up to your \\glossterm{speed}.
+        You can move in a straight line, reducing your \\glossterm{available movement} as normal.
         During this movement, you move too quickly to be seen, making you \\trait{invisible}.
-        While still invisible, you can make two melee \\glossterm{strikes} that deal double \\glossterm{weapon damage} at any point during your movement.
+        While still invisible, you can make two melee \\glossterm{strikes} that deal triple \\glossterm{weapon damage} at any point during your movement.
         After making the strikes, you become visible at your destination.
       `,
       rank: 7,
@@ -153,9 +156,10 @@ export const mobileHunter: CombatStyle = {
       name: 'Flash Charge',
 
       effect: `
-        You can move in a straight line up to your \\glossterm{speed}.
+        You can move in a straight line, reducing your \\glossterm{available movement} as normal.
         During this movement, you move too quickly to be seen, making you \\trait{invisible}.
-        You become visible at your destination, and you can then make a melee \\glossterm{strike} there.
+        When you arrive at your destination, you can make a melee \\glossterm{strike} there while still invisible.
+        After making the strike, you become visible at your destination.
       `,
       rank: 3,
       roles: ['dive'],
@@ -165,22 +169,23 @@ export const mobileHunter: CombatStyle = {
       name: 'Carve the Air',
 
       effect: `
-        You jump and move as normal for the jump (see \\pcref{Jumping}).
-        You can make a melee \\glossterm{strike} with a -1 accuracy penalty from any location you occupy during the motion.
+        Make a melee \\glossterm{strike}.
+        If you are \\glossterm{midair} due to an intentional jump, you gain a \\plus1 accuracy bonus with the strike (see \\pcref{Jumping}).
+        This bonus increases to \\plus2 against each target of the strike that is also midair.
       `,
       rank: 1,
-      roles: ['dive'],
+      roles: ['payoff'],
     },
 
     {
-      name: 'Leaping Impact',
+      name: 'Carve the Air+',
 
       effect: `
-        You jump and move as normal for the jump (see \\pcref{Jumping}).
-        You can make a melee \\glossterm{strike} that deals double damage from your final location after jumping.
-        On a hit, the target takes half of the \\glossterm{falling damage} that you would normally take based on the height of the jump, ignoring any of your abilities that reduce that damage.
+        Make a melee \\glossterm{strike} that deals double damage.
+        If you are \\glossterm{midair} due to an intentional jump, you gain a \\plus1 accuracy bonus with the strike (see \\pcref{Jumping}).
+        This bonus increases to \\plus2 against each target of the strike that is also midair.
       `,
-      rank: 7,
+      rank: 5,
       roles: ['payoff'],
     },
 
@@ -232,10 +237,11 @@ export const mobileHunter: CombatStyle = {
     {
       name: 'Frenzied Charge',
 
+      cost: `Your available movement, if any, is reduced to zero.`,
       effect: `
         After using this ability, you \\briefly take a \\minus4 penalty to all defenses.
 
-        Move up to your speed in a single straight line.
+        Move up to your speed in a single straight line without reducing your \\glossterm{available movement}.
         At the end of your movement, you can make a melee \\glossterm{strike} that deals double damage.
         If you moved at least 15 feet during the charge, you gain a \\plus2 accuracy bonus with the strike.
       `,
@@ -246,14 +252,14 @@ export const mobileHunter: CombatStyle = {
     {
       name: 'Leap Slam',
 
-      // Basically tiny radius in short range, which is area rank 2
+      // Basically tiny radius from you, which is area rank 0. That would normally be drX+1, but this gets about +2 accuracy, so use drX.
       attack: {
-        hit: `\\damageranktwo.`,
+        hit: `\\damagerankthree.`,
         halfOnMiss: true,
         targeting: `
-          You jump and move as normal for the jump (see \\pcref{Jumping}).
-          When you land, if the vertical distance in feet between the highest point of your leap and your landing point was at least ten feet, you emit a small shockwave.
-          If you do, make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you that are on the same stable surface as you.
+          You jump, reducing your \\glossterm{available movement} as normal (see \\pcref{Jumping}).
+          When you land at the end of your turn, make a \\glossterm{reactive attack} vs. Brawn against all \\glossterm{enemies} adjacent to you.
+          You gain a \\plus1 accuracy bonus with this attack for every 10 feet of available movement that you spent on this jump.
         `,
       },
       rank: 3,
@@ -266,7 +272,7 @@ export const mobileHunter: CombatStyle = {
 
       functionsLike: {
         name: 'leap slam',
-        exceptThat: 'the damage increases to \\damageranksix.',
+        exceptThat: 'the damage increases to \\damagerankseven.',
       },
       rank: 7,
       roles: ['clear', 'dive'],
