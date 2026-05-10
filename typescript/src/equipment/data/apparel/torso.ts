@@ -441,18 +441,18 @@ function cloaks(): Apparel[] {
       kind: 'Cloak',
       item: {
         name: 'Vanishing Cloak',
-        rank: 5,
+        rank: 4,
         short_description: 'Can teleport silently',
         description: `
             You can activate this cloak as a standard action.
-            When you do, you \\glossterm{teleport} to an unoccupied location within \\rngmed range of your original location.
+            When you do, you \\glossterm{teleport} to an unoccupied location within \\rngmed range of your original location, and you \\glossterm{briefly} cannot activate this cloak again.
             As normal for teleportation, you can immediately hide when you reach your destination (see \\pcref{Stealth}).
             Unlike most teleportation, this teleportation does not make any noise.
         `,
         magical: true,
         upgrades: [
           {
-            rank: 7,
+            rank: 6,
             short_description: 'Can teleport a great distance silently',
             description: 'The range of the teleportation increases to \\distrange.',
           },
