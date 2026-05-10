@@ -694,6 +694,7 @@ function addVampires(grimoire: Grimoire) {
       In either non-humanoid form, the vampire is unable to take any standard actions, but it can still take \\glossterm{move actions} in place of standard actions.
       Since it has no \\glossterm{walk speed} in those forms, flying does not make it \\unsteady.
       The vampire cannot use this ability while \\helpless.
+      When this ability ends, the vampire does not regain its normal humanoid form until the start of its next turn.
     \\end{magicalattuneability}
  
     \\parhead{Gentle Fangs} Whenever a vampire deal damage using its bite natural weapon, it can choose not to reduce the target's hit points below 0, or it can treat the damage as \\glossterm{subdual damage}.
