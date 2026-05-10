@@ -80,6 +80,7 @@ export function vampire(): RankAbility[] {
           In either non-humanoid form, you are unable to take any standard actions, but you can still take \\glossterm{move actions} in place of standard actions.
           Since you have no walk speed in those forms, flying does not make you \\unsteady.
           You cannot use this ability while \\helpless.
+          When this ability ends, you do not regain your normal humanoid form until the start of your next turn.
         \\end{magicalattuneability}
       `,
     },
