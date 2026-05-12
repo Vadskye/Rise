@@ -220,9 +220,9 @@ export function outlandSavage(): RankAbility[] {
       description: `
         You gain your choice of one of the following benefits:
         \\begin{raggeditemize}
-          \\item Climb: A slow \\glossterm{climb speed}.
+          \\item Climb: An average \\glossterm{climb speed}.
           \\item Jump: A \\plus10 foot bonus to your maximum horizontal jump distance.
-          \\item Swim: A slow \\glossterm{swim speed}.
+          \\item Swim: An average \\glossterm{swim speed}.
         \\end{raggeditemize}
 
         You can invest up to two additional \\glossterm{insight points} into this ability.
