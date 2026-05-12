@@ -339,6 +339,15 @@ export function arcaneSpellMastery(): RankAbility[] {
     },
     {
       complexity: 2,
+      name: 'Spell Known',
+      isMagical: true,
+      rank: 1,
+      description: `
+        You learn an additional arcane spell.
+      `,
+    },
+    {
+      complexity: 2,
       name: 'Metamagic',
       isMagical: true,
       rank: 2,
@@ -383,21 +392,21 @@ export function arcaneSpellMastery(): RankAbility[] {
       `,
     },
     {
-      complexity: 2,
-      name: 'Spell Knowledge',
-      isMagical: true,
-      rank: 3,
-      description: `
-        You learn an additional arcane spell.
-      `,
-    },
-    {
       complexity: 0,
       name: 'Spell-Trained Understanding',
       isMagical: true,
-      rank: 4,
+      rank: 3,
       description: `
         You gain a \\plus1 bonus to your Intelligence.
+      `,
+    },
+    {
+      complexity: 2,
+      name: 'Spell Knowledge',
+      isMagical: true,
+      rank: 4,
+      description: `
+        You learn an additional arcane spell.
       `,
     },
     {
@@ -616,7 +625,7 @@ export function arcaneScholarModifiers(creature: Creature, rank: number) {
 }
 
 export function arcaneSpellMasteryModifiers(creature: Creature, rank: number) {
-  if (rank >= 4) {
+  if (rank >= 3) {
     creature.addSimpleModifier({
       name: 'Spell-Trained Understanding',
       statistic: 'intelligence',
