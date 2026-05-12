@@ -218,10 +218,10 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       cost: "You are \\briefly stunned and can't use this ability again.",
       attack: {
         hit: `
-          \\damagerankfour.
+          \\damagerankthree.
         `,
         targeting: `
-          Make an attack vs. Fortitude with a \\plus2 accuracy bonus against something within \\shortrange.
+          Make an attack vs. Fortitude with a \\plus2 accuracy bonus against something within \\medrange.
           This attack automatically fails unless you hit the target with a \\atWater attack during your last turn.
           ${WATER_ACCURACY_BONUS}
         `,
@@ -237,10 +237,10 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       cost: "You are \\briefly stunned and can't use this ability again.",
       attack: {
         hit: `
-          \\damagerankseven.
+          \\damageranksix.
         `,
         targeting: `
-          Make an attack vs. Fortitude with a \\plus2 accuracy bonus against something within \\shortrange.
+          Make an attack vs. Fortitude with a \\plus2 accuracy bonus against something within \\medrange.
           This attack automatically fails unless you hit the target with a \\atWater attack during your last turn.
           ${WATER_ACCURACY_BONUS}
         `,
@@ -253,12 +253,9 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: 'Surfing Slam',
 
-      // Rank 2 Spell
-      // Range: Touch (+2dr instead of +1dr)
-      // Result: 2 + 2 = dr4
       attack: {
         hit: `
-          \\damagerankfour.
+          \\damagerankfive, and any \\glossterm{extra damage} is doubled.
         `,
         injury: `
           The target falls \\prone.
@@ -268,7 +265,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
           At the end of your movement, if you travelled at least 20 feet using your walk speed or swim speed, make an attack vs. Armor against something you \\glossterm{touch}.
         `,
       },
-      rank: 2,
+      rank: 3,
       roles: ['dive', 'burst'],
       scaling: 'damage',
       tags: ['Manifestation'],
@@ -276,12 +273,9 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: 'Mighty Surfing Slam',
 
-      // Rank 5 Spell
-      // Range: Touch (+2dr)
-      // Result: 5 + 2 = dr7
       attack: {
         hit: `
-          \\damagerankseven.
+          \\damagerankeight, and any \\glossterm{extra damage} is doubled.
         `,
         injury: `
           The target falls \\prone and is \\briefly \\stunned.
@@ -291,7 +285,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
           At the end of your movement, if you travelled at least 20 feet using your walk speed or swim speed, make an attack vs. Armor against something you \\glossterm{touch}.
         `,
       },
-      rank: 5,
+      rank: 6,
       roles: ['dive', 'burst'],
       scaling: 'damage',
       tags: ['Manifestation'],

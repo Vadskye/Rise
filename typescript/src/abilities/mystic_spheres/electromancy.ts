@@ -567,14 +567,12 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
     {
       name: 'Electrocute',
 
-      // Rank 2 Spell
-      // Range: Short (mod +1)
-      // Mod: -4 accuracy penalty (mod +2)
-      // Result: 2 + 1 + 2 = dr5
       attack: {
-        // add trivial extra benefit for fun
         hit: `
-          \\damagerankfive, and any \\glossterm{extra damage} is doubled.
+          \\damagerankseven, and any \\glossterm{extra damage} is doubled.
+        `,
+        injury: `
+          The target is \\briefly \\stunned.
           If takes a \\glossterm{vital wound} from this damage that leaves it unconscious, it immediately dies.
         `,
         targeting: `
@@ -582,7 +580,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         `,
       },
 
-      rank: 2,
+      rank: 4,
       roles: ['burst'],
       scaling: 'damage',
     },
@@ -590,15 +588,11 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
     {
       name: 'Mighty Electrocute',
 
-      // Rank 5 Spell
-      // Range: Short (mod +1)
-      // Mod: -4 accuracy penalty (mod +2)
-      // Result: 5 + 1 + 2 = dr8
       functionsLike: {
         name: 'electrocute',
-        exceptThat: 'the damage increases to \\damagerankeight.',
+        exceptThat: 'the damage increases to \\damagerankten, and any extra damage is tripled.',
       },
-      rank: 5,
+      rank: 7,
       roles: ['burst'],
       scaling: 'damage',
     },
