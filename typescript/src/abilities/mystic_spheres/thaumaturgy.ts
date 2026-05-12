@@ -562,13 +562,14 @@ export const thaumaturgy: MysticSphere = {
     },
 
     // +2dr for condition and delay
+    // Use an alternate damage value to avoid early dr4, which is weak.
     {
       name: 'Mystic Backlash',
 
       attack: {
         hit: `
           You weave a trap into the target's magic.
-          If it uses a \\magical ability as a standard action or \\glossterm{elite action}, it takes \\damagerankfour.
+          If it uses a \\magical ability as a standard action or \\glossterm{elite action}, it takes \\damagerankthree, plus \\glossterm{extra damage} equal to half the target's \\glossterm{magical power}.
           After it takes damage in this way, this effect ends.
         `,
         targeting: `
