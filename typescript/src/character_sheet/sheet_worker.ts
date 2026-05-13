@@ -2541,8 +2541,10 @@ function handleMagicalPower() {
     callback: (v) => {
       const monsterBonus = v.is_monster ? calcMonsterPowerBonus(v.level) : 0;
       const eliteModifier = v.elite ? 2 : 0;
-      const totalValue =
-        Math.max(0, Math.floor(v.level / 2) + v.willpower + monsterBonus + v.misc + eliteModifier);
+      const totalValue = Math.max(
+        0,
+        Math.floor(v.level / 2) + v.willpower + monsterBonus + v.misc + eliteModifier,
+      );
 
       setAttrs({
         magical_power: totalValue,
@@ -2579,8 +2581,10 @@ function handleMundanePower() {
     callback: (v) => {
       const monsterBonus = v.is_monster ? calcMonsterPowerBonus(v.level) : 0;
       const eliteModifier = v.elite ? 2 : 0;
-      const totalValue =
-        Math.max(0, Math.floor(v.level / 2) + v.strength + monsterBonus + v.misc + eliteModifier);
+      const totalValue = Math.max(
+        0,
+        Math.floor(v.level / 2) + v.strength + monsterBonus + v.misc + eliteModifier,
+      );
 
       setAttrs({
         mundane_power: totalValue,

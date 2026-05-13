@@ -3,12 +3,14 @@ import { RiseTag } from '@src/character_sheet/rise_data';
 import { AbilityRole } from '@src/abilities';
 import { MonsterWeapon } from '@src/monsters/weapons';
 import { SphereName } from '@src/abilities/mystic_spheres';
+import { RiseDefense } from '@src/core_mechanics/attributes';
+import { DicePool } from '@src/core_mechanics/dice_pool';
 
 // This is a fully defined active ability with all necessary fields to be converted to
 // LaTeX. This can be used for spells and maneuvers, but not rituals, since rituals have
 // several unique properties.
 export interface ActiveAbility {
-  attack?: ActiveAbilityAttack;
+  attack?: ActiveAbilityAttack | SimulatorReadyAttack;
   cost?: string;
   effect?: string;
   forMonster?: boolean;
@@ -113,6 +115,18 @@ export interface ActiveAbilityAttack {
   halfOnMiss?: boolean;
   miss?: string;
   targeting: string;
+}
+
+export interface SimulatorReadyAttack extends ActiveAbilityAttack {
+  // -- Defensive Metadata --
+  /** Which defense(s) the attack targets. The attack must hit all listed defenses. */
+  defenses: RiseDefense[];
+  /** Area rank, as defined in docs/standard_area_ranks.md. Used to estimate how many targets an ability hits in combat. Larger areas can hit more enemies, though we won't actually simulate a battlemap or creature positions. */
+  areaRank: number | null;
+  /** Attack-local accuracy modifier. */
+  accuracyModifier: number;
+  /** How much damage the attack deals on a hit. */
+  damage: DicePool;
 }
 
 export type ActiveAbilityUsageTime = MonsterAttackUsageTime | RitualCastingTime;

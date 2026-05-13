@@ -1,10 +1,12 @@
 import { Creature } from '@src/character_sheet/creature';
 import { CombatTeam, FightState } from '@src/combat/combat_scenario';
 import { getWeaponAccuracy } from '@src/monsters/weapons';
-import { ActiveAbility } from '@src/abilities/active_abilities';
+import { ActiveAbility, SimulatorReadyAttack } from '@src/abilities/active_abilities';
 import { calculateStrikeDamage } from '@src/latex/monsters/player_abilities';
 import { rollD10, rollDice } from '@src/combat/dice';
 import { selectTarget } from '@src/combat/combat_targeting';
+import { parseAttackEffect } from '@src/combat/parse_attack_effect';
+import { DicePool } from '@src/core_mechanics/dice_pool';
 
 /**
  * Outcome of a single combat step or action.
@@ -42,45 +44,93 @@ export function executeAttackerAction(
   const potentialTargets = getPotentialTargets(team, state);
   if (potentialTargets.length === 0) return { status: CombatStepStatus.Ongoing, winner: null };
 
-  // Elite Area Attack
+  // Parse all available abilities
+  const allAbilities = attacker.getActiveAbilities();
+  const parsedAbilities = allAbilities
+    .map((ability) => ({
+      ability,
+      attack: parseAttackEffect(ability, attacker),
+    }))
+    .filter(
+      (pair): pair is { ability: ActiveAbility; attack: SimulatorReadyAttack } =>
+        pair.attack !== null,
+    );
+
+  // Add default attack
+  const defaultAttack = getDefaultAttack(attacker);
+
+  // Elite Action
   if (attacker.elite) {
-    const areaTargets = getPotentialTargets(team, state);
-    for (const areaTarget of areaTargets) {
-      state.attacksByTeam[team.name]++;
-      // Area attacks for elites are currently generic; we can keep them that way for now
-      // or refine them later.
-      const { damage, hit } = resolveAttack(attacker, areaTarget, undefined, -2);
-      if (hit) state.hitsByTeam[team.name]++;
+    const eliteCandidateAttacks = parsedAbilities
+      .filter((p) => p.ability.usageTime === 'elite')
+      .map((p) => p.attack);
 
-      state.hp[areaTarget.id] -= damage;
+    // Default elite area attack
+    const defaultEliteAttack: SimulatorReadyAttack = {
+      ...getDefaultAttack(attacker, -2),
+      areaRank: 2, // Standard elite area rank
+      hit: 'Elite Area Sweep',
+    };
 
-      if (state.hp[areaTarget.id] <= 0) {
-        handleCreatureDeath(areaTarget, state);
-      }
-    }
-    const areaResult = checkVictory(state);
-    if (areaResult.status !== CombatStepStatus.Ongoing) return areaResult;
+    const eliteAttacks =
+      eliteCandidateAttacks.length > 0 ? eliteCandidateAttacks : [defaultEliteAttack];
+    const result = selectAndExecuteAction(attacker, team, state, eliteAttacks);
+    if (result.status !== CombatStepStatus.Ongoing) return result;
   }
 
-  // Standard Attack
-  const potentialTargetsAfterArea = getPotentialTargets(team, state);
-  if (potentialTargetsAfterArea.length === 0)
-    return { status: CombatStepStatus.Ongoing, winner: null };
+  // Standard Action
+  const standardCandidateAbilities = parsedAbilities.filter(
+    (p) => p.ability.usageTime === 'standard' || p.ability.usageTime === undefined,
+  );
+  const standardAttacks = [...standardCandidateAbilities.map((p) => p.attack), defaultAttack];
 
-  const defender = selectTarget(attacker, potentialTargetsAfterArea, state);
+  return selectAndExecuteAction(attacker, team, state, standardAttacks);
+}
+
+function scoreAttack(attack: SimulatorReadyAttack): number {
+  const avgDamage = attack.damage.averageDamage();
+  const accuracyFactor = (10 + attack.accuracyModifier) / 10;
+  const areaFactor = attack.areaRank !== null ? 1 + attack.areaRank : 1;
+  return avgDamage * accuracyFactor * areaFactor;
+}
+
+function selectAndExecuteAction(
+  attacker: Creature,
+  team: CombatTeam,
+  state: FightState,
+  availableAttacks: SimulatorReadyAttack[],
+): CombatStepResult {
+  const potentialTargets = getPotentialTargets(team, state);
+  if (potentialTargets.length === 0) return { status: CombatStepStatus.Ongoing, winner: null };
+
+  // Select best attack
+  let bestAttack = availableAttacks[0];
+  let bestScore = -1;
+
+  for (const attack of availableAttacks) {
+    const score = scoreAttack(attack);
+    if (score > bestScore) {
+      bestScore = score;
+      bestAttack = attack;
+    }
+  }
+
   state.attacksByTeam[team.name]++;
 
-  // If the monster has any active weapon-based abilities, arbitrarily choose the first.
-  // In the future, we should find the best ability and use it.
-  const explicitAbility = attacker.getActiveAbilities().filter((ability) => ability.weapon)[0];
+  const isAreaAttack = bestAttack.areaRank !== null;
+  const targets = isAreaAttack
+    ? potentialTargets.slice(0, 1 + bestAttack.areaRank!)
+    : [selectTarget(attacker, potentialTargets, state)];
 
-  const { damage, hit } = resolveAttack(attacker, defender, explicitAbility);
-  if (hit) state.hitsByTeam[team.name]++;
+  for (const target of targets) {
+    const { damage, hit } = resolveAttack(attacker, target, bestAttack);
+    if (hit) state.hitsByTeam[team.name]++;
 
-  state.hp[defender.id] -= damage;
+    state.hp[target.id] -= damage;
 
-  if (state.hp[defender.id] <= 0) {
-    handleCreatureDeath(defender, state);
+    if (state.hp[target.id] <= 0) {
+      handleCreatureDeath(target, state);
+    }
   }
 
   return checkVictory(state);
@@ -105,6 +155,34 @@ export function handleCreatureDeath(creature: Creature, state: FightState): void
   }
 }
 
+export function getDefaultAttack(attacker: Creature, rankOffset: number = 0): SimulatorReadyAttack {
+  const power = Math.max(attacker.mundane_power, attacker.magical_power);
+  const rank = Math.floor((attacker.level + 2) / 3) + rankOffset;
+  const halfPower = Math.floor(power / 2);
+
+  // Default medium damage scaling
+  const damageTable: Record<number, DicePool> = {
+    [-1]: DicePool.flat(halfPower),
+    0: DicePool.xdyPlus(1, 4, halfPower),
+    1: DicePool.xdyPlus(1, 6, halfPower),
+    2: DicePool.xdyPlus(1, 10, halfPower),
+    3: DicePool.xdyPlus(1, 8, power),
+    4: DicePool.xdyPlus(halfPower, 6, 0),
+    5: DicePool.xdyPlus(halfPower + 1, 6, 0),
+    6: DicePool.xdyPlus(halfPower + 1, 8, 0),
+    7: DicePool.xdyPlus(halfPower + 1, 10, 0),
+  };
+
+  return {
+    hit: 'Default attack',
+    targeting: 'Default targeting',
+    defenses: ['armor_defense'],
+    areaRank: null,
+    accuracyModifier: 0,
+    damage: damageTable[rank] || DicePool.empty(),
+  };
+}
+
 export function checkVictory(state: FightState): CombatStepResult {
   const teamsWithAlive = Object.entries(state.aliveMembersByTeam).filter(
     ([_, members]) => members.length > 0,
@@ -122,61 +200,28 @@ export function checkVictory(state: FightState): CombatStepResult {
 export function resolveAttack(
   attacker: Creature,
   defender: Creature,
-  explicitAbility?: ActiveAbility,
-  rankOffset: number = 0,
+  attack: SimulatorReadyAttack,
 ): { damage: number; hit: boolean } {
   const roll = rollD10(true);
-  let accuracy = attacker.accuracy;
+  let totalAccuracy = attacker.accuracy + attack.accuracyModifier;
 
-  if (explicitAbility?.weapon) {
-    accuracy += getWeaponAccuracy(explicitAbility.weapon);
-  }
+  const total = roll + totalAccuracy;
 
-  const total = roll + accuracy;
-  const targetDefense = defender.armor_defense;
+  // Target the average of listed defenses, or armor if none
+  const defenses = attack.defenses.length > 0 ? attack.defenses : ['armor_defense' as const];
+  const targetDefense = defenses.reduce((acc, def) => acc + defender[def], 0) / defenses.length;
 
   if (total >= targetDefense + 10) {
     // Critical Hit: Double damage
-    return { damage: calculateDamage(attacker, explicitAbility, rankOffset) * 2, hit: true };
+    return { damage: calculateDamage(attack) * 2, hit: true };
   } else if (total >= targetDefense) {
     // Regular Hit
-    return { damage: calculateDamage(attacker, explicitAbility, rankOffset), hit: true };
+    return { damage: calculateDamage(attack), hit: true };
   }
 
   return { damage: 0, hit: false }; // Miss
 }
 
-export function calculateDamage(
-  creature: Creature,
-  explicitAbility?: ActiveAbility,
-  rankOffset: number = 0,
-): number {
-  // For now, we ignore the fact that attacks should theoretically be intrinsically either magical or mundane, and we just use the highest power on the premise that monsters should generally have abilities that use their highest power.
-  const power = Math.max(creature.mundane_power, creature.magical_power);
-  const rank = Math.floor((creature.level + 2) / 3) + rankOffset;
-  const halfPower = Math.floor(power / 2);
-
-  if (explicitAbility && explicitAbility.kind === 'maneuver' && explicitAbility.weapon) {
-    const diceExpr = calculateStrikeDamage(creature, explicitAbility, explicitAbility.isMagical);
-    return rollDice(diceExpr);
-  }
-
-  // Standard targeted medium damage ranks from sheet_worker.ts
-  const damageTable: Record<number, string> = {
-    [-1]: String(halfPower),
-    0: `1d4+${halfPower}`,
-    1: `1d6+${halfPower}`,
-    2: `1d10+${halfPower}`,
-    3: `1d8+${power}`,
-    4: `${halfPower}d6`,
-    5: `${halfPower + 1}d6`,
-    6: `${halfPower + 1}d8`,
-    7: `${halfPower + 1}d10`,
-  };
-
-  const diceExpr = damageTable[rank];
-  if (!diceExpr) {
-    throw new Error(`Unknown rank: ${rank}`);
-  }
-  return rollDice(diceExpr);
+export function calculateDamage(attack: SimulatorReadyAttack): number {
+  return rollDice(attack.damage.toString());
 }

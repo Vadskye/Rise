@@ -589,7 +589,7 @@ export function soulforged(): RankAbility[] {
   ];
 }
 
-export function pactboundWarriorModifiers(_creature: Creature, _rank: number) { }
+export function pactboundWarriorModifiers(_creature: Creature, _rank: number) {}
 
 export function covenantKeeperModifiers(creature: Creature, rank: number) {
   if (rank >= 2) {
