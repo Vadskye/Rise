@@ -137,7 +137,7 @@ t.test('calculateStrikeDamage', (t) => {
       weapon: 'bite',
       effect: 'Make a strike.',
     } as any;
-    t.equal(calculateStrikeDamage(mockCreature, ability, false), '1d8+10');
+    t.equal(calculateStrikeDamage(mockCreature, ability, false).toString(), '1d8+10');
     t.end();
   });
 
@@ -146,7 +146,7 @@ t.test('calculateStrikeDamage', (t) => {
       weapon: 'claws',
       effect: 'Make a strike that deals double damage.',
     } as any;
-    t.equal(calculateStrikeDamage(mockCreature, ability, false), '4d4+10');
+    t.equal(calculateStrikeDamage(mockCreature, ability, false).toString(), '4d4+10');
     t.end();
   });
 
@@ -155,7 +155,7 @@ t.test('calculateStrikeDamage', (t) => {
       weapon: 'bite',
       effect: 'Make a strike that deals 7 \\glossterm{extra damage}.',
     } as any;
-    t.equal(calculateStrikeDamage(mockCreature, ability, false), '1d8+17');
+    t.equal(calculateStrikeDamage(mockCreature, ability, false).toString(), '1d8+17');
     t.end();
   });
 
@@ -164,7 +164,7 @@ t.test('calculateStrikeDamage', (t) => {
       weapon: 'bite',
       effect: 'Make a strike that deals double weapon damage and 13 extra damage.',
     } as any;
-    t.equal(calculateStrikeDamage(mockCreature, ability, false), '2d8+23');
+    t.equal(calculateStrikeDamage(mockCreature, ability, false).toString(), '2d8+23');
     t.end();
   });
 
@@ -174,7 +174,7 @@ t.test('calculateStrikeDamage', (t) => {
       effect: 'Make a \\glossterm{strike} that deals triple damage.',
     } as any;
     // Lower because this is a magical strike
-    t.equal(calculateStrikeDamage(mockCreature, ability, true), '3d6+12');
+    t.equal(calculateStrikeDamage(mockCreature, ability, true).toString(), '3d6+12');
     t.end();
   });
 
@@ -183,7 +183,7 @@ t.test('calculateStrikeDamage', (t) => {
       weapon: 'bite',
       effect: 'Make a \\glossterm{strike} that deals quadruple damage.',
     } as any;
-    t.equal(calculateStrikeDamage(mockCreature, ability, false), '4d8+40');
+    t.equal(calculateStrikeDamage(mockCreature, ability, false).toString(), '4d8+40');
     t.end();
   });
 
@@ -192,7 +192,7 @@ t.test('calculateStrikeDamage', (t) => {
       weapon: 'claws',
       effect: 'Make a \\glossterm{strike} that deals eight times weapon damage.',
     } as any;
-    t.equal(calculateStrikeDamage(mockCreature, ability, false), '16d4+5');
+    t.equal(calculateStrikeDamage(mockCreature, ability, false).toString(), '16d4+5');
     t.end();
   });
 
@@ -201,7 +201,7 @@ t.test('calculateStrikeDamage', (t) => {
       weapon: 'claws',
       effect: 'Make a \\glossterm{strike} that deals eight times weapon damage and 3 extra damage.',
     } as any;
-    t.equal(calculateStrikeDamage(mockCreature, ability, false), '16d4+8');
+    t.equal(calculateStrikeDamage(mockCreature, ability, false).toString(), '16d4+8');
     t.end();
   });
 
@@ -210,7 +210,7 @@ t.test('calculateStrikeDamage', (t) => {
       weapon: 'bite',
       effect: 'Make a \\glossterm{strike} that deals double damage and 7 extra damage.',
     } as any;
-    t.equal(calculateStrikeDamage(mockCreature, ability, false), '2d8+34');
+    t.equal(calculateStrikeDamage(mockCreature, ability, false).toString(), '2d8+34');
     t.end();
   });
 
@@ -222,7 +222,7 @@ t.test('calculateStrikeDamage', (t) => {
       effect:
         'Make a strike using exactly one turkey leg wrapped around a longsword that deals double weapon damage if it is Tuesday.',
     } as any;
-    t.equal(calculateStrikeDamage(mockCreature, ability, false), '2d8+10');
+    t.equal(calculateStrikeDamage(mockCreature, ability, false).toString(), '2d8+10');
     t.end();
   });
 
@@ -234,7 +234,7 @@ t.test('calculateStrikeDamage', (t) => {
       weapon: 'bite',
       effect: 'Make a strike.',
     } as any;
-    t.equal(calculateStrikeDamage(creatureWithNegativePower, ability, false), '1d8-5');
+    t.equal(calculateStrikeDamage(creatureWithNegativePower, ability, false).toString(), '1d8-5');
     t.end();
   });
 
@@ -243,7 +243,7 @@ t.test('calculateStrikeDamage', (t) => {
       weapon: 'bite',
       effect: 'Make a strike that deals extra damage equal to your power.',
     } as any;
-    t.equal(calculateStrikeDamage(mockCreature, ability, false), '1d8+20');
+    t.equal(calculateStrikeDamage(mockCreature, ability, false).toString(), '1d8+20');
     t.end();
   });
 
@@ -252,7 +252,7 @@ t.test('calculateStrikeDamage', (t) => {
       weapon: 'bite',
       effect: 'Make a strike that deals extra damage equal to half your power.',
     } as any;
-    t.equal(calculateStrikeDamage(mockCreature, ability, false), '1d8+15');
+    t.equal(calculateStrikeDamage(mockCreature, ability, false).toString(), '1d8+15');
     t.end();
   });
 
@@ -331,7 +331,7 @@ t.test('convertAbilityToMonsterLatex', (t) => {
       \\noindent
       The $name makes a +7 attack vs. Brawn using a \\glossterm{free hand} against a creature it is \\glossterm{grappling}.%
         \\vspace{0.25em}
-        \\hit 3d6\\plus1d8\\plus10 damage.% 
+        \\hit 3d6+1d8+10 damage.% 
       \\vspace{0.1em}%
     \\end{activeability}`,
     );
@@ -584,7 +584,7 @@ t.test('reformatAttackConsequences', (t) => {
       },
     } as any;
     reformatAttackConsequences(simpleCreature, ability);
-    t.equal(ability.attack.hit, '1d8\\plus10 damage.');
+    t.equal(ability.attack.hit, '1d8+10 damage.');
     t.equal(ability.attack.crit, 'Also deals 5d6 damage.');
     t.equal(ability.attack.injury, 'And 6d6 damage.');
     t.end();
@@ -626,7 +626,7 @@ t.test('reformatAttackConsequences', (t) => {
       },
     } as any;
     reformatAttackConsequences(simpleCreature, ability);
-    t.equal(ability.attack.hit, 'Deals 1d8\\plus10 damage.');
+    t.equal(ability.attack.hit, 'Deals 1d8+10 damage.');
     t.end();
   });
 
@@ -670,28 +670,28 @@ t.test('calculateDamage', (t) => {
 
   t.test('dr3 as a rank 3 creature', (t) => {
     const ability = { rank: 3, isMagical: false } as any;
-    t.equal(calculateDamage(rank3Creature, ability, 3, false), '1d8\\plus10');
+    t.equal(calculateDamage(rank3Creature, ability, 3, false).toString(), '1d8+10');
     t.end();
   });
 
   t.test('dr3 as a rank 3 creature using a rank 1 ability', (t) => {
     const ability = { rank: 1, isMagical: false } as any;
     // +6 from scaling
-    t.equal(calculateDamage(rank3Creature, ability, 3, false), '2d6\\plus1d8\\plus10');
+    t.equal(calculateDamage(rank3Creature, ability, 3, false).toString(), '2d6+1d8+10');
     t.end();
   });
 
   t.test('dr3 as a rank 6 creature', (t) => {
     const ability = { rank: 3, isMagical: false } as any;
     // +9 from scaling
-    t.equal(calculateDamage(rank6Creature, ability, 3, false), '3d6\\plus1d8\\plus10');
+    t.equal(calculateDamage(rank6Creature, ability, 3, false).toString(), '3d6+1d8+10');
     t.end();
   });
 
   t.test('dr4 as a rank 6 creature', (t) => {
     const ability = { rank: 4, isMagical: false } as any;
     // +2d6 from scaling
-    t.equal(calculateDamage(rank6Creature, ability, 4, false), '7d6');
+    t.equal(calculateDamage(rank6Creature, ability, 4, false).toString(), '7d6');
     t.end();
   });
 

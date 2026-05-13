@@ -106,7 +106,7 @@ type StringCreatureProperty =
   | RiseSpecialDefense
   | CustomMovementSpeed
   | CustomSense;
-type BooleanCreatureProperty = 'has_art' | 'elite' | RiseDebuff;
+type BooleanCreatureProperty = 'has_art' | 'elite' | 'is_monster' | RiseDebuff;
 type CalcExplanation =
   | 'armor_defense_explanation'
   | 'brawn_explanation'
@@ -992,6 +992,10 @@ export class Creature implements CreaturePropertyMap {
 
   public get mundane_power() {
     return this.getPropertyValue('mundane_power');
+  }
+
+  public get is_monster() {
+    return this.getPropertyValue('is_monster');
   }
 
   public get fatigue_tolerance() {

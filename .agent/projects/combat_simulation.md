@@ -7,7 +7,7 @@ Build a general-purpose combat simulator for Rise that can answer balance questi
 1. **Structured ability data over LaTeX parsing.** Many abilities store targeting and defense info as free-form LaTeX text. Rather than parsing LaTeX at _execution_ time in the simulator, we bridge this gap by adding structured combat metadata to `ActiveAbility`.
 2. **Normalization over Manual Entry.** To avoid a massive rewrite of every ability in the game, we implement a "normalization" layer that uses the existing LaTeX parsing regexes to auto-populate metadata for the simulator. Manual metadata entry is only required for complex exceptions.
 3. **Incremental fidelity.** Start with the mechanics that most affect outcomes (defense targeting, ability selection, damage), then layer in secondary mechanics (status effects, cooldowns, positioning) in later phases.
-4. **Test-driven.** Each phase adds tests that validate the new mechanics against expected outcomes.
+4. **Test-driven.** Each phase and subphase must include tests that validate the new mechanics against expected outcomes.
 
 ---
 
@@ -35,6 +35,8 @@ export interface SimulatorReadyAttack extends ActiveAbilityAttack {
   accuracyModifier: number;
   /** How much damage the attack deals on a hit. */
   damage: DicePool;
+  /** The usage time of the ability, to distinguish between elite and standard actions. */
+  usageTime?: ActiveAbilityUsageTime;
 }
 ```
 
@@ -94,8 +96,10 @@ Replace the "pick first weapon ability" logic with a scoring function:
 
 ### 2d. Elite action reform
 
-- If the creature has an area ability, use it for the elite action.
-- If not, use the best single-target ability (at -2 accuracy, as per current logic).
+- Elite monsters get two actions per round: one elite action and one standard action.
+- The simulator must choose the best *elite* action (where `usageTime === 'elite'`) and the best *standard* action separately.
+- They cannot use the same ability for both actions.
+- If no better elite action exists, elites use a default "Elite Area Sweep" (area rank 2, at a -2 rank damage penalty).
 
 ### 2e. Cooldown tracking
 
@@ -212,12 +216,12 @@ Phase 1 is a strict prerequisite for Phase 2. Phases 3, 4, and 5 can proceed in 
 
 ## Progress Tracking
 
-- [ ] Phase 1a: Add structured fields to `ActiveAbilityAttack`
-- [ ] Phase 1b: Populate metadata on priority monster abilities
+- [x] Phase 1a: Add structured fields to `ActiveAbilityAttack`
+- [x] Phase 1b: Populate metadata on priority monster abilities (Normalization Engine)
 - [ ] Phase 1c: Populate metadata on player abilities
-- [ ] Phase 2a: Defense targeting in `resolveAttack`
-- [ ] Phase 2b: Intelligent ability selection
-- [ ] Phase 2c: Elite action reform
+- [x] Phase 2a: Defense targeting in `resolveAttack`
+- [x] Phase 2b: Intelligent ability selection
+- [x] Phase 2c: Elite action reform
 - [ ] Phase 2d: Cooldown tracking
 - [ ] Phase 3a: Equipment automation
 - [ ] Phase 3b: Fill in stock character levels
@@ -226,4 +230,4 @@ Phase 1 is a strict prerequisite for Phase 2. Phases 3, 4, and 5 can proceed in 
 - [ ] Phase 4b: Grappled condition
 - [ ] Phase 5a: Simulation CLI
 - [ ] Phase 5b: Verbose combat logging
-- [ ] Update existing test expectations
+- [x] Update existing test expectations
