@@ -805,6 +805,10 @@ export class Creature implements CreaturePropertyMap {
     return Object.values(this.activeAbilities);
   }
 
+  getActiveAbility(name: string): ActiveAbility | null {
+    return this.activeAbilities[name] || null;
+  }
+
   // Intended for combat testing; not used during regular book compilation.
   resetActiveAbilities() {
     this.activeAbilities = {};
