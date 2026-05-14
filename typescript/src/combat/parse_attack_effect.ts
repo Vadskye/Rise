@@ -43,6 +43,7 @@ export function parseAttackEffect(
     areaRank,
     accuracyModifier,
     damage,
+    cooldown: 0,
   };
 }
 
