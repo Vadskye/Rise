@@ -31,6 +31,7 @@ export interface FightState {
   hp: Record<string, number>;
   initialTotalHpByTeam: Record<string, number>;
   memberToTeam: Record<string, CombatTeam>;
+  cooldowns: Record<string, Record<string, number>>; // creatureId -> abilityName -> roundsRemaining
 }
 
 /**
@@ -158,6 +159,7 @@ export class CombatScenario {
     const initialTotalHpByTeam: Record<string, number> = {};
     const hitsByTeam: Record<string, number> = {};
     const attacksByTeam: Record<string, number> = {};
+    const cooldowns: Record<string, Record<string, number>> = {};
 
     for (const team of this.teams) {
       const aliveMembers: Creature[] = [];
@@ -167,6 +169,7 @@ export class CombatScenario {
         memberToTeam[member.id] = team;
         aliveMembers.push(member);
         teamInitialHp += member.hit_points;
+        cooldowns[member.id] = {};
       }
       aliveMembersByTeam[team.name] = aliveMembers;
       initialTotalHpByTeam[team.name] = teamInitialHp;
@@ -181,6 +184,7 @@ export class CombatScenario {
       initialTotalHpByTeam,
       hitsByTeam,
       attacksByTeam,
+      cooldowns,
     };
   }
 
