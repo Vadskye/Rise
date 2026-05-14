@@ -19,8 +19,8 @@ import {
   addAccuracyToEffect,
   replaceAbilityPlaceholders,
 } from '@src/latex/monsters/replace_placeholders';
-import { DamageScaling } from '@src/core_mechanics/damage_scaling';
 import { DicePool } from '@src/core_mechanics/dice_pool';
+import { calculateDamage, parseDamageRank } from '@src/core_mechanics/damage_calculation';
 
 // It's the same except that `effect` and `weapon` are mandatory.
 export interface StrikeActiveAbility extends Omit<ActiveAbility, 'effect' | 'weapon'> {
@@ -733,49 +733,6 @@ function replaceDamageText(monster: Creature, ability: ActiveAbility, effectText
   effectText = effectText.replace(/, and any (\\glossterm{)?extra damage}? is doubled/g, '');
 
   return effectText;
-}
-
-type DamageRank = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
-
-function parseDamageRank(rankText: string): DamageRank {
-  // Don't laugh at me
-  const rank = {
-    zero: 0,
-    one: 1,
-    two: 2,
-    three: 3,
-    four: 4,
-    five: 5,
-    six: 6,
-    seven: 7,
-    eight: 8,
-    nine: 9,
-    ten: 10,
-  }[rankText];
-  if (!rank) {
-    throw new Error(`Unable to parse rank '${rankText}'`);
-  }
-
-  return rank as DamageRank;
-}
-
-// This can be applied to attack.hit, attack.crit, or attack.injury, since all of those
-// could have damage terms. We use the full `ability` to calculate damage scaling from
-// rank.
-// Despite the name, the exact same calculations are used for both HP and damage, so this
-// handles both.
-
-export function calculateDamage(
-  monster: Creature,
-  ability: ActiveAbility,
-  damageRank: DamageRank,
-  lowPowerScaling: boolean,
-): DicePool {
-  const excessRank = Math.max(0, monster.calculateRank() - ability.rank);
-  const scaling = lowPowerScaling ? DamageScaling.drl(damageRank) : DamageScaling.dr(damageRank);
-  const relevantPower = monster.getRelevantPower(ability.isMagical);
-
-  return scaling.scaledPool(relevantPower, excessRank);
 }
 
 function reformatAbilityCost(ability: Pick<ActiveAbility, 'cost'>) {
