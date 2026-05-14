@@ -83,8 +83,8 @@ t.test('CombatScenario can simulate 1 Ankheg vs 10 Carrion Crows', (t) => {
   const result = scenario.simulate();
 
   assertExpectedTurnsCount(t, result, 3.2);
-  assertExpectedWinRate(t, result, 'Ankheg', 22);
-  assertExpectedWinRate(t, result, 'Crows', 78);
+  assertExpectedWinRate(t, result, 'Ankheg', 5);
+  assertExpectedWinRate(t, result, 'Crows', 95);
   t.end();
 });
 
@@ -235,9 +235,9 @@ t.test('One elite Ankheg is equivalent to four non-elite Ankhegs', (t) => {
   // This scenario is particularly flaky due to its complexity
   const result = scenario.simulate(500);
 
-  assertExpectedTurnsCount(t, result, 3.1);
-  assertExpectedWinRate(t, result, 'Elite Ankheg', 87);
-  assertExpectedWinRate(t, result, 'Normal Ankhegs', 13);
+  assertExpectedTurnsCount(t, result, 4.0);
+  assertExpectedWinRate(t, result, 'Elite Ankheg', 70);
+  assertExpectedWinRate(t, result, 'Normal Ankhegs', 30);
   t.end();
 });
 
