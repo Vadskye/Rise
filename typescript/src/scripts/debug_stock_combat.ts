@@ -48,7 +48,7 @@ async function main({ character, level }: { character?: string; level?: number }
           samples.push(calculateDamage(attack));
         }
         console.log(`Generic accuracy: ${character.accuracy}`);
-        console.log(`Ability: ${attack.hit}`);
+        console.log(`Ability: ${attack.name}`);
         console.log(`Damage Samples: [${samples.join(', ')}]`);
         console.log(`Average: ${(samples.reduce((a, b) => a + b, 0) / samples.length).toFixed(1)}`);
       }
