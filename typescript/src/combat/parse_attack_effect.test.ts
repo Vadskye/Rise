@@ -51,9 +51,9 @@ tap.test('parseAttackEffect', (t) => {
     t.ok(parsed, 'should parse Searing Light');
     // parseDefenses order is fortitude then reflex
     t.same(parsed?.defenses, ['fortitude', 'reflex'], 'should target Fortitude and Reflex');
-    // Searing Light is Rank 1, damageranktwolow.
-    // drl(2) is 1d8+1d6, no power scaling.
-    t.equal(parsed?.damage.toString(), '1d6+1d8', 'should calculate correct damage (dr2low)');
+    // drl(2) is 1d8+1d6. Barbarian 4 is Rank 2. Searing Light is Rank 1.
+    // Excess 1 -> add 1d6 -> 2d6+1d8.
+    t.equal(parsed?.damage.toString(), '2d6+1d8', 'should calculate correct damage (dr2low + excess 1)');
     t.end();
   });
 
@@ -84,7 +84,7 @@ tap.test('parseAttackEffect', (t) => {
     const ability = creature.getActiveAbility('Wall of Fire')!;
     const parsed = parseAttackEffect(ability, creature);
     t.ok(parsed, 'should parse Wall of Fire');
-    t.equal(parsed?.areaRank, 2, 'should have correct area rank (Medium wall)');
+    t.equal(parsed?.areaRank, 3, 'should have correct area rank (Medium wall in Medium range)');
     // BARRIER_COOLDOWN contains "briefly", so it parses as 2.
     t.equal(parsed?.cooldown, 2, 'should parse BARRIER_COOLDOWN as briefly (2)');
     t.end();
@@ -97,10 +97,10 @@ tap.test('parseAttackEffect', (t) => {
     t.ok(parsed, 'should parse Fleshspike');
     t.same(parsed?.defenses, ['armor_defense'], 'should default strike to Armor');
     t.equal(parsed?.areaRank, 0, 'should have correct area rank (Adjacent)');
-    // Fleshspike is Rank 1, damagerankthree.
+    // Fleshspike is Rank 1, damagerankthree. Barbarian 4 is Rank 2.
     // dr(3) power scaling is +1 per 1 power. Power 2 -> +2.
-    // Base dice for dr(3) is 1d8. So 1d8+2.
-    t.equal(parsed?.damage.toString(), '1d8+2', 'should calculate correct damage (dr3 for power 2)');
+    // Base dice for dr(3) is 1d8. Excess 1 -> add 1d6. So 1d6+1d8+2.
+    t.equal(parsed?.damage.toString(), '1d6+1d8+2', 'should calculate correct damage (dr3 + excess 1)');
     t.end();
   });
 
@@ -139,6 +139,38 @@ tap.test('parseAttackEffect', (t) => {
     const ability = creature.getActiveAbility('Forge')!;
     const parsed = parseAttackEffect(ability, creature);
     t.equal(parsed, null, 'should not parse purely narrative spell');
+    t.end();
+  });
+
+  t.test('Psionic Blast', (t) => {
+    creature.addSpell('Psionic Blast');
+    const ability = creature.getActiveAbility('Psionic Blast')!;
+    const parsed = parseAttackEffect(ability, creature);
+    t.equal(parsed?.areaRank, 3, 'should have correct area rank (Enemies in Medium cone)');
+    t.end();
+  });
+
+  t.test('Hurricane', (t) => {
+    creature.addSpell('Hurricane');
+    const ability = creature.getActiveAbility('Hurricane')!;
+    const parsed = parseAttackEffect(ability, creature);
+    t.equal(parsed?.areaRank, 4, 'should have correct area rank (Enemies in Medium radius from you)');
+    t.end();
+  });
+
+  t.test('Windsnipe', (t) => {
+    creature.addSpell('Windsnipe');
+    const ability = creature.getActiveAbility('Windsnipe')!;
+    const parsed = parseAttackEffect(ability, creature);
+    t.equal(parsed?.areaRank, 2, 'should have correct area rank (Something in Distant range)');
+    t.end();
+  });
+
+  t.test('Split Fireball', (t) => {
+    creature.addSpell('Split Fireball');
+    const ability = creature.getActiveAbility('Split Fireball')!;
+    const parsed = parseAttackEffect(ability, creature);
+    t.equal(parsed?.areaRank, 3, 'should have correct area rank (Two tiny radii in Short range)');
     t.end();
   });
 
