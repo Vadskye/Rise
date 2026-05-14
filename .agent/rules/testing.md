@@ -19,9 +19,8 @@ To ensure tests run correctly on both Windows and Unix-like systems, always use 
 These scripts are configured to use `npx tap --node-arg=--import=tsx`, which correctly sets up the TypeScript loader without requiring shell-specific environment variable syntax.
 
 ## Writing Tests
+* **Use Real Implementations**: Unless it's completely infeasible, use real implementations for everything in tests. Mocks and `any` casts should be avoided.
 * **Imports**: Use `import t from 'tap';` for the test harness.
-* **Mocks/Shims**: Be aware of the `roll20_shim.ts` if testing code that interacts with the Roll20 environment.
-* **Database/Grimoire**: Extensive monsters can cause timeouts. When testing monster-related logic, prefer loading only the necessary groups or individual monsters using their specific `addX` functions (e.g., `addBeasts(gen.grimoire)`) rather than `grimoire.addAllMonsters()`.
 
 ## TypeScript Development & Test Execution
 
