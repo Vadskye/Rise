@@ -7,9 +7,9 @@ import {
   reformatAsMonsterAbility,
   restructureStrikeAbility,
   reformatAttackConsequences,
-  calculateDamage,
   StrikeActiveAbility,
 } from './player_abilities';
+import { calculateDamage } from '@src/core_mechanics/damage_calculation';
 import { ActiveAbility, standardizeManeuver } from '@src/abilities';
 import { Creature } from '@src/character_sheet/creature';
 import { getManeuverByName } from '@src/abilities/combat_styles';

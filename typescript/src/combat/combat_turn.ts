@@ -1,12 +1,11 @@
+import { ActiveAbility, SimulatorReadyAttack } from '@src/abilities/active_abilities';
 import { Creature } from '@src/character_sheet/creature';
 import { CombatTeam, FightState } from '@src/combat/combat_scenario';
-import { getWeaponAccuracy } from '@src/monsters/weapons';
-import { ActiveAbility, SimulatorReadyAttack } from '@src/abilities/active_abilities';
-import { calculateStrikeDamage } from '@src/latex/monsters/player_abilities';
 import { rollD10, rollDice } from '@src/combat/dice';
 import { selectTarget } from '@src/combat/combat_targeting';
 import { parseAttackEffect } from '@src/combat/parse_attack_effect';
 import { DicePool } from '@src/core_mechanics/dice_pool';
+import { getWeaponAccuracy } from '@src/monsters/weapons';
 
 /**
  * Outcome of a single combat step or action.

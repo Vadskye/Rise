@@ -1,8 +1,9 @@
 import { ActiveAbility, SimulatorReadyAttack } from '@src/abilities/active_abilities';
 import { Creature } from '@src/character_sheet/creature';
 import { RiseDefense } from '@src/core_mechanics/attributes';
+import { calculateDamage, parseDamageRank } from '@src/core_mechanics/damage_calculation';
 import { DicePool } from '@src/core_mechanics/dice_pool';
-import { calculateDamage, calculateStrikeDamage } from '@src/latex/monsters/player_abilities';
+import { calculateStrikeDamage } from '@src/latex/monsters/player_abilities';
 
 /**
  * Normalizes an ActiveAbility into a SimulatorReadyAttack by parsing its text.
@@ -92,7 +93,7 @@ function parseDefenses(text: string): RiseDefense[] {
 
   for (const [name, value] of Object.entries(defenseMap)) {
     // Look for "vs. Defense" or "against Defense"
-    const regex = new RegExp(`(vs\\.|against|and) (\\glossterm{)?${name}`, 'i');
+    const regex = new RegExp(`(vs\\.|against|and) (\\\\glossterm{)?${name}`, 'i');
     if (regex.test(lowercaseText)) {
       defenses.push(value);
     }
@@ -132,25 +133,6 @@ function parseDamage(ability: ActiveAbility, creature: Creature): DicePool {
   }
 
   return DicePool.empty();
-}
-
-type DamageRank = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
-
-function parseDamageRank(rankText: string): DamageRank {
-  const rankMap: Record<string, number> = {
-    zero: 0,
-    one: 1,
-    two: 2,
-    three: 3,
-    four: 4,
-    five: 5,
-    six: 6,
-    seven: 7,
-    eight: 8,
-    nine: 9,
-    ten: 10,
-  };
-  return (rankMap[rankText.toLowerCase()] ?? 0) as DamageRank;
 }
 
 function parseAreaRank(text: string): number | null {

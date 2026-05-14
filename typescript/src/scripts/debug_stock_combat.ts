@@ -1,6 +1,5 @@
 import { StockCharacters } from '@src/character_sheet/stock_characters';
 import { calculateDamage, getDefaultAttack } from '@src/combat/combat_turn';
-import { calculateStrikeDamage } from '@src/latex/monsters/player_abilities';
 import { parseAttackEffect } from '@src/combat/parse_attack_effect';
 import { SimulatorReadyAttack } from '@src/abilities/active_abilities';
 import cli from 'commander';
