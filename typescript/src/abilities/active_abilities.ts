@@ -127,6 +127,8 @@ export interface SimulatorReadyAttack extends ActiveAbilityAttack {
   accuracyModifier: number;
   /** How much damage the attack deals on a hit. */
   damage: DicePool;
+  /** How many rounds the creature must wait before using this ability again. */
+  cooldown: number;
 }
 
 export type ActiveAbilityUsageTime = MonsterAttackUsageTime | RitualCastingTime;

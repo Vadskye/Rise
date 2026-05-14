@@ -58,4 +58,4 @@ The character sheet has a worker that automatically character sheet fields using
 ## Code Architecture
 
 * **Singleton Integrity**: The `current_character_sheet.ts` module manages the active character context. To prevent `tsx` from loading multiple isolated instances of this module during tests, all files MUST import it using the exact alias: `@src/character_sheet/current_character_sheet`.
-* **Avoid Circular Dependencies**: The `sheet_worker.ts` file is a massive monolith. Do not import `sheet_worker.ts` into core models (like `CharacterSheet`) just for type definitions. Use `types.ts` to break dependency cycles and prevent premature module loading.
+* **Avoid Circular Dependencies**: Use `import types` to import types without importing functional code.

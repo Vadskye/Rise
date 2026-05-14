@@ -5,7 +5,7 @@ import {
   splitPropertyName,
   RepeatingSectionName,
 } from '@src/character_sheet/repeating_section/repeating_section';
-import { Attrs, EventInfo, SimpleValue } from './sheet_worker';
+import type { Attrs, EventInfo, SimpleValue } from './sheet_worker';
 import { Unsubscriber } from '@src/character_sheet/events/signal';
 
 export class CharacterSheet {

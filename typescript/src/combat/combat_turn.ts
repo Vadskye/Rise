@@ -180,6 +180,7 @@ export function getDefaultAttack(attacker: Creature, rankOffset: number = 0): Si
     areaRank: null,
     accuracyModifier: 0,
     damage: damageTable[rank] || DicePool.empty(),
+    cooldown: 0,
   };
 }
 
