@@ -59,9 +59,15 @@ Update monster definitions that have non-Armor targeting or area attacks where t
 - Hydra Maggot (Impaling Tentacles: vs Reflex)
 - Yrthak (Sonic Lance: area, vs Fortitude)
 
-### 1d. Populate metadata on player abilities (maneuvers/spells)
+### 1d. Write tests to confirm parsing correctness
 
-Extend `ManeuverDefinition` and `SpellDefinition` to support the same optional fields. Ensure standard weapon strike maneuvers are correctly identified as `isStrike: true`.
+Add tests for `parse_attack_effect.ts` to ensure that it correctly parses common player abilities. This includes:
+
+- Archetype abilities like Sneak Attack
+- Maneuvers
+- Spells
+
+You shouldn't have to update the actual class or player ability definition files to write these tests.
 
 ---
 
