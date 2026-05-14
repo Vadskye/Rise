@@ -13,14 +13,17 @@ export function parseAttackEffect(
 ): SimulatorReadyAttack | null {
   const attack = ability.attack;
   const effect = (ability.effect || '').replace(/\s+/g, ' ').trim().toLowerCase();
+  const hit = (attack?.hit || '').replace(/\s+/g, ' ').trim().toLowerCase();
   const targeting = (attack?.targeting || '').replace(/\s+/g, ' ').trim().toLowerCase();
-  const text = `${targeting} ${effect}`;
+  const text = `${targeting} ${hit} ${effect}`;
 
   // 1. Identify targeted defenses
   const defenses = parseDefenses(text);
   if (defenses.length === 0) {
     if (text.includes('strike')) {
       defenses.push('armor_defense');
+    } else if (text.includes('\\hprank')) {
+      // Healing abilities don't have defenses, but we want to parse them.
     } else {
       // If no defenses are found and it's not a strike, it's likely not an attack we can parse.
       return null;
