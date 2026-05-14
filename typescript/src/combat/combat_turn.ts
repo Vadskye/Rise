@@ -26,6 +26,19 @@ export interface CombatStepResult {
 }
 
 export function executeTeamTurn(team: CombatTeam, state: FightState): CombatStepResult {
+  // Decrement cooldowns for all members of the team at the start of their team turn.
+  // Cooldowns are tracked in state.cooldowns[creatureId][abilityName].
+  for (const member of team.members) {
+    const creatureCooldowns = state.cooldowns[member.id];
+    if (creatureCooldowns) {
+      for (const abilityName in creatureCooldowns) {
+        if (creatureCooldowns[abilityName] > 0) {
+          creatureCooldowns[abilityName]--;
+        }
+      }
+    }
+  }
+
   const attackers = [...state.aliveMembersByTeam[team.name]];
   for (const attacker of attackers) {
     if (state.hp[attacker.id] <= 0) continue;
@@ -45,44 +58,22 @@ export function executeAttackerAction(
   if (potentialTargets.length === 0) return { status: CombatStepStatus.Ongoing, winner: null };
 
   // Parse all available abilities
-  const allAbilities = attacker.getActiveAbilities();
-  const parsedAbilities = allAbilities
-    .map((ability) => ({
-      ability,
-      attack: parseAttackEffect(ability, attacker),
-    }))
-    .filter(
-      (pair): pair is { ability: ActiveAbility; attack: SimulatorReadyAttack } =>
-        pair.attack !== null,
-    );
+  const attacks: SimulatorReadyAttack[] = attacker.getActiveAbilities()
+    .map((ability) => parseAttackEffect(ability, attacker))
+    .filter((a): a is SimulatorReadyAttack => !!a);
 
   // Add default attack
-  const defaultAttack = getDefaultAttack(attacker);
+  attacks.push(getDefaultAttack(attacker));
+  attacks.push(getDefaultEliteAttack(attacker));
 
   // Elite Action
   if (attacker.elite) {
-    const eliteCandidateAttacks = parsedAbilities
-      .filter((p) => p.ability.usageTime === 'elite')
-      .map((p) => p.attack);
-
-    // Default elite area attack
-    const defaultEliteAttack: SimulatorReadyAttack = {
-      ...getDefaultAttack(attacker, -2),
-      areaRank: 2, // Standard elite area rank
-      hit: 'Elite Area Sweep',
-    };
-
-    const eliteAttacks =
-      eliteCandidateAttacks.length > 0 ? eliteCandidateAttacks : [defaultEliteAttack];
+    const eliteAttacks = attacks.filter((a) => a.usageTime === 'elite');
     const result = selectAndExecuteAction(attacker, team, state, eliteAttacks);
     if (result.status !== CombatStepStatus.Ongoing) return result;
   }
 
-  // Standard Action
-  const standardCandidateAbilities = parsedAbilities.filter(
-    (p) => p.ability.usageTime === 'standard' || p.ability.usageTime === undefined,
-  );
-  const standardAttacks = [...standardCandidateAbilities.map((p) => p.attack), defaultAttack];
+  const standardAttacks = attacks.filter((a) => a.usageTime === 'standard');
 
   return selectAndExecuteAction(attacker, team, state, standardAttacks);
 }
@@ -103,16 +94,33 @@ function selectAndExecuteAction(
   const potentialTargets = getPotentialTargets(team, state);
   if (potentialTargets.length === 0) return { status: CombatStepStatus.Ongoing, winner: null };
 
-  // Select best attack
-  let bestAttack = availableAttacks[0];
+  // Select best attack, filtering out those on cooldown
+  let bestAttack: SimulatorReadyAttack | null = null;
   let bestScore = -1;
 
   for (const attack of availableAttacks) {
+    // Check cooldown
+    const currentCooldown = state.cooldowns[attacker.id]?.[attack.name] || 0;
+    if (currentCooldown > 0) continue;
+
     const score = scoreAttack(attack);
     if (score > bestScore) {
       bestScore = score;
       bestAttack = attack;
     }
+  }
+
+  // If no attack was selected (all on cooldown or no attacks provided), skip.
+  if (!bestAttack) {
+    return { status: CombatStepStatus.Ongoing, winner: null };
+  }
+
+  // Set cooldown if applicable
+  if (bestAttack.cooldown > 0) {
+    if (!state.cooldowns[attacker.id]) {
+      state.cooldowns[attacker.id] = {};
+    }
+    state.cooldowns[attacker.id][bestAttack.name] = bestAttack.cooldown;
   }
 
   state.attacksByTeam[team.name]++;
@@ -174,13 +182,23 @@ export function getDefaultAttack(attacker: Creature, rankOffset: number = 0): Si
   };
 
   return {
-    hit: 'Default attack',
-    targeting: 'Default targeting',
+    name: 'Default attack',
     defenses: ['armor_defense'],
     areaRank: null,
     accuracyModifier: 0,
     damage: damageTable[rank] || DicePool.empty(),
     cooldown: 0,
+    halfOnMiss: false,
+    usageTime: 'standard',
+  };
+}
+
+export function getDefaultEliteAttack(attacker: Creature): SimulatorReadyAttack {
+  return {
+    ...getDefaultAttack(attacker, -2),
+    areaRank: 2, // Standard elite area rank
+    name: 'Elite Area Sweep',
+    usageTime: 'elite',
   };
 }
 

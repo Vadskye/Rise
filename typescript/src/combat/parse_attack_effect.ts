@@ -11,21 +11,20 @@ export function parseAttackEffect(
   ability: ActiveAbility,
   creature: Creature,
 ): SimulatorReadyAttack | null {
-  // If it's already simulator ready, just return it.
-  if (ability.attack && 'defenses' in ability.attack) {
-    return ability.attack as SimulatorReadyAttack;
-  }
-
   const attack = ability.attack;
-  const effect = (ability.effect || '').replace(/\s+/g, ' ').trim();
-  const targeting = (attack?.targeting || '').replace(/\s+/g, ' ').trim();
-  const text = targeting || effect;
+  const effect = (ability.effect || '').replace(/\s+/g, ' ').trim().toLowerCase();
+  const targeting = (attack?.targeting || '').replace(/\s+/g, ' ').trim().toLowerCase();
+  const text = `${targeting} ${effect}`;
 
   // 1. Identify targeted defenses
   const defenses = parseDefenses(text);
-  if (defenses.length === 0 && !effect.toLowerCase().includes('strike')) {
-    // If no defenses are found and it's not a strike, it's likely not a standard attack.
-    return null;
+  if (defenses.length === 0) {
+    if (text.includes('strike')) {
+      defenses.push('armor_defense');
+    } else {
+      // If no defenses are found and it's not a strike, it's likely not an attack we can parse.
+      return null;
+    }
   }
 
   // 2. Parse Damage
@@ -37,14 +36,43 @@ export function parseAttackEffect(
   // 4. Parse Accuracy Modifier
   const accuracyModifier = parseAccuracyModifier(text);
 
+  // 5. Parse Cooldown
+  const cooldown = parseCooldown(ability, text);
+
   return {
-    ...(attack || { hit: '', targeting: '' }),
-    defenses: defenses.length > 0 ? defenses : ['armor_defense'], // Default to armor for strikes if not specified
     areaRank,
     accuracyModifier,
+    cooldown,
     damage,
-    cooldown: 0,
+    defenses,
+    halfOnMiss: attack?.halfOnMiss || false,
+    name: ability.name,
+    usageTime: ability.usageTime || 'standard',
   };
+}
+
+function parseCooldown(ability: ActiveAbility, text: string): number {
+  const lowercaseText = (text + (ability.effect || '') + (ability.cost || '')).toLowerCase();
+
+  // "Briefly" lasts until the end of the next turn. Since cooldowns are
+  // decremented at the start of the turn, a value of 2 means the ability
+  // skips exactly one turn (e.g., used on Turn 1, skipped on Turn 2, 
+  // ready on Turn 3).
+  if (
+    lowercaseText.includes('briefly cannot use this ability again') ||
+    lowercaseText.includes("briefly can't use this ability again") ||
+    lowercaseText.includes('briefly')
+  ) {
+    return 2;
+  }
+
+  // Look for "cooldown X" or "X round cooldown"
+  const cooldownMatch = lowercaseText.match(/cooldown (\d+)|(\d+)[ -]round cooldown/);
+  if (cooldownMatch) {
+    return Number(cooldownMatch[1] || cooldownMatch[2]);
+  }
+
+  return 0;
 }
 
 function parseDefenses(text: string): RiseDefense[] {

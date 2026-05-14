@@ -223,12 +223,12 @@ Phase 1 is a strict prerequisite for Phase 2. Phases 3, 4, and 5 can proceed in 
 ## Progress Tracking
 
 - [x] Phase 1a: Add structured fields to `ActiveAbilityAttack`
-- [x] Phase 1b: Populate metadata on priority monster abilities (Normalization Engine)
-- [ ] Phase 1c: Populate metadata on player abilities
+- [ ] Phase 1c: Verify metadata on monster abilities
+- [ ] Phase 1d: Verify metadata on player abilities
 - [x] Phase 2a: Defense targeting in `resolveAttack`
 - [x] Phase 2b: Intelligent ability selection
 - [x] Phase 2c: Elite action reform
-- [ ] Phase 2d: Cooldown tracking
+- [x] Phase 2d: Cooldown tracking
 - [ ] Phase 3a: Equipment automation
 - [ ] Phase 3b: Fill in stock character levels
 - [ ] Phase 3c: Manual archetype abilities on stock characters

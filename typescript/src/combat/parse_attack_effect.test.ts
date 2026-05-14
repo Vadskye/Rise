@@ -118,5 +118,24 @@ tap.test('parseAttackEffect', (t) => {
     t.end();
   });
 
+  t.test('should parse BRIEF_COOLDOWN', (t) => {
+    const ability: ActiveAbility = {
+      name: 'Power Blast',
+      rank: 1,
+      isMagical: true,
+      kind: 'spell',
+      roles: ['burst'],
+      effect: "You \\briefly can't use this ability again.",
+      attack: {
+        hit: '\\damagerankone.',
+        targeting: 'Make an attack vs. Reflex.',
+      },
+    };
+
+    const parsed = parseAttackEffect(ability, creature);
+    t.equal(parsed?.cooldown, 2, 'should parse briefly as 2-round cooldown (skip 1 turn)');
+    t.end();
+  });
+
   t.end();
 });

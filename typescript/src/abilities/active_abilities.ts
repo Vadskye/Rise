@@ -10,7 +10,7 @@ import { DicePool } from '@src/core_mechanics/dice_pool';
 // LaTeX. This can be used for spells and maneuvers, but not rituals, since rituals have
 // several unique properties.
 export interface ActiveAbility {
-  attack?: ActiveAbilityAttack | SimulatorReadyAttack;
+  attack?: ActiveAbilityAttack;
   cost?: string;
   effect?: string;
   forMonster?: boolean;
@@ -117,11 +117,11 @@ export interface ActiveAbilityAttack {
   targeting: string;
 }
 
-export interface SimulatorReadyAttack extends ActiveAbilityAttack {
+export interface SimulatorReadyAttack {
   // -- Defensive Metadata --
   /** Which defense(s) the attack targets. The attack must hit all listed defenses. */
   defenses: RiseDefense[];
-  /** Area rank, as defined in docs/standard_area_ranks.md. Used to estimate how many targets an ability hits in combat. Larger areas can hit more enemies, though we won't actually simulate a battlemap or creature positions. */
+  /** Area rank, as defined in docs/standard_area_ranks.md. Used to estimate how many targets an ability hits in combat. Larger areas can hit more enemies, though we won't actually simulate a battlemap or creature positions. If null, the attack is single target. */
   areaRank: number | null;
   /** Attack-local accuracy modifier. */
   accuracyModifier: number;
@@ -129,6 +129,11 @@ export interface SimulatorReadyAttack extends ActiveAbilityAttack {
   damage: DicePool;
   /** How many rounds the creature must wait before using this ability again. */
   cooldown: number;
+  halfOnMiss: boolean;
+  // This is redundant with the base ability, but it's convenient to have SimulatorReadyAttack bundle all necessary information.
+  name: string;
+  usageTime: ActiveAbilityUsageTime;
+  // TODO: add support for debuffs
 }
 
 export type ActiveAbilityUsageTime = MonsterAttackUsageTime | RitualCastingTime;
