@@ -3,7 +3,7 @@ import { Creature } from '../creature';
 import {
   combatDisciplineModifiers,
   equipmentTrainingModifiers,
-  sentinelModifiers,
+  martialMasteryModifiers,
 } from '@src/classes/archetypes/fighter';
 import { getArchetypeRanks } from '@src/classes/archetypes/apply_archetypes';
 
@@ -43,7 +43,7 @@ function applyFighterBase(c: Creature, level: number) {
 
   const [rank1, rank2, rank3] = getArchetypeRanks(level);
 
-  combatDisciplineModifiers(c, rank1);
+  martialMasteryModifiers(c, rank1);
   equipmentTrainingModifiers(c, rank2);
-  sentinelModifiers(c, rank3);
+  combatDisciplineModifiers(c, rank3);
 }
