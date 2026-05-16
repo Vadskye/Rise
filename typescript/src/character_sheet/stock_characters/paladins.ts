@@ -1,5 +1,11 @@
 import type { StockCharacters } from '../stock_characters';
 import { Creature } from '../creature';
+import { getArchetypeRanks } from '@src/classes/archetypes/apply_archetypes';
+import {
+  divineMagicModifiers,
+  devotedParagonModifiers,
+  stalwartGuardianModifiers,
+} from '@src/classes/archetypes/paladin';
 
 export function addPaladins(stock: StockCharacters) {
   stock.addCharacter('Paladin', (c) => applyPaladinBase(c, 1));
@@ -34,4 +40,10 @@ function applyPaladinBase(c: Creature, level: number) {
   c.setEquippedArmor({ bodyArmor: 'breastplate' });
   c.addWeapon('greatsword');
   c.addWeaponMult('greatsword');
+
+  const [rank1, rank2, rank3] = getArchetypeRanks(level);
+
+  divineMagicModifiers(c, rank1);
+  stalwartGuardianModifiers(c, rank2);
+  devotedParagonModifiers(c, rank3);
 }

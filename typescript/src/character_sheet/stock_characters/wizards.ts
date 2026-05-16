@@ -1,5 +1,11 @@
 import type { StockCharacters } from '../stock_characters';
 import { Creature } from '../creature';
+import { getArchetypeRanks } from '@src/classes/archetypes/apply_archetypes';
+import {
+  arcaneMagicModifiers,
+  arcaneScholarModifiers,
+  schoolSpecialistModifiers,
+} from '@src/classes/archetypes/wizard';
 
 export function addWizards(stock: StockCharacters) {
   stock.addCharacter('Wizard', (c) => applyWizardBase(c, 1));
@@ -32,4 +38,10 @@ function applyWizardBase(c: Creature, level: number) {
   });
   c.setEquippedArmor({ bodyArmor: 'mage armor' });
   c.addSpell('Fireball');
+
+  const [rank1, rank2, rank3] = getArchetypeRanks(level);
+
+  arcaneMagicModifiers(c, rank1);
+  arcaneScholarModifiers(c, rank2);
+  schoolSpecialistModifiers(c, rank3);
 }

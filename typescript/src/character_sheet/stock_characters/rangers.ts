@@ -1,5 +1,11 @@
 import type { StockCharacters } from '../stock_characters';
 import { Creature } from '../creature';
+import { getArchetypeRanks } from '@src/classes/archetypes/apply_archetypes';
+import {
+  wildernessWarriorModifiers,
+  huntmasterModifiers,
+  boundaryWardenModifiers,
+} from '@src/classes/archetypes/ranger';
 
 export function addRangers(stock: StockCharacters) {
   stock.addCharacter('Ranger', (c) => applyRangerBase(c, 1));
@@ -33,4 +39,10 @@ function applyRangerBase(c: Creature, level: number) {
   c.setEquippedArmor({ bodyArmor: 'scale' });
   c.addWeapon('smallswords');
   c.addWeaponMult('smallswords');
+
+  const [rank1, rank2, rank3] = getArchetypeRanks(level);
+
+  wildernessWarriorModifiers(c, rank1);
+  huntmasterModifiers(c, rank2);
+  boundaryWardenModifiers(c, rank3);
 }

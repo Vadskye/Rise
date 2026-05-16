@@ -1,5 +1,11 @@
 import type { StockCharacters } from '../stock_characters';
 import { Creature } from '../creature';
+import { getArchetypeRanks } from '@src/classes/archetypes/apply_archetypes';
+import {
+  pactMagicModifiers,
+  covenantKeeperModifiers,
+  pactSpellMasteryModifiers,
+} from '@src/classes/archetypes/votive';
 
 export function addVotives(stock: StockCharacters) {
   stock.addCharacter('Votive', (c) => applyVotiveBase(c, 1));
@@ -33,4 +39,10 @@ function applyVotiveBase(c: Creature, level: number) {
   c.setEquippedArmor({ bodyArmor: 'scale', shield: 'standard shield' });
   c.addWeapon('broadsword');
   c.addWeaponMult('broadsword');
+
+  const [rank1, rank2, rank3] = getArchetypeRanks(level);
+
+  pactMagicModifiers(c, rank1);
+  pactSpellMasteryModifiers(c, rank2);
+  covenantKeeperModifiers(c, rank3);
 }

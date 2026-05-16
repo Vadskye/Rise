@@ -1,5 +1,11 @@
 import type { StockCharacters } from '../stock_characters';
 import { Creature } from '../creature';
+import { getArchetypeRanks } from '@src/classes/archetypes/apply_archetypes';
+import {
+  divineMagicModifiers,
+  divineSpellMasteryModifiers,
+  domainInfluenceModifiers,
+} from '@src/classes/archetypes/cleric';
 
 export function addClerics(stock: StockCharacters) {
   stock.addCharacter('Cleric', (c) => applyClericBase(c, 1));
@@ -33,4 +39,10 @@ function applyClericBase(c: Creature, level: number) {
   c.setEquippedArmor({ bodyArmor: 'scale', shield: 'standard shield' });
   c.addWeapon('battleaxe');
   c.addWeaponMult('battleaxe');
+
+  const [rank1, rank2, rank3] = getArchetypeRanks(level);
+
+  divineMagicModifiers(c, rank1);
+  divineSpellMasteryModifiers(c, rank2);
+  domainInfluenceModifiers(c, rank3);
 }
