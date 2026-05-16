@@ -32,6 +32,8 @@ function applyFighterBase(c: Creature, level: number) {
     intelligence_at_creation: 0,
     willpower_at_creation: 0,
   });
+  c.setEquippedArmor({ bodyArmor: 'scale', shield: 'standard shield' });
+  c.addWeapon('broadsword');
   c.addWeaponMult('broadsword');
   c.addManeuver('Steady Slam');
   

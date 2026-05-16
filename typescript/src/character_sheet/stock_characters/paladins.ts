@@ -31,5 +31,7 @@ function applyPaladinBase(c: Creature, level: number) {
     intelligence_at_creation: 0,
   });
   // TODO: add smite
+  c.setEquippedArmor({ bodyArmor: 'scale' });
+  c.addWeapon('greatsword');
   c.addWeaponMult('greatsword');
 }
