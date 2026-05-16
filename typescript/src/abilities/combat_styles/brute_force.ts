@@ -10,7 +10,9 @@ export const bruteForce: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} that deals double \\glossterm{weapon damage}.
-        The strike has a 50\\% miss chance.
+        You choose two valid targets for the strike instead of one.
+        Randomly determine which of the two targets is the real target of the strike.
+        Effects that modify the number of targets you can hit, such as \\weapontag{Sweeping} weapons, do not apply to this strike.
       `,
       rank: 1,
       roles: ['burst'],
@@ -20,7 +22,9 @@ export const bruteForce: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} that deals triple damage.
-        The strike has a 50\\% miss chance.
+        You choose two valid targets for the strike instead of one.
+        Randomly determine which of the two targets is the real target of the strike.
+        Effects that modify the number of targets you can hit, such as \\weapontag{Sweeping} weapons, do not apply to this strike.
       `,
       rank: 5,
       roles: ['burst'],
@@ -436,7 +440,8 @@ export const bruteForce: CombatStyle = {
       name: 'Heavy Hitter',
 
       effect: `
-        Make a \\glossterm{strike} using a \\weapontag{Heavy} weapon that deals quadruple \\glossterm{weapon damage}.
+        Make a melee \\glossterm{strike} using a \\weapontag{Heavy} weapon that deals quadruple \\glossterm{weapon damage}.
+        \\injury If your attack reuslt hits the target's Fortitude defense, it is \\briefly \\unsteady.
       `,
       rank: 5,
       roles: ['burst'],
