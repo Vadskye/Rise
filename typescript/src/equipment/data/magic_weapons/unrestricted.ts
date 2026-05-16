@@ -574,9 +574,24 @@ export const magicUnrestrictedWeapons = (): MagicWeapon[] => [
     rank: 1,
     short_description: 'Can attack Mental defense',
     description: `
-      As a standard action, you can make a mundane \\glossterm{strike} using this weapon that is imbued with psychic power, and you \\glossterm{briefly} cannot do so again.
-      The strike is made against the target's Mental defense instead of its Armor defense, and it gains the \\atCompulsion tag.
+      As a standard action, you can make a mundane \\glossterm{strike} using this weapon that is imbued with psychic power.
+      The strike is made against the target's Mental defense instead of its Armor defense.
+      It loses the \\atPhysical tag and gains the \\atCompulsion tag.
+      After you use this ability, you \\glossterm{briefly} cannot do so again.
     `,
+    tags: ['Compulsion'],
+    upgrades: [
+      {
+        rank: 4,
+        short_description: 'Can attack Mental defense',
+        description: 'The strike deals double damage',
+      },
+      {
+        rank: 6,
+        short_description: 'Can attack Mental defense',
+        description: 'The strike deals triple damage',
+      },
+    ],
   }),
   unrestricted({
     name: 'Psionic',
@@ -587,12 +602,12 @@ export const magicUnrestrictedWeapons = (): MagicWeapon[] => [
       You can suppress or resume its psionic nature as a \\glossterm{free action}.
       While the weapon is psionic:
       \\begin{raggeditemize}
-          \\item All strikes with it have the \\atCompulsion tag. This means that it is unable to damage most objects.
+          \\item All strikes with it have the \\atCompulsion tag and lose the \\atPhysical tag. This means that it is unable to damage most objects.
+          \\item All strikes with it target Mental defense instead of Armor defense.
           \\item It deals 1 \\glossterm{extra damage}.
-          \\item Creatures take a -2 penalty to Mental defense against your strikes with it.
       \\end{raggeditemize}
     `,
-    tags: ['Compulsion', 'Attune'],
+    tags: ['Compulsion', 'Attune (deep)'],
     upgrades: [
       {
         rank: 5,
@@ -611,10 +626,23 @@ export const magicUnrestrictedWeapons = (): MagicWeapon[] => [
     rank: 1,
     short_description: 'Can attack Fortitude defense',
     description: `
-      As a standard action, you can make a mundane \\glossterm{strike} using this weapon that transforms the striking surface to poison, and you \\glossterm{briefly} cannot do so again.
+      As a standard action, you can make a mundane \\glossterm{strike} using this weapon that transforms the striking surface to poison.
       The strike is made against the target's Fortitude defense instead of its Armor defense, and it gains the \\atPoison tag.
+      After you use this ability, you \\glossterm{briefly} cannot do so again.
     `,
     tags: ['Poison', 'Attune'],
+    upgrades: [
+      {
+        rank: 4,
+        short_description: 'Can attack Fortitude defense',
+        description: 'The strike deals double damage',
+      },
+      {
+        rank: 6,
+        short_description: 'Can attack Fortitude defense',
+        description: 'The strike deals triple damage',
+      },
+    ],
   }),
   unrestricted({
     name: 'Toxic',
@@ -625,12 +653,13 @@ export const magicUnrestrictedWeapons = (): MagicWeapon[] => [
       You can suppress or resume its poisonous nature as a \\glossterm{free action}.
       While the weapon is poisonous:
       \\begin{raggeditemize}
-          \\item All strikes with it have the \\atPoison tag. This means that it is usually unable to damage objects and nonliving creatures.
+          \\item All strikes with it have the \\atPoison tag and lose the \\atPhysical tag. This means that it is usually unable to damage objects and nonliving creatures.
+          \\item All strikes with it target Fortitude defense instead of Armor defense.
           \\item It deals 2 \\glossterm{extra damage}.
           \\item Poisons delivered with strikes using it gain a +2 accuracy bonus.
       \\end{raggeditemize}
     `,
-    tags: ['Poison', 'Attune'],
+    tags: ['Poison', 'Attune (deep)'],
     upgrades: [
       {
         rank: 6,
