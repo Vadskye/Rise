@@ -1,6 +1,5 @@
 import { Creature } from '@src/character_sheet/creature';
 import { RankAbility } from '../types';
-import { addStandardSpellModifiers } from '../definitions/standard_modifiers';
 import { applyArchetypeActiveAbilities } from './apply_archetypes';
 
 export function arcaneMagic(): RankAbility[] {
@@ -54,7 +53,6 @@ export function arcaneMagic(): RankAbility[] {
       `,
     },
   ];
-  addStandardSpellModifiers(abilities);
   return abilities;
 }
 

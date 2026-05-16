@@ -1,6 +1,6 @@
 import { Creature } from '@src/character_sheet/creature';
 import { RankAbility } from '../types';
-import { addStandardManeuverModifiers } from '../definitions/standard_modifiers';
+
 import { applyArchetypeActiveAbilities } from './apply_archetypes';
 
 export function airdancer(): RankAbility[] {
@@ -213,7 +213,6 @@ export function esotericWarrior(): RankAbility[] {
       `,
     },
   ];
-  addStandardManeuverModifiers(abilities);
   return abilities;
 }
 
