@@ -1,6 +1,6 @@
 import { Creature } from '@src/character_sheet/creature';
 import { RankAbility } from '../types';
-import { addStandardManeuverModifiers } from '../definitions/standard_modifiers';
+
 import { applyArchetypeActiveAbilities } from './apply_archetypes';
 
 export function battleforgedResilience(): RankAbility[] {
@@ -396,7 +396,6 @@ export function primalWarrior(): RankAbility[] {
       `,
     },
   ];
-  addStandardManeuverModifiers(abilities);
   return abilities;
 }
 

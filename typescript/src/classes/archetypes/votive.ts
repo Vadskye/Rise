@@ -1,9 +1,5 @@
 import { Creature } from '@src/character_sheet/creature';
 import { RankAbility } from '../types';
-import {
-  addStandardManeuverModifiers,
-  addStandardSpellModifiers,
-} from '../definitions/standard_modifiers';
 import { applyArchetypeActiveAbilities } from './apply_archetypes';
 
 export function pactboundWarrior(): RankAbility[] {
@@ -128,7 +124,6 @@ export function pactboundWarrior(): RankAbility[] {
       `,
     },
   ];
-  addStandardManeuverModifiers(abilities);
   return abilities;
 }
 
@@ -321,7 +316,6 @@ export function pactMagic(): RankAbility[] {
       `,
     },
   ];
-  addStandardSpellModifiers(abilities);
   return abilities;
 }
 
