@@ -1,5 +1,7 @@
 import { StockCharacters } from '../stock_characters';
 import { Creature } from '../creature';
+import { combatDisciplineModifiers, equipmentTrainingModifiers, sentinelModifiers } from '@src/classes/archetypes/fighter';
+import { getArchetypeRanks } from '@src/classes/archetypes/apply_archetypes';
 
 export function addFighters(stock: StockCharacters) {
   stock.addCharacter('Fighter', (c) => applyFighterBase(c, 1));
@@ -32,4 +34,10 @@ function applyFighterBase(c: Creature, level: number) {
   });
   c.addWeaponMult('broadsword');
   c.addManeuver('Steady Slam');
+  
+  const [rank1, rank2, rank3] = getArchetypeRanks(level);
+  
+  combatDisciplineModifiers(c, rank1);
+  equipmentTrainingModifiers(c, rank2);
+  sentinelModifiers(c, rank3);
 }
