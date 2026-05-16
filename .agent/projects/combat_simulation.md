@@ -242,7 +242,7 @@ Phase 1 is a strict prerequisite for Phase 2. Phases 3, 4, and 5 can proceed in 
 - [x] Phase 2d: Cooldown tracking
 - [x] Phase 3a: Equipment automation
 - [/] Phase 3b: Fill in stock character levels
-- [/] Phase 3c: Manual archetype abilities on stock characters
+- [/] Phase 3c: Full Archetype Ability Conversion
 - [ ] Phase 4a: Status effect tracking infrastructure
 - [ ] Phase 4b: Grappled condition
 - [ ] Phase 5a: Simulation CLI
