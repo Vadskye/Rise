@@ -1,6 +1,4 @@
 import { Creature } from '@src/character_sheet/creature';
-import { RiseBaseClass } from '@src/character_sheet/rise_data';
-import { BodyArmor, Shield } from '@src/monsters/equipment';
 import { handleEverything } from '@src/character_sheet/sheet_worker';
 import {
   characterSheetExists,
@@ -54,8 +52,6 @@ export class StockCharacters {
     sheet.setProperties({ name });
     this.characters[name] = new Creature(sheet);
     initializer(this.characters[name]);
-    const creature = this.characters[name];
-    applyStandardEquipment(creature, creature.level);
 
     handleEverything();
     sheet.triggerRecalculation();
@@ -71,49 +67,5 @@ export class StockCharacters {
 
   hasCharacter(name: string): boolean {
     return this.characters[name] !== undefined;
-  }
-}
-
-function getDefaultBodyArmor(baseClass: RiseBaseClass): BodyArmor | undefined {
-  switch (baseClass) {
-    case 'fighter':
-    case 'paladin':
-    case 'automaton':
-    case 'treant':
-      return 'breastplate'; // Heavy
-    case 'barbarian':
-    case 'cleric':
-    case 'ranger':
-    case 'votive':
-    case 'troll':
-      return 'scale'; // Medium
-    case 'druid':
-    case 'monk':
-    case 'rogue':
-    case 'dragon':
-    case 'dryad':
-    case 'harpy':
-    case 'incarnation':
-    case 'naiad':
-    case 'oozeborn':
-    case 'vampire':
-      return 'buff leather'; // Light
-    default:
-      return undefined; // None
-  }
-}
-
-export function applyStandardEquipment(creature: Creature, level: number) {
-  const baseClass = creature.base_class;
-
-  if (!creature.body_armor_name) {
-    const defaultArmor = getDefaultBodyArmor(baseClass);
-    if (defaultArmor) {
-      creature.setEquippedArmor({ bodyArmor: defaultArmor });
-    }
-  }
-
-  if (baseClass === 'fighter' || baseClass === 'paladin') {
-    creature.setEquippedArmor({ shield: 'standard shield' });
   }
 }
