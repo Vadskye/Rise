@@ -1,6 +1,6 @@
 import { Creature } from '@src/character_sheet/creature';
 import { RiseBaseClass } from '@src/character_sheet/rise_data';
-import { BodyArmor } from '@src/monsters/equipment';
+import { BodyArmor, Shield } from '@src/monsters/equipment';
 import { handleEverything } from '@src/character_sheet/sheet_worker';
 import {
   characterSheetExists,
@@ -55,12 +55,7 @@ export class StockCharacters {
     this.characters[name] = new Creature(sheet);
     initializer(this.characters[name]);
     const creature = this.characters[name];
-    if (!creature.body_armor_name) {
-      const defaultArmor = getDefaultBodyArmor(creature.base_class);
-      if (defaultArmor) {
-        creature.setEquippedArmor({ bodyArmor: defaultArmor });
-      }
-    }
+    applyStandardEquipment(creature, creature.level);
 
     handleEverything();
     sheet.triggerRecalculation();
@@ -105,5 +100,20 @@ function getDefaultBodyArmor(baseClass: RiseBaseClass): BodyArmor | undefined {
       return 'buff leather'; // Light
     default:
       return undefined; // None
+  }
+}
+
+export function applyStandardEquipment(creature: Creature, level: number) {
+  const baseClass = creature.base_class;
+
+  if (!creature.body_armor_name) {
+    const defaultArmor = getDefaultBodyArmor(baseClass);
+    if (defaultArmor) {
+      creature.setEquippedArmor({ bodyArmor: defaultArmor });
+    }
+  }
+
+  if (baseClass === 'fighter' || baseClass === 'paladin') {
+    creature.setEquippedArmor({ shield: 'standard shield' });
   }
 }

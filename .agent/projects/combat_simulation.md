@@ -50,16 +50,7 @@ Create `typescript/src/combat/parse_attack_effect.ts` to automatically extract m
 
 Update `Creature.addActiveAbility()` to run this normalization on every ability as it is added. Note that many attack abilities are not automatically parsable by this effect for a variety of reasons, including not dealing damage, so not all attacks will become a SimulatorReadyAttack.
 
-### 1c. Populate metadata on priority monster abilities
-
-Update monster definitions that have non-Armor targeting or area attacks where the parser might need help. Priority:
-
-- Ankheg (Spew Acid: area, vs Reflex)
-- Frostweb Spider (Iceweb: area, vs Armor+Reflex; Frost Breath: area, vs Fortitude)
-- Hydra Maggot (Impaling Tentacles: vs Reflex)
-- Yrthak (Sonic Lance: area, vs Fortitude)
-
-### 1d. Write tests to confirm parsing correctness
+### 1c. Write tests to confirm parsing correctness
 
 Add tests for `parse_attack_effect.ts` to ensure that it correctly parses common player abilities. This includes:
 
@@ -103,7 +94,7 @@ Replace the "pick first weapon ability" logic with a scoring function:
 ### 2d. Elite action reform
 
 - Elite monsters get two actions per round: one elite action and one standard action.
-- The simulator must choose the best *elite* action (where `usageTime === 'elite'`) and the best *standard* action separately.
+- The simulator must choose the best _elite_ action (where `usageTime === 'elite'`) and the best _standard_ action separately.
 - They cannot use the same ability for both actions.
 - If no better elite action exists, elites use a default "Elite Area Sweep" (area rank 2, at a -2 rank damage penalty).
 
@@ -133,13 +124,34 @@ Create `applyStandardEquipment(creature: Creature, level: number)` in [stock_cha
 
 Currently barbarians exist at levels 1, 4, 7, 10, 13, 16, 19, 21. For balance testing, we want characters at every 3rd level. Add missing levels for barbarian (and other classes as needed) using the existing `applyBarbarianBase` pattern.
 
-### 3c. Archetype ability integration (future)
+### 3c. Full Archetype Ability Conversion
 
-Archetypes are defined in `typescript/src/classes/archetypes/` but they output LaTeX descriptions, not structured `ActiveAbility` objects. Bridging this gap is a significant engineering task.
+**Goal:** Build the infrastructure to automatically extract archetype rank abilities from their LaTeX descriptions, parse them into structured `ActiveAbility` objects, and apply them to `Creature` instances, enabling full simulation of character progression and class variations.
 
-**Deferred approach:** For now, manually add representative abilities to stock characters that approximate their archetype choices. For example, a Battlerager barbarian stock character could manually `addManeuver('Reckless Strike')` or similar. This avoids the need to build a general archetype → Creature pipeline.
+1. **Archetype Ability Parsing Engine:**
+   - Create a utility function (e.g., in `typescript/src/combat/parse_archetype_ability.ts`) that accepts a `RankAbility` object and an effective `rank` integer.
+   - Use regex to search the `RankAbility.description` string for `\begin{activeability}{Name}{Usage Time} ... \end{activeability}` and `\begin{sustainability}{Name}{Usage Time} ... \end{sustainability}` blocks.
+   - Extract the base ability text (everything before `\rankline` or `\rank{...}`).
+   - Extract the rank scaling text (lines starting with `\rank{X}`) where `X` is less than or equal to the creature's effective archetype rank.
+   - Assemble this into an `ActiveAbility` object:
+     - `name`: Extracted from the `\begin{...}` header.
+     - `usageTime`: Extracted from the `\begin{...}` header and mapped to `ActiveAbilityUsageTime`.
+     - `effect`: The concatenated string of the base text and applicable rank scaling text.
+     - `kind`: `'ability'` or inferred based on the block type.
 
-**Long-term approach:** Build infrastructure to extract archetype rank abilities as `ActiveAbility` objects and apply them to Creatures. This is out of scope for the initial simulator.
+2. **Integration into Modifier Functions:**
+   - Update archetype modifier functions (e.g., `battleragerModifiers` in `typescript/src/classes/archetypes/barbarian.ts`) to programmatically apply these parsed abilities.
+   - Instead of empty comments like `// Aggravated Violence doesn't have a clear combat effect`, call the base archetype function (e.g., `battlerager()`) to retrieve the `RankAbility[]`.
+   - Filter the array for abilities that are unlocked at or below the provided `rank`.
+   - For each matching `RankAbility`, pass it through the parser from step 1. If an `ActiveAbility` is returned, apply it to the creature using `creature.addActiveAbility(parsedAbility)`.
+
+3. **Simulator Attack Normalization:**
+   - Ensure that the Phase 1b `parseAttackEffect` normalization step (which automatically runs during `Creature.addActiveAbility()`) correctly interprets the concatenated text generated by the archetype parser.
+   - It must correctly parse out damage formulas, targeting logic, and dynamic effects (e.g., `\rank{4} You gain a \plus1 accuracy bonus`) into the final `SimulatorReadyAttack` metadata.
+
+4. **Testing and Validation:**
+   - Write tests specifically for parsing archetype abilities at different ranks.
+   - For example, verify that parsing `Aggravated Violence` at rank 3 yields a `SimulatorReadyAttack` with standard damage, while parsing it at rank 4 yields the same attack with a `+1` accuracy modifier, and rank 6 yields triple weapon damage.
 
 ---
 
@@ -223,15 +235,14 @@ Phase 1 is a strict prerequisite for Phase 2. Phases 3, 4, and 5 can proceed in 
 ## Progress Tracking
 
 - [x] Phase 1a: Add structured fields to `ActiveAbilityAttack`
-- [ ] Phase 1c: Verify metadata on monster abilities
-- [ ] Phase 1d: Verify metadata on player abilities
+- [x] Phase 1c: Write tests to confirm parsing correctness
 - [x] Phase 2a: Defense targeting in `resolveAttack`
 - [x] Phase 2b: Intelligent ability selection
 - [x] Phase 2c: Elite action reform
 - [x] Phase 2d: Cooldown tracking
-- [ ] Phase 3a: Equipment automation
-- [ ] Phase 3b: Fill in stock character levels
-- [ ] Phase 3c: Manual archetype abilities on stock characters
+- [x] Phase 3a: Equipment automation
+- [/] Phase 3b: Fill in stock character levels
+- [/] Phase 3c: Manual archetype abilities on stock characters
 - [ ] Phase 4a: Status effect tracking infrastructure
 - [ ] Phase 4b: Grappled condition
 - [ ] Phase 5a: Simulation CLI
