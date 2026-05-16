@@ -7,7 +7,7 @@ import { StockCharacters } from '@src/character_sheet/stock_characters';
 t.test('parseArchetypeActiveAbility tests', (t) => {
   const stock = new StockCharacters();
   stock.addAllCharacters();
-  const creature = stock.getCharacter('Barbarian 4')!;
+  const creature = stock.getCharacter('Barbarian 5')!;
   creature.setProperties({ is_monster: true });
   creature.getSheetForTesting().triggerRecalculation();
 
@@ -27,7 +27,7 @@ t.test('parseArchetypeActiveAbility tests', (t) => {
 
     const attackEffect = parseAttackEffect(parsed!, creature);
     t.ok(attackEffect);
-    t.equal(attackEffect?.damage.toString(), '2d8+10', 'should have correct damage at rank 3');
+    t.equal(attackEffect?.damage.toString(), '2d8+12', 'should have correct damage at rank 3');
 
     t.end();
   });
@@ -43,7 +43,7 @@ t.test('parseArchetypeActiveAbility tests', (t) => {
 
     const attackEffect = parseAttackEffect(parsed!, creature);
     t.ok(attackEffect);
-    t.equal(attackEffect?.damage.toString(), '2d8+10', 'should have correct damage at rank 4');
+    t.equal(attackEffect?.damage.toString(), '2d8+12', 'should have correct damage at rank 4');
 
     t.end();
   });
@@ -62,7 +62,7 @@ t.test('parseArchetypeActiveAbility tests', (t) => {
 
     const attackEffect = parseAttackEffect(parsed!, creature);
     t.ok(attackEffect);
-    t.equal(attackEffect?.damage.toString(), '2d8+10', 'should have correct damage at rank 6');
+    t.equal(attackEffect?.damage.toString(), '2d8+12', 'should have correct damage at rank 6');
 
     t.end();
   });

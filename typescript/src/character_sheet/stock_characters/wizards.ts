@@ -3,13 +3,13 @@ import { Creature } from '../creature';
 
 export function addWizards(stock: StockCharacters) {
   stock.addCharacter('Wizard', (c) => applyWizardBase(c, 1));
-  stock.addCharacter('Wizard 4', (c) => applyWizardBase(c, 4));
-  stock.addCharacter('Wizard 7', (c) => applyWizardBase(c, 7));
-  stock.addCharacter('Wizard 10', (c) => applyWizardBase(c, 10));
-  stock.addCharacter('Wizard 13', (c) => applyWizardBase(c, 13));
-  stock.addCharacter('Wizard 16', (c) => applyWizardBase(c, 16));
-  stock.addCharacter('Wizard 19', (c) => applyWizardBase(c, 19));
-  stock.addCharacter('Wizard 21', (c) => applyWizardBase(c, 21));
+  stock.addCharacter('Wizard 2', (c) => applyWizardBase(c, 2));
+  stock.addCharacter('Wizard 5', (c) => applyWizardBase(c, 5));
+  stock.addCharacter('Wizard 8', (c) => applyWizardBase(c, 8));
+  stock.addCharacter('Wizard 11', (c) => applyWizardBase(c, 11));
+  stock.addCharacter('Wizard 14', (c) => applyWizardBase(c, 14));
+  stock.addCharacter('Wizard 17', (c) => applyWizardBase(c, 17));
+  stock.addCharacter('Wizard 20', (c) => applyWizardBase(c, 20));
 }
 
 function applyWizardBase(c: Creature, level: number) {

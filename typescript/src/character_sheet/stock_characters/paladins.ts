@@ -3,13 +3,13 @@ import { Creature } from '../creature';
 
 export function addPaladins(stock: StockCharacters) {
   stock.addCharacter('Paladin', (c) => applyPaladinBase(c, 1));
-  stock.addCharacter('Paladin 4', (c) => applyPaladinBase(c, 4));
-  stock.addCharacter('Paladin 7', (c) => applyPaladinBase(c, 7));
-  stock.addCharacter('Paladin 10', (c) => applyPaladinBase(c, 10));
-  stock.addCharacter('Paladin 13', (c) => applyPaladinBase(c, 13));
-  stock.addCharacter('Paladin 16', (c) => applyPaladinBase(c, 16));
-  stock.addCharacter('Paladin 19', (c) => applyPaladinBase(c, 19));
-  stock.addCharacter('Paladin 21', (c) => applyPaladinBase(c, 21));
+  stock.addCharacter('Paladin 2', (c) => applyPaladinBase(c, 2));
+  stock.addCharacter('Paladin 5', (c) => applyPaladinBase(c, 5));
+  stock.addCharacter('Paladin 8', (c) => applyPaladinBase(c, 8));
+  stock.addCharacter('Paladin 11', (c) => applyPaladinBase(c, 11));
+  stock.addCharacter('Paladin 14', (c) => applyPaladinBase(c, 14));
+  stock.addCharacter('Paladin 17', (c) => applyPaladinBase(c, 17));
+  stock.addCharacter('Paladin 20', (c) => applyPaladinBase(c, 20));
 }
 
 function applyPaladinBase(c: Creature, level: number) {

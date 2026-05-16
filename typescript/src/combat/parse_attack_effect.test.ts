@@ -6,7 +6,7 @@ import { getSpellByName } from '@src/abilities/mystic_spheres';
 tap.test('parseAttackEffect', (t) => {
   const stock = new StockCharacters();
   stock.addAllCharacters();
-  const creature = stock.getCharacter('Barbarian 4')!;
+  const creature = stock.getCharacter('Barbarian 5')!;
   creature.setProperties({ is_monster: true });
   // Trigger recalculation to ensure derived attributes are updated.
   creature.getSheetForTesting().triggerRecalculation();
@@ -80,7 +80,7 @@ tap.test('parseAttackEffect', (t) => {
     t.ok(parsed, 'should parse Flame Breath');
     t.equal(parsed?.areaRank, 2, 'should have correct area rank (Medium cone)');
     t.equal(parsed?.cooldown, 2, 'should parse "briefly" cooldown');
-    t.equal(parsed?.damage.toString(), '1d8+2', 'should calculate correct damage');
+    t.equal(parsed?.damage.toString(), '1d8+3', 'should calculate correct damage');
     t.end();
   });
 
@@ -108,7 +108,7 @@ tap.test('parseAttackEffect', (t) => {
     // Base dice for dr(3) is 1d8. Excess 1 -> add 1d6. So 1d6+1d8+2.
     t.equal(
       parsed?.damage.toString(),
-      '1d6+1d8+2',
+      '1d6+1d8+3',
       'should calculate correct damage (dr3 + excess 1)',
     );
     t.end();
@@ -120,7 +120,7 @@ tap.test('parseAttackEffect', (t) => {
     const parsed = parseAttackEffect(ability, creature);
     t.ok(parsed, 'should parse Flesh-Rending Claw');
     t.same(parsed?.defenses, ['armor_defense'], 'should recognize strike as Armor');
-    t.equal(parsed?.damage.toString(), '1d8+2', 'should calculate correct damage');
+    t.equal(parsed?.damage.toString(), '1d8+3', 'should calculate correct damage');
     t.end();
   });
 
@@ -169,7 +169,7 @@ tap.test('parseAttackEffect', (t) => {
       4,
       'should have correct area rank (Enemies in Medium radius from you)',
     );
-    t.equal(parsed?.damage.toString(), '1d8+2', 'should calculate correct damage');
+    t.equal(parsed?.damage.toString(), '1d8+3', 'should calculate correct damage');
     t.end();
   });
 
@@ -191,18 +191,17 @@ tap.test('parseAttackEffect', (t) => {
     t.end();
   });
 
-  t.test('Aggravated Violence (Archetype Ability)', (t) => {
-    const barb10 = stock.getCharacter('Barbarian 10')!;
-    const ability = barb10.getActiveAbility('Aggravated Violence')!;
-    t.ok(ability, 'should have Aggravated Violence ability');
-    const parsed = parseAttackEffect(ability, barb10);
-    t.ok(parsed, 'should parse Aggravated Violence');
-    t.equal(parsed?.name, 'Aggravated Violence');
+  t.test('Savage Rush (Archetype Ability)', (t) => {
+    const barb11 = stock.getCharacter('Barbarian 11')!;
+    const ability = barb11.getActiveAbility('Savage Rush')!;
+    t.ok(ability, 'should have Savage Rush ability');
+    const parsed = parseAttackEffect(ability, barb11);
+    t.ok(parsed, 'should parse Savage Rush');
+    t.equal(parsed?.name, 'Savage Rush');
     t.same(parsed?.defenses, ['armor_defense'], 'should target Armor');
-    t.equal(parsed?.accuracyModifier, 1, 'should parse accuracy bonus from rank 4 scaling');
     t.equal(
       parsed?.damage.toString(),
-      '2d8+16',
+      '1d8+8',
       'should calculate correct damage with inferred weapon',
     );
     t.end();

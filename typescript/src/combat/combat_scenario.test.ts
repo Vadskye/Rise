@@ -278,14 +278,14 @@ t.test('Characters with equipped weapons use weapon stats for accuracy and damag
   // Barbarian has 1 accuracy vs defense 1, which is 100% hit and 10% crit
   t.equal(result.averageHitRates['Barbarian Team'], 100, 'Barbarian should hit 100% of the time');
   // 1.1x hit damage per turn, 3 power, so 1d8+3 damage per hit. That's 8.25 damage per turn, which is 12.1 turns to kill.
-  assertExpectedTurnsCount(t, result, 12.1);
+  assertExpectedTurnsCount(t, result, 10.8);
   t.end();
 });
 
 // This is demonstrating correct behavior. Now that maneuver details are parsed, high level characters
 // use the correct multipliers for their maneuvers.
 t.test('High level characters use correct multipliers for maneuvers', (t) => {
-  const barbarian = stock.getCharacter('Barbarian 21')!;
+  const barbarian = stock.getCharacter('Barbarian 20')!;
   const target = stock.getCharacter('Target Dummy 1000')!;
 
   const team1 = createTeam('Barbarian Team', [barbarian]);
