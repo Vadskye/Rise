@@ -1,6 +1,7 @@
 import { Creature } from '@src/character_sheet/creature';
 import { RankAbility } from '../types';
 import { addStandardManeuverModifiers } from '../definitions/standard_modifiers';
+import { applyArchetypeActiveAbilities } from './apply_archetypes';
 
 export function assassin(): RankAbility[] {
   const abilities: RankAbility[] = [
@@ -499,6 +500,7 @@ export function suaveScoundrel(): RankAbility[] {
 }
 
 export function assassinModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, assassin(), rank);
   if (rank >= 4) {
     creature.addSimpleModifier({
       name: "Assassin's Grace",
@@ -509,6 +511,7 @@ export function assassinModifiers(creature: Creature, rank: number) {
 }
 
 export function bardicMusicModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, bardicMusic(), rank);
   if (rank >= 4) {
     creature.addCustomModifier({
       name: 'Rhythm of War',
@@ -520,11 +523,13 @@ export function bardicMusicModifiers(creature: Creature, rank: number) {
   }
 }
 
-export function combatTricksterModifiers(_creature: Creature, _rank: number) {
+export function combatTricksterModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, combatTrickster(), rank);
   // Maneuvers
 }
 
 export function jackOfAllTradesModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, jackOfAllTrades(), rank);
   if (rank >= 2) {
     creature.addSimpleModifier({
       name: 'Skill Exemplar',
@@ -560,6 +565,7 @@ export function jackOfAllTradesModifiers(creature: Creature, rank: number) {
 }
 
 export function suaveScoundrelModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, suaveScoundrel(), rank);
   if (rank >= 2) {
     const bonus = rank >= 6 ? 4 : 2;
     creature.addCustomModifier({
