@@ -1,7 +1,7 @@
 import { Creature } from '@src/character_sheet/creature';
 import { RankAbility } from '../types';
 import { addStandardManeuverModifiers } from '../definitions/standard_modifiers';
-import { parseArchetypeActiveAbility } from '@src/combat/parse_archetype_ability';
+import { parseArchetypeActiveAbility } from '@src/combat/parse_archetype_active_ability';
 
 function applyArchetypeActiveAbilities(creature: Creature, abilities: RankAbility[], rank: number) {
   for (const ability of abilities) {
