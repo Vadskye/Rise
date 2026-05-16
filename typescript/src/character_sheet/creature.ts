@@ -85,6 +85,7 @@ type NumericCreatureProperty =
   | 'vital_rolls'
   | 'fatigue_tolerance'
   | 'initiative'
+  | 'all_defenses'
   | 'all_skills'
   | RiseAttribute
   | RiseAttributeModifier
@@ -1008,6 +1009,10 @@ export class Creature implements CreaturePropertyMap {
 
   public get initiative() {
     return this.getPropertyValue('initiative');
+  }
+
+  public get all_defenses() {
+    return this.getPropertyValue('all_defenses');
   }
 
   public get all_skills() {
