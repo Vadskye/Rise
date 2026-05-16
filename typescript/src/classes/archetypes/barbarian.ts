@@ -1,6 +1,7 @@
 import { Creature } from '@src/character_sheet/creature';
 import { RankAbility } from '../types';
 import { addStandardManeuverModifiers } from '../definitions/standard_modifiers';
+import { parseArchetypeAbility } from '@src/combat/parse_archetype_ability';
 
 export function battleforgedResilience(): RankAbility[] {
   return [
@@ -633,7 +634,14 @@ export function battleragerModifiers(creature: Creature, rank: number) {
   }
 
   if (rank >= 3) {
-    // Aggravated Violence doesn't have a clear combat effect
+    const abilities = battlerager();
+    const aggViolence = abilities.find((a) => a.name === 'Aggravated Violence');
+    if (aggViolence) {
+      const parsed = parseArchetypeAbility(aggViolence, rank);
+      if (parsed) {
+        creature.addActiveAbility(parsed);
+      }
+    }
   }
 
   if (rank >= 4) {

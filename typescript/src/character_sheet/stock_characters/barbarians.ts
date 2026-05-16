@@ -1,5 +1,6 @@
 import type { StockCharacters } from '../stock_characters';
 import { Creature } from '../creature';
+import { battleragerModifiers } from '@src/classes/archetypes/barbarian';
 
 export function addBarbarians(stock: StockCharacters) {
   stock.addCharacter('Barbarian', (c) => applyBarbarianBase(c, 1));
@@ -31,4 +32,5 @@ function applyBarbarianBase(c: Creature, level: number) {
     willpower_at_creation: 0,
   });
   c.addWeaponMult('greataxe');
+  battleragerModifiers(c, level);
 }
