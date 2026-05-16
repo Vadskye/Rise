@@ -3,13 +3,13 @@ import { Creature } from '../creature';
 
 export function addMonks(stock: StockCharacters) {
   stock.addCharacter('Monk', (c) => applyMonkBase(c, 1));
-  stock.addCharacter('Monk 4', (c) => applyMonkBase(c, 4));
-  stock.addCharacter('Monk 7', (c) => applyMonkBase(c, 7));
-  stock.addCharacter('Monk 10', (c) => applyMonkBase(c, 10));
-  stock.addCharacter('Monk 13', (c) => applyMonkBase(c, 13));
-  stock.addCharacter('Monk 16', (c) => applyMonkBase(c, 16));
-  stock.addCharacter('Monk 19', (c) => applyMonkBase(c, 19));
-  stock.addCharacter('Monk 21', (c) => applyMonkBase(c, 21));
+  stock.addCharacter('Monk 2', (c) => applyMonkBase(c, 2));
+  stock.addCharacter('Monk 5', (c) => applyMonkBase(c, 5));
+  stock.addCharacter('Monk 8', (c) => applyMonkBase(c, 8));
+  stock.addCharacter('Monk 11', (c) => applyMonkBase(c, 11));
+  stock.addCharacter('Monk 14', (c) => applyMonkBase(c, 14));
+  stock.addCharacter('Monk 17', (c) => applyMonkBase(c, 17));
+  stock.addCharacter('Monk 20', (c) => applyMonkBase(c, 20));
 }
 
 function applyMonkBase(c: Creature, level: number) {

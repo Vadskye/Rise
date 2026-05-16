@@ -9,13 +9,13 @@ import { getArchetypeRanks } from '@src/classes/archetypes/apply_archetypes';
 
 export function addFighters(stock: StockCharacters) {
   stock.addCharacter('Fighter', (c) => applyFighterBase(c, 1));
-  stock.addCharacter('Fighter 4', (c) => applyFighterBase(c, 4));
-  stock.addCharacter('Fighter 7', (c) => applyFighterBase(c, 7));
-  stock.addCharacter('Fighter 10', (c) => applyFighterBase(c, 10));
-  stock.addCharacter('Fighter 13', (c) => applyFighterBase(c, 13));
-  stock.addCharacter('Fighter 16', (c) => applyFighterBase(c, 16));
-  stock.addCharacter('Fighter 19', (c) => applyFighterBase(c, 19));
-  stock.addCharacter('Fighter 21', (c) => applyFighterBase(c, 21));
+  stock.addCharacter('Fighter 2', (c) => applyFighterBase(c, 2));
+  stock.addCharacter('Fighter 5', (c) => applyFighterBase(c, 5));
+  stock.addCharacter('Fighter 8', (c) => applyFighterBase(c, 8));
+  stock.addCharacter('Fighter 11', (c) => applyFighterBase(c, 11));
+  stock.addCharacter('Fighter 14', (c) => applyFighterBase(c, 14));
+  stock.addCharacter('Fighter 17', (c) => applyFighterBase(c, 17));
+  stock.addCharacter('Fighter 20', (c) => applyFighterBase(c, 20));
 }
 
 function applyFighterBase(c: Creature, level: number) {

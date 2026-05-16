@@ -3,13 +3,13 @@ import { Creature } from '../creature';
 
 export function addClerics(stock: StockCharacters) {
   stock.addCharacter('Cleric', (c) => applyClericBase(c, 1));
-  stock.addCharacter('Cleric 4', (c) => applyClericBase(c, 4));
-  stock.addCharacter('Cleric 7', (c) => applyClericBase(c, 7));
-  stock.addCharacter('Cleric 10', (c) => applyClericBase(c, 10));
-  stock.addCharacter('Cleric 13', (c) => applyClericBase(c, 13));
-  stock.addCharacter('Cleric 16', (c) => applyClericBase(c, 16));
-  stock.addCharacter('Cleric 19', (c) => applyClericBase(c, 19));
-  stock.addCharacter('Cleric 21', (c) => applyClericBase(c, 21));
+  stock.addCharacter('Cleric 2', (c) => applyClericBase(c, 2));
+  stock.addCharacter('Cleric 5', (c) => applyClericBase(c, 5));
+  stock.addCharacter('Cleric 8', (c) => applyClericBase(c, 8));
+  stock.addCharacter('Cleric 11', (c) => applyClericBase(c, 11));
+  stock.addCharacter('Cleric 14', (c) => applyClericBase(c, 14));
+  stock.addCharacter('Cleric 17', (c) => applyClericBase(c, 17));
+  stock.addCharacter('Cleric 20', (c) => applyClericBase(c, 20));
 }
 
 function applyClericBase(c: Creature, level: number) {

@@ -3,13 +3,13 @@ import { Creature } from '../creature';
 
 export function addRangers(stock: StockCharacters) {
   stock.addCharacter('Ranger', (c) => applyRangerBase(c, 1));
-  stock.addCharacter('Ranger 4', (c) => applyRangerBase(c, 4));
-  stock.addCharacter('Ranger 7', (c) => applyRangerBase(c, 7));
-  stock.addCharacter('Ranger 10', (c) => applyRangerBase(c, 10));
-  stock.addCharacter('Ranger 13', (c) => applyRangerBase(c, 13));
-  stock.addCharacter('Ranger 16', (c) => applyRangerBase(c, 16));
-  stock.addCharacter('Ranger 19', (c) => applyRangerBase(c, 19));
-  stock.addCharacter('Ranger 21', (c) => applyRangerBase(c, 21));
+  stock.addCharacter('Ranger 2', (c) => applyRangerBase(c, 2));
+  stock.addCharacter('Ranger 5', (c) => applyRangerBase(c, 5));
+  stock.addCharacter('Ranger 8', (c) => applyRangerBase(c, 8));
+  stock.addCharacter('Ranger 11', (c) => applyRangerBase(c, 11));
+  stock.addCharacter('Ranger 14', (c) => applyRangerBase(c, 14));
+  stock.addCharacter('Ranger 17', (c) => applyRangerBase(c, 17));
+  stock.addCharacter('Ranger 20', (c) => applyRangerBase(c, 20));
 }
 
 function applyRangerBase(c: Creature, level: number) {

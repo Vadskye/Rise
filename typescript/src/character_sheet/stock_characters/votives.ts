@@ -3,13 +3,13 @@ import { Creature } from '../creature';
 
 export function addVotives(stock: StockCharacters) {
   stock.addCharacter('Votive', (c) => applyVotiveBase(c, 1));
-  stock.addCharacter('Votive 4', (c) => applyVotiveBase(c, 4));
-  stock.addCharacter('Votive 7', (c) => applyVotiveBase(c, 7));
-  stock.addCharacter('Votive 10', (c) => applyVotiveBase(c, 10));
-  stock.addCharacter('Votive 13', (c) => applyVotiveBase(c, 13));
-  stock.addCharacter('Votive 16', (c) => applyVotiveBase(c, 16));
-  stock.addCharacter('Votive 19', (c) => applyVotiveBase(c, 19));
-  stock.addCharacter('Votive 21', (c) => applyVotiveBase(c, 21));
+  stock.addCharacter('Votive 2', (c) => applyVotiveBase(c, 2));
+  stock.addCharacter('Votive 5', (c) => applyVotiveBase(c, 5));
+  stock.addCharacter('Votive 8', (c) => applyVotiveBase(c, 8));
+  stock.addCharacter('Votive 11', (c) => applyVotiveBase(c, 11));
+  stock.addCharacter('Votive 14', (c) => applyVotiveBase(c, 14));
+  stock.addCharacter('Votive 17', (c) => applyVotiveBase(c, 17));
+  stock.addCharacter('Votive 20', (c) => applyVotiveBase(c, 20));
 }
 
 function applyVotiveBase(c: Creature, level: number) {

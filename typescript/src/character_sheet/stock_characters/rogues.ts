@@ -3,13 +3,13 @@ import { Creature } from '../creature';
 
 export function addRogues(stock: StockCharacters) {
   stock.addCharacter('Rogue', (c) => applyRogueBase(c, 1));
-  stock.addCharacter('Rogue 4', (c) => applyRogueBase(c, 4));
-  stock.addCharacter('Rogue 7', (c) => applyRogueBase(c, 7));
-  stock.addCharacter('Rogue 10', (c) => applyRogueBase(c, 10));
-  stock.addCharacter('Rogue 13', (c) => applyRogueBase(c, 13));
-  stock.addCharacter('Rogue 16', (c) => applyRogueBase(c, 16));
-  stock.addCharacter('Rogue 19', (c) => applyRogueBase(c, 19));
-  stock.addCharacter('Rogue 21', (c) => applyRogueBase(c, 21));
+  stock.addCharacter('Rogue 2', (c) => applyRogueBase(c, 2));
+  stock.addCharacter('Rogue 5', (c) => applyRogueBase(c, 5));
+  stock.addCharacter('Rogue 8', (c) => applyRogueBase(c, 8));
+  stock.addCharacter('Rogue 11', (c) => applyRogueBase(c, 11));
+  stock.addCharacter('Rogue 14', (c) => applyRogueBase(c, 14));
+  stock.addCharacter('Rogue 17', (c) => applyRogueBase(c, 17));
+  stock.addCharacter('Rogue 20', (c) => applyRogueBase(c, 20));
 }
 
 function applyRogueBase(c: Creature, level: number) {
