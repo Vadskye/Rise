@@ -1,12 +1,12 @@
 import t from 'tap';
-import { parseArchetypeAbility } from './parse_archetype_ability.js';
+import { parseArchetypeActiveAbility } from './parse_archetype_ability.js';
 import { battlerager } from '@src/classes/archetypes/barbarian';
 
 t.test('parse base ability at rank 3', t => {
   const abilities = battlerager();
   const aggViolence = abilities.find(a => a.name === 'Aggravated Violence')!;
   
-  const parsed = parseArchetypeAbility(aggViolence, 3);
+  const parsed = parseArchetypeActiveAbility(aggViolence, 3);
   t.ok(parsed);
   t.equal(parsed?.name, 'Aggravated Violence');
   t.equal(parsed?.usageTime, 'standard');
@@ -18,7 +18,7 @@ t.test('should include rank 4 scaling at rank 4', t => {
   const abilities = battlerager();
   const aggViolence = abilities.find(a => a.name === 'Aggravated Violence')!;
 
-  const parsed = parseArchetypeAbility(aggViolence, 4);
+  const parsed = parseArchetypeActiveAbility(aggViolence, 4);
   t.ok(parsed);
   t.match(parsed?.effect, 'You gain a \\plus1 accuracy bonus with the strike.');
   t.end();
@@ -28,7 +28,7 @@ t.test('should include all scaling up to rank 6 at rank 6', t => {
   const abilities = battlerager();
   const aggViolence = abilities.find(a => a.name === 'Aggravated Violence')!;
 
-  const parsed = parseArchetypeAbility(aggViolence, 6);
+  const parsed = parseArchetypeActiveAbility(aggViolence, 6);
   t.ok(parsed);
   t.match(parsed?.effect, 'You gain a \\plus1 accuracy bonus with the strike.');
   t.match(parsed?.effect, 'The strike deals double \\glossterm{weapon damage}.');
@@ -37,11 +37,11 @@ t.test('should include all scaling up to rank 6 at rank 6', t => {
   t.end();
 });
 
-t.test('should ignore sustainability blocks per user comment', t => {
+t.test('should ignore sustainability blocks', t => {
   const abilities = battlerager();
   const rage = abilities.find(a => a.name === 'Rage')!;
   
-  const parsed = parseArchetypeAbility(rage, 1);
+  const parsed = parseArchetypeActiveAbility(rage, 1);
   t.equal(parsed, null);
   t.end();
 });

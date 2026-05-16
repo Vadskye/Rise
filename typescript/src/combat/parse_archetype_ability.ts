@@ -13,7 +13,7 @@ export interface RankAbility {
  * Parses a LaTeX archetype ability description into an ActiveAbility.
  * Only parses `activeability` or `magicalactiveability` blocks.
  */
-export function parseArchetypeAbility(
+export function parseArchetypeActiveAbility(
   ability: RankAbility,
   effectiveRank: number
 ): ActiveAbility | null {

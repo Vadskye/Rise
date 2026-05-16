@@ -122,7 +122,7 @@ Create `applyStandardEquipment(creature: Creature, level: number)` in [stock_cha
 
 ### 3b. Fill in stock character levels
 
-Currently barbarians exist at levels 1, 4, 7, 10, 13, 16, 19, 21. For balance testing, we want characters at every 3rd level. Add missing levels for barbarian (and other classes as needed) using the existing `applyBarbarianBase` pattern.
+Currently barbarians exist at levels 1, 4, 7, 10, 13, 16, 19, 21. For balance testing, we want characters at the 1/4/7/etc structure. Add missing levels for barbarian (and other classes as needed) using the existing `applyBarbarianBase` pattern.
 
 ### 3c. Full Archetype Ability Conversion
 
@@ -242,7 +242,7 @@ Phase 1 is a strict prerequisite for Phase 2. Phases 3, 4, and 5 can proceed in 
 - [x] Phase 2d: Cooldown tracking
 - [x] Phase 3a: Equipment automation
 - [/] Phase 3b: Fill in stock character levels
-- [/] Phase 3c: Full Archetype Ability Conversion
+- [x] Phase 3c: Full Archetype Ability Conversion
 - [ ] Phase 4a: Status effect tracking infrastructure
 - [ ] Phase 4b: Grappled condition
 - [ ] Phase 5a: Simulation CLI
