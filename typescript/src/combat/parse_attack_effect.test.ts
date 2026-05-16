@@ -192,16 +192,17 @@ tap.test('parseAttackEffect', (t) => {
   });
 
   t.test('Aggravated Violence (Archetype Ability)', (t) => {
-    const ability = creature.getActiveAbility('Aggravated Violence')!;
+    const barb10 = stock.getCharacter('Barbarian 10')!;
+    const ability = barb10.getActiveAbility('Aggravated Violence')!;
     t.ok(ability, 'should have Aggravated Violence ability');
-    const parsed = parseAttackEffect(ability, creature);
+    const parsed = parseAttackEffect(ability, barb10);
     t.ok(parsed, 'should parse Aggravated Violence');
     t.equal(parsed?.name, 'Aggravated Violence');
     t.same(parsed?.defenses, ['armor_defense'], 'should target Armor');
     t.equal(parsed?.accuracyModifier, 1, 'should parse accuracy bonus from rank 4 scaling');
     t.equal(
       parsed?.damage.toString(),
-      '2d8+10',
+      '2d8+16',
       'should calculate correct damage with inferred weapon',
     );
     t.end();

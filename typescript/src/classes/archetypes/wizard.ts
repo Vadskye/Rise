@@ -1,6 +1,7 @@
 import { Creature } from '@src/character_sheet/creature';
 import { RankAbility } from '../types';
 import { addStandardSpellModifiers } from '../definitions/standard_modifiers';
+import { applyArchetypeActiveAbilities } from './apply_archetypes';
 
 export function alchemist(): RankAbility[] {
   return [
@@ -585,6 +586,7 @@ export function schoolSpecialist(): RankAbility[] {
 }
 
 export function alchemistModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, alchemist(), rank);
   if (rank >= 3) {
     creature.addSimpleModifier({
       name: 'Alchemical Tolerance',
@@ -603,6 +605,7 @@ export function alchemistModifiers(creature: Creature, rank: number) {
 }
 
 export function arcaneMagicModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, arcaneMagic(), rank);
   if (rank >= 1) {
     creature.addCustomModifier({
       name: 'Mage Armor',
@@ -615,6 +618,7 @@ export function arcaneMagicModifiers(creature: Creature, rank: number) {
 }
 
 export function arcaneScholarModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, arcaneScholar(), rank);
   if (rank >= 5) {
     creature.addSimpleModifier({
       name: "Scholar's Mind",
@@ -625,6 +629,7 @@ export function arcaneScholarModifiers(creature: Creature, rank: number) {
 }
 
 export function arcaneSpellMasteryModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, arcaneSpellMastery(), rank);
   if (rank >= 3) {
     creature.addSimpleModifier({
       name: 'Spell-Trained Understanding',
@@ -645,6 +650,7 @@ export function arcaneSpellMasteryModifiers(creature: Creature, rank: number) {
 }
 
 export function schoolSpecialistModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, schoolSpecialist(), rank);
   // Assuming Evocation for simplicity
   if (rank >= 1) {
     creature.addSimpleModifier({

@@ -1,6 +1,7 @@
 import { Creature } from '@src/character_sheet/creature';
 import { RankAbility } from '../types';
 import { addStandardManeuverModifiers } from '../definitions/standard_modifiers';
+import { applyArchetypeActiveAbilities } from './apply_archetypes';
 
 export function beastmaster(): RankAbility[] {
   return [
@@ -589,6 +590,7 @@ export function wildernessWarrior(): RankAbility[] {
 }
 
 export function beastmasterModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, beastmaster(), rank);
   if (rank >= 2) {
     creature.addCustomModifier({
       name: 'Beast Bond',
@@ -598,6 +600,7 @@ export function beastmasterModifiers(creature: Creature, rank: number) {
 }
 
 export function boundaryWardenModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, boundaryWarden(), rank);
   if (rank >= 5) {
     creature.addSimpleModifier({
       name: 'Steadfast Warden',
@@ -608,6 +611,7 @@ export function boundaryWardenModifiers(creature: Creature, rank: number) {
 }
 
 export function huntmasterModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, huntmaster(), rank);
   if (rank >= 1) {
     creature.addSimpleModifier({
       name: 'Quarry (Accuracy)',
@@ -626,6 +630,7 @@ export function huntmasterModifiers(creature: Creature, rank: number) {
 }
 
 export function scoutModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, scout(), rank);
   if (rank >= 2) {
     creature.addSimpleModifier({
       name: 'Swift Step',
@@ -643,6 +648,7 @@ export function scoutModifiers(creature: Creature, rank: number) {
   }
 }
 
-export function wildernessWarriorModifiers(_creature: Creature, _rank: number) {
+export function wildernessWarriorModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, wildernessWarrior(), rank);
   // Maneuvers
 }

@@ -1,5 +1,6 @@
 import { Creature } from '@src/character_sheet/creature';
 import { RankAbility } from '../types';
+import { applyArchetypeActiveAbilities } from './apply_archetypes';
 
 export function devotedParagon(): RankAbility[] {
   return [
@@ -406,6 +407,7 @@ export function zealousWarrior(): RankAbility[] {
 }
 
 export function devotedParagonModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, devotedParagon(), rank);
   if (rank >= 3) {
     const bonus = rank >= 6 ? 2 : 1;
     creature.addCustomModifier({
@@ -418,9 +420,12 @@ export function devotedParagonModifiers(creature: Creature, rank: number) {
   }
 }
 
-export function divineMagicModifiers(_creature: Creature, _rank: number) {}
+export function divineMagicModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, divineMagic(), rank);
+}
 
 export function divineSpellExpertiseModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, divineSpellExpertise(), rank);
   if (rank >= 3) {
     creature.addSimpleModifier({
       name: 'Spell-Trained Mind',
@@ -441,6 +446,7 @@ export function divineSpellExpertiseModifiers(creature: Creature, rank: number) 
 }
 
 export function stalwartGuardianModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, stalwartGuardian(), rank);
   if (rank >= 2) {
     const bonus = rank >= 5 ? 2 : 1;
     creature.addCustomModifier({
@@ -472,6 +478,7 @@ export function stalwartGuardianModifiers(creature: Creature, rank: number) {
 }
 
 export function zealousWarriorModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, zealousWarrior(), rank);
   if (rank >= 5) {
     creature.addSimpleModifier({
       name: 'Zealous Offense',
