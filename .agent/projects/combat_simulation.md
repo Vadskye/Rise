@@ -184,10 +184,10 @@ Conditions like Prone, Stunned, Dazed, Slowed, etc. can be added incrementally a
 
 ### 5a. CLI tool
 
-Create `typescript/src/combat/simulate_fight.ts` as a standalone script:
+Create `typescript/src/scripts/simulate_fight.ts` as a standalone script:
 
 ```
-npx ts-node src/combat/simulate_fight.ts --team1 "Barbarian 7" --team2 "Ankheg" --iterations 1000
+npx tsx src/scripts/simulate_fight.ts --team1 "Barbarian 7" --team2 "Ankheg" --iterations 1000
 ```
 
 - Supports both stock character names and monster names.
@@ -241,10 +241,10 @@ Phase 1 is a strict prerequisite for Phase 2. Phases 3, 4, and 5 can proceed in 
 - [x] Phase 2c: Elite action reform
 - [x] Phase 2d: Cooldown tracking
 - [x] Phase 3a: Equipment automation
-- [/] Phase 3b: Fill in stock character levels
+- [x] Phase 3b: Fill in stock character levels
 - [x] Phase 3c: Full Archetype Ability Conversion
-- [ ] Phase 4a: Status effect tracking infrastructure
-- [ ] Phase 4b: Grappled condition
-- [ ] Phase 5a: Simulation CLI
-- [ ] Phase 5b: Verbose combat logging
+- [x] Phase 4a: Status effect tracking infrastructure
+- [x] Phase 4b: Grappled condition
+- [x] Phase 5a: Simulation CLI
+- [x] Phase 5b: Verbose combat logging
 - [x] Update existing test expectations

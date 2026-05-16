@@ -43,6 +43,7 @@
     "test": "npx tsc --incremental && npx tap --node-arg=--import=tsx --exclude=**/*.js",
     "prettier": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint \"src/**/*.ts\"",
-    "format_archetype": "npx tsx src/scripts/format_archetype_description.ts"
+    "format_archetype": "npx tsc --incremental && node --import tsx src/scripts/format_archetype_description.js",
+    "simulate_fight": "npx tsc --incremental && node --import tsx src/scripts/simulate_fight.js"
   }
 }

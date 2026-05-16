@@ -32,6 +32,9 @@ export interface FightState {
   initialTotalHpByTeam: Record<string, number>;
   memberToTeam: Record<string, CombatTeam>;
   cooldowns: Record<string, Record<string, number>>; // creatureId -> abilityName -> roundsRemaining
+  conditions: Record<string, Set<string>>; // creatureId -> set of active conditions
+  verbose: boolean;
+  round: number;
 }
 
 /**
@@ -44,19 +47,19 @@ export class CombatScenario {
    * Simulates the combat until a victor is determined.
    * Runs multiple iterations to gather statistics.
    */
-  public simulate(iterations: number = 200): CombatSimulationResult {
+  public simulate(iterations: number = 200, verbose: boolean = false): CombatSimulationResult {
     if (this.teams.length < 2) {
       throw new Error('Combat requires at least two teams.');
     }
 
-    const stats = this.runSimulationIterations(iterations);
+    const stats = this.runSimulationIterations(iterations, verbose);
 
     // this.logSimulationResults(stats);
 
     return stats;
   }
 
-  private runSimulationIterations(iterations: number): CombatSimulationResult {
+  private runSimulationIterations(iterations: number, verbose: boolean): CombatSimulationResult {
     let totalTurns = 0;
     const wins: Record<string, number> = {};
     const totalHpPercents: Record<string, number> = {};
@@ -71,7 +74,7 @@ export class CombatScenario {
     }
 
     for (let i = 0; i < iterations; i++) {
-      const result = this.simulateSingleFight();
+      const result = this.simulateSingleFight(verbose && i === 0);
       totalTurns += result.turns;
       if (result.winner) {
         wins[result.winner]++;
@@ -114,19 +117,20 @@ export class CombatScenario {
     console.log('---------------------------------');
   }
 
-  private simulateSingleFight(): {
+  private simulateSingleFight(verbose: boolean = false): {
     winner: string | null;
     turns: number;
     teamHpPercents: Record<string, number>;
     hitsByTeam: Record<string, number>;
     attacksByTeam: Record<string, number>;
   } {
-    const state = this.initializeFightState();
+    const state = this.initializeFightState(verbose);
     const teamInitiatives = this.determineTeamInitiative();
 
     let turns = 0;
     while (turns < 100) {
       turns++;
+      state.round = turns;
       for (const { team } of teamInitiatives) {
         if (state.aliveMembersByTeam[team.name].length === 0) continue;
 
@@ -152,7 +156,7 @@ export class CombatScenario {
     };
   }
 
-  public initializeFightState(): FightState {
+  public initializeFightState(verbose: boolean = false): FightState {
     const hp: Record<string, number> = {};
     const memberToTeam: Record<string, CombatTeam> = {};
     const aliveMembersByTeam: Record<string, Creature[]> = {};
@@ -160,6 +164,7 @@ export class CombatScenario {
     const hitsByTeam: Record<string, number> = {};
     const attacksByTeam: Record<string, number> = {};
     const cooldowns: Record<string, Record<string, number>> = {};
+    const conditions: Record<string, Set<string>> = {};
 
     for (const team of this.teams) {
       const aliveMembers: Creature[] = [];
@@ -170,6 +175,7 @@ export class CombatScenario {
         aliveMembers.push(member);
         teamInitialHp += member.hit_points;
         cooldowns[member.id] = {};
+        conditions[member.id] = new Set<string>();
       }
       aliveMembersByTeam[team.name] = aliveMembers;
       initialTotalHpByTeam[team.name] = teamInitialHp;
@@ -185,6 +191,9 @@ export class CombatScenario {
       hitsByTeam,
       attacksByTeam,
       cooldowns,
+      conditions,
+      verbose,
+      round: 1,
     };
   }
 
