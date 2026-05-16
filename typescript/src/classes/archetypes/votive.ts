@@ -586,6 +586,23 @@ export function soulforged(): RankAbility[] {
 
 export function pactboundWarriorModifiers(creature: Creature, rank: number) {
   applyArchetypeActiveAbilities(creature, pactboundWarrior(), rank);
+
+  // Each class picks a single combat style and chooses maneuvers from it.
+  // Arbitrarily, we pick two maneuvers at rank 1, then one more every two ranks.
+  // We use Herald of War for Votive.
+  if (rank >= 1) {
+    creature.addManeuver('Thunderous Shout');
+    creature.addManeuver('Deafening Shout');
+  }
+  if (rank >= 3) {
+    creature.addManeuver('Fearsome Blow');
+  }
+  if (rank >= 5) {
+    creature.addManeuver('Thunderous Shout+');
+  }
+  if (rank >= 7) {
+    creature.addManeuver('Fearsome Blow+');
+  }
 }
 
 export function covenantKeeperModifiers(creature: Creature, rank: number) {

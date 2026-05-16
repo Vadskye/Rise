@@ -637,7 +637,23 @@ export function airdancerModifiers(creature: Creature, rank: number) {
 
 export function esotericWarriorModifiers(creature: Creature, rank: number) {
   applyArchetypeActiveAbilities(creature, esotericWarrior(), rank);
-  // Maneuvers
+
+  // Each class picks a single combat style and chooses maneuvers from it.
+  // Arbitrarily, we pick two maneuvers at rank 1, then one more every two ranks.
+  // We use Flurry of Blows for Monk.
+  if (rank >= 1) {
+    creature.addManeuver('Quickfire');
+    creature.addManeuver('Whirlwind');
+  }
+  if (rank >= 3) {
+    creature.addManeuver('Cascading Crush');
+  }
+  if (rank >= 5) {
+    creature.addManeuver('Double Flurry');
+  }
+  if (rank >= 7) {
+    creature.addManeuver('Triple Flurry');
+  }
 }
 
 export function kiModifiers(creature: Creature, rank: number) {

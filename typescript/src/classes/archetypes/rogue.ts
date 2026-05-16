@@ -524,7 +524,23 @@ export function bardicMusicModifiers(creature: Creature, rank: number) {
 
 export function combatTricksterModifiers(creature: Creature, rank: number) {
   applyArchetypeActiveAbilities(creature, combatTrickster(), rank);
-  // Maneuvers
+
+  // Each class picks a single combat style and chooses maneuvers from it.
+  // Arbitrarily, we pick two maneuvers at rank 1, then one more every two ranks.
+  // We use Dirty Fighting for Rogue.
+  if (rank >= 1) {
+    creature.addManeuver('Crush the Fallen');
+    creature.addManeuver('Eye Poke');
+  }
+  if (rank >= 3) {
+    creature.addManeuver('Fake Out');
+  }
+  if (rank >= 5) {
+    creature.addManeuver('Crush the Fallen+');
+  }
+  if (rank >= 7) {
+    creature.addManeuver('Fake Out+');
+  }
 }
 
 export function jackOfAllTradesModifiers(creature: Creature, rank: number) {
