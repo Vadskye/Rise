@@ -4,6 +4,7 @@ import { RiseDefense } from '@src/core_mechanics/attributes';
 import { calculateDamage, parseDamageRank } from '@src/core_mechanics/damage_calculation';
 import { DicePool } from '@src/core_mechanics/dice_pool';
 import { calculateStrikeDamage } from '@src/latex/monsters/player_abilities';
+import { isWeapon } from '@src/monsters/equipment';
 
 /**
  * Normalizes an ActiveAbility into a SimulatorReadyAttack by parsing its text.
@@ -28,6 +29,15 @@ export function parseAttackEffect(
     } else {
       // If no defenses are found and it's not a strike, it's likely not an attack we can parse.
       return null;
+    }
+  }
+
+  // Add logic to include weapon if creature has exactly one and it's a strike
+  if (text.includes('strike') && !ability.weapon) {
+    const equipment = creature.getEquipment();
+    const weapons = equipment.filter(isWeapon);
+    if (weapons.length === 1) {
+      ability.weapon = weapons[0];
     }
   }
 
