@@ -520,7 +520,7 @@ t.test('restructureStrikeAbility', (t) => {
       } as any;
       restructureStrikeAbility(mockCreature, ability);
       t.matchStrict(ability.attack, {
-        hit: '1d8+10 damage.',
+        hit: '2d8+20 damage.',
         targeting:
           'The $name makes a $accuracy melee strike vs. Armor with its bite. If the target is \\prone, the strike deals double damage.',
       });
