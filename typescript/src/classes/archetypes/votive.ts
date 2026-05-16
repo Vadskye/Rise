@@ -4,6 +4,7 @@ import {
   addStandardManeuverModifiers,
   addStandardSpellModifiers,
 } from '../definitions/standard_modifiers';
+import { applyArchetypeActiveAbilities } from './apply_archetypes';
 
 export function pactboundWarrior(): RankAbility[] {
   const abilities: RankAbility[] = [
@@ -589,9 +590,12 @@ export function soulforged(): RankAbility[] {
   ];
 }
 
-export function pactboundWarriorModifiers(_creature: Creature, _rank: number) {}
+export function pactboundWarriorModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, pactboundWarrior(), rank);
+}
 
 export function covenantKeeperModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, covenantKeeper(), rank);
   if (rank >= 2) {
     creature.addSimpleModifier({
       name: 'Covenant of Power (Fatigue)',
@@ -602,6 +606,7 @@ export function covenantKeeperModifiers(creature: Creature, rank: number) {
 }
 
 export function pactMagicModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, pactMagic(), rank);
   if (rank >= 1) {
     creature.addSimpleModifier({
       name: 'Survival Pact',
@@ -612,6 +617,7 @@ export function pactMagicModifiers(creature: Creature, rank: number) {
 }
 
 export function pactSpellMasteryModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, pactSpellMastery(), rank);
   if (rank >= 3) {
     creature.addSimpleModifier({
       name: 'Spell-Trained Mind',
@@ -632,6 +638,7 @@ export function pactSpellMasteryModifiers(creature: Creature, rank: number) {
 }
 
 export function soulforgedModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, soulforged(), rank);
   // Generic modifiers
   if (rank >= 3) {
     creature.addSimpleModifier({

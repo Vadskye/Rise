@@ -1,6 +1,7 @@
 import { Creature } from '@src/character_sheet/creature';
 import { RankAbility } from '../types';
 import { addStandardManeuverModifiers } from '../definitions/standard_modifiers';
+import { applyArchetypeActiveAbilities } from './apply_archetypes';
 
 export function airdancer(): RankAbility[] {
   return [
@@ -625,6 +626,7 @@ export function transcendentSage(): RankAbility[] {
 }
 
 export function airdancerModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, airdancer(), rank);
   if (rank >= 6) {
     creature.addSimpleModifier({
       name: 'Move Like Wind',
@@ -634,11 +636,13 @@ export function airdancerModifiers(creature: Creature, rank: number) {
   }
 }
 
-export function esotericWarriorModifiers(_creature: Creature, _rank: number) {
+export function esotericWarriorModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, esotericWarrior(), rank);
   // Maneuvers
 }
 
 export function kiModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, ki(), rank);
   if (rank >= 1) {
     // Ki Barrier
     creature.addCustomModifier({
@@ -660,6 +664,7 @@ export function kiModifiers(creature: Creature, rank: number) {
 }
 
 export function perfectedFormModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, perfectedForm(), rank);
   if (rank >= 1) {
     creature.addCustomModifier({
       name: 'Unhindered Agility',
@@ -702,6 +707,7 @@ export function perfectedFormModifiers(creature: Creature, rank: number) {
 }
 
 export function transcendentSageModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, transcendentSage(), rank);
   if (rank >= 1) {
     creature.addCustomModifier({
       name: 'Transcend Frailty',
