@@ -1,25 +1,35 @@
 import { StockCharacters } from '../stock_characters';
+import { Creature } from '../creature';
 
 export function addFighters(stock: StockCharacters) {
-  stock.addCharacter('Fighter', (c) => {
-    c.setRequiredProperties({
-      alignment: 'lawful neutral',
-      base_class: 'fighter',
-      elite: false,
-      creature_origin: 'natural',
-      creature_type: 'humanoid',
-      level: 1,
-      size: 'medium',
-    });
-    c.setProperties({
-      strength_at_creation: 3,
-      dexterity_at_creation: 2,
-      constitution_at_creation: 2,
-      perception_at_creation: 1,
-      intelligence_at_creation: 0,
-      willpower_at_creation: 0,
-    });
-    c.setEquippedArmor({ shield: 'standard shield' });
-    c.addWeaponMult('broadsword');
+  stock.addCharacter('Fighter', (c) => applyFighterBase(c, 1));
+  stock.addCharacter('Fighter 4', (c) => applyFighterBase(c, 4));
+  stock.addCharacter('Fighter 7', (c) => applyFighterBase(c, 7));
+  stock.addCharacter('Fighter 10', (c) => applyFighterBase(c, 10));
+  stock.addCharacter('Fighter 13', (c) => applyFighterBase(c, 13));
+  stock.addCharacter('Fighter 16', (c) => applyFighterBase(c, 16));
+  stock.addCharacter('Fighter 19', (c) => applyFighterBase(c, 19));
+  stock.addCharacter('Fighter 21', (c) => applyFighterBase(c, 21));
+}
+
+function applyFighterBase(c: Creature, level: number) {
+  c.setRequiredProperties({
+    alignment: 'lawful neutral',
+    base_class: 'fighter',
+    elite: false,
+    creature_origin: 'natural',
+    creature_type: 'humanoid',
+    level: level,
+    size: 'medium',
   });
+  c.setProperties({
+    strength_at_creation: 3,
+    dexterity_at_creation: 2,
+    constitution_at_creation: 2,
+    perception_at_creation: 1,
+    intelligence_at_creation: 0,
+    willpower_at_creation: 0,
+  });
+  c.addWeaponMult('broadsword');
+  c.addManeuver('Steady Slam');
 }
