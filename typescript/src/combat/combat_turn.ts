@@ -75,6 +75,26 @@ export function executeAttackerAction(
 
   const standardAttacks = attacks.filter((a) => a.usageTime === 'standard');
 
+  // Handle Grappled condition (uses standard action)
+  const conditions = state.conditions[attacker.id];
+  if (conditions) {
+    for (const condition of conditions) {
+      if (condition.startsWith('grappled:')) {
+        const grapplerId = condition.split(':')[1];
+        const grappler = findCreatureById(grapplerId, state);
+        if (grappler) {
+          const roll = rollD10(true);
+          const total = roll + attacker.brawn;
+          if (total >= grappler.brawn) {
+            conditions.delete(condition);
+          }
+          // Escape attempt uses the standard action.
+          return { status: CombatStepStatus.Ongoing, winner: null };
+        }
+      }
+    }
+  }
+
   return selectAndExecuteAction(attacker, team, state, standardAttacks);
 }
 
@@ -131,17 +151,45 @@ function selectAndExecuteAction(
     : [selectTarget(attacker, potentialTargets, state)];
 
   for (const target of targets) {
-    const { damage, hit } = resolveAttack(attacker, target, bestAttack);
+    const { damage, hit, total } = resolveAttack(attacker, target, bestAttack, state);
     if (hit) state.hitsByTeam[team.name]++;
 
     state.hp[target.id] -= damage;
 
+    if (state.verbose) {
+      const typeStr = bestAttack.areaRank !== null ? 'area' : 'strike';
+      const hitStr = hit ? 'hits' : 'misses';
+      const defenseStr = bestAttack.defenses.join(', ') || 'Armor';
+      console.log(
+        `Round ${state.round}: ${attacker.name} uses ${bestAttack.name} (${typeStr}) vs ${defenseStr} → ${hitStr} ${target.name} for ${damage} damage`,
+      );
+    }
+
+    if (bestAttack.name === 'Grappling Strike' && hit && total >= target.brawn) {
+      state.conditions[target.id].add(`grappled:${attacker.id}`);
+      if (state.verbose) {
+        console.log(`Round ${state.round}: ${target.name} is grappled by ${attacker.name}`);
+      }
+    }
+
     if (state.hp[target.id] <= 0) {
       handleCreatureDeath(target, state);
+      if (state.verbose) {
+        console.log(`Round ${state.round}: ${target.name} dies`);
+      }
     }
   }
 
   return checkVictory(state);
+}
+
+function findCreatureById(id: string, state: FightState): Creature | null {
+  for (const team of Object.values(state.aliveMembersByTeam)) {
+    for (const member of team) {
+      if (member.id === id) return member;
+    }
+  }
+  return null;
 }
 
 function getPotentialTargets(team: CombatTeam, state: FightState): Creature[] {
@@ -220,7 +268,8 @@ export function resolveAttack(
   attacker: Creature,
   defender: Creature,
   attack: SimulatorReadyAttack,
-): { damage: number; hit: boolean } {
+  state: FightState,
+): { damage: number; hit: boolean; total: number } {
   const roll = rollD10(true);
   let totalAccuracy = attacker.accuracy + attack.accuracyModifier;
 
@@ -228,17 +277,28 @@ export function resolveAttack(
 
   // Target the average of listed defenses, or armor if none
   const defenses = attack.defenses.length > 0 ? attack.defenses : ['armor_defense' as const];
-  const targetDefense = defenses.reduce((acc, def) => acc + defender[def], 0) / defenses.length;
+  const targetDefense =
+    defenses.reduce((acc, def) => {
+      let value = defender[def];
+      const conditions = state.conditions[defender.id];
+      const isGrappled = conditions && Array.from(conditions).some((c) => c.startsWith('grappled'));
+      if (isGrappled) {
+        if (def === 'armor_defense' || def === 'reflex') {
+          value -= 2;
+        }
+      }
+      return acc + value;
+    }, 0) / defenses.length;
 
   if (total >= targetDefense + 10) {
     // Critical Hit: Double damage
-    return { damage: calculateDamage(attack) * 2, hit: true };
+    return { damage: calculateDamage(attack) * 2, hit: true, total };
   } else if (total >= targetDefense) {
     // Regular Hit
-    return { damage: calculateDamage(attack), hit: true };
+    return { damage: calculateDamage(attack), hit: true, total };
   }
 
-  return { damage: 0, hit: false }; // Miss
+  return { damage: 0, hit: false, total }; // Miss
 }
 
 export function calculateDamage(attack: SimulatorReadyAttack): number {
