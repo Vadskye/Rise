@@ -1,6 +1,7 @@
 import type { StockCharacters } from '../stock_characters';
 import { Creature } from '../creature';
-import { battleragerModifiers } from '@src/classes/archetypes/barbarian';
+import { battleragerModifiers, battleforgedResilienceModifiers, outlandSavageModifiers } from '@src/classes/archetypes/barbarian';
+import { getArchetypeRanks } from '@src/classes/archetypes/apply_archetypes';
 
 export function addBarbarians(stock: StockCharacters) {
   stock.addCharacter('Barbarian', (c) => applyBarbarianBase(c, 1));
@@ -32,5 +33,10 @@ function applyBarbarianBase(c: Creature, level: number) {
     willpower_at_creation: 0,
   });
   c.addWeaponMult('greataxe');
-  battleragerModifiers(c, level);
+  
+  const [rank1, rank2, rank3] = getArchetypeRanks(level);
+  
+  battleragerModifiers(c, rank1);
+  outlandSavageModifiers(c, rank2);
+  battleforgedResilienceModifiers(c, rank3);
 }
