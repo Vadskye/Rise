@@ -126,8 +126,9 @@ export const bruteForce: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike} with a +1 accuracy bonus.
         You cannot get a \\glossterm{critical hit} with this strike.
+        \\injury If your attack result hits the target's Fortitude defense, it is \\briefly \\stunned.
       `,
-      roles: ['burst'],
+      roles: ['burst', 'maim'],
       rank: 1,
     },
 
@@ -137,6 +138,7 @@ export const bruteForce: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike} with a +2 accuracy bonus that deals double damage.
         You cannot get a \\glossterm{critical hit} with this strike.
+        \\hit If your attack result hits the target's Fortitude defense, it is \\briefly \\stunned.
       `,
       roles: ['burst'],
       rank: 5,
