@@ -1,6 +1,6 @@
 import { Creature } from '@src/character_sheet/creature';
 import { RankAbility } from '../types';
-import { addStandardManeuverModifiers } from '../definitions/standard_modifiers';
+
 import { applyArchetypeActiveAbilities } from './apply_archetypes';
 
 export function beastmaster(): RankAbility[] {
@@ -585,7 +585,6 @@ export function wildernessWarrior(): RankAbility[] {
       `,
     },
   ];
-  addStandardManeuverModifiers(abilities);
   return abilities;
 }
 
