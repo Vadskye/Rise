@@ -1,5 +1,11 @@
 import type { StockCharacters } from '../stock_characters';
 import { Creature } from '../creature';
+import { getArchetypeRanks } from '@src/classes/archetypes/apply_archetypes';
+import {
+  combatTricksterModifiers,
+  assassinModifiers,
+  jackOfAllTradesModifiers,
+} from '@src/classes/archetypes/rogue';
 
 export function addRogues(stock: StockCharacters) {
   stock.addCharacter('Rogue', (c) => applyRogueBase(c, 1));
@@ -34,4 +40,10 @@ function applyRogueBase(c: Creature, level: number) {
   c.setEquippedArmor({ bodyArmor: 'buff leather' });
   c.addWeapon('smallswords');
   c.addWeaponMult('smallswords');
+
+  const [rank1, rank2, rank3] = getArchetypeRanks(level);
+
+  combatTricksterModifiers(c, rank1);
+  assassinModifiers(c, rank2);
+  jackOfAllTradesModifiers(c, rank3);
 }
