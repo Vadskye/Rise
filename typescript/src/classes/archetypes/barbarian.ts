@@ -681,9 +681,22 @@ export function outlandSavageModifiers(creature: Creature, rank: number) {
   }
 }
 
-export function primalWarriorModifiers(_creature: Creature, _rank: number) {
-  // Primal Warrior adds maneuvers and augments to maneuvers.
-  // These don't have static statistical modifiers that we represent here.
+// Each class picks a single combat style and chooses maneuvers from it.
+// Arbitrarily, we pick two maneuvers at rank 1, then one more every two ranks.
+export function primalWarriorModifiers(creature: Creature, rank: number) {
+  if (rank >= 1) {
+    creature.addManeuver('Ground Slam');
+    creature.addManeuver('Steady Slam');
+  }
+  if (rank >= 3) {
+    creature.addManeuver('Desperate Smash');
+  }
+  if (rank >= 5) {
+    creature.addManeuver('Heavy Hitter');
+  }
+  if (rank >= 7) {
+    creature.addManeuver('Boneshatter+');
+  }
 }
 
 export function totemistModifiers(creature: Creature, rank: number) {
