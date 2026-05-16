@@ -1,7 +1,18 @@
 import { Creature } from '@src/character_sheet/creature';
 import { RankAbility } from '../types';
 import { addStandardManeuverModifiers } from '../definitions/standard_modifiers';
-import { parseArchetypeAbility } from '@src/combat/parse_archetype_ability';
+import { parseArchetypeActiveAbility } from '@src/combat/parse_archetype_ability';
+
+function applyArchetypeActiveAbilities(creature: Creature, abilities: RankAbility[], rank: number) {
+  for (const ability of abilities) {
+    if (ability.rank <= rank) {
+      const parsed = parseArchetypeActiveAbility(ability, rank);
+      if (parsed) {
+        creature.addActiveAbility(parsed);
+      }
+    }
+  }
+}
 
 export function battleforgedResilience(): RankAbility[] {
   return [
@@ -531,6 +542,7 @@ export function totemist(): RankAbility[] {
 }
 
 export function battleforgedResilienceModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, battleforgedResilience(), rank);
   if (rank >= 1) {
     // Second Wind doesn't have a clear combat effect
   }
@@ -588,6 +600,7 @@ export function battleforgedResilienceModifiers(creature: Creature, rank: number
 }
 
 export function battleragerModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, battlerager(), rank);
   if (rank >= 1) {
     // Assume rage is constantly active
     creature.addCustomModifier({
@@ -633,17 +646,6 @@ export function battleragerModifiers(creature: Creature, rank: number) {
     });
   }
 
-  if (rank >= 3) {
-    const abilities = battlerager();
-    const aggViolence = abilities.find((a) => a.name === 'Aggravated Violence');
-    if (aggViolence) {
-      const parsed = parseArchetypeAbility(aggViolence, rank);
-      if (parsed) {
-        creature.addActiveAbility(parsed);
-      }
-    }
-  }
-
   if (rank >= 4) {
     creature.addSimpleModifier({
       name: 'Primal Brawn',
@@ -665,6 +667,7 @@ export function battleragerModifiers(creature: Creature, rank: number) {
 }
 
 export function outlandSavageModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, outlandSavage(), rank);
   if (rank >= 1) {
     creature.addSimpleModifier({
       name: 'Savage Precision',
@@ -696,6 +699,7 @@ export function primalWarriorModifiers(_creature: Creature, _rank: number) {
 }
 
 export function totemistModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, totemist(), rank);
   // Bear Totem
   if (rank >= 1) {
     creature.addSimpleModifier({
