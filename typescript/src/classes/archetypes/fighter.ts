@@ -639,17 +639,7 @@ export function sentinelModifiers(creature: Creature, rank: number) {
   if (rank >= 1) {
     creature.addCustomModifier({
       name: 'Bulwark',
-      numericEffects: [
-        { statistic: 'armor_defense', modifier: 1 },
-        { statistic: 'fortitude', modifier: 1 },
-        { statistic: 'reflex', modifier: 1 },
-      ],
-    });
-    creature.addCustomModifier({
-      name: 'Bulwark',
-      numericEffects: [
-        { statistic: 'mental', modifier: 1 },
-      ],
+      numericEffects: [{ statistic: 'all_defenses', modifier: 1 }],
     });
   }
 
