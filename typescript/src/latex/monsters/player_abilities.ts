@@ -790,9 +790,6 @@ export function calculateStrikeDamage(
   const sentences = (ability.effect || '').split(/[.\n]/);
   for (const sentence of sentences) {
     const trimmed = sentence.trim();
-    if (trimmed.startsWith('If')) {
-      continue;
-    }
     const match = trimmed.match(/deals (double|triple|quadruple) damage/);
     if (match) {
       globalDamageMultiplier =
@@ -806,12 +803,13 @@ export function calculateStrikeDamage(
   }
 
   let weaponDamageMultiplier = 1;
-  const weaponMultiplierMatch = strikeSentence.match(
-    /deals (double|triple|quadruple|five times|six times|seven times|eight times) (\\glossterm{weapon damage}|weapon damage)/,
-  );
-  if (weaponMultiplierMatch) {
-    weaponDamageMultiplier =
-      {
+  for (const sentence of sentences) {
+    const trimmed = sentence.trim();
+    const match = trimmed.match(
+      /deals (double|triple|quadruple|five times|six times|seven times|eight times) (\\glossterm{weapon damage}|weapon damage)/,
+    );
+    if (match) {
+      const val = {
         double: 2,
         triple: 3,
         quadruple: 4,
@@ -819,11 +817,13 @@ export function calculateStrikeDamage(
         'six times': 6,
         'seven times': 7,
         'eight times': 8,
-      }[weaponMultiplierMatch[1]] || 0;
-    if (!weaponDamageMultiplier) {
-      throw new Error(
-        `Ability ${monster.id}.${ability.name}: Unable to parse weapon damage multiplier`,
-      );
+      }[match[1]];
+      if (!val) {
+        throw new Error(
+          `Ability ${monster.id}.${ability.name}: Unable to parse weapon damage multiplier '${match[1]}'`,
+        );
+      }
+      weaponDamageMultiplier = val;
     }
   }
 

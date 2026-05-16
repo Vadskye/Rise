@@ -72,11 +72,13 @@ function parseCooldown(ability: ActiveAbility, text: string): number {
   // decremented at the start of the turn, a value of 2 means the ability
   // skips exactly one turn (e.g., used on Turn 1, skipped on Turn 2,
   // ready on Turn 3).
-  if (
+  const isBrief =
     lowercaseText.includes('briefly cannot use this ability again') ||
     lowercaseText.includes("briefly can't use this ability again") ||
-    lowercaseText.includes('briefly')
-  ) {
+    lowercaseText.includes('briefly');
+  const isDifficultCondition = lowercaseText.includes('dealt damage to you since your last turn');
+
+  if (isBrief || isDifficultCondition) {
     return 2;
   }
 

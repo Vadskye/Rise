@@ -62,7 +62,8 @@ t.test('parseArchetypeActiveAbility tests', (t) => {
 
     const attackEffect = parseAttackEffect(parsed!, creature);
     t.ok(attackEffect);
-    t.equal(attackEffect?.damage.toString(), '2d8+12', 'should have correct damage at rank 6');
+    t.equal(attackEffect?.damage.toString(), '6d8+12', 'should have correct damage at rank 6');
+    t.equal(attackEffect?.cooldown, 2, 'should have cooldown 2 due to difficult condition');
 
     t.end();
   });
