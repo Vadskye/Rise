@@ -57,7 +57,8 @@ export function executeAttackerAction(
   if (potentialTargets.length === 0) return { status: CombatStepStatus.Ongoing, winner: null };
 
   // Parse all available abilities
-  const attacks: SimulatorReadyAttack[] = attacker.getActiveAbilities()
+  const attacks: SimulatorReadyAttack[] = attacker
+    .getActiveAbilities()
     .map((ability) => parseAttackEffect(ability, attacker))
     .filter((a): a is SimulatorReadyAttack => !!a);
 

@@ -5,7 +5,7 @@ import { Creature } from '@src/character_sheet/creature';
 
 t.test('parseCooldown - Cooldown in Cost', (t) => {
   const creature = Creature.fromName('Test Creature');
-  
+
   const ability: ActiveAbility = {
     name: 'Cooldown in Cost',
     rank: 1,
@@ -17,7 +17,7 @@ t.test('parseCooldown - Cooldown in Cost', (t) => {
     attack: {
       hit: '10 damage',
       targeting: 'Attack vs. Armor',
-    }
+    },
   };
 
   const parsed = parseAttackEffect(ability, creature);
@@ -35,7 +35,7 @@ t.test('parseCooldown - Cooldown in Cost', (t) => {
     attack: {
       hit: '10 damage',
       targeting: 'Attack vs. Armor',
-    }
+    },
   };
 
   const parsed2 = parseAttackEffect(ability2, creature);
