@@ -481,12 +481,7 @@ export function healerModifiers(creature: Creature, rank: number) {
     const bonus = rank >= 5 ? 2 : 1;
     creature.addCustomModifier({
       name: "Healer's Grace",
-      numericEffects: [
-        { statistic: 'armor_defense', modifier: bonus },
-        { statistic: 'fortitude', modifier: bonus },
-        { statistic: 'reflex', modifier: bonus },
-        { statistic: 'mental', modifier: bonus },
-      ],
+      numericEffects: [{ statistic: 'all_defenses', modifier: bonus }],
     });
   }
 }
