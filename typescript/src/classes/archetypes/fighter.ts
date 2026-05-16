@@ -631,6 +631,23 @@ export function equipmentTrainingModifiers(creature: Creature, rank: number) {
 
 export function martialMasteryModifiers(creature: Creature, rank: number) {
   applyArchetypeActiveAbilities(creature, martialMastery(), rank);
+
+  // Each class picks a single combat style and chooses maneuvers from it.
+  // Arbitrarily, we pick two maneuvers at rank 1, then one more every two ranks.
+  // We use Perfect Precision for Fighter.
+  if (rank >= 1) {
+    creature.addManeuver('Heartpiercer');
+    creature.addManeuver('Desperate Pierce');
+  }
+  if (rank >= 3) {
+    creature.addManeuver('Pure Precision');
+  }
+  if (rank >= 5) {
+    creature.addManeuver('Heartpiercer+');
+  }
+  if (rank >= 7) {
+    creature.addManeuver('Pure Precision+');
+  }
 }
 
 export function sentinelModifiers(creature: Creature, rank: number) {

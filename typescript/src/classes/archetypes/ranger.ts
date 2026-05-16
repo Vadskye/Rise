@@ -649,5 +649,21 @@ export function scoutModifiers(creature: Creature, rank: number) {
 
 export function wildernessWarriorModifiers(creature: Creature, rank: number) {
   applyArchetypeActiveAbilities(creature, wildernessWarrior(), rank);
-  // Maneuvers
+
+  // Each class picks a single combat style and chooses maneuvers from it.
+  // Arbitrarily, we pick two maneuvers at rank 1, then one more every two ranks.
+  // We use Mobile Hunter for Ranger.
+  if (rank >= 1) {
+    creature.addManeuver('Charge');
+    creature.addManeuver('Fall Back');
+  }
+  if (rank >= 3) {
+    creature.addManeuver('Momentous Impact');
+  }
+  if (rank >= 5) {
+    creature.addManeuver('Carve the Air+');
+  }
+  if (rank >= 7) {
+    creature.addManeuver('Reaping Harvest+');
+  }
 }
