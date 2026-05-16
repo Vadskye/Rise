@@ -70,7 +70,7 @@ function parseCooldown(ability: ActiveAbility, text: string): number {
 
   // "Briefly" lasts until the end of the next turn. Since cooldowns are
   // decremented at the start of the turn, a value of 2 means the ability
-  // skips exactly one turn (e.g., used on Turn 1, skipped on Turn 2, 
+  // skips exactly one turn (e.g., used on Turn 1, skipped on Turn 2,
   // ready on Turn 3).
   if (
     lowercaseText.includes('briefly cannot use this ability again') ||
