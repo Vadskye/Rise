@@ -34,10 +34,20 @@ export interface MonsterGroupConfig {
 export class Grimoire {
   private monsters: Record<string, Creature>;
   private monsterGroups: Record<string, MonsterGroup>;
+  private pendingMonsters: Record<string, MonsterInitializer>;
+  private pendingMonsterGroups: Record<
+    string,
+    {
+      config: MonsterGroupConfig;
+      initializers: [string, MonsterInitializer][];
+    }
+  >;
 
   constructor() {
     this.monsters = {};
     this.monsterGroups = {};
+    this.pendingMonsters = {};
+    this.pendingMonsterGroups = {};
   }
 
   addAllMonsters() {
@@ -52,79 +62,113 @@ export class Grimoire {
   }
 
   addMonster(name: string, initializer: MonsterInitializer) {
-    if (this.monsters[name] || this.monsterGroups[name]) {
+    if (
+      this.monsters[name] ||
+      this.pendingMonsters[name] ||
+      this.monsterGroups[name] ||
+      this.pendingMonsterGroups[name]
+    ) {
       throw new Error(`Can't add a duplicate monster with '${name}'.`);
     }
-    if (characterSheetExists(name)) {
-      throw new Error(`Can't add a duplicate character sheet named '${name}'.`);
-    }
-    const sheet = createCharacterSheet(name);
-    sheet.setProperties({ name });
-    this.monsters[name] = new Creature(sheet);
-    initializer(this.monsters[name]);
-    handleEverything();
-
-    sheet.triggerRecalculation();
-
-    this.monsters[name].checkValidMonster();
+    this.pendingMonsters[name] = initializer;
   }
 
   addMonsterGroup(config: MonsterGroupConfig, initializers: [string, MonsterInitializer][]) {
-    if (this.monsterGroups[config.name]) {
+    if (this.monsterGroups[config.name] || this.pendingMonsterGroups[config.name]) {
       return;
     }
-    if (this.monsters[config.name]) {
+    if (this.monsters[config.name] || this.pendingMonsters[config.name]) {
       throw new Error(
         `Can't add a monster group named '${config.name}'; a monster with that name already exists.`,
       );
     }
 
-    this.monsterGroups[config.name] = {
-      ...config,
-      hasArt: Boolean(config.hasArt),
-      monsters: [],
+    this.pendingMonsterGroups[config.name] = {
+      config,
+      initializers,
     };
+  }
 
-    for (const [monsterName, initializer] of initializers) {
-      const characterSheetName = `${config.name}.${monsterName}`;
-      if (characterSheetExists(characterSheetName)) {
-        throw new Error(`Can't add a duplicate character sheet named '${characterSheetName}'.`);
-      }
-      const sheet = createCharacterSheet(characterSheetName);
-      sheet.setProperties({ name: monsterName });
-      const creature = new Creature(sheet);
-      // Some shared initializer logic can depend on the monster's rank, so initializing here can help.
-      initializer(creature);
-      if (config.sharedInitializer) {
-        config.sharedInitializer(creature);
-      }
-      handleEverything();
-      sheet.triggerRecalculation();
-      this.monsterGroups[config.name].monsters.push(creature);
+  private initializeMonster(
+    sheetName: string,
+    monsterName: string,
+    initializer: MonsterInitializer,
+    sharedInitializer?: MonsterInitializer,
+  ): Creature {
+    if (characterSheetExists(sheetName)) {
+      throw new Error(`Can't add a duplicate character sheet named '${sheetName}'.`);
     }
+    const sheet = createCharacterSheet(sheetName);
+    sheet.setProperties({ name: monsterName });
+    const creature = new Creature(sheet);
+    initializer(creature);
+    if (sharedInitializer) {
+      sharedInitializer(creature);
+    }
+    handleEverything();
+    sheet.triggerRecalculation();
+    creature.checkValidMonster();
+    return creature;
   }
 
   getMonsterNames() {
-    return Object.keys(this.monsters);
+    return [...new Set([...Object.keys(this.monsters), ...Object.keys(this.pendingMonsters)])];
   }
 
   getMonsterGroupNames() {
-    return Object.keys(this.monsterGroups);
+    return [
+      ...new Set([...Object.keys(this.monsterGroups), ...Object.keys(this.pendingMonsterGroups)]),
+    ];
   }
 
   getMonsterGroup(name: string): MonsterGroup | null {
-    return this.monsterGroups[name] || null;
+    if (this.monsterGroups[name]) {
+      return this.monsterGroups[name];
+    }
+    const pending = this.pendingMonsterGroups[name];
+    if (pending) {
+      const monsters: Creature[] = [];
+      for (const [monsterName, initializer] of pending.initializers) {
+        const sheetName = `${name}.${monsterName}`;
+        const creature = this.initializeMonster(
+          sheetName,
+          monsterName,
+          initializer,
+          pending.config.sharedInitializer,
+        );
+        monsters.push(creature);
+      }
+      const group: MonsterGroup = {
+        ...pending.config,
+        hasArt: Boolean(pending.config.hasArt),
+        monsters,
+      };
+      this.monsterGroups[name] = group;
+      delete this.pendingMonsterGroups[name];
+      return group;
+    }
+    return null;
   }
 
   getMonster(name: string): Creature | null {
-    return this.monsters[name] || null;
+    if (this.monsters[name]) {
+      return this.monsters[name];
+    }
+    const initializer = this.pendingMonsters[name];
+    if (initializer) {
+      const creature = this.initializeMonster(name, name, initializer);
+      this.monsters[name] = creature;
+      delete this.pendingMonsters[name];
+      return creature;
+    }
+    return null;
   }
 
   hasMonster(name: string): boolean {
-    return this.monsters[name] !== undefined;
+    return this.monsters[name] !== undefined || this.pendingMonsters[name] !== undefined;
   }
 
   hasMonsterGroup(name: string): boolean {
-    return this.monsterGroups[name] !== undefined;
+    return this.monsterGroups[name] !== undefined || this.pendingMonsterGroups[name] !== undefined;
   }
 }
