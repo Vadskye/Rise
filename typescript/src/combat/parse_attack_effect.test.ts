@@ -174,5 +174,16 @@ tap.test('parseAttackEffect', (t) => {
     t.end();
   });
 
+  t.test('Aggravated Violence (Archetype Ability)', (t) => {
+    const ability = creature.getActiveAbility('Aggravated Violence')!;
+    t.ok(ability, 'should have Aggravated Violence ability');
+    const parsed = parseAttackEffect(ability, creature);
+    t.ok(parsed, 'should parse Aggravated Violence');
+    t.equal(parsed?.name, 'Aggravated Violence');
+    t.same(parsed?.defenses, ['armor_defense'], 'should target Armor');
+    t.equal(parsed?.accuracyModifier, 1, 'should parse accuracy bonus from rank 4 scaling');
+    t.end();
+  });
+
   t.end();
 });
