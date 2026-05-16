@@ -35,7 +35,7 @@ tap.test('parseAttackEffect', (t) => {
     const parsed = parseAttackEffect(ability, creature);
     t.ok(parsed, 'should parse Disintegrate');
     t.same(parsed?.defenses, ['fortitude'], 'should target Fortitude');
-    // Disintegrate is Rank 4, dr7. Wizard is Rank 1. 
+    // Disintegrate is Rank 4, dr7. Wizard is Rank 1.
     // dr7 power scaling is 1d10 per 2 power. Power 2 -> 1d10.
     // Base dice for dr7 is 1d10. So 1d10 + 1d10 = 2d10.
     t.equal(parsed?.damage.toString(), '2d10', 'should calculate correct damage (dr7 for power 2)');
@@ -53,7 +53,11 @@ tap.test('parseAttackEffect', (t) => {
     t.same(parsed?.defenses, ['fortitude', 'reflex'], 'should target Fortitude and Reflex');
     // drl(2) is 1d8+1d6. Barbarian 4 is Rank 2. Searing Light is Rank 1.
     // Excess 1 -> add 1d6 -> 2d6+1d8.
-    t.equal(parsed?.damage.toString(), '2d6+1d8', 'should calculate correct damage (dr2low + excess 1)');
+    t.equal(
+      parsed?.damage.toString(),
+      '2d6+1d8',
+      'should calculate correct damage (dr2low + excess 1)',
+    );
     t.end();
   });
 
@@ -76,6 +80,7 @@ tap.test('parseAttackEffect', (t) => {
     t.ok(parsed, 'should parse Flame Breath');
     t.equal(parsed?.areaRank, 2, 'should have correct area rank (Medium cone)');
     t.equal(parsed?.cooldown, 2, 'should parse "briefly" cooldown');
+    t.equal(parsed?.damage.toString(), '1d8+2', 'should calculate correct damage');
     t.end();
   });
 
@@ -87,6 +92,7 @@ tap.test('parseAttackEffect', (t) => {
     t.equal(parsed?.areaRank, 3, 'should have correct area rank (Medium wall in Medium range)');
     // BARRIER_COOLDOWN contains "briefly", so it parses as 2.
     t.equal(parsed?.cooldown, 2, 'should parse BARRIER_COOLDOWN as briefly (2)');
+    t.equal(parsed?.damage.toString(), '1d6+1', 'should calculate correct damage');
     t.end();
   });
 
@@ -100,19 +106,21 @@ tap.test('parseAttackEffect', (t) => {
     // Fleshspike is Rank 1, damagerankthree. Barbarian 4 is Rank 2.
     // dr(3) power scaling is +1 per 1 power. Power 2 -> +2.
     // Base dice for dr(3) is 1d8. Excess 1 -> add 1d6. So 1d6+1d8+2.
-    t.equal(parsed?.damage.toString(), '1d6+1d8+2', 'should calculate correct damage (dr3 + excess 1)');
+    t.equal(
+      parsed?.damage.toString(),
+      '1d6+1d8+2',
+      'should calculate correct damage (dr3 + excess 1)',
+    );
     t.end();
   });
 
   t.test('Flesh-Rending Claw', (t) => {
-    // Flesh-Rending Claw is a strike but lacks a weapon property, so it should still parse
-    // but have an empty damage pool.
     creature.addSpell('Flesh-Rending Claw');
     const ability = creature.getActiveAbility('Flesh-Rending Claw')!;
     const parsed = parseAttackEffect(ability, creature);
     t.ok(parsed, 'should parse Flesh-Rending Claw');
     t.same(parsed?.defenses, ['armor_defense'], 'should recognize strike as Armor');
-    t.equal(parsed?.damage.toString(), '0', 'should have empty damage due to missing weapon');
+    t.equal(parsed?.damage.toString(), '1d8+2', 'should calculate correct damage');
     t.end();
   });
 
@@ -122,6 +130,7 @@ tap.test('parseAttackEffect', (t) => {
     const parsed = parseAttackEffect(ability, creature);
     t.ok(parsed, 'should parse Giant Wasp Venom');
     t.equal(parsed?.accuracyModifier, 2, 'should parse accuracy bonus');
+    t.equal(parsed?.damage.toString(), '2d10', 'should calculate correct damage');
     t.end();
   });
 
@@ -147,6 +156,7 @@ tap.test('parseAttackEffect', (t) => {
     const ability = creature.getActiveAbility('Psionic Blast')!;
     const parsed = parseAttackEffect(ability, creature);
     t.equal(parsed?.areaRank, 3, 'should have correct area rank (Enemies in Medium cone)');
+    t.equal(parsed?.damage.toString(), '1d10+1', 'should calculate correct damage');
     t.end();
   });
 
@@ -154,7 +164,12 @@ tap.test('parseAttackEffect', (t) => {
     creature.addSpell('Hurricane');
     const ability = creature.getActiveAbility('Hurricane')!;
     const parsed = parseAttackEffect(ability, creature);
-    t.equal(parsed?.areaRank, 4, 'should have correct area rank (Enemies in Medium radius from you)');
+    t.equal(
+      parsed?.areaRank,
+      4,
+      'should have correct area rank (Enemies in Medium radius from you)',
+    );
+    t.equal(parsed?.damage.toString(), '1d8+2', 'should calculate correct damage');
     t.end();
   });
 
@@ -163,6 +178,7 @@ tap.test('parseAttackEffect', (t) => {
     const ability = creature.getActiveAbility('Windsnipe')!;
     const parsed = parseAttackEffect(ability, creature);
     t.equal(parsed?.areaRank, 2, 'should have correct area rank (Something in Distant range)');
+    t.equal(parsed?.damage.toString(), '1d10+1', 'should calculate correct damage');
     t.end();
   });
 
@@ -171,6 +187,7 @@ tap.test('parseAttackEffect', (t) => {
     const ability = creature.getActiveAbility('Split Fireball')!;
     const parsed = parseAttackEffect(ability, creature);
     t.equal(parsed?.areaRank, 3, 'should have correct area rank (Two tiny radii in Short range)');
+    t.equal(parsed?.damage.toString(), '1d6', 'should calculate correct damage');
     t.end();
   });
 
@@ -182,6 +199,11 @@ tap.test('parseAttackEffect', (t) => {
     t.equal(parsed?.name, 'Aggravated Violence');
     t.same(parsed?.defenses, ['armor_defense'], 'should target Armor');
     t.equal(parsed?.accuracyModifier, 1, 'should parse accuracy bonus from rank 4 scaling');
+    t.equal(
+      parsed?.damage.toString(),
+      '2d8+10',
+      'should calculate correct damage with inferred weapon',
+    );
     t.end();
   });
 
