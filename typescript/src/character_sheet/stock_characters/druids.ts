@@ -3,13 +3,13 @@ import { Creature } from '../creature';
 
 export function addDruids(stock: StockCharacters) {
   stock.addCharacter('Druid', (c) => applyDruidBase(c, 1));
-  stock.addCharacter('Druid 4', (c) => applyDruidBase(c, 4));
-  stock.addCharacter('Druid 7', (c) => applyDruidBase(c, 7));
-  stock.addCharacter('Druid 10', (c) => applyDruidBase(c, 10));
-  stock.addCharacter('Druid 13', (c) => applyDruidBase(c, 13));
-  stock.addCharacter('Druid 16', (c) => applyDruidBase(c, 16));
-  stock.addCharacter('Druid 19', (c) => applyDruidBase(c, 19));
-  stock.addCharacter('Druid 21', (c) => applyDruidBase(c, 21));
+  stock.addCharacter('Druid 2', (c) => applyDruidBase(c, 2));
+  stock.addCharacter('Druid 5', (c) => applyDruidBase(c, 5));
+  stock.addCharacter('Druid 8', (c) => applyDruidBase(c, 8));
+  stock.addCharacter('Druid 11', (c) => applyDruidBase(c, 11));
+  stock.addCharacter('Druid 14', (c) => applyDruidBase(c, 14));
+  stock.addCharacter('Druid 17', (c) => applyDruidBase(c, 17));
+  stock.addCharacter('Druid 20', (c) => applyDruidBase(c, 20));
 }
 
 function applyDruidBase(c: Creature, level: number) {
