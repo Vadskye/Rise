@@ -121,6 +121,7 @@ export interface ParsedDebuff {
   type: string;
   duration: 'fixed' | 'condition' | 'poison' | 'circumstance';
   durationRemaining?: number;
+  requirement?: 'injured';
 }
 
 export interface SimulatorReadyAttack {
