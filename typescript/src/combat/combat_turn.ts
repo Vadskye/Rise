@@ -6,6 +6,8 @@ import { selectTarget } from '@src/combat/combat_targeting';
 import { parseAttackEffect } from '@src/combat/parse_attack_effect';
 import { DicePool } from '@src/core_mechanics/dice_pool';
 import { getWeaponAccuracy } from '@src/monsters/weapons';
+import { setCurrentCharacterSheet } from '@src/character_sheet/current_character_sheet';
+import { handleEverything } from '@src/character_sheet/sheet_worker';
 
 /**
  * Outcome of a single combat step or action.
@@ -146,7 +148,7 @@ function executeAttack(
 
     const damage = calculateDamageDealt(degree, attack, state);
 
-    applyDamage(target, damage, state);
+    applyDamageAndEffects(target, damage, degree, attack, state, attacker);
 
     if (state.verbose) {
       const typeStr = attack.areaRank !== null ? 'area' : 'strike';
@@ -275,13 +277,46 @@ export function calculateDamageDealt(
   return baseDamage;
 }
 
-export function applyDamage(target: Creature, damage: number, state: FightState): void {
+export function applyDamageAndEffects(
+  target: Creature,
+  damage: number,
+  hitDegree: 'Miss' | 'Hit' | 'Crit',
+  attack: SimulatorReadyAttack,
+  state: FightState,
+  attacker: Creature,
+): void {
   state.hp[target.id] -= damage;
 
   if (state.hp[target.id] <= 0) {
     handleCreatureDeath(target, state);
     if (state.verbose) {
       console.log(`Round ${state.round}: ${target.name} dies`);
+    }
+  }
+
+  if (hitDegree !== 'Miss' && attack.debuffsToApply) {
+    for (const debuffType of attack.debuffsToApply) {
+      if (!state.debuffs[target.id]) {
+        state.debuffs[target.id] = [];
+      }
+      let kind: 'brief' | 'condition' | 'poison' | 'circumstance' = 'condition';
+      if (debuffType === 'grappled') {
+        kind = 'circumstance';
+      } else if (debuffType === 'poisoned') {
+        kind = 'poison';
+      }
+
+      state.debuffs[target.id].push({
+        type: debuffType,
+        sourceId: attacker.id,
+        debuffType: kind,
+      });
+      target.setProperties({ [debuffType]: '1' } as any);
+      setCurrentCharacterSheet(target.id);
+      handleEverything();
+      if (state.verbose) {
+        console.log(`Round ${state.round}: ${target.name} gains ${debuffType}`);
+      }
     }
   }
 }
@@ -297,18 +332,18 @@ export function handleEndOfTurn(attacker: Creature, state: FightState) {
     }
   }
 
-  // 2. Expire brief conditions applied by this attacker
-  for (const targetId in state.conditions) {
-    const conditions = state.conditions[targetId];
+  // 2. Expire debuffs applied by this attacker with a fixed duration
+  for (const targetId in state.debuffs) {
+    const debuffs = state.debuffs[targetId];
     const target = findCreatureById(targetId, state);
     if (!target) continue;
 
-    for (let i = conditions.length - 1; i >= 0; i--) {
-      const c = conditions[i];
+    for (let i = debuffs.length - 1; i >= 0; i--) {
+      const c = debuffs[i];
       if (c.sourceId === attacker.id && c.durationRemaining !== undefined) {
         c.durationRemaining--;
         if (c.durationRemaining <= 0) {
-          conditions.splice(i, 1);
+          debuffs.splice(i, 1);
           // Update sheet
           target.setProperties({ [c.type]: false } as any);
           if (state.verbose) {
@@ -321,16 +356,21 @@ export function handleEndOfTurn(attacker: Creature, state: FightState) {
 }
 
 export function removeDebuffs(creature: Creature, state: FightState, count: number) {
-  const conditions = state.conditions[creature.id];
+  const conditions = state.debuffs[creature.id];
   if (!conditions || conditions.length === 0) return;
 
-  for (let i = 0; i < count && conditions.length > 0; i++) {
-    const condition = conditions.shift();
-    if (condition) {
+  for (let i = 0; i < count; i++) {
+    const index = conditions.findIndex(c => c.debuffType === 'condition');
+    if (index !== -1) {
+      const condition = conditions.splice(index, 1)[0];
       creature.setProperties({ [condition.type]: false } as any);
+      setCurrentCharacterSheet(creature.id);
+      handleEverything();
       if (state.verbose) {
-        console.log(`Round ${state.round}: ${creature.name} cleanses debuff ${condition.type}`);
+        console.log(`Round ${state.round}: ${creature.name} removes condition ${condition.type}`);
       }
+    } else {
+      break;
     }
   }
 }
