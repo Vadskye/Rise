@@ -207,5 +207,50 @@ tap.test('parseAttackEffect', (t) => {
     t.end();
   });
 
+  t.test('Steady Slam (Maneuver)', (t) => {
+    creature.addManeuver('Steady Slam');
+    const ability = creature.getActiveAbility('Steady Slam')!;
+    const parsed = parseAttackEffect(ability, creature);
+    t.ok(parsed, 'should parse Steady Slam');
+    t.same(parsed?.debuffsToApply, [
+      { type: 'stunned', duration: 'fixed', durationRemaining: 2 },
+    ], 'should parse briefly stunned');
+    t.end();
+  });
+
+  t.test('Concussion (Maneuver)', (t) => {
+    creature.addManeuver('Concussion');
+    const ability = creature.getActiveAbility('Concussion')!;
+    const parsed = parseAttackEffect(ability, creature);
+    t.ok(parsed, 'should parse Concussion');
+    t.same(parsed?.debuffsToApply, [
+      { type: 'stunned', duration: 'condition' },
+    ], 'should parse stunned as condition');
+    t.end();
+  });
+
+  t.test('Knockdown (Maneuver)', (t) => {
+    creature.addManeuver('Knockdown');
+    const ability = creature.getActiveAbility('Knockdown')!;
+    const parsed = parseAttackEffect(ability, creature);
+    t.ok(parsed, 'should parse Knockdown');
+    t.same(parsed?.debuffsToApply, [
+      { type: 'prone', duration: 'fixed', durationRemaining: 2 },
+    ], 'should parse prone with default duration');
+    t.end();
+  });
+
+  t.test('Mighty Surfing Slam (Spell)', (t) => {
+    creature.addSpell('Mighty Surfing Slam');
+    const ability = creature.getActiveAbility('Mighty Surfing Slam')!;
+    const parsed = parseAttackEffect(ability, creature);
+    t.ok(parsed, 'should parse Mighty Surfing Slam');
+    t.same(parsed?.debuffsToApply, [
+      { type: 'prone', duration: 'fixed', durationRemaining: 2 },
+      { type: 'stunned', duration: 'fixed', durationRemaining: 2 },
+    ], 'should parse prone and briefly stunned');
+    t.end();
+  });
+
   t.end();
 });

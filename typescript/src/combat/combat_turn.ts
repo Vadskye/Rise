@@ -1,6 +1,6 @@
-import { ActiveAbility, SimulatorReadyAttack } from '@src/abilities/active_abilities';
+import { ActiveAbility, SimulatorReadyAttack, ParsedDebuff } from '@src/abilities/active_abilities';
 import { Creature } from '@src/character_sheet/creature';
-import { CombatTeam, FightState } from '@src/combat/combat_scenario';
+import { CombatTeam, DebuffDuration, FightState } from '@src/combat/combat_scenario';
 import { rollD10, rollDice } from '@src/combat/dice';
 import { selectTarget } from '@src/combat/combat_targeting';
 import { parseAttackEffect } from '@src/combat/parse_attack_effect';
@@ -295,27 +295,22 @@ export function applyDamageAndEffects(
   }
 
   if (hitDegree !== 'Miss' && attack.debuffsToApply) {
-    for (const debuffName of attack.debuffsToApply) {
+    for (const debuff of attack.debuffsToApply) {
       if (!state.debuffs[target.id]) {
         state.debuffs[target.id] = [];
       }
-      let kind: 'brief' | 'condition' | 'poison' | 'circumstance' = 'condition';
-      if (debuffName === 'grappled') {
-        kind = 'circumstance';
-      } else if (debuffName === 'poisoned') {
-        kind = 'poison';
-      }
 
       state.debuffs[target.id].push({
-        type: debuffName,
+        type: debuff.type,
         sourceId: attacker.id,
-        duration: kind,
+        duration: debuff.duration,
+        durationRemaining: debuff.durationRemaining,
       });
-      target.setProperties({ [debuffName]: '1' } as any);
+      target.setProperties({ [debuff.type]: '1' } as any);
       setCurrentCharacterSheet(target.id);
       handleEverything();
       if (state.verbose) {
-        console.log(`Round ${state.round}: ${target.name} gains ${debuffName}`);
+        console.log(`Round ${state.round}: ${target.name} gains ${debuff.type}`);
       }
     }
   }
