@@ -295,27 +295,27 @@ export function applyDamageAndEffects(
   }
 
   if (hitDegree !== 'Miss' && attack.debuffsToApply) {
-    for (const debuffType of attack.debuffsToApply) {
+    for (const debuffName of attack.debuffsToApply) {
       if (!state.debuffs[target.id]) {
         state.debuffs[target.id] = [];
       }
       let kind: 'brief' | 'condition' | 'poison' | 'circumstance' = 'condition';
-      if (debuffType === 'grappled') {
+      if (debuffName === 'grappled') {
         kind = 'circumstance';
-      } else if (debuffType === 'poisoned') {
+      } else if (debuffName === 'poisoned') {
         kind = 'poison';
       }
 
       state.debuffs[target.id].push({
-        type: debuffType,
+        type: debuffName,
         sourceId: attacker.id,
-        debuffType: kind,
+        duration: kind,
       });
-      target.setProperties({ [debuffType]: '1' } as any);
+      target.setProperties({ [debuffName]: '1' } as any);
       setCurrentCharacterSheet(target.id);
       handleEverything();
       if (state.verbose) {
-        console.log(`Round ${state.round}: ${target.name} gains ${debuffType}`);
+        console.log(`Round ${state.round}: ${target.name} gains ${debuffName}`);
       }
     }
   }
@@ -356,13 +356,13 @@ export function handleEndOfTurn(attacker: Creature, state: FightState) {
 }
 
 export function removeDebuffs(creature: Creature, state: FightState, count: number) {
-  const conditions = state.debuffs[creature.id];
-  if (!conditions || conditions.length === 0) return;
+  const debuffs = state.debuffs[creature.id];
+  if (!debuffs || debuffs.length === 0) return;
 
   for (let i = 0; i < count; i++) {
-    const index = conditions.findIndex(c => c.debuffType === 'condition');
+    const index = debuffs.findIndex((c) => c.duration === 'condition');
     if (index !== -1) {
-      const condition = conditions.splice(index, 1)[0];
+      const condition = debuffs.splice(index, 1)[0];
       creature.setProperties({ [condition.type]: false } as any);
       setCurrentCharacterSheet(creature.id);
       handleEverything();

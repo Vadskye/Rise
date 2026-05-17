@@ -35,9 +35,11 @@ export interface Debuff {
   sourceId?: string;
   /** If present, the debuff expires at the end of the source's turn when this reaches 0. */
   durationRemaining?: number;
-  /** The category of debuff, determining how it is removed. */
-  debuffType?: 'brief' | 'condition' | 'poison' | 'circumstance';
+  duration?: DebuffDuration;
 }
+
+/** The category of debuff, determining how it is removed. */
+export type DebuffDuration = 'brief' | 'condition' | 'poison' | 'circumstance';
 
 /**
  * State for a single fight simulation iteration.
