@@ -1,4 +1,4 @@
-import { mysticSpheres } from '.';
+import { allMysticSpheres } from '.';
 import { SpellDefinition } from '@src/abilities';
 
 let allSpells: Record<string, SpellDefinition> | null = null;
@@ -6,7 +6,7 @@ let allSpells: Record<string, SpellDefinition> | null = null;
 export function getSpellByName(spellName: string) {
   if (!allSpells) {
     allSpells = {};
-    for (const mysticSphere of mysticSpheres) {
+    for (const mysticSphere of allMysticSpheres) {
       for (const spell of mysticSphere.spells) {
         allSpells[spell.name] = spell;
       }
