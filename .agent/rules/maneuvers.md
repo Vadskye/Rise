@@ -24,5 +24,8 @@ _(Reference: `typescript/src/abilities/combat_styles/brute_force.ts`)_
 - **Armorcrusher:**
   - _Good:_ When targeting an enemy whose Fortitude defense is lower than their Armor defense.
   - _Bad:_ When targeting an enemy whose Fortitude defense is higher than their Armor defense.
+- **Concussion:**
+  - _Good:_ When targeting an enemy whose hit points are low enough that they are injured.
+  - _Bad:_ When targeting an enemy whose hit points remain high.
 
 **Agent Directive:** When creating or evaluating a new maneuver, explicitly ensure there are combat circumstances where it shines and where it falls short.
