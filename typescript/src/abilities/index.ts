@@ -3,6 +3,7 @@ export {
   ActiveAbilityRank,
   ActiveAbilityScaling,
   ActiveAbility,
+  SimulatorReadyAttack,
   CantripDefinition,
   ManeuverDefinition,
   SpellDefinition,
