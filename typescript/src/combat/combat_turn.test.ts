@@ -15,9 +15,9 @@ t.test('removeDebuffs removes specified number of debuffs', (t) => {
   const state: Partial<FightState> = {
     debuffs: {
       [creature.id]: [
-        { type: 'stunned', sourceId: 'source', debuffType: 'condition' },
-        { type: 'poisoned', sourceId: 'source', debuffType: 'condition' },
-        { type: 'blinded', sourceId: 'source', debuffType: 'condition' },
+        { type: 'stunned', sourceId: 'source', duration: 'condition' },
+        { type: 'poisoned', sourceId: 'source', duration: 'condition' },
+        { type: 'blinded', sourceId: 'source', duration: 'condition' },
       ],
     },
     verbose: false,
@@ -39,7 +39,7 @@ t.test('removeDebuffs handles removing more debuffs than present', (t) => {
   const creature = createCreature('Test Creature');
   const state: Partial<FightState> = {
     debuffs: {
-      [creature.id]: [{ type: 'stunned', sourceId: 'source', debuffType: 'condition' }],
+      [creature.id]: [{ type: 'stunned', sourceId: 'source', duration: 'condition' }],
     },
     verbose: false,
     round: 1,
