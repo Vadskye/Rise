@@ -1,4 +1,4 @@
-import { ActiveAbility, SimulatorReadyAttack } from '@src/abilities/active_abilities';
+import { ActiveAbility, SimulatorReadyAttack, ParsedDebuff } from '@src/abilities/active_abilities';
 import { Creature } from '@src/character_sheet/creature';
 import { RiseDefense } from '@src/core_mechanics/attributes';
 import { calculateDamage, parseDamageRank } from '@src/core_mechanics/damage_calculation';
@@ -17,7 +17,8 @@ export function parseAttackEffect(
   const effect = (ability.effect || '').replace(/\s+/g, ' ').trim().toLowerCase();
   const hit = (attack?.hit || '').replace(/\s+/g, ' ').trim().toLowerCase();
   const targeting = (attack?.targeting || '').replace(/\s+/g, ' ').trim().toLowerCase();
-  const text = `${targeting} ${hit} ${effect}`;
+  const injury = (attack?.injury || '').replace(/\s+/g, ' ').trim().toLowerCase();
+  const text = `${targeting} ${hit} ${effect} ${injury}`;
 
   // 1. Identify targeted defenses
   const defenses = parseDefenses(text);
@@ -323,12 +324,42 @@ function parseAccuracyModifier(text: string): number {
   return 0;
 }
 
-function parseConditions(text: string): string[] {
-  const conditions: string[] = [];
+function parseConditions(text: string): ParsedDebuff[] {
+  const conditions: ParsedDebuff[] = [];
   const lowercaseText = text.toLowerCase();
 
-  if (lowercaseText.includes('grappled') || lowercaseText.includes('\\grappled')) {
-    conditions.push('grappled');
+  const checkCondition = (conditionName: string): ParsedDebuff | null => {
+    if (!lowercaseText.includes(conditionName)) return null;
+
+    // Check for "briefly [condition]"
+    const briefRegex = new RegExp(`briefly\\s*\\\\*${conditionName}`);
+    // Check for "[condition] as a condition"
+    const conditionRegex = new RegExp(`${conditionName}\\s*as\\s*a\\s*(\\\\glossterm{)?condition`);
+
+    if (briefRegex.test(lowercaseText)) {
+      return { type: conditionName, duration: 'fixed', durationRemaining: 2 };
+    } else if (conditionRegex.test(lowercaseText)) {
+      return { type: conditionName, duration: 'condition' };
+    } else {
+      // Default
+      if (conditionName === 'prone') {
+        return { type: 'prone', duration: 'fixed', durationRemaining: 2 };
+      }
+      if (conditionName === 'grappled') {
+        return { type: 'grappled', duration: 'circumstance' };
+      }
+      return { type: conditionName, duration: 'condition' };
+    }
+  };
+
+  // Order matters for tests that use t.same
+  const conditionNames = ['grappled', 'prone', 'stunned', 'confused', 'dazzled', 'goaded', 'unsteady'];
+
+  for (const name of conditionNames) {
+    const parsed = checkCondition(name);
+    if (parsed) {
+      conditions.push(parsed);
+    }
   }
 
   return conditions;

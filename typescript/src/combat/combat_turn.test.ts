@@ -221,7 +221,7 @@ t.test('applyDamageAndEffects applies debuffs and updates stats', (t) => {
   };
 
   const attack: Partial<SimulatorReadyAttack> = {
-    debuffsToApply: ['stunned'],
+    debuffsToApply: [{ type: 'stunned', duration: 'condition' }],
   };
   const attacker: Partial<Creature> = { id: 'attacker' };
 

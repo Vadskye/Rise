@@ -39,7 +39,8 @@ export interface Debuff {
 }
 
 /** The category of debuff, determining how it is removed. */
-export type DebuffDuration = 'brief' | 'condition' | 'poison' | 'circumstance';
+// Fixed: Lasts a specific number of turns. Generally 2, for brief effects.
+export type DebuffDuration = 'fixed' | 'condition' | 'poison' | 'circumstance';
 
 /**
  * State for a single fight simulation iteration.
