@@ -36,7 +36,6 @@ function applyRogueBase(c: Creature, level: number) {
     strength_at_creation: 0,
     willpower_at_creation: 0,
   });
-  c.addSneakAttack('smallswords');
   c.setEquippedArmor({ bodyArmor: 'buff leather' });
   c.addWeapon('smallswords');
   c.addWeaponMult('smallswords');

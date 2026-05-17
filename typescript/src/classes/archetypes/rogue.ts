@@ -4,7 +4,7 @@ import { RankAbility } from '../types';
 import { applyArchetypeActiveAbilities } from './apply_archetypes';
 
 export function assassin(): RankAbility[] {
-  const abilities: RankAbility[] = [
+  return [
     {
       complexity: 2,
       name: 'Sneak Attack',
@@ -118,20 +118,6 @@ export function assassin(): RankAbility[] {
       `,
     },
   ];
-  addSneakAttack(abilities);
-  return abilities;
-}
-
-function addSneakAttack(abilities: RankAbility[]) {
-  for (let rank = 1; rank <= 7; rank++) {
-    abilities.push({
-      complexity: 0,
-      name: 'Sneak Attack Scaling',
-      isMagical: false,
-      rank: rank,
-      description: '',
-    });
-  }
 }
 
 export function bardicMusic(): RankAbility[] {
@@ -499,7 +485,7 @@ export function suaveScoundrel(): RankAbility[] {
 }
 
 export function assassinModifiers(creature: Creature, rank: number) {
-  applyArchetypeActiveAbilities(creature, assassin(), rank);
+  creature.addSneakAttack('smallswords');
   if (rank >= 4) {
     creature.addSimpleModifier({
       name: "Assassin's Grace",
