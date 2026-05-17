@@ -613,6 +613,11 @@ export function arcaneMagicModifiers(creature: Creature, rank: number) {
         { statistic: 'durability', modifier: 2 },
       ],
     });
+
+    const spellRank = Math.min(rank, 7);
+    creature.addSpell(`Armor Bolt Rank ${spellRank}`);
+    creature.addSpell(`Fortitude Bolt Rank ${spellRank}`);
+    creature.addSpell(`Reflex Cone Rank ${spellRank}`);
   }
 }
 

@@ -438,6 +438,12 @@ export function preacher(): RankAbility[] {
 
 export function divineMagicModifiers(creature: Creature, rank: number) {
   applyArchetypeActiveAbilities(creature, divineMagic(), rank);
+  if (rank >= 1) {
+    const spellRank = Math.min(rank, 7);
+    creature.addSpell(`Armor Bolt Rank ${spellRank}`);
+    creature.addSpell(`Fortitude Bolt Rank ${spellRank}`);
+    creature.addSpell(`Reflex Cone Rank ${spellRank}`);
+  }
 }
 
 export function divineSpellMasteryModifiers(creature: Creature, rank: number) {

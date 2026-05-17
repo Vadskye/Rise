@@ -624,6 +624,11 @@ export function pactMagicModifiers(creature: Creature, rank: number) {
       statistic: 'durability',
       value: 1,
     });
+
+    const spellRank = Math.min(rank, 7);
+    creature.addSpell(`Armor Bolt Rank ${spellRank}`);
+    creature.addSpell(`Fortitude Bolt Rank ${spellRank}`);
+    creature.addSpell(`Reflex Cone Rank ${spellRank}`);
   }
 }
 
