@@ -62,6 +62,7 @@ export function parseAttackEffect(
     halfOnMiss: attack?.halfOnMiss || false,
     name: ability.name,
     usageTime: ability.usageTime || 'standard',
+    debuffsToApply: parseConditions(text),
   };
 }
 
@@ -320,4 +321,15 @@ function parseAccuracyModifier(text: string): number {
     return sign * Number(match[2]);
   }
   return 0;
+}
+
+function parseConditions(text: string): string[] {
+  const conditions: string[] = [];
+  const lowercaseText = text.toLowerCase();
+
+  if (lowercaseText.includes('grappled') || lowercaseText.includes('\\grappled')) {
+    conditions.push('grappled');
+  }
+
+  return conditions;
 }
