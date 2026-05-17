@@ -4,8 +4,7 @@ import {
   removeDebuffs,
   handleEndOfTurn,
   calculateHitDegree,
-  calculateDamageDealt,
-  applyDamage,
+  applyDamageAndEffects,
 } from './combat_turn';
 import { FightState } from '@src/combat/combat_scenario';
 import { Creature } from '@src/character_sheet/creature';
@@ -14,11 +13,11 @@ import { SimulatorReadyAttack } from '@src/abilities/active_abilities';
 t.test('removeDebuffs removes specified number of debuffs', (t) => {
   const creature = createCreature('Test Creature');
   const state: Partial<FightState> = {
-    conditions: {
+    debuffs: {
       [creature.id]: [
-        { type: 'stunned', sourceId: 'source' },
-        { type: 'poisoned', sourceId: 'source' },
-        { type: 'blinded', sourceId: 'source' },
+        { type: 'stunned', sourceId: 'source', debuffType: 'condition' },
+        { type: 'poisoned', sourceId: 'source', debuffType: 'condition' },
+        { type: 'blinded', sourceId: 'source', debuffType: 'condition' },
       ],
     },
     verbose: false,
@@ -27,18 +26,20 @@ t.test('removeDebuffs removes specified number of debuffs', (t) => {
 
   removeDebuffs(creature, state as FightState, 2);
 
-  t.equal(state.conditions![creature.id].length, 1, 'Should have 1 debuff left');
-  t.equal(state.conditions![creature.id][0].type, 'blinded', 'Remaining debuff should be the last one');
+  t.equal(state.debuffs![creature.id].length, 1, 'Should have 1 debuff left');
+  t.equal(
+    state.debuffs![creature.id][0].type,
+    'blinded',
+    'Remaining debuff should be the last one',
+  );
   t.end();
 });
 
 t.test('removeDebuffs handles removing more debuffs than present', (t) => {
   const creature = createCreature('Test Creature');
   const state: Partial<FightState> = {
-    conditions: {
-      [creature.id]: [
-        { type: 'stunned', sourceId: 'source' },
-      ],
+    debuffs: {
+      [creature.id]: [{ type: 'stunned', sourceId: 'source', debuffType: 'condition' }],
     },
     verbose: false,
     round: 1,
@@ -46,7 +47,7 @@ t.test('removeDebuffs handles removing more debuffs than present', (t) => {
 
   removeDebuffs(creature, state as FightState, 5);
 
-  t.equal(state.conditions![creature.id].length, 0, 'Should have 0 debuffs left');
+  t.equal(state.debuffs![creature.id].length, 0, 'Should have 0 debuffs left');
   t.end();
 });
 
@@ -54,7 +55,7 @@ t.test('handleEndOfTurn expires brief conditions applied by attacker', (t) => {
   const attacker = createCreature('Attacker');
   const target = createCreature('Target');
   const state: Partial<FightState> = {
-    conditions: {
+    debuffs: {
       [target.id]: [
         { type: 'stunned', sourceId: attacker.id, durationRemaining: 1 },
         { type: 'poisoned', sourceId: 'other', durationRemaining: 1 },
@@ -71,30 +72,47 @@ t.test('handleEndOfTurn expires brief conditions applied by attacker', (t) => {
 
   handleEndOfTurn(attacker, state as FightState);
 
-  const targetConditions = state.conditions![target.id];
-  t.equal(targetConditions.length, 2, 'Should have 2 conditions left');
-  
+  const targetDebuffs = state.debuffs![target.id];
+  t.equal(targetDebuffs.length, 2, 'Should have 2 debuffs left');
+
   // Stunned should be removed (duration was 1 -> 0)
-  t.notOk(targetConditions.some(c => c.type === 'stunned'), 'Stunned should be removed');
-  
+  t.notOk(
+    targetDebuffs.some((c) => c.type === 'stunned'),
+    'Stunned should be removed',
+  );
+
   // Poisoned should remain (sourceId was 'other')
-  t.ok(targetConditions.some(c => c.type === 'poisoned'), 'Poisoned should remain');
-  t.equal(targetConditions.find(c => c.type === 'poisoned')!.durationRemaining, 1, 'Poisoned duration should not change');
-  
+  t.ok(
+    targetDebuffs.some((c) => c.type === 'poisoned'),
+    'Poisoned should remain',
+  );
+  t.equal(
+    targetDebuffs.find((c) => c.type === 'poisoned')!.durationRemaining,
+    1,
+    'Poisoned duration should not change',
+  );
+
   // Blinded should remain (duration was 2 -> 1)
-  t.ok(targetConditions.some(c => c.type === 'blinded'), 'Blinded should remain');
-  t.equal(targetConditions.find(c => c.type === 'blinded')!.durationRemaining, 1, 'Blinded duration should be decremented');
-  
+  t.ok(
+    targetDebuffs.some((c) => c.type === 'blinded'),
+    'Blinded should remain',
+  );
+  t.equal(
+    targetDebuffs.find((c) => c.type === 'blinded')!.durationRemaining,
+    1,
+    'Blinded duration should be decremented',
+  );
+
   t.end();
 });
 
 t.test('calculateHitDegree returns correct hit degree', (t) => {
   const attacker = createCreature('Attacker');
   attacker.setProperties({ accuracy: 5 });
-  
+
   const defender = createCreature('Defender');
   defender.setProperties({ armor_defense: 10 });
-  
+
   const attack: Partial<SimulatorReadyAttack> = {
     name: 'Test Attack',
     defenses: ['armor_defense'],
@@ -110,7 +128,12 @@ t.test('calculateHitDegree returns correct hit degree', (t) => {
 
   // Case 1: Miss (Roll 1 -> total 6 < 10)
   Math.random = () => 0.0; // Roll 1
-  let result = calculateHitDegree(attacker, defender, attack as SimulatorReadyAttack, {} as FightState);
+  let result = calculateHitDegree(
+    attacker,
+    defender,
+    attack as SimulatorReadyAttack,
+    {} as FightState,
+  );
   t.equal(result.degree, 'Miss', 'Should miss');
 
   // Case 2: Hit (Roll 5 -> total 10 >= 10)
@@ -132,10 +155,10 @@ t.test('calculateHitDegree returns correct hit degree', (t) => {
   t.end();
 });
 
-t.test('applyDamage reduces HP and handles death', (t) => {
+t.test('applyDamageAndEffects reduces HP and handles death', (t) => {
   const target = createCreature('Target');
   target.setProperties({ hit_points: 10 });
-  
+
   const state: Partial<FightState> = {
     hp: { [target.id]: 10 },
     aliveMembersByTeam: {
@@ -144,16 +167,83 @@ t.test('applyDamage reduces HP and handles death', (t) => {
     memberToTeam: {
       [target.id]: { name: 'Team A', members: [target] },
     },
+    debuffs: {},
     verbose: false,
     round: 1,
   };
 
-  applyDamage(target, 5, state as FightState);
+  const dummyAttack: Partial<SimulatorReadyAttack> = {};
+  const dummyAttacker: Partial<Creature> = { id: 'attacker' };
+
+  applyDamageAndEffects(
+    target,
+    5,
+    'Hit',
+    dummyAttack as SimulatorReadyAttack,
+    state as FightState,
+    dummyAttacker as Creature,
+  );
   t.equal(state.hp![target.id], 5, 'HP should be reduced');
   t.equal(state.aliveMembersByTeam!['Team A'].length, 1, 'Target should still be alive');
 
-  applyDamage(target, 5, state as FightState);
+  applyDamageAndEffects(
+    target,
+    5,
+    'Hit',
+    dummyAttack as SimulatorReadyAttack,
+    state as FightState,
+    dummyAttacker as Creature,
+  );
   t.equal(state.hp![target.id], 0, 'HP should be 0');
-  t.equal(state.aliveMembersByTeam!['Team A'].length, 0, 'Target should be dead and removed from team');
+  t.equal(
+    state.aliveMembersByTeam!['Team A'].length,
+    0,
+    'Target should be dead and removed from team',
+  );
+  t.end();
+});
+
+t.test('applyDamageAndEffects applies debuffs and updates stats', (t) => {
+  const target = createCreature('Target');
+  target.setProperties({ hit_points: 10, armor_defense: 10 });
+
+  const state: Partial<FightState> = {
+    hp: { [target.id]: 10 },
+    aliveMembersByTeam: {
+      'Team A': [target],
+    },
+    memberToTeam: {
+      [target.id]: { name: 'Team A', members: [target] },
+    },
+    debuffs: {},
+    verbose: false,
+    round: 1,
+  };
+
+  const attack: Partial<SimulatorReadyAttack> = {
+    debuffsToApply: ['stunned'],
+  };
+  const attacker: Partial<Creature> = { id: 'attacker' };
+
+  applyDamageAndEffects(
+    target,
+    0,
+    'Hit',
+    attack as SimulatorReadyAttack,
+    state as FightState,
+    attacker as Creature,
+  );
+
+  t.ok(state.debuffs![target.id], 'Should have debuffs for target');
+  t.equal(state.debuffs![target.id].length, 1, 'Should have 1 debuff');
+  t.equal(state.debuffs![target.id][0].type, 'stunned', 'Debuff should be stunned');
+
+  const updatedProps = target.getPropertyValues(['armor_defense_debuff_modifier' as any]) as any;
+  t.equal(
+    updatedProps.armor_defense_debuff_modifier,
+    -2,
+    'Armor defense debuff modifier should be -2',
+  );
+
   t.end();
 });

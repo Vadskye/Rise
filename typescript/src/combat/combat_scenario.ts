@@ -35,6 +35,8 @@ export interface Debuff {
   sourceId?: string;
   /** If present, the debuff expires at the end of the source's turn when this reaches 0. */
   durationRemaining?: number;
+  /** The category of debuff, determining how it is removed. */
+  debuffType?: 'brief' | 'condition' | 'poison' | 'circumstance';
 }
 
 /**
@@ -48,7 +50,7 @@ export interface FightState {
   initialTotalHpByTeam: Record<string, number>;
   memberToTeam: Record<string, CombatTeam>;
   cooldowns: Record<string, Record<string, number>>; // creatureId -> abilityName -> roundsRemaining
-  conditions: Record<string, Debuff[]>; // creatureId -> array of active conditions
+  debuffs: Record<string, Debuff[]>; // creatureId -> array of active conditions
   verbose: boolean;
   round: number;
 }
@@ -180,7 +182,7 @@ export class CombatScenario {
     const hitsByTeam: Record<string, number> = {};
     const attacksByTeam: Record<string, number> = {};
     const cooldowns: Record<string, Record<string, number>> = {};
-    const conditions: Record<string, Debuff[]> = {};
+    const debuffs: Record<string, Debuff[]> = {};
 
     for (const team of this.teams) {
       const aliveMembers: Creature[] = [];
@@ -191,7 +193,7 @@ export class CombatScenario {
         aliveMembers.push(member);
         teamInitialHp += member.hit_points;
         cooldowns[member.id] = {};
-        conditions[member.id] = [];
+        debuffs[member.id] = [];
 
         // Populate simulator attacks cache if not present
         if (!member.simulatorAttacks) {
@@ -219,7 +221,7 @@ export class CombatScenario {
       hitsByTeam,
       attacksByTeam,
       cooldowns,
-      conditions,
+      debuffs,
       verbose,
       round: 1,
     };

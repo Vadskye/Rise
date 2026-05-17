@@ -129,11 +129,11 @@ export interface SimulatorReadyAttack {
   damage: DicePool;
   /** How many rounds the creature must wait before using this ability again. */
   cooldown: number;
+  debuffsToApply?: string[];
   halfOnMiss: boolean;
   // This is redundant with the base ability, but it's convenient to have SimulatorReadyAttack bundle all necessary information.
   name: string;
   usageTime: ActiveAbilityUsageTime;
-  // TODO: add support for debuffs
 }
 
 export type ActiveAbilityUsageTime = MonsterAttackUsageTime | RitualCastingTime;
