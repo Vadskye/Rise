@@ -5,3 +5,4 @@ tsconfig.tsbuildinfo
 .tap
 src/**/*.js
 src/**/*.js.map
+dist-test
