@@ -117,6 +117,12 @@ export interface ActiveAbilityAttack {
   targeting: string;
 }
 
+export interface ParsedDebuff {
+  type: string;
+  duration: 'fixed' | 'condition' | 'poison' | 'circumstance';
+  durationRemaining?: number;
+}
+
 export interface SimulatorReadyAttack {
   // -- Defensive Metadata --
   /** Which defense(s) the attack targets. The attack must hit all listed defenses. */
@@ -129,7 +135,7 @@ export interface SimulatorReadyAttack {
   damage: DicePool;
   /** How many rounds the creature must wait before using this ability again. */
   cooldown: number;
-  debuffsToApply?: string[];
+  debuffsToApply?: ParsedDebuff[];
   halfOnMiss: boolean;
   // This is redundant with the base ability, but it's convenient to have SimulatorReadyAttack bundle all necessary information.
   name: string;
