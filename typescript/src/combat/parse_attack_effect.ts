@@ -18,7 +18,8 @@ export function parseAttackEffect(
   const hit = (attack?.hit || '').replace(/\s+/g, ' ').trim().toLowerCase();
   const targeting = (attack?.targeting || '').replace(/\s+/g, ' ').trim().toLowerCase();
   const injury = (attack?.injury || '').replace(/\s+/g, ' ').trim().toLowerCase();
-  const text = `${targeting} ${hit} ${effect} ${injury}`;
+  const injuryText = injury ? `\\injury ${injury}` : '';
+  const text = `${targeting} ${hit} ${effect} ${injuryText}`;
 
   // 1. Identify targeted defenses
   const defenses = parseDefenses(text);
@@ -328,36 +329,41 @@ function parseConditions(text: string): ParsedDebuff[] {
   const conditions: ParsedDebuff[] = [];
   const lowercaseText = text.toLowerCase();
 
-  const checkCondition = (conditionName: string): ParsedDebuff | null => {
-    if (!lowercaseText.includes(conditionName)) return null;
+  const checkCondition = (debuffName: string): ParsedDebuff | null => {
+    if (!lowercaseText.includes(debuffName)) return null;
 
     // Check for "briefly [condition]"
-    const briefRegex = new RegExp(`briefly\\s*\\\\*${conditionName}`);
+    const briefRegex = new RegExp(`briefly\\s*\\\\*${debuffName}`);
     // Check for "[condition] as a condition"
-    const conditionRegex = new RegExp(`${conditionName}\\s*as\\s*a\\s*(\\\\glossterm{)?condition`);
+    const conditionRegex = new RegExp(`${debuffName}\\s*as\\s*a\\s*(\\\\glossterm{)?condition`);
 
     if (briefRegex.test(lowercaseText)) {
-      return { type: conditionName, duration: 'fixed', durationRemaining: 2 };
+      return { type: debuffName, duration: 'fixed', durationRemaining: 2 };
     } else if (conditionRegex.test(lowercaseText)) {
-      return { type: conditionName, duration: 'condition' };
+      return { type: debuffName, duration: 'condition' };
     } else {
       // Default
-      if (conditionName === 'prone') {
+      if (debuffName === 'prone') {
         return { type: 'prone', duration: 'fixed', durationRemaining: 2 };
       }
-      if (conditionName === 'grappled') {
+      if (debuffName === 'grappled') {
         return { type: 'grappled', duration: 'circumstance' };
       }
-      return { type: conditionName, duration: 'condition' };
+      return { type: debuffName, duration: 'condition' };
     }
   };
 
   // Order matters for tests that use t.same
-  const conditionNames = ['grappled', 'prone', 'stunned', 'confused', 'dazzled', 'goaded', 'unsteady'];
+  const debuffNames = ['grappled', 'prone', 'stunned', 'confused', 'dazzled', 'goaded', 'unsteady'];
 
-  for (const name of conditionNames) {
+  for (const name of debuffNames) {
     const parsed = checkCondition(name);
     if (parsed) {
+      const injuryIndex = lowercaseText.indexOf('\\injury');
+      const conditionIndex = lowercaseText.indexOf(name);
+      if (injuryIndex !== -1 && conditionIndex > injuryIndex) {
+        parsed.requirement = 'injured';
+      }
       conditions.push(parsed);
     }
   }

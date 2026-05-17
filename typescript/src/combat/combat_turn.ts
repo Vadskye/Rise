@@ -296,6 +296,11 @@ export function applyDamageAndEffects(
 
   if (hitDegree !== 'Miss' && attack.debuffsToApply) {
     for (const debuff of attack.debuffsToApply) {
+      if (debuff.requirement === 'injured') {
+        const isInjured = state.hp[target.id] <= target.injury_point;
+        if (!isInjured) continue;
+      }
+
       if (!state.debuffs[target.id]) {
         state.debuffs[target.id] = [];
       }
