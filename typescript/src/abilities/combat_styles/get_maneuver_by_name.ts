@@ -1,4 +1,4 @@
-import { monsterCombatStyles } from '.';
+import { allCombatStyles } from '.';
 import { ManeuverDefinition } from '@src/abilities';
 
 let allManeuvers: Record<string, ManeuverDefinition> | null = null;
@@ -6,7 +6,7 @@ let allManeuvers: Record<string, ManeuverDefinition> | null = null;
 export function getManeuverByName(maneuverName: string): ManeuverDefinition {
   if (!allManeuvers) {
     allManeuvers = {};
-    for (const combatStyle of monsterCombatStyles) {
+    for (const combatStyle of allCombatStyles) {
       for (const maneuver of combatStyle.maneuvers) {
         allManeuvers[maneuver.name] = maneuver;
       }
