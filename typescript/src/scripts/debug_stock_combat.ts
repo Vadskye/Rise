@@ -1,6 +1,7 @@
 import { StockCharacters } from '@src/character_sheet/stock_characters';
-import { calculateDamage, getDefaultAttack } from '@src/combat/combat_turn';
+import { getDefaultAttack } from '@src/combat/combat_turn';
 import { parseAttackEffect } from '@src/combat/parse_attack_effect';
+import { rollDice } from '@src/combat/dice';
 import { SimulatorReadyAttack } from '@src/abilities/active_abilities';
 import cli from 'commander';
 
@@ -38,13 +39,13 @@ async function main({ character, level }: { character?: string; level?: number }
 
     if (parsedAttacks.length === 0) {
       const defaultAttack = getDefaultAttack(character);
-      const damage = calculateDamage(defaultAttack);
+      const damage = rollDice(defaultAttack.damage.toString());
       console.log(`Standard Damage (No Ability): ~${damage} (random roll)`);
     } else {
       for (const attack of parsedAttacks) {
         const samples: number[] = [];
         for (let i = 0; i < 10; i++) {
-          samples.push(calculateDamage(attack));
+          samples.push(rollDice(attack.damage.toString()));
         }
         console.log(`Generic accuracy: ${character.accuracy}`);
         console.log(`Ability: ${attack.name}`);

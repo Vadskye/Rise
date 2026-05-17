@@ -6,8 +6,15 @@ import {
   getCurrentCharacterSheet,
 } from '@src/character_sheet/current_character_sheet';
 import { RiseBaseClass } from '@src/character_sheet/rise_data';
-import { CombatStepStatus, executeTeamTurn } from '@src/combat/combat_turn';
+import {
+  CombatStepStatus,
+  executeTeamTurn,
+  getDefaultAttack,
+  getDefaultEliteAttack,
+} from '@src/combat/combat_turn';
 import { rollD10 } from '@src/combat/dice';
+import { parseAttackEffect } from '@src/combat/parse_attack_effect';
+import { SimulatorReadyAttack } from '@src/abilities';
 
 export interface CombatSimulationResult {
   averageTurns: number;
@@ -21,6 +28,15 @@ export interface CombatTeam {
   members: Creature[];
 }
 
+export interface Debuff {
+  /** The property name on the character sheet (e.g., 'grappled') that this debuff sets to true. */
+  type: string;
+  /** The ID of the creature that applied this debuff. Used for expiration of brief debuffs. */
+  sourceId?: string;
+  /** If present, the debuff expires at the end of the source's turn when this reaches 0. */
+  durationRemaining?: number;
+}
+
 /**
  * State for a single fight simulation iteration.
  */
@@ -32,7 +48,7 @@ export interface FightState {
   initialTotalHpByTeam: Record<string, number>;
   memberToTeam: Record<string, CombatTeam>;
   cooldowns: Record<string, Record<string, number>>; // creatureId -> abilityName -> roundsRemaining
-  conditions: Record<string, Set<string>>; // creatureId -> set of active conditions
+  conditions: Record<string, Debuff[]>; // creatureId -> array of active conditions
   verbose: boolean;
   round: number;
 }
@@ -164,7 +180,7 @@ export class CombatScenario {
     const hitsByTeam: Record<string, number> = {};
     const attacksByTeam: Record<string, number> = {};
     const cooldowns: Record<string, Record<string, number>> = {};
-    const conditions: Record<string, Set<string>> = {};
+    const conditions: Record<string, Debuff[]> = {};
 
     for (const team of this.teams) {
       const aliveMembers: Creature[] = [];
@@ -175,7 +191,19 @@ export class CombatScenario {
         aliveMembers.push(member);
         teamInitialHp += member.hit_points;
         cooldowns[member.id] = {};
-        conditions[member.id] = new Set<string>();
+        conditions[member.id] = [];
+
+        // Populate simulator attacks cache if not present
+        if (!member.simulatorAttacks) {
+          member.simulatorAttacks = member
+            .getActiveAbilities()
+            .map((ability) => parseAttackEffect(ability, member))
+            .filter((a): a is SimulatorReadyAttack => !!a);
+
+          // Add default attacks
+          member.simulatorAttacks.push(getDefaultAttack(member));
+          member.simulatorAttacks.push(getDefaultEliteAttack(member));
+        }
       }
       aliveMembersByTeam[team.name] = aliveMembers;
       initialTotalHpByTeam[team.name] = teamInitialHp;

@@ -37,6 +37,7 @@ import {
   ActiveAbilityRank,
   PassiveAbility,
   ActiveAbilityScaling,
+  SimulatorReadyAttack,
 } from '@src/abilities';
 import { DamageScaling } from '@src/core_mechanics/damage_scaling';
 import { DicePool } from '@src/core_mechanics/dice_pool';
@@ -226,6 +227,7 @@ export class Creature implements CreaturePropertyMap {
   private activeAbilities: Record<string, ActiveAbility>;
   // Only used by CombatScenario
   public targetPreference: TargetSelectionLogic = 'Ordered';
+  public simulatorAttacks?: SimulatorReadyAttack[];
   private cachedProperties: Partial<CreaturePropertyMap> = {};
 
   constructor(sheet: CharacterSheet) {

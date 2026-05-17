@@ -43,6 +43,10 @@ export function executeTeamTurn(team: CombatTeam, state: FightState): CombatStep
     if (state.hp[attacker.id] <= 0) continue;
 
     const result = executeAttackerAction(attacker, team, state);
+
+    // End of turn processing for attacker
+    handleEndOfTurn(attacker, state);
+
     if (result.status !== CombatStepStatus.Ongoing) return result;
   }
   return { status: CombatStepStatus.Ongoing, winner: null };
@@ -56,15 +60,8 @@ export function executeAttackerAction(
   const potentialTargets = getPotentialTargets(team, state);
   if (potentialTargets.length === 0) return { status: CombatStepStatus.Ongoing, winner: null };
 
-  // Parse all available abilities
-  const attacks: SimulatorReadyAttack[] = attacker
-    .getActiveAbilities()
-    .map((ability) => parseAttackEffect(ability, attacker))
-    .filter((a): a is SimulatorReadyAttack => !!a);
-
-  // Add default attack
-  attacks.push(getDefaultAttack(attacker));
-  attacks.push(getDefaultEliteAttack(attacker));
+  // Use cached simulator attacks
+  const attacks: SimulatorReadyAttack[] = attacker.simulatorAttacks || [];
 
   // Elite Action
   if (attacker.elite) {
@@ -74,26 +71,6 @@ export function executeAttackerAction(
   }
 
   const standardAttacks = attacks.filter((a) => a.usageTime === 'standard');
-
-  // Handle Grappled condition (uses standard action)
-  const conditions = state.conditions[attacker.id];
-  if (conditions) {
-    for (const condition of conditions) {
-      if (condition.startsWith('grappled:')) {
-        const grapplerId = condition.split(':')[1];
-        const grappler = findCreatureById(grapplerId, state);
-        if (grappler) {
-          const roll = rollD10(true);
-          const total = roll + attacker.brawn;
-          if (total >= grappler.brawn) {
-            conditions.delete(condition);
-          }
-          // Escape attempt uses the standard action.
-          return { status: CombatStepStatus.Ongoing, winner: null };
-        }
-      }
-    }
-  }
 
   return selectAndExecuteAction(attacker, team, state, standardAttacks);
 }
@@ -150,37 +127,36 @@ function selectAndExecuteAction(
     ? potentialTargets.slice(0, 1 + bestAttack.areaRank!)
     : [selectTarget(attacker, potentialTargets, state)];
 
-  for (const target of targets) {
-    const { damage, hit, total } = resolveAttack(attacker, target, bestAttack, state);
-    if (hit) state.hitsByTeam[team.name]++;
-
-    state.hp[target.id] -= damage;
-
-    if (state.verbose) {
-      const typeStr = bestAttack.areaRank !== null ? 'area' : 'strike';
-      const hitStr = hit ? 'hits' : 'misses';
-      const defenseStr = bestAttack.defenses.join(', ') || 'Armor';
-      console.log(
-        `Round ${state.round}: ${attacker.name} uses ${bestAttack.name} (${typeStr}) vs ${defenseStr} → ${hitStr} ${target.name} for ${damage} damage`,
-      );
-    }
-
-    if (bestAttack.name === 'Grappling Strike' && hit && total >= target.brawn) {
-      state.conditions[target.id].add(`grappled:${attacker.id}`);
-      if (state.verbose) {
-        console.log(`Round ${state.round}: ${target.name} is grappled by ${attacker.name}`);
-      }
-    }
-
-    if (state.hp[target.id] <= 0) {
-      handleCreatureDeath(target, state);
-      if (state.verbose) {
-        console.log(`Round ${state.round}: ${target.name} dies`);
-      }
-    }
-  }
+  executeAttack(attacker, targets, bestAttack, state, team);
 
   return checkVictory(state);
+}
+
+function executeAttack(
+  attacker: Creature,
+  targets: Creature[],
+  attack: SimulatorReadyAttack,
+  state: FightState,
+  team: CombatTeam,
+): void {
+  for (const target of targets) {
+    const { degree, total } = calculateHitDegree(attacker, target, attack, state);
+    const hit = degree !== 'Miss';
+    if (hit) state.hitsByTeam[team.name]++;
+
+    const damage = calculateDamageDealt(degree, attack, state);
+
+    applyDamage(target, damage, state);
+
+    if (state.verbose) {
+      const typeStr = attack.areaRank !== null ? 'area' : 'strike';
+      const hitStr = hit ? 'hits' : 'misses';
+      const defenseStr = attack.defenses.join(', ') || 'Armor';
+      console.log(
+        `Round ${state.round}: ${attacker.name} uses ${attack.name} (${typeStr}) vs ${defenseStr} → ${hitStr} ${target.name} for ${damage} damage`,
+      );
+    }
+  }
 }
 
 function findCreatureById(id: string, state: FightState): Creature | null {
@@ -264,43 +240,97 @@ export function checkVictory(state: FightState): CombatStepResult {
   return { status: CombatStepStatus.Ongoing, winner: null };
 }
 
-export function resolveAttack(
+export function calculateHitDegree(
   attacker: Creature,
   defender: Creature,
   attack: SimulatorReadyAttack,
   state: FightState,
-): { damage: number; hit: boolean; total: number } {
+): { degree: 'Miss' | 'Hit' | 'Crit'; total: number } {
   const roll = rollD10(true);
-  let totalAccuracy = attacker.accuracy + attack.accuracyModifier;
-
+  const totalAccuracy = attacker.accuracy + attack.accuracyModifier;
   const total = roll + totalAccuracy;
 
-  // Target the average of listed defenses, or armor if none
   const defenses = attack.defenses.length > 0 ? attack.defenses : ['armor_defense' as const];
-  const targetDefense =
-    defenses.reduce((acc, def) => {
-      let value = defender[def];
-      const conditions = state.conditions[defender.id];
-      const isGrappled = conditions && Array.from(conditions).some((c) => c.startsWith('grappled'));
-      if (isGrappled) {
-        if (def === 'armor_defense' || def === 'reflex') {
-          value -= 2;
-        }
-      }
-      return acc + value;
-    }, 0) / defenses.length;
+  const targetDefense = defenses.reduce((acc, def) => acc + defender[def], 0) / defenses.length;
 
   if (total >= targetDefense + 10) {
-    // Critical Hit: Double damage
-    return { damage: calculateDamage(attack) * 2, hit: true, total };
+    return { degree: 'Crit', total };
   } else if (total >= targetDefense) {
-    // Regular Hit
-    return { damage: calculateDamage(attack), hit: true, total };
+    return { degree: 'Hit', total };
   }
-
-  return { damage: 0, hit: false, total }; // Miss
+  return { degree: 'Miss', total };
 }
 
-export function calculateDamage(attack: SimulatorReadyAttack): number {
-  return rollDice(attack.damage.toString());
+export function calculateDamageDealt(
+  hitDegree: 'Miss' | 'Hit' | 'Crit',
+  attack: SimulatorReadyAttack,
+  state: FightState,
+): number {
+  if (hitDegree === 'Miss') return 0;
+
+  const baseDamage = rollDice(attack.damage.toString());
+  if (hitDegree === 'Crit') {
+    return baseDamage * 2;
+  }
+  return baseDamage;
+}
+
+export function applyDamage(target: Creature, damage: number, state: FightState): void {
+  state.hp[target.id] -= damage;
+
+  if (state.hp[target.id] <= 0) {
+    handleCreatureDeath(target, state);
+    if (state.verbose) {
+      console.log(`Round ${state.round}: ${target.name} dies`);
+    }
+  }
+}
+
+export function handleEndOfTurn(attacker: Creature, state: FightState) {
+  // 1. Elite Cleanse
+  if (attacker.elite) {
+    const roll = rollD10(false);
+    if (roll === 10) {
+      removeDebuffs(attacker, state, 2);
+    } else if (roll >= 6) {
+      removeDebuffs(attacker, state, 1);
+    }
+  }
+
+  // 2. Expire brief conditions applied by this attacker
+  for (const targetId in state.conditions) {
+    const conditions = state.conditions[targetId];
+    const target = findCreatureById(targetId, state);
+    if (!target) continue;
+
+    for (let i = conditions.length - 1; i >= 0; i--) {
+      const c = conditions[i];
+      if (c.sourceId === attacker.id && c.durationRemaining !== undefined) {
+        c.durationRemaining--;
+        if (c.durationRemaining <= 0) {
+          conditions.splice(i, 1);
+          // Update sheet
+          target.setProperties({ [c.type]: false } as any);
+          if (state.verbose) {
+            console.log(`Round ${state.round}: Debuff ${c.type} expires on ${target.name}`);
+          }
+        }
+      }
+    }
+  }
+}
+
+export function removeDebuffs(creature: Creature, state: FightState, count: number) {
+  const conditions = state.conditions[creature.id];
+  if (!conditions || conditions.length === 0) return;
+
+  for (let i = 0; i < count && conditions.length > 0; i++) {
+    const condition = conditions.shift();
+    if (condition) {
+      creature.setProperties({ [condition.type]: false } as any);
+      if (state.verbose) {
+        console.log(`Round ${state.round}: ${creature.name} cleanses debuff ${condition.type}`);
+      }
+    }
+  }
 }
