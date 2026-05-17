@@ -742,6 +742,12 @@ export function elementalistModifiers(creature: Creature, rank: number) {
 
 export function natureMagicModifiers(creature: Creature, rank: number) {
   applyArchetypeActiveAbilities(creature, natureMagic(), rank);
+  if (rank >= 1) {
+    const spellRank = Math.min(rank, 7);
+    creature.addSpell(`Armor Bolt Rank ${spellRank}`);
+    creature.addSpell(`Fortitude Bolt Rank ${spellRank}`);
+    creature.addSpell(`Reflex Cone Rank ${spellRank}`);
+  }
 }
 
 export function natureSpellMasteryModifiers(creature: Creature, rank: number) {
