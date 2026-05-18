@@ -15,6 +15,9 @@ export class Property<T extends SimpleValue> {
   }
   public set(newValue: T) {
     const previousValue = this.value;
+    if (newValue === previousValue) {
+      return;
+    }
     this.value = newValue;
     this.setEmitter.trigger(this, {
       newValue,
