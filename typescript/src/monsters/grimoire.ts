@@ -105,6 +105,7 @@ export class Grimoire {
     if (sharedInitializer) {
       sharedInitializer(creature);
     }
+    creature.setProperties({ monster_type: creature.elite ? 'elite' : 'normal' });
     handleEverything();
     sheet.triggerRecalculation();
     creature.checkValidMonster();

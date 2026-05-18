@@ -2473,6 +2473,7 @@ function handleMonsterToggles() {
         setAttrs({
           chat_color: v.player_chat_color || 'black',
           is_monster: false,
+          elite: false,
         });
       }
     },
