@@ -36,7 +36,8 @@ function applyMonkBase(c: Creature, level: number) {
     intelligence_at_creation: 0,
     perception_at_creation: 0,
   });
-  c.setEquippedArmor({ bodyArmor: 'ki barrier' });
+  c.setEquippedArmorName({ bodyArmor: 'ki barrier' });
+  c.setEquippedArmorEffects({ bodyArmor: 'ki barrier' });
   c.addWeaponMult('fists');
 
   const [rank1, rank2, rank3] = getArchetypeRanks(level);

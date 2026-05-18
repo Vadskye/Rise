@@ -36,7 +36,8 @@ function applyDruidBase(c: Creature, level: number) {
     dexterity_at_creation: 0,
     intelligence_at_creation: 0,
   });
-  c.setEquippedArmor({ bodyArmor: 'buff leather', shield: 'standard shield' });
+  c.setEquippedArmorName({ bodyArmor: 'buff leather', shield: 'standard shield' });
+  c.setEquippedArmorEffects({ bodyArmor: 'buff leather', shield: 'standard shield' });
   c.addWeapon('sickle');
   c.addWeaponMult('sickle');
 
