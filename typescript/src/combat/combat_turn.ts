@@ -141,12 +141,21 @@ function executeAttack(
   state: FightState,
   team: CombatTeam,
 ): void {
-  for (const target of targets) {
-    const { degree, total } = calculateHitDegree(attacker, target, attack, state);
-    const hit = degree !== 'Miss';
-    if (hit) state.hitsByTeam[team.name]++;
+  state.targetAttemptsByTeam[team.name] += targets.length;
+  let actionHit = false;
 
-    const damage = calculateDamageDealt(degree, attack, state);
+  const preRolledD10 = rollD10(true);
+  const preRolledDamage = rollDice(attack.damage.toString());
+
+  for (const target of targets) {
+    const { degree, total } = calculateHitDegree(attacker, target, attack, state, preRolledD10);
+    const hit = degree !== 'Miss';
+    if (hit) {
+      state.hitsByTeam[team.name]++;
+      actionHit = true;
+    }
+
+    const damage = calculateDamageDealt(degree, attack, state, preRolledDamage);
 
     applyDamageAndEffects(target, damage, degree, attack, state, attacker);
 
@@ -158,6 +167,10 @@ function executeAttack(
         `Round ${state.round}: ${attacker.name} uses ${attack.name} (${typeStr}) vs ${defenseStr} → ${hitStr} ${target.name} for ${damage} damage`,
       );
     }
+  }
+
+  if (actionHit) {
+    state.actionHitsByTeam[team.name]++;
   }
 }
 
@@ -247,8 +260,9 @@ export function calculateHitDegree(
   defender: Creature,
   attack: SimulatorReadyAttack,
   state: FightState,
+  preRolledD10?: number
 ): { degree: 'Miss' | 'Hit' | 'Crit'; total: number } {
-  const roll = rollD10(true);
+  const roll = preRolledD10 !== undefined ? preRolledD10 : rollD10(true);
   const totalAccuracy = attacker.accuracy + attack.accuracyModifier;
   const total = roll + totalAccuracy;
 
@@ -267,10 +281,11 @@ export function calculateDamageDealt(
   hitDegree: 'Miss' | 'Hit' | 'Crit',
   attack: SimulatorReadyAttack,
   state: FightState,
+  preRolledDamage?: number
 ): number {
   if (hitDegree === 'Miss') return 0;
 
-  const baseDamage = rollDice(attack.damage.toString());
+  const baseDamage = preRolledDamage !== undefined ? preRolledDamage : rollDice(attack.damage.toString());
   if (hitDegree === 'Crit') {
     return baseDamage * 2;
   }

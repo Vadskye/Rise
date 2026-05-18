@@ -107,7 +107,10 @@ function logResults(results: any) {
   console.log(`Average Turns: ${results.averageTurns.toFixed(2)}`);
   for (const teamName in results.winRates) {
     console.log(
-      `${teamName} Win Rate: ${results.winRates[teamName].toFixed(2)}% | Avg HP Remaining: ${results.averageHpPercentRemaining[teamName].toFixed(2)}% | Hit Rate: ${results.averageHitRates[teamName].toFixed(2)}%`
+      `${teamName} Win Rate: ${results.winRates[teamName].toFixed(2)}% | Avg HP Remaining: ${results.averageHpPercentRemaining[teamName].toFixed(2)}%`
+    );
+    console.log(
+      `  Action Hit Rate: ${results.actionHitRates[teamName].toFixed(2)}% | Target Hit Rate: ${results.targetHitRates[teamName].toFixed(2)}%`
     );
   }
 }

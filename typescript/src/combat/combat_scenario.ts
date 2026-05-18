@@ -21,6 +21,8 @@ export interface CombatSimulationResult {
   winRates: Record<string, number>;
   averageHpPercentRemaining: Record<string, number>;
   averageHitRates: Record<string, number>;
+  actionHitRates: Record<string, number>;
+  targetHitRates: Record<string, number>;
 }
 
 export interface CombatTeam {
@@ -49,6 +51,8 @@ export interface FightState {
   aliveMembersByTeam: Record<string, Creature[]>;
   attacksByTeam: Record<string, number>;
   hitsByTeam: Record<string, number>;
+  targetAttemptsByTeam: Record<string, number>;
+  actionHitsByTeam: Record<string, number>;
   hp: Record<string, number>;
   initialTotalHpByTeam: Record<string, number>;
   memberToTeam: Record<string, CombatTeam>;
@@ -62,7 +66,7 @@ export interface FightState {
  * Manages a combat encounter between multiple creatures.
  */
 export class CombatScenario {
-  constructor(public teams: CombatTeam[]) {}
+  constructor(public teams: CombatTeam[]) { }
 
   /**
    * Simulates the combat until a victor is determined.
@@ -86,12 +90,16 @@ export class CombatScenario {
     const totalHpPercents: Record<string, number> = {};
     const totalHits: Record<string, number> = {};
     const totalAttacks: Record<string, number> = {};
+    const totalTargetAttempts: Record<string, number> = {};
+    const totalActionHits: Record<string, number> = {};
 
     for (const t of this.teams) {
       wins[t.name] = 0;
       totalHpPercents[t.name] = 0;
       totalHits[t.name] = 0;
       totalAttacks[t.name] = 0;
+      totalTargetAttempts[t.name] = 0;
+      totalActionHits[t.name] = 0;
     }
 
     for (let i = 0; i < iterations; i++) {
@@ -104,18 +112,26 @@ export class CombatScenario {
         totalHpPercents[name] += result.teamHpPercents[name];
         totalHits[name] += result.hitsByTeam[name];
         totalAttacks[name] += result.attacksByTeam[name];
+        totalTargetAttempts[name] += result.targetAttemptsByTeam[name];
+        totalActionHits[name] += result.actionHitsByTeam[name];
       }
     }
 
     const winRates: Record<string, number> = {};
     const averageHpPercentRemaining: Record<string, number> = {};
     const averageHitRates: Record<string, number> = {};
+    const actionHitRates: Record<string, number> = {};
+    const targetHitRates: Record<string, number> = {};
 
     for (const name in wins) {
       winRates[name] = (wins[name] / iterations) * 100;
       averageHpPercentRemaining[name] = totalHpPercents[name] / iterations;
-      averageHitRates[name] =
-        totalAttacks[name] > 0 ? (totalHits[name] / totalAttacks[name]) * 100 : 0;
+      actionHitRates[name] =
+        totalAttacks[name] > 0 ? (totalActionHits[name] / totalAttacks[name]) * 100 : 0;
+      targetHitRates[name] =
+        totalTargetAttempts[name] > 0 ? (totalHits[name] / totalTargetAttempts[name]) * 100 : 0;
+      // Set averageHitRates to targetHitRates to maintain backward compatibility but with fixed values
+      averageHitRates[name] = targetHitRates[name];
     }
 
     return {
@@ -123,6 +139,8 @@ export class CombatScenario {
       winRates,
       averageHpPercentRemaining,
       averageHitRates,
+      actionHitRates,
+      targetHitRates,
     };
   }
 
@@ -144,6 +162,8 @@ export class CombatScenario {
     teamHpPercents: Record<string, number>;
     hitsByTeam: Record<string, number>;
     attacksByTeam: Record<string, number>;
+    targetAttemptsByTeam: Record<string, number>;
+    actionHitsByTeam: Record<string, number>;
   } {
     const state = this.initializeFightState(verbose);
     const teamInitiatives = this.determineTeamInitiative();
@@ -163,6 +183,8 @@ export class CombatScenario {
             teamHpPercents: this.getTeamHpPercents(state),
             hitsByTeam: state.hitsByTeam,
             attacksByTeam: state.attacksByTeam,
+            targetAttemptsByTeam: state.targetAttemptsByTeam,
+            actionHitsByTeam: state.actionHitsByTeam,
           };
         }
       }
@@ -174,6 +196,8 @@ export class CombatScenario {
       teamHpPercents: this.getTeamHpPercents(state),
       hitsByTeam: state.hitsByTeam,
       attacksByTeam: state.attacksByTeam,
+      targetAttemptsByTeam: state.targetAttemptsByTeam,
+      actionHitsByTeam: state.actionHitsByTeam,
     };
   }
 
@@ -184,6 +208,8 @@ export class CombatScenario {
     const initialTotalHpByTeam: Record<string, number> = {};
     const hitsByTeam: Record<string, number> = {};
     const attacksByTeam: Record<string, number> = {};
+    const targetAttemptsByTeam: Record<string, number> = {};
+    const actionHitsByTeam: Record<string, number> = {};
     const cooldowns: Record<string, Record<string, number>> = {};
     const debuffs: Record<string, Debuff[]> = {};
 
@@ -214,6 +240,8 @@ export class CombatScenario {
       initialTotalHpByTeam[team.name] = teamInitialHp;
       hitsByTeam[team.name] = 0;
       attacksByTeam[team.name] = 0;
+      targetAttemptsByTeam[team.name] = 0;
+      actionHitsByTeam[team.name] = 0;
     }
 
     return {
@@ -223,6 +251,8 @@ export class CombatScenario {
       initialTotalHpByTeam,
       hitsByTeam,
       attacksByTeam,
+      targetAttemptsByTeam,
+      actionHitsByTeam,
       cooldowns,
       debuffs,
       verbose,
