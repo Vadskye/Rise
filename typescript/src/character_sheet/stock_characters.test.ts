@@ -17,6 +17,22 @@ loadAllMonsters();
 t.test('StockCharacters', (t) => {
   const names = stock.getCharacterNames();
 
+  t.test('getCharacter returns a clone', (t) => {
+    const char1 = stock.getCharacter('Fighter');
+    const char2 = stock.getCharacter('Fighter');
+    t.ok(char1 && char2, 'Characters should exist');
+    t.ok(char1 !== char2, 'Should return different instances');
+    t.end();
+  });
+
+  t.test('getMonster returns a clone', (t) => {
+    const monster1 = getMonster('Giant Wasp');
+    const monster2 = getMonster('Giant Wasp');
+    t.ok(monster1 && monster2, 'Monsters should exist');
+    t.ok(monster1 !== monster2, 'Should return different instances');
+    t.end();
+  });
+
   t.test('load all characters', (t) => {
     t.ok(names.length > 0, 'Should have some stock characters');
 
