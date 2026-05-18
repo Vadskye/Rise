@@ -152,14 +152,14 @@ export class Grimoire {
 
   getMonster(name: string): Creature | null {
     if (this.monsters[name]) {
-      return this.monsters[name];
+      return this.monsters[name].clone(`${name}_clone_${Math.random().toString(36).substring(7)}`);
     }
     const initializer = this.pendingMonsters[name];
     if (initializer) {
       const creature = this.initializeMonster(name, name, initializer);
       this.monsters[name] = creature;
       delete this.pendingMonsters[name];
-      return creature;
+      return creature.clone(`${name}_clone_${Math.random().toString(36).substring(7)}`);
     }
     return null;
   }

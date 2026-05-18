@@ -58,7 +58,11 @@ export class StockCharacters {
   }
 
   getCharacter(name: string): Creature | null {
-    return this.characters[name] || null;
+    const char = this.characters[name];
+    if (char) {
+      return char.clone(`${name}_clone_${Math.random().toString(36).substring(7)}`);
+    }
+    return null;
   }
 
   getCharacterNames(): string[] {
