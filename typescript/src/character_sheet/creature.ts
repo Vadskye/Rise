@@ -52,6 +52,7 @@ import {
   Shield,
 } from '@src/monsters/equipment';
 import { KNOWLEDGE_BY_ORIGIN, KNOWLEDGE_BY_TYPE } from './knowledge';
+import { getArmorBaseDefinition, ArmorKind } from '@src/equipment/armor';
 
 export type TargetSelectionLogic = 'Random' | 'Ordered' | 'Vulnerable';
 
@@ -88,6 +89,12 @@ type NumericCreatureProperty =
   | 'initiative'
   | 'all_defenses'
   | 'all_skills'
+  | 'body_armor_defense'
+  | 'body_armor_durability'
+  | 'body_armor_speed'
+  | 'body_armor_vital_rolls'
+  | 'body_armor_dex_skill_modifier'
+  | 'shield_defense'
   | RiseAttribute
   | RiseAttributeModifier
   | RiseDefense
@@ -103,6 +110,7 @@ type StringCreatureProperty =
   | 'weapon_1_name'
   | 'weapon_2_name'
   | 'weapon_3_name'
+  | 'body_armor_usage_class'
   | CreatureKnowledgeResult
   | CalcExplanation
   | RiseSpecialDefense
@@ -217,6 +225,30 @@ export interface PoisonDefinition {
   injury: boolean;
   it: string;
   name: string;
+}
+
+function bodyArmorToKind(armor: string): ArmorKind | undefined {
+  const map: Record<string, ArmorKind> = {
+    'buff leather': 'BuffLeather',
+    'mail shirt': 'MailShirt',
+    'rawhide': 'Rawhide',
+    'leather lamellar': 'LeatherLamellar',
+    'scale': 'Scale',
+    'brigandine': 'Brigandine',
+    'breastplate': 'Breastplate',
+    'half plate': 'HalfPlate',
+    'full plate': 'FullPlate',
+  };
+  return map[armor];
+}
+
+function shieldToKind(shield: string): ArmorKind | undefined {
+  const map: Record<string, ArmorKind> = {
+    'buckler': 'Buckler',
+    'standard shield': 'StandardShield',
+    'tower shield': 'TowerShield',
+  };
+  return map[shield];
 }
 
 // A creature wraps a CharacterSheet, exposing only more user-friendly functions.
@@ -340,16 +372,16 @@ export class Creature implements CreaturePropertyMap {
   // This is "set" instead of "add" because it overwrites any existing equipment.
   // By default, any manufactured weapons specified in maneuvers are automatically
   // included in the creature's equipment using `addWeapon`, and armor can be set with
-  // `setEquippedArmor`, so you don't normally need to use this.
+  // `setEquippedArmorName`, so you don't normally need to use this.
   // This function is primarily useful for defining creatures that have equipment that
   // doesn't match their maneuvers for some weird reason.
   setEquipment(items: EquippedItem[]) {
     let weaponIndex = 0;
     for (const item of items) {
       if (isBodyArmor(item)) {
-        this.setProperties(generateBodyArmorProperties(item));
+        this.setProperties({ body_armor_name: item });
       } else if (isShield(item)) {
-        this.setProperties(generateShieldProperties(item));
+        this.setProperties({ shield_name: item });
       } else {
         const key = `weapon_${weaponIndex}_name`;
         this.setProperties({ [key]: item });
@@ -363,12 +395,40 @@ export class Creature implements CreaturePropertyMap {
     }
   }
 
-  setEquippedArmor({ bodyArmor, shield }: { bodyArmor?: BodyArmor; shield?: Shield }) {
+  setEquippedArmorName({ bodyArmor, shield }: { bodyArmor?: BodyArmor; shield?: Shield }) {
     if (bodyArmor) {
-      this.setProperties(generateBodyArmorProperties(bodyArmor));
+      this.setProperties({ body_armor_name: bodyArmor });
     }
     if (shield) {
-      this.setProperties(generateShieldProperties(shield));
+      this.setProperties({ shield_name: shield });
+    }
+  }
+
+  setEquippedArmorEffects({ bodyArmor, shield }: { bodyArmor?: BodyArmor; shield?: Shield }) {
+    if (bodyArmor) {
+      const kind = bodyArmorToKind(bodyArmor);
+      if (kind) {
+        const def = getArmorBaseDefinition(kind);
+        this.setProperties({
+          body_armor_defense: def.defense,
+          body_armor_durability: def.durability,
+          body_armor_speed: def.speedModifier,
+          body_armor_vital_rolls: def.vitalRolls,
+          body_armor_usage_class: def.usageClass,
+          body_armor_dex_skill_modifier: def.dexSkillModifier,
+        });
+      }
+    }
+    if (shield) {
+      const kind = shieldToKind(shield);
+      if (kind) {
+        const def = getArmorBaseDefinition(kind);
+        this.setProperties({
+          shield_accuracy: def.accuracyModifier,
+          shield_defense: def.defense,
+          shield_reflex: def.defense,
+        });
+      }
     }
   }
 
@@ -1449,6 +1509,34 @@ export class Creature implements CreaturePropertyMap {
 
   public get body_armor_name() {
     return this.getPropertyValue('body_armor_name');
+  }
+
+  public get body_armor_defense() {
+    return this.getPropertyValue('body_armor_defense');
+  }
+
+  public get body_armor_durability() {
+    return this.getPropertyValue('body_armor_durability');
+  }
+
+  public get body_armor_speed() {
+    return this.getPropertyValue('body_armor_speed');
+  }
+
+  public get body_armor_vital_rolls() {
+    return this.getPropertyValue('body_armor_vital_rolls');
+  }
+
+  public get body_armor_dex_skill_modifier() {
+    return this.getPropertyValue('body_armor_dex_skill_modifier');
+  }
+
+  public get body_armor_usage_class() {
+    return this.getPropertyValue('body_armor_usage_class');
+  }
+
+  public get shield_defense() {
+    return this.getPropertyValue('shield_defense');
   }
 
   public get shield_name() {

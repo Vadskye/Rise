@@ -36,7 +36,8 @@ function applyRangerBase(c: Creature, level: number) {
     intelligence_at_creation: 0,
     willpower_at_creation: 0,
   });
-  c.setEquippedArmor({ bodyArmor: 'scale' });
+  c.setEquippedArmorName({ bodyArmor: 'scale' });
+  c.setEquippedArmorEffects({ bodyArmor: 'scale' });
   c.addWeapon('smallswords');
   c.addWeaponMult('smallswords');
 

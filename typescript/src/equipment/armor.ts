@@ -31,6 +31,8 @@ export interface ArmorDefinition {
   name: string;
   speedModifier: number;
   usageClass: ArmorUsageClass;
+  vitalRolls: number;
+  dexSkillModifier: number;
 }
 
 export function getArmorMaterialDefinition(material: ArmorMaterial) {
@@ -109,6 +111,8 @@ export function getArmorBaseDefinition(kind: ArmorKind, material?: ArmorMaterial
         name: 'buff leather',
         speedModifier: 0,
         usageClass: 'light',
+        vitalRolls: 0,
+        dexSkillModifier: 0,
       };
     case 'MailShirt':
       return {
@@ -120,6 +124,8 @@ export function getArmorBaseDefinition(kind: ArmorKind, material?: ArmorMaterial
         name: 'chain shirt',
         speedModifier: 0,
         usageClass: 'light',
+        vitalRolls: 0,
+        dexSkillModifier: 0,
       };
     case 'Rawhide':
       return {
@@ -131,6 +137,8 @@ export function getArmorBaseDefinition(kind: ArmorKind, material?: ArmorMaterial
         name: 'Rawhide',
         speedModifier: 0,
         usageClass: 'light',
+        vitalRolls: 1,
+        dexSkillModifier: -1,
       };
     case 'Buckler':
       return {
@@ -142,6 +150,8 @@ export function getArmorBaseDefinition(kind: ArmorKind, material?: ArmorMaterial
         name: 'buckler',
         speedModifier: 0,
         usageClass: 'light',
+        vitalRolls: 0,
+        dexSkillModifier: 0,
       };
     case 'LeatherLamellar':
       return {
@@ -153,6 +163,8 @@ export function getArmorBaseDefinition(kind: ArmorKind, material?: ArmorMaterial
         name: 'leather lamellar',
         speedModifier: 0,
         usageClass: 'medium',
+        vitalRolls: 1,
+        dexSkillModifier: -2,
       };
     case 'Scale':
       return {
@@ -164,6 +176,8 @@ export function getArmorBaseDefinition(kind: ArmorKind, material?: ArmorMaterial
         name: 'scale',
         speedModifier: 0,
         usageClass: 'medium',
+        vitalRolls: 1,
+        dexSkillModifier: -3,
       };
     case 'Brigandine':
       return {
@@ -175,6 +189,8 @@ export function getArmorBaseDefinition(kind: ArmorKind, material?: ArmorMaterial
         name: 'brigandine',
         speedModifier: 0,
         usageClass: 'medium',
+        vitalRolls: 1,
+        dexSkillModifier: -3,
       };
     case 'StandardShield':
       return {
@@ -186,6 +202,8 @@ export function getArmorBaseDefinition(kind: ArmorKind, material?: ArmorMaterial
         name: 'standard shield',
         speedModifier: 0,
         usageClass: 'medium',
+        vitalRolls: 0,
+        dexSkillModifier: 0,
       };
     case 'Breastplate':
       return {
@@ -197,6 +215,8 @@ export function getArmorBaseDefinition(kind: ArmorKind, material?: ArmorMaterial
         name: 'breastplate',
         speedModifier: -10,
         usageClass: 'heavy',
+        vitalRolls: 2,
+        dexSkillModifier: -4,
       };
     case 'HalfPlate':
       return {
@@ -208,6 +228,8 @@ export function getArmorBaseDefinition(kind: ArmorKind, material?: ArmorMaterial
         name: 'half plate',
         speedModifier: -10,
         usageClass: 'heavy',
+        vitalRolls: 2,
+        dexSkillModifier: -5,
       };
     case 'FullPlate':
       return {
@@ -219,6 +241,8 @@ export function getArmorBaseDefinition(kind: ArmorKind, material?: ArmorMaterial
         name: 'full plate',
         speedModifier: -10,
         usageClass: 'heavy',
+        vitalRolls: 2,
+        dexSkillModifier: -5,
       };
     case 'TowerShield':
       return {
@@ -230,6 +254,8 @@ export function getArmorBaseDefinition(kind: ArmorKind, material?: ArmorMaterial
         name: 'tower shield',
         speedModifier: 0,
         usageClass: 'heavy',
+        vitalRolls: 0,
+        dexSkillModifier: -1,
       };
   }
 }
