@@ -880,7 +880,6 @@ export class Creature implements CreaturePropertyMap {
   setRequiredProperties(properties: CreatureRequiredPropertyMap) {
     this.setProperties({
       ...properties,
-      monster_type: properties.elite ? 'elite' : 'normal',
     });
 
     // TODO: this is a bit of a hack, since it's possible to define a monster as being

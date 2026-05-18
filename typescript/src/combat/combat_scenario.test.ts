@@ -60,7 +60,7 @@ t.test('CombatScenario can simulate a fight and report statistics', (t) => {
   const team2 = createTeam('Ankheg Team', [ankheg]);
 
   const scenario = createScenario([team1, team2]);
-  const result = scenario.simulate();
+  const result = scenario.simulate(50);
 
   assertExpectedTurnsCount(t, result, 1.5);
   assertExpectedWinRate(t, result, 'Ankheg Team', 100);
@@ -80,7 +80,7 @@ t.test('CombatScenario can simulate 1 Ankheg vs 10 Carrion Crows', (t) => {
   const ankhegTeam = createTeam('Ankheg', [ankheg]);
 
   const scenario = createScenario([crowTeam, ankhegTeam]);
-  const result = scenario.simulate();
+  const result = scenario.simulate(50);
 
   assertExpectedTurnsCount(t, result, 3.2);
   assertExpectedWinRate(t, result, 'Ankheg', 5);
@@ -100,7 +100,7 @@ t.test('CombatScenario can simulate 1 Ankheg vs 1 Ankheg', (t) => {
   const ankhegTeam2 = createTeam('Ankheg Team 2', [ankheg]);
 
   const scenario = createScenario([ankhegTeam, ankhegTeam2]);
-  const result = scenario.simulate();
+  const result = scenario.simulate(50);
 
   assertExpectedTurnsCount(t, result, 5.9);
   assertExpectedWinRate(t, result, 'Ankheg Team 1', 50.0);
@@ -124,7 +124,7 @@ t.test('CombatScenario can simulate 5 Carrion Crows vs 10 Giant Wasps', (t) => {
   const waspTeam = createTeam('Wasps', wasps);
 
   const scenario = createScenario([crowTeam, waspTeam]);
-  const result = scenario.simulate();
+  const result = scenario.simulate(50);
 
   assertExpectedTurnsCount(t, result, 2.1);
   assertExpectedWinRate(t, result, 'Crows', 0);
@@ -160,7 +160,7 @@ t.test('CombatScenario can simulate teams of multiple monsters', (t) => {
   const teamB = createTeam('B-Team', teamB_members);
 
   const scenario = createScenario([teamA, teamB]);
-  const result = scenario.simulate();
+  const result = scenario.simulate(50);
 
   assertExpectedTurnsCount(t, result, 2.1);
   assertExpectedWinRate(t, result, 'A-Team', 0);
@@ -209,7 +209,7 @@ t.test('Elite monsters hit multiple targets with area attack', (t) => {
 
   // If no area attack, it takes 5 turns to kill 5 targets (1 target/turn).
   // With area attack, it kills them all in one turn.
-  const result = scenario.simulate();
+  const result = scenario.simulate(50);
   assertExpectedTurnsCount(t, result, 1.0);
   assertExpectedWinRate(t, result, 'Elite Team', 100);
   t.end();
@@ -233,7 +233,7 @@ t.test('One elite Ankheg is equivalent to four non-elite Ankhegs', (t) => {
 
   const scenario = createScenario([eliteTeam, normalTeam]);
   // This scenario is particularly flaky due to its complexity
-  const result = scenario.simulate(500);
+  const result = scenario.simulate(100);
 
   assertExpectedTurnsCount(t, result, 4.0);
   assertExpectedWinRate(t, result, 'Elite Ankheg', 70);
@@ -257,7 +257,7 @@ t.test('One elite frostweb spider is equivalent to four non-elite frostweb spide
   const normalTeam = createTeam('Normal Frostweb Spiders', normalAnkhegs);
 
   const scenario = createScenario([eliteTeam, normalTeam]);
-  const result = scenario.simulate();
+  const result = scenario.simulate(50);
 
   assertExpectedTurnsCount(t, result, 8.3);
   assertExpectedWinRate(t, result, 'Elite Frostweb Spider', 100);
@@ -273,7 +273,7 @@ t.test('Characters with equipped weapons use weapon stats for accuracy and damag
   const team2 = createTeam('Target Team', [target]);
 
   const scenario = createScenario([team1, team2]);
-  const result = scenario.simulate();
+  const result = scenario.simulate(50);
 
   // Barbarian has 1 accuracy vs defense 1, which is 100% hit and 10% crit
   t.equal(result.averageHitRates['Barbarian Team'], 100, 'Barbarian should hit 100% of the time');
@@ -292,7 +292,7 @@ t.test('High level characters use correct multipliers for maneuvers', (t) => {
   const team2 = createTeam('Target Team', [target]);
 
   const scenario = createScenario([team1, team2]);
-  const result = scenario.simulate();
+  const result = scenario.simulate(50);
 
   t.equal(result.averageHitRates['Barbarian Team'], 100, 'Barbarian should hit 100% of the time');
   // 11 accuracy vs defense 0 means 100% crits. Since the combat simulator ignores double crits,

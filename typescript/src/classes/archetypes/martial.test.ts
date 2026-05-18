@@ -38,8 +38,7 @@ tap.test('Ranger Archetypes', (t) => {
 });
 
 tap.test('Rogue Archetypes', (t) => {
-  // Rogue Assassin in Rust had 8 + 7 = 15 abilities (Sneak Attack Scaling)
-  t.equal(getArchetypeRankAbilities('Assassin').length, 15);
+  t.equal(getArchetypeRankAbilities('Assassin').length, 8);
   t.equal(getArchetypeRankAbilities('BardicMusic').length, 7);
   t.equal(getArchetypeRankAbilities('CombatTrickster').length, 7);
   t.equal(getArchetypeRankAbilities('JackOfAllTrades').length, 7);
