@@ -36,7 +36,8 @@ function applySorcererBase(c: Creature, level: number) {
     strength_at_creation: 0,
     intelligence_at_creation: 0,
   });
-  c.setEquippedArmor({ bodyArmor: 'mage armor' });
+  c.setEquippedArmorName({ bodyArmor: 'mage armor' });
+  c.setEquippedArmorEffects({ bodyArmor: 'mage armor' });
 
   const [rank1, rank2, rank3] = getArchetypeRanks(level);
 

@@ -119,7 +119,7 @@ function addBandits(grimoire: Grimoire) {
           });
           creature.setTrainedSkills(['endurance']);
           creature.setBaseAttributes([2, 0, 2, 0, 1, 0]);
-          creature.setEquippedArmor({
+          creature.setEquippedArmorName({
             bodyArmor: 'leather lamellar',
             shield: 'buckler', // Buckler over standard shield so they can use the crossbow more easily
           });
@@ -143,7 +143,7 @@ function addBandits(grimoire: Grimoire) {
           });
           creature.setTrainedSkills(['awareness']);
           creature.setBaseAttributes([2, 3, 0, 0, 4, 0]);
-          creature.setEquippedArmor({
+          creature.setEquippedArmorName({
             bodyArmor: 'buff leather',
           });
           creature.addManeuver('Arrowguide', { weapon: 'longbow' });
@@ -163,7 +163,7 @@ function addBandits(grimoire: Grimoire) {
           });
           creature.setTrainedSkills(['awareness']);
           creature.setBaseAttributes([0, 3, 0, 0, 3, 4]);
-          creature.setEquippedArmor({
+          creature.setEquippedArmorName({
             bodyArmor: 'buff leather',
             shield: 'buckler',
           });
@@ -213,7 +213,7 @@ function addBugbears(grimoire: Grimoire) {
             size: 'medium',
           });
           creature.setTrainedSkills([]);
-          creature.setEquippedArmor({
+          creature.setEquippedArmorName({
             bodyArmor: 'leather lamellar',
           });
           creature.setBaseAttributes([2, 0, 5, -2, 0, 2]);
@@ -236,7 +236,7 @@ function addBugbears(grimoire: Grimoire) {
           });
           creature.setTrainedSkills(['awareness']);
           creature.setBaseAttributes([1, 0, 5, -2, 2, 4]);
-          creature.setEquippedArmor({
+          creature.setEquippedArmorName({
             bodyArmor: 'leather lamellar',
             shield: 'standard shield',
           });
@@ -258,7 +258,7 @@ function addBugbears(grimoire: Grimoire) {
             level: 2,
             size: 'medium',
           });
-          creature.setEquippedArmor({
+          creature.setEquippedArmorName({
             bodyArmor: 'buff leather',
           });
           creature.setBaseAttributes([2, 0, 4, -2, 0, 1]);
@@ -279,7 +279,7 @@ function addBugbears(grimoire: Grimoire) {
             level: 6,
             size: 'medium',
           });
-          creature.setEquippedArmor({
+          creature.setEquippedArmorName({
             bodyArmor: 'brigandine',
           });
           creature.setTrainedSkills([]);
@@ -529,7 +529,7 @@ function addGoblins(grimoire: Grimoire) {
           creature.setBaseAttributes([-1, 4, 0, -2, 2, -2]);
           creature.addWeaponMult('spear');
           creature.addManeuver('Charge', { weapon: 'spear' });
-          creature.setEquippedArmor({
+          creature.setEquippedArmorName({
             bodyArmor: 'buff leather',
             shield: 'buckler',
           });
@@ -551,7 +551,7 @@ function addGoblins(grimoire: Grimoire) {
           creature.setBaseAttributes([-1, 4, 0, -2, 2, -2]);
           creature.addWeaponMult('lance');
           creature.addWeaponMult('spear');
-          creature.setEquippedArmor({
+          creature.setEquippedArmorName({
             bodyArmor: 'buff leather',
             shield: 'buckler',
           });
@@ -571,7 +571,7 @@ function addGoblins(grimoire: Grimoire) {
           creature.setTrainedSkills(['awareness']);
           creature.setBaseAttributes([-1, 3, 0, -2, 2, 3]);
           creature.addSpell('Word of Power');
-          creature.setEquippedArmor({
+          creature.setEquippedArmorName({
             bodyArmor: 'buff leather',
             shield: 'standard shield',
           });
@@ -606,7 +606,7 @@ function addLizardfolk(grimoire: Grimoire) {
         creature.addTrait('amphibious');
         creature.addCustomMovementSpeed('Land (normal)');
         creature.addCustomMovementSpeed('Swim (normal)');
-        creature.setEquippedArmor({
+        creature.setEquippedArmorName({
           bodyArmor: 'scale',
           shield: 'standard shield',
         });
@@ -691,7 +691,7 @@ function addKobolds(grimoire: Grimoire) {
             size: 'medium',
           });
           creature.setBaseAttributes([0, 4, 2, 0, 4, 0]);
-          creature.setEquippedArmor({ bodyArmor: 'buff leather' });
+          creature.setEquippedArmorName({ bodyArmor: 'buff leather' });
           creature.addSneakAttack('smallswords', { displayName: 'Sneaky Nip' });
           creature.addSneakAttack('darts', { displayName: 'Sneaky Darts' });
         },
@@ -708,7 +708,7 @@ function addKobolds(grimoire: Grimoire) {
             size: 'medium',
           });
           creature.setBaseAttributes([0, 4, 2, 0, 4, 0]);
-          creature.setEquippedArmor({ bodyArmor: 'buff leather' });
+          creature.setEquippedArmorName({ bodyArmor: 'buff leather' });
           creature.addWeaponMult('longbow');
           creature.addManeuver('Heartpiercer', { weapon: 'longbow' });
         },
@@ -725,7 +725,7 @@ function addKobolds(grimoire: Grimoire) {
             size: 'medium',
           });
           creature.setBaseAttributes([-2, 4, 2, 1, 2, 3]);
-          creature.setEquippedArmor({
+          creature.setEquippedArmorName({
             bodyArmor: 'buff leather',
             shield: 'buckler',
           });
@@ -746,7 +746,7 @@ function addKobolds(grimoire: Grimoire) {
             size: 'medium',
           });
           creature.addPassiveAbility(dragonsworn);
-          creature.setEquippedArmor({ bodyArmor: 'buff leather' });
+          creature.setEquippedArmorName({ bodyArmor: 'buff leather' });
           creature.addResistant('Varies');
           creature.setBaseAttributes([0, 6, 4, 0, 4, 2]);
           creature.addSneakAttack('smallswords', { displayName: 'Sneaky Nip' });
@@ -765,7 +765,7 @@ function addKobolds(grimoire: Grimoire) {
             size: 'medium',
           });
           creature.setBaseAttributes([0, 6, 2, 0, 6, 2]);
-          creature.setEquippedArmor({ bodyArmor: 'buff leather' });
+          creature.setEquippedArmorName({ bodyArmor: 'buff leather' });
           creature.addPassiveAbility(dragonsworn);
           creature.addResistant('Varies');
           creature.addWeaponMult('longbow');
@@ -785,7 +785,7 @@ function addKobolds(grimoire: Grimoire) {
             size: 'medium',
           });
           creature.setBaseAttributes([-1, 6, 3, 2, 5, 4]);
-          creature.setEquippedArmor({
+          creature.setEquippedArmorName({
             bodyArmor: 'buff leather',
             shield: 'buckler',
           });
@@ -986,7 +986,7 @@ function addOgres(grimoire: Grimoire) {
             `,
           });
           creature.setTrainedSkills(['intimidate']);
-          creature.setEquippedArmor({ bodyArmor: 'leather lamellar' });
+          creature.setEquippedArmorName({ bodyArmor: 'leather lamellar' });
 
           creature.addWeaponMult('javelin');
           creature.addManeuver('Knockdown', { weapon: 'greatclub' });
@@ -1013,7 +1013,7 @@ function addOgres(grimoire: Grimoire) {
             `,
           });
           creature.setTrainedSkills(['intimidate']);
-          creature.setEquippedArmor({ bodyArmor: 'leather lamellar' });
+          creature.setEquippedArmorName({ bodyArmor: 'leather lamellar' });
 
           creature.addWeaponMult('javelin');
           creature.addManeuver('Armorcrusher', { weapon: 'greatclub' });
@@ -1042,7 +1042,7 @@ function addOgres(grimoire: Grimoire) {
             `,
           });
           creature.setTrainedSkills(['awareness']);
-          creature.setEquippedArmor({ bodyArmor: 'buff leather' });
+          creature.setEquippedArmorName({ bodyArmor: 'buff leather' });
 
           creature.addWeaponMult('greatclub');
           creature.addSpell('Time Ebbs and Flows');
@@ -1132,7 +1132,7 @@ function addOrcs(grimoire: Grimoire) {
             Peons are typically fresh recruits who have not yet been fully incorporated into an orc army.
           `,
           });
-          creature.setEquippedArmor({
+          creature.setEquippedArmorName({
             bodyArmor: 'buff leather',
           });
           creature.setBaseAttributes([4, 0, 1, -2, 0, 0]);
@@ -1156,7 +1156,7 @@ function addOrcs(grimoire: Grimoire) {
           `,
           });
           creature.setBaseAttributes([5, 0, 2, -2, 0, 0]);
-          creature.setEquippedArmor({
+          creature.setEquippedArmorName({
             bodyArmor: 'leather lamellar',
           });
           creature.addWeaponMult('greataxe');
@@ -1181,7 +1181,7 @@ function addOrcs(grimoire: Grimoire) {
           `,
           });
           creature.setBaseAttributes([5, 1, 2, 0, 0, 0]);
-          creature.setEquippedArmor({
+          creature.setEquippedArmorName({
             bodyArmor: 'leather lamellar',
           });
           creature.addCustomManeuver({
@@ -1213,7 +1213,7 @@ function addOrcs(grimoire: Grimoire) {
           `,
           });
           creature.setBaseAttributes([6, 0, 3, -2, 1, 1]);
-          creature.setEquippedArmor({
+          creature.setEquippedArmorName({
             bodyArmor: 'scale',
           });
           creature.addWeaponMult('greataxe');
@@ -1239,7 +1239,7 @@ function addOrcs(grimoire: Grimoire) {
           `,
           });
           creature.setBaseAttributes([6, 0, 4, 0, 2, 3]);
-          creature.setEquippedArmor({
+          creature.setEquippedArmorName({
             bodyArmor: 'scale',
           });
           creature.addWeaponMult('greataxe');
@@ -1271,7 +1271,7 @@ function addOrcs(grimoire: Grimoire) {
           `,
           });
           creature.setBaseAttributes([4, 1, 1, -1, 1, 4]);
-          creature.setEquippedArmor({
+          creature.setEquippedArmorName({
             bodyArmor: 'leather lamellar',
           });
           creature.addSpell('Reveal Victory');
@@ -1319,7 +1319,7 @@ function addTownsfolk(grimoire: Grimoire) {
           });
           creature.setTrainedSkills([]);
           creature.setBaseAttributes([1, 1, 1, 0, 0, 0]);
-          creature.setEquippedArmor({
+          creature.setEquippedArmorName({
             bodyArmor: 'leather lamellar',
             shield: 'standard shield',
           });
@@ -1348,7 +1348,7 @@ function addTownsfolk(grimoire: Grimoire) {
           });
           creature.setTrainedSkills(['medicine']);
           creature.setBaseAttributes([0, 0, 0, 0, 3, 3]);
-          creature.setEquippedArmor({
+          creature.setEquippedArmorName({
             bodyArmor: 'buff leather',
             shield: 'buckler',
           });

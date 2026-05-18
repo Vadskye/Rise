@@ -122,3 +122,31 @@ t.test('automatic caching works and is cleared on mutation', (t) => {
 
   t.end();
 });
+
+t.test('can apply armor effects', (t) => {
+  const creature = Creature.new();
+  creature.setEquippedArmorEffects({ bodyArmor: 'breastplate', shield: 'standard shield' });
+
+  t.equal(creature.body_armor_defense, 5, 'Body armor defense');
+  t.equal(creature.body_armor_durability, 5, 'Body armor durability');
+  t.equal(creature.body_armor_speed, -10, 'Body armor speed');
+  t.equal(creature.body_armor_vital_rolls, 2, 'Body armor vital rolls');
+  t.equal(creature.body_armor_usage_class, 'heavy', 'Body armor usage class');
+  t.equal(creature.body_armor_dex_skill_modifier, -4, 'Body armor dex skill modifier');
+
+  t.equal(creature.shield_defense, 2, 'Shield defense');
+  t.equal(creature.shield_reflex, 2, 'Shield reflex');
+  t.equal(creature.shield_accuracy, 0, 'Shield accuracy');
+
+  t.end();
+});
+
+t.test('calling only setEquippedArmorName does not affect numeric stats', (t) => {
+  const creature = Creature.new();
+  creature.setEquippedArmorName({ bodyArmor: 'breastplate', shield: 'standard shield' });
+
+  t.notOk(creature.body_armor_defense, 'Body armor defense should be falsy');
+  t.notOk(creature.shield_defense, 'Shield defense should be falsy');
+
+  t.end();
+});
