@@ -60,7 +60,7 @@ export function executeAttackerAction(
   state: FightState,
 ): CombatStepResult {
   const potentialTargets = getPotentialTargets(team, state);
-  if (potentialTargets.length === 0) return { status: CombatStepStatus.Ongoing, winner: null };
+  if (potentialTargets.length === 0) return checkVictory(state);
 
   // Use cached simulator attacks
   const attacks: SimulatorReadyAttack[] = attacker.simulatorAttacks || [];
@@ -91,7 +91,7 @@ function selectAndExecuteAction(
   availableAttacks: SimulatorReadyAttack[],
 ): CombatStepResult {
   const potentialTargets = getPotentialTargets(team, state);
-  if (potentialTargets.length === 0) return { status: CombatStepStatus.Ongoing, winner: null };
+  if (potentialTargets.length === 0) return checkVictory(state);
 
   // Select best attack, filtering out those on cooldown
   let bestAttack: SimulatorReadyAttack | null = null;
