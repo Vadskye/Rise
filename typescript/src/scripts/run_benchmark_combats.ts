@@ -43,11 +43,6 @@ async function main({ verbose = false }: { verbose?: boolean } = {}) {
       continue;
     }
 
-    console.log(`Party HP:`);
-    for (const member of partyMembers) {
-      console.log(`  ${member.name}: ${member.hit_points} HP`);
-    }
-
     const partyTeam = createTeam('Party', partyMembers);
 
     // Find Monsters
