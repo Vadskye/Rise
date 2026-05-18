@@ -1,5 +1,5 @@
 import { allMysticSpheres } from '.';
-import { SpellDefinition } from '@src/abilities';
+import type { SpellDefinition } from '@src/abilities';
 
 let allSpells: Record<string, SpellDefinition> | null = null;
 
