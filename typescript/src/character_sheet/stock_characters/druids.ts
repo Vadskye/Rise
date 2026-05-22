@@ -9,13 +9,9 @@ import {
 
 export function addDruids(stock: StockCharacters) {
   stock.addCharacter('Druid', (c) => applyDruidBase(c, 1));
-  stock.addCharacter('Druid 2', (c) => applyDruidBase(c, 2));
-  stock.addCharacter('Druid 5', (c) => applyDruidBase(c, 5));
-  stock.addCharacter('Druid 8', (c) => applyDruidBase(c, 8));
-  stock.addCharacter('Druid 11', (c) => applyDruidBase(c, 11));
-  stock.addCharacter('Druid 14', (c) => applyDruidBase(c, 14));
-  stock.addCharacter('Druid 17', (c) => applyDruidBase(c, 17));
-  stock.addCharacter('Druid 20', (c) => applyDruidBase(c, 20));
+  for (let level = 1; level <= 21; level++) {
+    stock.addCharacter(`Druid ${level}`, (c) => applyDruidBase(c, level));
+  }
 }
 
 function applyDruidBase(c: Creature, level: number) {

@@ -9,13 +9,9 @@ import {
 
 export function addMonks(stock: StockCharacters) {
   stock.addCharacter('Monk', (c) => applyMonkBase(c, 1));
-  stock.addCharacter('Monk 2', (c) => applyMonkBase(c, 2));
-  stock.addCharacter('Monk 5', (c) => applyMonkBase(c, 5));
-  stock.addCharacter('Monk 8', (c) => applyMonkBase(c, 8));
-  stock.addCharacter('Monk 11', (c) => applyMonkBase(c, 11));
-  stock.addCharacter('Monk 14', (c) => applyMonkBase(c, 14));
-  stock.addCharacter('Monk 17', (c) => applyMonkBase(c, 17));
-  stock.addCharacter('Monk 20', (c) => applyMonkBase(c, 20));
+  for (let level = 1; level <= 21; level++) {
+    stock.addCharacter(`Monk ${level}`, (c) => applyMonkBase(c, level));
+  }
 }
 
 function applyMonkBase(c: Creature, level: number) {

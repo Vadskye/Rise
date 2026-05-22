@@ -9,13 +9,9 @@ import {
 
 export function addVotives(stock: StockCharacters) {
   stock.addCharacter('Votive', (c) => applyVotiveBase(c, 1));
-  stock.addCharacter('Votive 2', (c) => applyVotiveBase(c, 2));
-  stock.addCharacter('Votive 5', (c) => applyVotiveBase(c, 5));
-  stock.addCharacter('Votive 8', (c) => applyVotiveBase(c, 8));
-  stock.addCharacter('Votive 11', (c) => applyVotiveBase(c, 11));
-  stock.addCharacter('Votive 14', (c) => applyVotiveBase(c, 14));
-  stock.addCharacter('Votive 17', (c) => applyVotiveBase(c, 17));
-  stock.addCharacter('Votive 20', (c) => applyVotiveBase(c, 20));
+  for (let level = 1; level <= 21; level++) {
+    stock.addCharacter(`Votive ${level}`, (c) => applyVotiveBase(c, level));
+  }
 }
 
 function applyVotiveBase(c: Creature, level: number) {
