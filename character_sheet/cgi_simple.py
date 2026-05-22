@@ -82,11 +82,15 @@ def html_tag(
 
     is_self_closing_tag = tag_name in ["input"]
 
-    if not cont_list or is_self_closing_tag:
+    html_attributes_text = convert_html_attributes(attr_dict)
+
+    if is_self_closing_tag:
         return "<{0}{1} />".format(
             tag_name,
             convert_html_attributes(attr_dict),
         )
+    elif not cont_list:
+        return f"<{tag_name}{html_attributes_text}></{tag_name}>"
     else:
         try:
             return "<{0}{1}>{2}{3}{4}</{0}>".format(
