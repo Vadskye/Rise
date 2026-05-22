@@ -9,13 +9,9 @@ import { getArchetypeRanks } from '@src/classes/archetypes/apply_archetypes';
 
 export function addBarbarians(stock: StockCharacters) {
   stock.addCharacter('Barbarian', (c) => applyBarbarianBase(c, 1));
-  stock.addCharacter('Barbarian 2', (c) => applyBarbarianBase(c, 2));
-  stock.addCharacter('Barbarian 5', (c) => applyBarbarianBase(c, 5));
-  stock.addCharacter('Barbarian 8', (c) => applyBarbarianBase(c, 8));
-  stock.addCharacter('Barbarian 11', (c) => applyBarbarianBase(c, 11));
-  stock.addCharacter('Barbarian 14', (c) => applyBarbarianBase(c, 14));
-  stock.addCharacter('Barbarian 17', (c) => applyBarbarianBase(c, 17));
-  stock.addCharacter('Barbarian 20', (c) => applyBarbarianBase(c, 20));
+  for (let level = 1; level <= 21; level++) {
+    stock.addCharacter(`Barbarian ${level}`, (c) => applyBarbarianBase(c, level));
+  }
 }
 
 function applyBarbarianBase(c: Creature, level: number) {

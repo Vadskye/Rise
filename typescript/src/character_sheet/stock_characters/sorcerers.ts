@@ -9,13 +9,9 @@ import {
 
 export function addSorcerers(stock: StockCharacters) {
   stock.addCharacter('Sorcerer', (c) => applySorcererBase(c, 1));
-  stock.addCharacter('Sorcerer 2', (c) => applySorcererBase(c, 2));
-  stock.addCharacter('Sorcerer 5', (c) => applySorcererBase(c, 5));
-  stock.addCharacter('Sorcerer 8', (c) => applySorcererBase(c, 8));
-  stock.addCharacter('Sorcerer 11', (c) => applySorcererBase(c, 11));
-  stock.addCharacter('Sorcerer 14', (c) => applySorcererBase(c, 14));
-  stock.addCharacter('Sorcerer 17', (c) => applySorcererBase(c, 17));
-  stock.addCharacter('Sorcerer 20', (c) => applySorcererBase(c, 20));
+  for (let level = 1; level <= 21; level++) {
+    stock.addCharacter(`Sorcerer ${level}`, (c) => applySorcererBase(c, level));
+  }
 }
 
 function applySorcererBase(c: Creature, level: number) {

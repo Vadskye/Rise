@@ -9,13 +9,9 @@ import {
 
 export function addWizards(stock: StockCharacters) {
   stock.addCharacter('Wizard', (c) => applyWizardBase(c, 1));
-  stock.addCharacter('Wizard 2', (c) => applyWizardBase(c, 2));
-  stock.addCharacter('Wizard 5', (c) => applyWizardBase(c, 5));
-  stock.addCharacter('Wizard 8', (c) => applyWizardBase(c, 8));
-  stock.addCharacter('Wizard 11', (c) => applyWizardBase(c, 11));
-  stock.addCharacter('Wizard 14', (c) => applyWizardBase(c, 14));
-  stock.addCharacter('Wizard 17', (c) => applyWizardBase(c, 17));
-  stock.addCharacter('Wizard 20', (c) => applyWizardBase(c, 20));
+  for (let level = 1; level <= 21; level++) {
+    stock.addCharacter(`Wizard ${level}`, (c) => applyWizardBase(c, level));
+  }
 }
 
 function applyWizardBase(c: Creature, level: number) {

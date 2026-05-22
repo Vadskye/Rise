@@ -9,13 +9,9 @@ import {
 
 export function addPaladins(stock: StockCharacters) {
   stock.addCharacter('Paladin', (c) => applyPaladinBase(c, 1));
-  stock.addCharacter('Paladin 2', (c) => applyPaladinBase(c, 2));
-  stock.addCharacter('Paladin 5', (c) => applyPaladinBase(c, 5));
-  stock.addCharacter('Paladin 8', (c) => applyPaladinBase(c, 8));
-  stock.addCharacter('Paladin 11', (c) => applyPaladinBase(c, 11));
-  stock.addCharacter('Paladin 14', (c) => applyPaladinBase(c, 14));
-  stock.addCharacter('Paladin 17', (c) => applyPaladinBase(c, 17));
-  stock.addCharacter('Paladin 20', (c) => applyPaladinBase(c, 20));
+  for (let level = 1; level <= 21; level++) {
+    stock.addCharacter(`Paladin ${level}`, (c) => applyPaladinBase(c, level));
+  }
 }
 
 function applyPaladinBase(c: Creature, level: number) {

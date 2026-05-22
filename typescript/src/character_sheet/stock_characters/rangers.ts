@@ -9,13 +9,9 @@ import {
 
 export function addRangers(stock: StockCharacters) {
   stock.addCharacter('Ranger', (c) => applyRangerBase(c, 1));
-  stock.addCharacter('Ranger 2', (c) => applyRangerBase(c, 2));
-  stock.addCharacter('Ranger 5', (c) => applyRangerBase(c, 5));
-  stock.addCharacter('Ranger 8', (c) => applyRangerBase(c, 8));
-  stock.addCharacter('Ranger 11', (c) => applyRangerBase(c, 11));
-  stock.addCharacter('Ranger 14', (c) => applyRangerBase(c, 14));
-  stock.addCharacter('Ranger 17', (c) => applyRangerBase(c, 17));
-  stock.addCharacter('Ranger 20', (c) => applyRangerBase(c, 20));
+  for (let level = 1; level <= 21; level++) {
+    stock.addCharacter(`Ranger ${level}`, (c) => applyRangerBase(c, level));
+  }
 }
 
 function applyRangerBase(c: Creature, level: number) {
