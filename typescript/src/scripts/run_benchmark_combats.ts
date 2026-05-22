@@ -1,6 +1,10 @@
 import { StockCharacters } from '@src/character_sheet/stock_characters';
 import { Grimoire } from '@src/monsters/grimoire';
-import { CombatScenario, createTeam } from '@src/combat/combat_scenario';
+import {
+  CombatScenario,
+  createStandardAdventuringParty,
+  createTeam,
+} from '@src/combat/combat_scenario';
 import { Creature } from '@src/character_sheet/creature';
 import cli from 'commander';
 
@@ -18,32 +22,7 @@ async function main({ verbose = false }: { verbose?: boolean } = {}) {
     console.log(`Level ${level} Benchmark`);
     console.log(`=========================================`);
 
-    // Get Party
-    const partyNames = [
-      `Fighter ${level}`,
-      `Rogue ${level}`,
-      `Cleric ${level}`,
-      `Wizard ${level}`,
-    ];
-
-    const partyMembers: Creature[] = [];
-    for (const name of partyNames) {
-      const char = stock.getCharacter(name);
-      if (char) {
-        // Clone to avoid mutation and ensure unique sheet names
-        const uniqueId = Math.random().toString(36).substring(7);
-        partyMembers.push(char.clone(`${name}_Party_${uniqueId}`));
-      } else {
-        console.warn(`Warning: Stock character ${name} not found.`);
-      }
-    }
-
-    if (partyMembers.length === 0) {
-      console.error(`Error: No party members found for level ${level}. Skipping.`);
-      continue;
-    }
-
-    const partyTeam = createTeam('Party', partyMembers);
+    const partyTeam = createStandardAdventuringParty(level);
 
     // Find Monsters
     const monsterNames = grimoire.getMonsterNames();
@@ -92,7 +71,9 @@ async function main({ verbose = false }: { verbose?: boolean } = {}) {
       const baseMonster = grimoire.getMonster(eliteMonsterName);
       if (baseMonster) {
         const uniqueId = Math.random().toString(36).substring(7);
-        const enemyTeam = createTeam('Elite Enemy', [baseMonster.clone(`${eliteMonsterName}_Elite_${uniqueId}`)]);
+        const enemyTeam = createTeam('Elite Enemy', [
+          baseMonster.clone(`${eliteMonsterName}_Elite_${uniqueId}`),
+        ]);
         const scenario = new CombatScenario([partyTeam, enemyTeam]);
         const results = scenario.simulate(200, verbose);
         logResults(results);
@@ -107,18 +88,16 @@ function logResults(results: any) {
   console.log(`Average Turns: ${results.averageTurns.toFixed(2)}`);
   for (const teamName in results.winRates) {
     console.log(
-      `${teamName} Win Rate: ${results.winRates[teamName].toFixed(2)}% | Avg HP Remaining: ${results.averageHpPercentRemaining[teamName].toFixed(2)}%`
+      `${teamName} Win Rate: ${results.winRates[teamName].toFixed(2)}% | Avg HP Remaining: ${results.averageHpPercentRemaining[teamName].toFixed(2)}%`,
     );
     console.log(
-      `  Action Hit Rate: ${results.actionHitRates[teamName].toFixed(2)}% | Target Hit Rate: ${results.targetHitRates[teamName].toFixed(2)}%`
+      `  Action Hit Rate: ${results.actionHitRates[teamName].toFixed(2)}% | Target Hit Rate: ${results.targetHitRates[teamName].toFixed(2)}%`,
     );
   }
 }
 
 if (require.main === module) {
-  cli
-    .option('-v, --verbose', 'Enable verbose combat logging')
-    .parse(process.argv);
+  cli.option('-v, --verbose', 'Enable verbose combat logging').parse(process.argv);
 
   main({ verbose: cli.verbose }).catch((err) => {
     console.error(err);

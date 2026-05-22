@@ -15,6 +15,7 @@ import {
 import { rollD10 } from '@src/combat/dice';
 import { parseAttackEffect } from '@src/combat/parse_attack_effect';
 import { SimulatorReadyAttack } from '@src/abilities';
+import { StockCharacters } from '@src/character_sheet/stock_characters';
 
 export interface CombatSimulationResult {
   averageTurns: number;
@@ -66,7 +67,7 @@ export interface FightState {
  * Manages a combat encounter between multiple creatures.
  */
 export class CombatScenario {
-  constructor(public teams: CombatTeam[]) { }
+  constructor(public teams: CombatTeam[]) {}
 
   /**
    * Simulates the combat until a victor is determined.
@@ -356,6 +357,20 @@ export function createCharacter(name: string, level: number, baseClass: RiseBase
  */
 export function createTeam(name: string, members: Creature[]): CombatTeam {
   return { name, members };
+}
+
+export function createStandardAdventuringParty(level: number): CombatTeam {
+  const stock = new StockCharacters();
+  stock.addAllCharacters();
+  return {
+    name: 'Standard Adventuring Party',
+    members: [
+      stock.getCharacter(`Cleric ${level}`)!,
+      stock.getCharacter(`Fighter ${level}`)!,
+      stock.getCharacter(`Rogue ${level}`)!,
+      stock.getCharacter(`Wizard ${level}`)!,
+    ],
+  };
 }
 
 /**
