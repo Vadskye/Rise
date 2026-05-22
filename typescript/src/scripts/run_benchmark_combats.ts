@@ -51,11 +51,7 @@ async function main({ verbose = false }: { verbose?: boolean } = {}) {
       console.log(`\n--- Group Combat: Party vs 4x ${nonEliteMonsterName} ---`);
       const enemies: Creature[] = [];
       for (let i = 0; i < 4; i++) {
-        const baseMonster = grimoire.getMonster(nonEliteMonsterName);
-        if (baseMonster) {
-          const uniqueId = Math.random().toString(36).substring(7);
-          enemies.push(baseMonster.clone(`${nonEliteMonsterName}_${i}_${uniqueId}`));
-        }
+        enemies.push(grimoire.getMonster(nonEliteMonsterName)!);
       }
       const enemyTeam = createTeam('Enemies', enemies);
       const scenario = new CombatScenario([partyTeam, enemyTeam]);
@@ -68,16 +64,10 @@ async function main({ verbose = false }: { verbose?: boolean } = {}) {
     // Run Elite Combat
     if (eliteMonsterName) {
       console.log(`\n--- Elite Combat: Party vs 1x ${eliteMonsterName} ---`);
-      const baseMonster = grimoire.getMonster(eliteMonsterName);
-      if (baseMonster) {
-        const uniqueId = Math.random().toString(36).substring(7);
-        const enemyTeam = createTeam('Elite Enemy', [
-          baseMonster.clone(`${eliteMonsterName}_Elite_${uniqueId}`),
-        ]);
-        const scenario = new CombatScenario([partyTeam, enemyTeam]);
-        const results = scenario.simulate(200, verbose);
-        logResults(results);
-      }
+      const enemyTeam = createTeam('Elite Enemy', [grimoire.getMonster(eliteMonsterName)!]);
+      const scenario = new CombatScenario([partyTeam, enemyTeam]);
+      const results = scenario.simulate(200, verbose);
+      logResults(results);
     } else {
       console.warn(`Warning: No level ${level} elite monster found.`);
     }
