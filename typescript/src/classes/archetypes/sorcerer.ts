@@ -535,12 +535,7 @@ export function innateArcanistModifiers(creature: Creature, rank: number) {
   if (rank >= 7) {
     creature.addCustomModifier({
       name: 'Mystic Supremacy',
-      numericEffects: [
-        { statistic: 'armor_defense', modifier: 2 },
-        { statistic: 'fortitude', modifier: 2 },
-        { statistic: 'reflex', modifier: 2 },
-        { statistic: 'mental', modifier: 2 },
-      ],
+      numericEffects: [{ statistic: 'all_defenses', modifier: 2 }],
     });
   }
 }

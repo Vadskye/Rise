@@ -231,11 +231,11 @@ function bodyArmorToKind(armor: string): ArmorKind | undefined {
   const map: Record<string, ArmorKind> = {
     'buff leather': 'BuffLeather',
     'mail shirt': 'MailShirt',
-    'rawhide': 'Rawhide',
+    rawhide: 'Rawhide',
     'leather lamellar': 'LeatherLamellar',
-    'scale': 'Scale',
-    'brigandine': 'Brigandine',
-    'breastplate': 'Breastplate',
+    scale: 'Scale',
+    brigandine: 'Brigandine',
+    breastplate: 'Breastplate',
     'half plate': 'HalfPlate',
     'full plate': 'FullPlate',
   };
@@ -244,7 +244,7 @@ function bodyArmorToKind(armor: string): ArmorKind | undefined {
 
 function shieldToKind(shield: string): ArmorKind | undefined {
   const map: Record<string, ArmorKind> = {
-    'buckler': 'Buckler',
+    buckler: 'Buckler',
     'standard shield': 'StandardShield',
     'tower shield': 'TowerShield',
   };
@@ -677,7 +677,9 @@ export class Creature implements CreaturePropertyMap {
   // trait definitions are displayed.
   addCustomModifier(config: CustomModifierConfig) {
     if (config.numericEffects && config.numericEffects.length > 3) {
-      throw new Error('We only support a maximum of three numeric effects per custom modifier.');
+      throw new Error(
+        `We only support a maximum of three numeric effects per custom modifier (${config.name}).`,
+      );
     }
 
     const prefix = `repeating_permanentmodifiers_${this.sheet.generateRowId()}`;

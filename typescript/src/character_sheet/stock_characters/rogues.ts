@@ -9,13 +9,9 @@ import {
 
 export function addRogues(stock: StockCharacters) {
   stock.addCharacter('Rogue', (c) => applyRogueBase(c, 1));
-  stock.addCharacter('Rogue 2', (c) => applyRogueBase(c, 2));
-  stock.addCharacter('Rogue 5', (c) => applyRogueBase(c, 5));
-  stock.addCharacter('Rogue 8', (c) => applyRogueBase(c, 8));
-  stock.addCharacter('Rogue 11', (c) => applyRogueBase(c, 11));
-  stock.addCharacter('Rogue 14', (c) => applyRogueBase(c, 14));
-  stock.addCharacter('Rogue 17', (c) => applyRogueBase(c, 17));
-  stock.addCharacter('Rogue 20', (c) => applyRogueBase(c, 20));
+  for (let level = 1; level <= 21; level++) {
+    stock.addCharacter(`Rogue ${level}`, (c) => applyRogueBase(c, level));
+  }
 }
 
 function applyRogueBase(c: Creature, level: number) {
