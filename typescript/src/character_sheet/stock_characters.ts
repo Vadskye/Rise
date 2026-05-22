@@ -21,9 +21,11 @@ type CharacterInitializer = (creature: Creature) => void;
 
 export class StockCharacters {
   private characters: Record<string, Creature>;
+  private pending: Record<string, CharacterInitializer>;
 
   constructor() {
     this.characters = {};
+    this.pending = {};
   }
 
   addAllCharacters() {
@@ -42,22 +44,30 @@ export class StockCharacters {
   }
 
   addCharacter(name: string, initializer: CharacterInitializer) {
-    if (this.characters[name]) {
+    if (this.characters[name] || this.pending[name]) {
       throw new Error(`Can't add a duplicate character with '${name}'.`);
     }
-    if (characterSheetExists(name)) {
-      throw new Error(`Can't add a duplicate character sheet named '${name}'.`);
-    }
-    const sheet = createCharacterSheet(name);
-    sheet.setProperties({ name });
-    this.characters[name] = new Creature(sheet);
-    initializer(this.characters[name]);
-
-    handleEverything();
-    sheet.triggerRecalculation();
+    this.pending[name] = initializer;
   }
 
   getCharacter(name: string): Creature | null {
+    if (this.pending[name]) {
+      const initializer = this.pending[name];
+      delete this.pending[name];
+
+      if (characterSheetExists(name)) {
+        throw new Error(`Can't add a duplicate character sheet named '${name}'.`);
+      }
+      const sheet = createCharacterSheet(name);
+      sheet.setProperties({ name });
+      const creature = new Creature(sheet);
+      this.characters[name] = creature;
+      initializer(creature);
+
+      handleEverything();
+      sheet.triggerRecalculation();
+    }
+
     const char = this.characters[name];
     if (char) {
       return char.clone(`${name}_clone_${Math.random().toString(36).substring(7)}`);
@@ -66,10 +76,10 @@ export class StockCharacters {
   }
 
   getCharacterNames(): string[] {
-    return Object.keys(this.characters);
+    return [...Object.keys(this.characters), ...Object.keys(this.pending)];
   }
 
   hasCharacter(name: string): boolean {
-    return this.characters[name] !== undefined;
+    return this.characters[name] !== undefined || this.pending[name] !== undefined;
   }
 }
