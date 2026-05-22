@@ -7,7 +7,6 @@ import { parseAttackEffect } from '@src/combat/parse_attack_effect';
 import { DicePool } from '@src/core_mechanics/dice_pool';
 import { getWeaponAccuracy } from '@src/monsters/weapons';
 import { setCurrentCharacterSheet } from '@src/character_sheet/current_character_sheet';
-import { handleEverything } from '@src/character_sheet/sheet_worker';
 
 /**
  * Outcome of a single combat step or action.
@@ -260,7 +259,7 @@ export function calculateHitDegree(
   defender: Creature,
   attack: SimulatorReadyAttack,
   state: FightState,
-  preRolledD10?: number
+  preRolledD10?: number,
 ): { degree: 'Miss' | 'Hit' | 'Crit'; total: number } {
   const roll = preRolledD10 !== undefined ? preRolledD10 : rollD10(true);
   const totalAccuracy = attacker.accuracy + attack.accuracyModifier;
@@ -281,11 +280,12 @@ export function calculateDamageDealt(
   hitDegree: 'Miss' | 'Hit' | 'Crit',
   attack: SimulatorReadyAttack,
   state: FightState,
-  preRolledDamage?: number
+  preRolledDamage?: number,
 ): number {
   if (hitDegree === 'Miss') return 0;
 
-  const baseDamage = preRolledDamage !== undefined ? preRolledDamage : rollDice(attack.damage.toString());
+  const baseDamage =
+    preRolledDamage !== undefined ? preRolledDamage : rollDice(attack.damage.toString());
   if (hitDegree === 'Crit') {
     return baseDamage * 2;
   }
@@ -327,8 +327,6 @@ export function applyDamageAndEffects(
         durationRemaining: debuff.durationRemaining,
       });
       target.setProperties({ [debuff.type]: '1' } as any);
-      setCurrentCharacterSheet(target.id);
-      handleEverything();
       if (state.verbose) {
         console.log(`Round ${state.round}: ${target.name} gains ${debuff.type}`);
       }
@@ -380,7 +378,6 @@ export function removeDebuffs(creature: Creature, state: FightState, count: numb
       const condition = debuffs.splice(index, 1)[0];
       creature.setProperties({ [condition.type]: false } as any);
       setCurrentCharacterSheet(creature.id);
-      handleEverything();
       if (state.verbose) {
         console.log(`Round ${state.round}: ${creature.name} removes condition ${condition.type}`);
       }
