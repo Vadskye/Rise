@@ -199,3 +199,6 @@
 \DeclareDocumentCommand{\potionspaceless}{}{potionemojiplaceholder}
 
 \ExplSyntaxOff
+
+% We can't use italics in the HTML book because it breaks if links are inside italics.
+\newcommand{\longreminder}[1]{\textcolor{darkgray}{(#1)}}
