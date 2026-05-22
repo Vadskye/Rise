@@ -377,7 +377,7 @@ export const magicUnrestrictedWeapons = (): MagicWeapon[] => [
   unrestricted({
     name: 'Brutish',
     rank: 3,
-    short_description: 'Deals extra weapon damage if you have 3 Str',
+    short_description: 'Deals extra damage if you have 3 Str',
     description: `
       If your Strength is at least 3, this weapon deals \\glossterm{extra damage} equal to its weapon damage die \\sub 3.
       For example, a brutish battleaxe would deal 1d8\\minus3 extra damage.
