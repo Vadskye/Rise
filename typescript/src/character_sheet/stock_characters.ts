@@ -1,6 +1,4 @@
 import { Creature } from '@src/character_sheet/creature';
-import { RiseBaseClass } from '@src/character_sheet/rise_data';
-import { BodyArmor } from '@src/monsters/equipment';
 import { handleEverything } from '@src/character_sheet/sheet_worker';
 import {
   characterSheetExists,
@@ -23,9 +21,11 @@ type CharacterInitializer = (creature: Creature) => void;
 
 export class StockCharacters {
   private characters: Record<string, Creature>;
+  private pending: Record<string, CharacterInitializer>;
 
   constructor() {
     this.characters = {};
+    this.pending = {};
   }
 
   addAllCharacters() {
@@ -44,66 +44,42 @@ export class StockCharacters {
   }
 
   addCharacter(name: string, initializer: CharacterInitializer) {
-    if (this.characters[name]) {
+    if (this.characters[name] || this.pending[name]) {
       throw new Error(`Can't add a duplicate character with '${name}'.`);
     }
-    if (characterSheetExists(name)) {
-      throw new Error(`Can't add a duplicate character sheet named '${name}'.`);
-    }
-    const sheet = createCharacterSheet(name);
-    sheet.setProperties({ name });
-    this.characters[name] = new Creature(sheet);
-    initializer(this.characters[name]);
-    const creature = this.characters[name];
-    if (!creature.body_armor_name) {
-      const defaultArmor = getDefaultBodyArmor(creature.base_class);
-      if (defaultArmor) {
-        creature.setEquippedArmor({ bodyArmor: defaultArmor });
-      }
-    }
-
-    handleEverything();
-    sheet.triggerRecalculation();
+    this.pending[name] = initializer;
   }
 
   getCharacter(name: string): Creature | null {
-    return this.characters[name] || null;
+    if (this.pending[name]) {
+      const initializer = this.pending[name];
+      delete this.pending[name];
+
+      if (characterSheetExists(name)) {
+        throw new Error(`Can't add a duplicate character sheet named '${name}'.`);
+      }
+      const sheet = createCharacterSheet(name);
+      sheet.setProperties({ name });
+      const creature = new Creature(sheet);
+      this.characters[name] = creature;
+      initializer(creature);
+
+      handleEverything();
+      sheet.triggerRecalculation();
+    }
+
+    const char = this.characters[name];
+    if (char) {
+      return char.clone(`${name}_clone_${Math.random().toString(36).substring(7)}`);
+    }
+    return null;
   }
 
   getCharacterNames(): string[] {
-    return Object.keys(this.characters);
+    return [...Object.keys(this.characters), ...Object.keys(this.pending)];
   }
 
   hasCharacter(name: string): boolean {
-    return this.characters[name] !== undefined;
-  }
-}
-
-function getDefaultBodyArmor(baseClass: RiseBaseClass): BodyArmor | undefined {
-  switch (baseClass) {
-    case 'fighter':
-    case 'paladin':
-    case 'automaton':
-    case 'treant':
-      return 'breastplate'; // Heavy
-    case 'barbarian':
-    case 'cleric':
-    case 'ranger':
-    case 'votive':
-    case 'troll':
-      return 'scale'; // Medium
-    case 'druid':
-    case 'monk':
-    case 'rogue':
-    case 'dragon':
-    case 'dryad':
-    case 'harpy':
-    case 'incarnation':
-    case 'naiad':
-    case 'oozeborn':
-    case 'vampire':
-      return 'buff leather'; // Light
-    default:
-      return undefined; // None
+    return this.characters[name] !== undefined || this.pending[name] !== undefined;
   }
 }

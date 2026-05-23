@@ -1,5 +1,6 @@
 import { Creature } from '@src/character_sheet/creature';
 import { RankAbility } from '../types';
+import { applyArchetypeActiveAbilities } from './apply_archetypes';
 
 export function elementalist(): RankAbility[] {
   return [
@@ -710,6 +711,7 @@ export function wildspeaker(): RankAbility[] {
 }
 
 export function elementalistModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, elementalist(), rank);
   if (rank >= 2) {
     creature.addSimpleModifier({
       name: 'Elemental Balance (Earth)',
@@ -738,9 +740,18 @@ export function elementalistModifiers(creature: Creature, rank: number) {
   }
 }
 
-export function natureMagicModifiers(_creature: Creature, _rank: number) {}
+export function natureMagicModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, natureMagic(), rank);
+  if (rank >= 1) {
+    const spellRank = Math.min(rank, 7);
+    creature.addSpell(`Armor Bolt Rank ${spellRank}`);
+    creature.addSpell(`Fortitude Bolt Rank ${spellRank}`);
+    creature.addSpell(`Reflex Cone Rank ${spellRank}`);
+  }
+}
 
 export function natureSpellMasteryModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, natureSpellMastery(), rank);
   if (rank >= 3) {
     creature.addSimpleModifier({
       name: 'Spell-Trained Senses',
@@ -761,6 +772,7 @@ export function natureSpellMasteryModifiers(creature: Creature, rank: number) {
 }
 
 export function shifterModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, shifter(), rank);
   if (rank >= 2) {
     creature.addSimpleModifier({
       name: 'Shift Body (Strength)',
@@ -780,4 +792,6 @@ export function shifterModifiers(creature: Creature, rank: number) {
   }
 }
 
-export function wildspeakerModifiers(_creature: Creature, _rank: number) {}
+export function wildspeakerModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, wildspeaker(), rank);
+}

@@ -1,6 +1,7 @@
 import { Creature } from '@src/character_sheet/creature';
 import { RankAbility } from '../types';
-import { addStandardManeuverModifiers } from '../definitions/standard_modifiers';
+
+import { applyArchetypeActiveAbilities } from './apply_archetypes';
 
 export function combatDiscipline(): RankAbility[] {
   return [
@@ -295,7 +296,6 @@ export function martialMastery(): RankAbility[] {
       `,
     },
   ];
-  addStandardManeuverModifiers(abilities);
   return abilities;
 }
 
@@ -583,6 +583,7 @@ export function tactician(): RankAbility[] {
 }
 
 export function combatDisciplineModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, combatDiscipline(), rank);
   if (rank >= 2) {
     creature.addCustomModifier({
       name: 'Enduring Discipline',
@@ -601,6 +602,7 @@ export function combatDisciplineModifiers(creature: Creature, rank: number) {
 }
 
 export function equipmentTrainingModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, equipmentTraining(), rank);
   if (rank >= 1) {
     // Assume light/unarmored usage for Expertise bonus
     creature.addSimpleModifier({
@@ -627,20 +629,33 @@ export function equipmentTrainingModifiers(creature: Creature, rank: number) {
   }
 }
 
-export function martialMasteryModifiers(_creature: Creature, _rank: number) {
-  // Martial Mastery adds maneuvers.
+export function martialMasteryModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, martialMastery(), rank);
+
+  // Each class picks a single combat style and chooses maneuvers from it.
+  // Arbitrarily, we pick two maneuvers at rank 1, then one more every two ranks.
+  // We use Perfect Precision for Fighter.
+  if (rank >= 1) {
+    creature.addManeuver('Heartpiercer');
+    creature.addManeuver('Desperate Pierce');
+  }
+  if (rank >= 3) {
+    creature.addManeuver('Pure Precision');
+  }
+  if (rank >= 5) {
+    creature.addManeuver('Heartpiercer+');
+  }
+  if (rank >= 7) {
+    creature.addManeuver('Pure Precision+');
+  }
 }
 
 export function sentinelModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, sentinel(), rank);
   if (rank >= 1) {
     creature.addCustomModifier({
       name: 'Bulwark',
-      numericEffects: [
-        { statistic: 'armor_defense', modifier: 1 },
-        { statistic: 'fortitude', modifier: 1 },
-        { statistic: 'reflex', modifier: 1 },
-        { statistic: 'mental', modifier: 1 },
-      ],
+      numericEffects: [{ statistic: 'all_defenses', modifier: 1 }],
     });
   }
 
@@ -668,6 +683,7 @@ export function sentinelModifiers(creature: Creature, rank: number) {
 }
 
 export function tacticianModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, tactician(), rank);
   if (rank >= 2) {
     creature.addSimpleModifier({
       name: 'Take the Lead',

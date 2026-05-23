@@ -1,15 +1,17 @@
 import type { StockCharacters } from '../stock_characters';
 import { Creature } from '../creature';
+import {
+  battleforgedResilienceModifiers,
+  outlandSavageModifiers,
+  primalWarriorModifiers,
+} from '@src/classes/archetypes/barbarian';
+import { getArchetypeRanks } from '@src/classes/archetypes/apply_archetypes';
 
 export function addBarbarians(stock: StockCharacters) {
   stock.addCharacter('Barbarian', (c) => applyBarbarianBase(c, 1));
-  stock.addCharacter('Barbarian 4', (c) => applyBarbarianBase(c, 4));
-  stock.addCharacter('Barbarian 7', (c) => applyBarbarianBase(c, 7));
-  stock.addCharacter('Barbarian 10', (c) => applyBarbarianBase(c, 10));
-  stock.addCharacter('Barbarian 13', (c) => applyBarbarianBase(c, 13));
-  stock.addCharacter('Barbarian 16', (c) => applyBarbarianBase(c, 16));
-  stock.addCharacter('Barbarian 19', (c) => applyBarbarianBase(c, 19));
-  stock.addCharacter('Barbarian 21', (c) => applyBarbarianBase(c, 21));
+  for (let level = 1; level <= 21; level++) {
+    stock.addCharacter(`Barbarian ${level}`, (c) => applyBarbarianBase(c, level));
+  }
 }
 
 function applyBarbarianBase(c: Creature, level: number) {
@@ -30,5 +32,14 @@ function applyBarbarianBase(c: Creature, level: number) {
     intelligence_at_creation: 0,
     willpower_at_creation: 0,
   });
+  c.setEquippedArmorName({ bodyArmor: 'scale' });
+  c.setEquippedArmorEffects({ bodyArmor: 'scale' });
+  c.addWeapon('greataxe');
   c.addWeaponMult('greataxe');
+
+  const [rank1, rank2, rank3] = getArchetypeRanks(level);
+
+  primalWarriorModifiers(c, rank1);
+  battleforgedResilienceModifiers(c, rank2);
+  outlandSavageModifiers(c, rank3);
 }

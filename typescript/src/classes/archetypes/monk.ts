@@ -1,6 +1,7 @@
 import { Creature } from '@src/character_sheet/creature';
 import { RankAbility } from '../types';
-import { addStandardManeuverModifiers } from '../definitions/standard_modifiers';
+
+import { applyArchetypeActiveAbilities } from './apply_archetypes';
 
 export function airdancer(): RankAbility[] {
   return [
@@ -212,7 +213,6 @@ export function esotericWarrior(): RankAbility[] {
       `,
     },
   ];
-  addStandardManeuverModifiers(abilities);
   return abilities;
 }
 
@@ -625,6 +625,7 @@ export function transcendentSage(): RankAbility[] {
 }
 
 export function airdancerModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, airdancer(), rank);
   if (rank >= 6) {
     creature.addSimpleModifier({
       name: 'Move Like Wind',
@@ -634,11 +635,29 @@ export function airdancerModifiers(creature: Creature, rank: number) {
   }
 }
 
-export function esotericWarriorModifiers(_creature: Creature, _rank: number) {
-  // Maneuvers
+export function esotericWarriorModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, esotericWarrior(), rank);
+
+  // Each class picks a single combat style and chooses maneuvers from it.
+  // Arbitrarily, we pick two maneuvers at rank 1, then one more every two ranks.
+  // We use Flurry of Blows for Monk.
+  if (rank >= 1) {
+    creature.addManeuver('Quickfire');
+    creature.addManeuver('Whirlwind');
+  }
+  if (rank >= 3) {
+    creature.addManeuver('Cascading Crush');
+  }
+  if (rank >= 5) {
+    creature.addManeuver('Double Flurry');
+  }
+  if (rank >= 7) {
+    creature.addManeuver('Triple Flurry');
+  }
 }
 
 export function kiModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, ki(), rank);
   if (rank >= 1) {
     // Ki Barrier
     creature.addCustomModifier({
@@ -660,6 +679,7 @@ export function kiModifiers(creature: Creature, rank: number) {
 }
 
 export function perfectedFormModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, perfectedForm(), rank);
   if (rank >= 1) {
     creature.addCustomModifier({
       name: 'Unhindered Agility',
@@ -702,6 +722,7 @@ export function perfectedFormModifiers(creature: Creature, rank: number) {
 }
 
 export function transcendentSageModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, transcendentSage(), rank);
   if (rank >= 1) {
     creature.addCustomModifier({
       name: 'Transcend Frailty',

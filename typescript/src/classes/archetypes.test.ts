@@ -5,10 +5,6 @@ import {
   latexClassFeature,
   latexArchetypeDescription,
 } from './archetypes';
-import {
-  addStandardSpellModifiers,
-  addStandardManeuverModifiers,
-} from './definitions/standard_modifiers';
 import { RankAbility } from './types';
 
 t.test('Archetypes', (t) => {
@@ -51,26 +47,3 @@ t.test('Archetypes', (t) => {
   t.end();
 });
 
-t.test('Standard Modifiers', (t) => {
-  t.test('addStandardSpellModifiers appends 7 spell abilities', (t) => {
-    const abilities: RankAbility[] = [];
-    addStandardSpellModifiers(abilities);
-    t.equal(abilities.length, 7);
-    t.equal(abilities[0].name, 'Spells');
-    t.equal(abilities[0].rank, 1);
-    t.equal(abilities[6].rank, 7);
-    t.end();
-  });
-
-  t.test('addStandardManeuverModifiers appends 4 maneuver abilities', (t) => {
-    const abilities: RankAbility[] = [];
-    addStandardManeuverModifiers(abilities);
-    t.equal(abilities.length, 4);
-    t.equal(abilities[0].name, 'Maneuvers');
-    t.equal(abilities[0].rank, 1);
-    t.equal(abilities[3].rank, 7);
-    t.end();
-  });
-
-  t.end();
-});

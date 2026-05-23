@@ -587,7 +587,7 @@ function addSkeletons(grimoire: Grimoire) {
             size: 'medium',
           });
           creature.setBaseAttributes([3, 3, 0, -8, 0, 0]);
-          creature.setEquippedArmor({
+          creature.setEquippedArmorName({
             bodyArmor: 'leather lamellar',
             shield: 'standard shield',
           });
@@ -604,7 +604,7 @@ function addSkeletons(grimoire: Grimoire) {
             size: 'medium',
           });
           creature.setBaseAttributes([3, 3, 0, -7, 2, 0]);
-          creature.setEquippedArmor({
+          creature.setEquippedArmorName({
             bodyArmor: 'leather lamellar',
           });
           creature.addWeaponMult('longbow');
@@ -626,7 +626,7 @@ function addSkeletons(grimoire: Grimoire) {
           `,
           });
           creature.setBaseAttributes([4, 4, 0, -7, 2, 0]);
-          creature.setEquippedArmor({
+          creature.setEquippedArmorName({
             bodyArmor: 'scale',
             shield: 'standard shield',
           });
@@ -644,7 +644,7 @@ function addSkeletons(grimoire: Grimoire) {
             size: 'medium',
           });
           creature.setBaseAttributes([5, 5, 0, -7, 2, 0]);
-          creature.setEquippedArmor({
+          creature.setEquippedArmorName({
             bodyArmor: 'scale',
             shield: 'standard shield',
           });
@@ -662,7 +662,7 @@ function addSkeletons(grimoire: Grimoire) {
             size: 'medium',
           });
           creature.setBaseAttributes([4, 5, 0, -7, 5, 0]);
-          creature.setEquippedArmor({
+          creature.setEquippedArmorName({
             bodyArmor: 'leather lamellar',
           });
           creature.addWeaponMult('longbow');

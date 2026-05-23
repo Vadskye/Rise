@@ -19,8 +19,8 @@ import {
   addAccuracyToEffect,
   replaceAbilityPlaceholders,
 } from '@src/latex/monsters/replace_placeholders';
-import { DamageScaling } from '@src/core_mechanics/damage_scaling';
 import { DicePool } from '@src/core_mechanics/dice_pool';
+import { calculateDamage, parseDamageRank } from '@src/core_mechanics/damage_calculation';
 
 // It's the same except that `effect` and `weapon` are mandatory.
 export interface StrikeActiveAbility extends Omit<ActiveAbility, 'effect' | 'weapon'> {
@@ -539,7 +539,7 @@ export function restructureStrikeAbility(monster: Creature, ability: StrikeActiv
 
   ability.attack = {
     crit: critText,
-    hit: `${calculateStrikeDamage(monster, ability, strikeIsMagical)} damage.${hitText}`,
+    hit: `${calculateStrikeDamage(monster, ability, strikeIsMagical).toString()} damage.${hitText}`,
     miss: missText,
     injury: injuryText,
     // TODO: if we support non-melee monster weapons, this would have to check the weapon
@@ -724,7 +724,7 @@ function replaceDamageText(monster: Creature, ability: ActiveAbility, effectText
       ability,
       parseDamageRank(damageRank),
       lowPowerScaling,
-    );
+    ).toString();
     const hpOrDamageText = hpOrDamage === 'hp' ? '\\glossterm{hit points}' : 'damage';
     return `${calculatedDamage} ${hpOrDamageText}`;
   });
@@ -733,53 +733,6 @@ function replaceDamageText(monster: Creature, ability: ActiveAbility, effectText
   effectText = effectText.replace(/, and any (\\glossterm{)?extra damage}? is doubled/g, '');
 
   return effectText;
-}
-
-type DamageRank = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
-
-function parseDamageRank(rankText: string): DamageRank {
-  // Don't laugh at me
-  const rank = {
-    zero: 0,
-    one: 1,
-    two: 2,
-    three: 3,
-    four: 4,
-    five: 5,
-    six: 6,
-    seven: 7,
-    eight: 8,
-    nine: 9,
-    ten: 10,
-  }[rankText];
-  if (!rank) {
-    throw new Error(`Unable to parse rank '${rankText}'`);
-  }
-
-  return rank as DamageRank;
-}
-
-// This can be applied to attack.hit, attack.crit, or attack.injury, since all of those
-// could have damage terms. We use the full `ability` to calculate damage scaling from
-// rank.
-// Despite the name, the exact same calculations are used for both HP and damage, so this
-// handles both.
-
-export function calculateDamage(
-  monster: Creature,
-  ability: ActiveAbility,
-  damageRank: DamageRank,
-  lowPowerScaling: boolean,
-): string {
-  const excessRank = Math.max(0, monster.calculateRank() - ability.rank);
-  const scaling = lowPowerScaling ? DamageScaling.drl(damageRank) : DamageScaling.dr(damageRank);
-  const relevantPower = monster.getRelevantPower(ability.isMagical);
-
-  return scaling
-    .scaledPool(relevantPower, excessRank)
-    .toString()
-    .replace(/\+/g, '\\plus')
-    .replace(/-/g, '\\minus');
 }
 
 function reformatAbilityCost(ability: Pick<ActiveAbility, 'cost'>) {
@@ -821,7 +774,7 @@ export function calculateStrikeDamage(
   monster: Creature,
   ability: ActiveAbility,
   isMagical: boolean,
-): string {
+): DicePool {
   const weapon = ability.weapon!;
 
   // We only check the sentence of the strike to avoid catching conditional clauses.
@@ -834,28 +787,29 @@ export function calculateStrikeDamage(
   const strikeSentence: string = strikeSentenceMatch[1];
 
   let globalDamageMultiplier = 1;
-  const globalMultiplierMatch = strikeSentence.match(/deals (double|triple|quadruple) damage/);
-  if (globalMultiplierMatch) {
-    globalDamageMultiplier =
-      {
-        double: 2,
-        triple: 3,
-        quadruple: 4,
-      }[globalMultiplierMatch[1]] || 0;
-    if (!globalDamageMultiplier) {
-      throw new Error(
-        `Ability ${monster.id}.${ability.name}: Unable to parse global damage multiplier`,
-      );
+  const sentences = (ability.effect || '').split(/[.\n]/);
+  for (const sentence of sentences) {
+    const trimmed = sentence.trim();
+    const match = trimmed.match(/deals (double|triple|quadruple) damage/);
+    if (match) {
+      globalDamageMultiplier =
+        {
+          double: 2,
+          triple: 3,
+          quadruple: 4,
+        }[match[1]] || 1;
+      break;
     }
   }
 
   let weaponDamageMultiplier = 1;
-  const weaponMultiplierMatch = strikeSentence.match(
-    /deals (double|triple|quadruple|five times|six times|seven times|eight times) (\\glossterm{weapon damage}|weapon damage)/,
-  );
-  if (weaponMultiplierMatch) {
-    weaponDamageMultiplier =
-      {
+  for (const sentence of sentences) {
+    const trimmed = sentence.trim();
+    const match = trimmed.match(
+      /deals (double|triple|quadruple|five times|six times|seven times|eight times) (\\glossterm{weapon damage}|weapon damage)/,
+    );
+    if (match) {
+      const val = {
         double: 2,
         triple: 3,
         quadruple: 4,
@@ -863,11 +817,13 @@ export function calculateStrikeDamage(
         'six times': 6,
         'seven times': 7,
         'eight times': 8,
-      }[weaponMultiplierMatch[1]] || 0;
-    if (!weaponDamageMultiplier) {
-      throw new Error(
-        `Ability ${monster.id}.${ability.name}: Unable to parse weapon damage multiplier`,
-      );
+      }[match[1]];
+      if (!val) {
+        throw new Error(
+          `Ability ${monster.id}.${ability.name}: Unable to parse weapon damage multiplier '${match[1]}'`,
+        );
+      }
+      weaponDamageMultiplier = val;
     }
   }
 
@@ -912,6 +868,5 @@ export function calculateStrikeDamage(
   const damageFromPower =
     globalDamageMultiplier * (Math.floor(relevantPower * powerMultiplier) + extraFlatDamage);
   const diceCount = damageDice.count * globalDamageMultiplier;
-  const pool = DicePool.xdyPlus(diceCount, damageDice.size, damageFromPower);
-  return pool.toString();
+  return DicePool.xdyPlus(diceCount, damageDice.size, damageFromPower);
 }

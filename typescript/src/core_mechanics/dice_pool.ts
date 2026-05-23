@@ -13,6 +13,10 @@ export class DicePool {
     return new DicePool([]);
   }
 
+  static flat(value: number): DicePool {
+    return new DicePool([], value);
+  }
+
   static newDie(die: { size: number }): DicePool {
     return new DicePool([die]);
   }

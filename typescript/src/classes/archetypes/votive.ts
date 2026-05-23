@@ -1,9 +1,6 @@
 import { Creature } from '@src/character_sheet/creature';
 import { RankAbility } from '../types';
-import {
-  addStandardManeuverModifiers,
-  addStandardSpellModifiers,
-} from '../definitions/standard_modifiers';
+import { applyArchetypeActiveAbilities } from './apply_archetypes';
 
 export function pactboundWarrior(): RankAbility[] {
   const abilities: RankAbility[] = [
@@ -127,7 +124,6 @@ export function pactboundWarrior(): RankAbility[] {
       `,
     },
   ];
-  addStandardManeuverModifiers(abilities);
   return abilities;
 }
 
@@ -320,7 +316,6 @@ export function pactMagic(): RankAbility[] {
       `,
     },
   ];
-  addStandardSpellModifiers(abilities);
   return abilities;
 }
 
@@ -589,9 +584,29 @@ export function soulforged(): RankAbility[] {
   ];
 }
 
-export function pactboundWarriorModifiers(_creature: Creature, _rank: number) { }
+export function pactboundWarriorModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, pactboundWarrior(), rank);
+
+  // Each class picks a single combat style and chooses maneuvers from it.
+  // Arbitrarily, we pick two maneuvers at rank 1, then one more every two ranks.
+  // We use Herald of War for Votive.
+  if (rank >= 1) {
+    creature.addManeuver('Thunderous Shout');
+    creature.addManeuver('Deafening Shout');
+  }
+  if (rank >= 3) {
+    creature.addManeuver('Fearsome Blow');
+  }
+  if (rank >= 5) {
+    creature.addManeuver('Thunderous Shout+');
+  }
+  if (rank >= 7) {
+    creature.addManeuver('Fearsome Blow+');
+  }
+}
 
 export function covenantKeeperModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, covenantKeeper(), rank);
   if (rank >= 2) {
     creature.addSimpleModifier({
       name: 'Covenant of Power (Fatigue)',
@@ -602,16 +617,23 @@ export function covenantKeeperModifiers(creature: Creature, rank: number) {
 }
 
 export function pactMagicModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, pactMagic(), rank);
   if (rank >= 1) {
     creature.addSimpleModifier({
       name: 'Survival Pact',
       statistic: 'durability',
       value: 1,
     });
+
+    const spellRank = Math.min(rank, 7);
+    creature.addSpell(`Armor Bolt Rank ${spellRank}`);
+    creature.addSpell(`Fortitude Bolt Rank ${spellRank}`);
+    creature.addSpell(`Reflex Cone Rank ${spellRank}`);
   }
 }
 
 export function pactSpellMasteryModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, pactSpellMastery(), rank);
   if (rank >= 3) {
     creature.addSimpleModifier({
       name: 'Spell-Trained Mind',
@@ -632,6 +654,7 @@ export function pactSpellMasteryModifiers(creature: Creature, rank: number) {
 }
 
 export function soulforgedModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, soulforged(), rank);
   // Generic modifiers
   if (rank >= 3) {
     creature.addSimpleModifier({

@@ -1,5 +1,5 @@
-import { Attrs, EventInfo } from './sheet_worker';
-import { getCurrentCharacterSheet } from './current_character_sheet';
+import type { Attrs, EventInfo } from './sheet_worker';
+import { getCurrentCharacterSheet } from '@src/character_sheet/current_character_sheet';
 import { Unsubscriber } from '@src/character_sheet/events/signal';
 
 export function on(listenString: string, callback: (eventInfo: EventInfo) => void): Unsubscriber {

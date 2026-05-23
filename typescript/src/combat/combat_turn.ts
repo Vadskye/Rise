@@ -1,10 +1,12 @@
+import { ActiveAbility, SimulatorReadyAttack, ParsedDebuff } from '@src/abilities/active_abilities';
 import { Creature } from '@src/character_sheet/creature';
-import { CombatTeam, FightState } from '@src/combat/combat_scenario';
-import { getWeaponAccuracy } from '@src/monsters/weapons';
-import { ActiveAbility } from '@src/abilities/active_abilities';
-import { calculateStrikeDamage } from '@src/latex/monsters/player_abilities';
+import { CombatTeam, DebuffDuration, FightState } from '@src/combat/combat_scenario';
 import { rollD10, rollDice } from '@src/combat/dice';
 import { selectTarget } from '@src/combat/combat_targeting';
+import { parseAttackEffect } from '@src/combat/parse_attack_effect';
+import { DicePool } from '@src/core_mechanics/dice_pool';
+import { getWeaponAccuracy } from '@src/monsters/weapons';
+import { setCurrentCharacterSheet } from '@src/character_sheet/current_character_sheet';
 
 /**
  * Outcome of a single combat step or action.
@@ -24,11 +26,28 @@ export interface CombatStepResult {
 }
 
 export function executeTeamTurn(team: CombatTeam, state: FightState): CombatStepResult {
+  // Decrement cooldowns for all members of the team at the start of their team turn.
+  // Cooldowns are tracked in state.cooldowns[creatureId][abilityName].
+  for (const member of team.members) {
+    const creatureCooldowns = state.cooldowns[member.id];
+    if (creatureCooldowns) {
+      for (const abilityName in creatureCooldowns) {
+        if (creatureCooldowns[abilityName] > 0) {
+          creatureCooldowns[abilityName]--;
+        }
+      }
+    }
+  }
+
   const attackers = [...state.aliveMembersByTeam[team.name]];
   for (const attacker of attackers) {
     if (state.hp[attacker.id] <= 0) continue;
 
     const result = executeAttackerAction(attacker, team, state);
+
+    // End of turn processing for attacker
+    handleEndOfTurn(attacker, state);
+
     if (result.status !== CombatStepStatus.Ongoing) return result;
   }
   return { status: CombatStepStatus.Ongoing, winner: null };
@@ -40,50 +59,127 @@ export function executeAttackerAction(
   state: FightState,
 ): CombatStepResult {
   const potentialTargets = getPotentialTargets(team, state);
-  if (potentialTargets.length === 0) return { status: CombatStepStatus.Ongoing, winner: null };
+  if (potentialTargets.length === 0) return checkVictory(state);
 
-  // Elite Area Attack
+  // Use cached simulator attacks
+  const attacks: SimulatorReadyAttack[] = attacker.simulatorAttacks || [];
+
+  // Elite Action
   if (attacker.elite) {
-    const areaTargets = getPotentialTargets(team, state);
-    for (const areaTarget of areaTargets) {
-      state.attacksByTeam[team.name]++;
-      // Area attacks for elites are currently generic; we can keep them that way for now
-      // or refine them later.
-      const { damage, hit } = resolveAttack(attacker, areaTarget, undefined, -2);
-      if (hit) state.hitsByTeam[team.name]++;
-
-      state.hp[areaTarget.id] -= damage;
-
-      if (state.hp[areaTarget.id] <= 0) {
-        handleCreatureDeath(areaTarget, state);
-      }
-    }
-    const areaResult = checkVictory(state);
-    if (areaResult.status !== CombatStepStatus.Ongoing) return areaResult;
+    const eliteAttacks = attacks.filter((a) => a.usageTime === 'elite');
+    const result = selectAndExecuteAction(attacker, team, state, eliteAttacks);
+    if (result.status !== CombatStepStatus.Ongoing) return result;
   }
 
-  // Standard Attack
-  const potentialTargetsAfterArea = getPotentialTargets(team, state);
-  if (potentialTargetsAfterArea.length === 0)
-    return { status: CombatStepStatus.Ongoing, winner: null };
+  const standardAttacks = attacks.filter((a) => a.usageTime === 'standard');
 
-  const defender = selectTarget(attacker, potentialTargetsAfterArea, state);
+  return selectAndExecuteAction(attacker, team, state, standardAttacks);
+}
+
+function scoreAttack(attack: SimulatorReadyAttack): number {
+  const avgDamage = attack.damage.averageDamage();
+  const accuracyFactor = (10 + attack.accuracyModifier) / 10;
+  const areaFactor = attack.areaRank !== null ? 1 + attack.areaRank : 1;
+  return avgDamage * accuracyFactor * areaFactor;
+}
+
+function selectAndExecuteAction(
+  attacker: Creature,
+  team: CombatTeam,
+  state: FightState,
+  availableAttacks: SimulatorReadyAttack[],
+): CombatStepResult {
+  const potentialTargets = getPotentialTargets(team, state);
+  if (potentialTargets.length === 0) return checkVictory(state);
+
+  // Select best attack, filtering out those on cooldown
+  let bestAttack: SimulatorReadyAttack | null = null;
+  let bestScore = -1;
+
+  for (const attack of availableAttacks) {
+    // Check cooldown
+    const currentCooldown = state.cooldowns[attacker.id]?.[attack.name] || 0;
+    if (currentCooldown > 0) continue;
+
+    const score = scoreAttack(attack);
+    if (score > bestScore) {
+      bestScore = score;
+      bestAttack = attack;
+    }
+  }
+
+  // If no attack was selected (all on cooldown or no attacks provided), skip.
+  if (!bestAttack) {
+    return { status: CombatStepStatus.Ongoing, winner: null };
+  }
+
+  // Set cooldown if applicable
+  if (bestAttack.cooldown > 0) {
+    if (!state.cooldowns[attacker.id]) {
+      state.cooldowns[attacker.id] = {};
+    }
+    state.cooldowns[attacker.id][bestAttack.name] = bestAttack.cooldown;
+  }
+
   state.attacksByTeam[team.name]++;
 
-  // If the monster has any active weapon-based abilities, arbitrarily choose the first.
-  // In the future, we should find the best ability and use it.
-  const explicitAbility = attacker.getActiveAbilities().filter((ability) => ability.weapon)[0];
+  const isAreaAttack = bestAttack.areaRank !== null;
+  const targets = isAreaAttack
+    ? potentialTargets.slice(0, 1 + bestAttack.areaRank!)
+    : [selectTarget(attacker, potentialTargets, state)];
 
-  const { damage, hit } = resolveAttack(attacker, defender, explicitAbility);
-  if (hit) state.hitsByTeam[team.name]++;
-
-  state.hp[defender.id] -= damage;
-
-  if (state.hp[defender.id] <= 0) {
-    handleCreatureDeath(defender, state);
-  }
+  executeAttack(attacker, targets, bestAttack, state, team);
 
   return checkVictory(state);
+}
+
+function executeAttack(
+  attacker: Creature,
+  targets: Creature[],
+  attack: SimulatorReadyAttack,
+  state: FightState,
+  team: CombatTeam,
+): void {
+  state.targetAttemptsByTeam[team.name] += targets.length;
+  let actionHit = false;
+
+  const preRolledD10 = rollD10(true);
+  const preRolledDamage = rollDice(attack.damage.toString());
+
+  for (const target of targets) {
+    const { degree, total } = calculateHitDegree(attacker, target, attack, state, preRolledD10);
+    const hit = degree !== 'Miss';
+    if (hit) {
+      state.hitsByTeam[team.name]++;
+      actionHit = true;
+    }
+
+    const damage = calculateDamageDealt(degree, attack, state, preRolledDamage);
+
+    applyDamageAndEffects(target, damage, degree, attack, state, attacker);
+
+    if (state.verbose) {
+      const typeStr = attack.areaRank !== null ? 'area' : 'strike';
+      const hitStr = hit ? 'hits' : 'misses';
+      const defenseStr = attack.defenses.join(', ') || 'Armor';
+      console.log(
+        `Round ${state.round}: ${attacker.name} uses ${attack.name} (${typeStr}) vs ${defenseStr} → ${hitStr} ${target.name} for ${damage} damage`,
+      );
+    }
+  }
+
+  if (actionHit) {
+    state.actionHitsByTeam[team.name]++;
+  }
+}
+
+function findCreatureById(id: string, state: FightState): Creature | null {
+  for (const team of Object.values(state.aliveMembersByTeam)) {
+    for (const member of team) {
+      if (member.id === id) return member;
+    }
+  }
+  return null;
 }
 
 function getPotentialTargets(team: CombatTeam, state: FightState): Creature[] {
@@ -105,6 +201,45 @@ export function handleCreatureDeath(creature: Creature, state: FightState): void
   }
 }
 
+export function getDefaultAttack(attacker: Creature, rankOffset: number = 0): SimulatorReadyAttack {
+  const power = Math.max(attacker.mundane_power, attacker.magical_power);
+  const rank = Math.floor((attacker.level + 2) / 3) + rankOffset;
+  const halfPower = Math.floor(power / 2);
+
+  // Default medium damage scaling
+  const damageTable: Record<number, DicePool> = {
+    [-1]: DicePool.flat(halfPower),
+    0: DicePool.xdyPlus(1, 4, halfPower),
+    1: DicePool.xdyPlus(1, 6, halfPower),
+    2: DicePool.xdyPlus(1, 10, halfPower),
+    3: DicePool.xdyPlus(1, 8, power),
+    4: DicePool.xdyPlus(halfPower, 6, 0),
+    5: DicePool.xdyPlus(halfPower + 1, 6, 0),
+    6: DicePool.xdyPlus(halfPower + 1, 8, 0),
+    7: DicePool.xdyPlus(halfPower + 1, 10, 0),
+  };
+
+  return {
+    name: 'Default attack',
+    defenses: ['armor_defense'],
+    areaRank: null,
+    accuracyModifier: 0,
+    damage: damageTable[rank] || DicePool.empty(),
+    cooldown: 0,
+    halfOnMiss: false,
+    usageTime: 'standard',
+  };
+}
+
+export function getDefaultEliteAttack(attacker: Creature): SimulatorReadyAttack {
+  return {
+    ...getDefaultAttack(attacker, -2),
+    areaRank: 2, // Standard elite area rank
+    name: 'Elite Area Sweep',
+    usageTime: 'elite',
+  };
+}
+
 export function checkVictory(state: FightState): CombatStepResult {
   const teamsWithAlive = Object.entries(state.aliveMembersByTeam).filter(
     ([_, members]) => members.length > 0,
@@ -119,64 +254,135 @@ export function checkVictory(state: FightState): CombatStepResult {
   return { status: CombatStepStatus.Ongoing, winner: null };
 }
 
-export function resolveAttack(
+export function calculateHitDegree(
   attacker: Creature,
   defender: Creature,
-  explicitAbility?: ActiveAbility,
-  rankOffset: number = 0,
-): { damage: number; hit: boolean } {
-  const roll = rollD10(true);
-  let accuracy = attacker.accuracy;
+  attack: SimulatorReadyAttack,
+  state: FightState,
+  preRolledD10?: number,
+): { degree: 'Miss' | 'Hit' | 'Crit'; total: number } {
+  const roll = preRolledD10 !== undefined ? preRolledD10 : rollD10(true);
+  const totalAccuracy = attacker.accuracy + attack.accuracyModifier;
+  const total = roll + totalAccuracy;
 
-  if (explicitAbility?.weapon) {
-    accuracy += getWeaponAccuracy(explicitAbility.weapon);
-  }
-
-  const total = roll + accuracy;
-  const targetDefense = defender.armor_defense;
+  const defenses = attack.defenses.length > 0 ? attack.defenses : ['armor_defense' as const];
+  const targetDefense = defenses.reduce((acc, def) => acc + defender[def], 0) / defenses.length;
 
   if (total >= targetDefense + 10) {
-    // Critical Hit: Double damage
-    return { damage: calculateDamage(attacker, explicitAbility, rankOffset) * 2, hit: true };
+    return { degree: 'Crit', total };
   } else if (total >= targetDefense) {
-    // Regular Hit
-    return { damage: calculateDamage(attacker, explicitAbility, rankOffset), hit: true };
+    return { degree: 'Hit', total };
   }
-
-  return { damage: 0, hit: false }; // Miss
+  return { degree: 'Miss', total };
 }
 
-export function calculateDamage(
-  creature: Creature,
-  explicitAbility?: ActiveAbility,
-  rankOffset: number = 0,
+export function calculateDamageDealt(
+  hitDegree: 'Miss' | 'Hit' | 'Crit',
+  attack: SimulatorReadyAttack,
+  state: FightState,
+  preRolledDamage?: number,
 ): number {
-  // For now, we ignore the fact that attacks should theoretically be intrinsically either magical or mundane, and we just use the highest power on the premise that monsters should generally have abilities that use their highest power.
-  const power = Math.max(creature.mundane_power, creature.magical_power);
-  const rank = Math.floor((creature.level + 2) / 3) + rankOffset;
-  const halfPower = Math.floor(power / 2);
+  if (hitDegree === 'Miss') return 0;
 
-  if (explicitAbility && explicitAbility.kind === 'maneuver' && explicitAbility.weapon) {
-    const diceExpr = calculateStrikeDamage(creature, explicitAbility, explicitAbility.isMagical);
-    return rollDice(diceExpr);
+  const baseDamage =
+    preRolledDamage !== undefined ? preRolledDamage : rollDice(attack.damage.toString());
+  if (hitDegree === 'Crit') {
+    return baseDamage * 2;
+  }
+  return baseDamage;
+}
+
+export function applyDamageAndEffects(
+  target: Creature,
+  damage: number,
+  hitDegree: 'Miss' | 'Hit' | 'Crit',
+  attack: SimulatorReadyAttack,
+  state: FightState,
+  attacker: Creature,
+): void {
+  state.hp[target.id] -= damage;
+
+  if (state.hp[target.id] <= 0) {
+    handleCreatureDeath(target, state);
+    if (state.verbose) {
+      console.log(`Round ${state.round}: ${target.name} dies`);
+    }
   }
 
-  // Standard targeted medium damage ranks from sheet_worker.ts
-  const damageTable: Record<number, string> = {
-    [-1]: String(halfPower),
-    0: `1d4+${halfPower}`,
-    1: `1d6+${halfPower}`,
-    2: `1d10+${halfPower}`,
-    3: `1d8+${power}`,
-    4: `${halfPower}d6`,
-    5: `${halfPower + 1}d6`,
-    6: `${halfPower + 1}d8`,
-    7: `${halfPower + 1}d10`,
-  };
+  if (hitDegree !== 'Miss' && attack.debuffsToApply) {
+    for (const debuff of attack.debuffsToApply) {
+      if (debuff.requirement === 'injured') {
+        const isInjured = state.hp[target.id] <= target.injury_point;
+        if (!isInjured) continue;
+      }
 
-  const diceExpr = damageTable[rank];
-  if (!diceExpr) {
-    throw new Error(`Unknown rank: ${rank}`);
+      if (!state.debuffs[target.id]) {
+        state.debuffs[target.id] = [];
+      }
+
+      state.debuffs[target.id].push({
+        type: debuff.type,
+        sourceId: attacker.id,
+        duration: debuff.duration,
+        durationRemaining: debuff.durationRemaining,
+      });
+      target.setProperties({ [debuff.type]: '1' } as any);
+      if (state.verbose) {
+        console.log(`Round ${state.round}: ${target.name} gains ${debuff.type}`);
+      }
+    }
   }
-  return rollDice(diceExpr);
+}
+
+export function handleEndOfTurn(attacker: Creature, state: FightState) {
+  // 1. Elite Cleanse
+  if (attacker.elite) {
+    const roll = rollD10(false);
+    if (roll === 10) {
+      removeDebuffs(attacker, state, 2);
+    } else if (roll >= 6) {
+      removeDebuffs(attacker, state, 1);
+    }
+  }
+
+  // 2. Expire debuffs applied by this attacker with a fixed duration
+  for (const targetId in state.debuffs) {
+    const debuffs = state.debuffs[targetId];
+    const target = findCreatureById(targetId, state);
+    if (!target) continue;
+
+    for (let i = debuffs.length - 1; i >= 0; i--) {
+      const c = debuffs[i];
+      if (c.sourceId === attacker.id && c.durationRemaining !== undefined) {
+        c.durationRemaining--;
+        if (c.durationRemaining <= 0) {
+          debuffs.splice(i, 1);
+          // Update sheet
+          target.setProperties({ [c.type]: false } as any);
+          if (state.verbose) {
+            console.log(`Round ${state.round}: Debuff ${c.type} expires on ${target.name}`);
+          }
+        }
+      }
+    }
+  }
+}
+
+export function removeDebuffs(creature: Creature, state: FightState, count: number) {
+  const debuffs = state.debuffs[creature.id];
+  if (!debuffs || debuffs.length === 0) return;
+
+  for (let i = 0; i < count; i++) {
+    const index = debuffs.findIndex((c) => c.duration === 'condition');
+    if (index !== -1) {
+      const condition = debuffs.splice(index, 1)[0];
+      creature.setProperties({ [condition.type]: false } as any);
+      setCurrentCharacterSheet(creature.id);
+      if (state.verbose) {
+        console.log(`Round ${state.round}: ${creature.name} removes condition ${condition.type}`);
+      }
+    } else {
+      break;
+    }
+  }
 }
