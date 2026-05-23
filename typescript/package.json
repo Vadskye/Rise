@@ -45,6 +45,7 @@
     "prettier": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint \"src/**/*.ts\"",
     "format_archetype": "tsx src/scripts/format_archetype_description.ts",
-    "simulate_fight": "tsx src/scripts/simulate_fight.ts"
+    "simulate_fight": "tsx src/scripts/simulate_fight.ts",
+    "identify_outliers": "tsx src/scripts/identify_monster_outliers.ts"
   }
 }
