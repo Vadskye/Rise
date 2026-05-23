@@ -1,5 +1,6 @@
 import { Creature } from '@src/character_sheet/creature';
 import { RankAbility } from '../types';
+import { applyArchetypeActiveAbilities } from './apply_archetypes';
 
 export function divineMagic(): RankAbility[] {
   return [
@@ -435,9 +436,18 @@ export function preacher(): RankAbility[] {
   ];
 }
 
-export function divineMagicModifiers(_creature: Creature, _rank: number) {}
+export function divineMagicModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, divineMagic(), rank);
+  if (rank >= 1) {
+    const spellRank = Math.min(rank, 7);
+    creature.addSpell(`Armor Bolt Rank ${spellRank}`);
+    creature.addSpell(`Fortitude Bolt Rank ${spellRank}`);
+    creature.addSpell(`Reflex Cone Rank ${spellRank}`);
+  }
+}
 
 export function divineSpellMasteryModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, divineSpellMastery(), rank);
   if (rank >= 1) {
     creature.addCustomModifier({
       name: 'Divine Vessel',
@@ -467,24 +477,23 @@ export function divineSpellMasteryModifiers(creature: Creature, rank: number) {
   }
 }
 
-export function domainInfluenceModifiers(_creature: Creature, _rank: number) {}
+export function domainInfluenceModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, domainInfluence(), rank);
+}
 
 export function healerModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, healer(), rank);
   if (rank >= 2) {
     const bonus = rank >= 5 ? 2 : 1;
     creature.addCustomModifier({
       name: "Healer's Grace",
-      numericEffects: [
-        { statistic: 'armor_defense', modifier: bonus },
-        { statistic: 'fortitude', modifier: bonus },
-        { statistic: 'reflex', modifier: bonus },
-        { statistic: 'mental', modifier: bonus },
-      ],
+      numericEffects: [{ statistic: 'all_defenses', modifier: bonus }],
     });
   }
 }
 
 export function preacherModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, preacher(), rank);
   if (rank >= 2) {
     creature.addSimpleModifier({
       name: 'Persuasive Certainty',

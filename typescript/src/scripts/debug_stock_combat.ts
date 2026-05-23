@@ -1,6 +1,8 @@
 import { StockCharacters } from '@src/character_sheet/stock_characters';
-import { calculateDamage } from '@src/combat/combat_turn';
-import { calculateStrikeDamage } from '@src/latex/monsters/player_abilities';
+import { getDefaultAttack } from '@src/combat/combat_turn';
+import { parseAttackEffect } from '@src/combat/parse_attack_effect';
+import { rollDice } from '@src/combat/dice';
+import { SimulatorReadyAttack } from '@src/abilities/active_abilities';
 import cli from 'commander';
 
 async function main({ character, level }: { character?: string; level?: number }) {
@@ -30,22 +32,24 @@ async function main({ character, level }: { character?: string; level?: number }
     console.log(`Mundane Power: ${character.mundane_power}`);
     console.log(`Magical Power: ${character.magical_power}`);
 
-    const abilities = character.getActiveAbilities().filter((a) => a.weapon);
+    const abilities = character.getActiveAbilities();
+    const parsedAttacks = abilities
+      .map((a) => parseAttackEffect(a, character))
+      .filter((a): a is SimulatorReadyAttack => a !== null);
 
-    if (abilities.length === 0) {
-      const damage = calculateDamage(character);
+    if (parsedAttacks.length === 0) {
+      const defaultAttack = getDefaultAttack(character);
+      const damage = rollDice(defaultAttack.damage.toString());
       console.log(`Standard Damage (No Ability): ~${damage} (random roll)`);
     } else {
-      for (const ability of abilities) {
+      for (const attack of parsedAttacks) {
         const samples: number[] = [];
         for (let i = 0; i < 10; i++) {
-          samples.push(calculateDamage(character, ability));
+          samples.push(rollDice(attack.damage.toString()));
         }
         console.log(`Generic accuracy: ${character.accuracy}`);
-        console.log(`Ability: ${ability.name}`);
-        console.log(`Weapon: ${ability.weapon}`);
+        console.log(`Ability: ${attack.name}`);
         console.log(`Damage Samples: [${samples.join(', ')}]`);
-        console.log(`Strike damage: ${calculateStrikeDamage(character, ability, false)}`);
         console.log(`Average: ${(samples.reduce((a, b) => a + b, 0) / samples.length).toFixed(1)}`);
       }
     }

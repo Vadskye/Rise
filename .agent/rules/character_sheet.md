@@ -8,7 +8,7 @@ globs: "character_sheet/**, typescript/src/character_sheet/**"
 ## Sheet Worker
 The character sheet has a worker that automatically character sheet fields using Rise's rule system. It is located at `typescript/src/character_sheet/sheet_worker.ts`. The following is a summary of how it works.
 
-**Core Concepts:**
+## Core Concepts
 *   **Roll20 Shim:** `sheet_worker.ts` interacts with the Roll20 environment via `roll20_shim.ts`, providing functions like `on`, `getAttrs`, `setAttrs`, `getSectionIDs`, `generateRowID`, and `removeRepeatingRow`.
 *   **`onGet` Function:** A central utility for listening to attribute changes and performing calculations.
     *   Takes `variables` (numeric, boolean, string attributes to listen to) and a `callback`.
@@ -28,7 +28,7 @@ The character sheet has a worker that automatically character sheet fields using
     *   `collectNamedModifierExplanations`: Collects and formats multiple named modifiers.
     *   `formatCombinedExplanation`: Combines `miscExplanation` (from `onGet`'s `miscName` handling) with locally provided named modifiers. Joins them with `  ` (two spaces) after replacing commas with two spaces.
 
-**Specific Statistic Calculations (and observed behaviors):**
+## Specific Statistic Calculations
 
 *   **`armor_defense` (handled by `handleArmorDefense`):**
     *   Calculated from `level`, `dexterity` (modified by `armor_usage_class`), `body_armor_defense`, `shield_defense`, `misc` (custom modifiers), `all_defenses_vital_wound_modifier`, and `challenge_rating`.
@@ -51,5 +51,11 @@ The character sheet has a worker that automatically character sheet fields using
     *   Calculated from `base_speed` (defaults to 30), `body_armor_speed`, and `misc` (custom modifiers, vital wound modifiers).
     *   **Observed Discrepancy:** `body_armor_speed` was observed to be `0` within the `onGet` callback, leading to it not contributing to the total or explanation.
 
-**General Observations:**
+## General Observations
+
 *   The `formatNamedModifierExplanation` function filters out modifiers with a `value` of `0`, which can lead to parts of the explanation being omitted (e.g., `+0 (Con)`).
+
+## Code Architecture
+
+* **Singleton Integrity**: The `current_character_sheet.ts` module manages the active character context. To prevent `tsx` from loading multiple isolated instances of this module during tests, all files MUST import it using the exact alias: `@src/character_sheet/current_character_sheet`.
+* **Avoid Circular Dependencies**: Use `import types` to import types without importing functional code.

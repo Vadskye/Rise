@@ -10,14 +10,15 @@
     "chai": "^4.2.0",
     "eslint": "^9.9.1",
     "globals": "^15.9.0",
+    "prettier": "^3.3.3",
     "source-map-support": "^0.5.21",
     "tap": "^21.0.1",
     "ts-node": "^10.9.2",
+    "tsc-alias": "^1.8.17",
     "tsconfig-paths": "^4.2.0",
     "tsx": "^4.19.0",
     "typescript": "^5.5.4",
-    "typescript-eslint": "^8.3.0",
-    "prettier": "^3.3.3"
+    "typescript-eslint": "^8.3.0"
   },
   "dependencies": {
     "change-case": "^3.1.0",
@@ -30,19 +31,21 @@
   "author": "vadskye",
   "license": "OGL",
   "scripts": {
-    "clean": "rm src/**/*.js",
-    "coverage": "npx tsc --incremental && npx tap --node-arg=--import=tsx --exclude=**/*.js --coverage-report=text",
-    "explain_monster": "npx tsc --incremental && node --import tsx src/scripts/explain_monster.js",
-    "script": "npx tsc --incremental && node --enable-source-maps -r tsconfig-paths/register",
-    "maneuver_ranks": "npx tsc --incremental && node --import tsx src/scripts/maneuver_rank_breakdown.js",
-    "maneuver_roles": "npx tsc --incremental && node --import tsx src/scripts/maneuver_role_breakdown.js",
-    "spell_ranks": "npx tsc --incremental && node --import tsx src/scripts/spell_rank_breakdown.js",
-    "ritual_ranks": "npx tsc --incremental && node --import tsx src/scripts/ritual_rank_breakdown.js",
-    "spell_roles": "npx tsc --incremental && node --import tsx src/scripts/spell_role_breakdown.js",
-    "tap": "npx tsc --incremental && npx tap --node-arg=--import=tsx --exclude=**/*.js",
-    "test": "npx tsc --incremental && npx tap --node-arg=--import=tsx --exclude=**/*.js",
+    "clean": "rm -r src/**/*.js dist-test",
+    "build:test": "npx tsc --incremental -p tsconfig.test.json && npx tsc-alias -p tsconfig.test.json",
+    "coverage": "npm run build:test && npx tap dist-test/**/*.test.js --coverage-report=text",
+    "explain_monster": "tsx src/scripts/explain_monster.ts",
+    "maneuver_ranks": "tsx src/scripts/maneuver_rank_breakdown.ts",
+    "maneuver_roles": "tsx src/scripts/maneuver_role_breakdown.ts",
+    "spell_ranks": "tsx src/scripts/spell_rank_breakdown.ts",
+    "ritual_ranks": "tsx src/scripts/ritual_rank_breakdown.ts",
+    "spell_roles": "tsx src/scripts/spell_role_breakdown.ts",
+    "tap": "npm run test",
+    "test": "npm run build:test && npx tap dist-test/**/*.test.js",
     "prettier": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint \"src/**/*.ts\"",
-    "format_archetype": "npx tsx src/scripts/format_archetype_description.ts"
+    "format_archetype": "tsx src/scripts/format_archetype_description.ts",
+    "simulate_fight": "tsx src/scripts/simulate_fight.ts",
+    "identify_outliers": "tsx src/scripts/identify_monster_outliers.ts"
   }
 }

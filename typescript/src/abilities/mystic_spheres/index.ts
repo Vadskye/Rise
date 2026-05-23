@@ -20,6 +20,7 @@ import { umbramancy } from './umbramancy';
 import { verdamancy } from './verdamancy';
 import { vivimancy } from './vivimancy';
 import { universal } from './universal';
+import { nonsphereSpells } from './nonsphere_spells';
 import { CantripDefinition, SpellDefinition } from '@src/abilities/active_abilities';
 
 export { getSpellByName } from './get_spell_by_name';
@@ -49,6 +50,8 @@ export const mysticSpheres: MysticSphere[] = [
   vivimancy,
   universal,
 ];
+
+export const allMysticSpheres = [...mysticSpheres, nonsphereSpells];
 
 export type MysticSphereSource =
   | 'arcane'
@@ -99,4 +102,5 @@ export type SphereName =
   | 'Umbramancy'
   | 'Verdamancy'
   | 'Vivimancy'
-  | 'Universal';
+  | 'Universal'
+  | 'Non-Sphere Spells';

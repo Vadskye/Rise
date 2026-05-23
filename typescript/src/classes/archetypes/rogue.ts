@@ -1,9 +1,10 @@
 import { Creature } from '@src/character_sheet/creature';
 import { RankAbility } from '../types';
-import { addStandardManeuverModifiers } from '../definitions/standard_modifiers';
+
+import { applyArchetypeActiveAbilities } from './apply_archetypes';
 
 export function assassin(): RankAbility[] {
-  const abilities: RankAbility[] = [
+  return [
     {
       complexity: 2,
       name: 'Sneak Attack',
@@ -117,20 +118,6 @@ export function assassin(): RankAbility[] {
       `,
     },
   ];
-  addSneakAttack(abilities);
-  return abilities;
-}
-
-function addSneakAttack(abilities: RankAbility[]) {
-  for (let rank = 1; rank <= 7; rank++) {
-    abilities.push({
-      complexity: 0,
-      name: 'Sneak Attack Scaling',
-      isMagical: false,
-      rank: rank,
-      description: '',
-    });
-  }
 }
 
 export function bardicMusic(): RankAbility[] {
@@ -330,7 +317,6 @@ export function combatTrickster(): RankAbility[] {
       `,
     },
   ];
-  addStandardManeuverModifiers(abilities);
   return abilities;
 }
 
@@ -499,6 +485,7 @@ export function suaveScoundrel(): RankAbility[] {
 }
 
 export function assassinModifiers(creature: Creature, rank: number) {
+  creature.addSneakAttack('smallswords');
   if (rank >= 4) {
     creature.addSimpleModifier({
       name: "Assassin's Grace",
@@ -509,6 +496,7 @@ export function assassinModifiers(creature: Creature, rank: number) {
 }
 
 export function bardicMusicModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, bardicMusic(), rank);
   if (rank >= 4) {
     creature.addCustomModifier({
       name: 'Rhythm of War',
@@ -520,11 +508,29 @@ export function bardicMusicModifiers(creature: Creature, rank: number) {
   }
 }
 
-export function combatTricksterModifiers(_creature: Creature, _rank: number) {
-  // Maneuvers
+export function combatTricksterModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, combatTrickster(), rank);
+
+  // Each class picks a single combat style and chooses maneuvers from it.
+  // Arbitrarily, we pick two maneuvers at rank 1, then one more every two ranks.
+  // We use Dirty Fighting for Rogue.
+  if (rank >= 1) {
+    creature.addManeuver('Crush the Fallen');
+    creature.addManeuver('Eye Poke');
+  }
+  if (rank >= 3) {
+    creature.addManeuver('Fake Out');
+  }
+  if (rank >= 5) {
+    creature.addManeuver('Crush the Fallen+');
+  }
+  if (rank >= 7) {
+    creature.addManeuver('Fake Out+');
+  }
 }
 
 export function jackOfAllTradesModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, jackOfAllTrades(), rank);
   if (rank >= 2) {
     creature.addSimpleModifier({
       name: 'Skill Exemplar',
@@ -560,6 +566,7 @@ export function jackOfAllTradesModifiers(creature: Creature, rank: number) {
 }
 
 export function suaveScoundrelModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, suaveScoundrel(), rank);
   if (rank >= 2) {
     const bonus = rank >= 6 ? 4 : 2;
     creature.addCustomModifier({
