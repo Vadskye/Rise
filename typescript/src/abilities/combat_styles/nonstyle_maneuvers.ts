@@ -1,13 +1,15 @@
 import { CombatStyle } from '.';
 
-// This contains maneuvers that are only used by monsters, not players.
+// This contains maneuvers that are useful for the combat simulator or for writing monsters,
+// but are outside of any defined combat style and not written directly into the book.
 // This includes generic damage scaling maneuvers and specific maneuvers that are used by
 // multiple separate monsters.
 // Since we can't easily represent complex scaling concepts this way, some shared monster
 // maneuvers like "Grappling Strike" are calculated in `creature.ts` instead.
-export const monsterManeuvers: CombatStyle = {
-  name: 'Monster Maneuvers',
-  shortDescription: 'Only used for monsters. Should not appear in the book text directly.',
+export const nonstyleManeuvers: CombatStyle = {
+  name: 'Non-Style Maneuvers',
+  shortDescription:
+    'Standard maneuvers outside of defined combat styles. Should not appear in the book text directly.',
 
   maneuvers: [
     {

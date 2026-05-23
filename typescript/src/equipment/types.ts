@@ -1,4 +1,4 @@
-import { ActiveAbility } from '../abilities';
+import type { RiseTag } from '@src/character_sheet/rise_data';
 
 export type ItemRarity = 'Common' | 'Relic';
 
@@ -22,7 +22,7 @@ export interface StandardItem {
   rarity: ItemRarity;
   /** Variants of this item at higher ranks. */
   upgrades: ItemUpgrade[];
-  tags: ActiveAbility['tags'];
+  tags: RiseTag[];
 }
 
 /**

@@ -1,6 +1,7 @@
 import { Creature } from '@src/character_sheet/creature';
 import { RankAbility } from '../types';
-import { addStandardManeuverModifiers } from '../definitions/standard_modifiers';
+
+import { applyArchetypeActiveAbilities } from './apply_archetypes';
 
 export function battleforgedResilience(): RankAbility[] {
   return [
@@ -395,7 +396,6 @@ export function primalWarrior(): RankAbility[] {
       `,
     },
   ];
-  addStandardManeuverModifiers(abilities);
   return abilities;
 }
 
@@ -530,6 +530,7 @@ export function totemist(): RankAbility[] {
 }
 
 export function battleforgedResilienceModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, battleforgedResilience(), rank);
   if (rank >= 1) {
     // Second Wind doesn't have a clear combat effect
   }
@@ -587,6 +588,7 @@ export function battleforgedResilienceModifiers(creature: Creature, rank: number
 }
 
 export function battleragerModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, battlerager(), rank);
   if (rank >= 1) {
     // Assume rage is constantly active
     creature.addCustomModifier({
@@ -632,10 +634,6 @@ export function battleragerModifiers(creature: Creature, rank: number) {
     });
   }
 
-  if (rank >= 3) {
-    // Aggravated Violence doesn't have a clear combat effect
-  }
-
   if (rank >= 4) {
     creature.addSimpleModifier({
       name: 'Primal Brawn',
@@ -657,6 +655,7 @@ export function battleragerModifiers(creature: Creature, rank: number) {
 }
 
 export function outlandSavageModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, outlandSavage(), rank);
   if (rank >= 1) {
     creature.addSimpleModifier({
       name: 'Savage Precision',
@@ -682,12 +681,26 @@ export function outlandSavageModifiers(creature: Creature, rank: number) {
   }
 }
 
-export function primalWarriorModifiers(_creature: Creature, _rank: number) {
-  // Primal Warrior adds maneuvers and augments to maneuvers.
-  // These don't have static statistical modifiers that we represent here.
+// Each class picks a single combat style and chooses maneuvers from it.
+// Arbitrarily, we pick two maneuvers at rank 1, then one more every two ranks.
+export function primalWarriorModifiers(creature: Creature, rank: number) {
+  if (rank >= 1) {
+    creature.addManeuver('Ground Slam');
+    creature.addManeuver('Steady Slam');
+  }
+  if (rank >= 3) {
+    creature.addManeuver('Desperate Smash');
+  }
+  if (rank >= 5) {
+    creature.addManeuver('Heavy Hitter');
+  }
+  if (rank >= 7) {
+    creature.addManeuver('Boneshatter+');
+  }
 }
 
 export function totemistModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, totemist(), rank);
   // Bear Totem
   if (rank >= 1) {
     creature.addSimpleModifier({
