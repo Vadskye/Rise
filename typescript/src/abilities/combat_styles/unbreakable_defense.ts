@@ -119,11 +119,11 @@ export const unbreakableDefense: CombatStyle = {
 
     // +0.4ea as a bonus for requiring shield
     {
-      name: 'Stunning Shield Bash',
+      name: 'Dazing Shield Bash',
 
       effect: `
         Make a melee \\glossterm{strike} using a shield.
-        \\hit The target is \\briefly \\stunned.
+        \\hit The target is \\briefly \\dazed.
       `,
       rank: 3,
       roles: ['softener'],

@@ -147,7 +147,7 @@ export function poisons(): Tool[] {
         `
           The poison's accuracy is $consumableaccuracy.
           It inflicts $dr2l damage immediately and with each escalation.
-          The second escalation also makes the target \\stunned.
+          The second escalation also makes the target \\dazed.
         `,
       ),
     }),
@@ -179,7 +179,7 @@ function injuryPoisons(): Tool[] {
         'liquid',
         `
           The poison's accuracy is $consumableaccuracy.
-          A poisoned creature is \\stunned while the poison lasts.
+          A poisoned creature is \\dazed while the poison lasts.
           The second escalation also inflicts $dr2l damage.
         `,
       ),

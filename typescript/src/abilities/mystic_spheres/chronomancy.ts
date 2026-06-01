@@ -469,12 +469,12 @@ export const chronomancy: MysticSphere = {
       name: 'Time Stop',
 
       // TODO: EA math
-      cost: 'One \\glossterm{fatigue level}, and you are \\stunned as a \\glossterm{condition}. You also cannot cast this spell again until you finish a \\glossterm{short rest}.',
+      cost: 'One \\glossterm{fatigue level}, and you are \\dazed as a \\glossterm{condition}. You also cannot cast this spell again until you finish a \\glossterm{short rest}.',
       effect: `
         You can take two turns of actions immediately.
         During this time, all other creatures and objects are fixed in time, and cannot be targeted, moved, damaged, or otherwise affected by outside forces in any way.
         You can still affect yourself and create areas or new effects.
-        When this effect ends, you are \\stunned as a \\glossterm{condition}.
+        When this effect ends, you are \\dazed as a \\glossterm{condition}.
 
         You are still vulnerable to danger, such as from heat or dangerous gases.
         However, you cannot be detected by any means while you travel.

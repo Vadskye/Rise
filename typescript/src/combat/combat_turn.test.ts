@@ -15,7 +15,7 @@ t.test('removeDebuffs removes specified number of debuffs', (t) => {
   const state: Partial<FightState> = {
     debuffs: {
       [creature.id]: [
-        { type: 'stunned', sourceId: 'source', duration: 'condition' },
+        { type: 'dazed', sourceId: 'source', duration: 'condition' },
         { type: 'poisoned', sourceId: 'source', duration: 'condition' },
         { type: 'blinded', sourceId: 'source', duration: 'condition' },
       ],
@@ -39,7 +39,7 @@ t.test('removeDebuffs handles removing more debuffs than present', (t) => {
   const creature = createCreature('Test Creature');
   const state: Partial<FightState> = {
     debuffs: {
-      [creature.id]: [{ type: 'stunned', sourceId: 'source', duration: 'condition' }],
+      [creature.id]: [{ type: 'dazed', sourceId: 'source', duration: 'condition' }],
     },
     verbose: false,
     round: 1,
@@ -57,7 +57,7 @@ t.test('handleEndOfTurn expires brief conditions applied by attacker', (t) => {
   const state: Partial<FightState> = {
     debuffs: {
       [target.id]: [
-        { type: 'stunned', sourceId: attacker.id, durationRemaining: 1 },
+        { type: 'dazed', sourceId: attacker.id, durationRemaining: 1 },
         { type: 'poisoned', sourceId: 'other', durationRemaining: 1 },
         { type: 'blinded', sourceId: attacker.id, durationRemaining: 2 },
       ],
@@ -75,10 +75,10 @@ t.test('handleEndOfTurn expires brief conditions applied by attacker', (t) => {
   const targetDebuffs = state.debuffs![target.id];
   t.equal(targetDebuffs.length, 2, 'Should have 2 debuffs left');
 
-  // Stunned should be removed (duration was 1 -> 0)
+  // Dazed should be removed (duration was 1 -> 0)
   t.notOk(
-    targetDebuffs.some((c) => c.type === 'stunned'),
-    'Stunned should be removed',
+    targetDebuffs.some((c) => c.type === 'dazed'),
+    'Dazed should be removed',
   );
 
   // Poisoned should remain (sourceId was 'other')
@@ -221,7 +221,7 @@ t.test('applyDamageAndEffects applies debuffs and updates stats', (t) => {
   };
 
   const attack: Partial<SimulatorReadyAttack> = {
-    debuffsToApply: [{ type: 'stunned', duration: 'condition' }],
+    debuffsToApply: [{ type: 'dazed', duration: 'condition' }],
   };
   const attacker: Partial<Creature> = { id: 'attacker' };
 
@@ -236,7 +236,7 @@ t.test('applyDamageAndEffects applies debuffs and updates stats', (t) => {
 
   t.ok(state.debuffs![target.id], 'Should have debuffs for target');
   t.equal(state.debuffs![target.id].length, 1, 'Should have 1 debuff');
-  t.equal(state.debuffs![target.id][0].type, 'stunned', 'Debuff should be stunned');
+  t.equal(state.debuffs![target.id][0].type, 'dazed', 'Debuff should be dazed');
 
   const updatedProps = target.getPropertyValues(['armor_defense_debuff_modifier' as any]) as any;
   t.equal(

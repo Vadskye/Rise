@@ -103,9 +103,9 @@ export const staffs = (): Implement[] => [
   staff({
     name: 'Staff of Discordance',
     rank: 6,
-    short_description: 'Makes stunned creatures briefly confused',
+    short_description: 'Makes dazed creatures briefly confused',
     description: `
-      Whenever you cause an enemy to be \\stunned as a \\glossterm{condition}, it is also \\glossterm{briefly} \\confused.
+      Whenever you cause an enemy to be \\dazed as a \\glossterm{condition}, it is also \\glossterm{briefly} \\confused.
     `,
     tags: ['Compulsion', 'Attune'],
   }),

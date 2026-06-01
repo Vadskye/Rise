@@ -788,7 +788,7 @@ export const telekinesis: MysticSphere = {
       type: 'Attune',
     },
 
-    // brief injury stun is 4d. Limited scope drops to rank 3.
+    // brief injury daze is 4d. Limited scope drops to rank 3.
     {
       name: 'Kinetic Cudgel',
 
@@ -796,10 +796,10 @@ export const telekinesis: MysticSphere = {
       // Range: Short (+1)
       // Effect: Debuff (-1)
       // Result: 3 + 1 - 1 = dr3
-      // (Original design: brief injury stun is 4d. Limited scope drops to rank 3.)
+      // (Original design: brief injury daze is 4d. Limited scope drops to rank 3.)
       attack: {
         hit: `\\damagerankthree.`,
-        injury: 'The target is \\briefly \\stunned.',
+        injury: 'The target is \\briefly \\dazed.',
         targeting: `
           Make an attack vs. Brawn against something within \\shortrange.
         `,
@@ -809,7 +809,7 @@ export const telekinesis: MysticSphere = {
       scaling: 'damage',
     },
 
-    // Brief stun or stun as a condition is 1.8 EA, so rank 8 normally.
+    // Brief daze or daze as a condition is 1.8 EA, so rank 8 normally.
     // Limited scope drops to rank 7.
     {
       name: 'Mighty Kinetic Cudgel',
@@ -821,9 +821,9 @@ export const telekinesis: MysticSphere = {
       attack: {
         hit: `
           \\damagerankseven, and any \\glossterm{extra damage} is doubled.
-          The target is also \\briefly \\stunned.
+          The target is also \\briefly \\dazed.
         `,
-        injury: 'The target is \\stunned as a \\glossterm{condition}.',
+        injury: 'The target is \\dazed as a \\glossterm{condition}.',
         targeting: `
           Make an attack vs. Brawn against something within \\shortrange.
         `,

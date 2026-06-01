@@ -123,15 +123,15 @@ function thrownAttacks(): Tool[] {
       description: `
         You can throw this item as a standard action.
         When you do, make an attack vs. Reflex against something within \\shortrange.
-        \\hit If the target is \\creaturetype{undead} or an evil \\creaturetype{soulforged}, it takes $dr2l damage.
+        \\hit If the target is \\creaturetype{undead} or an evil \\creaturetype{soulforged}, it takes $dr3l damage.
         Some creatures have specific effects when they are hit by holy water.
       `,
       upgrades: [
         {
           rank: 2,
-          short_description: 'Throw to deal $dr5l damage to evil',
+          short_description: 'Throw to deal $dr6l damage to evil',
           description: `
-            The damage increases to $dr5l.
+            The damage increases to $dr6l.
           `,
         },
       ],
@@ -353,18 +353,18 @@ function thrownAttacks(): Tool[] {
     createAlchemicalItem({
       name: 'Shockstone',
       rank: 2,
-      short_description: 'Throw to deal $dr4l damage and stun',
+      short_description: 'Throw to deal $dr4l damage and daze',
       description: `
         You can throw this item as a standard action.
         When you do, make an attack vs. Fortitude against something within \\medrange.
         \\hit $dr4l damage.
-        \\injury The target is \\stunned as a \\glossterm{condition}.
+        \\injury The target is \\dazed as a \\glossterm{condition}.
       `,
       tags: ['Electricity'],
       upgrades: [
         {
           rank: 4,
-          short_description: 'Throw to deal $dr6l damage and stun',
+          short_description: 'Throw to deal $dr6l damage and daze',
           description: `
             The damage increases $dr6l.
           `,
@@ -374,32 +374,32 @@ function thrownAttacks(): Tool[] {
     createAlchemicalItem({
       name: 'Bottled Lightning',
       rank: 6,
-      short_description: 'Throw to deal $dr6l damage and stun',
+      short_description: 'Throw to deal $dr6l damage and daze',
       description: `
         You can throw this item as a standard action.
         When you do, make an attack vs. Fortitude against something within \\medrange.
         \\hit $dr4l damage.
-        \\injury The target is \\stunned as a \\glossterm{condition} and \\briefly \\blinded.
+        \\injury The target is \\dazed as a \\glossterm{condition} and \\briefly \\blinded.
       `,
       tags: ['Electricity'],
     }),
     createAlchemicalItem({
-      name: 'Stunning Sphere',
+      name: 'Dazing Sphere',
       rank: 0,
-      short_description: 'Throw to stun injured creatures',
+      short_description: 'Throw to daze injured creatures',
       description: `
         You can throw this item as a standard action.
         When you do, make an attack vs. Fortitude against all creatures in a \\smallarea radius within \\shortrange.
         Your minimum accuracy is $consumableaccuracy+2.
-        \\hit Each \\glossterm{injured} creature is \\stunned as a \\glossterm{condition}.
+        \\hit Each \\glossterm{injured} creature is \\dazed as a \\glossterm{condition}.
       `,
       tags: ['Electricity'],
       upgrades: [
         {
           rank: 5,
-          short_description: 'Throw to stun creatures',
+          short_description: 'Throw to daze creatures',
           description: `
-            The minimum accuracy increases to $consumableaccuracy, and each target does not have to be injured to be stunned.
+            The minimum accuracy increases to $consumableaccuracy, and each target does not have to be injured to be dazed.
           `,
         },
       ],

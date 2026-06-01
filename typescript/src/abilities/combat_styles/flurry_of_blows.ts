@@ -244,7 +244,7 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        If your attack result hits the target's Fortitude defense, it becomes \\briefly \\stunned.
+        If your attack result hits the target's Fortitude defense, it becomes \\briefly \\dazed.
       `,
       rank: 3,
       roles: ['maim'],
@@ -256,8 +256,8 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} that deals triple damage.
-        \\hit The target is \\briefly \\stunned.
-        \\injury The target is stunned as a \\glossterm{condition}.
+        \\hit The target is \\briefly \\dazed.
+        \\injury The target is dazed as a \\glossterm{condition}.
       `,
       rank: 7,
       roles: ['softener'],

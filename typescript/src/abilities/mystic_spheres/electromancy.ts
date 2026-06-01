@@ -5,7 +5,7 @@ import { CONDITION_CRIT } from '../constants';
 export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
   name: 'Electromancy',
   hasImage: true,
-  shortDescription: 'Create electricity to injure and stun foes.',
+  shortDescription: 'Create electricity to injure and daze foes.',
   sources: ['arcane', 'nature', 'pact'],
   specialRules: `
     Some spells from this mystic sphere \\glossterm{chain} between multiple targets.
@@ -188,13 +188,13 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
     },
 
     {
-      name: 'Stunning Discharge',
+      name: 'Dazing Discharge',
 
-      // stun is 1.2 EA, +1r for area gives r3 area
+      // daze is 1.2 EA, +1r for area gives r3 area
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          If the target is \\glossterm{injured}, it is \\stunned as a \\glossterm{condition}.
+          If the target is \\glossterm{injured}, it is \\dazed as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
@@ -205,15 +205,15 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       scaling: 'accuracy',
     },
 
-    // brief + hp stun is 1.8 EA, so r3. +1r for area gives r5 area.
+    // brief + hp daze is 1.8 EA, so r3. +1r for area gives r5 area.
     {
-      name: 'Massive Stunning Discharge',
+      name: 'Massive Dazing Discharge',
 
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          The target is \\briefly \\stunned.
-          If it is \\glossterm{injured}, it is also \\stunned as a \\glossterm{condition}.
+          The target is \\briefly \\dazed.
+          If it is \\glossterm{injured}, it is also \\dazed as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
@@ -384,7 +384,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       scaling: 'damage',
     },
 
-    // Stunned as a condition is r9. Limited scope is r8, and assume metallic only is
+    // Dazed as a condition is r9. Limited scope is r8, and assume metallic only is
     // worth -2r.
     {
       name: 'Short-Circuit',
@@ -392,7 +392,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          The target is \\stunned as a \\glossterm{condition}.
+          The target is \\dazed as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Fortitude against one \\glossterm{metallic} creature within \\medrange.
@@ -572,7 +572,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
           \\damagerankseven, and any \\glossterm{extra damage} is doubled.
         `,
         injury: `
-          The target is \\briefly \\stunned.
+          The target is \\briefly \\dazed.
           If takes a \\glossterm{vital wound} from this damage that leaves it unconscious, it immediately dies.
         `,
         targeting: `

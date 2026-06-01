@@ -83,7 +83,7 @@ So the EA of the debuff is:
 * Rank 6: 1.1 EA
 * Rank 7: 1.2 EA
 
-As an example, assume that the debuff is a brief stun. Each time it triggers on an enemy turn, it affects 4 party attacks, so 0.8 EA. It triggers 2.5 times during the fight, so it's worth 2 EA overall. That matches up with a rank 3 deep attunement.
+As an example, assume that the debuff is a brief daze. Each time it triggers on an enemy turn, it affects 4 party attacks, so 0.8 EA. It triggers 2.5 times during the fight, so it's worth 2 EA overall. That matches up with a rank 3 deep attunement.
 
 ### Uncommon reactive damage: 1.75-3.0
 
@@ -156,7 +156,7 @@ Note that this requires a minor action to activate to avoid stacking multiple at
 ### Singleton reactive debuff: ???
 
 Assume that the trigger for the reactive debuff always happens, but it is limited to once per creature. That means it makes 1 attack per fight. However, incremental bonuses that add up to some EA value over a long fight are different from this sort of immediate trigger that happens on round 1. For that reason, unlike the minor action attack system that assumes that each attack is worth 1 EA, we use the direct EA value of the debuff, keeping in mind that reactive brief debuffs often have additional effects:
-* Briefly stunned: 1.6 EA, since it affects your first attack too
+* Briefly dazed: 1.6 EA, since it affects your first attack too
 * Briefly dazzled: 1.2 EA, since it affects two rounds of enemy attacks instead of one
 * Briefly frightened by you: 1.2 EA, since 0.8 EA from double action denial and 0.4 EA from Mental debuff
 * Frightened by you as a condition: 2.5 EA, with the normal 2.1 EA from frightened plus the 0.4 EA from also affecting the first round attack.

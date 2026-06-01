@@ -5,11 +5,11 @@ t.test('can get and set properties', (t) => {
   const expected = {
     level: 3,
     name: 'Warrior',
-    stunned: true,
+    dazed: true,
   };
 
   setAttrs(expected);
-  getAttrs(['level', 'name', 'stunned'], (attrs) => {
+  getAttrs(['level', 'name', 'dazed'], (attrs) => {
     t.matchOnly(attrs, expected);
     t.end();
   });

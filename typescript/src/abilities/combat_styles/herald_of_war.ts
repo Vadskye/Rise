@@ -34,10 +34,10 @@ export const heraldOfWar: CombatStyle = {
     },
 
     {
-      name: 'Stunning Shout',
+      name: 'Dazing Shout',
 
       attack: {
-        hit: `The target is \\briefly \\stunned.`,
+        hit: `The target is \\briefly \\dazed.`,
         targeting: `
           Make an attack vs. Mental against everything in a \\medarea cone from you.
         `,
@@ -48,15 +48,15 @@ export const heraldOfWar: CombatStyle = {
     },
 
     {
-      name: 'Stunning Shout+',
+      name: 'Dazing Shout+',
 
-      // Brief + HP stun is worth 2 EA, so rank 4. That gives +1r for area rank, for a
+      // Brief + HP daze is worth 2 EA, so rank 4. That gives +1r for area rank, for a
       // total of ar6. But we only use ar5 here...
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          The target is \\briefly \\stunned.
-          If it is \\glossterm{injured}, it is stunned as a \\glossterm{condition} instead.
+          The target is \\briefly \\dazed.
+          If it is \\glossterm{injured}, it is dazed as a \\glossterm{condition} instead.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea cone from you.

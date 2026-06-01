@@ -176,16 +176,16 @@ def debuffs():
                 [
                     debuff("blinded"),
                     debuff("confused"),
+                    debuff("dazed"),
                     debuff("dazzled"),
-                    debuff("frightened"),
                 ]
             ),
             flex_col(
                 [
+                    debuff("frightened"),
                     debuff("goaded"),
                     debuff("panicked"),
                     debuff("slowed"),
-                    debuff("stunned"),
                 ]
             ),
         ],
@@ -213,6 +213,7 @@ def debuff_explanation(debuff: str) -> str:
     return {
         "blinded": "50% miss chance",
         "confused": "-2 defenses and randomly attack or defend",
+        "dazed": "-2 defenses",
         "dazzled": "20% miss chance, no special vision",
         "deafened": "20% verbal spell failure",
         "dominated": "must obey commands",
@@ -225,7 +226,6 @@ def debuff_explanation(debuff: str) -> str:
         "prone": "half speed, -2 Armor and Ref",
         "slowed": "half speed, -2 Armor and Ref",
         "squeezing": "-2 Armor and Ref",
-        "stunned": "-2 defenses",
         "unaware": "-5 defenses",
         "unsteady": "-2 accuracy, Armor, Brawn, Ref",
     }[debuff]

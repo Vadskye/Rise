@@ -25,7 +25,7 @@ t.test('applyDamageAndEffects applies conditional debuffs only when injured', (t
   };
 
   const attack: Partial<SimulatorReadyAttack> = {
-    debuffsToApply: [{ type: 'stunned', duration: 'condition', requirement: 'injured' }],
+    debuffsToApply: [{ type: 'dazed', duration: 'condition', requirement: 'injured' }],
   };
   const attacker: Partial<Creature> = { id: 'attacker' };
 
@@ -53,7 +53,7 @@ t.test('applyDamageAndEffects applies conditional debuffs only when injured', (t
   );
 
   t.ok(state.debuffs![target.id]?.length, 'Should apply debuff when target is injured');
-  t.equal(state.debuffs![target.id][0].type, 'stunned', 'Debuff should be stunned');
+  t.equal(state.debuffs![target.id][0].type, 'dazed', 'Debuff should be dazed');
 
   t.end();
 });

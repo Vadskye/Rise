@@ -111,11 +111,11 @@ export const enchantment: MysticSphere = {
     {
       name: 'Dance',
 
-      // Assuming they never dance, this is roughly stunned, which is 3 EA.
+      // Assuming they never dance, this is roughly dazed, which is 3 EA.
       // Assuming they dance every other turn, this is 0.75 EA from defense debuff and 25%
       // action denial from anti-movement, which is 0.75 EA + 3 EA = 3.75 EA??
       // But letting the target choose between those two options makes it weaker than
-      // stunned with a slower ramp time, so call it 2.6 EA. That's r7, or r6 limited
+      // dazed with a slower ramp time, so call it 2.6 EA. That's r7, or r6 limited
       // scope.
       attack: {
         crit: CONDITION_CRIT,
@@ -212,12 +212,12 @@ export const enchantment: MysticSphere = {
     {
       name: 'Dominate Person',
 
-      // Stunned as a condition is 3 EA. Humanoid only is about -0.4 EA, and limited scope
+      // Dazed as a condition is 3 EA. Humanoid only is about -0.4 EA, and limited scope
       // is r6.
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          The target is \\stunned as a \\glossterm{condition}.
+          The target is \\dazed as a \\glossterm{condition}.
           If the target is currently unconscious due to \\glossterm{vital wounds} and is not \\glossterm{elite}, you can choose to \\glossterm{attune} to this ability.
           When you do, it becomes \\dominated by you for the duration of that attunement.
           This attunement only allows you to control one creature, not each target of this spell, and you can only attune to this effect once.
@@ -556,7 +556,7 @@ export const enchantment: MysticSphere = {
       type: 'Attune',
     },
 
-    // HP prebuff stun is 1.6 EA
+    // HP prebuff daze is 1.6 EA
     {
       name: 'Agony',
 
@@ -564,7 +564,7 @@ export const enchantment: MysticSphere = {
         crit: CONDITION_CRIT,
         hit: `
           As a \\glossterm{condition}, the target feels excruciating pain from even minor injuries.
-          While it is \\glossterm{injured}, it is \\stunned.
+          While it is \\glossterm{injured}, it is \\dazed.
         `,
         targeting: `
           Make an attack vs. Mental against up to two creatures within \\medrange.
@@ -740,7 +740,7 @@ export const enchantment: MysticSphere = {
       type: 'Attune',
     },
 
-    // Injury stun is 1.2 EA. We compensate for the low debuff EA with the Intelligence
+    // Injury daze is 1.2 EA. We compensate for the low debuff EA with the Intelligence
     // accuracy?
     {
       name: 'Psionic Blast',
@@ -750,7 +750,7 @@ export const enchantment: MysticSphere = {
           \\damageranktwo.
         `,
         injury: `
-          The target is \\stunned as a \\glossterm{condition}.
+          The target is \\dazed as a \\glossterm{condition}.
         `,
         halfOnMiss: true,
         targeting: `
@@ -769,10 +769,10 @@ export const enchantment: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankfive, and the target is \\briefly \\stunned.
+          \\damagerankfive, and the target is \\briefly \\dazed.
         `,
         injury: `
-          The target is stunned as a \\glossterm{condition}.
+          The target is dazed as a \\glossterm{condition}.
         `,
         halfOnMiss: true,
         targeting: `

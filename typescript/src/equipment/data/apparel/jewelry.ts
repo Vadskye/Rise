@@ -458,7 +458,7 @@ function amulets(): Apparel[] {
         short_description: 'Goad with \\ability{denounce the heathens}',
         description: `
             You can use the Intimidate skill in place of the Persuasion skill for the \\ability{denounce the heathens} cleric ability.
-            When you do, each target is \\goaded by you instead of stunned.
+            When you do, each target is \\goaded by you instead of dazed.
         `,
         magical: true,
         upgrades: [],

@@ -354,7 +354,7 @@ function parseConditions(text: string): ParsedDebuff[] {
   };
 
   // Order matters for tests that use t.same
-  const debuffNames = ['grappled', 'prone', 'stunned', 'confused', 'dazzled', 'goaded', 'unsteady'];
+  const debuffNames = ['grappled', 'prone', 'dazed', 'confused', 'dazzled', 'goaded', 'unsteady'];
 
   for (const name of debuffNames) {
     const parsed = checkCondition(name);

@@ -700,7 +700,7 @@ def monster_attack() -> str:
                         option({"value": "damage"}, "Damage"),
                         option({"value": "dazzled"}, "T1 Debuff (Dazzled)"),
                         option({"value": "frightened"}, "T2 Debuff (Frightened)"),
-                        option({"value": "stunned"}, "T3 Debuff (Stunned)"),
+                        option({"value": "dazed"}, "T3 Debuff (Dazed)"),
                         option({"value": "confused"}, "T4 Debuff (Confused)"),
                     ],
                 ),

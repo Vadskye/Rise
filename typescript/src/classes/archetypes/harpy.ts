@@ -74,8 +74,8 @@ export function harpy(): RankAbility[] {
           \\rankline
           Make an attack vs. Mental against all \\glossterm{enemies} within a \\medarea radius from you.
           In addition, you begin a vocal performance (see \\pcref{Performance Types}).
-          \\hit The target is both \\charmed by you and \\stunned as long as it can still hear your vocal performance.
-          It remains stunned even if it stops being charmed, such as if you or your allies attack it.
+          \\hit The target is both \\charmed by you and \\dazed as long as it can still hear your vocal performance.
+          It remains dazed even if it stops being charmed, such as if you or your allies attack it.
           This ability does not have the \\abilitytag{Subtle} tag, so an observant target may notice that it is being influenced.
           \\rankline
           The attack\\'s \\glossterm{accuracy} increases by \\plus1 for each rank beyond 4.

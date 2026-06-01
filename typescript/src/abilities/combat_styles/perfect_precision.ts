@@ -232,7 +232,7 @@ export const perfectPrecision: CombatStyle = {
     {
       name: 'Pressure Point Puncture',
 
-      // If you call this 2/3 of a stun, it's worth 2 EA.
+      // If you call this 2/3 of a daze, it's worth 2 EA.
       effect: `
         Make a melee \\glossterm{strike} that deals triple damage.
         \\hit If your attack result also hits the target's Fortitude defense, it takes a \\minus1 penalty to all defenses as a \\glossterm{condition}.

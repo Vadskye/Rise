@@ -8,12 +8,12 @@ export const dirtyFighting: CombatStyle = {
   maneuvers: [
     // +0.4EA as a bonus for requiring punch/kick
     {
-      name: 'Stunning Fist',
+      name: 'Gut Punch',
 
       effect: `
         Make a strike using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
-        \\hit The target is \\briefly \\stunned.
-        \\injury The target is stunned as a \\glossterm{condition}.
+        \\hit The target is \\briefly \\dazed.
+        \\injury The target is dazed as a \\glossterm{condition}.
       `,
       rank: 3,
       roles: ['softener', 'maim'],
@@ -250,7 +250,7 @@ export const dirtyFighting: CombatStyle = {
       tags: ['Brawling', 'Physical'],
     },
 
-    // Price as "stunned as a condition" in melee range; grappled requirement offsets
+    // Price as "dazed as a condition" in melee range; grappled requirement offsets
     // ability to use brawling accuracy
     {
       name: 'Pin',
@@ -525,7 +525,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a melee strike.
-        \\injury If your attack result hits the target's Fortitude defense, it is \\briefly \\stunned.
+        \\injury If your attack result hits the target's Fortitude defense, it is \\briefly \\dazed.
       `,
       rank: 1,
       roles: ['maim'],
@@ -536,8 +536,8 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a melee strike that deals double damage.
-        \\hit If your attack result hits the target's Fortitude defense, it is \\briefly \\stunned.
-        \\injury If your attack result hits the target's Fortitude defense, it is stunned as a \\glossterm{condition}.
+        \\hit If your attack result hits the target's Fortitude defense, it is \\briefly \\dazed.
+        \\injury If your attack result hits the target's Fortitude defense, it is dazed as a \\glossterm{condition}.
       `,
       rank: 5,
       roles: ['maim'],
@@ -548,8 +548,8 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        \\hit If your attack result hits the target's Fortitude defense, it is \\briefly \\stunned.
-        \\injury If your attack result hits the target's Fortitude defense, it is stunned as a \\glossterm{condition}.
+        \\hit If your attack result hits the target's Fortitude defense, it is \\briefly \\dazed.
+        \\injury If your attack result hits the target's Fortitude defense, it is dazed as a \\glossterm{condition}.
       `,
       rank: 3,
       roles: ['maim'],

@@ -130,7 +130,7 @@ export const bruteForce: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike} with a +1 accuracy bonus.
         You cannot get a \\glossterm{critical hit} with this strike.
-        \\injury If your attack result hits the target's Fortitude defense, it is \\briefly \\stunned.
+        \\injury If your attack result hits the target's Fortitude defense, it is \\briefly \\dazed.
       `,
       roles: ['burst', 'maim'],
       rank: 1,
@@ -142,7 +142,7 @@ export const bruteForce: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike} with a +2 accuracy bonus that deals double damage.
         You cannot get a \\glossterm{critical hit} with this strike.
-        \\hit If your attack result hits the target's Fortitude defense, it is \\briefly \\stunned.
+        \\hit If your attack result hits the target's Fortitude defense, it is \\briefly \\dazed.
       `,
       roles: ['burst'],
       rank: 5,
@@ -153,7 +153,7 @@ export const bruteForce: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        \\injury The target becomes \\stunned as a \\glossterm{condition}.
+        \\injury The target becomes \\dazed as a \\glossterm{condition}.
       `,
       roles: ['maim'],
       rank: 3,
@@ -355,7 +355,7 @@ export const bruteForce: CombatStyle = {
       tags: ['Brawling', 'Physical'],
     },
 
-    // -1dr for brawling attack, +1dr for stun, -1dr for accuracy.
+    // -1dr for brawling attack, +1dr for daze, -1dr for accuracy.
     // Assume you have 4 str at level 1.
     // Using this attack, you deal 1d10+2 damage with +2 accuracy.
     // Using a greataxe, you deal 1d10+4 damage with +0 accuracy.

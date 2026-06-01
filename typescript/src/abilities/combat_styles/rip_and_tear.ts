@@ -11,7 +11,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        \\injury If the target is not wearing metal body armor, it becomes \\stunned as a \\glossterm{condition}.
+        \\injury If the target is not wearing metal body armor, it becomes \\dazed as a \\glossterm{condition}.
       `,
       rank: 3,
       roles: ['maim'],
@@ -59,7 +59,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} that deals double damage.
-        \\injury If your attack result hits the target's Fortitude defense, it becomes \\dazzled and \\stunned as a single \\glossterm{condition}.
+        \\injury If your attack result hits the target's Fortitude defense, it becomes \\dazzled and \\dazed as a single \\glossterm{condition}.
       `,
       rank: 5,
       roles: ['maim'],

@@ -154,9 +154,9 @@ export const shields = (): MagicArmor[] => [
     upgrades: [
       {
         rank: 6,
-        short_description: 'Can slow and stun viewers',
+        short_description: 'Can slow and daze viewers',
         description:
-          'Your minimum accuracy increases to $accuracy, and the condition also causes each target to be \\stunned while it is injured.',
+          'Your minimum accuracy increases to $accuracy, and the condition also causes each target to be \\dazed while it is injured.',
       },
     ],
     tags: ['Visual', 'Attune'],

@@ -470,12 +470,12 @@ export const polymorph: MysticSphere = {
     {
       name: 'Mighty Cripple',
 
-      // This can get +1.1 EA over regular cripple, which we fudge to get stunned
+      // This can get +1.1 EA over regular cripple, which we fudge to get dazed
       attack: {
         hit: `
           \\damageranknine, and any \\glossterm{extra damage} is doubled.
           In addition, the target's body deteriorates as a \\glossterm{condition}.
-          While it is \\glossterm{injured}, it is \\slowed and \\stunned.
+          While it is \\glossterm{injured}, it is \\slowed and \\dazed.
         `,
         targeting: `
           When you cast this spell, the flesh on your body writhes.
