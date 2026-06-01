@@ -711,10 +711,10 @@ function addVampires(grimoire: Grimoire) {
         A vampire can enter a torpor to survive without blood.
         While in a torpor, it is unconscious until it smells blood nearby.
         It can survive while in torpor for a number of consecutive centuries equal to its \\glossterm{rank} before it withers away to dust.
-      \\itemhead{Consecrated Ground} A vampire in consecrated ground takes 20 damage and becomes \\stunned as a condition if it is not already stunned.
+      \\itemhead{Consecrated Ground} A vampire in consecrated ground takes 20 damage and becomes \\dazed as a condition if it is not already dazed.
       \\itemhead{Garlic} A vampire that smells garlic becomes \\frightened by any creatures bearing garlic as a condition.
         In addition, creatures that have eaten garlic recently are treated as not having blood for the purpose of a vampire's abilities, so their blood cannot be drained.
-      \\itemhead{Holy Water} A vampire that touches holy water takes 20 damage and becomes \\stunned as a condition if it is not already stunned.
+      \\itemhead{Holy Water} A vampire that touches holy water takes 20 damage and becomes \\dazed as a condition if it is not already dazed.
       \\itemhead{Running Water} A vampire that touches or passes over running water takes 10 damage and \\briefly becomes \\helpless.
         This applies as long as the vampire is within 100 feet of the running water, even the water is underground or under a bridge.
         It can use the \\ability{struggle} ability to move despite being helpless, but only towards the closest shore.

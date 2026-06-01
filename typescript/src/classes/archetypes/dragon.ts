@@ -4,6 +4,22 @@ import { RankAbility } from '../types';
 export function dragon(): RankAbility[] {
   return [
     {
+      complexity: 1,
+      name: 'Dragonic Wealth',
+      isMagical: true,
+      rank: 1,
+      description: `
+        You draw power from mineral-based wealth items with intrinsic mundane value, such as gold, gems, and jewels.
+        Those items are called draconic wealth items.
+        Your draconic wealth rank is equal to the highest item rank of a draconic wealth item in your possession.
+        Some of your abilities are improved by your draconic wealth rank, such as your \ability{dragon breath}.
+
+        The draconic wealth item must be carried on your body, including containers on your body.
+        As normal when calculating wealth items, five items of one rank can be collectively considered to be a single item one rank higher.
+        For example, if you have five rank 2 rubies, your draconic wealth rank would be 3.
+      `,
+    },
+    {
       complexity: 2,
       name: 'Dragon Breath',
       isMagical: false,
@@ -19,6 +35,7 @@ export function dragon(): RankAbility[] {
           \\miss Half damage.
 
           \\rankline
+          You use the higher of your draconic wealth rank and your rank in this archetype to determine your rank with this ability. 
           \\rank{2} The damage increases to \\damagerankthree.
           \\rank{3} The area increases.
           A line breath weapon becomes a \\arealarge, 10 ft.\\ wide line.
@@ -29,6 +46,7 @@ export function dragon(): RankAbility[] {
           \\rank{7} The damage increases to \\damagerankseven, and the area increases.
           A line breath weapon becomes a \\areagarg, 15 ft.\\ wide line.
           A cone breath weapon becomes a \\arealarge cone.
+          \\rank{8} The damage increases to \\damagerankeight.
         \\end{activeability}
       `,
     },
@@ -43,14 +61,39 @@ export function dragon(): RankAbility[] {
       `,
     },
     {
-      complexity: 0,
+      complexity: 2,
+      name: 'Consume Wealth',
+      isMagical: true,
+      rank: 3,
+      description: `
+        \\begin{activeability}{Consume Wealth}{Standard action}
+          \\abilitycost One \\glossterm{fatigue level}, and you \\briefly can't use this ability again.
+          \\rankline
+          You consume a mineral-based wealth item that is at least one size category smaller than you.
+          For the next ten minutes, your minimum draconic wealth rank is equal to the rank of the consumed item plus two.
+          In addition, you \\briefly regain hit points based on the item's rank at the end of your turn:
+          \\begin{itemize}
+            \\item Rank 0: \\hpranktwolow. 
+            \\item Rank 1: \\hprankthreelow. 
+            \\item Rank 2: \\hprankfourlow. 
+            \\item Rank 3: \\hprankfivelow. 
+            \\item Rank 3: \\hpranksixlow. 
+            \\item Rank 4: \\hpranksevenlow. 
+            \\item Rank 6: \\hprankeightlow. 
+            \\item Rank 7: \\hprankninelow. 
+            \\item Rank 8: \\hpranktenlow. 
+          \\end{itemize}
+      `,
+    },
+    {
+      complexity: 1,
       name: 'Draconic Bulk',
       isMagical: false,
       rank: 3,
       description: `
         Your size category increases to Medium.
         This increases your \\glossterm{base speed} to 30 feet.
-        You reduce your Dexterity by 1 and increase your Strength by 2.
+        You reduce your Dexterity by 1 and increase your Strength and Constitution by 1.
         In addition, you gain a \\plus1 bonus to your Armor defense.
       `,
     },
@@ -82,7 +125,7 @@ export function dragon(): RankAbility[] {
       description: `
         Your size category increases to Large.
         This increases your \\glossterm{base speed} to 40 feet.
-        Your attribute modifiers to Dexterity and Strength increase to \\minus2 and \\plus3 respectively, and you gain a \\plus1 bonus to your Constitution.
+        Your Dexterity penalty increases to \\minus2, and your bonus to Strength and Constitution increases to \\plus2.
         You also gain a tail slam \\glossterm{natural weapon}.
         It deals 1d8 damage and has the \\abilitytag{Impact} weapon tag (see \\pcref{Weapon Tags}).
       `,
@@ -102,11 +145,13 @@ export function dragon(): RankAbility[] {
       isMagical: true,
       rank: 7,
       description: `
-        You draw power from your accumulated wealth.
+        Your \ability{draconic wealth} ability draws power from a hoard you maintain, not merely items you carry with you.
         Your hoard must be owned exclusively by you, and you must know its location at all times.
-        Only wealth items that consist of gold, gems, and similar objects of intrinsic mundane value contribute to your hoard's effects, though you may have other items in your hoard.
-        For each rank 7 wealth item in your hoard, you gain a \\plus1 \\glossterm{enhancement bonus} to your Constitution, to a maximum of \\plus5.
-        Fr each rank 8 wealth item in your hoard, you gain an additional \\glossterm{attunement point}, to a maximum of 3.
+        Only draconic wealth items contribute to your hoard's effects, though you may have other items in your hoard.
+        If a draconic wealth item disappears from your hoard, you know immediately.
+
+        For each rank 7 draconic wealth item in your hoard, you gain a \\plus1 \\glossterm{enhancement bonus} to your Constitution, to a maximum of \\plus5.
+        For each rank 8 draconic wealth item in your hoard, you gain an additional \\glossterm{attunement point}, to a maximum of 3.
       `,
     },
   ];

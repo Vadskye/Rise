@@ -1590,6 +1590,7 @@ function handleDebuffs() {
       boolean: [
         'blinded',
         'confused',
+        'dazed',
         'dazzled',
         'frightened',
         'goaded',
@@ -1601,7 +1602,6 @@ function handleDebuffs() {
         'prone',
         'slowed',
         'squeezing',
-        'stunned',
         'unaware',
         'unsteady',
       ],
@@ -1691,8 +1691,8 @@ function handleDebuffs() {
 
       if (v.confused) {
         minus2('confused', 'all_defenses');
-      } else if (v.stunned) {
-        minus2('stunned', 'all_defenses');
+      } else if (v.dazed) {
+        minus2('dazed', 'all_defenses');
       }
 
       // The semicolon is replaced in handleAttackHeaders()
@@ -2098,7 +2098,7 @@ export type MonsterAttackTargeting = MonsterAttackTargeted | MonsterAttackArea;
 export type MonsterAttackDebuff =
   | 'dazzled'
   | 'frightened'
-  | 'stunned'
+  | 'dazed'
   | 'confused'
   | 'immobilized'
   | 'goaded'
@@ -2303,7 +2303,7 @@ function createMonsterDebuff({
     frightened: 3,
     goaded: 5,
     slowed: 5,
-    stunned: 5,
+    dazed: 5,
     blinded: 9,
     confused: 9,
     panicked: 9,

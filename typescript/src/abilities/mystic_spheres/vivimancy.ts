@@ -810,12 +810,12 @@ export const vivimancy: MysticSphere = {
       type: 'Attune (deep)',
     },
 
-    // Brief stun is r1. Add +1 area, so we get area rank 3 and spell rank 2.
+    // Brief daze is r1. Add +1 area, so we get area rank 3 and spell rank 2.
     {
       name: 'Putrefying Blast',
 
       attack: {
-        hit: `The target is \\briefly \\stunned.`,
+        hit: `The target is \\briefly \\dazed.`,
         targeting: `
           Make an attack vs. Fortitude against all \\glossterm{enemies} within a \\medarea cone from you.
         `,
@@ -825,16 +825,16 @@ export const vivimancy: MysticSphere = {
       scaling: 'accuracy',
     },
 
-    // Condition stun is r9. -1 rank for limited scope, -1 rank for self-stun.
+    // Condition daze is r9. -1 rank for limited scope, -1 rank for self-daze.
     {
       name: 'Greater Putrefying Blast',
 
       attack: {
         crit: CONDITION_CRIT,
-        hit: `The target is \\stunned as a \\glossterm{condition}.`,
+        hit: `The target is \\dazed as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Fortitude against all \\glossterm{enemies} within a \\largearea cone from you.
-          Then, you are \\briefly \\stunned.
+          Then, you are \\briefly \\dazed.
         `,
       },
       rank: 7,
@@ -898,11 +898,11 @@ export const vivimancy: MysticSphere = {
     {
       name: 'Intense Siphon Protection',
 
-      // Brief stun is 1.4 EA, so r1. Braced requires 4 ranks. Drop by a rank since the
+      // Brief daze is 1.4 EA, so r1. Braced requires 4 ranks. Drop by a rank since the
       // brace is conditional.
       attack: {
         hit: `
-          The target is \\briefly \\stunned.
+          The target is \\briefly \\dazed.
           Then, you are \\briefly \\braced.
         `,
         targeting: `

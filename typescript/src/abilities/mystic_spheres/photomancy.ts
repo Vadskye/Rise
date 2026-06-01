@@ -58,11 +58,11 @@ export const photomancy: MysticSphere = {
     {
       name: 'Prismatic Spray',
 
-      // dazzled is 0.6, stunned is 1.4, so 2.0 total. Double defense means r3.
+      // dazzled is 0.6, dazed is 1.4, so 2.0 total. Double defense means r3.
       // The area is rank 2, which is a little awkward.
       attack: {
         hit: `
-          The target is \\briefly \\dazzled and \\stunned.
+          The target is \\briefly \\dazzled and \\dazed.
         `,
         targeting: `
           Make an attack vs. Reflex and Mental against each \\glossterm{enemy} within a \\medarea cone from you.
@@ -341,11 +341,11 @@ export const photomancy: MysticSphere = {
     {
       name: 'Kaleidoscopic Pattern',
 
-      // Brief stun is 1.4 EA, or 2.4 EA as a sustain (minor). That's r6, though we only
+      // Brief daze is 1.4 EA, or 2.4 EA as a sustain (minor). That's r6, though we only
       // use a r5 area, and we drop by 1 rank for the delay.
       attack: {
         hit: `
-          The target is \\briefly \\stunned.
+          The target is \\briefly \\dazed.
         `,
         targeting: `
           You create a \\medarea radius \\glossterm{zone} of multicolored patterns within \\shortrange.

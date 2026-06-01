@@ -115,7 +115,7 @@ export function battlerager(): RankAbility[] {
             \\item You are \\enraged.
           \\end{raggeditemize}
 
-          When this ability ends, you are \\glossterm{briefly} \\stunned.
+          When this ability ends, you are \\glossterm{briefly} \\dazed.
         \\end{sustainability}
       `,
     },

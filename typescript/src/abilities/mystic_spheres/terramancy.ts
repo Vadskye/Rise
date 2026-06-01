@@ -319,7 +319,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         If you fully exit the stone, this ability is \\glossterm{dismissed}.
 
         If this spell ends before you exit the stone, or if the stone stops being a valid target for the spell (such as if it is broken into pieces), you are forcibly expelled from the stone.
-        When you are forcibly expelled from the stone, you take 4d8 bludgeoning damage and become \\stunned as a \\glossterm{condition}.
+        When you are forcibly expelled from the stone, you take 4d8 bludgeoning damage and become \\dazed as a \\glossterm{condition}.
       `,
       rank: 3,
       roles: ['narrative'],

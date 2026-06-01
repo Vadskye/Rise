@@ -421,11 +421,11 @@ export const astromancy: MysticSphere = {
     {
       name: 'Empowered Astral Jaunt',
 
-      // Briefly stunned is r1, so r5 with damage, or r7 with damage + hp condition
+      // Briefly dazed is r1, so r5 with damage, or r7 with damage + hp condition
       attack: {
         hit: `
           The target \\sphereterm{flickers} to a nearby safe location in the Astral Expanse.
-          When it returns, it takes \\damageranksix, and it is \\briefly \\stunned.
+          When it returns, it takes \\damageranksix, and it is \\briefly \\dazed.
         `,
         targeting: `
           Make an attack vs. Mental against something within \\medrange.

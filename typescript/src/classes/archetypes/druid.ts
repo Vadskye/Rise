@@ -420,8 +420,8 @@ export function shifter(): RankAbility[] {
           You do not need to use \\glossterm{free hands} to climb (see \\pcref{Climb}).
           In addition, you gain a bite \\glossterm{natural weapon} (see \\tref{Natural Weapons}).
           When a creature takes damage from your bite \\glossterm{natural weapon}, it is \\glossterm{poisoned} (see \\pcref{Poison}).
-          Its stage 1 effect makes the target \\glossterm{briefly} \\stunned.
-          Its stage 3 effect makes the target stunned while the poison lasts.
+          Its stage 1 effect makes the target \\glossterm{briefly} \\dazed.
+          Its stage 3 effect makes the target dazed while the poison lasts.
 
           \\rankline
           \\rank{4} You gain a \\plus1 accuracy bonus with all poisons.

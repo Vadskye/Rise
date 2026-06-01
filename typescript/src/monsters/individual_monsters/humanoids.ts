@@ -169,7 +169,7 @@ function addBandits(grimoire: Grimoire) {
           });
           creature.addSpell('Arc');
           creature.addSpell('Electrocute');
-          creature.addSpell('Stunning Discharge');
+          creature.addSpell('Dazing Discharge');
         },
       ],
     ],
@@ -730,7 +730,7 @@ function addKobolds(grimoire: Grimoire) {
             shield: 'buckler',
           });
           creature.addWeaponMult('spear');
-          creature.addManeuver('Stunning Shout');
+          creature.addManeuver('Dazing Shout');
           creature.addManeuver('Battle Command');
         },
       ],
@@ -793,7 +793,7 @@ function addKobolds(grimoire: Grimoire) {
           creature.addResistant('Varies');
           creature.addWeaponMult('spear');
           creature.addManeuver('Directing Shout');
-          creature.addManeuver('Stunning Shout+');
+          creature.addManeuver('Dazing Shout+');
         },
       ],
     ],

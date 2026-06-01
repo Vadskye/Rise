@@ -362,12 +362,12 @@ export function preacher(): RankAbility[] {
           \\rankline
           Make an attack vs. Mental against all \\glossterm{enemies} within a \\medarea radius from you.
           For each target, if this is your first time using this ability against that target since you finished a \\glossterm{short rest}, your \\glossterm{accuracy} is equal to your Persuasion skill.
-          \\hit The target is \\glossterm{briefly} \\stunned.
+          \\hit The target is \\glossterm{briefly} \\dazed.
 
           \\rankline
-          \\rank{3} Each \\glossterm{injured} target is stunned as a \\glossterm{condition} instead of only briefly.
+          \\rank{3} Each \\glossterm{injured} target is dazed as a \\glossterm{condition} instead of only briefly.
           \\rank{5} You always use your Persuasion skill to determine your accuracy with this attack.
-          \\rank{7} Each target is stunned as a condition regardless of whether it is injured.
+          \\rank{7} Each target is dazed as a condition regardless of whether it is injured.
         \\end{activeability}
       `,
     },
@@ -378,7 +378,7 @@ export function preacher(): RankAbility[] {
       rank: 2,
       description: `
         You gain a \\plus2 bonus to the Persuasion skill.
-        In addition, you are immune to being \\stunned.
+        In addition, you are immune to being \\dazed.
       `,
     },
     {
@@ -398,7 +398,7 @@ export function preacher(): RankAbility[] {
       isMagical: false,
       rank: 4,
       description: `
-        Your \\glossterm{allies} who can hear you in a fight are immune to being \\stunned.
+        Your \\glossterm{allies} who can hear you in a fight are immune to being \\dazed.
         You must say inspiring words every few turns to grant your allies this effect, though they can be brief, so this does not take an action.
       `,
     },

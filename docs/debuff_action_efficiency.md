@@ -11,6 +11,7 @@ By EA:
   Banishment         & 2.0          & 3.0   & 3.6              & 9         \\
   Blinded            & 2.2          & 3.4   & 3.6              & 9.0       \\
   Confused           & 1.8          & 2.8   & 3.2              & 7.9       \\
+  Dazed              & 0.9          & 1.4   & 1.2              & 3.0       \\
   Dazzled            & 0.4          & 0.6   & 0.8              & 2.1       \\
   Deafened           & 0.2          & 0.3   & 0.6              & 1.4       \\
   Fling 15' (ranged) & 1.0          & N/A   & N/A              & N/A       \\
@@ -35,7 +36,6 @@ By EA:
   Single defense     & 0.7          & 1.0   & 0.8              & 2.0       \\
   Slowed (ranged)    & 1.3          & 2.0   & 2.1              & 5.2       \\
   Slowed (melee)     & 1.0          & 1.5   & 1.5              & 3.7       \\
-  Stunned            & 0.9          & 1.4   & 1.2              & 3.0       \\
   Submerged          & 1.6          & 2.5   & 2.6              & 6.6       \\
   Time skip          & 2.3          & 3.5   & 4.8              & 12        \\
   Treat as invis:    & 0.8          & 1.2   & 1.8              & 4.5       \\
@@ -51,6 +51,7 @@ By rank:
   Banishment         & 4            & 9     & inf              & inf       \\
   Blinded            & 5            & 11    & inf              & inf       \\
   Confused           & 3            & 8     & 9                & inf       \\
+  Dazed              & 4d           & 1     & 0                & 9         \\
   Dazzled            & 1d           & 2d    & 3d               & 3         \\
   Deafened           & 0d           & 1d    & 2d               & 0         \\
   Fling 15' (ranged) & 4d           & N/A   & N/A              & N/A       \\
@@ -75,7 +76,6 @@ By rank:
   Single defense     & 3d           & 4d    & 3d               & 4         \\
   Slowed (ranged)    & 1            & 4     & 5                & inf       \\
   Slowed (melee)     & 4d           & 2     & 2                & inf       \\
-  Stunned            & 4d           & 1     & 0                & 9         \\
   Submerged          & 2            & 7     & 7                & inf       \\
   Time skip          & 6            & inf   & inf              & inf       \\
   Treat as invis:    & 3d           & 2     & inf              & inf       \\
@@ -108,7 +108,7 @@ These are EA modifiers, as opposed to rank modifiers that apply after calculatin
 * x0.4 EA: Condition becomes a HP-only condition
 * +0.2 EA: Condition becomes a Sustain (minor)
 * +0.4 EA: Can prefire an HP condition (instead of only applying the condition if the target is already in HP, the condition automatically has its full effect as soon as the target is in HP)
-* +0.4 EA: You can combine a brief effect with an HP condition effect, starting from the higher EA of the two. For example, "briefly stunned, or stunned as a condition if injured" is a 2.0 EA effect.
+* +0.4 EA: You can combine a brief effect with an HP condition effect, starting from the higher EA of the two. For example, "briefly dazed, or dazed as a condition if injured" is a 2.0 EA effect.
 * +0.4 EA: Condition becomes a curse
 * +0.2 EA: Condition becomes a poison
 * +1 EA: The effect becomes a Sustain (minor) zone that repeats its attack each round. This also comes with -2dr, and the area must be a ranged radius (not a radius from self).
@@ -145,25 +145,25 @@ Consider the case with a 10% chance to hit.
 Without the debuff, expected hits is 4 * 0.1 = 0.4.
 With the debuff, expected hits is 4 * 0.3 = 1.2.
 
-#### Stun with typical defenses
+#### Daze with typical defenses
 
 As a baseline, assume that all four party members have a 70% chance to hit. Expected hits with 8 regular attacks is 5.6.
 
-If you use your first action for a stun, you have a 70% chance to apply the effect, which would result in 7 attacks at a 90% chance to hit, or 6.3 hits. You also have a 30% chance to miss, which results in 7 attacks at a 70% chance to hit, or 4.9 hits. That means the expected hit count when using the stun is 6.3 * .7 + 4.9 * .3 = 4.4 + 1.5 = 5.9.
+If you use your first action for a daze, you have a 70% chance to apply the effect, which would result in 7 attacks at a 90% chance to hit, or 6.3 hits. You also have a 30% chance to miss, which results in 7 attacks at a 70% chance to hit, or 4.9 hits. That means the expected hit count when using the daze is 6.3 * .7 + 4.9 * .3 = 4.4 + 1.5 = 5.9.
 
-The difference between you doing nothing and using the stun was therefore 5.9 - 4.9 = 1. In this scenario, stun was worth 1 full effective hit when a regular attack would only be worth 0.7 effective hits, so stun is worth 1.4 effective actions.
+The difference between you doing nothing and using the daze was therefore 5.9 - 4.9 = 1. In this scenario, daze was worth 1 full effective hit when a regular attack would only be worth 0.7 effective hits, so daze is worth 1.4 effective actions.
 
-#### Stun with high defenses
+#### Daze with high defenses
 
 Now assume that all four party members have a 10% chance to hit. Expected hits with 8 regular attacks is 0.8.
 
-If you use your first action for a stun, you have a 10% chance to apply the effect, which would result in 7 attacks at a 30% chance to hit, or 2.1 hits. You also have a 90% chance to miss, which results in 7 attacks at a 10% chance to hit, or 0.7 hits. That means that the effective hit count when using the stun is 2.1 * .1 + .7 * .9 = .21 + .63 = .84.
+If you use your first action for a daze, you have a 10% chance to apply the effect, which would result in 7 attacks at a 30% chance to hit, or 2.1 hits. You also have a 90% chance to miss, which results in 7 attacks at a 10% chance to hit, or 0.7 hits. That means that the effective hit count when using the daze is 2.1 * .1 + .7 * .9 = .21 + .63 = .84.
 
-The difference between you doing nothing and using the stun was therefore .84 - .7 = .14. In this scenario, stun was worth .14 full hits when a regular attack would only be worth .1 hits, so stun is worth 1.4 effective actions.
+The difference between you doing nothing and using the daze was therefore .84 - .7 = .14. In this scenario, daze was worth .14 full hits when a regular attack would only be worth .1 hits, so daze is worth 1.4 effective actions.
 
 #### Conclusion
 
-Stun is worth 0.2 action effectiveness per attack it affects, for a total of 1.4 action effectiveness.
+Daze is worth 0.2 action effectiveness per attack it affects, for a total of 1.4 action effectiveness.
 
 ### Accuracy Penalties
 
@@ -270,17 +270,21 @@ As with all full action denial effects, this always comes with a "once per creat
 
 Removing 50% of actions for a round is worth 50% of 4 = 2 effective actions. It doesn't affect AOE attacks, but it can also prevent normal targeting with even the 50% miss chance, so assume those cancel out.
 
-In addition, a blinded creature is partially unaware of attacks. Using the same calculations as stunned, that's worth 1.4 effective action.
+In addition, a blinded creature is partially unaware of attacks. Using the same calculations as dazed, that's worth 1.4 effective action.
 
 ### Confused: 2.8
 
-As a baseline, confused has the effect of stunned, which is worth 1.4 effective actions.
+As a baseline, confused has the effect of dazed, which is worth 1.4 effective actions.
 The random behavior of confusion is trickier to calculate.
 Assume that a typical monster would normally have a 90% chance of attacking and a 10% chance of using a non-attack ability.
 If it's forced to use an alternate ability, using a non-attack when it would rather attack is 25% as effective, while using an attack when it would rather not attack is 75% as effective.
 Total monster effectiveness is 0.9 * (0.5 * 1 + 0.5 * 0.25) + 0.1 * (0.5 * 1 + 0.5 * 0.75) = 0.9 * 0.625 + 0.1 + 0.875 = 0.65.
 
 Removing 0.35 monster actions is worth 1.4 effective actions.
+
+### Dazed: 1.4
+
+If you daze an enemy as the first action of the round, the party has 7 attacks that can take advantage of the daze debuff: your three party members during the first round, and the full party during the second round.
 
 ### Dazzled: 0.6
 
@@ -298,7 +302,7 @@ Frightened is a more complicated and conditional effect than most debuffs. It ha
 
 Assuming that the enemy attacks all party members equally, the frightened accuracy penalty applies 33% of the time, and it removes 33% of enemy actions when it applies (see Accuracy Penalties, above). Therefore, it is worth 4 / 3 / 3 = 0.4 effective actions on average, with a maximum effectiveness of 1.3 assuming that the enemy always attacks the source of their fear. This is the same as the buff value of self-brace.
 
-The Mental defense penalty can apply to 7 party attacks (see Stunned). However, most party members can't take full advantage of a single-defense penalty like that, and even if they can attack Mental it may still be a relatively high defense for the monster. As a wild estimate, assume that half of the party's attacks can benefit from the defense penalty, and that this is still only relevant for half of monsters. When the penalty is relevant, it provides 0.2 effective actions per attack. That would be worth 7 * 0.5 * 0.5 * 0.2 = 0.35 effective actions on average, to a maximum of 1.4 effective actions assuming that every party member always attacks Mental defense.
+The Mental defense penalty can apply to 7 party attacks (see Dazed). However, most party members can't take full advantage of a single-defense penalty like that, and even if they can attack Mental it may still be a relatively high defense for the monster. As a wild estimate, assume that half of the party's attacks can benefit from the defense penalty, and that this is still only relevant for half of monsters. When the penalty is relevant, it provides 0.2 effective actions per attack. That would be worth 7 * 0.5 * 0.5 * 0.2 = 0.35 effective actions on average, to a maximum of 1.4 effective actions assuming that every party member always attacks Mental defense.
 
 That adds up to 0.75 effective actions for frighten.
 
@@ -342,7 +346,7 @@ Being panicked by everyone is basically complete attack denial, which shouldn't 
 
 ### Prone: 1.6 (ranged) / 1 (melee)
 
-A prone creature typically has a defense penalty against three attacks rather than the usual 7 from stun. Assume that 2 of the 3 attacks can take advantage of the defense penalty, giving it 0.4 action effectiveness from the defense penalty.
+A prone creature typically has a defense penalty against three attacks rather than the usual 7 from daze. Assume that 2 of the 3 attacks can take advantage of the defense penalty, giving it 0.4 action effectiveness from the defense penalty.
 
 The movement penalty is about the same as a brief slow, but slightly more effective, so call that 1.2 effective actions.
 
@@ -382,17 +386,13 @@ Slowed has two effects: the speed debuff and the defense debuff.
 
 The speed debuff is hard to calculate. It enables kiting, which can theoretically end some encounters, but that's a fairly rare circumstance. As a guess, assume that this forces the monster to use 50% of its actions to mitigate the speed debuff and that its replacement action is 50% as effective. For example, it may run instead of making a stronger attack, and it may attack a frontline tank party member instead of being able to reach the backline. That gives it 4 * 0.5 * 0.5 = 1 effective action.
 
-The defense debuff is mostly the same as stunned, except that not all party members will be able to take advantage of it. Armor + Reflex is still fairly common, so assume that 5 of the 7 attacks will benefit from the defense debuff, for a total of 1 action effectiveness.
+The defense debuff is mostly the same as dazed, except that not all party members will be able to take advantage of it. Armor + Reflex is still fairly common, so assume that 5 of the 7 attacks will benefit from the defense debuff, for a total of 1 action effectiveness.
 
 If a prone or slow is applied by a melee ability, halve the EA contribution from the movement penalty, since that generally means it's not being used for full kiting.
 
 ### Submerged: 2.5
 
 1.3 from Braced (all) 1.2 from Armor/Ref defense penalty = 2.5.
-
-### Stunned: 1.4
-
-If you stun an enemy as the first action of the round, the party has 7 attacks that can take advantage of the stun debuff: your three party members during the first round, and the full party during the second round.
 
 ### Teleport 15': 1.1 (ranged) / 0.6 (melee)
 
@@ -416,7 +416,7 @@ The miss chance applies to roughly 25% of boss attacks. Since blindness is worse
 
 ### Vulnerable: 3.5
 
-Following the logic of being stunned, being vulnerable to all damage would be worth 2.8 action effectiveness. Add 25% effectiveness because it negates resistant/immune, so 3.5 EA.
+Following the logic of being dazed, being vulnerable to all damage would be worth 2.8 action effectiveness. Add 25% effectiveness because it negates resistant/immune, so 3.5 EA.
 
 ## Debuff Condition Action Effectiveness
 Assume that a normal group combat lasts for 16 player effective actions, and a typical boss fight lasts for 20 player effective actions. If you apply a condition to a boss on round 1, it will have the opportunity to remove that condition during rounds 2, 3, and 4. On average, the condition lasts for 2 + 0.6 + (0.6)^2 + (0.6)^3 = 3.18 rounds.
@@ -448,10 +448,14 @@ Say that this is 75% of the effectiveness of a full action skip.
 ### Blinded: 10
 Removing 50% of enemy actions is worth 14 * 0.5 = 7 effective actions.
 
-Partially unaware is worth 3 effective actions using the same logic as being stunned.
+Partially unaware is worth 3 effective actions using the same logic as being dazed.
 
 ### Confused: 7.9
-35% action denial is worth 4.9 EA. The defense debuff is worth 3 effective actions, just like stunned.
+35% action denial is worth 4.9 EA. The defense debuff is worth 3 effective actions, just like dazed.
+
+### Dazed: 3
+
+15 affected player actions * 0.2 action effectiveness per action = 3 effective actions.
 
 ### Dazzled: 2.1
 75% of 20% action denial is worth 1.8 EA.
@@ -497,10 +501,6 @@ Choosing a single defense probably affects 10 of the 15 available player actions
 We calculated the action denial from the speed debuff as 25% action denial, which is 3.5 effective actions. In melee, that would be 1.75 effective actions.
 For the defense debuff, assume that 11 of the 15 party actions will take advantage of it, so it's worth 2.2 effective actions.
 
-### Stunned: 3
-
-15 affected player actions * 0.2 action effectiveness per action = 3 effective actions.
-
 ### Submerged: 6.6
 
 4 EA from accuracy penalty plus 2.6 EA from Armor/Reflex penalty = 6.6 EA
@@ -514,7 +514,7 @@ The defense penalty applies to 3 party attacks, so it provides 0.6 action effect
 The blindness is 14 * 0.25 * 0.75 = 2.6 effective actions. The brief effect gets a 25% boost here, but a condition is easier to game by having only the invisible person stick around to fight, so give it a 50% boost to 3.9.
 
 ### Vulnerable: 7.5
-Double stunned, plus 25% effectiveness for negating resistant/immune.
+Double dazed, plus 25% effectiveness for negating resistant/immune.
 
 ## Injury Condition Effectiveness
 
@@ -561,10 +561,10 @@ Essentially, -4 accuracy at rank X is equivalent to a standard effect of rank X+
 ## Standard effects by rank
 
 * Rank 1 (1.4 EA):
-  * Briefly stunned
+  * Briefly dazed
   * Goaded if in HP, +1 accuracy
   * Prone, +2 accuracy
-  * Stunned as a HP condition, +2 accuracy
+  * Dazed as a HP condition, +2 accuracy
   * 1 EA of damage, briefly deafened
   * Briefly confused, -3 accuracy
 * Rank 2 (1.6 EA):
@@ -583,11 +583,11 @@ Essentially, -4 accuracy at rank X is equivalent to a standard effect of rank X+
   * Banished
   * Frightened as a condition
   * 1 EA of damage, briefly prone
-  * 1 EA of damage, stunned as a HP condition
+  * 1 EA of damage, dazed as a HP condition
 * Rank 5 (2.2 EA):
   * 1 EA of damage, briefly treat as invisible
 * Rank 6 (2.4 EA):
-  * 1 EA of damage, briefly stunned
+  * 1 EA of damage, briefly dazed
   * Briefly panicked
   * Dazzled as a condition
   * Goaded as a condition
@@ -605,7 +605,7 @@ Essentially, -4 accuracy at rank X is equivalent to a standard effect of rank X+
   * 1 EA of damage, frightened as a HP condition
   * Briefly blinded
   * Confused as a HP condition
-  * Stunned as a condition
+  * Dazed as a condition
 * Rank 10 (3.2 EA):
 * Rank 11 (3.4 EA):
   * 1 EA of damage, dazzled as a condition

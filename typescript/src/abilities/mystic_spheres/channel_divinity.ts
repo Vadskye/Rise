@@ -441,13 +441,13 @@ export const channelDivinity: MysticSphere = {
       scaling: 'damage',
     },
 
-    // Brief stun is 1.4 EA, so 2.1 EA with empower.
+    // Brief daze is 1.4 EA, so 2.1 EA with empower.
     {
       name: 'Greater Word of Power',
 
       attack: {
         hit: `
-          The target is \\briefly \\stunned.
+          The target is \\briefly \\dazed.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
@@ -580,13 +580,13 @@ export const channelDivinity: MysticSphere = {
     {
       name: 'Touch of God',
 
-      // Stunned as a condition is 3 EA, or 4 EA with damage, so 2 EA as a double action.
+      // Dazed as a condition is 3 EA, or 4 EA with damage, so 2 EA as a double action.
       // Expected damage for two debuff + damage spells would be 2x dr4. dr6 seems like a
       // reasonable approximation.
       attack: {
         hit: `
           \\damageranksix, and any \\glossterm{extra damage} is doubled.
-          In addition, the target is \\stunned as a \\glossterm{condition}.
+          In addition, the target is \\dazed as a \\glossterm{condition}.
         `,
         targeting: `
           When you cast this spell, you begin visibly glowing with divine power.
@@ -608,7 +608,7 @@ export const channelDivinity: MysticSphere = {
       attack: {
         hit: `
           \\damagerankten, and any \\glossterm{extra damage} is tripled.
-          In addition, the target is \\stunned as a \\glossterm{condition}.
+          In addition, the target is \\dazed as a \\glossterm{condition}.
         `,
         targeting: `
           When you cast this spell, you begin visibly glowing with divine power.
