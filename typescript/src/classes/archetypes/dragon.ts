@@ -66,7 +66,7 @@ export function dragon(): RankAbility[] {
       isMagical: true,
       rank: 3,
       description: `
-        \\begin{activeability}{Consume Wealth}{Standard action}
+        \\begin{magicalactiveability}{Consume Wealth}{Standard action}
           \\abilitycost One \\glossterm{fatigue level}, and you \\briefly can't use this ability again.
           \\rankline
           You consume a mineral-based wealth item that is at least one size category smaller than you.
@@ -83,6 +83,7 @@ export function dragon(): RankAbility[] {
             \\item Rank 7: \\hprankninelow. 
             \\item Rank 8: \\hpranktenlow. 
           \\end{itemize}
+        \\end{magicalactiveability}
       `,
     },
     {
