@@ -212,9 +212,11 @@ tap.test('parseAttackEffect', (t) => {
     const ability = creature.getActiveAbility('Steady Slam')!;
     const parsed = parseAttackEffect(ability, creature);
     t.ok(parsed, 'should parse Steady Slam');
-    t.same(parsed?.debuffsToApply, [
-      { type: 'dazed', duration: 'fixed', durationRemaining: 2, requirement: 'injured' },
-    ], 'should parse briefly dazed with injury requirement');
+    t.same(
+      parsed?.debuffsToApply,
+      [{ type: 'dazed', duration: 'fixed', durationRemaining: 2, requirement: 'injured' }],
+      'should parse briefly dazed with injury requirement',
+    );
     t.end();
   });
 
@@ -223,9 +225,11 @@ tap.test('parseAttackEffect', (t) => {
     const ability = creature.getActiveAbility('Concussion')!;
     const parsed = parseAttackEffect(ability, creature);
     t.ok(parsed, 'should parse Concussion');
-    t.same(parsed?.debuffsToApply, [
-      { type: 'dazed', duration: 'condition', requirement: 'injured' },
-    ], 'should parse dazed as condition with injury requirement');
+    t.same(
+      parsed?.debuffsToApply,
+      [{ type: 'dazed', duration: 'condition', requirement: 'injured' }],
+      'should parse dazed as condition with injury requirement',
+    );
     t.end();
   });
 
@@ -234,9 +238,11 @@ tap.test('parseAttackEffect', (t) => {
     const ability = creature.getActiveAbility('Knockdown')!;
     const parsed = parseAttackEffect(ability, creature);
     t.ok(parsed, 'should parse Knockdown');
-    t.same(parsed?.debuffsToApply, [
-      { type: 'prone', duration: 'fixed', durationRemaining: 2, requirement: 'injured' },
-    ], 'should parse prone with default duration and injury requirement');
+    t.same(
+      parsed?.debuffsToApply,
+      [{ type: 'prone', duration: 'fixed', durationRemaining: 2, requirement: 'injured' }],
+      'should parse prone with default duration and injury requirement',
+    );
     t.end();
   });
 
@@ -245,10 +251,14 @@ tap.test('parseAttackEffect', (t) => {
     const ability = creature.getActiveAbility('Mighty Surfing Slam')!;
     const parsed = parseAttackEffect(ability, creature);
     t.ok(parsed, 'should parse Mighty Surfing Slam');
-    t.same(parsed?.debuffsToApply, [
-      { type: 'prone', duration: 'fixed', durationRemaining: 2, requirement: 'injured' },
-      { type: 'dazed', duration: 'fixed', durationRemaining: 2, requirement: 'injured' },
-    ], 'should parse prone and briefly dazed with injury requirement');
+    t.same(
+      parsed?.debuffsToApply,
+      [
+        { type: 'prone', duration: 'fixed', durationRemaining: 2, requirement: 'injured' },
+        { type: 'dazed', duration: 'fixed', durationRemaining: 2, requirement: 'injured' },
+      ],
+      'should parse prone and briefly dazed with injury requirement',
+    );
     t.end();
   });
 

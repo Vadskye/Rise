@@ -7,10 +7,10 @@ import { SimulatorReadyAttack } from '@src/abilities/active_abilities';
 
 t.test('applyDamageAndEffects applies conditional debuffs only when injured', (t) => {
   const target = createCreature('Target');
-  
+
   // Set explicit values to avoid edge cases with defaults
   target.setProperties({ hit_points: 100, injury_point: 50 });
-  
+
   const state: Partial<FightState> = {
     hp: { [target.id]: 100 }, // Start uninjured
     aliveMembersByTeam: {

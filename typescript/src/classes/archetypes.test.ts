@@ -46,4 +46,3 @@ t.test('Archetypes', (t) => {
 
   t.end();
 });
-
