@@ -35,6 +35,8 @@
     "build:test": "npx tsc --incremental -p tsconfig.test.json && npx tsc-alias -p tsconfig.test.json",
     "coverage": "npm run build:test && npx tap dist-test/**/*.test.js --coverage-report=text",
     "explain_monster": "tsx src/scripts/explain_monster.ts",
+    "generate_latex": "tsx src/scripts/generate_latex.ts",
+    "generate_uncommon_species_classes": "tsx src/scripts/generate_uncommon_species_classes.ts",
     "maneuver_ranks": "tsx src/scripts/maneuver_rank_breakdown.ts",
     "maneuver_roles": "tsx src/scripts/maneuver_role_breakdown.ts",
     "spell_ranks": "tsx src/scripts/spell_rank_breakdown.ts",
