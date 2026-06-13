@@ -272,7 +272,7 @@ export function pactMagic(): RankAbility[] {
         In addition, you learn two rank 1 pact \\glossterm{spells}.
         You can also spend \\glossterm{insight points} to learn one additional rank 1 spell per two insight points.
 
-        Pact spells require \\glossterm{verbal components} and \\glossterm{somatic components} to cast (see \\pcref{Ability Usage Components}).
+        Pact spells require \\glossterm{verbal components} to cast (see \\pcref{Ability Usage Components}).
         For details about mystic spheres and casting spells, see \\pcref{Spell and Ritual Mechanics}.
 
         When you gain access to a new \\glossterm{mystic sphere} or spell \\glossterm{rank},
@@ -304,15 +304,6 @@ export function pactMagic(): RankAbility[] {
           \\itemhead{Moirai} Fabrication, Revelation
           \\itemhead{Precursor} Chronomancy, Polymorph
         \\end{raggeditemize}
-      `,
-    },
-    {
-      complexity: 0,
-      name: 'Survival Pact',
-      isMagical: true,
-      rank: 1,
-      description: `
-        You gain a \\plus1 bonus to your \\glossterm{durability}.
       `,
     },
     {
@@ -469,7 +460,8 @@ export function soulforged(): RankAbility[] {
         You gain a \\plus2 accuracy bonus with the repeat for each additional instance of this condition, but the spell still only repeats once.
         After the spell repeats on a creature in this way, it is immune to being tormented by this ability until it finishes a \\glossterm{short rest}.
 
-        \\subcf{Fae -- Hidden Spell} The spell does not have \\glossterm{verbal components} or \\glossterm{somatic components}.
+        \\subcf{Fae -- Hidden Spell} The spell does not have \\glossterm{verbal components}.
+        Unlike most spells, it has no visual or auditory effects unless it has the \\atVisual or \\Auditory tag.
         In addition, if it does not deal damage, it gains the \\atSubtle tag.
 
         \\subcf{Moirai -- Inevitable Spell} Whenever you would make an attack roll, you can instead determine if an attack result of 6 \\add your \\glossterm{accuracy} with the spell would result in a hit.
