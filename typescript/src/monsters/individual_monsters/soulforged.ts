@@ -142,8 +142,8 @@ function addAngels(grimoire: Grimoire) {
             `,
           });
           creature.setTrainedSkills([
+            'analysis',
             'awareness',
-            'deduction',
             'endurance',
             'intimidate',
             'social_insight',

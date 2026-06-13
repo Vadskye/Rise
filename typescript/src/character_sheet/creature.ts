@@ -1244,6 +1244,10 @@ export class Creature implements CreaturePropertyMap {
     return this.getPropertyValue('endurance');
   }
 
+  public get analysis() {
+    return this.getPropertyValue('analysis');
+  }
+
   public get craft_alchemy() {
     return this.getPropertyValue('craft_alchemy');
   }
@@ -1290,10 +1294,6 @@ export class Creature implements CreaturePropertyMap {
 
   public get craft_untrained() {
     return this.getPropertyValue('craft_untrained');
-  }
-
-  public get deduction() {
-    return this.getPropertyValue('deduction');
   }
 
   public get devices() {

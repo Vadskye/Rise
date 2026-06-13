@@ -23,8 +23,8 @@ ATTRIBUTE_SKILLS = {
     ],
     "constitution": ["Endurance"],
     "intelligence": [
+        "Analysis",
         "Craft",
-        "Deduction",
         "Devices",
         "Disguise",
         "Knowledge",

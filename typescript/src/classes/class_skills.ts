@@ -7,11 +7,11 @@ export function getClassSkills(cls: Class): RiseSkill[] {
   switch (cls) {
     case 'Automaton':
       return [
+        'analysis',
         'awareness',
         'balance',
         'climb',
         'craft_untrained',
-        'deduction',
         'devices',
         'disguise',
         'endurance',
@@ -38,10 +38,10 @@ export function getClassSkills(cls: Class): RiseSkill[] {
       ];
     case 'Cleric':
       return [
+        'analysis',
         'awareness',
         'craft_untrained',
         'deception',
-        'deduction',
         'intimidate',
         'knowledge_arcana',
         'knowledge_items',
@@ -54,13 +54,13 @@ export function getClassSkills(cls: Class): RiseSkill[] {
       ];
     case 'Dragon':
       return [
+        'analysis',
         'awareness',
         'balance',
         'climb',
         'craft_untrained',
         'creature_handling',
         'deception',
-        'deduction',
         'endurance',
         'intimidate',
         'knowledge_arcana',
@@ -74,13 +74,13 @@ export function getClassSkills(cls: Class): RiseSkill[] {
       ];
     case 'Druid':
       return [
+        'analysis',
         'awareness',
         'balance',
         'climb',
         'craft_untrained',
         'creature_handling',
         'deception',
-        'deduction',
         'disguise',
         'endurance',
         'intimidate',
@@ -165,13 +165,13 @@ export function getClassSkills(cls: Class): RiseSkill[] {
       ];
     case 'Monk':
       return [
+        'analysis',
         'awareness',
         'balance',
         'climb',
         'craft_untrained',
         'creature_handling',
         'deception',
-        'deduction',
         'endurance',
         'flexibility',
         'intimidate',
@@ -187,12 +187,12 @@ export function getClassSkills(cls: Class): RiseSkill[] {
       ];
     case 'Naiad':
       return [
+        'analysis',
         'awareness',
         'balance',
         'craft_untrained',
         'creature_handling',
         'deception',
-        'deduction',
         'flexibility',
         'intimidate',
         'knowledge_nature',
@@ -221,10 +221,10 @@ export function getClassSkills(cls: Class): RiseSkill[] {
       ];
     case 'Paladin':
       return [
+        'analysis',
         'awareness',
         'craft_untrained',
         'deception',
-        'deduction',
         'endurance',
         'intimidate',
         'knowledge_local',
@@ -236,13 +236,13 @@ export function getClassSkills(cls: Class): RiseSkill[] {
       ];
     case 'Ranger':
       return [
+        'analysis',
         'awareness',
         'balance',
         'climb',
         'craft_untrained',
         'creature_handling',
         'deception',
-        'deduction',
         'endurance',
         'flexibility',
         'intimidate',
@@ -264,12 +264,12 @@ export function getClassSkills(cls: Class): RiseSkill[] {
       ];
     case 'Rogue':
       return [
+        'analysis',
         'awareness',
         'balance',
         'climb',
         'craft_untrained',
         'deception',
-        'deduction',
         'devices',
         'disguise',
         'flexibility',
@@ -289,10 +289,10 @@ export function getClassSkills(cls: Class): RiseSkill[] {
       ];
     case 'Sorcerer':
       return [
+        'analysis',
         'awareness',
         'craft_untrained',
         'deception',
-        'deduction',
         'endurance',
         'intimidate',
         'knowledge_arcana',
@@ -325,12 +325,12 @@ export function getClassSkills(cls: Class): RiseSkill[] {
       ];
     case 'Vampire':
       return [
+        'analysis',
         'awareness',
         'balance',
         'climb',
         'creature_handling',
         'deception',
-        'deduction',
         'disguise',
         'intimidate',
         'jump',
@@ -342,10 +342,10 @@ export function getClassSkills(cls: Class): RiseSkill[] {
       ];
     case 'Votive':
       return [
+        'analysis',
         'awareness',
         'craft_untrained',
         'deception',
-        'deduction',
         'disguise',
         'intimidate',
         'knowledge_arcana',
@@ -358,10 +358,10 @@ export function getClassSkills(cls: Class): RiseSkill[] {
       ];
     case 'Wizard':
       return [
+        'analysis',
         'awareness',
         'craft_untrained',
         'deception',
-        'deduction',
         'devices',
         'intimidate',
         'knowledge_arcana',
