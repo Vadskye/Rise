@@ -219,14 +219,15 @@ function thrownAttacks(): Tool[] {
       description: `
         You can throw this item as a standard action.
         When you do, make an attack vs. Reflex against something within \\shortrange.
-        \\hit $dr5l damage immediately, and again at the end of the target's next turn.
+        \\hit $dr5l damage.
+        The target also \\briefly \\debuff{burns} for $dr5l damage.
       `,
       tags: ['Fire'],
       upgrades: [
         {
           rank: 6,
           short_description: 'Throw to deal $dr7l damage over time',
-          description: `The damage increases to $dr7l.`,
+          description: `The damage of both the initial hit and the burn increases to $dr7l.`,
         },
       ],
     }),
@@ -237,7 +238,8 @@ function thrownAttacks(): Tool[] {
       description: `
         You can throw this item as a standard action.
         When you do, make an attack vs. Reflex and Fortitude against something within \\shortrange.
-        \\hit $dr3l damage immediately, and again at the end of the target's next turn.
+        \\hit $dr3l damage.
+        The target also \\briefly \\debuff{corrodes} for $dr3l damage.
       `,
       tags: ['Acid'],
       upgrades: [
@@ -245,7 +247,7 @@ function thrownAttacks(): Tool[] {
           rank: 3,
           short_description: 'Throw to deal $dr6l damage over time',
           description: `
-            The damage increases to $dr6l.
+            The damage of both the initial hit and the corrosion increases to $dr6l.
           `,
         },
       ],
@@ -258,7 +260,9 @@ function thrownAttacks(): Tool[] {
         You can throw this item as a standard action.
         When you do, make an attack vs. Reflex and Fortitude against everything in a \\tinyarea radius within \\shortrange.
         Your minimum accuracy is $consumableaccuracy.
-        \\hit $dr7l damage immediately, and again at the end of the target's next turn.
+        \\hit $dr7l damage.
+        The target also \\briefly \\debuff{corrodes} for $dr7l damage.
+        \\miss Half damage, and the target does not corrode.
       `,
       tags: ['Acid'],
       upgrades: [
@@ -266,7 +270,7 @@ function thrownAttacks(): Tool[] {
           rank: 7,
           short_description: 'Throw to deal $dr9l damage over time',
           description: `
-            The minimum accuracy increases to $consumableaccuracy, and the damage increases to $dr9l.
+            The minimum accuracy increases to $consumableaccuracy, and the damage of both the initial hit and the corrosion increases to $dr9l.
           `,
         },
       ],
@@ -274,21 +278,21 @@ function thrownAttacks(): Tool[] {
     createAlchemicalItem({
       name: 'Firebomb',
       rank: 1,
-      short_description: 'Throw to deal $dr1l damage in an area',
+      short_description: 'Throw to deal $dr2l damage in an area',
       description: `
         You can throw this item as a standard action.
         When you do, make an attack vs. Reflex against everything in a \\smallarea radius within \\shortrange.
         Your minimum accuracy is $consumableaccuracy.
-        \\hit $dr1l damage.
+        \\hit $dr2l damage.
         \\miss Half damage.
       `,
       tags: ['Fire'],
       upgrades: [
         {
           rank: 3,
-          short_description: 'Throw to deal $dr5l damage in an area',
+          short_description: 'Throw to deal $dr4l damage in an area',
           description: `
-            The minimum accuracy increases to $consumableaccuracy, and the damage increases to $dr5l.
+            The minimum accuracy increases to $consumableaccuracy, and the damage increases to $dr4l.
           `,
         },
       ],
@@ -296,21 +300,22 @@ function thrownAttacks(): Tool[] {
     createAlchemicalItem({
       name: 'Lavabomb',
       rank: 5,
-      short_description: 'Throw to deal $dr7l damage in an area',
+      short_description: 'Throw to deal $dr6l damage in an area',
       description: `
         You can throw this item as a standard action.
-        When you do, make an attack vs. Reflex against everything in a \\medarea radius within \\shortrange.
+        When you do, make an attack vs. Reflex against everything in a \\smallarea radius within \\shortrange.
         Your minimum accuracy is $consumableaccuracy.
-        \\hit $dr7l damage.
-        \\miss Half damage.
+        \\hit $dr6l damage.
+        The target also \\briefly \\debuff{burns} for $dr6l damage.
+        \\miss Half damage, and the target does not burn.
       `,
       tags: ['Fire'],
       upgrades: [
         {
           rank: 7,
-          short_description: 'Throw to deal $dr9l damage in an area',
+          short_description: 'Throw to deal $dr8l damage in an area',
           description: `
-            The minimum accuracy increases to $consumableaccuracy, and the damage increases to $dr9l.
+            The minimum accuracy increases to $consumableaccuracy, and the damage of both the initial hit and the burn increases to $dr8l.
           `,
         },
       ],
@@ -324,6 +329,7 @@ function thrownAttacks(): Tool[] {
         When you do, make an attack vs. Mental against all creatures in a \\smallarea radius within \\shortrange.
         Your minimum accuracy is $consumableaccuracy.
         \\hit $dr3l \\glossterm{subdual damage}.
+        \\injury The target is \\briefly \\dazed.
         \\miss Half damage.
       `,
       tags: ['Compulsion'],
@@ -346,6 +352,7 @@ function thrownAttacks(): Tool[] {
         When you do, make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius within \\shortrange.
         Your minimum accuracy is $consumableaccuracy.
         \\hit $dr8l \\glossterm{subdual damage}.
+        \\injury The target is \\briefly \\confused.
         \\miss Half damage.
       `,
       tags: ['Compulsion'],

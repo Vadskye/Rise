@@ -1,12 +1,20 @@
 import { MysticSphere } from '.';
 import { add_tag_to_sphere } from './add_tag';
-import { BARRIER_COOLDOWN, DELAYED_HALF, MULTIHIT_CRIT } from '../constants';
+import { BARRIER_COOLDOWN, BURNING_HALF } from '../constants';
 
 // TODO: add -accuracy attacks
 export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
   name: 'Pyromancy',
   shortDescription: 'Create fire to incinerate foes.',
   sources: ['arcane', 'domain', 'nature', 'pact'],
+  specialRules: `
+    Many spells from this mystic sphere cause the target to \\debuff{burn}.
+    A burning creature takes damage at the end of each of its turns.
+    It can stop burning if it makes a \\glossterm{difficulty value} 5 Dexterity check as a \\glossterm{standard action}.
+    Dropping \\prone as part of this action gives a +5 bonus to this check.
+    Burning is automatically removed if the target takes damage from a \\atCold or \\atWater ability, or is submerged in a non-flammable liquid like water.
+    If a creature stops burning at the end of its turn, it still takes damage from the burn that turn.
+  `,
 
   cantrips: [
     {
@@ -173,10 +181,9 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       // Baseline for Reflex melee range is dr3, which is 4.5 + 1dpp.
       // Double dr1 is 9 + 1dpp.
       attack: {
-        crit: MULTIHIT_CRIT,
         hit: `
           \\damagerankone.
-          At the end of its next turn, the target takes \\damagerankone again.
+          The target also \\briefly \\debuff{burns} for \\damagerankone.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -195,10 +202,10 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       // Baseline for melee range is dr7, or dr6 for single target reflex.
       // We drop to dr4 for damage over time.
       attack: {
-        crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankfour immediately, and again at the end of the target's next turn.
-          Any \\glossterm{extra damage} applies to both the initial damage and the delayed damage.
+          \\damagerankfour.
+          The target also \\briefly \\debuff{burns} for \\damagerankfour.
+          Any \\glossterm{extra damage} applies to both the initial damage and the burning damage.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -344,9 +351,11 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       name: 'Fan of Flames',
 
       attack: {
-        crit: MULTIHIT_CRIT,
-        hit: `\\damagerankone immediately, and again at the end of the target's next turn.`,
-        miss: DELAYED_HALF,
+        hit: `
+          \\damagerankone.
+          The target also \\briefly \\debuff{burns} for \\damagerankone.
+        `,
+        miss: BURNING_HALF,
         targeting: `
           Make an attack vs. Reflex against everything in a \\smallarea cone from you.
         `,
@@ -364,9 +373,11 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       // Mod: DoT (-2)
       // Result: 5 + 1 - 2 = dr4 (twice)
       attack: {
-        crit: MULTIHIT_CRIT,
-        hit: `\\damagerankfour immediately, and again at the end of the target's next turn.`,
-        miss: DELAYED_HALF,
+        hit: `
+          \\damagerankfour.
+          The target also \\briefly \\debuff{burns} for \\damagerankfour.
+        `,
+        miss: BURNING_HALF,
         targeting: `
           Make an attack vs. Reflex against everything in a \\smallarea cone from you.
         `,
@@ -381,17 +392,12 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       // Rank 2 Spell
       // Range: Short (mod +1)
-      // Mod: Condition (Move removal) (-2)
+      // Mod: Removable (-2)
       // Result: 2 + 1 - 2 = dr1
       attack: {
-        crit: `All damage from the condition is doubled, not just the initial damage.`,
         hit: `
-          The target catches on fire as a \\glossterm{condition}.
-          It takes \\damagerankone immediately and during each of your subsequent actions.
-
-          The condition can be removed if the target makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{move action} to put out the flames.
-          Dropping \\prone as part of this action gives a +5 bonus to this check.
-          This condition is automatically removed if the target takes damage from a \\atCold or \\atWater ability.
+          \\damagerankone.
+          The target also burns for \\damagerankone as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
@@ -420,7 +426,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       functionsLike: {
         name: 'ignition',
         exceptThat:
-          'the damage increases to \\damagerankfive, and the difficulty value of the Dexterity check to put out the flames increases to 15.',
+          'the damage increases to \\damagerankfive, and the difficulty value of the Dexterity check to stop burning increases to 10.',
       },
       rank: 6,
       roles: ['burn'],
@@ -675,13 +681,12 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       // Result: 1 - 1 - 1 + 1 + 1 = dr1
 
       attack: {
-        crit: MULTIHIT_CRIT,
-        miss: DELAYED_HALF,
+        miss: BURNING_HALF,
         hit: `
           \\damagerankone.
         `,
         injury: `
-          The target takes \\damagerankone again at the end of its next turn.
+          The target also \\briefly \\debuff{burns} for \\damagerankone.
         `,
         targeting: `
           Make an attack vs. Fortitude and Reflex against everything in a \\medarea cone.
@@ -696,13 +701,12 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       name: 'Mighty Pyrohemia',
 
       attack: {
-        crit: MULTIHIT_CRIT,
-        miss: DELAYED_HALF,
+        miss: BURNING_HALF,
         hit: `
           \\damagerankfour.
         `,
         injury: `
-          The target takes \\damagerankfour again at the end of its next turn.
+          The target also \\briefly \\debuff{burns} for \\damagerankfour.
         `,
         targeting: `
           Make an attack vs. Fortitude and Reflex against everything in a \\medarea cone.
@@ -719,7 +723,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       functionsLike: {
         name: 'pyrohemia',
         exceptThat:
-          'the damage increases to \\damageranksix, and the area increases to a \\largearea cone.',
+          'the damage of both the initial hit and the burn increases to \\damageranksix, and the area increases to a \\largearea cone.',
       },
       rank: 7,
       roles: ['wildfire'],
@@ -855,16 +859,14 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     },
 
     {
-      name: 'Combustion',
+      name: 'Spontaneous Combustion',
 
-      // There's no way to make power scaling work out for DoT at level 1, so this
-      // has to deal immediate damage.
       attack: {
         hit: `
-          \\damagerankfour.
+          \\damagerankthree.
         `,
         targeting: `
-          Make an attack vs. Fortitude with a -2 accuracy penalty against something adjacent to you.
+          Make an attack vs. Fortitude against something adjacent to you.
         `,
       },
       rank: 1,
@@ -873,14 +875,14 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     },
 
     {
-      name: 'Mighty Combustion',
+      name: 'Mighty Spontaneous Combustion',
 
       attack: {
         hit: `
-          \\damagerankeight, and any \\glossterm{extra damage} is doubled.
+          \\damageranksix, and any \\glossterm{extra damage} is doubled.
         `,
         targeting: `
-          Make an attack vs. Fortitude with a -4 accuracy penalty against something adjacent to you.
+          Make an attack vs. Fortitude against something adjacent to you.
         `,
       },
       rank: 4,
@@ -896,10 +898,10 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       // Combustion and Mighty Combustion would end up at drX+1 as DoT,
       // so this can probably do the same.
       attack: {
-        crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankeight immediately, and again at the end of the target's next turn.
-          Any \\glossterm{extra damage} applies to both the initial damage and the delayed damage.
+          \\damagerankeight.
+          The target also \\briefly \\debuff{burns} for \\damagerankeight.
+          Any \\glossterm{extra damage} applies to both the initial damage and the burn.
         `,
         targeting: `
           Make an attack vs. Fortitude with a -4 accuracy penalty against something adjacent to you.
@@ -913,12 +915,11 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Living Pyre',
 
-      // Same damage calcs as combustion
       attack: {
-        crit: MULTIHIT_CRIT,
         hit: `
-          \\damageranktwo immediately, and again at the end of the target's next turn.
-          Any \\glossterm{extra damage} applies to both the initial damage and the delayed damage.
+          \\damageranktwo.
+          The target also \\briefly \\debuff{burns} for \\damageranktwo.
+          Any \\glossterm{extra damage} applies to both the initial damage and the burning damage.
         `,
         targeting: `
           Make an attack vs. Fortitude with a -4 accuracy penalty against a creature within \\medrange.
@@ -932,12 +933,11 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Mighty Living Pyre',
 
-      // Same damage calcs as mighty combustion
       attack: {
-        crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankfive immediately, and again at the end of the target's next turn.
-          Any \\glossterm{extra damage} applies to both the initial damage and the delayed damage.
+          \\damagerankfive.
+          The target also \\briefly \\debuff{burns} for \\damagerankfive.
+          Any \\glossterm{extra damage} applies to both the initial damage and the burning damage.
         `,
         targeting: `
           Make an attack vs. Fortitude with a -4 accuracy penalty against a creature within \\medrange.

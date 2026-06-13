@@ -39,7 +39,8 @@ export const toxicology: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankone immediately, and again at the end of the target's next turn.
+          \\damagerankone.
+          The target also \\briefly \\debuff{corrodes} for \\damagerankone.
           This damage is doubled if the target is an object that is not \\glossterm{metallic}.
         `,
         targeting: `
@@ -326,8 +327,9 @@ export const toxicology: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankone immediately, and again at the end of the target's next turn.
-          This damage is doubled if the target is an object that is not \\glossterm{metallic}.
+          \\damagerankone.
+          The target also \\briefly \\debuff{corrodes} for \\damagerankone.
+          Both damage instances are doubled if the target is an object that is not \\glossterm{metallic}.
         `,
         targeting: `
           Make an attack vs. Fortitude against something within \\shortrange.
@@ -345,9 +347,10 @@ export const toxicology: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankfour immediately, and again at the end of the target's next turn.
-          This damage is doubled if the target is an object that is not \\glossterm{metallic}.
-          Any \\glossterm{extra damage} applies to both the initial damage and the delayed damage.
+          \\damagerankfour.
+          The target also \\briefly \\debuff{corrodes} for \\damagerankone.
+          Both damage instances are doubled if the target is an object that is not \\glossterm{metallic}.
+          Any \\glossterm{extra damage} applies to both the initial damage and the corrosion.
         `,
         targeting: `
           Make an attack vs. Fortitude against something within \\shortrange.
@@ -416,7 +419,8 @@ export const toxicology: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankthree immediately, and again at the end of the target's next turn.
+          \\damagerankthree.
+          The target also \\briefly \\debuff{corrodes} for \\damagerankthree.
         `,
         halfOnMiss: true,
         targeting: `
@@ -457,7 +461,8 @@ export const toxicology: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damageranktwo immediately, and again at the end of the target's next turn.
+          \\damageranktwo.
+          The target also \\briefly \\debuff{corrodes} for \\damageranktwo.
         `,
         halfOnMiss: true,
         targeting: `
