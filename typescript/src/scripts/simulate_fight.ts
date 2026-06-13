@@ -3,7 +3,17 @@ import { CombatScenario, cloneMonster, loadAllMonsters } from '../combat/combat_
 import { Creature } from '../character_sheet/creature';
 import cli from 'commander';
 
-async function main({ team1, team2, iterations, verbose }: { team1: string; team2: string; iterations: number; verbose: boolean }) {
+async function main({
+  team1,
+  team2,
+  iterations,
+  verbose,
+}: {
+  team1: string;
+  team2: string;
+  iterations: number;
+  verbose: boolean;
+}) {
   const stock = new StockCharacters();
   stock.addAllCharacters();
   loadAllMonsters();
@@ -41,7 +51,7 @@ function resolveCreature(name: string, stock: StockCharacters): Creature {
       throw new Error(`Could not find character or monster named "${name}"`);
     }
   }
-  
+
   // Clone stock character to ensure unique ID
   const uniqueId = Math.random().toString(36).substring(7);
   return creature.clone(`${name}_${uniqueId}`);

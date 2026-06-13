@@ -37,7 +37,15 @@ async function main(options: {
   output?: string;
   verbose: boolean;
 }) {
-  const { iterations, level, monster: monsterFilter, minWinRate, maxWinRate, output, verbose } = options;
+  const {
+    iterations,
+    level,
+    monster: monsterFilter,
+    minWinRate,
+    maxWinRate,
+    output,
+    verbose,
+  } = options;
 
   console.log(`Initializing Stock Characters and Grimoire...`);
   const stock = new StockCharacters();
@@ -90,9 +98,7 @@ async function main(options: {
   if (monsterFilter) {
     const q = monsterFilter.toLowerCase();
     filtered = filtered.filter(
-      (m) =>
-        m.name.toLowerCase().includes(q) ||
-        m.source.toLowerCase().includes(q)
+      (m) => m.name.toLowerCase().includes(q) || m.source.toLowerCase().includes(q),
     );
   }
 
@@ -102,7 +108,9 @@ async function main(options: {
   }
 
   console.log(`Found ${filtered.length} monster(s) to simulate. Starting combat simulations...`);
-  console.log(`Configuration: ${iterations} iterations per combat. Outlier thresholds: Dangerous < ${minWinRate}%, Weak > ${maxWinRate}%`);
+  console.log(
+    `Configuration: ${iterations} iterations per combat. Outlier thresholds: Dangerous < ${minWinRate}%, Weak > ${maxWinRate}%`,
+  );
 
   const results: MonsterSimulationResult[] = [];
   let count = 0;
@@ -116,10 +124,14 @@ async function main(options: {
     // Clamp level to valid StockCharacters bounds [1, 21]
     const clampedLevel = Math.max(1, Math.min(21, mLevel));
     if (mLevel < 1 || mLevel > 21) {
-      console.warn(`[Warning] ${entry.name} has level ${mLevel}. Clamping stock party to level ${clampedLevel}.`);
+      console.warn(
+        `[Warning] ${entry.name} has level ${mLevel}. Clamping stock party to level ${clampedLevel}.`,
+      );
     }
 
-    process.stdout.write(`[${count}/${filtered.length}] Simulating ${entry.name} (Level ${mLevel}${isElite ? ' Elite' : ''})... `);
+    process.stdout.write(
+      `[${count}/${filtered.length}] Simulating ${entry.name} (Level ${mLevel}${isElite ? ' Elite' : ''})... `,
+    );
 
     try {
       const partyTeam = {
@@ -191,7 +203,9 @@ async function main(options: {
 
   const weakOutliers = results
     .filter((r) => r.category === 'Weak')
-    .sort((a, b) => b.partyWinRate - a.partyWinRate || b.partyAvgHpRemaining - a.partyAvgHpRemaining);
+    .sort(
+      (a, b) => b.partyWinRate - a.partyWinRate || b.partyAvgHpRemaining - a.partyAvgHpRemaining,
+    );
 
   const balancedMonsters = results.filter((r) => r.category === 'Balanced');
 
@@ -200,9 +214,15 @@ async function main(options: {
   console.log(`SIMULATION SUMMARY`);
   console.log(`======================================================================`);
   console.log(`Total Monsters Simulated : ${results.length}`);
-  console.log(`Too Dangerous Outliers   : ${dangerousOutliers.length} (${((dangerousOutliers.length / results.length) * 100).toFixed(1)}%)`);
-  console.log(`Too Weak Outliers        : ${weakOutliers.length} (${((weakOutliers.length / results.length) * 100).toFixed(1)}%)`);
-  console.log(`Balanced Monsters        : ${balancedMonsters.length} (${((balancedMonsters.length / results.length) * 100).toFixed(1)}%)`);
+  console.log(
+    `Too Dangerous Outliers   : ${dangerousOutliers.length} (${((dangerousOutliers.length / results.length) * 100).toFixed(1)}%)`,
+  );
+  console.log(
+    `Too Weak Outliers        : ${weakOutliers.length} (${((weakOutliers.length / results.length) * 100).toFixed(1)}%)`,
+  );
+  console.log(
+    `Balanced Monsters        : ${balancedMonsters.length} (${((balancedMonsters.length / results.length) * 100).toFixed(1)}%)`,
+  );
   console.log(`======================================================================`);
 
   if (dangerousOutliers.length > 0) {
@@ -223,7 +243,12 @@ async function main(options: {
   if (output) {
     const reportPath = path.resolve(process.cwd(), output);
     console.log(`\nWriting detailed Markdown report to: ${reportPath}`);
-    const markdownContent = generateMarkdownReport(options, results, dangerousOutliers, weakOutliers);
+    const markdownContent = generateMarkdownReport(
+      options,
+      results,
+      dangerousOutliers,
+      weakOutliers,
+    );
     fs.writeFileSync(reportPath, markdownContent, 'utf-8');
   }
 }
@@ -240,16 +265,16 @@ function printConsoleTable(list: MonsterSimulationResult[]) {
   };
 
   const hr = `+${'-'.repeat(colWidths.lvl)}+${'-'.repeat(colWidths.elite)}+${'-'.repeat(colWidths.name)}+${'-'.repeat(colWidths.source)}+${'-'.repeat(colWidths.win)}+${'-'.repeat(colWidths.hp)}+${'-'.repeat(colWidths.turns)}+`;
-  
+
   console.log(hr);
   console.log(
     `| ${'Lvl'.padEnd(colWidths.lvl - 2)} | ` +
-    `${'Type'.padEnd(colWidths.elite - 2)} | ` +
-    `${'Monster Name'.padEnd(colWidths.name - 2)} | ` +
-    `${'Source / Group'.padEnd(colWidths.source - 2)} | ` +
-    `${'Party Win %'.padEnd(colWidths.win - 2)} | ` +
-    `${'Party HP%'.padEnd(colWidths.hp - 2)} | ` +
-    `${'Turns'.padEnd(colWidths.turns - 2)} |`
+      `${'Type'.padEnd(colWidths.elite - 2)} | ` +
+      `${'Monster Name'.padEnd(colWidths.name - 2)} | ` +
+      `${'Source / Group'.padEnd(colWidths.source - 2)} | ` +
+      `${'Party Win %'.padEnd(colWidths.win - 2)} | ` +
+      `${'Party HP%'.padEnd(colWidths.hp - 2)} | ` +
+      `${'Turns'.padEnd(colWidths.turns - 2)} |`,
   );
   console.log(hr);
 
@@ -257,12 +282,12 @@ function printConsoleTable(list: MonsterSimulationResult[]) {
     const eliteStr = r.isElite ? 'Elite' : 'Normal';
     console.log(
       `| ${r.level.toString().padEnd(colWidths.lvl - 2)} | ` +
-      `${eliteStr.padEnd(colWidths.elite - 2)} | ` +
-      `${r.name.slice(0, colWidths.name - 2).padEnd(colWidths.name - 2)} | ` +
-      `${r.source.slice(0, colWidths.source - 2).padEnd(colWidths.source - 2)} | ` +
-      `${r.partyWinRate.toFixed(1).padEnd(colWidths.win - 2)} | ` +
-      `${r.partyAvgHpRemaining.toFixed(1).padEnd(colWidths.hp - 2)} | ` +
-      `${r.avgTurns.toFixed(1).padEnd(colWidths.turns - 2)} |`
+        `${eliteStr.padEnd(colWidths.elite - 2)} | ` +
+        `${r.name.slice(0, colWidths.name - 2).padEnd(colWidths.name - 2)} | ` +
+        `${r.source.slice(0, colWidths.source - 2).padEnd(colWidths.source - 2)} | ` +
+        `${r.partyWinRate.toFixed(1).padEnd(colWidths.win - 2)} | ` +
+        `${r.partyAvgHpRemaining.toFixed(1).padEnd(colWidths.hp - 2)} | ` +
+        `${r.avgTurns.toFixed(1).padEnd(colWidths.turns - 2)} |`,
     );
   }
   console.log(hr);
@@ -272,7 +297,7 @@ function generateMarkdownReport(
   options: any,
   all: MonsterSimulationResult[],
   dangerous: MonsterSimulationResult[],
-  weak: MonsterSimulationResult[]
+  weak: MonsterSimulationResult[],
 ): string {
   const dateStr = new Date().toLocaleString();
   let md = `# Rise Monster Power Level Simulation Report\n\n`;
@@ -341,11 +366,26 @@ function generateMarkdownReport(
 
 if (require.main === module) {
   cli
-    .option('-i, --iterations <number>', 'Number of iterations per monster', (val) => parseInt(val, 10), 100)
+    .option(
+      '-i, --iterations <number>',
+      'Number of iterations per monster',
+      (val) => parseInt(val, 10),
+      100,
+    )
     .option('-l, --level <number>', 'Filter by monster level', (val) => parseInt(val, 10))
     .option('-m, --monster <string>', 'Filter by monster name or source (substring)')
-    .option('--min-win-rate <number>', 'Threshold below which monster is too dangerous (default 60%)', (val) => parseFloat(val), 60)
-    .option('--max-win-rate <number>', 'Threshold above which monster is too weak (default 98%)', (val) => parseFloat(val), 98)
+    .option(
+      '--min-win-rate <number>',
+      'Threshold below which monster is too dangerous (default 60%)',
+      (val) => parseFloat(val),
+      60,
+    )
+    .option(
+      '--max-win-rate <number>',
+      'Threshold above which monster is too weak (default 98%)',
+      (val) => parseFloat(val),
+      98,
+    )
     .option('-o, --output <path>', 'Path to write a detailed Markdown report')
     .option('-v, --verbose', 'Enable verbose combat logging')
     .parse(process.argv);
