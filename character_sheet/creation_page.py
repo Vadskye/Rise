@@ -450,6 +450,7 @@ def trained_skill() -> str:
                 {"class": "trained-skill", "name": "trained_skill"},
                 [
                     option({"value": ""}, ""),
+                    option({"value": "Analysis"}, "Analysis"),
                     option({"value": "Awareness"}, "Awareness"),
                     option({"value": "Balance"}, "Balance"),
                     option({"value": "Climb"}, "Climb"),
@@ -465,7 +466,6 @@ def trained_skill() -> str:
                     option({"value": "Craft (wood)"}, "Craft (wood)"),
                     option({"value": "Creature Handling"}, "Creature Handling"),
                     option({"value": "Deception"}, "Deception"),
-                    option({"value": "Deduction"}, "Deduction"),
                     option({"value": "Devices"}, "Devices"),
                     option({"value": "Disguise"}, "Disguise"),
                     option({"value": "Endurance"}, "Endurance"),

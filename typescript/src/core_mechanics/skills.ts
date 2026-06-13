@@ -18,7 +18,7 @@ export const RISE_MOVEMENT_SKILLS = [
 ] as const;
 export type RiseMovementSkill = (typeof RISE_MOVEMENT_SKILLS)[number];
 
-export const RISE_SENSE_SKILLS = ['awareness', 'deduction'] as const;
+export const RISE_SENSE_SKILLS = ['analysis', 'awareness'] as const;
 export type RiseSenseSkill = (typeof RISE_SENSE_SKILLS)[number];
 
 export const RISE_SOCIAL_SKILLS = [
@@ -97,6 +97,7 @@ export interface SkillMetadata {
 }
 
 export const SKILL_METADATA: Record<Skill, SkillMetadata> = {
+  analysis: { attribute: 'intelligence', category: SkillCategory.Senses },
   awareness: { attribute: 'perception', category: SkillCategory.Senses },
   balance: { attribute: 'dexterity', category: SkillCategory.Movement },
   climb: { attribute: 'strength', category: SkillCategory.Movement },
@@ -114,7 +115,6 @@ export const SKILL_METADATA: Record<Skill, SkillMetadata> = {
   craft_untrained: { attribute: 'intelligence', category: SkillCategory.Other },
   creature_handling: { attribute: 'perception', category: SkillCategory.Other },
   deception: { attribute: 'perception', category: SkillCategory.Social },
-  deduction: { attribute: 'intelligence', category: SkillCategory.Other },
   devices: { attribute: 'intelligence', category: SkillCategory.Other },
   disguise: { attribute: 'intelligence', category: SkillCategory.Social },
   endurance: { attribute: 'constitution', category: SkillCategory.Other },

@@ -499,8 +499,8 @@ function addLiches(grimoire: Grimoire) {
             size: 'medium',
           });
           creature.setTrainedSkills([
+            'analysis',
             'awareness',
-            'deduction',
             'craft_bone',
             'knowledge_arcana',
             'knowledge_souls',

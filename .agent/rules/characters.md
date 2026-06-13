@@ -28,7 +28,7 @@ Character creation blends thematic and mechanical decisions, typically following
     *   **Strength (Str):** Muscle, physical power. Affects Brawn defense, mundane power, brawling accuracy, carrying capacity, and Strength-based skills (Climb, Jump, Swim).
     *   **Dexterity (Dex):** Hand-eye coordination, agility, reflexes. Affects Armor defense (halved for medium/heavy armor/shields), Reflex defense, Dexterity-based skills (Balance, Flexibility, Ride, Sleight of Hand, Stealth), and dual strikes.
     *   **Constitution (Con):** Health, stamina. Affects Hit Points, Fatigue Tolerance, Fortitude defense, and Constitution-based skills (Endurance).
-    *   **Intelligence (Int):** Learning, reasoning. Affects number of trained skills (if positive) and Insight Points. Affects Intelligence-based skills (Craft, Deduction, Disguise, Knowledge, Medicine). Creatures incapable of complex cognition (e.g., animals) have \minus6 or lower.
+    *   **Intelligence (Int):** Learning, reasoning. Affects number of trained skills (if positive) and Insight Points. Affects Intelligence-based skills (Analysis, Craft, Disguise, Knowledge, Medicine). Creatures incapable of complex cognition (e.g., animals) have \minus6 or lower.
     *   **Perception (Per):** Observation, awareness. Affects accuracy with most attacks and Perception-based skills (Awareness, Creature Handling, Social Insight, Survival).
     *   **Willpower (Wil):** Mental endurance. Affects magical power and Mental defense.
 *   **Attribute Penalties:** Voluntarily reducing an attribute by \minus1 grants a trained skill; by \minus2 grants an insight point. Cannot reduce below \minus2 or gain benefits from more than two attributes this way.

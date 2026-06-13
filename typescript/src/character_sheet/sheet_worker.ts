@@ -558,6 +558,7 @@ const SKILLS_BY_ATTRIBUTE: Record<string, string[]> = {
   dexterity: ['balance', 'flexibility', 'perform', 'ride', 'sleight_of_hand', 'stealth'],
   constitution: ['endurance'],
   intelligence: [
+    'analysis',
     'craft_alchemy',
     'craft_bone',
     'craft_ceramics',
@@ -570,7 +571,6 @@ const SKILLS_BY_ATTRIBUTE: Record<string, string[]> = {
     'craft_traps',
     'craft_wood',
     'craft_untrained',
-    'deduction',
     'devices',
     'disguise',
     'knowledge_arcana',
@@ -989,9 +989,9 @@ function handleActiveAbilitiesAccuracy() {
         attrs[`repeating_strikeattacks_${sectionId}_weapon_${i}_total_accuracy`] =
           formatAccuracyValue(
             v.accuracy +
-              v.accuracy_with_strikes +
-              v.repeating_strikeattacks_attack_accuracy +
-              v[`weapon_${i}_accuracy`],
+            v.accuracy_with_strikes +
+            v.repeating_strikeattacks_attack_accuracy +
+            v[`weapon_${i}_accuracy`],
           );
       }
       setAttrs(attrs);
@@ -1147,10 +1147,10 @@ function handleArmorDefense() {
       const totalValue = Math.max(
         0,
         beforeEquipment +
-          v.body_armor_defense +
-          v.shield_defense +
-          v.misc +
-          v.all_defenses_vital_wound_modifier,
+        v.body_armor_defense +
+        v.shield_defense +
+        v.misc +
+        v.all_defenses_vital_wound_modifier,
       );
 
       setAttrs({
@@ -2510,12 +2510,12 @@ function handleNonArmorDefense(defense: string, attribute: string) {
       const totalValue = Math.max(
         0,
         levelModifier +
-          monsterModifier +
-          sizeModifier +
-          shieldModifier +
-          attributeModifier +
-          v.misc +
-          v.all_defenses_vital_wound_modifier,
+        monsterModifier +
+        sizeModifier +
+        shieldModifier +
+        attributeModifier +
+        v.misc +
+        v.all_defenses_vital_wound_modifier,
       );
 
       setAttrs({
@@ -3056,7 +3056,7 @@ function handleOtherDamagingAttacks() {
   // Local other damaging attack change
   on(
     'change:repeating_otherdamagingattacks:attack_damage_dice' +
-      ' change:repeating_otherdamagingattacks:is_magical',
+    ' change:repeating_otherdamagingattacks:is_magical',
     function () {
       getOdaDamageDiceAttrs('repeating_otherdamagingattacks', (parsed) => {
         setCalculatedDicePool('repeating_otherdamagingattacks', parsed);
@@ -3583,11 +3583,11 @@ function handleTypescriptMonsterCreation() {
     effect: string;
     name: string;
     type:
-      | 'repeating_strikeattacks'
-      | 'repeating_otherdamagingattacks'
-      | 'repeating_nondamagingattacks'
-      | 'repeating_abilities'
-      | 'repeating_passiveabilities';
+    | 'repeating_strikeattacks'
+    | 'repeating_otherdamagingattacks'
+    | 'repeating_nondamagingattacks'
+    | 'repeating_abilities'
+    | 'repeating_passiveabilities';
   }
 
   function generateTypescriptMonster(v: any, allAbilityKeys: AbilityKey[]) {

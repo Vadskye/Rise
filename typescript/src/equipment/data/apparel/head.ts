@@ -132,7 +132,7 @@ function circlets(): Apparel[] {
       kind: 'Circlet',
       item: reliableSkillItem(
         'Circlet of Reliable Intuition',
-        'Deduction, Knowledge, or Medicine',
+        'Analysis, Knowledge, or Medicine',
         'intuition-based',
       ),
     },

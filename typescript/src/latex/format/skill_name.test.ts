@@ -10,8 +10,8 @@ tap.test('skillName', (t) => {
   t.equal(skillName('ride'), 'Ride');
   t.equal(skillName('stealth'), 'Stealth');
 
+  t.equal(skillName('analysis'), 'Analysis');
   t.equal(skillName('awareness'), 'Awareness');
-  t.equal(skillName('deduction'), 'Deduction');
 
   t.equal(skillName('deception'), 'Deception');
   t.equal(skillName('disguise'), 'Disguise');

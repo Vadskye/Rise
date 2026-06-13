@@ -34,8 +34,8 @@ This chapter describes each skill, including common uses for those skills.
         Sleight of Hand   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & C        & \tdash   & \tdash   & \tdash   & Dex          \\
         Stealth           & \tdash   & \tdash   & \tdash   & \tdash   & C        & \tdash   & C        & C        & \tdash   & \tdash   & \tdash   & Dex          \\
         Endurance         & C        & \tdash   & C        & C        & C        & C        & C        & \tdash   & \tdash   & \tdash   & \tdash   & Con          \\
+        Analysis          & \tdash   & C        & C        & \tdash   & C        & C        & C        & C        & C        & C        & C        & Int          \\
         Craft             & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & Int          \\
-        Deduction         & \tdash   & C        & C        & \tdash   & C        & C        & C        & C        & C        & C        & C        & Int          \\
         Devices           & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & C        & \tdash   & \tdash   & \tdash   & Int          \\
         Disguise          & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & C        & \tdash   & \tdash   & \tdash   & Int          \\
         Knowledge         & \tdash   & C        & \tdash   & \tdash   & C        & \tdash   & \tdash   & \tdash   & C        & C        & C        & Int          \\
@@ -71,6 +71,35 @@ This chapter describes each skill, including common uses for those skills.
     Skills are primarily intended to be useful out of combat, not to replace the power of manuevers and spells.
 
 \newpage
+\skill{Analysis}{Int}
+  The Analysis skill represents your ability to analyze information in front of you.
+  This includes sifting through information to identify relevant details, making logical deductions based on evidence, and identifying suspicious flaws.
+  However, this skill cannot protect you from coming to inaccurate conclusions if you rely on inaccurate or incomplete facts and observations.
+
+  \subsection{Common Analysis Tasks}
+    \parhead{Identify Disguise} If you succeed at an opposed Analysis vs. Disguise check, you can determine whether a creature or object is disguised.
+
+    \parhead{Identify Forgery} If you succeed at an opposed Analysis vs. Craft check, you can determine whether an object is a forgery.
+
+    \parhead{Identify Relevant Details} You can make an Analysis check to understand what aspects of your environment are important and why.
+    This can be used to scan a room, or to sift through information like a long book.
+    If important details are concealed, this may require a successful Awareness check to notice them.
+
+    Correctly identifying relevant details generally takes ten times longer than it would take to skim the relevant information.
+    That means it takes about a minute to scan a typically sized room, but hours or days to sift through books.
+    You can automatically attempt to identify relevant details as part of seeing information for the first time, but you take a \minus10 penalty to this check.
+
+    \parhead{Reach Conclusion} You can combine information that you know to reach a specific conclusion.
+    This may require other checks, such as Knowledge or Analysis checks, to ensure that you have enough information to work with.
+    The time required to reach a conclusion can vary dramatically depending on how much evidence you have to work with and how easy the conclusion is to reach.
+    You can reach simple conclusions immediately after learning all of the relevant information, but complicated scenarios might require days of study and analysis to eliminate all possibilities.
+    In general, sifting through a mixture of helpful and misleading evidence increases the difficulty of the Analysis check and the time required to complete it.
+    
+    \parhead{Understand Personal Effect} When an ability affects you, you can make an Analysis check to understand its effects.
+    You can make another check when the ability ends if you didn't understand it initialy.
+    The \glossterm{difficulty value} of this check is 5 \add twice the \glossterm{rank} of the ability.
+    If the ability is \atSubtle, the difficulty value increases by 10.
+\newpage
 \skill{Awareness}{Per}
   The Awareness skill represents your ability to observe things which you might otherwise fail to notice.
   It can be used to observe hidden creatures and traps, as well as to identify fleeting or subtle sensations.
@@ -83,8 +112,6 @@ This chapter describes each skill, including common uses for those skills.
 
   \subsection{Common Awareness Tasks}
 
-    \parhead{Identify Disguise} If you succeed at an opposed Awareness vs. Disguise check, you can determine whether a creature or object is disguised.
-    \parhead{Identify Forgery} If you succeed at an opposed Awareness vs. Craft check, you can determine whether an object is a forgery.
     \parhead{Notice Ability} If you succeed at an Awareness check, you can notice a creature using an ability.
     Unless otherwise noted in an ability's description, any active ability has some combination of visual and auditory effects that require a \glossterm{difficulty value} 5 Awareness check to notice.
     If you beat the DV by 10, you can also determine which creature used the ability.
@@ -92,13 +119,7 @@ This chapter describes each skill, including common uses for those skills.
     \parhead{Notice Hidden Creature} If you succeed at an opposed Awareness vs. Stealth check, you can notice a hidden creature (see \pcref{Stealth}).
     Success with a sight-based Awareness check means you can see the creature perfectly.
     Success with any other sense just means you know its exact location, and are still \partiallyunaware of it.
-    \parhead{Notice Hidden Object} If you succeed at an opposed Awareness vs. Craft or Devices check, you can notice hidden objects such as traps and secret doors.
-    \parhead{Notice Magic Trap} If you succeed at an Awareness check, you can notice hidden magical effects such as traps.
-    The \glossterm{difficulty value} to is equal to 15 \add twice the \glossterm{rank} of the ability.
     \parhead{Notice Sleight of Hand} If you succeed at an opposed Awareness vs. Sleight of Hand check, you can notice a creature's attempt to use the Sleight of Hand skill.
-    \parhead{Notice Subtle Effect} If you succeed at an Awareness check, you can notice the general effects of a \abilitytag{Subtle} ability affecting you.
-    The \glossterm{difficulty value} to notice the effect when it is first applied to you is 15 \add twice the \glossterm{rank} of the ability.
-    In addition, you can make another check when the ability ends to notice that you feel normal again.
     \parhead{Read Lips} When you see a creature speaking, you can make an sight-based Awareness check to read its lips.
     The \glossterm{difficulty value} is 10 for ordinary conversation, or up to 20 if the speaking creature makes an effort to avoid moving its lips.
     You must be able to understand the language spoken.
@@ -443,21 +464,6 @@ This chapter describes each skill, including common uses for those skills.
 
 
 \newpage
-\skill{Deduction}{Int}
-  The Deduction skill represents your ability to make logical deductions based on evidence.
-  It includes both determining which facts and observations are relevant to use as evidence, and reaching conclusions based on that evidence.
-  However, this skill cannot protect you from coming to inaccurate conclusions if you rely on inaccurate or incomplete facts and observations.
-
-  \subsection{Common Deduction Tasks}
-    \parhead{Identify Surroundings} You can make a Deduction check as a standard action to understand what aspects of your environment are important and why.
-    This may require a successful Awareness check to locate hidden objects or subtle clues.
-    \parhead{Reach Conclusion} You can combine information that you know to reach a specific conclusion.
-    This may require other checks, such as Knowledge or Awareness checks, to ensure that you have enough information to work with.
-    The time required to reach a conclusion can vary dramatically depending on how much evidence you have to work with and how easy the conclusion is to reach.
-    You can reach simple conclusions immediately after learning all of the relevant information, but complicated scenarios might require days of study and analysis to eliminate all possibilities.
-    In general, sifting through a mixture of helpful and misleading evidence increases the difficulty of the Deduction check and the time required to complete it.
-
-\newpage
 \skill{Devices}{Int}
   The Devices skill represents your ability to to manipulate mechanical devices such as locks, traps, and other contraptions.
   With enough skill, you can even manipulate magical devices.
@@ -520,11 +526,11 @@ This chapter describes each skill, including common uses for those skills.
     This generally takes at least a minute of work to prepare your disguise to match your exact surroundings.
     It only protects you from visual observation, so you would generally need the Stealth skill to avoid being heard while moving (see \pcref{Stealth}).
     \parhead{Change Appearance}\nonsectionlabel{Change Appearance}
-    You can make an opposed Disguise vs. Awareness check using a disguise kit to change a creature's appearance.
+    You can make an opposed Disguise vs. Analysis check using a disguise kit to change a creature's appearance.
     Generally, applying a disguise takes at least a minute, though complex makeup applications or clothing changes can take much longer.
     You take a penalty to the Disguise check based on how radical your changes are, especially to the creature's basic proportions.
     \parhead{Emulate Appearance} You can make a creature look like a different specific creature.
-    This functions like the \textit{change appearance} task, except that the result of your Disguise check can't exceed the result of an Awareness check you or someone helping you made to observe the creature you are trying to emulate.
+    This functions like the \textit{change appearance} task, except that the result of your Disguise check can't exceed the result of an Analysis check you or someone helping you made to observe the creature you are trying to emulate.
 
   \subsection{Common Disguise Modifiers}
     It is generally easier to enlarge a creature or add new features than it is to shrink a creature or remove existing features.
