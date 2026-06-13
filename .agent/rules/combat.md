@@ -12,6 +12,11 @@ This is a Gemini-generated summary of the Rise combat rules defined in `comprehe
 *   **Damage Calculation:** Weapon damage is influenced by Power (Mundane/Magical). Extra damage behaves like inherent damage (doubled on crit) and applies once per attack roll per creature, excluding poisons.
 *   **Taking Damage:** Damage reduces Hit Points (HP). Vital Wounds are incurred when HP drops below 0, with specific detrimental effects determined by a Vital Roll. Negative HP is temporary, resetting to 0 at the start of your turn. Environmental damage reduces DR without consuming it, while Subdual damage increases fatigue instead of inflicting vital wounds.
 
+**Combat Time & Turn Structure:**
+*   **Turns & Rounds:** Combat is structured in turns, representing about six seconds. During your turn, you can take one move action, one minor action, one standard action, and any number of free actions.
+*   **Initiative:** To determine turn order, characters choose to roll initiative (1d10) or follow an ally leader (using their initiative result). Higher results act first. Leading requires clear communication (noise/motion), detectable with a DV 5 Awareness check.
+*   **Initiative Groups:** Allies with no enemies between them in initiative order form an initiative group, sharing a turn. Group members can act in any order. An action must be fully completed before another creature in the group can start theirs (though free/minor actions can be used during move actions). Effects lasting "until the end of your turn" last until the end of the group's turn.
+
 **Movement & Positioning:**
 *   Jumping distances are determined by Strength and the Jump skill.
 *   Movement is measured in 5-foot increments, with specific rules for diagonals.

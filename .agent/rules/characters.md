@@ -151,7 +151,23 @@ Character creation blends thematic and mechanical decisions, typically following
     *   Legacy Item: Gained at 6th level, improves every 6 levels thereafter.
 *   **GM Discretion:** GM may allow changing character choices (skills, attributes, mystic spheres) upon leveling up, potentially requiring narrative justification or in-game retraining.
 
-### 6.1. Character Rank
+### 7.1. Character Rank
 
 *   General indication of overall power, determined by level.
 *   Maximum rank in any individual archetype equals character rank.
+
+## 8. Narrative Elements
+
+### 8.1. Alignment
+
+*   **Types:** Lawful Good, Neutral Good, Chaotic Good, Lawful Neutral, Neutral, Chaotic Neutral, Lawful Evil, Neutral Evil, Chaotic Evil.
+*   **Purpose:** Tool for character development, broad framework for personality/philosophy.
+*   **Spectrum:** Not binary. Angels/demons are "pure." Population ratios: ~50% Neutral, ~25% Good, ~25% Evil (similar for Law/Chaos). Distribution varies (e.g., humanoids more good/lawful, monsters more chaotic/evil).
+*   **Good vs. Evil:** Defined by intent.
+    *   **Good:** Altruistic intentions, respect/empathy for others.
+    *   **Evil:** Selfish intentions, prioritizing personal desires over others' known needs.
+    *   **Neutral:** Neither consistently altruistic nor selfish. Intentions not involving others, or for mandatory needs, are neutral. Non-sapient beings are typically neutral.
+*   **Law vs. Chaos:**
+    *   **Law:** Values consistency, adheres to rules (external or self-imposed).
+    *   **Chaos:** Values flexibility/freedom, decisions based on immediate thoughts/feelings.
+    *   **Neutral:** Neither exceptionally consistent nor inconsistent. Non-sapient beings are typically neutral.
