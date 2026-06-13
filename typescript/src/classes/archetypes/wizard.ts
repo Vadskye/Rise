@@ -177,6 +177,15 @@ export function arcaneMagic(): RankAbility[] {
         \\end{magicalactiveability}
       `,
     },
+    {
+      complexity: 2,
+      name: 'Spell Knowledge',
+      isMagical: true,
+      rank: 2,
+      description: `
+        You learn an additional arcane spell.
+      `,
+    },
   ];
   return abilities;
 }
@@ -192,15 +201,6 @@ export function arcaneScholar(): RankAbility[] {
         You gain the ability to perform arcane rituals to create unique magical effects (see \\pcref{Spell and Ritual Mechanics}).
         The maximum \\glossterm{rank} of arcane ritual you can learn or perform is equal to the maximum rank of arcane spell that you can cast.
         In addition, you automatically learn one free arcane ritual of each rank you have access to, including new ranks as you gain access to them.
-      `,
-    },
-    {
-      complexity: 1,
-      name: 'Spell Knowledge',
-      isMagical: true,
-      rank: 1,
-      description: `
-        You learn an additional spell from any arcane \\glossterm{mystic sphere} that you have access to.
       `,
     },
     {

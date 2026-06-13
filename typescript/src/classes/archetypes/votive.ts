@@ -315,6 +315,15 @@ export function pactMagic(): RankAbility[] {
         You gain a \\plus1 bonus to your \\glossterm{durability}.
       `,
     },
+    {
+      complexity: 2,
+      name: 'Spell Knowledge',
+      isMagical: true,
+      rank: 2,
+      description: `
+        You learn an additional pact spell.
+      `,
+    },
   ];
   return abilities;
 }
@@ -333,15 +342,6 @@ export function pactSpellMastery(): RankAbility[] {
         Each time this penalty takes effect, your hit points are reduced by an additional quarter, so using it three times would reduce your maximum hit points to a quarter of their normal value.
         If your hit points would be reduced below 1 in this way, your body and soul are ripped through the planes directly into your soulkeeper's realm.
         This is invariably lethal, and leaves no corpse behind.
-      `,
-    },
-    {
-      complexity: 2,
-      name: 'Spell Known',
-      isMagical: true,
-      rank: 1,
-      description: `
-        You learn an additional pact spell.
       `,
     },
     {

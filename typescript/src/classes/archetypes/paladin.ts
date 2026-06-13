@@ -140,6 +140,15 @@ export function divineMagic(): RankAbility[] {
         Divine spells also increase in power in unique ways based on your rank in this archetype, as indicated in their descriptions.
       `,
     },
+    {
+      complexity: 2,
+      name: 'Spell Knowledge',
+      isMagical: true,
+      rank: 2,
+      description: `
+        You learn an additional divine spell.
+      `,
+    },
   ];
 }
 

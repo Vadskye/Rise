@@ -178,6 +178,15 @@ export function natureMagic(): RankAbility[] {
         Nature spells also increase in power in unique ways based on your rank in this archetype, as indicated in their descriptions.
       `,
     },
+    {
+      complexity: 2,
+      name: 'Spell Knowledge',
+      isMagical: true,
+      rank: 2,
+      description: `
+        You learn an additional nature spell.
+      `,
+    },
   ];
 }
 
@@ -191,15 +200,6 @@ export function natureSpellMastery(): RankAbility[] {
       description: `
         Whenever you cast a spell, you may use a Small or larger living plant within \\shortrange of you as a \\glossterm{targeting proxy}.
         This means the spell determines its targets as if you were in the plant's location, which can allow you to affect targets outside your normal range.
-      `,
-    },
-    {
-      complexity: 2,
-      name: 'Spell Known',
-      isMagical: true,
-      rank: 1,
-      description: `
-        You learn an additional nature spell.
       `,
     },
     {
