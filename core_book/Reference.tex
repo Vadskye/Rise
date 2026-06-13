@@ -143,6 +143,14 @@
 
   \buffdef{braced} A braced creature gains a \plus2 bonus to all defenses.
 
+  \debuffdef{burn} A burning creature takes damage at the end of each of its turns.
+  It can stop burning if it makes a \glossterm{difficulty value} 5 Dexterity check as a \glossterm{standard action}.
+  Dropping \prone as part of this action gives a +5 bonus to this check.
+  Burning is automatically removed if the target takes damage from a \atCold or \atWater ability, or is submerged in a non-flammable liquid like water.
+
+  If a creature stops burning at the end of its turn, it still takes damage from the burn that turn.
+  When an ability that inflicts burning gets a \glossterm{critical hit}, the damage of the burn is doubled normally from the critical unless the ability has a different critical hit effect.
+
   \debuffdef{charmed} A charmed creature is mentally influenced to like another creature.
   It always sees the words and actions of the creature that charmed it in the most favorable way, as a close friend or trusted ally.
   A charmed creature cannot be controlled like an automaton, but can be persuaded to take particular actions with the Persuasion skill (see \pcref{Persuasion}).
@@ -160,6 +168,14 @@
 
   % Kind of an awkward hack
   A confused creature automatically stops being confused after ten minutes, even if it was unable to rest due to its confusion.
+
+  \debuffdef{corrode} A corroding creature takes damage at the end of each of its turns.
+  It can stop corroding if it makes a \glossterm{difficulty value} 10 Dexterity check as a \glossterm{standard action}.
+  Dropping \prone as part of this action gives a +5 bonus to this check.
+  Dissolving is automatically removed if the target takes damage from a \atCold or \atFire ability, or is submerged in a non-corrosive liquid like water.
+
+  If a creature stops corroding at the end of its turn, it still takes damage from the corrosion that turn.
+  When an ability that inflicts corrosion gets a \glossterm{critical hit}, the damage of the corrosion is doubled normally from the critical unless the ability has a different critical hit effect.
 
   \debuffdef{dazed} A dazed creature takes a \minus2 penalty to all defenses.
   This does not stack with the \confused effect.

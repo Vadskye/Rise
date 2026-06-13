@@ -3,6 +3,7 @@ export const CONDITION_CRIT =
 export const MULTIHIT_CRIT = 'All instances of damage are doubled, not just the initial damage.';
 export const POISON_CRIT = 'The poison immediately escalates.';
 export const DELAYED_HALF = 'Half damage immediately, and no delayed damage.';
+export const BURNING_HALF = 'Half damage, and the target does not burn.';
 export const MINOR_FATIGUE =
   'You can increase your \\glossterm{fatigue level} by one to use this ability as a \\glossterm{minor action}.';
 export const EXCEPT_NOT_DEEP =
