@@ -1,0 +1,6 @@
+#!/usr/bin/env fish
+set -l sumatra "/mnt/c/Program Files/SumatraPDF/SumatraPDF.exe"
+if not test -f "$sumatra"
+    set sumatra "/mnt/c/Users/vadsk/AppData/Local/SumatraPDF/SumatraPDF.exe"
+end
+$sumatra $argv
