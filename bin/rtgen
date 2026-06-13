@@ -3,37 +3,41 @@
 g rts
 tsc --incremental; or exit 1
 
+set logfile "../rtgen.log"
+
+rm -f "$logfile"
+
 # TODO: keep building the Typescript version of the monster manual so this can
 # be enabled.
-npm run generate_latex -- -t monster_descriptions -o ../core_book/generated/monster_descriptions.tex
-npm run generate_latex -- -t modules -o ../core_book/generated/modules.tex
-npm run generate_latex -- -t mystic_sphere_lists -o ../comprehensive_codex/generated/mystic_sphere_lists.tex
-npm run generate_latex -- -t mystic_sphere_spell_summaries -o ../comprehensive_codex/generated/mystic_sphere_spell_summaries.tex
-npm run generate_latex -- -t mystic_sphere_ritual_summaries -o ../comprehensive_codex/generated/mystic_sphere_ritual_summaries.tex
-npm run generate_latex -- -t mystic_sphere_descriptions -o ../comprehensive_codex/generated/mystic_sphere_descriptions.tex
-npm run generate_latex -- -t ritual_descriptions -o ../comprehensive_codex/generated/ritual_descriptions.tex
-npm run generate_latex -- -t archetype_descriptions -o ../comprehensive_codex/generated/archetype_descriptions.tex
-npm run generate_latex -- -t classes_chapter -o ../comprehensive_codex/generated/classes.tex
-npm run generate_latex -- -t combat_style_lists -o ../comprehensive_codex/generated/combat_style_lists.tex
-npm run generate_latex -- -t combat_style_summaries -o ../comprehensive_codex/generated/combat_style_summaries.tex
-npm run generate_latex -- -t combat_style_descriptions -o ../comprehensive_codex/generated/combat_style_descriptions.tex
+npm run generate_latex -- -t monster_descriptions -o ../core_book/generated/monster_descriptions.tex >> "$logfile"
+npm run generate_latex -- -t modules -o ../core_book/generated/modules.tex >> "$logfile"
+npm run generate_latex -- -t mystic_sphere_lists -o ../comprehensive_codex/generated/mystic_sphere_lists.tex >> "$logfile"
+npm run generate_latex -- -t mystic_sphere_spell_summaries -o ../comprehensive_codex/generated/mystic_sphere_spell_summaries.tex >> "$logfile"
+npm run generate_latex -- -t mystic_sphere_ritual_summaries -o ../comprehensive_codex/generated/mystic_sphere_ritual_summaries.tex >> "$logfile"
+npm run generate_latex -- -t mystic_sphere_descriptions -o ../comprehensive_codex/generated/mystic_sphere_descriptions.tex >> "$logfile"
+npm run generate_latex -- -t ritual_descriptions -o ../comprehensive_codex/generated/ritual_descriptions.tex >> "$logfile"
+npm run generate_latex -- -t archetype_descriptions -o ../comprehensive_codex/generated/archetype_descriptions.tex >> "$logfile"
+npm run generate_latex -- -t classes_chapter -o ../comprehensive_codex/generated/classes.tex >> "$logfile"
+npm run generate_latex -- -t combat_style_lists -o ../comprehensive_codex/generated/combat_style_lists.tex >> "$logfile"
+npm run generate_latex -- -t combat_style_summaries -o ../comprehensive_codex/generated/combat_style_summaries.tex >> "$logfile"
+npm run generate_latex -- -t combat_style_descriptions -o ../comprehensive_codex/generated/combat_style_descriptions.tex >> "$logfile"
 
 # Equipment
-npm run generate_latex -- -t equipment_magic_armor_descriptions -o ../comprehensive_codex/generated/magic_armor.tex
-npm run generate_latex -- -t equipment_magic_armor_tables -o ../comprehensive_codex/generated/magic_armor_table.tex
-npm run generate_latex -- -t equipment_magic_weapons_descriptions -o ../comprehensive_codex/generated/magic_weapons.tex
-npm run generate_latex -- -t equipment_magic_weapons_tables -o ../comprehensive_codex/generated/magic_weapons_table.tex
-npm run generate_latex -- -t equipment_implements_descriptions -o ../comprehensive_codex/generated/implements.tex
-npm run generate_latex -- -t equipment_implements_tables -o ../comprehensive_codex/generated/implements_table.tex
-npm run generate_latex -- -t equipment_apparel_descriptions -o ../comprehensive_codex/generated/apparel.tex
-npm run generate_latex -- -t equipment_apparel_tables -o ../comprehensive_codex/generated/apparel_table.tex
-npm run generate_latex -- -t equipment_consumable_tools_descriptions -o ../comprehensive_codex/generated/consumable_tools.tex
-npm run generate_latex -- -t equipment_consumable_tools_tables -o ../comprehensive_codex/generated/consumable_tools_table.tex
-npm run generate_latex -- -t equipment_permanent_tools_descriptions -o ../comprehensive_codex/generated/permanent_tools.tex
-npm run generate_latex -- -t equipment_permanent_tools_tables -o ../comprehensive_codex/generated/permanent_tools_table.tex
-npm run generate_latex -- -t equipment_relic_descriptions -o ../comprehensive_codex/generated/relics.tex
-npm run generate_latex -- -t equipment_relic_tables -o ../comprehensive_codex/generated/relics_table.tex
-npm run generate_latex -- -t equipment_everything_table -o ../comprehensive_codex/generated/everything_table.tex
+npm run generate_latex -- -t equipment_magic_armor_descriptions -o ../comprehensive_codex/generated/magic_armor.tex >> "$logfile"
+npm run generate_latex -- -t equipment_magic_armor_tables -o ../comprehensive_codex/generated/magic_armor_table.tex >> "$logfile"
+npm run generate_latex -- -t equipment_magic_weapons_descriptions -o ../comprehensive_codex/generated/magic_weapons.tex >> "$logfile"
+npm run generate_latex -- -t equipment_magic_weapons_tables -o ../comprehensive_codex/generated/magic_weapons_table.tex >> "$logfile"
+npm run generate_latex -- -t equipment_implements_descriptions -o ../comprehensive_codex/generated/implements.tex >> "$logfile"
+npm run generate_latex -- -t equipment_implements_tables -o ../comprehensive_codex/generated/implements_table.tex >> "$logfile"
+npm run generate_latex -- -t equipment_apparel_descriptions -o ../comprehensive_codex/generated/apparel.tex >> "$logfile"
+npm run generate_latex -- -t equipment_apparel_tables -o ../comprehensive_codex/generated/apparel_table.tex >> "$logfile"
+npm run generate_latex -- -t equipment_consumable_tools_descriptions -o ../comprehensive_codex/generated/consumable_tools.tex >> "$logfile"
+npm run generate_latex -- -t equipment_consumable_tools_tables -o ../comprehensive_codex/generated/consumable_tools_table.tex >> "$logfile"
+npm run generate_latex -- -t equipment_permanent_tools_descriptions -o ../comprehensive_codex/generated/permanent_tools.tex >> "$logfile"
+npm run generate_latex -- -t equipment_permanent_tools_tables -o ../comprehensive_codex/generated/permanent_tools_table.tex >> "$logfile"
+npm run generate_latex -- -t equipment_relic_descriptions -o ../comprehensive_codex/generated/relics.tex >> "$logfile"
+npm run generate_latex -- -t equipment_relic_tables -o ../comprehensive_codex/generated/relics_table.tex >> "$logfile"
+npm run generate_latex -- -t equipment_everything_table -o ../comprehensive_codex/generated/everything_table.tex >> "$logfile"
 
-npm run generate_uncommon_species_classes
+npm run generate_uncommon_species_classes >> "$logfile"
 
