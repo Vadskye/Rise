@@ -65,7 +65,7 @@ $tasks = @(
 foreach ($task in $tasks) {
     Write-Host "Generating $($task.type)..." -ForegroundColor Gray
     # Use npm run script which handles path registration and source maps
-    npm run script -- src/scripts/generate_latex.js -t $($task.type) -o $($task.output)
+    npm run generate_latex -- -t $($task.type) -o $($task.output)
     if ($LASTEXITCODE -ne 0) {
         Write-Error "Failed to generate $($task.type)."
         exit $LASTEXITCODE
@@ -73,7 +73,7 @@ foreach ($task in $tasks) {
 }
 
 Write-Host "Generating uncommon species classes..." -ForegroundColor Gray
-npm run script -- src/scripts/generate_uncommon_species_classes.js
+npm run generate_uncommon_species_classes
 if ($LASTEXITCODE -ne 0) {
     Write-Error "Failed to generate uncommon species classes."
     exit $LASTEXITCODE
