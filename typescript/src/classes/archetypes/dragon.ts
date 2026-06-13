@@ -56,8 +56,8 @@ export function dragon(): RankAbility[] {
       isMagical: false,
       rank: 2,
       description: `
-        You add half your Strength to your \\glossterm{magical power}.
-        In addition, you add half your Willpower to your \\glossterm{mundane power}.
+        You can add half your Strength to your \\glossterm{magical power}.
+        In addition, you can add half your Willpower to your \\glossterm{mundane power}.
       `,
     },
     {
