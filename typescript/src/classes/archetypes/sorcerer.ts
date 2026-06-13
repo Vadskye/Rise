@@ -52,6 +52,15 @@ export function arcaneMagic(): RankAbility[] {
         \\end{magicalactiveability}
       `,
     },
+    {
+      complexity: 2,
+      name: 'Spell Knowledge',
+      isMagical: true,
+      rank: 2,
+      description: `
+        You learn an additional arcane spell.
+      `,
+    },
   ];
   return abilities;
 }
@@ -66,15 +75,6 @@ export function arcaneSpellMastery(): RankAbility[] {
       description: `
         You gain a \\plus1 bonus to your \\glossterm{magical power}.
         If your Constitution is 4 or higher, you gain an additional \\plus1 bonus.
-      `,
-    },
-    {
-      complexity: 2,
-      name: 'Spell Known',
-      isMagical: true,
-      rank: 1,
-      description: `
-        You learn an additional arcane spell.
       `,
     },
     {
