@@ -717,6 +717,165 @@ t.test('validateSpells', (t) => {
     t.end();
   });
 
+  t.test('strictly superior spells validation', (t) => {
+    t.test('should flag Thunderdash vs Flame Dash', (t) => {
+      const sphere1: MysticSphere = {
+        name: 'Electromancy',
+        shortDescription: 'Test',
+        sources: ['arcane'],
+        spells: [
+          {
+            name: 'Thunderdash',
+            rank: 3,
+            roles: ['clear', 'dive'],
+            attack: {
+              hit: '\\damageranktwo.',
+              injury: 'The target is \\briefly \\deafened.',
+              halfOnMiss: true,
+              targeting: `
+                You teleport into an unoccupied destination on a stable surface within \\shortrange.
+                Both your departure and arrival with this spell sound like a clap of thunder.
+                In addition, make an attack vs. Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.
+              `,
+            },
+          },
+        ],
+      };
+
+      const sphere2: MysticSphere = {
+        name: 'Pyromancy',
+        shortDescription: 'Test',
+        sources: ['arcane'],
+        spells: [
+          {
+            name: 'Flame Dash',
+            rank: 3,
+            roles: ['clear', 'dive'],
+            attack: {
+              hit: '\\damageranktwo.',
+              halfOnMiss: true,
+              targeting: `
+                You teleport into an unoccupied destination on a stable surface within \\shortrange.
+                In addition, make an attack vs. Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.
+              `,
+            },
+          },
+        ],
+      };
+
+      const issues = validateSpells([sphere1, sphere2]);
+      const superior = issues.find((issue) => issue.type === 'strictly_superior');
+      t.ok(superior, 'Should flag Thunderdash vs Flame Dash');
+      t.equal(superior?.spells.includes('Thunderdash'), true);
+      t.equal(superior?.spells.includes('Flame Dash'), true);
+      t.match(superior?.message || '', /Thunderdash.*strictly superior.*Flame Dash/);
+      t.end();
+    });
+
+    t.test('should not flag as strictly superior if the upgraded spell has a balancing cost factor', (t) => {
+      const sphere1: MysticSphere = {
+        name: 'Electromancy',
+        shortDescription: 'Test',
+        sources: ['arcane'],
+        spells: [
+          {
+            name: 'Charged Thunderdash',
+            rank: 3,
+            roles: ['clear', 'dive'],
+            cost: '1 fatigue',
+            attack: {
+              hit: '\\damagerankthree.',
+              injury: 'The target is \\briefly \\deafened.',
+              halfOnMiss: true,
+              targeting: `
+                You teleport into an unoccupied destination on a stable surface within \\shortrange.
+                In addition, make an attack vs. Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.
+              `,
+            },
+          },
+        ],
+      };
+
+      const sphere2: MysticSphere = {
+        name: 'Pyromancy',
+        shortDescription: 'Test',
+        sources: ['arcane'],
+        spells: [
+          {
+            name: 'Flame Dash',
+            rank: 3,
+            roles: ['clear', 'dive'],
+            attack: {
+              hit: '\\damageranktwo.',
+              halfOnMiss: true,
+              targeting: `
+                You teleport into an unoccupied destination on a stable surface within \\shortrange.
+                In addition, make an attack vs. Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.
+              `,
+            },
+          },
+        ],
+      };
+
+      const issues = validateSpells([sphere1, sphere2]);
+      const superior = issues.find((issue) => issue.type === 'strictly_superior');
+      t.notOk(superior, 'Should not flag when there is a balancing cost factor');
+      t.end();
+    });
+
+    t.test('should not flag if the better spell has a higher rank', (t) => {
+      const sphere1: MysticSphere = {
+        name: 'Electromancy',
+        shortDescription: 'Test',
+        sources: ['arcane'],
+        spells: [
+          {
+            name: 'Greater Thunderdash',
+            rank: 4,
+            roles: ['clear', 'dive'],
+            attack: {
+              hit: '\\damagerankthree.',
+              injury: 'The target is \\briefly \\deafened.',
+              halfOnMiss: true,
+              targeting: `
+                You teleport into an unoccupied destination on a stable surface within \\shortrange.
+                In addition, make an attack vs. Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.
+              `,
+            },
+          },
+        ],
+      };
+
+      const sphere2: MysticSphere = {
+        name: 'Pyromancy',
+        shortDescription: 'Test',
+        sources: ['arcane'],
+        spells: [
+          {
+            name: 'Flame Dash',
+            rank: 3,
+            roles: ['clear', 'dive'],
+            attack: {
+              hit: '\\damageranktwo.',
+              halfOnMiss: true,
+              targeting: `
+                You teleport into an unoccupied destination on a stable surface within \\shortrange.
+                In addition, make an attack vs. Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.
+              `,
+            },
+          },
+        ],
+      };
+
+      const issues = validateSpells([sphere1, sphere2]);
+      const superior = issues.find((issue) => issue.type === 'strictly_superior');
+      t.notOk(superior, 'Should not flag since rank 4 spell being better than rank 3 is expected');
+      t.end();
+    });
+
+    t.end();
+  });
+
   t.end();
 });
 
