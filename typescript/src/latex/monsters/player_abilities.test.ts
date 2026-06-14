@@ -279,7 +279,7 @@ t.test('convertAbilityToMonsterLatex', (t) => {
     t.matchOnlyStrict(
       convertAbilityToMonsterLatex(simpleCreature, ability),
       `\\begin{activeability}*{Bite}{Standard action}
-      \\abilitytags \\abilitytag{Versatile Stance}
+      
       \\rankline
       \\hypertargetraised{maneuver:Bite}{}%
       \\hypertargetraised{maneuver:bite}{}%
@@ -402,7 +402,7 @@ t.test('restructureStrikeAbility', (t) => {
         hit: '1d8+10 damage.',
         targeting: 'The $name makes a $accuracy melee strike vs. Armor with its bite.',
       });
-      t.matchStrict(ability.tags, ['Versatile Stance', 'Sweeping (1)']);
+      t.matchStrict(ability.tags, ['Sweeping (1)']);
       t.end();
     });
 
@@ -553,7 +553,7 @@ t.test('restructureStrikeAbility', (t) => {
         name: 'Mighty Charge',
         rank: 3,
         roles: ['dive'],
-        tags: ['Versatile Stance', 'Sweeping (1)'],
+        tags: ['Sweeping (1)'],
         weapon: 'bite',
       });
 
