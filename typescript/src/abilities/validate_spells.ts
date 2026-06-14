@@ -63,15 +63,17 @@ export interface SpellProfile {
   areaGrows: boolean;
   halfOnMiss: boolean;
   maxTargets: number;
+  hasInjuryDamage: boolean;
+  isSustained: boolean;
 }
 
 export interface ValidationIssue {
   type:
-    | 'redundancy'
-    | 'inconsistent_damage'
-    | 'inconsistent_roles'
-    | 'almost_equivalent'
-    | 'strictly_superior';
+  | 'redundancy'
+  | 'inconsistent_damage'
+  | 'inconsistent_roles'
+  | 'almost_equivalent'
+  | 'strictly_superior';
   severity: 'warning';
   message: string;
   spells: [string, string];
@@ -108,7 +110,11 @@ function parseDamageRank(text: string): number | null {
       lowercase.includes('corrode') ||
       lowercase.includes('poison') ||
       lowercase.includes('next turn') ||
-      lowercase.includes('each turn')
+      lowercase.includes('each turn') ||
+      lowercase.includes('subsequent turn') ||
+      lowercase.includes('subsequent round') ||
+      lowercase.includes('each of your') ||
+      lowercase.includes('each round')
     ) {
       baseRank += 2;
     }
@@ -141,7 +147,13 @@ function parseDefenses(text: string): string[] {
 
 function parseRange(text: string): string {
   const lowercase = text.toLowerCase();
-  if (lowercase.includes('touch') || lowercase.includes('\\glossterm{touch}')) return 'melee';
+  if (
+    lowercase.includes('touch') ||
+    lowercase.includes('\\glossterm{touch}') ||
+    /against\s+(?:something|anything|one|a|the|target|creature)\b.*adjacent\s+to\s+you/i.test(lowercase)
+  ) {
+    return 'melee';
+  }
   if (
     lowercase.includes('from you') ||
     lowercase.includes('adjacent to you') ||
@@ -177,12 +189,13 @@ function parseArea(text: string): string {
 
 function parseAreaSize(text: string): string {
   const lowercase = text.toLowerCase();
-  if (lowercase.includes('\\tinyarea') || lowercase.includes('tiny')) return 'tiny';
-  if (lowercase.includes('\\smallarea') || lowercase.includes('small')) return 'small';
-  if (lowercase.includes('\\medarea') || lowercase.includes('medium')) return 'medium';
-  if (lowercase.includes('\\largearea') || lowercase.includes('large')) return 'large';
-  if (lowercase.includes('\\hugearea') || lowercase.includes('huge')) return 'huge';
-  if (lowercase.includes('\\gargarea') || lowercase.includes('gargantuan')) return 'gargantuan';
+  if (lowercase.includes('\\tinyarea')) return 'tiny';
+  if (lowercase.includes('\\smallarea')) return 'small';
+  if (lowercase.includes('\\medarea')) return 'medium';
+  if (lowercase.includes('\\largearea')) return 'large';
+  if (lowercase.includes('\\hugearea')) return 'huge';
+  if (lowercase.includes('\\gargarea')) return 'gargantuan';
+
   return 'none';
 }
 
@@ -243,6 +256,7 @@ function parseAppliedEffects(text: string): string[] {
     'stasis',
     'cannot act',
     'invisible',
+    'ice crystal',
   ];
   return effects.filter((e) => lowercase.includes(e));
 }
@@ -291,6 +305,9 @@ function parseSpecialRequirements(text: string): string[] {
     lowercase.includes('ends early if')
   ) {
     requirements.push('removable');
+  }
+  if (lowercase.includes('free hand') || lowercase.includes('freehand')) {
+    requirements.push('free hand');
   }
   return requirements.sort();
 }
@@ -362,12 +379,24 @@ export function buildSpellProfile(
   const accuracyCondition = parseAccuracyCondition(fullText);
   const specialRequirements = parseSpecialRequirements(fullText);
   const isDelayed = parseDelayed(fullText);
+  const isSustained =
+    (spell.type || '').toLowerCase().includes('sustain') ||
+    (spell.tags || []).some((tag) => tag.toLowerCase().includes('sustain')) ||
+    fullText.toLowerCase().includes('sustain');
+
+  const isSustainedMinor =
+    isSustained &&
+    ((spell.type || '').toLowerCase().includes('minor') ||
+      (spell.tags || []).some((tag) => tag.toLowerCase().includes('minor')) ||
+      /sustain\s*\([^)]*minor[^)]*\)/i.test(fullText));
+
   const hasCost =
     !!spell.cost ||
     spell.fatigueCost === true ||
     spell.materialCost === true ||
     (spell.type || '').toLowerCase().startsWith('attune') ||
-    fullText.toLowerCase().includes('cooldown');
+    fullText.toLowerCase().includes('cooldown') ||
+    isSustainedMinor;
   const roles = (spell.roles || [])
     .map((r) => r.toLowerCase() as SpellDefinition['roles'][number])
     .sort();
@@ -386,6 +415,11 @@ export function buildSpellProfile(
   if (maxTargets > 1 && area === 'single') {
     area = 'multi';
   }
+
+  const hasInjuryDamage =
+    injury.toLowerCase().includes('\\damagerank') ||
+    injury.toLowerCase().includes('damage') ||
+    fullText.toLowerCase().includes('extra damage');
 
   return {
     name: spell.name,
@@ -412,6 +446,8 @@ export function buildSpellProfile(
     areaGrows,
     halfOnMiss,
     maxTargets,
+    hasInjuryDamage,
+    isSustained,
   };
 }
 
@@ -544,6 +580,12 @@ function compareSpellProfiles(p1: SpellProfile, p2: SpellProfile): ComparisonRes
   if (d1 > d2) betterFields.push('damage rank');
   else if (d1 < d2) worseFields.push('damage rank');
 
+  // Low Power flag (standard power scaling is better than low power)
+  if (p1.isLowPower !== p2.isLowPower) {
+    if (!p1.isLowPower) betterFields.push('power scaling');
+    else worseFields.push('power scaling');
+  }
+
   // 2. Healing Rank
   const h1 = p1.healingRank ?? 0;
   const h2 = p2.healingRank ?? 0;
@@ -622,6 +664,12 @@ function compareSpellProfiles(p1: SpellProfile, p2: SpellProfile): ComparisonRes
   if (p1.accuracyCondition !== p2.accuracyCondition) {
     betterFields.push('accuracy condition');
     worseFields.push('accuracy condition');
+  }
+
+  // 14. Injury Damage (having extra injury damage is better)
+  if (p1.hasInjuryDamage !== p2.hasInjuryDamage) {
+    if (p1.hasInjuryDamage) betterFields.push('injury damage');
+    else worseFields.push('injury damage');
   }
 
   return {
@@ -713,23 +761,36 @@ function checkSpellPair(
       p1.isReactive === p2.isReactive &&
       p1.areaGrows === p2.areaGrows &&
       p1.defenses.join(',') === p2.defenses.join(',') &&
-      (p1.type || '') === (p2.type || '')
+      (p1.type || '') === (p2.type || '') &&
+      p1.isSustained === p2.isSustained
     ) {
-      const comparison = compareSpellProfiles(p1, p2);
-      if (comparison.isBetter && !comparison.isWorse && p1.rank <= p2.rank) {
-        issues.push({
-          type: 'strictly_superior',
-          severity: 'warning',
-          message: `Spell "${p1.name}" (${p1.sphereName}) is strictly superior to "${p2.name}" (${p2.sphereName}) at Rank ${p1.rank}: better in [${comparison.betterFields.join(', ')}] with no balancing drawbacks.`,
-          spells: [p1.name, p2.name],
-        });
-      } else if (comparison.isWorse && !comparison.isBetter && p2.rank <= p1.rank) {
-        issues.push({
-          type: 'strictly_superior',
-          severity: 'warning',
-          message: `Spell "${p2.name}" (${p2.sphereName}) is strictly superior to "${p1.name}" (${p1.sphereName}) at Rank ${p2.rank}: better in [${comparison.worseFields.join(', ')}] with no balancing drawbacks.`,
-          spells: [p1.name, p2.name],
-        });
+      // For utility/debuff spells (no damage and no healing), they must share at least one parsed condition AND share at least one role
+      let isComparable = true;
+      if (p1.damageRank === null && p2.damageRank === null && p1.healingRank === null && p2.healingRank === null) {
+        const hasSharedCondition = p1.appliedEffects.some((e) => p2.appliedEffects.includes(e));
+        const hasSharedRole = p1.roles.some((r) => p2.roles.includes(r));
+        if (!hasSharedCondition || !hasSharedRole) {
+          isComparable = false;
+        }
+      }
+
+      if (isComparable) {
+        const comparison = compareSpellProfiles(p1, p2);
+        if (comparison.isBetter && !comparison.isWorse && p1.rank <= p2.rank) {
+          issues.push({
+            type: 'strictly_superior',
+            severity: 'warning',
+            message: `Spell "${p1.name}" (${p1.sphereName}) is strictly superior to "${p2.name}" (${p2.sphereName}) at Rank ${p1.rank}: better in [${comparison.betterFields.join(', ')}] with no balancing drawbacks.`,
+            spells: [p1.name, p2.name],
+          });
+        } else if (comparison.isWorse && !comparison.isBetter && p2.rank <= p1.rank) {
+          issues.push({
+            type: 'strictly_superior',
+            severity: 'warning',
+            message: `Spell "${p2.name}" (${p2.sphereName}) is strictly superior to "${p1.name}" (${p1.sphereName}) at Rank ${p2.rank}: better in [${comparison.worseFields.join(', ')}] with no balancing drawbacks.`,
+            spells: [p1.name, p2.name],
+          });
+        }
       }
     }
 
