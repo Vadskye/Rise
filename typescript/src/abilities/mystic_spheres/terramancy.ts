@@ -687,7 +687,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       `,
       rank: 3,
       scaling: 'damage',
-      roles: ['wildfire'],
+      roles: ['clear'],
       tags: ['Manifestation', 'Sustain (minor)'],
     },
 

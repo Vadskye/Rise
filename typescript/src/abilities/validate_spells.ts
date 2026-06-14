@@ -57,6 +57,8 @@ export interface SpellProfile {
   roles: SpellDefinition['roles'];
   hasAttack: boolean;
   type?: SpellDefinition['type'];
+  healingRank: number | null;
+  areaGrows: boolean;
 }
 
 export interface ValidationIssue {
@@ -81,6 +83,13 @@ const RANK_WORDS: Record<string, number> = {
 
 function parseDamageRank(text: string): number | null {
   const match = text.match(/\\damagerank(\w+)/i);
+  if (!match) return null;
+  const word = match[1].toLowerCase().replace('low', '');
+  return RANK_WORDS[word] || null;
+}
+
+function parseHealingRank(text: string): number | null {
+  const match = text.match(/\\hprank(\w+)/i);
   if (!match) return null;
   const word = match[1].toLowerCase().replace('low', '');
   return RANK_WORDS[word] || null;
@@ -127,7 +136,7 @@ function parseArea(text: string): string {
   if (lowercase.includes('radius') || lowercase.includes('emanation') || lowercase.includes('zone')) return 'radius';
   if (lowercase.includes('line')) return 'line';
   if (lowercase.includes('wall')) return 'wall';
-  if (lowercase.includes('chains')) return 'chain';
+  if (lowercase.includes('chain')) return 'chain';
   if (lowercase.includes('up to') && (lowercase.includes('targets') || lowercase.includes('creatures'))) return 'multi';
   return 'single';
 }
@@ -232,6 +241,9 @@ export function buildSpellProfile(spell: SpellDefinition | CantripDefinition, sp
     fullText.toLowerCase().includes('cooldown');
   const roles = (spell.roles || []).map((r) => r.toLowerCase() as SpellDefinition['roles'][number]).sort();
 
+  const healingRank = parseHealingRank(fullText);
+  const areaGrows = fullText.toLowerCase().includes('increases over time');
+
   return {
     name: spell.name,
     sphereName,
@@ -251,6 +263,8 @@ export function buildSpellProfile(spell: SpellDefinition | CantripDefinition, sp
     roles,
     hasAttack: !!spell.attack,
     type: spell.type,
+    healingRank,
+    areaGrows,
   };
 }
 
@@ -293,6 +307,15 @@ export function validateSpells(spheres: MysticSphere[]): ValidationIssue[] {
 
       // Must have same area size
       if (p1.areaSize !== p2.areaSize) continue;
+
+      // Must have same area growth behavior
+      if (p1.areaGrows !== p2.areaGrows) continue;
+
+      // Must not mix damaging and non-damaging spells
+      if ((p1.damageRank === null) !== (p2.damageRank === null)) continue;
+
+      // Must not mix healing and non-healing spells
+      if ((p1.healingRank === null) !== (p2.healingRank === null)) continue;
 
       // Must have same accuracy modifier
       if (p1.accuracyModifier !== p2.accuracyModifier) continue;
@@ -337,6 +360,21 @@ export function validateSpells(spheres: MysticSphere[]): ValidationIssue[] {
             type: 'inconsistent_damage',
             severity: 'warning',
             message: `Spell "${higher.name}" (${higher.sphereName}) deals more damage (Rank ${higher.damageRank}) than "${lower.name}" (${lower.sphereName}, Rank ${lower.damageRank}) despite being equivalent, with no balancing cost factor.`,
+            spells: [p1.name, p2.name],
+          });
+        }
+      }
+
+      // Now check for healing vs cost inconsistencies:
+      if (p1.healingRank !== null && p2.healingRank !== null && p1.healingRank !== p2.healingRank) {
+        const higher = p1.healingRank > p2.healingRank ? p1 : p2;
+        const lower = p1.healingRank > p2.healingRank ? p2 : p1;
+
+        if (!higher.hasCost || (!higher.hasCost && !lower.hasCost)) {
+          issues.push({
+            type: 'inconsistent_damage',
+            severity: 'warning',
+            message: `Spell "${higher.name}" (${higher.sphereName}) heals more (Rank ${higher.healingRank}) than "${lower.name}" (${lower.sphereName}, Rank ${lower.healingRank}) despite being equivalent, with no balancing cost factor.`,
             spells: [p1.name, p2.name],
           });
         }
