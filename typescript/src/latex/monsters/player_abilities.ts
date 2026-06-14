@@ -549,7 +549,7 @@ export function restructureStrikeAbility(monster: Creature, ability: StrikeActiv
   };
 
   ability.tags = ability.tags || [];
-  const weaponTags = getWeaponTags(ability.weapon);
+  const weaponTags = getWeaponTags(ability.weapon).filter((tag) => tag !== 'Versatile Stance');
   ability.tags.push(...weaponTags);
   // TODO: if any monster weapons can sweep, we will need to sum together their sweeping
   // value.
