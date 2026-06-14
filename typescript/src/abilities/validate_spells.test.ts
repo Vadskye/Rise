@@ -21,6 +21,7 @@ t.test('buildSpellProfile', (t) => {
     t.equal(profile.sphereName, 'TestSphere');
     t.equal(profile.rank, 2);
     t.equal(profile.isDoubleAction, true);
+    t.equal(profile.isReactive, false);
     t.equal(profile.range, 'short');
     t.same(profile.defenses, ['fortitude']);
     t.equal(profile.area, 'single');
@@ -517,6 +518,90 @@ t.test('validateSpells', (t) => {
     const issues = validateSpells([sphere1, sphere2]);
     const redundancy = issues.find((issue) => issue.type === 'redundancy');
     t.notOk(redundancy, 'Volcano and Fireball should not be redundant because Volcano area increases over time');
+    t.end();
+  });
+
+  t.test('should not flag standard action vs reactive/triggered spells as redundant', (t) => {
+    const sphere1: MysticSphere = {
+      name: 'Channel Divinity',
+      shortDescription: 'Test',
+      sources: ['divine'],
+      spells: [
+        {
+          name: 'Fearful Awe',
+          rank: 1,
+          roles: ['flash'],
+          attack: {
+            hit: 'The target is \\briefly \\frightened by you.',
+            targeting: 'Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.',
+          },
+        },
+      ],
+    };
+
+    const sphere2: MysticSphere = {
+      name: 'Enchantment',
+      shortDescription: 'Test',
+      sources: ['arcane'],
+      spells: [
+        {
+          name: 'Curated Threat',
+          rank: 1,
+          roles: ['attune'],
+          type: 'Attune',
+          attack: {
+            hit: "The target's assessment of the threat matches your intention.",
+            targeting: 'Whenever an \\glossterm{enemy} enters a \\largearea radius \\glossterm{emanation} from you, make a \\glossterm{reactive attack} vs. Mental against them.',
+          },
+        },
+      ],
+    };
+
+    const issues = validateSpells([sphere1, sphere2]);
+    const redundancy = issues.find((issue) => issue.type === 'redundancy');
+    t.notOk(redundancy, 'Fearful Awe and Curated Threat should not be redundant due to reactive/triggered difference and different conditions');
+    t.end();
+  });
+
+  t.test('should not flag spells with different conditions as redundant', (t) => {
+    const sphere1: MysticSphere = {
+      name: 'Channel Divinity',
+      shortDescription: 'Test',
+      sources: ['divine'],
+      spells: [
+        {
+          name: 'Enduring Fearful Awe',
+          rank: 6,
+          roles: ['flash'],
+          attack: {
+            hit: 'The target is \\frightened by you as a \\glossterm{condition}.',
+            targeting: 'Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.',
+          },
+        },
+      ],
+    };
+
+    const sphere2: MysticSphere = {
+      name: 'Enchantment',
+      shortDescription: 'Test',
+      sources: ['arcane'],
+      spells: [
+        {
+          name: 'Intense Fearsome Aura',
+          rank: 6,
+          roles: ['attune'],
+          type: 'Attune (deep)',
+          attack: {
+            hit: 'The target is \\panicked by you until your next turn.',
+            targeting: 'Whenever an \\glossterm{enemy} enters a \\largearea radius \\glossterm{emanation} from you, make a \\glossterm{reactive attack} vs. Mental against them.',
+          },
+        },
+      ],
+    };
+
+    const issues = validateSpells([sphere1, sphere2]);
+    const redundancy = issues.find((issue) => issue.type === 'redundancy');
+    t.notOk(redundancy, 'Enduring Fearful Awe and Intense Fearsome Aura should not be redundant due to condition differences (frightened vs panicked)');
     t.end();
   });
 
