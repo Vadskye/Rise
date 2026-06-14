@@ -189,7 +189,7 @@ function addFireElementals(grimoire: Grimoire) {
     creature.addImmunity('Fire');
     creature.addResistant('Cold');
     creature.addVulnerability('Water');
-    creature.addSpell('Combustion');
+    creature.addSpell('Spontaneous Combustion');
     if (rank >= 2) {
       creature.addSpell('Ignition');
     }
@@ -305,7 +305,7 @@ function addMagmaElementals(grimoire: Grimoire) {
     creature.addVulnerability('Acid');
     creature.addVulnerability('Water');
 
-    creature.addSpell('Combustion');
+    creature.addSpell('Spontaneous Combustion');
     creature.addSpell('Rock Throw', {
       displayName: 'Magma Throw',
       tags: ['Fire'],
