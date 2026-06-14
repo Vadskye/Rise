@@ -621,14 +621,6 @@ t.test('validateSpells', (t) => {
               targeting: 'Make an attack vs. Fortitude against something within \\shortrange.',
             },
           },
-        ],
-      };
-
-      const sphere2: MysticSphere = {
-        name: 'Polymorph',
-        shortDescription: 'Test',
-        sources: ['arcane'],
-        spells: [
           {
             name: 'Cripple',
             rank: 2,
@@ -642,12 +634,12 @@ t.test('validateSpells', (t) => {
       };
 
       // Case 1: Option disabled (should not find almost_equivalent)
-      const issuesDisabled = validateSpells([sphere1, sphere2]);
+      const issuesDisabled = validateSpells([sphere1]);
       const almost1 = issuesDisabled.find((issue) => issue.type === 'almost_equivalent');
       t.notOk(almost1, 'Should not find almost equivalent when option is omitted');
 
       // Case 2: Option enabled (should find almost_equivalent under differs by range)
-      const issuesEnabled = validateSpells([sphere1, sphere2], { showApproximate: true });
+      const issuesEnabled = validateSpells([sphere1], { showApproximate: true });
       const almost2 = issuesEnabled.find((issue) => issue.type === 'almost_equivalent');
       t.ok(almost2, 'Should find almost equivalent when option is enabled');
       t.equal(almost2?.differenceField, 'range');
@@ -671,14 +663,6 @@ t.test('validateSpells', (t) => {
               targeting: 'Make an attack vs. Fortitude against something within \\shortrange.',
             },
           },
-        ],
-      };
-
-      const sphere2: MysticSphere = {
-        name: 'Polymorph',
-        shortDescription: 'Test',
-        sources: ['arcane'],
-        spells: [
           {
             name: 'Great Ice Spear',
             rank: 3,
@@ -691,7 +675,7 @@ t.test('validateSpells', (t) => {
         ],
       };
 
-      const issues = validateSpells([sphere1, sphere2], { showApproximate: true });
+      const issues = validateSpells([sphere1], { showApproximate: true });
       const almost = issues.find((issue) => issue.type === 'almost_equivalent');
       t.notOk(almost, 'Should not flag spells as almost equivalent if rank difference is greater than 1');
       t.end();
@@ -712,14 +696,6 @@ t.test('validateSpells', (t) => {
               targeting: 'Make an attack vs. Fortitude against something within \\shortrange.',
             },
           },
-        ],
-      };
-
-      const sphere2: MysticSphere = {
-        name: 'Polymorph',
-        shortDescription: 'Test',
-        sources: ['arcane'],
-        spells: [
           {
             name: 'Freezing Touch',
             rank: 2,
@@ -732,7 +708,7 @@ t.test('validateSpells', (t) => {
         ],
       };
 
-      const issues = validateSpells([sphere1, sphere2], { showApproximate: true });
+      const issues = validateSpells([sphere1], { showApproximate: true });
       const almost = issues.find((issue) => issue.type === 'almost_equivalent');
       t.notOk(almost, 'Should not flag spells as almost equivalent if one is damaging and the other is not');
       t.end();
