@@ -1336,7 +1336,8 @@ t.test('validateSpells', (t) => {
             attack: {
               hit: '\\damagerankfive.',
               halfOnMiss: true,
-              targeting: 'Make an attack vs. Brawn and Reflex against everything in a \\largearea cone from you.',
+              targeting:
+                'Make an attack vs. Brawn and Reflex against everything in a \\largearea cone from you.',
             },
           },
         ],
@@ -1353,9 +1354,11 @@ t.test('validateSpells', (t) => {
             roles: ['clear', 'kite'],
             attack: {
               hit: '\\damagerankfour.',
-              injury: 'You \\glossterm{fling} the target up to 15 feet away from you. This fling distance is doubled if the target is Medium or smaller.',
+              injury:
+                'You \\glossterm{fling} the target up to 15 feet away from you. This fling distance is doubled if the target is Medium or smaller.',
               halfOnMiss: true,
-              targeting: 'Make an attack vs. Reflex and Brawn against everything in a \\largearea cone from you.',
+              targeting:
+                'Make an attack vs. Reflex and Brawn against everything in a \\largearea cone from you.',
             },
           },
         ],
@@ -1379,7 +1382,8 @@ t.test('validateSpells', (t) => {
             roles: ['softener'],
             attack: {
               hit: 'The target is \\briefly surrounded by a bubble of water. It cannot breathe air, fly, or glide. If it does not have a \\glossterm{swim speed}, it is \\unsteady.',
-              targeting: 'Make an attack vs. Brawn against up to two Huge or smaller creatures within \\medrange.',
+              targeting:
+                'Make an attack vs. Brawn against up to two Huge or smaller creatures within \\medrange.',
             },
           },
         ],
@@ -1396,7 +1400,8 @@ t.test('validateSpells', (t) => {
             roles: ['maim'],
             attack: {
               hit: 'If the target is \\glossterm{injured}, it is surrounded by a bubble of water as a \\glossterm{condition}. It cannot breathe air, fly, or glide.',
-              targeting: 'Make an attack vs. Brawn against up to three Huge or smaller creatures within \\medrange.',
+              targeting:
+                'Make an attack vs. Brawn against up to three Huge or smaller creatures within \\medrange.',
             },
           },
         ],
@@ -1421,7 +1426,8 @@ t.test('validateSpells', (t) => {
             attack: {
               hit: '\\damagerankone.',
               halfOnMiss: true,
-              targeting: 'You create a geyser in a \\medarealong, 5 ft.\\ wide vertical line-shaped \\glossterm{zone} within \\shortrange.',
+              targeting:
+                'You create a geyser in a \\medarealong, 5 ft.\\ wide vertical line-shaped \\glossterm{zone} within \\shortrange.',
             },
           },
         ],
@@ -1439,7 +1445,8 @@ t.test('validateSpells', (t) => {
             attack: {
               hit: '\\damagerankone.',
               halfOnMiss: true,
-              targeting: 'Choose one Tiny or larger active fire within \\shortrange. Make an attack vs. Reflex against everything within an \\smallarea radius from it.',
+              targeting:
+                'Choose one Tiny or larger active fire within \\shortrange. Make an attack vs. Reflex against everything within an \\smallarea radius from it.',
             },
           },
         ],
@@ -1463,7 +1470,8 @@ t.test('validateSpells', (t) => {
             roles: ['flash'],
             attack: {
               hit: 'The target is \\briefly \\dazed.',
-              targeting: 'Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you. Then, you are \\briefly \\empowered.',
+              targeting:
+                'Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you. Then, you are \\briefly \\empowered.',
             },
           },
         ],
@@ -1480,7 +1488,8 @@ t.test('validateSpells', (t) => {
             roles: ['maim'],
             attack: {
               hit: 'The target has difficulty looking at you until it finishes a \\glossterm{short rest}. While it is \\glossterm{injured}, it treats you as being \\trait{invisible}.',
-              targeting: 'Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.',
+              targeting:
+                'Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.',
             },
           },
         ],
@@ -1504,7 +1513,8 @@ t.test('validateSpells', (t) => {
             roles: ['maim'],
             attack: {
               hit: 'If the target is \\glossterm{injured}, it is \\slowed as a \\glossterm{condition}.',
-              targeting: 'Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius within \\shortrange.',
+              targeting:
+                'Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius within \\shortrange.',
             },
           },
         ],
@@ -1521,7 +1531,8 @@ t.test('validateSpells', (t) => {
             roles: ['maim', 'stasis'],
             attack: {
               hit: 'If the target is \\glossterm{injured}, it becomes \\briefly frozen in time. It becomes completely immune to all damage, attacks, and effects of any kind. In addition, it cannot act in any way, and the duration of other effects on it does not expire. At the end of your next turn, it returns to normal...',
-              targeting: 'Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius within \\shortrange.',
+              targeting:
+                'Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius within \\shortrange.',
             },
           },
         ],
