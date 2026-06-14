@@ -50,7 +50,7 @@ export interface SpellProfile {
   areaSize: string;
   damageRank: number | null;
   isLowPower: boolean;
-  conditions: string[];
+  appliedEffects: string[];
   accuracyModifier: number;
   specialRequirements: string[];
   isDelayed: boolean;
@@ -71,6 +71,7 @@ export interface ValidationIssue {
 }
 
 const RANK_WORDS: Record<string, number> = {
+  zero: 0,
   one: 1,
   two: 2,
   three: 3,
@@ -87,14 +88,14 @@ function parseDamageRank(text: string): number | null {
   const match = text.match(/\\damagerank(\w+)/i);
   if (!match) return null;
   const word = match[1].toLowerCase().replace('low', '');
-  return RANK_WORDS[word] || null;
+  return RANK_WORDS[word] !== undefined ? RANK_WORDS[word] : null;
 }
 
 function parseHealingRank(text: string): number | null {
   const match = text.match(/\\hprank(\w+)/i);
   if (!match) return null;
   const word = match[1].toLowerCase().replace('low', '');
-  return RANK_WORDS[word] || null;
+  return RANK_WORDS[word] !== undefined ? RANK_WORDS[word] : null;
 }
 
 function parseDefenses(text: string): string[] {
@@ -154,9 +155,17 @@ function parseAreaSize(text: string): string {
   return 'none';
 }
 
-function parseConditions(text: string): string[] {
+/**
+ * Parses all status-altering effects applied by the spell, including both:
+ * - Persistent conditions (e.g. slowed, dazed, prone)
+ * - Brief/temporary buffs and debuffs (e.g. shielded, focused, unable to breathe)
+ *
+ * This allows the validator to compare spell similarity and strict superiority
+ * regardless of whether the effect is a formal Rise "condition" or a brief status effect.
+ */
+function parseAppliedEffects(text: string): string[] {
   const lowercase = text.toLowerCase();
-  const conditions = [
+  const effects = [
     'slowed',
     'dazed',
     'blinded',
@@ -178,8 +187,21 @@ function parseConditions(text: string): string[] {
     'immobilized',
     'charmed',
     'deafened',
+    'shielded',
+    'focused',
+    'braced',
+    'empowered',
+    'fortified',
+    'honed',
+    'maximized',
+    'primed',
+    'steeled',
+    'resistant',
+    'unable to breathe',
+    'difficult terrain',
+    'liquify',
   ];
-  return conditions.filter((c) => lowercase.includes(c));
+  return effects.filter((e) => lowercase.includes(e));
 }
 
 function parseAccuracyModifier(text: string): number {
@@ -236,7 +258,7 @@ export function buildSpellProfile(spell: SpellDefinition | CantripDefinition, sp
   const areaSize = parseAreaSize(fullText);
   const damageRank = parseDamageRank(fullText);
   const isLowPower = /\\damagerank\w+low/i.test(fullText);
-  const conditions = parseConditions(fullText);
+  const appliedEffects = parseAppliedEffects(fullText);
   const accuracyModifier = parseAccuracyModifier(fullText);
   const specialRequirements = parseSpecialRequirements(fullText);
   const isDelayed = parseDelayed(fullText);
@@ -268,7 +290,7 @@ export function buildSpellProfile(spell: SpellDefinition | CantripDefinition, sp
     areaSize,
     damageRank,
     isLowPower,
-    conditions,
+    appliedEffects,
     accuracyModifier,
     specialRequirements,
     isDelayed,
@@ -358,11 +380,11 @@ function getSpellDifferences(p1: SpellProfile, p2: SpellProfile): Difference[] {
       p2Value: p2.isDelayed ? 'delayed' : 'immediate',
     });
   }
-  if ([...p1.conditions].sort().join(',') !== [...p2.conditions].sort().join(',')) {
+  if ([...p1.appliedEffects].sort().join(',') !== [...p2.appliedEffects].sort().join(',')) {
     diffs.push({
       field: 'applied conditions',
-      p1Value: `[${p1.conditions.join(', ')}]`,
-      p2Value: `[${p2.conditions.join(', ')}]`,
+      p1Value: `[${p1.appliedEffects.join(', ')}]`,
+      p2Value: `[${p2.appliedEffects.join(', ')}]`,
     });
   }
 
@@ -435,11 +457,11 @@ function compareSpellProfiles(p1: SpellProfile, p2: SpellProfile): ComparisonRes
     else if (idx1 < idx2) worseFields.push('area size');
   }
 
-  // 9. Conditions (superset of conditions is better)
-  const c1 = new Set(p1.conditions);
-  const c2 = new Set(p2.conditions);
-  const hasExtraP1 = p1.conditions.some((c) => !c2.has(c));
-  const hasExtraP2 = p2.conditions.some((c) => !c1.has(c));
+  // 9. Applied Effects (superset of applied effects is better)
+  const e1 = new Set(p1.appliedEffects);
+  const e2 = new Set(p2.appliedEffects);
+  const hasExtraP1 = p1.appliedEffects.some((e) => !e2.has(e));
+  const hasExtraP2 = p2.appliedEffects.some((e) => !e1.has(e));
   if (hasExtraP1) betterFields.push('applied conditions');
   if (hasExtraP2) worseFields.push('applied conditions');
 
@@ -484,7 +506,7 @@ function checkSpellPair(
     issues.push({
       type: 'redundancy',
       severity: 'warning',
-      message: `Spells "${p1.name}" (${p1.sphereName}) and "${p2.name}" (${p2.sphereName}) are virtually identical: both are Rank ${p1.rank}, range: ${p1.range}, defense: ${p1.defenses.join('/')}, double action: ${p1.isDoubleAction}, applying conditions: [${p1.conditions.join(', ')}].`,
+      message: `Spells "${p1.name}" (${p1.sphereName}) and "${p2.name}" (${p2.sphereName}) are virtually identical: both are Rank ${p1.rank}, range: ${p1.range}, defense: ${p1.defenses.join('/')}, double action: ${p1.isDoubleAction}, applying conditions: [${p1.appliedEffects.join(', ')}].`,
       spells: [p1.name, p2.name],
     });
 
