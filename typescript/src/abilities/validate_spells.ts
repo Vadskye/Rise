@@ -66,11 +66,11 @@ export interface SpellProfile {
 
 export interface ValidationIssue {
   type:
-  | 'redundancy'
-  | 'inconsistent_damage'
-  | 'inconsistent_roles'
-  | 'almost_equivalent'
-  | 'strictly_superior';
+    | 'redundancy'
+    | 'inconsistent_damage'
+    | 'inconsistent_roles'
+    | 'almost_equivalent'
+    | 'strictly_superior';
   severity: 'warning';
   message: string;
   spells: [string, string];
