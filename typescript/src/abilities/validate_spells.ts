@@ -63,7 +63,7 @@ export interface SpellProfile {
 }
 
 export interface ValidationIssue {
-  type: 'redundancy' | 'inconsistent_damage' | 'inconsistent_roles' | 'almost_equivalent';
+  type: 'redundancy' | 'inconsistent_damage' | 'inconsistent_roles' | 'almost_equivalent' | 'strictly_superior';
   severity: 'warning';
   message: string;
   spells: [string, string];
@@ -369,6 +369,96 @@ function getSpellDifferences(p1: SpellProfile, p2: SpellProfile): Difference[] {
   return diffs;
 }
 
+const RANGE_ORDER = ['none', 'self', 'melee', 'short', 'medium', 'long', 'distant'];
+const AREA_SIZE_ORDER = ['none', 'tiny', 'small', 'medium', 'large', 'huge', 'gargantuan'];
+
+interface ComparisonResult {
+  isBetter: boolean;
+  isWorse: boolean;
+  betterFields: string[];
+  worseFields: string[];
+}
+
+function compareSpellProfiles(p1: SpellProfile, p2: SpellProfile): ComparisonResult {
+  const betterFields: string[] = [];
+  const worseFields: string[] = [];
+
+  // 1. Damage Rank
+  const d1 = p1.damageRank ?? 0;
+  const d2 = p2.damageRank ?? 0;
+  if (d1 > d2) betterFields.push('damage rank');
+  else if (d1 < d2) worseFields.push('damage rank');
+
+  // 2. Healing Rank
+  const h1 = p1.healingRank ?? 0;
+  const h2 = p2.healingRank ?? 0;
+  if (h1 > h2) betterFields.push('healing rank');
+  else if (h1 < h2) worseFields.push('healing rank');
+
+  // 3. Action Economy (double action is worse)
+  if (p1.isDoubleAction !== p2.isDoubleAction) {
+    if (!p1.isDoubleAction) betterFields.push('action economy');
+    else worseFields.push('action economy');
+  }
+
+  // 4. Cost (having cost is worse)
+  if (p1.hasCost !== p2.hasCost) {
+    if (!p1.hasCost) betterFields.push('cost');
+    else worseFields.push('cost');
+  }
+
+  // 5. Delay (delayed is worse)
+  if (p1.isDelayed !== p2.isDelayed) {
+    if (!p1.isDelayed) betterFields.push('delayed behavior');
+    else worseFields.push('delayed behavior');
+  }
+
+  // 6. Accuracy Modifier
+  if (p1.accuracyModifier !== p2.accuracyModifier) {
+    if (p1.accuracyModifier > p2.accuracyModifier) betterFields.push('accuracy modifier');
+    else worseFields.push('accuracy modifier');
+  }
+
+  // 7. Range
+  if (p1.range !== p2.range) {
+    const idx1 = Math.max(0, RANGE_ORDER.indexOf(p1.range));
+    const idx2 = Math.max(0, RANGE_ORDER.indexOf(p2.range));
+    if (idx1 > idx2) betterFields.push('range');
+    else if (idx1 < idx2) worseFields.push('range');
+  }
+
+  // 8. Area Size
+  if (p1.areaSize !== p2.areaSize) {
+    const idx1 = Math.max(0, AREA_SIZE_ORDER.indexOf(p1.areaSize));
+    const idx2 = Math.max(0, AREA_SIZE_ORDER.indexOf(p2.areaSize));
+    if (idx1 > idx2) betterFields.push('area size');
+    else if (idx1 < idx2) worseFields.push('area size');
+  }
+
+  // 9. Conditions (superset of conditions is better)
+  const c1 = new Set(p1.conditions);
+  const c2 = new Set(p2.conditions);
+  const hasExtraP1 = p1.conditions.some((c) => !c2.has(c));
+  const hasExtraP2 = p2.conditions.some((c) => !c1.has(c));
+  if (hasExtraP1) betterFields.push('applied conditions');
+  if (hasExtraP2) worseFields.push('applied conditions');
+
+  // 10. Special Requirements / Drawbacks (fewer is better/subset is better)
+  const r1 = new Set(p1.specialRequirements);
+  const r2 = new Set(p2.specialRequirements);
+  const hasExtraReqsP1 = p1.specialRequirements.some((r) => !r2.has(r));
+  const hasExtraReqsP2 = p2.specialRequirements.some((r) => !r1.has(r));
+  if (hasExtraReqsP1) worseFields.push('special requirements');
+  if (hasExtraReqsP2) betterFields.push('special requirements');
+
+  return {
+    isBetter: betterFields.length > 0,
+    isWorse: worseFields.length > 0,
+    betterFields,
+    worseFields,
+  };
+}
+
 function checkSpellPair(
   p1: SpellProfile,
   p2: SpellProfile,
@@ -443,15 +533,42 @@ function checkSpellPair(
         spells: [p1.name, p2.name],
       });
     }
-  } else if (diffs.length === 1 && options?.showApproximate && p1.sphereName === p2.sphereName) {
-    const d = diffs[0];
-    issues.push({
-      type: 'almost_equivalent',
-      severity: 'warning',
-      message: `Spells "${p1.name}" (${p1.sphereName}) and "${p2.name}" (${p2.sphereName}) are almost equivalent: differ only by ${d.field} ("${d.p1Value}" vs "${d.p2Value}").`,
-      spells: [p1.name, p2.name],
-      differenceField: d.field,
-    });
+  } else {
+    // Dominance / Strictly Superior check
+    if (
+      p1.area === p2.area &&
+      p1.isReactive === p2.isReactive &&
+      p1.areaGrows === p2.areaGrows &&
+      p1.defenses.join(',') === p2.defenses.join(',')
+    ) {
+      const comparison = compareSpellProfiles(p1, p2);
+      if (comparison.isBetter && !comparison.isWorse && p1.rank <= p2.rank) {
+        issues.push({
+          type: 'strictly_superior',
+          severity: 'warning',
+          message: `Spell "${p1.name}" (${p1.sphereName}) is strictly superior to "${p2.name}" (${p2.sphereName}) at Rank ${p1.rank}: better in [${comparison.betterFields.join(', ')}] with no balancing drawbacks.`,
+          spells: [p1.name, p2.name],
+        });
+      } else if (comparison.isWorse && !comparison.isBetter && p2.rank <= p1.rank) {
+        issues.push({
+          type: 'strictly_superior',
+          severity: 'warning',
+          message: `Spell "${p2.name}" (${p2.sphereName}) is strictly superior to "${p1.name}" (${p1.sphereName}) at Rank ${p2.rank}: better in [${comparison.worseFields.join(', ')}] with no balancing drawbacks.`,
+          spells: [p1.name, p2.name],
+        });
+      }
+    }
+
+    if (diffs.length === 1 && options?.showApproximate && p1.sphereName === p2.sphereName) {
+      const d = diffs[0];
+      issues.push({
+        type: 'almost_equivalent',
+        severity: 'warning',
+        message: `Spells "${p1.name}" (${p1.sphereName}) and "${p2.name}" (${p2.sphereName}) are almost equivalent: differ only by ${d.field} ("${d.p1Value}" vs "${d.p2Value}").`,
+        spells: [p1.name, p2.name],
+        differenceField: d.field,
+      });
+    }
   }
 
   return issues;

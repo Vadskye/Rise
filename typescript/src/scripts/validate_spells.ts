@@ -16,6 +16,7 @@ if (issues.length === 0) {
   const redundancies = issues.filter((i) => i.type === 'redundancy');
   const inconsistencies = issues.filter((i) => i.type === 'inconsistent_damage');
   const roleInconsistencies = issues.filter((i) => i.type === 'inconsistent_roles');
+  const superiorSpells = issues.filter((i) => i.type === 'strictly_superior');
   const almostEquivalent = issues.filter((i) => i.type === 'almost_equivalent');
 
   if (redundancies.length > 0) {
@@ -37,6 +38,14 @@ if (issues.length === 0) {
   if (roleInconsistencies.length > 0) {
     console.log(`=== Inconsistent Roles (${roleInconsistencies.length}) ===`);
     for (const issue of roleInconsistencies) {
+      console.log(`- ${issue.message}`);
+    }
+    console.log();
+  }
+
+  if (superiorSpells.length > 0) {
+    console.log(`=== Strictly Superior Spell Designs (${superiorSpells.length}) ===`);
+    for (const issue of superiorSpells) {
       console.log(`- ${issue.message}`);
     }
     console.log();

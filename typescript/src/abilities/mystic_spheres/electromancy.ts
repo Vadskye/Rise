@@ -115,17 +115,17 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
     {
       name: 'Lightning Bolt',
 
-      // Rank 3 Spell
+      // Rank 2 Spell
       // Area: Large line, 5 ft. wide from self (R2, mod -1)
-      // Result: 3 - 1 = dr2
+      // Result: 2 - 1 = dr1
       attack: {
-        hit: `\\damageranktwo.`,
+        hit: `\\damagerankone.`,
         halfOnMiss: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\largearealong, 5 ft. wide line from you.
         `,
       },
-      rank: 3,
+      rank: 2,
       roles: ['clear'],
       scaling: 'damage',
     },
@@ -606,6 +606,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       // Result: 3 + 1 - 2 = dr2
       attack: {
         hit: `\\damageranktwo.`,
+        injury: 'The target is \\briefly \\deafened.',
         halfOnMiss: true,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\shortrange.
