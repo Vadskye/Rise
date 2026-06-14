@@ -93,10 +93,13 @@ export function isWeaponTagVisibleInMonster(tag: WeaponTag): boolean {
 
 export enum StandardWeapon {
   Battleaxe = 'Battleaxe',
+  Beak = 'Beak',
   Bite = 'Bite',
   Broadsword = 'Broadsword',
   Claw = 'Claw',
   Club = 'Club',
+  Dart = 'Dart',
+  Fist = 'Fist',
   GiantBoulder = 'GiantBoulder',
   Greataxe = 'Greataxe',
   Greatclub = 'Greatclub',
@@ -105,282 +108,293 @@ export enum StandardWeapon {
   Flail = 'Flail',
   HeavyCrossbow = 'HeavyCrossbow',
   HeavyFlail = 'HeavyFlail',
+  Horn = 'Horn',
+  Horns = 'Horns',
   Javelin = 'Javelin',
   Kama = 'Kama',
   Lance = 'Lance',
   Longbow = 'Longbow',
   MorningStar = 'MorningStar',
-  MonsterBite = 'MonsterBite',
-  MonsterHorn = 'MonsterHorn',
-  MonsterHorns = 'MonsterHorns',
-  MonsterPunch = 'MonsterPunch',
-  MonsterRam = 'MonsterRam',
-  MonsterStinger = 'MonsterStinger',
-  MonsterTentacle = 'MonsterTentacle',
+  Pick = 'Pick',
+  PunchKick = 'Punch/kick',
+  Ram = 'Ram',
   Sap = 'Sap',
   Scimitar = 'Scimitar',
+  Scythe = 'Scythe',
   Sickle = 'Sickle',
+  Slam = 'Slam',
   Sledgehammer = 'Sledgehammer',
   Sling = 'Sling',
   Smallsword = 'Smallsword',
   Spear = 'Spear',
+  Stinger = 'Stinger',
   Talon = 'Talon',
+  Tentacle = 'Tentacle',
   Totokia = 'Totokia',
   Warhammer = 'Warhammer',
 }
 
+export const STANDARD_WEAPONS: Record<StandardWeapon, Weapon> = {
+  [StandardWeapon.Battleaxe]: {
+    accuracy: 0,
+    damage_dice: DicePool.d6(),
+    name: 'Battleaxe',
+    tags: ['Keen', 'Versatile Grip'],
+  },
+  [StandardWeapon.Beak]: {
+    accuracy: 1,
+    damage_dice: DicePool.d6(),
+    name: 'Beak',
+    tags: ['Versatile Stance'],
+    isNatural: true,
+  },
+  [StandardWeapon.Bite]: {
+    accuracy: 0,
+    damage_dice: DicePool.d8(),
+    name: 'Bite',
+    tags: ['Versatile Stance'],
+    isNatural: true,
+  },
+  [StandardWeapon.Broadsword]: {
+    accuracy: 1,
+    damage_dice: DicePool.d6(),
+    name: 'Broadsword',
+    tags: ['Versatile Grip'],
+  },
+  [StandardWeapon.Claw]: {
+    accuracy: 1,
+    damage_dice: DicePool.d4(),
+    name: 'Claw',
+    tags: ['Light'],
+    isNatural: true,
+  },
+  [StandardWeapon.Club]: {
+    accuracy: 0,
+    damage_dice: DicePool.d6(),
+    name: 'Club',
+    tags: ['Versatile Grip'],
+  },
+  [StandardWeapon.Dart]: {
+    accuracy: 0,
+    damage_dice: DicePool.d4(),
+    name: 'Dart',
+    tags: ['Ammunition', 'Compact', 'Light', { kind: 'Thrown', close: 30, long: 60 }],
+  },
+  [StandardWeapon.Fist]: {
+    accuracy: 0,
+    damage_dice: DicePool.d6(),
+    name: 'Fist',
+    tags: [],
+    isNatural: true,
+  },
+  [StandardWeapon.GiantBoulder]: {
+    accuracy: 0,
+    damage_dice: DicePool.d8(),
+    name: 'Boulder',
+    tags: ['Impact', { kind: 'Thrown', close: 90, long: 180 }],
+  },
+  [StandardWeapon.Greataxe]: {
+    accuracy: 0,
+    damage_dice: DicePool.d8(),
+    name: 'Greataxe',
+    tags: ['Heavy', 'Keen'],
+  },
+  [StandardWeapon.Greatclub]: {
+    accuracy: 0,
+    damage_dice: DicePool.d10(),
+    name: 'Greatclub',
+    tags: ['Heavy'],
+  },
+  [StandardWeapon.Greatmace]: {
+    accuracy: 0,
+    damage_dice: DicePool.d8(),
+    name: 'Greatmace',
+    tags: ['Heavy', 'Impact'],
+  },
+  [StandardWeapon.Greatsword]: {
+    accuracy: 0,
+    damage_dice: DicePool.d8(),
+    name: 'Greatsword',
+    tags: ['Heavy', { kind: 'Sweeping', count: 1 }],
+  },
+  [StandardWeapon.Flail]: {
+    accuracy: -1,
+    damage_dice: DicePool.d8(),
+    name: 'Flail',
+    tags: ['Maneuverable', 'Versatile Grip'],
+  },
+  [StandardWeapon.HeavyCrossbow]: {
+    accuracy: 0,
+    damage_dice: DicePool.d10(),
+    name: 'Heavy crossbow',
+    tags: ['Heavy', { kind: 'Projectile', close: 90, long: 270 }],
+  },
+  [StandardWeapon.HeavyFlail]: {
+    accuracy: -1,
+    damage_dice: DicePool.d10(),
+    name: 'Heavy flail',
+    tags: ['Heavy', 'Maneuverable'],
+  },
+  [StandardWeapon.Javelin]: {
+    accuracy: 0,
+    damage_dice: DicePool.d6(),
+    name: 'Javelin',
+    tags: [{ kind: 'Thrown', close: 60, long: 120 }],
+  },
+  [StandardWeapon.Kama]: {
+    accuracy: 0,
+    damage_dice: DicePool.d4(),
+    name: 'Kama',
+    tags: ['Keen', 'Light'],
+  },
+  [StandardWeapon.Lance]: {
+    accuracy: 0,
+    damage_dice: DicePool.d6(),
+    name: 'Lance',
+    tags: ['Mounted'],
+  },
+  [StandardWeapon.Longbow]: {
+    accuracy: 0,
+    damage_dice: DicePool.d6(),
+    name: 'Longbow',
+    tags: ['Bow', { kind: 'Projectile', close: 90, long: 270 }],
+  },
+  [StandardWeapon.MorningStar]: {
+    accuracy: 0,
+    damage_dice: DicePool.d6(),
+    name: 'Morning star',
+    tags: ['Impact', 'Versatile Grip'],
+  },
+  [StandardWeapon.Horn]: {
+    accuracy: 0,
+    damage_dice: DicePool.d6(),
+    name: 'Horn',
+    tags: ['Keen', 'Versatile Stance'],
+    isNatural: true,
+  },
+  [StandardWeapon.Horns]: {
+    accuracy: 0,
+    damage_dice: DicePool.d6(),
+    name: 'Horns',
+    tags: ['Keen', 'Versatile Stance'],
+    isNatural: true,
+  },
+  [StandardWeapon.Ram]: {
+    accuracy: 0,
+    damage_dice: DicePool.d6(),
+    name: 'Ram',
+    tags: ['Impact', 'Versatile Stance'],
+    isNatural: true,
+  },
+  [StandardWeapon.Stinger]: {
+    accuracy: 1,
+    damage_dice: DicePool.d6(),
+    name: 'Stinger',
+    tags: ['Versatile Stance'],
+    isNatural: true,
+  },
+  [StandardWeapon.Tentacle]: {
+    accuracy: 0,
+    damage_dice: DicePool.d6(),
+    name: 'Tentacle',
+    tags: ['Maneuverable'],
+    isNatural: true,
+  },
+  [StandardWeapon.Pick]: {
+    accuracy: -1,
+    damage_dice: DicePool.d8(),
+    name: 'Pick',
+    tags: ['Keen', 'Versatile Grip'],
+  },
+  [StandardWeapon.PunchKick]: {
+    accuracy: 0,
+    damage_dice: DicePool.xdy(1, 3),
+    name: 'Punch/kick',
+    tags: ['Subdual'],
+    isNatural: true,
+  },
+  [StandardWeapon.Sap]: {
+    accuracy: 0,
+    damage_dice: DicePool.d4(),
+    name: 'Sap',
+    tags: ['Light', 'Subdual'],
+  },
+  [StandardWeapon.Scimitar]: {
+    accuracy: 0,
+    damage_dice: DicePool.d6(),
+    name: 'Scimitar',
+    tags: ['Mounted'],
+  },
+  [StandardWeapon.Scythe]: {
+    accuracy: 0,
+    damage_dice: DicePool.d6(),
+    name: 'Scythe',
+    tags: ['Heavy', { kind: 'Sweeping', count: 2 }],
+  },
+  [StandardWeapon.Sickle]: {
+    accuracy: 0,
+    damage_dice: DicePool.d4(),
+    name: 'Sickle',
+    tags: ['Light'],
+  },
+  [StandardWeapon.Slam]: {
+    accuracy: -1,
+    damage_dice: DicePool.d10(),
+    name: 'Slam',
+    tags: [],
+    isNatural: true,
+  },
+  [StandardWeapon.Sledgehammer]: {
+    accuracy: -1,
+    damage_dice: DicePool.d10(),
+    name: 'Sledgehammer',
+    tags: ['Heavy', 'Impact'],
+  },
+  [StandardWeapon.Sling]: {
+    accuracy: -1,
+    damage_dice: DicePool.d6(),
+    name: 'Sling',
+    tags: [{ kind: 'Projectile', close: 90, long: 270 }],
+  },
+  [StandardWeapon.Smallsword]: {
+    accuracy: 1,
+    damage_dice: DicePool.d4(),
+    name: 'Smallsword',
+    tags: ['Light'],
+  },
+  [StandardWeapon.Spear]: {
+    accuracy: 0,
+    damage_dice: DicePool.d6(),
+    name: 'Spear',
+    tags: ['Long', { kind: 'Thrown', close: 30, long: 60 }, 'Versatile Grip'],
+  },
+  [StandardWeapon.Talon]: {
+    accuracy: 1,
+    damage_dice: DicePool.d4(),
+    name: 'Talon',
+    tags: ['Light'],
+    isNatural: true,
+  },
+  [StandardWeapon.Totokia]: {
+    accuracy: 0,
+    damage_dice: DicePool.d8(),
+    name: 'Totokia',
+    tags: ['Impact', 'Versatile Grip'],
+  },
+  [StandardWeapon.Warhammer]: {
+    accuracy: -1,
+    damage_dice: DicePool.d8(),
+    name: 'Warhammer',
+    tags: ['Impact', 'Versatile Grip'],
+  },
+};
+
 export function getStandardWeapon(kind: StandardWeapon): Weapon {
-  switch (kind) {
-    case StandardWeapon.Battleaxe:
-      return {
-        accuracy: 1,
-        damage_dice: DicePool.d6(),
-        name: 'Battleaxe',
-        tags: ['Versatile Grip'],
-      };
-    case StandardWeapon.Bite:
-      return {
-        accuracy: 0,
-        damage_dice: DicePool.d6(),
-        name: 'Bite',
-        tags: ['Clinch'],
-      };
-    case StandardWeapon.Broadsword:
-      return {
-        accuracy: 0,
-        damage_dice: DicePool.d6(),
-        name: 'Broadsword',
-        tags: [{ kind: 'Sweeping', count: 1 }, 'Versatile Grip'],
-      };
-    case StandardWeapon.Claw:
-      return {
-        accuracy: 2,
-        damage_dice: DicePool.d4(),
-        name: 'Claw',
-        tags: ['Light'],
-      };
-    case StandardWeapon.Club:
-      return {
-        accuracy: 0,
-        damage_dice: DicePool.d8(),
-        name: 'Club',
-        tags: [],
-      };
-    case StandardWeapon.Flail:
-      return {
-        accuracy: 0,
-        damage_dice: DicePool.d6(),
-        name: 'Flail',
-        tags: ['Maneuverable'],
-      };
-    case StandardWeapon.GiantBoulder:
-      return {
-        accuracy: 0,
-        damage_dice: DicePool.d8(),
-        name: 'Boulder',
-        tags: ['Impact', { kind: 'Thrown', close: 120, long: 360 }],
-      };
-    case StandardWeapon.Greataxe:
-      return {
-        accuracy: 1,
-        damage_dice: DicePool.d8(),
-        name: 'Greataxe',
-        tags: ['Heavy', { kind: 'Sweeping', count: 1 }],
-      };
-    case StandardWeapon.Greatclub:
-      return {
-        accuracy: 0,
-        damage_dice: DicePool.d10(),
-        name: 'Greatclub',
-        tags: ['Heavy', 'Impact'],
-      };
-    case StandardWeapon.Greatmace:
-      return {
-        accuracy: 0,
-        damage_dice: DicePool.d10(),
-        name: 'Greatmace',
-        tags: ['Heavy', 'Impact'],
-      };
-    case StandardWeapon.Greatsword:
-      return {
-        accuracy: 0,
-        damage_dice: DicePool.d8(),
-        name: 'Greatsword',
-        tags: ['Heavy', { kind: 'Sweeping', count: 2 }],
-      };
-    case StandardWeapon.HeavyCrossbow:
-      return {
-        accuracy: 0,
-        damage_dice: DicePool.d10(),
-        name: 'Heavy crossbow',
-        tags: [{ kind: 'Projectile', close: 90, long: 270 }],
-      };
-    case StandardWeapon.HeavyFlail:
-      return {
-        accuracy: 0,
-        damage_dice: DicePool.d10(),
-        name: 'Heavy flail',
-        tags: ['Heavy', 'Maneuverable'],
-      };
-    case StandardWeapon.Javelin:
-      return {
-        accuracy: 0,
-        damage_dice: DicePool.d6(),
-        name: 'Javelin',
-        tags: [{ kind: 'Thrown', close: 60, long: 120 }],
-      };
-    case StandardWeapon.Kama:
-      return {
-        accuracy: 1,
-        damage_dice: DicePool.d4(),
-        name: 'Kama',
-        tags: ['Light', { kind: 'Sweeping', count: 1 }],
-      };
-    case StandardWeapon.Lance:
-      return {
-        accuracy: 2,
-        damage_dice: DicePool.d10(),
-        name: 'Lance',
-        tags: ['Ammunition', 'Long', 'Mounted'],
-      };
-    case StandardWeapon.Longbow:
-      return {
-        accuracy: 0,
-        damage_dice: DicePool.d6(),
-        name: 'Longbow',
-        tags: [{ kind: 'Projectile', close: 90, long: 270 }],
-      };
-    case StandardWeapon.MorningStar:
-      return {
-        accuracy: 0,
-        damage_dice: DicePool.d8(),
-        name: 'Morning star',
-        tags: ['Versatile Grip'],
-      };
-    case StandardWeapon.MonsterBite:
-      return {
-        accuracy: 0,
-        damage_dice: DicePool.d8(),
-        name: 'Bite',
-        tags: ['Clinch', 'Heavy'],
-      };
-    case StandardWeapon.MonsterHorn:
-      return {
-        accuracy: 0,
-        damage_dice: DicePool.d6(),
-        name: 'Horn',
-        tags: ['Heavy', 'Impact'],
-      };
-    case StandardWeapon.MonsterHorns:
-      return {
-        accuracy: 0,
-        damage_dice: DicePool.d6(),
-        name: 'Horns',
-        tags: ['Heavy', 'Impact'],
-      };
-    case StandardWeapon.MonsterPunch:
-      return {
-        accuracy: 2,
-        damage_dice: DicePool.d4(),
-        name: 'Punch',
-        tags: ['Light'],
-      };
-    case StandardWeapon.MonsterRam:
-      return {
-        accuracy: 0,
-        damage_dice: DicePool.d6(),
-        name: 'Ram',
-        tags: ['Heavy', 'Resonating'],
-      };
-    case StandardWeapon.MonsterStinger:
-      return {
-        accuracy: 1,
-        damage_dice: DicePool.d6(),
-        name: 'Stinger',
-        tags: ['Heavy'],
-      };
-    case StandardWeapon.MonsterTentacle:
-      return {
-        accuracy: 0,
-        damage_dice: DicePool.d8(),
-        name: 'Tentacle',
-        tags: ['Heavy', 'Long'],
-      };
-    case StandardWeapon.Sap:
-      return {
-        accuracy: 1,
-        damage_dice: DicePool.xdy(1, 3),
-        name: 'Sap',
-        tags: ['Compact', 'Light', 'Subdual'],
-      };
-    case StandardWeapon.Scimitar:
-      return {
-        accuracy: 1,
-        damage_dice: DicePool.d6(),
-        name: 'Scimitar',
-        tags: ['Mounted'],
-      };
-    case StandardWeapon.Sickle:
-      return {
-        accuracy: 1,
-        damage_dice: DicePool.d4(),
-        name: 'Sickle',
-        tags: ['Light', { kind: 'Sweeping', count: 1 }],
-      };
-    case StandardWeapon.Sledgehammer:
-      return {
-        accuracy: -1,
-        damage_dice: DicePool.xdy(2, 6),
-        name: 'Sledgehammer',
-        tags: ['Resonating', 'Heavy'],
-      };
-    case StandardWeapon.Sling:
-      return {
-        accuracy: 0,
-        damage_dice: DicePool.d4(),
-        name: 'Sling',
-        tags: [{ kind: 'Projectile', close: 60, long: 120 }, 'Compact'],
-      };
-    case StandardWeapon.Smallsword:
-      return {
-        accuracy: 1,
-        damage_dice: DicePool.d4(),
-        name: 'Smallsword',
-        tags: ['Keen', 'Light'],
-      };
-    case StandardWeapon.Spear:
-      return {
-        accuracy: 0,
-        damage_dice: DicePool.d6(),
-        name: 'Spear',
-        tags: [{ kind: 'Thrown', close: 30, long: 60 }, 'Versatile Grip'],
-      };
-    case StandardWeapon.Talon:
-      return {
-        accuracy: 2,
-        damage_dice: DicePool.d4(),
-        name: 'Talon',
-        tags: ['Light', 'Versatile Grip'],
-      };
-    case StandardWeapon.Totokia:
-      return {
-        accuracy: 0,
-        damage_dice: DicePool.d8(),
-        name: 'Totokia',
-        tags: ['Impact', 'Versatile Grip'],
-      };
-    case StandardWeapon.Warhammer:
-      return {
-        accuracy: 0,
-        damage_dice: DicePool.d6(),
-        name: 'Warhammer',
-        tags: ['Resonating', 'Versatile Grip'],
-      };
-  }
+  return STANDARD_WEAPONS[kind];
 }
 
 export function getWeaponPowerScalings(weapon: Weapon): PowerScaling[] {
-  if (weapon.tags.includes('Heavy')) {
+  if (weapon.tags.includes('Heavy') || weapon.tags.includes('Versatile Stance')) {
     return heavyWeaponScalings();
   } else {
     return [standardWeaponScaling()];
