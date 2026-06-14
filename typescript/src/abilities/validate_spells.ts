@@ -52,6 +52,7 @@ export interface SpellProfile {
   isLowPower: boolean;
   appliedEffects: string[];
   accuracyModifier: number;
+  accuracyCondition: string | null;
   specialRequirements: string[];
   isDelayed: boolean;
   hasCost: boolean;
@@ -150,10 +151,10 @@ function parseRange(text: string): string {
   ) {
     return 'self';
   }
-  if (lowercase.includes('\\shortrange')) return 'short';
-  if (lowercase.includes('\\medrange')) return 'medium';
-  if (lowercase.includes('\\longrange')) return 'long';
   if (lowercase.includes('\\distrange')) return 'distant';
+  if (lowercase.includes('\\longrange')) return 'long';
+  if (lowercase.includes('\\medrange')) return 'medium';
+  if (lowercase.includes('\\shortrange')) return 'short';
   return 'none';
 }
 
@@ -234,18 +235,38 @@ function parseAppliedEffects(text: string): string[] {
     'fling',
     'push',
     'teleport',
+    'burn',
+    'corrode',
+    'bleed',
+    'poison',
+    'frozen',
+    'stasis',
+    'cannot act',
+    'invisible',
   ];
   return effects.filter((e) => lowercase.includes(e));
 }
 
 function parseAccuracyModifier(text: string): number {
   const lowercase = text.toLowerCase();
-  const match = lowercase.match(/(\\plus|\\minus|\+|-)(\d+) (\\glossterm{)?accuracy/);
+  const match = lowercase.match(/with a\s+(\\plus|\\minus|\+|-)(\d+)\s+(?:\\glossterm{)?accuracy/i);
   if (match) {
-    const sign = match[1] === '\\minus' || match[1] === '-' ? -1 : 1;
+    const sign = match[1].toLowerCase() === '\\minus' || match[1] === '-' ? -1 : 1;
     return sign * Number(match[2]);
   }
   return 0;
+}
+
+function parseAccuracyCondition(text: string): string | null {
+  const lowercase = text.toLowerCase();
+  const hasAny = /(\\plus|\\minus|\+|-)\d+\s+(?:\\glossterm{)?accuracy/i.test(lowercase);
+  if (!hasAny) return null;
+
+  const hasUnconditional = /with a\s+(\\plus|\\minus|\+|-)\d+\s+(?:\\glossterm{)?accuracy/i.test(lowercase);
+  if (hasUnconditional) return null;
+
+  const match = lowercase.match(/(?:accuracy bonus|accuracy penalty)\s+(?:if|against|when|for)\s+([^.]+)/i);
+  return match ? match[1].trim() : 'conditional';
 }
 
 function parseSpecialRequirements(text: string): string[] {
@@ -276,6 +297,9 @@ function parseSpecialRequirements(text: string): string[] {
 
 function parseDelayed(text: string): boolean {
   const lowercase = text.toLowerCase();
+  if (lowercase.includes('returns to normal') || lowercase.includes('return to normal')) {
+    return false;
+  }
   return (
     (lowercase.includes('next turn') ||
       lowercase.includes('next round') ||
@@ -329,12 +353,13 @@ export function buildSpellProfile(
 
   const defenses = parseDefenses(fullText);
   const range = parseRange(fullText);
-  const area = parseArea(fullText);
+  let area = parseArea(fullText);
   const areaSize = parseAreaSize(fullText);
   const damageRank = parseDamageRank(fullText);
   const isLowPower = /\\damagerank\w+low/i.test(fullText);
   const appliedEffects = parseAppliedEffects(fullText);
   const accuracyModifier = parseAccuracyModifier(fullText);
+  const accuracyCondition = parseAccuracyCondition(fullText);
   const specialRequirements = parseSpecialRequirements(fullText);
   const isDelayed = parseDelayed(fullText);
   const hasCost =
@@ -358,6 +383,10 @@ export function buildSpellProfile(
   const halfOnMiss = spell.attack?.halfOnMiss === true;
   const maxTargets = parseMaxTargets(fullText);
 
+  if (maxTargets > 1 && area === 'single') {
+    area = 'multi';
+  }
+
   return {
     name: spell.name,
     sphereName,
@@ -372,6 +401,7 @@ export function buildSpellProfile(
     isLowPower,
     appliedEffects,
     accuracyModifier,
+    accuracyCondition,
     specialRequirements,
     isDelayed,
     hasCost,
@@ -439,6 +469,13 @@ function getSpellDifferences(p1: SpellProfile, p2: SpellProfile): Difference[] {
       field: 'accuracy modifier',
       p1Value: `${p1.accuracyModifier >= 0 ? '+' : ''}${p1.accuracyModifier}`,
       p2Value: `${p2.accuracyModifier >= 0 ? '+' : ''}${p2.accuracyModifier}`,
+    });
+  }
+  if (p1.accuracyCondition !== p2.accuracyCondition) {
+    diffs.push({
+      field: 'accuracy condition',
+      p1Value: p1.accuracyCondition || 'none',
+      p2Value: p2.accuracyCondition || 'none',
     });
   }
   if (p1.specialRequirements.join(',') !== p2.specialRequirements.join(',')) {
@@ -581,6 +618,12 @@ function compareSpellProfiles(p1: SpellProfile, p2: SpellProfile): ComparisonRes
     else worseFields.push('maximum targets');
   }
 
+  // 13. Accuracy Condition
+  if (p1.accuracyCondition !== p2.accuracyCondition) {
+    betterFields.push('accuracy condition');
+    worseFields.push('accuracy condition');
+  }
+
   return {
     isBetter: betterFields.length > 0,
     isWorse: worseFields.length > 0,
@@ -669,7 +712,8 @@ function checkSpellPair(
       p1.area === p2.area &&
       p1.isReactive === p2.isReactive &&
       p1.areaGrows === p2.areaGrows &&
-      p1.defenses.join(',') === p2.defenses.join(',')
+      p1.defenses.join(',') === p2.defenses.join(',') &&
+      (p1.type || '') === (p2.type || '')
     ) {
       const comparison = compareSpellProfiles(p1, p2);
       if (comparison.isBetter && !comparison.isWorse && p1.rank <= p2.rank) {
