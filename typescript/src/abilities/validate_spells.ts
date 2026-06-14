@@ -1,14 +1,14 @@
 /**
  * SPELL DESIGN VALIDATION ENGINE
- * 
+ *
  * WHY THIS EXISTS:
  * This validation layer exists to identify similar spell designs and damage/cost inconsistencies
- * between different spells (potentially across different mystic spheres). In RPG system design, 
+ * between different spells (potentially across different mystic spheres). In RPG system design,
  * having virtually identical spells (e.g., same rank, range, action economy, and condition effects)
  * under different names decreases sphere identity, creates redundancy, and can lead to balancing
- * issues (e.g., if one deals less damage than another without a corresponding cost/drawback, like 
+ * issues (e.g., if one deals less damage than another without a corresponding cost/drawback, like
  * the inconsistency between Bonechill and Cripple).
- * 
+ *
  * HOW IT WORKS:
  * 1. buildSpellProfile() parses each spell's text fields (hit, targeting, injury, effect) into
  *    a structured "SpellProfile" using Regex and string checks.
@@ -23,7 +23,7 @@
  *    - Share at least one core role, and match exactly on support roles (healing, cleanse, focus, etc.)
  * 4. If they are redundant, the engine checks for "inconsistent damage" if their parsed damage ranks
  *    differ without a cost difference (e.g., one deals higher damage but neither has a cost/fatigue).
- * 
+ *
  * ASSUMPTIONS & SIMPLIFICATIONS:
  * - Spells without an 'attack' block are assumed to be utility/passive/pure-support spells, and
  *   are skipped for redundancy checks to prevent false positives from unparsed text effects.
@@ -60,10 +60,17 @@ export interface SpellProfile {
   type?: SpellDefinition['type'];
   healingRank: number | null;
   areaGrows: boolean;
+  halfOnMiss: boolean;
+  maxTargets: number;
 }
 
 export interface ValidationIssue {
-  type: 'redundancy' | 'inconsistent_damage' | 'inconsistent_roles' | 'almost_equivalent' | 'strictly_superior';
+  type:
+  | 'redundancy'
+  | 'inconsistent_damage'
+  | 'inconsistent_roles'
+  | 'almost_equivalent'
+  | 'strictly_superior';
   severity: 'warning';
   message: string;
   spells: [string, string];
@@ -85,10 +92,27 @@ const RANK_WORDS: Record<string, number> = {
 };
 
 function parseDamageRank(text: string): number | null {
-  const match = text.match(/\\damagerank(\w+)/i);
-  if (!match) return null;
-  const word = match[1].toLowerCase().replace('low', '');
-  return RANK_WORDS[word] !== undefined ? RANK_WORDS[word] : null;
+  const matches = [...text.matchAll(/\\damagerank(\w+)/gi)];
+  if (matches.length === 0) return null;
+
+  const firstWord = matches[0][1].toLowerCase().replace('low', '');
+  let baseRank = RANK_WORDS[firstWord] !== undefined ? RANK_WORDS[firstWord] : null;
+  if (baseRank === null) return null;
+
+  // If there are multiple damageranks, and it has DoT keywords, add +2
+  if (matches.length >= 2) {
+    const lowercase = text.toLowerCase();
+    if (
+      lowercase.includes('burn') ||
+      lowercase.includes('corrode') ||
+      lowercase.includes('poison') ||
+      lowercase.includes('next turn') ||
+      lowercase.includes('each turn')
+    ) {
+      baseRank += 2;
+    }
+  }
+  return baseRank;
 }
 
 function parseHealingRank(text: string): number | null {
@@ -136,11 +160,16 @@ function parseRange(text: string): string {
 function parseArea(text: string): string {
   const lowercase = text.toLowerCase();
   if (lowercase.includes('cone')) return 'cone';
-  if (lowercase.includes('radius') || lowercase.includes('emanation') || lowercase.includes('zone')) return 'radius';
+  if (lowercase.includes('radius') || lowercase.includes('emanation') || lowercase.includes('zone'))
+    return 'radius';
   if (lowercase.includes('line')) return 'line';
   if (lowercase.includes('wall')) return 'wall';
   if (lowercase.includes('chain')) return 'chain';
-  if (lowercase.includes('up to') && (lowercase.includes('targets') || lowercase.includes('creatures'))) return 'multi';
+  if (
+    lowercase.includes('up to') &&
+    (lowercase.includes('targets') || lowercase.includes('creatures'))
+  )
+    return 'multi';
   return 'single';
 }
 
@@ -200,6 +229,7 @@ function parseAppliedEffects(text: string): string[] {
     'unable to breathe',
     'difficult terrain',
     'liquify',
+    'failure chance',
   ];
   return effects.filter((e) => lowercase.includes(e));
 }
@@ -229,19 +259,60 @@ function parseSpecialRequirements(text: string): string[] {
   if (lowercase.includes('fails') || lowercase.includes('automatically fails')) {
     requirements.push('fails');
   }
+  if (
+    lowercase.includes('removed if') ||
+    lowercase.includes('removed by') ||
+    lowercase.includes('ends if') ||
+    lowercase.includes('ends early if')
+  ) {
+    requirements.push('removable');
+  }
   return requirements.sort();
 }
 
 function parseDelayed(text: string): boolean {
   const lowercase = text.toLowerCase();
   return (
-    lowercase.includes('next turn') ||
-    lowercase.includes('next round') ||
-    lowercase.includes('delayed')
-  ) && !lowercase.includes('until your next turn');
+    (lowercase.includes('next turn') ||
+      lowercase.includes('next round') ||
+      lowercase.includes('delayed')) &&
+    !lowercase.includes('until your next turn')
+  );
 }
 
-export function buildSpellProfile(spell: SpellDefinition | CantripDefinition, sphereName: string): SpellProfile {
+function parseMaxTargets(text: string): number {
+  const lowercase = text.toLowerCase();
+  const match = lowercase.match(
+    /(?:up to|against)\s+(\w+|\d+)\s+(?:grounded\s+)?(?:creatures|targets|enemies|allies)/,
+  );
+  if (match) {
+    const val = match[1];
+    if (/\d+/.test(val)) {
+      return parseInt(val, 10);
+    }
+    const wordMap: Record<string, number> = {
+      one: 1,
+      two: 2,
+      three: 3,
+      four: 4,
+      five: 5,
+      six: 6,
+      seven: 7,
+      eight: 8,
+      nine: 9,
+      ten: 10,
+    };
+    if (wordMap[val] !== undefined) {
+      return wordMap[val];
+    }
+  }
+  return 1;
+}
+
+export function buildSpellProfile(
+  spell: SpellDefinition | CantripDefinition,
+  sphereName: string,
+): SpellProfile {
   const hit = spell.attack?.hit || '';
   const targeting = spell.attack?.targeting || '';
   const injury = spell.attack?.injury || '';
@@ -268,7 +339,9 @@ export function buildSpellProfile(spell: SpellDefinition | CantripDefinition, sp
     spell.materialCost === true ||
     (spell.type || '').toLowerCase().startsWith('attune') ||
     fullText.toLowerCase().includes('cooldown');
-  const roles = (spell.roles || []).map((r) => r.toLowerCase() as SpellDefinition['roles'][number]).sort();
+  const roles = (spell.roles || [])
+    .map((r) => r.toLowerCase() as SpellDefinition['roles'][number])
+    .sort();
 
   const healingRank = parseHealingRank(fullText);
   const areaGrows = fullText.toLowerCase().includes('increases over time');
@@ -277,6 +350,9 @@ export function buildSpellProfile(spell: SpellDefinition | CantripDefinition, sp
     targeting.toLowerCase().includes('reactive attack') ||
     targeting.toLowerCase().includes('\\reactiveattack') ||
     targeting.toLowerCase().includes('whenever');
+
+  const halfOnMiss = spell.attack?.halfOnMiss === true;
+  const maxTargets = parseMaxTargets(fullText);
 
   return {
     name: spell.name,
@@ -300,6 +376,8 @@ export function buildSpellProfile(spell: SpellDefinition | CantripDefinition, sp
     type: spell.type,
     healingRank,
     areaGrows,
+    halfOnMiss,
+    maxTargets,
   };
 }
 
@@ -385,6 +463,20 @@ function getSpellDifferences(p1: SpellProfile, p2: SpellProfile): Difference[] {
       field: 'applied conditions',
       p1Value: `[${p1.appliedEffects.join(', ')}]`,
       p2Value: `[${p2.appliedEffects.join(', ')}]`,
+    });
+  }
+  if (p1.halfOnMiss !== p2.halfOnMiss) {
+    diffs.push({
+      field: 'half damage on miss',
+      p1Value: p1.halfOnMiss ? 'half on miss' : 'none',
+      p2Value: p2.halfOnMiss ? 'half on miss' : 'none',
+    });
+  }
+  if (p1.maxTargets !== p2.maxTargets) {
+    diffs.push({
+      field: 'maximum targets',
+      p1Value: `${p1.maxTargets} targets`,
+      p2Value: `${p2.maxTargets} targets`,
     });
   }
 
@@ -473,6 +565,18 @@ function compareSpellProfiles(p1: SpellProfile, p2: SpellProfile): ComparisonRes
   if (hasExtraReqsP1) worseFields.push('special requirements');
   if (hasExtraReqsP2) betterFields.push('special requirements');
 
+  // 11. Half on Miss (having half on miss is better)
+  if (p1.halfOnMiss !== p2.halfOnMiss) {
+    if (p1.halfOnMiss) betterFields.push('half damage on miss');
+    else worseFields.push('half damage on miss');
+  }
+
+  // 12. Max Targets (for multi-target area spells, having more targets is better)
+  if (p1.area === 'multi' && p2.area === 'multi' && p1.maxTargets !== p2.maxTargets) {
+    if (p1.maxTargets > p2.maxTargets) betterFields.push('maximum targets');
+    else worseFields.push('maximum targets');
+  }
+
   return {
     isBetter: betterFields.length > 0,
     isWorse: worseFields.length > 0,
@@ -484,7 +588,7 @@ function compareSpellProfiles(p1: SpellProfile, p2: SpellProfile): ComparisonRes
 function checkSpellPair(
   p1: SpellProfile,
   p2: SpellProfile,
-  options?: { showApproximate?: boolean }
+  options?: { showApproximate?: boolean },
 ): ValidationIssue[] {
   // Both spells must have attack definitions (i.e. they are combat abilities)
   if (!p1.hasAttack || !p2.hasAttack) return [];
@@ -598,7 +702,7 @@ function checkSpellPair(
 
 export function validateSpells(
   spheres: MysticSphere[],
-  options?: { showApproximate?: boolean }
+  options?: { showApproximate?: boolean },
 ): ValidationIssue[] {
   const profiles: SpellProfile[] = [];
   const issues: ValidationIssue[] = [];

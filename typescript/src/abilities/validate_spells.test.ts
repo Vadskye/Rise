@@ -12,7 +12,8 @@ t.test('buildSpellProfile', (t) => {
       cost: 'One ice crystal.',
       attack: {
         hit: '\\damagerankfive, and the target is \\slowed.',
-        targeting: 'During your next turn, you can spend a \\glossterm{standard action} to make an attack vs. Fortitude against something within \\shortrange.',
+        targeting:
+          'During your next turn, you can spend a \\glossterm{standard action} to make an attack vs. Fortitude against something within \\shortrange.',
       },
     };
 
@@ -56,7 +57,8 @@ t.test('validateSpells', (t) => {
           cost: 'One ice crystal.',
           attack: {
             hit: '\\damagerankfive. The target is \\slowed.',
-            targeting: 'During your next turn, you can spend a \\glossterm{standard action} to make an attack vs. Fortitude against something within \\shortrange.',
+            targeting:
+              'During your next turn, you can spend a \\glossterm{standard action} to make an attack vs. Fortitude against something within \\shortrange.',
           },
         },
       ],
@@ -73,27 +75,30 @@ t.test('validateSpells', (t) => {
           roles: ['burst', 'maim'],
           attack: {
             hit: '\\damagerankfour. The target is \\slowed.',
-            targeting: 'During your next turn, you can spend a \\glossterm{standard action} to make an attack vs. Fortitude against a creature within \\shortrange.',
+            targeting:
+              'During your next turn, you can spend a \\glossterm{standard action} to make an attack vs. Fortitude against a creature within \\shortrange.',
           },
         },
       ],
     };
 
     const issues = validateSpells([sphere1, sphere2]);
-    
+
     // We expect a redundancy issue (virtually identical spells)
     const redundancy = issues.find((issue) => issue.type === 'redundancy');
     t.ok(redundancy, 'Should find a redundancy issue');
     t.equal(redundancy?.spells.includes('Bonechill'), true);
     t.equal(redundancy?.spells.includes('Cripple'), true);
 
-    
     // Let's modify sphere1 to have no cost
     sphere1.spells![0].cost = undefined;
     const issuesNoCost = validateSpells([sphere1, sphere2]);
     const damageInconsistency = issuesNoCost.find((issue) => issue.type === 'inconsistent_damage');
-    t.ok(damageInconsistency, 'Should find inconsistent damage when higher damage spell has no cost');
-    
+    t.ok(
+      damageInconsistency,
+      'Should find inconsistent damage when higher damage spell has no cost',
+    );
+
     t.end();
   });
 
@@ -109,7 +114,8 @@ t.test('validateSpells', (t) => {
           roles: ['burst'],
           attack: {
             hit: '\\damagerankseven.',
-            targeting: 'Make an attack vs. Fortitude with a \\minus4 accuracy penalty against something within \\shortrange.',
+            targeting:
+              'Make an attack vs. Fortitude with a \\minus4 accuracy penalty against something within \\shortrange.',
           },
         },
       ],
@@ -134,7 +140,10 @@ t.test('validateSpells', (t) => {
 
     const issues = validateSpells([sphere1, sphere2]);
     const redundancy = issues.find((issue) => issue.type === 'redundancy');
-    t.notOk(redundancy, 'Disintegrate and Devouring Shadow should not be redundant due to accuracy penalty differences');
+    t.notOk(
+      redundancy,
+      'Disintegrate and Devouring Shadow should not be redundant due to accuracy penalty differences',
+    );
     t.end();
   });
 
@@ -150,7 +159,8 @@ t.test('validateSpells', (t) => {
           roles: ['clear'],
           attack: {
             hit: '\\damagerankfour.',
-            targeting: 'Choose one corpse. Make an attack vs. Reflex against everything within a \\smallarea radius from the corpse.',
+            targeting:
+              'Choose one corpse. Make an attack vs. Reflex against everything within a \\smallarea radius from the corpse.',
           },
         },
       ],
@@ -167,7 +177,8 @@ t.test('validateSpells', (t) => {
           roles: ['clear'],
           attack: {
             hit: '\\damageranktwo.',
-            targeting: 'Make an attack vs. Reflex against everything in a \\smallarea radius within \\shortrange.',
+            targeting:
+              'Make an attack vs. Reflex against everything in a \\smallarea radius within \\shortrange.',
           },
         },
       ],
@@ -175,7 +186,10 @@ t.test('validateSpells', (t) => {
 
     const issues = validateSpells([sphere1, sphere2]);
     const redundancy = issues.find((issue) => issue.type === 'redundancy');
-    t.notOk(redundancy, 'Corpse Explosion and Fireball should not be redundant due to corpse requirement');
+    t.notOk(
+      redundancy,
+      'Corpse Explosion and Fireball should not be redundant due to corpse requirement',
+    );
     t.end();
   });
 
@@ -191,7 +205,8 @@ t.test('validateSpells', (t) => {
           roles: ['clear'],
           attack: {
             hit: '\\damagerankfive.',
-            targeting: 'Make an attack vs. Reflex against everything in a \\smallarea cone from you.',
+            targeting:
+              'Make an attack vs. Reflex against everything in a \\smallarea cone from you.',
           },
         },
       ],
@@ -216,7 +231,10 @@ t.test('validateSpells', (t) => {
 
     const issues = validateSpells([sphere1, sphere2]);
     const redundancy = issues.find((issue) => issue.type === 'redundancy');
-    t.notOk(redundancy, 'Mighty Blastwave and Mighty Mystic Blast should not be redundant due to area size differences');
+    t.notOk(
+      redundancy,
+      'Mighty Blastwave and Mighty Mystic Blast should not be redundant due to area size differences',
+    );
     t.end();
   });
 
@@ -257,7 +275,10 @@ t.test('validateSpells', (t) => {
 
     const issues = validateSpells([sphere1, sphere2]);
     const redundancy = issues.find((issue) => issue.type === 'redundancy');
-    t.notOk(redundancy, 'Poison -- Wyvern Venom and Blood Calls to Blood should not be redundant due to poison condition');
+    t.notOk(
+      redundancy,
+      'Poison -- Wyvern Venom and Blood Calls to Blood should not be redundant due to poison condition',
+    );
     t.end();
   });
 
@@ -298,7 +319,10 @@ t.test('validateSpells', (t) => {
 
     const issues = validateSpells([sphere1, sphere2]);
     const redundancy = issues.find((issue) => issue.type === 'redundancy');
-    t.notOk(redundancy, 'Call Dust Devil and Fountain should not be redundant due to delayed vs immediate damage');
+    t.notOk(
+      redundancy,
+      'Call Dust Devil and Fountain should not be redundant due to delayed vs immediate damage',
+    );
     t.end();
   });
 
@@ -310,11 +334,16 @@ t.test('validateSpells', (t) => {
       roles: ['clear'],
       attack: {
         hit: '\\damagerankthree.',
-        targeting: 'Make an attack against all enemies within a \\smallarea radius from you. If there is water within \\shortrange...',
+        targeting:
+          'Make an attack against all enemies within a \\smallarea radius from you. If there is water within \\shortrange...',
       },
     };
     const profile = buildSpellProfile(spell, 'Aquamancy');
-    t.equal(profile.range, 'self', 'Fountain range should be parsed as self, prioritizing "from you" over "\\shortrange"');
+    t.equal(
+      profile.range,
+      'self',
+      'Fountain range should be parsed as self, prioritizing "from you" over "\\shortrange"',
+    );
     t.end();
   });
 
@@ -330,7 +359,8 @@ t.test('validateSpells', (t) => {
           roles: ['burst'],
           attack: {
             hit: '\\damagerankone.',
-            targeting: 'Make an attack vs. Fortitude against something within \\shortrange. This attack chains once.',
+            targeting:
+              'Make an attack vs. Fortitude against something within \\shortrange. This attack chains once.',
           },
         },
       ],
@@ -347,7 +377,8 @@ t.test('validateSpells', (t) => {
           roles: ['burst'],
           attack: {
             hit: '\\damagerankthree.',
-            targeting: 'Make an attack vs. Fortitude against one creature within \\shortrange. This attack automatically fails if...',
+            targeting:
+              'Make an attack vs. Fortitude against one creature within \\shortrange. This attack automatically fails if...',
           },
         },
       ],
@@ -355,46 +386,55 @@ t.test('validateSpells', (t) => {
 
     const issues = validateSpells([sphere1, sphere2]);
     const redundancy = issues.find((issue) => issue.type === 'redundancy');
-    t.notOk(redundancy, 'Arc and Negate should not be redundant due to area shape (chain vs single) and failure condition');
+    t.notOk(
+      redundancy,
+      'Arc and Negate should not be redundant due to area shape (chain vs single) and failure condition',
+    );
     t.end();
   });
 
-  t.test('should count attunement as a balancing cost factor and not flag inconsistent damage', (t) => {
-    const sphere1: MysticSphere = {
-      name: 'Electromancy',
-      shortDescription: 'Test',
-      sources: ['arcane'],
-      spells: [
-        {
-          name: 'Lightning Breath',
-          rank: 3,
-          roles: ['clear'],
-          type: 'Attune',
-          attack: {
-            hit: '\\damagerankthree.',
-            targeting: 'Make an attack vs. Reflex against everything in a line from you.',
+  t.test(
+    'should count attunement as a balancing cost factor and not flag inconsistent damage',
+    (t) => {
+      const sphere1: MysticSphere = {
+        name: 'Electromancy',
+        shortDescription: 'Test',
+        sources: ['arcane'],
+        spells: [
+          {
+            name: 'Lightning Breath',
+            rank: 3,
+            roles: ['clear'],
+            type: 'Attune',
+            attack: {
+              hit: '\\damagerankthree.',
+              targeting: 'Make an attack vs. Reflex against everything in a line from you.',
+            },
           },
-        },
-        {
-          name: 'Lightning Bolt',
-          rank: 3,
-          roles: ['clear'],
-          attack: {
-            hit: '\\damageranktwo.',
-            targeting: 'Make an attack vs. Reflex against everything in a line from you.',
+          {
+            name: 'Lightning Bolt',
+            rank: 3,
+            roles: ['clear'],
+            attack: {
+              hit: '\\damageranktwo.',
+              targeting: 'Make an attack vs. Reflex against everything in a line from you.',
+            },
           },
-        },
-      ],
-    };
+        ],
+      };
 
-    const issues = validateSpells([sphere1]);
-    const redundancy = issues.find((issue) => issue.type === 'redundancy');
-    t.ok(redundancy, 'Should find redundancy (duplicate designs)');
-    
-    const inconsistency = issues.find((issue) => issue.type === 'inconsistent_damage');
-    t.notOk(inconsistency, 'Should not report inconsistent damage since Lightning Breath is an Attune spell');
-    t.end();
-  });
+      const issues = validateSpells([sphere1]);
+      const redundancy = issues.find((issue) => issue.type === 'redundancy');
+      t.ok(redundancy, 'Should find redundancy (duplicate designs)');
+
+      const inconsistency = issues.find((issue) => issue.type === 'inconsistent_damage');
+      t.notOk(
+        inconsistency,
+        'Should not report inconsistent damage since Lightning Breath is an Attune spell',
+      );
+      t.end();
+    },
+  );
 
   t.test('should not flag damaging vs non-damaging spells as redundant', (t) => {
     const sphere1: MysticSphere = {
@@ -408,7 +448,8 @@ t.test('validateSpells', (t) => {
           roles: ['clear'],
           attack: {
             hit: '\\damagerankone.',
-            targeting: 'Make an attack vs. Mental against all enemies in a \\smallarea radius from you.',
+            targeting:
+              'Make an attack vs. Mental against all enemies in a \\smallarea radius from you.',
           },
         },
       ],
@@ -425,7 +466,8 @@ t.test('validateSpells', (t) => {
           roles: ['generator'],
           attack: {
             hit: 'The target is \\briefly \\frightened of you.',
-            targeting: 'Make an attack vs. Mental against all enemies in a \\smallarea radius from you.',
+            targeting:
+              'Make an attack vs. Mental against all enemies in a \\smallarea radius from you.',
           },
         },
       ],
@@ -433,7 +475,10 @@ t.test('validateSpells', (t) => {
 
     const issues = validateSpells([sphere1, sphere2]);
     const redundancy = issues.find((issue) => issue.type === 'redundancy');
-    t.notOk(redundancy, 'Word of Faith and Fearsome Shadow Cloak should not be redundant because one deals damage and the other does not');
+    t.notOk(
+      redundancy,
+      'Word of Faith and Fearsome Shadow Cloak should not be redundant because one deals damage and the other does not',
+    );
     t.end();
   });
 
@@ -476,7 +521,10 @@ t.test('validateSpells', (t) => {
 
     const issues = validateSpells([sphere1, sphere2]);
     const redundancy = issues.find((issue) => issue.type === 'redundancy');
-    t.notOk(redundancy, 'Lifesteal and Inflict Wound should not be redundant because one heals and the other does not');
+    t.notOk(
+      redundancy,
+      'Lifesteal and Inflict Wound should not be redundant because one heals and the other does not',
+    );
     t.end();
   });
 
@@ -492,7 +540,8 @@ t.test('validateSpells', (t) => {
           roles: ['clear'],
           attack: {
             hit: '\\damagerankone.',
-            targeting: 'You create a volcano. The area affected by the volcano increases over time. It affects a \\smallarea radius zone in the first turn.',
+            targeting:
+              'You create a volcano. The area affected by the volcano increases over time. It affects a \\smallarea radius zone in the first turn.',
           },
         },
       ],
@@ -509,7 +558,8 @@ t.test('validateSpells', (t) => {
           roles: ['clear'],
           attack: {
             hit: '\\damageranktwo.',
-            targeting: 'Make an attack vs. Reflex against everything in a \\smallarea radius within \\shortrange.',
+            targeting:
+              'Make an attack vs. Reflex against everything in a \\smallarea radius within \\shortrange.',
           },
         },
       ],
@@ -517,7 +567,10 @@ t.test('validateSpells', (t) => {
 
     const issues = validateSpells([sphere1, sphere2]);
     const redundancy = issues.find((issue) => issue.type === 'redundancy');
-    t.notOk(redundancy, 'Volcano and Fireball should not be redundant because Volcano area increases over time');
+    t.notOk(
+      redundancy,
+      'Volcano and Fireball should not be redundant because Volcano area increases over time',
+    );
     t.end();
   });
 
@@ -533,7 +586,8 @@ t.test('validateSpells', (t) => {
           roles: ['flash'],
           attack: {
             hit: 'The target is \\briefly \\frightened by you.',
-            targeting: 'Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.',
+            targeting:
+              'Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.',
           },
         },
       ],
@@ -551,7 +605,8 @@ t.test('validateSpells', (t) => {
           type: 'Attune',
           attack: {
             hit: "The target's assessment of the threat matches your intention.",
-            targeting: 'Whenever an \\glossterm{enemy} enters a \\largearea radius \\glossterm{emanation} from you, make a \\glossterm{reactive attack} vs. Mental against them.',
+            targeting:
+              'Whenever an \\glossterm{enemy} enters a \\largearea radius \\glossterm{emanation} from you, make a \\glossterm{reactive attack} vs. Mental against them.',
           },
         },
       ],
@@ -559,7 +614,10 @@ t.test('validateSpells', (t) => {
 
     const issues = validateSpells([sphere1, sphere2]);
     const redundancy = issues.find((issue) => issue.type === 'redundancy');
-    t.notOk(redundancy, 'Fearful Awe and Curated Threat should not be redundant due to reactive/triggered difference and different conditions');
+    t.notOk(
+      redundancy,
+      'Fearful Awe and Curated Threat should not be redundant due to reactive/triggered difference and different conditions',
+    );
     t.end();
   });
 
@@ -575,7 +633,8 @@ t.test('validateSpells', (t) => {
           roles: ['flash'],
           attack: {
             hit: 'The target is \\frightened by you as a \\glossterm{condition}.',
-            targeting: 'Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.',
+            targeting:
+              'Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.',
           },
         },
       ],
@@ -593,7 +652,8 @@ t.test('validateSpells', (t) => {
           type: 'Attune (deep)',
           attack: {
             hit: 'The target is \\panicked by you until your next turn.',
-            targeting: 'Whenever an \\glossterm{enemy} enters a \\largearea radius \\glossterm{emanation} from you, make a \\glossterm{reactive attack} vs. Mental against them.',
+            targeting:
+              'Whenever an \\glossterm{enemy} enters a \\largearea radius \\glossterm{emanation} from you, make a \\glossterm{reactive attack} vs. Mental against them.',
           },
         },
       ],
@@ -601,7 +661,10 @@ t.test('validateSpells', (t) => {
 
     const issues = validateSpells([sphere1, sphere2]);
     const redundancy = issues.find((issue) => issue.type === 'redundancy');
-    t.notOk(redundancy, 'Enduring Fearful Awe and Intense Fearsome Aura should not be redundant due to condition differences (frightened vs panicked)');
+    t.notOk(
+      redundancy,
+      'Enduring Fearful Awe and Intense Fearsome Aura should not be redundant due to condition differences (frightened vs panicked)',
+    );
     t.end();
   });
 
@@ -677,7 +740,10 @@ t.test('validateSpells', (t) => {
 
       const issues = validateSpells([sphere1], { showApproximate: true });
       const almost = issues.find((issue) => issue.type === 'almost_equivalent');
-      t.notOk(almost, 'Should not flag spells as almost equivalent if rank difference is greater than 1');
+      t.notOk(
+        almost,
+        'Should not flag spells as almost equivalent if rank difference is greater than 1',
+      );
       t.end();
     });
 
@@ -710,7 +776,10 @@ t.test('validateSpells', (t) => {
 
       const issues = validateSpells([sphere1], { showApproximate: true });
       const almost = issues.find((issue) => issue.type === 'almost_equivalent');
-      t.notOk(almost, 'Should not flag spells as almost equivalent if one is damaging and the other is not');
+      t.notOk(
+        almost,
+        'Should not flag spells as almost equivalent if one is damaging and the other is not',
+      );
       t.end();
     });
 
@@ -772,56 +841,59 @@ t.test('validateSpells', (t) => {
       t.end();
     });
 
-    t.test('should not flag as strictly superior if the upgraded spell has a balancing cost factor', (t) => {
-      const sphere1: MysticSphere = {
-        name: 'Electromancy',
-        shortDescription: 'Test',
-        sources: ['arcane'],
-        spells: [
-          {
-            name: 'Charged Thunderdash',
-            rank: 3,
-            roles: ['clear', 'dive'],
-            cost: '1 fatigue',
-            attack: {
-              hit: '\\damagerankthree.',
-              injury: 'The target is \\briefly \\deafened.',
-              halfOnMiss: true,
-              targeting: `
+    t.test(
+      'should not flag as strictly superior if the upgraded spell has a balancing cost factor',
+      (t) => {
+        const sphere1: MysticSphere = {
+          name: 'Electromancy',
+          shortDescription: 'Test',
+          sources: ['arcane'],
+          spells: [
+            {
+              name: 'Charged Thunderdash',
+              rank: 3,
+              roles: ['clear', 'dive'],
+              cost: '1 fatigue',
+              attack: {
+                hit: '\\damagerankthree.',
+                injury: 'The target is \\briefly \\deafened.',
+                halfOnMiss: true,
+                targeting: `
                 You teleport into an unoccupied destination on a stable surface within \\shortrange.
                 In addition, make an attack vs. Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.
               `,
+              },
             },
-          },
-        ],
-      };
+          ],
+        };
 
-      const sphere2: MysticSphere = {
-        name: 'Pyromancy',
-        shortDescription: 'Test',
-        sources: ['arcane'],
-        spells: [
-          {
-            name: 'Flame Dash',
-            rank: 3,
-            roles: ['clear', 'dive'],
-            attack: {
-              hit: '\\damageranktwo.',
-              halfOnMiss: true,
-              targeting: `
+        const sphere2: MysticSphere = {
+          name: 'Pyromancy',
+          shortDescription: 'Test',
+          sources: ['arcane'],
+          spells: [
+            {
+              name: 'Flame Dash',
+              rank: 3,
+              roles: ['clear', 'dive'],
+              attack: {
+                hit: '\\damageranktwo.',
+                halfOnMiss: true,
+                targeting: `
                 You teleport into an unoccupied destination on a stable surface within \\shortrange.
                 In addition, make an attack vs. Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.
               `,
+              },
             },
-          },
-        ],
-      };
+          ],
+        };
 
-      const issues = validateSpells([sphere1, sphere2]);
-      const superior = issues.find((issue) => issue.type === 'strictly_superior');
-      t.notOk(superior, 'Should not flag when there is a balancing cost factor');
-      t.end();
-    });
+        const issues = validateSpells([sphere1, sphere2]);
+        const superior = issues.find((issue) => issue.type === 'strictly_superior');
+        t.notOk(superior, 'Should not flag when there is a balancing cost factor');
+        t.end();
+      },
+    );
 
     t.test('should not flag if the better spell has a higher rank', (t) => {
       const sphere1: MysticSphere = {
@@ -886,7 +958,8 @@ t.test('validateSpells', (t) => {
             roles: ['flash'],
             attack: {
               hit: 'The target is \\dazzled.',
-              targeting: 'Make an attack vs. Reflex against each creature in a \\smallarea radius within \\shortrange.',
+              targeting:
+                'Make an attack vs. Reflex against each creature in a \\smallarea radius within \\shortrange.',
             },
           },
         ],
@@ -921,7 +994,8 @@ t.test('validateSpells', (t) => {
             roles: ['burst'],
             attack: {
               hit: '\\damageranksix.',
-              targeting: 'Make an attack vs. Reflex and Brawn against one creature within \\shortrange.',
+              targeting:
+                'Make an attack vs. Reflex and Brawn against one creature within \\shortrange.',
             },
           },
         ],
@@ -938,7 +1012,8 @@ t.test('validateSpells', (t) => {
             roles: ['clear', 'turtle'],
             attack: {
               hit: '\\damagerankfive.',
-              targeting: 'Make an attack vs. Brawn and Reflex against all adjacent. Then, you are \\briefly \\shielded.',
+              targeting:
+                'Make an attack vs. Brawn and Reflex against all adjacent. Then, you are \\briefly \\shielded.',
             },
           },
         ],
@@ -956,7 +1031,8 @@ t.test('validateSpells', (t) => {
             roles: ['burst'],
             attack: {
               hit: '\\damagerankthree.',
-              targeting: 'Make an attack vs. Fortitude against one creature within \\shortrange. You gain +2 accuracy if target is native to water.',
+              targeting:
+                'Make an attack vs. Fortitude against one creature within \\shortrange. You gain +2 accuracy if target is native to water.',
             },
           },
         ],
@@ -1018,16 +1094,234 @@ t.test('validateSpells', (t) => {
       };
 
       const issues1 = validateSpells([dustCloud, flameAura]);
-      t.notOk(issues1.find(i => i.type === 'strictly_superior'), 'Dust Cloud vs Flame Aura');
+      t.notOk(
+        issues1.find((i) => i.type === 'strictly_superior'),
+        'Dust Cloud vs Flame Aura',
+      );
 
       const issues2 = validateSpells([garotte, windblast]);
-      t.notOk(issues2.find(i => i.type === 'strictly_superior'), 'Garotte vs Mighty Shielding Windblast');
+      t.notOk(
+        issues2.find((i) => i.type === 'strictly_superior'),
+        'Garotte vs Mighty Shielding Windblast',
+      );
 
       const issues3 = validateSpells([desiccate, drowningGrasp]);
-      t.notOk(issues3.find(i => i.type === 'strictly_superior'), 'Desiccate vs Drowning Grasp');
+      t.notOk(
+        issues3.find((i) => i.type === 'strictly_superior'),
+        'Desiccate vs Drowning Grasp',
+      );
 
       const issues4 = validateSpells([aquajetGrasp, darkGrasp]);
-      t.notOk(issues4.find(i => i.type === 'strictly_superior'), 'Aquajet Grasp vs Dark Grasp');
+      t.notOk(
+        issues4.find((i) => i.type === 'strictly_superior'),
+        'Aquajet Grasp vs Dark Grasp',
+      );
+
+      // 5. Entangle vs Windseal (target count and removal drawback)
+      const entangle: MysticSphere = {
+        name: 'Verdamancy',
+        shortDescription: 'Test',
+        sources: ['nature'],
+        spells: [
+          {
+            name: 'Entangle',
+            rank: 4,
+            roles: ['trip'],
+            attack: {
+              hit: `
+                The target is \\briefly \\slowed.
+                This effect is immediately removed if the target takes damage from a \\atAcid or \\atFire ability.
+              `,
+              targeting: `
+                Make an attack vs. Brawn against up to two \\glossterm{grounded} creatures within \\medrange.
+                You gain a +2 accuracy bonus against each target that is in \\glossterm{undergrowth}.
+              `,
+            },
+          },
+        ],
+      };
+
+      const windseal: MysticSphere = {
+        name: 'Aeromancy',
+        shortDescription: 'Test',
+        sources: ['arcane'],
+        spells: [
+          {
+            name: 'Windseal',
+            rank: 4,
+            roles: ['flash'],
+            attack: {
+              hit: `
+                The target is \\briefly \\slowed.
+              `,
+              targeting: `
+                Make an attack vs. Brawn against up to three creatures within \\medrange.
+              `,
+            },
+          },
+        ],
+      };
+
+      const issues5 = validateSpells([entangle, windseal]);
+      t.notOk(
+        issues5.find((i) => i.type === 'strictly_superior'),
+        'Entangle vs Windseal',
+      );
+
+      // 6. Mighty Windsnipe vs Distant Magic Missile (half on miss)
+      const windsnipe: MysticSphere = {
+        name: 'Aeromancy',
+        shortDescription: 'Test',
+        sources: ['arcane'],
+        spells: [
+          {
+            name: 'Mighty Windsnipe',
+            rank: 7,
+            roles: ['snipe'],
+            attack: {
+              hit: `
+                \\damagerankfive.
+              `,
+              targeting: 'Make an attack vs. Armor against something within \\distrange.',
+            },
+          },
+        ],
+      };
+
+      const distantMM: MysticSphere = {
+        name: 'Thaumaturgy',
+        shortDescription: 'Test',
+        sources: ['arcane'],
+        spells: [
+          {
+            name: 'Distant Magic Missile',
+            rank: 7,
+            roles: ['burst'],
+            attack: {
+              hit: `
+                \\damagerankfive, and any \\glossterm{extra damage} is doubled.
+              `,
+              halfOnMiss: true,
+              targeting: `
+                Make an attack vs. Armor against something within \\longrange.
+                This attack ignores \\glossterm{cover} and all \\glossterm{miss chances}.
+              `,
+            },
+          },
+        ],
+      };
+
+      const issues6 = validateSpells([windsnipe, distantMM]);
+      t.notOk(
+        issues6.find((i) => i.type === 'strictly_superior'),
+        'Mighty Windsnipe vs Distant Magic Missile',
+      );
+
+      // 7. Asphyxiate vs Living Pyre (damage over time rank adjustment)
+      const asphyxiate: MysticSphere = {
+        name: 'Aeromancy',
+        shortDescription: 'Test',
+        sources: ['arcane'],
+        spells: [
+          {
+            name: 'Asphyxiate',
+            rank: 2,
+            roles: ['burst'],
+            attack: {
+              hit: `
+                \\damagerankthree.
+              `,
+              targeting: `
+                Make an attack vs. Fortitude with a \\minus2 accuracy penalty against one creature within \\medrange.
+                If the target does not need to breathe air, this attack has no effect.
+              `,
+            },
+          },
+        ],
+      };
+
+      const livingPyre: MysticSphere = {
+        name: 'Pyromancy',
+        shortDescription: 'Test',
+        sources: ['arcane'],
+        spells: [
+          {
+            name: 'Living Pyre',
+            rank: 3,
+            roles: ['burn'],
+            attack: {
+              hit: `
+                \\damageranktwo.
+                The target also \\briefly \\debuff{burns} for \\damageranktwo.
+                Any \\glossterm{extra damage} applies to both the initial damage and the burning damage.
+              `,
+              targeting: `
+                Make an attack vs. Fortitude with a -4 accuracy penalty against a creature within \\medrange.
+              `,
+            },
+          },
+        ],
+      };
+
+      const issues7 = validateSpells([asphyxiate, livingPyre]);
+      t.notOk(
+        issues7.find((i) => i.type === 'strictly_superior'),
+        'Asphyxiate vs Living Pyre',
+      );
+
+      // 8. Desiccate vs Shadow Blossom (failure chance defensive buff)
+      const desiccateSpell: MysticSphere = {
+        name: 'Aquamancy',
+        shortDescription: 'Test',
+        sources: ['arcane'],
+        spells: [
+          {
+            name: 'Desiccate',
+            rank: 2,
+            roles: ['burst'],
+            attack: {
+              hit: `
+                \\damagerankthree.
+              `,
+              targeting: `
+                Make an attack vs. Fortitude against one creature within \\shortrange.
+                You gain a +2 accuracy bonus if the target is native to water.
+              `,
+            },
+          },
+        ],
+      };
+
+      const shadowBlossom: MysticSphere = {
+        name: 'Umbramancy',
+        shortDescription: 'Test',
+        sources: ['arcane'],
+        spells: [
+          {
+            name: 'Shadow Blossom',
+            rank: 2,
+            roles: ['clear', 'turtle'],
+            attack: {
+              hit: `
+                \\damageranktwolow.
+              `,
+              targeting: `
+                You must be \\glossterm{shadowed} to cast this spell.
+                When you cast this spell, you wrap yourself in shadow.
+                All attacks against you \\briefly have a 50\\% \\glossterm{failure chance}.
+                During your next turn, you can spend a \\glossterm{standard action} to \\glossterm{teleport} to a location within \\shortrange.
+                If you do, make an attack vs. Fortitude against each \\glossterm{enemy} adjacent to you.
+              `,
+            },
+          },
+        ],
+      };
+
+      const issues8 = validateSpells([desiccateSpell, shadowBlossom]);
+      t.notOk(
+        issues8.find((i) => i.type === 'strictly_superior'),
+        'Desiccate vs Shadow Blossom',
+      );
 
       t.end();
     });
@@ -1037,4 +1331,3 @@ t.test('validateSpells', (t) => {
 
   t.end();
 });
-
