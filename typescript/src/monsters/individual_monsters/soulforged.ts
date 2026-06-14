@@ -182,7 +182,7 @@ function addAngels(grimoire: Grimoire) {
           creature.setTrainedSkills(['awareness', 'endurance']);
 
           creature.addSpell('Pyroclasm', { usageTime: 'elite' });
-          creature.addSpell('Mighty Combustion', { usageTime: 'elite' });
+          creature.addSpell('Mighty Spontaneous Combustion', { usageTime: 'elite' });
           creature.addSpell('Stoke the Fires', { usageTime: 'elite' });
           creature.addManeuver('Whirlwind+', { weapon: 'ram' });
         },
