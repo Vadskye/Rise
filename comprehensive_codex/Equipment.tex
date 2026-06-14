@@ -364,6 +364,8 @@ This chapter defines the items and equipment that exist in the universe of Rise,
     % Doesn't cost an improvement slot; very situational
     \weapontagdef{Versatile Grip} This weapon is designed to be held in either one hand or two hands.
     While holding a Versatile Grip weapon in two hands, you add your full \glossterm{power} to your \glossterm{strike damage} with the weapon, rather than only half your power as normal (see \pcref{Strike Damage}).
+    \weapontagdef{Versatile Stance} This weapon is more effective if you can use your whole body to support it.
+    While you are \trait{quadrupedal} or \trait{multipedal}, you add your full \glossterm{power} to your \glossterm{strike damage} with the weapon, rather than only half your power as normal (see \pcref{Strike Damage}).
 
   \subsection{Weapon Table}
     Here is the format for weapon entries in the Weapons table, below.
@@ -585,14 +587,14 @@ This chapter defines the items and equipment that exist in the universe of Rise,
       \lcaption{Natural Weapons}
       \begin{dtabularx}{\columnwidth}{p{8em} l l >{\lcol}X}
         \tb{Natural Weapons}    & \tb{Accuracy} & \tb{Damage} & \tb{Weapon Tags} \tableheaderrule
-        Beak                    & \plus1        & 1d6         & \tdash    \\
-        Bite                    & \plus0        & 1d8         & \tdash \\
+        Beak\fn{2}              & \plus1        & 1d6         & \weapontag{Versatile Stance}    \\
+        Bite                    & \plus0        & 1d8         & \weapontag{Versatile Stance} \\
         Claw\fn{1}              & \plus1        & 1d4         & \weapontag{Light}     \\
-        Horn                    & \plus0        & 1d6         & \weapontag{Keen}    \\
+        Horn                    & \plus0        & 1d6         & \weapontag{Keen}, \weapontag{Versatile Stance}    \\
         Punch/kick\fn{1} \fn{2} & \plus0        & 1d3         & \weapontag{Subdual}   \\
-        Ram                     & \plus0        & 1d6         & \weapontag{Impact}  \\
+        Ram                     & \plus0        & 1d6         & \weapontag{Impact}, \weapontag{Versatile Stance}  \\
         Slam\fn{1}              & \minus1       & 1d10        & \tdash    \\
-        Stinger                 & \plus1        & 1d6         & \tdash    \\
+        Stinger                 & \plus1        & 1d6         & \weapontag{Versatile Stance}    \\
         Talon\fn{2}             & \plus1        & 1d4         & \weapontag{Light}     \\
         Tentacle                & \plus0        & 1d6         & \weapontag{Maneuverable}    \\
       \end{dtabularx}
@@ -608,6 +610,7 @@ This chapter defines the items and equipment that exist in the universe of Rise,
     Instead, it is affixed to the arm of body armor with a medium or heavy \glossterm{usage class}.
     When you attack with an armblade, you cannot use the arm it is attached to for any other combat purpose in the same turn.
     You can use that arm to hold items, but not to maintain a grapple or perform similar actions.
+    \parhead{Beak} While you are flying or gliding, you gain the full power bonus from this weapon's \weapontag{Versatile Stance} tag.
     \parhead{Bladed Whip} A bladed whip can be used to attack targets within 15 feet instead of the normal 10 feet for a Long weapon.
     \parhead{Boot Dagger} A boot dagger is a modified boot or boot sole which contains a hidden dagger.
     The dagger is normally concealed, and requires an Awareness check with a \glossterm{difficulty value} of 15 to find.
