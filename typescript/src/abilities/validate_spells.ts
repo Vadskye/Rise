@@ -281,6 +281,182 @@ export function buildSpellProfile(spell: SpellDefinition | CantripDefinition, sp
   };
 }
 
+interface Difference {
+  field: string;
+  p1Value: string;
+  p2Value: string;
+}
+
+function getSpellDifferences(p1: SpellProfile, p2: SpellProfile): Difference[] {
+  const diffs: Difference[] = [];
+
+  if (p1.rank !== p2.rank) {
+    diffs.push({ field: 'rank', p1Value: `Rank ${p1.rank}`, p2Value: `Rank ${p2.rank}` });
+  }
+  if (p1.isDoubleAction !== p2.isDoubleAction) {
+    diffs.push({
+      field: 'action economy',
+      p1Value: p1.isDoubleAction ? 'double action' : 'standard action',
+      p2Value: p2.isDoubleAction ? 'double action' : 'standard action',
+    });
+  }
+  if (p1.isReactive !== p2.isReactive) {
+    diffs.push({
+      field: 'reactive nature',
+      p1Value: p1.isReactive ? 'reactive/triggered' : 'standard',
+      p2Value: p2.isReactive ? 'reactive/triggered' : 'standard',
+    });
+  }
+  if (p1.range !== p2.range) {
+    diffs.push({ field: 'range', p1Value: p1.range, p2Value: p2.range });
+  }
+  if (p1.defenses.join(',') !== p2.defenses.join(',')) {
+    diffs.push({
+      field: 'targeted defenses',
+      p1Value: `[${p1.defenses.join(', ')}]`,
+      p2Value: `[${p2.defenses.join(', ')}]`,
+    });
+  }
+  if (p1.area !== p2.area) {
+    diffs.push({ field: 'area type', p1Value: p1.area, p2Value: p2.area });
+  }
+  if (p1.areaSize !== p2.areaSize) {
+    diffs.push({ field: 'area size', p1Value: p1.areaSize, p2Value: p2.areaSize });
+  }
+  if (p1.areaGrows !== p2.areaGrows) {
+    diffs.push({
+      field: 'area growth',
+      p1Value: p1.areaGrows ? 'grows' : 'static',
+      p2Value: p2.areaGrows ? 'grows' : 'static',
+    });
+  }
+  if (p1.accuracyModifier !== p2.accuracyModifier) {
+    diffs.push({
+      field: 'accuracy modifier',
+      p1Value: `${p1.accuracyModifier >= 0 ? '+' : ''}${p1.accuracyModifier}`,
+      p2Value: `${p2.accuracyModifier >= 0 ? '+' : ''}${p2.accuracyModifier}`,
+    });
+  }
+  if (p1.specialRequirements.join(',') !== p2.specialRequirements.join(',')) {
+    diffs.push({
+      field: 'special requirements',
+      p1Value: `[${p1.specialRequirements.join(', ')}]`,
+      p2Value: `[${p2.specialRequirements.join(', ')}]`,
+    });
+  }
+  if (p1.isLowPower !== p2.isLowPower) {
+    diffs.push({
+      field: 'low power flag',
+      p1Value: p1.isLowPower ? 'low power' : 'standard',
+      p2Value: p2.isLowPower ? 'low power' : 'standard',
+    });
+  }
+  if (p1.isDelayed !== p2.isDelayed) {
+    diffs.push({
+      field: 'delayed behavior',
+      p1Value: p1.isDelayed ? 'delayed' : 'immediate',
+      p2Value: p2.isDelayed ? 'delayed' : 'immediate',
+    });
+  }
+  if ([...p1.conditions].sort().join(',') !== [...p2.conditions].sort().join(',')) {
+    diffs.push({
+      field: 'applied conditions',
+      p1Value: `[${p1.conditions.join(', ')}]`,
+      p2Value: `[${p2.conditions.join(', ')}]`,
+    });
+  }
+
+  return diffs;
+}
+
+function checkSpellPair(
+  p1: SpellProfile,
+  p2: SpellProfile,
+  options?: { showApproximate?: boolean }
+): ValidationIssue[] {
+  // Both spells must have attack definitions (i.e. they are combat abilities)
+  if (!p1.hasAttack || !p2.hasAttack) return [];
+
+  // Hard constraint: The spells must still either both deal damage or both not deal damage
+  if ((p1.damageRank === null) !== (p2.damageRank === null)) return [];
+
+  // Hard constraint: Both must either heal or both not heal
+  if ((p1.healingRank === null) !== (p2.healingRank === null)) return [];
+
+  // Hard constraint: rank difference must be <= 1
+  if (Math.abs(p1.rank - p2.rank) > 1) return [];
+
+  const diffs = getSpellDifferences(p1, p2);
+  const issues: ValidationIssue[] = [];
+
+  if (diffs.length === 0) {
+    // If they reach here, they are virtually identical spells!
+    issues.push({
+      type: 'redundancy',
+      severity: 'warning',
+      message: `Spells "${p1.name}" (${p1.sphereName}) and "${p2.name}" (${p2.sphereName}) are virtually identical: both are Rank ${p1.rank}, range: ${p1.range}, defense: ${p1.defenses.join('/')}, double action: ${p1.isDoubleAction}, applying conditions: [${p1.conditions.join(', ')}].`,
+      spells: [p1.name, p2.name],
+    });
+
+    // We want to flag attunement and non-attunement spells as redundant above, but they are significantly different in other ways, so we don't need the subsequent checks.
+    if (p1.type !== p2.type) {
+      return issues;
+    }
+
+    // Now check for damage vs cost inconsistencies:
+    if (p1.damageRank !== null && p2.damageRank !== null && p1.damageRank !== p2.damageRank) {
+      const higher = p1.damageRank > p2.damageRank ? p1 : p2;
+      const lower = p1.damageRank > p2.damageRank ? p2 : p1;
+
+      // If the higher damage one has no cost, but the lower damage one does, or both have no cost, it's inconsistent!
+      if (!higher.hasCost || (!higher.hasCost && !lower.hasCost)) {
+        issues.push({
+          type: 'inconsistent_damage',
+          severity: 'warning',
+          message: `Spell "${higher.name}" (${higher.sphereName}) deals more damage (Rank ${higher.damageRank}) than "${lower.name}" (${lower.sphereName}, Rank ${lower.damageRank}) despite being equivalent, with no balancing cost factor.`,
+          spells: [p1.name, p2.name],
+        });
+      }
+    }
+
+    // Now check for healing vs cost inconsistencies:
+    if (p1.healingRank !== null && p2.healingRank !== null && p1.healingRank !== p2.healingRank) {
+      const higher = p1.healingRank > p2.healingRank ? p1 : p2;
+      const lower = p1.healingRank > p2.healingRank ? p2 : p1;
+
+      if (!higher.hasCost || (!higher.hasCost && !lower.hasCost)) {
+        issues.push({
+          type: 'inconsistent_damage',
+          severity: 'warning',
+          message: `Spell "${higher.name}" (${higher.sphereName}) heals more (Rank ${higher.healingRank}) than "${lower.name}" (${lower.sphereName}, Rank ${lower.healingRank}) despite being equivalent, with no balancing cost factor.`,
+          spells: [p1.name, p2.name],
+        });
+      }
+    }
+
+    // Also check for role inconsistencies:
+    if (p1.roles.join(',') !== p2.roles.join(',')) {
+      issues.push({
+        type: 'inconsistent_roles',
+        severity: 'warning',
+        message: `Spell "${p1.name}" (${p1.sphereName}) has different roles (${p1.roles.join(', ')}) than "${p2.name}" (${p2.sphereName}, ${p2.roles.join(', ')}) despite being equivalent.`,
+        spells: [p1.name, p2.name],
+      });
+    }
+  } else if (diffs.length === 1 && options?.showApproximate && p1.sphereName === p2.sphereName) {
+    const d = diffs[0];
+    issues.push({
+      type: 'almost_equivalent',
+      severity: 'warning',
+      message: `Spells "${p1.name}" (${p1.sphereName}) and "${p2.name}" (${p2.sphereName}) are almost equivalent: differ only by ${d.field} ("${d.p1Value}" vs "${d.p2Value}").`,
+      spells: [p1.name, p2.name],
+      differenceField: d.field,
+    });
+  }
+
+  return issues;
+}
+
 export function validateSpells(
   spheres: MysticSphere[],
   options?: { showApproximate?: boolean }
@@ -296,177 +472,9 @@ export function validateSpells(
   }
 
   // Compare every pair of spells
-  outer: for (let i = 0; i < profiles.length; i++) {
+  for (let i = 0; i < profiles.length; i++) {
     for (let j = i + 1; j < profiles.length; j++) {
-      const p1 = profiles[i];
-      const p2 = profiles[j];
-
-      // Both spells must have attack definitions (i.e. they are combat abilities)
-      if (!p1.hasAttack || !p2.hasAttack) continue;
-
-      // Hard constraint: The spells must still either both deal damage or both not deal damage
-      if ((p1.damageRank === null) !== (p2.damageRank === null)) continue;
-
-      // Hard constraint: Both must either heal or both not heal
-      if ((p1.healingRank === null) !== (p2.healingRank === null)) continue;
-
-      // Hard constraint: rank difference must be <= 1
-      if (Math.abs(p1.rank - p2.rank) > 1) continue;
-
-      // Calculate differences
-      interface Difference {
-        field: string;
-        p1Value: string;
-        p2Value: string;
-      }
-      const diffs: Difference[] = [];
-
-      if (p1.rank !== p2.rank) {
-        diffs.push({ field: 'rank', p1Value: `Rank ${p1.rank}`, p2Value: `Rank ${p2.rank}` });
-      }
-      if (p1.isDoubleAction !== p2.isDoubleAction) {
-        diffs.push({
-          field: 'action economy',
-          p1Value: p1.isDoubleAction ? 'double action' : 'standard action',
-          p2Value: p2.isDoubleAction ? 'double action' : 'standard action'
-        });
-      }
-      if (p1.isReactive !== p2.isReactive) {
-        diffs.push({
-          field: 'reactive nature',
-          p1Value: p1.isReactive ? 'reactive/triggered' : 'standard',
-          p2Value: p2.isReactive ? 'reactive/triggered' : 'standard'
-        });
-      }
-      if (p1.range !== p2.range) {
-        diffs.push({ field: 'range', p1Value: p1.range, p2Value: p2.range });
-      }
-      const defs1 = p1.defenses.join(',');
-      const defs2 = p2.defenses.join(',');
-      if (defs1 !== defs2) {
-        diffs.push({
-          field: 'targeted defenses',
-          p1Value: `[${p1.defenses.join(', ')}]`,
-          p2Value: `[${p2.defenses.join(', ')}]`
-        });
-      }
-      if (p1.area !== p2.area) {
-        diffs.push({ field: 'area type', p1Value: p1.area, p2Value: p2.area });
-      }
-      if (p1.areaSize !== p2.areaSize) {
-        diffs.push({ field: 'area size', p1Value: p1.areaSize, p2Value: p2.areaSize });
-      }
-      if (p1.areaGrows !== p2.areaGrows) {
-        diffs.push({
-          field: 'area growth',
-          p1Value: p1.areaGrows ? 'grows' : 'static',
-          p2Value: p2.areaGrows ? 'grows' : 'static'
-        });
-      }
-      if (p1.accuracyModifier !== p2.accuracyModifier) {
-        diffs.push({
-          field: 'accuracy modifier',
-          p1Value: `${p1.accuracyModifier >= 0 ? '+' : ''}${p1.accuracyModifier}`,
-          p2Value: `${p2.accuracyModifier >= 0 ? '+' : ''}${p2.accuracyModifier}`
-        });
-      }
-      const reqs1 = p1.specialRequirements.join(',');
-      const reqs2 = p2.specialRequirements.join(',');
-      if (reqs1 !== reqs2) {
-        diffs.push({
-          field: 'special requirements',
-          p1Value: `[${p1.specialRequirements.join(', ')}]`,
-          p2Value: `[${p2.specialRequirements.join(', ')}]`
-        });
-      }
-      if (p1.isLowPower !== p2.isLowPower) {
-        diffs.push({
-          field: 'low power flag',
-          p1Value: p1.isLowPower ? 'low power' : 'standard',
-          p2Value: p2.isLowPower ? 'low power' : 'standard'
-        });
-      }
-      if (p1.isDelayed !== p2.isDelayed) {
-        diffs.push({
-          field: 'delayed behavior',
-          p1Value: p1.isDelayed ? 'delayed' : 'immediate',
-          p2Value: p2.isDelayed ? 'delayed' : 'immediate'
-        });
-      }
-      const conds1 = [...p1.conditions].sort().join(',');
-      const conds2 = [...p2.conditions].sort().join(',');
-      if (conds1 !== conds2) {
-        diffs.push({
-          field: 'applied conditions',
-          p1Value: `[${p1.conditions.join(', ')}]`,
-          p2Value: `[${p2.conditions.join(', ')}]`
-        });
-      }
-
-      if (diffs.length === 0) {
-        // If they reach here, they are virtually identical spells!
-        issues.push({
-          type: 'redundancy',
-          severity: 'warning',
-          message: `Spells "${p1.name}" (${p1.sphereName}) and "${p2.name}" (${p2.sphereName}) are virtually identical: both are Rank ${p1.rank}, range: ${p1.range}, defense: ${p1.defenses.join('/')}, double action: ${p1.isDoubleAction}, applying conditions: [${p1.conditions.join(', ')}].`,
-          spells: [p1.name, p2.name],
-        });
-
-        // Now we filter for type inconsistencies. We want to flag attunement and non-attunement spells as being virtually identical above, but they are significantly different in other ways, so we don't need the subsequent checks.
-        if (p1.type !== p2.type) {
-          continue;
-        }
-
-        // Now check for damage vs cost inconsistencies:
-        if (p1.damageRank !== null && p2.damageRank !== null && p1.damageRank !== p2.damageRank) {
-          const higher = p1.damageRank > p2.damageRank ? p1 : p2;
-          const lower = p1.damageRank > p2.damageRank ? p2 : p1;
-
-          // If the higher damage one has no cost, but the lower damage one does, or both have no cost, it's inconsistent!
-          if (!higher.hasCost || (!higher.hasCost && !lower.hasCost)) {
-            issues.push({
-              type: 'inconsistent_damage',
-              severity: 'warning',
-              message: `Spell "${higher.name}" (${higher.sphereName}) deals more damage (Rank ${higher.damageRank}) than "${lower.name}" (${lower.sphereName}, Rank ${lower.damageRank}) despite being equivalent, with no balancing cost factor.`,
-              spells: [p1.name, p2.name],
-            });
-          }
-        }
-
-        // Now check for healing vs cost inconsistencies:
-        if (p1.healingRank !== null && p2.healingRank !== null && p1.healingRank !== p2.healingRank) {
-          const higher = p1.healingRank > p2.healingRank ? p1 : p2;
-          const lower = p1.healingRank > p2.healingRank ? p2 : p1;
-
-          if (!higher.hasCost || (!higher.hasCost && !lower.hasCost)) {
-            issues.push({
-              type: 'inconsistent_damage',
-              severity: 'warning',
-              message: `Spell "${higher.name}" (${higher.sphereName}) heals more (Rank ${higher.healingRank}) than "${lower.name}" (${lower.sphereName}, Rank ${lower.healingRank}) despite being equivalent, with no balancing cost factor.`,
-              spells: [p1.name, p2.name],
-            });
-          }
-        }
-
-        // Also check for role inconsistencies:
-        if (p1.roles.join(',') !== p2.roles.join(',')) {
-          issues.push({
-            type: 'inconsistent_roles',
-            severity: 'warning',
-            message: `Spell "${p1.name}" (${p1.sphereName}) has different roles (${p1.roles.join(', ')}) than "${p2.name}" (${p2.sphereName}, ${p2.roles.join(', ')}) despite being equivalent.`,
-            spells: [p1.name, p2.name],
-          });
-        }
-      } else if (diffs.length === 1 && options?.showApproximate && p1.sphereName === p2.sphereName) {
-        const d = diffs[0];
-        issues.push({
-          type: 'almost_equivalent',
-          severity: 'warning',
-          message: `Spells "${p1.name}" (${p1.sphereName}) and "${p2.name}" (${p2.sphereName}) are almost equivalent: differ only by ${d.field} ("${d.p1Value}" vs "${d.p2Value}").`,
-          spells: [p1.name, p2.name],
-          differenceField: d.field,
-        });
-      }
+      issues.push(...checkSpellPair(profiles[i], profiles[j], options));
     }
   }
 
