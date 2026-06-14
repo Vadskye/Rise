@@ -34,10 +34,11 @@ if [ "$has_art" -eq "1" ]
     # Convert images to limit pdf size
     for dir in lib/images/*
         echo "Converting images in $dir" >> rgen.log
-        # Shrink large images and convert to jpg.
+        # Shrink large images so their smallest dimension is no larger than 512px
+        # (preserving aspect ratio and not making them square) and convert to jpg.
         set -l dir_files $dir/*
         if count $dir_files >/dev/null
-            magick.exe mogrify -resize 512x512 -format jpg $dir_files >> rgen.log
+            magick.exe mogrify -resize "512x512^>" -format jpg $dir_files >> rgen.log
         end
         # Remove the old png images
         set -l png_files $dir/*.png
