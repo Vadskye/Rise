@@ -234,17 +234,17 @@ export function stalwartGuardian(): RankAbility[] {
           \\abilitycost One \\glossterm{fatigue level}.
           \\rankline
           Choose yourself or a living \\glossterm{ally} you touch.
-          The target regains \\glossterm{hit points} equal to 2d6 \\add your \\glossterm{magical power}.
+          The target regains \\hprankfour.
           In addition, it removes one \\glossterm{condition} or poison affecting it.
           % TODO: wording
           This removal can only affect conditions and poisons with a rank no more than two higher than your rank in this archetype.
 
           \\rankline
-          \\rank{3} The bonus healing increases to 1d6 per 2 power.
-          \\rank{4} The base healing increases to 4d6.
-          \\rank{5} The bonus healing increases to 1d10 per 2 power.
-          \\rank{6} The bonus healing increases to 1d6 per power.
-          \\rank{7} The base healing increases to 4d8, and the bonus healing increases to 1d8 per power.
+          \\rank{3} The healing increases to \\hprankfive.
+          \\rank{4} The healing increases to \\hpranksix.
+          \\rank{5} The healing increases to \\hprankseven.
+          \\rank{6} The healing increases to \\hprankeight.
+          \\rank{7} The healing increases to \\hpranknine.
         \\end{magicalactiveability}
       `,
     },

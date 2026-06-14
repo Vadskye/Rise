@@ -267,11 +267,11 @@ export function healer(): RankAbility[] {
           In addition, if the target is an \\glossterm{ally}, it becomes \\glossterm{briefly} \\braced.
 
           \\rankline
-          \\rank{3} The bonus healing increases to 1d8 per 2 power.
-          \\rank{4} The bonus healing increases to 1d6 per power.
-          \\rank{5} The base healing increases to 2d6.
-          \\rank{6} The bonus healing increases to 1d8 per power.
-          \\rank{7} The base healing increases to 2d10, and the bonus healing increases to 1d10 per power.
+          \\rank{3} The healing increases to \\hprankfive.
+          \\rank{4} The healing increases to \\hpranksix.
+          \\rank{5} The healing increases to \\hprankseven.
+          \\rank{6} The healing increases to \\hprankeight.
+          \\rank{7} The healing increases to \\hpranknine.
         \\end{magicalactiveability}
       `,
     },
