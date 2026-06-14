@@ -16,6 +16,7 @@ export function alchemist(): RankAbility[] {
         Where you lack material components, you fill in with some of your own magic, allowing you to create items more easily.
         The items are just as effective when used as items created normally.
         However, they are less durable, since they are partially sustained by your magic.
+        This ability has the \\atManifestation tag.
 
         You can use this ability to create alchemical items with a rank lower than your rank in this archetype (see \\pcref{Item Ranks}).
         Creating an item in this way functions in the same way as crafting items normally (see \\pcref{Crafting Items}), with the following exceptions:
