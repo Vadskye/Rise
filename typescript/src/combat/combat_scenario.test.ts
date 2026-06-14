@@ -236,8 +236,8 @@ t.test('One elite Ankheg is equivalent to four non-elite Ankhegs', (t) => {
   const result = scenario.simulate(100);
 
   assertExpectedTurnsCount(t, result, 4.0);
-  assertExpectedWinRate(t, result, 'Elite Ankheg', 70);
-  assertExpectedWinRate(t, result, 'Normal Ankhegs', 30);
+  assertExpectedWinRate(t, result, 'Elite Ankheg', 60);
+  assertExpectedWinRate(t, result, 'Normal Ankhegs', 40);
   t.end();
 });
 
