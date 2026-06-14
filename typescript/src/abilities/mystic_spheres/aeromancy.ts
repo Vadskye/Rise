@@ -428,11 +428,11 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       // Area: Small radius in Short range (R3, mod -1)
       // Bonus: Escapably Delayed (mod +2)
       // Bonus: Double defense (mod +1)
-      // Limitation: Open space requirement (mod -1)
-      // Result: 3 - 1 + 2 + 1 - 1 = dr4
+      // Result: 3 - 1 + 2 + 1 = dr5
+      // (The open space requirement is a cost for stacking this much +damage.)
       attack: {
         hit: `
-          \\damagerankfour.
+          \\damagerankfive.
         `,
         halfOnMiss: true,
         targeting: `
@@ -457,11 +457,11 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       // Area: Medium radius in Medium range (R5, mod -2)
       // Bonus: Escapably Delayed (mod +2)
       // Bonus: Double defense (mod +1)
-      // Limitation: Open space requirement (mod -1)
-      // Result: 5 - 2 + 2 + 1 - 1 = dr5
+      // Result: 5 - 2 + 2 + 1 = dr6
+      // (The open space requirement is a cost for stacking this much +damage.)
       attack: {
         hit: `
-          \\damagerankfive.
+          \\damageranksix.
         `,
         halfOnMiss: true,
         targeting: `
