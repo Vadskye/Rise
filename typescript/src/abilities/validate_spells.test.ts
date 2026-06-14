@@ -28,7 +28,7 @@ t.test('buildSpellProfile', (t) => {
     t.equal(profile.areaSize, 'none');
     t.equal(profile.damageRank, 5);
     t.equal(profile.isLowPower, false);
-    t.same(profile.conditions, ['slowed']);
+    t.same(profile.appliedEffects, ['slowed']);
     t.equal(profile.accuracyModifier, 0);
     t.same(profile.specialRequirements, []);
     t.equal(profile.isDelayed, true);
@@ -870,6 +870,165 @@ t.test('validateSpells', (t) => {
       const issues = validateSpells([sphere1, sphere2]);
       const superior = issues.find((issue) => issue.type === 'strictly_superior');
       t.notOk(superior, 'Should not flag since rank 4 spell being better than rank 3 is expected');
+      t.end();
+    });
+
+    t.test('should handle specific user-reported superiority edge cases correctly', (t) => {
+      // 1. Dust Cloud vs Flame Aura (Flame Aura deals damagerankzero)
+      const dustCloud: MysticSphere = {
+        name: 'Aeromancy',
+        shortDescription: 'Test',
+        sources: ['arcane'],
+        spells: [
+          {
+            name: 'Dust Cloud',
+            rank: 3,
+            roles: ['flash'],
+            attack: {
+              hit: 'The target is \\dazzled.',
+              targeting: 'Make an attack vs. Reflex against each creature in a \\smallarea radius within \\shortrange.',
+            },
+          },
+        ],
+      };
+
+      const flameAura: MysticSphere = {
+        name: 'Pyromancy',
+        shortDescription: 'Test',
+        sources: ['arcane'],
+        spells: [
+          {
+            name: 'Flame Aura',
+            rank: 4,
+            roles: ['attune'],
+            attack: {
+              hit: '\\damagerankzero.',
+              targeting: 'Heat constantly radiates in a \\smallarea radius emanation from you.',
+            },
+          },
+        ],
+      };
+
+      // 2. Garotte vs Mighty Shielding Windblast (Mighty Shielding Windblast shields)
+      const garotte: MysticSphere = {
+        name: 'Fabrication',
+        shortDescription: 'Test',
+        sources: ['arcane'],
+        spells: [
+          {
+            name: 'Garotte',
+            rank: 4,
+            roles: ['burst'],
+            attack: {
+              hit: '\\damageranksix.',
+              targeting: 'Make an attack vs. Reflex and Brawn against one creature within \\shortrange.',
+            },
+          },
+        ],
+      };
+
+      const windblast: MysticSphere = {
+        name: 'Aeromancy',
+        shortDescription: 'Test',
+        sources: ['arcane'],
+        spells: [
+          {
+            name: 'Mighty Shielding Windblast',
+            rank: 5,
+            roles: ['clear', 'turtle'],
+            attack: {
+              hit: '\\damagerankfive.',
+              targeting: 'Make an attack vs. Brawn and Reflex against all adjacent. Then, you are \\briefly \\shielded.',
+            },
+          },
+        ],
+      };
+
+      // 3. Desiccate vs Drowning Grasp (conditional accuracy and injury debuff)
+      const desiccate: MysticSphere = {
+        name: 'Aquamancy',
+        shortDescription: 'Test',
+        sources: ['arcane'],
+        spells: [
+          {
+            name: 'Desiccate',
+            rank: 2,
+            roles: ['burst'],
+            attack: {
+              hit: '\\damagerankthree.',
+              targeting: 'Make an attack vs. Fortitude against one creature within \\shortrange. You gain +2 accuracy if target is native to water.',
+            },
+          },
+        ],
+      };
+
+      const drowningGrasp: MysticSphere = {
+        name: 'Aquamancy',
+        shortDescription: 'Test',
+        sources: ['arcane'],
+        spells: [
+          {
+            name: 'Drowning Grasp',
+            rank: 2,
+            roles: ['burst', 'maim'],
+            attack: {
+              hit: '\\damageranktwo.',
+              injury: 'The target becomes unable to breathe air as a \\glossterm{condition}.',
+              targeting: 'Make an attack vs. Fortitude against one creature you touch.',
+            },
+          },
+        ],
+      };
+
+      // 4. Aquajet Grasp vs Dark Grasp (Dark Grasp has difficult terrain debuff on injury)
+      const aquajetGrasp: MysticSphere = {
+        name: 'Aquamancy',
+        shortDescription: 'Test',
+        sources: ['arcane'],
+        spells: [
+          {
+            name: 'Aquajet Grasp',
+            rank: 1,
+            roles: ['burst', 'maim'],
+            attack: {
+              hit: '\\damageranktwo.',
+              injury: 'You fling it.',
+              targeting: 'Make an attack vs. Brawn against one creature you touch.',
+            },
+          },
+        ],
+      };
+
+      const darkGrasp: MysticSphere = {
+        name: 'Umbramancy',
+        shortDescription: 'Test',
+        sources: ['arcane'],
+        spells: [
+          {
+            name: 'Dark Grasp',
+            rank: 1,
+            roles: ['burst', 'maim'],
+            attack: {
+              hit: '\\damageranktwolow.',
+              injury: 'As a condition, target treats dim illumination as difficult terrain.',
+              targeting: 'Make an attack vs. Brawn against something adjacent.',
+            },
+          },
+        ],
+      };
+
+      const issues1 = validateSpells([dustCloud, flameAura]);
+      t.notOk(issues1.find(i => i.type === 'strictly_superior'), 'Dust Cloud vs Flame Aura');
+
+      const issues2 = validateSpells([garotte, windblast]);
+      t.notOk(issues2.find(i => i.type === 'strictly_superior'), 'Garotte vs Mighty Shielding Windblast');
+
+      const issues3 = validateSpells([desiccate, drowningGrasp]);
+      t.notOk(issues3.find(i => i.type === 'strictly_superior'), 'Desiccate vs Drowning Grasp');
+
+      const issues4 = validateSpells([aquajetGrasp, darkGrasp]);
+      t.notOk(issues4.find(i => i.type === 'strictly_superior'), 'Aquajet Grasp vs Dark Grasp');
+
       t.end();
     });
 
