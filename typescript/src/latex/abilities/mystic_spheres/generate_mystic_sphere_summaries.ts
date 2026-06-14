@@ -1,9 +1,18 @@
 import { sortByRankAndLevel } from '@src/latex';
 import { MysticSphere, mysticSpheres, rituals } from '@src/abilities/mystic_spheres';
 import { CantripDefinition, SpellDefinition } from '@src/abilities';
+import { validateSpells } from '@src/abilities/validate_spells';
 import _ from 'lodash';
 
 export function generateMysticSphereSpellSummaries(): string {
+  const issues = validateSpells(mysticSpheres);
+  if (issues.length > 0) {
+    console.warn(`\n--- Spell Design Validation Warnings (${issues.length} issues found) ---`);
+    for (const issue of issues) {
+      console.warn(`[${issue.type.toUpperCase()}] ${issue.message}`);
+    }
+    console.warn('------------------------------------------------------------\n');
+  }
   return mysticSpheres.map(generateMysticSphereSpellSummary).join('\n');
 }
 

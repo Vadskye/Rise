@@ -90,7 +90,7 @@ export type ActiveAbilityScaling =
   | 'healing'
   | Record<string, string>;
 
-type ActiveAbilityDurationType =
+export type ActiveAbilityDurationType =
   | 'Attune'
   | 'Attune (deep)'
   | 'Attune (deep, target)'
