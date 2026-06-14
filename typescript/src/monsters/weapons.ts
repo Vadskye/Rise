@@ -1,233 +1,153 @@
-// If the name is plural, it indicates that the monster is using two of the weapon to
-// make a dual strike.
-const MONSTER_WEAPONS_LIST = [
-  'battleaxe',
-  'beak',
-  'bite',
-  'broadsword',
-  'claws',
-  'club',
-  'darts',
-  'fists', // Dual-wielding punch/kick, assuming monk bonus
-  'flail',
-  'giant boulder',
-  'greataxe',
-  'greatclub',
-  'greatsword',
-  'heavy crossbow',
-  'heavy flail',
-  'horn',
-  'javelin',
-  'lance',
-  'longbow',
-  'pick',
-  'ram',
-  'scythe',
-  'sickle',
-  'slam',
-  'sling',
-  'smallswords',
-  'spear',
-  'spike', // Same as stinger
-  'stinger',
-  'talons',
-  'tentacle',
-] as const;
-export type MonsterWeapon = (typeof MONSTER_WEAPONS_LIST)[number];
-export const MONSTER_WEAPONS = new Set(MONSTER_WEAPONS_LIST);
+import {
+  StandardWeapon,
+  STANDARD_WEAPONS,
+} from '@src/equipment/weapons';
+import { WeaponTag } from '@src/equipment/types';
 
-// TODO: weapons can have multiple tags, and some tags are \weapontag{} while some are
-// \abilitytag{}.
-export function getWeaponTags(weaponName: MonsterWeapon): readonly string[] {
-  return (
-    {
-      battleaxe: ['Keen'],
-      beak: ['Versatile Stance'],
-      bite: ['Versatile Stance'],
-      broadsword: [],
-      claws: [], // These have the Light tag, but that's irrelevant for running monsters.
-      club: [],
-      darts: ['Thrown (30/60)'],
-      fists: [],
-      flail: [], // Ignore Maneuverable tag
-      'giant boulder': ['Thrown (90/180)'],
-      greataxe: ['Keen'],
-      greatclub: [],
-      greatsword: ['Sweeping (1)'],
-      ['heavy crossbow']: ['Projectile (90/270)'], // Ignore Heavy tag
-      ['heavy flail']: [], // Ignore Maneuverable tag
-      horn: ['Keen', 'Versatile Stance'],
-      javelin: ['Thrown (60/120)'],
-      lance: ['Mounted'],
-      longbow: ['Projectile (90/270)'], // Ignore Heavy tag
-      pick: ['Keen'],
-      ram: ['Impact', 'Versatile Stance'],
-      scythe: ['Sweeping (2)'],
-      sickle: [],
-      slam: [],
-      sling: ['Projectile (50/150)'],
-      smallswords: [],
-      spear: ['Thrown (30/60)'], // Ignore Versatile Grip tag and assume one-handing, so not Long
-      spike: ['Versatile Stance'],
-      stinger: ['Versatile Stance'],
-      talons: [],
-      tentacle: [],
-    } as const
-  )[weaponName];
-}
+export type MonsterWeapon = string;
 
-export interface DicePool {
+export interface SimpleDicePool {
   count: number;
   size: number;
 }
 
-function xdy(count: number, size: number): DicePool {
-  return { count, size };
+// Build case-insensitive standard weapons mapping
+const LOWERCASE_STANDARD_WEAPONS: Record<string, StandardWeapon> = {};
+for (const key of Object.keys(STANDARD_WEAPONS)) {
+  const enumValue = key as StandardWeapon;
+  const weaponData = STANDARD_WEAPONS[enumValue];
+  LOWERCASE_STANDARD_WEAPONS[weaponData.name.toLowerCase()] = enumValue;
+  LOWERCASE_STANDARD_WEAPONS[enumValue.toLowerCase()] = enumValue;
+}
+
+// Custom aliases/mappings for monster names
+LOWERCASE_STANDARD_WEAPONS['giant boulder'] = StandardWeapon.GiantBoulder;
+LOWERCASE_STANDARD_WEAPONS['horn'] = StandardWeapon.Horn;
+LOWERCASE_STANDARD_WEAPONS['ram'] = StandardWeapon.Ram;
+LOWERCASE_STANDARD_WEAPONS['stinger'] = StandardWeapon.Stinger;
+LOWERCASE_STANDARD_WEAPONS['spike'] = StandardWeapon.Stinger; // Same as stinger
+LOWERCASE_STANDARD_WEAPONS['tentacle'] = StandardWeapon.Tentacle;
+LOWERCASE_STANDARD_WEAPONS['punch/kick'] = StandardWeapon.PunchKick;
+
+export const MONSTER_WEAPONS = new Set<string>([
+  ...Object.keys(LOWERCASE_STANDARD_WEAPONS),
+  'claws',
+  'smallswords',
+  'talons',
+  'darts',
+  'fists',
+]);
+
+function resolveBaseWeapon(weaponName: MonsterWeapon) {
+  const isPlural =
+    weaponName.endsWith('s') &&
+    ['claws', 'smallswords', 'talons', 'darts', 'fists'].includes(weaponName);
+  const singularName = isPlural ? weaponName.slice(0, -1) : weaponName;
+
+  const stdEnum = LOWERCASE_STANDARD_WEAPONS[singularName];
+  if (stdEnum) {
+    const stdWeapon = STANDARD_WEAPONS[stdEnum];
+    const count = stdWeapon.damage_dice.dice.length;
+    const size = count > 0 ? stdWeapon.damage_dice.dice[0].size : 0;
+    const isNatural = Boolean(stdWeapon.isNatural);
+    return {
+      accuracy: stdWeapon.accuracy,
+      damage_dice: { count, size },
+      tags: stdWeapon.tags,
+      isNatural,
+      isPlural,
+    };
+  }
+
+  throw new Error(`MonsterWeapon '${weaponName}' could not be resolved to standard or natural weapon.`);
+}
+
+function formatMonsterTag(tag: WeaponTag): string | null {
+  if (typeof tag === 'string') {
+    if (
+      tag === 'Versatile Grip' ||
+      tag === 'Maneuverable' ||
+      tag === 'Heavy' ||
+      tag === 'Light' ||
+      tag === 'Compact' ||
+      tag === 'Ammunition' ||
+      tag === 'Bow' ||
+      tag === 'Long'
+    ) {
+      return null;
+    }
+    return tag;
+  } else {
+    switch (tag.kind) {
+      case 'Projectile':
+        return `Projectile (${tag.close}/${tag.long})`;
+      case 'Sweeping':
+        return `Sweeping (${tag.count})`;
+      case 'Thrown':
+        return `Thrown (${tag.close}/${tag.long})`;
+    }
+  }
 }
 
 export function isManufactured(weaponName: MonsterWeapon): boolean {
-  return {
-    battleaxe: true,
-    beak: false,
-    bite: false,
-    broadsword: true,
-    claws: false,
-    club: true,
-    darts: true,
-    fists: false,
-    flail: true,
-    'giant boulder': true,
-    greataxe: true,
-    greatclub: true,
-    greatsword: true,
-    ['heavy crossbow']: true,
-    ['heavy flail']: true,
-    horn: false,
-    javelin: true,
-    lance: true,
-    longbow: true,
-    pick: true,
-    ram: false,
-    scythe: true,
-    sickle: true,
-    slam: false,
-    sling: true,
-    smallswords: true,
-    spear: true,
-    spike: false,
-    stinger: false,
-    talons: false,
-    tentacle: false,
-  }[weaponName];
+  const base = resolveBaseWeapon(weaponName);
+  return !base.isNatural;
 }
 
-export function getWeaponDamageDice(weaponName: MonsterWeapon): DicePool {
-  return {
-    battleaxe: xdy(1, 6),
-    beak: xdy(1, 6),
-    bite: xdy(1, 8),
-    broadsword: xdy(1, 6),
-    claws: xdy(2, 4),
-    club: xdy(1, 6),
-    darts: xdy(2, 4),
-    fists: xdy(2, 6),
-    flail: xdy(1, 8),
-    'giant boulder': xdy(1, 8),
-    greataxe: xdy(1, 8),
-    greatclub: xdy(1, 10),
-    greatsword: xdy(1, 8),
-    ['heavy crossbow']: xdy(1, 10),
-    ['heavy flail']: xdy(1, 10), // Ignore Maneuverable tag
-    horn: xdy(1, 6),
-    javelin: xdy(1, 6),
-    lance: xdy(1, 6),
-    longbow: xdy(1, 6),
-    pick: xdy(1, 8),
-    ram: xdy(1, 6),
-    scythe: xdy(1, 6),
-    sickle: xdy(1, 4),
-    slam: xdy(1, 10),
-    sling: xdy(1, 4),
-    smallswords: xdy(2, 4),
-    spear: xdy(1, 6),
-    spike: xdy(1, 6),
-    stinger: xdy(1, 6),
-    talons: xdy(2, 4),
-    tentacle: xdy(1, 6),
-  }[weaponName];
+export function getWeaponDamageDice(weaponName: MonsterWeapon): SimpleDicePool {
+  const base = resolveBaseWeapon(weaponName);
+  if (base.isPlural) {
+    return {
+      count: base.damage_dice.count * 2,
+      size: base.damage_dice.size,
+    };
+  }
+  return base.damage_dice;
 }
 
 export function getWeaponAccuracy(weaponName: MonsterWeapon): number {
-  return {
-    battleaxe: 0,
-    beak: 1,
-    bite: 0,
-    broadsword: 1,
-    claws: 2,
-    club: 0,
-    darts: 0, // +3 light offsets -3 dual strike
-    fists: 0,
-    flail: -1,
-    'giant boulder': 0,
-    greataxe: 0,
-    greatclub: 0,
-    greatsword: 0,
-    ['heavy crossbow']: 0,
-    ['heavy flail']: -1,
-    horn: 0,
-    javelin: 0,
-    lance: 0,
-    longbow: 0,
-    pick: -1,
-    ram: 0,
-    scythe: 0,
-    sickle: 0,
-    slam: -1,
-    sling: 0,
-    smallswords: 2,
-    spear: 0,
-    spike: 1,
-    stinger: 1,
-    talons: 2,
-    tentacle: 0,
-  }[weaponName];
+  const base = resolveBaseWeapon(weaponName);
+  if (base.isPlural) {
+    return base.accuracy * 2;
+  }
+  return base.accuracy;
 }
 
-// TODO: add support for Versatile Grip?
 export function getWeaponPowerMultiplier(weaponName: MonsterWeapon): 0.5 | 1 {
-  return (
-    {
-      battleaxe: 0.5, // Assume one-handing.
-      beak: 1,
-      bite: 1,
-      broadsword: 0.5, // Assume one-handing.
-      claws: 0.5,
-      club: 0.5,
-      darts: 0.5,
-      fists: 0.5,
-      flail: 0.5, // Assume one-handing.
-      'giant boulder': 1,
-      greataxe: 1,
-      greatclub: 1,
-      greatsword: 1,
-      ['heavy crossbow']: 0.5,
-      ['heavy flail']: 1,
-      horn: 1,
-      javelin: 0.5,
-      lance: 0.5,
-      longbow: 0.5,
-      pick: 1, // Assume two-handing
-      ram: 1,
-      scythe: 1,
-      sickle: 0.5,
-      slam: 1,
-      sling: 0.5,
-      smallswords: 0.5,
-      spear: 0.5, // Assume one-handing.
-      spike: 1,
-      stinger: 1,
-      talons: 0.5,
-      tentacle: 1,
-    } as const
-  )[weaponName];
+  const base = resolveBaseWeapon(weaponName);
+  if (base.isPlural) {
+    return 0.5;
+  }
+  if (base.isNatural) {
+    return 1.0;
+  }
+  if (weaponName === 'heavy crossbow') {
+    return 0.5;
+  }
+  if (weaponName === 'giant boulder' || weaponName === 'pick') {
+    return 1.0;
+  }
+  const hasHeavy = base.tags.includes('Heavy');
+  return hasHeavy ? 1.0 : 0.5;
+}
+
+export function getWeaponTags(weaponName: MonsterWeapon): readonly string[] {
+  const base = resolveBaseWeapon(weaponName);
+
+  const tags: string[] = [];
+  for (const tag of base.tags) {
+    const formatted = formatMonsterTag(tag);
+    if (formatted !== null) {
+      tags.push(formatted);
+    }
+  }
+
+  if (weaponName === 'giant boulder') {
+    return ['Thrown (90/180)'];
+  }
+  if (weaponName === 'spear') {
+    return ['Thrown (30/60)'];
+  }
+
+  return tags;
 }

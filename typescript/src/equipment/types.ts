@@ -68,10 +68,13 @@ export interface Weapon {
   accuracy: number;
   damage_dice: DicePool;
   tags: WeaponTag[];
+  isNatural?: boolean;
 }
+
 
 export type WeaponTag =
   | 'Ammunition'
+  | 'Bow'
   | 'Clinch'
   | 'Compact'
   | 'Heavy'
@@ -87,7 +90,8 @@ export type WeaponTag =
   | { kind: 'Sweeping'; count: number }
   | 'Subdual'
   | { kind: 'Thrown'; close: number; long: number }
-  | 'Versatile Grip';
+  | 'Versatile Grip'
+  | 'Versatile Stance';
 
 /** Method of delivery for a poison. */
 export type Exposure = 'contact' | 'ingestion' | 'injury';
