@@ -43,6 +43,7 @@ export interface SpellProfile {
   sphereName: string;
   rank: SpellDefinition['rank'];
   isDoubleAction: boolean;
+  isReactive: boolean;
   range: string;
   defenses: string[];
   area: string;
@@ -171,6 +172,11 @@ function parseConditions(text: string): string[] {
     'dread',
     'shaken',
     'poisoned',
+    'frightened',
+    'panicked',
+    'immobilized',
+    'charmed',
+    'deafened',
   ];
   return conditions.filter((c) => lowercase.includes(c));
 }
@@ -244,11 +250,17 @@ export function buildSpellProfile(spell: SpellDefinition | CantripDefinition, sp
   const healingRank = parseHealingRank(fullText);
   const areaGrows = fullText.toLowerCase().includes('increases over time');
 
+  const isReactive =
+    targeting.toLowerCase().includes('reactive attack') ||
+    targeting.toLowerCase().includes('\\reactiveattack') ||
+    targeting.toLowerCase().includes('whenever');
+
   return {
     name: spell.name,
     sphereName,
     rank: (spell.rank || 0) as SpellDefinition['rank'],
     isDoubleAction,
+    isReactive,
     range,
     defenses,
     area,
@@ -293,6 +305,9 @@ export function validateSpells(spheres: MysticSphere[]): ValidationIssue[] {
 
       // Must be same action economy
       if (p1.isDoubleAction !== p2.isDoubleAction) continue;
+
+      // Must have same reactive/triggered nature
+      if (p1.isReactive !== p2.isReactive) continue;
 
       // Must have same range category
       if (p1.range !== p2.range) continue;
