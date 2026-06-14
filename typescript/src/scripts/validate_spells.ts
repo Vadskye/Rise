@@ -56,7 +56,9 @@ if (issues.length === 0) {
     const fields = Object.keys(grouped).sort();
     for (const field of fields) {
       const fieldIssues = grouped[field];
-      console.log(`=== Almost Equivalent Spell Designs (differs by ${field}) (${fieldIssues.length}) ===`);
+      console.log(
+        `=== Almost Equivalent Spell Designs (differs by ${field}) (${fieldIssues.length}) ===`,
+      );
       for (const issue of fieldIssues) {
         console.log(`- ${issue.message}`);
       }
