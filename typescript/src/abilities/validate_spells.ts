@@ -159,6 +159,7 @@ function parseRange(text: string): string {
 
 function parseArea(text: string): string {
   const lowercase = text.toLowerCase();
+  if (lowercase.includes('vertical line')) return 'vertical-line';
   if (lowercase.includes('cone')) return 'cone';
   if (lowercase.includes('radius') || lowercase.includes('emanation') || lowercase.includes('zone'))
     return 'radius';
@@ -230,6 +231,9 @@ function parseAppliedEffects(text: string): string[] {
     'difficult terrain',
     'liquify',
     'failure chance',
+    'fling',
+    'push',
+    'teleport',
   ];
   return effects.filter((e) => lowercase.includes(e));
 }
@@ -283,7 +287,7 @@ function parseDelayed(text: string): boolean {
 function parseMaxTargets(text: string): number {
   const lowercase = text.toLowerCase();
   const match = lowercase.match(
-    /(?:up to|against)\s+(\w+|\d+)\s+(?:grounded\s+)?(?:creatures|targets|enemies|allies)/,
+    /(?:up to|against)\s+(\w+|\d+)(?:\s+(?:grounded|huge|large|medium|small|tiny|or|smaller|larger|lighter|heavier|injured|allied|different))*?\s+(?:creatures?|targets?|enem(?:y|ies)|all(?:y|ies))/i,
   );
   if (match) {
     const val = match[1];

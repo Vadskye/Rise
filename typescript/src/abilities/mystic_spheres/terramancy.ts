@@ -36,6 +36,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       // Result: 1 + 1 - 1 = dr1
       attack: {
         hit: `\\damagerankone.`,
+        injury: "If your attack result also hits the target's Brawn defense, it falls \\prone.",
         targeting: `
           Make an attack vs. Armor against something within \\shortrange.
           You gain a +2 \\glossterm{accuracy} bonus if you are \\glossterm{grounded} on stone.
@@ -56,6 +57,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       // Result: 4 + 1 - 1 = dr4
       attack: {
         hit: `\\damagerankfour.`,
+        injury: "If your attack result also hits the target's Brawn defense, it falls \\prone.",
         targeting: `
           Make an attack vs. Armor against something within \\shortrange.
           You gain a +2 accuracy bonus if you are \\glossterm{grounded} on stone.

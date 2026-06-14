@@ -1323,6 +1323,134 @@ t.test('validateSpells', (t) => {
         'Desiccate vs Shadow Blossom',
       );
 
+      // 9. Massive Windblast vs Massive Blastwave (fling vs higher damage rank)
+      const massiveWindblast: MysticSphere = {
+        name: 'Aeromancy',
+        shortDescription: 'Test',
+        sources: ['arcane'],
+        spells: [
+          {
+            name: 'Massive Windblast',
+            rank: 6,
+            roles: ['clear'],
+            attack: {
+              hit: '\\damagerankfive.',
+              halfOnMiss: true,
+              targeting: 'Make an attack vs. Brawn and Reflex against everything in a \\largearea cone from you.',
+            },
+          },
+        ],
+      };
+
+      const massiveBlastwave: MysticSphere = {
+        name: 'Telekinesis',
+        shortDescription: 'Test',
+        sources: ['arcane'],
+        spells: [
+          {
+            name: 'Massive Blastwave',
+            rank: 6,
+            roles: ['clear', 'kite'],
+            attack: {
+              hit: '\\damagerankfour.',
+              injury: 'You \\glossterm{fling} the target up to 15 feet away from you. This fling distance is doubled if the target is Medium or smaller.',
+              halfOnMiss: true,
+              targeting: 'Make an attack vs. Reflex and Brawn against everything in a \\largearea cone from you.',
+            },
+          },
+        ],
+      };
+
+      const issues9 = validateSpells([massiveWindblast, massiveBlastwave]);
+      t.notOk(
+        issues9.find((i) => i.type === 'strictly_superior'),
+        'Massive Windblast vs Massive Blastwave (not superior due to fling)',
+      );
+
+      // 10. Constraining Bubble vs Drowning Bubble (rank 6, 2 targets vs rank 7, 3 targets, injured requirement)
+      const constrainingBubble: MysticSphere = {
+        name: 'Aquamancy',
+        shortDescription: 'Test',
+        sources: ['arcane'],
+        spells: [
+          {
+            name: 'Constraining Bubble',
+            rank: 6,
+            roles: ['softener'],
+            attack: {
+              hit: 'The target is \\briefly surrounded by a bubble of water. It cannot breathe air, fly, or glide. If it does not have a \\glossterm{swim speed}, it is \\unsteady.',
+              targeting: 'Make an attack vs. Brawn against up to two Huge or smaller creatures within \\medrange.',
+            },
+          },
+        ],
+      };
+
+      const drowningBubble: MysticSphere = {
+        name: 'Aquamancy',
+        shortDescription: 'Test',
+        sources: ['arcane'],
+        spells: [
+          {
+            name: 'Drowning Bubble',
+            rank: 7,
+            roles: ['maim'],
+            attack: {
+              hit: 'If the target is \\glossterm{injured}, it is surrounded by a bubble of water as a \\glossterm{condition}. It cannot breathe air, fly, or glide.',
+              targeting: 'Make an attack vs. Brawn against up to three Huge or smaller creatures within \\medrange.',
+            },
+          },
+        ],
+      };
+
+      const issues10 = validateSpells([constrainingBubble, drowningBubble]);
+      t.notOk(
+        issues10.find((i) => i.type === 'strictly_superior'),
+        'Constraining Bubble vs Drowning Bubble (not superior due to target count / requirement differences)',
+      );
+
+      // 11. Geyser vs Kindled Fireburst (vertical line vs radius area types)
+      const geyser: MysticSphere = {
+        name: 'Aquamancy',
+        shortDescription: 'Test',
+        sources: ['arcane'],
+        spells: [
+          {
+            name: 'Geyser',
+            rank: 2,
+            roles: ['burst', 'hazard'],
+            attack: {
+              hit: '\\damagerankone.',
+              halfOnMiss: true,
+              targeting: 'You create a geyser in a \\medarealong, 5 ft.\\ wide vertical line-shaped \\glossterm{zone} within \\shortrange.',
+            },
+          },
+        ],
+      };
+
+      const kindledFireburst: MysticSphere = {
+        name: 'Pyromancy',
+        shortDescription: 'Test',
+        sources: ['arcane'],
+        spells: [
+          {
+            name: 'Kindled Fireburst',
+            rank: 2,
+            roles: ['burst'],
+            attack: {
+              hit: '\\damagerankone.',
+              halfOnMiss: true,
+              targeting: 'Choose one Tiny or larger active fire within \\shortrange. Make an attack vs. Reflex against everything within an \\smallarea radius from it.',
+            },
+          },
+        ],
+      };
+
+      const issues11 = validateSpells([geyser, kindledFireburst]);
+      t.notOk(
+        issues11.find((i) => i.type === 'strictly_superior'),
+        'Geyser vs Kindled Fireburst (not superior due to vertical line vs radius)',
+      );
+
       t.end();
     });
 
