@@ -457,7 +457,7 @@ export function validateSpells(
             spells: [p1.name, p2.name],
           });
         }
-      } else if (diffs.length === 1 && options?.showApproximate) {
+      } else if (diffs.length === 1 && options?.showApproximate && p1.sphereName === p2.sphereName) {
         const d = diffs[0];
         issues.push({
           type: 'almost_equivalent',
