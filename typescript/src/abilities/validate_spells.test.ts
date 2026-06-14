@@ -1451,6 +1451,88 @@ t.test('validateSpells', (t) => {
         'Geyser vs Kindled Fireburst (not superior due to vertical line vs radius)',
       );
 
+      // 12. Greater Word of Power vs Curse of Selective Sight (invisible vs dazed/empowered)
+      const greaterWordOfPower: MysticSphere = {
+        name: 'Channel Divinity',
+        shortDescription: 'Test',
+        sources: ['divine'],
+        spells: [
+          {
+            name: 'Greater Word of Power',
+            rank: 5,
+            roles: ['flash'],
+            attack: {
+              hit: 'The target is \\briefly \\dazed.',
+              targeting: 'Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you. Then, you are \\briefly \\empowered.',
+            },
+          },
+        ],
+      };
+
+      const curseOfSelectiveSight: MysticSphere = {
+        name: 'Prayer',
+        shortDescription: 'Test',
+        sources: ['divine'],
+        spells: [
+          {
+            name: 'Curse of Selective Sight',
+            rank: 5,
+            roles: ['maim'],
+            attack: {
+              hit: 'The target has difficulty looking at you until it finishes a \\glossterm{short rest}. While it is \\glossterm{injured}, it treats you as being \\trait{invisible}.',
+              targeting: 'Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.',
+            },
+          },
+        ],
+      };
+
+      const issues12 = validateSpells([greaterWordOfPower, curseOfSelectiveSight]);
+      t.notOk(
+        issues12.find((i) => i.type === 'strictly_superior'),
+        'Greater Word of Power vs Curse of Selective Sight (not superior due to invisible condition)',
+      );
+
+      // 13. Slow vs Hostile Timeseal (slowed vs frozen in time/cannot act/returns to normal)
+      const slow: MysticSphere = {
+        name: 'Chronomancy',
+        shortDescription: 'Test',
+        sources: ['arcane'],
+        spells: [
+          {
+            name: 'Slow',
+            rank: 4,
+            roles: ['maim'],
+            attack: {
+              hit: 'If the target is \\glossterm{injured}, it is \\slowed as a \\glossterm{condition}.',
+              targeting: 'Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius within \\shortrange.',
+            },
+          },
+        ],
+      };
+
+      const hostileTimeseal: MysticSphere = {
+        name: 'Chronomancy',
+        shortDescription: 'Test',
+        sources: ['arcane'],
+        spells: [
+          {
+            name: 'Hostile Timeseal',
+            rank: 4,
+            roles: ['maim', 'stasis'],
+            attack: {
+              hit: 'If the target is \\glossterm{injured}, it becomes \\briefly frozen in time. It becomes completely immune to all damage, attacks, and effects of any kind. In addition, it cannot act in any way, and the duration of other effects on it does not expire. At the end of your next turn, it returns to normal...',
+              targeting: 'Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius within \\shortrange.',
+            },
+          },
+        ],
+      };
+
+      const issues13 = validateSpells([slow, hostileTimeseal]);
+      t.notOk(
+        issues13.find((i) => i.type === 'strictly_superior'),
+        'Slow vs Hostile Timeseal (not superior due to stasis and returns to normal parsing)',
+      );
+
       t.end();
     });
 
