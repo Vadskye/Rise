@@ -69,11 +69,11 @@ export interface SpellProfile {
 
 export interface ValidationIssue {
   type:
-  | 'redundancy'
-  | 'inconsistent_damage'
-  | 'inconsistent_roles'
-  | 'almost_equivalent'
-  | 'strictly_superior';
+    | 'redundancy'
+    | 'inconsistent_damage'
+    | 'inconsistent_roles'
+    | 'almost_equivalent'
+    | 'strictly_superior';
   severity: 'warning';
   message: string;
   spells: [string, string];
@@ -150,7 +150,9 @@ function parseRange(text: string): string {
   if (
     lowercase.includes('touch') ||
     lowercase.includes('\\glossterm{touch}') ||
-    /against\s+(?:something|anything|one|a|the|target|creature)\b.*adjacent\s+to\s+you/i.test(lowercase)
+    /against\s+(?:something|anything|one|a|the|target|creature)\b.*adjacent\s+to\s+you/i.test(
+      lowercase,
+    )
   ) {
     return 'melee';
   }
@@ -276,10 +278,14 @@ function parseAccuracyCondition(text: string): string | null {
   const hasAny = /(\\plus|\\minus|\+|-)\d+\s+(?:\\glossterm{)?accuracy/i.test(lowercase);
   if (!hasAny) return null;
 
-  const hasUnconditional = /with a\s+(\\plus|\\minus|\+|-)\d+\s+(?:\\glossterm{)?accuracy/i.test(lowercase);
+  const hasUnconditional = /with a\s+(\\plus|\\minus|\+|-)\d+\s+(?:\\glossterm{)?accuracy/i.test(
+    lowercase,
+  );
   if (hasUnconditional) return null;
 
-  const match = lowercase.match(/(?:accuracy bonus|accuracy penalty)\s+(?:if|against|when|for)\s+([^.]+)/i);
+  const match = lowercase.match(
+    /(?:accuracy bonus|accuracy penalty)\s+(?:if|against|when|for)\s+([^.]+)/i,
+  );
   return match ? match[1].trim() : 'conditional';
 }
 
@@ -766,7 +772,12 @@ function checkSpellPair(
     ) {
       // For utility/debuff spells (no damage and no healing), they must share at least one parsed condition AND share at least one role
       let isComparable = true;
-      if (p1.damageRank === null && p2.damageRank === null && p1.healingRank === null && p2.healingRank === null) {
+      if (
+        p1.damageRank === null &&
+        p2.damageRank === null &&
+        p1.healingRank === null &&
+        p2.healingRank === null
+      ) {
         const hasSharedCondition = p1.appliedEffects.some((e) => p2.appliedEffects.includes(e));
         const hasSharedRole = p1.roles.some((r) => p2.roles.includes(r));
         if (!hasSharedCondition || !hasSharedRole) {
