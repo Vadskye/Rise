@@ -461,7 +461,7 @@ export function soulforged(): RankAbility[] {
         After the spell repeats on a creature in this way, it is immune to being tormented by this ability until it finishes a \\glossterm{short rest}.
 
         \\subcf{Fae -- Hidden Spell} The spell does not have \\glossterm{verbal components}.
-        Unlike most spells, it has no visual or auditory effects unless it has the \\atVisual or \\Auditory tag.
+        Unlike most spells, it has no visual or auditory effects unless it has the \\atVisual or \\atAuditory tag.
         In addition, if it does not deal damage, it gains the \\atSubtle tag.
 
         \\subcf{Moirai -- Inevitable Spell} Whenever you would make an attack roll, you can instead determine if an attack result of 6 \\add your \\glossterm{accuracy} with the spell would result in a hit.
