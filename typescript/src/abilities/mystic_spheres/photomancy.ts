@@ -560,10 +560,7 @@ export const photomancy: MysticSphere = {
     {
       name: 'Distant Lightbeam Dash',
 
-      // Rank 6 Spell
-      // Area: Long line from self (R1, mod 0)
-      // Mod: Teleport Cost (-1), No half damage on miss (-1)
-      // Result: 6 + 0 - 1 - 1 = dr4, flat (low) -> dr4 (represented as dr5low)
+      // Should be dr4, which means dr5l.
       attack: {
         hit: `\\damagerankfivelow.`,
         halfOnMiss: true,
