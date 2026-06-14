@@ -895,7 +895,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       // Baseline for melee range is dr9.
       // With -4 accuracy, dr11, which is undefined.
-      // Combustion and Mighty Combustion would end up at drX+1 as DoT,
+      // Spontaneous Combustion and Mighty Spontaneous Combustion would end up at drX+1 as DoT,
       // so this can probably do the same.
       attack: {
         hit: `
