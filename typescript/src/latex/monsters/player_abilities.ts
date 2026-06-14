@@ -10,7 +10,7 @@ import {
 } from '@src/abilities';
 import {
   getWeaponDamageDice,
-  getWeaponTag,
+  getWeaponTags,
   getWeaponAccuracy,
   getWeaponPowerMultiplier,
   MonsterWeapon,
@@ -529,10 +529,10 @@ export function restructureStrikeAbility(monster: Creature, ability: StrikeActiv
 
   const accuracyModifierText = calculateStrikeAccuracyText(monster, ability, restOfStrikeSentence);
   let strikeRange = ' melee';
-  const tag = getWeaponTag(ability.weapon) || '';
-  if (/Projectile/.test(tag)) {
+  const tags = getWeaponTags(ability.weapon);
+  if (tags.some((tag) => /Projectile/.test(tag))) {
     strikeRange = ' ranged';
-  } else if (/Thrown/.test(tag)) {
+  } else if (tags.some((tag) => /Thrown/.test(tag))) {
     // Assume thrown weapons can be used at any range.
     strikeRange = '';
   }
@@ -549,10 +549,8 @@ export function restructureStrikeAbility(monster: Creature, ability: StrikeActiv
   };
 
   ability.tags = ability.tags || [];
-  const weaponTag = getWeaponTag(ability.weapon);
-  if (weaponTag) {
-    ability.tags.push(weaponTag);
-  }
+  const weaponTags = getWeaponTags(ability.weapon);
+  ability.tags.push(...weaponTags);
   // TODO: if any monster weapons can sweep, we will need to sum together their sweeping
   // value.
   const sweepingTag = monster.getSizeBasedSweepingTag();

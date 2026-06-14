@@ -31,7 +31,7 @@ import {
 import { RiseAttribute, RiseAttributeModifier, RiseDefense } from '@src/core_mechanics/attributes';
 import { getManeuverByName, getWeaponMultByRank } from '@src/abilities/combat_styles';
 import { getSpellByName, SphereName } from '@src/abilities/mystic_spheres';
-import { MonsterWeapon, isManufactured, getWeaponTag } from '@src/monsters/weapons';
+import { MonsterWeapon, isManufactured, getWeaponTags } from '@src/monsters/weapons';
 import {
   ActiveAbility,
   ActiveAbilityRank,
@@ -624,7 +624,7 @@ export class Creature implements CreaturePropertyMap {
     weapon: MonsterWeapon,
     { displayName, isMagical, tags, usageTime }: Omit<MonsterAbilityOptions, 'weapon'> = {},
   ) {
-    const maybeRanged = /(Projectile|Thrown)/.test(getWeaponTag(weapon) || '') ? 'Ranged ' : '';
+    const maybeRanged = getWeaponTags(weapon).some((tag) => /(Projectile|Thrown)/.test(tag)) ? 'Ranged ' : '';
     displayName = displayName || 'Sneak Attack';
     this.addActiveAbility({
       kind: 'maneuver',
