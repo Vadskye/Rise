@@ -33,6 +33,8 @@ t.test('buildSpellProfile', (t) => {
     t.equal(profile.isDelayed, true);
     t.equal(profile.hasCost, true);
     t.same(profile.roles, ['burst', 'maim']);
+    t.equal(profile.healingRank, null);
+    t.equal(profile.areaGrows, false);
     t.end();
   });
 
@@ -390,6 +392,131 @@ t.test('validateSpells', (t) => {
     
     const inconsistency = issues.find((issue) => issue.type === 'inconsistent_damage');
     t.notOk(inconsistency, 'Should not report inconsistent damage since Lightning Breath is an Attune spell');
+    t.end();
+  });
+
+  t.test('should not flag damaging vs non-damaging spells as redundant', (t) => {
+    const sphere1: MysticSphere = {
+      name: 'Channel Divinity',
+      shortDescription: 'Test',
+      sources: ['divine'],
+      spells: [
+        {
+          name: 'Word of Faith',
+          rank: 2,
+          roles: ['clear'],
+          attack: {
+            hit: '\\damagerankone.',
+            targeting: 'Make an attack vs. Mental against all enemies in a \\smallarea radius from you.',
+          },
+        },
+      ],
+    };
+
+    const sphere2: MysticSphere = {
+      name: 'Umbramancy',
+      shortDescription: 'Test',
+      sources: ['arcane'],
+      spells: [
+        {
+          name: 'Fearsome Shadow Cloak',
+          rank: 2,
+          roles: ['generator'],
+          attack: {
+            hit: 'The target is \\briefly \\frightened of you.',
+            targeting: 'Make an attack vs. Mental against all enemies in a \\smallarea radius from you.',
+          },
+        },
+      ],
+    };
+
+    const issues = validateSpells([sphere1, sphere2]);
+    const redundancy = issues.find((issue) => issue.type === 'redundancy');
+    t.notOk(redundancy, 'Word of Faith and Fearsome Shadow Cloak should not be redundant because one deals damage and the other does not');
+    t.end();
+  });
+
+  t.test('should not flag healing vs non-healing spells as redundant', (t) => {
+    const sphere1: MysticSphere = {
+      name: 'Vivimancy',
+      shortDescription: 'Test',
+      sources: ['nature'],
+      spells: [
+        {
+          name: 'Lifesteal',
+          rank: 2,
+          roles: ['burst', 'healing'],
+          attack: {
+            hit: '\\damagerankone.',
+            injury: 'If you increase fatigue, you regain \\hprankfive.',
+            targeting: 'Make an attack vs. Fortitude against one creature within \\medrange.',
+          },
+        },
+      ],
+    };
+
+    const sphere2: MysticSphere = {
+      name: 'Prayer',
+      shortDescription: 'Test',
+      sources: ['nature'],
+      spells: [
+        {
+          name: 'Inflict Wound',
+          rank: 2,
+          roles: ['execute'],
+          attack: {
+            hit: '\\damagerankone.',
+            injury: '\\damagerankone again.',
+            targeting: 'Make an attack vs. Fortitude against one creature within \\medrange.',
+          },
+        },
+      ],
+    };
+
+    const issues = validateSpells([sphere1, sphere2]);
+    const redundancy = issues.find((issue) => issue.type === 'redundancy');
+    t.notOk(redundancy, 'Lifesteal and Inflict Wound should not be redundant because one heals and the other does not');
+    t.end();
+  });
+
+  t.test('should not flag growing vs static area spells as redundant', (t) => {
+    const sphere1: MysticSphere = {
+      name: 'Terramancy',
+      shortDescription: 'Test',
+      sources: ['nature'],
+      spells: [
+        {
+          name: 'Volcano',
+          rank: 3,
+          roles: ['clear'],
+          attack: {
+            hit: '\\damagerankone.',
+            targeting: 'You create a volcano. The area affected by the volcano increases over time. It affects a \\smallarea radius zone in the first turn.',
+          },
+        },
+      ],
+    };
+
+    const sphere2: MysticSphere = {
+      name: 'Pyromancy',
+      shortDescription: 'Test',
+      sources: ['arcane'],
+      spells: [
+        {
+          name: 'Fireball',
+          rank: 3,
+          roles: ['clear'],
+          attack: {
+            hit: '\\damageranktwo.',
+            targeting: 'Make an attack vs. Reflex against everything in a \\smallarea radius within \\shortrange.',
+          },
+        },
+      ],
+    };
+
+    const issues = validateSpells([sphere1, sphere2]);
+    const redundancy = issues.find((issue) => issue.type === 'redundancy');
+    t.notOk(redundancy, 'Volcano and Fireball should not be redundant because Volcano area increases over time');
     t.end();
   });
 
