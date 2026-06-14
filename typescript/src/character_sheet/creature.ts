@@ -855,9 +855,6 @@ export class Creature implements CreaturePropertyMap {
     } else if (traitName === 'quadrupedal') {
       modifier.numericEffects = [{ modifier: 10, statistic: 'speed' }];
       modifier.resistant = 'Trip';
-    } else if (traitName === 'swarm') {
-      modifier.resistant = 'Targeted';
-      modifier.vulnerable = 'Area';
     }
     this.addCustomModifier(modifier);
   }
