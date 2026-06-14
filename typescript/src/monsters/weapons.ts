@@ -38,40 +38,42 @@ export const MONSTER_WEAPONS = new Set(MONSTER_WEAPONS_LIST);
 
 // TODO: weapons can have multiple tags, and some tags are \weapontag{} while some are
 // \abilitytag{}.
-export function getWeaponTag(weaponName: MonsterWeapon): string | null {
-  return {
-    battleaxe: 'Keen',
-    beak: null,
-    bite: null,
-    broadsword: null,
-    claws: null, // These have the Light tag, but that's irrelevant for running monsters.
-    club: null,
-    darts: 'Thrown (30/60)',
-    fists: null,
-    flail: null, // Ignore Maneuverable tag
-    'giant boulder': 'Thrown (90/180)',
-    greataxe: 'Keen',
-    greatclub: null,
-    greatsword: 'Sweeping (1)',
-    ['heavy crossbow']: 'Projectile (90/270)', // Ignore Heavy tag
-    ['heavy flail']: null, // Ignore Maneuverable tag
-    horn: 'Keen',
-    javelin: 'Thrown (60/120)',
-    lance: 'Mounted',
-    longbow: 'Projectile (90/270)', // Ignore Heavy tag
-    pick: 'Keen',
-    ram: 'Impact',
-    scythe: 'Sweeping (2)',
-    sickle: null,
-    slam: null,
-    sling: 'Projectile (50/150)',
-    smallswords: null,
-    spear: 'Thrown (30/60)', // Ignore Versatile Grip tag and assume one-handing, so not Long
-    spike: null,
-    stinger: null,
-    talons: null,
-    tentacle: null,
-  }[weaponName];
+export function getWeaponTags(weaponName: MonsterWeapon): readonly string[] {
+  return (
+    {
+      battleaxe: ['Keen'],
+      beak: ['Versatile Stance'],
+      bite: ['Versatile Stance'],
+      broadsword: [],
+      claws: [], // These have the Light tag, but that's irrelevant for running monsters.
+      club: [],
+      darts: ['Thrown (30/60)'],
+      fists: [],
+      flail: [], // Ignore Maneuverable tag
+      'giant boulder': ['Thrown (90/180)'],
+      greataxe: ['Keen'],
+      greatclub: [],
+      greatsword: ['Sweeping (1)'],
+      ['heavy crossbow']: ['Projectile (90/270)'], // Ignore Heavy tag
+      ['heavy flail']: [], // Ignore Maneuverable tag
+      horn: ['Keen', 'Versatile Stance'],
+      javelin: ['Thrown (60/120)'],
+      lance: ['Mounted'],
+      longbow: ['Projectile (90/270)'], // Ignore Heavy tag
+      pick: ['Keen'],
+      ram: ['Impact', 'Versatile Stance'],
+      scythe: ['Sweeping (2)'],
+      sickle: [],
+      slam: [],
+      sling: ['Projectile (50/150)'],
+      smallswords: [],
+      spear: ['Thrown (30/60)'], // Ignore Versatile Grip tag and assume one-handing, so not Long
+      spike: ['Versatile Stance'],
+      stinger: ['Versatile Stance'],
+      talons: [],
+      tentacle: [],
+    } as const
+  )[weaponName];
 }
 
 export interface DicePool {
