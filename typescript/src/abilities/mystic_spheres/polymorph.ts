@@ -32,9 +32,7 @@ export const polymorph: MysticSphere = {
         This spell has no \\glossterm{somatic components}.
 
         Make a \\glossterm{mundane} melee \\glossterm{strike} using \\glossterm{natural weapons}.
-        If the target takes damage and is living, it bleeds.
-        A bleeding creature takes damage equal to half your power at the end of its next turn.
-        This bleeding damage is doubled on a critical hit.
+        If the target takes damage and is living, it \\briefly \\debuff{bleeds} for damage equal to half your power.
       `,
       rank: 3,
       roles: ['burn'],
@@ -396,7 +394,7 @@ export const polymorph: MysticSphere = {
           \\damagerankone.
         `,
         injury: `
-          The target takes \\damagerankone at the end of its next turn.
+          The target \\briefly \\debuff{bleeds} for \\damagerankone.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.

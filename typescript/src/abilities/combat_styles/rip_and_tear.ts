@@ -22,8 +22,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        \\injury If the target is not wearing metal body armor, it bleeds.
-        A bleeding creature takes the same damage from the strike again at the end of its next turn.
+        \\injury If the target is not wearing metal body armor, it \\briefly \\debuff{bleeds} for damage equal to the damage dealt by the strike.
       `,
       rank: 3,
       roles: ['burst'],
@@ -35,8 +34,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} that deals six times \\glossterm{weapon damage}.
-        \\injury If the target is not wearing metal body armor, it bleeds.
-        A bleeding creature takes the same damage from the strike again at the end of its next turn.
+        \\injury If the target is not wearing metal body armor, it \\briefly \\debuff{bleeds} for damage equal to the damage dealt by the strike.
       `,
       rank: 7,
       roles: ['burst'],
@@ -71,8 +69,7 @@ export const ripAndTear: CombatStyle = {
       effect: `
         Make a \\glossterm{dual strike} (see \\pcref{Dual Strikes}).
         You \\glossterm{reroll} the attack roll once and keep the lower result.
-        \\hit The target bleeds.
-        A bleeding creature takes damage equal to the damage it took from the strike at the end of its next turn.
+        \\hit The target \\briefly \\debuff{bleeds} for damage equal to the damage dealt by the strike.
       `,
       rank: 3,
       roles: ['burn'],
@@ -85,8 +82,7 @@ export const ripAndTear: CombatStyle = {
       // Currently dr4; unclear if correct damage
       effect: `
         Make a melee \\glossterm{dual strike} (see \\pcref{Dual Strikes}).
-        \\hit The target bleeds.
-        A bleeding creature takes damage equal to 2d6 \\add your \\glossterm{power} at the end of its next turn.
+        \\hit The target \\briefly \\debuff{bleeds} for 2d6 \\add your \\glossterm{power} damage.
         \\crit ${MULTIHIT_CRIT}
       `,
       rank: 5,
@@ -178,8 +174,7 @@ export const ripAndTear: CombatStyle = {
         Make a melee \\glossterm{strike}.
         The strike targets all \\glossterm{enemies} adjacent to you.
         You cannot use the \\textit{desperate exertion} ability to affect this strike.
-        Each creature hit by the strike bleeds.
-        A bleeding creature takes damage equal to half your \\glossterm{power} at the end of its next turn.
+        Each creature hit by the strike \\briefly \\debuff{bleeds} for damage equal to half your \\glossterm{power}.
         \\crit ${MULTIHIT_CRIT}
       `,
       rank: 1,
@@ -195,8 +190,7 @@ export const ripAndTear: CombatStyle = {
         Make a melee \\glossterm{strike} that deals double damage.
         The strike targets all \\glossterm{enemies} adjacent to you.
         You cannot use the \\textit{desperate exertion} ability to affect this strike.
-        Each creature hit by the strike bleeds.
-        A bleeding creature takes damage equal to your \\glossterm{power} at the end of its next turn.
+        Each creature hit by the strike \\briefly \\debuff{bleeds} for damage equal to your \\glossterm{power}.
         \\crit ${MULTIHIT_CRIT}
       `,
       rank: 5,
@@ -209,8 +203,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        \\injury The target bleeds.
-        A bleeding creature takes damage equal to half your \\glossterm{power} at the end of its next turn.
+        \\injury The target \\briefly \\debuff{bleeds} for damage equal to half your \\glossterm{power}.
         \\crit ${MULTIHIT_CRIT}
       `,
       rank: 1,
@@ -225,8 +218,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} that deals double \\glossterm{weapon damage}.
-        \\injury The target bleeds profusely.
-        A bleeding creature takes damage equal to 2d6 \\add your \\glossterm{power} during your next two actions.
+        \\injury The target \\debuff{bleeds} for damage equal to 2d6 \\add your \\glossterm{power} as a \\glossterm{condition}.
         \\crit ${MULTIHIT_CRIT}
       `,
       rank: 5,
