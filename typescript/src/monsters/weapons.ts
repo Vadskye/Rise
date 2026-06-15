@@ -21,13 +21,7 @@ for (const key of Object.keys(STANDARD_WEAPONS)) {
 }
 
 // Custom aliases/mappings for monster names
-LOWERCASE_STANDARD_WEAPONS['giant boulder'] = StandardWeapon.GiantBoulder;
-LOWERCASE_STANDARD_WEAPONS['horn'] = StandardWeapon.Horn;
-LOWERCASE_STANDARD_WEAPONS['ram'] = StandardWeapon.Ram;
-LOWERCASE_STANDARD_WEAPONS['stinger'] = StandardWeapon.Stinger;
 LOWERCASE_STANDARD_WEAPONS['spike'] = StandardWeapon.Stinger; // Same as stinger
-LOWERCASE_STANDARD_WEAPONS['tentacle'] = StandardWeapon.Tentacle;
-LOWERCASE_STANDARD_WEAPONS['punch/kick'] = StandardWeapon.PunchKick;
 
 export const MONSTER_WEAPONS = new Set<string>([
   ...Object.keys(LOWERCASE_STANDARD_WEAPONS),
