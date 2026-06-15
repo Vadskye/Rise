@@ -99,8 +99,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a strike.
-        \\hit The target burns.
-        A burning creature takes damage equal to half your power at the end of its next turn.
+        \\hit The target \\briefly \\debuff{burns} for damage equal to half your power.
         \\crit ${MULTIHIT_CRIT}
       `,
       rank: 3,
@@ -113,8 +112,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a strike that deals double damage.
-        \\hit The target burns.
-        A burning creature takes \\damagerankfour at the end of its next turn.
+        \\hit The target \\briefly \\debuff{burns} for \\damagerankfour.
         \\crit ${MULTIHIT_CRIT}
       `,
       rank: 7,

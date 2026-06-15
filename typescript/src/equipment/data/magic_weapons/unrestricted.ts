@@ -73,9 +73,7 @@ function energyWeapons(): MagicWeapon[] {
         While the weapon is burning:
         \\begin{raggeditemize}
             \\item All strikes with it have the \\atFire tag.
-            \\item Whenever you hit a creature with a strike using it, the creature burns.
-                It takes 1d4 damage at the end of its next turn.
-                This damage is doubled by critical hits and attacks that deal double damage.
+            \\item Whenever you hit a creature with a strike using it, the target \\briefly \\debuff{burns} for 1d4 damage.
             \\item It sheds red light in a 15 foot radius of \\glossterm{bright illumination}.
         \\end{raggeditemize}
       `,

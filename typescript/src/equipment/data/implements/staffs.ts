@@ -462,9 +462,7 @@ export const staffs = (): Implement[] => [
       While the staff is burning:
       \\begin{raggeditemize}
           \\item All \\magical abilities you use have the \\atFire tag.
-          \\item Whenever you hit a creature with \\magical ability, the creature burns.
-              It takes 1d6 damage at the end of its next turn.
-              This damage is doubled by critical hits and attacks that deal double damage.
+          \\item Whenever you hit a creature with a \\magical ability, the target \\briefly \\debuff{burns} for 1d6 damage.
           \\item It sheds light in a 15 foot radius of \\glossterm{bright illumination}.
       \\end{raggeditemize}
     `,

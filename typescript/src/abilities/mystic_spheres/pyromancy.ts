@@ -397,7 +397,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       attack: {
         hit: `
           \\damagerankone.
-          The target also burns for \\damagerankone as a \\glossterm{condition}.
+          The target also \\debuff{burns} for \\damagerankone as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
