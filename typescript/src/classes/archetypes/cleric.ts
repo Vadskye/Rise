@@ -74,8 +74,7 @@ export function divineSpellMastery(): RankAbility[] {
         You can choose this ability multiple times, choosing a different spell each time.
         \\parhead{Rituals} You gain the ability to perform divine rituals to create unique magical effects (see \\pcref{Spell and Ritual Mechanics}).
         The maximum \\glossterm{rank} of divine ritual you can learn or perform is equal to the maximum \\glossterm{rank} of divine spell that you can cast.
-        When you gain this ability, you can memorize a rank 1 divine ritual from any divine mystic sphere you have access to.
-        Whenever you gain access to a new spellcasting rank, you can memorize an additional ritual of that rank or lower.
+        In addition, you automatically learn one free divine ritual of each rank you have access to, including new ranks as you gain access to them.
         You cannot choose this ability multiple times.
         \\parhead{Smiting Spell} Choose a damaging divine \\glossterm{spell} you know.
         It deals \\glossterm{extra damage} equal to your rank in this archetype.
