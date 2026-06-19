@@ -138,9 +138,9 @@ export function getClassMaxStamina(cls: Class): number {
     case 'Fighter':
     case 'Ranger':
     case 'Oozeborn':
-    case 'Sorcerer':
     case 'Treant':
       return 3;
+    case 'Sorcerer':
     case 'Troll':
       return 4;
     default:
@@ -155,6 +155,8 @@ export function getClassInsightPoints(cls: Class): number {
     case 'Rogue':
     case 'Wizard':
       return 2;
+    case 'Sorcerer':
+      return 0;
     default:
       return 1;
   }
