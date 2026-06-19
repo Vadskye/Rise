@@ -1,17 +1,26 @@
-import { Implement, StandardItem } from '../../types';
+import { Implement, StandardItem, AttunementRequirement } from '../../types';
 
 function rod(
-  item: Omit<StandardItem, 'magical' | 'rarity' | 'tags' | 'upgrades'> &
-    Partial<Pick<StandardItem, 'upgrades' | 'tags'>>,
+  item: Omit<StandardItem, 'magical' | 'rarity' | 'tags' | 'upgrades' | 'attunement'> &
+    Partial<Pick<StandardItem, 'upgrades' | 'tags' | 'attunement'>>,
 ): Implement {
+  const tags = item.tags || [];
+  let attunement: AttunementRequirement = item.attunement || 'Attune';
+  if (tags.includes('Attune (deep)')) {
+    attunement = 'Attune (deep)';
+  } else if (tags.includes('Attune')) {
+    attunement = 'Attune';
+  }
+  const cleanedTags = tags.filter(t => t !== 'Attune' && t !== 'Attune (deep)');
   return {
     kind: 'Rod',
     item: {
       magical: true,
       rarity: 'Common',
-      tags: item.tags || ['Attune'],
       upgrades: item.upgrades || [],
       ...item,
+      tags: cleanedTags,
+      attunement,
     },
   };
 }
@@ -32,7 +41,7 @@ export const rods = (): Implement[] => [
       At the end of its next turn, the target takes $dr2l again.
       \\miss Half damage, and no delayed damage.
     `,
-    tags: ['Fire', 'Attune'],
+    tags: ['Fire'],
     upgrades: [
       // Normally dr3+dr3 = 31. Double dr4l is 33. Double dr5l is 45.
       // A single damage burst would be dr5 = 23.
@@ -65,7 +74,7 @@ export const rods = (): Implement[] => [
       Your minimum accuracy is $accuracy.
       \\hit $dr2l damage.
     `,
-    tags: ['Electricity', 'Attune'],
+    tags: ['Electricity'],
     upgrades: [
       {
         rank: 3,
@@ -118,7 +127,7 @@ export const rods = (): Implement[] => [
       \\hit 4d6 damage.
       \\injury The target is \\glossterm{briefly} \\dazzled.
     `,
-    tags: ['Visual', 'Attune'],
+    tags: ['Visual'],
     upgrades: [
       {
         // dr6 is 29 damage, or 26 as a target for flat damage.

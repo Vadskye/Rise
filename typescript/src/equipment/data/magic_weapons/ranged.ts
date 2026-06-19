@@ -1,17 +1,26 @@
-import { MagicWeapon, StandardItem } from '../../types';
+import { MagicWeapon, StandardItem, AttunementRequirement } from '../../types';
 
 function ranged(
-  item: Omit<StandardItem, 'magical' | 'rarity' | 'tags' | 'upgrades'> &
-    Partial<Pick<StandardItem, 'upgrades' | 'tags'>>,
+  item: Omit<StandardItem, 'magical' | 'rarity' | 'tags' | 'upgrades' | 'attunement'> &
+    Partial<Pick<StandardItem, 'upgrades' | 'tags' | 'attunement'>>,
 ): MagicWeapon {
+  const tags = item.tags || [];
+  let attunement: AttunementRequirement = item.attunement || 'Attune';
+  if (tags.includes('Attune (deep)')) {
+    attunement = 'Attune (deep)';
+  } else if (tags.includes('Attune')) {
+    attunement = 'Attune';
+  }
+  const cleanedTags = tags.filter(t => t !== 'Attune' && t !== 'Attune (deep)');
   return {
     kind: 'Ranged',
     item: {
       magical: true,
       rarity: 'Common',
-      tags: item.tags || ['Attune'],
       upgrades: item.upgrades || [],
       ...item,
+      tags: cleanedTags,
+      attunement,
     },
   };
 }

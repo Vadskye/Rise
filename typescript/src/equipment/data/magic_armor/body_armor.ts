@@ -1,17 +1,26 @@
-import { MagicArmor, StandardItem } from '../../types';
+import { MagicArmor, StandardItem, AttunementRequirement } from '../../types';
 
 function body(
-  item: Omit<StandardItem, 'magical' | 'rarity' | 'tags' | 'upgrades'> &
-    Partial<Pick<StandardItem, 'upgrades' | 'tags'>>,
+  item: Omit<StandardItem, 'magical' | 'rarity' | 'tags' | 'upgrades' | 'attunement'> &
+    Partial<Pick<StandardItem, 'upgrades' | 'tags' | 'attunement'>>,
 ): MagicArmor {
+  const tags = item.tags || [];
+  let attunement: AttunementRequirement = item.attunement || 'Attune';
+  if (tags.includes('Attune (deep)')) {
+    attunement = 'Attune (deep)';
+  } else if (tags.includes('Attune')) {
+    attunement = 'Attune';
+  }
+  const cleanedTags = tags.filter(t => t !== 'Attune' && t !== 'Attune (deep)');
   return {
     kind: 'Body',
     item: {
       magical: true,
       rarity: 'Common',
-      tags: item.tags || ['Attune'], // formatTagLatex will handle this
       upgrades: item.upgrades || [],
       ...item,
+      tags: cleanedTags,
+      attunement,
     },
   };
 }
@@ -26,7 +35,7 @@ function compositeArmor(): MagicArmor[] {
         This armor has two different rank 1 magic armor properties.
         Each property must not already require a \\glossterm{deep attunement}.
       `,
-      tags: ['Attune (deep)'],
+      attunement: 'Attune (deep)', tags: [],
     }),
     body({
       name: 'Composite Armor, 2nd',
@@ -36,7 +45,7 @@ function compositeArmor(): MagicArmor[] {
         This armor has two different magic armor properties that are rank 2 or lower.
         Each property must not already require a \\glossterm{deep attunement}.
       `,
-      tags: ['Attune (deep)'],
+      attunement: 'Attune (deep)', tags: [],
     }),
     body({
       name: 'Composite Armor, 3rd',
@@ -46,7 +55,7 @@ function compositeArmor(): MagicArmor[] {
         This armor has two different magic armor properties that are rank 3 or lower.
         Each property must not already require a \\glossterm{deep attunement}.
       `,
-      tags: ['Attune (deep)'],
+      attunement: 'Attune (deep)', tags: [],
     }),
   ];
 
@@ -60,7 +69,7 @@ function compositeArmor(): MagicArmor[] {
         This armor has two different magic armor properties that are rank ${n} or lower.
         Each property must not already require a \\glossterm{deep attunement}.
       `,
-        tags: ['Attune (deep)'],
+        attunement: 'Attune (deep)', tags: [],
       }),
     );
   };
@@ -286,14 +295,14 @@ export const bodyArmor = (): MagicArmor[] => [
         description: 'The healing increases to 8d10.',
       },
     ],
-    tags: ['Attune (deep)'],
+    attunement: 'Attune (deep)', tags: [],
   }),
   body({
     name: 'Fortifying Armor',
     rank: 2,
     short_description: 'Fortifies you if you have 3 Con',
     description: 'If your Constitution is at least 3, you are \\fortified.',
-    tags: ['Attune (deep)'],
+    attunement: 'Attune (deep)', tags: [],
     upgrades: [
       {
         rank: 7,

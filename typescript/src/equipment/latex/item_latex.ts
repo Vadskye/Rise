@@ -13,9 +13,12 @@ export function itemLatex(item: StandardItem, craftingText: string): string {
   validateShortDescription(item);
 
   const tags = [...(item.tags || [])];
+  if (item.attunement !== 'Unrestricted' && !tags.some((t) => t.toLowerCase() === item.attunement.toLowerCase())) {
+    tags.push(item.attunement);
+  }
   const formattedTags = tags.map(formatTagLatex).sort();
 
-  const isAttuned = tags.some((t) => t.toLowerCase().includes('attune'));
+  const isAttuned = item.attunement !== 'Unrestricted';
   const abilityType = isAttuned ? 'attuneitem' : 'passiveitem';
   const magicalPrefix = item.magical ? 'magical' : '';
   const rankAndPrice = getRankAndPriceText(item.rank, item.rarity);

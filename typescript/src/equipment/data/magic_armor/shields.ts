@@ -1,17 +1,26 @@
-import { MagicArmor, StandardItem } from '../../types';
+import { MagicArmor, StandardItem, AttunementRequirement } from '../../types';
 
 function shield(
-  item: Omit<StandardItem, 'magical' | 'rarity' | 'tags' | 'upgrades'> &
-    Partial<Pick<StandardItem, 'upgrades' | 'tags'>>,
+  item: Omit<StandardItem, 'magical' | 'rarity' | 'tags' | 'upgrades' | 'attunement'> &
+    Partial<Pick<StandardItem, 'upgrades' | 'tags' | 'attunement'>>,
 ): MagicArmor {
+  const tags = item.tags || [];
+  let attunement: AttunementRequirement = item.attunement || 'Attune';
+  if (tags.includes('Attune (deep)')) {
+    attunement = 'Attune (deep)';
+  } else if (tags.includes('Attune')) {
+    attunement = 'Attune';
+  }
+  const cleanedTags = tags.filter(t => t !== 'Attune' && t !== 'Attune (deep)');
   return {
     kind: 'Shield',
     item: {
       magical: true,
       rarity: 'Common',
-      tags: item.tags || ['Attune'],
       upgrades: item.upgrades || [],
       ...item,
+      tags: cleanedTags,
+      attunement,
     },
   };
 }
@@ -26,7 +35,7 @@ function compositeShields(): MagicArmor[] {
         This shield has two different rank 1 magic shield properties.
         Each property must not already require a \\glossterm{deep attunement}.
       `,
-      tags: ['Attune (deep)'],
+      attunement: 'Attune (deep)', tags: [],
     }),
     shield({
       name: 'Composite Shield, 2nd',
@@ -36,7 +45,7 @@ function compositeShields(): MagicArmor[] {
         This shield has two different magic shield properties that are rank 2 or lower.
         Each property must not already require a \\glossterm{deep attunement}.
       `,
-      tags: ['Attune (deep)'],
+      attunement: 'Attune (deep)', tags: [],
     }),
     shield({
       name: 'Composite Shield, 3rd',
@@ -46,7 +55,7 @@ function compositeShields(): MagicArmor[] {
         This shield has two different magic shield properties that are rank 3 or lower.
         Each property must not already require a \\glossterm{deep attunement}.
       `,
-      tags: ['Attune (deep)'],
+      attunement: 'Attune (deep)', tags: [],
     }),
   ];
 
@@ -60,7 +69,7 @@ function compositeShields(): MagicArmor[] {
         This shield has two different magic shield properties that are rank ${n} or lower.
         Each property must not already require a \\glossterm{deep attunement}.
       `,
-        tags: ['Attune (deep)'],
+        attunement: 'Attune (deep)', tags: [],
       }),
     );
   };
@@ -216,20 +225,20 @@ export const shields = (): MagicArmor[] => [
           'Your minimum accuracy increases to $accuracy, and the condition also causes each target to be \\dazed while it is injured.',
       },
     ],
-    tags: ['Visual', 'Attune'],
+    tags: ['Visual'],
   }),
   shield({
     name: 'Shield of Shielding',
     rank: 4,
     short_description: 'Shields you',
     description: 'You are \\shielded.',
-    tags: ['Attune (deep)'],
+    attunement: 'Attune (deep)', tags: [],
   }),
   shield({
     name: 'Covering Shield',
     rank: 7,
     short_description: 'Grants you cover',
     description: 'You have \\glossterm{cover} from all attacks.',
-    tags: ['Attune (deep)'],
+    attunement: 'Attune (deep)', tags: [],
   }),
 ];

@@ -13,6 +13,7 @@ const mockItem: StandardItem = {
     { rank: 3, short_description: 'Improved test item.', description: 'Now it is better.' },
   ],
   tags: [],
+  attunement: 'Unrestricted',
 };
 
 t.test('fromItem', (t) => {
@@ -35,6 +36,7 @@ t.test('standardSort', (t) => {
       magical: false,
       rarity: 'Common',
       short_description: '',
+      attunement: 'Unrestricted',
     },
     {
       name: 'A',
@@ -43,6 +45,7 @@ t.test('standardSort', (t) => {
       magical: false,
       rarity: 'Common',
       short_description: '',
+      attunement: 'Unrestricted',
     },
     {
       name: 'C',
@@ -51,6 +54,7 @@ t.test('standardSort', (t) => {
       magical: false,
       rarity: 'Common',
       short_description: '',
+      attunement: 'Unrestricted',
     },
     {
       name: 'D',
@@ -59,6 +63,7 @@ t.test('standardSort', (t) => {
       magical: false,
       rarity: 'Common',
       short_description: '',
+      attunement: 'Unrestricted',
     },
   ];
 
@@ -81,6 +86,7 @@ t.test('rowToLatex', (t) => {
     short_description: 'Grants +2 defense.',
     category: 'Shield',
     tags: ['Attune'],
+    attunement: 'Attune',
   };
 
   const latexNormal = rowToLatex(row);
@@ -88,16 +94,16 @@ t.test('rowToLatex', (t) => {
   t.notMatch(latexNormal, /Regular/);
 
   const latexAttuned = rowToLatex(row, undefined, true);
-  t.match(latexAttuned, /\\itemref{Magic Shield}\\sparkle & Shield & Regular/);
+  t.match(latexAttuned, /\\itemref{Magic Shield}\\sparkle & Shield & Yes/);
   t.match(latexAttuned, /& Grants \+2 defense\./);
   t.match(latexAttuned, /& 2 \(20 gp\)/);
   t.match(latexAttuned, /& \\itempref{Magic Shield}/);
 
-  const deepRow = { ...row, tags: ['Attune (deep)'] };
+  const deepRow = { ...row, attunement: 'Attune (deep)' as const };
   t.match(rowToLatex(deepRow, undefined, true), /& Deep/);
 
-  const noneRow = { ...row, tags: ['Fire'] };
-  t.match(rowToLatex(noneRow, undefined, true), /& None/);
+  const noneRow = { ...row, attunement: 'Unrestricted' as const };
+  t.match(rowToLatex(noneRow, undefined, true), /& No/);
 
   t.end();
 });
@@ -112,6 +118,7 @@ t.test('longtable', (t) => {
       rarity: 'Common',
       short_description: 'Desc 1',
       tags: ['Attune'],
+      attunement: 'Attune',
     },
   ];
 
@@ -133,7 +140,7 @@ t.test('longtable', (t) => {
     withAttunement: true,
   });
   t.match(latexWithAttune, /\\tb{Name}\s*&\s*\\tb{Attunement}\s*&\s*\\tb{Description}\s*&\s*\\tb{Rank \(Cost\)}\s*&\s*\\tb{Page}/);
-  t.match(latexWithAttune, /\\itemref{Item 1}\s*&\s*Regular/);
+  t.match(latexWithAttune, /\\itemref{Item 1}\s*&\s*Yes/);
   t.match(latexWithAttune, /&\s*Desc 1/);
 
   t.end();

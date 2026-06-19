@@ -8,6 +8,7 @@ function createPoison(data: Partial<StandardItem>): Tool {
       magical: false,
       rarity: 'Common',
       tags: ['Poison'],
+      attunement: 'Unrestricted',
       upgrades: [],
       description: '',
       short_description: '',

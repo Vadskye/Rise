@@ -16,7 +16,8 @@ export function attributeItem(name: string, attribute: Attribute): StandardItem 
         description: 'The bonus increases to +2.',
       },
     ],
-    tags: ['Attune (deep)'],
+    tags: [],
+    attunement: 'Attune (deep)',
     rarity: 'Common',
   };
 }
@@ -35,7 +36,8 @@ export function skillItem(name: string, skill: string): StandardItem {
         description: 'The bonus increases to +5.',
       },
     ],
-    tags: ['Attune'],
+    tags: [],
+    attunement: 'Attune',
     rarity: 'Common',
   };
 }
@@ -54,7 +56,8 @@ export function reliableSkillItem(name: string, skills: string, summary: string)
         description: 'You can also reroll when you roll a 2 or 3.',
       },
     ],
-    tags: ['Attune'],
+    tags: [],
+    attunement: 'Attune',
     rarity: 'Common',
   };
 }

@@ -7,6 +7,7 @@ function createPotion(data: Partial<StandardItem>): Tool {
       magical: true,
       rarity: 'Common',
       tags: [],
+      attunement: 'Unrestricted',
       upgrades: [],
       description: '',
       short_description: '',
