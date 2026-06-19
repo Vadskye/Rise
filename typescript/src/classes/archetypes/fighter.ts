@@ -593,7 +593,7 @@ export function combatDisciplineModifiers(creature: Creature, rank: number) {
           modifier: rank >= 5 ? 4 : 2,
         },
         {
-          statistic: 'stamina_max',
+          statistic: 'maximum_stamina',
           modifier: rank >= 5 ? 4 : 2,
         },
       ],

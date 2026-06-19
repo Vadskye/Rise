@@ -77,7 +77,7 @@ def calc_maximum_stamina():
                         "Class",
                         number_input(
                             {
-                                "name": "stamina_max_base",
+                                "name": "maximum_stamina_base",
                             }
                         ),
                     ),
@@ -92,10 +92,10 @@ def calc_maximum_stamina():
                         ),
                     ),
                     plus(),
-                    equation_misc_repeat("stamina_max", 2),
+                    equation_misc_repeat("maximum_stamina", 2),
                 ],
                 result_attributes={
-                    "name": "stamina_max",
+                    "name": "maximum_stamina",
                     "readonly": True,
                 },
             ),

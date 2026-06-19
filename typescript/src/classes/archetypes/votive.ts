@@ -602,7 +602,7 @@ export function covenantKeeperModifiers(creature: Creature, rank: number) {
   if (rank >= 2) {
     creature.addSimpleModifier({
       name: 'Covenant of Power (Stamina)',
-      statistic: 'stamina_max',
+      statistic: 'maximum_stamina',
       value: rank >= 5 ? 4 : 2,
     });
   }
@@ -639,7 +639,7 @@ export function pactSpellMasteryModifiers(creature: Creature, rank: number) {
       name: 'Experienced Spellcaster',
       numericEffects: [
         { statistic: 'accuracy', modifier: 1 },
-        { statistic: 'stamina_max', modifier: 1 },
+        { statistic: 'maximum_stamina', modifier: 1 },
       ],
     });
   }

@@ -208,7 +208,7 @@ def common_concepts():
                 + " !setattr --name @{character_name} --silent"
                 + " --hit_points|@{hit_points_maximum}"
                 + " --damage_resistance|@{damage_resistance_maximum}"
-                + " --stamina|@{stamina_max}"
+                + " --stamina|@{maximum_stamina}"
                 + "!!!"
                 + " {{desc=@{character_name} finishes a long rest}}"
             ),
@@ -243,7 +243,7 @@ def common_concepts():
             {long_rest}: Resting for eight hours is considered a long rest. When you finish a long rest, you gain the following benefits.
             <ul>
                 <li>You remove one of your vital wounds.</li>
-                <li>Your current stamina is restored to your maximum stamina.</li>
+                <li>Your current stamina become equal to your maximum stamina.</li>
             </ul>
         """
             ),
