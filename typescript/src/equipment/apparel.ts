@@ -38,7 +38,7 @@ export function apparelLatex(apparel: Apparel): string {
   // Relics are allowed to not require attunement
   if (
     apparel.item.rarity === 'Common' &&
-    !apparel.item.tags?.some((tag) => tag.toLowerCase().includes('attune'))
+    apparel.item.attunement === 'Unrestricted'
   ) {
     console.error(`Apparel ${apparel.item.name} must require attunement`);
   }
