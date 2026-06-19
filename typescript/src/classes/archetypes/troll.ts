@@ -65,7 +65,7 @@ export function troll(): RankAbility[] {
         The recovery increases to twice your rank in this archetype.
         In addition, you also automatically remove one \\glossterm{vital wound}.
         While you are unconscious, this automatically removes your most severe vital wound.
-        Whenever you remove a vital wound in this way, you increase your \\glossterm{stamina} by three.
+        Whenever you remove a vital wound in this way, you reduce your \\glossterm{stamina} by three.
       `,
     },
     {

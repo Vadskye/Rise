@@ -462,7 +462,7 @@ export function shifter(): RankAbility[] {
           % This is about as strong as a r3 deep attunement - class feature plus natural sunlight requirement is probably enough?
           \\rank{4} The healing increases to be equal to your \\glossterm{power}.
           \\rank{7} When you finish a \\glossterm{short rest} while you are in natural sunlight, you can remove a \\glossterm{vital wound}.
-          When you do, you increase your \\glossterm{stamina} by four.
+          When you do, you reduce your \\glossterm{stamina} by four.
         \\end{magicalactiveability}
 
         \\begin{magicalactiveability}{Plantspeaker}{Standard action}
@@ -554,7 +554,7 @@ export function shifter(): RankAbility[] {
       rank: 7,
       description: `
         When you use your \\ability{wild aspect} ability, you can take on two aspects at once, gaining the full benefits of both.
-        When you do, you increase your \\glossterm{stamina} by two.
+        When you do, you reduce your \\glossterm{stamina} by two.
         This hybrid aspect only lasts for ten minutes, at which point you choose which single aspect remains active.
       `,
     },

@@ -14,6 +14,14 @@ if ($LASTEXITCODE -ne 0) {
     exit $LASTEXITCODE
 }
 
+# 1.5. Run Stamina Validation
+Write-Host "Running Stamina & Fatigue validation..." -ForegroundColor Cyan
+npm run validate_stamina
+if ($LASTEXITCODE -ne 0) {
+    Write-Error "Stamina validation failed. Correct the errors before generating LaTeX."
+    exit $LASTEXITCODE
+}
+
 # 2. Ensure generated directories exist
 $generatedDirs = @(
     "$repoRoot\core_book\generated",

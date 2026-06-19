@@ -40,14 +40,14 @@ export function spellTypePrefix(
 
   let cost = spell.cost;
   if (!cost && spell.kind === 'ritual' && spell.staminaCost !== false) {
-    const fatigueLevel =
+    const staminaLevel =
       spell.usageTime === '24 hours' || spell.usageTime === 'one week'
         ? `${Math.pow(spell.rank || 0, 2) * 2} \\glossterm{stamina}`
         : 'one \\glossterm{stamina}';
     const materialCostText = spell.materialCost
       ? ` and the consumption of diamond dust with the equivalent value of a rank ${spell.rank} item (${calculateGp(spell.rank)})`
       : '';
-    cost = `${fatigueLevel} from the ritual's participants${materialCostText}.`;
+    cost = `${staminaLevel} from the ritual's participants${materialCostText}.`;
   }
 
   if (cost) {

@@ -247,7 +247,6 @@ export const bruteForce: CombatStyle = {
     {
       name: 'Mighty Muscle Burst',
 
-      // With a fatigue, expected damage is drX-3 = dr4.
       effect: `
         You are \\briefly \\empowered.
         Make a \\glossterm{strike} with that deals double damage.

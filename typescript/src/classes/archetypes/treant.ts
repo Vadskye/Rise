@@ -10,7 +10,7 @@ export function treant(): RankAbility[] {
       rank: 1,
       description: `
         At the end of your turn while you are \\ability{ingrained}, you regain hit points equal to your rank in this archetype, and you may choose to remove a \\glossterm{condition}.
-        If you remove a condition, you increase your \\glossterm{stamina} by one.
+        If you remove a condition, you reduce your \\glossterm{stamina} by one.
       `,
     },
     {

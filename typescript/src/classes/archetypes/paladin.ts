@@ -274,7 +274,7 @@ export function stalwartGuardian(): RankAbility[] {
       rank: 4,
       description: `
         You can also remove a \\glossterm{vital wound} from the target.
-        If you do, you increase your \\glossterm{stamina} by two.
+        If you do, you reduce your \\glossterm{stamina} by two.
         Otherwise, you are \\glossterm{briefly} \\focused.
       `,
     },

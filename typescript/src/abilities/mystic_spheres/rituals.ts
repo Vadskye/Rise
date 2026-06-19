@@ -689,7 +689,7 @@ export const rituals: RitualDefinition[] = [
       This does not require \\glossterm{line of sight} or \\glossterm{line of effect} to the destination.
 
       You can specify the destination by naming an \\glossterm{astral beacon}.
-      If you do, this ritual's fatigue cost is reduced to one fatigue per target.
+      If you do, this ritual's stamina cost is reduced to one stamina per target.
       Alternately, you can specify the destination with a precise mental image of its appearance.
       The image does not have to be perfect, but it must unambiguously identify the destination.
       If you specify its appearance incorrectly, or if the area has changed its appearance, the destination may be a different area than you intended.
@@ -717,7 +717,7 @@ export const rituals: RitualDefinition[] = [
     functionsLike: {
       exceptThat: `
         the casting time is shorter, and the ritual is much less exhausting.
-        If the destination is an \\glossterm{astral beacon}, this ritual has no fatigue cost.
+        If the destination is an \\glossterm{astral beacon}, this ritual has no stamina cost.
       `,
       name: 'intraplanar teleportation',
     },
@@ -3158,7 +3158,7 @@ export const rituals: RitualDefinition[] = [
     effect: `
       All creatures within a \\largearea radius \\glossterm{emanation} from you are soothed.
       They feel pain and discomfort less intensely, and perceive themselves to be less tired.
-      This does not actually remove injuries or restore fatigue.
+      This does not actually remove injuries or restore stamina.
     `,
     rank: 1,
     roles: ['narrative'],

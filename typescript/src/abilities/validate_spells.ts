@@ -22,7 +22,7 @@
  *    - Same set of primary applied conditions (e.g., slowed, dazed)
  *    - Share at least one core role, and match exactly on support roles (healing, cleanse, focus, etc.)
  * 4. If they are redundant, the engine checks for "inconsistent damage" if their parsed damage ranks
- *    differ without a cost difference (e.g., one deals higher damage but neither has a cost/fatigue).
+ *    differ without a cost difference (e.g., one deals higher damage but neither has a cost/stamina).
  *
  * ASSUMPTIONS & SIMPLIFICATIONS:
  * - Spells without an 'attack' block are assumed to be utility/passive/pure-support spells, and
@@ -31,7 +31,7 @@
  *   - Double actions are identified by looking for "spend a standard action to make an attack" or "during your next turn".
  *   - Defenses are matched via "vs. [Defense]" or "against [Defense]".
  *   - Conditions are matched by finding keywords (e.g., "slowed", "dazed") anywhere in the text.
- *   - Costs are simplified to checking if a "cost" string or fatigue/material cost flags exist.
+ *   - Costs are simplified to checking if a "cost" string or stamina/material cost flags exist.
  *   - Damage ranks are extracted via `\damagerank[word]` (ignoring `\hprank` healing ranks).
  */
 

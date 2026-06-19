@@ -230,7 +230,7 @@ export function covenantKeeper(): RankAbility[] {
           \\rankline
           You are \\glossterm{briefly} \\empowered.
           Then, you may remove one of your \\glossterm{vital wounds}.
-          If you remove a vital wound in this way, you increase your \\glossterm{stamina} by two.
+          If you remove a vital wound in this way, you reduce your \\glossterm{stamina} by two.
           This effect \\glossterm{repeats} at the end of your next turn.
         \\end{magicalactiveability}
       `,
@@ -327,7 +327,7 @@ export function pactSpellMastery(): RankAbility[] {
       isMagical: true,
       rank: 1,
       description: `
-        You can use the \\ability{desperate exertion} ability without reducing your stamina (see \\pcref{Desperate Exertion}).
+        You can use the \\ability{desperate exertion} ability without spending \\glossterm{stamina} (see \\pcref{Desperate Exertion}).
         When you do, you suffer no immediate negative consequences.
         After 10 minutes, your maximum \\glossterm{hit points} are reduced to three-quarters of normal until you complete a \\glossterm{long rest}.
         Each time this penalty takes effect, your hit points are reduced by an additional quarter, so using it three times would reduce your maximum hit points to a quarter of their normal value.
@@ -349,7 +349,7 @@ export function pactSpellMastery(): RankAbility[] {
         Whenever you learn a new spell, you may change which specific spells your metamagic abilities affect.
         {
         \\parhead{Desperate Spell} Choose a pact \\glossterm{spell} you know.
-        When you cast the spell, you may choose to increase your \\glossterm{stamina} by one.
+        When you cast the spell, you may choose to reduce your \\glossterm{stamina} by one.
         If you do, you become \\empowered and \\focused that turn.
         However, you cannot use the \\ability{desperate exertion} ability to affect the spell.
         You can choose this ability multiple times, choosing a different spell each time.

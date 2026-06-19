@@ -259,7 +259,7 @@ export function arcaneScholar(): RankAbility[] {
           The spell has no immediate effect.
           Instead, you specify circumstances that will automatically cause the spell to take effect.
           You cannot consciously control the spell after setting the circumstances, and any attacks made as part of the spell's resolution are \\glossterm{reactive attacks}.
-          When the spell takes effect, you increase your \\glossterm{stamina} by two.
+          When the spell takes effect, you reduce your \\glossterm{stamina} by two.
 
           The spell can be set to trigger in response to any circumstances that a typical human observing you and your situation could detect.
           For example, you could specify \`\`when I fall at least 50 feet'' or \`\`when I take a \\glossterm{vital wound}'', but not \`\`when there is an invisible creature within 50 feet of me'' or \`\`when I have only one \\glossterm{hit point} remaining.''

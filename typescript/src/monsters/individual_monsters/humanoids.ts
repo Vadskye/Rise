@@ -873,7 +873,7 @@ function addNecromancers(grimoire: Grimoire) {
             attack: {
               hit: '\\damagerankfour.',
               // A true lifesteal grasp should be rank 6, but that seems strong when they
-              // don't have to pay a fatigue cost.
+              // don't have to pay a stamina cost.
               injury: 'You regain \\hprankfive.',
               targeting: `
               You must have a \\glossterm{free hand} to cast this spell.

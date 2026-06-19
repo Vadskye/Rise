@@ -75,7 +75,7 @@ export function battleforgedResilience(): RankAbility[] {
       description: `
         You can use the \\ability{recover} and \\ability{second wind} abilities any number of times between short rests.
         In addition, when you use the \\ability{recover} ability, you can also remove a \\glossterm{vital wound}.
-        When you do, you increase your \\glossterm{stamina} by two.
+        When you do, you reduce your \\glossterm{stamina} by two.
       `,
     },
     {
@@ -287,7 +287,7 @@ export function outlandSavage(): RankAbility[] {
       isMagical: false,
       rank: 7,
       description: `
-        Once per turn, you can use the \\ability{sprint} ability without increasing your \\glossterm{stamina}.
+        Once per turn, you can use the \\ability{sprint} ability without spending \\glossterm{stamina}.
         After using this ability, you \\briefly can't use it again.
       `,
     },

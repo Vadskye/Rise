@@ -46,7 +46,7 @@ export const chronomancy: MysticSphere = {
       name: 'Burst of Speed',
 
       effect: `
-        When you use the \\ability{sprint} ability as a \\glossterm{move action}, you can choose not to increase your \\glossterm{stamina}.
+        When you use the \\ability{sprint} ability, you can choose not to spend \\glossterm{stamina}.
         After you sprint in this way, this ability is \\glossterm{dismissed}.
       `,
       rank: 1,
@@ -59,7 +59,7 @@ export const chronomancy: MysticSphere = {
       effect: `
         Whenever you make an attack during your action and learn whether you hit or missed, you can use this ability to rewind time to the start of your action.
         You must use this ability before determining any damage dealt or any other effects of the attack.
-        All effects of your action are undone, except that you keep any \\glossterm{stamina} you gained during your original action.
+        All effects of your action are undone, except that you don't recover any \\glossterm{stamina} you lost during your original action.
         You can use an different ability on your new action, or simply make a new attack roll with the same ability and hope it succeeds this time.
         After you rewind time in this way, this ability is \\glossterm{dismissed}.
       `,
@@ -369,7 +369,7 @@ export const chronomancy: MysticSphere = {
 
         The duplicate is fragile, and its actions are limited.
         It cannot use abilities that have additional costs or limitations on their usage, such as only being usable once per short rest.
-        It cannot use abilities that would increase its \\glossterm{stamina}, cause it to lose hit points, or otherwise directly suffer negative consequences as a cost of the action.
+        It cannot use abilities that would reduce its \\glossterm{stamina}, cause it to lose hit points, or otherwise directly suffer negative consequences as a cost of the action.
         If it loses any \\glossterm{hit points}, it ceases to exist.
       `,
       rank: 7,
@@ -407,7 +407,7 @@ export const chronomancy: MysticSphere = {
 
         Unsealing the time lock causes the creature's conditions to become identical to the locked conditions.
         This removes any excess conditions and reapplies any missing conditions.
-        In addition, the creature increases its \\glossterm{stamina} by one.
+        In addition, the creature reduces its \\glossterm{stamina} by one.
       `,
       rank: 4,
       roles: ['cleanse', 'exertion'],
@@ -441,7 +441,7 @@ export const chronomancy: MysticSphere = {
         You can unseal the time lock as a standard action.
 
         Unsealing the time lock causes the creature's hit points to become identical to the locked hit points.
-        In addition, the creature increases its \\glossterm{stamina} by one.
+        In addition, the creature reduces its \\glossterm{stamina} by one.
       `,
       rank: 6,
       roles: ['healing', 'exertion'],
@@ -458,7 +458,7 @@ export const chronomancy: MysticSphere = {
 
         Unsealing the time lock causes the creature's vital wounds to become identical to the locked vital wounds.
         This removes any excess vital wounds and reapplies any missing vital wounds.
-        The creature increases its \\glossterm{stamina} by three for each vital wound removed in this way.
+        The creature reduces its \\glossterm{stamina} by three for each vital wound removed in this way.
       `,
       rank: 7,
       roles: ['healing', 'exertion'],
