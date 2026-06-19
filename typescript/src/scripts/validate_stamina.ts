@@ -130,7 +130,7 @@ function scanFile(filePath: string) {
         text: line,
       });
     }
-    const reduceAsCostRegex = /abilitycost.*reduc.*stamina/i;
+    const reduceAsCostRegex = /(cost:|abilitycost).*reduc.*stamina/i;
     if (reduceAsCostRegex.test(cleaned)) {
       issues.push({
         file: filePath,
