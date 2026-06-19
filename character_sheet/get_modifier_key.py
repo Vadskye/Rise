@@ -12,7 +12,7 @@ def generate_special_modifier_keys() -> dict[str, str]:
     keys['fortitude_defense'] = 'fortitude'
     keys['reflex_defense'] = 'reflex'
     keys['mental_defense'] = 'mental'
-    keys['maximum_stamina'] = 'stamina_max'
+    keys['maximum_stamina'] = 'maximum_stamina'
     return keys
 
 SPECIAL_MODIFIER_KEYS = generate_special_modifier_keys()

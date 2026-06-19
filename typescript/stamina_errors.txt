@@ -1,0 +1,389 @@
+﻿
+> rise@1.0.0 validate_stamina
+> tsx src/scripts/validate_stamina.ts
+
+Running Stamina & Fatigue validation on source files...
+Found 356 source files to scan.
+node.exe : [31mValidation failed: Found 86 potential stamina/fatigue issues:
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ([31mValidation...fatigue issues::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+[0m
+[33mcomprehensive_codex\Adventuring.tex:191[0m
+  Error: Search-replace typo / duplicate word
+  Line:  "If this penalty would reduce a creature's maximum maximum stamina below 0, the creature cannot be 
+resurrected."
+
+[33mcomprehensive_codex\CommonSpecies.tex:68[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "\itemhead{Elven Perfection} Elves only gain one \glossterm{stamina} when using the \ability{desperate 
+exertion} ability to affect checks (see \pcref{Desperate Exertion})."
+
+[33mcomprehensive_codex\Feats.tex:237[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "When you do, you increase your \glossterm{stamina} by one."
+
+[33mcomprehensive_codex\Feats.tex:329[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "\abilitycost You can increase your \glossterm{stamina} by one to use this ability as a \glossterm{minor 
+action}."
+
+[33mcomprehensive_codex\Feats.tex:840[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "When you do, you increase your \glossterm{stamina} by one, and you may freely choose the random result."
+
+[33mcomprehensive_codex\Feats.tex:1345[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "If it does, its increases its \glossterm{stamina} by three."
+
+[33mcomprehensive_codex\Feats.tex:1345[0m
+  Error: Search-replace typo / duplicate word
+  Line:  "If it does, its increases its \glossterm{stamina} by three."
+
+[33mcomprehensive_codex\Feats.tex:1359[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "Whenever you sustain a Sustain (standard) ability in this way, you increase your \glossterm{stamina} by one."
+
+[33mcomprehensive_codex\Feats.tex:1613[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "If you do, you increase your \glossterm{stamina} by three per vital wound removed this way."
+
+[33mcomprehensive_codex\Feats.tex:2116[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "Using this ability does not increase your \glossterm{stamina}."
+
+[33mcomprehensive_codex\Feats.tex:2116[0m
+  Error: Phrasing "without/does not increase stamina" should probably be "without/does not reduce stamina"
+  Line:  "Using this ability does not increase your \glossterm{stamina}."
+
+[33mcomprehensive_codex\Feats.tex:2215[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "When you negate an ability in this way, if that ability's rank was higher than your \glossterm{character 
+rank}, you increase your \glossterm{stamina} by one."
+
+[33mcomprehensive_codex\OptionalRules.tex:199[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "Teleporting in this way increases your \glossterm{stamina} by 1."
+
+[33mcore_book\BasicCombat.tex:72[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "If you need to move farther, you can sprint as a \glossterm{free action}, which increases your 
+\glossterm{stamina} by one but doubles your available movement."
+
+[33mcore_book\BasicCombat.tex:89[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "\item Desperate Exertion: Reroll any attack or check with a \plus2 bonus, but you gain two 
+\glossterm{stamina}."
+
+[33mcore_book\BasicCombat.tex:92[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "\item Recover: Regain half of your maximum hit points and remove all conditions. However, you gain two 
+stamina, and you can only do it once per fight."
+
+[33mcore_book\BasicCombat.tex:95[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "\item Sprint: Doubles your available movement as a \glossterm{free action}, but increases your 
+\glossterm{stamina} by one."
+
+[33mcore_book\Glossary.tex:731[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "If you would gain a \glossterm{vital wound} from subdual damage, you increase your \glossterm{stamina} by 
+three instead."
+
+[33mtypescript\src\abilities\combat_styles\perfect_precision.ts:54[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "You can increase your \\glossterm{stamina} by one to reroll the attack roll with a +4 accuracy bonus."
+
+[33mtypescript\src\abilities\constants.ts:8[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "'You can increase your \\glossterm{stamina} by one to use this ability as a \\glossterm{minor action}.';"
+
+[33mtypescript\src\abilities\constants.ts:25[0m
+  Error: Leftover "fatigue" reference
+  Line:  "'exertion', // Spend fatigue for more powerful effects (or, rarely, spend other resources like vital wounds)"
+
+[33mtypescript\src\abilities\mystic_spheres\aquamancy.ts:40[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "When it does, it regains 2d10 hit points and increases its \\glossterm{stamina} by one."
+
+[33mtypescript\src\abilities\mystic_spheres\chronomancy.ts:49[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "When you use the \\ability{sprint} ability as a \\glossterm{move action}, you can choose not to increase 
+your \\glossterm{stamina}."
+
+[33mtypescript\src\abilities\mystic_spheres\chronomancy.ts:372[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "It cannot use abilities that would increase its \\glossterm{stamina}, cause it to lose hit points, or 
+otherwise directly suffer negative consequences as a cost of the action."
+
+[33mtypescript\src\abilities\mystic_spheres\chronomancy.ts:410[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "In addition, the creature increases its \\glossterm{stamina} by one."
+
+[33mtypescript\src\abilities\mystic_spheres\chronomancy.ts:444[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "In addition, the creature increases its \\glossterm{stamina} by one."
+
+[33mtypescript\src\abilities\mystic_spheres\chronomancy.ts:461[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "The creature increases its \\glossterm{stamina} by three for each vital wound removed in this way."
+
+[33mtypescript\src\abilities\mystic_spheres\prayer.ts:254[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "Each ally that removes a condition in this way increases its \\glossterm{stamina} by one."
+
+[33mtypescript\src\abilities\mystic_spheres\prayer.ts:313[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "Whenever it does, it increases its \\glossterm{stamina} by one."
+
+[33mtypescript\src\abilities\mystic_spheres\pyromancy.ts:796[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "\\item You increase your \\glossterm{stamina} by three."
+
+[33mtypescript\src\abilities\mystic_spheres\rituals.ts:692[0m
+  Error: Leftover "fatigue" reference
+  Line:  "If you do, this ritual's fatigue cost is reduced to one fatigue per target."
+
+[33mtypescript\src\abilities\mystic_spheres\rituals.ts:720[0m
+  Error: Leftover "fatigue" reference
+  Line:  "If the destination is an \\glossterm{astral beacon}, this ritual has no fatigue cost."
+
+[33mtypescript\src\abilities\mystic_spheres\rituals.ts:3161[0m
+  Error: Leftover "fatigue" reference
+  Line:  "This does not actually remove injuries or restore fatigue."
+
+[33mtypescript\src\abilities\mystic_spheres\vivimancy.ts:35[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "You can increase your \\glossterm{stamina} by one."
+
+[33mtypescript\src\abilities\mystic_spheres\vivimancy.ts:85[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "You can increase your \\glossterm{stamina} by one."
+
+[33mtypescript\src\abilities\mystic_spheres\vivimancy.ts:771[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "For each vital wound removed in this way, it increases its \\glossterm{stamina} by three."
+
+[33mtypescript\src\abilities\validate_spells.test.ts:497[0m
+  Error: Leftover "fatigue" reference
+  Line:  "injury: 'If you increase fatigue, you regain \\hprankfive.',"
+
+[33mtypescript\src\abilities\validate_spells.test.ts:856[0m
+  Error: Leftover "fatigue" reference
+  Line:  "cost: '1 fatigue',"
+
+[33mtypescript\src\classes\archetypes\automaton.ts:110[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "This increases your \\glossterm{stamina} by three, and it requires replacement parts that you generally keep 
+with you."
+
+[33mtypescript\src\classes\archetypes\barbarian.ts:78[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "When you do, you increase your \\glossterm{stamina} by two."
+
+[33mtypescript\src\classes\archetypes\barbarian.ts:290[0m
+  Error: Phrasing "without/does not increase stamina" should probably be "without/does not reduce stamina"
+  Line:  "Once per turn, you can use the \\ability{sprint} ability without increasing your \\glossterm{stamina}."
+
+[33mtypescript\src\classes\archetypes\druid.ts:465[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "When you do, you increase your \\glossterm{stamina} by four."
+
+[33mtypescript\src\classes\archetypes\druid.ts:557[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "When you do, you increase your \\glossterm{stamina} by two."
+
+[33mtypescript\src\classes\archetypes\fighter.ts:64[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "\\abilitycost You can increase your \\glossterm{stamina} by one to use this ability as a \\glossterm{minor 
+action}."
+
+[33mtypescript\src\classes\archetypes\paladin.ts:277[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "If you do, you increase your \\glossterm{stamina} by two."
+
+[33mtypescript\src\classes\archetypes\rogue.ts:372[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "In addition, using the \\ability{desperate exertion} ability to affect a skill check only increases your 
+\\glossterm{stamina} by one."
+
+[33mtypescript\src\classes\archetypes\sorcerer.ts:286[0m
+  Error: Leftover "fatigue" reference
+  Line:  "The ability must not have the \\abilitytag{Attune} or \\abilitytag{Sustain} tags, and it must not cost 
+fatigue to use."
+
+[33mtypescript\src\classes\archetypes\sorcerer.ts:425[0m
+  Error: Phrasing "without/does not increase stamina" should probably be "without/does not reduce stamina"
+  Line:  "Once per \\glossterm{short rest}, you can use the \\ability{desperate exertion} ability without increasing 
+your \\glossterm{stamina}."
+
+[33mtypescript\src\classes\archetypes\treant.ts:13[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "If you remove a condition, you increase your \\glossterm{stamina} by one."
+
+[33mtypescript\src\classes\archetypes\troll.ts:68[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "Whenever you remove a vital wound in this way, you increase your \\glossterm{stamina} by three."
+
+[33mtypescript\src\classes\archetypes\vampire.ts:12[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "Whenever you \\glossterm{injure} a \\trait{blooded} creature with blood using your bite natural weapon, you 
+can increase your \\glossterm{stamina} by one."
+
+[33mtypescript\src\classes\archetypes\votive.ts:233[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "If you remove a vital wound in this way, you increase your \\glossterm{stamina} by two."
+
+[33mtypescript\src\classes\archetypes\votive.ts:352[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "When you cast the spell, you may choose to increase your \\glossterm{stamina} by one."
+
+[33mtypescript\src\classes\archetypes\wizard.ts:262[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "When the spell takes effect, you increase your \\glossterm{stamina} by two."
+
+[33mtypescript\src\equipment\data\apparel\arms.ts:48[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "When you do, you increase your \\glossterm{stamina} by one and \\glossterm{briefly} gain a +2 bonus to your 
+Armor defense."
+
+[33mtypescript\src\equipment\data\apparel\jewelry.ts:149[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "When you use the \\ability{revivify} cleric ability, you only increase your \\glossterm{stamina} by three 
+instead of by four."
+
+[33mtypescript\src\equipment\data\apparel\jewelry.ts:485[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "After you activate this item, you increase your \\glossterm{stamina} by one."
+
+[33mtypescript\src\equipment\data\apparel\jewelry.ts:507[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "When you do, you increase your \\glossterm{stamina} by one, and you can breathe in clean, fresh air 
+regardless of your environment for one minute."
+
+[33mtypescript\src\equipment\data\apparel\jewelry.ts:641[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "After you activate this item, you increase your \\glossterm{stamina} by one."
+
+[33mtypescript\src\equipment\data\apparel\jewelry.ts:665[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "After you activate this item, you increase your \\glossterm{stamina} by one."
+
+[33mtypescript\src\equipment\data\apparel\legs.ts:298[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "When you do, you increase your \\glossterm{stamina} by one and teleport horizontally exactly 25 miles in a 
+direction you specify."
+
+[33mtypescript\src\equipment\data\apparel\legs.ts:326[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "When you do, you increase your \\glossterm{stamina} by one."
+
+[33mtypescript\src\equipment\data\apparel\legs.ts:352[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "When you do, that ability does not increase your \\glossterm{stamina}."
+
+[33mtypescript\src\equipment\data\apparel\legs.ts:352[0m
+  Error: Phrasing "without/does not increase stamina" should probably be "without/does not reduce stamina"
+  Line:  "When you do, that ability does not increase your \\glossterm{stamina}."
+
+[33mtypescript\src\equipment\data\apparel\torso.ts:45[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "When you remove a vital wound in this way, you increase your \\glossterm{stamina} by three."
+
+[33mtypescript\src\equipment\data\apparel\torso.ts:108[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "When you do, you regain $dr3l hit points and increase your \\glossterm{stamina} by one."
+
+[33mtypescript\src\equipment\data\apparel\torso.ts:214[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "When it does, you increase your \\glossterm{stamina} by one, and the mount does not make a \\glossterm{vital 
+roll} for the vital wounds."
+
+[33mtypescript\src\equipment\data\consumables\alchemical_items.ts:147[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "Otherwise, it regains $dr7l \\glossterm{hit points} and increases its \\glossterm{stamina} by one."
+
+[33mtypescript\src\equipment\data\consumables\alchemical_items.ts:166[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "\\hit If the target is \\creaturetype{undead} or an evil \\creaturetype{soulforged}, it regains $dr7l 
+\\glossterm{hit points} and increases its \\glossterm{stamina} by one."
+
+[33mtypescript\src\equipment\data\consumables\potions.ts:27[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "When you drink this \\glossterm{potion}, you remove a \\glossterm{condition} affecting you and increase your 
+\\glossterm{stamina} by one."
+
+[33mtypescript\src\equipment\data\consumables\potions.ts:45[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "When you drink this \\glossterm{potion}, you regain $dr4l hit points and increase your \\glossterm{stamina} 
+by one."
+
+[33mtypescript\src\equipment\data\consumables\potions.ts:77[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "When you drink this \\glossterm{potion}, you regain $dr10l hit points and increase your \\glossterm{stamina} 
+by one."
+
+[33mtypescript\src\equipment\data\implements\staffs.ts:84[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "In addition, you increase your \\glossterm{stamina} by one."
+
+[33mtypescript\src\equipment\data\implements\staffs.ts:235[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "In addition, you increase your \\glossterm{stamina} by one."
+
+[33mtypescript\src\equipment\data\implements\staffs.ts:253[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "In addition, you increase your \\glossterm{stamina} by one."
+
+[33mtypescript\src\equipment\data\implements\staffs.ts:279[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "In addition, you increase your \\glossterm{stamina} by one, and you \\glossterm{briefly} cannot activate 
+this staff again."
+
+[33mtypescript\src\equipment\data\implements\staffs.ts:301[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "In addition, you increase your \\glossterm{stamina} by one, and you \\glossterm{briefly} cannot activate 
+this effect again."
+
+[33mtypescript\src\equipment\data\implements\staffs.ts:318[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "In addition, you increase your \\glossterm{stamina} by one, and you \\glossterm{briefly} cannot activate 
+this effect again."
+
+[33mtypescript\src\equipment\data\implements\staffs.ts:335[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "In addition, you increase your \\glossterm{stamina} by one, and you \\glossterm{briefly} cannot activate 
+this effect again."
+
+[33mtypescript\src\equipment\data\implements\staffs.ts:352[0m
+  Error: Likely incorrect stamina increase phrasing (should reduce/spend stamina)
+  Line:  "In addition, you increase your \\glossterm{stamina} by one, and you \\glossterm{briefly} cannot activate 
+this effect again."
+
+[33mtypescript\src\equipment\data\magic_weapons\unrestricted.ts:451[0m
+  Error: Leftover "fatigue" reference
+  Line:  "short_description: 'Ignore 2 fatigue with strikes',"
+
+[33mtypescript\src\latex\abilities\mystic_spheres\convert_ritual_to_latex.test.ts:6[0m
+  Error: Leftover "fatigue" reference
+  Line:  "t.test('should include fatigue cost when staminaCost is true', (t) => {"
+
+[33mtypescript\src\latex\abilities\mystic_spheres\convert_ritual_to_latex.test.ts:24[0m
+  Error: Leftover "fatigue" reference
+  Line:  "t.test('should not include fatigue cost when staminaCost is false', (t) => {"
+
+[33mtypescript\src\latex\abilities\mystic_spheres\convert_ritual_to_latex.test.ts:26[0m
+  Error: Leftover "fatigue" reference
+  Line:  "name: 'Test Ritual No Fatigue',"
+
+[33mtypescript\src\latex\abilities\mystic_spheres\convert_ritual_to_latex.test.ts:39[0m
+  Error: Leftover "fatigue" reference
+  Line:  "t.test('should include increased fatigue cost for 24 hour rituals', (t) => {"
+
+[33mtypescript\src\types\core.ts:102[0m
+  Error: Leftover "fatigue" reference
+  Line:  "export type Resource = 'aura' | 'fatigue' | 'health' | 'mana' | 'stamina';"
+

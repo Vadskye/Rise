@@ -737,7 +737,7 @@ export function transcendentSageModifiers(creature: Creature, rank: number) {
   if (rank >= 4) {
     creature.addSimpleModifier({
       name: 'Transcend Exertion',
-      statistic: 'stamina_max',
+      statistic: 'maximum_stamina',
       value: rank,
     });
   }

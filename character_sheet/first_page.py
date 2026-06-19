@@ -445,7 +445,7 @@ def core_statistics(destination: str) -> str:
                         span({"class": "core-statistics-separator"}, "/"),
                         number_input(
                             {
-                                "name": "stamina_max",
+                                "name": "maximum_stamina",
                                 "readonly": True,
                             }
                         ),

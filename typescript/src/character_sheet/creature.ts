@@ -85,7 +85,7 @@ type NumericCreatureProperty =
   | 'shield_reflex'
   | 'speed'
   | 'vital_rolls'
-  | 'stamina_max'
+  | 'maximum_stamina'
   | 'initiative'
   | 'all_defenses'
   | 'all_skills'
@@ -624,7 +624,9 @@ export class Creature implements CreaturePropertyMap {
     weapon: MonsterWeapon,
     { displayName, isMagical, tags, usageTime }: Omit<MonsterAbilityOptions, 'weapon'> = {},
   ) {
-    const maybeRanged = getWeaponTags(weapon).some((tag) => /(Projectile|Thrown)/.test(tag)) ? 'Ranged ' : '';
+    const maybeRanged = getWeaponTags(weapon).some((tag) => /(Projectile|Thrown)/.test(tag))
+      ? 'Ranged '
+      : '';
     displayName = displayName || 'Sneak Attack';
     this.addActiveAbility({
       kind: 'maneuver',
@@ -1063,8 +1065,8 @@ export class Creature implements CreaturePropertyMap {
     return this.getPropertyValue('is_monster');
   }
 
-  public get stamina_max() {
-    return this.getPropertyValue('stamina_max');
+  public get maximum_stamina() {
+    return this.getPropertyValue('maximum_stamina');
   }
 
   public get initiative() {

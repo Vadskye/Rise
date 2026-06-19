@@ -40,7 +40,7 @@ interface BaseClassModifier {
   mental: number;
   attunement_points?: number;
   class_skill_count?: number;
-  stamina_max: number;
+  maximum_stamina: number;
   insight_points?: number;
   proficiencies?: string;
   vital_rolls?: number;
@@ -60,7 +60,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     fortitude: 3,
     reflex: 3,
     mental: 3,
-    stamina_max: 0,
+    maximum_stamina: 0,
   },
   // Well rounded; +1 to all defenses, +2 durability.
   leader: {
@@ -71,7 +71,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     fortitude: 4,
     reflex: 4,
     mental: 4,
-    stamina_max: 0,
+    maximum_stamina: 0,
   },
   // Agile; +1 Armor and Reflex.
   skirmisher: {
@@ -82,7 +82,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     fortitude: 3,
     reflex: 4,
     mental: 3,
-    stamina_max: 0,
+    maximum_stamina: 0,
   },
   // Fragile; baseline statistics.
   sniper: {
@@ -93,7 +93,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     fortitude: 3,
     reflex: 3,
     mental: 3,
-    stamina_max: 0,
+    maximum_stamina: 0,
   },
   // Tanky; +1 Armor and Fortitude, +2 durability.
   warrior: {
@@ -104,7 +104,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     fortitude: 4,
     reflex: 3,
     mental: 3,
-    stamina_max: 0,
+    maximum_stamina: 0,
   },
 
   // CLASSES
@@ -117,7 +117,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     attunement_points: 4,
     insight_points: 1,
     class_skill_count: 3,
-    stamina_max: 3,
+    maximum_stamina: 3,
     proficiencies: 'Light and medium armor, and non-exotic weapons',
   },
   cleric: {
@@ -127,7 +127,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     reflex: 3,
     mental: 3,
     attunement_points: 5,
-    stamina_max: 2,
+    maximum_stamina: 2,
     insight_points: 2,
     class_skill_count: 3,
     proficiencies: 'Light and medium armor',
@@ -139,7 +139,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     reflex: 3,
     mental: 3,
     attunement_points: 5,
-    stamina_max: 2,
+    maximum_stamina: 2,
     insight_points: 1,
     class_skill_count: 4,
     proficiencies:
@@ -152,7 +152,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     reflex: 3,
     mental: 3,
     attunement_points: 4,
-    stamina_max: 3,
+    maximum_stamina: 3,
     insight_points: 1,
     class_skill_count: 3,
     proficiencies: 'All armor and non-exotic weapons',
@@ -164,7 +164,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     reflex: 3,
     mental: 3,
     attunement_points: 4,
-    stamina_max: 2,
+    maximum_stamina: 2,
     insight_points: 1,
     class_skill_count: 5,
     proficiencies: 'Light armor and monk weapons',
@@ -176,7 +176,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     reflex: 3,
     mental: 3,
     attunement_points: 5,
-    stamina_max: 2,
+    maximum_stamina: 2,
     insight_points: 1,
     class_skill_count: 3,
     proficiencies: 'All armor and non-exotic weapons',
@@ -188,7 +188,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     reflex: 3,
     mental: 3,
     attunement_points: 4,
-    stamina_max: 3,
+    maximum_stamina: 3,
     insight_points: 1,
     class_skill_count: 5,
     proficiencies: 'Light and medium armor, and non-exotic weapons',
@@ -200,7 +200,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     reflex: 3,
     mental: 3,
     attunement_points: 4,
-    stamina_max: 2,
+    maximum_stamina: 2,
     insight_points: 2,
     class_skill_count: 6,
     proficiencies: 'Light armor, Compact weapons, and Light weapons',
@@ -212,7 +212,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     reflex: 3,
     mental: 3,
     attunement_points: 5,
-    stamina_max: 3,
+    maximum_stamina: 3,
     insight_points: 1,
     class_skill_count: 3,
     proficiencies: 'None',
@@ -224,7 +224,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     reflex: 3,
     mental: 3,
     attunement_points: 5,
-    stamina_max: 2,
+    maximum_stamina: 2,
     insight_points: 1,
     class_skill_count: 3,
     proficiencies: 'Light and medium armor, and non-exotic weapons',
@@ -236,7 +236,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     reflex: 3,
     mental: 3,
     attunement_points: 5,
-    stamina_max: 2,
+    maximum_stamina: 2,
     insight_points: 2,
     class_skill_count: 3,
     proficiencies: 'None',
@@ -250,7 +250,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     reflex: 3,
     mental: 3,
     attunement_points: 4,
-    stamina_max: 5,
+    maximum_stamina: 5,
     insight_points: 1,
     class_skill_count: 4,
     proficiencies: 'All armor and non-exotic weapons',
@@ -262,7 +262,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     reflex: 3,
     mental: 3,
     attunement_points: 5,
-    stamina_max: 3,
+    maximum_stamina: 3,
     insight_points: 1,
     class_skill_count: 4,
     proficiencies: 'Light armor',
@@ -274,7 +274,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     reflex: 3,
     mental: 3,
     attunement_points: 5,
-    stamina_max: 2,
+    maximum_stamina: 2,
     insight_points: 2,
     class_skill_count: 4,
     proficiencies: 'Light armor',
@@ -286,7 +286,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     reflex: 3,
     mental: 3,
     attunement_points: 5,
-    stamina_max: 2,
+    maximum_stamina: 2,
     insight_points: 1,
     class_skill_count: 5,
     proficiencies: 'Light armor',
@@ -298,7 +298,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     reflex: 3,
     mental: 3,
     attunement_points: 5,
-    stamina_max: 2,
+    maximum_stamina: 2,
     insight_points: 1,
     class_skill_count: 4,
     proficiencies: 'Light armor',
@@ -310,7 +310,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     reflex: 3,
     mental: 3,
     attunement_points: 5,
-    stamina_max: 2,
+    maximum_stamina: 2,
     insight_points: 1,
     class_skill_count: 5,
     proficiencies: 'Light armor',
@@ -322,7 +322,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     reflex: 3,
     mental: 3,
     attunement_points: 4,
-    stamina_max: 3,
+    maximum_stamina: 3,
     insight_points: 1,
     class_skill_count: 4,
     proficiencies: 'Light armor',
@@ -335,7 +335,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     reflex: 3,
     mental: 4,
     attunement_points: 4,
-    stamina_max: 3,
+    maximum_stamina: 3,
     insight_points: 1,
     class_skill_count: 3,
     proficiencies: 'All armor and club-like weapons',
@@ -347,7 +347,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     reflex: 3,
     mental: 3,
     attunement_points: 4,
-    stamina_max: 4,
+    maximum_stamina: 4,
     insight_points: 1,
     class_skill_count: 3,
     proficiencies: 'Light and medium armor, and non-exotic weapons',
@@ -360,7 +360,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     reflex: 3,
     mental: 3,
     attunement_points: 5,
-    stamina_max: 2,
+    maximum_stamina: 2,
     insight_points: 1,
     class_skill_count: 4,
     proficiencies: 'Light armor and non-exotic weapons',
@@ -626,7 +626,7 @@ const VARIABLES_WITH_CUSTOM_MODIFIERS = new Set(
     'constitution',
     'dexterity',
     'durability',
-    'stamina_max',
+    'maximum_stamina',
     'fortitude',
     'hit_points',
     'horizontal_jump_distance',
@@ -684,7 +684,7 @@ const VARIABLES_WITH_VITAL_WOUND_MODIFIERS = new Set([
   'accuracy',
   'brawling_accuracy',
   'all_defenses',
-  'stamina_max',
+  'maximum_stamina',
   'brawn',
   'fortitude',
   'reflex',
@@ -1779,17 +1779,17 @@ function handleStaminaPenalty() {
 function handleStaminaMax() {
   onGet({
     variables: {
-      miscName: 'stamina_max',
+      miscName: 'maximum_stamina',
       numeric: ['constitution'],
       string: ['base_class'],
     },
     callback: (v) => {
-      const fromClass = BASE_CLASS_MODIFIERS[v.base_class]?.stamina_max || 0;
+      const fromClass = BASE_CLASS_MODIFIERS[v.base_class]?.maximum_stamina || 0;
       const totalValue = Math.max(0, fromClass + v.constitution + v.misc);
       setAttrs({
-        stamina_max_attributes: v.constitution,
-        stamina_max: totalValue,
-        stamina_max_explanation: formatCombinedExplanation(v.miscExplanation, [
+        maximum_stamina_attributes: v.constitution,
+        maximum_stamina: totalValue,
+        maximum_stamina_explanation: formatCombinedExplanation(v.miscExplanation, [
           { name: v.base_class, value: fromClass },
           { name: 'Con', value: v.constitution },
         ]),
@@ -3326,7 +3326,7 @@ function handleVitalWounds() {
           const rolls = Object.values(values);
           const accuracy_penalty = -countRolls(rolls, 2);
           const speed_penalty = countRolls(rolls, 3) * -5;
-          const stamina_max_penalty = -countRolls(rolls, 4) * 2;
+          const maximum_stamina_penalty = -countRolls(rolls, 4) * 2;
           const all_defenses_penalty = -countRolls(rolls, 5);
           const brawn_penalty = -countRolls(rolls, 6) * 2;
           const fortitude_penalty = -countRolls(rolls, 7) * 2;
@@ -3351,11 +3351,11 @@ function handleVitalWounds() {
             // all defenses - no vital explanation here because all_defenses requires special handling
             all_defenses_vital_wound_modifier: all_defenses_penalty,
 
-            // stamina_max
-            stamina_max_vital_wound_modifier: stamina_max_penalty,
-            stamina_max_vital_wound_explanation: formatNamedModifierExplanation({
+            // maximum_stamina
+            maximum_stamina_vital_wound_modifier: maximum_stamina_penalty,
+            maximum_stamina_vital_wound_explanation: formatNamedModifierExplanation({
               name: 'vital',
-              value: stamina_max_penalty,
+              value: maximum_stamina_penalty,
             }),
 
             brawn_vital_wound_modifier: brawn_penalty,

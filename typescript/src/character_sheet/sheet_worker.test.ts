@@ -230,10 +230,10 @@ t.test('can calculate insight points', (t) => {
 t.test('can calculate maximum stamina', (t) => {
   t.test('for fighter', (t) => {
     setStandardFighter();
-    getAttrs(['stamina_max', 'stamina_max_explanation'], (attrs) => {
+    getAttrs(['maximum_stamina', 'maximum_stamina_explanation'], (attrs) => {
       t.match(attrs, {
-        stamina_max: 5,
-        stamina_max_explanation: '+3 (fighter)  +2 (Con)',
+        maximum_stamina: 5,
+        maximum_stamina_explanation: '+3 (fighter)  +2 (Con)',
       });
       t.end();
     });
@@ -241,10 +241,10 @@ t.test('can calculate maximum stamina', (t) => {
 
   t.test('for wizard', (t) => {
     setStandardWizard();
-    getAttrs(['stamina_max', 'stamina_max_explanation'], (attrs) => {
+    getAttrs(['maximum_stamina', 'maximum_stamina_explanation'], (attrs) => {
       t.match(attrs, {
-        stamina_max: 2,
-        stamina_max_explanation: '+2 (wizard)',
+        maximum_stamina: 2,
+        maximum_stamina_explanation: '+2 (wizard)',
       });
       t.end();
     });
