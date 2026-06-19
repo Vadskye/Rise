@@ -97,7 +97,7 @@ export function tableHeader(
   const categorySeparator = withCategory ? ' &' : '';
   const categoryColumnName = withCategory ? ' \\tb{Type}' : '';
   const attunementSeparator = withAttunement ? ' &' : '';
-  const attunementColumnName = withAttunement ? ' \\tb{Attunement}' : '';
+  const attunementColumnName = withAttunement ? ' \\tb{Attune}' : '';
   const pageOrPercentile = withPercentile ? '\\tb{d100}' : '\\tb{Page}';
 
   return `
@@ -133,13 +133,13 @@ export function longtable(options: LongtableOptions): string {
   const { caption, rows, withCategory, withAttunement = false } = options;
   let colSpec = '';
   if (withCategory && withAttunement) {
-    colSpec = 'p{17em} p{5em} p{15em} p{5em} p{6em} p{3em}';
+    colSpec = 'p{16em} p{5em} p{17em} p{4em} p{6em} p{3em}';
   } else if (withCategory) {
-    colSpec = 'p{17em} p{5em} p{20em} p{6em} p{3em}';
+    colSpec = 'p{16em} p{5em} p{21em} p{6em} p{3em}';
   } else if (withAttunement) {
-    colSpec = 'p{17em} p{21em} p{5em} p{6em} p{3em}';
+    colSpec = 'p{16em} p{23em} p{4em} p{6em} p{3em}';
   } else {
-    colSpec = 'p{17em} p{26em} p{6em} p{3em}';
+    colSpec = 'p{16em} p{27em} p{6em} p{3em}';
   }
 
   const content = `
