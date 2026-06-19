@@ -94,14 +94,14 @@ export function tableHeader(
   withPercentile: boolean,
   withAttunement: boolean = false,
 ): string {
-  const categorySeparator = withCategory ? '&' : '';
+  const categorySeparator = withCategory ? ' &' : '';
   const categoryColumnName = withCategory ? ' \\tb{Type}' : '';
-  const attunementSeparator = withAttunement ? '&' : '';
+  const attunementSeparator = withAttunement ? ' &' : '';
   const attunementColumnName = withAttunement ? ' \\tb{Attunement}' : '';
   const pageOrPercentile = withPercentile ? '\\tb{d100}' : '\\tb{Page}';
 
   return `
-    \\tb{${nameText}}${categorySeparator}${categoryColumnName}${attunementSeparator}${attunementColumnName} & \\tb{Description} & \\tb{Rank (Cost)} & ${pageOrPercentile} \\tableheaderrule
+    \\tb{${nameText}}${categorySeparator}${categoryColumnName} & \\tb{Description}${attunementSeparator}${attunementColumnName} & \\tb{Rank (Cost)} & ${pageOrPercentile} \\tableheaderrule
   `.trim();
 }
 
