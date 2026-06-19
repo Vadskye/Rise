@@ -169,7 +169,7 @@ export const ripAndTear: CombatStyle = {
     {
       name: 'Desperate Bloodwhirl',
 
-      cost: 'One \\glossterm{fatigue level}.',
+      cost: 'One \\glossterm{stamina}.',
       effect: `
         Make a melee \\glossterm{strike}.
         The strike targets all \\glossterm{enemies} adjacent to you.
@@ -185,7 +185,7 @@ export const ripAndTear: CombatStyle = {
     {
       name: 'Desperate Bloodwhirl+',
 
-      cost: 'One \\glossterm{fatigue level}.',
+      cost: 'One \\glossterm{stamina}.',
       effect: `
         Make a melee \\glossterm{strike} that deals double damage.
         The strike targets all \\glossterm{enemies} adjacent to you.

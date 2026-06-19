@@ -129,7 +129,7 @@ export function getClassDefenseBonus(cls: Class, defense: RiseDefense): number {
   return baseBonus + classBonus;
 }
 
-export function getClassFatigueTolerance(cls: Class): number {
+export function getClassMaxStamina(cls: Class): number {
   switch (cls) {
     case 'Automaton':
       return 5;
@@ -488,7 +488,7 @@ export function latexResources(cls: Class): string {
         \\cf{${getClassShorthand(cls)}}{Resources}
         \\begin{raggeditemize}
             \\item \\glossterm{Attunement points}: ${getClassAttunementPoints(cls)} (see \\pcref{Attunement Points}).
-            \\item \\glossterm{Fatigue tolerance}: ${getClassFatigueTolerance(cls)} \\add your Constitution (see \\pcref{Fatigue}).
+            \\item \\glossterm{Maximum stamina}: ${getClassMaxStamina(cls)} \\add your Constitution (see \\pcref{Stamina}).
             \\item \\glossterm{Insight points}: ${getClassInsightPoints(cls)} \\add your Intelligence (see \\pcref{Insight Points}).
             \\item \\glossterm{Trained skills}: ${getClassTrainedSkills(cls)} from among your \\glossterm{class skills}, plus additional trained skills equal to your Intelligence if it is positive (see \\pcref{Skills}).
         \\end{raggeditemize}

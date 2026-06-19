@@ -295,7 +295,7 @@ function boots(): Apparel[] {
         short_description: 'Can exert to teleport seven leagues',
         description: `
             You can activate these boots as a standard action.
-            When you do, you increase your \\glossterm{fatigue level} by one and teleport horizontally exactly 25 miles in a direction you specify.
+            When you do, you increase your \\glossterm{stamina} by one and teleport horizontally exactly 25 miles in a direction you specify.
             After you activate these boots, you \\glossterm{briefly} cannot do so again.
             If this would place you within a solid object or otherwise impossible space, the boots will shunt you up to 1,000 feet in any direction to the closest available space.
             If there is no available space within 1,000 feet of your intended destination, the effect fails and you take 4d6 damage.
@@ -323,7 +323,7 @@ function boots(): Apparel[] {
         short_description: 'Can exert to levitate after jumping',
         description: `
             Whenever you jump, you can activate these boots (see \\pcref{Jumping}).
-            When you do, you increase your \\glossterm{fatigue level} by one.
+            When you do, you increase your \\glossterm{stamina} by one.
             In exchange, your maximum jump height is equal to your maximum horizontal jump distance, and you can land in midair at any point during your jump this turn.
             You can \\glossterm{briefly} levitate in that location as if you were standing on solid ground.
 
@@ -334,7 +334,7 @@ function boots(): Apparel[] {
           {
             rank: 5,
             short_description: 'Can levitate after jumping',
-            description: 'Activating these boots does not increase your fatigue level.',
+            description: 'Activating these boots does not reduce your stamina.',
           },
         ],
         tags: ['Attune'],
@@ -349,7 +349,7 @@ function boots(): Apparel[] {
         short_description: 'Can sprint without exertion',
         description: `
             Whenever you use the \\ability{sprint} ability, you can activate these boots.
-            When you do, that ability does not increase your \\glossterm{fatigue level}.
+            When you do, that ability does not increase your \\glossterm{stamina}.
 
             After you activate these boots, you cannot do so again until you spend your full turn without making a \\glossterm{movement}.
         `,

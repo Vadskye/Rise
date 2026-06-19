@@ -313,16 +313,17 @@ This falling damage is also dealt to the surface it lands on, but not to any oth
 A Medium weight creature takes 1d8 falling damage per 10 feet fallen (maximum 30d8).
 For details, see \pcref{Falling Damage}.
 
-\glossdef{fatigue level} A creature takes a \glossterm{fatigue penalty} if its fatigue level exceeds your \glossterm{fatigue tolerance}.
-For details, see \pcref{Fatigue}.
+\glossdef{stamina} A creature's current stamina measures its remaining energy.
+If your current stamina falls below 0, you take a \glossterm{stamina penalty}.
+For details, see \pcref{Stamina}.
 
-% Does "fatigued" need to exist as a term?
-\glossdef{fatigue penalty} You take a penalty to \glossterm{accuracy} and \glossterm{checks} equal to your \glossterm{fatigue level} \sub your \glossterm{fatigue tolerance}.
-When your fatigue penalty reaches \minus5, you fall \unconscious until your fatigue penalty is reduced below \minus5.
-For details, see \pcref{Fatigue Penalty}.
+% Does "exhausted" need to exist as a term?
+\glossdef{stamina penalty} You take a penalty to \glossterm{accuracy} and \glossterm{checks} equal to the amount your current \glossterm{stamina} is below 0.
+When your current stamina reaches \minus5, you fall \unconscious until your stamina is restored above \minus5.
+For details, see \pcref{Stamina Penalty}.
 
-\glossdef{fatigue tolerance}[Fatigue tolerance] Your fatigue tolerance measures the maximum \glossterm{fatigue level} you can reach before you suffer a \glossterm{fatigue penalty}.
-For details, see \pcref{Fatigue Tolerance}.
+\glossdef{maximum stamina}[Maximum stamina] Your maximum stamina measures the peak amount of energy you can exert before you begin to suffer from exhaustion.
+For details, see \pcref{Maximum Stamina}.
 
 \glossdef{fly speed} A creature with a fly speed has the ability to fly through the air.
 Its speed is the distance it covers in a single \glossterm{movement}.
@@ -442,7 +443,7 @@ Attacks beyond a weapon's \glossterm{close range}, but within its long range, ha
 For details, see \pcref{Weapon Range Limits}.
 
 \glossdef{long rest} A long rest represents eight hours of relaxation or sleep.
-It allows you to remove all of your \glossterm{fatigue levels} and make progress towards healing a \glossterm{vital wound}.
+It allows you to remove all of your \glossterm{stamina} and make progress towards healing a \glossterm{vital wound}.
 For details, see \pcref{Long Rest}.
 
 \glossdef{longshot penalty} A longshot penalty is the penalty that you take for attacking outside of a weapon's \glossterm{close range}.
@@ -634,7 +635,7 @@ Each reroll only grants one extra roll.
 \glossdef{resource} A resource is something that a character can expend to gain a benefit.
 Most resources are shared between all types of characters, though different characters can use them differently.
 There are two resources that are used during the character creation and leveling process: \glossterm{insight points} and \glossterm{trained skills}.
-In addition, there are two resources that are used during gameplay: \glossterm{attunement points} and \glossterm{fatigue level}.
+In addition, there are two resources that are used during gameplay: \glossterm{attunement points} and \glossterm{stamina}.
 
 \glosssynonym{resurrect}
 \glossdef{resurrection}[resurrected] When a creature is resurrected, it comes back to life after being dead.
@@ -727,7 +728,7 @@ It's normally equal to your \glossterm{weapon damage} plus half your relevant \g
 For details, see \pcref{Strike Damage}.
 
 \glossdef{subdual damage} Subdual damage is a special kind of damage that can't kill you.
-If you would gain a \glossterm{vital wound} from subdual damage, you increase your \glossterm{fatigue level} by three instead.
+If you would gain a \glossterm{vital wound} from subdual damage, you increase your \glossterm{stamina} by three instead.
 For details, see \pcref{Subdual Damage}.
 
 \glossdef{suppressed}[suppress] Effects have no effect while they are suppressed.

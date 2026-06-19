@@ -65,7 +65,7 @@ export function troll(): RankAbility[] {
         The recovery increases to twice your rank in this archetype.
         In addition, you also automatically remove one \\glossterm{vital wound}.
         While you are unconscious, this automatically removes your most severe vital wound.
-        Whenever you remove a vital wound in this way, you increase your \\glossterm{fatigue level} by three.
+        Whenever you remove a vital wound in this way, you increase your \\glossterm{stamina} by three.
       `,
     },
     {
@@ -109,7 +109,7 @@ export function troll(): RankAbility[] {
       rank: 7,
       description: `
         The recovery increases to five times your rank in this archetype.
-        In addition, removing a vital wound with this ability only increases your fatigue level by two.
+        In addition, removing a vital wound with this ability only reduces your stamina by two.
       `,
     },
   ];

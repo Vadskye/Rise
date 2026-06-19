@@ -21,7 +21,7 @@ from sheet_data import (
 )
 from attributes.strength import calc_brawling_accuracy, calc_brawn, calc_mundane_power, calc_jump_distance
 from attributes.dexterity import calc_armor, calc_reflex
-from attributes.constitution import calc_fatigue_tolerance, calc_fortitude, calc_hit_points
+from attributes.constitution import calc_maximum_stamina, calc_fortitude, calc_hit_points
 from attributes.intelligence import calc_insight_points, calc_trained_skills
 from attributes.perception import calc_accuracy, calc_blank_accuracy
 from attributes.willpower import calc_magical_power, calc_mental
@@ -71,7 +71,7 @@ def calc_resources() -> str:
         {"class": "calc-resources"},
         [
             calc_attunement_points(),
-            calc_fatigue_tolerance(),
+            calc_maximum_stamina(),
             calc_insight_points(),
             calc_trained_skills(),
             calc_combat_styles(),
@@ -244,7 +244,7 @@ def calc_constitution_based() -> str:
         {"class": "calc-constitution-based"},
         [
             calc_attribute("Constitution"),
-            calc_fatigue_tolerance(),
+            calc_maximum_stamina(),
             calc_fortitude(),
             calc_hit_points(),
             display_skills_for_attribute("Constitution", calc_skill),

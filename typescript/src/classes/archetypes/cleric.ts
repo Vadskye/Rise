@@ -222,7 +222,7 @@ export function domainInfluence(): RankAbility[] {
       description: `
         You can request a \\ability{miracle} as a standard action.
         \\begin{magicalactiveability}{Miracle}{Standard action}
-          \\abilitycost Two \\glossterm{fatigue levels}, and you cannot use it again for a week.
+          \\abilitycost Two \\glossterm{stamina}, and you cannot use it again for a week.
           You mentally specify a request to your deity, and your deity fulfills that request in the manner it sees fit.
           At your deity's discretion, this can emulate the effects of any non-attunable divine spell, or have any other effect of a similar power level.
           A miracle can also mimic the effects of many non-attunable rituals.
@@ -260,7 +260,7 @@ export function healer(): RankAbility[] {
       rank: 1,
       description: `
         \\begin{magicalactiveability}{Divine Aid}{Standard action}
-          \\abilitycost One \\glossterm{fatigue level}.
+          \\abilitycost One \\glossterm{stamina}.
           \\rankline
           Choose yourself or one adjacent living \\glossterm{ally}.
           The target regains \\hprankfour.
@@ -292,13 +292,13 @@ export function healer(): RankAbility[] {
       rank: 3,
       description: `
         \\begin{magicalactiveability}{Vital Restoration}{Standard action}
-          \\abilitycost Three \\glossterm{fatigue levels}.
+          \\abilitycost Three \\glossterm{stamina}.
           \\rankline
           Choose yourself or one adjacent living \\glossterm{ally}.
           The target removes one of its \\glossterm{vital wounds}.
 
           \\rankline
-          \\rank{5} If the target's \\glossterm{character rank} is lower than your rank in this archetype, this ability only costs one fatigue level.
+          \\rank{5} If the target's \\glossterm{character rank} is lower than your rank in this archetype, this ability only costs one stamina.
           \\rank{7} The target can remove an additional \\glossterm{vital wound}.
         \\end{magicalactiveability}
       `,
@@ -330,7 +330,7 @@ export function healer(): RankAbility[] {
       rank: 6,
       description: `
         \\begin{magicalactiveability}{Revivify}{Standard action}
-          \\abilitycost Four \\glossterm{fatigue levels}, and you cannot use this ability again until you finish a \\glossterm{long rest}.
+          \\abilitycost Four \\glossterm{stamina}, and you cannot use this ability again until you finish a \\glossterm{long rest}.
           \\rankline
           Choose one intact corpse within \\shortrange.
           If it belongs to a creature that has been dead for no more than 1 minute, that creature is \\glossterm{resurrected} (see \\pcref{Resurrection}).

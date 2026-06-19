@@ -10,7 +10,7 @@ export const vivimancy: MysticSphere = {
     {
       name: 'Flow of Life',
 
-      cost: 'One \\glossterm{fatigue level}.',
+      cost: 'One \\glossterm{stamina}.',
       effect: `
         At the end of your turn, you regain hit points equal to your \\glossterm{power} (minimum 1).
       `,
@@ -22,7 +22,7 @@ export const vivimancy: MysticSphere = {
     {
       name: 'Lifesteal Grasp',
 
-      cost: 'One optional \\glossterm{fatigue level} (see text).',
+      cost: 'One optional \\glossterm{stamina} (see text).',
       // baseline for melee range is dr3, drop to dr2 for healing.
       // Baseline for self-only healing would be drX+3. Although this is combined with
       // damage, the healing is also conditional, so it's not as safe as full healing, so
@@ -32,7 +32,7 @@ export const vivimancy: MysticSphere = {
           \\damageranktwo.
         `,
         injury: `
-          You can increase your \\glossterm{fatigue level} by one. 
+          You can increase your \\glossterm{stamina} by one. 
           If you do, you regain \\hprankfour.
         `,
         targeting: `
@@ -82,7 +82,7 @@ export const vivimancy: MysticSphere = {
           \\damagerankone.
         `,
         injury: `
-          You can increase your \\glossterm{fatigue level} by one.
+          You can increase your \\glossterm{stamina} by one.
           If you do, you regain \\hprankfive.
         `,
         targeting: `
@@ -124,7 +124,7 @@ export const vivimancy: MysticSphere = {
     {
       name: 'Restoration',
 
-      cost: 'One \\glossterm{fatigue level} from the target.',
+      cost: 'One \\glossterm{stamina} from the target.',
       // dr2 for short range, +1dr from healing bonus
       effect: `
         Choose yourself or an \\glossterm{ally} within \\shortrange.
@@ -140,7 +140,7 @@ export const vivimancy: MysticSphere = {
     {
       name: 'Greater Restoration',
 
-      cost: 'One \\glossterm{fatigue level} from the target.',
+      cost: 'One \\glossterm{stamina} from the target.',
       // dr5 for short range, +1dr from healing bonus
       effect: `
         Choose yourself or an \\glossterm{ally} within \\shortrange.
@@ -155,7 +155,7 @@ export const vivimancy: MysticSphere = {
     {
       name: 'Total Restoration',
 
-      cost: 'One \\glossterm{fatigue level} from the target.',
+      cost: 'One \\glossterm{stamina} from the target.',
       // dr8 for short range, +1dr from healing bonus. Use drh to really reward
       // investment.
       effect: `
@@ -174,7 +174,7 @@ export const vivimancy: MysticSphere = {
       // Assume that this hits two allies, so dr2. This can hit enemies mainly for
       // symmetry with circle of death; that's rarely a huge weakness in practice.
       // +1dr for delay
-      cost: 'One \\glossterm{fatigue level}.',
+      cost: 'One \\glossterm{stamina}.',
       effect: `
         You inscribe a circle in a \\medarea radius \\glossterm{zone} from you.
         At the start of your next turn, each creature in the area regains \\hprankthree.
@@ -188,7 +188,7 @@ export const vivimancy: MysticSphere = {
     {
       name: 'Greater Circle of Life',
 
-      cost: 'One \\glossterm{fatigue level}.',
+      cost: 'One \\glossterm{stamina}.',
       effect: `
         You inscribe a circle in a \\medarea radius \\glossterm{zone} from you.
         At the start of your next turn, each creature in the area regains \\hpranksix.
@@ -203,7 +203,7 @@ export const vivimancy: MysticSphere = {
     {
       name: 'Cure Vital Wound',
 
-      cost: 'Three \\glossterm{fatigue levels} from the target.',
+      cost: 'Three \\glossterm{stamina} from the target.',
       effect: `
         Choose yourself or an \\glossterm{ally} within \\medrange.
         The target regains \\hprankeight and removes one of its \\glossterm{vital wounds}.
@@ -766,9 +766,9 @@ export const vivimancy: MysticSphere = {
 
       cost: 'See text.',
       effect: `
-        At the end of its turn, if the target's \\glossterm{fatigue level} does not exceed its \\glossterm{fatigue tolerance}, it automatically removes one of its \\glossterm{vital wounds}.
+        At the end of its turn, if the target's \\glossterm{stamina} does not exceed its \\glossterm{maximum stamina}, it automatically removes one of its \\glossterm{vital wounds}.
         It can choose to stop this regeneration if it is conscious, but the regeneration happens automatically if it is unconscious due to vital wounds.
-        For each vital wound removed in this way, it increases its \\glossterm{fatigue level} by three.
+        For each vital wound removed in this way, it increases its \\glossterm{stamina} by three.
       `,
       rank: 6,
       roles: ['attune', 'exertion'],

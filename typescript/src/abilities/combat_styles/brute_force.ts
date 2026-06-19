@@ -260,12 +260,12 @@ export const bruteForce: CombatStyle = {
     {
       name: 'Desperate Smash',
 
-      cost: 'One \\glossterm{fatigue level} (see text).',
+      cost: 'One \\glossterm{stamina} (see text).',
       effect: `
         Make a \\glossterm{strike} that deals double damage.
         You cannot use the \\textit{desperate exertion} ability to affect this strike.
 
-        This ability only increases your fatigue level if the strike hits.
+        This ability only reduces your stamina if the strike hits.
       `,
       rank: 3,
       roles: ['burst', 'exertion'],
@@ -274,13 +274,13 @@ export const bruteForce: CombatStyle = {
     {
       name: 'Desperate Smash+',
 
-      cost: 'One \\glossterm{fatigue level}.',
+      cost: 'One \\glossterm{stamina}.',
       effect: `
         Make a \\glossterm{strike} that deals \\glossterm{extra damage} equal to half your \\glossterm{power}.
         The strike deals triple damage.
         You cannot use the \\textit{desperate exertion} ability to affect this strike.
 
-        This ability only increases your fatigue level if the strike hits.
+        This ability only reduces your stamina if the strike hits.
       `,
       rank: 7,
       roles: ['burst', 'exertion'],

@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { BRIEF_COOLDOWN, CONDITION_CRIT, MINOR_FATIGUE } from '../constants';
+import { BRIEF_COOLDOWN, CONDITION_CRIT, MINOR_STAMINA } from '../constants';
 
 // This sphere gets maneuvers at equal rank to combat styles.
 // However, they are strictly mundane and limited in scope.
@@ -46,7 +46,7 @@ export const chronomancy: MysticSphere = {
       name: 'Burst of Speed',
 
       effect: `
-        When you use the \\ability{sprint} ability as a \\glossterm{move action}, you can choose not to increase your \\glossterm{fatigue level}.
+        When you use the \\ability{sprint} ability as a \\glossterm{move action}, you can choose not to increase your \\glossterm{stamina}.
         After you sprint in this way, this ability is \\glossterm{dismissed}.
       `,
       rank: 1,
@@ -59,7 +59,7 @@ export const chronomancy: MysticSphere = {
       effect: `
         Whenever you make an attack during your action and learn whether you hit or missed, you can use this ability to rewind time to the start of your action.
         You must use this ability before determining any damage dealt or any other effects of the attack.
-        All effects of your action are undone, except that you keep any \\glossterm{fatigue levels} you gained during your original action.
+        All effects of your action are undone, except that you keep any \\glossterm{stamina} you gained during your original action.
         You can use an different ability on your new action, or simply make a new attack roll with the same ability and hope it succeeds this time.
         After you rewind time in this way, this ability is \\glossterm{dismissed}.
       `,
@@ -115,7 +115,7 @@ export const chronomancy: MysticSphere = {
     {
       name: 'Quicksilver Infinity',
 
-      cost: 'One \\glossterm{fatigue level}.',
+      cost: 'One \\glossterm{stamina}.',
       // `output [highest 1 of 5d[explode 1d10]]` has a mean of 11.5, or +6 accuracy.
       // Assuming a 6 hits, it gets a crit (16 or higher) 22% of the time.
       // Expected damage is 0.96 + 0.22 + 0.25 = 1.43x hit damage, x2 from double damage,
@@ -354,7 +354,7 @@ export const chronomancy: MysticSphere = {
 
       // TODO: EA math
       usageTime: 'minor',
-      cost: "One \\glossterm{fatigue level}, and you \\briefly can't use this ability again.",
+      cost: "One \\glossterm{stamina}, and you \\briefly can't use this ability again.",
       effect: `
         Choose one \\glossterm{ally} within \\medrange.
         You reach into a possible future and create a duplicate of the target.
@@ -369,7 +369,7 @@ export const chronomancy: MysticSphere = {
 
         The duplicate is fragile, and its actions are limited.
         It cannot use abilities that have additional costs or limitations on their usage, such as only being usable once per short rest.
-        It cannot use abilities that would increase its \\glossterm{fatigue level}, cause it to lose hit points, or otherwise directly suffer negative consequences as a cost of the action.
+        It cannot use abilities that would increase its \\glossterm{stamina}, cause it to lose hit points, or otherwise directly suffer negative consequences as a cost of the action.
         If it loses any \\glossterm{hit points}, it ceases to exist.
       `,
       rank: 7,
@@ -407,7 +407,7 @@ export const chronomancy: MysticSphere = {
 
         Unsealing the time lock causes the creature's conditions to become identical to the locked conditions.
         This removes any excess conditions and reapplies any missing conditions.
-        In addition, the creature increases its \\glossterm{fatigue level} by one.
+        In addition, the creature increases its \\glossterm{stamina} by one.
       `,
       rank: 4,
       roles: ['cleanse', 'exertion'],
@@ -441,7 +441,7 @@ export const chronomancy: MysticSphere = {
         You can unseal the time lock as a standard action.
 
         Unsealing the time lock causes the creature's hit points to become identical to the locked hit points.
-        In addition, the creature increases its \\glossterm{fatigue level} by one.
+        In addition, the creature increases its \\glossterm{stamina} by one.
       `,
       rank: 6,
       roles: ['healing', 'exertion'],
@@ -458,7 +458,7 @@ export const chronomancy: MysticSphere = {
 
         Unsealing the time lock causes the creature's vital wounds to become identical to the locked vital wounds.
         This removes any excess vital wounds and reapplies any missing vital wounds.
-        The creature increases its \\glossterm{fatigue level} by three for each vital wound removed in this way.
+        The creature increases its \\glossterm{stamina} by three for each vital wound removed in this way.
       `,
       rank: 7,
       roles: ['healing', 'exertion'],
@@ -469,7 +469,7 @@ export const chronomancy: MysticSphere = {
       name: 'Time Stop',
 
       // TODO: EA math
-      cost: 'One \\glossterm{fatigue level}, and you are \\dazed as a \\glossterm{condition}. You also cannot cast this spell again until you finish a \\glossterm{short rest}.',
+      cost: 'One \\glossterm{stamina}, and you are \\dazed as a \\glossterm{condition}. You also cannot cast this spell again until you finish a \\glossterm{short rest}.',
       effect: `
         You can take two turns of actions immediately.
         During this time, all other creatures and objects are fixed in time, and cannot be targeted, moved, damaged, or otherwise affected by outside forces in any way.
@@ -594,7 +594,7 @@ export const chronomancy: MysticSphere = {
     {
       name: 'Rewind Damage',
 
-      cost: 'One \\glossterm{fatigue level} from the target.',
+      cost: 'One \\glossterm{stamina} from the target.',
       effect: `
         Chose yourself or one \\glossterm{ally} within \\shortrange.
         The target regains 1d8 \\glossterm{hit points} \\plus1 per power.
@@ -733,7 +733,7 @@ export const chronomancy: MysticSphere = {
     {
       name: 'Timeseal',
 
-      cost: MINOR_FATIGUE,
+      cost: MINOR_STAMINA,
       effect: `
         Choose yourself or one Medium or smaller \\glossterm{ally} within \\medrange.
         The target becomes \\briefly frozen in time.

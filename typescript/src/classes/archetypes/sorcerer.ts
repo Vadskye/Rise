@@ -422,7 +422,7 @@ export function wildMagic(): RankAbility[] {
       isMagical: true,
       rank: 6,
       description: `
-        Once per \\glossterm{short rest}, you can use the \\ability{desperate exertion} ability without increasing your \\glossterm{fatigue level}.
+        Once per \\glossterm{short rest}, you can use the \\ability{desperate exertion} ability without increasing your \\glossterm{stamina}.
       `,
     },
     {

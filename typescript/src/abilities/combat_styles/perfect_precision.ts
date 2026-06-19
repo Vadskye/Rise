@@ -51,7 +51,7 @@ export const perfectPrecision: CombatStyle = {
       cost: 'See text.',
       effect: `
         Make a \\glossterm{strike}.
-        You can increase your \\glossterm{fatigue level} by one to reroll the attack roll with a +4 accuracy bonus.
+        You can increase your \\glossterm{stamina} by one to reroll the attack roll with a +4 accuracy bonus.
         You cannot use the \\textit{desperate exertion} ability to affect this strike.
       `,
       rank: 1,

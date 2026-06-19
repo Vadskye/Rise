@@ -107,7 +107,7 @@
   \subsection{Subdual Damage}\label{Subdual Damage}
     Some attacks and environmental effects deal subdual damage.
     Subdual damage works in the same way as normal damage, except it cannot inflict \glossterm{vital wounds}.
-    If an attack that deals subdual damage would inflict a vital wound, the target increases its \glossterm{fatigue level} by three instead.
+    If an attack that deals subdual damage would inflict a vital wound, the target reduces its \glossterm{stamina} by three instead.
     Whenever you make a \glossterm{strike}, you can choose to deal subdual damage instead of normal damage.
     If you do, the strike deals half damage.
 
@@ -137,7 +137,7 @@
         1               & You are unconscious while you are \glossterm{injured}     \\
         2               & You take a \minus1 penalty to \glossterm{accuracy}               \\
         3               & You have a \minus5 foot penalty to your \glossterm{speed}        \\
-        4               & You take a \minus2 penalty to your \glossterm{fatigue tolerance} \\
+        4               & You take a \minus2 penalty to your \glossterm{maximum stamina} \\
         5               & You take a \minus1 penalty to all \glossterm{defenses}           \\
         6               & You take a \minus2 penalty to your Brawn defense                 \\
         7               & You take a \minus2 penalty to your Fortitude defense             \\
@@ -673,13 +673,15 @@
   \end{dtable!*}
 
   \begin{triggeredability}{Desperate Exertion}{Triggered (see text)}
-    \par \noindent Cost: Two \glossterm{fatigue levels}.
     \rankline
     You \glossterm{reroll} any \glossterm{attack roll} or \glossterm{check} you just rolled, keeping the better result.
     You gain a \plus2 bonus with the reroll.
 
     You can use this ability after you learn whether the original roll succeeded or failed.
     However, you must use it before using any other abilities or ending your turn.
+
+    After you use this ability, you reduce your \glossterm{stamina} by two.
+    This is not a cost, and it applies after you resolve the attack or check.
 
     You cannot use this to affect other types of rolls, such as \glossterm{vital rolls}.
     You cannot use this ability multiple times to affect the same roll.
@@ -721,7 +723,7 @@
   \end{activeability}
 
   \begin{activeability}{Recover}{Standard action}
-    \abilitycost Two \glossterm{fatigue levels}, and you cannot use this ability again until you finish a \glossterm{short rest}.
+    \abilitycost Two \glossterm{stamina}, and you cannot use this ability again until you finish a \glossterm{short rest}.
     \rankline
     You regain half of your maximum \glossterm{hit points}.
     Then, you remove all \glossterm{conditions} affecting you.
@@ -751,7 +753,7 @@
   \end{activeability}
 
   \begin{activeability}{Sprint}{Free action}
-    \abilitycost One \glossterm{fatigue level}. You can only use this ability once per turn.
+    \abilitycost One \glossterm{stamina}. You can only use this ability once per turn.
     \rankline
     You add your \glossterm{speed} to your \glossterm{available movement}.
   \end{activeability}

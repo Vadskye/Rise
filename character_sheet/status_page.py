@@ -357,7 +357,7 @@ def custom_statistic(i: str) -> str:
                     option({"value": "disguise"}, "Disguise"),
                     option({"value": "durability"}, "Durability"),
                     option({"value": "endurance"}, "Endurance"),
-                    option({"value": "fatigue_tolerance"}, "Fatigue tolerance"),
+                    option({"value": "stamina_max"}, "Maximum stamina"),
                     option({"value": "flexibility"}, "Flexibility"),
                     option({"value": "fortitude"}, "Fortitude defense"),
                     option({"value": "hit_points"}, "Hit points"),

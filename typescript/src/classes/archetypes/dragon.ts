@@ -67,7 +67,7 @@ export function dragon(): RankAbility[] {
       rank: 3,
       description: `
         \\begin{magicalactiveability}{Consume Wealth}{Standard action}
-          \\abilitycost One \\glossterm{fatigue level}, and you \\briefly can't use this ability again.
+          \\abilitycost One \\glossterm{stamina}, and you \\briefly can't use this ability again.
           \\rankline
           You consume a mineral-based wealth item that is at least one size category smaller than you.
           For the next ten minutes, your minimum draconic wealth rank is equal to the rank of the consumed item plus two.
