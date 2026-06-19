@@ -8,6 +8,9 @@ set logfile "../rtgen.log"
 
 rm -f "$logfile"
 
+mkdir -p ../core_book/generated
+mkdir -p ../comprehensive_codex/generated
+
 # TODO: keep building the Typescript version of the monster manual so this can
 # be enabled.
 npm run generate_latex -- -t monster_descriptions -o ../core_book/generated/monster_descriptions.tex >> "$logfile"
