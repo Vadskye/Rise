@@ -655,7 +655,7 @@ export const enchantment: MysticSphere = {
       name: 'Restore Bravado',
 
       // TODO: EA math on healing + buff
-      cost: 'One \\glossterm{fatigue level} from the target.',
+      cost: 'One \\glossterm{stamina} from the target.',
       // dr3
       effect: `
         Chose yourself or one \\glossterm{ally} within \\medrange.
@@ -673,7 +673,7 @@ export const enchantment: MysticSphere = {
       name: 'Greater Restore Bravado',
 
       // TODO: EA math on healing + buff
-      cost: 'One \\glossterm{fatigue level} from the target.',
+      cost: 'One \\glossterm{stamina} from the target.',
       // dr7
       effect: `
         Chose yourself or one \\glossterm{ally} within \\medrange.

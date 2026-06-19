@@ -15,7 +15,7 @@ export interface ActiveAbility {
   effect?: string;
   forMonster?: boolean;
   functionsLike?: FunctionsLike;
-  fatigueCost?: boolean;
+  staminaCost?: boolean;
   isMagical: boolean;
   kind: ActiveAbilityKind;
   materialCost?: boolean;
@@ -70,10 +70,10 @@ export interface Ritual extends RitualDefinition {
 // This is the type used to write rituals. It's missing some
 // inferrable data fields that are shared between all rituals.
 export interface RitualDefinition extends Omit<ActiveAbility, 'isMagical' | 'kind' | 'usageTime'> {
-  // Every ritual must explicitly define whether it costs fatigue.
+  // Every ritual must explicitly define whether it costs stamina.
   // This is used by the LaTeX generator to determine whether to include the standard
-  // ritual fatigue cost text to the ability description.
-  fatigueCost: boolean;
+  // ritual stamina cost text to the ability description.
+  staminaCost: boolean;
   materialCost?: boolean;
   sphereEffects?: Partial<Record<SphereName, string>>;
   spheres: SphereName[];

@@ -105,7 +105,7 @@ export function incarnation(): RankAbility[] {
       rank: 7,
       description: `
         \\begin{magicalactiveability}{Essence Incarnate}{Standard action}
-          \\abilitycost One \\glossterm{fatigue level}, and you \\briefly can't use this ability.
+          \\abilitycost One \\glossterm{stamina}, and you \\briefly can't use this ability.
           \\rankline
           You gain a benefit depending on whether you are tethered or untethered:
           \\begin{raggeditemize}

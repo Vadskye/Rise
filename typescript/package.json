@@ -49,6 +49,7 @@
     "format_archetype": "tsx src/scripts/format_archetype_description.ts",
     "simulate_fight": "tsx src/scripts/simulate_fight.ts",
     "identify_outliers": "tsx src/scripts/identify_monster_outliers.ts",
-    "validate_spells": "tsx src/scripts/validate_spells.ts"
+    "validate_spells": "tsx src/scripts/validate_spells.ts",
+    "validate_stamina": "tsx src/scripts/validate_stamina.ts"
   }
 }

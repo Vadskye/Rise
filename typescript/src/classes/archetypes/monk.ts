@@ -398,7 +398,7 @@ export function ki(): RankAbility[] {
       rank: 3,
       description: `
         \\begin{magicalactiveability}{Invested Blow}{Standard action}
-          \\abilitycost Two \\glossterm{fatigue levels} (see text).
+          \\abilitycost Two \\glossterm{stamina} (see text).
           \\rankline
           Make a \\glossterm{strike} that deals double damage.
           You cannot use a \\weapontag{Heavy} weapon to make the strike.
@@ -407,7 +407,7 @@ export function ki(): RankAbility[] {
           Whether or not the target takes damage, it becomes invested with your ki.
           This does not cause it any ill effects.
           If it dies or falls unconscious, or you finish a \\glossterm{short rest}, your ki returns to you.
-          When it does, you reduce your \\glossterm{fatigue level} by two.
+          When it does, you reduce your \\glossterm{stamina} by two.
 
           \\rankline
           \\rank{4} You gain a \\plus1 accuracy bonus with the strike.
@@ -585,11 +585,11 @@ export function transcendentSage(): RankAbility[] {
     },
     {
       complexity: 1,
-      name: 'Transcend Fatigue',
+      name: 'Transcend Exertion',
       isMagical: false,
       rank: 4,
       description: `
-        You gain a bonus to your \\glossterm{fatigue tolerance} equal to your rank in this archetype.
+        You gain a bonus to your \\glossterm{maximum stamina} equal to your rank in this archetype.
       `,
     },
     {
@@ -736,8 +736,8 @@ export function transcendentSageModifiers(creature: Creature, rank: number) {
 
   if (rank >= 4) {
     creature.addSimpleModifier({
-      name: 'Transcend Fatigue',
-      statistic: 'fatigue_tolerance',
+      name: 'Transcend Exertion',
+      statistic: 'maximum_stamina',
       value: rank,
     });
   }

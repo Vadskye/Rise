@@ -19,7 +19,7 @@ export const mobileHunter: CombatStyle = {
     {
       name: 'Adrenaline',
 
-      cost: 'One \\glossterm{fatigue level}, unless you have a \\glossterm{vital wound}.',
+      cost: 'One \\glossterm{stamina}, unless you have a \\glossterm{vital wound}.',
       effect: `
         You \\briefly gain a \\plus10 foot bonus to your \\glossterm{speed} and are \\primed.
         \\longreminder{This doesn't increase your \\glossterm{available movement} this turn.}
@@ -31,7 +31,7 @@ export const mobileHunter: CombatStyle = {
     {
       name: 'Adrenaline+',
 
-      cost: 'One \\glossterm{fatigue level}, unless you have a \\glossterm{vital wound}.',
+      cost: 'One \\glossterm{stamina}, unless you have a \\glossterm{vital wound}.',
       effect: `
         You \\briefly gain a \\plus20 foot bonus to your \\glossterm{speed} and are \\primed.
         \\longreminder{This doesn't increase your \\glossterm{available movement} this turn.}

@@ -142,7 +142,7 @@ export const unbreakableDefense: CombatStyle = {
     {
       name: 'Cleansing Blow',
 
-      cost: 'One \\glossterm{fatigue level}.',
+      cost: 'One \\glossterm{stamina}.',
       effect: `
         Remove a \\glossterm{condition} affecting you.
         Then, make a \\glossterm{strike}.
@@ -154,7 +154,7 @@ export const unbreakableDefense: CombatStyle = {
     {
       name: 'Revitalizing Blow',
 
-      cost: 'One \\glossterm{fatigue level}.',
+      cost: 'One \\glossterm{stamina}.',
       effect: `
         Make a strike.
         In addition, you regain \\hprankthree.
@@ -167,7 +167,7 @@ export const unbreakableDefense: CombatStyle = {
     {
       name: 'Revitalizing Blow+',
 
-      cost: 'One \\glossterm{fatigue level}.',
+      cost: 'One \\glossterm{stamina}.',
       effect: `
         Make a \\glossterm{strike} that deals double damage.
         In addition, you regain \\hprankseven.
@@ -259,7 +259,7 @@ export const unbreakableDefense: CombatStyle = {
       name: 'Invigoration',
 
       // Pure healing would be dr3, so dr2 for empower
-      cost: 'One \\glossterm{fatigue level}.',
+      cost: 'One \\glossterm{stamina}.',
       effect: `
         You are \\briefly empowered.
         In addition, you regain \\hpranktwo.
@@ -273,7 +273,7 @@ export const unbreakableDefense: CombatStyle = {
       name: 'Greater Invigoration',
 
       // Pure healing would be dr3, so dr2 for empower
-      cost: 'One \\glossterm{fatigue level}.',
+      cost: 'One \\glossterm{stamina}.',
       effect: `
         You are \\briefly empowered.
         In addition, you regain \\hpranksix.

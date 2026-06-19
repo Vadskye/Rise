@@ -26,7 +26,7 @@ AlterScript.Process = function(msg, who) {
 		
 		// BAR NAMES - These names are used if ANNOUNCE_CHANGE is set to true. The
 		// format of the annoucement is: Name gained/lost # BarName.
-		const BarNames = ["hit points", "", "fatigue_tolerance"];
+		const BarNames = ["hit points", "", "stamina"];
 		
 		// PREVENT OVERMAX - Set this variable to true to prevent the current value of
 		// the bar from being greater than its max value. If there is no max value set,

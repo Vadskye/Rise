@@ -10,7 +10,7 @@ export function treant(): RankAbility[] {
       rank: 1,
       description: `
         At the end of your turn while you are \\ability{ingrained}, you regain hit points equal to your rank in this archetype, and you may choose to remove a \\glossterm{condition}.
-        If you remove a condition, you increase your \\glossterm{fatigue level} by one.
+        If you remove a condition, you reduce your \\glossterm{stamina} by one.
       `,
     },
     {
@@ -70,7 +70,7 @@ export function treant(): RankAbility[] {
       rank: 5,
       description: `
         The healing from your \\textit{nourishing ingrain} ability increases to three times your rank in this archetype.
-        In addition, removing a condition with that ability no longer increases your fatigue level.
+        In addition, removing a condition with that ability no longer reduces your stamina.
       `,
     },
     {

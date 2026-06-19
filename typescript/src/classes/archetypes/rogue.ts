@@ -369,7 +369,7 @@ export function jackOfAllTrades(): RankAbility[] {
       rank: 5,
       description: `
         The skill bonus increases to \\plus2.
-        In addition, using the \\ability{desperate exertion} ability to affect a skill check only increases your \\glossterm{fatigue level} by one.
+        In addition, using the \\ability{desperate exertion} ability to affect a skill check only reduces your \\glossterm{stamina} by one.
       `,
     },
     {

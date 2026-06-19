@@ -283,7 +283,7 @@ export function innateArcanist(): RankAbility[] {
       rank: 3,
       description: `
         Whenever another creature uses a \\magical ability within \\medrange of you as a \\glossterm{standard action} or \\glossterm{elite action}, you automatically \\glossterm{briefly} trace that ability.
-        The ability must not have the \\abilitytag{Attune} or \\abilitytag{Sustain} tags, and it must not cost fatigue to use.
+        The ability must not have the \\abilitytag{Attune} or \\abilitytag{Sustain} tags, and it must not cost stamina to use.
 
         As a standard action, you can use any ability that you have traced.
         After you decide to use a traced ability, you intuitively learn what it does, including its accuracy and any effects it would have on a hit.
@@ -422,7 +422,7 @@ export function wildMagic(): RankAbility[] {
       isMagical: true,
       rank: 6,
       description: `
-        Once per \\glossterm{short rest}, you can use the \\ability{desperate exertion} ability without increasing your \\glossterm{fatigue level}.
+        Once per \\glossterm{short rest}, you can use the \\ability{desperate exertion} ability without spending \\glossterm{stamina}.
       `,
     },
     {

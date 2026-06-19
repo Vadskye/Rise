@@ -494,7 +494,7 @@ t.test('validateSpells', (t) => {
           roles: ['burst', 'healing'],
           attack: {
             hit: '\\damagerankone.',
-            injury: 'If you increase fatigue, you regain \\hprankfive.',
+            injury: 'If you spend stamina, you regain \\hprankfive.',
             targeting: 'Make an attack vs. Fortitude against one creature within \\medrange.',
           },
         },
@@ -853,7 +853,7 @@ t.test('validateSpells', (t) => {
               name: 'Charged Thunderdash',
               rank: 3,
               roles: ['clear', 'dive'],
-              cost: '1 fatigue',
+              cost: '1 stamina',
               attack: {
                 hit: '\\damagerankthree.',
                 injury: 'The target is \\briefly \\deafened.',

@@ -111,7 +111,7 @@ export function clericDomains(): string {
         \\magicaldomainability{Essence} You gain the \\ability{compel law} ability.
         \\begin{magicalactiveability}{Compel Law}{Standard action}
           \\abilitytags \\abilitytag{Compulsion}
-          \\abilitycost One \\glossterm{fatigue level}.
+          \\abilitycost One \\glossterm{stamina}.
           \\rankline
           Make an attack vs. Mental against all creatures within a \\largearea radius from you.
           This attack also automatically succeeds against you, ignoring all forms of immunity.

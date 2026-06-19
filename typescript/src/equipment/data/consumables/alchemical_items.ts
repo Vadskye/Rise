@@ -144,7 +144,7 @@ function thrownAttacks(): Tool[] {
         You can throw this item as a standard action.
         When you do, make an attack vs. Reflex against something within \\shortrange.
         \\hit If the target is \\creaturetype{undead} or an evil \\creaturetype{soulforged}, it takes $dr7l damage.
-        Otherwise, it regains $dr7l \\glossterm{hit points} and increases its \\glossterm{fatigue level} by one.
+        Otherwise, it regains $dr7l \\glossterm{hit points} and reduces its \\glossterm{stamina} by one.
       `,
       upgrades: [
         {
@@ -163,7 +163,7 @@ function thrownAttacks(): Tool[] {
       description: `
         You can throw this item as a standard action.
         When you do, make an attack vs. Reflex against something within \\shortrange.
-        \\hit If the target is \\creaturetype{undead} or an evil \\creaturetype{soulforged}, it regains $dr7l \\glossterm{hit points} and increases its \\glossterm{fatigue level} by one.
+        \\hit If the target is \\creaturetype{undead} or an evil \\creaturetype{soulforged}, it regains $dr7l \\glossterm{hit points} and reduces its \\glossterm{stamina} by one.
         Otherwise, it takes $dr7l damage.
       `,
       upgrades: [

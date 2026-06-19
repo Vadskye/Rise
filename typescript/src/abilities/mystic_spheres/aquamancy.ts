@@ -37,7 +37,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         The target is \\briefly healed by water.
         During this effect, the target can draw restorative power from water by drinking at least one ounce of clean water as a standard action.
         % dr3l
-        When it does, it regains 2d10 hit points and increases its \\glossterm{fatigue level} by one.
+        When it does, it regains 2d10 hit points and reduces its \\glossterm{stamina} by one.
       `,
       rank: 1,
       scaling: { special: 'The healing increases by 1d10 for each rank beyond 1.' },

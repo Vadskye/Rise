@@ -81,7 +81,7 @@ export const staffs = (): Implement[] => [
     description: `
       Once per turn, when you cause a creature other yourself to regain \\glossterm{hit points} using a \\magical ability, you can activate this item.
       When you do, you also regain that many hit points.
-      In addition, you increase your \\glossterm{fatigue level} by one.
+      In addition, you reduce your \\glossterm{stamina} by one.
     `,
   }),
   staff({
@@ -232,7 +232,7 @@ export const staffs = (): Implement[] => [
     description: `
       You can activate this staff as a \\glossterm{free action}.
       When you do, you \\glossterm{briefly} gain the ability to cast spells without using \\glossterm{verbal components}.
-      In addition, you increase your \\glossterm{fatigue level} by one.
+      In addition, you reduce your \\glossterm{stamina} by one.
     `,
     upgrades: [
       {
@@ -250,7 +250,7 @@ export const staffs = (): Implement[] => [
     description: `
       You can activate this staff as a \\glossterm{free action}.
       When you do, you \\glossterm{briefly} gain the ability to cast spells without using \\glossterm{somatic components}.
-      In addition, you increase your \\glossterm{fatigue level} by one.
+      In addition, you reduce your \\glossterm{stamina} by one.
     `,
     upgrades: [
       {
@@ -276,13 +276,13 @@ export const staffs = (): Implement[] => [
       Whenever you use a non-attunable \\magical ability, you may activate this staff.
       When you do, choose a location within \\shortrange to act as a \\glossterm{targeting proxy}.
       This means the ability determines its targets as if you were in that location, which can allow you to affect targets outside your normal range.
-      In addition, you increase your \\glossterm{fatigue level} by one, and you \\glossterm{briefly} cannot activate this staff again.
+      In addition, you reduce your \\glossterm{stamina} by one, and you \\glossterm{briefly} cannot activate this staff again.
     `,
     upgrades: [
       {
         rank: 4,
         short_description: 'Can sometimes use abilities from a short distance away',
-        description: 'Activating the staff does not increase your fatigue level.',
+        description: 'Activating the staff does not reduce your stamina.',
       },
       {
         rank: 7,
@@ -298,13 +298,13 @@ export const staffs = (): Implement[] => [
     description: `
       Whenever you use a \\magical ability with a \\glossterm{range} listed in feet, you may activate this staff.
       When you do, you double the ability's range.
-      In addition, you increase your \\glossterm{fatigue level} by one, and you \\glossterm{briefly} cannot activate this effect again.
+      In addition, you reduce your \\glossterm{stamina} by one, and you \\glossterm{briefly} cannot activate this effect again.
     `,
     upgrades: [
       {
         rank: 6,
         short_description: 'Can sometimes double range',
-        description: 'Activating the staff does not increase your fatigue level.',
+        description: 'Activating the staff does not reduce your stamina.',
       },
     ],
   }),
@@ -315,13 +315,13 @@ export const staffs = (): Implement[] => [
     description: `
       Whenever you use a \\magical ability that affects an area and does not have the \\abilitytag{Attune} or \\abilitytag{Sustain} tags, you may activate this staff.
       When you do, you double the ability's area.
-      In addition, you increase your \\glossterm{fatigue level} by one, and you \\glossterm{briefly} cannot activate this effect again.
+      In addition, you reduce your \\glossterm{stamina} by one, and you \\glossterm{briefly} cannot activate this effect again.
     `,
     upgrades: [
       {
         rank: 6,
         short_description: 'Can sometimes double area',
-        description: 'Activating the staff does not increase your fatigue level.',
+        description: 'Activating the staff does not reduce your stamina.',
       },
     ],
   }),
@@ -332,13 +332,13 @@ export const staffs = (): Implement[] => [
     description: `
       Whenever you use a \\glossterm{targeted} \\magical ability with a \\glossterm{range} listed in feet, you may activate this staff.
       When you do, increase the number of targets that the ability affects by one.
-      In addition, you increase your \\glossterm{fatigue level} by one, and you \\glossterm{briefly} cannot activate this effect again.
+      In addition, you reduce your \\glossterm{stamina} by one, and you \\glossterm{briefly} cannot activate this effect again.
     `,
     upgrades: [
       {
         rank: 6,
         short_description: 'Can sometimes add an extra target',
-        description: 'Activating the staff does not increase your fatigue level.',
+        description: 'Activating the staff does not reduce your stamina.',
       },
     ],
   }),
@@ -349,7 +349,7 @@ export const staffs = (): Implement[] => [
     description: `
       Whenever you use a non-attunable \\magical ability, you may activate this staff.
       When you do, the ability \\glossterm{repeats} at the start of your next turn.
-      In addition, you increase your \\glossterm{fatigue level} by one, and you \\glossterm{briefly} cannot activate this effect again.
+      In addition, you reduce your \\glossterm{stamina} by one, and you \\glossterm{briefly} cannot activate this effect again.
     `,
   }),
   staff({

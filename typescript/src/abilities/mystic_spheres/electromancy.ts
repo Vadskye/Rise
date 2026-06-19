@@ -227,7 +227,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
     {
       name: 'Energize',
 
-      cost: 'One \\glossterm{fatigue level} from the target.',
+      cost: 'One \\glossterm{stamina} from the target.',
       // dr4 from short range, +1dr for healing buff
       effect: `
         Chose yourself or one \\glossterm{ally} within \\shortrange.
@@ -243,7 +243,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
     {
       name: 'Greater Energize',
 
-      cost: 'One \\glossterm{fatigue level} from the target.',
+      cost: 'One \\glossterm{stamina} from the target.',
       // dr7 from short range, +1dr for healing buff
       effect: `
         Chose yourself or one \\glossterm{ally} within \\shortrange.

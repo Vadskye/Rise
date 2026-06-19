@@ -127,7 +127,7 @@ def constitution_based() -> str:
         [
             div({"class": "section-header"}, "Constitution-Based"),
             stat_row("Durability"),
-            stat_row("Fatigue tolerance"),
+            stat_row("Maximum stamina"),
             stat_row("Fortitude"),
             stat_row("Injury point"),
             stat_row("hit_points_max", display_name="Hit points", explanation_key="hit_points_explanation"),
