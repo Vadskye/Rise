@@ -1,18 +1,16 @@
-import { Tool, StandardItem } from '../../types';
+import { Tool, StandardItem, AttunementRequirement } from '../../types';
 
-function createPotion(data: Partial<StandardItem>): Tool {
+function createPotion(
+  data: Omit<StandardItem, 'magical' | 'rarity' | 'tags' | 'upgrades' | 'attunement'> &
+    Partial<Pick<StandardItem, 'upgrades' | 'tags'>> & { attunement: AttunementRequirement },
+): Tool {
   return {
     category: 'Potion',
     item: {
       magical: true,
       rarity: 'Common',
-      tags: [],
-      attunement: 'Unrestricted',
-      upgrades: [],
-      description: '',
-      short_description: '',
-      name: '',
-      rank: 0,
+      tags: data.tags || [],
+      upgrades: data.upgrades || [],
       ...data,
     },
   };
@@ -23,6 +21,7 @@ export function potions(): Tool[] {
     createPotion({
       name: 'Cleansing Potion',
       rank: 2,
+      attunement: 'Unrestricted',
       short_description: 'Removes a condition',
       description: `
         When you drink this \\glossterm{potion}, you remove a \\glossterm{condition} affecting you and reduce your \\glossterm{stamina} by one.
@@ -41,10 +40,11 @@ export function potions(): Tool[] {
     createPotion({
       name: 'Potion of Healing',
       rank: 0,
+      attunement: 'Unrestricted',
       short_description: 'Restores $dr4l hit points and mitigates vital wounds',
       description: `
         When you drink this \\glossterm{potion}, you regain $dr4l hit points and reduce your \\glossterm{stamina} by one.
-        In addition, you can increase one of your \\glossterm{vital wounds} with a \\glossterm{vital roll} of 0 to be equal to 1 instead (see \\pcref{Vital Wounds}).
+        In addition, you can increase one of your \\glossterm{vital wounds} with a \\glossterm{vital roll} of 0 to be equal to 1 instead (see \\pcref{Weight Limits}).
       `,
       upgrades: [
         {
@@ -73,6 +73,7 @@ export function potions(): Tool[] {
     createPotion({
       name: 'Godsblood',
       rank: 7,
+      attunement: 'Unrestricted',
       short_description: 'Restores $dr10l hit points over time',
       description: `
         When you drink this \\glossterm{potion}, you regain $dr10l hit points and reduce your \\glossterm{stamina} by one.
@@ -83,6 +84,7 @@ export function potions(): Tool[] {
     createPotion({
       name: 'Potion of Regeneration',
       rank: 1,
+      attunement: 'Unrestricted',
       short_description: 'Remove vital wound after long rest',
       description: `
         When you drink this \\glossterm{potion}, your body's natural healing process is accelerated.
@@ -102,6 +104,7 @@ export function potions(): Tool[] {
     createPotion({
       name: 'Invigorating Potion',
       rank: 0,
+      attunement: 'Unrestricted',
       short_description: 'Grants power and fortification',
       description: `
         When you drink this \\glossterm{potion}, you are \\glossterm{briefly} \\empowered and \\fortified.
@@ -110,6 +113,7 @@ export function potions(): Tool[] {
     createPotion({
       name: 'Mind-Whetting Potion',
       rank: 0,
+      attunement: 'Unrestricted',
       short_description: 'Grants focus',
       description: `
         When you drink this \\glossterm{potion}, you are \\glossterm{briefly} \\empowered and \\focused.
@@ -118,6 +122,7 @@ export function potions(): Tool[] {
     createPotion({
       name: 'Potion of Impending Violence',
       rank: 1,
+      attunement: 'Unrestricted',
       short_description: 'Primes and enrages you',
       description: `
         When you drink this \\glossterm{potion}, you are \\glossterm{briefly} \\primed and \\enraged.
@@ -126,6 +131,7 @@ export function potions(): Tool[] {
     createPotion({
       name: 'Potion of Sharpened Steel',
       rank: 1,
+      attunement: 'Unrestricted',
       short_description: 'Grants critical benefits',
       description: `
         When you drink this \\glossterm{potion}, you are \\glossterm{briefly} \\honed and \\steeled.
@@ -134,6 +140,7 @@ export function potions(): Tool[] {
     createPotion({
       name: 'Potion of Maximal Might',
       rank: 1,
+      attunement: 'Unrestricted',
       short_description: 'Grants maximum damage',
       description: `
         When you drink this \\glossterm{potion}, you are \\glossterm{briefly} \\maximized.
@@ -142,6 +149,7 @@ export function potions(): Tool[] {
     createPotion({
       name: 'Potion of Pure Power',
       rank: 5,
+      attunement: 'Unrestricted',
       short_description: 'Grants power and maximum damage',
       description: `
         When you drink this \\glossterm{potion}, you are \\glossterm{briefly} \\empowered and \\maximized.

@@ -1,18 +1,16 @@
-import { Tool, StandardItem } from '../../types';
+import { Tool, StandardItem, AttunementRequirement } from '../../types';
 
-function createAlchemicalItem(data: Partial<StandardItem>): Tool {
+function createAlchemicalItem(
+  data: Omit<StandardItem, 'magical' | 'rarity' | 'tags' | 'upgrades' | 'attunement'> &
+    Partial<Pick<StandardItem, 'upgrades' | 'tags'>> & { attunement: AttunementRequirement },
+): Tool {
   return {
     category: 'Alchemical',
     item: {
       magical: false,
       rarity: 'Common',
-      tags: [],
-      attunement: 'Unrestricted',
-      upgrades: [],
-      description: '',
-      short_description: '',
-      name: '',
-      rank: 0,
+      tags: data.tags || [],
+      upgrades: data.upgrades || [],
       ...data,
     },
   };
@@ -24,6 +22,7 @@ export function alchemicalItems(): Tool[] {
     createAlchemicalItem({
       name: 'Smokestick',
       rank: 0,
+      attunement: 'Unrestricted',
       short_description: 'Creates a cloud of smoke',
       description: `
         You can activate this item as a standard action.
@@ -47,6 +46,7 @@ export function alchemicalItems(): Tool[] {
     createAlchemicalItem({
       name: 'Tindertwig',
       rank: 0,
+      attunement: 'Unrestricted',
       short_description: 'Quickly activated flame',
       description: `
         You can activate this small, wooden stick by striking it against any hard surface as a \\glossterm{minor action}.
@@ -58,6 +58,7 @@ export function alchemicalItems(): Tool[] {
     createAlchemicalItem({
       name: 'Flash Powder',
       rank: 0,
+      attunement: 'Unrestricted',
       short_description: 'Emits burst of bright light',
       description: `
         You can throw this powder in the air in your location as a standard action.
@@ -77,6 +78,7 @@ export function alchemicalItems(): Tool[] {
     createAlchemicalItem({
       name: 'Moonrod',
       rank: 0,
+      attunement: 'Unrestricted',
       short_description: 'Emits bright illumination',
       description: `
         You can activate this item as a standard action.
@@ -96,6 +98,7 @@ export function alchemicalItems(): Tool[] {
     createAlchemicalItem({
       name: 'Sunrod',
       rank: 2,
+      attunement: 'Unrestricted',
       short_description: 'Emits brilliant illumination',
       description: `
         You can activate this item as a standard action.
@@ -120,6 +123,7 @@ function thrownAttacks(): Tool[] {
     createAlchemicalItem({
       name: 'Holy Water',
       rank: 0,
+      attunement: 'Unrestricted',
       short_description: 'Throw to deal $dr3l damage to evil',
       description: `
         You can throw this item as a standard action.
@@ -140,6 +144,7 @@ function thrownAttacks(): Tool[] {
     createAlchemicalItem({
       name: 'Sanctified Divine Ichor',
       rank: 4,
+      attunement: 'Unrestricted',
       short_description: 'Throw to heal or deal $dr7l damage to evil',
       description: `
         You can throw this item as a standard action.
@@ -160,6 +165,7 @@ function thrownAttacks(): Tool[] {
     createAlchemicalItem({
       name: 'Corrupted Divine Ichor',
       rank: 4,
+      attunement: 'Unrestricted',
       short_description: 'Throw to heal evil or deal $dr7l damage',
       description: `
         You can throw this item as a standard action.
@@ -180,6 +186,7 @@ function thrownAttacks(): Tool[] {
     createAlchemicalItem({
       name: 'Unholy Water',
       rank: 0,
+      attunement: 'Unrestricted',
       short_description: 'Throw to deal $dr3l damage',
       description: `
         You can throw this item as a standard action.
@@ -198,6 +205,7 @@ function thrownAttacks(): Tool[] {
     createAlchemicalItem({
       name: "Alchemist's Fire",
       rank: 0,
+      attunement: 'Unrestricted',
       short_description: 'Throw to deal $dr2l damage',
       description: `
         You can throw this item as a standard action.
@@ -216,6 +224,7 @@ function thrownAttacks(): Tool[] {
     createAlchemicalItem({
       name: 'Bottled Hellfire',
       rank: 4,
+      attunement: 'Unrestricted',
       short_description: 'Throw to deal $dr5l damage over time',
       description: `
         You can throw this item as a standard action.
@@ -235,6 +244,7 @@ function thrownAttacks(): Tool[] {
     createAlchemicalItem({
       name: 'Acid Flask',
       rank: 1,
+      attunement: 'Unrestricted',
       short_description: 'Throw to deal $dr3l damage over time',
       description: `
         You can throw this item as a standard action.
@@ -256,6 +266,7 @@ function thrownAttacks(): Tool[] {
     createAlchemicalItem({
       name: 'Precursor Bile',
       rank: 5,
+      attunement: 'Unrestricted',
       short_description: 'Throw to deal $dr7l damage over time',
       description: `
         You can throw this item as a standard action.
@@ -279,6 +290,7 @@ function thrownAttacks(): Tool[] {
     createAlchemicalItem({
       name: 'Firebomb',
       rank: 1,
+      attunement: 'Unrestricted',
       short_description: 'Throw to deal $dr2l damage in an area',
       description: `
         You can throw this item as a standard action.
@@ -301,6 +313,7 @@ function thrownAttacks(): Tool[] {
     createAlchemicalItem({
       name: 'Lavabomb',
       rank: 5,
+      attunement: 'Unrestricted',
       short_description: 'Throw to deal $dr6l damage in an area',
       description: `
         You can throw this item as a standard action.
@@ -324,6 +337,7 @@ function thrownAttacks(): Tool[] {
     createAlchemicalItem({
       name: 'Mindbomb',
       rank: 2,
+      attunement: 'Unrestricted',
       short_description: 'Throw to deal $dr3l damage in an area',
       description: `
         You can throw this item as a standard action.
@@ -347,6 +361,7 @@ function thrownAttacks(): Tool[] {
     createAlchemicalItem({
       name: 'Brainfry',
       rank: 6,
+      attunement: 'Unrestricted',
       short_description: 'Throw to deal $dr8l damage to enemies in an area',
       description: `
         You can throw this item as a standard action.
@@ -361,6 +376,7 @@ function thrownAttacks(): Tool[] {
     createAlchemicalItem({
       name: 'Shockstone',
       rank: 2,
+      attunement: 'Unrestricted',
       short_description: 'Throw to deal $dr4l damage and daze',
       description: `
         You can throw this item as a standard action.
@@ -382,6 +398,7 @@ function thrownAttacks(): Tool[] {
     createAlchemicalItem({
       name: 'Bottled Lightning',
       rank: 6,
+      attunement: 'Unrestricted',
       short_description: 'Throw to deal $dr6l damage and daze',
       description: `
         You can throw this item as a standard action.
@@ -394,9 +411,10 @@ function thrownAttacks(): Tool[] {
     createAlchemicalItem({
       name: 'Dazing Sphere',
       rank: 0,
+      attunement: 'Unrestricted',
       short_description: 'Throw to daze injured creatures',
       description: `
-        You can throw this item as a standard action.
+        You can throw this item as a action.
         When you do, make an attack vs. Fortitude against all creatures in a \\smallarea radius within \\shortrange.
         Your minimum accuracy is $consumableaccuracy+2.
         \\hit Each \\glossterm{injured} creature is \\dazed as a \\glossterm{condition}.
@@ -415,6 +433,7 @@ function thrownAttacks(): Tool[] {
     createAlchemicalItem({
       name: 'Thunderstone',
       rank: 1,
+      attunement: 'Unrestricted',
       short_description: 'Throw to deal $dr2l damage and deafen',
       description: `
         You can throw this item as a standard action.
@@ -436,6 +455,7 @@ function thrownAttacks(): Tool[] {
     createAlchemicalItem({
       name: 'Avalanchestone',
       rank: 5,
+      attunement: 'Unrestricted',
       short_description: 'Throw to deal $dr6l damage and deafen in an area',
       description: `
         You can throw this item as a standard action.
@@ -458,6 +478,7 @@ function thrownAttacks(): Tool[] {
     createAlchemicalItem({
       name: 'Snowball',
       rank: 1,
+      attunement: 'Unrestricted',
       short_description: 'Throw to slow an injured creature',
       description: `
         You can throw this item as a standard action.
@@ -478,6 +499,7 @@ function thrownAttacks(): Tool[] {
     createAlchemicalItem({
       name: 'Iceball',
       rank: 5,
+      attunement: 'Unrestricted',
       short_description: 'Throw to deal $dr8l damage and slow',
       description: `
         You can throw this item as a standard action.
@@ -499,6 +521,7 @@ function thrownAttacks(): Tool[] {
     createAlchemicalItem({
       name: 'Tanglefoot Bag',
       rank: 0,
+      attunement: 'Unrestricted',
       short_description: 'Briefly slows a foe',
       description: `
         You can throw this item as a standard action.

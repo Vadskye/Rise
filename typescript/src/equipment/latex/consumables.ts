@@ -11,6 +11,7 @@ export function consumableToolsTable(): string {
     caption: 'Consumables',
     rows,
     withCategory: true,
+    withAttunement: true,
   });
 }
 

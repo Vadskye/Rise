@@ -1,13 +1,10 @@
 import { Tool, StandardItem, AttunementRequirement } from '../../types';
 
-function createElixir(data: Partial<StandardItem>): Tool {
+function createElixir(
+  data: Omit<StandardItem, 'magical' | 'rarity' | 'tags' | 'upgrades' | 'attunement'> &
+    Partial<Pick<StandardItem, 'upgrades' | 'tags'>> & { attunement: AttunementRequirement },
+): Tool {
   const dataTags = data.tags || [];
-  let attunement: AttunementRequirement = data.attunement || 'Attune';
-  if (dataTags.includes('Attune (deep)')) {
-    attunement = 'Attune (deep)';
-  } else if (dataTags.includes('Attune')) {
-    attunement = 'Attune';
-  }
   const cleanedTags = dataTags.filter(t => t !== 'Attune' && t !== 'Attune (deep)');
   return {
     category: 'Potion',
@@ -15,13 +12,8 @@ function createElixir(data: Partial<StandardItem>): Tool {
       magical: true,
       rarity: 'Common',
       upgrades: [],
-      description: '',
-      short_description: '',
-      name: '',
-      rank: 0,
       ...data,
       tags: cleanedTags,
-      attunement,
     },
   };
 }
@@ -31,6 +23,7 @@ export function elixirs(): Tool[] {
     createElixir({
       name: 'Antitoxin Elixir',
       rank: 1,
+      attunement: 'Attune',
       short_description: 'Resistant to poison',
       description: `
         When you drink this \\glossterm{potion}, if you \\glossterm{attune} to its effects, you become \\resistant to \\atPoison effects.
@@ -49,6 +42,7 @@ export function elixirs(): Tool[] {
     createElixir({
       name: 'Elixir of the Silver Tongue',
       rank: 2,
+      attunement: 'Attune',
       short_description: 'Grants +2 to Creature Handling, Deception, and Persuasion',
       description: `
         When you drink this \\glossterm{potion}, if you \\glossterm{attune} to its effects, you gain a +2 \\glossterm{enhancement bonus} to your Creature Handling, Deception, and Persuasion skills.
@@ -74,6 +68,7 @@ export function elixirs(): Tool[] {
     createElixir({
       name: 'Elixir of Grace',
       rank: 2,
+      attunement: 'Attune',
       short_description: 'Grants +2 to Balance, Flexibility, and Stealth',
       description: `
         When you drink this \\glossterm{potion}, if you \\glossterm{attune} to its effects, you gain a +2 \\glossterm{enhancement bonus} to your Balance, Flexibility, and Stealth skills.
@@ -99,6 +94,7 @@ export function elixirs(): Tool[] {
     createElixir({
       name: 'Fireproof Elixir',
       rank: 1,
+      attunement: 'Attune',
       short_description: 'Resistant to fire',
       description: `
         When you drink this \\glossterm{potion}, if you \\glossterm{attune} to its effects, you become \\resistant to \\atFire effects.
@@ -117,6 +113,7 @@ export function elixirs(): Tool[] {
     createElixir({
       name: 'Elixir of Strength',
       rank: 1,
+      attunement: 'Attune',
       short_description: 'Grants +1 bonus for weight limits',
       description: `
         When you drink this \\glossterm{potion}, if you \\glossterm{attune} to its effects, you gain a +1 \\glossterm{enhancement bonus} to your Strength that only applies for the purpose of determining your \\glossterm{weight limits} (see \\pcref{Weight Limits}).
@@ -135,6 +132,7 @@ export function elixirs(): Tool[] {
     createElixir({
       name: 'Fortifying Elixir',
       rank: 6,
+      attunement: 'Attune',
       short_description: 'Fortifies you',
       description: `
         When you drink this \\glossterm{potion}, if you \\glossterm{attune} to its effects, you become \\fortified.

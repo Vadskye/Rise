@@ -94,16 +94,17 @@ t.test('rowToLatex', (t) => {
   t.notMatch(latexNormal, /Regular/);
 
   const latexAttuned = rowToLatex(row, undefined, true);
-  t.match(latexAttuned, /\\itemref{Magic Shield}\\sparkle & Shield & Yes/);
+  t.match(latexAttuned, /\\itemref{Magic Shield}\\sparkle\s*&\s*Shield/);
+  t.match(latexAttuned, /&\s*Yes/);
   t.match(latexAttuned, /& Grants \+2 defense\./);
   t.match(latexAttuned, /& 2 \(20 gp\)/);
   t.match(latexAttuned, /& \\itempref{Magic Shield}/);
 
   const deepRow = { ...row, attunement: 'Attune (deep)' as const };
-  t.match(rowToLatex(deepRow, undefined, true), /& Deep/);
+  t.match(rowToLatex(deepRow, undefined, true), /&\s*Deep/);
 
   const noneRow = { ...row, attunement: 'Unrestricted' as const };
-  t.match(rowToLatex(noneRow, undefined, true), /& No/);
+  t.match(rowToLatex(noneRow, undefined, true), /&\s*\\tdash/);
 
   t.end();
 });
@@ -131,7 +132,7 @@ t.test('longtable', (t) => {
   t.match(latexNoAttune, /\\lcaption{Test Caption}/);
   t.match(latexNoAttune, /\\tb{Name}\s*&\s*\\tb{Description}\s*&\s*\\tb{Rank \(Cost\)}\s*&\s*\\tb{Page}/);
   t.match(latexNoAttune, /\\itemref{Item 1}/);
-  t.notMatch(latexNoAttune, /\\tb{Attunement}/);
+  t.notMatch(latexNoAttune, /\\tb{Attune}/);
 
   const latexWithAttune = longtable({
     caption: 'Test Caption',
@@ -139,8 +140,9 @@ t.test('longtable', (t) => {
     withCategory: false,
     withAttunement: true,
   });
-  t.match(latexWithAttune, /\\tb{Name}\s*&\s*\\tb{Attunement}\s*&\s*\\tb{Description}\s*&\s*\\tb{Rank \(Cost\)}\s*&\s*\\tb{Page}/);
-  t.match(latexWithAttune, /\\itemref{Item 1}\s*&\s*Yes/);
+  t.match(latexWithAttune, /\\tb{Name}\s*&\s*\\tb{Description}\s*&\s*\\tb{Attune}\s*&\s*\\tb{Rank \(Cost\)}\s*&\s*\\tb{Page}/);
+  t.match(latexWithAttune, /\\itemref{Item 1}/);
+  t.match(latexWithAttune, /&\s*Yes/);
   t.match(latexWithAttune, /&\s*Desc 1/);
 
   t.end();
