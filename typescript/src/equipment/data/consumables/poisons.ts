@@ -1,10 +1,7 @@
-import { Tool, StandardItem, AttunementRequirement } from '../../types';
+import { Tool, RawConsumable } from '../../types';
 import { getPoisonDescription } from '../../poison';
 
-function createPoison(
-  data: Omit<StandardItem, 'magical' | 'rarity' | 'tags' | 'upgrades' | 'attunement'> &
-    Partial<Pick<StandardItem, 'upgrades' | 'tags'>> & { attunement: AttunementRequirement },
-): Tool {
+function createPoison(data: RawConsumable): Tool {
   return {
     category: 'Poison',
     item: {

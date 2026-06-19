@@ -27,6 +27,9 @@ export interface StandardItem {
   attunement: AttunementRequirement;
 }
 
+export type RawConsumable = Omit<StandardItem, 'magical' | 'rarity' | 'tags' | 'upgrades' | 'attunement'> &
+  Partial<Pick<StandardItem, 'tags' | 'upgrades'>> & { attunement: AttunementRequirement };
+
 /**
  * Expands an item into its upgrade variants, adding the '+' suffix to their names.
  */
