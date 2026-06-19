@@ -1,4 +1,4 @@
-import { ItemRarity, StandardItem, getUpgradeItems } from '../types';
+import { ItemRarity, StandardItem, getUpgradeItems, AttunementRequirement } from '../types';
 import { getRankAndPriceText } from '../item_price';
 import { getItemCreature } from '../item_creature';
 import { replacePlaceholders } from '../../latex/monsters/replace_placeholders';
@@ -13,6 +13,7 @@ export interface TableRow {
   rarity: ItemRarity;
   short_description: string;
   tags?: string[];
+  attunement: AttunementRequirement;
 }
 
 export function fromItem(item: StandardItem, consumable: boolean, category?: string): TableRow[] {
@@ -26,6 +27,7 @@ export function fromItem(item: StandardItem, consumable: boolean, category?: str
     rarity: item.rarity,
     short_description: item.short_description,
     tags: item.tags,
+    attunement: item.attunement,
   });
 
   for (const upgradedItem of getUpgradeItems(item)) {
@@ -38,6 +40,7 @@ export function fromItem(item: StandardItem, consumable: boolean, category?: str
       rarity: upgradedItem.rarity,
       short_description: upgradedItem.short_description,
       tags: upgradedItem.tags,
+      attunement: upgradedItem.attunement,
     });
   }
 
@@ -56,10 +59,9 @@ export function rowToLatex(
   const attunementSeparator = withAttunement ? '&' : '';
   let attunementText = '';
   if (withAttunement) {
-    const tags = row.tags || [];
-    if (tags.some((t) => t.toLowerCase() === 'attune (deep)')) {
+    if (row.attunement === 'Attune (deep)') {
       attunementText = 'Deep';
-    } else if (tags.some((t) => t.toLowerCase() === 'attune')) {
+    } else if (row.attunement === 'Attune') {
       attunementText = 'Yes';
     } else {
       attunementText = 'No';

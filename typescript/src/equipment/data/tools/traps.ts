@@ -22,6 +22,7 @@ function createTrap(data: Partial<StandardItem>, subskill: string): Tool {
       magical: false,
       rarity: 'Common',
       tags: [],
+      attunement: 'Unrestricted',
       upgrades: [],
       description: '',
       short_description: '',

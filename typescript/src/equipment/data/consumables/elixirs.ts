@@ -1,18 +1,27 @@
-import { Tool, StandardItem } from '../../types';
+import { Tool, StandardItem, AttunementRequirement } from '../../types';
 
 function createElixir(data: Partial<StandardItem>): Tool {
+  const dataTags = data.tags || [];
+  let attunement: AttunementRequirement = data.attunement || 'Attune';
+  if (dataTags.includes('Attune (deep)')) {
+    attunement = 'Attune (deep)';
+  } else if (dataTags.includes('Attune')) {
+    attunement = 'Attune';
+  }
+  const cleanedTags = dataTags.filter(t => t !== 'Attune' && t !== 'Attune (deep)');
   return {
     category: 'Potion',
     item: {
       magical: true,
       rarity: 'Common',
-      tags: ['Attune'],
       upgrades: [],
       description: '',
       short_description: '',
       name: '',
       rank: 0,
       ...data,
+      tags: cleanedTags,
+      attunement,
     },
   };
 }

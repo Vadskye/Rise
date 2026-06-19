@@ -7,6 +7,7 @@ function createAlchemicalItem(data: Partial<StandardItem>): Tool {
       magical: false,
       rarity: 'Common',
       tags: [],
+      attunement: 'Unrestricted',
       upgrades: [],
       description: '',
       short_description: '',

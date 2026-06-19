@@ -1,17 +1,26 @@
-import { Implement, StandardItem } from '../../types';
+import { Implement, StandardItem, AttunementRequirement } from '../../types';
 
 function staff(
-  item: Omit<StandardItem, 'magical' | 'rarity' | 'tags' | 'upgrades'> &
-    Partial<Pick<StandardItem, 'upgrades' | 'tags'>>,
+  item: Omit<StandardItem, 'magical' | 'rarity' | 'tags' | 'upgrades' | 'attunement'> &
+    Partial<Pick<StandardItem, 'upgrades' | 'tags' | 'attunement'>>,
 ): Implement {
+  const tags = item.tags || [];
+  let attunement: AttunementRequirement = item.attunement || 'Attune';
+  if (tags.includes('Attune (deep)')) {
+    attunement = 'Attune (deep)';
+  } else if (tags.includes('Attune')) {
+    attunement = 'Attune';
+  }
+  const cleanedTags = tags.filter(t => t !== 'Attune' && t !== 'Attune (deep)');
   return {
     kind: 'Staff',
     item: {
       magical: true,
       rarity: 'Common',
-      tags: item.tags || ['Attune'],
       upgrades: item.upgrades || [],
       ...item,
+      tags: cleanedTags,
+      attunement,
     },
   };
 }
@@ -26,7 +35,7 @@ function compositeStaffs(): Implement[] {
         This staff has two different rank 1 magic implement properties.
         Each property must not already require a \\glossterm{deep attunement}.
       `,
-      tags: ['Attune (deep)'],
+      attunement: 'Attune (deep)', tags: [],
     }),
     staff({
       name: 'Composite Staff, 2nd',
@@ -36,7 +45,7 @@ function compositeStaffs(): Implement[] {
         This staff has two different magic implement properties that are rank 2 or lower.
         Each property must not already require a \\glossterm{deep attunement}.
       `,
-      tags: ['Attune (deep)'],
+      attunement: 'Attune (deep)', tags: [],
     }),
     staff({
       name: 'Composite Staff, 3rd',
@@ -46,7 +55,7 @@ function compositeStaffs(): Implement[] {
         This staff has two different magic implement properties that are rank 3 or lower.
         Each property must not already require a \\glossterm{deep attunement}.
       `,
-      tags: ['Attune (deep)'],
+      attunement: 'Attune (deep)', tags: [],
     }),
   ];
 
@@ -60,7 +69,7 @@ function compositeStaffs(): Implement[] {
         This staff has two different magic implement properties that are rank ${n} or lower.
         Each property must not already require a \\glossterm{deep attunement}.
       `,
-        tags: ['Attune (deep)'],
+        attunement: 'Attune (deep)', tags: [],
       }),
     );
   };
@@ -91,7 +100,7 @@ export const staffs = (): Implement[] => [
     description: `
       Creatures that are \\frightened or \\panicked by you suffer a penalty to their Fortitude defense equal to the penalty they suffer to their Mental defense.
     `,
-    tags: ['Emotion', 'Attune'],
+    tags: ['Emotion'],
     upgrades: [
       {
         rank: 5,
@@ -107,7 +116,7 @@ export const staffs = (): Implement[] => [
     description: `
       Whenever you cause an enemy to be \\dazed as a \\glossterm{condition}, it is also \\glossterm{briefly} \\confused.
     `,
-    tags: ['Compulsion', 'Attune'],
+    tags: ['Compulsion'],
   }),
   staff({
     name: 'Extending Staff',
@@ -389,7 +398,7 @@ export const staffs = (): Implement[] => [
       If you do, you must add a different one of those tags to the ability, and the ability deals 2 \\glossterm{extra damage} if it deals damage.
       All of the attack's effects are unchanged.
     `,
-    tags: ['Cold', 'Electricity', 'Fire', 'Attune'],
+    tags: ['Cold', 'Electricity', 'Fire'],
     upgrades: [
       {
         rank: 6,
@@ -441,7 +450,7 @@ export const staffs = (): Implement[] => [
     rank: 4,
     short_description: 'Empowers you',
     description: 'You are \\empowered.',
-    tags: ['Attune (deep)'],
+    attunement: 'Attune (deep)', tags: [],
   }),
   staff({
     name: 'Staff of Overwhelming Power',
@@ -466,7 +475,7 @@ export const staffs = (): Implement[] => [
           \\item It sheds light in a 15 foot radius of \\glossterm{bright illumination}.
       \\end{raggeditemize}
     `,
-    tags: ['Fire', 'Attune'],
+    tags: ['Fire'],
     upgrades: [
       {
         rank: 5,
@@ -496,7 +505,7 @@ export const staffs = (): Implement[] => [
           \\item It sheds light in a 5 foot radius of \\glossterm{bright illumination}.
       \\end{raggeditemize}
     `,
-    tags: ['Fire', 'Attune'],
+    tags: ['Fire'],
     upgrades: [
       {
         rank: 7,
@@ -520,7 +529,7 @@ export const staffs = (): Implement[] => [
           \\item It sheds light in a 5 foot radius of \\glossterm{bright illumination}.
       \\end{raggeditemize}
     `,
-    tags: ['Fire', 'Attune'],
+    tags: ['Fire'],
     upgrades: [
       {
         rank: 4,

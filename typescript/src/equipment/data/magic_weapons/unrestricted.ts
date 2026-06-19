@@ -1,17 +1,26 @@
-import { MagicWeapon, StandardItem } from '../../types';
+import { MagicWeapon, StandardItem, AttunementRequirement } from '../../types';
 
 function unrestricted(
-  item: Omit<StandardItem, 'magical' | 'rarity' | 'tags' | 'upgrades'> &
-    Partial<Pick<StandardItem, 'upgrades' | 'tags'>>,
+  item: Omit<StandardItem, 'magical' | 'rarity' | 'tags' | 'upgrades' | 'attunement'> &
+    Partial<Pick<StandardItem, 'upgrades' | 'tags' | 'attunement'>>,
 ): MagicWeapon {
+  const tags = item.tags || [];
+  let attunement: AttunementRequirement = item.attunement || 'Attune';
+  if (tags.includes('Attune (deep)')) {
+    attunement = 'Attune (deep)';
+  } else if (tags.includes('Attune')) {
+    attunement = 'Attune';
+  }
+  const cleanedTags = tags.filter(t => t !== 'Attune' && t !== 'Attune (deep)');
   return {
     kind: 'Unrestricted',
     item: {
       magical: true,
       rarity: 'Common',
-      tags: item.tags || ['Attune'],
       upgrades: item.upgrades || [],
       ...item,
+      tags: cleanedTags,
+      attunement,
     },
   };
 }
@@ -32,7 +41,7 @@ function energyWeapons(): MagicWeapon[] {
             \\item It sheds light in a 15 foot radius of \\glossterm{bright illumination}.
         \\end{raggeditemize}
       `,
-      tags: ['Cold', 'Electricity', 'Fire', 'Attune'],
+      tags: ['Cold', 'Electricity', 'Fire'],
       upgrades: [
         {
           rank: 6,
@@ -77,7 +86,7 @@ function energyWeapons(): MagicWeapon[] {
             \\item It sheds red light in a 15 foot radius of \\glossterm{bright illumination}.
         \\end{raggeditemize}
       `,
-      tags: ['Fire', 'Attune'],
+      tags: ['Fire'],
       upgrades: [
         {
           rank: 5,
@@ -105,7 +114,7 @@ function energyWeapons(): MagicWeapon[] {
             \\item It sheds yellow light in a 5 foot radius of \\glossterm{bright illumination}.
         \\end{raggeditemize}
       `,
-      tags: ['Electricity', 'Attune'],
+      tags: ['Electricity'],
       upgrades: [
         {
           rank: 7,
@@ -128,7 +137,7 @@ function energyWeapons(): MagicWeapon[] {
             \\item It sheds blue light in a 5 foot radius of \\glossterm{bright illumination}.
         \\end{raggeditemize}
       `,
-      tags: ['Cold', 'Attune'],
+      tags: ['Cold'],
       upgrades: [
         {
           rank: 4,
@@ -267,7 +276,7 @@ function compositeWeapons(): MagicWeapon[] {
         This weapon has two different rank 1 magic weapon properties.
         Each property must not already require a \\glossterm{deep attunement}.
       `,
-      tags: ['Attune (deep)'],
+      attunement: 'Attune (deep)', tags: [],
     }),
     unrestricted({
       name: 'Composite Weapon, 2nd',
@@ -277,7 +286,7 @@ function compositeWeapons(): MagicWeapon[] {
         This weapon has two different magic weapon properties that are rank 2 or lower.
         Each property must not already require a \\glossterm{deep attunement}.
       `,
-      tags: ['Attune (deep)'],
+      attunement: 'Attune (deep)', tags: [],
     }),
     unrestricted({
       name: 'Composite Weapon, 3rd',
@@ -287,7 +296,7 @@ function compositeWeapons(): MagicWeapon[] {
         This weapon has two different magic weapon properties that are rank 3 or lower.
         Each property must not already require a \\glossterm{deep attunement}.
       `,
-      tags: ['Attune (deep)'],
+      attunement: 'Attune (deep)', tags: [],
     }),
   ];
 
@@ -301,7 +310,7 @@ function compositeWeapons(): MagicWeapon[] {
         This weapon has two different magic weapon properties that are rank ${n} or lower.
         Each property must not already require a \\glossterm{deep attunement}.
       `,
-        tags: ['Attune (deep)'],
+        attunement: 'Attune (deep)', tags: [],
       }),
     );
   };
@@ -536,7 +545,7 @@ export const magicUnrestrictedWeapons = (): MagicWeapon[] => [
     short_description: 'Steals HP',
     description:
       'The first time each turn that you \\glossterm{injure} a \\trait{blooded} creature other than yourself with a \\glossterm{strike} using this weapon, you regain 1d6 hit points.',
-    tags: ['Attune (deep)'],
+    attunement: 'Attune (deep)', tags: [],
     upgrades: [
       {
         rank: 4,
@@ -606,7 +615,8 @@ export const magicUnrestrictedWeapons = (): MagicWeapon[] => [
           \\item It deals 1 \\glossterm{extra damage}.
       \\end{raggeditemize}
     `,
-    tags: ['Compulsion', 'Attune (deep)'],
+    tags: ['Compulsion'],
+        attunement: 'Attune (deep)',
     upgrades: [
       {
         rank: 5,
@@ -629,7 +639,7 @@ export const magicUnrestrictedWeapons = (): MagicWeapon[] => [
       The strike is made against the target's Fortitude defense instead of its Armor defense, and it gains the \\atPoison tag.
       After you use this ability, you \\glossterm{briefly} cannot do so again.
     `,
-    tags: ['Poison', 'Attune'],
+    tags: ['Poison'],
     upgrades: [
       {
         rank: 4,
@@ -658,7 +668,8 @@ export const magicUnrestrictedWeapons = (): MagicWeapon[] => [
           \\item Poisons delivered with strikes using it gain a +2 accuracy bonus.
       \\end{raggeditemize}
     `,
-    tags: ['Poison', 'Attune (deep)'],
+    tags: ['Poison'],
+        attunement: 'Attune (deep)',
     upgrades: [
       {
         rank: 6,

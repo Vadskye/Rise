@@ -1,6 +1,7 @@
 import type { RiseTag } from '@src/character_sheet/rise_data';
 
 export type ItemRarity = 'Common' | 'Relic';
+export type AttunementRequirement = 'Attune' | 'Attune (deep)' | 'Unrestricted';
 
 export interface ItemUpgrade {
   description: string;
@@ -23,6 +24,7 @@ export interface StandardItem {
   /** Variants of this item at higher ranks. */
   upgrades: ItemUpgrade[];
   tags: RiseTag[];
+  attunement: AttunementRequirement;
 }
 
 /**
@@ -40,6 +42,7 @@ export function getUpgradeItems(item: StandardItem): StandardItem[] {
       rarity: item.rarity,
       upgrades: [],
       tags: item.tags,
+      attunement: item.attunement,
     };
   });
 }
