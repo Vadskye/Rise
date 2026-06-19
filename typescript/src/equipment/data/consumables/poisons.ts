@@ -1,19 +1,17 @@
-import { Tool, StandardItem } from '../../types';
+import { Tool, StandardItem, AttunementRequirement } from '../../types';
 import { getPoisonDescription } from '../../poison';
 
-function createPoison(data: Partial<StandardItem>): Tool {
+function createPoison(
+  data: Omit<StandardItem, 'magical' | 'rarity' | 'tags' | 'upgrades' | 'attunement'> &
+    Partial<Pick<StandardItem, 'upgrades' | 'tags'>> & { attunement: AttunementRequirement },
+): Tool {
   return {
     category: 'Poison',
     item: {
       magical: false,
       rarity: 'Common',
-      tags: ['Poison'],
-      attunement: 'Unrestricted',
-      upgrades: [],
-      description: '',
-      short_description: '',
-      name: '',
-      rank: 0,
+      tags: data.tags || ['Poison'],
+      upgrades: data.upgrades || [],
       ...data,
     },
   };
@@ -24,6 +22,7 @@ export function poisons(): Tool[] {
     createPoison({
       name: 'Poison, Snakeroot',
       rank: 0,
+      attunement: 'Unrestricted',
       short_description: 'Repeatedly deals $dr1l damage',
       description: getPoisonDescription(
         'contact',
@@ -37,6 +36,7 @@ export function poisons(): Tool[] {
     createPoison({
       name: 'Poison, Nightshade',
       rank: 2,
+      attunement: 'Unrestricted',
       short_description: 'Repeatedly deals $dr3l damage',
       description: getPoisonDescription(
         'ingestion',
@@ -50,6 +50,7 @@ export function poisons(): Tool[] {
     createPoison({
       name: 'Poison, Wolfsbane',
       rank: 1,
+      attunement: 'Unrestricted',
       short_description: 'Repeatedly deals $dr1l damage',
       description: getPoisonDescription(
         'contact',
@@ -63,6 +64,7 @@ export function poisons(): Tool[] {
     createPoison({
       name: 'Poison, Jellyfish Extract',
       rank: 1,
+      attunement: 'Unrestricted',
       short_description: 'Repeatedly deals $dr0l damage',
       description: getPoisonDescription(
         'contact',
@@ -76,6 +78,7 @@ export function poisons(): Tool[] {
     createPoison({
       name: 'Poison, Baneberry',
       rank: 1,
+      attunement: 'Unrestricted',
       short_description: 'Repeatedly deals $dr1l damage',
       description: getPoisonDescription(
         'ingestion',
@@ -89,6 +92,7 @@ export function poisons(): Tool[] {
     createPoison({
       name: 'Poison, Tree Frog Coating',
       rank: 2,
+      attunement: 'Unrestricted',
       short_description: 'Repeatedly deals $dr2l damage',
       description: getPoisonDescription(
         'contact',
@@ -102,6 +106,7 @@ export function poisons(): Tool[] {
     createPoison({
       name: 'Poison, Bloodroot',
       rank: 3,
+      attunement: 'Unrestricted',
       short_description: 'Repeatedly deals $dr3l damage',
       description: getPoisonDescription(
         'contact',
@@ -115,6 +120,7 @@ export function poisons(): Tool[] {
     createPoison({
       name: 'Poison, Arsenic',
       rank: 2,
+      attunement: 'Unrestricted',
       short_description: 'Repeatedly deals $dr3l damage',
       description: getPoisonDescription(
         'ingestion',
@@ -128,6 +134,7 @@ export function poisons(): Tool[] {
     createPoison({
       name: 'Poison, Dragon Bile',
       rank: 4,
+      attunement: 'Unrestricted',
       short_description: 'Repeatedly deals $dr3l damage',
       description: getPoisonDescription(
         'contact',
@@ -141,6 +148,7 @@ export function poisons(): Tool[] {
     createPoison({
       name: 'Poison, Mind Fog',
       rank: 4,
+      attunement: 'Unrestricted',
       short_description: 'Repeatedly deals $dr2l damage and eventually stuns',
       description: getPoisonDescription(
         'ingestion',
@@ -155,6 +163,7 @@ export function poisons(): Tool[] {
     createPoison({
       name: 'Poison, Black Lotus',
       rank: 6,
+      attunement: 'Unrestricted',
       short_description: 'Repeatedly deals $dr5l damage',
       description: getPoisonDescription(
         'contact',
@@ -174,6 +183,7 @@ function injuryPoisons(): Tool[] {
     createPoison({
       name: 'Poison, Asp Venom',
       rank: 1,
+      attunement: 'Unrestricted',
       short_description: 'Stuns',
       description: getPoisonDescription(
         'injury',
@@ -188,6 +198,7 @@ function injuryPoisons(): Tool[] {
     createPoison({
       name: 'Poison, Giant Wasp Venom',
       rank: 2,
+      attunement: 'Unrestricted',
       short_description: 'Slows',
       description: getPoisonDescription(
         'injury',
@@ -202,6 +213,7 @@ function injuryPoisons(): Tool[] {
     createPoison({
       name: 'Poison, Black Adder Venom',
       rank: 2,
+      attunement: 'Unrestricted',
       short_description: 'Repeatedly deals $dr3l damage',
       description: getPoisonDescription(
         'injury',
@@ -215,6 +227,7 @@ function injuryPoisons(): Tool[] {
     createPoison({
       name: 'Poison, Wyvern Venom',
       rank: 3,
+      attunement: 'Unrestricted',
       short_description: 'Repeatedly deals $dr3l damage',
       description: getPoisonDescription(
         'injury',
@@ -228,6 +241,7 @@ function injuryPoisons(): Tool[] {
     createPoison({
       name: 'Poison, Blood Leech Venom',
       rank: 4,
+      attunement: 'Unrestricted',
       short_description: 'Repeatedly deals $dr4l damage',
       description: getPoisonDescription(
         'injury',
@@ -241,6 +255,7 @@ function injuryPoisons(): Tool[] {
     createPoison({
       name: 'Poison, Purple Worm Venom',
       rank: 5,
+      attunement: 'Unrestricted',
       short_description: 'Repeatedly deals $dr6l damage',
       description: getPoisonDescription(
         'injury',
