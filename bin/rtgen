@@ -39,7 +39,7 @@ npm run generate_latex -- -t equipment_consumable_tools_descriptions -o ../compr
 npm run generate_latex -- -t equipment_consumable_tools_tables -o ../comprehensive_codex/generated/consumable_tools_table.tex >> "$logfile"
 npm run generate_latex -- -t equipment_permanent_tools_descriptions -o ../comprehensive_codex/generated/permanent_tools.tex >> "$logfile"
 npm run generate_latex -- -t equipment_permanent_tools_tables -o ../comprehensive_codex/generated/permanent_tools_table.tex >> "$logfile"
-npm run generate_latex -- -t equipment_relic_descriptions -o ../comprehensive_codex/generated/relics.tex >> "$logfile"
+npm run generate_latex -- -t equipment_relic_descriptions -o ../core_book/generated/relics.tex >> "$logfile"
 npm run generate_latex -- -t equipment_relic_tables -o ../comprehensive_codex/generated/relics_table.tex >> "$logfile"
 npm run generate_latex -- -t equipment_everything_table -o ../core_book/generated/everything_table.tex >> "$logfile"
 
