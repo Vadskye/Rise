@@ -173,6 +173,7 @@ function utilityWeapons(): MagicWeapon[] {
          When you do, it changes shape into a new weapon of your choice from the weapon's original weapon group.
          If the weapon's original form belongs to multiple weapon groups, the weapon can only change into weapons from one of those weapon groups.
          The new shape lasts until you activate the weapon again.
+         When the weapon changes shape, any ammunition loaded into it falls out and it become unloaded.
 
          When this effect ends for any reason, the weapon returns to its original form.
       `,
