@@ -7,7 +7,11 @@ export function permanentToolsTable(): string {
   const items = allTools({ consumable: false, rarity: 'Common' });
   const rows = items.flatMap((t) => table.fromItem(t.item, false, getToolCategoryName(t.category)));
   table.standardSort(rows);
-  return table.longtable('Permanent Tools, Goods, and Mounts', rows, true);
+  return table.longtable({
+    caption: 'Permanent Tools, Goods, and Mounts',
+    rows,
+    withCategory: true,
+  });
 }
 
 export function permanentToolsDescriptions(): string {

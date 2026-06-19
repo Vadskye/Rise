@@ -12,6 +12,7 @@ export interface TableRow {
   rank: number;
   rarity: ItemRarity;
   short_description: string;
+  tags?: string[];
 }
 
 export function fromItem(item: StandardItem, consumable: boolean, category?: string): TableRow[] {
@@ -24,6 +25,7 @@ export function fromItem(item: StandardItem, consumable: boolean, category?: str
     rank: item.rank,
     rarity: item.rarity,
     short_description: item.short_description,
+    tags: item.tags,
   });
 
   for (const upgradedItem of getUpgradeItems(item)) {
@@ -35,21 +37,40 @@ export function fromItem(item: StandardItem, consumable: boolean, category?: str
       rank: upgradedItem.rank,
       rarity: upgradedItem.rarity,
       short_description: upgradedItem.short_description,
+      tags: upgradedItem.tags,
     });
   }
 
   return rows;
 }
 
-export function rowToLatex(row: TableRow, percentile?: string): string {
+export function rowToLatex(
+  row: TableRow,
+  percentile?: string,
+  withAttunement: boolean = false,
+): string {
   const sparkle = row.magical ? '\\sparkle' : '';
   const categorySeparator = row.category ? '&' : '';
   const category = row.category || '';
+
+  const attunementSeparator = withAttunement ? '&' : '';
+  let attunementText = '';
+  if (withAttunement) {
+    const tags = row.tags || [];
+    if (tags.some((t) => t.toLowerCase() === 'attune (deep)')) {
+      attunementText = 'Deep';
+    } else if (tags.some((t) => t.toLowerCase() === 'attune')) {
+      attunementText = 'Yes';
+    } else {
+      attunementText = 'No';
+    }
+  }
+
   const rankAndPrice = getRankAndPriceText(row.rank, row.rarity);
   const pageOrPercentile = percentile || `\\itempref{${row.name}}`;
 
   const latex = `
-    \\itemref{${row.name}}${sparkle} ${categorySeparator} ${category}
+    \\itemref{${row.name}}${sparkle} ${categorySeparator} ${category} ${attunementSeparator} ${attunementText}
     & ${row.short_description.trim()}
     & ${rankAndPrice}
     & ${pageOrPercentile}
@@ -68,13 +89,16 @@ export function tableHeader(
   nameText: string,
   withCategory: boolean,
   withPercentile: boolean,
+  withAttunement: boolean = false,
 ): string {
   const categorySeparator = withCategory ? '&' : '';
   const categoryColumnName = withCategory ? ' \\tb{Type}' : '';
+  const attunementSeparator = withAttunement ? '&' : '';
+  const attunementColumnName = withAttunement ? ' \\tb{Attunement}' : '';
   const pageOrPercentile = withPercentile ? '\\tb{d100}' : '\\tb{Page}';
 
   return `
-    \\tb{${nameText}}${categorySeparator}${categoryColumnName} & \\tb{Description} & \\tb{Rank (Cost)} & ${pageOrPercentile} \\tableheaderrule
+    \\tb{${nameText}}${categorySeparator}${categoryColumnName}${attunementSeparator}${attunementColumnName} & \\tb{Description} & \\tb{Rank (Cost)} & ${pageOrPercentile} \\tableheaderrule
   `.trim();
 }
 
@@ -95,15 +119,32 @@ export function standardSort(rows: TableRow[]): void {
   });
 }
 
-export function longtable(caption: string, rows: TableRow[], withCategory: boolean): string {
-  const categoryAndEffects = withCategory ? 'p{5em} p{20em}' : 'p{26em}';
+export interface LongtableOptions {
+  caption: string;
+  rows: TableRow[];
+  withCategory: boolean;
+  withAttunement?: boolean;
+}
+
+export function longtable(options: LongtableOptions): string {
+  const { caption, rows, withCategory, withAttunement = false } = options;
+  let colSpec = '';
+  if (withCategory && withAttunement) {
+    colSpec = 'p{17em} p{5em} p{5em} p{15em} p{6em} p{3em}';
+  } else if (withCategory) {
+    colSpec = 'p{17em} p{5em} p{20em} p{6em} p{3em}';
+  } else if (withAttunement) {
+    colSpec = 'p{17em} p{5em} p{21em} p{6em} p{3em}';
+  } else {
+    colSpec = 'p{17em} p{26em} p{6em} p{3em}';
+  }
 
   const content = `
 \\begin{longtablewrapper}
-\\begin{longtable}{p{17em} ${categoryAndEffects} p{6em} p{3em}}
+\\begin{longtable}{${colSpec}}
     ${tableCaption(caption)}
-    ${tableHeader('Name', withCategory, false)}
-    ${rows.map((r) => rowToLatex(r)).join('\n')}
+    ${tableHeader('Name', withCategory, false, withAttunement)}
+    ${rows.map((r) => rowToLatex(r, undefined, withAttunement)).join('\n')}
 \\end{longtable}
 \\end{longtablewrapper}
   `.trim();
@@ -111,11 +152,12 @@ export function longtable(caption: string, rows: TableRow[], withCategory: boole
   return latexify(content);
 }
 
-export function longtablePercentile(
-  caption: string,
-  rows: TableRow[],
-  withCategory: boolean,
-): string {
+export function longtablePercentile({
+  caption,
+  rows,
+  withCategory,
+  withAttunement = false,
+}: LongtableOptions): string {
   const percentileRows: { range: string; row: TableRow }[] = [];
 
   for (let rank = -1; rank <= 8; rank++) {
@@ -138,14 +180,23 @@ export function longtablePercentile(
     }
   }
 
-  const categoryAndEffects = withCategory ? 'p{5em} p{20em}' : 'p{26em}';
+  let colSpec = '';
+  if (withCategory && withAttunement) {
+    colSpec = 'p{17em} p{5em} p{5em} p{15em} p{6em} p{3em}';
+  } else if (withCategory) {
+    colSpec = 'p{17em} p{5em} p{20em} p{6em} p{3em}';
+  } else if (withAttunement) {
+    colSpec = 'p{17em} p{5em} p{21em} p{6em} p{3em}';
+  } else {
+    colSpec = 'p{17em} p{26em} p{6em} p{3em}';
+  }
 
   const content = `
 \\begin{longtablewrapper}
-\\begin{longtable}{p{17em} ${categoryAndEffects} p{6em} p{3em}}
+\\begin{longtable}{${colSpec}}
     ${tableCaption(caption)}
-    ${tableHeader('Name', withCategory, true)}
-    ${percentileRows.map((pr) => rowToLatex(pr.row, pr.range)).join('\n')}
+    ${tableHeader('Name', withCategory, true, withAttunement)}
+    ${percentileRows.map((pr) => rowToLatex(pr.row, pr.range, withAttunement)).join('\n')}
 \\end{longtable}
 \\end{longtablewrapper}
   `.trim();

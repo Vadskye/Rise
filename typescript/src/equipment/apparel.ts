@@ -65,5 +65,10 @@ export function apparelTable(): string {
 
   standardSort(rows);
 
-  return longtable('Magic Apparel', rows, true);
+  return longtable({
+    caption: 'Magic Apparel',
+    rows,
+    withCategory: true,
+    withAttunement: true,
+  });
 }
