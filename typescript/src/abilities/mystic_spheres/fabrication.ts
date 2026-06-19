@@ -109,6 +109,7 @@ export const fabrication: MysticSphere = {
       effect: `
         Choose one Small or smaller object within \\medrange.
         You create a nonmagical copy of that item that appears in your hands or at your feet.
+        The item's rank cannot exceed your spellcasting rank with this spell.
         Make a Craft check with a \\plus5 bonus to determine how closely the appearance and function of the copy matches the original.
         The difficulty value of this check is equal to the difficulty of crafting the item normally.
 
