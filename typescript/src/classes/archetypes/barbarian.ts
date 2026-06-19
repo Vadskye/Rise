@@ -12,7 +12,7 @@ export function battleforgedResilience(): RankAbility[] {
       rank: 1,
       description: `
         \\begin{activeability}{Second Wind}{\\glossterm{Minor action}}
-          \\abilitycost Two \\glossterm{fatigue levels}, and you cannot use this ability again until you finish a \\glossterm{short rest}.
+          \\abilitycost Two \\glossterm{stamina}, and you cannot use this ability again until you finish a \\glossterm{short rest}.
           \\rankline
           You regain half of your maximum \\glossterm{hit points}.
         \\end{activeability}
@@ -75,7 +75,7 @@ export function battleforgedResilience(): RankAbility[] {
       description: `
         You can use the \\ability{recover} and \\ability{second wind} abilities any number of times between short rests.
         In addition, when you use the \\ability{recover} ability, you can also remove a \\glossterm{vital wound}.
-        When you do, you increase your \\glossterm{fatigue level} by two.
+        When you do, you reduce your \\glossterm{stamina} by two.
       `,
     },
     {
@@ -287,7 +287,7 @@ export function outlandSavage(): RankAbility[] {
       isMagical: false,
       rank: 7,
       description: `
-        Once per turn, you can use the \\ability{sprint} ability without increasing your \\glossterm{fatigue level}.
+        Once per turn, you can use the \\ability{sprint} ability without spending \\glossterm{stamina}.
         After using this ability, you \\briefly can't use it again.
       `,
     },

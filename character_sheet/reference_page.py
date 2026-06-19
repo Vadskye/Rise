@@ -69,7 +69,7 @@ def vital_roll_effect(roll: int | str) -> str:
         1: "Unconscious below half HP",
         2: "-1 accuracy",
         3: "-5 foot speed",
-        4: "-2 fatigue tolerance",
+        4: "-2 maximum stamina",
         5: "-1 all defenses",
         6: "-2 Brawn",
         7: "-2 Fortitude",
@@ -208,7 +208,7 @@ def common_concepts():
                 + " !setattr --name @{character_name} --silent"
                 + " --hit_points|@{hit_points_maximum}"
                 + " --damage_resistance|@{damage_resistance_maximum}"
-                + " --fatigue_points|0"
+                + " --stamina|@{maximum_stamina}"
                 + "!!!"
                 + " {{desc=@{character_name} finishes a long rest}}"
             ),
@@ -243,7 +243,7 @@ def common_concepts():
             {long_rest}: Resting for eight hours is considered a long rest. When you finish a long rest, you gain the following benefits.
             <ul>
                 <li>You remove one of your vital wounds.</li>
-                <li>Your fatigue level becomes 0.</li>
+                <li>Your current stamina become equal to your maximum stamina.</li>
             </ul>
         """
             ),

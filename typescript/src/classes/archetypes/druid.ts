@@ -462,7 +462,7 @@ export function shifter(): RankAbility[] {
           % This is about as strong as a r3 deep attunement - class feature plus natural sunlight requirement is probably enough?
           \\rank{4} The healing increases to be equal to your \\glossterm{power}.
           \\rank{7} When you finish a \\glossterm{short rest} while you are in natural sunlight, you can remove a \\glossterm{vital wound}.
-          When you do, you increase your \\glossterm{fatigue level} by four.
+          When you do, you reduce your \\glossterm{stamina} by four.
         \\end{magicalactiveability}
 
         \\begin{magicalactiveability}{Plantspeaker}{Standard action}
@@ -554,7 +554,7 @@ export function shifter(): RankAbility[] {
       rank: 7,
       description: `
         When you use your \\ability{wild aspect} ability, you can take on two aspects at once, gaining the full benefits of both.
-        When you do, you increase your \\glossterm{fatigue level} by two.
+        When you do, you reduce your \\glossterm{stamina} by two.
         This hybrid aspect only lasts for ten minutes, at which point you choose which single aspect remains active.
       `,
     },
@@ -586,7 +586,7 @@ export function wildspeaker(): RankAbility[] {
             \\item Its size category is Medium, and its \\glossterm{base speed} is 30 feet.
             \\item Its level is equal to your level.
             \\item All of its attributes are 0 except for Intelligence, which it does not have.
-            \\item It has no \\glossterm{resources}, and it cannot use abilities that increase its fatigue level.
+            \\item It has no \\glossterm{resources}, and it cannot use abilities that reduce its stamina.
             \\item Its maximum \\glossterm{hit points} are equal to your level \\x your rank in this archetype, plus 10 additional hit points.
             \\item Its \\glossterm{injury point} is equal to half its maximum hit points.
             \\item Each of its \\glossterm{defenses} is equal to 4 \\add half your level.

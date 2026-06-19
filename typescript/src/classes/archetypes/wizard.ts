@@ -222,8 +222,8 @@ export function arcaneScholar(): RankAbility[] {
         \\par You can choose this insight multiple times, gaining access to an additional mystic sphere each time.
 
         \\parhead{Ritual Master} You are exceptionally skilled at performing rituals quickly and efficiently.
-        When you initiate a ritual, the time required and fatigue level cost to complete that ritual is halved.
-        This cannot reduce the ritual's fatigue level cost to zero.
+        When you initiate a ritual, the time required and stamina cost to complete that ritual is halved.
+        This cannot reduce the ritual's stamina cost to zero.
 
         \\parhead{Soulwoven Spell} Choose a rank 1 spell you know with the \\atAttune tag that is not a \\glossterm{deep attunement}.
         That spell becomes permanently active on you without requiring an \\glossterm{attunement point}.
@@ -253,13 +253,13 @@ export function arcaneScholar(): RankAbility[] {
           \\abilitytags \\atAttune
           % If any spells take more than one standard action, they would need to be excluded from Contingency, but none exist
           % You can apply this ability to any arcane spell that can be cast as a \\glossterm{standard action} or \\glossterm{minor action}.
-          \\abilitycost Two \\glossterm{fatigue levels} (see text).
+          \\abilitycost Two \\glossterm{stamina} (see text).
           \\rankline
           When you use this ability, you choose a spell that you know.
           The spell has no immediate effect.
           Instead, you specify circumstances that will automatically cause the spell to take effect.
           You cannot consciously control the spell after setting the circumstances, and any attacks made as part of the spell's resolution are \\glossterm{reactive attacks}.
-          When the spell takes effect, you increase your \\glossterm{fatigue level} by two.
+          When the spell takes effect, you reduce your \\glossterm{stamina} by two.
 
           The spell can be set to trigger in response to any circumstances that a typical human observing you and your situation could detect.
           For example, you could specify \`\`when I fall at least 50 feet'' or \`\`when I take a \\glossterm{vital wound}'', but not \`\`when there is an invisible creature within 50 feet of me'' or \`\`when I have only one \\glossterm{hit point} remaining.''
@@ -288,7 +288,7 @@ export function arcaneScholar(): RankAbility[] {
       isMagical: true,
       rank: 5,
       description: `
-        When your \\ability{contingency} activates, you only increase your fatigue level by one.
+        When your \\ability{contingency} activates, you only reduce your stamina by one.
       `,
     },
     {

@@ -7,7 +7,7 @@ import {
   getClassShorthand,
   getClassAlignment,
   getClassDefenseBonus,
-  getClassFatigueTolerance,
+  getClassMaxStamina,
   getClassInsightPoints,
   getClassVitalRollBonus,
   getClassAttunementPoints,
@@ -26,7 +26,7 @@ export {
   getClassShorthand,
   getClassAlignment,
   getClassDefenseBonus,
-  getClassFatigueTolerance,
+  getClassMaxStamina,
   getClassInsightPoints,
   getClassVitalRollBonus,
   getClassAttunementPoints,
@@ -436,7 +436,7 @@ export function calculateClassPointTotal(cls: Class): number {
 
   return (
     getClassAttunementPoints(cls) * 6 +
-    getClassFatigueTolerance(cls) * 2 +
+    getClassMaxStamina(cls) * 2 +
     getClassInsightPoints(cls) * 3 +
     getClassTrainedSkills(cls) * 2 +
     Math.round(skillCount / 8.0) +

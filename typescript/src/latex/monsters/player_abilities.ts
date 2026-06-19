@@ -62,11 +62,11 @@ function replaceGenericTerms(
     abilityPart = abilityPart.replace(pattern, replacement as any);
   }
 
-  // Assume monsters always pay the fatigue and don't track it. Cheating!
+  // Assume monsters always pay the stamina and don't track it. Cheating!
   // This is made a bit more complicated because the original latex could have line
   // breaks, since we're joining multiple sentences together.
   replace(
-    /\bYou can increase your (fatigue level|\\glossterm{fatigue level}) by one\.\n? +If you do, you/g,
+    /\bYou can (?:spend|increase) (?:one|your) (stamina|\\glossterm{stamina})(?: by one)?\.\n? +If you do, you/g, // nolint
     'You',
   );
 
@@ -738,7 +738,7 @@ function reformatAbilityCost(ability: Pick<ActiveAbility, 'cost'>) {
     return;
   }
 
-  if (ability.cost === 'One optional \\glossterm{fatigue level} (see text).') {
+  if (ability.cost === 'One optional \\glossterm{stamina} (see text).') {
     delete ability.cost;
   } else {
     ability.cost = ability.cost.replace(

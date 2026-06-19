@@ -498,7 +498,7 @@ export const toxicology: MysticSphere = {
     {
       name: 'Healing Salve',
 
-      cost: 'One \\glossterm{fatigue level} from the target.',
+      cost: 'One \\glossterm{stamina} from the target.',
       // +1dr for short range, +1dr for healing bonus, so dr3.
       effect: `
         Choose yourself or an \\glossterm{ally} within \\shortrange.
@@ -514,7 +514,7 @@ export const toxicology: MysticSphere = {
     {
       name: 'Greater Healing Salve',
 
-      cost: 'One \\glossterm{fatigue level} from the target.',
+      cost: 'One \\glossterm{stamina} from the target.',
       functionsLike: {
         name: 'healing salve',
         exceptThat: 'the healing increases to \\hpranksix.',
@@ -528,7 +528,7 @@ export const toxicology: MysticSphere = {
     {
       name: 'Bitter Remedy',
 
-      cost: 'Two \\glossterm{fatigue levels} from the target.',
+      cost: 'Two \\glossterm{stamina} from the target.',
       effect: `
         Choose yourself or an \\glossterm{ally} you \\glossterm{touch}.
         The target removes one of its \\glossterm{vital wounds}.
@@ -544,7 +544,7 @@ export const toxicology: MysticSphere = {
     {
       name: 'Efficient Bitter Remedy',
 
-      cost: 'Two \\glossterm{fatigue levels} from the target.',
+      cost: 'Two \\glossterm{stamina} from the target.',
       functionsLike: {
         name: 'bitter remedy',
         exceptThat: `the vital wound created by this spell was no vital wound effect.`,
@@ -558,7 +558,7 @@ export const toxicology: MysticSphere = {
     {
       name: 'Cleansing Draught',
 
-      cost: 'One \\glossterm{fatigue level} from the target.',
+      cost: 'One \\glossterm{stamina} from the target.',
       effect: `
         You or an \\glossterm{ally} you \\glossterm{touch} can remove a \\glossterm{condition}.
       `,

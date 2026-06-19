@@ -3,7 +3,7 @@ import { convertRitualToLatex } from './convert_ritual_to_latex';
 import { RitualDefinition } from '@src/abilities';
 
 t.test('convertRitualToLatex', (t) => {
-  t.test('should include fatigue cost when fatigueCost is true', (t) => {
+  t.test('should include stamina cost when staminaCost is true', (t) => {
     const ritual: RitualDefinition = {
       name: 'Test Ritual',
       usageTime: 'one hour',
@@ -11,32 +11,32 @@ t.test('convertRitualToLatex', (t) => {
       roles: ['narrative'],
       spheres: ['Astromancy'],
       effect: 'This is a test effect.',
-      fatigueCost: true,
+      staminaCost: true,
     };
     const latex = convertRitualToLatex(ritual);
     t.match(
       latex,
-      /\\abilitycost one \\glossterm\{fatigue level\} from the ritual's participants\./,
+      /\\abilitycost one \\glossterm\{stamina\} from the ritual's participants\./,
     );
     t.end();
   });
 
-  t.test('should not include fatigue cost when fatigueCost is false', (t) => {
+  t.test('should not include stamina cost when staminaCost is false', (t) => {
     const ritual: RitualDefinition = {
-      name: 'Test Ritual No Fatigue',
+      name: 'Test Ritual No Stamina',
       usageTime: 'one hour',
       rank: 1,
       roles: ['narrative'],
       spheres: ['Astromancy'],
       effect: 'This is a test effect.',
-      fatigueCost: false,
+      staminaCost: false,
     };
     const latex = convertRitualToLatex(ritual);
     t.notMatch(latex, /This ritual requires/);
     t.end();
   });
 
-  t.test('should include increased fatigue cost for 24 hour rituals', (t) => {
+  t.test('should include higher stamina cost for 24 hour rituals', (t) => {
     const ritual: RitualDefinition = {
       name: 'Long Ritual',
       usageTime: '24 hours',
@@ -44,13 +44,13 @@ t.test('convertRitualToLatex', (t) => {
       roles: ['narrative'],
       spheres: ['Astromancy'],
       effect: 'This is a test effect.',
-      fatigueCost: true,
+      staminaCost: true,
     };
     const latex = convertRitualToLatex(ritual);
     // 2^2 * 2 = 8
     t.match(
       latex,
-      /\\abilitycost 8 \\glossterm\{fatigue levels\} from the ritual's participants\./,
+      /\\abilitycost 8 \\glossterm\{stamina\} from the ritual's participants\./,
     );
     t.end();
   });
@@ -63,7 +63,7 @@ t.test('convertRitualToLatex', (t) => {
       roles: ['narrative'],
       spheres: ['Astromancy'],
       effect: 'This is a test effect.',
-      fatigueCost: true,
+      staminaCost: true,
       materialCost: true,
     };
     const latex = convertRitualToLatex(ritual);

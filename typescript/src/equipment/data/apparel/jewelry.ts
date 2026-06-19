@@ -118,7 +118,7 @@ function amulets(): Apparel[] {
           'Grants +1d8 healing with \\ability{divine aid} and \\ability{lay on hands}',
         description: `
             When you use the \\ability{divine aid} cleric ability or the \\ability{lay on hands} paladin ability, the target regains an additional 1d8 hit points.
-            This is still limited by half the target's maximum hit points unless you increase your fatigue, as normal.
+            This is still limited by half the target's maximum hit points unless you reduce your stamina, as normal.
         `,
         magical: true,
         upgrades: [
@@ -144,9 +144,9 @@ function amulets(): Apparel[] {
       item: {
         name: 'Amulet of Revivification',
         rank: 7,
-        short_description: 'Reduces fatigue from \\ability{revivify}',
+        short_description: 'Reduces stamina cost of \\ability{revivify}',
         description: `
-            When you use the \\ability{revivify} cleric ability, you only increase your \\glossterm{fatigue level} by three instead of by four.
+            When you use the \\ability{revivify} cleric ability, you only reduce your \\glossterm{stamina} by three instead of by four.
         `,
         magical: true,
         upgrades: [],
@@ -482,14 +482,14 @@ function rings(): Apparel[] {
             When you do, you may remove a \\glossterm{condition} affecting you.
             If you remove a condition in this way, you are \\glossterm{briefly} \\empowered.
 
-            After you activate this item, you increase your \\glossterm{fatigue level} by one.
+            After you activate this item, you reduce your \\glossterm{stamina} by one.
         `,
         magical: true,
         upgrades: [
           {
             rank: 4,
             short_description: 'Can remove a condition to gain power',
-            description: 'Activating this ring does not increase your fatigue level.',
+            description: 'Activating this ring does not reduce your stamina.',
           },
         ],
         tags: ['Attune'],
@@ -504,7 +504,7 @@ function rings(): Apparel[] {
         short_description: 'Can exert to breathe briefly',
         description: `
             You can activate this item as a \\glossterm{minor action}.
-            When you do, you increase your \\glossterm{fatigue level} by one, and you can breathe in clean, fresh air regardless of your environment for one minute.
+            When you do, you reduce your \\glossterm{stamina} by one, and you can breathe in clean, fresh air regardless of your environment for one minute.
             This can be used in emergencies to save yourself from drowning or other perils.
         `,
         magical: true,
@@ -638,14 +638,14 @@ function rings(): Apparel[] {
             You can activate this ring as a standard action.
             When you do, you remove one \\glossterm{condition} affecting you.
 
-            After you activate this item, you increase your \\glossterm{fatigue level} by one.
+            After you activate this item, you reduce your \\glossterm{stamina} by one.
         `,
         magical: true,
         upgrades: [
           {
             rank: 3,
             short_description: 'Can remove a condition',
-            description: 'Activating this item does not increase your fatigue level.',
+            description: 'Activating this item does not reduce your stamina.',
           },
         ],
         tags: ['Attune'],
@@ -662,7 +662,7 @@ function rings(): Apparel[] {
             You can activate this ring as a \\glossterm{minor action}.
             When you do, you remove one \\glossterm{condition} affecting you.
 
-            After you activate this item, you increase your \\glossterm{fatigue level} by one.
+            After you activate this item, you reduce your \\glossterm{stamina} by one.
         `,
         magical: true,
         upgrades: [],

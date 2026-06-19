@@ -58,7 +58,7 @@ You can either skim past terms you don't yet understand or look them up as you g
       It has the following effects:
       \begin{raggeditemize}
         \item You add your Constitution to your \glossterm{durability}, which increases your \glossterm{hit points} (see \pcref{Hit Points}).
-        \item You add your Constitution to your \glossterm{fatigue tolerance} (see \pcref{Fatigue}).
+        \item You add your Constitution to your \glossterm{maximum stamina} (see \pcref{Stamina}).
         \item You add your Constitution to your Fortitude defense.
         \item You add your Constitution to the Constitution-based \glossterm{skill}: Endurance (see \pcref{Skills}).
       \end{raggeditemize}
@@ -176,7 +176,7 @@ You can either skim past terms you don't yet understand or look them up as you g
     \subsubsection{What Hit Points Represent}
     Hit points represent a combination of resilience, luck, divine providence, and sheer determination, depending on the nature of the creature being damaged.
     When you lose hit points from an orc with a greataxe, the axe did not literally carve into your skin without affecting your ability to fight.
-    Instead, you avoided the worst of the blow, but it bruised you through your armor, the effort to dodge the blow fatigued you, or it barely nicked you through sheer luck -- and everyone's luck runs out eventually.
+    Instead, you avoided the worst of the blow, but it bruised you through your armor, the effort to dodge the blow drained your stamina, or it barely nicked you through sheer luck -- and everyone's luck runs out eventually.
 
     \subsubsection{Changing Maximum Hit Points}
       If your maximum hit points change, your current hit points also change by the same amount.
@@ -222,38 +222,31 @@ You can either skim past terms you don't yet understand or look them up as you g
     Your attunement points are defined by your \glossterm{base class}.
     Some classes and abilities can grant additional attunement points.
 
-  \subsection{Fatigue}\label{Fatigue}
-    Throughout the day, you can become fatigued by your exertions both in and out of combat.
-    While \glossterm{hit points} are easy to restore, reducing your \glossterm{fatigue level} generally requires a \glossterm{long rest}.
-    Fatigue is still easier to recover from than \glossterm{vital wounds}.
+  \subsection{Stamina}\label{Stamina}
+    Throughout the day, you can lose stamina through your exertions both in and out of combat.
+    While \glossterm{hit points} are easy to restore, recovering your \glossterm{stamina} generally requires a \glossterm{long rest}.
+    Stamina is still easier to recover than \glossterm{vital wounds}.
 
-    \subsubsection{Fatigue Level}\label{Fatigue Level}
-      Your \glossterm{fatigue level} measures how tired you are.
-      Some abilities increase your fatigue level when used, such as the \ability{desperate exertion} ability (see \pcref{Universal Abilities}).
+    Your current \glossterm{stamina} measures your remaining energy.
+    Some abilities cost stamina, such as the \ability{recover} ability (see \pcref{Universal Abilities}).
 
-    \subsubsection{Fatigue Tolerance}\label{Fatigue Tolerance}
-      Becoming slightly fatigued is not immediately detrimental.
-      Your fatigue level can be as high as your \glossterm{fatigue tolerance} before you suffer penalties.
-      Your fatigue tolerance is equal to a bonus from your \glossterm{base class} \add your Constitution.
-      Some abilities can increase your fatigue tolerance.
+    \subsubsection{Maximum Stamina}\label{Maximum Stamina}
+      Your maximum \glossterm{stamina} represents how much you can exert yourself before you suffer penalties from exhaustion.
+      Your maximum stamina is equal to your Constitution \add a bonus from your \glossterm{base class} (see \pcref{Classes}).
+      Some abilities can increase your maximum stamina.
 
-    \subsubsection{Fatigue Penalty}\label{Fatigue Penalty}
-      You take a penalty to \glossterm{accuracy} and \glossterm{checks} equal your \glossterm{fatigue level} \sub your \glossterm{fatigue tolerance} (minimum 0).
-      This penalty is called your \glossterm{fatigue penalty}.
+    \subsubsection{Stamina Penalty}\label{Stamina Penalty}
+      You can spend stamina even when you have no stamina remaining.
+      If your stamina becomes negative, you take a penalty to \glossterm{accuracy} and \glossterm{checks} equal to the amount below 0.
+      This penalty is called your \glossterm{stamina penalty}.
 
-    \subsubsection{Exhaustion}\label{Exhaustion}
-      When your \glossterm{fatigue penalty} reaches \minus5, you fall \unconscious until your fatigue penalty is reduced below \minus5.
+      When your \glossterm{stamina} reaches \minus5, you fall \unconscious until your stamina is restored above \minus5.
       Generally, this means that you are unconscious for 8 hours.
+      You can't spend stamina as a cost if it would cause you to drop unconscious.
 
-    \subsubsection{Recovering From Fatigue}
-      When you finish a \glossterm{long rest}, your \glossterm{fatigue level} is restored to 0 (see \pcref{Resting}).
-      There are no other ways to reduce your fatigue level.
-
-    \subsubsection{Paying Fatigue Costs}
-      Some abilities indicate that they cost a certain number of fatigue levels.
-      That means that you increase your fatigue level by the given amount after the ability resolves.
-      This means you do not suffer a \glossterm{fatigue penalty} from that extra fatigue while using the ability.
-      You can even use abilities that cause you to drop unconscious from fatigue.
+    \subsubsection{Recovering Stamina}
+      When you finish a \glossterm{long rest}, your current \glossterm{stamina} becomes equal to your maximum stamina (see \pcref{Resting}).
+      There are no other ways to recover stamina.
 
   \subsection{Insight Points}\label{Insight Points}
     You can spend \glossterm{insight points} to gain new special abilities.

@@ -677,7 +677,7 @@ def universal_abilities() -> str:
                 "Desperate Exertion",
                 """
                     You reroll any attack or check you just made and gain a +2 bonus.
-                    After using this ability, you increase your fatigue level by two.
+                    After using this ability, you reduce your stamina by two.
                 """,
             ),
             universal_ability_button(
@@ -714,8 +714,9 @@ def universal_abilities() -> str:
             universal_ability_button(
                 "Recover",
                 """
-                    After using this ability, you increase your fatigue level by two, and you cannot use it again until you finish a short rest.
                     You regain half of your maximum hit points. Then, you remove all conditions affecting you.
+                    This ability costs two stamina.
+                    After using it, you can't use it again until you finish a short rest.
                 """,
             ),
             universal_ability_button(
@@ -737,7 +738,7 @@ def universal_abilities() -> str:
                 "Sprint",
                 """
                     You add your speed to your available movement.
-                    This is a free action and increases your fatigue level by one.
+                    This is a free action and costs one stamina.
                 """,
             ),
             universal_ability_button(

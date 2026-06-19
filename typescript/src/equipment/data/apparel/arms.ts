@@ -45,7 +45,7 @@ function bracers(): Apparel[] {
         short_description: 'Can exert to gain instant +2 Armor defense',
         description: `
             You can activate these bracers as a \\glossterm{free action}.
-            When you do, you increase your \\glossterm{fatigue level} by one and \\glossterm{briefly} gain a +2 bonus to your Armor defense.
+            When you do, you reduce your \\glossterm{stamina} by one and \\glossterm{briefly} gain a +2 bonus to your Armor defense.
             After you activate this item, you \\glossterm{briefly} cannot do so again.
         `,
         magical: true,

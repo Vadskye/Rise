@@ -29,7 +29,7 @@ export const channelDivinity: MysticSphere = {
       // Focused is 0.6 EA, healing is less than a normal heal. Combining healing with an
       // offensive buff means it's hard to take full advantage of its theoretical power
       // when used as a pre-combat buff.
-      cost: 'One \\glossterm{fatigue level}.',
+      cost: 'One \\glossterm{stamina}.',
       effect: `
         At the end of your next turn, you become infused with divine power.
         This causes you to regain \\hprankfour, and you become \\briefly \\focused.
@@ -57,7 +57,7 @@ export const channelDivinity: MysticSphere = {
 
       // -1d for delay, since this basically guarantees you will get good use from the
       // healing
-      cost: 'One \\glossterm{fatigue level}.',
+      cost: 'One \\glossterm{stamina}.',
       effect: `
         At the end of your next turn, you become infused with divine power.
         This causes you to regain \\hprankfour.

@@ -40,7 +40,7 @@ interface BaseClassModifier {
   mental: number;
   attunement_points?: number;
   class_skill_count?: number;
-  fatigue_tolerance: number;
+  maximum_stamina: number;
   insight_points?: number;
   proficiencies?: string;
   vital_rolls?: number;
@@ -60,7 +60,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     fortitude: 3,
     reflex: 3,
     mental: 3,
-    fatigue_tolerance: 0,
+    maximum_stamina: 0,
   },
   // Well rounded; +1 to all defenses, +2 durability.
   leader: {
@@ -71,7 +71,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     fortitude: 4,
     reflex: 4,
     mental: 4,
-    fatigue_tolerance: 0,
+    maximum_stamina: 0,
   },
   // Agile; +1 Armor and Reflex.
   skirmisher: {
@@ -82,7 +82,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     fortitude: 3,
     reflex: 4,
     mental: 3,
-    fatigue_tolerance: 0,
+    maximum_stamina: 0,
   },
   // Fragile; baseline statistics.
   sniper: {
@@ -93,7 +93,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     fortitude: 3,
     reflex: 3,
     mental: 3,
-    fatigue_tolerance: 0,
+    maximum_stamina: 0,
   },
   // Tanky; +1 Armor and Fortitude, +2 durability.
   warrior: {
@@ -104,7 +104,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     fortitude: 4,
     reflex: 3,
     mental: 3,
-    fatigue_tolerance: 0,
+    maximum_stamina: 0,
   },
 
   // CLASSES
@@ -117,7 +117,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     attunement_points: 4,
     insight_points: 1,
     class_skill_count: 3,
-    fatigue_tolerance: 3,
+    maximum_stamina: 3,
     proficiencies: 'Light and medium armor, and non-exotic weapons',
   },
   cleric: {
@@ -127,7 +127,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     reflex: 3,
     mental: 3,
     attunement_points: 5,
-    fatigue_tolerance: 2,
+    maximum_stamina: 2,
     insight_points: 2,
     class_skill_count: 3,
     proficiencies: 'Light and medium armor',
@@ -139,7 +139,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     reflex: 3,
     mental: 3,
     attunement_points: 5,
-    fatigue_tolerance: 2,
+    maximum_stamina: 2,
     insight_points: 1,
     class_skill_count: 4,
     proficiencies:
@@ -152,7 +152,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     reflex: 3,
     mental: 3,
     attunement_points: 4,
-    fatigue_tolerance: 3,
+    maximum_stamina: 3,
     insight_points: 1,
     class_skill_count: 3,
     proficiencies: 'All armor and non-exotic weapons',
@@ -164,7 +164,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     reflex: 3,
     mental: 3,
     attunement_points: 4,
-    fatigue_tolerance: 2,
+    maximum_stamina: 2,
     insight_points: 1,
     class_skill_count: 5,
     proficiencies: 'Light armor and monk weapons',
@@ -176,7 +176,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     reflex: 3,
     mental: 3,
     attunement_points: 5,
-    fatigue_tolerance: 2,
+    maximum_stamina: 2,
     insight_points: 1,
     class_skill_count: 3,
     proficiencies: 'All armor and non-exotic weapons',
@@ -188,7 +188,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     reflex: 3,
     mental: 3,
     attunement_points: 4,
-    fatigue_tolerance: 3,
+    maximum_stamina: 3,
     insight_points: 1,
     class_skill_count: 5,
     proficiencies: 'Light and medium armor, and non-exotic weapons',
@@ -200,7 +200,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     reflex: 3,
     mental: 3,
     attunement_points: 4,
-    fatigue_tolerance: 2,
+    maximum_stamina: 2,
     insight_points: 2,
     class_skill_count: 6,
     proficiencies: 'Light armor, Compact weapons, and Light weapons',
@@ -212,7 +212,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     reflex: 3,
     mental: 3,
     attunement_points: 5,
-    fatigue_tolerance: 3,
+    maximum_stamina: 3,
     insight_points: 1,
     class_skill_count: 3,
     proficiencies: 'None',
@@ -224,7 +224,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     reflex: 3,
     mental: 3,
     attunement_points: 5,
-    fatigue_tolerance: 2,
+    maximum_stamina: 2,
     insight_points: 1,
     class_skill_count: 3,
     proficiencies: 'Light and medium armor, and non-exotic weapons',
@@ -236,7 +236,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     reflex: 3,
     mental: 3,
     attunement_points: 5,
-    fatigue_tolerance: 2,
+    maximum_stamina: 2,
     insight_points: 2,
     class_skill_count: 3,
     proficiencies: 'None',
@@ -250,7 +250,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     reflex: 3,
     mental: 3,
     attunement_points: 4,
-    fatigue_tolerance: 5,
+    maximum_stamina: 5,
     insight_points: 1,
     class_skill_count: 4,
     proficiencies: 'All armor and non-exotic weapons',
@@ -262,7 +262,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     reflex: 3,
     mental: 3,
     attunement_points: 5,
-    fatigue_tolerance: 3,
+    maximum_stamina: 3,
     insight_points: 1,
     class_skill_count: 4,
     proficiencies: 'Light armor',
@@ -274,7 +274,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     reflex: 3,
     mental: 3,
     attunement_points: 5,
-    fatigue_tolerance: 2,
+    maximum_stamina: 2,
     insight_points: 2,
     class_skill_count: 4,
     proficiencies: 'Light armor',
@@ -286,7 +286,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     reflex: 3,
     mental: 3,
     attunement_points: 5,
-    fatigue_tolerance: 2,
+    maximum_stamina: 2,
     insight_points: 1,
     class_skill_count: 5,
     proficiencies: 'Light armor',
@@ -298,7 +298,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     reflex: 3,
     mental: 3,
     attunement_points: 5,
-    fatigue_tolerance: 2,
+    maximum_stamina: 2,
     insight_points: 1,
     class_skill_count: 4,
     proficiencies: 'Light armor',
@@ -310,7 +310,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     reflex: 3,
     mental: 3,
     attunement_points: 5,
-    fatigue_tolerance: 2,
+    maximum_stamina: 2,
     insight_points: 1,
     class_skill_count: 5,
     proficiencies: 'Light armor',
@@ -322,7 +322,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     reflex: 3,
     mental: 3,
     attunement_points: 4,
-    fatigue_tolerance: 3,
+    maximum_stamina: 3,
     insight_points: 1,
     class_skill_count: 4,
     proficiencies: 'Light armor',
@@ -335,7 +335,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     reflex: 3,
     mental: 4,
     attunement_points: 4,
-    fatigue_tolerance: 3,
+    maximum_stamina: 3,
     insight_points: 1,
     class_skill_count: 3,
     proficiencies: 'All armor and club-like weapons',
@@ -347,7 +347,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     reflex: 3,
     mental: 3,
     attunement_points: 4,
-    fatigue_tolerance: 4,
+    maximum_stamina: 4,
     insight_points: 1,
     class_skill_count: 3,
     proficiencies: 'Light and medium armor, and non-exotic weapons',
@@ -360,7 +360,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     reflex: 3,
     mental: 3,
     attunement_points: 5,
-    fatigue_tolerance: 2,
+    maximum_stamina: 2,
     insight_points: 1,
     class_skill_count: 4,
     proficiencies: 'Light armor and non-exotic weapons',
@@ -626,7 +626,7 @@ const VARIABLES_WITH_CUSTOM_MODIFIERS = new Set(
     'constitution',
     'dexterity',
     'durability',
-    'fatigue_tolerance',
+    'maximum_stamina',
     'fortitude',
     'hit_points',
     'horizontal_jump_distance',
@@ -684,7 +684,7 @@ const VARIABLES_WITH_VITAL_WOUND_MODIFIERS = new Set([
   'accuracy',
   'brawling_accuracy',
   'all_defenses',
-  'fatigue_tolerance',
+  'maximum_stamina',
   'brawn',
   'fortitude',
   'reflex',
@@ -777,7 +777,7 @@ function handleCoreStatistics() {
   handleDamageDice();
   handleArmorDexCheckModifier();
   handleDurability();
-  handleFatiguePenalty();
+  handleStaminaPenalty();
   handleHitPoints();
   handleInitiative();
   handleInjuryPoint();
@@ -802,7 +802,7 @@ function handleDefenses() {
 
 function handleResources() {
   handleAttunementPoints();
-  handleFatigueTolerance();
+  handleStaminaMax();
   handleInsightPoints();
   handleSkillPoints();
   handleTrainedSkills();
@@ -865,7 +865,7 @@ function handleAccuracy() {
   onGet({
     variables: {
       miscName: 'accuracy',
-      numeric: ['level', 'perception', 'fatigue_penalty', 'shield_accuracy'],
+      numeric: ['level', 'perception', 'stamina_penalty', 'shield_accuracy'],
       boolean: ['elite', 'is_monster'],
     },
     callback: (v) => {
@@ -874,14 +874,14 @@ function handleAccuracy() {
       const levelishModifier = Math.floor(levelModifier + perceptionModifier);
       const crModifier = v.is_monster ? calcAccuracyCrScaling(v.level, v.elite) : 0;
       const accuracy =
-        v.misc + levelishModifier + crModifier + v.shield_accuracy - v.fatigue_penalty;
+        v.misc + levelishModifier + crModifier + v.shield_accuracy - v.stamina_penalty;
       setAttrs({
         accuracy,
         accuracy_explanation: formatCombinedExplanation(v.miscExplanation, [
           { name: 'level', value: levelModifier },
           { name: 'Per', value: perceptionModifier },
           { name: 'Shield', value: v.shield_accuracy },
-          { name: 'fatigue', value: -v.fatigue_penalty },
+          { name: 'stamina penalty', value: -v.stamina_penalty },
           { name: 'Monster', value: crModifier },
         ]),
       });
@@ -1051,7 +1051,7 @@ function handleBrawlingAccuracy() {
   onGet({
     variables: {
       miscName: 'brawling_accuracy',
-      numeric: ['level', 'strength', 'fatigue_penalty', ...accuracyMiscVariables],
+      numeric: ['level', 'strength', 'stamina_penalty', ...accuracyMiscVariables],
       boolean: ['elite', 'is_monster'],
     },
     callback: (v) => {
@@ -1066,7 +1066,7 @@ function handleBrawlingAccuracy() {
       }
 
       const brawling_accuracy = Math.floor(
-        v.misc + levelishModifier + accuracyMiscModifier + monsterModifier - v.fatigue_penalty,
+        v.misc + levelishModifier + accuracyMiscModifier + monsterModifier - v.stamina_penalty,
       );
       setAttrs({
         brawling_accuracy,
@@ -1074,7 +1074,7 @@ function handleBrawlingAccuracy() {
           { name: 'level', value: levelModifier },
           { name: 'Str', value: strengthModifier },
           { name: 'general accuracy', value: accuracyMiscModifier },
-          { name: 'fatigue', value: -v.fatigue_penalty },
+          { name: 'stamina penalty', value: -v.stamina_penalty },
           { name: 'Monster', value: monsterModifier },
         ]),
       });
@@ -1762,39 +1762,37 @@ function handleDurability() {
   });
 }
 
-function handleFatiguePenalty() {
+function handleStaminaPenalty() {
   onGet({
     variables: {
-      numeric: ['fatigue_points', 'fatigue_tolerance'],
+      numeric: ['stamina'],
     },
     callback: (v) => {
-      const totalValue = Math.max(0, v.fatigue_points - v.fatigue_tolerance);
+      const totalValue = Math.max(0, -v.stamina);
       setAttrs({
-        fatigue_penalty: totalValue,
+        stamina_penalty: totalValue,
       });
     },
   });
 }
 
-function handleFatigueTolerance() {
+function handleStaminaMax() {
   onGet({
     variables: {
-      miscName: 'fatigue_tolerance',
+      miscName: 'maximum_stamina',
       numeric: ['constitution'],
       string: ['base_class'],
     },
     callback: (v) => {
-      const fromClass = BASE_CLASS_MODIFIERS[v.base_class]?.fatigue_tolerance || 0;
+      const fromClass = BASE_CLASS_MODIFIERS[v.base_class]?.maximum_stamina || 0;
       const totalValue = Math.max(0, fromClass + v.constitution + v.misc);
       setAttrs({
-        fatigue_tolerance_attributes: v.constitution,
-        fatigue_tolerance: totalValue,
-        fatigue_tolerance_explanation: formatCombinedExplanation(v.miscExplanation, [
+        maximum_stamina_attributes: v.constitution,
+        maximum_stamina: totalValue,
+        maximum_stamina_explanation: formatCombinedExplanation(v.miscExplanation, [
           { name: v.base_class, value: fromClass },
           { name: 'Con', value: v.constitution },
         ]),
-        // for red bars
-        fatigue_points_max: totalValue,
       });
     },
   });
@@ -2878,7 +2876,7 @@ function handleSkills() {
   for (const attribute of Object.keys(SKILLS_BY_ATTRIBUTE)) {
     for (const skill of SKILLS_BY_ATTRIBUTE[attribute]) {
       const numeric = [
-        'fatigue_penalty',
+        'stamina_penalty',
         'level',
         'size_stealth_modifier',
         ...customModifierNames('all_skills'),
@@ -2908,7 +2906,7 @@ function handleSkills() {
             attributeModifier +
             v.misc +
             sumCustomModifiers(v, 'all_skills') -
-            v.fatigue_penalty +
+            v.stamina_penalty +
             armorModifier;
 
           if (skill === 'stealth') {
@@ -2942,7 +2940,7 @@ function handleSkills() {
 }
 
 function handleSubskillValue(section: string, attribute: string) {
-  const numeric = ['level', 'fatigue_penalty', ...customModifierNames('all_skills')];
+  const numeric = ['level', 'stamina_penalty', ...customModifierNames('all_skills')];
   if (attribute !== 'other') {
     numeric.push(attribute);
   }
@@ -2967,7 +2965,7 @@ function handleSubskillValue(section: string, attribute: string) {
           attributeModifier +
           v.misc +
           sumCustomModifiers(v, 'all_skills') -
-          v.fatigue_penalty +
+          v.stamina_penalty +
           armorModifier;
 
         for (const id of ids) {
@@ -3291,7 +3289,7 @@ function handleVitalWounds() {
       1: 'Unconscious while injured',
       2: '-1 accuracy',
       3: '-5 foot speed',
-      4: '-2 fatigue tolerance',
+      4: '-2 maximum stamina',
       5: '-1 all defenses',
       6: '-2 Brawn',
       7: '-2 Fortitude',
@@ -3328,7 +3326,7 @@ function handleVitalWounds() {
           const rolls = Object.values(values);
           const accuracy_penalty = -countRolls(rolls, 2);
           const speed_penalty = countRolls(rolls, 3) * -5;
-          const fatigue_tolerance_penalty = -countRolls(rolls, 4) * 2;
+          const maximum_stamina_penalty = -countRolls(rolls, 4) * 2;
           const all_defenses_penalty = -countRolls(rolls, 5);
           const brawn_penalty = -countRolls(rolls, 6) * 2;
           const fortitude_penalty = -countRolls(rolls, 7) * 2;
@@ -3353,11 +3351,11 @@ function handleVitalWounds() {
             // all defenses - no vital explanation here because all_defenses requires special handling
             all_defenses_vital_wound_modifier: all_defenses_penalty,
 
-            // fatigue_tolerance
-            fatigue_tolerance_vital_wound_modifier: fatigue_tolerance_penalty,
-            fatigue_tolerance_vital_wound_explanation: formatNamedModifierExplanation({
+            // maximum_stamina
+            maximum_stamina_vital_wound_modifier: maximum_stamina_penalty,
+            maximum_stamina_vital_wound_explanation: formatNamedModifierExplanation({
               name: 'vital',
-              value: fatigue_tolerance_penalty,
+              value: maximum_stamina_penalty,
             }),
 
             brawn_vital_wound_modifier: brawn_penalty,

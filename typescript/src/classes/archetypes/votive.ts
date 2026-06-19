@@ -165,8 +165,8 @@ export function covenantKeeper(): RankAbility[] {
       rank: 2,
       description: `
         You can choose to gain a \\plus2 bonus to your \\glossterm{magical power} and \\glossterm{mundane power}.
-        If you do, you take a \\minus1 penalty to your \\glossterm{fatigue tolerance}.
-        Otherwise, you gain a \\plus2 bonus to your \\glossterm{fatigue tolerance}.
+        If you do, you take a \\minus1 penalty to your \\glossterm{maximum stamina}.
+        Otherwise, you gain a \\plus2 bonus to your \\glossterm{maximum stamina}.
       `,
     },
     {
@@ -178,7 +178,7 @@ export function covenantKeeper(): RankAbility[] {
         Your connection to your soulkeeper deepens, allowing you to send a fragment of your soul through the link in exchange for aid.
         \\begin{magicalactiveability}{Exchange Soul Fragment}{Standard action}
           \\abilitytags \\atSoul
-          \\abilitycost One \\glossterm{fatigue level}.
+          \\abilitycost One \\glossterm{stamina}.
           \\rankline
           You regain \\hprankthree.
           In addition, you may remove a \\glossterm{condition} affecting you.
@@ -230,7 +230,7 @@ export function covenantKeeper(): RankAbility[] {
           \\rankline
           You are \\glossterm{briefly} \\empowered.
           Then, you may remove one of your \\glossterm{vital wounds}.
-          If you remove a vital wound in this way, you increase your \\glossterm{fatigue level} by two.
+          If you remove a vital wound in this way, you reduce your \\glossterm{stamina} by two.
           This effect \\glossterm{repeats} at the end of your next turn.
         \\end{magicalactiveability}
       `,
@@ -327,7 +327,7 @@ export function pactSpellMastery(): RankAbility[] {
       isMagical: true,
       rank: 1,
       description: `
-        You can use the \\ability{desperate exertion} ability without increasing your fatigue level (see \\pcref{Desperate Exertion}).
+        You can use the \\ability{desperate exertion} ability without spending \\glossterm{stamina} (see \\pcref{Desperate Exertion}).
         When you do, you suffer no immediate negative consequences.
         After 10 minutes, your maximum \\glossterm{hit points} are reduced to three-quarters of normal until you complete a \\glossterm{long rest}.
         Each time this penalty takes effect, your hit points are reduced by an additional quarter, so using it three times would reduce your maximum hit points to a quarter of their normal value.
@@ -349,7 +349,7 @@ export function pactSpellMastery(): RankAbility[] {
         Whenever you learn a new spell, you may change which specific spells your metamagic abilities affect.
         {
         \\parhead{Desperate Spell} Choose a pact \\glossterm{spell} you know.
-        When you cast the spell, you may choose to increase your \\glossterm{fatigue level} by one.
+        When you cast the spell, you may choose to reduce your \\glossterm{stamina} by one.
         If you do, you become \\empowered and \\focused that turn.
         However, you cannot use the \\ability{desperate exertion} ability to affect the spell.
         You can choose this ability multiple times, choosing a different spell each time.
@@ -412,7 +412,7 @@ export function pactSpellMastery(): RankAbility[] {
       isMagical: true,
       rank: 7,
       description: `
-        You gain a \\plus1 bonus to your \\glossterm{accuracy} and \\glossterm{fatigue tolerance}.
+        You gain a \\plus1 bonus to your \\glossterm{accuracy} and \\glossterm{maximum stamina}.
       `,
     },
   ];
@@ -431,7 +431,7 @@ export function soulforged(): RankAbility[] {
         \\subcf{Devil -- Calculating} You gain a bonus to your \\glossterm{mundane power} and \\glossterm{magical power} equal to half your Intelligence.
 
         \\subcf{Fae -- Unconcerned} You gain a \\plus1 bonus to \\glossterm{accuracy} and all \\glossterm{checks}.
-        However, you cannot increase your fatigue to use the \\ability{desperate exertion} ability.
+        However, you cannot reduce your stamina to use the \\ability{desperate exertion} ability.
         You can still use it with \\ability{desperate pact} or other similar abilities.
 
         % 1d10! is about 6.1 accuracy, and 1d8+2 is 6.5 accuracy.
@@ -601,8 +601,8 @@ export function covenantKeeperModifiers(creature: Creature, rank: number) {
   applyArchetypeActiveAbilities(creature, covenantKeeper(), rank);
   if (rank >= 2) {
     creature.addSimpleModifier({
-      name: 'Covenant of Power (Fatigue)',
-      statistic: 'fatigue_tolerance',
+      name: 'Covenant of Power (Stamina)',
+      statistic: 'maximum_stamina',
       value: rank >= 5 ? 4 : 2,
     });
   }
@@ -639,7 +639,7 @@ export function pactSpellMasteryModifiers(creature: Creature, rank: number) {
       name: 'Experienced Spellcaster',
       numericEffects: [
         { statistic: 'accuracy', modifier: 1 },
-        { statistic: 'fatigue_tolerance', modifier: 1 },
+        { statistic: 'maximum_stamina', modifier: 1 },
       ],
     });
   }

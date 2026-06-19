@@ -9,7 +9,7 @@ export function vampire(): RankAbility[] {
       isMagical: false,
       rank: 1,
       description: `
-        Whenever you \\glossterm{injure} a \\trait{blooded} creature with blood using your bite natural weapon, you can increase your \\glossterm{fatigue level} by one.
+        Whenever you \\glossterm{injure} a \\trait{blooded} creature with blood using your bite natural weapon, you can spend one \\glossterm{stamina}.
         If you do, you regain \\glossterm{hit points} equal to the hit points the target lost from the strike, ignoring negative hit points and any damage increase from critical hits.
       `,
     },
@@ -131,7 +131,7 @@ export function vampire(): RankAbility[] {
       isMagical: true,
       rank: 7,
       description: `
-        You can use this ability without increasing your fatigue level.
+        You can use this ability without spending \\glossterm{stamina}.
         After you do, you \\glossterm{briefly} cannot do so again.
       `,
     },
