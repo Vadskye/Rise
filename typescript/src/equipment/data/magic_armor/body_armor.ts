@@ -16,7 +16,64 @@ function body(
   };
 }
 
+function compositeArmor(): MagicArmor[] {
+  const armor: MagicArmor[] = [
+    body({
+      name: 'Composite Armor, 1st',
+      rank: 3,
+      short_description: 'Has two rank 1 properties',
+      description: `
+        This armor has two different rank 1 magic armor properties.
+        Each property must not already require a \\glossterm{deep attunement}.
+      `,
+      tags: ['Attune (deep)'],
+    }),
+    body({
+      name: 'Composite Armor, 2nd',
+      rank: 4,
+      short_description: 'Has two rank 2 or lower properties',
+      description: `
+        This armor has two different magic armor properties that are rank 2 or lower.
+        Each property must not already require a \\glossterm{deep attunement}.
+      `,
+      tags: ['Attune (deep)'],
+    }),
+    body({
+      name: 'Composite Armor, 3rd',
+      rank: 5,
+      short_description: 'Has two rank 3 or lower properties',
+      description: `
+        This armor has two different magic armor properties that are rank 3 or lower.
+        Each property must not already require a \\glossterm{deep attunement}.
+      `,
+      tags: ['Attune (deep)'],
+    }),
+  ];
+
+  const nth = (n: number) => {
+    armor.push(
+      body({
+        name: `Composite Armor, ${n}th`,
+        rank: n + 2,
+        short_description: `Has two rank ${n} or lower properties`,
+        description: `
+        This armor has two different magic armor properties that are rank ${n} or lower.
+        Each property must not already require a \\glossterm{deep attunement}.
+      `,
+        tags: ['Attune (deep)'],
+      }),
+    );
+  };
+
+  nth(4);
+  nth(5);
+  nth(6);
+
+  return armor;
+}
+
 export const bodyArmor = (): MagicArmor[] => [
+  ...compositeArmor(),
   body({
     name: 'Armor of Scuttling',
     rank: 2,

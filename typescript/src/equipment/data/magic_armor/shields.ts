@@ -16,7 +16,64 @@ function shield(
   };
 }
 
+function compositeShields(): MagicArmor[] {
+  const items: MagicArmor[] = [
+    shield({
+      name: 'Composite Shield, 1st',
+      rank: 3,
+      short_description: 'Has two rank 1 properties',
+      description: `
+        This shield has two different rank 1 magic shield properties.
+        Each property must not already require a \\glossterm{deep attunement}.
+      `,
+      tags: ['Attune (deep)'],
+    }),
+    shield({
+      name: 'Composite Shield, 2nd',
+      rank: 4,
+      short_description: 'Has two rank 2 or lower properties',
+      description: `
+        This shield has two different magic shield properties that are rank 2 or lower.
+        Each property must not already require a \\glossterm{deep attunement}.
+      `,
+      tags: ['Attune (deep)'],
+    }),
+    shield({
+      name: 'Composite Shield, 3rd',
+      rank: 5,
+      short_description: 'Has two rank 3 or lower properties',
+      description: `
+        This shield has two different magic shield properties that are rank 3 or lower.
+        Each property must not already require a \\glossterm{deep attunement}.
+      `,
+      tags: ['Attune (deep)'],
+    }),
+  ];
+
+  const nth = (n: number) => {
+    items.push(
+      shield({
+        name: `Composite Shield, ${n}th`,
+        rank: n + 2,
+        short_description: `Has two rank ${n} or lower properties`,
+        description: `
+        This shield has two different magic shield properties that are rank ${n} or lower.
+        Each property must not already require a \\glossterm{deep attunement}.
+      `,
+        tags: ['Attune (deep)'],
+      }),
+    );
+  };
+
+  nth(4);
+  nth(5);
+  nth(6);
+
+  return items;
+}
+
 export const shields = (): MagicArmor[] => [
+  ...compositeShields(),
   shield({
     name: 'Shield of Arrow Catching',
     rank: 1,
