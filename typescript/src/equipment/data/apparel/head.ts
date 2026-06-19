@@ -26,7 +26,7 @@ export function head(): RawApparel[] {
   ];
 }
 
-function circlets(): Apparel[] {
+function circlets(): RawApparel[] {
   return [
     {
       kind: 'Circlet',
@@ -197,7 +197,7 @@ function circlets(): Apparel[] {
   ];
 }
 
-function crowns(): Apparel[] {
+function crowns(): RawApparel[] {
   return [
     {
       kind: 'Crown',
@@ -331,7 +331,7 @@ function crowns(): Apparel[] {
   ];
 }
 
-function blindfolds(): Apparel[] {
+function blindfolds(): RawApparel[] {
   return [
     {
       kind: 'Blindfold',
