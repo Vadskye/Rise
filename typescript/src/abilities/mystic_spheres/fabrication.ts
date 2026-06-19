@@ -15,6 +15,8 @@ export const fabrication: MysticSphere = {
         You make a Craft check to create an object of Tiny size or smaller.
         The object appears in your hand or at your feet.
         It must be made of nonliving, nonmagical, nonreactive vegetable matter, such as wood or cloth.
+        The maximum rank of an item created in this cannot exceed 0.
+        Consumable items created in this way have no effect.
         At the end of your turn, this ability is \\glossterm{dismissed} if you are not within \\medrange of the item.
       `,
       roles: ['narrative'],
