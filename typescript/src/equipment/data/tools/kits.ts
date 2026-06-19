@@ -25,7 +25,7 @@ export function kits(): Tool[] {
         rank: 0,
         short_description: 'Required for some Craft checks',
         description: `
-          These are Small tools that are appropriate to a particular Craft skill other than Craft (alchemy).
+          These are Small tools that are appropriate to a particular Craft skill other than Craft (alchemy) and Craft (metal).
           It is very difficult to create items using the Craft skill without this item (see \\pcref{Craft}).
         `,
         upgrades: [
@@ -33,7 +33,7 @@ export function kits(): Tool[] {
             rank: 2,
             short_description: 'Useful for many Craft checks',
             description: `
-              The tools are incredibly versatile, making them suitable for any Craft skill other than Craft (alchemy).
+              The tools are incredibly versatile, making them suitable for any Craft skill other than Craft (alchemy) and Craft (metal).
             `,
           },
         ],
@@ -43,14 +43,46 @@ export function kits(): Tool[] {
     createKit(
       {
         name: "Alchemist's Lab",
-        rank: 2,
-        short_description: 'Required for some Craft (alchemy) checks',
+        rank: 1,
+        short_description: 'Can make items with Craft (alchemy)',
         description: `
           This is a Medium workstation that contains a wide variety of compounds and reagents.
           It is very difficult to create items using the Craft (alchemy) skill without this item (see \\pcref{Craft}).
         `,
+        upgrades: [
+          {
+            rank: 4,
+            short_description: 'Can portably make items with Craft (alchemy)',
+            description: `
+              The workstation has been condensed to a Small size using extremely potent reagents and finely crafted tools.
+              The reagents are typically diluted as part of the crafting process with easily acquired materials, so items made with this kit function identically to items made with a larger workstation.
+            `,
+          },
+        ],
       },
       'alchemy',
+    ),
+    createKit(
+      {
+        name: 'Forge',
+        rank: 1,
+        short_description: 'Can make items with Craft (metal)',
+        description: `
+          This is a Large workstation that contains a wide variety of tools for working with metal.
+          It includes an anvil, a crucible, and so on.
+          It is very difficult to create items using the Craft (metal) skill without this item (see \\pcref{Craft}).
+        `,
+        upgrades: [
+          {
+            rank: 4,
+            short_description: 'Can portably make items with Craft (metal)',
+            description: `
+              The workstation has been miniaturized to Medium size using high quality metals and alchemical or magical heating elements.
+            `,
+          },
+        ],
+      },
+      'metal',
     ),
     createKit(
       {
