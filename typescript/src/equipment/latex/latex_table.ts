@@ -64,7 +64,7 @@ export function rowToLatex(
     } else if (row.attunement === 'Attune') {
       attunementText = 'Yes';
     } else {
-      attunementText = 'No';
+      attunementText = '\\tdash';
     }
   }
 
@@ -72,8 +72,9 @@ export function rowToLatex(
   const pageOrPercentile = percentile || `\\itempref{${row.name}}`;
 
   const latex = `
-    \\itemref{${row.name}}${sparkle} ${categorySeparator} ${category} ${attunementSeparator} ${attunementText}
+    \\itemref{${row.name}}${sparkle} ${categorySeparator} ${category}
     & ${row.short_description.trim()}
+    ${attunementSeparator} ${attunementText}
     & ${rankAndPrice}
     & ${pageOrPercentile}
     \\\\
@@ -132,11 +133,11 @@ export function longtable(options: LongtableOptions): string {
   const { caption, rows, withCategory, withAttunement = false } = options;
   let colSpec = '';
   if (withCategory && withAttunement) {
-    colSpec = 'p{17em} p{5em} p{5em} p{15em} p{6em} p{3em}';
+    colSpec = 'p{17em} p{5em} p{15em} p{5em} p{6em} p{3em}';
   } else if (withCategory) {
     colSpec = 'p{17em} p{5em} p{20em} p{6em} p{3em}';
   } else if (withAttunement) {
-    colSpec = 'p{17em} p{5em} p{21em} p{6em} p{3em}';
+    colSpec = 'p{17em} p{21em} p{5em} p{6em} p{3em}';
   } else {
     colSpec = 'p{17em} p{26em} p{6em} p{3em}';
   }
