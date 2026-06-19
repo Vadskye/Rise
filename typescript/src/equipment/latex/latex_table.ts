@@ -133,13 +133,13 @@ export function longtable(options: LongtableOptions): string {
   const { caption, rows, withCategory, withAttunement = false } = options;
   let colSpec = '';
   if (withCategory && withAttunement) {
-    colSpec = 'p{16em} p{5em} p{17em} p{4em} p{6em} p{3em}';
+    colSpec = 'p{14em} p{5em} p{20em} p{4em} p{5.5em} p{2.5em}';
   } else if (withCategory) {
-    colSpec = 'p{16em} p{5em} p{21em} p{6em} p{3em}';
+    colSpec = 'p{14em} p{5em} p{24em} p{5.5em} p{2.5em}';
   } else if (withAttunement) {
-    colSpec = 'p{16em} p{23em} p{4em} p{6em} p{3em}';
+    colSpec = 'p{14em} p{26em} p{4em} p{5.5em} p{2.5em}';
   } else {
-    colSpec = 'p{16em} p{27em} p{6em} p{3em}';
+    colSpec = 'p{14em} p{30em} p{5.5em} p{2.5em}';
   }
 
   const content = `
