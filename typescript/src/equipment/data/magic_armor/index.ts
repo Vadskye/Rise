@@ -39,7 +39,17 @@ export function magicArmorTable(): string {
   latexTable.standardSort(shieldRows);
 
   return `
-    ${latexTable.longtable('Magic Body Armor', bodyRows, true)}
-    ${latexTable.longtable('Magic Shields', shieldRows, true)}
+    ${latexTable.longtable({
+      caption: 'Magic Body Armor',
+      rows: bodyRows,
+      withCategory: true,
+      withAttunement: true,
+    })}
+    ${latexTable.longtable({
+      caption: 'Magic Shields',
+      rows: shieldRows,
+      withCategory: true,
+      withAttunement: true,
+    })}
   `.trim();
 }

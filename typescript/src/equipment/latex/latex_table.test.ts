@@ -80,14 +80,25 @@ t.test('rowToLatex', (t) => {
     rarity: 'Common',
     short_description: 'Grants +2 defense.',
     category: 'Shield',
+    tags: ['Attune'],
   };
 
-  const latex = rowToLatex(row);
+  const latexNormal = rowToLatex(row);
+  t.match(latexNormal, /\\itemref{Magic Shield}\\sparkle & Shield/);
+  t.notMatch(latexNormal, /Regular/);
 
-  t.match(latex, /\\itemref{Magic Shield}\\sparkle & Shield/);
-  t.match(latex, /& Grants \+2 defense\./);
-  t.match(latex, /& 2 \(20 gp\)/);
-  t.match(latex, /& \\itempref{Magic Shield}/);
+  const latexAttuned = rowToLatex(row, undefined, true);
+  t.match(latexAttuned, /\\itemref{Magic Shield}\\sparkle & Shield & Regular/);
+  t.match(latexAttuned, /& Grants \+2 defense\./);
+  t.match(latexAttuned, /& 2 \(20 gp\)/);
+  t.match(latexAttuned, /& \\itempref{Magic Shield}/);
+
+  const deepRow = { ...row, tags: ['Attune (deep)'] };
+  t.match(rowToLatex(deepRow, undefined, true), /& Deep/);
+
+  const noneRow = { ...row, tags: ['Fire'] };
+  t.match(rowToLatex(noneRow, undefined, true), /& None/);
+
   t.end();
 });
 
@@ -100,14 +111,30 @@ t.test('longtable', (t) => {
       magical: false,
       rarity: 'Common',
       short_description: 'Desc 1',
+      tags: ['Attune'],
     },
   ];
 
-  const latex = longtable('Test Caption', rows, false);
+  const latexNoAttune = longtable({
+    caption: 'Test Caption',
+    rows,
+    withCategory: false,
+  });
+  t.match(latexNoAttune, /\\begin{longtablewrapper}/);
+  t.match(latexNoAttune, /\\lcaption{Test Caption}/);
+  t.match(latexNoAttune, /\\tb{Name}\s*&\s*\\tb{Description}\s*&\s*\\tb{Rank \(Cost\)}\s*&\s*\\tb{Page}/);
+  t.match(latexNoAttune, /\\itemref{Item 1}/);
+  t.notMatch(latexNoAttune, /\\tb{Attunement}/);
 
-  t.match(latex, /\\begin{longtablewrapper}/);
-  t.match(latex, /\\lcaption{Test Caption}/);
-  t.match(latex, /\\tb{Name} & \\tb{Description} & \\tb{Rank \(Cost\)} & \\tb{Page}/);
-  t.match(latex, /\\itemref{Item 1}/);
+  const latexWithAttune = longtable({
+    caption: 'Test Caption',
+    rows,
+    withCategory: false,
+    withAttunement: true,
+  });
+  t.match(latexWithAttune, /\\tb{Name}\s*&\s*\\tb{Attunement}\s*&\s*\\tb{Description}\s*&\s*\\tb{Rank \(Cost\)}\s*&\s*\\tb{Page}/);
+  t.match(latexWithAttune, /\\itemref{Item 1}\s*&\s*Regular/);
+  t.match(latexWithAttune, /&\s*Desc 1/);
+
   t.end();
 });

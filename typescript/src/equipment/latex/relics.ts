@@ -66,7 +66,11 @@ export function generateRelicsTable(): string {
   );
 
   table.standardSort(rows);
-  return table.longtable('Relics', rows, true);
+  return table.longtable({
+    caption: 'Relics',
+    rows,
+    withCategory: true,
+  });
 }
 
 function isConsumable(tool: any): boolean {

@@ -7,7 +7,11 @@ export function consumableToolsTable(): string {
   const items = allConsumables().filter((t) => t.item.rarity === 'Common');
   const rows = items.flatMap((t) => table.fromItem(t.item, true, getToolCategoryName(t.category)));
   table.standardSort(rows);
-  return table.longtable('Consumables', rows, true);
+  return table.longtable({
+    caption: 'Consumables',
+    rows,
+    withCategory: true,
+  });
 }
 
 export function consumableToolsDescriptions(): string {

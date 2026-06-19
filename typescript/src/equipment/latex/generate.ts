@@ -40,9 +40,19 @@ export function generateMagicArmorTables(): string {
   standardSort(shieldRows);
 
   return (
-    longtable('Magic Body Armor', bodyRows, true) +
+    longtable({
+      caption: 'Magic Body Armor',
+      rows: bodyRows,
+      withCategory: true,
+      withAttunement: true,
+    }) +
     '\n\n' +
-    longtable('Magic Shields', shieldRows, true)
+    longtable({
+      caption: 'Magic Shields',
+      rows: shieldRows,
+      withCategory: true,
+      withAttunement: true,
+    })
   );
 }
 
@@ -57,7 +67,12 @@ export function generateMagicWeaponsDescriptions(): string {
 export function generateMagicWeaponsTables(): string {
   const rows = allMagicWeapons().flatMap((m) => fromItem(m.item, false, undefined));
   standardSort(rows);
-  return longtable('Magic Weapons', rows, false);
+  return longtable({
+    caption: 'Magic Weapons',
+    rows,
+    withCategory: false,
+    withAttunement: true,
+  });
 }
 
 /**
@@ -79,7 +94,12 @@ export function generateImplementsDescriptions(): string {
 export function generateImplementsTables(): string {
   const rows = allImplements().flatMap((m) => fromItem(m.item, false, m.kind));
   standardSort(rows);
-  return longtable('Implements', rows, true);
+  return longtable({
+    caption: 'Implements',
+    rows,
+    withCategory: true,
+    withAttunement: true,
+  });
 }
 
 export function generateApparelDescriptions(): string {

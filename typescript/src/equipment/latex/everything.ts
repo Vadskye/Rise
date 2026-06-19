@@ -24,7 +24,11 @@ export function generateEverythingTable(): string {
   );
 
   table.standardSort(rows);
-  return table.longtablePercentile('All Items', rows, true);
+  return table.longtablePercentile({
+    caption: 'All Items',
+    rows,
+    withCategory: true,
+  });
 }
 
 function isConsumable(tool: any): boolean {
