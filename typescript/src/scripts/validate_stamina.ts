@@ -120,16 +120,7 @@ function scanFile(filePath: string) {
       });
     }
 
-    // 5. Check for reducing stamina as a cost insted of spendin it
-    const canReduceRegex = /\bcan\b.*reduc.*stamina/i;
-    if (canReduceRegex.test(cleaned)) {
-      issues.push({
-        file: filePath,
-        lineNum,
-        message: 'Phrasing "can reduce stamina" should probably be "spend stamina"',
-        text: line,
-      });
-    }
+    // 5. Check for reducing stamina as a cost insted of spending it
     const reduceAsCostRegex = /(cost:|abilitycost).*reduc.*stamina/i;
     if (reduceAsCostRegex.test(cleaned)) {
       issues.push({

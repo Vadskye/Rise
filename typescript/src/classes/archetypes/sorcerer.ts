@@ -17,7 +17,7 @@ export function arcaneMagic(): RankAbility[] {
 
         You automatically learn all \\glossterm{cantrips} from each of your mystic spheres.
         In addition, you learn two rank 1 arcane \\glossterm{spells}.
-        You can also spend \\glossterm{insight points} to learn one additional rank 1 spell per insight point.
+        You can also permanently reduce your \\glossterm{maximum stamina} to learn one additional rank 1 spell per stamina lost.
 
         Arcane spells require both \\glossterm{verbal components} and \\glossterm{somatic components} to cast (see \\pcref{Ability Usage Components}).
         For details about mystic spheres and casting spells, see \\pcref{Spell and Ritual Mechanics}.
@@ -351,6 +351,11 @@ export function wildMagic(): RankAbility[] {
       description: `
         Whenever you cast a damaging spell that does not have the \\abilitytag{Attune} or \\abilitytag{Sustain} tags, you may use this ability after making all other decisions for the spell (such as targets, intended area, and so on).
         When you do, roll 1d10 and apply the corresponding wild magic effect from the table below.
+        This is called a wild magic roll.
+
+        You can invest up to three \\glossterm{insight points} into this ability.
+        Unlike normal for insight points, this does not directly grant you any additional abilities known.
+        Instead, for each insight point invested, you gain a \\plus1 bonus to wild magic rolls.
 
         % 1 and 2 are bad. 3, 4 and 5, and 6 are mixed upside/downside.
         % 6 and above are strictly positive.
@@ -361,13 +366,14 @@ export function wildMagic(): RankAbility[] {
             2 & You are a target of the spell in addition to any other targets, but with a -4 accuracy penalty against yourself \\\\
             3 & Your first attack roll with the spell only \\glossterm{explodes} on a 1 or 2 \\\\
             4 & You gain a \\plus10 \\glossterm{accuracy} bonus with the spell, but cannot get a \\glossterm{critical hit} \\\\
-            5 & The spell gains the \\atCold, \\atElectricity, and \\atFire ability tags \\\\
-            6 & The spell's area is doubled \\\\
-            7 & Each target hit by the spell is \\glossterm{briefly} \\confused, \\braced, and \\focused \\\\
-            8 & The spell \\glossterm{chains} once to the unaffected \\glossterm{enemy} that is closest to one of the spell's \\glossterm{primary targets}, choosing randomly between equally close creatures \\\\
-            9 & The spell deals \\glossterm{extra damage} equal to your rank in this archetype \\\\
-            10 & Your first attack roll with the spell \\glossterm{explodes} on any value, not just on a 10 \\\\
-            11\\plus & The spell \\glossterm{repeats} at the start of your next turn \\\\
+            5 & Your \\glossterm{accuracy} with the spell's first attack is equal to your \\glossterm{power} with the spell \\\\
+            6 & The spell gains the \\atCold, \\atElectricity, and \\atFire ability tags \\\\
+            7 & The spell's area is doubled \\\\
+            8 & Each target hit by the spell is \\glossterm{briefly} \\confused, \\braced, and \\focused \\\\
+            9 & The spell \\glossterm{chains} once to the unaffected \\glossterm{enemy} that is closest to one of the spell's \\glossterm{primary targets}, choosing randomly between equally close creatures \\\\
+            10 & The spell deals \\glossterm{extra damage} equal to your rank in this archetype \\\\
+            11 & Your first attack roll with the spell \\glossterm{explodes} on any value, not just on a 10 \\\\
+            12\\plus & The spell \\glossterm{repeats} at the start of your next turn \\\\
           \\end{dtabularx}
         \\end{columntable}
 
@@ -378,13 +384,16 @@ export function wildMagic(): RankAbility[] {
     },
     {
       complexity: 2,
-      name: 'Chaotic Insight',
+      name: 'Chaotic Spell',
       isMagical: true,
       rank: 2,
       description: `
-        You learn a spell that does not have the \\abilitytag{Attune} or \\abilitytag{Sustain} tags from any \\glossterm{mystic sphere}, even if you do not have access to that mystic sphere.
-        The spell does not have to be from a mystic sphere on the arcane mystic sphere list.
-        As normal, you can change which spell you learn with this ability as you gain access to new spell ranks.
+        You learn an additional arcane spell.
+        The spell's rank can be up to your rank in this archetype, even if you do not have access to spells of that rank.
+        That spell is always affected twice by your \\ability{wildspell} ability.
+        This means that you roll twice and keep both results.
+
+        Whenever you increase your rank in this archetype, you can change which spell you know with this ability.
       `,
     },
     {
@@ -393,23 +402,23 @@ export function wildMagic(): RankAbility[] {
       isMagical: true,
       rank: 3,
       description: `
-        You gain a \\plus2 bonus to the roll when you use the \\ability{desperate exertion} ability.
-        This bonus stacks with the normal \\plus2 bonus provided by that ability.
+        When you use the \\ability{desperate exertion} ability, you can reroll twice instead of once, keeping the highest result.
+        If the attack or check was made as part of a \\ability{wildspell}, you can also reroll one wild magic roll for that ability.
+        This does not give the the wild magic roll the \\plus2 bonus from \\ability{desperate exertion}.
       `,
     },
     {
       complexity: 1,
-      name: 'Desperate Wildspell',
+      name: 'Wild Mind',
       isMagical: true,
       rank: 4,
       description: `
-        If you use the \\textit{desperate exertion} ability on a spell affected by this ability, you can reroll the wild magic roll for that spell in addition to the normal effects of the \\textit{desperate exertion} ability.
-        You do not gain any bonus to the wild magic reroll.
+        You are immune to \\atCompulsion attacks.
       `,
     },
     {
       complexity: 1,
-      name: 'Chaotic Insight+',
+      name: 'Chaotic Spell+',
       isMagical: true,
       rank: 5,
       description: `
@@ -431,7 +440,7 @@ export function wildMagic(): RankAbility[] {
       isMagical: true,
       rank: 7,
       description: `
-        You gain a \\plus2 bonus to the wild magic roll.
+        You gain a \\plus2 bonus to wild magic rolls.
       `,
     },
   ];
