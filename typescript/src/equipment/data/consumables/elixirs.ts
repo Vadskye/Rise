@@ -1,9 +1,6 @@
-import { Tool, StandardItem, AttunementRequirement } from '../../types';
+import { Tool, RawConsumable } from '../../types';
 
-function createElixir(
-  data: Omit<StandardItem, 'magical' | 'rarity' | 'tags' | 'upgrades' | 'attunement'> &
-    Partial<Pick<StandardItem, 'upgrades' | 'tags'>> & { attunement: AttunementRequirement },
-): Tool {
+function createElixir(data: RawConsumable): Tool {
   const dataTags = data.tags || [];
   const cleanedTags = dataTags.filter(t => t !== 'Attune' && t !== 'Attune (deep)');
   return {

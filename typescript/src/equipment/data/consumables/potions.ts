@@ -1,9 +1,6 @@
-import { Tool, StandardItem, AttunementRequirement } from '../../types';
+import { Tool, RawConsumable } from '../../types';
 
-function createPotion(
-  data: Omit<StandardItem, 'magical' | 'rarity' | 'tags' | 'upgrades' | 'attunement'> &
-    Partial<Pick<StandardItem, 'upgrades' | 'tags'>> & { attunement: AttunementRequirement },
-): Tool {
+function createPotion(data: RawConsumable): Tool {
   return {
     category: 'Potion',
     item: {
