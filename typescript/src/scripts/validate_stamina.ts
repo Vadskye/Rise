@@ -74,7 +74,8 @@ function scanFile(filePath: string) {
 
     // 1. Check for incorrect stamina increases (should be reduce/spend)
     // Matches verbs like increase, gain, add, receive, regain followed by stamina (unless maximum stamina)
-    const staminaIncreaseRegex = /\b(increase|gain|add|receive|regain)(?:s|d|ing)?\b(?!\s+(?:your\s+|its\s+|a\s+)?maximum\b)\s+(?:your\s+|its\s+|a\s+|one\s+|two\s+|three\s+|four\s+|five\s+|some\s+|any\s+|additional\s+|optional\s+|current\s+|of\s+|our\s+)*stamina\b/i;
+    const staminaIncreaseRegex =
+      /\b(increase|gain|add|receive|regain)(?:s|d|ing)?\b(?!\s+(?:your\s+|its\s+|a\s+)?maximum\b)\s+(?:your\s+|its\s+|a\s+|one\s+|two\s+|three\s+|four\s+|five\s+|some\s+|any\s+|additional\s+|optional\s+|current\s+|of\s+|our\s+)*stamina\b/i;
     if (staminaIncreaseRegex.test(cleaned)) {
       issues.push({
         file: filePath,
@@ -107,12 +108,34 @@ function scanFile(filePath: string) {
     }
 
     // 4. Check for "does not/without increase/increasing stamina" which should be "reduce/reducing"
-    const withoutIncreaseStaminaRegex = /\b(without\s+increasing\s+(?:your\s+|its\s+)?stamina|does\s+not\s+increase\s+(?:your\s+|its\s+)?stamina)\b/i;
+    const withoutIncreaseStaminaRegex =
+      /\b(without\s+increasing\s+(?:your\s+|its\s+)?stamina|does\s+not\s+increase\s+(?:your\s+|its\s+)?stamina)\b/i;
     if (withoutIncreaseStaminaRegex.test(cleaned)) {
       issues.push({
         file: filePath,
         lineNum,
-        message: 'Phrasing "without/does not increase stamina" should probably be "without/does not reduce stamina"',
+        message:
+          'Phrasing "without/does not increase stamina" should probably be "without/does not reduce stamina"',
+        text: line,
+      });
+    }
+
+    // 5. Check for reducing stamina as a cost insted of spendin it
+    const canReduceRegex = /\bcan\b.*reduc.*stamina/i;
+    if (canReduceRegex.test(cleaned)) {
+      issues.push({
+        file: filePath,
+        lineNum,
+        message: 'Phrasing "can reduce stamina" should probably be "spend stamina"',
+        text: line,
+      });
+    }
+    const reduceAsCostRegex = /abilitycost.*reduc.*stamina/i;
+    if (reduceAsCostRegex.test(cleaned)) {
+      issues.push({
+        file: filePath,
+        lineNum,
+        message: 'Ability cost that reduces stamina should probably spend stamina',
         text: line,
       });
     }
@@ -144,7 +167,10 @@ if (issues.length === 0) {
   console.log('\x1b[32m%s\x1b[0m', 'Validation successful: No stamina/fatigue issues found.');
   process.exit(0);
 } else {
-  console.error('\x1b[31m%s\x1b[0m', `Validation failed: Found ${issues.length} potential stamina/fatigue issues:\n`);
+  console.error(
+    '\x1b[31m%s\x1b[0m',
+    `Validation failed: Found ${issues.length} potential stamina/fatigue issues:\n`,
+  );
   for (const issue of issues) {
     const relativePath = path.relative(projectRoot, issue.file);
     console.error(`\x1b[33m%s\x1b[0m`, `${relativePath}:${issue.lineNum}`);

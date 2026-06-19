@@ -251,7 +251,7 @@ export const prayer: MysticSphere = {
       cost: 'See text.',
       effect: `
         Each \\glossterm{ally} within a \\largearea radius from you can remove a \\glossterm{condition}.
-        Each ally that removes a condition in this way increases its \\glossterm{stamina} by one.
+        Each ally that removes a condition in this way reduces its \\glossterm{stamina} by one.
       `,
       rank: 6,
       roles: ['cleanse', 'exertion'],
@@ -310,7 +310,7 @@ export const prayer: MysticSphere = {
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
         At the end of its turn, each target may remove one \\glossterm{condition} of its choice affecting it.
-        Whenever it does, it increases its \\glossterm{stamina} by one.
+        Whenever it does, it reduces its \\glossterm{stamina} by one.
       `,
       rank: 7,
       roles: ['attune', 'exertion'],
@@ -336,7 +336,7 @@ export const prayer: MysticSphere = {
 
       // Ally shielded is 0.6 EA, so we reduce the healing to dr2.
       // TODO: more clear guidelines on how healing interacts with buffs, and who pays the
-      // fatigue for this sort of effect.
+      // stamina for this sort of effect.
       cost: 'One \\glossterm{stamina}.',
       // dr3
       effect: `

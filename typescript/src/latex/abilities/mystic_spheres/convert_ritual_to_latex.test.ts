@@ -3,7 +3,7 @@ import { convertRitualToLatex } from './convert_ritual_to_latex';
 import { RitualDefinition } from '@src/abilities';
 
 t.test('convertRitualToLatex', (t) => {
-  t.test('should include fatigue cost when staminaCost is true', (t) => {
+  t.test('should include stamina cost when staminaCost is true', (t) => {
     const ritual: RitualDefinition = {
       name: 'Test Ritual',
       usageTime: 'one hour',
@@ -21,9 +21,9 @@ t.test('convertRitualToLatex', (t) => {
     t.end();
   });
 
-  t.test('should not include fatigue cost when staminaCost is false', (t) => {
+  t.test('should not include stamina cost when staminaCost is false', (t) => {
     const ritual: RitualDefinition = {
-      name: 'Test Ritual No Fatigue',
+      name: 'Test Ritual No Stamina',
       usageTime: 'one hour',
       rank: 1,
       roles: ['narrative'],
@@ -36,7 +36,7 @@ t.test('convertRitualToLatex', (t) => {
     t.end();
   });
 
-  t.test('should include increased fatigue cost for 24 hour rituals', (t) => {
+  t.test('should include higher stamina cost for 24 hour rituals', (t) => {
     const ritual: RitualDefinition = {
       name: 'Long Ritual',
       usageTime: '24 hours',

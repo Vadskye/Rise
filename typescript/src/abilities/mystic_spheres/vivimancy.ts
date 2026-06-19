@@ -32,7 +32,7 @@ export const vivimancy: MysticSphere = {
           \\damageranktwo.
         `,
         injury: `
-          You can increase your \\glossterm{stamina} by one. 
+          You can spend one \\glossterm{stamina}. 
           If you do, you regain \\hprankfour.
         `,
         targeting: `
@@ -82,7 +82,7 @@ export const vivimancy: MysticSphere = {
           \\damagerankone.
         `,
         injury: `
-          You can increase your \\glossterm{stamina} by one.
+          You can spend one \\glossterm{stamina}.
           If you do, you regain \\hprankfive.
         `,
         targeting: `
@@ -766,9 +766,9 @@ export const vivimancy: MysticSphere = {
 
       cost: 'See text.',
       effect: `
-        At the end of its turn, if the target's \\glossterm{stamina} does not exceed its \\glossterm{maximum stamina}, it automatically removes one of its \\glossterm{vital wounds}.
+        At the end of its turn, if the target does not have a \\glossterm{stamina penalty}, it automatically removes one of its \\glossterm{vital wounds}.
         It can choose to stop this regeneration if it is conscious, but the regeneration happens automatically if it is unconscious due to vital wounds.
-        For each vital wound removed in this way, it increases its \\glossterm{stamina} by three.
+        For each vital wound removed in this way, it reduces its \\glossterm{stamina} by three.
       `,
       rank: 6,
       roles: ['attune', 'exertion'],

@@ -61,7 +61,7 @@ export function combatDiscipline(): RankAbility[] {
       rank: 4,
       description: `
         \\begin{activeability}{Cleansing Discipline}{Standard action}
-          \\abilitycost You can increase your \\glossterm{stamina} by one to use this ability as a \\glossterm{minor action}.
+          \\abilitycost You can spend one \\glossterm{stamina} to use this ability as a \\glossterm{minor action}.
           \\rankline
           Remove all \\glossterm{conditions} affecting you.
           In addition, you \\glossterm{briefly} become immune to all conditions.

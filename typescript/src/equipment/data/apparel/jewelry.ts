@@ -146,7 +146,7 @@ function amulets(): Apparel[] {
         rank: 7,
         short_description: 'Reduces stamina cost of \\ability{revivify}',
         description: `
-            When you use the \\ability{revivify} cleric ability, you only increase your \\glossterm{stamina} by three instead of by four.
+            When you use the \\ability{revivify} cleric ability, you only reduce your \\glossterm{stamina} by three instead of by four.
         `,
         magical: true,
         upgrades: [],
@@ -482,7 +482,7 @@ function rings(): Apparel[] {
             When you do, you may remove a \\glossterm{condition} affecting you.
             If you remove a condition in this way, you are \\glossterm{briefly} \\empowered.
 
-            After you activate this item, you increase your \\glossterm{stamina} by one.
+            After you activate this item, you reduce your \\glossterm{stamina} by one.
         `,
         magical: true,
         upgrades: [
@@ -504,7 +504,7 @@ function rings(): Apparel[] {
         short_description: 'Can exert to breathe briefly',
         description: `
             You can activate this item as a \\glossterm{minor action}.
-            When you do, you increase your \\glossterm{stamina} by one, and you can breathe in clean, fresh air regardless of your environment for one minute.
+            When you do, you reduce your \\glossterm{stamina} by one, and you can breathe in clean, fresh air regardless of your environment for one minute.
             This can be used in emergencies to save yourself from drowning or other perils.
         `,
         magical: true,
@@ -638,7 +638,7 @@ function rings(): Apparel[] {
             You can activate this ring as a standard action.
             When you do, you remove one \\glossterm{condition} affecting you.
 
-            After you activate this item, you increase your \\glossterm{stamina} by one.
+            After you activate this item, you reduce your \\glossterm{stamina} by one.
         `,
         magical: true,
         upgrades: [
@@ -662,7 +662,7 @@ function rings(): Apparel[] {
             You can activate this ring as a \\glossterm{minor action}.
             When you do, you remove one \\glossterm{condition} affecting you.
 
-            After you activate this item, you increase your \\glossterm{stamina} by one.
+            After you activate this item, you reduce your \\glossterm{stamina} by one.
         `,
         magical: true,
         upgrades: [],

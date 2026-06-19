@@ -2,6 +2,7 @@
 # Generate only the Typescript code, which is faster
 g rts
 tsc --incremental; or exit 1
+npm run validate_stamina; or exit 1
 
 set logfile "../rtgen.log"
 

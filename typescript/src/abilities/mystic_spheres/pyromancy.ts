@@ -131,7 +131,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       // Rank 4 Spell
       // Area: Small radius from self (R0, mod +1)
-      // Bonus: Fatigue Level (mod +1), Self-Hit (mod +1)
+      // Bonus: Stamina Penalty (mod +1), Self-Hit (mod +1)
       // Buff: Briefly Maximized (0.7 EA guaranteed, mod -4)
       // Result: 4 + 1 - 4 + 2 = dr3
       cost: 'One \\glossterm{stamina}.',
@@ -155,7 +155,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       // Rank 7 Spell
       // Area: Small radius from self (R0, mod +1)
-      // Mod: Fatigue Level (mod +1), Self-Hit (mod +1)
+      // Mod: Stamina Penalty (mod +1), Self-Hit (mod +1)
       // Buff: Briefly Maximized (0.7 EA guaranteed, mod -4)
       // Result: 7 + 1 - 4 + 2 = dr6
       cost: 'One \\glossterm{stamina}.',
@@ -793,7 +793,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         \\begin{raggeditemize}
           \\item You return at full \\glossterm{hit points}, with all of your conditions removed.
           \\item All of your \\glossterm{vital rolls} for your vital rolls that were 0 or lower become 1, preventing you from dying again immediately.
-          \\item You increase your \\glossterm{stamina} by three.
+          \\item You reduce your \\glossterm{stamina} by three.
         \\end{raggeditemize}
 
         After you are restored to life in this way, this ability is \\glossterm{dismissed}.

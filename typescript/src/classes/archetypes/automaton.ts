@@ -107,7 +107,7 @@ export function automaton(): RankAbility[] {
       description: `
         You can recover from vital wounds more easily by simply replacing broken parts.
         You can remove a vital wound with ten minutes of work.
-        This increases your \\glossterm{stamina} by three, and it requires replacement parts that you generally keep with you.
+        This reduces your \\glossterm{stamina} by three, and it requires replacement parts that you generally keep with you.
         The parts are considered a consumable Rank 3 (200 gp) item.
 
         This can even save you from death, though that is more difficult and requires more advanced parts.

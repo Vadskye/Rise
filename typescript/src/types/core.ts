@@ -99,7 +99,7 @@ export class DamageDice {
   }
 }
 
-export type Resource = 'aura' | 'fatigue' | 'health' | 'mana' | 'stamina';
+export type Resource = 'aura' | 'health' | 'mana' | 'stamina';
 
 export type Sense =
   | { kind: 'Darkvision'; range: number }

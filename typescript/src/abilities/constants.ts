@@ -5,7 +5,7 @@ export const POISON_CRIT = 'The poison immediately escalates.';
 export const DELAYED_HALF = 'Half damage immediately, and no delayed damage.';
 export const BURNING_HALF = 'Half damage, and the target does not burn.';
 export const MINOR_STAMINA =
-  'You can increase your \\glossterm{stamina} by one to use this ability as a \\glossterm{minor action}.';
+  'You can spend one \\glossterm{stamina} to use this ability as a \\glossterm{minor action}.';
 export const EXCEPT_NOT_DEEP =
   'it has the \\abilitytag{Attune} tag instead of \\abilitytag{Attune} (deep).';
 export const BARRIER_COOLDOWN =
@@ -22,7 +22,7 @@ export const ABILITY_ROLES = [
   'clear', // Immediate damage to multiple targets, typically in an area
   'dive', // Move towards or through enemies and attack at short range
   'execute', // Single-target immediate damage that requires the target to be injured
-  'exertion', // Spend fatigue for more powerful effects (or, rarely, spend other resources like vital wounds)
+  'exertion', // Spend stamina for more powerful effects (or, rarely, spend other resources like vital wounds)
   'flash', // Brief or one-turn debuff that affects multiple targets, typically in an area. Does not require injury.
   'focus', // Brief offensive buff on yourself. If an ability makes an attack, it is not a focus ability, though it may be a generator.
   'generator', // Attack and gain a brief buff on yourself that is typically offensive. The buff must last after the effect of the attack, typically for its next turn.
