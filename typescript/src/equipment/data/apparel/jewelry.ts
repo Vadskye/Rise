@@ -469,7 +469,7 @@ function amulets(): RawApparel[] {
   ];
 }
 
-function rings(): Apparel[] {
+function rings(): RawApparel[] {
   return [
     {
       kind: 'Ring',

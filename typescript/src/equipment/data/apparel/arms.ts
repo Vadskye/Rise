@@ -147,7 +147,7 @@ function bracers(): RawApparel[] {
   ];
 }
 
-function gauntlets(): Apparel[] {
+function gauntlets(): RawApparel[] {
   return [
     {
       kind: 'Gauntlets',
@@ -262,7 +262,7 @@ function gauntlets(): Apparel[] {
   ];
 }
 
-function gloves(): Apparel[] {
+function gloves(): RawApparel[] {
   return [
     {
       kind: 'Gloves',
@@ -472,8 +472,8 @@ function gloves(): Apparel[] {
   ];
 }
 
-function tattoos(): Apparel[] {
-  const nthImbuement = (rank: number): Apparel => ({
+function tattoos(): RawApparel[] {
+  const nthImbuement = (rank: number): RawApparel => ({
     kind: 'Tattoo',
     item: {
       name: `Tattoo of Imbuement (${rank})`,

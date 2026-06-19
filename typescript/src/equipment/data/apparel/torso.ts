@@ -202,7 +202,7 @@ function belts(): RawApparel[] {
   ];
 }
 
-function cloaks(): Apparel[] {
+function cloaks(): RawApparel[] {
   return [
     {
       kind: 'Cloak',
