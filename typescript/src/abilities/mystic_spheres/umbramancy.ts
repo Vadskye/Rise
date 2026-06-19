@@ -441,7 +441,7 @@ export const umbramancy: MysticSphere = {
       effect: `
         You create a \\smallarealong \\glossterm{wall} of darkness within \\medrange.
         The wall is visible as a solid block of darkness.
-        It blocks ordinary vision and \\sense{low-light vision}, but creatures with \\sense{darkvision} can see through the wall normally.
+        It blocks ordinary vision and \\sense{low-light vision}, but creatures with active \\sense{darkvision} can see through the wall normally.
         It does not inhibit the passage of objects or creatures.
       `,
       rank: 2,
