@@ -325,7 +325,7 @@ function amulets(): RawApparel[] {
         rank: 2,
         short_description: 'Increases range with \\ability{sneak attack}',
         description: `
-            When you use the \\ability{sneak attack} rogue ability, you may target a creature within \\medrange instead of \\shortrange, and you can use any \\atProjectile weapon to make the strike.
+            When you use the \\ability{sneak attack} rogue ability, you may target a creature within \\medrange instead of \\shortrange, and you can use any \\weapontag{Projectile} weapon to make the strike.
         `,
         magical: true,
         upgrades: [
