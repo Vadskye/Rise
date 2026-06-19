@@ -47,7 +47,7 @@ export function kits(): Tool[] {
         short_description: 'Can make items with Craft (alchemy)',
         description: `
           This is a Medium workstation that contains a wide variety of compounds and reagents.
-          It is very difficult to create items using the Craft (alchemy) skill without this item (see \\pcref{Craft}).
+          It is very difficult to create items using the Craft (alchemy) skill without an alchemist's lab (see \\pcref{Craft}).
         `,
         upgrades: [
           {
@@ -70,17 +70,30 @@ export function kits(): Tool[] {
         description: `
           This is a Large workstation that contains a wide variety of tools for working with metal.
           It includes an anvil, a crucible, and so on.
-          It is very difficult to create items using the Craft (metal) skill without this item (see \\pcref{Craft}).
+          It is very difficult to create items using the Craft (metal) skill without a forge (see \\pcref{Craft}).
         `,
         upgrades: [
           {
-            rank: 4,
+            rank: 3,
             short_description: 'Can portably make items with Craft (metal)',
             description: `
               The workstation has been miniaturized to Medium size using high quality metals and alchemical or magical heating elements.
             `,
           },
         ],
+      },
+      'metal',
+    ),
+    createKit(
+      {
+        name: 'Mystic Forge',
+        magical: true,
+        rank: 5,
+        short_description: 'Can very portably make items with Craft (metal)',
+        description: `
+          This is a Small workstation that contains magical multi-purpose tools for working with metal.
+          It is very difficult to create items using the Craft (metal) skill without a forge (see \\pcref{Craft}).
+        `,
       },
       'metal',
     ),
