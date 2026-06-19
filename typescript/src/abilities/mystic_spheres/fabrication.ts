@@ -110,8 +110,11 @@ export const fabrication: MysticSphere = {
         Choose one Small or smaller object within \\medrange.
         You create a nonmagical copy of that item that appears in your hands or at your feet.
         Make a Craft check with a \\plus5 bonus to determine how closely the appearance and function of the copy matches the original.
+        The difficulty value of this check is equal to the difficulty of crafting the item normally.
+
         The copy is always \\glossterm{mundane}, even if the original was magical.
-        It may appear to be made of a special material such as adamantine, but functions as if it was made of an ordinary material like wood or iron.
+        Permanent tools, such as traps, function normally.
+        Consumable alchemical items, such as potions and alchemist's fire, are not reactive and have no effect.
       `,
       rank: 2,
       roles: ['narrative'],
