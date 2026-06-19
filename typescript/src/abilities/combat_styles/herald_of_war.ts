@@ -415,7 +415,7 @@ export const heraldOfWar: CombatStyle = {
       // We have to use a power scaling here because maneuvers don't have rank scaling, so
       // this would fall behind quickly otherwise
       // TODO: update maneuvers so fixed damage maneuvers are allowed to have scaling
-      cost: 'One \\glossterm{fatigue level}.',
+      cost: 'One \\glossterm{stamina}.',
       effect: `
         You and each \\glossterm{ally} in a \\medarea radius from you each regain \\glossterm{hit points} equal to 1d6 \\add your \\glossterm{power}.
       `,
@@ -427,7 +427,7 @@ export const heraldOfWar: CombatStyle = {
     {
       name: 'Encouraging Battlecry+',
 
-      cost: 'One \\glossterm{fatigue level}.',
+      cost: 'One \\glossterm{stamina}.',
       effect: `
         You and each \\glossterm{ally} in a \\medarea radius from you each regain \\glossterm{hit points} equal to 1d8 per 2 power.
       `,

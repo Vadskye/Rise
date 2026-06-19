@@ -236,7 +236,7 @@ export const prayer: MysticSphere = {
     {
       name: 'Boon of Cleansing',
 
-      cost: 'One \\glossterm{fatigue level} from each target.',
+      cost: 'One \\glossterm{stamina} from each target.',
       effect: `
         Two \\glossterm{allies} within \\medrange can each remove a \\glossterm{condition}.
       `,
@@ -251,7 +251,7 @@ export const prayer: MysticSphere = {
       cost: 'See text.',
       effect: `
         Each \\glossterm{ally} within a \\largearea radius from you can remove a \\glossterm{condition}.
-        Each ally that removes a condition in this way increases its \\glossterm{fatigue level} by one.
+        Each ally that removes a condition in this way increases its \\glossterm{stamina} by one.
       `,
       rank: 6,
       roles: ['cleanse', 'exertion'],
@@ -310,7 +310,7 @@ export const prayer: MysticSphere = {
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
         At the end of its turn, each target may remove one \\glossterm{condition} of its choice affecting it.
-        Whenever it does, it increases its \\glossterm{fatigue level} by one.
+        Whenever it does, it increases its \\glossterm{stamina} by one.
       `,
       rank: 7,
       roles: ['attune', 'exertion'],
@@ -337,7 +337,7 @@ export const prayer: MysticSphere = {
       // Ally shielded is 0.6 EA, so we reduce the healing to dr2.
       // TODO: more clear guidelines on how healing interacts with buffs, and who pays the
       // fatigue for this sort of effect.
-      cost: 'One \\glossterm{fatigue level}.',
+      cost: 'One \\glossterm{stamina}.',
       // dr3
       effect: `
         Choose one \\glossterm{ally} within \\medrange.
@@ -365,7 +365,7 @@ export const prayer: MysticSphere = {
 
       // Assume that it typically affects two people, and anything more than that is a
       // bonus. Normal healing ability would be dr4, so use half of that (where possible).
-      cost: 'One \\glossterm{fatigue level}.',
+      cost: 'One \\glossterm{stamina}.',
       effect: `
         You and all \\glossterm{allies} within a \\largearea radius from you each regain 2d8 \\glossterm{hit points}.
       `,

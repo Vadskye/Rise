@@ -67,17 +67,17 @@ def calc_fortitude():
     )
 
 
-def calc_fatigue_tolerance():
+def calc_maximum_stamina():
     return flex_row(
         [
-            div({"class": "calc-header fatigue-tolerance"}, "Fatigue tolerance"),
+            div({"class": "calc-header maximum-stamina"}, "Maximum stamina"),
             equation(
                 [
                     underlabel(
                         "Class",
                         number_input(
                             {
-                                "name": "fatigue_tolerance_base",
+                                "name": "stamina_max_base",
                             }
                         ),
                     ),
@@ -92,10 +92,10 @@ def calc_fatigue_tolerance():
                         ),
                     ),
                     plus(),
-                    equation_misc_repeat("fatigue_tolerance", 2),
+                    equation_misc_repeat("stamina_max", 2),
                 ],
                 result_attributes={
-                    "name": "fatigue_tolerance",
+                    "name": "stamina_max",
                     "readonly": True,
                 },
             ),

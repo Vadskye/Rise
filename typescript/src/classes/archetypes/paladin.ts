@@ -231,7 +231,7 @@ export function stalwartGuardian(): RankAbility[] {
       rank: 1,
       description: `
         \\begin{magicalactiveability}{Lay on Hands}{Standard action}
-          \\abilitycost One \\glossterm{fatigue level}.
+          \\abilitycost One \\glossterm{stamina}.
           \\rankline
           Choose yourself or a living \\glossterm{ally} you touch.
           The target regains \\hprankfour.
@@ -274,7 +274,7 @@ export function stalwartGuardian(): RankAbility[] {
       rank: 4,
       description: `
         You can also remove a \\glossterm{vital wound} from the target.
-        If you do, you increase your \\glossterm{fatigue level} by two.
+        If you do, you increase your \\glossterm{stamina} by two.
         Otherwise, you are \\glossterm{briefly} \\focused.
       `,
     },
@@ -303,7 +303,7 @@ export function stalwartGuardian(): RankAbility[] {
       rank: 7,
       description: `
         Each vital wound you suffer only causes a \\minus1 penalty to \\glossterm{vital rolls} instead of the normal \\minus2 penalty.
-        In addition, whenever you gain a vital wound, you remove one of your \\glossterm{fatigue levels}.
+        In addition, whenever you gain a vital wound, you remove one of your \\glossterm{stamina}.
       `,
     },
   ];
@@ -398,7 +398,7 @@ export function zealousWarrior(): RankAbility[] {
       description: `
         \\begin{magicalactiveability}{Pass Judgment}{\\glossterm{Minor action}}
           \\abilitytags \\atSubtle
-          \\abilitycost One \\glossterm{fatigue level}.
+          \\abilitycost One \\glossterm{stamina}.
           \\rankline
           Choose one creature within \\distrange.
           You always gain the benefit of your \\ability{zealous fixation} ability against that creature.

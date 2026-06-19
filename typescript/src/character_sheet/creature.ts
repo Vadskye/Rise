@@ -85,7 +85,7 @@ type NumericCreatureProperty =
   | 'shield_reflex'
   | 'speed'
   | 'vital_rolls'
-  | 'fatigue_tolerance'
+  | 'stamina_max'
   | 'initiative'
   | 'all_defenses'
   | 'all_skills'
@@ -482,8 +482,8 @@ export class Creature implements CreaturePropertyMap {
     if (this.activeAbilities[ability.name]) {
       console.warn(`Creature ${this.name}: Overwriting existing ability '${ability.name}'`);
     }
-    // Monsters ignore personal fatigue
-    if (ability.cost === 'One \\glossterm{fatigue level}') {
+    // Monsters ignore personal stamina
+    if (ability.cost && /^One \\glossterm\{stamina\}(?!\s+from\b)/i.test(ability.cost)) {
       delete ability.cost;
     }
     this.activeAbilities[ability.name] = ability;
@@ -738,7 +738,7 @@ export class Creature implements CreaturePropertyMap {
       name: displayName || 'Rituals',
       effect: `
         The $name can perform any ritual of rank ${this.calculateRank()} or lower from the ${sphereNames} mystic spheres.
-        It does not need to increase its \\glossterm{fatigue level} to perform those rituals.
+        It does not need to reduce its \\glossterm{stamina} to perform those rituals.
       `,
       isMagical: true,
     });
@@ -1063,8 +1063,8 @@ export class Creature implements CreaturePropertyMap {
     return this.getPropertyValue('is_monster');
   }
 
-  public get fatigue_tolerance() {
-    return this.getPropertyValue('fatigue_tolerance');
+  public get stamina_max() {
+    return this.getPropertyValue('stamina_max');
   }
 
   public get initiative() {

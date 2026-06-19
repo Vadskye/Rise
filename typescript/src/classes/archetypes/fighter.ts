@@ -22,7 +22,7 @@ export function combatDiscipline(): RankAbility[] {
       isMagical: false,
       rank: 2,
       description: `
-        You gain a \\plus2 bonus to your Mental defense and \\glossterm{fatigue tolerance}.
+        You gain a \\plus2 bonus to your Mental defense and \\glossterm{maximum stamina}.
       `,
     },
     {
@@ -61,7 +61,7 @@ export function combatDiscipline(): RankAbility[] {
       rank: 4,
       description: `
         \\begin{activeability}{Cleansing Discipline}{Standard action}
-          \\abilitycost You can increase your \\glossterm{fatigue level} by one to use this ability as a \\glossterm{minor action}.
+          \\abilitycost You can increase your \\glossterm{stamina} by one to use this ability as a \\glossterm{minor action}.
           \\rankline
           Remove all \\glossterm{conditions} affecting you.
           In addition, you \\glossterm{briefly} become immune to all conditions.
@@ -593,7 +593,7 @@ export function combatDisciplineModifiers(creature: Creature, rank: number) {
           modifier: rank >= 5 ? 4 : 2,
         },
         {
-          statistic: 'fatigue_tolerance',
+          statistic: 'stamina_max',
           modifier: rank >= 5 ? 4 : 2,
         },
       ],

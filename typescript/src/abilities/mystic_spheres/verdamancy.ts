@@ -629,7 +629,7 @@ export const verdamancy: MysticSphere = {
     // AOE healing has a poorly defined healing value. For now, this seems fine??
     {
       name: 'Healing Bloom',
-      cost: 'One \\glossterm{fatigue level}.',
+      cost: 'One \\glossterm{stamina}.',
       effect: `
         Choose a \\tinyarea \\glossterm{zone} within \\medrange.
         A flower begins to grow in the center of the area.
@@ -642,7 +642,7 @@ export const verdamancy: MysticSphere = {
     },
     {
       name: 'Greater Healing Bloom',
-      cost: 'One \\glossterm{fatigue level}.',
+      cost: 'One \\glossterm{stamina}.',
       functionsLike: {
         name: 'healing bloom',
         exceptThat: 'the healing increases to \\hprankfive.',

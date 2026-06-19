@@ -433,19 +433,19 @@ def core_statistics(destination: str) -> str:
                 },
             ),
             sidelabel(
-                "Fatigue level" if destination == "roll20" else "Fatigue tolerance",
+                "Stamina level" if destination == "roll20" else "Maximum stamina",
                 flex_row(
                     {"class": "core-statistics-split"},
                     [
                         number_input(
                             {
-                                "name": "fatigue_points",
+                                "name": "stamina",
                             }
                         ),
                         span({"class": "core-statistics-separator"}, "/"),
                         number_input(
                             {
-                                "name": "fatigue_tolerance",
+                                "name": "stamina_max",
                                 "readonly": True,
                             }
                         ),

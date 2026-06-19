@@ -450,13 +450,13 @@ export const magicUnrestrictedWeapons = (): MagicWeapon[] => [
     rank: 1,
     short_description: 'Ignore 2 fatigue with strikes',
     description:
-      'You reduce your \\glossterm{fatigue penalty} by 2 when determining your \\glossterm{accuracy} with \\glossterm{strikes} using this weapon.',
+      'You reduce your \\glossterm{stamina penalty} by 2 when determining your \\glossterm{accuracy} with \\glossterm{strikes} using this weapon.',
     upgrades: [
       {
         rank: 4,
         short_description: 'Gain power while fatigued',
         description:
-          'You ignore your \\glossterm{fatigue penalty} when determining your \\glossterm{accuracy} with \\glossterm{strikes} using this weapon.',
+          'You ignore your \\glossterm{stamina penalty} when determining your \\glossterm{accuracy} with \\glossterm{strikes} using this weapon.',
       },
     ],
   }),

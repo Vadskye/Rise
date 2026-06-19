@@ -227,13 +227,13 @@ t.test('can calculate insight points', (t) => {
   t.end();
 });
 
-t.test('can calculate fatigue tolerance', (t) => {
+t.test('can calculate maximum stamina', (t) => {
   t.test('for fighter', (t) => {
     setStandardFighter();
-    getAttrs(['fatigue_tolerance', 'fatigue_tolerance_explanation'], (attrs) => {
+    getAttrs(['stamina_max', 'stamina_max_explanation'], (attrs) => {
       t.match(attrs, {
-        fatigue_tolerance: 5,
-        fatigue_tolerance_explanation: '+3 (fighter)  +2 (Con)',
+        stamina_max: 5,
+        stamina_max_explanation: '+3 (fighter)  +2 (Con)',
       });
       t.end();
     });
@@ -241,10 +241,10 @@ t.test('can calculate fatigue tolerance', (t) => {
 
   t.test('for wizard', (t) => {
     setStandardWizard();
-    getAttrs(['fatigue_tolerance', 'fatigue_tolerance_explanation'], (attrs) => {
+    getAttrs(['stamina_max', 'stamina_max_explanation'], (attrs) => {
       t.match(attrs, {
-        fatigue_tolerance: 2,
-        fatigue_tolerance_explanation: '+2 (wizard)',
+        stamina_max: 2,
+        stamina_max_explanation: '+2 (wizard)',
       });
       t.end();
     });
@@ -486,22 +486,24 @@ t.test('can calculate mundane power', (t) => {
   t.end();
 });
 
-t.test('can calculate fatigue penalty', (t) => {
-  t.test('for fighter', (t) => {
+t.test('can calculate stamina penalty', (t) => {
+  t.test('when stamina is positive', (t) => {
     setStandardFighter();
-    getAttrs(['fatigue_penalty'], (attrs) => {
+    setAttrs({ stamina: 3 });
+    getAttrs(['stamina_penalty'], (attrs) => {
       t.match(attrs, {
-        fatigue_penalty: 0,
+        stamina_penalty: 0,
       });
       t.end();
     });
   });
 
-  t.test('for wizard', (t) => {
-    setStandardWizard();
-    getAttrs(['fatigue_penalty'], (attrs) => {
+  t.test('when stamina is negative', (t) => {
+    setStandardFighter();
+    setAttrs({ stamina: -2 });
+    getAttrs(['stamina_penalty'], (attrs) => {
       t.match(attrs, {
-        fatigue_penalty: 0,
+        stamina_penalty: 2,
       });
       t.end();
     });

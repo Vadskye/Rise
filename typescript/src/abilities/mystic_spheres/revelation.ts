@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { CONDITION_CRIT, MINOR_FATIGUE } from '../constants';
+import { CONDITION_CRIT, MINOR_STAMINA } from '../constants';
 
 export const revelation: MysticSphere = {
   name: 'Revelation',
@@ -329,7 +329,7 @@ export const revelation: MysticSphere = {
     {
       name: 'Reveal Vulnerability',
 
-      cost: MINOR_FATIGUE,
+      cost: MINOR_STAMINA,
       attack: {
         crit: CONDITION_CRIT,
         hit: `

@@ -24,7 +24,7 @@ export function potions(): Tool[] {
       rank: 2,
       short_description: 'Removes a condition',
       description: `
-        When you drink this \\glossterm{potion}, you remove a \\glossterm{condition} affecting you and increase your \\glossterm{fatigue level} by one.
+        When you drink this \\glossterm{potion}, you remove a \\glossterm{condition} affecting you and increase your \\glossterm{stamina} by one.
       `,
       upgrades: [
         {
@@ -32,7 +32,7 @@ export function potions(): Tool[] {
           short_description: 'Removes two conditions',
           description: `
             You remove two conditions instead of only one.
-            You increase your fatigue level by one for each condition that you remove in this way.
+            You reduce your stamina by one for each condition that you remove in this way.
           `,
         },
       ],
@@ -42,7 +42,7 @@ export function potions(): Tool[] {
       rank: 0,
       short_description: 'Restores $dr4l hit points and mitigates vital wounds',
       description: `
-        When you drink this \\glossterm{potion}, you regain $dr4l hit points and increase your \\glossterm{fatigue level} by one.
+        When you drink this \\glossterm{potion}, you regain $dr4l hit points and increase your \\glossterm{stamina} by one.
         In addition, you can increase one of your \\glossterm{vital wounds} with a \\glossterm{vital roll} of 0 to be equal to 1 instead (see \\pcref{Vital Wounds}).
       `,
       upgrades: [
@@ -74,7 +74,7 @@ export function potions(): Tool[] {
       rank: 7,
       short_description: 'Restores $dr10l hit points over time',
       description: `
-        When you drink this \\glossterm{potion}, you regain $dr10l hit points and increase your \\glossterm{fatigue level} by one.
+        When you drink this \\glossterm{potion}, you regain $dr10l hit points and increase your \\glossterm{stamina} by one.
         In addition, you increase all of your vital wounds with a \\glossterm{vital roll} of less than 1 to be equal to 1.
         At the end of your next turn, this effect repeats.
       `,

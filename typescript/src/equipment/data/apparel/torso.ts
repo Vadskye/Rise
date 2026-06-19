@@ -40,9 +40,9 @@ function belts(): Apparel[] {
         rank: 6,
         short_description: 'Automatically exert to remove vital wounds',
         description: `
-            At the end of your turn, if your \\glossterm{fatigue level} does not exceed your \\glossterm{fatigue tolerance}, you automatically remove one of your \\glossterm{vital wounds}.
+            At the end of your turn, if your \\glossterm{stamina} does not exceed your \\glossterm{maximum stamina}, you automatically remove one of your \\glossterm{vital wounds}.
             You can choose to stop this regeneration if you are conscious, but it happens automatically if you are unconscious due to vital wounds.
-            When you remove a vital wound in this way, you increase your \\glossterm{fatigue level} by three.
+            When you remove a vital wound in this way, you increase your \\glossterm{stamina} by three.
         `,
         magical: true,
         upgrades: [],
@@ -105,7 +105,7 @@ function belts(): Apparel[] {
         short_description: 'Exert to heal $dr3l hit points',
         description: `
             You can activate this belt as a standard action.
-            When you do, you regain $dr3l hit points and increase your \\glossterm{fatigue level} by one.
+            When you do, you regain $dr3l hit points and increase your \\glossterm{stamina} by one.
         `,
         magical: true,
         upgrades: [
@@ -211,7 +211,7 @@ function cloaks(): Apparel[] {
         short_description: 'Can exert to save your mount from death',
         description: `
             Whenever a non-humanoid mount that you are riding would gain one or more \\glossterm{vital wounds}, this cloak automatically activates.
-            When it does, you increase your \\glossterm{fatigue level} by one, and the mount does not make a \\glossterm{vital roll} for the vital wounds.
+            When it does, you increase your \\glossterm{stamina} by one, and the mount does not make a \\glossterm{vital roll} for the vital wounds.
             Instead, each vital wound is treated as having a vital roll of 1, which prevents the mount from dying from its wounds.
         `,
         magical: true,
@@ -219,7 +219,7 @@ function cloaks(): Apparel[] {
           {
             rank: 4,
             short_description: 'Can save your mount from death',
-            description: 'This cloak does not increase your fatigue level when it activates.',
+            description: 'This cloak does not reduce your stamina when it activates.',
           },
         ],
         tags: ['Attune'],

@@ -398,7 +398,7 @@ export function buildSpellProfile(
 
   const hasCost =
     !!spell.cost ||
-    spell.fatigueCost === true ||
+    spell.staminaCost === true ||
     spell.materialCost === true ||
     (spell.type || '').toLowerCase().startsWith('attune') ||
     fullText.toLowerCase().includes('cooldown') ||

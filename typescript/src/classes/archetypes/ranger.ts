@@ -31,7 +31,7 @@ export function beastmaster(): RankAbility[] {
           \\begin{raggeditemize}
             \\item Its size category is Medium, and its \\glossterm{base speed} is 30 feet.
             \\item Its level is equal to your level.
-            \\item It has no \\glossterm{resources}, and it cannot use abilities that would increase its fatigue level.
+            \\item It has no \\glossterm{resources}, and it cannot use abilities that would reduce its stamina.
             \\item Its maximum \\glossterm{hit points} are equal to your level \\x your rank in this archetype, plus 10 additional hit points.
             \\item Its \\glossterm{injury point} is equal to half its maximum hit points.
             \\item Each of its \\glossterm{defenses} is equal to 4 \\add half your level.

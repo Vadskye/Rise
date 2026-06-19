@@ -325,7 +325,7 @@ export const polymorph: MysticSphere = {
     {
       name: 'Mending',
 
-      cost: 'One \\glossterm{fatigue level} from the target if it is a creature.',
+      cost: 'One \\glossterm{stamina} from the target if it is a creature.',
       // dr4 from touch range. No healing buff since this is in an odd sphere for
       // healing and lacks the normal Life tag.
       effect: `
@@ -354,7 +354,7 @@ export const polymorph: MysticSphere = {
     {
       name: 'Brief Regeneration',
 
-      cost: 'One \\glossterm{fatigue level} from the target.',
+      cost: 'One \\glossterm{stamina} from the target.',
       // At rank 4, expected power is about 9. Normal healing would be dr5, which is
       // 1d8+3d8 = 18. This is 27 instead, which is a big buff, but healing is generally
       // best as an emergency button and this requires planning.
@@ -371,7 +371,7 @@ export const polymorph: MysticSphere = {
     {
       name: 'Greater Brief Regeneration',
 
-      cost: 'One \\glossterm{fatigue level} from the target.',
+      cost: 'One \\glossterm{stamina} from the target.',
       // At rank 6, expected power is about 12. Normal healing would be dr8, which is
       // 10d8 = 45. This is 6d10 each = 66 instead, which is about 50% more like the rank
       // 3 version.
