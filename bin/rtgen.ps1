@@ -65,9 +65,9 @@ $tasks = @(
     @{ type = "equipment_consumable_tools_tables"; output = "..\comprehensive_codex\generated\consumable_tools_table.tex" },
     @{ type = "equipment_permanent_tools_descriptions"; output = "..\comprehensive_codex\generated\permanent_tools.tex" },
     @{ type = "equipment_permanent_tools_tables"; output = "..\comprehensive_codex\generated\permanent_tools_table.tex" },
-    @{ type = "equipment_relic_descriptions"; output = "..\comprehensive_codex\generated\relics.tex" },
-    @{ type = "equipment_relic_tables"; output = "..\comprehensive_codex\generated\relics_table.tex" },
-    @{ type = "equipment_everything_table"; output = "..\comprehensive_codex\generated\everything_table.tex" }
+    @{ type = "equipment_relic_descriptions"; output = "..\core_book\generated\relics.tex" },
+    @{ type = "equipment_relic_tables"; output = "..\core_book\generated\relics_table.tex" },
+    @{ type = "equipment_everything_table"; output = "..\core_book\generated\everything_table.tex" }
 )
 
 foreach ($task in $tasks) {
