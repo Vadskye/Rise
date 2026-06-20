@@ -35,7 +35,7 @@ export function battleforgedResilience(): RankAbility[] {
       isMagical: false,
       rank: 6,
       description: `
-        The durability bonus increases to \\plus8, and the injury point bonus increases to 20.
+        The durability bonus increases to \\plus8, and the injury point modifier increases to 20.
         If your Constitution is 7 or higher, you gain an additional \\plus2 durability bonus.
       `,
     },
