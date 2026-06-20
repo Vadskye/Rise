@@ -44,6 +44,7 @@
     "spell_roles": "tsx src/scripts/spell_role_breakdown.ts",
     "tap": "npm run test",
     "test": "npm run build:test && npx tap dist-test/**/*.test.js",
+    "test:file": "npm run build:test && npx tap",
     "prettier": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint \"src/**/*.ts\"",
     "format_archetype": "tsx src/scripts/format_archetype_description.ts",

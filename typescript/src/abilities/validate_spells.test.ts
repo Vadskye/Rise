@@ -1,5 +1,5 @@
 import t from 'tap';
-import { buildSpellProfile, validateSpells, SpellProfile } from './validate_spells';
+import { buildSpellProfile, validateSpells, SpellProfile, parseMaxTargets } from './validate_spells';
 import { SpellDefinition } from './active_abilities';
 import { MysticSphere } from './mystic_spheres';
 
@@ -39,6 +39,58 @@ t.test('buildSpellProfile', (t) => {
     t.equal(profile.areaGrows, false);
     t.end();
   });
+
+  t.end();
+});
+
+t.test('parseMaxTargets', (t) => {
+  const testCases = [
+    // Standard single target
+    { input: 'Make an attack vs. Fortitude against one creature within range.', expected: 1 },
+    { input: 'Make an attack against a creature.', expected: 1 },
+    { input: 'against one creature', expected: 1 },
+    { input: 'against a creature', expected: 1 },
+
+    // Simple multi-target (numbers as words)
+    { input: 'against up to two creatures', expected: 2 },
+    { input: 'against up to three targets', expected: 3 },
+    { input: 'against up to four enemies', expected: 4 },
+    { input: 'against up to five allies', expected: 5 },
+    { input: 'against up to ten targets', expected: 10 },
+
+    // Simple multi-target (digits)
+    { input: 'against up to 2 creatures', expected: 2 },
+    { input: 'against up to 3 targets', expected: 3 },
+    { input: 'against up to 5 enemies', expected: 5 },
+    { input: 'against up to 10 targets', expected: 10 },
+
+    // Non-matching / Default case
+    { input: 'against all enemies', expected: 1 },
+    { input: 'against each target', expected: 1 },
+    { input: 'against a given target', expected: 1 },
+    { input: 'no target description', expected: 1 },
+
+    // Modified targets (sizes, keywords)
+    { input: 'up to two Huge or smaller creatures', expected: 2 },
+    { input: 'up to three Large or smaller creatures', expected: 3 },
+    { input: 'against two Large or smaller creatures', expected: 2 },
+    { input: 'against one Large or smaller creature', expected: 1 },
+    { input: 'up to two Huge or smaller creature', expected: 2 },
+    { input: 'against up to two grounded creatures', expected: 2 },
+    { input: 'against up to three different targets', expected: 3 },
+
+    // Other modifier words
+    { input: 'against up to three humanoid creatures', expected: 3 },
+    { input: 'up to 8 additional targets', expected: 8 },
+    { input: 'against up to two Huge or smaller humanoid creatures', expected: 2 },
+  ];
+
+  for (const { input, expected } of testCases) {
+    t.test(`should parse "${input}" as ${expected} targets`, (t) => {
+      t.equal(parseMaxTargets(input), expected);
+      t.end();
+    });
+  }
 
   t.end();
 });
