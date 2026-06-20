@@ -258,15 +258,15 @@ export const photomancy: MysticSphere = {
 
     {
       name: 'Solar Flare',
-      // +1dr for not really escapable delay, +1dr for Fortitude and Reflex.
+      // +1-2dr for not really escapable delay, +1dr for Fortitude and Reflex.
       // Large enemies-only area is -3dr, so base damage is dr4.
-      // dr4 at rank 5 is 22 damage, or a 20 damage target for flat damage. dr4l is 16 damage, which is low, so add a debuff.
+      // dr4 at rank 5 is 22 damage, or a 20 damage target for flat damage. dr5l is 22.5 damage, which fits since the delay is a bit better than +1 rank.
       attack: {
         hit: `
-          \\damagerankfourlow.
+          \\damagerankfivelow.
         `,
         injury: `
-          The target is \\glossterm{briefly} \\dazzled, and it suffers consequences as if it had been struck by a beam of natural sunlight.
+          The target is \\briefly \\dazzled, and it suffers consequences as if it had been struck by a beam of natural sunlight.
           This can be dangerous for some creatures.
         `,
         halfOnMiss: true,
@@ -289,6 +289,7 @@ export const photomancy: MysticSphere = {
         hit: `
           \\damageranktwolow.
         `,
+        injury: `The target is \\briefly \\dazzled.`,
         halfOnMiss: true,
         targeting: `
           You create a field of light in a \\medarea radius \\glossterm{zone} from your location.
@@ -526,7 +527,7 @@ export const photomancy: MysticSphere = {
         `,
         halfOnMiss: true,
         targeting: `
-          Make an attack vs. Reflex against all \\glossterm{enemies} in a \\medarea radius within \\longrange.
+          Make an attack vs. Reflex against all \\glossterm{enemies} in a \\medarea radius within \\medrange.
         `,
       },
       rank: 5,
