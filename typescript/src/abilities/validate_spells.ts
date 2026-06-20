@@ -331,10 +331,10 @@ function parseDelayed(text: string): boolean {
   );
 }
 
-function parseMaxTargets(text: string): number {
+export function parseMaxTargets(text: string): number {
   const lowercase = text.toLowerCase();
   const match = lowercase.match(
-    /(?:up to|against)\s+(\w+|\d+)(?:\s+(?:grounded|huge|large|medium|small|tiny|or|smaller|larger|lighter|heavier|injured|allied|different))*?\s+(?:creatures?|targets?|enem(?:y|ies)|all(?:y|ies))/i,
+    /(?:against\s+up\s+to|up\s+to|against)\s+(\w+|\d+)(?:\s+[\w-]+){0,4}?\s+(?:creatures?|targets?|enem(?:y|ies)|all(?:y|ies))/i,
   );
   if (match) {
     const val = match[1];
