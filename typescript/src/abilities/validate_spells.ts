@@ -67,6 +67,8 @@ export interface SpellProfile {
   isSustainedMinor: boolean;
   isAttunable: boolean;
   enemiesOnly: boolean;
+  isRepeating: boolean;
+  providesCover: boolean;
 }
 
 export interface ValidationIssue {
@@ -333,6 +335,39 @@ function parseDelayed(text: string): boolean {
   );
 }
 
+function parseIsRepeating(text: string, isDelayed: boolean): boolean {
+  const lowercase = text.toLowerCase();
+  return (
+    /\bagain\b/i.test(lowercase) ||
+    /\brepeats?\b/i.test(lowercase) ||
+    /\bsubsequent\b/i.test(lowercase) ||
+    /each\s+(?:turn|round)/i.test(lowercase) ||
+    (lowercase.includes('next turn') && !isDelayed)
+  );
+}
+
+function parseProvidesCover(text: string): boolean {
+  return text.toLowerCase().includes('cover');
+}
+
+function parseNumAreas(text: string): number {
+  const lowercase = text.toLowerCase();
+  const match = lowercase.match(
+    /(one|two|three|four|five)\s+separate\s+(?:\\tinyarea|\\smallarea|\\medarea|\\largearea|\\hugearea|\\gargarea)?\s*(?:radius|cone|line|wall|zone|areas?)/i,
+  );
+  if (match) {
+    const wordMap: Record<string, number> = {
+      one: 1,
+      two: 2,
+      three: 3,
+      four: 4,
+      five: 5,
+    };
+    return wordMap[match[1]] || 1;
+  }
+  return 1;
+}
+
 export function parseMaxTargets(text: string): number {
   const lowercase = text.toLowerCase();
   const match = lowercase.match(
@@ -379,14 +414,29 @@ export function buildSpellProfile(
   const defenses = parseDefenses(fullText);
   const range = parseRange(fullText);
   let area = parseArea(fullText);
-  const areaSize = parseAreaSize(fullText);
+
+  let areaSize = parseAreaSize(fullText);
+  const numAreas = parseNumAreas(fullText);
+  if (numAreas > 1) {
+    const idx = AREA_SIZE_ORDER.indexOf(areaSize);
+    if (idx !== -1 && idx < AREA_SIZE_ORDER.length - 1) {
+      areaSize = AREA_SIZE_ORDER[idx + 1];
+    }
+  }
+
   const damageRank = parseDamageRank(fullText);
   const isLowPower = /\\damagerank\w+low/i.test(fullText);
   const appliedEffects = parseAppliedEffects(fullText);
   const accuracyModifier = parseAccuracyModifier(fullText);
   const accuracyCondition = parseAccuracyCondition(fullText);
   const specialRequirements = parseSpecialRequirements(fullText);
-  const isDelayed = parseDelayed(fullText);
+
+  const rawDelayed = parseDelayed(fullText);
+  const isRepeating = parseIsRepeating(fullText, rawDelayed);
+  const isDelayed = rawDelayed && !isRepeating;
+
+  const providesCover = parseProvidesCover(fullText);
+
   const isSustained =
     (spell.type || '').toLowerCase().includes('sustain') ||
     (spell.tags || []).some((tag) => tag.toLowerCase().includes('sustain')) ||
@@ -461,6 +511,8 @@ export function buildSpellProfile(
     isSustainedMinor,
     isAttunable,
     enemiesOnly,
+    isRepeating,
+    providesCover,
   };
 }
 
@@ -574,6 +626,20 @@ function getSpellDifferences(p1: SpellProfile, p2: SpellProfile): Difference[] {
       field: 'enemies only targeting',
       p1Value: p1.enemiesOnly ? 'enemies only' : 'all creatures',
       p2Value: p2.enemiesOnly ? 'enemies only' : 'all creatures',
+    });
+  }
+  if (p1.isRepeating !== p2.isRepeating) {
+    diffs.push({
+      field: 'repeating behavior',
+      p1Value: p1.isRepeating ? 'repeating' : 'single application',
+      p2Value: p2.isRepeating ? 'repeating' : 'single application',
+    });
+  }
+  if (p1.providesCover !== p2.providesCover) {
+    diffs.push({
+      field: 'provides cover',
+      p1Value: p1.providesCover ? 'provides cover' : 'no cover',
+      p2Value: p2.providesCover ? 'provides cover' : 'no cover',
     });
   }
 
@@ -696,6 +762,18 @@ function compareSpellProfiles(p1: SpellProfile, p2: SpellProfile): ComparisonRes
   if (p1.enemiesOnly !== p2.enemiesOnly) {
     if (p1.enemiesOnly) betterFields.push('enemies only targeting');
     else worseFields.push('enemies only targeting');
+  }
+
+  // 16. Repeating Behavior (having repeating/DoT/recurring damage is better)
+  if (p1.isRepeating !== p2.isRepeating) {
+    if (p1.isRepeating) betterFields.push('repeating behavior');
+    else worseFields.push('repeating behavior');
+  }
+
+  // 17. Cover Provision (providing cover is better)
+  if (p1.providesCover !== p2.providesCover) {
+    if (p1.providesCover) betterFields.push('cover provision');
+    else worseFields.push('cover provision');
   }
 
   return {
