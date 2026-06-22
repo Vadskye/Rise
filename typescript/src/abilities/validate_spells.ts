@@ -545,11 +545,11 @@ function getSpellDifferences(p1: SpellProfile, p2: SpellProfile): Difference[] {
   if (p1.range !== p2.range) {
     diffs.push({ field: 'range', p1Value: p1.range, p2Value: p2.range });
   }
-  if (p1.defenses.join(',') !== p2.defenses.join(',')) {
+  if (p1.defenses.length !== p2.defenses.length) {
     diffs.push({
-      field: 'targeted defenses',
-      p1Value: `[${p1.defenses.join(', ')}]`,
-      p2Value: `[${p2.defenses.join(', ')}]`,
+      field: 'defense count',
+      p1Value: `${p1.defenses.length}`,
+      p2Value: `${p2.defenses.length}`,
     });
   }
   if (p1.area !== p2.area) {
@@ -809,7 +809,7 @@ function checkSpellPair(
     issues.push({
       type: 'redundancy',
       severity: 'warning',
-      message: `Spells "${p1.name}" (${p1.sphereName}) and "${p2.name}" (${p2.sphereName}) are virtually identical: both are Rank ${p1.rank}, range: ${p1.range}, defense: ${p1.defenses.join('/')}, double action: ${p1.isDoubleAction}, applying conditions: [${p1.appliedEffects.join(', ')}].`,
+      message: `Spells "${p1.name}" (${p1.sphereName}) and "${p2.name}" (${p2.sphereName}) are virtually identical: both are Rank ${p1.rank}, range: ${p1.range}, defense count: ${p1.defenses.length}, double action: ${p1.isDoubleAction}, applying conditions: [${p1.appliedEffects.join(', ')}].`,
       spells: [p1.name, p2.name],
     });
 
