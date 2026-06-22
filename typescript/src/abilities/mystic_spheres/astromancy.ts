@@ -316,7 +316,7 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damageranksix.
+          \\damagerankfive.
         `,
         halfOnMiss: true,
         targeting: `

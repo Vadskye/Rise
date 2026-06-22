@@ -64,7 +64,9 @@ export interface SpellProfile {
   halfOnMiss: boolean;
   maxTargets: number;
   hasInjuryDamage: boolean;
-  isSustained: boolean;
+  isSustainedMinor: boolean;
+  isAttunable: boolean;
+  enemiesOnly: boolean;
 }
 
 export interface ValidationIssue {
@@ -396,13 +398,14 @@ export function buildSpellProfile(
       (spell.tags || []).some((tag) => tag.toLowerCase().includes('minor')) ||
       /sustain\s*\([^)]*minor[^)]*\)/i.test(fullText));
 
+  const isAttunable = (spell.type || '').includes('ttun');
+
   const hasCost =
     !!spell.cost ||
     spell.staminaCost === true ||
     spell.materialCost === true ||
     (spell.type || '').toLowerCase().startsWith('attune') ||
-    fullText.toLowerCase().includes('cooldown') ||
-    isSustainedMinor;
+    fullText.toLowerCase().includes('cooldown');
   const roles = (spell.roles || [])
     .map((r) => r.toLowerCase() as SpellDefinition['roles'][number])
     .sort();
@@ -426,6 +429,8 @@ export function buildSpellProfile(
     injury.toLowerCase().includes('\\damagerank') ||
     injury.toLowerCase().includes('damage') ||
     fullText.toLowerCase().includes('extra damage');
+
+  const enemiesOnly = /enem(y|ies)/i.test(targeting);
 
   return {
     name: spell.name,
@@ -453,7 +458,9 @@ export function buildSpellProfile(
     halfOnMiss,
     maxTargets,
     hasInjuryDamage,
-    isSustained,
+    isSustainedMinor,
+    isAttunable,
+    enemiesOnly,
   };
 }
 
@@ -560,6 +567,13 @@ function getSpellDifferences(p1: SpellProfile, p2: SpellProfile): Difference[] {
       field: 'maximum targets',
       p1Value: `${p1.maxTargets} targets`,
       p2Value: `${p2.maxTargets} targets`,
+    });
+  }
+  if (p1.enemiesOnly !== p2.enemiesOnly) {
+    diffs.push({
+      field: 'enemies only targeting',
+      p1Value: p1.enemiesOnly ? 'enemies only' : 'all creatures',
+      p2Value: p2.enemiesOnly ? 'enemies only' : 'all creatures',
     });
   }
 
@@ -678,6 +692,12 @@ function compareSpellProfiles(p1: SpellProfile, p2: SpellProfile): ComparisonRes
     else worseFields.push('injury damage');
   }
 
+  // 15. Enemies Only (targeting enemies only is better than targeting everything/creatures in an area)
+  if (p1.enemiesOnly !== p2.enemiesOnly) {
+    if (p1.enemiesOnly) betterFields.push('enemies only targeting');
+    else worseFields.push('enemies only targeting');
+  }
+
   return {
     isBetter: betterFields.length > 0,
     isWorse: worseFields.length > 0,
@@ -766,9 +786,10 @@ function checkSpellPair(
       p1.area === p2.area &&
       p1.isReactive === p2.isReactive &&
       p1.areaGrows === p2.areaGrows &&
-      p1.defenses.join(',') === p2.defenses.join(',') &&
-      (p1.type || '') === (p2.type || '') &&
-      p1.isSustained === p2.isSustained
+      // We don't need defenses to be identical when comparing superiority
+      p1.defenses.length === p2.defenses.length &&
+      p1.isAttunable === p2.isAttunable &&
+      p1.isSustainedMinor === p2.isSustainedMinor
     ) {
       // For utility/debuff spells (no damage and no healing), they must share at least one parsed condition AND share at least one role
       let isComparable = true;

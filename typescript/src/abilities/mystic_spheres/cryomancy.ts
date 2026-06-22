@@ -257,16 +257,18 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       name: 'Frostbite',
 
       // Rank 2 Spell
-      // Range: Short (mod +1)
       // Mod: Inescapably Delayed (+1)
-      // Result: 2 + 1 + 1 = dr4
+      // Result: 2 + 1 = dr3
       attack: {
         hit: `
           The target feels a growing chill.
-          At the end of its next turn, it takes \\damagerankfour.
+          At the end of its next turn, it takes \\damagerankthree.
+        `,
+        injury: `
+          The target is \\briefly \\slowed.
         `,
         targeting: `
-          Make an attack vs. Fortitude against something within \\shortrange.
+          Make an attack vs. Fortitude against something within \\medrange.
 
           If you \\glossterm{injure} any Medium or larger creatures with this spell, you gain an \\glossterm{ice crystal}.
         `,
@@ -280,16 +282,18 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       name: 'Mighty Frostbite',
 
       // Rank 6 Spell
-      // Range: Short (mod +1)
       // Mod: Inescapably Delayed (+1)
-      // Result: 6 + 1 + 1 = dr8
+      // Result: 6 + 1 = dr7
       attack: {
         hit: `
           The target feels a growing chill.
-          At the end of its next turn, it takes \\damagerankeight.
+          At the end of its next turn, it takes \\damagerankseven.
+        `,
+        injury: `
+          The target is \\briefly \\slowed.
         `,
         targeting: `
-          Make an attack vs. Fortitude against something within \\shortrange.
+          Make an attack vs. Fortitude against something within \\medrange.
 
           If you \\glossterm{injure} any Medium or larger creatures with this spell, you gain an \\glossterm{ice crystal}.
         `,

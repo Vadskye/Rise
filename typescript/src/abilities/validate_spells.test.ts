@@ -1596,6 +1596,55 @@ t.test('validateSpells', (t) => {
         'Slow vs Hostile Timeseal (not superior due to stasis and returns to normal parsing)',
       );
 
+      // 14. Whirlwind of Blades vs Mighty Word of Faith (enemiesOnly difference)
+      const whirlwindOfBlades: MysticSphere = {
+        name: 'Fabrication',
+        shortDescription: 'Test',
+        sources: ['arcane'],
+        spells: [
+          {
+            name: 'Whirlwind of Blades',
+            rank: 4,
+            roles: ['clear'],
+            attack: {
+              hit: `\\damagerankfive.`,
+              halfOnMiss: true,
+              targeting: `
+                Make an attack vs. Armor against everything in a \\smallarea radius from you.
+              `,
+            },
+          },
+        ],
+      };
+
+      const mightyWordOfFaith: MysticSphere = {
+        name: 'Channel Divinity',
+        shortDescription: 'Test',
+        sources: ['divine'],
+        spells: [
+          {
+            name: 'Mighty Word of Faith',
+            rank: 5,
+            roles: ['clear'],
+            attack: {
+              hit: `
+                \\damagerankfour.
+              `,
+              halfOnMiss: true,
+              targeting: `
+                Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
+              `,
+            },
+          },
+        ],
+      };
+
+      const issues14 = validateSpells([whirlwindOfBlades, mightyWordOfFaith]);
+      t.notOk(
+        issues14.find((i) => i.type === 'strictly_superior'),
+        'Whirlwind of Blades vs Mighty Word of Faith (not superior because Whirlwind of Blades hits all creatures but Mighty Word of Faith hits enemies only)',
+      );
+
       t.end();
     });
 

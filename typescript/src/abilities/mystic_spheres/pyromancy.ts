@@ -809,7 +809,10 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       // A Medium line is about r1 normally, which would be dr3. Drop to dr2 for the
       // teleportation.
       attack: {
-        hit: `\\damageranktwo.`,
+        hit: `
+          \\damagerankone.
+          The target also \\briefly \\debuff{burns} for \\damagerankone.
+        `,
         halfOnMiss: true,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\shortrange.
