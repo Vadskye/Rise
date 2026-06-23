@@ -1,5 +1,10 @@
 import t from 'tap';
-import { buildSpellProfile, validateSpells, SpellProfile, parseMaxTargets } from './validate_spells';
+import {
+  buildSpellProfile,
+  validateSpells,
+  SpellProfile,
+  parseMaxTargets,
+} from './validate_spells';
 import { SpellDefinition } from './active_abilities';
 import { MysticSphere } from './mystic_spheres';
 
@@ -39,40 +44,43 @@ t.test('buildSpellProfile', (t) => {
     t.equal(profile.areaGrows, false);
     t.end();
   });
-  t.test('should parse isNonAction correctly for standard, reactive, and minor action spells', (t) => {
-    const standardSpell: SpellDefinition = {
-      name: 'Standard Attack',
-      rank: 1,
-      roles: ['burst'],
-      attack: {
-        hit: '\\damagerankone.',
-        targeting: 'Make an attack vs. Armor against something within \\shortrange.',
-      },
-    };
-    const reactiveSpell: SpellDefinition = {
-      name: 'Reactive Attack',
-      rank: 1,
-      roles: ['burst'],
-      attack: {
-        hit: '\\damagerankone.',
-        targeting: 'Make a reactive attack vs. Armor against something that moves.',
-      },
-    };
-    const minorActionSpell: SpellDefinition = {
-      name: 'Minor Action Attack',
-      rank: 1,
-      roles: ['burst'],
-      attack: {
-        hit: '\\damagerankone.',
-        targeting: 'As a \\glossterm{minor action}, you can make an attack vs. Armor.',
-      },
-    };
+  t.test(
+    'should parse isNonAction correctly for standard, reactive, and minor action spells',
+    (t) => {
+      const standardSpell: SpellDefinition = {
+        name: 'Standard Attack',
+        rank: 1,
+        roles: ['burst'],
+        attack: {
+          hit: '\\damagerankone.',
+          targeting: 'Make an attack vs. Armor against something within \\shortrange.',
+        },
+      };
+      const reactiveSpell: SpellDefinition = {
+        name: 'Reactive Attack',
+        rank: 1,
+        roles: ['burst'],
+        attack: {
+          hit: '\\damagerankone.',
+          targeting: 'Make a reactive attack vs. Armor against something that moves.',
+        },
+      };
+      const minorActionSpell: SpellDefinition = {
+        name: 'Minor Action Attack',
+        rank: 1,
+        roles: ['burst'],
+        attack: {
+          hit: '\\damagerankone.',
+          targeting: 'As a \\glossterm{minor action}, you can make an attack vs. Armor.',
+        },
+      };
 
-    t.equal(buildSpellProfile(standardSpell, 'TestSphere').isNonAction, false);
-    t.equal(buildSpellProfile(reactiveSpell, 'TestSphere').isNonAction, true);
-    t.equal(buildSpellProfile(minorActionSpell, 'TestSphere').isNonAction, true);
-    t.end();
-  });
+      t.equal(buildSpellProfile(standardSpell, 'TestSphere').isNonAction, false);
+      t.equal(buildSpellProfile(reactiveSpell, 'TestSphere').isNonAction, true);
+      t.equal(buildSpellProfile(minorActionSpell, 'TestSphere').isNonAction, true);
+      t.end();
+    },
+  );
 
   t.end();
 });
@@ -1677,6 +1685,78 @@ t.test('validateSpells', (t) => {
       t.notOk(
         issues14.find((i) => i.type === 'strictly_superior'),
         'Whirlwind of Blades vs Mighty Word of Faith (not superior because Whirlwind of Blades hits all creatures but Mighty Word of Faith hits enemies only)',
+      );
+
+      // Test cases for brief vs condition
+      const testSphere: MysticSphere = {
+        name: 'Universal',
+        shortDescription: 'Test',
+        sources: [],
+        spells: [
+          {
+            name: 'Echoing Fearful Awe',
+            rank: 4,
+            roles: ['flash'] as const,
+            attack: {
+              hit: 'The target is \\briefly \\frightened by you.',
+              targeting:
+                'Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.',
+            },
+          },
+          {
+            name: 'Cause Fear',
+            rank: 5,
+            roles: ['flash'] as const,
+            attack: {
+              hit: 'The target is \\frightened by you as a \\glossterm{condition}.',
+              targeting:
+                'Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.',
+            },
+          },
+        ],
+      };
+      const issues15 = validateSpells([testSphere]);
+      t.notOk(
+        issues15.find((i) => i.type === 'strictly_superior'),
+        'Echoing Fearful Awe vs Cause Fear (not superior because Cause Fear applies a full condition whereas Echoing Fearful Awe applies a brief status)',
+      );
+
+      // Test cases for delayed damage with cooldown again
+      const testSphere2: MysticSphere = {
+        name: 'Universal',
+        sources: [],
+        shortDescription: '',
+        spells: [
+          {
+            name: 'Frost Breath',
+            rank: 3,
+            roles: ['wildfire'] as const,
+            type: 'Attune',
+            attack: {
+              hit: 'The target feels a growing chill. At the end of its next turn, it takes \\damagerankfour.',
+              halfOnMiss: true,
+              targeting:
+                "For the duration of this spell, you can breathe cold. You \\briefly can't use this ability again.",
+            },
+          },
+          {
+            name: 'Flame Breath',
+            rank: 3,
+            roles: ['clear'] as const,
+            type: 'Attune',
+            attack: {
+              hit: '\\damagerankthree.',
+              halfOnMiss: true,
+              targeting:
+                "For the duration of this spell, you can breathe fire. You \\briefly can't use this ability again.",
+            },
+          },
+        ],
+      };
+      const issues16 = validateSpells([testSphere2]);
+      t.notOk(
+        issues16.find((i) => i.type === 'strictly_superior'),
+        'Frost Breath vs Flame Breath (not superior because Frost Breath is delayed damage)',
       );
 
       t.end();
