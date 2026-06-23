@@ -434,9 +434,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
     {
       name: 'Mighty Call Lightning',
 
-      // Rank 6 Spell
-      // Area: Large line, 5 ft. wide within Long range (R2, mod -1)
-      // Result: 6 - 1 = dr5
+      // -1dr like regular call lightning
       functionsLike: {
         name: 'call lightning',
         exceptThat:
