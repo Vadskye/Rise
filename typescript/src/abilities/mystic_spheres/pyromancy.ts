@@ -523,7 +523,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       rank: 5,
       roles: ['wildfire'],
       scaling: 'damage',
-      tags: ['Sustain (minor)'],
+      type: 'Sustain (minor)',
     },
 
     // Common reactive damage

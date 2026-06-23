@@ -367,7 +367,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       rank: 3,
       roles: ['hazard'],
       scaling: 'accuracy',
-      tags: ['Sustain (minor)'],
+      type: 'Sustain (minor)',
     },
     // 30' push is 2.0 at range, then 3.0 from sustain (minor). Drop to limited scope is
     // -1r, and also gets us closer to "melee" range push, so say we can get away with
@@ -382,7 +382,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       // narrative: '',
       rank: 7,
       roles: ['hazard'],
-      tags: ['Sustain (minor)'],
+      type: 'Sustain (minor)',
     },
     {
       name: 'Windblade',

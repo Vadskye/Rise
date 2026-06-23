@@ -765,7 +765,8 @@ function addVampires(grimoire: Grimoire) {
           rank: 3,
           scaling: 'double_accuracy',
           usageTime: 'elite',
-          tags: ['Emotion', 'Subtle', 'Sustain (minor)', 'Visual'],
+          tags: ['Emotion', 'Subtle', 'Visual'],
+          type: 'Sustain (minor)',
         });
       },
     },

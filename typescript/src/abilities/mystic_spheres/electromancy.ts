@@ -428,7 +428,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       // so we classify it as burst instead of clear.
       roles: ['burst'],
       scaling: 'damage',
-      tags: ['Sustain (standard)'],
+      type: 'Sustain (standard)',
     },
 
     {
@@ -445,7 +445,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       rank: 6,
       roles: ['burst'],
       scaling: 'damage',
-      tags: ['Sustain (standard)'],
+      type: 'Sustain (standard)',
     },
 
     {

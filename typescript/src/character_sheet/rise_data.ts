@@ -83,11 +83,14 @@ export * from '../core_mechanics/skills';
 export type RiseSpecialDefense = 'immune' | 'resistant' | 'vulnerable';
 
 export type RiseTag = RiseAbilityTag | RiseWeaponTag;
-export type RiseAbilityTag =
+// When we're defining abilities in code, we don't want to include duration tags,
+// because those should be listed in the `type`.
+export type RiseAbilityDefinitionTag = RiseEffectTag | RiseWeaponTag;
+export type RiseAbilityTag = RiseEffectTag | RiseDurationTag;
+
+export type RiseEffectTag =
   | 'Acid'
   | 'Air'
-  | 'Attune'
-  | 'Attune (deep)'
   | 'Auditory'
   | 'Barrier'
   | 'Blood'
@@ -115,10 +118,6 @@ export type RiseAbilityTag =
   | 'Spell'
   | 'Subdual'
   | 'Subtle'
-  | 'Sustain (attunable, minor)'
-  | 'Sustain (attunable, standard)'
-  | 'Sustain (minor)'
-  | 'Sustain (standard)'
   | 'Sweeping (1)'
   | 'Sweeping (2)'
   | 'Sweeping (3)'
@@ -129,6 +128,14 @@ export type RiseAbilityTag =
   | 'Trap'
   | 'Visual'
   | 'Water';
+
+export type RiseDurationTag =
+  | 'Attune'
+  | 'Attune (deep)'
+  | 'Sustain (attunable, minor)'
+  | 'Sustain (attunable, standard)'
+  | 'Sustain (minor)'
+  | 'Sustain (standard)';
 
 export type RiseWeaponTag =
   | 'Ammunition'
