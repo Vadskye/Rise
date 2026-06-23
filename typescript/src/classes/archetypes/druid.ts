@@ -225,7 +225,7 @@ export function natureSpellMastery(): RankAbility[] {
         You can choose this ability multiple times, choosing a different spell each time.
         \\parhead{Grounded Spell} Choose a nature \\glossterm{spell} you know.
         It gains the \\atEarth tag.
-        In addition, you gain a \\plus2 accuracy bonus with that spell if you are \\glossterm{grounded} while casting it.
+        In addition, if you are \\glossterm{grounded} when you cast the spell, you gain a \\plus2 accuracy bonus with that spell this turn.
         You can choose this ability multiple times, choosing a different spell each time.
         % +50% damage assuming the targets stay in the same area, more like +25% assuming they try to escape
         \\parhead{Incendiary Spell} Choose a damaging nature \\glossterm{spell} you know.
