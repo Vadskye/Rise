@@ -16,7 +16,7 @@ export function spellTypePrefix(
   >,
   omitRank?: boolean,
 ): string {
-  const tags = spell.tags || [];
+  const tags: string[] = [...(spell.tags || [])];
   if (spell.type) {
     if (spell.type.includes('(')) {
       // grab the bits inside the parentheses

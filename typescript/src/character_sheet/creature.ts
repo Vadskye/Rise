@@ -944,7 +944,7 @@ export class Creature implements CreaturePropertyMap {
   }
 
   getSizeBasedSweepingTag(): RiseWeaponTag | null {
-    return {
+    return ({
       fine: null,
       diminutive: null,
       tiny: null,
@@ -954,7 +954,7 @@ export class Creature implements CreaturePropertyMap {
       huge: 'Sweeping (1)',
       gargantuan: 'Sweeping (2)',
       colossal: 'Sweeping (3)',
-    }[this.size];
+    } as const)[this.size];
   }
 
   // We throw errors for things that can cause runtime warnings later.
