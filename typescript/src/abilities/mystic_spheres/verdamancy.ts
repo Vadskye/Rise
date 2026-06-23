@@ -777,7 +777,7 @@ export const verdamancy: MysticSphere = {
       rank: 2,
       roles: ['burst'],
       scaling: 'damage',
-      tags: ['Impact', 'Manifestation'],
+      tags: ['Impact', 'Manifestation', 'Physical'],
     },
     {
       name: 'Mighty Treeclub',
@@ -793,7 +793,7 @@ export const verdamancy: MysticSphere = {
       rank: 5,
       roles: ['burst'],
       scaling: 'damage',
-      tags: ['Impact', 'Manifestation'],
+      tags: ['Impact', 'Manifestation', 'Physical'],
     },
   ],
 };
