@@ -22,7 +22,7 @@ t.test('buildSpellProfile', (t) => {
     t.equal(profile.sphereName, 'TestSphere');
     t.equal(profile.rank, 2);
     t.equal(profile.isDoubleAction, true);
-    t.equal(profile.isReactive, false);
+    t.equal(profile.isNonAction, false);
     t.equal(profile.range, 'short');
     t.same(profile.defenses, ['fortitude']);
     t.equal(profile.area, 'single');
@@ -37,6 +37,40 @@ t.test('buildSpellProfile', (t) => {
     t.same(profile.roles, ['burst', 'maim']);
     t.equal(profile.healingRank, null);
     t.equal(profile.areaGrows, false);
+    t.end();
+  });
+  t.test('should parse isNonAction correctly for standard, reactive, and minor action spells', (t) => {
+    const standardSpell: SpellDefinition = {
+      name: 'Standard Attack',
+      rank: 1,
+      roles: ['burst'],
+      attack: {
+        hit: '\\damagerankone.',
+        targeting: 'Make an attack vs. Armor against something within \\shortrange.',
+      },
+    };
+    const reactiveSpell: SpellDefinition = {
+      name: 'Reactive Attack',
+      rank: 1,
+      roles: ['burst'],
+      attack: {
+        hit: '\\damagerankone.',
+        targeting: 'Make a reactive attack vs. Armor against something that moves.',
+      },
+    };
+    const minorActionSpell: SpellDefinition = {
+      name: 'Minor Action Attack',
+      rank: 1,
+      roles: ['burst'],
+      attack: {
+        hit: '\\damagerankone.',
+        targeting: 'As a \\glossterm{minor action}, you can make an attack vs. Armor.',
+      },
+    };
+
+    t.equal(buildSpellProfile(standardSpell, 'TestSphere').isNonAction, false);
+    t.equal(buildSpellProfile(reactiveSpell, 'TestSphere').isNonAction, true);
+    t.equal(buildSpellProfile(minorActionSpell, 'TestSphere').isNonAction, true);
     t.end();
   });
 
