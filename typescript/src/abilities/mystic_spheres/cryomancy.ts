@@ -13,8 +13,8 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
   // * Base spell is normal rank, ice crystal makes it +1 rank stronger (example: +2 accuracy)
   // * Base spell is -1 rank below baseline power, ice crystal makes it +2 ranks above baseline power (example: +4 accuracy)
   // Two modes for ice crystal generators:
-  // * Base spell is normal rank, generate an ice crystal conditionally (about 25% of the time)
-  // * Base spell is -1 rank below baseline power, always generate an ice crystal
+  // * Base spell is normal rank, generate an ice crystal
+  // * Base spell is -1 rank below baseline power, generate two ice crystals
   // Narratively, ice crystal *spenders* generally create physical ice, while ice crystal *generators* generally directly lower temperature.
   specialRules: `
     Many spells from this mystic sphere become stronger if you spend ice crystals, and some spells generate ice crystals.
@@ -28,9 +28,10 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
 
       effect: `
         If you have no \\glossterm{ice crystals}, you gain one ice crystal.
-        If you have exactly one ice crystal, it does not melt this turn.
+        Whenever you sustain this spell, if you have exactly one ice crystal, it does not melt this turn.
       `,
       roles: ['focus'],
+      type: 'Sustain (standard)',
     },
   ],
   spells: [
@@ -45,11 +46,11 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       // Result: 3 + 2 - 1 = dr4
       attack: {
         hit: `
-          \\damagerankfour.
+          \\damagerankfour, and you gain an \\glossterm{ice crystal}.
         `,
         injury: `
           The target slowly begins freezing as a \\glossterm{condition}.
-          At the end of your next turn, it becomes \\slowed and you gain an \\glossterm{ice crystal}.
+          At the end of your next turn, the target becomes \\slowed while the condition lasts.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -74,7 +75,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
           \\damagerankseven, and any \\glossterm{extra damage} is doubled.
         `,
         injury: `
-          The target becomes \\slowed as a \\glossterm{condition}, and you gain an \\glossterm{ice crystal}.
+          You gain an \\glossterm{ice crystal}, and the target becomes \\slowed while the condition lasts.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
