@@ -3,6 +3,7 @@ import {
   STANDARD_WEAPONS,
 } from '@src/equipment/weapons';
 import { WeaponTag } from '@src/equipment/types';
+import { RiseWeaponTag } from '@src/character_sheet/rise_data';
 
 export type MonsterWeapon = string;
 
@@ -56,7 +57,7 @@ function resolveBaseWeapon(weaponName: MonsterWeapon) {
   throw new Error(`MonsterWeapon '${weaponName}' could not be resolved to standard or natural weapon.`);
 }
 
-function formatMonsterTag(tag: WeaponTag): string | null {
+function formatMonsterTag(tag: WeaponTag): RiseWeaponTag | null {
   if (typeof tag === 'string') {
     if (
       tag === 'Versatile Grip' ||
@@ -74,11 +75,11 @@ function formatMonsterTag(tag: WeaponTag): string | null {
   } else {
     switch (tag.kind) {
       case 'Projectile':
-        return `Projectile (${tag.close}/${tag.long})`;
+        return `Projectile (${tag.close}/${tag.long})` as RiseWeaponTag;
       case 'Sweeping':
-        return `Sweeping (${tag.count})`;
+        return `Sweeping (${tag.count})` as RiseWeaponTag;
       case 'Thrown':
-        return `Thrown (${tag.close}/${tag.long})`;
+        return `Thrown (${tag.close}/${tag.long})` as RiseWeaponTag;
     }
   }
 }
@@ -125,10 +126,10 @@ export function getWeaponPowerMultiplier(weaponName: MonsterWeapon): 0.5 | 1 {
   return hasHeavy ? 1.0 : 0.5;
 }
 
-export function getWeaponTags(weaponName: MonsterWeapon): readonly string[] {
+export function getWeaponTags(weaponName: MonsterWeapon): readonly RiseWeaponTag[] {
   const base = resolveBaseWeapon(weaponName);
 
-  const tags: string[] = [];
+  const tags: RiseWeaponTag[] = [];
   for (const tag of base.tags) {
     const formatted = formatMonsterTag(tag);
     if (formatted !== null) {

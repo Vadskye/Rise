@@ -1189,7 +1189,7 @@ function addOrcs(grimoire: Grimoire) {
             effect: `
             The $name makes a strike.
           `,
-            tags: ['sweeping (2)'],
+            tags: ['Sweeping (2)'],
             weapon: 'greataxe',
           });
           creature.addManeuver('Bloodletter', { weapon: 'greataxe' });
