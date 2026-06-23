@@ -827,13 +827,15 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Distant Flame Dash',
 
-      // A Large line is about r3 normally, which would be dr5. Drop to dr4 for the
-      // teleportation.
+      // A Large line is -1dr.
       attack: {
-        hit: `\\damagerankfour.`,
+        hit: `
+          \\damagerankthree.
+          The target also \\briefly \\debuff{burns} for \\damagerankthree.
+        `,
         halfOnMiss: true,
         targeting: `
-          You teleport into an unoccupied destination on a stable surface within \\longrange.
+          You teleport into an unoccupied destination on a stable surface within \\medrange.
           In addition, make an attack vs. Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.
         `,
       },

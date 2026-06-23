@@ -725,16 +725,12 @@ export const telekinesis: MysticSphere = {
     {
       name: 'Neck Snap',
 
-      // Rank 5 Spell
-      // Range: Medium (mod 0)
-      // Mod: -4 accuracy penalty (+2)
-      // Result: 5 + 0 + 2 = dr7
       attack: {
         hit: `
-          \\damagerankseven, and any \\glossterm{extra damage} is doubled.
+          \\damagerankeight, and any \\glossterm{extra damage} is doubled.
         `,
         targeting: `
-          Make an attack vs. Brawn with a -4 accuracy penalty against something within \\medrange.
+          Make an attack vs. Brawn with a -4 accuracy penalty against something within \\shortrange.
         `,
       },
       rank: 5,

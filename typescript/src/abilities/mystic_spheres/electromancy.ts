@@ -600,21 +600,37 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
     {
       name: 'Thunderdash',
 
-      // Rank 3 Spell
-      // Area: Medium 5 ft. wide line from self (R0, mod +1)
-      // Mod: Teleport buff cost (estimated at 2 EA, mod -2)
-      // Result: 3 + 1 - 2 = dr2
+      // Two tiny radii is kind of like a small radius in short range, but worse.
+      // Keep it as -1dr, but add deafened.
       attack: {
         hit: `\\damageranktwo.`,
-        injury: 'The target is \\briefly \\deafened.',
+        injury: 'The target is \\deafened as a \\glossterm{condition}.',
         halfOnMiss: true,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\shortrange.
           Both your departure and arrival with this spell sound like a clap of thunder.
-          In addition, make an attack vs. Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.
+          In addition, make an attack vs. Fortitude against everything in a \\tinyarea radius around your starting location and destination.
         `,
       },
       rank: 3,
+      roles: ['clear', 'dive'],
+      scaling: 'damage',
+    },
+
+    {
+      name: 'Distant Thunderdash',
+
+      // Medium range is -2dr, plus the deafen.
+      attack: {
+        hit: `\\damagerankfour, and the target is \\deafened as a \\glossterm{condition}.`,
+        halfOnMiss: true,
+        targeting: `
+          You teleport into an unoccupied destination on a stable surface within \\medrange.
+          Both your departure and arrival with this spell sound like a clap of thunder.
+          In addition, make an attack vs. Fortitude against everything in a \\tinyarea radius around your starting location and destination.
+        `,
+      },
+      rank: 6,
       roles: ['clear', 'dive'],
       scaling: 'damage',
     },
@@ -628,6 +644,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       // need to drop to dr3.
       attack: {
         hit: `\\damagerankfour.`,
+        injury: 'The target is \\briefly \\deafened.',
         halfOnMiss: true,
         targeting: `
           You create a short-lived duplicate of yourself made of electricity in a space adjacent to you.
@@ -642,27 +659,6 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       rank: 4,
       scaling: 'damage',
       type: 'Sustain (minor)',
-    },
-
-    {
-      name: 'Distant Thunderdash',
-
-      // Rank 6 Spell
-      // Area: Large 5 ft. wide line from self (R2, mod -1)
-      // Mod: Teleport buff cost (estimated at 1 EA, mod -1)
-      // Result: 6 - 1 - 1 = dr4
-      attack: {
-        hit: `\\damagerankfour.`,
-        halfOnMiss: true,
-        targeting: `
-          You teleport into an unoccupied destination on a stable surface within \\longrange.
-          Both your departure and arrival with this spell sound like a clap of thunder.
-          In addition, make an attack vs. Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.
-        `,
-      },
-      rank: 6,
-      roles: ['clear', 'dive'],
-      scaling: 'damage',
     },
 
     {
