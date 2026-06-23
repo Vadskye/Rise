@@ -407,20 +407,18 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
     {
       name: 'Call Lightning',
 
-      // Rank 3 Spell
-      // Area: Large line, 5 ft. wide within Long range (R2, mod -1)
-      // (This spell has an unusual area structure that doesn't perfectly match standards)
-      // Result: 3 - 1 = dr2
-      // TODO: redesign as attunement?
+      // Normal med range would be dr3. Attuned should be +33% damage.
+      // dr4 is only +16% damage, but that allows the weird area, half on miss, and storm effect.
       attack: {
         hit: `
-          \\damageranktwo.
+          If you are outside in a storm with visible lightning, \\damagerankfive.
+          Otherwise, \\damagerankfour.
         `,
         halfOnMiss: true,
         targeting: `
-          When you cast this spell, and during each of your subsequent actions, make an attack vs. Reflex against everything in an area.
-          If you sustained this spell this turn, or if you are outside in a storm, the area is a \\largearealong, 5 ft. wide vertical line within \\longrange.
-          Otherwise, it is a \\medarealong, 5 ft. wide vertical line within \\medrange.
+          For the duration of this spell, you can call lightning as a standard action.
+          When you do, make an attack vs. Reflex against everything within a \\largearealong, 5 ft. wide vertical line within \\medrange.
+          You \\briefly can't use this ability again.
         `,
       },
       rank: 3,
@@ -428,7 +426,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       // so we classify it as burst instead of clear.
       roles: ['burst'],
       scaling: 'damage',
-      type: 'Sustain (standard)',
+      type: 'Attune',
     },
 
     {
@@ -438,12 +436,12 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       functionsLike: {
         name: 'call lightning',
         exceptThat:
-          'the damage increases to \\damagerankfive, and any \\glossterm{extra damage} is doubled.',
+          'the damage increases to \\damagerankeight in a storm, or \\damagerankseven normally. In addition, any \\glossterm{extra damage} is doubled.',
       },
       rank: 6,
       roles: ['burst'],
       scaling: 'damage',
-      type: 'Sustain (standard)',
+      type: 'Attune',
     },
 
     {
@@ -456,47 +454,6 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       `,
       rank: 4,
       roles: ['attune'],
-      type: 'Attune',
-    },
-
-    {
-      name: 'Lightning Breath',
-
-      // Rank 3 Spell
-      // Area: Large line, 5 ft. wide from self (R2, mod -1)
-      // Mod: Attune (R1-4) (mod +1)
-      // Result: 3 - 1 + 1 = dr3
-      attack: {
-        hit: `\\damagerankthree.`,
-        halfOnMiss: true,
-        targeting: `
-          For the duration of this spell, you can breathe electricity like a dragon as a standard action.
-          When you do, make an attack vs. Reflex against everything within a \\largearealong, 5 ft. wide line from you.
-          You \\briefly can't use this ability again.
-        `,
-      },
-      rank: 3,
-      roles: ['clear'],
-      scaling: 'damage',
-      type: 'Attune',
-    },
-
-    {
-      name: 'Mighty Lightning Breath',
-
-      // Rank 6 Spell
-      // Area: Large line, 10 ft. wide from self (R3, mod -1)
-      // Mod: Attune (R5+) (mod +2)
-      // Result: 6 - 1 + 2 = dr7
-      functionsLike: {
-        name: 'lightning breath',
-        exceptThat: `
-          the damage increases to \\damagerankseven, and the area increases to a \\largearealong, 10 ft. wide line.
-        `,
-      },
-      rank: 6,
-      roles: ['clear'],
-      scaling: 'damage',
       type: 'Attune',
     },
 
