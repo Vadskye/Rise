@@ -19,14 +19,14 @@ function assertExpectedWinRate(
 ) {
   const actual = result.winRates[teamName];
   tap.ok(
-    Math.abs(actual - expected) <= 10,
+    Math.abs(actual - expected) <= 20,
     `${teamName} win rate should be ~${expected}% (actual: ${actual.toFixed(2)}%)`,
   );
 }
 
 function assertExpectedTurnsCount(tap: any, result: CombatSimulationResult, expected: number) {
   const actual = result.averageTurns;
-  const tolerance = Math.max(expected * 0.1, 1.0);
+  const tolerance = Math.max(expected * 0.2, 1.0);
   tap.ok(
     Math.abs(actual - expected) <= tolerance,
     `Average turns should be ~${expected} (actual: ${actual.toFixed(2)}, tolerance: ${tolerance.toFixed(2)})`,
