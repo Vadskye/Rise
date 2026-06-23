@@ -43,7 +43,7 @@ export interface SpellProfile {
   sphereName: string;
   rank: SpellDefinition['rank'];
   isDoubleAction: boolean;
-  isReactive: boolean;
+  isNonAction: boolean;
   range: string;
   defenses: string[];
   area: string;
@@ -463,10 +463,11 @@ export function buildSpellProfile(
   const healingRank = parseHealingRank(fullText);
   const areaGrows = fullText.toLowerCase().includes('increases over time');
 
-  const isReactive =
+  const isNonAction =
     targeting.toLowerCase().includes('reactive attack') ||
     targeting.toLowerCase().includes('\\reactiveattack') ||
-    targeting.toLowerCase().includes('whenever');
+    targeting.toLowerCase().includes('whenever') ||
+    fullText.toLowerCase().includes('minor action');
 
   const halfOnMiss = spell.attack?.halfOnMiss === true;
   const maxTargets = parseMaxTargets(fullText);
@@ -487,7 +488,7 @@ export function buildSpellProfile(
     sphereName,
     rank: (spell.rank || 0) as SpellDefinition['rank'],
     isDoubleAction,
-    isReactive,
+    isNonAction,
     range,
     defenses,
     area,
@@ -535,11 +536,11 @@ function getSpellDifferences(p1: SpellProfile, p2: SpellProfile): Difference[] {
       p2Value: p2.isDoubleAction ? 'double action' : 'standard action',
     });
   }
-  if (p1.isReactive !== p2.isReactive) {
+  if (p1.isNonAction !== p2.isNonAction) {
     diffs.push({
-      field: 'reactive nature',
-      p1Value: p1.isReactive ? 'reactive/triggered' : 'standard',
-      p2Value: p2.isReactive ? 'reactive/triggered' : 'standard',
+      field: 'standard action requirement',
+      p1Value: p1.isNonAction ? 'non-action' : 'standard action',
+      p2Value: p2.isNonAction ? 'non-action' : 'standard action',
     });
   }
   if (p1.range !== p2.range) {
@@ -862,7 +863,7 @@ function checkSpellPair(
     // Dominance / Strictly Superior check
     if (
       p1.area === p2.area &&
-      p1.isReactive === p2.isReactive &&
+      p1.isNonAction === p2.isNonAction &&
       p1.areaGrows === p2.areaGrows &&
       // We don't need defenses to be identical when comparing superiority
       p1.defenses.length === p2.defenses.length &&
