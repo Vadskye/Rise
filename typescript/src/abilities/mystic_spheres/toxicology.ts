@@ -397,7 +397,8 @@ export const toxicology: MysticSphere = {
       rank: 4,
       roles: ['hazard', 'wildfire'],
       scaling: 'damage',
-      tags: ['Acid', 'Manifestation', 'Sustain (minor)'],
+      tags: ['Acid', 'Manifestation'],
+      type: 'Sustain (minor)',
     },
 
     {
@@ -410,7 +411,8 @@ export const toxicology: MysticSphere = {
       rank: 7,
       roles: ['hazard'],
       scaling: 'damage',
-      tags: ['Acid', 'Manifestation', 'Sustain (minor)'],
+      tags: ['Acid', 'Manifestation'],
+      type: 'Sustain (minor)',
     },
 
     {

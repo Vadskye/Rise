@@ -153,7 +153,7 @@ export const fabrication: MysticSphere = {
       rank: 4,
       roles: ['attune'],
       scaling: 'accuracy',
-      tags: ['Attune'],
+      type: 'Attune',
     },
     {
       name: 'Mystic Blast Arrow',
@@ -1037,7 +1037,8 @@ export const fabrication: MysticSphere = {
       rank: 3,
       roles: ['clear', 'hazard'],
       scaling: 'damage',
-      tags: ['Fire', 'Manifestation', 'Sustain (minor)'],
+      tags: ['Fire', 'Manifestation'],
+      type: 'Sustain (minor)',
     },
 
     {
@@ -1051,7 +1052,8 @@ export const fabrication: MysticSphere = {
       rank: 6,
       roles: ['clear', 'hazard'],
       scaling: 'damage',
-      tags: ['Fire', 'Manifestation', 'Sustain (minor)'],
+      tags: ['Fire', 'Manifestation'],
+      type: 'Sustain (minor)',
     },
 
     {

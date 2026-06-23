@@ -142,7 +142,7 @@ export const umbramancy: MysticSphere = {
       rank: 6,
       roles: ['wildfire'],
       scaling: 'damage',
-      tags: ['Sustain (standard)'],
+      type: 'Sustain (standard)',
     },
 
     {

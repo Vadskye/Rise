@@ -690,7 +690,8 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       rank: 3,
       scaling: 'damage',
       roles: ['clear'],
-      tags: ['Manifestation', 'Sustain (minor)'],
+      tags: ['Manifestation'],
+      type: 'Sustain (minor)',
     },
 
     {
@@ -710,7 +711,8 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       rank: 6,
       scaling: 'damage',
       roles: ['wildfire'],
-      tags: ['Manifestation', 'Sustain (minor)'],
+      tags: ['Manifestation'],
+      type: 'Sustain (minor)',
     },
 
     // TODO: calculate EA for movement effects

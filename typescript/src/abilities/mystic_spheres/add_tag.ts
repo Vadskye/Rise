@@ -1,8 +1,11 @@
 import { MysticSphere } from '.';
 import { ActiveAbility } from '@src/abilities';
-import { RiseTag } from '@src/character_sheet/rise_data';
+import { RiseAbilityDefinitionTag } from '@src/character_sheet/rise_data';
 
-export function add_tag_to_sphere(tag: RiseTag, sphere: MysticSphere): MysticSphere {
+export function add_tag_to_sphere(
+  tag: RiseAbilityDefinitionTag,
+  sphere: MysticSphere,
+): MysticSphere {
   if (sphere.cantrips) {
     for (const cantrip of sphere.cantrips) {
       add_tag_to_spelllike(tag, cantrip);
@@ -16,7 +19,7 @@ export function add_tag_to_sphere(tag: RiseTag, sphere: MysticSphere): MysticSph
   return sphere;
 }
 
-function add_tag_to_spelllike(tag: RiseTag, ability: Pick<ActiveAbility, 'tags'>) {
+function add_tag_to_spelllike(tag: RiseAbilityDefinitionTag, ability: Pick<ActiveAbility, 'tags'>) {
   ability.tags = ability.tags || [];
   ability.tags.push(tag);
 }

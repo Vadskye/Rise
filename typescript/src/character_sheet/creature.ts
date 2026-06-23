@@ -19,6 +19,7 @@ import {
   RiseWeaponTag,
   RiseTrait,
   isTrait,
+  RiseAbilityDefinitionTag,
 } from '@src/character_sheet/rise_data';
 import {
   RiseCraftSkill,
@@ -195,10 +196,11 @@ export interface CustomModifierNumericEffect {
   statistic: NumericCreatureProperty;
 }
 
+// TODO: Does this need a `type`?
 export interface MonsterAbilityOptions {
   displayName?: string;
   isMagical?: boolean; // Spells default to true, maneuvers default to false
-  tags?: RiseTag[];
+  tags?: RiseAbilityDefinitionTag[];
   usageTime?: MonsterAttackUsageTime;
   weapon?: MonsterWeapon;
 }
@@ -944,17 +946,19 @@ export class Creature implements CreaturePropertyMap {
   }
 
   getSizeBasedSweepingTag(): RiseWeaponTag | null {
-    return ({
-      fine: null,
-      diminutive: null,
-      tiny: null,
-      small: null,
-      medium: null,
-      large: null,
-      huge: 'Sweeping (1)',
-      gargantuan: 'Sweeping (2)',
-      colossal: 'Sweeping (3)',
-    } as const)[this.size];
+    return (
+      {
+        fine: null,
+        diminutive: null,
+        tiny: null,
+        small: null,
+        medium: null,
+        large: null,
+        huge: 'Sweeping (1)',
+        gargantuan: 'Sweeping (2)',
+        colossal: 'Sweeping (3)',
+      } as const
+    )[this.size];
   }
 
   // We throw errors for things that can cause runtime warnings later.

@@ -406,7 +406,8 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       rank: 4,
       roles: ['flash', 'hazard'],
       scaling: 'damage',
-      tags: ['Manifestation', 'Sustain (attunable, standard)'],
+      tags: ['Manifestation'],
+      type: 'Sustain (attunable, standard)',
     },
     {
       name: 'Geyser',
@@ -427,7 +428,8 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       rank: 2,
       roles: ['burst', 'hazard'],
       scaling: 'damage',
-      tags: ['Manifestation', 'Sustain (minor)'],
+      tags: ['Manifestation'],
+      type: 'Sustain (minor)',
     },
     {
       name: 'Mighty Geyser',
@@ -449,7 +451,8 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       rank: 5,
       roles: ['burst', 'hazard'],
       scaling: 'damage',
-      tags: ['Manifestation', 'Sustain (minor)'],
+      tags: ['Manifestation'],
+      type: 'Sustain (minor)',
     },
     // 20% miss chance is about rank 3. But globally providing concealment that could
     // affect you and your allies seems stronger than that, even with the risk of

@@ -381,7 +381,8 @@ export const revelation: MysticSphere = {
       rank: 3,
       roles: ['flash', 'hazard'],
       scaling: 'accuracy',
-      tags: ['Sustain (attunable, minor)', 'Visual'],
+      tags: ['Visual'],
+      type: 'Sustain (attunable, minor)',
     },
 
     {

@@ -179,7 +179,8 @@ export const photomancy: MysticSphere = {
       rank: 2,
       roles: ['narrative'],
       scaling: 'accuracy',
-      tags: ['Subtle', 'Sustain (minor)', 'Visual'],
+      tags: ['Subtle', 'Visual'],
+      type: 'Sustain (minor)',
     },
 
     {
@@ -357,7 +358,8 @@ export const photomancy: MysticSphere = {
       rank: 5,
       roles: ['softener'],
       scaling: 'accuracy',
-      tags: ['Compulsion', 'Sustain (minor)', 'Visual'],
+      tags: ['Compulsion', 'Visual'],
+      type: 'Sustain (minor)',
     },
 
     {
@@ -493,7 +495,7 @@ export const photomancy: MysticSphere = {
       `,
       rank: 6,
       roles: ['attune'],
-      tags: ['Attune (deep)'],
+      type: 'Attune (deep)',
     },
 
     {
