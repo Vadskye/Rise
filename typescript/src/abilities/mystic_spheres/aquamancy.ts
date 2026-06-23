@@ -819,10 +819,10 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       attack: {
         hit: `The target falls \\prone.`,
         targeting: `
-          Make an attack vs. Reflex against each Large or smaller \\glossterm{grounded} \\glossterm{enemy} in a \\smallarea radius within \\shortrange.
+          Make an attack vs. Reflex against each Large or smaller \\glossterm{grounded} \\glossterm{enemy} in a \\tinyarea radius within \\shortrange.
         `,
       },
-      rank: 3,
+      rank: 2,
       roles: ['flash'],
       scaling: 'accuracy',
       tags: ['Manifestation'],

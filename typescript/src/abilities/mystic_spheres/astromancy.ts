@@ -302,6 +302,9 @@ export const astromancy: MysticSphere = {
         halfOnMiss: true,
         targeting: `
           Make an attack vs. Reflex and Mental against all \\glossterm{enemies} within a \\smallarea radius from you.
+          In addition, you create a \\glossterm{zone} of astral disruption in a \\largearea radius around you that \\briefly persists.
+          While the zone is active, whenever an enemy teleports into or out of the area, you repeat this attack against them.
+          You can only attack any individual creature once per turn in this way.
         `,
       },
       narrative: `
