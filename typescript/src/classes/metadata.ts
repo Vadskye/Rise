@@ -116,6 +116,7 @@ export function getClassNarrativeText(cls: Class): string {
             Lucied, paladin god of justice        & Lawful good     & Destruction, Good, Law, War        \\\\
             Simor, fighter god of protection      & Lawful good     & Good, Law, Protection, War         \\\\
             Ayala, naiad god of water             & Neutral good    & Good, Magic, Ocean, Wild           \\\\
+            Gloo, oozeborn god of growth          & Neutral good    & Good, Life, Protection, Wild       \\\\
             Pabs Beerbeard, dwarf god of drink    & Neutral good    & Good, Earth, Forge, Life           \\\\
             Rucks, monk god of pragmatism         & Neutral good    & Good, Law, Protection, Travel      \\\\
             Vanya, centaur god of nature          & Neutral good    & Good, Travel, War, Wild            \\\\
