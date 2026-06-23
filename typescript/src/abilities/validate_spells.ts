@@ -262,9 +262,30 @@ function parseAppliedEffects(text: string): string[] {
     'stasis',
     'cannot act',
     'invisible',
-    'ice crystal',
   ];
-  return effects.filter((e) => lowercase.includes(e));
+  const result: string[] = [];
+  for (const e of effects) {
+    let index = lowercase.indexOf(e);
+    if (index === -1) continue;
+
+    let allBrief = true;
+    while (index !== -1) {
+      const start = Math.max(0, index - 20);
+      const preText = lowercase.substring(start, index);
+      if (!preText.includes('briefly')) {
+        allBrief = false;
+        break;
+      }
+      index = lowercase.indexOf(e, index + 1);
+    }
+
+    if (allBrief) {
+      result.push(`briefly:${e}`);
+    } else {
+      result.push(e);
+    }
+  }
+  return result;
 }
 
 function parseAccuracyModifier(text: string): number {
@@ -337,8 +358,29 @@ function parseDelayed(text: string): boolean {
 
 function parseIsRepeating(text: string, isDelayed: boolean): boolean {
   const lowercase = text.toLowerCase();
+
+  let hasAgain = false;
+  const matches = [...lowercase.matchAll(/\bagain\b/g)];
+  for (const match of matches) {
+    const matchIndex = match.index!;
+    const start = Math.max(0, matchIndex - 50);
+    const preText = lowercase.substring(start, matchIndex);
+    const isNegated =
+      /\b(?:can't|cannot|not|never)\b/i.test(preText) &&
+      (preText.includes('use') ||
+        preText.includes('cast') ||
+        preText.includes('make') ||
+        preText.includes('trigger') ||
+        preText.includes('control') ||
+        preText.includes('perform'));
+    if (!isNegated) {
+      hasAgain = true;
+      break;
+    }
+  }
+
   return (
-    /\bagain\b/i.test(lowercase) ||
+    hasAgain ||
     /\brepeats?\b/i.test(lowercase) ||
     /\bsubsequent\b/i.test(lowercase) ||
     /each\s+(?:turn|round)/i.test(lowercase) ||
@@ -657,6 +699,48 @@ interface ComparisonResult {
   worseFields: string[];
 }
 
+function compareAppliedEffects(
+  effects1: string[],
+  effects2: string[],
+): { isBetter: boolean; isWorse: boolean } {
+  let isBetter = false;
+  let isWorse = false;
+
+  const getBaseEffect = (e: string) => (e.startsWith('briefly:') ? e.substring(8) : e);
+  const isBrief = (e: string) => e.startsWith('briefly:');
+
+  for (const e1 of effects1) {
+    const base1 = getBaseEffect(e1);
+    const brief1 = isBrief(e1);
+
+    const matching2 = effects2.find((e2) => getBaseEffect(e2) === base1);
+    if (!matching2) {
+      // effects1 has a condition that effects2 does not have at all
+      isBetter = true;
+    } else {
+      const brief2 = isBrief(matching2);
+      if (brief1 && !brief2) {
+        // e1 is brief, matching2 is full -> effects1 is worse
+        isWorse = true;
+      } else if (!brief1 && brief2) {
+        // e1 is full, matching2 is brief -> effects1 is better
+        isBetter = true;
+      }
+    }
+  }
+
+  for (const e2 of effects2) {
+    const base2 = getBaseEffect(e2);
+    const matching1 = effects1.find((e1) => getBaseEffect(e1) === base2);
+    if (!matching1) {
+      // effects2 has a condition that effects1 does not have at all
+      isWorse = true;
+    }
+  }
+
+  return { isBetter, isWorse };
+}
+
 function compareSpellProfiles(p1: SpellProfile, p2: SpellProfile): ComparisonResult {
   const betterFields: string[] = [];
   const worseFields: string[] = [];
@@ -720,12 +804,9 @@ function compareSpellProfiles(p1: SpellProfile, p2: SpellProfile): ComparisonRes
   }
 
   // 9. Applied Effects (superset of applied effects is better)
-  const e1 = new Set(p1.appliedEffects);
-  const e2 = new Set(p2.appliedEffects);
-  const hasExtraP1 = p1.appliedEffects.some((e) => !e2.has(e));
-  const hasExtraP2 = p2.appliedEffects.some((e) => !e1.has(e));
-  if (hasExtraP1) betterFields.push('applied conditions');
-  if (hasExtraP2) worseFields.push('applied conditions');
+  const effectComp = compareAppliedEffects(p1.appliedEffects, p2.appliedEffects);
+  if (effectComp.isBetter) betterFields.push('applied conditions');
+  if (effectComp.isWorse) worseFields.push('applied conditions');
 
   // 10. Special Requirements / Drawbacks (fewer is better/subset is better)
   const r1 = new Set(p1.specialRequirements);
