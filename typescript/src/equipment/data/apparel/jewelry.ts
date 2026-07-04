@@ -1,5 +1,4 @@
 import { RawApparel } from './index';
-import { skillItem } from './utils';
 
 export function jewelry(): RawApparel[] {
   return [...amulets(), ...rings()];
@@ -14,13 +13,13 @@ function amulets(): RawApparel[] {
         rank: 3,
         short_description: 'Can control undead',
         description: `
-            Whenever you would kill an undead creature with a healing ability, you may activate this amulet.
-            If the creature's \\glossterm{character rank} is less than or equal to your rank, and it is not \\glossterm{elite}, it becomes \\dominated by you instead of dying.
+          Whenever you would kill an undead creature with a healing ability, you may activate this amulet.
+          If the creature's \\glossterm{character rank} is less than or equal to your rank, and it is not \\glossterm{elite}, it becomes \\dominated by you instead of dying.
 
-            This effect lasts for 24 hours.
-            You can only control one undead at a time in this way.
-            If you activate this amulet again, the effect ends on any previously dominated undead.
-            Whenever this effect ends for any reason, the previously dominated creature immediately dies.
+          This effect lasts for 24 hours.
+          You can only control one undead at a time in this way.
+          If you activate this amulet again, the effect ends on any previously dominated undead.
+          Whenever this effect ends for any reason, the previously dominated creature immediately dies.
         `,
         magical: true,
         upgrades: [
@@ -499,62 +498,6 @@ function rings(): RawApparel[] {
     {
       kind: 'Ring',
       item: {
-        name: 'Ring of Desperate Breath',
-        rank: 1,
-        short_description: 'Can exert to breathe briefly',
-        description: `
-            You can activate this item as a \\glossterm{minor action}.
-            When you do, you reduce your \\glossterm{stamina} by one, and you can breathe in clean, fresh air regardless of your environment for one minute.
-            This can be used in emergencies to save yourself from drowning or other perils.
-        `,
-        magical: true,
-        upgrades: [],
-        tags: ['Air'],
-        rarity: 'Common',
-      },
-    },
-    {
-      kind: 'Ring',
-      item: {
-        name: 'Ring of Water Breathing',
-        rank: 3,
-        short_description: 'Allows breathing water like air',
-        description: `
-            You can breathe water as easily as a human breathes air.
-            This does not grant you the ability to breathe other liquids.
-        `,
-        magical: true,
-        upgrades: [],
-        tags: ['Water'],
-        rarity: 'Common',
-      },
-    },
-    {
-      kind: 'Ring',
-      item: {
-        name: 'Ring of the True Form',
-        rank: 2,
-        short_description: 'Resistant to form-altering attacks',
-        description: `
-            You are \\resistant to attacks from the \\sphere{polymorph} sphere.
-            This bonus also applies against other attacks that significantly alter your shape, such as an aboleth's slime.
-        `,
-        magical: true,
-        upgrades: [
-          {
-            rank: 5,
-            short_description: 'Immune to form-altering attacks',
-            description: 'You become immune instead of resistant.',
-          },
-        ],
-        tags: [],
-        rarity: 'Common',
-      },
-    },
-    { kind: 'Ring', item: skillItem("Liar's Ring", 'Deception') },
-    {
-      kind: 'Ring',
-      item: {
         name: 'Ring of Nourishment',
         rank: 2,
         short_description: 'Provides food and water',
@@ -635,10 +578,10 @@ function rings(): RawApparel[] {
         rank: 1,
         short_description: 'Can exert to remove a condition',
         description: `
-            You can activate this ring as a standard action.
-            When you do, you remove one \\glossterm{condition} affecting you.
+          You can activate this ring as a standard action.
+          When you do, you remove one \\glossterm{condition} affecting you.
 
-            After you activate this item, you reduce your \\glossterm{stamina} by one.
+          After you activate this item, you reduce your \\glossterm{stamina} by one.
         `,
         magical: true,
         upgrades: [
