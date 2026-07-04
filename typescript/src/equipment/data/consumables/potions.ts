@@ -152,5 +152,15 @@ export function potions(): Tool[] {
         When you drink this \\glossterm{potion}, you are \\glossterm{briefly} \\empowered and \\maximized.
       `,
     }),
+    createPotion({
+      name: 'Potion of Desperate Breath',
+      rank: 1,
+      attunement: 'Unrestricted',
+      short_description: 'Can breathe briefly',
+      description: `
+        When you drink this \\glossterm{potion}, you can \\glossterm{briefly} breathe in clean, fresh air regardless of your environment.
+      `,
+      tags: ['Air'],
+    }),
   ];
 }

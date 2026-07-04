@@ -1,5 +1,5 @@
 import { RawApparel } from './index';
-import { attributeItem, skillItem, reliableSkillItem } from './utils';
+import { attributeItem } from './utils';
 
 export function arms(): RawApparel[] {
   return [...bracers(), ...gauntlets(), ...gloves(), ...tattoos()];
@@ -231,33 +231,6 @@ function gauntlets(): RawApparel[] {
         rarity: 'Common',
       },
     },
-    {
-      kind: 'Gauntlets',
-      item: {
-        name: 'Gauntlets of Might',
-        rank: 2,
-        short_description: 'Grants +1 Strength for weight limits',
-        description: `
-            You gain a +1 \\glossterm{enhancement bonus} to Strength that only applies for the purpose of determining your \\glossterm{weight limits} (see \\pcref{Weight Limits}).
-        `,
-        magical: true,
-        upgrades: [
-          {
-            rank: 5,
-            short_description: 'Grants +2 Strength for weight limits',
-            description: 'The bonus increases to +2.',
-          },
-          {
-            rank: 7,
-            short_description: 'Grants +1 mundane power and +2 Strength for weight limits',
-            description:
-              'You also gain a +1 \\glossterm{enhancement bonus} to your \\glossterm{mundane power}.',
-          },
-        ],
-        tags: [],
-        rarity: 'Common',
-      },
-    },
     { kind: 'Gauntlets', item: attributeItem('Gauntlets of Strength', 'strength') },
   ];
 }
@@ -294,8 +267,6 @@ function gloves(): RawApparel[] {
         rarity: 'Common',
       },
     },
-    { kind: 'Gloves', item: skillItem('Locksmith Gloves', 'Devices') },
-    { kind: 'Gloves', item: skillItem('Pickpocket Gloves', 'Sleight of Hand') },
     {
       kind: 'Gloves',
       item: {
@@ -329,39 +300,6 @@ function gloves(): RawApparel[] {
         ],
         tags: [],
         rarity: 'Relic',
-      },
-    },
-    {
-      kind: 'Gloves',
-      item: reliableSkillItem(
-        'Gloves of Reliable Finesse',
-        'Craft, Devices, or Sleight of Hand',
-        'finesse-based',
-      ),
-    },
-    {
-      kind: 'Gloves',
-      item: {
-        name: 'Ghoultouch Gloves',
-        rank: 1,
-        short_description: 'Grants a slowing touch',
-        description: `
-            You can activate these gloves as a standard action using a \\glossterm{free hand}.
-            When you do, make an attack vs. Fortitude against a creature you touch with either glove.
-            After activating this item, you \\glossterm{briefly} cannot activate it again.
-            \\hit The target is \\glossterm{briefly} \\slowed.
-            If it is \\glossterm{injured}, it is also slowed as a \\glossterm{condition}.
-        `,
-        magical: true,
-        upgrades: [
-          {
-            rank: 6,
-            short_description: 'Grants a slowing touch',
-            description: 'The target is slowed as a condition even if it is not injured.',
-          },
-        ],
-        tags: [],
-        rarity: 'Common',
       },
     },
     { kind: 'Gloves', item: attributeItem('Gloves of Dexterity', 'dexterity') },

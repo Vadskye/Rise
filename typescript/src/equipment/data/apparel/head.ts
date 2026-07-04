@@ -1,5 +1,5 @@
 import { RawApparel } from './index';
-import { attributeItem, skillItem, reliableSkillItem } from './utils';
+import { attributeItem } from './utils';
 
 export function head(): RawApparel[] {
   return [
@@ -57,8 +57,6 @@ function circlets(): RawApparel[] {
         rarity: 'Common',
       },
     },
-    { kind: 'Circlet', item: skillItem("Ruler's Circlet", 'Persuasion') },
-    { kind: 'Circlet', item: skillItem('Imperious Circlet', 'Intimidate') },
     {
       kind: 'Circlet',
       item: {
@@ -90,51 +88,8 @@ function circlets(): RawApparel[] {
           },
         ],
         tags: ['Scrying'],
-        rarity: 'Common',
+        rarity: 'Relic',
       },
-    },
-    {
-      kind: 'Circlet',
-      item: {
-        name: 'Circlet of Desperate Visions',
-        rank: 1,
-        short_description: 'Grants lingering benefits from \\ability{desperate exertion}',
-        description: `
-            Whenever you use the \\ability{desperate exertion} ability, you become \\glossterm{briefly} \\focused.
-            This does not affect the initial ability that you used \\ability{desperate exertion} to change.
-        `,
-        magical: true,
-        upgrades: [
-          {
-            rank: 4,
-            short_description: 'Grants lingering benefits from \\ability{desperate exertion}',
-            description: 'You are also \\glossterm{briefly} \\honed.',
-          },
-          {
-            rank: 7,
-            short_description: 'Grants lingering benefits from \\ability{desperate exertion}',
-            description: 'You are also \\glossterm{briefly} \\empowered.',
-          },
-        ],
-        tags: [],
-        rarity: 'Common',
-      },
-    },
-    {
-      kind: 'Circlet',
-      item: reliableSkillItem(
-        'Circlet of Reliable Observation',
-        'Awareness, Social Insight, or Survival',
-        'observation-based',
-      ),
-    },
-    {
-      kind: 'Circlet',
-      item: reliableSkillItem(
-        'Circlet of Reliable Intuition',
-        'Analysis, Knowledge, or Medicine',
-        'intuition-based',
-      ),
     },
     { kind: 'Circlet', item: attributeItem('Circlet of Perception', 'perception') },
     { kind: 'Circlet', item: attributeItem('Circlet of Willpower', 'willpower') },
@@ -219,11 +174,6 @@ function crowns(): RawApparel[] {
           {
             rank: 5,
             short_description: 'Emits vast light',
-            description: 'The area increases to a \\hugearea radius.',
-          },
-          {
-            rank: 7,
-            short_description: 'Emits massive light',
             description: 'The area increases to a \\gargarea radius.',
           },
         ],
@@ -304,28 +254,7 @@ function crowns(): RawApparel[] {
         magical: true,
         upgrades: [],
         tags: ['Visual'],
-        rarity: 'Common',
-      },
-    },
-    {
-      kind: 'Crown',
-      item: {
-        name: "Challenger's Crown",
-        rank: 3,
-        short_description: 'Increases accuracy penalty on goaded foes by 1',
-        description: `
-            Each creature suffering penalties for being \\goaded by you takes an additional -1 \\glossterm{accuracy} penalty against creatures other than you.
-        `,
-        magical: true,
-        upgrades: [
-          {
-            rank: 6,
-            short_description: 'Increases accuracy penalty on goaded foes by 2',
-            description: 'The penalty increases to -2.',
-          },
-        ],
-        tags: ['Compulsion'],
-        rarity: 'Common',
+        rarity: 'Relic',
       },
     },
   ];
