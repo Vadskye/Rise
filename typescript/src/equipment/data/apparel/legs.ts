@@ -1,5 +1,4 @@
 import { RawApparel } from './index';
-import { skillItem, reliableSkillItem } from './utils';
 
 export function legs(): RawApparel[] {
   return [...boots()];
@@ -7,42 +6,6 @@ export function legs(): RawApparel[] {
 
 function boots(): RawApparel[] {
   return [
-    {
-      kind: 'Boots',
-      item: {
-        name: 'Crater Boots',
-        rank: 3,
-        short_description: 'Deals your falling damage to enemies',
-        description: `
-            You can activate these boots as a \\glossterm{standard action} while \\glossterm{midair}.
-            At the end of your turn, if you land on the ground from falling, make a \\glossterm{reactive attack} vs. Brawn against everything within a \\smallarea radius from you.
-            Your minimum accuracy is $accuracy.
-            After you activate these boots, you \\glossterm{briefly} cannot do so again.
-            \\hit You deal the target damage equal to the damage you took from falling.
-            If you reduce or avoid the falling damage, that also affects the damage you deal with these boots.
-            \\miss Half damage.
-            \\crit Each target also falls \\prone.
-            This attack does not deal increased damage on a critical hit.
-        `,
-        magical: true,
-        upgrades: [
-          {
-            rank: 5,
-            short_description: 'Deals your falling damage to enemies',
-            description:
-              'Your minimum accuracy increases to $accuracy, and the attack only affects enemies in the area.',
-          },
-          {
-            rank: 7,
-            short_description: 'Deals your falling damage to enemies',
-            description:
-              'Your minimum accuracy increases to $accuracy, and the area increases to a \\largearea radius from you.',
-          },
-        ],
-        tags: [],
-        rarity: 'Common',
-      },
-    },
     {
       kind: 'Boots',
       item: {
@@ -97,23 +60,15 @@ function boots(): RawApparel[] {
       kind: 'Boots',
       item: {
         name: 'Boots of Freedom',
-        rank: 2,
-        short_description: 'Cannot be slowed',
+        rank: 7,
+        short_description: 'Grants immunity to almost all mobility restrictions',
         description: `
-            You are immune to being \\slowed.
+            You are immune to being \\slowed and knocked \\prone, and you are unaffected by \\glossterm{difficult terrain}.
+            Enemy attacks cannot cause you to be \\grappled, but you can still be grappled if you initiate the grapple.
         `,
         magical: true,
-        upgrades: [
-          {
-            rank: 7,
-            short_description: 'Grants immunity to almost all mobility restrictions',
-            description: `
-                You are also unaffected by \\glossterm{difficult terrain} and cannot be knocked \\prone.
-                Enemy attacks cannot cause you to be \\grappled, but you can still be grappled if you initiate the grapple.
-            `,
-          },
-        ],
         tags: [],
+        upgrades: [],
         rarity: 'Common',
       },
     },
@@ -149,37 +104,6 @@ function boots(): RawApparel[] {
     {
       kind: 'Boots',
       item: {
-        name: 'Bonded Boots',
-        rank: 2,
-        short_description: 'Can teleport next to nearby bonded ally',
-        description: `
-            You can bond these boots to an \\glossterm{ally} you \\glossterm{touch} as a standard action.
-            While the bond lasts, you can activate the boots as a standard action.
-            When you do, you \\glossterm{teleport} into the closest unoccupied square adjacent to that ally, if such a space exists within \\medrange.
-
-            All bonds are removed if you remove or deattune from the boots and when you bond the boots to a new ally.
-        `,
-        magical: true,
-        upgrades: [
-          {
-            rank: 4,
-            short_description: 'Can teleport next to distant bonded ally',
-            description: 'The teleportation range increases to \\longrange.',
-          },
-          {
-            rank: 6,
-            short_description: 'Can teleport next to distant bonded ally',
-            description:
-              'The teleportation does not require \\glossterm{line of sight} or \\glossterm{line of effect}.',
-          },
-        ],
-        tags: [],
-        rarity: 'Common',
-      },
-    },
-    {
-      kind: 'Boots',
-      item: {
         name: 'Boots of Speed',
         rank: 5,
         short_description: 'Increases speed by 10 feet',
@@ -205,25 +129,6 @@ function boots(): RawApparel[] {
         magical: true,
         upgrades: [],
         tags: [],
-        rarity: 'Common',
-      },
-    },
-    {
-      kind: 'Boots',
-      item: {
-        name: 'Boots of Water Walking',
-        rank: 3,
-        short_description: 'Allows walking on liquids',
-        description: `
-            You treat the surface of all liquids as if they were firm ground.
-            Your feet hover about an inch above the liquid's surface, allowing you to traverse dangerous liquids without harm as long as the surface is calm.
-
-            If you are below the surface of the liquid, you rise towards the surface at a rate of 60 feet per turn.
-            Thick liquids, such as mud and lava, may cause you to rise more slowly.
-        `,
-        magical: true,
-        upgrades: [],
-        tags: ['Water'],
         rarity: 'Common',
       },
     },
@@ -294,26 +199,17 @@ function boots(): RawApparel[] {
         rank: 4,
         short_description: 'Can exert to teleport seven leagues',
         description: `
-            You can activate these boots as a standard action.
-            When you do, you reduce your \\glossterm{stamina} by one and teleport horizontally exactly 25 miles in a direction you specify.
-            After you activate these boots, you \\glossterm{briefly} cannot do so again.
-            If this would place you within a solid object or otherwise impossible space, the boots will shunt you up to 1,000 feet in any direction to the closest available space.
-            If there is no available space within 1,000 feet of your intended destination, the effect fails and you take 4d6 damage.
+          You can activate these boots as a standard action.
+          When you do, you reduce your \\glossterm{stamina} by one and teleport horizontally exactly 25 miles in a direction you specify.
+          After you activate these boots, you \\glossterm{briefly} cannot do so again.
+          If this would place you within a solid object or otherwise impossible space, the boots will shunt you up to 1,000 feet in any direction to the closest available space.
+          If there is no available space within 1,000 feet of your intended destination, the effect fails and you take 4d6 damage.
         `,
         magical: true,
         upgrades: [],
         tags: [],
         rarity: 'Relic',
       },
-    },
-    { kind: 'Boots', item: skillItem('Boots of Elvenkind', 'Stealth') },
-    {
-      kind: 'Boots',
-      item: reliableSkillItem(
-        'Boots of Reliable Motion',
-        'Balance, Climb, Jump, or Swim',
-        'movement-based',
-      ),
     },
     {
       kind: 'Boots',
@@ -348,10 +244,10 @@ function boots(): RawApparel[] {
         rank: 4,
         short_description: 'Can sprint without exertion',
         description: `
-            Whenever you use the \\ability{sprint} ability, you can activate these boots.
-            When you do, that ability does not reduce your \\glossterm{stamina}.
+          Whenever you use the \\ability{sprint} ability, you can activate these boots.
+          When you do, that ability does not reduce your \\glossterm{stamina}.
 
-            After you activate these boots, you cannot do so again until you spend your full turn without making a \\glossterm{movement}.
+          After you activate these boots, you cannot do so again until you spend your full turn without making a \\glossterm{movement}.
         `,
         magical: true,
         upgrades: [],
@@ -375,29 +271,6 @@ function boots(): RawApparel[] {
             short_description: 'Can sprint when you recover',
             description:
               'When you use the \\ability{recover} ability, you can also use the \\ability{sprint} ability immediately afterward.',
-          },
-        ],
-        tags: [],
-        rarity: 'Common',
-      },
-    },
-    {
-      kind: 'Boots',
-      item: {
-        name: 'Anchoring Boots',
-        rank: 3,
-        short_description: 'Immune to most forced movement attacks',
-        description: `
-            You are immune to \\glossterm{teleport}, \\glossterm{push}, and \\glossterm{fling} effects from attacks, unless the effects come from an attack that scores a \\glossterm{critical hit}.
-            This does not affect movement effects used by your \\glossterm{allies}.
-        `,
-        magical: true,
-        upgrades: [
-          {
-            rank: 6,
-            short_description: 'Immune to most forced relocation attacks',
-            description:
-              'You are also immune to push, fling, and teleportation effects from attacks that are critical hits.',
           },
         ],
         tags: [],

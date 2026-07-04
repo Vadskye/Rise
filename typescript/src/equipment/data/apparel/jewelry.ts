@@ -6,15 +6,10 @@ export function jewelry(): RawApparel[] {
 
 function amulets(): RawApparel[] {
   return [
-  ];
-}
-
-function rings(): RawApparel[] {
-  return [
     {
-      kind: 'Ring',
+      kind: 'Amulet',
       item: {
-        name: 'Baneswallow Ring',
+        name: 'Baneswallow Amulet',
         rank: 2,
         short_description: 'Can exert and remove a condition to gain power',
         description: `
@@ -37,6 +32,92 @@ function rings(): RawApparel[] {
       },
     },
     {
+      kind: 'Amulet',
+      item: {
+        name: 'Hexward Amulet',
+        rank: 5,
+        short_description: 'Grants +1 defenses against targeted magic',
+        description: `
+            You gain a +1 bonus to your defenses against \\glossterm{targeted} \\magical abilities.
+            This does not protect you from abilities that affect an area.
+        `,
+        magical: true,
+        upgrades: [],
+        tags: [],
+        rarity: 'Common',
+      },
+    },
+    {
+      kind: 'Amulet',
+      item: {
+        name: 'Cleansing Amulet',
+        rank: 1,
+        short_description: 'Can exert to remove a condition',
+        description: `
+          You can activate this amulet as a standard action.
+          When you do, you remove one \\glossterm{condition} affecting you.
+
+          After you activate this item, you reduce your \\glossterm{stamina} by one.
+        `,
+        magical: true,
+        upgrades: [
+          {
+            rank: 3,
+            short_description: 'Can remove a condition',
+            description: 'Activating this item does not reduce your stamina.',
+          },
+        ],
+        tags: [],
+        rarity: 'Common',
+      },
+    },
+    {
+      kind: 'Amulet',
+      item: {
+        name: 'Quickcleanse Amulet',
+        rank: 5,
+        short_description: 'Can exert to quickly remove a condition',
+        description: `
+            You can activate this amulet as a \\glossterm{minor action}.
+            When you do, you remove one \\glossterm{condition} affecting you.
+
+            After you activate this item, you reduce your \\glossterm{stamina} by one.
+        `,
+        magical: true,
+        upgrades: [],
+        tags: [],
+        rarity: 'Common',
+      },
+    },
+    {
+      kind: 'Amulet',
+      item: {
+        name: 'Anchoring Amulet',
+        rank: 3,
+        short_description: 'Immune to most forced movement attacks',
+        description: `
+            You are immune to \\glossterm{teleport}, \\glossterm{push}, and \\glossterm{fling} effects from attacks, unless the effects come from an attack that scores a \\glossterm{critical hit}.
+            This does not affect movement effects used by your \\glossterm{allies}.
+        `,
+        magical: true,
+        upgrades: [
+          {
+            rank: 6,
+            short_description: 'Immune to most forced relocation attacks',
+            description:
+              'You are also immune to push, fling, and teleportation effects from attacks that are critical hits.',
+          },
+        ],
+        tags: [],
+        rarity: 'Common',
+      },
+    },
+  ];
+}
+
+function rings(): RawApparel[] {
+  return [
+    {
       kind: 'Ring',
       item: {
         name: 'Ring of Nourishment',
@@ -56,22 +137,6 @@ function rings(): RawApparel[] {
           },
         ],
         tags: ['Creation'],
-        rarity: 'Common',
-      },
-    },
-    {
-      kind: 'Ring',
-      item: {
-        name: 'Hexward Ring',
-        rank: 5,
-        short_description: 'Grants +1 defenses against targeted magic',
-        description: `
-            You gain a +1 bonus to your defenses against \\glossterm{targeted} \\magical abilities.
-            This does not protect you from abilities that affect an area.
-        `,
-        magical: true,
-        upgrades: [],
-        tags: [],
         rarity: 'Common',
       },
     },
@@ -115,41 +180,30 @@ function rings(): RawApparel[] {
     {
       kind: 'Ring',
       item: {
-        name: 'Cleansing Ring',
-        rank: 1,
-        short_description: 'Can exert to remove a condition',
+        name: 'Bonded Ring',
+        rank: 2,
+        short_description: 'Can teleport next to nearby bonded ally',
         description: `
-          You can activate this ring as a standard action.
-          When you do, you remove one \\glossterm{condition} affecting you.
+            You can bond this ring to an \\glossterm{ally} you \\glossterm{touch} as a standard action.
+            While the bond lasts, you can activate the ring as a standard action.
+            When you do, you \\glossterm{teleport} into the closest unoccupied square adjacent to that ally, if such a space exists within \\medrange.
 
-          After you activate this item, you reduce your \\glossterm{stamina} by one.
+            All bonds are removed if you remove or deattune from the ring and when you bond the ring to a new ally.
         `,
         magical: true,
         upgrades: [
           {
-            rank: 3,
-            short_description: 'Can remove a condition',
-            description: 'Activating this item does not reduce your stamina.',
+            rank: 4,
+            short_description: 'Can teleport next to distant bonded ally',
+            description: 'The teleportation range increases to \\longrange.',
+          },
+          {
+            rank: 6,
+            short_description: 'Can teleport next to distant bonded ally',
+            description:
+              'The teleportation does not require \\glossterm{line of sight} or \\glossterm{line of effect}.',
           },
         ],
-        tags: [],
-        rarity: 'Common',
-      },
-    },
-    {
-      kind: 'Ring',
-      item: {
-        name: 'Quickcleanse Ring',
-        rank: 5,
-        short_description: 'Can exert to quickly remove a condition',
-        description: `
-            You can activate this ring as a \\glossterm{minor action}.
-            When you do, you remove one \\glossterm{condition} affecting you.
-
-            After you activate this item, you reduce your \\glossterm{stamina} by one.
-        `,
-        magical: true,
-        upgrades: [],
         tags: [],
         rarity: 'Common',
       },

@@ -3483,4 +3483,33 @@ export const rituals: RitualDefinition[] = [
     `,
     spheres: ['Telekinesis'],
   },
+
+  {
+    staminaCost: false,
+    name: 'Surface Walk',
+    rank: 4,
+    roles: ['narrative'],
+    usageTime: 'one minute',
+    type: 'Attune (target)',
+    effect: `
+      Choose up to six ritual participants.
+      Each target treats a particular type of surface as it was firm ground.
+      The surface depends on the mystic sphere used to perform this ritual.
+      Each target's feet hover about an inch above the surface, allowing them to traverse dangerous surfaces without harm as long as the surface is calm.
+
+      If a target is submerged below the surface in a field of the same material, it rises towards the surface at a rate of 60 feet per turn.
+      Thick materials, such as mud and lava, may cause it to rise more slowly.
+    `,
+    sphereEffects: {
+      Aeromancy: `
+        The effect applies to fog, smoke, and mist.
+        They must be thick enough to block sight beyond five feet.
+      `,
+      Aquamancy: "The effect applies to all liquids.",
+      Cryomancy: "The effect applies to ice.",
+      Telekinesis: "All other mystic sphere effects also apply.",
+      Verdamancy: "The effect applies to light and heavy undergrowth.",
+    },
+    spheres: ['Aeromancy', 'Aquamancy', 'Cryomancy', 'Telekinesis', 'Verdamancy'],
+  },
 ];

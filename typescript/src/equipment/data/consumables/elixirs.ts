@@ -226,6 +226,41 @@ export function elixirs(): Tool[] {
         This does not grant you the ability to breathe other liquids.
         This effect expires after ten minutes.
       `,
+      tags: ['Water'],
+    }),
+    createElixir({
+      name: 'Elixir of Water Walking',
+      rank: 2,
+      attunement: 'Attune',
+      short_description: 'Can walk on water',
+      description: `
+        When you drink this \\glossterm{potion}, if you \\glossterm{attune} to its effects, you treat the surface of all liquids as if they were firm ground.
+        Your feet hover about an inch above the liquid's surface, allowing you to traverse dangerous liquids without harm as long as the surface is calm.
+        If you are below the surface of the liquid, you rise towards the surface at a rate of 60 feet per turn.
+        Thick liquids, such as mud and lava, may cause you to rise more slowly.
+
+        This effect expires after ten minutes.
+      `,
+      tags: ['Water'],
+    }),
+    createElixir({
+      name: 'Elixir of the True Form',
+      rank: 1,
+      attunement: 'Attune',
+      short_description: 'Can breathe underwater',
+      description: `
+        When you drink this \\glossterm{potion}, if you \\glossterm{attune} to its effects, you become \\resistant to attacks from the \\sphere{polymorph} sphere.
+        This effect expires after ten minutes.
+      `,
+      upgrades: [
+        {
+          rank: 4,
+          short_description: 'Immune to poison',
+          description: `
+            You become immune instead of resistant.
+          `,
+        },
+      ],
     }),
     createElixir({
       name: 'Elixir of the True Form',
