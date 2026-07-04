@@ -850,7 +850,8 @@ function addVampires(grimoire: Grimoire) {
             `,
               crit: `
                 If the target was already confused from a previous use of this ability, or if they are a vampire spawn sired by the $name, the $name may make it permanently \\dominated.
-                The $name can dominate any number of rank 5 or lower creatures with this ability, but only one creature at a time with a rank higher than that.
+                The $name can dominate any number of rank 5 or lower creatures with this ability.
+                This ability has a \\glossterm{limit} of one dominated creature with a rank higher than 5.
               `,
               targeting: `
               Make an attack vs. Mental against all humanoid \\glossterm{enemies} and undead enemies within a \\medarea \\glossterm{cone} from you.

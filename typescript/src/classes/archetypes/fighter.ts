@@ -400,7 +400,7 @@ export function tactician(): RankAbility[] {
         You choose the targets whenever you initiate or sustain the battle tactic.
 
         All \\textit{battle tactics} have the \\abilitytag{Sustain} (free) tag, so they last as long as you \\glossterm{sustain} them (see \\pcref{Sustained Abilities}).
-        You cannot sustain multiple battle tactics simultaneously, and any existing \\textit{battle tactics} end as soon as you activate another battle tactic.
+        This ability has a \\glossterm{limit} of one active battle tactic.
 
         {
         \\begin{sustainability}{Dogpile}{\\glossterm{Minor action}}
