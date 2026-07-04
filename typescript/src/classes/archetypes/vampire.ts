@@ -33,7 +33,7 @@ export function vampire(): RankAbility[] {
         The coffin must be sized and shaped appropriately for you to sleep in while completely enclosed in the coffin.
         When you take a \\glossterm{long rest} in your home coffin, you recover two \\glossterm{vital wounds} instead of one.
         In addition, you can cross running water without penalty while in your home coffin.
-        You can only have one home coffin at a time.
+        This ability has a \\glossterm{limit} of one home coffin.
       `,
     },
     {
@@ -141,7 +141,7 @@ export function vampire(): RankAbility[] {
       isMagical: true,
       rank: 7,
       description: `
-        You can designate up to five home coffins, rather than only one.
+        This ability's limit increases to five home coffins.
         This can allow you to travel with one coffin while keeping others safe for emergencies.
       `,
     },

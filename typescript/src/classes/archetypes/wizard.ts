@@ -23,9 +23,8 @@ export function alchemist(): RankAbility[] {
         \\begin{raggeditemize}
           \\item You do not require any raw materials or an alchemist's lab.
           \\item Items created with this ability deteriorate and become useless after 24 hours or after you finish a long rest, whichever comes first.
-          \\item You can only maintain the existence of four items with this ability at once.
-          If you try to create an item beyond this limit, you must first dismiss another item created.
-          This removes any lingering effects from the removed item, such as the protective qualities of an \\magicitem{antitoxin elixir}.
+          \\item This ability has a \\glossterm{limit} of four items.
+          When an item created with this ability is \\glossterm{dismissed}, all of its lingering effects immediately end, such as the protective qualities of an \\magicitem{antitoxin elixir}.
           \\item Items you create with this ability still have a lingering magic tied to you when destroyed or consumed.
           With five minutes of work, you can recreate all of those items.
           This removes any lingering effects from the recreated item.
@@ -33,7 +32,7 @@ export function alchemist(): RankAbility[] {
 
         You can invest any number of \\glossterm{insight points} into this ability.
         Unlike normal for insight points, this does not directly grant you any additional abilities known.
-        Instead, for each insight point invested, the number of items you can maintain simultaneously with this ability increases by one.
+        Instead, for each insight point invested, this ability's limit increases by one.
       `,
     },
     {
