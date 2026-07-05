@@ -346,19 +346,41 @@ export const verdamancy: MysticSphere = {
     },
 
     {
-      name: 'Barkskin',
+      name: 'Goodberries',
 
       effect: `
-        You gain a +3 \\glossterm{enhancement bonus} to your \\glossterm{durability}.
-        However, you are also \\vulnerable to \\atFire abilities.
+        When you cast this spell, you create three berries.
+        Any creature can eat one berry as a standard action.
+        If it does, it regains \\hprankthreelow and reduces its \\glossterm{stamina} by one.
       `,
       rank: 1,
       roles: ['attune'],
-      scaling: {
-        3: 'The bonus increases to +3.',
-        5: 'The bonus increases to +4.',
-        7: 'The bonus increases to +5.',
-      },
+      scaling: 'healing',
+      tags: ['Manifestation'],
+      type: 'Attune',
+    },
+
+    {
+      name: 'Barkskin',
+
+      effect: `
+        You gain a +1 \\glossterm{enhancement bonus} to your Armor defense.
+        However, you are also \\vulnerable to \\atFire abilities.
+      `,
+      rank: 3,
+      roles: ['attune'],
+      type: 'Attune',
+    },
+
+    {
+      name: 'Greater Barkskin',
+
+      effect: `
+        You gain a +1 \\glossterm{enhancement bonus} to your Armor and Fortitude defenses. 
+        However, you are also \\vulnerable to \\atFire abilities.
+      `,
+      rank: 5,
+      roles: ['attune'],
       type: 'Attune',
     },
 

@@ -622,30 +622,42 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       type: 'Sustain (attunable, standard)',
     },
 
+    // +1 Armor is 1.1 EA, which is normally rank 4.
+    // -1r for Reflex defense penalty.
     {
       name: 'Stoneskin',
 
       effect: `
-        You gain a +3 \\glossterm{enhancement bonus} to your \\glossterm{durability}.
+        You gain a +1 \\glossterm{enhancement bonus} to your Armor defense.
         However, you also take a \\minus1 penalty to your Reflex defense.
       `,
-      rank: 1,
+      rank: 3,
       roles: ['attune'],
-      scaling: {
-        3: 'The bonus increases to +4.',
-        5: 'The bonus increases to +5.',
-        7: 'The bonus increases to +6.',
-      },
       tags: ['Manifestation'],
       type: 'Attune',
+    },
+
+    // +2 armor is 2.2 EA. +2 vital is about 1 EA. That's about rank 7 deep, -1r for
+    // Reflex defense.
+    {
+      name: 'Greater Stoneskin',
+
+      effect: `
+        You gain a +2 \\glossterm{enhancement bonus} to your Armor defense and your \\glossterm{vital rolls}.
+        However, you also take a \\minus1 penalty to your Reflex defense.
+      `,
+      rank: 6,
+      roles: ['attune'],
+      tags: ['Manifestation'],
+      type: 'Attune (deep)',
     },
 
     {
       name: 'Steelskin',
 
       effect: `
-        Whenever a damaging attack would get a \\glossterm{critical hit} against you, you automatically become \\glossterm{briefly} \\steeled, protecting you from the triggering attack.
-        Then, this effect is \\glossterm{dismissed}.
+        You are \\steeled.
+        When you take damage, this effect is \\glossterm{dismissed} at the start of your next turn.
       `,
       rank: 1,
       roles: ['attune'],
@@ -657,8 +669,8 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       name: 'Greater Steelskin',
 
       effect: `
-        Whenever a damaging attack would get a \\glossterm{critical hit} against you, you automatically become \\glossterm{briefly} \\steeled and \\fortified, protecting you from the triggering attack.
-        Then, this effect is \\glossterm{dismissed}.
+        You are \\steeled and \\fortified.
+        When you take damage, this effect is \\glossterm{dismissed} at the start of your next turn.
       `,
       rank: 5,
       roles: ['attune'],

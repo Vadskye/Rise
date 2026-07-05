@@ -366,17 +366,24 @@ export const toxicology: MysticSphere = {
       name: 'Fungal Armor',
 
       effect: `
-        You gain a +3 \\glossterm{enhancement bonus} to your \\glossterm{durability}.
+        You gain a +1 \\glossterm{enhancement bonus} to your Armor and Fortitude defenses.
         However, you also take a -1 penalty to your \\glossterm{vital rolls}.
       `,
-      rank: 1,
+      rank: 3,
       roles: ['attune'],
-      scaling: {
-        3: `The bonus increases to +4.`,
-        5: `The bonus increases to +5.`,
-        7: `The bonus increases to +6.`,
-      },
       type: 'Attune',
+    },
+
+    {
+      name: 'Greater Fungal Armor',
+
+      effect: `
+        You gain a +2 \\glossterm{enhancement bonus} to your Armor and Fortitude defenses.
+        However, you also take a -1 penalty to your \\glossterm{vital rolls}.
+      `,
+      rank: 6,
+      roles: ['attune'],
+      type: 'Attune (deep)',
     },
 
     // This doesn't really match the standard math for an sustain (minor) area, but it

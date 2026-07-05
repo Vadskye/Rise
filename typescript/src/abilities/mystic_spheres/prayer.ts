@@ -276,22 +276,6 @@ export const prayer: MysticSphere = {
     },
 
     {
-      name: 'Blessing of Resilience',
-
-      effect: `
-        Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each target gains a +2 \\glossterm{enhancement bonus} to its \\glossterm{durability}.
-      `,
-      rank: 2,
-      roles: ['attune'],
-      scaling: {
-        4: `The bonus increases to +3.`,
-        6: `The bonus increases to +4.`,
-      },
-      type: 'Attune (target)',
-    },
-
-    {
       name: 'Blessing of Divine Warning',
 
       effect: `
