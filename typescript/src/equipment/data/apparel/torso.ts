@@ -54,27 +54,6 @@ function belts(): RawApparel[] {
     {
       kind: 'Belt',
       item: {
-        name: 'Poisonbane Belt',
-        rank: 2,
-        short_description: 'Resistant to poisons',
-        description: `
-            You are \\resistant to \\glossterm{poisons} and poison damage.
-        `,
-        magical: true,
-        upgrades: [
-          {
-            rank: 5,
-            short_description: 'Immune to poisons',
-            description: 'You become immune instead of resistant.',
-          },
-        ],
-        tags: [],
-        rarity: 'Common',
-      },
-    },
-    {
-      kind: 'Belt',
-      item: {
         name: 'Lifekeeping Belt',
         rank: 1,
         short_description: 'Grants +1 to vital rolls',
@@ -208,7 +187,7 @@ function cloaks(): RawApparel[] {
       kind: 'Cloak',
       item: {
         name: 'Cloak of the Noble Rider',
-        rank: 2,
+        rank: 1,
         short_description: 'Can exert to save your mount from death',
         description: `
             Whenever a non-humanoid mount that you are riding would gain one or more \\glossterm{vital wounds}, this cloak automatically activates.
@@ -252,10 +231,10 @@ function cloaks(): RawApparel[] {
       kind: 'Cloak',
       item: {
         name: 'Cloak of the Unseen Hunter',
-        rank: 4,
+        rank: 3,
         short_description: 'Grants +1 accuracy while concealed',
         description: `
-            You gain a +1 \\glossterm{enhancement bonus} to \\glossterm{accuracy} against creatures and objects that you have \\glossterm{concealment} from.
+          You gain a +1 \\glossterm{enhancement bonus} to \\glossterm{accuracy} against creatures and objects that you have \\glossterm{concealment} from.
         `,
         magical: true,
         upgrades: [],
@@ -282,30 +261,8 @@ function cloaks(): RawApparel[] {
     {
       kind: 'Cloak',
       item: {
-        name: "Cloak of Death's Door",
-        rank: 1,
-        short_description: 'Braced while at zero HP',
-        description: `
-            While you have no remaining \\glossterm{hit points}, you are \\braced.
-        `,
-        magical: true,
-        upgrades: [
-          {
-            rank: 4,
-            short_description: 'Braced and take half damage while at zero HP',
-            description:
-              'While you have no remaining \\glossterm{hit points}, you also take half damage from all sources.',
-          },
-        ],
-        tags: [],
-        rarity: 'Common',
-      },
-    },
-    {
-      kind: 'Cloak',
-      item: {
         name: 'Cloak of Nondetection',
-        rank: 2,
+        rank: 3,
         short_description: 'Resistant to magical detection',
         description: `
             You are \\resistant to attacks with the \\abilitytag{Detection} or \\abilitytag{Scrying} tags.
@@ -313,7 +270,7 @@ function cloaks(): RawApparel[] {
         magical: true,
         upgrades: [
           {
-            rank: 5,
+            rank: 6,
             short_description: 'Immune to magical detection',
             description: `
                 You are immune instead of resistant.
@@ -372,7 +329,7 @@ function cloaks(): RawApparel[] {
             description: 'Gliding does not make you unsteady.',
           },
         ],
-        tags: [],
+        tags: ['Air'],
         rarity: 'Common',
       },
     },
@@ -393,25 +350,27 @@ function cloaks(): RawApparel[] {
             description: 'The height limit increases to 30 feet.',
           },
         ],
-        tags: [],
+        tags: ['Air'],
         rarity: 'Common',
       },
     },
+    // Enemies only small radius from self is -1dr.
     {
       kind: 'Cloak',
       item: {
         name: 'Phoenixflame Cloak',
-        rank: 3,
+        rank: 1,
         short_description: 'Deals $dr3l damage when you recover',
         description: `
-            Whenever you use the \\ability{recover} ability, make an attack vs. Reflex against all \\glossterm{enemies} within a \\smallarea radius from you.
-            \\hit \\damagerankthreelow.
-            \\miss Half damage.
+          Whenever you use the \\ability{recover} ability, make an attack vs. Reflex against all \\glossterm{enemies} within a \\smallarea radius from you.
+          Then, this cloak is permanently destroyed.
+          \\hit \\damagerankthreelow.
+          \\miss Half damage.
         `,
         magical: true,
         upgrades: [
           {
-            rank: 6,
+            rank: 4,
             short_description: 'Deals $dr6l damage when you recover',
             description:
               'The damage increases to $dr6l, and the area increases to a \\medarea radius.',
@@ -456,29 +415,6 @@ function cloaks(): RawApparel[] {
             rank: 6,
             short_description: 'Can teleport a great distance silently',
             description: 'The range of the teleportation increases to \\distrange.',
-          },
-        ],
-        tags: [],
-        rarity: 'Common',
-      },
-    },
-    {
-      kind: 'Cloak',
-      item: {
-        name: 'Cloak of Mist',
-        rank: 4,
-        short_description: 'Fills nearby area with fog',
-        description: `
-            At the end of your turn, fog \\glossterm{briefly} fills a \\smallarea radius zone from you.
-            This fog does not fully block sight, but it provides \\glossterm{concealment}.
-            There is no time gap between the disappearance of the old fog and the appearance of the new fog, so you can keep continuous fog cover by staying in the same place or moving slowly.
-        `,
-        magical: true,
-        upgrades: [
-          {
-            rank: 6,
-            short_description: 'Fills a large area with fog',
-            description: "The fog's area increases to a \\largearea radius.",
           },
         ],
         tags: [],

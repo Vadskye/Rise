@@ -21,6 +21,14 @@ Apparel is 5% lower, so:
 
 ## Specific effects
 
+### Resistant to tag: 1.0
+
+Totally arbitrary
+
+### Immune to tag: 1.4
+
+Totally arbitrary
+
 ### +1 Accuracy: 1.0
 
 As with weapons, we treat +1 accuracy as 0.2 EA per hit, and this applies to 5 actions, so 1 EA.
@@ -418,3 +426,7 @@ Assume that 2/3 of incoming attacks deal damage, 1/3 have brief debuffs, and 1/3
 ### 100% condition avoidance
 
 20 / 3 / 3 = 2.2 EA
+
+### Non-action ability that destroys the item: -3 ranks
+
+A rank 2 consumable item has approximately a rank 4 spell effect. An attunement item doesn't require hands, but it's still at least a rank better.

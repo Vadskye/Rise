@@ -281,5 +281,15 @@ export function elixirs(): Tool[] {
         },
       ],
     }),
+    createElixir({
+      name: 'Elixir of Invisibility',
+      rank: 7,
+      attunement: 'Attune',
+      short_description: 'Become invisible',
+      description: `
+        When you drink this \\glossterm{potion}, if you \\glossterm{attune} to its effects, you become \\trait{invisible}.
+        This effect expires after ten minutes, or immediately if you attack or take damage.
+      `,
+    }),
   ];
 }
