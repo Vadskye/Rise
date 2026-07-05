@@ -112,6 +112,49 @@ function amulets(): RawApparel[] {
         rarity: 'Common',
       },
     },
+    {
+      kind: 'Amulet',
+      item: {
+        name: 'Poisonbane Amulet',
+        rank: 3,
+        short_description: 'Resistant to poisons',
+        description: `
+            You are \\resistant to \\glossterm{poisons} and poison damage.
+        `,
+        magical: true,
+        upgrades: [
+          {
+            rank: 6,
+            short_description: 'Immune to poisons',
+            description: 'You become immune instead of resistant.',
+          },
+        ],
+        tags: [],
+        rarity: 'Common',
+      },
+    },
+    {
+      kind: 'Amulet',
+      item: {
+        name: 'Lastbreath Amulet',
+        rank: 1,
+        short_description: 'Survive a potentially lethal vital wound',
+        description: `
+            When you would gain a \\glossterm{vital wound} while you already have a vital wound, this amulet activates.
+            You gain a \\plus10 bonus to the vital roll for the new vital wound, but this amulet is permanently destroyed.
+        `,
+        magical: true,
+        upgrades: [
+          {
+            rank: 4,
+            short_description: 'Ignore a potentially lethal vital wound',
+            description: 'You completely negate the new vital wound instead of gaining a vital roll bonus.',
+          },
+        ],
+        tags: [],
+        rarity: 'Common',
+      },
+    },
   ];
 }
 
