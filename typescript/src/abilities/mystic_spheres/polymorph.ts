@@ -682,11 +682,12 @@ export const polymorph: MysticSphere = {
       name: 'Sudden Jellification',
 
       effect: `
-        You \\briefly take half damage from all sources.
+        Whenever you cast or sustain this spell, you \\briefly take half damage from all sources.
       `,
       rank: 1,
       roles: ['turtle'],
       tags: ['Physical'],
+      type: 'Sustain (standard)',
     },
 
     {
@@ -696,11 +697,12 @@ export const polymorph: MysticSphere = {
       // damage like steeled does, so treat steeled as 0.3 EA instead of 0.4 EA.
       // That gives a sum of 0.7 + 0.3 = 1 EA.
       effect: `
-        You \\briefly are \\steeled and take half damage from all sources.
+        Whenever you cast or sustain this spell, you \\briefly are \\steeled and take half damage from all sources.
       `,
       rank: 4,
       roles: ['turtle'],
       tags: ['Physical'],
+      type: 'Sustain (standard)',
     },
 
     // Ally empower is 0.6 EA. Long is about +1a, so about 0.2 EA.

@@ -367,21 +367,23 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Building Storm',
 
       effect: `
-        If you hit with a strike during your last turn, you are \\briefly \\primed.
+        Whenever you use or sustain this maneuver, if you hit with a strike during your last turn, you are \\briefly \\primed.
       `,
       rank: 1,
       roles: ['focus'],
+      type: 'Sustain (standard)',
     },
 
     {
       name: 'Building Storm+',
 
       effect: `
-        You are \\briefly \\primed.
+        Whenever you use or sustain this maneuver, you are \\briefly \\primed.
         If you hit with at least two strikes during your last turn, you are also briefly \\focused.
       `,
       rank: 5,
       roles: ['focus'],
+      type: 'Sustain (standard)',
     },
 
     // Brief invis is 1.2 EA. Melee extra defense allows 1.8 EA. That's probably enough to

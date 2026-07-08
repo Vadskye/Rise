@@ -316,13 +316,14 @@ export const ripAndTear: CombatStyle = {
       name: 'Blood Trance',
 
       effect: `
-        You may choose to lose a quarter of your maximum hit points.
+        Whenever you use or sustain this maneuver, you may choose to lose a quarter of your maximum hit points.
         Then, if you are \\glossterm{injured}, you become \\briefly \\primed and \\empowered.
       `,
       // narrative: '',
       rank: 3,
       roles: ['focus'],
       tags: ['Blood'],
+      type: 'Sustain (standard)',
     },
   ],
 };

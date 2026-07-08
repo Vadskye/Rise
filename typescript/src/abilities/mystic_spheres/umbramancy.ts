@@ -31,7 +31,7 @@ export const umbramancy: MysticSphere = {
       effect: `
         This spell has no \\glossterm{verbal components} or \\glossterm{somatic components}.
 
-        You \\briefly gain a +3 \\glossterm{enhancement bonus} to the Stealth skill.
+        Whenever you cast or sustain this spell, you \\briefly gain a +3 \\glossterm{enhancement bonus} to the Stealth skill.
         If you stop being \\glossterm{shadowed} at any point, this effect immediately ends.
       `,
       roles: ['narrative'],
@@ -40,6 +40,7 @@ export const umbramancy: MysticSphere = {
         4: `The bonus increases to +5.`,
         6: `The bonus increases to +6.`,
       },
+      type: 'Sustain (standard)',
     },
   ],
   spells: [
@@ -474,12 +475,13 @@ export const umbramancy: MysticSphere = {
       name: 'Shadow Cloak',
 
       effect: `
-        You must be \\glossterm{shadowed} to cast this spell.
+        You must be \\glossterm{shadowed} to cast or sustain this spell.
 
-        All attacks against you and all \\glossterm{shadowed} allies within a \\largearea radius from you \\briefly have a 20\\% \\glossterm{failure chance}.
+        Whenever you cast or sustain this spell, attacks against you and all \\glossterm{shadowed} allies within a \\largearea radius from you \\briefly have a 20\\% \\glossterm{failure chance}.
       `,
       rank: 2,
       roles: ['boon', 'turtle'],
+      type: "Sustain (standard)",
     },
 
     {
@@ -487,11 +489,12 @@ export const umbramancy: MysticSphere = {
 
       // 50% action denial against 50% of enemy attacks = 1 EA.
       effect: `
-        All attacks against you \\briefly have a 50\\% \\glossterm{failure chance}.
+        Whenever you cast or sustain this spell, attacks against you \\briefly have a 50\\% \\glossterm{failure chance}.
         If you are currently \\glossterm{shadowed}, you are also \\briefly \\empowered.
       `,
       rank: 6,
       roles: ['focus'],
+      type: "Sustain (standard)",
     },
 
     {
@@ -651,25 +654,27 @@ export const umbramancy: MysticSphere = {
     {
       name: 'Meld into Shadow',
       effect: `
-        You must be \\glossterm{shadowed} to cast this spell.
+        You must be \\glossterm{shadowed} to cast or sustain this spell.
 
-        Attacks against you \\briefly have a 50\\% \\glossterm{failure chance}.
+        Whenever you cast or sustain this spell, attacks against you \\briefly have a 50\\% \\glossterm{failure chance}.
       `,
       rank: 1,
       roles: ['turtle'],
+      type: 'Sustain (standard)',
     },
 
     // 1.1 EA, but conditional
     {
       name: 'Greater Meld into Shadow',
       effect: `
-        You must be \\glossterm{shadowed} to cast this spell.
+        You must be \\glossterm{shadowed} to cast or sustain this spell.
 
-        Attacks against you \\briefly have a 50\\% \\glossterm{failure chance}.
+        Whenever you cast or sustain this spell, attacks against you \\briefly have a 50\\% \\glossterm{failure chance}.
         When an attack against you fails in this way, you become \\briefly \\empowered.
       `,
       rank: 5,
       roles: ['generator', 'turtle'],
+      type: 'Sustain (standard)',
     },
 
     // 0.7 EA for personal protection. That's not a full rank 2 effect, so say we get +1dr

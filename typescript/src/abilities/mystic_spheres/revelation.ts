@@ -11,7 +11,7 @@ export const revelation: MysticSphere = {
       name: 'Reveal Sensation',
 
       effect: `
-        You \\briefly gain a +3 \\glossterm{enhancement bonus} to Awareness checks.
+        Whenever you cast or sustain this spell, you \\briefly gain a +3 \\glossterm{enhancement bonus} to Awareness checks.
       `,
       roles: ['narrative'],
       scaling: {
@@ -19,6 +19,7 @@ export const revelation: MysticSphere = {
         4: `The bonus increases to +5.`,
         6: `The bonus increases to +6.`,
       },
+      type: 'Sustain (standard)',
     },
   ],
   spells: [

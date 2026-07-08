@@ -705,24 +705,26 @@ export const astromancy: MysticSphere = {
       name: 'Blink',
 
       effect: `
-        You \\briefly blink in and out of existence in response to attacks.
+        Whenever you cast or sustain this spell, you \\briefly blink in and out of existence in response to attacks.
         This causes all attacks against you to have a 50\\% \\glossterm{failure chance}.
       `,
       narrative: `You jump into the Astral Expanse the instant before a sword slashes through the space you left behind.`,
       rank: 1,
       roles: ['turtle'],
+      type: 'Sustain (standard)',
     },
     {
       name: 'Empowered Blink',
 
       // 0.7 + 0.5 EA, though they have a bit of antisynergy
       effect: `
-        You \\briefly blink in and out of existence in response to attacks.
+        Whenever you cast or sustain this spell, you \\briefly blink in and out of existence in response to attacks.
         This makes you \\braced, and causes all attacks against you to have a 50\\% \\glossterm{failure chance}.
       `,
       narrative: `You jump into the Astral Expanse the instant before a sword slashes through the space you left behind.`,
       rank: 6,
       roles: ['turtle'],
+      type: 'Sustain (standard)',
     },
     {
       name: 'Distant Spells',

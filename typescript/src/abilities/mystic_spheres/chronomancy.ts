@@ -247,22 +247,24 @@ export const chronomancy: MysticSphere = {
 
       cost: BRIEF_COOLDOWN,
       effect: `
-        You are \\briefly \\braced.
+        Whenever you cast or sustain this spell, you are \\briefly \\braced.
         In addition, you add half your \\glossterm{speed} to your \\glossterm{available movement}.
       `,
       rank: 1,
       roles: ['turtle', 'mobility'],
+      type: 'Sustain (standard)',
     },
     {
       name: 'Distant Accelerated Dodge',
 
       // TODO: full EA math. What is run + braced worth?
       effect: `
-        You are \\briefly \\braced.
+        Whenever you cast or sustain this spell, you are \\briefly \\braced.
         In addition, you add twice your \\glossterm{speed} to your \\glossterm{available movement}.
       `,
       rank: 5,
       roles: ['turtle'],
+      type: 'Sustain (standard)',
     },
 
     {
@@ -704,6 +706,7 @@ export const chronomancy: MysticSphere = {
 
     // This spends a standard action to gain an extra minor action, kind of.
     // Spending time in stasis an also be valuable; this is a strong escape effect.
+    // This isn't a Sustain ability because it would be confusing to sustain it during the stasis.
     {
       name: 'Pour Time Sideways',
 
@@ -758,10 +761,11 @@ export const chronomancy: MysticSphere = {
 
       // Keep wording up to date based on brief ending at start/end of turn
       effect: `
-        You are \\briefly \\braced. When that effect ends, you become \\briefly \\focused.
+        Whenever you cast or sustain this spell, you are \\briefly \\braced. When that effect ends, you become \\briefly \\focused.
       `,
       rank: 2,
       roles: ['turtle', 'focus'],
+      type: 'Sustain (standard)',
     },
 
     // 0.5 + 0.8 EA
@@ -769,10 +773,11 @@ export const chronomancy: MysticSphere = {
       name: 'Time Bends and Twists',
 
       effect: `
-        You are \\glossterm{briefly} \\braced. When that effect ends, you become \\briefly \\primed.
+        Whenever you cast or sustain this spell, you are \\glossterm{briefly} \\braced. When that effect ends, you become \\briefly \\primed.
       `,
       rank: 7,
       roles: ['turtle', 'focus'],
+      type: 'Sustain (standard)',
     },
   ],
 };
