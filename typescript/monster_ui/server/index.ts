@@ -1,35 +1,12 @@
 import express from 'express';
-import * as fs from 'fs';
-import * as path from 'path';
 import { validateMonster } from './validate';
-import { saveTypeScriptFile, DatabaseData } from './codegen';
+import { DatabaseData } from './codegen';
+import { getDb, saveAndValidateAll } from './db';
 
 const app = express();
 const port = 3001;
 
 app.use(express.json());
-
-const dbPath = path.resolve(__dirname, '../monsters_from_ui.json');
-
-function getDb(): DatabaseData {
-  if (!fs.existsSync(dbPath)) {
-    const defaultDb: DatabaseData = { monsters: [], monsterGroups: [] };
-    // Ensure parent directory exists (though it should since it's the root of monster_ui)
-    const parentDir = path.dirname(dbPath);
-    if (!fs.existsSync(parentDir)) {
-      fs.mkdirSync(parentDir, { recursive: true });
-    }
-    fs.writeFileSync(dbPath, JSON.stringify(defaultDb, null, 2), 'utf8');
-    return defaultDb;
-  }
-  const raw = fs.readFileSync(dbPath, 'utf8');
-  return JSON.parse(raw);
-}
-
-function saveDb(db: DatabaseData) {
-  fs.writeFileSync(dbPath, JSON.stringify(db, null, 2), 'utf8');
-  saveTypeScriptFile(db);
-}
 
 // Get the full list of monsters and groups
 app.get('/api/monsters', (req, res) => {
@@ -45,29 +22,8 @@ app.get('/api/monsters', (req, res) => {
 app.post('/api/save', (req, res) => {
   try {
     const db = req.body as DatabaseData;
-    saveDb(db);
-    
-    // Run full validation on every monster
-    const validations: Record<string, any> = {};
-    for (const monster of db.monsters || []) {
-      validations[monster.name] = validateMonster(
-        monster.name, 
-        monster.requiredProperties, 
-        monster.freeformCode
-      );
-    }
-    for (const group of db.monsterGroups || []) {
-      for (const monster of group.monsters || []) {
-        validations[`${group.name}.${monster.name}`] = validateMonster(
-          monster.name,
-          monster.requiredProperties,
-          monster.freeformCode,
-          group.sharedFreeformCode
-        );
-      }
-    }
-
-    res.json({ success: true, validations });
+    const result = saveAndValidateAll(db);
+    res.json(result);
   } catch (err: any) {
     res.status(500).json({ error: err.message || err });
   }

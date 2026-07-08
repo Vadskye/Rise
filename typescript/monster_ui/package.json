@@ -4,9 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "concurrently \"vite\" \"tsx watch --tsconfig tsconfig.server.json server/index.ts\"",
+    "dev": "concurrently \"vite\" \"tsx watch --ignore ../src/monsters/individual_monsters/monsters_from_ui.ts --tsconfig tsconfig.server.json server/index.ts\"",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "tsx --tsconfig tsconfig.server.json --test tests/**/*.test.ts"
   },
   "dependencies": {
     "react": "^18.3.1",

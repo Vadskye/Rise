@@ -8,5 +8,5 @@
       "@src/*": ["./src/*"]
     }
   },
-  "include": ["server/**/*", "../src/**/*"]
+  "include": ["server/**/*", "../src/**/*", "tests/**/*"]
 }
