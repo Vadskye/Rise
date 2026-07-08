@@ -100,4 +100,73 @@ describe('Monster UI Integration Tests (Serverless)', () => {
     const generatedContent = fs.readFileSync(generatedTsPath, 'utf8');
     assert.ok(generatedContent.includes(`grimoire.addMonster('${newMonsterName}'`));
   });
+
+  test('saveAndValidateAll saves database with monster groups, triggers codegen, and runs validation successfully', () => {
+    // 1. Fetch initial monsters
+    const initialDb = getDb();
+    assert.ok(initialDb.monsters);
+    assert.ok(initialDb.monsterGroups);
+
+    // 2. Prepare payload adding a new test group and group monster
+    const testGroupName = `TestGroup_${Date.now()}`;
+    const testGroupMonsterName = `TestGroupMonster_${Date.now()}`;
+    const updatedDb = {
+      ...initialDb,
+      monsterGroups: [
+        ...initialDb.monsterGroups,
+        {
+          name: testGroupName,
+          hasArt: false,
+          sharedFreeformCode: '// shared group code test',
+          monsters: [
+            {
+              name: testGroupMonsterName,
+              requiredProperties: {
+                alignment: 'neutral',
+                base_class: 'warrior',
+                elite: false,
+                creature_origin: 'natural',
+                creature_type: 'beast',
+                size: 'medium',
+                level: 1,
+              },
+              freeformCode: '// group monster specific test',
+            },
+          ],
+        },
+      ],
+    };
+
+    // 3. Save database and run full validation
+    console.log(`Saving database and validating for group ${testGroupName} and monster ${testGroupMonsterName}...`);
+    const result = saveAndValidateAll(updatedDb);
+
+    assert.strictEqual(result.success, true);
+    assert.ok(result.validations);
+    
+    // Key format for group monsters is `${groupName}.${monsterName}`
+    const validationKey = `${testGroupName}.${testGroupMonsterName}`;
+    assert.ok(result.validations[validationKey]);
+
+    // Validate returned computed stats for our new group monster
+    const validation = result.validations[validationKey];
+    assert.strictEqual(validation.success, true);
+    assert.strictEqual(validation.computedStats.name, testGroupMonsterName);
+    assert.strictEqual(validation.computedStats.level, 1);
+
+    // 4. Verify backend saved it by calling getDb() again
+    const finalDb = getDb();
+    const savedGroup = finalDb.monsterGroups.find((g: any) => g.name === testGroupName);
+    assert.ok(savedGroup);
+    assert.strictEqual(savedGroup.sharedFreeformCode, '// shared group code test');
+    const savedMonster = savedGroup.monsters.find((m: any) => m.name === testGroupMonsterName);
+    assert.ok(savedMonster);
+    assert.strictEqual(savedMonster.freeformCode, '// group monster specific test');
+
+    // 5. Verify that the generated TypeScript file contains the new monster group
+    assert.ok(fs.existsSync(generatedTsPath));
+    const generatedContent = fs.readFileSync(generatedTsPath, 'utf8');
+    assert.ok(generatedContent.includes(`name: '${testGroupName}'`));
+    assert.ok(generatedContent.includes(`'${testGroupMonsterName}'`));
+  });
 });
