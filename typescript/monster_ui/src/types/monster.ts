@@ -12,6 +12,22 @@ export interface MonsterData {
   name: string;
   requiredProperties: MonsterRequiredProperties;
   freeformCode: string;
+  baseAttributes?: [number, number, number, number, number, number];
+  trainedSkills?: string[];
+  knowledge?: {
+    easy?: string;
+    normal?: string;
+    hard?: string;
+    legendary?: string;
+  };
+  traits?: string[];
+  customSenses?: string[];
+  customMovementSpeeds?: string[];
+  immunities?: string[];
+  resistances?: string[];
+  vulnerabilities?: string[];
+  equippedArmor?: string;
+  properties?: Record<string, any>;
 }
 
 export interface MonsterGroupKnowledge {

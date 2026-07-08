@@ -43,11 +43,7 @@ export function saveAndValidateAll(db: DatabaseData) {
   if (monsters.length > 0) {
     console.log(`[DB] Validating ${monsters.length} individual monsters...`);
     for (const monster of monsters) {
-      validations[monster.name] = validateMonster(
-        monster.name,
-        monster.requiredProperties,
-        monster.freeformCode,
-      );
+      validations[monster.name] = validateMonster(monster);
     }
   }
 
@@ -59,9 +55,7 @@ export function saveAndValidateAll(db: DatabaseData) {
       console.log(`[DB] Validating group "${group.name}" with ${groupMonsters.length} monsters...`);
       for (const monster of groupMonsters) {
         validations[`${group.name}.${monster.name}`] = validateMonster(
-          monster.name,
-          monster.requiredProperties,
-          monster.freeformCode,
+          monster,
           group.sharedFreeformCode,
         );
       }

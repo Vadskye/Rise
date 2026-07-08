@@ -42,15 +42,15 @@ app.post('/api/save', (req, res) => {
 // Live preview validation endpoint
 app.post('/api/preview', (req, res) => {
   try {
-    const { name, requiredProperties, freeformCode, sharedFreeformCode } = req.body;
-    console.log(
-      `[API] POST /api/preview - Calculating live preview for monster: "${name || 'unknown'}"`,
-    );
-    if (!name) {
-      console.warn('[API Warning] Preview requested without a monster name');
-      return res.status(400).json({ error: 'Monster name is required' });
+    const { monster, sharedFreeformCode } = req.body;
+    if (!monster || !monster.name) {
+      console.warn('[API Warning] Preview requested without a valid monster');
+      return res.status(400).json({ error: 'Monster data with name is required' });
     }
-    const result = validateMonster(name, requiredProperties, freeformCode, sharedFreeformCode);
+    console.log(
+      `[API] POST /api/preview - Calculating live preview for monster: "${monster.name}"`,
+    );
+    const result = validateMonster(monster, sharedFreeformCode);
     res.json(result);
   } catch (err: any) {
     console.error('[API Error] Preview calculation failed:', err);
