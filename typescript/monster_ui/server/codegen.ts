@@ -59,8 +59,10 @@ export function addMonstersFromUi(grimoire: Grimoire) {`);
   if (db.monsters && db.monsters.length > 0) {
     parts.push(`  // --- Individual Monsters ---`);
     for (const monster of db.monsters) {
-      const reqPropsStr = JSON.stringify(monster.requiredProperties, null, 6)
-        .replace(/\n/g, '\n    '); // indent correctly
+      const reqPropsStr = JSON.stringify(monster.requiredProperties, null, 6).replace(
+        /\n/g,
+        '\n    ',
+      ); // indent correctly
 
       parts.push(`  grimoire.addMonster('${monster.name}', (creature: Creature) => {
     creature.setRequiredProperties(${reqPropsStr});
@@ -78,7 +80,9 @@ export function addMonstersFromUi(grimoire: Grimoire) {`);
       const groupConfigParts: string[] = [];
       groupConfigParts.push(`name: '${group.name}'`);
       if (group.knowledge) {
-        groupConfigParts.push(`knowledge: ${JSON.stringify(group.knowledge, null, 8).replace(/\n/g, '\n      ')}`);
+        groupConfigParts.push(
+          `knowledge: ${JSON.stringify(group.knowledge, null, 8).replace(/\n/g, '\n      ')}`,
+        );
       }
       if (group.description) {
         groupConfigParts.push(`description: ${JSON.stringify(group.description)}`);
@@ -92,10 +96,13 @@ export function addMonstersFromUi(grimoire: Grimoire) {`);
 
       const configStr = `{\n      ${groupConfigParts.join(',\n      ')}\n    }`;
 
-      const monstersListStr = group.monsters.map((monster) => {
-        const reqPropsStr = JSON.stringify(monster.requiredProperties, null, 10)
-          .replace(/\n/g, '\n          ');
-        return `[
+      const monstersListStr = group.monsters
+        .map((monster) => {
+          const reqPropsStr = JSON.stringify(monster.requiredProperties, null, 10).replace(
+            /\n/g,
+            '\n          ',
+          );
+          return `[
         '${monster.name}',
         (creature: Creature) => {
           creature.setRequiredProperties(${reqPropsStr});
@@ -104,7 +111,8 @@ export function addMonstersFromUi(grimoire: Grimoire) {`);
           // --- End freeform code ---
         },
       ]`;
-      }).join(',\n      ');
+        })
+        .join(',\n      ');
 
       parts.push(`  grimoire.addMonsterGroup(
     ${configStr},
@@ -121,13 +129,16 @@ export function addMonstersFromUi(grimoire: Grimoire) {`);
 
 export function saveTypeScriptFile(db: DatabaseData) {
   const tsCode = generateTypeScriptCode(db);
-  const targetPath = path.resolve(__dirname, '../../src/monsters/individual_monsters/monsters_from_ui.ts');
-  
+  const targetPath = path.resolve(
+    __dirname,
+    '../../src/monsters/individual_monsters/monsters_from_ui.ts',
+  );
+
   // Ensure the parent directory exists
   const parentDir = path.dirname(targetPath);
   if (!fs.existsSync(parentDir)) {
     fs.mkdirSync(parentDir, { recursive: true });
   }
-  
+
   fs.writeFileSync(targetPath, tsCode, 'utf8');
 }

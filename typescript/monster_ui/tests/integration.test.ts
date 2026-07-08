@@ -9,7 +9,10 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Path to the generated TypeScript file in the main src directory
-const generatedTsPath = path.resolve(__dirname, '../../src/monsters/individual_monsters/monsters_from_ui.ts');
+const generatedTsPath = path.resolve(
+  __dirname,
+  '../../src/monsters/individual_monsters/monsters_from_ui.ts',
+);
 
 describe('Monster UI Integration Tests (Serverless)', () => {
   let dbBackup: string | null = null;
@@ -65,11 +68,11 @@ describe('Monster UI Integration Tests (Serverless)', () => {
             creature_origin: 'natural',
             creature_type: 'beast',
             size: 'medium',
-            level: 1
+            level: 1,
           },
-          freeformCode: '// integration test dummy'
-        }
-      ]
+          freeformCode: '// integration test dummy',
+        },
+      ],
     };
 
     // 3. Save database and run full validation
@@ -79,13 +82,13 @@ describe('Monster UI Integration Tests (Serverless)', () => {
     assert.strictEqual(result.success, true);
     assert.ok(result.validations);
     assert.ok(result.validations[newMonsterName]);
-    
+
     // Validate returned computed stats for our new monster
     const validation = result.validations[newMonsterName];
     assert.strictEqual(validation.success, true);
     assert.strictEqual(validation.computedStats.name, newMonsterName);
     assert.strictEqual(validation.computedStats.level, 1);
-    
+
     // 4. Verify backend saved it by calling getDb() again
     const finalDb = getDb();
     const savedMonster = finalDb.monsters.find((m: any) => m.name === newMonsterName);
