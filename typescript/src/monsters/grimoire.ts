@@ -12,6 +12,8 @@ import { addElementals } from '@src/monsters/individual_monsters/elementals';
 import { addHumanoids } from '@src/monsters/individual_monsters/humanoids';
 import { addSoulforged } from '@src/monsters/individual_monsters/soulforged';
 import { addUndead } from '@src/monsters/individual_monsters/undead';
+import { addMonstersFromUi } from '@src/monsters/individual_monsters/monsters_from_ui';
+
 
 type MonsterInitializer = (creature: Creature) => void;
 
@@ -59,7 +61,9 @@ export class Grimoire {
     addHumanoids(this);
     addSoulforged(this);
     addUndead(this);
+    addMonstersFromUi(this);
   }
+
 
   addMonster(name: string, initializer: MonsterInitializer) {
     if (
