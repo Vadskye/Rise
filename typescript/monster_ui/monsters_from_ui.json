@@ -1,4 +1,18 @@
 {
-  "monsters": [],
+  "monsters": [
+    {
+      "name": "New Monster 1",
+      "requiredProperties": {
+        "alignment": "neutral",
+        "base_class": "warrior",
+        "elite": false,
+        "creature_origin": "natural",
+        "creature_type": "beast",
+        "size": "medium",
+        "level": 1
+      },
+      "freeformCode": ""
+    }
+  ],
   "monsterGroups": []
 }
