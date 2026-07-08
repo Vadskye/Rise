@@ -101,6 +101,73 @@ describe('Monster UI Integration Tests (Serverless)', () => {
     assert.ok(generatedContent.includes(`grimoire.addMonster('${newMonsterName}'`));
   });
 
+  test('saveAndValidateAll saves database with structured fields and outputs correct codegen', () => {
+    const initialDb = getDb();
+    const newMonsterName = `StructMonster_${Date.now()}`;
+    const updatedDb = {
+      ...initialDb,
+      monsters: [
+        ...initialDb.monsters,
+        {
+          name: newMonsterName,
+          requiredProperties: {
+            alignment: 'lawful evil',
+            base_class: 'warrior',
+            elite: true,
+            creature_origin: 'natural',
+            creature_type: 'humanoid',
+            size: 'medium',
+            level: 5,
+          },
+          freeformCode: '// struct test dummy',
+          baseAttributes: [2, 3, 1, -1, 0, -2] as [number, number, number, number, number, number],
+          trainedSkills: ['stealth', 'jump'],
+          knowledge: {
+            easy: 'Easy text',
+            normal: 'Normal text',
+          },
+          traits: ['quadrupedal'],
+          customSenses: ['Darkvision (60 ft.)'],
+          customMovementSpeeds: ['Fly 40 ft.'],
+          immunities: ['Fire'],
+          resistances: ['Cold'],
+          vulnerabilities: ['Acid'],
+          equippedArmor: 'breastplate',
+          properties: {
+            has_art: true,
+          },
+        },
+      ],
+    };
+
+    const result = saveAndValidateAll(updatedDb);
+    assert.strictEqual(result.success, true);
+    
+    const validation = result.validations[newMonsterName];
+    assert.strictEqual(validation.success, true);
+    
+    const stats = validation.computedStats;
+    assert.ok(stats);
+    assert.strictEqual(stats.name, newMonsterName);
+    assert.ok(stats.skills.includes('stealth'));
+    assert.ok(stats.traits.includes('quadrupedal'));
+    assert.ok(stats.equipment.includes('breastplate'));
+
+    assert.ok(fs.existsSync(generatedTsPath));
+    const generatedContent = fs.readFileSync(generatedTsPath, 'utf8');
+    assert.ok(generatedContent.includes(`creature.setBaseAttributes([2,3,1,-1,0,-2])`));
+    assert.ok(generatedContent.includes(`creature.setTrainedSkills(["stealth","jump"])`));
+    assert.ok(generatedContent.includes(`"easy": "Easy text"`));
+    assert.ok(generatedContent.includes(`creature.addTrait('quadrupedal')`));
+    assert.ok(generatedContent.includes(`creature.addCustomSense('Darkvision (60 ft.)')`));
+    assert.ok(generatedContent.includes(`creature.addCustomMovementSpeed('Fly 40 ft.')`));
+    assert.ok(generatedContent.includes(`creature.addImmunity('Fire')`));
+    assert.ok(generatedContent.includes(`creature.addResistant('Cold')`));
+    assert.ok(generatedContent.includes(`creature.addVulnerability('Acid')`));
+    assert.ok(generatedContent.includes(`creature.setEquippedArmorName({ bodyArmor: 'breastplate' })`));
+    assert.ok(generatedContent.includes(`"has_art":true`));
+  });
+
   test('saveAndValidateAll saves database with monster groups, triggers codegen, and runs validation successfully', () => {
     // 1. Fetch initial monsters
     const initialDb = getDb();

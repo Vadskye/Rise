@@ -4,13 +4,13 @@ import {
   clearAllCharacterSheets,
 } from '@src/character_sheet/current_character_sheet';
 import { handleEverything } from '@src/character_sheet/sheet_worker';
+import { MonsterData } from './codegen';
 
 export function validateMonster(
-  name: string,
-  requiredProperties: any,
-  freeformCode: string,
+  monster: MonsterData,
   sharedFreeformCode?: string,
 ) {
+  const { name, requiredProperties, freeformCode } = monster;
   clearAllCharacterSheets();
   const warnings: string[] = [];
   const errors: string[] = [];
@@ -29,6 +29,69 @@ export function validateMonster(
 
     // Apply required properties
     creature.setRequiredProperties(requiredProperties);
+
+    // Apply structured properties
+    if (monster.baseAttributes && monster.baseAttributes.length === 6) {
+      creature.setBaseAttributes(monster.baseAttributes);
+    }
+
+    if (monster.trainedSkills && monster.trainedSkills.length > 0) {
+      creature.setTrainedSkills(monster.trainedSkills as any);
+    }
+
+    if (monster.knowledge && Object.values(monster.knowledge).some(v => v)) {
+      const cleanKnowledge: Record<string, string> = {};
+      for (const [key, value] of Object.entries(monster.knowledge)) {
+        if (value) cleanKnowledge[key] = value;
+      }
+      if (Object.keys(cleanKnowledge).length > 0) {
+        creature.setKnowledgeResults(cleanKnowledge);
+      }
+    }
+
+    if (monster.traits && monster.traits.length > 0) {
+      for (const trait of monster.traits) {
+        creature.addTrait(trait as any);
+      }
+    }
+
+    if (monster.customSenses && monster.customSenses.length > 0) {
+      for (const sense of monster.customSenses) {
+        creature.addCustomSense(sense);
+      }
+    }
+
+    if (monster.customMovementSpeeds && monster.customMovementSpeeds.length > 0) {
+      for (const speed of monster.customMovementSpeeds) {
+        creature.addCustomMovementSpeed(speed);
+      }
+    }
+
+    if (monster.immunities && monster.immunities.length > 0) {
+      for (const immunity of monster.immunities) {
+        creature.addImmunity(immunity);
+      }
+    }
+
+    if (monster.resistances && monster.resistances.length > 0) {
+      for (const resistance of monster.resistances) {
+        creature.addResistant(resistance);
+      }
+    }
+
+    if (monster.vulnerabilities && monster.vulnerabilities.length > 0) {
+      for (const vulnerability of monster.vulnerabilities) {
+        creature.addVulnerability(vulnerability);
+      }
+    }
+
+    if (monster.equippedArmor) {
+      creature.setEquippedArmorName({ bodyArmor: monster.equippedArmor as any });
+    }
+
+    if (monster.properties && Object.keys(monster.properties).length > 0) {
+      creature.setProperties(monster.properties);
+    }
 
     // Run shared freeform code if present (for monster groups)
     if (sharedFreeformCode) {

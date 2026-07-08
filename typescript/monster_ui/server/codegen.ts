@@ -19,6 +19,22 @@ export interface MonsterData {
   name: string;
   requiredProperties: MonsterRequiredProperties;
   freeformCode: string;
+  baseAttributes?: [number, number, number, number, number, number];
+  trainedSkills?: string[];
+  knowledge?: {
+    easy?: string;
+    normal?: string;
+    hard?: string;
+    legendary?: string;
+  };
+  traits?: string[];
+  customSenses?: string[];
+  customMovementSpeeds?: string[];
+  immunities?: string[];
+  resistances?: string[];
+  vulnerabilities?: string[];
+  equippedArmor?: string;
+  properties?: Record<string, any>;
 }
 
 export interface MonsterGroupKnowledge {
@@ -41,6 +57,93 @@ export interface DatabaseData {
   monsterGroups: MonsterGroupData[];
 }
 
+function generateMonsterBody(monster: MonsterData, indent: string): string {
+  const lines: string[] = [];
+
+  const reqPropsStr = JSON.stringify(monster.requiredProperties, null, 2)
+    .split('\n')
+    .map((line, idx) => idx === 0 ? line : indent + '  ' + line)
+    .join('\n');
+  lines.push(`${indent}creature.setRequiredProperties(${reqPropsStr});`);
+
+  if (monster.baseAttributes && monster.baseAttributes.length === 6) {
+    lines.push(`${indent}creature.setBaseAttributes(${JSON.stringify(monster.baseAttributes)});`);
+  }
+
+  if (monster.trainedSkills && monster.trainedSkills.length > 0) {
+    lines.push(`${indent}creature.setTrainedSkills(${JSON.stringify(monster.trainedSkills)});`);
+  }
+
+  if (monster.knowledge && Object.values(monster.knowledge).some(v => v)) {
+    const cleanKnowledge: Record<string, string> = {};
+    for (const [key, value] of Object.entries(monster.knowledge)) {
+      if (value) cleanKnowledge[key] = value;
+    }
+    if (Object.keys(cleanKnowledge).length > 0) {
+      const knStr = JSON.stringify(cleanKnowledge, null, 2)
+        .split('\n')
+        .map((line, idx) => idx === 0 ? line : indent + '  ' + line)
+        .join('\n');
+      lines.push(`${indent}creature.setKnowledgeResults(${knStr});`);
+    }
+  }
+
+  if (monster.traits && monster.traits.length > 0) {
+    for (const trait of monster.traits) {
+      lines.push(`${indent}creature.addTrait('${trait}');`);
+    }
+  }
+
+  if (monster.customSenses && monster.customSenses.length > 0) {
+    for (const sense of monster.customSenses) {
+      lines.push(`${indent}creature.addCustomSense('${sense.replace(/'/g, "\\'")}');`);
+    }
+  }
+
+  if (monster.customMovementSpeeds && monster.customMovementSpeeds.length > 0) {
+    for (const speed of monster.customMovementSpeeds) {
+      lines.push(`${indent}creature.addCustomMovementSpeed('${speed.replace(/'/g, "\\'")}');`);
+    }
+  }
+
+  if (monster.immunities && monster.immunities.length > 0) {
+    for (const immunity of monster.immunities) {
+      lines.push(`${indent}creature.addImmunity('${immunity.replace(/'/g, "\\'")}');`);
+    }
+  }
+
+  if (monster.resistances && monster.resistances.length > 0) {
+    for (const resistance of monster.resistances) {
+      lines.push(`${indent}creature.addResistant('${resistance.replace(/'/g, "\\'")}');`);
+    }
+  }
+
+  if (monster.vulnerabilities && monster.vulnerabilities.length > 0) {
+    for (const vulnerability of monster.vulnerabilities) {
+      lines.push(`${indent}creature.addVulnerability('${vulnerability.replace(/'/g, "\\'")}');`);
+    }
+  }
+
+  if (monster.equippedArmor) {
+    lines.push(`${indent}creature.setEquippedArmorName({ bodyArmor: '${monster.equippedArmor}' });`);
+  }
+
+  if (monster.properties && Object.keys(monster.properties).length > 0) {
+    lines.push(`${indent}creature.setProperties(${JSON.stringify(monster.properties)});`);
+  }
+
+  lines.push(`${indent}// --- Begin freeform code ---`);
+  if (monster.freeformCode) {
+    const freeformLines = monster.freeformCode.split('\n');
+    for (const line of freeformLines) {
+      lines.push(line ? `${indent}${line}` : '');
+    }
+  }
+  lines.push(`${indent}// --- End freeform code ---`);
+
+  return lines.join('\n');
+}
+
 export function generateTypeScriptCode(db: DatabaseData): string {
   const parts: string[] = [];
 
@@ -59,16 +162,9 @@ export function addMonstersFromUi(grimoire: Grimoire) {`);
   if (db.monsters && db.monsters.length > 0) {
     parts.push(`  // --- Individual Monsters ---`);
     for (const monster of db.monsters) {
-      const reqPropsStr = JSON.stringify(monster.requiredProperties, null, 6).replace(
-        /\n/g,
-        '\n    ',
-      ); // indent correctly
-
+      const bodyCode = generateMonsterBody(monster, '    ');
       parts.push(`  grimoire.addMonster('${monster.name}', (creature: Creature) => {
-    creature.setRequiredProperties(${reqPropsStr});
-    // --- Begin freeform code ---
-    ${monster.freeformCode || ''}
-    // --- End freeform code ---
+${bodyCode}
   });`);
     }
   }
@@ -98,17 +194,11 @@ export function addMonstersFromUi(grimoire: Grimoire) {`);
 
       const monstersListStr = group.monsters
         .map((monster) => {
-          const reqPropsStr = JSON.stringify(monster.requiredProperties, null, 10).replace(
-            /\n/g,
-            '\n          ',
-          );
+          const bodyCode = generateMonsterBody(monster, '          ');
           return `[
         '${monster.name}',
         (creature: Creature) => {
-          creature.setRequiredProperties(${reqPropsStr});
-          // --- Begin freeform code ---
-          ${monster.freeformCode || ''}
-          // --- End freeform code ---
+${bodyCode}
         },
       ]`;
         })

@@ -645,6 +645,85 @@ body {
   }
 }
 
+/* Form Tabs Navigation */
+.form-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 5px;
+  gap: 2px;
+  overflow-x: auto;
+  padding-bottom: 2px;
+  
+  .tab-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    padding: 8px 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 6px 6px 0 0;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    
+    &:hover {
+      color: var(--text-primary);
+      background-color: rgba(255, 255, 255, 0.03);
+    }
+    
+    &.active {
+      color: var(--accent-color);
+      border-bottom: 2px solid var(--accent-color);
+      background-color: rgba(192, 132, 252, 0.05);
+    }
+  }
+}
+
+.tab-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.section-subtitle {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-primary);
+  border-bottom: 1px dashed var(--border-color);
+  padding-bottom: 6px;
+  margin-bottom: 12px;
+  margin-top: 10px;
+}
+
+/* Custom tag styles for senses, movement, defenses */
+.pill-tag {
+  transition: all 0.15s ease;
+  
+  &:hover {
+    border-color: var(--accent-color) !important;
+    background-color: rgba(192, 132, 252, 0.08) !important;
+  }
+}
+
+.btn-add {
+  transition: all 0.15s ease;
+  
+  &:hover {
+    background-color: var(--accent-color) !important;
+    color: #12131a !important;
+    border-color: var(--accent-color) !important;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 /* Animations */
 @keyframes spin {
   to { transform: rotate(360deg); }

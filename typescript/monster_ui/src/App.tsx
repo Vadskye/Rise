@@ -83,9 +83,7 @@ export const App: React.FC = () => {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          name: monsterData.name,
-          requiredProperties: monsterData.requiredProperties,
-          freeformCode: monsterData.freeformCode,
+          monster: monsterData,
           sharedFreeformCode,
         }),
       })
