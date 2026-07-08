@@ -7,7 +7,7 @@
       "sharedFreeformCode": "",
       "monsters": [
         {
-          "name": "New Member 1",
+          "name": "Goblin Skirmisher",
           "requiredProperties": {
             "alignment": "neutral",
             "base_class": "warrior",

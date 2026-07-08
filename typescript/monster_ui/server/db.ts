@@ -38,7 +38,7 @@ export function saveAndValidateAll(db: DatabaseData) {
   saveDb(db);
 
   const validations: Record<string, any> = {};
-  
+
   const monsters = db.monsters || [];
   if (monsters.length > 0) {
     console.log(`[DB] Validating ${monsters.length} individual monsters...`);
@@ -67,7 +67,7 @@ export function saveAndValidateAll(db: DatabaseData) {
       }
     }
   }
-  
+
   console.log('[DB] All validations complete.');
   return { success: true, validations };
 }

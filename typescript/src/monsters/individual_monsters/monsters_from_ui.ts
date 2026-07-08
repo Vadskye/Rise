@@ -26,7 +26,7 @@ export function addMonstersFromUi(grimoire: Grimoire) {
     },
     [
       [
-        'New Member 1',
+        'Goblin Skirmisher',
         (creature: Creature) => {
           creature.setRequiredProperties({
                     "alignment": "neutral",
