@@ -27,7 +27,9 @@ app.post('/api/save', (req, res) => {
     const db = req.body as DatabaseData;
     const monsterCount = db.monsters?.length || 0;
     const groupCount = db.monsterGroups?.length || 0;
-    console.log(`[API] Saving database with ${monsterCount} individual monsters and ${groupCount} groups.`);
+    console.log(
+      `[API] Saving database with ${monsterCount} individual monsters and ${groupCount} groups.`,
+    );
     const result = saveAndValidateAll(db);
     console.log('[API] Save and validation completed successfully');
     res.json(result);
@@ -41,7 +43,9 @@ app.post('/api/save', (req, res) => {
 app.post('/api/preview', (req, res) => {
   try {
     const { name, requiredProperties, freeformCode, sharedFreeformCode } = req.body;
-    console.log(`[API] POST /api/preview - Calculating live preview for monster: "${name || 'unknown'}"`);
+    console.log(
+      `[API] POST /api/preview - Calculating live preview for monster: "${name || 'unknown'}"`,
+    );
     if (!name) {
       console.warn('[API Warning] Preview requested without a monster name');
       return res.status(400).json({ error: 'Monster name is required' });
@@ -54,6 +58,10 @@ app.post('/api/preview', (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`Monster Creator API Server listening on http://localhost:${port}`);
-});
+export { app };
+
+if (process.env.NODE_ENV !== 'test') {
+  app.listen(port, () => {
+    console.log(`Monster Creator API Server listening on http://localhost:${port}`);
+  });
+}

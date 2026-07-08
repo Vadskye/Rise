@@ -314,7 +314,7 @@ export const App: React.FC = () => {
         onDeleteMonster={handleDeleteMonster}
         onDeleteGroup={handleDeleteGroup}
         onDeleteMonsterFromGroup={handleDeleteMonsterFromGroup}
-        onSaveDb={handleSaveDb}
+        onSaveDb={() => handleSaveDb()}
         isSaving={isSaving}
       />
 
