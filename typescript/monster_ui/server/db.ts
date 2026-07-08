@@ -30,13 +30,13 @@ export function saveDb(db: DatabaseData) {
 
 export function saveAndValidateAll(db: DatabaseData) {
   saveDb(db);
-  
+
   const validations: Record<string, any> = {};
   for (const monster of db.monsters || []) {
     validations[monster.name] = validateMonster(
-      monster.name, 
-      monster.requiredProperties, 
-      monster.freeformCode
+      monster.name,
+      monster.requiredProperties,
+      monster.freeformCode,
     );
   }
   for (const group of db.monsterGroups || []) {
@@ -45,7 +45,7 @@ export function saveAndValidateAll(db: DatabaseData) {
         monster.name,
         monster.requiredProperties,
         monster.freeformCode,
-        group.sharedFreeformCode
+        group.sharedFreeformCode,
       );
     }
   }

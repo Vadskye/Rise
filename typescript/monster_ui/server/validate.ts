@@ -1,12 +1,15 @@
 import { Creature } from '@src/character_sheet/creature';
-import { createCharacterSheet, clearAllCharacterSheets } from '@src/character_sheet/current_character_sheet';
+import {
+  createCharacterSheet,
+  clearAllCharacterSheets,
+} from '@src/character_sheet/current_character_sheet';
 import { handleEverything } from '@src/character_sheet/sheet_worker';
 
 export function validateMonster(
   name: string,
   requiredProperties: any,
   freeformCode: string,
-  sharedFreeformCode?: string
+  sharedFreeformCode?: string,
 ) {
   clearAllCharacterSheets();
   const warnings: string[] = [];
