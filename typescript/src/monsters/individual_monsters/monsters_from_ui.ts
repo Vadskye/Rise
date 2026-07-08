@@ -8,21 +8,41 @@ import { BARRIER_COOLDOWN, BRIEF_COOLDOWN, CONDITION_CRIT } from '@src/abilities
 
 export function addMonstersFromUi(grimoire: Grimoire) {
 
-  // --- Individual Monsters ---
+  // --- Monster Groups ---
 
-  grimoire.addMonster('New Monster 1', (creature: Creature) => {
-    creature.setRequiredProperties({
-          "alignment": "neutral",
-          "base_class": "warrior",
-          "elite": false,
-          "creature_origin": "natural",
-          "creature_type": "beast",
-          "size": "medium",
-          "level": 1
-    });
-    // --- Begin freeform code ---
-    
-    // --- End freeform code ---
-  });
+  grimoire.addMonsterGroup(
+    {
+      name: 'Goblins',
+      knowledge: {
+              "normal": "Goblins are small, green-skinned humanoid creatures. They are generally cowardly and selfish. It's rare to see a goblin alone. They tend to gather into small groups of scavengers that try to take what's left after stronger creatures fight. However, if they believe they have an advantage in combat, they can be terrifyingly aggressive.",
+              "hard": "Goblins are easy to bully, and they love brute strength. However, they are naturally disloyal, so they can easily abandon their alleged leader if they perceive weakness or just think they can do better elsewhere. Only creatures that are both strong and unintelligent, like ogres and trolls, are typically accompanied by goblin minions."
+      },
+      hasArt: false,
+      sharedInitializer: (creature: Creature) => {
+        // --- Begin shared freeform code ---
+        
+        // --- End shared freeform code ---
+      }
+    },
+    [
+      [
+        'New Member 1',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+                    "alignment": "neutral",
+                    "base_class": "warrior",
+                    "elite": false,
+                    "creature_origin": "natural",
+                    "creature_type": "beast",
+                    "size": "medium",
+                    "level": 1
+          });
+          // --- Begin freeform code ---
+          
+          // --- End freeform code ---
+        },
+      ]
+    ]
+  );
 
 }
