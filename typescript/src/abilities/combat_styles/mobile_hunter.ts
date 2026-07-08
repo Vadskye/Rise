@@ -21,11 +21,12 @@ export const mobileHunter: CombatStyle = {
 
       cost: 'One \\glossterm{stamina}, unless you have a \\glossterm{vital wound}.',
       effect: `
-        You \\briefly gain a \\plus10 foot bonus to your \\glossterm{speed} and are \\primed.
+        Whenever you use or sustain this maneuver, you \\briefly gain a \\plus10 foot bonus to your \\glossterm{speed} and are \\primed.
         \\longreminder{This doesn't increase your \\glossterm{available movement} this turn.}
       `,
       rank: 1,
       roles: ['exertion', 'focus'],
+      type: 'Sustain (standard)',
     },
 
     {
@@ -33,11 +34,12 @@ export const mobileHunter: CombatStyle = {
 
       cost: 'One \\glossterm{stamina}, unless you have a \\glossterm{vital wound}.',
       effect: `
-        You \\briefly gain a \\plus20 foot bonus to your \\glossterm{speed} and are \\primed.
+        Whenever you use or sustain this maneuver, you \\briefly gain a \\plus20 foot bonus to your \\glossterm{speed} and are \\primed.
         \\longreminder{This doesn't increase your \\glossterm{available movement} this turn.}
       `,
       rank: 5,
       roles: ['exertion', 'focus'],
+      type: 'Sustain (standard)',
     },
 
     {

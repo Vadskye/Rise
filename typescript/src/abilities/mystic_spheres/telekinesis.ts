@@ -93,11 +93,12 @@ export const telekinesis: MysticSphere = {
 
       // 0.7 EA
       effect: `
-        You \\briefly take half damage from all sources.
+        Whenever you cast or sustain this spell, you \\briefly take half damage from all sources.
       `,
       rank: 1,
       roles: ['turtle'],
       // narrative: '',
+      type: 'Sustain (standard)',
     },
 
     {
@@ -105,10 +106,11 @@ export const telekinesis: MysticSphere = {
 
       // 0.4 + 0.7 EA
       effect: `
-        You \\briefly are \\shielded and take half damage from all sources.
+        Whenever you cast or sustain this spell, you \\briefly are \\shielded and take half damage from all sources.
       `,
       rank: 6,
       roles: ['turtle'],
+      type: 'Sustain (standard)',
     },
 
     // This is slightly above rate because requiring objects is annoying.

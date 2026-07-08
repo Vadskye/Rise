@@ -746,11 +746,12 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       // is fine for an optional ice crystal.
       cost: OPTIONAL_ICE_CRYSTAL,
       effect: `
-        You \\briefly have \\glossterm{cover} from all attacks.
+        Whenever you cast or sustain this spell, you \\briefly have \\glossterm{cover} from all attacks.
         If you spent an ice crystal, you are also \\briefly \\empowered.
       `,
       rank: 1,
       roles: ['focus', 'turtle'],
+      type: 'Sustain (standard)',
     },
 
     {
@@ -760,11 +761,12 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       // is fine for an optional ice crystal.
       cost: OPTIONAL_ICE_CRYSTAL,
       effect: `
-        You \\briefly have \\glossterm{cover} from all attacks.
+        Whenever you cast or sustain this spell, you \\briefly have \\glossterm{cover} from all attacks.
         If you spent an ice crystal, you are also \\briefly \\maximized.
       `,
       rank: 6,
       roles: ['focus', 'turtle'],
+      type: 'Sustain (standard)',
     },
   ],
 });

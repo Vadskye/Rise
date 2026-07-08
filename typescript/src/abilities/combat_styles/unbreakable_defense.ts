@@ -10,10 +10,11 @@ export const unbreakableDefense: CombatStyle = {
       name: 'Parry',
 
       effect: `
-        If you are wielding a melee weapon, you are \\glossterm{briefly} \\braced and \\shielded.
+        Whenever you use or sustain this maneuver, if you are wielding a melee weapon, you are \\glossterm{briefly} \\braced and \\shielded.
       `,
       rank: 1,
       roles: ['turtle'],
+      type: 'Sustain (standard)',
     },
 
     {
@@ -67,10 +68,11 @@ export const unbreakableDefense: CombatStyle = {
 
       // 0.5 + 0.7 EA, but they have antisynergy
       effect: `
-        You \\briefly are \\braced and take half damage from all sources.
+        Whenever you use or sustain this maneuver, you \\briefly are \\braced and take half damage from all sources.
       `,
       rank: 5,
       roles: ['turtle'],
+      type: 'Sustain (standard)',
     },
 
     {
@@ -78,10 +80,11 @@ export const unbreakableDefense: CombatStyle = {
 
       // 1.3 EA
       effect: `
-        You are \\briefly \\resistant to all damage.
+        Whenever you use or sustain this maneuver, you are \\briefly \\resistant to all damage.
       `,
       rank: 7,
       roles: ['turtle'],
+      type: 'Sustain (standard)',
     },
 
     {
@@ -89,10 +92,11 @@ export const unbreakableDefense: CombatStyle = {
 
       // 0.7 EA
       effect: `
-        You \\briefly take half damage from all sources.
+        Whenever you use or sustain this maneuver, you \\briefly take half damage from all sources.
       `,
       rank: 1,
       roles: ['turtle'],
+      type: 'Sustain (standard)',
     },
 
     {
@@ -181,10 +185,11 @@ export const unbreakableDefense: CombatStyle = {
 
       // 0.4 + 0.4 EA
       effect: `
-        You are \\briefly \\steeled and \\empowered.
+        Whenever you use or sustain this maneuver, you are \\briefly \\steeled and \\empowered.
       `,
       rank: 1,
       roles: ['turtle'],
+      type: 'Sustain (standard)',
     },
 
     {
@@ -192,10 +197,11 @@ export const unbreakableDefense: CombatStyle = {
 
       // 0.4 + 0.7 EA
       effect: `
-        You are \\briefly \\steeled and \\maximized.
+        Whenever you use or sustain this maneuver, you are \\briefly \\steeled and \\maximized.
       `,
       rank: 7,
       roles: ['focus'],
+      type: 'Sustain (standard)',
     },
 
     {
@@ -261,12 +267,13 @@ export const unbreakableDefense: CombatStyle = {
       // Pure healing would be dr3, so dr2 for empower
       cost: 'One \\glossterm{stamina}.',
       effect: `
-        You are \\briefly empowered.
+        Whenever you use or sustain this maneuver, you are \\briefly empowered.
         In addition, you regain \\hpranktwo.
       `,
       rank: 1,
       roles: ['focus', 'healing'],
       scaling: 'healing',
+      type: 'Sustain (standard)',
     },
 
     {
@@ -275,12 +282,13 @@ export const unbreakableDefense: CombatStyle = {
       // Pure healing would be dr3, so dr2 for empower
       cost: 'One \\glossterm{stamina}.',
       effect: `
-        You are \\briefly empowered.
+        Whenever you use or sustain this maneuver, you are \\briefly empowered.
         In addition, you regain \\hpranksix.
       `,
       rank: 5,
       roles: ['focus', 'healing'],
       scaling: 'healing',
+      type: 'Sustain (standard)',
     },
 
     {

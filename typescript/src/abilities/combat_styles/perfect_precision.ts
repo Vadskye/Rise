@@ -270,11 +270,12 @@ export const perfectPrecision: CombatStyle = {
       name: 'Maintain Focus',
 
       effect: `
-        You become \\briefly \\focused.
+        Whenever you use or sustain this maneuver, you become \\briefly \\focused.
         During your next turn, if you hit with a strike, you become \\briefly focused again.
       `,
       rank: 1,
       roles: ['focus'],
+      type: 'Sustain (standard)',
     },
 
     {
@@ -282,11 +283,12 @@ export const perfectPrecision: CombatStyle = {
 
       // 0.8 EA baseline, 1.2 EA if you hit the condition
       effect: `
-        You become \\briefly \\focused and \\honed.
+        Whenever you use or sustain this maneuver, you become \\briefly \\focused and \\honed.
         During your next turn, if you get a critical hit with a strike, you become \\briefly honed again.
       `,
       rank: 5,
       roles: ['focus'],
+      type: 'Sustain (standard)',
     },
   ],
 };

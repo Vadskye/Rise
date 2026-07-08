@@ -15,22 +15,24 @@ export const heraldOfWar: CombatStyle = {
       name: 'Cry of Rage',
 
       effect: `
-        You are \\briefly \\primed and \\enraged.
+        Whenever you use or sustain this maneuver, you are \\briefly \\primed and \\enraged.
       `,
       rank: 1,
       roles: ['focus'],
       tags: ['Auditory'],
+      type: 'Sustain (standard)',
     },
 
     {
       name: 'Cry of Rage+',
 
       effect: `
-        You are \\briefly \\primed, \\empowered, and \\enraged.
+        Whenever you use or sustain this maneuver, you are \\briefly \\primed, \\empowered, and \\enraged.
       `,
       rank: 5,
       roles: ['focus'],
       tags: ['Auditory'],
+      type: 'Sustain (standard)',
     },
 
     {

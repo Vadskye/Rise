@@ -927,12 +927,13 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       // Cover is 0.5 EA.
       // Fire resistant is about 0.3 EA??
       effect: `
-        You are \\briefly surrounded by a protective bubble of water.
+        Whenever you cast or sustain this spell, you are \\briefly surrounded by a protective bubble of water.
         The bubble makes you \\resistant to \\atFire and grants you \\glossterm{cover} against all attacks.
       `,
       rank: 1,
       roles: ['turtle'],
       tags: ['Manifestation'],
+      type: 'Sustain (standard)',
     },
     {
       name: 'Protective Bubble Dash',

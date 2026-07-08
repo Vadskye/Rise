@@ -215,20 +215,22 @@ export const bruteForce: CombatStyle = {
       name: 'Steady Flex',
 
       effect: `
-        You are \\briefly \\fortified and \\maximized.
+        Whenever you use or sustain this maneuver, you are \\briefly \\fortified and \\maximized.
       `,
       rank: 3,
       roles: ['focus'],
+      type: 'Sustain (standard)',
     },
 
     {
       name: 'Devastating Flex',
 
       effect: `
-        You \\briefly are \\maximized and deal 1d8 \\glossterm{extra damage} with \\glossterm{strikes}.
+        Whenever you use or sustain this maneuver, you \\briefly are \\maximized and deal 1d8 \\glossterm{extra damage} with \\glossterm{strikes}.
       `,
       rank: 7,
       roles: ['focus'],
+      type: 'Sustain (standard)',
     },
 
     {

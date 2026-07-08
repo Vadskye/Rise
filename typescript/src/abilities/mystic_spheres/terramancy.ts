@@ -20,10 +20,11 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
 
       // Braced + fortified is 0.8 EA
       effect: `
-        You are \\briefly \\braced and \\fortified.
+        Whenever you cast or sustain this spell, you are \\briefly \\braced and \\fortified.
       `,
       roles: ['turtle'],
       tags: ['Manifestation'],
+      type: 'Sustain (standard)',
     },
   ],
   spells: [
@@ -349,10 +350,13 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
 
       // 0.5 + 0.4 EA
       effect: `
-         If you are \\glossterm{grounded} on stone, you are \\briefly \\braced and \\fortified.
+        You must be \\glossterm{grounded} on stone to cast or sustain this spell.
+
+        Whenever you cast or sustain this spell, you are \\briefly \\braced and \\fortified.
       `,
       rank: 2,
       roles: ['turtle'],
+      type: 'Sustain (standard)',
     },
 
     {
@@ -360,11 +364,14 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
 
       // 0.5 + 0.7 EA
       effect: `
-         If you are \\glossterm{grounded} on stone, you are \\briefly \\braced and \\maximized.
-         However, your \\glossterm{speed} is also briefly halved.
+        You must be \\glossterm{grounded} on stone to cast or sustain this spell.
+
+        Whenever you cast or sustain this spell, you are \\briefly \\braced and \\maximized.
+        However, your \\glossterm{speed} is also briefly halved.
       `,
       rank: 5,
       roles: ['focus'],
+      type: 'Sustain (standard)',
     },
 
     {

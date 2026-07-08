@@ -234,31 +234,34 @@ export const ebbAndFlow: CombatStyle = {
 
       // 0.5 + 0.4 EA
       effect: `
-        You are \\briefly \\braced.
+        Whenever you use or sustain this maneuver, you are \\briefly \\braced.
         If your location did not change since the start of your turn, you are also briefly \\focused, and your \\glossterm{available movement} is reduced to 0.
       `,
       rank: 3,
       roles: ['focus'],
+      type: 'Sustain (standard)',
     },
 
     {
       name: 'Sharpening Kata',
 
       effect: `
-        If you did not attack during your last turn, you are \\briefly \\focused and \\honed.
+        Whenever you use or sustain this maneuver, if you did not attack during your last turn, you are \\briefly \\focused and \\honed.
       `,
       rank: 1,
       roles: ['focus'],
+      type: 'Sustain (standard)',
     },
 
     {
       name: 'Sharpening Kata+',
 
       effect: `
-        If you did not attack during your last turn, you are \\briefly \\primed and \\honed.
+        Whenever you use or sustain this maneuver, if you did not attack during your last turn, you are \\briefly \\primed and \\honed.
       `,
       rank: 5,
       roles: ['focus'],
+      type: 'Sustain (standard)',
     },
 
     // 0.7 + 0.4 = 1.1
@@ -266,10 +269,11 @@ export const ebbAndFlow: CombatStyle = {
       name: 'Dance of Death',
 
       effect: `
-        If you both dealt damage to another creature and took damage from another creature since the start of your last turn, you are \\briefly \\maximized and \\shielded.
+        Whenever you use or sustain this maneuver, if you both dealt damage to another creature and took damage from another creature since the start of your last turn, you are \\briefly \\maximized and \\shielded.
       `,
       rank: 3,
       roles: ['focus'],
+      type: 'Sustain (standard)',
     },
 
     // 0.7 + 0.7 = 1.4
@@ -277,10 +281,11 @@ export const ebbAndFlow: CombatStyle = {
       name: 'Dance of Death+',
 
       effect: `
-        If you both dealt damage to another creature and took damage from another creature since the start of your last turn, you \\briefly are \\maximized and take half damage from all sources.
+        Whenever you use or sustain this maneuver, if you both dealt damage to another creature and took damage from another creature since the start of your last turn, you \\briefly are \\maximized and take half damage from all sources.
       `,
       rank: 7,
       roles: ['focus'],
+      type: 'Sustain (standard)',
     },
 
     {

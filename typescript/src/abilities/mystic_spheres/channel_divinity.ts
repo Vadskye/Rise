@@ -101,21 +101,23 @@ export const channelDivinity: MysticSphere = {
       name: 'Endure Tribulation',
 
       effect: `
-        You take \\briefly take half damage from all sources.
+        Whenever you cast or sustain this spell, you \\briefly take half damage from all sources.
       `,
       rank: 1,
       roles: ['turtle'],
+      type: 'Sustain (standard)',
     },
 
     {
       name: 'Embrace Tribulation',
 
       effect: `
-        You \\briefly take half damage from all sources.
+        Whenever you cast or sustain this spell, you \\briefly take half damage from all sources.
         If an enemy attack \\glossterm{injures} you during this effect, you become \\briefly \\primed.
       `,
       rank: 6,
       roles: ['turtle', 'focus', 'retaliate'],
+      type: 'Sustain (standard)',
     },
 
     {
