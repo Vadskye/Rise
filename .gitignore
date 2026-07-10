@@ -219,7 +219,8 @@ monster_output.tex
 todo.txt
 performance.log
 *.css
-*.html
+character_sheet/*.html
+character_sheet/paper_sheet/*.html
 character_sheet/roll20.less
 
 # Typescript
