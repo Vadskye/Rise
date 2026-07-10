@@ -1,5 +1,6 @@
 import React from 'react';
 import { MonsterData, MonsterGroupData } from '../types/monster';
+import { AbilitiesTab } from './AbilitiesTab';
 
 interface MonsterFormProps {
   mode: 'monster' | 'group';
@@ -9,6 +10,12 @@ interface MonsterFormProps {
   onChangeGroup?: (updated: MonsterGroupData) => void;
   errors: string[];
   warnings: string[];
+  referenceData?: {
+    spells: string[];
+    maneuvers: string[];
+    weapons: string[];
+    spheres: string[];
+  };
 }
 
 export const MonsterForm: React.FC<MonsterFormProps> = ({
@@ -19,6 +26,7 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
   onChangeGroup,
   errors,
   warnings,
+  referenceData = { spells: [], maneuvers: [], weapons: [], spheres: [] },
 }) => {
   // Categorize errors/warnings for inline display
   const getInlineError = (field: string) => {
@@ -143,7 +151,7 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
   //    parent state via `onChangeMonster` once the user clicks "+ Add" or presses Enter. This ensures 
   //    we don't trigger the game-engine validation pipeline for partial, half-typed tags.
   const [activeTab, setActiveTab] = React.useState<
-    'identity' | 'stats' | 'traits' | 'combat' | 'knowledge'
+    'identity' | 'stats' | 'traits' | 'combat' | 'knowledge' | 'abilities'
   >('identity');
   const [skillSearch, setSkillSearch] = React.useState('');
   const [traitSearch, setTraitSearch] = React.useState('');
@@ -420,6 +428,13 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
             onClick={() => setActiveTab('combat')}
           >
             Combat & Gear
+          </button>
+          <button
+            type="button"
+            className={`tab-btn ${activeTab === 'abilities' ? 'active' : ''}`}
+            onClick={() => setActiveTab('abilities')}
+          >
+            Spells & Abilities
           </button>
           <button
             type="button"
@@ -1205,6 +1220,15 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
               </div>
             </div>
           </div>
+        )}
+
+        {/* Tab: Spells & Abilities */}
+        {activeTab === 'abilities' && monsterData && onChangeMonster && (
+          <AbilitiesTab
+            monsterData={monsterData}
+            onChangeMonster={onChangeMonster}
+            referenceData={referenceData}
+          />
         )}
 
         {/* Tab 5: Knowledge & Script */}

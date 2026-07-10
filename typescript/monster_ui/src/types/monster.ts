@@ -8,6 +8,56 @@ export interface MonsterRequiredProperties {
   level: number;
 }
 
+export interface StandardAbilityConfig {
+  type: 'spell' | 'maneuver';
+  name: string;
+  options?: {
+    displayName?: string;
+    usageTime?: string;
+    isMagical?: boolean;
+  };
+}
+
+export interface CustomAbilityAttackConfig {
+  targeting: string;
+  hit: string;
+  crit?: string | null;
+  miss?: string;
+  injury?: string;
+  halfOnMiss?: boolean;
+}
+
+export interface CustomAbilityConfig {
+  type: 'spell' | 'maneuver';
+  name: string;
+  usageTime?: string;
+  cost?: string;
+  effect?: string;
+  isMagical?: boolean;
+  tags?: string[];
+  attack?: CustomAbilityAttackConfig;
+}
+
+export interface PassiveAbilityConfig {
+  name: string;
+  effect: string;
+  isMagical: boolean;
+}
+
+export interface WeaponConfig {
+  name: string;
+  addStandard?: boolean;
+  addMult?: boolean;
+  addGrappling?: boolean;
+  addSneak?: boolean;
+  addLatchOn?: boolean;
+  options?: {
+    displayName?: string;
+    usageTime?: string;
+    isMagical?: boolean;
+  };
+}
+
 export interface MonsterData {
   name: string;
   requiredProperties: MonsterRequiredProperties;
@@ -28,6 +78,11 @@ export interface MonsterData {
   vulnerabilities?: string[];
   equippedArmor?: string;
   properties?: Record<string, any>;
+  standardAbilities?: StandardAbilityConfig[];
+  customAbilities?: CustomAbilityConfig[];
+  passiveAbilities?: PassiveAbilityConfig[];
+  weapons?: WeaponConfig[];
+  rituals?: string[];
 }
 
 export interface MonsterGroupKnowledge {

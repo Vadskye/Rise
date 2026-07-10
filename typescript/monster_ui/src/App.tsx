@@ -17,17 +17,29 @@ const defaultRequiredProperties = {
   level: 1,
 };
 
-const TEXT_FIELDS = new Set([
-  'name',
-  'freeformCode',
-  'knowledge.easy',
-  'knowledge.normal',
-  'knowledge.hard',
-  'knowledge.legendary',
+const getValueAtPath = (obj: any, path: string): any => {
+  return path.split('.').reduce((acc, part) => acc?.[part], obj);
+};
+
+const DISCRETE_SELECT_FIELDS = new Set([
+  'alignment',
+  'base_class',
+  'creature_origin',
+  'creature_type',
+  'size',
+  'equippedArmor',
+  'type',
+  'usageTime',
 ]);
 
 export const App: React.FC = () => {
   const [db, setDb] = useState<DatabaseData>({ monsters: [], monsterGroups: [] });
+  const [referenceData, setReferenceData] = useState<{
+    spells: string[];
+    maneuvers: string[];
+    weapons: string[];
+    spheres: string[];
+  }>({ spells: [], maneuvers: [], weapons: [], spheres: [] });
   const [activeSelection, setActiveSelection] = useState<SidebarSelection>(null);
   const lastSelectionRef = useRef<SidebarSelection>(null);
   const prevMonsterDataRef = useRef<MonsterData | null>(null);
@@ -38,6 +50,14 @@ export const App: React.FC = () => {
   const [warnings, setWarnings] = useState<string[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [isSaving, setIsSaving] = useState<boolean>(false);
+
+  // Fetch reference data on mount
+  useEffect(() => {
+    fetch('/api/reference')
+      .then((res) => res.json())
+      .then((data) => setReferenceData(data))
+      .catch((err) => console.error('Failed to load reference data:', err));
+  }, []);
 
   // Fetch initial database on mount
   useEffect(() => {
@@ -123,7 +143,12 @@ export const App: React.FC = () => {
     let isTextFieldChange = false;
     if (!selectionChanged && prevMonsterDataRef.current && monsterData) {
       const changedPaths = getChangedPaths(prevMonsterDataRef.current, monsterData);
-      isTextFieldChange = changedPaths.length > 0 && changedPaths.every((path) => TEXT_FIELDS.has(path));
+      isTextFieldChange = changedPaths.length > 0 && changedPaths.every((path) => {
+        const val = getValueAtPath(monsterData, path);
+        if (typeof val !== 'string') return false;
+        const lastKey = path.split('.').pop() || '';
+        return !DISCRETE_SELECT_FIELDS.has(lastKey);
+      });
     }
 
     prevMonsterDataRef.current = monsterData || null;
@@ -429,6 +454,7 @@ export const App: React.FC = () => {
                 onChangeGroup={handleUpdateGroup}
                 errors={errors}
                 warnings={warnings}
+                referenceData={referenceData}
               />
               {activeSelection.type !== 'group' && (
                 <div

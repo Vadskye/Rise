@@ -133,6 +133,85 @@ function cleanMessage(msg: string, name: string): string {
       creature.setProperties(monster.properties);
     }
 
+    // 1. Standard Spells & Maneuvers:
+    // Apply standard spells and maneuvers to the live preview creature instance.
+    if (monster.standardAbilities && monster.standardAbilities.length > 0) {
+       for (const ability of monster.standardAbilities) {
+        if (ability.type === 'spell') {
+          creature.addSpell(ability.name, ability.options);
+        } else {
+          creature.addManeuver(ability.name, ability.options);
+        }
+      }
+    }
+
+    // 2. Custom Active Abilities:
+    // Reconstruct the CustomMonsterAbility configurations and load them.
+    if (monster.customAbilities && monster.customAbilities.length > 0) {
+      for (const ability of monster.customAbilities) {
+        const abilityObj: any = {
+          name: ability.name,
+          isMagical: ability.isMagical,
+        };
+        if (ability.usageTime) abilityObj.usageTime = ability.usageTime;
+        if (ability.cost) abilityObj.cost = ability.cost;
+        if (ability.effect) abilityObj.effect = ability.effect;
+        if (ability.tags && ability.tags.length > 0) abilityObj.tags = ability.tags as any;
+        if (ability.attack) {
+          abilityObj.attack = {
+            targeting: ability.attack.targeting,
+            hit: ability.attack.hit,
+          };
+          if (ability.attack.crit) abilityObj.attack.crit = ability.attack.crit;
+          if (ability.attack.miss) abilityObj.attack.miss = ability.attack.miss;
+          if (ability.attack.injury) abilityObj.attack.injury = ability.attack.injury;
+          if (ability.attack.halfOnMiss !== undefined) abilityObj.attack.halfOnMiss = ability.attack.halfOnMiss;
+        }
+
+        if (ability.type === 'spell') {
+          creature.addCustomSpell(abilityObj);
+        } else {
+          creature.addCustomManeuver(abilityObj);
+        }
+      }
+    }
+
+    // 3. Passive Abilities:
+    // Load passive effects on the live creature.
+    if (monster.passiveAbilities && monster.passiveAbilities.length > 0) {
+      for (const ability of monster.passiveAbilities) {
+        creature.addPassiveAbility(ability);
+      }
+    }
+
+    // 4. Weapons & Strikes:
+    // Equip weapons and register special attack properties.
+    if (monster.weapons && monster.weapons.length > 0) {
+      for (const weapon of monster.weapons) {
+        if (weapon.addStandard) {
+          creature.addWeapon(weapon.name);
+        }
+        if (weapon.addMult) {
+          creature.addWeaponMult(weapon.name, weapon.options);
+        }
+        if (weapon.addGrappling) {
+          creature.addGrapplingStrike(weapon.name, weapon.options);
+        }
+        if (weapon.addSneak) {
+          creature.addSneakAttack(weapon.name, weapon.options);
+        }
+        if (weapon.addLatchOn) {
+          creature.addLatchOn(weapon.name, weapon.options);
+        }
+      }
+    }
+
+    // 5. Rituals:
+    // Register Mystic Sphere lists.
+    if (monster.rituals && monster.rituals.length > 0) {
+      creature.addRituals(monster.rituals as any);
+    }
+
     // Run shared freeform code if present (for monster groups)
     if (sharedFreeformCode) {
       try {
