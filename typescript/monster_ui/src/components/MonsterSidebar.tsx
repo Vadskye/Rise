@@ -45,8 +45,7 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
     }
     if (activeSelection.type === 'group-monster' && selection.type === 'group-monster') {
       return (
-        activeSelection.groupName === selection.groupName &&
-        activeSelection.name === selection.name
+        activeSelection.groupName === selection.groupName && activeSelection.name === selection.name
       );
     }
     return false;
@@ -162,7 +161,9 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
                   </div>
                 ))}
                 {group.monsters.length === 0 && (
-                  <div style={{ padding: '4px 10px', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
+                  <div
+                    style={{ padding: '4px 10px', fontSize: '0.8rem', color: 'var(--text-muted)' }}
+                  >
                     Empty group.
                   </div>
                 )}

@@ -1,7 +1,4 @@
-import {
-  StandardWeapon,
-  STANDARD_WEAPONS,
-} from '@src/equipment/weapons';
+import { StandardWeapon, STANDARD_WEAPONS } from '@src/equipment/weapons';
 import { WeaponTag } from '@src/equipment/types';
 import { RiseWeaponTag } from '@src/character_sheet/rise_data';
 
@@ -54,7 +51,9 @@ function resolveBaseWeapon(weaponName: MonsterWeapon) {
     };
   }
 
-  throw new Error(`MonsterWeapon '${weaponName}' could not be resolved to standard or natural weapon.`);
+  throw new Error(
+    `MonsterWeapon '${weaponName}' could not be resolved to standard or natural weapon.`,
+  );
 }
 
 function formatMonsterTag(tag: WeaponTag): RiseWeaponTag | null {

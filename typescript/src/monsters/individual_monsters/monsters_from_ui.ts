@@ -7,38 +7,37 @@ import { getWeaponMultByRank } from '@src/abilities/combat_styles';
 import { BARRIER_COOLDOWN, BRIEF_COOLDOWN, CONDITION_CRIT } from '@src/abilities/constants';
 
 export function addMonstersFromUi(grimoire: Grimoire) {
-
   // --- Monster Groups ---
 
   grimoire.addMonsterGroup(
     {
       name: 'Goblins',
       knowledge: {
-              "normal": "Goblins are small, green-skinned humanoid creatures. They are generally cowardly and selfish. It's rare to see a goblin alone. They tend to gather into small groups of scavengers that try to take what's left after stronger creatures fight. However, if they believe they have an advantage in combat, they can be terrifyingly aggressive.",
-              "hard": "Goblins are easy to bully, and they love brute strength. However, they are naturally disloyal, so they can easily abandon their alleged leader if they perceive weakness or just think they can do better elsewhere. Only creatures that are both strong and unintelligent, like ogres and trolls, are typically accompanied by goblin minions."
+        normal:
+          "Goblins are small, green-skinned humanoid creatures. They are generally cowardly and selfish. It's rare to see a goblin alone. They tend to gather into small groups of scavengers that try to take what's left after stronger creatures fight. However, if they believe they have an advantage in combat, they can be terrifyingly aggressive.",
+        hard: 'Goblins are easy to bully, and they love brute strength. However, they are naturally disloyal, so they can easily abandon their alleged leader if they perceive weakness or just think they can do better elsewhere. Only creatures that are both strong and unintelligent, like ogres and trolls, are typically accompanied by goblin minions.',
       },
       hasArt: false,
       sharedInitializer: (creature: Creature) => {
         // --- Begin shared freeform code ---
-        
         // --- End shared freeform code ---
-      }
+      },
     },
     [
       [
         'Goblin Skirmisher',
         (creature: Creature) => {
           creature.setRequiredProperties({
-              "alignment": "chaotic evil",
-              "base_class": "skirmisher",
-              "elite": false,
-              "creature_origin": "natural",
-              "creature_type": "humanoid",
-              "size": "medium",
-              "level": 1
-            });
-          creature.setBaseAttributes([-1,4,0,-2,2,-2]);
-          creature.setTrainedSkills(["awareness"]);
+            alignment: 'chaotic evil',
+            base_class: 'skirmisher',
+            elite: false,
+            creature_origin: 'natural',
+            creature_type: 'humanoid',
+            size: 'medium',
+            level: 1,
+          });
+          creature.setBaseAttributes([-1, 4, 0, -2, 2, -2]);
+          creature.setTrainedSkills(['awareness']);
           creature.setEquippedArmorName({ bodyArmor: 'buff leather' });
           // --- Begin freeform code ---
           creature.addWeaponMult('spear');
@@ -51,18 +50,18 @@ export function addMonstersFromUi(grimoire: Grimoire) {
         'Wolf Rider',
         (creature: Creature) => {
           creature.setRequiredProperties({
-              "alignment": "chaotic evil",
-              "base_class": "skirmisher",
-              "elite": false,
-              "creature_origin": "natural",
-              "creature_type": "humanoid",
-              "size": "medium",
-              "level": 3
-            });
-          creature.setBaseAttributes([-1,4,0,-2,2,-2]);
-          creature.setTrainedSkills(["ride"]);
+            alignment: 'chaotic evil',
+            base_class: 'skirmisher',
+            elite: false,
+            creature_origin: 'natural',
+            creature_type: 'humanoid',
+            size: 'medium',
+            level: 3,
+          });
+          creature.setBaseAttributes([-1, 4, 0, -2, 2, -2]);
+          creature.setTrainedSkills(['ride']);
           creature.setEquippedArmorName({ bodyArmor: 'buff leather' });
-          creature.setProperties({"has_art":true});
+          creature.setProperties({ has_art: true });
           // --- Begin freeform code ---
           creature.addWeaponMult('lance');
           creature.addWeaponMult('spear');
@@ -74,16 +73,16 @@ export function addMonstersFromUi(grimoire: Grimoire) {
         'Goblin Shaman',
         (creature: Creature) => {
           creature.setRequiredProperties({
-              "alignment": "chaotic evil",
-              "base_class": "skirmisher",
-              "elite": false,
-              "creature_origin": "natural",
-              "creature_type": "humanoid",
-              "size": "medium",
-              "level": 1
-            });
-          creature.setBaseAttributes([-1,3,0,-2,2,3]);
-          creature.setTrainedSkills(["awareness"]);
+            alignment: 'chaotic evil',
+            base_class: 'skirmisher',
+            elite: false,
+            creature_origin: 'natural',
+            creature_type: 'humanoid',
+            size: 'medium',
+            level: 1,
+          });
+          creature.setBaseAttributes([-1, 3, 0, -2, 2, 3]);
+          creature.setTrainedSkills(['awareness']);
           creature.setEquippedArmorName({ bodyArmor: 'buff leather' });
           // --- Begin freeform code ---
           creature.addSpell('Word of Power');
@@ -91,8 +90,7 @@ export function addMonstersFromUi(grimoire: Grimoire) {
           creature.addWeaponMult('spear', { displayName: 'Consecrated Strike', isMagical: true });
           // --- End freeform code ---
         },
-      ]
-    ]
+      ],
+    ],
   );
-
 }

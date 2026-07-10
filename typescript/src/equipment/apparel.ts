@@ -36,10 +36,7 @@ export function getApparelCraftMaterials(kind: ApparelKind): string {
 
 export function apparelLatex(apparel: Apparel): string {
   // Relics are allowed to not require attunement
-  if (
-    apparel.item.rarity === 'Common' &&
-    apparel.item.attunement === 'Unrestricted'
-  ) {
+  if (apparel.item.rarity === 'Common' && apparel.item.attunement === 'Unrestricted') {
     console.error(`Apparel ${apparel.item.name} must require attunement`);
   }
 

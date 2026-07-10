@@ -130,8 +130,7 @@ t.test('validateSpells: Redundancy & Inconsistency Checks', (t) => {
         roles: ['clear'],
         attack: {
           hit: '\\damagerankfive.',
-          targeting:
-            'Make an attack vs. Reflex against everything in a \\smallarea cone from you.',
+          targeting: 'Make an attack vs. Reflex against everything in a \\smallarea cone from you.',
         },
       }),
     ]);

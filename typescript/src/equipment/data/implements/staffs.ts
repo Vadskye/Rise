@@ -11,7 +11,7 @@ function staff(
   } else if (tags.includes('Attune')) {
     attunement = 'Attune';
   }
-  const cleanedTags = tags.filter(t => t !== 'Attune' && t !== 'Attune (deep)');
+  const cleanedTags = tags.filter((t) => t !== 'Attune' && t !== 'Attune (deep)');
   return {
     kind: 'Staff',
     item: {
@@ -35,7 +35,8 @@ function compositeStaffs(): Implement[] {
         This staff has two different rank 1 magic implement properties.
         Each property must not already require a \\glossterm{deep attunement}.
       `,
-      attunement: 'Attune (deep)', tags: [],
+      attunement: 'Attune (deep)',
+      tags: [],
     }),
     staff({
       name: 'Composite Staff, 2nd',
@@ -45,7 +46,8 @@ function compositeStaffs(): Implement[] {
         This staff has two different magic implement properties that are rank 2 or lower.
         Each property must not already require a \\glossterm{deep attunement}.
       `,
-      attunement: 'Attune (deep)', tags: [],
+      attunement: 'Attune (deep)',
+      tags: [],
     }),
     staff({
       name: 'Composite Staff, 3rd',
@@ -55,7 +57,8 @@ function compositeStaffs(): Implement[] {
         This staff has two different magic implement properties that are rank 3 or lower.
         Each property must not already require a \\glossterm{deep attunement}.
       `,
-      attunement: 'Attune (deep)', tags: [],
+      attunement: 'Attune (deep)',
+      tags: [],
     }),
   ];
 
@@ -69,7 +72,8 @@ function compositeStaffs(): Implement[] {
         This staff has two different magic implement properties that are rank ${n} or lower.
         Each property must not already require a \\glossterm{deep attunement}.
       `,
-        attunement: 'Attune (deep)', tags: [],
+        attunement: 'Attune (deep)',
+        tags: [],
       }),
     );
   };
@@ -450,7 +454,8 @@ export const staffs = (): Implement[] => [
     rank: 4,
     short_description: 'Empowers you',
     description: 'You are \\empowered.',
-    attunement: 'Attune (deep)', tags: [],
+    attunement: 'Attune (deep)',
+    tags: [],
   }),
   staff({
     name: 'Staff of Overwhelming Power',

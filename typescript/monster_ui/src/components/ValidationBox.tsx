@@ -12,7 +12,10 @@ export const ValidationBox: React.FC<ValidationBoxProps> = ({ errors, warnings }
 
   if (!hasErrors && !hasWarnings) {
     return (
-      <div className="validation-container" style={{ borderColor: 'var(--success-color)', backgroundColor: 'rgba(16, 185, 129, 0.05)' }}>
+      <div
+        className="validation-container"
+        style={{ borderColor: 'var(--success-color)', backgroundColor: 'rgba(16, 185, 129, 0.05)' }}
+      >
         <div className="validation-title" style={{ color: 'var(--success-color)' }}>
           ✅ Validation Passed
         </div>
@@ -27,9 +30,7 @@ export const ValidationBox: React.FC<ValidationBoxProps> = ({ errors, warnings }
     <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
       {hasErrors && (
         <div className="validation-container has-errors">
-          <div className="validation-title error-title">
-            ❌ Engine Compile Errors
-          </div>
+          <div className="validation-title error-title">❌ Engine Compile Errors</div>
           <ul className="validation-list">
             {errors.map((error, idx) => (
               <li key={idx} className="error-item">
@@ -42,9 +43,7 @@ export const ValidationBox: React.FC<ValidationBoxProps> = ({ errors, warnings }
 
       {hasWarnings && (
         <div className="validation-container has-warnings">
-          <div className="validation-title warning-title">
-            ⚠️ Book Validation Warnings
-          </div>
+          <div className="validation-title warning-title">⚠️ Book Validation Warnings</div>
           <ul className="validation-list">
             {warnings.map((warning, idx) => (
               <li key={idx} className="warning-item">

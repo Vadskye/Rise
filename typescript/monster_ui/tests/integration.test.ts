@@ -144,10 +144,10 @@ describe('Monster UI Integration Tests (Serverless)', () => {
 
     const result = saveAndValidateAll(updatedDb);
     assert.strictEqual(result.success, true);
-    
+
     const validation = result.validations[newMonsterName];
     assert.strictEqual(validation.success, true);
-    
+
     const stats = validation.computedStats;
     assert.ok(stats);
     assert.strictEqual(stats.name, newMonsterName);
@@ -166,7 +166,9 @@ describe('Monster UI Integration Tests (Serverless)', () => {
     assert.ok(generatedContent.includes(`creature.addImmunity('Fire')`));
     assert.ok(generatedContent.includes(`creature.addResistant('Cold')`));
     assert.ok(generatedContent.includes(`creature.addVulnerability('Acid')`));
-    assert.ok(generatedContent.includes(`creature.setEquippedArmorName({ bodyArmor: 'breastplate' })`));
+    assert.ok(
+      generatedContent.includes(`creature.setEquippedArmorName({ bodyArmor: 'breastplate' })`),
+    );
     assert.ok(generatedContent.includes(`"has_art":true`));
   });
 

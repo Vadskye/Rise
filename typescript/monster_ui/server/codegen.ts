@@ -62,7 +62,7 @@ function generateMonsterBody(monster: MonsterData, indent: string): string {
 
   const reqPropsStr = JSON.stringify(monster.requiredProperties, null, 2)
     .split('\n')
-    .map((line, idx) => idx === 0 ? line : indent + '  ' + line)
+    .map((line, idx) => (idx === 0 ? line : indent + '  ' + line))
     .join('\n');
   lines.push(`${indent}creature.setRequiredProperties(${reqPropsStr});`);
 
@@ -74,7 +74,7 @@ function generateMonsterBody(monster: MonsterData, indent: string): string {
     lines.push(`${indent}creature.setTrainedSkills(${JSON.stringify(monster.trainedSkills)});`);
   }
 
-  if (monster.knowledge && Object.values(monster.knowledge).some(v => v)) {
+  if (monster.knowledge && Object.values(monster.knowledge).some((v) => v)) {
     const cleanKnowledge: Record<string, string> = {};
     for (const [key, value] of Object.entries(monster.knowledge)) {
       if (value) cleanKnowledge[key] = value;
@@ -82,7 +82,7 @@ function generateMonsterBody(monster: MonsterData, indent: string): string {
     if (Object.keys(cleanKnowledge).length > 0) {
       const knStr = JSON.stringify(cleanKnowledge, null, 2)
         .split('\n')
-        .map((line, idx) => idx === 0 ? line : indent + '  ' + line)
+        .map((line, idx) => (idx === 0 ? line : indent + '  ' + line))
         .join('\n');
       lines.push(`${indent}creature.setKnowledgeResults(${knStr});`);
     }
@@ -125,7 +125,9 @@ function generateMonsterBody(monster: MonsterData, indent: string): string {
   }
 
   if (monster.equippedArmor) {
-    lines.push(`${indent}creature.setEquippedArmorName({ bodyArmor: '${monster.equippedArmor}' });`);
+    lines.push(
+      `${indent}creature.setEquippedArmorName({ bodyArmor: '${monster.equippedArmor}' });`,
+    );
   }
 
   if (monster.properties && Object.keys(monster.properties).length > 0) {
