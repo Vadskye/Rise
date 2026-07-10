@@ -11,7 +11,7 @@ function shield(
   } else if (tags.includes('Attune')) {
     attunement = 'Attune';
   }
-  const cleanedTags = tags.filter(t => t !== 'Attune' && t !== 'Attune (deep)');
+  const cleanedTags = tags.filter((t) => t !== 'Attune' && t !== 'Attune (deep)');
   return {
     kind: 'Shield',
     item: {
@@ -35,7 +35,8 @@ function compositeShields(): MagicArmor[] {
         This shield has two different rank 1 magic shield properties.
         Each property must not already require a \\glossterm{deep attunement}.
       `,
-      attunement: 'Attune (deep)', tags: [],
+      attunement: 'Attune (deep)',
+      tags: [],
     }),
     shield({
       name: 'Composite Shield, 2nd',
@@ -45,7 +46,8 @@ function compositeShields(): MagicArmor[] {
         This shield has two different magic shield properties that are rank 2 or lower.
         Each property must not already require a \\glossterm{deep attunement}.
       `,
-      attunement: 'Attune (deep)', tags: [],
+      attunement: 'Attune (deep)',
+      tags: [],
     }),
     shield({
       name: 'Composite Shield, 3rd',
@@ -55,7 +57,8 @@ function compositeShields(): MagicArmor[] {
         This shield has two different magic shield properties that are rank 3 or lower.
         Each property must not already require a \\glossterm{deep attunement}.
       `,
-      attunement: 'Attune (deep)', tags: [],
+      attunement: 'Attune (deep)',
+      tags: [],
     }),
   ];
 
@@ -69,7 +72,8 @@ function compositeShields(): MagicArmor[] {
         This shield has two different magic shield properties that are rank ${n} or lower.
         Each property must not already require a \\glossterm{deep attunement}.
       `,
-        attunement: 'Attune (deep)', tags: [],
+        attunement: 'Attune (deep)',
+        tags: [],
       }),
     );
   };
@@ -232,13 +236,15 @@ export const shields = (): MagicArmor[] => [
     rank: 4,
     short_description: 'Shields you',
     description: 'You are \\shielded.',
-    attunement: 'Attune (deep)', tags: [],
+    attunement: 'Attune (deep)',
+    tags: [],
   }),
   shield({
     name: 'Covering Shield',
     rank: 7,
     short_description: 'Grants you cover',
     description: 'You have \\glossterm{cover} from all attacks.',
-    attunement: 'Attune (deep)', tags: [],
+    attunement: 'Attune (deep)',
+    tags: [],
   }),
 ];

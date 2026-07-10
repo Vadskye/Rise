@@ -9,7 +9,15 @@ interface BookPreviewProps {
 export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
   if (loading) {
     return (
-      <div style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', fontStyle: 'italic', textAlign: 'center', marginTop: '40px' }}>
+      <div
+        style={{
+          color: 'var(--text-secondary)',
+          fontSize: '0.95rem',
+          fontStyle: 'italic',
+          textAlign: 'center',
+          marginTop: '40px',
+        }}
+      >
         Recalculating stat block...
       </div>
     );
@@ -17,7 +25,15 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
 
   if (!stats) {
     return (
-      <div style={{ color: 'var(--text-muted)', fontSize: '0.95rem', fontStyle: 'italic', textAlign: 'center', marginTop: '40px' }}>
+      <div
+        style={{
+          color: 'var(--text-muted)',
+          fontSize: '0.95rem',
+          fontStyle: 'italic',
+          textAlign: 'center',
+          marginTop: '40px',
+        }}
+      >
         Enter valid properties on the left to generate the preview.
       </div>
     );
@@ -27,7 +43,7 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
     return val >= 0 ? `+${val}` : `${val}`;
   };
 
-  const isMindless = stats.traits.map(t => t.toLowerCase()).includes('mindless');
+  const isMindless = stats.traits.map((t) => t.toLowerCase()).includes('mindless');
 
   // Format Attributes: [Brawn, Agility, Reason, Instinct, Presence, Will]
   // In our validate.ts backend code, the attributes array was returned as:
@@ -39,16 +55,20 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
     isMindless ? '---' : stats.attributes[3], // Reason (Intelligence)
     stats.attributes[4], // Instinct (Perception)
     isMindless ? '---' : stats.attributes[5], // Presence/Will (Willpower)
-  ].map((attr) => (attr === '---' ? '---' : typeof attr === 'number' && attr > -10 ? String(attr) : '—')).join(', ');
+  ]
+    .map((attr) =>
+      attr === '---' ? '---' : typeof attr === 'number' && attr > -10 ? String(attr) : '—',
+    )
+    .join(', ');
 
   // Defenses
   const mentalText = isMindless ? '' : ` • Ment ${stats.mental}`;
 
-
   // Knowledge DVs
   const knowledge = stats.knowledge;
   const baseDifficulty = knowledge ? Math.floor(knowledge.monsterLevel / 2) + 5 : 5;
-  const showKnowledge = knowledge && (knowledge.easy || knowledge.normal || knowledge.hard || knowledge.legendary);
+  const showKnowledge =
+    knowledge && (knowledge.easy || knowledge.normal || knowledge.hard || knowledge.legendary);
 
   // Sorting active abilities: usage time then name
   const sortedActiveAbilities = [...stats.activeAbilities].sort((a, b) => {
@@ -97,32 +117,47 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
             {stats.skills.includes('jump') ? ` • Jump ${formatModifier(stats.attributes[1])}` : ''}
           </span>
         </div>
-        
+
         {/* Senses/Skills */}
         {stats.skills.length > 0 && (
           <div className="stat-line" style={{ marginTop: '2px' }}>
             <span className="stat-label">Trained Skills</span>
             <span className="stat-value">
-              {stats.skills.map(s => s.charAt(0).toUpperCase() + s.slice(1)).join(', ')}
+              {stats.skills.map((s) => s.charAt(0).toUpperCase() + s.slice(1)).join(', ')}
             </span>
           </div>
         )}
 
-        <div className="stat-line" style={{ marginTop: '4px', paddingTop: '4px', borderTop: '1px dashed var(--book-border)' }}>
+        <div
+          className="stat-line"
+          style={{
+            marginTop: '4px',
+            paddingTop: '4px',
+            borderTop: '1px dashed var(--book-border)',
+          }}
+        >
           <span className="stat-label">Attributes</span>
           <span className="stat-value">{attributesStr}</span>
-          <span className="stat-label" style={{ marginLeft: 'auto' }}>Alignment</span>
+          <span className="stat-label" style={{ marginLeft: 'auto' }}>
+            Alignment
+          </span>
           <span className="stat-value" style={{ marginRight: 0 }}>
-            {stats.alignment.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}
+            {stats.alignment
+              .split(' ')
+              .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+              .join(' ')}
           </span>
         </div>
-        
+
         <div className="stat-line">
           <span className="stat-label">Accuracy</span>
           <span className="stat-value">
-            {formatModifier(stats.armor_defense - 10 /* estimate basic accuracy */)}; Brawling {formatModifier(stats.brawn - 10)}
+            {formatModifier(stats.armor_defense - 10 /* estimate basic accuracy */)}; Brawling{' '}
+            {formatModifier(stats.brawn - 10)}
           </span>
-          <span className="stat-label" style={{ marginLeft: 'auto' }}>Power</span>
+          <span className="stat-label" style={{ marginLeft: 'auto' }}>
+            Power
+          </span>
           <span className="stat-value" style={{ marginRight: 0 }}>
             {stats.level + 2} ✦
           </span>
@@ -132,18 +167,28 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
           <div className="stat-line">
             <span className="stat-label">Equipment</span>
             <span className="stat-value">
-              {stats.equipment.map(e => e.charAt(0).toUpperCase() + e.slice(1)).join(', ')}
+              {stats.equipment.map((e) => e.charAt(0).toUpperCase() + e.slice(1)).join(', ')}
             </span>
           </div>
         )}
 
-        {stats.traits.filter(t => t.toLowerCase() !== 'blooded' && t.toLowerCase() !== 'living' && t.toLowerCase() !== 'mortal').length > 0 && (
+        {stats.traits.filter(
+          (t) =>
+            t.toLowerCase() !== 'blooded' &&
+            t.toLowerCase() !== 'living' &&
+            t.toLowerCase() !== 'mortal',
+        ).length > 0 && (
           <div className="stat-line">
             <span className="stat-label">Traits</span>
             <span className="stat-value">
               {stats.traits
-                .filter(t => t.toLowerCase() !== 'blooded' && t.toLowerCase() !== 'living' && t.toLowerCase() !== 'mortal')
-                .map(t => t.charAt(0).toUpperCase() + t.slice(1))
+                .filter(
+                  (t) =>
+                    t.toLowerCase() !== 'blooded' &&
+                    t.toLowerCase() !== 'living' &&
+                    t.toLowerCase() !== 'mortal',
+                )
+                .map((t) => t.charAt(0).toUpperCase() + t.slice(1))
                 .join(', ')}
             </span>
           </div>
@@ -171,7 +216,8 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
           )}
           {knowledge.legendary && (
             <div className="knowledge-line">
-              <span className="dv-label">Legendary (DV {baseDifficulty + 10}):</span> {knowledge.legendary}
+              <span className="dv-label">Legendary (DV {baseDifficulty + 10}):</span>{' '}
+              {knowledge.legendary}
             </div>
           )}
         </div>
@@ -181,12 +227,14 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
       {(stats.passiveAbilities.length > 0 || sortedActiveAbilities.length > 0) && (
         <>
           <div className="abilities-header">Abilities</div>
-          
+
           {/* Passive Abilities */}
           {stats.passiveAbilities.map((ability, idx) => (
             <div key={`passive-${idx}`} className="ability-item">
               <div className="ability-title-line">
-                <span className="ability-name">{ability.name} {ability.isMagical ? '✦' : ''}</span>
+                <span className="ability-name">
+                  {ability.name} {ability.isMagical ? '✦' : ''}
+                </span>
                 <span className="ability-usage">Passive</span>
               </div>
               <div className="ability-details" style={{ fontStyle: 'italic' }}>
@@ -204,7 +252,9 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
                   {ability.tags && ability.tags.length > 0 ? ` [${ability.tags.join(', ')}]` : ''}
                 </span>
                 <span className="ability-usage">
-                  {ability.usageTime ? ability.usageTime.charAt(0).toUpperCase() + ability.usageTime.slice(1) : 'Standard'}
+                  {ability.usageTime
+                    ? ability.usageTime.charAt(0).toUpperCase() + ability.usageTime.slice(1)
+                    : 'Standard'}
                 </span>
               </div>
               <div className="ability-details">

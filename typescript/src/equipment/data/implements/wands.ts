@@ -11,7 +11,7 @@ function wand(
   } else if (tags.includes('Attune')) {
     attunement = 'Attune';
   }
-  const cleanedTags = tags.filter(t => t !== 'Attune' && t !== 'Attune (deep)');
+  const cleanedTags = tags.filter((t) => t !== 'Attune' && t !== 'Attune (deep)');
   return {
     kind: 'Wand',
     item: {

@@ -481,7 +481,7 @@ export const umbramancy: MysticSphere = {
       `,
       rank: 2,
       roles: ['boon', 'turtle'],
-      type: "Sustain (standard)",
+      type: 'Sustain (standard)',
     },
 
     {
@@ -494,7 +494,7 @@ export const umbramancy: MysticSphere = {
       `,
       rank: 6,
       roles: ['focus'],
-      type: "Sustain (standard)",
+      type: 'Sustain (standard)',
     },
 
     {

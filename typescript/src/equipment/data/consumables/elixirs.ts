@@ -2,7 +2,7 @@ import { Tool, RawConsumable } from '../../types';
 
 function createElixir(data: RawConsumable): Tool {
   const dataTags = data.tags || [];
-  const cleanedTags = dataTags.filter(t => t !== 'Attune' && t !== 'Attune (deep)');
+  const cleanedTags = dataTags.filter((t) => t !== 'Attune' && t !== 'Attune (deep)');
   return {
     category: 'Potion',
     item: {

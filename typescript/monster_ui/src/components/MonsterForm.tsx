@@ -42,8 +42,12 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
             value={groupData.name}
             onChange={(e) => onChangeGroup({ ...groupData, name: e.target.value })}
           />
-          {getInlineError('name') && <div className="inline-error">❌ {getInlineError('name')}</div>}
-          {getInlineWarning('name') && <div className="inline-warning">⚠️ {getInlineWarning('name')}</div>}
+          {getInlineError('name') && (
+            <div className="inline-error">❌ {getInlineError('name')}</div>
+          )}
+          {getInlineWarning('name') && (
+            <div className="inline-warning">⚠️ {getInlineWarning('name')}</div>
+          )}
         </div>
 
         <div className="form-checkbox-row">
@@ -62,7 +66,9 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
             id="group-desc"
             rows={3}
             value={groupData.description || ''}
-            onChange={(e) => onChangeGroup({ ...groupData, description: e.target.value || undefined })}
+            onChange={(e) =>
+              onChangeGroup({ ...groupData, description: e.target.value || undefined })
+            }
             placeholder="Introduce the monster family..."
           />
         </div>
@@ -113,7 +119,9 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
         </div>
 
         <div className="form-group">
-          <label htmlFor="group-shared-code">Shared Freeform Code (runs for all monsters in group)</label>
+          <label htmlFor="group-shared-code">
+            Shared Freeform Code (runs for all monsters in group)
+          </label>
           <textarea
             id="group-shared-code"
             className="code-textarea"
@@ -126,10 +134,12 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
     );
   }
 
-  const [activeTab, setActiveTab] = React.useState<'identity' | 'stats' | 'traits' | 'combat' | 'knowledge'>('identity');
+  const [activeTab, setActiveTab] = React.useState<
+    'identity' | 'stats' | 'traits' | 'combat' | 'knowledge'
+  >('identity');
   const [skillSearch, setSkillSearch] = React.useState('');
   const [traitSearch, setTraitSearch] = React.useState('');
-  
+
   const [newSense, setNewSense] = React.useState('');
   const [newSpeed, setNewSpeed] = React.useState('');
   const [newImmunity, setNewImmunity] = React.useState('');
@@ -141,26 +151,82 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
     Senses: ['analysis', 'awareness'],
     Social: ['deception', 'disguise', 'intimidate', 'perform', 'social_insight', 'persuasion'],
     Craft: [
-      'craft_alchemy', 'craft_bone', 'craft_ceramics', 'craft_leather', 'craft_manuscripts',
-      'craft_metal', 'craft_poison', 'craft_stone', 'craft_textiles', 'craft_traps', 'craft_wood', 'craft_untrained'
+      'craft_alchemy',
+      'craft_bone',
+      'craft_ceramics',
+      'craft_leather',
+      'craft_manuscripts',
+      'craft_metal',
+      'craft_poison',
+      'craft_stone',
+      'craft_textiles',
+      'craft_traps',
+      'craft_wood',
+      'craft_untrained',
     ],
     Knowledge: [
-      'knowledge_arcana', 'knowledge_dungeoneering', 'knowledge_engineering', 'knowledge_items',
-      'knowledge_local', 'knowledge_nature', 'knowledge_planes', 'knowledge_religion', 'knowledge_souls', 'knowledge_untrained'
+      'knowledge_arcana',
+      'knowledge_dungeoneering',
+      'knowledge_engineering',
+      'knowledge_items',
+      'knowledge_local',
+      'knowledge_nature',
+      'knowledge_planes',
+      'knowledge_religion',
+      'knowledge_souls',
+      'knowledge_untrained',
     ],
-    Other: ['creature_handling', 'devices', 'endurance', 'medicine', 'sleight_of_hand', 'survival', 'profession']
+    Other: [
+      'creature_handling',
+      'devices',
+      'endurance',
+      'medicine',
+      'sleight_of_hand',
+      'survival',
+      'profession',
+    ],
   };
 
   const STANDARD_TRAITS = [
-    'amphibious', 'blooded', 'bloodless', 'corporeal', 'dynamic', 'ensouled', 'floating',
-    'immortal', 'incorporeal', 'invisible', 'legless', 'living', 'mindless', 'mortal',
-    'multipedal', 'nonliving', 'quadrupedal', 'scent', 'sighted', 'sightless', 'simple-minded',
-    'soulless', 'static', 'swarm', 'telepathy'
+    'amphibious',
+    'blooded',
+    'bloodless',
+    'corporeal',
+    'dynamic',
+    'ensouled',
+    'floating',
+    'immortal',
+    'incorporeal',
+    'invisible',
+    'legless',
+    'living',
+    'mindless',
+    'mortal',
+    'multipedal',
+    'nonliving',
+    'quadrupedal',
+    'scent',
+    'sighted',
+    'sightless',
+    'simple-minded',
+    'soulless',
+    'static',
+    'swarm',
+    'telepathy',
   ];
 
   const STANDARD_ARMORS = [
-    'buff leather', 'mail shirt', 'rawhide', 'leather lamellar', 'scale',
-    'brigandine', 'breastplate', 'half plate', 'full plate', 'mage armor', 'ki barrier'
+    'buff leather',
+    'mail shirt',
+    'rawhide',
+    'leather lamellar',
+    'scale',
+    'brigandine',
+    'breastplate',
+    'half plate',
+    'full plate',
+    'mage armor',
+    'ki barrier',
   ];
 
   if (mode === 'monster' && monsterData && onChangeMonster) {
@@ -319,11 +385,41 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
       <div className="editor-scroll">
         {/* Navigation Tabs */}
         <div className="form-tabs">
-          <button type="button" className={`tab-btn ${activeTab === 'identity' ? 'active' : ''}`} onClick={() => setActiveTab('identity')}>Identity</button>
-          <button type="button" className={`tab-btn ${activeTab === 'stats' ? 'active' : ''}`} onClick={() => setActiveTab('stats')}>Attributes & Skills</button>
-          <button type="button" className={`tab-btn ${activeTab === 'traits' ? 'active' : ''}`} onClick={() => setActiveTab('traits')}>Traits & Senses</button>
-          <button type="button" className={`tab-btn ${activeTab === 'combat' ? 'active' : ''}`} onClick={() => setActiveTab('combat')}>Combat & Gear</button>
-          <button type="button" className={`tab-btn ${activeTab === 'knowledge' ? 'active' : ''}`} onClick={() => setActiveTab('knowledge')}>Knowledge & Script</button>
+          <button
+            type="button"
+            className={`tab-btn ${activeTab === 'identity' ? 'active' : ''}`}
+            onClick={() => setActiveTab('identity')}
+          >
+            Identity
+          </button>
+          <button
+            type="button"
+            className={`tab-btn ${activeTab === 'stats' ? 'active' : ''}`}
+            onClick={() => setActiveTab('stats')}
+          >
+            Attributes & Skills
+          </button>
+          <button
+            type="button"
+            className={`tab-btn ${activeTab === 'traits' ? 'active' : ''}`}
+            onClick={() => setActiveTab('traits')}
+          >
+            Traits & Senses
+          </button>
+          <button
+            type="button"
+            className={`tab-btn ${activeTab === 'combat' ? 'active' : ''}`}
+            onClick={() => setActiveTab('combat')}
+          >
+            Combat & Gear
+          </button>
+          <button
+            type="button"
+            className={`tab-btn ${activeTab === 'knowledge' ? 'active' : ''}`}
+            onClick={() => setActiveTab('knowledge')}
+          >
+            Knowledge & Script
+          </button>
         </div>
 
         {/* Tab 1: Identity */}
@@ -338,8 +434,12 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
                 onChange={(e) => onChangeMonster({ ...monsterData, name: e.target.value })}
                 placeholder="e.g. Corpsetree"
               />
-              {getInlineError('name') && <div className="inline-error">❌ {getInlineError('name')}</div>}
-              {getInlineWarning('name') && <div className="inline-warning">⚠️ {getInlineWarning('name')}</div>}
+              {getInlineError('name') && (
+                <div className="inline-error">❌ {getInlineError('name')}</div>
+              )}
+              {getInlineWarning('name') && (
+                <div className="inline-warning">⚠️ {getInlineWarning('name')}</div>
+              )}
             </div>
 
             <div className="form-row-grid">
@@ -361,8 +461,12 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
                   <option value="neutral evil">Neutral Evil</option>
                   <option value="chaotic evil">Chaotic Evil</option>
                 </select>
-                {getInlineError('alignment') && <div className="inline-error">❌ {getInlineError('alignment')}</div>}
-                {getInlineWarning('alignment') && <div className="inline-warning">⚠️ {getInlineWarning('alignment')}</div>}
+                {getInlineError('alignment') && (
+                  <div className="inline-error">❌ {getInlineError('alignment')}</div>
+                )}
+                {getInlineWarning('alignment') && (
+                  <div className="inline-warning">⚠️ {getInlineWarning('alignment')}</div>
+                )}
               </div>
 
               <div className="form-group">
@@ -493,30 +597,62 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
         {activeTab === 'stats' && (
           <div className="tab-content">
             <h4 className="section-subtitle">Base Attributes</h4>
-            <div className="attributes-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px', marginBottom: '20px' }}>
+            <div
+              className="attributes-grid"
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(3, 1fr)',
+                gap: '15px',
+                marginBottom: '20px',
+              }}
+            >
               <div className="form-group">
                 <label>Str (Brawn)</label>
-                <input type="number" value={baseAttributes[0]} onChange={(e) => setAttribute(0, parseInt(e.target.value) || 0)} />
+                <input
+                  type="number"
+                  value={baseAttributes[0]}
+                  onChange={(e) => setAttribute(0, parseInt(e.target.value) || 0)}
+                />
               </div>
               <div className="form-group">
                 <label>Dex (Agility)</label>
-                <input type="number" value={baseAttributes[1]} onChange={(e) => setAttribute(1, parseInt(e.target.value) || 0)} />
+                <input
+                  type="number"
+                  value={baseAttributes[1]}
+                  onChange={(e) => setAttribute(1, parseInt(e.target.value) || 0)}
+                />
               </div>
               <div className="form-group">
                 <label>Con (Fortitude)</label>
-                <input type="number" value={baseAttributes[2]} onChange={(e) => setAttribute(2, parseInt(e.target.value) || 0)} />
+                <input
+                  type="number"
+                  value={baseAttributes[2]}
+                  onChange={(e) => setAttribute(2, parseInt(e.target.value) || 0)}
+                />
               </div>
               <div className="form-group">
                 <label>Int (Reason)</label>
-                <input type="number" value={baseAttributes[3]} onChange={(e) => setAttribute(3, parseInt(e.target.value) || 0)} />
+                <input
+                  type="number"
+                  value={baseAttributes[3]}
+                  onChange={(e) => setAttribute(3, parseInt(e.target.value) || 0)}
+                />
               </div>
               <div className="form-group">
                 <label>Per (Instinct)</label>
-                <input type="number" value={baseAttributes[4]} onChange={(e) => setAttribute(4, parseInt(e.target.value) || 0)} />
+                <input
+                  type="number"
+                  value={baseAttributes[4]}
+                  onChange={(e) => setAttribute(4, parseInt(e.target.value) || 0)}
+                />
               </div>
               <div className="form-group">
                 <label>Wil (Presence)</label>
-                <input type="number" value={baseAttributes[5]} onChange={(e) => setAttribute(5, parseInt(e.target.value) || 0)} />
+                <input
+                  type="number"
+                  value={baseAttributes[5]}
+                  onChange={(e) => setAttribute(5, parseInt(e.target.value) || 0)}
+                />
               </div>
             </div>
 
@@ -530,25 +666,70 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
                 style={{ padding: '8px 12px', fontSize: '0.85rem' }}
               />
             </div>
-            
-            <div className="skills-categories-container" style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+
+            <div
+              className="skills-categories-container"
+              style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}
+            >
               {Object.entries(SKILL_CATEGORIES).map(([category, skillsList]) => {
-                const filteredSkills = skillsList.filter(s => s.toLowerCase().replace(/_/g, ' ').includes(skillSearch.toLowerCase()));
+                const filteredSkills = skillsList.filter((s) =>
+                  s.toLowerCase().replace(/_/g, ' ').includes(skillSearch.toLowerCase()),
+                );
                 if (filteredSkills.length === 0) return null;
 
                 return (
-                  <div key={category} className="skill-category-group" style={{ backgroundColor: 'var(--bg-secondary)', padding: '12px', borderRadius: '6px', border: '1px solid var(--border-color)' }}>
-                    <div style={{ fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', color: 'var(--accent-color)', marginBottom: '8px', letterSpacing: '0.5px' }}>{category}</div>
-                    <div className="skills-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))', gap: '10px' }}>
+                  <div
+                    key={category}
+                    className="skill-category-group"
+                    style={{
+                      backgroundColor: 'var(--bg-secondary)',
+                      padding: '12px',
+                      borderRadius: '6px',
+                      border: '1px solid var(--border-color)',
+                    }}
+                  >
+                    <div
+                      style={{
+                        fontSize: '0.75rem',
+                        fontWeight: 800,
+                        textTransform: 'uppercase',
+                        color: 'var(--accent-color)',
+                        marginBottom: '8px',
+                        letterSpacing: '0.5px',
+                      }}
+                    >
+                      {category}
+                    </div>
+                    <div
+                      className="skills-grid"
+                      style={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))',
+                        gap: '10px',
+                      }}
+                    >
                       {filteredSkills.map((skill) => (
-                        <div key={skill} className="form-checkbox-row" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                        <div
+                          key={skill}
+                          className="form-checkbox-row"
+                          style={{ display: 'flex', alignItems: 'center', gap: '6px' }}
+                        >
                           <input
                             id={`skill-${skill}`}
                             type="checkbox"
                             checked={trainedSkills.includes(skill)}
                             onChange={() => toggleSkill(skill)}
                           />
-                          <label htmlFor={`skill-${skill}`} style={{ fontSize: '0.85rem', color: trainedSkills.includes(skill) ? 'var(--text-primary)' : 'var(--text-secondary)', cursor: 'pointer' }}>
+                          <label
+                            htmlFor={`skill-${skill}`}
+                            style={{
+                              fontSize: '0.85rem',
+                              color: trainedSkills.includes(skill)
+                                ? 'var(--text-primary)'
+                                : 'var(--text-secondary)',
+                              cursor: 'pointer',
+                            }}
+                          >
                             {skill.replace(/_/g, ' ')}
                           </label>
                         </div>
@@ -574,16 +755,41 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
                 style={{ padding: '8px 12px', fontSize: '0.85rem' }}
               />
             </div>
-            <div className="traits-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))', gap: '10px', backgroundColor: 'var(--bg-secondary)', padding: '15px', borderRadius: '6px', border: '1px solid var(--border-color)', marginBottom: '20px' }}>
-              {STANDARD_TRAITS.filter(t => t.includes(traitSearch.toLowerCase())).map((trait) => (
-                <div key={trait} className="form-checkbox-row" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+            <div
+              className="traits-grid"
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))',
+                gap: '10px',
+                backgroundColor: 'var(--bg-secondary)',
+                padding: '15px',
+                borderRadius: '6px',
+                border: '1px solid var(--border-color)',
+                marginBottom: '20px',
+              }}
+            >
+              {STANDARD_TRAITS.filter((t) => t.includes(traitSearch.toLowerCase())).map((trait) => (
+                <div
+                  key={trait}
+                  className="form-checkbox-row"
+                  style={{ display: 'flex', alignItems: 'center', gap: '6px' }}
+                >
                   <input
                     id={`trait-${trait}`}
                     type="checkbox"
                     checked={traits.includes(trait)}
                     onChange={() => toggleTrait(trait)}
                   />
-                  <label htmlFor={`trait-${trait}`} style={{ fontSize: '0.85rem', color: traits.includes(trait) ? 'var(--text-primary)' : 'var(--text-secondary)', cursor: 'pointer' }}>
+                  <label
+                    htmlFor={`trait-${trait}`}
+                    style={{
+                      fontSize: '0.85rem',
+                      color: traits.includes(trait)
+                        ? 'var(--text-primary)'
+                        : 'var(--text-secondary)',
+                      cursor: 'pointer',
+                    }}
+                  >
                     {trait}
                   </label>
                 </div>
@@ -593,41 +799,149 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
             <h4 className="section-subtitle">Senses & Movement</h4>
             <div className="form-group" style={{ marginBottom: '15px' }}>
               <label>Custom Senses</label>
-              <div className="tag-list" style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '8px' }}>
+              <div
+                className="tag-list"
+                style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '8px' }}
+              >
                 {customSenses.length === 0 ? (
-                  <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontStyle: 'italic' }}>No custom senses added (defaults to Normal Senses).</span>
+                  <span
+                    style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontStyle: 'italic' }}
+                  >
+                    No custom senses added (defaults to Normal Senses).
+                  </span>
                 ) : (
                   customSenses.map((sense, idx) => (
-                    <span key={idx} className="pill-tag" style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', backgroundColor: 'var(--bg-tertiary)', border: '1px solid var(--border-color)', padding: '4px 10px', borderRadius: '15px', fontSize: '0.8rem' }}>
+                    <span
+                      key={idx}
+                      className="pill-tag"
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '5px',
+                        backgroundColor: 'var(--bg-tertiary)',
+                        border: '1px solid var(--border-color)',
+                        padding: '4px 10px',
+                        borderRadius: '15px',
+                        fontSize: '0.8rem',
+                      }}
+                    >
                       {sense}
-                      <button type="button" onClick={() => handleRemoveSense(idx)} style={{ background: 'none', border: 'none', color: 'var(--danger-color)', cursor: 'pointer', padding: '0 2px', fontSize: '0.85rem', fontWeight: 'bold' }}>&times;</button>
+                      <button
+                        type="button"
+                        onClick={() => handleRemoveSense(idx)}
+                        style={{
+                          background: 'none',
+                          border: 'none',
+                          color: 'var(--danger-color)',
+                          cursor: 'pointer',
+                          padding: '0 2px',
+                          fontSize: '0.85rem',
+                          fontWeight: 'bold',
+                        }}
+                      >
+                        &times;
+                      </button>
                     </span>
                   ))
                 )}
               </div>
               <div style={{ display: 'flex', gap: '10px' }}>
-                <input type="text" placeholder="e.g. Darkvision (60 ft.)" value={newSense} onChange={(e) => setNewSense(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && (e.preventDefault(), handleAddSense())} />
-                <button type="button" className="btn-add" onClick={handleAddSense} style={{ backgroundColor: 'var(--bg-tertiary)', border: '1px solid var(--border-color)', color: 'var(--text-primary)', padding: '0 15px', borderRadius: '6px', cursor: 'pointer' }}>+ Add</button>
+                <input
+                  type="text"
+                  placeholder="e.g. Darkvision (60 ft.)"
+                  value={newSense}
+                  onChange={(e) => setNewSense(e.target.value)}
+                  onKeyDown={(e) => e.key === 'Enter' && (e.preventDefault(), handleAddSense())}
+                />
+                <button
+                  type="button"
+                  className="btn-add"
+                  onClick={handleAddSense}
+                  style={{
+                    backgroundColor: 'var(--bg-tertiary)',
+                    border: '1px solid var(--border-color)',
+                    color: 'var(--text-primary)',
+                    padding: '0 15px',
+                    borderRadius: '6px',
+                    cursor: 'pointer',
+                  }}
+                >
+                  + Add
+                </button>
               </div>
             </div>
 
             <div className="form-group">
               <label>Custom Movement Speeds</label>
-              <div className="tag-list" style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '8px' }}>
+              <div
+                className="tag-list"
+                style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '8px' }}
+              >
                 {customMovementSpeeds.length === 0 ? (
-                  <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontStyle: 'italic' }}>No custom movement speeds added (defaults to ground speed).</span>
+                  <span
+                    style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontStyle: 'italic' }}
+                  >
+                    No custom movement speeds added (defaults to ground speed).
+                  </span>
                 ) : (
                   customMovementSpeeds.map((speed, idx) => (
-                    <span key={idx} className="pill-tag" style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', backgroundColor: 'var(--bg-tertiary)', border: '1px solid var(--border-color)', padding: '4px 10px', borderRadius: '15px', fontSize: '0.8rem' }}>
+                    <span
+                      key={idx}
+                      className="pill-tag"
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '5px',
+                        backgroundColor: 'var(--bg-tertiary)',
+                        border: '1px solid var(--border-color)',
+                        padding: '4px 10px',
+                        borderRadius: '15px',
+                        fontSize: '0.8rem',
+                      }}
+                    >
                       {speed}
-                      <button type="button" onClick={() => handleRemoveSpeed(idx)} style={{ background: 'none', border: 'none', color: 'var(--danger-color)', cursor: 'pointer', padding: '0 2px', fontSize: '0.85rem', fontWeight: 'bold' }}>&times;</button>
+                      <button
+                        type="button"
+                        onClick={() => handleRemoveSpeed(idx)}
+                        style={{
+                          background: 'none',
+                          border: 'none',
+                          color: 'var(--danger-color)',
+                          cursor: 'pointer',
+                          padding: '0 2px',
+                          fontSize: '0.85rem',
+                          fontWeight: 'bold',
+                        }}
+                      >
+                        &times;
+                      </button>
                     </span>
                   ))
                 )}
               </div>
               <div style={{ display: 'flex', gap: '10px' }}>
-                <input type="text" placeholder="e.g. Fly 30 ft." value={newSpeed} onChange={(e) => setNewSpeed(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && (e.preventDefault(), handleAddSpeed())} />
-                <button type="button" className="btn-add" onClick={handleAddSpeed} style={{ backgroundColor: 'var(--bg-tertiary)', border: '1px solid var(--border-color)', color: 'var(--text-primary)', padding: '0 15px', borderRadius: '6px', cursor: 'pointer' }}>+ Add</button>
+                <input
+                  type="text"
+                  placeholder="e.g. Fly 30 ft."
+                  value={newSpeed}
+                  onChange={(e) => setNewSpeed(e.target.value)}
+                  onKeyDown={(e) => e.key === 'Enter' && (e.preventDefault(), handleAddSpeed())}
+                />
+                <button
+                  type="button"
+                  className="btn-add"
+                  onClick={handleAddSpeed}
+                  style={{
+                    backgroundColor: 'var(--bg-tertiary)',
+                    border: '1px solid var(--border-color)',
+                    color: 'var(--text-primary)',
+                    padding: '0 15px',
+                    borderRadius: '6px',
+                    cursor: 'pointer',
+                  }}
+                >
+                  + Add
+                </button>
               </div>
             </div>
           </div>
@@ -642,74 +956,244 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
               <select
                 id="equipped-armor"
                 value={monsterData.equippedArmor || ''}
-                onChange={(e) => onChangeMonster({ ...monsterData, equippedArmor: e.target.value || undefined })}
+                onChange={(e) =>
+                  onChangeMonster({ ...monsterData, equippedArmor: e.target.value || undefined })
+                }
               >
                 <option value="">-- None --</option>
                 {STANDARD_ARMORS.map((arm) => (
-                  <option key={arm} value={arm}>{arm.charAt(0).toUpperCase() + arm.slice(1)}</option>
+                  <option key={arm} value={arm}>
+                    {arm.charAt(0).toUpperCase() + arm.slice(1)}
+                  </option>
                 ))}
               </select>
             </div>
 
             <h4 className="section-subtitle">Defenses & Modifiers</h4>
-            
+
             <div className="form-group" style={{ marginBottom: '15px' }}>
               <label>Immunities</label>
-              <div className="tag-list" style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '8px' }}>
+              <div
+                className="tag-list"
+                style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '8px' }}
+              >
                 {immunities.length === 0 ? (
-                  <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontStyle: 'italic' }}>No immunities.</span>
+                  <span
+                    style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontStyle: 'italic' }}
+                  >
+                    No immunities.
+                  </span>
                 ) : (
                   immunities.map((immunity, idx) => (
-                    <span key={idx} className="pill-tag" style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', backgroundColor: 'var(--bg-tertiary)', border: '1px solid var(--border-color)', padding: '4px 10px', borderRadius: '15px', fontSize: '0.8rem' }}>
+                    <span
+                      key={idx}
+                      className="pill-tag"
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '5px',
+                        backgroundColor: 'var(--bg-tertiary)',
+                        border: '1px solid var(--border-color)',
+                        padding: '4px 10px',
+                        borderRadius: '15px',
+                        fontSize: '0.8rem',
+                      }}
+                    >
                       {immunity}
-                      <button type="button" onClick={() => handleRemoveImmunity(idx)} style={{ background: 'none', border: 'none', color: 'var(--danger-color)', cursor: 'pointer', padding: '0 2px', fontSize: '0.85rem', fontWeight: 'bold' }}>&times;</button>
+                      <button
+                        type="button"
+                        onClick={() => handleRemoveImmunity(idx)}
+                        style={{
+                          background: 'none',
+                          border: 'none',
+                          color: 'var(--danger-color)',
+                          cursor: 'pointer',
+                          padding: '0 2px',
+                          fontSize: '0.85rem',
+                          fontWeight: 'bold',
+                        }}
+                      >
+                        &times;
+                      </button>
                     </span>
                   ))
                 )}
               </div>
               <div style={{ display: 'flex', gap: '10px' }}>
-                <input type="text" placeholder="e.g. Fire" value={newImmunity} onChange={(e) => setNewImmunity(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && (e.preventDefault(), handleAddImmunity())} />
-                <button type="button" className="btn-add" onClick={handleAddImmunity} style={{ backgroundColor: 'var(--bg-tertiary)', border: '1px solid var(--border-color)', color: 'var(--text-primary)', padding: '0 15px', borderRadius: '6px', cursor: 'pointer' }}>+ Add</button>
+                <input
+                  type="text"
+                  placeholder="e.g. Fire"
+                  value={newImmunity}
+                  onChange={(e) => setNewImmunity(e.target.value)}
+                  onKeyDown={(e) => e.key === 'Enter' && (e.preventDefault(), handleAddImmunity())}
+                />
+                <button
+                  type="button"
+                  className="btn-add"
+                  onClick={handleAddImmunity}
+                  style={{
+                    backgroundColor: 'var(--bg-tertiary)',
+                    border: '1px solid var(--border-color)',
+                    color: 'var(--text-primary)',
+                    padding: '0 15px',
+                    borderRadius: '6px',
+                    cursor: 'pointer',
+                  }}
+                >
+                  + Add
+                </button>
               </div>
             </div>
 
             <div className="form-group" style={{ marginBottom: '15px' }}>
               <label>Resistances</label>
-              <div className="tag-list" style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '8px' }}>
+              <div
+                className="tag-list"
+                style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '8px' }}
+              >
                 {resistances.length === 0 ? (
-                  <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontStyle: 'italic' }}>No resistances.</span>
+                  <span
+                    style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontStyle: 'italic' }}
+                  >
+                    No resistances.
+                  </span>
                 ) : (
                   resistances.map((res, idx) => (
-                    <span key={idx} className="pill-tag" style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', backgroundColor: 'var(--bg-tertiary)', border: '1px solid var(--border-color)', padding: '4px 10px', borderRadius: '15px', fontSize: '0.8rem' }}>
+                    <span
+                      key={idx}
+                      className="pill-tag"
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '5px',
+                        backgroundColor: 'var(--bg-tertiary)',
+                        border: '1px solid var(--border-color)',
+                        padding: '4px 10px',
+                        borderRadius: '15px',
+                        fontSize: '0.8rem',
+                      }}
+                    >
                       {res}
-                      <button type="button" onClick={() => handleRemoveResistance(idx)} style={{ background: 'none', border: 'none', color: 'var(--danger-color)', cursor: 'pointer', padding: '0 2px', fontSize: '0.85rem', fontWeight: 'bold' }}>&times;</button>
+                      <button
+                        type="button"
+                        onClick={() => handleRemoveResistance(idx)}
+                        style={{
+                          background: 'none',
+                          border: 'none',
+                          color: 'var(--danger-color)',
+                          cursor: 'pointer',
+                          padding: '0 2px',
+                          fontSize: '0.85rem',
+                          fontWeight: 'bold',
+                        }}
+                      >
+                        &times;
+                      </button>
                     </span>
                   ))
                 )}
               </div>
               <div style={{ display: 'flex', gap: '10px' }}>
-                <input type="text" placeholder="e.g. Cold" value={newResistance} onChange={(e) => setNewResistance(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && (e.preventDefault(), handleAddResistance())} />
-                <button type="button" className="btn-add" onClick={handleAddResistance} style={{ backgroundColor: 'var(--bg-tertiary)', border: '1px solid var(--border-color)', color: 'var(--text-primary)', padding: '0 15px', borderRadius: '6px', cursor: 'pointer' }}>+ Add</button>
+                <input
+                  type="text"
+                  placeholder="e.g. Cold"
+                  value={newResistance}
+                  onChange={(e) => setNewResistance(e.target.value)}
+                  onKeyDown={(e) =>
+                    e.key === 'Enter' && (e.preventDefault(), handleAddResistance())
+                  }
+                />
+                <button
+                  type="button"
+                  className="btn-add"
+                  onClick={handleAddResistance}
+                  style={{
+                    backgroundColor: 'var(--bg-tertiary)',
+                    border: '1px solid var(--border-color)',
+                    color: 'var(--text-primary)',
+                    padding: '0 15px',
+                    borderRadius: '6px',
+                    cursor: 'pointer',
+                  }}
+                >
+                  + Add
+                </button>
               </div>
             </div>
 
             <div className="form-group">
               <label>Vulnerabilities</label>
-              <div className="tag-list" style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '8px' }}>
+              <div
+                className="tag-list"
+                style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '8px' }}
+              >
                 {vulnerabilities.length === 0 ? (
-                  <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontStyle: 'italic' }}>No vulnerabilities.</span>
+                  <span
+                    style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontStyle: 'italic' }}
+                  >
+                    No vulnerabilities.
+                  </span>
                 ) : (
                   vulnerabilities.map((vuln, idx) => (
-                    <span key={idx} className="pill-tag" style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', backgroundColor: 'var(--bg-tertiary)', border: '1px solid var(--border-color)', padding: '4px 10px', borderRadius: '15px', fontSize: '0.8rem' }}>
+                    <span
+                      key={idx}
+                      className="pill-tag"
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '5px',
+                        backgroundColor: 'var(--bg-tertiary)',
+                        border: '1px solid var(--border-color)',
+                        padding: '4px 10px',
+                        borderRadius: '15px',
+                        fontSize: '0.8rem',
+                      }}
+                    >
                       {vuln}
-                      <button type="button" onClick={() => handleRemoveVulnerability(idx)} style={{ background: 'none', border: 'none', color: 'var(--danger-color)', cursor: 'pointer', padding: '0 2px', fontSize: '0.85rem', fontWeight: 'bold' }}>&times;</button>
+                      <button
+                        type="button"
+                        onClick={() => handleRemoveVulnerability(idx)}
+                        style={{
+                          background: 'none',
+                          border: 'none',
+                          color: 'var(--danger-color)',
+                          cursor: 'pointer',
+                          padding: '0 2px',
+                          fontSize: '0.85rem',
+                          fontWeight: 'bold',
+                        }}
+                      >
+                        &times;
+                      </button>
                     </span>
                   ))
                 )}
               </div>
               <div style={{ display: 'flex', gap: '10px' }}>
-                <input type="text" placeholder="e.g. Acid" value={newVulnerability} onChange={(e) => setNewVulnerability(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && (e.preventDefault(), handleAddVulnerability())} />
-                <button type="button" className="btn-add" onClick={handleAddVulnerability} style={{ backgroundColor: 'var(--bg-tertiary)', border: '1px solid var(--border-color)', color: 'var(--text-primary)', padding: '0 15px', borderRadius: '6px', cursor: 'pointer' }}>+ Add</button>
+                <input
+                  type="text"
+                  placeholder="e.g. Acid"
+                  value={newVulnerability}
+                  onChange={(e) => setNewVulnerability(e.target.value)}
+                  onKeyDown={(e) =>
+                    e.key === 'Enter' && (e.preventDefault(), handleAddVulnerability())
+                  }
+                />
+                <button
+                  type="button"
+                  className="btn-add"
+                  onClick={handleAddVulnerability}
+                  style={{
+                    backgroundColor: 'var(--bg-tertiary)',
+                    border: '1px solid var(--border-color)',
+                    color: 'var(--text-primary)',
+                    padding: '0 15px',
+                    borderRadius: '6px',
+                    cursor: 'pointer',
+                  }}
+                >
+                  + Add
+                </button>
               </div>
             </div>
           </div>
@@ -719,22 +1203,49 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
         {activeTab === 'knowledge' && (
           <div className="tab-content">
             <h4 className="section-subtitle">Knowledge Check Results</h4>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '20px' }}>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '12px',
+                marginBottom: '20px',
+              }}
+            >
               <div className="form-group">
                 <label style={{ fontSize: '0.75rem' }}>Easy Check</label>
-                <textarea rows={2} value={knowledge.easy || ''} onChange={(e) => setKnowledgeVal('easy', e.target.value)} placeholder="Basic rumors or obvious features..." />
+                <textarea
+                  rows={2}
+                  value={knowledge.easy || ''}
+                  onChange={(e) => setKnowledgeVal('easy', e.target.value)}
+                  placeholder="Basic rumors or obvious features..."
+                />
               </div>
               <div className="form-group">
                 <label style={{ fontSize: '0.75rem' }}>Normal Check</label>
-                <textarea rows={2} value={knowledge.normal || ''} onChange={(e) => setKnowledgeVal('normal', e.target.value)} placeholder="General habitat, biology, and combat habits..." />
+                <textarea
+                  rows={2}
+                  value={knowledge.normal || ''}
+                  onChange={(e) => setKnowledgeVal('normal', e.target.value)}
+                  placeholder="General habitat, biology, and combat habits..."
+                />
               </div>
               <div className="form-group">
                 <label style={{ fontSize: '0.75rem' }}>Hard Check</label>
-                <textarea rows={2} value={knowledge.hard || ''} onChange={(e) => setKnowledgeVal('hard', e.target.value)} placeholder="Specific details, weaknesses, and origins..." />
+                <textarea
+                  rows={2}
+                  value={knowledge.hard || ''}
+                  onChange={(e) => setKnowledgeVal('hard', e.target.value)}
+                  placeholder="Specific details, weaknesses, and origins..."
+                />
               </div>
               <div className="form-group">
                 <label style={{ fontSize: '0.75rem' }}>Legendary Check</label>
-                <textarea rows={2} value={knowledge.legendary || ''} onChange={(e) => setKnowledgeVal('legendary', e.target.value)} placeholder="Unique individuals, mythical variants, ancient history..." />
+                <textarea
+                  rows={2}
+                  value={knowledge.legendary || ''}
+                  onChange={(e) => setKnowledgeVal('legendary', e.target.value)}
+                  placeholder="Unique individuals, mythical variants, ancient history..."
+                />
               </div>
             </div>
 

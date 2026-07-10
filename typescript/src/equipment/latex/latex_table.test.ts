@@ -130,7 +130,10 @@ t.test('longtable', (t) => {
   });
   t.match(latexNoAttune, /\\begin{longtablewrapper}/);
   t.match(latexNoAttune, /\\lcaption{Test Caption}/);
-  t.match(latexNoAttune, /\\tb{Name}\s*&\s*\\tb{Description}\s*&\s*\\tb{Rank \(Cost\)}\s*&\s*\\tb{Page}/);
+  t.match(
+    latexNoAttune,
+    /\\tb{Name}\s*&\s*\\tb{Description}\s*&\s*\\tb{Rank \(Cost\)}\s*&\s*\\tb{Page}/,
+  );
   t.match(latexNoAttune, /\\itemref{Item 1}/);
   t.notMatch(latexNoAttune, /\\tb{Attune}/);
 
@@ -140,7 +143,10 @@ t.test('longtable', (t) => {
     withCategory: false,
     withAttunement: true,
   });
-  t.match(latexWithAttune, /\\tb{Name}\s*&\s*\\tb{Description}\s*&\s*\\tb{Attune}\s*&\s*\\tb{Rank \(Cost\)}\s*&\s*\\tb{Page}/);
+  t.match(
+    latexWithAttune,
+    /\\tb{Name}\s*&\s*\\tb{Description}\s*&\s*\\tb{Attune}\s*&\s*\\tb{Rank \(Cost\)}\s*&\s*\\tb{Page}/,
+  );
   t.match(latexWithAttune, /\\itemref{Item 1}/);
   t.match(latexWithAttune, /&\s*Yes/);
   t.match(latexWithAttune, /&\s*Desc 1/);

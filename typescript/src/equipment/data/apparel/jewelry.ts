@@ -148,7 +148,8 @@ function amulets(): RawApparel[] {
           {
             rank: 4,
             short_description: 'Ignore a potentially lethal vital wound',
-            description: 'You completely negate the new vital wound instead of gaining a vital roll bonus.',
+            description:
+              'You completely negate the new vital wound instead of gaining a vital roll bonus.',
           },
         ],
         tags: [],
