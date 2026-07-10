@@ -285,4 +285,86 @@ describe('Monster UI Integration Tests (Serverless)', () => {
     assert.ok(sheet3);
     assert.notStrictEqual(sheet1, sheet3); // Assert sheet was recreated!
   });
+
+  test('saveAndValidateAll generates code and computes stats for structured complex entities (spells, custom abilities, passives, weapons, rituals)', () => {
+    const testMonsterName = `ComplexStructMonster_${Date.now()}`;
+    const initialDb = getDb();
+
+    const complexMonster = {
+      name: testMonsterName,
+      requiredProperties: {
+        alignment: 'neutral',
+        base_class: 'warrior',
+        elite: false,
+        creature_origin: 'natural',
+        creature_type: 'beast',
+        size: 'medium',
+        level: 3,
+      },
+      freeformCode: '// freeform code block',
+      standardAbilities: [
+        {
+          type: 'spell' as const,
+          name: 'Word of Power',
+          options: { displayName: 'Echoing Word', isMagical: true }
+        }
+      ],
+      customAbilities: [
+        {
+          type: 'maneuver' as const,
+          name: 'Double Slash',
+          usageTime: 'Standard',
+          cost: '1 Stamina',
+          effect: 'Deal double slash damage.',
+          isMagical: false,
+          attack: {
+            targeting: 'Reflex Defense',
+            hit: 'Target takes damage.'
+          }
+        }
+      ],
+      passiveAbilities: [
+        {
+          name: 'Regeneration',
+          effect: 'Heals 5 HP per round.',
+          isMagical: true
+        }
+      ],
+      weapons: [
+        {
+          name: 'claws',
+          addStandard: true,
+          addMult: true,
+          options: { displayName: 'Vicious Claws' }
+        }
+      ],
+      rituals: ['Creation', 'Universal']
+    };
+
+    const updatedDb = {
+      ...initialDb,
+      monsters: [...initialDb.monsters, complexMonster]
+    };
+
+    console.log(`Saving database and validating complex structured monster ${testMonsterName}...`);
+    const result = saveAndValidateAll(updatedDb);
+
+    assert.strictEqual(result.success, true);
+    const validation = result.validations[testMonsterName];
+    assert.strictEqual(validation.success, true);
+    
+    // Assert computed stats serialization contains our fields
+    assert.ok(validation.computedStats.activeAbilities.some((a: any) => a.name === 'Echoing Word'));
+    assert.ok(validation.computedStats.activeAbilities.some((a: any) => a.name === 'Double Slash'));
+    assert.ok(validation.computedStats.passiveAbilities.some((p: any) => p.name === 'Regeneration'));
+    
+    // Assert codegen outputs the correct builder methods
+    const generatedContent = fs.readFileSync(generatedTsPath, 'utf8');
+    assert.ok(generatedContent.includes(`creature.addSpell("Word of Power", {"displayName":"Echoing Word","isMagical":true})`));
+    assert.ok(generatedContent.includes(`creature.addCustomManeuver(`));
+    assert.ok(generatedContent.includes(`creature.addPassiveAbility(`));
+    assert.ok(generatedContent.includes(`creature.addWeapon("claws")`));
+    assert.ok(generatedContent.includes(`creature.addWeaponMult("claws", {"displayName":"Vicious Claws"})`));
+    assert.ok(generatedContent.includes(`creature.addRituals(["Creation","Universal"])`));
+  });
 });

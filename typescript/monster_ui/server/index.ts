@@ -2,11 +2,57 @@ import express from 'express';
 import { validateMonster } from './validate';
 import { DatabaseData } from './codegen';
 import { getDb, saveAndValidateAll } from './db';
+import { allMysticSpheres } from '@src/abilities/mystic_spheres';
+import { allCombatStyles } from '@src/abilities/combat_styles';
+import { MONSTER_WEAPONS } from '@src/monsters/weapons';
 
 const app = express();
 const port = 3001;
 
 app.use(express.json());
+
+// Fetch available spells, maneuvers, weapons, and mystic spheres from the game engine
+app.get('/api/reference', (req, res) => {
+  console.log('[API] GET /api/reference - Fetching engine reference data');
+  try {
+    const spellNames: string[] = [];
+    for (const sphere of allMysticSpheres) {
+      if (sphere.spells) {
+        for (const spell of sphere.spells) {
+          spellNames.push(spell.name);
+        }
+      }
+    }
+    const uniqueSpells = Array.from(new Set(spellNames)).sort();
+
+    const maneuverNames: string[] = [];
+    for (const style of allCombatStyles) {
+      if (style.maneuvers) {
+        for (const maneuver of style.maneuvers) {
+          maneuverNames.push(maneuver.name);
+        }
+      }
+    }
+    const uniqueManeuvers = Array.from(new Set(maneuverNames)).sort();
+
+    const weaponNames = Array.from(MONSTER_WEAPONS).sort();
+
+    const sphereNames = allMysticSpheres
+      .map((s) => s.name)
+      .filter((name) => name !== 'Non-Sphere Spells')
+      .sort();
+
+    res.json({
+      spells: uniqueSpells,
+      maneuvers: uniqueManeuvers,
+      weapons: weaponNames,
+      spheres: sphereNames,
+    });
+  } catch (err: any) {
+    console.error('[API Error] Failed to fetch reference data:', err);
+    res.status(500).json({ error: err.message || err });
+  }
+});
 
 // Get the full list of monsters and groups
 app.get('/api/monsters', (req, res) => {

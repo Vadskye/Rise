@@ -15,6 +15,56 @@ export interface MonsterRequiredProperties {
   level: number;
 }
 
+export interface StandardAbilityConfig {
+  type: 'spell' | 'maneuver';
+  name: string;
+  options?: {
+    displayName?: string;
+    usageTime?: string;
+    isMagical?: boolean;
+  };
+}
+
+export interface CustomAbilityAttackConfig {
+  targeting: string;
+  hit: string;
+  crit?: string | null;
+  miss?: string;
+  injury?: string;
+  halfOnMiss?: boolean;
+}
+
+export interface CustomAbilityConfig {
+  type: 'spell' | 'maneuver';
+  name: string;
+  usageTime?: string;
+  cost?: string;
+  effect?: string;
+  isMagical?: boolean;
+  tags?: string[];
+  attack?: CustomAbilityAttackConfig;
+}
+
+export interface PassiveAbilityConfig {
+  name: string;
+  effect: string;
+  isMagical: boolean;
+}
+
+export interface WeaponConfig {
+  name: string;
+  addStandard?: boolean;
+  addMult?: boolean;
+  addGrappling?: boolean;
+  addSneak?: boolean;
+  addLatchOn?: boolean;
+  options?: {
+    displayName?: string;
+    usageTime?: string;
+    isMagical?: boolean;
+  };
+}
+
 export interface MonsterData {
   name: string;
   requiredProperties: MonsterRequiredProperties;
@@ -35,6 +85,11 @@ export interface MonsterData {
   vulnerabilities?: string[];
   equippedArmor?: string;
   properties?: Record<string, any>;
+  standardAbilities?: StandardAbilityConfig[];
+  customAbilities?: CustomAbilityConfig[];
+  passiveAbilities?: PassiveAbilityConfig[];
+  weapons?: WeaponConfig[];
+  rituals?: string[];
 }
 
 export interface MonsterGroupKnowledge {
@@ -143,6 +198,106 @@ function generateMonsterBody(monster: MonsterData, indent: string): string {
 
   if (monster.properties && Object.keys(monster.properties).length > 0) {
     lines.push(`${indent}creature.setProperties(${JSON.stringify(monster.properties)});`);
+  }
+
+  // 1. Standard Spells & Maneuvers:
+  // We translate standard references back to creature.addSpell or creature.addManeuver calls,
+  // attaching any display name, isMagical, or usageTime overrides defined in the sub-form options.
+  if (monster.standardAbilities && monster.standardAbilities.length > 0) {
+    for (const ability of monster.standardAbilities) {
+      const optionsStr =
+        ability.options && Object.keys(ability.options).length > 0
+          ? `, ${JSON.stringify(ability.options)}`
+          : '';
+      if (ability.type === 'spell') {
+        lines.push(`${indent}creature.addSpell(${JSON.stringify(ability.name)}${optionsStr});`);
+      } else {
+        lines.push(`${indent}creature.addManeuver(${JSON.stringify(ability.name)}${optionsStr});`);
+      }
+    }
+  }
+
+  // 2. Custom Active Abilities:
+  // We reconstruct the CustomMonsterAbility parameter object dynamically, stripping out
+  // undefined or empty fields to keep the generated TypeScript file neat and readable.
+  if (monster.customAbilities && monster.customAbilities.length > 0) {
+    for (const ability of monster.customAbilities) {
+      const abilityObj: any = {
+        name: ability.name,
+        isMagical: ability.isMagical,
+      };
+      if (ability.usageTime) abilityObj.usageTime = ability.usageTime;
+      if (ability.cost) abilityObj.cost = ability.cost;
+      if (ability.effect) abilityObj.effect = ability.effect;
+      if (ability.tags && ability.tags.length > 0) abilityObj.tags = ability.tags;
+      if (ability.attack) {
+        abilityObj.attack = {
+          targeting: ability.attack.targeting,
+          hit: ability.attack.hit,
+        };
+        if (ability.attack.crit) abilityObj.attack.crit = ability.attack.crit;
+        if (ability.attack.miss) abilityObj.attack.miss = ability.attack.miss;
+        if (ability.attack.injury) abilityObj.attack.injury = ability.attack.injury;
+        if (ability.attack.halfOnMiss !== undefined) abilityObj.attack.halfOnMiss = ability.attack.halfOnMiss;
+      }
+
+      // Format the custom ability object output with proper indentation to align with the generated file
+      const abilityStr = JSON.stringify(abilityObj, null, 2)
+        .split('\n')
+        .map((line, idx) => (idx === 0 ? line : indent + '  ' + line))
+        .join('\n');
+
+      if (ability.type === 'spell') {
+        lines.push(`${indent}creature.addCustomSpell(${abilityStr});`);
+      } else {
+        lines.push(`${indent}creature.addCustomManeuver(${abilityStr});`);
+      }
+    }
+  }
+
+  // 3. Passive Abilities:
+  // Convert passive configs directly into creature.addPassiveAbility method arguments.
+  if (monster.passiveAbilities && monster.passiveAbilities.length > 0) {
+    for (const ability of monster.passiveAbilities) {
+      const passiveStr = JSON.stringify(ability, null, 2)
+        .split('\n')
+        .map((line, idx) => (idx === 0 ? line : indent + '  ' + line))
+        .join('\n');
+      lines.push(`${indent}creature.addPassiveAbility(${passiveStr});`);
+    }
+  }
+
+  // 4. Weapons & Strikes:
+  // An equipped weapon is first declared via addWeapon. Special maneuvers/strike actions
+  // (like multiplier, grappling, sneak attack, or latch-on strikes) are appended next with options.
+  if (monster.weapons && monster.weapons.length > 0) {
+    for (const weapon of monster.weapons) {
+      if (weapon.addStandard) {
+        lines.push(`${indent}creature.addWeapon(${JSON.stringify(weapon.name)});`);
+      }
+      const optStr =
+        weapon.options && Object.keys(weapon.options).length > 0
+          ? `, ${JSON.stringify(weapon.options)}`
+          : '';
+      if (weapon.addMult) {
+        lines.push(`${indent}creature.addWeaponMult(${JSON.stringify(weapon.name)}${optStr});`);
+      }
+      if (weapon.addGrappling) {
+        lines.push(`${indent}creature.addGrapplingStrike(${JSON.stringify(weapon.name)}${optStr});`);
+      }
+      if (weapon.addSneak) {
+        lines.push(`${indent}creature.addSneakAttack(${JSON.stringify(weapon.name)}${optStr});`);
+      }
+      if (weapon.addLatchOn) {
+        lines.push(`${indent}creature.addLatchOn(${JSON.stringify(weapon.name)}${optStr});`);
+      }
+    }
+  }
+
+  // 5. Rituals:
+  // Convert array of Mystic Spheres names into a single creature.addRituals call.
+  if (monster.rituals && monster.rituals.length > 0) {
+    lines.push(`${indent}creature.addRituals(${JSON.stringify(monster.rituals)});`);
   }
 
   lines.push(`${indent}// --- Begin freeform code ---`);
