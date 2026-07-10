@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { DatabaseData, MonsterData, MonsterGroupData, ComputedStats } from './types/monster';
 import { MonsterSidebar, SidebarSelection } from './components/MonsterSidebar';
 import { MonsterForm } from './components/MonsterForm';
@@ -19,7 +19,8 @@ const defaultRequiredProperties = {
 export const App: React.FC = () => {
   const [db, setDb] = useState<DatabaseData>({ monsters: [], monsterGroups: [] });
   const [activeSelection, setActiveSelection] = useState<SidebarSelection>(null);
-  
+  const lastSelectionRef = useRef<SidebarSelection>(null);
+
   const [previewStats, setPreviewStats] = useState<ComputedStats | null>(null);
   const [errors, setErrors] = useState<string[]>([]);
   const [warnings, setWarnings] = useState<string[]>([]);
@@ -46,10 +47,14 @@ export const App: React.FC = () => {
 
   // Debounced preview calculation effect
   useEffect(() => {
+    let active = true;
+    const controller = new AbortController();
+
     if (!activeSelection) {
       setPreviewStats(null);
       setErrors([]);
       setWarnings([]);
+      lastSelectionRef.current = null;
       return;
     }
 
@@ -58,6 +63,7 @@ export const App: React.FC = () => {
       setPreviewStats(null);
       setErrors([]);
       setWarnings([]);
+      lastSelectionRef.current = activeSelection;
       return;
     }
 
@@ -74,18 +80,31 @@ export const App: React.FC = () => {
 
     if (!monsterData) {
       setPreviewStats(null);
+      lastSelectionRef.current = activeSelection;
       return;
     }
 
-    setLoading(true);
-    const handler = setTimeout(() => {
+    // Check if user switched to a completely different monster
+    const selectionChanged =
+      !lastSelectionRef.current ||
+      lastSelectionRef.current.type !== activeSelection.type ||
+      lastSelectionRef.current.name !== activeSelection.name ||
+      (activeSelection.type === 'group-monster' &&
+        (lastSelectionRef.current as any).groupName !== activeSelection.groupName);
+
+    lastSelectionRef.current = activeSelection;
+
+    const fetchPreview = () => {
+      setLoading(true);
       fetch('/api/preview', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
+        signal: controller.signal,
         body: JSON.stringify({
           monster: monsterData,
           sharedFreeformCode,
-          groupName: activeSelection.type === 'group-monster' ? activeSelection.groupName : undefined,
+          groupName:
+            activeSelection.type === 'group-monster' ? activeSelection.groupName : undefined,
         }),
       })
         .then((res) => {
@@ -93,19 +112,41 @@ export const App: React.FC = () => {
           return res.json();
         })
         .then((result) => {
+          if (!active) return;
           setErrors(result.errors || []);
           setWarnings(result.warnings || []);
           setPreviewStats(result.computedStats);
           setLoading(false);
         })
         .catch((err) => {
+          if (err.name === 'AbortError') return;
+          if (!active) return;
           setErrors([`Engine calculation failed: ${err.message || err}`]);
           setPreviewStats(null);
           setLoading(false);
         });
-    }, 500);
+    };
 
-    return () => clearTimeout(handler);
+    if (selectionChanged) {
+      // Selection changed: fetch instantly
+      fetchPreview();
+    } else {
+      // Statistics changed while selecting the same monster: debounce
+      const handler = setTimeout(fetchPreview, 500);
+      const originalAbort = () => {
+        active = false;
+        controller.abort();
+      };
+      return () => {
+        originalAbort();
+        clearTimeout(handler);
+      };
+    }
+
+    return () => {
+      active = false;
+      controller.abort();
+    };
   }, [activeSelection, db]);
 
   // Database mutations
@@ -152,7 +193,7 @@ export const App: React.FC = () => {
                 ...g,
                 monsters: g.monsters.map((m) => (m.name === activeSelection.name ? updated : m)),
               }
-            : g
+            : g,
         ),
       };
       if (updated.name !== activeSelection.name) {
@@ -225,7 +266,7 @@ export const App: React.FC = () => {
     const updatedDb = {
       ...db,
       monsterGroups: db.monsterGroups.map((g) =>
-        g.name === groupName ? { ...g, monsters: [...g.monsters, newMonster] } : g
+        g.name === groupName ? { ...g, monsters: [...g.monsters, newMonster] } : g,
       ),
     };
     setDb(updatedDb);
@@ -264,7 +305,7 @@ export const App: React.FC = () => {
     const updatedDb = {
       ...db,
       monsterGroups: db.monsterGroups.map((g) =>
-        g.name === groupName ? { ...g, monsters: g.monsters.filter((m) => m.name !== name) } : g
+        g.name === groupName ? { ...g, monsters: g.monsters.filter((m) => m.name !== name) } : g,
       ),
     };
     setDb(updatedDb);
@@ -347,7 +388,13 @@ export const App: React.FC = () => {
                 warnings={warnings}
               />
               {activeSelection.type !== 'group' && (
-                <div style={{ padding: '0 25px 25px 25px', borderTop: '1px solid var(--border-color)', paddingTop: '20px' }}>
+                <div
+                  style={{
+                    padding: '0 25px 25px 25px',
+                    borderTop: '1px solid var(--border-color)',
+                    paddingTop: '20px',
+                  }}
+                >
                   <ValidationBox errors={globalErrors} warnings={globalWarnings} />
                 </div>
               )}
@@ -366,7 +413,15 @@ export const App: React.FC = () => {
           </div>
           <div className="preview-scroll">
             {activeSelection?.type === 'group' ? (
-              <div style={{ color: 'var(--text-muted)', fontSize: '0.95rem', fontStyle: 'italic', textAlign: 'center', marginTop: '40px' }}>
+              <div
+                style={{
+                  color: 'var(--text-muted)',
+                  fontSize: '0.95rem',
+                  fontStyle: 'italic',
+                  textAlign: 'center',
+                  marginTop: '40px',
+                }}
+              >
                 Select a monster inside the group to preview its statistics.
               </div>
             ) : (

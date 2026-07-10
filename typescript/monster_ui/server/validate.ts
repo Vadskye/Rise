@@ -19,7 +19,13 @@ export function validateMonster(
   if (characterSheetExists(name)) {
     const existingSheet = getCharacterSheet(name);
     if (existingSheet && existingSheet.cachedInputJson === inputJson) {
-      return existingSheet.cachedValidationResult;
+      console.log('Cache hit');
+      return {
+        ...existingSheet.cachedValidationResult,
+        cacheHit: true,
+      };
+    } else {
+      console.log('Cache miss');
     }
   }
 
@@ -54,7 +60,7 @@ export function validateMonster(
       creature.setTrainedSkills(monster.trainedSkills as any);
     }
 
-    if (monster.knowledge && Object.values(monster.knowledge).some(v => v)) {
+    if (monster.knowledge && Object.values(monster.knowledge).some((v) => v)) {
       const cleanKnowledge: Record<string, string> = {};
       for (const [key, value] of Object.entries(monster.knowledge)) {
         if (value) cleanKnowledge[key] = value;
@@ -173,6 +179,7 @@ export function validateMonster(
       errors,
       warnings,
       computedStats,
+      cacheHit: false,
     };
     sheet.cachedInputJson = inputJson;
     sheet.cachedValidationResult = result;
@@ -184,6 +191,7 @@ export function validateMonster(
       errors,
       warnings,
       computedStats: null,
+      cacheHit: false,
     };
     const sheet = getCharacterSheet(name);
     if (sheet) {

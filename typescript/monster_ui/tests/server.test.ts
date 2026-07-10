@@ -196,6 +196,87 @@ describe('Monster UI Integration Tests (Full Server)', () => {
     assert.ok(generatedContent.includes(`'${testGroupMonsterName}'`));
   });
 
+  test('POST /api/preview cache hits under concurrent/rapid switching requests', async () => {
+    const monsterA = {
+      name: `RapidMonsterA_${Date.now()}`,
+      requiredProperties: {
+        alignment: 'neutral',
+        base_class: 'warrior',
+        elite: false,
+        creature_origin: 'natural',
+        creature_type: 'beast',
+        size: 'medium',
+        level: 1,
+      },
+      freeformCode: '// rapid switch A',
+    };
+
+    const monsterB = {
+      name: `RapidMonsterB_${Date.now()}`,
+      requiredProperties: {
+        alignment: 'neutral',
+        base_class: 'warrior',
+        elite: false,
+        creature_origin: 'natural',
+        creature_type: 'beast',
+        size: 'medium',
+        level: 2,
+      },
+      freeformCode: '// rapid switch B',
+    };
+
+    // 1. Initial request for Monster A (cold start/miss)
+    const resA1 = await fetch(`${baseUrl}/api/preview`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ monster: monsterA }),
+    });
+    assert.strictEqual(resA1.status, 200);
+    const resultA1 = await resA1.json();
+    assert.strictEqual(resultA1.cacheHit, false);
+
+    // 2. Initial request for Monster B (cold start/miss)
+    const resB1 = await fetch(`${baseUrl}/api/preview`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ monster: monsterB }),
+    });
+    assert.strictEqual(resB1.status, 200);
+    const resultB1 = await resB1.json();
+    assert.strictEqual(resultB1.cacheHit, false);
+
+    // 3. Send rapid concurrent requests for A and B to verify cache hits
+    const promises = [];
+    for (let i = 0; i < 5; i++) {
+      promises.push(
+        fetch(`${baseUrl}/api/preview`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ monster: monsterA }),
+        }).then((res) => res.json()),
+      );
+      promises.push(
+        fetch(`${baseUrl}/api/preview`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ monster: monsterB }),
+        }).then((res) => res.json()),
+      );
+    }
+
+    const results = await Promise.all(promises);
+
+    // Verify all subsequent requests successfully hit the cache and return correct stats
+    for (let i = 0; i < results.length; i++) {
+      const res = results[i];
+      assert.strictEqual(res.success, true);
+      assert.strictEqual(res.cacheHit, true);
+
+      const expectedName = i % 2 === 0 ? monsterA.name : monsterB.name;
+      assert.strictEqual(res.computedStats.name, expectedName);
+    }
+  });
+
   test('POST /api/save rejects malformed JSON payloads with 400 status', async () => {
     const resPost = await fetch(`${baseUrl}/api/save`, {
       method: 'POST',
