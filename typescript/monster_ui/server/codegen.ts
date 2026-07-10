@@ -101,43 +101,43 @@ function generateMonsterBody(monster: MonsterData, indent: string): string {
 
   if (monster.traits && monster.traits.length > 0) {
     for (const trait of monster.traits) {
-      lines.push(`${indent}creature.addTrait('${trait}');`);
+      lines.push(`${indent}creature.addTrait(${JSON.stringify(trait)});`);
     }
   }
 
   if (monster.customSenses && monster.customSenses.length > 0) {
     for (const sense of monster.customSenses) {
-      lines.push(`${indent}creature.addCustomSense('${sense.replace(/'/g, "\\'")}');`);
+      lines.push(`${indent}creature.addCustomSense(${JSON.stringify(sense)});`);
     }
   }
 
   if (monster.customMovementSpeeds && monster.customMovementSpeeds.length > 0) {
     for (const speed of monster.customMovementSpeeds) {
-      lines.push(`${indent}creature.addCustomMovementSpeed('${speed.replace(/'/g, "\\'")}');`);
+      lines.push(`${indent}creature.addCustomMovementSpeed(${JSON.stringify(speed)});`);
     }
   }
 
   if (monster.immunities && monster.immunities.length > 0) {
     for (const immunity of monster.immunities) {
-      lines.push(`${indent}creature.addImmunity('${immunity.replace(/'/g, "\\'")}');`);
+      lines.push(`${indent}creature.addImmunity(${JSON.stringify(immunity)});`);
     }
   }
 
   if (monster.resistances && monster.resistances.length > 0) {
     for (const resistance of monster.resistances) {
-      lines.push(`${indent}creature.addResistant('${resistance.replace(/'/g, "\\'")}');`);
+      lines.push(`${indent}creature.addResistant(${JSON.stringify(resistance)});`);
     }
   }
 
   if (monster.vulnerabilities && monster.vulnerabilities.length > 0) {
     for (const vulnerability of monster.vulnerabilities) {
-      lines.push(`${indent}creature.addVulnerability('${vulnerability.replace(/'/g, "\\'")}');`);
+      lines.push(`${indent}creature.addVulnerability(${JSON.stringify(vulnerability)});`);
     }
   }
 
   if (monster.equippedArmor) {
     lines.push(
-      `${indent}creature.setEquippedArmorName({ bodyArmor: '${monster.equippedArmor}' });`,
+      `${indent}creature.setEquippedArmorName({ bodyArmor: ${JSON.stringify(monster.equippedArmor)} });`,
     );
   }
 

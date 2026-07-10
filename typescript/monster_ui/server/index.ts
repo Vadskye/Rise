@@ -61,7 +61,7 @@ app.post('/api/preview', (req, res) => {
 export { app };
 
 if (process.env.NODE_ENV !== 'test') {
-  app.listen(port, () => {
+  app.listen(port, '127.0.0.1', () => {
     console.log(`Monster Creator API Server listening on http://localhost:${port}`);
   });
 }
