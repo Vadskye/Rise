@@ -7,7 +7,7 @@ interface BookPreviewProps {
 }
 
 export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
-  if (loading) {
+  if (loading && !stats) {
     return (
       <div
         style={{
@@ -80,7 +80,7 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
   });
 
   return (
-    <div className="book-preview-container">
+    <div className={`book-preview-container ${loading ? 'loading-preview' : ''}`}>
       {/* Header */}
       <h4 className="monster-title">
         {stats.name}

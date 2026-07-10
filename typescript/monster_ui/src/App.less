@@ -532,6 +532,11 @@ body {
   font-family: 'Georgia', 'Times New Roman', Times, serif;
   line-height: 1.4;
   border-radius: 2px;
+  transition: opacity 0.15s ease-in-out;
+
+  &.loading-preview {
+    opacity: 0.6;
+  }
 
   h4.monster-title {
     font-size: 1.6rem;
