@@ -1,6 +1,16 @@
 export type Handler<S, T> = (source: S, value: T) => void;
 export type Unsubscriber = () => void;
 
+export interface BatchContext {
+  isActive: boolean;
+  queuedHandlers: Map<Handler<any, any>, { source: any; value: any }>;
+}
+
+export const globalBatchContext: BatchContext = {
+  isActive: false,
+  queuedHandlers: new Map()
+};
+
 export interface Signal<Source, T> {
   on(handler: Handler<Source, T>): () => void;
   off(handler: Handler<Source, T>): void;
@@ -21,9 +31,17 @@ export class SignalEmitter<Source, T> {
   }
 
   public trigger(source: Source, value: T): void {
-    // Duplicate the array to avoid side effects during iteration.
-    for (const handler of this.handlers.slice(0)) {
-      handler(source, value);
+    if (globalBatchContext.isActive) {
+      for (const handler of this.handlers.slice(0)) {
+        if (!globalBatchContext.queuedHandlers.has(handler)) {
+          globalBatchContext.queuedHandlers.set(handler, { source, value });
+        }
+      }
+    } else {
+      // Duplicate the array to avoid side effects during iteration.
+      for (const handler of this.handlers.slice(0)) {
+        handler(source, value);
+      }
     }
   }
 
