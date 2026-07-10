@@ -20,6 +20,8 @@ export const App: React.FC = () => {
   const [db, setDb] = useState<DatabaseData>({ monsters: [], monsterGroups: [] });
   const [activeSelection, setActiveSelection] = useState<SidebarSelection>(null);
   const lastSelectionRef = useRef<SidebarSelection>(null);
+  const prevMonsterDataRef = useRef<MonsterData | null>(null);
+  const lastFetchTimeRef = useRef<number>(0);
 
   const [previewStats, setPreviewStats] = useState<ComputedStats | null>(null);
   const [errors, setErrors] = useState<string[]>([]);
@@ -49,12 +51,14 @@ export const App: React.FC = () => {
   useEffect(() => {
     let active = true;
     const controller = new AbortController();
+    let handler: NodeJS.Timeout | undefined;
 
     if (!activeSelection) {
       setPreviewStats(null);
       setErrors([]);
       setWarnings([]);
       lastSelectionRef.current = null;
+      prevMonsterDataRef.current = null;
       return;
     }
 
@@ -64,6 +68,7 @@ export const App: React.FC = () => {
       setErrors([]);
       setWarnings([]);
       lastSelectionRef.current = activeSelection;
+      prevMonsterDataRef.current = null;
       return;
     }
 
@@ -81,6 +86,7 @@ export const App: React.FC = () => {
     if (!monsterData) {
       setPreviewStats(null);
       lastSelectionRef.current = activeSelection;
+      prevMonsterDataRef.current = null;
       return;
     }
 
@@ -90,9 +96,39 @@ export const App: React.FC = () => {
       lastSelectionRef.current.type !== activeSelection.type ||
       lastSelectionRef.current.name !== activeSelection.name ||
       (activeSelection.type === 'group-monster' &&
-        (lastSelectionRef.current as any).groupName !== activeSelection.groupName);
+        lastSelectionRef.current.type === 'group-monster' &&
+        lastSelectionRef.current.groupName !== activeSelection.groupName);
 
     lastSelectionRef.current = activeSelection;
+
+    // Check if the change was to a text field
+    let isTextFieldChange = false;
+    if (!selectionChanged && prevMonsterDataRef.current && monsterData) {
+      const prev = prevMonsterDataRef.current;
+      const curr = monsterData;
+
+      const prevEasy = prev.knowledge?.easy || '';
+      const currEasy = curr.knowledge?.easy || '';
+      const prevNormal = prev.knowledge?.normal || '';
+      const currNormal = curr.knowledge?.normal || '';
+      const prevHard = prev.knowledge?.hard || '';
+      const currHard = curr.knowledge?.hard || '';
+      const prevLegendary = prev.knowledge?.legendary || '';
+      const currLegendary = curr.knowledge?.legendary || '';
+
+      if (
+        prev.name !== curr.name ||
+        prev.freeformCode !== curr.freeformCode ||
+        prevEasy !== currEasy ||
+        prevNormal !== currNormal ||
+        prevHard !== currHard ||
+        prevLegendary !== currLegendary
+      ) {
+        isTextFieldChange = true;
+      }
+    }
+
+    prevMonsterDataRef.current = monsterData || null;
 
     const fetchPreview = () => {
       setLoading(true);
@@ -129,23 +165,32 @@ export const App: React.FC = () => {
 
     if (selectionChanged) {
       // Selection changed: fetch instantly
+      setPreviewStats(null);
       fetchPreview();
+      lastFetchTimeRef.current = Date.now();
     } else {
-      // Statistics changed while selecting the same monster: debounce
-      const handler = setTimeout(fetchPreview, 500);
-      const originalAbort = () => {
-        active = false;
-        controller.abort();
-      };
-      return () => {
-        originalAbort();
-        clearTimeout(handler);
-      };
+      // Statistics changed while selecting the same monster: leading-edge debounce
+      const now = Date.now();
+      const timeSinceLastFetch = now - lastFetchTimeRef.current;
+
+      if (!isTextFieldChange && timeSinceLastFetch > 300) {
+        fetchPreview();
+        lastFetchTimeRef.current = now;
+      } else {
+        const debounceDelay = isTextFieldChange ? 500 : 50;
+        handler = setTimeout(() => {
+          fetchPreview();
+          lastFetchTimeRef.current = Date.now();
+        }, debounceDelay);
+      }
     }
 
     return () => {
       active = false;
       controller.abort();
+      if (handler) {
+        clearTimeout(handler);
+      }
     };
   }, [activeSelection, db]);
 
@@ -190,9 +235,9 @@ export const App: React.FC = () => {
         monsterGroups: db.monsterGroups.map((g) =>
           g.name === activeSelection.groupName
             ? {
-                ...g,
-                monsters: g.monsters.map((m) => (m.name === activeSelection.name ? updated : m)),
-              }
+              ...g,
+              monsters: g.monsters.map((m) => (m.name === activeSelection.name ? updated : m)),
+            }
             : g,
         ),
       };
@@ -325,8 +370,8 @@ export const App: React.FC = () => {
       ? db.monsters.find((m) => m.name === activeSelection.name)
       : activeSelection?.type === 'group-monster'
         ? db.monsterGroups
-            .find((g) => g.name === activeSelection.groupName)
-            ?.monsters.find((m) => m.name === activeSelection.name)
+          .find((g) => g.name === activeSelection.groupName)
+          ?.monsters.find((m) => m.name === activeSelection.name)
         : undefined;
 
   const activeGroup =
