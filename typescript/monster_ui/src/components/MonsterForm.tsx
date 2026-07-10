@@ -69,7 +69,7 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
 
         <div className="form-group">
           <label>Group Knowledge Table</label>
-          <div className="form-row-grid" style={{ marginTop: '5px' }}>
+          <div className="form-row-grid group-knowledge-table" style={{ marginTop: '5px' }}>
             <div>
               <label style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>Normal</label>
               <textarea
