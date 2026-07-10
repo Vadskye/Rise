@@ -9,15 +9,80 @@
         {
           "name": "Goblin Skirmisher",
           "requiredProperties": {
-            "alignment": "neutral",
-            "base_class": "warrior",
+            "alignment": "chaotic evil",
+            "base_class": "skirmisher",
             "elite": false,
             "creature_origin": "natural",
-            "creature_type": "beast",
+            "creature_type": "humanoid",
             "size": "medium",
             "level": 1
           },
-          "freeformCode": ""
+          "baseAttributes": [
+            -1,
+            4,
+            0,
+            -2,
+            2,
+            -2
+          ],
+          "trainedSkills": [
+            "awareness"
+          ],
+          "equippedArmor": "buff leather",
+          "freeformCode": "creature.addWeaponMult('spear');\ncreature.addManeuver('Charge', { weapon: 'spear' });\ncreature.setEquippedArmorName({ shield: 'buckler' });"
+        },
+        {
+          "name": "Wolf Rider",
+          "requiredProperties": {
+            "alignment": "chaotic evil",
+            "base_class": "skirmisher",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_type": "humanoid",
+            "size": "medium",
+            "level": 3
+          },
+          "properties": {
+            "has_art": true
+          },
+          "baseAttributes": [
+            -1,
+            4,
+            0,
+            -2,
+            2,
+            -2
+          ],
+          "trainedSkills": [
+            "ride"
+          ],
+          "equippedArmor": "buff leather",
+          "freeformCode": "creature.addWeaponMult('lance');\ncreature.addWeaponMult('spear');\ncreature.setEquippedArmorName({ shield: 'buckler' });"
+        },
+        {
+          "name": "Goblin Shaman",
+          "requiredProperties": {
+            "alignment": "chaotic evil",
+            "base_class": "skirmisher",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_type": "humanoid",
+            "size": "medium",
+            "level": 1
+          },
+          "baseAttributes": [
+            -1,
+            3,
+            0,
+            -2,
+            2,
+            3
+          ],
+          "trainedSkills": [
+            "awareness"
+          ],
+          "equippedArmor": "buff leather",
+          "freeformCode": "creature.addSpell('Word of Power');\ncreature.setEquippedArmorName({ shield: 'standard shield' });\ncreature.addWeaponMult('spear', { displayName: 'Consecrated Strike', isMagical: true });"
         }
       ],
       "knowledge": {

@@ -29,16 +29,66 @@ export function addMonstersFromUi(grimoire: Grimoire) {
         'Goblin Skirmisher',
         (creature: Creature) => {
           creature.setRequiredProperties({
-                    "alignment": "neutral",
-                    "base_class": "warrior",
-                    "elite": false,
-                    "creature_origin": "natural",
-                    "creature_type": "beast",
-                    "size": "medium",
-                    "level": 1
-          });
+              "alignment": "chaotic evil",
+              "base_class": "skirmisher",
+              "elite": false,
+              "creature_origin": "natural",
+              "creature_type": "humanoid",
+              "size": "medium",
+              "level": 1
+            });
+          creature.setBaseAttributes([-1,4,0,-2,2,-2]);
+          creature.setTrainedSkills(["awareness"]);
+          creature.setEquippedArmorName({ bodyArmor: 'buff leather' });
           // --- Begin freeform code ---
-          
+          creature.addWeaponMult('spear');
+          creature.addManeuver('Charge', { weapon: 'spear' });
+          creature.setEquippedArmorName({ shield: 'buckler' });
+          // --- End freeform code ---
+        },
+      ],
+      [
+        'Wolf Rider',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+              "alignment": "chaotic evil",
+              "base_class": "skirmisher",
+              "elite": false,
+              "creature_origin": "natural",
+              "creature_type": "humanoid",
+              "size": "medium",
+              "level": 3
+            });
+          creature.setBaseAttributes([-1,4,0,-2,2,-2]);
+          creature.setTrainedSkills(["ride"]);
+          creature.setEquippedArmorName({ bodyArmor: 'buff leather' });
+          creature.setProperties({"has_art":true});
+          // --- Begin freeform code ---
+          creature.addWeaponMult('lance');
+          creature.addWeaponMult('spear');
+          creature.setEquippedArmorName({ shield: 'buckler' });
+          // --- End freeform code ---
+        },
+      ],
+      [
+        'Goblin Shaman',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+              "alignment": "chaotic evil",
+              "base_class": "skirmisher",
+              "elite": false,
+              "creature_origin": "natural",
+              "creature_type": "humanoid",
+              "size": "medium",
+              "level": 1
+            });
+          creature.setBaseAttributes([-1,3,0,-2,2,3]);
+          creature.setTrainedSkills(["awareness"]);
+          creature.setEquippedArmorName({ bodyArmor: 'buff leather' });
+          // --- Begin freeform code ---
+          creature.addSpell('Word of Power');
+          creature.setEquippedArmorName({ shield: 'standard shield' });
+          creature.addWeaponMult('spear', { displayName: 'Consecrated Strike', isMagical: true });
           // --- End freeform code ---
         },
       ]
