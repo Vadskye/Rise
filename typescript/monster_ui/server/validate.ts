@@ -46,10 +46,19 @@ export function validateMonster(
   const warnings: string[] = [];
   const errors: string[] = [];
 
+function cleanMessage(msg: string, name: string): string {
+  const prefix = `Monster ${name}: `;
+  if (msg.startsWith(prefix)) {
+    return msg.slice(prefix.length);
+  }
+  return msg;
+}
+
   // Override console.warn to capture validation warnings
   const originalWarn = console.warn;
   console.warn = (...args: any[]) => {
-    warnings.push(args.join(' '));
+    const msg = args.join(' ');
+    warnings.push(cleanMessage(msg, name));
     originalWarn(...args);
   };
 
@@ -195,7 +204,8 @@ export function validateMonster(
     sheet.cachedValidationResult = result;
     return result;
   } catch (err: any) {
-    errors.push(err.message || String(err));
+    const msg = err.message || String(err);
+    errors.push(cleanMessage(msg, name));
     const result = {
       success: false,
       errors,

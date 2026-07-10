@@ -160,14 +160,14 @@ describe('Monster UI Integration Tests (Serverless)', () => {
     assert.ok(generatedContent.includes(`creature.setBaseAttributes([2,3,1,-1,0,-2])`));
     assert.ok(generatedContent.includes(`creature.setTrainedSkills(["stealth","jump"])`));
     assert.ok(generatedContent.includes(`"easy": "Easy text"`));
-    assert.ok(generatedContent.includes(`creature.addTrait('quadrupedal')`));
-    assert.ok(generatedContent.includes(`creature.addCustomSense('Darkvision (60 ft.)')`));
-    assert.ok(generatedContent.includes(`creature.addCustomMovementSpeed('Fly 40 ft.')`));
-    assert.ok(generatedContent.includes(`creature.addImmunity('Fire')`));
-    assert.ok(generatedContent.includes(`creature.addResistant('Cold')`));
-    assert.ok(generatedContent.includes(`creature.addVulnerability('Acid')`));
+    assert.ok(generatedContent.includes(`creature.addTrait("quadrupedal")`));
+    assert.ok(generatedContent.includes(`creature.addCustomSense("Darkvision (60 ft.)")`));
+    assert.ok(generatedContent.includes(`creature.addCustomMovementSpeed("Fly 40 ft.")`));
+    assert.ok(generatedContent.includes(`creature.addImmunity("Fire")`));
+    assert.ok(generatedContent.includes(`creature.addResistant("Cold")`));
+    assert.ok(generatedContent.includes(`creature.addVulnerability("Acid")`));
     assert.ok(
-      generatedContent.includes(`creature.setEquippedArmorName({ bodyArmor: 'breastplate' })`),
+      generatedContent.includes(`creature.setEquippedArmorName({ bodyArmor: "breastplate" })`),
     );
     assert.ok(generatedContent.includes(`"has_art":true`));
   });
