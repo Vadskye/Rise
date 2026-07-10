@@ -3,6 +3,7 @@ import * as path from 'path';
 import { fileURLToPath } from 'url';
 import { saveTypeScriptFile, DatabaseData } from './codegen';
 import { validateMonster } from './validate';
+import { keepOnlyCharacterSheets } from '@src/character_sheet/current_character_sheet';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -57,10 +58,24 @@ export function saveAndValidateAll(db: DatabaseData) {
         validations[`${group.name}.${monster.name}`] = validateMonster(
           monster,
           group.sharedFreeformCode,
+          group.name,
         );
       }
     }
   }
+
+  // Garbage collect sheets for deleted/renamed monsters
+  const activeNames: string[] = [];
+  for (const monster of monsters) {
+    activeNames.push(monster.name);
+  }
+  for (const group of groups) {
+    const groupMonsters = group.monsters || [];
+    for (const monster of groupMonsters) {
+      activeNames.push(monster.name);
+    }
+  }
+  keepOnlyCharacterSheets(activeNames);
 
   console.log('[DB] All validations complete.');
   return { success: true, validations };

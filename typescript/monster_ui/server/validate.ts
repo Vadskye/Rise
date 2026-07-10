@@ -1,7 +1,9 @@
 import { Creature } from '@src/character_sheet/creature';
 import {
   createCharacterSheet,
-  clearAllCharacterSheets,
+  characterSheetExists,
+  getCharacterSheet,
+  deleteCharacterSheet,
 } from '@src/character_sheet/current_character_sheet';
 import { handleEverything } from '@src/character_sheet/sheet_worker';
 import { MonsterData } from './codegen';
@@ -9,9 +11,22 @@ import { MonsterData } from './codegen';
 export function validateMonster(
   monster: MonsterData,
   sharedFreeformCode?: string,
+  groupName?: string,
 ) {
   const { name, requiredProperties, freeformCode } = monster;
-  clearAllCharacterSheets();
+  const inputJson = JSON.stringify({ monster, sharedFreeformCode });
+
+  if (characterSheetExists(name)) {
+    const existingSheet = getCharacterSheet(name);
+    if (existingSheet && existingSheet.cachedInputJson === inputJson) {
+      return existingSheet.cachedValidationResult;
+    }
+  }
+
+  if (characterSheetExists(name)) {
+    deleteCharacterSheet(name);
+  }
+
   const warnings: string[] = [];
   const errors: string[] = [];
 
@@ -153,20 +168,29 @@ export function validateMonster(
       knowledge: creature.getKnowledgeResultConfig(),
     };
 
-    return {
+    const result = {
       success: true,
       errors,
       warnings,
       computedStats,
     };
+    sheet.cachedInputJson = inputJson;
+    sheet.cachedValidationResult = result;
+    return result;
   } catch (err: any) {
     errors.push(err.message || String(err));
-    return {
+    const result = {
       success: false,
       errors,
       warnings,
       computedStats: null,
     };
+    const sheet = getCharacterSheet(name);
+    if (sheet) {
+      sheet.cachedInputJson = inputJson;
+      sheet.cachedValidationResult = result;
+    }
+    return result;
   } finally {
     // Restore console.warn
     console.warn = originalWarn;

@@ -45,6 +45,23 @@ export function clearAllCharacterSheets() {
   currentCharacterName = 'default';
 }
 
+export function getCharacterSheet(characterName: string): CharacterSheet | undefined {
+  return characters[characterName];
+}
+
+export function deleteCharacterSheet(characterName: string): void {
+  delete characters[characterName];
+}
+
+export function keepOnlyCharacterSheets(names: string[]): void {
+  const nameSet = new Set(names);
+  for (const name in characters) {
+    if (name !== 'default' && !nameSet.has(name)) {
+      delete characters[name];
+    }
+  }
+}
+
 // export function calculateCurrentCharacterSheet() {
 //   // We need to make sure that a character sheet exists to configure.
 //   getCurrentCharacterSheet();
