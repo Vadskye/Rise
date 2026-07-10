@@ -57,7 +57,15 @@ export const App: React.FC = () => {
       });
   }, []);
 
-  // Debounced preview calculation effect
+  // Debounced preview calculation effect.
+  // Design Decisions:
+  // 1. Selection Changes: When switching between different monsters, we fetch preview stats instantly 
+  //    and clear the stale preview (`setPreviewStats(null)`) so there is no layout jump or visual lag.
+  // 2. Text Input Changes (Typing): If editing name or freeform code, we apply a 500ms debounce delay.
+  //    This avoids flooding the backend API on every single keystroke.
+  // 3. Discrete Input Changes (Clicking): Toggling check-boxes or changing standard drop-downs
+  //    uses a fast 50ms/leading-edge update because they don't produce rapid keystroke floods 
+  //    and should reflect visually in the book preview almost instantly.
   useEffect(() => {
     let active = true;
     const controller = new AbortController();

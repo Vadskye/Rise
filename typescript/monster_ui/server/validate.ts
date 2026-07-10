@@ -8,6 +8,19 @@ import {
 import { handleEverything } from '@src/character_sheet/sheet_worker';
 import { MonsterData } from './codegen';
 
+/**
+ * Validates a monster configuration by instantiating a real game-engine Creature.
+ * Design decisions:
+ * 1. Caching: We serialize the input data (`monster` and `sharedFreeformCode`) and check if
+ *    an existing character sheet with the same payload is cached. Since sheet recalculations
+ *    are CPU-intensive, this cache prevents redundant calculations during rapid UI updates/switches.
+ * 2. Execution Order: Applies properties in the exact same sequence as codegen: required properties,
+ *    structured fields, group shared freeform code, and finally individual freeform code.
+ * 3. Warning Capture: Overrides `console.warn` to record engine-level validation warnings 
+ *    (e.g., skill/attribute alignment mismatches) so they can be shown inline in the UI.
+ * 4. Error Handling: Intercepts script exceptions (like JavaScript syntax errors in the freeform block)
+ *    and returns them as user-facing errors rather than crashing the server.
+ */
 export function validateMonster(
   monster: MonsterData,
   sharedFreeformCode?: string,
