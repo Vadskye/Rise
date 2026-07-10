@@ -19,13 +19,10 @@ export function validateMonster(
   if (characterSheetExists(name)) {
     const existingSheet = getCharacterSheet(name);
     if (existingSheet && existingSheet.cachedInputJson === inputJson) {
-      console.log('Cache hit');
       return {
         ...existingSheet.cachedValidationResult,
         cacheHit: true,
       };
-    } else {
-      console.log('Cache miss');
     }
   }
 
