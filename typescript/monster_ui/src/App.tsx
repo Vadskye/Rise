@@ -85,6 +85,7 @@ export const App: React.FC = () => {
         body: JSON.stringify({
           monster: monsterData,
           sharedFreeformCode,
+          groupName: activeSelection.type === 'group-monster' ? activeSelection.groupName : undefined,
         }),
       })
         .then((res) => {

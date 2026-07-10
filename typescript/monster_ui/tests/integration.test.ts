@@ -4,6 +4,8 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
 import { getDb, dbPath, saveAndValidateAll } from '../server/db';
+import { validateMonster } from '../server/validate';
+import { getCharacterSheet } from '@src/character_sheet/current_character_sheet';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -237,5 +239,48 @@ describe('Monster UI Integration Tests (Serverless)', () => {
     const generatedContent = fs.readFileSync(generatedTsPath, 'utf8');
     assert.ok(generatedContent.includes(`name: '${testGroupName}'`));
     assert.ok(generatedContent.includes(`'${testGroupMonsterName}'`));
+  });
+
+  test('validateMonster caches character sheets and reuse them on unchanged stats, invalidating them on changes', () => {
+    const monsterName = `CacheTestMonster_${Date.now()}`;
+    const monsterData1 = {
+      name: monsterName,
+      requiredProperties: {
+        alignment: 'neutral',
+        base_class: 'warrior',
+        elite: false,
+        creature_origin: 'natural',
+        creature_type: 'beast',
+        size: 'medium',
+        level: 1,
+      },
+      freeformCode: '// cache test 1',
+    };
+
+    // First validation - should create sheet
+    const result1 = validateMonster(monsterData1);
+    assert.strictEqual(result1.success, true);
+    const sheet1 = getCharacterSheet(monsterName);
+    assert.ok(sheet1);
+
+    // Second validation with identical stats - should hit cache and reuse sheet instance
+    const result2 = validateMonster(monsterData1);
+    assert.strictEqual(result2.success, true);
+    const sheet2 = getCharacterSheet(monsterName);
+    assert.strictEqual(sheet1, sheet2); // Assert exact object reference identity!
+
+    // Third validation with modified stats - should invalidate cache and recreate sheet
+    const monsterData2 = {
+      ...monsterData1,
+      requiredProperties: {
+        ...monsterData1.requiredProperties,
+        level: 2, // change level
+      },
+    };
+    const result3 = validateMonster(monsterData2);
+    assert.strictEqual(result3.success, true);
+    const sheet3 = getCharacterSheet(monsterName);
+    assert.ok(sheet3);
+    assert.notStrictEqual(sheet1, sheet3); // Assert sheet was recreated!
   });
 });

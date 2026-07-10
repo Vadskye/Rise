@@ -14,6 +14,8 @@ export class CharacterSheet {
   private properties: Record<string, Property<SimpleValue>>;
   private repeatingSections: Record<string, RepeatingSection>;
   private latestRowId: number | null = null;
+  public cachedValidationResult?: any;
+  public cachedInputJson?: string;
   private static signalCache: Record<
     string,
     {
