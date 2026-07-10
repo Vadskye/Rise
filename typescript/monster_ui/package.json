@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "concurrently \"vite\" \"tsx watch --ignore ../src/monsters/individual_monsters/monsters_from_ui.ts --tsconfig tsconfig.server.json server/index.ts\"",
     "build": "tsc && vite build",
-    "lint": "eslint \"**/*.ts\"",
-    "prettier": "prettier --write \"**/*.ts\"",
+    "lint": "eslint \"**/*.{ts,tsx}\"",
+    "prettier": "prettier --write \"**/*.{ts,tsx}\"",
     "preview": "vite preview",
     "test": "tsx --tsconfig tsconfig.server.json --test tests/**/*.test.ts"
   },
