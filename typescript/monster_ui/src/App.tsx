@@ -4,6 +4,7 @@ import { MonsterSidebar, SidebarSelection } from './components/MonsterSidebar';
 import { MonsterForm } from './components/MonsterForm';
 import { BookPreview } from './components/BookPreview';
 import { ValidationBox } from './components/ValidationBox';
+import { getChangedPaths } from './utils/compare';
 import './App.less';
 
 const defaultRequiredProperties = {
@@ -15,6 +16,15 @@ const defaultRequiredProperties = {
   size: 'medium',
   level: 1,
 };
+
+const TEXT_FIELDS = new Set([
+  'name',
+  'freeformCode',
+  'knowledge.easy',
+  'knowledge.normal',
+  'knowledge.hard',
+  'knowledge.legendary',
+]);
 
 export const App: React.FC = () => {
   const [db, setDb] = useState<DatabaseData>({ monsters: [], monsterGroups: [] });
@@ -104,28 +114,8 @@ export const App: React.FC = () => {
     // Check if the change was to a text field
     let isTextFieldChange = false;
     if (!selectionChanged && prevMonsterDataRef.current && monsterData) {
-      const prev = prevMonsterDataRef.current;
-      const curr = monsterData;
-
-      const prevEasy = prev.knowledge?.easy || '';
-      const currEasy = curr.knowledge?.easy || '';
-      const prevNormal = prev.knowledge?.normal || '';
-      const currNormal = curr.knowledge?.normal || '';
-      const prevHard = prev.knowledge?.hard || '';
-      const currHard = curr.knowledge?.hard || '';
-      const prevLegendary = prev.knowledge?.legendary || '';
-      const currLegendary = curr.knowledge?.legendary || '';
-
-      if (
-        prev.name !== curr.name ||
-        prev.freeformCode !== curr.freeformCode ||
-        prevEasy !== currEasy ||
-        prevNormal !== currNormal ||
-        prevHard !== currHard ||
-        prevLegendary !== currLegendary
-      ) {
-        isTextFieldChange = true;
-      }
+      const changedPaths = getChangedPaths(prevMonsterDataRef.current, monsterData);
+      isTextFieldChange = changedPaths.length > 0 && changedPaths.every((path) => TEXT_FIELDS.has(path));
     }
 
     prevMonsterDataRef.current = monsterData || null;
