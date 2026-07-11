@@ -5,6 +5,7 @@ import * as path from 'path';
 import { fileURLToPath } from 'url';
 import { getDb, dbPath, saveAndValidateAll } from '../server/db';
 import { validateMonster } from '../server/validate';
+import { generatePreview } from '../server/preview';
 import { getCharacterSheet } from '@src/character_sheet/current_character_sheet';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -88,8 +89,12 @@ describe('Monster UI Integration Tests (Serverless)', () => {
     // Validate returned computed stats for our new monster
     const validation = result.validations[newMonsterName];
     assert.strictEqual(validation.success, true);
-    assert.strictEqual(validation.computedStats.name, newMonsterName);
-    assert.strictEqual(validation.computedStats.level, 1);
+    
+    const previewResult = generatePreview(updatedDb.monsters[updatedDb.monsters.length - 1]);
+    assert.strictEqual(previewResult.success, true);
+    assert.ok(previewResult.computedStats);
+    assert.strictEqual(previewResult.computedStats.name, newMonsterName);
+    assert.strictEqual(previewResult.computedStats.level, 1);
 
     // 4. Verify backend saved it by calling getDb() again
     const finalDb = getDb();
@@ -148,7 +153,9 @@ describe('Monster UI Integration Tests (Serverless)', () => {
     const validation = result.validations[newMonsterName];
     assert.strictEqual(validation.success, true);
 
-    const stats = validation.computedStats;
+    const previewResult = generatePreview(updatedDb.monsters[updatedDb.monsters.length - 1]);
+    assert.strictEqual(previewResult.success, true);
+    const stats = previewResult.computedStats;
     assert.ok(stats);
     assert.strictEqual(stats.name, newMonsterName);
     assert.ok(stats.skills.includes('stealth'));
@@ -224,8 +231,14 @@ describe('Monster UI Integration Tests (Serverless)', () => {
     // Validate returned computed stats for our new group monster
     const validation = result.validations[validationKey];
     assert.strictEqual(validation.success, true);
-    assert.strictEqual(validation.computedStats.name, testGroupMonsterName);
-    assert.strictEqual(validation.computedStats.level, 1);
+
+    const targetGroup = updatedDb.monsterGroups[updatedDb.monsterGroups.length - 1];
+    const targetMonster = targetGroup.monsters[0];
+    const previewResult = generatePreview(targetMonster, targetGroup.sharedFreeformCode, targetGroup.name);
+    assert.strictEqual(previewResult.success, true);
+    assert.ok(previewResult.computedStats);
+    assert.strictEqual(previewResult.computedStats.name, testGroupMonsterName);
+    assert.strictEqual(previewResult.computedStats.level, 1);
 
     // 4. Verify backend saved it by calling getDb() again
     const finalDb = getDb();
@@ -354,10 +367,13 @@ describe('Monster UI Integration Tests (Serverless)', () => {
     assert.strictEqual(validation.success, true);
 
     // Assert computed stats serialization contains our fields
-    assert.ok(validation.computedStats.activeAbilities.some((a: any) => a.name === 'Echoing Word'));
-    assert.ok(validation.computedStats.activeAbilities.some((a: any) => a.name === 'Double Slash'));
+    const previewResult = generatePreview(complexMonster);
+    assert.strictEqual(previewResult.success, true);
+    assert.ok(previewResult.computedStats);
+    assert.ok(previewResult.computedStats.activeAbilities.some((a: any) => a.name === 'Echoing Word'));
+    assert.ok(previewResult.computedStats.activeAbilities.some((a: any) => a.name === 'Double Slash'));
     assert.ok(
-      validation.computedStats.passiveAbilities.some((p: any) => p.name === 'Regeneration'),
+      previewResult.computedStats.passiveAbilities.some((p: any) => p.name === 'Regeneration'),
     );
 
     // Assert codegen outputs the correct builder methods
