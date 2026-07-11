@@ -4,7 +4,6 @@ import { MonsterSidebar, SidebarSelection } from './components/MonsterSidebar';
 import { MonsterForm } from './components/MonsterForm';
 import { BookPreview } from './components/BookPreview';
 import { ValidationBox } from './components/ValidationBox';
-import { getChangedPaths } from './utils/compare';
 import './App.less';
 
 const defaultRequiredProperties = {
@@ -17,25 +16,7 @@ const defaultRequiredProperties = {
   level: 1,
 };
 
-const getValueAtPath = (obj: unknown, path: string): unknown => {
-  return path.split('.').reduce<unknown>((acc, part) => {
-    if (acc && typeof acc === 'object' && part in acc) {
-      return (acc as Record<string, unknown>)[part];
-    }
-    return undefined;
-  }, obj);
-};
 
-const DISCRETE_SELECT_FIELDS = new Set([
-  'alignment',
-  'base_class',
-  'creature_origin',
-  'creature_type',
-  'size',
-  'equippedArmor',
-  'type',
-  'usageTime',
-]);
 
 export const App: React.FC = () => {
   const [db, setDb] = useState<DatabaseData>({ monsters: [], monsterGroups: [] });
@@ -49,6 +30,36 @@ export const App: React.FC = () => {
   const lastSelectionRef = useRef<SidebarSelection>(null);
   const prevMonsterDataRef = useRef<MonsterData | null>(null);
   const lastFetchTimeRef = useRef<number>(0);
+  const lastInputWasTextRef = useRef<boolean>(false);
+
+  // Global listener to detect if the user's last interaction was in a text field
+  useEffect(() => {
+    const handleInteraction = (e: Event) => {
+      const target = e.target as HTMLElement;
+      if (!target) {
+        return;
+      }
+
+      if (
+        target.tagName === 'INPUT' ||
+        target.tagName === 'TEXTAREA' ||
+        target.tagName === 'SELECT'
+      ) {
+        const isText =
+          target.tagName === 'TEXTAREA' ||
+          (target.tagName === 'INPUT' && (target as HTMLInputElement).type === 'text');
+        lastInputWasTextRef.current = isText;
+      }
+    };
+
+    document.addEventListener('input', handleInteraction, true);
+    document.addEventListener('change', handleInteraction, true);
+
+    return () => {
+      document.removeEventListener('input', handleInteraction, true);
+      document.removeEventListener('change', handleInteraction, true);
+    };
+  }, []);
 
   const [previewStats, setPreviewStats] = useState<ComputedStats | null>(null);
   const [errors, setErrors] = useState<string[]>([]);
@@ -147,17 +158,7 @@ export const App: React.FC = () => {
     // Check if the change was to a text field
     let isTextFieldChange = false;
     if (!selectionChanged && prevMonsterDataRef.current && monsterData) {
-      const changedPaths = getChangedPaths(prevMonsterDataRef.current, monsterData);
-      isTextFieldChange =
-        changedPaths.length > 0 &&
-        changedPaths.every((path) => {
-          const val = getValueAtPath(monsterData, path);
-          if (typeof val !== 'string') {
-            return false;
-          }
-          const lastKey = path.split('.').pop() || '';
-          return !DISCRETE_SELECT_FIELDS.has(lastKey);
-        });
+      isTextFieldChange = lastInputWasTextRef.current;
     }
 
     prevMonsterDataRef.current = monsterData || null;
