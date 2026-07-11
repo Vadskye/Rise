@@ -870,8 +870,10 @@ export function calculateStrikeDamage(
   return DicePool.xdyPlus(diceCount, damageDice.size, damageFromPower);
 }
 
-export function cleanLatexFormatting(text: string): string {
-  if (!text) return text;
+export function convertLatexToWebText(text: string): string {
+  if (!text) {
+    return text;
+  }
   let cleaned = text;
 
   // Replace \glossterm{xyz} with xyz
@@ -886,22 +888,25 @@ export function cleanLatexFormatting(text: string): string {
   // Replace \buff{xyz} with xyz
   cleaned = cleaned.replace(/\\buff\{([^}]+)\}/g, '$1');
 
-  // Replace \plus with +
   cleaned = cleaned.replace(/\\plus/g, '+');
 
-  // Replace \minus with -
   cleaned = cleaned.replace(/\\minus/g, '-');
 
-  // Replace \sparkle with ✦
-  cleaned = cleaned.replace(/\\sparkle/g, '✦');
+  cleaned = cleaned.replace(/\\sparkle/g, '✨');
 
-  // Replace ranges/areas
-  cleaned = cleaned.replace(/\\shortrange/g, 'short range');
-  cleaned = cleaned.replace(/\\medrange/g, 'medium range');
-  cleaned = cleaned.replace(/\\longrange/g, 'long range');
-  cleaned = cleaned.replace(/\\shortarea/g, 'short');
-  cleaned = cleaned.replace(/\\medarea/g, 'medium');
-  cleaned = cleaned.replace(/\\longarea/g, 'long');
+  // Replace ranges
+  cleaned = cleaned.replace(/\\shortrange/g, 'Short (30 ft.) range');
+  cleaned = cleaned.replace(/\\medrange/g, 'Medium (60 ft.) range');
+  cleaned = cleaned.replace(/\\longrange/g, 'Long (90 ft.) range');
+  cleaned = cleaned.replace(/\\distrange/g, 'Distant (120 ft.) range');
+  cleaned = cleaned.replace(/\\extrange/g, 'Extreme (180 ft.) range');
+
+  // Replace areas
+  cleaned = cleaned.replace(/\\smallarea/g, 'Small (15 ft.)');
+  cleaned = cleaned.replace(/\\medarea/g, 'Medium (30 ft.)');
+  cleaned = cleaned.replace(/\\largearea/g, 'Large (60 ft.)');
+  cleaned = cleaned.replace(/\\hugearea/g, 'Huge (90 ft.)');
+  cleaned = cleaned.replace(/\\gargarea/g, 'Gargantuan (120 ft.)');
 
   // Replace \atSubdual with Subdual
   cleaned = cleaned.replace(/\\atSubdual/g, 'Subdual');
@@ -925,7 +930,7 @@ export function cleanLatexFormatting(text: string): string {
   return cleaned;
 }
 
-export function prepareActiveAbilitiesForPreview(
+export function prepareActiveAbilitiesForWebPreview(
   monster: Creature,
   abilities: ActiveAbility[],
 ): ActiveAbility[] {
@@ -948,8 +953,10 @@ export function prepareActiveAbilitiesForPreview(
 
     // 3. Helper to replace placeholders and LaTeX commands in a string
     const processText = (text: string | undefined): string | undefined => {
-      if (!text) return text;
-      
+      if (!text) {
+        return text;
+      }
+
       // Replace ability placeholders like $dr, $damage, $accuracy, $power
       let replaced = replaceAbilityPlaceholders(monster, text, {
         isMagical: clone.isMagical,
@@ -960,7 +967,7 @@ export function prepareActiveAbilitiesForPreview(
       replaced = replaceNames(replaced, monster.name);
 
       // Clean up LaTeX markup for the UI preview
-      replaced = cleanLatexFormatting(replaced);
+      replaced = convertLatexToWebText(replaced);
 
       return replaced;
     };

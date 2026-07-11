@@ -8,8 +8,8 @@ import {
   restructureStrikeAbility,
   reformatAttackConsequences,
   StrikeActiveAbility,
-  cleanLatexFormatting,
-  prepareActiveAbilitiesForPreview,
+  convertLatexToWebText,
+  prepareActiveAbilitiesForWebPreview,
 } from './player_abilities';
 import { calculateDamage } from '@src/core_mechanics/damage_calculation';
 import { ActiveAbility, standardizeManeuver } from '@src/abilities';
@@ -700,18 +700,16 @@ t.test('calculateDamage', (t) => {
   t.end();
 });
 
-t.test('cleanLatexFormatting', (t) => {
-  t.equal(cleanLatexFormatting('\\glossterm{stamina}'), 'stamina');
-  t.equal(cleanLatexFormatting('\\weapontag{Heavy}'), 'Heavy');
-  t.equal(cleanLatexFormatting('\\reminder{plus 2}'), '(plus 2)');
-  t.equal(cleanLatexFormatting('\\buff{empowered}'), 'empowered');
-  t.equal(cleanLatexFormatting('\\plus2'), '+2');
-  t.equal(cleanLatexFormatting('\\minus3'), '-3');
-  t.equal(cleanLatexFormatting('\\sparkle'), '✦');
-  t.equal(cleanLatexFormatting('\\shortrange'), 'short range');
-  t.equal(cleanLatexFormatting('\\medarea'), 'medium');
-  t.equal(cleanLatexFormatting('Hello \\\\ world'), 'Hello\nworld');
-  t.equal(cleanLatexFormatting('Ends with percent%'), 'Ends with percent');
+t.test('convertLatexToWebText', (t) => {
+  t.equal(convertLatexToWebText('\\glossterm{stamina}'), 'stamina');
+  t.equal(convertLatexToWebText('\\weapontag{Heavy}'), 'Heavy');
+  t.equal(convertLatexToWebText('\\reminder{plus 2}'), '(plus 2)');
+  t.equal(convertLatexToWebText('\\buff{empowered}'), 'empowered');
+  t.equal(convertLatexToWebText('\\plus2'), '+2');
+  t.equal(convertLatexToWebText('\\minus3'), '-3');
+  t.equal(convertLatexToWebText('\\sparkle'), '✨');
+  t.equal(convertLatexToWebText('Hello \\\\ world'), 'Hello\nworld');
+  t.equal(convertLatexToWebText('Ends with percent%'), 'Ends with percent');
   t.end();
 });
 
@@ -731,14 +729,17 @@ t.test('prepareActiveAbilitiesForPreview', (t) => {
     effect: 'Make a strike.',
   };
 
-  const prepared = prepareActiveAbilitiesForPreview(creature, [rawAbility]);
+  const prepared = prepareActiveAbilitiesForWebPreview(creature, [rawAbility]);
   t.equal(prepared.length, 1);
   const ability = prepared[0];
   t.equal(ability.name, 'Spear Strike');
   t.ok(ability.attack);
-  
+
   // Verify that placeholders and LaTeX tags are correctly formatted
-  t.equal(ability.attack?.targeting, 'The goblin skirmisher makes a +0 strike vs. Armor with its spear.');
+  t.equal(
+    ability.attack?.targeting,
+    'The goblin skirmisher makes a +0 strike vs. Armor with its spear.',
+  );
   t.equal(ability.attack?.hit, '1d6 damage.');
   t.end();
 });

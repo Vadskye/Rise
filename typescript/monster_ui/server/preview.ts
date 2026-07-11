@@ -1,4 +1,4 @@
-import { prepareActiveAbilitiesForPreview } from '@src/latex/monsters/player_abilities';
+import { prepareActiveAbilitiesForWebPreview } from '@src/latex/monsters/player_abilities';
 import {
   characterSheetExists,
   getCharacterSheet,
@@ -10,6 +10,7 @@ import {
   getOtherSkillsComponents,
 } from '@src/latex/monsters/convert_monster_to_latex';
 import { MonsterData } from './codegen';
+import { convertLatexToWebText } from '@src/latex/monsters/player_abilities';
 import { buildCreature } from './creature_builder';
 import { showDetailedTiming } from './timing';
 
@@ -87,7 +88,7 @@ export function generatePreview(
       skills: creature.getTrainedSkillNames(),
       traits: creature.getStandardTraits(),
       equipment: creature.getEquipment(),
-      activeAbilities: prepareActiveAbilitiesForPreview(creature, creature.getActiveAbilities()),
+      activeAbilities: prepareActiveAbilitiesForWebPreview(creature, creature.getActiveAbilities()),
       passiveAbilities: creature.getPassiveAbilities(),
       knowledge: creature.getKnowledgeResultConfig(),
       // Real calculated stats and fields:
@@ -95,10 +96,10 @@ export function generatePreview(
       brawling_accuracy: creature.brawling_accuracy,
       mundane_power: creature.mundane_power,
       magical_power: creature.magical_power,
-      movementComponents: getMovementComponents(creature),
-      sensesComponents: getSensesComponents(creature),
-      socialComponents: getSocialComponents(creature),
-      otherSkillsComponents: getOtherSkillsComponents(creature),
+      movementComponents: getMovementComponents(creature).map(convertLatexToWebText),
+      sensesComponents: getSensesComponents(creature).map(convertLatexToWebText),
+      socialComponents: getSocialComponents(creature).map(convertLatexToWebText),
+      otherSkillsComponents: getOtherSkillsComponents(creature).map(convertLatexToWebText),
       immune: creature.immune || '',
       resistant: creature.resistant || '',
       vulnerable: creature.vulnerable || '',
