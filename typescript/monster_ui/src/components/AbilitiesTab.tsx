@@ -55,6 +55,7 @@ export const AbilitiesTab: React.FC<AbilitiesTabProps> = ({
         standardAbilities={monsterData.standardAbilities || []}
         referenceSpells={referenceData.spells}
         referenceManeuvers={referenceData.maneuvers}
+        referenceWeapons={referenceData.weapons}
         onChange={(updated) => updateField('standardAbilities', updated)}
         expandedCard={expandedCard}
         onToggleExpand={toggleExpand}

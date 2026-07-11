@@ -15,6 +15,8 @@ export interface StandardAbilityConfig {
     displayName?: string;
     usageTime?: string;
     isMagical?: boolean;
+    weapon?: string;
+    tags?: string[];
   };
 }
 

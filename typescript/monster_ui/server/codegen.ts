@@ -24,6 +24,8 @@ export interface StandardAbilityConfig {
     displayName?: string;
     usageTime?: string;
     isMagical?: boolean;
+    weapon?: string;
+    tags?: string[];
   };
 }
 
@@ -166,14 +168,15 @@ function generateMonsterBody(monster: MonsterData, indent: string): string {
     lines.push(`${indent}creature.setTrainedSkills(${JSON.stringify(monster.trainedSkills)});`);
   }
 
-  if (monster.knowledge && Object.values(monster.knowledge).some((v) => v)) {
-    const cleanKnowledge: Record<string, string> = {};
-    for (const [key, value] of Object.entries(monster.knowledge)) {
-      if (value) {
-        cleanKnowledge[key] = value;
-      }
-    }
-    if (Object.keys(cleanKnowledge).length > 0) {
+  if (monster.knowledge) {
+    const cleanKnowledge = {
+      easy: monster.knowledge.easy || undefined,
+      normal: monster.knowledge.normal || undefined,
+      hard: monster.knowledge.hard || undefined,
+      legendary: monster.knowledge.legendary || undefined,
+    };
+    const hasKnowledge = Object.values(cleanKnowledge).some((v) => v !== undefined);
+    if (hasKnowledge) {
       const knStr = JSON.stringify(cleanKnowledge, null, 2)
         .split('\n')
         .map((line, idx) => (idx === 0 ? line : indent + '  ' + line))
@@ -233,10 +236,21 @@ function generateMonsterBody(monster: MonsterData, indent: string): string {
   // attaching any display name, isMagical, or usageTime overrides defined in the sub-form options.
   if (monster.standardAbilities && monster.standardAbilities.length > 0) {
     for (const ability of monster.standardAbilities) {
-      const optionsStr =
-        ability.options && Object.keys(ability.options).length > 0
-          ? `, ${JSON.stringify(ability.options)}`
-          : '';
+      const cleanOptions = ability.options
+        ? {
+            displayName: ability.options.displayName || undefined,
+            usageTime: ability.options.usageTime || undefined,
+            isMagical: ability.options.isMagical,
+            weapon: ability.options.weapon || undefined,
+            tags:
+              ability.options.tags && ability.options.tags.length > 0
+                ? ability.options.tags
+                : undefined,
+          }
+        : undefined;
+
+      const hasOptions = cleanOptions && Object.values(cleanOptions).some((v) => v !== undefined);
+      const optionsStr = hasOptions ? `, ${JSON.stringify(cleanOptions)}` : '';
       if (ability.type === 'spell') {
         lines.push(`${indent}creature.addSpell(${JSON.stringify(ability.name)}${optionsStr});`);
       } else {
@@ -286,10 +300,15 @@ function generateMonsterBody(monster: MonsterData, indent: string): string {
       if (weapon.addStandard) {
         lines.push(`${indent}creature.addWeapon(${JSON.stringify(weapon.name)});`);
       }
-      const optStr =
-        weapon.options && Object.keys(weapon.options).length > 0
-          ? `, ${JSON.stringify(weapon.options)}`
-          : '';
+      const cleanOptions = weapon.options
+        ? {
+            displayName: weapon.options.displayName || undefined,
+            usageTime: weapon.options.usageTime || undefined,
+            isMagical: weapon.options.isMagical,
+          }
+        : undefined;
+      const hasOptions = cleanOptions && Object.values(cleanOptions).some((v) => v !== undefined);
+      const optStr = hasOptions ? `, ${JSON.stringify(cleanOptions)}` : '';
       if (weapon.addMult) {
         lines.push(`${indent}creature.addWeaponMult(${JSON.stringify(weapon.name)}${optStr});`);
       }
