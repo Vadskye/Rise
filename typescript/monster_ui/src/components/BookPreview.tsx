@@ -181,9 +181,7 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
         {stats.sensesComponents && stats.sensesComponents.length > 0 && (
           <div className="stat-line" style={{ marginTop: '2px' }}>
             <span className="stat-label">Senses</span>
-            <span className="stat-value">
-              {stats.sensesComponents.join(' • ')}
-            </span>
+            <span className="stat-value">{stats.sensesComponents.join(' • ')}</span>
           </div>
         )}
 
@@ -191,9 +189,7 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
         {stats.socialComponents && stats.socialComponents.length > 0 && (
           <div className="stat-line" style={{ marginTop: '2px' }}>
             <span className="stat-label">Social</span>
-            <span className="stat-value">
-              {stats.socialComponents.join(' • ')}
-            </span>
+            <span className="stat-value">{stats.socialComponents.join(' • ')}</span>
           </div>
         )}
 
@@ -201,9 +197,7 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
         {stats.otherSkillsComponents && stats.otherSkillsComponents.length > 0 && (
           <div className="stat-line" style={{ marginTop: '2px' }}>
             <span className="stat-label">Other skills</span>
-            <span className="stat-value">
-              {stats.otherSkillsComponents.join(' • ')}
-            </span>
+            <span className="stat-value">{stats.otherSkillsComponents.join(' • ')}</span>
           </div>
         )}
 
@@ -237,7 +231,7 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
             Power
           </span>
           <span className="stat-value" style={{ marginRight: 0 }}>
-            {stats.mundane_power}; {stats.magical_power} ✦
+            {stats.mundane_power}; {stats.magical_power} ✨
           </span>
         </div>
 
@@ -253,9 +247,7 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
         {filteredTraits.length > 0 && (
           <div className="stat-line">
             <span className="stat-label">Traits</span>
-            <span className="stat-value">
-              {filteredTraits.join(' • ')}
-            </span>
+            <span className="stat-value">{filteredTraits.join(' • ')}</span>
           </div>
         )}
       </div>
@@ -266,22 +258,33 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
           <div className="knowledge-title">Knowledge Checks</div>
           {knowledge.easy && (
             <div className="knowledge-line">
-              <span className="dv-label">{skillNameFormatted} DV {baseDifficulty - 5}:</span> {knowledge.easy}
+              <span className="dv-label">
+                {skillNameFormatted} DV {baseDifficulty - 5}:
+              </span>{' '}
+              {knowledge.easy}
             </div>
           )}
           {knowledge.normal && (
             <div className="knowledge-line">
-              <span className="dv-label">{skillNameFormatted} DV {baseDifficulty}:</span> {knowledge.normal}
+              <span className="dv-label">
+                {skillNameFormatted} DV {baseDifficulty}:
+              </span>{' '}
+              {knowledge.normal}
             </div>
           )}
           {knowledge.hard && (
             <div className="knowledge-line">
-              <span className="dv-label">{skillNameFormatted} DV {baseDifficulty + 5}:</span> {knowledge.hard}
+              <span className="dv-label">
+                {skillNameFormatted} DV {baseDifficulty + 5}:
+              </span>{' '}
+              {knowledge.hard}
             </div>
           )}
           {knowledge.legendary && (
             <div className="knowledge-line">
-              <span className="dv-label">{skillNameFormatted} DV {baseDifficulty + 10}:</span>{' '}
+              <span className="dv-label">
+                {skillNameFormatted} DV {baseDifficulty + 10}:
+              </span>{' '}
               {knowledge.legendary}
             </div>
           )}
@@ -297,7 +300,7 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
           {stats.passiveAbilities.map((ability, idx) => (
             <div key={`passive-${idx}`} className="passive-ability-item">
               <strong>
-                {ability.name} {ability.isMagical ? '✦' : ''}
+                {ability.name} {ability.isMagical ? '✨' : ''}
               </strong>
               : {ability.effect}
             </div>
@@ -310,25 +313,21 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
               <div key={`active-${idx}`} className="ability-item">
                 <div className="ability-title-line">
                   <span className="ability-name">
-                    {ability.name} {ability.isMagical ? '✦' : ''}
+                    {ability.name} {ability.isMagical ? '✨' : ''}
                   </span>
-                  <span className="ability-usage">
-                    {formatUsageTime(ability.usageTime)}
-                  </span>
+                  <span className="ability-usage">{formatUsageTime(ability.usageTime)}</span>
                 </div>
 
                 {hasMetadata && (
                   <div className="ability-metadata">
                     {ability.tags && ability.tags.length > 0 && (
                       <div className="metadata-line">
-                        <span className="metadata-label">Tags:</span>{' '}
-                        {ability.tags.join(', ')}
+                        <span className="metadata-label">Tags:</span> {ability.tags.join(', ')}
                       </div>
                     )}
                     {ability.cost && (
                       <div className="metadata-line">
-                        <span className="metadata-label">Cost:</span>{' '}
-                        {ability.cost}
+                        <span className="metadata-label">Cost:</span> {ability.cost}
                       </div>
                     )}
                   </div>
