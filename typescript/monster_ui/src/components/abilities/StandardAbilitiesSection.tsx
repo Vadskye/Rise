@@ -75,6 +75,7 @@ interface StandardAbilitiesSectionProps {
   expandedCard: string | null;
   onToggleExpand: (cardId: string) => void;
   setExpandedCard: (cardId: string | null) => void;
+  warnings?: string[];
 }
 
 export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> = ({
@@ -86,6 +87,7 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
   expandedCard,
   onToggleExpand,
   setExpandedCard,
+  warnings = [],
 }) => {
   const addStandardAbility = (type: 'spell' | 'maneuver', name: string) => {
     if (standardAbilities.some((a) => a.type === type && a.name === name)) {
@@ -178,6 +180,20 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
                         </span>
                       )}
                     </strong>
+                    {ability.type === 'maneuver' &&
+                      warnings.some(
+                        (w) =>
+                          w.includes(
+                            `Maneuver "${ability.options?.displayName || ability.name}"`,
+                          ) && w.includes("matches 'make.*strike'"),
+                      ) && (
+                        <span
+                          title="Maneuver makes a strike and doesn't have a weapon."
+                          style={{ color: 'var(--warning-color)', cursor: 'help' }}
+                        >
+                          ⚠️
+                        </span>
+                      )}
                   </div>
                   <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
                     <span className="expand-chevron">{isExpanded ? '▲' : '▼'}</span>
@@ -258,6 +274,17 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
                             </option>
                           ))}
                         </select>
+                        {ability.type === 'maneuver' &&
+                          warnings.some(
+                            (w) =>
+                              w.includes(
+                                `Maneuver "${ability.options?.displayName || ability.name}"`,
+                              ) && w.includes("matches 'make.*strike'"),
+                          ) && (
+                            <div className="inline-warning">
+                              ⚠️ Maneuver makes a strike and doesn't have a weapon.
+                            </div>
+                          )}
                       </div>
                       <div
                         className="form-group"

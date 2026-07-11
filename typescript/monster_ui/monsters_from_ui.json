@@ -29,12 +29,21 @@
             "awareness"
           ],
           "equippedArmor": "buff leather",
-          "freeformCode": "creature.addManeuver('Charge', { weapon: 'spear' });\ncreature.setEquippedArmorName({ shield: 'buckler' });",
+          "freeformCode": "creature.setEquippedArmorName({ shield: 'buckler' });",
           "weapons": [
             {
               "name": "spear",
               "addStandard": true,
               "addMult": true,
+              "options": {
+                "isMagical": false
+              }
+            }
+          ],
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Charge",
               "options": {
                 "isMagical": false
               }

@@ -17,12 +17,14 @@ interface AbilitiesTabProps {
   monsterData: MonsterData;
   onChangeMonster: (updated: MonsterData) => void;
   referenceData: ReferenceData;
+  warnings?: string[];
 }
 
 export const AbilitiesTab: React.FC<AbilitiesTabProps> = ({
   monsterData,
   onChangeMonster,
   referenceData,
+  warnings = [],
 }) => {
   // Local state for expanded cards (maps to "type-index" e.g., "custom-0", "weapon-1")
   const [expandedCard, setExpandedCard] = useState<string | null>(null);
@@ -60,6 +62,7 @@ export const AbilitiesTab: React.FC<AbilitiesTabProps> = ({
         expandedCard={expandedCard}
         onToggleExpand={toggleExpand}
         setExpandedCard={setExpandedCard}
+        warnings={warnings}
       />
 
       {/* 3. CUSTOM ABILITIES SECTION */}
