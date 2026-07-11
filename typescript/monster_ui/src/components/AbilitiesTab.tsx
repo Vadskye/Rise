@@ -40,14 +40,7 @@ export const AbilitiesTab: React.FC<AbilitiesTabProps> = ({
 
   return (
     <div className="tab-content" style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
-      {/* 1. RITUALS SECTION */}
-      <RitualsSection
-        rituals={monsterData.rituals || []}
-        spheres={referenceData.spheres}
-        onChange={(updated) => updateField('rituals', updated)}
-      />
-
-      {/* 2. WEAPONS & STRIKES SECTION */}
+      {/* 1. WEAPONS & STRIKES SECTION */}
       <WeaponsSection
         weapons={monsterData.weapons || []}
         referenceWeapons={referenceData.weapons}
@@ -57,7 +50,7 @@ export const AbilitiesTab: React.FC<AbilitiesTabProps> = ({
         setExpandedCard={setExpandedCard}
       />
 
-      {/* 3. STANDARD SPELLS & MANEUVERS SECTION */}
+      {/* 2. STANDARD SPELLS & MANEUVERS SECTION */}
       <StandardAbilitiesSection
         standardAbilities={monsterData.standardAbilities || []}
         referenceSpells={referenceData.spells}
@@ -68,7 +61,7 @@ export const AbilitiesTab: React.FC<AbilitiesTabProps> = ({
         setExpandedCard={setExpandedCard}
       />
 
-      {/* 4. CUSTOM ABILITIES SECTION */}
+      {/* 3. CUSTOM ABILITIES SECTION */}
       <CustomAbilitiesSection
         customAbilities={monsterData.customAbilities || []}
         onChange={(updated) => updateField('customAbilities', updated)}
@@ -77,13 +70,20 @@ export const AbilitiesTab: React.FC<AbilitiesTabProps> = ({
         setExpandedCard={setExpandedCard}
       />
 
-      {/* 5. PASSIVE ABILITIES SECTION */}
+      {/* 4. PASSIVE ABILITIES SECTION */}
       <PassiveAbilitiesSection
         passiveAbilities={monsterData.passiveAbilities || []}
         onChange={(updated) => updateField('passiveAbilities', updated)}
         expandedCard={expandedCard}
         onToggleExpand={toggleExpand}
         setExpandedCard={setExpandedCard}
+      />
+
+      {/* 5. RITUALS SECTION */}
+      <RitualsSection
+        rituals={monsterData.rituals || []}
+        spheres={referenceData.spheres}
+        onChange={(updated) => updateField('rituals', updated)}
       />
     </div>
   );
