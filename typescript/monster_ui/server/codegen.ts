@@ -143,7 +143,9 @@ function generateMonsterBody(monster: MonsterData, indent: string): string {
   if (monster.knowledge && Object.values(monster.knowledge).some((v) => v)) {
     const cleanKnowledge: Record<string, string> = {};
     for (const [key, value] of Object.entries(monster.knowledge)) {
-      if (value) cleanKnowledge[key] = value;
+      if (value) {
+        cleanKnowledge[key] = value;
+      }
     }
     if (Object.keys(cleanKnowledge).length > 0) {
       const knStr = JSON.stringify(cleanKnowledge, null, 2)
@@ -226,20 +228,35 @@ function generateMonsterBody(monster: MonsterData, indent: string): string {
         name: ability.name,
         isMagical: ability.isMagical,
       };
-      if (ability.usageTime) abilityObj.usageTime = ability.usageTime;
-      if (ability.cost) abilityObj.cost = ability.cost;
-      if (ability.effect) abilityObj.effect = ability.effect;
-      if (ability.tags && ability.tags.length > 0) abilityObj.tags = ability.tags;
+      if (ability.usageTime) {
+        abilityObj.usageTime = ability.usageTime;
+      }
+      if (ability.cost) {
+        abilityObj.cost = ability.cost;
+      }
+      if (ability.effect) {
+        abilityObj.effect = ability.effect;
+      }
+      if (ability.tags && ability.tags.length > 0) {
+        abilityObj.tags = ability.tags;
+      }
       if (ability.attack) {
         abilityObj.attack = {
           targeting: ability.attack.targeting,
           hit: ability.attack.hit,
         };
-        if (ability.attack.crit) abilityObj.attack.crit = ability.attack.crit;
-        if (ability.attack.miss) abilityObj.attack.miss = ability.attack.miss;
-        if (ability.attack.injury) abilityObj.attack.injury = ability.attack.injury;
-        if (ability.attack.halfOnMiss !== undefined)
+        if (ability.attack.crit) {
+          abilityObj.attack.crit = ability.attack.crit;
+        }
+        if (ability.attack.miss) {
+          abilityObj.attack.miss = ability.attack.miss;
+        }
+        if (ability.attack.injury) {
+          abilityObj.attack.injury = ability.attack.injury;
+        }
+        if (ability.attack.halfOnMiss !== undefined) {
           abilityObj.attack.halfOnMiss = ability.attack.halfOnMiss;
+        }
       }
 
       // Format the custom ability object output with proper indentation to align with the generated file

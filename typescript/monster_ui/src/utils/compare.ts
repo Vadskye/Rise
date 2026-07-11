@@ -4,7 +4,9 @@
  * the undefined/null side is normalized to an empty object for recursive comparison.
  */
 export function getChangedPaths(obj1: any, obj2: any, currentPath: string = ''): string[] {
-  if (obj1 === obj2) return [];
+  if (obj1 === obj2) {
+    return [];
+  }
 
   let o1 = obj1;
   let o2 = obj2;

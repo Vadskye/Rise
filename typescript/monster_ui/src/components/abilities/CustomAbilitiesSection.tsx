@@ -33,7 +33,9 @@ export const CustomAbilitiesSection: React.FC<CustomAbilitiesSectionProps> = ({
   const removeCustomAbility = (index: number) => {
     const updated = customAbilities.filter((_, i) => i !== index);
     onChange(updated);
-    if (expandedCard === `custom-${index}`) setExpandedCard(null);
+    if (expandedCard === `custom-${index}`) {
+      setExpandedCard(null);
+    }
   };
 
   const updateCustomAbility = (index: number, updatedAbility: CustomAbilityConfig) => {

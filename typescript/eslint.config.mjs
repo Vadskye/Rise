@@ -17,6 +17,7 @@ export default [
           caughtErrorsIgnorePattern: '^_',
         },
       ],
+      'curly': ['error', 'all'],
     },
   },
   {

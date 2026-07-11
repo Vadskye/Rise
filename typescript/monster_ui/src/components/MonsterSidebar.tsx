@@ -35,8 +35,12 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
   isSaving,
 }) => {
   const isSelected = (selection: SidebarSelection) => {
-    if (!activeSelection || !selection) return false;
-    if (activeSelection.type !== selection.type) return false;
+    if (!activeSelection || !selection) {
+      return false;
+    }
+    if (activeSelection.type !== selection.type) {
+      return false;
+    }
     if (activeSelection.type === 'monster' && selection.type === 'monster') {
       return activeSelection.name === selection.name;
     }

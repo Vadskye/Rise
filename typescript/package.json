@@ -11,6 +11,7 @@
     "eslint": "^9.9.1",
     "globals": "^15.9.0",
     "prettier": "^3.3.3",
+    "prettier-plugin-curly": "^0.4.1",
     "source-map-support": "^0.5.21",
     "tap": "^21.0.1",
     "ts-node": "^10.9.2",

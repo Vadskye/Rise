@@ -47,7 +47,9 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
   const removeStandardAbility = (index: number) => {
     const updated = standardAbilities.filter((_, i) => i !== index);
     onChange(updated);
-    if (expandedCard === `standard-${index}`) setExpandedCard(null);
+    if (expandedCard === `standard-${index}`) {
+      setExpandedCard(null);
+    }
   };
 
   const updateStandardAbility = (index: number, updatedAbility: StandardAbilityConfig) => {
