@@ -86,24 +86,28 @@ body {
       gap: 8px;
     }
 
-    .save-db-btn {
-      background-color: var(--success-color);
-      color: white;
-      border: none;
-      padding: 6px 12px;
-      border-radius: 6px;
+    .save-status {
+      font-size: 0.8rem;
       font-weight: 600;
-      font-size: 0.85rem;
-      cursor: pointer;
-      transition: all 0.2s ease;
+      padding: 4px 8px;
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid transparent;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      user-select: none;
 
-      &:hover {
-        opacity: 0.9;
-        transform: translateY(-1px);
+      &.saving {
+        color: var(--warning-color);
+        background-color: rgba(245, 158, 11, 0.1);
+        border-color: rgba(245, 158, 11, 0.2);
       }
 
-      &:active {
-        transform: translateY(0);
+      &.saved {
+        color: var(--success-color);
+        background-color: rgba(16, 185, 129, 0.1);
+        border-color: rgba(16, 185, 129, 0.2);
       }
     }
   }

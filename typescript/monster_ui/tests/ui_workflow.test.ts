@@ -170,18 +170,13 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
       (el as HTMLTextAreaElement).select(),
     );
     await codeArea.type('// Gargoyle custom script\ncreature.addTrait("scent");', { delay: 10 });
-    await new Promise((resolve) => setTimeout(resolve, 300));
+    await new Promise((resolve) => setTimeout(resolve, 1200));
 
-    // 5. Save the database
-    const saveBtn = await page.waitForSelector('[data-testid="save-db-btn"]', { timeout: 5000 });
-    assert.ok(saveBtn, 'Save DB button should exist');
-    await saveBtn.click();
-
-    // Wait for saving to complete (isSaving becomes false, so the button is no longer disabled)
+    // 5. Wait for autosave to complete (save-status becomes 'Saved')
     await page.waitForFunction(
       () => {
-        const btn = document.querySelector('[data-testid="save-db-btn"]');
-        return btn && !(btn as HTMLButtonElement).disabled;
+        const statusEl = document.querySelector('[data-testid="save-status"]');
+        return statusEl && statusEl.textContent === 'Saved';
       },
       { timeout: 10000 },
     );

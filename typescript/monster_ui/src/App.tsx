@@ -18,6 +18,27 @@ const defaultRequiredProperties = {
 
 export const App: React.FC = () => {
   const [db, setDb] = useState<DatabaseData>({ monsters: [], monsterGroups: [] });
+  const dbRef = useRef<DatabaseData>(db);
+  const saveTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    dbRef.current = db;
+  }, [db]);
+
+  useEffect(() => {
+    return () => {
+      if (saveTimeoutRef.current) {
+        clearTimeout(saveTimeoutRef.current);
+        // Flush save on unmount
+        fetch('/api/save', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(dbRef.current),
+        }).catch((err) => console.error('Failed to save on unmount:', err));
+      }
+    };
+  }, []);
+
   const [referenceData, setReferenceData] = useState<{
     spells: string[];
     maneuvers: string[];
@@ -206,27 +227,39 @@ export const App: React.FC = () => {
   }, [activeSelection, db]);
 
   // Database mutations
-  const handleSaveDb = (updatedDb = db) => {
+  const handleSaveDb = (updatedDb = db, immediate = false) => {
+    if (saveTimeoutRef.current) {
+      clearTimeout(saveTimeoutRef.current);
+      saveTimeoutRef.current = null;
+    }
     setIsSaving(true);
-    fetch('/api/save', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(updatedDb),
-    })
-      .then((res) => res.json())
-      .then((result) => {
-        setIsSaving(false);
-        if (!result.success) {
-          alert(`Save failed: ${result.error}`);
-        } else {
-          // If save was successful, we might receive compile-time validations for all monsters
-          console.log('Compile-time validations:', result.validations);
-        }
+
+    const executeSave = () => {
+      fetch('/api/save', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(updatedDb),
       })
-      .catch((err) => {
-        setIsSaving(false);
-        alert(`Save failed: ${err.message || err}`);
-      });
+        .then((res) => res.json())
+        .then((result) => {
+          setIsSaving(false);
+          if (!result.success) {
+            alert(`Save failed: ${result.error}`);
+          } else {
+            console.log('Compile-time validations:', result.validations);
+          }
+        })
+        .catch((err) => {
+          setIsSaving(false);
+          alert(`Save failed: ${err.message || err}`);
+        });
+    };
+
+    if (immediate) {
+      executeSave();
+    } else {
+      saveTimeoutRef.current = setTimeout(executeSave, 1000);
+    }
   };
 
   const handleUpdateMonster = (updated: MonsterData) => {
@@ -263,6 +296,7 @@ export const App: React.FC = () => {
       return;
     }
     setDb(updatedDb);
+    handleSaveDb(updatedDb, false);
   };
 
   const handleUpdateGroup = (updated: MonsterGroupData) => {
@@ -277,6 +311,7 @@ export const App: React.FC = () => {
     if (updated.name !== activeSelection.name) {
       setActiveSelection({ type: 'group', name: updated.name });
     }
+    handleSaveDb(updatedDb, false);
   };
 
   const handleAddMonster = () => {
@@ -292,7 +327,7 @@ export const App: React.FC = () => {
     };
     setDb(updatedDb);
     setActiveSelection({ type: 'monster', name });
-    handleSaveDb(updatedDb);
+    handleSaveDb(updatedDb, true);
   };
 
   const handleAddGroup = () => {
@@ -309,7 +344,7 @@ export const App: React.FC = () => {
     };
     setDb(updatedDb);
     setActiveSelection({ type: 'group', name });
-    handleSaveDb(updatedDb);
+    handleSaveDb(updatedDb, true);
   };
 
   const handleAddMonsterToGroup = (groupName: string) => {
@@ -331,7 +366,7 @@ export const App: React.FC = () => {
     };
     setDb(updatedDb);
     setActiveSelection({ type: 'group-monster', groupName, name });
-    handleSaveDb(updatedDb);
+    handleSaveDb(updatedDb, true);
   };
 
   const handleDeleteMonster = (name: string) => {
@@ -343,7 +378,7 @@ export const App: React.FC = () => {
     if (activeSelection?.type === 'monster' && activeSelection.name === name) {
       setActiveSelection(null);
     }
-    handleSaveDb(updatedDb);
+    handleSaveDb(updatedDb, true);
   };
 
   const handleDeleteGroup = (name: string) => {
@@ -358,7 +393,7 @@ export const App: React.FC = () => {
     ) {
       setActiveSelection(null);
     }
-    handleSaveDb(updatedDb);
+    handleSaveDb(updatedDb, true);
   };
 
   const handleDeleteMonsterFromGroup = (groupName: string, name: string) => {
@@ -376,7 +411,7 @@ export const App: React.FC = () => {
     ) {
       setActiveSelection(null);
     }
-    handleSaveDb(updatedDb);
+    handleSaveDb(updatedDb, true);
   };
 
   // Find active editor content
@@ -414,7 +449,6 @@ export const App: React.FC = () => {
         onDeleteMonster={handleDeleteMonster}
         onDeleteGroup={handleDeleteGroup}
         onDeleteMonsterFromGroup={handleDeleteMonsterFromGroup}
-        onSaveDb={() => handleSaveDb()}
         isSaving={isSaving}
       />
 

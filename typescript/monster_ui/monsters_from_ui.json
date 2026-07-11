@@ -29,7 +29,17 @@
             "awareness"
           ],
           "equippedArmor": "buff leather",
-          "freeformCode": "creature.addWeaponMult('spear');\ncreature.addManeuver('Charge', { weapon: 'spear' });\ncreature.setEquippedArmorName({ shield: 'buckler' });"
+          "freeformCode": "creature.addManeuver('Charge', { weapon: 'spear' });\ncreature.setEquippedArmorName({ shield: 'buckler' });",
+          "weapons": [
+            {
+              "name": "spear",
+              "addStandard": true,
+              "addMult": true,
+              "options": {
+                "isMagical": false
+              }
+            }
+          ]
         },
         {
           "name": "Wolf Rider",
