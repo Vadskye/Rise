@@ -232,6 +232,7 @@ comprehensive_codex/generated
 html_book/generated
 typescript/src/**/*.js
 typescript/src/**/*.js.map
+typescript/src/monsters/individual_monsters/monsters_from_ui.ts
 
 #Rust
 rust/target/*
