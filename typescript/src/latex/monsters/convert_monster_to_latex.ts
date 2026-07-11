@@ -150,7 +150,7 @@ function genSpecialDefenseModifiersText(monster: Creature) {
     .join('\n');
 }
 
-function genMovementText(monster: Creature) {
+export function getMovementComponents(monster: Creature): string[] {
   const jumpText = monster.hasTrainedSkill('jump')
     ? `Jump ${monster.horizontal_jump_distance}`
     : '';
@@ -159,13 +159,14 @@ function genMovementText(monster: Creature) {
     jumpText,
   ].filter(Boolean);
 
-  // TODO: A creature with a swim speed and that is trained with the Swim skill will
-  // display "Swim" twice here. What's the correct formatting?
-  const movementComponents = [
+  return [
     ...movementDistances,
     ...formatSkillList(monster, RISE_MOVEMENT_SKILLS),
-  ].join('\\monsep ');
+  ];
+}
 
+function genMovementText(monster: Creature) {
+  const movementComponents = getMovementComponents(monster).join('\\monsep ');
   const movementText = movementComponents ? `; ${movementComponents}` : '';
   // TODO: Formatting is awkward
   return `\\pari \\textbf{Movement} ${monster.speed} ft.${movementText}`;
@@ -176,12 +177,13 @@ function genSpaceAndReachText() {
   return '';
 }
 
-function genSensesText(monster: Creature) {
+export function getSensesComponents(monster: Creature): string[] {
   const customSenses = monster.getCustomSenses().sort(caseInsensitiveSort);
+  return [...customSenses, ...formatSkillList(monster, RISE_SENSE_SKILLS)];
+}
 
-  const senseText = [...customSenses, ...formatSkillList(monster, RISE_SENSE_SKILLS)].join(
-    '\\monsep ',
-  );
+function genSensesText(monster: Creature) {
+  const senseText = getSensesComponents(monster).join('\\monsep ');
 
   if (senseText.length > 0) {
     return `\\pari \\textbf{Senses} ${senseText}`;
@@ -207,8 +209,12 @@ function formatSkillList<T extends RiseSkill>(
     .sort(caseInsensitiveSort);
 }
 
+export function getSocialComponents(monster: Creature): string[] {
+  return formatSkillList(monster, RISE_SOCIAL_SKILLS);
+}
+
 function genSocialText(monster: Creature) {
-  const socialSkillText = formatSkillList(monster, RISE_SOCIAL_SKILLS).join('\\monsep ');
+  const socialSkillText = getSocialComponents(monster).join('\\monsep ');
   if (socialSkillText.length > 0) {
     return `\\pari \\textbf{Social} ${socialSkillText}`;
   } else {
@@ -216,8 +222,12 @@ function genSocialText(monster: Creature) {
   }
 }
 
+export function getOtherSkillsComponents(monster: Creature): string[] {
+  return formatSkillList(monster, RISE_OTHER_SKILLS);
+}
+
 function genOtherSkillsText(monster: Creature) {
-  const otherSkillText = formatSkillList(monster, RISE_OTHER_SKILLS).join('\\monsep ');
+  const otherSkillText = getOtherSkillsComponents(monster).join('\\monsep ');
   if (otherSkillText.length > 0) {
     return `\\pari \\textbf{Other skills} ${otherSkillText}`;
   } else {

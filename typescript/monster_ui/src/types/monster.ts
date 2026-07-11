@@ -129,6 +129,18 @@ export interface ComputedStats {
   activeAbilities: CustomAbilityConfig[];
   passiveAbilities: PassiveAbilityConfig[];
   knowledge: ComputedKnowledge;
+  // Calculated stats from character sheet
+  accuracy: number;
+  brawling_accuracy: number;
+  mundane_power: number;
+  magical_power: number;
+  movementComponents: string[];
+  sensesComponents: string[];
+  socialComponents: string[];
+  otherSkillsComponents: string[];
+  immune: string;
+  resistant: string;
+  vulnerable: string;
 }
 
 export interface ComputedKnowledge {
@@ -136,6 +148,7 @@ export interface ComputedKnowledge {
   normal?: string;
   hard?: string;
   legendary?: string;
+  relevantKnowledges?: string[];
 }
 
 export interface ValidationResult {
