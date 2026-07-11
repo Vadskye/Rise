@@ -17,7 +17,6 @@ interface MonsterSidebarProps {
   onDeleteMonster: (name: string) => void;
   onDeleteGroup: (name: string) => void;
   onDeleteMonsterFromGroup: (groupName: string, name: string) => void;
-  onSaveDb: () => void;
   isSaving: boolean;
 }
 
@@ -31,7 +30,6 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
   onDeleteMonster,
   onDeleteGroup,
   onDeleteMonsterFromGroup,
-  onSaveDb,
   isSaving,
 }) => {
   const isSelected = (selection: SidebarSelection) => {
@@ -59,14 +57,9 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
     <aside className="sidebar">
       <div className="sidebar-header">
         <h2>👾 Creator</h2>
-        <button
-          className="save-db-btn"
-          data-testid="save-db-btn"
-          onClick={onSaveDb}
-          disabled={isSaving}
-        >
-          {isSaving ? 'Saving...' : 'Save DB'}
-        </button>
+        <span className={`save-status ${isSaving ? 'saving' : 'saved'}`} data-testid="save-status">
+          {isSaving ? 'Saving...' : 'Saved'}
+        </span>
       </div>
 
       <div className="sidebar-content">
