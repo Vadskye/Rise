@@ -43,6 +43,23 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
     return val >= 0 ? `+${val}` : `${val}`;
   };
 
+  const formatUsageTime = (usageTime?: string) => {
+    if (!usageTime) {
+      return 'Standard action';
+    }
+    const lower = usageTime.toLowerCase();
+    if (lower === 'minor') {
+      return 'Minor action';
+    }
+    if (lower === 'elite') {
+      return 'Elite action';
+    }
+    if (lower === 'standard') {
+      return 'Standard action';
+    }
+    return usageTime.charAt(0).toUpperCase() + usageTime.slice(1);
+  };
+
   const isMindless = stats.traits.map((t) => t.toLowerCase()).includes('mindless');
 
   // Format Attributes: [Brawn, Agility, Reason, Instinct, Presence, Will]
@@ -278,67 +295,84 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
 
           {/* Passive Abilities */}
           {stats.passiveAbilities.map((ability, idx) => (
-            <div key={`passive-${idx}`} className="ability-item">
-              <div className="ability-title-line">
-                <span className="ability-name">
-                  {ability.name} {ability.isMagical ? '✦' : ''}
-                </span>
-                <span className="ability-usage">Passive</span>
-              </div>
-              <div className="ability-details" style={{ fontStyle: 'italic' }}>
-                {ability.effect}
-              </div>
+            <div key={`passive-${idx}`} className="passive-ability-item">
+              <strong>
+                {ability.name} {ability.isMagical ? '✦' : ''}
+              </strong>
+              : {ability.effect}
             </div>
           ))}
 
           {/* Active Abilities */}
-          {sortedActiveAbilities.map((ability, idx) => (
-            <div key={`active-${idx}`} className="ability-item">
-              <div className="ability-title-line">
-                <span className="ability-name">
-                  {ability.name} {ability.isMagical ? '✦' : ''}
-                  {ability.tags && ability.tags.length > 0 ? ` [${ability.tags.join(', ')}]` : ''}
-                </span>
-                <span className="ability-usage">
-                  {ability.usageTime
-                    ? ability.usageTime.charAt(0).toUpperCase() + ability.usageTime.slice(1)
-                    : 'Standard'}
-                </span>
-              </div>
-              <div className="ability-details">
-                {ability.cost && (
-                  <div className="detail-line">
-                    <span className="detail-label">Cost:</span>
-                    <span>{ability.cost}</span>
-                  </div>
-                )}
-                {ability.attack && (
-                  <>
-                    <div className="detail-line">
-                      <span className="detail-label">Target:</span>
-                      <span>{ability.attack.targeting}</span>
-                    </div>
-                    <div className="detail-line">
-                      <span className="detail-label">Hit:</span>
-                      <span>{ability.attack.hit}</span>
-                    </div>
-                    {ability.attack.crit && (
-                      <div className="detail-line">
-                        <span className="detail-label">Critical:</span>
-                        <span>{ability.attack.crit}</span>
+          {sortedActiveAbilities.map((ability, idx) => {
+            const hasMetadata = (ability.tags && ability.tags.length > 0) || ability.cost;
+            return (
+              <div key={`active-${idx}`} className="ability-item">
+                <div className="ability-title-line">
+                  <span className="ability-name">
+                    {ability.name} {ability.isMagical ? '✦' : ''}
+                  </span>
+                  <span className="ability-usage">
+                    {formatUsageTime(ability.usageTime)}
+                  </span>
+                </div>
+
+                {hasMetadata && (
+                  <div className="ability-metadata">
+                    {ability.tags && ability.tags.length > 0 && (
+                      <div className="metadata-line">
+                        <span className="metadata-label">Tags:</span>{' '}
+                        {ability.tags.join(', ')}
                       </div>
                     )}
-                  </>
-                )}
-                {ability.effect && (
-                  <div className="detail-line">
-                    <span className="detail-label">Effect:</span>
-                    <span>{ability.effect}</span>
+                    {ability.cost && (
+                      <div className="metadata-line">
+                        <span className="metadata-label">Cost:</span>{' '}
+                        {ability.cost}
+                      </div>
+                    )}
                   </div>
                 )}
+
+                <div className="ability-divider" />
+
+                <div className="ability-body">
+                  {ability.attack ? (
+                    <>
+                      <div className="ability-description">{ability.attack.targeting}</div>
+                      {ability.attack.hit && (
+                        <div className="ability-sub-description">
+                          <span className="sub-label">Hit:</span> {ability.attack.hit}
+                        </div>
+                      )}
+                      {ability.attack.injury && (
+                        <div className="ability-sub-description">
+                          <span className="sub-label">Injury:</span> {ability.attack.injury}
+                        </div>
+                      )}
+                      {ability.attack.crit && (
+                        <div className="ability-sub-description">
+                          <span className="sub-label">Critical hit:</span> {ability.attack.crit}
+                        </div>
+                      )}
+                      {ability.attack.halfOnMiss && (
+                        <div className="ability-sub-description">
+                          <span className="sub-label">Miss:</span> Half damage.
+                        </div>
+                      )}
+                      {ability.attack.miss && (
+                        <div className="ability-sub-description">
+                          <span className="sub-label">Miss:</span> {ability.attack.miss}
+                        </div>
+                      )}
+                    </>
+                  ) : (
+                    ability.effect && <div className="ability-description">{ability.effect}</div>
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </>
       )}
     </div>
