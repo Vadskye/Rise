@@ -3,13 +3,13 @@
  * If one side is undefined/null and the other is a non-null object,
  * the undefined/null side is normalized to an empty object for recursive comparison.
  */
-export function getChangedPaths(obj1: any, obj2: any, currentPath: string = ''): string[] {
+export function getChangedPaths(obj1: unknown, obj2: unknown, currentPath: string = ''): string[] {
   if (obj1 === obj2) {
     return [];
   }
 
-  let o1 = obj1;
-  let o2 = obj2;
+  let o1: unknown = obj1;
+  let o2: unknown = obj2;
   if (
     (o1 === null || o1 === undefined) &&
     typeof o2 === 'object' &&
@@ -47,11 +47,13 @@ export function getChangedPaths(obj1: any, obj2: any, currentPath: string = ''):
     return [currentPath];
   }
 
-  const keys = Array.from(new Set([...Object.keys(o1), ...Object.keys(o2)]));
+  const rec1 = o1 as Record<string, unknown>;
+  const rec2 = o2 as Record<string, unknown>;
+  const keys = Array.from(new Set([...Object.keys(rec1), ...Object.keys(rec2)]));
   const paths: string[] = [];
   for (const key of keys) {
     const subPath = currentPath ? `${currentPath}.${key}` : key;
-    paths.push(...getChangedPaths(o1[key], o2[key], subPath));
+    paths.push(...getChangedPaths(rec1[key], rec2[key], subPath));
   }
   return paths;
 }

@@ -14,7 +14,7 @@ import { buildCreature } from './creature_builder';
 export function generatePreview(
   monster: MonsterData,
   sharedFreeformCode?: string,
-  groupName?: string,
+  _groupName?: string,
 ) {
   const { name } = monster;
   const inputJson = JSON.stringify({ monster, sharedFreeformCode });

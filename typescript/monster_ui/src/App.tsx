@@ -17,8 +17,13 @@ const defaultRequiredProperties = {
   level: 1,
 };
 
-const getValueAtPath = (obj: any, path: string): any => {
-  return path.split('.').reduce((acc, part) => acc?.[part], obj);
+const getValueAtPath = (obj: unknown, path: string): unknown => {
+  return path.split('.').reduce<unknown>((acc, part) => {
+    if (acc && typeof acc === 'object' && part in acc) {
+      return (acc as Record<string, unknown>)[part];
+    }
+    return undefined;
+  }, obj);
 };
 
 const DISCRETE_SELECT_FIELDS = new Set([

@@ -7,6 +7,10 @@ import {
 } from '@src/character_sheet/current_character_sheet';
 import { handleEverything } from '@src/character_sheet/sheet_worker';
 import { MonsterData, toCustomMonsterAbility } from './codegen';
+import { RiseSkill } from '@src/core_mechanics/skills';
+import { RiseTrait } from '@src/character_sheet/rise_data';
+import { BodyArmor } from '@src/equipment/armor';
+import { SphereName } from '@src/abilities/mystic_spheres';
 
 export interface BuildResult {
   creature: Creature | null;
@@ -42,14 +46,14 @@ export function buildCreature(monster: MonsterData, sharedFreeformCode?: string)
 
   // Override console.warn to capture validation warnings
   const originalWarn = console.warn;
-  console.warn = (...args: any[]) => {
+  console.warn = (...args: unknown[]) => {
     const msg = args.join(' ');
     warnings.push(cleanMessage(msg, name));
     originalWarn(...args);
   };
 
-  let creature: Creature | null = null;
-  let sheet: CharacterSheet | null = null;
+  let creature: Creature;
+  let sheet: CharacterSheet;
 
   try {
     sheet = createCharacterSheet(name);
@@ -65,7 +69,7 @@ export function buildCreature(monster: MonsterData, sharedFreeformCode?: string)
     }
 
     if (monster.trainedSkills && monster.trainedSkills.length > 0) {
-      creature.setTrainedSkills(monster.trainedSkills as any);
+      creature.setTrainedSkills(monster.trainedSkills as RiseSkill[]);
     }
 
     if (monster.knowledge && Object.values(monster.knowledge).some((v) => v)) {
@@ -82,7 +86,7 @@ export function buildCreature(monster: MonsterData, sharedFreeformCode?: string)
 
     if (monster.traits && monster.traits.length > 0) {
       for (const trait of monster.traits) {
-        creature.addTrait(trait as any);
+        creature.addTrait(trait as RiseTrait);
       }
     }
 
@@ -117,7 +121,7 @@ export function buildCreature(monster: MonsterData, sharedFreeformCode?: string)
     }
 
     if (monster.equippedArmor) {
-      creature.setEquippedArmorName({ bodyArmor: monster.equippedArmor as any });
+      creature.setEquippedArmorName({ bodyArmor: monster.equippedArmor as BodyArmor });
     }
 
     if (monster.properties && Object.keys(monster.properties).length > 0) {
@@ -182,7 +186,7 @@ export function buildCreature(monster: MonsterData, sharedFreeformCode?: string)
     // 5. Rituals:
     // Register Mystic Sphere lists.
     if (monster.rituals && monster.rituals.length > 0) {
-      creature.addRituals(monster.rituals as any);
+      creature.addRituals(monster.rituals as SphereName[]);
     }
 
     // Run shared freeform code if present (for monster groups)
@@ -190,8 +194,9 @@ export function buildCreature(monster: MonsterData, sharedFreeformCode?: string)
       try {
         const runShared = new Function('creature', sharedFreeformCode);
         runShared(creature);
-      } catch (err: any) {
-        throw new Error(`Error in shared freeform code: ${err.message || err}`);
+      } catch (err) {
+        const msg = err instanceof Error ? err.message : String(err);
+        throw new Error(`Error in shared freeform code: ${msg}`);
       }
     }
 
@@ -200,8 +205,9 @@ export function buildCreature(monster: MonsterData, sharedFreeformCode?: string)
       try {
         const runFreeform = new Function('creature', freeformCode);
         runFreeform(creature);
-      } catch (err: any) {
-        throw new Error(`Error in freeform code: ${err.message || err}`);
+      } catch (err) {
+        const msg = err instanceof Error ? err.message : String(err);
+        throw new Error(`Error in freeform code: ${msg}`);
       }
     }
 
@@ -212,8 +218,8 @@ export function buildCreature(monster: MonsterData, sharedFreeformCode?: string)
     creature.checkValidMonster();
 
     return { creature, sheet, errors, warnings };
-  } catch (err: any) {
-    const msg = err.message || String(err);
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err);
     errors.push(cleanMessage(msg, name));
     return { creature: null, sheet: null, errors, warnings };
   } finally {
