@@ -15,25 +15,21 @@ app.use(express.json());
 app.get('/api/reference', (req, res) => {
   console.log('[API] GET /api/reference - Fetching engine reference data');
   try {
-    const spellNames: string[] = [];
-    for (const sphere of allMysticSpheres) {
-      if (sphere.spells) {
-        for (const spell of sphere.spells) {
-          spellNames.push(spell.name);
-        }
-      }
-    }
-    const uniqueSpells = Array.from(new Set(spellNames)).sort();
+    const uniqueSpells = Array.from(
+      new Set(
+        allMysticSpheres
+          .flatMap((sphere) => sphere.spells ?? [])
+          .map((spell) => spell.name),
+      ),
+    ).sort();
 
-    const maneuverNames: string[] = [];
-    for (const style of allCombatStyles) {
-      if (style.maneuvers) {
-        for (const maneuver of style.maneuvers) {
-          maneuverNames.push(maneuver.name);
-        }
-      }
-    }
-    const uniqueManeuvers = Array.from(new Set(maneuverNames)).sort();
+    const uniqueManeuvers = Array.from(
+      new Set(
+        allCombatStyles
+          .flatMap((style) => style.maneuvers ?? [])
+          .map((maneuver) => maneuver.name),
+      ),
+    ).sort();
 
     const weaponNames = Array.from(MONSTER_WEAPONS).sort();
 

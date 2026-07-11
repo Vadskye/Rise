@@ -1,5 +1,72 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { StandardAbilityConfig } from '../../types/monster';
+
+interface AutocompleteSearchProps {
+  label: string;
+  placeholder: string;
+  items: string[];
+  excludeItems: string[];
+  onSelect: (item: string) => void;
+}
+
+const AutocompleteSearch: React.FC<AutocompleteSearchProps> = ({
+  label,
+  placeholder,
+  items,
+  excludeItems,
+  onSelect,
+}) => {
+  const [search, setSearch] = useState('');
+  const [showSuggestions, setShowSuggestions] = useState(false);
+
+  const excludeSet = useMemo(() => {
+    return new Set(excludeItems.map((i) => i.toLowerCase()));
+  }, [excludeItems]);
+
+  const filtered = useMemo(() => {
+    const searchLower = search.toLowerCase();
+    return items.filter(
+      (item) =>
+        item.toLowerCase().includes(searchLower) &&
+        !excludeSet.has(item.toLowerCase()),
+    );
+  }, [items, excludeSet, search]);
+
+  return (
+    <div className="autocomplete-container" style={{ position: 'relative' }}>
+      <label style={{ fontWeight: '600' }}>{label}</label>
+      <div style={{ display: 'flex', gap: '10px', marginTop: '5px' }}>
+        <input
+          type="text"
+          placeholder={placeholder}
+          value={search}
+          onChange={(e) => {
+            setSearch(e.target.value);
+            setShowSuggestions(true);
+          }}
+          onFocus={() => setShowSuggestions(true)}
+          onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
+        />
+      </div>
+      {showSuggestions && search && filtered.length > 0 && (
+        <ul className="autocomplete-suggestions">
+          {filtered.slice(0, 8).map((item) => (
+            <li
+              key={item}
+              onMouseDown={() => {
+                onSelect(item);
+                setSearch('');
+                setShowSuggestions(false);
+              }}
+            >
+              {item}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+};
 
 interface StandardAbilitiesSectionProps {
   standardAbilities: StandardAbilityConfig[];
@@ -20,12 +87,6 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
   onToggleExpand,
   setExpandedCard,
 }) => {
-  // Autocomplete search states
-  const [spellSearch, setSpellSearch] = useState('');
-  const [showSpellSuggestions, setShowSpellSuggestions] = useState(false);
-  const [maneuverSearch, setManeuverSearch] = useState('');
-  const [showManeuverSuggestions, setShowManeuverSuggestions] = useState(false);
-
   const addStandardAbility = (type: 'spell' | 'maneuver', name: string) => {
     if (standardAbilities.some((a) => a.type === type && a.name === name)) {
       return;
@@ -57,22 +118,6 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
     onChange(updated);
   };
 
-  const filteredSpells = referenceSpells.filter(
-    (s) =>
-      s.toLowerCase().includes(spellSearch.toLowerCase()) &&
-      !standardAbilities.some(
-        (a) => a.type === 'spell' && a.name.toLowerCase() === s.toLowerCase(),
-      ),
-  );
-
-  const filteredManeuvers = referenceManeuvers.filter(
-    (m) =>
-      m.toLowerCase().includes(maneuverSearch.toLowerCase()) &&
-      !standardAbilities.some(
-        (a) => a.type === 'maneuver' && a.name.toLowerCase() === m.toLowerCase(),
-      ),
-  );
-
   return (
     <div className="ability-section-card">
       <h4 className="section-subtitle">Standard Spells & Maneuvers</h4>
@@ -83,72 +128,26 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
 
       <div className="form-grid" style={{ marginBottom: '15px' }}>
         {/* Autocomplete Spell */}
-        <div className="autocomplete-container" style={{ position: 'relative' }}>
-          <label style={{ fontWeight: '600' }}>Add Standard Spell</label>
-          <div style={{ display: 'flex', gap: '10px', marginTop: '5px' }}>
-            <input
-              type="text"
-              placeholder="Search spells (e.g. Word of Power)..."
-              value={spellSearch}
-              onChange={(e) => {
-                setSpellSearch(e.target.value);
-                setShowSpellSuggestions(true);
-              }}
-              onFocus={() => setShowSpellSuggestions(true)}
-              onBlur={() => setTimeout(() => setShowSpellSuggestions(false), 200)}
-            />
-          </div>
-          {showSpellSuggestions && spellSearch && filteredSpells.length > 0 && (
-            <ul className="autocomplete-suggestions">
-              {filteredSpells.slice(0, 8).map((s) => (
-                <li
-                  key={s}
-                  onMouseDown={() => {
-                    addStandardAbility('spell', s);
-                    setSpellSearch('');
-                    setShowSpellSuggestions(false);
-                  }}
-                >
-                  {s}
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
+        <AutocompleteSearch
+          label="Add Standard Spell"
+          placeholder="Search spells (e.g. Word of Power)..."
+          items={referenceSpells}
+          excludeItems={standardAbilities
+            .filter((a) => a.type === 'spell')
+            .map((a) => a.name)}
+          onSelect={(name) => addStandardAbility('spell', name)}
+        />
 
         {/* Autocomplete Maneuver */}
-        <div className="autocomplete-container" style={{ position: 'relative' }}>
-          <label style={{ fontWeight: '600' }}>Add Standard Maneuver</label>
-          <div style={{ display: 'flex', gap: '10px', marginTop: '5px' }}>
-            <input
-              type="text"
-              placeholder="Search maneuvers (e.g. Charge)..."
-              value={maneuverSearch}
-              onChange={(e) => {
-                setManeuverSearch(e.target.value);
-                setShowManeuverSuggestions(true);
-              }}
-              onFocus={() => setShowManeuverSuggestions(true)}
-              onBlur={() => setTimeout(() => setShowManeuverSuggestions(false), 200)}
-            />
-          </div>
-          {showManeuverSuggestions && maneuverSearch && filteredManeuvers.length > 0 && (
-            <ul className="autocomplete-suggestions">
-              {filteredManeuvers.slice(0, 8).map((m) => (
-                <li
-                  key={m}
-                  onMouseDown={() => {
-                    addStandardAbility('maneuver', m);
-                    setManeuverSearch('');
-                    setShowManeuverSuggestions(false);
-                  }}
-                >
-                  {m}
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
+        <AutocompleteSearch
+          label="Add Standard Maneuver"
+          placeholder="Search maneuvers (e.g. Charge)..."
+          items={referenceManeuvers}
+          excludeItems={standardAbilities
+            .filter((a) => a.type === 'maneuver')
+            .map((a) => a.name)}
+          onSelect={(name) => addStandardAbility('maneuver', name)}
+        />
       </div>
 
       {/* Standard Abilities List */}
