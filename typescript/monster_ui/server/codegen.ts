@@ -121,7 +121,10 @@ export function toCustomMonsterAbility(ability: CustomAbilityConfig): CustomMons
     usageTime: ability.usageTime || undefined,
     cost: ability.cost || undefined,
     effect: ability.effect || undefined,
-    tags: ability.tags && ability.tags.length > 0 ? (ability.tags as RiseAbilityDefinitionTag[]) : undefined,
+    tags:
+      ability.tags && ability.tags.length > 0
+        ? (ability.tags as RiseAbilityDefinitionTag[])
+        : undefined,
     attack: ability.attack
       ? {
           targeting: ability.attack.targeting,

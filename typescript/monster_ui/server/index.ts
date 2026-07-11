@@ -17,18 +17,12 @@ app.get('/api/reference', (req, res) => {
   console.log('[API] GET /api/reference - Fetching engine reference data');
   try {
     const uniqueSpells = Array.from(
-      new Set(
-        allMysticSpheres
-          .flatMap((sphere) => sphere.spells ?? [])
-          .map((spell) => spell.name),
-      ),
+      new Set(allMysticSpheres.flatMap((sphere) => sphere.spells ?? []).map((spell) => spell.name)),
     ).sort();
 
     const uniqueManeuvers = Array.from(
       new Set(
-        allCombatStyles
-          .flatMap((style) => style.maneuvers ?? [])
-          .map((maneuver) => maneuver.name),
+        allCombatStyles.flatMap((style) => style.maneuvers ?? []).map((maneuver) => maneuver.name),
       ),
     ).sort();
 

@@ -89,7 +89,7 @@ describe('Monster UI Integration Tests (Serverless)', () => {
     // Validate returned computed stats for our new monster
     const validation = result.validations[newMonsterName];
     assert.strictEqual(validation.success, true);
-    
+
     const previewResult = generatePreview(updatedDb.monsters[updatedDb.monsters.length - 1]);
     assert.strictEqual(previewResult.success, true);
     assert.ok(previewResult.computedStats);
@@ -234,7 +234,11 @@ describe('Monster UI Integration Tests (Serverless)', () => {
 
     const targetGroup = updatedDb.monsterGroups[updatedDb.monsterGroups.length - 1];
     const targetMonster = targetGroup.monsters[0];
-    const previewResult = generatePreview(targetMonster, targetGroup.sharedFreeformCode, targetGroup.name);
+    const previewResult = generatePreview(
+      targetMonster,
+      targetGroup.sharedFreeformCode,
+      targetGroup.name,
+    );
     assert.strictEqual(previewResult.success, true);
     assert.ok(previewResult.computedStats);
     assert.strictEqual(previewResult.computedStats.name, testGroupMonsterName);
@@ -370,8 +374,12 @@ describe('Monster UI Integration Tests (Serverless)', () => {
     const previewResult = generatePreview(complexMonster);
     assert.strictEqual(previewResult.success, true);
     assert.ok(previewResult.computedStats);
-    assert.ok(previewResult.computedStats.activeAbilities.some((a: any) => a.name === 'Echoing Word'));
-    assert.ok(previewResult.computedStats.activeAbilities.some((a: any) => a.name === 'Double Slash'));
+    assert.ok(
+      previewResult.computedStats.activeAbilities.some((a: any) => a.name === 'Echoing Word'),
+    );
+    assert.ok(
+      previewResult.computedStats.activeAbilities.some((a: any) => a.name === 'Double Slash'),
+    );
     assert.ok(
       previewResult.computedStats.passiveAbilities.some((p: any) => p.name === 'Regeneration'),
     );
