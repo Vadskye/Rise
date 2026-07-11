@@ -105,7 +105,7 @@ describe('Monster UI Tab Layout Tests', () => {
     await page.setViewport({ width: 1400, height: 900 });
 
     // Handle console errors or uncaught page exceptions
-    page.on('pageerror', (err) => {
+    page.on('pageerror', (err: any) => {
       throw new Error(`Browser console error: ${err.message}`);
     });
 

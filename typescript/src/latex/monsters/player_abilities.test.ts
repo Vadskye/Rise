@@ -721,7 +721,7 @@ t.test('prepareActiveAbilitiesForPreview', (t) => {
   });
   creature.addWeapon('spear');
 
-  const rawAbility: ActiveAbility = {
+  const rawAbility: any = {
     name: 'Spear Strike',
     kind: 'maneuver',
     isMagical: false,

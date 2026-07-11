@@ -2,6 +2,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
 import { CustomMonsterAbility } from '@src/character_sheet/creature';
+import { MonsterAttackUsageTime } from '@src/character_sheet/sheet_worker';
 import { RiseAbilityDefinitionTag } from '@src/character_sheet/rise_data';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -120,7 +121,7 @@ export function toCustomMonsterAbility(ability: CustomAbilityConfig): CustomMons
   return {
     name: ability.name,
     isMagical: ability.isMagical,
-    usageTime: ability.usageTime || undefined,
+    usageTime: (ability.usageTime || undefined) as MonsterAttackUsageTime,
     cost: ability.cost || undefined,
     effect: ability.effect || undefined,
     tags:

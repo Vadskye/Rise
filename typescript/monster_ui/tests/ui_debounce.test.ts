@@ -102,7 +102,7 @@ describe('Monster UI Debounce/Timing Tests', () => {
     const page = await browser.newPage();
     await page.setViewport({ width: 1400, height: 900 });
 
-    page.on('pageerror', (err) => {
+    page.on('pageerror', (err: any) => {
       throw new Error(`Browser console error: ${err.message}`);
     });
 

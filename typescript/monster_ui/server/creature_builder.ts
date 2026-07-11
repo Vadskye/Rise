@@ -1,16 +1,25 @@
-import { Creature } from '@src/character_sheet/creature';
+import { Creature, MonsterAbilityOptions } from '@src/character_sheet/creature';
 import { CharacterSheet } from '@src/character_sheet/character_sheet';
 import {
   createCharacterSheet,
   characterSheetExists,
   deleteCharacterSheet,
 } from '@src/character_sheet/current_character_sheet';
-import { handleEverything } from '@src/character_sheet/sheet_worker';
+import { handleEverything, MonsterAttackUsageTime } from '@src/character_sheet/sheet_worker';
 import { MonsterData, toCustomMonsterAbility } from './codegen';
 import { RiseSkill } from '@src/core_mechanics/skills';
-import { RiseTrait } from '@src/character_sheet/rise_data';
-import { BodyArmor } from '@src/equipment/armor';
+import {
+  RiseTrait,
+  RiseAlignment,
+  RiseBaseClass,
+  RiseCreatureOrigin,
+  RiseCreatureType,
+  RiseSize,
+  RiseAbilityDefinitionTag,
+} from '@src/character_sheet/rise_data';
 import { SphereName } from '@src/abilities/mystic_spheres';
+import { BodyArmor } from '@src/monsters/equipment';
+import { MonsterWeapon } from '@src/monsters/weapons';
 import { showDetailedTiming } from './timing';
 
 export interface BuildResult {
@@ -66,7 +75,15 @@ export function buildCreature(monster: MonsterData, sharedFreeformCode?: string)
 
     const propertiesStart = performance.now();
     // Apply required properties
-    creature.setRequiredProperties(requiredProperties);
+    creature.setRequiredProperties({
+      alignment: requiredProperties.alignment as RiseAlignment,
+      base_class: requiredProperties.base_class as RiseBaseClass,
+      elite: requiredProperties.elite,
+      creature_origin: requiredProperties.creature_origin as RiseCreatureOrigin,
+      creature_type: requiredProperties.creature_type as RiseCreatureType,
+      size: requiredProperties.size as RiseSize,
+      level: requiredProperties.level,
+    });
 
     // Apply structured properties
     if (monster.baseAttributes && monster.baseAttributes.length === 6) {
@@ -138,9 +155,9 @@ export function buildCreature(monster: MonsterData, sharedFreeformCode?: string)
     if (monster.standardAbilities && monster.standardAbilities.length > 0) {
       for (const ability of monster.standardAbilities) {
         if (ability.type === 'spell') {
-          creature.addSpell(ability.name, ability.options);
+          creature.addSpell(ability.name, toMonsterAbilityOptions(ability.options));
         } else {
-          creature.addManeuver(ability.name, ability.options);
+          creature.addManeuver(ability.name, toMonsterAbilityOptions(ability.options));
         }
       }
     }
@@ -174,16 +191,16 @@ export function buildCreature(monster: MonsterData, sharedFreeformCode?: string)
           creature.addWeapon(weapon.name);
         }
         if (weapon.addMult) {
-          creature.addWeaponMult(weapon.name, weapon.options);
+          creature.addWeaponMult(weapon.name, toMonsterAbilityOptions(weapon.options));
         }
         if (weapon.addGrappling) {
-          creature.addGrapplingStrike(weapon.name, weapon.options);
+          creature.addGrapplingStrike(weapon.name, toMonsterAbilityOptions(weapon.options));
         }
         if (weapon.addSneak) {
-          creature.addSneakAttack(weapon.name, weapon.options);
+          creature.addSneakAttack(weapon.name, toMonsterAbilityOptions(weapon.options));
         }
         if (weapon.addLatchOn) {
-          creature.addLatchOn(weapon.name, weapon.options);
+          creature.addLatchOn(weapon.name, toMonsterAbilityOptions(weapon.options));
         }
       }
     }
@@ -260,4 +277,23 @@ export function buildCreature(monster: MonsterData, sharedFreeformCode?: string)
     // Restore console.warn
     console.warn = originalWarn;
   }
+}
+
+function toMonsterAbilityOptions(options?: {
+  displayName?: string;
+  usageTime?: string;
+  isMagical?: boolean;
+  weapon?: string;
+  tags?: string[];
+}): MonsterAbilityOptions {
+  if (!options) {
+    return {};
+  }
+  return {
+    displayName: options.displayName,
+    isMagical: options.isMagical,
+    tags: options.tags as RiseAbilityDefinitionTag[] | undefined,
+    usageTime: options.usageTime as MonsterAttackUsageTime | undefined,
+    weapon: options.weapon as MonsterWeapon | undefined,
+  };
 }
