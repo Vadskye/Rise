@@ -631,17 +631,25 @@ body {
     padding-bottom: 2px;
   }
 
+  .passive-ability-item {
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+    line-height: 1.4;
+
+    strong {
+      color: #5c2c16;
+    }
+  }
+
   .ability-item {
-    margin-bottom: 12px;
+    margin-bottom: 16px;
     font-size: 0.85rem;
 
     .ability-title-line {
       display: flex;
       justify-content: space-between;
       font-weight: bold;
-      border-bottom: 1px dashed var(--book-border);
       padding-bottom: 2px;
-      margin-bottom: 4px;
 
       .ability-name {
         color: #5c2c16;
@@ -654,19 +662,41 @@ body {
       }
     }
 
-    .ability-details {
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-      padding-left: 4px;
+    .ability-metadata {
+      margin-top: 2px;
+      font-size: 0.85rem;
+      color: var(--book-text);
 
-      .detail-line {
-        display: flex;
+      .metadata-line {
+        margin-top: 1px;
 
-        .detail-label {
+        .metadata-label {
           font-weight: bold;
-          margin-right: 4px;
-          min-width: 65px;
+          color: #4c3f33;
+        }
+      }
+    }
+
+    .ability-divider {
+      height: 1px;
+      background-color: var(--book-rule);
+      margin: 4px 0;
+    }
+
+    .ability-body {
+      line-height: 1.4;
+
+      .ability-description {
+        margin-bottom: 4px;
+      }
+
+      .ability-sub-description {
+        padding-left: 16px;
+        margin-top: 2px;
+
+        .sub-label {
+          font-weight: bold;
+          color: #4c3f33;
         }
       }
     }
