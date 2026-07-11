@@ -3,42 +3,38 @@ name: monster-ui-development
 description: Guidelines and documentation for developing and debugging the Rise Monster Creator UI app, its React frontend, Express backend, and interaction with the game engine.
 ---
 
-# Rise Monster Creator UI Development Skill
+# Rise Monster Creator UI Development
 
-Use this skill when modifying, debugging, or researching the local web application for monster creation at `typescript/monster_ui/`.
+Local web app for monster creation: [monster_ui](../../../typescript/monster_ui/).
 
-## Codebase Architecture
+## Codebase Structure
 
-The Monster UI is a self-contained package inside `Rise/typescript/monster_ui/` with its own `package.json`, dependencies, and build toolchain (Vite + TSX + Less) to avoid dependency and configuration conflicts with the main CommonJS TypeScript project.
+- **Vite Frontend (`src/`)**: React app. Entry: [main.tsx](../../../typescript/monster_ui/src/main.tsx), Layout/State: [App.tsx](../../../typescript/monster_ui/src/App.tsx).
+- **Express Backend (`server/`)**: [index.ts](../../../typescript/monster_ui/server/index.ts) serves API.
+- **Database**: [monsters_from_ui.json](../../../typescript/monster_ui/monsters_from_ui.json) (source of truth).
 
-```
-Rise/typescript/monster_ui/
-├── package.json                # React, Express, TSX, Vite, concurrently
-├── tsconfig.json               # Frontend TS configuration (JSX, ESM)
-├── tsconfig.server.json        # Backend TS configuration (CommonJS, extends parent)
-├── vite.config.ts              # Vite frontend configuration with /api proxy to port 3001
-├── index.html                  # Frontend entry page
-├── monsters_from_ui.json       # Source-of-truth database of monsters
-├── src/                        # Frontend React Application
-│   ├── main.tsx                # Entry point
-│   ├── App.tsx                 # App layout, state, API calls
-│   ├── App.less                # Main styles
-│   ├── types/
-│   │   └── monster.ts          # Type definitions for the JSON schema and computed stats
-│   └── components/
-│       ├── MonsterSidebar.tsx  # Left sidebar: list of monsters and monster groups
-│       ├── MonsterForm.tsx     # Left-center panel: structured form fields + freeform text
-│       ├── BookPreview.tsx     # Right panel: real-time compiled PDF/HTML book preview card
-│       └── ValidationBox.tsx   # Top/Global: warnings/errors box from character sheet compiler
-└── server/                     # Backend Express API Server
-    ├── index.ts                # API endpoints and server setup
-    ├── validate.ts             # Calls the Rise core character sheet engine to compile stats
-    └── codegen.ts              # Generates TypeScript monster code from monsters_from_ui.json
-```
+## Commands
 
-## Generated Code Output
+Run from [monster_ui/](../../../typescript/monster_ui/):
 
-When the database is saved (`POST /api/save`), the backend writes the updated list of monsters to:
-`Rise/typescript/src/monsters/individual_monsters/monsters_from_ui.ts`
+- **Dev**: `npm run dev` (starts Vite frontend on `http://localhost:5173` and Express API proxy on `http://localhost:3001`).
+- **Test**: `npm run test` (runs unit, integration, and Puppeteer UI tests in [tests/](../../../typescript/monster_ui/tests/)).
 
-This file is automatically imported and registered by the main game rules registry in `Rise/typescript/src/monsters/grimoire.ts`.
+## API Endpoints
+
+- `GET /api/reference`: Returns rulebook data (spells, maneuvers, etc.) from the game engine.
+- `POST /api/preview`: Compiles monster in-memory to return calculated stats & validation warnings.
+- `POST /api/save`: Persists JSON database and triggers [codegen.ts](../../../typescript/monster_ui/server/codegen.ts) to write class definitions.
+
+## Workflows
+
+**Adding a property**:
+
+1. Add to type definitions: [monster.ts](../../../typescript/monster_ui/src/types/monster.ts).
+2. Add input control: [MonsterForm.tsx](../../../typescript/monster_ui/src/components/MonsterForm.tsx) (or within `abilities/`).
+3. Support in validation: [validate.ts](../../../typescript/monster_ui/server/validate.ts).
+4. Support in codegen: [codegen.ts](../../../typescript/monster_ui/server/codegen.ts).
+
+**Saved Output**:
+Saves compiled TypeScript classes to [monsters_from_ui.ts](../../../typescript/src/monsters/individual_monsters/monsters_from_ui.ts), imported by [grimoire.ts](../../../typescript/src/monsters/grimoire.ts).
+
