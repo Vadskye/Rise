@@ -39,49 +39,45 @@ const PillListInput: React.FC<PillListInputProps> = ({
         className="tag-list"
         style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '8px' }}
       >
-        {items.length === 0 ? (
-          emptyMessage && (
-            <span
-              style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontStyle: 'italic' }}
-            >
-              {emptyMessage}
-            </span>
-          )
-        ) : (
-          items.map((item, idx) => (
-            <span
-              key={idx}
-              className="pill-tag"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '5px',
-                backgroundColor: 'var(--bg-tertiary)',
-                border: '1px solid var(--border-color)',
-                padding: '4px 10px',
-                borderRadius: '15px',
-                fontSize: '0.8rem',
-              }}
-            >
-              {item}
-              <button
-                type="button"
-                onClick={() => handleRemove(idx)}
+        {items.length === 0
+          ? emptyMessage && (
+              <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontStyle: 'italic' }}>
+                {emptyMessage}
+              </span>
+            )
+          : items.map((item, idx) => (
+              <span
+                key={idx}
+                className="pill-tag"
                 style={{
-                  background: 'none',
-                  border: 'none',
-                  color: 'var(--danger-color)',
-                  cursor: 'pointer',
-                  padding: '0 2px',
-                  fontSize: '0.85rem',
-                  fontWeight: 'bold',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '5px',
+                  backgroundColor: 'var(--bg-tertiary)',
+                  border: '1px solid var(--border-color)',
+                  padding: '4px 10px',
+                  borderRadius: '15px',
+                  fontSize: '0.8rem',
                 }}
               >
-                &times;
-              </button>
-            </span>
-          ))
-        )}
+                {item}
+                <button
+                  type="button"
+                  onClick={() => handleRemove(idx)}
+                  style={{
+                    background: 'none',
+                    border: 'none',
+                    color: 'var(--danger-color)',
+                    cursor: 'pointer',
+                    padding: '0 2px',
+                    fontSize: '0.85rem',
+                    fontWeight: 'bold',
+                  }}
+                >
+                  &times;
+                </button>
+              </span>
+            ))}
       </div>
       <div style={{ display: 'flex', gap: '10px' }}>
         <input
@@ -403,8 +399,6 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
         traits: newTraits,
       });
     };
-
-
 
     const knowledge = monsterData.knowledge || {};
     const setKnowledgeVal = (key: 'easy' | 'normal' | 'hard' | 'legendary', value: string) => {
@@ -867,7 +861,9 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
             <PillListInput
               label="Custom Movement Speeds"
               items={monsterData.customMovementSpeeds || []}
-              onChange={(updated) => onChangeMonster({ ...monsterData, customMovementSpeeds: updated })}
+              onChange={(updated) =>
+                onChangeMonster({ ...monsterData, customMovementSpeeds: updated })
+              }
               placeholder="e.g. Fly 30 ft."
               emptyMessage="No custom movement speeds added (defaults to ground speed)."
             />

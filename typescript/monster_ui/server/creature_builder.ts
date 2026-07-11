@@ -22,10 +22,7 @@ export interface BuildResult {
  * Captures all script/engine errors and overrides console.warn to log alignment
  * or verification warnings.
  */
-export function buildCreature(
-  monster: MonsterData,
-  sharedFreeformCode?: string,
-): BuildResult {
+export function buildCreature(monster: MonsterData, sharedFreeformCode?: string): BuildResult {
   const { name, requiredProperties, freeformCode } = monster;
 
   if (characterSheetExists(name)) {

@@ -26,9 +26,7 @@ const AutocompleteSearch: React.FC<AutocompleteSearchProps> = ({
   const filtered = useMemo(() => {
     const searchLower = search.toLowerCase();
     return items.filter(
-      (item) =>
-        item.toLowerCase().includes(searchLower) &&
-        !excludeSet.has(item.toLowerCase()),
+      (item) => item.toLowerCase().includes(searchLower) && !excludeSet.has(item.toLowerCase()),
     );
   }, [items, excludeSet, search]);
 
@@ -132,9 +130,7 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
           label="Add Standard Spell"
           placeholder="Search spells (e.g. Word of Power)..."
           items={referenceSpells}
-          excludeItems={standardAbilities
-            .filter((a) => a.type === 'spell')
-            .map((a) => a.name)}
+          excludeItems={standardAbilities.filter((a) => a.type === 'spell').map((a) => a.name)}
           onSelect={(name) => addStandardAbility('spell', name)}
         />
 
@@ -143,9 +139,7 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
           label="Add Standard Maneuver"
           placeholder="Search maneuvers (e.g. Charge)..."
           items={referenceManeuvers}
-          excludeItems={standardAbilities
-            .filter((a) => a.type === 'maneuver')
-            .map((a) => a.name)}
+          excludeItems={standardAbilities.filter((a) => a.type === 'maneuver').map((a) => a.name)}
           onSelect={(name) => addStandardAbility('maneuver', name)}
         />
       </div>
