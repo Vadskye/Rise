@@ -70,6 +70,7 @@ interface StandardAbilitiesSectionProps {
   standardAbilities: StandardAbilityConfig[];
   referenceSpells: string[];
   referenceManeuvers: string[];
+  referenceWeapons: string[];
   onChange: (updatedAbilities: StandardAbilityConfig[]) => void;
   expandedCard: string | null;
   onToggleExpand: (cardId: string) => void;
@@ -80,6 +81,7 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
   standardAbilities,
   referenceSpells,
   referenceManeuvers,
+  referenceWeapons,
   onChange,
   expandedCard,
   onToggleExpand,
@@ -235,6 +237,28 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
                           <option value="Free">Free Action</option>
                         </select>
                       </div>
+                      <div className="form-group">
+                        <label>Weapon Override</label>
+                        <select
+                          value={ability.options?.weapon || ''}
+                          onChange={(e) =>
+                            updateStandardAbility(idx, {
+                              ...ability,
+                              options: {
+                                ...(ability.options || {}),
+                                weapon: e.target.value || undefined,
+                              },
+                            })
+                          }
+                        >
+                          <option value="">-- No Weapon (Default) --</option>
+                          {referenceWeapons.map((w) => (
+                            <option key={w} value={w}>
+                              {w}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
                       <div
                         className="form-group"
                         style={{
@@ -265,6 +289,29 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
                           Is Magical
                         </label>
                       </div>
+                    </div>
+
+                    <div className="form-group" style={{ marginTop: '15px' }}>
+                      <label>Tags Override (Comma-separated, e.g. Fire, Attack, Evocation)</label>
+                      <input
+                        type="text"
+                        placeholder="e.g. Fire, Attack, Evocation"
+                        value={ability.options?.tags?.join(', ') || ''}
+                        onChange={(e) =>
+                          updateStandardAbility(idx, {
+                            ...ability,
+                            options: {
+                              ...(ability.options || {}),
+                              tags: e.target.value
+                                ? e.target.value
+                                    .split(',')
+                                    .map((t) => t.trim())
+                                    .filter(Boolean)
+                                : undefined,
+                            },
+                          })
+                        }
+                      />
                     </div>
                   </div>
                 )}

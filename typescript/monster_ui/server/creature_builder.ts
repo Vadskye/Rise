@@ -77,14 +77,14 @@ export function buildCreature(monster: MonsterData, sharedFreeformCode?: string)
       creature.setTrainedSkills(monster.trainedSkills as RiseSkill[]);
     }
 
-    if (monster.knowledge && Object.values(monster.knowledge).some((v) => v)) {
-      const cleanKnowledge: Record<string, string> = {};
-      for (const [key, value] of Object.entries(monster.knowledge)) {
-        if (value) {
-          cleanKnowledge[key] = value;
-        }
-      }
-      if (Object.keys(cleanKnowledge).length > 0) {
+    if (monster.knowledge) {
+      const cleanKnowledge = {
+        easy: monster.knowledge.easy || undefined,
+        normal: monster.knowledge.normal || undefined,
+        hard: monster.knowledge.hard || undefined,
+        legendary: monster.knowledge.legendary || undefined,
+      };
+      if (Object.values(cleanKnowledge).some((v) => v !== undefined)) {
         creature.setKnowledgeResults(cleanKnowledge);
       }
     }
