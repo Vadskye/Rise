@@ -931,6 +931,7 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
             monsterData={monsterData}
             onChangeMonster={onChangeMonster}
             referenceData={referenceData}
+            warnings={warnings}
           />
         )}
 

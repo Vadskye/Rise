@@ -21,6 +21,7 @@ import { SphereName } from '@src/abilities/mystic_spheres';
 import { BodyArmor } from '@src/monsters/equipment';
 import { MonsterWeapon } from '@src/monsters/weapons';
 import { showDetailedTiming } from './timing';
+import { getManeuverByName } from '@src/abilities/combat_styles';
 
 export interface BuildResult {
   creature: Creature | null;
@@ -158,6 +159,18 @@ export function buildCreature(monster: MonsterData, sharedFreeformCode?: string)
           creature.addSpell(ability.name, toMonsterAbilityOptions(ability.options));
         } else {
           creature.addManeuver(ability.name, toMonsterAbilityOptions(ability.options));
+          try {
+            const baseManeuver = getManeuverByName(ability.name);
+            if (baseManeuver && baseManeuver.effect) {
+              const isStrike = new RegExp('make.*strike', 'i').test(baseManeuver.effect);
+              if (isStrike && !ability.options?.weapon) {
+                const nameToUse = ability.options?.displayName || ability.name;
+                warnings.push(`Maneuver "${nameToUse}" makes a strike and doesn't have a weapon.`);
+              }
+            }
+          } catch (e) {
+            // Ignore if maneuver name is invalid
+          }
         }
       }
     }

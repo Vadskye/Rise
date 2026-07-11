@@ -277,6 +277,112 @@ describe('Monster UI Integration Tests (Full Server)', () => {
     }
   });
 
+  test('POST /api/preview validates strike maneuvers requiring a weapon override', async () => {
+    const monsterWithStrikeWarn = {
+      name: `StrikeWarnMonster_${Date.now()}`,
+      requiredProperties: {
+        alignment: 'neutral',
+        base_class: 'warrior',
+        elite: false,
+        creature_origin: 'natural',
+        creature_type: 'beast',
+        size: 'medium',
+        level: 1,
+      },
+      freeformCode: '',
+      standardAbilities: [
+        {
+          type: 'maneuver',
+          name: 'Basic Strike',
+          options: {},
+        },
+      ],
+    };
+
+    const res1 = await fetch(`${baseUrl}/api/preview`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ monster: monsterWithStrikeWarn }),
+    });
+    assert.strictEqual(res1.status, 200);
+    const result1 = await res1.json();
+    assert.ok(
+      result1.warnings.some((w: string) => w.includes("makes a strike and doesn't have a weapon.")),
+    );
+
+    const monsterWithStrikeOk = {
+      name: `StrikeOkMonster_${Date.now()}`,
+      requiredProperties: {
+        alignment: 'neutral',
+        base_class: 'warrior',
+        elite: false,
+        creature_origin: 'natural',
+        creature_type: 'beast',
+        size: 'medium',
+        level: 1,
+      },
+      freeformCode: '',
+      standardAbilities: [
+        {
+          type: 'maneuver',
+          name: 'Basic Strike',
+          options: {
+            weapon: 'Shortsword',
+          },
+        },
+      ],
+    };
+
+    const res2 = await fetch(`${baseUrl}/api/preview`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ monster: monsterWithStrikeOk }),
+    });
+    assert.strictEqual(res2.status, 200);
+    const result2 = await res2.json();
+    assert.ok(
+      !result2.warnings.some((w: string) =>
+        w.includes("makes a strike and doesn't have a weapon."),
+      ),
+    );
+
+    const monsterWithDisplayNameStrikeNonWarn = {
+      name: `DisplayNameStrikeNonWarn_${Date.now()}`,
+      requiredProperties: {
+        alignment: 'neutral',
+        base_class: 'warrior',
+        elite: false,
+        creature_origin: 'natural',
+        creature_type: 'beast',
+        size: 'medium',
+        level: 1,
+      },
+      freeformCode: '',
+      standardAbilities: [
+        {
+          type: 'maneuver',
+          name: 'Ostentatious Flex',
+          options: {
+            displayName: 'Make Strike',
+          },
+        },
+      ],
+    };
+
+    const res3 = await fetch(`${baseUrl}/api/preview`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ monster: monsterWithDisplayNameStrikeNonWarn }),
+    });
+    assert.strictEqual(res3.status, 200);
+    const result3 = await res3.json();
+    assert.ok(
+      !result3.warnings.some((w: string) =>
+        w.includes("makes a strike and doesn't have a weapon."),
+      ),
+    );
+  });
+
   test('POST /api/save rejects malformed JSON payloads with 400 status', async () => {
     const resPost = await fetch(`${baseUrl}/api/save`, {
       method: 'POST',
