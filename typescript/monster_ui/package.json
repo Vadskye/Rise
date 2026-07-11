@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "concurrently \"vite\" \"tsx watch --ignore ../src/monsters/individual_monsters/monsters_from_ui.ts --tsconfig tsconfig.server.json server/index.ts\"",
+    "dev:timing": "concurrently \"vite\" \"tsx watch --ignore ../src/monsters/individual_monsters/monsters_from_ui.ts --tsconfig tsconfig.server.json server/index.ts --timing\"",
     "build": "tsc && vite build",
     "lint": "eslint \"**/*.{ts,tsx}\"",
     "prettier": "prettier --write \"**/*.{ts,tsx}\"",

@@ -11,6 +11,7 @@ import { RiseSkill } from '@src/core_mechanics/skills';
 import { RiseTrait } from '@src/character_sheet/rise_data';
 import { BodyArmor } from '@src/equipment/armor';
 import { SphereName } from '@src/abilities/mystic_spheres';
+import { showDetailedTiming } from './timing';
 
 export interface BuildResult {
   creature: Creature | null;
@@ -27,6 +28,7 @@ export interface BuildResult {
  * or verification warnings.
  */
 export function buildCreature(monster: MonsterData, sharedFreeformCode?: string): BuildResult {
+  const start = performance.now();
   const { name, requiredProperties, freeformCode } = monster;
 
   if (characterSheetExists(name)) {
@@ -56,10 +58,13 @@ export function buildCreature(monster: MonsterData, sharedFreeformCode?: string)
   let sheet: CharacterSheet;
 
   try {
+    const instantiateStart = performance.now();
     sheet = createCharacterSheet(name);
     sheet.setProperties({ name });
     creature = new Creature(sheet);
+    const instantiateDuration = performance.now() - instantiateStart;
 
+    const propertiesStart = performance.now();
     // Apply required properties
     creature.setRequiredProperties(requiredProperties);
 
@@ -188,9 +193,12 @@ export function buildCreature(monster: MonsterData, sharedFreeformCode?: string)
     if (monster.rituals && monster.rituals.length > 0) {
       creature.addRituals(monster.rituals as SphereName[]);
     }
+    const propertiesDuration = performance.now() - propertiesStart;
 
     // Run shared freeform code if present (for monster groups)
+    let sharedFreeformDuration = 0;
     if (sharedFreeformCode) {
+      const sharedFreeformStart = performance.now();
       try {
         const runShared = new Function('creature', sharedFreeformCode);
         runShared(creature);
@@ -198,10 +206,13 @@ export function buildCreature(monster: MonsterData, sharedFreeformCode?: string)
         const msg = err instanceof Error ? err.message : String(err);
         throw new Error(`Error in shared freeform code: ${msg}`);
       }
+      sharedFreeformDuration = performance.now() - sharedFreeformStart;
     }
 
     // Run freeform code
+    let freeformDuration = 0;
     if (freeformCode) {
+      const freeformStart = performance.now();
       try {
         const runFreeform = new Function('creature', freeformCode);
         runFreeform(creature);
@@ -209,13 +220,32 @@ export function buildCreature(monster: MonsterData, sharedFreeformCode?: string)
         const msg = err instanceof Error ? err.message : String(err);
         throw new Error(`Error in freeform code: ${msg}`);
       }
+      freeformDuration = performance.now() - freeformStart;
     }
 
     // Run game engine calculations
+    const calcStart = performance.now();
     creature.setProperties({ monster_type: creature.elite ? 'elite' : 'normal' });
     handleEverything();
     sheet.triggerRecalculation();
     creature.checkValidMonster();
+    const calcDuration = performance.now() - calcStart;
+
+    const totalDuration = performance.now() - start;
+    if (showDetailedTiming) {
+      console.log(`[Timing] [Builder] "${name}" buildCreature total: ${totalDuration.toFixed(2)}ms`);
+      console.log(`[Timing] [Builder]   - Instantiate: ${instantiateDuration.toFixed(2)}ms`);
+      console.log(`[Timing] [Builder]   - Properties & setup: ${propertiesDuration.toFixed(2)}ms`);
+      if (sharedFreeformCode) {
+        console.log(`[Timing] [Builder]   - Shared Freeform: ${sharedFreeformDuration.toFixed(2)}ms`);
+      }
+      if (freeformCode) {
+        console.log(`[Timing] [Builder]   - Freeform: ${freeformDuration.toFixed(2)}ms`);
+      }
+      console.log(
+        `[Timing] [Builder]   - Engine Calc (handleEverything, recalculation, checkValid): ${calcDuration.toFixed(2)}ms`,
+      );
+    }
 
     return { creature, sheet, errors, warnings };
   } catch (err) {
