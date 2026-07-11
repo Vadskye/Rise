@@ -55,7 +55,7 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
     <aside className="sidebar">
       <div className="sidebar-header">
         <h2>👾 Creator</h2>
-        <button className="save-db-btn" onClick={onSaveDb} disabled={isSaving}>
+        <button className="save-db-btn" data-testid="save-db-btn" onClick={onSaveDb} disabled={isSaving}>
           {isSaving ? 'Saving...' : 'Save DB'}
         </button>
       </div>
@@ -179,8 +179,8 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
       </div>
 
       <div className="sidebar-footer">
-        <button onClick={onAddMonster}>➕ New Individual</button>
-        <button onClick={onAddGroup}>📁 New Group</button>
+        <button data-testid="add-individual-btn" onClick={onAddMonster}>➕ New Individual</button>
+        <button data-testid="add-group-btn" onClick={onAddGroup}>📁 New Group</button>
       </div>
     </aside>
   );
