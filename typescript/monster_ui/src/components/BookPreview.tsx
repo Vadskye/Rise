@@ -66,7 +66,7 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
 
   // Knowledge DVs
   const knowledge = stats.knowledge;
-  const baseDifficulty = knowledge ? Math.floor(knowledge.monsterLevel / 2) + 5 : 5;
+  const baseDifficulty = stats.level !== undefined ? Math.floor(stats.level / 2) + 5 : 5;
   const showKnowledge =
     knowledge && (knowledge.easy || knowledge.normal || knowledge.hard || knowledge.legendary);
 
