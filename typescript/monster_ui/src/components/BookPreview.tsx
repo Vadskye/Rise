@@ -69,6 +69,9 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
   const baseDifficulty = stats.level !== undefined ? Math.floor(stats.level / 2) + 5 : 5;
   const showKnowledge =
     knowledge && (knowledge.easy || knowledge.normal || knowledge.hard || knowledge.legendary);
+  const relevantKnowledge = knowledge.relevantKnowledges?.[0] || 'nature';
+  const skillLabel = relevantKnowledge.replace('knowledge_', '');
+  const skillNameFormatted = skillLabel.charAt(0).toUpperCase() + skillLabel.slice(1);
 
   // Sorting active abilities: usage time then name
   const sortedActiveAbilities = [...stats.activeAbilities].sort((a, b) => {
@@ -80,6 +83,20 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
     }
     return a.name.localeCompare(b.name);
   });
+
+  const defaultTraits = [
+    'blooded',
+    'corporeal',
+    'dynamic',
+    'ensouled',
+    'living',
+    'mortal',
+    'sighted',
+  ];
+  const filteredTraits = stats.traits
+    .filter((t) => !defaultTraits.includes(t.toLowerCase()))
+    .map((t) => t.charAt(0).toUpperCase() + t.slice(1))
+    .sort();
 
   return (
     <div className={`book-preview-container ${loading ? 'loading-preview' : ''}`}>
@@ -112,20 +129,63 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
             {mentalText} • Ref {stats.reflex}
           </span>
         </div>
+
+        {/* Special Defenses */}
+        {stats.immune && (
+          <div className="stat-line">
+            <span className="stat-label">Immune</span>
+            <span className="stat-value">{stats.immune}</span>
+          </div>
+        )}
+        {stats.resistant && (
+          <div className="stat-line">
+            <span className="stat-label">Resistant</span>
+            <span className="stat-value">{stats.resistant}</span>
+          </div>
+        )}
+        {stats.vulnerable && (
+          <div className="stat-line">
+            <span className="stat-label">Vulnerable</span>
+            <span className="stat-value">{stats.vulnerable}</span>
+          </div>
+        )}
+
         <div className="stat-line">
           <span className="stat-label">Movement</span>
           <span className="stat-value">
             {stats.speed} ft.
-            {stats.skills.includes('jump') ? ` • Jump ${formatModifier(stats.attributes[1])}` : ''}
+            {stats.movementComponents && stats.movementComponents.length > 0
+              ? `; ${stats.movementComponents.join(' • ')}`
+              : ''}
           </span>
         </div>
 
-        {/* Senses/Skills */}
-        {stats.skills.length > 0 && (
+        {/* Senses */}
+        {stats.sensesComponents && stats.sensesComponents.length > 0 && (
           <div className="stat-line" style={{ marginTop: '2px' }}>
-            <span className="stat-label">Trained Skills</span>
+            <span className="stat-label">Senses</span>
             <span className="stat-value">
-              {stats.skills.map((s) => s.charAt(0).toUpperCase() + s.slice(1)).join(', ')}
+              {stats.sensesComponents.join(' • ')}
+            </span>
+          </div>
+        )}
+
+        {/* Social */}
+        {stats.socialComponents && stats.socialComponents.length > 0 && (
+          <div className="stat-line" style={{ marginTop: '2px' }}>
+            <span className="stat-label">Social</span>
+            <span className="stat-value">
+              {stats.socialComponents.join(' • ')}
+            </span>
+          </div>
+        )}
+
+        {/* Other skills */}
+        {stats.otherSkillsComponents && stats.otherSkillsComponents.length > 0 && (
+          <div className="stat-line" style={{ marginTop: '2px' }}>
+            <span className="stat-label">Other skills</span>
+            <span className="stat-value">
+              {stats.otherSkillsComponents.join(' • ')}
             </span>
           </div>
         )}
@@ -154,14 +214,13 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
         <div className="stat-line">
           <span className="stat-label">Accuracy</span>
           <span className="stat-value">
-            {formatModifier(stats.armor_defense - 10 /* estimate basic accuracy */)}; Brawling{' '}
-            {formatModifier(stats.brawn - 10)}
+            {formatModifier(stats.accuracy)}; Brawling {formatModifier(stats.brawling_accuracy)}
           </span>
           <span className="stat-label" style={{ marginLeft: 'auto' }}>
             Power
           </span>
           <span className="stat-value" style={{ marginRight: 0 }}>
-            {stats.level + 2} ✦
+            {stats.mundane_power}; {stats.magical_power} ✦
           </span>
         </div>
 
@@ -174,24 +233,11 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
           </div>
         )}
 
-        {stats.traits.filter(
-          (t) =>
-            t.toLowerCase() !== 'blooded' &&
-            t.toLowerCase() !== 'living' &&
-            t.toLowerCase() !== 'mortal',
-        ).length > 0 && (
+        {filteredTraits.length > 0 && (
           <div className="stat-line">
             <span className="stat-label">Traits</span>
             <span className="stat-value">
-              {stats.traits
-                .filter(
-                  (t) =>
-                    t.toLowerCase() !== 'blooded' &&
-                    t.toLowerCase() !== 'living' &&
-                    t.toLowerCase() !== 'mortal',
-                )
-                .map((t) => t.charAt(0).toUpperCase() + t.slice(1))
-                .join(', ')}
+              {filteredTraits.join(' • ')}
             </span>
           </div>
         )}
@@ -203,22 +249,22 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
           <div className="knowledge-title">Knowledge Checks</div>
           {knowledge.easy && (
             <div className="knowledge-line">
-              <span className="dv-label">Easy (DV {baseDifficulty - 5}):</span> {knowledge.easy}
+              <span className="dv-label">{skillNameFormatted} DV {baseDifficulty - 5}:</span> {knowledge.easy}
             </div>
           )}
           {knowledge.normal && (
             <div className="knowledge-line">
-              <span className="dv-label">Normal (DV {baseDifficulty}):</span> {knowledge.normal}
+              <span className="dv-label">{skillNameFormatted} DV {baseDifficulty}:</span> {knowledge.normal}
             </div>
           )}
           {knowledge.hard && (
             <div className="knowledge-line">
-              <span className="dv-label">Hard (DV {baseDifficulty + 5}):</span> {knowledge.hard}
+              <span className="dv-label">{skillNameFormatted} DV {baseDifficulty + 5}:</span> {knowledge.hard}
             </div>
           )}
           {knowledge.legendary && (
             <div className="knowledge-line">
-              <span className="dv-label">Legendary (DV {baseDifficulty + 10}):</span>{' '}
+              <span className="dv-label">{skillNameFormatted} DV {baseDifficulty + 10}:</span>{' '}
               {knowledge.legendary}
             </div>
           )}

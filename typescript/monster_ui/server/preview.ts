@@ -3,6 +3,12 @@ import {
   characterSheetExists,
   getCharacterSheet,
 } from '@src/character_sheet/current_character_sheet';
+import {
+  getMovementComponents,
+  getSensesComponents,
+  getSocialComponents,
+  getOtherSkillsComponents,
+} from '@src/latex/monsters/convert_monster_to_latex';
 import { MonsterData } from './codegen';
 import { buildCreature } from './creature_builder';
 import { showDetailedTiming } from './timing';
@@ -84,6 +90,18 @@ export function generatePreview(
       activeAbilities: prepareActiveAbilitiesForPreview(creature, creature.getActiveAbilities()),
       passiveAbilities: creature.getPassiveAbilities(),
       knowledge: creature.getKnowledgeResultConfig(),
+      // Real calculated stats and fields:
+      accuracy: creature.accuracy,
+      brawling_accuracy: creature.brawling_accuracy,
+      mundane_power: creature.mundane_power,
+      magical_power: creature.magical_power,
+      movementComponents: getMovementComponents(creature),
+      sensesComponents: getSensesComponents(creature),
+      socialComponents: getSocialComponents(creature),
+      otherSkillsComponents: getOtherSkillsComponents(creature),
+      immune: creature.immune || '',
+      resistant: creature.resistant || '',
+      vulnerable: creature.vulnerable || '',
     };
   }
 
