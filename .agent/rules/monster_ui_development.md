@@ -37,3 +37,9 @@ Run from [monster_ui/](../../typescript/monster_ui/):
 
 **Saved Output**:
 Saves compiled TypeScript classes to [monsters_from_ui.ts](../../typescript/src/monsters/individual_monsters/monsters_from_ui.ts), imported by [grimoire.ts](../../typescript/src/monsters/grimoire.ts).
+
+## Development Guidelines
+
+- **Avoid `any` Casts**: Always build configurations using fully typed interfaces (e.g. `CustomMonsterAbility`) instead of relying on `any`.
+- **DRY Codegen and Validation**: Keep utility mapping logic shared between `codegen.ts` and `validate.ts` DRY by extracting shared helper functions.
+- **Component Reuse**: Extract repetitive UI controls (like tag lists or autocomplete search boxes) into local or shared reusable React components to prevent JSX and state duplication.
