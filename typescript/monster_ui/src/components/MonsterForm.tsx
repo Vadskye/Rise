@@ -403,6 +403,7 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
         <div className="form-tabs">
           <button
             type="button"
+            data-testid="tab-btn-identity"
             className={`tab-btn ${activeTab === 'identity' ? 'active' : ''}`}
             onClick={() => setActiveTab('identity')}
           >
@@ -410,6 +411,7 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
           </button>
           <button
             type="button"
+            data-testid="tab-btn-stats"
             className={`tab-btn ${activeTab === 'stats' ? 'active' : ''}`}
             onClick={() => setActiveTab('stats')}
           >
@@ -417,6 +419,7 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
           </button>
           <button
             type="button"
+            data-testid="tab-btn-traits"
             className={`tab-btn ${activeTab === 'traits' ? 'active' : ''}`}
             onClick={() => setActiveTab('traits')}
           >
@@ -424,6 +427,7 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
           </button>
           <button
             type="button"
+            data-testid="tab-btn-combat"
             className={`tab-btn ${activeTab === 'combat' ? 'active' : ''}`}
             onClick={() => setActiveTab('combat')}
           >
@@ -431,6 +435,7 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
           </button>
           <button
             type="button"
+            data-testid="tab-btn-abilities"
             className={`tab-btn ${activeTab === 'abilities' ? 'active' : ''}`}
             onClick={() => setActiveTab('abilities')}
           >
@@ -438,6 +443,7 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
           </button>
           <button
             type="button"
+            data-testid="tab-btn-knowledge"
             className={`tab-btn ${activeTab === 'knowledge' ? 'active' : ''}`}
             onClick={() => setActiveTab('knowledge')}
           >
@@ -452,6 +458,7 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
               <label htmlFor="monster-name">Monster Name</label>
               <input
                 id="monster-name"
+                data-testid="monster-name-input"
                 type="text"
                 value={monsterData.name}
                 onChange={(e) => onChangeMonster({ ...monsterData, name: e.target.value })}
@@ -470,6 +477,7 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
                 <label htmlFor="alignment">Alignment</label>
                 <select
                   id="alignment"
+                  data-testid="alignment-select"
                   value={requiredProperties.alignment}
                   onChange={(e) => setProp('alignment', e.target.value)}
                 >
@@ -496,6 +504,7 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
                 <label htmlFor="base_class">Base Class</label>
                 <select
                   id="base_class"
+                  data-testid="base-class-select"
                   value={requiredProperties.base_class}
                   onChange={(e) => setProp('base_class', e.target.value)}
                 >
@@ -523,6 +532,7 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
                 <label htmlFor="level">Level</label>
                 <input
                   id="level"
+                  data-testid="level-input"
                   type="number"
                   min={1}
                   max={30}
@@ -537,6 +547,7 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
                 <label htmlFor="creature_origin">Origin</label>
                 <select
                   id="creature_origin"
+                  data-testid="origin-select"
                   value={requiredProperties.creature_origin}
                   onChange={(e) => setProp('creature_origin', e.target.value)}
                 >
@@ -551,6 +562,7 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
                 <label htmlFor="creature_type">Type</label>
                 <select
                   id="creature_type"
+                  data-testid="type-select"
                   value={requiredProperties.creature_type}
                   onChange={(e) => setProp('creature_type', e.target.value)}
                 >
@@ -575,6 +587,7 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
                 <label htmlFor="size">Size</label>
                 <select
                   id="size"
+                  data-testid="size-select"
                   value={requiredProperties.size}
                   onChange={(e) => setProp('size', e.target.value)}
                 >
@@ -1286,6 +1299,7 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
               <label htmlFor="freeform-code">Freeform Initialization Code (TypeScript)</label>
               <textarea
                 id="freeform-code"
+                data-testid="freeform-code-textarea"
                 className="code-textarea"
                 value={monsterData.freeformCode}
                 onChange={(e) => onChangeMonster({ ...monsterData, freeformCode: e.target.value })}
