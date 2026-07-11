@@ -1,12 +1,37 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { ComputedStats } from '../types/monster';
 
 interface BookPreviewProps {
   stats: ComputedStats | null;
   loading: boolean;
+  requestStartedAt: number | null;
 }
 
-export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
+export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading, requestStartedAt }) => {
+  const renderStart = performance.now();
+  const lastRenderedStatsRef = useRef<ComputedStats | null>(null);
+
+  useEffect(() => {
+    if (stats) {
+      const renderExecTime = performance.now() - renderStart;
+      console.log(
+        `[Client Timing] [BookPreview] JSX render function execution for "${stats.name}" took ${renderExecTime.toFixed(2)}ms`,
+      );
+    }
+  });
+
+  useEffect(() => {
+    if (!loading && stats && requestStartedAt) {
+      if (lastRenderedStatsRef.current !== stats) {
+        lastRenderedStatsRef.current = stats;
+        const totalDuration = performance.now() - requestStartedAt;
+        console.log(
+          `[Client Timing] [Preview Render] "${stats.name}" DOM render complete. Total lifecycle: ${totalDuration.toFixed(2)}ms (from fetch start to DOM commit)`,
+        );
+      }
+    }
+  }, [stats, loading, requestStartedAt]);
+
   if (loading && !stats) {
     return (
       <div

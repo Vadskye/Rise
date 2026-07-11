@@ -16,8 +16,6 @@ const defaultRequiredProperties = {
   level: 1,
 };
 
-
-
 export const App: React.FC = () => {
   const [db, setDb] = useState<DatabaseData>({ monsters: [], monsterGroups: [] });
   const [referenceData, setReferenceData] = useState<{
@@ -28,8 +26,6 @@ export const App: React.FC = () => {
   }>({ spells: [], maneuvers: [], weapons: [], spheres: [] });
   const [activeSelection, setActiveSelection] = useState<SidebarSelection>(null);
   const lastSelectionRef = useRef<SidebarSelection>(null);
-  const prevMonsterDataRef = useRef<MonsterData | null>(null);
-  const lastFetchTimeRef = useRef<number>(0);
   const lastInputWasTextRef = useRef<boolean>(false);
 
   // Global listener to detect if the user's last interaction was in a text field
@@ -47,7 +43,8 @@ export const App: React.FC = () => {
       ) {
         const isText =
           target.tagName === 'TEXTAREA' ||
-          (target.tagName === 'INPUT' && (target as HTMLInputElement).type === 'text');
+          (target.tagName === 'INPUT' &&
+            ['text', 'number'].includes((target as HTMLInputElement).type));
         lastInputWasTextRef.current = isText;
       }
     };
@@ -62,6 +59,7 @@ export const App: React.FC = () => {
   }, []);
 
   const [previewStats, setPreviewStats] = useState<ComputedStats | null>(null);
+  const [requestStartedAt, setRequestStartedAt] = useState<number | null>(null);
   const [errors, setErrors] = useState<string[]>([]);
   const [warnings, setWarnings] = useState<string[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
@@ -112,7 +110,6 @@ export const App: React.FC = () => {
       setErrors([]);
       setWarnings([]);
       lastSelectionRef.current = null;
-      prevMonsterDataRef.current = null;
       return;
     }
 
@@ -122,7 +119,6 @@ export const App: React.FC = () => {
       setErrors([]);
       setWarnings([]);
       lastSelectionRef.current = activeSelection;
-      prevMonsterDataRef.current = null;
       return;
     }
 
@@ -140,7 +136,6 @@ export const App: React.FC = () => {
     if (!monsterData) {
       setPreviewStats(null);
       lastSelectionRef.current = activeSelection;
-      prevMonsterDataRef.current = null;
       return;
     }
 
@@ -155,16 +150,12 @@ export const App: React.FC = () => {
 
     lastSelectionRef.current = activeSelection;
 
-    // Check if the change was to a text field
-    let isTextFieldChange = false;
-    if (!selectionChanged && prevMonsterDataRef.current && monsterData) {
-      isTextFieldChange = lastInputWasTextRef.current;
-    }
-
-    prevMonsterDataRef.current = monsterData || null;
-
     const fetchPreview = () => {
+      const startTime = performance.now();
+      setRequestStartedAt(startTime);
       setLoading(true);
+      console.log(`[Client Timing] [Preview Fetch] Started fetch for "${monsterData?.name}"`);
+
       fetch('/api/preview', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -186,6 +177,10 @@ export const App: React.FC = () => {
           if (!active) {
             return;
           }
+          const fetchTime = performance.now() - startTime;
+          console.log(
+            `[Client Timing] [Preview Fetch] Completed fetch for "${monsterData?.name}" in ${fetchTime.toFixed(2)}ms (cacheHit: ${result.cacheHit})`,
+          );
           setErrors(result.errors || []);
           setWarnings(result.warnings || []);
           setPreviewStats(result.computedStats);
@@ -207,24 +202,8 @@ export const App: React.FC = () => {
     if (selectionChanged) {
       // Selection changed: fetch instantly
       setPreviewStats(null);
-      fetchPreview();
-      lastFetchTimeRef.current = Date.now();
-    } else {
-      // Statistics changed while selecting the same monster: leading-edge debounce
-      const now = Date.now();
-      const timeSinceLastFetch = now - lastFetchTimeRef.current;
-
-      if (!isTextFieldChange && timeSinceLastFetch > 300) {
-        fetchPreview();
-        lastFetchTimeRef.current = now;
-      } else {
-        const debounceDelay = isTextFieldChange ? 500 : 50;
-        handler = setTimeout(() => {
-          fetchPreview();
-          lastFetchTimeRef.current = Date.now();
-        }, debounceDelay);
-      }
     }
+    fetchPreview();
 
     return () => {
       active = false;
@@ -516,7 +495,11 @@ export const App: React.FC = () => {
                 Select a monster inside the group to preview its statistics.
               </div>
             ) : (
-              <BookPreview stats={previewStats} loading={loading} />
+              <BookPreview
+                stats={previewStats}
+                loading={loading}
+                requestStartedAt={requestStartedAt}
+              />
             )}
           </div>
         </section>
