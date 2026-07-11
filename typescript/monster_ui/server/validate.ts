@@ -1,4 +1,5 @@
 import { Creature } from '@src/character_sheet/creature';
+import { prepareActiveAbilitiesForPreview } from '@src/latex/monsters/player_abilities';
 import {
   createCharacterSheet,
   characterSheetExists,
@@ -267,7 +268,7 @@ function cleanMessage(msg: string, name: string): string {
       skills: creature.getTrainedSkillNames(),
       traits: creature.getStandardTraits(),
       equipment: creature.getEquipment(),
-      activeAbilities: creature.getActiveAbilities(),
+      activeAbilities: prepareActiveAbilitiesForPreview(creature, creature.getActiveAbilities()),
       passiveAbilities: creature.getPassiveAbilities(),
       knowledge: creature.getKnowledgeResultConfig(),
     };

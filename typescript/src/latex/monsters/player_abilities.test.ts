@@ -8,6 +8,8 @@ import {
   restructureStrikeAbility,
   reformatAttackConsequences,
   StrikeActiveAbility,
+  cleanLatexFormatting,
+  prepareActiveAbilitiesForPreview,
 } from './player_abilities';
 import { calculateDamage } from '@src/core_mechanics/damage_calculation';
 import { ActiveAbility, standardizeManeuver } from '@src/abilities';
@@ -695,5 +697,48 @@ t.test('calculateDamage', (t) => {
     t.end();
   });
 
+  t.end();
+});
+
+t.test('cleanLatexFormatting', (t) => {
+  t.equal(cleanLatexFormatting('\\glossterm{stamina}'), 'stamina');
+  t.equal(cleanLatexFormatting('\\weapontag{Heavy}'), 'Heavy');
+  t.equal(cleanLatexFormatting('\\reminder{plus 2}'), '(plus 2)');
+  t.equal(cleanLatexFormatting('\\buff{empowered}'), 'empowered');
+  t.equal(cleanLatexFormatting('\\plus2'), '+2');
+  t.equal(cleanLatexFormatting('\\minus3'), '-3');
+  t.equal(cleanLatexFormatting('\\sparkle'), '✦');
+  t.equal(cleanLatexFormatting('\\shortrange'), 'short range');
+  t.equal(cleanLatexFormatting('\\medarea'), 'medium');
+  t.equal(cleanLatexFormatting('Hello \\\\ world'), 'Hello\nworld');
+  t.equal(cleanLatexFormatting('Ends with percent%'), 'Ends with percent');
+  t.end();
+});
+
+t.test('prepareActiveAbilitiesForPreview', (t) => {
+  const creature = Creature.new();
+  creature.setProperties({
+    name: 'Goblin Skirmisher',
+    level: 1,
+  });
+  creature.addWeapon('spear');
+
+  const rawAbility: ActiveAbility = {
+    name: 'Spear Strike',
+    kind: 'maneuver',
+    isMagical: false,
+    weapon: 'spear',
+    effect: 'Make a strike.',
+  };
+
+  const prepared = prepareActiveAbilitiesForPreview(creature, [rawAbility]);
+  t.equal(prepared.length, 1);
+  const ability = prepared[0];
+  t.equal(ability.name, 'Spear Strike');
+  t.ok(ability.attack);
+  
+  // Verify that placeholders and LaTeX tags are correctly formatted
+  t.equal(ability.attack?.targeting, 'The goblin skirmisher makes a +0 strike vs. Armor with its spear.');
+  t.equal(ability.attack?.hit, '1d6 damage.');
   t.end();
 });
