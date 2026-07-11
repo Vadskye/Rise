@@ -105,7 +105,7 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
     await page.setViewport({ width: 1400, height: 900 });
 
     // Handle console errors or uncaught page exceptions
-    page.on('pageerror', (err) => {
+    page.on('pageerror', (err: any) => {
       throw new Error(`Browser console error: ${err.message}`);
     });
 
@@ -143,6 +143,9 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
     await new Promise((resolve) => setTimeout(resolve, 100));
 
     const levelInput = await page.waitForSelector('[data-testid="level-input"]');
+    if (!levelInput) {
+      throw new Error('Level input not found');
+    }
     await page.$eval('[data-testid="level-input"]', (el) => (el as HTMLInputElement).select());
     await levelInput.type('5');
     await new Promise((resolve) => setTimeout(resolve, 200));
