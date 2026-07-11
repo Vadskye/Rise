@@ -44,7 +44,9 @@ export const WeaponsSection: React.FC<WeaponsSectionProps> = ({
   const removeWeapon = (index: number) => {
     const updated = weapons.filter((_, i) => i !== index);
     onChange(updated);
-    if (expandedCard === `weapon-${index}`) setExpandedCard(null);
+    if (expandedCard === `weapon-${index}`) {
+      setExpandedCard(null);
+    }
   };
 
   const updateWeapon = (index: number, updatedWeapon: WeaponConfig) => {

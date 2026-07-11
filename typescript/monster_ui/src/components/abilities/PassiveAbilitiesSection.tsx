@@ -30,7 +30,9 @@ export const PassiveAbilitiesSection: React.FC<PassiveAbilitiesSectionProps> = (
   const removePassiveAbility = (index: number) => {
     const updated = passiveAbilities.filter((_, i) => i !== index);
     onChange(updated);
-    if (expandedCard === `passive-${index}`) setExpandedCard(null);
+    if (expandedCard === `passive-${index}`) {
+      setExpandedCard(null);
+    }
   };
 
   const updatePassiveAbility = (index: number, updatedPassive: PassiveAbilityConfig) => {

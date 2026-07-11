@@ -711,7 +711,9 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
                 const filteredSkills = skillsList.filter((s) =>
                   s.toLowerCase().replace(/_/g, ' ').includes(skillSearch.toLowerCase()),
                 );
-                if (filteredSkills.length === 0) return null;
+                if (filteredSkills.length === 0) {
+                  return null;
+                }
 
                 return (
                   <div

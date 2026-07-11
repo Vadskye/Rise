@@ -147,7 +147,9 @@ export const App: React.FC = () => {
         changedPaths.length > 0 &&
         changedPaths.every((path) => {
           const val = getValueAtPath(monsterData, path);
-          if (typeof val !== 'string') return false;
+          if (typeof val !== 'string') {
+            return false;
+          }
           const lastKey = path.split('.').pop() || '';
           return !DISCRETE_SELECT_FIELDS.has(lastKey);
         });
@@ -169,19 +171,27 @@ export const App: React.FC = () => {
         }),
       })
         .then((res) => {
-          if (!res.ok) throw new Error('Preview server returned error status');
+          if (!res.ok) {
+            throw new Error('Preview server returned error status');
+          }
           return res.json();
         })
         .then((result) => {
-          if (!active) return;
+          if (!active) {
+            return;
+          }
           setErrors(result.errors || []);
           setWarnings(result.warnings || []);
           setPreviewStats(result.computedStats);
           setLoading(false);
         })
         .catch((err) => {
-          if (err.name === 'AbortError') return;
-          if (!active) return;
+          if (err.name === 'AbortError') {
+            return;
+          }
+          if (!active) {
+            return;
+          }
           setErrors([`Engine calculation failed: ${err.message || err}`]);
           setPreviewStats(null);
           setLoading(false);
@@ -280,7 +290,9 @@ export const App: React.FC = () => {
   };
 
   const handleUpdateGroup = (updated: MonsterGroupData) => {
-    if (activeSelection?.type !== 'group') return;
+    if (activeSelection?.type !== 'group') {
+      return;
+    }
     const updatedDb = {
       ...db,
       monsterGroups: db.monsterGroups.map((g) => (g.name === activeSelection.name ? updated : g)),
@@ -326,7 +338,9 @@ export const App: React.FC = () => {
 
   const handleAddMonsterToGroup = (groupName: string) => {
     const group = db.monsterGroups.find((g) => g.name === groupName);
-    if (!group) return;
+    if (!group) {
+      return;
+    }
     const name = `New Member ${group.monsters.length + 1}`;
     const newMonster: MonsterData = {
       name,

@@ -154,7 +154,9 @@ describe('Monster UI Tab Layout Tests', () => {
       // Assert computed height of the .form-tabs bar
       const tabsHeight = await page.evaluate(() => {
         const el = document.querySelector('.form-tabs');
-        if (!el) return 0;
+        if (!el) {
+          return 0;
+        }
         return el.getBoundingClientRect().height;
       });
 

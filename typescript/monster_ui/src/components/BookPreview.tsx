@@ -75,7 +75,9 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
     const usageA = a.usageTime || 'standard';
     const usageB = b.usageTime || 'standard';
     const usageCompare = usageA.localeCompare(usageB);
-    if (usageCompare !== 0) return usageCompare;
+    if (usageCompare !== 0) {
+      return usageCompare;
+    }
     return a.name.localeCompare(b.name);
   });
 
