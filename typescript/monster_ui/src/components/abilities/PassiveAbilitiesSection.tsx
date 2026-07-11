@@ -40,18 +40,24 @@ export const PassiveAbilitiesSection: React.FC<PassiveAbilitiesSectionProps> = (
 
   return (
     <div className="ability-section-card">
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' }}>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          marginBottom: '15px',
+        }}
+      >
         <div>
-          <h4 className="section-subtitle" style={{ marginBottom: '0' }}>Passive Abilities</h4>
+          <h4 className="section-subtitle" style={{ marginBottom: '0' }}>
+            Passive Abilities
+          </h4>
           <p className="section-description" style={{ marginBottom: '0' }}>
-            Add custom passive features that apply static modifiers or ongoing effects to this creature.
+            Add custom passive features that apply static modifiers or ongoing effects to this
+            creature.
           </p>
         </div>
-        <button
-          type="button"
-          className="btn-add"
-          onClick={addPassiveAbility}
-        >
+        <button type="button" className="btn-add" onClick={addPassiveAbility}>
           + Add Passive
         </button>
       </div>
@@ -59,7 +65,9 @@ export const PassiveAbilitiesSection: React.FC<PassiveAbilitiesSectionProps> = (
       {/* Passives List */}
       <div className="ability-items-list">
         {passiveAbilities.length === 0 ? (
-          <div className="empty-state">No passive abilities built yet. Click "+ Add Passive" to build one.</div>
+          <div className="empty-state">
+            No passive abilities built yet. Click "+ Add Passive" to build one.
+          </div>
         ) : (
           passiveAbilities.map((passive, idx) => {
             const cardId = `passive-${idx}`;
@@ -94,15 +102,28 @@ export const PassiveAbilitiesSection: React.FC<PassiveAbilitiesSectionProps> = (
                         <input
                           type="text"
                           value={passive.name}
-                          onChange={(e) => updatePassiveAbility(idx, { ...passive, name: e.target.value })}
+                          onChange={(e) =>
+                            updatePassiveAbility(idx, { ...passive, name: e.target.value })
+                          }
                         />
                       </div>
-                      <div className="form-group" style={{ display: 'flex', alignItems: 'center', alignSelf: 'end', height: '38px', flex: '1' }}>
+                      <div
+                        className="form-group"
+                        style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          alignSelf: 'end',
+                          height: '38px',
+                          flex: '1',
+                        }}
+                      >
                         <label className="checkbox-row">
                           <input
                             type="checkbox"
                             checked={Boolean(passive.isMagical)}
-                            onChange={(e) => updatePassiveAbility(idx, { ...passive, isMagical: e.target.checked })}
+                            onChange={(e) =>
+                              updatePassiveAbility(idx, { ...passive, isMagical: e.target.checked })
+                            }
                           />
                           Is Magical
                         </label>
@@ -114,7 +135,9 @@ export const PassiveAbilitiesSection: React.FC<PassiveAbilitiesSectionProps> = (
                         rows={3}
                         placeholder="Describe the passive effect..."
                         value={passive.effect}
-                        onChange={(e) => updatePassiveAbility(idx, { ...passive, effect: e.target.value })}
+                        onChange={(e) =>
+                          updatePassiveAbility(idx, { ...passive, effect: e.target.value })
+                        }
                       />
                     </div>
                   </div>

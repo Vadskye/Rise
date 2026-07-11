@@ -116,7 +116,9 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
     await page.waitForSelector('.sidebar', { timeout: 5000 });
 
     // 1. Add a new individual monster
-    const addMonsterBtn = await page.waitForSelector('[data-testid="add-individual-btn"]', { timeout: 5000 });
+    const addMonsterBtn = await page.waitForSelector('[data-testid="add-individual-btn"]', {
+      timeout: 5000,
+    });
     assert.ok(addMonsterBtn, 'Add Monster button should exist');
     await addMonsterBtn.click();
 
@@ -124,9 +126,13 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
     await new Promise((resolve) => setTimeout(resolve, 500));
 
     // 2. Select the name input, clear it, and type "Integration Gargoyle"
-    const nameInput = await page.waitForSelector('[data-testid="monster-name-input"]', { timeout: 5000 });
+    const nameInput = await page.waitForSelector('[data-testid="monster-name-input"]', {
+      timeout: 5000,
+    });
     assert.ok(nameInput, 'Monster Name input should exist');
-    await page.$eval('[data-testid="monster-name-input"]', (el) => (el as HTMLInputElement).select());
+    await page.$eval('[data-testid="monster-name-input"]', (el) =>
+      (el as HTMLInputElement).select(),
+    );
     await nameInput.type('Integration Gargoyle', { delay: 30 });
     await new Promise((resolve) => setTimeout(resolve, 500)); // wait for React name state to propagate
 
@@ -135,7 +141,7 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
     await new Promise((resolve) => setTimeout(resolve, 100));
     await page.select('[data-testid="base-class-select"]', 'brute');
     await new Promise((resolve) => setTimeout(resolve, 100));
-    
+
     const levelInput = await page.waitForSelector('[data-testid="level-input"]');
     await page.$eval('[data-testid="level-input"]', (el) => (el as HTMLInputElement).select());
     await levelInput.type('5');
@@ -149,14 +155,20 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
     await new Promise((resolve) => setTimeout(resolve, 200));
 
     // 4. Click the Knowledge & Script tab and add freeform code
-    const tabBtn = await page.waitForSelector('[data-testid="tab-btn-knowledge"]', { timeout: 5000 });
+    const tabBtn = await page.waitForSelector('[data-testid="tab-btn-knowledge"]', {
+      timeout: 5000,
+    });
     assert.ok(tabBtn, 'Knowledge & Script tab button should exist');
     await tabBtn.click();
     await new Promise((resolve) => setTimeout(resolve, 300));
 
-    const codeArea = await page.waitForSelector('[data-testid="freeform-code-textarea"]', { timeout: 5000 });
+    const codeArea = await page.waitForSelector('[data-testid="freeform-code-textarea"]', {
+      timeout: 5000,
+    });
     assert.ok(codeArea, 'Freeform Code textarea should exist');
-    await page.$eval('[data-testid="freeform-code-textarea"]', (el) => (el as HTMLTextAreaElement).select());
+    await page.$eval('[data-testid="freeform-code-textarea"]', (el) =>
+      (el as HTMLTextAreaElement).select(),
+    );
     await codeArea.type('// Gargoyle custom script\ncreature.addTrait("scent");', { delay: 10 });
     await new Promise((resolve) => setTimeout(resolve, 300));
 
@@ -171,7 +183,7 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
         const btn = document.querySelector('[data-testid="save-db-btn"]');
         return btn && !(btn as HTMLButtonElement).disabled;
       },
-      { timeout: 10000 }
+      { timeout: 10000 },
     );
 
     // 6. Verify that the UI Book Preview displays the updated details
@@ -181,17 +193,26 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
         const titleEl = document.querySelector('.monster-title');
         return titleEl && titleEl.textContent?.includes('Integration Gargoyle');
       },
-      { timeout: 5000 }
+      { timeout: 5000 },
     );
 
     const previewTitleText = await page.$eval('.monster-title', (el) => el.textContent);
     console.log('Book Preview Title Text:', previewTitleText);
-    assert.ok(previewTitleText?.includes('Integration Gargoyle'), 'Preview title should contain monster name');
-    assert.ok(previewTitleText?.includes('Level 5 Brute'), 'Preview title should contain level and base class');
+    assert.ok(
+      previewTitleText?.includes('Integration Gargoyle'),
+      'Preview title should contain monster name',
+    );
+    assert.ok(
+      previewTitleText?.includes('Level 5 Brute'),
+      'Preview title should contain level and base class',
+    );
 
     const previewOriginTypeText = await page.$eval('.monster-origin-type', (el) => el.textContent);
     console.log('Book Preview Origin/Type Text:', previewOriginTypeText);
-    assert.ok(previewOriginTypeText?.includes('Large natural beast'), 'Preview should contain size, origin, and type');
+    assert.ok(
+      previewOriginTypeText?.includes('Large natural beast'),
+      'Preview should contain size, origin, and type',
+    );
 
     // 7. Verify the actual files saved to disk
     // Verify JSON database contains the new monster with the custom freeform code
@@ -205,12 +226,21 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
     assert.strictEqual(savedMonster.requiredProperties.creature_origin, 'natural');
     assert.strictEqual(savedMonster.requiredProperties.creature_type, 'beast');
     assert.strictEqual(savedMonster.requiredProperties.size, 'large');
-    assert.ok(savedMonster.freeformCode.includes('// Gargoyle custom script'), 'Database JSON should contain freeform code');
+    assert.ok(
+      savedMonster.freeformCode.includes('// Gargoyle custom script'),
+      'Database JSON should contain freeform code',
+    );
 
     // Verify generated TypeScript file
     const generatedTs = fs.readFileSync(generatedTsPath, 'utf8');
-    assert.ok(generatedTs.includes("grimoire.addMonster('Integration Gargoyle'"), 'Generated TS should register the monster');
-    assert.ok(generatedTs.includes('creature.addTrait("scent")'), 'Generated TS should translate the freeform code trait addition');
+    assert.ok(
+      generatedTs.includes("grimoire.addMonster('Integration Gargoyle'"),
+      'Generated TS should register the monster',
+    );
+    assert.ok(
+      generatedTs.includes('creature.addTrait("scent")'),
+      'Generated TS should translate the freeform code trait addition',
+    );
 
     await page.close();
   });

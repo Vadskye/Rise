@@ -62,11 +62,15 @@ export const WeaponsSection: React.FC<WeaponsSectionProps> = ({
     <div className="ability-section-card">
       <h4 className="section-subtitle">Weapons & Strike Modifications</h4>
       <p className="section-description">
-        Equip standard/natural weapons and apply combat maneuvers (like Multiplier strikes, Grappling, Sneak Attack, or Latch On).
+        Equip standard/natural weapons and apply combat maneuvers (like Multiplier strikes,
+        Grappling, Sneak Attack, or Latch On).
       </p>
 
       {/* Add Weapon Autocomplete */}
-      <div className="autocomplete-container" style={{ position: 'relative', marginBottom: '15px' }}>
+      <div
+        className="autocomplete-container"
+        style={{ position: 'relative', marginBottom: '15px' }}
+      >
         <div style={{ display: 'flex', gap: '10px' }}>
           <input
             type="text"
@@ -257,7 +261,15 @@ export const WeaponsSection: React.FC<WeaponsSectionProps> = ({
                             <option value="Free">Free Action</option>
                           </select>
                         </div>
-                        <div className="form-group" style={{ display: 'flex', alignItems: 'center', alignSelf: 'end', height: '38px' }}>
+                        <div
+                          className="form-group"
+                          style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            alignSelf: 'end',
+                            height: '38px',
+                          }}
+                        >
                           <label className="checkbox-row">
                             <input
                               type="checkbox"

@@ -75,7 +75,8 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
     <div className="ability-section-card">
       <h4 className="section-subtitle">Standard Spells & Maneuvers</h4>
       <p className="section-description">
-        Add standard spells and combat maneuvers from the game engine registries and override their usage options.
+        Add standard spells and combat maneuvers from the game engine registries and override their
+        usage options.
       </p>
 
       <div className="form-grid" style={{ marginBottom: '15px' }}>
@@ -160,13 +161,21 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
               <div key={idx} className={`ability-item-card ${isExpanded ? 'expanded' : ''}`}>
                 <div className="ability-card-header" onClick={() => onToggleExpand(cardId)}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <span className={`ability-type-badge ${ability.type === 'spell' ? 'spell-badge' : 'maneuver-badge'}`}>
+                    <span
+                      className={`ability-type-badge ${ability.type === 'spell' ? 'spell-badge' : 'maneuver-badge'}`}
+                    >
                       {ability.type.toUpperCase()}
                     </span>
                     <strong className="ability-name">
                       {ability.options?.displayName || ability.name}
                       {ability.options?.displayName && (
-                        <span style={{ fontStyle: 'italic', fontWeight: 'normal', color: 'var(--text-secondary)' }}>
+                        <span
+                          style={{
+                            fontStyle: 'italic',
+                            fontWeight: 'normal',
+                            color: 'var(--text-secondary)',
+                          }}
+                        >
                           {' '}
                           (Standard: {ability.name})
                         </span>
@@ -231,7 +240,15 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
                           <option value="Free">Free Action</option>
                         </select>
                       </div>
-                      <div className="form-group" style={{ display: 'flex', alignItems: 'center', alignSelf: 'end', height: '38px' }}>
+                      <div
+                        className="form-group"
+                        style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          alignSelf: 'end',
+                          height: '38px',
+                        }}
+                      >
                         <label className="checkbox-row">
                           <input
                             type="checkbox"

@@ -17,7 +17,7 @@ import { MonsterData } from './codegen';
  *    are CPU-intensive, this cache prevents redundant calculations during rapid UI updates/switches.
  * 2. Execution Order: Applies properties in the exact same sequence as codegen: required properties,
  *    structured fields, group shared freeform code, and finally individual freeform code.
- * 3. Warning Capture: Overrides `console.warn` to record engine-level validation warnings 
+ * 3. Warning Capture: Overrides `console.warn` to record engine-level validation warnings
  *    (e.g., skill/attribute alignment mismatches) so they can be shown inline in the UI.
  * 4. Error Handling: Intercepts script exceptions (like JavaScript syntax errors in the freeform block)
  *    and returns them as user-facing errors rather than crashing the server.
@@ -47,13 +47,13 @@ export function validateMonster(
   const warnings: string[] = [];
   const errors: string[] = [];
 
-function cleanMessage(msg: string, name: string): string {
-  const prefix = `Monster ${name}: `;
-  if (msg.startsWith(prefix)) {
-    return msg.slice(prefix.length);
+  function cleanMessage(msg: string, name: string): string {
+    const prefix = `Monster ${name}: `;
+    if (msg.startsWith(prefix)) {
+      return msg.slice(prefix.length);
+    }
+    return msg;
   }
-  return msg;
-}
 
   // Override console.warn to capture validation warnings
   const originalWarn = console.warn;
@@ -137,7 +137,7 @@ function cleanMessage(msg: string, name: string): string {
     // 1. Standard Spells & Maneuvers:
     // Apply standard spells and maneuvers to the live preview creature instance.
     if (monster.standardAbilities && monster.standardAbilities.length > 0) {
-       for (const ability of monster.standardAbilities) {
+      for (const ability of monster.standardAbilities) {
         if (ability.type === 'spell') {
           creature.addSpell(ability.name, ability.options);
         } else {
@@ -166,7 +166,8 @@ function cleanMessage(msg: string, name: string): string {
           if (ability.attack.crit) abilityObj.attack.crit = ability.attack.crit;
           if (ability.attack.miss) abilityObj.attack.miss = ability.attack.miss;
           if (ability.attack.injury) abilityObj.attack.injury = ability.attack.injury;
-          if (ability.attack.halfOnMiss !== undefined) abilityObj.attack.halfOnMiss = ability.attack.halfOnMiss;
+          if (ability.attack.halfOnMiss !== undefined)
+            abilityObj.attack.halfOnMiss = ability.attack.halfOnMiss;
         }
 
         if (ability.type === 'spell') {

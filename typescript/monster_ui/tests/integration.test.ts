@@ -306,8 +306,8 @@ describe('Monster UI Integration Tests (Serverless)', () => {
         {
           type: 'spell' as const,
           name: 'Word of Power',
-          options: { displayName: 'Echoing Word', isMagical: true }
-        }
+          options: { displayName: 'Echoing Word', isMagical: true },
+        },
       ],
       customAbilities: [
         {
@@ -319,31 +319,31 @@ describe('Monster UI Integration Tests (Serverless)', () => {
           isMagical: false,
           attack: {
             targeting: 'Reflex Defense',
-            hit: 'Target takes damage.'
-          }
-        }
+            hit: 'Target takes damage.',
+          },
+        },
       ],
       passiveAbilities: [
         {
           name: 'Regeneration',
           effect: 'Heals 5 HP per round.',
-          isMagical: true
-        }
+          isMagical: true,
+        },
       ],
       weapons: [
         {
           name: 'claws',
           addStandard: true,
           addMult: true,
-          options: { displayName: 'Vicious Claws' }
-        }
+          options: { displayName: 'Vicious Claws' },
+        },
       ],
-      rituals: ['Creation', 'Universal']
+      rituals: ['Creation', 'Universal'],
     };
 
     const updatedDb = {
       ...initialDb,
-      monsters: [...initialDb.monsters, complexMonster]
+      monsters: [...initialDb.monsters, complexMonster],
     };
 
     console.log(`Saving database and validating complex structured monster ${testMonsterName}...`);
@@ -352,19 +352,27 @@ describe('Monster UI Integration Tests (Serverless)', () => {
     assert.strictEqual(result.success, true);
     const validation = result.validations[testMonsterName];
     assert.strictEqual(validation.success, true);
-    
+
     // Assert computed stats serialization contains our fields
     assert.ok(validation.computedStats.activeAbilities.some((a: any) => a.name === 'Echoing Word'));
     assert.ok(validation.computedStats.activeAbilities.some((a: any) => a.name === 'Double Slash'));
-    assert.ok(validation.computedStats.passiveAbilities.some((p: any) => p.name === 'Regeneration'));
-    
+    assert.ok(
+      validation.computedStats.passiveAbilities.some((p: any) => p.name === 'Regeneration'),
+    );
+
     // Assert codegen outputs the correct builder methods
     const generatedContent = fs.readFileSync(generatedTsPath, 'utf8');
-    assert.ok(generatedContent.includes(`creature.addSpell("Word of Power", {"displayName":"Echoing Word","isMagical":true})`));
+    assert.ok(
+      generatedContent.includes(
+        `creature.addSpell("Word of Power", {"displayName":"Echoing Word","isMagical":true})`,
+      ),
+    );
     assert.ok(generatedContent.includes(`creature.addCustomManeuver(`));
     assert.ok(generatedContent.includes(`creature.addPassiveAbility(`));
     assert.ok(generatedContent.includes(`creature.addWeapon("claws")`));
-    assert.ok(generatedContent.includes(`creature.addWeaponMult("claws", {"displayName":"Vicious Claws"})`));
+    assert.ok(
+      generatedContent.includes(`creature.addWeaponMult("claws", {"displayName":"Vicious Claws"})`),
+    );
     assert.ok(generatedContent.includes(`creature.addRituals(["Creation","Universal"])`));
   });
 });

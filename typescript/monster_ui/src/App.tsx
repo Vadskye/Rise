@@ -79,12 +79,12 @@ export const App: React.FC = () => {
 
   // Debounced preview calculation effect.
   // Design Decisions:
-  // 1. Selection Changes: When switching between different monsters, we fetch preview stats instantly 
+  // 1. Selection Changes: When switching between different monsters, we fetch preview stats instantly
   //    and clear the stale preview (`setPreviewStats(null)`) so there is no layout jump or visual lag.
   // 2. Text Input Changes (Typing): If editing name or freeform code, we apply a 500ms debounce delay.
   //    This avoids flooding the backend API on every single keystroke.
   // 3. Discrete Input Changes (Clicking): Toggling check-boxes or changing standard drop-downs
-  //    uses a fast 50ms/leading-edge update because they don't produce rapid keystroke floods 
+  //    uses a fast 50ms/leading-edge update because they don't produce rapid keystroke floods
   //    and should reflect visually in the book preview almost instantly.
   useEffect(() => {
     let active = true;
@@ -143,12 +143,14 @@ export const App: React.FC = () => {
     let isTextFieldChange = false;
     if (!selectionChanged && prevMonsterDataRef.current && monsterData) {
       const changedPaths = getChangedPaths(prevMonsterDataRef.current, monsterData);
-      isTextFieldChange = changedPaths.length > 0 && changedPaths.every((path) => {
-        const val = getValueAtPath(monsterData, path);
-        if (typeof val !== 'string') return false;
-        const lastKey = path.split('.').pop() || '';
-        return !DISCRETE_SELECT_FIELDS.has(lastKey);
-      });
+      isTextFieldChange =
+        changedPaths.length > 0 &&
+        changedPaths.every((path) => {
+          const val = getValueAtPath(monsterData, path);
+          if (typeof val !== 'string') return false;
+          const lastKey = path.split('.').pop() || '';
+          return !DISCRETE_SELECT_FIELDS.has(lastKey);
+        });
     }
 
     prevMonsterDataRef.current = monsterData || null;
@@ -258,9 +260,9 @@ export const App: React.FC = () => {
         monsterGroups: db.monsterGroups.map((g) =>
           g.name === activeSelection.groupName
             ? {
-              ...g,
-              monsters: g.monsters.map((m) => (m.name === activeSelection.name ? updated : m)),
-            }
+                ...g,
+                monsters: g.monsters.map((m) => (m.name === activeSelection.name ? updated : m)),
+              }
             : g,
         ),
       };
@@ -393,8 +395,8 @@ export const App: React.FC = () => {
       ? db.monsters.find((m) => m.name === activeSelection.name)
       : activeSelection?.type === 'group-monster'
         ? db.monsterGroups
-          .find((g) => g.name === activeSelection.groupName)
-          ?.monsters.find((m) => m.name === activeSelection.name)
+            .find((g) => g.name === activeSelection.groupName)
+            ?.monsters.find((m) => m.name === activeSelection.name)
         : undefined;
 
   const activeGroup =
