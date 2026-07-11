@@ -17,8 +17,17 @@
             "size": "medium",
             "level": 1
           },
-          "baseAttributes": [-1, 4, 0, -2, 2, -2],
-          "trainedSkills": ["awareness"],
+          "baseAttributes": [
+            -1,
+            4,
+            0,
+            -2,
+            2,
+            -2
+          ],
+          "trainedSkills": [
+            "awareness"
+          ],
           "equippedArmor": "buff leather",
           "freeformCode": "creature.addWeaponMult('spear');\ncreature.addManeuver('Charge', { weapon: 'spear' });\ncreature.setEquippedArmorName({ shield: 'buckler' });"
         },
@@ -36,8 +45,17 @@
           "properties": {
             "has_art": true
           },
-          "baseAttributes": [-1, 4, 0, -2, 2, -2],
-          "trainedSkills": ["ride"],
+          "baseAttributes": [
+            -1,
+            4,
+            0,
+            -2,
+            2,
+            -2
+          ],
+          "trainedSkills": [
+            "ride"
+          ],
           "equippedArmor": "buff leather",
           "freeformCode": "creature.addWeaponMult('lance');\ncreature.addWeaponMult('spear');\ncreature.setEquippedArmorName({ shield: 'buckler' });"
         },
@@ -52,8 +70,17 @@
             "size": "medium",
             "level": 1
           },
-          "baseAttributes": [-1, 3, 0, -2, 2, 3],
-          "trainedSkills": ["awareness"],
+          "baseAttributes": [
+            -1,
+            3,
+            0,
+            -2,
+            2,
+            3
+          ],
+          "trainedSkills": [
+            "awareness"
+          ],
           "equippedArmor": "buff leather",
           "freeformCode": "creature.addSpell('Word of Power');\ncreature.setEquippedArmorName({ shield: 'standard shield' });\ncreature.addWeaponMult('spear', { displayName: 'Consecrated Strike', isMagical: true });"
         }
