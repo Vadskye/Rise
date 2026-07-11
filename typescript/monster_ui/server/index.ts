@@ -1,5 +1,6 @@
 import express from 'express';
 import { validateMonster } from './validate';
+import { generatePreview } from './preview';
 import { DatabaseData } from './codegen';
 import { getDb, saveAndValidateAll } from './db';
 import { allMysticSpheres } from '@src/abilities/mystic_spheres';
@@ -92,7 +93,7 @@ app.post('/api/preview', (req, res) => {
     console.log(
       `[API] POST /api/preview - Calculating live preview for monster: "${monster.name}"${groupName ? ` in group "${groupName}"` : ''}`,
     );
-    const result = validateMonster(monster, sharedFreeformCode, groupName);
+    const result = generatePreview(monster, sharedFreeformCode, groupName);
     res.json(result);
   } catch (err: any) {
     console.error('[API Error] Preview calculation failed:', err);
