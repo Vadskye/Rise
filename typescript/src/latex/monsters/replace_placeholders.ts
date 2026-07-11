@@ -137,7 +137,7 @@ export function replaceDamageTerms(
   });
 }
 
-function replaceNames(monsterLatex: string, monsterName: string): string {
+export function replaceNames(monsterLatex: string, monsterName: string): string {
   if (monsterName === monsterName.toLowerCase()) {
     throw new Error(`Monster ${monsterName} has lowercase name, but should be title case`);
   }
