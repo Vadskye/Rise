@@ -7,7 +7,7 @@ import {
   deleteCharacterSheet,
 } from '@src/character_sheet/current_character_sheet';
 import { handleEverything } from '@src/character_sheet/sheet_worker';
-import { MonsterData } from './codegen';
+import { MonsterData, toCustomMonsterAbility } from './codegen';
 
 /**
  * Validates a monster configuration by instantiating a real game-engine Creature.
@@ -152,41 +152,7 @@ export function validateMonster(
     // Reconstruct the CustomMonsterAbility configurations and load them.
     if (monster.customAbilities && monster.customAbilities.length > 0) {
       for (const ability of monster.customAbilities) {
-        const abilityObj: any = {
-          name: ability.name,
-          isMagical: ability.isMagical,
-        };
-        if (ability.usageTime) {
-          abilityObj.usageTime = ability.usageTime;
-        }
-        if (ability.cost) {
-          abilityObj.cost = ability.cost;
-        }
-        if (ability.effect) {
-          abilityObj.effect = ability.effect;
-        }
-        if (ability.tags && ability.tags.length > 0) {
-          abilityObj.tags = ability.tags as any;
-        }
-        if (ability.attack) {
-          abilityObj.attack = {
-            targeting: ability.attack.targeting,
-            hit: ability.attack.hit,
-          };
-          if (ability.attack.crit) {
-            abilityObj.attack.crit = ability.attack.crit;
-          }
-          if (ability.attack.miss) {
-            abilityObj.attack.miss = ability.attack.miss;
-          }
-          if (ability.attack.injury) {
-            abilityObj.attack.injury = ability.attack.injury;
-          }
-          if (ability.attack.halfOnMiss !== undefined) {
-            abilityObj.attack.halfOnMiss = ability.attack.halfOnMiss;
-          }
-        }
-
+        const abilityObj = toCustomMonsterAbility(ability);
         if (ability.type === 'spell') {
           creature.addCustomSpell(abilityObj);
         } else {

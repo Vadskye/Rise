@@ -1,6 +1,8 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
+import { CustomMonsterAbility } from '@src/character_sheet/creature';
+import { RiseAbilityDefinitionTag } from '@src/character_sheet/rise_data';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -110,6 +112,27 @@ export interface MonsterGroupData {
 export interface DatabaseData {
   monsters: MonsterData[];
   monsterGroups: MonsterGroupData[];
+}
+
+export function toCustomMonsterAbility(ability: CustomAbilityConfig): CustomMonsterAbility {
+  return {
+    name: ability.name,
+    isMagical: ability.isMagical,
+    usageTime: ability.usageTime || undefined,
+    cost: ability.cost || undefined,
+    effect: ability.effect || undefined,
+    tags: ability.tags && ability.tags.length > 0 ? (ability.tags as RiseAbilityDefinitionTag[]) : undefined,
+    attack: ability.attack
+      ? {
+          targeting: ability.attack.targeting,
+          hit: ability.attack.hit,
+          crit: ability.attack.crit || undefined,
+          miss: ability.attack.miss || undefined,
+          injury: ability.attack.injury || undefined,
+          halfOnMiss: ability.attack.halfOnMiss,
+        }
+      : undefined,
+  };
 }
 
 /**
@@ -224,40 +247,7 @@ function generateMonsterBody(monster: MonsterData, indent: string): string {
   // undefined or empty fields to keep the generated TypeScript file neat and readable.
   if (monster.customAbilities && monster.customAbilities.length > 0) {
     for (const ability of monster.customAbilities) {
-      const abilityObj: any = {
-        name: ability.name,
-        isMagical: ability.isMagical,
-      };
-      if (ability.usageTime) {
-        abilityObj.usageTime = ability.usageTime;
-      }
-      if (ability.cost) {
-        abilityObj.cost = ability.cost;
-      }
-      if (ability.effect) {
-        abilityObj.effect = ability.effect;
-      }
-      if (ability.tags && ability.tags.length > 0) {
-        abilityObj.tags = ability.tags;
-      }
-      if (ability.attack) {
-        abilityObj.attack = {
-          targeting: ability.attack.targeting,
-          hit: ability.attack.hit,
-        };
-        if (ability.attack.crit) {
-          abilityObj.attack.crit = ability.attack.crit;
-        }
-        if (ability.attack.miss) {
-          abilityObj.attack.miss = ability.attack.miss;
-        }
-        if (ability.attack.injury) {
-          abilityObj.attack.injury = ability.attack.injury;
-        }
-        if (ability.attack.halfOnMiss !== undefined) {
-          abilityObj.attack.halfOnMiss = ability.attack.halfOnMiss;
-        }
-      }
+      const abilityObj = toCustomMonsterAbility(ability);
 
       // Format the custom ability object output with proper indentation to align with the generated file
       const abilityStr = JSON.stringify(abilityObj, null, 2)

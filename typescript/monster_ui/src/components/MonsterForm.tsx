@@ -2,6 +2,115 @@ import React from 'react';
 import { MonsterData, MonsterGroupData } from '../types/monster';
 import { AbilitiesTab } from './AbilitiesTab';
 
+interface PillListInputProps {
+  label: string;
+  items: string[];
+  onChange: (updated: string[]) => void;
+  placeholder?: string;
+  emptyMessage?: string;
+  style?: React.CSSProperties;
+}
+
+const PillListInput: React.FC<PillListInputProps> = ({
+  label,
+  items,
+  onChange,
+  placeholder,
+  emptyMessage,
+  style,
+}) => {
+  const [inputValue, setInputValue] = React.useState('');
+
+  const handleAdd = () => {
+    if (inputValue.trim()) {
+      onChange([...items, inputValue.trim()]);
+      setInputValue('');
+    }
+  };
+
+  const handleRemove = (index: number) => {
+    onChange(items.filter((_, i) => i !== index));
+  };
+
+  return (
+    <div className="form-group" style={style}>
+      <label>{label}</label>
+      <div
+        className="tag-list"
+        style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '8px' }}
+      >
+        {items.length === 0 ? (
+          emptyMessage && (
+            <span
+              style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontStyle: 'italic' }}
+            >
+              {emptyMessage}
+            </span>
+          )
+        ) : (
+          items.map((item, idx) => (
+            <span
+              key={idx}
+              className="pill-tag"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '5px',
+                backgroundColor: 'var(--bg-tertiary)',
+                border: '1px solid var(--border-color)',
+                padding: '4px 10px',
+                borderRadius: '15px',
+                fontSize: '0.8rem',
+              }}
+            >
+              {item}
+              <button
+                type="button"
+                onClick={() => handleRemove(idx)}
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  color: 'var(--danger-color)',
+                  cursor: 'pointer',
+                  padding: '0 2px',
+                  fontSize: '0.85rem',
+                  fontWeight: 'bold',
+                }}
+              >
+                &times;
+              </button>
+            </span>
+          ))
+        )}
+      </div>
+      <div style={{ display: 'flex', gap: '10px' }}>
+        <input
+          type="text"
+          placeholder={placeholder}
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+          onKeyDown={(e) => e.key === 'Enter' && (e.preventDefault(), handleAdd())}
+        />
+        <button
+          type="button"
+          className="btn-add"
+          onClick={handleAdd}
+          style={{
+            backgroundColor: 'var(--bg-tertiary)',
+            border: '1px solid var(--border-color)',
+            color: 'var(--text-primary)',
+            padding: '0 15px',
+            borderRadius: '6px',
+            cursor: 'pointer',
+          }}
+        >
+          + Add
+        </button>
+      </div>
+    </div>
+  );
+};
+
 interface MonsterFormProps {
   mode: 'monster' | 'group';
   monsterData?: MonsterData;
@@ -156,12 +265,6 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
   const [skillSearch, setSkillSearch] = React.useState('');
   const [traitSearch, setTraitSearch] = React.useState('');
 
-  const [newSense, setNewSense] = React.useState('');
-  const [newSpeed, setNewSpeed] = React.useState('');
-  const [newImmunity, setNewImmunity] = React.useState('');
-  const [newResistance, setNewResistance] = React.useState('');
-  const [newVulnerability, setNewVulnerability] = React.useState('');
-
   const SKILL_CATEGORIES = {
     Movement: ['climb', 'jump', 'swim', 'balance', 'flexibility', 'ride', 'stealth'],
     Senses: ['analysis', 'awareness'],
@@ -301,90 +404,7 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
       });
     };
 
-    const customSenses = monsterData.customSenses || [];
-    const handleAddSense = () => {
-      if (newSense.trim()) {
-        onChangeMonster({
-          ...monsterData,
-          customSenses: [...customSenses, newSense.trim()],
-        });
-        setNewSense('');
-      }
-    };
-    const handleRemoveSense = (index: number) => {
-      onChangeMonster({
-        ...monsterData,
-        customSenses: customSenses.filter((_, i) => i !== index),
-      });
-    };
 
-    const customMovementSpeeds = monsterData.customMovementSpeeds || [];
-    const handleAddSpeed = () => {
-      if (newSpeed.trim()) {
-        onChangeMonster({
-          ...monsterData,
-          customMovementSpeeds: [...customMovementSpeeds, newSpeed.trim()],
-        });
-        setNewSpeed('');
-      }
-    };
-    const handleRemoveSpeed = (index: number) => {
-      onChangeMonster({
-        ...monsterData,
-        customMovementSpeeds: customMovementSpeeds.filter((_, i) => i !== index),
-      });
-    };
-
-    const immunities = monsterData.immunities || [];
-    const handleAddImmunity = () => {
-      if (newImmunity.trim()) {
-        onChangeMonster({
-          ...monsterData,
-          immunities: [...immunities, newImmunity.trim()],
-        });
-        setNewImmunity('');
-      }
-    };
-    const handleRemoveImmunity = (index: number) => {
-      onChangeMonster({
-        ...monsterData,
-        immunities: immunities.filter((_, i) => i !== index),
-      });
-    };
-
-    const resistances = monsterData.resistances || [];
-    const handleAddResistance = () => {
-      if (newResistance.trim()) {
-        onChangeMonster({
-          ...monsterData,
-          resistances: [...resistances, newResistance.trim()],
-        });
-        setNewResistance('');
-      }
-    };
-    const handleRemoveResistance = (index: number) => {
-      onChangeMonster({
-        ...monsterData,
-        resistances: resistances.filter((_, i) => i !== index),
-      });
-    };
-
-    const vulnerabilities = monsterData.vulnerabilities || [];
-    const handleAddVulnerability = () => {
-      if (newVulnerability.trim()) {
-        onChangeMonster({
-          ...monsterData,
-          vulnerabilities: [...vulnerabilities, newVulnerability.trim()],
-        });
-        setNewVulnerability('');
-      }
-    };
-    const handleRemoveVulnerability = (index: number) => {
-      onChangeMonster({
-        ...monsterData,
-        vulnerabilities: vulnerabilities.filter((_, i) => i !== index),
-      });
-    };
 
     const knowledge = monsterData.knowledge || {};
     const setKnowledgeVal = (key: 'easy' | 'normal' | 'hard' | 'legendary', value: string) => {
@@ -835,153 +855,22 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
             </div>
 
             <h4 className="section-subtitle">Senses & Movement</h4>
-            <div className="form-group" style={{ marginBottom: '15px' }}>
-              <label>Custom Senses</label>
-              <div
-                className="tag-list"
-                style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '8px' }}
-              >
-                {customSenses.length === 0 ? (
-                  <span
-                    style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontStyle: 'italic' }}
-                  >
-                    No custom senses added (defaults to Normal Senses).
-                  </span>
-                ) : (
-                  customSenses.map((sense, idx) => (
-                    <span
-                      key={idx}
-                      className="pill-tag"
-                      style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '5px',
-                        backgroundColor: 'var(--bg-tertiary)',
-                        border: '1px solid var(--border-color)',
-                        padding: '4px 10px',
-                        borderRadius: '15px',
-                        fontSize: '0.8rem',
-                      }}
-                    >
-                      {sense}
-                      <button
-                        type="button"
-                        onClick={() => handleRemoveSense(idx)}
-                        style={{
-                          background: 'none',
-                          border: 'none',
-                          color: 'var(--danger-color)',
-                          cursor: 'pointer',
-                          padding: '0 2px',
-                          fontSize: '0.85rem',
-                          fontWeight: 'bold',
-                        }}
-                      >
-                        &times;
-                      </button>
-                    </span>
-                  ))
-                )}
-              </div>
-              <div style={{ display: 'flex', gap: '10px' }}>
-                <input
-                  type="text"
-                  placeholder="e.g. Darkvision (60 ft.)"
-                  value={newSense}
-                  onChange={(e) => setNewSense(e.target.value)}
-                  onKeyDown={(e) => e.key === 'Enter' && (e.preventDefault(), handleAddSense())}
-                />
-                <button
-                  type="button"
-                  className="btn-add"
-                  onClick={handleAddSense}
-                  style={{
-                    backgroundColor: 'var(--bg-tertiary)',
-                    border: '1px solid var(--border-color)',
-                    color: 'var(--text-primary)',
-                    padding: '0 15px',
-                    borderRadius: '6px',
-                    cursor: 'pointer',
-                  }}
-                >
-                  + Add
-                </button>
-              </div>
-            </div>
+            <PillListInput
+              label="Custom Senses"
+              items={monsterData.customSenses || []}
+              onChange={(updated) => onChangeMonster({ ...monsterData, customSenses: updated })}
+              placeholder="e.g. Darkvision (60 ft.)"
+              emptyMessage="No custom senses added (defaults to Normal Senses)."
+              style={{ marginBottom: '15px' }}
+            />
 
-            <div className="form-group">
-              <label>Custom Movement Speeds</label>
-              <div
-                className="tag-list"
-                style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '8px' }}
-              >
-                {customMovementSpeeds.length === 0 ? (
-                  <span
-                    style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontStyle: 'italic' }}
-                  >
-                    No custom movement speeds added (defaults to ground speed).
-                  </span>
-                ) : (
-                  customMovementSpeeds.map((speed, idx) => (
-                    <span
-                      key={idx}
-                      className="pill-tag"
-                      style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '5px',
-                        backgroundColor: 'var(--bg-tertiary)',
-                        border: '1px solid var(--border-color)',
-                        padding: '4px 10px',
-                        borderRadius: '15px',
-                        fontSize: '0.8rem',
-                      }}
-                    >
-                      {speed}
-                      <button
-                        type="button"
-                        onClick={() => handleRemoveSpeed(idx)}
-                        style={{
-                          background: 'none',
-                          border: 'none',
-                          color: 'var(--danger-color)',
-                          cursor: 'pointer',
-                          padding: '0 2px',
-                          fontSize: '0.85rem',
-                          fontWeight: 'bold',
-                        }}
-                      >
-                        &times;
-                      </button>
-                    </span>
-                  ))
-                )}
-              </div>
-              <div style={{ display: 'flex', gap: '10px' }}>
-                <input
-                  type="text"
-                  placeholder="e.g. Fly 30 ft."
-                  value={newSpeed}
-                  onChange={(e) => setNewSpeed(e.target.value)}
-                  onKeyDown={(e) => e.key === 'Enter' && (e.preventDefault(), handleAddSpeed())}
-                />
-                <button
-                  type="button"
-                  className="btn-add"
-                  onClick={handleAddSpeed}
-                  style={{
-                    backgroundColor: 'var(--bg-tertiary)',
-                    border: '1px solid var(--border-color)',
-                    color: 'var(--text-primary)',
-                    padding: '0 15px',
-                    borderRadius: '6px',
-                    cursor: 'pointer',
-                  }}
-                >
-                  + Add
-                </button>
-              </div>
-            </div>
+            <PillListInput
+              label="Custom Movement Speeds"
+              items={monsterData.customMovementSpeeds || []}
+              onChange={(updated) => onChangeMonster({ ...monsterData, customMovementSpeeds: updated })}
+              placeholder="e.g. Fly 30 ft."
+              emptyMessage="No custom movement speeds added (defaults to ground speed)."
+            />
           </div>
         )}
 
@@ -1009,231 +898,31 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
 
             <h4 className="section-subtitle">Defenses & Modifiers</h4>
 
-            <div className="form-group" style={{ marginBottom: '15px' }}>
-              <label>Immunities</label>
-              <div
-                className="tag-list"
-                style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '8px' }}
-              >
-                {immunities.length === 0 ? (
-                  <span
-                    style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontStyle: 'italic' }}
-                  >
-                    No immunities.
-                  </span>
-                ) : (
-                  immunities.map((immunity, idx) => (
-                    <span
-                      key={idx}
-                      className="pill-tag"
-                      style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '5px',
-                        backgroundColor: 'var(--bg-tertiary)',
-                        border: '1px solid var(--border-color)',
-                        padding: '4px 10px',
-                        borderRadius: '15px',
-                        fontSize: '0.8rem',
-                      }}
-                    >
-                      {immunity}
-                      <button
-                        type="button"
-                        onClick={() => handleRemoveImmunity(idx)}
-                        style={{
-                          background: 'none',
-                          border: 'none',
-                          color: 'var(--danger-color)',
-                          cursor: 'pointer',
-                          padding: '0 2px',
-                          fontSize: '0.85rem',
-                          fontWeight: 'bold',
-                        }}
-                      >
-                        &times;
-                      </button>
-                    </span>
-                  ))
-                )}
-              </div>
-              <div style={{ display: 'flex', gap: '10px' }}>
-                <input
-                  type="text"
-                  placeholder="e.g. Fire"
-                  value={newImmunity}
-                  onChange={(e) => setNewImmunity(e.target.value)}
-                  onKeyDown={(e) => e.key === 'Enter' && (e.preventDefault(), handleAddImmunity())}
-                />
-                <button
-                  type="button"
-                  className="btn-add"
-                  onClick={handleAddImmunity}
-                  style={{
-                    backgroundColor: 'var(--bg-tertiary)',
-                    border: '1px solid var(--border-color)',
-                    color: 'var(--text-primary)',
-                    padding: '0 15px',
-                    borderRadius: '6px',
-                    cursor: 'pointer',
-                  }}
-                >
-                  + Add
-                </button>
-              </div>
-            </div>
+            <PillListInput
+              label="Immunities"
+              items={monsterData.immunities || []}
+              onChange={(updated) => onChangeMonster({ ...monsterData, immunities: updated })}
+              placeholder="e.g. Fire"
+              emptyMessage="No immunities."
+              style={{ marginBottom: '15px' }}
+            />
 
-            <div className="form-group" style={{ marginBottom: '15px' }}>
-              <label>Resistances</label>
-              <div
-                className="tag-list"
-                style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '8px' }}
-              >
-                {resistances.length === 0 ? (
-                  <span
-                    style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontStyle: 'italic' }}
-                  >
-                    No resistances.
-                  </span>
-                ) : (
-                  resistances.map((res, idx) => (
-                    <span
-                      key={idx}
-                      className="pill-tag"
-                      style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '5px',
-                        backgroundColor: 'var(--bg-tertiary)',
-                        border: '1px solid var(--border-color)',
-                        padding: '4px 10px',
-                        borderRadius: '15px',
-                        fontSize: '0.8rem',
-                      }}
-                    >
-                      {res}
-                      <button
-                        type="button"
-                        onClick={() => handleRemoveResistance(idx)}
-                        style={{
-                          background: 'none',
-                          border: 'none',
-                          color: 'var(--danger-color)',
-                          cursor: 'pointer',
-                          padding: '0 2px',
-                          fontSize: '0.85rem',
-                          fontWeight: 'bold',
-                        }}
-                      >
-                        &times;
-                      </button>
-                    </span>
-                  ))
-                )}
-              </div>
-              <div style={{ display: 'flex', gap: '10px' }}>
-                <input
-                  type="text"
-                  placeholder="e.g. Cold"
-                  value={newResistance}
-                  onChange={(e) => setNewResistance(e.target.value)}
-                  onKeyDown={(e) =>
-                    e.key === 'Enter' && (e.preventDefault(), handleAddResistance())
-                  }
-                />
-                <button
-                  type="button"
-                  className="btn-add"
-                  onClick={handleAddResistance}
-                  style={{
-                    backgroundColor: 'var(--bg-tertiary)',
-                    border: '1px solid var(--border-color)',
-                    color: 'var(--text-primary)',
-                    padding: '0 15px',
-                    borderRadius: '6px',
-                    cursor: 'pointer',
-                  }}
-                >
-                  + Add
-                </button>
-              </div>
-            </div>
+            <PillListInput
+              label="Resistances"
+              items={monsterData.resistances || []}
+              onChange={(updated) => onChangeMonster({ ...monsterData, resistances: updated })}
+              placeholder="e.g. Cold"
+              emptyMessage="No resistances."
+              style={{ marginBottom: '15px' }}
+            />
 
-            <div className="form-group">
-              <label>Vulnerabilities</label>
-              <div
-                className="tag-list"
-                style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '8px' }}
-              >
-                {vulnerabilities.length === 0 ? (
-                  <span
-                    style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontStyle: 'italic' }}
-                  >
-                    No vulnerabilities.
-                  </span>
-                ) : (
-                  vulnerabilities.map((vuln, idx) => (
-                    <span
-                      key={idx}
-                      className="pill-tag"
-                      style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '5px',
-                        backgroundColor: 'var(--bg-tertiary)',
-                        border: '1px solid var(--border-color)',
-                        padding: '4px 10px',
-                        borderRadius: '15px',
-                        fontSize: '0.8rem',
-                      }}
-                    >
-                      {vuln}
-                      <button
-                        type="button"
-                        onClick={() => handleRemoveVulnerability(idx)}
-                        style={{
-                          background: 'none',
-                          border: 'none',
-                          color: 'var(--danger-color)',
-                          cursor: 'pointer',
-                          padding: '0 2px',
-                          fontSize: '0.85rem',
-                          fontWeight: 'bold',
-                        }}
-                      >
-                        &times;
-                      </button>
-                    </span>
-                  ))
-                )}
-              </div>
-              <div style={{ display: 'flex', gap: '10px' }}>
-                <input
-                  type="text"
-                  placeholder="e.g. Acid"
-                  value={newVulnerability}
-                  onChange={(e) => setNewVulnerability(e.target.value)}
-                  onKeyDown={(e) =>
-                    e.key === 'Enter' && (e.preventDefault(), handleAddVulnerability())
-                  }
-                />
-                <button
-                  type="button"
-                  className="btn-add"
-                  onClick={handleAddVulnerability}
-                  style={{
-                    backgroundColor: 'var(--bg-tertiary)',
-                    border: '1px solid var(--border-color)',
-                    color: 'var(--text-primary)',
-                    padding: '0 15px',
-                    borderRadius: '6px',
-                    cursor: 'pointer',
-                  }}
-                >
-                  + Add
-                </button>
-              </div>
-            </div>
+            <PillListInput
+              label="Vulnerabilities"
+              items={monsterData.vulnerabilities || []}
+              onChange={(updated) => onChangeMonster({ ...monsterData, vulnerabilities: updated })}
+              placeholder="e.g. Acid"
+              emptyMessage="No vulnerabilities."
+            />
           </div>
         )}
 
