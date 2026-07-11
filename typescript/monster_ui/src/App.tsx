@@ -59,7 +59,6 @@ export const App: React.FC = () => {
   }, []);
 
   const [previewStats, setPreviewStats] = useState<ComputedStats | null>(null);
-  const [requestStartedAt, setRequestStartedAt] = useState<number | null>(null);
   const [errors, setErrors] = useState<string[]>([]);
   const [warnings, setWarnings] = useState<string[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
@@ -151,11 +150,7 @@ export const App: React.FC = () => {
     lastSelectionRef.current = activeSelection;
 
     const fetchPreview = () => {
-      const startTime = performance.now();
-      setRequestStartedAt(startTime);
       setLoading(true);
-      console.log(`[Client Timing] [Preview Fetch] Started fetch for "${monsterData?.name}"`);
-
       fetch('/api/preview', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -177,10 +172,6 @@ export const App: React.FC = () => {
           if (!active) {
             return;
           }
-          const fetchTime = performance.now() - startTime;
-          console.log(
-            `[Client Timing] [Preview Fetch] Completed fetch for "${monsterData?.name}" in ${fetchTime.toFixed(2)}ms (cacheHit: ${result.cacheHit})`,
-          );
           setErrors(result.errors || []);
           setWarnings(result.warnings || []);
           setPreviewStats(result.computedStats);
@@ -495,11 +486,7 @@ export const App: React.FC = () => {
                 Select a monster inside the group to preview its statistics.
               </div>
             ) : (
-              <BookPreview
-                stats={previewStats}
-                loading={loading}
-                requestStartedAt={requestStartedAt}
-              />
+              <BookPreview stats={previewStats} loading={loading} />
             )}
           </div>
         </section>

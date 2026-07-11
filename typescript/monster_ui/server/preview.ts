@@ -19,7 +19,7 @@ export function generatePreview(
 ) {
   const start = performance.now();
   const { name } = monster;
-  
+
   const jsonStart = performance.now();
   const inputJson = JSON.stringify({ monster, sharedFreeformCode });
   const jsonDuration = performance.now() - jsonStart;

@@ -28,14 +28,18 @@ export function getDb(): DatabaseData {
     }
     fs.writeFileSync(dbPath, JSON.stringify(defaultDb, null, 2), 'utf8');
     if (showDetailedTiming) {
-      console.log(`[Timing] [DB] Created default database in ${(performance.now() - start).toFixed(2)}ms`);
+      console.log(
+        `[Timing] [DB] Created default database in ${(performance.now() - start).toFixed(2)}ms`,
+      );
     }
     return defaultDb;
   }
   const raw = fs.readFileSync(dbPath, 'utf8');
   const parsed = JSON.parse(raw);
   if (showDetailedTiming) {
-    console.log(`[Timing] [DB] Loaded and parsed database in ${(performance.now() - start).toFixed(2)}ms`);
+    console.log(
+      `[Timing] [DB] Loaded and parsed database in ${(performance.now() - start).toFixed(2)}ms`,
+    );
   }
   return parsed;
 }
@@ -62,7 +66,7 @@ export function saveDb(db: DatabaseData) {
 export function saveAndValidateAll(db: DatabaseData) {
   const start = performance.now();
   console.log('[DB] Beginning save and validation process...');
-  
+
   const saveStart = performance.now();
   saveDb(db);
   const saveDuration = performance.now() - saveStart;
@@ -131,7 +135,9 @@ export function saveAndValidateAll(db: DatabaseData) {
   const gcDuration = performance.now() - gcStart;
 
   const totalDuration = performance.now() - start;
-  console.log(`[DB] All validations complete. Total save & validate process took ${totalDuration.toFixed(2)}ms`);
+  console.log(
+    `[DB] All validations complete. Total save & validate process took ${totalDuration.toFixed(2)}ms`,
+  );
 
   if (showDetailedTiming) {
     console.log(`[Timing] Save and Validate Breakdown:`);

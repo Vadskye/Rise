@@ -233,11 +233,15 @@ export function buildCreature(monster: MonsterData, sharedFreeformCode?: string)
 
     const totalDuration = performance.now() - start;
     if (showDetailedTiming) {
-      console.log(`[Timing] [Builder] "${name}" buildCreature total: ${totalDuration.toFixed(2)}ms`);
+      console.log(
+        `[Timing] [Builder] "${name}" buildCreature total: ${totalDuration.toFixed(2)}ms`,
+      );
       console.log(`[Timing] [Builder]   - Instantiate: ${instantiateDuration.toFixed(2)}ms`);
       console.log(`[Timing] [Builder]   - Properties & setup: ${propertiesDuration.toFixed(2)}ms`);
       if (sharedFreeformCode) {
-        console.log(`[Timing] [Builder]   - Shared Freeform: ${sharedFreeformDuration.toFixed(2)}ms`);
+        console.log(
+          `[Timing] [Builder]   - Shared Freeform: ${sharedFreeformDuration.toFixed(2)}ms`,
+        );
       }
       if (freeformCode) {
         console.log(`[Timing] [Builder]   - Freeform: ${freeformDuration.toFixed(2)}ms`);
