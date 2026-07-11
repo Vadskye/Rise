@@ -38,7 +38,7 @@ export function saveAndValidateAll(db: DatabaseData) {
   console.log('[DB] Beginning save and validation process...');
   saveDb(db);
 
-  const validations: Record<string, any> = {};
+  const validations: Record<string, ReturnType<typeof validateMonster>> = {};
 
   const monsters = db.monsters || [];
   if (monsters.length > 0) {

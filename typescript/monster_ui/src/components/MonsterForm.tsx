@@ -347,7 +347,10 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
   if (mode === 'monster' && monsterData && onChangeMonster) {
     const { requiredProperties } = monsterData;
 
-    const setProp = (key: keyof typeof requiredProperties, value: any) => {
+    const setProp = <K extends keyof typeof requiredProperties>(
+      key: K,
+      value: (typeof requiredProperties)[K],
+    ) => {
       onChangeMonster({
         ...monsterData,
         requiredProperties: {
@@ -358,7 +361,7 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
     };
 
     const properties = monsterData.properties || {};
-    const setMiscProperty = (key: string, val: any) => {
+    const setMiscProperty = (key: string, val: string | number | boolean) => {
       onChangeMonster({
         ...monsterData,
         properties: {

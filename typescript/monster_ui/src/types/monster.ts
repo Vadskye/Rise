@@ -77,7 +77,7 @@ export interface MonsterData {
   resistances?: string[];
   vulnerabilities?: string[];
   equippedArmor?: string;
-  properties?: Record<string, any>;
+  properties?: Record<string, string | number | boolean>;
   standardAbilities?: StandardAbilityConfig[];
   customAbilities?: CustomAbilityConfig[];
   passiveAbilities?: PassiveAbilityConfig[];
@@ -126,9 +126,16 @@ export interface ComputedStats {
   skills: string[];
   traits: string[];
   equipment: string[];
-  activeAbilities: any[];
-  passiveAbilities: any[];
-  knowledge: any;
+  activeAbilities: CustomAbilityConfig[];
+  passiveAbilities: PassiveAbilityConfig[];
+  knowledge: ComputedKnowledge;
+}
+
+export interface ComputedKnowledge {
+  easy?: string;
+  normal?: string;
+  hard?: string;
+  legendary?: string;
 }
 
 export interface ValidationResult {

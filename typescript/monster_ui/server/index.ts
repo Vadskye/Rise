@@ -1,5 +1,4 @@
 import express from 'express';
-import { validateMonster } from './validate';
 import { generatePreview } from './preview';
 import { DatabaseData } from './codegen';
 import { getDb, saveAndValidateAll } from './db';
@@ -39,9 +38,10 @@ app.get('/api/reference', (req, res) => {
       weapons: weaponNames,
       spheres: sphereNames,
     });
-  } catch (err: any) {
-    console.error('[API Error] Failed to fetch reference data:', err);
-    res.status(500).json({ error: err.message || err });
+  } catch (err) {
+    const error = err instanceof Error ? err : new Error(String(err));
+    console.error('[API Error] Failed to fetch reference data:', error);
+    res.status(500).json({ error: error.message });
   }
 });
 
@@ -51,9 +51,10 @@ app.get('/api/monsters', (req, res) => {
   try {
     const db = getDb();
     res.json(db);
-  } catch (err: any) {
-    console.error('[API Error] Failed to fetch monsters:', err);
-    res.status(500).json({ error: err.message || err });
+  } catch (err) {
+    const error = err instanceof Error ? err : new Error(String(err));
+    console.error('[API Error] Failed to fetch monsters:', error);
+    res.status(500).json({ error: error.message });
   }
 });
 
@@ -70,9 +71,10 @@ app.post('/api/save', (req, res) => {
     const result = saveAndValidateAll(db);
     console.log('[API] Save and validation completed successfully');
     res.json(result);
-  } catch (err: any) {
-    console.error('[API Error] Failed to save database:', err);
-    res.status(500).json({ error: err.message || err });
+  } catch (err) {
+    const error = err instanceof Error ? err : new Error(String(err));
+    console.error('[API Error] Failed to save database:', error);
+    res.status(500).json({ error: error.message });
   }
 });
 
@@ -89,9 +91,10 @@ app.post('/api/preview', (req, res) => {
     );
     const result = generatePreview(monster, sharedFreeformCode, groupName);
     res.json(result);
-  } catch (err: any) {
-    console.error('[API Error] Preview calculation failed:', err);
-    res.status(500).json({ error: err.message || err });
+  } catch (err) {
+    const error = err instanceof Error ? err : new Error(String(err));
+    console.error('[API Error] Preview calculation failed:', error);
+    res.status(500).json({ error: error.message });
   }
 });
 
