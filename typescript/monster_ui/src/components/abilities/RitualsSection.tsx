@@ -6,11 +6,7 @@ interface RitualsSectionProps {
   onChange: (updatedRituals: string[]) => void;
 }
 
-export const RitualsSection: React.FC<RitualsSectionProps> = ({
-  rituals,
-  spheres,
-  onChange,
-}) => {
+export const RitualsSection: React.FC<RitualsSectionProps> = ({ rituals, spheres, onChange }) => {
   const handleRitualToggle = (sphere: string) => {
     const updated = rituals.includes(sphere)
       ? rituals.filter((s) => s !== sphere)
@@ -22,7 +18,8 @@ export const RitualsSection: React.FC<RitualsSectionProps> = ({
     <div className="ability-section-card">
       <h4 className="section-subtitle">Rituals & Mystic Spheres</h4>
       <p className="section-description">
-        Configure which Mystic Spheres this creature can cast rituals from. This maps to the <code>creature.addRituals()</code> engine calls.
+        Configure which Mystic Spheres this creature can cast rituals from. This maps to the{' '}
+        <code>creature.addRituals()</code> engine calls.
       </p>
       <div className="spheres-checklist-grid">
         {spheres.map((sphere) => {

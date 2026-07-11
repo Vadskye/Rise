@@ -43,26 +43,28 @@ export const CustomAbilitiesSection: React.FC<CustomAbilitiesSectionProps> = ({
 
   return (
     <div className="ability-section-card">
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' }}>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          marginBottom: '15px',
+        }}
+      >
         <div>
-          <h4 className="section-subtitle" style={{ marginBottom: '0' }}>Custom Active Abilities</h4>
+          <h4 className="section-subtitle" style={{ marginBottom: '0' }}>
+            Custom Active Abilities
+          </h4>
           <p className="section-description" style={{ marginBottom: '0' }}>
-            Build new spells or maneuvers completely from scratch with custom effects, costs, and combat attacks.
+            Build new spells or maneuvers completely from scratch with custom effects, costs, and
+            combat attacks.
           </p>
         </div>
         <div style={{ display: 'flex', gap: '10px' }}>
-          <button
-            type="button"
-            className="btn-add"
-            onClick={() => addCustomAbility('spell')}
-          >
+          <button type="button" className="btn-add" onClick={() => addCustomAbility('spell')}>
             + Spell
           </button>
-          <button
-            type="button"
-            className="btn-add"
-            onClick={() => addCustomAbility('maneuver')}
-          >
+          <button type="button" className="btn-add" onClick={() => addCustomAbility('maneuver')}>
             + Maneuver
           </button>
         </div>
@@ -71,7 +73,9 @@ export const CustomAbilitiesSection: React.FC<CustomAbilitiesSectionProps> = ({
       {/* Custom Abilities List */}
       <div className="ability-items-list">
         {customAbilities.length === 0 ? (
-          <div className="empty-state">No custom abilities built yet. Click "+ Spell" or "+ Maneuver" to build.</div>
+          <div className="empty-state">
+            No custom abilities built yet. Click "+ Spell" or "+ Maneuver" to build.
+          </div>
         ) : (
           customAbilities.map((ability, idx) => {
             const cardId = `custom-${idx}`;
@@ -80,7 +84,9 @@ export const CustomAbilitiesSection: React.FC<CustomAbilitiesSectionProps> = ({
               <div key={idx} className={`ability-item-card ${isExpanded ? 'expanded' : ''}`}>
                 <div className="ability-card-header" onClick={() => onToggleExpand(cardId)}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <span className={`ability-type-badge ${ability.type === 'spell' ? 'spell-badge' : 'maneuver-badge'}`}>
+                    <span
+                      className={`ability-type-badge ${ability.type === 'spell' ? 'spell-badge' : 'maneuver-badge'}`}
+                    >
                       CUSTOM {ability.type.toUpperCase()}
                     </span>
                     <strong className="ability-name">{ability.name}</strong>
@@ -109,14 +115,18 @@ export const CustomAbilitiesSection: React.FC<CustomAbilitiesSectionProps> = ({
                         <input
                           type="text"
                           value={ability.name}
-                          onChange={(e) => updateCustomAbility(idx, { ...ability, name: e.target.value })}
+                          onChange={(e) =>
+                            updateCustomAbility(idx, { ...ability, name: e.target.value })
+                          }
                         />
                       </div>
                       <div className="form-group">
                         <label>Usage Time</label>
                         <select
                           value={ability.usageTime || 'Standard'}
-                          onChange={(e) => updateCustomAbility(idx, { ...ability, usageTime: e.target.value })}
+                          onChange={(e) =>
+                            updateCustomAbility(idx, { ...ability, usageTime: e.target.value })
+                          }
                         >
                           <option value="Standard">Standard Action</option>
                           <option value="Move">Move Action</option>
@@ -132,15 +142,30 @@ export const CustomAbilitiesSection: React.FC<CustomAbilitiesSectionProps> = ({
                           type="text"
                           placeholder="None"
                           value={ability.cost || ''}
-                          onChange={(e) => updateCustomAbility(idx, { ...ability, cost: e.target.value || undefined })}
+                          onChange={(e) =>
+                            updateCustomAbility(idx, {
+                              ...ability,
+                              cost: e.target.value || undefined,
+                            })
+                          }
                         />
                       </div>
-                      <div className="form-group" style={{ display: 'flex', alignItems: 'center', alignSelf: 'end', height: '38px' }}>
+                      <div
+                        className="form-group"
+                        style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          alignSelf: 'end',
+                          height: '38px',
+                        }}
+                      >
                         <label className="checkbox-row">
                           <input
                             type="checkbox"
                             checked={Boolean(ability.isMagical)}
-                            onChange={(e) => updateCustomAbility(idx, { ...ability, isMagical: e.target.checked })}
+                            onChange={(e) =>
+                              updateCustomAbility(idx, { ...ability, isMagical: e.target.checked })
+                            }
                           />
                           Is Magical
                         </label>
@@ -154,7 +179,12 @@ export const CustomAbilitiesSection: React.FC<CustomAbilitiesSectionProps> = ({
                         rows={3}
                         placeholder="Describe the ability's effects. You may use LaTeX macros like \damagerankthree."
                         value={ability.effect || ''}
-                        onChange={(e) => updateCustomAbility(idx, { ...ability, effect: e.target.value || undefined })}
+                        onChange={(e) =>
+                          updateCustomAbility(idx, {
+                            ...ability,
+                            effect: e.target.value || undefined,
+                          })
+                        }
                       />
                     </div>
 
@@ -167,7 +197,10 @@ export const CustomAbilitiesSection: React.FC<CustomAbilitiesSectionProps> = ({
                         onChange={(e) =>
                           updateCustomAbility(idx, {
                             ...ability,
-                            tags: e.target.value.split(',').map((t) => t.trim()).filter(Boolean),
+                            tags: e.target.value
+                              .split(',')
+                              .map((t) => t.trim())
+                              .filter(Boolean),
                           })
                         }
                       />
@@ -175,7 +208,14 @@ export const CustomAbilitiesSection: React.FC<CustomAbilitiesSectionProps> = ({
 
                     {/* Optional Attack Subform */}
                     <div className="card-subform" style={{ marginTop: '20px' }}>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
+                      <div
+                        style={{
+                          display: 'flex',
+                          justifyContent: 'space-between',
+                          alignItems: 'center',
+                          marginBottom: '10px',
+                        }}
+                      >
                         <h5 style={{ margin: '0' }}>Attack Details</h5>
                         <label className="checkbox-row" style={{ margin: '0' }}>
                           <input
@@ -185,7 +225,10 @@ export const CustomAbilitiesSection: React.FC<CustomAbilitiesSectionProps> = ({
                               if (e.target.checked) {
                                 updateCustomAbility(idx, {
                                   ...ability,
-                                  attack: { targeting: 'Mental Defense', hit: 'The target is stunned.' },
+                                  attack: {
+                                    targeting: 'Mental Defense',
+                                    hit: 'The target is stunned.',
+                                  },
                                 });
                               } else {
                                 updateCustomAbility(idx, { ...ability, attack: undefined });
@@ -197,7 +240,10 @@ export const CustomAbilitiesSection: React.FC<CustomAbilitiesSectionProps> = ({
                       </div>
 
                       {ability.attack && (
-                        <div className="attack-grid" style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                        <div
+                          className="attack-grid"
+                          style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}
+                        >
                           <div className="form-group">
                             <label>Targeting (e.g. Brawn Defense, Reflex Defense)</label>
                             <input
@@ -207,7 +253,7 @@ export const CustomAbilitiesSection: React.FC<CustomAbilitiesSectionProps> = ({
                               onChange={(e) =>
                                 updateCustomAbility(idx, {
                                   ...ability,
-                                  attack: { ...(ability.attack!), targeting: e.target.value },
+                                  attack: { ...ability.attack!, targeting: e.target.value },
                                 })
                               }
                             />
@@ -221,7 +267,7 @@ export const CustomAbilitiesSection: React.FC<CustomAbilitiesSectionProps> = ({
                               onChange={(e) =>
                                 updateCustomAbility(idx, {
                                   ...ability,
-                                  attack: { ...(ability.attack!), hit: e.target.value },
+                                  attack: { ...ability.attack!, hit: e.target.value },
                                 })
                               }
                             />
@@ -236,7 +282,7 @@ export const CustomAbilitiesSection: React.FC<CustomAbilitiesSectionProps> = ({
                                 onChange={(e) =>
                                   updateCustomAbility(idx, {
                                     ...ability,
-                                    attack: { ...(ability.attack!), crit: e.target.value || null },
+                                    attack: { ...ability.attack!, crit: e.target.value || null },
                                   })
                                 }
                               />
@@ -250,7 +296,10 @@ export const CustomAbilitiesSection: React.FC<CustomAbilitiesSectionProps> = ({
                                 onChange={(e) =>
                                   updateCustomAbility(idx, {
                                     ...ability,
-                                    attack: { ...(ability.attack!), miss: e.target.value || undefined },
+                                    attack: {
+                                      ...ability.attack!,
+                                      miss: e.target.value || undefined,
+                                    },
                                   })
                                 }
                               />
@@ -266,12 +315,23 @@ export const CustomAbilitiesSection: React.FC<CustomAbilitiesSectionProps> = ({
                                 onChange={(e) =>
                                   updateCustomAbility(idx, {
                                     ...ability,
-                                    attack: { ...(ability.attack!), injury: e.target.value || undefined },
+                                    attack: {
+                                      ...ability.attack!,
+                                      injury: e.target.value || undefined,
+                                    },
                                   })
                                 }
                               />
                             </div>
-                            <div className="form-group" style={{ display: 'flex', alignItems: 'center', alignSelf: 'end', height: '38px' }}>
+                            <div
+                              className="form-group"
+                              style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                alignSelf: 'end',
+                                height: '38px',
+                              }}
+                            >
                               <label className="checkbox-row">
                                 <input
                                   type="checkbox"
@@ -279,7 +339,7 @@ export const CustomAbilitiesSection: React.FC<CustomAbilitiesSectionProps> = ({
                                   onChange={(e) =>
                                     updateCustomAbility(idx, {
                                       ...ability,
-                                      attack: { ...(ability.attack!), halfOnMiss: e.target.checked },
+                                      attack: { ...ability.attack!, halfOnMiss: e.target.checked },
                                     })
                                   }
                                 />

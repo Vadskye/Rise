@@ -147,7 +147,7 @@ describe('Monster UI Tab Layout Tests', () => {
 
       assert.ok(targetButton, `Should find tab button for "${tabName}"`);
       await targetButton.click();
-      
+
       // Allow minor delay for animations or render updates
       await new Promise((resolve) => setTimeout(resolve, 300));
 
@@ -159,7 +159,7 @@ describe('Monster UI Tab Layout Tests', () => {
       });
 
       console.log(`Tab: "${tabName}", Bounding Height: ${tabsHeight}px`);
-      
+
       // Ensure height is not collapsed (should be around 36px, definitely > 30px)
       assert.ok(tabsHeight > 30, `Tab bar collapsed to ${tabsHeight}px on "${tabName}" tab`);
     }

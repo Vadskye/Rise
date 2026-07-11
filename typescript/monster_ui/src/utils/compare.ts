@@ -8,10 +8,20 @@ export function getChangedPaths(obj1: any, obj2: any, currentPath: string = ''):
 
   let o1 = obj1;
   let o2 = obj2;
-  if ((o1 === null || o1 === undefined) && typeof o2 === 'object' && o2 !== null && !Array.isArray(o2)) {
+  if (
+    (o1 === null || o1 === undefined) &&
+    typeof o2 === 'object' &&
+    o2 !== null &&
+    !Array.isArray(o2)
+  ) {
     o1 = {};
   }
-  if ((o2 === null || o2 === undefined) && typeof o1 === 'object' && o1 !== null && !Array.isArray(o1)) {
+  if (
+    (o2 === null || o2 === undefined) &&
+    typeof o1 === 'object' &&
+    o1 !== null &&
+    !Array.isArray(o1)
+  ) {
     o2 = {};
   }
 

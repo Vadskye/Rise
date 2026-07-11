@@ -143,12 +143,12 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
   }
 
   // Design Decisions:
-  // 1. Tabbed Layout: Rather than presenting a giant list of inputs that is overwhelming and hard 
-  //    to navigate, we group fields into logical tabs: Identity, Attributes & Skills, Traits & Senses, 
+  // 1. Tabbed Layout: Rather than presenting a giant list of inputs that is overwhelming and hard
+  //    to navigate, we group fields into logical tabs: Identity, Attributes & Skills, Traits & Senses,
   //    Combat & Gear, and Knowledge & Script.
-  // 2. Local Tag Input State: Incomplete inputs for array fields (senses, movement speeds, defenses) 
-  //    are kept in local component states (e.g. `newSense`, `newSpeed`) and only committed to the 
-  //    parent state via `onChangeMonster` once the user clicks "+ Add" or presses Enter. This ensures 
+  // 2. Local Tag Input State: Incomplete inputs for array fields (senses, movement speeds, defenses)
+  //    are kept in local component states (e.g. `newSense`, `newSpeed`) and only committed to the
+  //    parent state via `onChangeMonster` once the user clicks "+ Add" or presses Enter. This ensures
   //    we don't trigger the game-engine validation pipeline for partial, half-typed tags.
   const [activeTab, setActiveTab] = React.useState<
     'identity' | 'stats' | 'traits' | 'combat' | 'knowledge' | 'abilities'
