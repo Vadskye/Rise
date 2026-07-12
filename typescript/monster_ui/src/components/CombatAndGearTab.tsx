@@ -23,7 +23,7 @@ interface CombatTabProps {
   onChangeMonster: (updated: MonsterData) => void;
 }
 
-export const CombatTab: React.FC<CombatTabProps> = ({
+export const CombatAndGearTab: React.FC<CombatTabProps> = ({
   monsterData,
   onChangeMonster,
 }) => {

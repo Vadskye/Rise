@@ -47,7 +47,7 @@ interface StatsTabProps {
   onChangeMonster: (updated: MonsterData) => void;
 }
 
-export const StatsTab: React.FC<StatsTabProps> = ({
+export const AttributesAndSkillsTab: React.FC<StatsTabProps> = ({
   monsterData,
   onChangeMonster,
 }) => {
