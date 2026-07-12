@@ -79,6 +79,7 @@ export interface MonsterData {
   resistances?: string[];
   vulnerabilities?: string[];
   equippedArmor?: string;
+  equippedShield?: string;
   properties?: Record<string, string | number | boolean>;
   standardAbilities?: StandardAbilityConfig[];
   customAbilities?: CustomAbilityConfig[];

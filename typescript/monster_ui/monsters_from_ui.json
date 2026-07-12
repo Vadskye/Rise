@@ -29,7 +29,7 @@
             "awareness"
           ],
           "equippedArmor": "buff leather",
-          "freeformCode": "creature.setEquippedArmorName({ shield: 'buckler' });",
+          "freeformCode": "",
           "weapons": [
             {
               "name": "spear",
@@ -48,7 +48,11 @@
                 "isMagical": false
               }
             }
-          ]
+          ],
+          "customSenses": [
+            "dfkljs"
+          ],
+          "equippedShield": "buckler"
         },
         {
           "name": "Wolf Rider",

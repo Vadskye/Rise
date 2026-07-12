@@ -16,6 +16,8 @@ const STANDARD_ARMORS = [
   'ki barrier',
 ];
 
+const STANDARD_SHIELDS = ['buckler', 'standard shield', 'tower shield'];
+
 interface CombatTabProps {
   monsterData: MonsterData;
   onChangeMonster: (updated: MonsterData) => void;
@@ -28,22 +30,42 @@ export const CombatTab: React.FC<CombatTabProps> = ({
   return (
     <div className="tab-content">
       <h4 className="section-subtitle">Equipment</h4>
-      <div className="form-group" style={{ marginBottom: '20px' }}>
-        <label htmlFor="equipped-armor">Equipped Armor</label>
-        <select
-          id="equipped-armor"
-          value={monsterData.equippedArmor || ''}
-          onChange={(e) =>
-            onChangeMonster({ ...monsterData, equippedArmor: e.target.value || undefined })
-          }
-        >
-          <option value="">-- None --</option>
-          {STANDARD_ARMORS.map((arm) => (
-            <option key={arm} value={arm}>
-              {arm.charAt(0).toUpperCase() + arm.slice(1)}
-            </option>
-          ))}
-        </select>
+      <div style={{ display: 'flex', gap: '16px', marginBottom: '20px' }}>
+        <div className="form-group" style={{ flex: 1, marginBottom: 0 }}>
+          <label htmlFor="equipped-armor">Equipped Armor</label>
+          <select
+            id="equipped-armor"
+            value={monsterData.equippedArmor || ''}
+            onChange={(e) =>
+              onChangeMonster({ ...monsterData, equippedArmor: e.target.value || undefined })
+            }
+          >
+            <option value="">-- None --</option>
+            {STANDARD_ARMORS.map((arm) => (
+              <option key={arm} value={arm}>
+                {arm.charAt(0).toUpperCase() + arm.slice(1)}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div className="form-group" style={{ flex: 1, marginBottom: 0 }}>
+          <label htmlFor="equipped-shield">Equipped Shield</label>
+          <select
+            id="equipped-shield"
+            value={monsterData.equippedShield || ''}
+            onChange={(e) =>
+              onChangeMonster({ ...monsterData, equippedShield: e.target.value || undefined })
+            }
+          >
+            <option value="">-- None --</option>
+            {STANDARD_SHIELDS.map((shld) => (
+              <option key={shld} value={shld}>
+                {shld.charAt(0).toUpperCase() + shld.slice(1)}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
 
       <h4 className="section-subtitle">Defenses & Modifiers</h4>

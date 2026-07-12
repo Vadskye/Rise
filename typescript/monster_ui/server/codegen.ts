@@ -89,6 +89,7 @@ export interface MonsterData {
   resistances?: string[];
   vulnerabilities?: string[];
   equippedArmor?: string;
+  equippedShield?: string;
   properties?: Record<string, string | number | boolean>;
   standardAbilities?: StandardAbilityConfig[];
   customAbilities?: CustomAbilityConfig[];
@@ -222,9 +223,16 @@ function generateMonsterBody(monster: MonsterData, indent: string): string {
     }
   }
 
-  if (monster.equippedArmor) {
+  if (monster.equippedArmor || monster.equippedShield) {
+    const armorParts: string[] = [];
+    if (monster.equippedArmor) {
+      armorParts.push(`bodyArmor: ${JSON.stringify(monster.equippedArmor)}`);
+    }
+    if (monster.equippedShield) {
+      armorParts.push(`shield: ${JSON.stringify(monster.equippedShield)}`);
+    }
     lines.push(
-      `${indent}creature.setEquippedArmorName({ bodyArmor: ${JSON.stringify(monster.equippedArmor)} });`,
+      `${indent}creature.setEquippedArmorName({ ${armorParts.join(', ')} });`,
     );
   }
 
