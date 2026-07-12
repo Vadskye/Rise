@@ -45,12 +45,10 @@
               "type": "maneuver",
               "name": "Charge",
               "options": {
-                "isMagical": false
+                "isMagical": false,
+                "weapon": "spear"
               }
             }
-          ],
-          "customSenses": [
-            "dfkljs"
           ],
           "equippedShield": "buckler"
         },
@@ -80,7 +78,18 @@
             "ride"
           ],
           "equippedArmor": "buff leather",
-          "freeformCode": "creature.addWeaponMult('lance');\ncreature.addWeaponMult('spear');\ncreature.setEquippedArmorName({ shield: 'buckler' });"
+          "freeformCode": "",
+          "weapons": [
+            {
+              "name": "lance",
+              "addStandard": true,
+              "addMult": true,
+              "options": {
+                "isMagical": false
+              }
+            }
+          ],
+          "equippedShield": "buckler"
         },
         {
           "name": "Goblin Shaman",
@@ -105,7 +114,29 @@
             "awareness"
           ],
           "equippedArmor": "buff leather",
-          "freeformCode": "creature.addSpell('Word of Power');\ncreature.setEquippedArmorName({ shield: 'standard shield' });\ncreature.addWeaponMult('spear', { displayName: 'Consecrated Strike', isMagical: true });"
+          "freeformCode": "creature.addSpell('Word of Power');\ncreature.setEquippedArmorName({ shield: 'standard shield' });\ncreature.addWeaponMult('spear', { displayName: 'Consecrated Strike', isMagical: true });",
+          "standardAbilities": [
+            {
+              "type": "spell",
+              "name": "Greater Word of Power",
+              "options": {
+                "isMagical": true
+              }
+            }
+          ],
+          "equippedShield": "standard shield",
+          "customAbilities": [],
+          "weapons": [
+            {
+              "name": "spear",
+              "addStandard": true,
+              "addMult": true,
+              "options": {
+                "isMagical": true,
+                "displayName": "Consecrated Strike"
+              }
+            }
+          ]
         }
       ],
       "knowledge": {

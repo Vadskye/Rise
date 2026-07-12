@@ -26,3 +26,32 @@ export function formatMissingWeaponWarning(name: string): string {
 export function isMissingWeaponWarning(warning: string, name: string): boolean {
   return warning === formatMissingWeaponWarning(name);
 }
+
+/**
+ * Formats the warning message for a monster having freeform initialization code.
+ */
+export function formatFreeformCodeWarning(name: string): string {
+  return `Monster "${name}" has freeform initialization code.`;
+}
+
+/**
+ * Checks if a given warning string matches the freeform code warning for a specific monster name.
+ */
+export function isFreeformCodeWarning(warning: string, name: string): boolean {
+  return warning === formatFreeformCodeWarning(name);
+}
+
+/**
+ * Formats the warning message for a monster having shared freeform initialization code.
+ */
+export function formatSharedFreeformCodeWarning(name: string): string {
+  return `Monster "${name}" has shared freeform initialization code.`;
+}
+
+/**
+ * Checks if a given warning string matches the shared freeform code warning for a specific monster name.
+ */
+export function isSharedFreeformCodeWarning(warning: string, name: string): boolean {
+  return warning === formatSharedFreeformCodeWarning(name);
+}
+

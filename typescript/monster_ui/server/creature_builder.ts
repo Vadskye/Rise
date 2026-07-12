@@ -22,7 +22,12 @@ import { BodyArmor, Shield } from '@src/monsters/equipment';
 import { MonsterWeapon } from '@src/monsters/weapons';
 import { showDetailedTiming } from './timing';
 import { getManeuverByName } from '@src/abilities/combat_styles';
-import { maneuverMakesStrike, formatMissingWeaponWarning } from '../src/utils/validation';
+import {
+  maneuverMakesStrike,
+  formatMissingWeaponWarning,
+  formatFreeformCodeWarning,
+  formatSharedFreeformCodeWarning,
+} from '../src/utils/validation';
 
 export interface BuildResult {
   creature: Creature | null;
@@ -171,7 +176,7 @@ export function buildCreature(monster: MonsterData, sharedFreeformCode?: string)
                 warnings.push(formatMissingWeaponWarning(nameToUse));
               }
             }
-          } catch (e) {
+          } catch {
             // Ignore if maneuver name is invalid
           }
         }
@@ -254,6 +259,13 @@ export function buildCreature(monster: MonsterData, sharedFreeformCode?: string)
         throw new Error(`Error in freeform code: ${msg}`);
       }
       freeformDuration = performance.now() - freeformStart;
+    }
+
+    if (freeformCode && freeformCode.trim()) {
+      warnings.push(formatFreeformCodeWarning(name));
+    }
+    if (sharedFreeformCode && sharedFreeformCode.trim()) {
+      warnings.push(formatSharedFreeformCodeWarning(name));
     }
 
     // Run game engine calculations

@@ -1,16 +1,20 @@
 import React from 'react';
 import { MonsterData } from '../types/monster';
+import { isFreeformCodeWarning } from '../utils/validation';
 
 interface KnowledgeTabProps {
   monsterData: MonsterData;
   onChangeMonster: (updated: MonsterData) => void;
+  warnings?: string[];
 }
 
 export const KnowledgeTab: React.FC<KnowledgeTabProps> = ({
   monsterData,
   onChangeMonster,
+  warnings = [],
 }) => {
   const knowledge = monsterData.knowledge || {};
+  const freeformWarning = warnings.find((w) => isFreeformCodeWarning(w, monsterData.name));
   
   const setKnowledgeVal = (key: 'easy' | 'normal' | 'hard' | 'legendary', value: string) => {
     onChangeMonster({
@@ -74,6 +78,11 @@ export const KnowledgeTab: React.FC<KnowledgeTabProps> = ({
       <h4 className="section-subtitle">Freeform Script Escape Hatch</h4>
       <div className="form-group">
         <label htmlFor="freeform-code">Freeform Initialization Code (TypeScript)</label>
+        {freeformWarning && (
+          <div className="inline-warning" style={{ marginBottom: '8px' }}>
+            ⚠️ {freeformWarning}
+          </div>
+        )}
         <textarea
           id="freeform-code"
           data-testid="freeform-code-textarea"
