@@ -24,10 +24,20 @@ app.get('/api/reference', (req, res) => {
     const dSpells = performance.now() - s1;
 
     const s2 = performance.now();
+    const SPECIAL_MANEUVERS = [
+      'Equip Weapon',
+      'Weapon Multiplier',
+      'Grappling Strike',
+      'Sneak Attack',
+      'Latch On',
+    ];
     const uniqueManeuvers = Array.from(
-      new Set(
-        allCombatStyles.flatMap((style) => style.maneuvers ?? []).map((maneuver) => maneuver.name),
-      ),
+      new Set([
+        ...SPECIAL_MANEUVERS,
+        ...allCombatStyles
+          .flatMap((style) => style.maneuvers ?? [])
+          .map((maneuver) => maneuver.name),
+      ]),
     ).sort();
     const dManeuvers = performance.now() - s2;
 
@@ -130,7 +140,5 @@ app.post('/api/preview', (req, res) => {
 export { app };
 
 if (process.env.NODE_ENV !== 'test') {
-  app.listen(port, '127.0.0.1', () => {
-    console.log(`Monster Creator API Server listening on http://localhost:${port}`);
-  });
+  app.listen(port, '127.0.0.1', () => {});
 }

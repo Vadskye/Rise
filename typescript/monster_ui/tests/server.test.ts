@@ -1,4 +1,4 @@
-process.env.NODE_ENV = 'test';
+import './setup-env';
 
 import { test, describe, before, after } from 'node:test';
 import assert from 'node:assert';
@@ -6,7 +6,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
 import http from 'http';
-import { dbPath, getDb } from '../server/db';
+import { dbPath, generatedTsPath, getDb } from '../server/db';
 import {
   formatMissingWeaponWarning,
   formatFreeformCodeWarning,
@@ -20,26 +20,21 @@ const { app } = await import('../server/index');
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const generatedTsPath = path.resolve(
-  __dirname,
-  '../../src/monsters/individual_monsters/monsters_from_ui.ts',
-);
-
 describe('Monster UI Integration Tests (Full Server)', () => {
-  let dbBackup: string | null = null;
-  let tsBackup: string | null = null;
   let server: http.Server;
   let baseUrl: string;
 
   before(async () => {
-    console.log('Backing up database and generated source files...');
-    // 1. Back up monsters_from_ui.json
-    if (fs.existsSync(dbPath)) {
-      dbBackup = fs.readFileSync(dbPath, 'utf8');
+    console.log('Initializing test database and generated source files...');
+    // Initialize temporary test JSON file from original
+    const originalDbPath = path.resolve(__dirname, '../monsters_from_ui.json');
+    if (fs.existsSync(originalDbPath)) {
+      fs.copyFileSync(originalDbPath, dbPath);
     }
-    // 2. Back up monsters_from_ui.ts
-    if (fs.existsSync(generatedTsPath)) {
-      tsBackup = fs.readFileSync(generatedTsPath, 'utf8');
+    // Initialize temporary test TS file from original
+    const originalTsPath = path.resolve(__dirname, '../../src/monsters/individual_monsters/monsters_from_ui.ts');
+    if (fs.existsSync(originalTsPath)) {
+      fs.copyFileSync(originalTsPath, generatedTsPath);
     }
 
     // 3. Start the Express Server on a random port
@@ -57,23 +52,17 @@ describe('Monster UI Integration Tests (Full Server)', () => {
   });
 
   after(() => {
-    console.log('Stopping test server and restoring backups...');
+    console.log('Stopping test server and cleaning up test files...');
     // 1. Close Server
     if (server) {
       server.close();
     }
 
-    // 2. Restore monsters_from_ui.json
-    if (dbBackup !== null) {
-      fs.writeFileSync(dbPath, dbBackup, 'utf8');
-    } else if (fs.existsSync(dbPath)) {
+    // 2. Clean up temporary test files
+    if (fs.existsSync(dbPath)) {
       fs.unlinkSync(dbPath);
     }
-
-    // 3. Restore monsters_from_ui.ts
-    if (tsBackup !== null) {
-      fs.writeFileSync(generatedTsPath, tsBackup, 'utf8');
-    } else if (fs.existsSync(generatedTsPath)) {
+    if (fs.existsSync(generatedTsPath)) {
       fs.unlinkSync(generatedTsPath);
     }
   });
