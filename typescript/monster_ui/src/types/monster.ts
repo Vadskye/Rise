@@ -101,6 +101,20 @@ export interface MonsterGroupData {
   hasArt: boolean;
   sharedFreeformCode: string;
   monsters: MonsterData[];
+  traits?: string[];
+  customSenses?: string[];
+  customMovementSpeeds?: string[];
+  immunities?: string[];
+  resistances?: string[];
+  vulnerabilities?: string[];
+  equippedArmor?: string;
+  equippedShield?: string;
+  properties?: Record<string, string | number | boolean>;
+  standardAbilities?: StandardAbilityConfig[];
+  customAbilities?: CustomAbilityConfig[];
+  passiveAbilities?: PassiveAbilityConfig[];
+  weapons?: WeaponConfig[];
+  rituals?: string[];
 }
 
 export interface DatabaseData {

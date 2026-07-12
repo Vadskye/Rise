@@ -73,6 +73,12 @@ describe('Monster UI Integration Tests (Serverless)', () => {
             size: 'medium',
             level: 1,
           },
+          weapons: [
+            {
+              name: 'fists',
+              addStandard: true,
+            },
+          ],
           freeformCode: '// integration test dummy',
         },
       ],
@@ -127,6 +133,12 @@ describe('Monster UI Integration Tests (Serverless)', () => {
             level: 5,
           },
           freeformCode: '// struct test dummy',
+          weapons: [
+            {
+              name: 'fists',
+              addStandard: true,
+            },
+          ],
           baseAttributes: [2, 3, 1, -1, 0, -2] as [number, number, number, number, number, number],
           trainedSkills: ['stealth', 'jump'],
           knowledge: {
@@ -210,6 +222,12 @@ describe('Monster UI Integration Tests (Serverless)', () => {
                 size: 'medium',
                 level: 1,
               },
+              weapons: [
+                {
+                  name: 'fists',
+                  addStandard: true,
+                },
+              ],
               freeformCode: '// group monster specific test',
             },
           ],
@@ -276,6 +294,12 @@ describe('Monster UI Integration Tests (Serverless)', () => {
         level: 1,
       },
       freeformCode: '// cache test 1',
+      weapons: [
+        {
+          name: 'fists',
+          addStandard: true,
+        },
+      ],
     };
 
     // First validation - should create sheet
@@ -400,5 +424,108 @@ describe('Monster UI Integration Tests (Serverless)', () => {
       generatedContent.includes(`creature.addWeaponMult("claws", {"displayName":"Vicious Claws"})`),
     );
     assert.ok(generatedContent.includes(`creature.addRituals(["Creation","Universal"])`));
+  });
+
+  test('saveAndValidateAll handles group shared structured properties and monster overrides', () => {
+    const initialDb = getDb();
+    const testGroupName = `OverrideGroup_${Date.now()}`;
+    const m1Name = `MemberOne_${Date.now()}`;
+    const m2Name = `MemberTwo_${Date.now()}`;
+
+    const updatedDb = {
+      ...initialDb,
+      monsterGroups: [
+        ...initialDb.monsterGroups,
+        {
+          name: testGroupName,
+          hasArt: false,
+          sharedFreeformCode: '// group shared code',
+          traits: ['ensouled'],
+          customSenses: ['Darkvision (90 ft.)'],
+          equippedArmor: 'scale',
+          standardAbilities: [
+            {
+              type: 'spell' as const,
+              name: 'Word of Power',
+              options: { isMagical: true },
+            },
+          ],
+          monsters: [
+            {
+              name: m1Name,
+              requiredProperties: {
+                alignment: 'neutral',
+                base_class: 'warrior',
+                elite: false,
+                creature_origin: 'natural',
+                creature_type: 'beast',
+                size: 'medium',
+                level: 1,
+              },
+              weapons: [
+                {
+                  name: 'fists',
+                  addStandard: true,
+                },
+              ],
+              freeformCode: '// member one specific',
+            },
+            {
+              name: m2Name,
+              requiredProperties: {
+                alignment: 'neutral',
+                base_class: 'warrior',
+                elite: false,
+                creature_origin: 'natural',
+                creature_type: 'beast',
+                size: 'medium',
+                level: 1,
+              },
+              weapons: [
+                {
+                  name: 'fists',
+                  addStandard: true,
+                },
+              ],
+              equippedArmor: 'breastplate', // override!
+              freeformCode: '// member two specific',
+            },
+          ],
+        },
+      ],
+    };
+
+    console.log(`Saving database and validating override group ${testGroupName}...`);
+    const result = saveAndValidateAll(updatedDb);
+
+    assert.strictEqual(result.success, true);
+    assert.strictEqual(result.validations[`${testGroupName}.${m1Name}`].success, true);
+    assert.strictEqual(result.validations[`${testGroupName}.${m2Name}`].success, true);
+
+    // Verify preview logic applies group fields
+    const group = updatedDb.monsterGroups[updatedDb.monsterGroups.length - 1];
+    const preview1 = generatePreview(group.monsters[0], group, group.name);
+    assert.strictEqual(preview1.success, true);
+    assert.ok(preview1.computedStats);
+    assert.ok(preview1.computedStats.traits.includes('ensouled'));
+    assert.ok(preview1.computedStats.sensesComponents.some((s: string) => s.includes('Darkvision (90 ft.)')));
+    assert.ok(preview1.computedStats.equipment.includes('scale'));
+    assert.ok(preview1.computedStats.activeAbilities.some((a: any) => a.name === 'Word of Power'));
+
+    // Verify preview logic applies monster overrides
+    const preview2 = generatePreview(group.monsters[1], group, group.name);
+    assert.strictEqual(preview2.success, true);
+    assert.ok(preview2.computedStats);
+    assert.ok(preview2.computedStats.traits.includes('ensouled'));
+    assert.ok(preview2.computedStats.equipment.includes('breastplate'));
+    assert.ok(!preview2.computedStats.equipment.includes('scale'));
+
+    // Verify codegen output
+    const generatedContent = fs.readFileSync(generatedTsPath, 'utf8');
+    assert.ok(generatedContent.includes(`creature.addTrait("ensouled")`));
+    assert.ok(generatedContent.includes(`creature.addCustomSense("Darkvision (90 ft.)")`));
+    assert.ok(generatedContent.includes(`creature.addSpell("Word of Power", {"isMagical":true})`));
+    assert.ok(generatedContent.includes(`creature.setEquippedArmorName({ bodyArmor: "scale" })`));
+    assert.ok(generatedContent.includes(`creature.setEquippedArmorName({ bodyArmor: "breastplate" })`));
   });
 });

@@ -1,4 +1,4 @@
-import { MonsterData } from './codegen';
+import { MonsterData, MonsterGroupData } from './codegen';
 import { generatePreview } from './preview';
 
 /**
@@ -8,10 +8,10 @@ import { generatePreview } from './preview';
  */
 export function validateMonster(
   monster: MonsterData,
-  sharedFreeformCode?: string,
+  group?: MonsterGroupData | string,
   groupName?: string,
 ) {
-  const preview = generatePreview(monster, sharedFreeformCode, groupName);
+  const preview = generatePreview(monster, group, groupName);
   return {
     success: preview.success,
     errors: preview.errors,
