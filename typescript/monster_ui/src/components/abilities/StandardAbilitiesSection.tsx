@@ -160,7 +160,7 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
             return (
               <div key={idx} className={`ability-item-card ${isExpanded ? 'expanded' : ''}`}>
                 <div className="ability-card-header" onClick={() => onToggleExpand(cardId)}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <div className="ability-card-header-main">
                     <span
                       className={`ability-type-badge ${ability.type === 'spell' ? 'spell-badge' : 'maneuver-badge'}`}
                     >
@@ -181,23 +181,48 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
                         </span>
                       )}
                     </strong>
-                    {ability.type === 'maneuver' &&
-                      warnings.some((w) =>
-                        isMissingWeaponWarning(
-                          w,
-                          ability.options?.displayName || ability.name,
-                        ),
-                      ) && (
-                        <span
-                          title="Maneuver makes a strike and doesn't have a weapon."
-                          style={{ color: 'var(--warning-color)', cursor: 'help' }}
-                        >
-                          ⚠️
-                        </span>
-                      )}
                   </div>
-                  <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                    <span className="expand-chevron">{isExpanded ? '▲' : '▼'}</span>
+                  <div className="ability-card-header-controls" onClick={(e) => e.stopPropagation()}>
+                    {ability.type === 'maneuver' && (
+                      <div className="quick-weapon-select-container">
+                        <select
+                          className="quick-weapon-select"
+                          value={ability.options?.weapon || ''}
+                          onChange={(e) =>
+                            updateStandardAbility(idx, {
+                              ...ability,
+                              options: {
+                                ...(ability.options || {}),
+                                weapon: e.target.value || undefined,
+                              },
+                            })
+                          }
+                        >
+                          <option value="">-- No Weapon --</option>
+                          {referenceWeapons.map((w) => (
+                            <option key={w} value={w}>
+                              {w}
+                            </option>
+                          ))}
+                        </select>
+                        {warnings.some((w) =>
+                          isMissingWeaponWarning(
+                            w,
+                            ability.options?.displayName || ability.name,
+                          ),
+                        ) && (
+                          <span
+                            className="quick-weapon-warning"
+                            title="Maneuver makes a strike and doesn't have a weapon."
+                          >
+                            ⚠️
+                          </span>
+                        )}
+                      </div>
+                    )}
+                    <span className="expand-chevron" onClick={() => onToggleExpand(cardId)}>
+                      {isExpanded ? '▲' : '▼'}
+                    </span>
                     <button
                       type="button"
                       className="btn-delete-card"
@@ -253,39 +278,6 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
                           <option value="Reaction">Reaction</option>
                           <option value="Free">Free Action</option>
                         </select>
-                      </div>
-                      <div className="form-group">
-                        <label>Weapon Override</label>
-                        <select
-                          value={ability.options?.weapon || ''}
-                          onChange={(e) =>
-                            updateStandardAbility(idx, {
-                              ...ability,
-                              options: {
-                                ...(ability.options || {}),
-                                weapon: e.target.value || undefined,
-                              },
-                            })
-                          }
-                        >
-                          <option value="">-- No Weapon (Default) --</option>
-                          {referenceWeapons.map((w) => (
-                            <option key={w} value={w}>
-                              {w}
-                            </option>
-                          ))}
-                        </select>
-                        {ability.type === 'maneuver' &&
-                          warnings.some((w) =>
-                            isMissingWeaponWarning(
-                              w,
-                              ability.options?.displayName || ability.name,
-                            ),
-                          ) && (
-                            <div className="inline-warning">
-                              ⚠️ Maneuver makes a strike and doesn't have a weapon.
-                            </div>
-                          )}
                       </div>
                       <div
                         className="form-group"

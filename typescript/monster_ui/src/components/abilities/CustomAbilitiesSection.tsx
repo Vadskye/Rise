@@ -85,7 +85,7 @@ export const CustomAbilitiesSection: React.FC<CustomAbilitiesSectionProps> = ({
             return (
               <div key={idx} className={`ability-item-card ${isExpanded ? 'expanded' : ''}`}>
                 <div className="ability-card-header" onClick={() => onToggleExpand(cardId)}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <div className="ability-card-header-main">
                     <span
                       className={`ability-type-badge ${ability.type === 'spell' ? 'spell-badge' : 'maneuver-badge'}`}
                     >
@@ -93,8 +93,10 @@ export const CustomAbilitiesSection: React.FC<CustomAbilitiesSectionProps> = ({
                     </span>
                     <strong className="ability-name">{ability.name}</strong>
                   </div>
-                  <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                    <span className="expand-chevron">{isExpanded ? '▲' : '▼'}</span>
+                  <div className="ability-card-header-controls">
+                    <span className="expand-chevron" onClick={() => onToggleExpand(cardId)}>
+                      {isExpanded ? '▲' : '▼'}
+                    </span>
                     <button
                       type="button"
                       className="btn-delete-card"

@@ -77,12 +77,14 @@ export const PassiveAbilitiesSection: React.FC<PassiveAbilitiesSectionProps> = (
             return (
               <div key={idx} className={`ability-item-card ${isExpanded ? 'expanded' : ''}`}>
                 <div className="ability-card-header" onClick={() => onToggleExpand(cardId)}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <div className="ability-card-header-main">
                     <span className="ability-type-badge passive-badge">PASSIVE</span>
                     <strong className="ability-name">{passive.name}</strong>
                   </div>
-                  <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                    <span className="expand-chevron">{isExpanded ? '▲' : '▼'}</span>
+                  <div className="ability-card-header-controls">
+                    <span className="expand-chevron" onClick={() => onToggleExpand(cardId)}>
+                      {isExpanded ? '▲' : '▼'}
+                    </span>
                     <button
                       type="button"
                       className="btn-delete-card"
@@ -99,7 +101,7 @@ export const PassiveAbilitiesSection: React.FC<PassiveAbilitiesSectionProps> = (
                 {isExpanded && (
                   <div className="ability-card-body">
                     <div className="form-grid">
-                      <div className="form-group" style={{ flex: '2' }}>
+                      <div className="form-group">
                         <label>Passive Name</label>
                         <input
                           type="text"
@@ -116,7 +118,6 @@ export const PassiveAbilitiesSection: React.FC<PassiveAbilitiesSectionProps> = (
                           alignItems: 'center',
                           alignSelf: 'end',
                           height: '38px',
-                          flex: '1',
                         }}
                       >
                         <label className="checkbox-row">
