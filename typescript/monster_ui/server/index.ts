@@ -38,7 +38,11 @@ app.get('/api/reference', (req, res) => {
           .flatMap((style) => style.maneuvers ?? [])
           .map((maneuver) => maneuver.name),
       ]),
-    ).sort();
+    )
+      .filter((name) => {
+        return !/^(Weapon Mult|Sneak Attack|Ranged Sneak Attack) \d+$/.test(name);
+      })
+      .sort();
     const dManeuvers = performance.now() - s2;
 
     const s3 = performance.now();
