@@ -67,6 +67,19 @@ export const GroupForm: React.FC<GroupFormProps> = ({
         <label>Group Knowledge Table</label>
         <div className="knowledge-grid group-knowledge-table" style={{ marginTop: '5px' }}>
           <div className="form-group">
+            <label style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>Easy</label>
+            <textarea
+              rows={3}
+              value={groupData.knowledge?.easy || ''}
+              onChange={(e) =>
+                onChangeGroup({
+                  ...groupData,
+                  knowledge: { ...groupData.knowledge, easy: e.target.value },
+                })
+              }
+            />
+          </div>
+          <div className="form-group">
             <label style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>Normal</label>
             <textarea
               rows={3}
