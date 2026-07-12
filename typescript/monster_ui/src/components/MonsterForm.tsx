@@ -5,7 +5,6 @@ import { IdentityTab } from './IdentityTab';
 import { AttributesAndSkillsTab } from './AttributesAndSkillsTab';
 import { TraitsTab } from './TraitsTab';
 import { CombatAndGearTab } from './CombatAndGearTab';
-import { KnowledgeTab } from './KnowledgeTab';
 import { GroupForm } from './GroupForm';
 
 interface MonsterFormProps {
@@ -36,14 +35,14 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
 }) => {
   // Design Decisions:
   // 1. Tabbed Layout: Rather than presenting a giant list of inputs that is overwhelming and hard
-  //    to navigate, we group fields into logical tabs: Identity, Attributes & Skills, Traits & Senses,
-  //    Combat & Gear, and Knowledge & Script.
+  //    to navigate, we group fields into logical tabs: Identity (including Knowledge & Script),
+  //    Attributes & Skills, Traits & Senses, Combat & Gear, and Spells & Abilities.
   // 2. Local Tag Input State: Incomplete inputs for array fields (senses, movement speeds, defenses)
   //    are kept in local component states (e.g. `newSense`, `newSpeed`) and only committed to the
   //    parent state via `onChangeMonster` once the user clicks "+ Add" or presses Enter. This ensures
   //    we don't trigger the game-engine validation pipeline for partial, half-typed tags.
   const [activeTab, setActiveTab] = React.useState<
-    'identity' | 'stats' | 'traits' | 'combat' | 'knowledge' | 'abilities'
+    'identity' | 'stats' | 'traits' | 'combat' | 'abilities'
   >('identity');
 
   React.useEffect(() => {
@@ -126,16 +125,6 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
         >
           Spells & Abilities
         </button>
-        {!isGroup && (
-          <button
-            type="button"
-            data-testid="tab-btn-knowledge"
-            className={`tab-btn ${activeTab === 'knowledge' ? 'active' : ''}`}
-            onClick={() => setActiveTab('knowledge')}
-          >
-            Knowledge & Script
-          </button>
-        )}
       </div>
 
       {/* Tab 1: Identity / Group Settings */}
@@ -200,15 +189,6 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
             warnings={warnings}
           />
         ) : null)}
-
-      {/* Tab 5: Knowledge & Script */}
-      {activeTab === 'knowledge' && !isGroup && monsterData && onChangeMonster && (
-        <KnowledgeTab
-          monsterData={monsterData}
-          onChangeMonster={onChangeMonster}
-          warnings={warnings}
-        />
-      )}
     </div>
   );
 

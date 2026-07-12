@@ -133,7 +133,6 @@ describe('Monster UI Tab Layout Tests', () => {
       'Traits & Senses',
       'Combat & Gear',
       'Spells & Abilities',
-      'Knowledge & Script',
     ];
 
     for (const tabName of tabsToTest) {

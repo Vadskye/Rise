@@ -796,7 +796,8 @@ body {
   }
 }
 
-.group-knowledge-table {
+.group-knowledge-table,
+.knowledge-grid {
   textarea {
     height: 10em;
   }
@@ -1088,3 +1089,13 @@ body {
   color: var(--text-muted);
 }
 
+.knowledge-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

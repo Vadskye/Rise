@@ -141,14 +141,7 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
     await page.select('[data-testid="size-select"]', 'large');
     await new Promise((resolve) => setTimeout(resolve, 200));
 
-    // 4. Click the Knowledge & Script tab and add freeform code
-    const tabBtn = await page.waitForSelector('[data-testid="tab-btn-knowledge"]', {
-      timeout: 5000,
-    });
-    assert.ok(tabBtn, 'Knowledge & Script tab button should exist');
-    await tabBtn.click();
-    await new Promise((resolve) => setTimeout(resolve, 300));
-
+    // 4. Fill in freeform code on the Identity tab
     const codeArea = await page.waitForSelector('[data-testid="freeform-code-textarea"]', {
       timeout: 5000,
     });
