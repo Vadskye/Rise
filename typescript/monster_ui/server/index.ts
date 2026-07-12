@@ -105,7 +105,7 @@ app.post('/api/save', (req, res) => {
 app.post('/api/preview', (req, res) => {
   const start = performance.now();
   try {
-    const { monster, sharedFreeformCode, groupName } = req.body;
+    const { monster, sharedFreeformCode, groupName, group } = req.body;
     if (!monster || !monster.name) {
       console.warn('[API Warning] Preview requested without a valid monster');
       return res.status(400).json({ error: 'Monster data with name is required' });
@@ -113,7 +113,7 @@ app.post('/api/preview', (req, res) => {
     console.log(
       `[API] POST /api/preview - Calculating live preview for monster: "${monster.name}"${groupName ? ` in group "${groupName}"` : ''}`,
     );
-    const result = generatePreview(monster, sharedFreeformCode, groupName);
+    const result = generatePreview(monster, group || sharedFreeformCode, groupName);
     res.json(result);
     if (showDetailedTiming) {
       console.log(

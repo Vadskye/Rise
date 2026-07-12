@@ -144,6 +144,7 @@ export const App: React.FC = () => {
 
     let monsterData: MonsterData | undefined;
     let sharedFreeformCode: string | undefined;
+    let groupObj: MonsterGroupData | undefined;
 
     if (activeSelection.type === 'monster') {
       monsterData = db.monsters.find((m) => m.name === activeSelection.name);
@@ -151,6 +152,7 @@ export const App: React.FC = () => {
       const group = db.monsterGroups.find((g) => g.name === activeSelection.groupName);
       monsterData = group?.monsters.find((m) => m.name === activeSelection.name);
       sharedFreeformCode = group?.sharedFreeformCode;
+      groupObj = group;
     }
 
     if (!monsterData) {
@@ -181,6 +183,7 @@ export const App: React.FC = () => {
           sharedFreeformCode,
           groupName:
             activeSelection.type === 'group-monster' ? activeSelection.groupName : undefined,
+          group: groupObj,
         }),
       })
         .then((res) => {

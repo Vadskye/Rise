@@ -46,30 +46,53 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
     'identity' | 'stats' | 'traits' | 'combat' | 'knowledge' | 'abilities'
   >('identity');
 
-  if (mode === 'group' && groupData && onChangeGroup) {
-    return (
-      <GroupForm
-        groupData={groupData}
-        onChangeGroup={onChangeGroup}
-        errors={errors}
-        warnings={warnings}
-      />
-    );
+  React.useEffect(() => {
+    setActiveTab('identity');
+  }, [mode]);
+
+  const isGroup = mode === 'group';
+
+  const handleGroupFieldsChange = (updatedMonsterFields: MonsterData) => {
+    if (onChangeGroup && groupData) {
+      onChangeGroup({
+        ...groupData,
+        traits: updatedMonsterFields.traits,
+        customSenses: updatedMonsterFields.customSenses,
+        customMovementSpeeds: updatedMonsterFields.customMovementSpeeds,
+        equippedArmor: updatedMonsterFields.equippedArmor,
+        equippedShield: updatedMonsterFields.equippedShield,
+        immunities: updatedMonsterFields.immunities,
+        resistances: updatedMonsterFields.resistances,
+        vulnerabilities: updatedMonsterFields.vulnerabilities,
+        weapons: updatedMonsterFields.weapons,
+        standardAbilities: updatedMonsterFields.standardAbilities,
+        customAbilities: updatedMonsterFields.customAbilities,
+        passiveAbilities: updatedMonsterFields.passiveAbilities,
+        rituals: updatedMonsterFields.rituals,
+      });
+    }
+  };
+
+  if (isGroup && !groupData) {
+    return null;
+  }
+  if (!isGroup && !monsterData) {
+    return null;
   }
 
-  if (mode === 'monster' && monsterData && onChangeMonster) {
-    return (
-      <div className="editor-scroll">
-        {/* Navigation Tabs */}
-        <div className="form-tabs">
-          <button
-            type="button"
-            data-testid="tab-btn-identity"
-            className={`tab-btn ${activeTab === 'identity' ? 'active' : ''}`}
-            onClick={() => setActiveTab('identity')}
-          >
-            Identity
-          </button>
+  return (
+    <div className="editor-scroll">
+      {/* Navigation Tabs */}
+      <div className="form-tabs">
+        <button
+          type="button"
+          data-testid="tab-btn-identity"
+          className={`tab-btn ${activeTab === 'identity' ? 'active' : ''}`}
+          onClick={() => setActiveTab('identity')}
+        >
+          {isGroup ? 'Group Settings' : 'Identity'}
+        </button>
+        {!isGroup && (
           <button
             type="button"
             data-testid="tab-btn-stats"
@@ -78,30 +101,32 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
           >
             Attributes & Skills
           </button>
-          <button
-            type="button"
-            data-testid="tab-btn-traits"
-            className={`tab-btn ${activeTab === 'traits' ? 'active' : ''}`}
-            onClick={() => setActiveTab('traits')}
-          >
-            Traits & Senses
-          </button>
-          <button
-            type="button"
-            data-testid="tab-btn-combat"
-            className={`tab-btn ${activeTab === 'combat' ? 'active' : ''}`}
-            onClick={() => setActiveTab('combat')}
-          >
-            Combat & Gear
-          </button>
-          <button
-            type="button"
-            data-testid="tab-btn-abilities"
-            className={`tab-btn ${activeTab === 'abilities' ? 'active' : ''}`}
-            onClick={() => setActiveTab('abilities')}
-          >
-            Spells & Abilities
-          </button>
+        )}
+        <button
+          type="button"
+          data-testid="tab-btn-traits"
+          className={`tab-btn ${activeTab === 'traits' ? 'active' : ''}`}
+          onClick={() => setActiveTab('traits')}
+        >
+          Traits & Senses
+        </button>
+        <button
+          type="button"
+          data-testid="tab-btn-combat"
+          className={`tab-btn ${activeTab === 'combat' ? 'active' : ''}`}
+          onClick={() => setActiveTab('combat')}
+        >
+          Combat & Gear
+        </button>
+        <button
+          type="button"
+          data-testid="tab-btn-abilities"
+          className={`tab-btn ${activeTab === 'abilities' ? 'active' : ''}`}
+          onClick={() => setActiveTab('abilities')}
+        >
+          Spells & Abilities
+        </button>
+        {!isGroup && (
           <button
             type="button"
             data-testid="tab-btn-knowledge"
@@ -110,63 +135,95 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
           >
             Knowledge & Script
           </button>
-        </div>
+        )}
+      </div>
 
-        {/* Tab 1: Identity */}
-        {activeTab === 'identity' && (
+      {/* Tab 1: Identity / Group Settings */}
+      {activeTab === 'identity' && (
+        isGroup && groupData && onChangeGroup ? (
+          <GroupForm
+            groupData={groupData}
+            onChangeGroup={onChangeGroup}
+            errors={errors}
+            warnings={warnings}
+          />
+        ) : monsterData && onChangeMonster ? (
           <IdentityTab
             monsterData={monsterData}
             onChangeMonster={onChangeMonster}
             errors={errors}
             warnings={warnings}
           />
-        )}
+        ) : null
+      )}
 
-        {/* Tab 2: Attributes & Skills */}
-        {activeTab === 'stats' && (
-          <AttributesAndSkillsTab
-            monsterData={monsterData}
-            onChangeMonster={onChangeMonster}
+      {/* Tab 2: Attributes & Skills */}
+      {activeTab === 'stats' && !isGroup && monsterData && onChangeMonster && (
+        <AttributesAndSkillsTab
+          monsterData={monsterData}
+          onChangeMonster={onChangeMonster}
+        />
+      )}
+
+      {/* Tab 3: Traits & Senses */}
+      {activeTab === 'traits' && (
+        isGroup && groupData && onChangeGroup ? (
+          <TraitsTab
+            monsterData={groupData as unknown as MonsterData}
+            onChangeMonster={handleGroupFieldsChange}
           />
-        )}
-
-        {/* Tab 3: Traits & Senses */}
-        {activeTab === 'traits' && (
+        ) : monsterData && onChangeMonster ? (
           <TraitsTab
             monsterData={monsterData}
             onChangeMonster={onChangeMonster}
           />
-        )}
+        ) : null
+      )}
 
-        {/* Tab 4: Combat & Gear */}
-        {activeTab === 'combat' && (
+      {/* Tab 4: Combat & Gear */}
+      {activeTab === 'combat' && (
+        isGroup && groupData && onChangeGroup ? (
+          <CombatAndGearTab
+            monsterData={groupData as unknown as MonsterData}
+            onChangeMonster={handleGroupFieldsChange}
+          />
+        ) : monsterData && onChangeMonster ? (
           <CombatAndGearTab
             monsterData={monsterData}
             onChangeMonster={onChangeMonster}
           />
-        )}
+        ) : null
+      )}
 
-        {/* Tab: Spells & Abilities */}
-        {activeTab === 'abilities' && (
+      {/* Tab: Spells & Abilities */}
+      {activeTab === 'abilities' && (
+        isGroup && groupData && onChangeGroup ? (
+          <AbilitiesTab
+            monsterData={groupData as unknown as MonsterData}
+            onChangeMonster={handleGroupFieldsChange}
+            referenceData={referenceData}
+            warnings={warnings}
+          />
+        ) : monsterData && onChangeMonster ? (
           <AbilitiesTab
             monsterData={monsterData}
             onChangeMonster={onChangeMonster}
             referenceData={referenceData}
             warnings={warnings}
           />
-        )}
+        ) : null
+      )}
 
-        {/* Tab 5: Knowledge & Script */}
-        {activeTab === 'knowledge' && (
-          <KnowledgeTab
-            monsterData={monsterData}
-            onChangeMonster={onChangeMonster}
-            warnings={warnings}
-          />
-        )}
-      </div>
-    );
-  }
+      {/* Tab 5: Knowledge & Script */}
+      {activeTab === 'knowledge' && !isGroup && monsterData && onChangeMonster && (
+        <KnowledgeTab
+          monsterData={monsterData}
+          onChangeMonster={onChangeMonster}
+          warnings={warnings}
+        />
+      )}
+    </div>
+  );
 
   return null;
 };

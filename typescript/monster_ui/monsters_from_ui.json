@@ -143,9 +143,9 @@
           "requiredProperties": {
             "alignment": "chaotic evil",
             "base_class": "leader",
-            "elite": false,
+            "elite": true,
             "creature_origin": "natural",
-            "creature_type": "beast",
+            "creature_type": "humanoid",
             "size": "medium",
             "level": 3
           },
@@ -155,7 +155,10 @@
       "knowledge": {
         "normal": "Goblins are small, green-skinned humanoid creatures. They are generally cowardly and selfish. It's rare to see a goblin alone. They tend to gather into small groups of scavengers that try to take what's left after stronger creatures fight. However, if they believe they have an advantage in combat, they can be terrifyingly aggressive.",
         "hard": "Goblins are easy to bully, and they love brute strength. However, they are naturally disloyal, so they can easily abandon their alleged leader if they perceive weakness or just think they can do better elsewhere. Only creatures that are both strong and unintelligent, like ogres and trolls, are typically accompanied by goblin minions."
-      }
+      },
+      "customSenses": [
+        "Low-light vision"
+      ]
     }
   ]
 }

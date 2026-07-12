@@ -9,7 +9,7 @@ import {
   getSocialComponents,
   getOtherSkillsComponents,
 } from '@src/latex/monsters/convert_monster_to_latex';
-import { MonsterData } from './codegen';
+import { MonsterData, MonsterGroupData } from './codegen';
 import { convertLatexToWebText } from '@src/latex/monsters/player_abilities';
 import { buildCreature } from './creature_builder';
 import { showDetailedTiming } from './timing';
@@ -21,14 +21,14 @@ import { showDetailedTiming } from './timing';
  */
 export function generatePreview(
   monster: MonsterData,
-  sharedFreeformCode?: string,
+  group?: MonsterGroupData | string,
   _groupName?: string,
 ) {
   const start = performance.now();
   const { name } = monster;
 
   const jsonStart = performance.now();
-  const inputJson = JSON.stringify({ monster, sharedFreeformCode });
+  const inputJson = JSON.stringify({ monster, group });
   const jsonDuration = performance.now() - jsonStart;
 
   const cacheStart = performance.now();
@@ -54,7 +54,7 @@ export function generatePreview(
   const cacheDuration = performance.now() - cacheStart;
 
   const buildStart = performance.now();
-  const { creature, sheet, errors, warnings } = buildCreature(monster, sharedFreeformCode);
+  const { creature, sheet, errors, warnings } = buildCreature(monster, group);
   const buildDuration = performance.now() - buildStart;
 
   const formatStart = performance.now();

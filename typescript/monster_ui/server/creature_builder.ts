@@ -6,7 +6,7 @@ import {
   deleteCharacterSheet,
 } from '@src/character_sheet/current_character_sheet';
 import { handleEverything, MonsterAttackUsageTime } from '@src/character_sheet/sheet_worker';
-import { MonsterData, toCustomMonsterAbility } from './codegen';
+import { MonsterData, MonsterGroupData, toCustomMonsterAbility } from './codegen';
 import { RiseSkill } from '@src/core_mechanics/skills';
 import {
   RiseTrait,
@@ -39,12 +39,12 @@ export interface BuildResult {
 
 /**
  * Instantiates and configures a real game-engine Creature and CharacterSheet
- * from the given UI MonsterData and shared group freeform code.
+ * from the given UI MonsterData and shared group properties/freeform code.
  *
  * Captures all script/engine errors and overrides console.warn to log alignment
  * or verification warnings.
  */
-export function buildCreature(monster: MonsterData, sharedFreeformCode?: string): BuildResult {
+export function buildCreature(monster: MonsterData, group?: MonsterGroupData | string): BuildResult {
   const start = performance.now();
   const { name, requiredProperties, freeformCode } = monster;
 
@@ -82,6 +82,7 @@ export function buildCreature(monster: MonsterData, sharedFreeformCode?: string)
     const instantiateDuration = performance.now() - instantiateStart;
 
     const propertiesStart = performance.now();
+    
     // Apply required properties
     creature.setRequiredProperties({
       alignment: requiredProperties.alignment as RiseAlignment,
@@ -93,7 +94,111 @@ export function buildCreature(monster: MonsterData, sharedFreeformCode?: string)
       level: requiredProperties.level,
     });
 
-    // Apply structured properties
+    // Parse group helper variables
+    let groupObj: MonsterGroupData | undefined;
+    let sharedFreeformCode: string | undefined;
+    if (typeof group === 'string') {
+      sharedFreeformCode = group;
+    } else if (group) {
+      groupObj = group;
+      sharedFreeformCode = group.sharedFreeformCode;
+    }
+
+    // A. Apply shared group properties FIRST
+    if (groupObj) {
+      if (groupObj.traits && groupObj.traits.length > 0) {
+        for (const trait of groupObj.traits) {
+          creature.addTrait(trait as RiseTrait);
+        }
+      }
+
+      if (groupObj.customSenses && groupObj.customSenses.length > 0) {
+        for (const sense of groupObj.customSenses) {
+          creature.addCustomSense(sense);
+        }
+      }
+
+      if (groupObj.customMovementSpeeds && groupObj.customMovementSpeeds.length > 0) {
+        for (const speed of groupObj.customMovementSpeeds) {
+          creature.addCustomMovementSpeed(speed);
+        }
+      }
+
+      if (groupObj.immunities && groupObj.immunities.length > 0) {
+        for (const immunity of groupObj.immunities) {
+          creature.addImmunity(immunity);
+        }
+      }
+
+      if (groupObj.resistances && groupObj.resistances.length > 0) {
+        for (const resistance of groupObj.resistances) {
+          creature.addResistant(resistance);
+        }
+      }
+
+      if (groupObj.vulnerabilities && groupObj.vulnerabilities.length > 0) {
+        for (const vulnerability of groupObj.vulnerabilities) {
+          creature.addVulnerability(vulnerability);
+        }
+      }
+
+      if (groupObj.properties && Object.keys(groupObj.properties).length > 0) {
+        creature.setProperties(groupObj.properties);
+      }
+
+      if (groupObj.standardAbilities && groupObj.standardAbilities.length > 0) {
+        for (const ability of groupObj.standardAbilities) {
+          if (ability.type === 'spell') {
+            creature.addSpell(ability.name, toMonsterAbilityOptions(ability.options));
+          } else {
+            creature.addManeuver(ability.name, toMonsterAbilityOptions(ability.options));
+          }
+        }
+      }
+
+      if (groupObj.customAbilities && groupObj.customAbilities.length > 0) {
+        for (const ability of groupObj.customAbilities) {
+          const abilityObj = toCustomMonsterAbility(ability);
+          if (ability.type === 'spell') {
+            creature.addCustomSpell(abilityObj);
+          } else {
+            creature.addCustomManeuver(abilityObj);
+          }
+        }
+      }
+
+      if (groupObj.passiveAbilities && groupObj.passiveAbilities.length > 0) {
+        for (const ability of groupObj.passiveAbilities) {
+          creature.addPassiveAbility(ability);
+        }
+      }
+
+      if (groupObj.weapons && groupObj.weapons.length > 0) {
+        for (const weapon of groupObj.weapons) {
+          if (weapon.addStandard) {
+            creature.addWeapon(weapon.name);
+          }
+          if (weapon.addMult) {
+            creature.addWeaponMult(weapon.name, toMonsterAbilityOptions(weapon.options));
+          }
+          if (weapon.addGrappling) {
+            creature.addGrapplingStrike(weapon.name, toMonsterAbilityOptions(weapon.options));
+          }
+          if (weapon.addSneak) {
+            creature.addSneakAttack(weapon.name, toMonsterAbilityOptions(weapon.options));
+          }
+          if (weapon.addLatchOn) {
+            creature.addLatchOn(weapon.name, toMonsterAbilityOptions(weapon.options));
+          }
+        }
+      }
+
+      if (groupObj.rituals && groupObj.rituals.length > 0) {
+        creature.addRituals(groupObj.rituals as SphereName[]);
+      }
+    }
+
+    // B. Apply individual monster properties SECOND
     if (monster.baseAttributes && monster.baseAttributes.length === 6) {
       creature.setBaseAttributes(monster.baseAttributes);
     }
@@ -150,10 +255,13 @@ export function buildCreature(monster: MonsterData, sharedFreeformCode?: string)
       }
     }
 
-    if (monster.equippedArmor || monster.equippedShield) {
+    // Armor and shield overrides group's defaults if specified
+    const finalArmor = monster.equippedArmor !== undefined ? monster.equippedArmor : groupObj?.equippedArmor;
+    const finalShield = monster.equippedShield !== undefined ? monster.equippedShield : groupObj?.equippedShield;
+    if (finalArmor || finalShield) {
       creature.setEquippedArmorName({
-        bodyArmor: monster.equippedArmor as BodyArmor | undefined,
-        shield: monster.equippedShield as Shield | undefined,
+        bodyArmor: finalArmor as BodyArmor | undefined,
+        shield: finalShield as Shield | undefined,
       });
     }
 
@@ -162,7 +270,6 @@ export function buildCreature(monster: MonsterData, sharedFreeformCode?: string)
     }
 
     // 1. Standard Spells & Maneuvers:
-    // Apply standard spells and maneuvers to the live preview creature instance.
     if (monster.standardAbilities && monster.standardAbilities.length > 0) {
       for (const ability of monster.standardAbilities) {
         if (ability.type === 'spell') {
@@ -185,7 +292,6 @@ export function buildCreature(monster: MonsterData, sharedFreeformCode?: string)
     }
 
     // 2. Custom Active Abilities:
-    // Reconstruct the CustomMonsterAbility configurations and load them.
     if (monster.customAbilities && monster.customAbilities.length > 0) {
       for (const ability of monster.customAbilities) {
         const abilityObj = toCustomMonsterAbility(ability);
@@ -198,7 +304,6 @@ export function buildCreature(monster: MonsterData, sharedFreeformCode?: string)
     }
 
     // 3. Passive Abilities:
-    // Load passive effects on the live creature.
     if (monster.passiveAbilities && monster.passiveAbilities.length > 0) {
       for (const ability of monster.passiveAbilities) {
         creature.addPassiveAbility(ability);
@@ -206,7 +311,6 @@ export function buildCreature(monster: MonsterData, sharedFreeformCode?: string)
     }
 
     // 4. Weapons & Strikes:
-    // Equip weapons and register special attack properties.
     if (monster.weapons && monster.weapons.length > 0) {
       for (const weapon of monster.weapons) {
         if (weapon.addStandard) {
@@ -228,7 +332,6 @@ export function buildCreature(monster: MonsterData, sharedFreeformCode?: string)
     }
 
     // 5. Rituals:
-    // Register Mystic Sphere lists.
     if (monster.rituals && monster.rituals.length > 0) {
       creature.addRituals(monster.rituals as SphereName[]);
     }

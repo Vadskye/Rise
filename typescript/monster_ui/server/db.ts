@@ -101,7 +101,7 @@ export function saveAndValidateAll(db: DatabaseData) {
         const monsterStart = performance.now();
         validations[`${group.name}.${monster.name}`] = validateMonster(
           monster,
-          group.sharedFreeformCode,
+          group,
           group.name,
         );
         if (showDetailedTiming) {

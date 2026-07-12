@@ -111,6 +111,20 @@ export interface MonsterGroupData {
   hasArt: boolean;
   sharedFreeformCode: string;
   monsters: MonsterData[];
+  traits?: string[];
+  customSenses?: string[];
+  customMovementSpeeds?: string[];
+  immunities?: string[];
+  resistances?: string[];
+  vulnerabilities?: string[];
+  equippedArmor?: string;
+  equippedShield?: string;
+  properties?: Record<string, string | number | boolean>;
+  standardAbilities?: StandardAbilityConfig[];
+  customAbilities?: CustomAbilityConfig[];
+  passiveAbilities?: PassiveAbilityConfig[];
+  weapons?: WeaponConfig[];
+  rituals?: string[];
 }
 
 export interface DatabaseData {
@@ -142,16 +156,158 @@ export function toCustomMonsterAbility(ability: CustomAbilityConfig): CustomMons
   };
 }
 
+function generateSharedPropertiesCode(data: MonsterData | MonsterGroupData, indent: string): string[] {
+  const lines: string[] = [];
+
+  if (data.traits && data.traits.length > 0) {
+    for (const trait of data.traits) {
+      lines.push(`${indent}creature.addTrait(${JSON.stringify(trait)});`);
+    }
+  }
+
+  if (data.customSenses && data.customSenses.length > 0) {
+    for (const sense of data.customSenses) {
+      lines.push(`${indent}creature.addCustomSense(${JSON.stringify(sense)});`);
+    }
+  }
+
+  if (data.customMovementSpeeds && data.customMovementSpeeds.length > 0) {
+    for (const speed of data.customMovementSpeeds) {
+      lines.push(`${indent}creature.addCustomMovementSpeed(${JSON.stringify(speed)});`);
+    }
+  }
+
+  if (data.immunities && data.immunities.length > 0) {
+    for (const immunity of data.immunities) {
+      lines.push(`${indent}creature.addImmunity(${JSON.stringify(immunity)});`);
+    }
+  }
+
+  if (data.resistances && data.resistances.length > 0) {
+    for (const resistance of data.resistances) {
+      lines.push(`${indent}creature.addResistant(${JSON.stringify(resistance)});`);
+    }
+  }
+
+  if (data.vulnerabilities && data.vulnerabilities.length > 0) {
+    for (const vulnerability of data.vulnerabilities) {
+      lines.push(`${indent}creature.addVulnerability(${JSON.stringify(vulnerability)});`);
+    }
+  }
+
+  if (data.equippedArmor || data.equippedShield) {
+    const armorParts: string[] = [];
+    if (data.equippedArmor) {
+      armorParts.push(`bodyArmor: ${JSON.stringify(data.equippedArmor)}`);
+    }
+    if (data.equippedShield) {
+      armorParts.push(`shield: ${JSON.stringify(data.equippedShield)}`);
+    }
+    lines.push(
+      `${indent}creature.setEquippedArmorName({ ${armorParts.join(', ')} });`,
+    );
+  }
+
+  if (data.properties && Object.keys(data.properties).length > 0) {
+    lines.push(`${indent}creature.setProperties(${JSON.stringify(data.properties)});`);
+  }
+
+  // 1. Standard Spells & Maneuvers:
+  if (data.standardAbilities && data.standardAbilities.length > 0) {
+    for (const ability of data.standardAbilities) {
+      const cleanOptions = ability.options
+        ? {
+            displayName: ability.options.displayName || undefined,
+            usageTime: ability.options.usageTime || undefined,
+            isMagical: ability.options.isMagical,
+            weapon: ability.options.weapon || undefined,
+            tags:
+              ability.options.tags && ability.options.tags.length > 0
+                ? ability.options.tags
+                : undefined,
+          }
+        : undefined;
+
+      const hasOptions = cleanOptions && Object.values(cleanOptions).some((v) => v !== undefined);
+      const optionsStr = hasOptions ? `, ${JSON.stringify(cleanOptions)}` : '';
+      if (ability.type === 'spell') {
+        lines.push(`${indent}creature.addSpell(${JSON.stringify(ability.name)}${optionsStr});`);
+      } else {
+        lines.push(`${indent}creature.addManeuver(${JSON.stringify(ability.name)}${optionsStr});`);
+      }
+    }
+  }
+
+  // 2. Custom Active Abilities:
+  if (data.customAbilities && data.customAbilities.length > 0) {
+    for (const ability of data.customAbilities) {
+      const abilityObj = toCustomMonsterAbility(ability);
+      const abilityStr = JSON.stringify(abilityObj, null, 2)
+        .split('\n')
+        .map((line, idx) => (idx === 0 ? line : indent + '  ' + line))
+        .join('\n');
+
+      if (ability.type === 'spell') {
+        lines.push(`${indent}creature.addCustomSpell(${abilityStr});`);
+      } else {
+        lines.push(`${indent}creature.addCustomManeuver(${abilityStr});`);
+      }
+    }
+  }
+
+  // 3. Passive Abilities:
+  if (data.passiveAbilities && data.passiveAbilities.length > 0) {
+    for (const ability of data.passiveAbilities) {
+      const passiveStr = JSON.stringify(ability, null, 2)
+        .split('\n')
+        .map((line, idx) => (idx === 0 ? line : indent + '  ' + line))
+        .join('\n');
+      lines.push(`${indent}creature.addPassiveAbility(${passiveStr});`);
+    }
+  }
+
+  // 4. Weapons & Strikes:
+  if (data.weapons && data.weapons.length > 0) {
+    for (const weapon of data.weapons) {
+      if (weapon.addStandard) {
+        lines.push(`${indent}creature.addWeapon(${JSON.stringify(weapon.name)});`);
+      }
+      const cleanOptions = weapon.options
+        ? {
+            displayName: weapon.options.displayName || undefined,
+            usageTime: weapon.options.usageTime || undefined,
+            isMagical: weapon.options.isMagical,
+          }
+        : undefined;
+      const hasOptions = cleanOptions && Object.values(cleanOptions).some((v) => v !== undefined);
+      const optStr = hasOptions ? `, ${JSON.stringify(cleanOptions)}` : '';
+      if (weapon.addMult) {
+        lines.push(`${indent}creature.addWeaponMult(${JSON.stringify(weapon.name)}${optStr});`);
+      }
+      if (weapon.addGrappling) {
+        lines.push(
+          `${indent}creature.addGrapplingStrike(${JSON.stringify(weapon.name)}${optStr});`,
+        );
+      }
+      if (weapon.addSneak) {
+        lines.push(`${indent}creature.addSneakAttack(${JSON.stringify(weapon.name)}${optStr});`);
+      }
+      if (weapon.addLatchOn) {
+        lines.push(`${indent}creature.addLatchOn(${JSON.stringify(weapon.name)}${optStr});`);
+      }
+    }
+  }
+
+  // 5. Rituals:
+  if (data.rituals && data.rituals.length > 0) {
+    lines.push(`${indent}creature.addRituals(${JSON.stringify(data.rituals)});`);
+  }
+
+  return lines;
+}
+
 /**
  * Generates the TypeScript initialization body for a single monster.
- * Design Decision:
- * 1. Required properties (alignment, level, origin, type, etc.) are applied first.
- * 2. Structured inputs (attributes, skills, knowledge, traits, defenses, equipment, etc.)
- *    are output next using their corresponding Creature builder methods.
- * 3. The freeform code block is appended last. This guarantees that custom/manual scripts
- *    in the escape hatch can override or extend any automated properties generated by the UI.
- * 4. Strings that might contain single quotes (like custom senses or defenses) are escaped
- *    using `.replace(/'/g, "\\'")` to prevent syntax/parsing errors in the generated TypeScript output.
  */
 function generateMonsterBody(monster: MonsterData, indent: string): string {
   const lines: string[] = [];
@@ -187,159 +343,8 @@ function generateMonsterBody(monster: MonsterData, indent: string): string {
     }
   }
 
-  if (monster.traits && monster.traits.length > 0) {
-    for (const trait of monster.traits) {
-      lines.push(`${indent}creature.addTrait(${JSON.stringify(trait)});`);
-    }
-  }
-
-  if (monster.customSenses && monster.customSenses.length > 0) {
-    for (const sense of monster.customSenses) {
-      lines.push(`${indent}creature.addCustomSense(${JSON.stringify(sense)});`);
-    }
-  }
-
-  if (monster.customMovementSpeeds && monster.customMovementSpeeds.length > 0) {
-    for (const speed of monster.customMovementSpeeds) {
-      lines.push(`${indent}creature.addCustomMovementSpeed(${JSON.stringify(speed)});`);
-    }
-  }
-
-  if (monster.immunities && monster.immunities.length > 0) {
-    for (const immunity of monster.immunities) {
-      lines.push(`${indent}creature.addImmunity(${JSON.stringify(immunity)});`);
-    }
-  }
-
-  if (monster.resistances && monster.resistances.length > 0) {
-    for (const resistance of monster.resistances) {
-      lines.push(`${indent}creature.addResistant(${JSON.stringify(resistance)});`);
-    }
-  }
-
-  if (monster.vulnerabilities && monster.vulnerabilities.length > 0) {
-    for (const vulnerability of monster.vulnerabilities) {
-      lines.push(`${indent}creature.addVulnerability(${JSON.stringify(vulnerability)});`);
-    }
-  }
-
-  if (monster.equippedArmor || monster.equippedShield) {
-    const armorParts: string[] = [];
-    if (monster.equippedArmor) {
-      armorParts.push(`bodyArmor: ${JSON.stringify(monster.equippedArmor)}`);
-    }
-    if (monster.equippedShield) {
-      armorParts.push(`shield: ${JSON.stringify(monster.equippedShield)}`);
-    }
-    lines.push(
-      `${indent}creature.setEquippedArmorName({ ${armorParts.join(', ')} });`,
-    );
-  }
-
-  if (monster.properties && Object.keys(monster.properties).length > 0) {
-    lines.push(`${indent}creature.setProperties(${JSON.stringify(monster.properties)});`);
-  }
-
-  // 1. Standard Spells & Maneuvers:
-  // We translate standard references back to creature.addSpell or creature.addManeuver calls,
-  // attaching any display name, isMagical, or usageTime overrides defined in the sub-form options.
-  if (monster.standardAbilities && monster.standardAbilities.length > 0) {
-    for (const ability of monster.standardAbilities) {
-      const cleanOptions = ability.options
-        ? {
-            displayName: ability.options.displayName || undefined,
-            usageTime: ability.options.usageTime || undefined,
-            isMagical: ability.options.isMagical,
-            weapon: ability.options.weapon || undefined,
-            tags:
-              ability.options.tags && ability.options.tags.length > 0
-                ? ability.options.tags
-                : undefined,
-          }
-        : undefined;
-
-      const hasOptions = cleanOptions && Object.values(cleanOptions).some((v) => v !== undefined);
-      const optionsStr = hasOptions ? `, ${JSON.stringify(cleanOptions)}` : '';
-      if (ability.type === 'spell') {
-        lines.push(`${indent}creature.addSpell(${JSON.stringify(ability.name)}${optionsStr});`);
-      } else {
-        lines.push(`${indent}creature.addManeuver(${JSON.stringify(ability.name)}${optionsStr});`);
-      }
-    }
-  }
-
-  // 2. Custom Active Abilities:
-  // We reconstruct the CustomMonsterAbility parameter object dynamically, stripping out
-  // undefined or empty fields to keep the generated TypeScript file neat and readable.
-  if (monster.customAbilities && monster.customAbilities.length > 0) {
-    for (const ability of monster.customAbilities) {
-      const abilityObj = toCustomMonsterAbility(ability);
-
-      // Format the custom ability object output with proper indentation to align with the generated file
-      const abilityStr = JSON.stringify(abilityObj, null, 2)
-        .split('\n')
-        .map((line, idx) => (idx === 0 ? line : indent + '  ' + line))
-        .join('\n');
-
-      if (ability.type === 'spell') {
-        lines.push(`${indent}creature.addCustomSpell(${abilityStr});`);
-      } else {
-        lines.push(`${indent}creature.addCustomManeuver(${abilityStr});`);
-      }
-    }
-  }
-
-  // 3. Passive Abilities:
-  // Convert passive configs directly into creature.addPassiveAbility method arguments.
-  if (monster.passiveAbilities && monster.passiveAbilities.length > 0) {
-    for (const ability of monster.passiveAbilities) {
-      const passiveStr = JSON.stringify(ability, null, 2)
-        .split('\n')
-        .map((line, idx) => (idx === 0 ? line : indent + '  ' + line))
-        .join('\n');
-      lines.push(`${indent}creature.addPassiveAbility(${passiveStr});`);
-    }
-  }
-
-  // 4. Weapons & Strikes:
-  // An equipped weapon is first declared via addWeapon. Special maneuvers/strike actions
-  // (like multiplier, grappling, sneak attack, or latch-on strikes) are appended next with options.
-  if (monster.weapons && monster.weapons.length > 0) {
-    for (const weapon of monster.weapons) {
-      if (weapon.addStandard) {
-        lines.push(`${indent}creature.addWeapon(${JSON.stringify(weapon.name)});`);
-      }
-      const cleanOptions = weapon.options
-        ? {
-            displayName: weapon.options.displayName || undefined,
-            usageTime: weapon.options.usageTime || undefined,
-            isMagical: weapon.options.isMagical,
-          }
-        : undefined;
-      const hasOptions = cleanOptions && Object.values(cleanOptions).some((v) => v !== undefined);
-      const optStr = hasOptions ? `, ${JSON.stringify(cleanOptions)}` : '';
-      if (weapon.addMult) {
-        lines.push(`${indent}creature.addWeaponMult(${JSON.stringify(weapon.name)}${optStr});`);
-      }
-      if (weapon.addGrappling) {
-        lines.push(
-          `${indent}creature.addGrapplingStrike(${JSON.stringify(weapon.name)}${optStr});`,
-        );
-      }
-      if (weapon.addSneak) {
-        lines.push(`${indent}creature.addSneakAttack(${JSON.stringify(weapon.name)}${optStr});`);
-      }
-      if (weapon.addLatchOn) {
-        lines.push(`${indent}creature.addLatchOn(${JSON.stringify(weapon.name)}${optStr});`);
-      }
-    }
-  }
-
-  // 5. Rituals:
-  // Convert array of Mystic Spheres names into a single creature.addRituals call.
-  if (monster.rituals && monster.rituals.length > 0) {
-    lines.push(`${indent}creature.addRituals(${JSON.stringify(monster.rituals)});`);
-  }
+  // Add structured properties
+  lines.push(...generateSharedPropertiesCode(monster, indent));
 
   lines.push(`${indent}// --- Begin freeform code ---`);
   if (monster.freeformCode) {
@@ -349,6 +354,27 @@ function generateMonsterBody(monster: MonsterData, indent: string): string {
     }
   }
   lines.push(`${indent}// --- End freeform code ---`);
+
+  return lines.join('\n');
+}
+
+/**
+ * Generates the TypeScript initialization body for the shared initializer of a monster group.
+ */
+function generateGroupSharedInitializer(group: MonsterGroupData, indent: string): string {
+  const lines: string[] = [];
+
+  // Add structured group properties
+  lines.push(...generateSharedPropertiesCode(group, indent));
+
+  lines.push(`${indent}// --- Begin shared freeform code ---`);
+  if (group.sharedFreeformCode) {
+    const freeformLines = group.sharedFreeformCode.split('\n');
+    for (const line of freeformLines) {
+      lines.push(line ? `${indent}${line}` : '');
+    }
+  }
+  lines.push(`${indent}// --- End shared freeform code ---`);
 
   return lines.join('\n');
 }
@@ -394,9 +420,7 @@ ${bodyCode}
       }
       groupConfigParts.push(`hasArt: ${Boolean(group.hasArt)}`);
       groupConfigParts.push(`sharedInitializer: (creature: Creature) => {
-        // --- Begin shared freeform code ---
-        ${group.sharedFreeformCode || ''}
-        // --- End shared freeform code ---
+${generateGroupSharedInitializer(group, '        ')}
       }`);
 
       const configStr = `{\n      ${groupConfigParts.join(',\n      ')}\n    }`;
