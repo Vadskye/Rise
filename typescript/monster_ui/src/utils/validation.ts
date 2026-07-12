@@ -68,6 +68,3 @@ export function formatNoStandardActionWarning(name: string): string {
 export function isNoStandardActionWarning(warning: string, name: string): boolean {
   return warning === formatNoStandardActionWarning(name);
 }
-
-
-

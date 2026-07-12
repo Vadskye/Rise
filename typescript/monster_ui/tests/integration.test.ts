@@ -163,7 +163,9 @@ describe('Monster UI Integration Tests (Serverless)', () => {
     assert.ok(generatedContent.includes(`creature.addResistant("Cold")`));
     assert.ok(generatedContent.includes(`creature.addVulnerability("Acid")`));
     assert.ok(
-      generatedContent.includes(`creature.setEquippedArmorName({ bodyArmor: "breastplate", shield: "standard shield" })`),
+      generatedContent.includes(
+        `creature.setEquippedArmorName({ bodyArmor: "breastplate", shield: "standard shield" })`,
+      ),
     );
     assert.ok(generatedContent.includes(`"has_art":true`));
   });
@@ -483,7 +485,11 @@ describe('Monster UI Integration Tests (Serverless)', () => {
     assert.strictEqual(preview1.success, true);
     assert.ok(preview1.computedStats);
     assert.ok(preview1.computedStats.traits.includes('ensouled'));
-    assert.ok(preview1.computedStats.sensesComponents.some((s: string) => s.includes('Darkvision (90 ft.)')));
+    assert.ok(
+      preview1.computedStats.sensesComponents.some((s: string) =>
+        s.includes('Darkvision (90 ft.)'),
+      ),
+    );
     assert.ok(preview1.computedStats.equipment.includes('scale'));
     assert.ok(preview1.computedStats.activeAbilities.some((a: any) => a.name === 'Word of Power'));
 
@@ -501,6 +507,8 @@ describe('Monster UI Integration Tests (Serverless)', () => {
     assert.ok(generatedContent.includes(`creature.addCustomSense("Darkvision (90 ft.)")`));
     assert.ok(generatedContent.includes(`creature.addSpell("Word of Power", {"isMagical":true})`));
     assert.ok(generatedContent.includes(`creature.setEquippedArmorName({ bodyArmor: "scale" })`));
-    assert.ok(generatedContent.includes(`creature.setEquippedArmorName({ bodyArmor: "breastplate" })`));
+    assert.ok(
+      generatedContent.includes(`creature.setEquippedArmorName({ bodyArmor: "breastplate" })`),
+    );
   });
 });

@@ -86,7 +86,9 @@ export const AttributesAndSkillsTab: React.FC<AttributesAndSkillsTabProps> = ({
 
   return (
     <div className="tab-content">
-      <h4 className="section-subtitle" style={{ marginBottom: '8px' }}>Base Attributes</h4>
+      <h4 className="section-subtitle" style={{ marginBottom: '8px' }}>
+        Base Attributes
+      </h4>
       <div
         className="attributes-grid"
         style={{
@@ -146,7 +148,9 @@ export const AttributesAndSkillsTab: React.FC<AttributesAndSkillsTabProps> = ({
         </div>
       </div>
 
-      <h4 className="section-subtitle" style={{ marginBottom: '8px' }}>Trained Skills</h4>
+      <h4 className="section-subtitle" style={{ marginBottom: '8px' }}>
+        Trained Skills
+      </h4>
       <div className="form-group" style={{ marginBottom: '8px' }}>
         <input
           type="text"

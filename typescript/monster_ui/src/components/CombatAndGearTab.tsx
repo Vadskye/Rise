@@ -23,10 +23,7 @@ interface CombatTabProps {
   onChangeMonster: (updated: MonsterData) => void;
 }
 
-export const CombatAndGearTab: React.FC<CombatTabProps> = ({
-  monsterData,
-  onChangeMonster,
-}) => {
+export const CombatAndGearTab: React.FC<CombatTabProps> = ({ monsterData, onChangeMonster }) => {
   return (
     <div className="tab-content">
       <h4 className="section-subtitle">Equipment</h4>

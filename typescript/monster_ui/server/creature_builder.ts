@@ -44,7 +44,10 @@ export interface BuildResult {
  * Captures all script/engine errors and overrides console.warn to log alignment
  * or verification warnings.
  */
-export function buildCreature(monster: MonsterData, group?: MonsterGroupData | string): BuildResult {
+export function buildCreature(
+  monster: MonsterData,
+  group?: MonsterGroupData | string,
+): BuildResult {
   const start = performance.now();
   const { name, requiredProperties, freeformCode } = monster;
 
@@ -82,7 +85,7 @@ export function buildCreature(monster: MonsterData, group?: MonsterGroupData | s
     const instantiateDuration = performance.now() - instantiateStart;
 
     const propertiesStart = performance.now();
-    
+
     // Apply required properties
     creature.setRequiredProperties({
       alignment: requiredProperties.alignment as RiseAlignment,
@@ -256,8 +259,10 @@ export function buildCreature(monster: MonsterData, group?: MonsterGroupData | s
     }
 
     // Armor and shield overrides group's defaults if specified
-    const finalArmor = monster.equippedArmor !== undefined ? monster.equippedArmor : groupObj?.equippedArmor;
-    const finalShield = monster.equippedShield !== undefined ? monster.equippedShield : groupObj?.equippedShield;
+    const finalArmor =
+      monster.equippedArmor !== undefined ? monster.equippedArmor : groupObj?.equippedArmor;
+    const finalShield =
+      monster.equippedShield !== undefined ? monster.equippedShield : groupObj?.equippedShield;
     if (finalArmor || finalShield) {
       creature.setEquippedArmorName({
         bodyArmor: finalArmor as BodyArmor | undefined,
@@ -366,7 +371,7 @@ export function buildCreature(monster: MonsterData, group?: MonsterGroupData | s
     creature.setProperties({ monster_type: creature.elite ? 'elite' : 'normal' });
     handleEverything();
     sheet.triggerRecalculation();
-    
+
     // Process engine validation issues
     const issues = creature.checkValidMonster();
     for (const issue of issues) {
@@ -426,11 +431,7 @@ export function buildCreature(monster: MonsterData, group?: MonsterGroupData | s
   }
 }
 
-function compileStandardManeuver(
-  creature: Creature,
-  ability: any,
-  warnings: string[],
-) {
+function compileStandardManeuver(creature: Creature, ability: any, warnings: string[]) {
   const options = toMonsterAbilityOptions(ability.options);
   const weapon = ability.options?.weapon;
 

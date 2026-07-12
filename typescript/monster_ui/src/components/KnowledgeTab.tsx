@@ -15,7 +15,7 @@ export const KnowledgeTab: React.FC<KnowledgeTabProps> = ({
 }) => {
   const knowledge = monsterData.knowledge || {};
   const freeformWarning = warnings.find((w) => isFreeformCodeWarning(w, monsterData.name));
-  
+
   const setKnowledgeVal = (key: 'easy' | 'normal' | 'hard' | 'legendary', value: string) => {
     onChangeMonster({
       ...monsterData,

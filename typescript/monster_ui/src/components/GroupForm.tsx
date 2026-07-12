@@ -34,9 +34,7 @@ export const GroupForm: React.FC<GroupFormProps> = ({
           value={groupData.name}
           onChange={(e) => onChangeGroup({ ...groupData, name: e.target.value })}
         />
-        {getInlineError('name') && (
-          <div className="inline-error">❌ {getInlineError('name')}</div>
-        )}
+        {getInlineError('name') && <div className="inline-error">❌ {getInlineError('name')}</div>}
         {getInlineWarning('name') && (
           <div className="inline-warning">⚠️ {getInlineWarning('name')}</div>
         )}

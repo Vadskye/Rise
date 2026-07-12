@@ -157,7 +157,10 @@ export function toCustomMonsterAbility(ability: CustomAbilityConfig): CustomMons
   };
 }
 
-function generateSharedPropertiesCode(data: MonsterData | MonsterGroupData, indent: string): string[] {
+function generateSharedPropertiesCode(
+  data: MonsterData | MonsterGroupData,
+  indent: string,
+): string[] {
   const lines: string[] = [];
 
   if (data.traits && data.traits.length > 0) {
@@ -204,9 +207,7 @@ function generateSharedPropertiesCode(data: MonsterData | MonsterGroupData, inde
     if (data.equippedShield) {
       armorParts.push(`shield: ${JSON.stringify(data.equippedShield)}`);
     }
-    lines.push(
-      `${indent}creature.setEquippedArmorName({ ${armorParts.join(', ')} });`,
-    );
+    lines.push(`${indent}creature.setEquippedArmorName({ ${armorParts.join(', ')} });`);
   }
 
   if (data.properties && Object.keys(data.properties).length > 0) {
@@ -215,7 +216,13 @@ function generateSharedPropertiesCode(data: MonsterData | MonsterGroupData, inde
 
   // 1. Standard Spells & Maneuvers:
   if (data.standardAbilities && data.standardAbilities.length > 0) {
-    const SPECIAL_MANEUVERS = ['Equip Weapon', 'Weapon Multiplier', 'Grappling Strike', 'Sneak Attack', 'Latch On'];
+    const SPECIAL_MANEUVERS = [
+      'Equip Weapon',
+      'Weapon Multiplier',
+      'Grappling Strike',
+      'Sneak Attack',
+      'Latch On',
+    ];
     for (const ability of data.standardAbilities) {
       const cleanOptions = ability.options
         ? {
@@ -232,7 +239,7 @@ function generateSharedPropertiesCode(data: MonsterData | MonsterGroupData, inde
 
       const hasOptions = cleanOptions && Object.values(cleanOptions).some((v) => v !== undefined);
       const optionsStr = hasOptions ? `, ${JSON.stringify(cleanOptions)}` : '';
-      
+
       if (ability.type === 'spell') {
         lines.push(`${indent}creature.addSpell(${JSON.stringify(ability.name)}${optionsStr});`);
       } else if (SPECIAL_MANEUVERS.includes(ability.name)) {
@@ -249,7 +256,8 @@ function generateSharedPropertiesCode(data: MonsterData | MonsterGroupData, inde
                     : undefined,
               }
             : undefined;
-          const hasSpecialOptions = cleanSpecialOptions && Object.values(cleanSpecialOptions).some((v) => v !== undefined);
+          const hasSpecialOptions =
+            cleanSpecialOptions && Object.values(cleanSpecialOptions).some((v) => v !== undefined);
           const optStr = hasSpecialOptions ? `, ${JSON.stringify(cleanSpecialOptions)}` : '';
 
           if (ability.name === 'Equip Weapon') {
@@ -297,8 +305,6 @@ function generateSharedPropertiesCode(data: MonsterData | MonsterGroupData, inde
       lines.push(`${indent}creature.addPassiveAbility(${passiveStr});`);
     }
   }
-
-
 
   // 5. Rituals:
   if (data.rituals && data.rituals.length > 0) {
