@@ -27,7 +27,7 @@ import {
   formatMissingWeaponWarning,
   formatFreeformCodeWarning,
   formatSharedFreeformCodeWarning,
-  formatNoStandardActionWarning,
+  checkValidMonster,
 } from '../src/utils/validation';
 
 export interface BuildResult {
@@ -344,35 +344,9 @@ export function buildCreature(
     handleEverything();
     sheet.triggerRecalculation();
 
-    // Process engine validation issues
-    const issues = creature.checkValidMonster();
-    for (const issue of issues) {
-      if (issue.severity === 'error') {
-        errors.push(`Monster ${name}: ${issue.message}`);
-      } else {
-        warnings.push(`Monster ${name}: ${issue.message}`);
-      }
-    }
     const calcDuration = performance.now() - calcStart;
 
-    // Check for standard action abilities
-    const activeAbilities = creature.getActiveAbilities();
-    const standardAbilities = activeAbilities.filter(
-      (ability) => (ability.usageTime || 'standard') === 'standard',
-    );
-    const hasStandardWeapon =
-      (monster.weapons && monster.weapons.length > 0) ||
-      (groupObj && groupObj.weapons && groupObj.weapons.length > 0) ||
-      (monster.standardAbilities || []).some(
-        (a) => a.name === 'Equip Weapon' && a.options?.weapon,
-      ) ||
-      (groupObj &&
-        groupObj.standardAbilities &&
-        groupObj.standardAbilities.some((a) => a.name === 'Equip Weapon' && a.options?.weapon));
-
-    if (standardAbilities.length === 0 && !hasStandardWeapon) {
-      warnings.push(formatNoStandardActionWarning(name));
-    }
+    warnings.push(...checkValidMonster(creature, monster));
 
     const totalDuration = performance.now() - start;
     if (showDetailedTiming) {
@@ -396,6 +370,7 @@ export function buildCreature(
 
     return { creature, sheet, errors, warnings };
   } catch (err) {
+    console.error(`[creature_builder] Error building creature "${name}":`, err);
     const msg = err instanceof Error ? err.message : String(err);
     errors.push(cleanMessage(msg, name));
     return { creature: null, sheet: null, errors, warnings };

@@ -970,24 +970,6 @@ export class Creature implements CreaturePropertyMap {
   checkValidMonster(): ValidationIssue[] {
     const issues: ValidationIssue[] = [];
 
-    if (this.name === this.name.toLowerCase()) {
-      issues.push({ severity: 'error', message: 'Name must be title case', field: 'name' });
-    }
-    if (!this.alignment) {
-      issues.push({ severity: 'error', message: 'Must have alignment', field: 'alignment' });
-    }
-
-    if (this.intelligence >= -2 && this.getTrainedSkillNames().length === 0) {
-      issues.push({ severity: 'warning', message: 'Has no trained skills', field: 'trainedSkills' });
-    }
-
-    if (this.intelligence > -8 && this.creature_type === 'animal') {
-      issues.push({ severity: 'warning', message: 'Animal should have an Intelligence of -8 or less', field: 'intelligence' });
-    }
-    if (this.intelligence > -5 && this.creature_type === 'beast') {
-      issues.push({ severity: 'warning', message: 'Beast should have an Intelligence of -5 or less', field: 'intelligence' });
-    }
-
     return issues;
   }
 
@@ -1671,7 +1653,9 @@ const TRAIT_CONFLICTS: [RiseTrait, RiseTrait][] = [
 ];
 
 function areTraitsConflicting(traitA: RiseTrait, traitB: RiseTrait): boolean {
-  if (traitA === traitB) return false;
+  if (traitA === traitB) {
+    return false;
+  }
   return TRAIT_CONFLICTS.some(
     ([t1, t2]) => (traitA === t1 && traitB === t2) || (traitA === t2 && traitB === t1),
   );
