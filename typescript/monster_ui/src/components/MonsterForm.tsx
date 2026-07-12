@@ -2,9 +2,9 @@ import React from 'react';
 import { MonsterData, MonsterGroupData } from '../types/monster';
 import { AbilitiesTab } from './AbilitiesTab';
 import { IdentityTab } from './IdentityTab';
-import { StatsTab } from './StatsTab';
+import { AttributesAndSkillsTab } from './StatsTab';
 import { TraitsTab } from './TraitsTab';
-import { CombatTab } from './CombatTab';
+import { CombatAndGearTab } from './CombatAndGearTab';
 import { KnowledgeTab } from './KnowledgeTab';
 import { GroupForm } from './GroupForm';
 
@@ -124,7 +124,7 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
 
         {/* Tab 2: Attributes & Skills */}
         {activeTab === 'stats' && (
-          <StatsTab
+          <AttributesAndSkillsTab
             monsterData={monsterData}
             onChangeMonster={onChangeMonster}
           />
@@ -140,7 +140,7 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
 
         {/* Tab 4: Combat & Gear */}
         {activeTab === 'combat' && (
-          <CombatTab
+          <CombatAndGearTab
             monsterData={monsterData}
             onChangeMonster={onChangeMonster}
           />
