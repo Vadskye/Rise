@@ -11,7 +11,7 @@ import {
   formatMissingWeaponWarning,
   formatFreeformCodeWarning,
   formatSharedFreeformCodeWarning,
-  formatNoStandardActionError,
+  formatNoStandardActionWarning,
 } from '../src/utils/validation';
 
 // Dynamically import the Express app to ensure process.env.NODE_ENV is set first
@@ -479,7 +479,7 @@ describe('Monster UI Integration Tests (Full Server)', () => {
     const result1 = await res1.json();
     assert.strictEqual(result1.success, true);
     assert.ok(
-      !result1.errors.includes(formatNoStandardActionError(monsterWithNoError.name)),
+      !result1.warnings.includes(formatNoStandardActionWarning(monsterWithNoError.name)),
     );
 
     const monsterWithError = {
@@ -503,9 +503,9 @@ describe('Monster UI Integration Tests (Full Server)', () => {
     });
     assert.strictEqual(res2.status, 200);
     const result2 = await res2.json();
-    assert.strictEqual(result2.success, false);
+    assert.strictEqual(result2.success, true);
     assert.ok(
-      result2.errors.includes(formatNoStandardActionError(monsterWithError.name)),
+      result2.warnings.includes(formatNoStandardActionWarning(monsterWithError.name)),
     );
   });
 });
