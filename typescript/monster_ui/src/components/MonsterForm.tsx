@@ -161,6 +161,7 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
           <KnowledgeTab
             monsterData={monsterData}
             onChangeMonster={onChangeMonster}
+            warnings={warnings}
           />
         )}
       </div>

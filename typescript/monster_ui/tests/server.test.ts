@@ -7,7 +7,11 @@ import * as path from 'path';
 import { fileURLToPath } from 'url';
 import http from 'http';
 import { dbPath, getDb } from '../server/db';
-import { formatMissingWeaponWarning } from '../src/utils/validation';
+import {
+  formatMissingWeaponWarning,
+  formatFreeformCodeWarning,
+  formatSharedFreeformCodeWarning,
+} from '../src/utils/validation';
 
 // Dynamically import the Express app to ensure process.env.NODE_ENV is set first
 const { app } = await import('../server/index');
@@ -377,6 +381,61 @@ describe('Monster UI Integration Tests (Full Server)', () => {
     const result3 = await res3.json();
     assert.ok(
       !result3.warnings.includes(formatMissingWeaponWarning('Make Strike')),
+    );
+  });
+
+  test('POST /api/preview validates presence of freeform and shared freeform code warnings', async () => {
+    const monsterWithFreeform = {
+      name: `FreeformMonster_${Date.now()}`,
+      requiredProperties: {
+        alignment: 'neutral',
+        base_class: 'warrior',
+        elite: false,
+        creature_origin: 'natural',
+        creature_type: 'beast',
+        size: 'medium',
+        level: 1,
+      },
+      freeformCode: 'creature.addCustomSense("Infravision");',
+    };
+
+    const res1 = await fetch(`${baseUrl}/api/preview`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ monster: monsterWithFreeform }),
+    });
+    assert.strictEqual(res1.status, 200);
+    const result1 = await res1.json();
+    assert.ok(
+      result1.warnings.includes(formatFreeformCodeWarning(monsterWithFreeform.name)),
+    );
+
+    const monsterWithSharedFreeform = {
+      name: `SharedFreeformMonster_${Date.now()}`,
+      requiredProperties: {
+        alignment: 'neutral',
+        base_class: 'warrior',
+        elite: false,
+        creature_origin: 'natural',
+        creature_type: 'beast',
+        size: 'medium',
+        level: 1,
+      },
+      freeformCode: '',
+    };
+
+    const res2 = await fetch(`${baseUrl}/api/preview`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        monster: monsterWithSharedFreeform,
+        sharedFreeformCode: 'creature.addCustomSense("Shared Sense");',
+      }),
+    });
+    assert.strictEqual(res2.status, 200);
+    const result2 = await res2.json();
+    assert.ok(
+      result2.warnings.includes(formatSharedFreeformCodeWarning(monsterWithSharedFreeform.name)),
     );
   });
 

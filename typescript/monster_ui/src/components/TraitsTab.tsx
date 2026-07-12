@@ -2,33 +2,6 @@ import React from 'react';
 import { MonsterData } from '../types/monster';
 import { PillListInput } from './PillListInput';
 
-const STANDARD_TRAITS = [
-  'amphibious',
-  'blooded',
-  'bloodless',
-  'corporeal',
-  'dynamic',
-  'ensouled',
-  'floating',
-  'immortal',
-  'incorporeal',
-  'invisible',
-  'legless',
-  'living',
-  'mindless',
-  'mortal',
-  'quadrupedal',
-  'multipedal',
-  'nonliving',
-  'scent',
-  'sighted',
-  'sightless',
-  'simple-minded',
-  'soulless',
-  'static',
-  'swarm',
-  'telepathy',
-];
 
 // Note: Standard traits in original code were:
 // 'amphibious', 'blooded', 'bloodless', 'corporeal', 'dynamic', 'ensouled', 'floating',

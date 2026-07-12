@@ -114,6 +114,11 @@ export const GroupForm: React.FC<GroupFormProps> = ({
         <label htmlFor="group-shared-code">
           Shared Freeform Code (runs for all monsters in group)
         </label>
+        {groupData.sharedFreeformCode && groupData.sharedFreeformCode.trim() && (
+          <div className="inline-warning" style={{ marginBottom: '8px' }}>
+            ⚠️ Group has shared freeform initialization code.
+          </div>
+        )}
         <textarea
           id="group-shared-code"
           className="code-textarea"
