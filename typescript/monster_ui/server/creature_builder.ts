@@ -27,7 +27,7 @@ import {
   formatMissingWeaponWarning,
   formatFreeformCodeWarning,
   formatSharedFreeformCodeWarning,
-  formatNoStandardActionError,
+  formatNoStandardActionWarning,
 } from '../src/utils/validation';
 
 export interface BuildResult {
@@ -397,7 +397,7 @@ export function buildCreature(monster: MonsterData, group?: MonsterGroupData | s
     const hasStandardWeapon = (monster.weapons || []).some((w) => w.addStandard);
 
     if (standardAbilities.length === 0 && !hasStandardWeapon) {
-      errors.push(formatNoStandardActionError(name));
+      warnings.push(formatNoStandardActionWarning(name));
     }
 
     const totalDuration = performance.now() - start;
