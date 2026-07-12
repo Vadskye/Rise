@@ -42,12 +42,12 @@ const SKILL_CATEGORIES = {
   ],
 };
 
-interface StatsTabProps {
+interface AttributesAndSkillsTabProps {
   monsterData: MonsterData;
   onChangeMonster: (updated: MonsterData) => void;
 }
 
-export const AttributesAndSkillsTab: React.FC<StatsTabProps> = ({
+export const AttributesAndSkillsTab: React.FC<AttributesAndSkillsTabProps> = ({
   monsterData,
   onChangeMonster,
 }) => {
@@ -74,60 +74,70 @@ export const AttributesAndSkillsTab: React.FC<StatsTabProps> = ({
     });
   };
 
+  const formatSkillLabel = (skill: string): string => {
+    if (skill.startsWith('craft_')) {
+      return skill.slice(6).replace(/_/g, ' ');
+    }
+    if (skill.startsWith('knowledge_')) {
+      return skill.slice(10).replace(/_/g, ' ');
+    }
+    return skill.replace(/_/g, ' ');
+  };
+
   return (
     <div className="tab-content">
-      <h4 className="section-subtitle">Base Attributes</h4>
+      <h4 className="section-subtitle" style={{ marginBottom: '8px' }}>Base Attributes</h4>
       <div
         className="attributes-grid"
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(3, 1fr)',
-          gap: '15px',
-          marginBottom: '20px',
+          gridTemplateColumns: 'repeat(6, 1fr)',
+          gap: '10px',
+          marginBottom: '15px',
         }}
       >
-        <div className="form-group">
-          <label>Str (Brawn)</label>
+        <div className="form-group" style={{ marginBottom: 0 }}>
+          <label>Str</label>
           <input
             type="number"
             value={baseAttributes[0]}
             onChange={(e) => setAttribute(0, parseInt(e.target.value) || 0)}
           />
         </div>
-        <div className="form-group">
-          <label>Dex (Agility)</label>
+        <div className="form-group" style={{ marginBottom: 0 }}>
+          <label>Dex</label>
           <input
             type="number"
             value={baseAttributes[1]}
             onChange={(e) => setAttribute(1, parseInt(e.target.value) || 0)}
           />
         </div>
-        <div className="form-group">
-          <label>Con (Fortitude)</label>
+        <div className="form-group" style={{ marginBottom: 0 }}>
+          <label>Con</label>
           <input
             type="number"
             value={baseAttributes[2]}
             onChange={(e) => setAttribute(2, parseInt(e.target.value) || 0)}
           />
         </div>
-        <div className="form-group">
-          <label>Int (Reason)</label>
+        <div className="form-group" style={{ marginBottom: 0 }}>
+          <label>Int</label>
           <input
             type="number"
             value={baseAttributes[3]}
             onChange={(e) => setAttribute(3, parseInt(e.target.value) || 0)}
           />
         </div>
-        <div className="form-group">
-          <label>Per (Instinct)</label>
+        <div className="form-group" style={{ marginBottom: 0 }}>
+          <label>Per</label>
           <input
             type="number"
             value={baseAttributes[4]}
             onChange={(e) => setAttribute(4, parseInt(e.target.value) || 0)}
           />
         </div>
-        <div className="form-group">
-          <label>Wil (Presence)</label>
+        <div className="form-group" style={{ marginBottom: 0 }}>
+          <label>Wil</label>
           <input
             type="number"
             value={baseAttributes[5]}
@@ -136,25 +146,32 @@ export const AttributesAndSkillsTab: React.FC<StatsTabProps> = ({
         </div>
       </div>
 
-      <h4 className="section-subtitle">Trained Skills</h4>
-      <div className="form-group" style={{ marginBottom: '10px' }}>
+      <h4 className="section-subtitle" style={{ marginBottom: '8px' }}>Trained Skills</h4>
+      <div className="form-group" style={{ marginBottom: '8px' }}>
         <input
           type="text"
           placeholder="Search skills..."
           value={skillSearch}
           onChange={(e) => setSkillSearch(e.target.value)}
-          style={{ padding: '8px 12px', fontSize: '0.85rem' }}
+          style={{ padding: '6px 10px', fontSize: '0.85rem' }}
         />
       </div>
 
       <div
         className="skills-categories-container"
-        style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}
+        style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}
       >
         {Object.entries(SKILL_CATEGORIES).map(([category, skillsList]) => {
-          const filteredSkills = skillsList.filter((s) =>
-            s.toLowerCase().replace(/_/g, ' ').includes(skillSearch.toLowerCase()),
-          );
+          const filteredSkills = skillsList
+            .filter((s) => {
+              const display = formatSkillLabel(s);
+              return display.toLowerCase().includes(skillSearch.toLowerCase());
+            })
+            .sort((a, b) => {
+              const displayA = formatSkillLabel(a);
+              const displayB = formatSkillLabel(b);
+              return displayA.localeCompare(displayB);
+            });
           if (filteredSkills.length === 0) {
             return null;
           }
@@ -165,7 +182,7 @@ export const AttributesAndSkillsTab: React.FC<StatsTabProps> = ({
               className="skill-category-group"
               style={{
                 backgroundColor: 'var(--bg-secondary)',
-                padding: '12px',
+                padding: '8px',
                 borderRadius: '6px',
                 border: '1px solid var(--border-color)',
               }}
@@ -176,7 +193,7 @@ export const AttributesAndSkillsTab: React.FC<StatsTabProps> = ({
                   fontWeight: 800,
                   textTransform: 'uppercase',
                   color: 'var(--accent-color)',
-                  marginBottom: '8px',
+                  marginBottom: '6px',
                   letterSpacing: '0.5px',
                 }}
               >
@@ -187,35 +204,38 @@ export const AttributesAndSkillsTab: React.FC<StatsTabProps> = ({
                 style={{
                   display: 'grid',
                   gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))',
-                  gap: '10px',
+                  gap: '6px',
                 }}
               >
-                {filteredSkills.map((skill) => (
-                  <div
-                    key={skill}
-                    className="form-checkbox-row"
-                    style={{ display: 'flex', alignItems: 'center', gap: '6px' }}
-                  >
-                    <input
-                      id={`skill-${skill}`}
-                      type="checkbox"
-                      checked={trainedSkills.includes(skill)}
-                      onChange={() => toggleSkill(skill)}
-                    />
-                    <label
-                      htmlFor={`skill-${skill}`}
-                      style={{
-                        fontSize: '0.85rem',
-                        color: trainedSkills.includes(skill)
-                          ? 'var(--text-primary)'
-                          : 'var(--text-secondary)',
-                        cursor: 'pointer',
-                      }}
+                {filteredSkills.map((skill) => {
+                  const displayLabel = formatSkillLabel(skill);
+                  return (
+                    <div
+                      key={skill}
+                      className="form-checkbox-row"
+                      style={{ display: 'flex', alignItems: 'center', gap: '6px' }}
                     >
-                      {skill.replace(/_/g, ' ')}
-                    </label>
-                  </div>
-                ))}
+                      <input
+                        id={`skill-${skill}`}
+                        type="checkbox"
+                        checked={trainedSkills.includes(skill)}
+                        onChange={() => toggleSkill(skill)}
+                      />
+                      <label
+                        htmlFor={`skill-${skill}`}
+                        style={{
+                          fontSize: '0.85rem',
+                          color: trainedSkills.includes(skill)
+                            ? 'var(--text-primary)'
+                            : 'var(--text-secondary)',
+                          cursor: 'pointer',
+                        }}
+                      >
+                        {displayLabel}
+                      </label>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           );

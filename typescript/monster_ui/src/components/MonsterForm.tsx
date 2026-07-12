@@ -2,7 +2,7 @@ import React from 'react';
 import { MonsterData, MonsterGroupData } from '../types/monster';
 import { AbilitiesTab } from './AbilitiesTab';
 import { IdentityTab } from './IdentityTab';
-import { AttributesAndSkillsTab } from './StatsTab';
+import { AttributesAndSkillsTab } from './AttributesAndSkillsTab';
 import { TraitsTab } from './TraitsTab';
 import { CombatAndGearTab } from './CombatAndGearTab';
 import { KnowledgeTab } from './KnowledgeTab';
