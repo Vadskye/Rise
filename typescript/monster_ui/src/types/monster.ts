@@ -83,6 +83,7 @@ export interface MonsterData {
 }
 
 export interface MonsterGroupKnowledge {
+  easy?: string;
   normal?: string;
   hard?: string;
   legendary?: string;
