@@ -7,6 +7,7 @@ import * as path from 'path';
 import { fileURLToPath } from 'url';
 import http from 'http';
 import { dbPath, getDb } from '../server/db';
+import { formatMissingWeaponWarning } from '../src/utils/validation';
 
 // Dynamically import the Express app to ensure process.env.NODE_ENV is set first
 const { app } = await import('../server/index');
@@ -304,10 +305,10 @@ describe('Monster UI Integration Tests (Full Server)', () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ monster: monsterWithStrikeWarn }),
     });
-    assert.strictEqual(res1.status, 200);
+     assert.strictEqual(res1.status, 200);
     const result1 = await res1.json();
     assert.ok(
-      result1.warnings.some((w: string) => w.includes("makes a strike and doesn't have a weapon.")),
+      result1.warnings.includes(formatMissingWeaponWarning('Basic Strike')),
     );
 
     const monsterWithStrikeOk = {
@@ -341,9 +342,7 @@ describe('Monster UI Integration Tests (Full Server)', () => {
     assert.strictEqual(res2.status, 200);
     const result2 = await res2.json();
     assert.ok(
-      !result2.warnings.some((w: string) =>
-        w.includes("makes a strike and doesn't have a weapon."),
-      ),
+      !result2.warnings.includes(formatMissingWeaponWarning('Basic Strike')),
     );
 
     const monsterWithDisplayNameStrikeNonWarn = {
@@ -377,9 +376,7 @@ describe('Monster UI Integration Tests (Full Server)', () => {
     assert.strictEqual(res3.status, 200);
     const result3 = await res3.json();
     assert.ok(
-      !result3.warnings.some((w: string) =>
-        w.includes("makes a strike and doesn't have a weapon."),
-      ),
+      !result3.warnings.includes(formatMissingWeaponWarning('Make Strike')),
     );
   });
 
