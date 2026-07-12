@@ -55,3 +55,18 @@ export function isSharedFreeformCodeWarning(warning: string, name: string): bool
   return warning === formatSharedFreeformCodeWarning(name);
 }
 
+/**
+ * Formats the error message for a monster having no standard action abilities.
+ */
+export function formatNoStandardActionError(name: string): string {
+  return `Monster "${name}" must have at least one standard action ability.`;
+}
+
+/**
+ * Checks if a given error string matches the no standard action error for a specific monster name.
+ */
+export function isNoStandardActionError(error: string, name: string): boolean {
+  return error === formatNoStandardActionError(name);
+}
+
+

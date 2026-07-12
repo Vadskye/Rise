@@ -1,4 +1,5 @@
 import { CharacterSheet } from '@src/character_sheet/character_sheet';
+import { ValidationIssue } from './validation';
 import {
   getCurrentCharacterSheet,
   setCurrentCharacterSheet,
@@ -966,24 +967,28 @@ export class Creature implements CreaturePropertyMap {
   // We're specifically checking that the monster is ready for LaTeX generation, so
   // anything that would break that is treated as an error, even if it doesn't block the
   // sheet worker from doing ordinary combat math.
-  checkValidMonster() {
+  checkValidMonster(): ValidationIssue[] {
+    const issues: ValidationIssue[] = [];
+
     if (this.name === this.name.toLowerCase()) {
-      this.throwError('Name must be title case');
+      issues.push({ severity: 'error', message: 'Name must be title case', field: 'name' });
     }
     if (!this.alignment) {
-      this.throwError('Must have alignment');
+      issues.push({ severity: 'error', message: 'Must have alignment', field: 'alignment' });
     }
 
     if (this.intelligence >= -2 && this.getTrainedSkillNames().length === 0) {
-      this.warn('Has no trained skills');
+      issues.push({ severity: 'warning', message: 'Has no trained skills', field: 'trainedSkills' });
     }
 
     if (this.intelligence > -8 && this.creature_type === 'animal') {
-      this.warn('Animal should have an Intelligence of -8 or less');
+      issues.push({ severity: 'warning', message: 'Animal should have an Intelligence of -8 or less', field: 'intelligence' });
     }
     if (this.intelligence > -5 && this.creature_type === 'beast') {
-      this.warn('Beast should have an Intelligence of -5 or less');
+      issues.push({ severity: 'warning', message: 'Beast should have an Intelligence of -5 or less', field: 'intelligence' });
     }
+
+    return issues;
   }
 
   throwError(message: string) {

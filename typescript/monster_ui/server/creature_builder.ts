@@ -27,6 +27,7 @@ import {
   formatMissingWeaponWarning,
   formatFreeformCodeWarning,
   formatSharedFreeformCodeWarning,
+  formatNoStandardActionError,
 } from '../src/utils/validation';
 
 export interface BuildResult {
@@ -273,8 +274,28 @@ export function buildCreature(monster: MonsterData, sharedFreeformCode?: string)
     creature.setProperties({ monster_type: creature.elite ? 'elite' : 'normal' });
     handleEverything();
     sheet.triggerRecalculation();
-    creature.checkValidMonster();
+    
+    // Process engine validation issues
+    const issues = creature.checkValidMonster();
+    for (const issue of issues) {
+      if (issue.severity === 'error') {
+        errors.push(`Monster ${name}: ${issue.message}`);
+      } else {
+        warnings.push(`Monster ${name}: ${issue.message}`);
+      }
+    }
     const calcDuration = performance.now() - calcStart;
+
+    // Check for standard action abilities
+    const activeAbilities = creature.getActiveAbilities();
+    const standardAbilities = activeAbilities.filter(
+      (ability) => (ability.usageTime || 'standard') === 'standard',
+    );
+    const hasStandardWeapon = (monster.weapons || []).some((w) => w.addStandard);
+
+    if (standardAbilities.length === 0 && !hasStandardWeapon) {
+      errors.push(formatNoStandardActionError(name));
+    }
 
     const totalDuration = performance.now() - start;
     if (showDetailedTiming) {
