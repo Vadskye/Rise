@@ -199,7 +199,9 @@
                 "usageTime": "Standard"
               }
             }
-          ]
+          ],
+          "equippedArmor": "buff leather",
+          "equippedShield": "buckler"
         }
       ],
       "knowledge": {
