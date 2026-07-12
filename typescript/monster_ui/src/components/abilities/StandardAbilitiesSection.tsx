@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { StandardAbilityConfig } from '../../types/monster';
+import { isMissingWeaponWarning } from '../../utils/validation';
 
 interface AutocompleteSearchProps {
   label: string;
@@ -181,11 +182,11 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
                       )}
                     </strong>
                     {ability.type === 'maneuver' &&
-                      warnings.some(
-                        (w) =>
-                          w.includes(
-                            `Maneuver "${ability.options?.displayName || ability.name}"`,
-                          ) && w.includes("matches 'make.*strike'"),
+                      warnings.some((w) =>
+                        isMissingWeaponWarning(
+                          w,
+                          ability.options?.displayName || ability.name,
+                        ),
                       ) && (
                         <span
                           title="Maneuver makes a strike and doesn't have a weapon."
@@ -275,11 +276,11 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
                           ))}
                         </select>
                         {ability.type === 'maneuver' &&
-                          warnings.some(
-                            (w) =>
-                              w.includes(
-                                `Maneuver "${ability.options?.displayName || ability.name}"`,
-                              ) && w.includes("matches 'make.*strike'"),
+                          warnings.some((w) =>
+                            isMissingWeaponWarning(
+                              w,
+                              ability.options?.displayName || ability.name,
+                            ),
                           ) && (
                             <div className="inline-warning">
                               ⚠️ Maneuver makes a strike and doesn't have a weapon.

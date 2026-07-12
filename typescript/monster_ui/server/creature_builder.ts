@@ -22,6 +22,7 @@ import { BodyArmor } from '@src/monsters/equipment';
 import { MonsterWeapon } from '@src/monsters/weapons';
 import { showDetailedTiming } from './timing';
 import { getManeuverByName } from '@src/abilities/combat_styles';
+import { maneuverMakesStrike, formatMissingWeaponWarning } from '../src/utils/validation';
 
 export interface BuildResult {
   creature: Creature | null;
@@ -162,10 +163,9 @@ export function buildCreature(monster: MonsterData, sharedFreeformCode?: string)
           try {
             const baseManeuver = getManeuverByName(ability.name);
             if (baseManeuver && baseManeuver.effect) {
-              const isStrike = new RegExp('make.*strike', 'i').test(baseManeuver.effect);
-              if (isStrike && !ability.options?.weapon) {
+              if (maneuverMakesStrike(baseManeuver.effect) && !ability.options?.weapon) {
                 const nameToUse = ability.options?.displayName || ability.name;
-                warnings.push(`Maneuver "${nameToUse}" makes a strike and doesn't have a weapon.`);
+                warnings.push(formatMissingWeaponWarning(nameToUse));
               }
             }
           } catch (e) {
