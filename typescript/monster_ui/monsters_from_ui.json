@@ -17,29 +17,11 @@
             "size": "medium",
             "level": 1
           },
-          "baseAttributes": [
-            -1,
-            4,
-            0,
-            -2,
-            2,
-            -2
-          ],
-          "trainedSkills": [
-            "awareness"
-          ],
+          "baseAttributes": [-1, 4, 0, -2, 2, -2],
+          "trainedSkills": ["awareness"],
           "equippedArmor": "buff leather",
           "freeformCode": "",
-          "weapons": [
-            {
-              "name": "spear",
-              "addStandard": true,
-              "addMult": true,
-              "options": {
-                "isMagical": false
-              }
-            }
-          ],
+          "weapons": [],
           "standardAbilities": [
             {
               "type": "maneuver",
@@ -74,29 +56,11 @@
           "properties": {
             "has_art": true
           },
-          "baseAttributes": [
-            -1,
-            4,
-            0,
-            -2,
-            2,
-            -2
-          ],
-          "trainedSkills": [
-            "ride"
-          ],
+          "baseAttributes": [-1, 4, 0, -2, 2, -2],
+          "trainedSkills": ["ride"],
           "equippedArmor": "buff leather",
           "freeformCode": "",
-          "weapons": [
-            {
-              "name": "lance",
-              "addStandard": true,
-              "addMult": true,
-              "options": {
-                "isMagical": false
-              }
-            }
-          ],
+          "weapons": [],
           "equippedShield": "buckler",
           "standardAbilities": [
             {
@@ -128,17 +92,8 @@
             "size": "medium",
             "level": 1
           },
-          "baseAttributes": [
-            -1,
-            3,
-            0,
-            -2,
-            2,
-            3
-          ],
-          "trainedSkills": [
-            "awareness"
-          ],
+          "baseAttributes": [-1, 3, 0, -2, 2, 3],
+          "trainedSkills": ["awareness"],
           "equippedArmor": "buff leather",
           "freeformCode": "",
           "standardAbilities": [
@@ -176,19 +131,8 @@
             "level": 3
           },
           "freeformCode": "",
-          "baseAttributes": [
-            0,
-            4,
-            0,
-            1,
-            3,
-            2
-          ],
-          "trainedSkills": [
-            "social_insight",
-            "deception",
-            "intimidate"
-          ],
+          "baseAttributes": [0, 4, 0, 1, 3, 2],
+          "trainedSkills": ["social_insight", "deception", "intimidate"],
           "standardAbilities": [
             {
               "type": "maneuver",
@@ -205,9 +149,7 @@
         "normal": "Goblins are small, green-skinned humanoid creatures. They are generally cowardly and selfish. It's rare to see a goblin alone. They tend to gather into small groups of scavengers that try to take what's left after stronger creatures fight. However, if they believe they have an advantage in combat, they can be terrifyingly aggressive.",
         "hard": "Goblins are easy to bully, and they love brute strength. However, they are naturally disloyal, so they can easily abandon their alleged leader if they perceive weakness or just think they can do better elsewhere. Only creatures that are both strong and unintelligent, like ogres and trolls, are typically accompanied by goblin minions."
       },
-      "customSenses": [
-        "Low-light vision"
-      ]
+      "customSenses": ["Low-light vision"]
     }
   ]
 }

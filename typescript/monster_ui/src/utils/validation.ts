@@ -49,22 +49,8 @@ export function formatSharedFreeformCodeWarning(name: string): string {
 }
 
 /**
- * Checks if a given warning string matches the shared freeform code warning for a specific monster name.
- */
-export function isSharedFreeformCodeWarning(warning: string, name: string): boolean {
-  return warning === formatSharedFreeformCodeWarning(name);
-}
-
-/**
  * Formats the warning message for a monster having no standard action abilities.
  */
 export function formatNoStandardActionWarning(name: string): string {
   return `Monster "${name}" must have at least one standard action ability.`;
-}
-
-/**
- * Checks if a given warning string matches the no standard action warning for a specific monster name.
- */
-export function isNoStandardActionWarning(warning: string, name: string): boolean {
-  return warning === formatNoStandardActionWarning(name);
 }
