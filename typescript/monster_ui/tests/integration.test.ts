@@ -3,40 +3,25 @@ import './setup-env';
 import { test, describe, before, after } from 'node:test';
 import assert from 'node:assert';
 import * as fs from 'fs';
-import * as path from 'path';
-import { fileURLToPath } from 'url';
-import { getDb, dbPath, generatedTsPath, saveAndValidateAll } from '../server/db';
+import { getDb, paths, saveAndValidateAll } from '../server/db';
 import { validateMonster } from '../server/validate';
 import { generatePreview } from '../server/preview';
 import { getCharacterSheet } from '@src/character_sheet/current_character_sheet';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
 describe('Monster UI Integration Tests (Serverless)', () => {
   before(() => {
-    console.log('Initializing test database and generated source files...');
-    // Initialize temporary test JSON file from original
-    const originalDbPath = path.resolve(__dirname, '../monsters_from_ui.json');
-    if (fs.existsSync(originalDbPath)) {
-      fs.copyFileSync(originalDbPath, dbPath);
-    }
-    // Initialize temporary test TS file from original
-    const originalTsPath = path.resolve(__dirname, '../../src/monsters/individual_monsters/monsters_from_ui.ts');
-    if (fs.existsSync(originalTsPath)) {
-      fs.copyFileSync(originalTsPath, generatedTsPath);
-    }
+    // setup-env.ts already configured isolated temp-file paths before this module loaded.
+    // No copy needed — getDb() creates an empty database if none exists.
+    console.log('Test database paths configured. Starting tests...');
   });
 
   after(() => {
     console.log('Cleaning up test database and generated source files...');
-    // Delete temporary test JSON file
-    if (fs.existsSync(dbPath)) {
-      fs.unlinkSync(dbPath);
+    if (fs.existsSync(paths.dbPath)) {
+      fs.unlinkSync(paths.dbPath);
     }
-    // Delete temporary test TS file
-    if (fs.existsSync(generatedTsPath)) {
-      fs.unlinkSync(generatedTsPath);
+    if (fs.existsSync(paths.generatedTsPath)) {
+      fs.unlinkSync(paths.generatedTsPath);
     }
   });
 
@@ -99,8 +84,8 @@ describe('Monster UI Integration Tests (Serverless)', () => {
     assert.strictEqual(savedMonster.freeformCode, '// integration test dummy');
 
     // 5. Verify that the generated TypeScript file contains the new monster
-    assert.ok(fs.existsSync(generatedTsPath));
-    const generatedContent = fs.readFileSync(generatedTsPath, 'utf8');
+    assert.ok(fs.existsSync(paths.generatedTsPath));
+    const generatedContent = fs.readFileSync(paths.generatedTsPath, 'utf8');
     assert.ok(generatedContent.includes(`grimoire.addMonster('${newMonsterName}'`));
   });
 
@@ -166,8 +151,8 @@ describe('Monster UI Integration Tests (Serverless)', () => {
     assert.ok(stats.equipment.includes('breastplate'));
     assert.ok(stats.equipment.includes('standard shield'));
 
-    assert.ok(fs.existsSync(generatedTsPath));
-    const generatedContent = fs.readFileSync(generatedTsPath, 'utf8');
+    assert.ok(fs.existsSync(paths.generatedTsPath));
+    const generatedContent = fs.readFileSync(paths.generatedTsPath, 'utf8');
     assert.ok(generatedContent.includes(`creature.setBaseAttributes([2,3,1,-1,0,-2])`));
     assert.ok(generatedContent.includes(`creature.setTrainedSkills(["stealth","jump"])`));
     assert.ok(generatedContent.includes(`"easy": "Easy text"`));
@@ -264,8 +249,8 @@ describe('Monster UI Integration Tests (Serverless)', () => {
     assert.strictEqual(savedMonster.freeformCode, '// group monster specific test');
 
     // 5. Verify that the generated TypeScript file contains the new monster group
-    assert.ok(fs.existsSync(generatedTsPath));
-    const generatedContent = fs.readFileSync(generatedTsPath, 'utf8');
+    assert.ok(fs.existsSync(paths.generatedTsPath));
+    const generatedContent = fs.readFileSync(paths.generatedTsPath, 'utf8');
     assert.ok(generatedContent.includes(`name: '${testGroupName}'`));
     assert.ok(generatedContent.includes(`'${testGroupMonsterName}'`));
   });
@@ -401,7 +386,7 @@ describe('Monster UI Integration Tests (Serverless)', () => {
     );
 
     // Assert codegen outputs the correct builder methods
-    const generatedContent = fs.readFileSync(generatedTsPath, 'utf8');
+    const generatedContent = fs.readFileSync(paths.generatedTsPath, 'utf8');
     assert.ok(
       generatedContent.includes(
         `creature.addSpell("Word of Power", {"displayName":"Echoing Word","isMagical":true})`,
@@ -511,7 +496,7 @@ describe('Monster UI Integration Tests (Serverless)', () => {
     assert.ok(!preview2.computedStats.equipment.includes('scale'));
 
     // Verify codegen output
-    const generatedContent = fs.readFileSync(generatedTsPath, 'utf8');
+    const generatedContent = fs.readFileSync(paths.generatedTsPath, 'utf8');
     assert.ok(generatedContent.includes(`creature.addTrait("ensouled")`));
     assert.ok(generatedContent.includes(`creature.addCustomSense("Darkvision (90 ft.)")`));
     assert.ok(generatedContent.includes(`creature.addSpell("Word of Power", {"isMagical":true})`));

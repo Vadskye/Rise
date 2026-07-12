@@ -6,11 +6,12 @@ import { validateMonster } from './validate';
 import { keepOnlyCharacterSheets } from '@src/character_sheet/current_character_sheet';
 import { showDetailedTiming } from './timing';
 
-import { dbPath, generatedTsPath } from './paths';
-export { dbPath, generatedTsPath };
+import { paths } from './paths';
+export { paths };
 
 export function getDb(): DatabaseData {
   const start = performance.now();
+  const dbPath = paths.dbPath;
   if (showDetailedTiming) {
     console.log(`[Timing] [DB] Loading database from path: ${dbPath}`);
   } else {
@@ -44,6 +45,7 @@ export function getDb(): DatabaseData {
 
 export function saveDb(db: DatabaseData) {
   const start = performance.now();
+  const dbPath = paths.dbPath;
   console.log(`[DB] Writing database JSON to: ${dbPath}`);
   fs.writeFileSync(dbPath, JSON.stringify(db, null, 2), 'utf8');
   const writeJsonDuration = performance.now() - start;
