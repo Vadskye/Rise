@@ -10,17 +10,16 @@
     "lint": "eslint \"**/*.{ts,tsx}\"",
     "prettier": "prettier --write \"**/*.{ts,tsx}\"",
     "preview": "vite preview",
-    "test": "tsx --tsconfig tsconfig.server.json --test tests/**/*.test.ts"
+    "test": "tsx --tsconfig tsconfig.server.json --test tests/**/*.test.ts",
+    "unused": "npx knip"
   },
   "dependencies": {
     "express": "^4.19.2",
-    "lodash": "^4.17.21",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@types/express": "^4.17.21",
-    "@types/lodash": "^4.14.136",
     "@types/node": "^20.14.9",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",

@@ -53,10 +53,10 @@ export function configurePaths(dbPath: string, generatedTsPath: string): void {
 }
 
 /** Convenience accessors kept for backward compatibility with any direct imports. */
-export function getDbPath(): string {
+function getDbPath(): string {
   return paths.dbPath;
 }
 
-export function getGeneratedTsPath(): string {
+function getGeneratedTsPath(): string {
   return paths.generatedTsPath;
 }

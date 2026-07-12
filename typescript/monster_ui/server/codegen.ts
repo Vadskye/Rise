@@ -388,7 +388,7 @@ function generateGroupSharedInitializer(group: MonsterGroupData, indent: string)
   return lines.join('\n');
 }
 
-export function generateTypeScriptCode(db: DatabaseData): string {
+function generateTypeScriptCode(db: DatabaseData): string {
   const parts: string[] = [];
 
   // Imports header
