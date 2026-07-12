@@ -178,21 +178,7 @@ export function buildCreature(
 
       if (groupObj.weapons && groupObj.weapons.length > 0) {
         for (const weapon of groupObj.weapons) {
-          if (weapon.addStandard) {
-            creature.addWeapon(weapon.name);
-          }
-          if (weapon.addMult) {
-            creature.addWeaponMult(weapon.name, toMonsterAbilityOptions(weapon.options));
-          }
-          if (weapon.addGrappling) {
-            creature.addGrapplingStrike(weapon.name, toMonsterAbilityOptions(weapon.options));
-          }
-          if (weapon.addSneak) {
-            creature.addSneakAttack(weapon.name, toMonsterAbilityOptions(weapon.options));
-          }
-          if (weapon.addLatchOn) {
-            creature.addLatchOn(weapon.name, toMonsterAbilityOptions(weapon.options));
-          }
+          creature.addWeapon(weapon.name);
         }
       }
 
@@ -307,21 +293,7 @@ export function buildCreature(
     // 4. Weapons & Strikes:
     if (monster.weapons && monster.weapons.length > 0) {
       for (const weapon of monster.weapons) {
-        if (weapon.addStandard) {
-          creature.addWeapon(weapon.name);
-        }
-        if (weapon.addMult) {
-          creature.addWeaponMult(weapon.name, toMonsterAbilityOptions(weapon.options));
-        }
-        if (weapon.addGrappling) {
-          creature.addGrapplingStrike(weapon.name, toMonsterAbilityOptions(weapon.options));
-        }
-        if (weapon.addSneak) {
-          creature.addSneakAttack(weapon.name, toMonsterAbilityOptions(weapon.options));
-        }
-        if (weapon.addLatchOn) {
-          creature.addLatchOn(weapon.name, toMonsterAbilityOptions(weapon.options));
-        }
+        creature.addWeapon(weapon.name);
       }
     }
 
@@ -389,6 +361,8 @@ export function buildCreature(
       (ability) => (ability.usageTime || 'standard') === 'standard',
     );
     const hasStandardWeapon =
+      (monster.weapons && monster.weapons.length > 0) ||
+      (groupObj && groupObj.weapons && groupObj.weapons.length > 0) ||
       (monster.standardAbilities || []).some(
         (a) => a.name === 'Equip Weapon' && a.options?.weapon,
       ) ||

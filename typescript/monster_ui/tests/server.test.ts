@@ -80,7 +80,7 @@ describe('Monster UI Integration Tests (Full Server)', () => {
             size: 'medium',
             level: 1,
           },
-          weapons: [{ name: 'spear', addStandard: true }],
+          weapons: [{ name: 'spear' }],
           freeformCode: '// full server test individual',
         },
       ],
@@ -139,7 +139,7 @@ describe('Monster UI Integration Tests (Full Server)', () => {
                 size: 'medium',
                 level: 1,
               },
-              weapons: [{ name: 'spear', addStandard: true }],
+              weapons: [{ name: 'spear' }],
               freeformCode: '// server group member code',
             },
           ],
@@ -188,7 +188,7 @@ describe('Monster UI Integration Tests (Full Server)', () => {
         size: 'medium',
         level: 1,
       },
-      weapons: [{ name: 'spear', addStandard: true }],
+      weapons: [{ name: 'spear' }],
       freeformCode: '// rapid switch A',
     };
 
@@ -203,7 +203,7 @@ describe('Monster UI Integration Tests (Full Server)', () => {
         size: 'medium',
         level: 2,
       },
-      weapons: [{ name: 'spear', addStandard: true }],
+      weapons: [{ name: 'spear' }],
       freeformCode: '// rapid switch B',
     };
 
@@ -367,7 +367,7 @@ describe('Monster UI Integration Tests (Full Server)', () => {
         size: 'medium',
         level: 1,
       },
-      weapons: [{ name: 'spear', addStandard: true }],
+      weapons: [{ name: 'spear' }],
       freeformCode: 'creature.addCustomSense("Infravision");',
     };
 
@@ -391,7 +391,7 @@ describe('Monster UI Integration Tests (Full Server)', () => {
         size: 'medium',
         level: 1,
       },
-      weapons: [{ name: 'spear', addStandard: true }],
+      weapons: [{ name: 'spear' }],
       freeformCode: '',
     };
 
@@ -431,7 +431,7 @@ describe('Monster UI Integration Tests (Full Server)', () => {
         size: 'medium',
         level: 1,
       },
-      weapons: [{ name: 'spear', addStandard: true }],
+      weapons: [{ name: 'spear' }],
     };
 
     const res1 = await fetch(`${baseUrl}/api/preview`, {
