@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { MonsterData } from '../types/monster';
 import { RitualsSection } from './abilities/RitualsSection';
-import { WeaponsSection } from './abilities/WeaponsSection';
+
 import { StandardAbilitiesSection } from './abilities/StandardAbilitiesSection';
 import { CustomAbilitiesSection } from './abilities/CustomAbilitiesSection';
 import { PassiveAbilitiesSection } from './abilities/PassiveAbilitiesSection';
@@ -42,16 +42,6 @@ export const AbilitiesTab: React.FC<AbilitiesTabProps> = ({
 
   return (
     <div className="tab-content" style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
-      {/* 1. WEAPONS & STRIKES SECTION */}
-      <WeaponsSection
-        weapons={monsterData.weapons || []}
-        referenceWeapons={referenceData.weapons}
-        onChange={(updated) => updateField('weapons', updated)}
-        expandedCard={expandedCard}
-        onToggleExpand={toggleExpand}
-        setExpandedCard={setExpandedCard}
-      />
-
       {/* 2. STANDARD SPELLS & MANEUVERS SECTION */}
       <StandardAbilitiesSection
         standardAbilities={monsterData.standardAbilities || []}

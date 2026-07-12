@@ -151,7 +151,7 @@ export function buildCreature(monster: MonsterData, group?: MonsterGroupData | s
           if (ability.type === 'spell') {
             creature.addSpell(ability.name, toMonsterAbilityOptions(ability.options));
           } else {
-            creature.addManeuver(ability.name, toMonsterAbilityOptions(ability.options));
+            compileStandardManeuver(creature, ability, warnings);
           }
         }
       }
@@ -275,18 +275,7 @@ export function buildCreature(monster: MonsterData, group?: MonsterGroupData | s
         if (ability.type === 'spell') {
           creature.addSpell(ability.name, toMonsterAbilityOptions(ability.options));
         } else {
-          creature.addManeuver(ability.name, toMonsterAbilityOptions(ability.options));
-          try {
-            const baseManeuver = getManeuverByName(ability.name);
-            if (baseManeuver && baseManeuver.effect) {
-              if (maneuverMakesStrike(baseManeuver.effect) && !ability.options?.weapon) {
-                const nameToUse = ability.options?.displayName || ability.name;
-                warnings.push(formatMissingWeaponWarning(nameToUse));
-              }
-            }
-          } catch {
-            // Ignore if maneuver name is invalid
-          }
+          compileStandardManeuver(creature, ability, warnings);
         }
       }
     }
@@ -394,7 +383,13 @@ export function buildCreature(monster: MonsterData, group?: MonsterGroupData | s
     const standardAbilities = activeAbilities.filter(
       (ability) => (ability.usageTime || 'standard') === 'standard',
     );
-    const hasStandardWeapon = (monster.weapons || []).some((w) => w.addStandard);
+    const hasStandardWeapon =
+      (monster.standardAbilities || []).some(
+        (a) => a.name === 'Equip Weapon' && a.options?.weapon,
+      ) ||
+      (groupObj &&
+        groupObj.standardAbilities &&
+        groupObj.standardAbilities.some((a) => a.name === 'Equip Weapon' && a.options?.weapon));
 
     if (standardAbilities.length === 0 && !hasStandardWeapon) {
       warnings.push(formatNoStandardActionWarning(name));
@@ -428,6 +423,61 @@ export function buildCreature(monster: MonsterData, group?: MonsterGroupData | s
   } finally {
     // Restore console.warn
     console.warn = originalWarn;
+  }
+}
+
+function compileStandardManeuver(
+  creature: Creature,
+  ability: any,
+  warnings: string[],
+) {
+  const options = toMonsterAbilityOptions(ability.options);
+  const weapon = ability.options?.weapon;
+
+  if (ability.name === 'Equip Weapon') {
+    if (weapon) {
+      creature.addWeapon(weapon);
+    }
+    return;
+  }
+
+  const STRIKE_MODIFICATIONS = [
+    'Weapon Multiplier',
+    'Grappling Strike',
+    'Sneak Attack',
+    'Latch On',
+  ];
+
+  if (STRIKE_MODIFICATIONS.includes(ability.name)) {
+    if (!weapon) {
+      const nameToUse = ability.options?.displayName || ability.name;
+      warnings.push(formatMissingWeaponWarning(nameToUse));
+      return;
+    }
+    if (ability.name === 'Weapon Multiplier') {
+      creature.addWeaponMult(weapon, options);
+    } else if (ability.name === 'Grappling Strike') {
+      creature.addGrapplingStrike(weapon, options);
+    } else if (ability.name === 'Sneak Attack') {
+      creature.addSneakAttack(weapon, options);
+    } else if (ability.name === 'Latch On') {
+      creature.addLatchOn(weapon, options);
+    }
+    return;
+  }
+
+  // Regular standard maneuvers
+  creature.addManeuver(ability.name, options);
+  try {
+    const baseManeuver = getManeuverByName(ability.name);
+    if (baseManeuver && baseManeuver.effect) {
+      if (maneuverMakesStrike(baseManeuver.effect) && !weapon) {
+        const nameToUse = ability.options?.displayName || ability.name;
+        warnings.push(formatMissingWeaponWarning(nameToUse));
+      }
+    }
+  } catch {
+    // Ignore if maneuver name is invalid
   }
 }
 

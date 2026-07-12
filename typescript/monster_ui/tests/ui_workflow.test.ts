@@ -1,4 +1,4 @@
-process.env.NODE_ENV = 'test';
+import './setup-env';
 
 import { test, describe, before, after } from 'node:test';
 import assert from 'node:assert';
@@ -8,21 +8,14 @@ import { fileURLToPath } from 'url';
 import http from 'http';
 import puppeteer, { Browser } from 'puppeteer';
 import { createServer, ViteDevServer } from 'vite';
-import { dbPath } from '../server/db';
+import { dbPath, generatedTsPath } from '../server/db';
 
 const { app } = await import('../server/index');
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const generatedTsPath = path.resolve(
-  __dirname,
-  '../../src/monsters/individual_monsters/monsters_from_ui.ts',
-);
-
 describe('Monster UI Full Workflow E2E Integration Tests', () => {
-  let dbBackup: string | null = null;
-  let tsBackup: string | null = null;
   let expressServer: http.Server;
   let expressPort: number;
   let viteServer: ViteDevServer;
@@ -30,12 +23,16 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
   let browser: Browser;
 
   before(async () => {
-    console.log('Backing up database and generated source files for E2E tests...');
-    if (fs.existsSync(dbPath)) {
-      dbBackup = fs.readFileSync(dbPath, 'utf8');
+    console.log('Initializing test database and generated source files for E2E tests...');
+    // Initialize temporary test JSON file from original
+    const originalDbPath = path.resolve(__dirname, '../monsters_from_ui.json');
+    if (fs.existsSync(originalDbPath)) {
+      fs.copyFileSync(originalDbPath, dbPath);
     }
-    if (fs.existsSync(generatedTsPath)) {
-      tsBackup = fs.readFileSync(generatedTsPath, 'utf8');
+    // Initialize temporary test TS file from original
+    const originalTsPath = path.resolve(__dirname, '../../src/monsters/individual_monsters/monsters_from_ui.ts');
+    if (fs.existsSync(originalTsPath)) {
+      fs.copyFileSync(originalTsPath, generatedTsPath);
     }
 
     // 1. Start Express Server on random port
@@ -76,7 +73,7 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
   });
 
   after(async () => {
-    console.log('Cleaning up E2E test servers and restoring backups...');
+    console.log('Cleaning up E2E test servers and files...');
     if (browser) {
       await browser.close();
     }
@@ -87,15 +84,11 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
       await expressServer.close();
     }
 
-    if (dbBackup !== null) {
-      fs.writeFileSync(dbPath, dbBackup, 'utf8');
-    } else if (fs.existsSync(dbPath)) {
+    // Clean up temporary test files
+    if (fs.existsSync(dbPath)) {
       fs.unlinkSync(dbPath);
     }
-
-    if (tsBackup !== null) {
-      fs.writeFileSync(generatedTsPath, tsBackup, 'utf8');
-    } else if (fs.existsSync(generatedTsPath)) {
+    if (fs.existsSync(generatedTsPath)) {
       fs.unlinkSync(generatedTsPath);
     }
   });

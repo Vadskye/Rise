@@ -1,6 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
+import { generatedTsPath } from './paths';
 import { CustomMonsterAbility } from '@src/character_sheet/creature';
 import { MonsterAttackUsageTime } from '@src/character_sheet/sheet_worker';
 import { RiseAbilityDefinitionTag } from '@src/character_sheet/rise_data';
@@ -214,6 +215,7 @@ function generateSharedPropertiesCode(data: MonsterData | MonsterGroupData, inde
 
   // 1. Standard Spells & Maneuvers:
   if (data.standardAbilities && data.standardAbilities.length > 0) {
+    const SPECIAL_MANEUVERS = ['Equip Weapon', 'Weapon Multiplier', 'Grappling Strike', 'Sneak Attack', 'Latch On'];
     for (const ability of data.standardAbilities) {
       const cleanOptions = ability.options
         ? {
@@ -230,8 +232,38 @@ function generateSharedPropertiesCode(data: MonsterData | MonsterGroupData, inde
 
       const hasOptions = cleanOptions && Object.values(cleanOptions).some((v) => v !== undefined);
       const optionsStr = hasOptions ? `, ${JSON.stringify(cleanOptions)}` : '';
+      
       if (ability.type === 'spell') {
         lines.push(`${indent}creature.addSpell(${JSON.stringify(ability.name)}${optionsStr});`);
+      } else if (SPECIAL_MANEUVERS.includes(ability.name)) {
+        const weapon = ability.options?.weapon;
+        if (weapon) {
+          const cleanSpecialOptions = ability.options
+            ? {
+                displayName: ability.options.displayName || undefined,
+                usageTime: ability.options.usageTime || undefined,
+                isMagical: ability.options.isMagical,
+                tags:
+                  ability.options.tags && ability.options.tags.length > 0
+                    ? ability.options.tags
+                    : undefined,
+              }
+            : undefined;
+          const hasSpecialOptions = cleanSpecialOptions && Object.values(cleanSpecialOptions).some((v) => v !== undefined);
+          const optStr = hasSpecialOptions ? `, ${JSON.stringify(cleanSpecialOptions)}` : '';
+
+          if (ability.name === 'Equip Weapon') {
+            lines.push(`${indent}creature.addWeapon(${JSON.stringify(weapon)});`);
+          } else if (ability.name === 'Weapon Multiplier') {
+            lines.push(`${indent}creature.addWeaponMult(${JSON.stringify(weapon)}${optStr});`);
+          } else if (ability.name === 'Grappling Strike') {
+            lines.push(`${indent}creature.addGrapplingStrike(${JSON.stringify(weapon)}${optStr});`);
+          } else if (ability.name === 'Sneak Attack') {
+            lines.push(`${indent}creature.addSneakAttack(${JSON.stringify(weapon)}${optStr});`);
+          } else if (ability.name === 'Latch On') {
+            lines.push(`${indent}creature.addLatchOn(${JSON.stringify(weapon)}${optStr});`);
+          }
+        }
       } else {
         lines.push(`${indent}creature.addManeuver(${JSON.stringify(ability.name)}${optionsStr});`);
       }
@@ -266,37 +298,7 @@ function generateSharedPropertiesCode(data: MonsterData | MonsterGroupData, inde
     }
   }
 
-  // 4. Weapons & Strikes:
-  if (data.weapons && data.weapons.length > 0) {
-    for (const weapon of data.weapons) {
-      if (weapon.addStandard) {
-        lines.push(`${indent}creature.addWeapon(${JSON.stringify(weapon.name)});`);
-      }
-      const cleanOptions = weapon.options
-        ? {
-            displayName: weapon.options.displayName || undefined,
-            usageTime: weapon.options.usageTime || undefined,
-            isMagical: weapon.options.isMagical,
-          }
-        : undefined;
-      const hasOptions = cleanOptions && Object.values(cleanOptions).some((v) => v !== undefined);
-      const optStr = hasOptions ? `, ${JSON.stringify(cleanOptions)}` : '';
-      if (weapon.addMult) {
-        lines.push(`${indent}creature.addWeaponMult(${JSON.stringify(weapon.name)}${optStr});`);
-      }
-      if (weapon.addGrappling) {
-        lines.push(
-          `${indent}creature.addGrapplingStrike(${JSON.stringify(weapon.name)}${optStr});`,
-        );
-      }
-      if (weapon.addSneak) {
-        lines.push(`${indent}creature.addSneakAttack(${JSON.stringify(weapon.name)}${optStr});`);
-      }
-      if (weapon.addLatchOn) {
-        lines.push(`${indent}creature.addLatchOn(${JSON.stringify(weapon.name)}${optStr});`);
-      }
-    }
-  }
+
 
   // 5. Rituals:
   if (data.rituals && data.rituals.length > 0) {
@@ -452,10 +454,7 @@ ${bodyCode}
 
 export function saveTypeScriptFile(db: DatabaseData) {
   const tsCode = generateTypeScriptCode(db);
-  const targetPath = path.resolve(
-    __dirname,
-    '../../src/monsters/individual_monsters/monsters_from_ui.ts',
-  );
+  const targetPath = generatedTsPath;
 
   // Ensure the parent directory exists
   const parentDir = path.dirname(targetPath);

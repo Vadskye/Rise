@@ -90,8 +90,11 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
   setExpandedCard,
   warnings = [],
 }) => {
+  const SPECIAL_MANEUVERS = ['Equip Weapon', 'Weapon Multiplier', 'Grappling Strike', 'Sneak Attack', 'Latch On'];
+
   const addStandardAbility = (type: 'spell' | 'maneuver', name: string) => {
-    if (standardAbilities.some((a) => a.type === type && a.name === name)) {
+    const isSpecial = SPECIAL_MANEUVERS.includes(name);
+    if (!isSpecial && standardAbilities.some((a) => a.type === type && a.name === name)) {
       return;
     }
     const updated = [
@@ -144,7 +147,9 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
           label="Add Standard Maneuver"
           placeholder="Search maneuvers (e.g. Charge)..."
           items={referenceManeuvers}
-          excludeItems={standardAbilities.filter((a) => a.type === 'maneuver').map((a) => a.name)}
+          excludeItems={standardAbilities
+            .filter((a) => a.type === 'maneuver' && !SPECIAL_MANEUVERS.includes(a.name))
+            .map((a) => a.name)}
           onSelect={(name) => addStandardAbility('maneuver', name)}
         />
       </div>
@@ -178,6 +183,21 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
                         >
                           {' '}
                           (Standard: {ability.name})
+                        </span>
+                      )}
+                      {ability.options?.weapon && (
+                        <span
+                          style={{
+                            marginLeft: '8px',
+                            fontWeight: 'normal',
+                            fontSize: '0.85em',
+                            color: 'var(--text-secondary)',
+                            background: 'rgba(255, 255, 255, 0.1)',
+                            padding: '2px 6px',
+                            borderRadius: '4px',
+                          }}
+                        >
+                          {ability.options.weapon}
                         </span>
                       )}
                     </strong>

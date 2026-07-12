@@ -6,10 +6,8 @@ import { validateMonster } from './validate';
 import { keepOnlyCharacterSheets } from '@src/character_sheet/current_character_sheet';
 import { showDetailedTiming } from './timing';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-export const dbPath = path.resolve(__dirname, '../monsters_from_ui.json');
+import { dbPath, generatedTsPath } from './paths';
+export { dbPath, generatedTsPath };
 
 export function getDb(): DatabaseData {
   const start = performance.now();
@@ -99,11 +97,7 @@ export function saveAndValidateAll(db: DatabaseData) {
       console.log(`[DB] Validating group "${group.name}" with ${groupMonsters.length} monsters...`);
       for (const monster of groupMonsters) {
         const monsterStart = performance.now();
-        validations[`${group.name}.${monster.name}`] = validateMonster(
-          monster,
-          group,
-          group.name,
-        );
+        validations[`${group.name}.${monster.name}`] = validateMonster(monster, group, group.name);
         if (showDetailedTiming) {
           console.log(
             `[Timing] Validated group monster "${group.name}.${monster.name}" in ${(performance.now() - monsterStart).toFixed(2)}ms (cacheHit: ${validations[`${group.name}.${monster.name}`].cacheHit})`,

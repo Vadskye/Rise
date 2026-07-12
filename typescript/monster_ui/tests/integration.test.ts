@@ -1,9 +1,11 @@
+import './setup-env';
+
 import { test, describe, before, after } from 'node:test';
 import assert from 'node:assert';
 import * as fs from 'fs';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
-import { getDb, dbPath, saveAndValidateAll } from '../server/db';
+import { getDb, dbPath, generatedTsPath, saveAndValidateAll } from '../server/db';
 import { validateMonster } from '../server/validate';
 import { generatePreview } from '../server/preview';
 import { getCharacterSheet } from '@src/character_sheet/current_character_sheet';
@@ -11,41 +13,29 @@ import { getCharacterSheet } from '@src/character_sheet/current_character_sheet'
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Path to the generated TypeScript file in the main src directory
-const generatedTsPath = path.resolve(
-  __dirname,
-  '../../src/monsters/individual_monsters/monsters_from_ui.ts',
-);
-
 describe('Monster UI Integration Tests (Serverless)', () => {
-  let dbBackup: string | null = null;
-  let tsBackup: string | null = null;
-
   before(() => {
-    console.log('Backing up database and generated source files...');
-    // 1. Back up monsters_from_ui.json
-    if (fs.existsSync(dbPath)) {
-      dbBackup = fs.readFileSync(dbPath, 'utf8');
+    console.log('Initializing test database and generated source files...');
+    // Initialize temporary test JSON file from original
+    const originalDbPath = path.resolve(__dirname, '../monsters_from_ui.json');
+    if (fs.existsSync(originalDbPath)) {
+      fs.copyFileSync(originalDbPath, dbPath);
     }
-    // 2. Back up monsters_from_ui.ts
-    if (fs.existsSync(generatedTsPath)) {
-      tsBackup = fs.readFileSync(generatedTsPath, 'utf8');
+    // Initialize temporary test TS file from original
+    const originalTsPath = path.resolve(__dirname, '../../src/monsters/individual_monsters/monsters_from_ui.ts');
+    if (fs.existsSync(originalTsPath)) {
+      fs.copyFileSync(originalTsPath, generatedTsPath);
     }
   });
 
   after(() => {
-    console.log('Restoring original database and generated source files...');
-    // 1. Restore monsters_from_ui.json
-    if (dbBackup !== null) {
-      fs.writeFileSync(dbPath, dbBackup, 'utf8');
-    } else if (fs.existsSync(dbPath)) {
+    console.log('Cleaning up test database and generated source files...');
+    // Delete temporary test JSON file
+    if (fs.existsSync(dbPath)) {
       fs.unlinkSync(dbPath);
     }
-
-    // 2. Restore monsters_from_ui.ts
-    if (tsBackup !== null) {
-      fs.writeFileSync(generatedTsPath, tsBackup, 'utf8');
-    } else if (fs.existsSync(generatedTsPath)) {
+    // Delete temporary test TS file
+    if (fs.existsSync(generatedTsPath)) {
       fs.unlinkSync(generatedTsPath);
     }
   });
