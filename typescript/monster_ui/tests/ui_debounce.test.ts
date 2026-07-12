@@ -38,7 +38,7 @@ describe('Monster UI Debounce/Timing Tests', () => {
             size: 'medium',
             level: 1,
           },
-          weapons: [{ name: 'spear', addStandard: true }],
+          weapons: [{ name: 'spear' }],
           freeformCode: '',
         },
       ],

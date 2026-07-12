@@ -59,14 +59,8 @@ export interface PassiveAbilityConfig {
 
 export interface WeaponConfig {
   name: string;
-  addStandard?: boolean;
-  addMult?: boolean;
-  addGrappling?: boolean;
-  addSneak?: boolean;
-  addLatchOn?: boolean;
   options?: {
     displayName?: string;
-    usageTime?: string;
     isMagical?: boolean;
   };
 }
@@ -303,6 +297,13 @@ function generateSharedPropertiesCode(
         .map((line, idx) => (idx === 0 ? line : indent + '  ' + line))
         .join('\n');
       lines.push(`${indent}creature.addPassiveAbility(${passiveStr});`);
+    }
+  }
+
+  // 4. Weapons:
+  if (data.weapons && data.weapons.length > 0) {
+    for (const weapon of data.weapons) {
+      lines.push(`${indent}creature.addWeapon(${JSON.stringify(weapon.name)});`);
     }
   }
 

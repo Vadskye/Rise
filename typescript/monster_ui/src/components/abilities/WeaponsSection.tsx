@@ -30,8 +30,6 @@ export const WeaponsSection: React.FC<WeaponsSectionProps> = ({
       ...weapons,
       {
         name,
-        addStandard: true,
-        addMult: true,
         options: {
           isMagical: false,
         },
@@ -62,10 +60,9 @@ export const WeaponsSection: React.FC<WeaponsSectionProps> = ({
 
   return (
     <div className="ability-section-card">
-      <h4 className="section-subtitle">Weapons & Strike Modifications</h4>
+      <h4 className="section-subtitle">Weapons</h4>
       <p className="section-description">
-        Equip standard/natural weapons and apply combat maneuvers (like Multiplier strikes,
-        Grappling, Sneak Attack, or Latch On).
+        Equip standard or natural weapons.
       </p>
 
       {/* Add Weapon Autocomplete */}
@@ -133,14 +130,11 @@ export const WeaponsSection: React.FC<WeaponsSectionProps> = ({
                     <strong className="ability-name">{weapon.name}</strong>
                     <span className="ability-meta-summary">
                       {[
-                        weapon.addStandard && 'Equipped',
-                        weapon.addMult && 'WeaponMult',
-                        weapon.addGrappling && 'Grappling',
-                        weapon.addSneak && 'SneakAttack',
-                        weapon.addLatchOn && 'LatchOn',
+                        weapon.options?.displayName && `"${weapon.options.displayName}"`,
+                        weapon.options?.isMagical && 'Magical',
                       ]
                         .filter(Boolean)
-                        .join(', ') || 'No actions'}
+                        .join(', ') || 'Standard'}
                     </span>
                   </div>
                   <div className="ability-card-header-controls">
@@ -162,65 +156,6 @@ export const WeaponsSection: React.FC<WeaponsSectionProps> = ({
 
                 {isExpanded && (
                   <div className="ability-card-body">
-                    {/* Configuration Checkboxes */}
-                    <div className="form-group" style={{ marginBottom: '15px' }}>
-                      <label style={{ fontWeight: '600', marginBottom: '8px', display: 'block' }}>
-                        Equip and Action Setup
-                      </label>
-                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '15px' }}>
-                        <label className="checkbox-row">
-                          <input
-                            type="checkbox"
-                            checked={Boolean(weapon.addStandard)}
-                            onChange={(e) =>
-                              updateWeapon(idx, { ...weapon, addStandard: e.target.checked })
-                            }
-                          />
-                          Equip Base Weapon (addWeapon)
-                        </label>
-                        <label className="checkbox-row">
-                          <input
-                            type="checkbox"
-                            checked={Boolean(weapon.addMult)}
-                            onChange={(e) =>
-                              updateWeapon(idx, { ...weapon, addMult: e.target.checked })
-                            }
-                          />
-                          Weapon Multiplier (addWeaponMult)
-                        </label>
-                        <label className="checkbox-row">
-                          <input
-                            type="checkbox"
-                            checked={Boolean(weapon.addGrappling)}
-                            onChange={(e) =>
-                              updateWeapon(idx, { ...weapon, addGrappling: e.target.checked })
-                            }
-                          />
-                          Grappling Strike (addGrapplingStrike)
-                        </label>
-                        <label className="checkbox-row">
-                          <input
-                            type="checkbox"
-                            checked={Boolean(weapon.addSneak)}
-                            onChange={(e) =>
-                              updateWeapon(idx, { ...weapon, addSneak: e.target.checked })
-                            }
-                          />
-                          Sneak Attack (addSneakAttack)
-                        </label>
-                        <label className="checkbox-row">
-                          <input
-                            type="checkbox"
-                            checked={Boolean(weapon.addLatchOn)}
-                            onChange={(e) =>
-                              updateWeapon(idx, { ...weapon, addLatchOn: e.target.checked })
-                            }
-                          />
-                          Latch On (addLatchOn)
-                        </label>
-                      </div>
-                    </div>
-
                     {/* Overrides Subform */}
                     <div className="card-subform">
                       <h5>Options Overrides (Optional)</h5>
@@ -241,29 +176,6 @@ export const WeaponsSection: React.FC<WeaponsSectionProps> = ({
                               })
                             }
                           />
-                        </div>
-                        <div className="form-group">
-                          <label>Usage Time</label>
-                          <select
-                            value={weapon.options?.usageTime || ''}
-                            onChange={(e) =>
-                              updateWeapon(idx, {
-                                ...weapon,
-                                options: {
-                                  ...(weapon.options || {}),
-                                  usageTime: e.target.value || undefined,
-                                },
-                              })
-                            }
-                          >
-                            <option value="">-- Engine Default --</option>
-                            <option value="Standard">Standard Action</option>
-                            <option value="Move">Move Action</option>
-                            <option value="Swift">Swift Action</option>
-                            <option value="Minor">Minor Action</option>
-                            <option value="Reaction">Reaction</option>
-                            <option value="Free">Free Action</option>
-                          </select>
                         </div>
                         <div
                           className="form-group"

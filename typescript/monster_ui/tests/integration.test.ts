@@ -51,7 +51,6 @@ describe('Monster UI Integration Tests (Serverless)', () => {
           weapons: [
             {
               name: 'fists',
-              addStandard: true,
             },
           ],
           freeformCode: '// integration test dummy',
@@ -111,7 +110,6 @@ describe('Monster UI Integration Tests (Serverless)', () => {
           weapons: [
             {
               name: 'fists',
-              addStandard: true,
             },
           ],
           baseAttributes: [2, 3, 1, -1, 0, -2] as [number, number, number, number, number, number],
@@ -202,7 +200,6 @@ describe('Monster UI Integration Tests (Serverless)', () => {
               weapons: [
                 {
                   name: 'fists',
-                  addStandard: true,
                 },
               ],
               freeformCode: '// group monster specific test',
@@ -274,7 +271,6 @@ describe('Monster UI Integration Tests (Serverless)', () => {
       weapons: [
         {
           name: 'fists',
-          addStandard: true,
         },
       ],
     };
@@ -328,6 +324,11 @@ describe('Monster UI Integration Tests (Serverless)', () => {
           name: 'Word of Power',
           options: { displayName: 'Echoing Word', isMagical: true },
         },
+        {
+          type: 'maneuver' as const,
+          name: 'Weapon Multiplier',
+          options: { weapon: 'claws', displayName: 'Vicious Claws' },
+        },
       ],
       customAbilities: [
         {
@@ -353,8 +354,6 @@ describe('Monster UI Integration Tests (Serverless)', () => {
       weapons: [
         {
           name: 'claws',
-          addStandard: true,
-          addMult: true,
           options: { displayName: 'Vicious Claws' },
         },
       ],
@@ -442,7 +441,6 @@ describe('Monster UI Integration Tests (Serverless)', () => {
               weapons: [
                 {
                   name: 'fists',
-                  addStandard: true,
                 },
               ],
               freeformCode: '// member one specific',
@@ -461,7 +459,6 @@ describe('Monster UI Integration Tests (Serverless)', () => {
               weapons: [
                 {
                   name: 'fists',
-                  addStandard: true,
                 },
               ],
               equippedArmor: 'breastplate', // override!

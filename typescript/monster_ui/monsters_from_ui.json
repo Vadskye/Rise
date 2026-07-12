@@ -48,6 +48,14 @@
                 "isMagical": false,
                 "weapon": "spear"
               }
+            },
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "spear"
+              }
             }
           ],
           "equippedShield": "buckler"
@@ -89,7 +97,25 @@
               }
             }
           ],
-          "equippedShield": "buckler"
+          "equippedShield": "buckler",
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Charge",
+              "options": {
+                "isMagical": false,
+                "weapon": "spear"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "spear"
+              }
+            }
+          ]
         },
         {
           "name": "Goblin Shaman",

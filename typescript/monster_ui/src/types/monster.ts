@@ -48,14 +48,8 @@ export interface PassiveAbilityConfig {
 
 export interface WeaponConfig {
   name: string;
-  addStandard?: boolean;
-  addMult?: boolean;
-  addGrappling?: boolean;
-  addSneak?: boolean;
-  addLatchOn?: boolean;
   options?: {
     displayName?: string;
-    usageTime?: string;
     isMagical?: boolean;
   };
 }
