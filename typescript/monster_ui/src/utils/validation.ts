@@ -1,4 +1,4 @@
-import type { MonsterData } from '../../server/codegen';
+import type { MonsterData, MonsterGroupData } from '../../server/codegen';
 import { Creature } from '@src/character_sheet/creature';
 
 /**
@@ -58,7 +58,11 @@ export function formatNoStandardActionWarning(name: string): string {
   return `Monster "${name}" must have at least one standard action ability.`;
 }
 
-export function checkValidMonster(creature: Creature, monster: MonsterData): string[] {
+export function checkValidMonster(
+  creature: Creature,
+  monster: MonsterData,
+  parentGroup?: MonsterGroupData,
+): string[] {
   const warnings: string[] = [];
 
   if (creature.name === creature.name.toLowerCase()) {
@@ -79,16 +83,26 @@ export function checkValidMonster(creature: Creature, monster: MonsterData): str
     warnings.push('Beast should have an Intelligence of -5 or less');
   }
 
-  // Check for standard action abilities
-  const activeAbilities = creature.getActiveAbilities();
-  const standardAbilities = activeAbilities.filter(
-    (ability) => (ability.usageTime || 'standard') === 'standard',
-  );
-  const hasStandardWeapon =
-    (monster.weapons && monster.weapons.length > 0) ||
-    (monster.standardAbilities || []).some((a) => a.name === 'Equip Weapon' && a.options?.weapon);
-  if (standardAbilities.length === 0 && !hasStandardWeapon) {
-    warnings.push(formatNoStandardActionWarning(creature.name));
+  const standardAbilities = creature
+    .getActiveAbilities()
+    .filter((ability) => (ability.usageTime || 'standard') === 'standard');
+  if (standardAbilities.length === 0) {
+    warnings.push('Must have at least one standard action ability');
+  }
+
+  if (creature.elite) {
+    const eliteAbilities = creature
+      .getActiveAbilities()
+      .filter((ability) => ability.usageTime === 'elite');
+    if (eliteAbilities.length === 0) {
+      warnings.push('Elite creatures must have at least one elite action ability');
+    }
+  }
+
+  if (!creature.hasKnowledgeResults() && !parentGroup?.knowledge) {
+    warnings.push(
+      'Creature must either have personal knowledge results or be part of a group with knowledge results',
+    );
   }
 
   return warnings;

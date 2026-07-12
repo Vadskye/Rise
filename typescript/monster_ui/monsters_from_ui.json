@@ -1,5 +1,23 @@
 {
-  "monsters": [],
+  "monsters": [
+    {
+      "name": "Choker",
+      "requiredProperties": {
+        "alignment": "chaotic evil",
+        "base_class": "brute",
+        "elite": false,
+        "creature_origin": "natural",
+        "creature_type": "beast",
+        "size": "medium",
+        "level": 4
+      },
+      "freeformCode": "",
+      "knowledge": {
+        "easy": "",
+        "normal": ""
+      }
+    }
+  ],
   "monsterGroups": [
     {
       "name": "Goblins",
@@ -191,6 +209,12 @@
       "customSenses": [
         "Low-light vision"
       ]
+    },
+    {
+      "name": "Orcs",
+      "hasArt": false,
+      "sharedFreeformCode": "",
+      "monsters": []
     }
   ]
 }

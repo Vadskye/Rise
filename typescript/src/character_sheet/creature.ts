@@ -831,6 +831,15 @@ export class Creature implements CreaturePropertyMap {
     };
   }
 
+  hasKnowledgeResults(): boolean {
+    return Boolean(
+      this.knowledge_result_easy ||
+      this.knowledge_result_normal ||
+      this.knowledge_result_hard ||
+      this.knowledge_result_legendary,
+    );
+  }
+
   addTrait(traitName: RiseTrait) {
     const modifier: CustomModifierConfig = { name: traitName };
 
