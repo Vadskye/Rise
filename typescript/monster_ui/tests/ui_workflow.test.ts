@@ -8,7 +8,7 @@ import { fileURLToPath } from 'url';
 import http from 'http';
 import puppeteer, { Browser } from 'puppeteer';
 import { createServer, ViteDevServer } from 'vite';
-import { dbPath, generatedTsPath } from '../server/db';
+import { paths } from '../server/db';
 
 const { app } = await import('../server/index');
 
@@ -23,17 +23,8 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
   let browser: Browser;
 
   before(async () => {
-    console.log('Initializing test database and generated source files for E2E tests...');
-    // Initialize temporary test JSON file from original
-    const originalDbPath = path.resolve(__dirname, '../monsters_from_ui.json');
-    if (fs.existsSync(originalDbPath)) {
-      fs.copyFileSync(originalDbPath, dbPath);
-    }
-    // Initialize temporary test TS file from original
-    const originalTsPath = path.resolve(__dirname, '../../src/monsters/individual_monsters/monsters_from_ui.ts');
-    if (fs.existsSync(originalTsPath)) {
-      fs.copyFileSync(originalTsPath, generatedTsPath);
-    }
+    // setup-env.ts already configured isolated temp-file paths before this module loaded.
+    // No copy needed — getDb() creates an empty database if none exists.
 
     // 1. Start Express Server on random port
     await new Promise<void>((resolve) => {
@@ -84,12 +75,12 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
       await expressServer.close();
     }
 
-    // Clean up temporary test files
-    if (fs.existsSync(dbPath)) {
-      fs.unlinkSync(dbPath);
+    // Clean up temp files created during this test run
+    if (fs.existsSync(paths.dbPath)) {
+      fs.unlinkSync(paths.dbPath);
     }
-    if (fs.existsSync(generatedTsPath)) {
-      fs.unlinkSync(generatedTsPath);
+    if (fs.existsSync(paths.generatedTsPath)) {
+      fs.unlinkSync(paths.generatedTsPath);
     }
   });
 
@@ -207,7 +198,7 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
 
     // 7. Verify the actual files saved to disk
     // Verify JSON database contains the new monster with the custom freeform code
-    const dbRaw = fs.readFileSync(dbPath, 'utf8');
+    const dbRaw = fs.readFileSync(paths.dbPath, 'utf8');
     const dbJson = JSON.parse(dbRaw);
     const savedMonster = dbJson.monsters.find((m: any) => m.name === 'Integration Gargoyle');
     assert.ok(savedMonster, 'Database JSON should contain the new monster');
@@ -223,7 +214,7 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
     );
 
     // Verify generated TypeScript file
-    const generatedTs = fs.readFileSync(generatedTsPath, 'utf8');
+    const generatedTs = fs.readFileSync(paths.generatedTsPath, 'utf8');
     assert.ok(
       generatedTs.includes("grimoire.addMonster('Integration Gargoyle'"),
       'Generated TS should register the monster',

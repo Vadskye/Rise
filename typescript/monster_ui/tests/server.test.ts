@@ -3,10 +3,8 @@ import './setup-env';
 import { test, describe, before, after } from 'node:test';
 import assert from 'node:assert';
 import * as fs from 'fs';
-import * as path from 'path';
-import { fileURLToPath } from 'url';
 import http from 'http';
-import { dbPath, generatedTsPath, getDb } from '../server/db';
+import { paths, getDb } from '../server/db';
 import {
   formatMissingWeaponWarning,
   formatFreeformCodeWarning,
@@ -17,27 +15,13 @@ import {
 // Dynamically import the Express app to ensure process.env.NODE_ENV is set first
 const { app } = await import('../server/index');
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
 describe('Monster UI Integration Tests (Full Server)', () => {
   let server: http.Server;
   let baseUrl: string;
 
   before(async () => {
-    console.log('Initializing test database and generated source files...');
-    // Initialize temporary test JSON file from original
-    const originalDbPath = path.resolve(__dirname, '../monsters_from_ui.json');
-    if (fs.existsSync(originalDbPath)) {
-      fs.copyFileSync(originalDbPath, dbPath);
-    }
-    // Initialize temporary test TS file from original
-    const originalTsPath = path.resolve(__dirname, '../../src/monsters/individual_monsters/monsters_from_ui.ts');
-    if (fs.existsSync(originalTsPath)) {
-      fs.copyFileSync(originalTsPath, generatedTsPath);
-    }
-
-    // 3. Start the Express Server on a random port
+    // Start the Express Server on a random port.
+    // setup-env.ts already configured isolated temp-file paths before this module loaded.
     console.log('Starting full Express server for tests...');
     await new Promise<void>((resolve) => {
       server = app.listen(0, () => {
@@ -53,17 +37,16 @@ describe('Monster UI Integration Tests (Full Server)', () => {
 
   after(() => {
     console.log('Stopping test server and cleaning up test files...');
-    // 1. Close Server
     if (server) {
       server.close();
     }
 
-    // 2. Clean up temporary test files
-    if (fs.existsSync(dbPath)) {
-      fs.unlinkSync(dbPath);
+    // Clean up temp files created during this test run
+    if (fs.existsSync(paths.dbPath)) {
+      fs.unlinkSync(paths.dbPath);
     }
-    if (fs.existsSync(generatedTsPath)) {
-      fs.unlinkSync(generatedTsPath);
+    if (fs.existsSync(paths.generatedTsPath)) {
+      fs.unlinkSync(paths.generatedTsPath);
     }
   });
 
@@ -123,8 +106,8 @@ describe('Monster UI Integration Tests (Full Server)', () => {
     assert.strictEqual(savedMonster.freeformCode, '// full server test individual');
 
     // Verify generated TS
-    assert.ok(fs.existsSync(generatedTsPath));
-    const generatedContent = fs.readFileSync(generatedTsPath, 'utf8');
+    assert.ok(fs.existsSync(paths.generatedTsPath));
+    const generatedContent = fs.readFileSync(paths.generatedTsPath, 'utf8');
     assert.ok(generatedContent.includes(`grimoire.addMonster('${newMonsterName}'`));
   });
 
@@ -147,7 +130,7 @@ describe('Monster UI Integration Tests (Full Server)', () => {
           monsters: [
             {
               name: testGroupMonsterName,
-               requiredProperties: {
+              requiredProperties: {
                 alignment: 'neutral',
                 base_class: 'warrior',
                 elite: false,
@@ -187,8 +170,8 @@ describe('Monster UI Integration Tests (Full Server)', () => {
     assert.ok(savedMonster);
 
     // Verify generated TS
-    assert.ok(fs.existsSync(generatedTsPath));
-    const generatedContent = fs.readFileSync(generatedTsPath, 'utf8');
+    assert.ok(fs.existsSync(paths.generatedTsPath));
+    const generatedContent = fs.readFileSync(paths.generatedTsPath, 'utf8');
     assert.ok(generatedContent.includes(`name: '${testGroupName}'`));
     assert.ok(generatedContent.includes(`'${testGroupMonsterName}'`));
   });
@@ -303,11 +286,9 @@ describe('Monster UI Integration Tests (Full Server)', () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ monster: monsterWithStrikeWarn }),
     });
-     assert.strictEqual(res1.status, 200);
+    assert.strictEqual(res1.status, 200);
     const result1 = await res1.json();
-    assert.ok(
-      result1.warnings.includes(formatMissingWeaponWarning('Basic Strike')),
-    );
+    assert.ok(result1.warnings.includes(formatMissingWeaponWarning('Basic Strike')));
 
     const monsterWithStrikeOk = {
       name: `StrikeOkMonster_${Date.now()}`,
@@ -339,9 +320,7 @@ describe('Monster UI Integration Tests (Full Server)', () => {
     });
     assert.strictEqual(res2.status, 200);
     const result2 = await res2.json();
-    assert.ok(
-      !result2.warnings.includes(formatMissingWeaponWarning('Basic Strike')),
-    );
+    assert.ok(!result2.warnings.includes(formatMissingWeaponWarning('Basic Strike')));
 
     const monsterWithDisplayNameStrikeNonWarn = {
       name: `DisplayNameStrikeNonWarn_${Date.now()}`,
@@ -373,9 +352,7 @@ describe('Monster UI Integration Tests (Full Server)', () => {
     });
     assert.strictEqual(res3.status, 200);
     const result3 = await res3.json();
-    assert.ok(
-      !result3.warnings.includes(formatMissingWeaponWarning('Make Strike')),
-    );
+    assert.ok(!result3.warnings.includes(formatMissingWeaponWarning('Make Strike')));
   });
 
   test('POST /api/preview validates presence of freeform and shared freeform code warnings', async () => {
@@ -401,9 +378,7 @@ describe('Monster UI Integration Tests (Full Server)', () => {
     });
     assert.strictEqual(res1.status, 200);
     const result1 = await res1.json();
-    assert.ok(
-      result1.warnings.includes(formatFreeformCodeWarning(monsterWithFreeform.name)),
-    );
+    assert.ok(result1.warnings.includes(formatFreeformCodeWarning(monsterWithFreeform.name)));
 
     const monsterWithSharedFreeform = {
       name: `SharedFreeformMonster_${Date.now()}`,
@@ -467,9 +442,7 @@ describe('Monster UI Integration Tests (Full Server)', () => {
     assert.strictEqual(res1.status, 200);
     const result1 = await res1.json();
     assert.strictEqual(result1.success, true);
-    assert.ok(
-      !result1.warnings.includes(formatNoStandardActionWarning(monsterWithNoError.name)),
-    );
+    assert.ok(!result1.warnings.includes(formatNoStandardActionWarning(monsterWithNoError.name)));
 
     const monsterWithError = {
       name: `ErrorMonster_${Date.now()}`,
@@ -493,8 +466,6 @@ describe('Monster UI Integration Tests (Full Server)', () => {
     assert.strictEqual(res2.status, 200);
     const result2 = await res2.json();
     assert.strictEqual(result2.success, true);
-    assert.ok(
-      result2.warnings.includes(formatNoStandardActionWarning(monsterWithError.name)),
-    );
+    assert.ok(result2.warnings.includes(formatNoStandardActionWarning(monsterWithError.name)));
   });
 });

@@ -8,7 +8,7 @@ import { fileURLToPath } from 'url';
 import http from 'http';
 import puppeteer, { Browser } from 'puppeteer';
 import { createServer, ViteDevServer } from 'vite';
-import { dbPath, generatedTsPath } from '../server/db';
+import { paths, saveDb } from '../server/db';
 
 const { app } = await import('../server/index');
 
@@ -23,17 +23,25 @@ describe('Monster UI Tab Layout Tests', () => {
   let browser: Browser;
 
   before(async () => {
-    console.log('Initializing test database and generated source files for UI tests...');
-    // Initialize temporary test JSON file from original
-    const originalDbPath = path.resolve(__dirname, '../monsters_from_ui.json');
-    if (fs.existsSync(originalDbPath)) {
-      fs.copyFileSync(originalDbPath, dbPath);
-    }
-    // Initialize temporary test TS file from original
-    const originalTsPath = path.resolve(__dirname, '../../src/monsters/individual_monsters/monsters_from_ui.ts');
-    if (fs.existsSync(originalTsPath)) {
-      fs.copyFileSync(originalTsPath, generatedTsPath);
-    }
+    // setup-env.ts already configured isolated temp-file paths before this module loaded.
+    // Seed one minimal monster so the sidebar has a .list-item to interact with.
+    saveDb({
+      monsters: [{
+        name: 'Seed Monster',
+        requiredProperties: {
+          alignment: 'neutral',
+          base_class: 'warrior',
+          elite: false,
+          creature_origin: 'natural',
+          creature_type: 'beast',
+          size: 'medium',
+          level: 1,
+        },
+        weapons: [{ name: 'spear', addStandard: true }],
+        freeformCode: '',
+      }],
+      monsterGroups: [],
+    });
 
     // 1. Start Express Server on random port
     await new Promise<void>((resolve) => {
@@ -84,12 +92,12 @@ describe('Monster UI Tab Layout Tests', () => {
       await expressServer.close();
     }
 
-    // Clean up temporary test files
-    if (fs.existsSync(dbPath)) {
-      fs.unlinkSync(dbPath);
+    // Clean up temp files created during this test run
+    if (fs.existsSync(paths.dbPath)) {
+      fs.unlinkSync(paths.dbPath);
     }
-    if (fs.existsSync(generatedTsPath)) {
-      fs.unlinkSync(generatedTsPath);
+    if (fs.existsSync(paths.generatedTsPath)) {
+      fs.unlinkSync(paths.generatedTsPath);
     }
   });
 

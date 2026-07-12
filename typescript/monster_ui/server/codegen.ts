@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
-import { generatedTsPath } from './paths';
+import { paths } from './paths';
 import { CustomMonsterAbility } from '@src/character_sheet/creature';
 import { MonsterAttackUsageTime } from '@src/character_sheet/sheet_worker';
 import { RiseAbilityDefinitionTag } from '@src/character_sheet/rise_data';
@@ -454,7 +454,7 @@ ${bodyCode}
 
 export function saveTypeScriptFile(db: DatabaseData) {
   const tsCode = generateTypeScriptCode(db);
-  const targetPath = generatedTsPath;
+  const targetPath = paths.generatedTsPath;
 
   // Ensure the parent directory exists
   const parentDir = path.dirname(targetPath);
