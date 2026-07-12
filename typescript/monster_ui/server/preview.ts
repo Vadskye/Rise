@@ -21,7 +21,7 @@ import { showDetailedTiming } from './timing';
  */
 export function generatePreview(
   monster: MonsterData,
-  group?: MonsterGroupData | string,
+  group?: MonsterGroupData,
   _groupName?: string,
 ) {
   const start = performance.now();
