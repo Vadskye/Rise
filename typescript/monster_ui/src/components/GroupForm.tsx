@@ -65,8 +65,8 @@ export const GroupForm: React.FC<GroupFormProps> = ({
 
       <div className="form-group">
         <label>Group Knowledge Table</label>
-        <div className="form-row-grid group-knowledge-table" style={{ marginTop: '5px' }}>
-          <div>
+        <div className="knowledge-grid group-knowledge-table" style={{ marginTop: '5px' }}>
+          <div className="form-group">
             <label style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>Normal</label>
             <textarea
               rows={3}
@@ -79,7 +79,7 @@ export const GroupForm: React.FC<GroupFormProps> = ({
               }
             />
           </div>
-          <div>
+          <div className="form-group">
             <label style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>Hard</label>
             <textarea
               rows={3}
@@ -92,7 +92,7 @@ export const GroupForm: React.FC<GroupFormProps> = ({
               }
             />
           </div>
-          <div>
+          <div className="form-group">
             <label style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>Legendary</label>
             <textarea
               rows={3}
