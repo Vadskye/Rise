@@ -18,7 +18,7 @@ import {
   RiseAbilityDefinitionTag,
 } from '@src/character_sheet/rise_data';
 import { SphereName } from '@src/abilities/mystic_spheres';
-import { BodyArmor } from '@src/monsters/equipment';
+import { BodyArmor, Shield } from '@src/monsters/equipment';
 import { MonsterWeapon } from '@src/monsters/weapons';
 import { showDetailedTiming } from './timing';
 import { getManeuverByName } from '@src/abilities/combat_styles';
@@ -144,8 +144,11 @@ export function buildCreature(monster: MonsterData, sharedFreeformCode?: string)
       }
     }
 
-    if (monster.equippedArmor) {
-      creature.setEquippedArmorName({ bodyArmor: monster.equippedArmor as BodyArmor });
+    if (monster.equippedArmor || monster.equippedShield) {
+      creature.setEquippedArmorName({
+        bodyArmor: monster.equippedArmor as BodyArmor | undefined,
+        shield: monster.equippedShield as Shield | undefined,
+      });
     }
 
     if (monster.properties && Object.keys(monster.properties).length > 0) {

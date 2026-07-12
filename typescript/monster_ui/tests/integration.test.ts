@@ -140,6 +140,7 @@ describe('Monster UI Integration Tests (Serverless)', () => {
           resistances: ['Cold'],
           vulnerabilities: ['Acid'],
           equippedArmor: 'breastplate',
+          equippedShield: 'standard shield',
           properties: {
             has_art: true,
           },
@@ -161,6 +162,7 @@ describe('Monster UI Integration Tests (Serverless)', () => {
     assert.ok(stats.skills.includes('stealth'));
     assert.ok(stats.traits.includes('quadrupedal'));
     assert.ok(stats.equipment.includes('breastplate'));
+    assert.ok(stats.equipment.includes('standard shield'));
 
     assert.ok(fs.existsSync(generatedTsPath));
     const generatedContent = fs.readFileSync(generatedTsPath, 'utf8');
@@ -174,7 +176,7 @@ describe('Monster UI Integration Tests (Serverless)', () => {
     assert.ok(generatedContent.includes(`creature.addResistant("Cold")`));
     assert.ok(generatedContent.includes(`creature.addVulnerability("Acid")`));
     assert.ok(
-      generatedContent.includes(`creature.setEquippedArmorName({ bodyArmor: "breastplate" })`),
+      generatedContent.includes(`creature.setEquippedArmorName({ bodyArmor: "breastplate", shield: "standard shield" })`),
     );
     assert.ok(generatedContent.includes(`"has_art":true`));
   });
