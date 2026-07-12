@@ -11,6 +11,7 @@ import {
   formatMissingWeaponWarning,
   formatFreeformCodeWarning,
   formatSharedFreeformCodeWarning,
+  formatNoStandardActionError,
 } from '../src/utils/validation';
 
 // Dynamically import the Express app to ensure process.env.NODE_ENV is set first
@@ -107,6 +108,7 @@ describe('Monster UI Integration Tests (Full Server)', () => {
             size: 'medium',
             level: 1,
           },
+          weapons: [{ name: 'spear', addStandard: true }],
           freeformCode: '// full server test individual',
         },
       ],
@@ -156,7 +158,7 @@ describe('Monster UI Integration Tests (Full Server)', () => {
           monsters: [
             {
               name: testGroupMonsterName,
-              requiredProperties: {
+               requiredProperties: {
                 alignment: 'neutral',
                 base_class: 'warrior',
                 elite: false,
@@ -165,6 +167,7 @@ describe('Monster UI Integration Tests (Full Server)', () => {
                 size: 'medium',
                 level: 1,
               },
+              weapons: [{ name: 'spear', addStandard: true }],
               freeformCode: '// server group member code',
             },
           ],
@@ -213,6 +216,7 @@ describe('Monster UI Integration Tests (Full Server)', () => {
         size: 'medium',
         level: 1,
       },
+      weapons: [{ name: 'spear', addStandard: true }],
       freeformCode: '// rapid switch A',
     };
 
@@ -227,6 +231,7 @@ describe('Monster UI Integration Tests (Full Server)', () => {
         size: 'medium',
         level: 2,
       },
+      weapons: [{ name: 'spear', addStandard: true }],
       freeformCode: '// rapid switch B',
     };
 
@@ -396,6 +401,7 @@ describe('Monster UI Integration Tests (Full Server)', () => {
         size: 'medium',
         level: 1,
       },
+      weapons: [{ name: 'spear', addStandard: true }],
       freeformCode: 'creature.addCustomSense("Infravision");',
     };
 
@@ -421,6 +427,7 @@ describe('Monster UI Integration Tests (Full Server)', () => {
         size: 'medium',
         level: 1,
       },
+      weapons: [{ name: 'spear', addStandard: true }],
       freeformCode: '',
     };
 
@@ -446,5 +453,59 @@ describe('Monster UI Integration Tests (Full Server)', () => {
       body: '{"invalid": circular structure or bad json',
     });
     assert.strictEqual(resPost.status, 400);
+  });
+
+  test('POST /api/preview validates that a monster has at least one standard action ability', async () => {
+    const monsterWithNoError = {
+      name: `NoErrorMonster_${Date.now()}`,
+      requiredProperties: {
+        alignment: 'neutral',
+        base_class: 'warrior',
+        elite: false,
+        creature_origin: 'natural',
+        creature_type: 'beast',
+        size: 'medium',
+        level: 1,
+      },
+      weapons: [{ name: 'spear', addStandard: true }],
+    };
+
+    const res1 = await fetch(`${baseUrl}/api/preview`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ monster: monsterWithNoError }),
+    });
+    assert.strictEqual(res1.status, 200);
+    const result1 = await res1.json();
+    assert.strictEqual(result1.success, true);
+    assert.ok(
+      !result1.errors.includes(formatNoStandardActionError(monsterWithNoError.name)),
+    );
+
+    const monsterWithError = {
+      name: `ErrorMonster_${Date.now()}`,
+      requiredProperties: {
+        alignment: 'neutral',
+        base_class: 'warrior',
+        elite: false,
+        creature_origin: 'natural',
+        creature_type: 'beast',
+        size: 'medium',
+        level: 1,
+      },
+      weapons: [],
+    };
+
+    const res2 = await fetch(`${baseUrl}/api/preview`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ monster: monsterWithError }),
+    });
+    assert.strictEqual(res2.status, 200);
+    const result2 = await res2.json();
+    assert.strictEqual(result2.success, false);
+    assert.ok(
+      result2.errors.includes(formatNoStandardActionError(monsterWithError.name)),
+    );
   });
 });

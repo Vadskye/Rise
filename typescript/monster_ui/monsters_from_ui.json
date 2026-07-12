@@ -114,7 +114,7 @@
             "awareness"
           ],
           "equippedArmor": "buff leather",
-          "freeformCode": "creature.addSpell('Word of Power');\ncreature.setEquippedArmorName({ shield: 'standard shield' });\ncreature.addWeaponMult('spear', { displayName: 'Consecrated Strike', isMagical: true });",
+          "freeformCode": "",
           "standardAbilities": [
             {
               "type": "spell",
@@ -137,6 +137,19 @@
               }
             }
           ]
+        },
+        {
+          "name": "Goblin Chief",
+          "requiredProperties": {
+            "alignment": "chaotic evil",
+            "base_class": "leader",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_type": "beast",
+            "size": "medium",
+            "level": 3
+          },
+          "freeformCode": ""
         }
       ],
       "knowledge": {

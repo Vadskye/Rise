@@ -40,7 +40,7 @@ export function replaceAbilityPlaceholders(
   latex: string,
   context: ReplacementContext,
 ) {
-  const isMagical = context.isMagical ?? false;
+  const isMagical = context.isMagical || (typeof monster.isWeaponMagical === 'function' && monster.isWeaponMagical(context.weapon)) || false;
 
   latex = replacePowerTerms(latex, monster, isMagical);
   latex = replaceDamageRankTerms(latex, monster, isMagical);
