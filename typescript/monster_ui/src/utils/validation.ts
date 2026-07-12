@@ -82,6 +82,9 @@ export function checkValidMonster(
   if (creature.intelligence > -5 && creature.creature_type === 'beast') {
     warnings.push('Beast should have an Intelligence of -5 or less');
   }
+  if (creature.creature_type === 'humanoid' && !creature.body_armor_name) {
+    warnings.push('Humanoids should usually have body armor');
+  }
 
   const standardAbilities = creature
     .getActiveAbilities()
