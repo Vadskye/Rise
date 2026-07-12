@@ -44,10 +44,7 @@ export interface BuildResult {
  * Captures all script/engine errors and overrides console.warn to log alignment
  * or verification warnings.
  */
-export function buildCreature(
-  monster: MonsterData,
-  group?: MonsterGroupData | string,
-): BuildResult {
+export function buildCreature(monster: MonsterData, group?: MonsterGroupData): BuildResult {
   const start = performance.now();
   const { name, requiredProperties, freeformCode } = monster;
 
@@ -346,7 +343,7 @@ export function buildCreature(
 
     const calcDuration = performance.now() - calcStart;
 
-    warnings.push(...checkValidMonster(creature, monster));
+    warnings.push(...checkValidMonster(creature, monster, group));
 
     const totalDuration = performance.now() - start;
     if (showDetailedTiming) {

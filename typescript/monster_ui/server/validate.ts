@@ -8,7 +8,7 @@ import { generatePreview } from './preview';
  */
 export function validateMonster(
   monster: MonsterData,
-  group?: MonsterGroupData | string,
+  group?: MonsterGroupData,
   groupName?: string,
 ) {
   const preview = generatePreview(monster, group, groupName);
