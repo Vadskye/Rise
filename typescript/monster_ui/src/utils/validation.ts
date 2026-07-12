@@ -1,3 +1,6 @@
+import type { MonsterData } from '../../server/codegen';
+import { Creature } from '@src/character_sheet/creature';
+
 /**
  * Shared validation logic and warning message generation for the Monster Creator.
  * Centralizing this logic avoids duplication and prevents silent mismatches
@@ -53,4 +56,40 @@ export function formatSharedFreeformCodeWarning(name: string): string {
  */
 export function formatNoStandardActionWarning(name: string): string {
   return `Monster "${name}" must have at least one standard action ability.`;
+}
+
+export function checkValidMonster(creature: Creature, monster: MonsterData): string[] {
+  const warnings: string[] = [];
+
+  if (creature.name === creature.name.toLowerCase()) {
+    warnings.push('Name must be title case');
+  }
+  if (!creature.alignment) {
+    warnings.push('Must have alignment');
+  }
+
+  if (creature.intelligence >= -2 && creature.getTrainedSkillNames().length === 0) {
+    warnings.push('Has no trained skills');
+  }
+
+  if (creature.intelligence > -8 && creature.creature_type === 'animal') {
+    warnings.push('Animal should have an Intelligence of -8 or less');
+  }
+  if (creature.intelligence > -5 && creature.creature_type === 'beast') {
+    warnings.push('Beast should have an Intelligence of -5 or less');
+  }
+
+  // Check for standard action abilities
+  const activeAbilities = creature.getActiveAbilities();
+  const standardAbilities = activeAbilities.filter(
+    (ability) => (ability.usageTime || 'standard') === 'standard',
+  );
+  const hasStandardWeapon =
+    (monster.weapons && monster.weapons.length > 0) ||
+    (monster.standardAbilities || []).some((a) => a.name === 'Equip Weapon' && a.options?.weapon);
+  if (standardAbilities.length === 0 && !hasStandardWeapon) {
+    warnings.push(formatNoStandardActionWarning(creature.name));
+  }
+
+  return warnings;
 }
