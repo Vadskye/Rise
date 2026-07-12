@@ -62,9 +62,7 @@ export const IdentityTab: React.FC<IdentityTabProps> = ({
           onChange={(e) => onChangeMonster({ ...monsterData, name: e.target.value })}
           placeholder="e.g. Corpsetree"
         />
-        {getInlineError('name') && (
-          <div className="inline-error">❌ {getInlineError('name')}</div>
-        )}
+        {getInlineError('name') && <div className="inline-error">❌ {getInlineError('name')}</div>}
         {getInlineWarning('name') && (
           <div className="inline-warning">⚠️ {getInlineWarning('name')}</div>
         )}

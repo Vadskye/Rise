@@ -90,7 +90,13 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
   setExpandedCard,
   warnings = [],
 }) => {
-  const SPECIAL_MANEUVERS = ['Equip Weapon', 'Weapon Multiplier', 'Grappling Strike', 'Sneak Attack', 'Latch On'];
+  const SPECIAL_MANEUVERS = [
+    'Equip Weapon',
+    'Weapon Multiplier',
+    'Grappling Strike',
+    'Sneak Attack',
+    'Latch On',
+  ];
 
   const addStandardAbility = (type: 'spell' | 'maneuver', name: string) => {
     const isSpecial = SPECIAL_MANEUVERS.includes(name);
@@ -202,7 +208,10 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
                       )}
                     </strong>
                   </div>
-                  <div className="ability-card-header-controls" onClick={(e) => e.stopPropagation()}>
+                  <div
+                    className="ability-card-header-controls"
+                    onClick={(e) => e.stopPropagation()}
+                  >
                     {ability.type === 'maneuver' && (
                       <div className="quick-weapon-select-container">
                         <select
@@ -226,10 +235,7 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
                           ))}
                         </select>
                         {warnings.some((w) =>
-                          isMissingWeaponWarning(
-                            w,
-                            ability.options?.displayName || ability.name,
-                          ),
+                          isMissingWeaponWarning(w, ability.options?.displayName || ability.name),
                         ) && (
                           <span
                             className="quick-weapon-warning"

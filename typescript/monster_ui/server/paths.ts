@@ -13,7 +13,10 @@ if (!fs.existsSync(realDbPath)) {
   fs.writeFileSync(realDbPath, JSON.stringify(defaultDb, null, 2), 'utf8');
 }
 
-const realTsPath = path.resolve(__dirname, '../../src/monsters/individual_monsters/monsters_from_ui.ts');
+const realTsPath = path.resolve(
+  __dirname,
+  '../../src/monsters/individual_monsters/monsters_from_ui.ts',
+);
 if (!fs.existsSync(realTsPath)) {
   const parentDir = path.dirname(realTsPath);
   if (!fs.existsSync(parentDir)) {
@@ -24,7 +27,10 @@ if (!fs.existsSync(realTsPath)) {
 }
 
 const productionDbPath = path.resolve(__dirname, '../monsters_from_ui.json');
-const productionTsPath = path.resolve(__dirname, '../../src/monsters/individual_monsters/monsters_from_ui.ts');
+const productionTsPath = path.resolve(
+  __dirname,
+  '../../src/monsters/individual_monsters/monsters_from_ui.ts',
+);
 
 /**
  * Mutable paths object. All server code reads from this at call-time so that

@@ -2,7 +2,6 @@ import React from 'react';
 import { MonsterData } from '../types/monster';
 import { PillListInput } from './PillListInput';
 
-
 // Note: Standard traits in original code were:
 // 'amphibious', 'blooded', 'bloodless', 'corporeal', 'dynamic', 'ensouled', 'floating',
 // 'immortal', 'incorporeal', 'invisible', 'legless', 'living', 'mindless', 'mortal',
@@ -90,10 +89,7 @@ interface TraitsTabProps {
   onChangeMonster: (updated: MonsterData) => void;
 }
 
-export const TraitsTab: React.FC<TraitsTabProps> = ({
-  monsterData,
-  onChangeMonster,
-}) => {
+export const TraitsTab: React.FC<TraitsTabProps> = ({ monsterData, onChangeMonster }) => {
   const [traitSearch, setTraitSearch] = React.useState('');
 
   const traits = monsterData.traits || [];
@@ -178,9 +174,7 @@ export const TraitsTab: React.FC<TraitsTabProps> = ({
                 htmlFor={`trait-${trait}`}
                 style={{
                   fontSize: '0.85rem',
-                  color: traits.includes(trait)
-                    ? 'var(--text-primary)'
-                    : 'var(--text-secondary)',
+                  color: traits.includes(trait) ? 'var(--text-primary)' : 'var(--text-secondary)',
                   cursor: 'pointer',
                 }}
               >
@@ -203,9 +197,7 @@ export const TraitsTab: React.FC<TraitsTabProps> = ({
       <PillListInput
         label="Custom Movement Speeds"
         items={monsterData.customMovementSpeeds || []}
-        onChange={(updated) =>
-          onChangeMonster({ ...monsterData, customMovementSpeeds: updated })
-        }
+        onChange={(updated) => onChangeMonster({ ...monsterData, customMovementSpeeds: updated })}
         placeholder="e.g. Fly 30 ft."
         emptyMessage="No custom movement speeds added (defaults to ground speed)."
       />

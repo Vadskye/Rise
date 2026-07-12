@@ -26,20 +26,22 @@ describe('Monster UI Debounce/Timing Tests', () => {
     // setup-env.ts already configured isolated temp-file paths before this module loaded.
     // Seed one minimal monster so the sidebar has a .list-item to interact with.
     saveDb({
-      monsters: [{
-        name: 'Seed Monster',
-        requiredProperties: {
-          alignment: 'neutral',
-          base_class: 'warrior',
-          elite: false,
-          creature_origin: 'natural',
-          creature_type: 'beast',
-          size: 'medium',
-          level: 1,
+      monsters: [
+        {
+          name: 'Seed Monster',
+          requiredProperties: {
+            alignment: 'neutral',
+            base_class: 'warrior',
+            elite: false,
+            creature_origin: 'natural',
+            creature_type: 'beast',
+            size: 'medium',
+            level: 1,
+          },
+          weapons: [{ name: 'spear', addStandard: true }],
+          freeformCode: '',
         },
-        weapons: [{ name: 'spear', addStandard: true }],
-        freeformCode: '',
-      }],
+      ],
       monsterGroups: [],
     });
 

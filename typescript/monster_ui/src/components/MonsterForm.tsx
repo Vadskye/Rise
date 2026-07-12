@@ -139,8 +139,8 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
       </div>
 
       {/* Tab 1: Identity / Group Settings */}
-      {activeTab === 'identity' && (
-        isGroup && groupData && onChangeGroup ? (
+      {activeTab === 'identity' &&
+        (isGroup && groupData && onChangeGroup ? (
           <GroupForm
             groupData={groupData}
             onChangeGroup={onChangeGroup}
@@ -154,50 +154,38 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
             errors={errors}
             warnings={warnings}
           />
-        ) : null
-      )}
+        ) : null)}
 
       {/* Tab 2: Attributes & Skills */}
       {activeTab === 'stats' && !isGroup && monsterData && onChangeMonster && (
-        <AttributesAndSkillsTab
-          monsterData={monsterData}
-          onChangeMonster={onChangeMonster}
-        />
+        <AttributesAndSkillsTab monsterData={monsterData} onChangeMonster={onChangeMonster} />
       )}
 
       {/* Tab 3: Traits & Senses */}
-      {activeTab === 'traits' && (
-        isGroup && groupData && onChangeGroup ? (
+      {activeTab === 'traits' &&
+        (isGroup && groupData && onChangeGroup ? (
           <TraitsTab
             monsterData={groupData as unknown as MonsterData}
             onChangeMonster={handleGroupFieldsChange}
           />
         ) : monsterData && onChangeMonster ? (
-          <TraitsTab
-            monsterData={monsterData}
-            onChangeMonster={onChangeMonster}
-          />
-        ) : null
-      )}
+          <TraitsTab monsterData={monsterData} onChangeMonster={onChangeMonster} />
+        ) : null)}
 
       {/* Tab 4: Combat & Gear */}
-      {activeTab === 'combat' && (
-        isGroup && groupData && onChangeGroup ? (
+      {activeTab === 'combat' &&
+        (isGroup && groupData && onChangeGroup ? (
           <CombatAndGearTab
             monsterData={groupData as unknown as MonsterData}
             onChangeMonster={handleGroupFieldsChange}
           />
         ) : monsterData && onChangeMonster ? (
-          <CombatAndGearTab
-            monsterData={monsterData}
-            onChangeMonster={onChangeMonster}
-          />
-        ) : null
-      )}
+          <CombatAndGearTab monsterData={monsterData} onChangeMonster={onChangeMonster} />
+        ) : null)}
 
       {/* Tab: Spells & Abilities */}
-      {activeTab === 'abilities' && (
-        isGroup && groupData && onChangeGroup ? (
+      {activeTab === 'abilities' &&
+        (isGroup && groupData && onChangeGroup ? (
           <AbilitiesTab
             monsterData={groupData as unknown as MonsterData}
             onChangeMonster={handleGroupFieldsChange}
@@ -211,8 +199,7 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
             referenceData={referenceData}
             warnings={warnings}
           />
-        ) : null
-      )}
+        ) : null)}
 
       {/* Tab 5: Knowledge & Script */}
       {activeTab === 'knowledge' && !isGroup && monsterData && onChangeMonster && (
