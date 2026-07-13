@@ -34,7 +34,7 @@ describe('Monster UI Debounce/Timing Tests', () => {
             base_class: 'warrior',
             elite: false,
             creature_origin: 'natural',
-            creature_type: 'beast',
+            creature_types: ['beast'],
             size: 'medium',
             level: 1,
           },

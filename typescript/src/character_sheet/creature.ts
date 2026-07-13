@@ -70,7 +70,7 @@ export interface KnowledgeResultConfig {
 }
 
 // These have unique typedefs beyond the standard string/number/bool
-type CustomCreatureProperty = 'base_class' | 'creature_origin' | 'creature_type' | 'role' | 'size';
+type CustomCreatureProperty = 'base_class' | 'creature_origin' | 'creature_type' | 'creature_types' | 'role' | 'size';
 
 type NumericCreatureProperty =
   | 'accuracy'
@@ -151,7 +151,8 @@ export type CreaturePropertyMap = {
   alignment: RiseAlignment;
   base_class: RiseBaseClass;
   creature_origin: RiseCreatureOrigin;
-  creature_type: RiseCreatureType;
+  creature_types: RiseCreatureType[];
+  creature_type?: RiseCreatureType;
   role: RiseRole;
   size: RiseSize;
 } & Record<NumericCreatureProperty, number> &
@@ -163,10 +164,13 @@ export type CreatureRequiredProperties =
   | 'base_class'
   | 'elite'
   | 'creature_origin'
-  | 'creature_type'
   | 'size'
   | 'level';
-export type CreatureRequiredPropertyMap = Pick<CreaturePropertyMap, CreatureRequiredProperties>;
+
+export type CreatureRequiredPropertyMap = Pick<CreaturePropertyMap, CreatureRequiredProperties> & {
+  creature_types?: RiseCreatureType[];
+  creature_type?: RiseCreatureType;
+};
 
 type CreatureProperty =
   | CustomCreatureProperty
@@ -312,12 +316,18 @@ export class Creature implements CreaturePropertyMap {
   // TODO: redesign creature types and tags; plants should use knowledge (nature), etc.
   getRelevantKnowledge(): RiseKnowledgeSkill {
     const knowledgeFromOrigin = KNOWLEDGE_BY_ORIGIN[this.creature_origin];
-    const knowledgeFromType = KNOWLEDGE_BY_TYPE[this.creature_type];
+    let knowledgeFromType: RiseKnowledgeSkill | undefined;
+    for (const type of this.creature_types) {
+      if (KNOWLEDGE_BY_TYPE[type]) {
+        knowledgeFromType = KNOWLEDGE_BY_TYPE[type];
+        break;
+      }
+    }
     const defaultKnowledge = knowledgeFromType || knowledgeFromOrigin;
 
     if (!defaultKnowledge) {
       throw new Error(
-        `Unable to get relevant knowledge for creature ${this.name} with origin ${this.creature_origin} and type ${this.creature_type}.`,
+        `Unable to get relevant knowledge for creature ${this.name} with origin ${this.creature_origin} and types ${this.creature_types.join(', ')}.`,
       );
     }
     // TODO: return more than one valid knowledge skill. For now, just return the first
@@ -909,12 +919,18 @@ export class Creature implements CreaturePropertyMap {
     this.applyStandardTraits();
   }
 
-  // Always use this instead of calling `this.sheet.setProperties` directly to ensure that
-  // the cache is reset. The time cost of `.clearCache` is ~0, so even in a function that
-  // sets multiple sheet properties, there's no advantage in `.setProperties` directly.
   setProperties(properties: Partial<CreaturePropertyMap>) {
     setCurrentCharacterSheet(this.sheet.characterName);
-    this.sheet.setProperties(properties);
+    const sheetProperties: any = {};
+    for (const key of Object.keys(properties)) {
+      if (key === 'creature_types') {
+        const types = (properties as any).creature_types;
+        sheetProperties.creature_types = Array.isArray(types) ? types.join(', ') : '';
+      } else {
+        sheetProperties[key] = (properties as any)[key];
+      }
+    }
+    this.sheet.setProperties(sheetProperties);
     this.clearCache();
   }
 
@@ -1009,8 +1025,20 @@ export class Creature implements CreaturePropertyMap {
     return this.getPropertyValue('creature_origin');
   }
 
-  public get creature_type(): RiseCreatureType {
-    return this.getPropertyValue('creature_type');
+  public get creature_types(): RiseCreatureType[] {
+    const val = this.getPropertyValue('creature_types' as any) as any;
+    if (typeof val === 'string' && val) {
+      return val.split(',').map((t) => t.trim().toLowerCase() as RiseCreatureType).filter(Boolean);
+    }
+    if (Array.isArray(val) && val.length > 0) {
+      return val;
+    }
+    // Fallback to legacy creature_type
+    const legacyType = this.getPropertyValue('creature_type' as any) as any;
+    if (legacyType) {
+      return [legacyType as RiseCreatureType];
+    }
+    return [];
   }
 
   public get land_speed() {
@@ -1561,7 +1589,7 @@ export class Creature implements CreaturePropertyMap {
       }
     }
 
-    if (this.creature_type === 'ghost') {
+    if (this.creature_types.includes('ghost')) {
       if (!this.getModifierNames().includes('Ghostly Nature')) {
         this.addCustomModifier({
           name: 'Ghostly Nature',
@@ -1571,7 +1599,7 @@ export class Creature implements CreaturePropertyMap {
       }
     }
 
-    if (this.creature_type === 'plant') {
+    if (this.creature_types.includes('plant')) {
       if (!this.getModifierNames().includes('Plant Nature')) {
         this.addCustomModifier({
           name: 'Plant Nature',
@@ -1613,31 +1641,33 @@ export class Creature implements CreaturePropertyMap {
 
     // Traits by Type
     const typeTraits: RiseTrait[] = [];
-    switch (this.creature_type) {
-      case 'aberration':
-      case 'animal':
-      case 'beast':
-        break;
-      case 'construct':
-        typeTraits.push('mindless', 'nonliving', 'soulless', 'static');
-        break;
-      case 'dragon':
-      case 'fey':
-        typeTraits.push('immortal');
-        break;
-      case 'ghost':
-        typeTraits.push('incorporeal');
-        break;
-      case 'humanoid':
-      case 'indwelt':
-      case 'insect':
-        break;
-      case 'ooze':
-        typeTraits.push('simple-minded', 'soulless');
-        break;
-      case 'plant':
-        typeTraits.push('bloodless', 'soulless');
-        break;
+    for (const type of this.creature_types) {
+      switch (type) {
+        case 'aberration':
+        case 'animal':
+        case 'beast':
+          break;
+        case 'construct':
+          typeTraits.push('mindless', 'nonliving', 'soulless', 'static');
+          break;
+        case 'dragon':
+        case 'fey':
+          typeTraits.push('immortal');
+          break;
+        case 'ghost':
+          typeTraits.push('incorporeal');
+          break;
+        case 'humanoid':
+        case 'indwelt':
+        case 'insect':
+          break;
+        case 'ooze':
+          typeTraits.push('simple-minded', 'soulless');
+          break;
+        case 'plant':
+          typeTraits.push('bloodless', 'soulless');
+          break;
+      }
     }
 
     // Type traits override origin traits

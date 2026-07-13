@@ -199,7 +199,7 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
     assert.strictEqual(savedMonster.requiredProperties.base_class, 'brute');
     assert.strictEqual(savedMonster.requiredProperties.level, 5);
     assert.strictEqual(savedMonster.requiredProperties.creature_origin, 'natural');
-    assert.strictEqual(savedMonster.requiredProperties.creature_type, 'beast');
+    assert.deepStrictEqual(savedMonster.requiredProperties.creature_types, ['beast']);
     assert.strictEqual(savedMonster.requiredProperties.size, 'large');
     assert.ok(
       savedMonster.freeformCode.includes('// Gargoyle custom script'),

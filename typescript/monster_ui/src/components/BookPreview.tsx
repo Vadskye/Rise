@@ -128,7 +128,7 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
 
       <div className="monster-origin-type">
         {stats.size.charAt(0).toUpperCase() + stats.size.slice(1)} {stats.creature_origin}
-        {stats.creature_type ? ` ${stats.creature_type}` : ''}
+        {stats.creature_types && stats.creature_types.length > 0 ? ` ${stats.creature_types.join(', ')}` : ''}
       </div>
 
       {/* Stats Table */}

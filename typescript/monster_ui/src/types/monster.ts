@@ -3,7 +3,7 @@ export interface MonsterRequiredProperties {
   base_class: string;
   elite: boolean;
   creature_origin: string;
-  creature_type: string;
+  creature_types: string[];
   size: string;
   level: number;
 }
@@ -124,7 +124,7 @@ export interface ComputedStats {
   elite: boolean;
   size: string;
   creature_origin: string;
-  creature_type: string;
+  creature_types: string[];
   alignment: string;
   hit_points: number;
   injury_point: number;

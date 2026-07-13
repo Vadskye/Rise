@@ -7,7 +7,9 @@
         "base_class": "brute",
         "elite": false,
         "creature_origin": "natural",
-        "creature_type": "beast",
+        "creature_types": [
+          "beast"
+        ],
         "size": "medium",
         "level": 4
       },
@@ -31,7 +33,9 @@
             "base_class": "skirmisher",
             "elite": false,
             "creature_origin": "natural",
-            "creature_type": "humanoid",
+            "creature_types": [
+              "humanoid"
+            ],
             "size": "medium",
             "level": 1
           },
@@ -76,7 +80,9 @@
             "base_class": "skirmisher",
             "elite": false,
             "creature_origin": "natural",
-            "creature_type": "humanoid",
+            "creature_types": [
+              "humanoid"
+            ],
             "size": "medium",
             "level": 3
           },
@@ -124,7 +130,9 @@
             "base_class": "skirmisher",
             "elite": false,
             "creature_origin": "natural",
-            "creature_type": "humanoid",
+            "creature_types": [
+              "humanoid"
+            ],
             "size": "medium",
             "level": 1
           },
@@ -171,7 +179,9 @@
             "base_class": "leader",
             "elite": true,
             "creature_origin": "natural",
-            "creature_type": "humanoid",
+            "creature_types": [
+              "humanoid"
+            ],
             "size": "medium",
             "level": 3
           },
@@ -196,7 +206,7 @@
               "options": {
                 "isMagical": false,
                 "weapon": "spear",
-                "usageTime": "Standard"
+                "usageTime": "standard"
               }
             }
           ],
