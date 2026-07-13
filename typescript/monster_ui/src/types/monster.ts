@@ -54,7 +54,24 @@ export interface WeaponConfig {
   };
 }
 
-export interface MonsterData {
+export interface SharedEditableProperties {
+  traits?: string[];
+  customSenses?: string[];
+  customMovementSpeeds?: string[];
+  immunities?: string[];
+  resistances?: string[];
+  vulnerabilities?: string[];
+  equippedArmor?: string;
+  equippedShield?: string;
+  properties?: Record<string, string | number | boolean>;
+  standardAbilities?: StandardAbilityConfig[];
+  customAbilities?: CustomAbilityConfig[];
+  passiveAbilities?: PassiveAbilityConfig[];
+  weapons?: WeaponConfig[];
+  rituals?: string[];
+}
+
+export interface MonsterData extends SharedEditableProperties {
   name: string;
   requiredProperties: MonsterRequiredProperties;
   freeformCode: string;
@@ -66,20 +83,6 @@ export interface MonsterData {
     hard?: string;
     legendary?: string;
   };
-  traits?: string[];
-  customSenses?: string[];
-  customMovementSpeeds?: string[];
-  immunities?: string[];
-  resistances?: string[];
-  vulnerabilities?: string[];
-  equippedArmor?: string;
-  equippedShield?: string;
-  properties?: Record<string, string | number | boolean>;
-  standardAbilities?: StandardAbilityConfig[];
-  customAbilities?: CustomAbilityConfig[];
-  passiveAbilities?: PassiveAbilityConfig[];
-  weapons?: WeaponConfig[];
-  rituals?: string[];
 }
 
 export interface MonsterGroupKnowledge {
@@ -89,27 +92,13 @@ export interface MonsterGroupKnowledge {
   legendary?: string;
 }
 
-export interface MonsterGroupData {
+export interface MonsterGroupData extends SharedEditableProperties {
   name: string;
   knowledge?: MonsterGroupKnowledge;
   description?: string;
   hasArt: boolean;
   sharedFreeformCode: string;
   monsters: MonsterData[];
-  traits?: string[];
-  customSenses?: string[];
-  customMovementSpeeds?: string[];
-  immunities?: string[];
-  resistances?: string[];
-  vulnerabilities?: string[];
-  equippedArmor?: string;
-  equippedShield?: string;
-  properties?: Record<string, string | number | boolean>;
-  standardAbilities?: StandardAbilityConfig[];
-  customAbilities?: CustomAbilityConfig[];
-  passiveAbilities?: PassiveAbilityConfig[];
-  weapons?: WeaponConfig[];
-  rituals?: string[];
 }
 
 export interface DatabaseData {

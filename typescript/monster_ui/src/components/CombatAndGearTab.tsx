@@ -1,34 +1,25 @@
-import React from 'react';
-import { MonsterData } from '../types/monster';
+import { SharedEditableProperties } from '../types/monster';
 import { PillListInput } from './PillListInput';
+import { BODY_ARMORS, SHIELDS } from '@src/monsters/equipment';
 
-const STANDARD_ARMORS = [
-  'buff leather',
-  'mail shirt',
-  'rawhide',
-  'leather lamellar',
-  'scale',
-  'brigandine',
-  'breastplate',
-  'half plate',
-  'full plate',
-  'mage armor',
-  'ki barrier',
-];
+const STANDARD_ARMORS = Array.from(BODY_ARMORS);
 
-const STANDARD_SHIELDS = ['buckler', 'standard shield', 'tower shield'];
+const STANDARD_SHIELDS = Array.from(SHIELDS);
 
-interface CombatTabProps {
-  monsterData: MonsterData;
-  onChangeMonster: (updated: MonsterData) => void;
+interface CombatTabProps<T extends SharedEditableProperties> {
+  monsterData: T;
+  onChangeMonster: (updated: T) => void;
 }
 
-export const CombatAndGearTab: React.FC<CombatTabProps> = ({ monsterData, onChangeMonster }) => {
+export const CombatAndGearTab = <T extends SharedEditableProperties>({
+  monsterData,
+  onChangeMonster,
+}: CombatTabProps<T>) => {
   return (
     <div className="tab-content">
       <h4 className="section-subtitle">Equipment</h4>
-      <div style={{ display: 'flex', gap: '16px', marginBottom: '20px' }}>
-        <div className="form-group" style={{ flex: 1, marginBottom: 0 }}>
+      <div className="equipment-row">
+        <div className="form-group equipment-col">
           <label htmlFor="equipped-armor">Equipped Armor</label>
           <select
             id="equipped-armor"
@@ -46,7 +37,7 @@ export const CombatAndGearTab: React.FC<CombatTabProps> = ({ monsterData, onChan
           </select>
         </div>
 
-        <div className="form-group" style={{ flex: 1, marginBottom: 0 }}>
+        <div className="form-group equipment-col">
           <label htmlFor="equipped-shield">Equipped Shield</label>
           <select
             id="equipped-shield"
@@ -69,20 +60,20 @@ export const CombatAndGearTab: React.FC<CombatTabProps> = ({ monsterData, onChan
 
       <PillListInput
         label="Immunities"
+        className="mb-15"
         items={monsterData.immunities || []}
         onChange={(updated) => onChangeMonster({ ...monsterData, immunities: updated })}
         placeholder="e.g. Fire"
         emptyMessage="No immunities."
-        style={{ marginBottom: '15px' }}
       />
 
       <PillListInput
         label="Resistances"
+        className="mb-15"
         items={monsterData.resistances || []}
         onChange={(updated) => onChangeMonster({ ...monsterData, resistances: updated })}
         placeholder="e.g. Cold"
         emptyMessage="No resistances."
-        style={{ marginBottom: '15px' }}
       />
 
       <PillListInput

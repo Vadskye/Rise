@@ -65,9 +65,9 @@ export const GroupForm: React.FC<GroupFormProps> = ({
 
       <div className="form-group">
         <label>Group Knowledge Table</label>
-        <div className="knowledge-grid group-knowledge-table" style={{ marginTop: '5px' }}>
+        <div className="knowledge-grid group-knowledge-table">
           <div className="form-group">
-            <label style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>Easy</label>
+            <label>Easy</label>
             <textarea
               rows={3}
               value={groupData.knowledge?.easy || ''}
@@ -80,7 +80,7 @@ export const GroupForm: React.FC<GroupFormProps> = ({
             />
           </div>
           <div className="form-group">
-            <label style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>Normal</label>
+            <label>Normal</label>
             <textarea
               rows={3}
               value={groupData.knowledge?.normal || ''}
@@ -93,7 +93,7 @@ export const GroupForm: React.FC<GroupFormProps> = ({
             />
           </div>
           <div className="form-group">
-            <label style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>Hard</label>
+            <label>Hard</label>
             <textarea
               rows={3}
               value={groupData.knowledge?.hard || ''}
@@ -106,7 +106,7 @@ export const GroupForm: React.FC<GroupFormProps> = ({
             />
           </div>
           <div className="form-group">
-            <label style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>Legendary</label>
+            <label>Legendary</label>
             <textarea
               rows={3}
               value={groupData.knowledge?.legendary || ''}
@@ -126,7 +126,7 @@ export const GroupForm: React.FC<GroupFormProps> = ({
           Shared Freeform Code (runs for all monsters in group)
         </label>
         {groupData.sharedFreeformCode && groupData.sharedFreeformCode.trim() && (
-          <div className="inline-warning" style={{ marginBottom: '8px' }}>
+          <div className="inline-warning mb-8">
             ⚠️ Group has shared freeform initialization code.
           </div>
         )}

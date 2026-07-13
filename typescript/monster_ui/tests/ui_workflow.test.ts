@@ -213,7 +213,7 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
       'Generated TS should register the monster',
     );
     assert.ok(
-      generatedTs.includes('creature.addTrait("scent")'),
+      generatedTs.includes("creature.addTrait('scent')"),
       'Generated TS should translate the freeform code trait addition',
     );
 

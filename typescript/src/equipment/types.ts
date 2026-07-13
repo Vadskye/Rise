@@ -54,7 +54,7 @@ export function getUpgradeItems(item: StandardItem): StandardItem[] {
 }
 
 import { ArmorUsageClass, ArmorMaterial } from './armor';
-export { ArmorUsageClass, ArmorMaterial };
+export type { ArmorUsageClass, ArmorMaterial };
 
 export type MagicArmor =
   | { kind: 'Body'; item: StandardItem }

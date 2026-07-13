@@ -1,46 +1,6 @@
 import React from 'react';
 import { MonsterData } from '../types/monster';
-
-const SKILL_CATEGORIES = {
-  Movement: ['climb', 'jump', 'swim', 'balance', 'flexibility', 'ride', 'stealth'],
-  Senses: ['analysis', 'awareness'],
-  Social: ['deception', 'disguise', 'intimidate', 'perform', 'social_insight', 'persuasion'],
-  Craft: [
-    'craft_alchemy',
-    'craft_bone',
-    'craft_ceramics',
-    'craft_leather',
-    'craft_manuscripts',
-    'craft_metal',
-    'craft_poison',
-    'craft_stone',
-    'craft_textiles',
-    'craft_traps',
-    'craft_wood',
-    'craft_untrained',
-  ],
-  Knowledge: [
-    'knowledge_arcana',
-    'knowledge_dungeoneering',
-    'knowledge_engineering',
-    'knowledge_items',
-    'knowledge_local',
-    'knowledge_nature',
-    'knowledge_planes',
-    'knowledge_religion',
-    'knowledge_souls',
-    'knowledge_untrained',
-  ],
-  Other: [
-    'creature_handling',
-    'devices',
-    'endurance',
-    'medicine',
-    'sleight_of_hand',
-    'survival',
-    'profession',
-  ],
-};
+import { SKILL_CATEGORIES, formatSkillLabel } from '../utils/skills';
 
 interface AttributesAndSkillsTabProps {
   monsterData: MonsterData;
@@ -74,31 +34,13 @@ export const AttributesAndSkillsTab: React.FC<AttributesAndSkillsTabProps> = ({
     });
   };
 
-  const formatSkillLabel = (skill: string): string => {
-    if (skill.startsWith('craft_')) {
-      return skill.slice(6).replace(/_/g, ' ');
-    }
-    if (skill.startsWith('knowledge_')) {
-      return skill.slice(10).replace(/_/g, ' ');
-    }
-    return skill.replace(/_/g, ' ');
-  };
-
   return (
     <div className="tab-content">
-      <h4 className="section-subtitle" style={{ marginBottom: '8px' }}>
+      <h4 className="section-subtitle mb-8">
         Base Attributes
       </h4>
-      <div
-        className="attributes-grid"
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(6, 1fr)',
-          gap: '10px',
-          marginBottom: '15px',
-        }}
-      >
-        <div className="form-group" style={{ marginBottom: 0 }}>
+      <div className="attributes-grid">
+        <div className="form-group">
           <label>Str</label>
           <input
             type="number"
@@ -106,7 +48,7 @@ export const AttributesAndSkillsTab: React.FC<AttributesAndSkillsTabProps> = ({
             onChange={(e) => setAttribute(0, parseInt(e.target.value) || 0)}
           />
         </div>
-        <div className="form-group" style={{ marginBottom: 0 }}>
+        <div className="form-group">
           <label>Dex</label>
           <input
             type="number"
@@ -114,7 +56,7 @@ export const AttributesAndSkillsTab: React.FC<AttributesAndSkillsTabProps> = ({
             onChange={(e) => setAttribute(1, parseInt(e.target.value) || 0)}
           />
         </div>
-        <div className="form-group" style={{ marginBottom: 0 }}>
+        <div className="form-group">
           <label>Con</label>
           <input
             type="number"
@@ -122,7 +64,7 @@ export const AttributesAndSkillsTab: React.FC<AttributesAndSkillsTabProps> = ({
             onChange={(e) => setAttribute(2, parseInt(e.target.value) || 0)}
           />
         </div>
-        <div className="form-group" style={{ marginBottom: 0 }}>
+        <div className="form-group">
           <label>Int</label>
           <input
             type="number"
@@ -130,7 +72,7 @@ export const AttributesAndSkillsTab: React.FC<AttributesAndSkillsTabProps> = ({
             onChange={(e) => setAttribute(3, parseInt(e.target.value) || 0)}
           />
         </div>
-        <div className="form-group" style={{ marginBottom: 0 }}>
+        <div className="form-group">
           <label>Per</label>
           <input
             type="number"
@@ -138,7 +80,7 @@ export const AttributesAndSkillsTab: React.FC<AttributesAndSkillsTabProps> = ({
             onChange={(e) => setAttribute(4, parseInt(e.target.value) || 0)}
           />
         </div>
-        <div className="form-group" style={{ marginBottom: 0 }}>
+        <div className="form-group">
           <label>Wil</label>
           <input
             type="number"
@@ -148,23 +90,20 @@ export const AttributesAndSkillsTab: React.FC<AttributesAndSkillsTabProps> = ({
         </div>
       </div>
 
-      <h4 className="section-subtitle" style={{ marginBottom: '8px' }}>
+      <h4 className="section-subtitle mb-8">
         Trained Skills
       </h4>
-      <div className="form-group" style={{ marginBottom: '8px' }}>
+      <div className="form-group search-wrapper mb-8">
         <input
           type="text"
+          className="search-input"
           placeholder="Search skills..."
           value={skillSearch}
           onChange={(e) => setSkillSearch(e.target.value)}
-          style={{ padding: '6px 10px', fontSize: '0.85rem' }}
         />
       </div>
 
-      <div
-        className="skills-categories-container"
-        style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}
-      >
+      <div className="skills-categories-container">
         {Object.entries(SKILL_CATEGORIES).map(([category, skillsList]) => {
           const filteredSkills = skillsList
             .filter((s) => {
@@ -181,44 +120,15 @@ export const AttributesAndSkillsTab: React.FC<AttributesAndSkillsTabProps> = ({
           }
 
           return (
-            <div
-              key={category}
-              className="skill-category-group"
-              style={{
-                backgroundColor: 'var(--bg-secondary)',
-                padding: '8px',
-                borderRadius: '6px',
-                border: '1px solid var(--border-color)',
-              }}
-            >
-              <div
-                style={{
-                  fontSize: '0.75rem',
-                  fontWeight: 800,
-                  textTransform: 'uppercase',
-                  color: 'var(--accent-color)',
-                  marginBottom: '6px',
-                  letterSpacing: '0.5px',
-                }}
-              >
+            <div key={category} className="skill-category-group">
+              <div className="skill-category-title">
                 {category}
               </div>
-              <div
-                className="skills-grid"
-                style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))',
-                  gap: '6px',
-                }}
-              >
+              <div className="skills-grid">
                 {filteredSkills.map((skill) => {
                   const displayLabel = formatSkillLabel(skill);
                   return (
-                    <div
-                      key={skill}
-                      className="form-checkbox-row"
-                      style={{ display: 'flex', alignItems: 'center', gap: '6px' }}
-                    >
+                    <div key={skill} className="form-checkbox-row">
                       <input
                         id={`skill-${skill}`}
                         type="checkbox"
@@ -227,13 +137,7 @@ export const AttributesAndSkillsTab: React.FC<AttributesAndSkillsTabProps> = ({
                       />
                       <label
                         htmlFor={`skill-${skill}`}
-                        style={{
-                          fontSize: '0.85rem',
-                          color: trainedSkills.includes(skill)
-                            ? 'var(--text-primary)'
-                            : 'var(--text-secondary)',
-                          cursor: 'pointer',
-                        }}
+                        className={trainedSkills.includes(skill) ? 'checked' : ''}
                       >
                         {displayLabel}
                       </label>

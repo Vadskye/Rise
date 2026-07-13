@@ -1,13 +1,59 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { fileURLToPath } from 'url';
+import { execSync } from 'child_process';
 import { paths } from './paths';
 import { CustomMonsterAbility } from '@src/character_sheet/creature';
 import { MonsterAttackUsageTime } from '@src/character_sheet/sheet_worker';
 import { RiseAbilityDefinitionTag } from '@src/character_sheet/rise_data';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+function formatValueToTSSingleLine(value: any): string {
+  if (typeof value === 'string') {
+    return `'${value.replace(/'/g, "\\'")}'`;
+  }
+  if (value === null || value === undefined) {
+    return 'undefined';
+  }
+  if (Array.isArray(value)) {
+    return `[${value.map(val => formatValueToTSSingleLine(val)).join(', ')}]`;
+  }
+  if (typeof value === 'object') {
+    const keys = Object.keys(value);
+    if (keys.length === 0) return '{}';
+    const parts = keys.map(key => {
+      const val = value[key];
+      if (val === undefined) return null;
+      const formattedKey = /^[a-zA-Z_$][a-zA-Z0-9_$]*$/.test(key) ? key : `'${key.replace(/'/g, "\\'")}'`;
+      return `${formattedKey}: ${formatValueToTSSingleLine(val)}`;
+    }).filter(p => p !== null);
+    return `{ ${parts.join(', ')} }`;
+  }
+  return String(value);
+}
+
+function formatValueToTS(value: any, indent = ''): string {
+  if (typeof value === 'string') {
+    return `'${value.replace(/'/g, "\\'")}'`;
+  }
+  if (value === null || value === undefined) {
+    return 'undefined';
+  }
+  if (Array.isArray(value)) {
+    if (value.length === 0) return '[]';
+    return `[\n${value.map(val => indent + '  ' + formatValueToTS(val, indent + '  ')).join(',\n')}\n${indent}]`;
+  }
+  if (typeof value === 'object') {
+    const keys = Object.keys(value);
+    if (keys.length === 0) return '{}';
+    const lines = keys.map(key => {
+      const val = value[key];
+      if (val === undefined) return null;
+      const formattedKey = /^[a-zA-Z_$][a-zA-Z0-9_$]*$/.test(key) ? key : `'${key.replace(/'/g, "\\'")}'`;
+      return `${indent}  ${formattedKey}: ${formatValueToTS(val, indent + '  ')}`;
+    }).filter(line => line !== null);
+    return `{\n${lines.join(',\n')}\n${indent}}`;
+  }
+  return String(value);
+}
 
 export interface MonsterRequiredProperties {
   alignment: string;
@@ -141,13 +187,13 @@ export function toCustomMonsterAbility(ability: CustomAbilityConfig): CustomMons
         : undefined,
     attack: ability.attack
       ? {
-          targeting: ability.attack.targeting,
-          hit: ability.attack.hit,
-          crit: ability.attack.crit || undefined,
-          miss: ability.attack.miss || undefined,
-          injury: ability.attack.injury || undefined,
-          halfOnMiss: ability.attack.halfOnMiss,
-        }
+        targeting: ability.attack.targeting,
+        hit: ability.attack.hit,
+        crit: ability.attack.crit || undefined,
+        miss: ability.attack.miss || undefined,
+        injury: ability.attack.injury || undefined,
+        halfOnMiss: ability.attack.halfOnMiss,
+      }
       : undefined,
   };
 }
@@ -160,53 +206,53 @@ function generateSharedPropertiesCode(
 
   if (data.traits && data.traits.length > 0) {
     for (const trait of data.traits) {
-      lines.push(`${indent}creature.addTrait(${JSON.stringify(trait)});`);
+      lines.push(`${indent}creature.addTrait(${formatValueToTSSingleLine(trait)});`);
     }
   }
 
   if (data.customSenses && data.customSenses.length > 0) {
     for (const sense of data.customSenses) {
-      lines.push(`${indent}creature.addCustomSense(${JSON.stringify(sense)});`);
+      lines.push(`${indent}creature.addCustomSense(${formatValueToTSSingleLine(sense)});`);
     }
   }
 
   if (data.customMovementSpeeds && data.customMovementSpeeds.length > 0) {
     for (const speed of data.customMovementSpeeds) {
-      lines.push(`${indent}creature.addCustomMovementSpeed(${JSON.stringify(speed)});`);
+      lines.push(`${indent}creature.addCustomMovementSpeed(${formatValueToTSSingleLine(speed)});`);
     }
   }
 
   if (data.immunities && data.immunities.length > 0) {
     for (const immunity of data.immunities) {
-      lines.push(`${indent}creature.addImmunity(${JSON.stringify(immunity)});`);
+      lines.push(`${indent}creature.addImmunity(${formatValueToTSSingleLine(immunity)});`);
     }
   }
 
   if (data.resistances && data.resistances.length > 0) {
     for (const resistance of data.resistances) {
-      lines.push(`${indent}creature.addResistant(${JSON.stringify(resistance)});`);
+      lines.push(`${indent}creature.addResistant(${formatValueToTSSingleLine(resistance)});`);
     }
   }
 
   if (data.vulnerabilities && data.vulnerabilities.length > 0) {
     for (const vulnerability of data.vulnerabilities) {
-      lines.push(`${indent}creature.addVulnerability(${JSON.stringify(vulnerability)});`);
+      lines.push(`${indent}creature.addVulnerability(${formatValueToTSSingleLine(vulnerability)});`);
     }
   }
 
   if (data.equippedArmor || data.equippedShield) {
     const armorParts: string[] = [];
     if (data.equippedArmor) {
-      armorParts.push(`bodyArmor: ${JSON.stringify(data.equippedArmor)}`);
+      armorParts.push(`bodyArmor: ${formatValueToTSSingleLine(data.equippedArmor)}`);
     }
     if (data.equippedShield) {
-      armorParts.push(`shield: ${JSON.stringify(data.equippedShield)}`);
+      armorParts.push(`shield: ${formatValueToTSSingleLine(data.equippedShield)}`);
     }
     lines.push(`${indent}creature.setEquippedArmorName({ ${armorParts.join(', ')} });`);
   }
 
   if (data.properties && Object.keys(data.properties).length > 0) {
-    lines.push(`${indent}creature.setProperties(${JSON.stringify(data.properties)});`);
+    lines.push(`${indent}creature.setProperties(${formatValueToTSSingleLine(data.properties)});`);
   }
 
   // 1. Standard Spells & Maneuvers:
@@ -221,54 +267,54 @@ function generateSharedPropertiesCode(
     for (const ability of data.standardAbilities) {
       const cleanOptions = ability.options
         ? {
-            displayName: ability.options.displayName || undefined,
-            usageTime: ability.options.usageTime || undefined,
-            isMagical: ability.options.isMagical,
-            weapon: ability.options.weapon || undefined,
-            tags:
-              ability.options.tags && ability.options.tags.length > 0
-                ? ability.options.tags
-                : undefined,
-          }
+          displayName: ability.options.displayName || undefined,
+          usageTime: ability.options.usageTime || undefined,
+          isMagical: ability.options.isMagical,
+          weapon: ability.options.weapon || undefined,
+          tags:
+            ability.options.tags && ability.options.tags.length > 0
+              ? ability.options.tags
+              : undefined,
+        }
         : undefined;
 
       const hasOptions = cleanOptions && Object.values(cleanOptions).some((v) => v !== undefined);
-      const optionsStr = hasOptions ? `, ${JSON.stringify(cleanOptions)}` : '';
+      const optionsStr = hasOptions ? `, ${formatValueToTSSingleLine(cleanOptions)}` : '';
 
       if (ability.type === 'spell') {
-        lines.push(`${indent}creature.addSpell(${JSON.stringify(ability.name)}${optionsStr});`);
+        lines.push(`${indent}creature.addSpell(${formatValueToTSSingleLine(ability.name)}${optionsStr});`);
       } else if (SPECIAL_MANEUVERS.includes(ability.name)) {
         const weapon = ability.options?.weapon;
         if (weapon) {
           const cleanSpecialOptions = ability.options
             ? {
-                displayName: ability.options.displayName || undefined,
-                usageTime: ability.options.usageTime || undefined,
-                isMagical: ability.options.isMagical,
-                tags:
-                  ability.options.tags && ability.options.tags.length > 0
-                    ? ability.options.tags
-                    : undefined,
-              }
+              displayName: ability.options.displayName || undefined,
+              usageTime: ability.options.usageTime || undefined,
+              isMagical: ability.options.isMagical,
+              tags:
+                ability.options.tags && ability.options.tags.length > 0
+                  ? ability.options.tags
+                  : undefined,
+            }
             : undefined;
           const hasSpecialOptions =
             cleanSpecialOptions && Object.values(cleanSpecialOptions).some((v) => v !== undefined);
-          const optStr = hasSpecialOptions ? `, ${JSON.stringify(cleanSpecialOptions)}` : '';
+          const optStr = hasSpecialOptions ? `, ${formatValueToTSSingleLine(cleanSpecialOptions)}` : '';
 
           if (ability.name === 'Equip Weapon') {
-            lines.push(`${indent}creature.addWeapon(${JSON.stringify(weapon)});`);
+            lines.push(`${indent}creature.addWeapon(${formatValueToTSSingleLine(weapon)});`);
           } else if (ability.name === 'Weapon Multiplier') {
-            lines.push(`${indent}creature.addWeaponMult(${JSON.stringify(weapon)}${optStr});`);
+            lines.push(`${indent}creature.addWeaponMult(${formatValueToTSSingleLine(weapon)}${optStr});`);
           } else if (ability.name === 'Grappling Strike') {
-            lines.push(`${indent}creature.addGrapplingStrike(${JSON.stringify(weapon)}${optStr});`);
+            lines.push(`${indent}creature.addGrapplingStrike(${formatValueToTSSingleLine(weapon)}${optStr});`);
           } else if (ability.name === 'Sneak Attack') {
-            lines.push(`${indent}creature.addSneakAttack(${JSON.stringify(weapon)}${optStr});`);
+            lines.push(`${indent}creature.addSneakAttack(${formatValueToTSSingleLine(weapon)}${optStr});`);
           } else if (ability.name === 'Latch On') {
-            lines.push(`${indent}creature.addLatchOn(${JSON.stringify(weapon)}${optStr});`);
+            lines.push(`${indent}creature.addLatchOn(${formatValueToTSSingleLine(weapon)}${optStr});`);
           }
         }
       } else {
-        lines.push(`${indent}creature.addManeuver(${JSON.stringify(ability.name)}${optionsStr});`);
+        lines.push(`${indent}creature.addManeuver(${formatValueToTSSingleLine(ability.name)}${optionsStr});`);
       }
     }
   }
@@ -277,10 +323,7 @@ function generateSharedPropertiesCode(
   if (data.customAbilities && data.customAbilities.length > 0) {
     for (const ability of data.customAbilities) {
       const abilityObj = toCustomMonsterAbility(ability);
-      const abilityStr = JSON.stringify(abilityObj, null, 2)
-        .split('\n')
-        .map((line, idx) => (idx === 0 ? line : indent + '  ' + line))
-        .join('\n');
+      const abilityStr = formatValueToTS(abilityObj, indent + '  ');
 
       if (ability.type === 'spell') {
         lines.push(`${indent}creature.addCustomSpell(${abilityStr});`);
@@ -293,10 +336,7 @@ function generateSharedPropertiesCode(
   // 3. Passive Abilities:
   if (data.passiveAbilities && data.passiveAbilities.length > 0) {
     for (const ability of data.passiveAbilities) {
-      const passiveStr = JSON.stringify(ability, null, 2)
-        .split('\n')
-        .map((line, idx) => (idx === 0 ? line : indent + '  ' + line))
-        .join('\n');
+      const passiveStr = formatValueToTS(ability, indent + '  ');
       lines.push(`${indent}creature.addPassiveAbility(${passiveStr});`);
     }
   }
@@ -304,13 +344,13 @@ function generateSharedPropertiesCode(
   // 4. Weapons:
   if (data.weapons && data.weapons.length > 0) {
     for (const weapon of data.weapons) {
-      lines.push(`${indent}creature.addWeapon(${JSON.stringify(weapon.name)});`);
+      lines.push(`${indent}creature.addWeapon(${formatValueToTSSingleLine(weapon.name)});`);
     }
   }
 
   // 5. Rituals:
   if (data.rituals && data.rituals.length > 0) {
-    lines.push(`${indent}creature.addRituals(${JSON.stringify(data.rituals)});`);
+    lines.push(`${indent}creature.addRituals(${formatValueToTSSingleLine(data.rituals)});`);
   }
 
   return lines;
@@ -322,18 +362,15 @@ function generateSharedPropertiesCode(
 function generateMonsterBody(monster: MonsterData, indent: string): string {
   const lines: string[] = [];
 
-  const reqPropsStr = JSON.stringify(monster.requiredProperties, null, 2)
-    .split('\n')
-    .map((line, idx) => (idx === 0 ? line : indent + '  ' + line))
-    .join('\n');
+  const reqPropsStr = formatValueToTS(monster.requiredProperties, indent);
   lines.push(`${indent}creature.setRequiredProperties(${reqPropsStr});`);
 
   if (monster.baseAttributes && monster.baseAttributes.length === 6) {
-    lines.push(`${indent}creature.setBaseAttributes(${JSON.stringify(monster.baseAttributes)});`);
+    lines.push(`${indent}creature.setBaseAttributes(${formatValueToTSSingleLine(monster.baseAttributes)});`);
   }
 
   if (monster.trainedSkills && monster.trainedSkills.length > 0) {
-    lines.push(`${indent}creature.setTrainedSkills(${JSON.stringify(monster.trainedSkills)});`);
+    lines.push(`${indent}creature.setTrainedSkills(${formatValueToTSSingleLine(monster.trainedSkills)});`);
   }
 
   if (monster.knowledge) {
@@ -345,10 +382,7 @@ function generateMonsterBody(monster: MonsterData, indent: string): string {
     };
     const hasKnowledge = Object.values(cleanKnowledge).some((v) => v !== undefined);
     if (hasKnowledge) {
-      const knStr = JSON.stringify(cleanKnowledge, null, 2)
-        .split('\n')
-        .map((line, idx) => (idx === 0 ? line : indent + '  ' + line))
-        .join('\n');
+      const knStr = formatValueToTS(cleanKnowledge, indent);
       lines.push(`${indent}creature.setKnowledgeResults(${knStr});`);
     }
   }
@@ -419,14 +453,14 @@ ${bodyCode}
     parts.push(`  // --- Monster Groups ---`);
     for (const group of db.monsterGroups) {
       const groupConfigParts: string[] = [];
-      groupConfigParts.push(`name: '${group.name}'`);
+      groupConfigParts.push(`name: ${formatValueToTSSingleLine(group.name)}`);
       if (group.knowledge) {
         groupConfigParts.push(
-          `knowledge: ${JSON.stringify(group.knowledge, null, 8).replace(/\n/g, '\n      ')}`,
+          `knowledge: ${formatValueToTS(group.knowledge, '      ')}`,
         );
       }
       if (group.description) {
-        groupConfigParts.push(`description: ${JSON.stringify(group.description)}`);
+        groupConfigParts.push(`description: ${formatValueToTSSingleLine(group.description)}`);
       }
       groupConfigParts.push(`hasArt: ${Boolean(group.hasArt)}`);
       groupConfigParts.push(`sharedInitializer: (creature: Creature) => {
@@ -471,4 +505,11 @@ export function saveTypeScriptFile(db: DatabaseData) {
   }
 
   fs.writeFileSync(targetPath, tsCode, 'utf8');
+
+  try {
+    // Run prettier on the generated file to format it consistently.
+    execSync(`npx prettier --config "../.prettierrc.yaml" --ignore-path "" --write "${targetPath}"`, { stdio: 'ignore' });
+  } catch (err) {
+    console.error('Failed to run prettier on generated file:', err);
+  }
 }

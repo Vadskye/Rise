@@ -151,21 +151,21 @@ describe('Monster UI Integration Tests (Serverless)', () => {
 
     assert.ok(fs.existsSync(paths.generatedTsPath));
     const generatedContent = fs.readFileSync(paths.generatedTsPath, 'utf8');
-    assert.ok(generatedContent.includes(`creature.setBaseAttributes([2,3,1,-1,0,-2])`));
-    assert.ok(generatedContent.includes(`creature.setTrainedSkills(["stealth","jump"])`));
-    assert.ok(generatedContent.includes(`"easy": "Easy text"`));
-    assert.ok(generatedContent.includes(`creature.addTrait("quadrupedal")`));
-    assert.ok(generatedContent.includes(`creature.addCustomSense("Darkvision (60 ft.)")`));
-    assert.ok(generatedContent.includes(`creature.addCustomMovementSpeed("Fly 40 ft.")`));
-    assert.ok(generatedContent.includes(`creature.addImmunity("Fire")`));
-    assert.ok(generatedContent.includes(`creature.addResistant("Cold")`));
-    assert.ok(generatedContent.includes(`creature.addVulnerability("Acid")`));
+    assert.ok(generatedContent.includes(`creature.setBaseAttributes([2, 3, 1, -1, 0, -2])`));
+    assert.ok(generatedContent.includes(`creature.setTrainedSkills(['stealth', 'jump'])`));
+    assert.ok(generatedContent.includes(`easy: 'Easy text'`));
+    assert.ok(generatedContent.includes(`creature.addTrait('quadrupedal')`));
+    assert.ok(generatedContent.includes(`creature.addCustomSense('Darkvision (60 ft.)')`));
+    assert.ok(generatedContent.includes(`creature.addCustomMovementSpeed('Fly 40 ft.')`));
+    assert.ok(generatedContent.includes(`creature.addImmunity('Fire')`));
+    assert.ok(generatedContent.includes(`creature.addResistant('Cold')`));
+    assert.ok(generatedContent.includes(`creature.addVulnerability('Acid')`));
     assert.ok(
       generatedContent.includes(
-        `creature.setEquippedArmorName({ bodyArmor: "breastplate", shield: "standard shield" })`,
+        `creature.setEquippedArmorName({ bodyArmor: 'breastplate', shield: 'standard shield' })`,
       ),
     );
-    assert.ok(generatedContent.includes(`"has_art":true`));
+    assert.ok(generatedContent.includes(`has_art: true`));
   });
 
   test('saveAndValidateAll saves database with monster groups, triggers codegen, and runs validation successfully', () => {
@@ -390,16 +390,16 @@ describe('Monster UI Integration Tests (Serverless)', () => {
     const generatedContent = fs.readFileSync(paths.generatedTsPath, 'utf8');
     assert.ok(
       generatedContent.includes(
-        `creature.addSpell("Word of Power", {"displayName":"Echoing Word","isMagical":true})`,
+        `creature.addSpell('Word of Power', { displayName: 'Echoing Word', isMagical: true })`,
       ),
     );
     assert.ok(generatedContent.includes(`creature.addCustomManeuver(`));
     assert.ok(generatedContent.includes(`creature.addPassiveAbility(`));
-    assert.ok(generatedContent.includes(`creature.addWeapon("claws")`));
+    assert.ok(generatedContent.includes(`creature.addWeapon('claws')`));
     assert.ok(
-      generatedContent.includes(`creature.addWeaponMult("claws", {"displayName":"Vicious Claws"})`),
+      generatedContent.includes(`creature.addWeaponMult('claws', { displayName: 'Vicious Claws' })`),
     );
-    assert.ok(generatedContent.includes(`creature.addRituals(["Creation","Universal"])`));
+    assert.ok(generatedContent.includes(`creature.addRituals(['Creation', 'Universal'])`));
   });
 
   test('saveAndValidateAll handles group shared structured properties and monster overrides', () => {
@@ -500,12 +500,12 @@ describe('Monster UI Integration Tests (Serverless)', () => {
 
     // Verify codegen output
     const generatedContent = fs.readFileSync(paths.generatedTsPath, 'utf8');
-    assert.ok(generatedContent.includes(`creature.addTrait("ensouled")`));
-    assert.ok(generatedContent.includes(`creature.addCustomSense("Darkvision (90 ft.)")`));
-    assert.ok(generatedContent.includes(`creature.addSpell("Word of Power", {"isMagical":true})`));
-    assert.ok(generatedContent.includes(`creature.setEquippedArmorName({ bodyArmor: "scale" })`));
+    assert.ok(generatedContent.includes(`creature.addTrait('ensouled')`));
+    assert.ok(generatedContent.includes(`creature.addCustomSense('Darkvision (90 ft.)')`));
+    assert.ok(generatedContent.includes(`creature.addSpell('Word of Power', { isMagical: true })`));
+    assert.ok(generatedContent.includes(`creature.setEquippedArmorName({ bodyArmor: 'scale' })`));
     assert.ok(
-      generatedContent.includes(`creature.setEquippedArmorName({ bodyArmor: "breastplate" })`),
+      generatedContent.includes(`creature.setEquippedArmorName({ bodyArmor: 'breastplate' })`),
     );
   });
 });

@@ -1,6 +1,5 @@
 import * as path from 'path';
 import * as fs from 'fs';
-import * as os from 'os';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -50,13 +49,4 @@ export const paths = {
 export function configurePaths(dbPath: string, generatedTsPath: string): void {
   paths.dbPath = dbPath;
   paths.generatedTsPath = generatedTsPath;
-}
-
-/** Convenience accessors kept for backward compatibility with any direct imports. */
-function getDbPath(): string {
-  return paths.dbPath;
-}
-
-function getGeneratedTsPath(): string {
-  return paths.generatedTsPath;
 }

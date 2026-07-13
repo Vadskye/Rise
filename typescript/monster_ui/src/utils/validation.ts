@@ -60,7 +60,7 @@ export function formatNoStandardActionWarning(name: string): string {
 
 export function checkValidMonster(
   creature: Creature,
-  monster: MonsterData,
+  _monster: MonsterData,
   parentGroup?: MonsterGroupData,
 ): string[] {
   const warnings: string[] = [];
@@ -90,7 +90,7 @@ export function checkValidMonster(
     .getActiveAbilities()
     .filter((ability) => (ability.usageTime || 'standard') === 'standard');
   if (standardAbilities.length === 0) {
-    warnings.push('Must have at least one standard action ability');
+    warnings.push(formatNoStandardActionWarning(creature.name));
   }
 
   if (creature.elite) {
