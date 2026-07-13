@@ -21,7 +21,9 @@ async function main({ character, level }: { character?: string; level?: number }
 
   for (const name of characterNames) {
     const character = stock.getCharacter(name);
-    if (!character) continue;
+    if (!character) {
+      continue;
+    }
 
     if (level !== undefined) {
       character.setProperties({ level });

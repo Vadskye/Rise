@@ -155,10 +155,18 @@ function parseAreaRank(text: string): number | null {
 
   // 1. Identify Range
   const getRange = () => {
-    if (lowercaseText.includes('\\shortrange')) return 'short';
-    if (lowercaseText.includes('\\medrange')) return 'medium';
-    if (lowercaseText.includes('\\longrange')) return 'long';
-    if (lowercaseText.includes('\\distrange')) return 'distant';
+    if (lowercaseText.includes('\\shortrange')) {
+      return 'short';
+    }
+    if (lowercaseText.includes('\\medrange')) {
+      return 'medium';
+    }
+    if (lowercaseText.includes('\\longrange')) {
+      return 'long';
+    }
+    if (lowercaseText.includes('\\distrange')) {
+      return 'distant';
+    }
     if (
       lowercaseText.includes('from you') ||
       lowercaseText.includes('adjacent to you') ||
@@ -173,12 +181,24 @@ function parseAreaRank(text: string): number | null {
 
   // 2. Identify Size
   const getSize = () => {
-    if (lowercaseText.includes('\\tinyarea') || lowercaseText.includes('tiny')) return 0;
-    if (lowercaseText.includes('\\smallarea') || lowercaseText.includes('small')) return 1;
-    if (lowercaseText.includes('\\medarea') || lowercaseText.includes('medium')) return 2;
-    if (lowercaseText.includes('\\largearea') || lowercaseText.includes('large')) return 3;
-    if (lowercaseText.includes('\\hugearea') || lowercaseText.includes('huge')) return 4;
-    if (lowercaseText.includes('\\gargarea') || lowercaseText.includes('gargantuan')) return 5;
+    if (lowercaseText.includes('\\tinyarea') || lowercaseText.includes('tiny')) {
+      return 0;
+    }
+    if (lowercaseText.includes('\\smallarea') || lowercaseText.includes('small')) {
+      return 1;
+    }
+    if (lowercaseText.includes('\\medarea') || lowercaseText.includes('medium')) {
+      return 2;
+    }
+    if (lowercaseText.includes('\\largearea') || lowercaseText.includes('large')) {
+      return 3;
+    }
+    if (lowercaseText.includes('\\hugearea') || lowercaseText.includes('huge')) {
+      return 4;
+    }
+    if (lowercaseText.includes('\\gargarea') || lowercaseText.includes('gargantuan')) {
+      return 5;
+    }
     return 1; // Default size
   };
 
@@ -208,17 +228,31 @@ function parseAreaRank(text: string): number | null {
       }[countText] ??
         1);
 
-    if (range === 'distant') return 2;
-    if (range === 'long') return 1;
+    if (range === 'distant') {
+      return 2;
+    }
+    if (range === 'long') {
+      return 1;
+    }
     if (range === 'medium') {
-      if (count <= 2) return 2;
+      if (count <= 2) {
+        return 2;
+      }
       return 4;
     }
     // Short range / Self
-    if (count <= 1) return 0;
-    if (count === 2) return 1;
-    if (count === 3) return 2;
-    if (count === 4) return 3;
+    if (count <= 1) {
+      return 0;
+    }
+    if (count === 2) {
+      return 1;
+    }
+    if (count === 3) {
+      return 2;
+    }
+    if (count === 4) {
+      return 3;
+    }
     return 4;
   }
 
@@ -248,8 +282,12 @@ function parseAreaRank(text: string): number | null {
     // Medium (size 2) -> Rank 2
     // Large (size 3) -> Rank 4
     let rank = (size - 1) * 2;
-    if (areaCount > 1) rank += 1;
-    if (isEnemiesOnly) rank += 1;
+    if (areaCount > 1) {
+      rank += 1;
+    }
+    if (isEnemiesOnly) {
+      rank += 1;
+    }
     return Math.max(0, rank);
   }
 
@@ -265,24 +303,43 @@ function parseAreaRank(text: string): number | null {
       // Medium (size 2) -> Rank 2
       // Large (size 3) -> Rank 4
       rank = (size - 1) * 2;
-      if (areaCount > 1) rank += 2;
-      if (isEnemiesOnly) rank += 2;
+      if (areaCount > 1) {
+        rank += 2;
+      }
+      if (isEnemiesOnly) {
+        rank += 2;
+      }
     } else {
       // Ranged radius
       if (range === 'short') {
-        if (size === 0) rank = 1;
-        else if (size === 1) rank = 3;
-        else if (size === 2) rank = 4;
-        else rank = 6;
+        if (size === 0) {
+          rank = 1;
+        } else if (size === 1) {
+          rank = 3;
+        } else if (size === 2) {
+          rank = 4;
+        } else {
+          rank = 6;
+        }
       } else if (range === 'medium') {
-        if (size === 0) rank = 2;
-        else if (size === 1) rank = 4;
-        else if (size === 2) rank = 5;
-        else if (size === 3) rank = 7;
-        else rank = 8;
+        if (size === 0) {
+          rank = 2;
+        } else if (size === 1) {
+          rank = 4;
+        } else if (size === 2) {
+          rank = 5;
+        } else if (size === 3) {
+          rank = 7;
+        } else {
+          rank = 8;
+        }
       }
-      if (areaCount > 1) rank += 2;
-      if (isEnemiesOnly) rank += 1;
+      if (areaCount > 1) {
+        rank += 2;
+      }
+      if (isEnemiesOnly) {
+        rank += 1;
+      }
     }
     return Math.max(0, rank);
   }
@@ -292,19 +349,36 @@ function parseAreaRank(text: string): number | null {
     let rank = 2;
     if (lowercaseText.includes('wall')) {
       rank = 1;
-      if (size === 2) rank += 1;
-      if (size === 3) rank += 3;
-      if (range === 'medium') rank += 1;
-      if (range === 'long') rank += 2;
+      if (size === 2) {
+        rank += 1;
+      }
+      if (size === 3) {
+        rank += 3;
+      }
+      if (range === 'medium') {
+        rank += 1;
+      }
+      if (range === 'long') {
+        rank += 2;
+      }
     } else {
       // Line (from self)
-      if (size === 1) rank = 0;
-      else if (size === 2) rank = 1;
-      else if (size === 3) rank = 3;
-      else if (size === 4) rank = 4;
-      if (areaCount > 1) rank += 1;
+      if (size === 1) {
+        rank = 0;
+      } else if (size === 2) {
+        rank = 1;
+      } else if (size === 3) {
+        rank = 3;
+      } else if (size === 4) {
+        rank = 4;
+      }
+      if (areaCount > 1) {
+        rank += 1;
+      }
     }
-    if (isEnemiesOnly) rank += 1;
+    if (isEnemiesOnly) {
+      rank += 1;
+    }
     return rank;
   }
 
@@ -330,7 +404,9 @@ function parseConditions(text: string): ParsedDebuff[] {
   const lowercaseText = text.toLowerCase();
 
   const checkCondition = (debuffName: string): ParsedDebuff | null => {
-    if (!lowercaseText.includes(debuffName)) return null;
+    if (!lowercaseText.includes(debuffName)) {
+      return null;
+    }
 
     // Check for "briefly [condition]"
     const briefRegex = new RegExp(`briefly\\s*\\\\*${debuffName}`);

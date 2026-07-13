@@ -667,7 +667,9 @@ function cleanDescription(description: string): string {
   while (lines.length > 0 && lines[lines.length - 1].trim() === '') {
     lines.pop();
   }
-  if (lines.length === 0) return '';
+  if (lines.length === 0) {
+    return '';
+  }
 
   // Find minimum indentation of non-empty lines
   const minIndent = lines
@@ -678,7 +680,9 @@ function cleanDescription(description: string): string {
       return Math.min(min, indent);
     }, Infinity);
 
-  if (minIndent === Infinity) return lines.join('\n');
+  if (minIndent === Infinity) {
+    return lines.join('\n');
+  }
 
   return lines.map((line) => (line.trim() === '' ? '' : line.slice(minIndent))).join('\n');
 }

@@ -933,7 +933,9 @@ function handleActiveAbilitiesAccuracy() {
     variables: { numeric: strikeGlobals },
     callback: (v) => {
       getSectionIDs('repeating_strikeattacks', (ids) => {
-        if (!ids.length) return;
+        if (!ids.length) {
+          return;
+        }
         const keys = ids.map((id) => `repeating_strikeattacks_${id}_attack_accuracy`);
         getAttrs(keys, (localAttrs) => {
           const attrs: Attrs = {};
@@ -954,7 +956,9 @@ function handleActiveAbilitiesAccuracy() {
 
       for (const section of ['repeating_otherdamagingattacks', 'repeating_nondamagingattacks']) {
         getSectionIDs(section, (ids) => {
-          if (!ids.length) return;
+          if (!ids.length) {
+            return;
+          }
           const keys = ids.map((id) => `${section}_${id}_attack_accuracy`);
           getAttrs(keys, (localAttrs) => {
             const attrs: Attrs = {};
@@ -982,7 +986,9 @@ function handleActiveAbilitiesAccuracy() {
     callback: (v) => {
       const triggerParts = v.eventInfo.triggerName.split('_');
       const sectionId = triggerParts.length >= 3 ? triggerParts[2] : '';
-      if (!sectionId) return;
+      if (!sectionId) {
+        return;
+      }
 
       const attrs: Attrs = {};
       for (let i = 0; i < supportedWeaponCount; i++) {
@@ -1010,7 +1016,9 @@ function handleActiveAbilitiesAccuracy() {
       callback: (v) => {
         const triggerParts = v.eventInfo.triggerName.split('_');
         const sectionId = triggerParts.length >= 3 ? triggerParts[2] : '';
-        if (!sectionId) return;
+        if (!sectionId) {
+          return;
+        }
 
         setAttrs({
           [`${section}_${sectionId}_calculated_accuracy`]: formatAccuracyValue(
@@ -2719,7 +2727,9 @@ function handleTrainedSkills() {
           }
 
           const trainedSkill = formatParseableSkillName(trainedSkillRaw);
-          if (trainedSkill === oldTrainedSkill) return;
+          if (trainedSkill === oldTrainedSkill) {
+            return;
+          }
 
           const attrs: Attrs = {};
           attrs[lastSkillKey] = trainedSkill || '';

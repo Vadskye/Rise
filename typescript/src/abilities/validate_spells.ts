@@ -100,11 +100,15 @@ const RANK_WORDS: Record<string, number> = {
 
 function parseDamageRank(text: string): number | null {
   const matches = [...text.matchAll(/\\damagerank(\w+)/gi)];
-  if (matches.length === 0) return null;
+  if (matches.length === 0) {
+    return null;
+  }
 
   const firstWord = matches[0][1].toLowerCase().replace('low', '');
   let baseRank = RANK_WORDS[firstWord] !== undefined ? RANK_WORDS[firstWord] : null;
-  if (baseRank === null) return null;
+  if (baseRank === null) {
+    return null;
+  }
 
   // If there are multiple damageranks, and it has DoT keywords, add +2
   if (matches.length >= 2) {
@@ -128,7 +132,9 @@ function parseDamageRank(text: string): number | null {
 
 function parseHealingRank(text: string): number | null {
   const match = text.match(/\\hprank(\w+)/i);
-  if (!match) return null;
+  if (!match) {
+    return null;
+  }
   const word = match[1].toLowerCase().replace('low', '');
   return RANK_WORDS[word] !== undefined ? RANK_WORDS[word] : null;
 }
@@ -169,38 +175,74 @@ function parseRange(text: string): string {
   ) {
     return 'self';
   }
-  if (lowercase.includes('\\distrange')) return 'distant';
-  if (lowercase.includes('\\longrange')) return 'long';
-  if (lowercase.includes('\\medrange')) return 'medium';
-  if (lowercase.includes('\\shortrange')) return 'short';
+  if (lowercase.includes('\\distrange')) {
+    return 'distant';
+  }
+  if (lowercase.includes('\\longrange')) {
+    return 'long';
+  }
+  if (lowercase.includes('\\medrange')) {
+    return 'medium';
+  }
+  if (lowercase.includes('\\shortrange')) {
+    return 'short';
+  }
   return 'none';
 }
 
 function parseArea(text: string): string {
   const lowercase = text.toLowerCase();
-  if (lowercase.includes('vertical line')) return 'vertical-line';
-  if (lowercase.includes('cone')) return 'cone';
-  if (lowercase.includes('radius') || lowercase.includes('emanation') || lowercase.includes('zone'))
+  if (lowercase.includes('vertical line')) {
+    return 'vertical-line';
+  }
+  if (lowercase.includes('cone')) {
+    return 'cone';
+  }
+  if (
+    lowercase.includes('radius') ||
+    lowercase.includes('emanation') ||
+    lowercase.includes('zone')
+  ) {
     return 'radius';
-  if (lowercase.includes('line')) return 'line';
-  if (lowercase.includes('wall')) return 'wall';
-  if (lowercase.includes('chain')) return 'chain';
+  }
+  if (lowercase.includes('line')) {
+    return 'line';
+  }
+  if (lowercase.includes('wall')) {
+    return 'wall';
+  }
+  if (lowercase.includes('chain')) {
+    return 'chain';
+  }
   if (
     lowercase.includes('up to') &&
     (lowercase.includes('targets') || lowercase.includes('creatures'))
-  )
+  ) {
     return 'multi';
+  }
   return 'single';
 }
 
 function parseAreaSize(text: string): string {
   const lowercase = text.toLowerCase();
-  if (lowercase.includes('\\tinyarea')) return 'tiny';
-  if (lowercase.includes('\\smallarea')) return 'small';
-  if (lowercase.includes('\\medarea')) return 'medium';
-  if (lowercase.includes('\\largearea')) return 'large';
-  if (lowercase.includes('\\hugearea')) return 'huge';
-  if (lowercase.includes('\\gargarea')) return 'gargantuan';
+  if (lowercase.includes('\\tinyarea')) {
+    return 'tiny';
+  }
+  if (lowercase.includes('\\smallarea')) {
+    return 'small';
+  }
+  if (lowercase.includes('\\medarea')) {
+    return 'medium';
+  }
+  if (lowercase.includes('\\largearea')) {
+    return 'large';
+  }
+  if (lowercase.includes('\\hugearea')) {
+    return 'huge';
+  }
+  if (lowercase.includes('\\gargarea')) {
+    return 'gargantuan';
+  }
 
   return 'none';
 }
@@ -266,7 +308,9 @@ function parseAppliedEffects(text: string): string[] {
   const result: string[] = [];
   for (const e of effects) {
     let index = lowercase.indexOf(e);
-    if (index === -1) continue;
+    if (index === -1) {
+      continue;
+    }
 
     let allBrief = true;
     while (index !== -1) {
@@ -301,12 +345,16 @@ function parseAccuracyModifier(text: string): number {
 function parseAccuracyCondition(text: string): string | null {
   const lowercase = text.toLowerCase();
   const hasAny = /(\\plus|\\minus|\+|-)\d+\s+(?:\\glossterm{)?accuracy/i.test(lowercase);
-  if (!hasAny) return null;
+  if (!hasAny) {
+    return null;
+  }
 
   const hasUnconditional = /with a\s+(\\plus|\\minus|\+|-)\d+\s+(?:\\glossterm{)?accuracy/i.test(
     lowercase,
   );
-  if (hasUnconditional) return null;
+  if (hasUnconditional) {
+    return null;
+  }
 
   const match = lowercase.match(
     /(?:accuracy bonus|accuracy penalty)\s+(?:if|against|when|for)\s+([^.]+)/i,
@@ -748,84 +796,125 @@ function compareSpellProfiles(p1: SpellProfile, p2: SpellProfile): ComparisonRes
   // 1. Damage Rank
   const d1 = p1.damageRank ?? 0;
   const d2 = p2.damageRank ?? 0;
-  if (d1 > d2) betterFields.push('damage rank');
-  else if (d1 < d2) worseFields.push('damage rank');
+  if (d1 > d2) {
+    betterFields.push('damage rank');
+  } else if (d1 < d2) {
+    worseFields.push('damage rank');
+  }
 
   // Low Power flag (standard power scaling is better than low power)
   if (p1.isLowPower !== p2.isLowPower) {
-    if (!p1.isLowPower) betterFields.push('power scaling');
-    else worseFields.push('power scaling');
+    if (!p1.isLowPower) {
+      betterFields.push('power scaling');
+    } else {
+      worseFields.push('power scaling');
+    }
   }
 
   // 2. Healing Rank
   const h1 = p1.healingRank ?? 0;
   const h2 = p2.healingRank ?? 0;
-  if (h1 > h2) betterFields.push('healing rank');
-  else if (h1 < h2) worseFields.push('healing rank');
+  if (h1 > h2) {
+    betterFields.push('healing rank');
+  } else if (h1 < h2) {
+    worseFields.push('healing rank');
+  }
 
   // 3. Action Economy (double action is worse)
   if (p1.isDoubleAction !== p2.isDoubleAction) {
-    if (!p1.isDoubleAction) betterFields.push('action economy');
-    else worseFields.push('action economy');
+    if (!p1.isDoubleAction) {
+      betterFields.push('action economy');
+    } else {
+      worseFields.push('action economy');
+    }
   }
 
   // 4. Cost (having cost is worse)
   if (p1.hasCost !== p2.hasCost) {
-    if (!p1.hasCost) betterFields.push('cost');
-    else worseFields.push('cost');
+    if (!p1.hasCost) {
+      betterFields.push('cost');
+    } else {
+      worseFields.push('cost');
+    }
   }
 
   // 5. Delay (delayed is worse)
   if (p1.isDelayed !== p2.isDelayed) {
-    if (!p1.isDelayed) betterFields.push('delayed behavior');
-    else worseFields.push('delayed behavior');
+    if (!p1.isDelayed) {
+      betterFields.push('delayed behavior');
+    } else {
+      worseFields.push('delayed behavior');
+    }
   }
 
   // 6. Accuracy Modifier
   if (p1.accuracyModifier !== p2.accuracyModifier) {
-    if (p1.accuracyModifier > p2.accuracyModifier) betterFields.push('accuracy modifier');
-    else worseFields.push('accuracy modifier');
+    if (p1.accuracyModifier > p2.accuracyModifier) {
+      betterFields.push('accuracy modifier');
+    } else {
+      worseFields.push('accuracy modifier');
+    }
   }
 
   // 7. Range
   if (p1.range !== p2.range) {
     const idx1 = Math.max(0, RANGE_ORDER.indexOf(p1.range));
     const idx2 = Math.max(0, RANGE_ORDER.indexOf(p2.range));
-    if (idx1 > idx2) betterFields.push('range');
-    else if (idx1 < idx2) worseFields.push('range');
+    if (idx1 > idx2) {
+      betterFields.push('range');
+    } else if (idx1 < idx2) {
+      worseFields.push('range');
+    }
   }
 
   // 8. Area Size
   if (p1.areaSize !== p2.areaSize) {
     const idx1 = Math.max(0, AREA_SIZE_ORDER.indexOf(p1.areaSize));
     const idx2 = Math.max(0, AREA_SIZE_ORDER.indexOf(p2.areaSize));
-    if (idx1 > idx2) betterFields.push('area size');
-    else if (idx1 < idx2) worseFields.push('area size');
+    if (idx1 > idx2) {
+      betterFields.push('area size');
+    } else if (idx1 < idx2) {
+      worseFields.push('area size');
+    }
   }
 
   // 9. Applied Effects (superset of applied effects is better)
   const effectComp = compareAppliedEffects(p1.appliedEffects, p2.appliedEffects);
-  if (effectComp.isBetter) betterFields.push('applied conditions');
-  if (effectComp.isWorse) worseFields.push('applied conditions');
+  if (effectComp.isBetter) {
+    betterFields.push('applied conditions');
+  }
+  if (effectComp.isWorse) {
+    worseFields.push('applied conditions');
+  }
 
   // 10. Special Requirements / Drawbacks (fewer is better/subset is better)
   const r1 = new Set(p1.specialRequirements);
   const r2 = new Set(p2.specialRequirements);
   const hasExtraReqsP1 = p1.specialRequirements.some((r) => !r2.has(r));
   const hasExtraReqsP2 = p2.specialRequirements.some((r) => !r1.has(r));
-  if (hasExtraReqsP1) worseFields.push('special requirements');
-  if (hasExtraReqsP2) betterFields.push('special requirements');
+  if (hasExtraReqsP1) {
+    worseFields.push('special requirements');
+  }
+  if (hasExtraReqsP2) {
+    betterFields.push('special requirements');
+  }
 
   // 11. Half on Miss (having half on miss is better)
   if (p1.halfOnMiss !== p2.halfOnMiss) {
-    if (p1.halfOnMiss) betterFields.push('half damage on miss');
-    else worseFields.push('half damage on miss');
+    if (p1.halfOnMiss) {
+      betterFields.push('half damage on miss');
+    } else {
+      worseFields.push('half damage on miss');
+    }
   }
 
   // 12. Max Targets (for multi-target area spells, having more targets is better)
   if (p1.area === 'multi' && p2.area === 'multi' && p1.maxTargets !== p2.maxTargets) {
-    if (p1.maxTargets > p2.maxTargets) betterFields.push('maximum targets');
-    else worseFields.push('maximum targets');
+    if (p1.maxTargets > p2.maxTargets) {
+      betterFields.push('maximum targets');
+    } else {
+      worseFields.push('maximum targets');
+    }
   }
 
   // 13. Accuracy Condition
@@ -836,26 +925,38 @@ function compareSpellProfiles(p1: SpellProfile, p2: SpellProfile): ComparisonRes
 
   // 14. Injury Damage (having extra injury damage is better)
   if (p1.hasInjuryDamage !== p2.hasInjuryDamage) {
-    if (p1.hasInjuryDamage) betterFields.push('injury damage');
-    else worseFields.push('injury damage');
+    if (p1.hasInjuryDamage) {
+      betterFields.push('injury damage');
+    } else {
+      worseFields.push('injury damage');
+    }
   }
 
   // 15. Enemies Only (targeting enemies only is better than targeting everything/creatures in an area)
   if (p1.enemiesOnly !== p2.enemiesOnly) {
-    if (p1.enemiesOnly) betterFields.push('enemies only targeting');
-    else worseFields.push('enemies only targeting');
+    if (p1.enemiesOnly) {
+      betterFields.push('enemies only targeting');
+    } else {
+      worseFields.push('enemies only targeting');
+    }
   }
 
   // 16. Repeating Behavior (having repeating/DoT/recurring damage is better)
   if (p1.isRepeating !== p2.isRepeating) {
-    if (p1.isRepeating) betterFields.push('repeating behavior');
-    else worseFields.push('repeating behavior');
+    if (p1.isRepeating) {
+      betterFields.push('repeating behavior');
+    } else {
+      worseFields.push('repeating behavior');
+    }
   }
 
   // 17. Cover Provision (providing cover is better)
   if (p1.providesCover !== p2.providesCover) {
-    if (p1.providesCover) betterFields.push('cover provision');
-    else worseFields.push('cover provision');
+    if (p1.providesCover) {
+      betterFields.push('cover provision');
+    } else {
+      worseFields.push('cover provision');
+    }
   }
 
   return {
@@ -872,16 +973,24 @@ function checkSpellPair(
   options?: { showApproximate?: boolean },
 ): ValidationIssue[] {
   // Both spells must have attack definitions (i.e. they are combat abilities)
-  if (!p1.hasAttack || !p2.hasAttack) return [];
+  if (!p1.hasAttack || !p2.hasAttack) {
+    return [];
+  }
 
   // Hard constraint: The spells must still either both deal damage or both not deal damage
-  if ((p1.damageRank === null) !== (p2.damageRank === null)) return [];
+  if ((p1.damageRank === null) !== (p2.damageRank === null)) {
+    return [];
+  }
 
   // Hard constraint: Both must either heal or both not heal
-  if ((p1.healingRank === null) !== (p2.healingRank === null)) return [];
+  if ((p1.healingRank === null) !== (p2.healingRank === null)) {
+    return [];
+  }
 
   // Hard constraint: rank difference must be <= 1
-  if (Math.abs(p1.rank - p2.rank) > 1) return [];
+  if (Math.abs(p1.rank - p2.rank) > 1) {
+    return [];
+  }
 
   const diffs = getSpellDifferences(p1, p2);
   const issues: ValidationIssue[] = [];

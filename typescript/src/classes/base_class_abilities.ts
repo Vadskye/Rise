@@ -106,23 +106,37 @@ export function getClassDefenseBonus(cls: Class, defense: RiseDefense): number {
 
   switch (cls) {
     case 'Barbarian':
-      if (defense === 'fortitude') classBonus = 2;
+      if (defense === 'fortitude') {
+        classBonus = 2;
+      }
       break;
     case 'Fighter':
-      if (defense === 'armor_defense') classBonus = 1;
+      if (defense === 'armor_defense') {
+        classBonus = 1;
+      }
       break;
     case 'Monk':
-      if (defense === 'armor_defense') classBonus = 1;
+      if (defense === 'armor_defense') {
+        classBonus = 1;
+      }
       break;
     case 'Oozeborn':
-      if (defense === 'fortitude') classBonus = 2;
+      if (defense === 'fortitude') {
+        classBonus = 2;
+      }
       break;
     case 'Sorcerer':
-      if (defense === 'fortitude') classBonus = 1;
+      if (defense === 'fortitude') {
+        classBonus = 1;
+      }
       break;
     case 'Treant':
-      if (defense === 'fortitude') classBonus = 2;
-      if (defense === 'mental') classBonus = 1;
+      if (defense === 'fortitude') {
+        classBonus = 2;
+      }
+      if (defense === 'mental') {
+        classBonus = 1;
+      }
       break;
   }
 

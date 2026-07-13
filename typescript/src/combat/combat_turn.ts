@@ -41,14 +41,18 @@ export function executeTeamTurn(team: CombatTeam, state: FightState): CombatStep
 
   const attackers = [...state.aliveMembersByTeam[team.name]];
   for (const attacker of attackers) {
-    if (state.hp[attacker.id] <= 0) continue;
+    if (state.hp[attacker.id] <= 0) {
+      continue;
+    }
 
     const result = executeAttackerAction(attacker, team, state);
 
     // End of turn processing for attacker
     handleEndOfTurn(attacker, state);
 
-    if (result.status !== CombatStepStatus.Ongoing) return result;
+    if (result.status !== CombatStepStatus.Ongoing) {
+      return result;
+    }
   }
   return { status: CombatStepStatus.Ongoing, winner: null };
 }
@@ -59,7 +63,9 @@ export function executeAttackerAction(
   state: FightState,
 ): CombatStepResult {
   const potentialTargets = getPotentialTargets(team, state);
-  if (potentialTargets.length === 0) return checkVictory(state);
+  if (potentialTargets.length === 0) {
+    return checkVictory(state);
+  }
 
   // Use cached simulator attacks
   const attacks: SimulatorReadyAttack[] = attacker.simulatorAttacks || [];
@@ -68,7 +74,9 @@ export function executeAttackerAction(
   if (attacker.elite) {
     const eliteAttacks = attacks.filter((a) => a.usageTime === 'elite');
     const result = selectAndExecuteAction(attacker, team, state, eliteAttacks);
-    if (result.status !== CombatStepStatus.Ongoing) return result;
+    if (result.status !== CombatStepStatus.Ongoing) {
+      return result;
+    }
   }
 
   const standardAttacks = attacks.filter((a) => a.usageTime === 'standard');
@@ -90,7 +98,9 @@ function selectAndExecuteAction(
   availableAttacks: SimulatorReadyAttack[],
 ): CombatStepResult {
   const potentialTargets = getPotentialTargets(team, state);
-  if (potentialTargets.length === 0) return checkVictory(state);
+  if (potentialTargets.length === 0) {
+    return checkVictory(state);
+  }
 
   // Select best attack, filtering out those on cooldown
   let bestAttack: SimulatorReadyAttack | null = null;
@@ -99,7 +109,9 @@ function selectAndExecuteAction(
   for (const attack of availableAttacks) {
     // Check cooldown
     const currentCooldown = state.cooldowns[attacker.id]?.[attack.name] || 0;
-    if (currentCooldown > 0) continue;
+    if (currentCooldown > 0) {
+      continue;
+    }
 
     const score = scoreAttack(attack);
     if (score > bestScore) {
@@ -176,7 +188,9 @@ function executeAttack(
 function findCreatureById(id: string, state: FightState): Creature | null {
   for (const team of Object.values(state.aliveMembersByTeam)) {
     for (const member of team) {
-      if (member.id === id) return member;
+      if (member.id === id) {
+        return member;
+      }
     }
   }
   return null;
@@ -282,7 +296,9 @@ export function calculateDamageDealt(
   state: FightState,
   preRolledDamage?: number,
 ): number {
-  if (hitDegree === 'Miss') return 0;
+  if (hitDegree === 'Miss') {
+    return 0;
+  }
 
   const baseDamage =
     preRolledDamage !== undefined ? preRolledDamage : rollDice(attack.damage.toString());
@@ -313,7 +329,9 @@ export function applyDamageAndEffects(
     for (const debuff of attack.debuffsToApply) {
       if (debuff.requirement === 'injured') {
         const isInjured = state.hp[target.id] <= target.injury_point;
-        if (!isInjured) continue;
+        if (!isInjured) {
+          continue;
+        }
       }
 
       if (!state.debuffs[target.id]) {
@@ -349,7 +367,9 @@ export function handleEndOfTurn(attacker: Creature, state: FightState) {
   for (const targetId in state.debuffs) {
     const debuffs = state.debuffs[targetId];
     const target = findCreatureById(targetId, state);
-    if (!target) continue;
+    if (!target) {
+      continue;
+    }
 
     for (let i = debuffs.length - 1; i >= 0; i--) {
       const c = debuffs[i];
@@ -370,7 +390,9 @@ export function handleEndOfTurn(attacker: Creature, state: FightState) {
 
 export function removeDebuffs(creature: Creature, state: FightState, count: number) {
   const debuffs = state.debuffs[creature.id];
-  if (!debuffs || debuffs.length === 0) return;
+  if (!debuffs || debuffs.length === 0) {
+    return;
+  }
 
   for (let i = 0; i < count; i++) {
     const index = debuffs.findIndex((c) => c.duration === 'condition');

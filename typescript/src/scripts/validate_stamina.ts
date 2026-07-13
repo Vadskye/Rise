@@ -26,7 +26,9 @@ function cleanLine(line: string): string {
 
 function getFiles(dir: string, extensions: string[]): string[] {
   const results: string[] = [];
-  if (!fs.existsSync(dir)) return results;
+  if (!fs.existsSync(dir)) {
+    return results;
+  }
   const list = fs.readdirSync(dir);
   for (const file of list) {
     const filePath = path.join(dir, file);
@@ -52,7 +54,9 @@ function getFiles(dir: string, extensions: string[]): string[] {
 }
 
 function scanFile(filePath: string) {
-  if (filePath.endsWith('validate_stamina.ts')) return;
+  if (filePath.endsWith('validate_stamina.ts')) {
+    return;
+  }
   const content = fs.readFileSync(filePath, 'utf-8');
   const lines = content.split(/\r?\n/);
   const ext = path.extname(filePath);
@@ -62,13 +66,23 @@ function scanFile(filePath: string) {
     const lineNum = i + 1;
 
     // Support 'nolint' bypass
-    if (line.includes('nolint')) continue;
+    if (line.includes('nolint')) {
+      continue;
+    }
 
     // Check for comment lines
-    if (ext === '.tex' && /^\s*%/.test(line)) continue;
-    if (ext === '.ts' && /^\s*(\/\/|\*)/.test(line)) continue;
-    if ((ext === '.py' || ext === '.yml') && /^\s*#/.test(line)) continue;
-    if (ext === '.less' && /^\s*(\/\/|\/\*|\*)/.test(line)) continue;
+    if (ext === '.tex' && /^\s*%/.test(line)) {
+      continue;
+    }
+    if (ext === '.ts' && /^\s*(\/\/|\*)/.test(line)) {
+      continue;
+    }
+    if ((ext === '.py' || ext === '.yml') && /^\s*#/.test(line)) {
+      continue;
+    }
+    if (ext === '.less' && /^\s*(\/\/|\/\*|\*)/.test(line)) {
+      continue;
+    }
 
     const cleaned = cleanLine(line);
 

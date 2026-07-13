@@ -95,9 +95,7 @@ export class CharacterSheet {
 
     if (hasOpenedTrigger) {
       const openedSignal = this.getButton('sheet:opened').ClickedSignal;
-      unsubscribers.push(
-        openedSignal.on(wrapper),
-      );
+      unsubscribers.push(openedSignal.on(wrapper));
     }
 
     for (const propertyName of changedPropertyNames) {
@@ -105,16 +103,12 @@ export class CharacterSheet {
         // TODO: we don't handle unsubscribing from repeating sections right now
         this.getRepeatingSection(propertyName).onChange(propertyName, callback);
       } else {
-        unsubscribers.push(
-          this.getProperty(propertyName).SetSignal.on(wrapper),
-        );
+        unsubscribers.push(this.getProperty(propertyName).SetSignal.on(wrapper));
       }
     }
 
     for (const buttonName of clickedButtonNames) {
-      unsubscribers.push(
-        this.getButton(buttonName).ClickedSignal.on(wrapper),
-      );
+      unsubscribers.push(this.getButton(buttonName).ClickedSignal.on(wrapper));
     }
 
     return () => {
@@ -212,11 +206,11 @@ export class CharacterSheet {
     } finally {
       if (isRootBatch) {
         globalBatchContext.isActive = false;
-        
+
         while (globalBatchContext.queuedHandlers.size > 0) {
           const handlersToRun = Array.from(globalBatchContext.queuedHandlers.entries());
           globalBatchContext.queuedHandlers.clear();
-          
+
           for (const [handler, { source, value }] of handlersToRun) {
             handler(source, value);
           }
