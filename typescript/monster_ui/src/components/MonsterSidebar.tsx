@@ -17,6 +17,7 @@ interface MonsterSidebarProps {
   onDeleteMonster: (name: string) => void;
   onDeleteGroup: (name: string) => void;
   onDeleteMonsterFromGroup: (groupName: string, name: string) => void;
+  onMoveToFolder: (type: 'monster' | 'group', name: string, targetFolder?: string) => void;
   isSaving: boolean;
 }
 
@@ -30,9 +31,44 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
   onDeleteMonster,
   onDeleteGroup,
   onDeleteMonsterFromGroup,
+  onMoveToFolder,
   isSaving,
 }) => {
   const [expandedFolders, setExpandedFolders] = useState<Record<string, boolean>>({});
+  const [dragOverFolder, setDragOverFolder] = useState<string | null>(null);
+
+  const handleDragStart = (e: React.DragEvent, type: 'monster' | 'group', name: string) => {
+    e.dataTransfer.setData('application/json', JSON.stringify({ type, name }));
+    e.dataTransfer.effectAllowed = 'move';
+  };
+
+  const handleDragOver = (e: React.DragEvent, folderName: string | null) => {
+    e.preventDefault();
+    if (dragOverFolder !== folderName) {
+      setDragOverFolder(folderName);
+    }
+  };
+
+  const handleDragLeave = (e: React.DragEvent) => {
+    e.preventDefault();
+    setDragOverFolder(null);
+  };
+
+  const handleDrop = (e: React.DragEvent, targetFolder: string | null) => {
+    e.preventDefault();
+    setDragOverFolder(null);
+    try {
+      const dataStr = e.dataTransfer.getData('application/json');
+      if (!dataStr) return;
+      const { type, name } = JSON.parse(dataStr);
+      if (type && name) {
+        onMoveToFolder(type, name, targetFolder || undefined);
+      }
+    } catch (err) {
+      console.error('Failed to parse drag and drop data:', err);
+    }
+  };
+
 
   const isSelected = (selection: SidebarSelection) => {
     if (!activeSelection || !selection) {
@@ -98,7 +134,14 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
           const isExpanded = expandedFolders[folderName] !== false;
 
           return (
-            <div key={folderName} className="folder-container">
+            <div
+              key={folderName}
+              data-testid={`folder-container-${folderName}`}
+              className={`folder-container ${dragOverFolder === folderName ? 'drag-over' : ''}`}
+              onDragOver={(e) => handleDragOver(e, folderName)}
+              onDragLeave={handleDragLeave}
+              onDrop={(e) => handleDrop(e, folderName)}
+            >
               <div className="folder-header" onClick={() => toggleFolder(folderName)}>
                 <span className="folder-title">
                   <span className={`folder-arrow ${isExpanded ? 'expanded' : ''}`}>▶</span> 📁 {folderName}
@@ -112,9 +155,12 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
                       return (
                         <div
                           key={monster.name}
+                          data-testid={`monster-item-${monster.name}`}
                           className={`list-item ${isSelected({ type: 'monster', name: monster.name }) ? 'active' : ''}`}
                           onClick={() => onSelect({ type: 'monster', name: monster.name })}
                           style={{ paddingLeft: '24px' }}
+                          draggable
+                          onDragStart={(e) => handleDragStart(e, 'monster', monster.name)}
                         >
                           <span className="item-name">👤 {monster.name}</span>
                           <button
@@ -137,7 +183,10 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
                         <div key={group.name} className="group-container" style={{ paddingLeft: '12px' }}>
                           <div
                             className={`group-header ${isGroupSelected ? 'active' : ''}`}
+                            data-testid={`group-item-${group.name}`}
                             onClick={() => onSelect({ type: 'group', name: group.name })}
+                            draggable
+                            onDragStart={(e) => handleDragStart(e, 'group', group.name)}
                           >
                             <span className="group-title">👥 {group.name}</span>
                             <span className="group-actions">
@@ -219,120 +268,142 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
         })}
 
         {/* Individual Monsters */}
-        <div className="section-title">Individual Monsters</div>
-        {folderlessMonsters.map((monster) => (
-          <div
-            key={monster.name}
-            className={`list-item ${isSelected({ type: 'monster', name: monster.name }) ? 'active' : ''}`}
-            onClick={() => onSelect({ type: 'monster', name: monster.name })}
-          >
-            <span className="item-name">👤 {monster.name}</span>
-            <button
-              className="delete-btn"
-              onClick={(e) => {
-                e.stopPropagation();
-                if (confirm(`Delete individual monster "${monster.name}"?`)) {
-                  onDeleteMonster(monster.name);
-                }
-              }}
+        <div
+          className={`folderless-section ${dragOverFolder === 'folderless-monsters' ? 'drag-over' : ''}`}
+          data-testid="folderless-monsters-section"
+          onDragOver={(e) => handleDragOver(e, 'folderless-monsters')}
+          onDragLeave={handleDragLeave}
+          onDrop={(e) => handleDrop(e, null)}
+        >
+          <div className="section-title">Individual Monsters</div>
+          {folderlessMonsters.map((monster) => (
+            <div
+              key={monster.name}
+              data-testid={`monster-item-${monster.name}`}
+              className={`list-item ${isSelected({ type: 'monster', name: monster.name }) ? 'active' : ''}`}
+              onClick={() => onSelect({ type: 'monster', name: monster.name })}
+              draggable
+              onDragStart={(e) => handleDragStart(e, 'monster', monster.name)}
             >
-              ❌
-            </button>
-          </div>
-        ))}
-        {folderlessMonsters.length === 0 && (
-          <div style={{ padding: '8px 12px', fontSize: '0.85rem', color: 'var(--text-muted)' }}>
-            No individual monsters.
-          </div>
-        )}
+              <span className="item-name">👤 {monster.name}</span>
+              <button
+                className="delete-btn"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  if (confirm(`Delete individual monster "${monster.name}"?`)) {
+                    onDeleteMonster(monster.name);
+                  }
+                }}
+              >
+                ❌
+              </button>
+            </div>
+          ))}
+          {folderlessMonsters.length === 0 && (
+            <div style={{ padding: '8px 12px', fontSize: '0.85rem', color: 'var(--text-muted)' }}>
+              No individual monsters.
+            </div>
+          )}
+        </div>
 
         {/* Monster Groups */}
-        <div className="section-title">Monster Groups</div>
-        {folderlessGroups.map((group) => {
-          const isGroupSelected = isSelected({ type: 'group', name: group.name });
-          return (
-            <div key={group.name} className="group-container">
-              <div
-                className={`group-header ${isGroupSelected ? 'active' : ''}`}
-                onClick={() => onSelect({ type: 'group', name: group.name })}
-              >
-                <span className="group-title">👥 {group.name}</span>
-                <span className="group-actions">
-                  <button
-                    title="Add monster to group"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      onAddMonsterToGroup(group.name);
-                    }}
-                  >
-                    ➕
-                  </button>
-                  <button
-                    className="delete"
-                    title="Delete group"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      if (confirm(`Delete group "${group.name}" and all its monsters?`)) {
-                        onDeleteGroup(group.name);
-                      }
-                    }}
-                  >
-                    ❌
-                  </button>
-                </span>
-              </div>
-
-              <div className="group-children">
-                {group.monsters.map((child) => (
-                  <div
-                    key={`${group.name}.${child.name}`}
-                    className={`list-item ${
-                      isSelected({
-                        type: 'group-monster',
-                        groupName: group.name,
-                        name: child.name,
-                      })
-                        ? 'active'
-                        : ''
-                    }`}
-                    onClick={() =>
-                      onSelect({
-                        type: 'group-monster',
-                        groupName: group.name,
-                        name: child.name,
-                      })
-                    }
-                  >
-                    <span className="item-name">👤 {child.name}</span>
+        <div
+          className={`folderless-section ${dragOverFolder === 'folderless-groups' ? 'drag-over' : ''}`}
+          data-testid="folderless-groups-section"
+          onDragOver={(e) => handleDragOver(e, 'folderless-groups')}
+          onDragLeave={handleDragLeave}
+          onDrop={(e) => handleDrop(e, null)}
+        >
+          <div className="section-title">Monster Groups</div>
+          {folderlessGroups.map((group) => {
+            const isGroupSelected = isSelected({ type: 'group', name: group.name });
+            return (
+              <div key={group.name} className="group-container">
+                <div
+                  className={`group-header ${isGroupSelected ? 'active' : ''}`}
+                  data-testid={`group-item-${group.name}`}
+                  onClick={() => onSelect({ type: 'group', name: group.name })}
+                  draggable
+                  onDragStart={(e) => handleDragStart(e, 'group', group.name)}
+                >
+                  <span className="group-title">👥 {group.name}</span>
+                  <span className="group-actions">
                     <button
-                      className="delete-btn"
+                      title="Add monster to group"
                       onClick={(e) => {
                         e.stopPropagation();
-                        if (confirm(`Delete monster "${child.name}" from group "${group.name}"?`)) {
-                          onDeleteMonsterFromGroup(group.name, child.name);
+                        onAddMonsterToGroup(group.name);
+                      }}
+                    >
+                      ➕
+                    </button>
+                    <button
+                      className="delete"
+                      title="Delete group"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        if (confirm(`Delete group "${group.name}" and all its monsters?`)) {
+                          onDeleteGroup(group.name);
                         }
                       }}
                     >
                       ❌
                     </button>
-                  </div>
-                ))}
-                {group.monsters.length === 0 && (
-                  <div
-                    style={{ padding: '4px 10px', fontSize: '0.8rem', color: 'var(--text-muted)' }}
-                  >
-                    Empty group.
-                  </div>
-                )}
+                  </span>
+                </div>
+
+                <div className="group-children">
+                  {group.monsters.map((child) => (
+                    <div
+                      key={`${group.name}.${child.name}`}
+                      className={`list-item ${
+                        isSelected({
+                          type: 'group-monster',
+                          groupName: group.name,
+                          name: child.name,
+                        })
+                          ? 'active'
+                          : ''
+                      }`}
+                      onClick={() =>
+                        onSelect({
+                          type: 'group-monster',
+                          groupName: group.name,
+                          name: child.name,
+                        })
+                      }
+                    >
+                      <span className="item-name">👤 {child.name}</span>
+                      <button
+                        className="delete-btn"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          if (confirm(`Delete monster "${child.name}" from group "${group.name}"?`)) {
+                            onDeleteMonsterFromGroup(group.name, child.name);
+                          }
+                        }}
+                      >
+                        ❌
+                      </button>
+                    </div>
+                  ))}
+                  {group.monsters.length === 0 && (
+                    <div
+                      style={{ padding: '4px 10px', fontSize: '0.8rem', color: 'var(--text-muted)' }}
+                    >
+                      Empty group.
+                    </div>
+                  )}
+                </div>
               </div>
+            );
+          })}
+          {folderlessGroups.length === 0 && (
+            <div style={{ padding: '8px 12px', fontSize: '0.85rem', color: 'var(--text-muted)' }}>
+              No monster groups.
             </div>
-          );
-        })}
-        {folderlessGroups.length === 0 && (
-          <div style={{ padding: '8px 12px', fontSize: '0.85rem', color: 'var(--text-muted)' }}>
-            No monster groups.
-          </div>
-        )}
+          )}
+        </div>
       </div>
 
       <div className="sidebar-footer">

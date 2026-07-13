@@ -138,6 +138,10 @@ body {
       transition: all 0.15s ease;
       color: var(--text-secondary);
 
+      &[draggable="true"] {
+        cursor: grab;
+      }
+
       &:hover {
         background-color: var(--bg-tertiary);
         color: var(--text-primary);
@@ -185,8 +189,29 @@ body {
       }
     }
 
+    .folderless-section {
+      border: 2px dashed transparent;
+      border-radius: 8px;
+      margin-top: 10px;
+      padding-bottom: 5px;
+      transition: all 0.2s ease;
+
+      &.drag-over {
+        border-color: var(--accent-color);
+        background-color: rgba(192, 132, 252, 0.05);
+      }
+    }
+
     .folder-container {
       margin-bottom: 12px;
+      border: 2px dashed transparent;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+
+      &.drag-over {
+        border-color: var(--accent-color);
+        background-color: rgba(192, 132, 252, 0.05);
+      }
 
       .folder-header {
         display: flex;
@@ -244,6 +269,10 @@ body {
         font-size: 0.9rem;
         color: var(--text-secondary);
         font-weight: 600;
+
+        &[draggable="true"] {
+          cursor: grab;
+        }
 
         &:hover {
           background-color: var(--bg-tertiary);
