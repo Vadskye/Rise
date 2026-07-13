@@ -5,6 +5,27 @@ import { paths } from './paths';
 import { CustomMonsterAbility } from '@src/character_sheet/creature';
 import { MonsterAttackUsageTime } from '@src/character_sheet/sheet_worker';
 import { RiseAbilityDefinitionTag } from '@src/character_sheet/rise_data';
+import { StructuredSense, StructuredMovementSpeed } from '../src/types/monster';
+
+export function formatStructuredSense(sense: StructuredSense): string {
+  const name = sense.type === 'Other' ? (sense.customName || 'Custom') : sense.type;
+  if (sense.range !== undefined && sense.range !== null) {
+    return `${name} (${sense.range} ft.)`;
+  }
+  return name;
+}
+
+export function formatStructuredMovementSpeed(speed: StructuredMovementSpeed): string {
+  const mode = speed.mode === 'Other' ? (speed.customMode || 'Custom') : speed.mode;
+  if (speed.mode === 'Fly' || speed.mode === 'Glide' || speed.mode === 'Other') {
+    if (speed.limitType === 'limitless') {
+      return `${mode} (${speed.category}, limitless)`;
+    } else if (speed.limitType === 'limit' && speed.limitValue !== undefined) {
+      return `${mode} (${speed.category}, ${speed.limitValue} ft. limit)`;
+    }
+  }
+  return `${mode} (${speed.category})`;
+}
 
 function formatValueToTSSingleLine(value: any): string {
   if (typeof value === 'string') {
@@ -125,8 +146,8 @@ export interface MonsterData {
     legendary?: string;
   };
   traits?: string[];
-  customSenses?: string[];
-  customMovementSpeeds?: string[];
+  customSenses?: StructuredSense[];
+  customMovementSpeeds?: StructuredMovementSpeed[];
   immunities?: string[];
   resistances?: string[];
   vulnerabilities?: string[];
@@ -156,8 +177,8 @@ export interface MonsterGroupData {
   sharedFreeformCode: string;
   monsters: MonsterData[];
   traits?: string[];
-  customSenses?: string[];
-  customMovementSpeeds?: string[];
+  customSenses?: StructuredSense[];
+  customMovementSpeeds?: StructuredMovementSpeed[];
   immunities?: string[];
   resistances?: string[];
   vulnerabilities?: string[];
@@ -215,13 +236,15 @@ function generateSharedPropertiesCode(
 
   if (data.customSenses && data.customSenses.length > 0) {
     for (const sense of data.customSenses) {
-      lines.push(`${indent}creature.addCustomSense(${formatValueToTSSingleLine(sense)});`);
+      const formatted = formatStructuredSense(sense);
+      lines.push(`${indent}creature.addCustomSense(${formatValueToTSSingleLine(formatted)});`);
     }
   }
 
   if (data.customMovementSpeeds && data.customMovementSpeeds.length > 0) {
     for (const speed of data.customMovementSpeeds) {
-      lines.push(`${indent}creature.addCustomMovementSpeed(${formatValueToTSSingleLine(speed)});`);
+      const formatted = formatStructuredMovementSpeed(speed);
+      lines.push(`${indent}creature.addCustomMovementSpeed(${formatValueToTSSingleLine(formatted)});`);
     }
   }
 
