@@ -16,7 +16,6 @@ import {
   RiseRole,
   RiseSize,
   RiseSpecialDefense,
-  RiseTag,
   RiseWeaponTag,
   RiseTrait,
   isTrait,
@@ -44,15 +43,7 @@ import {
 import { DamageScaling } from '@src/core_mechanics/damage_scaling';
 import { DicePool } from '@src/core_mechanics/dice_pool';
 import * as format from '@src/latex/format';
-import {
-  EquippedItem,
-  isBodyArmor,
-  isShield,
-  generateBodyArmorProperties,
-  generateShieldProperties,
-  BodyArmor,
-  Shield,
-} from '@src/monsters/equipment';
+import { EquippedItem, isBodyArmor, isShield, BodyArmor, Shield } from '@src/monsters/equipment';
 import { KNOWLEDGE_BY_ORIGIN, KNOWLEDGE_BY_TYPE } from './knowledge';
 import { getArmorBaseDefinition, ArmorKind } from '@src/equipment/armor';
 

@@ -1,5 +1,5 @@
-export { AbilityRole } from './constants';
-export {
+export type { AbilityRole } from './constants';
+export type {
   ActiveAbilityRank,
   ActiveAbilityScaling,
   ActiveAbility,
@@ -9,9 +9,11 @@ export {
   SpellDefinition,
   Ritual,
   RitualDefinition,
+} from './active_abilities';
+export {
   standardizeSpell,
   standardizeRitual,
   standardizeCantrip,
   standardizeManeuver,
 } from './active_abilities';
-export { PassiveAbility } from './passive_abilities';
+export type { PassiveAbility } from './passive_abilities';

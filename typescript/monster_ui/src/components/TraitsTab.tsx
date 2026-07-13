@@ -1,6 +1,7 @@
 import React from 'react';
-import { MonsterData } from '../types/monster';
+import { SharedEditableProperties } from '../types/monster';
 import { PillListInput } from './PillListInput';
+import { RISE_TRAITS } from '@src/character_sheet/rise_data';
 
 // Note: Standard traits in original code were:
 // 'amphibious', 'blooded', 'bloodless', 'corporeal', 'dynamic', 'ensouled', 'floating',
@@ -84,12 +85,15 @@ import { PillListInput } from './PillListInput';
 // Ah! 'multipedal' was 320, 'nonliving' was 321, 'quadrupedal' was 322. Let's make sure the list is identical.
 // Yes, let's order them exactly as in the original code, just in case!
 
-interface TraitsTabProps {
-  monsterData: MonsterData;
-  onChangeMonster: (updated: MonsterData) => void;
+interface TraitsTabProps<T extends SharedEditableProperties> {
+  monsterData: T;
+  onChangeMonster: (updated: T) => void;
 }
 
-export const TraitsTab: React.FC<TraitsTabProps> = ({ monsterData, onChangeMonster }) => {
+export const TraitsTab = <T extends SharedEditableProperties>({
+  monsterData,
+  onChangeMonster,
+}: TraitsTabProps<T>) => {
   const [traitSearch, setTraitSearch] = React.useState('');
 
   const traits = monsterData.traits || [];
@@ -103,66 +107,27 @@ export const TraitsTab: React.FC<TraitsTabProps> = ({ monsterData, onChangeMonst
     });
   };
 
-  const standardTraits = [
-    'amphibious',
-    'blooded',
-    'bloodless',
-    'corporeal',
-    'dynamic',
-    'ensouled',
-    'floating',
-    'immortal',
-    'incorporeal',
-    'invisible',
-    'legless',
-    'living',
-    'mindless',
-    'mortal',
-    'multipedal',
-    'nonliving',
-    'quadrupedal',
-    'scent',
-    'sighted',
-    'sightless',
-    'simple-minded',
-    'soulless',
-    'static',
-    'swarm',
-    'telepathy',
-  ];
+  const standardTraits = Array.from(RISE_TRAITS);
 
   return (
     <div className="tab-content">
       <h4 className="section-subtitle">Standard Traits</h4>
-      <div className="form-group" style={{ marginBottom: '10px' }}>
+      <div className="form-group search-wrapper">
         <input
           type="text"
+          className="search-input"
           placeholder="Search traits..."
           value={traitSearch}
           onChange={(e) => setTraitSearch(e.target.value)}
-          style={{ padding: '8px 12px', fontSize: '0.85rem' }}
         />
       </div>
-      <div
-        className="traits-grid"
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))',
-          gap: '10px',
-          backgroundColor: 'var(--bg-secondary)',
-          padding: '15px',
-          borderRadius: '6px',
-          border: '1px solid var(--border-color)',
-          marginBottom: '20px',
-        }}
-      >
+      <div className="traits-grid">
         {standardTraits
           .filter((t) => t.includes(traitSearch.toLowerCase()))
           .map((trait) => (
             <div
               key={trait}
               className="form-checkbox-row"
-              style={{ display: 'flex', alignItems: 'center', gap: '6px' }}
             >
               <input
                 id={`trait-${trait}`}
@@ -172,11 +137,7 @@ export const TraitsTab: React.FC<TraitsTabProps> = ({ monsterData, onChangeMonst
               />
               <label
                 htmlFor={`trait-${trait}`}
-                style={{
-                  fontSize: '0.85rem',
-                  color: traits.includes(trait) ? 'var(--text-primary)' : 'var(--text-secondary)',
-                  cursor: 'pointer',
-                }}
+                className={traits.includes(trait) ? 'checked' : ''}
               >
                 {trait}
               </label>
@@ -187,11 +148,11 @@ export const TraitsTab: React.FC<TraitsTabProps> = ({ monsterData, onChangeMonst
       <h4 className="section-subtitle">Senses & Movement</h4>
       <PillListInput
         label="Custom Senses"
+        className="mb-15"
         items={monsterData.customSenses || []}
         onChange={(updated) => onChangeMonster({ ...monsterData, customSenses: updated })}
         placeholder="e.g. Darkvision (60 ft.)"
         emptyMessage="No custom senses added (defaults to Normal Senses)."
-        style={{ marginBottom: '15px' }}
       />
 
       <PillListInput

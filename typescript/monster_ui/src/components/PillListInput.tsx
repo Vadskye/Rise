@@ -7,6 +7,7 @@ interface PillListInputProps {
   placeholder?: string;
   emptyMessage?: string;
   style?: React.CSSProperties;
+  className?: string;
 }
 
 export const PillListInput: React.FC<PillListInputProps> = ({
@@ -16,6 +17,7 @@ export const PillListInput: React.FC<PillListInputProps> = ({
   placeholder,
   emptyMessage,
   style,
+  className,
 }) => {
   const [inputValue, setInputValue] = React.useState('');
 
@@ -31,7 +33,7 @@ export const PillListInput: React.FC<PillListInputProps> = ({
   };
 
   return (
-    <div className="form-group" style={style}>
+    <div className={`form-group ${className || ''}`} style={style}>
       <label>{label}</label>
       <div
         className="tag-list"

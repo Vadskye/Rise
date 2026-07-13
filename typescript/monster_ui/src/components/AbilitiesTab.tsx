@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { MonsterData } from '../types/monster';
+import { useState } from 'react';
+import { SharedEditableProperties } from '../types/monster';
 import { RitualsSection } from './abilities/RitualsSection';
 
 import { StandardAbilitiesSection } from './abilities/StandardAbilitiesSection';
@@ -13,19 +13,19 @@ interface ReferenceData {
   spheres: string[];
 }
 
-interface AbilitiesTabProps {
-  monsterData: MonsterData;
-  onChangeMonster: (updated: MonsterData) => void;
+interface AbilitiesTabProps<T extends SharedEditableProperties> {
+  monsterData: T;
+  onChangeMonster: (updated: T) => void;
   referenceData: ReferenceData;
   warnings?: string[];
 }
 
-export const AbilitiesTab: React.FC<AbilitiesTabProps> = ({
+export const AbilitiesTab = <T extends SharedEditableProperties>({
   monsterData,
   onChangeMonster,
   referenceData,
   warnings = [],
-}) => {
+}: AbilitiesTabProps<T>) => {
   // Local state for expanded cards (maps to "type-index" e.g., "custom-0", "weapon-1")
   const [expandedCard, setExpandedCard] = useState<string | null>(null);
 
@@ -33,7 +33,7 @@ export const AbilitiesTab: React.FC<AbilitiesTabProps> = ({
     setExpandedCard(expandedCard === id ? null : id);
   };
 
-  const updateField = <K extends keyof MonsterData>(key: K, value: MonsterData[K]) => {
+  const updateField = <K extends keyof T>(key: K, value: T[K]) => {
     onChangeMonster({
       ...monsterData,
       [key]: value,

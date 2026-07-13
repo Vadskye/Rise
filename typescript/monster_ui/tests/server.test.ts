@@ -432,6 +432,12 @@ describe('Monster UI Integration Tests (Full Server)', () => {
         level: 1,
       },
       weapons: [{ name: 'spear' }],
+      standardAbilities: [
+        {
+          type: 'maneuver' as const,
+          name: 'Charge',
+        },
+      ],
     };
 
     const res1 = await fetch(`${baseUrl}/api/preview`, {
