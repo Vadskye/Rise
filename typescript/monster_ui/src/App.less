@@ -185,6 +185,52 @@ body {
       }
     }
 
+    .folder-container {
+      margin-bottom: 12px;
+
+      .folder-header {
+        display: flex;
+        align-items: center;
+        padding: 6px 10px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 0.95rem;
+        color: var(--text-primary);
+        font-weight: 700;
+        user-select: none;
+        transition: all 0.15s ease;
+
+        &:hover {
+          background-color: var(--bg-tertiary);
+        }
+
+        .folder-title {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+
+        .folder-arrow {
+          font-size: 0.65rem;
+          color: var(--text-muted);
+          transition: transform 0.2s ease;
+          display: inline-block;
+
+          &.expanded {
+            transform: rotate(90deg);
+          }
+        }
+      }
+
+      .folder-children {
+        margin-top: 2px;
+        margin-bottom: 4px;
+        border-left: 1px dashed var(--border-color);
+        margin-left: 14px;
+        padding-left: 2px;
+      }
+    }
+
     .group-container {
       margin-bottom: 10px;
 

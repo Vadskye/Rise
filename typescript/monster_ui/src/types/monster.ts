@@ -73,6 +73,7 @@ export interface SharedEditableProperties {
 
 export interface MonsterData extends SharedEditableProperties {
   name: string;
+  folder?: string;
   requiredProperties: MonsterRequiredProperties;
   freeformCode: string;
   baseAttributes?: [number, number, number, number, number, number];
@@ -94,6 +95,7 @@ export interface MonsterGroupKnowledge {
 
 export interface MonsterGroupData extends SharedEditableProperties {
   name: string;
+  folder?: string;
   knowledge?: MonsterGroupKnowledge;
   description?: string;
   hasArt: boolean;

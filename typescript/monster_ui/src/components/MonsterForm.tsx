@@ -21,6 +21,7 @@ interface MonsterFormProps {
     weapons: string[];
     spheres: string[];
   };
+  folders?: string[];
 }
 
 export const MonsterForm: React.FC<MonsterFormProps> = ({
@@ -32,6 +33,7 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
   errors,
   warnings,
   referenceData = { spells: [], maneuvers: [], weapons: [], spheres: [] },
+  folders = [],
 }) => {
   // Design Decisions:
   // 1. Tabbed Layout: Rather than presenting a giant list of inputs that is overwhelming and hard
@@ -114,6 +116,7 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
             onChangeGroup={onChangeGroup}
             errors={errors}
             warnings={warnings}
+            folders={folders}
           />
         ) : monsterData && onChangeMonster ? (
           <IdentityTab
@@ -121,6 +124,7 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
             onChangeMonster={onChangeMonster}
             errors={errors}
             warnings={warnings}
+            folders={folders}
           />
         ) : null)}
 

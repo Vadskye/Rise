@@ -6,6 +6,7 @@ interface GroupFormProps {
   onChangeGroup: (updated: MonsterGroupData) => void;
   errors: string[];
   warnings: string[];
+  folders?: string[];
 }
 
 export const GroupForm: React.FC<GroupFormProps> = ({
@@ -13,6 +14,7 @@ export const GroupForm: React.FC<GroupFormProps> = ({
   onChangeGroup,
   errors,
   warnings,
+  folders = [],
 }) => {
   const getInlineError = (field: string) => {
     const match = errors.find((e) => e.toLowerCase().includes(field.toLowerCase()));
@@ -38,6 +40,24 @@ export const GroupForm: React.FC<GroupFormProps> = ({
         {getInlineWarning('name') && (
           <div className="inline-warning">⚠️ {getInlineWarning('name')}</div>
         )}
+      </div>
+
+      <div className="form-group">
+        <label htmlFor="group-folder">Folder Name</label>
+        <input
+          id="group-folder"
+          data-testid="group-folder-input"
+          type="text"
+          list="group-folder-options"
+          value={groupData.folder || ''}
+          onChange={(e) => onChangeGroup({ ...groupData, folder: e.target.value })}
+          placeholder="e.g. Green Monsters"
+        />
+        <datalist id="group-folder-options">
+          {folders.map((f) => (
+            <option key={f} value={f} />
+          ))}
+        </datalist>
       </div>
 
       <div className="form-checkbox-row">

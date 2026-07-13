@@ -219,4 +219,66 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
 
     await page.close();
   });
+
+  test('Verify Folder System and Sorting in Sidebar', async () => {
+    const page = await browser.newPage();
+    await page.setViewport({ width: 1400, height: 900 });
+
+    page.on('pageerror', (err: any) => {
+      throw new Error(`Browser console error: ${err.message}`);
+    });
+
+    await page.goto(baseUrl, { waitUntil: 'networkidle2' });
+    await page.waitForSelector('.sidebar', { timeout: 5000 });
+
+    // 1. Add a new individual monster named "Troll" in folder "Test Folder"
+    const addMonsterBtn = await page.waitForSelector('[data-testid="add-individual-btn"]', { timeout: 5000 });
+    await addMonsterBtn.click();
+    await new Promise((resolve) => setTimeout(resolve, 500));
+
+    let nameInput = await page.waitForSelector('[data-testid="monster-name-input"]', { timeout: 5000 });
+    await page.$eval('[data-testid="monster-name-input"]', (el) => (el as HTMLInputElement).select());
+    await nameInput.type('Troll', { delay: 30 });
+    await new Promise((resolve) => setTimeout(resolve, 300));
+
+    let folderInput = await page.waitForSelector('[data-testid="folder-input"]', { timeout: 5000 });
+    await folderInput.type('Test Folder', { delay: 30 });
+    await new Promise((resolve) => setTimeout(resolve, 300));
+
+    // 2. Add a new group named "Orcs" in folder "Test Folder"
+    const addGroupBtn = await page.waitForSelector('[data-testid="add-group-btn"]', { timeout: 5000 });
+    await addGroupBtn.click();
+    await new Promise((resolve) => setTimeout(resolve, 500));
+
+    let groupNameInput = await page.waitForSelector('#group-name', { timeout: 5000 });
+    await page.$eval('#group-name', (el) => (el as HTMLInputElement).select());
+    await groupNameInput.type('Orcs', { delay: 30 });
+    await new Promise((resolve) => setTimeout(resolve, 300));
+
+    let groupFolderInput = await page.waitForSelector('[data-testid="group-folder-input"]', { timeout: 5000 });
+    await groupFolderInput.type('Test Folder', { delay: 30 });
+    await new Promise((resolve) => setTimeout(resolve, 1200)); // wait for autosave
+
+    // 3. Verify they are rendered inside folder "Test Folder" in the sidebar
+    // Folder header should exist
+    const folderHeader = await page.waitForSelector('.folder-header', { timeout: 5000 });
+    assert.ok(folderHeader, 'Folder header should be rendered');
+    const folderText = await page.$eval('.folder-header', (el) => el.textContent);
+    assert.ok(folderText?.includes('Test Folder'), 'Folder header should say "Test Folder"');
+
+    // Verify children elements are rendered and alphabetized: Orcs (starts with O) should be before Troll (starts with T)
+    const childrenNames = await page.$$eval('.folder-children .item-name, .folder-children .group-title', (els) =>
+      els.map((el) => el.textContent?.trim() || '')
+    );
+    console.log('Folder children in UI:', childrenNames);
+    
+    // Clean up unicode zero-width spaces or other noise if any, and assert
+    assert.deepStrictEqual(
+      childrenNames.map(n => n.replace(/[\u200B-\u200D\uFEFF]/g, '')),
+      ['👥 Orcs', '👤 Troll'],
+      'Children should be grouped, alphabetized, and use correct icons'
+    );
+
+    await page.close();
+  });
 });

@@ -7,6 +7,7 @@ interface IdentityTabProps {
   onChangeMonster: (updated: MonsterData) => void;
   errors: string[];
   warnings: string[];
+  folders?: string[];
 }
 
 export const IdentityTab: React.FC<IdentityTabProps> = ({
@@ -14,6 +15,7 @@ export const IdentityTab: React.FC<IdentityTabProps> = ({
   onChangeMonster,
   errors,
   warnings,
+  folders = [],
 }) => {
   const { requiredProperties } = monsterData;
 
@@ -80,6 +82,24 @@ export const IdentityTab: React.FC<IdentityTabProps> = ({
         {getInlineWarning('name') && (
           <div className="inline-warning">⚠️ {getInlineWarning('name')}</div>
         )}
+      </div>
+
+      <div className="form-group">
+        <label htmlFor="folder">Folder Name</label>
+        <input
+          id="folder"
+          data-testid="folder-input"
+          type="text"
+          list="folder-options"
+          value={monsterData.folder || ''}
+          onChange={(e) => onChangeMonster({ ...monsterData, folder: e.target.value })}
+          placeholder="e.g. Green Monsters"
+        />
+        <datalist id="folder-options">
+          {folders.map((f) => (
+            <option key={f} value={f} />
+          ))}
+        </datalist>
       </div>
 
       <div className="form-row-grid">

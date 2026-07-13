@@ -113,6 +113,7 @@ export interface WeaponConfig {
 
 export interface MonsterData {
   name: string;
+  folder?: string;
   requiredProperties: MonsterRequiredProperties;
   freeformCode: string;
   baseAttributes?: [number, number, number, number, number, number];
@@ -148,6 +149,7 @@ export interface MonsterGroupKnowledge {
 
 export interface MonsterGroupData {
   name: string;
+  folder?: string;
   knowledge?: MonsterGroupKnowledge;
   description?: string;
   hasArt: boolean;

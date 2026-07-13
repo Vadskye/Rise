@@ -440,6 +440,15 @@ export const App: React.FC = () => {
   const globalErrors = errors.filter((e) => !isInline(e));
   const globalWarnings = warnings.filter((w) => !isInline(w));
 
+  const existingFolders = Array.from(
+    new Set([
+      ...(db.monsters || []).map((m) => m.folder),
+      ...(db.monsterGroups || []).map((g) => g.folder),
+    ])
+  )
+    .filter(Boolean)
+    .sort() as string[];
+
   return (
     <div className="app-container">
       <MonsterSidebar
@@ -484,6 +493,7 @@ export const App: React.FC = () => {
                 errors={errors}
                 warnings={warnings}
                 referenceData={referenceData}
+                folders={existingFolders}
               />
               {activeSelection.type !== 'group' && (
                 <div
