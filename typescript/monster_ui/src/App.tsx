@@ -417,6 +417,27 @@ export const App: React.FC = () => {
     handleSaveDb(updatedDb, true);
   };
 
+  const handleMoveToFolder = (type: 'monster' | 'group', name: string, targetFolder?: string) => {
+    let updatedDb: DatabaseData;
+    if (type === 'monster') {
+      updatedDb = {
+        ...db,
+        monsters: db.monsters.map((m) =>
+          m.name === name ? { ...m, folder: targetFolder || undefined } : m,
+        ),
+      };
+    } else {
+      updatedDb = {
+        ...db,
+        monsterGroups: db.monsterGroups.map((g) =>
+          g.name === name ? { ...g, folder: targetFolder || undefined } : g,
+        ),
+      };
+    }
+    setDb(updatedDb);
+    handleSaveDb(updatedDb, true);
+  };
+
   // Find active editor content
   const activeMonster =
     activeSelection?.type === 'monster'
@@ -461,6 +482,7 @@ export const App: React.FC = () => {
         onDeleteMonster={handleDeleteMonster}
         onDeleteGroup={handleDeleteGroup}
         onDeleteMonsterFromGroup={handleDeleteMonsterFromGroup}
+        onMoveToFolder={handleMoveToFolder}
         isSaving={isSaving}
       />
 
