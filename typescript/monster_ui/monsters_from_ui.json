@@ -2,7 +2,7 @@
   "monsters": [
     {
       "name": "Choker",
-      "folder": "Underground Dwellers",
+      "folder": "Uncivilized Humanoids",
       "requiredProperties": {
         "alignment": "chaotic evil",
         "base_class": "brute",
@@ -26,6 +26,12 @@
         "awareness",
         "stealth",
         "climb"
+      ],
+      "customSenses": [
+        {
+          "type": "Darkvision",
+          "range": 60
+        }
       ]
     }
   ],
@@ -236,7 +242,9 @@
         "hard": "Goblins are easy to bully, and they love brute strength. However, they are naturally disloyal, so they can easily abandon their alleged leader if they perceive weakness or just think they can do better elsewhere. Only creatures that are both strong and unintelligent, like ogres and trolls, are typically accompanied by goblin minions."
       },
       "customSenses": [
-        "Low-light vision"
+        {
+          "type": "Low-light Vision"
+        }
       ],
       "folder": "Uncivilized Humanoids"
     },

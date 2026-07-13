@@ -6,7 +6,7 @@ import {
   deleteCharacterSheet,
 } from '@src/character_sheet/current_character_sheet';
 import { handleEverything, MonsterAttackUsageTime } from '@src/character_sheet/sheet_worker';
-import { MonsterData, MonsterGroupData, toCustomMonsterAbility } from './codegen';
+import { MonsterData, MonsterGroupData, toCustomMonsterAbility, formatStructuredSense, formatStructuredMovementSpeed } from './codegen';
 import { RiseSkill } from '@src/core_mechanics/skills';
 import {
   RiseTrait,
@@ -114,13 +114,13 @@ export function buildCreature(monster: MonsterData, group?: MonsterGroupData): B
 
       if (groupObj.customSenses && groupObj.customSenses.length > 0) {
         for (const sense of groupObj.customSenses) {
-          creature.addCustomSense(sense);
+          creature.addCustomSense(formatStructuredSense(sense));
         }
       }
 
       if (groupObj.customMovementSpeeds && groupObj.customMovementSpeeds.length > 0) {
         for (const speed of groupObj.customMovementSpeeds) {
-          creature.addCustomMovementSpeed(speed);
+          creature.addCustomMovementSpeed(formatStructuredMovementSpeed(speed));
         }
       }
 
@@ -213,13 +213,13 @@ export function buildCreature(monster: MonsterData, group?: MonsterGroupData): B
 
     if (monster.customSenses && monster.customSenses.length > 0) {
       for (const sense of monster.customSenses) {
-        creature.addCustomSense(sense);
+        creature.addCustomSense(formatStructuredSense(sense));
       }
     }
 
     if (monster.customMovementSpeeds && monster.customMovementSpeeds.length > 0) {
       for (const speed of monster.customMovementSpeeds) {
-        creature.addCustomMovementSpeed(speed);
+        creature.addCustomMovementSpeed(formatStructuredMovementSpeed(speed));
       }
     }
 

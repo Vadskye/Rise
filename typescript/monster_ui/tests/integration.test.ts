@@ -119,8 +119,8 @@ describe('Monster UI Integration Tests (Serverless)', () => {
             normal: 'Normal text',
           },
           traits: ['quadrupedal'],
-          customSenses: ['Darkvision (60 ft.)'],
-          customMovementSpeeds: ['Fly 40 ft.'],
+          customSenses: [{ type: 'Darkvision', range: 60 }],
+          customMovementSpeeds: [{ mode: 'Fly', category: 'average', limitType: 'limit', limitValue: 40 }],
           immunities: ['Fire'],
           resistances: ['Cold'],
           vulnerabilities: ['Acid'],
@@ -156,7 +156,7 @@ describe('Monster UI Integration Tests (Serverless)', () => {
     assert.ok(generatedContent.includes(`easy: 'Easy text'`));
     assert.ok(generatedContent.includes(`creature.addTrait('quadrupedal')`));
     assert.ok(generatedContent.includes(`creature.addCustomSense('Darkvision (60 ft.)')`));
-    assert.ok(generatedContent.includes(`creature.addCustomMovementSpeed('Fly 40 ft.')`));
+    assert.ok(generatedContent.includes(`creature.addCustomMovementSpeed('Fly (average, 40 ft. limit)')`));
     assert.ok(generatedContent.includes(`creature.addImmunity('Fire')`));
     assert.ok(generatedContent.includes(`creature.addResistant('Cold')`));
     assert.ok(generatedContent.includes(`creature.addVulnerability('Acid')`));
@@ -417,7 +417,7 @@ describe('Monster UI Integration Tests (Serverless)', () => {
           hasArt: false,
           sharedFreeformCode: '// group shared code',
           traits: ['ensouled'],
-          customSenses: ['Darkvision (90 ft.)'],
+          customSenses: [{ type: 'Darkvision', range: 90 }],
           equippedArmor: 'scale',
           standardAbilities: [
             {

@@ -54,10 +54,24 @@ export interface WeaponConfig {
   };
 }
 
+export interface StructuredSense {
+  type: string;
+  customName?: string;
+  range?: number;
+}
+
+export interface StructuredMovementSpeed {
+  mode: string;
+  customMode?: string;
+  category: 'slow' | 'average' | 'normal' | 'fast';
+  limitType?: 'none' | 'limitless' | 'limit';
+  limitValue?: number;
+}
+
 export interface SharedEditableProperties {
   traits?: string[];
-  customSenses?: string[];
-  customMovementSpeeds?: string[];
+  customSenses?: StructuredSense[];
+  customMovementSpeeds?: StructuredMovementSpeed[];
   immunities?: string[];
   resistances?: string[];
   vulnerabilities?: string[];
