@@ -106,6 +106,7 @@ export interface MonsterGroupData extends SharedEditableProperties {
 export interface DatabaseData {
   monsters: MonsterData[];
   monsterGroups: MonsterGroupData[];
+  folders?: string[];
 }
 
 export interface ComputedStats {

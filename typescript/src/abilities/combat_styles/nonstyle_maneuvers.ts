@@ -312,7 +312,7 @@ export const nonstyleManeuvers: CombatStyle = {
       name: 'Elite Cleanse',
       effect: `
         At the end of its turn, the $name rolls 1d10.
-        On an 6 or higher, it can remove one \\glossterm{condition}.
+        On an 7 or higher, it can remove one \\glossterm{condition}.
         On a 10, it can instead remove two different conditions.
       `,
       rank: 1,

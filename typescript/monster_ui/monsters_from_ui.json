@@ -17,8 +17,16 @@
       "freeformCode": "",
       "knowledge": {
         "easy": "",
-        "normal": ""
-      }
+        "normal": "A choker is a vicious predator that delights in strangling its foes. Chokers are bipedal, but their arms are inhumanly long and sinuous, terminating in hands with spiny pads to help them hold on tightly to walls and foes. They live to hear the desperate gasping for breath and crunching of bones that their powerful arms can inflict on their prey."
+      },
+      "properties": {
+        "has_art": true
+      },
+      "trainedSkills": [
+        "awareness",
+        "stealth",
+        "climb"
+      ]
     }
   ],
   "monsterGroups": [
@@ -209,6 +217,14 @@
                 "weapon": "spear",
                 "usageTime": "standard"
               }
+            },
+            {
+              "type": "maneuver",
+              "name": "Battle Command",
+              "options": {
+                "isMagical": false,
+                "usageTime": "elite"
+              }
             }
           ],
           "equippedArmor": "buff leather",
@@ -221,14 +237,16 @@
       },
       "customSenses": [
         "Low-light vision"
-      ]
+      ],
+      "folder": "Uncivilized Humanoids"
     },
     {
       "name": "Orcs",
-      "folder": "Green Monsters",
+      "folder": "Uncivilized Humanoids",
       "hasArt": false,
       "sharedFreeformCode": "",
       "monsters": []
     }
-  ]
+  ],
+  "folders": []
 }

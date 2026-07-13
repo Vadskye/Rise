@@ -237,13 +237,13 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
                         {warnings.some((w) =>
                           isMissingWeaponWarning(w, ability.options?.displayName || ability.name),
                         ) && (
-                          <span
-                            className="quick-weapon-warning"
-                            title="Maneuver makes a strike and doesn't have a weapon."
-                          >
-                            ⚠️
-                          </span>
-                        )}
+                            <span
+                              className="quick-weapon-warning"
+                              title="Maneuver makes a strike and doesn't have a weapon."
+                            >
+                              ⚠️
+                            </span>
+                          )}
                       </div>
                     )}
                     <span className="expand-chevron" onClick={() => onToggleExpand(cardId)}>
@@ -296,13 +296,13 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
                             })
                           }
                         >
-                          <option value="">-- Original Spell Value --</option>
-                          <option value="Standard">Standard Action</option>
-                          <option value="Move">Move Action</option>
-                          <option value="Swift">Swift Action</option>
-                          <option value="Minor">Minor Action</option>
-                          <option value="Reaction">Reaction</option>
-                          <option value="Free">Free Action</option>
+                          <option value="">-- Original Value --</option>
+                          <option value="standard">Standard Action</option>
+                          <option value="move">Move Action</option>
+                          <option value="elite">Elite Action</option>
+                          <option value="minor">Minor Action</option>
+                          <option value="triggered">Triggered</option>
+                          <option value="free">Free Action</option>
                         </select>
                       </div>
                       <div
@@ -350,9 +350,9 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
                               ...(ability.options || {}),
                               tags: e.target.value
                                 ? e.target.value
-                                    .split(',')
-                                    .map((t) => t.trim())
-                                    .filter(Boolean)
+                                  .split(',')
+                                  .map((t) => t.trim())
+                                  .filter(Boolean)
                                 : undefined,
                             },
                           })
