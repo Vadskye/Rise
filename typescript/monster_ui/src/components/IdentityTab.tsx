@@ -169,27 +169,77 @@ export const IdentityTab: React.FC<IdentityTabProps> = ({
         </div>
 
         <div className="form-group">
-          <label htmlFor="creature_type">Type</label>
+          <label htmlFor="creature_type">Types</label>
+          <div className="tag-list" style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '8px' }}>
+            {(requiredProperties.creature_types || []).map((type) => (
+              <span
+                key={type}
+                className="pill-tag"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '5px',
+                  backgroundColor: 'var(--bg-tertiary)',
+                  border: '1px solid var(--border-color)',
+                  padding: '4px 10px',
+                  borderRadius: '15px',
+                  fontSize: '0.8rem',
+                }}
+              >
+                {type.charAt(0).toUpperCase() + type.slice(1)}
+                <button
+                  type="button"
+                  onClick={() => {
+                    const current = requiredProperties.creature_types || [];
+                    setProp('creature_types', current.filter((t) => t !== type));
+                  }}
+                  style={{
+                    background: 'none',
+                    border: 'none',
+                    color: 'var(--danger-color)',
+                    cursor: 'pointer',
+                    padding: '0 2px',
+                    fontSize: '0.85rem',
+                    fontWeight: 'bold',
+                  }}
+                >
+                  &times;
+                </button>
+              </span>
+            ))}
+          </div>
           <select
             id="creature_type"
             data-testid="type-select"
-            value={requiredProperties.creature_type}
-            onChange={(e) => setProp('creature_type', e.target.value)}
+            value=""
+            onChange={(e) => {
+              const val = e.target.value;
+              const current = requiredProperties.creature_types || [];
+              if (val && !current.includes(val)) {
+                setProp('creature_types', [...current, val]);
+              }
+            }}
           >
-            <option value="">-- Select --</option>
-            <option value="aberration">Aberration</option>
-            <option value="animal">Animal</option>
-            <option value="beast">Beast</option>
-            <option value="construct">Construct</option>
-            <option value="dragon">Dragon</option>
-            <option value="fey">Fey</option>
-            <option value="ghost">Ghost</option>
-            <option value="humanoid">Humanoid</option>
-            <option value="indwelt">Indwelt</option>
-            <option value="insect">Insect</option>
-            <option value="ooze">Ooze</option>
-            <option value="plant">Plant</option>
-            <option value="soulforged">Soulforged</option>
+            <option value="">-- Add Type --</option>
+            {[
+              'aberration',
+              'animal',
+              'beast',
+              'construct',
+              'dragon',
+              'fey',
+              'ghost',
+              'humanoid',
+              'indwelt',
+              'insect',
+              'ooze',
+              'plant',
+              'soulforged'
+            ].map((t) => (
+              <option key={t} value={t}>
+                {t.charAt(0).toUpperCase() + t.slice(1)}{(requiredProperties.creature_types || []).includes(t) ? ' (selected)' : ''}
+              </option>
+            ))}
           </select>
         </div>
 

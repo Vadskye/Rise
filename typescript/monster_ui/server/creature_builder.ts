@@ -89,7 +89,7 @@ export function buildCreature(monster: MonsterData, group?: MonsterGroupData): B
       base_class: requiredProperties.base_class as RiseBaseClass,
       elite: requiredProperties.elite,
       creature_origin: requiredProperties.creature_origin as RiseCreatureOrigin,
-      creature_type: requiredProperties.creature_type as RiseCreatureType,
+      creature_types: requiredProperties.creature_types as RiseCreatureType[],
       size: requiredProperties.size as RiseSize,
       level: requiredProperties.level,
     });

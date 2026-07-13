@@ -14,7 +14,7 @@ export interface MonsterRequiredProperties {
   base_class: string;
   elite: boolean;
   creature_origin: string;
-  creature_type: string;
+  creature_types: string[];
   size: string;
   level: number;
 }

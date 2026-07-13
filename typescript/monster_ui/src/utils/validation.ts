@@ -76,13 +76,13 @@ export function checkValidMonster(
     warnings.push('Has no trained skills');
   }
 
-  if (creature.intelligence > -8 && creature.creature_type === 'animal') {
+  if (creature.intelligence > -8 && creature.creature_types.includes('animal')) {
     warnings.push('Animal should have an Intelligence of -8 or less');
   }
-  if (creature.intelligence > -5 && creature.creature_type === 'beast') {
+  if (creature.intelligence > -5 && creature.creature_types.includes('beast')) {
     warnings.push('Beast should have an Intelligence of -5 or less');
   }
-  if (creature.creature_type === 'humanoid' && !creature.body_armor_name) {
+  if (creature.creature_types.includes('humanoid') && !creature.body_armor_name) {
     warnings.push('Humanoids should usually have body armor');
   }
 

@@ -67,7 +67,7 @@ export function generatePreview(
       elite: creature.elite,
       size: creature.size,
       creature_origin: creature.creature_origin,
-      creature_type: creature.creature_type,
+      creature_types: creature.creature_types,
       alignment: creature.alignment,
       hit_points: creature.hit_points,
       injury_point: creature.injury_point,
