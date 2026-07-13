@@ -344,20 +344,14 @@ t.test('convertAbilityToMonsterLatex', (t) => {
   t.test('Steady Slam (Mundane)', (t) => {
     simpleCreature.addManeuver('Steady Slam', { weapon: 'bite' });
     const ability = simpleCreature.getActiveAbilities()[0];
-    t.match(
-      convertAbilityToMonsterLatex(simpleCreature, ability),
-      /\\hit 1d8\+10 damage\./,
-    );
+    t.match(convertAbilityToMonsterLatex(simpleCreature, ability), /\\hit 1d8\+10 damage\./);
     t.end();
   });
 
   t.test('Steady Slam (Magical Maneuver)', (t) => {
     simpleCreature.addManeuver('Steady Slam', { weapon: 'bite', isMagical: true });
     const ability = simpleCreature.getActiveAbilities()[0];
-    t.match(
-      convertAbilityToMonsterLatex(simpleCreature, ability),
-      /\\hit 1d8\+5 damage\./,
-    );
+    t.match(convertAbilityToMonsterLatex(simpleCreature, ability), /\\hit 1d8\+5 damage\./);
     t.end();
   });
 
@@ -365,10 +359,7 @@ t.test('convertAbilityToMonsterLatex', (t) => {
     simpleCreature.markWeaponAsMagical('bite');
     simpleCreature.addManeuver('Steady Slam', { weapon: 'bite' });
     const ability = simpleCreature.getActiveAbilities()[0];
-    t.match(
-      convertAbilityToMonsterLatex(simpleCreature, ability),
-      /\\hit 1d8\+5 damage\./,
-    );
+    t.match(convertAbilityToMonsterLatex(simpleCreature, ability), /\\hit 1d8\+5 damage\./);
     t.end();
   });
 

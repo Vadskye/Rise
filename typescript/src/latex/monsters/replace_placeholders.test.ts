@@ -249,8 +249,12 @@ t.test('Damage Replacement', (t) => {
     const mockCreature = {
       calcDamageDice: (scaling: any) => {
         // Use base dice size as a proxy to distinguish scaling types in tests
-        if (scaling.baseDice.dice[0]?.size === 6) return '1d6+2';
-        if (scaling.baseDice.dice[0]?.size === 10) return '1d4+1';
+        if (scaling.baseDice.dice[0]?.size === 6) {
+          return '1d6+2';
+        }
+        if (scaling.baseDice.dice[0]?.size === 10) {
+          return '1d4+1';
+        }
         return '0';
       },
     } as any;

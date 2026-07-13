@@ -31,7 +31,9 @@ async function main({ verbose = false }: { verbose?: boolean } = {}) {
 
     for (const name of monsterNames) {
       const monster = grimoire.getMonster(name);
-      if (!monster) continue;
+      if (!monster) {
+        continue;
+      }
 
       if (monster.level === level) {
         if (monster.elite && !eliteMonsterName) {

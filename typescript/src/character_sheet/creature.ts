@@ -70,7 +70,13 @@ export interface KnowledgeResultConfig {
 }
 
 // These have unique typedefs beyond the standard string/number/bool
-type CustomCreatureProperty = 'base_class' | 'creature_origin' | 'creature_type' | 'creature_types' | 'role' | 'size';
+type CustomCreatureProperty =
+  | 'base_class'
+  | 'creature_origin'
+  | 'creature_type'
+  | 'creature_types'
+  | 'role'
+  | 'size';
 
 type NumericCreatureProperty =
   | 'accuracy'
@@ -1028,7 +1034,10 @@ export class Creature implements CreaturePropertyMap {
   public get creature_types(): RiseCreatureType[] {
     const val = this.getPropertyValue('creature_types' as any) as any;
     if (typeof val === 'string' && val) {
-      return val.split(',').map((t) => t.trim().toLowerCase() as RiseCreatureType).filter(Boolean);
+      return val
+        .split(',')
+        .map((t) => t.trim().toLowerCase() as RiseCreatureType)
+        .filter(Boolean);
     }
     if (Array.isArray(val) && val.length > 0) {
       return val;

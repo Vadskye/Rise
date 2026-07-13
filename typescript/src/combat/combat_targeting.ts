@@ -12,7 +12,9 @@ export function selectTarget(attacker: Creature, targets: Creature[], state: Fig
     const sorted = [...targets].sort((a, b) => {
       const defA = a.armor_defense;
       const defB = b.armor_defense;
-      if (defA !== defB) return defA - defB;
+      if (defA !== defB) {
+        return defA - defB;
+      }
 
       const hpA = state.hp[a.id];
       const hpB = state.hp[b.id];

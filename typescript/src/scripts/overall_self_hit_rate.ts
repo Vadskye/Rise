@@ -15,7 +15,9 @@ async function main() {
   // Add individual monsters
   for (const name of grimoire.getMonsterNames()) {
     const monster = grimoire.getMonster(name);
-    if (monster) allMonsters.push(monster);
+    if (monster) {
+      allMonsters.push(monster);
+    }
   }
 
   // Add monsters from groups
@@ -70,11 +72,17 @@ async function main() {
 
     const level = baseMonster.level;
     let bucket: BucketData;
-    if (level <= 5) bucket = levelBuckets['1-5'];
-    else if (level <= 10) bucket = levelBuckets['6-10'];
-    else if (level <= 15) bucket = levelBuckets['11-15'];
-    else if (level <= 20) bucket = levelBuckets['16-20'];
-    else bucket = levelBuckets['21+'];
+    if (level <= 5) {
+      bucket = levelBuckets['1-5'];
+    } else if (level <= 10) {
+      bucket = levelBuckets['6-10'];
+    } else if (level <= 15) {
+      bucket = levelBuckets['11-15'];
+    } else if (level <= 20) {
+      bucket = levelBuckets['16-20'];
+    } else {
+      bucket = levelBuckets['21+'];
+    }
 
     if (baseMonster.elite) {
       eliteHitRates.push(avgHitRate);

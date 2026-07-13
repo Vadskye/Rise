@@ -174,7 +174,9 @@ export class CombatScenario {
       turns++;
       state.round = turns;
       for (const { team } of teamInitiatives) {
-        if (state.aliveMembersByTeam[team.name].length === 0) continue;
+        if (state.aliveMembersByTeam[team.name].length === 0) {
+          continue;
+        }
 
         const result = executeTeamTurn(team, state);
         if (result.status !== CombatStepStatus.Ongoing) {

@@ -26,7 +26,8 @@ export function convertMonsterToLatex(monster: Creature, parentGroupName?: strin
     monster.description || knowledgeText ? '\\vspace{0.5em}' : '\\vspace{0.25em}';
 
   const monsterContext1 = `Level ${monster.level} ${format.uppercaseFirst(monster.base_class)}${eliteText}`;
-  const typesText = monster.creature_types.length > 0 ? ' ' + monster.creature_types.join(', ') : '';
+  const typesText =
+    monster.creature_types.length > 0 ? ' ' + monster.creature_types.join(', ') : '';
   const monsterContext2 = `${format.uppercaseFirst(monster.size)} ${monster.creature_origin}${typesText}`;
 
   // This still has various like $name and $accuracy.
@@ -160,10 +161,7 @@ export function getMovementComponents(monster: Creature): string[] {
     jumpText,
   ].filter(Boolean);
 
-  return [
-    ...movementDistances,
-    ...formatSkillList(monster, RISE_MOVEMENT_SKILLS),
-  ];
+  return [...movementDistances, ...formatSkillList(monster, RISE_MOVEMENT_SKILLS)];
 }
 
 function genMovementText(monster: Creature) {

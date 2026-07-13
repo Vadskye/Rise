@@ -26,9 +26,13 @@ export function generateRelicDescriptions(): string {
     .filter((m) => m.item.rarity === 'Relic')
     .map((m) => {
       let craftingLatex = '';
-      if (m.kind === 'Staff') craftingLatex = 'bone or wood';
-      else if (m.kind === 'Rod') craftingLatex = 'bone, metal, or wood';
-      else if (m.kind === 'Wand') craftingLatex = 'bone or wood';
+      if (m.kind === 'Staff') {
+        craftingLatex = 'bone or wood';
+      } else if (m.kind === 'Rod') {
+        craftingLatex = 'bone, metal, or wood';
+      } else if (m.kind === 'Wand') {
+        craftingLatex = 'bone or wood';
+      }
       return itemLatex(m.item, `${m.kind} -- ${craftingLatex}`);
     });
 

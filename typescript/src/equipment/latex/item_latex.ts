@@ -69,7 +69,9 @@ function validateShortDescription(item: StandardItem) {
  * Renders higher-rank upgrades as \upgraderank blocks.
  */
 function latexUpgradesSection(item: StandardItem): string {
-  if (item.upgrades.length === 0) return '';
+  if (item.upgrades.length === 0) {
+    return '';
+  }
 
   return item.upgrades
     .map((upgrade, i) => {

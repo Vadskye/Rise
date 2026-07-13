@@ -8,7 +8,7 @@ export interface BatchContext {
 
 export const globalBatchContext: BatchContext = {
   isActive: false,
-  queuedHandlers: new Map()
+  queuedHandlers: new Map(),
 };
 
 export interface Signal<Source, T> {

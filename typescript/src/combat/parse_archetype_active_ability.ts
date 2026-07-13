@@ -70,10 +70,18 @@ export function parseArchetypeActiveAbility(
   // Map usage time string to MonsterAttackUsageTime
   let usageTime: MonsterAttackUsageTime = 'standard';
   const lowerUsage = usageTimeStr.toLowerCase();
-  if (lowerUsage.includes('standard')) usageTime = 'standard';
-  if (lowerUsage.includes('minor')) usageTime = 'minor';
-  if (lowerUsage.includes('free')) usageTime = 'triggered';
-  if (lowerUsage.includes('reaction')) usageTime = 'triggered';
+  if (lowerUsage.includes('standard')) {
+    usageTime = 'standard';
+  }
+  if (lowerUsage.includes('minor')) {
+    usageTime = 'minor';
+  }
+  if (lowerUsage.includes('free')) {
+    usageTime = 'triggered';
+  }
+  if (lowerUsage.includes('reaction')) {
+    usageTime = 'triggered';
+  }
 
   return {
     name: name,
