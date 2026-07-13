@@ -438,6 +438,64 @@ export const App: React.FC = () => {
     handleSaveDb(updatedDb, true);
   };
 
+  const handleCreateFolder = (name: string) => {
+    const trimmed = name.trim();
+    if (!trimmed) return;
+    if (existingFolders.includes(trimmed)) {
+      alert(`A folder named "${trimmed}" already exists.`);
+      return;
+    }
+    const updatedDb = {
+      ...db,
+      folders: [...(db.folders || []), trimmed],
+    };
+    setDb(updatedDb);
+    handleSaveDb(updatedDb, true);
+  };
+
+  const handleRenameFolder = (oldName: string, newName: string) => {
+    const trimmed = newName.trim();
+    if (!trimmed || trimmed === oldName) return;
+    if (existingFolders.includes(trimmed)) {
+      alert(`A folder named "${trimmed}" already exists.`);
+      return;
+    }
+    const updatedDb = {
+      ...db,
+      folders: (db.folders || []).map((f) => (f === oldName ? trimmed : f)),
+      monsters: db.monsters.map((m) =>
+        m.folder === oldName ? { ...m, folder: trimmed } : m,
+      ),
+      monsterGroups: db.monsterGroups.map((g) =>
+        g.folder === oldName ? { ...g, folder: trimmed } : g,
+      ),
+    };
+    setDb(updatedDb);
+    handleSaveDb(updatedDb, true);
+  };
+
+  const handleDeleteFolder = (folderName: string) => {
+    if (
+      !confirm(
+        `Delete folder "${folderName}"? All monsters and groups inside it will be moved to individual/ungrouped lists.`,
+      )
+    ) {
+      return;
+    }
+    const updatedDb = {
+      ...db,
+      folders: (db.folders || []).filter((f) => f !== folderName),
+      monsters: db.monsters.map((m) =>
+        m.folder === folderName ? { ...m, folder: undefined } : m,
+      ),
+      monsterGroups: db.monsterGroups.map((g) =>
+        g.folder === folderName ? { ...g, folder: undefined } : g,
+      ),
+    };
+    setDb(updatedDb);
+    handleSaveDb(updatedDb, true);
+  };
+
   // Find active editor content
   const activeMonster =
     activeSelection?.type === 'monster'
@@ -463,6 +521,7 @@ export const App: React.FC = () => {
 
   const existingFolders = Array.from(
     new Set([
+      ...(db.folders || []),
       ...(db.monsters || []).map((m) => m.folder),
       ...(db.monsterGroups || []).map((g) => g.folder),
     ])
@@ -483,6 +542,9 @@ export const App: React.FC = () => {
         onDeleteGroup={handleDeleteGroup}
         onDeleteMonsterFromGroup={handleDeleteMonsterFromGroup}
         onMoveToFolder={handleMoveToFolder}
+        onCreateFolder={handleCreateFolder}
+        onRenameFolder={handleRenameFolder}
+        onDeleteFolder={handleDeleteFolder}
         isSaving={isSaving}
       />
 

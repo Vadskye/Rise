@@ -18,6 +18,9 @@ interface MonsterSidebarProps {
   onDeleteGroup: (name: string) => void;
   onDeleteMonsterFromGroup: (groupName: string, name: string) => void;
   onMoveToFolder: (type: 'monster' | 'group', name: string, targetFolder?: string) => void;
+  onCreateFolder: (name: string) => void;
+  onRenameFolder: (oldName: string, newName: string) => void;
+  onDeleteFolder: (name: string) => void;
   isSaving: boolean;
 }
 
@@ -32,6 +35,9 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
   onDeleteGroup,
   onDeleteMonsterFromGroup,
   onMoveToFolder,
+  onCreateFolder,
+  onRenameFolder,
+  onDeleteFolder,
   isSaving,
 }) => {
   const [expandedFolders, setExpandedFolders] = useState<Record<string, boolean>>({});
@@ -101,6 +107,7 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
   // Extract list of unique folders in database
   const folders = Array.from(
     new Set([
+      ...(db.folders || []),
       ...(db.monsters || []).map((m) => m.folder),
       ...(db.monsterGroups || []).map((g) => g.folder),
     ])
@@ -145,6 +152,32 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
               <div className="folder-header" onClick={() => toggleFolder(folderName)}>
                 <span className="folder-title">
                   <span className={`folder-arrow ${isExpanded ? 'expanded' : ''}`}>▶</span> 📁 {folderName}
+                </span>
+                <span className="folder-actions">
+                  <button
+                    data-testid={`rename-folder-${folderName}`}
+                    title="Rename folder"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      const newName = prompt(`Rename folder "${folderName}" to:`, folderName);
+                      if (newName) {
+                        onRenameFolder(folderName, newName);
+                      }
+                    }}
+                  >
+                    ✏️
+                  </button>
+                  <button
+                    className="delete"
+                    data-testid={`delete-folder-${folderName}`}
+                    title="Delete folder"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onDeleteFolder(folderName);
+                    }}
+                  >
+                    ❌
+                  </button>
                 </span>
               </div>
               {isExpanded && (
@@ -412,6 +445,17 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
         </button>
         <button data-testid="add-group-btn" onClick={onAddGroup}>
           👥 New Group
+        </button>
+        <button
+          data-testid="add-folder-btn"
+          onClick={() => {
+            const name = prompt("Enter new folder name:");
+            if (name) {
+              onCreateFolder(name);
+            }
+          }}
+        >
+          📁 New Folder
         </button>
       </div>
     </aside>

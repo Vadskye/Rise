@@ -43,3 +43,10 @@ Saves compiled TypeScript classes to [monsters_from_ui.ts](../../typescript/src/
 - **Avoid `any` Casts**: Always build configurations using fully typed interfaces (e.g. `CustomMonsterAbility`) instead of relying on `any`.
 - **DRY Codegen and Validation**: Keep utility mapping logic shared between `codegen.ts` and `validate.ts` DRY by extracting shared helper functions.
 - **Component Reuse**: Extract repetitive UI controls (like tag lists or autocomplete search boxes) into local or shared reusable React components to prevent JSX and state duplication.
+
+## Folders & Organization
+- **Database representation**: Folder organization is represented by the `folder` string field on `MonsterData` and `MonsterGroupData`. Explicit/empty folders are stored as a string array (`folders?: string[]`) in the database `DatabaseData`.
+- **Sidebar rendering**: Folders shown in the sidebar are derived by combining the list of explicit folders with the `folder` values of all existing monsters and groups, ensuring they are unique and sorted.
+- **Folder updates**: Renaming a folder requires updating the folder name in `folders` as well as the `folder` properties on all monsters/groups belonging to that folder. Deleting a folder unsets the `folder` field on those items (moving them to individual/ungrouped lists) and removes the folder name from `folders`.
+- **Styling**: Styles are written in [App.less](../../typescript/monster_ui/src/App.less). Vite compiles LESS into CSS automatically.
+

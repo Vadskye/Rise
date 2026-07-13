@@ -174,6 +174,7 @@ export interface MonsterGroupData {
 export interface DatabaseData {
   monsters: MonsterData[];
   monsterGroups: MonsterGroupData[];
+  folders?: string[];
 }
 
 export function toCustomMonsterAbility(ability: CustomAbilityConfig): CustomMonsterAbility {

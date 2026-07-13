@@ -216,6 +216,7 @@ body {
       .folder-header {
         display: flex;
         align-items: center;
+        justify-content: space-between;
         padding: 6px 10px;
         border-radius: 6px;
         cursor: pointer;
@@ -227,6 +228,10 @@ body {
 
         &:hover {
           background-color: var(--bg-tertiary);
+
+          .folder-actions {
+            opacity: 1;
+          }
         }
 
         .folder-title {
@@ -243,6 +248,30 @@ body {
 
           &.expanded {
             transform: rotate(90deg);
+          }
+        }
+
+        .folder-actions {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          opacity: 0;
+          transition: all 0.15s ease;
+
+          button {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            padding: 2px;
+
+            &:hover {
+              color: var(--text-primary);
+
+              &.delete {
+                color: var(--danger-color);
+              }
+            }
           }
         }
       }
