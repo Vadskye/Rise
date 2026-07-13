@@ -2,13 +2,14 @@
   "monsters": [
     {
       "name": "Choker",
+      "folder": "Underground Dwellers",
       "requiredProperties": {
         "alignment": "chaotic evil",
         "base_class": "brute",
         "elite": false,
         "creature_origin": "natural",
         "creature_types": [
-          "beast"
+          "humanoid"
         ],
         "size": "medium",
         "level": 4
@@ -224,6 +225,7 @@
     },
     {
       "name": "Orcs",
+      "folder": "Green Monsters",
       "hasArt": false,
       "sharedFreeformCode": "",
       "monsters": []
