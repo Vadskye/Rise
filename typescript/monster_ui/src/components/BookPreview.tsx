@@ -101,9 +101,7 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
     return a.name.localeCompare(b.name);
   });
 
-  const filteredTraits = stats.traits
-    .map((t) => t.charAt(0).toUpperCase() + t.slice(1))
-    .sort();
+  const filteredTraits = stats.traits.map((t) => t.charAt(0).toUpperCase() + t.slice(1)).sort();
 
   return (
     <div className={`book-preview-container ${loading ? 'loading-preview' : ''}`}>
@@ -117,7 +115,8 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
       </h4>
 
       <div className="monster-origin-type">
-        {stats.size.charAt(0).toUpperCase() + stats.size.slice(1)} {stats.creature_origin} {stats.base_class.toLowerCase()}
+        {stats.size.charAt(0).toUpperCase() + stats.size.slice(1)} {stats.creature_origin}{' '}
+        {stats.base_class.toLowerCase()}
       </div>
 
       {/* Stats Table */}
@@ -129,7 +128,9 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
           <span className="stat-value">{stats.injury_point}</span>
           {stats.creature_types && stats.creature_types.length > 0 && (
             <>
-              <span className="stat-label" style={{ marginLeft: 'auto' }}>Types:</span>
+              <span className="stat-label" style={{ marginLeft: 'auto' }}>
+                Types:
+              </span>
               <span className="stat-value" style={{ marginRight: 0 }}>
                 {stats.creature_types.join(', ')}
               </span>

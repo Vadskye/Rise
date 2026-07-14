@@ -6,7 +6,13 @@ import {
   deleteCharacterSheet,
 } from '@src/character_sheet/current_character_sheet';
 import { handleEverything, MonsterAttackUsageTime } from '@src/character_sheet/sheet_worker';
-import { MonsterData, MonsterGroupData, toCustomMonsterAbility, formatStructuredSense, formatStructuredMovementSpeed } from './codegen';
+import {
+  MonsterData,
+  MonsterGroupData,
+  toCustomMonsterAbility,
+  formatStructuredSense,
+  formatStructuredMovementSpeed,
+} from './codegen';
 import { RiseSkill } from '@src/core_mechanics/skills';
 import {
   RiseTrait,

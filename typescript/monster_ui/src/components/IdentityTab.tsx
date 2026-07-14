@@ -175,7 +175,9 @@ export const IdentityTab: React.FC<IdentityTabProps> = ({
             value={requiredProperties.level || ''}
             onChange={(e) => setProp('level', parseInt(e.target.value) || 0)}
           />
-          {getInlineError('level') && <div className="inline-error">❌ {getInlineError('level')}</div>}
+          {getInlineError('level') && (
+            <div className="inline-error">❌ {getInlineError('level')}</div>
+          )}
           {getInlineWarning('level') && (
             <div className="inline-warning">⚠️ {getInlineWarning('level')}</div>
           )}
@@ -206,7 +208,10 @@ export const IdentityTab: React.FC<IdentityTabProps> = ({
 
         <div className="form-group">
           <label htmlFor="creature_type">Types</label>
-          <div className="tag-list" style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '8px' }}>
+          <div
+            className="tag-list"
+            style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '8px' }}
+          >
             {(requiredProperties.creature_types || []).map((type) => (
               <span
                 key={type}
@@ -227,7 +232,10 @@ export const IdentityTab: React.FC<IdentityTabProps> = ({
                   type="button"
                   onClick={() => {
                     const current = requiredProperties.creature_types || [];
-                    setProp('creature_types', current.filter((t) => t !== type));
+                    setProp(
+                      'creature_types',
+                      current.filter((t) => t !== type),
+                    );
                   }}
                   style={{
                     background: 'none',
@@ -270,10 +278,11 @@ export const IdentityTab: React.FC<IdentityTabProps> = ({
               'insect',
               'ooze',
               'plant',
-              'soulforged'
+              'soulforged',
             ].map((t) => (
               <option key={t} value={t}>
-                {t.charAt(0).toUpperCase() + t.slice(1)}{(requiredProperties.creature_types || []).includes(t) ? ' (selected)' : ''}
+                {t.charAt(0).toUpperCase() + t.slice(1)}
+                {(requiredProperties.creature_types || []).includes(t) ? ' (selected)' : ''}
               </option>
             ))}
           </select>
@@ -335,7 +344,9 @@ export const IdentityTab: React.FC<IdentityTabProps> = ({
         </div>
       </div>
 
-      <h4 className="section-subtitle" style={{ marginTop: '20px' }}>Knowledge Check Results</h4>
+      <h4 className="section-subtitle" style={{ marginTop: '20px' }}>
+        Knowledge Check Results
+      </h4>
       <div className="knowledge-grid">
         <div className="form-group">
           <label style={{ fontSize: '0.75rem' }}>Easy Check</label>

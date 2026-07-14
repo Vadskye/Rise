@@ -108,7 +108,9 @@ describe('Monster UI Folders E2E Tests', () => {
 
     // 1. Create a new folder
     promptInput = 'Magic Circle';
-    const addFolderBtn = await page.waitForSelector('[data-testid="add-folder-btn"]', { timeout: 5000 });
+    const addFolderBtn = await page.waitForSelector('[data-testid="add-folder-btn"]', {
+      timeout: 5000,
+    });
     assert.ok(addFolderBtn, 'Add Folder button should exist');
     await addFolderBtn.click();
 
@@ -120,19 +122,27 @@ describe('Monster UI Folders E2E Tests', () => {
     assert.ok(folderExists, 'Folder "Magic Circle" should render in sidebar');
 
     // 2. Create a new monster and assign it to the folder
-    const addMonsterBtn = await page.waitForSelector('[data-testid="add-individual-btn"]', { timeout: 5000 });
+    const addMonsterBtn = await page.waitForSelector('[data-testid="add-individual-btn"]', {
+      timeout: 5000,
+    });
     await addMonsterBtn.click();
-    
+
     // Wait for the new monster name input to render
-    const nameInput = await page.waitForSelector('[data-testid="monster-name-input"]', { timeout: 5000 });
-    
+    const nameInput = await page.waitForSelector('[data-testid="monster-name-input"]', {
+      timeout: 5000,
+    });
+
     // Clear and type new monster name
-    await page.$eval('[data-testid="monster-name-input"]', (el) => (el as HTMLInputElement).select());
+    await page.$eval('[data-testid="monster-name-input"]', (el) =>
+      (el as HTMLInputElement).select(),
+    );
     await nameInput.type('Pixie', { delay: 10 });
     await new Promise((resolve) => setTimeout(resolve, 300));
 
     // Assign folder inside IdentityTab
-    const folderInput = await page.waitForSelector('[data-testid="folder-input"]', { timeout: 5000 });
+    const folderInput = await page.waitForSelector('[data-testid="folder-input"]', {
+      timeout: 5000,
+    });
     assert.ok(folderInput, 'Folder input should exist');
     await page.$eval('[data-testid="folder-input"]', (el) => (el as HTMLInputElement).select());
     await folderInput.type('Magic Circle', { delay: 10 });
@@ -150,7 +160,9 @@ describe('Monster UI Folders E2E Tests', () => {
     // Verify Pixie is inside the "Magic Circle" folder in the sidebar
     const pixieInFolder = await page.evaluate(() => {
       const folderEl = document.querySelector('[data-testid="folder-container-Magic Circle"]');
-      if (!folderEl) return false;
+      if (!folderEl) {
+        return false;
+      }
       const monsterEl = folderEl.querySelector('[data-testid="monster-item-Pixie"]');
       return !!monsterEl;
     });
@@ -160,7 +172,9 @@ describe('Monster UI Folders E2E Tests', () => {
     promptInput = 'Fey Folk';
     // Hover folder header to make rename button visible
     await page.hover('[data-testid="folder-container-Magic Circle"] .folder-header');
-    const renameBtn = await page.waitForSelector('[data-testid="rename-folder-Magic Circle"]', { timeout: 2000 });
+    const renameBtn = await page.waitForSelector('[data-testid="rename-folder-Magic Circle"]', {
+      timeout: 2000,
+    });
     assert.ok(renameBtn, 'Rename folder button should be visible on hover');
     await renameBtn.click();
 
@@ -177,7 +191,9 @@ describe('Monster UI Folders E2E Tests', () => {
     await page.waitForSelector('[data-testid="folder-container-Fey Folk"]', { timeout: 5000 });
     const feyFolkExists = await page.evaluate(() => {
       const folderEl = document.querySelector('[data-testid="folder-container-Fey Folk"]');
-      if (!folderEl) return false;
+      if (!folderEl) {
+        return false;
+      }
       const monsterEl = folderEl.querySelector('[data-testid="monster-item-Pixie"]');
       return !!monsterEl;
     });
@@ -192,7 +208,9 @@ describe('Monster UI Folders E2E Tests', () => {
     // 4. Delete the folder
     // Hover Fey Folk folder header to make delete button visible
     await page.hover('[data-testid="folder-container-Fey Folk"] .folder-header');
-    const deleteBtn = await page.waitForSelector('[data-testid="delete-folder-Fey Folk"]', { timeout: 2000 });
+    const deleteBtn = await page.waitForSelector('[data-testid="delete-folder-Fey Folk"]', {
+      timeout: 2000,
+    });
     assert.ok(deleteBtn, 'Delete folder button should be visible on hover');
     await deleteBtn.click();
 
@@ -214,7 +232,9 @@ describe('Monster UI Folders E2E Tests', () => {
     // Verify Pixie is still present in Individual Monsters section (not deleted)
     const pixieInIndividual = await page.evaluate(() => {
       const section = document.querySelector('[data-testid="folderless-monsters-section"]');
-      if (!section) return false;
+      if (!section) {
+        return false;
+      }
       const monsterEl = section.querySelector('[data-testid="monster-item-Pixie"]');
       return !!monsterEl;
     });

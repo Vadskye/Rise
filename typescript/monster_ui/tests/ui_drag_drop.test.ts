@@ -17,51 +17,55 @@ const __dirname = path.dirname(__filename);
 
 // Helper function to simulate HTML5 Drag and Drop in Puppeteer
 const dragAndDrop = async (page: any, srcSelector: string, targetSelector: string) => {
-  await page.evaluate((srcSel: string, targetSel: string) => {
-    const source = document.querySelector(srcSel);
-    const target = document.querySelector(targetSel);
+  await page.evaluate(
+    (srcSel: string, targetSel: string) => {
+      const source = document.querySelector(srcSel);
+      const target = document.querySelector(targetSel);
 
-    if (!source) {
-      throw new Error(`Source element not found: ${srcSel}`);
-    }
-    if (!target) {
-      throw new Error(`Target element not found: ${targetSel}`);
-    }
+      if (!source) {
+        throw new Error(`Source element not found: ${srcSel}`);
+      }
+      if (!target) {
+        throw new Error(`Target element not found: ${targetSel}`);
+      }
 
-    const dataTransfer = new DataTransfer();
+      const dataTransfer = new DataTransfer();
 
-    // Dispatch dragstart
-    const dragStartEvent = new DragEvent('dragstart', {
-      bubbles: true,
-      cancelable: true,
-      dataTransfer,
-    });
-    source.dispatchEvent(dragStartEvent);
+      // Dispatch dragstart
+      const dragStartEvent = new DragEvent('dragstart', {
+        bubbles: true,
+        cancelable: true,
+        dataTransfer,
+      });
+      source.dispatchEvent(dragStartEvent);
 
-    // Dispatch dragover
-    const dragOverEvent = new DragEvent('dragover', {
-      bubbles: true,
-      cancelable: true,
-      dataTransfer,
-    });
-    target.dispatchEvent(dragOverEvent);
+      // Dispatch dragover
+      const dragOverEvent = new DragEvent('dragover', {
+        bubbles: true,
+        cancelable: true,
+        dataTransfer,
+      });
+      target.dispatchEvent(dragOverEvent);
 
-    // Dispatch drop
-    const dropEvent = new DragEvent('drop', {
-      bubbles: true,
-      cancelable: true,
-      dataTransfer,
-    });
-    target.dispatchEvent(dropEvent);
+      // Dispatch drop
+      const dropEvent = new DragEvent('drop', {
+        bubbles: true,
+        cancelable: true,
+        dataTransfer,
+      });
+      target.dispatchEvent(dropEvent);
 
-    // Dispatch dragend
-    const dragEndEvent = new DragEvent('dragend', {
-      bubbles: true,
-      cancelable: true,
-      dataTransfer,
-    });
-    source.dispatchEvent(dragEndEvent);
-  }, srcSelector, targetSelector);
+      // Dispatch dragend
+      const dragEndEvent = new DragEvent('dragend', {
+        bubbles: true,
+        cancelable: true,
+        dataTransfer,
+      });
+      source.dispatchEvent(dragEndEvent);
+    },
+    srcSelector,
+    targetSelector,
+  );
 };
 
 describe('Monster UI Drag and Drop E2E Tests', () => {
@@ -142,21 +146,31 @@ describe('Monster UI Drag and Drop E2E Tests', () => {
     await page.waitForSelector('.sidebar', { timeout: 5000 });
 
     // 1. Create a monster "Drag Monster" inside folder "Drag Folder"
-    const addMonsterBtn = await page.waitForSelector('[data-testid="add-individual-btn"]', { timeout: 5000 });
+    const addMonsterBtn = await page.waitForSelector('[data-testid="add-individual-btn"]', {
+      timeout: 5000,
+    });
     await addMonsterBtn.click();
     await new Promise((resolve) => setTimeout(resolve, 500));
 
-    const nameInput = await page.waitForSelector('[data-testid="monster-name-input"]', { timeout: 5000 });
-    await page.$eval('[data-testid="monster-name-input"]', (el) => (el as HTMLInputElement).select());
+    const nameInput = await page.waitForSelector('[data-testid="monster-name-input"]', {
+      timeout: 5000,
+    });
+    await page.$eval('[data-testid="monster-name-input"]', (el) =>
+      (el as HTMLInputElement).select(),
+    );
     await nameInput.type('Drag Monster', { delay: 10 });
     await new Promise((resolve) => setTimeout(resolve, 200));
 
-    const folderInput = await page.waitForSelector('[data-testid="folder-input"]', { timeout: 5000 });
+    const folderInput = await page.waitForSelector('[data-testid="folder-input"]', {
+      timeout: 5000,
+    });
     await folderInput.type('Drag Folder', { delay: 10 });
     await new Promise((resolve) => setTimeout(resolve, 1200)); // wait for autosave
 
     // 2. Create a folderless group "Drag Group"
-    const addGroupBtn = await page.waitForSelector('[data-testid="add-group-btn"]', { timeout: 5000 });
+    const addGroupBtn = await page.waitForSelector('[data-testid="add-group-btn"]', {
+      timeout: 5000,
+    });
     await addGroupBtn.click();
     await new Promise((resolve) => setTimeout(resolve, 500));
 
@@ -168,35 +182,46 @@ describe('Monster UI Drag and Drop E2E Tests', () => {
     // 3. Verify starting layout in the sidebar
     // "Drag Monster" is in "Drag Folder", "Drag Group" is in folderless "Monster Groups"
     await page.waitForSelector('[data-testid="folder-container-Drag Folder"]', { timeout: 5000 });
-    const hasMonsterInFolder = await page.$('[data-testid="folder-container-Drag Folder"] [data-testid="monster-item-Drag Monster"]');
+    const hasMonsterInFolder = await page.$(
+      '[data-testid="folder-container-Drag Folder"] [data-testid="monster-item-Drag Monster"]',
+    );
     assert.ok(hasMonsterInFolder, 'Drag Monster should initially be inside Drag Folder');
 
-    const hasGroupInFolderless = await page.$('[data-testid="folderless-groups-section"] [data-testid="group-item-Drag Group"]');
+    const hasGroupInFolderless = await page.$(
+      '[data-testid="folderless-groups-section"] [data-testid="group-item-Drag Group"]',
+    );
     assert.ok(hasGroupInFolderless, 'Drag Group should initially be in folderless Monster Groups');
 
     // 4. Drag "Drag Group" into "Drag Folder"
     await dragAndDrop(
       page,
       '[data-testid="group-item-Drag Group"]',
-      '[data-testid="folder-container-Drag Folder"]'
+      '[data-testid="folder-container-Drag Folder"]',
     );
     await new Promise((resolve) => setTimeout(resolve, 1500)); // wait for save operation
 
     // Verify UI updated: group is now inside "Drag Folder"
-    const hasGroupInFolder = await page.$('[data-testid="folder-container-Drag Folder"] [data-testid="group-item-Drag Group"]');
+    const hasGroupInFolder = await page.$(
+      '[data-testid="folder-container-Drag Folder"] [data-testid="group-item-Drag Group"]',
+    );
     assert.ok(hasGroupInFolder, 'Drag Group should now be inside Drag Folder after dropping');
 
     // 5. Drag "Drag Monster" out of "Drag Folder" and drop it into folderless Individual Monsters section
     await dragAndDrop(
       page,
       '[data-testid="monster-item-Drag Monster"]',
-      '[data-testid="folderless-monsters-section"]'
+      '[data-testid="folderless-monsters-section"]',
     );
     await new Promise((resolve) => setTimeout(resolve, 1500)); // wait for save operation
 
     // Verify UI updated: monster is now folderless
-    const hasMonsterInFolderless = await page.$('[data-testid="folderless-monsters-section"] [data-testid="monster-item-Drag Monster"]');
-    assert.ok(hasMonsterInFolderless, 'Drag Monster should now be in folderless Individual Monsters');
+    const hasMonsterInFolderless = await page.$(
+      '[data-testid="folderless-monsters-section"] [data-testid="monster-item-Drag Monster"]',
+    );
+    assert.ok(
+      hasMonsterInFolderless,
+      'Drag Monster should now be in folderless Individual Monsters',
+    );
 
     // 6. Verify the physical JSON database state on disk
     const dbRaw = fs.readFileSync(paths.dbPath, 'utf8');
@@ -204,11 +229,19 @@ describe('Monster UI Drag and Drop E2E Tests', () => {
 
     const savedMonster = dbJson.monsters.find((m: any) => m.name === 'Drag Monster');
     assert.ok(savedMonster, 'Database should contain Drag Monster');
-    assert.strictEqual(savedMonster.folder, undefined, 'Drag Monster folder should be cleared (undefined)');
+    assert.strictEqual(
+      savedMonster.folder,
+      undefined,
+      'Drag Monster folder should be cleared (undefined)',
+    );
 
     const savedGroup = dbJson.monsterGroups.find((g: any) => g.name === 'Drag Group');
     assert.ok(savedGroup, 'Database should contain Drag Group');
-    assert.strictEqual(savedGroup.folder, 'Drag Folder', 'Drag Group folder should be "Drag Folder"');
+    assert.strictEqual(
+      savedGroup.folder,
+      'Drag Folder',
+      'Drag Group folder should be "Drag Folder"',
+    );
 
     await page.close();
   });

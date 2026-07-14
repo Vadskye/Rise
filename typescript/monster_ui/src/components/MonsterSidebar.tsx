@@ -65,7 +65,9 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
     setDragOverFolder(null);
     try {
       const dataStr = e.dataTransfer.getData('application/json');
-      if (!dataStr) return;
+      if (!dataStr) {
+        return;
+      }
       const { type, name } = JSON.parse(dataStr);
       if (type && name) {
         onMoveToFolder(type, name, targetFolder || undefined);
@@ -74,7 +76,6 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
       console.error('Failed to parse drag and drop data:', err);
     }
   };
-
 
   const isSelected = (selection: SidebarSelection) => {
     if (!activeSelection || !selection) {
@@ -110,7 +111,7 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
       ...(db.folders || []),
       ...(db.monsters || []).map((m) => m.folder),
       ...(db.monsterGroups || []).map((g) => g.folder),
-    ])
+    ]),
   )
     .filter(Boolean)
     .sort() as string[];
@@ -151,7 +152,8 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
             >
               <div className="folder-header" onClick={() => toggleFolder(folderName)}>
                 <span className="folder-title">
-                  <span className={`folder-arrow ${isExpanded ? 'expanded' : ''}`}>▶</span> 📁 {folderName}
+                  <span className={`folder-arrow ${isExpanded ? 'expanded' : ''}`}>▶</span> 📁{' '}
+                  {folderName}
                 </span>
                 <span className="folder-actions">
                   <button
@@ -211,7 +213,11 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
                       const group = child.data;
                       const isGroupSelected = isSelected({ type: 'group', name: group.name });
                       return (
-                        <div key={group.name} className="group-container" style={{ paddingLeft: '12px' }}>
+                        <div
+                          key={group.name}
+                          className="group-container"
+                          style={{ paddingLeft: '12px' }}
+                        >
                           <div
                             className={`group-header ${isGroupSelected ? 'active' : ''}`}
                             data-testid={`group-item-${group.name}`}
@@ -279,7 +285,11 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
                             ))}
                             {group.monsters.length === 0 && (
                               <div
-                                style={{ padding: '4px 10px', fontSize: '0.8rem', color: 'var(--text-muted)' }}
+                                style={{
+                                  padding: '4px 10px',
+                                  fontSize: '0.8rem',
+                                  color: 'var(--text-muted)',
+                                }}
                               >
                                 Empty group.
                               </div>
@@ -412,7 +422,11 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
                   ))}
                   {group.monsters.length === 0 && (
                     <div
-                      style={{ padding: '4px 10px', fontSize: '0.8rem', color: 'var(--text-muted)' }}
+                      style={{
+                        padding: '4px 10px',
+                        fontSize: '0.8rem',
+                        color: 'var(--text-muted)',
+                      }}
                     >
                       Empty group.
                     </div>
@@ -439,7 +453,7 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
         <button
           data-testid="add-folder-btn"
           onClick={() => {
-            const name = prompt("Enter new folder name:");
+            const name = prompt('Enter new folder name:');
             if (name) {
               onCreateFolder(name);
             }

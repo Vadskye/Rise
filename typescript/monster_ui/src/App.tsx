@@ -90,7 +90,9 @@ export const App: React.FC = () => {
   } | null>(null);
 
   useEffect(() => {
-    if (!toast) return;
+    if (!toast) {
+      return;
+    }
     const timer = setTimeout(() => {
       setToast(null);
     }, 8000);
@@ -324,7 +326,9 @@ export const App: React.FC = () => {
     if (activeSelection?.type === 'monster') {
       updatedDb = {
         ...db,
-        monsters: db.monsters.map((m) => (m.name === activeSelection.name ? monsterWithSortedTypes : m)),
+        monsters: db.monsters.map((m) =>
+          m.name === activeSelection.name ? monsterWithSortedTypes : m,
+        ),
       };
       // If name changed, update the active selection pointer as well
       if (updated.name !== activeSelection.name) {
@@ -337,7 +341,9 @@ export const App: React.FC = () => {
           g.name === activeSelection.groupName
             ? {
                 ...g,
-                monsters: g.monsters.map((m) => (m.name === activeSelection.name ? monsterWithSortedTypes : m)),
+                monsters: g.monsters.map((m) =>
+                  m.name === activeSelection.name ? monsterWithSortedTypes : m,
+                ),
               }
             : g,
         ),
@@ -428,7 +434,9 @@ export const App: React.FC = () => {
 
   const handleDeleteMonster = (name: string) => {
     const monsterToDelete = db.monsters.find((m) => m.name === name);
-    if (!monsterToDelete) return;
+    if (!monsterToDelete) {
+      return;
+    }
     const originalIndex = db.monsters.findIndex((m) => m.name === name);
 
     const updatedDb = {
@@ -459,7 +467,9 @@ export const App: React.FC = () => {
 
   const handleDeleteGroup = (name: string) => {
     const groupToDelete = db.monsterGroups.find((g) => g.name === name);
-    if (!groupToDelete) return;
+    if (!groupToDelete) {
+      return;
+    }
     const originalIndex = db.monsterGroups.findIndex((g) => g.name === name);
 
     const updatedDb = {
@@ -493,9 +503,13 @@ export const App: React.FC = () => {
 
   const handleDeleteMonsterFromGroup = (groupName: string, name: string) => {
     const group = db.monsterGroups.find((g) => g.name === groupName);
-    if (!group) return;
+    if (!group) {
+      return;
+    }
     const monsterToDelete = group.monsters.find((m) => m.name === name);
-    if (!monsterToDelete) return;
+    if (!monsterToDelete) {
+      return;
+    }
     const originalIndex = group.monsters.findIndex((m) => m.name === name);
 
     const updatedDb = {
@@ -559,7 +573,9 @@ export const App: React.FC = () => {
 
   const handleCreateFolder = (name: string) => {
     const trimmed = name.trim();
-    if (!trimmed) return;
+    if (!trimmed) {
+      return;
+    }
     if (existingFolders.includes(trimmed)) {
       alert(`A folder named "${trimmed}" already exists.`);
       return;
@@ -574,7 +590,9 @@ export const App: React.FC = () => {
 
   const handleRenameFolder = (oldName: string, newName: string) => {
     const trimmed = newName.trim();
-    if (!trimmed || trimmed === oldName) return;
+    if (!trimmed || trimmed === oldName) {
+      return;
+    }
     if (existingFolders.includes(trimmed)) {
       alert(`A folder named "${trimmed}" already exists.`);
       return;
@@ -582,9 +600,7 @@ export const App: React.FC = () => {
     const updatedDb = {
       ...db,
       folders: (db.folders || []).map((f) => (f === oldName ? trimmed : f)),
-      monsters: db.monsters.map((m) =>
-        m.folder === oldName ? { ...m, folder: trimmed } : m,
-      ),
+      monsters: db.monsters.map((m) => (m.folder === oldName ? { ...m, folder: trimmed } : m)),
       monsterGroups: db.monsterGroups.map((g) =>
         g.folder === oldName ? { ...g, folder: trimmed } : g,
       ),
@@ -604,9 +620,7 @@ export const App: React.FC = () => {
     const updatedDb = {
       ...db,
       folders: (db.folders || []).filter((f) => f !== folderName),
-      monsters: db.monsters.map((m) =>
-        m.folder === folderName ? { ...m, folder: undefined } : m,
-      ),
+      monsters: db.monsters.map((m) => (m.folder === folderName ? { ...m, folder: undefined } : m)),
       monsterGroups: db.monsterGroups.map((g) =>
         g.folder === folderName ? { ...g, folder: undefined } : g,
       ),
@@ -643,7 +657,7 @@ export const App: React.FC = () => {
       ...(db.folders || []),
       ...(db.monsters || []).map((m) => m.folder),
       ...(db.monsterGroups || []).map((g) => g.folder),
-    ])
+    ]),
   )
     .filter(Boolean)
     .sort() as string[];
@@ -747,7 +761,11 @@ export const App: React.FC = () => {
           <button className="undo-toast-btn" onClick={toast.onUndo} data-testid="undo-btn">
             Undo
           </button>
-          <button className="undo-toast-close" onClick={() => setToast(null)} data-testid="undo-close-btn">
+          <button
+            className="undo-toast-close"
+            onClick={() => setToast(null)}
+            data-testid="undo-close-btn"
+          >
             ✕
           </button>
         </div>

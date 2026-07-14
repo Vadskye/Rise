@@ -120,7 +120,9 @@ describe('Monster UI Integration Tests (Serverless)', () => {
           },
           traits: ['quadrupedal'],
           customSenses: [{ type: 'Darkvision', range: 60 }],
-          customMovementSpeeds: [{ mode: 'Fly', category: 'average', limitType: 'limit', limitValue: 40 }],
+          customMovementSpeeds: [
+            { mode: 'Fly', category: 'average', limitType: 'limit', limitValue: 40 },
+          ],
           immunities: ['Fire'],
           resistances: ['Cold'],
           vulnerabilities: ['Acid'],
@@ -156,7 +158,9 @@ describe('Monster UI Integration Tests (Serverless)', () => {
     assert.ok(generatedContent.includes(`easy: 'Easy text'`));
     assert.ok(generatedContent.includes(`creature.addTrait('quadrupedal')`));
     assert.ok(generatedContent.includes(`creature.addCustomSense('Darkvision (60 ft.)')`));
-    assert.ok(generatedContent.includes(`creature.addCustomMovementSpeed('Fly (average, 40 ft. limit)')`));
+    assert.ok(
+      generatedContent.includes(`creature.addCustomMovementSpeed('Fly (average, 40 ft. limit)')`),
+    );
     assert.ok(generatedContent.includes(`creature.addImmunity('Fire')`));
     assert.ok(generatedContent.includes(`creature.addResistant('Cold')`));
     assert.ok(generatedContent.includes(`creature.addVulnerability('Acid')`));
@@ -397,7 +401,9 @@ describe('Monster UI Integration Tests (Serverless)', () => {
     assert.ok(generatedContent.includes(`creature.addPassiveAbility(`));
     assert.ok(generatedContent.includes(`creature.addWeapon('claws')`));
     assert.ok(
-      generatedContent.includes(`creature.addWeaponMult('claws', { displayName: 'Vicious Claws' })`),
+      generatedContent.includes(
+        `creature.addWeaponMult('claws', { displayName: 'Vicious Claws' })`,
+      ),
     );
     assert.ok(generatedContent.includes(`creature.addRituals(['Creation', 'Universal'])`));
   });
