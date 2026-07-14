@@ -186,9 +186,22 @@ export const App: React.FC = () => {
           group: groupObj,
         }),
       })
-        .then((res) => {
+        .then(async (res) => {
           if (!res.ok) {
-            throw new Error('Preview server returned error status');
+            let errMsg = 'Preview server returned error status';
+            try {
+              const data = await res.json();
+              if (data && data.error) {
+                errMsg = data.error;
+              }
+            } catch (e) {
+              if (res.statusText) {
+                errMsg = `${res.statusText} (${res.status})`;
+              } else {
+                errMsg = `Server error (${res.status})`;
+              }
+            }
+            throw new Error(errMsg);
           }
           return res.json();
         })
@@ -243,18 +256,36 @@ export const App: React.FC = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(updatedDb),
       })
-        .then((res) => res.json())
+        .then(async (res) => {
+          if (!res.ok) {
+            let errMsg = 'Save server returned error status';
+            try {
+              const data = await res.json();
+              if (data && data.error) {
+                errMsg = data.error;
+              }
+            } catch (e) {
+              if (res.statusText) {
+                errMsg = `${res.statusText} (${res.status})`;
+              } else {
+                errMsg = `Server error (${res.status})`;
+              }
+            }
+            throw new Error(errMsg);
+          }
+          return res.json();
+        })
         .then((result) => {
           setIsSaving(false);
           if (!result.success) {
-            alert(`Save failed: ${result.error}`);
+            console.error('Save failed:', result.error);
           } else {
             console.log('Compile-time validations:', result.validations);
           }
         })
         .catch((err) => {
           setIsSaving(false);
-          alert(`Save failed: ${err.message || err}`);
+          console.error('Save failed:', err.message || err);
         });
     };
 
