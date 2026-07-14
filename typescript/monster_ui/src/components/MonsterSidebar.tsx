@@ -200,9 +200,7 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
                             className="delete-btn"
                             onClick={(e) => {
                               e.stopPropagation();
-                              if (confirm(`Delete individual monster "${monster.name}"?`)) {
-                                onDeleteMonster(monster.name);
-                              }
+                              onDeleteMonster(monster.name);
                             }}
                           >
                             ❌
@@ -237,9 +235,7 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
                                 title="Delete group"
                                 onClick={(e) => {
                                   e.stopPropagation();
-                                  if (confirm(`Delete group "${group.name}" and all its monsters?`)) {
-                                    onDeleteGroup(group.name);
-                                  }
+                                  onDeleteGroup(group.name);
                                 }}
                               >
                                 ❌
@@ -251,6 +247,7 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
                             {group.monsters.map((groupChild) => (
                               <div
                                 key={`${group.name}.${groupChild.name}`}
+                                data-testid={`group-monster-item-${group.name}-${groupChild.name}`}
                                 className={`list-item ${
                                   isSelected({
                                     type: 'group-monster',
@@ -273,9 +270,7 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
                                   className="delete-btn"
                                   onClick={(e) => {
                                     e.stopPropagation();
-                                    if (confirm(`Delete monster "${groupChild.name}" from group "${group.name}"?`)) {
-                                      onDeleteMonsterFromGroup(group.name, groupChild.name);
-                                    }
+                                    onDeleteMonsterFromGroup(group.name, groupChild.name);
                                   }}
                                 >
                                   ❌
@@ -323,9 +318,7 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
                 className="delete-btn"
                 onClick={(e) => {
                   e.stopPropagation();
-                  if (confirm(`Delete individual monster "${monster.name}"?`)) {
-                    onDeleteMonster(monster.name);
-                  }
+                  onDeleteMonster(monster.name);
                 }}
               >
                 ❌
@@ -375,9 +368,7 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
                       title="Delete group"
                       onClick={(e) => {
                         e.stopPropagation();
-                        if (confirm(`Delete group "${group.name}" and all its monsters?`)) {
-                          onDeleteGroup(group.name);
-                        }
+                        onDeleteGroup(group.name);
                       }}
                     >
                       ❌
@@ -389,6 +380,7 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
                   {group.monsters.map((child) => (
                     <div
                       key={`${group.name}.${child.name}`}
+                      data-testid={`group-monster-item-${group.name}-${child.name}`}
                       className={`list-item ${
                         isSelected({
                           type: 'group-monster',
@@ -411,9 +403,7 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
                         className="delete-btn"
                         onClick={(e) => {
                           e.stopPropagation();
-                          if (confirm(`Delete monster "${child.name}" from group "${group.name}"?`)) {
-                            onDeleteMonsterFromGroup(group.name, child.name);
-                          }
+                          onDeleteMonsterFromGroup(group.name, child.name);
                         }}
                       >
                         ❌
