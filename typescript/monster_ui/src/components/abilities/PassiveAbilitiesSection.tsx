@@ -135,7 +135,7 @@ export const PassiveAbilitiesSection: React.FC<PassiveAbilitiesSectionProps> = (
                     <div className="form-group" style={{ marginTop: '15px' }}>
                       <label>Effect Description (LaTeX allowed)</label>
                       <textarea
-                        rows={3}
+                        rows={5}
                         placeholder="Describe the passive effect..."
                         value={passive.effect}
                         onChange={(e) =>

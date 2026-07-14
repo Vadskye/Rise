@@ -88,7 +88,31 @@
       },
       "properties": {
         "has_art": true
-      }
+      },
+      "trainedSkills": [
+        "awareness"
+      ],
+      "baseAttributes": [
+        6,
+        0,
+        4,
+        -2,
+        0,
+        1
+      ],
+      "customSenses": [
+        {
+          "type": "Darkvision",
+          "range": 60
+        }
+      ],
+      "passiveAbilities": [
+        {
+          "name": "Directionless",
+          "effect": "Minotaurs are easily lost. They suffer a -10 penalty to Survival checks to follow tracks or navigate wilderness. In addition, whenever they choose a direction to travel in while in an enclosed space, they choose randomly, except that they do not return through the direction they came from. This makes it extremely difficult for minotaurs to navigate enclosed spaces.",
+          "isMagical": false
+        }
+      ]
     }
   ],
   "monsterGroups": [
