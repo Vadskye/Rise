@@ -64,7 +64,8 @@
           "mode": "Climb",
           "category": "slow"
         }
-      ]
+      ],
+      "customAbilities": []
     },
     {
       "name": "Minotaur",
@@ -118,7 +119,26 @@
           "type": "maneuver",
           "name": "Mighty Charge",
           "options": {
-            "isMagical": false
+            "isMagical": false,
+            "weapon": "horn",
+            "displayName": "Charging Gore"
+          }
+        },
+        {
+          "type": "maneuver",
+          "name": "Weapon Multiplier",
+          "options": {
+            "isMagical": false,
+            "weapon": "horn",
+            "displayName": "Gore"
+          }
+        },
+        {
+          "type": "maneuver",
+          "name": "Chokeslam",
+          "options": {
+            "isMagical": false,
+            "usageTime": "elite"
           }
         }
       ]
