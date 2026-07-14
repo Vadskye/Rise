@@ -70,14 +70,14 @@
       "name": "Minotaur",
       "requiredProperties": {
         "alignment": "neutral",
-        "base_class": "warrior",
+        "base_class": "brute",
         "elite": false,
         "creature_origin": "natural",
         "creature_types": [
-          "beast"
+          "humanoid"
         ],
-        "size": "medium",
-        "level": 1
+        "size": "large",
+        "level": 7
       },
       "freeformCode": "",
       "folder": "Uncivilized Humanoids"
