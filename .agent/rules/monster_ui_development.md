@@ -49,4 +49,3 @@ Saves compiled TypeScript classes to [monsters_from_ui.ts](../../typescript/src/
 - **Sidebar rendering**: Folders shown in the sidebar are derived by combining the list of explicit folders with the `folder` values of all existing monsters and groups, ensuring they are unique and sorted.
 - **Folder updates**: Renaming a folder requires updating the folder name in `folders` as well as the `folder` properties on all monsters/groups belonging to that folder. Deleting a folder unsets the `folder` field on those items (moving them to individual/ungrouped lists) and removes the folder name from `folders`.
 - **Styling**: Styles are written in [App.less](../../typescript/monster_ui/src/App.less). Vite compiles LESS into CSS automatically.
-

@@ -1048,9 +1048,19 @@ body {
   display: flex;
   align-items: center;
   gap: 6px;
+  position: relative;
 }
 
-.quick-weapon-select {
+.weapon-popover-container {
+  position: relative;
+  display: inline-block;
+}
+
+.weapon-popover-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
   background-color: var(--bg-primary);
   border: 1px solid var(--border-color);
   color: var(--text-primary);
@@ -1059,12 +1069,142 @@ body {
   font-size: 0.8rem;
   height: 26px;
   max-width: 150px;
-  outline: none;
   cursor: pointer;
   font-family: inherit;
+  transition: border-color 0.12s ease, background-color 0.12s ease;
+  outline: none;
+
+  &:hover {
+    border-color: var(--accent-color);
+    background-color: var(--bg-secondary);
+  }
+
+  &.active {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(192, 132, 252, 0.2);
+  }
+
+  .weapon-popover-trigger-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex: 1;
+  }
+
+  .chevron {
+    font-size: 0.7em;
+    color: var(--text-secondary);
+    flex-shrink: 0;
+    margin-left: 4px;
+  }
+}
+
+.weapon-popover-dropdown {
+  margin-top: 6px;
+  width: 260px;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+  z-index: 110;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  animation: popoverFadeIn 0.12s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes popoverFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.weapon-popover-search {
+  width: 100%;
+  padding: 5px 8px;
+  font-size: 0.8rem;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  outline: none;
 
   &:focus {
     border-color: var(--accent-color);
+  }
+}
+
+.weapon-popover-list-container {
+  max-height: 180px;
+  overflow-y: auto;
+  padding-right: 2px;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 3px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+  }
+}
+
+.weapon-popover-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+}
+
+.weapon-btn {
+  padding: 5px 8px;
+  font-size: 0.75rem;
+  text-align: left;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-primary);
+  color: var(--text-secondary);
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: all 0.12s ease;
+  font-family: inherit;
+
+  &:hover {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+    border-color: var(--text-secondary);
+  }
+
+  &.selected {
+    background-color: var(--accent-color);
+    color: var(--bg-primary);
+    font-weight: 600;
+    border-color: var(--accent-color);
+  }
+
+  &.clear-btn {
+    grid-column: span 2;
+    text-align: center;
+    font-weight: 600;
+    border-style: dashed;
+    
+    &:hover {
+      background-color: rgba(239, 68, 68, 0.1);
+      color: var(--danger-color);
+      border-color: var(--danger-color);
+    }
   }
 }
 

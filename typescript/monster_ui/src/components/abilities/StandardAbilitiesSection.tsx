@@ -1,6 +1,8 @@
 import React, { useState, useMemo } from 'react';
 import { StandardAbilityConfig } from '../../types/monster';
 import { isMissingWeaponWarning } from '../../utils/validation';
+import { WeaponPopover } from './WeaponPopover';
+
 
 interface AutocompleteSearchProps {
   label: string;
@@ -214,26 +216,19 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
                   >
                     {ability.type === 'maneuver' && (
                       <div className="quick-weapon-select-container">
-                        <select
-                          className="quick-weapon-select"
-                          value={ability.options?.weapon || ''}
-                          onChange={(e) =>
+                        <WeaponPopover
+                          selectedWeapon={ability.options?.weapon}
+                          weapons={referenceWeapons}
+                          onSelect={(weapon) =>
                             updateStandardAbility(idx, {
                               ...ability,
                               options: {
                                 ...(ability.options || {}),
-                                weapon: e.target.value || undefined,
+                                weapon,
                               },
                             })
                           }
-                        >
-                          <option value="">-- No Weapon --</option>
-                          {referenceWeapons.map((w) => (
-                            <option key={w} value={w}>
-                              {w}
-                            </option>
-                          ))}
-                        </select>
+                        />
                         {warnings.some((w) =>
                           isMissingWeaponWarning(w, ability.options?.displayName || ability.name),
                         ) && (
