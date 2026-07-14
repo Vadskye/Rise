@@ -138,6 +138,8 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
     await new Promise((resolve) => setTimeout(resolve, 100));
     await page.select('[data-testid="type-select"]', 'beast');
     await new Promise((resolve) => setTimeout(resolve, 100));
+    await page.select('[data-testid="type-select"]', 'aberration');
+    await new Promise((resolve) => setTimeout(resolve, 100));
     await page.select('[data-testid="size-select"]', 'large');
     await new Promise((resolve) => setTimeout(resolve, 200));
 
@@ -192,8 +194,8 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
     const firstStatLineText = await page.$eval('.stat-block .stat-line', (el) => el.textContent);
     console.log('Book Preview First Stat Line Text:', firstStatLineText);
     assert.ok(
-      firstStatLineText?.includes('Types:beast') || firstStatLineText?.includes('Types: beast'),
-      'Preview first stat line should contain creature types',
+      firstStatLineText?.includes('Types:aberration, beast') || firstStatLineText?.includes('Types: aberration, beast'),
+      'Preview first stat line should contain sorted creature types',
     );
 
     // 7. Verify the actual files saved to disk
@@ -206,7 +208,7 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
     assert.strictEqual(savedMonster.requiredProperties.base_class, 'brute');
     assert.strictEqual(savedMonster.requiredProperties.level, 5);
     assert.strictEqual(savedMonster.requiredProperties.creature_origin, 'natural');
-    assert.deepStrictEqual(savedMonster.requiredProperties.creature_types, ['beast']);
+    assert.deepStrictEqual(savedMonster.requiredProperties.creature_types, ['aberration', 'beast']);
     assert.strictEqual(savedMonster.requiredProperties.size, 'large');
     assert.ok(
       savedMonster.freeformCode.includes('// Gargoyle custom script'),
