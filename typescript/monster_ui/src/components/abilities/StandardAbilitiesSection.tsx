@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { StandardAbilityConfig } from '../../types/monster';
 import { isMissingWeaponWarning } from '../../utils/validation';
-import { WeaponPopover } from './WeaponPopover';
+import { WeaponCombobox } from './WeaponCombobox';
 
 
 interface AutocompleteSearchProps {
@@ -216,7 +216,7 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
                   >
                     {ability.type === 'maneuver' && (
                       <div className="quick-weapon-select-container">
-                        <WeaponPopover
+                        <WeaponCombobox
                           selectedWeapon={ability.options?.weapon}
                           weapons={referenceWeapons}
                           onSelect={(weapon) =>
