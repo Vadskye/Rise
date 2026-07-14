@@ -71,7 +71,7 @@
       "requiredProperties": {
         "alignment": "neutral",
         "base_class": "brute",
-        "elite": false,
+        "elite": true,
         "creature_origin": "natural",
         "creature_types": [
           "beast",
@@ -81,7 +81,14 @@
         "level": 7
       },
       "freeformCode": "",
-      "folder": "Uncivilized Humanoids"
+      "folder": "Uncivilized Humanoids",
+      "knowledge": {
+        "normal": "Minotaurs are typically ten feet tall, with muscular arms and legs covered in thick fur. Instead of a human head, they have the head of a bull, with large horns. They are known for their poor sense of direction. Even an only moderately complex dungeon can be enough to trap a minotaur for weeks as they try to find their way out.",
+        "hard": "While trapped, minotaurs are generally furious at their surroundings, and can sometimes be found pointlessly attacking obstacles in frustration. Even if offered help, they may be too angry to listen to reason without a violent confrontation. However, in their homes or on open roads, they can be amiable and even helpful."
+      },
+      "properties": {
+        "has_art": true
+      }
     }
   ],
   "monsterGroups": [
