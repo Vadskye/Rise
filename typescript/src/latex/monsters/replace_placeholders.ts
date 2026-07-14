@@ -42,7 +42,8 @@ export function replaceAbilityPlaceholders(
 ) {
   const isMagical =
     context.isMagical ||
-    (typeof monster.isWeaponMagical === 'function' && monster.isWeaponMagical(context.weapon)) ||
+    (typeof (monster as any).isWeaponMagical === 'function' &&
+      (monster as any).isWeaponMagical(context.weapon)) ||
     false;
 
   latex = replacePowerTerms(latex, monster, isMagical);

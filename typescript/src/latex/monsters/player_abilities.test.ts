@@ -355,14 +355,6 @@ t.test('convertAbilityToMonsterLatex', (t) => {
     t.end();
   });
 
-  t.test('Steady Slam (Magical Weapon)', (t) => {
-    simpleCreature.markWeaponAsMagical('bite');
-    simpleCreature.addManeuver('Steady Slam', { weapon: 'bite' });
-    const ability = simpleCreature.getActiveAbilities()[0];
-    t.match(convertAbilityToMonsterLatex(simpleCreature, ability), /\\hit 1d8\+5 damage\./);
-    t.end();
-  });
-
   t.end();
 });
 

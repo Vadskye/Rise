@@ -25,10 +25,8 @@ export function convertMonsterToLatex(monster: Creature, parentGroupName?: strin
   const contentBufferText =
     monster.description || knowledgeText ? '\\vspace{0.5em}' : '\\vspace{0.25em}';
 
-  const monsterContext1 = `Level ${monster.level} ${format.uppercaseFirst(monster.base_class)}${eliteText}`;
-  const typesText =
-    monster.creature_types.length > 0 ? ' ' + monster.creature_types.join(', ') : '';
-  const monsterContext2 = `${format.uppercaseFirst(monster.size)} ${monster.creature_origin}${typesText}`;
+  const monsterContext1 = `Level ${monster.level}${eliteText}`;
+  const monsterContext2 = `${format.uppercaseFirst(monster.size)} ${monster.creature_origin} ${monster.base_class.toLowerCase()}`;
 
   // This still has various like $name and $accuracy.
   const latexWithPlaceholders = `
@@ -128,9 +126,17 @@ function genStatisticsText(monster: Creature): string {
 function genDefensiveStatisticsText(monster: Creature): string {
   const mentalText = monster.hasTrait('mindless') ? '' : `\n\\monsep Ment ${monster.mental}`;
 
+  const hpIpText = `\\pari \\textbf{HP} ${monster.hit_points} \\monsep \\textbf{IP} ${monster.injury_point}`;
+  const typesText = monster.creature_types.length > 0
+    ? `\\textbf{Types:} ${monster.creature_types.join(', ')}`
+    : '';
+
+  const firstLine = typesText
+    ? `\\spelltwocol{${hpIpText}}{${typesText}}`
+    : hpIpText;
+
   return `
-    \\pari \\textbf{HP} ${monster.hit_points}
-      \\monsep \\textbf{IP} ${monster.injury_point}
+    ${firstLine}
     \\pari \\textbf{Defenses}
       Armor ${monster.armor_defense}
       \\monsep Brawn ${monster.brawn}

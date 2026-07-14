@@ -121,14 +121,13 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
       <h4 className="monster-title">
         {stats.name}
         <span className="sub-info">
-          Level {stats.level} {stats.base_class.charAt(0).toUpperCase() + stats.base_class.slice(1)}
+          Level {stats.level}
           {stats.elite ? ' — Elite' : ''}
         </span>
       </h4>
 
       <div className="monster-origin-type">
-        {stats.size.charAt(0).toUpperCase() + stats.size.slice(1)} {stats.creature_origin}
-        {stats.creature_types && stats.creature_types.length > 0 ? ` ${stats.creature_types.join(', ')}` : ''}
+        {stats.size.charAt(0).toUpperCase() + stats.size.slice(1)} {stats.creature_origin} {stats.base_class.toLowerCase()}
       </div>
 
       {/* Stats Table */}
@@ -138,6 +137,14 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
           <span className="stat-value">{stats.hit_points}</span>
           <span className="stat-label">IP</span>
           <span className="stat-value">{stats.injury_point}</span>
+          {stats.creature_types && stats.creature_types.length > 0 && (
+            <>
+              <span className="stat-label" style={{ marginLeft: 'auto' }}>Types:</span>
+              <span className="stat-value" style={{ marginRight: 0 }}>
+                {stats.creature_types.join(', ')}
+              </span>
+            </>
+          )}
         </div>
         <div className="stat-line">
           <span className="stat-label">Defenses</span>
