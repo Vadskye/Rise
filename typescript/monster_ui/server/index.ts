@@ -6,6 +6,7 @@ import { allMysticSpheres } from '@src/abilities/mystic_spheres';
 import { allCombatStyles } from '@src/abilities/combat_styles';
 import { MONSTER_WEAPONS } from '@src/monsters/weapons';
 import { showDetailedTiming } from './timing';
+import { getSettings, saveSettings } from './settings';
 
 const app = express();
 const port = 3001;
@@ -137,6 +138,40 @@ app.post('/api/preview', (req, res) => {
   } catch (err) {
     const error = err instanceof Error ? err : new Error(String(err));
     console.error('[API Error] Preview calculation failed:', error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Fetch application settings (such as last active selection)
+app.get('/api/settings', (req, res) => {
+  const start = performance.now();
+  console.log('[API] GET /api/settings - Fetching app settings');
+  try {
+    const settings = getSettings();
+    res.json(settings);
+    if (showDetailedTiming) {
+      console.log(`[Timing] GET /api/settings took ${(performance.now() - start).toFixed(2)}ms`);
+    }
+  } catch (err) {
+    const error = err instanceof Error ? err : new Error(String(err));
+    console.error('[API Error] Failed to fetch settings:', error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Save application settings
+app.post('/api/settings', (req, res) => {
+  const start = performance.now();
+  console.log('[API] POST /api/settings - Saving app settings');
+  try {
+    saveSettings(req.body);
+    res.json({ success: true });
+    if (showDetailedTiming) {
+      console.log(`[Timing] POST /api/settings took ${(performance.now() - start).toFixed(2)}ms`);
+    }
+  } catch (err) {
+    const error = err instanceof Error ? err : new Error(String(err));
+    console.error('[API Error] Failed to save settings:', error);
     res.status(500).json({ error: error.message });
   }
 });

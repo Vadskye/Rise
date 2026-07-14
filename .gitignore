@@ -235,6 +235,8 @@ typescript/src/**/*.js.map
 typescript/src/monsters/individual_monsters/monsters_from_ui.ts
 typescript/monster_ui/monsters_from_ui.test.*.json
 typescript/src/monsters/individual_monsters/monsters_from_ui.test.*.ts
+typescript/monster_ui/app_settings.json
+typescript/monster_ui/app_settings.test.*.json
 
 #Rust
 rust/target/*

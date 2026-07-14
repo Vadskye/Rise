@@ -16,6 +16,27 @@ const defaultRequiredProperties = {
   level: 0,
 };
 
+interface AppSettings {
+  lastActiveSelection?: SidebarSelection;
+}
+
+function isValidSelection(selection: SidebarSelection, dbData: DatabaseData): boolean {
+  if (!selection) {
+    return false;
+  }
+  if (selection.type === 'monster') {
+    return dbData.monsters.some((m) => m.name === selection.name);
+  }
+  if (selection.type === 'group') {
+    return dbData.monsterGroups.some((g) => g.name === selection.name);
+  }
+  if (selection.type === 'group-monster') {
+    const group = dbData.monsterGroups.find((g) => g.name === selection.groupName);
+    return !!group && group.monsters.some((m) => m.name === selection.name);
+  }
+  return false;
+}
+
 export const App: React.FC = () => {
   const [db, setDb] = useState<DatabaseData>({ monsters: [], monsterGroups: [] });
   const dbRef = useRef<DatabaseData>(db);
@@ -46,6 +67,7 @@ export const App: React.FC = () => {
     spheres: string[];
   }>({ spells: [], maneuvers: [], weapons: [], spheres: [] });
   const [activeSelection, setActiveSelection] = useState<SidebarSelection>(null);
+  const [isInitialLoadComplete, setIsInitialLoadComplete] = useState<boolean>(false);
   const lastSelectionRef = useRef<SidebarSelection>(null);
   const lastInputWasTextRef = useRef<boolean>(false);
 
@@ -107,23 +129,50 @@ export const App: React.FC = () => {
       .catch((err) => console.error('Failed to load reference data:', err));
   }, []);
 
-  // Fetch initial database on mount
+  // Fetch initial database and settings on mount
   useEffect(() => {
-    fetch('/api/monsters')
-      .then((res) => res.json())
-      .then((data: DatabaseData) => {
-        setDb(data);
-        // Select first item if available
-        if (data.monsters.length > 0) {
-          setActiveSelection({ type: 'monster', name: data.monsters[0].name });
-        } else if (data.monsterGroups.length > 0) {
-          setActiveSelection({ type: 'group', name: data.monsterGroups[0].name });
+    Promise.all([
+      fetch('/api/monsters').then((res) => res.json()),
+      fetch('/api/settings')
+        .then((res) => res.json())
+        .catch((err) => {
+          console.warn('Failed to load settings, defaulting to empty:', err);
+          return {};
+        }),
+    ])
+      .then(([dbData, settingsData]: [DatabaseData, AppSettings]) => {
+        setDb(dbData);
+        
+        let initialSelection: SidebarSelection = null;
+        if (settingsData.lastActiveSelection && isValidSelection(settingsData.lastActiveSelection, dbData)) {
+          initialSelection = settingsData.lastActiveSelection;
+        } else if (dbData.monsters.length > 0) {
+          initialSelection = { type: 'monster', name: dbData.monsters[0].name };
+        } else if (dbData.monsterGroups.length > 0) {
+          initialSelection = { type: 'group', name: dbData.monsterGroups[0].name };
         }
+        
+        setActiveSelection(initialSelection);
+        setIsInitialLoadComplete(true);
       })
       .catch((err) => {
-        setErrors([`Failed to load database: ${err.message || err}`]);
+        setErrors([`Failed to load database/settings: ${err.message || err}`]);
       });
   }, []);
+
+  // Save settings whenever activeSelection changes (after initial load)
+  useEffect(() => {
+    if (!isInitialLoadComplete) {
+      return;
+    }
+    fetch('/api/settings', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ lastActiveSelection: activeSelection }),
+    }).catch((err) => {
+      console.error('Failed to save settings:', err);
+    });
+  }, [activeSelection, isInitialLoadComplete]);
 
   // Debounced preview calculation effect.
   // Design Decisions:

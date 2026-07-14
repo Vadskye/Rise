@@ -48,6 +48,9 @@ describe('Monster UI Integration Tests (Full Server)', () => {
     if (fs.existsSync(paths.generatedTsPath)) {
       fs.unlinkSync(paths.generatedTsPath);
     }
+    if (fs.existsSync(paths.settingsPath)) {
+      fs.unlinkSync(paths.settingsPath);
+    }
   });
 
   test('GET /api/monsters retrieves the current database', async () => {
@@ -473,5 +476,40 @@ describe('Monster UI Integration Tests (Full Server)', () => {
     const result2 = await res2.json();
     assert.strictEqual(result2.success, true);
     assert.ok(result2.warnings.includes(formatNoStandardActionWarning(monsterWithError.name)));
+  });
+
+  test('GET /api/settings returns empty object when no settings file exists', async () => {
+    // Ensure settings file is deleted first
+    if (fs.existsSync(paths.settingsPath)) {
+      fs.unlinkSync(paths.settingsPath);
+    }
+    const res = await fetch(`${baseUrl}/api/settings`);
+    assert.strictEqual(res.status, 200);
+    const settings = await res.json();
+    assert.deepStrictEqual(settings, {});
+  });
+
+  test('POST /api/settings stores settings persistently', async () => {
+    const settingsPayload = {
+      lastActiveSelection: {
+        type: 'monster' as const,
+        name: 'Troll',
+      },
+    };
+
+    const postRes = await fetch(`${baseUrl}/api/settings`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(settingsPayload),
+    });
+    assert.strictEqual(postRes.status, 200);
+    const postResult = await postRes.json();
+    assert.strictEqual(postResult.success, true);
+
+    // Retrieve settings and assert correctness
+    const getRes = await fetch(`${baseUrl}/api/settings`);
+    assert.strictEqual(getRes.status, 200);
+    const retrievedSettings = await getRes.json();
+    assert.deepStrictEqual(retrievedSettings, settingsPayload);
   });
 });
