@@ -140,6 +140,13 @@
             "isMagical": false,
             "usageTime": "elite"
           }
+        },
+        {
+          "type": "maneuver",
+          "name": "Ground Stomp",
+          "options": {
+            "isMagical": false
+          }
         }
       ]
     }
