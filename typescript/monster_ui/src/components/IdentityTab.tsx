@@ -321,7 +321,7 @@ export const IdentityTab: React.FC<IdentityTabProps> = ({
             checked={requiredProperties.elite}
             onChange={(e) => setProp('elite', e.target.checked)}
           />
-          <label htmlFor="elite">Elite Monster</label>
+          <label htmlFor="elite">Elite</label>
         </div>
 
         <div className="form-checkbox-row">
@@ -331,7 +331,7 @@ export const IdentityTab: React.FC<IdentityTabProps> = ({
             checked={Boolean(properties.has_art)}
             onChange={(e) => setMiscProperty('has_art', e.target.checked)}
           />
-          <label htmlFor="has_art">Monster Has Art</label>
+          <label htmlFor="has_art">Has art</label>
         </div>
       </div>
 
