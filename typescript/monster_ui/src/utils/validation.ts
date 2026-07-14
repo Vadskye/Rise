@@ -1,5 +1,6 @@
 import type { MonsterData, MonsterGroupData } from '../../server/codegen';
 import { Creature } from '@src/character_sheet/creature';
+import { RISE_ATTRIBUTES } from '@src/core_mechanics/attributes';
 
 /**
  * Shared validation logic and warning message generation for the Monster Creator.
@@ -100,6 +101,17 @@ export function checkValidMonster(
     if (eliteAbilities.length === 0) {
       warnings.push('Elite creatures must have at least one elite action ability');
     }
+  }
+
+  let hasNonzeroAttribute = false;
+  for (const attribute of RISE_ATTRIBUTES) {
+    if ((creature[attribute] ?? 0) !== 0) {
+      hasNonzeroAttribute = true;
+      break;
+    }
+  }
+  if (!hasNonzeroAttribute) {
+    warnings.push('Must have at least one nonzero attribute');
   }
 
   if (!creature.hasKnowledgeResults() && !parentGroup?.knowledge) {

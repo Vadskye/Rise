@@ -32,7 +32,55 @@
           "type": "Darkvision",
           "range": 60
         }
+      ],
+      "standardAbilities": [
+        {
+          "type": "maneuver",
+          "name": "Piledriver",
+          "options": {
+            "isMagical": false,
+            "displayName": "Choke"
+          }
+        },
+        {
+          "type": "maneuver",
+          "name": "Grappling Strike",
+          "options": {
+            "isMagical": false,
+            "weapon": "tentacle"
+          }
+        }
+      ],
+      "baseAttributes": [
+        5,
+        4,
+        -1,
+        -4,
+        0,
+        -1
+      ],
+      "customMovementSpeeds": [
+        {
+          "mode": "Climb",
+          "category": "slow"
+        }
       ]
+    },
+    {
+      "name": "Minotaur",
+      "requiredProperties": {
+        "alignment": "neutral",
+        "base_class": "warrior",
+        "elite": false,
+        "creature_origin": "natural",
+        "creature_types": [
+          "beast"
+        ],
+        "size": "medium",
+        "level": 1
+      },
+      "freeformCode": "",
+      "folder": "Uncivilized Humanoids"
     }
   ],
   "monsterGroups": [
