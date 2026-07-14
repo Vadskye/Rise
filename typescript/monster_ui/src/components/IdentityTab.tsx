@@ -19,6 +19,16 @@ export const IdentityTab: React.FC<IdentityTabProps> = ({
 }) => {
   const { requiredProperties } = monsterData;
 
+  const [isCreatingNew, setIsCreatingNew] = React.useState<boolean>(false);
+  const [prevMonsterName, setPrevMonsterName] = React.useState<string>(monsterData.name);
+
+  if (monsterData.name !== prevMonsterName) {
+    setPrevMonsterName(monsterData.name);
+    setIsCreatingNew(monsterData.folder ? !folders.includes(monsterData.folder) : false);
+  }
+
+  const isNewFolder = isCreatingNew || (!!monsterData.folder && !folders.includes(monsterData.folder));
+
   const setProp = <K extends keyof typeof requiredProperties>(
     key: K,
     value: (typeof requiredProperties)[K],
@@ -85,21 +95,44 @@ export const IdentityTab: React.FC<IdentityTabProps> = ({
       </div>
 
       <div className="form-group">
-        <label htmlFor="folder">Folder Name</label>
-        <input
-          id="folder"
-          data-testid="folder-input"
-          type="text"
-          list="folder-options"
-          value={monsterData.folder || ''}
-          onChange={(e) => onChangeMonster({ ...monsterData, folder: e.target.value })}
-          placeholder="e.g. Green Monsters"
-        />
-        <datalist id="folder-options">
-          {folders.map((f) => (
-            <option key={f} value={f} />
-          ))}
-        </datalist>
+        <label htmlFor="folder-select">Folder Name</label>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+          <select
+            id="folder-select"
+            data-testid="folder-select"
+            value={isNewFolder ? '__new_folder__' : (monsterData.folder || '')}
+            onChange={(e) => {
+              const val = e.target.value;
+              if (val === '__new_folder__') {
+                setIsCreatingNew(true);
+                onChangeMonster({ ...monsterData, folder: '' });
+              } else {
+                setIsCreatingNew(false);
+                onChangeMonster({ ...monsterData, folder: val });
+              }
+            }}
+          >
+            <option value="">-- No Folder --</option>
+            {folders.map((f) => (
+              <option key={f} value={f}>
+                {f}
+              </option>
+            ))}
+            <option value="__new_folder__">+ Create New Folder...</option>
+          </select>
+
+          {isNewFolder && (
+            <input
+              id="folder"
+              data-testid="folder-input"
+              type="text"
+              value={monsterData.folder || ''}
+              onChange={(e) => onChangeMonster({ ...monsterData, folder: e.target.value })}
+              placeholder="Enter new folder name"
+              autoFocus
+            />
+          )}
+        </div>
       </div>
 
       <div className="form-row-grid">
