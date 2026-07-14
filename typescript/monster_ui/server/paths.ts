@@ -30,6 +30,7 @@ const productionTsPath = path.resolve(
   __dirname,
   '../../src/monsters/individual_monsters/monsters_from_ui.ts',
 );
+const productionSettingsPath = path.resolve(__dirname, '../app_settings.json');
 
 /**
  * Mutable paths object. All server code reads from this at call-time so that
@@ -39,6 +40,7 @@ const productionTsPath = path.resolve(
 export const paths = {
   dbPath: productionDbPath,
   generatedTsPath: productionTsPath,
+  settingsPath: productionSettingsPath,
 };
 
 /**
@@ -46,7 +48,12 @@ export const paths = {
  * any DB operations — typically in test setup — to point the server at an
  * isolated location.
  */
-export function configurePaths(dbPath: string, generatedTsPath: string): void {
+export function configurePaths(
+  dbPath: string,
+  generatedTsPath: string,
+  settingsPath?: string,
+): void {
   paths.dbPath = dbPath;
   paths.generatedTsPath = generatedTsPath;
+  paths.settingsPath = settingsPath || dbPath.replace(/monsters_from_ui/, 'app_settings');
 }
