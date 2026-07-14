@@ -129,7 +129,7 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
           {stats.creature_types && stats.creature_types.length > 0 && (
             <>
               <span className="stat-label" style={{ marginLeft: 'auto' }}>
-                Types:
+                Types
               </span>
               <span className="stat-value" style={{ marginRight: 0 }}>
                 {stats.creature_types.join(', ')}
@@ -253,7 +253,7 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
       {/* Knowledge */}
       {showKnowledge && (
         <div className="knowledge-block">
-          <div className="knowledge-title">Knowledge Checks</div>
+          <div className="knowledge-title">{stats.name} Lore</div>
           {knowledge.easy && (
             <div className="knowledge-line">
               <span className="dv-label">

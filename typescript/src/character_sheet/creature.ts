@@ -1042,6 +1042,10 @@ export class Creature implements CreaturePropertyMap {
     return [];
   }
 
+  public isExactlyCreatureType(type: RiseCreatureType): boolean {
+    return this.creature_types.length === 1 && this.creature_types[0] === type;
+  }
+
   public get land_speed() {
     return this.getPropertyValue('land_speed');
   }
