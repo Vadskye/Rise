@@ -178,15 +178,22 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
       'Preview title should contain monster name',
     );
     assert.ok(
-      previewTitleText?.includes('Level 5 Brute'),
-      'Preview title should contain level and base class',
+      previewTitleText?.includes('Level 5'),
+      'Preview title should contain level',
     );
 
     const previewOriginTypeText = await page.$eval('.monster-origin-type', (el) => el.textContent);
     console.log('Book Preview Origin/Type Text:', previewOriginTypeText);
     assert.ok(
-      previewOriginTypeText?.includes('Large natural beast'),
-      'Preview should contain size, origin, and type',
+      previewOriginTypeText?.includes('Large natural brute'),
+      'Preview should contain size, origin, and base class/role',
+    );
+
+    const firstStatLineText = await page.$eval('.stat-block .stat-line', (el) => el.textContent);
+    console.log('Book Preview First Stat Line Text:', firstStatLineText);
+    assert.ok(
+      firstStatLineText?.includes('Types:beast') || firstStatLineText?.includes('Types: beast'),
+      'Preview first stat line should contain creature types',
     );
 
     // 7. Verify the actual files saved to disk
