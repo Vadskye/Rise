@@ -156,6 +156,12 @@ export const IdentityTab: React.FC<IdentityTabProps> = ({
             <option value="votive">Votive</option>
             <option value="wizard">Wizard</option>
           </select>
+          {getInlineError('base class') && (
+            <div className="inline-error">❌ {getInlineError('base class')}</div>
+          )}
+          {getInlineWarning('base class') && (
+            <div className="inline-warning">⚠️ {getInlineWarning('base class')}</div>
+          )}
         </div>
 
         <div className="form-group">
@@ -166,9 +172,13 @@ export const IdentityTab: React.FC<IdentityTabProps> = ({
             type="number"
             min={1}
             max={30}
-            value={requiredProperties.level}
-            onChange={(e) => setProp('level', parseInt(e.target.value) || 1)}
+            value={requiredProperties.level || ''}
+            onChange={(e) => setProp('level', parseInt(e.target.value) || 0)}
           />
+          {getInlineError('level') && <div className="inline-error">❌ {getInlineError('level')}</div>}
+          {getInlineWarning('level') && (
+            <div className="inline-warning">⚠️ {getInlineWarning('level')}</div>
+          )}
         </div>
       </div>
 
@@ -186,6 +196,12 @@ export const IdentityTab: React.FC<IdentityTabProps> = ({
             <option value="natural">Natural</option>
             <option value="undead">Undead</option>
           </select>
+          {getInlineError('origin') && (
+            <div className="inline-error">❌ {getInlineError('origin')}</div>
+          )}
+          {getInlineWarning('origin') && (
+            <div className="inline-warning">⚠️ {getInlineWarning('origin')}</div>
+          )}
         </div>
 
         <div className="form-group">
@@ -261,6 +277,12 @@ export const IdentityTab: React.FC<IdentityTabProps> = ({
               </option>
             ))}
           </select>
+          {getInlineError('creature type') && (
+            <div className="inline-error">❌ {getInlineError('creature type')}</div>
+          )}
+          {getInlineWarning('creature type') && (
+            <div className="inline-warning">⚠️ {getInlineWarning('creature type')}</div>
+          )}
         </div>
 
         <div className="form-group">
@@ -282,6 +304,12 @@ export const IdentityTab: React.FC<IdentityTabProps> = ({
             <option value="gargantuan">Gargantuan</option>
             <option value="colossal">Colossal</option>
           </select>
+          {getInlineError('size') && (
+            <div className="inline-error">❌ {getInlineError('size')}</div>
+          )}
+          {getInlineWarning('size') && (
+            <div className="inline-warning">⚠️ {getInlineWarning('size')}</div>
+          )}
         </div>
       </div>
 

@@ -90,7 +90,23 @@ export function generatePreview(
       equipment: creature.getEquipment(),
       activeAbilities: prepareActiveAbilitiesForWebPreview(creature, creature.getActiveAbilities()),
       passiveAbilities: creature.getPassiveAbilities(),
-      knowledge: creature.getKnowledgeResultConfig(),
+      knowledge: (() => {
+        try {
+          return creature.getKnowledgeResultConfig();
+        } catch (err) {
+          const msg = err instanceof Error ? err.message : String(err);
+          warnings.push(msg);
+          return {
+            easy: creature.knowledge_result_easy,
+            normal: creature.knowledge_result_normal,
+            hard: creature.knowledge_result_hard,
+            legendary: creature.knowledge_result_legendary,
+            monsterLevel: creature.level,
+            monsterName: creature.name,
+            relevantKnowledges: [],
+          };
+        }
+      })(),
       // Real calculated stats and fields:
       accuracy: creature.accuracy,
       brawling_accuracy: creature.brawling_accuracy,

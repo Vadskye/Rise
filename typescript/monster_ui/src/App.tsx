@@ -7,13 +7,13 @@ import { ValidationBox } from './components/ValidationBox';
 import './App.less';
 
 const defaultRequiredProperties = {
-  alignment: 'neutral',
-  base_class: 'warrior',
+  alignment: '',
+  base_class: '',
   elite: false,
-  creature_origin: 'natural',
-  creature_types: ['beast'],
-  size: 'medium',
-  level: 1,
+  creature_origin: '',
+  creature_types: [],
+  size: '',
+  level: 0,
 };
 
 export const App: React.FC = () => {

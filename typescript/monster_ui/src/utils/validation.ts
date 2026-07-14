@@ -72,6 +72,21 @@ export function checkValidMonster(
   if (!creature.alignment) {
     warnings.push('Must have alignment');
   }
+  if (!creature.base_class) {
+    warnings.push('Must have base class');
+  }
+  if (!creature.level || creature.level < 1) {
+    warnings.push('Must have level');
+  }
+  if (!creature.creature_origin) {
+    warnings.push('Must have origin');
+  }
+  if (!creature.creature_types || creature.creature_types.length === 0) {
+    warnings.push('Must have at least one creature type');
+  }
+  if (!creature.size) {
+    warnings.push('Must have size');
+  }
 
   if (creature.intelligence >= -2 && creature.getTrainedSkillNames().length === 0) {
     warnings.push('Has no trained skills');
