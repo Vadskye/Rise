@@ -161,6 +161,7 @@ describe('Monster UI Drag and Drop E2E Tests', () => {
     await nameInput.type('Drag Monster', { delay: 10 });
     await new Promise((resolve) => setTimeout(resolve, 200));
 
+    await page.select('[data-testid="folder-select"]', '__new_folder__');
     const folderInput = await page.waitForSelector('[data-testid="folder-input"]', {
       timeout: 5000,
     });

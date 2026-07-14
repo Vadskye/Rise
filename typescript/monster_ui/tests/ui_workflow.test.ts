@@ -254,6 +254,7 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
     await nameInput.type('Troll', { delay: 30 });
     await new Promise((resolve) => setTimeout(resolve, 300));
 
+    await page.select('[data-testid="folder-select"]', '__new_folder__');
     let folderInput = await page.waitForSelector('[data-testid="folder-input"]', { timeout: 5000 });
     await folderInput.type('Test Folder', { delay: 30 });
     await new Promise((resolve) => setTimeout(resolve, 300));

@@ -140,12 +140,11 @@ describe('Monster UI Folders E2E Tests', () => {
     await new Promise((resolve) => setTimeout(resolve, 300));
 
     // Assign folder inside IdentityTab
-    const folderInput = await page.waitForSelector('[data-testid="folder-input"]', {
+    const folderSelect = await page.waitForSelector('[data-testid="folder-select"]', {
       timeout: 5000,
     });
-    assert.ok(folderInput, 'Folder input should exist');
-    await page.$eval('[data-testid="folder-input"]', (el) => (el as HTMLInputElement).select());
-    await folderInput.type('Magic Circle', { delay: 10 });
+    assert.ok(folderSelect, 'Folder select should exist');
+    await page.select('[data-testid="folder-select"]', 'Magic Circle');
     await new Promise((resolve) => setTimeout(resolve, 300));
 
     // Wait for autosave to finish
