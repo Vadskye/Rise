@@ -309,11 +309,22 @@ export const App: React.FC = () => {
   };
 
   const handleUpdateMonster = (updated: MonsterData) => {
+    const sortedCreatureTypes = updated.requiredProperties.creature_types
+      ? [...updated.requiredProperties.creature_types].sort()
+      : [];
+    const monsterWithSortedTypes: MonsterData = {
+      ...updated,
+      requiredProperties: {
+        ...updated.requiredProperties,
+        creature_types: sortedCreatureTypes,
+      },
+    };
+
     let updatedDb: DatabaseData;
     if (activeSelection?.type === 'monster') {
       updatedDb = {
         ...db,
-        monsters: db.monsters.map((m) => (m.name === activeSelection.name ? updated : m)),
+        monsters: db.monsters.map((m) => (m.name === activeSelection.name ? monsterWithSortedTypes : m)),
       };
       // If name changed, update the active selection pointer as well
       if (updated.name !== activeSelection.name) {
@@ -326,7 +337,7 @@ export const App: React.FC = () => {
           g.name === activeSelection.groupName
             ? {
                 ...g,
-                monsters: g.monsters.map((m) => (m.name === activeSelection.name ? updated : m)),
+                monsters: g.monsters.map((m) => (m.name === activeSelection.name ? monsterWithSortedTypes : m)),
               }
             : g,
         ),
