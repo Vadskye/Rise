@@ -74,7 +74,8 @@
         "elite": false,
         "creature_origin": "natural",
         "creature_types": [
-          "humanoid"
+          "humanoid",
+          "beast"
         ],
         "size": "large",
         "level": 7
