@@ -1,15 +1,15 @@
 ---
 trigger: model_decision
-description: Guidelines for how to create UI popovers, which are preferred over dropdown menus.
+description: Guidelines for how to create UI comboboxes (portal dropdowns), which are preferred over standard dropdown menus.
 ---
 
-## UI Popovers
+## UI Comboboxes
 
 Many card components (e.g. `.ability-item-card`) use `overflow: hidden` for visual styling. Any `position: absolute` dropdown rendered inside such a card will be clipped, regardless of `z-index`.
 
-**Solution: use `ReactDOM.createPortal` + `getBoundingClientRect`.**
+**Solution: use `ReactDOM.createPortal` + `getBoundingClientRect` to implement a Combobox.**
 
-Pattern (see [WeaponPopover.tsx](../../typescript/monster_ui/src/components/abilities/WeaponPopover.tsx) for a full example):
+Pattern (see [WeaponCombobox.tsx](../../typescript/monster_ui/src/components/abilities/WeaponCombobox.tsx) for a full example):
 
 1. Attach a `ref` to the trigger button.
 2. On open, call `triggerRef.current.getBoundingClientRect()` to get viewport-relative coordinates and store them as `position: fixed` inline styles on the dropdown.

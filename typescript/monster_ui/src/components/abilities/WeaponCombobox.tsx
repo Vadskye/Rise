@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
 
-interface WeaponPopoverProps {
+interface WeaponComboboxProps {
   selectedWeapon?: string;
   weapons: string[];
   onSelect: (weapon: string | undefined) => void;
 }
 
-export const WeaponPopover: React.FC<WeaponPopoverProps> = ({
+export const WeaponCombobox: React.FC<WeaponComboboxProps> = ({
   selectedWeapon,
   weapons,
   onSelect,
@@ -65,21 +65,21 @@ export const WeaponPopover: React.FC<WeaponPopoverProps> = ({
   const dropdown = isOpen
     ? ReactDOM.createPortal(
         <div
-          className="weapon-popover-dropdown"
+          className="weapon-combobox-dropdown"
           ref={dropdownRef}
           style={dropdownStyle}
           onClick={(e) => e.stopPropagation()}
         >
           <input
             type="text"
-            className="weapon-popover-search"
+            className="weapon-combobox-search"
             placeholder="Search weapons..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             autoFocus
           />
-          <div className="weapon-popover-list-container">
-            <div className="weapon-popover-grid">
+          <div className="weapon-combobox-list-container">
+            <div className="weapon-combobox-grid">
               <button
                 type="button"
                 className={`weapon-btn clear-btn ${!selectedWeapon ? 'selected' : ''}`}
@@ -110,15 +110,15 @@ export const WeaponPopover: React.FC<WeaponPopoverProps> = ({
     : null;
 
   return (
-    <div className="weapon-popover-container" onClick={(e) => e.stopPropagation()}>
+    <div className="weapon-combobox-container" onClick={(e) => e.stopPropagation()}>
       <button
         type="button"
         ref={triggerRef}
-        className={`weapon-popover-trigger ${isOpen ? 'active' : ''}`}
+        className={`weapon-combobox-trigger ${isOpen ? 'active' : ''}`}
         onClick={() => setIsOpen(!isOpen)}
         title="Quickly assign a weapon to this maneuver"
       >
-        <span className="weapon-popover-trigger-text">{selectedWeapon || 'No Weapon'}</span>
+        <span className="weapon-combobox-trigger-text">{selectedWeapon || 'No Weapon'}</span>
         <span className="chevron">{isOpen ? '▲' : '▼'}</span>
       </button>
 
