@@ -93,16 +93,12 @@ export function checkValidMonster(
   }
 
   if (creature.intelligence > -8 && creature.creature_types.includes('animal')) {
-    warnings.push('Animal should have an Intelligence of -8 or less');
+    warnings.push('Animals should have an Intelligence of -8 or less');
   }
-  if (creature.intelligence > -5 && creature.creature_types.includes('beast')) {
-    warnings.push('Beast should have an Intelligence of -5 or less');
+  if (creature.intelligence > -5 && creature.isExactlyCreatureType('beast')) {
+    warnings.push('Pure beasts should have an Intelligence of -5 or less');
   }
-  if (
-    creature.creature_types.includes('humanoid') &&
-    creature.creature_types.length === 1 &&
-    !creature.body_armor_name
-  ) {
+  if (creature.isExactlyCreatureType('humanoid') && !creature.body_armor_name) {
     warnings.push('Humanoids should usually have body armor');
   }
 
