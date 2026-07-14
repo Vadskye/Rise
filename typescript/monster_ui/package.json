@@ -4,6 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "predev": "tsx server/paths.ts",
+    "predev:timing": "tsx server/paths.ts",
+    "prebuild": "tsx server/paths.ts",
+    "pretest": "tsx server/paths.ts",
     "dev": "concurrently \"vite\" \"tsx watch --ignore ../src/monsters/individual_monsters/monsters_from_ui.ts --tsconfig tsconfig.server.json server/index.ts\"",
     "dev:timing": "concurrently \"vite\" \"tsx watch --ignore ../src/monsters/individual_monsters/monsters_from_ui.ts --tsconfig tsconfig.server.json server/index.ts --timing\"",
     "build": "tsc && vite build",
