@@ -179,10 +179,7 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
       previewTitleText?.includes('Integration Gargoyle'),
       'Preview title should contain monster name',
     );
-    assert.ok(
-      previewTitleText?.includes('Level 5'),
-      'Preview title should contain level',
-    );
+    assert.ok(previewTitleText?.includes('Level 5'), 'Preview title should contain level');
 
     const previewOriginTypeText = await page.$eval('.monster-origin-type', (el) => el.textContent);
     console.log('Book Preview Origin/Type Text:', previewOriginTypeText);
@@ -194,7 +191,8 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
     const firstStatLineText = await page.$eval('.stat-block .stat-line', (el) => el.textContent);
     console.log('Book Preview First Stat Line Text:', firstStatLineText);
     assert.ok(
-      firstStatLineText?.includes('Types:aberration, beast') || firstStatLineText?.includes('Types: aberration, beast'),
+      firstStatLineText?.includes('Types:aberration, beast') ||
+        firstStatLineText?.includes('Types: aberration, beast'),
       'Preview first stat line should contain sorted creature types',
     );
 
@@ -241,12 +239,18 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
     await page.waitForSelector('.sidebar', { timeout: 5000 });
 
     // 1. Add a new individual monster named "Troll" in folder "Test Folder"
-    const addMonsterBtn = await page.waitForSelector('[data-testid="add-individual-btn"]', { timeout: 5000 });
+    const addMonsterBtn = await page.waitForSelector('[data-testid="add-individual-btn"]', {
+      timeout: 5000,
+    });
     await addMonsterBtn.click();
     await new Promise((resolve) => setTimeout(resolve, 500));
 
-    let nameInput = await page.waitForSelector('[data-testid="monster-name-input"]', { timeout: 5000 });
-    await page.$eval('[data-testid="monster-name-input"]', (el) => (el as HTMLInputElement).select());
+    let nameInput = await page.waitForSelector('[data-testid="monster-name-input"]', {
+      timeout: 5000,
+    });
+    await page.$eval('[data-testid="monster-name-input"]', (el) =>
+      (el as HTMLInputElement).select(),
+    );
     await nameInput.type('Troll', { delay: 30 });
     await new Promise((resolve) => setTimeout(resolve, 300));
 
@@ -255,7 +259,9 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
     await new Promise((resolve) => setTimeout(resolve, 300));
 
     // 2. Add a new group named "Orcs" in folder "Test Folder"
-    const addGroupBtn = await page.waitForSelector('[data-testid="add-group-btn"]', { timeout: 5000 });
+    const addGroupBtn = await page.waitForSelector('[data-testid="add-group-btn"]', {
+      timeout: 5000,
+    });
     await addGroupBtn.click();
     await new Promise((resolve) => setTimeout(resolve, 500));
 
@@ -264,7 +270,9 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
     await groupNameInput.type('Orcs', { delay: 30 });
     await new Promise((resolve) => setTimeout(resolve, 300));
 
-    let groupFolderInput = await page.waitForSelector('[data-testid="group-folder-input"]', { timeout: 5000 });
+    let groupFolderInput = await page.waitForSelector('[data-testid="group-folder-input"]', {
+      timeout: 5000,
+    });
     await groupFolderInput.type('Test Folder', { delay: 30 });
     await new Promise((resolve) => setTimeout(resolve, 1200)); // wait for autosave
 
@@ -276,16 +284,17 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
     assert.ok(folderText?.includes('Test Folder'), 'Folder header should say "Test Folder"');
 
     // Verify children elements are rendered and alphabetized: Orcs (starts with O) should be before Troll (starts with T)
-    const childrenNames = await page.$$eval('.folder-children .item-name, .folder-children .group-title', (els) =>
-      els.map((el) => el.textContent?.trim() || '')
+    const childrenNames = await page.$$eval(
+      '.folder-children .item-name, .folder-children .group-title',
+      (els) => els.map((el) => el.textContent?.trim() || ''),
     );
     console.log('Folder children in UI:', childrenNames);
-    
+
     // Clean up unicode zero-width spaces or other noise if any, and assert
     assert.deepStrictEqual(
-      childrenNames.map(n => n.replace(/[\u200B-\u200D\uFEFF]/g, '')),
+      childrenNames.map((n) => n.replace(/[\u200B-\u200D\uFEFF]/g, '')),
       ['👥 Orcs', '👤 Troll'],
-      'Children should be grouped, alphabetized, and use correct icons'
+      'Children should be grouped, alphabetized, and use correct icons',
     );
 
     await page.close();

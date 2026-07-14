@@ -8,7 +8,7 @@ import { RiseAbilityDefinitionTag } from '@src/character_sheet/rise_data';
 import { StructuredSense, StructuredMovementSpeed } from '../src/types/monster';
 
 export function formatStructuredSense(sense: StructuredSense): string {
-  const name = sense.type === 'Other' ? (sense.customName || 'Custom') : sense.type;
+  const name = sense.type === 'Other' ? sense.customName || 'Custom' : sense.type;
   if (sense.range !== undefined && sense.range !== null) {
     return `${name} (${sense.range} ft.)`;
   }
@@ -16,7 +16,7 @@ export function formatStructuredSense(sense: StructuredSense): string {
 }
 
 export function formatStructuredMovementSpeed(speed: StructuredMovementSpeed): string {
-  const mode = speed.mode === 'Other' ? (speed.customMode || 'Custom') : speed.mode;
+  const mode = speed.mode === 'Other' ? speed.customMode || 'Custom' : speed.mode;
   if (speed.mode === 'Fly' || speed.mode === 'Glide' || speed.mode === 'Other') {
     if (speed.limitType === 'limitless') {
       return `${mode} (${speed.category}, limitless)`;
@@ -35,17 +35,25 @@ function formatValueToTSSingleLine(value: any): string {
     return 'undefined';
   }
   if (Array.isArray(value)) {
-    return `[${value.map(val => formatValueToTSSingleLine(val)).join(', ')}]`;
+    return `[${value.map((val) => formatValueToTSSingleLine(val)).join(', ')}]`;
   }
   if (typeof value === 'object') {
     const keys = Object.keys(value);
-    if (keys.length === 0) return '{}';
-    const parts = keys.map(key => {
-      const val = value[key];
-      if (val === undefined) return null;
-      const formattedKey = /^[a-zA-Z_$][a-zA-Z0-9_$]*$/.test(key) ? key : `'${key.replace(/'/g, "\\'")}'`;
-      return `${formattedKey}: ${formatValueToTSSingleLine(val)}`;
-    }).filter(p => p !== null);
+    if (keys.length === 0) {
+      return '{}';
+    }
+    const parts = keys
+      .map((key) => {
+        const val = value[key];
+        if (val === undefined) {
+          return null;
+        }
+        const formattedKey = /^[a-zA-Z_$][a-zA-Z0-9_$]*$/.test(key)
+          ? key
+          : `'${key.replace(/'/g, "\\'")}'`;
+        return `${formattedKey}: ${formatValueToTSSingleLine(val)}`;
+      })
+      .filter((p) => p !== null);
     return `{ ${parts.join(', ')} }`;
   }
   return String(value);
@@ -59,18 +67,28 @@ function formatValueToTS(value: any, indent = ''): string {
     return 'undefined';
   }
   if (Array.isArray(value)) {
-    if (value.length === 0) return '[]';
-    return `[\n${value.map(val => indent + '  ' + formatValueToTS(val, indent + '  ')).join(',\n')}\n${indent}]`;
+    if (value.length === 0) {
+      return '[]';
+    }
+    return `[\n${value.map((val) => indent + '  ' + formatValueToTS(val, indent + '  ')).join(',\n')}\n${indent}]`;
   }
   if (typeof value === 'object') {
     const keys = Object.keys(value);
-    if (keys.length === 0) return '{}';
-    const lines = keys.map(key => {
-      const val = value[key];
-      if (val === undefined) return null;
-      const formattedKey = /^[a-zA-Z_$][a-zA-Z0-9_$]*$/.test(key) ? key : `'${key.replace(/'/g, "\\'")}'`;
-      return `${indent}  ${formattedKey}: ${formatValueToTS(val, indent + '  ')}`;
-    }).filter(line => line !== null);
+    if (keys.length === 0) {
+      return '{}';
+    }
+    const lines = keys
+      .map((key) => {
+        const val = value[key];
+        if (val === undefined) {
+          return null;
+        }
+        const formattedKey = /^[a-zA-Z_$][a-zA-Z0-9_$]*$/.test(key)
+          ? key
+          : `'${key.replace(/'/g, "\\'")}'`;
+        return `${indent}  ${formattedKey}: ${formatValueToTS(val, indent + '  ')}`;
+      })
+      .filter((line) => line !== null);
     return `{\n${lines.join(',\n')}\n${indent}}`;
   }
   return String(value);
@@ -211,13 +229,13 @@ export function toCustomMonsterAbility(ability: CustomAbilityConfig): CustomMons
         : undefined,
     attack: ability.attack
       ? {
-        targeting: ability.attack.targeting,
-        hit: ability.attack.hit,
-        crit: ability.attack.crit || undefined,
-        miss: ability.attack.miss || undefined,
-        injury: ability.attack.injury || undefined,
-        halfOnMiss: ability.attack.halfOnMiss,
-      }
+          targeting: ability.attack.targeting,
+          hit: ability.attack.hit,
+          crit: ability.attack.crit || undefined,
+          miss: ability.attack.miss || undefined,
+          injury: ability.attack.injury || undefined,
+          halfOnMiss: ability.attack.halfOnMiss,
+        }
       : undefined,
   };
 }
@@ -244,7 +262,9 @@ function generateSharedPropertiesCode(
   if (data.customMovementSpeeds && data.customMovementSpeeds.length > 0) {
     for (const speed of data.customMovementSpeeds) {
       const formatted = formatStructuredMovementSpeed(speed);
-      lines.push(`${indent}creature.addCustomMovementSpeed(${formatValueToTSSingleLine(formatted)});`);
+      lines.push(
+        `${indent}creature.addCustomMovementSpeed(${formatValueToTSSingleLine(formatted)});`,
+      );
     }
   }
 
@@ -262,7 +282,9 @@ function generateSharedPropertiesCode(
 
   if (data.vulnerabilities && data.vulnerabilities.length > 0) {
     for (const vulnerability of data.vulnerabilities) {
-      lines.push(`${indent}creature.addVulnerability(${formatValueToTSSingleLine(vulnerability)});`);
+      lines.push(
+        `${indent}creature.addVulnerability(${formatValueToTSSingleLine(vulnerability)});`,
+      );
     }
   }
 
@@ -293,54 +315,68 @@ function generateSharedPropertiesCode(
     for (const ability of data.standardAbilities) {
       const cleanOptions = ability.options
         ? {
-          displayName: ability.options.displayName || undefined,
-          usageTime: ability.options.usageTime || undefined,
-          isMagical: ability.options.isMagical,
-          weapon: ability.options.weapon || undefined,
-          tags:
-            ability.options.tags && ability.options.tags.length > 0
-              ? ability.options.tags
-              : undefined,
-        }
+            displayName: ability.options.displayName || undefined,
+            usageTime: ability.options.usageTime || undefined,
+            isMagical: ability.options.isMagical,
+            weapon: ability.options.weapon || undefined,
+            tags:
+              ability.options.tags && ability.options.tags.length > 0
+                ? ability.options.tags
+                : undefined,
+          }
         : undefined;
 
       const hasOptions = cleanOptions && Object.values(cleanOptions).some((v) => v !== undefined);
       const optionsStr = hasOptions ? `, ${formatValueToTSSingleLine(cleanOptions)}` : '';
 
       if (ability.type === 'spell') {
-        lines.push(`${indent}creature.addSpell(${formatValueToTSSingleLine(ability.name)}${optionsStr});`);
+        lines.push(
+          `${indent}creature.addSpell(${formatValueToTSSingleLine(ability.name)}${optionsStr});`,
+        );
       } else if (SPECIAL_MANEUVERS.includes(ability.name)) {
         const weapon = ability.options?.weapon;
         if (weapon) {
           const cleanSpecialOptions = ability.options
             ? {
-              displayName: ability.options.displayName || undefined,
-              usageTime: ability.options.usageTime || undefined,
-              isMagical: ability.options.isMagical,
-              tags:
-                ability.options.tags && ability.options.tags.length > 0
-                  ? ability.options.tags
-                  : undefined,
-            }
+                displayName: ability.options.displayName || undefined,
+                usageTime: ability.options.usageTime || undefined,
+                isMagical: ability.options.isMagical,
+                tags:
+                  ability.options.tags && ability.options.tags.length > 0
+                    ? ability.options.tags
+                    : undefined,
+              }
             : undefined;
           const hasSpecialOptions =
             cleanSpecialOptions && Object.values(cleanSpecialOptions).some((v) => v !== undefined);
-          const optStr = hasSpecialOptions ? `, ${formatValueToTSSingleLine(cleanSpecialOptions)}` : '';
+          const optStr = hasSpecialOptions
+            ? `, ${formatValueToTSSingleLine(cleanSpecialOptions)}`
+            : '';
 
           if (ability.name === 'Equip Weapon') {
             lines.push(`${indent}creature.addWeapon(${formatValueToTSSingleLine(weapon)});`);
           } else if (ability.name === 'Weapon Multiplier') {
-            lines.push(`${indent}creature.addWeaponMult(${formatValueToTSSingleLine(weapon)}${optStr});`);
+            lines.push(
+              `${indent}creature.addWeaponMult(${formatValueToTSSingleLine(weapon)}${optStr});`,
+            );
           } else if (ability.name === 'Grappling Strike') {
-            lines.push(`${indent}creature.addGrapplingStrike(${formatValueToTSSingleLine(weapon)}${optStr});`);
+            lines.push(
+              `${indent}creature.addGrapplingStrike(${formatValueToTSSingleLine(weapon)}${optStr});`,
+            );
           } else if (ability.name === 'Sneak Attack') {
-            lines.push(`${indent}creature.addSneakAttack(${formatValueToTSSingleLine(weapon)}${optStr});`);
+            lines.push(
+              `${indent}creature.addSneakAttack(${formatValueToTSSingleLine(weapon)}${optStr});`,
+            );
           } else if (ability.name === 'Latch On') {
-            lines.push(`${indent}creature.addLatchOn(${formatValueToTSSingleLine(weapon)}${optStr});`);
+            lines.push(
+              `${indent}creature.addLatchOn(${formatValueToTSSingleLine(weapon)}${optStr});`,
+            );
           }
         }
       } else {
-        lines.push(`${indent}creature.addManeuver(${formatValueToTSSingleLine(ability.name)}${optionsStr});`);
+        lines.push(
+          `${indent}creature.addManeuver(${formatValueToTSSingleLine(ability.name)}${optionsStr});`,
+        );
       }
     }
   }
@@ -392,11 +428,15 @@ function generateMonsterBody(monster: MonsterData, indent: string): string {
   lines.push(`${indent}creature.setRequiredProperties(${reqPropsStr});`);
 
   if (monster.baseAttributes && monster.baseAttributes.length === 6) {
-    lines.push(`${indent}creature.setBaseAttributes(${formatValueToTSSingleLine(monster.baseAttributes)});`);
+    lines.push(
+      `${indent}creature.setBaseAttributes(${formatValueToTSSingleLine(monster.baseAttributes)});`,
+    );
   }
 
   if (monster.trainedSkills && monster.trainedSkills.length > 0) {
-    lines.push(`${indent}creature.setTrainedSkills(${formatValueToTSSingleLine(monster.trainedSkills)});`);
+    lines.push(
+      `${indent}creature.setTrainedSkills(${formatValueToTSSingleLine(monster.trainedSkills)});`,
+    );
   }
 
   if (monster.knowledge) {
@@ -481,9 +521,7 @@ ${bodyCode}
       const groupConfigParts: string[] = [];
       groupConfigParts.push(`name: ${formatValueToTSSingleLine(group.name)}`);
       if (group.knowledge) {
-        groupConfigParts.push(
-          `knowledge: ${formatValueToTS(group.knowledge, '      ')}`,
-        );
+        groupConfigParts.push(`knowledge: ${formatValueToTS(group.knowledge, '      ')}`);
       }
       if (group.description) {
         groupConfigParts.push(`description: ${formatValueToTSSingleLine(group.description)}`);
@@ -534,7 +572,10 @@ export function saveTypeScriptFile(db: DatabaseData) {
 
   try {
     // Run prettier on the generated file to format it consistently.
-    execSync(`npx prettier --config "../.prettierrc.yaml" --ignore-path "" --write "${targetPath}"`, { stdio: 'ignore' });
+    execSync(
+      `npx prettier --config "../.prettierrc.yaml" --ignore-path "" --write "${targetPath}"`,
+      { stdio: 'ignore' },
+    );
   } catch (err) {
     console.error('Failed to run prettier on generated file:', err);
   }

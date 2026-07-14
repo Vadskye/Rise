@@ -1,5 +1,9 @@
 import React from 'react';
-import { SharedEditableProperties, StructuredSense, StructuredMovementSpeed } from '../types/monster';
+import {
+  SharedEditableProperties,
+  StructuredSense,
+  StructuredMovementSpeed,
+} from '../types/monster';
 import { RISE_TRAITS } from '@src/character_sheet/rise_data';
 
 // Note: Standard traits in original code were:
@@ -74,8 +78,12 @@ export const TraitsTab = <T extends SharedEditableProperties>({
 
   const [selectedSpeedMode, setSelectedSpeedMode] = React.useState<string>('Fly');
   const [customSpeedMode, setCustomSpeedMode] = React.useState<string>('');
-  const [speedCategory, setSpeedCategory] = React.useState<'slow' | 'average' | 'normal' | 'fast'>('average');
-  const [speedLimitType, setSpeedLimitType] = React.useState<'none' | 'limitless' | 'limit'>('limit');
+  const [speedCategory, setSpeedCategory] = React.useState<'slow' | 'average' | 'normal' | 'fast'>(
+    'average',
+  );
+  const [speedLimitType, setSpeedLimitType] = React.useState<'none' | 'limitless' | 'limit'>(
+    'limit',
+  );
   const [speedLimitValue, setSpeedLimitValue] = React.useState<string>('60');
 
   const traits = monsterData.traits || [];
@@ -103,16 +111,20 @@ export const TraitsTab = <T extends SharedEditableProperties>({
     let newSense: StructuredSense;
     if (selectedSenseType === 'Other') {
       const name = customSenseName.trim();
-      if (!name) return;
+      if (!name) {
+        return;
+      }
       const rangeNum = parseInt(senseRange, 10);
       newSense = {
         type: 'Other',
         customName: name,
-        range: (!isNaN(rangeNum) && senseRange.trim() !== '') ? rangeNum : undefined,
+        range: !isNaN(rangeNum) && senseRange.trim() !== '' ? rangeNum : undefined,
       };
     } else {
       const standard = STANDARD_SENSES.find((s) => s.name === selectedSenseType);
-      if (!standard) return;
+      if (!standard) {
+        return;
+      }
       if (standard.hasRange) {
         const rangeNum = parseInt(senseRange, 10);
         newSense = {
@@ -127,10 +139,11 @@ export const TraitsTab = <T extends SharedEditableProperties>({
     }
 
     const currentSenses = monsterData.customSenses || [];
-    const exists = currentSenses.some(s => 
-      s.type === newSense.type && 
-      s.customName === newSense.customName && 
-      s.range === newSense.range
+    const exists = currentSenses.some(
+      (s) =>
+        s.type === newSense.type &&
+        s.customName === newSense.customName &&
+        s.range === newSense.range,
     );
     if (!exists) {
       onChangeMonster({
@@ -161,7 +174,9 @@ export const TraitsTab = <T extends SharedEditableProperties>({
   const handleAddSpeed = () => {
     const isOther = selectedSpeedMode === 'Other';
     const modeName = isOther ? customSpeedMode.trim() : selectedSpeedMode;
-    if (!modeName) return;
+    if (!modeName) {
+      return;
+    }
 
     const limitVal = parseInt(speedLimitValue, 10);
     const newSpeed: StructuredMovementSpeed = {
@@ -169,16 +184,17 @@ export const TraitsTab = <T extends SharedEditableProperties>({
       customMode: isOther ? modeName : undefined,
       category: speedCategory,
       limitType: speedLimitType !== 'none' ? speedLimitType : undefined,
-      limitValue: (speedLimitType === 'limit' && !isNaN(limitVal)) ? limitVal : undefined,
+      limitValue: speedLimitType === 'limit' && !isNaN(limitVal) ? limitVal : undefined,
     };
 
     const currentSpeeds = monsterData.customMovementSpeeds || [];
-    const exists = currentSpeeds.some(s => 
-      s.mode === newSpeed.mode && 
-      s.customMode === newSpeed.customMode && 
-      s.category === newSpeed.category && 
-      s.limitType === newSpeed.limitType && 
-      s.limitValue === newSpeed.limitValue
+    const exists = currentSpeeds.some(
+      (s) =>
+        s.mode === newSpeed.mode &&
+        s.customMode === newSpeed.customMode &&
+        s.category === newSpeed.category &&
+        s.limitType === newSpeed.limitType &&
+        s.limitValue === newSpeed.limitValue,
     );
     if (!exists) {
       onChangeMonster({
@@ -207,20 +223,14 @@ export const TraitsTab = <T extends SharedEditableProperties>({
         {standardTraits
           .filter((t) => t.includes(traitSearch.toLowerCase()))
           .map((trait) => (
-            <div
-              key={trait}
-              className="form-checkbox-row"
-            >
+            <div key={trait} className="form-checkbox-row">
               <input
                 id={`trait-${trait}`}
                 type="checkbox"
                 checked={traits.includes(trait)}
                 onChange={() => toggleTrait(trait)}
               />
-              <label
-                htmlFor={`trait-${trait}`}
-                className={traits.includes(trait) ? 'checked' : ''}
-              >
+              <label htmlFor={`trait-${trait}`} className={traits.includes(trait) ? 'checked' : ''}>
                 {trait}
               </label>
             </div>
@@ -228,7 +238,7 @@ export const TraitsTab = <T extends SharedEditableProperties>({
       </div>
 
       <h4 className="section-subtitle">Senses & Movement</h4>
-      
+
       <div className="form-group mb-15">
         <label>Senses</label>
         <div
@@ -291,9 +301,19 @@ export const TraitsTab = <T extends SharedEditableProperties>({
           )}
         </div>
 
-        <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-end', flexWrap: 'wrap', marginTop: '10px' }}>
+        <div
+          style={{
+            display: 'flex',
+            gap: '10px',
+            alignItems: 'flex-end',
+            flexWrap: 'wrap',
+            marginTop: '10px',
+          }}
+        >
           <div className="form-group" style={{ margin: 0, flex: '1 1 150px' }}>
-            <label style={{ fontSize: '0.75rem', marginBottom: '4px', display: 'block' }}>Sense Type</label>
+            <label style={{ fontSize: '0.75rem', marginBottom: '4px', display: 'block' }}>
+              Sense Type
+            </label>
             <select
               value={selectedSenseType}
               onChange={(e) => handleSenseTypeChange(e.target.value)}
@@ -310,7 +330,9 @@ export const TraitsTab = <T extends SharedEditableProperties>({
 
           {selectedSenseType === 'Other' && (
             <div className="form-group" style={{ margin: 0, flex: '1 1 150px' }}>
-              <label style={{ fontSize: '0.75rem', marginBottom: '4px', display: 'block' }}>Custom Name</label>
+              <label style={{ fontSize: '0.75rem', marginBottom: '4px', display: 'block' }}>
+                Custom Name
+              </label>
               <input
                 type="text"
                 placeholder="e.g. Infravision"
@@ -322,9 +344,11 @@ export const TraitsTab = <T extends SharedEditableProperties>({
           )}
 
           {(selectedSenseType === 'Other' ||
-            (STANDARD_SENSES.find((s) => s.name === selectedSenseType)?.hasRange)) && (
+            STANDARD_SENSES.find((s) => s.name === selectedSenseType)?.hasRange) && (
             <div className="form-group" style={{ margin: 0, width: '100px' }}>
-              <label style={{ fontSize: '0.75rem', marginBottom: '4px', display: 'block' }}>Range (ft.)</label>
+              <label style={{ fontSize: '0.75rem', marginBottom: '4px', display: 'block' }}>
+                Range (ft.)
+              </label>
               <input
                 type="number"
                 min="0"
@@ -393,7 +417,9 @@ export const TraitsTab = <T extends SharedEditableProperties>({
                   <span style={{ color: 'var(--text-muted)', fontSize: '0.75rem' }}>
                     ({speed.category}
                     {speed.limitType === 'limitless' && ', limitless'}
-                    {speed.limitType === 'limit' && speed.limitValue !== undefined && `, ${speed.limitValue} ft. limit`}
+                    {speed.limitType === 'limit' &&
+                      speed.limitValue !== undefined &&
+                      `, ${speed.limitValue} ft. limit`}
                     )
                   </span>
                   <button
@@ -423,9 +449,19 @@ export const TraitsTab = <T extends SharedEditableProperties>({
           )}
         </div>
 
-        <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-end', flexWrap: 'wrap', marginTop: '10px' }}>
+        <div
+          style={{
+            display: 'flex',
+            gap: '10px',
+            alignItems: 'flex-end',
+            flexWrap: 'wrap',
+            marginTop: '10px',
+          }}
+        >
           <div className="form-group" style={{ margin: 0, flex: '1 1 120px' }}>
-            <label style={{ fontSize: '0.75rem', marginBottom: '4px', display: 'block' }}>Movement Mode</label>
+            <label style={{ fontSize: '0.75rem', marginBottom: '4px', display: 'block' }}>
+              Movement Mode
+            </label>
             <select
               value={selectedSpeedMode}
               onChange={(e) => handleSpeedModeChange(e.target.value)}
@@ -444,7 +480,9 @@ export const TraitsTab = <T extends SharedEditableProperties>({
 
           {selectedSpeedMode === 'Other' && (
             <div className="form-group" style={{ margin: 0, flex: '1 1 120px' }}>
-              <label style={{ fontSize: '0.75rem', marginBottom: '4px', display: 'block' }}>Custom Mode</label>
+              <label style={{ fontSize: '0.75rem', marginBottom: '4px', display: 'block' }}>
+                Custom Mode
+              </label>
               <input
                 type="text"
                 placeholder="e.g. Teleport"
@@ -456,7 +494,9 @@ export const TraitsTab = <T extends SharedEditableProperties>({
           )}
 
           <div className="form-group" style={{ margin: 0, flex: '1 1 120px' }}>
-            <label style={{ fontSize: '0.75rem', marginBottom: '4px', display: 'block' }}>Speed Category</label>
+            <label style={{ fontSize: '0.75rem', marginBottom: '4px', display: 'block' }}>
+              Speed Category
+            </label>
             <select
               value={speedCategory}
               onChange={(e) => setSpeedCategory(e.target.value as any)}
@@ -469,10 +509,14 @@ export const TraitsTab = <T extends SharedEditableProperties>({
             </select>
           </div>
 
-          {(selectedSpeedMode === 'Fly' || selectedSpeedMode === 'Glide' || selectedSpeedMode === 'Other') && (
+          {(selectedSpeedMode === 'Fly' ||
+            selectedSpeedMode === 'Glide' ||
+            selectedSpeedMode === 'Other') && (
             <>
               <div className="form-group" style={{ margin: 0, flex: '1 1 120px' }}>
-                <label style={{ fontSize: '0.75rem', marginBottom: '4px', display: 'block' }}>Range Limit Type</label>
+                <label style={{ fontSize: '0.75rem', marginBottom: '4px', display: 'block' }}>
+                  Range Limit Type
+                </label>
                 <select
                   value={speedLimitType}
                   onChange={(e) => setSpeedLimitType(e.target.value as any)}
@@ -486,7 +530,9 @@ export const TraitsTab = <T extends SharedEditableProperties>({
 
               {speedLimitType === 'limit' && (
                 <div className="form-group" style={{ margin: 0, width: '100px' }}>
-                  <label style={{ fontSize: '0.75rem', marginBottom: '4px', display: 'block' }}>Limit (ft.)</label>
+                  <label style={{ fontSize: '0.75rem', marginBottom: '4px', display: 'block' }}>
+                    Limit (ft.)
+                  </label>
                   <input
                     type="number"
                     min="0"

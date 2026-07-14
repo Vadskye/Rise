@@ -36,9 +36,7 @@ export const AttributesAndSkillsTab: React.FC<AttributesAndSkillsTabProps> = ({
 
   return (
     <div className="tab-content">
-      <h4 className="section-subtitle mb-8">
-        Base Attributes
-      </h4>
+      <h4 className="section-subtitle mb-8">Base Attributes</h4>
       <div className="attributes-grid">
         <div className="form-group">
           <label>Str</label>
@@ -90,9 +88,7 @@ export const AttributesAndSkillsTab: React.FC<AttributesAndSkillsTabProps> = ({
         </div>
       </div>
 
-      <h4 className="section-subtitle mb-8">
-        Trained Skills
-      </h4>
+      <h4 className="section-subtitle mb-8">Trained Skills</h4>
       <div className="form-group search-wrapper mb-8">
         <input
           type="text"
@@ -121,9 +117,7 @@ export const AttributesAndSkillsTab: React.FC<AttributesAndSkillsTabProps> = ({
 
           return (
             <div key={category} className="skill-category-group">
-              <div className="skill-category-title">
-                {category}
-              </div>
+              <div className="skill-category-title">{category}</div>
               <div className="skills-grid">
                 {filteredSkills.map((skill) => {
                   const displayLabel = formatSkillLabel(skill);

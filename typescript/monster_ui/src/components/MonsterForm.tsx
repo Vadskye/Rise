@@ -136,10 +136,7 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
       {/* Tab 3: Traits & Senses */}
       {activeTab === 'traits' &&
         (isGroup && groupData && onChangeGroup ? (
-          <TraitsTab
-            monsterData={groupData}
-            onChangeMonster={onChangeGroup}
-          />
+          <TraitsTab monsterData={groupData} onChangeMonster={onChangeGroup} />
         ) : monsterData && onChangeMonster ? (
           <TraitsTab monsterData={monsterData} onChangeMonster={onChangeMonster} />
         ) : null)}
@@ -147,10 +144,7 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
       {/* Tab 4: Combat & Gear */}
       {activeTab === 'combat' &&
         (isGroup && groupData && onChangeGroup ? (
-          <CombatAndGearTab
-            monsterData={groupData}
-            onChangeMonster={onChangeGroup}
-          />
+          <CombatAndGearTab monsterData={groupData} onChangeMonster={onChangeGroup} />
         ) : monsterData && onChangeMonster ? (
           <CombatAndGearTab monsterData={monsterData} onChangeMonster={onChangeMonster} />
         ) : null)}
