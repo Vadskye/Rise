@@ -8,6 +8,7 @@ import {
 import { Creature, KnowledgeResultConfig } from '@src/character_sheet/creature';
 import * as format from '@src/latex/format';
 import { caseInsensitiveSort } from '@src/util/sort';
+import { RISE_DEFAULT_TRAITS } from '@src/character_sheet/rise_data';
 
 import {
   convertAbilityToMonsterLatex,
@@ -292,16 +293,7 @@ function genEquipmentText(monster: Creature): string {
 }
 
 function genTraitsText(monster: Creature): string {
-  const defaultTraits = [
-    'blooded',
-    'corporeal',
-    'dynamic',
-    'ensouled',
-    'living',
-    'mortal',
-    'sighted',
-  ];
-  const traits = monster.getStandardTraits().filter((t) => !defaultTraits.includes(t));
+  const traits = monster.getStandardTraits().filter((t) => !RISE_DEFAULT_TRAITS.includes(t));
   if (traits.length === 0) {
     return '';
   }

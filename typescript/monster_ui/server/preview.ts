@@ -13,6 +13,7 @@ import { MonsterData, MonsterGroupData } from './codegen';
 import { convertLatexToWebText } from '@src/latex/monsters/player_abilities';
 import { buildCreature } from './creature_builder';
 import { showDetailedTiming } from './timing';
+import { RISE_DEFAULT_TRAITS } from '@src/character_sheet/rise_data';
 
 /**
  * Generates the live preview statistics (computedStats) for a monster,
@@ -86,7 +87,7 @@ export function generatePreview(
         creature.willpower,
       ],
       skills: creature.getTrainedSkillNames(),
-      traits: creature.getStandardTraits(),
+      traits: creature.getStandardTraits().filter((t) => !RISE_DEFAULT_TRAITS.includes(t)),
       equipment: creature.getEquipment(),
       activeAbilities: prepareActiveAbilitiesForWebPreview(creature, creature.getActiveAbilities()),
       passiveAbilities: creature.getPassiveAbilities(),

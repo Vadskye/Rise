@@ -198,6 +198,21 @@ const RISE_TRAITS_LIST = [
 export type RiseTrait = (typeof RISE_TRAITS_LIST)[number];
 export const RISE_TRAITS = new Set(RISE_TRAITS_LIST);
 
+export const RISE_DEFAULT_TRAITS = [
+  'blooded',
+  'corporeal',
+  'dynamic',
+  'ensouled',
+  'living',
+  'mortal',
+  'sighted',
+];
+export type RiseDefaultTrait = (typeof RISE_DEFAULT_TRAITS)[number];
+
 export function isTrait(text: string): text is RiseTrait {
   return RISE_TRAITS.has(text as RiseTrait);
+}
+
+export function isDefaultTrait(text: string): text is RiseDefaultTrait {
+  return RISE_DEFAULT_TRAITS.includes(text as RiseDefaultTrait);
 }

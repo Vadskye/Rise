@@ -101,17 +101,7 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
     return a.name.localeCompare(b.name);
   });
 
-  const defaultTraits = [
-    'blooded',
-    'corporeal',
-    'dynamic',
-    'ensouled',
-    'living',
-    'mortal',
-    'sighted',
-  ];
   const filteredTraits = stats.traits
-    .filter((t) => !defaultTraits.includes(t.toLowerCase()))
     .map((t) => t.charAt(0).toUpperCase() + t.slice(1))
     .sort();
 

@@ -20,6 +20,7 @@ import {
   RiseTrait,
   isTrait,
   RiseAbilityDefinitionTag,
+  RISE_DEFAULT_TRAITS,
 } from '@src/character_sheet/rise_data';
 import {
   RiseCraftSkill,
@@ -1610,15 +1611,7 @@ export class Creature implements CreaturePropertyMap {
   }
 
   public getStandardTraitsForClassification(): RiseTrait[] {
-    let traits: RiseTrait[] = [
-      'blooded',
-      'corporeal',
-      'dynamic',
-      'ensouled',
-      'living',
-      'mortal',
-      'sighted',
-    ];
+    let traits: RiseTrait[] = [...RISE_DEFAULT_TRAITS] as RiseTrait[];
 
     // Origin Traits
     const originTraits: RiseTrait[] = [];

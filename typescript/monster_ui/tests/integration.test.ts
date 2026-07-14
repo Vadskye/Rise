@@ -416,7 +416,7 @@ describe('Monster UI Integration Tests (Serverless)', () => {
           name: testGroupName,
           hasArt: false,
           sharedFreeformCode: '// group shared code',
-          traits: ['ensouled'],
+          traits: ['amphibious'],
           customSenses: [{ type: 'Darkvision', range: 90 }],
           equippedArmor: 'scale',
           standardAbilities: [
@@ -481,7 +481,7 @@ describe('Monster UI Integration Tests (Serverless)', () => {
     const preview1 = generatePreview(group.monsters[0], group, group.name);
     assert.strictEqual(preview1.success, true);
     assert.ok(preview1.computedStats);
-    assert.ok(preview1.computedStats.traits.includes('ensouled'));
+    assert.ok(preview1.computedStats.traits.includes('amphibious'));
     assert.ok(
       preview1.computedStats.sensesComponents.some((s: string) =>
         s.includes('Darkvision (90 ft.)'),
@@ -494,13 +494,13 @@ describe('Monster UI Integration Tests (Serverless)', () => {
     const preview2 = generatePreview(group.monsters[1], group, group.name);
     assert.strictEqual(preview2.success, true);
     assert.ok(preview2.computedStats);
-    assert.ok(preview2.computedStats.traits.includes('ensouled'));
+    assert.ok(preview2.computedStats.traits.includes('amphibious'));
     assert.ok(preview2.computedStats.equipment.includes('breastplate'));
     assert.ok(!preview2.computedStats.equipment.includes('scale'));
 
     // Verify codegen output
     const generatedContent = fs.readFileSync(paths.generatedTsPath, 'utf8');
-    assert.ok(generatedContent.includes(`creature.addTrait('ensouled')`));
+    assert.ok(generatedContent.includes(`creature.addTrait('amphibious')`));
     assert.ok(generatedContent.includes(`creature.addCustomSense('Darkvision (90 ft.)')`));
     assert.ok(generatedContent.includes(`creature.addSpell('Word of Power', { isMagical: true })`));
     assert.ok(generatedContent.includes(`creature.setEquippedArmorName({ bodyArmor: 'scale' })`));
