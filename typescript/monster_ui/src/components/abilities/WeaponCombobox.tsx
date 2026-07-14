@@ -62,6 +62,15 @@ export const WeaponCombobox: React.FC<WeaponComboboxProps> = ({
     setSearch('');
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      if (filteredWeapons.length > 0) {
+        handleSelect(filteredWeapons[0]);
+      }
+    }
+  };
+
   const dropdown = isOpen
     ? ReactDOM.createPortal(
         <div
@@ -76,6 +85,7 @@ export const WeaponCombobox: React.FC<WeaponComboboxProps> = ({
             placeholder="Search weapons..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
+            onKeyDown={handleKeyDown}
             autoFocus
           />
           <div className="weapon-combobox-list-container">

@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { StandardAbilityConfig } from '../../types/monster';
 import { isMissingWeaponWarning } from '../../utils/validation';
 import { WeaponCombobox } from './WeaponCombobox';
+import { Combobox } from '../Combobox';
 
 
 interface AutocompleteSearchProps {
@@ -68,6 +69,16 @@ const AutocompleteSearch: React.FC<AutocompleteSearchProps> = ({
     </div>
   );
 };
+
+const USAGE_TIME_OPTIONS = [
+  { value: '', label: '-- Original Value --' },
+  { value: 'standard', label: 'Standard Action' },
+  { value: 'move', label: 'Move Action' },
+  { value: 'elite', label: 'Elite Action' },
+  { value: 'minor', label: 'Minor Action' },
+  { value: 'triggered', label: 'Triggered' },
+  { value: 'free', label: 'Free Action' },
+];
 
 interface StandardAbilitiesSectionProps {
   standardAbilities: StandardAbilityConfig[];
@@ -193,21 +204,6 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
                           (Standard: {ability.name})
                         </span>
                       )}
-                      {ability.options?.weapon && (
-                        <span
-                          style={{
-                            marginLeft: '8px',
-                            fontWeight: 'normal',
-                            fontSize: '0.85em',
-                            color: 'var(--text-secondary)',
-                            background: 'rgba(255, 255, 255, 0.1)',
-                            padding: '2px 6px',
-                            borderRadius: '4px',
-                          }}
-                        >
-                          {ability.options.weapon}
-                        </span>
-                      )}
                     </strong>
                   </div>
                   <div
@@ -232,13 +228,13 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
                         {warnings.some((w) =>
                           isMissingWeaponWarning(w, ability.options?.displayName || ability.name),
                         ) && (
-                          <span
-                            className="quick-weapon-warning"
-                            title="Maneuver makes a strike and doesn't have a weapon."
-                          >
-                            ⚠️
-                          </span>
-                        )}
+                            <span
+                              className="quick-weapon-warning"
+                              title="Maneuver makes a strike and doesn't have a weapon."
+                            >
+                              ⚠️
+                            </span>
+                          )}
                       </div>
                     )}
                     <span className="expand-chevron" onClick={() => onToggleExpand(cardId)}>
@@ -279,26 +275,19 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
                       </div>
                       <div className="form-group">
                         <label>Usage Time Override</label>
-                        <select
+                        <Combobox
                           value={ability.options?.usageTime || ''}
-                          onChange={(e) =>
+                          options={USAGE_TIME_OPTIONS}
+                          onChange={(val) =>
                             updateStandardAbility(idx, {
                               ...ability,
                               options: {
                                 ...(ability.options || {}),
-                                usageTime: e.target.value || undefined,
+                                usageTime: val || undefined,
                               },
                             })
                           }
-                        >
-                          <option value="">-- Original Value --</option>
-                          <option value="standard">Standard Action</option>
-                          <option value="move">Move Action</option>
-                          <option value="elite">Elite Action</option>
-                          <option value="minor">Minor Action</option>
-                          <option value="triggered">Triggered</option>
-                          <option value="free">Free Action</option>
-                        </select>
+                        />
                       </div>
                       <div
                         className="form-group"
@@ -345,9 +334,9 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
                               ...(ability.options || {}),
                               tags: e.target.value
                                 ? e.target.value
-                                    .split(',')
-                                    .map((t) => t.trim())
-                                    .filter(Boolean)
+                                  .split(',')
+                                  .map((t) => t.trim())
+                                  .filter(Boolean)
                                 : undefined,
                             },
                           })
