@@ -122,20 +122,17 @@ export const AttributesAndSkillsTab: React.FC<AttributesAndSkillsTabProps> = ({
                 {filteredSkills.map((skill) => {
                   const displayLabel = formatSkillLabel(skill);
                   return (
-                    <div key={skill} className="form-checkbox-row">
+                    <label key={skill} className="form-checkbox-row" htmlFor={`skill-${skill}`}>
                       <input
                         id={`skill-${skill}`}
                         type="checkbox"
                         checked={trainedSkills.includes(skill)}
                         onChange={() => toggleSkill(skill)}
                       />
-                      <label
-                        htmlFor={`skill-${skill}`}
-                        className={trainedSkills.includes(skill) ? 'checked' : ''}
-                      >
+                      <span className={trainedSkills.includes(skill) ? 'checked' : ''}>
                         {displayLabel}
-                      </label>
-                    </div>
+                      </span>
+                    </label>
                   );
                 })}
               </div>

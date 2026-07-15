@@ -361,25 +361,25 @@ export const IdentityTab: React.FC<IdentityTabProps> = ({
       </div>
 
       <div className="form-row-grid" style={{ marginTop: '10px' }}>
-        <div className="form-checkbox-row">
+        <label className="form-checkbox-row" htmlFor="elite">
           <input
             id="elite"
             type="checkbox"
             checked={requiredProperties.elite}
             onChange={(e) => setProp('elite', e.target.checked)}
           />
-          <label htmlFor="elite">Elite</label>
-        </div>
+          <span>Elite</span>
+        </label>
 
-        <div className="form-checkbox-row">
+        <label className="form-checkbox-row" htmlFor="has_art">
           <input
             id="has_art"
             type="checkbox"
             checked={Boolean(properties.has_art)}
             onChange={(e) => setMiscProperty('has_art', e.target.checked)}
           />
-          <label htmlFor="has_art">Has art</label>
-        </div>
+          <span>Has art</span>
+        </label>
       </div>
 
       <h4 className="section-subtitle" style={{ marginTop: '20px' }}>
