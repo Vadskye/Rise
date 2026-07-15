@@ -370,6 +370,27 @@
       "hasArt": false,
       "sharedFreeformCode": "",
       "monsters": []
+    },
+    {
+      "name": "Bandits",
+      "hasArt": false,
+      "sharedFreeformCode": "",
+      "monsters": [
+        {
+          "name": "New Member 1",
+          "requiredProperties": {
+            "alignment": "neutral evil",
+            "base_class": "",
+            "elite": false,
+            "creature_origin": "",
+            "creature_types": [],
+            "size": "",
+            "level": 0
+          },
+          "freeformCode": ""
+        }
+      ],
+      "folder": "Civilized Humanoids"
     }
   ],
   "folders": []

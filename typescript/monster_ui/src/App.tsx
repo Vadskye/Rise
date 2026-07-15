@@ -752,6 +752,7 @@ export const App: React.FC = () => {
             <>
               <MonsterForm
                 mode={activeSelection.type === 'group' ? 'group' : 'monster'}
+                isGroupMonster={activeSelection.type === 'group-monster'}
                 monsterData={activeMonster}
                 groupData={activeGroup}
                 onChangeMonster={handleUpdateMonster}

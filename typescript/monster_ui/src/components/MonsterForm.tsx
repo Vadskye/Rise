@@ -9,6 +9,7 @@ import { GroupForm } from './GroupForm';
 
 interface MonsterFormProps {
   mode: 'monster' | 'group';
+  isGroupMonster?: boolean;
   monsterData?: MonsterData;
   groupData?: MonsterGroupData;
   onChangeMonster?: (updated: MonsterData) => void;
@@ -26,6 +27,7 @@ interface MonsterFormProps {
 
 export const MonsterForm: React.FC<MonsterFormProps> = ({
   mode,
+  isGroupMonster = false,
   monsterData,
   groupData,
   onChangeMonster,
@@ -125,6 +127,7 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
             errors={errors}
             warnings={warnings}
             folders={folders}
+            isGroupMonster={isGroupMonster}
           />
         ) : null)}
 
