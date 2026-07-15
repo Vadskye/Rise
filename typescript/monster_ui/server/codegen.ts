@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { execSync } from 'child_process';
+import { exec } from 'child_process';
 import { paths } from './paths';
 import { CustomMonsterAbility } from '@src/character_sheet/creature';
 import { MonsterAttackUsageTime } from '@src/character_sheet/sheet_worker';
@@ -570,13 +570,17 @@ export function saveTypeScriptFile(db: DatabaseData) {
 
   fs.writeFileSync(targetPath, tsCode, 'utf8');
 
-  try {
-    // Run prettier on the generated file to format it consistently.
-    execSync(
-      `npx prettier --config "../.prettierrc.yaml" --ignore-path "" --write "${targetPath}"`,
-      { stdio: 'ignore' },
-    );
-  } catch (err) {
-    console.error('Failed to run prettier on generated file:', err);
+  if (process.env.NODE_ENV === 'test') {
+    return;
   }
+
+  // Run prettier asynchronously in development/production so it doesn't block the API thread.
+  exec(
+    `npx prettier --config "../.prettierrc.yaml" --ignore-path "" --write "${targetPath}"`,
+    (err) => {
+      if (err) {
+        console.error('Failed to run prettier on generated file:', err);
+      }
+    },
+  );
 }

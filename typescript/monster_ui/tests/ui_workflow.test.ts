@@ -150,7 +150,7 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
     await page.$eval('[data-testid="freeform-code-textarea"]', (el) =>
       (el as HTMLTextAreaElement).select(),
     );
-    await codeArea!.type('// Gargoyle custom script\ncreature.addTrait("scent");', { delay: 10 });
+    await codeArea!.type("// Gargoyle custom script\ncreature.addTrait('scent');", { delay: 10 });
     await new Promise((resolve) => setTimeout(resolve, 1200));
 
     // 5. Wait for autosave to complete (save-status becomes 'Saved')
