@@ -1,6 +1,7 @@
 import React from 'react';
 import { MonsterData } from '../types/monster';
 import { isFreeformCodeWarning } from '../utils/validation';
+import { Combobox } from './Combobox';
 
 interface IdentityTabProps {
   monsterData: MonsterData;
@@ -142,23 +143,24 @@ export const IdentityTab: React.FC<IdentityTabProps> = ({
       <div className="form-row-grid">
         <div className="form-group">
           <label htmlFor="alignment">Alignment</label>
-          <select
+          <Combobox
             id="alignment"
             data-testid="alignment-select"
             value={requiredProperties.alignment}
-            onChange={(e) => setProp('alignment', e.target.value)}
-          >
-            <option value="">-- Select --</option>
-            <option value="lawful good">Lawful Good</option>
-            <option value="neutral good">Neutral Good</option>
-            <option value="chaotic good">Chaotic Good</option>
-            <option value="lawful neutral">Lawful Neutral</option>
-            <option value="neutral">Neutral</option>
-            <option value="chaotic neutral">Chaotic Neutral</option>
-            <option value="lawful evil">Lawful Evil</option>
-            <option value="neutral evil">Neutral Evil</option>
-            <option value="chaotic evil">Chaotic Evil</option>
-          </select>
+            onChange={(val) => setProp('alignment', val)}
+            options={[
+              { value: 'lawful good', label: 'Lawful Good' },
+              { value: 'neutral good', label: 'Neutral Good' },
+              { value: 'chaotic good', label: 'Chaotic Good' },
+              { value: 'lawful neutral', label: 'Lawful Neutral' },
+              { value: 'neutral', label: 'Neutral' },
+              { value: 'chaotic neutral', label: 'Chaotic Neutral' },
+              { value: 'lawful evil', label: 'Lawful Evil' },
+              { value: 'neutral evil', label: 'Neutral Evil' },
+              { value: 'chaotic evil', label: 'Chaotic Evil' },
+            ]}
+            placeholder="-- Select --"
+          />
           {getInlineError('alignment') && (
             <div className="inline-error">❌ {getInlineError('alignment')}</div>
           )}
@@ -169,30 +171,31 @@ export const IdentityTab: React.FC<IdentityTabProps> = ({
 
         <div className="form-group">
           <label htmlFor="base_class">Base Class</label>
-          <select
+          <Combobox
             id="base_class"
             data-testid="base-class-select"
             value={requiredProperties.base_class}
-            onChange={(e) => setProp('base_class', e.target.value)}
-          >
-            <option value="">-- Select --</option>
-            <option value="brute">Brute</option>
-            <option value="leader">Leader</option>
-            <option value="skirmisher">Skirmisher</option>
-            <option value="sniper">Sniper</option>
-            <option value="warrior">Warrior</option>
-            <option value="barbarian">Barbarian</option>
-            <option value="cleric">Cleric</option>
-            <option value="druid">Druid</option>
-            <option value="fighter">Fighter</option>
-            <option value="monk">Monk</option>
-            <option value="paladin">Paladin</option>
-            <option value="ranger">Ranger</option>
-            <option value="rogue">Rogue</option>
-            <option value="sorcerer">Sorcerer</option>
-            <option value="votive">Votive</option>
-            <option value="wizard">Wizard</option>
-          </select>
+            onChange={(val) => setProp('base_class', val)}
+            options={[
+              { value: 'brute', label: 'Brute' },
+              { value: 'leader', label: 'Leader' },
+              { value: 'skirmisher', label: 'Skirmisher' },
+              { value: 'sniper', label: 'Sniper' },
+              { value: 'warrior', label: 'Warrior' },
+              { value: 'barbarian', label: 'Barbarian' },
+              { value: 'cleric', label: 'Cleric' },
+              { value: 'druid', label: 'Druid' },
+              { value: 'fighter', label: 'Fighter' },
+              { value: 'monk', label: 'Monk' },
+              { value: 'paladin', label: 'Paladin' },
+              { value: 'ranger', label: 'Ranger' },
+              { value: 'rogue', label: 'Rogue' },
+              { value: 'sorcerer', label: 'Sorcerer' },
+              { value: 'votive', label: 'Votive' },
+              { value: 'wizard', label: 'Wizard' },
+            ]}
+            placeholder="-- Select --"
+          />
           {getInlineError('base class') && (
             <div className="inline-error">❌ {getInlineError('base class')}</div>
           )}
@@ -224,17 +227,18 @@ export const IdentityTab: React.FC<IdentityTabProps> = ({
       <div className="form-row-grid">
         <div className="form-group">
           <label htmlFor="creature_origin">Origin</label>
-          <select
+          <Combobox
             id="creature_origin"
             data-testid="origin-select"
             value={requiredProperties.creature_origin}
-            onChange={(e) => setProp('creature_origin', e.target.value)}
-          >
-            <option value="">-- Select --</option>
-            <option value="artificial">Artificial</option>
-            <option value="natural">Natural</option>
-            <option value="undead">Undead</option>
-          </select>
+            onChange={(val) => setProp('creature_origin', val)}
+            options={[
+              { value: 'artificial', label: 'Artificial' },
+              { value: 'natural', label: 'Natural' },
+              { value: 'undead', label: 'Undead' },
+            ]}
+            placeholder="-- Select --"
+          />
           {getInlineError('origin') && (
             <div className="inline-error">❌ {getInlineError('origin')}</div>
           )}
@@ -289,20 +293,17 @@ export const IdentityTab: React.FC<IdentityTabProps> = ({
               </span>
             ))}
           </div>
-          <select
+          <Combobox
             id="creature_type"
             data-testid="type-select"
             value=""
-            onChange={(e) => {
-              const val = e.target.value;
+            onChange={(val) => {
               const current = requiredProperties.creature_types || [];
               if (val && !current.includes(val)) {
                 setProp('creature_types', [...current, val]);
               }
             }}
-          >
-            <option value="">-- Add Type --</option>
-            {[
+            options={[
               'aberration',
               'animal',
               'beast',
@@ -316,13 +317,12 @@ export const IdentityTab: React.FC<IdentityTabProps> = ({
               'ooze',
               'plant',
               'soulforged',
-            ].map((t) => (
-              <option key={t} value={t}>
-                {t.charAt(0).toUpperCase() + t.slice(1)}
-                {(requiredProperties.creature_types || []).includes(t) ? ' (selected)' : ''}
-              </option>
-            ))}
-          </select>
+            ].map((t) => ({
+              value: t,
+              label: t.charAt(0).toUpperCase() + t.slice(1) + ((requiredProperties.creature_types || []).includes(t) ? ' (selected)' : ''),
+            }))}
+            placeholder="-- Add Type --"
+          />
           {getInlineError('creature type') && (
             <div className="inline-error">❌ {getInlineError('creature type')}</div>
           )}
@@ -333,23 +333,24 @@ export const IdentityTab: React.FC<IdentityTabProps> = ({
 
         <div className="form-group">
           <label htmlFor="size">Size</label>
-          <select
+          <Combobox
             id="size"
             data-testid="size-select"
             value={requiredProperties.size}
-            onChange={(e) => setProp('size', e.target.value)}
-          >
-            <option value="">-- Select --</option>
-            <option value="fine">Fine</option>
-            <option value="diminutive">Diminutive</option>
-            <option value="tiny">Tiny</option>
-            <option value="small">Small</option>
-            <option value="medium">Medium</option>
-            <option value="large">Large</option>
-            <option value="huge">Huge</option>
-            <option value="gargantuan">Gargantuan</option>
-            <option value="colossal">Colossal</option>
-          </select>
+            onChange={(val) => setProp('size', val)}
+            options={[
+              { value: 'fine', label: 'Fine' },
+              { value: 'diminutive', label: 'Diminutive' },
+              { value: 'tiny', label: 'Tiny' },
+              { value: 'small', label: 'Small' },
+              { value: 'medium', label: 'Medium' },
+              { value: 'large', label: 'Large' },
+              { value: 'huge', label: 'Huge' },
+              { value: 'gargantuan', label: 'Gargantuan' },
+              { value: 'colossal', label: 'Colossal' },
+            ]}
+            placeholder="-- Select --"
+          />
           {getInlineError('size') && (
             <div className="inline-error">❌ {getInlineError('size')}</div>
           )}

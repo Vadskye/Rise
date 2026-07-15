@@ -377,17 +377,22 @@
       "sharedFreeformCode": "",
       "monsters": [
         {
-          "name": "New Member 1",
+          "name": "Army Deserter",
           "requiredProperties": {
             "alignment": "neutral evil",
-            "base_class": "",
+            "base_class": "warrior",
             "elite": false,
-            "creature_origin": "",
-            "creature_types": [],
-            "size": "",
-            "level": 0
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 1
           },
-          "freeformCode": ""
+          "freeformCode": "",
+          "properties": {
+            "has_art": false
+          }
         }
       ],
       "folder": "Civilized Humanoids"
