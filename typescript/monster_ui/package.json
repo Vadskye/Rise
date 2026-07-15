@@ -14,7 +14,7 @@
     "lint": "eslint \"**/*.{ts,tsx}\"",
     "prettier": "prettier --write \"**/*.{ts,tsx}\"",
     "preview": "vite preview",
-    "test": "tsx --tsconfig tsconfig.server.json --test tests/**/*.test.ts",
+    "test": "vitest run",
     "unused": "npx knip"
   },
   "dependencies": {
@@ -33,6 +33,7 @@
     "puppeteer": "^25.3.0",
     "tsx": "^4.19.0",
     "typescript": "^5.5.4",
-    "vite": "^5.4.2"
+    "vite": "^5.4.2",
+    "vitest": "^4.1.10"
   }
 }

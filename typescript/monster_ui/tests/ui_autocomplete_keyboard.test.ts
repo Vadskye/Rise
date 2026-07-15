@@ -1,7 +1,6 @@
 import './setup-env';
 
-import { test, describe, before, after } from 'node:test';
-import assert from 'node:assert';
+import { test, describe, beforeAll, afterAll, expect } from 'vitest';
 import * as fs from 'fs';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
@@ -22,7 +21,7 @@ describe('Autocomplete Keyboard Navigation Tests', () => {
   let baseUrl: string;
   let browser: Browser;
 
-  before(async () => {
+  beforeAll(async () => {
     // Seed one minimal monster so we have something to select
     saveDb({
       monsters: [
@@ -79,7 +78,7 @@ describe('Autocomplete Keyboard Navigation Tests', () => {
     });
   });
 
-  after(async () => {
+  afterAll(async () => {
     if (browser) {
       await browser.close();
     }
@@ -113,23 +112,23 @@ describe('Autocomplete Keyboard Navigation Tests', () => {
     // Open Seed Monster
     await page.waitForSelector('.list-item', { timeout: 5000 });
     const listItems = await page.$$('.list-item');
-    assert.ok(listItems.length > 0, 'Should have Seed Monster in sidebar');
+    expect(listItems.length).toBeGreaterThan(0);
     await listItems[0].click();
 
     // Click "Spells & Abilities" tab
     await page.waitForSelector('[data-testid="tab-btn-abilities"]', { timeout: 5000 });
     const tabBtn = await page.$('[data-testid="tab-btn-abilities"]');
-    assert.ok(tabBtn, 'Should find Spells & Abilities tab button');
-    await tabBtn.click();
+    expect(tabBtn).toBeDefined();
+    await tabBtn!.click();
     await new Promise((resolve) => setTimeout(resolve, 500));
 
     // Find the maneuver search input
     const maneuverInputSelector = 'input[placeholder="Search maneuvers (e.g. Charge)..."]';
     const maneuverInput = await page.waitForSelector(maneuverInputSelector, { timeout: 5000 });
-    assert.ok(maneuverInput, 'Should find standard maneuver input');
+    expect(maneuverInput).toBeDefined();
 
     // Type "Ground" into the input
-    await maneuverInput.click();
+    await maneuverInput!.click();
     await page.keyboard.type('Ground');
     await new Promise((resolve) => setTimeout(resolve, 200)); // wait for filtered list to render
 
@@ -142,13 +141,13 @@ describe('Autocomplete Keyboard Navigation Tests', () => {
       }))
     );
 
-    assert.ok(listItemsText.length >= 2, 'Should show at least 2 options for "Ground"');
+    expect(listItemsText.length).toBeGreaterThanOrEqual(2);
     const firstOptionName = listItemsText[0].text;
     const secondOptionName = listItemsText[1].text;
     console.log(`First option: "${firstOptionName}", Second option: "${secondOptionName}"`);
 
-    assert.strictEqual(listItemsText[0].className, 'active', 'First element should initially be active');
-    assert.notStrictEqual(listItemsText[1].className, 'active', 'Second element should not be active');
+    expect(listItemsText[0].className).toBe('active');
+    expect(listItemsText[1].className).not.toBe('active');
 
     // Press Arrow Down to highlight second option
     await page.keyboard.press('ArrowDown');
@@ -158,8 +157,8 @@ describe('Autocomplete Keyboard Navigation Tests', () => {
         className: el.className,
       }))
     );
-    assert.notStrictEqual(listItemsText[0].className, 'active', 'First element should no longer be active');
-    assert.strictEqual(listItemsText[1].className, 'active', 'Second element should now be active');
+    expect(listItemsText[0].className).not.toBe('active');
+    expect(listItemsText[1].className).toBe('active');
 
     // Press Enter to select the second option
     await page.keyboard.press('Enter');
@@ -170,7 +169,7 @@ describe('Autocomplete Keyboard Navigation Tests', () => {
       elements.map((el) => el.textContent?.trim())
     );
     const addedSelectedOption = abilityCards.some((name) => name.includes(secondOptionName));
-    assert.ok(addedSelectedOption, `Maneuver "${secondOptionName}" should be added to the list`);
+    expect(addedSelectedOption).toBe(true);
 
     await page.close();
   });

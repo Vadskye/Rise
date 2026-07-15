@@ -1,7 +1,6 @@
 import './setup-env';
 
-import { test, describe, before, after } from 'node:test';
-import assert from 'node:assert';
+import { test, describe, beforeAll, afterAll, expect } from 'vitest';
 import * as fs from 'fs';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
@@ -22,7 +21,7 @@ describe('Monster UI Delete Undo Integration Tests', () => {
   let baseUrl: string;
   let browser: Browser;
 
-  before(async () => {
+  beforeAll(async () => {
     // 1. Start Express Server on random port
     await new Promise<void>((resolve) => {
       expressServer = app.listen(0, () => {
@@ -60,7 +59,7 @@ describe('Monster UI Delete Undo Integration Tests', () => {
     });
   });
 
-  after(async () => {
+  afterAll(async () => {
     console.log('Cleaning up E2E test servers and files...');
     if (browser) {
       await browser.close();
@@ -100,8 +99,8 @@ describe('Monster UI Delete Undo Integration Tests', () => {
     const addMonsterBtn = await page.waitForSelector('[data-testid="add-individual-btn"]', {
       timeout: 5000,
     });
-    assert.ok(addMonsterBtn, 'Add Monster button should exist');
-    await addMonsterBtn.click();
+    expect(addMonsterBtn).toBeDefined();
+    await addMonsterBtn!.click();
 
     // Wait for the new monster name input to render (verifies it selected the monster)
     await page.waitForSelector('[data-testid="monster-name-input"]', { timeout: 5000 });
@@ -117,7 +116,7 @@ describe('Monster UI Delete Undo Integration Tests', () => {
 
     // Verify it exists in sidebar
     let monsterItem = await page.$('[data-testid="monster-item-New Monster 1"]');
-    assert.ok(monsterItem, 'New Monster 1 should exist in sidebar');
+    expect(monsterItem).toBeTruthy();
 
     // 2. Click Delete button on the monster (should delete immediately without prompt)
     // We hover the item first to make the delete button visible (it has opacity: 0 on hover off)
@@ -126,28 +125,25 @@ describe('Monster UI Delete Undo Integration Tests', () => {
       '[data-testid="monster-item-New Monster 1"] .delete-btn',
       { timeout: 2000 },
     );
-    assert.ok(deleteBtn, 'Delete button should be visible on hover');
-    await deleteBtn.click();
+    expect(deleteBtn).toBeDefined();
+    await deleteBtn!.click();
 
     // Verify toast is visible
     const toast = await page.waitForSelector('[data-testid="undo-toast"]', { timeout: 2000 });
-    assert.ok(toast, 'Undo toast should be visible');
+    expect(toast).toBeDefined();
 
     // Verify message content
     const toastText = await page.evaluate((el) => el.textContent, toast);
-    assert.ok(
-      toastText?.includes('Deleted individual monster "New Monster 1"'),
-      'Toast text should describe deletion',
-    );
+    expect(toastText).toContain('Deleted individual monster "New Monster 1"');
 
     // Verify monster is removed from sidebar
     let deletedMonsterItem = await page.$('[data-testid="monster-item-New Monster 1"]');
-    assert.strictEqual(deletedMonsterItem, null, 'Monster should be removed from sidebar');
+    expect(deletedMonsterItem).toBeNull();
 
     // 3. Click Undo button in toast
     const undoBtn = await page.waitForSelector('[data-testid="undo-btn"]', { timeout: 2000 });
-    assert.ok(undoBtn, 'Undo button should exist');
-    await undoBtn.click();
+    expect(undoBtn).toBeDefined();
+    await undoBtn!.click();
 
     // Wait for autosave to complete again
     await page.waitForFunction(
@@ -163,7 +159,7 @@ describe('Monster UI Delete Undo Integration Tests', () => {
       '[data-testid="monster-item-New Monster 1"]',
       { timeout: 5000 },
     );
-    assert.ok(restoredMonsterItem, 'Monster should be restored to sidebar');
+    expect(restoredMonsterItem).toBeTruthy();
 
     // Verify name input is visible again (meaning it selected the restored monster)
     await page.waitForSelector('[data-testid="monster-name-input"]', { timeout: 2000 });
@@ -186,8 +182,8 @@ describe('Monster UI Delete Undo Integration Tests', () => {
     const addGroupBtn = await page.waitForSelector('[data-testid="add-group-btn"]', {
       timeout: 5000,
     });
-    assert.ok(addGroupBtn, 'Add Group button should exist');
-    await addGroupBtn.click();
+    expect(addGroupBtn).toBeDefined();
+    await addGroupBtn!.click();
 
     await page.waitForFunction(
       () => {
@@ -201,7 +197,7 @@ describe('Monster UI Delete Undo Integration Tests', () => {
     let groupHeader = await page.waitForSelector('[data-testid="group-item-New Group 1"]', {
       timeout: 5000,
     });
-    assert.ok(groupHeader, 'Group header should exist in sidebar');
+    expect(groupHeader).toBeDefined();
 
     // 2. Add monster to group
     await page.hover('[data-testid="group-item-New Group 1"]');
@@ -210,8 +206,8 @@ describe('Monster UI Delete Undo Integration Tests', () => {
       '[data-testid="group-item-New Group 1"] button[title="Add monster to group"]',
       { timeout: 2000 },
     );
-    assert.ok(addMonsterToGroupBtn, 'Add monster to group button should exist');
-    await addMonsterToGroupBtn.click();
+    expect(addMonsterToGroupBtn).toBeDefined();
+    await addMonsterToGroupBtn!.click();
 
     await page.waitForFunction(
       () => {
@@ -226,7 +222,7 @@ describe('Monster UI Delete Undo Integration Tests', () => {
       '[data-testid="group-monster-item-New Group 1-New Member 1"]',
       { timeout: 5000 },
     );
-    assert.ok(groupMonsterItem, 'Group monster should exist');
+    expect(groupMonsterItem).toBeTruthy();
 
     // 3. Delete group monster and undo
     await page.hover('[data-testid="group-monster-item-New Group 1-New Member 1"]');
@@ -234,26 +230,19 @@ describe('Monster UI Delete Undo Integration Tests', () => {
       '[data-testid="group-monster-item-New Group 1-New Member 1"] .delete-btn',
       { timeout: 2000 },
     );
-    assert.ok(deleteGroupMonsterBtn, 'Delete group monster button should exist');
-    await deleteGroupMonsterBtn.click();
+    expect(deleteGroupMonsterBtn).toBeDefined();
+    await deleteGroupMonsterBtn!.click();
 
     // Verify toast shows delete of member
     let toast = await page.waitForSelector('[data-testid="undo-toast"]', { timeout: 2000 });
     let toastText = await page.evaluate((el) => el.textContent, toast);
-    assert.ok(
-      toastText?.includes('Deleted monster "New Member 1" from group "New Group 1"'),
-      'Toast should describe member delete',
-    );
+    expect(toastText).toContain('Deleted monster "New Member 1" from group "New Group 1"');
 
     // Verify member is gone from sidebar
     let deletedGroupMonsterItem = await page.$(
       '[data-testid="group-monster-item-New Group 1-New Member 1"]',
     );
-    assert.strictEqual(
-      deletedGroupMonsterItem,
-      null,
-      'Group monster should be deleted from sidebar',
-    );
+    expect(deletedGroupMonsterItem).toBeNull();
 
     // Click Undo
     const undoMemberBtn = await page.waitForSelector('[data-testid="undo-btn"]', { timeout: 2000 });
@@ -264,7 +253,7 @@ describe('Monster UI Delete Undo Integration Tests', () => {
       '[data-testid="group-monster-item-New Group 1-New Member 1"]',
       { timeout: 5000 },
     );
-    assert.ok(groupMonsterItem, 'Group monster should be restored');
+    expect(groupMonsterItem).toBeTruthy();
 
     // 4. Delete whole group and undo
     await page.hover('[data-testid="group-item-New Group 1"]');
@@ -272,20 +261,17 @@ describe('Monster UI Delete Undo Integration Tests', () => {
       '[data-testid="group-item-New Group 1"] button.delete',
       { timeout: 2000 },
     );
-    assert.ok(deleteGroupBtn, 'Delete group button should exist');
-    await deleteGroupBtn.click();
+    expect(deleteGroupBtn).toBeDefined();
+    await deleteGroupBtn!.click();
 
     // Verify toast shows delete of group
     toast = await page.waitForSelector('[data-testid="undo-toast"]', { timeout: 2000 });
     toastText = await page.evaluate((el) => el.textContent, toast);
-    assert.ok(
-      toastText?.includes('Deleted group "New Group 1" and all its monsters'),
-      'Toast should describe group delete',
-    );
+    expect(toastText).toContain('Deleted group "New Group 1" and all its monsters');
 
     // Verify group is gone from sidebar
     let deletedGroupHeader = await page.$('[data-testid="group-item-New Group 1"]');
-    assert.strictEqual(deletedGroupHeader, null, 'Group header should be deleted from sidebar');
+    expect(deletedGroupHeader).toBeNull();
 
     // Click Undo
     const undoGroupBtn = await page.waitForSelector('[data-testid="undo-btn"]', { timeout: 2000 });
@@ -295,14 +281,14 @@ describe('Monster UI Delete Undo Integration Tests', () => {
     groupHeader = await page.waitForSelector('[data-testid="group-item-New Group 1"]', {
       timeout: 5000,
     });
-    assert.ok(groupHeader, 'Group header should be restored');
+    expect(groupHeader).toBeTruthy();
 
     // Verify child monster is also back!
     groupMonsterItem = await page.waitForSelector(
       '[data-testid="group-monster-item-New Group 1-New Member 1"]',
       { timeout: 5000 },
     );
-    assert.ok(groupMonsterItem, 'Group child monster should be restored together with the group');
+    expect(groupMonsterItem).toBeTruthy();
 
     await page.close();
   });
