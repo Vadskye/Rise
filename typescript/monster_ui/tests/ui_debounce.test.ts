@@ -1,7 +1,6 @@
 import './setup-env';
 
-import { test, describe, before, after } from 'node:test';
-import assert from 'node:assert';
+import { test, describe, beforeAll, afterAll, expect } from 'vitest';
 import * as fs from 'fs';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
@@ -22,7 +21,7 @@ describe('Monster UI Debounce/Timing Tests', () => {
   let baseUrl: string;
   let browser: Browser;
 
-  before(async () => {
+  beforeAll(async () => {
     // setup-env.ts already configured isolated temp-file paths before this module loaded.
     // Seed one minimal monster so the sidebar has a .list-item to interact with.
     saveDb({
@@ -80,7 +79,7 @@ describe('Monster UI Debounce/Timing Tests', () => {
     });
   });
 
-  after(async () => {
+  afterAll(async () => {
     console.log('Cleaning up Debounce test servers and files...');
     if (browser) {
       await browser.close();
@@ -127,7 +126,7 @@ describe('Monster UI Debounce/Timing Tests', () => {
     // Open first monster
     await page.waitForSelector('.list-item', { timeout: 5000 });
     const listItems = await page.$$('.list-item');
-    assert.ok(listItems.length > 0, 'Should have at least one monster');
+    expect(listItems.length).toBeGreaterThan(0);
     await listItems[0].click();
 
     // Click "Attributes & Skills" tab
@@ -141,13 +140,13 @@ describe('Monster UI Debounce/Timing Tests', () => {
         break;
       }
     }
-    assert.ok(attributesTab, 'Should find Attributes & Skills tab');
-    await attributesTab.click();
+    expect(attributesTab).toBeDefined();
+    await attributesTab!.click();
     await new Promise((resolve) => setTimeout(resolve, 500));
 
     // Find the skill-awareness checkbox
     const awarenessCheckbox = await page.waitForSelector('#skill-awareness', { timeout: 5000 });
-    assert.ok(awarenessCheckbox, 'Should find awareness checkbox');
+    expect(awarenessCheckbox).toBeDefined();
 
     // Clear previous requests list
     requestTimes.length = 0;
@@ -163,7 +162,7 @@ describe('Monster UI Debounce/Timing Tests', () => {
     // Wait for the debounced request to fire (50ms delay + safety margin)
     await new Promise((resolve) => setTimeout(resolve, 400));
     console.log(`Phase 1 preview requests: ${requestTimes.length}`);
-    assert.strictEqual(requestTimes.length, 3, 'Rapid clicking should not be debounced');
+    expect(requestTimes.length).toBe(3);
 
     await page.close();
   });

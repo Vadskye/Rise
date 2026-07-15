@@ -1,7 +1,6 @@
 import './setup-env';
 
-import { test, describe, before, after } from 'node:test';
-import assert from 'node:assert';
+import { test, describe, beforeAll, afterAll, expect } from 'vitest';
 import * as fs from 'fs';
 import { getDb, paths, saveAndValidateAll } from '../server/db';
 import { validateMonster } from '../server/validate';
@@ -9,13 +8,13 @@ import { generatePreview } from '../server/preview';
 import { getCharacterSheet } from '@src/character_sheet/current_character_sheet';
 
 describe('Monster UI Integration Tests (Serverless)', () => {
-  before(() => {
+  beforeAll(() => {
     // setup-env.ts already configured isolated temp-file paths before this module loaded.
     // No copy needed — getDb() creates an empty database if none exists.
     console.log('Test database paths configured. Starting tests...');
   });
 
-  after(() => {
+  afterAll(() => {
     console.log('Cleaning up test database and generated source files...');
     if (fs.existsSync(paths.dbPath)) {
       fs.unlinkSync(paths.dbPath);
@@ -28,8 +27,8 @@ describe('Monster UI Integration Tests (Serverless)', () => {
   test('saveAndValidateAll saves database, triggers codegen, and runs validation successfully', () => {
     // 1. Fetch initial monsters
     const initialDb = getDb();
-    assert.ok(initialDb.monsters);
-    assert.ok(initialDb.monsterGroups);
+    expect(initialDb.monsters).toBeDefined();
+    expect(initialDb.monsterGroups).toBeDefined();
 
     // 2. Prepare payload adding a new test monster
     const newMonsterName = `TestMonster_${Date.now()}`;
@@ -62,30 +61,30 @@ describe('Monster UI Integration Tests (Serverless)', () => {
     console.log(`Saving database and validating for ${newMonsterName}...`);
     const result = saveAndValidateAll(updatedDb);
 
-    assert.strictEqual(result.success, true);
-    assert.ok(result.validations);
-    assert.ok(result.validations[newMonsterName]);
+    expect(result.success).toBe(true);
+    expect(result.validations).toBeDefined();
+    expect(result.validations[newMonsterName]).toBeDefined();
 
     // Validate returned computed stats for our new monster
     const validation = result.validations[newMonsterName];
-    assert.strictEqual(validation.success, true);
+    expect(validation.success).toBe(true);
 
     const previewResult = generatePreview(updatedDb.monsters[updatedDb.monsters.length - 1]);
-    assert.strictEqual(previewResult.success, true);
-    assert.ok(previewResult.computedStats);
-    assert.strictEqual(previewResult.computedStats.name, newMonsterName);
-    assert.strictEqual(previewResult.computedStats.level, 1);
+    expect(previewResult.success).toBe(true);
+    expect(previewResult.computedStats).toBeDefined();
+    expect(previewResult.computedStats!.name).toBe(newMonsterName);
+    expect(previewResult.computedStats!.level).toBe(1);
 
     // 4. Verify backend saved it by calling getDb() again
     const finalDb = getDb();
     const savedMonster = finalDb.monsters.find((m: any) => m.name === newMonsterName);
-    assert.ok(savedMonster);
-    assert.strictEqual(savedMonster.freeformCode, '// integration test dummy');
+    expect(savedMonster).toBeDefined();
+    expect(savedMonster!.freeformCode).toBe('// integration test dummy');
 
     // 5. Verify that the generated TypeScript file contains the new monster
-    assert.ok(fs.existsSync(paths.generatedTsPath));
+    expect(fs.existsSync(paths.generatedTsPath)).toBe(true);
     const generatedContent = fs.readFileSync(paths.generatedTsPath, 'utf8');
-    assert.ok(generatedContent.includes(`grimoire.addMonster('${newMonsterName}'`));
+    expect(generatedContent).toContain(`grimoire.addMonster('${newMonsterName}'`);
   });
 
   test('saveAndValidateAll saves database with structured fields and outputs correct codegen', () => {
@@ -136,47 +135,43 @@ describe('Monster UI Integration Tests (Serverless)', () => {
     };
 
     const result = saveAndValidateAll(updatedDb);
-    assert.strictEqual(result.success, true);
+    expect(result.success).toBe(true);
 
     const validation = result.validations[newMonsterName];
-    assert.strictEqual(validation.success, true);
+    expect(validation.success).toBe(true);
 
     const previewResult = generatePreview(updatedDb.monsters[updatedDb.monsters.length - 1]);
-    assert.strictEqual(previewResult.success, true);
+    expect(previewResult.success).toBe(true);
     const stats = previewResult.computedStats;
-    assert.ok(stats);
-    assert.strictEqual(stats.name, newMonsterName);
-    assert.ok(stats.skills.includes('stealth'));
-    assert.ok(stats.traits.includes('quadrupedal'));
-    assert.ok(stats.equipment.includes('breastplate'));
-    assert.ok(stats.equipment.includes('standard shield'));
+    expect(stats).toBeDefined();
+    expect(stats!.name).toBe(newMonsterName);
+    expect(stats!.skills).toContain('stealth');
+    expect(stats!.traits).toContain('quadrupedal');
+    expect(stats!.equipment).toContain('breastplate');
+    expect(stats!.equipment).toContain('standard shield');
 
-    assert.ok(fs.existsSync(paths.generatedTsPath));
+    expect(fs.existsSync(paths.generatedTsPath)).toBe(true);
     const generatedContent = fs.readFileSync(paths.generatedTsPath, 'utf8');
-    assert.ok(generatedContent.includes(`creature.setBaseAttributes([2, 3, 1, -1, 0, -2])`));
-    assert.ok(generatedContent.includes(`creature.setTrainedSkills(['stealth', 'jump'])`));
-    assert.ok(generatedContent.includes(`easy: 'Easy text'`));
-    assert.ok(generatedContent.includes(`creature.addTrait('quadrupedal')`));
-    assert.ok(generatedContent.includes(`creature.addCustomSense('Darkvision (60 ft.)')`));
-    assert.ok(
-      generatedContent.includes(`creature.addCustomMovementSpeed('Fly (average, 40 ft. limit)')`),
+    expect(generatedContent).toContain(`creature.setBaseAttributes([2, 3, 1, -1, 0, -2])`);
+    expect(generatedContent).toContain(`creature.setTrainedSkills(['stealth', 'jump'])`);
+    expect(generatedContent).toContain(`easy: 'Easy text'`);
+    expect(generatedContent).toContain(`creature.addTrait('quadrupedal')`);
+    expect(generatedContent).toContain(`creature.addCustomSense('Darkvision (60 ft.)')`);
+    expect(generatedContent).toContain(`creature.addCustomMovementSpeed('Fly (average, 40 ft. limit)')`);
+    expect(generatedContent).toContain(`creature.addImmunity('Fire')`);
+    expect(generatedContent).toContain(`creature.addResistant('Cold')`);
+    expect(generatedContent).toContain(`creature.addVulnerability('Acid')`);
+    expect(generatedContent).toContain(
+      `creature.setEquippedArmorName({ bodyArmor: 'breastplate', shield: 'standard shield' })`,
     );
-    assert.ok(generatedContent.includes(`creature.addImmunity('Fire')`));
-    assert.ok(generatedContent.includes(`creature.addResistant('Cold')`));
-    assert.ok(generatedContent.includes(`creature.addVulnerability('Acid')`));
-    assert.ok(
-      generatedContent.includes(
-        `creature.setEquippedArmorName({ bodyArmor: 'breastplate', shield: 'standard shield' })`,
-      ),
-    );
-    assert.ok(generatedContent.includes(`has_art: true`));
+    expect(generatedContent).toContain(`has_art: true`);
   });
 
   test('saveAndValidateAll saves database with monster groups, triggers codegen, and runs validation successfully', () => {
     // 1. Fetch initial monsters
     const initialDb = getDb();
-    assert.ok(initialDb.monsters);
-    assert.ok(initialDb.monsterGroups);
+    expect(initialDb.monsters).toBeDefined();
+    expect(initialDb.monsterGroups).toBeDefined();
 
     // 2. Prepare payload adding a new test group and group monster
     const testGroupName = `TestGroup_${Date.now()}`;
@@ -219,16 +214,16 @@ describe('Monster UI Integration Tests (Serverless)', () => {
     );
     const result = saveAndValidateAll(updatedDb);
 
-    assert.strictEqual(result.success, true);
-    assert.ok(result.validations);
+    expect(result.success).toBe(true);
+    expect(result.validations).toBeDefined();
 
     // Key format for group monsters is `${groupName}.${monsterName}`
     const validationKey = `${testGroupName}.${testGroupMonsterName}`;
-    assert.ok(result.validations[validationKey]);
+    expect(result.validations[validationKey]).toBeDefined();
 
     // Validate returned computed stats for our new group monster
     const validation = result.validations[validationKey];
-    assert.strictEqual(validation.success, true);
+    expect(validation.success).toBe(true);
 
     const targetGroup = updatedDb.monsterGroups[updatedDb.monsterGroups.length - 1];
     const targetMonster = targetGroup.monsters[0];
@@ -237,25 +232,25 @@ describe('Monster UI Integration Tests (Serverless)', () => {
       targetGroup.sharedFreeformCode,
       targetGroup.name,
     );
-    assert.strictEqual(previewResult.success, true);
-    assert.ok(previewResult.computedStats);
-    assert.strictEqual(previewResult.computedStats.name, testGroupMonsterName);
-    assert.strictEqual(previewResult.computedStats.level, 1);
+    expect(previewResult.success).toBe(true);
+    expect(previewResult.computedStats).toBeDefined();
+    expect(previewResult.computedStats!.name).toBe(testGroupMonsterName);
+    expect(previewResult.computedStats!.level).toBe(1);
 
     // 4. Verify backend saved it by calling getDb() again
     const finalDb = getDb();
     const savedGroup = finalDb.monsterGroups.find((g: any) => g.name === testGroupName);
-    assert.ok(savedGroup);
-    assert.strictEqual(savedGroup.sharedFreeformCode, '// shared group code test');
+    expect(savedGroup).toBeDefined();
+    expect(savedGroup!.sharedFreeformCode).toBe('// shared group code test');
     const savedMonster = savedGroup.monsters.find((m: any) => m.name === testGroupMonsterName);
-    assert.ok(savedMonster);
-    assert.strictEqual(savedMonster.freeformCode, '// group monster specific test');
+    expect(savedMonster).toBeDefined();
+    expect(savedMonster!.freeformCode).toBe('// group monster specific test');
 
     // 5. Verify that the generated TypeScript file contains the new monster group
-    assert.ok(fs.existsSync(paths.generatedTsPath));
+    expect(fs.existsSync(paths.generatedTsPath)).toBe(true);
     const generatedContent = fs.readFileSync(paths.generatedTsPath, 'utf8');
-    assert.ok(generatedContent.includes(`name: '${testGroupName}'`));
-    assert.ok(generatedContent.includes(`'${testGroupMonsterName}'`));
+    expect(generatedContent).toContain(`name: '${testGroupName}'`);
+    expect(generatedContent).toContain(`'${testGroupMonsterName}'`);
   });
 
   test('validateMonster caches character sheets and reuse them on unchanged stats, invalidating them on changes', () => {
@@ -281,15 +276,15 @@ describe('Monster UI Integration Tests (Serverless)', () => {
 
     // First validation - should create sheet
     const result1 = validateMonster(monsterData1);
-    assert.strictEqual(result1.success, true);
+    expect(result1.success).toBe(true);
     const sheet1 = getCharacterSheet(monsterName);
-    assert.ok(sheet1);
+    expect(sheet1).toBeDefined();
 
     // Second validation with identical stats - should hit cache and reuse sheet instance
     const result2 = validateMonster(monsterData1);
-    assert.strictEqual(result2.success, true);
+    expect(result2.success).toBe(true);
     const sheet2 = getCharacterSheet(monsterName);
-    assert.strictEqual(sheet1, sheet2); // Assert exact object reference identity!
+    expect(sheet1).toBe(sheet2); // Assert exact object reference identity!
 
     // Third validation with modified stats - should invalidate cache and recreate sheet
     const monsterData2 = {
@@ -300,10 +295,10 @@ describe('Monster UI Integration Tests (Serverless)', () => {
       },
     };
     const result3 = validateMonster(monsterData2);
-    assert.strictEqual(result3.success, true);
+    expect(result3.success).toBe(true);
     const sheet3 = getCharacterSheet(monsterName);
-    assert.ok(sheet3);
-    assert.notStrictEqual(sheet1, sheet3); // Assert sheet was recreated!
+    expect(sheet3).toBeDefined();
+    expect(sheet1).not.toBe(sheet3); // Assert sheet was recreated!
   });
 
   test('saveAndValidateAll generates code and computes stats for structured complex entities (spells, custom abilities, passives, weapons, rituals)', () => {
@@ -372,40 +367,36 @@ describe('Monster UI Integration Tests (Serverless)', () => {
     console.log(`Saving database and validating complex structured monster ${testMonsterName}...`);
     const result = saveAndValidateAll(updatedDb);
 
-    assert.strictEqual(result.success, true);
+    expect(result.success).toBe(true);
     const validation = result.validations[testMonsterName];
-    assert.strictEqual(validation.success, true);
+    expect(validation.success).toBe(true);
 
     // Assert computed stats serialization contains our fields
     const previewResult = generatePreview(complexMonster);
-    assert.strictEqual(previewResult.success, true);
-    assert.ok(previewResult.computedStats);
-    assert.ok(
-      previewResult.computedStats.activeAbilities.some((a: any) => a.name === 'Echoing Word'),
-    );
-    assert.ok(
-      previewResult.computedStats.activeAbilities.some((a: any) => a.name === 'Double Slash'),
-    );
-    assert.ok(
-      previewResult.computedStats.passiveAbilities.some((p: any) => p.name === 'Regeneration'),
-    );
+    expect(previewResult.success).toBe(true);
+    expect(previewResult.computedStats).toBeDefined();
+    expect(
+      previewResult.computedStats!.activeAbilities.some((a: any) => a.name === 'Echoing Word'),
+    ).toBe(true);
+    expect(
+      previewResult.computedStats!.activeAbilities.some((a: any) => a.name === 'Double Slash'),
+    ).toBe(true);
+    expect(
+      previewResult.computedStats!.passiveAbilities.some((p: any) => p.name === 'Regeneration'),
+    ).toBe(true);
 
     // Assert codegen outputs the correct builder methods
     const generatedContent = fs.readFileSync(paths.generatedTsPath, 'utf8');
-    assert.ok(
-      generatedContent.includes(
-        `creature.addSpell('Word of Power', { displayName: 'Echoing Word', isMagical: true })`,
-      ),
+    expect(generatedContent).toContain(
+      `creature.addSpell('Word of Power', { displayName: 'Echoing Word', isMagical: true })`,
     );
-    assert.ok(generatedContent.includes(`creature.addCustomManeuver(`));
-    assert.ok(generatedContent.includes(`creature.addPassiveAbility(`));
-    assert.ok(generatedContent.includes(`creature.addWeapon('claws')`));
-    assert.ok(
-      generatedContent.includes(
-        `creature.addWeaponMult('claws', { displayName: 'Vicious Claws' })`,
-      ),
+    expect(generatedContent).toContain(`creature.addCustomManeuver(`);
+    expect(generatedContent).toContain(`creature.addPassiveAbility(`);
+    expect(generatedContent).toContain(`creature.addWeapon('claws')`);
+    expect(generatedContent).toContain(
+      `creature.addWeaponMult('claws', { displayName: 'Vicious Claws' })`,
     );
-    assert.ok(generatedContent.includes(`creature.addRituals(['Creation', 'Universal'])`));
+    expect(generatedContent).toContain(`creature.addRituals(['Creation', 'Universal'])`);
   });
 
   test('saveAndValidateAll handles group shared structured properties and monster overrides', () => {
@@ -478,40 +469,38 @@ describe('Monster UI Integration Tests (Serverless)', () => {
     console.log(`Saving database and validating override group ${testGroupName}...`);
     const result = saveAndValidateAll(updatedDb);
 
-    assert.strictEqual(result.success, true);
-    assert.strictEqual(result.validations[`${testGroupName}.${m1Name}`].success, true);
-    assert.strictEqual(result.validations[`${testGroupName}.${m2Name}`].success, true);
+    expect(result.success).toBe(true);
+    expect(result.validations[`${testGroupName}.${m1Name}`].success).toBe(true);
+    expect(result.validations[`${testGroupName}.${m2Name}`].success).toBe(true);
 
     // Verify preview logic applies group fields
     const group = updatedDb.monsterGroups[updatedDb.monsterGroups.length - 1];
     const preview1 = generatePreview(group.monsters[0], group, group.name);
-    assert.strictEqual(preview1.success, true);
-    assert.ok(preview1.computedStats);
-    assert.ok(preview1.computedStats.traits.includes('amphibious'));
-    assert.ok(
-      preview1.computedStats.sensesComponents.some((s: string) =>
+    expect(preview1.success).toBe(true);
+    expect(preview1.computedStats).toBeDefined();
+    expect(preview1.computedStats!.traits).toContain('amphibious');
+    expect(
+      preview1.computedStats!.sensesComponents.some((s: string) =>
         s.includes('Darkvision (90 ft.)'),
       ),
-    );
-    assert.ok(preview1.computedStats.equipment.includes('scale'));
-    assert.ok(preview1.computedStats.activeAbilities.some((a: any) => a.name === 'Word of Power'));
+    ).toBe(true);
+    expect(preview1.computedStats!.equipment).toContain('scale');
+    expect(preview1.computedStats!.activeAbilities.some((a: any) => a.name === 'Word of Power')).toBe(true);
 
     // Verify preview logic applies monster overrides
     const preview2 = generatePreview(group.monsters[1], group, group.name);
-    assert.strictEqual(preview2.success, true);
-    assert.ok(preview2.computedStats);
-    assert.ok(preview2.computedStats.traits.includes('amphibious'));
-    assert.ok(preview2.computedStats.equipment.includes('breastplate'));
-    assert.ok(!preview2.computedStats.equipment.includes('scale'));
+    expect(preview2.success).toBe(true);
+    expect(preview2.computedStats).toBeDefined();
+    expect(preview2.computedStats!.traits).toContain('amphibious');
+    expect(preview2.computedStats!.equipment).toContain('breastplate');
+    expect(preview2.computedStats!.equipment).not.toContain('scale');
 
     // Verify codegen output
     const generatedContent = fs.readFileSync(paths.generatedTsPath, 'utf8');
-    assert.ok(generatedContent.includes(`creature.addTrait('amphibious')`));
-    assert.ok(generatedContent.includes(`creature.addCustomSense('Darkvision (90 ft.)')`));
-    assert.ok(generatedContent.includes(`creature.addSpell('Word of Power', { isMagical: true })`));
-    assert.ok(generatedContent.includes(`creature.setEquippedArmorName({ bodyArmor: 'scale' })`));
-    assert.ok(
-      generatedContent.includes(`creature.setEquippedArmorName({ bodyArmor: 'breastplate' })`),
-    );
+    expect(generatedContent).toContain(`creature.addTrait('amphibious')`);
+    expect(generatedContent).toContain(`creature.addCustomSense('Darkvision (90 ft.)')`);
+    expect(generatedContent).toContain(`creature.addSpell('Word of Power', { isMagical: true })`);
+    expect(generatedContent).toContain(`creature.setEquippedArmorName({ bodyArmor: 'scale' })`);
+    expect(generatedContent).toContain(`creature.setEquippedArmorName({ bodyArmor: 'breastplate' })`);
   });
 });

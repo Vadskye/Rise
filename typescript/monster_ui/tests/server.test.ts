@@ -1,7 +1,6 @@
 import './setup-env';
 
-import { test, describe, before, after } from 'node:test';
-import assert from 'node:assert';
+import { test, describe, beforeAll, afterAll, expect } from 'vitest';
 import * as fs from 'fs';
 import http from 'http';
 import { paths, getDb } from '../server/db';
@@ -19,7 +18,7 @@ describe('Monster UI Integration Tests (Full Server)', () => {
   let server: http.Server;
   let baseUrl: string;
 
-  before(async () => {
+  beforeAll(async () => {
     // Start the Express Server on a random port.
     // setup-env.ts already configured isolated temp-file paths before this module loaded.
     console.log('Starting full Express server for tests...');
@@ -35,7 +34,7 @@ describe('Monster UI Integration Tests (Full Server)', () => {
     });
   });
 
-  after(() => {
+  afterAll(() => {
     console.log('Stopping test server and cleaning up test files...');
     if (server) {
       server.close();
@@ -55,10 +54,10 @@ describe('Monster UI Integration Tests (Full Server)', () => {
 
   test('GET /api/monsters retrieves the current database', async () => {
     const res = await fetch(`${baseUrl}/api/monsters`);
-    assert.strictEqual(res.status, 200);
+    expect(res.status).toBe(200);
     const db = await res.json();
-    assert.ok(db.monsters);
-    assert.ok(db.monsterGroups);
+    expect(db.monsters).toBeDefined();
+    expect(db.monsterGroups).toBeDefined();
   });
 
   test('POST /api/save saves a new individual monster', async () => {
@@ -96,22 +95,22 @@ describe('Monster UI Integration Tests (Full Server)', () => {
       body: JSON.stringify(updatedDb),
     });
 
-    assert.strictEqual(resPost.status, 200);
+    expect(resPost.status).toBe(200);
     const result = await resPost.json();
-    assert.strictEqual(result.success, true);
-    assert.ok(result.validations);
-    assert.ok(result.validations[newMonsterName]);
+    expect(result.success).toBe(true);
+    expect(result.validations).toBeDefined();
+    expect(result.validations[newMonsterName]).toBeDefined();
 
     // Verify database file has new monster
     const finalDb = getDb();
     const savedMonster = finalDb.monsters.find((m: any) => m.name === newMonsterName);
-    assert.ok(savedMonster);
-    assert.strictEqual(savedMonster.freeformCode, '// full server test individual');
+    expect(savedMonster).toBeDefined();
+    expect(savedMonster!.freeformCode).toBe('// full server test individual');
 
     // Verify generated TS
-    assert.ok(fs.existsSync(paths.generatedTsPath));
+    expect(fs.existsSync(paths.generatedTsPath)).toBe(true);
     const generatedContent = fs.readFileSync(paths.generatedTsPath, 'utf8');
-    assert.ok(generatedContent.includes(`grimoire.addMonster('${newMonsterName}'`));
+    expect(generatedContent).toContain(`grimoire.addMonster('${newMonsterName}'`);
   });
 
   test('POST /api/save saves a new monster group and validates', async () => {
@@ -157,26 +156,26 @@ describe('Monster UI Integration Tests (Full Server)', () => {
       body: JSON.stringify(updatedDb),
     });
 
-    assert.strictEqual(resPost.status, 200);
+    expect(resPost.status).toBe(200);
     const result = await resPost.json();
-    assert.strictEqual(result.success, true);
+    expect(result.success).toBe(true);
 
     const validationKey = `${testGroupName}.${testGroupMonsterName}`;
-    assert.ok(result.validations[validationKey]);
-    assert.strictEqual(result.validations[validationKey].success, true);
+    expect(result.validations[validationKey]).toBeDefined();
+    expect(result.validations[validationKey].success).toBe(true);
 
     // Verify database file has new group and monster
     const finalDb = getDb();
     const savedGroup = finalDb.monsterGroups.find((g: any) => g.name === testGroupName);
-    assert.ok(savedGroup);
+    expect(savedGroup).toBeDefined();
     const savedMonster = savedGroup.monsters.find((m: any) => m.name === testGroupMonsterName);
-    assert.ok(savedMonster);
+    expect(savedMonster).toBeDefined();
 
     // Verify generated TS
-    assert.ok(fs.existsSync(paths.generatedTsPath));
+    expect(fs.existsSync(paths.generatedTsPath)).toBe(true);
     const generatedContent = fs.readFileSync(paths.generatedTsPath, 'utf8');
-    assert.ok(generatedContent.includes(`name: '${testGroupName}'`));
-    assert.ok(generatedContent.includes(`'${testGroupMonsterName}'`));
+    expect(generatedContent).toContain(`name: '${testGroupName}'`);
+    expect(generatedContent).toContain(`'${testGroupMonsterName}'`);
   });
 
   test('POST /api/preview cache hits under concurrent/rapid switching requests', async () => {
@@ -216,9 +215,9 @@ describe('Monster UI Integration Tests (Full Server)', () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ monster: monsterA }),
     });
-    assert.strictEqual(resA1.status, 200);
+    expect(resA1.status).toBe(200);
     const resultA1 = await resA1.json();
-    assert.strictEqual(resultA1.cacheHit, false);
+    expect(resultA1.cacheHit).toBe(false);
 
     // 2. Initial request for Monster B (cold start/miss)
     const resB1 = await fetch(`${baseUrl}/api/preview`, {
@@ -226,9 +225,9 @@ describe('Monster UI Integration Tests (Full Server)', () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ monster: monsterB }),
     });
-    assert.strictEqual(resB1.status, 200);
+    expect(resB1.status).toBe(200);
     const resultB1 = await resB1.json();
-    assert.strictEqual(resultB1.cacheHit, false);
+    expect(resultB1.cacheHit).toBe(false);
 
     // 3. Send rapid concurrent requests for A and B to verify cache hits
     const promises = [];
@@ -254,11 +253,11 @@ describe('Monster UI Integration Tests (Full Server)', () => {
     // Verify all subsequent requests successfully hit the cache and return correct stats
     for (let i = 0; i < results.length; i++) {
       const res = results[i];
-      assert.strictEqual(res.success, true);
-      assert.strictEqual(res.cacheHit, true);
+      expect(res.success).toBe(true);
+      expect(res.cacheHit).toBe(true);
 
       const expectedName = i % 2 === 0 ? monsterA.name : monsterB.name;
-      assert.strictEqual(res.computedStats.name, expectedName);
+      expect(res.computedStats.name).toBe(expectedName);
     }
   });
 
@@ -289,9 +288,9 @@ describe('Monster UI Integration Tests (Full Server)', () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ monster: monsterWithStrikeWarn }),
     });
-    assert.strictEqual(res1.status, 200);
+    expect(res1.status).toBe(200);
     const result1 = await res1.json();
-    assert.ok(result1.warnings.includes(formatMissingWeaponWarning('Basic Strike')));
+    expect(result1.warnings).toContain(formatMissingWeaponWarning('Basic Strike'));
 
     const monsterWithStrikeOk = {
       name: `StrikeOkMonster_${Date.now()}`,
@@ -321,9 +320,9 @@ describe('Monster UI Integration Tests (Full Server)', () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ monster: monsterWithStrikeOk }),
     });
-    assert.strictEqual(res2.status, 200);
+    expect(res2.status).toBe(200);
     const result2 = await res2.json();
-    assert.ok(!result2.warnings.includes(formatMissingWeaponWarning('Basic Strike')));
+    expect(result2.warnings).not.toContain(formatMissingWeaponWarning('Basic Strike'));
 
     const monsterWithDisplayNameStrikeNonWarn = {
       name: `DisplayNameStrikeNonWarn_${Date.now()}`,
@@ -353,9 +352,9 @@ describe('Monster UI Integration Tests (Full Server)', () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ monster: monsterWithDisplayNameStrikeNonWarn }),
     });
-    assert.strictEqual(res3.status, 200);
+    expect(res3.status).toBe(200);
     const result3 = await res3.json();
-    assert.ok(!result3.warnings.includes(formatMissingWeaponWarning('Make Strike')));
+    expect(result3.warnings).not.toContain(formatMissingWeaponWarning('Make Strike'));
   });
 
   test('POST /api/preview validates presence of freeform and shared freeform code warnings', async () => {
@@ -379,9 +378,9 @@ describe('Monster UI Integration Tests (Full Server)', () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ monster: monsterWithFreeform }),
     });
-    assert.strictEqual(res1.status, 200);
+    expect(res1.status).toBe(200);
     const result1 = await res1.json();
-    assert.ok(result1.warnings.includes(formatFreeformCodeWarning(monsterWithFreeform.name)));
+    expect(result1.warnings).toContain(formatFreeformCodeWarning(monsterWithFreeform.name));
 
     const monsterWithSharedFreeform = {
       name: `SharedFreeformMonster_${Date.now()}`,
@@ -406,10 +405,10 @@ describe('Monster UI Integration Tests (Full Server)', () => {
         sharedFreeformCode: 'creature.addCustomSense("Shared Sense");',
       }),
     });
-    assert.strictEqual(res2.status, 200);
+    expect(res2.status).toBe(200);
     const result2 = await res2.json();
-    assert.ok(
-      result2.warnings.includes(formatSharedFreeformCodeWarning(monsterWithSharedFreeform.name)),
+    expect(result2.warnings).toContain(
+      formatSharedFreeformCodeWarning(monsterWithSharedFreeform.name),
     );
   });
 
@@ -419,7 +418,7 @@ describe('Monster UI Integration Tests (Full Server)', () => {
       headers: { 'Content-Type': 'application/json' },
       body: '{"invalid": circular structure or bad json',
     });
-    assert.strictEqual(resPost.status, 400);
+    expect(resPost.status).toBe(400);
   });
 
   test('POST /api/preview validates that a monster has at least one standard action ability', async () => {
@@ -448,10 +447,10 @@ describe('Monster UI Integration Tests (Full Server)', () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ monster: monsterWithNoError }),
     });
-    assert.strictEqual(res1.status, 200);
+    expect(res1.status).toBe(200);
     const result1 = await res1.json();
-    assert.strictEqual(result1.success, true);
-    assert.ok(!result1.warnings.includes(formatNoStandardActionWarning(monsterWithNoError.name)));
+    expect(result1.success).toBe(true);
+    expect(result1.warnings).not.toContain(formatNoStandardActionWarning(monsterWithNoError.name));
 
     const monsterWithError = {
       name: `ErrorMonster_${Date.now()}`,
@@ -472,10 +471,10 @@ describe('Monster UI Integration Tests (Full Server)', () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ monster: monsterWithError }),
     });
-    assert.strictEqual(res2.status, 200);
+    expect(res2.status).toBe(200);
     const result2 = await res2.json();
-    assert.strictEqual(result2.success, true);
-    assert.ok(result2.warnings.includes(formatNoStandardActionWarning(monsterWithError.name)));
+    expect(result2.success).toBe(true);
+    expect(result2.warnings).toContain(formatNoStandardActionWarning(monsterWithError.name));
   });
 
   test('GET /api/settings returns empty object when no settings file exists', async () => {
@@ -484,9 +483,9 @@ describe('Monster UI Integration Tests (Full Server)', () => {
       fs.unlinkSync(paths.settingsPath);
     }
     const res = await fetch(`${baseUrl}/api/settings`);
-    assert.strictEqual(res.status, 200);
+    expect(res.status).toBe(200);
     const settings = await res.json();
-    assert.deepStrictEqual(settings, {});
+    expect(settings).toEqual({});
   });
 
   test('POST /api/settings stores settings persistently', async () => {
@@ -502,14 +501,14 @@ describe('Monster UI Integration Tests (Full Server)', () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(settingsPayload),
     });
-    assert.strictEqual(postRes.status, 200);
+    expect(postRes.status).toBe(200);
     const postResult = await postRes.json();
-    assert.strictEqual(postResult.success, true);
+    expect(postResult.success).toBe(true);
 
     // Retrieve settings and assert correctness
     const getRes = await fetch(`${baseUrl}/api/settings`);
-    assert.strictEqual(getRes.status, 200);
+    expect(getRes.status).toBe(200);
     const retrievedSettings = await getRes.json();
-    assert.deepStrictEqual(retrievedSettings, settingsPayload);
+    expect(retrievedSettings).toEqual(settingsPayload);
   });
 });

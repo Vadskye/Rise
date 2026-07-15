@@ -1,7 +1,6 @@
 import './setup-env';
 
-import { test, describe, before, after } from 'node:test';
-import assert from 'node:assert';
+import { test, describe, beforeAll, afterAll, expect } from 'vitest';
 import * as fs from 'fs';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
@@ -22,7 +21,7 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
   let baseUrl: string;
   let browser: Browser;
 
-  before(async () => {
+  beforeAll(async () => {
     // setup-env.ts already configured isolated temp-file paths before this module loaded.
     // No copy needed — getDb() creates an empty database if none exists.
 
@@ -63,7 +62,7 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
     });
   });
 
-  after(async () => {
+  afterAll(async () => {
     console.log('Cleaning up E2E test servers and files...');
     if (browser) {
       await browser.close();
@@ -103,8 +102,8 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
     const addMonsterBtn = await page.waitForSelector('[data-testid="add-individual-btn"]', {
       timeout: 5000,
     });
-    assert.ok(addMonsterBtn, 'Add Monster button should exist');
-    await addMonsterBtn.click();
+    expect(addMonsterBtn).toBeDefined();
+    await addMonsterBtn!.click();
 
     // Allow database saving to complete for the initial "New Monster X" creation
     await new Promise((resolve) => setTimeout(resolve, 500));
@@ -113,11 +112,11 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
     const nameInput = await page.waitForSelector('[data-testid="monster-name-input"]', {
       timeout: 5000,
     });
-    assert.ok(nameInput, 'Monster Name input should exist');
+    expect(nameInput).toBeDefined();
     await page.$eval('[data-testid="monster-name-input"]', (el) =>
       (el as HTMLInputElement).select(),
     );
-    await nameInput.type('Integration Gargoyle', { delay: 30 });
+    await nameInput!.type('Integration Gargoyle', { delay: 30 });
     await new Promise((resolve) => setTimeout(resolve, 500)); // wait for React name state to propagate
 
     // 3. Set required properties
@@ -147,11 +146,11 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
     const codeArea = await page.waitForSelector('[data-testid="freeform-code-textarea"]', {
       timeout: 5000,
     });
-    assert.ok(codeArea, 'Freeform Code textarea should exist');
+    expect(codeArea).toBeDefined();
     await page.$eval('[data-testid="freeform-code-textarea"]', (el) =>
       (el as HTMLTextAreaElement).select(),
     );
-    await codeArea.type('// Gargoyle custom script\ncreature.addTrait("scent");', { delay: 10 });
+    await codeArea!.type('// Gargoyle custom script\ncreature.addTrait("scent");', { delay: 10 });
     await new Promise((resolve) => setTimeout(resolve, 1200));
 
     // 5. Wait for autosave to complete (save-status becomes 'Saved')
@@ -175,54 +174,35 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
 
     const previewTitleText = await page.$eval('.monster-title', (el) => el.textContent);
     console.log('Book Preview Title Text:', previewTitleText);
-    assert.ok(
-      previewTitleText?.includes('Integration Gargoyle'),
-      'Preview title should contain monster name',
-    );
-    assert.ok(previewTitleText?.includes('Level 5'), 'Preview title should contain level');
+    expect(previewTitleText).toContain('Integration Gargoyle');
+    expect(previewTitleText).toContain('Level 5');
 
     const previewOriginTypeText = await page.$eval('.monster-origin-type', (el) => el.textContent);
     console.log('Book Preview Origin/Type Text:', previewOriginTypeText);
-    assert.ok(
-      previewOriginTypeText?.includes('Large natural brute'),
-      'Preview should contain size, origin, and base class/role',
-    );
+    expect(previewOriginTypeText).toContain('Large natural brute');
 
     const firstStatLineText = await page.$eval('.stat-block .stat-line', (el) => el.textContent);
     console.log('Book Preview First Stat Line Text:', firstStatLineText);
-    assert.ok(
-      firstStatLineText?.includes('Types:aberration, beast') ||
-        firstStatLineText?.includes('Types: aberration, beast'),
-      'Preview first stat line should contain sorted creature types',
-    );
+    expect(firstStatLineText).toContain('aberration, beast');
 
     // 7. Verify the actual files saved to disk
     // Verify JSON database contains the new monster with the custom freeform code
     const dbRaw = fs.readFileSync(paths.dbPath, 'utf8');
     const dbJson = JSON.parse(dbRaw);
     const savedMonster = dbJson.monsters.find((m: any) => m.name === 'Integration Gargoyle');
-    assert.ok(savedMonster, 'Database JSON should contain the new monster');
-    assert.strictEqual(savedMonster.requiredProperties.alignment, 'neutral');
-    assert.strictEqual(savedMonster.requiredProperties.base_class, 'brute');
-    assert.strictEqual(savedMonster.requiredProperties.level, 5);
-    assert.strictEqual(savedMonster.requiredProperties.creature_origin, 'natural');
-    assert.deepStrictEqual(savedMonster.requiredProperties.creature_types, ['aberration', 'beast']);
-    assert.strictEqual(savedMonster.requiredProperties.size, 'large');
-    assert.ok(
-      savedMonster.freeformCode.includes('// Gargoyle custom script'),
-      'Database JSON should contain freeform code',
-    );
+    expect(savedMonster).toBeDefined();
+    expect(savedMonster.requiredProperties.alignment).toBe('neutral');
+    expect(savedMonster.requiredProperties.base_class).toBe('brute');
+    expect(savedMonster.requiredProperties.level).toBe(5);
+    expect(savedMonster.requiredProperties.creature_origin).toBe('natural');
+    expect(savedMonster.requiredProperties.creature_types).toEqual(['aberration', 'beast']);
+    expect(savedMonster.requiredProperties.size).toBe('large');
+    expect(savedMonster.freeformCode).toContain('// Gargoyle custom script');
 
     // Verify generated TypeScript file
     const generatedTs = fs.readFileSync(paths.generatedTsPath, 'utf8');
-    assert.ok(
-      generatedTs.includes("grimoire.addMonster('Integration Gargoyle'"),
-      'Generated TS should register the monster',
-    );
-    assert.ok(
-      generatedTs.includes("creature.addTrait('scent')"),
-      'Generated TS should translate the freeform code trait addition',
-    );
+    expect(generatedTs).toContain("grimoire.addMonster('Integration Gargoyle'");
+    expect(generatedTs).toContain("creature.addTrait('scent')");
 
     await page.close();
   });
@@ -242,7 +222,7 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
     const addMonsterBtn = await page.waitForSelector('[data-testid="add-individual-btn"]', {
       timeout: 5000,
     });
-    await addMonsterBtn.click();
+    await addMonsterBtn!.click();
     await new Promise((resolve) => setTimeout(resolve, 500));
 
     let nameInput = await page.waitForSelector('[data-testid="monster-name-input"]', {
@@ -251,38 +231,38 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
     await page.$eval('[data-testid="monster-name-input"]', (el) =>
       (el as HTMLInputElement).select(),
     );
-    await nameInput.type('Troll', { delay: 30 });
+    await nameInput!.type('Troll', { delay: 30 });
     await new Promise((resolve) => setTimeout(resolve, 300));
 
     await page.select('[data-testid="folder-select"]', '__new_folder__');
     let folderInput = await page.waitForSelector('[data-testid="folder-input"]', { timeout: 5000 });
-    await folderInput.type('Test Folder', { delay: 30 });
+    await folderInput!.type('Test Folder', { delay: 30 });
     await new Promise((resolve) => setTimeout(resolve, 300));
 
     // 2. Add a new group named "Orcs" in folder "Test Folder"
     const addGroupBtn = await page.waitForSelector('[data-testid="add-group-btn"]', {
       timeout: 5000,
     });
-    await addGroupBtn.click();
+    await addGroupBtn!.click();
     await new Promise((resolve) => setTimeout(resolve, 500));
 
     let groupNameInput = await page.waitForSelector('#group-name', { timeout: 5000 });
     await page.$eval('#group-name', (el) => (el as HTMLInputElement).select());
-    await groupNameInput.type('Orcs', { delay: 30 });
+    await groupNameInput!.type('Orcs', { delay: 30 });
     await new Promise((resolve) => setTimeout(resolve, 300));
 
     let groupFolderInput = await page.waitForSelector('[data-testid="group-folder-input"]', {
       timeout: 5000,
     });
-    await groupFolderInput.type('Test Folder', { delay: 30 });
+    await groupFolderInput!.type('Test Folder', { delay: 30 });
     await new Promise((resolve) => setTimeout(resolve, 1200)); // wait for autosave
 
     // 3. Verify they are rendered inside folder "Test Folder" in the sidebar
     // Folder header should exist
     const folderHeader = await page.waitForSelector('.folder-header', { timeout: 5000 });
-    assert.ok(folderHeader, 'Folder header should be rendered');
+    expect(folderHeader).toBeDefined();
     const folderText = await page.$eval('.folder-header', (el) => el.textContent);
-    assert.ok(folderText?.includes('Test Folder'), 'Folder header should say "Test Folder"');
+    expect(folderText).toContain('Test Folder');
 
     // Verify children elements are rendered and alphabetized: Orcs (starts with O) should be before Troll (starts with T)
     const childrenNames = await page.$$eval(
@@ -292,11 +272,10 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
     console.log('Folder children in UI:', childrenNames);
 
     // Clean up unicode zero-width spaces or other noise if any, and assert
-    assert.deepStrictEqual(
-      childrenNames.map((n) => n.replace(/[\u200B-\u200D\uFEFF]/g, '')),
-      ['👥 Orcs', '👤 Troll'],
-      'Children should be grouped, alphabetized, and use correct icons',
-    );
+    expect(childrenNames.map((n) => n.replace(/[\u200B-\u200D\uFEFF]/g, ''))).toEqual([
+      '👥 Orcs',
+      '👤 Troll',
+    ]);
 
     await page.close();
   });

@@ -1,7 +1,6 @@
 import './setup-env';
 
-import { test, describe, before, after } from 'node:test';
-import assert from 'node:assert';
+import { test, describe, beforeAll, afterAll, expect } from 'vitest';
 import * as fs from 'fs';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
@@ -22,7 +21,7 @@ describe('Monster UI Tab Layout Tests', () => {
   let baseUrl: string;
   let browser: Browser;
 
-  before(async () => {
+  beforeAll(async () => {
     // setup-env.ts already configured isolated temp-file paths before this module loaded.
     // Seed one minimal monster so the sidebar has a .list-item to interact with.
     saveDb({
@@ -82,7 +81,7 @@ describe('Monster UI Tab Layout Tests', () => {
     });
   });
 
-  after(async () => {
+  afterAll(async () => {
     console.log('Cleaning up servers and files...');
     if (browser) {
       await browser.close();
@@ -121,7 +120,7 @@ describe('Monster UI Tab Layout Tests', () => {
     // Select the first monster from the sidebar to open the form
     await page.waitForSelector('.list-item', { timeout: 5000 });
     const listItems = await page.$$('.list-item');
-    assert.ok(listItems.length > 0, 'Should have at least one monster in the sidebar list');
+    expect(listItems.length).toBeGreaterThan(0);
     await listItems[0].click();
 
     // Wait for form tabs to render
@@ -147,8 +146,8 @@ describe('Monster UI Tab Layout Tests', () => {
         }
       }
 
-      assert.ok(targetButton, `Should find tab button for "${tabName}"`);
-      await targetButton.click();
+      expect(targetButton).toBeDefined();
+      await targetButton!.click();
 
       // Allow minor delay for animations or render updates
       await new Promise((resolve) => setTimeout(resolve, 300));
@@ -165,7 +164,7 @@ describe('Monster UI Tab Layout Tests', () => {
       console.log(`Tab: "${tabName}", Bounding Height: ${tabsHeight}px`);
 
       // Ensure height is not collapsed (should be around 36px, definitely > 30px)
-      assert.ok(tabsHeight > 30, `Tab bar collapsed to ${tabsHeight}px on "${tabName}" tab`);
+      expect(tabsHeight).toBeGreaterThan(30);
     }
 
     await page.close();
