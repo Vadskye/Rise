@@ -60,15 +60,15 @@ export const GroupForm: React.FC<GroupFormProps> = ({
         </datalist>
       </div>
 
-      <div className="form-checkbox-row">
+      <label className="form-checkbox-row" htmlFor="group-art">
         <input
           id="group-art"
           type="checkbox"
           checked={groupData.hasArt}
           onChange={(e) => onChangeGroup({ ...groupData, hasArt: e.target.checked })}
         />
-        <label htmlFor="group-art">Group Has Art</label>
-      </div>
+        <span>Group Has Art</span>
+      </label>
 
       <div className="form-group">
         <label htmlFor="group-desc">Group Description</label>

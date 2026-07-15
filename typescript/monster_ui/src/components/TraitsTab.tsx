@@ -223,17 +223,17 @@ export const TraitsTab = <T extends SharedEditableProperties>({
         {standardTraits
           .filter((t) => t.includes(traitSearch.toLowerCase()))
           .map((trait) => (
-            <div key={trait} className="form-checkbox-row">
+            <label key={trait} className="form-checkbox-row" htmlFor={`trait-${trait}`}>
               <input
                 id={`trait-${trait}`}
                 type="checkbox"
                 checked={traits.includes(trait)}
                 onChange={() => toggleTrait(trait)}
               />
-              <label htmlFor={`trait-${trait}`} className={traits.includes(trait) ? 'checked' : ''}>
+              <span className={traits.includes(trait) ? 'checked' : ''}>
                 {trait}
-              </label>
-            </div>
+              </span>
+            </label>
           ))}
       </div>
 
