@@ -14,6 +14,8 @@ interface ComboboxProps {
   searchPlaceholder?: string;
   emptyMessage?: string;
   className?: string;
+  id?: string;
+  'data-testid'?: string;
 }
 
 export const Combobox: React.FC<ComboboxProps> = ({
@@ -24,6 +26,8 @@ export const Combobox: React.FC<ComboboxProps> = ({
   searchPlaceholder = 'Search...',
   emptyMessage = 'No options found',
   className = '',
+  id,
+  'data-testid': dataTestId,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [search, setSearch] = useState('');
@@ -156,6 +160,20 @@ export const Combobox: React.FC<ComboboxProps> = ({
         <span className="combobox-trigger-text">{displayLabel}</span>
         <span className="chevron">{isOpen ? '▲' : '▼'}</span>
       </button>
+      <select
+        id={id}
+        data-testid={dataTestId}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        style={{ display: 'none' }}
+      >
+        <option value="">{placeholder}</option>
+        {options.map((opt) => (
+          <option key={opt.value} value={opt.value}>
+            {opt.label}
+          </option>
+        ))}
+      </select>
       {dropdown}
     </div>
   );
