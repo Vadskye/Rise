@@ -44,7 +44,7 @@
     "ritual_ranks": "tsx src/scripts/ritual_rank_breakdown.ts",
     "spell_roles": "tsx src/scripts/spell_role_breakdown.ts",
     "tap": "npm run test",
-    "test": "npm run build:test && npx tap dist-test/**/*.test.js",
+    "test": "npm run build:test && npx vitest",
     "test:file": "npm run build:test && npx tap",
     "prettier": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint \"src/**/*.ts\"",

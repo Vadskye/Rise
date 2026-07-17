@@ -142,16 +142,19 @@ export const App: React.FC = () => {
     ])
       .then(([dbData, settingsData]: [DatabaseData, AppSettings]) => {
         setDb(dbData);
-        
+
         let initialSelection: SidebarSelection = null;
-        if (settingsData.lastActiveSelection && isValidSelection(settingsData.lastActiveSelection, dbData)) {
+        if (
+          settingsData.lastActiveSelection &&
+          isValidSelection(settingsData.lastActiveSelection, dbData)
+        ) {
           initialSelection = settingsData.lastActiveSelection;
         } else if (dbData.monsters.length > 0) {
           initialSelection = { type: 'monster', name: dbData.monsters[0].name };
         } else if (dbData.monsterGroups.length > 0) {
           initialSelection = { type: 'group', name: dbData.monsterGroups[0].name };
         }
-        
+
         setActiveSelection(initialSelection);
         setIsInitialLoadComplete(true);
       })

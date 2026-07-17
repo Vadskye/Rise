@@ -536,27 +536,228 @@
       "sharedFreeformCode": "",
       "monsters": [
         {
-          "name": "New Member 1",
+          "name": "Bugbear Raider",
           "requiredProperties": {
-            "alignment": "",
-            "base_class": "",
+            "alignment": "chaotic evil",
+            "base_class": "warrior",
             "elite": false,
-            "creature_origin": "",
-            "creature_types": [],
-            "size": "",
-            "level": 0
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 4
           },
-          "freeformCode": ""
+          "freeformCode": "",
+          "trainedSkills": [
+            "endurance"
+          ],
+          "equippedArmor": "rawhide",
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Grapple",
+              "options": {
+                "isMagical": false
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Piledriver",
+              "options": {
+                "isMagical": false
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "flail"
+              }
+            }
+          ],
+          "baseAttributes": [
+            2,
+            0,
+            5,
+            -2,
+            0,
+            2
+          ]
+        },
+        {
+          "name": "Bugbear Shaman",
+          "requiredProperties": {
+            "alignment": "chaotic evil",
+            "base_class": "leader",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 4
+          },
+          "freeformCode": "",
+          "properties": {
+            "has_art": false
+          },
+          "trainedSkills": [
+            "awareness",
+            "endurance"
+          ],
+          "equippedArmor": "rawhide",
+          "equippedShield": "standard shield",
+          "standardAbilities": [
+            {
+              "type": "spell",
+              "name": "Mind Crush",
+              "options": {
+                "isMagical": true
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Taunt",
+              "options": {
+                "isMagical": true
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Repeat",
+              "options": {
+                "isMagical": true
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "flail"
+              }
+            }
+          ],
+          "baseAttributes": [
+            1,
+            0,
+            5,
+            -2,
+            2,
+            4
+          ]
+        },
+        {
+          "name": "Bugbear Growl",
+          "requiredProperties": {
+            "alignment": "lawful evil",
+            "base_class": "warrior",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 2
+          },
+          "freeformCode": "",
+          "equippedArmor": "rawhide",
+          "baseAttributes": [
+            2,
+            0,
+            4,
+            -2,
+            0,
+            1
+          ],
+          "trainedSkills": [
+            "endurance",
+            "intimidate"
+          ],
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Piledriver",
+              "options": {
+                "isMagical": false
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Grapple",
+              "options": {
+                "isMagical": false
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "flail"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Bugbear Chief",
+          "requiredProperties": {
+            "alignment": "chaotic evil",
+            "base_class": "leader",
+            "elite": true,
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 6
+          },
+          "freeformCode": "",
+          "equippedArmor": "brigandine",
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "heavy flail"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Weather the Storm",
+              "options": {
+                "isMagical": false,
+                "usageTime": "elite"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Invigoration",
+              "options": {
+                "isMagical": false,
+                "usageTime": "elite"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "javelin"
+              }
+            }
+          ]
         }
       ],
-      "folder": "Uncivilized Humanoids"
-    },
-    {
-      "name": "New Group 5",
-      "hasArt": false,
-      "sharedFreeformCode": "",
-      "monsters": [],
-      "folder": "Civilized Humanoids"
+      "folder": "Uncivilized Humanoids",
+      "knowledge": {
+        "normal": "Bugbears are Medium humanoid creatures with burly, hairy bodies and ugly goblin faces. They are brutish and chaotic, and enjoy bullying their goblin kin.",
+        "hard": "Although bugbears have only ordinary physical strength, they are remarkably durable. Their name comes from their hirstute nature and inexhaustible endurance, both of which are reminiscent of bears. They enjoy wrestling, and tend to grapple their foes in combat, even when doing so is not tactically advantageous.",
+        "legendary": "Bugbears are typically found in small packs that rarely have more than a dozen members. However, sometimes they will congregate around a powerful leader for a time. These groupings are not hierarchical or well organized, and are typically based around some discovery of wealth that a chief can ration out to their followers."
+      }
     }
   ],
   "folders": []

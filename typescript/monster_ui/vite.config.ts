@@ -21,8 +21,19 @@ export default defineConfig({
     },
   },
   test: {
+    experimental: {
+      importDurations: {
+        print: true,
+      },
+    },
     include: ['tests/**/*.test.ts'],
     fileParallelism: false,
+    execArgv: [
+      '--cpu-prof',
+      '--cpu-prof-dir=test-runner-profile',
+      '--heap-prof',
+      '--heap-prof-dir=test-runner-profile',
+    ],
     testTimeout: 30000,
     hookTimeout: 30000,
   },
