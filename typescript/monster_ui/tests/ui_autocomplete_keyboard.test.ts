@@ -1,11 +1,12 @@
 import './setup-env';
 
-import { test, describe, beforeAll, afterAll, expect } from 'vitest';
+import { test, describe, beforeAll, afterAll, expect, beforeEach } from 'vitest';
 import * as fs from 'fs';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
 import http from 'http';
-import puppeteer, { Browser } from 'puppeteer';
+import puppeteer, { Browser, Page } from 'puppeteer';
+import { captureFailure } from './helpers';
 import { createServer, ViteDevServer } from 'vite';
 import { paths, saveDb } from '../server/db';
 
@@ -20,6 +21,7 @@ describe('Autocomplete Keyboard Navigation Tests', () => {
   let viteServer: ViteDevServer;
   let baseUrl: string;
   let browser: Browser;
+  let page: Page;
 
   beforeAll(async () => {
     // Seed one minimal monster so we have something to select
@@ -78,6 +80,23 @@ describe('Autocomplete Keyboard Navigation Tests', () => {
     });
   });
 
+  beforeEach(async (context) => {
+    page = await browser.newPage();
+    await page.setViewport({ width: 1400, height: 900 });
+
+    page.on('pageerror', (err: any) => {
+      // Don't throw on standard preview validation warnings/errors from incorrect/missing weapons
+      console.warn(`Browser console page error (ignored for validation): ${err.message}`);
+    });
+
+    context.onTestFinished(async () => {
+      if (context.task.result?.state === 'fail') {
+        await captureFailure(page, context.task.name);
+      }
+      await page.close();
+    });
+  });
+
   afterAll(async () => {
     if (browser) {
       await browser.close();
@@ -98,14 +117,6 @@ describe('Autocomplete Keyboard Navigation Tests', () => {
   });
 
   test('Keyboard navigation: arrow down, up, and enter selection in maneuvers input', async () => {
-    const page = await browser.newPage();
-    await page.setViewport({ width: 1400, height: 900 });
-
-    page.on('pageerror', (err: any) => {
-      // Don't throw on standard preview validation warnings/errors from incorrect/missing weapons
-      console.warn(`Browser console page error (ignored for validation): ${err.message}`);
-    });
-
     await page.goto(baseUrl, { waitUntil: 'networkidle2' });
     await page.waitForSelector('.sidebar', { timeout: 5000 });
 
@@ -171,6 +182,5 @@ describe('Autocomplete Keyboard Navigation Tests', () => {
     const addedSelectedOption = abilityCards.some((name) => name.includes(secondOptionName));
     expect(addedSelectedOption).toBe(true);
 
-    await page.close();
   });
 });

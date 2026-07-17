@@ -1,11 +1,12 @@
 import './setup-env';
 
-import { test, describe, beforeAll, afterAll, expect } from 'vitest';
+import { test, describe, beforeAll, afterAll, expect, beforeEach } from 'vitest';
 import * as fs from 'fs';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
 import http from 'http';
-import puppeteer, { Browser } from 'puppeteer';
+import puppeteer, { Browser, Page } from 'puppeteer';
+import { captureFailure } from './helpers';
 import { createServer, ViteDevServer } from 'vite';
 import { paths, saveDb } from '../server/db';
 
@@ -20,6 +21,7 @@ describe('Monster UI Debounce/Timing Tests', () => {
   let viteServer: ViteDevServer;
   let baseUrl: string;
   let browser: Browser;
+  let page: Page;
 
   beforeAll(async () => {
     // setup-env.ts already configured isolated temp-file paths before this module loaded.
@@ -79,6 +81,22 @@ describe('Monster UI Debounce/Timing Tests', () => {
     });
   });
 
+  beforeEach(async (context) => {
+    page = await browser.newPage();
+    await page.setViewport({ width: 1400, height: 900 });
+
+    page.on('pageerror', (err: any) => {
+      throw new Error(`Browser console error: ${err.message}`);
+    });
+
+    context.onTestFinished(async () => {
+      if (context.task.result?.state === 'fail') {
+        await captureFailure(page, context.task.name);
+      }
+      await page.close();
+    });
+  });
+
   afterAll(async () => {
     console.log('Cleaning up Debounce test servers and files...');
     if (browser) {
@@ -101,12 +119,6 @@ describe('Monster UI Debounce/Timing Tests', () => {
   });
 
   test('Toggle trained skill checkbox and observe reload timings', async () => {
-    const page = await browser.newPage();
-    await page.setViewport({ width: 1400, height: 900 });
-
-    page.on('pageerror', (err: any) => {
-      throw new Error(`Browser console error: ${err.message}`);
-    });
 
     page.on('console', (msg) => {
       console.log(`[PAGE LOG] ${msg.text()}`);
@@ -164,6 +176,5 @@ describe('Monster UI Debounce/Timing Tests', () => {
     console.log(`Phase 1 preview requests: ${requestTimes.length}`);
     expect(requestTimes.length).toBe(3);
 
-    await page.close();
   });
 });

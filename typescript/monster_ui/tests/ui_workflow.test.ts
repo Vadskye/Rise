@@ -1,11 +1,12 @@
 import './setup-env';
 
-import { test, describe, beforeAll, afterAll, expect } from 'vitest';
+import { test, describe, beforeAll, afterAll, expect, beforeEach } from 'vitest';
 import * as fs from 'fs';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
 import http from 'http';
-import puppeteer, { Browser } from 'puppeteer';
+import puppeteer, { Browser, Page } from 'puppeteer';
+import { captureFailure } from './helpers';
 import { createServer, ViteDevServer } from 'vite';
 import { paths } from '../server/db';
 
@@ -20,6 +21,7 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
   let viteServer: ViteDevServer;
   let baseUrl: string;
   let browser: Browser;
+  let page: Page;
 
   beforeAll(async () => {
     // setup-env.ts already configured isolated temp-file paths before this module loaded.
@@ -62,6 +64,22 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
     });
   });
 
+  beforeEach(async (context) => {
+    page = await browser.newPage();
+    await page.setViewport({ width: 1400, height: 900 });
+
+    page.on('pageerror', (err: any) => {
+      throw new Error(`Browser console error: ${err.message}`);
+    });
+
+    context.onTestFinished(async () => {
+      if (context.task.result?.state === 'fail') {
+        await captureFailure(page, context.task.name);
+      }
+      await page.close();
+    });
+  });
+
   afterAll(async () => {
     console.log('Cleaning up E2E test servers and files...');
     if (browser) {
@@ -84,13 +102,6 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
   });
 
   test('Create, edit, save, and preview a new monster', async () => {
-    const page = await browser.newPage();
-    await page.setViewport({ width: 1400, height: 900 });
-
-    // Handle console errors or uncaught page exceptions
-    page.on('pageerror', (err: any) => {
-      throw new Error(`Browser console error: ${err.message}`);
-    });
 
     // Navigate to UI
     await page.goto(baseUrl, { waitUntil: 'networkidle2' });
@@ -204,16 +215,9 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
     expect(generatedTs).toContain("grimoire.addMonster('Integration Gargoyle'");
     expect(generatedTs).toContain("creature.addTrait('scent')");
 
-    await page.close();
   });
 
   test('Verify Folder System and Sorting in Sidebar', async () => {
-    const page = await browser.newPage();
-    await page.setViewport({ width: 1400, height: 900 });
-
-    page.on('pageerror', (err: any) => {
-      throw new Error(`Browser console error: ${err.message}`);
-    });
 
     await page.goto(baseUrl, { waitUntil: 'networkidle2' });
     await page.waitForSelector('.sidebar', { timeout: 5000 });
@@ -276,6 +280,5 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
       childrenNames.map((n) => n.replace(/[\u200B-\u200D\uFEFF]/g, '').replace(/^▶\s*/, '')),
     ).toEqual(['👥 Orcs', '👤 Troll']);
 
-    await page.close();
   });
 });

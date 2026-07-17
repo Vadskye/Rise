@@ -1,11 +1,12 @@
 import './setup-env';
 
-import { test, describe, beforeAll, afterAll, expect } from 'vitest';
+import { test, describe, beforeAll, afterAll, expect, beforeEach } from 'vitest';
 import * as fs from 'fs';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
 import http from 'http';
-import puppeteer, { Browser } from 'puppeteer';
+import puppeteer, { Browser, Page } from 'puppeteer';
+import { captureFailure } from './helpers';
 import { createServer, ViteDevServer } from 'vite';
 import { paths } from '../server/db';
 
@@ -20,6 +21,7 @@ describe('Monster UI Delete Undo Integration Tests', () => {
   let viteServer: ViteDevServer;
   let baseUrl: string;
   let browser: Browser;
+  let page: Page;
 
   beforeAll(async () => {
     // 1. Start Express Server on random port
@@ -59,6 +61,22 @@ describe('Monster UI Delete Undo Integration Tests', () => {
     });
   });
 
+  beforeEach(async (context) => {
+    page = await browser.newPage();
+    await page.setViewport({ width: 1400, height: 900 });
+
+    page.on('pageerror', (err: any) => {
+      throw new Error(`Browser console error: ${err.message}`);
+    });
+
+    context.onTestFinished(async () => {
+      if (context.task.result?.state === 'fail') {
+        await captureFailure(page, context.task.name);
+      }
+      await page.close();
+    });
+  });
+
   afterAll(async () => {
     console.log('Cleaning up E2E test servers and files...');
     if (browser) {
@@ -81,13 +99,6 @@ describe('Monster UI Delete Undo Integration Tests', () => {
   });
 
   test('Delete individual monster, undo deletion, and verify restoration', async () => {
-    const page = await browser.newPage();
-    await page.setViewport({ width: 1400, height: 900 });
-
-    // Handle console errors or uncaught page exceptions
-    page.on('pageerror', (err: any) => {
-      throw new Error(`Browser console error: ${err.message}`);
-    });
 
     // Navigate to UI
     await page.goto(baseUrl, { waitUntil: 'networkidle2' });
@@ -164,16 +175,9 @@ describe('Monster UI Delete Undo Integration Tests', () => {
     // Verify name input is visible again (meaning it selected the restored monster)
     await page.waitForSelector('[data-testid="monster-name-input"]', { timeout: 2000 });
 
-    await page.close();
   });
 
   test('Delete group and group monster, verify undo', async () => {
-    const page = await browser.newPage();
-    await page.setViewport({ width: 1400, height: 900 });
-
-    page.on('pageerror', (err: any) => {
-      throw new Error(`Browser console error: ${err.message}`);
-    });
 
     await page.goto(baseUrl, { waitUntil: 'networkidle2' });
     await page.waitForSelector('.sidebar', { timeout: 5000 });
@@ -290,6 +294,5 @@ describe('Monster UI Delete Undo Integration Tests', () => {
     );
     expect(groupMonsterItem).toBeTruthy();
 
-    await page.close();
   });
 });
