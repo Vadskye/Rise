@@ -11,8 +11,8 @@ interface MonsterSidebarProps {
   db: DatabaseData;
   activeSelection: SidebarSelection;
   onSelect: (selection: SidebarSelection) => void;
-  onAddMonster: () => void;
-  onAddGroup: () => void;
+  onAddMonster: (folder?: string) => void;
+  onAddGroup: (folder?: string) => void;
   onAddMonsterToGroup: (groupName: string) => void;
   onDeleteMonster: (name: string) => void;
   onDeleteGroup: (name: string) => void;
@@ -184,6 +184,28 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
               </div>
               {isExpanded && (
                 <div className="folder-children">
+                  <div className="folder-inline-actions">
+                    <button
+                      data-testid={`add-monster-to-folder-${folderName}`}
+                      title="New monster in folder"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onAddMonster(folderName);
+                      }}
+                    >
+                      👤 + Monster
+                    </button>
+                    <button
+                      data-testid={`add-group-to-folder-${folderName}`}
+                      title="New group in folder"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onAddGroup(folderName);
+                      }}
+                    >
+                      👥 + Group
+                    </button>
+                  </div>
                   {folderChildren.map((child) => {
                     if (child.type === 'monster') {
                       const monster = child.data;
@@ -444,10 +466,10 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
       </div>
 
       <div className="sidebar-footer">
-        <button data-testid="add-individual-btn" onClick={onAddMonster}>
+        <button data-testid="add-individual-btn" onClick={() => onAddMonster()}>
           👤 New Individual
         </button>
-        <button data-testid="add-group-btn" onClick={onAddGroup}>
+        <button data-testid="add-group-btn" onClick={() => onAddGroup()}>
           👥 New Group
         </button>
         <button

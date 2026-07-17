@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
 
 interface WeaponComboboxProps {
@@ -19,7 +19,7 @@ export const WeaponCombobox: React.FC<WeaponComboboxProps> = ({
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   // Position the portal dropdown relative to the trigger button
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (isOpen && triggerRef.current) {
       const rect = triggerRef.current.getBoundingClientRect();
       setDropdownStyle({
@@ -28,6 +28,8 @@ export const WeaponCombobox: React.FC<WeaponComboboxProps> = ({
         left: rect.left,
         zIndex: 9999,
       });
+    } else {
+      setDropdownStyle({});
     }
   }, [isOpen]);
 
@@ -71,7 +73,7 @@ export const WeaponCombobox: React.FC<WeaponComboboxProps> = ({
     }
   };
 
-  const dropdown = isOpen
+  const dropdown = isOpen && dropdownStyle.position
     ? ReactDOM.createPortal(
         <div
           className="weapon-combobox-dropdown"
