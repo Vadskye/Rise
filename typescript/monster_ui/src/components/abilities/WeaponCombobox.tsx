@@ -54,9 +54,7 @@ export const WeaponCombobox: React.FC<WeaponComboboxProps> = ({
     };
   }, [isOpen]);
 
-  const filteredWeapons = weapons.filter((w) =>
-    w.toLowerCase().includes(search.toLowerCase())
-  );
+  const filteredWeapons = weapons.filter((w) => w.toLowerCase().includes(search.toLowerCase()));
 
   const handleSelect = (w: string | undefined) => {
     onSelect(w);
@@ -73,53 +71,62 @@ export const WeaponCombobox: React.FC<WeaponComboboxProps> = ({
     }
   };
 
-  const dropdown = isOpen && dropdownStyle.position
-    ? ReactDOM.createPortal(
-        <div
-          className="weapon-combobox-dropdown"
-          ref={dropdownRef}
-          style={dropdownStyle}
-          onClick={(e) => e.stopPropagation()}
-        >
-          <input
-            type="text"
-            className="weapon-combobox-search"
-            placeholder="Search weapons..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            onKeyDown={handleKeyDown}
-            autoFocus
-          />
-          <div className="weapon-combobox-list-container">
-            <div className="weapon-combobox-grid">
-              <button
-                type="button"
-                className={`weapon-btn clear-btn ${!selectedWeapon ? 'selected' : ''}`}
-                onClick={() => handleSelect(undefined)}
-              >
-                -- No Weapon --
-              </button>
-              {filteredWeapons.map((w) => (
+  const dropdown =
+    isOpen && dropdownStyle.position
+      ? ReactDOM.createPortal(
+          <div
+            className="weapon-combobox-dropdown"
+            ref={dropdownRef}
+            style={dropdownStyle}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <input
+              type="text"
+              className="weapon-combobox-search"
+              placeholder="Search weapons..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              onKeyDown={handleKeyDown}
+              autoFocus
+            />
+            <div className="weapon-combobox-list-container">
+              <div className="weapon-combobox-grid">
                 <button
-                  key={w}
                   type="button"
-                  className={`weapon-btn ${selectedWeapon === w ? 'selected' : ''}`}
-                  onClick={() => handleSelect(w)}
+                  className={`weapon-btn clear-btn ${!selectedWeapon ? 'selected' : ''}`}
+                  onClick={() => handleSelect(undefined)}
                 >
-                  {w}
+                  -- No Weapon --
                 </button>
-              ))}
-              {filteredWeapons.length === 0 && (
-                <div style={{ gridColumn: 'span 2', textAlign: 'center', fontSize: '0.75rem', padding: '10px', color: 'var(--text-muted)' }}>
-                  No matching weapons
-                </div>
-              )}
+                {filteredWeapons.map((w) => (
+                  <button
+                    key={w}
+                    type="button"
+                    className={`weapon-btn ${selectedWeapon === w ? 'selected' : ''}`}
+                    onClick={() => handleSelect(w)}
+                  >
+                    {w}
+                  </button>
+                ))}
+                {filteredWeapons.length === 0 && (
+                  <div
+                    style={{
+                      gridColumn: 'span 2',
+                      textAlign: 'center',
+                      fontSize: '0.75rem',
+                      padding: '10px',
+                      color: 'var(--text-muted)',
+                    }}
+                  >
+                    No matching weapons
+                  </div>
+                )}
+              </div>
             </div>
-          </div>
-        </div>,
-        document.body
-      )
-    : null;
+          </div>,
+          document.body,
+        )
+      : null;
 
   return (
     <div className="weapon-combobox-container" onClick={(e) => e.stopPropagation()}>

@@ -86,7 +86,7 @@ export const Combobox: React.FC<ComboboxProps> = ({
 
   // Filter options based on search query
   const filteredOptions = options.filter((option) =>
-    option.label.toLowerCase().includes(search.toLowerCase())
+    option.label.toLowerCase().includes(search.toLowerCase()),
   );
 
   const handleSelect = (val: string) => {
@@ -108,46 +108,45 @@ export const Combobox: React.FC<ComboboxProps> = ({
   const selectedOption = options.find((opt) => opt.value === value);
   const displayLabel = selectedOption ? selectedOption.label : placeholder;
 
-  const dropdown = isOpen && dropdownStyle.position
-    ? ReactDOM.createPortal(
-        <div
-          className="combobox-dropdown"
-          ref={dropdownRef}
-          style={dropdownStyle}
-          onClick={(e) => e.stopPropagation()}
-        >
-          <input
-            type="text"
-            className="combobox-search"
-            placeholder={searchPlaceholder}
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            onKeyDown={handleKeyDown}
-            autoFocus
-          />
-          <div className="combobox-list-container">
-            <div className="combobox-list">
-              {filteredOptions.map((option) => (
-                <button
-                  key={option.value}
-                  type="button"
-                  className={`combobox-option-btn ${value === option.value ? 'selected' : ''}`}
-                  onClick={() => handleSelect(option.value)}
-                >
-                  {option.label}
-                </button>
-              ))}
-              {filteredOptions.length === 0 && (
-                <div className="combobox-empty">
-                  {emptyMessage}
-                </div>
-              )}
+  const dropdown =
+    isOpen && dropdownStyle.position
+      ? ReactDOM.createPortal(
+          <div
+            className="combobox-dropdown"
+            ref={dropdownRef}
+            style={dropdownStyle}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <input
+              type="text"
+              className="combobox-search"
+              placeholder={searchPlaceholder}
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              onKeyDown={handleKeyDown}
+              autoFocus
+            />
+            <div className="combobox-list-container">
+              <div className="combobox-list">
+                {filteredOptions.map((option) => (
+                  <button
+                    key={option.value}
+                    type="button"
+                    className={`combobox-option-btn ${value === option.value ? 'selected' : ''}`}
+                    onClick={() => handleSelect(option.value)}
+                  >
+                    {option.label}
+                  </button>
+                ))}
+                {filteredOptions.length === 0 && (
+                  <div className="combobox-empty">{emptyMessage}</div>
+                )}
+              </div>
             </div>
-          </div>
-        </div>,
-        document.body
-      )
-    : null;
+          </div>,
+          document.body,
+        )
+      : null;
 
   return (
     <div className={`combobox-container ${className}`} onClick={(e) => e.stopPropagation()}>

@@ -157,7 +157,9 @@ describe('Monster UI Integration Tests (Serverless)', () => {
     expect(generatedContent).toContain(`easy: 'Easy text'`);
     expect(generatedContent).toContain(`creature.addTrait('quadrupedal')`);
     expect(generatedContent).toContain(`creature.addCustomSense('Darkvision (60 ft.)')`);
-    expect(generatedContent).toContain(`creature.addCustomMovementSpeed('Fly (average, 40 ft. limit)')`);
+    expect(generatedContent).toContain(
+      `creature.addCustomMovementSpeed('Fly (average, 40 ft. limit)')`,
+    );
     expect(generatedContent).toContain(`creature.addImmunity('Fire')`);
     expect(generatedContent).toContain(`creature.addResistant('Cold')`);
     expect(generatedContent).toContain(`creature.addVulnerability('Acid')`);
@@ -485,7 +487,9 @@ describe('Monster UI Integration Tests (Serverless)', () => {
       ),
     ).toBe(true);
     expect(preview1.computedStats!.equipment).toContain('scale');
-    expect(preview1.computedStats!.activeAbilities.some((a: any) => a.name === 'Word of Power')).toBe(true);
+    expect(
+      preview1.computedStats!.activeAbilities.some((a: any) => a.name === 'Word of Power'),
+    ).toBe(true);
 
     // Verify preview logic applies monster overrides
     const preview2 = generatePreview(group.monsters[1], group, group.name);
@@ -501,6 +505,8 @@ describe('Monster UI Integration Tests (Serverless)', () => {
     expect(generatedContent).toContain(`creature.addCustomSense('Darkvision (90 ft.)')`);
     expect(generatedContent).toContain(`creature.addSpell('Word of Power', { isMagical: true })`);
     expect(generatedContent).toContain(`creature.setEquippedArmorName({ bodyArmor: 'scale' })`);
-    expect(generatedContent).toContain(`creature.setEquippedArmorName({ bodyArmor: 'breastplate' })`);
+    expect(generatedContent).toContain(
+      `creature.setEquippedArmorName({ bodyArmor: 'breastplate' })`,
+    );
   });
 });
