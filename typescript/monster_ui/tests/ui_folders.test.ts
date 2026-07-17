@@ -1,6 +1,6 @@
 import './setup-env';
 
-import { test, describe, beforeAll, afterAll, expect } from 'vitest';
+import { test, describe, beforeAll, afterAll, expect, beforeEach } from 'vitest';
 import * as fs from 'fs';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
@@ -14,24 +14,7 @@ const { app } = await import('../server/index');
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-async function captureFailure(page: Page, testName: string) {
-  const dir = path.resolve(__dirname, 'failures');
-  if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir, { recursive: true });
-  }
-  const safeName = testName.replace(/[^a-z0-9]/gi, '_').toLowerCase();
-
-  // Screenshot
-  const screenshotPath = path.join(dir, `${safeName}.png`);
-  await page.screenshot({ path: screenshotPath, fullPage: true });
-  console.log(`Saved failure screenshot to: ${screenshotPath}`);
-
-  // DOM HTML
-  const htmlPath = path.join(dir, `${safeName}.html`);
-  const htmlContent = await page.content();
-  fs.writeFileSync(htmlPath, htmlContent, 'utf8');
-  console.log(`Saved failure DOM snapshot to: ${htmlPath}`);
-}
+import { captureFailure } from './helpers';
 
 describe('Monster UI Folders E2E Tests', () => {
   let expressServer: http.Server;
@@ -39,6 +22,8 @@ describe('Monster UI Folders E2E Tests', () => {
   let viteServer: ViteDevServer;
   let baseUrl: string;
   let browser: Browser;
+  let page: Page;
+  let promptInput = '';
 
   beforeAll(async () => {
     // Start Express API server
@@ -78,6 +63,34 @@ describe('Monster UI Folders E2E Tests', () => {
     });
   });
 
+  beforeEach(async (context) => {
+    page = await browser.newPage();
+    await page.setViewport({ width: 1400, height: 900 });
+
+    page.on('pageerror', (err: any) => {
+      throw new Error(`Browser console error: ${err.message}`);
+    });
+
+    promptInput = '';
+    page.on('dialog', async (dialog) => {
+      if (dialog.type() === 'prompt') {
+        await dialog.accept(promptInput);
+      } else if (dialog.type() === 'confirm') {
+        await dialog.accept();
+      }
+    });
+
+    context.onTestFinished(async () => {
+      if (context.task.result?.state === 'fail') {
+        await captureFailure(page, context.task.name);
+      }
+      await page.close();
+    });
+
+    await page.goto(baseUrl, { waitUntil: 'networkidle2' });
+    await page.waitForSelector('.sidebar', { timeout: 5000 });
+  });
+
   afterAll(async () => {
     console.log('Cleaning up E2E test servers and files...');
     if (browser) {
@@ -100,30 +113,6 @@ describe('Monster UI Folders E2E Tests', () => {
   });
 
   test('Create, rename, delete folders and verify items update', async () => {
-    const page = await browser.newPage();
-    try {
-      await page.setViewport({ width: 1400, height: 900 });
-
-      // Handle console errors or uncaught page exceptions
-      page.on('pageerror', (err: any) => {
-        throw new Error(`Browser console error: ${err.message}`);
-      });
-
-      // Setup dialog handler to auto-respond to prompts & confirms
-      let promptInput = '';
-      page.on('dialog', async (dialog) => {
-        if (dialog.type() === 'prompt') {
-          await dialog.accept(promptInput);
-        } else if (dialog.type() === 'confirm') {
-          await dialog.accept();
-        }
-      });
-
-      // Navigate to UI
-      await page.goto(baseUrl, { waitUntil: 'networkidle2' });
-
-      // Wait for the sidebar to load
-      await page.waitForSelector('.sidebar', { timeout: 5000 });
 
       // 1. Create a new folder
       promptInput = 'Magic Circle';
@@ -259,34 +248,9 @@ describe('Monster UI Folders E2E Tests', () => {
         return !!monsterEl;
       });
       expect(pixieInIndividual).toBe(true);
-    } catch (err) {
-      await captureFailure(page, 'Create, rename, delete folders and verify items update');
-      throw err;
-    } finally {
-      await page.close();
-    }
   });
 
   test('Create monster and group directly inside a folder', async () => {
-    const page = await browser.newPage();
-    try {
-      await page.setViewport({ width: 1400, height: 900 });
-
-      page.on('pageerror', (err: any) => {
-        throw new Error(`Browser console error: ${err.message}`);
-      });
-
-      let promptInput = '';
-      page.on('dialog', async (dialog) => {
-        if (dialog.type() === 'prompt') {
-          await dialog.accept(promptInput);
-        } else if (dialog.type() === 'confirm') {
-          await dialog.accept();
-        }
-      });
-
-      await page.goto(baseUrl, { waitUntil: 'networkidle2' });
-      await page.waitForSelector('.sidebar', { timeout: 5000 });
 
       // 1. Create a new folder named "Undead"
       promptInput = 'Undead';
@@ -355,25 +319,9 @@ describe('Monster UI Folders E2E Tests', () => {
         return groups.length > 0;
       });
       expect(groupInFolder).toBe(true);
-    } catch (err) {
-      await captureFailure(page, 'Create monster and group directly inside a folder');
-      throw err;
-    } finally {
-      await page.close();
-    }
   });
 
   test('Monster Group expand and collapse behavior', async () => {
-    const page = await browser.newPage();
-    try {
-      await page.setViewport({ width: 1400, height: 900 });
-
-      page.on('pageerror', (err: any) => {
-        throw new Error(`Browser console error: ${err.message}`);
-      });
-
-      await page.goto(baseUrl, { waitUntil: 'networkidle2' });
-      await page.waitForSelector('.sidebar', { timeout: 5000 });
 
       // 1. Create a new group
       const addGroupBtn = await page.waitForSelector('[data-testid="add-group-btn"]', {
@@ -468,11 +416,5 @@ describe('Monster UI Folders E2E Tests', () => {
         return !!el;
       }, childMonsterTestId);
       expect(isMonsterVisible).toBe(true);
-    } catch (err) {
-      await captureFailure(page, 'Monster Group expand and collapse behavior');
-      throw err;
-    } finally {
-      await page.close();
-    }
   });
 });
