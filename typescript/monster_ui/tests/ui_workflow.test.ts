@@ -272,7 +272,7 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
     console.log('Folder children in UI:', childrenNames);
 
     // Clean up unicode zero-width spaces or other noise if any, and assert
-    expect(childrenNames.map((n) => n.replace(/[\u200B-\u200D\uFEFF]/g, ''))).toEqual([
+    expect(childrenNames.map((n) => n.replace(/[\u200B-\u200D\uFEFF]/g, '').replace(/^▶\s*/, ''))).toEqual([
       '👥 Orcs',
       '👤 Troll',
     ]);
