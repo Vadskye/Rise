@@ -230,9 +230,7 @@ export const TraitsTab = <T extends SharedEditableProperties>({
                 checked={traits.includes(trait)}
                 onChange={() => toggleTrait(trait)}
               />
-              <span className={traits.includes(trait) ? 'checked' : ''}>
-                {trait}
-              </span>
+              <span className={traits.includes(trait) ? 'checked' : ''}>{trait}</span>
             </label>
           ))}
       </div>

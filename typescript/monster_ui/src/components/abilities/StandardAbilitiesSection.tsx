@@ -163,13 +163,13 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
                         {warnings.some((w) =>
                           isMissingWeaponWarning(w, ability.options?.displayName || ability.name),
                         ) && (
-                            <span
-                              className="quick-weapon-warning"
-                              title="Maneuver makes a strike and doesn't have a weapon."
-                            >
-                              ⚠️
-                            </span>
-                          )}
+                          <span
+                            className="quick-weapon-warning"
+                            title="Maneuver makes a strike and doesn't have a weapon."
+                          >
+                            ⚠️
+                          </span>
+                        )}
                       </div>
                     )}
                     <span className="expand-chevron" onClick={() => onToggleExpand(cardId)}>
@@ -269,9 +269,9 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
                               ...(ability.options || {}),
                               tags: e.target.value
                                 ? e.target.value
-                                  .split(',')
-                                  .map((t) => t.trim())
-                                  .filter(Boolean)
+                                    .split(',')
+                                    .map((t) => t.trim())
+                                    .filter(Boolean)
                                 : undefined,
                             },
                           })

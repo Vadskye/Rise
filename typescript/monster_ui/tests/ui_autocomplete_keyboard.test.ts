@@ -138,7 +138,7 @@ describe('Autocomplete Keyboard Navigation Tests', () => {
       elements.map((el) => ({
         text: el.textContent?.trim() || '',
         className: el.className,
-      }))
+      })),
     );
 
     expect(listItemsText.length).toBeGreaterThanOrEqual(2);
@@ -155,7 +155,7 @@ describe('Autocomplete Keyboard Navigation Tests', () => {
       elements.map((el) => ({
         text: el.textContent?.trim() || '',
         className: el.className,
-      }))
+      })),
     );
     expect(listItemsText[0].className).not.toBe('active');
     expect(listItemsText[1].className).toBe('active');
@@ -166,7 +166,7 @@ describe('Autocomplete Keyboard Navigation Tests', () => {
 
     // Check if the maneuver was added. In UI, it renders under "Standard Abilities List"
     const abilityCards = await page.$$eval('.ability-item-card .ability-name', (elements) =>
-      elements.map((el) => el.textContent?.trim())
+      elements.map((el) => el.textContent?.trim()),
     );
     const addedSelectedOption = abilityCards.some((name) => name.includes(secondOptionName));
     expect(addedSelectedOption).toBe(true);

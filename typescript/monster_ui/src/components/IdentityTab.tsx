@@ -30,7 +30,8 @@ export const IdentityTab: React.FC<IdentityTabProps> = ({
     setIsCreatingNew(monsterData.folder ? !folders.includes(monsterData.folder) : false);
   }
 
-  const isNewFolder = isCreatingNew || (!!monsterData.folder && !folders.includes(monsterData.folder));
+  const isNewFolder =
+    isCreatingNew || (!!monsterData.folder && !folders.includes(monsterData.folder));
 
   const setProp = <K extends keyof typeof requiredProperties>(
     key: K,
@@ -104,7 +105,7 @@ export const IdentityTab: React.FC<IdentityTabProps> = ({
             <select
               id="folder-select"
               data-testid="folder-select"
-              value={isNewFolder ? '__new_folder__' : (monsterData.folder || '')}
+              value={isNewFolder ? '__new_folder__' : monsterData.folder || ''}
               onChange={(e) => {
                 const val = e.target.value;
                 if (val === '__new_folder__') {
@@ -319,7 +320,10 @@ export const IdentityTab: React.FC<IdentityTabProps> = ({
               'soulforged',
             ].map((t) => ({
               value: t,
-              label: t.charAt(0).toUpperCase() + t.slice(1) + ((requiredProperties.creature_types || []).includes(t) ? ' (selected)' : ''),
+              label:
+                t.charAt(0).toUpperCase() +
+                t.slice(1) +
+                ((requiredProperties.creature_types || []).includes(t) ? ' (selected)' : ''),
             }))}
             placeholder="-- Add Type --"
           />
