@@ -392,9 +392,170 @@
           "freeformCode": "",
           "properties": {
             "has_art": false
+          },
+          "knowledge": {
+            "normal": "Army deserters have abandoned their past life in an army and struck out on their own. Since the punishments for desertion are typically harsh, they have little to lose."
+          },
+          "baseAttributes": [
+            2,
+            0,
+            2,
+            0,
+            1,
+            0
+          ],
+          "equippedArmor": "leather lamellar",
+          "equippedShield": "buckler",
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "spear"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "heavy crossbow"
+              }
+            }
+          ],
+          "trainedSkills": [
+            "endurance"
+          ]
+        },
+        {
+          "name": "Veteran Archer",
+          "requiredProperties": {
+            "alignment": "lawful evil",
+            "base_class": "sniper",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 3
+          },
+          "freeformCode": "",
+          "trainedSkills": [
+            "awareness"
+          ],
+          "baseAttributes": [
+            2,
+            2,
+            0,
+            0,
+            4,
+            0
+          ],
+          "equippedArmor": "buff leather",
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Arrowguide",
+              "options": {
+                "isMagical": false,
+                "weapon": "longbow"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "longbow"
+              }
+            }
+          ],
+          "properties": {
+            "has_art": false
           }
+        },
+        {
+          "name": "Renegade Bolter",
+          "requiredProperties": {
+            "alignment": "neutral evil",
+            "base_class": "sniper",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 4
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            0,
+            3,
+            0,
+            0,
+            2,
+            4
+          ],
+          "equippedArmor": "buff leather",
+          "equippedShield": "buckler",
+          "standardAbilities": [
+            {
+              "type": "spell",
+              "name": "Arc",
+              "options": {
+                "isMagical": true
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Electrocute",
+              "options": {
+                "isMagical": true
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Dazing Discharge",
+              "options": {
+                "isMagical": true
+              }
+            }
+          ]
         }
       ],
+      "folder": "Civilized Humanoids",
+      "knowledge": {
+        "normal": ""
+      }
+    },
+    {
+      "name": "Bugbears",
+      "hasArt": false,
+      "sharedFreeformCode": "",
+      "monsters": [
+        {
+          "name": "New Member 1",
+          "requiredProperties": {
+            "alignment": "",
+            "base_class": "",
+            "elite": false,
+            "creature_origin": "",
+            "creature_types": [],
+            "size": "",
+            "level": 0
+          },
+          "freeformCode": ""
+        }
+      ],
+      "folder": "Uncivilized Humanoids"
+    },
+    {
+      "name": "New Group 5",
+      "hasArt": false,
+      "sharedFreeformCode": "",
+      "monsters": [],
       "folder": "Civilized Humanoids"
     }
   ],

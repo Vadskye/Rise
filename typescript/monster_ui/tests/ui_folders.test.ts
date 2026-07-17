@@ -238,4 +238,77 @@ describe('Monster UI Folders E2E Tests', () => {
     });
     expect(pixieInIndividual).toBe(true);
   });
+
+  test('Create monster and group directly inside a folder', async () => {
+    const page = await browser.newPage();
+    await page.setViewport({ width: 1400, height: 900 });
+
+    page.on('pageerror', (err: any) => {
+      throw new Error(`Browser console error: ${err.message}`);
+    });
+
+    let promptInput = '';
+    page.on('dialog', async (dialog) => {
+      if (dialog.type() === 'prompt') {
+        await dialog.accept(promptInput);
+      } else if (dialog.type() === 'confirm') {
+        await dialog.accept();
+      }
+    });
+
+    await page.goto(baseUrl, { waitUntil: 'networkidle2' });
+    await page.waitForSelector('.sidebar', { timeout: 5000 });
+
+    // 1. Create a new folder named "Undead"
+    promptInput = 'Undead';
+    const addFolderBtn = await page.waitForSelector('[data-testid="add-folder-btn"]', { timeout: 5000 });
+    await addFolderBtn!.click();
+    await page.waitForSelector('[data-testid="folder-container-Undead"]', { timeout: 5000 });
+
+    // 2. Click the add monster to folder button
+    await page.hover('[data-testid="folder-container-Undead"] .folder-header');
+    const addMonsterToFolderBtn = await page.waitForSelector('[data-testid="add-monster-to-folder-Undead"]', { timeout: 2000 });
+    await addMonsterToFolderBtn!.click();
+
+    // Wait for save
+    await page.waitForFunction(
+      () => {
+        const statusEl = document.querySelector('[data-testid="save-status"]');
+        return statusEl && statusEl.textContent === 'Saved';
+      },
+      { timeout: 10000 },
+    );
+
+    // Verify the new monster is inside the Undead folder
+    const monsterInFolder = await page.evaluate(() => {
+      const folderEl = document.querySelector('[data-testid="folder-container-Undead"]');
+      if (!folderEl) return false;
+      const monsters = Array.from(folderEl.querySelectorAll('[data-testid^="monster-item-New Monster"]'));
+      return monsters.length > 0;
+    });
+    expect(monsterInFolder).toBe(true);
+
+    // 3. Click the add group to folder button
+    await page.hover('[data-testid="folder-container-Undead"] .folder-header');
+    const addGroupToFolderBtn = await page.waitForSelector('[data-testid="add-group-to-folder-Undead"]', { timeout: 2000 });
+    await addGroupToFolderBtn!.click();
+
+    // Wait for save
+    await page.waitForFunction(
+      () => {
+        const statusEl = document.querySelector('[data-testid="save-status"]');
+        return statusEl && statusEl.textContent === 'Saved';
+      },
+      { timeout: 10000 },
+    );
+
+    // Verify the new group is inside the Undead folder
+    const groupInFolder = await page.evaluate(() => {
+      const folderEl = document.querySelector('[data-testid="folder-container-Undead"]');
+      if (!folderEl) return false;
+      const groups = Array.from(folderEl.querySelectorAll('[data-testid^="group-item-New Group"]'));
+      return groups.length > 0;
+    });
+    expect(groupInFolder).toBe(true);
+  });
 });

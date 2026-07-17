@@ -426,10 +426,12 @@ export const App: React.FC = () => {
     handleSaveDb(updatedDb, false);
   };
 
-  const handleAddMonster = () => {
+  const handleAddMonster = (folder?: any) => {
     const name = `New Monster ${db.monsters.length + 1}`;
+    const folderStr = typeof folder === 'string' ? folder : undefined;
     const newMonster: MonsterData = {
       name,
+      folder: folderStr,
       requiredProperties: { ...defaultRequiredProperties },
       freeformCode: '',
     };
@@ -442,10 +444,12 @@ export const App: React.FC = () => {
     handleSaveDb(updatedDb, true);
   };
 
-  const handleAddGroup = () => {
+  const handleAddGroup = (folder?: any) => {
     const name = `New Group ${db.monsterGroups.length + 1}`;
+    const folderStr = typeof folder === 'string' ? folder : undefined;
     const newGroup: MonsterGroupData = {
       name,
+      folder: folderStr,
       hasArt: false,
       sharedFreeformCode: '',
       monsters: [],

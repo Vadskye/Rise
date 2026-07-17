@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
 
 export interface ComboboxOption {
@@ -36,7 +36,7 @@ export const Combobox: React.FC<ComboboxProps> = ({
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   // Update position of portal dropdown on open or scroll/resize
-  useEffect(() => {
+  useLayoutEffect(() => {
     const updatePosition = () => {
       if (isOpen && triggerRef.current) {
         const rect = triggerRef.current.getBoundingClientRect();
@@ -108,7 +108,7 @@ export const Combobox: React.FC<ComboboxProps> = ({
   const selectedOption = options.find((opt) => opt.value === value);
   const displayLabel = selectedOption ? selectedOption.label : placeholder;
 
-  const dropdown = isOpen
+  const dropdown = isOpen && dropdownStyle.position
     ? ReactDOM.createPortal(
         <div
           className="combobox-dropdown"

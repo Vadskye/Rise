@@ -129,7 +129,13 @@ export function checkValidMonster(
     warnings.push('Must have at least one nonzero attribute');
   }
 
-  if (!creature.hasKnowledgeResults() && !parentGroup?.knowledge) {
+  const parentKnowledge = parentGroup?.knowledge || {};
+  const hasParentKnowledge =
+    parentKnowledge.easy ||
+    parentKnowledge.normal ||
+    parentKnowledge.hard ||
+    parentKnowledge.legendary;
+  if (!(creature.hasKnowledgeResults() || hasParentKnowledge)) {
     warnings.push(
       'Creature must either have personal knowledge results or be part of a group with knowledge results',
     );
