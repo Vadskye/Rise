@@ -9,6 +9,6 @@
       "@src/*": ["./src/*"]
     }
   },
-  "include": ["server/**/*", "../src/**/*", "tests/**/*"],
+  "include": ["server/**/*", "../src/**/*", "tests/**/*", "scripts/**/*"],
   "exclude": []
 }

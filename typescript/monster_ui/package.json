@@ -17,6 +17,8 @@
     "test": "vitest run",
     "pretest:timing": "tsx server/paths.ts",
     "test:timing": "node --eval \"process.env.TIMING='true'; import('child_process').then(cp => cp.execSync('vitest run', {stdio: 'inherit'}))\"",
+    "premonster_ts": "tsx server/paths.ts",
+    "monster_ts": "tsx --tsconfig tsconfig.server.json scripts/regenerate_monster_typescript.ts",
     "unused": "npx knip"
   },
   "dependencies": {
