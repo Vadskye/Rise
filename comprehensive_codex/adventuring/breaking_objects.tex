@@ -1,0 +1,101 @@
+\section{Breaking Objects}
+  There are two main ways of breaking objects.
+  You can deal damage to objects with attacks, similarly to how you can deal damage to creatures.
+  Alternately, you can attempt to sunder the object with the Might skill (see \pcref{Might}).
+
+  \subsection{Damaging Objects}
+    Objects have \glossterm{hit points} like creatures.
+    They can also have \glossterm{hardness}, which reduces damage they take.
+    Whenever an object takes damage, it first subtracts its hardness from that damage before applying that damage to its hit points.
+    Objects are not normally subject to \glossterm{critical hits}.
+    When objects lose enough hit points, they can become \glossterm{broken} (see \pcref{Broken and Destroyed Objects}).
+
+    \subsubsection{Vulnerable and Resistant Objects}
+      An object that is \resistant to an attack doubles its \glossterm{hardness} against that attack.
+      Likewise, an object that is \vulnerable to an attack has no hardness against that attack.
+
+  \subsection{Object Statistics}
+    An object's size primarily influences the number of \glossterm{hit points} it has.
+    The primary material it is constructed from determines its \glossterm{hardness}, and can modify the number of hit points it has.
+    Details are given in \tref{Object Statistics By Size} and \tref{Object Statistics By Material}.
+
+    Oddly shaped objects, such as a ladder or pillar, should generally use some size category in between their largest and smallest dimensions.
+    Consider these examples:
+    \begin{raggeditemize}
+      \item A 20 foot cube would have the hit points of a Huge object.
+      \item A stone pillar that is 20 feet wide, 20 feet long, and 100 feet tall would have the hit points of a Huge object.
+      \item A 20 foot tall, 20 foot wide wall of typical thickness would have the hit points of a Large object.
+    \end{raggeditemize}
+
+    These rules are more detailed than you should really need.
+    During a typical game session, it's often best to just guess whether a character could plausibly sunder or smash an object rather than consulting these tables.
+
+    % TODO: Should object HP be determined by size or by weight?
+    \begin{dtable}
+      \lcaption{Object Statistics By Size}
+      \begin{dtabularx}{\textwidth}{l X X}
+        \tb{Size}  & \tb{Hit Points} & \tb{Sunder DV Modifier} \tableheaderrule
+        Fine       & 2               & 0  \\
+        Diminutive & 5               & 0  \\
+        Tiny       & 10              & 0  \\
+        Small      & 25              & \plus5  \\
+        Medium     & 50              & \plus10 \\
+        Large      & 100             & \plus15 \\
+        Huge       & 250             & \plus20 \\
+        Gargantuan & 500             & \plus25 \\
+        Colossal   & 1000            & \plus30 \\
+      \end{dtabularx}
+    \end{dtable}
+
+    \begin{dtable}
+      \lcaption{Object Statistics By Material}
+      \begin{dtabularx}{\textwidth}{l X X X}
+        \tb{Material}   & \tb{Hardness}\fn{1} & \tb{HP Multiplier}\fn{2} \tableheaderrule
+        Adamantine      & 30            & \mult3   \\
+        Glass           & 5             & \mult1/2 \\
+        Ice             & 0             & \mult1/2 \\
+        Iron or steel   & 15            & \mult2   \\
+        Leather or hide & 5             & \tdash   \\
+        Mithral         & 20            & \mult2   \\
+        Packed earth    & 5             & \tdash   \\
+        Paper or cloth  & 0             & \mult1/2 \\
+        Rope            & 5             & \tdash   \\
+        Stone           & 10            & \mult2   \\
+        Wood            & 5             & \tdash   \\
+      \end{dtabularx}
+      1. An object's \glossterm{hardness} also increases the difficulty value of checks to sunder it with raw Strength. \\
+      2. Any value here modifies the number of hit points the object would normally have based on its size.
+    \end{dtable}
+
+  \subsection{Broken and Destroyed Objects}\label{Broken and Destroyed Objects}
+    If an object would gain its first \glossterm{vital wound}, typically by reaching negative hit points, it becomes \glossterm{broken} instead.
+    Unlike creatures, objects do not reset their negative hit points to 0 at the start of their turn.
+    Instead, they continue to track their negative hit points indefinitely.
+    If an object's negative hit points reach ten times its maximum hit points, it becomes \glossterm{destroyed}.
+
+    \parhead{Broken Objects}\nonsectionlabel{Broken Objects}
+    Broken objects cannot be used for their intended purpose, but still retain enough of their original form to be repaired without too much work.
+    For example, a broken wall lies in pieces on the ground and no longer blocks passage, but can be repaired with far less effort than would be required to create a wall from scratch.
+    Magic items that are broken retain their magical properties once fixed.
+    Broken (but not destroyed) objects can be repaired with the Craft skill (see \pcref{Craft}).
+
+    Most magical effects that create temporary objects are fully destroyed when they become broken.
+
+    \parhead{Destroyed Objects}\nonsectionlabel{Destroyed Objects}
+    Destroyed objects have been damaged beyond hope of any sort of repair short of crafting the object again from raw materials.
+    For example, a destroyed wall is reduced to dust or small, useless chunks of rubble.
+    Magic items that are destroyed irrevocably lose their magical properties.
+    The remains of a destroyed object generally occupy a space one size category smaller than the original object.
+    Destroyed objects can be rebuilt with the Craft skill, but it requires significant time and investment.
+
+  \subsection{Breaking Equipment}\label{Breaking Equipment}
+    Normally, a character's equipment cannot be damaged or otherwise affected by attacks.
+    This includes worn items, anything held in your hands, and anything in a secure storage like a small backpack.
+    Such items are considered \glossterm{attended}.
+    They are unaffected by damage caused by area effects, and cannot be targeted individually.
+    Some abilities can specifically target \glossterm{attended} objects, as indicated in their descriptions.
+
+    \subsubsection{Loose Equipment}\label{Loose Equipment}
+      Some items are explicitly \glossterm{loose equipment}.
+      Loose equipment does not gain the protections listed above while worn as equipment.
+      It can be individually targeted by attackers, and is affected by area effects just like any other object in the area.

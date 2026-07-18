@@ -1,0 +1,133 @@
+\section{Common Magical Effects}
+
+  \subsection{Resurrection}\label{Resurrection}
+    Some abilities can return dead creatures to life.
+    This is called resurrection.
+
+    When a living creature dies, its soul departs its body, travels through the Astral Expanse, and forms a new body on the appropriate Spiritual Plane.
+    The destination of a soul is determined by its affinity (see \pcref{Affinity}).
+    Bringing a creature back from the dead means retrieving their soul and returning it to their body.
+
+    A creature has no hit points when it returns to life.
+    It is cured of all \glossterm{vital wounds}, \glossterm{conditions}, and other negative effects, but the body's shape is unchanged.
+    Any missing or irreparably damaged limbs or organs remain missing or damaged.
+    The creature may therefore die shortly after being resurrected if its body is excessively damaged.
+    Some resurrection abilities can restore more damaged corpses to life, as indicated in their descriptions.
+
+    Coming back from the dead is an ordeal.
+    The creature's \glossterm{maximum stamina} is reduced by 2.
+    This penalty stacks if the creature is resurrected multiple times.
+    Every thirty days, and whenever the creature gains a level, this penalty is reduced by 1.
+    % TODO: it's odd that this makes resurrection Con-based, when it seems Willpower-based conceptually?
+    If this penalty would reduce a creature's \glossterm{maximum stamina} below 0, the creature cannot be resurrected.
+
+    Resurrection is always voluntary.
+    A soul infallibly knows the name, alignment, and patron deity (if any) of the character attempting to revive it and may refuse to return on that basis.
+    If a dead creature's soul refuses to return to life, no effect can compel it to be resurrected.
+    Similarly, if a dead creature's soul has been subsumed into the planar essence of its afterlife plane, it has already been resurrected, or the soul is otherwise inaccessible, resurrection is impossible.
+
+    Although you can resurrect creatures who have died of old age, it is usually pointless.
+    They will die again before long from some malady resulting from their advanced age.
+
+    \subsubsection{Limits of Resurrection}
+      While dead, souls gradually lose their cohesion and independent sense of self.
+      A typical creature can maintain its existence in the afterlife for a number of years equal to 5 times the sum of its level and Willpower.
+      This can vary significantly for individual creatures, and being tormented in the afterlife can significantly reduce this time.
+
+      Enemies can take steps to make it more difficult for a character to be returned from the dead.
+      Except for \spell{true resurrection}, every ritual to raise the dead requires some part of the creature's body, so keeping or destroying the body is an effective deterrent.
+      The \spell{soul bind} ritual prevents any sort of revivification unless the soul is first released.
+
+  \subsection{Shapeshifting}\label{Shapeshifting}
+    When a creature shapeshifts, its physical body completely transforms into a different shape.
+    It generally retains all of its original statistics and abilities, with the following exceptions.
+    Some specific abilities that cause a creature to shapeshift have additional effects.
+    % TODO: are more exceptions necessary?
+    \begin{raggeditemize}
+      \item The creature's size changes to match the new form.
+        This can change the creature's \glossterm{base speed}, Reflex defense, and other statistics as normal (see \pcref{Size Categories}).
+      \item The creature's \glossterm{mundane} movement modes and natural weapons are replaced with the movement modes and natural weapons of its new shape.
+        If the new form does not specifically mention a walk speed, it has an average walk speed.
+      \item If the new shape is not normally capable of speech, the creature cannot speak.
+        This may prevent it from casting spells with \glossterm{verbal components} and using similar abilities.
+      \item The creature is limited by the number of \glossterm{free hands} present in the new form.
+        In addition, it cannot gain more free hands by shapeshifting than it originally had in its base form.
+        Even if you shapeshift to a form with many hands, you do not have the mental coordination necessary to use them all effectively.
+      \item Any special properties that a creature had that were originally a result of its pure physical composition change to match its new form.
+        For example, a ghost would stop being \trait{incorporeal} if it shapeshifted.
+    \end{raggeditemize}
+
+    All of a shapeshifted creature's equipment that is physically incompatible with the creature's new shape meld into its body.
+    This does not break \glossterm{attunement}, and the creature still gains the benefit of any magical properties of melded items.
+    However, it does not gain the benefit of nonmagical properties from melded items.
+    For example, a creature that shapeshifts into an amorphous gas would still benefit from all attuned effects from its equipped items, such as \mitem{boots of speed}.
+    However, it would gain no benefit to its Armor defense or durability from any melded body armor, and it would not be able to attack with any of its melded weapons.
+    Items exceeding a creature's \glossterm{carrying capacity} are not melded, and simply fall to the ground in place.
+
+    When a shapeshifted creature dies, it returns to its original form.
+
+  \subsection{Teleportation}\label{Teleportation}
+    Some abilities can \glossterm{teleport} creatures or objects.
+    When you are teleported, you stop existing at your previous location at the same instant that you arrive at your new location.
+
+    All teleportation abilities require both \glossterm{line of sight} and \glossterm{line of effect} to both their target and their destination.
+    In addition, the destination must be an unoccupied location on a stable surface.
+    That surface must be able to support the weight of the creature or object being teleported.
+    If any of these conditions is not met, the teleportation fails without effect.
+    Some teleportation abilities are less restricted, as indicated in their description.
+
+    Teleportation conserves vertical momentum, but not horizontal momentum.
+    For example, teleporting to the ground while falling means you still take \glossterm{falling damage} from the distance you fell before teleporting.
+    However, teleporting from a moving ship to the shore leaves you standing steady on the ground, not stumbling forward.
+
+    \subsubsection{Teleporting Up Slopes}
+      In general, you can teleport up slopes that are no more than 45 degrees.
+      Steeper slopes prevent you from seeing stable ground to teleport to it.
+      The GM can provide guidance for individual slopes, which may be easier or harder to navigate with teleportation.
+
+    \subsubsection{Teleportation Noise}\label{Teleportation Noise}
+      Creatures and objects that are teleported make a sound when they depart and arrive.
+      This noise is caused by the displacement of air (or other substances) created by the teleportation.
+      The base \glossterm{difficulty value} of an Awareness check to hear this sound for a Medium creature or object is 10.
+      This difficulty value changes based on the size of the teleported creature or object:
+
+      \begin{raggeditemize}
+        \item Fine: 30
+        \item Diminutive: 25
+        \item Tiny: 20
+        \item Small: 15
+        \item Medium: 10
+        \item Large: 5
+        \item Huge: 0
+        \item Gargantuan: \minus5
+        \item Colossal: \minus10
+      \end{raggeditemize}
+
+    \subsubsection{Carrying Objects}
+      When a creature is teleported, it can bring along equipment and held objects as long as two conditions are met.
+      First, the combined weight of the objects cannot exceed the creature's maximum \glossterm{carrying capacity} (see \pcref{Weight Limits}).
+      If a creature is teleported while carrying more than its maximum carrying capacity, all excess objects are left behind, starting with the heaviest object and proceeding in order of weight.
+
+      Second, no object can extend more than five feet away from the creature's body.
+      Any objects that extend beyond that distance are left behind.
+      For example, a creature wearing handcuffs will arrive at its teleportation destination still wearing the handcuffs.
+      However, a creature that is tied to a post by a long rope will arrive at its teleportation destination without the rope.
+
+    \subsubsection{Astral Beacons}\label{Astral Beacons}
+      Some abilities allow long-distance teleportation, such as the \ritual{overland teleportation} ritual.
+      This sort of teleportation is much easier if you are travelling to an \glossterm{astral beacon}.
+      The specific effects of an astral beacon are defined in the teleportation ability being used.
+      An astral beacon covers an area, rather than a single point in space.
+
+      Each astral beacon has a unique name.
+      The name represents the beacon's precise location in the Astral Expanse, so no two beacons can have identical names.
+      For example, astral beacons created by rituals have their name defined by the precise color of ritual inks, details of drawn patterns, timing and inflection of ritual incantations, and similar subtleties.
+
+      It is possible, though unlikely, to find astral beacons simply by wandering in the Astral Expanse.
+      They are similar in size and shape to \glossterm{scrying sensors}, but their appearance is visually distinct, and they are visible rather than invisible.
+      Inspecting a beacon can reveal the location it points to, and destroying the beacon in the Astral Expanse removes its effects.
+
+    \subsubsection{Horizontal Teleportation}
+      Some planes have a curved primary surface.
+      On those planes, ``horizontal'' teleportation isn't objectively horizontal.
+      Instead, it is horizontal relative to the surface of the plane.
