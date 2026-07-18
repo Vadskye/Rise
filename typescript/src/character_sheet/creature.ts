@@ -47,6 +47,9 @@ import * as format from '@src/latex/format';
 import { EquippedItem, isBodyArmor, isShield, BodyArmor, Shield } from '@src/monsters/equipment';
 import { KNOWLEDGE_BY_ORIGIN, KNOWLEDGE_BY_TYPE } from './knowledge';
 import { getArmorBaseDefinition, ArmorKind } from '@src/equipment/armor';
+import { alchemicalItems } from '@src/equipment/data/consumables/alchemical_items';
+import { getUpgradeItems } from '@src/equipment/types';
+import { combineDescriptions, parseConsumableDescription } from '@src/equipment/equipment_abilities';
 
 export type TargetSelectionLogic = 'Random' | 'Ordered' | 'Vulnerable';
 
@@ -687,6 +690,66 @@ export class Creature implements CreaturePropertyMap {
       isMagical: spell.isMagical === undefined ? true : spell.isMagical,
       roles: [],
     });
+  }
+
+  addThrowItem(
+    itemName: string,
+    options: MonsterNonweaponAbilityOptions = {},
+  ) {
+    const baseTool = alchemicalItems().find(
+      (tool) => tool.item.name.toLowerCase() === itemName.toLowerCase(),
+    );
+    if (!baseTool) {
+      this.throwError(`Could not find alchemical item '${itemName}'`);
+      return;
+    }
+
+    const baseItem = baseTool.item;
+    const creatureRank = this.calculateRank();
+
+    const upgrades = getUpgradeItems(baseItem);
+    const eligibleUpgrades = upgrades.filter((up) => up.rank <= creatureRank);
+
+    const activeItem = eligibleUpgrades.length > 0
+      ? eligibleUpgrades[eligibleUpgrades.length - 1]
+      : baseItem;
+
+    const name = options.displayName || baseItem.name;
+    const itemTags = activeItem.tags || [];
+    const mergedTags = Array.from(
+      new Set([...itemTags, ...(options.tags || [])]),
+    ) as RiseAbilityDefinitionTag[];
+
+    let description = baseItem.description.trim();
+    if (activeItem !== baseItem) {
+      description = combineDescriptions(description, activeItem.description.trim());
+    }
+
+    const parsed = parseConsumableDescription(description);
+
+    const isHalfOnMiss = parsed.miss?.toLowerCase().replace(/\s+/g, ' ').trim().replace(/\.$/, '') === 'half damage';
+
+    const maneuver: ActiveAbility = {
+      kind: 'maneuver',
+      name,
+      isMagical: options.isMagical !== undefined ? options.isMagical : false,
+      rank: creatureRank,
+      roles: [],
+      tags: mergedTags,
+      attack: {
+        targeting: parsed.targeting,
+        hit: parsed.hit || '',
+        ...(parsed.injury ? { injury: parsed.injury } : {}),
+        ...(parsed.crit ? { crit: parsed.crit } : {}),
+        ...(isHalfOnMiss ? { halfOnMiss: true } : (parsed.miss ? { miss: parsed.miss } : {})),
+      },
+    };
+
+    if (options.usageTime) {
+      maneuver.usageTime = options.usageTime;
+    }
+
+    this.addActiveAbility(maneuver);
   }
 
   // Arbitrary names are ignored when generating LaTeX. However, names that match standard
