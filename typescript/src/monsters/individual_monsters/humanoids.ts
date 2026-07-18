@@ -351,27 +351,8 @@ function addCultists(grimoire: Grimoire) {
           });
           creature.setTrainedSkills([]);
           creature.setBaseAttributes([0, 4, 1, 0, 3, 1]);
-          creature.addCustomManeuver({
-            name: "Alchemist's Fire",
-            attack: {
-              hit: '\\damagerankfourlow.',
-              targeting: `
-                Make an attack vs. Reflex against something within \\shortrange.
-              `,
-            },
-            tags: ['Fire'],
-          });
-          creature.addCustomManeuver({
-            name: 'Firebomb',
-            attack: {
-              hit: '\\damagerankthreelow.',
-              halfOnMiss: true,
-              targeting: `
-                Make an attack vs. Reflex against everything in a \\smallarea radius within \\shortrange.
-              `,
-            },
-            tags: ['Fire'],
-          });
+          creature.addThrowItem("Alchemist's Fire");
+          creature.addThrowItem("Firebomb");
         },
       ],
     ],
