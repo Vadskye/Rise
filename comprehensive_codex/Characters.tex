@@ -153,22 +153,10 @@ You can either skim past terms you don't yet understand or look them up as you g
   \subsection{Hit Points}\label{Hit Points}
     Your \glossterm{hit points} measure how much damage you can take before you die.
     They are often abbreviated as HP.
+    Your hit points are equal to your \glossterm{durability} times your \glossterm{character rank}, plus 10 hit points.
+
     When you take damage, it reduces your hit points (see \pcref{Taking Damage}).
     When your hit points drop below 0, you gain \glossterm{vital wounds}, which can eventually kill you (see \pcref{Vital Wounds}).
-
-    Your hit points depend on your \glossterm{character rank}, as shown below.
-    \begin{columntable}
-      \begin{dtabularx}{\columnwidth}{l l X}
-        \tb{Rank} & \tb{Flat HP} & \tb{Bonus HP} \\
-        1 & 10 & 1 \x \glossterm{durability} \\
-        2 & 10 & 2 \x durability \\
-        3 & 10 & 3 \x durability \\
-        4 & 10 & 4 \x durability \\
-        5 & 10 & 6 \x durability \\
-        6 & 10 & 8 \x durability \\
-        7 & 10 & 10 \x durability \\
-      \end{dtabularx}
-    \end{columntable}
 
     Your maximum hit points can never be less than 1.
     If your maximum hit points would be reduced to 0 or less, you immediately die.
@@ -183,24 +171,10 @@ You can either skim past terms you don't yet understand or look them up as you g
       This can reduce your current hit points below 0, which causes you to gain a \glossterm{vital wound}.
 
   \subsection{Injury Point}\label{Injury Point}
-    While your \glossterm{hit points} are at or below your \glossterm{injury point}, you are \glossterm{injured}.
+    While your \glossterm{hit points} are at or below your \glossterm{injury point}, or IP, you are \glossterm{injured}.
     Being injured does not directly penalize you, but some attacks are much more effective if you are injured.
-    Your injury point can be abbreviated as IP.
 
-    Your injury point depends on your \glossterm{character rank}, as shown below.
-    \begin{columntable}
-      \begin{dtabularx}{\columnwidth}{l l X}
-        \tb{Rank} & \tb{Flat IP} & \tb{Bonus IP}                                                        \\
-        1         & 10           & Half the sum of level \add Constitution                              \\
-        2         & 10           & Level \add Constitution                                              \\
-        3         & 10           & Level \add Constitution \add half the sum of level \add Constitution \\
-        4         & 10           & 2 \x (level \add Constitution)                                       \\
-        5         & 10           & 3 \x (level \add Constitution)                                       \\
-        6         & 10           & 4 \x (level \add Constitution)                                       \\
-        7         & 10           & 5 \x (level \add Constitution)                                       \\
-      \end{dtabularx}
-    \end{columntable}
-
+    Your injury point is equal to your \glossterm{character rank} times your level, halved, plus 10. 
     Some special abilities can also modify your injury point.
 
   \subsection{Power}\label{Power}

@@ -1820,28 +1820,7 @@ function handleHitPoints() {
     },
     callback: (v) => {
       const rank = calculateStandardRank(v.level);
-      const rankMultiplier = {
-        0: 0,
-        1: 1,
-        2: 2,
-        3: 3,
-        4: 4,
-        5: 6,
-        6: 8,
-        7: 10,
-        // Past this point, it's more or less arbitrarily extrapolated. It would be better
-        // to eventually scale past +2 per rank, but it doesn't matter enough to
-        // calculate, and odd multipliers make injury point calculation annoyingly
-        // fractional.
-        8: 12,
-        9: 14,
-        10: 16,
-      }[rank];
-      if (rankMultiplier === undefined) {
-        throw new Error(`Unable to calculate multiplier for rank ${rank}`);
-      }
-
-      const hpFromDurability = v.durability * rankMultiplier;
+      const hpFromDurability = v.durability * rank;
 
       const crMultiplier = v.elite ? 3 : 1;
 
@@ -1853,7 +1832,7 @@ function handleHitPoints() {
         hit_points: undefined,
         hit_points_explanation: formatCombinedExplanation(v.miscExplanation, [
           { name: 'base', value: flatHp },
-          { name: rankMultiplier + ' * durability', value: hpFromDurability },
+          { name: rank + ' * durability', value: hpFromDurability },
           { name: 'CR', value: monsterTotalHp - playerTotalHp },
         ]),
         hit_points_max: monsterTotalHp,
@@ -1884,38 +1863,16 @@ function handleInjuryPoint() {
         return;
       }
       const rank = calculateStandardRank(v.level);
-      const rankMultiplier = {
-        0: 0,
-        1: 0.5,
-        2: 1,
-        3: 1.5,
-        4: 2,
-        5: 3,
-        6: 4,
-        7: 5,
-        // Past this point, it's more or less arbitrarily extrapolated. It would be better
-        // to eventually scale past +2 per rank, but it doesn't matter enough to
-        // calculate, and odd multipliers make injury point calculation annoyingly
-        // fractional.
-        8: 6,
-        9: 7,
-        10: 8,
-      }[rank];
-      if (rankMultiplier === undefined) {
-        throw new Error(`Unable to calculate multiplier for rank ${rank}`);
-      }
       const flatIp = 10;
-      const ipFromLevel = rankMultiplier * v.level;
-      const ipFromCon = rankMultiplier * v.constitution;
+      const ipFromLevel = Math.floor((rank * v.level) / 2);
       const injury_point =
-        flatIp + Math.floor((v.level + v.constitution) * rankMultiplier) + v.misc;
+        flatIp + ipFromLevel + v.misc;
 
       setAttrs({
         injury_point: injury_point,
         injury_point_explanation: formatCombinedExplanation(v.miscExplanation, [
           { name: 'base', value: flatIp },
-          { name: rankMultiplier + ' * level', value: ipFromLevel },
-          { name: rankMultiplier + ' * Con', value: ipFromCon },
+          { name: rank + ' * level', value: ipFromLevel },
         ]),
       });
     },
