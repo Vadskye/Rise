@@ -1,0 +1,214 @@
+import * as fs from 'fs';
+import * as path from 'path';
+import { fileURLToPath } from 'url';
+import { saveTypeScriptFile, DatabaseData } from './codegen';
+import { validateMonster } from './validate';
+import { keepOnlyCharacterSheets } from '@src/character_sheet/current_character_sheet';
+import { showDetailedTiming } from './timing';
+
+import { paths } from './paths';
+export { paths };
+
+export function getDb(): DatabaseData {
+  const start = performance.now();
+  const dbPath = paths.dbPath;
+  if (showDetailedTiming) {
+    console.log(`[Timing] [DB] Loading database from path: ${dbPath}`);
+  } else {
+    console.log(`[DB] Loading database from path: ${dbPath}`);
+  }
+
+  if (!fs.existsSync(dbPath)) {
+    console.log('[DB] Database file not found. Creating default empty database.');
+    const defaultDb: DatabaseData = { monsters: [], monsterGroups: [] };
+    const parentDir = path.dirname(dbPath);
+    if (!fs.existsSync(parentDir)) {
+      fs.mkdirSync(parentDir, { recursive: true });
+    }
+    fs.writeFileSync(dbPath, JSON.stringify(defaultDb, null, 2), 'utf8');
+    if (showDetailedTiming) {
+      console.log(
+        `[Timing] [DB] Created default database in ${(performance.now() - start).toFixed(2)}ms`,
+      );
+    }
+    return defaultDb;
+  }
+  const raw = fs.readFileSync(dbPath, 'utf8');
+  const parsed = JSON.parse(raw);
+  if (showDetailedTiming) {
+    console.log(
+      `[Timing] [DB] Loaded and parsed database in ${(performance.now() - start).toFixed(2)}ms`,
+    );
+  }
+  return parsed;
+}
+
+export function saveDb(db: DatabaseData) {
+  const start = performance.now();
+  const dbPath = paths.dbPath;
+  console.log(`[DB] Writing database JSON to: ${dbPath}`);
+  fs.writeFileSync(dbPath, JSON.stringify(db, null, 2), 'utf8');
+  const writeJsonDuration = performance.now() - start;
+
+  console.log('[DB] Database JSON written successfully. Triggering TypeScript code generation.');
+  const codegenStart = performance.now();
+  saveTypeScriptFile(db);
+  const codegenDuration = performance.now() - codegenStart;
+  console.log('[DB] TypeScript code generation completed.');
+
+  if (showDetailedTiming) {
+    console.log(
+      `[Timing] [DB] saveDb detail: Write JSON: ${writeJsonDuration.toFixed(2)}ms, Codegen: ${codegenDuration.toFixed(2)}ms, Total: ${(performance.now() - start).toFixed(2)}ms`,
+    );
+  }
+}
+
+/**
+ * Returns a JSON fingerprint of a monster group's shared config (everything
+ * except the individual monsters array), used to detect whether the group-level
+ * settings changed between saves.
+ */
+function groupSharedFingerprint(group: import('./codegen').MonsterGroupData): string {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { monsters: _monsters, ...shared } = group;
+  return JSON.stringify(shared);
+}
+
+export function saveAndValidateAll(db: DatabaseData) {
+  const start = performance.now();
+  console.log('[DB] Beginning save and validation process...');
+
+  // Read the old DB from disk before overwriting so we can diff it.
+  let oldDb: DatabaseData = { monsters: [], monsterGroups: [] };
+  try {
+    oldDb = getDb();
+  } catch {
+    // If the file doesn't exist yet, treat everything as new.
+  }
+
+  // Build fingerprint maps for the old DB.
+  const oldMonsterFingerprints = new Map<string, string>();
+  for (const m of oldDb.monsters || []) {
+    oldMonsterFingerprints.set(m.name, JSON.stringify(m));
+  }
+
+  const oldGroupSharedFingerprints = new Map<string, string>();
+  const oldGroupMonsterFingerprints = new Map<string, Map<string, string>>();
+  for (const g of oldDb.monsterGroups || []) {
+    oldGroupSharedFingerprints.set(g.name, groupSharedFingerprint(g));
+    const monsterMap = new Map<string, string>();
+    for (const m of g.monsters || []) {
+      monsterMap.set(m.name, JSON.stringify(m));
+    }
+    oldGroupMonsterFingerprints.set(g.name, monsterMap);
+  }
+
+  const saveStart = performance.now();
+  saveDb(db);
+  const saveDuration = performance.now() - saveStart;
+
+  const validations: Record<string, ReturnType<typeof validateMonster>> = {};
+
+  const monsters = db.monsters || [];
+  const validateMonstersStart = performance.now();
+  let skippedMonsters = 0;
+  if (monsters.length > 0) {
+    for (const monster of monsters) {
+      const newFingerprint = JSON.stringify(monster);
+      if (oldMonsterFingerprints.get(monster.name) === newFingerprint) {
+        skippedMonsters++;
+        continue;
+      }
+      const monsterStart = performance.now();
+      validations[monster.name] = validateMonster(monster);
+      if (showDetailedTiming) {
+        console.log(
+          `[Timing] Validated monster "${monster.name}" in ${(performance.now() - monsterStart).toFixed(2)}ms (cacheHit: ${validations[monster.name].cacheHit})`,
+        );
+      }
+    }
+    const validated = monsters.length - skippedMonsters;
+    console.log(
+      `[DB] Validated ${validated} changed individual monster(s) (skipped ${skippedMonsters} unchanged).`,
+    );
+  }
+  const validateMonstersDuration = performance.now() - validateMonstersStart;
+
+  const groups = db.monsterGroups || [];
+  const validateGroupsStart = performance.now();
+  let skippedGroupMonsters = 0;
+  let validatedGroupMonsters = 0;
+  if (groups.length > 0) {
+    for (const group of groups) {
+      const groupStart = performance.now();
+      const groupMonsters = group.monsters || [];
+
+      // If the group's shared config changed, every monster in it must be re-validated.
+      const sharedChanged =
+        oldGroupSharedFingerprints.get(group.name) !== groupSharedFingerprint(group);
+      const oldMonsterMap =
+        oldGroupMonsterFingerprints.get(group.name) ?? new Map<string, string>();
+
+      let groupValidated = 0;
+      let groupSkipped = 0;
+      for (const monster of groupMonsters) {
+        const newFingerprint = JSON.stringify(monster);
+        if (!sharedChanged && oldMonsterMap.get(monster.name) === newFingerprint) {
+          groupSkipped++;
+          skippedGroupMonsters++;
+          continue;
+        }
+        const monsterStart = performance.now();
+        validations[`${group.name}.${monster.name}`] = validateMonster(monster, group, group.name);
+        groupValidated++;
+        validatedGroupMonsters++;
+        if (showDetailedTiming) {
+          console.log(
+            `[Timing] Validated group monster "${group.name}.${monster.name}" in ${(performance.now() - monsterStart).toFixed(2)}ms (cacheHit: ${validations[`${group.name}.${monster.name}`].cacheHit})`,
+          );
+        }
+      }
+      console.log(
+        `[DB] Group "${group.name}": validated ${groupValidated}, skipped ${groupSkipped}${sharedChanged ? ' (shared config changed)' : ''}.`,
+      );
+      if (showDetailedTiming) {
+        console.log(
+          `[Timing] Validated entire group "${group.name}" in ${(performance.now() - groupStart).toFixed(2)}ms`,
+        );
+      }
+    }
+  }
+  const validateGroupsDuration = performance.now() - validateGroupsStart;
+
+  // Garbage collect sheets for deleted/renamed monsters
+  const gcStart = performance.now();
+  const activeNames: string[] = [];
+  for (const monster of monsters) {
+    activeNames.push(monster.name);
+  }
+  for (const group of groups) {
+    const groupMonsters = group.monsters || [];
+    for (const monster of groupMonsters) {
+      activeNames.push(monster.name);
+    }
+  }
+  keepOnlyCharacterSheets(activeNames);
+  const gcDuration = performance.now() - gcStart;
+
+  const totalDuration = performance.now() - start;
+  console.log(
+    `[DB] Validation complete. Individual: ${monsters.length - skippedMonsters}/${monsters.length} validated. ` +
+      `Group monsters: ${validatedGroupMonsters}/${validatedGroupMonsters + skippedGroupMonsters} validated. ` +
+      `Total: ${totalDuration.toFixed(2)}ms`,
+  );
+
+  if (showDetailedTiming) {
+    console.log(`[Timing] Save and Validate Breakdown:`);
+    console.log(`  - saveDb (JSON + Codegen): ${saveDuration.toFixed(2)}ms`);
+    console.log(`  - Validate individual monsters: ${validateMonstersDuration.toFixed(2)}ms`);
+    console.log(`  - Validate monster groups: ${validateGroupsDuration.toFixed(2)}ms`);
+    console.log(`  - Garbage collection: ${gcDuration.toFixed(2)}ms`);
+  }
+
+  return { success: true, validations };
+}

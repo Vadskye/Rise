@@ -145,7 +145,9 @@ t.test('calculateHitDegree returns correct hit degree', (t) => {
   let rollCount = 0;
   Math.random = () => {
     rollCount++;
-    if (rollCount === 1) return 0.99; // Roll 10
+    if (rollCount === 1) {
+      return 0.99;
+    } // Roll 10
     return 0.4; // Roll 5
   };
   result = calculateHitDegree(attacker, defender, attack as SimulatorReadyAttack, {} as FightState);

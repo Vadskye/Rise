@@ -108,9 +108,13 @@ export function tableHeader(
 export function standardSort(rows: TableRow[]): void {
   rows.sort((a, b) => {
     // Primary: Rank
-    if (a.rank !== b.rank) return a.rank - b.rank;
+    if (a.rank !== b.rank) {
+      return a.rank - b.rank;
+    }
     // Secondary: Consumability (consumables first)
-    if (a.consumable !== b.consumable) return a.consumable ? -1 : 1;
+    if (a.consumable !== b.consumable) {
+      return a.consumable ? -1 : 1;
+    }
     // Tertiary: Category
     if (a.category !== b.category) {
       const catA = a.category || '';
@@ -166,7 +170,9 @@ export function longtablePercentile({
   for (let rank = -1; rank <= 8; rank++) {
     const rowsAtRank = rows.filter((r) => r.rank === rank);
     const distinctItemCount = rowsAtRank.length;
-    if (distinctItemCount === 0) continue;
+    if (distinctItemCount === 0) {
+      continue;
+    }
 
     const stepSize = 99.0 / distinctItemCount;
     let minRoll = 0;

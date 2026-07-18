@@ -236,40 +236,43 @@ t.test('validateSpells: Strictly Superior Spells', (t) => {
       t.end();
     });
 
-    t.test('4. Aquajet Grasp vs Dark Grasp (Dark Grasp has difficult terrain debuff on injury)', (t) => {
-      const aquajetGrasp = makeMockSphere('Aquamancy', [
-        makeMockSpell({
-          name: 'Aquajet Grasp',
-          rank: 1,
-          roles: ['burst', 'maim'],
-          attack: {
-            hit: '\\damageranktwo.',
-            injury: 'You fling it.',
-            targeting: 'Make an attack vs. Brawn against one creature you touch.',
-          },
-        }),
-      ]);
+    t.test(
+      '4. Aquajet Grasp vs Dark Grasp (Dark Grasp has difficult terrain debuff on injury)',
+      (t) => {
+        const aquajetGrasp = makeMockSphere('Aquamancy', [
+          makeMockSpell({
+            name: 'Aquajet Grasp',
+            rank: 1,
+            roles: ['burst', 'maim'],
+            attack: {
+              hit: '\\damageranktwo.',
+              injury: 'You fling it.',
+              targeting: 'Make an attack vs. Brawn against one creature you touch.',
+            },
+          }),
+        ]);
 
-      const darkGrasp = makeMockSphere('Umbramancy', [
-        makeMockSpell({
-          name: 'Dark Grasp',
-          rank: 1,
-          roles: ['burst', 'maim'],
-          attack: {
-            hit: '\\damageranktwolow.',
-            injury: 'As a condition, target treats dim illumination as difficult terrain.',
-            targeting: 'Make an attack vs. Brawn against something adjacent.',
-          },
-        }),
-      ]);
+        const darkGrasp = makeMockSphere('Umbramancy', [
+          makeMockSpell({
+            name: 'Dark Grasp',
+            rank: 1,
+            roles: ['burst', 'maim'],
+            attack: {
+              hit: '\\damageranktwolow.',
+              injury: 'As a condition, target treats dim illumination as difficult terrain.',
+              targeting: 'Make an attack vs. Brawn against something adjacent.',
+            },
+          }),
+        ]);
 
-      const issues = validateSpells([aquajetGrasp, darkGrasp]);
-      t.notOk(
-        issues.find((i) => i.type === 'strictly_superior'),
-        'Should not flag Aquajet Grasp vs Dark Grasp',
-      );
-      t.end();
-    });
+        const issues = validateSpells([aquajetGrasp, darkGrasp]);
+        t.notOk(
+          issues.find((i) => i.type === 'strictly_superior'),
+          'Should not flag Aquajet Grasp vs Dark Grasp',
+        );
+        t.end();
+      },
+    );
 
     t.test('5. Entangle vs Windseal (target count and removal drawback)', (t) => {
       const entangle = makeMockSphere('Verdamancy', [
@@ -597,40 +600,43 @@ t.test('validateSpells: Strictly Superior Spells', (t) => {
       },
     );
 
-    t.test('13. Slow vs Hostile Timeseal (slowed vs frozen in time/cannot act/returns to normal)', (t) => {
-      const slow = makeMockSphere('Chronomancy', [
-        makeMockSpell({
-          name: 'Slow',
-          rank: 4,
-          roles: ['maim'],
-          attack: {
-            hit: 'If the target is \\glossterm{injured}, it is \\slowed as a \\glossterm{condition}.',
-            targeting:
-              'Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius within \\shortrange.',
-          },
-        }),
-      ]);
+    t.test(
+      '13. Slow vs Hostile Timeseal (slowed vs frozen in time/cannot act/returns to normal)',
+      (t) => {
+        const slow = makeMockSphere('Chronomancy', [
+          makeMockSpell({
+            name: 'Slow',
+            rank: 4,
+            roles: ['maim'],
+            attack: {
+              hit: 'If the target is \\glossterm{injured}, it is \\slowed as a \\glossterm{condition}.',
+              targeting:
+                'Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius within \\shortrange.',
+            },
+          }),
+        ]);
 
-      const hostileTimeseal = makeMockSphere('Chronomancy', [
-        makeMockSpell({
-          name: 'Hostile Timeseal',
-          rank: 4,
-          roles: ['maim', 'stasis'],
-          attack: {
-            hit: 'If the target is \\glossterm{injured}, it becomes \\briefly frozen in time. It becomes completely immune to all damage, attacks, and effects of any kind. In addition, it cannot act in any way, and the duration of other effects on it does not expire. At the end of your next turn, it returns to normal...',
-            targeting:
-              'Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius within \\shortrange.',
-          },
-        }),
-      ]);
+        const hostileTimeseal = makeMockSphere('Chronomancy', [
+          makeMockSpell({
+            name: 'Hostile Timeseal',
+            rank: 4,
+            roles: ['maim', 'stasis'],
+            attack: {
+              hit: 'If the target is \\glossterm{injured}, it becomes \\briefly frozen in time. It becomes completely immune to all damage, attacks, and effects of any kind. In addition, it cannot act in any way, and the duration of other effects on it does not expire. At the end of your next turn, it returns to normal...',
+              targeting:
+                'Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius within \\shortrange.',
+            },
+          }),
+        ]);
 
-      const issues = validateSpells([slow, hostileTimeseal]);
-      t.notOk(
-        issues.find((i) => i.type === 'strictly_superior'),
-        'Should not flag Slow vs Hostile Timeseal',
-      );
-      t.end();
-    });
+        const issues = validateSpells([slow, hostileTimeseal]);
+        t.notOk(
+          issues.find((i) => i.type === 'strictly_superior'),
+          'Should not flag Slow vs Hostile Timeseal',
+        );
+        t.end();
+      },
+    );
 
     t.test('14. Whirlwind of Blades vs Mighty Word of Faith (enemiesOnly difference)', (t) => {
       const whirlwindOfBlades = makeMockSphere('Fabrication', [

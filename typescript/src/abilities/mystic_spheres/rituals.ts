@@ -3505,10 +3505,10 @@ export const rituals: RitualDefinition[] = [
         The effect applies to fog, smoke, and mist.
         They must be thick enough to block sight beyond five feet.
       `,
-      Aquamancy: "The effect applies to all liquids.",
-      Cryomancy: "The effect applies to ice.",
-      Telekinesis: "All other mystic sphere effects also apply.",
-      Verdamancy: "The effect applies to light and heavy undergrowth.",
+      Aquamancy: 'The effect applies to all liquids.',
+      Cryomancy: 'The effect applies to ice.',
+      Telekinesis: 'All other mystic sphere effects also apply.',
+      Verdamancy: 'The effect applies to light and heavy undergrowth.',
     },
     spheres: ['Aeromancy', 'Aquamancy', 'Cryomancy', 'Telekinesis', 'Verdamancy'],
   },

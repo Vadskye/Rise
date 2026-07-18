@@ -57,9 +57,13 @@ export function tokenize(normalized: string): string[] {
 export function firstDiffIndex(tokA: string[], tokB: string[]): number {
   const len = Math.min(tokA.length, tokB.length);
   for (let i = 0; i < len; i++) {
-    if (tokA[i] !== tokB[i]) return i;
+    if (tokA[i] !== tokB[i]) {
+      return i;
+    }
   }
-  if (tokA.length !== tokB.length) return len;
+  if (tokA.length !== tokB.length) {
+    return len;
+  }
   return -1;
 }
 

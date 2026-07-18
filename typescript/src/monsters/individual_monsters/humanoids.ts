@@ -81,7 +81,6 @@ export function addHumanoids(grimoire: Grimoire) {
   addBugbears(grimoire);
   addCultists(grimoire);
   addGiants(grimoire);
-  addGoblins(grimoire);
   addKobolds(grimoire);
   addLizardfolk(grimoire);
   addNecromancers(grimoire);
@@ -352,27 +351,8 @@ function addCultists(grimoire: Grimoire) {
           });
           creature.setTrainedSkills([]);
           creature.setBaseAttributes([0, 4, 1, 0, 3, 1]);
-          creature.addCustomManeuver({
-            name: "Alchemist's Fire",
-            attack: {
-              hit: '\\damagerankfourlow.',
-              targeting: `
-                Make an attack vs. Reflex against something within \\shortrange.
-              `,
-            },
-            tags: ['Fire'],
-          });
-          creature.addCustomManeuver({
-            name: 'Firebomb',
-            attack: {
-              hit: '\\damagerankthreelow.',
-              halfOnMiss: true,
-              targeting: `
-                Make an attack vs. Reflex against everything in a \\smallarea radius within \\shortrange.
-              `,
-            },
-            tags: ['Fire'],
-          });
+          creature.addThrowItem("Alchemist's Fire");
+          creature.addThrowItem("Firebomb");
         },
       ],
     ],
@@ -487,95 +467,6 @@ function addGiants(grimoire: Grimoire) {
           creature.addSpell('Mighty Rockshard Blast', { usageTime: 'elite' });
           creature.addSpell('Crushing Gravity', { usageTime: 'elite' });
           creature.addSpell('Mighty Tremor', { usageTime: 'elite' });
-        },
-      ],
-    ],
-  );
-}
-
-function addGoblins(grimoire: Grimoire) {
-  grimoire.addMonsterGroup(
-    {
-      name: 'Goblins',
-      knowledge: {
-        normal: `
-          Goblins are small, green-skinned humanoid creatures.
-          They are generally cowardly and selfish.
-          It's rare to see a goblin alone.
-          They tend to gather into small groups of scavengers that try to take what's left after stronger creatures fight.
-          However, if they believe they have an advantage in combat, they can be terrifyingly aggressive.
-        `,
-        hard: `
-          Goblins are easy to bully, and they love brute strength.
-          However, they are naturally disloyal, so they can easily abandon their alleged leader if they perceive weakness or just think they can do better elsewhere.
-          Only ceatures that are both strong and unintelligent, like ogres and trolls, are typically accompanied by goblin minions.
-          
-        `,
-      },
-    },
-    [
-      [
-        'Goblin Skirmisher',
-        (creature: Creature) => {
-          creature.setRequiredProperties({
-            ...originAndType,
-            alignment: 'chaotic evil',
-            base_class: 'skirmisher',
-            elite: false,
-            level: 1,
-            size: 'medium',
-          });
-          creature.setTrainedSkills(['awareness']);
-          creature.setBaseAttributes([-1, 4, 0, -2, 2, -2]);
-          creature.addWeaponMult('spear');
-          creature.addManeuver('Charge', { weapon: 'spear' });
-          creature.setEquippedArmorName({
-            bodyArmor: 'buff leather',
-            shield: 'buckler',
-          });
-        },
-      ],
-      [
-        'Wolf Rider',
-        (creature: Creature) => {
-          creature.setRequiredProperties({
-            ...originAndType,
-            alignment: 'chaotic evil',
-            base_class: 'skirmisher',
-            elite: false,
-            level: 3,
-            size: 'medium',
-          });
-          creature.setProperties({ has_art: true });
-          creature.setTrainedSkills(['ride']);
-          creature.setBaseAttributes([-1, 4, 0, -2, 2, -2]);
-          creature.addWeaponMult('lance');
-          creature.addWeaponMult('spear');
-          creature.setEquippedArmorName({
-            bodyArmor: 'buff leather',
-            shield: 'buckler',
-          });
-        },
-      ],
-      [
-        'Goblin Shaman',
-        (creature: Creature) => {
-          creature.setRequiredProperties({
-            ...originAndType,
-            alignment: 'chaotic evil',
-            base_class: 'skirmisher',
-            elite: false,
-            level: 1,
-            size: 'medium',
-          });
-          creature.setTrainedSkills(['awareness']);
-          creature.setBaseAttributes([-1, 3, 0, -2, 2, 3]);
-          creature.addSpell('Word of Power');
-          creature.setEquippedArmorName({
-            bodyArmor: 'buff leather',
-            shield: 'standard shield',
-          });
-          creature.addWeaponMult('spear', { displayName: 'Consecrated Strike', isMagical: true });
         },
       ],
     ],

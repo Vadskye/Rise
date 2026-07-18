@@ -1,4 +1,5 @@
 import { CharacterSheet } from '@src/character_sheet/character_sheet';
+import { ValidationIssue } from './validation';
 import {
   getCurrentCharacterSheet,
   setCurrentCharacterSheet,
@@ -15,11 +16,11 @@ import {
   RiseRole,
   RiseSize,
   RiseSpecialDefense,
-  RiseTag,
   RiseWeaponTag,
   RiseTrait,
   isTrait,
   RiseAbilityDefinitionTag,
+  RISE_DEFAULT_TRAITS,
 } from '@src/character_sheet/rise_data';
 import {
   RiseCraftSkill,
@@ -43,17 +44,15 @@ import {
 import { DamageScaling } from '@src/core_mechanics/damage_scaling';
 import { DicePool } from '@src/core_mechanics/dice_pool';
 import * as format from '@src/latex/format';
-import {
-  EquippedItem,
-  isBodyArmor,
-  isShield,
-  generateBodyArmorProperties,
-  generateShieldProperties,
-  BodyArmor,
-  Shield,
-} from '@src/monsters/equipment';
+import { EquippedItem, isBodyArmor, isShield, BodyArmor, Shield } from '@src/monsters/equipment';
 import { KNOWLEDGE_BY_ORIGIN, KNOWLEDGE_BY_TYPE } from './knowledge';
 import { getArmorBaseDefinition, ArmorKind } from '@src/equipment/armor';
+import { alchemicalItems } from '@src/equipment/data/consumables/alchemical_items';
+import { getUpgradeItems } from '@src/equipment/types';
+import {
+  combineDescriptions,
+  parseConsumableDescription,
+} from '@src/equipment/equipment_abilities';
 
 export type TargetSelectionLogic = 'Random' | 'Ordered' | 'Vulnerable';
 
@@ -69,7 +68,13 @@ export interface KnowledgeResultConfig {
 }
 
 // These have unique typedefs beyond the standard string/number/bool
-type CustomCreatureProperty = 'base_class' | 'creature_origin' | 'creature_type' | 'role' | 'size';
+type CustomCreatureProperty =
+  | 'base_class'
+  | 'creature_origin'
+  | 'creature_type'
+  | 'creature_types'
+  | 'role'
+  | 'size';
 
 type NumericCreatureProperty =
   | 'accuracy'
@@ -150,7 +155,8 @@ export type CreaturePropertyMap = {
   alignment: RiseAlignment;
   base_class: RiseBaseClass;
   creature_origin: RiseCreatureOrigin;
-  creature_type: RiseCreatureType;
+  creature_types: RiseCreatureType[];
+  creature_type?: RiseCreatureType;
   role: RiseRole;
   size: RiseSize;
 } & Record<NumericCreatureProperty, number> &
@@ -162,10 +168,13 @@ export type CreatureRequiredProperties =
   | 'base_class'
   | 'elite'
   | 'creature_origin'
-  | 'creature_type'
   | 'size'
   | 'level';
-export type CreatureRequiredPropertyMap = Pick<CreaturePropertyMap, CreatureRequiredProperties>;
+
+export type CreatureRequiredPropertyMap = Pick<CreaturePropertyMap, CreatureRequiredProperties> & {
+  creature_types?: RiseCreatureType[];
+  creature_type?: RiseCreatureType;
+};
 
 type CreatureProperty =
   | CustomCreatureProperty
@@ -197,12 +206,15 @@ export interface CustomModifierNumericEffect {
 }
 
 // TODO: Does this need a `type`?
-export interface MonsterAbilityOptions {
+export type MonsterAbilityOptions = MonsterNonweaponAbilityOptions & {
+  weapon?: MonsterWeapon;
+};
+
+export interface MonsterNonweaponAbilityOptions {
   displayName?: string;
   isMagical?: boolean; // Spells default to true, maneuvers default to false
   tags?: RiseAbilityDefinitionTag[];
   usageTime?: MonsterAttackUsageTime;
-  weapon?: MonsterWeapon;
 }
 
 interface NonScaledCustomMonsterAbility extends Omit<
@@ -311,12 +323,18 @@ export class Creature implements CreaturePropertyMap {
   // TODO: redesign creature types and tags; plants should use knowledge (nature), etc.
   getRelevantKnowledge(): RiseKnowledgeSkill {
     const knowledgeFromOrigin = KNOWLEDGE_BY_ORIGIN[this.creature_origin];
-    const knowledgeFromType = KNOWLEDGE_BY_TYPE[this.creature_type];
+    let knowledgeFromType: RiseKnowledgeSkill | undefined;
+    for (const type of this.creature_types) {
+      if (KNOWLEDGE_BY_TYPE[type]) {
+        knowledgeFromType = KNOWLEDGE_BY_TYPE[type];
+        break;
+      }
+    }
     const defaultKnowledge = knowledgeFromType || knowledgeFromOrigin;
 
     if (!defaultKnowledge) {
       throw new Error(
-        `Unable to get relevant knowledge for creature ${this.name} with origin ${this.creature_origin} and type ${this.creature_type}.`,
+        `Unable to get relevant knowledge for creature ${this.name} with origin ${this.creature_origin} and types ${this.creature_types.join(', ')}.`,
       );
     }
     // TODO: return more than one valid knowledge skill. For now, just return the first
@@ -524,7 +542,7 @@ export class Creature implements CreaturePropertyMap {
 
   addGrapplingStrike(
     weapon: MonsterWeapon,
-    { displayName, isMagical, tags, usageTime }: Omit<MonsterAbilityOptions, 'weapon'> = {},
+    { displayName, isMagical, tags, usageTime }: MonsterNonweaponAbilityOptions = {},
   ) {
     displayName = displayName || `Grappling ${format.titleCase(weapon)}`;
 
@@ -555,7 +573,7 @@ export class Creature implements CreaturePropertyMap {
   addPoisonousStrike(
     weapon: MonsterWeapon,
     poison: PoisonDefinition,
-    { displayName, isMagical, tags, usageTime }: Omit<MonsterAbilityOptions, 'weapon'> = {},
+    { displayName, isMagical, tags, usageTime }: MonsterNonweaponAbilityOptions = {},
   ) {
     displayName = displayName || `Venomous ${format.titleCase(weapon)}`;
 
@@ -586,7 +604,7 @@ export class Creature implements CreaturePropertyMap {
 
   addWeaponMult(
     weapon: MonsterWeapon,
-    { displayName, isMagical, tags, usageTime }: Omit<MonsterAbilityOptions, 'weapon'> = {},
+    { displayName, isMagical, tags, usageTime }: MonsterNonweaponAbilityOptions = {},
   ) {
     displayName = displayName || format.titleCase(weapon);
     this.addActiveAbility({
@@ -602,7 +620,7 @@ export class Creature implements CreaturePropertyMap {
 
   addLatchOn(
     weapon: MonsterWeapon,
-    { displayName, isMagical, tags, usageTime }: Omit<MonsterAbilityOptions, 'weapon'> = {},
+    { displayName, isMagical, tags, usageTime }: MonsterNonweaponAbilityOptions = {},
   ) {
     displayName = displayName || format.titleCase(weapon);
     const maneuver = getWeaponMultByRank(this.calculateRank());
@@ -624,7 +642,7 @@ export class Creature implements CreaturePropertyMap {
 
   addSneakAttack(
     weapon: MonsterWeapon,
-    { displayName, isMagical, tags, usageTime }: Omit<MonsterAbilityOptions, 'weapon'> = {},
+    { displayName, isMagical, tags, usageTime }: MonsterNonweaponAbilityOptions = {},
   ) {
     const maybeRanged = getWeaponTags(weapon).some((tag) => /(Projectile|Thrown)/.test(tag))
       ? 'Ranged '
@@ -675,6 +693,63 @@ export class Creature implements CreaturePropertyMap {
       isMagical: spell.isMagical === undefined ? true : spell.isMagical,
       roles: [],
     });
+  }
+
+  addThrowItem(itemName: string, options: MonsterNonweaponAbilityOptions = {}) {
+    const baseTool = alchemicalItems().find(
+      (tool) => tool.item.name.toLowerCase() === itemName.toLowerCase(),
+    );
+    if (!baseTool) {
+      this.throwError(`Could not find alchemical item '${itemName}'`);
+      return;
+    }
+
+    const baseItem = baseTool.item;
+    const itemRank = (this.calculateRank() - 1) as ActiveAbilityRank;
+
+    const upgrades = getUpgradeItems(baseItem);
+    const eligibleUpgrades = upgrades.filter((up) => up.rank <= itemRank);
+
+    const activeItem =
+      eligibleUpgrades.length > 0 ? eligibleUpgrades[eligibleUpgrades.length - 1] : baseItem;
+
+    const name = options.displayName || baseItem.name;
+    const itemTags = activeItem.tags || [];
+    const mergedTags = Array.from(
+      new Set([...itemTags, ...(options.tags || [])]),
+    ) as RiseAbilityDefinitionTag[];
+
+    let description = baseItem.description.trim();
+    if (activeItem !== baseItem) {
+      description = combineDescriptions(description, activeItem.description.trim());
+    }
+
+    const parsed = parseConsumableDescription(description);
+
+    const isHalfOnMiss =
+      parsed.miss?.toLowerCase().replace(/\s+/g, ' ').trim().replace(/\.$/, '') === 'half damage';
+
+    const maneuver: ActiveAbility = {
+      kind: 'maneuver',
+      name,
+      isMagical: options.isMagical !== undefined ? options.isMagical : false,
+      rank: itemRank,
+      roles: [],
+      tags: mergedTags,
+      attack: {
+        targeting: parsed.targeting,
+        hit: parsed.hit || '',
+        ...(parsed.injury ? { injury: parsed.injury } : {}),
+        ...(parsed.crit ? { crit: parsed.crit } : {}),
+        ...(isHalfOnMiss ? { halfOnMiss: true } : parsed.miss ? { miss: parsed.miss } : {}),
+      },
+    };
+
+    if (options.usageTime) {
+      maneuver.usageTime = options.usageTime;
+    }
+
+    this.addActiveAbility(maneuver);
   }
 
   // Arbitrary names are ignored when generating LaTeX. However, names that match standard
@@ -830,6 +905,15 @@ export class Creature implements CreaturePropertyMap {
     };
   }
 
+  hasKnowledgeResults(): boolean {
+    return Boolean(
+      this.knowledge_result_easy ||
+      this.knowledge_result_normal ||
+      this.knowledge_result_hard ||
+      this.knowledge_result_legendary,
+    );
+  }
+
   addTrait(traitName: RiseTrait) {
     const modifier: CustomModifierConfig = { name: traitName };
 
@@ -899,12 +983,18 @@ export class Creature implements CreaturePropertyMap {
     this.applyStandardTraits();
   }
 
-  // Always use this instead of calling `this.sheet.setProperties` directly to ensure that
-  // the cache is reset. The time cost of `.clearCache` is ~0, so even in a function that
-  // sets multiple sheet properties, there's no advantage in `.setProperties` directly.
   setProperties(properties: Partial<CreaturePropertyMap>) {
     setCurrentCharacterSheet(this.sheet.characterName);
-    this.sheet.setProperties(properties);
+    const sheetProperties: any = {};
+    for (const key of Object.keys(properties)) {
+      if (key === 'creature_types') {
+        const types = (properties as any).creature_types;
+        sheetProperties.creature_types = Array.isArray(types) ? types.join(', ') : '';
+      } else {
+        sheetProperties[key] = (properties as any)[key];
+      }
+    }
+    this.sheet.setProperties(sheetProperties);
     this.clearCache();
   }
 
@@ -966,24 +1056,10 @@ export class Creature implements CreaturePropertyMap {
   // We're specifically checking that the monster is ready for LaTeX generation, so
   // anything that would break that is treated as an error, even if it doesn't block the
   // sheet worker from doing ordinary combat math.
-  checkValidMonster() {
-    if (this.name === this.name.toLowerCase()) {
-      this.throwError('Name must be title case');
-    }
-    if (!this.alignment) {
-      this.throwError('Must have alignment');
-    }
+  checkValidMonster(): ValidationIssue[] {
+    const issues: ValidationIssue[] = [];
 
-    if (this.intelligence >= -2 && this.getTrainedSkillNames().length === 0) {
-      this.warn('Has no trained skills');
-    }
-
-    if (this.intelligence > -8 && this.creature_type === 'animal') {
-      this.warn('Animal should have an Intelligence of -8 or less');
-    }
-    if (this.intelligence > -5 && this.creature_type === 'beast') {
-      this.warn('Beast should have an Intelligence of -5 or less');
-    }
+    return issues;
   }
 
   throwError(message: string) {
@@ -1013,8 +1089,27 @@ export class Creature implements CreaturePropertyMap {
     return this.getPropertyValue('creature_origin');
   }
 
-  public get creature_type(): RiseCreatureType {
-    return this.getPropertyValue('creature_type');
+  public get creature_types(): RiseCreatureType[] {
+    const val = this.getPropertyValue('creature_types' as any) as any;
+    if (typeof val === 'string' && val) {
+      return val
+        .split(',')
+        .map((t) => t.trim().toLowerCase() as RiseCreatureType)
+        .filter(Boolean);
+    }
+    if (Array.isArray(val) && val.length > 0) {
+      return val;
+    }
+    // Fallback to legacy creature_type
+    const legacyType = this.getPropertyValue('creature_type' as any) as any;
+    if (legacyType) {
+      return [legacyType as RiseCreatureType];
+    }
+    return [];
+  }
+
+  public isExactlyCreatureType(type: RiseCreatureType): boolean {
+    return this.creature_types.length === 1 && this.creature_types[0] === type;
   }
 
   public get land_speed() {
@@ -1335,10 +1430,6 @@ export class Creature implements CreaturePropertyMap {
     return this.getPropertyValue('knowledge_planes');
   }
 
-  public get knowledge_religion() {
-    return this.getPropertyValue('knowledge_religion');
-  }
-
   public get knowledge_souls() {
     return this.getPropertyValue('knowledge_souls');
   }
@@ -1565,7 +1656,7 @@ export class Creature implements CreaturePropertyMap {
       }
     }
 
-    if (this.creature_type === 'ghost') {
+    if (this.creature_types.includes('ghost')) {
       if (!this.getModifierNames().includes('Ghostly Nature')) {
         this.addCustomModifier({
           name: 'Ghostly Nature',
@@ -1575,7 +1666,7 @@ export class Creature implements CreaturePropertyMap {
       }
     }
 
-    if (this.creature_type === 'plant') {
+    if (this.creature_types.includes('plant')) {
       if (!this.getModifierNames().includes('Plant Nature')) {
         this.addCustomModifier({
           name: 'Plant Nature',
@@ -1586,15 +1677,7 @@ export class Creature implements CreaturePropertyMap {
   }
 
   public getStandardTraitsForClassification(): RiseTrait[] {
-    let traits: RiseTrait[] = [
-      'blooded',
-      'corporeal',
-      'dynamic',
-      'ensouled',
-      'living',
-      'mortal',
-      'sighted',
-    ];
+    let traits: RiseTrait[] = [...RISE_DEFAULT_TRAITS] as RiseTrait[];
 
     // Origin Traits
     const originTraits: RiseTrait[] = [];
@@ -1617,31 +1700,33 @@ export class Creature implements CreaturePropertyMap {
 
     // Traits by Type
     const typeTraits: RiseTrait[] = [];
-    switch (this.creature_type) {
-      case 'aberration':
-      case 'animal':
-      case 'beast':
-        break;
-      case 'construct':
-        typeTraits.push('mindless', 'nonliving', 'soulless', 'static');
-        break;
-      case 'dragon':
-      case 'fey':
-        typeTraits.push('immortal');
-        break;
-      case 'ghost':
-        typeTraits.push('incorporeal');
-        break;
-      case 'humanoid':
-      case 'indwelt':
-      case 'insect':
-        break;
-      case 'ooze':
-        typeTraits.push('simple-minded', 'soulless');
-        break;
-      case 'plant':
-        typeTraits.push('bloodless', 'soulless');
-        break;
+    for (const type of this.creature_types) {
+      switch (type) {
+        case 'aberration':
+        case 'animal':
+        case 'beast':
+          break;
+        case 'construct':
+          typeTraits.push('mindless', 'nonliving', 'soulless', 'static');
+          break;
+        case 'dragon':
+        case 'fey':
+          typeTraits.push('immortal');
+          break;
+        case 'ghost':
+          typeTraits.push('incorporeal');
+          break;
+        case 'humanoid':
+        case 'indwelt':
+        case 'insect':
+          break;
+        case 'ooze':
+          typeTraits.push('simple-minded', 'soulless');
+          break;
+        case 'plant':
+          typeTraits.push('bloodless', 'soulless');
+          break;
+      }
     }
 
     // Type traits override origin traits
@@ -1666,7 +1751,9 @@ const TRAIT_CONFLICTS: [RiseTrait, RiseTrait][] = [
 ];
 
 function areTraitsConflicting(traitA: RiseTrait, traitB: RiseTrait): boolean {
-  if (traitA === traitB) return false;
+  if (traitA === traitB) {
+    return false;
+  }
   return TRAIT_CONFLICTS.some(
     ([t1, t2]) => (traitA === t1 && traitB === t2) || (traitA === t2 && traitB === t1),
   );

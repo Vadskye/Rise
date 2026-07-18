@@ -27,7 +27,10 @@ export interface StandardItem {
   attunement: AttunementRequirement;
 }
 
-export type RawConsumable = Omit<StandardItem, 'magical' | 'rarity' | 'tags' | 'upgrades' | 'attunement'> &
+export type RawConsumable = Omit<
+  StandardItem,
+  'magical' | 'rarity' | 'tags' | 'upgrades' | 'attunement'
+> &
   Partial<Pick<StandardItem, 'tags' | 'upgrades'>> & { attunement: AttunementRequirement };
 
 /**
@@ -51,7 +54,7 @@ export function getUpgradeItems(item: StandardItem): StandardItem[] {
 }
 
 import { ArmorUsageClass, ArmorMaterial } from './armor';
-export { ArmorUsageClass, ArmorMaterial };
+export type { ArmorUsageClass, ArmorMaterial };
 
 export type MagicArmor =
   | { kind: 'Body'; item: StandardItem }
@@ -76,7 +79,6 @@ export interface Weapon {
   tags: WeaponTag[];
   isNatural?: boolean;
 }
-
 
 export type WeaponTag =
   | 'Ammunition'

@@ -150,3 +150,37 @@ t.test('calling only setEquippedArmorName does not affect numeric stats', (t) =>
 
   t.end();
 });
+
+t.test('addThrowItem dynamically generates correct maneuvers', (t) => {
+  const creature = Creature.new();
+  creature.setRequiredProperties({
+    alignment: 'chaotic evil',
+    base_class: 'skirmisher',
+    elite: false,
+    creature_origin: 'natural',
+    creature_type: 'humanoid',
+    level: 6,
+    size: 'medium',
+  });
+  creature.addThrowItem("Alchemist's Fire");
+
+  const ability = creature.getActiveAbility("Alchemist's Fire");
+  t.ok(ability, "Ability should exist");
+  t.equal(ability?.kind, 'maneuver');
+  t.equal(ability?.name, "Alchemist's Fire");
+  t.match(ability?.attack?.targeting, /Make an attack vs\. Reflex against something within \\shortrange\./);
+  t.equal(ability?.attack?.hit, "$dr5l damage.");
+  t.matchOnly(ability?.tags, ['Fire']);
+
+  creature.addThrowItem("Firebomb");
+  const ability2 = creature.getActiveAbility("Firebomb");
+  t.ok(ability2, "Ability should exist");
+  t.equal(ability2?.kind, 'maneuver');
+  t.equal(ability2?.name, 'Firebomb');
+  t.match(ability2?.attack?.targeting, /Make an attack vs\. Reflex against everything in a \\smallarea radius within \\shortrange\./);
+  t.equal(ability2?.attack?.hit, "$dr2l damage.");
+  t.equal(ability2?.attack?.halfOnMiss, true);
+  t.matchOnly(ability2?.tags, ['Fire']);
+
+  t.end();
+});

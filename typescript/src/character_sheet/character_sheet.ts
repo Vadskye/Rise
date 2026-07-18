@@ -6,7 +6,7 @@ import {
   RepeatingSectionName,
 } from '@src/character_sheet/repeating_section/repeating_section';
 import type { Attrs, EventInfo, SimpleValue } from './sheet_worker';
-import { Unsubscriber } from '@src/character_sheet/events/signal';
+import { Unsubscriber, globalBatchContext } from '@src/character_sheet/events/signal';
 
 export class CharacterSheet {
   characterName: string;
@@ -14,6 +14,8 @@ export class CharacterSheet {
   private properties: Record<string, Property<SimpleValue>>;
   private repeatingSections: Record<string, RepeatingSection>;
   private latestRowId: number | null = null;
+  public cachedValidationResult?: any;
+  public cachedInputJson?: string;
   private static signalCache: Record<
     string,
     {
@@ -87,13 +89,13 @@ export class CharacterSheet {
       CharacterSheet.signalCache[listenString];
     const unsubscribers: Unsubscriber[] = [];
 
+    const wrapper = (_: any, eventInfo: EventInfo) => {
+      callback(eventInfo);
+    };
+
     if (hasOpenedTrigger) {
       const openedSignal = this.getButton('sheet:opened').ClickedSignal;
-      unsubscribers.push(
-        openedSignal.on((_, eventInfo: EventInfo) => {
-          callback(eventInfo);
-        }),
-      );
+      unsubscribers.push(openedSignal.on(wrapper));
     }
 
     for (const propertyName of changedPropertyNames) {
@@ -101,20 +103,12 @@ export class CharacterSheet {
         // TODO: we don't handle unsubscribing from repeating sections right now
         this.getRepeatingSection(propertyName).onChange(propertyName, callback);
       } else {
-        unsubscribers.push(
-          this.getProperty(propertyName).SetSignal.on((_, eventInfo: EventInfo) => {
-            callback(eventInfo);
-          }),
-        );
+        unsubscribers.push(this.getProperty(propertyName).SetSignal.on(wrapper));
       }
     }
 
     for (const buttonName of clickedButtonNames) {
-      unsubscribers.push(
-        this.getButton(buttonName).ClickedSignal.on((_, eventInfo: EventInfo) => {
-          callback(eventInfo);
-        }),
-      );
+      unsubscribers.push(this.getButton(buttonName).ClickedSignal.on(wrapper));
     }
 
     return () => {
@@ -195,11 +189,32 @@ export class CharacterSheet {
   // attribute changes.
   // Note that *derived* attributes like `accuracy`, `hit_points`, and `armor_defense` can't be meaningfully set using this function. Direct changes to those properties will be immediately overwritten by automatic calculation. Instead, use modifiers to customize character statistics.
   public setProperties(attrs: Record<string, SimpleValue>): void {
-    for (const propertyName of Object.keys(attrs)) {
-      if (propertyName.startsWith('repeating_')) {
-        this.getRepeatingSection(propertyName).setProperty(propertyName, attrs[propertyName]);
-      } else {
-        this.getProperty(propertyName).set(attrs[propertyName]);
+    const isRootBatch = !globalBatchContext.isActive;
+    if (isRootBatch) {
+      globalBatchContext.isActive = true;
+      globalBatchContext.queuedHandlers.clear();
+    }
+
+    try {
+      for (const propertyName of Object.keys(attrs)) {
+        if (propertyName.startsWith('repeating_')) {
+          this.getRepeatingSection(propertyName).setProperty(propertyName, attrs[propertyName]);
+        } else {
+          this.getProperty(propertyName).set(attrs[propertyName]);
+        }
+      }
+    } finally {
+      if (isRootBatch) {
+        globalBatchContext.isActive = false;
+
+        while (globalBatchContext.queuedHandlers.size > 0) {
+          const handlersToRun = Array.from(globalBatchContext.queuedHandlers.entries());
+          globalBatchContext.queuedHandlers.clear();
+
+          for (const [handler, { source, value }] of handlersToRun) {
+            handler(source, value);
+          }
+        }
       }
     }
   }

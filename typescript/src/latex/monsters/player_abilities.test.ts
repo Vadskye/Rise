@@ -8,6 +8,8 @@ import {
   restructureStrikeAbility,
   reformatAttackConsequences,
   StrikeActiveAbility,
+  convertLatexToWebText,
+  prepareActiveAbilitiesForWebPreview,
 } from './player_abilities';
 import { calculateDamage } from '@src/core_mechanics/damage_calculation';
 import { ActiveAbility, standardizeManeuver } from '@src/abilities';
@@ -336,6 +338,20 @@ t.test('convertAbilityToMonsterLatex', (t) => {
     \\end{activeability}`,
     );
 
+    t.end();
+  });
+
+  t.test('Steady Slam (Mundane)', (t) => {
+    simpleCreature.addManeuver('Steady Slam', { weapon: 'bite' });
+    const ability = simpleCreature.getActiveAbilities()[0];
+    t.match(convertAbilityToMonsterLatex(simpleCreature, ability), /\\hit 1d8\+10 damage\./);
+    t.end();
+  });
+
+  t.test('Steady Slam (Magical Maneuver)', (t) => {
+    simpleCreature.addManeuver('Steady Slam', { weapon: 'bite', isMagical: true });
+    const ability = simpleCreature.getActiveAbilities()[0];
+    t.match(convertAbilityToMonsterLatex(simpleCreature, ability), /\\hit 1d8\+5 damage\./);
     t.end();
   });
 
@@ -695,5 +711,49 @@ t.test('calculateDamage', (t) => {
     t.end();
   });
 
+  t.end();
+});
+
+t.test('convertLatexToWebText', (t) => {
+  t.equal(convertLatexToWebText('\\glossterm{stamina}'), 'stamina');
+  t.equal(convertLatexToWebText('\\weapontag{Heavy}'), 'Heavy');
+  t.equal(convertLatexToWebText('\\reminder{plus 2}'), '(plus 2)');
+  t.equal(convertLatexToWebText('\\buff{empowered}'), 'empowered');
+  t.equal(convertLatexToWebText('\\plus2'), '+2');
+  t.equal(convertLatexToWebText('\\minus3'), '-3');
+  t.equal(convertLatexToWebText('\\sparkle'), '✨');
+  t.equal(convertLatexToWebText('Hello \\\\ world'), 'Hello\nworld');
+  t.equal(convertLatexToWebText('Ends with percent%'), 'Ends with percent');
+  t.end();
+});
+
+t.test('prepareActiveAbilitiesForPreview', (t) => {
+  const creature = Creature.new();
+  creature.setProperties({
+    name: 'Goblin Skirmisher',
+    level: 1,
+  });
+  creature.addWeapon('spear');
+
+  const rawAbility: any = {
+    name: 'Spear Strike',
+    kind: 'maneuver',
+    isMagical: false,
+    weapon: 'spear',
+    effect: 'Make a strike.',
+  };
+
+  const prepared = prepareActiveAbilitiesForWebPreview(creature, [rawAbility]);
+  t.equal(prepared.length, 1);
+  const ability = prepared[0];
+  t.equal(ability.name, 'Spear Strike');
+  t.ok(ability.attack);
+
+  // Verify that placeholders and LaTeX tags are correctly formatted
+  t.equal(
+    ability.attack?.targeting,
+    'The goblin skirmisher makes a +0 strike vs. Armor with its spear.',
+  );
+  t.equal(ability.attack?.hit, '1d6 damage.');
   t.end();
 });

@@ -13,7 +13,10 @@ export function itemLatex(item: StandardItem, craftingText: string): string {
   validateShortDescription(item);
 
   const tags = [...(item.tags || [])];
-  if (item.attunement !== 'Unrestricted' && !tags.some((t) => t.toLowerCase() === item.attunement.toLowerCase())) {
+  if (
+    item.attunement !== 'Unrestricted' &&
+    !tags.some((t) => t.toLowerCase() === item.attunement.toLowerCase())
+  ) {
     tags.push(item.attunement);
   }
   const formattedTags = tags.map(formatTagLatex).sort();
@@ -66,7 +69,9 @@ function validateShortDescription(item: StandardItem) {
  * Renders higher-rank upgrades as \upgraderank blocks.
  */
 function latexUpgradesSection(item: StandardItem): string {
-  if (item.upgrades.length === 0) return '';
+  if (item.upgrades.length === 0) {
+    return '';
+  }
 
   return item.upgrades
     .map((upgrade, i) => {

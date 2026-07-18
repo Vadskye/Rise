@@ -11,7 +11,7 @@ function unrestricted(
   } else if (tags.includes('Attune')) {
     attunement = 'Attune';
   }
-  const cleanedTags = tags.filter(t => t !== 'Attune' && t !== 'Attune (deep)');
+  const cleanedTags = tags.filter((t) => t !== 'Attune' && t !== 'Attune (deep)');
   return {
     kind: 'Unrestricted',
     item: {
@@ -276,7 +276,8 @@ function compositeWeapons(): MagicWeapon[] {
         This weapon has two different rank 1 magic weapon properties.
         Each property must not already require a \\glossterm{deep attunement}.
       `,
-      attunement: 'Attune (deep)', tags: [],
+      attunement: 'Attune (deep)',
+      tags: [],
     }),
     unrestricted({
       name: 'Composite Weapon, 2nd',
@@ -286,7 +287,8 @@ function compositeWeapons(): MagicWeapon[] {
         This weapon has two different magic weapon properties that are rank 2 or lower.
         Each property must not already require a \\glossterm{deep attunement}.
       `,
-      attunement: 'Attune (deep)', tags: [],
+      attunement: 'Attune (deep)',
+      tags: [],
     }),
     unrestricted({
       name: 'Composite Weapon, 3rd',
@@ -296,7 +298,8 @@ function compositeWeapons(): MagicWeapon[] {
         This weapon has two different magic weapon properties that are rank 3 or lower.
         Each property must not already require a \\glossterm{deep attunement}.
       `,
-      attunement: 'Attune (deep)', tags: [],
+      attunement: 'Attune (deep)',
+      tags: [],
     }),
   ];
 
@@ -310,7 +313,8 @@ function compositeWeapons(): MagicWeapon[] {
         This weapon has two different magic weapon properties that are rank ${n} or lower.
         Each property must not already require a \\glossterm{deep attunement}.
       `,
-        attunement: 'Attune (deep)', tags: [],
+        attunement: 'Attune (deep)',
+        tags: [],
       }),
     );
   };
@@ -545,7 +549,8 @@ export const magicUnrestrictedWeapons = (): MagicWeapon[] => [
     short_description: 'Steals HP',
     description:
       'The first time each turn that you \\glossterm{injure} a \\trait{blooded} creature other than yourself with a \\glossterm{strike} using this weapon, you regain 1d6 hit points.',
-    attunement: 'Attune (deep)', tags: [],
+    attunement: 'Attune (deep)',
+    tags: [],
     upgrades: [
       {
         rank: 4,
@@ -616,7 +621,7 @@ export const magicUnrestrictedWeapons = (): MagicWeapon[] => [
       \\end{raggeditemize}
     `,
     tags: ['Compulsion'],
-        attunement: 'Attune (deep)',
+    attunement: 'Attune (deep)',
     upgrades: [
       {
         rank: 5,
@@ -669,7 +674,7 @@ export const magicUnrestrictedWeapons = (): MagicWeapon[] => [
       \\end{raggeditemize}
     `,
     tags: ['Poison'],
-        attunement: 'Attune (deep)',
+    attunement: 'Attune (deep)',
     upgrades: [
       {
         rank: 6,

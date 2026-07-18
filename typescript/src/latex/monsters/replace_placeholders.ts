@@ -40,7 +40,11 @@ export function replaceAbilityPlaceholders(
   latex: string,
   context: ReplacementContext,
 ) {
-  const isMagical = context.isMagical ?? false;
+  const isMagical =
+    context.isMagical ||
+    (typeof (monster as any).isWeaponMagical === 'function' &&
+      (monster as any).isWeaponMagical(context.weapon)) ||
+    false;
 
   latex = replacePowerTerms(latex, monster, isMagical);
   latex = replaceDamageRankTerms(latex, monster, isMagical);
@@ -62,7 +66,9 @@ export function replaceMonsterPlaceholders(monster: Creature, latex: string) {
 
 // Internal helper for replaceAccuracyTerms to handle weapon accuracy
 function getWeaponAccuracy(weapon?: MonsterWeapon): number {
-  if (!weapon) return 0;
+  if (!weapon) {
+    return 0;
+  }
   try {
     // We need to import this from weapons.ts
     return getWeaponAccuracyFromWeapons(weapon);
@@ -117,7 +123,9 @@ export function replaceDamageTerms(
 ): string {
   const damagePattern = /\$damage(\*\d+)?\b/g;
   return latex.replaceAll(damagePattern, (match, multiplierStr) => {
-    if (!weapon) return match;
+    if (!weapon) {
+      return match;
+    }
     const multiplier = multiplierStr ? Number(multiplierStr.substring(1)) : 1;
 
     const baseDice = getWeaponDamageDice(weapon);
@@ -137,7 +145,7 @@ export function replaceDamageTerms(
   });
 }
 
-function replaceNames(monsterLatex: string, monsterName: string): string {
+export function replaceNames(monsterLatex: string, monsterName: string): string {
   if (monsterName === monsterName.toLowerCase()) {
     throw new Error(`Monster ${monsterName} has lowercase name, but should be title case`);
   }

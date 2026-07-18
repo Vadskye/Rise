@@ -32,32 +32,33 @@ export function convertMysticSphereToLatex(sphere: MysticSphere): string {
       \\par \\textit{${sphere.shortDescription}}
       ${sphere.specialRules ? `\\parhead{Special Rules} ${sphere.specialRules}` : ''}
 
-      ${cantrips.length > 0
-      ? `
+      ${
+        cantrips.length > 0
+          ? `
             \\subsection{Cantrips}
             ${sortByRankAndLevel(cantrips)
-        .map((spell) => {
-          checkValidSpell(spell);
-          return convertSpellToLatex(spell);
-        })
-        .join('\n')}
+              .map((spell) => {
+                checkValidSpell(spell);
+                return convertSpellToLatex(spell);
+              })
+              .join('\n')}
           `
-      : ''
-    }
+          : ''
+      }
 
       ${ranks
-      .map((rank) =>
-        spellsByRank[rank]
-          ? `\\subsection{Rank ${rank} Spells}
+        .map((rank) =>
+          spellsByRank[rank]
+            ? `\\subsection{Rank ${rank} Spells}
           ${spellsByRank[rank]
             .map((spell) => {
               checkValidSpell(spell);
               return convertSpellToLatex(spell);
             })
             .join('\n')}`
-          : '',
-      )
-      .join('\n')}
+            : '',
+        )
+        .join('\n')}
   `);
 }
 

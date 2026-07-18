@@ -219,7 +219,9 @@ monster_output.tex
 todo.txt
 performance.log
 *.css
-*.html
+html_book/*.html
+character_sheet/*.html
+character_sheet/paper_sheet/*.html
 character_sheet/roll20.less
 
 # Typescript
@@ -231,6 +233,11 @@ comprehensive_codex/generated
 html_book/generated
 typescript/src/**/*.js
 typescript/src/**/*.js.map
+typescript/src/monsters/individual_monsters/monsters_from_ui.ts
+typescript/monster_ui/monsters_from_ui.test.*.json
+typescript/src/monsters/individual_monsters/monsters_from_ui.test.*.ts
+typescript/monster_ui/app_settings.json
+typescript/monster_ui/app_settings.test.*.json
 
 #Rust
 rust/target/*

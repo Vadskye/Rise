@@ -18,6 +18,7 @@ import {
 import {
   addAccuracyToEffect,
   replaceAbilityPlaceholders,
+  replaceNames,
 } from '@src/latex/monsters/replace_placeholders';
 import { DicePool } from '@src/core_mechanics/dice_pool';
 import { calculateDamage, parseDamageRank } from '@src/core_mechanics/damage_calculation';
@@ -867,4 +868,135 @@ export function calculateStrikeDamage(
     globalDamageMultiplier * (Math.floor(relevantPower * powerMultiplier) + extraFlatDamage);
   const diceCount = damageDice.count * globalDamageMultiplier;
   return DicePool.xdyPlus(diceCount, damageDice.size, damageFromPower);
+}
+
+export function convertLatexToWebText(text: string): string {
+  if (!text) {
+    return text;
+  }
+  let cleaned = text;
+
+  // Replace \glossterm{xyz} with xyz
+  cleaned = cleaned.replace(/\\glossterm\{([^}]+)\}/g, '$1');
+
+  // Replace \weapontag{xyz} with xyz
+  cleaned = cleaned.replace(/\\weapontag\{([^}]+)\}/g, '$1');
+
+  // Replace \reminder{xyz} with (xyz)
+  cleaned = cleaned.replace(/\\reminder\{([^}]+)\}/g, '($1)');
+
+  // Replace \buff{xyz} with xyz
+  cleaned = cleaned.replace(/\\buff\{([^}]+)\}/g, '$1');
+
+  cleaned = cleaned.replace(/\\plus/g, '+');
+
+  cleaned = cleaned.replace(/\\minus/g, '-');
+
+  cleaned = cleaned.replace(/\\sparkle/g, '✨');
+
+  // Replace ranges
+  cleaned = cleaned.replace(/\\shortrange/g, 'Short (30 ft.) range');
+  cleaned = cleaned.replace(/\\medrange/g, 'Medium (60 ft.) range');
+  cleaned = cleaned.replace(/\\longrange/g, 'Long (90 ft.) range');
+  cleaned = cleaned.replace(/\\distrange/g, 'Distant (120 ft.) range');
+  cleaned = cleaned.replace(/\\extrange/g, 'Extreme (180 ft.) range');
+
+  // Replace areas
+  cleaned = cleaned.replace(/\\smallarea/g, 'Small (15 ft.)');
+  cleaned = cleaned.replace(/\\medarea/g, 'Medium (30 ft.)');
+  cleaned = cleaned.replace(/\\largearea/g, 'Large (60 ft.)');
+  cleaned = cleaned.replace(/\\hugearea/g, 'Huge (90 ft.)');
+  cleaned = cleaned.replace(/\\gargarea/g, 'Gargantuan (120 ft.)');
+
+  // Replace \atSubdual with Subdual
+  cleaned = cleaned.replace(/\\atSubdual/g, 'Subdual');
+
+  // Strip any remaining \pcref{...} references
+  cleaned = cleaned.replace(/\\pcref\{([^}]+)\}/g, '');
+
+  // Strip trailing % (often used in LaTeX to prevent spaces)
+  cleaned = cleaned.replace(/%$/gm, '');
+
+  // Replace double/multiple backslashes or newline commands if any
+  cleaned = cleaned.replace(/\\\\/g, '\n');
+
+  // Normalize whitespace (single spaces, trim lines)
+  cleaned = cleaned
+    .split('\n')
+    .map((line) => line.trim().replace(/\s+/g, ' '))
+    .filter(Boolean)
+    .join('\n');
+
+  return cleaned;
+}
+
+export function prepareActiveAbilitiesForWebPreview(
+  monster: Creature,
+  abilities: ActiveAbility[],
+): ActiveAbility[] {
+  return abilities.map((ability) => {
+    // 1. Shallow clone the ability and its nested properties so we don't mutate the original.
+    const clone: ActiveAbility = {
+      ...ability,
+      tags: ability.tags ? [...ability.tags] : undefined,
+      attack: ability.attack ? { ...ability.attack } : undefined,
+    };
+
+    // 2. Reformat the ability as a monster ability (this does the strike/brawling restructuring, reformat scaling, etc.)
+    try {
+      reformatAsMonsterAbility(monster, clone);
+    } catch (err) {
+      // If reformatting fails (e.g. because it's a strike without a weapon, which could happen mid-edit),
+      // we log a warning and keep the original ability description instead of failing.
+      console.warn(`Failed to reformat ability ${ability.name} for preview:`, err);
+    }
+
+    // 3. Helper to replace placeholders and LaTeX commands in a string
+    const processText = (text: string | undefined): string | undefined => {
+      if (!text) {
+        return text;
+      }
+
+      // Replace ability placeholders like $dr, $damage, $accuracy, $power
+      let replaced = replaceAbilityPlaceholders(monster, text, {
+        isMagical: clone.isMagical,
+        weapon: clone.weapon,
+      });
+
+      // Replace names ($name, $Name)
+      replaced = replaceNames(replaced, monster.name);
+
+      // Clean up LaTeX markup for the UI preview
+      replaced = convertLatexToWebText(replaced);
+
+      return replaced;
+    };
+
+    // 4. Process all string fields in the ability
+    if (clone.cost) {
+      clone.cost = processText(clone.cost);
+    }
+    if (clone.effect) {
+      clone.effect = processText(clone.effect);
+    }
+    if (clone.attack) {
+      if (clone.attack.targeting) {
+        clone.attack.targeting = processText(clone.attack.targeting)!;
+      }
+      if (clone.attack.hit) {
+        clone.attack.hit = processText(clone.attack.hit)!;
+      }
+      if (clone.attack.crit) {
+        clone.attack.crit = processText(clone.attack.crit);
+      }
+      if (clone.attack.injury) {
+        clone.attack.injury = processText(clone.attack.injury);
+      }
+      if (clone.attack.miss) {
+        clone.attack.miss = processText(clone.attack.miss);
+      }
+    }
+
+    return clone;
+  });
 }

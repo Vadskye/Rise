@@ -1,0 +1,966 @@
+{
+  "monsters": [
+    {
+      "name": "Choker",
+      "folder": "Uncivilized Humanoids",
+      "requiredProperties": {
+        "alignment": "chaotic evil",
+        "base_class": "brute",
+        "elite": false,
+        "creature_origin": "natural",
+        "creature_types": [
+          "humanoid"
+        ],
+        "size": "medium",
+        "level": 4
+      },
+      "freeformCode": "",
+      "knowledge": {
+        "easy": "",
+        "normal": "A choker is a vicious predator that delights in strangling its foes. Chokers are bipedal, but their arms are inhumanly long and sinuous, terminating in hands with spiny pads to help them hold on tightly to walls and foes. They live to hear the desperate gasping for breath and crunching of bones that their powerful arms can inflict on their prey."
+      },
+      "properties": {
+        "has_art": true
+      },
+      "trainedSkills": [
+        "awareness",
+        "stealth",
+        "climb"
+      ],
+      "customSenses": [
+        {
+          "type": "Darkvision",
+          "range": 60
+        }
+      ],
+      "standardAbilities": [
+        {
+          "type": "maneuver",
+          "name": "Piledriver",
+          "options": {
+            "isMagical": false,
+            "displayName": "Choke"
+          }
+        },
+        {
+          "type": "maneuver",
+          "name": "Grappling Strike",
+          "options": {
+            "isMagical": false,
+            "weapon": "tentacle"
+          }
+        }
+      ],
+      "baseAttributes": [
+        5,
+        4,
+        -1,
+        -4,
+        0,
+        -1
+      ],
+      "customMovementSpeeds": [
+        {
+          "mode": "Climb",
+          "category": "slow"
+        }
+      ],
+      "customAbilities": []
+    },
+    {
+      "name": "Minotaur",
+      "requiredProperties": {
+        "alignment": "neutral",
+        "base_class": "brute",
+        "elite": true,
+        "creature_origin": "natural",
+        "creature_types": [
+          "beast",
+          "humanoid"
+        ],
+        "size": "large",
+        "level": 7
+      },
+      "freeformCode": "",
+      "folder": "Uncivilized Humanoids",
+      "knowledge": {
+        "normal": "Minotaurs are typically ten feet tall, with muscular arms and legs covered in thick fur. Instead of a human head, they have the head of a bull, with large horns. They are known for their poor sense of direction. Even an only moderately complex dungeon can be enough to trap a minotaur for weeks as they try to find their way out.",
+        "hard": "While trapped, minotaurs are generally furious at their surroundings, and can sometimes be found pointlessly attacking obstacles in frustration. Even if offered help, they may be too angry to listen to reason without a violent confrontation. However, in their homes or on open roads, they can be amiable and even helpful."
+      },
+      "properties": {
+        "has_art": true
+      },
+      "trainedSkills": [
+        "awareness"
+      ],
+      "baseAttributes": [
+        6,
+        0,
+        4,
+        -2,
+        0,
+        1
+      ],
+      "customSenses": [
+        {
+          "type": "Darkvision",
+          "range": 60
+        }
+      ],
+      "passiveAbilities": [
+        {
+          "name": "Directionless",
+          "effect": "Minotaurs are easily lost. They suffer a -10 penalty to Survival checks to follow tracks or navigate wilderness. In addition, whenever they choose a direction to travel in while in an enclosed space, they choose randomly, except that they do not return through the direction they came from. This makes it extremely difficult for minotaurs to navigate enclosed spaces.",
+          "isMagical": false
+        }
+      ],
+      "standardAbilities": [
+        {
+          "type": "maneuver",
+          "name": "Mighty Charge",
+          "options": {
+            "isMagical": false,
+            "weapon": "horn",
+            "displayName": "Charging Gore"
+          }
+        },
+        {
+          "type": "maneuver",
+          "name": "Weapon Multiplier",
+          "options": {
+            "isMagical": false,
+            "weapon": "horn",
+            "displayName": "Gore"
+          }
+        },
+        {
+          "type": "maneuver",
+          "name": "Chokeslam",
+          "options": {
+            "isMagical": false,
+            "usageTime": "elite"
+          }
+        },
+        {
+          "type": "maneuver",
+          "name": "Ground Stomp",
+          "options": {
+            "isMagical": false
+          }
+        }
+      ]
+    }
+  ],
+  "monsterGroups": [
+    {
+      "name": "Goblins",
+      "hasArt": false,
+      "sharedFreeformCode": "",
+      "monsters": [
+        {
+          "name": "Goblin Skirmisher",
+          "requiredProperties": {
+            "alignment": "chaotic evil",
+            "base_class": "skirmisher",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 1
+          },
+          "baseAttributes": [
+            -1,
+            4,
+            0,
+            -2,
+            2,
+            -2
+          ],
+          "trainedSkills": [
+            "awareness"
+          ],
+          "equippedArmor": "buff leather",
+          "freeformCode": "",
+          "weapons": [],
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Charge",
+              "options": {
+                "isMagical": false,
+                "weapon": "spear"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "spear"
+              }
+            }
+          ],
+          "equippedShield": "buckler"
+        },
+        {
+          "name": "Wolf Rider",
+          "requiredProperties": {
+            "alignment": "chaotic evil",
+            "base_class": "skirmisher",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 3
+          },
+          "properties": {
+            "has_art": true
+          },
+          "baseAttributes": [
+            -1,
+            4,
+            0,
+            -2,
+            2,
+            -2
+          ],
+          "trainedSkills": [
+            "ride"
+          ],
+          "equippedArmor": "buff leather",
+          "freeformCode": "",
+          "weapons": [],
+          "equippedShield": "buckler",
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Charge",
+              "options": {
+                "isMagical": false,
+                "weapon": "spear"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "spear"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Goblin Shaman",
+          "requiredProperties": {
+            "alignment": "chaotic evil",
+            "base_class": "skirmisher",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 1
+          },
+          "baseAttributes": [
+            -1,
+            3,
+            0,
+            -2,
+            2,
+            3
+          ],
+          "trainedSkills": [
+            "awareness"
+          ],
+          "equippedArmor": "buff leather",
+          "freeformCode": "",
+          "standardAbilities": [
+            {
+              "type": "spell",
+              "name": "Greater Word of Power",
+              "options": {
+                "isMagical": true
+              }
+            }
+          ],
+          "equippedShield": "standard shield",
+          "customAbilities": [],
+          "weapons": [
+            {
+              "name": "spear",
+              "addStandard": true,
+              "addMult": true,
+              "options": {
+                "isMagical": true,
+                "displayName": "Consecrated Strike"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Goblin Chief",
+          "requiredProperties": {
+            "alignment": "chaotic evil",
+            "base_class": "leader",
+            "elite": true,
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 3
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            0,
+            4,
+            0,
+            1,
+            3,
+            2
+          ],
+          "trainedSkills": [
+            "social_insight",
+            "deception",
+            "intimidate"
+          ],
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "spear",
+                "usageTime": "standard"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Battle Command",
+              "options": {
+                "isMagical": false,
+                "usageTime": "elite"
+              }
+            }
+          ],
+          "equippedArmor": "buff leather",
+          "equippedShield": "buckler"
+        }
+      ],
+      "knowledge": {
+        "normal": "Goblins are small, green-skinned humanoid creatures. They are generally cowardly and selfish. It's rare to see a goblin alone. They tend to gather into small groups of scavengers that try to take what's left after stronger creatures fight. However, if they believe they have an advantage in combat, they can be terrifyingly aggressive.",
+        "hard": "Goblins are easy to bully, and they love brute strength. However, they are naturally disloyal, so they can easily abandon their alleged leader if they perceive weakness or just think they can do better elsewhere. Only creatures that are both strong and unintelligent, like ogres and trolls, are typically accompanied by goblin minions."
+      },
+      "customSenses": [
+        {
+          "type": "Low-light Vision"
+        }
+      ],
+      "folder": "Uncivilized Humanoids"
+    },
+    {
+      "name": "Orcs",
+      "folder": "Uncivilized Humanoids",
+      "hasArt": false,
+      "sharedFreeformCode": "",
+      "monsters": []
+    },
+    {
+      "name": "Bandits",
+      "hasArt": false,
+      "sharedFreeformCode": "",
+      "monsters": [
+        {
+          "name": "Army Deserter",
+          "requiredProperties": {
+            "alignment": "neutral evil",
+            "base_class": "warrior",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 1
+          },
+          "freeformCode": "",
+          "properties": {
+            "has_art": false
+          },
+          "knowledge": {
+            "normal": "Army deserters have abandoned their past life in an army and struck out on their own. Since the punishments for desertion are typically harsh, they have little to lose."
+          },
+          "baseAttributes": [
+            2,
+            0,
+            2,
+            0,
+            1,
+            0
+          ],
+          "equippedArmor": "leather lamellar",
+          "equippedShield": "buckler",
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "spear"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "heavy crossbow"
+              }
+            }
+          ],
+          "trainedSkills": [
+            "endurance"
+          ]
+        },
+        {
+          "name": "Veteran Archer",
+          "requiredProperties": {
+            "alignment": "lawful evil",
+            "base_class": "sniper",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 3
+          },
+          "freeformCode": "",
+          "trainedSkills": [
+            "awareness"
+          ],
+          "baseAttributes": [
+            2,
+            2,
+            0,
+            0,
+            4,
+            0
+          ],
+          "equippedArmor": "buff leather",
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Arrowguide",
+              "options": {
+                "isMagical": false,
+                "weapon": "longbow"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "longbow"
+              }
+            }
+          ],
+          "properties": {
+            "has_art": false
+          }
+        },
+        {
+          "name": "Renegade Bolter",
+          "requiredProperties": {
+            "alignment": "neutral evil",
+            "base_class": "sniper",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 4
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            0,
+            3,
+            0,
+            0,
+            2,
+            4
+          ],
+          "equippedArmor": "buff leather",
+          "equippedShield": "buckler",
+          "standardAbilities": [
+            {
+              "type": "spell",
+              "name": "Arc",
+              "options": {
+                "isMagical": true
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Electrocute",
+              "options": {
+                "isMagical": true
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Dazing Discharge",
+              "options": {
+                "isMagical": true
+              }
+            }
+          ]
+        }
+      ],
+      "folder": "Civilized Humanoids",
+      "knowledge": {
+        "normal": ""
+      }
+    },
+    {
+      "name": "Bugbears",
+      "hasArt": false,
+      "sharedFreeformCode": "",
+      "monsters": [
+        {
+          "name": "Bugbear Raider",
+          "requiredProperties": {
+            "alignment": "chaotic evil",
+            "base_class": "warrior",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 4
+          },
+          "freeformCode": "",
+          "trainedSkills": [
+            "endurance"
+          ],
+          "equippedArmor": "rawhide",
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Grapple",
+              "options": {
+                "isMagical": false
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Piledriver",
+              "options": {
+                "isMagical": false
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "flail"
+              }
+            }
+          ],
+          "baseAttributes": [
+            2,
+            0,
+            5,
+            -2,
+            0,
+            2
+          ]
+        },
+        {
+          "name": "Bugbear Shaman",
+          "requiredProperties": {
+            "alignment": "chaotic evil",
+            "base_class": "leader",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 4
+          },
+          "freeformCode": "",
+          "properties": {
+            "has_art": false
+          },
+          "trainedSkills": [
+            "awareness",
+            "endurance"
+          ],
+          "equippedArmor": "rawhide",
+          "equippedShield": "standard shield",
+          "standardAbilities": [
+            {
+              "type": "spell",
+              "name": "Mind Crush",
+              "options": {
+                "isMagical": true
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Taunt",
+              "options": {
+                "isMagical": true
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Repeat",
+              "options": {
+                "isMagical": true
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "flail"
+              }
+            }
+          ],
+          "baseAttributes": [
+            1,
+            0,
+            5,
+            -2,
+            2,
+            4
+          ]
+        },
+        {
+          "name": "Bugbear Growl",
+          "requiredProperties": {
+            "alignment": "lawful evil",
+            "base_class": "warrior",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 2
+          },
+          "freeformCode": "",
+          "equippedArmor": "rawhide",
+          "baseAttributes": [
+            2,
+            0,
+            4,
+            -2,
+            0,
+            1
+          ],
+          "trainedSkills": [
+            "endurance",
+            "intimidate"
+          ],
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Piledriver",
+              "options": {
+                "isMagical": false
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Grapple",
+              "options": {
+                "isMagical": false
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "flail"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Bugbear Chief",
+          "requiredProperties": {
+            "alignment": "chaotic evil",
+            "base_class": "leader",
+            "elite": true,
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 6
+          },
+          "freeformCode": "",
+          "equippedArmor": "brigandine",
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "heavy flail"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Weather the Storm",
+              "options": {
+                "isMagical": false,
+                "usageTime": "elite"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Invigoration",
+              "options": {
+                "isMagical": false,
+                "usageTime": "elite"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "javelin"
+              }
+            }
+          ],
+          "baseAttributes": [
+            3,
+            1,
+            5,
+            -1,
+            0,
+            4
+          ],
+          "trainedSkills": [
+            "endurance",
+            "intimidate"
+          ]
+        }
+      ],
+      "folder": "Uncivilized Humanoids",
+      "knowledge": {
+        "normal": "Bugbears are Medium humanoid creatures with burly, hairy bodies and ugly goblin faces. They are brutish and chaotic, and enjoy bullying their goblin kin.",
+        "hard": "Although bugbears have only ordinary physical strength, they are remarkably durable. Their name comes from their hirstute nature and inexhaustible endurance, both of which are reminiscent of bears. They enjoy wrestling, and tend to grapple their foes in combat, even when doing so is not tactically advantageous.",
+        "legendary": "Bugbears are typically found in small packs that rarely have more than a dozen members. However, sometimes they will congregate around a powerful leader for a time. These groupings are not hierarchical or well organized, and are typically based around some discovery of wealth that a chief can ration out to their followers."
+      }
+    },
+    {
+      "name": "Cultists",
+      "folder": "Civilized Humanoids",
+      "hasArt": false,
+      "sharedFreeformCode": "",
+      "monsters": [
+        {
+          "name": "Death Cultist",
+          "requiredProperties": {
+            "alignment": "lawful evil",
+            "base_class": "sniper",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 1
+          },
+          "freeformCode": "",
+          "trainedSkills": [
+            "craft_bone",
+            "knowledge_souls"
+          ],
+          "standardAbilities": [
+            {
+              "type": "spell",
+              "name": "Drain Life",
+              "options": {
+                "isMagical": true
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "scythe"
+              }
+            }
+          ],
+          "baseAttributes": [
+            0,
+            2,
+            0,
+            1,
+            1,
+            4
+          ]
+        },
+        {
+          "name": "Pyromaniac",
+          "requiredProperties": {
+            "alignment": "chaotic evil",
+            "base_class": "skirmisher",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 4
+          },
+          "freeformCode": "",
+          "properties": {
+            "has_art": true
+          },
+          "baseAttributes": [
+            0,
+            2,
+            0,
+            -1,
+            2,
+            5
+          ],
+          "standardAbilities": [
+            {
+              "type": "spell",
+              "name": "Ignition",
+              "options": {
+                "isMagical": true
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Pyrohemia",
+              "options": {
+                "isMagical": true
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Burning Grasp",
+              "options": {
+                "isMagical": true
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "club"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Arsonist",
+          "requiredProperties": {
+            "alignment": "chaotic evil",
+            "base_class": "skirmisher",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 6
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            0,
+            4,
+            1,
+            0,
+            3,
+            1
+          ],
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Throw Item",
+              "options": {
+                "isMagical": false,
+                "weapon": "Alchemist's Fire"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Giants",
+      "folder": "Uncivilized Humanoids",
+      "hasArt": false,
+      "sharedFreeformCode": "",
+      "monsters": [
+        {
+          "name": "Hill giant",
+          "requiredProperties": {
+            "alignment": "chaotic neutral",
+            "base_class": "brute",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "huge",
+            "level": 10
+          },
+          "freeformCode": "",
+          "standardAbilities": [],
+          "knowledge": {
+            "normal": "A hill giant is a Huge giant that is usually found in hilly areas. Hill giants prefer to fight from high, rocky outcroppings, where they can pelt opponents with rocks and boulders while limiting the risk to themselves. Skin color among hill giants ranges from light tan to deep ruddy brown. They wear layers of crudely prepared hides with the fur left on.",
+            "hard": "Hill giants lack the intelligence or desire to retreat if their enemies survive to approach them, and prefer to draw their massive clubs and enter melee. If possible, they smash their foes off of cliffs.\n\nThe hair of hill giants is brown or black, with eyes the same color. They seldom wash or repair their garments, preferring to simply add more hides as their old ones wear out. Adult hill giants are about 25 feet tall. They can live to be 70 years old."
+          },
+          "baseAttributes": [
+            8,
+            0,
+            3,
+            -2,
+            2,
+            -1
+          ]
+        }
+      ],
+      "knowledge": {
+        "easy": "Giants are massive humanoid creatures that tower over lesser creatures. All giants have immense strength and unimpressive agility.",
+        "normal": "Giants are skilled at throwing boulders, either to hunt or to protect themselves.",
+        "hard": ""
+      },
+      "passiveAbilities": [
+        {
+          "name": "Boulder Thrower",
+          "effect": "Giants can throw objects no larger than two size categories smaller than themselves with ease. Their descriptions list their statistics when throwing boulders. A giant's \\glossterm{range limits} with an improvised object other than a boulder are generally half its range limit with a boulder. The object may also deal less damage than a boulder depending on its construction.",
+          "isMagical": false
+        }
+      ]
+    }
+  ],
+  "folders": []
+}

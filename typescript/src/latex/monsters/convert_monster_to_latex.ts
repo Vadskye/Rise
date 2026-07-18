@@ -8,6 +8,7 @@ import {
 import { Creature, KnowledgeResultConfig } from '@src/character_sheet/creature';
 import * as format from '@src/latex/format';
 import { caseInsensitiveSort } from '@src/util/sort';
+import { RISE_DEFAULT_TRAITS } from '@src/character_sheet/rise_data';
 
 import {
   convertAbilityToMonsterLatex,
@@ -25,8 +26,8 @@ export function convertMonsterToLatex(monster: Creature, parentGroupName?: strin
   const contentBufferText =
     monster.description || knowledgeText ? '\\vspace{0.5em}' : '\\vspace{0.25em}';
 
-  const monsterContext1 = `Level ${monster.level} ${format.uppercaseFirst(monster.base_class)}${eliteText}`;
-  const monsterContext2 = `${format.uppercaseFirst(monster.size)} ${monster.creature_origin}${monster.creature_type ? ' ' + monster.creature_type : ''}`;
+  const monsterContext1 = `Level ${monster.level}${eliteText}`;
+  const monsterContext2 = `${format.uppercaseFirst(monster.size)} ${monster.creature_origin} ${monster.base_class.toLowerCase()}`;
 
   // This still has various like $name and $accuracy.
   const latexWithPlaceholders = `
@@ -126,9 +127,17 @@ function genStatisticsText(monster: Creature): string {
 function genDefensiveStatisticsText(monster: Creature): string {
   const mentalText = monster.hasTrait('mindless') ? '' : `\n\\monsep Ment ${monster.mental}`;
 
+  const hpIpText = `\\pari \\textbf{HP} ${monster.hit_points} \\monsep \\textbf{IP} ${monster.injury_point}`;
+  const typesText = monster.creature_types.length > 0
+    ? `\\textbf{Types:} ${monster.creature_types.join(', ')}`
+    : '';
+
+  const firstLine = typesText
+    ? `\\spelltwocol{${hpIpText}}{${typesText}}`
+    : hpIpText;
+
   return `
-    \\pari \\textbf{HP} ${monster.hit_points}
-      \\monsep \\textbf{IP} ${monster.injury_point}
+    ${firstLine}
     \\pari \\textbf{Defenses}
       Armor ${monster.armor_defense}
       \\monsep Brawn ${monster.brawn}
@@ -150,7 +159,7 @@ function genSpecialDefenseModifiersText(monster: Creature) {
     .join('\n');
 }
 
-function genMovementText(monster: Creature) {
+export function getMovementComponents(monster: Creature): string[] {
   const jumpText = monster.hasTrainedSkill('jump')
     ? `Jump ${monster.horizontal_jump_distance}`
     : '';
@@ -159,13 +168,11 @@ function genMovementText(monster: Creature) {
     jumpText,
   ].filter(Boolean);
 
-  // TODO: A creature with a swim speed and that is trained with the Swim skill will
-  // display "Swim" twice here. What's the correct formatting?
-  const movementComponents = [
-    ...movementDistances,
-    ...formatSkillList(monster, RISE_MOVEMENT_SKILLS),
-  ].join('\\monsep ');
+  return [...movementDistances, ...formatSkillList(monster, RISE_MOVEMENT_SKILLS)];
+}
 
+function genMovementText(monster: Creature) {
+  const movementComponents = getMovementComponents(monster).join('\\monsep ');
   const movementText = movementComponents ? `; ${movementComponents}` : '';
   // TODO: Formatting is awkward
   return `\\pari \\textbf{Movement} ${monster.speed} ft.${movementText}`;
@@ -176,12 +183,13 @@ function genSpaceAndReachText() {
   return '';
 }
 
-function genSensesText(monster: Creature) {
+export function getSensesComponents(monster: Creature): string[] {
   const customSenses = monster.getCustomSenses().sort(caseInsensitiveSort);
+  return [...customSenses, ...formatSkillList(monster, RISE_SENSE_SKILLS)];
+}
 
-  const senseText = [...customSenses, ...formatSkillList(monster, RISE_SENSE_SKILLS)].join(
-    '\\monsep ',
-  );
+function genSensesText(monster: Creature) {
+  const senseText = getSensesComponents(monster).join('\\monsep ');
 
   if (senseText.length > 0) {
     return `\\pari \\textbf{Senses} ${senseText}`;
@@ -207,8 +215,12 @@ function formatSkillList<T extends RiseSkill>(
     .sort(caseInsensitiveSort);
 }
 
+export function getSocialComponents(monster: Creature): string[] {
+  return formatSkillList(monster, RISE_SOCIAL_SKILLS);
+}
+
 function genSocialText(monster: Creature) {
-  const socialSkillText = formatSkillList(monster, RISE_SOCIAL_SKILLS).join('\\monsep ');
+  const socialSkillText = getSocialComponents(monster).join('\\monsep ');
   if (socialSkillText.length > 0) {
     return `\\pari \\textbf{Social} ${socialSkillText}`;
   } else {
@@ -216,8 +228,12 @@ function genSocialText(monster: Creature) {
   }
 }
 
+export function getOtherSkillsComponents(monster: Creature): string[] {
+  return formatSkillList(monster, RISE_OTHER_SKILLS);
+}
+
 function genOtherSkillsText(monster: Creature) {
-  const otherSkillText = formatSkillList(monster, RISE_OTHER_SKILLS).join('\\monsep ');
+  const otherSkillText = getOtherSkillsComponents(monster).join('\\monsep ');
   if (otherSkillText.length > 0) {
     return `\\pari \\textbf{Other skills} ${otherSkillText}`;
   } else {
@@ -277,16 +293,7 @@ function genEquipmentText(monster: Creature): string {
 }
 
 function genTraitsText(monster: Creature): string {
-  const defaultTraits = [
-    'blooded',
-    'corporeal',
-    'dynamic',
-    'ensouled',
-    'living',
-    'mortal',
-    'sighted',
-  ];
-  const traits = monster.getStandardTraits().filter((t) => !defaultTraits.includes(t));
+  const traits = monster.getStandardTraits().filter((t) => !RISE_DEFAULT_TRAITS.includes(t));
   if (traits.length === 0) {
     return '';
   }
