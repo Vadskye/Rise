@@ -348,10 +348,10 @@ export function ki(): RankAbility[] {
 
         \\begin{magicalactiveability}{Scale the Highest Tower}{Free action}
           \\rankline
-          You gain a \\plus4 bonus to the Climb skill this turn (see \\pcref{Climb}).
+          You gain a slow \\glossterm{climb speed} this turn (see \\pcref{Movement Modes}).
 
           \\rankline
-          \\rank{5} The bonus increases to \\plus6.
+          \\rank{5} It improves to average speed.
         \\end{magicalactiveability}
 
         \\begin{magicalactiveability}{Shelter from Falling Rain}{Free action}

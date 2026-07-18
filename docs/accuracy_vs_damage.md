@@ -83,7 +83,7 @@ Some amount of tradeoffs are necessary and narratively useful. However, tradeoff
 Maneuvers that make tradeoffs coexist with weapons that also make tradeoffs, often in similar ways. A maneuver that directly trades accuracy for flat damage is generally best used with a small weapon, and a maneuver that directly trades flat damage for accuracy is generally best used with a large weapon.
 
 One solution to this problem is to make the maneuver scale the weapon damage die rather than providing flat damage directly. However, this has two issues:
-* What is the name of the weapon damage die, and how does it differ from the total damage dealt by the weapon including the power modifier? High level manuevers need to scale both the weapon damage die and the power multiplier, but not necessarily by the same amount.
+* What is the name of the weapon damage die, and how does it differ from the total damage dealt by the weapon including the power modifier? High level maneuvers need to scale both the weapon damage die and the power multiplier, but not necessarily by the same amount.
 * It's not easy to scale the weapon damage die by increments smaller than 2x/3x/4x. You can roll damage twice (+25% damage dice) or maximize damage (+75% damage dice).
 
 The scaling differences between large and small weapons work better if you multiply total strike damage, but that breaks the rule of always providing a benefit that is subject to diminishing returns.

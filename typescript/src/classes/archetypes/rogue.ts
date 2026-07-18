@@ -80,7 +80,7 @@ export function assassin(): RankAbility[] {
           If you have access to any other more unusual senses, such as the \\ability{mindsight} ability from the Telepath feat, you may also choose one of those senses as a separate sense group.
 
           Creatures cannot detect you using your chosen sense group while you have \\glossterm{cover} or \\glossterm{concealment} from them.
-          For this purpose, only consider concealment due to physical obstacles like \\glossterm{undergrowth}, not lighting-based concealment such as \\glossterm{dim illumination}.
+          For this purpose, only consider concealment due to physical obstacles like fog or \\glossterm{undergrowth}, not lighting-based concealment such as \\glossterm{dim illumination}.
 
           You can attune to this ability multiple times.
           Each time, you can choose a different sense group.

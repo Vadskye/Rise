@@ -451,9 +451,9 @@ def trained_skill() -> str:
                 [
                     option({"value": ""}, ""),
                     option({"value": "Analysis"}, "Analysis"),
+                    option({"value": "Athletics"}, "Athletics"),
                     option({"value": "Awareness"}, "Awareness"),
                     option({"value": "Balance"}, "Balance"),
-                    option({"value": "Climb"}, "Climb"),
                     option({"value": "Craft (alchemy)"}, "Craft (alchemy)"),
                     option({"value": "Craft (bone)"}, "Craft (bone)"),
                     option({"value": "Craft (ceramics)"}, "Craft (ceramics)"),
@@ -471,7 +471,6 @@ def trained_skill() -> str:
                     option({"value": "Endurance"}, "Endurance"),
                     option({"value": "Flexibility"}, "Flexibility"),
                     option({"value": "Intimidate"}, "Intimidate"),
-                    option({"value": "Jump"}, "Jump"),
                     option({"value": "Knowledge (arcana)"}, "Knowledge (arcana)"),
                     option(
                         {"value": "Knowledge (dungeoneering)"},
@@ -486,6 +485,7 @@ def trained_skill() -> str:
                     option({"value": "Knowledge (planes)"}, "Knowledge (planes)"),
                     option({"value": "Knowledge (souls)"}, "Knowledge (souls)"),
                     option({"value": "Medicine"}, "Medicine"),
+                    option({"value": "Might"}, "Might"),
                     option({"value": "Perform"}, "Perform"),
                     option({"value": "Persuasion"}, "Persuasion"),
                     option({"value": "Profession"}, "Profession"),
@@ -494,7 +494,6 @@ def trained_skill() -> str:
                     option({"value": "Social Insight"}, "Social Insight"),
                     option({"value": "Stealth"}, "Stealth"),
                     option({"value": "Survival"}, "Survival"),
-                    option({"value": "Swim"}, "Swim"),
                 ],
             ),
             checkbox(

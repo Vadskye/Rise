@@ -30,7 +30,7 @@ They allow more distinct and unique character customization, but also increase g
 
     \parhead{Elf} Any Casting feat (see \pcref{Casting Feats}), or any from the following list: \featref*{Awareness Specialization} and \featref*{Balance Specialization}, \featref*{Sniper}, or \featref*{Rapid Reaction}.
 
-    \parhead{Halfling} Any from the following list: \featref*{Balance Specialization}, \featref*{Stealth Specialization}, \featref*{Climb Specialization}, \featref*{Iron Will}, or \featref*{Rapid Reaction}.
+    \parhead{Halfling} Any feat with a Dexterity or Willpower prerequisite, or any skill feat for a Dexterity-based skill.
 
     \parhead{Kobold} Any Casting feat (see \pcref{Casting Feats}), or any from the following list: \featref*{Draconic Ancestry}, \featref*{Fortune's Friend}, \featref*{Rapid Reaction}, or \featref*{Spellwarped}.
 
@@ -60,7 +60,7 @@ They allow more distinct and unique character customization, but also increase g
 
       \parhead{Naiadi} Boongiver, Leadership, Mental Magic, Persuasion Specialization and Swim Specialization, or Sphere Focus: Aquamancy.
 
-      \parhead{Oozeborn} Blindfighter, Chameleon, Climb Specialization and Flexibility Specialization, Juggernaut, Regenerator, Sphere Focus: Toxicology, or Toughness.
+      \parhead{Oozeborn} Blindfighter, Chameleon, Athletics Specialization and Flexibility Specialization, Juggernaut, Regenerator, Sphere Focus: Toxicology, or Toughness.
 
       \parhead{Tiefling} \featref*{Deception Specialization} and \featref*{Intimidate Specialization}, \featref*{Executioner}, \featref*{Spellwarped}, or \featref*{Sphere Focus: Pyromancy}.
 
@@ -134,9 +134,9 @@ They allow more distinct and unique character customization, but also increase g
           \featref{Toughness}                             & Con 2                            & Increase physical fortitude                & \tdash            & \featpref{Toughness}                        \\
 
           \tb{Skill Feats}\label{Skill Feats}             & \tb{Prerequisites}               & \tb{Benefits}                              & \tb{Feat Types}   & \tb{Page}                                   \\
+          \featref{Athletics Specialization}              & Trained Athletics                & Improve use of chosen skill                & \tdash            & \featpref{Athletics Specialization}             \\
           \featref{Awareness Specialization}              & Trained Awareness                & Improve use of chosen skill                & \tdash            & \featpref{Awareness Specialization}         \\
           \featref{Balance Specialization}                & Trained Balance                  & Improve use of chosen skill                & \tdash            & \featpref{Balance Specialization}           \\
-          \featref{Climb Specialization}                  & Trained Climb                    & Improve use of chosen skill                & \tdash            & \featpref{Climb Specialization}             \\
           \featref{Craft Specialization}                  & Trained Craft                    & Improve use of chosen skill                & \tdash            & \featpref{Craft Specialization}             \\
           \featref{Creature Handling Specialization}      & Trained Creature Handling        & Improve use of chosen skill                & \tdash            & \featpref{Creature Handling Specialization} \\
           \featref{Deception Specialization}              & Trained Deception                & Improve use of chosen skill                & \tdash            & \featpref{Deception Specialization}         \\
@@ -278,6 +278,22 @@ They allow more distinct and unique character customization, but also increase g
     \ff[18]{Sanctified Garb\plus} The durability bonus you gain from each attunement increases to 3.
 
     \magicalff[18]{Simple Life\plus\plus} The non-Armor defense bonus increases to \plus3.
+  \end{feat}
+
+  \begin{feat}{Athletics Specialization}{Skill}
+    \featpre Athletics as a trained skill.
+
+    \ff[1]{Specialization} You gain a \plus2 bonus to the Athletics skill.
+
+    \ff[6]{Rapid Athletics} You gain a slow \glossterm{climb speed} and \glossterm{swim speed} (see \pcref{Movement Modes}).
+    If you would already have a slow speed of the same type, you increase that speed to average instead.
+
+    \ff[12]{Specialization\plus} The bonus from your \textit{specialization} ability increases to \plus4.
+
+    \ff[18]{Earth Swimmer} You gain a slow \glossterm{burrow speed} (see \pcref{Movement Modes}).
+
+    % TODO: wording
+    \ff[18]{Endless Creature Climb} You do not suffer a cumulative penalty to your accuracy with the creature climb ability for each turn you spend climbing (see \pcref{Creature Climb}).
   \end{feat}
 
   \begin{feat}{Awareness Specialization}{Skill}
@@ -558,19 +574,6 @@ They allow more distinct and unique character customization, but also increase g
       \item Primal: The maximum stamina bonus increases to \plus4.
       \item Skilled: The skill bonus increases to \plus2.
     \end{raggeditemize}
-  \end{feat}
-
-  \begin{feat}{Climb Specialization}{Skill}
-    \featpre Climb as a trained skill.
-
-    \ff[1]{Specialization} You gain a \plus2 bonus to the Climb skill.
-
-    \ff[6]{Climb Speed} You gain an average \glossterm{climb speed} (see \pcref{Movement Modes}).
-
-    \ff[12]{Specialization\plus} The bonus from your \textit{specialization} ability increases to \plus4.
-
-    % TODO: wording
-    \ff[18]{Endless Creature Climb} You do not suffer a cumulative penalty to your accuracy with the creature climb ability for each turn you spend climbing (see \pcref{Creature Climb}).
   \end{feat}
 
   \begin{feat}{Craft Specialization}{Skill}
@@ -2350,18 +2353,6 @@ They allow more distinct and unique character customization, but also increase g
     \magicalff[18]{Cloud Runner} When you use the \ability{run} or \ability{sprint} ability, you can clouds, fog, and similar gaseous substances as if they were solid ground during that turn.
 
     \ff[18]{Rapid Movement\plus\plus} The speed bonus increases to \plus20 feet.
-  \end{feat}
-
-  \begin{feat}{Swim Specialization}{Skill}
-    \featpre Swim as a trained skill.
-
-    \ff[1]{Specialization} You gain a \plus2 bonus to the Swim skill.
-
-    \ff[6]{Swim Speed} You gain an average \glossterm{swim speed} (see \pcref{Movement Modes}).
-
-    \ff[12]{Specialization\plus} The bonus from your \textit{specialization} ability increases to \plus4.
-
-    \ff[18]{Earth Swimmer} You gain a slow \glossterm{burrow speed} (see \pcref{Movement Modes}).
   \end{feat}
 
   \begin{magicalfeat}{Telepath}{General, Magical}

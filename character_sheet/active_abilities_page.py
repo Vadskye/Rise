@@ -742,15 +742,6 @@ def universal_abilities() -> str:
                 """,
             ),
             universal_ability_button(
-                "Throw",
-                """
-                    You throw a creature or object 15 feet plus 5 feet per 2 Strength.
-                    Some objects are much easier or harder to throw than others.
-                    If the object's weight category matches your maximum carrying capacity, this distance is halved.
-                    To throw an unwilling creature, it must already be grappled by you, and you must make a brawling attack vs. its Brawn defense.
-                """,
-            ),
-            universal_ability_button(
                 "Trip",
                 """
                     Make a brawling attack vs. Brawn with a free hand against an adjacent creature.

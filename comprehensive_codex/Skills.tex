@@ -24,9 +24,8 @@ This chapter describes each skill, including common uses for those skills.
       \lcaption{Class Skills}
       \begin{dtabularx}{\textwidth}{l *{11}{>{\ccol}X} >{\ccol}p{4em}}
         \tb{Skill}        & \tb{Bbn} & \tb{Clr} & \tb{Drd} & \tb{Ftr} & \tb{Mnk} & \tb{Pal} & \tb{Rgr} & \tb{Rog} & \tb{Sor} & \tb{Vot} & \tb{Wiz} & \tb{Key Ability} \tableheaderrule
-        Climb             & C        & \tdash   & C        & C        & C        & \tdash   & C        & C        & \tdash   & \tdash   & \tdash   & Str          \\
-        Jump              & C        & \tdash   & C        & C        & C        & \tdash   & C        & C        & \tdash   & \tdash   & \tdash   & Str          \\
-        Swim              & C        & \tdash   & C        & C        & C        & \tdash   & C        & C        & \tdash   & \tdash   & \tdash   & Str          \\
+        Athletics         & C        & \tdash   & C        & C        & C        & \tdash   & C        & C        & \tdash   & \tdash   & \tdash   & Str          \\
+        Might             & C        & \tdash   & C        & C        & C        & \tdash   & C        & C        & \tdash   & \tdash   & \tdash   & Str          \\
         Balance           & C        & \tdash   & C        & C        & C        & \tdash   & C        & C        & \tdash   & \tdash   & \tdash   & Dex          \\
         Flexibility       & C        & \tdash   & \tdash   & C        & C        & \tdash   & \tdash   & C        & \tdash   & \tdash   & \tdash   & Dex          \\
         Perform           & \tdash   & \tdash   & \tdash   & \tdash   & C        & \tdash   & \tdash   & C        & \tdash   & \tdash   & \tdash   & Dex          \\
@@ -68,7 +67,75 @@ This chapter describes each skill, including common uses for those skills.
     They are not just a set of specific actions with precise rules.
     As a player, you should feel free to improvise actions that sound related to skills you have.
     However, you generally shouldn't use a skill to try to duplicate the effect of another ability, especially a combat ability.
-    Skills are primarily intended to be useful out of combat, not to replace the power of manuevers and spells.
+    Skills are primarily intended to be useful out of combat, not to replace the power of maneuvers and spells.
+
+\newpage
+\skill{Athletics}{Str}
+  The Athletics skill represents your ability to move with power in challenging circumstances.
+  This includes climbing, jumping, swimming, and other forms of athletic full-body movements. 
+
+  The distance you can jump changes depending on whether you are trained with the Athletics skill.
+  For details, \pcref{Jumping}.
+
+  \subsection{Common Athletics Tasks}
+
+    \parhead{Athletic Movement} While you are climbing, swimming, or otherwise moving athletically, you must make an Athletics check whenever you move.
+    This generally requires two \glossterm{free hands}, or one free hand if you take a \minus5 penalty to the check.
+    The \glossterm{difficulty value} is based on the environment you are moving in (see \pcref{Athletics Difficulty Values}).
+    Success means you can move at one quarter speed, so moving 5 feet costs 20 feet of your \glossterm{available movement}.
+    Critical success means you can move at half speed instead.
+    If you have a relevant speed, such as a \glossterm{climb speed}, you use that speed instead of these multipliers.
+    \parhead{Creature Climb}\nonsectionlabel{Creature Climb} As a standard action, you can make an Athletics vs. Reflex attack against a creature you touch.
+    This requires one \glossterm{free hand}, and the target must be two or more size categories larger than you.
+    On a hit, you latch onto the target and can climb on it as if it was a surface with a \glossterm{difficulty value} equal to its Reflex defense.
+    The creature takes a \minus2 accuracy penalty with \glossterm{strikes} against you.
+    You must repeat this attack at the end of each of your subsequent turns to stay climbing on the creature.
+    For each consecutive turn that you climb on a non-ally in this way, you take a cumulative \minus2 penalty to this attack.
+    \parhead{Grab Surface} You can make an Athletics check as part of movement to grab a surface that you are passing by.
+    You automatically attempt this as a \glossterm{reactive check} if you would fall while being \glossterm{pushed}.
+    The \glossterm{difficulty value} is 10 higher than normal for the surface if you were moving for reasons out of your control (such as if you are falling).
+    Success means you grab onto the wall and interrupt your movement.
+    This does not prevent you from taking \glossterm{falling damage} appropriate for the distance you fell.
+    \parhead{Maintain Hold} Whenever you take damage while climbing on a surface, suddenly acquire significantly more weight (such as by catching a falling character), or otherwise are significantly distracted, you must make an Athletics check based on the surface.
+    Failure means you fall off of the surface, and are \prone when you land.
+    \parhead{Wall Jump} You can make a \glossterm{difficulty value} 10 Athletics check as part of movement to jump off of a wall you are adjacent to.
+    This difficulty value increases by 5 for each time you have used this ability since landing on solid ground.
+    Success means you can jump off of the wall (see \pcref{Jumping}).
+    Failure means your jump fails, and your movement ends, which typically makes you fall to the ground.
+    \parhead{Wallrun} You can make an Athletics check as part of your movement while you are touching a solid vertical surface.
+    The \glossterm{difficulty value} is 10 higher than normal to climb for the surface, but this does not require \glossterm{free hands}.
+    Success means you can move using your \glossterm{walk speed} along the wall this turn.
+    You move at half speed while going up.
+    Failure means you fall.
+    For every turn in which you use this ability on the same wall without reaching a stable stopping point, the DV increases by 10.
+
+  \subsection{Common Athletics Modifiers}
+    Slippery and mobile surfaces make it more difficult to climb.
+    If you can brace against multiple surfaces, such as in a corner or between two opposed walls, climbing can be significantly easier.
+
+    Creatures that are native to water, such as fish and monsters with a swim speed but no walk speed, gain a \plus10 bonus to Athletics checks made to swim.
+
+    \subsection{Athletics Difficulty Values}
+      \begin{columntable}
+        \begin{dtabularx}{\columnwidth}{l X X}
+          \multicolumn{3}{l}{Climbing} \\
+          \tb{DV} & \tb{Surface or Activity}                     & \tb{Example} \tableheaderrule
+          0       & Steep slope                                  & A hill too steep to walk up                                          \\
+          5       & Large, sturdy hand and foot holds            & Knotted rope, heavily damaged stone wall, ship's rigging             \\
+          10      & Small, sturdy hand and foot holds            & Surface with pitons or carved holes, weathered stone wall            \\
+          10      & Inconsistent or unsteady hand and foot holds & Unknotted rope, unweathered natural rock, shoddy brick or brick wall \\
+          10      & Only large hand holds                        & Tree limbs, pulling yourself up by your hands while dangling         \\
+          15      & Rough surface with few holds                 & Weathered natural rock face, quality wood or brick wall              \\
+          20      & Rough surface without holds                  & Quality stone wall                                                   \\
+          25      & Smooth surface without holds                 & Window                                                               \\
+          \multicolumn{3}{l}{Swimming} \\
+          5       & Calm water                                   & Pond or lake with little wind \\
+          10      & Rough water                                  & Lake on a windy day, ocean on a mild day \\
+          10      & Viscous liquid                               & Muddy swamp \\
+          15      & Stormy water                                 & Lake during a severe storm, ocean during a mild storm \\
+          20      & Extremely stormy water                       & Ocean during a severe storm \\          
+        \end{dtabularx}
+      \end{columntable}
 
 \newpage
 \skill{Analysis}{Int}
@@ -210,60 +277,6 @@ This chapter describes each skill, including common uses for those skills.
         Constant knee-high bumps and dips         & \plus10 \\
       \end{dtabularx}
     \end{columntable}
-
-\newpage
-\skill{Climb}{Str}
-  The Climb skill represents your ability to climb obstacles.
-  A creature that is climbing without a \glossterm{climb speed} is \unsteady.
-  Moving with the Climb skill requires using the \ability{climb forward} ability (see \pcref{Movement Abilities}).
-
-  \subsection{Common Climb Tasks}
-    \parhead{Creature Climb}\nonsectionlabel{Creature Climb} As a standard action, you can make a Climb vs. Reflex attack against a creature you touch.
-    This requires one \glossterm{free hand}, and the target must be two or more size categories larger than you.
-    On a hit, you latch onto the target and can climb on it as if it was a surface with a \glossterm{difficulty value} equal to its Reflex defense.
-    The creature takes a \minus2 accuracy penalty with \glossterm{strikes} against you.
-    You must repeat this attack at the end of each of your subsequent turns to stay climbing on the creature.
-    For each consecutive turn that you climb on a non-ally in this way, you take a cumulative \minus2 penalty to this attack.
-    \parhead{Grab Surface} You can make a Climb check as part of movement to grab a surface that you are passing by.
-    The \glossterm{difficulty value} is 10 higher than normal for the surface if you were moving for reasons out of your control (such as if you are falling).
-    Success means you grab onto the wall and interrupt your movement.
-    This does not prevent you from taking \glossterm{falling damage} appropriate for the distance you fell.
-    \parhead{Maintain Hold} Whenever you take damage while climbing on a surface, suddenly acquire significantly more weight (such as by catching a falling character), or otherwise are significantly distracted, you must make a Climb check based on the surface.
-    Failure means you fall off of the surface, and are \prone when you land.
-    \parhead{Wall Jump} You can make a \glossterm{difficulty value} 10 Climb check as part of movement to jump off of a wall you are adjacent to.
-    This difficulty value increases by 5 for each time you have used this ability since landing on solid ground.
-    Success means you can jump off of the wall (see \pcref{Jumping}).
-    Failure means your jump fails, and your movement ends, which typically makes you fall to the ground.
-    \parhead{Wallrun} You can make a Climb check as part of your movement while you are touching a solid surface.
-    The \glossterm{difficulty value} is 10 higher than normal for the surface.
-    Success means you can move using your \glossterm{walk speed} along the wall this turn.
-    You move at half speed while going up.
-    Failure means you fall.
-    For every turn in which you use this ability on the same wall without reaching a stable stopping point, the DV increases by 10.
-
-  \subsection{Common Climb Modifiers}
-    Slippery and mobile surfaces make Climb checks more difficult.
-    If you can brace against multiple surfaces, such as in a corner or between two opposed walls, climbing can be significantly easier.
-
-  \subsection{Climb Difficulty Value Examples}
-    \begin{columntable}
-      \begin{dtabularx}{\columnwidth}{l X X}
-        \tb{DV} & \tb{Surface or Activity}                     & \tb{Example} \tableheaderrule
-        0       & Steep slope                                  & A hill too steep to walk up                                          \\
-        5       & Large, sturdy hand and foot holds            & Knotted rope, heavily damaged stone wall, ship's rigging             \\
-        10      & Small, sturdy hand and foot holds            & Surface with pitons or carved holes, weathered stone wall            \\
-        10      & Inconsistent or unsteady hand and foot holds & Unknotted rope, unweathered natural rock, shoddy brick or brick wall \\
-        10      & Only large hand holds                        & Tree limbs, pulling yourself up by your hands while dangling         \\
-        15      & Rough surface with few holds                 & Weathered natural rock face, quality wood or brick wall              \\
-        20      & Rough surface without holds                  & Quality stone wall                                                   \\
-        25      & Smooth surface without holds                 & Window                                                               \\
-      \end{dtabularx}
-    \end{columntable}
-
-  \subsection{Climb Speed}\label{Climb Speed}
-    Some creatures have a listed climb speed.
-    A creature with a climb speed must still make a Climb check to climb on surfaces.
-    However, it can climb with its \glossterm{speed} as part of normal movement abilities rather than relying on the \ability{climb forward} ability.
 
 \newpage
 \skill{Craft}{Int}
@@ -666,13 +679,6 @@ This chapter describes each skill, including common uses for those skills.
     \end{activeability}
 
 \newpage
-\skill{Jump}{Str}
-  The Jump skill represents your ability to jump.
-  Unlike most skills, you have no numeric modifier to Jump, and you never make a Jump check.
-  Instead, the distance you can jump changes depending on whether you are trained with the Jump skill.
-  For details, see (see \pcref{Jumping}).
-
-\newpage
 \skill{Knowledge}{Int}
   The Knowledge skills represent your understanding of particular aspects of the world.
   Like the Craft, Profession, and Perform skills, Knowledge actually encompasses a number of separate skills.
@@ -740,6 +746,27 @@ This chapter describes each skill, including common uses for those skills.
     The next time it is attacked by its current disease, it can use your Medicine check or its Fortitude defense, whichever is higher.
     \parhead{Treat Poison} As a standard action, you can make a Medicine check to treat a creature that is currently poisoned.
     The next time it is attacked by its current poison, it can use your Medicine check or its Fortitude defense, whichever is higher.
+
+\newpage
+\skill{Might}{Str}
+  The Might skill represents your ability to exert your strength in local bursts of energy.
+
+  \subsection{Common Might Tasks}
+    \parhead{Heft} You can make a DV 15 Might check to lift an object that exceeds your normal maximum carrying capacity (see \pcref{Weight Limits}).
+    While overburdened in this way, you are \unsteady and must use at least one \glossterm{free hand} to control the object.
+    This is an exertion, so you can normally only heft an object for up to five minutes between short rests.
+    \parhead{Sunder} You can make a Might check to break an object with raw strength.
+    The \glossterm{difficulty value} is equal to the object's \glossterm{hardness}, \plus5 for each \glossterm{weight category} above Tiny (see \pcref{Breaking Objects}).
+    Success means the object is \glossterm{broken}.
+    Critical success means the object is \glossterm{destroyed}.
+    % untrained human can throw between 12 and 30 feet
+    \parhead{Throw} You can make a DV 5 Might check as a \glossterm{standard action} to throw a creature or object that is not already designed to be thrown.
+    Success means that you \glossterm{fling} it to a location within 10 feet plus a number of feet equal to twice your check result.
+    If an object is particularly easy to throw, such as a small dense sphere, you can throw it up to ten times that distance.
+    Failure means you drop whatever you were trying to throw in your space.
+
+    Normally, a thrown object must be below the maximum \glossterm{weight category} that you can lift (see \pcref{Weight Categories}).
+    You can take a \minus10 penalty to the Might check to throw an object whose weight category matches your maximum weight category.
 
 \newpage
 \skill{Perform}{Dex}
@@ -1122,36 +1149,4 @@ This chapter describes each skill, including common uses for those skills.
       1 For a group of mixed sizes, apply only the modifier for the largest size category. \\
       2 Apply only the largest modifier from this category. \\
       3 With scent-based tracking, apply this modifier per hour since the trail was made. High winds can increase this modifier even more quickly. \\
-    \end{columntable}
-
-\newpage
-\skill{Swim}{Str}
-  The Swim skill represents your ability to swim.
-  Moving with the Swim skill requires using the \ability{swim forward} ability (see \pcref{Movement Abilities}).
-  A creature that is immersed or submerged in water without a \glossterm{swim speed} is \unsteady.
-  For details, see \pcref{Fighting In Water}.
-
-  Most creatures are naturally bouyant, so they float in calm water.
-  If the \glossterm{weight category} of a creature's held items and equipment is at least half of its \glossterm{carrying capacity}, it sinks instead of floating.
-
-  Creatures that are native to water, such as fish and monsters with a swim speed but no walk speed, gain a \plus10 bonus to Swim checks.
-
-  % \subsection{Common Swim Tasks}
-
-  \subsection{Swim Speed}\label{Swim Speed}
-    Some creatures have a listed swim speed.
-    % TODO: when? how exactly? what are the consequences of failure?
-    A creature with a passive swim speed must still make a Swim check to move in liquid.
-    However, it can swim with its \glossterm{speed} as part of normal movement abilities rather than relying on the \ability{swim forward} ability.
-
-  \subsection{Swim Difficulty Values}
-    \begin{columntable}
-      \begin{dtabularx}{\columnwidth}{>{\lcol}X >{\lcol}X}
-        \tb{Liquid}                                                       & \tb{Difficulty Value} \tableheaderrule
-        Calm water                                                        & 5  \\
-        Rough water                                                       & 10 \\
-        Viscous liquid, like a muddy swamp                                & 10 \\
-        Stormy water                                                      & 15 \\
-        Extremely stormy water                                            & 20 \\
-      \end{dtabularx}
     \end{columntable}

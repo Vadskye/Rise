@@ -431,7 +431,7 @@ export function totemist(): RankAbility[] {
       description: `
         The benefit from your \\textit{totem animal} ability improves.
 
-        \\subcf{Bear} You add half your Constitution to Climb, Swim, and Strength checks.
+        \\subcf{Bear} You add half your Constitution to Athletics, Might, and Strength checks.
 
         \\subcf{Crocodile} When you use this ability, if your strike \\glossterm{injures} the target, you can also knock it \\prone or enter a grapple with it (see \\pcref{Grappling}).
         This is a \\abilitytag{Size-Based} ability.
@@ -506,7 +506,7 @@ export function totemist(): RankAbility[] {
           \\itemhead{Crocodile} \\plus2 Stealth and you can hold your breath ten times as long as normal (see \\pcref{Endurance}).
           \\itemhead{Eagle} \\plus2 Awareness and \\plus10 feet to your maximum horizontal jump distance (see \\pcref{Jumping}).
           \\itemhead{Lion} \\plus2 Intimidate and \\plus20 feet to your \\glossterm{available movement} while you are affected by the \\ability{sprint} ability.
-          \\itemhead{Shark} \\plus2 Swim and you gain the \\sense{scent} ability (see \\pcref{Tracking}).
+          \\itemhead{Shark} \\plus2 Athletics and you gain the \\sense{scent} ability (see \\pcref{Tracking}).
         \\end{raggeditemize}
       `,
     },
@@ -522,7 +522,7 @@ export function totemist(): RankAbility[] {
           \\itemhead{Crocodile} \\plus4 Stealth and you can hold your breath indefinitely, though you cannot rest while holding your breath.
           \\itemhead{Eagle} \\plus4 Awareness and \\plus20 feet to your maximum horizontal jump distance.
           \\itemhead{Lion} \\plus4 Intimidate and you gain a \\plus10 foot bonus to your \\glossterm{speed}.
-          \\itemhead{Shark} \\plus4 Swim, \\plus2 Survival, and \\plus2 Awareness.
+          \\itemhead{Shark} \\plus4 Athletics, \\plus2 Survival, and \\plus2 Awareness.
         \\end{raggeditemize}
       `,
     },

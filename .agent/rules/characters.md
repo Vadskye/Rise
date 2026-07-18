@@ -25,7 +25,7 @@ Character creation blends thematic and mechanical decisions, typically following
 
 *   **Definition:** Represent raw talent. A value of 0 signifies average human capability. Player characters are typically exceptional, with higher attributes.
 *   **Impact:**
-    *   **Strength (Str):** Muscle, physical power. Affects Brawn defense, mundane power, brawling accuracy, carrying capacity, and Strength-based skills (Climb, Jump, Swim).
+    *   **Strength (Str):** Muscle, physical power. Affects Brawn defense, mundane power, brawling accuracy, carrying capacity, and Strength-based skills (Athletics, Might).
     *   **Dexterity (Dex):** Hand-eye coordination, agility, reflexes. Affects Armor defense (halved for medium/heavy armor/shields), Reflex defense, Dexterity-based skills (Balance, Flexibility, Ride, Sleight of Hand, Stealth), and dual strikes.
     *   **Constitution (Con):** Health, stamina. Affects Hit Points, Fatigue Tolerance, Fortitude defense, and Constitution-based skills (Endurance).
     *   **Intelligence (Int):** Learning, reasoning. Affects number of trained skills (if positive) and Insight Points. Affects Intelligence-based skills (Analysis, Craft, Disguise, Knowledge, Medicine). Creatures incapable of complex cognition (e.g., animals) have \minus6 or lower.

@@ -16,14 +16,9 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       name: 'Aquatic Freedom',
 
       effect: `
-        You gain a +3 \\glossterm{enhancement bonus} to the Swim skill.
+        You gain a slow \\glossterm{swim speed} (see \pcref{Movement Modes}).
       `,
       roles: ['attune'],
-      scaling: {
-        2: 'The bonus increases to +4.',
-        4: 'The bonus increases to +5.',
-        6: 'The bonus increases to +6.',
-      },
       type: 'Sustain (attunable, standard)',
     },
   ],

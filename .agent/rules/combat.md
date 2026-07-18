@@ -22,7 +22,7 @@ This is a Gemini-generated summary of the Rise combat rules defined in `comprehe
 *   Movement is measured in 5-foot increments, with specific rules for diagonals.
 *   Impediments include Difficult Terrain, Obstacles, and Undergrowth (Light/Heavy).
 *   Squeezing rules apply for tight spaces or shared spaces.
-*   Forced Movement comes in two types: Push (constant force, ends at obstacles, allows reactive Climb checks) and Fling (single impact, damages on collision, no support needed).
+*   Forced Movement comes in two types: Push (constant force, ends at obstacles, allows reactive Athletics checks) and Fling (single impact, damages on collision, no support needed).
 *   Aerial Movement has specific rules regarding carrying capacity, encumbrance, midair penalties, falling, and height limits.
 
 **Specific Attack Types:**

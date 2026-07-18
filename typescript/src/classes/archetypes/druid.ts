@@ -416,7 +416,7 @@ export function shifter(): RankAbility[] {
         \\begin{magicalactiveability}{Form of the Viper}{Standard action}
           \\abilitytags \\atPhysical
           \\rankline
-          You do not need to use \\glossterm{free hands} to climb (see \\pcref{Climb}).
+          You do not need to use \\glossterm{free hands} to climb.
           In addition, you gain a bite \\glossterm{natural weapon} (see \\tref{Natural Weapons}).
           When a creature takes damage from your bite \\glossterm{natural weapon}, it is \\glossterm{poisoned} (see \\pcref{Poison}).
           Its stage 1 effect makes the target \\glossterm{briefly} \\dazed.

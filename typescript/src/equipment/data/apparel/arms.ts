@@ -344,7 +344,7 @@ function gloves(): RawApparel[] {
         description: `
             You can activate or deactivate these soft silk gloves as a \\glossterm{minor action}.
             While active, the gloves have a small static charge.
-            This grants you a \\plus2 \\glossterm{enhancement bonus} to the Climb skill.
+            This grants you a \\plus2 \\glossterm{enhancement bonus} to Athletics checks made to climb.
             In addition, Fine objects stick to your hands without needing to be held.
             While statically charged, the gloves tend to accumulate dirt and dust quickly.
         `,
