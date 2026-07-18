@@ -920,18 +920,32 @@
       "sharedFreeformCode": "",
       "monsters": [
         {
-          "name": "New Member 1",
+          "name": "Hill giant",
           "requiredProperties": {
-            "alignment": "",
-            "base_class": "",
+            "alignment": "chaotic neutral",
+            "base_class": "brute",
             "elite": false,
-            "creature_origin": "",
-            "creature_types": [],
-            "size": "",
-            "level": 0
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "huge",
+            "level": 10
           },
           "freeformCode": "",
-          "standardAbilities": []
+          "standardAbilities": [],
+          "knowledge": {
+            "normal": "A hill giant is a Huge giant that is usually found in hilly areas. Hill giants prefer to fight from high, rocky outcroppings, where they can pelt opponents with rocks and boulders while limiting the risk to themselves. Skin color among hill giants ranges from light tan to deep ruddy brown. They wear layers of crudely prepared hides with the fur left on.",
+            "hard": "Hill giants lack the intelligence or desire to retreat if their enemies survive to approach them, and prefer to draw their massive clubs and enter melee. If possible, they smash their foes off of cliffs.\n\nThe hair of hill giants is brown or black, with eyes the same color. They seldom wash or repair their garments, preferring to simply add more hides as their old ones wear out. Adult hill giants are about 25 feet tall. They can live to be 70 years old."
+          },
+          "baseAttributes": [
+            8,
+            0,
+            3,
+            -2,
+            2,
+            -1
+          ]
         }
       ],
       "knowledge": {
