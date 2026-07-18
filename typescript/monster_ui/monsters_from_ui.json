@@ -749,6 +749,18 @@
                 "weapon": "javelin"
               }
             }
+          ],
+          "baseAttributes": [
+            3,
+            1,
+            5,
+            -1,
+            0,
+            4
+          ],
+          "trainedSkills": [
+            "endurance",
+            "intimidate"
           ]
         }
       ],
@@ -758,6 +770,73 @@
         "hard": "Although bugbears have only ordinary physical strength, they are remarkably durable. Their name comes from their hirstute nature and inexhaustible endurance, both of which are reminiscent of bears. They enjoy wrestling, and tend to grapple their foes in combat, even when doing so is not tactically advantageous.",
         "legendary": "Bugbears are typically found in small packs that rarely have more than a dozen members. However, sometimes they will congregate around a powerful leader for a time. These groupings are not hierarchical or well organized, and are typically based around some discovery of wealth that a chief can ration out to their followers."
       }
+    },
+    {
+      "name": "Cultists",
+      "folder": "Civilized Humanoids",
+      "hasArt": false,
+      "sharedFreeformCode": "",
+      "monsters": [
+        {
+          "name": "Death Cultist",
+          "requiredProperties": {
+            "alignment": "lawful evil",
+            "base_class": "sniper",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 1
+          },
+          "freeformCode": "",
+          "trainedSkills": [
+            "craft_bone",
+            "knowledge_souls"
+          ],
+          "standardAbilities": [
+            {
+              "type": "spell",
+              "name": "Drain Life",
+              "options": {
+                "isMagical": true
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "scythe"
+              }
+            }
+          ],
+          "baseAttributes": [
+            0,
+            2,
+            0,
+            1,
+            1,
+            4
+          ]
+        },
+        {
+          "name": "Pyromaniac",
+          "requiredProperties": {
+            "alignment": "chaotic evil",
+            "base_class": "sniper",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 4
+          },
+          "freeformCode": ""
+        }
+      ]
     }
   ],
   "folders": []
