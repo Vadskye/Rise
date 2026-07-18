@@ -423,22 +423,10 @@ export function universalCharacterProgressionAtLevel(level: number): string {
   switch (level) {
     case 3:
       return '+1 to two attributes';
-    case 4:
-      return 'HP: 2x \\glossterm{durability}';
-    case 7:
-      return 'HP: 3x durability';
     case 9:
       return '+1 to two attributes';
-    case 10:
-      return 'HP: 4x durability';
-    case 13:
-      return 'HP: 6x durability';
     case 15:
       return '+1 to two attributes';
-    case 16:
-      return 'HP: 8x durability';
-    case 19:
-      return 'HP: 10x durability';
     case 21:
       return '+2 to two attributes';
     default:
