@@ -37,8 +37,8 @@ function addLizardfolk(grimoire: Grimoire) {
       },
       sharedInitializer: (creature: Creature) => {
         creature.addTrait('amphibious');
-        creature.addCustomMovementSpeed('Land (normal)');
-        creature.addCustomMovementSpeed('Swim (normal)');
+        creature.addCustomMovementSpeed('Land (average)');
+        creature.addCustomMovementSpeed('Swim (average)');
         creature.setEquippedArmorName({
           bodyArmor: 'scale',
           shield: 'standard shield',

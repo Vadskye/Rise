@@ -40,7 +40,7 @@ export function addAberrations(grimoire: Grimoire) {
     creature.addCustomModifier({
       numericEffects: [{ statistic: 'armor_defense', modifier: 4 }],
     });
-    creature.addCustomMovementSpeed('Swim (normal)');
+    creature.addCustomMovementSpeed('Swim (average)');
     creature.addCustomMovementSpeed('Land (slow)');
     creature.addCustomSense('Darkvision (240 ft.)');
     creature.addCustomSense('Telepathy (480 ft.)');

@@ -343,21 +343,21 @@ export const TraitsTab = <T extends SharedEditableProperties>({
 
           {(selectedSenseType === 'Other' ||
             STANDARD_SENSES.find((s) => s.name === selectedSenseType)?.hasRange) && (
-            <div className="form-group" style={{ margin: 0, width: '100px' }}>
-              <label style={{ fontSize: '0.75rem', marginBottom: '4px', display: 'block' }}>
-                Range (ft.)
-              </label>
-              <input
-                type="number"
-                min="0"
-                step="5"
-                placeholder="e.g. 60"
-                value={senseRange}
-                onChange={(e) => setSenseRange(e.target.value)}
-                style={{ width: '100%', padding: '6px 10px' }}
-              />
-            </div>
-          )}
+              <div className="form-group" style={{ margin: 0, width: '100px' }}>
+                <label style={{ fontSize: '0.75rem', marginBottom: '4px', display: 'block' }}>
+                  Range (ft.)
+                </label>
+                <input
+                  type="number"
+                  min="0"
+                  step="5"
+                  placeholder="e.g. 60"
+                  value={senseRange}
+                  onChange={(e) => setSenseRange(e.target.value)}
+                  style={{ width: '100%', padding: '6px 10px' }}
+                />
+              </div>
+            )}
 
           <button
             type="button"
@@ -502,7 +502,6 @@ export const TraitsTab = <T extends SharedEditableProperties>({
             >
               <option value="slow">slow</option>
               <option value="average">average</option>
-              <option value="normal">normal</option>
               <option value="fast">fast</option>
             </select>
           </div>
@@ -510,40 +509,40 @@ export const TraitsTab = <T extends SharedEditableProperties>({
           {(selectedSpeedMode === 'Fly' ||
             selectedSpeedMode === 'Glide' ||
             selectedSpeedMode === 'Other') && (
-            <>
-              <div className="form-group" style={{ margin: 0, flex: '1 1 120px' }}>
-                <label style={{ fontSize: '0.75rem', marginBottom: '4px', display: 'block' }}>
-                  Range Limit Type
-                </label>
-                <select
-                  value={speedLimitType}
-                  onChange={(e) => setSpeedLimitType(e.target.value as any)}
-                  style={{ width: '100%', padding: '6px 10px' }}
-                >
-                  <option value="none">No Limit Specified</option>
-                  <option value="limitless">Limitless</option>
-                  <option value="limit">Has Limit</option>
-                </select>
-              </div>
-
-              {speedLimitType === 'limit' && (
-                <div className="form-group" style={{ margin: 0, width: '100px' }}>
+              <>
+                <div className="form-group" style={{ margin: 0, flex: '1 1 120px' }}>
                   <label style={{ fontSize: '0.75rem', marginBottom: '4px', display: 'block' }}>
-                    Limit (ft.)
+                    Range Limit Type
                   </label>
-                  <input
-                    type="number"
-                    min="0"
-                    step="5"
-                    placeholder="e.g. 60"
-                    value={speedLimitValue}
-                    onChange={(e) => setSpeedLimitValue(e.target.value)}
+                  <select
+                    value={speedLimitType}
+                    onChange={(e) => setSpeedLimitType(e.target.value as any)}
                     style={{ width: '100%', padding: '6px 10px' }}
-                  />
+                  >
+                    <option value="none">No Limit Specified</option>
+                    <option value="limitless">Limitless</option>
+                    <option value="limit">Has Limit</option>
+                  </select>
                 </div>
-              )}
-            </>
-          )}
+
+                {speedLimitType === 'limit' && (
+                  <div className="form-group" style={{ margin: 0, width: '100px' }}>
+                    <label style={{ fontSize: '0.75rem', marginBottom: '4px', display: 'block' }}>
+                      Limit (ft.)
+                    </label>
+                    <input
+                      type="number"
+                      min="0"
+                      step="5"
+                      placeholder="e.g. 60"
+                      value={speedLimitValue}
+                      onChange={(e) => setSpeedLimitValue(e.target.value)}
+                      style={{ width: '100%', padding: '6px 10px' }}
+                    />
+                  </div>
+                )}
+              </>
+            )}
 
           <button
             type="button"

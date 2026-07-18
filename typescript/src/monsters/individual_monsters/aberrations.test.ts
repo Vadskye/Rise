@@ -30,7 +30,7 @@ t.test('aboleth', (t) => {
   });
 
   t.test('has movement speeds', (t) => {
-    t.match(aboleth.getCustomMovementSpeeds(), ['Swim (normal)', 'Land (slow)']);
+    t.match(aboleth.getCustomMovementSpeeds(), ['Swim (average)', 'Land (slow)']);
     t.end();
   });
 

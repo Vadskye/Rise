@@ -63,7 +63,7 @@ export interface StructuredSense {
 export interface StructuredMovementSpeed {
   mode: string;
   customMode?: string;
-  category: 'slow' | 'average' | 'normal' | 'fast';
+  category: 'slow' | 'average' | 'fast';
   limitType?: 'none' | 'limitless' | 'limit';
   limitValue?: number;
 }

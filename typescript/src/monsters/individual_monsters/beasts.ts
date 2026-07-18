@@ -510,7 +510,7 @@ export function addBeasts(grimoire: Grimoire) {
     creature.setTrainedSkills(['athletics', 'stealth']);
     creature.setBaseAttributes([5, 2, 4, -6, 2, -2]);
     creature.addTrait('legless');
-    creature.addCustomMovementSpeed('Climb (normal)');
+    creature.addCustomMovementSpeed('Climb (average)');
     creature.addCustomSense('Darkvision (120 ft.)');
     creature.addCustomSense('Lifesense (120 ft.)');
 
@@ -603,7 +603,7 @@ function addAnimals(grimoire: Grimoire) {
             A baboon is an aggressive primate adapted to life on the ground.
             A typical baboon is the size of a big dog.
           `,
-          hard: `
+            hard: `
             Baboons prefer open spaces but climb trees to find safe places to rest overnight.
             They can be aggressive, though they avoid attacking creatures that seem too dangerous.
           `,
@@ -611,7 +611,7 @@ function addAnimals(grimoire: Grimoire) {
           creature.setTrainedSkills(['awareness']);
           creature.setBaseAttributes([2, 3, 1, -8, 2, -1]);
           creature.addWeaponMult('claws');
-          creature.addCustomMovementSpeed('Climb (normal)');
+          creature.addCustomMovementSpeed('Climb (average)');
         },
       ],
       [
