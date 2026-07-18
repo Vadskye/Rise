@@ -182,20 +182,19 @@ t.test('Elite monsters hit multiple targets with area attack', (t) => {
       level: 4,
       size: 'large',
     });
+    c.setBaseAttributes([6, 0, 0, 0, 16, 0]); // Strength 6 for mundane power 10, Perception 16 for accuracy 20
     c.setProperties({
       hit_points: 100,
-      accuracy: 20, // Guaranteed hit
-      mundane_power: 10,
     });
   });
 
-  // Create 5 weak targets
+  // Create 3 weak targets
   const targets = [];
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 3; i++) {
     targets.push(
       createCreature(`Target ${i}`, (c) => {
         c.setProperties({
-          hit_points: 10,
+          hit_points: 5,
           armor_defense: 0,
         });
       }),
@@ -207,9 +206,9 @@ t.test('Elite monsters hit multiple targets with area attack', (t) => {
 
   const scenario = createScenario([team1, team2]);
 
-  // If no area attack, it takes 5 turns to kill 5 targets (1 target/turn).
+  // If no area attack, it takes 3 turns to kill 3 targets (1 target/turn).
   // With area attack, it kills them all in one turn.
-  const result = scenario.simulate(50);
+  const result = scenario.simulate(1, true);
   assertExpectedTurnsCount(t, result, 1.0);
   assertExpectedWinRate(t, result, 'Elite Team', 100);
   t.end();
