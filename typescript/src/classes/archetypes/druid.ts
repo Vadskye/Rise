@@ -607,7 +607,7 @@ export function wildspeaker(): RankAbility[] {
         Unusual environments may have different animals than the standard animals listed below.
         \\begin{raggeditemize}
           \\item Aquatic: A shark appears that has an average \\glossterm{swim speed} and no walk speed.
-          It has a bite \\glossterm{natural weapon}, and it is trained with the Awareness and Swim skills.
+          It has a bite \\glossterm{natural weapon}, and it is trained with the Athletics and Awareness skills.
           \\item Arctic: An arctic fox appears that has no penalties for being in cold environments.
           It has a bite \\glossterm{natural weapon}, and it is trained with the Awareness and Stealth skills.
           \\item Desert: A hyena appears that has no penalties for being in hot environments.
@@ -619,7 +619,7 @@ export function wildspeaker(): RankAbility[] {
           \\item Plains: A wolf appears that has the \\sense{scent} ability.
           It has a bite \\glossterm{natural weapon}, and it is trained with the Awareness and Stealth skills.
           \\item Swamp: A crocodile appears that has a slow \\glossterm{walk speed} and an average \\glossterm{swim speed}.
-          It has a bite \\glossterm{natural weapon}, and it is trained with the Swim and Stealth skills.
+          It has a bite \\glossterm{natural weapon}, and it is trained with the Might and Stealth skills.
           \\item Underground: A dire rat appears that has \\sense{low-light vision}.
           It has a bite \\glossterm{natural weapon}, and it is trained with the Awareness and Stealth skill.
         \\end{raggeditemize}

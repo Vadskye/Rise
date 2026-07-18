@@ -142,9 +142,9 @@ export function clericDomains(): string {
 
         \\subsubsection{Ocean Domain}
         If you choose this domain, you add the \\sphere{aquamancy} \\glossterm{mystic sphere} to your list of divine mystic spheres (see \\pcref{Spell Lists}).
-        In addition, you add the Flexibility and Swim skills to your cleric \\glossterm{class skill} list.
+        In addition, you add the Athletics and Flexibility skills to your cleric \\glossterm{class skill} list.
 
-        \\domainability{Gift} You gain a \\plus1 bonus to the Flexibility and Swim skills.
+        \\domainability{Gift} You gain a \\plus1 bonus to the Athletics and Flexibility skills.
         \\magicaldomainability{Aspect} You increase the distance of your \\glossterm{push} and \\glossterm{fling} abilities by 10 feet.
         This does not allow you to push creatures out of your reach with abilities that would not normally allow that, such as the \\ability{shove} ability.
         \\magicaldomainability{Essence} You gain a slow \\glossterm{swim speed} (see \\pcref{Swimming}).
@@ -172,7 +172,7 @@ export function clericDomains(): string {
         If you choose this domain, you add the \\sphere{aeromancy} \\glossterm{mystic sphere} to your list of divine mystic spheres (see \\pcref{Spell Lists}).
         In addition, you add the Athletics skill to your list of class skills.
 
-        \\magicaldomainability{Gift} You gain a \\plus10 foot bonus to your maximum horizontal jump distance (see \\pcref{Jump}).
+        \\magicaldomainability{Gift} You gain a \\plus10 foot bonus to your maximum horizontal jump distance (see \\pcref{Jumping}).
         \\magicaldomainability{Aspect} You gain an average \\glossterm{glide speed} (see \\pcref{Gliding}).
         In addition, you take half damage from \\glossterm{falling damage}.
         \\magicaldomainability{Essence} You gain a slow \\glossterm{fly speed} with a maximum height of 15 feet (see \\pcref{Flight}).

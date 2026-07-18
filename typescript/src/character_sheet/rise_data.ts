@@ -74,7 +74,7 @@ export type RiseSize =
   | 'colossal';
 
 // TODO: list all debuffs if we ever actually care
-export type RiseDebuff = 'climbing';
+export type RiseDebuff = 'unsteady';
 
 export * from '../core_mechanics/attributes';
 

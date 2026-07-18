@@ -24,7 +24,7 @@ export function addHumanoids(grimoire: Grimoire) {
         They live to hear the desperate gasping for breath and crunching of bones that their powerful arms can inflict on their prey.
       `,
     });
-    creature.setTrainedSkills(['awareness', 'climb', 'stealth']);
+    creature.setTrainedSkills(['awareness', 'might', 'stealth']);
     creature.addCustomSense('Darkvision (60 ft.)');
     creature.addCustomMovementSpeed('Climb (slow)');
     creature.setBaseAttributes([5, 4, -1, -4, 0, -1]);
@@ -515,7 +515,7 @@ function addLizardfolk(grimoire: Grimoire) {
             level: 3,
             size: 'medium',
           });
-          creature.setTrainedSkills(['swim']);
+          creature.setTrainedSkills(['athletics']);
           creature.setBaseAttributes([2, 2, 4, -1, 1, 0]);
           creature.addWeaponMult('spear');
           creature.addManeuver('Bloodletter', { weapon: 'bite' });
@@ -532,7 +532,7 @@ function addLizardfolk(grimoire: Grimoire) {
             level: 5,
             size: 'medium',
           });
-          creature.setTrainedSkills(['swim']);
+          creature.setTrainedSkills(['athletics']);
           creature.setBaseAttributes([3, 3, 5, 0, 1, 1]);
           creature.addWeaponMult('spear');
           creature.addManeuver('Bloodletter', { weapon: 'bite' });

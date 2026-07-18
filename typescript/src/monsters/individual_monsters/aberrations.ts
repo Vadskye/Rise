@@ -35,7 +35,7 @@ export function addAberrations(grimoire: Grimoire) {
         They sometimes use their minions as agents to spy in cities or otherwise further their sinister goals.
       `,
     });
-    creature.setTrainedSkills(['awareness', 'endurance', 'social_insight', 'swim']);
+    creature.setTrainedSkills(['athletics', 'awareness', 'endurance', 'social_insight']);
     creature.setBaseAttributes([4, 0, 6, 4, 4, 6]);
     creature.addCustomModifier({
       numericEffects: [{ statistic: 'armor_defense', modifier: 4 }],

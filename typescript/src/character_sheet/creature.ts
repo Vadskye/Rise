@@ -1301,16 +1301,12 @@ export class Creature implements CreaturePropertyMap {
     return this.getPropertyValue('vertical_jump_distance');
   }
 
-  public get climb() {
-    return this.getPropertyValue('climb');
+  public get athletics() {
+    return this.getPropertyValue('athletics');
   }
 
-  public get jump() {
-    return this.getPropertyValue('jump');
-  }
-
-  public get swim() {
-    return this.getPropertyValue('swim');
+  public get might() {
+    return this.getPropertyValue('might');
   }
 
   public get balance() {
@@ -1565,8 +1561,8 @@ export class Creature implements CreaturePropertyMap {
     return this.getPropertyValue('has_art');
   }
 
-  public get climbing() {
-    return this.getPropertyValue('climbing');
+  public get unsteady() {
+    return this.getPropertyValue('unsteady');
   }
 
   public get armor_defense_explanation() {

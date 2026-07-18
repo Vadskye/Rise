@@ -36,7 +36,7 @@ export function addBeasts(grimoire: Grimoire) {
         When they move on, they leave any valuable objects behind with their old tunnels.
       `,
     });
-    creature.setTrainedSkills(['awareness', 'climb']);
+    creature.setTrainedSkills(['awareness', 'might']);
     creature.setBaseAttributes([4, 3, 2, -8, 2, 0]);
     creature.addTrait('multipedal');
     creature.addCustomMovementSpeed('Burrow (slow)');
@@ -128,7 +128,7 @@ export function addBeasts(grimoire: Grimoire) {
       size: 'large',
     });
     creature.setProperties({ has_art: true });
-    creature.setTrainedSkills(['awareness', 'balance', 'climb']);
+    creature.setTrainedSkills(['awareness', 'balance', 'stealth']);
     creature.setBaseAttributes([4, 8, 2, -5, 3, 2]);
     creature.addTrait('multipedal');
     creature.addCustomSense('Tremorsense (90 ft.)');
@@ -232,7 +232,7 @@ export function addBeasts(grimoire: Grimoire) {
         If they have no escape, they ferociously attack any sources of light.
       `,
     });
-    creature.setTrainedSkills(['climb']);
+    creature.setTrainedSkills(['athletics', 'stealth']);
     creature.setBaseAttributes([3, 4, 2, -8, 0, 3]);
     creature.addTrait('legless');
     creature.addCustomMovementSpeed('Climb (slow)');
@@ -268,7 +268,7 @@ export function addBeasts(grimoire: Grimoire) {
         Their tentacles are quite adept at slipping past defenses and through cracks in armor.
       `,
     });
-    creature.setTrainedSkills(['climb']);
+    creature.setTrainedSkills(['might']);
     creature.setBaseAttributes([6, 6, 1, -8, 2, -1]);
     creature.addTrait('legless');
     creature.addCustomSense('Darkvision (60 ft.)');
@@ -310,7 +310,7 @@ export function addBeasts(grimoire: Grimoire) {
       `,
     });
     creature.addVulnerability('Fire');
-    creature.setTrainedSkills(['climb']);
+    creature.setTrainedSkills(['awareness']);
     creature.setBaseAttributes([-2, 2, -2, -8, 2, -4]);
     creature.addTrait('legless');
     creature.addTrait('sightless');
@@ -332,7 +332,7 @@ export function addBeasts(grimoire: Grimoire) {
     });
     creature.addTrait('swarm');
     creature.addVulnerability('Fire');
-    creature.setTrainedSkills(['climb']);
+    creature.setTrainedSkills(['awareness']);
     creature.setBaseAttributes([-1, 4, -1, -8, 2, -4]);
     creature.addTrait('sightless');
     creature.addTrait('legless');
@@ -372,7 +372,7 @@ export function addBeasts(grimoire: Grimoire) {
         Darkmantles move very slowly, so they rely heavily on stealth to ambush their foes.
       `,
     });
-    creature.setTrainedSkills(['awareness', 'climb', 'stealth']);
+    creature.setTrainedSkills(['athletics', 'awareness', 'stealth']);
     creature.setBaseAttributes([4, 3, -2, -6, 3, 0]);
     creature.addCustomMovementSpeed('Climb (slow)');
     creature.addCustomMovementSpeed('Land (slow)');
@@ -405,7 +405,7 @@ export function addBeasts(grimoire: Grimoire) {
         Griffons cannot speak, but they understand Common.
       `,
     });
-    creature.setTrainedSkills(['awareness', 'jump']);
+    creature.setTrainedSkills(['athletics', 'awareness']);
     creature.setBaseAttributes([5, 5, 2, -5, 2, 2]);
     creature.addTrait('quadrupedal');
     creature.addCustomMovementSpeed('Fly (average, 60 ft. limit)');
@@ -507,7 +507,7 @@ export function addBeasts(grimoire: Grimoire) {
         Some non-living creatures, such as intelligent undead, take advantage of this by gathering stygian leeches to guard their homes.
       `,
     });
-    creature.setTrainedSkills(['climb', 'stealth']);
+    creature.setTrainedSkills(['athletics', 'stealth']);
     creature.setBaseAttributes([5, 2, 4, -6, 2, -2]);
     creature.addTrait('legless');
     creature.addCustomMovementSpeed('Climb (normal)');
@@ -541,7 +541,7 @@ export function addBeasts(grimoire: Grimoire) {
         It leaps upon its foes and bashes them to death in a fury.
       `,
     });
-    creature.setTrainedSkills(['jump', 'stealth']);
+    creature.setTrainedSkills(['athletics', 'might', 'stealth']);
     creature.setBaseAttributes([8, 6, 1, -6, 2, -2]);
     creature.addManeuver('Leap Slam');
     creature.addWeaponMult('fists');
@@ -603,7 +603,7 @@ function addAnimals(grimoire: Grimoire) {
             A baboon is an aggressive primate adapted to life on the ground.
             A typical baboon is the size of a big dog.
           `,
-            hard: `
+          hard: `
             Baboons prefer open spaces but climb trees to find safe places to rest overnight.
             They can be aggressive, though they avoid attacking creatures that seem too dangerous.
           `,
@@ -665,7 +665,7 @@ function addAnimals(grimoire: Grimoire) {
           creature.setBaseAttributes([4, 0, 5, -8, 2, -2]);
           creature.addTrait('quadrupedal');
           creature.addCustomSense('Scent');
-          creature.setTrainedSkills(['awareness', 'climb', 'endurance', 'survival', 'swim']);
+          creature.setTrainedSkills(['athletics', 'awareness', 'endurance', 'survival']);
           creature.addWeaponMult('bite', { usageTime: 'elite' });
           creature.addWeaponMult('claws');
         },
@@ -694,7 +694,7 @@ function addAnimals(grimoire: Grimoire) {
           creature.setBaseAttributes([5, 0, 6, -8, 1, 0]);
           creature.addTrait('quadrupedal');
           creature.addCustomSense('Scent');
-          creature.setTrainedSkills(['awareness', 'climb', 'endurance', 'survival', 'swim']);
+          creature.setTrainedSkills(['athletics', 'awareness', 'endurance', 'survival']);
           creature.addWeaponMult('bite', { usageTime: 'elite' });
           creature.addWeaponMult('claws');
         },
@@ -986,7 +986,7 @@ function addIchorTainted(grimoire: Grimoire) {
             level: 7,
             size: 'medium',
           });
-          creature.setTrainedSkills(['awareness', 'climb', 'endurance', 'survival', 'swim']);
+          creature.setTrainedSkills(['athletics', 'awareness', 'endurance', 'survival']);
           creature.setBaseAttributes([6, 2, 7, -8, 2, -2]);
           creature.addTrait('quadrupedal');
           creature.addCustomSense('Scent');
@@ -1007,7 +1007,7 @@ function addIchorTainted(grimoire: Grimoire) {
             level: 9,
             size: 'large',
           });
-          creature.setTrainedSkills(['awareness', 'climb', 'endurance', 'survival', 'swim']);
+          creature.setTrainedSkills(['athletics', 'awareness', 'endurance', 'survival']);
           creature.setBaseAttributes([7, 1, 8, -8, 2, 1]);
           creature.addTrait('quadrupedal');
           creature.addCustomSense('Scent');

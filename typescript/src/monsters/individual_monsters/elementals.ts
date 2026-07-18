@@ -17,7 +17,7 @@ export function addElementals(grimoire: Grimoire) {
       level: 16,
       size: 'huge',
     });
-    creature.setTrainedSkills(['awareness', 'jump']);
+    creature.setTrainedSkills(['athletics', 'awareness']);
     creature.setBaseAttributes([8, 6, 5, -4, 2, 4]);
     creature.addResistant('Air');
     creature.addResistant('Earth');

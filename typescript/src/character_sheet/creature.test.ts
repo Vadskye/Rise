@@ -57,15 +57,15 @@ t.test('can increase accuracy with a custom modifier', (t) => {
 t.test('can increase a skill with a custom modifier', (t) => {
   const creature = Creature.new();
   creature.addCustomModifier({
-    name: 'Climber',
+    name: 'Really Athletic',
     numericEffects: [
       {
         modifier: 20,
-        statistic: 'climb',
+        statistic: 'athletics',
       },
     ],
   });
-  t.equal(creature.climb, 20);
+  t.equal(creature.athletics, 20);
   t.end();
 });
 

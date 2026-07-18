@@ -168,7 +168,7 @@ export function boundaryWarden(): RankAbility[] {
       description: `
         You and your \\glossterm{allies} who can see or hear you can ignore \\glossterm{difficult terrain} from inanimate natural sources, such as \\glossterm{heavy undergrowth}.
         This also applies during overland travel.
-        In addition, each ally who can see or hear you can use half of your skill modifier in place of its own for the Athletics, Balance, Survival, and Swim skills.
+        In addition, each ally who can see or hear you can use half of your skill modifier in place of its own for the Athletics, Balance, and Survival skills.
       `,
     },
     {

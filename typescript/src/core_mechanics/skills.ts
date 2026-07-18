@@ -8,9 +8,7 @@ export enum SkillCategory {
 }
 
 export const RISE_MOVEMENT_SKILLS = [
-  'climb',
-  'jump',
-  'swim',
+  'athletics',
   'balance',
   'flexibility',
   'ride',
@@ -22,6 +20,7 @@ export const RISE_SENSE_SKILLS = ['analysis', 'awareness'] as const;
 export type RiseSenseSkill = (typeof RISE_SENSE_SKILLS)[number];
 
 export const RISE_SOCIAL_SKILLS = [
+  'creature_handling',
   'deception',
   'disguise',
   'intimidate',
@@ -63,10 +62,10 @@ export type RiseKnowledgeSkill = (typeof RISE_KNOWLEDGE_SKILLS)[number];
 export const RISE_OTHER_SKILLS = [
   ...RISE_CRAFT_SKILLS,
   ...RISE_KNOWLEDGE_SKILLS,
-  'creature_handling',
   'devices',
   'endurance',
   'medicine',
+  'might',
   'sleight_of_hand',
   'survival',
   'profession',
@@ -97,9 +96,9 @@ export interface SkillMetadata {
 
 export const SKILL_METADATA: Record<Skill, SkillMetadata> = {
   analysis: { attribute: 'intelligence', category: SkillCategory.Senses },
+  athletics: { attribute: 'strength', category: SkillCategory.Movement },
   awareness: { attribute: 'perception', category: SkillCategory.Senses },
   balance: { attribute: 'dexterity', category: SkillCategory.Movement },
-  climb: { attribute: 'strength', category: SkillCategory.Movement },
   craft_alchemy: { attribute: 'intelligence', category: SkillCategory.Other },
   craft_bone: { attribute: 'intelligence', category: SkillCategory.Other },
   craft_ceramics: { attribute: 'intelligence', category: SkillCategory.Other },
@@ -112,14 +111,13 @@ export const SKILL_METADATA: Record<Skill, SkillMetadata> = {
   craft_traps: { attribute: 'intelligence', category: SkillCategory.Other },
   craft_wood: { attribute: 'intelligence', category: SkillCategory.Other },
   craft_untrained: { attribute: 'intelligence', category: SkillCategory.Other },
-  creature_handling: { attribute: 'perception', category: SkillCategory.Other },
+  creature_handling: { attribute: 'perception', category: SkillCategory.Social },
   deception: { attribute: 'perception', category: SkillCategory.Social },
   devices: { attribute: 'intelligence', category: SkillCategory.Other },
   disguise: { attribute: 'intelligence', category: SkillCategory.Social },
   endurance: { attribute: 'constitution', category: SkillCategory.Other },
   flexibility: { attribute: 'dexterity', category: SkillCategory.Movement },
   intimidate: { attribute: null, category: SkillCategory.Social },
-  jump: { attribute: 'strength', category: SkillCategory.Movement },
   knowledge_arcana: { attribute: 'intelligence', category: SkillCategory.Other },
   knowledge_dungeoneering: { attribute: 'intelligence', category: SkillCategory.Other },
   knowledge_engineering: { attribute: 'intelligence', category: SkillCategory.Other },
@@ -130,6 +128,7 @@ export const SKILL_METADATA: Record<Skill, SkillMetadata> = {
   knowledge_souls: { attribute: 'intelligence', category: SkillCategory.Other },
   knowledge_untrained: { attribute: 'intelligence', category: SkillCategory.Other },
   medicine: { attribute: 'intelligence', category: SkillCategory.Other },
+  might: { attribute: 'strength', category: SkillCategory.Other },
   perform: { attribute: 'dexterity', category: SkillCategory.Social },
   persuasion: { attribute: 'perception', category: SkillCategory.Social },
   profession: { attribute: null, category: SkillCategory.Other },
@@ -138,7 +137,6 @@ export const SKILL_METADATA: Record<Skill, SkillMetadata> = {
   social_insight: { attribute: 'perception', category: SkillCategory.Social },
   stealth: { attribute: 'dexterity', category: SkillCategory.Movement },
   survival: { attribute: 'perception', category: SkillCategory.Other },
-  swim: { attribute: 'strength', category: SkillCategory.Movement },
 };
 
 export function isSkill(text: string): text is RiseSkill {
