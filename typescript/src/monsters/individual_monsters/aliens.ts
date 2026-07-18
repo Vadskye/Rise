@@ -115,7 +115,7 @@ function addFormians(grimoire: Grimoire) {
               The second escalation also ends the poison.
             `,
           });
-          creature.setTrainedSkills(['awareness', 'climb', 'endurance']);
+          creature.setTrainedSkills(['awareness', 'endurance']);
           creature.setBaseAttributes([3, 4, 2, -4, 3, 0]);
           creature.setKnowledgeResults({
             normal: `
@@ -142,7 +142,7 @@ function addFormians(grimoire: Grimoire) {
           });
           creature.setProperties({ has_art: true });
           creature.addTrait('simple-minded');
-          creature.setTrainedSkills(['awareness', 'climb', 'endurance']);
+          creature.setTrainedSkills(['awareness', 'endurance']);
           creature.setBaseAttributes([4, 6, 3, -4, 3, 2]);
 
           creature.addWeaponMult('greatsword');

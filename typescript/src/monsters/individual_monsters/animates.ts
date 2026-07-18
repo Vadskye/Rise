@@ -68,7 +68,7 @@ export function addAnimates(grimoire: Grimoire) {
         If possible, they prefer to nestle into alcoves so they can drop on unsuspecting prey.
       `,
     });
-    creature.setTrainedSkills(['climb', 'endurance', 'flexibility', 'stealth']);
+    creature.setTrainedSkills(['endurance', 'flexibility', 'stealth']);
     creature.setBaseAttributes([6, -4, 8, -10, 0, -10]);
     creature.addCustomModifier({
       numericEffects: [
@@ -87,7 +87,8 @@ export function addAnimates(grimoire: Grimoire) {
     creature.addPassiveAbility({
       name: 'Gelatinous',
       effect: `
-        The $name can move freely through spaces occupied by other creatures who do not have this ability.
+        The $name gains a \plus10 bonus to Athletics checks made to climb.
+        In addition, it can move freely through spaces occupied by other creatures who do not have this ability.
       `,
     });
     creature.addPassiveAbility({

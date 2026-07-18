@@ -895,7 +895,7 @@ function addDireAnimals(grimoire: Grimoire) {
             Dire rats can grow to be up to 3 feet long and weigh over 20 pounds.
           `,
           });
-          creature.setTrainedSkills(['awareness', 'climb', 'stealth']);
+          creature.setTrainedSkills(['athletics', 'awareness', 'survival', 'stealth']);
           creature.setBaseAttributes([1, 4, 0, -9, 3, -2]);
           creature.addTrait('quadrupedal');
           creature.addCustomSense('Scent');
