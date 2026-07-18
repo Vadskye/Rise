@@ -139,7 +139,9 @@ describe('Combobox Tab Navigation Tests', () => {
     await alignmentTrigger.asElement()!.focus();
     await page.waitForSelector('[data-testid="alignment-combobox-search"]', { timeout: 2000 });
 
-    let activeTestId = await page.evaluate(() => document.activeElement?.getAttribute('data-testid'));
+    let activeTestId = await page.evaluate(() =>
+      document.activeElement?.getAttribute('data-testid'),
+    );
     expect(activeTestId).toBe('alignment-combobox-search');
 
     // 2. Press Tab to cycle focus.
@@ -182,7 +184,9 @@ describe('Combobox Tab Navigation Tests', () => {
     const getFocusedSelectId = async () => {
       return await page.evaluate(() => {
         const active = document.activeElement;
-        if (!active) return null;
+        if (!active) {
+          return null;
+        }
         const select = active.parentElement?.querySelector('select');
         return select ? select.id : null;
       });

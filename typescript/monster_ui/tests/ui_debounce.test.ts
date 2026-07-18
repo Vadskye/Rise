@@ -119,7 +119,6 @@ describe('Monster UI Debounce/Timing Tests', () => {
   });
 
   test('Toggle trained skill checkbox and observe reload timings', async () => {
-
     page.on('console', (msg) => {
       console.log(`[PAGE LOG] ${msg.text()}`);
     });
@@ -175,6 +174,5 @@ describe('Monster UI Debounce/Timing Tests', () => {
     await new Promise((resolve) => setTimeout(resolve, 400));
     console.log(`Phase 1 preview requests: ${requestTimes.length}`);
     expect(requestTimes.length).toBe(3);
-
   });
 });

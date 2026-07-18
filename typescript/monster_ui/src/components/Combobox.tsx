@@ -165,9 +165,7 @@ export const Combobox: React.FC<ComboboxProps> = ({
       e.preventDefault();
       if (filteredOptions.length > 0) {
         const indexToSelect =
-          highlightedIndex >= 0 && highlightedIndex < filteredOptions.length
-            ? highlightedIndex
-            : 0;
+          highlightedIndex >= 0 && highlightedIndex < filteredOptions.length ? highlightedIndex : 0;
         handleSelect(filteredOptions[indexToSelect].value);
       }
     } else if (e.key === 'Escape') {

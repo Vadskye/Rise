@@ -151,7 +151,6 @@ describe('Monster UI Drag and Drop E2E Tests', () => {
   });
 
   test('Drag and drop individual monster and group to and from folders', async () => {
-
     // Go to Monster UI
     await page.goto(baseUrl, { waitUntil: 'networkidle2' });
     await page.waitForSelector('.sidebar', { timeout: 5000 });
@@ -243,6 +242,5 @@ describe('Monster UI Drag and Drop E2E Tests', () => {
     const savedGroup = dbJson.monsterGroups.find((g: any) => g.name === 'Drag Group');
     expect(savedGroup).toBeDefined();
     expect(savedGroup.folder).toBe('Drag Folder');
-
   });
 });

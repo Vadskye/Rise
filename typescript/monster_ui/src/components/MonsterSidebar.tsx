@@ -47,7 +47,9 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
   // use a lazy initializer — instead we watch for the first non-null value.
   const hasAutoExpanded = useRef(false);
   useEffect(() => {
-    if (hasAutoExpanded.current || !activeSelection) return;
+    if (hasAutoExpanded.current || !activeSelection) {
+      return;
+    }
     hasAutoExpanded.current = true;
 
     // Determine which group (if any) should be expanded

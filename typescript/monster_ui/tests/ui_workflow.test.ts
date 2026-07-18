@@ -102,7 +102,6 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
   });
 
   test('Create, edit, save, and preview a new monster', async () => {
-
     // Navigate to UI
     await page.goto(baseUrl, { waitUntil: 'networkidle2' });
 
@@ -214,11 +213,9 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
     const generatedTs = fs.readFileSync(paths.generatedTsPath, 'utf8');
     expect(generatedTs).toContain("grimoire.addMonster('Integration Gargoyle'");
     expect(generatedTs).toContain("creature.addTrait('scent')");
-
   });
 
   test('Verify Folder System and Sorting in Sidebar', async () => {
-
     await page.goto(baseUrl, { waitUntil: 'networkidle2' });
     await page.waitForSelector('.sidebar', { timeout: 5000 });
 
@@ -279,6 +276,5 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
     expect(
       childrenNames.map((n) => n.replace(/[\u200B-\u200D\uFEFF]/g, '').replace(/^▶\s*/, '')),
     ).toEqual(['👥 Orcs', '👤 Troll']);
-
   });
 });
