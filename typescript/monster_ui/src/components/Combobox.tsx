@@ -49,6 +49,7 @@ export const Combobox: React.FC<ComboboxProps> = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [search, setSearch] = useState('');
+  const [highlightedIndex, setHighlightedIndex] = useState<number>(-1);
   const [dropdownStyle, setDropdownStyle] = useState<React.CSSProperties>({});
   const triggerRef = useRef<HTMLButtonElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -130,6 +131,27 @@ export const Combobox: React.FC<ComboboxProps> = ({
     option.label.toLowerCase().includes(search.toLowerCase()),
   );
 
+  // Sync highlightedIndex when dropdown opens, when search query is typed, or when value changes
+  useEffect(() => {
+    if (!isOpen) {
+      setHighlightedIndex(-1);
+      return;
+    }
+    const index = filteredOptions.findIndex((opt) => opt.value === value);
+    setHighlightedIndex(index);
+  }, [isOpen, search, value, options]);
+
+  // Scroll highlighted element into view
+  useLayoutEffect(() => {
+    if (isOpen && highlightedIndex >= 0 && dropdownRef.current) {
+      const optionsElements = dropdownRef.current.querySelectorAll('.combobox-option-btn');
+      const activeEl = optionsElements[highlightedIndex] as HTMLElement | undefined;
+      if (activeEl) {
+        activeEl.scrollIntoView({ block: 'nearest' });
+      }
+    }
+  }, [highlightedIndex, isOpen]);
+
   const handleSelect = (val: string) => {
     onChange(val);
     setIsOpen(false);
@@ -142,7 +164,11 @@ export const Combobox: React.FC<ComboboxProps> = ({
     if (e.key === 'Enter') {
       e.preventDefault();
       if (filteredOptions.length > 0) {
-        handleSelect(filteredOptions[0].value);
+        const indexToSelect =
+          highlightedIndex >= 0 && highlightedIndex < filteredOptions.length
+            ? highlightedIndex
+            : 0;
+        handleSelect(filteredOptions[indexToSelect].value);
       }
     } else if (e.key === 'Escape') {
       e.preventDefault();
@@ -160,6 +186,22 @@ export const Combobox: React.FC<ComboboxProps> = ({
         if (target) {
           target.focus();
         }
+      }
+    } else if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      if (filteredOptions.length > 0) {
+        setHighlightedIndex((prev) => {
+          const next = prev + 1;
+          return next >= filteredOptions.length ? 0 : next;
+        });
+      }
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      if (filteredOptions.length > 0) {
+        setHighlightedIndex((prev) => {
+          const next = prev - 1;
+          return next < 0 ? filteredOptions.length - 1 : next;
+        });
       }
     }
   };
@@ -189,12 +231,15 @@ export const Combobox: React.FC<ComboboxProps> = ({
             />
             <div className="combobox-list-container">
               <div className="combobox-list">
-                {filteredOptions.map((option) => (
+                {filteredOptions.map((option, index) => (
                   <button
                     key={option.value}
                     type="button"
-                    className={`combobox-option-btn ${value === option.value ? 'selected' : ''}`}
+                    className={`combobox-option-btn ${value === option.value ? 'selected' : ''} ${
+                      highlightedIndex === index ? 'highlighted' : ''
+                    }`}
                     onClick={() => handleSelect(option.value)}
+                    onMouseEnter={() => setHighlightedIndex(index)}
                   >
                     {option.label}
                   </button>
