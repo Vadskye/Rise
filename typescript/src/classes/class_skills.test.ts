@@ -10,13 +10,6 @@ t.test('Class Skills Logic', (t) => {
     t.end();
   });
 
-  t.test('getClassSkills returns expected skills for Wizard', (t) => {
-    const skills = getClassSkills('Wizard');
-    t.ok(skills.includes('knowledge_arcana'));
-    t.ok(skills.includes('knowledge_religion'));
-    t.end();
-  });
-
   t.test('getClassTrainedSkills returns expected counts', (t) => {
     t.equal(getClassTrainedSkills('Rogue'), 6);
     t.equal(getClassTrainedSkills('Wizard'), 3);

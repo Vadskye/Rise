@@ -50,7 +50,7 @@ export function divineSpellMastery(): RankAbility[] {
       isMagical: true,
       rank: 1,
       description: `
-        You gain a \\plus2 bonus to your Knowledge (religion) skill and a \\plus1 bonus to your \\glossterm{magical power}.
+        You gain a \\plus2 bonus to your Knowledge (souls) skill and a \\plus1 bonus to your \\glossterm{magical power}.
       `,
     },
     {
@@ -451,7 +451,7 @@ export function divineSpellMasteryModifiers(creature: Creature, rank: number) {
     creature.addCustomModifier({
       name: 'Divine Vessel',
       numericEffects: [
-        { statistic: 'knowledge_religion', modifier: 2 },
+        { statistic: 'knowledge_souls', modifier: 2 },
         { statistic: 'magical_power', modifier: 1 },
       ],
     });
