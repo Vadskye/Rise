@@ -18,6 +18,24 @@ interface ComboboxProps {
   'data-testid'?: string;
 }
 
+const getVisibleFocusableElements = (excludeContainer: HTMLElement | null): HTMLElement[] => {
+  const selector =
+    'a[href], button:not([disabled]), input:not([disabled]):not([type="hidden"]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+  const elements = Array.from(document.querySelectorAll(selector)) as HTMLElement[];
+  return elements.filter((el) => {
+    if (excludeContainer && excludeContainer.contains(el)) {
+      return false;
+    }
+    const style = window.getComputedStyle(el);
+    return (
+      el.offsetWidth > 0 &&
+      el.offsetHeight > 0 &&
+      style.display !== 'none' &&
+      style.visibility !== 'hidden'
+    );
+  });
+};
+
 export const Combobox: React.FC<ComboboxProps> = ({
   value,
   onChange,
@@ -34,6 +52,29 @@ export const Combobox: React.FC<ComboboxProps> = ({
   const [dropdownStyle, setDropdownStyle] = useState<React.CSSProperties>({});
   const triggerRef = useRef<HTMLButtonElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const pointerDownRef = useRef(false);
+  const ignoreNextFocusRef = useRef(false);
+
+  const handleMousedown = () => {
+    pointerDownRef.current = true;
+    setTimeout(() => {
+      pointerDownRef.current = false;
+    }, 100);
+  };
+
+  const handleFocus = () => {
+    if (ignoreNextFocusRef.current) {
+      ignoreNextFocusRef.current = false;
+      return;
+    }
+    if (!pointerDownRef.current) {
+      setIsOpen(true);
+    }
+  };
+
+  const handleClick = () => {
+    setIsOpen((prev) => !prev);
+  };
 
   // Update position of portal dropdown on open or scroll/resize
   useLayoutEffect(() => {
@@ -93,6 +134,8 @@ export const Combobox: React.FC<ComboboxProps> = ({
     onChange(val);
     setIsOpen(false);
     setSearch('');
+    ignoreNextFocusRef.current = true;
+    triggerRef.current?.focus();
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -100,6 +143,23 @@ export const Combobox: React.FC<ComboboxProps> = ({
       e.preventDefault();
       if (filteredOptions.length > 0) {
         handleSelect(filteredOptions[0].value);
+      }
+    } else if (e.key === 'Escape') {
+      e.preventDefault();
+      ignoreNextFocusRef.current = true;
+      setIsOpen(false);
+      triggerRef.current?.focus();
+    } else if (e.key === 'Tab') {
+      e.preventDefault();
+      setIsOpen(false);
+      const focusable = getVisibleFocusableElements(dropdownRef.current);
+      const index = focusable.indexOf(triggerRef.current!);
+      if (index !== -1) {
+        const nextIndex = e.shiftKey ? index - 1 : index + 1;
+        const target = focusable[nextIndex];
+        if (target) {
+          target.focus();
+        }
       }
     }
   };
@@ -124,6 +184,7 @@ export const Combobox: React.FC<ComboboxProps> = ({
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               onKeyDown={handleKeyDown}
+              data-testid={id ? `${id}-combobox-search` : undefined}
               autoFocus
             />
             <div className="combobox-list-container">
@@ -154,7 +215,9 @@ export const Combobox: React.FC<ComboboxProps> = ({
         type="button"
         ref={triggerRef}
         className={`combobox-trigger ${isOpen ? 'active' : ''}`}
-        onClick={() => setIsOpen(!isOpen)}
+        onMouseDown={handleMousedown}
+        onFocus={handleFocus}
+        onClick={handleClick}
       >
         <span className="combobox-trigger-text">{displayLabel}</span>
         <span className="chevron">{isOpen ? '▲' : '▼'}</span>
