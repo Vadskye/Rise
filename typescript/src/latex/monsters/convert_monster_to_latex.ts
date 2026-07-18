@@ -160,7 +160,7 @@ function genSpecialDefenseModifiersText(monster: Creature) {
 }
 
 export function getMovementComponents(monster: Creature): string[] {
-  const jumpText = monster.hasTrainedSkill('jump')
+  const jumpText = monster.hasTrainedSkill('jump') && !monster.hasTrait('legless')
     ? `Jump ${monster.horizontal_jump_distance}`
     : '';
   const movementDistances = [

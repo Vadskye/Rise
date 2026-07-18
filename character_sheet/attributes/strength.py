@@ -177,7 +177,7 @@ def calc_jump_distance():
                         checkbox(
                             {
                                 "class": "is-trained",
-                                "name": "jump_trained",
+                                "name": "athletics_trained",
                             }
                         ),
                     ),

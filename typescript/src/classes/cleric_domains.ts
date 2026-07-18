@@ -170,7 +170,7 @@ export function clericDomains(): string {
 
         \\subsubsection{Sky Domain}
         If you choose this domain, you add the \\sphere{aeromancy} \\glossterm{mystic sphere} to your list of divine mystic spheres (see \\pcref{Spell Lists}).
-        In addition, you add the Jump skill to your list of class skills.
+        In addition, you add the Athletics skill to your list of class skills.
 
         \\magicaldomainability{Gift} You gain a \\plus10 foot bonus to your maximum horizontal jump distance (see \\pcref{Jump}).
         \\magicaldomainability{Aspect} You gain an average \\glossterm{glide speed} (see \\pcref{Gliding}).

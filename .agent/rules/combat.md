@@ -18,7 +18,7 @@ This is a Gemini-generated summary of the Rise combat rules defined in `comprehe
 *   **Initiative Groups:** Allies with no enemies between them in initiative order form an initiative group, sharing a turn. Group members can act in any order. An action must be fully completed before another creature in the group can start theirs (though free/minor actions can be used during move actions). Effects lasting "until the end of your turn" last until the end of the group's turn.
 
 **Movement & Positioning:**
-*   Jumping distances are determined by Strength and the Jump skill.
+*   Jumping distances are determined by Strength and the Athletics skill.
 *   Movement is measured in 5-foot increments, with specific rules for diagonals.
 *   Impediments include Difficult Terrain, Obstacles, and Undergrowth (Light/Heavy).
 *   Squeezing rules apply for tight spaces or shared spaces.
