@@ -7,6 +7,7 @@ import { allCombatStyles } from '@src/abilities/combat_styles';
 import { MONSTER_WEAPONS } from '@src/monsters/weapons';
 import { showDetailedTiming } from './timing';
 import { getSettings, saveSettings } from './settings';
+import { alchemicalItems } from '@src/equipment/data/consumables/alchemical_items';
 
 const app = express();
 const port = 3001;
@@ -31,6 +32,7 @@ app.get('/api/reference', (req, res) => {
       'Grappling Strike',
       'Sneak Attack',
       'Latch On',
+      'Throw Item',
     ];
     const uniqueManeuvers = Array.from(
       new Set([
@@ -53,6 +55,11 @@ app.get('/api/reference', (req, res) => {
       .map((s) => s.name)
       .filter((name) => name !== 'Non-Sphere Spells')
       .sort();
+
+    const alchemicalItemNames = Array.from(
+      new Set(alchemicalItems().map((tool) => tool.item.name))
+    ).sort();
+
     const dWeaponsSpheres = performance.now() - s3;
 
     res.json({
@@ -60,6 +67,7 @@ app.get('/api/reference', (req, res) => {
       maneuvers: uniqueManeuvers,
       weapons: weaponNames,
       spheres: sphereNames,
+      alchemicalItems: alchemicalItemNames,
     });
 
     if (showDetailedTiming) {

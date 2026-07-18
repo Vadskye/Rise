@@ -19,7 +19,10 @@ export function maneuverMakesStrike(effectText: string): boolean {
 /**
  * Formats the warning message for a maneuver making a strike without an equipped weapon.
  */
-export function formatMissingWeaponWarning(name: string): string {
+export function formatMissingWeaponWarning(name: string, isThrowItem?: boolean): string {
+  if (isThrowItem) {
+    return `Maneuver "${name}" requires an alchemical item.`;
+  }
   return `Maneuver "${name}" makes a strike and doesn't have a weapon.`;
 }
 
@@ -27,8 +30,8 @@ export function formatMissingWeaponWarning(name: string): string {
  * Checks if a given warning string matches the missing weapon warning for a specific maneuver name.
  * Handles display name overrides by matching the generated pattern.
  */
-export function isMissingWeaponWarning(warning: string, name: string): boolean {
-  return warning === formatMissingWeaponWarning(name);
+export function isMissingWeaponWarning(warning: string, name: string, isThrowItem?: boolean): boolean {
+  return warning === formatMissingWeaponWarning(name, isThrowItem);
 }
 
 /**

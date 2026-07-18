@@ -21,6 +21,7 @@ interface MonsterFormProps {
     maneuvers: string[];
     weapons: string[];
     spheres: string[];
+    alchemicalItems: string[];
   };
   folders?: string[];
 }
@@ -34,7 +35,7 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
   onChangeGroup,
   errors,
   warnings,
-  referenceData = { spells: [], maneuvers: [], weapons: [], spheres: [] },
+  referenceData = { spells: [], maneuvers: [], weapons: [], spheres: [], alchemicalItems: [] },
   folders = [],
 }) => {
   // Design Decisions:

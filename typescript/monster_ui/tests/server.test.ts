@@ -357,6 +357,72 @@ describe('Monster UI Integration Tests (Full Server)', () => {
     expect(result3.warnings).not.toContain(formatMissingWeaponWarning('Make Strike'));
   });
 
+  test('POST /api/preview validates "Throw Item" missing item warning and compiles with item', async () => {
+    const monsterWithThrowItemWarn = {
+      name: `ThrowItemWarnMonster_${Date.now()}`,
+      requiredProperties: {
+        alignment: 'neutral',
+        base_class: 'warrior',
+        elite: false,
+        creature_origin: 'natural',
+        creature_types: ['beast'],
+        size: 'medium',
+        level: 1,
+      },
+      freeformCode: '',
+      standardAbilities: [
+        {
+          type: 'maneuver',
+          name: 'Throw Item',
+        },
+      ],
+    };
+
+    const res1 = await fetch(`${baseUrl}/api/preview`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ monster: monsterWithThrowItemWarn }),
+    });
+    expect(res1.status).toBe(200);
+    const result1 = await res1.json();
+    expect(result1.warnings).toContain(formatMissingWeaponWarning('Throw Item', true));
+
+    const monsterWithThrowItemOk = {
+      name: `ThrowItemOkMonster_${Date.now()}`,
+      requiredProperties: {
+        alignment: 'neutral',
+        base_class: 'warrior',
+        elite: false,
+        creature_origin: 'natural',
+        creature_types: ['beast'],
+        size: 'medium',
+        level: 1,
+      },
+      freeformCode: '',
+      standardAbilities: [
+        {
+          type: 'maneuver',
+          name: 'Throw Item',
+          options: {
+            weapon: 'Acid Flask',
+          },
+        },
+      ],
+    };
+
+    const res2 = await fetch(`${baseUrl}/api/preview`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ monster: monsterWithThrowItemOk }),
+    });
+    expect(res2.status).toBe(200);
+    const result2 = await res2.json();
+    expect(result2.warnings).not.toContain(formatMissingWeaponWarning('Throw Item', true));
+    expect(result2.computedStats.activeAbilities.some((a: any) => a.name === 'Acid Flask')).toBe(
+      true,
+    );
+  });
+
   test('POST /api/preview validates presence of freeform and shared freeform code warnings', async () => {
     const monsterWithFreeform = {
       name: `FreeformMonster_${Date.now()}`,

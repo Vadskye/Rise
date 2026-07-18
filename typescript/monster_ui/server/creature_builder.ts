@@ -399,12 +399,13 @@ function compileStandardManeuver(creature: Creature, ability: any, warnings: str
     'Grappling Strike',
     'Sneak Attack',
     'Latch On',
+    'Throw Item',
   ];
 
   if (STRIKE_MODIFICATIONS.includes(ability.name)) {
     if (!weapon) {
       const nameToUse = ability.options?.displayName || ability.name;
-      warnings.push(formatMissingWeaponWarning(nameToUse));
+      warnings.push(formatMissingWeaponWarning(nameToUse, ability.name === 'Throw Item'));
       return;
     }
     if (ability.name === 'Weapon Multiplier') {
@@ -415,6 +416,8 @@ function compileStandardManeuver(creature: Creature, ability: any, warnings: str
       creature.addSneakAttack(weapon, options);
     } else if (ability.name === 'Latch On') {
       creature.addLatchOn(weapon, options);
+    } else if (ability.name === 'Throw Item') {
+      creature.addThrowItem(weapon, options);
     }
     return;
   }

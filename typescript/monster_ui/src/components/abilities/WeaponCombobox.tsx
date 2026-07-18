@@ -5,12 +5,22 @@ interface WeaponComboboxProps {
   selectedWeapon?: string;
   weapons: string[];
   onSelect: (weapon: string | undefined) => void;
+  placeholder?: string;
+  clearLabel?: string;
+  triggerTitle?: string;
+  noSelectionLabel?: string;
+  noMatchesLabel?: string;
 }
 
 export const WeaponCombobox: React.FC<WeaponComboboxProps> = ({
   selectedWeapon,
   weapons,
   onSelect,
+  placeholder = 'Search weapons...',
+  clearLabel = '-- No Weapon --',
+  triggerTitle = 'Quickly assign a weapon to this maneuver',
+  noSelectionLabel = 'No Weapon',
+  noMatchesLabel = 'No matching weapons',
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [search, setSearch] = useState('');
@@ -83,7 +93,7 @@ export const WeaponCombobox: React.FC<WeaponComboboxProps> = ({
             <input
               type="text"
               className="weapon-combobox-search"
-              placeholder="Search weapons..."
+              placeholder={placeholder}
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               onKeyDown={handleKeyDown}
@@ -96,7 +106,7 @@ export const WeaponCombobox: React.FC<WeaponComboboxProps> = ({
                   className={`weapon-btn clear-btn ${!selectedWeapon ? 'selected' : ''}`}
                   onClick={() => handleSelect(undefined)}
                 >
-                  -- No Weapon --
+                  {clearLabel}
                 </button>
                 {filteredWeapons.map((w) => (
                   <button
@@ -118,7 +128,7 @@ export const WeaponCombobox: React.FC<WeaponComboboxProps> = ({
                       color: 'var(--text-muted)',
                     }}
                   >
-                    No matching weapons
+                    {noMatchesLabel}
                   </div>
                 )}
               </div>
@@ -135,9 +145,9 @@ export const WeaponCombobox: React.FC<WeaponComboboxProps> = ({
         ref={triggerRef}
         className={`weapon-combobox-trigger ${isOpen ? 'active' : ''}`}
         onClick={() => setIsOpen(!isOpen)}
-        title="Quickly assign a weapon to this maneuver"
+        title={triggerTitle}
       >
-        <span className="weapon-combobox-trigger-text">{selectedWeapon || 'No Weapon'}</span>
+        <span className="weapon-combobox-trigger-text">{selectedWeapon || noSelectionLabel}</span>
         <span className="chevron">{isOpen ? '▲' : '▼'}</span>
       </button>
 
