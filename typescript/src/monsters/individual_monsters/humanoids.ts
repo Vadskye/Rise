@@ -8,81 +8,10 @@ const originAndType = {
 
 export function addHumanoids(grimoire: Grimoire) {
   addKobolds(grimoire);
-  addLizardfolk(grimoire);
   addNecromancers(grimoire);
   addOgres(grimoire);
   addOrcs(grimoire);
   addTownsfolk(grimoire);
-}
-
-function addLizardfolk(grimoire: Grimoire) {
-  grimoire.addMonsterGroup(
-    {
-      name: 'Lizardfolk',
-      hasArt: true,
-      knowledge: {
-        normal: `
-          Lizardfolk are Medium bipedal creatures covered in reptilian scales.
-          They are slightly taller and bulkier than humans, typically standing 6 to 7 feet tall and weighing up to 250 pounds.
-          Their tail resembles that of a crocodile, and is typically 3 to 4 feet long.
-          Their scales are typically green, gray, or brown.
-          In battle, they typically fight as unorganized individuals.
-        `,
-        hard: `
-          Lizardfolk use their tail for balance on land and to accelerate their swimming while in water.
-          They prefer direct charges and massed rushes in battle, sometimes trying to force foes into the water, where the lizardfolk have an advantage.
-          If lizardfolk are outnumbered or if their territory is being invaded, they set snares, plan ambushes, and make raids to hinder enemy supplies.
-          Advanced tribes use more sophisticated tactics and have better traps and ambushes.
-        `,
-      },
-      sharedInitializer: (creature: Creature) => {
-        creature.addTrait('amphibious');
-        creature.addCustomMovementSpeed('Land (average)');
-        creature.addCustomMovementSpeed('Swim (average)');
-        creature.setEquippedArmorName({
-          bodyArmor: 'scale',
-          shield: 'standard shield',
-        });
-      },
-    },
-    [
-      [
-        'Lizardfolk Grunt',
-        (creature: Creature) => {
-          creature.setRequiredProperties({
-            ...originAndType,
-            alignment: 'neutral',
-            base_class: 'warrior',
-            elite: false,
-            level: 3,
-            size: 'medium',
-          });
-          creature.setTrainedSkills(['athletics']);
-          creature.setBaseAttributes([2, 2, 4, -1, 1, 0]);
-          creature.addWeaponMult('spear');
-          creature.addManeuver('Bloodletter', { weapon: 'bite' });
-        },
-      ],
-      [
-        'Lizardfolk Champion',
-        (creature: Creature) => {
-          creature.setRequiredProperties({
-            ...originAndType,
-            alignment: 'neutral',
-            base_class: 'warrior',
-            elite: false,
-            level: 5,
-            size: 'medium',
-          });
-          creature.setTrainedSkills(['athletics']);
-          creature.setBaseAttributes([3, 3, 5, 0, 1, 1]);
-          creature.addWeaponMult('spear');
-          creature.addManeuver('Bloodletter', { weapon: 'bite' });
-          creature.addManeuver('Redeeming Followup', { weapon: 'spear' });
-        },
-      ],
-    ],
-  );
 }
 
 function addKobolds(grimoire: Grimoire) {

@@ -1155,6 +1155,119 @@
       },
       "passiveAbilities": [],
       "description": "Giants can throw objects no larger than two size categories smaller than themselves with ease. Their descriptions list their statistics when throwing boulders. A giant's \\glossterm{range limits} with an improvised object other than a boulder are generally half its range limit with a boulder. The object may also deal less damage than a boulder depending on its construction."
+    },
+    {
+      "name": "Lizardfolk",
+      "folder": "Uncivilized Humanoids",
+      "hasArt": false,
+      "sharedFreeformCode": "",
+      "monsters": [
+        {
+          "name": "Lizardfolk Grunt",
+          "requiredProperties": {
+            "alignment": "neutral",
+            "base_class": "warrior",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 3
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            2,
+            2,
+            4,
+            -1,
+            1,
+            0
+          ],
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Bloodletter",
+              "options": {
+                "isMagical": false,
+                "weapon": "bite"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "spear"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Lizardfolk Champion",
+          "requiredProperties": {
+            "alignment": "neutral",
+            "base_class": "warrior",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 5
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            3,
+            3,
+            5,
+            0,
+            1,
+            1
+          ],
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "spear"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Bloodletter",
+              "options": {
+                "isMagical": false,
+                "weapon": "bite"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Redeeming Followup",
+              "options": {
+                "isMagical": false,
+                "weapon": "bite"
+              }
+            }
+          ]
+        }
+      ],
+      "knowledge": {
+        "normal": "          Lizardfolk are Medium bipedal creatures covered in reptilian scales.\n          They are slightly taller and bulkier than humans, typically standing 6 to 7 feet tall and weighing up to 250 pounds.\n          Their tail resembles that of a crocodile, and is typically 3 to 4 feet long.\n          Their scales are typically green, gray, or brown.\n          In battle, they typically fight as unorganized individuals.",
+        "hard": "          Lizardfolk use their tail for balance on land and to accelerate their swimming while in water.\n          They prefer direct charges and massed rushes in battle, sometimes trying to force foes into the water, where the lizardfolk have an advantage.\n          If lizardfolk are outnumbered or if their territory is being invaded, they set snares, plan ambushes, and make raids to hinder enemy supplies.\n          Advanced tribes use more sophisticated tactics and have better traps and ambushes."
+      },
+      "traits": [
+        "amphibious"
+      ],
+      "customMovementSpeeds": [
+        {
+          "mode": "Swim",
+          "category": "average"
+        }
+      ],
+      "equippedArmor": "scale",
+      "equippedShield": "standard shield"
     }
   ],
   "folders": []
