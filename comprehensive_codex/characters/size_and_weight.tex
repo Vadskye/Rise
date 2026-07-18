@@ -1,0 +1,155 @@
+\section{Size and Weight}\label{Size and Weight}
+
+  \subsection{Size Categories}\label{Size Categories}
+    Your size affects your \glossterm{space} in combat, your \glossterm{base speed}, your attributes, and how noticeable you are (see \pcref{Stealth}).
+    These effects are shown on \trefnp{Size Categories}.
+    Size categories are also relevant for determining weight (see \pcref{Weight Limits}).
+
+    \begin{dtable*}
+      \lcaption{Size Categories}
+      \begin{dtabularx}{\textwidth}{l l l l l l l l X}
+        \tb{Size}  & \tb{Space}\fn{1} & \tb{Base Speed} & \tb{Weight Limits}\fn{2} & \tb{Brawn} & \tb{Reflex} & \tb{Stealth} & \tb{Weapons}             & \tb{Example Creature} \tableheaderrule
+        Fine       & 1/4 ft.          & 10 ft.          & \minus4 Str              & \minus4    & \plus4      & \plus16      & \tdash                   & Fly                   \\
+        Diminutive & 1/2 ft.          & 10 ft.          & \minus3 Str              & \minus3    & \plus3      & \plus12      & \tdash                   & Mouse                 \\
+        Tiny       & 1 ft.            & 20 ft.          & \minus2 Str              & \minus2    & \plus2      & \plus8      & \tdash                   & Rat                   \\
+        Small      & 2-1/2 ft.        & 20 ft.          & \minus1 Str              & \minus1    & \plus1      & \plus4       & \tdash                   & Cat                   \\
+        Medium     & 5 ft.            & 30 ft.          & \tdash                   & \tdash     & \tdash      & \tdash       & \tdash                   & Human                 \\
+        Large      & 10 ft.           & 40 ft.          & \plus1 Str               & \plus1     & \minus1     & \minus4      & \tdash                   & Ogre                  \\
+        Huge       & 20 ft.           & 50 ft.          & \plus2 Str               & \plus2     & \minus2     & \minus8     & \weapontag{Sweeping} (1) & Hill giant            \\
+        Gargantuan & 40 ft.           & 60 ft.          & \plus3 Str               & \plus3     & \minus3     & \minus12     & \weapontag{Sweeping} (2) & Roc                   \\
+        Colossal   & 80\add ft.       & 80 ft.          & \plus4 Str               & \plus4     & \minus4     & \minus16     & \weapontag{Sweeping} (4) & Great wyrm red dragon \\
+      \end{dtabularx}
+      1 Creatures can vary in space. These are simply typical values. \\
+      2 This modifies Strength only for the purpose of determining a creature's \glossterm{weight limits} (see \pcref{Weight Limits}). \\
+    \end{dtable*}
+
+    \subsubsection{Space}\label{Space}
+      A creature's \glossterm{space} is the area it occupies in combat.
+      Humanoids typically occupy a 5-ft. by 5-ft. \glossterm{square}.
+      A creature's space is generally larger than its physical body, especially for large creatures.
+
+    \subsubsection{Base Speed}\label{Base Speed}
+      Each size category has a \glossterm{base speed} that indicates how far creatures of that size category can generally move.
+      For details about movement in combat, see \pcref{Movement and Positioning}.
+
+    \subsubsection{Other Effects}
+      A creature's size affects some additional skills and abilities.
+      For example, larger creatures are immune to \atSizeBased abilities used by creatures two or more size categories smaller than them.
+      Some special cases are mentioned below.
+
+    \subsubsection{Very Small Creatures}
+      \parhead{Space} If a creature takes up less than a single square of space, you can fit multiple creatures in that square.
+      Ignoring flight, you can fit four Small creatures in a square, twenty-five Tiny creatures, 100 Diminutive creatures, or 400 Fine creatures.
+      If the creatures can fly, the number of creatures that can fit into a space increases drastically.
+
+      \parhead{Movement} Creatures two size categories smaller than you are not considered obstacles and do not hinder your movement.
+
+    \subsubsection{Very Large Creatures}\label{Very Large Creatures}
+      \parhead{Space} Very large creatures take up multiple squares. Anything which affects a single square the creature occupies affects the creature.
+
+      \parhead{Movement} Creatures two size categories larger than you are not considered obstacles and do not hinder your movement.
+
+      \parhead{Sweeping Weapons} Weapons used by creatures that are Huge or larger are automatically \weapontag{Sweeping}, as shown in \trefnp{Size Categories}.
+      If the creature's weapons would already be Sweeping, add that value to the normal Sweeping value for that weapon.
+      For example, a greatsword used by a Gargantuan creature would have Sweeping (3).
+
+    \subsubsection{Oddly Shaped Things}\label{Oddly Shaped Things}
+      Some objects are large in some dimensions and much smaller in others, such as a ladder or pillar.
+      The functional size category of such objects can depend on how they are being used.
+      For example, a ladder can't fit in a backpack, but it can easily be maneuvered through a Small window.
+      Generally, do whatever seems reasonable, using size categories only as a rough guide.
+
+  \subsection{Weight Limits}\label{Weight Limits}
+
+    \begin{dtable}
+      \lcaption{Weight Limits by Strength}
+      \setlength{\tabcolsep}{4pt}
+      \begin{dtabularx}{\columnwidth}{X X X}
+        \tb{Strength} & \tb{Carrying Capacity} & \tb{Push/Drag} \tableheaderrule
+        -9            & Fine x4                & Diminutive x4 \\
+        -8            & Fine x8                & Diminutive x8 \\
+        -7            & Diminutive x2          & Tiny x2       \\
+        -6            & Diminutive x4          & Tiny x4       \\
+        -5            & Diminutive x8          & Tiny x8       \\
+        -4            & Tiny x2                & Small x2      \\
+        -3            & Tiny x4                & Small x4      \\
+        -2            & Tiny x8                & Small x8      \\
+        -1            & Small x2               & Medium x2     \\
+        0             & Small x4               & Medium x4     \\
+        1             & Small x8               & Medium x8     \\
+        2             & Medium x2              & Large x2      \\
+        3             & Medium x4              & Large x4      \\
+        4             & Medium x8              & Large x8      \\
+        5             & Large x2               & Huge x2       \\
+        6             & Large x4               & Huge x4       \\
+        7             & Large x8               & Huge x8       \\
+        8             & Huge x2                & Gargantuan x2 \\
+        9             & Huge x4                & Gargantuan x4 \\
+        10            & Huge x8                & Gargantuan x8 \\
+        11            & Gargantuan x2          & Colossal x2   \\
+        12            & Gargantuan x4          & Colossal x4   \\
+        13            & Gargantuan x8          & Colossal x8   \\
+        14            & Colossal x2            & Colossal x16  \\
+        15\plus\fn{1} & \tdash                 & \tdash        \\
+      \end{dtabularx}
+      1 To calculate the weight limits for a creature with epic Strength, double the number of objects it can carry and drag for every point of Strength beyond 14.
+    \end{dtable}
+
+    Your Strength determines how much you can carry or push, as shown in \trefnp{Weight Limits by Strength}.
+    Your weight limits are measured in terms of how many objects or creatures of a given \glossterm{weight category} that you can carry or push at once (see \pcref{Weight Categories}).
+    The limit of how much you can hold in your hands or on your body without suffering any penalties is called your \glossterm{carrying capacity}.
+    If you need to move more weight than that, you can push or drag objects or creatures up your pushing and dragging limit as a standard action (see \pcref{Shove}).
+
+    In general, it is not meaningful to consider the weight of any objects with a weight category lighter than your maximum weight category.
+    If it matters, you can treat eight objects of one weight category as having an equivalent weight to a single object that is one weight category heavier.
+
+    \parhead{Large Creatures} Unusually large or small creatures gain a bonus to their Strength for the purpose of determining their weight limits.
+    For details, see \tref{Size Categories}.
+
+    \parhead{Multi-Legged Creatures} The figures on \trefnp{Weight Limits by Strength} are for bipedal creatures.
+    A creature with four or more legs can carry, push, or drag twice as many objects as a bipedal creature of the same Strength.
+
+    \subsubsection{Weight Categories}\label{Weight Categories}
+      Weight is generally measured in \glossterm{weight categories} rather than pounds or kilograms.
+      Weight categories use the same terms as \glossterm{size categories}, as shown in \tref{Weight Categories}.
+      In general, a creature's weight category is the same as its size category.
+
+      Objects and creatures can also be either \glossterm{lightweight} or \glossterm{heavyweight}.
+      Lightweight objects and creatures have a weight category that is one category lighter than their size category.
+      Heavyweight objects and creatures have a weight category that is one category heavier than their size category.
+
+      Objects that occupy only a small percentage of the space appropriate for their size category, such as swords, are usually lightweight.
+      Objects that fully occupy the space appropriate for their size category, like boulders, are usually heavyweight.
+
+      \begin{dtable}
+        \lcaption{Weight Categories}
+        \begin{dtabularx}{\textwidth}{l l X}
+          \tb{Weight Category} & \tb{Falling Damage Die} & \tb{Average Weight} \tableheaderrule
+          Fine                 & \tdash\fn{1}            & 1/2 oz.       \\
+          Diminutive           & \tdash                  & 1/4 lb.     \\
+          Tiny                 & 1d2                     & 2 lb.       \\
+          Small                & 1d6                     & 15 lb.      \\
+          Medium               & 1d8                     & 120 lb.     \\
+          Large                & 1d10                    & 1,000 lb.   \\
+          Huge                 & 2d6                     & 8,000 lb.   \\
+          Gargantuan           & 2d8                     & 64,000 lb.  \\
+          Colossal             & 2d10                    & 512,000 lb. \\
+        \end{dtabularx}
+        1. Creatures and objects with a Fine or Diminutive weight category have no falling damage dice and cannot cause falling damage.
+      \end{dtable}
+
+      % TODO: clarify that being immune to falling damage doesn't make you immune to damage from being fallen on.
+  \subsection{Falling Damage}\label{Falling Damage}
+    A falling creature or object descends by 300 feet at the end of its turn.
+    An object falls at the end of the turn that caused it to begin falling.
+    If it hits an obstacle while falling, the falling creature or object takes falling damage.
+    The obstacle it lands on takes half that damage, to a maximum amount of damage equal to the falling creature or object's hit points.
+
+    This falling damage is based on the weight category of the falling object or creature.
+    Each weight category has an associated falling damage die listed in \tref{Weight Categories}.
+    For every 10 feet of the fall, the falling damage die is rolled once, to a maximum fall distance of 300 feet.
+    If the total fall distance was less than 10 feet, no falling damage is dealt.
+    For example, a Medium creature falling 50 feet would take 5d8 falling damage.
+
+    If you fall intentionally, you treat your fall as being 10 feet shorter.
+    If you fall after intentionally jumping, you measure falling damage from 10 feet lower than your height at the start of your jump, ignoring the maximum height you reached during the jump.

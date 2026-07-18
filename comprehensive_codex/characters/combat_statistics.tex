@@ -1,0 +1,79 @@
+\section{Combat Statistics}\label{Combat Statistics}
+
+  \subsection{Accuracy}\label{Accuracy}
+    Your accuracy with an \glossterm{attack} is the number that you add to the \glossterm{attack roll} (see \pcref{Attack Rolls}).
+    Your accuracy with most abilities is normally equal to half the sum of your level and Perception.
+    Many abilities can also modify your accuracy.
+
+    \subsubsection{Brawling Accuracy}\label{Brawling Accuracy}
+      Some abilities cause you to make a \glossterm{brawling attack}, which uses your \glossterm{brawling accuracy} in place of your regular accuracy.
+      Your brawling accuracy is normally equal to half the sum of your level and Strength.
+      Any ability that modifies your overall \glossterm{accuracy} also modifies your brawling accuracy.
+      However, some abilities only affect your brawling accuracy.
+
+      Abilities that make brawling attacks generally have the \atBrawling tag.
+      Commonly used Brawling abilities are listed in \pcref{Universal Combat Abilities}.
+
+  \subsection{Defenses}\label{Defenses}
+    When you are attacked, your defenses determine the value that the attacker needs to get on the attack roll in order to hit you (see \pcref{Attack Rolls}).
+    The five defenses are described below.
+    \begin{raggeditemize}
+      \item Armor defense: Your Armor defense protects you from \glossterm{strikes}.
+        It is the most commonly used defense.
+      \item Brawn defense: Your Brawn protects you from attacks that restrain, relocate, or otherwise physically control you, such as grappling and shoving.
+      \item Reflex defense: Your Reflex protects you from attacks that you can dodge or evade, such as many area attacks.
+      \item Fortitude defense: Your Fortitude defense protects you from attacks against your body or life, such as poisons and life-draining magic.
+      \item Mental defense: Your Mental defense protects you from attacks against your mind, such as terrifying creatures and magical mind manipulation.
+    \end{raggeditemize}
+
+    Your defenses are calculated in the following way:
+    \begin{raggeditemize}
+      \itemhead{Armor} Half level \add Dexterity (modified depending on equipped armor) \add base class defense bonus (if any) \add defense bonuses from equipped body armor and shield
+      \itemhead{Brawn} Half level \add Strength \add base class defense bonus
+      \itemhead{Fortitude} Half level \add Constitution \add base class defense bonus
+      \itemhead{Reflex} Half level \add Dexterity \add base class defense bonus \add defense bonuses from equipped shield
+      \itemhead{Mental} Half level \add Willpower \add base class defense bonus
+    \end{raggeditemize}
+    Each defense may also have various bonuses or penalties applied by special abilities.
+    Your defenses can never go below 0, no matter how many penalties you have.
+
+  \subsection{Durability}\label{Durability}
+    Your \glossterm{durability} is used to calculate your \glossterm{hit points}, as described below in Hit Points.
+    It is equal to your Constitution \add your body armor durability bonus (see \pcref{Armor}).
+    As your level increases, you gain a bonus to your durability (see \tref{Character Advancement and Gaining Levels}).
+
+  \subsection{Hit Points}\label{Hit Points}
+    Your \glossterm{hit points} measure how much damage you can take before you die.
+    They are often abbreviated as HP.
+    Your hit points are equal to your \glossterm{durability} times your \glossterm{character rank}, plus 10 hit points.
+
+    When you take damage, it reduces your hit points (see \pcref{Taking Damage}).
+    When your hit points drop below 0, you gain \glossterm{vital wounds}, which can eventually kill you (see \pcref{Vital Wounds}).
+
+    Your maximum hit points can never be less than 1.
+    If your maximum hit points would be reduced to 0 or less, you immediately die.
+
+    \subsubsection{What Hit Points Represent}
+    Hit points represent a combination of resilience, luck, divine providence, and sheer determination, depending on the nature of the creature being damaged.
+    When you lose hit points from an orc with a greataxe, the axe did not literally carve into your skin without affecting your ability to fight.
+    Instead, you avoided the worst of the blow, but it bruised you through your armor, the effort to dodge the blow drained your stamina, or it barely nicked you through sheer luck -- and everyone's luck runs out eventually.
+
+    \subsubsection{Changing Maximum Hit Points}
+      If your maximum hit points change, your current hit points also change by the same amount.
+      This can reduce your current hit points below 0, which causes you to gain a \glossterm{vital wound}.
+
+  \subsection{Injury Point}\label{Injury Point}
+    While your \glossterm{hit points} are at or below your \glossterm{injury point}, or IP, you are \glossterm{injured}.
+    Being injured does not directly penalize you, but some attacks are much more effective if you are injured.
+
+    Your injury point is equal to your \glossterm{character rank} times your level, halved, plus 10. 
+    Some special abilities can also modify your injury point.
+
+  \subsection{Power}\label{Power}
+    Your \glossterm{power} affects how much damage you deal, such as with \glossterm{strikes} (see \pcref{Strike Damage}).
+    Some abilities also use it for other effects, such as healing.
+    You have two types of power: your \glossterm{magical power}, which affects your \magical abilities, and your \glossterm{mundane power}, which affects your \glossterm{mundane} abilities (see \pcref{Magical and Mundane Abilities}).
+    If you gain a bonus to your \glossterm{power}, and it does not specify which type of power it affects, it affects both your \glossterm{magical power} and your \glossterm{mundane power}.
+
+    Your mundane power is equal to your Strength \add half your level (minimum 0).
+    Similarly, your magical power is equal to your Willpower \add half your level (minimum 0).

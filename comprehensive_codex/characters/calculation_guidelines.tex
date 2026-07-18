@@ -1,0 +1,52 @@
+\section{Calculation Guidelines}
+  This explains some general guidelines to follow when calculating character statistics.
+
+  \subsection{Stacking Rules}\label{Stacking Rules}
+    Usually, modifiers stack with each other, meaning that you add or subtract all of the modifiers to get the final result.
+    However, some modifiers do not stack with each other, as described below.
+    When bonuses don't stack with each other, you only apply the largest bonus.
+    Likewise, when penalties don't stack with each other, you only apply the largest penalty.
+
+    \begin{raggeditemize}
+      \item Effects from abilities with the same name do not stack.
+      \item Enhancement bonuses do not stack with each other.
+      \item If a creature gains the same condition multiple times, the effects do not stack, but each instance is tracked separately.
+        The creature must remove all instances of the condition before the effects are removed.
+      \item Multiple \magical effects that change a creature's \glossterm{size category} do not stack.
+        If multiple magical effects both increase and decrease size, size increases offset size decreases on a one-for-one basis to determine the creature's final size.
+      \item If you have two separate abilities which grant you a special sense with a particular range, such as \sense{darkvision} or \sense{blindsight}, you sum the range from both abilities to find your total range with that sense.
+    \end{raggeditemize}
+
+  \subsection{Minimum and Maximum Modifiers}\label{Minimum and Maximum Modifiers}
+    Some bonuses specify that they cannot increase the value beyond a given point.
+    These bonuses must always be applied last, and cannot be combined with other bonuses to exceed the maximum value.
+    If multiple bonuses specify different maximum values, use the lower maximum value.
+    If a bonus with a maximum value is applied to a value that already exceeds the maximum value the bonus can provide, simply ignore the bonus and its maximum value.
+
+    Similarly, some abilities have a minimum total modifier.
+    The minimum is applied after all other modifiers.
+
+  \subsection{Doubling and Halving}\label{Doubling and Halving}
+    Normally, doubling twice results in four times the original value, and halving twice results in one quarter of the original value.
+    However, if a single effect doubles something twice, it only adds an additional increment of the original value, making it three times as large.
+
+    To clarify, here are some examples, assuming you're making using a weapon that normally deals 10 damage:
+    \begin{raggeditemize}
+      \item Normal hit: 10 damage.
+      \item Critical hit: 20 damage.
+      \item Double damage maneuver: 20 damage.
+      \item Double critical hit: 30 damage (since it's two doublings from the same effect)
+      \item Critical hit with a double damage maneuver: 40 damage.
+    \end{raggeditemize}
+
+  \subsection{Changing Statistics}
+
+    Your modifiers and defenses can change for many reasons.
+    In general, all changes take effect immediately.
+
+    It is not normally possible for a character to lose access to resources that require them to make choices, such as insight points or trained skills.
+    If a character does somehow lose the prerequisites for choices they have made, such as if their Intelligence is permanently reduced, they immediately lose relevant abilities until they are within their new limits.
+
+  \subsection{Rounding}
+    In general, if you encounter a fractional number, you round it down.
+    For negative numbers, this means rounding it away from 0, not towards 0.
