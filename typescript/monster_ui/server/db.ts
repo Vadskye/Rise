@@ -63,9 +63,45 @@ export function saveDb(db: DatabaseData) {
   }
 }
 
+/**
+ * Returns a JSON fingerprint of a monster group's shared config (everything
+ * except the individual monsters array), used to detect whether the group-level
+ * settings changed between saves.
+ */
+function groupSharedFingerprint(group: import('./codegen').MonsterGroupData): string {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { monsters: _monsters, ...shared } = group;
+  return JSON.stringify(shared);
+}
+
 export function saveAndValidateAll(db: DatabaseData) {
   const start = performance.now();
   console.log('[DB] Beginning save and validation process...');
+
+  // Read the old DB from disk before overwriting so we can diff it.
+  let oldDb: DatabaseData = { monsters: [], monsterGroups: [] };
+  try {
+    oldDb = getDb();
+  } catch {
+    // If the file doesn't exist yet, treat everything as new.
+  }
+
+  // Build fingerprint maps for the old DB.
+  const oldMonsterFingerprints = new Map<string, string>();
+  for (const m of oldDb.monsters || []) {
+    oldMonsterFingerprints.set(m.name, JSON.stringify(m));
+  }
+
+  const oldGroupSharedFingerprints = new Map<string, string>();
+  const oldGroupMonsterFingerprints = new Map<string, Map<string, string>>();
+  for (const g of oldDb.monsterGroups || []) {
+    oldGroupSharedFingerprints.set(g.name, groupSharedFingerprint(g));
+    const monsterMap = new Map<string, string>();
+    for (const m of g.monsters || []) {
+      monsterMap.set(m.name, JSON.stringify(m));
+    }
+    oldGroupMonsterFingerprints.set(g.name, monsterMap);
+  }
 
   const saveStart = performance.now();
   saveDb(db);
@@ -75,9 +111,14 @@ export function saveAndValidateAll(db: DatabaseData) {
 
   const monsters = db.monsters || [];
   const validateMonstersStart = performance.now();
+  let skippedMonsters = 0;
   if (monsters.length > 0) {
-    console.log(`[DB] Validating ${monsters.length} individual monsters...`);
     for (const monster of monsters) {
+      const newFingerprint = JSON.stringify(monster);
+      if (oldMonsterFingerprints.get(monster.name) === newFingerprint) {
+        skippedMonsters++;
+        continue;
+      }
       const monsterStart = performance.now();
       validations[monster.name] = validateMonster(monster);
       if (showDetailedTiming) {
@@ -86,26 +127,49 @@ export function saveAndValidateAll(db: DatabaseData) {
         );
       }
     }
+    const validated = monsters.length - skippedMonsters;
+    console.log(
+      `[DB] Validated ${validated} changed individual monster(s) (skipped ${skippedMonsters} unchanged).`,
+    );
   }
   const validateMonstersDuration = performance.now() - validateMonstersStart;
 
   const groups = db.monsterGroups || [];
   const validateGroupsStart = performance.now();
+  let skippedGroupMonsters = 0;
+  let validatedGroupMonsters = 0;
   if (groups.length > 0) {
-    console.log(`[DB] Validating ${groups.length} monster groups...`);
     for (const group of groups) {
       const groupStart = performance.now();
       const groupMonsters = group.monsters || [];
-      console.log(`[DB] Validating group "${group.name}" with ${groupMonsters.length} monsters...`);
+
+      // If the group's shared config changed, every monster in it must be re-validated.
+      const sharedChanged =
+        oldGroupSharedFingerprints.get(group.name) !== groupSharedFingerprint(group);
+      const oldMonsterMap = oldGroupMonsterFingerprints.get(group.name) ?? new Map<string, string>();
+
+      let groupValidated = 0;
+      let groupSkipped = 0;
       for (const monster of groupMonsters) {
+        const newFingerprint = JSON.stringify(monster);
+        if (!sharedChanged && oldMonsterMap.get(monster.name) === newFingerprint) {
+          groupSkipped++;
+          skippedGroupMonsters++;
+          continue;
+        }
         const monsterStart = performance.now();
         validations[`${group.name}.${monster.name}`] = validateMonster(monster, group, group.name);
+        groupValidated++;
+        validatedGroupMonsters++;
         if (showDetailedTiming) {
           console.log(
             `[Timing] Validated group monster "${group.name}.${monster.name}" in ${(performance.now() - monsterStart).toFixed(2)}ms (cacheHit: ${validations[`${group.name}.${monster.name}`].cacheHit})`,
           );
         }
       }
+      console.log(
+        `[DB] Group "${group.name}": validated ${groupValidated}, skipped ${groupSkipped}${sharedChanged ? ' (shared config changed)' : ''}.`,
+      );
       if (showDetailedTiming) {
         console.log(
           `[Timing] Validated entire group "${group.name}" in ${(performance.now() - groupStart).toFixed(2)}ms`,
@@ -132,7 +196,9 @@ export function saveAndValidateAll(db: DatabaseData) {
 
   const totalDuration = performance.now() - start;
   console.log(
-    `[DB] All validations complete. Total save & validate process took ${totalDuration.toFixed(2)}ms`,
+    `[DB] Validation complete. Individual: ${monsters.length - skippedMonsters}/${monsters.length} validated. ` +
+      `Group monsters: ${validatedGroupMonsters}/${validatedGroupMonsters + skippedGroupMonsters} validated. ` +
+      `Total: ${totalDuration.toFixed(2)}ms`,
   );
 
   if (showDetailedTiming) {
