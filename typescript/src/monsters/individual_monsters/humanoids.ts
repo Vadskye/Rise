@@ -7,127 +7,12 @@ const originAndType = {
 } as const;
 
 export function addHumanoids(grimoire: Grimoire) {
-  addGiants(grimoire);
   addKobolds(grimoire);
   addLizardfolk(grimoire);
   addNecromancers(grimoire);
   addOgres(grimoire);
   addOrcs(grimoire);
   addTownsfolk(grimoire);
-}
-
-function addGiants(grimoire: Grimoire) {
-  grimoire.addMonsterGroup(
-    {
-      name: 'Giants',
-      hasArt: false,
-      knowledge: {
-        easy: `
-          Giants are massive humanoid creatures that tower over lesser creatures.
-          All giants have immense strength and unimpressive agility - except when it comes to throwing and catching rocks, which they tend to excel at.
-        `,
-        normal: `
-          A giant can throw objects no larger than two size categories smaller than itself with ease.
-          Giants prefer to throw boulders, but in a pinch they can throw almost anything.
-        `,
-        hard: `
-          A giant's \\glossterm{range limits} with an object other than a boulder are generally half its range limit with a boulder.
-          The object may also deal less damage than a boulder depending on its construction.
-        `,
-      },
-    },
-    [
-      [
-        'Hill Giant',
-        (creature: Creature) => {
-          creature.setRequiredProperties({
-            ...originAndType,
-            alignment: 'chaotic evil',
-            base_class: 'brute',
-            elite: false,
-            level: 10,
-            size: 'huge',
-          });
-          creature.setProperties({ has_art: true });
-          creature.setBaseAttributes([8, 0, 3, -2, 2, -1]);
-          creature.setKnowledgeResults({
-            normal: `
-              A hill giant is a Huge giant that is usually found in hilly areas.
-              Hill giants prefer to fight from high, rocky outcroppings, where they can pelt opponents with rocks and boulders while limiting the risk to themselves.
-              Skin color among hill giants ranges from light tan to deep ruddy brown.
-              They wear layers of crudely prepared hides with the fur left on.
-            `,
-            hard: `
-              Hill giants lack the intelligence or desire to retreat if their enemies survive to approach them, and prefer to draw their massive clubs and enter melee.
-              If possible, they smash their foes off of cliffs.
-
-              The hair of hill giants is brown or black, with eyes the same color.
-              They seldom wash or repair their garments, preferring to simply add more hides as their old ones wear out.
-              Adult hill giants are about 25 feet tall.
-              They can live to be 70 years old.
-            `,
-          });
-          creature.addWeaponMult('giant boulder', { displayName: 'Boulder Toss' });
-          creature.addManeuver('Forceful Smash', { weapon: 'greatclub' });
-          creature.addWeaponMult('greatclub');
-        },
-      ],
-      [
-        'Stone Giant',
-        (creature: Creature) => {
-          creature.setRequiredProperties({
-            ...originAndType,
-            alignment: 'neutral',
-            base_class: 'warrior',
-            elite: true,
-            level: 11,
-            size: 'gargantuan',
-          });
-          creature.setProperties({ has_art: true });
-          creature.setBaseAttributes([7, -2, 7, 0, 2, 4]);
-          creature.setKnowledgeResults({
-            normal: `
-              A stone giant is a Gargantuan giant that is usually found in mountainous regions.
-              Stone giants fight from a great distance whenever possible, using their ability to hurl stones vast distances and bend the earth to their will.
-              They prefer thick leather garments, dyed in shades of brown and gray to match the stone around them.
-            `,
-            hard: `
-              Adult stone giants stand about 50 feet tall.
-              They can live to be 300 years old.
-              Young stone giants can be capricious, hunting tiny creatures like goats and mortal on a whim.
-              Elder stone giants tend to be wiser and more cautious, and avoid unnecessary conflict.
-            `,
-          });
-          creature.addWeaponMult('giant boulder', { displayName: 'Boulder Toss' });
-          creature.addManeuver('Forceful Smash', { weapon: 'greatclub' });
-          creature.addWeaponMult('greatclub');
-          creature.addSpell('Mighty Rockshard Blast', { usageTime: 'elite' });
-          creature.addSpell('Crushing Gravity', { usageTime: 'elite' });
-          creature.addSpell('Tremor', { usageTime: 'elite' });
-        },
-      ],
-      [
-        'Stone Giant Elder',
-        (creature: Creature) => {
-          creature.setRequiredProperties({
-            ...originAndType,
-            alignment: 'neutral',
-            base_class: 'warrior',
-            elite: true,
-            level: 15,
-            size: 'gargantuan',
-          });
-          creature.setBaseAttributes([8, -2, 8, 0, 4, 6]);
-          creature.addWeaponMult('giant boulder', { displayName: 'Boulder Toss' });
-          creature.addManeuver('Forceful Smash+', { weapon: 'greatclub' });
-          creature.addWeaponMult('greatclub');
-          creature.addSpell('Mighty Rockshard Blast', { usageTime: 'elite' });
-          creature.addSpell('Crushing Gravity', { usageTime: 'elite' });
-          creature.addSpell('Mighty Tremor', { usageTime: 'elite' });
-        },
-      ],
-    ],
-  );
 }
 
 function addLizardfolk(grimoire: Grimoire) {
