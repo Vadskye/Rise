@@ -190,4 +190,87 @@ describe('Combobox Tab Navigation Tests', () => {
     const focusedSelectId = await getFocusedSelectId();
     expect(focusedSelectId).toBe('alignment');
   });
+
+  test('Using up/down arrows to navigate options and Enter to select', async () => {
+    await page.goto(baseUrl, { waitUntil: 'networkidle2' });
+    await page.waitForSelector('.sidebar', { timeout: 5000 });
+
+    // Open Seed Monster
+    await page.waitForSelector('.list-item', { timeout: 5000 });
+    const listItems = await page.$$('.list-item');
+    await listItems[0].click();
+
+    // Wait for the Identity tab form to load
+    await page.waitForSelector('#alignment', { timeout: 5000 });
+
+    // Find and focus alignment combobox trigger
+    const alignmentTrigger = await page.evaluateHandle(() => {
+      const label = document.querySelector('label[for="alignment"]');
+      const formGroup = label?.closest('.form-group');
+      return formGroup?.querySelector('.combobox-trigger') as HTMLElement;
+    });
+    expect(alignmentTrigger).toBeDefined();
+
+    // Focus alignment trigger to open dropdown and focus its search
+    await alignmentTrigger.asElement()!.focus();
+    await page.waitForSelector('[data-testid="alignment-combobox-search"]', { timeout: 2000 });
+
+    // Let's get the list of options inside the dropdown
+    const getOptionsState = async () => {
+      return await page.evaluate(() => {
+        const btns = Array.from(document.querySelectorAll('.combobox-option-btn'));
+        return btns.map((btn) => ({
+          text: btn.textContent?.trim(),
+          selected: btn.classList.contains('selected'),
+          highlighted: btn.classList.contains('highlighted'),
+        }));
+      });
+    };
+
+    let options = await getOptionsState();
+    // By default, neutral should be selected and highlighted since seed monster alignment is neutral
+    const neutralIdx = options.findIndex((o) => o.text === 'Neutral');
+    expect(neutralIdx).toBeGreaterThan(-1);
+    expect(options[neutralIdx].selected).toBe(true);
+    expect(options[neutralIdx].highlighted).toBe(true);
+
+    // Let's press ArrowDown. It should move the highlight to the next option (index 5).
+    await page.keyboard.press('ArrowDown');
+    options = await getOptionsState();
+    expect(options[5].highlighted).toBe(true);
+
+    // Let's press ArrowUp. It should move the highlight back to the neutral option (index 4).
+    await page.keyboard.press('ArrowUp');
+    options = await getOptionsState();
+    expect(options[4].highlighted).toBe(true);
+
+    // Let's press ArrowUp 4 more times to reach index 0
+    await page.keyboard.press('ArrowUp'); // index 3
+    await page.keyboard.press('ArrowUp'); // index 2
+    await page.keyboard.press('ArrowUp'); // index 1
+    await page.keyboard.press('ArrowUp'); // index 0
+    options = await getOptionsState();
+    expect(options[0].highlighted).toBe(true);
+
+    // Let's press ArrowUp again. It should wrap around to the last option (index 8).
+    await page.keyboard.press('ArrowUp');
+    options = await getOptionsState();
+    const lastIdx = options.length - 1;
+    expect(options[lastIdx].highlighted).toBe(true);
+
+    // Let's press Enter to select the last option.
+    await page.keyboard.press('Enter');
+
+    // Wait for the dropdown to close
+    await new Promise((resolve) => setTimeout(resolve, 200));
+    const searchExists = await page.$('[data-testid="alignment-combobox-search"]');
+    expect(searchExists).toBeNull();
+
+    // Verify the value in the select element has changed
+    const selectVal = await page.evaluate(() => {
+      const select = document.querySelector('#alignment') as HTMLSelectElement;
+      return select ? select.value : null;
+    });
+    expect(selectVal).toBe('chaotic evil');
+  });
 });
