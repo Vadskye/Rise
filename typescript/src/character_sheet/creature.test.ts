@@ -169,7 +169,7 @@ t.test('addThrowItem dynamically generates correct maneuvers', (t) => {
   t.equal(ability?.kind, 'maneuver');
   t.equal(ability?.name, "Alchemist's Fire");
   t.match(ability?.attack?.targeting, /Make an attack vs\. Reflex against something within \\shortrange\./);
-  t.equal(ability?.attack?.hit, "$dr5l damage.");
+  t.equal(ability?.attack?.hit, "$dr2l damage.");
   t.matchOnly(ability?.tags, ['Fire']);
 
   creature.addThrowItem("Firebomb");

@@ -128,8 +128,8 @@ t.test('can calculate injury point', (t) => {
     setStandardFighter();
     getAttrs(['injury_point', 'injury_point_explanation'], (attrs) => {
       t.match(attrs, {
-        injury_point: 34,
-        injury_point_explanation: '+10 (base)  +20 (2 * level)  +4 (2 * Con)',
+        injury_point: 30,
+        injury_point_explanation: '+10 (base)  +20 (half (4 * level))',
       });
       t.end();
     });
@@ -140,7 +140,7 @@ t.test('can calculate injury point', (t) => {
     getAttrs(['injury_point', 'injury_point_explanation'], (attrs) => {
       t.match(attrs, {
         injury_point: 30,
-        injury_point_explanation: '+10 (base)  +20 (2 * level)',
+        injury_point_explanation: '+10 (base)  +20 (half (4 * level))',
       });
       t.end();
     });

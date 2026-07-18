@@ -1872,7 +1872,7 @@ function handleInjuryPoint() {
         injury_point: injury_point,
         injury_point_explanation: formatCombinedExplanation(v.miscExplanation, [
           { name: 'base', value: flatIp },
-          { name: rank + ' * level', value: ipFromLevel },
+          { name: `half (${rank} * level)`, value: ipFromLevel },
         ]),
       });
     },
