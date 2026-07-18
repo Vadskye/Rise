@@ -200,12 +200,15 @@ export interface CustomModifierNumericEffect {
 }
 
 // TODO: Does this need a `type`?
-export interface MonsterAbilityOptions {
+export type MonsterAbilityOptions = MonsterNonweaponAbilityOptions & {
+  weapon?: MonsterWeapon;
+};
+
+export interface MonsterNonweaponAbilityOptions {
   displayName?: string;
   isMagical?: boolean; // Spells default to true, maneuvers default to false
   tags?: RiseAbilityDefinitionTag[];
   usageTime?: MonsterAttackUsageTime;
-  weapon?: MonsterWeapon;
 }
 
 interface NonScaledCustomMonsterAbility extends Omit<
@@ -533,7 +536,7 @@ export class Creature implements CreaturePropertyMap {
 
   addGrapplingStrike(
     weapon: MonsterWeapon,
-    { displayName, isMagical, tags, usageTime }: Omit<MonsterAbilityOptions, 'weapon'> = {},
+    { displayName, isMagical, tags, usageTime }: MonsterNonweaponAbilityOptions = {},
   ) {
     displayName = displayName || `Grappling ${format.titleCase(weapon)}`;
 
@@ -564,7 +567,7 @@ export class Creature implements CreaturePropertyMap {
   addPoisonousStrike(
     weapon: MonsterWeapon,
     poison: PoisonDefinition,
-    { displayName, isMagical, tags, usageTime }: Omit<MonsterAbilityOptions, 'weapon'> = {},
+    { displayName, isMagical, tags, usageTime }: MonsterNonweaponAbilityOptions = {},
   ) {
     displayName = displayName || `Venomous ${format.titleCase(weapon)}`;
 
@@ -595,7 +598,7 @@ export class Creature implements CreaturePropertyMap {
 
   addWeaponMult(
     weapon: MonsterWeapon,
-    { displayName, isMagical, tags, usageTime }: Omit<MonsterAbilityOptions, 'weapon'> = {},
+    { displayName, isMagical, tags, usageTime }: MonsterNonweaponAbilityOptions = {},
   ) {
     displayName = displayName || format.titleCase(weapon);
     this.addActiveAbility({
@@ -611,7 +614,7 @@ export class Creature implements CreaturePropertyMap {
 
   addLatchOn(
     weapon: MonsterWeapon,
-    { displayName, isMagical, tags, usageTime }: Omit<MonsterAbilityOptions, 'weapon'> = {},
+    { displayName, isMagical, tags, usageTime }: MonsterNonweaponAbilityOptions = {},
   ) {
     displayName = displayName || format.titleCase(weapon);
     const maneuver = getWeaponMultByRank(this.calculateRank());
@@ -633,7 +636,7 @@ export class Creature implements CreaturePropertyMap {
 
   addSneakAttack(
     weapon: MonsterWeapon,
-    { displayName, isMagical, tags, usageTime }: Omit<MonsterAbilityOptions, 'weapon'> = {},
+    { displayName, isMagical, tags, usageTime }: MonsterNonweaponAbilityOptions = {},
   ) {
     const maybeRanged = getWeaponTags(weapon).some((tag) => /(Projectile|Thrown)/.test(tag))
       ? 'Ranged '
