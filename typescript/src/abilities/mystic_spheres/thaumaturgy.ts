@@ -89,9 +89,7 @@ export const thaumaturgy: MysticSphere = {
       scaling: 'damage',
     },
 
-    // treat rank as 1 lower for determining area, but not damage. Ignoring cover and miss
-    // chances is less exciting for AOE than single target, since single target also gets
-    // the half damage on miss effect.
+    // Enemies-only medium radius from self is -2dr.
     {
       name: 'Magic Missile Storm',
 
@@ -101,12 +99,12 @@ export const thaumaturgy: MysticSphere = {
         `,
         halfOnMiss: true,
         targeting: `
-          Make an attack vs. Armor against all \\glossterm{enemies} within a \\largearea radius from you.
+          Make an attack vs. Armor against all \\glossterm{enemies} within a \\medarea radius from you.
           This attack ignores \\glossterm{cover} and all \\glossterm{miss chances}.
         `,
       },
       narrative: `
-        A barrage of unerring projectiles made of pure magical energy streak towards an area, inflicting damage unavoidably.
+        A barrage of unerring projectiles made of pure magical energy fly all around you, inflicting damage unavoidably.
       `,
       rank: 6,
       roles: ['clear'],
