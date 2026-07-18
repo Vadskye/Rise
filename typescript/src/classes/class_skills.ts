@@ -47,7 +47,7 @@ export function getClassSkills(cls: Class): RiseSkill[] {
         'knowledge_items',
         'knowledge_local',
         'knowledge_planes',
-        'knowledge_religion',
+        'knowledge_souls',
         'medicine',
         'persuasion',
         'social_insight',
@@ -228,7 +228,7 @@ export function getClassSkills(cls: Class): RiseSkill[] {
         'endurance',
         'intimidate',
         'knowledge_local',
-        'knowledge_religion',
+        'knowledge_souls',
         'medicine',
         'persuasion',
         'ride',
@@ -254,7 +254,7 @@ export function getClassSkills(cls: Class): RiseSkill[] {
         'knowledge_local',
         'knowledge_nature',
         'knowledge_planes',
-        'knowledge_religion',
+        'knowledge_souls',
         'medicine',
         'persuasion',
         'ride',
@@ -335,7 +335,7 @@ export function getClassSkills(cls: Class): RiseSkill[] {
         'intimidate',
         'jump',
         'knowledge_dungeoneering',
-        'knowledge_religion',
+        'knowledge_souls',
         'persuasion',
         'social_insight',
         'stealth',
@@ -351,7 +351,7 @@ export function getClassSkills(cls: Class): RiseSkill[] {
         'knowledge_arcana',
         'knowledge_items',
         'knowledge_planes',
-        'knowledge_religion',
+        'knowledge_souls',
         'persuasion',
         'ride',
         'social_insight',
@@ -371,7 +371,7 @@ export function getClassSkills(cls: Class): RiseSkill[] {
         'knowledge_local',
         'knowledge_nature',
         'knowledge_planes',
-        'knowledge_religion',
+        'knowledge_souls',
         'persuasion',
       ];
     default:
@@ -458,7 +458,7 @@ function formatSkillList(skills: RiseSkill[]): string {
       'local',
       'nature',
       'planes',
-      'religion',
+      'souls',
     ];
     const isRustAll =
       rustAllSubskills.length === subskills.length &&

@@ -1364,10 +1364,6 @@ export class Creature implements CreaturePropertyMap {
     return this.getPropertyValue('knowledge_planes');
   }
 
-  public get knowledge_religion() {
-    return this.getPropertyValue('knowledge_religion');
-  }
-
   public get knowledge_souls() {
     return this.getPropertyValue('knowledge_souls');
   }
