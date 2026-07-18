@@ -154,7 +154,7 @@ describe('Monster UI Integration Tests (Serverless)', () => {
     const generatedContent = fs.readFileSync(paths.generatedTsPath, 'utf8');
     expect(generatedContent).toContain(`creature.setBaseAttributes([2, 3, 1, -1, 0, -2])`);
     expect(generatedContent).toContain(`creature.setTrainedSkills(['stealth', 'jump'])`);
-    expect(generatedContent).toContain(`easy: 'Easy text'`);
+    expect(generatedContent).toContain('easy: `Easy text`');
     expect(generatedContent).toContain(`creature.addTrait('quadrupedal')`);
     expect(generatedContent).toContain(`creature.addCustomSense('Darkvision (60 ft.)')`);
     expect(generatedContent).toContain(
