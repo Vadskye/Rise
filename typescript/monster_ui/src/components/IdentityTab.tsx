@@ -6,6 +6,7 @@ import { Combobox } from './Combobox';
 interface IdentityTabProps {
   monsterData: MonsterData;
   onChangeMonster: (updated: MonsterData) => void;
+  onDuplicateMonster?: () => void;
   errors: string[];
   warnings: string[];
   folders?: string[];
@@ -15,6 +16,7 @@ interface IdentityTabProps {
 export const IdentityTab: React.FC<IdentityTabProps> = ({
   monsterData,
   onChangeMonster,
+  onDuplicateMonster,
   errors,
   warnings,
   folders = [],
@@ -427,6 +429,30 @@ export const IdentityTab: React.FC<IdentityTabProps> = ({
           />
         </div>
       </div>
+
+      {onDuplicateMonster && (
+        <div style={{ display: 'flex', justifyContent: 'flex-start', marginTop: '10px', marginBottom: '20px' }}>
+          <button
+            type="button"
+            className="btn-add"
+            data-testid="duplicate-monster-btn"
+            onClick={onDuplicateMonster}
+            style={{
+              backgroundColor: 'var(--bg-tertiary)',
+              border: '1px solid var(--border-color)',
+              color: 'var(--text-primary)',
+              padding: '8px 16px',
+              borderRadius: '6px',
+              cursor: 'pointer',
+              fontWeight: 600,
+              fontSize: '0.85rem',
+              transition: 'all 0.15s ease',
+            }}
+          >
+            Duplicate Monster
+          </button>
+        </div>
+      )}
 
       <h4 className="section-subtitle">Freeform Script Escape Hatch</h4>
       <div className="form-group">

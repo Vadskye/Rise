@@ -14,6 +14,7 @@ interface MonsterFormProps {
   groupData?: MonsterGroupData;
   onChangeMonster?: (updated: MonsterData) => void;
   onChangeGroup?: (updated: MonsterGroupData) => void;
+  onDuplicateMonster?: () => void;
   errors: string[];
   warnings: string[];
   referenceData?: {
@@ -33,6 +34,7 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
   groupData,
   onChangeMonster,
   onChangeGroup,
+  onDuplicateMonster,
   errors,
   warnings,
   referenceData = { spells: [], maneuvers: [], weapons: [], spheres: [], alchemicalItems: [] },
@@ -125,6 +127,7 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
           <IdentityTab
             monsterData={monsterData}
             onChangeMonster={onChangeMonster}
+            onDuplicateMonster={onDuplicateMonster}
             errors={errors}
             warnings={warnings}
             folders={folders}

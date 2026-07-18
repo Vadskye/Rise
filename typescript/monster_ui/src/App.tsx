@@ -37,6 +37,26 @@ function isValidSelection(selection: SidebarSelection, dbData: DatabaseData): bo
   return false;
 }
 
+function getUniqueMonsterName(baseName: string, db: DatabaseData): string {
+  const existingNames = new Set<string>();
+  for (const m of db.monsters || []) {
+    existingNames.add(m.name);
+  }
+  for (const g of db.monsterGroups || []) {
+    for (const m of g.monsters || []) {
+      existingNames.add(m.name);
+    }
+  }
+
+  let candidate = `${baseName} (Copy)`;
+  let counter = 2;
+  while (existingNames.has(candidate)) {
+    candidate = `${baseName} (Copy ${counter})`;
+    counter++;
+  }
+  return candidate;
+}
+
 export const App: React.FC = () => {
   const [db, setDb] = useState<DatabaseData>({ monsters: [], monsterGroups: [] });
   const dbRef = useRef<DatabaseData>(db);
@@ -415,6 +435,37 @@ export const App: React.FC = () => {
     handleSaveDb(updatedDb, false);
   };
 
+  const handleDuplicateMonster = () => {
+    if (!activeMonster) {
+      return;
+    }
+    const newName = getUniqueMonsterName(activeMonster.name, db);
+    const duplicatedMonster: MonsterData = JSON.parse(JSON.stringify(activeMonster));
+    duplicatedMonster.name = newName;
+
+    let updatedDb: DatabaseData;
+    if (activeSelection?.type === 'group-monster') {
+      const groupName = activeSelection.groupName;
+      updatedDb = {
+        ...db,
+        monsterGroups: db.monsterGroups.map((g) =>
+          g.name === groupName ? { ...g, monsters: [...g.monsters, duplicatedMonster] } : g,
+        ),
+      };
+      setDb(updatedDb);
+      setActiveSelection({ type: 'group-monster', groupName, name: newName });
+      handleSaveDb(updatedDb, true);
+    } else {
+      updatedDb = {
+        ...db,
+        monsters: [...db.monsters, duplicatedMonster],
+      };
+      setDb(updatedDb);
+      setActiveSelection({ type: 'monster', name: newName });
+      handleSaveDb(updatedDb, true);
+    }
+  };
+
   const handleUpdateGroup = (updated: MonsterGroupData) => {
     if (activeSelection?.type !== 'group') {
       return;
@@ -765,6 +816,7 @@ export const App: React.FC = () => {
                 groupData={activeGroup}
                 onChangeMonster={handleUpdateMonster}
                 onChangeGroup={handleUpdateGroup}
+                onDuplicateMonster={handleDuplicateMonster}
                 errors={errors}
                 warnings={warnings}
                 referenceData={referenceData}
