@@ -61,7 +61,7 @@ function formatValueToTSSingleLine(value: any): string {
 
 function formatValueToTS(value: any, indent = ''): string {
   if (typeof value === 'string') {
-    return `'${value.replace(/'/g, "\\'")}'`;
+    return `\`${value.replace(/'/g, "\\'")}\``;
   }
   if (value === null || value === undefined) {
     return 'undefined';
