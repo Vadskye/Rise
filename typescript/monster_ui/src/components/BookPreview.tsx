@@ -74,7 +74,8 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
 
   // Knowledge DVs
   const knowledge = displayStats.knowledge;
-  const baseDifficulty = displayStats.level !== undefined ? Math.floor(displayStats.level / 2) + 5 : 5;
+  const baseDifficulty =
+    displayStats.level !== undefined ? Math.floor(displayStats.level / 2) + 5 : 5;
   const showKnowledge =
     knowledge && (knowledge.easy || knowledge.normal || knowledge.hard || knowledge.legendary);
   const relevantKnowledge = knowledge.relevantKnowledges?.[0] || 'nature';
@@ -92,7 +93,9 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
     return a.name.localeCompare(b.name);
   });
 
-  const filteredTraits = displayStats.traits.map((t) => t.charAt(0).toUpperCase() + t.slice(1)).sort();
+  const filteredTraits = displayStats.traits
+    .map((t) => t.charAt(0).toUpperCase() + t.slice(1))
+    .sort();
 
   return (
     <div className={`book-preview-container ${loading ? 'loading-preview' : ''}`}>
@@ -106,8 +109,8 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
       </h4>
 
       <div className="monster-origin-type">
-        {displayStats.size.charAt(0).toUpperCase() + displayStats.size.slice(1)} {displayStats.creature_origin}{' '}
-        {displayStats.base_class.toLowerCase()}
+        {displayStats.size.charAt(0).toUpperCase() + displayStats.size.slice(1)}{' '}
+        {displayStats.creature_origin} {displayStats.base_class.toLowerCase()}
       </div>
 
       {/* Stats Table */}
@@ -131,7 +134,8 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
         <div className="stat-line">
           <span className="stat-label">Defenses</span>
           <span className="stat-value">
-            Armor {displayStats.armor_defense} • Brawn {displayStats.brawn} • Fort {displayStats.fortitude}
+            Armor {displayStats.armor_defense} • Brawn {displayStats.brawn} • Fort{' '}
+            {displayStats.fortitude}
             {mentalText} • Ref {displayStats.reflex}
           </span>
         </div>
@@ -214,7 +218,8 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
         <div className="stat-line">
           <span className="stat-label">Accuracy</span>
           <span className="stat-value">
-            {formatModifier(displayStats.accuracy)}; Brawling {formatModifier(displayStats.brawling_accuracy)}
+            {formatModifier(displayStats.accuracy)}; Brawling{' '}
+            {formatModifier(displayStats.brawling_accuracy)}
           </span>
           <span className="stat-label" style={{ marginLeft: 'auto' }}>
             Power

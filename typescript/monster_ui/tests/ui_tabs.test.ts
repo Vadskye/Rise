@@ -121,7 +121,6 @@ describe('Monster UI Tab Layout Tests', () => {
   });
 
   test('Form tabs do not collapse when switching tabs', async () => {
-
     // Navigate to UI
     await page.goto(baseUrl, { waitUntil: 'networkidle2' });
 
@@ -177,6 +176,5 @@ describe('Monster UI Tab Layout Tests', () => {
       // Ensure height is not collapsed (should be around 36px, definitely > 30px)
       expect(tabsHeight).toBeGreaterThan(30);
     }
-
   });
 });

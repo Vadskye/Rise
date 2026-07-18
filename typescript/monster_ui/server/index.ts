@@ -57,7 +57,7 @@ app.get('/api/reference', (req, res) => {
       .sort();
 
     const alchemicalItemNames = Array.from(
-      new Set(alchemicalItems().map((tool) => tool.item.name))
+      new Set(alchemicalItems().map((tool) => tool.item.name)),
     ).sort();
 
     const dWeaponsSpheres = performance.now() - s3;

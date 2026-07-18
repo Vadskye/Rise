@@ -99,7 +99,6 @@ describe('Monster UI Delete Undo Integration Tests', () => {
   });
 
   test('Delete individual monster, undo deletion, and verify restoration', async () => {
-
     // Navigate to UI
     await page.goto(baseUrl, { waitUntil: 'networkidle2' });
 
@@ -174,11 +173,9 @@ describe('Monster UI Delete Undo Integration Tests', () => {
 
     // Verify name input is visible again (meaning it selected the restored monster)
     await page.waitForSelector('[data-testid="monster-name-input"]', { timeout: 2000 });
-
   });
 
   test('Delete group and group monster, verify undo', async () => {
-
     await page.goto(baseUrl, { waitUntil: 'networkidle2' });
     await page.waitForSelector('.sidebar', { timeout: 5000 });
 
@@ -293,6 +290,5 @@ describe('Monster UI Delete Undo Integration Tests', () => {
       { timeout: 5000 },
     );
     expect(groupMonsterItem).toBeTruthy();
-
   });
 });

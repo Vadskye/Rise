@@ -146,7 +146,8 @@ export function saveAndValidateAll(db: DatabaseData) {
       // If the group's shared config changed, every monster in it must be re-validated.
       const sharedChanged =
         oldGroupSharedFingerprints.get(group.name) !== groupSharedFingerprint(group);
-      const oldMonsterMap = oldGroupMonsterFingerprints.get(group.name) ?? new Map<string, string>();
+      const oldMonsterMap =
+        oldGroupMonsterFingerprints.get(group.name) ?? new Map<string, string>();
 
       let groupValidated = 0;
       let groupSkipped = 0;

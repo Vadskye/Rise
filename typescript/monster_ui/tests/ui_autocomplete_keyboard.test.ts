@@ -181,6 +181,5 @@ describe('Autocomplete Keyboard Navigation Tests', () => {
     );
     const addedSelectedOption = abilityCards.some((name) => name.includes(secondOptionName));
     expect(addedSelectedOption).toBe(true);
-
   });
 });

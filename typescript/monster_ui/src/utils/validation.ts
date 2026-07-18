@@ -30,7 +30,11 @@ export function formatMissingWeaponWarning(name: string, isThrowItem?: boolean):
  * Checks if a given warning string matches the missing weapon warning for a specific maneuver name.
  * Handles display name overrides by matching the generated pattern.
  */
-export function isMissingWeaponWarning(warning: string, name: string, isThrowItem?: boolean): boolean {
+export function isMissingWeaponWarning(
+  warning: string,
+  name: string,
+  isThrowItem?: boolean,
+): boolean {
   return warning === formatMissingWeaponWarning(name, isThrowItem);
 }
 
