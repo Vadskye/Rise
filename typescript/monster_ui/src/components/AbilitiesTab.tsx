@@ -11,6 +11,7 @@ interface ReferenceData {
   maneuvers: string[];
   weapons: string[];
   spheres: string[];
+  alchemicalItems: string[];
 }
 
 interface AbilitiesTabProps<T extends SharedEditableProperties> {
@@ -48,6 +49,7 @@ export const AbilitiesTab = <T extends SharedEditableProperties>({
         referenceSpells={referenceData.spells}
         referenceManeuvers={referenceData.maneuvers}
         referenceWeapons={referenceData.weapons}
+        referenceAlchemicalItems={referenceData.alchemicalItems}
         onChange={(updated) => updateField('standardAbilities', updated)}
         expandedCard={expandedCard}
         onToggleExpand={toggleExpand}

@@ -49,7 +49,10 @@ import { KNOWLEDGE_BY_ORIGIN, KNOWLEDGE_BY_TYPE } from './knowledge';
 import { getArmorBaseDefinition, ArmorKind } from '@src/equipment/armor';
 import { alchemicalItems } from '@src/equipment/data/consumables/alchemical_items';
 import { getUpgradeItems } from '@src/equipment/types';
-import { combineDescriptions, parseConsumableDescription } from '@src/equipment/equipment_abilities';
+import {
+  combineDescriptions,
+  parseConsumableDescription,
+} from '@src/equipment/equipment_abilities';
 
 export type TargetSelectionLogic = 'Random' | 'Ordered' | 'Vulnerable';
 
@@ -692,10 +695,7 @@ export class Creature implements CreaturePropertyMap {
     });
   }
 
-  addThrowItem(
-    itemName: string,
-    options: MonsterNonweaponAbilityOptions = {},
-  ) {
+  addThrowItem(itemName: string, options: MonsterNonweaponAbilityOptions = {}) {
     const baseTool = alchemicalItems().find(
       (tool) => tool.item.name.toLowerCase() === itemName.toLowerCase(),
     );
@@ -705,14 +705,13 @@ export class Creature implements CreaturePropertyMap {
     }
 
     const baseItem = baseTool.item;
-    const creatureRank = this.calculateRank();
+    const itemRank = (this.calculateRank() - 1) as ActiveAbilityRank;
 
     const upgrades = getUpgradeItems(baseItem);
-    const eligibleUpgrades = upgrades.filter((up) => up.rank <= creatureRank);
+    const eligibleUpgrades = upgrades.filter((up) => up.rank <= itemRank);
 
-    const activeItem = eligibleUpgrades.length > 0
-      ? eligibleUpgrades[eligibleUpgrades.length - 1]
-      : baseItem;
+    const activeItem =
+      eligibleUpgrades.length > 0 ? eligibleUpgrades[eligibleUpgrades.length - 1] : baseItem;
 
     const name = options.displayName || baseItem.name;
     const itemTags = activeItem.tags || [];
@@ -727,13 +726,14 @@ export class Creature implements CreaturePropertyMap {
 
     const parsed = parseConsumableDescription(description);
 
-    const isHalfOnMiss = parsed.miss?.toLowerCase().replace(/\s+/g, ' ').trim().replace(/\.$/, '') === 'half damage';
+    const isHalfOnMiss =
+      parsed.miss?.toLowerCase().replace(/\s+/g, ' ').trim().replace(/\.$/, '') === 'half damage';
 
     const maneuver: ActiveAbility = {
       kind: 'maneuver',
       name,
       isMagical: options.isMagical !== undefined ? options.isMagical : false,
-      rank: creatureRank,
+      rank: itemRank,
       roles: [],
       tags: mergedTags,
       attack: {
@@ -741,7 +741,7 @@ export class Creature implements CreaturePropertyMap {
         hit: parsed.hit || '',
         ...(parsed.injury ? { injury: parsed.injury } : {}),
         ...(parsed.crit ? { crit: parsed.crit } : {}),
-        ...(isHalfOnMiss ? { halfOnMiss: true } : (parsed.miss ? { miss: parsed.miss } : {})),
+        ...(isHalfOnMiss ? { halfOnMiss: true } : parsed.miss ? { miss: parsed.miss } : {}),
       },
     };
 

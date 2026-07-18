@@ -825,7 +825,7 @@
           "name": "Pyromaniac",
           "requiredProperties": {
             "alignment": "chaotic evil",
-            "base_class": "sniper",
+            "base_class": "skirmisher",
             "elite": false,
             "creature_origin": "natural",
             "creature_types": [
@@ -834,7 +834,116 @@
             "size": "medium",
             "level": 4
           },
-          "freeformCode": ""
+          "freeformCode": "",
+          "properties": {
+            "has_art": true
+          },
+          "baseAttributes": [
+            0,
+            2,
+            0,
+            -1,
+            2,
+            5
+          ],
+          "standardAbilities": [
+            {
+              "type": "spell",
+              "name": "Ignition",
+              "options": {
+                "isMagical": true
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Pyrohemia",
+              "options": {
+                "isMagical": true
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Burning Grasp",
+              "options": {
+                "isMagical": true
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "club"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Arsonist",
+          "requiredProperties": {
+            "alignment": "chaotic evil",
+            "base_class": "skirmisher",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 6
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            0,
+            4,
+            1,
+            0,
+            3,
+            1
+          ],
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Throw Item",
+              "options": {
+                "isMagical": false,
+                "weapon": "Alchemist's Fire"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Giants",
+      "folder": "Uncivilized Humanoids",
+      "hasArt": false,
+      "sharedFreeformCode": "",
+      "monsters": [
+        {
+          "name": "New Member 1",
+          "requiredProperties": {
+            "alignment": "",
+            "base_class": "",
+            "elite": false,
+            "creature_origin": "",
+            "creature_types": [],
+            "size": "",
+            "level": 0
+          },
+          "freeformCode": "",
+          "standardAbilities": []
+        }
+      ],
+      "knowledge": {
+        "easy": "Giants are massive humanoid creatures that tower over lesser creatures. All giants have immense strength and unimpressive agility.",
+        "normal": "Giants are skilled at throwing boulders, either to hunt or to protect themselves.",
+        "hard": ""
+      },
+      "passiveAbilities": [
+        {
+          "name": "Boulder Thrower",
+          "effect": "Giants can throw objects no larger than two size categories smaller than themselves with ease. Their descriptions list their statistics when throwing boulders. A giant's \\glossterm{range limits} with an improvised object other than a boulder are generally half its range limit with a boulder. The object may also deal less damage than a boulder depending on its construction.",
+          "isMagical": false
         }
       ]
     }

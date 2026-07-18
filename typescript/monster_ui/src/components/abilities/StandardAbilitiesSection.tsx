@@ -20,6 +20,7 @@ interface StandardAbilitiesSectionProps {
   referenceSpells: string[];
   referenceManeuvers: string[];
   referenceWeapons: string[];
+  referenceAlchemicalItems: string[];
   onChange: (updatedAbilities: StandardAbilityConfig[]) => void;
   expandedCard: string | null;
   onToggleExpand: (cardId: string) => void;
@@ -32,6 +33,7 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
   referenceSpells,
   referenceManeuvers,
   referenceWeapons,
+  referenceAlchemicalItems,
   onChange,
   expandedCard,
   onToggleExpand,
@@ -44,6 +46,7 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
     'Grappling Strike',
     'Sneak Attack',
     'Latch On',
+    'Throw Item',
   ];
 
   const addStandardAbility = (type: 'spell' | 'maneuver', name: string) => {
@@ -149,7 +152,12 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
                       <div className="quick-weapon-select-container">
                         <WeaponCombobox
                           selectedWeapon={ability.options?.weapon}
-                          weapons={referenceWeapons}
+                          weapons={ability.name === 'Throw Item' ? referenceAlchemicalItems : referenceWeapons}
+                          placeholder={ability.name === 'Throw Item' ? 'Search items...' : 'Search weapons...'}
+                          clearLabel={ability.name === 'Throw Item' ? '-- No Item --' : '-- No Weapon --'}
+                          triggerTitle={ability.name === 'Throw Item' ? 'Quickly assign an alchemical item to this maneuver' : 'Quickly assign a weapon to this maneuver'}
+                          noSelectionLabel={ability.name === 'Throw Item' ? 'No Item' : 'No Weapon'}
+                          noMatchesLabel={ability.name === 'Throw Item' ? 'No matching items' : 'No matching weapons'}
                           onSelect={(weapon) =>
                             updateStandardAbility(idx, {
                               ...ability,
@@ -161,11 +169,11 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
                           }
                         />
                         {warnings.some((w) =>
-                          isMissingWeaponWarning(w, ability.options?.displayName || ability.name),
+                          isMissingWeaponWarning(w, ability.options?.displayName || ability.name, ability.name === 'Throw Item'),
                         ) && (
                           <span
                             className="quick-weapon-warning"
-                            title="Maneuver makes a strike and doesn't have a weapon."
+                            title={ability.name === 'Throw Item' ? 'Maneuver requires an alchemical item.' : "Maneuver makes a strike and doesn't have a weapon."}
                           >
                             ⚠️
                           </span>
