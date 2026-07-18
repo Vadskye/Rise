@@ -16,7 +16,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       name: 'Aquatic Freedom',
 
       effect: `
-        You gain a slow \\glossterm{swim speed} (see \pcref{Movement Modes}).
+        You gain a slow \\glossterm{swim speed} (see \\pcref{Movement Modes}).
       `,
       roles: ['attune'],
       type: 'Sustain (attunable, standard)',
