@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { DatabaseData } from '../types/monster';
 
 export type SidebarSelection =
@@ -40,37 +40,39 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
   onDeleteFolder,
   isSaving,
 }) => {
-  const [expandedFolders, setExpandedFolders] = useState<Record<string, boolean>>(() => {
-    if (!activeSelection) return {};
-    // Find the folder that contains the active selection
-    const activeName =
-      activeSelection.type === 'group-monster' ? activeSelection.groupName : activeSelection.type === 'group' ? activeSelection.name : null;
-    const activeMonsterName = activeSelection.type === 'monster' ? activeSelection.name : null;
-    const allItems = [
-      ...(db.monsters || []).map((m) => ({ name: m.name, folder: m.folder, kind: 'monster' as const })),
-      ...(db.monsterGroups || []).map((g) => ({ name: g.name, folder: g.folder, kind: 'group' as const })),
-    ];
-    const matchingItem = allItems.find(
-      (item) =>
-        (item.kind === 'group' && item.name === activeName) ||
-        (item.kind === 'monster' && item.name === activeMonsterName),
-    );
-    if (matchingItem?.folder) {
-      return { [matchingItem.folder]: true };
-    }
-    return {};
-  });
-  const [expandedGroups, setExpandedGroups] = useState<Record<string, boolean>>(() => {
-    if (!activeSelection) return {};
-    // Expand the active group, or the group that contains the active group-monster
+  const [expandedFolders, setExpandedFolders] = useState<Record<string, boolean>>({});
+  const [expandedGroups, setExpandedGroups] = useState<Record<string, boolean>>({});
+  // Track whether we've done the one-time auto-expand for the initial active selection.
+  // activeSelection starts null and is set asynchronously after data loads, so we can't
+  // use a lazy initializer — instead we watch for the first non-null value.
+  const hasAutoExpanded = useRef(false);
+  useEffect(() => {
+    if (hasAutoExpanded.current || !activeSelection) return;
+    hasAutoExpanded.current = true;
+
+    // Determine which group (if any) should be expanded
     if (activeSelection.type === 'group') {
-      return { [activeSelection.name]: true };
+      setExpandedGroups({ [activeSelection.name]: true });
+    } else if (activeSelection.type === 'group-monster') {
+      setExpandedGroups({ [activeSelection.groupName]: true });
     }
-    if (activeSelection.type === 'group-monster') {
-      return { [activeSelection.groupName]: true };
+
+    // Determine which folder (if any) should be expanded
+    const activeItemName =
+      activeSelection.type === 'group-monster'
+        ? activeSelection.groupName
+        : activeSelection.type === 'group'
+          ? activeSelection.name
+          : activeSelection.name; // 'monster'
+    const allItems = [
+      ...(db.monsters || []).map((m) => ({ name: m.name, folder: m.folder })),
+      ...(db.monsterGroups || []).map((g) => ({ name: g.name, folder: g.folder })),
+    ];
+    const matchingFolder = allItems.find((item) => item.name === activeItemName)?.folder;
+    if (matchingFolder) {
+      setExpandedFolders({ [matchingFolder]: true });
     }
-    return {};
-  });
+  }, [activeSelection, db]);
   const [dragOverFolder, setDragOverFolder] = useState<string | null>(null);
 
   const handleDragStart = (e: React.DragEvent, type: 'monster' | 'group', name: string) => {
