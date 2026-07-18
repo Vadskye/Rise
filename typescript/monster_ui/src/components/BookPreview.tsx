@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { ComputedStats } from '../types/monster';
 
 interface BookPreviewProps {
@@ -7,23 +7,14 @@ interface BookPreviewProps {
 }
 
 export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
-  if (loading && !stats) {
-    return (
-      <div
-        style={{
-          color: 'var(--text-secondary)',
-          fontSize: '0.95rem',
-          fontStyle: 'italic',
-          textAlign: 'center',
-          marginTop: '40px',
-        }}
-      >
-        Recalculating stat block...
-      </div>
-    );
+  // Keep the last valid stats so we can keep showing them (faded) while recalculating
+  const lastStatsRef = useRef<ComputedStats | null>(null);
+  if (stats) {
+    lastStatsRef.current = stats;
   }
+  const displayStats = stats ?? lastStatsRef.current;
 
-  if (!stats) {
+  if (!displayStats) {
     return (
       <div
         style={{
@@ -60,18 +51,18 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
     return usageTime.charAt(0).toUpperCase() + usageTime.slice(1);
   };
 
-  const isMindless = stats.traits.map((t) => t.toLowerCase()).includes('mindless');
+  const isMindless = displayStats.traits.map((t) => t.toLowerCase()).includes('mindless');
 
   // Format Attributes: [Brawn, Agility, Reason, Instinct, Presence, Will]
   // In our validate.ts backend code, the attributes array was returned as:
   // [strength, dexterity, constitution, intelligence, perception, willpower]
   const attributesStr = [
-    stats.attributes[0], // Brawn
-    stats.attributes[1], // Agility
-    stats.attributes[2], // Fortitude (Constitution)
-    isMindless ? '---' : stats.attributes[3], // Reason (Intelligence)
-    stats.attributes[4], // Instinct (Perception)
-    isMindless ? '---' : stats.attributes[5], // Presence/Will (Willpower)
+    displayStats.attributes[0], // Brawn
+    displayStats.attributes[1], // Agility
+    displayStats.attributes[2], // Fortitude (Constitution)
+    isMindless ? '---' : displayStats.attributes[3], // Reason (Intelligence)
+    displayStats.attributes[4], // Instinct (Perception)
+    isMindless ? '---' : displayStats.attributes[5], // Presence/Will (Willpower)
   ]
     .map((attr) =>
       attr === '---' ? '---' : typeof attr === 'number' && attr > -10 ? String(attr) : '—',
@@ -79,11 +70,11 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
     .join(', ');
 
   // Defenses
-  const mentalText = isMindless ? '' : ` • Ment ${stats.mental}`;
+  const mentalText = isMindless ? '' : ` • Ment ${displayStats.mental}`;
 
   // Knowledge DVs
-  const knowledge = stats.knowledge;
-  const baseDifficulty = stats.level !== undefined ? Math.floor(stats.level / 2) + 5 : 5;
+  const knowledge = displayStats.knowledge;
+  const baseDifficulty = displayStats.level !== undefined ? Math.floor(displayStats.level / 2) + 5 : 5;
   const showKnowledge =
     knowledge && (knowledge.easy || knowledge.normal || knowledge.hard || knowledge.legendary);
   const relevantKnowledge = knowledge.relevantKnowledges?.[0] || 'nature';
@@ -91,7 +82,7 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
   const skillNameFormatted = skillLabel.charAt(0).toUpperCase() + skillLabel.slice(1);
 
   // Sorting active abilities: usage time then name
-  const sortedActiveAbilities = [...stats.activeAbilities].sort((a, b) => {
+  const sortedActiveAbilities = [...displayStats.activeAbilities].sort((a, b) => {
     const usageA = a.usageTime || 'standard';
     const usageB = b.usageTime || 'standard';
     const usageCompare = usageA.localeCompare(usageB);
@@ -101,38 +92,38 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
     return a.name.localeCompare(b.name);
   });
 
-  const filteredTraits = stats.traits.map((t) => t.charAt(0).toUpperCase() + t.slice(1)).sort();
+  const filteredTraits = displayStats.traits.map((t) => t.charAt(0).toUpperCase() + t.slice(1)).sort();
 
   return (
     <div className={`book-preview-container ${loading ? 'loading-preview' : ''}`}>
       {/* Header */}
       <h4 className="monster-title">
-        {stats.name}
+        {displayStats.name}
         <span className="sub-info">
-          Level {stats.level}
-          {stats.elite ? ' — Elite' : ''}
+          Level {displayStats.level}
+          {displayStats.elite ? ' — Elite' : ''}
         </span>
       </h4>
 
       <div className="monster-origin-type">
-        {stats.size.charAt(0).toUpperCase() + stats.size.slice(1)} {stats.creature_origin}{' '}
-        {stats.base_class.toLowerCase()}
+        {displayStats.size.charAt(0).toUpperCase() + displayStats.size.slice(1)} {displayStats.creature_origin}{' '}
+        {displayStats.base_class.toLowerCase()}
       </div>
 
       {/* Stats Table */}
       <div className="stat-block">
         <div className="stat-line">
           <span className="stat-label">HP</span>
-          <span className="stat-value">{stats.hit_points}</span>
+          <span className="stat-value">{displayStats.hit_points}</span>
           <span className="stat-label">IP</span>
-          <span className="stat-value">{stats.injury_point}</span>
-          {stats.creature_types && stats.creature_types.length > 0 && (
+          <span className="stat-value">{displayStats.injury_point}</span>
+          {displayStats.creature_types && displayStats.creature_types.length > 0 && (
             <>
               <span className="stat-label" style={{ marginLeft: 'auto' }}>
                 Types
               </span>
               <span className="stat-value" style={{ marginRight: 0 }}>
-                {stats.creature_types.join(', ')}
+                {displayStats.creature_types.join(', ')}
               </span>
             </>
           )}
@@ -140,62 +131,62 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
         <div className="stat-line">
           <span className="stat-label">Defenses</span>
           <span className="stat-value">
-            Armor {stats.armor_defense} • Brawn {stats.brawn} • Fort {stats.fortitude}
-            {mentalText} • Ref {stats.reflex}
+            Armor {displayStats.armor_defense} • Brawn {displayStats.brawn} • Fort {displayStats.fortitude}
+            {mentalText} • Ref {displayStats.reflex}
           </span>
         </div>
 
         {/* Special Defenses */}
-        {stats.immune && (
+        {displayStats.immune && (
           <div className="stat-line">
             <span className="stat-label">Immune</span>
-            <span className="stat-value">{stats.immune}</span>
+            <span className="stat-value">{displayStats.immune}</span>
           </div>
         )}
-        {stats.resistant && (
+        {displayStats.resistant && (
           <div className="stat-line">
             <span className="stat-label">Resistant</span>
-            <span className="stat-value">{stats.resistant}</span>
+            <span className="stat-value">{displayStats.resistant}</span>
           </div>
         )}
-        {stats.vulnerable && (
+        {displayStats.vulnerable && (
           <div className="stat-line">
             <span className="stat-label">Vulnerable</span>
-            <span className="stat-value">{stats.vulnerable}</span>
+            <span className="stat-value">{displayStats.vulnerable}</span>
           </div>
         )}
 
         <div className="stat-line">
           <span className="stat-label">Movement</span>
           <span className="stat-value">
-            {stats.speed} ft.
-            {stats.movementComponents && stats.movementComponents.length > 0
-              ? `; ${stats.movementComponents.join(' • ')}`
+            {displayStats.speed} ft.
+            {displayStats.movementComponents && displayStats.movementComponents.length > 0
+              ? `; ${displayStats.movementComponents.join(' • ')}`
               : ''}
           </span>
         </div>
 
         {/* Senses */}
-        {stats.sensesComponents && stats.sensesComponents.length > 0 && (
+        {displayStats.sensesComponents && displayStats.sensesComponents.length > 0 && (
           <div className="stat-line" style={{ marginTop: '2px' }}>
             <span className="stat-label">Senses</span>
-            <span className="stat-value">{stats.sensesComponents.join(' • ')}</span>
+            <span className="stat-value">{displayStats.sensesComponents.join(' • ')}</span>
           </div>
         )}
 
         {/* Social */}
-        {stats.socialComponents && stats.socialComponents.length > 0 && (
+        {displayStats.socialComponents && displayStats.socialComponents.length > 0 && (
           <div className="stat-line" style={{ marginTop: '2px' }}>
             <span className="stat-label">Social</span>
-            <span className="stat-value">{stats.socialComponents.join(' • ')}</span>
+            <span className="stat-value">{displayStats.socialComponents.join(' • ')}</span>
           </div>
         )}
 
         {/* Other skills */}
-        {stats.otherSkillsComponents && stats.otherSkillsComponents.length > 0 && (
+        {displayStats.otherSkillsComponents && displayStats.otherSkillsComponents.length > 0 && (
           <div className="stat-line" style={{ marginTop: '2px' }}>
             <span className="stat-label">Other skills</span>
-            <span className="stat-value">{stats.otherSkillsComponents.join(' • ')}</span>
+            <span className="stat-value">{displayStats.otherSkillsComponents.join(' • ')}</span>
           </div>
         )}
 
@@ -213,7 +204,7 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
             Alignment
           </span>
           <span className="stat-value" style={{ marginRight: 0 }}>
-            {stats.alignment
+            {displayStats.alignment
               .split(' ')
               .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
               .join(' ')}
@@ -223,21 +214,21 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
         <div className="stat-line">
           <span className="stat-label">Accuracy</span>
           <span className="stat-value">
-            {formatModifier(stats.accuracy)}; Brawling {formatModifier(stats.brawling_accuracy)}
+            {formatModifier(displayStats.accuracy)}; Brawling {formatModifier(displayStats.brawling_accuracy)}
           </span>
           <span className="stat-label" style={{ marginLeft: 'auto' }}>
             Power
           </span>
           <span className="stat-value" style={{ marginRight: 0 }}>
-            {stats.mundane_power}; {stats.magical_power} ✨
+            {displayStats.mundane_power}; {displayStats.magical_power} ✨
           </span>
         </div>
 
-        {stats.equipment.length > 0 && (
+        {displayStats.equipment.length > 0 && (
           <div className="stat-line">
             <span className="stat-label">Equipment</span>
             <span className="stat-value">
-              {stats.equipment.map((e) => e.charAt(0).toUpperCase() + e.slice(1)).join(', ')}
+              {displayStats.equipment.map((e) => e.charAt(0).toUpperCase() + e.slice(1)).join(', ')}
             </span>
           </div>
         )}
@@ -253,7 +244,7 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
       {/* Knowledge */}
       {showKnowledge && (
         <div className="knowledge-block">
-          <div className="knowledge-title">{stats.name} Lore</div>
+          <div className="knowledge-title">{displayStats.name} Lore</div>
           {knowledge.easy && (
             <div className="knowledge-line">
               <span className="dv-label">
@@ -290,12 +281,12 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
       )}
 
       {/* Abilities */}
-      {(stats.passiveAbilities.length > 0 || sortedActiveAbilities.length > 0) && (
+      {(displayStats.passiveAbilities.length > 0 || sortedActiveAbilities.length > 0) && (
         <>
           <div className="abilities-header">Abilities</div>
 
           {/* Passive Abilities */}
-          {stats.passiveAbilities.map((ability, idx) => (
+          {displayStats.passiveAbilities.map((ability, idx) => (
             <div key={`passive-${idx}`} className="passive-ability-item">
               <strong>
                 {ability.name} {ability.isMagical ? '✨' : ''}
