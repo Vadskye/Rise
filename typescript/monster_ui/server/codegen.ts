@@ -29,6 +29,9 @@ export function formatStructuredMovementSpeed(speed: StructuredMovementSpeed): s
 
 function formatValueToTSSingleLine(value: any): string {
   if (typeof value === 'string') {
+    if (value.includes('\n')) {
+      throw new Error("Cannot format multiline string as single line.");
+    }
     return `'${value.replace(/'/g, "\\'")}'`;
   }
   if (value === null || value === undefined) {
@@ -229,13 +232,13 @@ export function toCustomMonsterAbility(ability: CustomAbilityConfig): CustomMons
         : undefined,
     attack: ability.attack
       ? {
-          targeting: ability.attack.targeting,
-          hit: ability.attack.hit,
-          crit: ability.attack.crit || undefined,
-          miss: ability.attack.miss || undefined,
-          injury: ability.attack.injury || undefined,
-          halfOnMiss: ability.attack.halfOnMiss,
-        }
+        targeting: ability.attack.targeting,
+        hit: ability.attack.hit,
+        crit: ability.attack.crit || undefined,
+        miss: ability.attack.miss || undefined,
+        injury: ability.attack.injury || undefined,
+        halfOnMiss: ability.attack.halfOnMiss,
+      }
       : undefined,
   };
 }
@@ -300,7 +303,7 @@ function generateSharedPropertiesCode(
   }
 
   if (data.properties && Object.keys(data.properties).length > 0) {
-    lines.push(`${indent}creature.setProperties(${formatValueToTSSingleLine(data.properties)});`);
+    lines.push(`${indent}creature.setProperties(${formatValueToTS(data.properties)});`);
   }
 
   // 1. Standard Spells & Maneuvers:
@@ -315,15 +318,15 @@ function generateSharedPropertiesCode(
     for (const ability of data.standardAbilities) {
       const cleanOptions = ability.options
         ? {
-            displayName: ability.options.displayName || undefined,
-            usageTime: ability.options.usageTime || undefined,
-            isMagical: ability.options.isMagical,
-            weapon: ability.options.weapon || undefined,
-            tags:
-              ability.options.tags && ability.options.tags.length > 0
-                ? ability.options.tags
-                : undefined,
-          }
+          displayName: ability.options.displayName || undefined,
+          usageTime: ability.options.usageTime || undefined,
+          isMagical: ability.options.isMagical,
+          weapon: ability.options.weapon || undefined,
+          tags:
+            ability.options.tags && ability.options.tags.length > 0
+              ? ability.options.tags
+              : undefined,
+        }
         : undefined;
 
       const hasOptions = cleanOptions && Object.values(cleanOptions).some((v) => v !== undefined);
@@ -338,14 +341,14 @@ function generateSharedPropertiesCode(
         if (weapon) {
           const cleanSpecialOptions = ability.options
             ? {
-                displayName: ability.options.displayName || undefined,
-                usageTime: ability.options.usageTime || undefined,
-                isMagical: ability.options.isMagical,
-                tags:
-                  ability.options.tags && ability.options.tags.length > 0
-                    ? ability.options.tags
-                    : undefined,
-              }
+              displayName: ability.options.displayName || undefined,
+              usageTime: ability.options.usageTime || undefined,
+              isMagical: ability.options.isMagical,
+              tags:
+                ability.options.tags && ability.options.tags.length > 0
+                  ? ability.options.tags
+                  : undefined,
+            }
             : undefined;
           const hasSpecialOptions =
             cleanSpecialOptions && Object.values(cleanSpecialOptions).some((v) => v !== undefined);
@@ -422,50 +425,57 @@ function generateSharedPropertiesCode(
  * Generates the TypeScript initialization body for a single monster.
  */
 function generateMonsterBody(monster: MonsterData, indent: string): string {
-  const lines: string[] = [];
+  try {
+    const lines: string[] = [];
 
-  const reqPropsStr = formatValueToTS(monster.requiredProperties, indent);
-  lines.push(`${indent}creature.setRequiredProperties(${reqPropsStr});`);
+    const reqPropsStr = formatValueToTS(monster.requiredProperties, indent);
+    lines.push(`${indent}creature.setRequiredProperties(${reqPropsStr});`);
 
-  if (monster.baseAttributes && monster.baseAttributes.length === 6) {
-    lines.push(
-      `${indent}creature.setBaseAttributes(${formatValueToTSSingleLine(monster.baseAttributes)});`,
-    );
-  }
-
-  if (monster.trainedSkills && monster.trainedSkills.length > 0) {
-    lines.push(
-      `${indent}creature.setTrainedSkills(${formatValueToTSSingleLine(monster.trainedSkills)});`,
-    );
-  }
-
-  if (monster.knowledge) {
-    const cleanKnowledge = {
-      easy: monster.knowledge.easy || undefined,
-      normal: monster.knowledge.normal || undefined,
-      hard: monster.knowledge.hard || undefined,
-      legendary: monster.knowledge.legendary || undefined,
-    };
-    const hasKnowledge = Object.values(cleanKnowledge).some((v) => v !== undefined);
-    if (hasKnowledge) {
-      const knStr = formatValueToTS(cleanKnowledge, indent);
-      lines.push(`${indent}creature.setKnowledgeResults(${knStr});`);
+    if (monster.baseAttributes && monster.baseAttributes.length === 6) {
+      lines.push(
+        `${indent}creature.setBaseAttributes(${formatValueToTSSingleLine(monster.baseAttributes)});`,
+      );
     }
-  }
 
-  // Add structured properties
-  lines.push(...generateSharedPropertiesCode(monster, indent));
-
-  lines.push(`${indent}// --- Begin freeform code ---`);
-  if (monster.freeformCode) {
-    const freeformLines = monster.freeformCode.split('\n');
-    for (const line of freeformLines) {
-      lines.push(line ? `${indent}${line}` : '');
+    if (monster.trainedSkills && monster.trainedSkills.length > 0) {
+      lines.push(
+        `${indent}creature.setTrainedSkills(${formatValueToTSSingleLine(monster.trainedSkills)});`,
+      );
     }
-  }
-  lines.push(`${indent}// --- End freeform code ---`);
 
-  return lines.join('\n');
+    if (monster.knowledge) {
+      const cleanKnowledge = {
+        easy: monster.knowledge.easy || undefined,
+        normal: monster.knowledge.normal || undefined,
+        hard: monster.knowledge.hard || undefined,
+        legendary: monster.knowledge.legendary || undefined,
+      };
+      const hasKnowledge = Object.values(cleanKnowledge).some((v) => v !== undefined);
+      if (hasKnowledge) {
+        const knStr = formatValueToTS(cleanKnowledge, indent);
+        lines.push(`${indent}creature.setKnowledgeResults(${knStr});`);
+      }
+    }
+
+    // Add structured properties
+    lines.push(...generateSharedPropertiesCode(monster, indent));
+
+    lines.push(`${indent}// --- Begin freeform code ---`);
+    if (monster.freeformCode) {
+      const freeformLines = monster.freeformCode.split('\n');
+      for (const line of freeformLines) {
+        lines.push(line ? `${indent}${line}` : '');
+      }
+    }
+    lines.push(`${indent}// --- End freeform code ---`);
+
+    return lines.join('\n');
+  } catch (e: unknown) {
+    if (e instanceof Error) {
+      e.message = `Error generating body for ${monster.name}: ${e.message}`;
+    }
+    throw e;
+  }
 }
 
 /**
@@ -524,7 +534,7 @@ ${bodyCode}
         groupConfigParts.push(`knowledge: ${formatValueToTS(group.knowledge, '      ')}`);
       }
       if (group.description) {
-        groupConfigParts.push(`description: ${formatValueToTSSingleLine(group.description)}`);
+        groupConfigParts.push(`description: ${formatValueToTS(group.description)}`);
       }
       groupConfigParts.push(`hasArt: ${Boolean(group.hasArt)}`);
       groupConfigParts.push(`sharedInitializer: (creature: Creature) => {

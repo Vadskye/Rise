@@ -78,7 +78,7 @@ export const TraitsTab = <T extends SharedEditableProperties>({
 
   const [selectedSpeedMode, setSelectedSpeedMode] = React.useState<string>('Fly');
   const [customSpeedMode, setCustomSpeedMode] = React.useState<string>('');
-  const [speedCategory, setSpeedCategory] = React.useState<'slow' | 'average' | 'normal' | 'fast'>(
+  const [speedCategory, setSpeedCategory] = React.useState<'slow' | 'average' | 'fast'>(
     'average',
   );
   const [speedLimitType, setSpeedLimitType] = React.useState<'none' | 'limitless' | 'limit'>(

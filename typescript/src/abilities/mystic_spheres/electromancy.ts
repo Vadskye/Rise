@@ -1,5 +1,6 @@
 import { MysticSphere } from '.';
 import { add_tag_to_sphere } from './add_tag';
+import { INJURY_CRIT }  from '../constants';
 
 export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
   name: 'Electromancy',

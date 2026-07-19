@@ -1,12 +1,12 @@
 #!/usr/bin/env fish
 # Generate only the Typescript code, which is faster
 g rts
-tsc --incremental; or exit 1
-npm run validate_stamina; or exit 1
 cd monster_ui
 npm run monster_ts; or exit 1
 tsc --incremental; or exit 1
 cd ..
+tsc --incremental; or exit 1
+npm run validate_stamina; or exit 1
 
 set logfile "../rtgen.log"
 

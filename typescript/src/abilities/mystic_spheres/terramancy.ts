@@ -1,6 +1,6 @@
 import { MysticSphere } from '.';
 import { add_tag_to_sphere } from './add_tag';
-import { BARRIER_COOLDOWN, CRIT_BECOMES_CONDITION, MULTIHIT_CRIT } from '../constants';
+import { BARRIER_COOLDOWN, MULTIHIT_CRIT } from '../constants';
 
 export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
   name: 'Terramancy',
