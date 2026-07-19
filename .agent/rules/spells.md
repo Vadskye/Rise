@@ -7,7 +7,7 @@ description: When interacting with spells, rituals, spellcasting, or mystic sphe
 
 ## Rule Locations
 
-Spells and spellcasting are generally defined in `comprehensive_codex/MysticSpheres.tex`. Individual spells and rituals are defined in `typescript/src/mystic_spheres/`. Rules for how abilities are used are generally found in `comprehensive_codex/Combat.tex`.
+Spells and spellcasting are generally defined in `comprehensive_codex/MysticSpheres.tex`. Individual spells and rituals are defined in `typescript/src/abilities/mystic_spheres/`. Rules for how abilities are used are generally found in `comprehensive_codex/Combat.tex`.
 
 ## Spell Roles
 
@@ -15,7 +15,7 @@ Each spell has a role defining its primary function in combat. A spell's role re
 
 ### List of Roles
 
-The list of roles is defined in `typescript/src/mystic_spheres/index.ts`. A summary of the roles is given below:
+The list of roles is defined in `typescript/src/abilities/mystic_spheres/index.ts`. A summary of the roles is given below:
 
 - `attune`: A buff that lasts as long as you stay attuned. (Primary role for persistent effects).
 - `boon`: Brief or one-round combat-relevant effects on one or more allies (including self).
