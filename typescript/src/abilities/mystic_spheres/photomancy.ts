@@ -41,7 +41,7 @@ export const photomancy: MysticSphere = {
       // Dazzled as a condition is 1.8 EA, so r3. Limited scope and double defense means
       // this is r1.
       attack: {
-        crit: "The target is also \\briefly \\blinded",
+        crit: "The target is also \\briefly \\blinded.",
         hit: `
           The target is \\dazzled as a \\glossterm{condition}.
         `,
@@ -124,7 +124,7 @@ export const photomancy: MysticSphere = {
 
       // Condition dazzle is 1.8 EA, so r3. Limited scope is r2.
       attack: {
-        crit: "The target is also \\briefly \\blinded",
+        crit: "The target is also \\briefly \\blinded.",
         hit: `
           The target is \\dazzled as a \\glossterm{condition}.
         `,
@@ -144,7 +144,7 @@ export const photomancy: MysticSphere = {
 
       // Condition dazzle is 1.8 EA, so r3. +1 rank of area gives a r5 area.
       attack: {
-        crit: "The target is also \\briefly \\blinded",
+        crit: "The target is also \\briefly \\blinded.",
         hit: `
           The target is \\dazzled as a \\glossterm{condition}.
         `,

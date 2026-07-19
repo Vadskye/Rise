@@ -25,27 +25,15 @@ function assertHasCorrectCrit(attack: ActiveAbilityAttack, effectName: string): 
     );
   }
 
-  const inflictsCondition = /condition/.test(attack.hit);
+  // Very rough estimate
+  const inflictsDebuff = /(briefly|condition)/.test(attack.hit);
   const dealsDamage = /\\damage/.test(attack.hit);
-  const grantsImmunity = /immun.*short rest/.test(attack.hit);
-  if (grantsImmunity) {
-    if (!dealsDamage && attack.crit) {
-      console.error(
-        `Attack from ${effectName} should not have crit effect because it grants immunity`,
-      );
+  if (attack.crit === undefined) {
+    if (!dealsDamage) {
+      console.error(`Attack from ${effectName} is missing a crit effect.`);
+    } else if (dealsDamage && inflictsDebuff) {
+      console.error(`Attack from ${effectName} is missing a crit effect.`);
     }
-  } else if (inflictsCondition && !dealsDamage && attack.crit === undefined) {
-    console.error(
-      `Attack from ${effectName} should have explicit crit effect for condition removal`,
-    );
-  } else if (
-    attack.crit &&
-    attack.crit.includes('condition') &&
-    !attack.hit.includes('condition')
-  ) {
-    console.error(
-      `Attack from ${effectName} has crit condition effect but does not inflict a condition`,
-    );
   }
 }
 
@@ -121,11 +109,11 @@ export function ritualSpheres(ritual: Ritual): string | null {
       \\noindent Mystic sphere effects:
       \\begin{raggeditemize}
         ${Object.entries(ritual.sphereEffects)
-          .map(([sphereName, effect]) => {
-            assertEndsWithPeriod(effect, ritual.name);
-            return `\\item ${sphereName}: ${effect}`;
-          })
-          .join('\n')}
+      .map(([sphereName, effect]) => {
+        assertEndsWithPeriod(effect, ritual.name);
+        return `\\item ${sphereName}: ${effect}`;
+      })
+      .join('\n')}
       \\end{raggeditemize}
     `
     : '';
