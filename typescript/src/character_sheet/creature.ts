@@ -627,7 +627,7 @@ export class Creature implements CreaturePropertyMap {
     const dv = 10 + this.strength;
     maneuver.effect += `
       \\hit The $name becomes \\glossterm{attached} to the target.
-      It can be removed forcibly with a \\glossterm{difficulty value} ${dv} Strength check as a \\glossterm{minor action}.
+      It can be removed forcibly with a \\glossterm{difficulty value} ${dv} Might check as a \\glossterm{minor action}.
     `;
     this.addActiveAbility({
       kind: 'maneuver',

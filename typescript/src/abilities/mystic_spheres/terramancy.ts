@@ -464,7 +464,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
           While it is swallowed by the earth, it does not have \\glossterm{line of sight} or \\glossterm{line of effect} to any creature other than itself.
           During each of your subsequent actions, it takes \\damagerankfive as the earth grinds it into paste.
 
-          The target can remove this condition by making a \\glossterm{difficulty value} 12 Strength check as a standard action.
+          The target can remove this condition by making a \\glossterm{difficulty value} 12 Might check as a standard action.
           If the earth or stone it is swallowed by is destroyed or otherwise rendered unable to contain the creature, this ability is \\glossterm{dismissed}.
           When this effect ends, the target reappears in the closest unoccupied space to where it was swallowed by the earth.
           Some effects such as teleportation can also remove the target from the fissure, which also ends the condition.
@@ -534,7 +534,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         name: 'earthbind',
         exceptThat: `
           as part of the same condition, the target is also \\slowed while it is \\glossterm{injured}.
-          At the start of its turn, the target can make a DV 10 Strength check.
+          At the start of its turn, the target can make a DV 10 Might check.
           Success means that it stops being slowed during that turn.
         `,
       },

@@ -47,7 +47,7 @@ Character creation blends thematic and mechanical decisions, typically following
     *   **Reflex Defense:** Dodging/evading (e.g., area attacks).
     *   **Fortitude Defense:** Attacks against body/life (e.g., poisons).
     *   **Mental Defense:** Attacks against mind (e.g., mind manipulation).
-*   **Encumbrance:** Penalty from armor to Dexterity-based checks and Strength-based skill checks (not direct Strength checks).
+*   **Encumbrance:** Penalty from armor to Dexterity-based checks.
 *   **Hit Points:** Measures how much damage a character can take before dying. Defined by class, increase with level and Constitution. Cannot be less than 1. Represent resilience, luck, and determination, not literal injury.
 *   **Injury Point:** 
 *   **Power (Mundane & Magical):** Represents ability strength.

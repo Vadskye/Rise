@@ -56,12 +56,12 @@ export const telekinesis: MysticSphere = {
       // suceeding on this attack prevents the target from reaching the party at all.
       // Being unable to move towards you is roughly the same as a 30' push; it's worse if
       // they are already in melee, but better if they have more than 30' of movement, so
-      // call it 2 EA. The Strength check is worth -2 ranks, probably.
+      // call it 2 EA. The Might check is worth -2 ranks, probably.
       attack: {
         hit: `
           The target is \\briefly unable to move closer to you without effort.
           This does not impede its movement unless its movement would bring it closer to you while it is within \\medrange of you.
-          As part of the movement, it can make a Strength check with a \\glossterm{difficulty value} of 6.
+          As part of the movement, it can make a Might check with a \\glossterm{difficulty value} of 6.
           If it succeeds, its movement towards you costs double the normal \\glossterm{available movement}.
           Otherwise, it is unable to move towards you, and that part of its movement is wasted.
       `,
@@ -81,7 +81,7 @@ export const telekinesis: MysticSphere = {
       // is stronger than a 30' push when kiting.
       functionsLike: {
         name: 'interposing force',
-        exceptThat: 'the \\glossterm{difficulty value} of the Strength check increases to 12.',
+        exceptThat: 'the \\glossterm{difficulty value} of the Might check increases to 12.',
       },
       rank: 5,
       roles: ['kite'],

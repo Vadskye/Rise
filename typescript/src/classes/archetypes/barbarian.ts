@@ -431,7 +431,7 @@ export function totemist(): RankAbility[] {
       description: `
         The benefit from your \\textit{totem animal} ability improves.
 
-        \\subcf{Bear} You add half your Constitution to Athletics, Might, and Strength checks.
+        \\subcf{Bear} You add half your Constitution to Athletics and Might checks.
 
         \\subcf{Crocodile} When you use this ability, if your strike \\glossterm{injures} the target, you can also knock it \\prone or enter a grapple with it (see \\pcref{Grappling}).
         This is a \\abilitytag{Size-Based} ability.

@@ -59,7 +59,7 @@ export const verdamancy: MysticSphere = {
         crit: 'The DV of the check increases to 15.',
         hit: `
           The target is \\slowed as a \\glossterm{condition}.
-          This condition can be removed if the target makes a \\glossterm{difficulty value} 8 Strength check as a \\glossterm{move action} to break the plants.
+          This condition can be removed if the target makes a \\glossterm{difficulty value} 10 Might check as a \\glossterm{move action} to break the plants.
           If the target makes this check as a standard action, it gains a +5 bonus.
           In addition, this condition is removed if the target takes damage from a \\atAcid or \\atFire ability.
         `,

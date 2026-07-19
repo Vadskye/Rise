@@ -90,25 +90,25 @@ export function objects(): Tool[] {
       {
         name: 'Manacles',
         rank: 0,
-        short_description: 'Flexibility 12 to escape',
+        short_description: 'DV 12 to escape',
         description: `
           This is a set of manacles designed for Medium humanoid creatures.
           Equivalent manacles might exist for creatures of different sizes or shapes.
-          Escaping the manacles while they are being worn requires a \\glossterm{difficulty value} 12 Flexibility check or a difficulty value 15 Strength check (see \\pcref{Flexibility}).
+          Escaping the manacles while they are being worn requires a \\glossterm{difficulty value} 12 Flexibility check or Might check (see \\pcref{Flexibility}).
         `,
         upgrades: [
           {
             rank: 1,
-            short_description: 'Flexibility 15 to escape',
+            short_description: 'DV 15 to escape',
             description: `
-              The Devices DV increases to 15.
+              The \\glossterm{difficulty value} to escape the manacles increases to 15.
             `,
           },
           {
             rank: 2,
-            short_description: 'Flexibility 20 to escape',
+            short_description: 'DV 20 to escape',
             description: `
-              The Flexibility DV increases to 20.
+              The \\glossterm{difficulty value} to escape the manacles increases to 20.
             `,
           },
         ],
@@ -120,11 +120,11 @@ export function objects(): Tool[] {
         name: 'Manacles, Mystic',
         rank: 4,
         magical: true,
-        short_description: 'Flexibility 25 to escape',
+        short_description: 'DV 25 to escape',
         description: `
           This is a set of magical manacles designed for Medium humanoid creatures.
           Equivalent manacles might exist for creatures of different sizes or shapes.
-          Escaping the manacles while they are being worn requires a \\glossterm{difficulty value} 25 Flexibility check or a difficulty value 20 Strength check (see \\pcref{Flexibility}).
+          Escaping the manacles while they are being worn requires a \\glossterm{difficulty value} 25 Flexibility check or Might check (see \\pcref{Flexibility}).
           In addition, creatures held in the manacles cannot be \\glossterm{teleported} by any means.
         `,
       },
@@ -136,7 +136,7 @@ export function objects(): Tool[] {
         rank: 0,
         short_description: 'Grants +3 bonus when breaking objects',
         description: `
-          If you use this portable battering ram with two hands while trying to break down a door or similar object, you gain a \\plus3 bonus to your Strength check.
+          If you use this portable battering ram with two hands while trying to break down a door or similar object, you gain a \\plus3 bonus to your Might check.
         `,
       },
       'wood',

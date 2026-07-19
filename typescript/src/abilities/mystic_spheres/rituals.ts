@@ -2731,7 +2731,7 @@ export const rituals: RitualDefinition[] = [
       Choose one Small or smaller \\glossterm{unattended} \\glossterm{metallic} object within \\medrange.
       It pulls itself toward metal objects within 1 foot of it.
       Smaller objects are typically pulled towards the target, while it moves itself towards larger objects.
-      Once it becomes affixed to another metal object, it takes a \\glossterm{difficulty value} 10 Strength check to separate the two objects.
+      Once it becomes affixed to another metal object, it takes a \\glossterm{difficulty value} 10 Might check to separate the two objects.
     `,
     rank: 1,
     roles: ['narrative'],
@@ -3233,14 +3233,14 @@ export const rituals: RitualDefinition[] = [
       Otherwise, the target creature must attune to the spell.
 
       The object cannot be moved from the location or separated from the creature by more than 5 feet without breaking the bond.
-      Breaking the bond requires a standard action and a \\glossterm{difficulty value} 15 Strength check.
+      Breaking the bond requires a standard action and a \\glossterm{difficulty value} 15 Might check.
     `,
     rank: 2,
     roles: ['narrative'],
     scaling: {
       special: `
         You can perform this ritual at a higher rank.
-        The difficulty value of the Strength check increases by 2 per rank above 2.
+        The difficulty value of the Might check increases by 2 per rank above 2.
       `,
     },
     sphereEffects: {

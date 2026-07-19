@@ -89,7 +89,7 @@ export const theHouseOfLiberation: Module = {
             After that, they will stand in silence until one minute has passed since Melvin originally opened the trapdoor.
             At that point, they will all leave Room 2.
 
-            The door can be forced open with a DV 15 Strength check.
+            The door can be forced open with a DV 15 Might check.
             If a character has at least 1 Strength, they can use one of the benches as an improvised battering ram to gain a +2 bonus to this check.
             A DV 10 Awareness check reveals that the door was recently patched to cover structural damage, and hitting the door in the same point should make it easier to break down.
             Taking advantage of the weak point grants a +4 bonus to this check.
@@ -97,7 +97,7 @@ export const theHouseOfLiberation: Module = {
             Attempting to break open the door is loud, and may attract attention from the guards in Room 2.
             The guards have a -5 penalty to Awareness during their meal, or a +0 bonus after the meal.
             Hearing the attempts at that distance has a DV of 4.
-            The party can accept a -2 penalty to the Strength check to increase the DV of this Awareness check by 2, but the Stealth skill doesn't help.
+            The party can accept a -2 penalty to the Might check to increase the DV of this Awareness check by 2, but the Stealth skill doesn't help.
             Roll Awareness once for the guards during each turn that the party spends attempting to break down the door.
             Success means that they hear something odd and will send two guards to investigate if the meal is still happening, or four guards after the meal.
 
@@ -106,7 +106,7 @@ export const theHouseOfLiberation: Module = {
             A particularly well-prepared character may have a lockpick hidden in their boot or some other similar device, which would allow them to make the check without a penalty.
             However, they must make a DV 10 Sleight of Hand check to have successfully hid it from the people who searched the party.
 
-            The grate in the room can be opened with a DV 10 Strength check.
+            The grate in the room can be opened with a DV 10 Might check.
             The pipe below the grate is two and a half feet in diameter, so it can be travelled through.
             However, it only opens into an enclosed ten-foot square room that holds waste, making it useless as an escape path.
 
@@ -141,7 +141,7 @@ export const theHouseOfLiberation: Module = {
             There is a ladder in the northwest corner of the room.
             It leads to a closed trapdoor.
             The closed trapdoor has a keyhole and is tightly sealed.
-            A DV 20 Strength check or a DV 25 Devices check can open it, which is almost certainly impossible for the party.
+            A DV 25 Devices or Might check can open it, which is almost certainly impossible for the party.
             A DV 17 Knowledge (arcana) check reveals that it is magically sealed.
             Critical success (DV 18) reveals that it was sealed with the \\ritual{mystic lock} ritual, making it effectively impossible to open without the magic key.
 

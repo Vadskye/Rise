@@ -38,7 +38,7 @@ export function treant(): RankAbility[] {
           In addition, it is attacked by plants as a \\glossterm{condition}.
           It takes 1d8 damage immediately, and during each of your subsequent actions while this condition lasts.
 
-          This condition can be removed if the target makes a \\glossterm{difficulty value} 10 Strength check as a \\glossterm{move action} to break the plants.
+          This condition can be removed if the target makes a \\glossterm{difficulty value} 10 Might check as a \\glossterm{move action} to break the plants.
           If the target makes this check as a standard action, it gains a \\plus5 bonus.
           In addition, this condition is removed if the target takes damage from a \\atFire ability.
           \\crit The condition must be removed an additional time before the effect ends.
