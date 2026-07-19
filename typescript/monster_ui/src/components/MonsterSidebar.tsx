@@ -264,7 +264,7 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
                           data-testid={`monster-item-${monster.name}`}
                           className={`list-item ${isSelected({ type: 'monster', name: monster.name }) ? 'active' : ''}`}
                           onClick={() => onSelect({ type: 'monster', name: monster.name })}
-                          style={{ paddingLeft: '24px' }}
+                          style={{ paddingLeft: '16px' }}
                           draggable
                           onDragStart={(e) => handleDragStart(e, 'monster', monster.name)}
                         >
@@ -288,7 +288,7 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
                         <div
                           key={group.name}
                           className="group-container"
-                          style={{ paddingLeft: '12px' }}
+                          style={{ paddingLeft: '8px' }}
                         >
                           <div
                             className={`group-header ${isGroupSelected ? 'active' : ''}`}
@@ -334,7 +334,7 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
                           </div>
 
                           {isGroupExpanded && (
-                            <div className="group-children" style={{ paddingLeft: '12px' }}>
+                            <div className="group-children" style={{ paddingLeft: '8px' }}>
                               {group.monsters.map((groupChild) => (
                                 <div
                                   key={`${group.name}.${groupChild.name}`}
@@ -371,7 +371,7 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
                               {group.monsters.length === 0 && (
                                 <div
                                   style={{
-                                    padding: '4px 10px',
+                                    padding: '2px 4px',
                                     fontSize: '0.8rem',
                                     color: 'var(--text-muted)',
                                   }}
@@ -421,8 +421,8 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
               </button>
             </div>
           ))}
-          {folderlessMonsters.length === 0 && (
-            <div style={{ padding: '8px 12px', fontSize: '0.85rem', color: 'var(--text-muted)' }}>
+           {folderlessMonsters.length === 0 && (
+            <div style={{ padding: '2px 4px', fontSize: '0.85rem', color: 'var(--text-muted)' }}>
               No individual monsters.
             </div>
           )}
@@ -523,7 +523,7 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
                     {group.monsters.length === 0 && (
                       <div
                         style={{
-                          padding: '4px 10px',
+                          padding: '2px 4px',
                           fontSize: '0.8rem',
                           color: 'var(--text-muted)',
                         }}
@@ -536,8 +536,8 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
               </div>
             );
           })}
-          {folderlessGroups.length === 0 && (
-            <div style={{ padding: '8px 12px', fontSize: '0.85rem', color: 'var(--text-muted)' }}>
+           {folderlessGroups.length === 0 && (
+            <div style={{ padding: '4px 8px', fontSize: '0.85rem', color: 'var(--text-muted)' }}>
               No monster groups.
             </div>
           )}
