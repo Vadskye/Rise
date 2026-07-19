@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { BARRIER_COOLDOWN, CONDITION_CRIT, MULTIHIT_CRIT, POISON_CRIT } from '../constants';
+import { BARRIER_COOLDOWN, MULTIHIT_CRIT, POISON_CRIT } from '../constants';
 
 export const verdamancy: MysticSphere = {
   name: 'Verdamancy',
@@ -56,7 +56,7 @@ export const verdamancy: MysticSphere = {
       // Ranged slow is 5.2 EA, or 2.6 EA with move action removal. That's r7, or r6 with
       // limited scope.
       attack: {
-        crit: CONDITION_CRIT,
+        crit: 'The DV of the check increases to 15.',
         hit: `
           The target is \\slowed as a \\glossterm{condition}.
           This condition can be removed if the target makes a \\glossterm{difficulty value} 8 Strength check as a \\glossterm{move action} to break the plants.

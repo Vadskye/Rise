@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { BARRIER_COOLDOWN, CONDITION_CRIT, MULTIHIT_CRIT } from '../constants';
+import { BARRIER_COOLDOWN, MULTIHIT_CRIT, CRIT_BECOMES_CONDITION } from '../constants';
 
 export const vivimancy: MysticSphere = {
   name: 'Vivimancy',
@@ -635,7 +635,7 @@ export const vivimancy: MysticSphere = {
       name: 'Withering',
 
       attack: {
-        crit: CONDITION_CRIT,
+        crit: 'The penalty increases whenever the target takes damage, rather than whenever it suffers an injury.',
         hit: `
           As a \\glossterm{condition}, the target's body withers.
           It takes a -2 penalty to its Fortitude defense.
@@ -815,6 +815,7 @@ export const vivimancy: MysticSphere = {
       name: 'Putrefying Blast',
 
       attack: {
+        crit: CRIT_BECOMES_CONDITION,
         hit: `The target is \\briefly \\dazed.`,
         targeting: `
           Make an attack vs. Fortitude against all \\glossterm{enemies} within a \\medarea cone from you.
@@ -830,7 +831,7 @@ export const vivimancy: MysticSphere = {
       name: 'Greater Putrefying Blast',
 
       attack: {
-        crit: CONDITION_CRIT,
+        crit: 'The target is \\briefly \\confused.',
         hit: `The target is \\dazed as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Fortitude against all \\glossterm{enemies} within a \\largearea cone from you.
