@@ -27,14 +27,14 @@ function assertHasCorrectCrit(attack: ActiveAbilityAttack, effectName: string): 
 
   // Very rough estimate
   const inflictsDebuff = /(briefly|condition)/.test(attack.hit);
-  const dealsDamage = /\\damage/.test(attack.hit);
+  const dealsDamage = /(\\damage|damage equal to)/.test(attack.hit);
   if (attack.crit === undefined) {
     if (!dealsDamage) {
       console.error(`Attack from ${effectName} is missing a crit effect.`);
     } else if (dealsDamage && inflictsDebuff) {
       console.error(`Attack from ${effectName} is missing a crit effect.`);
     }
-  }
+; }
 }
 
 function assertDoesNotUseEachTarget(attack: ActiveAbilityAttack, effectName: string): void {
