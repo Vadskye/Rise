@@ -214,6 +214,9 @@
   % Kind of an awkward hack
   An enraged creature automatically stops being enraged after ten minutes, even if it was unable to rest due to its rage.
 
+  \debuffdef{exposed} An exposed creature takes a \minus4 penalty to all defenses.
+  This effect automatically ends after the creature is next attacked, or at the start of its next turn, whichever comes first.
+
   \buffdef{focused} A focused creature can \glossterm{reroll} attack rolls once and keep the higher result.
   This only affects attack rolls, not \glossterm{miss chances} or \glossterm{checks}.
   Being focused does not improve your \glossterm{reactive attacks}.
@@ -316,6 +319,10 @@
   \debuffdef{squeezing} A squeezing creature is trying to move through an area too small for it to fight in normally.
   While squeezing, a creature moves at half speed and takes a \minus2 penalty to its Armor and Reflex defenses.
   For details, see \pcref{Squeezing}.
+
+  \debuffdef{stasis} A creature in stasis is frozen in place.
+  While in stasis, it is \glossterm{unconscious} and cannot be awakened by any means. 
+  It cannot be targeted, moved, damaged, or otherwise affected in any way.
 
   \buffdef{steeled} A steeled creature takes no additional damage from \glossterm{critical hits}.
   Any other special effects from critical hits, such a condition that must be removed multiple times, still function normally.

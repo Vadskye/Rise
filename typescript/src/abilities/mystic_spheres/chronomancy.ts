@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { BRIEF_COOLDOWN, CONDITION_CRIT, MINOR_STAMINA } from '../constants';
+import { BRIEF_COOLDOWN, INJURY_CRIT, MINOR_STAMINA } from '../constants';
 
 // This sphere gets maneuvers at equal rank to combat styles.
 // However, they are strictly mundane and limited in scope.
@@ -189,7 +189,7 @@ export const chronomancy: MysticSphere = {
       name: 'Slowing Grasp',
 
       attack: {
-        crit: CONDITION_CRIT,
+        crit: INJURY_CRIT,
         hit: `
           The target is \\briefly \\slowed.
           If it is \\glossterm{injured}, is also slowed as a \\glossterm{condition}.
@@ -209,7 +209,7 @@ export const chronomancy: MysticSphere = {
       name: 'Efficient Slowing Grasp',
 
       attack: {
-        crit: CONDITION_CRIT,
+        crit: 'The target is \\briefly locked in \\stasis',
         hit: `
           The target is \\slowed as a \\glossterm{condition}.
         `,
@@ -229,7 +229,7 @@ export const chronomancy: MysticSphere = {
       name: 'Slow',
 
       attack: {
-        crit: CONDITION_CRIT,
+        crit: INJURY_CRIT,
         hit: `
           If the target is \\glossterm{injured}, it is \\slowed as a \\glossterm{condition}.
         `,
@@ -288,7 +288,7 @@ export const chronomancy: MysticSphere = {
       name: 'Stutterstop',
 
       attack: {
-        crit: CONDITION_CRIT,
+        crit: 'The target always has a chance to be slowed, even while it is not injured.',
         hit: `
           As a \\glossterm{condition}, the target randomly slows down.
           At the start of its turn, if the target is \\glossterm{injured}, it has a 50\\% chance to be \\slowed until its next turn.
@@ -384,8 +384,7 @@ export const chronomancy: MysticSphere = {
       usageTime: 'minor',
       effect: `
         Choose either yourself or one Medium or smaller \\glossterm{ally} or \\glossterm{unattended} object within \\medrange.
-        The target is placed into stasis.
-        While in stasis, it cannot be targeted, moved, damaged, or otherwise affected in any way, and a creature is \\glossterm{unconscious}.
+        The target is placed into \\stasis.
 
         This effect normally lasts as long as you \\glossterm{sustain} it.
         If you use this ability on yourself, it instead lasts for a number of turns you choose when you cast the spell, up to a maximum of five turns.
@@ -627,7 +626,7 @@ export const chronomancy: MysticSphere = {
     {
       name: 'Wave of Senescence',
       attack: {
-        crit: CONDITION_CRIT,
+        crit: INJURY_CRIT,
         hit: `
           The target is \\briefly \\deafened and \\dazzled.
           If it is \\glossterm{injured}, it is also deafened and dazzled as a single \\glossterm{condition}.
@@ -647,7 +646,7 @@ export const chronomancy: MysticSphere = {
     {
       name: 'Massive Wave of Senescence',
       attack: {
-        crit: CONDITION_CRIT,
+        crit: 'The target is \\briefly \\confused.',
         hit: `
           The target is \\dazzled and \\deafened as a single \\glossterm{condition}.
         `,
@@ -711,8 +710,7 @@ export const chronomancy: MysticSphere = {
       name: 'Pour Time Sideways',
 
       effect: `
-        You are \\briefly locked in stasis.
-        While in stasis, you are \\debuff{unconscious} and cannot be targeted, moved, damaged, or otherwise affected in any way.
+        You are \\briefly locked in \\stasis.
         During your next turn after the stasis ends, you can take an extra \\glossterm{minor action} during your turn, and you add your \\glossterm{speed} to your \\glossterm{available movement}.
       `,
       rank: 2,
@@ -724,8 +722,7 @@ export const chronomancy: MysticSphere = {
       name: 'Greater Pour Time Sideways',
 
       effect: `
-        You are \\briefly locked in stasis.
-        While in stasis, you are \\debuff{unconscious} and cannot be targeted, moved, damaged, or otherwise affected in any way.
+        You are \\briefly locked in \\stasis.
         During your next turn after the stasis ends, you cannot take any \\glossterm{move actions}, and your \\glossterm{available movement} is zero.
         However, you can take an extra standard action that turn.
       `,

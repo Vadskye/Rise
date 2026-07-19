@@ -14,6 +14,7 @@ By EA:
   Dazed              & 0.9          & 1.4   & 1.2              & 3.0       \\
   Dazzled            & 0.4          & 0.6   & 0.8              & 2.1       \\
   Deafened           & 0.2          & 0.3   & 0.6              & 1.4       \\
+  Exposed            & 0.4          & 0.6   & N/A              & N/A       \\
   Fling 15' (ranged) & 1.0          & N/A   & N/A              & N/A       \\
   Fling 15' (melee)  & 0.8          & N/A   & N/A              & N/A       \\
   Fling 30' (ranged) & 1.9          & N/A   & N/A              & N/A       \\
@@ -54,6 +55,7 @@ By rank:
   Dazed              & 4d           & 1     & 0                & 9         \\
   Dazzled            & 1d           & 2d    & 3d               & 3         \\
   Deafened           & 0d           & 1d    & 2d               & 0         \\
+  Exposed            & 1d           & 2d    & N/A              & N/A       \\
   Fling 15' (ranged) & 4d           & N/A   & N/A              & N/A       \\
   Fling 15' (melee)  & 3d           & N/A   & N/A              & N/A       \\
   Fling 30' (ranged) & 4            & N/A   & N/A              & N/A       \\
@@ -295,6 +297,10 @@ In practice, it's a little lower than this, because dazzled doesn't affect AOE a
 ### Deafened: 0.3
 
 Deafened is basically the same as dazzled, except that the restriction is "spell with verbal components" rather than "targeted ability". That's less than half as common, so call it 0.3 EA.
+
+### Exposed: 0.6 EA
+
+-4 defenses against *one* attack is 0.4 EA using our normal calculation. Assume that this is used on an usually effective attack by an ally, so increase to 0.6 EA. Intuitively, exposed seems less dangerous than briefly dazed, but not *drastically* less dangerous, so 0.6 feels low or about right.
 
 ### Frightened by you: 0.8
 

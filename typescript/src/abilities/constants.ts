@@ -1,5 +1,3 @@
-export const CONDITION_CRIT =
-  'The condition must be removed an additional time before the effect ends.';
 export const MULTIHIT_CRIT = 'All instances of damage are doubled, not just the initial damage.';
 export const POISON_CRIT = 'The poison immediately escalates.';
 export const DELAYED_HALF = 'Half damage immediately, and no delayed damage.';
@@ -11,6 +9,7 @@ export const EXCEPT_NOT_DEEP =
 export const BARRIER_COOLDOWN =
   'You \\glossterm{briefly} cannot use this ability or any other \\atBarrier ability.';
 export const BRIEF_COOLDOWN = "You \\briefly can't use this ability again.";
+export const INJURY_CRIT = "The target is affected as if it was \\glossterm{injured}.";
 
 export const ABILITY_ROLES = [
   'attune', // Buff that lasts as long as you stay attuned.
