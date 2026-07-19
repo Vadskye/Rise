@@ -149,6 +149,1243 @@
           }
         }
       ]
+    },
+    {
+      "name": "Aboleth",
+      "folder": "Aberrations",
+      "requiredProperties": {
+        "alignment": "neutral evil",
+        "base_class": "leader",
+        "elite": true,
+        "creature_origin": "natural",
+        "creature_types": [
+          "aberration"
+        ],
+        "size": "huge",
+        "level": 12
+      },
+      "freeformCode": "",
+      "baseAttributes": [
+        4,
+        0,
+        6,
+        4,
+        4,
+        6
+      ],
+      "trainedSkills": [
+        "athletics",
+        "awareness",
+        "endurance",
+        "social_insight"
+      ],
+      "knowledge": {
+        "easy": "Legends speak of revolting water-dwelling creatures called aboleths that lurk in the deepest caves.\n        They are said to have power over people's minds.",
+        "normal": "An aboleth is a Huge fishlike creature found primarily in subterranean lakes and rivers.\n        It has four tentacles and two vertically stacked eyes in the center of its ridged forehead.\n        It uses its powerful mental abilities to overwhelm the minds of its foes.",
+        "hard": "Four pulsating dark blue orifices line the bottom of an aboleth's body and secrete gray slime that smells like rancid grease.\n        This slime coats its tentacles, and creatures struck by the tentacles can have their skin transformed into a similar slime.\n        Aboleths are amphibious, and they are able to drag themselves along with their tentacles on land, though they are much faster in the water.",
+        "legendary": "Aboleths can completely dominate the minds of lesser creatures.\n        They sometimes use their minions as agents to spy in cities or otherwise further their sinister goals."
+      },
+      "customSenses": [
+        {
+          "type": "Darkvision",
+          "range": 240
+        },
+        {
+          "type": "Telepathy",
+          "range": 480
+        }
+      ],
+      "customMovementSpeeds": [
+        {
+          "mode": "Swim",
+          "category": "average"
+        },
+        {
+          "mode": "Land",
+          "category": "slow"
+        }
+      ],
+      "properties": {
+        "has_art": true
+      },
+      "standardAbilities": [
+        {
+          "type": "spell",
+          "name": "Psionic Blast",
+          "options": {
+            "isMagical": true,
+            "usageTime": "elite"
+          }
+        },
+        {
+          "type": "spell",
+          "name": "Mighty Mind Crush",
+          "options": {
+            "isMagical": true,
+            "displayName": "Mind Crush",
+            "usageTime": "elite"
+          }
+        },
+        {
+          "type": "spell",
+          "name": "Mind Blank",
+          "options": {
+            "isMagical": true,
+            "usageTime": "elite"
+          }
+        },
+        {
+          "type": "spell",
+          "name": "Cause Fear",
+          "options": {
+            "isMagical": true,
+            "usageTime": "elite"
+          }
+        },
+        {
+          "type": "maneuver",
+          "name": "Weapon Multiplier",
+          "options": {
+            "isMagical": false,
+            "weapon": "tentacle",
+            "displayName": "Tentacle Slam"
+          }
+        }
+      ],
+      "customAbilities": [
+        {
+          "type": "spell",
+          "effect": "\n        The aboleth \\glossterm{dominates} the mind of humanoid or aberration within \\shortrange that is unconscious.\n        It can attune to this ability five times, allowing it to control up to five different creatures simultaneously.\n      ",
+          "name": "Dominate",
+          "tags": [
+            "Compulsion"
+          ]
+        },
+        {
+          "type": "spell",
+          "attack": {
+            "hit": "\n          The target becomes \\glossterm{poisoned} by aboleth slime.\n          The poison's accuracy is $accuracy.\n          It makes the target \\slowed while the poison lasts.\n          The second escalation also deals \\damagerankfive.\n        ",
+            "targeting": "\n          Whenever a creature hits the $name with a melee \\glossterm{strike} using a non-Long weapon, the $name makes an $accuracy \\glossterm{reactive attack} vs. Fortitude against the creature that struck it.\n        "
+          },
+          "name": "Slime-Covered Body",
+          "tags": [
+            "Poison"
+          ],
+          "usageTime": "triggered"
+        }
+      ]
+    },
+    {
+      "name": "Darkwraith",
+      "folder": "Animates",
+      "requiredProperties": {
+        "alignment": "neutral evil",
+        "base_class": "skirmisher",
+        "elite": true,
+        "creature_origin": "artificial",
+        "creature_types": [
+          "construct"
+        ],
+        "size": "medium",
+        "level": 4
+      },
+      "freeformCode": "",
+      "baseAttributes": [
+        0,
+        5,
+        0,
+        -4,
+        4,
+        4
+      ],
+      "trainedSkills": [
+        "awareness",
+        "stealth"
+      ],
+      "knowledge": {
+        "normal": "An darkwraith is a shadow disconnected from its host through strange umbramantic power.\n        Its body loosely resembles a dark humanoid shape, with all details obscured.\n        Despite its resemblance to a ghost, it is neither undead nor incorporeal.\n        It instinctively seeks out sources of light and warmth, including most living creatures, to suppress their hated radiance.",
+        "hard": "Darkwraiths bear an instinctive malevolence towards anything that brings light.\n        Although they swarm around sources of warmth, they will not use damaging abilities unless provoked by light or damage.\n        Darkwraiths cannot speak or make noise of any kind, though creatures around them seem to hear whispers anyway."
+      },
+      "traits": [
+        "simple-minded"
+      ],
+      "customSenses": [
+        {
+          "type": "Darkvision",
+          "range": 120
+        }
+      ],
+      "customMovementSpeeds": [
+        {
+          "mode": "Fly",
+          "category": "average",
+          "limitType": "limit",
+          "limitValue": 30
+        }
+      ],
+      "immunities": [
+        "Prone"
+      ],
+      "vulnerabilities": [
+        "Visual"
+      ],
+      "properties": {
+        "has_art": true
+      },
+      "standardAbilities": [
+        {
+          "type": "spell",
+          "name": "Dark Grasp",
+          "options": {
+            "isMagical": true
+          }
+        },
+        {
+          "type": "spell",
+          "name": "Shadowstrike",
+          "options": {
+            "isMagical": true,
+            "weapon": "bite"
+          }
+        },
+        {
+          "type": "spell",
+          "name": "Whispers in the Dark",
+          "options": {
+            "isMagical": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "Gelatinous Cube",
+      "folder": "Animates",
+      "requiredProperties": {
+        "alignment": "neutral",
+        "base_class": "brute",
+        "elite": true,
+        "creature_origin": "natural",
+        "creature_types": [
+          "ooze"
+        ],
+        "size": "large",
+        "level": 5
+      },
+      "freeformCode": "",
+      "baseAttributes": [
+        6,
+        -4,
+        8,
+        -10,
+        0,
+        -10
+      ],
+      "trainedSkills": [
+        "endurance",
+        "flexibility",
+        "stealth"
+      ],
+      "knowledge": {
+        "normal": "Gelatinous cubes are gigantic green oozes that creep along underground tunnels, digesting anything organic they encounter.\n        They are feared for their ability to easily snatch up smaller creatures and carry them away.",
+        "hard": "When a gelatinous cube finds prey, it simply moves through the unfortunate creature, trapping it inside the ooze's body.\n        Creatures engulfed in this way can find it difficult to escape while they are being slowly digested.\n        Gelatinous cubes are unusually fast compared to other oozes, though they are still slow compared to most creatures.",
+        "legendary": "Gelatinous cubes can climb walls, though they rarely climb high.\n        If possible, they prefer to nestle into alcoves so they can drop on unsuspecting prey."
+      },
+      "traits": [
+        "sightless",
+        "mindless"
+      ],
+      "customSenses": [
+        {
+          "type": "Tremorsense",
+          "range": 120
+        },
+        {
+          "type": "Tremorsight",
+          "range": 60
+        }
+      ],
+      "immunities": [
+        "Critical hits",
+        "Grappled"
+      ],
+      "properties": {
+        "has_art": true
+      },
+      "customAbilities": [
+        {
+          "type": "maneuver",
+          "name": "Dissolve",
+          "tags": [
+            "Acid"
+          ],
+          "usageTime": "elite",
+          "attack": {
+            "targeting": "\n          The $name makes a $accuracy attack vs. Fortitude against everything in its space.\n        ",
+            "hit": "\\damageranktwo.",
+            "miss": "Half damage."
+          }
+        },
+        {
+          "type": "maneuver",
+          "name": "Engulf",
+          "tags": [
+            "Brawling",
+            "Size-Based"
+          ],
+          "usageTime": "standard",
+          "effect": "\n        The $name moves up to its speed in a straight line.\n        Whenever it shares space with anything Medium or smaller during this movement, it makes a $accuracy+2 \\glossterm{brawling attack} vs. Fortitude against that creature or object.\n        \\hit The target is \\grappled by the $name.\n        The $name automatically controls the grapple.\n      "
+        }
+      ],
+      "passiveAbilities": [
+        {
+          "name": "Gelatinous",
+          "effect": "\n        The $name gains a plus10 bonus to Athletics checks made to climb.\n        In addition, it can move freely through spaces occupied by other creatures who do not have this ability.\n      ",
+          "isMagical": false
+        },
+        {
+          "name": "Suspension",
+          "effect": "\n        Anything that is \\grappled by the $name while sharing space with it is suspended within its body.\n        Whenever it moves, all suspended creatures and objects automatically move with it.\n      ",
+          "isMagical": false
+        }
+      ]
+    },
+    {
+      "name": "Fusion Elemental",
+      "folder": "Elementals",
+      "requiredProperties": {
+        "alignment": "neutral",
+        "base_class": "leader",
+        "elite": true,
+        "creature_origin": "artificial",
+        "creature_types": [
+          "construct"
+        ],
+        "size": "huge",
+        "level": 16
+      },
+      "freeformCode": "",
+      "baseAttributes": [
+        8,
+        6,
+        5,
+        -4,
+        2,
+        4
+      ],
+      "trainedSkills": [
+        "athletics",
+        "awareness"
+      ],
+      "knowledge": {
+        "normal": "Fusion elementals are a hybrid of the four common elemental types: air, earth, fire, and water.\n        Unlike common elementals, they are fully sentient."
+      },
+      "resistances": [
+        "Air",
+        "Earth",
+        "Fire",
+        "Water"
+      ],
+      "standardAbilities": [
+        {
+          "type": "spell",
+          "name": "Mighty Windslash",
+          "options": {
+            "isMagical": true
+          }
+        },
+        {
+          "type": "spell",
+          "name": "Mighty Windblast",
+          "options": {
+            "isMagical": true,
+            "usageTime": "elite"
+          }
+        },
+        {
+          "type": "maneuver",
+          "name": "Ground Slam+",
+          "options": {
+            "isMagical": false,
+            "tags": [
+              "Earth"
+            ],
+            "weapon": "slam"
+          }
+        },
+        {
+          "type": "spell",
+          "name": "Mighty Crushing Gravity",
+          "options": {
+            "isMagical": true,
+            "usageTime": "elite"
+          }
+        },
+        {
+          "type": "spell",
+          "name": "Distant Flame Dash",
+          "options": {
+            "isMagical": true
+          }
+        },
+        {
+          "type": "spell",
+          "name": "Mighty Pyroclasm",
+          "options": {
+            "isMagical": true,
+            "usageTime": "elite"
+          }
+        },
+        {
+          "type": "maneuver",
+          "name": "Forceful Smash",
+          "options": {
+            "isMagical": false,
+            "displayName": "Tidal Slam",
+            "tags": [
+              "Water"
+            ],
+            "weapon": "slam"
+          }
+        },
+        {
+          "type": "spell",
+          "name": "Constraining Bubble",
+          "options": {
+            "isMagical": true,
+            "usageTime": "elite"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Ankheg",
+      "folder": "Beasts",
+      "requiredProperties": {
+        "alignment": "neutral",
+        "base_class": "skirmisher",
+        "elite": true,
+        "creature_origin": "natural",
+        "creature_types": [
+          "beast"
+        ],
+        "size": "large",
+        "level": 4
+      },
+      "freeformCode": "",
+      "baseAttributes": [
+        4,
+        3,
+        2,
+        -8,
+        2,
+        0
+      ],
+      "trainedSkills": [
+        "awareness",
+        "might"
+      ],
+      "knowledge": {
+        "normal": "An ankheg is a Large burrowing ant-like creature with large mandibles and a taste for fresh meat.\n        It has six legs, and most ankhegs are brown.\n        In battle, they try to emerge briefly out of tunnels to ambush unwary foes and drag them underground.",
+        "hard": "A typical adult ankheg is about 10 feet long and weighs about 800 pounds.\n        Ankhegs burrow quickly thanks to the powerful acid they naturally produce.\n        They are able spit that acid at foes up to 20 feet away.\n        When burrowing, they usually do not leave usable tunnels behind them.\n        They can choose to do so, though this halves their burrowing speed.",
+        "legendary": "When hunting, ankhegs usually dig a winding tunnel up to 40 feet below the surface in the rich soil of forests or farmlands.\n        The tunnel usually 5 feet tall and wide, and up to 150 feet long.\n        If they have been in an area for some time, they generally store the remains from previous kills at the end of the tunnel.\n        When they move on, they leave any valuable objects behind with their old tunnels."
+      },
+      "traits": [
+        "multipedal"
+      ],
+      "customSenses": [
+        {
+          "type": "Darkvision",
+          "range": 60
+        },
+        {
+          "type": "Tremorsense",
+          "range": 60
+        }
+      ],
+      "customMovementSpeeds": [
+        {
+          "mode": "Burrow",
+          "category": "slow"
+        }
+      ],
+      "properties": {
+        "has_art": true
+      },
+      "standardAbilities": [
+        {
+          "type": "maneuver",
+          "name": "Grappling Strike",
+          "options": {
+            "isMagical": false,
+            "weapon": "bite"
+          }
+        }
+      ],
+      "customAbilities": [
+        {
+          "type": "spell",
+          "attack": {
+            "hit": "\\damageranktwo.",
+            "miss": "Half damage.",
+            "targeting": "\n          Make an attack vs. Reflex against everything in a \\medarealong, 5 ft. wide line from you.\n        "
+          },
+          "isMagical": false,
+          "name": "Spew Acid",
+          "tags": [
+            "Acid"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Carrion Crow",
+      "folder": "Beasts",
+      "requiredProperties": {
+        "alignment": "neutral",
+        "base_class": "skirmisher",
+        "elite": false,
+        "creature_origin": "natural",
+        "creature_types": [
+          "beast"
+        ],
+        "size": "small",
+        "level": 3
+      },
+      "freeformCode": "",
+      "baseAttributes": [
+        2,
+        4,
+        -1,
+        -6,
+        4,
+        0
+      ],
+      "trainedSkills": [
+        "awareness"
+      ],
+      "knowledge": {
+        "normal": "Carrion crows are larger and stronger than ordinary crows.\n        They are primarily scavengers, but if hungry, they will ruthlessly mob creatures who seem weak or isolated."
+      },
+      "customMovementSpeeds": [
+        {
+          "mode": "Fly",
+          "category": "average",
+          "limitType": "limit",
+          "limitValue": 90
+        }
+      ],
+      "standardAbilities": [
+        {
+          "type": "maneuver",
+          "name": "Eye Poke",
+          "options": {
+            "isMagical": false,
+            "displayName": "Peck Out Your Eyes",
+            "weapon": "beak"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Warg",
+      "folder": "Beasts",
+      "requiredProperties": {
+        "alignment": "neutral",
+        "base_class": "skirmisher",
+        "elite": false,
+        "creature_origin": "natural",
+        "creature_types": [
+          "beast"
+        ],
+        "size": "medium",
+        "level": 2
+      },
+      "freeformCode": "",
+      "baseAttributes": [
+        3,
+        2,
+        1,
+        -5,
+        2,
+        -1
+      ],
+      "trainedSkills": [
+        "awareness",
+        "survival"
+      ],
+      "traits": [
+        "quadrupedal"
+      ],
+      "customSenses": [
+        {
+          "type": "Scent"
+        }
+      ],
+      "standardAbilities": [
+        {
+          "type": "maneuver",
+          "name": "Weapon Multiplier",
+          "options": {
+            "isMagical": false,
+            "weapon": "bite"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Nightcrawler",
+      "folder": "Beasts",
+      "requiredProperties": {
+        "alignment": "neutral",
+        "base_class": "brute",
+        "elite": false,
+        "creature_origin": "natural",
+        "creature_types": [
+          "beast"
+        ],
+        "size": "large",
+        "level": 7
+      },
+      "freeformCode": "",
+      "baseAttributes": [
+        3,
+        4,
+        2,
+        -8,
+        0,
+        3
+      ],
+      "trainedSkills": [
+        "athletics",
+        "stealth"
+      ],
+      "knowledge": {
+        "normal": "A nightcrawler is a Large worm imbued with umbramantic power.\n        Its body is colored only in shades of gray.\n        In battle, they wriggle towards their foes and try to eat them.",
+        "hard": "A typical nightcrawler is about 9 feet long and weighs about 700 pounds.\n        They cover distances slowly, but are surprisingly agile in combat.\n        They can easily contort their body to avoid attacks.\n        Nightcrawlers have several magical abilities that draw on their umbramantic power to damage nearby foes.",
+        "legendary": "Nightcrawlers hate and fear light.\n        They can be driven away by light, and are weaker in its presence.\n        If they have no escape, they ferociously attack any sources of light."
+      },
+      "traits": [
+        "legless"
+      ],
+      "customSenses": [
+        {
+          "type": "Darkvision",
+          "range": 60
+        },
+        {
+          "type": "Blindsense",
+          "range": 120
+        }
+      ],
+      "customMovementSpeeds": [
+        {
+          "mode": "Climb",
+          "category": "slow"
+        },
+        {
+          "mode": "Land",
+          "category": "slow"
+        }
+      ],
+      "properties": {
+        "has_art": true
+      },
+      "standardAbilities": [
+        {
+          "type": "maneuver",
+          "name": "Weapon Multiplier",
+          "options": {
+            "isMagical": false,
+            "weapon": "bite"
+          }
+        },
+        {
+          "type": "spell",
+          "name": "My Shadow Hungers",
+          "options": {
+            "isMagical": true,
+            "displayName": "Crawling Darkness"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Hydra Maggot",
+      "folder": "Beasts",
+      "requiredProperties": {
+        "alignment": "neutral",
+        "base_class": "brute",
+        "elite": true,
+        "creature_origin": "natural",
+        "creature_types": [
+          "beast"
+        ],
+        "size": "large",
+        "level": 7
+      },
+      "freeformCode": "",
+      "baseAttributes": [
+        6,
+        6,
+        1,
+        -8,
+        2,
+        -1
+      ],
+      "trainedSkills": [
+        "might"
+      ],
+      "knowledge": {
+        "normal": "A hydra maggot is a Large maggot-like creature that wriggles across the ground in search of food.\n        It is named for the cluster of tentacles that sprout from its heads, which it uses to grab foes so it can eat them.",
+        "hard": "Hydra maggots are carnivorous, but are not picky, and will feast on rotting carcasses just as happily as they feast on fresh meat.\n        When hydra maggots attack, they can shape the tip of their tentacles into a point, allowing them to impale their foes.\n        Their tentacles are quite adept at slipping past defenses and through cracks in armor."
+      },
+      "traits": [
+        "legless"
+      ],
+      "customSenses": [
+        {
+          "type": "Darkvision",
+          "range": 60
+        }
+      ],
+      "properties": {
+        "has_art": true
+      },
+      "standardAbilities": [
+        {
+          "type": "maneuver",
+          "name": "Grappling Strike",
+          "options": {
+            "isMagical": false,
+            "weapon": "bite"
+          }
+        },
+        {
+          "type": "spell",
+          "name": "Putrefying Blast",
+          "options": {
+            "isMagical": true,
+            "displayName": "Maggot Breath"
+          }
+        }
+      ],
+      "customAbilities": [
+        {
+          "type": "maneuver",
+          "effect": "\n        Make a \\glossterm{strike}.\n        The attack is made against the target's Reflex defense instead of its Armor defense.\n      ",
+          "name": "Impaling Tentacles",
+          "weapon": "tentacle",
+          "usageTime": "elite",
+          "tags": [
+            "Sweeping (7)"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Grumblegrub",
+      "folder": "Beasts",
+      "requiredProperties": {
+        "alignment": "neutral",
+        "base_class": "brute",
+        "elite": false,
+        "creature_origin": "natural",
+        "creature_types": [
+          "beast"
+        ],
+        "size": "tiny",
+        "level": 1
+      },
+      "freeformCode": "",
+      "baseAttributes": [
+        -2,
+        2,
+        -2,
+        -8,
+        2,
+        -4
+      ],
+      "trainedSkills": [
+        "awareness"
+      ],
+      "knowledge": {
+        "normal": "Grumblegrubs are a Tiny worms that can eat almost anything.\n        They are particularly drawn to the smell of corpses. \n        Their name comes from the noise they make while eating, which sounds like someone grumbling grumpily.",
+        "hard": "Grumblegrubs fear fire, which quickly burns away their greasy bodies."
+      },
+      "traits": [
+        "legless",
+        "sightless"
+      ],
+      "customSenses": [
+        {
+          "type": "Tremorsight",
+          "range": 30
+        },
+        {
+          "type": "Tremorsense",
+          "range": 60
+        }
+      ],
+      "vulnerabilities": [
+        "Fire"
+      ],
+      "standardAbilities": [
+        {
+          "type": "maneuver",
+          "name": "Latch On",
+          "options": {
+            "isMagical": false,
+            "weapon": "bite"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Grumblegrub Swarm",
+      "folder": "Beasts",
+      "requiredProperties": {
+        "alignment": "neutral",
+        "base_class": "brute",
+        "elite": false,
+        "creature_origin": "natural",
+        "creature_types": [
+          "beast"
+        ],
+        "size": "medium",
+        "level": 4
+      },
+      "freeformCode": "",
+      "baseAttributes": [
+        -1,
+        4,
+        -1,
+        -8,
+        2,
+        -4
+      ],
+      "trainedSkills": [
+        "awareness"
+      ],
+      "traits": [
+        "swarm",
+        "sightless",
+        "legless"
+      ],
+      "customSenses": [
+        {
+          "type": "Tremorsight",
+          "range": 30
+        },
+        {
+          "type": "Tremorsense",
+          "range": 60
+        }
+      ],
+      "vulnerabilities": [
+        "Fire"
+      ],
+      "standardAbilities": [
+        {
+          "type": "maneuver",
+          "name": "Latch On",
+          "options": {
+            "isMagical": false,
+            "weapon": "bite"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Darkmantle",
+      "folder": "Beasts",
+      "requiredProperties": {
+        "alignment": "neutral",
+        "base_class": "skirmisher",
+        "elite": false,
+        "creature_origin": "natural",
+        "creature_types": [
+          "beast"
+        ],
+        "size": "small",
+        "level": 2
+      },
+      "freeformCode": "",
+      "baseAttributes": [
+        4,
+        3,
+        -2,
+        -6,
+        3,
+        0
+      ],
+      "trainedSkills": [
+        "athletics",
+        "awareness",
+        "stealth"
+      ],
+      "knowledge": {
+        "normal": "A darkmantle has a small body and a large number of strong tentacles.\n        It hides itself on walls and ceilings and drops on its foes to strangle them to death.",
+        "hard": "Darkmantles hang from ceilings using a muscular \"foot\" at the top of their bodies.\n        They can look like a stalactite by holding their tentacles stiffly under themeselves, or like a lump of rock by spreading their tentacles so the membrane between them covers their bodies.\n        Their shell and skin usually resemble limestone, but a darkmantle can change its color to match almost any type of stony background.\n \n        A darkmantle that misses its initial attack often climbs away and tries to drop on the opponent again if there is a conveniently placed wall.\n        Otherwise, it tries to climb its opponent's body to suffocate its head.\n        Darkmantles move very slowly, so they rely heavily on stealth to ambush their foes."
+      },
+      "customSenses": [
+        {
+          "type": "Darkvision",
+          "range": 120
+        }
+      ],
+      "customMovementSpeeds": [
+        {
+          "mode": "Climb",
+          "category": "slow"
+        },
+        {
+          "mode": "Land",
+          "category": "slow"
+        }
+      ],
+      "properties": {
+        "has_art": true
+      },
+      "standardAbilities": [
+        {
+          "type": "maneuver",
+          "name": "Grappling Strike",
+          "options": {
+            "isMagical": false,
+            "weapon": "tentacle"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Griffon",
+      "folder": "Beasts",
+      "requiredProperties": {
+        "alignment": "neutral",
+        "base_class": "skirmisher",
+        "elite": true,
+        "creature_origin": "natural",
+        "creature_types": [
+          "beast"
+        ],
+        "size": "large",
+        "level": 5
+      },
+      "freeformCode": "",
+      "baseAttributes": [
+        5,
+        5,
+        2,
+        -5,
+        2,
+        2
+      ],
+      "trainedSkills": [
+        "athletics",
+        "awareness"
+      ],
+      "knowledge": {
+        "normal": "Griffons are powerful, majestic creatures with characteristics of both lions and eagles.\n        A pair of broad, golden wings emerge from the creature’s back that can span 25 feet or more.\n        In battle, they pounce on their foes like a lion.",
+        "hard": "From nose to tail, an adult griffon can measure as much as 8 feet.\n        Griffons cannot speak, but they understand Common."
+      },
+      "traits": [
+        "quadrupedal"
+      ],
+      "customSenses": [
+        {
+          "type": "Low-light Vision"
+        }
+      ],
+      "customMovementSpeeds": [
+        {
+          "mode": "Fly",
+          "category": "average",
+          "limitType": "limit",
+          "limitValue": 60
+        }
+      ],
+      "properties": {
+        "has_art": true
+      },
+      "standardAbilities": [
+        {
+          "type": "maneuver",
+          "name": "Rend the Hide",
+          "options": {
+            "isMagical": false,
+            "displayName": "Bloodletting Claws",
+            "usageTime": "elite",
+            "weapon": "claws"
+          }
+        },
+        {
+          "type": "maneuver",
+          "name": "Weapon Multiplier",
+          "options": {
+            "isMagical": false,
+            "weapon": "bite"
+          }
+        },
+        {
+          "type": "maneuver",
+          "name": "Mighty Charge",
+          "options": {
+            "isMagical": false,
+            "displayName": "Charge",
+            "weapon": "bite"
+          }
+        }
+      ],
+      "customAbilities": [
+        {
+          "type": "maneuver",
+          "effect": "\n        The $name makes a $accuracy attack vs. Reflex against against one non-adjacent creature within \\distrange.\n        \\hit The target becomes marked as a condition.\n        If the $name spends its full turn without being able to see the target, this effect ends.\n        The $name gains a +2 bonus to accuracy and defenses against all targets that it has marked in this way.\n      ",
+          "name": "Eagle Eye",
+          "usageTime": "elite"
+        }
+      ]
+    },
+    {
+      "name": "Yrthak",
+      "folder": "Beasts",
+      "requiredProperties": {
+        "alignment": "neutral",
+        "base_class": "skirmisher",
+        "elite": true,
+        "creature_origin": "natural",
+        "creature_types": [
+          "beast"
+        ],
+        "size": "huge",
+        "level": 7
+      },
+      "freeformCode": "",
+      "baseAttributes": [
+        5,
+        2,
+        4,
+        -5,
+        6,
+        0
+      ],
+      "trainedSkills": [
+        "awareness",
+        "stealth"
+      ],
+      "knowledge": {
+        "normal": "Yrthaks are virtually blind.\n        They can \"see\" around themselves with their blindsight ability, which relies on their incredible hearing.\n        Beyond that range, they cannot see, though they can still identify the existence and location of creatures at great range by sound."
+      },
+      "traits": [
+        "sightless"
+      ],
+      "customSenses": [
+        {
+          "type": "Blindsight",
+          "range": 120
+        },
+        {
+          "type": "Blindsense",
+          "range": 240
+        }
+      ],
+      "customMovementSpeeds": [
+        {
+          "mode": "Fly",
+          "category": "average",
+          "limitType": "limit",
+          "limitValue": 30
+        }
+      ],
+      "standardAbilities": [
+        {
+          "type": "maneuver",
+          "name": "Grappling Strike",
+          "options": {
+            "isMagical": false,
+            "weapon": "bite"
+          }
+        }
+      ],
+      "customAbilities": [
+        {
+          "type": "maneuver",
+          "attack": {
+            "hit": "\\damagerankfour.",
+            "halfOnMiss": true,
+            "targeting": "\n          Make an attack vs. Fortitude against all creatures in a \\medarealong, 5 ft. wide line.\n        "
+          },
+          "name": "Sonic Lance",
+          "tags": [
+            "Auditory"
+          ],
+          "usageTime": "elite"
+        }
+      ],
+      "passiveAbilities": [
+        {
+          "name": "Echolocation",
+          "effect": "\n        The $name uses its hearing to \"see\".\n        While it is \\deafened, it loses its natural blindsight and blindsense abilities, making it \\blinded.\n      ",
+          "isMagical": false
+        }
+      ]
+    },
+    {
+      "name": "Stygian Leech",
+      "folder": "Beasts",
+      "requiredProperties": {
+        "alignment": "neutral",
+        "base_class": "brute",
+        "elite": false,
+        "creature_origin": "natural",
+        "creature_types": [
+          "beast"
+        ],
+        "size": "medium",
+        "level": 5
+      },
+      "freeformCode": "",
+      "baseAttributes": [
+        5,
+        2,
+        4,
+        -6,
+        2,
+        -2
+      ],
+      "trainedSkills": [
+        "athletics",
+        "stealth"
+      ],
+      "knowledge": {
+        "normal": "A stygian leech is a Medium worm-like creature that feeds on life energy.\n        It uses its ability to crawl on walls and ceilings to drop on unsuspecting foes.",
+        "hard": "Stygian leeches instinctively avoid feeding on other stygian leeches, but will otherwise attempt to drain the life from any living creatures, regardless of danger.\n        They can instinctively sense the location of any living creatures nearby.\n        Their life-draining attacks can allow them to heal themselves.",
+        "legendary": "Stygian leeches ignore non-living creatures entirely unless severely provoked.\n        Some non-living creatures, such as intelligent undead, take advantage of this by gathering stygian leeches to guard their homes."
+      },
+      "traits": [
+        "legless"
+      ],
+      "customSenses": [
+        {
+          "type": "Darkvision",
+          "range": 120
+        },
+        {
+          "type": "Lifesense",
+          "range": 120
+        }
+      ],
+      "customMovementSpeeds": [
+        {
+          "mode": "Climb",
+          "category": "average"
+        }
+      ],
+      "properties": {
+        "has_art": true
+      },
+      "customAbilities": [
+        {
+          "type": "maneuver",
+          "effect": "\n        Make a \\glossterm{strike}.\n        \\injury The $name regains \\hpranktwo.\n      ",
+          "name": "Leech Life",
+          "tags": [
+            "Blood"
+          ],
+          "weapon": "bite"
+        }
+      ]
+    },
+    {
+      "name": "Quadrilla",
+      "folder": "Beasts",
+      "requiredProperties": {
+        "alignment": "neutral",
+        "base_class": "brute",
+        "elite": true,
+        "creature_origin": "natural",
+        "creature_types": [
+          "beast"
+        ],
+        "size": "large",
+        "level": 9
+      },
+      "freeformCode": "",
+      "baseAttributes": [
+        8,
+        6,
+        1,
+        -6,
+        2,
+        -2
+      ],
+      "trainedSkills": [
+        "athletics",
+        "might",
+        "stealth"
+      ],
+      "knowledge": {
+        "normal": "A quadrilla is a mighty ape with four arms.\n        It leaps upon its foes and bashes them to death in a fury."
+      },
+      "standardAbilities": [
+        {
+          "type": "maneuver",
+          "name": "Leap Slam",
+          "options": {
+            "isMagical": false
+          }
+        },
+        {
+          "type": "maneuver",
+          "name": "Weapon Multiplier",
+          "options": {
+            "isMagical": false,
+            "weapon": "fists"
+          }
+        },
+        {
+          "type": "maneuver",
+          "name": "Weapon Multiplier",
+          "options": {
+            "isMagical": false,
+            "weapon": "fists",
+            "displayName": "More Fists",
+            "usageTime": "elite"
+          }
+        },
+        {
+          "type": "maneuver",
+          "name": "Mighty Roar",
+          "options": {
+            "isMagical": false,
+            "usageTime": "elite"
+          }
+        },
+        {
+          "type": "maneuver",
+          "name": "Fearsome Roar",
+          "options": {
+            "isMagical": false,
+            "usageTime": "elite"
+          }
+        }
+      ],
+      "customAbilities": [
+        {
+          "type": "maneuver",
+          "name": "Strangle",
+          "attack": {
+            "hit": "\n          \\damagerankthree, and the target is \\grappled by the $name.\n        ",
+            "targeting": "\n          Make a \\glossterm{brawling attack} with a free hand against the Brawn and Reflex defenses of one creature you \\glossterm{touch}.\n        "
+          }
+        }
+      ],
+      "passiveAbilities": [
+        {
+          "name": "Four Arms",
+          "effect": "\n        The $name has four arms.\n        When it initiates a grapple while not already grappling a creature, it automatically controls the grapple.\n      ",
+          "isMagical": false
+        }
+      ]
     }
   ],
   "monsterGroups": [
@@ -369,7 +1606,346 @@
       "folder": "Uncivilized Humanoids",
       "hasArt": false,
       "sharedFreeformCode": "",
-      "monsters": []
+      "monsters": [
+        {
+          "name": "Orc Peon",
+          "requiredProperties": {
+            "alignment": "lawful evil",
+            "base_class": "brute",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 1
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            4,
+            0,
+            1,
+            -2,
+            0,
+            0
+          ],
+          "trainedSkills": [
+            "endurance"
+          ],
+          "knowledge": {
+            "normal": "Orc peons are the weakest warrior that orc clans field in battle.\n            They have the lowest status of any adult in orc society.\n            Peons are typically fresh recruits who have not yet been fully incorporated into an orc army."
+          },
+          "equippedArmor": "buff leather",
+          "properties": {
+            "has_art": true
+          },
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "greataxe"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Orc Grunt",
+          "requiredProperties": {
+            "alignment": "lawful evil",
+            "base_class": "brute",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 2
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            5,
+            0,
+            2,
+            -2,
+            0,
+            0
+          ],
+          "trainedSkills": [
+            "endurance"
+          ],
+          "knowledge": {
+            "normal": "Orc grunts are the standard warrior that orc clans field in battle."
+          },
+          "equippedArmor": "leather lamellar",
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "greataxe"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Wild Swing",
+              "options": {
+                "isMagical": false,
+                "weapon": "greataxe"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Orc Butcher",
+          "requiredProperties": {
+            "alignment": "lawful evil",
+            "base_class": "brute",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 3
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            5,
+            1,
+            2,
+            0,
+            0,
+            0
+          ],
+          "trainedSkills": [
+            "endurance"
+          ],
+          "knowledge": {
+            "normal": "Orc butchers usually run the field kitchens in orc armies.\n            They tend to be smarter than the average orc warrior, but are no less ferocious when challenged."
+          },
+          "equippedArmor": "leather lamellar",
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Bloodletter",
+              "options": {
+                "isMagical": false,
+                "weapon": "greataxe"
+              }
+            }
+          ],
+          "customAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Butcher's Cleaver",
+              "effect": "\n            The $name makes a strike.\n          ",
+              "tags": [
+                "Sweeping (2)"
+              ],
+              "weapon": "greataxe"
+            }
+          ]
+        },
+        {
+          "name": "Orc Veteran",
+          "requiredProperties": {
+            "alignment": "lawful evil",
+            "base_class": "brute",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 5
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            6,
+            0,
+            3,
+            -2,
+            1,
+            1
+          ],
+          "trainedSkills": [
+            "endurance"
+          ],
+          "knowledge": {
+            "normal": "Orc veterans are battle-hardened elite warriors who are deadly at any range.\n            They often serve as bodyguards to orc chieftains or as devastating shock troops in battle."
+          },
+          "equippedArmor": "scale",
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "greataxe"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Wild Swing",
+              "options": {
+                "isMagical": false,
+                "weapon": "greataxe"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "heavy crossbow"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Orc Clan Chief",
+          "requiredProperties": {
+            "alignment": "lawful evil",
+            "base_class": "leader",
+            "elite": true,
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 7
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            6,
+            0,
+            4,
+            0,
+            2,
+            3
+          ],
+          "trainedSkills": [
+            "endurance"
+          ],
+          "knowledge": {
+            "normal": "Orc clan chiefs are the among the most powerful orc warriors.\n            Even the lowest clan chief commands hundreds of powerful orc warriors, plus at least as many noncombatants."
+          },
+          "equippedArmor": "scale",
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "greataxe"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Distant Shot",
+              "options": {
+                "isMagical": false,
+                "weapon": "heavy crossbow"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Armorcrusher",
+              "options": {
+                "isMagical": false,
+                "weapon": "greataxe"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Battle Command",
+              "options": {
+                "isMagical": false,
+                "usageTime": "elite"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Orc Shaman",
+          "requiredProperties": {
+            "alignment": "lawful evil",
+            "base_class": "leader",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 2
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            4,
+            1,
+            1,
+            -1,
+            1,
+            4
+          ],
+          "trainedSkills": [
+            "endurance"
+          ],
+          "knowledge": {
+            "normal": "Orc shamans provide orc battle squads with divine magical support.\n            They primarily aid their allies, though they have no fear of taking up arms themselves when necessary.",
+            "hard": "If an orc shaman proves their mettle and wisdom in combat, they may eventually become a trusted advisor to a clan chief.\n            The advice and spiritual guidance of a capable shaman often has more influence on the success of an orc clan than mere strength of arms, and good clan chiefs recognize that fact."
+          },
+          "equippedArmor": "leather lamellar",
+          "properties": {
+            "has_art": true
+          },
+          "standardAbilities": [
+            {
+              "type": "spell",
+              "name": "Reveal Victory",
+              "options": {
+                "isMagical": true
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Foresee Safety",
+              "options": {
+                "isMagical": true
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Executioner's Axe",
+              "options": {
+                "isMagical": true
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "greataxe"
+              }
+            }
+          ]
+        }
+      ],
+      "knowledge": {
+        "normal": "Orcs are green-skinned humanoids that are generally larger, stronger, and less intelligent than humans.\n          Most other humanoid races consider them ugly, though orcs would say the same about most other humanoid races.\n          They tend to be selfish, but they adhere strictly to the particular orcish interpretation of honorable combat.",
+        "hard": "Honorable orc combat avoids sneak attacks or deception, allows enemies to surrender, and respects the distinction between civilians and combatants.\n          However, honorable orc combat does not require a great deal of warning before battle is joined, and they have no concept of \"dirty fighting\" - orcs fight brutally and with no reservations in combat.\n\n          Orcs have highly militaristic and regimented society that is divided into different clans, each of which is ruled by a powerful chieftain.",
+        "legendary": "Orc hierarchy and status is almost always determined by power, and chieftains can be deposed at specific intervals in a personal trial by combat.\n          You know the general patterns that determine when these personal trials by combat are permissible for local orc clans."
+      },
+      "customSenses": [
+        {
+          "type": "Darkvision",
+          "range": 60
+        }
+      ]
     },
     {
       "name": "Bandits",
@@ -1268,6 +2844,3933 @@
       ],
       "equippedArmor": "scale",
       "equippedShield": "standard shield"
+    },
+    {
+      "name": "Kobolds",
+      "folder": "Uncivilized Humanoids",
+      "hasArt": false,
+      "sharedFreeformCode": "",
+      "monsters": [
+        {
+          "name": "Nipper",
+          "requiredProperties": {
+            "alignment": "lawful neutral",
+            "base_class": "skirmisher",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 2
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            0,
+            4,
+            2,
+            0,
+            4,
+            0
+          ],
+          "trainedSkills": [
+            "awareness",
+            "stealth"
+          ],
+          "equippedArmor": "buff leather",
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Sneak Attack",
+              "options": {
+                "isMagical": false,
+                "weapon": "smallswords",
+                "displayName": "Sneaky Nip"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Sneak Attack",
+              "options": {
+                "isMagical": false,
+                "weapon": "darts",
+                "displayName": "Sneaky Darts"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Snipper",
+          "requiredProperties": {
+            "alignment": "lawful neutral",
+            "base_class": "sniper",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 2
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            0,
+            4,
+            2,
+            0,
+            4,
+            0
+          ],
+          "trainedSkills": [
+            "awareness",
+            "stealth"
+          ],
+          "equippedArmor": "buff leather",
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "longbow"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Heartpiercer",
+              "options": {
+                "isMagical": false,
+                "weapon": "longbow"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Yipper",
+          "requiredProperties": {
+            "alignment": "lawful neutral",
+            "base_class": "leader",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 3
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            -2,
+            4,
+            2,
+            1,
+            2,
+            3
+          ],
+          "trainedSkills": [
+            "awareness",
+            "stealth"
+          ],
+          "equippedArmor": "buff leather",
+          "equippedShield": "buckler",
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "spear"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Dazing Shout",
+              "options": {
+                "isMagical": false
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Battle Command",
+              "options": {
+                "isMagical": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "Dragonsworn Nipper",
+          "requiredProperties": {
+            "alignment": "lawful neutral",
+            "base_class": "skirmisher",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 11
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            0,
+            6,
+            4,
+            0,
+            4,
+            2
+          ],
+          "trainedSkills": [
+            "awareness",
+            "stealth"
+          ],
+          "resistances": [
+            "Varies"
+          ],
+          "equippedArmor": "buff leather",
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Sneak Attack",
+              "options": {
+                "isMagical": false,
+                "weapon": "smallswords",
+                "displayName": "Sneaky Nip"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Sneak Attack",
+              "options": {
+                "isMagical": false,
+                "weapon": "darts",
+                "displayName": "Sneaky Darts"
+              }
+            }
+          ],
+          "passiveAbilities": [
+            {
+              "name": "Dragonsworn",
+              "effect": "\n      The $name is \\resistant to the tag associated with the dragon it swore to serve.\n    ",
+              "isMagical": false
+            }
+          ]
+        },
+        {
+          "name": "Dragonsworn Snipper",
+          "requiredProperties": {
+            "alignment": "lawful neutral",
+            "base_class": "sniper",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 12
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            0,
+            6,
+            2,
+            0,
+            6,
+            2
+          ],
+          "trainedSkills": [
+            "awareness",
+            "stealth"
+          ],
+          "resistances": [
+            "Varies"
+          ],
+          "equippedArmor": "buff leather",
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "longbow"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Distant Shot",
+              "options": {
+                "isMagical": false,
+                "weapon": "longbow"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Pure Precision",
+              "options": {
+                "isMagical": false,
+                "weapon": "longbow"
+              }
+            }
+          ],
+          "passiveAbilities": [
+            {
+              "name": "Dragonsworn",
+              "effect": "\n      The $name is \\resistant to the tag associated with the dragon it swore to serve.\n    ",
+              "isMagical": false
+            }
+          ]
+        },
+        {
+          "name": "Dragonsworn Yipper",
+          "requiredProperties": {
+            "alignment": "lawful neutral",
+            "base_class": "leader",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 13
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            -1,
+            6,
+            3,
+            2,
+            5,
+            4
+          ],
+          "trainedSkills": [
+            "awareness",
+            "stealth"
+          ],
+          "resistances": [
+            "Varies"
+          ],
+          "equippedArmor": "buff leather",
+          "equippedShield": "buckler",
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "spear"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Directing Shout",
+              "options": {
+                "isMagical": false
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Dazing Shout+",
+              "options": {
+                "isMagical": false
+              }
+            }
+          ],
+          "passiveAbilities": [
+            {
+              "name": "Dragonsworn",
+              "effect": "\n      The $name is \\resistant to the tag associated with the dragon it swore to serve.\n    ",
+              "isMagical": false
+            }
+          ]
+        }
+      ],
+      "knowledge": {
+        "normal": "Although kobolds can be found in civilization, many kobolds live out in the wilds.\nThey are coordinated and brave fighters as long as they have a leader present to guide them.\nIf their leader falls, they will generally try to flee and regroup.",
+        "hard": "Kobolds must respect their leader for more than brute strength.\nThey always prefer to serve dragons if possible, but cunning and charismatic creatures can convince kobolds to form temporary alliances out of mutual interest."
+      }
+    },
+    {
+      "name": "Necromancers",
+      "folder": "Civilized Humanoids",
+      "hasArt": false,
+      "sharedFreeformCode": "",
+      "monsters": [
+        {
+          "name": "Graverobber",
+          "requiredProperties": {
+            "alignment": "chaotic evil",
+            "base_class": "leader",
+            "elite": true,
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 4
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            0,
+            4,
+            0,
+            2,
+            2,
+            4
+          ],
+          "trainedSkills": [
+            "awareness",
+            "stealth",
+            "craft_bone"
+          ],
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "heavy crossbow"
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Inflict Wound",
+              "options": {
+                "isMagical": true
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Putrefying Blast",
+              "options": {
+                "isMagical": true,
+                "usageTime": "elite"
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Lifesteal",
+              "options": {
+                "isMagical": true
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Drain Life",
+              "options": {
+                "isMagical": true,
+                "usageTime": "elite"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Lichbound",
+          "requiredProperties": {
+            "alignment": "lawful evil",
+            "base_class": "leader",
+            "elite": true,
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 8
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            0,
+            2,
+            4,
+            3,
+            2,
+            6
+          ],
+          "trainedSkills": [
+            "awareness",
+            "intimidate",
+            "craft_bone",
+            "knowledge_arcana"
+          ],
+          "knowledge": {
+            "normal": "A lichbound is a mage who has started the process of becoming a lich by intentionally splintering their own soul.\n            They still have far to go before they truly embrace undeath, but they gain some benefits from their partial transformation."
+          },
+          "customSenses": [
+            {
+              "type": "Darkvision",
+              "range": 60
+            },
+            {
+              "type": "Lifesight",
+              "range": 30
+            }
+          ],
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": true,
+                "weapon": "scythe",
+                "displayName": "Reaping Scythe"
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Circle of Death",
+              "options": {
+                "isMagical": true,
+                "usageTime": "elite"
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Fearsome Aura",
+              "options": {
+                "isMagical": true,
+                "usageTime": "triggered"
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Mind Blank",
+              "options": {
+                "isMagical": true,
+                "displayName": "Splinter Soul",
+                "usageTime": "elite"
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Lifetap Blast",
+              "options": {
+                "isMagical": true
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Sanguine Bond",
+              "options": {
+                "isMagical": true,
+                "usageTime": "elite"
+              }
+            }
+          ],
+          "customAbilities": [
+            {
+              "type": "spell",
+              "name": "Lifesteal Grasp",
+              "attack": {
+                "hit": "\\damagerankfour.",
+                "injury": "You regain \\hprankfive.",
+                "targeting": "\n              You must have a \\glossterm{free hand} to cast this spell.\n\n              Make an attack vs. Fortitude against a creature you \\glossterm{touch}.\n            "
+              },
+              "tags": [
+                "Life"
+              ]
+            }
+          ],
+          "passiveAbilities": [
+            {
+              "name": "Life Suppression",
+              "effect": "\n              The $name is immune to \\atLife attacks.\n            ",
+              "isMagical": false
+            }
+          ]
+        },
+        {
+          "name": "Idoris, Queen of the Dead",
+          "requiredProperties": {
+            "alignment": "lawful neutral",
+            "base_class": "leader",
+            "elite": true,
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 18
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            0,
+            4,
+            1,
+            5,
+            6,
+            10
+          ],
+          "trainedSkills": [
+            "awareness",
+            "knowledge_arcana",
+            "knowledge_souls",
+            "persuasion"
+          ],
+          "knowledge": {
+            "normal": "Idoris is a powerful necromancer who lives deep in a cursed forest.\n              She controls a large army of undead minions who aggressively defend her territory."
+          },
+          "standardAbilities": [
+            {
+              "type": "spell",
+              "name": "Mighty Retributive Judgment",
+              "options": {
+                "isMagical": true,
+                "usageTime": "elite"
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Mighty Word of Faith",
+              "options": {
+                "isMagical": true,
+                "usageTime": "elite"
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Divine Interdiction",
+              "options": {
+                "isMagical": true,
+                "usageTime": "elite"
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Mighty Lifetap Slash",
+              "options": {
+                "isMagical": true
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Mighty Sanguine Bond",
+              "options": {
+                "isMagical": true
+              }
+            }
+          ],
+          "customAbilities": [
+            {
+              "type": "spell",
+              "name": "Lifesteal",
+              "attack": {
+                "hit": "\n                \\damagerankfive.\n              ",
+                "injury": "\n                You regain \\hprankeight.\n              ",
+                "targeting": "\n                Make an attack vs. Fortitude against one creature within \\medrange.\n              "
+              },
+              "rank": 6,
+              "tags": [
+                "Life"
+              ]
+            }
+          ],
+          "rituals": [
+            "Channel Divinity",
+            "Vivimancy"
+          ]
+        }
+      ],
+      "knowledge": {
+        "normal": "Necromancers revive and manipulate undead.\n          Some even attempt to emulate the strength of undead in their own bodies.\n          They are reviled in most societies, both for their desecration of the dead and for the harm their magic can do to souls."
+      }
+    },
+    {
+      "name": "Ogres",
+      "folder": "Uncivilized Humanoids",
+      "hasArt": false,
+      "sharedFreeformCode": "",
+      "monsters": [
+        {
+          "name": "Ogre Ganger",
+          "requiredProperties": {
+            "alignment": "chaotic evil",
+            "base_class": "brute",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "large",
+            "level": 5
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            5,
+            0,
+            2,
+            -4,
+            1,
+            -1
+          ],
+          "trainedSkills": [
+            "intimidate"
+          ],
+          "knowledge": {
+            "normal": "Ogre gangers are relatively weak or young ogres that tend to gather together in gangs for mutual protection."
+          },
+          "equippedArmor": "leather lamellar",
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "javelin"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Knockdown",
+              "options": {
+                "isMagical": false,
+                "weapon": "greatclub"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Sweep",
+              "options": {
+                "isMagical": false,
+                "weapon": "greatclub"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Ogre Menace",
+          "requiredProperties": {
+            "alignment": "chaotic evil",
+            "base_class": "brute",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "large",
+            "level": 8
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            6,
+            1,
+            3,
+            -2,
+            2,
+            0
+          ],
+          "trainedSkills": [
+            "intimidate"
+          ],
+          "knowledge": {
+            "normal": "Ogre menaces are mature adult ogres that often terrorize small towns.\n              They tend to work in pairs or with minions like goblins that they bully into submission."
+          },
+          "equippedArmor": "leather lamellar",
+          "properties": {
+            "has_art": true
+          },
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "javelin"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Armorcrusher",
+              "options": {
+                "isMagical": false,
+                "weapon": "greatclub"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Concussion",
+              "options": {
+                "isMagical": false,
+                "weapon": "greatclub"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "greatclub"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Ogre Mage",
+          "requiredProperties": {
+            "alignment": "chaotic evil",
+            "base_class": "sniper",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "large",
+            "level": 8
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            4,
+            0,
+            0,
+            1,
+            4,
+            4
+          ],
+          "trainedSkills": [
+            "awareness"
+          ],
+          "knowledge": {
+            "normal": "Ogre mages are unusual ogres that have innate arcane magical talent.\n              They are generally identifiable as the only ogres who do not go into battle wearing armor.\n              They are more intelligent than other ogres, and more likely to use combat strategies like hiding behind their minions."
+          },
+          "equippedArmor": "buff leather",
+          "properties": {
+            "has_art": true
+          },
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "greatclub"
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Time Ebbs and Flows",
+              "options": {
+                "isMagical": true
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Stutterstop",
+              "options": {
+                "isMagical": true
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Wave of Senescence",
+              "options": {
+                "isMagical": true
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Unstable Aging",
+              "options": {
+                "isMagical": true
+              }
+            }
+          ]
+        },
+        {
+          "name": "Ogre Skullclaimer",
+          "requiredProperties": {
+            "alignment": "chaotic evil",
+            "base_class": "brute",
+            "elite": true,
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "large",
+            "level": 9
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            8,
+            1,
+            4,
+            -1,
+            3,
+            2
+          ],
+          "trainedSkills": [
+            "intimidate"
+          ],
+          "knowledge": {
+            "normal": "Ogre skullclaimers are the leaders of large roaming bands of ogres.\n              Ogre bands are often accompanied by goblins or other similar creatures that help the ogres in exchange for a share of the valuable items they find, since the ogres care more about the creatures they kill.",
+            "hard": "Ogre skullclaimers are named after their right to eat the most prized part of any humanoid the band kills: the head."
+          },
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Armorcrusher",
+              "options": {
+                "isMagical": false,
+                "weapon": "greatclub"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Concussion",
+              "options": {
+                "isMagical": false,
+                "weapon": "greatclub"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "greatclub"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Watch Out",
+              "options": {
+                "isMagical": false,
+                "usageTime": "elite"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Empowering Roar",
+              "options": {
+                "isMagical": false,
+                "usageTime": "elite"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Deafening Shout",
+              "options": {
+                "isMagical": false,
+                "usageTime": "elite"
+              }
+            }
+          ]
+        }
+      ],
+      "knowledge": {
+        "normal": "Ogres are Large, hideous humanoid creatures with a taste for human flesh.\n          If that is unavailable, they also enjoy the flesh of other humanoid creatures.\n          They lack the intelligence for complex plans, but they like lying in wait to ambush helpless travelers.",
+        "hard": "Ogre skin color ranges from dull yellow to dull brown.\n          Their clothing consists of poorly cured furs and hides, which add to their naturally repellent odor.\n\n          They are intelligent enough to throw their javelins first to soften up their foes before closing into melee, but ogre gangs and bands fight as disorganized individuals.\n          Ogres use massive clubs in battle to tenderize their meat instead of wastefully hacking off bits."
+      }
+    },
+    {
+      "name": "Townsfolk",
+      "folder": "Civilized Humanoids",
+      "hasArt": false,
+      "sharedFreeformCode": "",
+      "monsters": [
+        {
+          "name": "Town Guard",
+          "requiredProperties": {
+            "alignment": "lawful neutral",
+            "base_class": "warrior",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 1
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            1,
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          "knowledge": {
+            "easy": "Town guards are common throughout civilization.\n            This represents the sort of ordinary guard that would be found even in rural towns, not an elite bodyguard."
+          },
+          "equippedArmor": "leather lamellar",
+          "equippedShield": "standard shield",
+          "properties": {
+            "has_art": false
+          },
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "spear"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Town Healer",
+          "requiredProperties": {
+            "alignment": "neutral",
+            "base_class": "leader",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 2
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            0,
+            0,
+            0,
+            0,
+            3,
+            3
+          ],
+          "trainedSkills": [
+            "medicine"
+          ],
+          "knowledge": {
+            "easy": "Town healers are typically clerics or druids with some healing ability.\n            They may be prominent leaders of a temple, or they may prefer solitude, but it is rare to find a reasonably sized town that does not have a healer of some variety."
+          },
+          "equippedArmor": "buff leather",
+          "equippedShield": "buckler",
+          "properties": {
+            "has_art": false
+          },
+          "standardAbilities": [
+            {
+              "type": "spell",
+              "name": "Restoration",
+              "options": {
+                "isMagical": true
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "club"
+              }
+            }
+          ]
+        }
+      ],
+      "knowledge": {
+        "normal": "Townsfolk are common throughout civilization.\n          They are typically found in small groups, preying on travelers or isolated settlements."
+      }
+    },
+    {
+      "name": "Formians",
+      "folder": "Aliens",
+      "hasArt": true,
+      "sharedFreeformCode": "",
+      "monsters": [
+        {
+          "name": "Worker",
+          "requiredProperties": {
+            "alignment": "lawful neutral",
+            "base_class": "skirmisher",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "insect"
+            ],
+            "size": "medium",
+            "level": 1
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            1,
+            3,
+            -1,
+            -2,
+            0,
+            -2
+          ],
+          "trainedSkills": [
+            "craft_stone",
+            "craft_metal"
+          ],
+          "knowledge": {
+            "normal": "Workers are the basic building blocks of formian society.\n              A typical worker is about 3 feet long and about 2-1/2 feet high at the front.\n              Its hands are suitable only for manual labor.",
+            "hard": "Individual workers are simple-minded, but they are given instructions by the hive mind.\n              Even the smallest formian colony typically has hundreds of workers, and larger colonies can have tens of thousands.\n              Workers are generally given orders by a formian queen in groups of at least five, and it is rare to see an individual worker on its own."
+          },
+          "traits": [
+            "simple-minded"
+          ],
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "bite"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Drone",
+          "requiredProperties": {
+            "alignment": "lawful neutral",
+            "base_class": "warrior",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "insect"
+            ],
+            "size": "medium",
+            "level": 5
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            3,
+            4,
+            2,
+            -4,
+            3,
+            0
+          ],
+          "trainedSkills": [
+            "awareness",
+            "endurance"
+          ],
+          "knowledge": {
+            "normal": "Drones are the basic fighting unit of formian society.\n              In combat, drones use their high mobility to ruthlessly coordinate attacks on their most dangerous or most vulnerable foes.",
+            "hard": "Even the smallest formian colony typically has dozens of warriors, and larger colonies can have thousands."
+          },
+          "traits": [
+            "simple-minded"
+          ]
+        },
+        {
+          "name": "Myrmarch",
+          "requiredProperties": {
+            "alignment": "lawful neutral",
+            "base_class": "warrior",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "insect"
+            ],
+            "size": "medium",
+            "level": 9
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            4,
+            6,
+            3,
+            -4,
+            3,
+            2
+          ],
+          "trainedSkills": [
+            "awareness",
+            "endurance"
+          ],
+          "traits": [
+            "simple-minded"
+          ],
+          "properties": {
+            "has_art": true
+          },
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "greatsword"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Dance of Death",
+              "options": {
+                "isMagical": false
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Pure Precision",
+              "options": {
+                "isMagical": false,
+                "weapon": "greatsword"
+              }
+            }
+          ]
+        }
+      ],
+      "knowledge": {
+        "normal": "Formians are ant-like creatures native to Terra.\n          They share a hive mind that allows telepathic communication at great distances.",
+        "hard": "All formians can sense their surroundings instinctively by feeling tremors in the ground.\n          Most formians are simple drones with no independent thought or agency; they act only as directed by their queen.\n          As a result, they fight with no concern for their own lives, serving only the greater good of the group.\n          They may still retreat to avoid expending unnecessary resources on a battle that is already lost.",
+        "legendary": "Formians often attempt to set up colonies in unclaimed locations on other planes to expand their influence, though they never attack civilizations or sentient creatures to do so.\n          Once they have established their colonies, they consider themselves to have a rightful claim to that land, and they can be highly territorial.\n\n          If a formian queen is killed, all formians it was controlling immediately become inert, taking no actions of any kind.\n          These isolated formians typically die of dehydration or similar causes, though in rare cases they may be claimed by another formian queen."
+      },
+      "traits": [
+        "multipedal"
+      ],
+      "customSenses": [
+        {
+          "type": "Tremorsense",
+          "range": 60
+        },
+        {
+          "type": "Tremorsight",
+          "range": 15
+        }
+      ],
+      "resistances": [
+        "Earth"
+      ],
+      "passiveAbilities": [
+        {
+          "name": "Hive Mind",
+          "effect": "\n        All formians within 50 miles of their queen are in constant telepathic communication with her, regardless of any intervening physical obstacles.\n        They instantaneously share information about threats and discoveries.\n        This allows formians to usually respond to new information intelligently and in perfect unison, regardless of each formian's individual intelligence.\n      ",
+          "isMagical": true
+        }
+      ]
+    },
+    {
+      "name": "Animated Objects",
+      "folder": "Animates",
+      "hasArt": true,
+      "sharedFreeformCode": "",
+      "monsters": [
+        {
+          "name": "Tiny Object",
+          "requiredProperties": {
+            "alignment": "neutral",
+            "base_class": "brute",
+            "elite": false,
+            "creature_origin": "artificial",
+            "creature_types": [
+              "construct"
+            ],
+            "size": "tiny",
+            "level": 1
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            -4,
+            4,
+            -4,
+            -8,
+            0,
+            0
+          ],
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "ram"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Small Object",
+          "requiredProperties": {
+            "alignment": "neutral",
+            "base_class": "brute",
+            "elite": false,
+            "creature_origin": "artificial",
+            "creature_types": [
+              "construct"
+            ],
+            "size": "small",
+            "level": 1
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            2,
+            3,
+            0,
+            -8,
+            0,
+            0
+          ],
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "ram"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Medium Object",
+          "requiredProperties": {
+            "alignment": "neutral",
+            "base_class": "brute",
+            "elite": false,
+            "creature_origin": "artificial",
+            "creature_types": [
+              "construct"
+            ],
+            "size": "medium",
+            "level": 2
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            4,
+            2,
+            2,
+            -8,
+            0,
+            0
+          ],
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Knockdown",
+              "options": {
+                "isMagical": false,
+                "weapon": "ram"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Large Object",
+          "requiredProperties": {
+            "alignment": "neutral",
+            "base_class": "brute",
+            "elite": false,
+            "creature_origin": "artificial",
+            "creature_types": [
+              "construct"
+            ],
+            "size": "large",
+            "level": 4
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            5,
+            1,
+            3,
+            -8,
+            0,
+            0
+          ],
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Knockdown",
+              "options": {
+                "isMagical": false,
+                "weapon": "ram"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Huge Object",
+          "requiredProperties": {
+            "alignment": "neutral",
+            "base_class": "brute",
+            "elite": false,
+            "creature_origin": "artificial",
+            "creature_types": [
+              "construct"
+            ],
+            "size": "huge",
+            "level": 7
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            6,
+            0,
+            4,
+            -8,
+            0,
+            0
+          ],
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Knockdown+",
+              "options": {
+                "isMagical": false,
+                "weapon": "ram"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Gargantuan Object",
+          "requiredProperties": {
+            "alignment": "neutral",
+            "base_class": "brute",
+            "elite": false,
+            "creature_origin": "artificial",
+            "creature_types": [
+              "construct"
+            ],
+            "size": "gargantuan",
+            "level": 9
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            7,
+            -1,
+            5,
+            -8,
+            0,
+            0
+          ],
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Knockdown+",
+              "options": {
+                "isMagical": false,
+                "weapon": "ram"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Colossal Object",
+          "requiredProperties": {
+            "alignment": "neutral",
+            "base_class": "brute",
+            "elite": false,
+            "creature_origin": "artificial",
+            "creature_types": [
+              "construct"
+            ],
+            "size": "colossal",
+            "level": 11
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            8,
+            -2,
+            6,
+            -8,
+            0,
+            0
+          ],
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Knockdown+",
+              "options": {
+                "isMagical": false,
+                "weapon": "ram"
+              }
+            }
+          ]
+        }
+      ],
+      "traits": [
+        "simple-minded"
+      ],
+      "customSenses": [
+        {
+          "type": "Darkvision",
+          "range": 60
+        }
+      ]
+    },
+    {
+      "name": "Golems",
+      "folder": "Animates",
+      "hasArt": false,
+      "sharedFreeformCode": "",
+      "monsters": [
+        {
+          "name": "Mining Golem",
+          "requiredProperties": {
+            "alignment": "lawful neutral",
+            "base_class": "brute",
+            "elite": false,
+            "creature_origin": "artificial",
+            "creature_types": [
+              "construct"
+            ],
+            "size": "medium",
+            "level": 5
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            5,
+            3,
+            3,
+            0,
+            2,
+            0
+          ],
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "pick"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Ground Slam",
+              "options": {
+                "isMagical": false,
+                "weapon": "pick"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Mithral Golem",
+          "requiredProperties": {
+            "alignment": "lawful neutral",
+            "base_class": "skirmisher",
+            "elite": true,
+            "creature_origin": "artificial",
+            "creature_types": [
+              "construct"
+            ],
+            "size": "medium",
+            "level": 14
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            6,
+            10,
+            1,
+            0,
+            6,
+            4
+          ],
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "fists"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Whirlwind+",
+              "options": {
+                "isMagical": false,
+                "weapon": "fists"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Building Storm",
+              "options": {
+                "isMagical": false,
+                "usageTime": "elite"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Flash Sweep",
+              "options": {
+                "isMagical": false,
+                "usageTime": "elite",
+                "weapon": "fists"
+              }
+            }
+          ],
+          "customAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Faster Than Sight",
+              "attack": {
+                "hit": "2d6+7 damage.",
+                "targeting": "\n              The $name makes two melee \\glossterm{strikes}.\n              If either strike hits and its attack result also hits the target's Reflex defense, the target \\briefly treats the $name as \\glossterm{invisible}.\n            "
+              }
+            }
+          ]
+        },
+        {
+          "name": "Adamantine Golem",
+          "requiredProperties": {
+            "alignment": "lawful neutral",
+            "base_class": "warrior",
+            "elite": true,
+            "creature_origin": "artificial",
+            "creature_types": [
+              "construct"
+            ],
+            "size": "medium",
+            "level": 17
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            10,
+            -2,
+            12,
+            0,
+            6,
+            0
+          ],
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "fists",
+                "tags": [
+                  "Impact"
+                ]
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Steady Slam+",
+              "options": {
+                "isMagical": false,
+                "tags": [
+                  "Impact"
+                ],
+                "weapon": "fists"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Brace for Impact",
+              "options": {
+                "isMagical": false,
+                "usageTime": "elite"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Fortifying Force",
+              "options": {
+                "isMagical": false,
+                "weapon": "fists",
+                "tags": [
+                  "Impact"
+                ],
+                "usageTime": "elite"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Sinews of Steel",
+              "options": {
+                "isMagical": false,
+                "usageTime": "elite"
+              }
+            }
+          ],
+          "passiveAbilities": [
+            {
+              "name": "Indestructible",
+              "effect": "\n            The $name reduces all damage it takes by 10.\n            This can reduce incoming damage to 0.\n            In addition, it takes no additional damage from \\glossterm{critical hits}.\n            Non-damaging effects from critical hits still function normally.\n          ",
+              "isMagical": false
+            },
+            {
+              "name": "Unstoppable",
+              "effect": "\n            The $name is unaffected by \\glossterm{difficult terrain} and is immune to being \\slowed.\n          ",
+              "isMagical": false
+            }
+          ]
+        },
+        {
+          "name": "Voidstar Golem",
+          "requiredProperties": {
+            "alignment": "lawful neutral",
+            "base_class": "warrior",
+            "elite": true,
+            "creature_origin": "artificial",
+            "creature_types": [
+              "construct"
+            ],
+            "size": "medium",
+            "level": 20
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            13,
+            2,
+            10,
+            0,
+            6,
+            10
+          ],
+          "customMovementSpeeds": [
+            {
+              "mode": "Burrow",
+              "category": "average"
+            }
+          ],
+          "immunities": [
+            "Earth"
+          ],
+          "resistances": [
+            "Electricity"
+          ],
+          "vulnerabilities": [
+            "Acid"
+          ],
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "fists"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Boneshatter+",
+              "options": {
+                "isMagical": false,
+                "weapon": "fists"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Chokeslam+",
+              "options": {
+                "isMagical": false
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Mighty Earthspike",
+              "options": {
+                "isMagical": true,
+                "usageTime": "elite"
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Earthquake",
+              "options": {
+                "isMagical": true,
+                "usageTime": "elite"
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Swallowed by Earth",
+              "options": {
+                "isMagical": true,
+                "usageTime": "elite"
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Gravity Well",
+              "options": {
+                "isMagical": true,
+                "usageTime": "elite"
+              }
+            }
+          ],
+          "passiveAbilities": [
+            {
+              "name": "Crushing Gravity",
+              "effect": "\n            All other creatures move at half speed while within a \\medarea radius \\glossterm{emanation} of the $name.\n            This does not affect creatures who are moving in a straight line directly towards the $name.\n            This is a \\atEarth effect.\n          ",
+              "isMagical": false
+            },
+            {
+              "name": "Denser Than Steel",
+              "effect": "\n            The $name can use its burrow ability to pass through solid metal and stone without reducing its speed.\n          ",
+              "isMagical": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Treants",
+      "folder": "Animates",
+      "hasArt": false,
+      "sharedFreeformCode": "",
+      "monsters": [
+        {
+          "name": "Birch Treant",
+          "requiredProperties": {
+            "alignment": "neutral",
+            "base_class": "warrior",
+            "elite": true,
+            "creature_origin": "natural",
+            "creature_types": [
+              "plant"
+            ],
+            "size": "large",
+            "level": 5
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            2,
+            0,
+            5,
+            0,
+            4,
+            -2
+          ],
+          "trainedSkills": [
+            "awareness"
+          ],
+          "knowledge": {
+            "normal": "Birch treants tend to be shy, and they try to avoid conflict if at all possible."
+          },
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "greatclub"
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Embedded Growth",
+              "options": {
+                "isMagical": true,
+                "usageTime": "elite"
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Tripping Vine",
+              "options": {
+                "isMagical": true,
+                "usageTime": "elite"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Chestnut Treant",
+          "requiredProperties": {
+            "alignment": "neutral",
+            "base_class": "warrior",
+            "elite": true,
+            "creature_origin": "natural",
+            "creature_types": [
+              "plant"
+            ],
+            "size": "large",
+            "level": 6
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            2,
+            0,
+            6,
+            0,
+            3,
+            1
+          ],
+          "trainedSkills": [
+            "awareness"
+          ],
+          "knowledge": {
+            "normal": "Chestnut treants tend to mischievous and outgoing.\n              They like playing small tricks on interesting creatures that pass by."
+          },
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "greatclub"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Fake Out",
+              "options": {
+                "isMagical": false,
+                "weapon": "greatclub"
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Embedded Growth",
+              "options": {
+                "isMagical": true,
+                "usageTime": "elite"
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Tripping Vine",
+              "options": {
+                "isMagical": true,
+                "usageTime": "elite"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Willow Treant",
+          "requiredProperties": {
+            "alignment": "neutral",
+            "base_class": "warrior",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "plant"
+            ],
+            "size": "large",
+            "level": 7
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            2,
+            3,
+            5,
+            1,
+            2,
+            -2
+          ],
+          "trainedSkills": [
+            "awareness"
+          ],
+          "knowledge": {
+            "normal": "Willow treants are the most agile treants, and they can twist and bend their bodies with surprising finesse.\n              Their attitudes tend to be similarly flexible, and they can be easily persuadable."
+          },
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "greatclub"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Whirlwind",
+              "options": {
+                "isMagical": false,
+                "weapon": "greatclub"
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Embedded Growth",
+              "options": {
+                "isMagical": true,
+                "usageTime": "elite"
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Tripping Vine",
+              "options": {
+                "isMagical": true,
+                "usageTime": "elite"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Darkroot Treant",
+          "requiredProperties": {
+            "alignment": "neutral evil",
+            "base_class": "warrior",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "plant"
+            ],
+            "size": "large",
+            "level": 8
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            5,
+            0,
+            5,
+            1,
+            1,
+            2
+          ],
+          "trainedSkills": [
+            "awareness"
+          ],
+          "knowledge": {
+            "normal": "Darkroot treants, unlike most other treants, primarily inhabit swamps and other grimy places.\n              Their bark is mottled with fungus, and they tend to have a more sinister demeanor than most treants."
+          },
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "greatclub"
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Blight",
+              "options": {
+                "isMagical": true,
+                "usageTime": "elite"
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Poison -- Wolfsbane",
+              "options": {
+                "isMagical": true,
+                "usageTime": "elite"
+              }
+            }
+          ],
+          "customAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Festering Greatclub",
+              "weapon": "greatclub",
+              "effect": "\n              Make a \\glossterm{strike} with a \\minus1 accuracy penalty.\n              \\hit If your attack result hits the target's Fortitude defense, the target festers.\n              A festering creature takes \\damagerankone at the end of its next turn.\n            "
+            }
+          ]
+        },
+        {
+          "name": "Pine Treant",
+          "requiredProperties": {
+            "alignment": "neutral good",
+            "base_class": "warrior",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "plant"
+            ],
+            "size": "huge",
+            "level": 9
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            4,
+            -2,
+            8,
+            2,
+            1,
+            4
+          ],
+          "trainedSkills": [
+            "awareness"
+          ],
+          "knowledge": {
+            "normal": "Pine treants tend to be the most steadfast treants.\n              They are strong-willed, like oak trees.\n              However, while oak treants are stubborn, pine treants are resolutely benevolent, sheltering all who need aid."
+          },
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "greatclub"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Prepared Defense",
+              "options": {
+                "isMagical": false,
+                "weapon": "greatclub"
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Embedded Growth",
+              "options": {
+                "isMagical": true,
+                "usageTime": "elite"
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Wall of Thorns",
+              "options": {
+                "isMagical": true,
+                "usageTime": "elite"
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Vineward",
+              "options": {
+                "isMagical": true,
+                "usageTime": "elite"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Oak Treant",
+          "requiredProperties": {
+            "alignment": "neutral",
+            "base_class": "warrior",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "plant"
+            ],
+            "size": "huge",
+            "level": 10
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            5,
+            -2,
+            7,
+            0,
+            0,
+            5
+          ],
+          "trainedSkills": [
+            "awareness"
+          ],
+          "knowledge": {
+            "normal": "Oak treants tend to be the most stubborn treants.\n              They brook no guff from wayward adventurers."
+          },
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "greatclub"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Boneshatter",
+              "options": {
+                "isMagical": false,
+                "weapon": "greatclub"
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Embedded Growth",
+              "options": {
+                "isMagical": true,
+                "usageTime": "elite"
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Entangle",
+              "options": {
+                "isMagical": true,
+                "usageTime": "elite"
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Treeclub",
+              "options": {
+                "isMagical": true,
+                "usageTime": "elite"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Cyprus Treant",
+          "requiredProperties": {
+            "alignment": "neutral",
+            "base_class": "warrior",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "plant"
+            ],
+            "size": "huge",
+            "level": 11
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            6,
+            -2,
+            8,
+            0,
+            1,
+            2
+          ],
+          "trainedSkills": [
+            "awareness"
+          ],
+          "knowledge": {
+            "normal": "Cyprus treants are the most durable treants.\n              They are virtually indestructible, and are fearsome when roused to anger."
+          },
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "greatclub"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Prepared Defense",
+              "options": {
+                "isMagical": false,
+                "weapon": "greatclub"
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Embedded Growth",
+              "options": {
+                "isMagical": true,
+                "usageTime": "elite"
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Entangle",
+              "options": {
+                "isMagical": true,
+                "usageTime": "elite"
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Mass Vineward",
+              "options": {
+                "isMagical": true,
+                "usageTime": "elite"
+              }
+            }
+          ]
+        }
+      ],
+      "description": "\n        All treants have the \\ability{animate tree} ability.\n        \\begin{eliteability}{Animate Tree}{Elite action}\n          \\rankline\n          The treant animates a tree to fight by its side.\n          The tree must be no larger than the treant, and it must be the same type of tree as the treant.\n\n          The tree's combat statistics are the same as the treant's, except that the tree's \\glossterm{hit points} and \\glossterm{injury point} are halved and it cannot use \\glossterm{elite actions}.\n          This ability lasts until the treant \\glossterm{dismisses} it or uses it again.\n          When this ability ends, the tree sets down roots in its new location if possible.\n          Treants avoid stranding trees in unsustainable locations except in desperate circumstances.\n        \\end{eliteability}\n      ",
+      "customMovementSpeeds": [
+        {
+          "mode": "Land",
+          "category": "slow"
+        }
+      ],
+      "vulnerabilities": [
+        "Fire"
+      ]
+    },
+    {
+      "name": "Air Elementals",
+      "folder": "Elementals",
+      "hasArt": true,
+      "sharedFreeformCode": "",
+      "monsters": [
+        {
+          "name": "Breeze",
+          "requiredProperties": {
+            "alignment": "neutral",
+            "base_class": "skirmisher",
+            "elite": false,
+            "creature_origin": "artificial",
+            "creature_types": [
+              "construct"
+            ],
+            "size": "small",
+            "level": 4
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            2,
+            5,
+            0,
+            -3,
+            2,
+            0
+          ]
+        },
+        {
+          "name": "Gale",
+          "requiredProperties": {
+            "alignment": "neutral",
+            "base_class": "skirmisher",
+            "elite": false,
+            "creature_origin": "artificial",
+            "creature_types": [
+              "construct"
+            ],
+            "size": "medium",
+            "level": 8
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            4,
+            6,
+            0,
+            -2,
+            3,
+            0
+          ]
+        },
+        {
+          "name": "Tempest",
+          "requiredProperties": {
+            "alignment": "neutral",
+            "base_class": "skirmisher",
+            "elite": false,
+            "creature_origin": "artificial",
+            "creature_types": [
+              "construct"
+            ],
+            "size": "large",
+            "level": 12
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            4,
+            7,
+            0,
+            -2,
+            4,
+            0
+          ]
+        },
+        {
+          "name": "Tornado",
+          "requiredProperties": {
+            "alignment": "neutral",
+            "base_class": "skirmisher",
+            "elite": false,
+            "creature_origin": "artificial",
+            "creature_types": [
+              "construct"
+            ],
+            "size": "large",
+            "level": 16
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            4,
+            8,
+            1,
+            -2,
+            4,
+            0
+          ]
+        },
+        {
+          "name": "Elder",
+          "requiredProperties": {
+            "alignment": "neutral",
+            "base_class": "skirmisher",
+            "elite": false,
+            "creature_origin": "artificial",
+            "creature_types": [
+              "construct"
+            ],
+            "size": "huge",
+            "level": 20
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            4,
+            9,
+            1,
+            -2,
+            4,
+            0
+          ]
+        }
+      ],
+      "knowledge": {
+        "normal": "Air elementals are native to Ventus, the wind planet.\n          They can fly through the air with agile ease, but they tend to be physically frail.",
+        "hard": "Air elementals have no insulation in their wispy bodies, making them vulnerable to electrical attacks."
+      },
+      "traits": [
+        "floating",
+        "simple-minded"
+      ],
+      "customMovementSpeeds": [
+        {
+          "mode": "Fly",
+          "category": "average",
+          "limitType": "limitless"
+        }
+      ],
+      "resistances": [
+        "Air"
+      ],
+      "vulnerabilities": [
+        "Earth",
+        "Electricity"
+      ],
+      "standardAbilities": [
+        {
+          "type": "spell",
+          "name": "Windblast",
+          "options": {
+            "isMagical": true
+          }
+        },
+        {
+          "type": "maneuver",
+          "name": "Knockdown",
+          "options": {
+            "isMagical": false,
+            "weapon": "fists"
+          }
+        },
+        {
+          "type": "maneuver",
+          "name": "Weapon Multiplier",
+          "options": {
+            "isMagical": false,
+            "weapon": "fists"
+          }
+        }
+      ],
+      "passiveAbilities": [
+        {
+          "name": "Wind Screen",
+          "effect": "\n        The $name gains a +2 bonus to its defenses against ranged strikes.\n      ",
+          "isMagical": true
+        }
+      ]
+    },
+    {
+      "name": "Fire Elementals",
+      "folder": "Elementals",
+      "hasArt": true,
+      "sharedFreeformCode": "",
+      "monsters": [
+        {
+          "name": "Ember",
+          "requiredProperties": {
+            "alignment": "neutral",
+            "base_class": "skirmisher",
+            "elite": false,
+            "creature_origin": "artificial",
+            "creature_types": [
+              "construct"
+            ],
+            "size": "small",
+            "level": 4
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            2,
+            4,
+            0,
+            -3,
+            0,
+            2
+          ]
+        },
+        {
+          "name": "Kindled",
+          "requiredProperties": {
+            "alignment": "neutral",
+            "base_class": "skirmisher",
+            "elite": false,
+            "creature_origin": "artificial",
+            "creature_types": [
+              "construct"
+            ],
+            "size": "medium",
+            "level": 8
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            4,
+            5,
+            0,
+            -2,
+            0,
+            2
+          ]
+        },
+        {
+          "name": "Bonfire",
+          "requiredProperties": {
+            "alignment": "neutral",
+            "base_class": "skirmisher",
+            "elite": false,
+            "creature_origin": "artificial",
+            "creature_types": [
+              "construct"
+            ],
+            "size": "large",
+            "level": 12
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            5,
+            6,
+            0,
+            -2,
+            0,
+            3
+          ]
+        },
+        {
+          "name": "Inferno",
+          "requiredProperties": {
+            "alignment": "neutral",
+            "base_class": "skirmisher",
+            "elite": false,
+            "creature_origin": "artificial",
+            "creature_types": [
+              "construct"
+            ],
+            "size": "large",
+            "level": 16
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            6,
+            6,
+            2,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "Elder",
+          "requiredProperties": {
+            "alignment": "neutral",
+            "base_class": "skirmisher",
+            "elite": false,
+            "creature_origin": "artificial",
+            "creature_types": [
+              "construct"
+            ],
+            "size": "huge",
+            "level": 20
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            7,
+            7,
+            2,
+            2,
+            2,
+            4
+          ]
+        }
+      ],
+      "knowledge": {
+        "normal": "Fire elementals are native to Ignis, the fire planet.\n          They tend to be fast and agile, and they burn their opponents to ash in combat.",
+        "hard": "Fire elementals burn fast and bright, with little insulation from their surroundings.\n          This makes them vulnerable to cold attacks, which can chill their very core."
+      },
+      "traits": [
+        "simple-minded"
+      ],
+      "immunities": [
+        "Fire"
+      ],
+      "resistances": [
+        "Cold"
+      ],
+      "vulnerabilities": [
+        "Water"
+      ],
+      "standardAbilities": [
+        {
+          "type": "spell",
+          "name": "Spontaneous Combustion",
+          "options": {
+            "isMagical": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "Magma Elementals",
+      "folder": "Elementals",
+      "hasArt": true,
+      "sharedFreeformCode": "",
+      "monsters": [
+        {
+          "name": "Volcanite",
+          "requiredProperties": {
+            "alignment": "neutral",
+            "base_class": "warrior",
+            "elite": false,
+            "creature_origin": "artificial",
+            "creature_types": [
+              "construct"
+            ],
+            "size": "medium",
+            "level": 6
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            4,
+            4,
+            6,
+            -4,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "Volcano",
+          "requiredProperties": {
+            "alignment": "neutral",
+            "base_class": "warrior",
+            "elite": false,
+            "creature_origin": "artificial",
+            "creature_types": [
+              "construct"
+            ],
+            "size": "large",
+            "level": 12
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            5,
+            5,
+            8,
+            -3,
+            0,
+            1
+          ]
+        },
+        {
+          "name": "Volcanic Titan",
+          "requiredProperties": {
+            "alignment": "neutral",
+            "base_class": "warrior",
+            "elite": false,
+            "creature_origin": "artificial",
+            "creature_types": [
+              "construct"
+            ],
+            "size": "huge",
+            "level": 18
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            6,
+            6,
+            10,
+            -3,
+            0,
+            2
+          ]
+        }
+      ],
+      "knowledge": {
+        "normal": "Magma elementals are native to Terra, the earth planet.\n          They combine the durability of earth elementals with some of the agility of fire elementals.\n          Their outer shell appears rocky, but inside that shell they hold molten rock at incredible temperatures.",
+        "hard": "Magma elementals lack the usual weaknesses of both fire elementals and earth elementals.\n          Their massive internal heat, steadied by their rocky core, makes them resistant to cold.\n          However, they fear and avoid water, as it reacts explosively with their bodies."
+      },
+      "traits": [
+        "simple-minded"
+      ],
+      "immunities": [
+        "Fire"
+      ],
+      "resistances": [
+        "Earth",
+        "Cold"
+      ],
+      "vulnerabilities": [
+        "Acid",
+        "Water"
+      ],
+      "standardAbilities": [
+        {
+          "type": "spell",
+          "name": "Spontaneous Combustion",
+          "options": {
+            "isMagical": true
+          }
+        },
+        {
+          "type": "spell",
+          "name": "Rock Throw",
+          "options": {
+            "isMagical": true,
+            "displayName": "Magma Throw",
+            "tags": [
+              "Fire"
+            ]
+          }
+        },
+        {
+          "type": "maneuver",
+          "name": "Weapon Multiplier",
+          "options": {
+            "isMagical": false,
+            "weapon": "fists"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Angels",
+      "folder": "Soulforged",
+      "hasArt": false,
+      "sharedFreeformCode": "",
+      "monsters": [
+        {
+          "name": "Seraph",
+          "requiredProperties": {
+            "alignment": "neutral good",
+            "base_class": "leader",
+            "elite": true,
+            "creature_origin": "artificial",
+            "creature_types": [
+              "soulforged"
+            ],
+            "size": "huge",
+            "level": 16
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "trainedSkills": [
+            "awareness",
+            "endurance"
+          ],
+          "knowledge": {
+            "normal": "Seraphim are six-winged angels of immense power.\n              They burn with holy fire, which they use to immolate evildoers.\n              A seraph resembles a massive serpent that leaves a trail of fire as it flies.",
+            "hard": "Despite their serpentine appearance, seraphim have beautiful singing voices.\n              They sing almost constantly both in and out of combat."
+          },
+          "properties": {
+            "has_art": true
+          },
+          "standardAbilities": [
+            {
+              "type": "spell",
+              "name": "Mighty Pyroclasm",
+              "options": {
+                "isMagical": true,
+                "usageTime": "elite"
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Immolating Fireball",
+              "options": {
+                "isMagical": true,
+                "usageTime": "elite"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "bite",
+                "tags": [
+                  "Fire"
+                ]
+              }
+            }
+          ],
+          "rituals": [
+            "Channel Divinity",
+            "Prayer"
+          ]
+        },
+        {
+          "name": "Justicar",
+          "requiredProperties": {
+            "alignment": "lawful good",
+            "base_class": "warrior",
+            "elite": true,
+            "creature_origin": "artificial",
+            "creature_types": [
+              "soulforged"
+            ],
+            "size": "large",
+            "level": 13
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            7,
+            7,
+            7,
+            7,
+            7,
+            7
+          ],
+          "trainedSkills": [
+            "analysis",
+            "awareness",
+            "endurance",
+            "intimidate",
+            "social_insight"
+          ],
+          "knowledge": {
+            "normal": "Justicars enforce justice on good-aligned planes.\n              They are extremely skilled at identifying the truth of any situation, and act to deal justice however they see fit.\n              Physically, a justicar appears similar to a large human with strong muscles and a constantly stern expression.",
+            "hard": "In rare circumstances, justicars may leave good-aligned planes to pursue those they see as exceptionally heinous criminals.\n              Generally, this requires that the perpetrator committed a direct offense against a good deity or desecrated an area of a good-aligned plane.\n              Justicars have no interest in mortal matters or minor crimes.",
+            "legendary": "Once, a group of thugs and murderers broke through a magic seal guarding an ancient wizard's tower, intending to loot everything inside.\n              They were shocked when a justicar suddenly appeared in front of them, and prepared to fight for their lives.\n              However, the justicar ignored them.\n              Instead, it killed the ancient wizard of the tower and disappeared, leaving the spoils to the evildoers who broke the seal.\n \n              This is the morality of a justicar.\n              They consider only truly immense evils to be worthy of their attention, and ignore all lesser sins."
+          },
+          "properties": {
+            "has_art": true
+          },
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "greatsword"
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Baffling Visions",
+              "options": {
+                "isMagical": true,
+                "usageTime": "elite"
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Clairvoyance",
+              "options": {
+                "isMagical": true,
+                "usageTime": "elite"
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Foresee Safety",
+              "options": {
+                "isMagical": true,
+                "usageTime": "elite"
+              }
+            }
+          ],
+          "rituals": [
+            "Channel Divinity",
+            "Revelation"
+          ]
+        },
+        {
+          "name": "Ophan",
+          "requiredProperties": {
+            "alignment": "neutral good",
+            "base_class": "skirmisher",
+            "elite": true,
+            "creature_origin": "artificial",
+            "creature_types": [
+              "soulforged"
+            ],
+            "size": "large",
+            "level": 10
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            4,
+            5,
+            7,
+            4,
+            4,
+            6
+          ],
+          "trainedSkills": [
+            "awareness",
+            "endurance"
+          ],
+          "knowledge": {
+            "normal": "Ophanim resemble burning wheels rimmed with many eyes.\n              They serve as sentries and guardians of planar portals in good-aligned planes.\n              In combat, they spin into a raging whirlwind."
+          },
+          "properties": {
+            "has_art": true
+          },
+          "standardAbilities": [
+            {
+              "type": "spell",
+              "name": "Pyroclasm",
+              "options": {
+                "isMagical": true,
+                "usageTime": "elite"
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Mighty Spontaneous Combustion",
+              "options": {
+                "isMagical": true,
+                "usageTime": "elite"
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Stoke the Fires",
+              "options": {
+                "isMagical": true,
+                "usageTime": "elite"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Whirlwind+",
+              "options": {
+                "isMagical": false,
+                "weapon": "ram"
+              }
+            }
+          ]
+        }
+      ],
+      "knowledge": {
+        "easy": "Angels are the ultimate champions of good in the endless battle of good and evil.\n          They are native to Elysium, and they often serve the interests of good-aligned deities.",
+        "normal": "All angels have a striking and highly memorable appearance that evokes strong emotions in most viewers.\n          Most angels evoke an overpowering sense of awe and beauty, but individual angels may have highly varied appearances.",
+        "hard": "In battle, angels are feared for their fundamental perfection.\n          They tend not to have any weaknesses for attackers to use against them.\n          Their only true foes are demons, who use overwhelming hordes rather than any clever tactics."
+      },
+      "traits": [
+        "bloodless",
+        "immortal",
+        "nonliving",
+        "soulless"
+      ],
+      "customMovementSpeeds": [
+        {
+          "mode": "Fly",
+          "category": "average",
+          "limitType": "limit",
+          "limitValue": 60
+        }
+      ],
+      "immunities": [
+        "Frightened",
+        "Panicked"
+      ],
+      "customAbilities": [
+        {
+          "type": "spell",
+          "name": "Divine Translocation",
+          "effect": "\n        The $name \\glossterm{teleports} into an unoccupied location within \\medrange.\n        It can teleport in any direction and does not need to land on stable ground.\n      ",
+          "usageTime": "elite"
+        }
+      ],
+      "passiveAbilities": [
+        {
+          "name": "Divine Radiance",
+          "effect": "\n        The $name constantly radiates \\glossterm{bright illumination} in a \\largearea radius.\n      ",
+          "isMagical": false
+        }
+      ]
+    },
+    {
+      "name": "Demonspawn",
+      "folder": "Soulforged",
+      "hasArt": false,
+      "sharedFreeformCode": "",
+      "monsters": [
+        {
+          "name": "Rageborn Demon",
+          "requiredProperties": {
+            "alignment": "chaotic evil",
+            "base_class": "brute",
+            "elite": true,
+            "creature_origin": "artificial",
+            "creature_types": [
+              "soulforged"
+            ],
+            "size": "large",
+            "level": 5
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            8,
+            3,
+            2,
+            -4,
+            2,
+            4
+          ],
+          "trainedSkills": [
+            "endurance"
+          ],
+          "knowledge": {
+            "normal": "Rageborn demons are anger personified.\n              They lash out constantly and violently at everything around them.\n              If they are left alone, they simply destroy their environment.",
+            "hard": "Since rageborn demons normally feel only anger, they have little experience with other emotions.\n              This makes them easy to mislead with magical effects that manipulate their emotions."
+          },
+          "vulnerabilities": [
+            "Emotion"
+          ],
+          "properties": {
+            "has_art": true
+          },
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "fists"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Gutshot",
+              "options": {
+                "isMagical": false,
+                "usageTime": "elite",
+                "weapon": "fists"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Charge",
+              "options": {
+                "isMagical": false,
+                "usageTime": "elite",
+                "weapon": "fists"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Whirlwind",
+              "options": {
+                "isMagical": false,
+                "usageTime": "elite",
+                "weapon": "fists"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Painborn Demon",
+          "requiredProperties": {
+            "alignment": "neutral evil",
+            "base_class": "warrior",
+            "elite": true,
+            "creature_origin": "artificial",
+            "creature_types": [
+              "soulforged"
+            ],
+            "size": "medium",
+            "level": 7
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            4,
+            2,
+            8,
+            -4,
+            1,
+            1
+          ],
+          "trainedSkills": [
+            "endurance"
+          ],
+          "knowledge": {
+            "normal": "Painborn demons are pain personified.\n              They are covered in spikes that pierce their own skin, shifting and causing them pain whenever they move.\n              These unfortunate creatures suffer continously, and they try to share that suffering with anything around them.",
+            "hard": "Painborn demons have a hidden desire that most of them do not even consciously realize: the desire to give up control.\n              Fighting through their constant pain is mentally taxing.\n              Magical effects that compel their actions, freeing them from the burden of choice, are their greatest weakness."
+          },
+          "vulnerabilities": [
+            "Compulsion"
+          ],
+          "properties": {
+            "has_art": true
+          },
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Grappling Strike",
+              "options": {
+                "isMagical": false,
+                "weapon": "claws"
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Agony",
+              "options": {
+                "isMagical": true,
+                "usageTime": "elite"
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Sanguine Bond",
+              "options": {
+                "isMagical": true,
+                "displayName": "Painbond",
+                "usageTime": "elite"
+              }
+            }
+          ],
+          "customAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Impale",
+              "attack": {
+                "hit": "\\damagerankfive.",
+                "targeting": "\n                Make a \\glossterm{brawling attack} vs. Armor using a \\glossterm{free hand} against a creature you are \\glossterm{grappling}.\n              "
+              },
+              "rank": 3,
+              "tags": [
+                "Brawling"
+              ]
+            },
+            {
+              "type": "maneuver",
+              "name": "Spiked Body",
+              "attack": {
+                "hit": "\\damagerankone.",
+                "targeting": "\n                Whenever a creature attacks the $name with a melee strike using a non-Long weapon, it risks being impaled by spikes.\n                The $name makes an $accuracy \\glossterm{reactive attack} vs. Armor against the creature that attacked it.\n              "
+              },
+              "usageTime": "triggered"
+            }
+          ]
+        },
+        {
+          "name": "Soulfire Demon",
+          "requiredProperties": {
+            "alignment": "chaotic evil",
+            "base_class": "sniper",
+            "elite": true,
+            "creature_origin": "artificial",
+            "creature_types": [
+              "soulforged"
+            ],
+            "size": "large",
+            "level": 14
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            3,
+            2,
+            3,
+            2,
+            6,
+            7
+          ],
+          "properties": {
+            "has_art": true
+          },
+          "standardAbilities": [
+            {
+              "type": "spell",
+              "name": "Mighty Burning Grasp",
+              "options": {
+                "isMagical": true
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Ignition",
+              "options": {
+                "isMagical": true
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Split Fireball",
+              "options": {
+                "isMagical": true
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Mighty Pyrohemia",
+              "options": {
+                "isMagical": true,
+                "usageTime": "elite"
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Flame Dash",
+              "options": {
+                "isMagical": true,
+                "usageTime": "elite"
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Stoke the Fires",
+              "options": {
+                "isMagical": true,
+                "usageTime": "elite"
+              }
+            }
+          ],
+          "passiveAbilities": [
+            {
+              "name": "Soulfire",
+              "effect": "\n              Whenever the $name \\glossterm{injures} an \\glossterm{ensouled} creature, that creature is \\briefly unable to regain \\glossterm{hit points}.\n            ",
+              "isMagical": true
+            }
+          ]
+        },
+        {
+          "name": "Atrophic Demon",
+          "requiredProperties": {
+            "alignment": "chaotic evil",
+            "base_class": "skirmisher",
+            "elite": true,
+            "creature_origin": "artificial",
+            "creature_types": [
+              "soulforged"
+            ],
+            "size": "large",
+            "level": 11
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            4,
+            6,
+            0,
+            1,
+            2,
+            4
+          ],
+          "standardAbilities": [
+            {
+              "type": "spell",
+              "name": "Quicksilver Ambush",
+              "options": {
+                "isMagical": true,
+                "weapon": "claws"
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Quicksilver Perfection",
+              "options": {
+                "isMagical": true,
+                "weapon": "claws"
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Wave of Senescence",
+              "options": {
+                "isMagical": true,
+                "usageTime": "elite"
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Stutterstop",
+              "options": {
+                "isMagical": true,
+                "usageTime": "elite"
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Slow",
+              "options": {
+                "isMagical": true,
+                "usageTime": "elite"
+              }
+            }
+          ],
+          "passiveAbilities": [
+            {
+              "name": "Atrophy",
+              "effect": "\n              Whenever the $name \\glossterm{injures} a creature, that creature suffers a \\minus1 penalty to all defenses as a \\glossterm{condition}.\n              This condition stacks with itself, up to a maximum penalty of \\minus5.\n            ",
+              "isMagical": true
+            }
+          ]
+        }
+      ],
+      "knowledge": {
+        "normal": "Demonspawn are infernal beings that live in the Abyss.\n          They are the weakest and least intelligent type of demon, but they are still dangerous to mortals.",
+        "hard": "Demonspawn were formed in the torturous flames of the Abyss.\n          They are all resistant to fire.\n          Like many demons, they are vulnerable to cold iron weapons."
+      },
+      "traits": [
+        "bloodless",
+        "immortal",
+        "nonliving",
+        "soulless"
+      ],
+      "resistances": [
+        "Fire"
+      ],
+      "vulnerabilities": [
+        "Cold iron weapons"
+      ]
+    },
+    {
+      "name": "Imps",
+      "folder": "Soulforged",
+      "hasArt": false,
+      "sharedFreeformCode": "",
+      "monsters": [
+        {
+          "name": "Flamefist Imp",
+          "requiredProperties": {
+            "alignment": "chaotic evil",
+            "base_class": "skirmisher",
+            "elite": false,
+            "creature_origin": "artificial",
+            "creature_types": [
+              "soulforged"
+            ],
+            "size": "small",
+            "level": 5
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            3,
+            5,
+            2,
+            1,
+            0,
+            -2
+          ],
+          "traits": [
+            "bloodless",
+            "immortal",
+            "nonliving",
+            "soulless"
+          ],
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "fists",
+                "tags": [
+                  "Fire"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Animals",
+      "folder": "Beasts",
+      "hasArt": false,
+      "sharedFreeformCode": "",
+      "monsters": [
+        {
+          "name": "Baboon",
+          "requiredProperties": {
+            "alignment": "neutral",
+            "base_class": "skirmisher",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "animal"
+            ],
+            "size": "medium",
+            "level": 1
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            2,
+            3,
+            1,
+            -8,
+            2,
+            -1
+          ],
+          "trainedSkills": [
+            "awareness"
+          ],
+          "knowledge": {
+            "normal": "A baboon is an aggressive primate adapted to life on the ground.\n            A typical baboon is the size of a big dog.",
+            "hard": "Baboons prefer open spaces but climb trees to find safe places to rest overnight.\n            They can be aggressive, though they avoid attacking creatures that seem too dangerous."
+          },
+          "customMovementSpeeds": [
+            {
+              "mode": "Climb",
+              "category": "average"
+            }
+          ],
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "claws"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Badger",
+          "requiredProperties": {
+            "alignment": "neutral",
+            "base_class": "warrior",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "animal"
+            ],
+            "size": "medium",
+            "level": 1
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            -2,
+            2,
+            3,
+            -8,
+            1,
+            -1
+          ],
+          "trainedSkills": [
+            "endurance"
+          ],
+          "knowledge": {
+            "normal": "A badger is a furry animal with a squat, powerful body.\n            Badgers can be tenacious in combat.",
+            "hard": "Badgers have strong forelimbs that are armed with long claws for digging.\n            A typical adult badger is 2 to 3 feet long and weighs 25 to 35 pounds."
+          },
+          "traits": [
+            "quadrupedal"
+          ],
+          "customSenses": [
+            {
+              "type": "Scent"
+            }
+          ],
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "claws"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Black Bear",
+          "requiredProperties": {
+            "alignment": "neutral",
+            "base_class": "brute",
+            "elite": true,
+            "creature_origin": "natural",
+            "creature_types": [
+              "animal"
+            ],
+            "size": "medium",
+            "level": 1
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            4,
+            0,
+            5,
+            -8,
+            2,
+            -2
+          ],
+          "trainedSkills": [
+            "athletics",
+            "awareness",
+            "endurance",
+            "survival"
+          ],
+          "knowledge": {
+            "normal": "Black bears are forest-dwelling omnivores that are usually not dangerous unless an interloper threatens their cubs or food supply.\n            They can be pure black, blond, or cinnamon in color, and are rarely more than 5 feet long.\n            A typical black bear can be easily frightened away by loud noises and creatures that appear large."
+          },
+          "traits": [
+            "quadrupedal"
+          ],
+          "customSenses": [
+            {
+              "type": "Scent"
+            }
+          ],
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "bite",
+                "usageTime": "elite"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "claws"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Brown Bear",
+          "requiredProperties": {
+            "alignment": "neutral",
+            "base_class": "brute",
+            "elite": true,
+            "creature_origin": "natural",
+            "creature_types": [
+              "animal"
+            ],
+            "size": "large",
+            "level": 3
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            5,
+            0,
+            6,
+            -8,
+            1,
+            0
+          ],
+          "trainedSkills": [
+            "athletics",
+            "awareness",
+            "endurance",
+            "survival"
+          ],
+          "knowledge": {
+            "normal": "Brown bears tend to be bad-tempered and territorial."
+          },
+          "traits": [
+            "quadrupedal"
+          ],
+          "customSenses": [
+            {
+              "type": "Scent"
+            }
+          ],
+          "properties": {
+            "description": "A brown bear's statistics can be used for almost any big bear, including a grizzly bear."
+          },
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "bite",
+                "usageTime": "elite"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "claws"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Camel",
+          "requiredProperties": {
+            "alignment": "neutral",
+            "base_class": "brute",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "animal"
+            ],
+            "size": "large",
+            "level": 1
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            3,
+            0,
+            3,
+            -8,
+            1,
+            0
+          ],
+          "trainedSkills": [
+            "endurance"
+          ],
+          "knowledge": {
+            "normal": "Camels are known for their ability to travel long distances without food or water."
+          },
+          "traits": [
+            "quadrupedal"
+          ],
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "bite"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Cat",
+          "requiredProperties": {
+            "alignment": "neutral",
+            "base_class": "skirmisher",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "animal"
+            ],
+            "size": "small",
+            "level": 1
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            -7,
+            4,
+            -3,
+            -7,
+            2,
+            -2
+          ],
+          "trainedSkills": [
+            "awareness",
+            "balance",
+            "flexibility",
+            "stealth"
+          ],
+          "traits": [
+            "quadrupedal"
+          ],
+          "customSenses": [
+            {
+              "type": "Scent"
+            }
+          ],
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "bite"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Dog",
+          "requiredProperties": {
+            "alignment": "neutral",
+            "base_class": "skirmisher",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "animal"
+            ],
+            "size": "medium",
+            "level": 1
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            0,
+            1,
+            0,
+            -7,
+            2,
+            -1
+          ],
+          "trainedSkills": [
+            "awareness",
+            "survival"
+          ],
+          "knowledge": {
+            "normal": "Some dogs are trained to serve as steeds for halflings and kobolds.\n            Such riding dogs may be trained for combat, or may be only used for travel."
+          },
+          "traits": [
+            "quadrupedal"
+          ],
+          "customSenses": [
+            {
+              "type": "Scent"
+            }
+          ],
+          "properties": {
+            "description": "\n            These statistics can be used for any large dog or similar creature, such as an ordinary wolf.\n            For particularly small dogs, use the statistics for a cat instead.\n          "
+          },
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "bite"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Draft Horse",
+          "requiredProperties": {
+            "alignment": "neutral",
+            "base_class": "brute",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "animal"
+            ],
+            "size": "large",
+            "level": 2
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            4,
+            1,
+            2,
+            -8,
+            0,
+            -2
+          ],
+          "trainedSkills": [
+            "endurance"
+          ],
+          "knowledge": {
+            "normal": "Draft horses are typically used to work farms.\n            They are slower than light horses, but stronger.\n            They are the cheapest type of horse that is normally available."
+          },
+          "customMovementSpeeds": [
+            {
+              "mode": "Land",
+              "category": "slow"
+            }
+          ]
+        },
+        {
+          "name": "Light Horse",
+          "requiredProperties": {
+            "alignment": "neutral",
+            "base_class": "skirmisher",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "animal"
+            ],
+            "size": "large",
+            "level": 2
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            2,
+            2,
+            -1,
+            -8,
+            0,
+            -2
+          ],
+          "knowledge": {
+            "normal": "Light horses are typically used to carry riders, not to work or fight."
+          }
+        },
+        {
+          "name": "Pony",
+          "requiredProperties": {
+            "alignment": "neutral",
+            "base_class": "brute",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "animal"
+            ],
+            "size": "medium",
+            "level": 2
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            2,
+            0,
+            2,
+            -8,
+            0,
+            -2
+          ],
+          "trainedSkills": [
+            "endurance"
+          ],
+          "traits": [
+            "quadrupedal"
+          ],
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "bite"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Warhorse",
+          "requiredProperties": {
+            "alignment": "neutral",
+            "base_class": "skirmisher",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "animal"
+            ],
+            "size": "large",
+            "level": 3
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            4,
+            2,
+            2,
+            -8,
+            0,
+            0
+          ],
+          "knowledge": {
+            "normal": "Warhorses are trained to carry riders into battle.\n            They are superior to other types of horses, but more expensive."
+          }
+        }
+      ],
+      "knowledge": {
+        "easy": "All animals are \\glossterm{mundane} and cannot speak.\n          They are easier to influence with the Creature Handling skill than other creatures."
+      }
+    },
+    {
+      "name": "Dire Animals",
+      "folder": "Beasts",
+      "hasArt": false,
+      "sharedFreeformCode": "",
+      "monsters": [
+        {
+          "name": "Dire Rat",
+          "requiredProperties": {
+            "alignment": "neutral",
+            "base_class": "skirmisher",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "animal"
+            ],
+            "size": "small",
+            "level": 1
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            1,
+            4,
+            0,
+            -9,
+            3,
+            -2
+          ],
+          "trainedSkills": [
+            "athletics",
+            "awareness",
+            "survival",
+            "stealth"
+          ],
+          "knowledge": {
+            "normal": "A dire rat is a Small omnivorous scavenger that resembles an unusually large rat.\n            Dire rats are not generally aggressive, but will attack to defend their nests and territories.\n            Dire rats can grow to be up to 3 feet long and weigh over 20 pounds."
+          },
+          "traits": [
+            "quadrupedal"
+          ],
+          "customSenses": [
+            {
+              "type": "Scent"
+            }
+          ],
+          "properties": {
+            "has_art": true
+          },
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Gutshot",
+              "options": {
+                "isMagical": false,
+                "displayName": "Noxious Bite",
+                "weapon": "bite"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Dire Wolf",
+          "requiredProperties": {
+            "alignment": "neutral",
+            "base_class": "skirmisher",
+            "elite": false,
+            "creature_origin": "natural",
+            "creature_types": [
+              "animal"
+            ],
+            "size": "large",
+            "level": 4
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            4,
+            4,
+            1,
+            -7,
+            3,
+            0
+          ],
+          "trainedSkills": [
+            "awareness"
+          ],
+          "knowledge": {
+            "normal": "A dire wolf is a wolf-like creature that is much larger than an ordinary wolf.\n            Their fur is usually mottled gray or black.\n            Dire wolves are efficient pack hunters that will kill anything they can catch."
+          },
+          "traits": [
+            "quadrupedal"
+          ],
+          "customSenses": [
+            {
+              "type": "Scent"
+            }
+          ],
+          "properties": {
+            "has_art": true
+          },
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Crush the Fallen",
+              "options": {
+                "isMagical": false,
+                "weapon": "bite"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Knockdown",
+              "options": {
+                "isMagical": false,
+                "weapon": "bite"
+              }
+            }
+          ]
+        }
+      ],
+      "knowledge": {
+        "normal": "Dire animals are monstrous variants of ordinary animals.\n          They are larger, stronger, and more aggressive.\n          Like animals, they are more susceptible to the Creature Handling skill, though their aggression makes any lapse in control more dangerous."
+      }
     }
   ],
   "folders": []
