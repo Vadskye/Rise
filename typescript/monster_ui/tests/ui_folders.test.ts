@@ -165,6 +165,10 @@ describe('Monster UI Folders E2E Tests', () => {
       { timeout: 10000 },
     );
 
+    // Expand the folder since folders are collapsed by default
+    await page.click('[data-testid="folder-container-Magic Circle"] .folder-header');
+    await new Promise((resolve) => setTimeout(resolve, 300));
+
     // Verify Pixie is inside the "Magic Circle" folder in the sidebar
     const pixieInFolder = await page.evaluate(() => {
       const folderEl = document.querySelector('[data-testid="folder-container-Magic Circle"]');
@@ -197,6 +201,11 @@ describe('Monster UI Folders E2E Tests', () => {
 
     // Verify the folder container testid has updated to the new name and contains Pixie
     await page.waitForSelector('[data-testid="folder-container-Fey Folk"]', { timeout: 5000 });
+
+    // Expand the folder since it starts collapsed by default
+    await page.click('[data-testid="folder-container-Fey Folk"] .folder-header');
+    await new Promise((resolve) => setTimeout(resolve, 300));
+
     const feyFolkExists = await page.evaluate(() => {
       const folderEl = document.querySelector('[data-testid="folder-container-Fey Folk"]');
       if (!folderEl) {
@@ -257,6 +266,10 @@ describe('Monster UI Folders E2E Tests', () => {
     });
     await addFolderBtn!.click();
     await page.waitForSelector('[data-testid="folder-container-Undead"]', { timeout: 5000 });
+
+    // Expand the folder since folders are collapsed by default
+    await page.click('[data-testid="folder-container-Undead"] .folder-header');
+    await new Promise((resolve) => setTimeout(resolve, 300));
 
     // 2. Click the add monster to folder button
     await page.hover('[data-testid="folder-container-Undead"] .folder-header');
@@ -332,10 +345,17 @@ describe('Monster UI Folders E2E Tests', () => {
     console.log('DEBUG: Newly created groupName =', groupName);
     expect(groupName).toBeTruthy();
 
-    // 2. Locate the group item (it is already selected and expanded upon creation)
+    // 2. Locate the group item (it is already selected and collapsed upon creation)
     const groupItem = await page.waitForSelector(`[data-testid="group-item-${groupName}"]`, {
       timeout: 5000,
     });
+
+    // Expand the group since groups are collapsed by default
+    const groupArrowInitial = await page.waitForSelector(`[data-testid="group-arrow-${groupName}"]`, {
+      timeout: 2000,
+    });
+    await groupArrowInitial!.click();
+    await new Promise((resolve) => setTimeout(resolve, 300));
 
     // 3. Add a monster to the group
     await page.hover(`[data-testid="group-item-${groupName}"]`);

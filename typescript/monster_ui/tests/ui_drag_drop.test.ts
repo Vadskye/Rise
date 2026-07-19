@@ -191,12 +191,12 @@ describe('Monster UI Drag and Drop E2E Tests', () => {
     await new Promise((resolve) => setTimeout(resolve, 1200)); // wait for autosave
 
     // 3. Verify starting layout in the sidebar
-    // "Drag Monster" is in "Drag Folder", "Drag Group" is in folderless "Monster Groups"
+    // "Drag Folder" is collapsed, "Drag Group" is in folderless "Monster Groups"
     await page.waitForSelector('[data-testid="folder-container-Drag Folder"]', { timeout: 5000 });
     const hasMonsterInFolder = await page.$(
       '[data-testid="folder-container-Drag Folder"] [data-testid="monster-item-Drag Monster"]',
     );
-    expect(hasMonsterInFolder).toBeTruthy();
+    expect(hasMonsterInFolder).toBeFalsy();
 
     const hasGroupInFolderless = await page.$(
       '[data-testid="folderless-groups-section"] [data-testid="group-item-Drag Group"]',
