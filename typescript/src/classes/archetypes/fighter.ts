@@ -544,7 +544,7 @@ export function tactician(): RankAbility[] {
           You gain one of the following benefits:
           \\begin{raggeditemize}
             \\item Offense: You gain a \\plus1 accuracy bonus against adjacent \\glossterm{enemies}.
-            \\item Defense: You gain a \\plus1 bonus to your defenses.
+            \\item Defense: You gain a \\plus1 bonus to your Armor defense.
             \\item Support: One \\glossterm{ally} adjacent to you gains a \\plus1 accuracy bonus.
           \\end{raggeditemize}
 
@@ -698,9 +698,6 @@ export function tacticianModifiers(creature: Creature, rank: number) {
       name: 'Shifting Stance (Defense)',
       numericEffects: [
         { statistic: 'armor_defense', modifier: rank >= 7 ? 2 : 1 },
-        { statistic: 'fortitude', modifier: rank >= 7 ? 2 : 1 },
-        { statistic: 'reflex', modifier: rank >= 7 ? 2 : 1 },
-        { statistic: 'mental', modifier: rank >= 7 ? 2 : 1 },
       ],
     });
   }

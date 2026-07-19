@@ -362,7 +362,8 @@ export function jackOfAllTrades(): RankAbility[] {
       isMagical: true,
       rank: 6,
       description: `
-        You gain a \\plus1 bonus to all of your defenses that are lower than your highest defense.
+        You gain a \\plus1 bonus to your three lowest defenses.
+        You can choose between defenses that are equally low.
       `,
     },
     {
@@ -552,10 +553,16 @@ export function jackOfAllTradesModifiers(creature: Creature, rank: number) {
   }
 
   if (rank >= 6) {
-    // Well Rounded - Too complex to calculate highest vs lowest here easily,
-    // so we'll just add it as a general note or a flat bonus if we can.
-    // For now, let's just add it to all defenses and assume it's filtered elsewhere
-    // or just leave it for the user.
+    // Well Rounded - Too complex to calculate highest vs lowest here easily.
+    // Assume that rogues are usually lowest on brawn/fort/ment.
+    creature.addCustomModifier({
+      name: 'Well Rounded',
+      numericEffects: [
+        { statistic: 'brawn', modifier: 1 },
+        { statistic: 'fortitude', modifier: 1 },
+        { statistic: 'mental', modifier: 1 },
+      ],
+    });
   }
 
   if (rank >= 7) {

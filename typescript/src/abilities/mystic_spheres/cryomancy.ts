@@ -227,15 +227,15 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       name: 'Icy Shell',
 
       // Permanent shielded is 2.4 EA.
-      // Assume that you have DR for ~2/3 of turns, so this is worth 1.6 EA.
+      // Assume that you have DR for ~3/4 of turns, so this is worth 1.8 EA.
       effect: `
         You are \\shielded.
-        At the start of your turn, if you took damage from a \\atFire ability since your last turn or are \\glossterm{injured}, you can spend an \\glossterm{ice crystal}.
-        If you do not, this ability is \\glossterm{dismisssed}.
+        At the start of your turn, if you took damage since your last turn, you can spend an \\glossterm{ice crystal}.
+        If you do not, this ability is \\glossterm{dismissed}.
       `,
       narrative:
-        'Layers of ice form around you, shielding you from attacks until they are destroyed.',
-      rank: 1,
+        'Ice forms around you, shielding you from attacks until it is destroyed.',
+      rank: 2,
       roles: ['attune'],
       tags: ['Manifestation'],
       type: 'Attune (deep)',

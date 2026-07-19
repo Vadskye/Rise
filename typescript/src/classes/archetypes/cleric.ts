@@ -280,7 +280,7 @@ export function healer(): RankAbility[] {
       isMagical: true,
       rank: 2,
       description: `
-        You gain a \\plus1 bonus to all defenses.
+        You gain a \\plus1 bonus to all non-Armor defenses.
         Whenever you attack or deal damage to a living creature, you \\glossterm{briefly} lose this bonus.
       `,
     },
@@ -486,7 +486,12 @@ export function healerModifiers(creature: Creature, rank: number) {
     const bonus = rank >= 5 ? 2 : 1;
     creature.addCustomModifier({
       name: "Healer's Grace",
-      numericEffects: [{ statistic: 'all_defenses', modifier: bonus }],
+      numericEffects: [
+        { statistic: 'brawn', modifier: bonus },
+        { statistic: 'fortitude', modifier: bonus },
+        { statistic: 'reflex', modifier: bonus },
+        { statistic: 'mental', modifier: bonus },
+      ],
     });
   }
 }

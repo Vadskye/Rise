@@ -334,8 +334,8 @@ export function innateArcanist(): RankAbility[] {
       isMagical: true,
       rank: 7,
       description: `
-        You gain a \\plus2 bonus to your defenses against \\magical attacks.
-        In addition, you are immune to magical attacks from creatures that are rank 5 or lower.
+        You gain a \\plus1 bonus to your defenses against \\magical attacks.
+        In addition, you are immune to magical attacks from creatures that are rank 6 or lower.
       `,
     },
   ];
@@ -544,7 +544,7 @@ export function innateArcanistModifiers(creature: Creature, rank: number) {
   if (rank >= 7) {
     creature.addCustomModifier({
       name: 'Mystic Supremacy',
-      numericEffects: [{ statistic: 'all_defenses', modifier: 2 }],
+      numericEffects: [{ statistic: 'all_defenses', modifier: 1 }],
     });
   }
 }

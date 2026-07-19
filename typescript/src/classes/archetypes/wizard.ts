@@ -18,6 +18,10 @@ export function alchemist(): RankAbility[] {
         However, they are less durable, since they are partially sustained by your magic.
         This ability has the \\atManifestation tag.
 
+        When you gain this ability, you learn four workshop recipes for alchemical items.
+        You can only use this ability to create alchemical items that you know the workshop recipe for.
+        Whenever your rank in this archetype increases, you can change which alchemical items you know the workshop recipe for.
+
         You can use this ability to create alchemical items with a rank lower than your rank in this archetype (see \\pcref{Item Ranks}).
         Creating an item in this way functions in the same way as crafting items normally (see \\pcref{Crafting Items}), with the following exceptions:
         \\begin{raggeditemize}
@@ -31,8 +35,9 @@ export function alchemist(): RankAbility[] {
         \\end{raggeditemize}
 
         You can invest any number of \\glossterm{insight points} into this ability.
-        Unlike normal for insight points, this does not directly grant you any additional abilities known.
-        Instead, for each insight point invested, this ability's limit increases by one.
+        Each insight point provides two benefits.
+        First, you learn an additional workshop recipe for an alchemical item.
+        Second, you increase this ability's \\glossterm{limit} on simultaneously active items by one.
       `,
     },
     {

@@ -157,7 +157,9 @@ export function boundaryWarden(): RankAbility[] {
       isMagical: false,
       rank: 7,
       description: `
-        You gain a \\plus2 bonus to all defenses against creatures associated with Knowledge skills that you are trained with.
+        The accuracy bonus increases to \\plus2.
+        In addition, you gain a \\plus10 bonus to opposed checks against creatures you know.
+        For example, this would apply to Awareness checks to notice them (see \\pcref{Awareness}).
       `,
     },
     {
@@ -600,6 +602,13 @@ export function beastmasterModifiers(creature: Creature, rank: number) {
 
 export function boundaryWardenModifiers(creature: Creature, rank: number) {
   applyArchetypeActiveAbilities(creature, boundaryWarden(), rank);
+  if (rank >= 4) {
+    creature.addSimpleModifier({
+      name: 'Know Your Enemy',
+      statistic: 'accuracy',
+      value: rank >= 7 ? 2 : 1,
+    });
+  }
   if (rank >= 5) {
     creature.addSimpleModifier({
       name: 'Steadfast Warden',
