@@ -1,6 +1,6 @@
 import { MysticSphere } from '.';
 import { add_tag_to_sphere } from './add_tag';
-import { BARRIER_COOLDOWN, CRIT_BECOMES_CONDITION } from '../constants';
+import { BARRIER_COOLDOWN, CRIT_BECOMES_CONDITION, INJURY_CRIT } from '../constants';
 
 export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
   name: 'Aeromancy',
@@ -231,6 +231,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       name: 'Windseal',
 
       attack: {
+        crit: CRIT_BECOMES_CONDITION,
         hit: `
           The target is \\briefly \\slowed.
         `,
@@ -250,6 +251,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       name: 'Skyseal',
 
       attack: {
+        crit: "The target does not gain a fly speed.",
         hit: `
           The target is \\briefly borne aloft by heavy winds.
           You \\glossterm{fling} it five feet upwards, where it hovers in \\glossterm{midair}, which normally makes it \\unsteady.
@@ -272,6 +274,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
 
       // A 15' vertical push is worth 1.6 EA, which is r2.
       attack: {
+        crit: INJURY_CRIT,
         hit: `
           If the target is \\glossterm{injured}, you \\glossterm{fling} it up to 15 feet upwards or horizontally (see \\pcref{Fling Effects}).
           Moving it upwards costs twice the normal movement cost.
@@ -295,6 +298,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       // A 30' vertical push is 2.6 EA, which is r7. Drop to r6 for limited scope. We
       // sneak into three targets by keeping a relatively low weight category.
       attack: {
+        crit: INJURY_CRIT,
         hit: `
           If the target is \\glossterm{injured}, you \\glossterm{fling} it up to 30 feet upwards or horizontally (see \\pcref{Fling Effects}).
           Moving it upwards costs twice the normal movement cost.
@@ -352,6 +356,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       name: 'Wind Tunnel',
 
       attack: {
+        crit: "The push distance increases to 30 feet.",
         hit: `
           The target is \\glossterm{pushed} 15 feet in the direction the wind blows.
           Once it leaves the area, it stops being pushed and blocks any other targets from being pushed.
@@ -378,7 +383,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
 
       functionsLike: {
         name: 'wind tunnel',
-        exceptThat: 'the push distance increases to 30 feet.',
+        exceptThat: 'the push distance increases to 30 feet, or 60 feet on a critical hit.',
       },
       // narrative: '',
       rank: 7,
@@ -564,15 +569,15 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       name: 'Windtheft',
 
       attack: {
+        crit: `You fling the object even if it is held in two hands or well secured.`,
         hit: `
-          You \\glossterm{fling} the object up to 60 feet towards you.
+          As long as the object is not held in two hands or well secured, you \\glossterm{fling} the object up to 60 feet towards you.
           You can use a \\glossterm{free hand} to catch the object if it reaches you.
         `,
         targeting: `
           Make an attack vs. Reflex against one object within \\medrange.
           The object must have a \\glossterm{weight category} of Small or less.
           If the object is attended by a creature, the attack must also beat the attending creature's Brawn and Reflex defenses.
-          If it is held in two hands or well secured, this attack automatically fails.
         `,
       },
       // narrative: '',

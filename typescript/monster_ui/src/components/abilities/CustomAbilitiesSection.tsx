@@ -231,7 +231,7 @@ export const CustomAbilitiesSection: React.FC<CustomAbilitiesSectionProps> = ({
                                   ...ability,
                                   attack: {
                                     targeting: 'Mental Defense',
-                                    hit: 'The target is stunned.',
+                                    hit: 'The target is dazed.',
                                   },
                                 });
                               } else {

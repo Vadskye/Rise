@@ -1,6 +1,6 @@
 import { MysticSphere } from '.';
 import { add_tag_to_sphere } from './add_tag';
-import { BARRIER_COOLDOWN, INJURY_CRIT } from '../constants';
+import { BARRIER_COOLDOWN, CRIT_BECOMES_CONDITION, INJURY_CRIT } from '../constants';
 
 const OPTIONAL_ICE_CRYSTAL = 'One optional \\glossterm{ice crystal}.';
 
@@ -358,6 +358,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       name: 'Freezing Wind',
 
       attack: {
+        crit: CRIT_BECOMES_CONDITION,
         hit: `
           The target becomes \\briefly \\slowed.
         `,
@@ -646,31 +647,26 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
     },
 
     // Brief + injury ranged slow is about 2.4 EA, so 3.4 EA with damage, so 1.7 EA as a
-    // double action, which is r3, or r2 at close range.
-    // Normal close range debuff damage would be dr2. Double is about dr4. Upgrade to dr5
-    // for the mandatory ice crystal cost.
+    // double action, which is r3.
+    // Normal medium range debuff damage would be dr2. Double is about dr4.
     {
       name: 'Bonechill',
 
-      cost: 'One \\glossterm{ice crystal}.',
-      // Rank 2 Spell
-      // Range: Short (mod +1)
-      // Mod: Double Action (+2)
-      // Result: 2 + 1 + 2 = dr5
       attack: {
+        crit: "Double damage, and the target is affected as if it was \\glossterm{injured}.",
         hit: `
-          \\damagerankfive, and any \\glossterm{extra damage} is doubled.
-          In addition, the target is \\briefly \\slowed.
+          \\damagerankfour.
+          In addition, the target is \\briefly \\slowed, and you gain an \\glossterm{ice crystal}.
         `,
         injury: `
-          The target is slowed as a \\glossterm{condition}.
+          The target is slowed as a \\glossterm{condition}, and you gain an additional \\glossterm{ice crystal}.
         `,
         targeting: `
           When you cast this spell, ice forms on your body and the air chills around you.
-          During your next turn, you can spend a \\glossterm{standard action} to make an attack vs. Fortitude against something within \\shortrange.
+          During your next turn, you can spend a \\glossterm{standard action} to make an attack vs. Fortitude against something within \\medrange.
         `,
       },
-      rank: 2,
+      rank: 3,
       roles: ['burst', 'softener', 'maim'],
       scaling: 'damage',
     },
@@ -687,13 +683,14 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       // Mod: Double Action (+2)
       // Result: 7 + 1 + 2 = dr10
       attack: {
+        crit: `Double damage, and at the end of your turn, the target is \\briefly locked in \\stasis.`,
         hit: `
-          \\damagerankten, and any \\glossterm{extra damage} is tripled.
+          \\damageranknine, and any \\glossterm{extra damage} is doubled.
           In addition, the target is \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
           When you cast this spell, ice forms on your body and the air chills around you.
-          During your next turn, you can spend a \\glossterm{standard action} to make an attack vs. Fortitude against something within \\shortrange.
+          During your next turn, you can spend a \\glossterm{standard action} to make an attack vs. Fortitude against something within \\medrange.
         `,
       },
       rank: 7,

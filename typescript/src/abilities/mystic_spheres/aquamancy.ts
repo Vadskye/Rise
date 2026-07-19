@@ -1,6 +1,6 @@
 import { MysticSphere } from '.';
 import { add_tag_to_sphere } from './add_tag';
-import { BARRIER_COOLDOWN, INJURY_CRIT } from '../constants';
+import { BARRIER_COOLDOWN, CRIT_BECOMES_CONDITION, INJURY_CRIT } from '../constants';
 
 const WATER_ACCURACY_BONUS =
   'You gain a +2 accuracy bonus with the attack if there is a Large or larger body of water within \\shortrange.';
@@ -123,10 +123,12 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       // Huge or smaller offsets the bonus "cannot fly or glide".
       // -1 rank for limited scope
       attack: {
+        crit: CRIT_BECOMES_CONDITION,
         hit: `
           The target is \\briefly surrounded by a bubble of water.
           It cannot breathe air, fly, or glide, but it can use its other movement modes normally.
           If it does not have a \\glossterm{swim speed}, it is \\unsteady (see \\pcref{Fighting in Water}).
+          It can spend a standard action to force its head out of the bubble to breathe.
         `,
         targeting: `
           Make an attack vs. Brawn against up to two Huge or smaller creatures within \\medrange.
@@ -785,6 +787,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       // Permanent prone is essentially the same as slowed, which is 1.5 EA.
       // Add +0.3 EA for the melting damage, so 1.8 EA. Then +0.4 for prefire, so 2.2 EA.
       attack: {
+        crit: INJURY_CRIT,
         hit: `
           The target's body starts to liquify as a \\glossterm{condition}.
           While it is \\glossterm{injured}, its lower body \\glossterm{shapeshifts} into a puddle of water.
@@ -821,6 +824,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
 
       // +1r for area
       attack: {
+        crit: "The target is also \\briefly unable to stand up from being prone.",
         hit: `The target falls \\prone.`,
         targeting: `
           Make an attack vs. Reflex against each Large or smaller \\glossterm{grounded} \\glossterm{enemy} in a \\tinyarea radius within \\shortrange.

@@ -577,6 +577,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
 
       // Medium range is -2dr, plus the deafen.
       attack: {
+        crit: "Double damage, and the target is also \\briefly \\dazed.",
         hit: `\\damagerankfour, and the target is \\deafened as a \\glossterm{condition}.`,
         halfOnMiss: true,
         targeting: `

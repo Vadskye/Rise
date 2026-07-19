@@ -27,6 +27,7 @@ export const enchantment: MysticSphere = {
       name: 'Repeat',
 
       attack: {
+        crit: "If the target is unable to use the same standard action, it cannot use a standard action at all.",
         hit: `
           During its next turn, the target must repeat the same standard action that it took during its most recent turn if possible.
           It can choose different targets or otherwise make different decisions about its action, but the action must be the same.
@@ -143,6 +144,7 @@ export const enchantment: MysticSphere = {
       name: 'Collapse',
 
       attack: {
+        crit: "The target is also \\briefly unable to stand up from being prone.",
         hit: `The target falls \\prone.`,
         targeting: `
           Make an attack vs. Mental against all Large or smaller \\glossterm{enemies} in a \\smallarea radius within \\shortrange.
@@ -180,6 +182,7 @@ export const enchantment: MysticSphere = {
       name: 'Confusion',
 
       attack: {
+        crit: INJURY_CRIT,
         hit: `
           If the target is \\glossterm{injured}, it is \\briefly \\confused.
         `,
@@ -266,6 +269,7 @@ export const enchantment: MysticSphere = {
 
       // action skip is r3 with limited scope
       attack: {
+        crit: INJURY_CRIT,
         hit: `
           If the target is \\glossterm{injured}, it is compelled to spend its next \\glossterm{standard action} doing nothing at all.
           After it takes this standard action, it becomes \\buff{immune} to this effect until it finishes a \\glossterm{short rest}.
@@ -347,6 +351,7 @@ export const enchantment: MysticSphere = {
       name: 'Fearsome Aura',
 
       attack: {
+        crit: "The target is also \\panicked by you until your next turn.",
         hit: `The target is \\briefly \\frightened by you.`,
         targeting: `
           Whenever an \\glossterm{enemy} enters a \\medarea radius \\glossterm{emanation} from you, make a \\glossterm{reactive attack} vs. Mental against them with a \\plus2 accuracy bonus.
@@ -366,6 +371,8 @@ export const enchantment: MysticSphere = {
       name: 'Intense Fearsome Aura',
 
       attack: {
+        // Same as briefly, but this wording seems clearer at explaining the contrast
+        crit: "The effect lasts until the end of your next turn.",
         hit: `The target is \\panicked by you until your next turn.`,
         targeting: `
           Whenever an \\glossterm{enemy} enters a \\largearea radius \\glossterm{emanation} from you, make a \\glossterm{reactive attack} vs. Mental against them.
@@ -439,6 +446,7 @@ export const enchantment: MysticSphere = {
 
       // TODO: unclear rank
       attack: {
+        crit: "The effect is only dismissed if the target is harmed, not merely if it feels in danger.",
         hit: `
           The target has its emotions calmed.
           The effects of all other \\abilitytag{Emotion} abilities on it are \\glossterm{suppressed}.
@@ -601,6 +609,7 @@ export const enchantment: MysticSphere = {
       // +0.4 EA over mind blank because attacking allies can be strong?
       // Don't scale enemy count because action skip scales strongly with enemy count.
       attack: {
+        crit: INJURY_CRIT,
         hit: `
           If the target is \\glossterm{injured}, it \\briefly sees all creatures as its \\glossterm{enemies}.
           It is compelled to attack the creature closest to it, choosing randomly between equally close creatures.
@@ -691,6 +700,7 @@ export const enchantment: MysticSphere = {
       name: 'Speak Only Truth',
 
       attack: {
+        crit: "The effect becomes \\atSubtle on the target.",
         hit: `
           The target is unable to say things it knows to be untrue.
           It can still remain silent, say misleading truths, and so on.
@@ -756,7 +766,7 @@ export const enchantment: MysticSphere = {
         halfOnMiss: true,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea cone from you.
-          You gain a +4 accuracy bonus against each target with a negative Intelligence.
+          You gain a +4 accuracy bonus against each target with an Intelligence of 0 or less.
         `,
       },
       rank: 4,
@@ -769,6 +779,7 @@ export const enchantment: MysticSphere = {
       name: 'Mighty Psionic Blast',
 
       attack: {
+        crit: "Double damage, and the target is dazed as a condition.",
         hit: `
           \\damagerankfive, and the target is \\briefly \\dazed.
         `,
@@ -778,7 +789,7 @@ export const enchantment: MysticSphere = {
         halfOnMiss: true,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea cone from you.
-          You gain a +4 accuracy bonus against each target with a negative Intelligence.
+          You gain a +4 accuracy bonus against each target with an Intelligence of 1 or less.
         `,
       },
       rank: 7,
@@ -792,6 +803,7 @@ export const enchantment: MysticSphere = {
 
       // -1dr for debuff, -1d for +2a
       attack: {
+        crit: "Double damage, and the effect becomes a \\glossterm{condition}.",
         hit: `
           \\damagerankthree, and the target \\briefly takes a \\minus2 penalty to its Mental defense.
         `,

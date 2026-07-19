@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { INJURY_CRIT } from '../constants';
+import { CRIT_BECOMES_CONDITION, INJURY_CRIT } from '../constants';
 
 export const channelDivinity: MysticSphere = {
   name: 'Channel Divinity',
@@ -231,6 +231,7 @@ export const channelDivinity: MysticSphere = {
       name: 'Fearful Awe',
 
       attack: {
+        crit: CRIT_BECOMES_CONDITION,
         hit: `
           The target is \\briefly \\frightened by you.
         `,
@@ -249,6 +250,7 @@ export const channelDivinity: MysticSphere = {
       name: 'Echoing Fearful Awe',
 
       attack: {
+        crit: CRIT_BECOMES_CONDITION,
         hit: `
           The target is \\briefly \\frightened by you.
         `,
@@ -448,6 +450,7 @@ export const channelDivinity: MysticSphere = {
       name: 'Greater Word of Power',
 
       attack: {
+        crit: CRIT_BECOMES_CONDITION,
         hit: `
           The target is \\briefly \\dazed.
         `,
@@ -487,6 +490,7 @@ export const channelDivinity: MysticSphere = {
       name: 'Divine Interdiction',
 
       attack: {
+        crit: INJURY_CRIT,
         hit: `
           If the target is \\glossterm{injured}, an interdiction \\briefly divides it from everything outside itself.
           No ability can have \\glossterm{line of effect} to or from it, even abilities that can pass pass through solid objects.
@@ -586,6 +590,7 @@ export const channelDivinity: MysticSphere = {
       // Expected damage for two debuff + damage spells would be 2x dr4. dr6 seems like a
       // reasonable approximation.
       attack: {
+        crit: "Double damage, and the target is also \\briefly \\blinded.",
         hit: `
           \\damageranksix, and any \\glossterm{extra damage} is doubled.
           In addition, the target is \\dazed as a \\glossterm{condition}.
@@ -608,6 +613,7 @@ export const channelDivinity: MysticSphere = {
       // Expected damage for two debuff + damage spells would be 2x dr7. dr10 is almost
       // exactly the same.
       attack: {
+        crit: "Double damage, and the target is also \\briefly \\blinded.",
         hit: `
           \\damagerankten, and any \\glossterm{extra damage} is tripled.
           In addition, the target is \\dazed as a \\glossterm{condition}.

@@ -167,6 +167,7 @@ export const chronomancy: MysticSphere = {
       // Time skip is normally 2.5 EA. Assume that it's 75% effectiveness with the HP
       // condition, so 1.9 EA, which is about rank 4.
       attack: {
+        crit: INJURY_CRIT,
         hit: `
           If the target is \\glossterm{injured}, it becomes \\briefly frozen in time.
           It becomes completely immune to all damage, attacks, and effects of any kind.
@@ -209,7 +210,7 @@ export const chronomancy: MysticSphere = {
       name: 'Efficient Slowing Grasp',
 
       attack: {
-        crit: 'The target is \\briefly locked in \\stasis',
+        crit: 'At the end of your turn, the target is \\briefly locked in \\stasis.',
         hit: `
           The target is \\slowed as a \\glossterm{condition}.
         `,
@@ -384,7 +385,7 @@ export const chronomancy: MysticSphere = {
       usageTime: 'minor',
       effect: `
         Choose either yourself or one Medium or smaller \\glossterm{ally} or \\glossterm{unattended} object within \\medrange.
-        The target is placed into \\stasis.
+        The target is locked in \\stasis.
 
         This effect normally lasts as long as you \\glossterm{sustain} it.
         If you use this ability on yourself, it instead lasts for a number of turns you choose when you cast the spell, up to a maximum of five turns.

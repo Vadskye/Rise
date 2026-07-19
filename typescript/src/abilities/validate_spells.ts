@@ -267,7 +267,6 @@ function parseAppliedEffects(text: string): string[] {
     'goaded',
     'unsteady',
     'grappled',
-    'stunned',
     'weakened',
     'vulnerable',
     'exposed',
