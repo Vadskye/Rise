@@ -139,13 +139,22 @@ describe('Monster UI Duplication E2E Integration Tests', () => {
     expect(headerText).toContain('Copyable Beast (Copy)');
 
     // 6. Verify duplicate inherits level 10 and neutral good alignment
-    const newNameVal = await page.$eval('[data-testid="monster-name-input"]', (el) => (el as HTMLInputElement).value);
+    const newNameVal = await page.$eval(
+      '[data-testid="monster-name-input"]',
+      (el) => (el as HTMLInputElement).value,
+    );
     expect(newNameVal).toBe('Copyable Beast (Copy)');
 
-    const newAlignmentVal = await page.$eval('[data-testid="alignment-select"]', (el) => (el as HTMLSelectElement).value);
+    const newAlignmentVal = await page.$eval(
+      '[data-testid="alignment-select"]',
+      (el) => (el as HTMLSelectElement).value,
+    );
     expect(newAlignmentVal).toBe('neutral good');
 
-    const newLevelVal = await page.$eval('[data-testid="level-input"]', (el) => (el as HTMLInputElement).value);
+    const newLevelVal = await page.$eval(
+      '[data-testid="level-input"]',
+      (el) => (el as HTMLInputElement).value,
+    );
     expect(newLevelVal).toBe('10');
 
     // 7. Verify the DB file has both monsters saved
@@ -179,7 +188,7 @@ describe('Monster UI Duplication E2E Integration Tests', () => {
     // 2. Add monster member to group
     const addMemberBtn = await page.waitForSelector(
       '[data-testid="group-item-Squad"] button[title="Add monster to group"]',
-      { timeout: 5000 }
+      { timeout: 5000 },
     );
     await addMemberBtn!.click();
     await new Promise((resolve) => setTimeout(resolve, 500));

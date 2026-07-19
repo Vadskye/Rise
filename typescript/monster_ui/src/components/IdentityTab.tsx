@@ -431,7 +431,14 @@ export const IdentityTab: React.FC<IdentityTabProps> = ({
       </div>
 
       {onDuplicateMonster && (
-        <div style={{ display: 'flex', justifyContent: 'flex-start', marginTop: '10px', marginBottom: '20px' }}>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'flex-start',
+            marginTop: '10px',
+            marginBottom: '20px',
+          }}
+        >
           <button
             type="button"
             className="btn-add"

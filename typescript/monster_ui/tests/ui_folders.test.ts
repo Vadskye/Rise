@@ -351,9 +351,12 @@ describe('Monster UI Folders E2E Tests', () => {
     });
 
     // Expand the group since groups are collapsed by default
-    const groupArrowInitial = await page.waitForSelector(`[data-testid="group-arrow-${groupName}"]`, {
-      timeout: 2000,
-    });
+    const groupArrowInitial = await page.waitForSelector(
+      `[data-testid="group-arrow-${groupName}"]`,
+      {
+        timeout: 2000,
+      },
+    );
     await groupArrowInitial!.click();
     await new Promise((resolve) => setTimeout(resolve, 300));
 
