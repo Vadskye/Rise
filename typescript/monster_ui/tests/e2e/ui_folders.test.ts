@@ -40,7 +40,7 @@ describe('Monster UI Folders E2E Tests', () => {
 
     // Start Vite dev server proxying to Express
     viteServer = await createServer({
-      configFile: path.resolve(__dirname, '../vite.config.ts'),
+      configFile: path.resolve(__dirname, '../../vite.config.ts'),
       server: {
         port: 0,
         proxy: {

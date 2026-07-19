@@ -41,7 +41,7 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
 
     // 2. Start Vite server on a random port, proxying to our test Express server
     viteServer = await createServer({
-      configFile: path.resolve(__dirname, '../vite.config.ts'),
+      configFile: path.resolve(__dirname, '../../vite.config.ts'),
       server: {
         port: 0,
         proxy: {
@@ -264,6 +264,10 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
     expect(folderHeader).toBeDefined();
     const folderText = await page.$eval('.folder-header', (el) => el.textContent);
     expect(folderText).toContain('Test Folder');
+
+    // Expand the folder since folders are collapsed by default
+    await page.click('[data-testid="folder-container-Test Folder"] .folder-header');
+    await new Promise((resolve) => setTimeout(resolve, 300));
 
     // Verify children elements are rendered and alphabetized: Orcs (starts with O) should be before Troll (starts with T)
     const childrenNames = await page.$$eval(

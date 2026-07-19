@@ -60,7 +60,7 @@ describe('Monster UI Tab Layout Tests', () => {
 
     // 2. Start Vite server on a random port, proxying to our test Express server
     viteServer = await createServer({
-      configFile: path.resolve(__dirname, '../vite.config.ts'),
+      configFile: path.resolve(__dirname, '../../vite.config.ts'),
       server: {
         port: 0,
         proxy: {

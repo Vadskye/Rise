@@ -21,6 +21,7 @@ export default defineConfig({
     },
   },
   test: {
+    silent: 'passed-only',
     experimental: {
       importDurations: {
         print: true,

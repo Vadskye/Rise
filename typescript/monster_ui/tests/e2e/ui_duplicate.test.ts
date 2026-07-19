@@ -38,7 +38,7 @@ describe('Monster UI Duplication E2E Integration Tests', () => {
 
     // Start Vite server proxying to Express
     viteServer = await createServer({
-      configFile: path.resolve(__dirname, '../vite.config.ts'),
+      configFile: path.resolve(__dirname, '../../vite.config.ts'),
       server: {
         port: 0,
         proxy: {

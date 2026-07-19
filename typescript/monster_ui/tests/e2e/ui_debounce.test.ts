@@ -59,7 +59,7 @@ describe('Monster UI Debounce/Timing Tests', () => {
 
     // 2. Start Vite Server
     viteServer = await createServer({
-      configFile: path.resolve(__dirname, '../vite.config.ts'),
+      configFile: path.resolve(__dirname, '../../vite.config.ts'),
       server: {
         port: 0,
         proxy: {

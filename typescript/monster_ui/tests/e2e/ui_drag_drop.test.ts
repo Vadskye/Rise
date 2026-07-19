@@ -91,7 +91,7 @@ describe('Monster UI Drag and Drop E2E Tests', () => {
 
     // Start Vite dev server proxying to Express
     viteServer = await createServer({
-      configFile: path.resolve(__dirname, '../vite.config.ts'),
+      configFile: path.resolve(__dirname, '../../vite.config.ts'),
       server: {
         port: 0,
         proxy: {
@@ -209,13 +209,19 @@ describe('Monster UI Drag and Drop E2E Tests', () => {
       '[data-testid="group-item-Drag Group"]',
       '[data-testid="folder-container-Drag Folder"]',
     );
-    await new Promise((resolve) => setTimeout(resolve, 1500)); // wait for save operation
+
+    // Click folder to expand it
+    const folderToggle = await page.$(
+      '[data-testid="folder-container-Drag Folder"] .folder-arrow',
+    );
+    await folderToggle!.click();
+
 
     // Verify UI updated: group is now inside "Drag Folder"
-    const hasGroupInFolder = await page.$(
+    await page.waitForSelector(
       '[data-testid="folder-container-Drag Folder"] [data-testid="group-item-Drag Group"]',
+      { timeout: 5000 },
     );
-    expect(hasGroupInFolder).toBeTruthy();
 
     // 5. Drag "Drag Monster" out of "Drag Folder" and drop it into folderless Individual Monsters section
     await dragAndDrop(
