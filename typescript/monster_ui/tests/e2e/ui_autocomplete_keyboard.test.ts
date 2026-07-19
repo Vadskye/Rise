@@ -1,4 +1,4 @@
-import './setup-env';
+import '../setup-env';
 
 import { test, describe, beforeAll, afterAll, expect, beforeEach } from 'vitest';
 import * as fs from 'fs';
@@ -6,11 +6,11 @@ import * as path from 'path';
 import { fileURLToPath } from 'url';
 import http from 'http';
 import puppeteer, { Browser, Page } from 'puppeteer';
-import { captureFailure } from './helpers';
+import { captureFailure } from '../helpers';
 import { createServer, ViteDevServer } from 'vite';
-import { paths, saveDb } from '../server/db';
+import { paths, saveDb } from '../../server/db';
 
-const { app } = await import('../server/index');
+const { app } = await import('../../server/index');
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

@@ -1,4 +1,4 @@
-import './setup-env';
+import '../setup-env';
 
 import { test, describe, beforeAll, afterAll, expect, beforeEach } from 'vitest';
 import * as fs from 'fs';
@@ -7,14 +7,14 @@ import { fileURLToPath } from 'url';
 import http from 'http';
 import puppeteer, { Browser, Page } from 'puppeteer';
 import { createServer, ViteDevServer } from 'vite';
-import { paths } from '../server/db';
+import { paths } from '../../server/db';
 
-const { app } = await import('../server/index');
+const { app } = await import('../../server/index');
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-import { captureFailure } from './helpers';
+import { captureFailure } from '../helpers';
 
 describe('Monster UI Folders E2E Tests', () => {
   let expressServer: http.Server;
