@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { CONDITION_CRIT } from '../constants';
+import { INJURY_CRIT } from '../constants';
 
 export const enchantment: MysticSphere = {
   name: 'Enchantment',
@@ -64,7 +64,8 @@ export const enchantment: MysticSphere = {
       name: 'Curated Threat',
 
       attack: {
-        crit: CONDITION_CRIT,
+        // No plausible crit effect?
+        crit: null,
         hit: `
           As a \\glossterm{condition}, the target's assessment of the threat you pose matches your intention.
           If you chose to appear powerful, they consider you to be their most powerful currently present foe.
@@ -92,7 +93,7 @@ export const enchantment: MysticSphere = {
       name: 'Monologue',
 
       attack: {
-        crit: CONDITION_CRIT,
+        crit: "The target is compelled to speak as quickly as it can, so even highly intelligent creatures have difficulty concealing anything about their thoughts and motivations.",
         hit: `As a \\glossterm{condition}, the target is forced to speak out loud constantly whenever it can.
         This does not control what it talks about, so a reasonably savvy creature may be able to avoid revealing anything of great interest.
         In combat, most creatures with an intelligence of 0 or less will explain their thoughts about the combat, which can help you predict their actions.`,
@@ -118,7 +119,7 @@ export const enchantment: MysticSphere = {
       // dazed with a slower ramp time, so call it 2.6 EA. That's r7, or r6 limited
       // scope.
       attack: {
-        crit: CONDITION_CRIT,
+        crit: "The penalty for not dancing increases to \\minus2.",
         hit: `
           As a \\glossterm{condition}, the target is compelled to dance.
           It can spend a \\glossterm{move action} to dance, if it is physically capable of dancing.
@@ -158,7 +159,7 @@ export const enchantment: MysticSphere = {
       name: 'Taunt',
 
       attack: {
-        crit: CONDITION_CRIT,
+        crit: INJURY_CRIT,
         hit: `
           The target is \\briefly \\goaded by you.
           If it \\glossterm{injured}, it is also goaded by you as a \\glossterm{condition}.
@@ -196,7 +197,7 @@ export const enchantment: MysticSphere = {
       name: 'Enduring Confusion',
 
       attack: {
-        crit: CONDITION_CRIT,
+        crit: INJURY_CRIT,
         hit: `
           If the target is \\glossterm{injured}, it is \\confused as a \\glossterm{condition}.
         `,
@@ -215,7 +216,7 @@ export const enchantment: MysticSphere = {
       // Dazed as a condition is 3 EA. Humanoid only is about -0.4 EA, and limited scope
       // is r6.
       attack: {
-        crit: CONDITION_CRIT,
+        crit: "The target is also \\briefly \\confused.",
         hit: `
           The target is \\dazed as a \\glossterm{condition}.
           If the target is currently unconscious due to \\glossterm{vital wounds} and is not \\glossterm{elite}, you can choose to \\glossterm{attune} to this ability.
@@ -238,14 +239,14 @@ export const enchantment: MysticSphere = {
       // prebuff ranged slow is 2.5 EA, and add 0.2 EA for the narrative effect. With
       // limited scope, we can get away with r6.
       attack: {
-        crit: CONDITION_CRIT,
+        crit: INJURY_CRIT,
         hit: `
           The target feels sleepy as a \\glossterm{condition}.
           If it can find a convenient opportunity to go to sleep, it will do so.
           This generally will not remove it from combat or high pressure social situations, and it will generally take the time to find a convenient place to sleep rather than simply dropping asleep in the middle of a room.
           In addition, while the target is \\glossterm{injured}, it is \\slowed.
 
-          While asleep, the target can be awakened normally, such as by taking damage.
+          While asleep, the target can be awakened normally, such as by hearing loud noises or being shaken awake.
         `,
         targeting: `
           This spell has no \\glossterm{verbal components}.
@@ -325,7 +326,7 @@ export const enchantment: MysticSphere = {
       name: 'Cause Fear',
 
       attack: {
-        crit: CONDITION_CRIT,
+        crit: "The target is also \\briefly \\panicked by you.",
         hit: `
           The target is \\frightened by you as a \\glossterm{condition}.
         `,
@@ -382,7 +383,7 @@ export const enchantment: MysticSphere = {
       name: 'Enduring Fearsome Aura',
 
       attack: {
-        crit: CONDITION_CRIT,
+        crit: "The target is also \\briefly \\panicked by you.",
         hit: `The target is \\frightened by you as a \\glossterm{condition}.`,
         targeting: `
           Whenever an \\glossterm{enemy} enters a \\largearea radius \\glossterm{emanation} from you, make a \\glossterm{reactive attack} vs. Mental against them.
@@ -463,7 +464,7 @@ export const enchantment: MysticSphere = {
       // Assume this affects 5 of the 15 actions, so it's 1 EA by default. Add 0.4 EA for
       // stacking and +1r for the accuracy bonus.
       attack: {
-        crit: CONDITION_CRIT,
+        crit: "The penalty increases to -4.",
         hit: `
           The target takes a -2 penalty to Mental defense as a \\glossterm{condition}.
           Unlike normal conditions, this effect stacks with itself if applied multiple times, up to a maximum of -10.
@@ -561,7 +562,7 @@ export const enchantment: MysticSphere = {
       name: 'Agony',
 
       attack: {
-        crit: CONDITION_CRIT,
+        crit: INJURY_CRIT,
         hit: `
           As a \\glossterm{condition}, the target feels excruciating pain from even minor injuries.
           While it is \\glossterm{injured}, it is \\dazed.

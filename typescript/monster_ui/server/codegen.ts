@@ -499,7 +499,7 @@ function generateTypeScriptCode(db: DatabaseData): string {
 import { Grimoire } from '@src/monsters/grimoire';
 import { Creature, CustomMonsterAbility } from '@src/character_sheet/creature';
 import { getWeaponMultByRank } from '@src/abilities/combat_styles';
-import { BARRIER_COOLDOWN, BRIEF_COOLDOWN, CONDITION_CRIT } from '@src/abilities/constants';
+import { BARRIER_COOLDOWN, BRIEF_COOLDOWN, CRIT_BECOMES_CONDITION, INJURY_CRIT } from '@src/abilities/constants';
 
 export function addMonstersFromUi(grimoire: Grimoire) {`);
 

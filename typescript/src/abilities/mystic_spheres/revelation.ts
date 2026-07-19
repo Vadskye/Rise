@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { CONDITION_CRIT, MINOR_STAMINA } from '../constants';
+import { CRIT_BECOMES_CONDITION, INJURY_CRIT, MINOR_STAMINA } from '../constants';
 
 export const revelation: MysticSphere = {
   name: 'Revelation',
@@ -332,7 +332,7 @@ export const revelation: MysticSphere = {
 
       cost: MINOR_STAMINA,
       attack: {
-        crit: CONDITION_CRIT,
+        crit: "The target also becomes \\exposed.",
         hit: `
           As a \\glossterm{condition}, the target's vulnerabilities become clear for all to see.
           Anyone looking at it intuitively knows everything that it is \\vulnerable, \\resistant, and immune to.
@@ -351,7 +351,7 @@ export const revelation: MysticSphere = {
       name: 'Myriad Visions',
 
       attack: {
-        crit: CONDITION_CRIT,
+        crit: "The target is also \\briefly \\confused.",
         hit: `
           The target is \\dazzled as a \\glossterm{condition}.
         `,
@@ -373,6 +373,7 @@ export const revelation: MysticSphere = {
 
       // brief dazzle is 0.6, so zone is 1.6 = rank 2. Trade +1 rank for +2 area rank.
       attack: {
+        crit: CRIT_BECOMES_CONDITION,
         hit: `The target is \\briefly \\dazzled.`,
         targeting: `
           You create a field of hallucinatory visions in a \\smallarea radius \\glossterm{zone} within \\shortrange.
@@ -506,7 +507,7 @@ export const revelation: MysticSphere = {
       name: 'Sensory Chain',
 
       attack: {
-        crit: CONDITION_CRIT,
+        crit: "The effect is \\atSubtle on the target.",
         hit: `
           As a \\glossterm{condition}, you can see and hear out of the target's eyes and ears instead of your own.
           If the target stops being within 1 mile from you, ignoring \\glossterm{line of sight} and \\glossterm{line of effect}, this ability is \\glossterm{dismissed}.
@@ -533,7 +534,7 @@ export const revelation: MysticSphere = {
       name: "Animal's Sight",
 
       attack: {
-        crit: CONDITION_CRIT,
+        crit: "The effect is \\atSubtle on the target.",
         hit: `
           As a \\glossterm{condition}, you can see and hear out of the target's eyes and ears instead of your own.
           If the target stops being within 1 mile from you, ignoring \\glossterm{line of sight} and \\glossterm{line of effect}, this ability is \\glossterm{dismissed}.
@@ -555,7 +556,7 @@ export const revelation: MysticSphere = {
       name: 'Blinding Visions',
 
       attack: {
-        crit: CONDITION_CRIT,
+        crit: INJURY_CRIT,
         hit: `
           If the target is \\glossterm{injured}, it becomes \\blinded as a \\glossterm{condition}.
         `,

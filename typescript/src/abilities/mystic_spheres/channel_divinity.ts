@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { CONDITION_CRIT } from '../constants';
+import { INJURY_CRIT } from '../constants';
 
 export const channelDivinity: MysticSphere = {
   name: 'Channel Divinity',
@@ -267,7 +267,7 @@ export const channelDivinity: MysticSphere = {
       name: 'Enduring Fearful Awe',
 
       attack: {
-        crit: CONDITION_CRIT,
+        crit: "The target is also \\briefly \\panicked by you.",
         hit: `
           The target is \\frightened by you as a \\glossterm{condition}.
         `,
@@ -467,7 +467,7 @@ export const channelDivinity: MysticSphere = {
       name: 'Word of Power',
 
       attack: {
-        crit: CONDITION_CRIT,
+        crit: INJURY_CRIT,
         hit: `
           The target is \\briefly \\deafened.
           If it is \\glossterm{injured}, it is also deafened as a \\glossterm{condition}.
@@ -526,7 +526,7 @@ export const channelDivinity: MysticSphere = {
       name: "Champion's Blade",
 
       attack: {
-        crit: CONDITION_CRIT,
+        crit: INJURY_CRIT,
         hit: `
           The target is \\briefly \\goaded by you.
           If it was \\glossterm{injured} by the strike, it is also goaded by you as a \\glossterm{condition}.
@@ -548,7 +548,7 @@ export const channelDivinity: MysticSphere = {
       name: 'Radiant Blade',
 
       attack: {
-        crit: CONDITION_CRIT,
+        crit: INJURY_CRIT,
         hit: `
           The target is \\briefly \\dazzled.
           If it was \\glossterm{injured} by the strike, it is also dazzled as a \\glossterm{condition}.

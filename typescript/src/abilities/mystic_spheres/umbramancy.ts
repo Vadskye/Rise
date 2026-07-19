@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { BARRIER_COOLDOWN, CONDITION_CRIT } from '../constants';
+import { BARRIER_COOLDOWN, INJURY_CRIT } from '../constants';
 
 export const umbramancy: MysticSphere = {
   name: 'Umbramancy',
@@ -216,7 +216,7 @@ export const umbramancy: MysticSphere = {
       // Frightened by all is a 1.7 EA debuff, or 1.5 EA with the shadowed requirement, up
       // to 1.9 EA with prefire. We can drop to rank 3 with limited scope.
       attack: {
-        crit: CONDITION_CRIT,
+        crit: INJURY_CRIT,
         hit: `
           The target becomes afraid of the dark as a \\glossterm{condition}.
           While it is \\glossterm{shadowed} and \\glossterm{injured}, it is \\frightened of all creatures.
@@ -261,7 +261,7 @@ export const umbramancy: MysticSphere = {
 
       // Dazzled is 1.8 EA, so r3. +1r for shadowed accuracy.
       attack: {
-        crit: CONDITION_CRIT,
+        crit: "The target is also \\briefly \\blinded.",
         hit: `
           The target is \\dazzled as a \\glossterm{condition}.
         `,

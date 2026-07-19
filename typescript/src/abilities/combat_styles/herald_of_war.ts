@@ -1,6 +1,5 @@
 import { CombatStyle } from '.';
-// TODO: move this to a more generally shared location
-import { CONDITION_CRIT } from '../constants';
+import { INJURY_CRIT } from '../constants';
 
 // Naming conventions:
 // "Shout" is directed, so single-target or cone
@@ -55,7 +54,7 @@ export const heraldOfWar: CombatStyle = {
       // Brief + HP daze is worth 2 EA, so rank 4. That gives +1r for area rank, for a
       // total of ar6. But we only use ar5 here...
       attack: {
-        crit: CONDITION_CRIT,
+        crit: INJURY_CRIT,
         hit: `
           The target is \\briefly \\dazed.
           If it is \\glossterm{injured}, it is dazed as a \\glossterm{condition} instead.
@@ -89,10 +88,10 @@ export const heraldOfWar: CombatStyle = {
 
       // Brief + HP goad is 1.6 EA, or r3.
       attack: {
-        crit: CONDITION_CRIT,
+        crit: INJURY_CRIT,
         hit: `
           The target is \\briefly \\goaded by you.
-          If it has no remaining \\glossterm{hit points}, it is also goaded by you as a \\glossterm{condition}.
+          If it is \\glossterm{injured}, it is also goaded by you as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea cone from you.
@@ -109,7 +108,7 @@ export const heraldOfWar: CombatStyle = {
       // Condition goad is 3 EA, or r9. If we drop to limited scope and then cheat for no
       // reason, we can get in at r7.
       attack: {
-        crit: CONDITION_CRIT,
+        crit: "The target also \\briefly takes a \\minus4 accuracy penalty against creatures other than you.",
         hit: `The target is \\goaded by you as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea cone from you.
@@ -125,7 +124,7 @@ export const heraldOfWar: CombatStyle = {
 
       // Brief + HP frighten is 1.2 EA, so we can spend one EA on area for ar3.
       attack: {
-        crit: CONDITION_CRIT,
+        crit: INJURY_CRIT,
         hit: `
           The target is \\briefly \\frightened by you.
           If the target is \\glossterm{injured}, it also becomes frightened of you as a \\glossterm{condition}.
@@ -144,7 +143,7 @@ export const heraldOfWar: CombatStyle = {
 
       // Frightened as a condition is r5.
       attack: {
-        crit: CONDITION_CRIT,
+        crit: "The target is also \\briefly \\panicked by you.",
         hit: `The target is \\frightened by you as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
@@ -354,7 +353,7 @@ export const heraldOfWar: CombatStyle = {
       name: 'Challenge+',
 
       attack: {
-        crit: CONDITION_CRIT,
+        crit: INJURY_CRIT,
         hit: `
           The target is \\briefly \\goaded by you.
           If the target is \\glossterm{injured}, it also goaded as a \\glossterm{condition}.
@@ -462,7 +461,7 @@ export const heraldOfWar: CombatStyle = {
       // To get deafened as a condition, we need 2.4 EA, which is r6.
       // Limited scope allows r5, though we cheat to keep r3 area.
       attack: {
-        crit: CONDITION_CRIT,
+        crit: "The target is also \\briefly \\dazed.",
         hit: `The target is \\deafened as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\medarea radius from you.

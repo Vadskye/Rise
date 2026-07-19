@@ -1,7 +1,7 @@
 import { Grimoire } from '@src/monsters/grimoire';
 import { Creature, CustomMonsterAbility } from '@src/character_sheet/creature';
 import { getWeaponMultByRank } from '@src/abilities/combat_styles';
-import { BARRIER_COOLDOWN, CONDITION_CRIT } from '@src/abilities/constants';
+import { BARRIER_COOLDOWN } from '@src/abilities/constants';
 
 export function addUndead(grimoire: Grimoire) {
   grimoire.addMonster('Corpsetree', (creature: Creature) => {
@@ -253,7 +253,6 @@ function addGhosts(grimoire: Grimoire) {
           creature.addCustomSpell({
             name: 'Toll the Dead',
             attack: {
-              crit: CONDITION_CRIT,
               hit: `
                 As a \\glossterm{condition}, the target takes \\damagerankone whenever it deals damage.
               `,

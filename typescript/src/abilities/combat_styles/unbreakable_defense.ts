@@ -1,5 +1,5 @@
 import { CombatStyle } from '.';
-import { CONDITION_CRIT } from '../constants';
+import { INJURY_CRIT } from '../constants';
 
 export const unbreakableDefense: CombatStyle = {
   name: 'Unbreakable Defense',
@@ -230,7 +230,7 @@ export const unbreakableDefense: CombatStyle = {
       name: 'I Am Your Opponent',
 
       attack: {
-        crit: CONDITION_CRIT,
+        crit: INJURY_CRIT,
         hit: `
           The target is \\briefly \\goaded by you.
           If it is \\glossterm{injured}, it is also goaded by you as a \\glossterm{condition}.
@@ -248,7 +248,7 @@ export const unbreakableDefense: CombatStyle = {
       name: 'I Am Your Opponent+',
 
       attack: {
-        crit: CONDITION_CRIT,
+        crit: "The target also \\briefly takes a \\minus4 accuracy penalty against creatures other than you.",
         hit: `
           The target is \\goaded by you as a \\glossterm{condition}.
         `,

@@ -1,6 +1,6 @@
 import { MysticSphere } from '.';
 import { add_tag_to_sphere } from './add_tag';
-import { BARRIER_COOLDOWN, CONDITION_CRIT } from '../constants';
+import { BARRIER_COOLDOWN, CRIT_BECOMES_CONDITION } from '../constants';
 
 export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
   name: 'Aeromancy',
@@ -62,6 +62,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       name: 'Guiding Winds',
 
       attack: {
+        crit: CRIT_BECOMES_CONDITION,
         hit: `
           The target \\briefly takes a -2 penalty to defenses against \\atAir abilities and projectile \\glossterm{strikes}.
         `,
@@ -83,7 +84,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       name: 'Intense Guiding Winds',
 
       attack: {
-        crit: CONDITION_CRIT,
+        crit: 'The target is also \\briefly \\slowed.',
         hit: `
           The target takes a -2 penalty to defenses against \\atAir abilities and projectile \\glossterm{strikes} as a \\glossterm{condition}.
         `,
@@ -584,7 +585,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       name: 'Dust Cloud',
 
       attack: {
-        crit: CONDITION_CRIT,
+        crit: "The target is also \\briefly \\blinded.",
         hit: `
           The target is \\dazzled as a \\glossterm{condition}.
         `,
@@ -605,7 +606,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       // r5 with r6 area. Huge radius from self would be r7 area, which seems fine with
       // Sustain (standard).
       attack: {
-        crit: CONDITION_CRIT,
+        crit: "The target is also \\briefly \\blinded.",
         hit: `
           The target is \\dazzled as a \\glossterm{condition}.
         `,

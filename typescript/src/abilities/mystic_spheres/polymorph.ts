@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { CONDITION_CRIT, MULTIHIT_CRIT } from '../constants';
+import { INJURY_CRIT, MULTIHIT_CRIT } from '../constants';
 
 // This is a very broad sphere, but it is relatively weak with AOE.
 export const polymorph: MysticSphere = {
@@ -113,7 +113,7 @@ export const polymorph: MysticSphere = {
       // r12, or 3.6 EA. That's still not enough, so require a double application before
       // it works.
       attack: {
-        crit: CONDITION_CRIT,
+        crit: INJURY_CRIT,
         hit: `
           The target is \\briefly \\confused.
           If it is \\glossterm{injured} and was already confused by this ability, it also \\glossterm{shapeshifts} into a Tiny squirrel as a \\glossterm{condition}.
@@ -491,7 +491,7 @@ export const polymorph: MysticSphere = {
 
       // Precast ranged slow is r7, which we fudge to r6 with kind of limited scope
       attack: {
-        crit: CONDITION_CRIT,
+        crit: INJURY_CRIT,
         hit: `
           The target's body deteriorates as a \\glossterm{condition}.
           While it is \\glossterm{injured}, it is \\slowed.
@@ -737,7 +737,7 @@ export const polymorph: MysticSphere = {
       name: 'Eyeseal',
 
       attack: {
-        crit: CONDITION_CRIT,
+        crit: "The target is also \\briefly \\blinded.",
         hit: `
           The target is \\dazzled as a \\glossterm{condition}.
         `,
@@ -756,7 +756,7 @@ export const polymorph: MysticSphere = {
       name: 'Massive Eyeseal',
 
       attack: {
-        crit: CONDITION_CRIT,
+        crit: "The target is also \\briefly \\blinded.",
         hit: `
           The target is \\dazzled as a \\glossterm{condition}.
         `,

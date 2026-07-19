@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { BARRIER_COOLDOWN, CONDITION_CRIT, MULTIHIT_CRIT } from '../constants';
+import { BARRIER_COOLDOWN, MULTIHIT_CRIT } from '../constants';
 
 export const telekinesis: MysticSphere = {
   name: 'Telekinesis',
@@ -696,7 +696,7 @@ export const telekinesis: MysticSphere = {
 
       // -2r from regular slowed since it doesn't block escaping, -1r for limited scope
       attack: {
-        crit: CONDITION_CRIT,
+        crit: "The impedance range increases to \\longrange.",
         hit: `
           The target is impeded as a \\glossterm{condition}.
           While it is within \\shortrange of you, it is \\slowed.

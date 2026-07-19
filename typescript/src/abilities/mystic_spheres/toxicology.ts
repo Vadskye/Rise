@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { CONDITION_CRIT, MULTIHIT_CRIT, POISON_CRIT } from '../constants';
+import { MULTIHIT_CRIT, POISON_CRIT } from '../constants';
 
 export const toxicology: MysticSphere = {
   name: 'Toxicology',
@@ -581,7 +581,7 @@ export const toxicology: MysticSphere = {
       name: 'Terrifying Fungus',
 
       attack: {
-        crit: CONDITION_CRIT,
+        crit: "The target is also \\briefly \\panicked by you and all other sources of fungus.",
         hit: `
           The target becomes covered in fear-inducing fungus as a \\glossterm{condition}.
           It becomes \\frightened of you and all other sources of fungus.

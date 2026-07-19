@@ -1,6 +1,6 @@
 import { MysticSphere } from '.';
 import { add_tag_to_sphere } from './add_tag';
-import { BARRIER_COOLDOWN, CONDITION_CRIT } from '../constants';
+import { BARRIER_COOLDOWN, INJURY_CRIT } from '../constants';
 
 const OPTIONAL_ICE_CRYSTAL = 'One optional \\glossterm{ice crystal}.';
 
@@ -377,7 +377,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       name: 'Massive Freezing Wind',
 
       attack: {
-        crit: CONDITION_CRIT,
+        crit: INJURY_CRIT,
         hit: `
           The target becomes \\briefly \\slowed.
           If it is \\glossterm{injured}, it is also slowed as a \\glossterm{condition}.

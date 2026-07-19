@@ -1,6 +1,5 @@
 import { MysticSphere } from '.';
 import { add_tag_to_sphere } from './add_tag';
-import { CONDITION_CRIT } from '../constants';
 
 export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
   name: 'Electromancy',
@@ -80,7 +79,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       // 1.4 from prebuff. The chaining is ambiguous but not super strong, so call it 0.2 EA.
       // That's r2, or r1 with limited scope. Then, pay one rank for accuracy, so r2.
       attack: {
-        crit: CONDITION_CRIT,
+        crit: INJURY_CRIT,
         hit: `
           The target becomes a lightning rod as a \\glossterm{condition}.
           Abilities which \\glossterm{chain} can travel an extra 30 feet to affect it.
@@ -192,7 +191,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
 
       // daze is 1.2 EA, +1r for area gives r3 area
       attack: {
-        crit: CONDITION_CRIT,
+        crit: INJURY_CRIT,
         hit: `
           If the target is \\glossterm{injured}, it is \\dazed as a \\glossterm{condition}.
         `,
@@ -210,7 +209,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       name: 'Massive Dazing Discharge',
 
       attack: {
-        crit: CONDITION_CRIT,
+        crit: INJURY_CRIT,
         hit: `
           The target is \\briefly \\dazed.
           If it is \\glossterm{injured}, it is also \\dazed as a \\glossterm{condition}.
@@ -390,7 +389,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       name: 'Short-Circuit',
 
       attack: {
-        crit: CONDITION_CRIT,
+        crit: "The target is also \\briefly \\confused.",
         hit: `
           The target is \\dazed as a \\glossterm{condition}.
         `,

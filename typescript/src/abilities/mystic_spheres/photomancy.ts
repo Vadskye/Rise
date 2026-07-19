@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { BARRIER_COOLDOWN, CONDITION_CRIT } from '../constants';
+import { BARRIER_COOLDOWN, CRIT_BECOMES_CONDITION } from '../constants';
 
 export const photomancy: MysticSphere = {
   name: 'Photomancy',
@@ -41,7 +41,7 @@ export const photomancy: MysticSphere = {
       // Dazzled as a condition is 1.8 EA, so r3. Limited scope and double defense means
       // this is r1.
       attack: {
-        crit: CONDITION_CRIT,
+        crit: "The target is also \\briefly \\blinded",
         hit: `
           The target is \\dazzled as a \\glossterm{condition}.
         `,
@@ -124,7 +124,7 @@ export const photomancy: MysticSphere = {
 
       // Condition dazzle is 1.8 EA, so r3. Limited scope is r2.
       attack: {
-        crit: CONDITION_CRIT,
+        crit: "The target is also \\briefly \\blinded",
         hit: `
           The target is \\dazzled as a \\glossterm{condition}.
         `,
@@ -144,7 +144,7 @@ export const photomancy: MysticSphere = {
 
       // Condition dazzle is 1.8 EA, so r3. +1 rank of area gives a r5 area.
       attack: {
-        crit: CONDITION_CRIT,
+        crit: "The target is also \\briefly \\blinded",
         hit: `
           The target is \\dazzled as a \\glossterm{condition}.
         `,
@@ -587,7 +587,7 @@ export const photomancy: MysticSphere = {
       // That gives 3 ranks of bonus area and 1 rank of extended range, so we have a rank
       // 6 extended area spell.
       attack: {
-        crit: CONDITION_CRIT,
+        crit: "The target is also \\dazzled as a \\glossterm{condition}.",
         hit: `
           The target becomes surrounded by glowing lights that highlight its outline as a \\glossterm{condition}.
           This gives it a -10 penalty to the Stealth skill, and it gains no benefit from \\glossterm{concealment} or being \\trait{invisible}.
@@ -689,6 +689,7 @@ export const photomancy: MysticSphere = {
 
       // TODO: actual EA calcs
       attack: {
+        crit: CRIT_BECOMES_CONDITION,
         hit: `The target is \\briefly \\dazzled.`,
         halfOnMiss: true,
         targeting: `
@@ -707,7 +708,7 @@ export const photomancy: MysticSphere = {
 
       // TODO: actual EA calcs
       attack: {
-        crit: CONDITION_CRIT,
+        crit: "The target is also \\briefly \\blinded.",
         hit: `The target is \\dazzled as a \\glossterm{condition}.`,
         halfOnMiss: true,
         targeting: `
