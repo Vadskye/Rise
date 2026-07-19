@@ -12,7 +12,7 @@ export function dragon(): RankAbility[] {
         You draw power from mineral-based wealth items with intrinsic mundane value, such as gold, gems, and jewels.
         Those items are called draconic wealth items.
         Your draconic wealth rank is equal to the highest item rank of a draconic wealth item in your possession.
-        Some of your abilities are improved by your draconic wealth rank, such as your \ability{dragon breath}.
+        Some of your abilities are improved by your draconic wealth rank, such as your \\ability{dragon breath}.
 
         The draconic wealth item must be carried on your body, including containers on your body.
         As normal when calculating wealth items, five items of one rank can be collectively considered to be a single item one rank higher.

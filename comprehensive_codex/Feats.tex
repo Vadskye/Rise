@@ -708,56 +708,52 @@ They allow more distinct and unique character customization, but also increase g
       \end{dtabularx}
     \end{columntable}
 
-    \ff[1]{Scales} You gain a \plus1 bonus to your Armor defense.
-
-    \ff[1]{Draconic Weapons} You gain a bite natural weapon and two claw natural weapons, one on each arm.
-    For details, see \tref{Natural Weapons}.
-
-    % The dragon breath stays at full damage scaling, but uses half area scaling
-    % that would normally be appropriate for a d(R-1) spell.
-    \ff[6]{Draconic Breath}
+    % Same as breath weapon from Dragon class
+    \ff[1]{Draconic Breath}
     \begin{activeability}{Draconic Breath}{Standard action}
       \abilitycost You \briefly can't use this ability again.
       \rankline
       This ability's tag matches your dragon's associated tag.
       If your dragon's source is \magical, this ability is also magical, which means you use your \glossterm{magical power} for damage instead of your mundane power.
       Make an attack vs. Reflex against everything in the area defined by the type of dragon from your \textit{draconic ancestry} ability (see \trefnp{Dragon Types}).
-      \hit \damagerankthree.
+      \hit \damageranktwo.
       \miss Half damage.
 
       \rankline
-      % T2 area
-      \featlevel{9} The area increases.
-      A line breath weapon becomes a \arealarge, 5 ft.\ wide line.
+      \featlevel{3} The damage increases to \damagerankthree.
+      \featlevel{6} The area increases.
+      A line breath weapon becomes a \arealarge, 10 ft.\ wide line.
       A cone breath weapon becomes a \areamed cone.
+      \featlevel{9} The damage increases to \damagerankfour.
       \featlevel{12} The damage increases to \damagerankfive.
-      % T4 area
-      \featlevel{15} The area increases.
-      A line breath weapon becomes a \areahuge, 10 ft.\ wide line.
+      \featlevel{15} The damage increases to \damageranksix.
+      \featlevel{18} The damage increases to \damagerankseven, and the area increases.
+      A line breath weapon becomes a \areagarg, 15 ft.\ wide line.
       A cone breath weapon becomes a \arealarge cone.
-      \featlevel{18} The damage increases to \damagerankseven.
-      % \featlevel{21} The area increases.
-      %     A line breath weapon becomes a \areagarg, 15 ft.\ wide line.
-      %     A cone breath weapon becomes a \areahuge cone.
     \end{activeability}
+
+    \ff[1]{Draconic Weapons} You gain a bite natural weapon and two claw natural weapons, one on each arm.
+    For details, see \tref{Natural Weapons}.
+
+    \ff[6]{Wealth is Power} You gain a \plus1 bonus to your \glossterm{power}.
+    While you have a wealth item with an item rank at least as high as your \glossterm{character rank}, this bonus increases to \plus2.
+    The wealth item must be carried on your body, including containers on your body.
+    As normal when calculating wealth items, five items of one rank can be collectively considered to be a single item one rank higher.
 
     \ff[12]{Draconic Ancestry\plus} You become immune to attacks with your dragon's ability tag.
 
-    % TODO: figure out a way to differentiate these from angel wings
-    \ff[12]{Draconic Wings} You gain leathery wings that sprout from your back.
-    These wings grant you a slow \glossterm{fly speed} with a maximum height of 15 feet (see \pcref{Flight}).
-    The wings themselves are \glossterm{mundane}, but the ability to fly and glide with them is \magical.
+    \ff[12]{Dragon Scales} You gain a \plus1 bonus to your Armor defense.
 
-    \ff[18]{Scales\plus} The Armor defense bonus from your \textit{scales} ability increases to \plus2.
-
-    \ff[18]{Draconic Wings\plus} The speed increases to average.
+    \ff[18]{Power of the Wyrm} You gain a \plus1 bonus to your Strength and Willpower.
   \end{feat}
 
   \begin{feat}{Duelist}{Combat}
     \featpre Dexterity 2, Perception 1.
 
-    \ff[1]{Duel Focus} At the start of your turn, you may choose a creature you can see.
-    Until your next turn, you gain a \plus1 bonus to your defenses against that creature's attacks.
+    \ff[1]{Duel Focus} At the start of your turn, you may focus on a creature you can see.
+    If you do, you take a \minus2 penalty to all defenses.
+    In exchange, you gain a \plus2 bonus to your \glossterm{accuracy} and defenses against that creature.
+    These effects last until your next turn.
 
     \ff[6]{Deliver the Duel}
     \begin{activeability}{Deliver the Duel}{Standard action}
@@ -779,7 +775,7 @@ They allow more distinct and unique character customization, but also increase g
     % TODO: wording
     This bonus is doubled if you are not using a shield, and are not gaining any shield bonus to your Armor defense by other means.
 
-    \ff[18]{Duel Focus\plus} The bonus from your \textit{duel focus} ability increases to \plus2.
+    \ff[18]{Duel Focus\plus} The accuracy and defense bonuses increase to \plus3.
   \end{feat}
 
   \begin{feat}{Endurance Specialization}{Skill}
@@ -1657,10 +1653,10 @@ They allow more distinct and unique character customization, but also increase g
         \featlevel{15} The accuracy bonus increases to \plus2.
         \featlevel{18} If your Armor defense is higher than the target's Armor defense, the strike deals triple damage.
     \end{activeability}
+    
+    \ff[12]{Shield Cover} While you wield a shield, you can use your Armor defense in place of your Reflex defense against \glossterm{area} attacks.
 
-    \ff[12]{Shield Expertise\plus} Both Armor defense bonuses from this ability increase to \plus2.
-
-    \ff[18]{Shield Cover} While you wield a shield, you can use your Armor defense in place of your Reflex defense against \glossterm{area} attacks.
+    \ff[18]{Shield Expertise\plus} Both Armor defense bonuses from this ability increase to \plus2.
   \end{feat}
 
   \begin{feat}{Sleight of Hand Specialization}{Skill}
@@ -2512,19 +2508,19 @@ They allow more distinct and unique character customization, but also increase g
   \begin{magicalfeat}{Wardweaver}{Casting, Magical}
     \featpre Knowledge of a spell with the \abilitytag{Barrier} tag.
 
-    \magicalff[1]{Hardened Barriers} Objects you create using abilities with the \abilitytag{Barrier} \glossterm{ability tag} gain a bonus equal to your \glossterm{power} to their maximum \glossterm{hit points}.
-
-    \magicalff[6]{Defensive Barriers} You gain a \plus1 bonus to your Armor defense.
-    In addition, objects you create with \abilitytag{Barrier} abilities have minimum defenses equal to 5 \add half your level.
+    \magicalff[1]{Defensive Barriers} Objects you create with \abilitytag{Barrier} abilities have minimum defenses equal to 5 \add half your level.
     If the object already has specific defenses listed, it gains a \plus2 bonus to those defenses.
 
-    \magicalff[12]{Barrier Spell} You learn a spell with the \abilitytag{Barrier} ability tag from any \glossterm{mystic sphere} that your \glossterm{magic source} gives access to, even if you do not have access to that mystic sphere.
-    When you gain access to new spell ranks, you can change which Barrier spell you know.
+    \magicalff[1]{Offensive Barriers} You gain a \plus1 accuracy bonus with \atBarrier abilities.
 
-    \magicalff[18]{Defensive Barriers\plus} Your Armor defense bonus from your \textit{defensive barriers} ability increases to \plus2.
-    In addition, objects you create with \abilitytag{Barrier} abilities gain an additional \plus2 bonus to their defenses.
+    \magicalff[6]{Esoteric Barrier} You learn a spell with the \abilitytag{Barrier} ability tag from any \glossterm{mystic sphere} that your \glossterm{magic source} gives access to, even if you do not have access to that mystic sphere.
+    When you gain access to new spell ranks, you can change which Barrier spell you know with this ability.
 
-    \magicalff[18]{Hardened Barriers\plus} The hit point bonus from your \textit{hardened barriers} ability increases to twice your \glossterm{power}.
+    \magicalff[12]{Personal Barrier} You gain a \plus1 bonus to your Armor defense and \glossterm{durability}.
+
+    \magicalff[18]{Defensive Barriers\plus} The minimum defenses increase to 8 \add half your level.
+
+    \magicalff[18]{Offensive Barriers\plus} The accuracy bonus increases to \plus2.
   \end{magicalfeat}
 
   \begin{feat}{Weapon Focus}{Combat}
