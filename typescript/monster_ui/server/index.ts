@@ -1,6 +1,6 @@
 import express from 'express';
 import { generatePreview } from './preview';
-import { DatabaseData } from './codegen';
+import { DatabaseData, MonsterData, MonsterGroupData } from './codegen';
 import { getDb, saveAndValidateAll } from './db';
 import { allMysticSpheres } from '@src/abilities/mystic_spheres';
 import { allCombatStyles } from '@src/abilities/combat_styles';
@@ -100,17 +100,106 @@ app.get('/api/monsters', (req, res) => {
   }
 });
 
-// Save the entire database, trigger codegen, and run full validation
+interface SaveRequestPayload {
+  monster?: {
+    data: MonsterData;
+    oldName?: string;
+  };
+  group?: {
+    data: MonsterGroupData;
+    oldName?: string;
+  };
+  deleteMonster?: string;
+  deleteGroup?: string;
+  folders?: string[];
+  renameFolder?: {
+    oldName: string;
+    newName: string;
+  };
+  deleteFolder?: string;
+}
+
+const isFullDb = (body: any): body is DatabaseData => {
+  return body && (Array.isArray(body.monsters) || Array.isArray(body.monsterGroups));
+};
+
+// Save the database (supporting full or incremental updates), trigger codegen, and run validation
 app.post('/api/save', (req, res) => {
   const start = performance.now();
   console.log('[API] POST /api/save - Saving database');
   try {
-    const db = req.body as DatabaseData;
+    let db = getDb();
+    const payload = req.body;
+
+    if (isFullDb(payload)) {
+      console.log(`[API] Saving database with full DB format.`);
+      db = payload;
+    } else {
+      console.log(`[API] Processing incremental save.`);
+      // 1. Monster Upsert
+      if (payload.monster) {
+        const { data, oldName } = payload.monster;
+        const targetName = oldName || data.name;
+        db.monsters = db.monsters || [];
+        const index = db.monsters.findIndex((m) => m.name === targetName);
+        if (index !== -1) {
+          db.monsters[index] = data;
+        } else {
+          db.monsters.push(data);
+        }
+      }
+
+      // 2. Monster Delete
+      if (payload.deleteMonster) {
+        db.monsters = (db.monsters || []).filter((m) => m.name !== payload.deleteMonster);
+      }
+
+      // 3. Group Upsert
+      if (payload.group) {
+        const { data, oldName } = payload.group;
+        const targetName = oldName || data.name;
+        db.monsterGroups = db.monsterGroups || [];
+        const index = db.monsterGroups.findIndex((g) => g.name === targetName);
+        if (index !== -1) {
+          db.monsterGroups[index] = data;
+        } else {
+          db.monsterGroups.push(data);
+        }
+      }
+
+      // 4. Group Delete
+      if (payload.deleteGroup) {
+        db.monsterGroups = (db.monsterGroups || []).filter((g) => g.name !== payload.deleteGroup);
+      }
+
+      // 5. Folders List Update
+      if (payload.folders) {
+        db.folders = payload.folders;
+      }
+
+      // 6. Rename Folder
+      if (payload.renameFolder) {
+        const { oldName, newName } = payload.renameFolder;
+        db.folders = (db.folders || []).map((f) => (f === oldName ? newName : f));
+        db.monsters = (db.monsters || []).map((m) => (m.folder === oldName ? { ...m, folder: newName } : m));
+        db.monsterGroups = (db.monsterGroups || []).map((g) => (g.folder === oldName ? { ...g, folder: newName } : g));
+      }
+
+      // 7. Delete Folder
+      if (payload.deleteFolder) {
+        const folderName = payload.deleteFolder;
+        db.folders = (db.folders || []).filter((f) => f !== folderName);
+        db.monsters = (db.monsters || []).map((m) => (m.folder === folderName ? { ...m, folder: undefined } : m));
+        db.monsterGroups = (db.monsterGroups || []).map((g) => (g.folder === folderName ? { ...g, folder: undefined } : g));
+      }
+    }
+
     const monsterCount = db.monsters?.length || 0;
     const groupCount = db.monsterGroups?.length || 0;
     console.log(
-      `[API] Saving database with ${monsterCount} individual monsters and ${groupCount} groups.`,
+      `[API] Merged database now has ${monsterCount} individual monsters and ${groupCount} groups.`,
     );
+
     const result = saveAndValidateAll(db);
     console.log('[API] Save and validation completed successfully');
     res.json(result);

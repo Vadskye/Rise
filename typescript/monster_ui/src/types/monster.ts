@@ -175,3 +175,23 @@ export interface ValidationResult {
   warnings: string[];
   computedStats: ComputedStats | null;
 }
+
+export interface SaveRequestPayload {
+  monster?: {
+    data: MonsterData;
+    oldName?: string;
+  };
+  group?: {
+    data: MonsterGroupData;
+    oldName?: string;
+  };
+  deleteMonster?: string;
+  deleteGroup?: string;
+  folders?: string[];
+  renameFolder?: {
+    oldName: string;
+    newName: string;
+  };
+  deleteFolder?: string;
+}
+

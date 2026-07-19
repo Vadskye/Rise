@@ -178,6 +178,85 @@ describe('Monster UI Integration Tests (Full Server)', () => {
     expect(generatedContent).toContain(`'${testGroupMonsterName}'`);
   });
 
+  test('POST /api/save saves a monster incrementally', async () => {
+    const testMonsterName = `IncMonster_${Date.now()}`;
+    const payload = {
+      monster: {
+        data: {
+          name: testMonsterName,
+          requiredProperties: {
+            alignment: 'neutral',
+            base_class: 'warrior',
+            elite: false,
+            creature_origin: 'natural',
+            creature_types: ['beast'],
+            size: 'medium',
+            level: 1,
+          },
+          weapons: [{ name: 'spear' }],
+          freeformCode: '// incremental save test',
+        }
+      }
+    };
+
+    const res = await fetch(`${baseUrl}/api/save`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+
+    expect(res.status).toBe(200);
+    const result = await res.json();
+    expect(result.success).toBe(true);
+    expect(result.validations[testMonsterName]).toBeDefined();
+
+    // Verify database file has new monster
+    let db = getDb();
+    let savedMonster = db.monsters.find((m: any) => m.name === testMonsterName);
+    expect(savedMonster).toBeDefined();
+
+    // Now modify the monster name (rename)
+    const renamedMonsterName = `${testMonsterName}_Renamed`;
+    const renamePayload = {
+      monster: {
+        data: {
+          ...savedMonster,
+          name: renamedMonsterName,
+        },
+        oldName: testMonsterName,
+      }
+    };
+
+    const resRename = await fetch(`${baseUrl}/api/save`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(renamePayload),
+    });
+
+    expect(resRename.status).toBe(200);
+    const renameResult = await resRename.json();
+    expect(renameResult.success).toBe(true);
+
+    db = getDb();
+    expect(db.monsters.find((m: any) => m.name === testMonsterName)).toBeUndefined();
+    expect(db.monsters.find((m: any) => m.name === renamedMonsterName)).toBeDefined();
+
+    // Delete the monster
+    const deletePayload = {
+      deleteMonster: renamedMonsterName,
+    };
+    const resDelete = await fetch(`${baseUrl}/api/save`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(deletePayload),
+    });
+    expect(resDelete.status).toBe(200);
+    expect((await resDelete.json()).success).toBe(true);
+
+    db = getDb();
+    expect(db.monsters.find((m: any) => m.name === renamedMonsterName)).toBeUndefined();
+  });
+
   test('POST /api/preview cache hits under concurrent/rapid switching requests', async () => {
     const monsterA = {
       name: `RapidMonsterA_${Date.now()}`,
