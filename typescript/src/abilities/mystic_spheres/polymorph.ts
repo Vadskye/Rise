@@ -450,6 +450,7 @@ export const polymorph: MysticSphere = {
       // Ranged precast slow is 2.5 EA, or 3.5 EA with damage, or 1.7 EA with
       // damage, which is r3, or r2 at close range.
       attack: {
+        crit: "Double damage, and the target is affected by the debuff as if it was injured.",
         hit: `
           \\damagerankfour, and the target's body deteriorates as a \\glossterm{condition}.
           While it is \\glossterm{injured}, it is \\slowed.

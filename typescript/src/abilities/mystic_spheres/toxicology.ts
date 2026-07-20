@@ -581,7 +581,8 @@ export const toxicology: MysticSphere = {
       name: 'Terrifying Fungus',
 
       attack: {
-        crit: "The target is also \\briefly \\panicked by you and all other sources of fungus.",
+        // Limit the defense benefit to only the rest of the current turn
+        crit: "The target is also \\panicked by you and all other sources of fungus until your next turn.",
         hit: `
           The target becomes covered in fear-inducing fungus as a \\glossterm{condition}.
           It becomes \\frightened of you and all other sources of fungus.

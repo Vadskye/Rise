@@ -1,6 +1,6 @@
 import { MysticSphere } from '.';
 import { add_tag_to_sphere } from './add_tag';
-import { BARRIER_COOLDOWN, BURNING_HALF } from '../constants';
+import { BARRIER_COOLDOWN, BURNING_HALF, MULTIHIT_CRIT } from '../constants';
 
 // TODO: add -accuracy attacks
 export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
@@ -181,6 +181,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       // Baseline for Reflex melee range is dr3, which is 4.5 + 1dpp.
       // Double dr1 is 9 + 1dpp.
       attack: {
+        crit: MULTIHIT_CRIT,
         hit: `
           \\damagerankone.
           The target also \\briefly \\debuff{burns} for \\damagerankone.
@@ -202,6 +203,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       // Baseline for melee range is dr7, or dr6 for single target reflex.
       // We drop to dr4 for damage over time.
       attack: {
+        crit: MULTIHIT_CRIT,
         hit: `
           \\damagerankfour.
           The target also \\briefly \\debuff{burns} for \\damagerankfour.
@@ -395,6 +397,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       // Mod: Removable (-2)
       // Result: 2 + 1 - 2 = dr1
       attack: {
+        crit: MULTIHIT_CRIT,
         hit: `
           \\damagerankone.
           The target also \\debuff{burns} for \\damagerankone as a \\glossterm{condition}.
@@ -475,6 +478,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       // +1 effective rank for attune with cooldown
       attack: {
+        crit: "Double damage, and the target also \\briefly treats you as \\trait{invisible}.",
         hit: `
           \\damageranktwo, and the target is \\briefly \\dazzled.
         `,
@@ -497,7 +501,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       functionsLike: {
         name: 'eyes of flame',
         exceptThat:
-          'the damage increases to \\damageranksix, and any \\glossterm{extra damage} is doubled. On a hit, the target also \\briefly treats you as being \\trait{invisible}.',
+          'the damage increases to \\damageranksix, and any \\glossterm{extra damage} is doubled. The target is also dazzled as a \\glossterm{condition} instead of briefly.',
       },
       rank: 5,
       roles: ['burst', 'softener'],
@@ -809,6 +813,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       // A Medium line is about r1 normally, which would be dr3. Drop to dr2 for the
       // teleportation.
       attack: {
+        crit: MULTIHIT_CRIT,
         hit: `
           \\damagerankone.
           The target also \\briefly \\debuff{burns} for \\damagerankone.
@@ -921,6 +926,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       name: 'Living Pyre',
 
       attack: {
+        crit: MULTIHIT_CRIT,
         hit: `
           \\damageranktwo.
           The target also \\briefly \\debuff{burns} for \\damageranktwo.
@@ -939,6 +945,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       name: 'Mighty Living Pyre',
 
       attack: {
+        crit: MULTIHIT_CRIT,
         hit: `
           \\damagerankfive.
           The target also \\briefly \\debuff{burns} for \\damagerankfive.

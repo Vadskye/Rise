@@ -1,5 +1,5 @@
 import { CombatStyle } from '.';
-import { MULTIHIT_CRIT } from '@src/abilities/constants';
+import { INJURY_CRIT, MULTIHIT_CRIT } from '@src/abilities/constants';
 
 export const dirtyFighting: CombatStyle = {
   name: 'Dirty Fighting',
@@ -256,6 +256,7 @@ export const dirtyFighting: CombatStyle = {
       name: 'Pin',
 
       attack: {
+        crit: "The penalty to \\ability{escape grapple} increases to \\minus5.",
         hit: `
           The defense penalties the target suffers from being \\grappled are doubled as long as the grapple continues.
           In addition, it takes a \\minus2 penalty to the \\ability{escape grapple} ability.
@@ -275,6 +276,7 @@ export const dirtyFighting: CombatStyle = {
 
       // -1r for using brawling accuracy? A 30' fling would normally be r2.
       attack: {
+        crit: INJURY_CRIT,
         hit: `
           If the target is \\glossterm{injured}, you \\glossterm{fling} it up to 30 feet.
         `,
@@ -494,6 +496,7 @@ export const dirtyFighting: CombatStyle = {
 
       // This gets r0 area instead of r1 because Reflex defense is easy to hit.
       attack: {
+        crit: 'The target is also \\briefly \\dazzled.',
         hit: `The target \\briefly treats you as if you were \\trait{invisible}.`,
         targeting: `
           Make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you.
@@ -510,6 +513,7 @@ export const dirtyFighting: CombatStyle = {
       // This seems like a strong combo, so we don't layer any other benefits on it. Maybe
       // Reflex defense is too easy to hit for such a strong debuff?
       attack: {
+        crit: 'The target is also \\briefly \\dazzled.',
         hit: `The target \\briefly treats you as if you were \\trait{invisible}.`,
         targeting: `
           Make an attack vs. Reflex against all \\glossterm{enemies} within a \\medarea radius from you.

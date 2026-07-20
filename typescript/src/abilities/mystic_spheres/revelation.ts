@@ -138,6 +138,7 @@ export const revelation: MysticSphere = {
       name: 'Visions of Certain Doom',
 
       attack: {
+        crit: CRIT_BECOMES_CONDITION,
         hit: `
           The target is \\briefly \\frightened of you.
         `,
@@ -599,6 +600,7 @@ export const revelation: MysticSphere = {
       name: 'Baffling Visions',
 
       attack: {
+        crit: INJURY_CRIT,
         hit: `
           If the target is \\glossterm{injured}, it is \\briefly \\confused.
         `,

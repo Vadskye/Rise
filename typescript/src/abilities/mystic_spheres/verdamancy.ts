@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { BARRIER_COOLDOWN, MULTIHIT_CRIT, POISON_CRIT } from '../constants';
+import { BARRIER_COOLDOWN, CRIT_BECOMES_CONDITION, MULTIHIT_CRIT, POISON_CRIT } from '../constants';
 
 export const verdamancy: MysticSphere = {
   name: 'Verdamancy',
@@ -32,6 +32,7 @@ export const verdamancy: MysticSphere = {
 
       // Ranged slow is 2.1 EA, or r5, or r4 with limited scope.
       attack: {
+        crit: CRIT_BECOMES_CONDITION,
         hit: `
           The target is \\briefly \\slowed.
           This effect is immediately removed if the target takes damage from a \\atAcid or \\atFire ability.

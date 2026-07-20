@@ -31,9 +31,17 @@ function assertHasCorrectCrit(attack: ActiveAbilityAttack, effectName: string): 
   const grantsImmunity = /immun.*short rest/.test(attack.hit);
   if (attack.crit === undefined) {
     if (!dealsDamage) {
-      console.error(`Attack from ${effectName} is missing a crit effect.`);
+      const requiresInjury = /[iI]f.*injured/.test(attack.hit);
+      const isBrief = /briefly/.test(attack.hit);
+      if (requiresInjury) {
+        console.warn(`Attack from ${effectName} should use INJURY_CRIT`);
+      } else if (isBrief && !grantsImmunity) {
+        console.warn(`Attack from ${effectName} should use CRIT_BECOMES_CONDITION`);
+      } else {
+        console.warn(`Attack from ${effectName} is missing a crit effect.`);
+      }
     } else if (dealsDamage && inflictsDebuff) {
-      console.error(`Attack from ${effectName} is missing a crit effect.`);
+      console.warn(`Attack from ${effectName} is missing a crit effect.`);
     }
   } else if (grantsImmunity && attack.crit?.includes('condition')) {
     console.warn(`Attack from ${effectName} should not inflict a condition since it grants immunity.`);

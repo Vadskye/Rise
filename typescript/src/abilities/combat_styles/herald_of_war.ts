@@ -1,5 +1,5 @@
 import { CombatStyle } from '.';
-import { INJURY_CRIT } from '../constants';
+import { CRIT_BECOMES_CONDITION, INJURY_CRIT } from '../constants';
 
 // Naming conventions:
 // "Shout" is directed, so single-target or cone
@@ -68,14 +68,14 @@ export const heraldOfWar: CombatStyle = {
       tags: ['Auditory', 'Compulsion'],
     },
 
-    // Could be either Brawn or Fort?
     {
       name: 'Faltering Roar',
 
       attack: {
+        crit: CRIT_BECOMES_CONDITION,
         hit: `The target is \\briefly \\slowed.`,
         targeting: `
-          Make an attack vs. Brawn against all \\glossterm{enemies} in a \\largearea radius from you.
+          Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\largearea radius from you.
         `,
       },
       rank: 5,
@@ -444,6 +444,7 @@ export const heraldOfWar: CombatStyle = {
       // Brief deafened is 0.3 EA, so we get two ranks of +area, which gets us to area
       // rank 3.
       attack: {
+        crit: CRIT_BECOMES_CONDITION,
         hit: `The target is \\briefly \\deafened.`,
         targeting: `
           Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\medarea radius from you.

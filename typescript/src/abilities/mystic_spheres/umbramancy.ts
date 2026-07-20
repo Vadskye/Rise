@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { BARRIER_COOLDOWN, INJURY_CRIT } from '../constants';
+import { BARRIER_COOLDOWN, CRIT_BECOMES_CONDITION, INJURY_CRIT } from '../constants';
 
 export const umbramancy: MysticSphere = {
   name: 'Umbramancy',
@@ -197,6 +197,7 @@ export const umbramancy: MysticSphere = {
 
       // Brief slowed is 2 EA ranged, so r4, or r3 shadowed.
       attack: {
+        crit: CRIT_BECOMES_CONDITION,
         hit: `
           The target is \\briefly \\slowed.
         `,
@@ -503,6 +504,7 @@ export const umbramancy: MysticSphere = {
       // get r3 area.
       name: 'Fearsome Shadow Cloak',
       attack: {
+        crit: CRIT_BECOMES_CONDITION,
         hit: `The target is \\briefly \\frightened of you.`,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
@@ -538,6 +540,7 @@ export const umbramancy: MysticSphere = {
     {
       name: 'Whispers in the Dark',
       attack: {
+        crit: CRIT_BECOMES_CONDITION,
         hit: `
           The target suffers no immediate effect.
           At the end of its next turn, if it is \\glossterm{shadowed}, it becomes \\briefly \\frightened by all creatures.

@@ -308,6 +308,7 @@ export const enchantment: MysticSphere = {
       // TODO: better EA math. Only 1 EA for a self-strike is probably wrong, and HP brief
       // is not well defined.
       attack: {
+        crit: INJURY_CRIT,
         hit: `
           If the target is \\glossterm{injured}, it is compelled to make a \\glossterm{strike} against itself using its next \\glossterm{standard action}.
           It cannot target any other creatures with the strike, even if it has a Sweeping weapon or similar abilities.
@@ -351,6 +352,7 @@ export const enchantment: MysticSphere = {
       name: 'Fearsome Aura',
 
       attack: {
+        // Limit duration of defense penalty
         crit: "The target is also \\panicked by you until your next turn.",
         hit: `The target is \\briefly \\frightened by you.`,
         targeting: `
@@ -372,8 +374,8 @@ export const enchantment: MysticSphere = {
 
       attack: {
         // Same as briefly, but this wording seems clearer at explaining the contrast
-        crit: "The effect lasts until the end of your next turn.",
-        hit: `The target is \\panicked by you until your next turn.`,
+        crit: "The target is also \\briefly \\slowed.",
+        hit: `The target is \\briefly \\panicked by you.`,
         targeting: `
           Whenever an \\glossterm{enemy} enters a \\largearea radius \\glossterm{emanation} from you, make a \\glossterm{reactive attack} vs. Mental against them.
           After you attack a creature this way, it becomes immune to this attack from you until it finishes a \\glossterm{short rest}.
@@ -408,6 +410,8 @@ export const enchantment: MysticSphere = {
       name: 'Charm',
 
       attack: {
+        // No relevant crit effect
+        crit: null,
         hit: `The target is \\charmed by you.`,
         targeting: `
           This spell has no \\glossterm{verbal components}.
@@ -529,6 +533,7 @@ export const enchantment: MysticSphere = {
       // TODO: EA calc. This is kind of a permanent action denial, but easily removed so
       // it's hard to abuse?
       attack: {
+        crit: INJURY_CRIT,
         hit: `
           If the target is \\glossterm{injured}, it becomes deluded as a \\glossterm{condition}.
           It believes that it is the only real creature, and the rest of the world is an illusion.
@@ -721,6 +726,7 @@ export const enchantment: MysticSphere = {
       name: 'Daunting Presence',
 
       attack: {
+        crit: "The target is also \\briefly \\panicked by you.",
         hit: `
           The target is \\briefly \\frightened by you.
         `,

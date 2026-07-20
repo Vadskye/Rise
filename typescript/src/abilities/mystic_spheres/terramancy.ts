@@ -1,6 +1,6 @@
 import { MysticSphere } from '.';
 import { add_tag_to_sphere } from './add_tag';
-import { BARRIER_COOLDOWN, MULTIHIT_CRIT } from '../constants';
+import { BARRIER_COOLDOWN, CRIT_BECOMES_CONDITION, MULTIHIT_CRIT } from '../constants';
 
 export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
   name: 'Terramancy',
@@ -488,7 +488,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       // action denial. That's 12 * 0.4 * 0.2 = 1 EA. That gives 2 ranks to spend on AOE
       // and 1 rank to spend on the accuracy bonus, for a total of a r3 area.
       attack: {
-        crit: 'The target is also \\briefly \\slowed',
+        crit: 'The target is also \\briefly \\slowed.',
         hit: `
           As a \\glossterm{condition}, the target is pulled towards the ground with great force, approximately doubling the gravity it experiences.
           It is unable to use any fly speed or glide speed, and its jump distance is halved.
@@ -550,6 +550,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       // potential, and a zone can't be used for kiting, so drop it to 1.6 EA, or
       // 2.6 EA as sustain (minor). That's a rank 7 effect.
       attack: {
+        crit: CRIT_BECOMES_CONDITION,
         hit: `
           The target is \\briefly \\slowed.
         `,

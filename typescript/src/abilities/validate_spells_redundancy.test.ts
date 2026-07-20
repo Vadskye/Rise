@@ -484,7 +484,7 @@ t.test('validateSpells: Redundancy & Inconsistency Checks', (t) => {
         roles: ['attune'],
         type: 'Attune (deep)',
         attack: {
-          hit: 'The target is \\panicked by you until your next turn.',
+          hit: 'The target is \\briefly \\panicked by you.',
           targeting:
             'Whenever an \\glossterm{enemy} enters a \\largearea radius \\glossterm{emanation} from you, make a \\glossterm{reactive attack} vs. Mental against them.',
         },

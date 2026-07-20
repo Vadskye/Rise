@@ -1,4 +1,5 @@
 import { CombatStyle } from '.';
+import { CRIT_BECOMES_CONDITION } from '../constants';
 
 export const bruteForce: CombatStyle = {
   name: 'Brute Force',
@@ -199,6 +200,7 @@ export const bruteForce: CombatStyle = {
       name: 'Ostentatious Flex',
 
       attack: {
+        crit: CRIT_BECOMES_CONDITION,
         hit: `The target is \\briefly \\goaded by you.`,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} within a \\medarea radius from you.

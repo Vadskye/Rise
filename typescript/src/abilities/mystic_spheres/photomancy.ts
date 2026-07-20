@@ -61,6 +61,7 @@ export const photomancy: MysticSphere = {
       // dazzled is 0.6, dazed is 1.4, so 2.0 total. Double defense means r3.
       // The area is rank 2, which is a little awkward.
       attack: {
+        crit: CRIT_BECOMES_CONDITION,
         hit: `
           The target is \\briefly \\dazzled and \\dazed.
         `,
@@ -163,6 +164,7 @@ export const photomancy: MysticSphere = {
       name: 'Borrow Vision',
 
       attack: {
+        crit: null,
         hit: `
           This spell has no \\glossterm{verbal components}.
 
@@ -346,6 +348,7 @@ export const photomancy: MysticSphere = {
       // Brief daze is 1.4 EA, or 2.4 EA as a sustain (minor). That's r6, though we only
       // use a r5 area, and we drop by 1 rank for the delay.
       attack: {
+        crit: CRIT_BECOMES_CONDITION,
         hit: `
           The target is \\briefly \\dazed.
         `,
@@ -506,6 +509,7 @@ export const photomancy: MysticSphere = {
       // Random effect is pretty punishing for such situational conditions, so call that
       // -0.2 EA, or 0.6 total, so r2 total with damage.
       attack: {
+        crit: 'Double damage, and the target suffers two random effects instead of one.',
         hit: `
           \\damageranktwolow, and the target \\briefly suffers one of the following effects, chosen randomly: \\dazzled, \\frightened by you, \\goaded by you, or -2 Reflex defense.
         `,
@@ -524,6 +528,7 @@ export const photomancy: MysticSphere = {
       name: 'Massive Chromatic Orb',
 
       attack: {
+        crit: 'Double damage, and the target suffers two random effects instead of one.',
         hit: `
           \\damagerankfourlow, and the target \\briefly suffers one of the following effects, chosen randomly: \\dazzled, \\frightened by you, \\goaded by you, or -2 Reflex defense.
         `,
@@ -609,6 +614,7 @@ export const photomancy: MysticSphere = {
       // Reactive brief dazzle is 1.2 EA, and r1 deep attunement is 1.5 EA.
       // That gives us some vague ranks to increase to medarea radius?
       attack: {
+        crit: 'The target also briefly treats you as being \\trait{invisible}.',
         hit: `The target is \\briefly \\dazzled.`,
         targeting: `
           You are surrounded by a \\medarea radius \\glossterm{emanation} of \\glossterm{brilliant illumination}.

@@ -882,6 +882,7 @@ export const vivimancy: MysticSphere = {
       // Single defense is 1.0 EA. One rank of area gives a r0 spell with r1 area, which
       // is enough for 0.4 ranks of buff.
       attack: {
+        crit: CRIT_BECOMES_CONDITION,
         hit: `
           The target \\briefly takes a -2 penalty to the chosen defense.
         `,
@@ -902,6 +903,7 @@ export const vivimancy: MysticSphere = {
       // Brief daze is 1.4 EA, so r1. Braced requires 4 ranks. Drop by a rank since the
       // brace is conditional.
       attack: {
+        crit: CRIT_BECOMES_CONDITION,
         hit: `
           The target is \\briefly \\dazed.
           Then, you are \\briefly \\braced.

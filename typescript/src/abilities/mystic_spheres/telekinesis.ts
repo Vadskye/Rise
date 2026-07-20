@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { BARRIER_COOLDOWN, MULTIHIT_CRIT } from '../constants';
+import { BARRIER_COOLDOWN, INJURY_CRIT, MULTIHIT_CRIT } from '../constants';
 
 export const telekinesis: MysticSphere = {
   name: 'Telekinesis',
@@ -58,6 +58,7 @@ export const telekinesis: MysticSphere = {
       // they are already in melee, but better if they have more than 30' of movement, so
       // call it 2 EA. The Might check is worth -2 ranks, probably.
       attack: {
+        crit: "The \\glossterm{difficulty value} increases to 10.",
         hit: `
           The target is \\briefly unable to move closer to you without effort.
           This does not impede its movement unless its movement would bring it closer to you while it is within \\medrange of you.
@@ -81,7 +82,7 @@ export const telekinesis: MysticSphere = {
       // is stronger than a 30' push when kiting.
       functionsLike: {
         name: 'interposing force',
-        exceptThat: 'the \\glossterm{difficulty value} of the Might check increases to 12.',
+        exceptThat: 'the \\glossterm{difficulty value} of the Might check increases to 10, or to 15 on a critical hit.',
       },
       rank: 5,
       roles: ['kite'],
@@ -356,6 +357,7 @@ export const telekinesis: MysticSphere = {
       name: 'Mind Fling',
 
       attack: {
+        crit: INJURY_CRIT,
         hit: `
           If the target is \\glossterm{injured}, you \\glossterm{fling} it up to 15 feet upwards or horizontally.
           Moving it upwards costs twice the normal movement cost.
@@ -374,6 +376,7 @@ export const telekinesis: MysticSphere = {
       name: 'Intense Mind Fling',
 
       attack: {
+        crit: INJURY_CRIT,
         hit: `
           If the target is \\glossterm{injured}, you \\glossterm{fling} it up to 30 feet upwards or horizontally.
           Moving it upwards costs twice the normal movement cost.
