@@ -5,16 +5,32 @@
 $repoRoot = Resolve-Path "$PSScriptRoot\.."
 Set-Location -Path "$repoRoot\typescript"
 
-# 1. Compile TypeScript
-# The --incremental flag speeds up subsequent builds
-Write-Host "Compiling TypeScript..." -ForegroundColor Cyan
-npx tsc --incremental
+# 1. Compile monster_ui TypeScript and generate monster TS
+Write-Host "Generating monster TS..." -ForegroundColor Cyan
+Set-Location -Path "$repoRoot\typescript\monster_ui"
+npm run monster_ts
 if ($LASTEXITCODE -ne 0) {
-    Write-Error "TypeScript compilation failed."
+    Write-Error "Monster TS generation failed."
     exit $LASTEXITCODE
 }
 
-# 1.5. Run Stamina Validation
+Write-Host "Compiling monster_ui TypeScript..." -ForegroundColor Cyan
+npx tsc --incremental
+if ($LASTEXITCODE -ne 0) {
+    Write-Error "monster_ui TypeScript compilation failed."
+    exit $LASTEXITCODE
+}
+
+# 1.5. Compile root TypeScript
+Write-Host "Compiling root TypeScript..." -ForegroundColor Cyan
+Set-Location -Path "$repoRoot\typescript"
+npx tsc --incremental
+if ($LASTEXITCODE -ne 0) {
+    Write-Error "Root TypeScript compilation failed."
+    exit $LASTEXITCODE
+}
+
+# 1.7. Run Stamina Validation
 Write-Host "Running Stamina & Fatigue validation..." -ForegroundColor Cyan
 npm run validate_stamina
 if ($LASTEXITCODE -ne 0) {
