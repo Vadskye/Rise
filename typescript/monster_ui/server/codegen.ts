@@ -314,6 +314,7 @@ function generateSharedPropertiesCode(
       'Grappling Strike',
       'Sneak Attack',
       'Latch On',
+      'Throw Item',
     ];
     for (const ability of data.standardAbilities) {
       const cleanOptions = ability.options
@@ -373,6 +374,10 @@ function generateSharedPropertiesCode(
           } else if (ability.name === 'Latch On') {
             lines.push(
               `${indent}creature.addLatchOn(${formatValueToTSSingleLine(weapon)}${optStr});`,
+            );
+          } else if (ability.name === 'Throw Item') {
+            lines.push(
+              `${indent}creature.addThrowItem(${formatValueToTSSingleLine(weapon)}${optStr});`,
             );
           }
         }
