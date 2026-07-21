@@ -1,5 +1,7 @@
 import React from 'react';
 import { CustomAbilityConfig } from '../../types/monster';
+import { Combobox } from '../Combobox';
+import { USAGE_TIME_OPTIONS } from './StandardAbilitiesSection';
 
 interface CustomAbilitiesSectionProps {
   customAbilities: CustomAbilityConfig[];
@@ -21,7 +23,7 @@ export const CustomAbilitiesSection: React.FC<CustomAbilitiesSectionProps> = ({
       type,
       name: `New Custom ${type.charAt(0).toUpperCase() + type.slice(1)}`,
       isMagical: type === 'spell',
-      usageTime: 'Standard',
+      usageTime: 'standard',
       effect: '',
       tags: [],
     };
@@ -126,22 +128,16 @@ export const CustomAbilitiesSection: React.FC<CustomAbilitiesSectionProps> = ({
                       </div>
                       <div className="form-group">
                         <label>Usage Time</label>
-                        <select
-                          value={ability.usageTime || 'Standard'}
-                          onChange={(e) =>
-                            updateCustomAbility(idx, { ...ability, usageTime: e.target.value })
+                        <Combobox
+                          value={ability.usageTime?.toLowerCase() || 'standard'}
+                          options={USAGE_TIME_OPTIONS.filter((o) => o.value !== '')}
+                          onChange={(val) =>
+                            updateCustomAbility(idx, { ...ability, usageTime: val || undefined })
                           }
-                        >
-                          <option value="Standard">Standard Action</option>
-                          <option value="Move">Move Action</option>
-                          <option value="Swift">Swift Action</option>
-                          <option value="Minor">Minor Action</option>
-                          <option value="Reaction">Reaction</option>
-                          <option value="Free">Free Action</option>
-                        </select>
+                        />
                       </div>
                       <div className="form-group">
-                        <label>Cost (e.g. 1 Stamina, 1 Reagent)</label>
+                        <label>Cost</label>
                         <input
                           type="text"
                           placeholder="None"
@@ -193,7 +189,7 @@ export const CustomAbilitiesSection: React.FC<CustomAbilitiesSectionProps> = ({
                     </div>
 
                     <div className="form-group" style={{ marginTop: '15px' }}>
-                      <label>Tags (Comma-separated, e.g. Ranged, Area, Mind)</label>
+                      <label>Tags (Comma-separated)</label>
                       <input
                         type="text"
                         placeholder="e.g. Fire, Attack, Evocation"

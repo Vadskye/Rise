@@ -5,11 +5,11 @@ import { WeaponCombobox } from './WeaponCombobox';
 import { Combobox } from '../Combobox';
 import { AutocompleteSearch } from '../AutocompleteSearch';
 
-const USAGE_TIME_OPTIONS = [
+export const USAGE_TIME_OPTIONS = [
   { value: '', label: '-- Original Value --' },
   { value: 'standard', label: 'Standard Action' },
-  { value: 'move', label: 'Move Action' },
   { value: 'elite', label: 'Elite Action' },
+  { value: 'move', label: 'Move Action' },
   { value: 'minor', label: 'Minor Action' },
   { value: 'triggered', label: 'Triggered' },
   { value: 'free', label: 'Free Action' },
@@ -191,17 +191,17 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
                             ability.name === 'Throw Item',
                           ),
                         ) && (
-                          <span
-                            className="quick-weapon-warning"
-                            title={
-                              ability.name === 'Throw Item'
-                                ? 'Maneuver requires an alchemical item.'
-                                : "Maneuver makes a strike and doesn't have a weapon."
-                            }
-                          >
-                            ⚠️
-                          </span>
-                        )}
+                            <span
+                              className="quick-weapon-warning"
+                              title={
+                                ability.name === 'Throw Item'
+                                  ? 'Maneuver requires an alchemical item.'
+                                  : "Maneuver makes a strike and doesn't have a weapon."
+                              }
+                            >
+                              ⚠️
+                            </span>
+                          )}
                       </div>
                     )}
                     <span className="expand-chevron" onClick={() => onToggleExpand(cardId)}>
@@ -289,10 +289,9 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
                     </div>
 
                     <div className="form-group" style={{ marginTop: '15px' }}>
-                      <label>Tags Override (Comma-separated, e.g. Fire, Attack, Evocation)</label>
+                      <label>Tags Override (Comma-separated)</label>
                       <input
                         type="text"
-                        placeholder="e.g. Fire, Attack, Evocation"
                         value={ability.options?.tags?.join(', ') || ''}
                         onChange={(e) =>
                           updateStandardAbility(idx, {
@@ -301,9 +300,8 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
                               ...(ability.options || {}),
                               tags: e.target.value
                                 ? e.target.value
-                                    .split(',')
-                                    .map((t) => t.trim())
-                                    .filter(Boolean)
+                                  .split(',')
+                                  .filter(Boolean)
                                 : undefined,
                             },
                           })
