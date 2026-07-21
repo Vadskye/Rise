@@ -19,6 +19,8 @@ export function generateMonsterDescriptions(): string {
   const orderedLetters = [...letters];
   orderedLetters.sort();
 
+  const errors: { name: string; error: unknown }[] = [];
+
   const withSectionBookmarks: string[] = [];
   for (const letter of orderedLetters) {
     withSectionBookmarks.push(
@@ -27,25 +29,58 @@ export function generateMonsterDescriptions(): string {
     for (const sectionName of sectionNames.filter((sectionName) =>
       sectionName.startsWith(letter),
     )) {
-      const monster = grimoire.getMonster(sectionName);
-      const monsterGroup = grimoire.getMonsterGroup(sectionName);
-      if (monster) {
-        withSectionBookmarks.push(convertMonsterToLatex(monster));
-      } else if (monsterGroup) {
-        withSectionBookmarks.push(convertMonsterGroupToLatex(monsterGroup));
-      } else {
-        throw new Error(`Could not find monster by name: '${sectionName}'`);
+      try {
+        const monster = grimoire.getMonster(sectionName);
+        const monsterGroup = grimoire.getMonsterGroup(sectionName);
+        if (monster) {
+          withSectionBookmarks.push(convertMonsterToLatex(monster));
+        } else if (monsterGroup) {
+          withSectionBookmarks.push(convertMonsterGroupToLatex(monsterGroup, errors));
+        } else {
+          throw new Error(`Could not find monster by name: '${sectionName}'`);
+        }
+      } catch (err) {
+        errors.push({ name: sectionName, error: err });
       }
     }
+  }
+
+  if (errors.length > 0) {
+    console.error('==================================================');
+    console.error(`MONSTER GENERATION FAILED with ${errors.length} error(s):`);
+    console.error('==================================================');
+    for (const { name, error } of errors) {
+      console.error(`Error in monster/group: ${name}`);
+      if (error instanceof Error) {
+        console.error(error.stack || error.message);
+      } else {
+        console.error(error);
+      }
+      console.error('--------------------------------------------------');
+    }
+    throw new Error(`Failed to generate monster descriptions. ${errors.length} monster/group(s) had errors.`);
   }
 
   return format.latexify(withSectionBookmarks.join('\n'));
 }
 
-export function convertMonsterGroupToLatex(group: MonsterGroup): string {
-  const monsterText = group.monsters
-    .map((monster) => convertMonsterToLatex(monster, group.name))
-    .join('\n\\vspace{1em}\n');
+export function convertMonsterGroupToLatex(
+  group: MonsterGroup,
+  errors?: { name: string; error: unknown }[],
+): string {
+  const monsterTexts: string[] = [];
+  for (const monster of group.monsters) {
+    try {
+      monsterTexts.push(convertMonsterToLatex(monster, group.name));
+    } catch (err) {
+      if (errors) {
+        errors.push({ name: `${group.name} -> ${monster.name}`, error: err });
+      } else {
+        throw err;
+      }
+    }
+  }
+  const monsterText = monsterTexts.join('\n\\vspace{1em}\n');
 
   const spacingBuffer =
     group.description || group.knowledge ? '\\vspace{0.5em}' : '\\vspace{0.25em}';
