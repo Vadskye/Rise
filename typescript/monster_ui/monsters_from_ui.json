@@ -2496,7 +2496,7 @@
       "sharedFreeformCode": "",
       "monsters": [
         {
-          "name": "Hill giant",
+          "name": "Hill Giant",
           "requiredProperties": {
             "alignment": "chaotic neutral",
             "base_class": "brute",
