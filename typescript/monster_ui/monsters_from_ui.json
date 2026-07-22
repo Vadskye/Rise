@@ -2659,7 +2659,7 @@
           },
           "freeformCode": "",
           "properties": {
-            "has_art": true
+            "has_art": false
           },
           "baseAttributes": [
             8,
