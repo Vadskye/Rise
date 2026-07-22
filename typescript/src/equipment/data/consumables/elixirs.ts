@@ -247,7 +247,7 @@ export function elixirs(): Tool[] {
       name: 'Elixir of the True Form',
       rank: 1,
       attunement: 'Attune',
-      short_description: 'Can breathe underwater',
+      short_description: 'Resist polymorph attacks',
       description: `
         When you drink this \\glossterm{potion}, if you \\glossterm{attune} to its effects, you become \\resistant to attacks from the \\sphere{polymorph} sphere.
         This effect expires after ten minutes.
@@ -255,26 +255,7 @@ export function elixirs(): Tool[] {
       upgrades: [
         {
           rank: 4,
-          short_description: 'Immune to poison',
-          description: `
-            You become immune instead of resistant.
-          `,
-        },
-      ],
-    }),
-    createElixir({
-      name: 'Elixir of the True Form',
-      rank: 1,
-      attunement: 'Attune',
-      short_description: 'Can breathe underwater',
-      description: `
-        When you drink this \\glossterm{potion}, if you \\glossterm{attune} to its effects, you become \\resistant to attacks from the \\sphere{polymorph} sphere.
-        This effect expires after ten minutes.
-      `,
-      upgrades: [
-        {
-          rank: 4,
-          short_description: 'Immune to poison',
+          short_description: 'Immune to polymorph attacks',
           description: `
             You become immune instead of resistant.
           `,
