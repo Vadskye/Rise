@@ -363,6 +363,21 @@ export const verdamancy: MysticSphere = {
     },
 
     {
+      name: 'Greater Goodberries',
+
+      effect: `
+        When you cast this spell, you create three berries.
+        Any creature can eat one berry as a standard action.
+        If it does, it regains \\hpranksevenlow and reduces its \\glossterm{stamina} by one.
+      `,
+      rank: 4,
+      roles: ['attune'],
+      scaling: 'healing',
+      tags: ['Manifestation'],
+      type: 'Attune',
+    },
+
+    {
       name: 'Barkskin',
 
       effect: `
@@ -612,7 +627,7 @@ export const verdamancy: MysticSphere = {
         Long, thin grass continuously grows and writhes on your body.
         You can extend the grass to surround you at a whim.
       `,
-      rank: 1,
+      rank: 2,
       roles: ['attune'],
       tags: ['Manifestation'],
       type: 'Attune',
@@ -660,11 +675,11 @@ export const verdamancy: MysticSphere = {
       name: 'Healing Bloom',
       cost: 'One \\glossterm{stamina}.',
       effect: `
-        Choose a \\tinyarea \\glossterm{zone} within \\medrange.
+        Choose a \\tinyarea \\glossterm{grounded} \\glossterm{zone} within \\medrange.
         A flower begins to grow in the center of the area.
-        At the end of your next turn, each \\glossterm{ally} within the area regains \\hpranktwo.
+        At the end of your next turn, each \\glossterm{ally} within the area regains \\hprankthree.
       `,
-      rank: 1,
+      rank: 2,
       scaling: 'healing',
       roles: ['healing', 'exertion'],
       tags: ['Life', 'Manifestation'],
@@ -674,9 +689,9 @@ export const verdamancy: MysticSphere = {
       cost: 'One \\glossterm{stamina}.',
       functionsLike: {
         name: 'healing bloom',
-        exceptThat: 'the healing increases to \\hprankfive.',
+        exceptThat: 'the healing increases to \\hpranksix.',
       },
-      rank: 4,
+      rank: 5,
       scaling: 'healing',
       roles: ['healing', 'exertion'],
       tags: ['Manifestation'],

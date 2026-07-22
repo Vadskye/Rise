@@ -1,6 +1,6 @@
 import { MysticSphere } from '.';
 import { add_tag_to_sphere } from './add_tag';
-import { BARRIER_COOLDOWN, CRIT_BECOMES_CONDITION, INJURY_CRIT } from '../constants';
+import { BARRIER_COOLDOWN, CRIT_BECOMES_CONDITION, DAMAGING_INJURY_CRIT, INJURY_CRIT } from '../constants';
 
 const OPTIONAL_ICE_CRYSTAL = 'One optional \\glossterm{ice crystal}.';
 
@@ -45,6 +45,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       // Mod: Debuff (-1)
       // Result: 3 + 2 - 1 = dr4
       attack: {
+        crit: DAMAGING_INJURY_CRIT,
         hit: `
           \\damagerankfour, and you gain an \\glossterm{ice crystal}.
         `,
@@ -71,11 +72,13 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       // Mod: Debuff (-1)
       // Result: 6 + 2 - 1 = dr7
       attack: {
+        crit: DAMAGING_INJURY_CRIT,
         hit: `
           \\damagerankseven, and any \\glossterm{extra damage} is doubled.
+          You gain an \\glossterm{ice crystal}.
         `,
         injury: `
-          You gain an \\glossterm{ice crystal}, and the target becomes \\slowed while the condition lasts.
+          The target is \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -255,11 +258,34 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
     },
 
     {
+      name: 'Frost Bomb',
+
+      // small radius in short range is rank 2 = dr-1.
+      // Avoidable delay is dr+2.
+      // This is one of the few ways to generate multiple ice crystals.
+      attack: {
+        hit: `
+          \\damagerankfour.
+          If the target is Medium or larger, you gain an \\glossterm{ice crystal}.
+        `,
+        injury: `
+          The target is \\briefly \\slowed.
+        `,
+        halfOnMiss: true,
+        targeting: `
+          You create a \\smallarea radius \\glossterm{zone} of growing cold within \\shortrange.
+          At the end of your next turn, make an attack vs. Fortitude against everything in the area.
+        `,
+      },
+      rank: 3,
+      roles: ['clear', 'generator'],
+      scaling: 'damage',
+    },
+
+    {
       name: 'Frostbite',
 
-      // Rank 2 Spell
-      // Mod: Inescapably Delayed (+1)
-      // Result: 2 + 1 = dr3
+      // +1dr for delay
       attack: {
         hit: `
           The target feels a growing chill.
@@ -269,12 +295,12 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
           The target is \\briefly \\slowed.
         `,
         targeting: `
-          Make an attack vs. Fortitude against something within \\medrange.
+          Make an attack vs. Fortitude against something within \\shortrange.
 
           If you \\glossterm{injure} any Medium or larger creatures with this spell, you gain an \\glossterm{ice crystal}.
         `,
       },
-      rank: 2,
+      rank: 1,
       roles: ['burn', 'generator'],
       scaling: 'damage',
     },
@@ -282,9 +308,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
     {
       name: 'Mighty Frostbite',
 
-      // Rank 6 Spell
-      // Mod: Inescapably Delayed (+1)
-      // Result: 6 + 1 = dr7
+      // +1dr for delay
       attack: {
         hit: `
           The target feels a growing chill.
@@ -294,12 +318,12 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
           The target is \\briefly \\slowed.
         `,
         targeting: `
-          Make an attack vs. Fortitude against something within \\medrange.
+          Make an attack vs. Fortitude against something within \\shortrange.
 
           If you \\glossterm{injure} any Medium or larger creatures with this spell, you gain an \\glossterm{ice crystal}.
         `,
       },
-      rank: 6,
+      rank: 5,
       roles: ['burn', 'generator'],
       scaling: 'damage',
     },
@@ -656,7 +680,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       name: 'Bonechill',
 
       attack: {
-        crit: "Double damage, and the target is affected as if it was \\glossterm{injured}.",
+        crit: DAMAGING_INJURY_CRIT,
         hit: `
           \\damagerankfour.
           In addition, the target is \\briefly \\slowed, and you gain an \\glossterm{ice crystal}.
@@ -769,6 +793,96 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       roles: ['focus', 'turtle'],
       type: 'Sustain (standard)',
       tags: ['Manifestation', 'Physical'],
+    },
+
+    {
+      name: 'Crystalline Power',
+
+      effect: `
+        Whenever you cast a non-attunable spell, you can spend an \\glossterm{ice crystal} to activate this effect as a \\glossterm{minor action}.
+        If you do, the spell gains a \\plus2 accuracy bonus and deals 1d6 \\glossterm{extra damage} this turn.
+        After you enhance a spell in this way, this ability is \\glossterm{dismissed}.
+      `,
+      rank: 1,
+      roles: ['attune'],
+      scaling: {
+        3: `The extra damage increases to 2d6.`,
+        5: `The extra damage increases to 2d10.`,
+        7: `The extra damage increases to 4d10.`,
+      },
+      type: 'Attune',
+    },
+
+    {
+      name: 'Chilling Pulse',
+
+      attack: {
+        hit: `
+          \\damagerankthree.
+        `,
+        injury: `
+          The target is \\briefly \\slowed.
+        `,
+        halfOnMiss: true,
+        targeting: `
+          When you cast or sustain this spell, make an attack vs. Fortitude against all \\glossterm{enemies} within a \\tinyarea radius of you.
+          If you sustained the spell, you gain a \\plus2 accuracy bonus with the attack.
+
+          If you \\glossterm{injure} any Medium or larger creatures with this spell, you gain an \\glossterm{ice crystal}.
+        `,
+      },
+      rank: 2,
+      roles: ['clear', 'maim'],
+      scaling: 'damage',
+      type: "Sustain (standard)",
+    },
+
+    {
+      name: 'Freezing Pulse',
+
+      attack: {
+        crit: DAMAGING_INJURY_CRIT,
+        hit: `
+          \\damagerankfour, and the target is \\briefly \\slowed.
+        `,
+        injury: `
+          The target is \\slowed as a \\glossterm{condition}.
+        `,
+        halfOnMiss: true,
+        targeting: `
+          When you cast or sustain this spell, make an attack vs. Fortitude against all \\glossterm{enemies} within a \\tinyarea radius of you.
+          If you sustained the spell, you gain a \\plus2 accuracy bonus with the attack.
+
+          If you \\glossterm{injure} any Medium or larger creatures with this spell, you gain an \\glossterm{ice crystal}.
+        `,
+      },
+      rank: 4,
+      roles: ['clear', 'maim'],
+      scaling: 'damage',
+    },
+
+    {
+      name: 'Mighty Chilling Pulse',
+
+      attack: {
+        hit: `
+          \\damagerankseven.
+        `,
+        injury: `
+          The target is \\briefly \\slowed.
+        `,
+        halfOnMiss: true,
+        targeting: `
+          When you cast or sustain this spell, make an attack vs. Fortitude against all \\glossterm{enemies} within a \\tinyarea radius of you.
+          If you sustained the spell, you gain a \\plus2 accuracy bonus with the attack.
+
+          If you \\glossterm{injure} any Medium or larger creatures with this spell, you gain an \\glossterm{ice crystal}.
+        `,
+      },
+      rank: 6,
+      roles: ['clear', 'maim'],
+      scaling: 'damage',
+      type: "Sustain (standard)",
     },
   ],
 });

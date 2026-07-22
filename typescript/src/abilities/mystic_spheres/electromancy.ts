@@ -680,7 +680,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       name: 'Charge Up',
 
       effect: `
-        When you cast this spell, and whenever you sustain it, electricity loudly arcs and crackles around you.
+        When you cast or sustain this spell, electricity loudly arcs and crackles around you.
         When you stop sustaining this spell, you gain a benefit based on how many times you sustained it.
         \\begin{mdframedraggeditemize}
           \\item Never: You are \\empowered this turn.
@@ -697,7 +697,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       name: 'Greater Charge Up',
 
       effect: `
-        When you cast this spell, and whenever you sustain it, electricity loudly arcs and crackles around you.
+        When you cast or sustain this spell, electricity loudly arcs and crackles around you.
         When you stop sustaining this spell, you gain a benefit based on how many times you sustained it.
         \\begin{mdframedraggeditemize}
           \\item Never: You are \\maximized this turn.

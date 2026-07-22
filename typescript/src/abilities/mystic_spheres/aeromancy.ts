@@ -882,7 +882,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
 
       // Once is 0.9 EA, twice is 1.3 EA
       effect: `
-        When you cast this spell, and whenever you sustain it, air loudly rushes around you.
+        When you cast or sustain this spell, air loudly rushes around you.
         When you stop sustaining this spell, you gain a benefit based on how many times you sustained it.
         \\begin{mdframedraggeditemize}
           \\item Never: You are \\briefly \\shielded.
@@ -901,7 +901,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
 
       // Once is 1.2 EA, twice is 1.6 EA
       effect: `
-        When you cast this spell, and whenever you sustain it, air loudly rushes around you.
+        When you cast or sustain this spell, air loudly rushes around you.
         When you stop sustaining this spell, you gain a benefit based on how many times you sustained it.
         \\begin{mdframedraggeditemize}
           \\item Never: You are \\primed this turn.

@@ -206,6 +206,7 @@ export const heraldOfWar: CombatStyle = {
       name: 'Deafening Shout+',
 
       attack: {
+        crit: "Double damage, and the target is \\briefly \\dazed.",
         hit: `
           \\damagerankfive.
           \\hit The target becomes \\deafened as a \\glossterm{condition}.

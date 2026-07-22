@@ -1,6 +1,6 @@
 import { MysticSphere } from '.';
 import { add_tag_to_sphere } from './add_tag';
-import { BARRIER_COOLDOWN, BRIEF_PRONE, CRIT_BECOMES_CONDITION, INJURY_CRIT } from '../constants';
+import { BARRIER_COOLDOWN, BRIEF_PRONE, CRIT_BECOMES_CONDITION, DAMAGING_INJURY_CRIT, INJURY_CRIT } from '../constants';
 
 const WATER_ACCURACY_BONUS =
   'You gain a +2 accuracy bonus with the attack if there is a Large or larger body of water within \\shortrange.';
@@ -165,13 +165,10 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: 'Crashing Wave',
 
-      // Rank 1 Spell
-      // Area: Medium 10' wide line from self (R1, mod 0)
-      // Bonus: Double defense (mod +1)
-      // Result: 1 + 0 + 1 = dr2
+      // +1dr for double defense
       attack: {
         hit: `
-          \\damageranktwo.
+          \\damagerankthree.
         `,
         halfOnMiss: true,
         targeting: `
@@ -179,7 +176,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
           ${WATER_ACCURACY_BONUS}
         `,
       },
-      rank: 1,
+      rank: 2,
       roles: ['clear'],
       scaling: 'damage',
       tags: ['Manifestation'],
@@ -187,13 +184,10 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: 'Mighty Crashing Wave',
 
-      // Rank 4 Spell
-      // Area: Medium 10' wide line from self (R1, mod 0)
-      // Bonus: Double defense (mod +1)
-      // Result: 4 + 0 + 1 = dr5
+      // +1dr for double defense
       attack: {
         hit: `
-          \\damagerankfive.
+          \\damageranksix.
         `,
         halfOnMiss: true,
         targeting: `
@@ -201,7 +195,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
           ${WATER_ACCURACY_BONUS}
         `,
       },
-      rank: 4,
+      rank: 5,
       roles: ['clear'],
       scaling: 'damage',
       tags: ['Manifestation'],
@@ -665,13 +659,14 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: 'Aquajet Grasp',
 
-      // Rank 1 Spell
+      // Rank 2 Spell
       // Range: Melee (mod +2)
       // Effect: Debuff (Fling 15') (mod -1)
-      // Result: 1 + 2 - 1 = dr2
+      // Result: 2 + 2 - 1 = dr3
       attack: {
+        crit: DAMAGING_INJURY_CRIT,
         hit: `
-          \\damageranktwo.
+          \\damagerankthree.
         `,
         injury: `
           If the target is Large or smaller, you \\glossterm{fling} it up to 15 feet horizontally (see \\pcref{Fling Effects}).
@@ -685,7 +680,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         `,
       },
       // narrative: '',
-      rank: 1,
+      rank: 2,
       roles: ['burst', 'maim'],
       scaling: 'damage',
     },
@@ -951,7 +946,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       // Once: 0.7 EA
       // Twice: 0.7 + 0.3
       effect: `
-        When you cast this spell, and whenever you sustain it, water loudly swirls and crashes around you.
+        When you cast or sustain this spell, water loudly swirls and crashes around you.
         When you stop sustaining this spell, you gain a benefit based on how many times you sustained it.
         \\begin{mdframedraggeditemize}
           \\item Never: You are \\empowered this turn.
@@ -969,7 +964,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       // Once: 0.7 + 0.3
       // Twice: 0.7 + 0.4 + 0.3
       effect: `
-        When you cast this spell, and whenever you sustain it, water loudly swirls and crashes around you.
+        When you cast or sustain this spell, water loudly swirls and crashes around you.
         When you stop sustaining this spell, you gain a benefit based on how many times you sustained it.
         \\begin{mdframedraggeditemize}
           \\item Never: You are \\empowered this turn and \\briefly \\fortified.

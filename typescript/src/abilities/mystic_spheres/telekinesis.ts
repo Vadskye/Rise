@@ -421,26 +421,27 @@ export const telekinesis: MysticSphere = {
     {
       name: 'Kinetic Redirection',
 
-      // Shielded is 0.4 EA, redirect is ???
+      // Braced is 0.5 EA, redirect is ???
       effect: `
-        You are \\briefly \\shielded.
+        Whenever you cast or sustain this spell, you are \\briefly \\braced.
         In addition, whenever a creature misses you with a melee \\glossterm{strike} during that effect, it treats itself as a target of that strike in addition to any other targets.
         It cannot choose to reduce its accuracy or damage against itself.
       `,
-      rank: 1,
+      rank: 3,
       roles: ['turtle'],
+      type: 'Sustain (standard)',
     },
 
     {
       name: 'Greater Kinetic Redirection',
 
-      effect: `
-        You are \\briefly \\shielded.
-        In addition, whenever a creature attacks you with a melee \\glossterm{strike} during that effect, it treats itself as a target of that strike in addition to any other targets.
-        It cannot choose to reduce its accuracy or damage against itself.
-      `,
+      functionsLike: {
+        name: "kinetic redirection",
+        exceptThat: "you are also \\briefly \\shielded.",
+      },
       rank: 7,
       roles: ['turtle'],
+      type: 'Sustain (standard)',
     },
 
     {
@@ -716,19 +717,6 @@ export const telekinesis: MysticSphere = {
       rank: 2,
       roles: ['softener'],
       scaling: 'accuracy',
-    },
-    {
-      name: 'Desperate Levitation',
-
-      effect: `
-        Whenever you use the \\ability{recover} ability, you can activate this ability.
-        If you do, you move 20 feet up into the air and \\briefly levitate there.
-        While levitating in this way, your telekinesis provides you with a stable platform to maneuver, so you are not \\unsteady.
-        When this effect ends, you descend 20 feet without taking \\glossterm{falling damage}, then this ability is \\glossterm{dismissed}.
-      `,
-      rank: 1,
-      roles: ['attune'],
-      type: 'Attune',
     },
 
     {

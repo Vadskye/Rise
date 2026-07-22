@@ -805,29 +805,6 @@ export const fabrication: MysticSphere = {
     },
 
     {
-      name: 'Forceful Barrier',
-
-      cost: BARRIER_COOLDOWN,
-      functionsLike: {
-        exceptThat: `
-          it breaks objects in its area that obstruct its path.
-          Each \\glossterm{unattended} object in the path of the wall takes \\damagerankthree.
-          Any object destroyed in this way does not block the barrier's area of effect.
-          This does no damage to creatures, who block the path of the barrier like normal.
-        `,
-        name: 'mystic barrier',
-      },
-      rank: 3,
-      roles: ['barrier'],
-      scaling: {
-        4: "The barrier's hit points increase to three times your power.",
-        6: "The barrier's hit points increase to four times your power.",
-      },
-      tags: ['Barrier', 'Manifestation'],
-      type: 'Sustain (attunable, minor)',
-    },
-
-    {
       name: 'Mystic Barrier',
 
       cost: BARRIER_COOLDOWN,
@@ -885,54 +862,6 @@ export const fabrication: MysticSphere = {
       },
       tags: ['Barrier', 'Manifestation'],
       type: 'Sustain (attunable, minor)',
-    },
-
-    // TODO: unclear EA. It's roughly an action trade, so ~2 EA assuming they can destroy
-    // it in a single attack. But it also normally removes your ability to attack, so it's
-    // not as strong as "no defense action skip" would imply.
-    {
-      name: 'Personal Sphere',
-
-      cost: BARRIER_COOLDOWN,
-      effect: `
-        You create a sphere of magical energy around yourself.
-        The sphere is visible as a shimmering magical membrane that does not block sight.
-        Nothing can pass through the field until it is destroyed.
-        This prevents you from having \\glossterm{line of effect} to anything outside of the area.
-
-        The sphere is immobile, so it normally prevents you from leaving the area.
-        You cannot \\glossterm{dismiss} it.
-        It disappears if you stop sustaining it, as normal for sustained abilities.
-
-        The field as a whole has \\glossterm{hit points} equal to twice your \\glossterm{power}, and is destroyed when its hit points become negative.
-        It is also destroyed if you leave the area by any means.
-        Whenever you sustain this effect, the field regains hit points equal to your power.
-      `,
-      rank: 3,
-      roles: ['turtle'],
-      scaling: {
-        5: "The barrier's hit points increase to three times your power.",
-        7: "The barrier's hit points increase to four times your power.",
-      },
-      tags: ['Barrier', 'Manifestation'],
-      type: 'Sustain (standard)',
-    },
-
-    {
-      name: 'Greater Personal Sphere',
-
-      cost: BARRIER_COOLDOWN,
-      functionsLike: {
-        name: 'personal sphere',
-        exceptThat: `
-          this has the Sustain (minor) tag instead of Sustain (standard).
-          In addition, the field's hit points increase to three times your \\glossterm{power}.
-        `,
-      },
-      rank: 7,
-      roles: ['turtle'],
-      tags: ['Barrier', 'Manifestation'],
-      type: 'Sustain (minor)',
     },
 
     // Banishment is 3 EA. This is slightly worse than banishment, since it's possible for

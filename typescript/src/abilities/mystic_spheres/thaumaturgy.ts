@@ -236,7 +236,7 @@ export const thaumaturgy: MysticSphere = {
 
       effect: `
         Whenever you cast a non-attunable spell, you can activate this effect as a \\glossterm{minor action}.
-        If you do, the spell deals 1d6 \\glossterm{extra damage} when it deals damage for the first time.
+        If you do, the spell deals 1d6 \\glossterm{extra damage} this turn.
         After you enhance a spell in this way, this ability is \\glossterm{dismissed}.
       `,
       rank: 1,
