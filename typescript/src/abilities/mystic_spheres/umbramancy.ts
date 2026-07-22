@@ -734,7 +734,7 @@ export const umbramancy: MysticSphere = {
         hit: "\\damagerankone.",
         injury: "The target \\briefly \\glossterm{bleeds} for \\damagerankone.",
         targeting: `
-          Make an attack vs. Armor against a \\glossterm{shadowed} creature within \\shortrange.
+          Make an attack vs. Armor and Mental against a \\glossterm{shadowed} creature within \\medrange.
         `,
       },
       rank: 1,
@@ -758,12 +758,12 @@ export const umbramancy: MysticSphere = {
       name: 'The Shadows Bite and Claw',
 
       attack: {
-        hit: "\\damagerankone.",
+        hit: "\\damageranktwo.",
         halfOnMiss: true,
         targeting: `
           You create a \\smallarea radius \\glossterm{zone} of biting shadows within \\shortrange.
-          When you cast or sustain this spell, make an attack vs. Armor against all \\glossterm{shadowed} \\glossterm{enemies} in the area.
-          In addition, whenever a shadowed enemy enters the zone on its turn, make a \\glossterm{reactive attack} vs. Armor against that creature.
+          When you cast or sustain this spell, make an attack vs. Armor and Mental against all \\glossterm{shadowed} \\glossterm{enemies} in the area.
+          In addition, whenever a shadowed enemy enters the zone on its turn, make a \\glossterm{reactive attack} vs. Armor and Mental against that creature.
         `,
       },
       rank: 3,
@@ -777,7 +777,7 @@ export const umbramancy: MysticSphere = {
 
       functionsLike: {
         name: "the shadows bite and claw",
-        exceptThat: "the damage increases to \\damagerankfour.",
+        exceptThat: "the damage increases to \\damagerankfive.",
       },
       rank: 6,
       roles: ['burst'],
