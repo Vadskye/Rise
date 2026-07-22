@@ -1034,6 +1034,7 @@ export const rituals: RitualDefinition[] = [
 
     usageTime: 'one minute',
     attack: {
+      crit: null,
       hit: `
         The target is compelled to deliver a message for you.
       You can give the animal a small piece of parchment or similarly sized item containing up to 25 words.
@@ -1056,6 +1057,7 @@ export const rituals: RitualDefinition[] = [
     roles: ['narrative'],
     type: 'Attune',
     spheres: ['Enchantment'],
+    tags:  ['Compulsion'],
   },
 
   {
@@ -1960,6 +1962,7 @@ export const rituals: RitualDefinition[] = [
 
     usageTime: 'one hour',
     attack: {
+      crit: null,
       hit: `
         A scrying sensor appears in the target's space.
         This sensor functions like the sensor created by the \\spell{mystic eye} spell, except that you cannot move the sensor manually.
@@ -3174,6 +3177,7 @@ export const rituals: RitualDefinition[] = [
 
     usageTime: 'one hour',
     attack: {
+      crit: null,
       hit: `
         While the target is in the area, it is unable to attack any creatures or objects.
         This effect lasts until the target finishes a \\glossterm{short rest}.

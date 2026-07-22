@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { BARRIER_COOLDOWN, CRIT_BECOMES_CONDITION, MULTIHIT_CRIT, POISON_CRIT } from '../constants';
+import { BARRIER_COOLDOWN, BRIEF_PRONE, CRIT_BECOMES_CONDITION, MULTIHIT_CRIT, POISON_CRIT } from '../constants';
 
 export const verdamancy: MysticSphere = {
   name: 'Verdamancy',
@@ -85,6 +85,7 @@ export const verdamancy: MysticSphere = {
       // ranged, so call it 1.4 EA, which is r0 with short range. That allows the
       // undergrowth.
       attack: {
+        crit: BRIEF_PRONE,
         hit: `
           The target falls \\prone.
         `,
@@ -680,6 +681,7 @@ export const verdamancy: MysticSphere = {
       name: 'Treeseal',
 
       attack: {
+        crit: "The target also takes \\damagerankeight. This damage is not doubled by critical hits.",
         hit: `
           A Huge grove of trees grows around the target, \\briefly trapping it inside the grove.
           While it is trapped, it does not have \\glossterm{line of sight} or \\glossterm{line of effect} to any creature other than itself.
@@ -695,6 +697,7 @@ export const verdamancy: MysticSphere = {
       },
       roles: ['trip'],
       rank: 7,
+      tags: ['Manifestation', 'Physical'],
     },
 
     // Any two shielded is 0.9 EA. Short range to make it rank 1 to avoid conflicting with

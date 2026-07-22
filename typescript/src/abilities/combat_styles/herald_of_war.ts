@@ -38,6 +38,7 @@ export const heraldOfWar: CombatStyle = {
       name: 'Dazing Shout',
 
       attack: {
+        crit: CRIT_BECOMES_CONDITION,
         hit: `The target is \\briefly \\dazed.`,
         targeting: `
           Make an attack vs. Mental against everything in a \\medarea cone from you.
@@ -188,6 +189,7 @@ export const heraldOfWar: CombatStyle = {
       name: 'Deafening Shout',
 
       attack: {
+        crit: "Double damage, and the brief effect becomes a \\glossterm{condition}.",
         hit: `
           \\damagerankone, and the target is \\briefly \\deafened.
         `,
@@ -336,6 +338,7 @@ export const heraldOfWar: CombatStyle = {
       name: 'Challenge',
 
       attack: {
+        crit: CRIT_BECOMES_CONDITION,
         hit: `The target is \\briefly \\goaded by you.`,
         targeting: `
           Make an attack vs. Mental against up to two creatures in \\shortrange.

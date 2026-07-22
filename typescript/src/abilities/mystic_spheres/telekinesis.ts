@@ -610,6 +610,7 @@ export const telekinesis: MysticSphere = {
 
       // TODO: correct rank, clarify whether this triggers damage from fling
       attack: {
+        crit: "The effect lasts \\briefly on the target.",
         hit: `
           The target is unable to enter the spell's area for the rest of its turn.
           The rest of its movement is cancelled.

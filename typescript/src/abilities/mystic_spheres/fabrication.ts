@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { BARRIER_COOLDOWN } from '../constants';
+import { BARRIER_COOLDOWN, BRIEF_PRONE } from '../constants';
 
 export const fabrication: MysticSphere = {
   name: 'Fabrication',
@@ -604,7 +604,7 @@ export const fabrication: MysticSphere = {
       name: 'Grease',
 
       attack: {
-        crit: "The target \\briefly cannot stand up from prone.",
+        crit: BRIEF_PRONE,
         hit: `The target falls \\prone.`,
         targeting: `
           Make an attack vs. Reflex against all Large or smaller \\glossterm{grounded} creatures in a \\smallarea radius within \\shortrange.
@@ -622,7 +622,7 @@ export const fabrication: MysticSphere = {
       name: 'Enduring Grease',
 
       attack: {
-        crit: "The target \\briefly cannot stand up from prone.",
+        crit: BRIEF_PRONE,
         hit: `The target falls \\prone.`,
         targeting: `
           You \\briefly coat everything in a \\smallarea radius \\glossterm{zone} within \\shortrange in grease.
@@ -643,7 +643,7 @@ export const fabrication: MysticSphere = {
       name: 'Oil Slick',
 
       attack: {
-        crit: "The target \\briefly cannot stand up from prone.",
+        crit: BRIEF_PRONE,
         hit: `
           The target falls \\prone, and is \\briefly \\vulnerable to \\atFire attacks.
           This vulnerability ends if it takes damage from a \\atFire attack.

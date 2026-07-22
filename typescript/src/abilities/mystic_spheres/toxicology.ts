@@ -755,6 +755,7 @@ export const toxicology: MysticSphere = {
       name: 'Spore Cloud',
 
       attack: {
+        crit: "Double damage, and the brief effect becomes a \\glossterm{condition}.",
         hit: `
           \\damagerankone, and the target is \\briefly \\dazzled.
         `,

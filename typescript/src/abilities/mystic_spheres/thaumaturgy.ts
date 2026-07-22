@@ -115,6 +115,7 @@ export const thaumaturgy: MysticSphere = {
       name: 'Suppress Item',
 
       attack: {
+        crit: null,
         hit: `All magical properties the target has are \\glossterm{suppressed}.`,
         targeting: `
           Make an attack vs. Mental with a +4 \\glossterm{accuracy} bonus against one Large or smaller \\magical object within \\medrange.
@@ -131,6 +132,7 @@ export const thaumaturgy: MysticSphere = {
       name: 'Dismissal',
 
       attack: {
+        crit: null,
         hit: `The target is treated as if the ability that created it was \\glossterm{dismissed}.
         This usually causes the target to disappear.`,
         targeting: `
@@ -149,6 +151,7 @@ export const thaumaturgy: MysticSphere = {
       name: 'Suppress Magic',
 
       attack: {
+        crit: null,
         hit: `The effect is \\glossterm{suppressed} as long as you \\glossterm{sustain} this ability.`,
         targeting: `
           Choose a single 5-ft. square within \\medrange.
@@ -277,6 +280,7 @@ export const thaumaturgy: MysticSphere = {
       name: 'Dimensional Seal',
 
       attack: {
+        crit: null,
         hit: `
           The target cannot be \\glossterm{teleported}.
           An object affected by this spell is left behind if it is carried by a creature that teleports.
@@ -342,6 +346,7 @@ export const thaumaturgy: MysticSphere = {
       // Action skip is 2 EA and must be combined with limited scope, so we get r3. Drop
       // to r1 because it only works on spellcasters.
       attack: {
+        crit: "When this spell prevents the target from casting a spell, the target is also \\briefly dazed.",
         hit: `
           The target's magic is partially sealed as a \\glossterm{condition}.
           The first time it tries to cast a spell, the spell automatically fails with no effect instead.
@@ -352,6 +357,21 @@ export const thaumaturgy: MysticSphere = {
         `,
       },
       rank: 1,
+      roles: ['stasis'],
+      scaling: 'accuracy',
+    },
+
+    {
+      name: 'Disruptive Spellseal',
+
+      functionsLike: {
+        name: "spellseal",
+        exceptThat: `when this spell prevents the target from casting a spell, the target is also \\dazed as a \\glossterm{condition}.
+          On a critical hit, the target is also \\briefly \\confused.
+        `,
+      },
+      // TODO: calculate real EA
+      rank: 6,
       roles: ['stasis'],
       scaling: 'accuracy',
     },
@@ -508,6 +528,7 @@ export const thaumaturgy: MysticSphere = {
       name: 'Extract Magic',
 
       attack: {
+        crit: null,
         hit: `
           \\damagerankthree.
           You are also \\briefly \\empowered.
@@ -526,6 +547,7 @@ export const thaumaturgy: MysticSphere = {
       name: 'Mighty Extract Magic',
 
       attack: {
+        crit: null,
         hit: `
           \\damageranksix, and any \\glossterm{extra damage} is doubled.
           You are also \\briefly \\empowered.

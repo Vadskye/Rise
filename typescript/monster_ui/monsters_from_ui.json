@@ -439,7 +439,7 @@
       "passiveAbilities": [
         {
           "name": "Gelatinous",
-          "effect": "\n        The $name gains a plus10 bonus to Athletics checks made to climb.\n        In addition, it can move freely through spaces occupied by other creatures who do not have this ability.\n      ",
+          "effect": "\n        The $name gains a \\plus10 bonus to Athletics checks made to climb.\n        In addition, it can move freely through spaces occupied by other creatures who do not have this ability.\n      ",
           "isMagical": false
         },
         {

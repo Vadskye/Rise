@@ -1,6 +1,6 @@
 import { MysticSphere } from '.';
 import { add_tag_to_sphere } from './add_tag';
-import { BARRIER_COOLDOWN, CRIT_BECOMES_CONDITION, INJURY_CRIT } from '../constants';
+import { BARRIER_COOLDOWN, BRIEF_PRONE, CRIT_BECOMES_CONDITION, INJURY_CRIT } from '../constants';
 
 const WATER_ACCURACY_BONUS =
   'You gain a +2 accuracy bonus with the attack if there is a Large or larger body of water within \\shortrange.';
@@ -824,7 +824,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
 
       // +1r for area
       attack: {
-        crit: "The target is also \\briefly unable to stand up from being prone.",
+        crit: BRIEF_PRONE,
         hit: `The target falls \\prone.`,
         targeting: `
           Make an attack vs. Reflex against each Large or smaller \\glossterm{grounded} \\glossterm{enemy} in a \\tinyarea radius within \\shortrange.

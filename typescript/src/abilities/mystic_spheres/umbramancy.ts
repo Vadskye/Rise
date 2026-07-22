@@ -176,6 +176,7 @@ export const umbramancy: MysticSphere = {
       name: 'Efficient Dark Grasp',
 
       attack: {
+        crit: "Double damage, and the target is also \\briefly \\slowed.",
         // 1.5 EA for the condition, so we need a rank 5 effect to apply it as a regular
         // condition.
         hit: `

@@ -1,4 +1,5 @@
 import { CombatStyle } from '.';
+import { CRIT_BECOMES_CONDITION } from '../constants';
 
 export const flurryOfBlows: CombatStyle = {
   name: 'Flurry of Blows',
@@ -284,6 +285,7 @@ export const flurryOfBlows: CombatStyle = {
       // tier gets us back to a r1 area, since we start from r-1. We only actually use a
       // r0 area.
       attack: {
+        crit: CRIT_BECOMES_CONDITION,
         hit: `The target is \\briefly \\dazzled.`,
         halfOnMiss: true,
         targeting: `

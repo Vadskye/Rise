@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { INJURY_CRIT } from '../constants';
+import { BRIEF_PRONE, INJURY_CRIT } from '../constants';
 
 export const enchantment: MysticSphere = {
   name: 'Enchantment',
@@ -144,7 +144,7 @@ export const enchantment: MysticSphere = {
       name: 'Collapse',
 
       attack: {
-        crit: "The target is also \\briefly unable to stand up from being prone.",
+        crit: BRIEF_PRONE,
         hit: `The target falls \\prone.`,
         targeting: `
           Make an attack vs. Mental against all Large or smaller \\glossterm{enemies} in a \\smallarea radius within \\shortrange.
@@ -809,7 +809,7 @@ export const enchantment: MysticSphere = {
 
       // -1dr for debuff, -1d for +2a
       attack: {
-        crit: "Double damage, and the effect becomes a \\glossterm{condition}.",
+        crit: "Double damage, and the brief effect becomes a \\glossterm{condition}.",
         hit: `
           \\damagerankthree, and the target \\briefly takes a \\minus2 penalty to its Mental defense.
         `,

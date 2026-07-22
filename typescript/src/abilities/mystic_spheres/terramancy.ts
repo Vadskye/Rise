@@ -1,6 +1,6 @@
 import { MysticSphere } from '.';
 import { add_tag_to_sphere } from './add_tag';
-import { BARRIER_COOLDOWN, CRIT_BECOMES_CONDITION, MULTIHIT_CRIT } from '../constants';
+import { BARRIER_COOLDOWN, BRIEF_PRONE, CRIT_BECOMES_CONDITION, MULTIHIT_CRIT } from '../constants';
 
 export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
   name: 'Terramancy',
@@ -335,6 +335,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       // r1 area is about halfway between "ranged" and "melee"; call it 1.4 EA. That lets
       // us get enemies-only.
       attack: {
+        crit: BRIEF_PRONE,
         hit: `The target is knocked \\prone.`,
         targeting: `
           Make an attack vs. Brawn against all Large or smaller \\glossterm{grounded} \\glossterm{enemies} in in a \\medarea cone from you.
