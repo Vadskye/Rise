@@ -480,6 +480,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         You open up a rift in the ground that swallows and traps a foe.
       `,
       rank: 7,
+      tags: ['Physical'],
     },
 
     {
@@ -828,7 +829,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         4: "The wall's hit points increase to four times your power.",
         6: "The wall's hit points increase to five times your power.",
       },
-      tags: ['Barrier', 'Manifestation'],
+      tags: ['Barrier', 'Manifestation', 'Physical'],
       type: 'Sustain (attunable, minor)',
     },
 
@@ -844,7 +845,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       },
       rank: 6,
       roles: ['hazard'],
-      tags: ['Barrier', 'Manifestation'],
+      tags: ['Barrier', 'Manifestation', 'Physical'],
       type: 'Sustain (attunable, minor)',
     },
 

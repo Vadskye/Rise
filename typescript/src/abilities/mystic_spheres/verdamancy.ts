@@ -48,7 +48,7 @@ export const verdamancy: MysticSphere = {
       rank: 4,
       roles: ['trip'],
       scaling: 'accuracy',
-      tags: ['Manifestation'],
+      tags: ['Manifestation', 'Physical'],
     },
 
     {
@@ -75,7 +75,7 @@ export const verdamancy: MysticSphere = {
       `,
       rank: 6,
       scaling: 'accuracy',
-      tags: ['Manifestation'],
+      tags: ['Manifestation', 'Physical'],
     },
 
     {
@@ -98,7 +98,7 @@ export const verdamancy: MysticSphere = {
       rank: 1,
       roles: ['trip'],
       scaling: 'accuracy',
-      tags: ['Manifestation'],
+      tags: ['Manifestation', 'Physical'],
     },
 
     {
@@ -372,6 +372,7 @@ export const verdamancy: MysticSphere = {
       rank: 3,
       roles: ['attune'],
       type: 'Attune',
+      tags: ['Manifestation', 'Physical'],
     },
 
     {
@@ -384,6 +385,7 @@ export const verdamancy: MysticSphere = {
       rank: 5,
       roles: ['attune'],
       type: 'Attune',
+      tags: ['Manifestation', 'Physical'],
     },
 
     // Normal short range damage would be dr3, or dr1 from damage over time, up to dr2
@@ -407,6 +409,7 @@ export const verdamancy: MysticSphere = {
       rank: 2,
       roles: ['burn', 'hazard'],
       scaling: 'damage',
+      tags: ['Manifestation', 'Physical'],
     },
 
     {
@@ -422,6 +425,7 @@ export const verdamancy: MysticSphere = {
       rank: 5,
       roles: ['burn', 'hazard'],
       scaling: 'damage',
+      tags: ['Manifestation', 'Physical'],
     },
 
     {
@@ -485,7 +489,7 @@ export const verdamancy: MysticSphere = {
       rank: 1,
       roles: ['clear', 'hazard'],
       scaling: 'damage',
-      tags: ['Barrier', 'Manifestation'],
+      tags: ['Barrier', 'Manifestation', 'Physical'],
       type: 'Sustain (attunable, minor)',
     },
 
@@ -503,7 +507,7 @@ export const verdamancy: MysticSphere = {
       rank: 4,
       roles: ['hazard'],
       scaling: 'damage',
-      tags: ['Barrier', 'Manifestation'],
+      tags: ['Barrier', 'Manifestation', 'Physical'],
       type: 'Sustain (attunable, minor)',
     },
 
@@ -523,7 +527,7 @@ export const verdamancy: MysticSphere = {
       `,
       rank: 4,
       roles: ['hazard'],
-      tags: ['Manifestation'],
+      tags: ['Manifestation', 'Physical'],
       type: 'Sustain (attunable, minor)',
     },
 
@@ -576,6 +580,7 @@ export const verdamancy: MysticSphere = {
       rank: 1,
       roles: ['attune'],
       type: 'Sustain (attunable, minor)',
+      tags: ['Physical'],
     },
 
     {

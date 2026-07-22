@@ -165,7 +165,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       rank: 1,
       roles: ['burst'],
       scaling: 'damage',
-      tags: ['Manifestation'],
+      tags: ['Manifestation', 'Physical'],
     },
 
     {
@@ -188,7 +188,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       rank: 4,
       roles: ['burst'],
       scaling: 'damage',
-      tags: ['Manifestation'],
+      tags: ['Manifestation', 'Physical'],
     },
 
     {
@@ -327,6 +327,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       rank: 4,
       roles: ['wildfire'],
       scaling: 'damage',
+      tags: ['Manifestation', 'Physical'],
     },
 
     {
@@ -350,6 +351,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       },
       roles: ['wildfire'],
       rank: 7,
+      tags: ['Manifestation', 'Physical'],
       // scaling: 'accuracy',
     },
 
@@ -419,6 +421,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
           Its rank cannot exceed your spellcasting rank with this spell.
         `,
       },
+      tags: ['Physical'],
       type: 'Attune',
     },
 
@@ -482,7 +485,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       roles: ['attune'],
       scaling: 'damage',
       type: 'Attune (deep)',
-      tags: ['Manifestation'],
+      tags: ['Manifestation', 'Physical'],
     },
 
     {
@@ -499,7 +502,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       roles: ['attune'],
       // scaling: "accuracy",
       type: 'Attune (deep)',
-      tags: ['Manifestation'],
+      tags: ['Manifestation', 'Physical'],
     },
 
     {
@@ -532,7 +535,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         7: 'You can choose to create a \\hugearealong wall instead.',
       },
       roles: ['barrier'],
-      tags: ['Barrier', 'Manifestation'],
+      tags: ['Barrier', 'Manifestation', 'Physical'],
       type: 'Sustain (attunable, minor)',
     },
     // TODO: unclear rank
@@ -749,6 +752,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       rank: 1,
       roles: ['focus', 'turtle'],
       type: 'Sustain (standard)',
+      tags: ['Manifestation', 'Physical'],
     },
 
     {
@@ -764,6 +768,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       rank: 6,
       roles: ['focus', 'turtle'],
       type: 'Sustain (standard)',
+      tags: ['Manifestation', 'Physical'],
     },
   ],
 });

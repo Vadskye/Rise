@@ -1288,7 +1288,7 @@ export const rituals: RitualDefinition[] = [
     // narrative: '',
     rank: 2,
     roles: ['narrative'],
-    tags: ['Manifestation'],
+    tags: ['Manifestation', 'Physical'],
     type: 'Attune',
     spheres: ['Telekinesis', 'Thaumaturgy'],
   },
@@ -1319,7 +1319,7 @@ export const rituals: RitualDefinition[] = [
       Telekinesis: 'The walls are visible as a shimmering magical field that does not block sight.',
       Terramancy: 'The walls are made of stone, and are completely opaque.',
     },
-    tags: ['Manifestation'],
+    tags: ['Barrier', 'Manifestation', 'Physical'],
     type: 'Attune',
     spheres: ['Cryomancy', 'Fabrication', 'Telekinesis', 'Terramancy'],
   },
@@ -3095,6 +3095,7 @@ export const rituals: RitualDefinition[] = [
       `,
     },
     spheres: ['Fabrication', 'Polymorph', 'Telekinesis'],
+    tags: ['Manifestation', 'Physical'],
     type: 'Attune',
   },
 
@@ -3485,6 +3486,7 @@ export const rituals: RitualDefinition[] = [
       The platform is solid and can support a Medium weights.
       It remains fixed in place unless destroyed.
     `,
+    tags: ['Manifestation', 'Physical'],
     spheres: ['Telekinesis'],
   },
 
