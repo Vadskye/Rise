@@ -471,6 +471,7 @@ export const polymorph: MysticSphere = {
 
       // This can get +1.1 EA over regular cripple, which we fudge to get dazed
       attack: {
+        crit: "Double damage, and the target is affected by the debuff as if it was injured.",
         hit: `
           \\damageranknine, and any \\glossterm{extra damage} is doubled.
           In addition, the target's body deteriorates as a \\glossterm{condition}.
