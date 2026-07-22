@@ -282,6 +282,9 @@ export function buildCreature(monster: MonsterData, group?: MonsterGroupData): B
           creature.addCustomSpell(abilityObj);
         } else {
           creature.addCustomManeuver(abilityObj);
+          if (ability.effect && maneuverMakesStrike(ability.effect) && !ability.weapon) {
+            warnings.push(formatMissingWeaponWarning(ability.name));
+          }
         }
       }
     }

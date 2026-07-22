@@ -38,6 +38,7 @@ export interface CustomAbilityConfig {
   isMagical?: boolean;
   tags?: string[];
   attack?: CustomAbilityAttackConfig;
+  weapon?: string;
 }
 
 export interface PassiveAbilityConfig {

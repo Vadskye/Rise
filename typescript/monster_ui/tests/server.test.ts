@@ -388,7 +388,7 @@ describe('Monster UI Integration Tests (Full Server)', () => {
           type: 'maneuver',
           name: 'Basic Strike',
           options: {
-            weapon: 'Shortsword',
+            weapon: 'broadsword',
           },
         },
       ],
@@ -655,5 +655,73 @@ describe('Monster UI Integration Tests (Full Server)', () => {
     expect(getRes.status).toBe(200);
     const retrievedSettings = await getRes.json();
     expect(retrievedSettings).toEqual(settingsPayload);
+  });
+
+  test('POST /api/preview validates custom maneuvers with weapons and generates appropriate code', async () => {
+    const monsterWithCustomManeuverWarn = {
+      name: `CustomWarnMonster_${Date.now()}`,
+      requiredProperties: {
+        alignment: 'neutral',
+        base_class: 'warrior',
+        elite: false,
+        creature_origin: 'natural',
+        creature_types: ['beast'],
+        size: 'medium',
+        level: 1,
+      },
+      freeformCode: '',
+      customAbilities: [
+        {
+          type: 'maneuver',
+          name: 'Custom Strike',
+          effect: 'Make a strike against Reflex defense.',
+        },
+      ],
+    };
+
+    const res1 = await fetch(`${baseUrl}/api/preview`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ monster: monsterWithCustomManeuverWarn }),
+    });
+    expect(res1.status).toBe(200);
+    const result1 = await res1.json();
+    expect(result1.warnings).toContain(formatMissingWeaponWarning('Custom Strike'));
+
+    const monsterWithCustomManeuverOk = {
+      name: `CustomOkMonster_${Date.now()}`,
+      requiredProperties: {
+        alignment: 'neutral',
+        base_class: 'warrior',
+        elite: false,
+        creature_origin: 'natural',
+        creature_types: ['beast'],
+        size: 'medium',
+        level: 1,
+      },
+      freeformCode: '',
+      customAbilities: [
+        {
+          type: 'maneuver',
+          name: 'Custom Strike',
+          effect: 'Make a strike against Reflex defense.',
+          weapon: 'broadsword',
+        },
+      ],
+    };
+
+    const res2 = await fetch(`${baseUrl}/api/preview`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ monster: monsterWithCustomManeuverOk }),
+    });
+    expect(res2.status).toBe(200);
+    const result2 = await res2.json();
+    expect(result2.warnings).not.toContain(formatMissingWeaponWarning('Custom Strike'));
+    
+    expect(result2.computedStats).toBeDefined();
+    const customStrike = result2.computedStats.activeAbilities.find((a: any) => a.name === 'Custom Strike');
+    expect(customStrike).toBeDefined();
+    expect(customStrike.weapon).toBe('broadsword');
   });
 });

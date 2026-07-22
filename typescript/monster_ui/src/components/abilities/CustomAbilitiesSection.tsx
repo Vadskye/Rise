@@ -2,21 +2,29 @@ import React from 'react';
 import { CustomAbilityConfig } from '../../types/monster';
 import { Combobox } from '../Combobox';
 import { USAGE_TIME_OPTIONS } from './StandardAbilitiesSection';
+import { WeaponCombobox } from './WeaponCombobox';
+import { isMissingWeaponWarning } from '../../utils/validation';
 
 interface CustomAbilitiesSectionProps {
   customAbilities: CustomAbilityConfig[];
+  referenceWeapons: string[];
+  referenceAlchemicalItems: string[];
   onChange: (updatedAbilities: CustomAbilityConfig[]) => void;
   expandedCard: string | null;
   onToggleExpand: (cardId: string) => void;
   setExpandedCard: (cardId: string | null) => void;
+  warnings?: string[];
 }
 
 export const CustomAbilitiesSection: React.FC<CustomAbilitiesSectionProps> = ({
   customAbilities,
+  referenceWeapons,
+  referenceAlchemicalItems,
   onChange,
   expandedCard,
   onToggleExpand,
   setExpandedCard,
+  warnings = [],
 }) => {
   const addCustomAbility = (type: 'spell' | 'maneuver') => {
     const newAbility: CustomAbilityConfig = {
@@ -95,7 +103,63 @@ export const CustomAbilitiesSection: React.FC<CustomAbilitiesSectionProps> = ({
                     </span>
                     <strong className="ability-name">{ability.name}</strong>
                   </div>
-                  <div className="ability-card-header-controls">
+                  <div
+                    className="ability-card-header-controls"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    {ability.type === 'maneuver' && (
+                      <div className="quick-weapon-select-container">
+                        <WeaponCombobox
+                          selectedWeapon={ability.weapon}
+                          weapons={
+                            ability.name === 'Throw Item'
+                              ? referenceAlchemicalItems
+                              : referenceWeapons
+                          }
+                          placeholder={
+                            ability.name === 'Throw Item' ? 'Search items...' : 'Search weapons...'
+                          }
+                          clearLabel={
+                            ability.name === 'Throw Item' ? '-- No Item --' : '-- No Weapon --'
+                          }
+                          triggerTitle={
+                            ability.name === 'Throw Item'
+                              ? 'Quickly assign an alchemical item to this maneuver'
+                              : 'Quickly assign a weapon to this maneuver'
+                          }
+                          noSelectionLabel={ability.name === 'Throw Item' ? 'No Item' : 'No Weapon'}
+                          noMatchesLabel={
+                            ability.name === 'Throw Item'
+                              ? 'No matching items'
+                              : 'No matching weapons'
+                          }
+                          onSelect={(weapon) =>
+                            updateCustomAbility(idx, {
+                              ...ability,
+                              weapon: weapon || undefined,
+                            })
+                          }
+                        />
+                        {warnings.some((w) =>
+                          isMissingWeaponWarning(
+                            w,
+                            ability.name,
+                            ability.name === 'Throw Item',
+                          ),
+                        ) && (
+                            <span
+                              className="quick-weapon-warning"
+                              title={
+                                ability.name === 'Throw Item'
+                                  ? 'Maneuver requires an alchemical item.'
+                                  : "Maneuver makes a strike and doesn't have a weapon."
+                              }
+                            >
+                              ⚠️
+                            </span>
+                          )}
+                      </div>
+                    )}
                     <span className="expand-chevron" onClick={() => onToggleExpand(cardId)}>
                       {isExpanded ? '▲' : '▼'}
                     </span>
