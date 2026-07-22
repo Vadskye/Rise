@@ -60,10 +60,13 @@ export const AbilitiesTab = <T extends SharedEditableProperties>({
       {/* 3. CUSTOM ABILITIES SECTION */}
       <CustomAbilitiesSection
         customAbilities={monsterData.customAbilities || []}
+        referenceWeapons={referenceData.weapons}
+        referenceAlchemicalItems={referenceData.alchemicalItems}
         onChange={(updated) => updateField('customAbilities', updated)}
         expandedCard={expandedCard}
         onToggleExpand={toggleExpand}
         setExpandedCard={setExpandedCard}
+        warnings={warnings}
       />
 
       {/* 4. PASSIVE ABILITIES SECTION */}

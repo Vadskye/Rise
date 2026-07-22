@@ -32,7 +32,7 @@ function formatValueToTSSingleLine(value: any): string {
     if (value.includes('\n')) {
       throw new Error("Cannot format multiline string as single line.");
     }
-    return `'${value.replace(/'/g, "\\'")}'`;
+    return `'${value.replace(/\\/g, '\\\\').replace(/'/g, "\\'")}'`;
   }
   if (value === null || value === undefined) {
     return 'undefined';
@@ -53,7 +53,7 @@ function formatValueToTSSingleLine(value: any): string {
         }
         const formattedKey = /^[a-zA-Z_$][a-zA-Z0-9_$]*$/.test(key)
           ? key
-          : `'${key.replace(/'/g, "\\'")}'`;
+          : `'${key.replace(/\\/g, '\\\\').replace(/'/g, "\\'")}'`;
         return `${formattedKey}: ${formatValueToTSSingleLine(val)}`;
       })
       .filter((p) => p !== null);
@@ -64,7 +64,7 @@ function formatValueToTSSingleLine(value: any): string {
 
 function formatValueToTS(value: any, indent = ''): string {
   if (typeof value === 'string') {
-    return `\`${value.replace(/'/g, "\\'")}\``;
+    return `\`${value.replace(/\\/g, '\\\\').replace(/`/g, '\\`').replace(/\${/g, '\\${')}\``;
   }
   if (value === null || value === undefined) {
     return 'undefined';
@@ -137,6 +137,7 @@ export interface CustomAbilityConfig {
   isMagical?: boolean;
   tags?: string[];
   attack?: CustomAbilityAttackConfig;
+  weapon?: string;
 }
 
 export interface PassiveAbilityConfig {
@@ -226,6 +227,7 @@ export function toCustomMonsterAbility(ability: CustomAbilityConfig): CustomMons
     usageTime: (ability.usageTime || undefined) as MonsterAttackUsageTime,
     cost: ability.cost || undefined,
     effect: ability.effect || undefined,
+    weapon: ability.weapon || undefined,
     tags:
       ability.tags && ability.tags.length > 0
         ? (ability.tags as RiseAbilityDefinitionTag[])

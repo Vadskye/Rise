@@ -867,20 +867,20 @@
             "isMagical": true,
             "displayName": "Maggot Breath"
           }
-        }
-      ],
-      "customAbilities": [
+        },
         {
           "type": "maneuver",
-          "effect": "\n        Make a \\glossterm{strike}.\n        The attack is made against the target's Reflex defense instead of its Armor defense.\n      ",
-          "name": "Impaling Tentacles",
-          "weapon": "tentacle",
-          "usageTime": "elite",
-          "tags": [
-            "Sweeping (7)"
-          ]
+          "name": "Armorpiercer",
+          "options": {
+            "isMagical": false,
+            "weapon": "tentacle",
+            "tags": [
+              "Sweeping (7)"
+            ]
+          }
         }
-      ]
+      ],
+      "customAbilities": []
     },
     {
       "name": "Grumblegrub",

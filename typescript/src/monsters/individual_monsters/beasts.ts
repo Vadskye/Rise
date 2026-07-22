@@ -3,49 +3,6 @@ import { Creature } from '@src/character_sheet/creature';
 import { BRIEF_COOLDOWN } from '@src/abilities/constants';
 
 export function addBeasts(grimoire: Grimoire) {
-  grimoire.addMonster('Stygian Leech', (creature: Creature) => {
-    creature.setRequiredProperties({
-      alignment: 'neutral',
-      base_class: 'brute',
-      elite: false,
-      creature_origin: 'natural',
-      creature_type: 'beast',
-      level: 5,
-      size: 'medium',
-    });
-    creature.setProperties({ has_art: true });
-    creature.setKnowledgeResults({
-      normal: `
-        A stygian leech is a Medium worm-like creature that feeds on life energy.
-        It uses its ability to crawl on walls and ceilings to drop on unsuspecting foes.
-      `,
-      hard: `
-        Stygian leeches instinctively avoid feeding on other stygian leeches, but will otherwise attempt to drain the life from any living creatures, regardless of danger.
-        They can instinctively sense the location of any living creatures nearby.
-        Their life-draining attacks can allow them to heal themselves.
-      `,
-      legendary: `
-        Stygian leeches ignore non-living creatures entirely unless severely provoked.
-        Some non-living creatures, such as intelligent undead, take advantage of this by gathering stygian leeches to guard their homes.
-      `,
-    });
-    creature.setTrainedSkills(['athletics', 'stealth']);
-    creature.setBaseAttributes([5, 2, 4, -6, 2, -2]);
-    creature.addTrait('legless');
-    creature.addCustomMovementSpeed('Climb (average)');
-    creature.addCustomSense('Darkvision (120 ft.)');
-    creature.addCustomSense('Lifesense (120 ft.)');
-
-    creature.addCustomManeuver({
-      effect: `
-        Make a \\glossterm{strike}.
-        \\injury The $name regains \\hpranktwo.
-      `,
-      name: 'Leech Life',
-      tags: ['Blood'],
-      weapon: 'bite',
-    });
-  });
   addIchorTainted(grimoire);
 }
 
