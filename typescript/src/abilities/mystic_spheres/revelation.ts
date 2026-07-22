@@ -363,7 +363,7 @@ export const revelation: MysticSphere = {
       narrative: `
         Your foes see visions of possible futures that confuse their ability to determine reality.
       `,
-      rank: 2,
+      rank: 3,
       roles: ['softener'],
       scaling: 'accuracy',
       tags: ['Visual'],
