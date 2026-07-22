@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { BARRIER_COOLDOWN, CRIT_BECOMES_CONDITION, INJURY_CRIT } from '../constants';
+import { BARRIER_COOLDOWN, CRIT_BECOMES_CONDITION, DAMAGING_INJURY_CRIT, INJURY_CRIT, MULTIHIT_CRIT } from '../constants';
 
 export const umbramancy: MysticSphere = {
   name: 'Umbramancy',
@@ -74,8 +74,9 @@ export const umbramancy: MysticSphere = {
 
       // r0 gives drX+1 with shadowed requirement
       attack: {
-        hit: `\\damageranktwolow.`,
+        hit: `\\damageranktwo.`,
         halfOnMiss: true,
+        injury: "The target is \\briefly \\frightened by you.",
         targeting: `
           Make an attack vs. Fortitude against all \\glossterm{shadowed} creatures in a \\smallarea cone from you.
         `,
@@ -90,8 +91,9 @@ export const umbramancy: MysticSphere = {
 
       // r0 gives drX+1 with shadowed requirement
       attack: {
-        hit: `\\damagerankfivelow.`,
+        hit: `\\damagerankfive.`,
         halfOnMiss: true,
+        injury: "The target is \\briefly \\frightened by you.",
         targeting: `
           Make an attack vs. Fortitude against all \\glossterm{shadowed} creatures in a \\smallarea cone from you.
         `,
@@ -107,11 +109,11 @@ export const umbramancy: MysticSphere = {
       // For power scaling damage, a rank 3 spell that makes a single attack in a r3 area
       // would deal dr1, though that's known to be suspiciously weak. Converting that to a
       // double attack that deals dr0 is... probably fine. That means the base hit damage
-      // for each tick would be 53% of dr3. dr2 flat damage is 63% of dr3, which is fine
-      // with a shadowed requirement.
+      // for each tick would be 53% of dr3.
       attack: {
-        hit: `\\damageranktwolow.`,
+        hit: `\\damagerankone.`,
         halfOnMiss: true,
+        injury: "The target is \\briefly \\frightened by you.",
         targeting: `
           You create a field of dark miasma in a \\medarea radius \\glossterm{zone} from you.
           Make an attack vs. Fortitude against all \\glossterm{shadowed} \\glossterm{enemies} in the area.
@@ -126,13 +128,12 @@ export const umbramancy: MysticSphere = {
     {
       name: 'My Growing Shadow Hungers',
 
-      // For power scaling damage, a rank 6 spell that makes a single attack in a rank 3
-      // area would deal dr5 (83%). That's fairly close to this spell, since you have to
-      // sustain it to get a larger area. With a shadowed requirement, that's enough to
-      // justify dr6l here.
+      // TODO: properly calculate damage for area. This may not be paying enough of a
+      // cost?
       attack: {
-        hit: `\\damageranksixlow.`,
+        hit: `\\damagerankfive.`,
         halfOnMiss: true,
+        injury: "The target is \\briefly \\frightened by you.",
         targeting: `
           You create a spreading field of dark miasma in a \\glossterm{zone} from you.
           It affects a \\medarea radius \\glossterm{zone} in the first turn, a \\largearea radius in the second turn, and a \\hugearea radius in all subsequent turns.
@@ -150,11 +151,12 @@ export const umbramancy: MysticSphere = {
       name: 'Dark Grasp',
 
       attack: {
+        crit: DAMAGING_INJURY_CRIT,
         // Assume this is 50% action denial in 25% of fights, which would be 0.6 EA as a
         // condition. You can get 0.6 EA on a melee debuff at r1.
         // Melee range is drX+2, and debuff is drX+1, so shadowed lets us keep drX+1.
         hit: `
-          \\damageranktwolow.
+          \\damageranktwo.
         `,
         injury: `
           As a \\glossterm{condition}, the target treats all areas of \\glossterm{dim illumination} as \\glossterm{difficult terrain}.
@@ -180,7 +182,7 @@ export const umbramancy: MysticSphere = {
         // 1.5 EA for the condition, so we need a rank 5 effect to apply it as a regular
         // condition.
         hit: `
-          \\damageranksixlow, and the target treats all areas of \\glossterm{dim illumination} as \\glossterm{difficult terrain} as a \\glossterm{condition}.
+          \\damageranksix, and the target treats all areas of \\glossterm{dim illumination} as \\glossterm{difficult terrain} as a \\glossterm{condition}.
         `,
         targeting: `
           You must be \\glossterm{shadowed} to cast this spell.
@@ -391,7 +393,7 @@ export const umbramancy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damageranksevenlow.
+          \\damagerankseven.
         `,
         injury: `
           The target becomes \\briefly \\slowed.
@@ -590,11 +592,15 @@ export const umbramancy: MysticSphere = {
       roles: ['mobility', 'narrative'],
       type: 'Sustain (minor)',
     },
-    // +1dr for shadowed + cannot be shadowed downside would give dr5l.
+    // Cannot be shadowed allows a small debuff with no damage loss.
     {
       name: 'Devouring Shadow',
       attack: {
-        hit: `\\damagerankfivelow, and any \\glossterm{extra damage} is doubled.`,
+        crit: "Double damage, and the brief effect becomes a \\glossterm{condition}.",
+        hit: `
+          \\damagerankfive, and any \\glossterm{extra damage} is doubled.
+          In addition, the target is \\briefly \\frightened of you.
+        `,
         targeting: `
           You must be \\glossterm{shadowed} to cast this spell.
           After you cast this spell, you \\briefly cannot be \\glossterm{shadowed} for any reason.
@@ -611,7 +617,7 @@ export const umbramancy: MysticSphere = {
       name: 'Mighty Devouring Shadow',
       functionsLike: {
         name: 'devouring shadow',
-        exceptThat: 'the damage increases to \\damagerankeightlow.',
+        exceptThat: 'the damage increases to \\damagerankeight.',
       },
       rank: 7,
       roles: ['burst'],
@@ -689,8 +695,9 @@ export const umbramancy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damageranktwolow.
+          \\damageranktwo.
         `,
+        injury: "The target is \\briefly \\frightened of you.",
         targeting: `
           You must be \\glossterm{shadowed} to cast this spell.
 
@@ -712,11 +719,69 @@ export const umbramancy: MysticSphere = {
       functionsLike: {
         name: 'shadow blossom',
         exceptThat:
-          'the damage increases to \\damagerankfivelow, and the teleportation range increases to \\medrange.',
+          'the damage increases to \\damagerankfive, and the teleportation range increases to \\medrange.',
       },
       rank: 5,
       roles: ['clear', 'turtle'],
       scaling: 'damage',
+    },
+
+    {
+      name: 'The Shadows Cut Deep',
+
+      attack: {
+        crit: MULTIHIT_CRIT,
+        hit: "\\damagerankone.",
+        injury: "The target \\briefly \\glossterm{bleeds} for \\damagerankone.",
+        targeting: `
+          Make an attack vs. Armor against a \\glossterm{shadowed} creature within \\shortrange.
+        `,
+      },
+      rank: 1,
+      roles: ['burst'],
+      scaling: 'damage',
+    },
+
+    {
+      name: 'The Mighty Shadows Cut Deep',
+
+      functionsLike: {
+        name: "the mighty shadows cut deep",
+        exceptThat: "the damage increases to \\damagerankfour.",
+      },
+      rank: 4,
+      roles: ['burst'],
+      scaling: 'damage',
+    },
+
+    {
+      name: 'The Shadows Bite and Claw',
+
+      attack: {
+        hit: "\\damagerankone.",
+        targeting: `
+          You create a \\smallarea radius \\glossterm{zone} of biting shadows within \\shortrange.
+          When you cast or sustain this spell, make an attack vs. Armor against all \\glossterm{shadowed} \\glossterm{enemies} in the area.
+          In addition, whenever a shadowed enemy enters the zone on its turn, make a \\glossterm{reactive attack} vs. Armor against that creature.
+        `,
+      },
+      rank: 3,
+      roles: ['burst'],
+      scaling: 'damage',
+      type: "Sustain (standard)",
+    },
+
+    {
+      name: 'The Mighty Shadows Bite and Claw',
+
+      functionsLike: {
+        name: "the shadows bite and claw",
+        exceptThat: "the damage increases to \\damagerankfour.",
+      },
+      rank: 6,
+      roles: ['burst'],
+      scaling: 'damage',
+      type: "Sustain (standard)",
     },
   ],
 };

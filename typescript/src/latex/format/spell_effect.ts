@@ -44,6 +44,11 @@ function assertHasCorrectCrit(attack: ActiveAbilityAttack, effectName: string): 
     } else if (dealsDamage && inflictsDebuff) {
       console.warn(`Attack from ${effectName} is missing a crit effect.`);
     } else if (dealsDamage && inflictsCritCondition) {
+      // The actual guideline is that abilities should have a crit effect if they pay a
+      // rank cost for their debuff, but pure damage abilities that get a weak injury-only
+      // effect for free should not have special crit text. That's hard to filter for
+      // here, so this is an underestimate of the number of spells that should have crit
+      // effects.
       console.warn(`Attack from ${effectName} is should use DAMAGING_INJURY_CRIT.`);
     }
   } else if (grantsImmunity && attack.crit?.includes('condition')) {
