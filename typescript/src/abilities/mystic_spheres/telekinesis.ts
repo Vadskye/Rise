@@ -305,6 +305,7 @@ export const telekinesis: MysticSphere = {
     {
       name: 'Mind Shove',
       attack: {
+        crit: "The maximum push distance increases to 30 feet.",
         hit: `
           You \\glossterm{push} each target up to 15 feet.
           Each target of this spell must be pushed in the same direction.
@@ -322,6 +323,7 @@ export const telekinesis: MysticSphere = {
     {
       name: 'Intense Mind Shove',
       attack: {
+        crit: "The maximum push distance increases to 45 feet.",
         hit: `
           You \\glossterm{push} the target up to 30 feet.
           Each target of this spell must be pushed in the same direction.
@@ -338,6 +340,7 @@ export const telekinesis: MysticSphere = {
     {
       name: 'Versatile Mind Shove',
       attack: {
+        crit: "The maximum push distance increases to 30 feet.",
         hit: `
           You \\glossterm{push} the target up to 15 feet.
           Each target of this spell can be pushed in a different direction of your choice.
@@ -820,6 +823,7 @@ export const telekinesis: MysticSphere = {
       // Effect: Debuff (-1)
       // Result: 7 + 1 - 1 = dr7
       attack: {
+        crit: "Double damage, and the target is also \\briefly \\slowed.",
         hit: `
           \\damagerankseven, and any \\glossterm{extra damage} is doubled.
           The target is also \\briefly \\dazed.

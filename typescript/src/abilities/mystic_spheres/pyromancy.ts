@@ -353,6 +353,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       name: 'Fan of Flames',
 
       attack: {
+        crit: MULTIHIT_CRIT,
         hit: `
           \\damagerankone.
           The target also \\briefly \\debuff{burns} for \\damagerankone.
@@ -375,6 +376,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       // Mod: DoT (-2)
       // Result: 5 + 1 - 2 = dr4 (twice)
       attack: {
+        crit: MULTIHIT_CRIT,
         hit: `
           \\damagerankfour.
           The target also \\briefly \\debuff{burns} for \\damagerankfour.
@@ -834,6 +836,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       // A Large line is -1dr.
       attack: {
+        crit: MULTIHIT_CRIT,
         hit: `
           \\damagerankthree.
           The target also \\briefly \\debuff{burns} for \\damagerankthree.
@@ -908,6 +911,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       // Spontaneous Combustion and Mighty Spontaneous Combustion would end up at drX+1 as DoT,
       // so this can probably do the same.
       attack: {
+        crit: MULTIHIT_CRIT,
         hit: `
           \\damagerankeight.
           The target also \\briefly \\debuff{burns} for \\damagerankeight.
