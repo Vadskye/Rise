@@ -1,10 +1,12 @@
 import * as format from '@src/latex/format';
+import { validateRitual } from '@src/latex/format/spell_effect';
 import { determineAbilityType } from '@src/latex';
 import { RitualDefinition, standardizeRitual } from '@src/abilities';
 
 // TODO: make this repetitive with convertAbilityToLatex
 export function convertRitualToLatex(ritualDefinition: RitualDefinition): string {
   const ritual = standardizeRitual(ritualDefinition);
+  validateRitual(ritual);
   const abilityType = determineAbilityType(ritual);
 
   const internalComponents = [

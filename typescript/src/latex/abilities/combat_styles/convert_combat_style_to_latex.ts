@@ -3,11 +3,18 @@ import { ManeuverDefinition, standardizeManeuver } from '@src/abilities';
 import { sortByRankAndLevel } from '@src/latex';
 import { convertAbilityToLatex } from '@src/latex/convert_ability_to_latex';
 import * as format from '@src/latex/format';
-import { assertEndsWithPeriod } from '@src/latex/format/spell_effect';
+import { assertEndsWithPeriod, validateActiveAbility } from '@src/latex/format/spell_effect';
 import _ from 'lodash';
 
-export function convertCombatStyleToLatex(style: CombatStyle): string {
+export function validateCombatStyle(style: CombatStyle): void {
   assertEndsWithPeriod(style.shortDescription, style.name);
+  for (const maneuver of style.maneuvers) {
+    validateActiveAbility(standardizeManeuver(maneuver));
+  }
+}
+
+export function convertCombatStyleToLatex(style: CombatStyle): string {
+  validateCombatStyle(style);
   const ranks = [1, 3, 5, 7];
   const maneuversByRank = _.groupBy(sortByRankAndLevel(style.maneuvers), (s) => s.rank);
 

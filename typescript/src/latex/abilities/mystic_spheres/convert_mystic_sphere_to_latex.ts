@@ -1,6 +1,6 @@
 import { convertAbilityToLatex } from '@src/latex/convert_ability_to_latex';
 import * as format from '@src/latex/format';
-import { assertEndsWithPeriod } from '@src/latex/format/spell_effect';
+import { assertEndsWithPeriod, validateActiveAbility } from '@src/latex/format/spell_effect';
 import { sortByRankAndLevel } from '@src/latex';
 import { MysticSphere } from '@src/abilities/mystic_spheres';
 import {
@@ -12,8 +12,29 @@ import {
 } from '@src/abilities';
 import _ from 'lodash';
 
-export function convertMysticSphereToLatex(sphere: MysticSphere): string {
+export function validateSpell(spell: CantripDefinition | SpellDefinition) {
+  const activeAbility =
+    'scaling' in spell
+      ? standardizeSpell(spell as SpellDefinition)
+      : standardizeCantrip(spell as CantripDefinition);
+  validateActiveAbility(activeAbility);
+  checkValidSpell(spell);
+}
+
+export function validateMysticSphere(sphere: MysticSphere) {
   assertEndsWithPeriod(sphere.shortDescription, sphere.name);
+  if (sphere.cantrips) {
+    for (const cantrip of sphere.cantrips) {
+      validateSpell(cantrip);
+    }
+  }
+  for (const spell of sphere.spells) {
+    validateSpell(spell);
+  }
+}
+
+export function convertMysticSphereToLatex(sphere: MysticSphere): string {
+  validateMysticSphere(sphere);
 
   const imageText = sphere.hasImage
     ? `\\includegraphics[width=\\columnwidth]{mystic spheres/${sphere.name.toLowerCase()}}`
@@ -37,10 +58,7 @@ export function convertMysticSphereToLatex(sphere: MysticSphere): string {
           ? `
             \\subsection{Cantrips}
             ${sortByRankAndLevel(cantrips)
-              .map((spell) => {
-                checkValidSpell(spell);
-                return convertSpellToLatex(spell);
-              })
+              .map((spell) => convertSpellToLatex(spell))
               .join('\n')}
           `
           : ''
@@ -51,10 +69,7 @@ export function convertMysticSphereToLatex(sphere: MysticSphere): string {
           spellsByRank[rank]
             ? `\\subsection{Rank ${rank} Spells}
           ${spellsByRank[rank]
-            .map((spell) => {
-              checkValidSpell(spell);
-              return convertSpellToLatex(spell);
-            })
+            .map((spell) => convertSpellToLatex(spell))
             .join('\n')}`
             : '',
         )

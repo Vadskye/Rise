@@ -70,16 +70,34 @@ function assertHasCorrectHalfDamage(attack: ActiveAbilityAttack, effectName: str
   }
 }
 
+export function validateActiveAbility(ability: ActiveAbility): void {
+  if (ability.attack) {
+    assertEndsWithPeriod(ability.attack.targeting, ability.name);
+    assertEndsWithPeriod(ability.attack.hit, ability.name);
+    assertEndsWithPeriod(ability.attack.injury, ability.name);
+    assertEndsWithPeriod(ability.attack.crit, ability.name);
+    assertHasCorrectHalfDamage(ability.attack, ability.name);
+    assertHasCorrectCrit(ability.attack, ability.name);
+    assertDoesNotUseEachTarget(ability.attack, ability.name);
+  } else if (ability.functionsLike) {
+    const exceptThat = deriveExceptThat(ability.functionsLike);
+    assertEndsWithPeriod(exceptThat, ability.name);
+    assertStartsWithLowercase(exceptThat, ability.name);
+  }
+}
+
+export function validateRitual(ritual: Ritual): void {
+  validateActiveAbility(ritual);
+  if (ritual.sphereEffects) {
+    for (const effect of Object.values(ritual.sphereEffects)) {
+      assertEndsWithPeriod(effect, ritual.name);
+    }
+  }
+}
+
 export function spellEffect(spell: ActiveAbility | Ritual): string | null {
   try {
     if (spell.attack) {
-      assertEndsWithPeriod(spell.attack.targeting, spell.name);
-      assertEndsWithPeriod(spell.attack.hit, spell.name);
-      assertEndsWithPeriod(spell.attack.injury, spell.name);
-      assertEndsWithPeriod(spell.attack.crit, spell.name);
-      assertHasCorrectHalfDamage(spell.attack, spell.name);
-      assertHasCorrectCrit(spell.attack, spell.name);
-      assertDoesNotUseEachTarget(spell.attack, spell.name);
       // The terminal % prevents a double-space in weird edge cases
       return `
         ${spell.attack.targeting.trim()}%
@@ -94,10 +112,6 @@ export function spellEffect(spell: ActiveAbility | Ritual): string | null {
       return spell.effect.trim();
     } else if (spell.functionsLike) {
       const exceptThat = deriveExceptThat(spell.functionsLike);
-
-      assertEndsWithPeriod(exceptThat, spell.name);
-      assertStartsWithLowercase(exceptThat, spell.name);
-
       const referencedCategory = spell.functionsLike.abilityType || spell.kind;
 
       return `
@@ -120,10 +134,7 @@ export function ritualSpheres(ritual: Ritual): string | null {
       \\noindent Mystic sphere effects:
       \\begin{raggeditemize}
         ${Object.entries(ritual.sphereEffects)
-      .map(([sphereName, effect]) => {
-        assertEndsWithPeriod(effect, ritual.name);
-        return `\\item ${sphereName}: ${effect}`;
-      })
+      .map(([sphereName, effect]) => `\\item ${sphereName}: ${effect}`)
       .join('\n')}
       \\end{raggeditemize}
     `
