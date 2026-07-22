@@ -117,7 +117,7 @@ They allow more distinct and unique character customization, but also increase g
           \magicalfeatref{Celestial Ancestry}             & Non-evil                         & Gain aspects of celestial beings           & Ancestry, Magical & \featpref{Celestial Ancestry}               \\
           \featref{Chameleon}                             & Trained Disguise, Int 2          & Adapt your archetypes and abilities        & \tdash            & \featpref{Chameleon}                        \\
           \featref{Draconic Ancestry}                     & \tdash                           & Gain aspects of draconic power             & Ancestry          & \featpref{Draconic Ancestry}                \\
-          \magicalfeatref{Entropist}                      & Wil 2                            & Master chaos and entropy                   & Magical           & \featpref{Entropist}                        \\
+          \magicalfeatref{Entropist}                      & Con 1, Wil 2                     & Master chaos and entropy                   & Magical           & \featpref{Entropist}                        \\
           \magicalfeatref{Fateweaver}                     & Per 2                            & Ensure success for you and allies          & \tdash            & \featpref{Fateweaver}                       \\
           \featref{Fortune's Friend}                      & \tdash                           & Get lucky                                  & \tdash            & \featpref{Fortune's Friend}                 \\
           \featref{Gestalt}                               & \tdash                           & Combine archetypes in unusual ways         & \tdash            & \featpref{Gestalt}                 \\
@@ -801,7 +801,7 @@ They allow more distinct and unique character customization, but also increase g
   \end{feat}
 
   \begin{magicalfeat}{Entropist}{General, Magical}
-    \featpre Willpower 2.
+    \featpre Constitution 1, Willpower 2.
 
     \magicalff[1]{Sudden Entropy}
     \begin{magicalactiveability}{Sudden Entropy}{Standard action}
@@ -821,20 +821,17 @@ They allow more distinct and unique character customization, but also increase g
       \featlevel{18} The damage bonus increases to 1d6 \add 1d6 per power.
     \end{magicalactiveability}
 
-    % TODO once people stop paying attention:
-    \magicalff[6]{Friend of Chaos} Whenever you roll to determine a random effect, such as a \glossterm{miss chance} or a sorcerer's \textit{wild magic} ability, you may \glossterm{reroll} once.
-    If you do, you must keep the second result.
+    \magicalff[6]{Master of Chaos} After you roll to determine a random effect, you can spend one \glossterm{stamina} to use this ability.
+    When you do, you may freely choose the random result instead of keeping your original roll.
     This includes random effects that do not explicitly tell you to roll, such as your behavior while \confused, as long as they have a percentage chance that is internal to your character.
-    However, \glossterm{vital rolls} and your \ability{sudden entropy} ability are unaffected by this ability.
+    However, \glossterm{vital rolls} are unaffected by this ability.
+
+    After using this ability, you \briefly roll twice for all attacks and checks and keep the lower result.
+    In addition, you can't use this ability again until you finish a \glossterm{short rest}.
 
     \magicalff[12]{Entropic Defense} Whenever you are hit by a \glossterm{critical hit}, there is a 50\% chance that the attack is treated as a regular hit against you instead of a critical hit.
-    The attacker rolls this chance instead of you, so it is not affected by your \textit{friend of chaos} ability.
 
-    \magicalff[18]{Master of Chaos} Whenever you roll to determine a random effect, you can use this ability.
-    When you do, you reduce your \glossterm{stamina} by one, and you may freely choose the random result.
-    You can use this ability after seeing what your result would have been.
-    \glossterm{Vital rolls} and your \ability{sudden entropy} ability cannot be affected by this ability.
-    After using this ability, you \briefly can't use it again.
+    \magicalff[18]{Master of Chaos\plus} After using this ability, you briefly can't use it again, but you can use it before finishing a short rest and it does not cause you to briefly reroll attacks and checks.
   \end{magicalfeat}
 
   \begin{feat}{Executioner}{Combat}
