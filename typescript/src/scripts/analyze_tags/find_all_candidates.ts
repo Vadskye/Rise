@@ -40,66 +40,64 @@ const results: {
 
 for (const s of baseSpells) {
   const text = [s.narrative || '', s.effect || '', s.attackHit || '', s.attackTargeting || ''].join(' ').replace(/\s+/g, ' ');
-  const textLower = text.toLowerCase();
 
   const hasPhys = s.tags.includes('Physical');
   const hasManif = s.tags.includes('Manifestation');
-  const hasBarrier = s.tags.includes('Barrier');
 
   const missing: string[] = [];
   let reason = '';
 
+  // 1. Treeseal
   if (s.name === 'Treeseal') {
     missing.push('Physical', 'Manifestation');
-    reason = 'Creates a physical grove of trees with HP/defenses that traps the target (Physical; cannot affect incorporeal) and is formed temporarily from magic (Manifestation).';
-  } else if (s.name === 'Barkskin' || s.name === 'Greater Barkskin') {
+    reason = 'Creates a physical grove of trees with HP/defenses that traps the target (Physical; incorporeal entities are unaffected) and is formed temporarily from magic (Manifestation).';
+  }
+  // 2. Shillelagh - Transforms existing stick, so ONLY Physical, NOT Manifestation
+  else if (s.name === 'Shillelagh') {
+    if (!hasPhys) missing.push('Physical');
+    reason = 'Transforms an existing physical stick into a weapon. Since it alters an existing object rather than creating a new temporary object from raw magic, it is Physical but NOT Manifestation.';
+  }
+  // 3. Barkskin & Greater Barkskin - Enhances physical armor/body
+  else if (s.name === 'Barkskin' || s.name === 'Greater Barkskin') {
+    if (!hasPhys) missing.push('Physical');
+    reason = 'Hardens the target\'s physical body/skin into bark granting an Armor bonus (Physical armor enhancement).';
+  }
+  // 4. Embedded Growth
+  else if (s.name === 'Embedded Growth') {
     if (!hasPhys) missing.push('Physical');
     if (!hasManif) missing.push('Manifestation');
-    reason = 'Hardens the user\'s physical body/skin into wooden bark (Physical armor enhancement; Manifestation of plant layer/bark).';
-  } else if (s.name === 'Embedded Growth') {
+    reason = 'Embeds a physical seed into flesh (Physical) that manifests temporary plant growth/undergrowth as it erupts (Manifestation).';
+  }
+  // 5. Entangle, Entangling Field, Tripping Vine - Have Manifestation, missing Physical
+  else if (s.name === 'Entangle' || s.name === 'Entangling Field' || s.name === 'Tripping Vine') {
+    if (!hasPhys) missing.push('Physical');
+    reason = 'Plants grow from nowhere to physically restrain/slow grounded targets. Since incorporeal creatures cannot be held by physical vines, these require Physical.';
+  }
+  // 6. Wall of Thorns, Wall of Ice, Ice Globe, Wall of Stone
+  else if (s.name === 'Wall of Thorns' || s.name === 'Wall of Ice' || s.name === 'Ice Globe' || s.name === 'Wall of Stone') {
+    if (!hasPhys) missing.push('Physical');
+    reason = 'Creates a physical wall/structure of thorns, ice, or stone with HP. Incorporeal entities pass through physical walls without impediment.';
+  }
+  // 7. Icecraft & Ice Shield
+  else if (s.sphere === 'Cryomancy' && (s.name === 'Icecraft' || s.name === 'Ice Shield' || s.name === 'Greater Ice Shield')) {
     if (!hasPhys) missing.push('Physical');
     if (!hasManif) missing.push('Manifestation');
-    reason = 'Embeds a physical seed into flesh that grows painfully and bursts into undergrowth.';
-  } else if (s.name === 'Shillelagh') {
+    reason = 'Creates temporary physical weapons, armor, or shields out of ice/water that vanish when destroyed or duration ends.';
+  }
+  // 8. Swallowed by Earth
+  else if (s.name === 'Swallowed by Earth') {
     if (!hasPhys) missing.push('Physical');
-    if (!hasManif) missing.push('Manifestation');
-    reason = 'Transforms a physical wooden stick into a combat club/weapon temporarily.';
-  } else if (s.name === 'Entangle' || s.name === 'Entangling Field' || s.name === 'Tripping Vine') {
-    if (!hasPhys) missing.push('Physical');
-    reason = 'Restrains/slows grounded targets using physical plant vines growing from earth/undergrowth (should not affect incorporeal creatures).';
-  } else if (s.name === 'Wall of Thorns') {
-    if (!hasPhys) missing.push('Physical');
-    reason = 'Creates a physical wall of thorns with HP that physically impedes movement and damages creatures passing through.';
-  } else if (s.sphere === 'Cryomancy') {
-    if (s.name === 'Wall of Ice' || s.name === 'Ice Globe') {
-      if (!hasPhys) missing.push('Physical');
-      reason = 'Creates a physical wall/sphere of clear ice with HP through which physical objects/creatures cannot pass.';
-    } else if (s.name === 'Icecraft' || s.name === 'Ice Shield' || s.name === 'Greater Ice Shield') {
-      if (!hasPhys) missing.push('Physical');
-      if (!hasManif) missing.push('Manifestation');
-      reason = 'Creates temporary physical weapons, armor, or shields out of ice/water.';
-    }
-  } else if (s.sphere === 'Terramancy') {
-    if (s.name === 'Wall of Stone') {
-      if (!hasPhys) missing.push('Physical');
-      reason = 'Creates a physical wall of solid stone with HP. Incorporeal creatures pass through solid stone.';
-    } else if (s.name === 'Swallowed by Earth') {
-      if (!hasPhys) missing.push('Physical');
-      reason = 'Traps/buries targets in physical earth/rock (incorporeal creatures are immune).';
-    }
-  } else if (s.sphere === 'Polymorph') {
-    if (s.name === 'Duplicate Organ') {
-      if (!hasManif) missing.push('Manifestation');
-      reason = 'Creates/manifests a temporary biological organ on the body.';
-    }
-  } else if (s.sphere === 'Rituals') {
+    reason = 'Traps/buries targets in physical earth/rock (incorporeal creatures are immune to physical earth trapping).';
+  }
+  // 9. Rituals (Animated Attendant, Floating Platform, Mystic Cage, Tiny Hut)
+  else if (s.sphere === 'Rituals') {
     if (s.name === 'Animated Attendant') {
       if (!hasPhys) missing.push('Physical');
       if (!hasManif) missing.push('Manifestation');
       reason = 'Creates a temporary Small physical creature that carries objects.';
     } else if (s.name === 'Floating Platform') {
       if (!hasManif) missing.push('Manifestation');
-      reason = 'Creates a temporary solid platform of force.';
+      reason = 'Creates a temporary solid platform of force capable of supporting physical weight.';
     } else if (s.name === 'Mystic Cage' || s.name === 'Tiny Hut') {
       if (!hasPhys) missing.push('Physical');
       reason = 'Creates a physical cage/shelter barrier that blocks physical passability.';
