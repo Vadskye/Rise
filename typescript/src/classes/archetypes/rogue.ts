@@ -382,7 +382,7 @@ export function jackOfAllTrades(): RankAbility[] {
       isMagical: false,
       rank: 4,
       description: `
-        You gain a \\plus1 bonus to an attribute of your choice.
+        You gain a \\plus1 bonus to an attribute of your choice that is not your highest attribute before the bonus.
       `,
     },
     {
@@ -391,7 +391,7 @@ export function jackOfAllTrades(): RankAbility[] {
       isMagical: false,
       rank: 7,
       description: `
-        You gain a \\plus1 bonus to two attributes of your choice.
+        You gain an additional \\plus1 bonus to two attributes of your choice that are not your highest attributes before the bonus.
       `,
     },
   ];
