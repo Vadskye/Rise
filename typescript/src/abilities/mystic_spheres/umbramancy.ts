@@ -759,6 +759,7 @@ export const umbramancy: MysticSphere = {
 
       attack: {
         hit: "\\damagerankone.",
+        halfOnMiss: true,
         targeting: `
           You create a \\smallarea radius \\glossterm{zone} of biting shadows within \\shortrange.
           When you cast or sustain this spell, make an attack vs. Armor against all \\glossterm{shadowed} \\glossterm{enemies} in the area.
