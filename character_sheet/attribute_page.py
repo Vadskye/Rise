@@ -71,8 +71,8 @@ def calc_resources() -> str:
         {"class": "calc-resources"},
         [
             calc_attunement_points(),
-            calc_maximum_stamina(),
             calc_insight_points(),
+            calc_maximum_stamina(),
             calc_trained_skills(),
             calc_combat_styles(),
             calc_maneuvers(),
@@ -289,7 +289,7 @@ def calc_willpower_based() -> str:
 def calc_attunement_points() -> str:
     return flex_row(
         [
-            div({"class": "calc-header"}, "Attune points"),
+            div({"class": "calc-header attunement-points-header"}, "Attunement points"),
             equation(
                 [
                     underlabel(

@@ -1,14 +1,9 @@
 from cgi_simple import (
     div,
-    equation,
-    equation_misc_repeat,
     flex_col,
     flex_row,
     labeled_textarea,
     labeled_text_input,
-    number_input,
-    plus,
-    underlabel,
 )
 
 
@@ -41,7 +36,7 @@ def creation_guidance():
                 labeled_text_input("Size", {"class": "size"}),
             ]),
             labeled_text_input("Base class"),
-            self_class_textarea("Equipment proficiencies"),
+            self_class_textarea("Proficiencies"),
             self_class_textarea("Archetypes"),
             self_class_textarea("Combat styles and mystic spheres"),
             self_class_textarea("Background"),
@@ -83,31 +78,6 @@ def passive_ability():
             labeled_text_input(
                 "Effect",
                 {"class": "ability-effects"},
-            ),
-        ]
-    )
-
-def calc_attunement_points():
-    return flex_row(
-        [
-            div({"class": "calc-header"}, "Attune points"),
-            equation(
-                [
-                    underlabel(
-                        "Class",
-                        number_input(
-                            {
-                                "name": "attunement_points_from_class",
-                            }
-                        ),
-                    ),
-                    plus(),
-                    equation_misc_repeat("attunement_points", 3),
-                ],
-                result_attributes={
-                    "name": "attunement_points_maximum",
-                    "readonly": True,
-                },
             ),
         ]
     )

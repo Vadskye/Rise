@@ -63,7 +63,7 @@ def species(nth: int) -> str:
     return creation_step(
         nth,
         "Species",
-        """Record your character's species on Page 2. Record any numeric modifiers it gives you on Page 4 and any other abilities on Page 2.""",
+        """Record your character's species on Page 2. Record any numeric modifiers it gives you on Page 4 and any other abilities, such as language proficiencies, on Page 2.""",
     )
 
 def attributes(nth: int) -> str:

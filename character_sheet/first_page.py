@@ -433,7 +433,7 @@ def core_statistics(destination: str) -> str:
                 },
             ),
             sidelabel(
-                "Stamina" if destination == "roll20" else "Maximum stamina",
+                "Stamina" if destination == "roll20" else "Max stamina",
                 flex_row(
                     {"class": "core-statistics-split"},
                     [

@@ -70,7 +70,7 @@ def calc_fortitude():
 def calc_maximum_stamina():
     return flex_row(
         [
-            div({"class": "calc-header maximum-stamina"}, "Maximum stamina"),
+            div({"class": "calc-header maximum-stamina"}, "Max stamina"),
             equation(
                 [
                     underlabel(
