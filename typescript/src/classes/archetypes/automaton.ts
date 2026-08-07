@@ -21,12 +21,12 @@ export function automaton(): RankAbility[] {
         If you use light modular carapace, this can allow you to benefit from two different magic armor effects.
 
         \\begin{raggeditemize}
-          \\item Light armor: You gain a \\plus3 bonus to your Armor defense and a \\plus2 bonus to your \\glossterm{durability}.
+          \\item Light armor: You gain a \\plus3 bonus to your Armor defense and a \\plus1 bonus to your \\glossterm{durability}.
           You can wear body armor on top of this carapace.
           Although the benefits of that armor do not stack with the carapace, you can use the higher Armor defense value and durability bonus from either armor.
-          \\item Medium armor: You gain a \\plus5 bonus to your Armor defense, a \\plus4 bonus to your \\glossterm{durability}, and a \\plus1 bonus to \\glossterm{vital rolls}.
+          \\item Medium armor: You gain a \\plus5 bonus to your Armor defense, a \\plus3 bonus to your \\glossterm{durability}, and a \\plus1 bonus to \\glossterm{vital rolls}.
           However, your Dexterity bonus to your Armor defense is halved, and you cannot wear body armor.
-          \\item Heavy armor: You gain a \\plus6 bonus to your Armor defense, a \\plus8 bonus to your \\glossterm{durability}, and a \\plus2 bonus to \\glossterm{vital rolls}.
+          \\item Heavy armor: You gain a \\plus6 bonus to your Armor defense, a \\plus7 bonus to your \\glossterm{durability}, and a \\plus2 bonus to \\glossterm{vital rolls}.
           However, your Dexterity bonus to your Armor defense is halved, you take a \\minus10 foot penalty to your speed with all movement modes, and you cannot wear body armor.
           Unlike normal for heavy body armor, you do not need a minimum Strength to use this armor.
         \\end{raggeditemize}

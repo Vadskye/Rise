@@ -143,7 +143,7 @@ export function covenantKeeper(): RankAbility[] {
         \\begin{raggeditemize}
           \\item A \\plus3 bonus to your Armor defense.
           \\item A \\plus1 bonus to your Fortitude defense.
-          \\item A \\plus4 bonus to your \\glossterm{durability}.
+          \\item A \\plus3 bonus to your \\glossterm{durability}.
           \\item A \\plus1 bonus to your \\glossterm{vital rolls}.
         \\end{raggeditemize}
         In exchange, the \\ability{recover} ability no longer causes you to recover hit points (see \\pcref{Recover}).
@@ -248,7 +248,7 @@ export function covenantKeeper(): RankAbility[] {
       description: `
         Your understanding of your chosen covenant reaches its full potential.
         {
-        \\parhead{Covenant of Bloodforging} The Armor defense bonus increases to \\plus4, and the durability bonus increases to \\plus6.
+        \\parhead{Covenant of Bloodforging} The Armor defense bonus increases to \\plus4, and the durability bonus increases to \\plus5.
 
         \\parhead{Covenant of Bloodsharing} The healing increases to \\hprankseven.
 
