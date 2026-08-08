@@ -1,6 +1,18 @@
-import type { MonsterData, MonsterGroupData } from '../../server/codegen';
 import { Creature } from '@src/character_sheet/creature';
 import { RISE_ATTRIBUTES } from '@src/core_mechanics/attributes';
+
+export interface MonsterData {
+  // Unused in validation logic, defined as placeholder
+}
+
+export interface MonsterGroupData {
+  knowledge?: {
+    easy?: string;
+    normal?: string;
+    hard?: string;
+    legendary?: string;
+  };
+}
 
 /**
  * Shared validation logic and warning message generation for the Monster Creator.
@@ -68,7 +80,7 @@ export function formatNoStandardActionWarning(name: string): string {
 
 export function checkValidMonster(
   creature: Creature,
-  _monster: MonsterData,
+  _monster?: MonsterData,
   parentGroup?: MonsterGroupData,
 ): string[] {
   const warnings: string[] = [];
@@ -154,27 +166,32 @@ export function checkValidMonster(
 }
 
 function checkValidAttributes(creature: Creature, warnings: string[]) {
-    // Make sure the monster has a reasonable attribute sum
-    // PCs start with 8, and they have to share that with Intelligence.
-    // Elites can have +1 to all attributes.
-    const level0MaxAttributes = creature.elite ? 15 : 9;
-    const maxAttributes = level0MaxAttributes + creature.level;
-    const minAttributes = Math.floor(maxAttributes / 2);
-    // Values of -10 generally mean the monster doesn't *have* the relevant attribute,
-    // which is different than a crippling penalty.
-    const pointsFromAttribute = (val: number) => val === -10 ? 0 : val;
-    const attributeSum = pointsFromAttribute(creature.strength) + pointsFromAttribute(creature.constitution) + pointsFromAttribute(creature.dexterity) + pointsFromAttribute(creature.perception) + pointsFromAttribute(creature.willpower);
-    if (attributeSum > maxAttributes) {
-      warnings.push(`Has ${attributeSum} attributes, expected max ${maxAttributes}`);
-    } else if (attributeSum < minAttributes) {
-      warnings.push(`Has ${attributeSum} attributes, expected min ${minAttributes}`);
-    }
+  // Make sure the monster has a reasonable attribute sum
+  // PCs start with 8, and they have to share that with Intelligence.
+  // Elites can have +1 to all attributes.
+  const level0MaxAttributes = creature.elite ? 15 : 9;
+  const maxAttributes = level0MaxAttributes + creature.level;
+  const minAttributes = Math.floor(maxAttributes / 2);
+  // Values of -10 generally mean the monster doesn't *have* the relevant attribute,
+  // which is different than a crippling penalty.
+  const pointsFromAttribute = (val: number) => val === -10 ? 0 : val;
+  const attributeSum =
+    pointsFromAttribute(creature.strength) +
+    pointsFromAttribute(creature.constitution) +
+    pointsFromAttribute(creature.dexterity) +
+    pointsFromAttribute(creature.perception) +
+    pointsFromAttribute(creature.willpower);
+  if (attributeSum > maxAttributes) {
+    warnings.push(`Has ${attributeSum} attributes, expected max ${maxAttributes}`);
+  } else if (attributeSum < minAttributes) {
+    warnings.push(`Has ${attributeSum} attributes, expected min ${minAttributes}`);
+  }
 
-    // Also check individual attribute max
-    const maxAttribute = creature.character_rank + (creature.elite ? 6 : 5);
-    for (const attribute of RISE_ATTRIBUTES) {
-      if (creature[attribute] > maxAttribute) {
-        warnings.push(`Has ${attribute} of ${creature[attribute]}, expected max ${maxAttribute}`);
-      }
+  // Also check individual attribute max
+  const maxAttribute = creature.character_rank + (creature.elite ? 6 : 5);
+  for (const attribute of RISE_ATTRIBUTES) {
+    if (creature[attribute] > maxAttribute) {
+      warnings.push(`Has ${attribute} of ${creature[attribute]}, expected max ${maxAttribute}`);
     }
+  }
 }

@@ -1,4 +1,5 @@
 import { Grimoire, MonsterGroup } from '@src/monsters/grimoire';
+import { checkValidMonster } from '@src/monsters/monster_validation';
 import * as format from '@src/latex/format';
 import { convertMonsterToLatex, genKnowledgeText } from './convert_monster_to_latex';
 
@@ -33,8 +34,24 @@ export function generateMonsterDescriptions(): string {
         const monster = grimoire.getMonster(sectionName);
         const monsterGroup = grimoire.getMonsterGroup(sectionName);
         if (monster) {
+          const warnings = checkValidMonster(monster);
+          if (warnings.length > 0) {
+            console.warn(`[Validation Warning] Monster "${monster.name}" has validation warnings:`);
+            for (const warning of warnings) {
+              console.warn(`  - ${warning}`);
+            }
+          }
           withSectionBookmarks.push(convertMonsterToLatex(monster));
         } else if (monsterGroup) {
+          for (const gm of monsterGroup.monsters) {
+            const warnings = checkValidMonster(gm, undefined, monsterGroup);
+            if (warnings.length > 0) {
+              console.warn(`[Validation Warning] Monster "${monsterGroup.name}.${gm.name}" has validation warnings:`);
+              for (const warning of warnings) {
+                console.warn(`  - ${warning}`);
+              }
+            }
+          }
           withSectionBookmarks.push(convertMonsterGroupToLatex(monsterGroup, errors));
         } else {
           throw new Error(`Could not find monster by name: '${sectionName}'`);

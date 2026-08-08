@@ -9,7 +9,7 @@ import {
   formatFreeformCodeWarning,
   formatSharedFreeformCodeWarning,
   formatNoStandardActionWarning,
-} from '../src/utils/validation';
+} from '@src/monsters/monster_validation';
 
 // Dynamically import the Express app to ensure process.env.NODE_ENV is set first
 const { app } = await import('../server/index');

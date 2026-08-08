@@ -34,7 +34,7 @@ import {
   formatFreeformCodeWarning,
   formatSharedFreeformCodeWarning,
   checkValidMonster,
-} from '../src/utils/validation';
+} from '@src/monsters/monster_validation';
 
 export interface BuildResult {
   creature: Creature | null;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { StandardAbilityConfig } from '../../types/monster';
-import { isMissingWeaponWarning } from '../../utils/validation';
+import { isMissingWeaponWarning } from '@src/monsters/monster_validation';
 import { WeaponCombobox } from './WeaponCombobox';
 import { Combobox } from '../Combobox';
 import { AutocompleteSearch } from '../AutocompleteSearch';

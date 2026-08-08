@@ -3,7 +3,7 @@ import { CustomAbilityConfig } from '../../types/monster';
 import { Combobox } from '../Combobox';
 import { USAGE_TIME_OPTIONS } from './StandardAbilitiesSection';
 import { WeaponCombobox } from './WeaponCombobox';
-import { isMissingWeaponWarning } from '../../utils/validation';
+import { isMissingWeaponWarning } from '@src/monsters/monster_validation';
 
 interface CustomAbilitiesSectionProps {
   customAbilities: CustomAbilityConfig[];

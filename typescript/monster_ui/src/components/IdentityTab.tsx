@@ -1,6 +1,6 @@
 import React from 'react';
 import { MonsterData } from '../types/monster';
-import { isFreeformCodeWarning } from '../utils/validation';
+import { isFreeformCodeWarning } from '@src/monsters/monster_validation';
 import { Combobox } from './Combobox';
 
 interface IdentityTabProps {
