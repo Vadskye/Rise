@@ -825,16 +825,8 @@ function calcDefenseMonsterScaling(level: number, isMonster: boolean, elite: boo
     return 0;
   }
   let levelScaling = 0;
-  if (isMonster) {
-    const levels_with_defense_bonuses = [7, 19];
-    for (const bonus_level of levels_with_defense_bonuses) {
-      if (level >= bonus_level) {
-        levelScaling += 1;
-      }
-    }
-  }
   if (elite) {
-    levelScaling += 2;
+    levelScaling += 1;
   }
   return levelScaling;
 }
