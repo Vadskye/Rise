@@ -263,5 +263,25 @@ function injuryPoisons(): Tool[] {
         `,
       ),
     }),
+    // Unclear rank for the special effect
+    createPoison({
+      name: 'Poison, Frostweb Spider Venom',
+      rank: 5,
+      attunement: 'Unrestricted',
+      short_description: 'Slows and freezes',
+      description: getPoisonDescription(
+        'injury',
+        'liquid',
+        `
+          The poison's accuracy is $consumableaccuracy.
+          A poisoned creature is \\slowed while the poison lasts.
+          The second escalation also inflicts a \\glossterm{vital wound} with a unique vital wound effect.
+          Instead of making a \\glossterm{vital roll} for the \\glossterm{vital wound}, the target becomes deathly cold.
+          % TODO: is this measured from the target's turn or the spider's turn?
+          Whenever it takes damage from a \\atCold ability, it becomes \\briefly \\helpless.
+          This effect lasts until the vital wound is removed.
+        `,
+      ),
+    }),
   ];
 }
