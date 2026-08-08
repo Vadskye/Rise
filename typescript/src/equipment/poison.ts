@@ -56,7 +56,10 @@ export function getPoisonByName(name: string): PoisonDefinition | undefined {
   // Extract the effect statement following the accuracy line
   // Descriptions look like:
   // "This is an injury-based liquid poison (see \pcref{Poison}).\nThe poison's accuracy is $consumableaccuracy+1.\nIt inflicts $dr3l damage..."
-  const lines = desc.split('\n').map((l) => l.trim()).filter(Boolean);
+  const lines = desc
+    .split('\n')
+    .map((l) => l.trim())
+    .filter(Boolean);
   const effectLines: string[] = [];
   let foundAcc = false;
 

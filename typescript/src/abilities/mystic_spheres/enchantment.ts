@@ -27,7 +27,7 @@ export const enchantment: MysticSphere = {
       name: 'Repeat',
 
       attack: {
-        crit: "If the target is unable to use the same standard action, it cannot use a standard action at all.",
+        crit: 'If the target is unable to use the same standard action, it cannot use a standard action at all.',
         hit: `
           During its next turn, the target must repeat the same standard action that it took during its most recent turn if possible.
           It can choose different targets or otherwise make different decisions about its action, but the action must be the same.
@@ -94,7 +94,7 @@ export const enchantment: MysticSphere = {
       name: 'Monologue',
 
       attack: {
-        crit: "The target is compelled to speak as quickly as it can, so even highly intelligent creatures have difficulty concealing anything about their thoughts and motivations.",
+        crit: 'The target is compelled to speak as quickly as it can, so even highly intelligent creatures have difficulty concealing anything about their thoughts and motivations.',
         hit: `As a \\glossterm{condition}, the target is forced to speak out loud constantly whenever it can.
         This does not control what it talks about, so a reasonably savvy creature may be able to avoid revealing anything of great interest.
         In combat, most creatures with an intelligence of 0 or less will explain their thoughts about the combat, which can help you predict their actions.`,
@@ -120,7 +120,7 @@ export const enchantment: MysticSphere = {
       // dazed with a slower ramp time, so call it 2.6 EA. That's r7, or r6 limited
       // scope.
       attack: {
-        crit: "The penalty for not dancing increases to \\minus2.",
+        crit: 'The penalty for not dancing increases to \\minus2.',
         hit: `
           As a \\glossterm{condition}, the target is compelled to dance.
           It can spend a \\glossterm{move action} to dance, if it is physically capable of dancing.
@@ -219,7 +219,7 @@ export const enchantment: MysticSphere = {
       // Dazed as a condition is 3 EA. Humanoid only is about -0.4 EA, and limited scope
       // is r6.
       attack: {
-        crit: "The target is also \\briefly \\confused.",
+        crit: 'The target is also \\briefly \\confused.',
         hit: `
           The target is \\dazed as a \\glossterm{condition}.
           If the target is currently unconscious due to \\glossterm{vital wounds} and is not \\glossterm{elite}, you can choose to \\glossterm{attune} to this ability.
@@ -331,7 +331,7 @@ export const enchantment: MysticSphere = {
       name: 'Cause Fear',
 
       attack: {
-        crit: "The target is also \\briefly \\panicked by you.",
+        crit: 'The target is also \\briefly \\panicked by you.',
         hit: `
           The target is \\frightened by you as a \\glossterm{condition}.
         `,
@@ -353,7 +353,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         // Limit duration of defense penalty
-        crit: "The target is also \\panicked by you until your next turn.",
+        crit: 'The target is also \\panicked by you until your next turn.',
         hit: `The target is \\briefly \\frightened by you.`,
         targeting: `
           Whenever an \\glossterm{enemy} enters a \\medarea radius \\glossterm{emanation} from you, make a \\glossterm{reactive attack} vs. Mental against them with a \\plus2 accuracy bonus.
@@ -374,7 +374,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         // Same as briefly, but this wording seems clearer at explaining the contrast
-        crit: "The target is also \\briefly \\slowed.",
+        crit: 'The target is also \\briefly \\slowed.',
         hit: `The target is \\briefly \\panicked by you.`,
         targeting: `
           Whenever an \\glossterm{enemy} enters a \\largearea radius \\glossterm{emanation} from you, make a \\glossterm{reactive attack} vs. Mental against them.
@@ -392,7 +392,7 @@ export const enchantment: MysticSphere = {
       name: 'Enduring Fearsome Aura',
 
       attack: {
-        crit: "The target is also \\briefly \\panicked by you.",
+        crit: 'The target is also \\briefly \\panicked by you.',
         hit: `The target is \\frightened by you as a \\glossterm{condition}.`,
         targeting: `
           Whenever an \\glossterm{enemy} enters a \\largearea radius \\glossterm{emanation} from you, make a \\glossterm{reactive attack} vs. Mental against them.
@@ -450,7 +450,7 @@ export const enchantment: MysticSphere = {
 
       // TODO: unclear rank
       attack: {
-        crit: "The effect is only dismissed if the target is harmed, not merely if it feels in danger.",
+        crit: 'The effect is only dismissed if the target is harmed, not merely if it feels in danger.',
         hit: `
           The target has its emotions calmed.
           The effects of all other \\abilitytag{Emotion} abilities on it are \\glossterm{suppressed}.
@@ -476,7 +476,7 @@ export const enchantment: MysticSphere = {
       // Assume this affects 5 of the 15 actions, so it's 1 EA by default. Add 0.4 EA for
       // stacking and +1r for the accuracy bonus.
       attack: {
-        crit: "The penalty increases to -4.",
+        crit: 'The penalty increases to -4.',
         hit: `
           The target takes a -2 penalty to Mental defense as a \\glossterm{condition}.
           Unlike normal conditions, this effect stacks with itself if applied multiple times, up to a maximum of -10.
@@ -705,7 +705,7 @@ export const enchantment: MysticSphere = {
       name: 'Speak Only Truth',
 
       attack: {
-        crit: "The effect becomes \\atSubtle on the target.",
+        crit: 'The effect becomes \\atSubtle on the target.',
         hit: `
           The target is unable to say things it knows to be untrue.
           It can still remain silent, say misleading truths, and so on.
@@ -726,7 +726,7 @@ export const enchantment: MysticSphere = {
       name: 'Daunting Presence',
 
       attack: {
-        crit: "The target is also \\briefly \\panicked by you.",
+        crit: 'The target is also \\briefly \\panicked by you.',
         hit: `
           The target is \\briefly \\frightened by you.
         `,
@@ -785,7 +785,7 @@ export const enchantment: MysticSphere = {
       name: 'Mighty Psionic Blast',
 
       attack: {
-        crit: "Double damage, and the target is dazed as a condition.",
+        crit: 'Double damage, and the target is dazed as a condition.',
         hit: `
           \\damagerankfive, and the target is \\briefly \\dazed.
         `,
@@ -809,7 +809,7 @@ export const enchantment: MysticSphere = {
 
       // -1dr for debuff, -1d for +2a
       attack: {
-        crit: "Double damage, and the brief effect becomes a \\glossterm{condition}.",
+        crit: 'Double damage, and the brief effect becomes a \\glossterm{condition}.',
         hit: `
           \\damagerankthree, and the target \\briefly takes a \\minus2 penalty to its Mental defense.
         `,

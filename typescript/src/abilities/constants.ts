@@ -9,10 +9,12 @@ export const EXCEPT_NOT_DEEP =
 export const BARRIER_COOLDOWN =
   'You \\glossterm{briefly} cannot use this ability or any other \\atBarrier ability.';
 export const BRIEF_COOLDOWN = "You \\briefly can't use this ability again.";
-export const INJURY_CRIT = "The target is affected by the debuff as if it was \\glossterm{injured}.";
-export const CRIT_BECOMES_CONDITION = "The brief effect becomes a \\glossterm{condition}.";
-export const BRIEF_PRONE = "The target \\briefly cannot stand up from prone.";
-export const DAMAGING_INJURY_CRIT = "Double damage, and the target is affected by the debuff as if it was \\glossterm{injured}.";
+export const INJURY_CRIT =
+  'The target is affected by the debuff as if it was \\glossterm{injured}.';
+export const CRIT_BECOMES_CONDITION = 'The brief effect becomes a \\glossterm{condition}.';
+export const BRIEF_PRONE = 'The target \\briefly cannot stand up from prone.';
+export const DAMAGING_INJURY_CRIT =
+  'Double damage, and the target is affected by the debuff as if it was \\glossterm{injured}.';
 
 export const ABILITY_ROLES = [
   'attune', // Buff that lasts as long as you stay attuned.

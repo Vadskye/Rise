@@ -63,8 +63,7 @@ export async function main(options: RunOptions = {}) {
     targetCharacters = candidates.filter(
       (c) => c.base_class && c.base_class.toLowerCase() === classFilter,
     );
-    const matchedClassName =
-      targetCharacters[0]?.base_class ?? classFilter;
+    const matchedClassName = targetCharacters[0]?.base_class ?? classFilter;
     filterTitle = `Class: ${matchedClassName.charAt(0).toUpperCase() + matchedClassName.slice(1)}`;
   }
 
@@ -130,7 +129,9 @@ export async function main(options: RunOptions = {}) {
   const avgOverallHit = calculateOverallAvg(overallHitRates);
   const avgOverallKill = calculateOverallAvg(overallKillTimes);
 
-  console.log(`\n--- Player Stock Character Self-Hit Rate & Self-Kill Time Results (${filterTitle}) ---`);
+  console.log(
+    `\n--- Player Stock Character Self-Hit Rate & Self-Kill Time Results (${filterTitle}) ---`,
+  );
   console.log(
     `Stock Characters (${targetCharacters.length}): Hit Rate: ${avgOverallHit.toFixed(2)}%, Self-Kill Time: ${avgOverallKill.toFixed(2)} turns`,
   );

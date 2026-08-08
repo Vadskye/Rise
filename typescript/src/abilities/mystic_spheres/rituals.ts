@@ -1057,7 +1057,7 @@ export const rituals: RitualDefinition[] = [
     roles: ['narrative'],
     type: 'Attune',
     spheres: ['Enchantment'],
-    tags:  ['Compulsion'],
+    tags: ['Compulsion'],
   },
 
   {

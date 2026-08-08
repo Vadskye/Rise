@@ -256,7 +256,7 @@ export const dirtyFighting: CombatStyle = {
       name: 'Pin',
 
       attack: {
-        crit: "The penalty to \\ability{escape grapple} increases to \\minus5.",
+        crit: 'The penalty to \\ability{escape grapple} increases to \\minus5.',
         hit: `
           The defense penalties the target suffers from being \\grappled are doubled as long as the grapple continues.
           In addition, it takes a \\minus2 penalty to the \\ability{escape grapple} ability.

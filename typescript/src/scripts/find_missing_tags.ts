@@ -68,13 +68,13 @@ for (const r of rituals) {
 }
 
 console.log('=== CURRENT MANIFESTATION SPELLS ===');
-const manifestationSpells = allSpells.filter(s => s.tags.includes('Manifestation'));
+const manifestationSpells = allSpells.filter((s) => s.tags.includes('Manifestation'));
 for (const s of manifestationSpells) {
   console.log(`[${s.sphere}] ${s.name} - Tags: ${s.tags.join(', ')}`);
 }
 
 console.log('\n=== CURRENT PHYSICAL SPELLS ===');
-const physicalSpells = allSpells.filter(s => s.tags.includes('Physical'));
+const physicalSpells = allSpells.filter((s) => s.tags.includes('Physical'));
 for (const s of physicalSpells) {
   console.log(`[${s.sphere}] ${s.name} - Tags: ${s.tags.join(', ')}`);
 }

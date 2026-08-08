@@ -1,6 +1,12 @@
 import { MysticSphere } from '.';
 import { add_tag_to_sphere } from './add_tag';
-import { BARRIER_COOLDOWN, BRIEF_PRONE, CRIT_BECOMES_CONDITION, DAMAGING_INJURY_CRIT, INJURY_CRIT } from '../constants';
+import {
+  BARRIER_COOLDOWN,
+  BRIEF_PRONE,
+  CRIT_BECOMES_CONDITION,
+  DAMAGING_INJURY_CRIT,
+  INJURY_CRIT,
+} from '../constants';
 
 const WATER_ACCURACY_BONUS =
   'You gain a +2 accuracy bonus with the attack if there is a Large or larger body of water within \\shortrange.';

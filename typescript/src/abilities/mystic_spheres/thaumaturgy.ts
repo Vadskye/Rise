@@ -346,7 +346,7 @@ export const thaumaturgy: MysticSphere = {
       // Action skip is 2 EA and must be combined with limited scope, so we get r3. Drop
       // to r1 because it only works on spellcasters.
       attack: {
-        crit: "When this spell prevents the target from casting a spell, the target is also \\briefly dazed.",
+        crit: 'When this spell prevents the target from casting a spell, the target is also \\briefly dazed.',
         hit: `
           The target's magic is partially sealed as a \\glossterm{condition}.
           The first time it tries to cast a spell, the spell automatically fails with no effect instead.
@@ -365,7 +365,7 @@ export const thaumaturgy: MysticSphere = {
       name: 'Disruptive Spellseal',
 
       functionsLike: {
-        name: "spellseal",
+        name: 'spellseal',
         exceptThat: `when this spell prevents the target from casting a spell, the target is also \\dazed as a \\glossterm{condition}.
           On a critical hit, the target is also \\briefly \\confused.
         `,

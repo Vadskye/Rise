@@ -109,7 +109,7 @@ export const heraldOfWar: CombatStyle = {
       // Condition goad is 3 EA, or r9. If we drop to limited scope and then cheat for no
       // reason, we can get in at r7.
       attack: {
-        crit: "The target also \\briefly takes a \\minus4 accuracy penalty against creatures other than you.",
+        crit: 'The target also \\briefly takes a \\minus4 accuracy penalty against creatures other than you.',
         hit: `The target is \\goaded by you as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea cone from you.
@@ -144,7 +144,7 @@ export const heraldOfWar: CombatStyle = {
 
       // Frightened as a condition is r5.
       attack: {
-        crit: "The target is also \\briefly \\panicked by you.",
+        crit: 'The target is also \\briefly \\panicked by you.',
         hit: `The target is \\frightened by you as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
@@ -189,7 +189,7 @@ export const heraldOfWar: CombatStyle = {
       name: 'Deafening Shout',
 
       attack: {
-        crit: "Double damage, and the brief effect becomes a \\glossterm{condition}.",
+        crit: 'Double damage, and the brief effect becomes a \\glossterm{condition}.',
         hit: `
           \\damagerankone, and the target is \\briefly \\deafened.
         `,
@@ -206,7 +206,7 @@ export const heraldOfWar: CombatStyle = {
       name: 'Deafening Shout+',
 
       attack: {
-        crit: "Double damage, and the target is \\briefly \\dazed.",
+        crit: 'Double damage, and the target is \\briefly \\dazed.',
         hit: `
           \\damagerankfive.
           \\hit The target becomes \\deafened as a \\glossterm{condition}.
@@ -466,7 +466,7 @@ export const heraldOfWar: CombatStyle = {
       // To get deafened as a condition, we need 2.4 EA, which is r6.
       // Limited scope allows r5, though we cheat to keep r3 area.
       attack: {
-        crit: "The target is also \\briefly \\dazed.",
+        crit: 'The target is also \\briefly \\dazed.',
         hit: `The target is \\deafened as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\medarea radius from you.

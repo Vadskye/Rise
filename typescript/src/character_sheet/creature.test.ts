@@ -165,46 +165,55 @@ t.test('addThrowItem dynamically generates correct maneuvers', (t) => {
   creature.addThrowItem("Alchemist's Fire");
 
   const ability = creature.getActiveAbility("Alchemist's Fire");
-  t.ok(ability, "Ability should exist");
+  t.ok(ability, 'Ability should exist');
   t.equal(ability?.kind, 'maneuver');
   t.equal(ability?.name, "Alchemist's Fire");
-  t.match(ability?.attack?.targeting, /Make an attack vs\. Reflex against something within \\shortrange\./);
-  t.equal(ability?.attack?.hit, "$dr2l damage.");
+  t.match(
+    ability?.attack?.targeting,
+    /Make an attack vs\. Reflex against something within \\shortrange\./,
+  );
+  t.equal(ability?.attack?.hit, '$dr2l damage.');
   t.matchOnly(ability?.tags, ['Fire']);
 
-  creature.addThrowItem("Firebomb");
-  const ability2 = creature.getActiveAbility("Firebomb");
-  t.ok(ability2, "Ability should exist");
+  creature.addThrowItem('Firebomb');
+  const ability2 = creature.getActiveAbility('Firebomb');
+  t.ok(ability2, 'Ability should exist');
   t.equal(ability2?.kind, 'maneuver');
   t.equal(ability2?.name, 'Firebomb');
-  t.match(ability2?.attack?.targeting, /Make an attack vs\. Reflex against everything in a \\smallarea radius within \\shortrange\./);
-  t.equal(ability2?.attack?.hit, "$dr2l damage.");
+  t.match(
+    ability2?.attack?.targeting,
+    /Make an attack vs\. Reflex against everything in a \\smallarea radius within \\shortrange\./,
+  );
+  t.equal(ability2?.attack?.hit, '$dr2l damage.');
   t.equal(ability2?.attack?.halfOnMiss, true);
   t.matchOnly(ability2?.tags, ['Fire']);
 
   t.end();
 });
 
-t.test('addStandardPoisonousStrike generates correct maneuver effect with clean lowercase poison name', (t) => {
-  const creature = Creature.new();
-  creature.setRequiredProperties({
-    alignment: 'chaotic evil',
-    base_class: 'skirmisher',
-    elite: false,
-    creature_origin: 'natural',
-    creature_type: 'humanoid',
-    level: 6,
-    size: 'medium',
-  });
-  creature.addStandardPoisonousStrike('stinger', 'Poison, Giant Wasp Venom');
+t.test(
+  'addStandardPoisonousStrike generates correct maneuver effect with clean lowercase poison name',
+  (t) => {
+    const creature = Creature.new();
+    creature.setRequiredProperties({
+      alignment: 'chaotic evil',
+      base_class: 'skirmisher',
+      elite: false,
+      creature_origin: 'natural',
+      creature_type: 'humanoid',
+      level: 6,
+      size: 'medium',
+    });
+    creature.addStandardPoisonousStrike('stinger', 'Poison, Giant Wasp Venom');
 
-  const ability = creature.getActiveAbility('Giant Wasp Venom');
-  t.ok(ability, 'Ability should exist');
-  t.equal(ability?.kind, 'maneuver');
-  t.equal(ability?.name, 'Giant Wasp Venom');
-  t.match(
-    ability?.effect,
-    /\\injury The target becomes \\glossterm\{poisoned\} by giant wasp venom\./,
-  );
-  t.end();
-});
+    const ability = creature.getActiveAbility('Giant Wasp Venom');
+    t.ok(ability, 'Ability should exist');
+    t.equal(ability?.kind, 'maneuver');
+    t.equal(ability?.name, 'Giant Wasp Venom');
+    t.match(
+      ability?.effect,
+      /\\injury The target becomes \\glossterm\{poisoned\} by giant wasp venom\./,
+    );
+    t.end();
+  },
+);

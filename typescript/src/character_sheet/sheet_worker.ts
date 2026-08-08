@@ -1872,8 +1872,7 @@ function handleInjuryPoint() {
       const rank = calculateStandardRank(v.level);
       const flatIp = 10;
       const ipFromLevel = Math.floor((rank * v.level) / 2);
-      const injury_point =
-        flatIp + ipFromLevel + v.misc;
+      const injury_point = flatIp + ipFromLevel + v.misc;
 
       setAttrs({
         injury_point: injury_point,

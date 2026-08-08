@@ -68,9 +68,7 @@ export function convertMysticSphereToLatex(sphere: MysticSphere): string {
         .map((rank) =>
           spellsByRank[rank]
             ? `\\subsection{Rank ${rank} Spells}
-          ${spellsByRank[rank]
-            .map((spell) => convertSpellToLatex(spell))
-            .join('\n')}`
+          ${spellsByRank[rank].map((spell) => convertSpellToLatex(spell)).join('\n')}`
             : '',
         )
         .join('\n')}

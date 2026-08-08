@@ -333,7 +333,7 @@ export const revelation: MysticSphere = {
 
       cost: MINOR_STAMINA,
       attack: {
-        crit: "The target also becomes \\exposed.",
+        crit: 'The target also becomes \\exposed.',
         hit: `
           As a \\glossterm{condition}, the target's vulnerabilities become clear for all to see.
           Anyone looking at it intuitively knows everything that it is \\vulnerable, \\resistant, and immune to.
@@ -352,7 +352,7 @@ export const revelation: MysticSphere = {
       name: 'Myriad Visions',
 
       attack: {
-        crit: "The target is also \\briefly \\confused.",
+        crit: 'The target is also \\briefly \\confused.',
         hit: `
           The target is \\dazzled as a \\glossterm{condition}.
         `,
@@ -508,7 +508,7 @@ export const revelation: MysticSphere = {
       name: 'Sensory Chain',
 
       attack: {
-        crit: "The effect is \\atSubtle on the target.",
+        crit: 'The effect is \\atSubtle on the target.',
         hit: `
           As a \\glossterm{condition}, you can see and hear out of the target's eyes and ears instead of your own.
           If the target stops being within 1 mile from you, ignoring \\glossterm{line of sight} and \\glossterm{line of effect}, this ability is \\glossterm{dismissed}.
@@ -535,7 +535,7 @@ export const revelation: MysticSphere = {
       name: "Animal's Sight",
 
       attack: {
-        crit: "The effect is \\atSubtle on the target.",
+        crit: 'The effect is \\atSubtle on the target.',
         hit: `
           As a \\glossterm{condition}, you can see and hear out of the target's eyes and ears instead of your own.
           If the target stops being within 1 mile from you, ignoring \\glossterm{line of sight} and \\glossterm{line of effect}, this ability is \\glossterm{dismissed}.

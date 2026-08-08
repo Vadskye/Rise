@@ -58,7 +58,7 @@ export const telekinesis: MysticSphere = {
       // they are already in melee, but better if they have more than 30' of movement, so
       // call it 2 EA. The Might check is worth -2 ranks, probably.
       attack: {
-        crit: "The \\glossterm{difficulty value} increases to 10.",
+        crit: 'The \\glossterm{difficulty value} increases to 10.',
         hit: `
           The target is \\briefly unable to move closer to you without effort.
           This does not impede its movement unless its movement would bring it closer to you while it is within \\medrange of you.
@@ -82,7 +82,8 @@ export const telekinesis: MysticSphere = {
       // is stronger than a 30' push when kiting.
       functionsLike: {
         name: 'interposing force',
-        exceptThat: 'the \\glossterm{difficulty value} of the Might check increases to 10, or to 15 on a critical hit.',
+        exceptThat:
+          'the \\glossterm{difficulty value} of the Might check increases to 10, or to 15 on a critical hit.',
       },
       rank: 5,
       roles: ['kite'],
@@ -305,7 +306,7 @@ export const telekinesis: MysticSphere = {
     {
       name: 'Mind Shove',
       attack: {
-        crit: "The maximum push distance increases to 30 feet.",
+        crit: 'The maximum push distance increases to 30 feet.',
         hit: `
           You \\glossterm{push} each target up to 15 feet.
           Each target of this spell must be pushed in the same direction.
@@ -323,7 +324,7 @@ export const telekinesis: MysticSphere = {
     {
       name: 'Intense Mind Shove',
       attack: {
-        crit: "The maximum push distance increases to 45 feet.",
+        crit: 'The maximum push distance increases to 45 feet.',
         hit: `
           You \\glossterm{push} the target up to 30 feet.
           Each target of this spell must be pushed in the same direction.
@@ -340,7 +341,7 @@ export const telekinesis: MysticSphere = {
     {
       name: 'Versatile Mind Shove',
       attack: {
-        crit: "The maximum push distance increases to 30 feet.",
+        crit: 'The maximum push distance increases to 30 feet.',
         hit: `
           You \\glossterm{push} the target up to 15 feet.
           Each target of this spell can be pushed in a different direction of your choice.
@@ -436,8 +437,8 @@ export const telekinesis: MysticSphere = {
       name: 'Greater Kinetic Redirection',
 
       functionsLike: {
-        name: "kinetic redirection",
-        exceptThat: "you are also \\briefly \\shielded.",
+        name: 'kinetic redirection',
+        exceptThat: 'you are also \\briefly \\shielded.',
       },
       rank: 7,
       roles: ['turtle'],
@@ -611,7 +612,7 @@ export const telekinesis: MysticSphere = {
 
       // TODO: correct rank, clarify whether this triggers damage from fling
       attack: {
-        crit: "The effect lasts \\briefly on the target.",
+        crit: 'The effect lasts \\briefly on the target.',
         hit: `
           The target is unable to enter the spell's area for the rest of its turn.
           The rest of its movement is cancelled.
@@ -704,7 +705,7 @@ export const telekinesis: MysticSphere = {
 
       // -2r from regular slowed since it doesn't block escaping, -1r for limited scope
       attack: {
-        crit: "The impedance range increases to \\longrange.",
+        crit: 'The impedance range increases to \\longrange.',
         hit: `
           The target is impeded as a \\glossterm{condition}.
           While it is within \\shortrange of you, it is \\slowed.
@@ -812,7 +813,7 @@ export const telekinesis: MysticSphere = {
       // Effect: Debuff (-1)
       // Result: 7 + 1 - 1 = dr7
       attack: {
-        crit: "Double damage, and the target is also \\briefly \\slowed.",
+        crit: 'Double damage, and the target is also \\briefly \\slowed.',
         hit: `
           \\damagerankseven, and any \\glossterm{extra damage} is doubled.
           The target is also \\briefly \\dazed.

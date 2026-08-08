@@ -157,7 +157,7 @@ export const astromancy: MysticSphere = {
       name: 'Banishing Grasp',
 
       attack: {
-        crit: "The target is \\briefly \\dazed when it returns.",
+        crit: 'The target is \\briefly \\dazed when it returns.',
         hit: `
           The target \\sphereterm{flickers} to a nearby safe location in the Astral Expanse.
           It does not return until the end of your next turn.
@@ -226,7 +226,7 @@ export const astromancy: MysticSphere = {
       name: 'Hostile Translocation',
 
       attack: {
-        crit: "The target is \\briefly \\dazed when it arrives.",
+        crit: 'The target is \\briefly \\dazed when it arrives.',
         hit: `
           You \\glossterm{teleport} the target up to 30 feet.
         `,
@@ -248,7 +248,7 @@ export const astromancy: MysticSphere = {
       name: 'Intense Hostile Translocation',
 
       attack: {
-        crit: "The target is \\briefly \\dazed when it arrives.",
+        crit: 'The target is \\briefly \\dazed when it arrives.',
         hit: `
           If the target is Large or smaller and is \\glossterm{injured}, you \\glossterm{teleport} it up to 60 feet.
         `,
@@ -430,7 +430,7 @@ export const astromancy: MysticSphere = {
 
       // Briefly dazed is r1, so r5 with damage, or r7 with damage + hp condition
       attack: {
-        crit: "Double damage, and the target is dazed as a \\glossterm{condition}.",
+        crit: 'Double damage, and the target is dazed as a \\glossterm{condition}.',
         hit: `
           The target \\sphereterm{flickers} to a nearby safe location in the Astral Expanse.
           When it returns, it takes \\damageranksix, and it is \\briefly \\dazed.
@@ -575,7 +575,7 @@ export const astromancy: MysticSphere = {
 
       // Like hostile translocation, but +1r for double target?
       attack: {
-        crit: "The target is \\briefly \\dazed when it arrives.",
+        crit: 'The target is \\briefly \\dazed when it arrives.',
         hit: `
           If you hit both targets, they each \\glossterm{teleport} into each other's location.
           If the teleportation is invalid for either target, it fails for both targets.

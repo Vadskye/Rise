@@ -25,12 +25,19 @@ export function combineDescriptions(baseDesc: string, upgradeDesc: string): stri
   }
 
   // 3. Tanglefoot bag target/range upgrade
-  if (upgradeDesc.includes("affects each Large or smaller creature in a \\smallarea radius within \\medrange")) {
-    desc = desc.replace(/against one Large or smaller creature within \\shortrange/i, "against each Large or smaller creature in a \\smallarea radius within \\medrange");
+  if (
+    upgradeDesc.includes(
+      'affects each Large or smaller creature in a \\smallarea radius within \\medrange',
+    )
+  ) {
+    desc = desc.replace(
+      /against one Large or smaller creature within \\shortrange/i,
+      'against each Large or smaller creature in a \\smallarea radius within \\medrange',
+    );
   }
 
   // 4. "each target does not have to be injured" upgrades (Thunderstone / Dazing Sphere)
-  if (upgradeDesc.includes("does not have to be injured")) {
+  if (upgradeDesc.includes('does not have to be injured')) {
     desc = desc.replace(/If the target is \\glossterm{injured},\s*/i, '');
     desc = desc.replace(/Each \\glossterm{injured} creature is/i, 'Each creature is');
   }
@@ -53,7 +60,7 @@ export function parseConsumableDescription(description: string): ParsedConsumabl
     { name: 'hit', pattern: /\\hit\b/ },
     { name: 'miss', pattern: /\\miss\b/ },
     { name: 'injury', pattern: /\\injury\b/ },
-    { name: 'crit', pattern: /\\crit\b/ }
+    { name: 'crit', pattern: /\\crit\b/ },
   ];
 
   const occurrences: { name: string; index: number; length: number }[] = [];
@@ -66,11 +73,18 @@ export function parseConsumableDescription(description: string): ParsedConsumabl
 
   occurrences.sort((a, b) => a.index - b.index);
 
-  let targetingRaw = occurrences.length > 0 ? description.substring(0, occurrences[0].index) : description;
+  let targetingRaw =
+    occurrences.length > 0 ? description.substring(0, occurrences[0].index) : description;
 
   targetingRaw = targetingRaw.trim();
-  targetingRaw = targetingRaw.replace(/^You can throw this item as a (standard|minor|triggered|action) action\.\s*(When you do,\s*)?/i, '');
-  targetingRaw = targetingRaw.replace(/^You can activate this item as a (standard|minor|triggered|action) action\.\s*(As part of that action, you can optionally throw it anywhere within \\(?:short|med|long)range\.\s*)?(When you activate this item,\s*)?/i, '');
+  targetingRaw = targetingRaw.replace(
+    /^You can throw this item as a (standard|minor|triggered|action) action\.\s*(When you do,\s*)?/i,
+    '',
+  );
+  targetingRaw = targetingRaw.replace(
+    /^You can activate this item as a (standard|minor|triggered|action) action\.\s*(As part of that action, you can optionally throw it anywhere within \\(?:short|med|long)range\.\s*)?(When you activate this item,\s*)?/i,
+    '',
+  );
   targetingRaw = targetingRaw.replace(/^When you do,\s*/i, '');
 
   result.targeting = ensureEndsWithPeriod(targetingRaw);

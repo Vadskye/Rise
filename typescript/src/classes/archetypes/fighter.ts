@@ -696,9 +696,7 @@ export function tacticianModifiers(creature: Creature, rank: number) {
     // Shifting Stance - Arbitrarily assume defense
     creature.addCustomModifier({
       name: 'Shifting Stance (Defense)',
-      numericEffects: [
-        { statistic: 'armor_defense', modifier: rank >= 7 ? 2 : 1 },
-      ],
+      numericEffects: [{ statistic: 'armor_defense', modifier: rank >= 7 ? 2 : 1 }],
     });
   }
 

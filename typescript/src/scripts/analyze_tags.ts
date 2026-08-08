@@ -77,7 +77,11 @@ for (const spell of allSpells) {
   ].join('\n');
 
   console.log(`=== [${spell.sphere}] ${spell.name} (Rank ${spell.rank}) ===`);
-  console.log(`Tags: ${JSON.stringify(spell.tags)} | Type: ${spell.type || 'Standard'} | Roles: ${JSON.stringify(spell.roles || [])}`);
-  if (spell.functionsLikeName) console.log(`Functions Like: ${spell.functionsLikeName}`);
+  console.log(
+    `Tags: ${JSON.stringify(spell.tags)} | Type: ${spell.type || 'Standard'} | Roles: ${JSON.stringify(spell.roles || [])}`,
+  );
+  if (spell.functionsLikeName) {
+    console.log(`Functions Like: ${spell.functionsLikeName}`);
+  }
   console.log(`Text:\n${fullText.trim()}\n`);
 }

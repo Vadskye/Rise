@@ -248,7 +248,7 @@ export const unbreakableDefense: CombatStyle = {
       name: 'I Am Your Opponent+',
 
       attack: {
-        crit: "The target also \\briefly takes a \\minus4 accuracy penalty against creatures other than you.",
+        crit: 'The target also \\briefly takes a \\minus4 accuracy penalty against creatures other than you.',
         hit: `
           The target is \\goaded by you as a \\glossterm{condition}.
         `,

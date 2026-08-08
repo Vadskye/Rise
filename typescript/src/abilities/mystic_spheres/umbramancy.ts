@@ -1,5 +1,11 @@
 import { MysticSphere } from '.';
-import { BARRIER_COOLDOWN, CRIT_BECOMES_CONDITION, DAMAGING_INJURY_CRIT, INJURY_CRIT, MULTIHIT_CRIT } from '../constants';
+import {
+  BARRIER_COOLDOWN,
+  CRIT_BECOMES_CONDITION,
+  DAMAGING_INJURY_CRIT,
+  INJURY_CRIT,
+  MULTIHIT_CRIT,
+} from '../constants';
 
 export const umbramancy: MysticSphere = {
   name: 'Umbramancy',
@@ -76,7 +82,7 @@ export const umbramancy: MysticSphere = {
       attack: {
         hit: `\\damageranktwo.`,
         halfOnMiss: true,
-        injury: "The target is \\briefly \\frightened by you.",
+        injury: 'The target is \\briefly \\frightened by you.',
         targeting: `
           Make an attack vs. Fortitude against all \\glossterm{shadowed} creatures in a \\smallarea cone from you.
         `,
@@ -93,7 +99,7 @@ export const umbramancy: MysticSphere = {
       attack: {
         hit: `\\damagerankfive.`,
         halfOnMiss: true,
-        injury: "The target is \\briefly \\frightened by you.",
+        injury: 'The target is \\briefly \\frightened by you.',
         targeting: `
           Make an attack vs. Fortitude against all \\glossterm{shadowed} creatures in a \\smallarea cone from you.
         `,
@@ -113,7 +119,7 @@ export const umbramancy: MysticSphere = {
       attack: {
         hit: `\\damagerankone.`,
         halfOnMiss: true,
-        injury: "The target is \\briefly \\frightened by you.",
+        injury: 'The target is \\briefly \\frightened by you.',
         targeting: `
           You create a field of dark miasma in a \\medarea radius \\glossterm{zone} from you.
           Make an attack vs. Fortitude against all \\glossterm{shadowed} \\glossterm{enemies} in the area.
@@ -133,7 +139,7 @@ export const umbramancy: MysticSphere = {
       attack: {
         hit: `\\damagerankfive.`,
         halfOnMiss: true,
-        injury: "The target is \\briefly \\frightened by you.",
+        injury: 'The target is \\briefly \\frightened by you.',
         targeting: `
           You create a spreading field of dark miasma in a \\glossterm{zone} from you.
           It affects a \\medarea radius \\glossterm{zone} in the first turn, a \\largearea radius in the second turn, and a \\hugearea radius in all subsequent turns.
@@ -178,7 +184,7 @@ export const umbramancy: MysticSphere = {
       name: 'Efficient Dark Grasp',
 
       attack: {
-        crit: "Double damage, and the target is also \\briefly \\slowed.",
+        crit: 'Double damage, and the target is also \\briefly \\slowed.',
         // 1.5 EA for the condition, so we need a rank 5 effect to apply it as a regular
         // condition.
         hit: `
@@ -265,7 +271,7 @@ export const umbramancy: MysticSphere = {
 
       // Dazzled is 1.8 EA, so r3. +1r for shadowed accuracy.
       attack: {
-        crit: "The target is also \\briefly \\blinded.",
+        crit: 'The target is also \\briefly \\blinded.',
         hit: `
           The target is \\dazzled as a \\glossterm{condition}.
         `,
@@ -596,7 +602,7 @@ export const umbramancy: MysticSphere = {
     {
       name: 'Devouring Shadow',
       attack: {
-        crit: "Double damage, and the brief effect becomes a \\glossterm{condition}.",
+        crit: 'Double damage, and the brief effect becomes a \\glossterm{condition}.',
         hit: `
           \\damagerankfive, and any \\glossterm{extra damage} is doubled.
           In addition, the target is \\briefly \\frightened of you.
@@ -697,7 +703,7 @@ export const umbramancy: MysticSphere = {
         hit: `
           \\damageranktwo.
         `,
-        injury: "The target is \\briefly \\frightened of you.",
+        injury: 'The target is \\briefly \\frightened of you.',
         targeting: `
           You must be \\glossterm{shadowed} to cast this spell.
 
@@ -731,8 +737,8 @@ export const umbramancy: MysticSphere = {
 
       attack: {
         crit: MULTIHIT_CRIT,
-        hit: "\\damagerankone.",
-        injury: "The target \\briefly \\glossterm{bleeds} for \\damagerankone.",
+        hit: '\\damagerankone.',
+        injury: 'The target \\briefly \\glossterm{bleeds} for \\damagerankone.',
         targeting: `
           Make an attack vs. Armor and Mental against a \\glossterm{shadowed} creature within \\medrange.
         `,
@@ -746,8 +752,8 @@ export const umbramancy: MysticSphere = {
       name: 'The Mighty Shadows Cut Deep',
 
       functionsLike: {
-        name: "the mighty shadows cut deep",
-        exceptThat: "the damage increases to \\damagerankfour.",
+        name: 'the mighty shadows cut deep',
+        exceptThat: 'the damage increases to \\damagerankfour.',
       },
       rank: 4,
       roles: ['burst'],
@@ -758,7 +764,7 @@ export const umbramancy: MysticSphere = {
       name: 'The Shadows Bite and Claw',
 
       attack: {
-        hit: "\\damageranktwo.",
+        hit: '\\damageranktwo.',
         halfOnMiss: true,
         targeting: `
           You create a \\smallarea radius \\glossterm{zone} of biting shadows within \\shortrange.
@@ -769,20 +775,20 @@ export const umbramancy: MysticSphere = {
       rank: 3,
       roles: ['burst'],
       scaling: 'damage',
-      type: "Sustain (standard)",
+      type: 'Sustain (standard)',
     },
 
     {
       name: 'The Mighty Shadows Bite and Claw',
 
       functionsLike: {
-        name: "the shadows bite and claw",
-        exceptThat: "the damage increases to \\damagerankfive.",
+        name: 'the shadows bite and claw',
+        exceptThat: 'the damage increases to \\damagerankfive.',
       },
       rank: 6,
       roles: ['burst'],
       scaling: 'damage',
-      type: "Sustain (standard)",
+      type: 'Sustain (standard)',
     },
   ],
 };

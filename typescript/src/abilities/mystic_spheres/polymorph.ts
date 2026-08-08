@@ -739,7 +739,7 @@ export const polymorph: MysticSphere = {
       name: 'Eyeseal',
 
       attack: {
-        crit: "The target is also \\briefly \\blinded.",
+        crit: 'The target is also \\briefly \\blinded.',
         hit: `
           The target is \\dazzled as a \\glossterm{condition}.
         `,
@@ -758,7 +758,7 @@ export const polymorph: MysticSphere = {
       name: 'Massive Eyeseal',
 
       attack: {
-        crit: "The target is also \\briefly \\blinded.",
+        crit: 'The target is also \\briefly \\blinded.',
         hit: `
           The target is \\dazzled as a \\glossterm{condition}.
         `,

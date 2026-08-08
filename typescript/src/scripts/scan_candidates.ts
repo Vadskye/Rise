@@ -73,17 +73,16 @@ for (const s of allSpells) {
   // Skip variant spells that function like another spell (e.g. Mighty X, Massive X) unless we want to note them
   const hasPhys = s.tags.includes('Physical');
   const hasManif = s.tags.includes('Manifestation');
-  
-  const text = [
-    s.narrative || '',
-    s.effect || '',
-    s.attackHit || '',
-    s.attackTargeting || '',
-  ].join(' ').toLowerCase();
+
+  const text = [s.narrative || '', s.effect || '', s.attackHit || '', s.attackTargeting || '']
+    .join(' ')
+    .toLowerCase();
 
   // Print any spell that might be relevant for analysis
   console.log(`=== [${s.sphere}] ${s.name} (Rank ${s.rank}) ===`);
   console.log(`Tags: [${s.tags.join(', ')}] | Type: ${s.type || 'Standard'}`);
-  if (s.functionsLikeName) console.log(`Functions Like: ${s.functionsLikeName}`);
+  if (s.functionsLikeName) {
+    console.log(`Functions Like: ${s.functionsLikeName}`);
+  }
   console.log(`Text: ${text.replace(/\s+/g, ' ')}\n`);
 }

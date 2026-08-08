@@ -46,7 +46,9 @@ export function generateMonsterDescriptions(): string {
           for (const gm of monsterGroup.monsters) {
             const warnings = checkValidMonster(gm, undefined, monsterGroup);
             if (warnings.length > 0) {
-              console.warn(`[Validation Warning] Monster "${monsterGroup.name}.${gm.name}" has validation warnings:`);
+              console.warn(
+                `[Validation Warning] Monster "${monsterGroup.name}.${gm.name}" has validation warnings:`,
+              );
               for (const warning of warnings) {
                 console.warn(`  - ${warning}`);
               }
@@ -75,7 +77,9 @@ export function generateMonsterDescriptions(): string {
       }
       console.error('--------------------------------------------------');
     }
-    throw new Error(`Failed to generate monster descriptions. ${errors.length} monster/group(s) had errors.`);
+    throw new Error(
+      `Failed to generate monster descriptions. ${errors.length} monster/group(s) had errors.`,
+    );
   }
 
   return format.latexify(withSectionBookmarks.join('\n'));

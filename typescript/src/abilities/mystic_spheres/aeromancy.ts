@@ -251,7 +251,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       name: 'Skyseal',
 
       attack: {
-        crit: "The target does not gain a fly speed.",
+        crit: 'The target does not gain a fly speed.',
         hit: `
           The target is \\briefly borne aloft by heavy winds.
           You \\glossterm{fling} it five feet upwards, where it hovers in \\glossterm{midair}, which normally makes it \\unsteady.
@@ -356,7 +356,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       name: 'Wind Tunnel',
 
       attack: {
-        crit: "The push distance increases to 30 feet.",
+        crit: 'The push distance increases to 30 feet.',
         hit: `
           The target is \\glossterm{pushed} 15 feet in the direction the wind blows.
           Once it leaves the area, it stops being pushed and blocks any other targets from being pushed.
@@ -590,7 +590,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       name: 'Dust Cloud',
 
       attack: {
-        crit: "The target is also \\briefly \\blinded.",
+        crit: 'The target is also \\briefly \\blinded.',
         hit: `
           The target is \\dazzled as a \\glossterm{condition}.
         `,
@@ -611,7 +611,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       // r5 with r6 area. Huge radius from self would be r7 area, which seems fine with
       // Sustain (standard).
       attack: {
-        crit: "The target is also \\briefly \\blinded.",
+        crit: 'The target is also \\briefly \\blinded.',
         hit: `
           The target is \\dazzled as a \\glossterm{condition}.
         `,

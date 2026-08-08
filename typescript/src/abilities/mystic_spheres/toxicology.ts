@@ -582,7 +582,7 @@ export const toxicology: MysticSphere = {
 
       attack: {
         // Limit the defense benefit to only the rest of the current turn
-        crit: "The target is also \\panicked by you and all other sources of fungus until your next turn.",
+        crit: 'The target is also \\panicked by you and all other sources of fungus until your next turn.',
         hit: `
           The target becomes covered in fear-inducing fungus as a \\glossterm{condition}.
           It becomes \\frightened of you and all other sources of fungus.
@@ -755,7 +755,7 @@ export const toxicology: MysticSphere = {
       name: 'Spore Cloud',
 
       attack: {
-        crit: "Double damage, and the brief effect becomes a \\glossterm{condition}.",
+        crit: 'Double damage, and the brief effect becomes a \\glossterm{condition}.',
         hit: `
           \\damagerankone, and the target is \\briefly \\dazzled.
         `,

@@ -85,7 +85,9 @@ for (const [sphereName, spells] of spheresMap.entries()) {
     const hasManif = s.tags.includes('Manifestation');
     const tagStr = s.tags.length ? s.tags.join(', ') : 'NONE';
     console.log(`  - ${s.name} (Rank ${s.rank}) [Tags: ${tagStr}]`);
-    const fullText = [s.narrative, s.effect, s.attackHit, s.attackTargeting].filter(Boolean).join(' | ');
+    const fullText = [s.narrative, s.effect, s.attackHit, s.attackTargeting]
+      .filter(Boolean)
+      .join(' | ');
     console.log(`    Text snippet: ${fullText.replace(/\s+/g, ' ').substring(0, 180)}...`);
   }
   console.log('\n');

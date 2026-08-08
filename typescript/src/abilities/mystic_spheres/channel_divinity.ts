@@ -269,7 +269,7 @@ export const channelDivinity: MysticSphere = {
       name: 'Enduring Fearful Awe',
 
       attack: {
-        crit: "The target is also \\briefly \\panicked by you.",
+        crit: 'The target is also \\briefly \\panicked by you.',
         hit: `
           The target is \\frightened by you as a \\glossterm{condition}.
         `,
@@ -590,7 +590,7 @@ export const channelDivinity: MysticSphere = {
       // Expected damage for two debuff + damage spells would be 2x dr4. dr6 seems like a
       // reasonable approximation.
       attack: {
-        crit: "Double damage, and the target is also \\briefly \\blinded.",
+        crit: 'Double damage, and the target is also \\briefly \\blinded.',
         hit: `
           \\damageranksix, and any \\glossterm{extra damage} is doubled.
           In addition, the target is \\dazed as a \\glossterm{condition}.
@@ -613,7 +613,7 @@ export const channelDivinity: MysticSphere = {
       // Expected damage for two debuff + damage spells would be 2x dr7. dr10 is almost
       // exactly the same.
       attack: {
-        crit: "Double damage, and the target is also \\briefly \\blinded.",
+        crit: 'Double damage, and the target is also \\briefly \\blinded.',
         hit: `
           \\damagerankten, and any \\glossterm{extra damage} is tripled.
           In addition, the target is \\dazed as a \\glossterm{condition}.

@@ -52,7 +52,9 @@ function assertHasCorrectCrit(attack: ActiveAbilityAttack, effectName: string): 
       console.warn(`Attack from ${effectName} is should use DAMAGING_INJURY_CRIT.`);
     }
   } else if (grantsImmunity && attack.crit?.includes('condition')) {
-    console.warn(`Attack from ${effectName} should not inflict a condition since it grants immunity.`);
+    console.warn(
+      `Attack from ${effectName} should not inflict a condition since it grants immunity.`,
+    );
   }
 }
 
@@ -142,8 +144,8 @@ export function ritualSpheres(ritual: Ritual): string | null {
       \\noindent Mystic sphere effects:
       \\begin{raggeditemize}
         ${Object.entries(ritual.sphereEffects)
-      .map(([sphereName, effect]) => `\\item ${sphereName}: ${effect}`)
-      .join('\n')}
+          .map(([sphereName, effect]) => `\\item ${sphereName}: ${effect}`)
+          .join('\n')}
       \\end{raggeditemize}
     `
     : '';

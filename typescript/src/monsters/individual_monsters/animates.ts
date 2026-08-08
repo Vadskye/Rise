@@ -6,7 +6,6 @@ export function addAnimates(grimoire: Grimoire) {
   addTreants(grimoire);
 }
 
-
 function addGolems(grimoire: Grimoire) {
   grimoire.addMonsterGroup(
     {

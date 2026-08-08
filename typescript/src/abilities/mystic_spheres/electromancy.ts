@@ -1,6 +1,6 @@
 import { MysticSphere } from '.';
 import { add_tag_to_sphere } from './add_tag';
-import { INJURY_CRIT }  from '../constants';
+import { INJURY_CRIT } from '../constants';
 
 export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
   name: 'Electromancy',
@@ -390,7 +390,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       name: 'Short-Circuit',
 
       attack: {
-        crit: "The target is also \\briefly \\confused.",
+        crit: 'The target is also \\briefly \\confused.',
         hit: `
           The target is \\dazed as a \\glossterm{condition}.
         `,
@@ -577,7 +577,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
 
       // Medium range is -2dr, plus the deafen.
       attack: {
-        crit: "Double damage, and the target is also \\briefly \\dazed.",
+        crit: 'Double damage, and the target is also \\briefly \\dazed.',
         hit: `\\damagerankfour, and the target is \\deafened as a \\glossterm{condition}.`,
         halfOnMiss: true,
         targeting: `

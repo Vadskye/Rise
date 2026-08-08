@@ -480,7 +480,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       // +1 effective rank for attune with cooldown
       attack: {
-        crit: "Double damage, and the target also \\briefly treats you as \\trait{invisible}.",
+        crit: 'Double damage, and the target also \\briefly treats you as \\trait{invisible}.',
         hit: `
           \\damageranktwo, and the target is \\briefly \\dazzled.
         `,

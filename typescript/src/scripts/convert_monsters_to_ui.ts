@@ -3,12 +3,12 @@ import * as path from 'path';
 import { pathToFileURL } from 'url';
 
 const KNOWN_FOLDERS: Record<string, string> = {
-  'Kobolds': 'Uncivilized Humanoids',
-  'Ogres': 'Uncivilized Humanoids',
-  'Orcs': 'Uncivilized Humanoids',
-  'Necromancers': 'Civilized Humanoids',
-  'Townsfolk': 'Civilized Humanoids',
-  'Lizardfolk': 'Uncivilized Humanoids',
+  Kobolds: 'Uncivilized Humanoids',
+  Ogres: 'Uncivilized Humanoids',
+  Orcs: 'Uncivilized Humanoids',
+  Necromancers: 'Civilized Humanoids',
+  Townsfolk: 'Civilized Humanoids',
+  Lizardfolk: 'Uncivilized Humanoids',
 };
 
 const STANDARD_SENSES = [
@@ -39,7 +39,9 @@ function parseSense(senseStr: string) {
   if (match) {
     const typeCandidate = match[1].trim();
     const range = parseInt(match[2], 10);
-    const standardSense = STANDARD_SENSES.find(s => s.name.toLowerCase() === typeCandidate.toLowerCase());
+    const standardSense = STANDARD_SENSES.find(
+      (s) => s.name.toLowerCase() === typeCandidate.toLowerCase(),
+    );
     if (standardSense) {
       return { type: standardSense.name, range };
     } else {
@@ -47,7 +49,9 @@ function parseSense(senseStr: string) {
     }
   } else {
     const typeCandidate = senseStr.trim();
-    const standardSense = STANDARD_SENSES.find(s => s.name.toLowerCase() === typeCandidate.toLowerCase());
+    const standardSense = STANDARD_SENSES.find(
+      (s) => s.name.toLowerCase() === typeCandidate.toLowerCase(),
+    );
     if (standardSense) {
       return { type: standardSense.name };
     } else {
@@ -58,13 +62,17 @@ function parseSense(senseStr: string) {
 
 function parseMovementSpeed(speedStr: string) {
   const match = speedStr.match(/^([^(]+)\s*\(([^)]+)\)$/);
-  if (!match) return null;
+  if (!match) {
+    return null;
+  }
   const modeCandidate = match[1].trim();
-  const details = match[2].split(',').map(s => s.trim());
+  const details = match[2].split(',').map((s) => s.trim());
   const categoryStr = details[0].toLowerCase();
   const category = categoryStr === 'slow' ? 'slow' : categoryStr === 'fast' ? 'fast' : 'average';
-  
-  const standardMode = STANDARD_MOVEMENT_MODES.find(m => m.name.toLowerCase() === modeCandidate.toLowerCase());
+
+  const standardMode = STANDARD_MOVEMENT_MODES.find(
+    (m) => m.name.toLowerCase() === modeCandidate.toLowerCase(),
+  );
   const mode = standardMode ? standardMode.name : 'Other';
   const customMode = standardMode ? undefined : modeCandidate;
 
@@ -102,7 +110,7 @@ class MockCreature {
   public baseAttributes: number[] = [];
   public trainedSkills: string[] = [];
   public knowledge: any = {};
-  
+
   public traits: string[] = [];
   public customSenses: any[] = [];
   public customMovementSpeeds: any[] = [];
@@ -153,8 +161,12 @@ class MockCreature {
     this.vulnerabilities.push(vulnerability);
   }
   setEquippedArmorName(config: any) {
-    if (config.bodyArmor) this.equippedArmor = config.bodyArmor;
-    if (config.shield) this.equippedShield = config.shield;
+    if (config.bodyArmor) {
+      this.equippedArmor = config.bodyArmor;
+    }
+    if (config.shield) {
+      this.equippedShield = config.shield;
+    }
   }
   setProperties(props: any) {
     this.properties = { ...this.properties, ...props };
@@ -169,8 +181,8 @@ class MockCreature {
       options: {
         isMagical: false,
         weapon,
-        ...options
-      }
+        ...options,
+      },
     });
   }
   addGrapplingStrike(weapon: string, options?: any) {
@@ -180,8 +192,8 @@ class MockCreature {
       options: {
         isMagical: false,
         weapon,
-        ...options
-      }
+        ...options,
+      },
     });
   }
   addSneakAttack(weapon: string, options?: any) {
@@ -191,8 +203,8 @@ class MockCreature {
       options: {
         isMagical: false,
         weapon,
-        ...options
-      }
+        ...options,
+      },
     });
   }
   addLatchOn(weapon: string, options?: any) {
@@ -202,8 +214,8 @@ class MockCreature {
       options: {
         isMagical: false,
         weapon,
-        ...options
-      }
+        ...options,
+      },
     });
   }
   addManeuver(name: string, options?: any) {
@@ -212,8 +224,8 @@ class MockCreature {
       name,
       options: {
         isMagical: false,
-        ...options
-      }
+        ...options,
+      },
     });
   }
   addSpell(name: string, options?: any) {
@@ -222,20 +234,20 @@ class MockCreature {
       name,
       options: {
         isMagical: true,
-        ...options
-      }
+        ...options,
+      },
     });
   }
   addCustomSpell(ability: any) {
     this.customAbilities.push({
       type: 'spell',
-      ...ability
+      ...ability,
     });
   }
   addCustomManeuver(ability: any) {
     this.customAbilities.push({
       type: 'maneuver',
-      ...ability
+      ...ability,
     });
   }
   addPassiveAbility(ability: any) {
@@ -243,7 +255,7 @@ class MockCreature {
     this.passiveAbilities.push({
       name,
       effect,
-      isMagical: Boolean(isMagical)
+      isMagical: Boolean(isMagical),
     });
   }
   addRituals(rituals: string[]) {
@@ -262,7 +274,7 @@ function createMockCreature() {
         console.warn(`[WARNING] Unhandled creature method: ${prop} with args:`, args);
         return target;
       };
-    }
+    },
   });
 }
 
@@ -282,7 +294,9 @@ class MockGrimoire {
 async function main() {
   const args = process.argv.slice(2);
   if (args.length < 2) {
-    console.error('Usage: npx tsx convert_monsters_to_ui.ts <file_path> <function_name> [default_folder]');
+    console.error(
+      'Usage: npx tsx convert_monsters_to_ui.ts <file_path> <function_name> [default_folder]',
+    );
     process.exit(1);
   }
 
@@ -323,32 +337,48 @@ async function main() {
       const monsterCreature = createMockCreature() as any;
       initializer(monsterCreature);
 
-      const finalSkills = [...new Set([...(monsterCreature.trainedSkills || []), ...(sharedCreature.trainedSkills || [])])];
+      const finalSkills = [
+        ...new Set([
+          ...(monsterCreature.trainedSkills || []),
+          ...(sharedCreature.trainedSkills || []),
+        ]),
+      ];
 
       const normalizedProps = {
         alignment: monsterCreature.requiredProperties.alignment,
         base_class: monsterCreature.requiredProperties.base_class,
         elite: Boolean(monsterCreature.requiredProperties.elite),
         creature_origin: monsterCreature.requiredProperties.creature_origin || 'natural',
-        creature_types: monsterCreature.requiredProperties.creature_types || 
-                        (monsterCreature.requiredProperties.creature_type ? [monsterCreature.requiredProperties.creature_type] : []),
+        creature_types:
+          monsterCreature.requiredProperties.creature_types ||
+          (monsterCreature.requiredProperties.creature_type
+            ? [monsterCreature.requiredProperties.creature_type]
+            : []),
         size: monsterCreature.requiredProperties.size,
-        level: Number(monsterCreature.requiredProperties.level)
+        level: Number(monsterCreature.requiredProperties.level),
       };
 
       const normalizedKn: any = {};
       if (monsterCreature.knowledge) {
         const kn = monsterCreature.knowledge;
-        if (kn.easy) normalizedKn.easy = kn.easy.trim();
-        if (kn.normal) normalizedKn.normal = kn.normal.trim();
-        if (kn.hard) normalizedKn.hard = kn.hard.trim();
-        if (kn.legendary) normalizedKn.legendary = kn.legendary.trim();
+        if (kn.easy) {
+          normalizedKn.easy = kn.easy.trim();
+        }
+        if (kn.normal) {
+          normalizedKn.normal = kn.normal.trim();
+        }
+        if (kn.hard) {
+          normalizedKn.hard = kn.hard.trim();
+        }
+        if (kn.legendary) {
+          normalizedKn.legendary = kn.legendary.trim();
+        }
       }
 
       const monsterObj: any = {
         name: monsterName,
         requiredProperties: normalizedProps,
-        freeformCode: "",
+        freeformCode: '',
       };
 
       if (monsterCreature.baseAttributes && monsterCreature.baseAttributes.length === 6) {
@@ -360,20 +390,48 @@ async function main() {
       if (Object.keys(normalizedKn).length > 0) {
         monsterObj.knowledge = normalizedKn;
       }
-      if (monsterCreature.traits.length > 0) monsterObj.traits = monsterCreature.traits;
-      if (monsterCreature.customSenses.length > 0) monsterObj.customSenses = monsterCreature.customSenses;
-      if (monsterCreature.customMovementSpeeds.length > 0) monsterObj.customMovementSpeeds = monsterCreature.customMovementSpeeds;
-      if (monsterCreature.immunities.length > 0) monsterObj.immunities = monsterCreature.immunities;
-      if (monsterCreature.resistances.length > 0) monsterObj.resistances = monsterCreature.resistances;
-      if (monsterCreature.vulnerabilities.length > 0) monsterObj.vulnerabilities = monsterCreature.vulnerabilities;
-      if (monsterCreature.equippedArmor) monsterObj.equippedArmor = monsterCreature.equippedArmor;
-      if (monsterCreature.equippedShield) monsterObj.equippedShield = monsterCreature.equippedShield;
-      if (Object.keys(monsterCreature.properties).length > 0) monsterObj.properties = monsterCreature.properties;
-      if (monsterCreature.standardAbilities.length > 0) monsterObj.standardAbilities = monsterCreature.standardAbilities;
-      if (monsterCreature.customAbilities.length > 0) monsterObj.customAbilities = monsterCreature.customAbilities;
-      if (monsterCreature.passiveAbilities.length > 0) monsterObj.passiveAbilities = monsterCreature.passiveAbilities;
-      if (monsterCreature.weapons.length > 0) monsterObj.weapons = monsterCreature.weapons;
-      if (monsterCreature.rituals.length > 0) monsterObj.rituals = monsterCreature.rituals;
+      if (monsterCreature.traits.length > 0) {
+        monsterObj.traits = monsterCreature.traits;
+      }
+      if (monsterCreature.customSenses.length > 0) {
+        monsterObj.customSenses = monsterCreature.customSenses;
+      }
+      if (monsterCreature.customMovementSpeeds.length > 0) {
+        monsterObj.customMovementSpeeds = monsterCreature.customMovementSpeeds;
+      }
+      if (monsterCreature.immunities.length > 0) {
+        monsterObj.immunities = monsterCreature.immunities;
+      }
+      if (monsterCreature.resistances.length > 0) {
+        monsterObj.resistances = monsterCreature.resistances;
+      }
+      if (monsterCreature.vulnerabilities.length > 0) {
+        monsterObj.vulnerabilities = monsterCreature.vulnerabilities;
+      }
+      if (monsterCreature.equippedArmor) {
+        monsterObj.equippedArmor = monsterCreature.equippedArmor;
+      }
+      if (monsterCreature.equippedShield) {
+        monsterObj.equippedShield = monsterCreature.equippedShield;
+      }
+      if (Object.keys(monsterCreature.properties).length > 0) {
+        monsterObj.properties = monsterCreature.properties;
+      }
+      if (monsterCreature.standardAbilities.length > 0) {
+        monsterObj.standardAbilities = monsterCreature.standardAbilities;
+      }
+      if (monsterCreature.customAbilities.length > 0) {
+        monsterObj.customAbilities = monsterCreature.customAbilities;
+      }
+      if (monsterCreature.passiveAbilities.length > 0) {
+        monsterObj.passiveAbilities = monsterCreature.passiveAbilities;
+      }
+      if (monsterCreature.weapons.length > 0) {
+        monsterObj.weapons = monsterCreature.weapons;
+      }
+      if (monsterCreature.rituals.length > 0) {
+        monsterObj.rituals = monsterCreature.rituals;
+      }
 
       monstersJson.push(monsterObj);
     }
@@ -382,19 +440,27 @@ async function main() {
       name: groupName,
       folder: KNOWN_FOLDERS[groupName] || defaultFolder || undefined,
       hasArt: Boolean(groupConfig.hasArt),
-      sharedFreeformCode: "",
-      monsters: monstersJson
+      sharedFreeformCode: '',
+      monsters: monstersJson,
     };
 
     const normalizedGroupKn: any = {};
     if (groupConfig.knowledge) {
       const kn = groupConfig.knowledge;
-      if (kn.easy) normalizedGroupKn.easy = kn.easy.trim();
-      if (kn.normal) normalizedGroupKn.normal = kn.normal.trim();
-      if (kn.hard) normalizedGroupKn.hard = kn.hard.trim();
-      if (kn.legendary) normalizedGroupKn.legendary = kn.legendary.trim();
+      if (kn.easy) {
+        normalizedGroupKn.easy = kn.easy.trim();
+      }
+      if (kn.normal) {
+        normalizedGroupKn.normal = kn.normal.trim();
+      }
+      if (kn.hard) {
+        normalizedGroupKn.hard = kn.hard.trim();
+      }
+      if (kn.legendary) {
+        normalizedGroupKn.legendary = kn.legendary.trim();
+      }
     }
-    
+
     // Special check for Kobolds dragonsworn knowledge extraction
     if (groupName === 'Kobolds' && Object.keys(normalizedGroupKn).length === 0) {
       normalizedGroupKn.normal = `Although kobolds can be found in civilization, many kobolds live out in the wilds.\nThey are coordinated and brave fighters as long as they have a leader present to guide them.\nIf their leader falls, they will generally try to flee and regroup.`;
@@ -408,22 +474,52 @@ async function main() {
       groupObj.description = groupConfig.description;
     }
 
-    if (sharedCreature.traits.length > 0) groupObj.traits = sharedCreature.traits;
-    if (sharedCreature.customSenses.length > 0) groupObj.customSenses = sharedCreature.customSenses;
-    if (sharedCreature.customMovementSpeeds.length > 0) groupObj.customMovementSpeeds = sharedCreature.customMovementSpeeds;
-    if (sharedCreature.immunities.length > 0) groupObj.immunities = sharedCreature.immunities;
-    if (sharedCreature.resistances.length > 0) groupObj.resistances = sharedCreature.resistances;
-    if (sharedCreature.vulnerabilities.length > 0) groupObj.vulnerabilities = sharedCreature.vulnerabilities;
-    if (sharedCreature.equippedArmor) groupObj.equippedArmor = sharedCreature.equippedArmor;
-    if (sharedCreature.equippedShield) groupObj.equippedShield = sharedCreature.equippedShield;
-    if (Object.keys(sharedCreature.properties).length > 0) groupObj.properties = sharedCreature.properties;
-    if (sharedCreature.standardAbilities.length > 0) groupObj.standardAbilities = sharedCreature.standardAbilities;
-    if (sharedCreature.customAbilities.length > 0) groupObj.customAbilities = sharedCreature.customAbilities;
-    if (sharedCreature.passiveAbilities.length > 0) groupObj.passiveAbilities = sharedCreature.passiveAbilities;
-    if (sharedCreature.weapons.length > 0) groupObj.weapons = sharedCreature.weapons;
-    if (sharedCreature.rituals.length > 0) groupObj.rituals = sharedCreature.rituals;
+    if (sharedCreature.traits.length > 0) {
+      groupObj.traits = sharedCreature.traits;
+    }
+    if (sharedCreature.customSenses.length > 0) {
+      groupObj.customSenses = sharedCreature.customSenses;
+    }
+    if (sharedCreature.customMovementSpeeds.length > 0) {
+      groupObj.customMovementSpeeds = sharedCreature.customMovementSpeeds;
+    }
+    if (sharedCreature.immunities.length > 0) {
+      groupObj.immunities = sharedCreature.immunities;
+    }
+    if (sharedCreature.resistances.length > 0) {
+      groupObj.resistances = sharedCreature.resistances;
+    }
+    if (sharedCreature.vulnerabilities.length > 0) {
+      groupObj.vulnerabilities = sharedCreature.vulnerabilities;
+    }
+    if (sharedCreature.equippedArmor) {
+      groupObj.equippedArmor = sharedCreature.equippedArmor;
+    }
+    if (sharedCreature.equippedShield) {
+      groupObj.equippedShield = sharedCreature.equippedShield;
+    }
+    if (Object.keys(sharedCreature.properties).length > 0) {
+      groupObj.properties = sharedCreature.properties;
+    }
+    if (sharedCreature.standardAbilities.length > 0) {
+      groupObj.standardAbilities = sharedCreature.standardAbilities;
+    }
+    if (sharedCreature.customAbilities.length > 0) {
+      groupObj.customAbilities = sharedCreature.customAbilities;
+    }
+    if (sharedCreature.passiveAbilities.length > 0) {
+      groupObj.passiveAbilities = sharedCreature.passiveAbilities;
+    }
+    if (sharedCreature.weapons.length > 0) {
+      groupObj.weapons = sharedCreature.weapons;
+    }
+    if (sharedCreature.rituals.length > 0) {
+      groupObj.rituals = sharedCreature.rituals;
+    }
 
-    const existingGroupIndex = db.monsterGroups.findIndex((g: any) => g.name.toLowerCase() === groupName.toLowerCase());
+    const existingGroupIndex = db.monsterGroups.findIndex(
+      (g: any) => g.name.toLowerCase() === groupName.toLowerCase(),
+    );
     if (existingGroupIndex !== -1) {
       console.log(`  Updating existing group "${groupName}" in DB.`);
       db.monsterGroups[existingGroupIndex] = groupObj;
@@ -444,26 +540,37 @@ async function main() {
       base_class: monsterCreature.requiredProperties.base_class,
       elite: Boolean(monsterCreature.requiredProperties.elite),
       creature_origin: monsterCreature.requiredProperties.creature_origin || 'natural',
-      creature_types: monsterCreature.requiredProperties.creature_types || 
-                      (monsterCreature.requiredProperties.creature_type ? [monsterCreature.requiredProperties.creature_type] : []),
+      creature_types:
+        monsterCreature.requiredProperties.creature_types ||
+        (monsterCreature.requiredProperties.creature_type
+          ? [monsterCreature.requiredProperties.creature_type]
+          : []),
       size: monsterCreature.requiredProperties.size,
-      level: Number(monsterCreature.requiredProperties.level)
+      level: Number(monsterCreature.requiredProperties.level),
     };
 
     const normalizedKn: any = {};
     if (monsterCreature.knowledge) {
       const kn = monsterCreature.knowledge;
-      if (kn.easy) normalizedKn.easy = kn.easy.trim();
-      if (kn.normal) normalizedKn.normal = kn.normal.trim();
-      if (kn.hard) normalizedKn.hard = kn.hard.trim();
-      if (kn.legendary) normalizedKn.legendary = kn.legendary.trim();
+      if (kn.easy) {
+        normalizedKn.easy = kn.easy.trim();
+      }
+      if (kn.normal) {
+        normalizedKn.normal = kn.normal.trim();
+      }
+      if (kn.hard) {
+        normalizedKn.hard = kn.hard.trim();
+      }
+      if (kn.legendary) {
+        normalizedKn.legendary = kn.legendary.trim();
+      }
     }
 
     const monsterObj: any = {
       name: m.name,
       folder: KNOWN_FOLDERS[m.name] || defaultFolder || undefined,
       requiredProperties: normalizedProps,
-      freeformCode: "",
+      freeformCode: '',
     };
 
     if (monsterCreature.baseAttributes && monsterCreature.baseAttributes.length === 6) {
@@ -475,22 +582,52 @@ async function main() {
     if (Object.keys(normalizedKn).length > 0) {
       monsterObj.knowledge = normalizedKn;
     }
-    if (monsterCreature.traits.length > 0) monsterObj.traits = monsterCreature.traits;
-    if (monsterCreature.customSenses.length > 0) monsterObj.customSenses = monsterCreature.customSenses;
-    if (monsterCreature.customMovementSpeeds.length > 0) monsterObj.customMovementSpeeds = monsterCreature.customMovementSpeeds;
-    if (monsterCreature.immunities.length > 0) monsterObj.immunities = monsterCreature.immunities;
-    if (monsterCreature.resistances.length > 0) monsterObj.resistances = monsterCreature.resistances;
-    if (monsterCreature.vulnerabilities.length > 0) monsterObj.vulnerabilities = monsterCreature.vulnerabilities;
-    if (monsterCreature.equippedArmor) monsterObj.equippedArmor = monsterCreature.equippedArmor;
-    if (monsterCreature.equippedShield) monsterObj.equippedShield = monsterCreature.equippedShield;
-    if (Object.keys(monsterCreature.properties).length > 0) monsterObj.properties = monsterCreature.properties;
-    if (monsterCreature.standardAbilities.length > 0) monsterObj.standardAbilities = monsterCreature.standardAbilities;
-    if (monsterCreature.customAbilities.length > 0) monsterObj.customAbilities = monsterCreature.customAbilities;
-    if (monsterCreature.passiveAbilities.length > 0) monsterObj.passiveAbilities = monsterCreature.passiveAbilities;
-    if (monsterCreature.weapons.length > 0) monsterObj.weapons = monsterCreature.weapons;
-    if (monsterCreature.rituals.length > 0) monsterObj.rituals = monsterCreature.rituals;
+    if (monsterCreature.traits.length > 0) {
+      monsterObj.traits = monsterCreature.traits;
+    }
+    if (monsterCreature.customSenses.length > 0) {
+      monsterObj.customSenses = monsterCreature.customSenses;
+    }
+    if (monsterCreature.customMovementSpeeds.length > 0) {
+      monsterObj.customMovementSpeeds = monsterCreature.customMovementSpeeds;
+    }
+    if (monsterCreature.immunities.length > 0) {
+      monsterObj.immunities = monsterCreature.immunities;
+    }
+    if (monsterCreature.resistances.length > 0) {
+      monsterObj.resistances = monsterCreature.resistances;
+    }
+    if (monsterCreature.vulnerabilities.length > 0) {
+      monsterObj.vulnerabilities = monsterCreature.vulnerabilities;
+    }
+    if (monsterCreature.equippedArmor) {
+      monsterObj.equippedArmor = monsterCreature.equippedArmor;
+    }
+    if (monsterCreature.equippedShield) {
+      monsterObj.equippedShield = monsterCreature.equippedShield;
+    }
+    if (Object.keys(monsterCreature.properties).length > 0) {
+      monsterObj.properties = monsterCreature.properties;
+    }
+    if (monsterCreature.standardAbilities.length > 0) {
+      monsterObj.standardAbilities = monsterCreature.standardAbilities;
+    }
+    if (monsterCreature.customAbilities.length > 0) {
+      monsterObj.customAbilities = monsterCreature.customAbilities;
+    }
+    if (monsterCreature.passiveAbilities.length > 0) {
+      monsterObj.passiveAbilities = monsterCreature.passiveAbilities;
+    }
+    if (monsterCreature.weapons.length > 0) {
+      monsterObj.weapons = monsterCreature.weapons;
+    }
+    if (monsterCreature.rituals.length > 0) {
+      monsterObj.rituals = monsterCreature.rituals;
+    }
 
-    const existingMonsterIndex = db.monsters.findIndex((x: any) => x.name.toLowerCase() === m.name.toLowerCase());
+    const existingMonsterIndex = db.monsters.findIndex(
+      (x: any) => x.name.toLowerCase() === m.name.toLowerCase(),
+    );
     if (existingMonsterIndex !== -1) {
       console.log(`  Updating existing monster "${m.name}" in DB.`);
       db.monsters[existingMonsterIndex] = monsterObj;
@@ -505,7 +642,7 @@ async function main() {
   console.log(`Database saved successfully.`);
 }
 
-main().catch(err => {
+main().catch((err) => {
   console.error(err);
   process.exit(1);
 });

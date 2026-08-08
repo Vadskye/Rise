@@ -299,14 +299,7 @@ export function getClassSkills(cls: Class): RiseSkill[] {
         'survival',
       ];
     case 'Troll':
-      return [
-        'awareness',
-        'endurance',
-        'intimidate',
-        'might',
-        'stealth',
-        'survival',
-      ];
+      return ['awareness', 'endurance', 'intimidate', 'might', 'stealth', 'survival'];
     case 'Vampire':
       return [
         'analysis',

@@ -116,13 +116,12 @@ function genDefensiveStatisticsText(monster: Creature): string {
   const mentalText = monster.hasTrait('mindless') ? '' : `\n\\monsep Ment ${monster.mental}`;
 
   const hpIpText = `\\pari \\textbf{HP} ${monster.hit_points} \\monsep \\textbf{IP} ${monster.injury_point}`;
-  const typesText = monster.creature_types.length > 0
-    ? `\\textbf{Types:} ${monster.creature_types.join(', ')}`
-    : '';
+  const typesText =
+    monster.creature_types.length > 0
+      ? `\\textbf{Types:} ${monster.creature_types.join(', ')}`
+      : '';
 
-  const firstLine = typesText
-    ? `\\spelltwocol{${hpIpText}}{${typesText}}`
-    : hpIpText;
+  const firstLine = typesText ? `\\spelltwocol{${hpIpText}}{${typesText}}` : hpIpText;
 
   return `
     ${firstLine}
@@ -148,9 +147,10 @@ function genSpecialDefenseModifiersText(monster: Creature) {
 }
 
 export function getMovementComponents(monster: Creature): string[] {
-  const jumpText = monster.hasTrainedSkill('athletics') && !monster.hasTrait('legless')
-    ? `Jump ${monster.horizontal_jump_distance}`
-    : '';
+  const jumpText =
+    monster.hasTrainedSkill('athletics') && !monster.hasTrait('legless')
+      ? `Jump ${monster.horizontal_jump_distance}`
+      : '';
   const movementDistances = [
     ...monster.getCustomMovementSpeeds().sort(caseInsensitiveSort),
     jumpText,
