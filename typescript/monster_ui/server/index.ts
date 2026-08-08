@@ -8,6 +8,7 @@ import { MONSTER_WEAPONS } from '@src/monsters/weapons';
 import { showDetailedTiming } from './timing';
 import { getSettings, saveSettings } from './settings';
 import { alchemicalItems } from '@src/equipment/data/consumables/alchemical_items';
+import { getPoisonNames } from '@src/equipment/poison';
 
 const app = express();
 const port = 3001;
@@ -33,6 +34,7 @@ app.get('/api/reference', (req, res) => {
       'Sneak Attack',
       'Latch On',
       'Throw Item',
+      'Poisonous Strike',
     ];
     const uniqueManeuvers = Array.from(
       new Set([
@@ -60,6 +62,8 @@ app.get('/api/reference', (req, res) => {
       new Set(alchemicalItems().map((tool) => tool.item.name)),
     ).sort();
 
+    const poisonNames = getPoisonNames();
+
     const dWeaponsSpheres = performance.now() - s3;
 
     res.json({
@@ -68,6 +72,7 @@ app.get('/api/reference', (req, res) => {
       weapons: weaponNames,
       spheres: sphereNames,
       alchemicalItems: alchemicalItemNames,
+      poisons: poisonNames,
     });
 
     if (showDetailedTiming) {

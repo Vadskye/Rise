@@ -31,6 +31,7 @@ import { getManeuverByName } from '@src/abilities/combat_styles';
 import {
   maneuverMakesStrike,
   formatMissingWeaponWarning,
+  formatMissingPoisonWarning,
   formatFreeformCodeWarning,
   formatSharedFreeformCodeWarning,
   checkValidMonster,
@@ -403,11 +404,30 @@ function compileStandardManeuver(creature: Creature, ability: any, warnings: str
     'Sneak Attack',
     'Latch On',
     'Throw Item',
+    'Poisonous Strike',
   ];
 
   if (STRIKE_MODIFICATIONS.includes(ability.name)) {
+    const nameToUse = ability.options?.displayName || ability.name;
+    const poison = ability.options?.poison;
+
+    if (ability.name === 'Poisonous Strike') {
+      let valid = true;
+      if (!weapon) {
+        warnings.push(formatMissingWeaponWarning(nameToUse));
+        valid = false;
+      }
+      if (!poison) {
+        warnings.push(formatMissingPoisonWarning(nameToUse));
+        valid = false;
+      }
+      if (valid && weapon && poison) {
+        creature.addStandardPoisonousStrike(weapon, poison, options);
+      }
+      return;
+    }
+
     if (!weapon) {
-      const nameToUse = ability.options?.displayName || ability.name;
       warnings.push(formatMissingWeaponWarning(nameToUse, ability.name === 'Throw Item'));
       return;
     }

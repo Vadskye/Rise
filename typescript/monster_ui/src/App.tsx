@@ -89,7 +89,8 @@ export const App: React.FC = () => {
     weapons: string[];
     spheres: string[];
     alchemicalItems: string[];
-  }>({ spells: [], maneuvers: [], weapons: [], spheres: [], alchemicalItems: [] });
+    poisons: string[];
+  }>({ spells: [], maneuvers: [], weapons: [], spheres: [], alchemicalItems: [], poisons: [] });
   const [activeSelection, setActiveSelection] = useState<SidebarSelection>(null);
   const [isInitialLoadComplete, setIsInitialLoadComplete] = useState<boolean>(false);
   const lastSelectionRef = useRef<SidebarSelection>(null);

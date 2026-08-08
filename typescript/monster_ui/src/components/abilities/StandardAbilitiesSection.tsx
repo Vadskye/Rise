@@ -1,6 +1,6 @@
 import React from 'react';
 import { StandardAbilityConfig } from '../../types/monster';
-import { isMissingWeaponWarning } from '@src/monsters/monster_validation';
+import { isMissingWeaponWarning, isMissingPoisonWarning } from '@src/monsters/monster_validation';
 import { WeaponCombobox } from './WeaponCombobox';
 import { Combobox } from '../Combobox';
 import { AutocompleteSearch } from '../AutocompleteSearch';
@@ -21,6 +21,7 @@ interface StandardAbilitiesSectionProps {
   referenceManeuvers: string[];
   referenceWeapons: string[];
   referenceAlchemicalItems: string[];
+  referencePoisons?: string[];
   onChange: (updatedAbilities: StandardAbilityConfig[]) => void;
   expandedCard: string | null;
   onToggleExpand: (cardId: string) => void;
@@ -34,6 +35,7 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
   referenceManeuvers,
   referenceWeapons,
   referenceAlchemicalItems,
+  referencePoisons = [],
   onChange,
   expandedCard,
   onToggleExpand,
@@ -47,6 +49,7 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
     'Sneak Attack',
     'Latch On',
     'Throw Item',
+    'Poisonous Strike',
   ];
 
   const addStandardAbility = (type: 'spell' | 'maneuver', name: string) => {
@@ -119,6 +122,7 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
           standardAbilities.map((ability, idx) => {
             const cardId = `standard-${idx}`;
             const isExpanded = expandedCard === cardId;
+            const displayNameToUse = ability.options?.displayName || ability.name;
             return (
               <div key={idx} className={`ability-item-card ${isExpanded ? 'expanded' : ''}`}>
                 <div className="ability-card-header" onClick={() => onToggleExpand(cardId)}>
@@ -129,7 +133,7 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
                       {ability.type.toUpperCase()}
                     </span>
                     <strong className="ability-name">
-                      {ability.options?.displayName || ability.name}
+                      {displayNameToUse}
                       {ability.options?.displayName && (
                         <span
                           style={{
@@ -149,7 +153,7 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
                     onClick={(e) => e.stopPropagation()}
                   >
                     {ability.type === 'maneuver' && (
-                      <div className="quick-weapon-select-container">
+                      <div className="quick-weapon-select-container" style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
                         <WeaponCombobox
                           selectedWeapon={ability.options?.weapon}
                           weapons={
@@ -179,7 +183,7 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
                               ...ability,
                               options: {
                                 ...(ability.options || {}),
-                                weapon,
+                                weapon: weapon || undefined,
                               },
                             })
                           }
@@ -187,7 +191,7 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
                         {warnings.some((w) =>
                           isMissingWeaponWarning(
                             w,
-                            ability.options?.displayName || ability.name,
+                            displayNameToUse,
                             ability.name === 'Throw Item',
                           ),
                         ) && (
@@ -202,6 +206,41 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
                               ⚠️
                             </span>
                           )}
+
+                        {ability.name === 'Poisonous Strike' && (
+                          <>
+                            <WeaponCombobox
+                              selectedWeapon={
+                                ability.options?.poison
+                                  ? ability.options.poison.replace(/^Poison,\s*/i, '')
+                                  : undefined
+                              }
+                              weapons={referencePoisons}
+                              placeholder="Search poisons..."
+                              clearLabel="-- No Poison --"
+                              triggerTitle="Quickly assign a poison to this maneuver"
+                              noSelectionLabel="No Poison"
+                              noMatchesLabel="No matching poisons"
+                              onSelect={(poison) =>
+                                updateStandardAbility(idx, {
+                                  ...ability,
+                                  options: {
+                                    ...(ability.options || {}),
+                                    poison: poison || undefined,
+                                  },
+                                })
+                              }
+                            />
+                            {warnings.some((w) => isMissingPoisonWarning(w, displayNameToUse)) && (
+                              <span
+                                className="quick-weapon-warning"
+                                title="Maneuver requires a poison."
+                              >
+                                ⚠️
+                              </span>
+                            )}
+                          </>
+                        )}
                       </div>
                     )}
                     <span className="expand-chevron" onClick={() => onToggleExpand(cardId)}>

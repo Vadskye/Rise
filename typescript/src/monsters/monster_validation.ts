@@ -51,6 +51,20 @@ export function isMissingWeaponWarning(
 }
 
 /**
+ * Formats the warning message for a maneuver requiring a poison without a poison assigned.
+ */
+export function formatMissingPoisonWarning(name: string): string {
+  return `Maneuver "${name}" requires a poison.`;
+}
+
+/**
+ * Checks if a given warning string matches the missing poison warning for a specific maneuver name.
+ */
+export function isMissingPoisonWarning(warning: string, name: string): boolean {
+  return warning === formatMissingPoisonWarning(name);
+}
+
+/**
  * Formats the warning message for a monster having freeform initialization code.
  */
 export function formatFreeformCodeWarning(name: string): string {

@@ -317,6 +317,7 @@ function generateSharedPropertiesCode(
       'Sneak Attack',
       'Latch On',
       'Throw Item',
+      'Poisonous Strike',
     ];
     for (const ability of data.standardAbilities) {
       const cleanOptions = ability.options
@@ -325,6 +326,7 @@ function generateSharedPropertiesCode(
           usageTime: ability.options.usageTime || undefined,
           isMagical: ability.options.isMagical,
           weapon: ability.options.weapon || undefined,
+          poison: ability.options.poison || undefined,
           tags:
             ability.options.tags && ability.options.tags.length > 0
               ? ability.options.tags
@@ -341,24 +343,31 @@ function generateSharedPropertiesCode(
         );
       } else if (SPECIAL_MANEUVERS.includes(ability.name)) {
         const weapon = ability.options?.weapon;
-        if (weapon) {
-          const cleanSpecialOptions = ability.options
-            ? {
-              displayName: ability.options.displayName || undefined,
-              usageTime: ability.options.usageTime || undefined,
-              isMagical: ability.options.isMagical,
-              tags:
-                ability.options.tags && ability.options.tags.length > 0
-                  ? ability.options.tags
-                  : undefined,
-            }
-            : undefined;
-          const hasSpecialOptions =
-            cleanSpecialOptions && Object.values(cleanSpecialOptions).some((v) => v !== undefined);
-          const optStr = hasSpecialOptions
-            ? `, ${formatValueToTSSingleLine(cleanSpecialOptions)}`
-            : '';
+        const poison = ability.options?.poison;
+        const cleanSpecialOptions = ability.options
+          ? {
+            displayName: ability.options.displayName || undefined,
+            usageTime: ability.options.usageTime || undefined,
+            isMagical: ability.options.isMagical,
+            tags:
+              ability.options.tags && ability.options.tags.length > 0
+                ? ability.options.tags
+                : undefined,
+          }
+          : undefined;
+        const hasSpecialOptions =
+          cleanSpecialOptions && Object.values(cleanSpecialOptions).some((v) => v !== undefined);
+        const optStr = hasSpecialOptions
+          ? `, ${formatValueToTSSingleLine(cleanSpecialOptions)}`
+          : '';
 
+        if (ability.name === 'Poisonous Strike') {
+          if (weapon && poison) {
+            lines.push(
+              `${indent}creature.addStandardPoisonousStrike(${formatValueToTSSingleLine(weapon)}, ${formatValueToTSSingleLine(poison)}${optStr});`,
+            );
+          }
+        } else if (weapon) {
           if (ability.name === 'Equip Weapon') {
             lines.push(`${indent}creature.addWeapon(${formatValueToTSSingleLine(weapon)});`);
           } else if (ability.name === 'Weapon Multiplier') {

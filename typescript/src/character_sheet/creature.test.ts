@@ -184,3 +184,27 @@ t.test('addThrowItem dynamically generates correct maneuvers', (t) => {
 
   t.end();
 });
+
+t.test('addStandardPoisonousStrike generates correct maneuver effect with clean lowercase poison name', (t) => {
+  const creature = Creature.new();
+  creature.setRequiredProperties({
+    alignment: 'chaotic evil',
+    base_class: 'skirmisher',
+    elite: false,
+    creature_origin: 'natural',
+    creature_type: 'humanoid',
+    level: 6,
+    size: 'medium',
+  });
+  creature.addStandardPoisonousStrike('stinger', 'Poison, Giant Wasp Venom');
+
+  const ability = creature.getActiveAbility('Giant Wasp Venom');
+  t.ok(ability, 'Ability should exist');
+  t.equal(ability?.kind, 'maneuver');
+  t.equal(ability?.name, 'Giant Wasp Venom');
+  t.match(
+    ability?.effect,
+    /\\injury The target becomes \\glossterm\{poisoned\} by giant wasp venom\./,
+  );
+  t.end();
+});

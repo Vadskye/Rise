@@ -6,6 +6,7 @@ import http from 'http';
 import { paths, getDb } from '../server/db';
 import {
   formatMissingWeaponWarning,
+  formatMissingPoisonWarning,
   formatFreeformCodeWarning,
   formatSharedFreeformCodeWarning,
   formatNoStandardActionWarning,
@@ -498,6 +499,76 @@ describe('Monster UI Integration Tests (Full Server)', () => {
     const result2 = await res2.json();
     expect(result2.warnings).not.toContain(formatMissingWeaponWarning('Throw Item', true));
     expect(result2.computedStats.activeAbilities.some((a: any) => a.name === 'Acid Flask')).toBe(
+      true,
+    );
+  });
+
+  test('POST /api/preview validates "Poisonous Strike" missing weapon/poison warning and compiles cleanly', async () => {
+    const monsterWithPoisonWarn = {
+      name: `PoisonWarnMonster_${Date.now()}`,
+      requiredProperties: {
+        alignment: 'neutral',
+        base_class: 'warrior',
+        elite: false,
+        creature_origin: 'natural',
+        creature_types: ['beast'],
+        size: 'medium',
+        level: 1,
+      },
+      freeformCode: '',
+      standardAbilities: [
+        {
+          type: 'maneuver',
+          name: 'Poisonous Strike',
+        },
+      ],
+    };
+
+    const res1 = await fetch(`${baseUrl}/api/preview`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ monster: monsterWithPoisonWarn }),
+    });
+    expect(res1.status).toBe(200);
+    const result1 = await res1.json();
+    expect(result1.warnings).toContain(formatMissingWeaponWarning('Poisonous Strike'));
+    expect(result1.warnings).toContain(formatMissingPoisonWarning('Poisonous Strike'));
+
+    const monsterWithPoisonOk = {
+      name: `PoisonOkMonster_${Date.now()}`,
+      requiredProperties: {
+        alignment: 'neutral',
+        base_class: 'warrior',
+        elite: false,
+        creature_origin: 'natural',
+        creature_types: ['beast'],
+        size: 'medium',
+        level: 1,
+      },
+      freeformCode: '',
+      weapons: [{ name: 'stinger' }],
+      standardAbilities: [
+        {
+          type: 'maneuver',
+          name: 'Poisonous Strike',
+          options: {
+            weapon: 'stinger',
+            poison: 'Poison, Asp Venom',
+          },
+        },
+      ],
+    };
+
+    const res2 = await fetch(`${baseUrl}/api/preview`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ monster: monsterWithPoisonOk }),
+    });
+    expect(res2.status).toBe(200);
+    const result2 = await res2.json();
+    expect(result2.warnings).not.toContain(formatMissingWeaponWarning('Poisonous Strike'));
+    expect(result2.warnings).not.toContain(formatMissingPoisonWarning('Poisonous Strike'));
+    expect(result2.computedStats.activeAbilities.some((a: any) => a.name === 'Asp Venom')).toBe(
       true,
     );
   });

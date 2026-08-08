@@ -9,6 +9,7 @@ interface CustomAbilitiesSectionProps {
   customAbilities: CustomAbilityConfig[];
   referenceWeapons: string[];
   referenceAlchemicalItems: string[];
+  referencePoisons?: string[];
   onChange: (updatedAbilities: CustomAbilityConfig[]) => void;
   expandedCard: string | null;
   onToggleExpand: (cardId: string) => void;
@@ -20,6 +21,7 @@ export const CustomAbilitiesSection: React.FC<CustomAbilitiesSectionProps> = ({
   customAbilities,
   referenceWeapons,
   referenceAlchemicalItems,
+  referencePoisons: _referencePoisons = [],
   onChange,
   expandedCard,
   onToggleExpand,

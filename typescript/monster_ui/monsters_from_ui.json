@@ -1386,6 +1386,67 @@
           "isMagical": false
         }
       ]
+    },
+    {
+      "name": "Giant Wasp",
+      "folder": "Beasts",
+      "requiredProperties": {
+        "alignment": "neutral",
+        "base_class": "skirmisher",
+        "elite": false,
+        "creature_origin": "natural",
+        "creature_types": [
+          "beast"
+        ],
+        "size": "medium",
+        "level": 1
+      },
+      "freeformCode": "",
+      "properties": {
+        "has_art": true
+      },
+      "knowledge": {
+        "easy": "",
+        "normal": "A giant wasp is a Medium insect resembling a normal wasp. Giant wasps attack when hungry or threatened, stinging their prey to death.",
+        "hard": "Giant wasps take dead or incapacitated opponents back to their lairs as food for their unhatched young."
+      },
+      "baseAttributes": [
+        1,
+        4,
+        0,
+        -8,
+        3,
+        2
+      ],
+      "trainedSkills": [
+        "awareness"
+      ],
+      "traits": [],
+      "customSenses": [
+        {
+          "type": "Scent"
+        }
+      ],
+      "customMovementSpeeds": [
+        {
+          "mode": "Fly",
+          "category": "average",
+          "limitType": "limit",
+          "limitValue": 60
+        }
+      ],
+      "customAbilities": [],
+      "standardAbilities": [
+        {
+          "type": "maneuver",
+          "name": "Poisonous Strike",
+          "options": {
+            "isMagical": false,
+            "weapon": "stinger",
+            "poison": "Giant Wasp Venom"
+          }
+        }
+      ]
     }
   ],
   "monsterGroups": [

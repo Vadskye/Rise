@@ -23,6 +23,7 @@ interface MonsterFormProps {
     weapons: string[];
     spheres: string[];
     alchemicalItems: string[];
+    poisons: string[];
   };
   folders?: string[];
 }
@@ -37,7 +38,14 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
   onDuplicateMonster,
   errors,
   warnings,
-  referenceData = { spells: [], maneuvers: [], weapons: [], spheres: [], alchemicalItems: [] },
+  referenceData = {
+    spells: [],
+    maneuvers: [],
+    weapons: [],
+    spheres: [],
+    alchemicalItems: [],
+    poisons: [],
+  },
   folders = [],
 }) => {
   // Design Decisions:

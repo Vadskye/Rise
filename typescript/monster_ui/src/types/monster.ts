@@ -16,6 +16,7 @@ export interface StandardAbilityConfig {
     usageTime?: string;
     isMagical?: boolean;
     weapon?: string;
+    poison?: string;
     tags?: string[];
   };
 }
@@ -27,6 +28,7 @@ export interface CustomAbilityAttackConfig {
   miss?: string;
   injury?: string;
   halfOnMiss?: boolean;
+  halfOnMissText?: string;
 }
 
 export interface CustomAbilityConfig {
@@ -39,6 +41,7 @@ export interface CustomAbilityConfig {
   tags?: string[];
   attack?: CustomAbilityAttackConfig;
   weapon?: string;
+  poison?: string;
 }
 
 export interface PassiveAbilityConfig {

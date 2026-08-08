@@ -1,5 +1,4 @@
 import { CharacterSheet } from '@src/character_sheet/character_sheet';
-import { ValidationIssue } from './validation';
 import {
   getCurrentCharacterSheet,
   setCurrentCharacterSheet,
@@ -30,7 +29,7 @@ import {
   RISE_KNOWLEDGE_SKILLS,
   RiseSkill,
 } from '@src/core_mechanics/skills';
-import { RISE_ATTRIBUTES, RiseAttribute, RiseAttributeModifier, RiseDefense } from '@src/core_mechanics/attributes';
+import { RiseAttribute, RiseAttributeModifier, RiseDefense } from '@src/core_mechanics/attributes';
 import { getManeuverByName, getWeaponMultByRank } from '@src/abilities/combat_styles';
 import { getSpellByName, SphereName } from '@src/abilities/mystic_spheres';
 import { MonsterWeapon, isManufactured, getWeaponTags } from '@src/monsters/weapons';
@@ -48,6 +47,7 @@ import { EquippedItem, isBodyArmor, isShield, BodyArmor, Shield } from '@src/mon
 import { KNOWLEDGE_BY_ORIGIN, KNOWLEDGE_BY_TYPE } from './knowledge';
 import { getArmorBaseDefinition, ArmorKind } from '@src/equipment/armor';
 import { alchemicalItems } from '@src/equipment/data/consumables/alchemical_items';
+import { getPoisonByName } from '@src/equipment/poison';
 import { getUpgradeItems } from '@src/equipment/types';
 import {
   combineDescriptions,
@@ -586,8 +586,9 @@ export class Creature implements CreaturePropertyMap {
     if (poison.it.trimEnd().slice(-1) !== '.') {
       console.warn(`Ability ${this.name}.${displayName}: poison.it should end with a period`);
     }
+    const cleanPoisonName = poison.name.replace(/^Poison,\s*/i, '').toLowerCase();
     maneuver.effect += `
-        ${poisonTrigger} The target becomes \\glossterm{poisoned} by ${poison.name}.
+        ${poisonTrigger} The target becomes \\glossterm{poisoned} by ${cleanPoisonName}.
           The poison's accuracy is $accuracy${formatNumericModifier(poison.accuracyModifier)}.
           It ${poison.it}
       `;
@@ -600,6 +601,25 @@ export class Creature implements CreaturePropertyMap {
       isMagical: Boolean(isMagical),
       usageTime,
       weapon,
+    });
+  }
+
+  addStandardPoisonousStrike(
+    weapon: MonsterWeapon,
+    poisonName: string,
+    options: MonsterNonweaponAbilityOptions = {},
+  ) {
+    const poisonDef = getPoisonByName(poisonName);
+    if (!poisonDef) {
+      this.throwError(`Could not find poison '${poisonName}'`);
+      return;
+    }
+    const cleanPoisonName = poisonDef.name.replace(/^Poison,\s*/i, '');
+    const displayName = options.displayName || cleanPoisonName;
+
+    this.addPoisonousStrike(weapon, poisonDef, {
+      ...options,
+      displayName,
     });
   }
 

@@ -821,7 +821,7 @@ function calcAccuracyCrScaling(level: number, _elite?: boolean) {
   return levelScaling;
 }
 
-function calcDefenseMonsterScaling(level: number, isMonster: boolean, elite: boolean) {
+function calcDefenseMonsterScaling(_level: number, isMonster: boolean, elite: boolean) {
   if (!isMonster) {
     return 0;
   }
