@@ -345,7 +345,8 @@
           "name": "Shadowstrike",
           "options": {
             "isMagical": true,
-            "weapon": "bite"
+            "weapon": "bite",
+            "usageTime": "elite"
           }
         },
         {
@@ -617,7 +618,8 @@
           "name": "Grappling Strike",
           "options": {
             "isMagical": false,
-            "weapon": "bite"
+            "weapon": "bite",
+            "usageTime": "elite"
           }
         }
       ],
@@ -876,7 +878,8 @@
             "weapon": "tentacle",
             "tags": [
               "Sweeping (7)"
-            ]
+            ],
+            "usageTime": "elite"
           }
         }
       ],
@@ -6578,7 +6581,7 @@
             -7,
             4,
             -3,
-            -7,
+            -8,
             2,
             -2
           ],
@@ -6625,7 +6628,7 @@
             0,
             1,
             0,
-            -7,
+            -8,
             2,
             -1
           ],
@@ -6691,6 +6694,16 @@
               "mode": "Land",
               "category": "slow"
             }
+          ],
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "bite"
+              }
+            }
           ]
         },
         {
@@ -6717,7 +6730,17 @@
           ],
           "knowledge": {
             "normal": "Light horses are typically used to carry riders, not to work or fight."
-          }
+          },
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "bite"
+              }
+            }
+          ]
         },
         {
           "name": "Pony",
@@ -6782,7 +6805,17 @@
           ],
           "knowledge": {
             "normal": "Warhorses are trained to carry riders into battle.\n            They are superior to other types of horses, but more expensive."
-          }
+          },
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "bite"
+              }
+            }
+          ]
         }
       ],
       "knowledge": {
@@ -6867,7 +6900,7 @@
             4,
             4,
             1,
-            -7,
+            -8,
             3,
             0
           ],

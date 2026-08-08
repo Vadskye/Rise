@@ -99,7 +99,7 @@ function addIchorTainted(grimoire: Grimoire) {
             size: 'medium',
           });
           creature.setTrainedSkills(['awareness', 'survival']);
-          creature.setBaseAttributes([4, 5, 3, -7, 4, 0]);
+          creature.setBaseAttributes([4, 5, 3, -8, 4, 0]);
           creature.addTrait('quadrupedal');
 
           creature.addManeuver('Crush the Fallen', { weapon: 'bite' });
