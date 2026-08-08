@@ -2642,7 +2642,8 @@
                 "usageTime": "elite"
               }
             }
-          ]
+          ],
+          "equippedArmor": "rawhide"
         },
         {
           "name": "Stone Giant Elder",
@@ -2721,7 +2722,8 @@
                 "usageTime": "elite"
               }
             }
-          ]
+          ],
+          "equippedArmor": "leather lamellar"
         }
       ],
       "knowledge": {
