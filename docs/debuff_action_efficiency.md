@@ -5,6 +5,7 @@ Debuffs can be grouped according to their action efficiency. Essentially, making
 ## Summary
 
 By EA:
+
 ```
   Debuff             & Injury Brief & Brief & Injury Condition & Condition \\
   Action skip        & 2.0          & 3.0   & 4.8              & 12        \\
@@ -46,6 +47,7 @@ By EA:
 By rank:
 "2d" means "rank 2 if combined with damage". It's used for effects that are too weak to ever appear as standalone spells.
 "inf" means the effect is too strong to ever appear as a spell without weird tricks.
+
 ```
   Debuff             & Injury Brief & Brief & Injury Condition & Condition \\
   Action skip        & 4            & 9     & inf              & inf       \\
@@ -86,38 +88,38 @@ By rank:
 
 ### Effective actions by rank
 
-* Rank 1: 1.4
-* Rank 2: 1.6
-* Rank 3: 1.8
-* Rank 4: 2
-* Rank 5: 2.2
-* Rank 6: 2.4
-* Rank 7: 2.6
-* Rank 8: 2.8
-* Rank 9: 3.0
-* Rank 10: 3.2
-* Rank 11: 3.4
-* Rank 12: 3.6
+- Rank 1: 1.4
+- Rank 2: 1.6
+- Rank 3: 1.8
+- Rank 4: 2
+- Rank 5: 2.2
+- Rank 6: 2.4
+- Rank 7: 2.6
+- Rank 8: 2.8
+- Rank 9: 3.0
+- Rank 10: 3.2
+- Rank 11: 3.4
+- Rank 12: 3.6
 
 ### Effective Action Modifiers
 
 These are EA modifiers, as opposed to rank modifiers that apply after calculating EA and damage.
 
-* +0.8 EA: Condition becomes a static zone that does not require attacks or persist effects on creatures that leave - Sustain (attunable, minor)
-* -0.2 EA: Condition becomes a static zone that does not require attacks or persist effects on creatures that leave - Sustain (attunable, standard)
-* x0.5 EA: Condition can be removed with a DV 10 check as a move action, with +5 bonus for dropping prone.
-* x0.5 EA: Condition can be removed with a DV 8 check as a move action, with a +5 bonus as a standard action.
-* x0.4 EA: Condition becomes a HP-only condition
-* +0.2 EA: Condition becomes a Sustain (minor)
-* +0.4 EA: Can prefire an HP condition (instead of only applying the condition if the target is already in HP, the condition automatically has its full effect as soon as the target is in HP)
-* +0.4 EA: You can combine a brief effect with an HP condition effect, starting from the higher EA of the two. For example, "briefly dazed, or dazed as a condition if injured" is a 2.0 EA effect.
-* +0.4 EA: Condition becomes a curse
-* +0.2 EA: Condition becomes a poison
-* +1 EA: The effect becomes a Sustain (minor) zone that repeats its attack each round. This also comes with -2dr, and the area must be a ranged radius (not a radius from self).
-* -0.2 EA: -2 accuracy
-* -0.4 EA: -4 accuracy
-* -1 EA: The effect only works if you hit the creature with it twice.
-* -2 EA: The effect only works if you hit the creature with it twice, both times while it is in HP.
+- +0.8 EA: Condition becomes a static zone that does not require attacks or persist effects on creatures that leave - Sustain (attunable, minor)
+- -0.2 EA: Condition becomes a static zone that does not require attacks or persist effects on creatures that leave - Sustain (attunable, standard)
+- x0.5 EA: Condition can be removed with a DV 10 check as a move action, with +5 bonus for dropping prone.
+- x0.5 EA: Condition can be removed with a DV 8 check as a move action, with a +5 bonus as a standard action.
+- x0.4 EA: Condition becomes a HP-only condition
+- +0.2 EA: Condition becomes a Sustain (minor)
+- +0.4 EA: Can prefire an HP condition (instead of only applying the condition if the target is already in HP, the condition automatically has its full effect as soon as the target is in HP)
+- +0.4 EA: You can combine a brief effect with an HP condition effect, starting from the higher EA of the two. For example, "briefly dazed, or dazed as a condition if injured" is a 2.0 EA effect.
+- +0.4 EA: Condition becomes a curse
+- +0.2 EA: Condition becomes a poison
+- +1 EA: The effect becomes a Sustain (minor) zone that repeats its attack each round. This also comes with -2dr, and the area must be a ranged radius (not a radius from self).
+- -0.2 EA: -2 accuracy
+- -0.4 EA: -4 accuracy
+- -1 EA: The effect only works if you hit the creature with it twice.
+- -2 EA: The effect only works if you hit the creature with it twice, both times while it is in HP.
 
 ## Debuff Area
 
@@ -126,12 +128,13 @@ All of the effective action calculations assume that every enemy in the fight is
 ### Limited Scope Debuffs
 
 You can apply a stronger debuff if you are willing to affect fewer enemies. There are three versions of a limited scope debuff:
-* Rank - 1: Rank X / 2 area, to a minimum of rank 0
-* Rank - 2: Single target melee range
+
+- Rank - 1: Rank X / 2 area, to a minimum of rank 0
+- Rank - 2: Single target melee range
 
 ### Expanded Area
 
-Normally, debuff areas can't reach beyond 60' from self. If you pay 0.2 EA, you can get access to longer range areas.  
+Normally, debuff areas can't reach beyond 60' from self. If you pay 0.2 EA, you can get access to longer range areas.
 
 ## Defense penalties
 
@@ -139,19 +142,19 @@ Normally, debuff areas can't reach beyond 60' from self. If you pay 0.2 EA, you 
 
 Assume that there are four party members, and each party member has a baseline 70% chance to hit. What is the action effectiveness of a -2 defense debuff on the enemy?
 
-Without the debuff, expected hits is 4 * 0.7 = 2.8.
-With the debuff, expected hits is 4 * 0.9 = 3.6.
+Without the debuff, expected hits is 4 _ 0.7 = 2.8.
+With the debuff, expected hits is 4 _ 0.9 = 3.6.
 
 Consider the case with a 10% chance to hit.
 
-Without the debuff, expected hits is 4 * 0.1 = 0.4.
-With the debuff, expected hits is 4 * 0.3 = 1.2.
+Without the debuff, expected hits is 4 _ 0.1 = 0.4.
+With the debuff, expected hits is 4 _ 0.3 = 1.2.
 
 #### Daze with typical defenses
 
 As a baseline, assume that all four party members have a 70% chance to hit. Expected hits with 8 regular attacks is 5.6.
 
-If you use your first action for a daze, you have a 70% chance to apply the effect, which would result in 7 attacks at a 90% chance to hit, or 6.3 hits. You also have a 30% chance to miss, which results in 7 attacks at a 70% chance to hit, or 4.9 hits. That means the expected hit count when using the daze is 6.3 * .7 + 4.9 * .3 = 4.4 + 1.5 = 5.9.
+If you use your first action for a daze, you have a 70% chance to apply the effect, which would result in 7 attacks at a 90% chance to hit, or 6.3 hits. You also have a 30% chance to miss, which results in 7 attacks at a 70% chance to hit, or 4.9 hits. That means the expected hit count when using the daze is 6.3 _ .7 + 4.9 _ .3 = 4.4 + 1.5 = 5.9.
 
 The difference between you doing nothing and using the daze was therefore 5.9 - 4.9 = 1. In this scenario, daze was worth 1 full effective hit when a regular attack would only be worth 0.7 effective hits, so daze is worth 1.4 effective actions.
 
@@ -159,7 +162,7 @@ The difference between you doing nothing and using the daze was therefore 5.9 - 
 
 Now assume that all four party members have a 10% chance to hit. Expected hits with 8 regular attacks is 0.8.
 
-If you use your first action for a daze, you have a 10% chance to apply the effect, which would result in 7 attacks at a 30% chance to hit, or 2.1 hits. You also have a 90% chance to miss, which results in 7 attacks at a 10% chance to hit, or 0.7 hits. That means that the effective hit count when using the daze is 2.1 * .1 + .7 * .9 = .21 + .63 = .84.
+If you use your first action for a daze, you have a 10% chance to apply the effect, which would result in 7 attacks at a 30% chance to hit, or 2.1 hits. You also have a 90% chance to miss, which results in 7 attacks at a 10% chance to hit, or 0.7 hits. That means that the effective hit count when using the daze is 2.1 _ .1 + .7 _ .9 = .21 + .63 = .84.
 
 The difference between you doing nothing and using the daze was therefore .84 - .7 = .14. In this scenario, daze was worth .14 full hits when a regular attack would only be worth .1 hits, so daze is worth 1.4 effective actions.
 
@@ -186,13 +189,13 @@ hit_probability * 4 = expected_hits
 
 As a baseline, assume the enemy has a 70% chance to hit. Expected hits with 4 actions is 2.8 hits.
 
-If they have a -2 accuracy penalty, they drop to a 50% chance to hit, so expected hits is 2 hits. (1 - 2 / 2.8) = 28.6% of enemy actions were removed. That means a -2 accuracy penalty has an effective action value of 4 * 0.29 = 1.1 effective actions.
+If they have a -2 accuracy penalty, they drop to a 50% chance to hit, so expected hits is 2 hits. (1 - 2 / 2.8) = 28.6% of enemy actions were removed. That means a -2 accuracy penalty has an effective action value of 4 \* 0.29 = 1.1 effective actions.
 
-From the formula: EA = 4 * 0.2 / 0.7 = 1.1 EA
+From the formula: EA = 4 \* 0.2 / 0.7 = 1.1 EA
 
 #### -2 with 50% hit rate: 1.6
 
-From the formula: EA = 4 * 0.2 / 0.5 = 1.6 EA
+From the formula: EA = 4 \* 0.2 / 0.5 = 1.6 EA
 
 #### -2 with 30% hit rate: 2.7
 
@@ -200,7 +203,7 @@ EA = 0.8 / 0.3 = 2.7 EA
 
 #### -1 with lowish defenses: 0.6
 
-EA = 4 * 0.1 / 0.7 = 0.6 EA
+EA = 4 \* 0.1 / 0.7 = 0.6 EA
 
 #### -1 with 50% hit rate: 0.8
 
@@ -212,29 +215,29 @@ EA = 0.4 / 0.3 = 1.3 EA
 
 #### -4 with 70% hit rate: 2.3
 
-EA = 4 * 0.4 / 0.7 = 2.3 EA
+EA = 4 \* 0.4 / 0.7 = 2.3 EA
 
 #### -4 with 50% hit rate: 3.2
 
-EA = 4 * 0.4 / 0.5 = 3.2 EA
+EA = 4 \* 0.4 / 0.5 = 3.2 EA
 
 ### Roll twice, keep lower with 70% hit rate: 1.1
 
 Expected hits is 2.8 over 4 actions
 
-Expected hit rate is 0.7 * 0.7 = 0.5 chance to hit, so 2 hits. (1 - 2 / 2.8) = 28.6% of enemy actions were removed, the same as a -2 accuracy penalty
+Expected hit rate is 0.7 \* 0.7 = 0.5 chance to hit, so 2 hits. (1 - 2 / 2.8) = 28.6% of enemy actions were removed, the same as a -2 accuracy penalty
 
 ### Roll twice, keep lower with 50% hit rate: 2.0
 
 Baseline is 2 expected hits over 4 actions.
 
-Expected hit rate is 0.5 * 0.5 = 0.25 chance to hit, so 1 hit. (1 - 1 / 2) = 50% of enemy actions were removed, so 2 EA
+Expected hit rate is 0.5 \* 0.5 = 0.25 chance to hit, so 1 hit. (1 - 1 / 2) = 50% of enemy actions were removed, so 2 EA
 
 ### Roll twice, keep lower with high defenses: 2.8
 
 Assume 30% hit rate, with 1.2 expected hits over 4 actions.
 
-Expected hit rate is 0.3 * 0.3 = 0.09 chance to hit, so 0.36 hits. 70% of enemy actions were removed.
+Expected hit rate is 0.3 \* 0.3 = 0.09 chance to hit, so 0.36 hits. 70% of enemy actions were removed.
 
 #### Conclusion
 
@@ -280,7 +283,7 @@ As a baseline, confused has the effect of dazed, which is worth 1.4 effective ac
 The random behavior of confusion is trickier to calculate.
 Assume that a typical monster would normally have a 90% chance of attacking and a 10% chance of using a non-attack ability.
 If it's forced to use an alternate ability, using a non-attack when it would rather attack is 25% as effective, while using an attack when it would rather not attack is 75% as effective.
-Total monster effectiveness is 0.9 * (0.5 * 1 + 0.5 * 0.25) + 0.1 * (0.5 * 1 + 0.5 * 0.75) = 0.9 * 0.625 + 0.1 + 0.875 = 0.65.
+Total monster effectiveness is 0.9 _ (0.5 _ 1 + 0.5 _ 0.25) + 0.1 _ (0.5 _ 1 + 0.5 _ 0.75) = 0.9 \* 0.625 + 0.1 + 0.875 = 0.65.
 
 Removing 0.35 monster actions is worth 1.4 effective actions.
 
@@ -288,9 +291,13 @@ Removing 0.35 monster actions is worth 1.4 effective actions.
 
 If you daze an enemy as the first action of the round, the party has 7 attacks that can take advantage of the daze debuff: your three party members during the first round, and the full party during the second round.
 
+### Sickened: 1.0
+
+Assume sickened is ~20% less damage. That's not quite as good as 20% action denial because not all attacks are damaging, so call it 15% action denial. That's 0.6 EA. Assume the party also has 2/7 attacks that can take advantage of the -2 Fortitude, so 1.0 EA total.
+
 ### Dazzled: 0.6
 
-Fully denying all enemies all actions for a round would have an effective action count of 4, since the party gets 4 actions per round. Therefore, removing  20% of enemy actions for a round is worth 20% of 4 = 0.8 effective actions.
+Fully denying all enemies all actions for a round would have an effective action count of 4, since the party gets 4 actions per round. Therefore, removing 20% of enemy actions for a round is worth 20% of 4 = 0.8 effective actions.
 
 In practice, it's a little lower than this, because dazzled doesn't affect AOE attacks. As a baseline, it's reasonable to assume that 75% of enemy attacks are individually targeted and 25% are AOE, so the total action effectiveness of a one-round dazzle is 75% of 0.8 = 0.6 effective actions.
 
@@ -300,7 +307,7 @@ Deafened is basically the same as dazzled, except that the restriction is "spell
 
 ### Exposed: 0.6 EA
 
--4 defenses against *one* attack is 0.4 EA using our normal calculation. Assume that this is used on an usually effective attack by an ally, so increase to 0.6 EA. Intuitively, exposed seems less dangerous than briefly dazed, but not *drastically* less dangerous, so 0.6 feels low or about right.
+-4 defenses against _one_ attack is 0.4 EA using our normal calculation. Assume that this is used on an usually effective attack by an ally, so increase to 0.6 EA. Intuitively, exposed seems less dangerous than briefly dazed, but not _drastically_ less dangerous, so 0.6 feels low or about right.
 
 ### Frightened by you: 0.8
 
@@ -308,7 +315,7 @@ Frightened is a more complicated and conditional effect than most debuffs. It ha
 
 Assuming that the enemy attacks all party members equally, the frightened accuracy penalty applies 33% of the time, and it removes 33% of enemy actions when it applies (see Accuracy Penalties, above). Therefore, it is worth 4 / 3 / 3 = 0.4 effective actions on average, with a maximum effectiveness of 1.3 assuming that the enemy always attacks the source of their fear. This is the same as the buff value of self-brace.
 
-The Mental defense penalty can apply to 7 party attacks (see Dazed). However, most party members can't take full advantage of a single-defense penalty like that, and even if they can attack Mental it may still be a relatively high defense for the monster. As a wild estimate, assume that half of the party's attacks can benefit from the defense penalty, and that this is still only relevant for half of monsters. When the penalty is relevant, it provides 0.2 effective actions per attack. That would be worth 7 * 0.5 * 0.5 * 0.2 = 0.35 effective actions on average, to a maximum of 1.4 effective actions assuming that every party member always attacks Mental defense.
+The Mental defense penalty can apply to 7 party attacks (see Dazed). However, most party members can't take full advantage of a single-defense penalty like that, and even if they can attack Mental it may still be a relatively high defense for the monster. As a wild estimate, assume that half of the party's attacks can benefit from the defense penalty, and that this is still only relevant for half of monsters. When the penalty is relevant, it provides 0.2 effective actions per attack. That would be worth 7 _ 0.5 _ 0.5 \* 0.2 = 0.35 effective actions on average, to a maximum of 1.4 effective actions assuming that every party member always attacks Mental defense.
 
 That adds up to 0.75 effective actions for frighten.
 
@@ -324,11 +331,11 @@ That adds up to 0.75 effective actions for frighten.
 
 Assuming that the monster attacks all party members equally, goaded applies to 75% of its attacks.
 
-Since -2a is 1.6 EA when it applies, that gives it 1.6 * 0.75 = 1.2 action effectiveness.
+Since -2a is 1.6 EA when it applies, that gives it 1.6 \* 0.75 = 1.2 action effectiveness.
 
 ### Fling 15': 1.0 (ranged) / 0.8 (melee)
 
-In addition to the utility from pushing into hazards, a vertical fling can leave enemies in midair. A -2 penalty to Armor/Brawn/Reflex against 3 potential party attacks is worth about 0.6 EA by itself. Add in 0.4/0.2 EA from the regular push effect, since you can get either but not generally both. Note that fling *always* requires injury, because instantly killing off a cliff from full HP is too dangerous.
+In addition to the utility from pushing into hazards, a vertical fling can leave enemies in midair. A -2 penalty to Armor/Brawn/Reflex against 3 potential party attacks is worth about 0.6 EA by itself. Add in 0.4/0.2 EA from the regular push effect, since you can get either but not generally both. Note that fling _always_ requires injury, because instantly killing off a cliff from full HP is too dangerous.
 
 ### Fling 30' (vertical): 2.6 (ranged) / 2.1 (melee)
 
@@ -362,11 +369,11 @@ If a prone or slow is applied by a melee ability, halve the EA contribution from
 
 A pull is hard to use for kiting, though it can be useful for locking an enemy down on the tank. It can also be used to trigger battlefield hazards. Assume that 75% of the time a pull will be used to control enemy attacks and 25% of the time it will be used for battlefield hazards.
 
-When used to control enemy targeting, assume that the post-pull action is 25% action denial, and a 15' pull meaningfully changes enemy actions 50% of the time. That means it's worth 4 * 0.25 * 0.5 = 0.5 EA. The overall value is 0.75 * 0.5 + 0.25 * 0.5 = 0.5 EA.
+When used to control enemy targeting, assume that the post-pull action is 25% action denial, and a 15' pull meaningfully changes enemy actions 50% of the time. That means it's worth 4 _ 0.25 _ 0.5 = 0.5 EA. The overall value is 0.75 _ 0.5 + 0.25 _ 0.5 = 0.5 EA.
 
 ### Pull 30': 1.5
 
-Assume that a post-pull action is 33% action denial, and a 30' pull meaningfull changes enemy actions 75% of the time. That means it's worth 4 * 0.33 * 0.75 = 1 EA.
+Assume that a post-pull action is 33% action denial, and a 30' pull meaningfull changes enemy actions 75% of the time. That means it's worth 4 _ 0.33 _ 0.75 = 1 EA.
 
 ### Pull 60': 2.5
 
@@ -376,7 +383,7 @@ This seems like 50% action denial, so 2 EA.
 
 In many cases, a 15' push has no meaningful effect. Typically, forced movement is useful when combined with two things: kiting and battlefield hazards. In a kiting scenario, a 15' push will often force the target to run, wasting a standard action. Triggering a battlefield hazard is generally worth half an action, since deployed hazards are generally less powerful than a full standard action attack. Assume that 75% of the time a push will be used for kiting and 25% of the time it will be used for battlefield hazards.
 
-When used for kiting, a 15' push is basically the same EA as prone or slow, which we estimate as 1 effective action. Triggering a battlefield hazard is worth 0.5 EA. That gives a total EA value of 0.75 * 1 + 0.25 * 0.5 = 0.9.
+When used for kiting, a 15' push is basically the same EA as prone or slow, which we estimate as 1 effective action. Triggering a battlefield hazard is worth 0.5 EA. That gives a total EA value of 0.75 _ 1 + 0.25 _ 0.5 = 0.9.
 
 ### Push 30': 2.0 (ranged) / 1.5 (melee)
 
@@ -390,7 +397,7 @@ If you can freely choose a single defense to reduce, you can typically choose th
 
 Slowed has two effects: the speed debuff and the defense debuff.
 
-The speed debuff is hard to calculate. It enables kiting, which can theoretically end some encounters, but that's a fairly rare circumstance. As a guess, assume that this forces the monster to use 50% of its actions to mitigate the speed debuff and that its replacement action is 50% as effective. For example, it may run instead of making a stronger attack, and it may attack a frontline tank party member instead of being able to reach the backline. That gives it 4 * 0.5 * 0.5 = 1 effective action.
+The speed debuff is hard to calculate. It enables kiting, which can theoretically end some encounters, but that's a fairly rare circumstance. As a guess, assume that this forces the monster to use 50% of its actions to mitigate the speed debuff and that its replacement action is 50% as effective. For example, it may run instead of making a stronger attack, and it may attack a frontline tank party member instead of being able to reach the backline. That gives it 4 _ 0.5 _ 0.5 = 1 effective action.
 
 The defense debuff is mostly the same as dazed, except that not all party members will be able to take advantage of it. Armor + Reflex is still fairly common, so assume that 5 of the 7 attacks will benefit from the defense debuff, for a total of 1 action effectiveness.
 
@@ -418,16 +425,17 @@ There are two components to being treated as invisible: the defense penalty and 
 
 The defense penalty only applies to your own attacks, so the party has 1 attack that can take advantage of it, so it's worth 0.2 effective actions.
 
-The miss chance applies to roughly 25% of boss attacks. Since blindness is worse than a regular 50% miss chance due to needing to know the square, call it 75% action negation when it applies. In particular, if they treat you as briefly being invisible, they often can't follow you if you move away. That gives it an action effectiveness of 4 * 0.25 * 0.75 = 0.75 effective actions. As with panicked, this is a little low and doesn't take into account the edge case of multiple people using this ability, but a 50% miss chance is much less effective at completely debilitating a boss than panicked. Say that the action denial is 25% more effective, for a total of 0.94 effective actions.
+The miss chance applies to roughly 25% of boss attacks. Since blindness is worse than a regular 50% miss chance due to needing to know the square, call it 75% action negation when it applies. In particular, if they treat you as briefly being invisible, they often can't follow you if you move away. That gives it an action effectiveness of 4 _ 0.25 _ 0.75 = 0.75 effective actions. As with panicked, this is a little low and doesn't take into account the edge case of multiple people using this ability, but a 50% miss chance is much less effective at completely debilitating a boss than panicked. Say that the action denial is 25% more effective, for a total of 0.94 effective actions.
 
 ### Vulnerable: 3.5
 
 Following the logic of being dazed, being vulnerable to all damage would be worth 2.8 action effectiveness. Add 25% effectiveness because it negates resistant/immune, so 3.5 EA.
 
 ## Debuff Condition Action Effectiveness
+
 Assume that a normal group combat lasts for 16 player effective actions, and a typical boss fight lasts for 20 player effective actions. If you apply a condition to a boss on round 1, it will have the opportunity to remove that condition during rounds 2, 3, and 4. On average, the condition lasts for 2 + 0.6 + (0.6)^2 + (0.6)^3 = 3.18 rounds.
 
-However, that only applies if the condition is the *only* condition applied during the fight. If the elite would also need to remove other conditions, the condition should last longer.
+However, that only applies if the condition is the _only_ condition applied during the fight. If the elite would also need to remove other conditions, the condition should last longer.
 That's basically the same as the expected condition duration in a group fight, since non-elites can't remove conditions. If the elite monster gains two conditions, the odds of removal are more complicated to calculate, but I'll wave my hand and say that it lets us go up to 4 rounds of combat. Or so.
 
 Basically, we can generally assume that a condition lasts for 4 rounds of combat. That generally means that the maximum player action count is 15. For enemy attack debuffs, you sometimes go before the enemies and sometimes after, so estimate that 3.5 rounds of enemy attacks are affected by enemy attack debuffs.
@@ -441,41 +449,49 @@ We can solve that by making "cannot be reapplied" an intrinsic part of the defin
 In short, X% action denial is worth X% of 14 EA.
 
 Examples of action denial:
-* A -2 accuracy penalty is 28.6% action denial of 14 EA = 4 EA.
-* Dazzled would remove 20% of 75% of 14 EA = 2.1 effective actions.
-* Confusion removes 35% of 14 EA = 4.9 EA (ignoring the defense debuff).
-* Slowed removes 12.5% of 14 EA = 1.8 EA (ignoring the defense debuff).
+
+- A -2 accuracy penalty is 28.6% action denial of 14 EA = 4 EA.
+- Dazzled would remove 20% of 75% of 14 EA = 2.1 effective actions.
+- Confusion removes 35% of 14 EA = 4.9 EA (ignoring the defense debuff).
+- Slowed removes 12.5% of 14 EA = 1.8 EA (ignoring the defense debuff).
 
 ### Action skip: 14
 
 ### Banishment: 10.5
+
 Say that this is 75% of the effectiveness of a full action skip.
 
 ### Blinded: 10
-Removing 50% of enemy actions is worth 14 * 0.5 = 7 effective actions.
+
+Removing 50% of enemy actions is worth 14 \* 0.5 = 7 effective actions.
 
 Partially unaware is worth 3 effective actions using the same logic as being dazed.
 
 ### Confused: 7.9
+
 35% action denial is worth 4.9 EA. The defense debuff is worth 3 effective actions, just like dazed.
 
 ### Dazed: 3
 
-15 affected player actions * 0.2 action effectiveness per action = 3 effective actions.
+15 affected player actions \* 0.2 action effectiveness per action = 3 effective actions.
 
 ### Dazzled: 2.1
+
 75% of 20% action denial is worth 1.8 EA.
 
 ### Deafened: 1.4
+
 Assume this is 10% action denial.
 
 ### Frightened by you: 2.1
+
 -2 accuracy applies 33% of the time, which is 4 / 3 = 1.3 EA.
 
-Assuming the Mental penalty applies to 25% of attacks as before, it is worth 15 * 0.25 * 0.2 = 0.8 effective actions.
+Assuming the Mental penalty applies to 25% of attacks as before, it is worth 15 _ 0.25 _ 0.2 = 0.8 effective actions.
 
 ### Frightened by ally: 2.8
--2 accuracy applies 50% of the time, so 4 * 0.5 = 2 EA. Same defense modifier, so 2.8 EA.
+
+-2 accuracy applies 50% of the time, so 4 \* 0.5 = 2 EA. Same defense modifier, so 2.8 EA.
 
 ### Frightened by all: 4.8
 
@@ -483,7 +499,7 @@ Assuming the Mental penalty applies to 25% of attacks as before, it is worth 15 
 
 ### Goaded: 3
 
--2 accuracy applies 75% of the time, which is 4 * 0.75 = 3 EA.
+-2 accuracy applies 75% of the time, which is 4 \* 0.75 = 3 EA.
 
 ### Panicked by self: 6.1
 
@@ -504,6 +520,7 @@ Prone as a condition is basically the same as slow, but with a slightly more pun
 Choosing a single defense probably affects 10 of the 15 available player actions.
 
 ### Slowed: 5.2 (ranged) / 3.7 (melee)
+
 We calculated the action denial from the speed debuff as 25% action denial, which is 3.5 effective actions. In melee, that would be 1.75 effective actions.
 For the defense debuff, assume that 11 of the 15 party actions will take advantage of it, so it's worth 2.2 effective actions.
 
@@ -517,9 +534,10 @@ For the defense debuff, assume that 11 of the 15 party actions will take advanta
 
 The defense penalty applies to 3 party attacks, so it provides 0.6 action effectiveness.
 
-The blindness is 14 * 0.25 * 0.75 = 2.6 effective actions. The brief effect gets a 25% boost here, but a condition is easier to game by having only the invisible person stick around to fight, so give it a 50% boost to 3.9.
+The blindness is 14 _ 0.25 _ 0.75 = 2.6 effective actions. The brief effect gets a 25% boost here, but a condition is easier to game by having only the invisible person stick around to fight, so give it a 50% boost to 3.9.
 
 ### Vulnerable: 7.5
+
 Double dazed, plus 25% effectiveness for negating resistant/immune.
 
 ## Injury Condition Effectiveness
@@ -544,7 +562,7 @@ In general, most debuffs benefit to the same small degree with precision targeti
 
 A debuff's effective action count is measured assuming that the ability hits, but effective action count measures a value that does not assume a hit.
 
-One "effective action" of damage is not the same as the damage dealt by a standard attack *on hit*; it corresponds to the damage dealt by that attack assuming average hit results. Consider a hypothetical "debuff" that inflicted 1 effective action of damage on hit. The correct value of that damage is about 0.7x the damage dealt by a spell of the same rank on hit.
+One "effective action" of damage is not the same as the damage dealt by a standard attack _on hit_; it corresponds to the damage dealt by that attack assuming average hit results. Consider a hypothetical "debuff" that inflicted 1 effective action of damage on hit. The correct value of that damage is about 0.7x the damage dealt by a spell of the same rank on hit.
 
 Put another way, in order to be worth using, a debuff has to provide more than 1 effective action of value when it hits, because attacks deal more than 1 "effective action" of damage on hit. Since we generally assume a 70% hit chance, the standard effective action value for a rank 1 Medium debuff should be 1 / 0.7 = about 1.4 effective actions.
 
@@ -562,62 +580,62 @@ For example, a rank 1 spell normally provides 1.4 EA of value on hit. A rank 1 s
 
 Because this scaling balance requires the corresponding effect to have area scaling, this accuracy penalty cannot be applied to spells using limited scope (see Debuff Area).
 
-Essentially, -4 accuracy at rank X is equivalent to a standard effect of rank X+4. 
+Essentially, -4 accuracy at rank X is equivalent to a standard effect of rank X+4.
 
 ## Standard effects by rank
 
-* Rank 1 (1.4 EA):
-  * Briefly dazed
-  * Goaded if in HP, +1 accuracy
-  * Prone, +2 accuracy
-  * Dazed as a HP condition, +2 accuracy
-  * 1 EA of damage, briefly deafened
-  * Briefly confused, -3 accuracy
-* Rank 2 (1.6 EA):
-  * 1 EA of damage, briefly dazzled
-  * 1 EA of damage, deafened if lose HP
-  * 1 EA of damage, goaded briefly / as a HP condition
-  * Briefly slowed
-  * Slowed as a HP condition
-  * Deafened as a condition
-* Rank 3 (1.8 EA):
-  * 1 EA of damage, briefly frightened
-  * 1 EA of damage, frightened as a HP condition
-  * Vulnerable as a HP condition
-* Rank 4 (2 EA):
-  * Action skip
-  * Banished
-  * Frightened as a condition
-  * 1 EA of damage, briefly prone
-  * 1 EA of damage, dazed as a HP condition
-* Rank 5 (2.2 EA):
-  * 1 EA of damage, briefly treat as invisible
-* Rank 6 (2.4 EA):
-  * 1 EA of damage, briefly dazed
-  * Briefly panicked
-  * Dazzled as a condition
-  * Goaded as a condition
-* Rank 7 (2.6 EA):
-  * 1 EA of damage, deafened as a condition
-  * 1 EA of damage, briefly slowed
-  * Brief time skip
-  * Panicked as a HP condition
-* Rank 8 (2.8 EA):
-  * Briefly confused
-  * Briefly vulnerable
-* Rank 9 (3.0 EA):
-  * 1 EA of damage, action skip
-  * 1 EA of damage, banishment
-  * 1 EA of damage, frightened as a HP condition
-  * Briefly blinded
-  * Confused as a HP condition
-  * Dazed as a condition
-* Rank 10 (3.2 EA):
-* Rank 11 (3.4 EA):
-  * 1 EA of damage, dazzled as a condition
-* Rank 12 (3.6 EA):
-* Rank 13 (3.8 EA):
-* Rank 14 (4 EA):
+- Rank 1 (1.4 EA):
+  - Briefly dazed
+  - Goaded if in HP, +1 accuracy
+  - Prone, +2 accuracy
+  - Dazed as a HP condition, +2 accuracy
+  - 1 EA of damage, briefly deafened
+  - Briefly confused, -3 accuracy
+- Rank 2 (1.6 EA):
+  - 1 EA of damage, briefly dazzled
+  - 1 EA of damage, deafened if lose HP
+  - 1 EA of damage, goaded briefly / as a HP condition
+  - Briefly slowed
+  - Slowed as a HP condition
+  - Deafened as a condition
+- Rank 3 (1.8 EA):
+  - 1 EA of damage, briefly frightened
+  - 1 EA of damage, frightened as a HP condition
+  - Vulnerable as a HP condition
+- Rank 4 (2 EA):
+  - Action skip
+  - Banished
+  - Frightened as a condition
+  - 1 EA of damage, briefly prone
+  - 1 EA of damage, dazed as a HP condition
+- Rank 5 (2.2 EA):
+  - 1 EA of damage, briefly treat as invisible
+- Rank 6 (2.4 EA):
+  - 1 EA of damage, briefly dazed
+  - Briefly panicked
+  - Dazzled as a condition
+  - Goaded as a condition
+- Rank 7 (2.6 EA):
+  - 1 EA of damage, deafened as a condition
+  - 1 EA of damage, briefly slowed
+  - Brief time skip
+  - Panicked as a HP condition
+- Rank 8 (2.8 EA):
+  - Briefly confused
+  - Briefly vulnerable
+- Rank 9 (3.0 EA):
+  - 1 EA of damage, action skip
+  - 1 EA of damage, banishment
+  - 1 EA of damage, frightened as a HP condition
+  - Briefly blinded
+  - Confused as a HP condition
+  - Dazed as a condition
+- Rank 10 (3.2 EA):
+- Rank 11 (3.4 EA):
+  - 1 EA of damage, dazzled as a condition
+- Rank 12 (3.6 EA):
+- Rank 13 (3.8 EA):
+- Rank 14 (4 EA):
 
 ### Debuff + Damage
 
@@ -628,57 +646,61 @@ A 30' range single-target debuff deals drX-1 damage, since a normal 30' range si
 ### Strike-based debuffs
 
 A strike with unrestricted weapon types uses "limited scope", so it gets an extra 0.2 EA available. Melee-only gets an extra 0.4 EA available. That means:
-* Rank 1: 1.6 / 1.8 EA
-* Rank 3: 2.0 / 2.2 EA
-* Rank 5: 2.4 / 2.6 EA
-* Rank 7: 2.8 / 3.0 EA
+
+- Rank 1: 1.6 / 1.8 EA
+- Rank 3: 2.0 / 2.2 EA
+- Rank 5: 2.4 / 2.6 EA
+- Rank 7: 2.8 / 3.0 EA
 
 A damage + debuff spell consistently pays 1 EA for the damage, and the damage is -1d relative to a normal damaging spell (so about 80% damage). Strikes have trickier scaling, so they pay a variable EA cost for the strike component of the attack.
-* Rank 1: A strike is relatively high damage, so it costs 1.2 EA.
-* Rank 3: A strike is 68% damage, so it costs 0.8 EA.
-* Rank 5: A double damage strike is 84% damage, so it costs 1 EA.
-* Rank 7: A triple damage strike is 75% damage, so it costs 1 EA.
+
+- Rank 1: A strike is relatively high damage, so it costs 1.2 EA.
+- Rank 3: A strike is 68% damage, so it costs 0.8 EA.
+- Rank 5: A double damage strike is 84% damage, so it costs 1 EA.
+- Rank 7: A triple damage strike is 75% damage, so it costs 1 EA.
 
 Putting that all together, for unrestricted / melee effects:
-* Rank 1: 0.4 / 0.6 EA debuff
-* Rank 3: 1.2 / 1.4 EA debuff
-* Rank 5: 1.4 / 1.6 EA debuff
-* Rank 7: 1.8 / 2.0 EA debuff
+
+- Rank 1: 0.4 / 0.6 EA debuff
+- Rank 3: 1.2 / 1.4 EA debuff
+- Rank 5: 1.4 / 1.6 EA debuff
+- Rank 7: 1.8 / 2.0 EA debuff
 
 #### Specific strike-based effects
-* Rank 1 unrestricted:
-  * Unrestricted:
-    * Strike and 0.4 EA debuff
-    * Strike, if beat Fort/Ment, 0.6 EA debuff
-    * Strike and crit, 0.8 EA debuff
-  * Melee only:
-    * Strike and 0.6 EA debuff
-    * Strike, if beat Fort/Ment, 0.8 EA debuff
-    * Strike and crit, 1.0 EA debuff
-* Rank 3:
-  * Unrestricted:
-    * strike and 1.2 EA debuff
-    * strike, if beat Fort/Ment, 1.4 EA debuff
-    * strike and crit, 1.6 EA debuff
-  * Melee only:
-    * strike and 1.4 EA debuff
-    * strike, if beat Fort/Ment, 1.6 EA debuff
-    * strike and crit, 1.8 EA debuff
-* Rank 5:
-  * Unrestricted:
-    * double damage strike and 1.4 EA debuff
-    * double damage strike, if beat Fort/Ment, 1.6 EA debuff
-    * double damage strike and crit, 1.8 EA debuff
-  * Melee only:
-    * double damage strike and 1.6 EA debuff
-    * double damage strike, if beat Fort/Ment, 1.8 EA debuff
-    * double damage strike and crit, 2.0 EA debuff
-* Rank 7:
-  * Unrestricted:
-    * triple damage strike and 1.8 EA debuff
-    * triple damage strike, if beat Fort/Ment, 2.0 EA debuff
-    * triple damage strike and crit, 2.2 EA debuff
-  * Melee only:
-    * triple damage strike and 2.0 EA debuff
-    * triple damage strike, if beat Fort/Ment, 2.2 EA debuff
-    * triple damage strike and crit, 2.4 EA debuff
+
+- Rank 1 unrestricted:
+  - Unrestricted:
+    - Strike and 0.4 EA debuff
+    - Strike, if beat Fort/Ment, 0.6 EA debuff
+    - Strike and crit, 0.8 EA debuff
+  - Melee only:
+    - Strike and 0.6 EA debuff
+    - Strike, if beat Fort/Ment, 0.8 EA debuff
+    - Strike and crit, 1.0 EA debuff
+- Rank 3:
+  - Unrestricted:
+    - strike and 1.2 EA debuff
+    - strike, if beat Fort/Ment, 1.4 EA debuff
+    - strike and crit, 1.6 EA debuff
+  - Melee only:
+    - strike and 1.4 EA debuff
+    - strike, if beat Fort/Ment, 1.6 EA debuff
+    - strike and crit, 1.8 EA debuff
+- Rank 5:
+  - Unrestricted:
+    - double damage strike and 1.4 EA debuff
+    - double damage strike, if beat Fort/Ment, 1.6 EA debuff
+    - double damage strike and crit, 1.8 EA debuff
+  - Melee only:
+    - double damage strike and 1.6 EA debuff
+    - double damage strike, if beat Fort/Ment, 1.8 EA debuff
+    - double damage strike and crit, 2.0 EA debuff
+- Rank 7:
+  - Unrestricted:
+    - triple damage strike and 1.8 EA debuff
+    - triple damage strike, if beat Fort/Ment, 2.0 EA debuff
+    - triple damage strike and crit, 2.2 EA debuff
+  - Melee only:
+    - triple damage strike and 2.0 EA debuff
+    - triple damage strike, if beat Fort/Ment, 2.2 EA debuff
+    - triple damage strike and crit, 2.4 EA debuff
