@@ -1481,6 +1481,48 @@
       ],
       "traits": [
         "multipedal"
+      ],
+      "standardAbilities": [
+        {
+          "type": "maneuver",
+          "name": "Poisonous Strike",
+          "options": {
+            "isMagical": false,
+            "weapon": "bite",
+            "poison": "Frostweb Spider Venom",
+            "displayName": "Venomous Bite",
+            "tags": [
+              "Cold"
+            ]
+          }
+        },
+        {
+          "type": "spell",
+          "name": "Frozen Lattice",
+          "options": {
+            "isMagical": true,
+            "displayName": "Frostweb",
+            "usageTime": "elite"
+          }
+        },
+        {
+          "type": "spell",
+          "name": "Mighty Creeping Frost",
+          "options": {
+            "isMagical": true,
+            "usageTime": "elite"
+          }
+        }
+      ],
+      "customAbilities": [],
+      "knowledge": {
+        "normal": "A frostweb spider is a Large ice-blue spider native to frigid mountain peaks. It weaves webs of ice rather than silk to trap its prey."
+      },
+      "customSenses": [
+        {
+          "type": "Tremorsense",
+          "range": 90
+        }
       ]
     }
   ],

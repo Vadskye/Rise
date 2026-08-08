@@ -1,6 +1,11 @@
 import { MysticSphere } from '.';
 import { add_tag_to_sphere } from './add_tag';
-import { BARRIER_COOLDOWN, CRIT_BECOMES_CONDITION, DAMAGING_INJURY_CRIT, INJURY_CRIT } from '../constants';
+import {
+  BARRIER_COOLDOWN,
+  CRIT_BECOMES_CONDITION,
+  DAMAGING_INJURY_CRIT,
+  INJURY_CRIT,
+} from '../constants';
 
 const OPTIONAL_ICE_CRYSTAL = 'One optional \\glossterm{ice crystal}.';
 
@@ -236,8 +241,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         At the start of your turn, if you took damage since your last turn, you can spend an \\glossterm{ice crystal}.
         If you do not, this ability is \\glossterm{dismissed}.
       `,
-      narrative:
-        'Ice forms around you, shielding you from attacks until it is destroyed.',
+      narrative: 'Ice forms around you, shielding you from attacks until it is destroyed.',
       rank: 2,
       roles: ['attune'],
       tags: ['Manifestation'],
@@ -377,6 +381,32 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       rank: 7,
       tags: ['Manifestation', 'Physical'],
       // scaling: 'accuracy',
+    },
+
+    {
+      name: 'Frozen Lattice',
+
+      // -1dr for area, +1dr for double defense.
+      // Some combination of the injury effect and the strong ice crystal spender makes this r5?
+      cost: OPTIONAL_ICE_CRYSTAL,
+      attack: {
+        hit: `
+          \\damagerankfour.
+        `,
+        halfOnMiss: true,
+        injury: `
+          The target is \\briefly \\slowed.
+        `,
+        targeting: `
+          Choose a \\smallarea radius within \\shortrange.
+          Make an attack vs. Reflex and Fortitude against everything in the area.
+          If you spent an \\glossterm{ice crystal}, this effect \\glossterm{repeats} in the same area at the start of your next turn.
+        `,
+      },
+      rank: 5,
+      roles: ['wildfire'],
+      scaling: 'damage',
+      tags: ['Manifestation'],
     },
 
     // A medium cone is somewhere between ranged and melee slow - call it 1.8 EA, so r3.
@@ -834,7 +864,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       rank: 2,
       roles: ['clear', 'maim'],
       scaling: 'damage',
-      type: "Sustain (standard)",
+      type: 'Sustain (standard)',
     },
 
     {
@@ -882,7 +912,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       rank: 6,
       roles: ['clear', 'maim'],
       scaling: 'damage',
-      type: "Sustain (standard)",
+      type: 'Sustain (standard)',
     },
   ],
 });
