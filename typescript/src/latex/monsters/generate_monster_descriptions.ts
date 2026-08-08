@@ -47,7 +47,7 @@ export function generateMonsterDescriptions(): string {
           withSectionBookmarks.push(convertMonsterToLatex(monster));
         } else if (monsterGroup) {
           for (const gm of monsterGroup.monsters) {
-            const { requirements, guidelines } = checkValidMonster(gm, undefined, monsterGroup);
+            const { requirements, guidelines } = checkValidMonster(gm, monsterGroup);
             if (requirements.length > 0 || guidelines.length > 0) {
               console.warn(
                 `[Validation Warning] Monster "${monsterGroup.name}.${gm.name}" has validation warnings:`,

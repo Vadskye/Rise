@@ -45,7 +45,7 @@ function main() {
       } else if (monsterGroup) {
         for (const gm of monsterGroup.monsters) {
           validatedMonstersCount++;
-          const { requirements, guidelines } = checkValidMonster(gm, undefined, monsterGroup);
+          const { requirements, guidelines } = checkValidMonster(gm, monsterGroup);
           if (requirements.length > 0 || guidelines.length > 0) {
             totalRequirementsCount += requirements.length;
             totalGuidelinesCount += guidelines.length;
@@ -98,7 +98,9 @@ function main() {
   console.log('==================================================');
   console.log(`Validation complete: validated ${validatedMonstersCount} monster(s).`);
   if (totalRequirementsCount > 0 || totalGuidelinesCount > 0) {
-    console.log(`Found ${totalRequirementsCount} requirement violation(s) and ${totalGuidelinesCount} guideline warning(s).`);
+    console.log(
+      `Found ${totalRequirementsCount} requirement violation(s) and ${totalGuidelinesCount} guideline warning(s).`,
+    );
   } else {
     console.log('No validation warnings or violations found.');
   }

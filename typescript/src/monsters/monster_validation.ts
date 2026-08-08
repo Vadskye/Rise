@@ -1,19 +1,6 @@
 import { Creature } from '@src/character_sheet/creature';
 import { RISE_ATTRIBUTES } from '@src/core_mechanics/attributes';
-
-// eslint-disable-next-line @typescript-eslint/no-empty-object-type
-export interface MonsterData {
-  // Unused in validation logic, defined as placeholder
-}
-
-export interface MonsterGroupData {
-  knowledge?: {
-    easy?: string;
-    normal?: string;
-    hard?: string;
-    legendary?: string;
-  };
-}
+import { MonsterGroup } from '@src/monsters/grimoire';
 
 /**
  * Shared validation logic and warning message generation for the Monster Creator.
@@ -95,8 +82,7 @@ export function formatNoStandardActionWarning(name: string): string {
 
 export function checkValidMonster(
   creature: Creature,
-  _monster?: MonsterData,
-  parentGroup?: MonsterGroupData,
+  parentGroup?: MonsterGroup,
 ): { requirements: string[]; guidelines: string[] } {
   const requirements: string[] = [];
   const guidelines: string[] = [];

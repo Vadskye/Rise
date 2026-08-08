@@ -22,7 +22,7 @@ function main() {
       }
     } else if (mg) {
       for (const gm of mg.monsters) {
-        const { requirements, guidelines } = checkValidMonster(gm, undefined, mg);
+        const { requirements, guidelines } = checkValidMonster(gm, mg);
         if (requirements.length > 0 || guidelines.length > 0) {
           monsterWarnings.push({ name: `${mg.name}.${gm.name}`, requirements, guidelines });
         }
@@ -39,7 +39,10 @@ function main() {
     }
 
     for (const r of requirements) {
-      const ruleKey = r.replace(/Has -?\d+ attributes, expected (min|max) \d+/, 'Attribute sum out of range');
+      const ruleKey = r.replace(
+        /Has -?\d+ attributes, expected (min|max) \d+/,
+        'Attribute sum out of range',
+      );
       if (!requirementsByRule.has(ruleKey)) {
         requirementsByRule.set(ruleKey, []);
       }
@@ -47,7 +50,10 @@ function main() {
     }
 
     for (const g of guidelines) {
-      const ruleKey = g.replace(/Has -?\d+ attributes, expected (min|max) \d+/, 'Attribute sum out of range');
+      const ruleKey = g.replace(
+        /Has -?\d+ attributes, expected (min|max) \d+/,
+        'Attribute sum out of range',
+      );
       if (!guidelinesByRule.has(ruleKey)) {
         guidelinesByRule.set(ruleKey, []);
       }
