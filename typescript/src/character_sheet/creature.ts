@@ -30,7 +30,7 @@ import {
   RISE_KNOWLEDGE_SKILLS,
   RiseSkill,
 } from '@src/core_mechanics/skills';
-import { RiseAttribute, RiseAttributeModifier, RiseDefense } from '@src/core_mechanics/attributes';
+import { RISE_ATTRIBUTES, RiseAttribute, RiseAttributeModifier, RiseDefense } from '@src/core_mechanics/attributes';
 import { getManeuverByName, getWeaponMultByRank } from '@src/abilities/combat_styles';
 import { getSpellByName, SphereName } from '@src/abilities/mystic_spheres';
 import { MonsterWeapon, isManufactured, getWeaponTags } from '@src/monsters/weapons';
@@ -80,6 +80,7 @@ type NumericCreatureProperty =
   | 'accuracy'
   | 'accuracy_with_strikes'
   | 'brawling_accuracy'
+  | 'character_rank'
   | 'land_speed'
   | 'level'
   | 'hit_points'
@@ -1051,13 +1052,32 @@ export class Creature implements CreaturePropertyMap {
     )[this.size];
   }
 
-  // We throw errors for things that can cause runtime warnings later.
-  // For things that are just suspicious, we warn.
-  // We're specifically checking that the monster is ready for LaTeX generation, so
-  // anything that would break that is treated as an error, even if it doesn't block the
-  // sheet worker from doing ordinary combat math.
   checkValidMonster(): ValidationIssue[] {
     const issues: ValidationIssue[] = [];
+
+    // Make sure the monster has a reasonable attribute sum
+    // PCs start with 8, and they have to share that with Intelligence.
+    // Elites can have +1 to all attributes.
+    const level0MaxAttributes = this.elite ? 15 : 9;
+    const maxAttributes = level0MaxAttributes + this.level;
+    const minAttributes = Math.floor(maxAttributes / 2);
+    // Values of -10 generally mean the monster doesn't *have* the relevant attribute,
+    // which is different than a crippling penalty.
+    const pointsFromAttribute = (val: number) => val === -10 ? 0 : val;
+    const attributeSum = pointsFromAttribute(this.strength) + pointsFromAttribute(this.constitution) + pointsFromAttribute(this.dexterity) + pointsFromAttribute(this.perception) + pointsFromAttribute(this.willpower);
+    if (attributeSum > maxAttributes) {
+      this.warn(`Has ${attributeSum} attributes, expected max ${maxAttributes}`);
+    } else if (attributeSum < minAttributes) {
+      this.warn(`Has ${attributeSum} attributes, expected min ${minAttributes}`);
+    }
+
+    // Also check individual attribute max
+    const maxAttribute = this.character_rank + (this.elite ? 6 : 5);
+    for (const attribute of RISE_ATTRIBUTES) {
+      if (this[attribute] > maxAttribute) {
+        this.warn(`Has ${attribute} of ${this[attribute]}, expected max ${maxAttribute}`);
+      }
+    }
 
     return issues;
   }
@@ -1636,6 +1656,10 @@ export class Creature implements CreaturePropertyMap {
 
   public get vital_rolls() {
     return this.getPropertyValue('vital_rolls');
+  }
+
+  public get character_rank() {
+    return this.getPropertyValue('character_rank');
   }
 
   public applyStandardTraits() {

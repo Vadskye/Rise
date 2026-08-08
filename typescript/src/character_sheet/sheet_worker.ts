@@ -776,6 +776,7 @@ function handleCoreStatistics() {
   handleDefenses();
   handleDamageDice();
   handleArmorDexCheckModifier();
+  handleCharacterRank();
   handleDurability();
   handleStaminaPenalty();
   handleHitPoints();
@@ -1726,6 +1727,20 @@ function handleArmorDexCheckModifier() {
       const totalValue = v.body_armor_dex_skill_modifier + v.shield_dex_skill_modifier;
       setAttrs({
         armor_dex_skill_modifier: totalValue,
+      });
+    },
+  });
+}
+
+function handleCharacterRank() {
+  onGet({
+    variables: {
+      numeric: ['level'],
+    },
+    callback: (v) => {
+      const rank = Math.floor((v.level + 2) / 3);
+      setAttrs({
+        character_rank: rank,
       });
     },
   });
