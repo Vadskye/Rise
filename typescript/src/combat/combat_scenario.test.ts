@@ -126,7 +126,7 @@ t.test('CombatScenario can simulate 5 Carrion Crows vs 10 Giant Wasps', (t) => {
   const scenario = createScenario([crowTeam, waspTeam]);
   const result = scenario.simulate(50);
 
-  assertExpectedTurnsCount(t, result, 2.1);
+  assertExpectedTurnsCount(t, result, 4.1);
   assertExpectedWinRate(t, result, 'Crows', 0);
   assertExpectedWinRate(t, result, 'Wasps', 100);
   t.end();

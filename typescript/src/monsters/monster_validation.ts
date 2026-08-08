@@ -134,6 +134,9 @@ export function checkValidMonster(
   if (creature.isExactlyCreatureType('humanoid') && !creature.body_armor_name) {
     warnings.push('Humanoids should usually have body armor');
   }
+  if (creature.creature_types.includes('beast') && !creature.hasTrait('multipedal')) {
+    warnings.push('Beasts should usually be multipedal.');
+  }
 
   const standardAbilities = creature
     .getActiveAbilities()
@@ -188,7 +191,7 @@ function checkValidAttributes(creature: Creature, warnings: string[]) {
   const minAttributes = Math.floor(maxAttributes / 2);
   // Values of -10 generally mean the monster doesn't *have* the relevant attribute,
   // which is different than a crippling penalty.
-  const pointsFromAttribute = (val: number) => val === -10 ? 0 : val;
+  const pointsFromAttribute = (val: number) => (val === -10 ? 0 : val);
   const attributeSum =
     pointsFromAttribute(creature.strength) +
     pointsFromAttribute(creature.constitution) +

@@ -1447,6 +1447,41 @@
           }
         }
       ]
+    },
+    {
+      "name": "Frostweb Spider",
+      "folder": "Beasts",
+      "requiredProperties": {
+        "alignment": "neutral",
+        "base_class": "skirmisher",
+        "elite": false,
+        "creature_origin": "natural",
+        "creature_types": [
+          "beast"
+        ],
+        "size": "large",
+        "level": 12
+      },
+      "freeformCode": "",
+      "properties": {
+        "has_art": true
+      },
+      "trainedSkills": [
+        "awareness",
+        "balance",
+        "stealth"
+      ],
+      "baseAttributes": [
+        4,
+        8,
+        2,
+        -5,
+        3,
+        2
+      ],
+      "traits": [
+        "multipedal"
+      ]
     }
   ],
   "monsterGroups": [
