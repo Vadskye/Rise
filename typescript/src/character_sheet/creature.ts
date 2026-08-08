@@ -1052,36 +1052,6 @@ export class Creature implements CreaturePropertyMap {
     )[this.size];
   }
 
-  checkValidMonster(): ValidationIssue[] {
-    const issues: ValidationIssue[] = [];
-
-    // Make sure the monster has a reasonable attribute sum
-    // PCs start with 8, and they have to share that with Intelligence.
-    // Elites can have +1 to all attributes.
-    const level0MaxAttributes = this.elite ? 15 : 9;
-    const maxAttributes = level0MaxAttributes + this.level;
-    const minAttributes = Math.floor(maxAttributes / 2);
-    // Values of -10 generally mean the monster doesn't *have* the relevant attribute,
-    // which is different than a crippling penalty.
-    const pointsFromAttribute = (val: number) => val === -10 ? 0 : val;
-    const attributeSum = pointsFromAttribute(this.strength) + pointsFromAttribute(this.constitution) + pointsFromAttribute(this.dexterity) + pointsFromAttribute(this.perception) + pointsFromAttribute(this.willpower);
-    if (attributeSum > maxAttributes) {
-      this.warn(`Has ${attributeSum} attributes, expected max ${maxAttributes}`);
-    } else if (attributeSum < minAttributes) {
-      this.warn(`Has ${attributeSum} attributes, expected min ${minAttributes}`);
-    }
-
-    // Also check individual attribute max
-    const maxAttribute = this.character_rank + (this.elite ? 6 : 5);
-    for (const attribute of RISE_ATTRIBUTES) {
-      if (this[attribute] > maxAttribute) {
-        this.warn(`Has ${attribute} of ${this[attribute]}, expected max ${maxAttribute}`);
-      }
-    }
-
-    return issues;
-  }
-
   throwError(message: string) {
     throw new Error(`Monster ${this.name}: ${message}`);
   }

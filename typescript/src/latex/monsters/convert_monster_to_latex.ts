@@ -17,8 +17,6 @@ import {
 import { replacePlaceholders } from './replace_placeholders';
 
 export function convertMonsterToLatex(monster: Creature, parentGroupName?: string) {
-  checkValidMonster(monster);
-
   const hasParentGroup = Boolean(parentGroupName);
   const pagebreakText = hasParentGroup ? '' : '\\newpage';
   const eliteText = monster.elite ? ' -- \\textbf{Elite}' : '';
@@ -48,16 +46,6 @@ export function convertMonsterToLatex(monster: Creature, parentGroupName?: strin
   `;
 
   return format.latexify(replacePlaceholders(monster, latexWithPlaceholders)).trim();
-}
-
-function checkValidMonster(monster: Creature) {
-  function warn(message: string) {
-    console.warn(`${monster.name}: ${message}`);
-  }
-
-  if (monster.name !== format.titleCase(monster.name)) {
-    warn('Monster name should be title case');
-  }
 }
 
 function genArtText(monster: Creature, parentGroupName?: string): string {

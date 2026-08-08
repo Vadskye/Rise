@@ -111,14 +111,6 @@ export class Grimoire {
     creature.setProperties({ monster_type: creature.elite ? 'elite' : 'normal' });
     handleEverything();
     sheet.triggerRecalculation();
-    const issues = creature.checkValidMonster();
-    for (const issue of issues) {
-      if (issue.severity === 'error') {
-        throw new Error(`Monster ${creature.name}: ${issue.message}`);
-      } else {
-        console.warn(`Monster ${creature.name}: ${issue.message}`);
-      }
-    }
     return creature;
   }
 
