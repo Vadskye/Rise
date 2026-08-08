@@ -41,7 +41,8 @@ export interface BuildResult {
   creature: Creature | null;
   sheet: CharacterSheet | null;
   errors: string[];
-  warnings: string[];
+  requirements: string[];
+  guidelines: string[];
 }
 
 /**
@@ -59,7 +60,8 @@ export function buildCreature(monster: MonsterData, group?: MonsterGroupData): B
     deleteCharacterSheet(name);
   }
 
-  const warnings: string[] = [];
+  const requirements: string[] = [];
+  const guidelines: string[] = [];
   const errors: string[] = [];
 
   function cleanMessage(msg: string, name: string): string {
@@ -74,7 +76,7 @@ export function buildCreature(monster: MonsterData, group?: MonsterGroupData): B
   const originalWarn = console.warn;
   console.warn = (...args: unknown[]) => {
     const msg = args.join(' ');
-    warnings.push(cleanMessage(msg, name));
+    guidelines.push(cleanMessage(msg, name));
     originalWarn(...args);
   };
 
@@ -158,7 +160,7 @@ export function buildCreature(monster: MonsterData, group?: MonsterGroupData): B
           if (ability.type === 'spell') {
             creature.addSpell(ability.name, toMonsterAbilityOptions(ability.options));
           } else {
-            compileStandardManeuver(creature, ability, warnings);
+            compileStandardManeuver(creature, ability, requirements);
           }
         }
       }
@@ -270,7 +272,7 @@ export function buildCreature(monster: MonsterData, group?: MonsterGroupData): B
         if (ability.type === 'spell') {
           creature.addSpell(ability.name, toMonsterAbilityOptions(ability.options));
         } else {
-          compileStandardManeuver(creature, ability, warnings);
+          compileStandardManeuver(creature, ability, requirements);
         }
       }
     }
@@ -284,7 +286,7 @@ export function buildCreature(monster: MonsterData, group?: MonsterGroupData): B
         } else {
           creature.addCustomManeuver(abilityObj);
           if (ability.effect && maneuverMakesStrike(ability.effect) && !ability.weapon) {
-            warnings.push(formatMissingWeaponWarning(ability.name));
+            requirements.push(formatMissingWeaponWarning(ability.name));
           }
         }
       }
@@ -339,10 +341,10 @@ export function buildCreature(monster: MonsterData, group?: MonsterGroupData): B
     }
 
     if (freeformCode && freeformCode.trim()) {
-      warnings.push(formatFreeformCodeWarning(name));
+      guidelines.push(formatFreeformCodeWarning(name));
     }
     if (sharedFreeformCode && sharedFreeformCode.trim()) {
-      warnings.push(formatSharedFreeformCodeWarning(name));
+      guidelines.push(formatSharedFreeformCodeWarning(name));
     }
 
     // Run game engine calculations
@@ -353,7 +355,9 @@ export function buildCreature(monster: MonsterData, group?: MonsterGroupData): B
 
     const calcDuration = performance.now() - calcStart;
 
-    warnings.push(...checkValidMonster(creature, monster, group));
+    const validation = checkValidMonster(creature, monster, group);
+    requirements.push(...validation.requirements);
+    guidelines.push(...validation.guidelines);
 
     const totalDuration = performance.now() - start;
     if (showDetailedTiming) {
@@ -375,19 +379,20 @@ export function buildCreature(monster: MonsterData, group?: MonsterGroupData): B
       );
     }
 
-    return { creature, sheet, errors, warnings };
+    return { creature, sheet, errors, requirements, guidelines };
   } catch (err) {
     console.error(`[creature_builder] Error building creature "${name}":`, err);
     const msg = err instanceof Error ? err.message : String(err);
     errors.push(cleanMessage(msg, name));
-    return { creature: null, sheet: null, errors, warnings };
+    return { creature: null, sheet: null, errors, requirements, guidelines };
   } finally {
     // Restore console.warn
     console.warn = originalWarn;
   }
 }
 
-function compileStandardManeuver(creature: Creature, ability: any, warnings: string[]) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function compileStandardManeuver(creature: Creature, ability: any, requirements: string[]) {
   const options = toMonsterAbilityOptions(ability.options);
   const weapon = ability.options?.weapon;
 
@@ -414,11 +419,11 @@ function compileStandardManeuver(creature: Creature, ability: any, warnings: str
     if (ability.name === 'Poisonous Strike') {
       let valid = true;
       if (!weapon) {
-        warnings.push(formatMissingWeaponWarning(nameToUse));
+        requirements.push(formatMissingWeaponWarning(nameToUse));
         valid = false;
       }
       if (!poison) {
-        warnings.push(formatMissingPoisonWarning(nameToUse));
+        requirements.push(formatMissingPoisonWarning(nameToUse));
         valid = false;
       }
       if (valid && weapon && poison) {
@@ -428,7 +433,7 @@ function compileStandardManeuver(creature: Creature, ability: any, warnings: str
     }
 
     if (!weapon) {
-      warnings.push(formatMissingWeaponWarning(nameToUse, ability.name === 'Throw Item'));
+      requirements.push(formatMissingWeaponWarning(nameToUse, ability.name === 'Throw Item'));
       return;
     }
     if (ability.name === 'Weapon Multiplier') {
@@ -452,7 +457,7 @@ function compileStandardManeuver(creature: Creature, ability: any, warnings: str
     if (baseManeuver && baseManeuver.effect) {
       if (maneuverMakesStrike(baseManeuver.effect) && !weapon) {
         const nameToUse = ability.options?.displayName || ability.name;
-        warnings.push(formatMissingWeaponWarning(nameToUse));
+        requirements.push(formatMissingWeaponWarning(nameToUse));
       }
     }
   } catch {

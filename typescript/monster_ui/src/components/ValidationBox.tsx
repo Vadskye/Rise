@@ -2,15 +2,17 @@ import React from 'react';
 
 interface ValidationBoxProps {
   errors: string[];
-  warnings: string[];
+  requirements: string[];
+  guidelines: string[];
 }
 
-export const ValidationBox: React.FC<ValidationBoxProps> = ({ errors, warnings }) => {
-  // If there are no warnings or errors, show a clean compiling state
+export const ValidationBox: React.FC<ValidationBoxProps> = ({ errors, requirements, guidelines }) => {
+  // If there are no errors, requirements, or guidelines, show a clean compiling state
   const hasErrors = errors.length > 0;
-  const hasWarnings = warnings.length > 0;
+  const hasRequirements = requirements.length > 0;
+  const hasGuidelines = guidelines.length > 0;
 
-  if (!hasErrors && !hasWarnings) {
+  if (!hasErrors && !hasRequirements && !hasGuidelines) {
     return (
       <div
         className="validation-container"
@@ -41,13 +43,26 @@ export const ValidationBox: React.FC<ValidationBoxProps> = ({ errors, warnings }
         </div>
       )}
 
-      {hasWarnings && (
-        <div className="validation-container has-warnings">
-          <div className="validation-title warning-title">⚠️ Book Validation Warnings</div>
+      {hasRequirements && (
+        <div className="validation-container has-errors">
+          <div className="validation-title error-title">❌ Unmet Requirements</div>
           <ul className="validation-list">
-            {warnings.map((warning, idx) => (
+            {requirements.map((req, idx) => (
+              <li key={idx} className="error-item">
+                • {req}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {hasGuidelines && (
+        <div className="validation-container has-warnings">
+          <div className="validation-title warning-title">⚠️ Validation Guidelines</div>
+          <ul className="validation-list">
+            {guidelines.map((guide, idx) => (
               <li key={idx} className="warning-item">
-                • {warning}
+                • {guide}
               </li>
             ))}
           </ul>

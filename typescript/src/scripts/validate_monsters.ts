@@ -19,7 +19,8 @@ function main() {
   sectionNames.sort();
 
   const errors: { name: string; error: unknown }[] = [];
-  let totalWarningsCount = 0;
+  let totalRequirementsCount = 0;
+  let totalGuidelinesCount = 0;
   let validatedMonstersCount = 0;
 
   for (const sectionName of sectionNames) {
@@ -29,25 +30,33 @@ function main() {
 
       if (monster) {
         validatedMonstersCount++;
-        const warnings = checkValidMonster(monster);
-        if (warnings.length > 0) {
-          totalWarningsCount += warnings.length;
+        const { requirements, guidelines } = checkValidMonster(monster);
+        if (requirements.length > 0 || guidelines.length > 0) {
+          totalRequirementsCount += requirements.length;
+          totalGuidelinesCount += guidelines.length;
           console.warn(`[Validation Warning] Monster "${monster.name}" has validation warnings:`);
-          for (const warning of warnings) {
-            console.warn(`  - ${warning}`);
+          for (const req of requirements) {
+            console.warn(`  - [Requirement Violation] ${req}`);
+          }
+          for (const guide of guidelines) {
+            console.warn(`  - [Guideline Warning] ${guide}`);
           }
         }
       } else if (monsterGroup) {
         for (const gm of monsterGroup.monsters) {
           validatedMonstersCount++;
-          const warnings = checkValidMonster(gm, undefined, monsterGroup);
-          if (warnings.length > 0) {
-            totalWarningsCount += warnings.length;
+          const { requirements, guidelines } = checkValidMonster(gm, undefined, monsterGroup);
+          if (requirements.length > 0 || guidelines.length > 0) {
+            totalRequirementsCount += requirements.length;
+            totalGuidelinesCount += guidelines.length;
             console.warn(
               `[Validation Warning] Monster "${monsterGroup.name}.${gm.name}" has validation warnings:`,
             );
-            for (const warning of warnings) {
-              console.warn(`  - ${warning}`);
+            for (const req of requirements) {
+              console.warn(`  - [Requirement Violation] ${req}`);
+            }
+            for (const guide of guidelines) {
+              console.warn(`  - [Guideline Warning] ${guide}`);
             }
           }
         }
@@ -77,12 +86,21 @@ function main() {
     process.exit(1);
   }
 
+  if (totalRequirementsCount > 0) {
+    console.error('==================================================');
+    console.error(
+      `MONSTER VALIDATION FAILED with ${totalRequirementsCount} requirement violation(s):`,
+    );
+    console.error('==================================================');
+    process.exit(1);
+  }
+
   console.log('==================================================');
   console.log(`Validation complete: validated ${validatedMonstersCount} monster(s).`);
-  if (totalWarningsCount > 0) {
-    console.log(`Found ${totalWarningsCount} validation warning(s).`);
+  if (totalRequirementsCount > 0 || totalGuidelinesCount > 0) {
+    console.log(`Found ${totalRequirementsCount} requirement violation(s) and ${totalGuidelinesCount} guideline warning(s).`);
   } else {
-    console.log('No validation warnings found.');
+    console.log('No validation warnings or violations found.');
   }
   console.log('==================================================');
   process.exit(0);

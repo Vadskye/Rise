@@ -1,6 +1,7 @@
 import { Creature } from '@src/character_sheet/creature';
 import { RISE_ATTRIBUTES } from '@src/core_mechanics/attributes';
 
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 export interface MonsterData {
   // Unused in validation logic, defined as placeholder
 }
@@ -96,53 +97,54 @@ export function checkValidMonster(
   creature: Creature,
   _monster?: MonsterData,
   parentGroup?: MonsterGroupData,
-): string[] {
-  const warnings: string[] = [];
+): { requirements: string[]; guidelines: string[] } {
+  const requirements: string[] = [];
+  const guidelines: string[] = [];
 
   if (creature.name === creature.name.toLowerCase()) {
-    warnings.push('Name must be title case');
+    requirements.push('Name must be title case');
   }
   if (!creature.alignment) {
-    warnings.push('Must have alignment');
+    requirements.push('Must have alignment');
   }
   if (!creature.base_class) {
-    warnings.push('Must have base class');
+    requirements.push('Must have base class');
   }
   if (!creature.level || creature.level < 1) {
-    warnings.push('Must have level');
+    requirements.push('Must have level');
   }
   if (!creature.creature_origin) {
-    warnings.push('Must have origin');
+    requirements.push('Must have origin');
   }
   if (!creature.creature_types || creature.creature_types.length === 0) {
-    warnings.push('Must have at least one creature type');
+    requirements.push('Must have at least one creature type');
   }
   if (!creature.size) {
-    warnings.push('Must have size');
+    requirements.push('Must have size');
   }
 
   if (creature.intelligence >= -2 && creature.getTrainedSkillNames().length === 0) {
-    warnings.push('Has no trained skills');
+    guidelines.push('Has no trained skills');
   }
 
   if (creature.intelligence > -8 && creature.creature_types.includes('animal')) {
-    warnings.push('Animals should have an Intelligence of -8 or less');
+    requirements.push('Animals must have an Intelligence of -8 or less');
   }
   if (creature.intelligence > -5 && creature.isExactlyCreatureType('beast')) {
-    warnings.push('Pure beasts should have an Intelligence of -5 or less');
+    requirements.push('Pure beasts must have an Intelligence of -5 or less');
   }
-  if (creature.isExactlyCreatureType('humanoid') && !creature.body_armor_name) {
-    warnings.push('Humanoids should usually have body armor');
+  if (creature.isExactlyCreatureType('humanoid') && creature.body_armor_name) {
+    guidelines.push('Humanoids should usually have body armor');
   }
-  if (creature.creature_types.includes('beast') && !creature.hasTrait('multipedal')) {
-    warnings.push('Beasts should usually be multipedal.');
+  if (creature.isExactlyCreatureType('beast') && !creature.hasTrait('multipedal')) {
+    guidelines.push('Beasts should usually be multipedal.');
   }
 
   const standardAbilities = creature
     .getActiveAbilities()
     .filter((ability) => (ability.usageTime || 'standard') === 'standard');
   if (standardAbilities.length === 0) {
-    warnings.push(formatNoStandardActionWarning(creature.name));
+    requirements.push(formatNoStandardActionWarning(creature.name));
   }
 
   if (creature.elite) {
@@ -150,7 +152,7 @@ export function checkValidMonster(
       .getActiveAbilities()
       .filter((ability) => ability.usageTime === 'elite');
     if (eliteAbilities.length === 0) {
-      warnings.push('Elite creatures must have at least one elite action ability');
+      requirements.push('Elite creatures must have at least one elite action ability');
     }
   }
 
@@ -162,7 +164,7 @@ export function checkValidMonster(
     }
   }
   if (!hasNonzeroAttribute) {
-    warnings.push('Must have at least one nonzero attribute');
+    requirements.push('Must have at least one nonzero attribute');
   }
 
   const parentKnowledge = parentGroup?.knowledge || {};
@@ -172,17 +174,17 @@ export function checkValidMonster(
     parentKnowledge.hard ||
     parentKnowledge.legendary;
   if (!(creature.hasKnowledgeResults() || hasParentKnowledge)) {
-    warnings.push(
+    guidelines.push(
       'Creature must either have personal knowledge results or be part of a group with knowledge results',
     );
   }
 
-  checkValidAttributes(creature, warnings);
+  checkValidAttributes(creature, guidelines);
 
-  return warnings;
+  return { requirements, guidelines };
 }
 
-function checkValidAttributes(creature: Creature, warnings: string[]) {
+function checkValidAttributes(creature: Creature, guidelines: string[]) {
   // Make sure the monster has a reasonable attribute sum
   // PCs start with 8, and they have to share that with Intelligence.
   // Elites can have +1 to all attributes.
@@ -199,16 +201,16 @@ function checkValidAttributes(creature: Creature, warnings: string[]) {
     pointsFromAttribute(creature.perception) +
     pointsFromAttribute(creature.willpower);
   if (attributeSum > maxAttributes) {
-    warnings.push(`Has ${attributeSum} attributes, expected max ${maxAttributes}`);
+    guidelines.push(`Has ${attributeSum} attributes, expected max ${maxAttributes}`);
   } else if (attributeSum < minAttributes) {
-    warnings.push(`Has ${attributeSum} attributes, expected min ${minAttributes}`);
+    guidelines.push(`Has ${attributeSum} attributes, expected min ${minAttributes}`);
   }
 
   // Also check individual attribute max
   const maxAttribute = creature.character_rank + (creature.elite ? 6 : 5);
   for (const attribute of RISE_ATTRIBUTES) {
     if (creature[attribute] > maxAttribute) {
-      warnings.push(`Has ${attribute} of ${creature[attribute]}, expected max ${maxAttribute}`);
+      guidelines.push(`Has ${attribute} of ${creature[attribute]}, expected max ${maxAttribute}`);
     }
   }
 }

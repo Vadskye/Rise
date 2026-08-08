@@ -15,7 +15,8 @@ export function validateMonster(
   return {
     success: preview.success,
     errors: preview.errors,
-    warnings: preview.warnings,
+    requirements: preview.requirements,
+    guidelines: preview.guidelines,
     cacheHit: preview.cacheHit,
   };
 }

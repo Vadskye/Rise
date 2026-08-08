@@ -62,7 +62,7 @@ export const App: React.FC = () => {
   const dbRef = useRef<DatabaseData>(db);
   const saveTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const pendingSavePayloadRef = useRef<SaveRequestPayload | null>(null);
-  const saveQueueTailRef = useRef<Promise<any>>(Promise.resolve());
+  const saveQueueTailRef = useRef<Promise<unknown>>(Promise.resolve());
 
   useEffect(() => {
     dbRef.current = db;
@@ -128,7 +128,9 @@ export const App: React.FC = () => {
 
   const [previewStats, setPreviewStats] = useState<ComputedStats | null>(null);
   const [errors, setErrors] = useState<string[]>([]);
-  const [warnings, setWarnings] = useState<string[]>([]);
+  const [requirements, setRequirements] = useState<string[]>([]);
+  const [guidelines, setGuidelines] = useState<string[]>([]);
+  const warnings = React.useMemo(() => [...requirements, ...guidelines], [requirements, guidelines]);
   const [loading, setLoading] = useState<boolean>(false);
   const [isSaving, setIsSaving] = useState<boolean>(false);
   const [toast, setToast] = useState<{
@@ -219,7 +221,8 @@ export const App: React.FC = () => {
     if (!activeSelection) {
       setPreviewStats(null);
       setErrors([]);
-      setWarnings([]);
+      setRequirements([]);
+      setGuidelines([]);
       lastSelectionRef.current = null;
       return;
     }
@@ -228,7 +231,8 @@ export const App: React.FC = () => {
       // Group configurations do not have a single computed stats card
       setPreviewStats(null);
       setErrors([]);
-      setWarnings([]);
+      setRequirements([]);
+      setGuidelines([]);
       lastSelectionRef.current = activeSelection;
       return;
     }
@@ -285,7 +289,7 @@ export const App: React.FC = () => {
               if (data && data.error) {
                 errMsg = data.error;
               }
-            } catch (e) {
+            } catch {
               if (res.statusText) {
                 errMsg = `${res.statusText} (${res.status})`;
               } else {
@@ -301,7 +305,8 @@ export const App: React.FC = () => {
             return;
           }
           setErrors(result.errors || []);
-          setWarnings(result.warnings || []);
+          setRequirements(result.requirements || []);
+          setGuidelines(result.guidelines || []);
           setPreviewStats(result.computedStats);
           setLoading(false);
         })
@@ -350,7 +355,7 @@ export const App: React.FC = () => {
             if (data && data.error) {
               errMsg = data.error;
             }
-          } catch (e) {
+          } catch {
             if (res.statusText) {
               errMsg = `${res.statusText} (${res.status})`;
             } else {
@@ -509,7 +514,7 @@ export const App: React.FC = () => {
     handleSaveDb({ group: { data: updated, oldName: oldGroupName } }, false);
   };
 
-  const handleAddMonster = (folder?: any) => {
+  const handleAddMonster = (folder?: unknown) => {
     const name = `New Monster ${db.monsters.length + 1}`;
     const folderStr = typeof folder === 'string' ? folder : undefined;
     const newMonster: MonsterData = {
@@ -527,7 +532,7 @@ export const App: React.FC = () => {
     handleSaveDb({ monster: { data: newMonster } }, true);
   };
 
-  const handleAddGroup = (folder?: any) => {
+  const handleAddGroup = (folder?: unknown) => {
     const name = `New Group ${db.monsterGroups.length + 1}`;
     const folderStr = typeof folder === 'string' ? folder : undefined;
     const newGroup: MonsterGroupData = {
@@ -804,7 +809,8 @@ export const App: React.FC = () => {
     return s.includes('name') || s.includes('alignment');
   };
   const globalErrors = errors.filter((e) => !isInline(e));
-  const globalWarnings = warnings.filter((w) => !isInline(w));
+  const globalRequirements = requirements.filter((r) => !isInline(r));
+  const globalGuidelines = guidelines.filter((g) => !isInline(g));
 
   const existingFolders = Array.from(
     new Set([
@@ -876,7 +882,11 @@ export const App: React.FC = () => {
                     paddingTop: '20px',
                   }}
                 >
-                  <ValidationBox errors={globalErrors} warnings={globalWarnings} />
+                  <ValidationBox
+                    errors={globalErrors}
+                    requirements={globalRequirements}
+                    guidelines={globalGuidelines}
+                  />
                 </div>
               )}
             </>

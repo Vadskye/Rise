@@ -55,7 +55,8 @@ export function generatePreview(
   const cacheDuration = performance.now() - cacheStart;
 
   const buildStart = performance.now();
-  const { creature, sheet, errors, warnings } = buildCreature(monster, group);
+  const { creature, sheet, errors, requirements: initialRequirements, guidelines } = buildCreature(monster, group);
+  const requirements = [...initialRequirements];
   const buildDuration = performance.now() - buildStart;
 
   const formatStart = performance.now();
@@ -96,7 +97,7 @@ export function generatePreview(
           return creature.getKnowledgeResultConfig();
         } catch (err) {
           const msg = err instanceof Error ? err.message : String(err);
-          warnings.push(msg);
+          requirements.push(msg);
           return {
             easy: creature.knowledge_result_easy,
             normal: creature.knowledge_result_normal,
@@ -126,7 +127,8 @@ export function generatePreview(
   const result = {
     success: errors.length === 0,
     errors,
-    warnings,
+    requirements,
+    guidelines,
     computedStats,
     cacheHit: false,
   };
