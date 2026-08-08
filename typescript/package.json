@@ -52,6 +52,7 @@
     "simulate_fight": "tsx src/scripts/simulate_fight.ts",
     "identify_outliers": "tsx src/scripts/identify_monster_outliers.ts",
     "validate_spells": "tsx src/scripts/validate_spells.ts",
-    "validate_stamina": "tsx src/scripts/validate_stamina.ts"
+    "validate_stamina": "tsx src/scripts/validate_stamina.ts",
+    "player_self_hit_rate": "tsx src/scripts/player_self_hit_rate.ts"
   }
 }
