@@ -1454,7 +1454,7 @@
       "requiredProperties": {
         "alignment": "neutral",
         "base_class": "skirmisher",
-        "elite": false,
+        "elite": true,
         "creature_origin": "natural",
         "creature_types": [
           "beast"

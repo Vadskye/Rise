@@ -241,26 +241,26 @@ t.test('One elite Ankheg is equivalent to four non-elite Ankhegs', (t) => {
 });
 
 t.test('One elite frostweb spider is equivalent to four non-elite frostweb spiders', (t) => {
-  const eliteAnkheg = cloneMonster('Frostweb Spider');
+  const eliteSpider = cloneMonster('Frostweb Spider');
 
-  const normalAnkhegs = [];
+  const normalSpiders = [];
   for (let i = 0; i < 4; i++) {
-    const ank = cloneMonster('Frostweb Spider');
-    ank.setProperties({
+    const spider = cloneMonster('Frostweb Spider');
+    spider.setProperties({
       elite: false,
     });
-    normalAnkhegs.push(ank);
+    normalSpiders.push(spider);
   }
 
-  const eliteTeam = createTeam('Elite Frostweb Spider', [eliteAnkheg]);
-  const normalTeam = createTeam('Normal Frostweb Spiders', normalAnkhegs);
+  const eliteTeam = createTeam('Elite Frostweb Spider', [eliteSpider]);
+  const normalTeam = createTeam('Normal Frostweb Spiders', normalSpiders);
 
   const scenario = createScenario([eliteTeam, normalTeam]);
   const result = scenario.simulate(50);
 
-  assertExpectedTurnsCount(t, result, 8.3);
-  assertExpectedWinRate(t, result, 'Elite Frostweb Spider', 100);
-  assertExpectedWinRate(t, result, 'Normal Frostweb Spiders', 0);
+  assertExpectedTurnsCount(t, result, 6.9);
+  assertExpectedWinRate(t, result, 'Elite Frostweb Spider', 62);
+  assertExpectedWinRate(t, result, 'Normal Frostweb Spiders', 38);
   t.end();
 });
 
