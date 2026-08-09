@@ -30,6 +30,7 @@ export const perfectPrecision: CombatStyle = {
       effect: `
         Make a \\glossterm{strike}.
         The attack is made against the target's Reflex defense instead of its Armor defense.
+        \\hit The target \\briefly takes a \\minus2 penalty to its Armor defense.
       `,
       rank: 3,
       roles: ['softener'],
@@ -40,6 +41,7 @@ export const perfectPrecision: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} that deals six times \\glossterm{weapon damage}.
         The attack is made against the target's Reflex defense instead of its Armor defense.
+        \\hit The target \\briefly takes a \\minus2 penalty to its Armor defense.
       `,
       rank: 7,
       roles: ['softener'],
