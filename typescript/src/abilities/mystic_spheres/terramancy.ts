@@ -693,17 +693,16 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
 
       // Rank 3 Spell
       // Area: Small radius in Short range (R3, mod -1)
-      // Mod: Sustain Zone (-2), Escapable (+1)
-      // Result: 3 - 1 - 2 + 1 = dr1
+      // Mod: Sustain Zone (-2), Escapable (+1), Double Defense (+1)
       attack: {
-        hit: `\\damagerankone.`,
+        hit: `\\damageranktwo.`,
         halfOnMiss: true,
         targeting: `
           You create a volcano at a \\glossterm{grounded} location within \\shortrange.
           The area affected by the volcano increases over time.
           It affects a \\smallarea radius \\glossterm{zone} in the first turn, a \\medarea radius in the second turn, and a \\largearea radius in all subsequent turns.
           Any effect which increases or changes this spell's area affects all of its areas equally, not just the area in the first turn.
-          When you cast this spell, and during each of your subsequent actions, make an attack vs. Reflex against everything in the area.
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Armor and Reflex against everything in the area.
         `,
       },
       narrative: `

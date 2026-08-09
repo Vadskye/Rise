@@ -30,23 +30,24 @@ export function dragon(): RankAbility[] {
           \\rankline
           This ability's tag depends on your dragon type (see \\pcref{Dragon Species Types}).
           If your dragon's source is \magical, this ability is also magical, which means you use your \\glossterm{magical power} for damage instead of your mundane power.
-          Make an attack vs. Reflex against everything in the area defined by your dragon type.
-          \\hit \\damageranktwo.
+          Make an attack vs. Reflex and one other defense against everything in the area defined by your dragon type.
+          The additional defense depends on your dragon type.
+          \\hit \\damagerankthree.
           \\miss Half damage.
 
           \\rankline
           You use the higher of your draconic wealth rank and your rank in this archetype to determine your rank with this ability. 
-          \\rank{2} The damage increases to \\damagerankthree.
+          \\rank{2} The damage increases to \\damagerankfour.
           \\rank{3} The area increases.
           A line breath weapon becomes a \\arealarge, 10 ft.\\ wide line.
           A cone breath weapon becomes a \\areamed cone.
-          \\rank{4} The damage increases to \\damagerankfour.
-          \\rank{5} The damage increases to \\damagerankfive.
-          \\rank{6} The damage increases to \\damageranksix.
-          \\rank{7} The damage increases to \\damagerankseven, and the area increases.
+          \\rank{4} The damage increases to \\damagerankfive.
+          \\rank{5} The damage increases to \\damageranksix.
+          \\rank{6} The damage increases to \\damagerankseven.
+          \\rank{7} The damage increases to \\damagerankeight, and the area increases.
           A line breath weapon becomes a \\areagarg, 15 ft.\\ wide line.
           A cone breath weapon becomes a \\arealarge cone.
-          \\rank{8} The damage increases to \\damagerankeight.
+          \\rank{8} The damage increases to \\damageranknine.
         \\end{activeability}
       `,
     },

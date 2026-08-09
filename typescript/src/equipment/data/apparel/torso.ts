@@ -354,7 +354,7 @@ function cloaks(): RawApparel[] {
         rarity: 'Common',
       },
     },
-    // Enemies only small radius from self is -1dr.
+    // Enemies only medium radius from self is -2dr.
     {
       kind: 'Cloak',
       item: {
@@ -362,7 +362,7 @@ function cloaks(): RawApparel[] {
         rank: 1,
         short_description: 'Deals $dr3l damage when you recover',
         description: `
-          Whenever you use the \\ability{recover} ability, make an attack vs. Reflex against all \\glossterm{enemies} within a \\smallarea radius from you.
+          Whenever you use the \\ability{recover} ability, make an attack vs. Armor and Reflex against all \\glossterm{enemies} within a \\medarea radius from you.
           Then, this cloak is permanently destroyed.
           \\hit \\damagerankthreelow.
           \\miss Half damage.
@@ -373,7 +373,7 @@ function cloaks(): RawApparel[] {
             rank: 4,
             short_description: 'Deals $dr6l damage when you recover',
             description:
-              'The damage increases to $dr6l, and the area increases to a \\medarea radius.',
+              'The damage increases to $dr6l, and the area increases to a \\largearea radius.',
           },
         ],
         tags: ['Fire'],

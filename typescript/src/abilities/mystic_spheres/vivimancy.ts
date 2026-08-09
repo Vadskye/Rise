@@ -464,15 +464,14 @@ export const vivimancy: MysticSphere = {
 
       // Rank 3 Spell
       // Area: Med cone from self (R2, mod -1)
-      // Bonus: Self Damage (+1)
-      // Result: 3 - 1 + 1 = dr3
+      // Bonus: Self Damage (+1), Double Defense (+1)
       attack: {
-        hit: `\\damagerankthree.`,
+        hit: `\\damagerankfour.`,
         halfOnMiss: true,
         targeting: `
           You must be \\trait{blooded} to cast this spell.
 
-          Make an attack vs. Reflex against everything within a \\medarea cone from you.
+          Make an attack vs. Armor and Reflex against everything within a \\medarea cone from you.
           Whether the attack hits or misses, you lose \\glossterm{hit points} equal to half your \\glossterm{power}.
           You can increase this hit point loss to be equal to half your maximum hit points.
           If you do, you gain a +4 accuracy bonus with the attack.
@@ -488,12 +487,12 @@ export const vivimancy: MysticSphere = {
       name: 'Mighty Bloodfuel Blast',
 
       attack: {
-        hit: `\\damageranksix.`,
+        hit: `\\damagerankseven.`,
         halfOnMiss: true,
         targeting: `
           You must be \\trait{blooded} to cast this spell.
 
-          Make an attack vs. Reflex against everything within a \\medarea cone from you.
+          Make an attack vs. Armor and Reflex against everything within a \\medarea cone from you.
           Whether the attack hits or misses, you lose \\glossterm{hit points} equal to your \\glossterm{power}.
           Alternately, you can increase this hit point loss to be equal to half your maximum hit points.
           If you do, you gain a +5 accuracy bonus with the attack.
@@ -595,14 +594,13 @@ export const vivimancy: MysticSphere = {
 
       // Rank 3 Spell
       // Area: Tiny radius from corpse (R1, mod 0)
-      // Mod: Corpse requirement (+1)
-      // Result: 3 + 0 + 1 = dr4
+      // Mod: Corpse requirement (+1), Double Defense (+1)
       attack: {
-        hit: `\\damagerankfour.`,
+        hit: `\\damagerankfive.`,
         halfOnMiss: true,
         targeting: `
           Choose one Small or larger \\glossterm{unattended} \\glossterm{corpse} within \\shortrange.
-          Make an attack vs. Reflex against everything within a \\tinyarea radius from the corpse.
+          Make an attack vs. Armor and Reflex against everything within a \\tinyarea radius from the corpse.
           You gain a \\plus1 accuracy bonus for each size category by which the corpse is larger than Medium.
           The corpse is also destroyed.
         `,
@@ -613,6 +611,7 @@ export const vivimancy: MysticSphere = {
       rank: 3,
       roles: ['clear', 'payoff'],
       scaling: 'damage',
+      tags: ['Physical'],
     },
 
     {

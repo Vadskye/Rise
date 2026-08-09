@@ -410,15 +410,17 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       name: 'Geyser',
 
       // -1r for reflex single target area, -1r for sustain minor in tiny area?
-
       attack: {
         hit: `
-          \\damagerankone.
+          \\damageranktwo.
         `,
         halfOnMiss: true,
+        injury: `
+          You \\glossterm{fling} the target 20 feet vertically and five feet in a random horizontal direction.
+        `,
         targeting: `
           You create a geyser in a \\medarealong, 5 ft.\\ wide vertical line-shaped \\glossterm{zone} within \\shortrange.
-          When you cast this spell, and during each of your subsequent actions, make an attack vs. Reflex against everything in the area.
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Brawn and Reflex against everything in the area.
           ${WATER_ACCURACY_BONUS}
         `,
       },
@@ -436,13 +438,16 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       // rank cost relative to geyser.
       attack: {
         hit: `
-          \\damagerankthree.
-          If the target is Huge or smaller, you \\glossterm{fling} it 20 feet vertically.
+          \\damagerankfour.
+          You \\glossterm{fling} the target 20 feet vertically and five feet in a random horizontal direction.
         `,
         halfOnMiss: true,
+        injury: `
+          The vertical fling distance increases to 40 feet.
+        `,
         targeting: `
           You create a geyser in a \\largearealong, 5 ft.\\ wide vertical line-shaped \\glossterm{zone} within \\shortrange.
-          When you cast this spell, and during each of your subsequent actions, make an attack vs. Reflex against everything in the area.
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Brawn and Reflex against everything in the area.
         `,
       },
       rank: 5,
@@ -453,7 +458,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     },
     // 20% miss chance is about rank 3. But globally providing concealment that could
     // affect you and your allies seems stronger than that, even with the risk of
-    // protecting your enemies, so call this a deep attunement.
+    // protecting your enemies, so call this a deep attunement but drop it by a rank.
     {
       name: 'Misty Shroud',
 
@@ -462,7 +467,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         This fog does not fully block sight, but it provides \\glossterm{concealment}.
         There is no time gap between the disappearance of the old fog and the appearance of the new fog, so you can keep continuous fog cover by staying in the same place or moving slowly.
       `,
-      rank: 3,
+      rank: 2,
       roles: ['attune'],
       type: 'Attune (deep)',
     },

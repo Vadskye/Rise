@@ -199,18 +199,27 @@ function thrownAttacks(): Tool[] {
         },
       ],
     }),
+    // A rank 2 short range double defense spell would deal dr4 damage.
+    // That becomes dr3l with low damage.
+    // dr4 at rank 2: 12
+    // dr3l: 11
     createAlchemicalItem({
       name: "Alchemist's Fire",
       rank: 0,
       attunement: 'Unrestricted',
-      short_description: 'Throw to deal $dr2l damage',
+      short_description: 'Throw to deal $dr3l damage',
       description: `
         You can throw this item as a standard action.
-        When you do, make an attack vs. Reflex against something within \\shortrange.
-        \\hit $dr2l damage.
+        When you do, make an attack vs. Armor and Reflex against something within \\shortrange.
+        \\hit $dr3l damage.
       `,
       tags: ['Fire'],
       upgrades: [
+        // A rank 4 short range double defense spell would deal dr6 damage.
+        // That becomes dr5l with low damage scaling?
+        // dr6 at rank 4: 29 damage
+        // dr5l: 22.5 damage.
+        // dr6l: 31.5 damage.
         {
           rank: 2,
           short_description: 'Throw to deal $dr5l damage',
@@ -223,18 +232,23 @@ function thrownAttacks(): Tool[] {
       rank: 4,
       attunement: 'Unrestricted',
       short_description: 'Throw to deal $dr5l damage over time',
+      // A rank 6 short range double defense spell would deal dr8 damage, or double dr6 as
+      // a burn. That stays as double dr6l.
+      // dr8 at rank 6: 56 damage
+      // Double dr6: 76 damage (+35%)
+      // Double dr6l: 63 damage
       description: `
         You can throw this item as a standard action.
-        When you do, make an attack vs. Reflex against something within \\shortrange.
-        \\hit $dr5l damage.
-        The target also \\briefly \\debuff{burns} for $dr5l damage.
+        When you do, make an attack vs. Armor and Reflex against something within \\shortrange.
+        \\hit $dr6l damage.
+        The target also \\briefly \\debuff{burns} for $dr6l damage.
       `,
       tags: ['Fire'],
       upgrades: [
         {
           rank: 6,
-          short_description: 'Throw to deal $dr7l damage over time',
-          description: `The damage of both the initial hit and the burn increases to $dr7l.`,
+          short_description: 'Throw to deal $dr8l damage over time',
+          description: `The damage of both the initial hit and the burn increases to $dr8l.`,
         },
       ],
     }),
@@ -243,6 +257,9 @@ function thrownAttacks(): Tool[] {
       rank: 1,
       attunement: 'Unrestricted',
       short_description: 'Throw to deal $dr3l damage over time',
+      // A rank 3 short range double defense spell would deal dr5.
+      // dr5 at rank 3: 18
+      // Double dr3l: 22 (+22%)
       description: `
         You can throw this item as a standard action.
         When you do, make an attack vs. Reflex and Fortitude against something within \\shortrange.
@@ -284,29 +301,32 @@ function thrownAttacks(): Tool[] {
         },
       ],
     }),
+    // rank 3 spell would be dr3. That's about the same in low power scaling.
     createAlchemicalItem({
       name: 'Firebomb',
       rank: 1,
       attunement: 'Unrestricted',
-      short_description: 'Throw to deal $dr2l damage in an area',
+      short_description: 'Throw to deal $dr3l damage in an area',
       description: `
         You can throw this item as a standard action.
-        When you do, make an attack vs. Reflex against everything in a \\smallarea radius within \\shortrange.
+        When you do, make an attack vs. Armor and Reflex against everything in a \\smallarea radius within \\shortrange.
         Your minimum accuracy is $consumableaccuracy.
-        \\hit $dr2l damage.
+        \\hit $dr3l damage.
         \\miss Half damage.
       `,
       tags: ['Fire'],
       upgrades: [
         {
           rank: 3,
-          short_description: 'Throw to deal $dr4l damage in an area',
+          short_description: 'Throw to deal $dr5l damage in an area',
           description: `
-            The minimum accuracy increases to $consumableaccuracy, and the damage increases to $dr4l.
+            The minimum accuracy increases to $consumableaccuracy, and the damage increases to $dr5l.
           `,
         },
       ],
     }),
+    // Rank 7 spell would be dr7 = 51 damage.
+    // Double dr6l is 63 damage (+23%)
     createAlchemicalItem({
       name: 'Lavabomb',
       rank: 5,
@@ -314,7 +334,7 @@ function thrownAttacks(): Tool[] {
       short_description: 'Throw to deal $dr6l damage in an area',
       description: `
         You can throw this item as a standard action.
-        When you do, make an attack vs. Reflex against everything in a \\smallarea radius within \\shortrange.
+        When you do, make an attack vs. Armor and Reflex against everything in a \\smallarea radius within \\shortrange.
         Your minimum accuracy is $consumableaccuracy.
         \\hit $dr6l damage.
         The target also \\briefly \\debuff{burns} for $dr6l damage.
@@ -331,6 +351,7 @@ function thrownAttacks(): Tool[] {
         },
       ],
     }),
+    // Rank 4 spell would be dr3, ignoring the debuff.
     createAlchemicalItem({
       name: 'Mindbomb',
       rank: 2,
@@ -348,9 +369,9 @@ function thrownAttacks(): Tool[] {
       upgrades: [
         {
           rank: 4,
-          short_description: 'Throw to deal $dr6l damage in an area',
+          short_description: 'Throw to deal $dr5l damage in an area',
           description: `
-            The minimum accuracy increases to $consumableaccuracy, and the damage increases to $dr6l.
+            The minimum accuracy increases to $consumableaccuracy, and the damage increases to $dr5l.
           `,
         },
       ],
@@ -359,17 +380,18 @@ function thrownAttacks(): Tool[] {
       name: 'Brainfry',
       rank: 6,
       attunement: 'Unrestricted',
-      short_description: 'Throw to deal $dr8l damage to enemies in an area',
+      short_description: 'Throw to deal $dr7l damage to enemies in an area',
       description: `
         You can throw this item as a standard action.
         When you do, make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius within \\shortrange.
         Your minimum accuracy is $consumableaccuracy.
-        \\hit $dr8l \\glossterm{subdual damage}.
+        \\hit $dr7l \\glossterm{subdual damage}.
         \\injury The target is \\briefly \\confused.
         \\miss Half damage.
       `,
       tags: ['Compulsion'],
     }),
+    // rank 4 spell would deal dr4.
     createAlchemicalItem({
       name: 'Shockstone',
       rank: 2,
@@ -377,7 +399,7 @@ function thrownAttacks(): Tool[] {
       short_description: 'Throw to deal $dr4l damage and daze',
       description: `
         You can throw this item as a standard action.
-        When you do, make an attack vs. Fortitude against something within \\medrange.
+        When you do, make an attack vs. Fortitude against something within \\shortrange.
         \\hit $dr4l damage.
         \\injury The target is \\dazed as a \\glossterm{condition}.
       `,
@@ -396,11 +418,11 @@ function thrownAttacks(): Tool[] {
       name: 'Bottled Lightning',
       rank: 6,
       attunement: 'Unrestricted',
-      short_description: 'Throw to deal $dr6l damage and daze',
+      short_description: 'Throw to deal $dr7l damage and daze',
       description: `
         You can throw this item as a standard action.
-        When you do, make an attack vs. Fortitude against something within \\medrange.
-        \\hit $dr4l damage.
+        When you do, make an attack vs. Fortitude against something within \\shortrange.
+        \\hit $dr7l damage.
         \\injury The target is \\dazed as a \\glossterm{condition} and \\briefly \\blinded.
       `,
       tags: ['Electricity'],
@@ -531,7 +553,7 @@ function thrownAttacks(): Tool[] {
           rank: 2,
           short_description: 'Briefly slows in an area',
           description: `
-            The attack affects each Large or smaller creature in a \\smallarea radius within \\medrange.
+            The attack affects each Large or smaller creature in a \\smallarea radius within \\shortrange.
           `,
         },
       ],

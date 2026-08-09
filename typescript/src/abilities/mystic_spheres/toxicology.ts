@@ -277,10 +277,10 @@ export const toxicology: MysticSphere = {
       name: 'Acidic Blood',
 
       attack: {
-        hit: `\\damagerankone.`,
+        hit: `\\damageranktwo.`,
         halfOnMiss: true,
         targeting: `
-          Whenever you lose \\glossterm{hit points}, make a \\glossterm{reactive attack} vs. Reflex against all \\glossterm{enemies} adjacent to you.
+          Whenever you lose \\glossterm{hit points}, make a \\glossterm{reactive attack} vs. Fortitude and Reflex against all \\glossterm{enemies} adjacent to you.
           This effect can't trigger again until your next turn.
           You must be \\trait{blooded} to attune to this spell.
         `,
@@ -302,10 +302,10 @@ export const toxicology: MysticSphere = {
       name: 'Mighty Acidic Blood',
 
       attack: {
-        hit: `\\damagerankfour.`,
+        hit: `\\damagerankfive.`,
         halfOnMiss: true,
         targeting: `
-          Whenever you \\glossterm{hit points}, make a \\glossterm{reactive attack} vs. Reflex against all \\glossterm{enemies} in a \\smallarea radius from you.
+          Whenever you \\glossterm{hit points}, make a \\glossterm{reactive attack} vs. Fortitude and Reflex against all \\glossterm{enemies} in a \\smallarea radius from you.
           This effect can't trigger again until your next turn.
           You must be \\trait{blooded} to attune to this spell.
         `,

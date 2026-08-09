@@ -27,37 +27,39 @@ function rod(
 
 export const rods = (): Implement[] => [
   rod({
-    // Small cone of burn is dr1 + dr1 normally, which is 7 + 7 = 14 at rank 2.
-    // Compare a one-shot burst of dr3, which is 11 at rank 2.
-    // Double dr2l is 16, which is a little low on damage, so bump minimum accuracy by 1.
+    // Fan of Flames is an equivalent spell, and it deals dr2 + dr2 = 9 + 9 = 16.
+    // Target damage is +29%, so ~21 damage.
+    // Double dr3l is 22 damage, which is a bit high but about right.
     name: 'Rod of Flame',
     rank: 2,
-    short_description: 'Deals $dr2l burning damage in a cone',
+    short_description: 'Deals $dr3l burning damage in a cone',
     description: `
       You can activate this rod as a standard action.
-      When you do, make an attack vs. Reflex against everything within a \\smallarea cone, and you \\glossterm{briefly} cannot activate this rod again.
-      Your minimum accuracy is $accuracy+1.
-      \\hit $dr2l damage.
-      At the end of its next turn, the target takes $dr2l again.
-      \\miss Half damage, and no delayed damage.
+      When you do, make an attack vs. Armor and Reflex against everything within a \\smallarea cone, and you \\glossterm{briefly} cannot activate this rod again.
+      Your minimum accuracy is $accuracy.
+      \\hit $dr3l damage.
+      The target also \\briefly \\debuff{burns} for $dr3l damage.
+      \\miss Half damage, and the target does not burn.
     `,
     tags: ['Fire'],
     upgrades: [
-      // Normally dr3+dr3 = 31. Double dr4l is 33. Double dr5l is 45.
-      // A single damage burst would be dr5 = 23.
-      // We choose a nonstandard damage value here to allow more precise scaling.
+      // Normal spell is dr4 + dr4 = 19 + 19 = 38 damage.
+      // We want +37% damage, so ~51 damage.
+      // The closest matching flat damage value is double 7d6.
       {
         rank: 4,
-        short_description: 'Deals 4d10 burning damage in a cone',
+        short_description: 'Deals 7d6 burning damage in a cone',
         description:
-          'The minimum accuracy increases to $accuracy and the damage increases to 4d10.',
+          'The minimum accuracy increases to $accuracy and the damage increases to 7d6.',
       },
-      // Normally dr5+dr5 = 60. Double dr6l is 63. Double dr7l is 88, which is 46% over 60, which is about right
+      // Normal spell is dr6 + dr6 = 38 + 38 = 76 damage.
+      // We want +46% damage, so ~111 damage.
+      // The closest matching flat damage value is double 10d10.
       {
         rank: 6,
-        short_description: 'Deals $dr7l burning damage in a cone',
+        short_description: 'Deals 10d10 burning damage in a cone',
         description:
-          'The minimum accuracy increases to $accuracy and the damage increases to $dr7l.',
+          'The minimum accuracy increases to $accuracy and the damage increases to 10d10.',
       },
     ],
   }),

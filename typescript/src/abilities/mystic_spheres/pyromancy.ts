@@ -24,7 +24,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         You create a flame in your hand.
         You can create it at any intensity, up to a maximum heat equivalent to a roaring campfire.
         At it most intense, it sheds \\glossterm{bright illumination} in a 30 foot radius.
-        As a standard action, you can make a melee attack vs. Reflex against a creature or object.
+        As a standard action, you can make a melee attack vs. Armor against anything adjacent to you.
         On a hit, you deal the target damage equal to your \\glossterm{power}.
         If the target is highly flammable, such as a torch or campfire, it ignites.
       `,
@@ -88,14 +88,15 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       // Rank 3 Spell
       // Area: Enemies in Tiny radius from self (R0, mod +1)
       // Buff: Briefly Empowered (0.4 EA guaranteed, mod -2)
-      // Result: 3 + 1 - 2 = dr2
+      // Double defense is +1dr
+      // Result: 3 + 1 - 2 + 1 = dr3
       attack: {
         hit: `
-          \\damageranktwo.
+          \\damagerankthree.
         `,
         halfOnMiss: true,
         targeting: `
-          Make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you.
+          Make an attack vs. Armor and Reflex against all \\glossterm{enemies} adjacent to you.
           Then, you are \\briefly \\empowered.
         `,
       },
@@ -110,15 +111,16 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       // Rank 6 Spell
       // Area: Enemies in Tiny radius from self (R0, mod +1)
       // Buff: Briefly Empowered (0.4 EA guaranteed, mod -2)
-      // Result: 6 + 1 - 2 = dr5
+      // Double defense is +1dr
+      // Result: 6 + 1 - 2 + 1 = dr6
       attack: {
         hit: `
-          \\damagerankfive.
+          \\damageranksix.
         `,
         halfOnMiss: true,
         targeting: `
           You are \\briefly \\empowered.
-          Then, make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you.
+          Then, make an attack vs. Armor and Reflex against all \\glossterm{enemies} adjacent to you.
         `,
       },
       rank: 6,
@@ -134,6 +136,8 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       // Bonus: Stamina Penalty (mod +1), Self-Hit (mod +1)
       // Buff: Briefly Maximized (0.7 EA guaranteed, mod -4)
       // Result: 4 + 1 - 4 + 2 = dr3
+      // Double defense grants +4 accuracy; don't want to increase damage to avoid
+      // increasing self-damage. This is a bit much on accuracy, but the damage is low.
       cost: 'One \\glossterm{stamina}.',
       attack: {
         hit: `
@@ -141,7 +145,8 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         `,
         halfOnMiss: true,
         targeting: `
-          Make an attack vs. Reflex against yourself and all \\glossterm{enemies} adjacent to you.
+          Make an attack vs. Armor and Reflex against yourself and all \\glossterm{enemies} adjacent to you.
+          You gain a \\plus4 accuracy bonus with this attack against each target other than yourself.
           Then, you are \\briefly \\maximized.
         `,
       },
@@ -158,6 +163,8 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       // Mod: Stamina Penalty (mod +1), Self-Hit (mod +1)
       // Buff: Briefly Maximized (0.7 EA guaranteed, mod -4)
       // Result: 7 + 1 - 4 + 2 = dr6
+      // Double defense grants +4 accuracy; don't want to increase damage to avoid
+      // increasing self-damage. This is a bit much on accuracy, but the damage is low.
       cost: 'One \\glossterm{stamina}.',
       attack: {
         hit: `
@@ -165,7 +172,8 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         `,
         halfOnMiss: true,
         targeting: `
-          Make an attack vs. Reflex against yourself and all \\glossterm{enemies} adjacent to you.
+          Make an attack vs. Armor and Reflex against yourself and all \\glossterm{enemies} adjacent to you.
+          You gain a \\plus4 accuracy bonus with this attack against each target other than yourself.
           Then, you are \\briefly \\maximized.
         `,
       },
@@ -201,7 +209,8 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       name: 'Mighty Burning Grasp',
 
       // Baseline for melee range is dr7, or dr6 for single target reflex.
-      // We drop to dr4 for damage over time.
+      // dr6 at rank 5 = 23.
+      // Double dr4 at rank 5: 30 (+30%)
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
@@ -225,16 +234,16 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       // Rank 3 Spell
       // Area: Med radius from self (R2, mod -1)
-      // Mod: DoT (mod -2), Self-hit (mod +1), Escapable (mod +1)
-      // Result: 3 - 1 - 2 + 1 + 1 = dr2
+      // Mod: DoT (mod -2), Self-hit (mod +1), Escapable (mod +1), Double Defense (mod +1)
+      // Result: 3 - 1 - 2 + 1 + 1 + 1 = dr3
       attack: {
         hit: `
-          \\damageranktwo.
+          \\damagerankthree.
         `,
         halfOnMiss: true,
         targeting: `
           Fire consumes a \\medarea radius \\glossterm{zone} from your location.
-          Make an attack vs. Reflex against everything in the area.
+          Make an attack vs. Armor and Reflex against everything in the area.
           This typically means you include yourself as a target.
           At the start of your next turn, this effect \\glossterm{repeats} in the same area.
         `,
@@ -249,16 +258,16 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       // Rank 6 Spell
       // Area: Large radius from self (R4, mod -2)
-      // Mod: Twice (mod -2), Self-hit (mod +1), Escapable (mod +1)
-      // Result: 6 - 2 - 2 + 1 + 1 = dr4
+      // Mod: Twice (mod -2), Self-hit (mod +1), Escapable (mod +1), Double Defense (mod +1)
+      // Result: 6 - 2 - 2 + 1 + 1 + 1 = dr5
       attack: {
         hit: `
-          \\damagerankfour.
+          \\damagerankfive.
         `,
         halfOnMiss: true,
         targeting: `
           Fire consumes a \\largearea radius \\glossterm{zone} from your location.
-          Make an attack vs. Reflex against everything in the area.
+          Make an attack vs. Armor and Reflex against everything in the area.
           This typically means you include yourself as a target.
           At the start of your next turn, this effect \\glossterm{repeats} in the same area.
         `,
@@ -273,12 +282,13 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       // Rank 3 Spell
       // Area: Small radius in Short range (R3, mod -1)
-      // Result: 3 - 1 = dr2
+      // Double defense is +1dr
+      // Result: 3 - 1 + 1 = dr3
       attack: {
-        hit: `\\damageranktwo.`,
+        hit: `\\damagerankthree.`,
         halfOnMiss: true,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\smallarea radius within \\shortrange.
+          Make an attack vs. Armor and Reflex against everything in a \\smallarea radius within \\shortrange.
         `,
       },
 
@@ -292,12 +302,13 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       // Rank 5 Spell
       // Area: Two Tiny radii in Short range (R3, mod -1)
-      // Result: 5 - 1 = dr4
+      // Double defense is +1dr
+      // Result: 5 - 1 + 1 = dr4
       attack: {
-        hit: `\\damagerankfour.`,
+        hit: `\\damagerankfive.`,
         halfOnMiss: true,
         targeting: `
-          Make an attack vs. Reflex against everything in each of two separate \\tinyarea radius areas within \\shortrange.
+          Make an attack vs. Armor and Reflex against everything in each of two separate \\tinyarea radius areas within \\shortrange.
           If the areas overlap, you still only make one attack against creatures in the overlapping area.
         `,
       },
@@ -312,13 +323,13 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       // +2dr for delay
       attack: {
-        hit: `\\damagerankfour.`,
+        hit: `\\damagerankfive.`,
         halfOnMiss: true,
         targeting: `
           When you cast this spell, you create a Fine bead of fire in midair at a location in \\shortrange.
           The bead sheds light like a torch.
           It is immune to most forms of damage, but if it takes damage from a \\atCold ability, it is destroyed and this spell has no further effect.
-          At the end of your next turn, the bead explodes, and you make an attack vs. Reflex against everything in a \\medarea radius of it.
+          At the end of your next turn, the bead explodes, and you make an attack vs. Armor and Reflex against everything in a \\medarea radius of it.
         `,
       },
       rank: 4,
@@ -331,17 +342,18 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       // Rank 6 Spell
       // Area: Small radius in Short range (R3, mod -1)
-      // Result: 6 - 1 = dr5
+      // Double defense is +1dr
+      // Result: 6 - 1 + 1 = dr6
       attack: {
         hit: `
-          \\damagerankfive.
+          \\damageranksix.
           If a creature takes a \\glossterm{vital wound} from this damage that leaves it unconscious, its body is completely destroyed by flame.
           Only a pile of ashes remains.
           An immolated creature's equipment is unaffected.
         `,
         halfOnMiss: true,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\smallarea radius within \\shortrange.
+          Make an attack vs. Armor and Reflex against everything in a \\smallarea radius within \\shortrange.
         `,
       },
       rank: 6,
@@ -355,12 +367,12 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankone.
-          The target also \\briefly \\debuff{burns} for \\damagerankone.
+          \\damageranktwo.
+          The target also \\briefly \\debuff{burns} for \\damageranktwo.
         `,
         miss: BURNING_HALF,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\smallarea cone from you.
+          Make an attack vs. Armor and Reflex against everything in a \\smallarea cone from you.
         `,
       },
       rank: 2,
@@ -378,12 +390,12 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankfour.
-          The target also \\briefly \\debuff{burns} for \\damagerankfour.
+          \\damagerankfive.
+          The target also \\briefly \\debuff{burns} for \\damagerankfive.
         `,
         miss: BURNING_HALF,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\smallarea cone from you.
+          Make an attack vs. Armor and Reflex against everything in a \\smallarea cone from you.
         `,
       },
       rank: 5,
@@ -444,11 +456,11 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       // Target is +33% damage from a rank 3 attunement.
       // Normal medarea cone would be r2 damage = 10, r3 would be 13, perfect.
       attack: {
-        hit: `\\damagerankthree.`,
+        hit: `\\damagerankfour.`,
         halfOnMiss: true,
         targeting: `
           For the duration of this spell, you can breathe fire like a dragon as a standard action.
-          When you do, make an attack vs. Reflex against everything within a \\medarea cone from you.
+          When you do, make an attack vs. Armor and Reflex against everything within a \\medarea cone from you.
           You \\briefly can't use this ability again.
         `,
       },
@@ -516,10 +528,10 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       name: 'Flame Serpent',
 
       attack: {
-        hit: `\\damageranktwo.`,
+        hit: `\\damagerankthree.`,
         halfOnMiss: true,
         targeting: `
-          When you cast this spell, an attack vs. Reflex against everything in a \\medarealong, 5 ft. wide \\glossterm{shapeable} line that is entirely within \\medrange of you.
+          When you cast this spell, an attack vs. Armor and Reflex against everything in a \\medarealong, 5 ft. wide \\glossterm{shapeable} line that is entirely within \\medrange of you.
           The line cannot intersect itself, and you must designate one end of the line as the head of the flame serpent and the other end as the tail of the flame serpent.
 
           Whenever you sustain this spell, you can repeat this attack in a new line.
@@ -583,7 +595,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         halfOnMiss: true,
         targeting: `
           Heat constantly radiates in a \\smallarea radius emanation from you.
-          As a \\glossterm{minor action}, you can intensify the flames to make an attack vs. Reflex against everything in the area.
+          As a \\glossterm{minor action}, you can intensify the flames to make an attack vs. Fortitude against everything in the area.
         `,
       },
       rank: 4,
@@ -642,13 +654,13 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       cost: BARRIER_COOLDOWN,
       attack: {
-        hit: `\\damagerankone.`,
+        hit: `\\damageranktwo.`,
         halfOnMiss: true,
         targeting: `
           You create a \\medarealong \\glossterm{wall} of fire within \\medrange.
-          When you cast this spell, and during each of your subsequent actions, make an attack vs. Reflex against any creature sharing space with it.
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Armor and Reflex against any creature sharing space with it.
           Generally, this is only possible for Large or larger creatures.
-          In addition, whenever something passes through the the wall, you make a \\glossterm{reactive attack} vs. Reflex against it.
+          In addition, whenever something passes through the the wall, you make a \\glossterm{reactive attack} vs. Armor and Reflex against it.
           You can only attack a given target with this spell once per turn.
         `,
       },
@@ -741,11 +753,11 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       // This is written as a rank 3 spell with an accuracy bonus built in.
       attack: {
-        hit: `\\damagerankone.`,
+        hit: `\\damageranktwo.`,
         halfOnMiss: true,
         targeting: `
           Choose one Tiny or larger active fire within \\shortrange.
-          Make an attack vs. Reflex against everything within an \\smallarea radius from it.
+          Make an attack vs. Armor and Reflex against everything within an \\smallarea radius from it.
           You gain a \\plus1 accuracy bonus for each size category by which the fire is larger than Tiny.
           This extinguishes the fire if it was Medium or smaller.
         `,
@@ -817,13 +829,13 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankone.
-          The target also \\briefly \\debuff{burns} for \\damagerankone.
+          \\damageranktwo.
+          The target also \\briefly \\debuff{burns} for \\damageranktwo.
         `,
         halfOnMiss: true,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\shortrange.
-          In addition, make an attack vs. Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.
+          In addition, make an attack vs. Armor and Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.
         `,
       },
       rank: 3,
@@ -838,13 +850,13 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankthree.
-          The target also \\briefly \\debuff{burns} for \\damagerankthree.
+          \\damagerankfour.
+          The target also \\briefly \\debuff{burns} for \\damagerankfour.
         `,
         halfOnMiss: true,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\medrange.
-          In addition, make an attack vs. Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.
+          In addition, make an attack vs. Armor and Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.
         `,
       },
       rank: 6,
@@ -861,7 +873,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         halfOnMiss: true,
         targeting: `
           Whenever you use the \\ability{recover} ability, you can activate this ability.
-          If you do, make an attack vs. Reflex against everything within a \\smallarea radius from you.
+          If you do, make an attack vs. Armor and Reflex against all \\glossterm{enemies} within a \\smallarea radius from you.
           Then, this ability is \\glossterm{dismissed}.
         `,
       },
@@ -971,10 +983,10 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       // Single target melee damage would normally be dr3, or dr2 vs all adjacent.
       // It's not clear exactly how much empowered is worth vs guaranteed damage.
       attack: {
-        hit: `\\damagerankone.`,
+        hit: `\\damageranktwo.`,
         targeting: `
           You are \\briefly \\empowered.
-          As a \\brief effect, whenever a creature makes a \\glossterm{melee} attack against you, make a \\glossterm{reactive attack} vs. Reflex against them.
+          As a \\brief effect, whenever a creature makes a \\glossterm{melee} attack against you, make a \\glossterm{reactive attack} vs. Armor and Reflex against them.
         `,
       },
       roles: ['generator', 'retaliate'],

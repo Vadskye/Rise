@@ -21,7 +21,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
           The target takes damage equal to your \\glossterm{power}.
         `,
         targeting: `
-          Make an attack vs. Reflex against something within \\shortrange.
+          Make an attack vs. Fortitude against something within \\shortrange.
         `,
       },
       roles: ['burst'],

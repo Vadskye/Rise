@@ -1656,8 +1656,8 @@ export const rituals: RitualDefinition[] = [
       After the object explodes in this way, the ritual is \\glossterm{dismissed}.
       If the object is destroyed or rendered illegible, the ritual is dismissed without exploding.
 
-      When the object explodes, make an attack vs. Reflex against everything within a \\medarea radius from the object.
-      \\hit \\damagerankthree.
+      When the object explodes, make an attack vs. Armor and Reflex against everything within a \\medarea radius from the object.
+      \\hit \\damagerankfour.
       \\miss Half damage.
     `,
     rank: 3,

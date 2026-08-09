@@ -93,9 +93,9 @@ t.test('validateSpells: Redundancy & Inconsistency Checks', (t) => {
         rank: 3,
         roles: ['clear'],
         attack: {
-          hit: '\\damagerankfour.',
+          hit: '\\damagerankfive.',
           targeting:
-            'Choose one corpse. Make an attack vs. Reflex against everything within a \\smallarea radius from the corpse.',
+            'Choose one corpse. Make an attack vs. Armor and Reflex against everything within a \\smallarea radius from the corpse.',
         },
       }),
     ]);
@@ -106,9 +106,9 @@ t.test('validateSpells: Redundancy & Inconsistency Checks', (t) => {
         rank: 3,
         roles: ['clear'],
         attack: {
-          hit: '\\damageranktwo.',
+          hit: '\\damagerankthree.',
           targeting:
-            'Make an attack vs. Reflex against everything in a \\smallarea radius within \\shortrange.',
+            'Make an attack vs. Armor and Reflex against everything in a \\smallarea radius within \\shortrange.',
         },
       }),
     ]);

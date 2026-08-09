@@ -284,7 +284,8 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
     {
       name: 'Frostbite',
 
-      // +1dr for delay
+      // Immediate damage would be dr1 = 5.75 damage.
+      // Delayed damage is dr2 = 7.75 (+34%)
       attack: {
         hit: `
           You gain an \\glossterm{ice crystal}, and the target feels a growing chill.
@@ -305,7 +306,8 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
     {
       name: 'Mighty Frostbite',
 
-      // +1dr for delay
+      // Immediate damage would be dr5 = 25
+      // Delayed damage is 32.6 (+30%)
       attack: {
         hit: `
           You gain an \\glossterm{ice crystal}, and the target feels a growing chill.

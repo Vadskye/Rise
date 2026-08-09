@@ -455,13 +455,13 @@ export const verdamancy: MysticSphere = {
       // This allows sharing, but also requires an extra standard action to cast, so no
       // penalty for the weird effect.
       attack: {
-        hit: `\\damageranktwo.`,
+        hit: `\\damagerankthree.`,
         halfOnMiss: true,
         targeting: `
           % Does "seed structure" make sense?
           You transform up to three \\glossterm{unattended} acorns or similar seed structures you \\glossterm{touch} into small bombs.
           As a standard action, you or another creature can throw the seed up to 30 feet.
-          When thrown individually in this way, the seed detonates, and you make an attack vs. Reflex against everything within a \\tinyarea radius of the impact location.
+          When thrown individually in this way, the seed detonates, and you make an attack vs. Armor and Reflex against everything within a \\tinyarea radius of the impact location.
           If the seed is destroyed in any other way, it has no effect.
         `,
       },
