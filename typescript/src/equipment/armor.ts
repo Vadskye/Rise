@@ -23,7 +23,6 @@ export type ArmorMaterial =
   | { kind: 'braided vineweave' };
 
 export interface ArmorDefinition {
-  accuracyModifier: number;
   durability: number;
   defense: number;
   dexMultiplier: number;
@@ -103,7 +102,6 @@ export function getArmorBaseDefinition(kind: ArmorKind, material?: ArmorMaterial
   switch (kind) {
     case 'BuffLeather':
       return {
-        accuracyModifier: 0,
         durability: calcDurability(1),
         defense: 1,
         dexMultiplier: 1.0,
@@ -116,7 +114,6 @@ export function getArmorBaseDefinition(kind: ArmorKind, material?: ArmorMaterial
       };
     case 'MailShirt':
       return {
-        accuracyModifier: 0,
         durability: calcDurability(2),
         defense: 1,
         dexMultiplier: 1.0,
@@ -129,7 +126,6 @@ export function getArmorBaseDefinition(kind: ArmorKind, material?: ArmorMaterial
       };
     case 'Rawhide':
       return {
-        accuracyModifier: 0,
         durability: calcDurability(0),
         defense: 1,
         dexMultiplier: 1.0,
@@ -142,7 +138,6 @@ export function getArmorBaseDefinition(kind: ArmorKind, material?: ArmorMaterial
       };
     case 'Buckler':
       return {
-        accuracyModifier: 0,
         durability: 0,
         defense: 1,
         dexMultiplier: 1.0,
@@ -155,7 +150,6 @@ export function getArmorBaseDefinition(kind: ArmorKind, material?: ArmorMaterial
       };
     case 'LeatherLamellar':
       return {
-        accuracyModifier: 0,
         durability: calcDurability(2),
         defense: 3,
         dexMultiplier: 0.5,
@@ -168,7 +162,6 @@ export function getArmorBaseDefinition(kind: ArmorKind, material?: ArmorMaterial
       };
     case 'Scale':
       return {
-        accuracyModifier: 0,
         durability: calcDurability(3),
         defense: 3,
         dexMultiplier: 0.5,
@@ -181,7 +174,6 @@ export function getArmorBaseDefinition(kind: ArmorKind, material?: ArmorMaterial
       };
     case 'Brigandine':
       return {
-        accuracyModifier: 0,
         durability: calcDurability(4),
         defense: 3,
         dexMultiplier: 0.5,
@@ -194,7 +186,6 @@ export function getArmorBaseDefinition(kind: ArmorKind, material?: ArmorMaterial
       };
     case 'StandardShield':
       return {
-        accuracyModifier: 0,
         durability: 0,
         defense: 2,
         dexMultiplier: 0.5,
@@ -207,7 +198,6 @@ export function getArmorBaseDefinition(kind: ArmorKind, material?: ArmorMaterial
       };
     case 'Breastplate':
       return {
-        accuracyModifier: 0,
         durability: calcDurability(5),
         defense: 4,
         dexMultiplier: 0.5,
@@ -220,7 +210,6 @@ export function getArmorBaseDefinition(kind: ArmorKind, material?: ArmorMaterial
       };
     case 'HalfPlate':
       return {
-        accuracyModifier: 0,
         durability: calcDurability(7),
         defense: 4,
         dexMultiplier: 0.5,
@@ -233,7 +222,6 @@ export function getArmorBaseDefinition(kind: ArmorKind, material?: ArmorMaterial
       };
     case 'FullPlate':
       return {
-        accuracyModifier: 0,
         durability: calcDurability(8),
         defense: 4,
         dexMultiplier: 0.5,
@@ -246,7 +234,6 @@ export function getArmorBaseDefinition(kind: ArmorKind, material?: ArmorMaterial
       };
     case 'TowerShield':
       return {
-        accuracyModifier: -1,
         durability: 0,
         defense: 3,
         dexMultiplier: 0.5,

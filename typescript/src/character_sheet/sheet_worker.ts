@@ -858,7 +858,7 @@ function handleAccuracy() {
   onGet({
     variables: {
       miscName: 'accuracy',
-      numeric: ['level', 'perception', 'stamina_penalty', 'shield_accuracy'],
+      numeric: ['level', 'perception', 'stamina_penalty'],
       boolean: ['elite', 'is_monster'],
     },
     callback: (v) => {
@@ -867,13 +867,12 @@ function handleAccuracy() {
       const levelishModifier = Math.floor(levelModifier + perceptionModifier);
       const crModifier = v.is_monster ? calcAccuracyCrScaling(v.level, v.elite) : 0;
       const accuracy =
-        v.misc + levelishModifier + crModifier + v.shield_accuracy - v.stamina_penalty;
+        v.misc + levelishModifier + crModifier - v.stamina_penalty;
       setAttrs({
         accuracy,
         accuracy_explanation: formatCombinedExplanation(v.miscExplanation, [
           { name: 'level', value: levelModifier },
           { name: 'Per', value: perceptionModifier },
-          { name: 'Shield', value: v.shield_accuracy },
           { name: 'stamina penalty', value: -v.stamina_penalty },
           { name: 'Monster', value: crModifier },
         ]),

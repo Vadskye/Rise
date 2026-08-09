@@ -311,13 +311,6 @@ def armor(destination: str, armor_type: str) -> str:
         },
         input_attributes={"name": f"{parseable_type}_durability"},
     )
-    shield_accuracy = labeled_number_input(
-        "Accuracy",
-        {
-            "class": "shield-accuracy",
-        },
-        input_attributes={"name": f"{parseable_type}_accuracy"},
-    )
     body_armor_vitals = labeled_number_input(
         "Vital rolls",
         {"class": "armor-vital-rolls"},
@@ -340,7 +333,7 @@ def armor(destination: str, armor_type: str) -> str:
             (
                 body_armor_dr
                 if armor_type == "Body armor"
-                else shield_accuracy
+                else div()
             ),
             (
                 body_armor_vitals

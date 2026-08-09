@@ -51,17 +51,14 @@ export function generateBodyArmorProperties(bodyArmor: BodyArmor) {
 export function generateShieldProperties(shield: Shield) {
   return {
     buckler: {
-      shield_accuracy: 0,
       shield_name: shield,
       shield_defense: 1,
     },
     ['standard shield']: {
-      shield_accuracy: 0,
       shield_name: shield,
       shield_defense: 2,
     },
     ['tower shield']: {
-      shield_accuracy: -1,
       shield_name: shield,
       shield_defense: 3,
     },

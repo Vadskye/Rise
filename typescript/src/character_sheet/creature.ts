@@ -88,7 +88,6 @@ type NumericCreatureProperty =
   | 'injury_point'
   | 'mundane_power'
   | 'magical_power'
-  | 'shield_accuracy'
   | 'speed'
   | 'vital_rolls'
   | 'maximum_stamina'
@@ -444,7 +443,6 @@ export class Creature implements CreaturePropertyMap {
       if (kind) {
         const def = getArmorBaseDefinition(kind);
         this.setProperties({
-          shield_accuracy: def.accuracyModifier,
           shield_defense: def.defense,
         });
       }
@@ -1592,10 +1590,6 @@ export class Creature implements CreaturePropertyMap {
 
   public get monster_type() {
     return this.getPropertyValue('monster_type');
-  }
-
-  public get shield_accuracy() {
-    return this.getPropertyValue('shield_accuracy');
   }
 
   public get body_armor_name() {
