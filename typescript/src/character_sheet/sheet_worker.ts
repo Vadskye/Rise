@@ -1666,7 +1666,7 @@ function handleDebuffs() {
 
       // Sickened
       if (v.sickened) {
-        debuffHeaders.push("{{Sickened=[[@{character_rank} damage penalty, can't explode)");
+        debuffHeaders.push("{{Sickened=[[-@{character_rank}]] damage penalty, can't explode}}");
       }
 
       // Other?
