@@ -9,13 +9,6 @@ rm -f rgen.log
 
 if [ "$has_art" -eq "1" ]
     g rise
-    # Remove existing image files
-    for dir in lib/images/*
-        set -l dir_files $dir/*
-        if count $dir_files >/dev/null
-            rm $dir_files
-        end
-    end
 
     # Copy images
     cp -r (p utransfer)/Rise\ Art/introduction lib/images/
