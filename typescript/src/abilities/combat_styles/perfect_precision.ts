@@ -9,7 +9,7 @@ export const perfectPrecision: CombatStyle = {
       name: 'Pure Precision',
 
       effect: `
-        Make a \\glossterm{strike} with a +3 accuracy bonus.
+        Make a \\glossterm{strike} with a +4 accuracy bonus.
       `,
       rank: 3,
       roles: ['burst'],

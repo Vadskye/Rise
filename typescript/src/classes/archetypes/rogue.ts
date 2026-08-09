@@ -285,19 +285,20 @@ export function combatTrickster(): RankAbility[] {
         Whenever you increase your rank in this archetype, you can change your augments.
         However, you must still apply them to rank 1 trick maneuvers.
         {
+        \\parhead{Ambush Maneuver} You deal \\glossterm{extra damage} equal to three times your excess rank against creatures that you did not attack since the start of your last turn.
+
         \\parhead{Debilitating Maneuver} You gain an accuracy bonus equal to twice your excess rank.
         However, the maneuver deals half damage.
         You can only apply this augment to maneuvers that can deal damage.
 
         \\parhead{Finishing Maneuver} You gain an accuracy bonus equal to twice your excess rank against creatures who are \\glossterm{injured}.
 
-        \\parhead{Mighty Maneuver} You deal \\glossterm{extra damage} equal to twice your excess rank.
-
-        \\parhead{Mobile Maneuver} You can move up to 5 feet per excess rank before or after using your chosen maneuver, up to a maximum distance equal to your \\glossterm{speed}.
+        \\parhead{Mobile Maneuver} You can walk up to 5 feet per excess rank before or after using your chosen maneuver, up to a maximum distance equal to your \\glossterm{speed}.
         This does not reduce your \\glossterm{available movement}.
+        In addition, you gain an accuracy bonus equal to your excess rank.
         You cannot apply this augment to maneuvers that already allow you to move using one of your movement modes.
 
-        \\parhead{Precise Maneuver} You gain an accuracy bonus equal to your excess rank.
+        \\parhead{Slick Maneuver} You gain an accuracy bonus equal to twice your excess rank against creatures with a lower Dexterity than yours.
         }
       `,
     },

@@ -261,19 +261,19 @@ export function martialMastery(): RankAbility[] {
         Whenever you increase your rank in this archetype, you can change your augments.
         However, you must still apply them to rank 1 martial maneuvers.
         {
-        \\parhead{Counter Maneuver} You gain an accuracy bonus equal to twice your excess rank against creatures who made a \\glossterm{strike} against you since your last turn.
-        You can only apply this augment to maneuvers which cause you to make a \\glossterm{strike}.
+        \\parhead{Counter Maneuver} You gain an accuracy bonus equal to twice your excess rank against creatures who attacked you since your last turn.
 
         \\parhead{Debilitating Maneuver} You gain an accuracy bonus equal to twice your excess rank.
         However, the maneuver deals half damage.
         You can only apply this augment to maneuvers that can deal damage.
 
-        \\parhead{Defensive Maneuver} You \\glossterm{briefly} gain a bonus to your Armor defense equal to half your excess rank (minimum 1) when you use the maneuver.
+        \\parhead{Defensive Maneuver} When you use the maneuver, you \\glossterm{briefly} gain a bonus to all defenses equal to half your excess rank (minimum 1).
         You can only apply this augment to maneuvers which cause you to make a \\glossterm{strike}.
 
         \\parhead{Mighty Maneuver} You deal \\glossterm{extra damage} equal to twice your excess rank.
 
-        \\parhead{Precise Maneuver} You gain an accuracy bonus equal to your excess rank.
+        \\parhead{Superior Maneuver} You gain an accuracy bonus equal to your excess rank, and you deal \\glossterm{extra damage} equal to your excess rank.
+        These bonuses are doubled against creatures with a \\glossterm{character rank} lower than yours.
         }
       `,
     },

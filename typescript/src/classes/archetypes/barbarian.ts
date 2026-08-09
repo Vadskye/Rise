@@ -365,15 +365,16 @@ export function primalWarrior(): RankAbility[] {
 
         \\parhead{Mighty Maneuver} You deal \\glossterm{extra damage} equal to twice your excess rank.
 
-        \\parhead{Precise Maneuver} You gain an accuracy bonus equal to your excess rank.
+        \\parhead{Mobile Maneuver} You can walk up to 5 feet per excess rank before or after using your chosen maneuver, up to a maximum distance equal to your \\glossterm{speed}.
+        This does not reduce your \\glossterm{available movement}.
+        In addition, you gain an accuracy bonus equal to your excess rank.
+        You cannot apply this augment to maneuvers that already allow you to move using one of your movement modes.
 
-        \\parhead{Reckless Maneuver}You gain an accuracy bonus equal to twice your excess rank.
+        \\parhead{Overpowering Maneuver} You gain an accuracy bonus equal to twice your excess rank against creatures with a Strength lower than yours.
+
+        \\parhead{Reckless Maneuver} You gain an accuracy bonus equal to twice your excess rank.
         However, you \\glossterm{briefly} take a \\minus2 penalty to your defenses after you use the maneuver.
-        You can only apply this augment to maneuvers which cause you to make a melee \\glossterm{strike} or \\glossterm{brawling attack}.
-
-        \\parhead{Widened Maneuver} The area affected by your chosen maneuver doubles.
-        If your excess rank is at least 4, the area triples instead.
-        You can only apply this augment to maneuvers that affect an area.
+        You can only apply this augment to maneuvers which cause you to make a \\glossterm{brawling attack} or melee \\glossterm{strike}.
         }
       `,
     },

@@ -177,20 +177,23 @@ export function esotericWarrior(): RankAbility[] {
         Whenever you increase your rank in this archetype, you can change your augments.
         However, you must still apply them to rank 1 esoteric maneuvers.
         {
-        \\parhead{Counter Maneuver} You gain an accuracy bonus equal to twice your excess rank against creatures who made a \\glossterm{strike} against you since your last turn.
-        You can only apply this augment to maneuvers which cause you to make a \\glossterm{strike}.
+        \\parhead{Counter Maneuver} You gain an accuracy bonus equal to twice your excess rank against creatures who attacked you since your last turn.
 
         \\parhead{Debilitating Maneuver} You gain an accuracy bonus equal to twice your excess rank.
         However, the maneuver deals half damage.
         You can only apply this augment to maneuvers that can deal damage.
 
-        \\parhead{Mighty Maneuver} You deal \\glossterm{extra damage} equal to twice your excess rank.
+        \\parhead{Defensive Maneuver} When you use the maneuver, you \\glossterm{briefly} gain a bonus to all defenses equal to half your excess rank (minimum 1).
+        You can only apply this augment to maneuvers which cause you to make a \\glossterm{strike}.
+
+        \\parhead{Flurry Maneuver} You make an extra strike with the maneuver, but each strike deals half damage.
+        In addition, each strike deals \\glossterm{extra damage} equal to your excess rank.
+        You can only apply this augment to maneuvers which cause you to make a \\glossterm{strike}.
 
         \\parhead{Mobile Maneuver} You can walk up to 5 feet per excess rank before or after using your chosen maneuver, up to a maximum distance equal to your \\glossterm{speed}.
         This does not reduce your \\glossterm{available movement}.
+        In addition, you gain an accuracy bonus equal to your excess rank.
         You cannot apply this augment to maneuvers that already allow you to move using one of your movement modes.
-
-        \\parhead{Precise Maneuver} You gain an accuracy bonus equal to your excess rank.
         }
       `,
     },
