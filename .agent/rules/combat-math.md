@@ -32,7 +32,7 @@ Most classes provide a +3 bonus to non-Armor defenses, and a +0 bonus to Armor d
 | **Armor (AD)** | `floor(Level / 2) + Dexterity + ClassBonus + BodyArmorBonus + ShieldBonus` |
 | **Brawn**      | `floor(Level / 2) + Strength + ClassBonus`                                 |
 | **Mental**     | `floor(Level / 2) + Willpower + ClassBonus`                                |
-| **Reflex**     | `floor(Level / 2) + Dexterity + ClassBonus + ShieldBonus`                  |
+| **Reflex**     | `floor(Level / 2) + Dexterity + ClassBonus`                  |
 | **Fortitude**  | `floor(Level / 2) + Constitution + ClassBonus`                             |
 
 ## 4. Power Formulas

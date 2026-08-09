@@ -311,13 +311,6 @@ def armor(destination: str, armor_type: str) -> str:
         },
         input_attributes={"name": f"{parseable_type}_durability"},
     )
-    shield_reflex = labeled_number_input(
-        "Reflex",
-        {
-            "class": "shield-reflex",
-        },
-        input_attributes={"name": f"{parseable_type}_reflex"},
-    )
     shield_accuracy = labeled_number_input(
         "Accuracy",
         {
@@ -347,12 +340,12 @@ def armor(destination: str, armor_type: str) -> str:
             (
                 body_armor_dr
                 if armor_type == "Body armor"
-                else shield_reflex
+                else shield_accuracy
             ),
             (
                 body_armor_vitals
                 if armor_type == "Body armor"
-                else shield_accuracy
+                else div()
             ),
             (
                 labeled_number_input(

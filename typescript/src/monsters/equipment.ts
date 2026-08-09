@@ -54,19 +54,16 @@ export function generateShieldProperties(shield: Shield) {
       shield_accuracy: 0,
       shield_name: shield,
       shield_defense: 1,
-      shield_reflex: 1,
     },
     ['standard shield']: {
       shield_accuracy: 0,
       shield_name: shield,
       shield_defense: 2,
-      shield_reflex: 2,
     },
     ['tower shield']: {
       shield_accuracy: -1,
       shield_name: shield,
       shield_defense: 3,
-      shield_reflex: 3,
     },
   }[shield];
 }
