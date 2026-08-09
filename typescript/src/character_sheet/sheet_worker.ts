@@ -754,13 +754,8 @@ export function handleEverything() {
   handleCreationModifiers();
   handleCustomModifiers();
   handleDebuffs();
-  // handleModifierExplanations();
-  handleMonsterAbilityGeneration();
   handleMonsterToggles();
   handleResources();
-  // TODO: reenable once this actually has value. Disabled for now to avoid performance
-  // penalties.
-  // handleRust();
   handleSize();
   handleSkills();
   handleSpecialDefenses();
@@ -1599,6 +1594,7 @@ function handleDebuffs() {
         'panicked',
         'partially_unaware',
         'prone',
+        'sickened',
         'slowed',
         'squeezing',
         'unaware',
@@ -1666,6 +1662,11 @@ function handleDebuffs() {
         debuffHeaders.push('{{Miss chance=Miss on 1: [[d2]]}}');
       } else if (v.dazzled) {
         debuffHeaders.push('{{Miss chance=Miss on 1: [[d5]]}}');
+      }
+
+      // Sickened
+      if (v.sickened) {
+        debuffHeaders.push("{{Sickened=[[@{character_rank} damage penalty, can't explode)");
       }
 
       // Other?
@@ -1979,51 +1980,8 @@ function handleSpeed() {
   });
 }
 
-// function handleModifierExplanations() {
-//   let modifierNames = [
-//     "hit_points",
-//     "armor_defense",
-//     "fortitude",
-//     "reflex",
-//     "mental",
-//   ];
-//   let modifierKeys = [];
-//   for (const m of modifierNames) {
-//     for (const t of CUSTOM_MODIFIER_TYPES) {
-//       modifierKeys.push(`${m}_${t}_explanation`);
-//     }
-//   }
-//   onGet(
-//     {
-//       string: modifierKeys,
-//     },
-//     (v) => {
-//       const attrs = {};
-//       for (const modifierName of modifierNames) {
-//         const explanations = CUSTOM_MODIFIER_TYPES.map(
-//           (t) => v[`${modifierName}_${t}_explanation`]
-//         ).filter(Boolean);
-//         attrs[`${modifierName}_explanation`] = explanations.join(" ");
-//       }
-//       setAttrs(attrs);
-//     }
-//   );
-// }
-
 export type MonsterAttackAccuracy = 'low_accuracy' | 'high_accuracy' | 'normal' | '' | undefined;
 export type MonsterAttackTargeting = MonsterAttackTargeted | MonsterAttackArea;
-export type MonsterAttackDebuff =
-  | 'dazzled'
-  | 'frightened'
-  | 'dazed'
-  | 'confused'
-  | 'immobilized'
-  | 'goaded'
-  | 'slowed'
-  | 'blinded'
-  | 'panicked'
-  | 'sickened'
-  | 'vulnerable to all attacks';
 export type MonsterAttackAreaShape =
   | 'default'
   | 'cone'
