@@ -8,6 +8,10 @@ import {
 } from '../constants';
 
 const OPTIONAL_ICE_CRYSTAL = 'One optional \\glossterm{ice crystal}.';
+const ICE_CRYSTAL_AND_BARRIER = `
+  ${OPTIONAL_ICE_CRYSTAL}.
+  In addition, you \\glossterm{briefly} cannot use this ability or any other \\atBarrier ability.
+`;
 
 export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
   name: 'Cryomancy',
@@ -157,17 +161,13 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       name: 'Icicle',
 
       cost: OPTIONAL_ICE_CRYSTAL,
-      // Rank 1 Spell
-      // Range: Medium (mod 0)
-      // Mod: Double Defense (+1)
-      // Result: 1 + 0 + 1 = dr2
       attack: {
         hit: `
-          \\damageranktwo.
+          \\damagerankthree.
         `,
         targeting: `
-          Make an attack vs. Armor and Fortitude against something within \\medrange.
-          If you spent an \\glossterm{ice crystal}, you only need to hit the target's Armor defense.
+          Make an attack vs. Armor and Fortitude against something within \\shortrange.
+          If you spent an \\glossterm{ice crystal}, the range increases to \\medrange.
         `,
       },
       rank: 1,
@@ -180,17 +180,13 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       name: 'Mighty Icicle',
 
       cost: OPTIONAL_ICE_CRYSTAL,
-      // Rank 4 Spell
-      // Range: Medium (mod 0)
-      // Mod: Double Defense (+1)
-      // Result: 4 + 0 + 1 = dr5
       attack: {
         hit: `
-          \\damagerankfive, and any \\glossterm{extra damage} is doubled.
+          \\damageranksix, and any \\glossterm{extra damage} is doubled.
         `,
         targeting: `
-          Make an attack vs. Armor and Fortitude against something within \\medrange.
-          If you spent an \\glossterm{ice crystal}, you only need to hit the target's Armor defense.
+          Make an attack vs. Armor and Fortitude against something within \\shortrange.
+          If you spent an \\glossterm{ice crystal}, the range increases to \\medrange.
         `,
       },
       rank: 4,
@@ -238,8 +234,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       // Assume that you have DR for ~3/4 of turns, so this is worth 1.8 EA.
       effect: `
         You are \\shielded.
-        At the start of your turn, if you took damage since your last turn, you can spend an \\glossterm{ice crystal}.
-        If you do not, this ability is \\glossterm{dismissed}.
+        At the end of your turn, if you took damage since your last turn, this effect is \\glossterm{dismissed} unless you spend an \\glossterm{ice crystal}.
       `,
       narrative: 'Ice forms around you, shielding you from attacks until it is destroyed.',
       rank: 2,
@@ -270,7 +265,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       attack: {
         hit: `
           \\damagerankfour.
-          If the target is Medium or larger, you gain an \\glossterm{ice crystal}.
+          If the target is a Medium or larger creature, you gain an \\glossterm{ice crystal}.
         `,
         injury: `
           The target is \\briefly \\slowed.
@@ -292,16 +287,14 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       // +1dr for delay
       attack: {
         hit: `
-          The target feels a growing chill.
-          At the end of its next turn, it takes \\damagerankthree.
+          You gain an \\glossterm{ice crystal}, and the target feels a growing chill.
+          At the end of its next turn, it takes \\damageranktwo.
         `,
         injury: `
           The target is \\briefly \\slowed.
         `,
         targeting: `
-          Make an attack vs. Fortitude against something within \\shortrange.
-
-          If you \\glossterm{injure} any Medium or larger creatures with this spell, you gain an \\glossterm{ice crystal}.
+          Make an attack vs. Fortitude against something within \\medrange.
         `,
       },
       rank: 1,
@@ -315,16 +308,14 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       // +1dr for delay
       attack: {
         hit: `
-          The target feels a growing chill.
-          At the end of its next turn, it takes \\damagerankseven.
+          You gain an \\glossterm{ice crystal}, and the target feels a growing chill.
+          At the end of its next turn, it takes \\damageranksix, and any \\glossterm{extra damage} is doubled.
         `,
         injury: `
           The target is \\briefly \\slowed.
         `,
         targeting: `
-          Make an attack vs. Fortitude against something within \\shortrange.
-
-          If you \\glossterm{injure} any Medium or larger creatures with this spell, you gain an \\glossterm{ice crystal}.
+          Make an attack vs. Fortitude against something within \\medrange.
         `,
       },
       rank: 5,
@@ -421,7 +412,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         targeting: `
           Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\medarea cone from you.
 
-          If any Medium or larger creatures become slowed by this spell and were not already slowed, you gain a \\glossterm{ice crystal}.
+          If any Medium or larger creatures are slowed by this spell, you gain a \\glossterm{ice crystal}.
         `,
       },
       rank: 3,
@@ -442,7 +433,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         targeting: `
           Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\largearea cone from you.
 
-          If any Medium or larger creatures become slowed by this spell and were not already slowed, you gain a \\glossterm{ice crystal}.
+          If any Medium or larger creatures are slowed by this spell, you gain a \\glossterm{ice crystal}.
         `,
       },
       rank: 6,
@@ -461,11 +452,16 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         It is sized appropriately for you, up to a maximum of a Medium size item.
         The pool of water targeted must be at least as large as the largest item you create.
 
-        An item created with this spell functions like a normal item of its type, with three exceptions.
-        First, any \\glossterm{strikes} made with a weapon created with this ability have the \\atCold tag.
-        Second, any creature wearing body armor created with this ability is \\resistant to \\atFire attacks.
-        Third, whenever a creature using items from this ability is \\glossterm{injured} by a \\atFire attack, all of their items from this ability disappear.
-        The items reappear at the end of that creature's next turn.
+        An item created with this spell functions like a normal item of its type, with three exceptions:
+        \\begin{itemize}
+          \\item Any \\glossterm{strikes} made with a weapon created with this ability have the \\atCold tag.
+          \\item Any creature wearing body armor created with this ability is \\resistant to \\atFire attacks.
+          \\item Whenever a creature using items from this ability is \\glossterm{injured} by a \\atFire attack, all of their items from this ability are temporarily destroyed.
+            The items are recreated in the same location at the end of that creature's next turn.
+        \\end{itemize}
+
+        If you are using an item created with this spell, you can spend it as if it were an \\glossterm{ice crystal}.
+        This destroys the item.
       `,
       rank: 1,
       roles: ['attune'],
@@ -564,7 +560,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
 
       effect: `
         You teleport into an unoccupied destination on a stable surface within \\shortrange.
-        If you have no \\glossterm{ice crystals}, you gain an ice crystal.
+        In addition, you gain an \\glossterm{ice crystal}.
       `,
       rank: 3,
       roles: ['mobility', 'generator'],
@@ -573,14 +569,15 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
     {
       name: 'Wall of Ice',
 
-      cost: BARRIER_COOLDOWN,
+      cost: ICE_CRYSTAL_AND_BARRIER,
       effect: `
         You create a \\smallarealong \\glossterm{wall} of magical energy within \\medrange.
         The wall is visible as a wall of smooth, clear ice that does not block sight.
         Nothing can pass through the wall until it is destroyed.
 
         The wall has \\glossterm{hit points} equal to your \\glossterm{power}.
-        If it is destroyed, it automatically reforms at the end of your next turn, ignoring any occupied spaces that would block the wall from reforming.
+        If you spent an \\glossterm{ice crystal}, the wall has hit points equal to twice your power instead.
+        When the wall is destroyed, it automatically reforms at the end of your next turn, ignoring any occupied spaces that would block the wall from reforming.
       `,
       rank: 1,
       scaling: {
@@ -596,7 +593,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
     {
       name: 'Ice Globe',
 
-      cost: BARRIER_COOLDOWN,
+      cost: ICE_CRYSTAL_AND_BARRIER,
       effect: `
         You create a sphere of ice in a \\smallarea sphere within \\medrange.
         The sphere fails to form in any occupied space, but its walls fill in the space as much as possible.
@@ -604,7 +601,8 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         Nothing can pass through the sphere until it is destroyed.
 
         The sphere as a whole has \\glossterm{hit points} equal to your \\glossterm{power}.
-        If it is destroyed, it automatically reforms at the end of your next turn, ignoring any occupied spaces that would block the wall from reforming.
+        If you spent an \\glossterm{ice crystal}, the wall has hit points equal to twice your power instead.
+        When the sphere is destroyed, it automatically reforms at the end of your next turn, ignoring any occupied spaces that would block it from reforming.
       `,
       rank: 4,
       roles: ['barrier'],
@@ -614,13 +612,12 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
     {
       name: 'Frostblade',
 
-      cost: OPTIONAL_ICE_CRYSTAL,
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        Make a melee \\glossterm{strike}.
+        Make a melee \\glossterm{strike} with an accuracy bonus equal to the number of \\glossterm{ice crystals} you have.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
-        If you spent an \\glossterm{ice crystal}, you gain a +2 accuracy bonus with the strike.
+        If you hit any Medium or larger creature with the strike, you gain an \\glossterm{ice crystal}.
       `,
       rank: 1,
       roles: ['burst'],
@@ -628,15 +625,31 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       tags: [],
     },
     {
+      name: 'Mighty Frostblade',
+
+      effect: `
+        This spell has no \\glossterm{somatic components}.
+
+        Make a melee \\glossterm{strike} with an accuracy bonus equal to the number of \\glossterm{ice crystals} you have.
+        The strike deals double damage.
+        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
+        If you hit any Medium or larger creature with the strike, you gain an \\glossterm{ice crystal}.
+        \\injury The target is \\briefly \\slowed.
+      `,
+      rank: 5,
+      roles: ['burst'],
+      scaling: 'accuracy',
+      tags: [],
+    },
+    {
       name: 'Chilling Slash',
 
-      cost: OPTIONAL_ICE_CRYSTAL,
       effect: `
         This spell has no \\glossterm{somatic components}.
 
         Make a melee \\glossterm{strike}.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
-        If you spent an \\glossterm{ice crystal}, you gain a +2 accuracy bonus with the strike.
+        If you hit any Medium or larger creature with the strike, you gain an \\glossterm{ice crystal}.
         \\hit The target feels a growing chill.
         At the end of its next turn, it takes 1d8 damage.
       `,
@@ -650,13 +663,12 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
     {
       name: 'Mighty Chilling Slash',
 
-      cost: OPTIONAL_ICE_CRYSTAL,
       effect: `
         This spell has no \\glossterm{somatic components}.
 
         Make a melee \\glossterm{strike}.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
-        If you spent an \\glossterm{ice crystal}, you gain a +2 accuracy bonus with the strike.
+        If you hit any Medium or larger creature with the strike, you gain an \\glossterm{ice crystal}.
         \\hit The target feels a growing chill.
         At the end of its next turn, it takes 1d6 damage per 2 \\glossterm{magical power}.
       `,
@@ -668,34 +680,31 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       tags: [],
     },
     {
-      name: 'Freezing Slash',
+      name: 'Crystalline Blade',
 
-      cost: OPTIONAL_ICE_CRYSTAL,
+      cost: 'One \\glossterm{ice crystal}.',
       effect: `
         This spell has no \\glossterm{somatic components}.
 
         Make a melee \\glossterm{strike} that deals double damage.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
-        If you spent an \\glossterm{ice crystal}, you gain a +2 accuracy bonus with the strike.
         \\hit If your attack result also hits the target's Fortitude defense, it is \\briefly \\slowed.
       `,
-      rank: 5,
+      rank: 4,
       roles: ['burst', 'trip'],
       scaling: 'accuracy',
       tags: [],
     },
     {
-      name: 'Mighty Freezing Slash',
+      name: 'Mighty Crystalline Blade',
 
-      cost: OPTIONAL_ICE_CRYSTAL,
+      cost: 'One \\glossterm{ice crystal}.',
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        Make a melee \\glossterm{strike} that deals triple damage.
+        Make a melee \\glossterm{strike} that deals quadruple damage.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
-        If you spent an \\glossterm{ice crystal}, you gain a +2 accuracy bonus with the strike.
-        \\hit If your attack result also hits the target's Fortitude defense, it is \\briefly \\slowed.
-        \\injury The target is also slowed as a \\glossterm{condition}.
+        \\hit The target is \\briefly \\slowed.
       `,
       rank: 7,
       roles: ['burst', 'maim', 'trip'],
@@ -728,22 +737,17 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       scaling: 'damage',
     },
 
-    // Ranged slow is 5.2 EA, or 6.2 EA with damage. This is short range and requires an
-    // ice crystal, so we fudge that to 5.6 EA. As a double action, that's 2.8 EA, which
-    // is r7 with limited scope.
+    // Ranged slow is 5.2 EA, or 6.2 EA with damage. This is short range, so we fudge that
+    // to 5.6 EA. As a double action, that's 2.8 EA, which is r7 with limited scope.
+    // This may be slightly stronger than it should be? TODO: more EA math
     {
       name: 'Mighty Bonechill',
 
-      cost: 'One \\glossterm{ice crystal}.',
-      // Rank 7 Spell
-      // Range: Short (mod +1)
-      // Mod: Double Action (+2)
-      // Result: 7 + 1 + 2 = dr10
       attack: {
         crit: `Double damage, and at the end of your turn, the target is \\briefly locked in \\stasis.`,
         hit: `
           \\damageranknine, and any \\glossterm{extra damage} is doubled.
-          In addition, the target is \\slowed as a \\glossterm{condition}.
+          In addition, the target is \\slowed as a \\glossterm{condition}, and you gain an \\glossterm{ice crystal}.
         `,
         targeting: `
           When you cast this spell, ice forms on your body and the air chills around you.
@@ -770,7 +774,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         targeting: `
           Make an attack vs. Fortitude against everything in a \\medarealong, 5 ft.\\ wide line from you.
           At the start of your next turn, make an attack vs. Fortitude against everything in a \\medarealong, 5 ft.\\ wide line that continues straight from the end of the previous line.
-          At the end of that turn, you gain an \\glossterm{ice crystal}.
+          Then, you gain an \\glossterm{ice crystal}.
         `,
       },
       rank: 2,
