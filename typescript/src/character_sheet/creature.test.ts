@@ -169,9 +169,9 @@ t.test('addThrowItem dynamically generates correct maneuvers', (t) => {
   t.equal(ability?.name, "Alchemist's Fire");
   t.match(
     ability?.attack?.targeting,
-    /Make an attack vs\. Reflex against something within \\shortrange\./,
+    /Make an attack vs\. Armor and Reflex against something within \\shortrange\./,
   );
-  t.equal(ability?.attack?.hit, '$dr2l damage.');
+  t.equal(ability?.attack?.hit, '$dr3l damage.');
   t.matchOnly(ability?.tags, ['Fire']);
 
   creature.addThrowItem('Firebomb');
@@ -181,9 +181,9 @@ t.test('addThrowItem dynamically generates correct maneuvers', (t) => {
   t.equal(ability2?.name, 'Firebomb');
   t.match(
     ability2?.attack?.targeting,
-    /Make an attack vs\. Reflex against everything in a \\smallarea radius within \\shortrange\./,
+    /Make an attack vs\. Armor and Reflex against everything in a \\smallarea radius within \\shortrange\./,
   );
-  t.equal(ability2?.attack?.hit, '$dr2l damage.');
+  t.equal(ability2?.attack?.hit, '$dr3l damage.');
   t.equal(ability2?.attack?.halfOnMiss, true);
   t.matchOnly(ability2?.tags, ['Fire']);
 

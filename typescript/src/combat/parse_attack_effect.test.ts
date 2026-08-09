@@ -17,10 +17,8 @@ tap.test('parseAttackEffect', (t) => {
     const parsed = parseAttackEffect(ability, creature);
     t.ok(parsed, 'should parse Fireball');
     t.equal(parsed?.name, 'Fireball', 'should have correct name');
-    t.same(parsed?.defenses, ['reflex'], 'should target Reflex');
-    // Rank 3 Fireball deals \damageranktwo.
-    // Magical Power 2, Rank 3 -> Excess 0 -> dr2 -> 1d10+1
-    t.equal(parsed?.damage.toString(), '1d10+1', 'should calculate correct damage');
+    t.same(parsed?.defenses, ['armor_defense', 'reflex'], 'should target Armor and Reflex');
+    t.equal(parsed?.damage.toString(), '1d8+3', 'should calculate correct damage');
     t.equal(parsed?.areaRank, 3, 'should have correct area rank (Small radius in Short range)');
     t.equal(parsed?.accuracyModifier, 0, 'should have no accuracy modifier');
     t.equal(parsed?.cooldown, 0, 'should have no cooldown');
@@ -80,7 +78,7 @@ tap.test('parseAttackEffect', (t) => {
     t.ok(parsed, 'should parse Flame Breath');
     t.equal(parsed?.areaRank, 2, 'should have correct area rank (Medium cone)');
     t.equal(parsed?.cooldown, 2, 'should parse "briefly" cooldown');
-    t.equal(parsed?.damage.toString(), '1d8+3', 'should calculate correct damage');
+    t.equal(parsed?.damage.toString(), '1d6', 'should calculate correct damage');
     t.end();
   });
 
@@ -92,7 +90,7 @@ tap.test('parseAttackEffect', (t) => {
     t.equal(parsed?.areaRank, 3, 'should have correct area rank (Medium wall in Medium range)');
     // BARRIER_COOLDOWN contains "briefly", so it parses as 2.
     t.equal(parsed?.cooldown, 2, 'should parse BARRIER_COOLDOWN as briefly (2)');
-    t.equal(parsed?.damage.toString(), '1d6+1', 'should calculate correct damage');
+    t.equal(parsed?.damage.toString(), '1d10+1', 'should calculate correct damage');
     t.end();
   });
 
@@ -187,7 +185,7 @@ tap.test('parseAttackEffect', (t) => {
     const ability = creature.getActiveAbility('Split Fireball')!;
     const parsed = parseAttackEffect(ability, creature);
     t.equal(parsed?.areaRank, 3, 'should have correct area rank (Two tiny radii in Short range)');
-    t.equal(parsed?.damage.toString(), '1d6', 'should calculate correct damage');
+    t.equal(parsed?.damage.toString(), '2d6', 'should calculate correct damage');
     t.end();
   });
 
