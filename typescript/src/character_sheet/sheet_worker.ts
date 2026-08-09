@@ -866,8 +866,7 @@ function handleAccuracy() {
       const perceptionModifier = v.perception / 2;
       const levelishModifier = Math.floor(levelModifier + perceptionModifier);
       const crModifier = v.is_monster ? calcAccuracyCrScaling(v.level, v.elite) : 0;
-      const accuracy =
-        v.misc + levelishModifier + crModifier - v.stamina_penalty;
+      const accuracy = v.misc + levelishModifier + crModifier - v.stamina_penalty;
       setAttrs({
         accuracy,
         accuracy_explanation: formatCombinedExplanation(v.miscExplanation, [
@@ -2011,56 +2010,6 @@ function handleSpeed() {
 //   );
 // }
 
-function handleMonsterAbilityGeneration() {
-  on('clicked:createmonsterattack', () => {
-    getAttrs(
-      [
-        'level',
-        'monster_attack_accuracy',
-        'monster_attack_effect',
-        'monster_attack_name',
-        'monster_attack_area_shape',
-        'monster_attack_targeting',
-        'monster_attack_is_magical',
-        'monster_attack_usage_time',
-        'magical_power',
-        'mundane_power',
-      ],
-      (rawAttrs: Attrs) => {
-        const isMagical = boolifySheetValue(rawAttrs.monster_attack_is_magical);
-
-        generateMonsterAttack({
-          accuracy: rawAttrs.monster_attack_accuracy,
-          areaShape: rawAttrs.monster_attack_area_shape || 'default',
-          effect: rawAttrs.monster_attack_effect,
-          isMagical,
-          name: rawAttrs.monster_attack_name || 'damage',
-          power: Number(isMagical ? rawAttrs.magical_power : rawAttrs.mundane_power),
-          rank: calculateStandardRank(Number(rawAttrs.level)),
-          targeting: rawAttrs.monster_attack_targeting || 'targeted_medium',
-          usageTime: rawAttrs.monster_attack_usage_time || 'standard',
-        });
-      },
-    );
-  });
-
-  on('clicked:undomonsterattack', () => {
-    getAttrs(['monster_attack_undo_name'], (rawAttrs: Attrs) => {
-      const undoName = rawAttrs.monster_attack_undo_name;
-      if (undoName) {
-        removeRepeatingRow(undoName);
-      }
-      // If this was somehow pushed when we can't actually undo anything, such as if
-      // someone double clicked the button, we want to disable clicking it again but not
-      // break anything.
-      setAttrs({
-        monster_attack_can_undo: '0',
-        monster_attack_undo_name: '',
-      });
-    });
-  });
-}
-
 export type MonsterAttackAccuracy = 'low_accuracy' | 'high_accuracy' | 'normal' | '' | undefined;
 export type MonsterAttackTargeting = MonsterAttackTargeted | MonsterAttackArea;
 export type MonsterAttackDebuff =
@@ -2073,6 +2022,7 @@ export type MonsterAttackDebuff =
   | 'slowed'
   | 'blinded'
   | 'panicked'
+  | 'sickened'
   | 'vulnerable to all attacks';
 export type MonsterAttackAreaShape =
   | 'default'
@@ -2087,63 +2037,6 @@ export type MonsterAttackTargeted =
   | 'targeted_long';
 export type MonsterAttackArea = 'small_area' | 'large_area';
 export type MonsterAttackUsageTime = 'standard' | 'elite' | 'minor' | 'triggered';
-
-function generateMonsterAttack({
-  accuracy,
-  areaShape,
-  effect,
-  isMagical,
-  name,
-  power,
-  rank,
-  targeting,
-  usageTime,
-}: {
-  accuracy: MonsterAttackAccuracy;
-  areaShape: MonsterAttackAreaShape;
-  effect: 'damage' | MonsterAttackDebuff;
-  isMagical: boolean;
-  name: string;
-  power: number;
-  rank: number;
-  targeting: MonsterAttackTargeting;
-  usageTime: MonsterAttackUsageTime;
-}) {
-  // Accuracy modifies base rank, unlike area size.
-  let rankModifier = 0;
-  let accuracyModifier = 0;
-  if (accuracy === 'low_accuracy') {
-    accuracyModifier -= 2;
-    rankModifier += 1;
-  } else if (accuracy === 'high_accuracy') {
-    accuracyModifier += 2;
-    rankModifier -= 1;
-  }
-
-  if (effect === 'damage') {
-    createDamagingMonsterAttack({
-      accuracyModifier,
-      areaShape,
-      name,
-      isMagical,
-      rank: rank + rankModifier,
-      power,
-      targeting,
-      usageTime,
-    });
-  } else {
-    createMonsterDebuff({
-      accuracyModifier,
-      areaShape,
-      debuff: effect,
-      isMagical,
-      name,
-      rank: rank + rankModifier,
-      targeting,
-      usageTime,
-    });
-  }
-}
 
 function calcTargetedText(targeting: MonsterAttackTargeting) {
   if (targetingIsTargeted(targeting)) {
@@ -2240,104 +2133,6 @@ function calcMonsterAccuracyText(accuracyModifier: number) {
   } else {
     return '$accuracy';
   }
-}
-
-// TODO: this hasn't been updated for the Effective Action debuff redesign
-function createMonsterDebuff({
-  accuracyModifier,
-  areaShape,
-  debuff,
-  isMagical,
-  name,
-  rank,
-  targeting,
-  usageTime,
-}: {
-  accuracyModifier: number;
-  areaShape: MonsterAttackAreaShape;
-  debuff: MonsterAttackDebuff;
-  isMagical: boolean;
-  name: string;
-  rank: number;
-  targeting: MonsterAttackTargeting;
-  usageTime: MonsterAttackUsageTime;
-}) {
-  const isTargeted = targetingIsTargeted(targeting);
-  let availableRank = rank + calculateEffectRankModifier(targeting);
-
-  // We need to make sure that we can afford to apply the debuff
-  const debuffRank = {
-    dazzled: 1,
-    frightened: 3,
-    goaded: 5,
-    slowed: 5,
-    dazed: 5,
-    blinded: 9,
-    confused: 9,
-    panicked: 9,
-    'vulnerable to all attacks': 9,
-    immobilized: 11,
-  }[debuff];
-  let requiresInjury = false;
-  if (availableRank < debuffRank) {
-    availableRank += 4;
-    requiresInjury = true;
-  }
-  if (availableRank >= debuffRank) {
-    // Targeted effects get +2a per excess rank.
-    // Area effects get +1a per excess rank, since they also scale area with rank.
-    if (isTargeted) {
-      accuracyModifier += (availableRank - debuffRank) * 2;
-    } else {
-      accuracyModifier += availableRank - debuffRank;
-    }
-  } else {
-    // Both targeted and area effects get -2a per excess rank.
-    accuracyModifier += (availableRank - debuffRank) * 2;
-  }
-
-  const accuracyText = calcMonsterAccuracyText(accuracyModifier);
-  let effect = '';
-  let latexEffect = '';
-  if (isTargeted) {
-    const range = calcTargetedText(targeting);
-
-    const hitEffect = requiresInjury
-      ? `If the target is \\glossterm{injured}, it is ${debuff} as a condition.`
-      : `The target is ${debuff} as a condition.`;
-    effect = `Make an attack against something ${range}.
-Hit: ${hitEffect}`;
-    latexEffect = `The $name makes a ${accuracyText} attack vs. $defense against something ${range}.
-\\hit ${hitEffect}`;
-  } else {
-    const area = calcAttackArea({ areaShape, rank, targeting });
-    if (!area) {
-      throw new Error(
-        `Unable to calculate area: ${JSON.stringify({ areaShape, rank, targeting })}.`,
-      );
-    }
-
-    const hitEffect = requiresInjury
-      ? `Each \\glossterm{injured} target is ${debuff} as a condition.`
-      : `Each target is ${debuff} as a condition.`;
-    effect = `Make an attack against everything in a ${area}.
-Hit: ${hitEffect}`;
-    latexEffect = `The $name makes a ${accuracyText} attack vs. $defense against everything in a ${area}.
-\\hit ${hitEffect}`;
-  }
-
-  const rowId = generateRowID();
-  const prefix = `repeating_nondamagingattacks_${rowId}`;
-
-  setAttrs({
-    [`${prefix}_attack_accuracy`]: accuracyModifier,
-    [`${prefix}_attack_effect`]: effect,
-    [`${prefix}_attack_name`]: name,
-    [`${prefix}_is_magical`]: isMagical,
-    [`${prefix}_is_targeted`]: isTargeted,
-    [`${prefix}_latex_effect`]: latexEffect,
-    [`${prefix}_usage_time`]: usageTime,
-  });
 }
 
 function targetingIsTargeted(targeting: MonsterAttackTargeting) {
@@ -2452,12 +2247,7 @@ function handleNonArmorDefense(defense: string, attribute: string) {
   onGet({
     variables: {
       miscName: defense,
-      numeric: [
-        'level',
-        attribute,
-        'all_defenses_vital_wound_modifier',
-        'size_reflex_modifier',
-      ],
+      numeric: ['level', attribute, 'all_defenses_vital_wound_modifier', 'size_reflex_modifier'],
       string: ['monster_type'],
       boolean: ['elite'],
     },

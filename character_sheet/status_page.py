@@ -178,13 +178,14 @@ def debuffs():
                     debuff("confused"),
                     debuff("dazed"),
                     debuff("dazzled"),
+                    debuff("frightened"),
                 ]
             ),
             flex_col(
                 [
-                    debuff("frightened"),
                     debuff("goaded"),
                     debuff("panicked"),
+                    debuff("sickened"),
                     debuff("slowed"),
                 ]
             ),
@@ -224,6 +225,7 @@ def debuff_explanation(debuff: str) -> str:
         "panicked": "-4 Mental, cannot attack source",
         "partially unaware": "-2 defenses",
         "prone": "half speed, -2 Armor and Ref",
+        "sickened": "can't explode, subtract rank from damage",
         "slowed": "half speed, -2 Armor and Ref",
         "squeezing": "-2 Armor and Ref",
         "unaware": "-5 defenses",
