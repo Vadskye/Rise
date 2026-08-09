@@ -127,7 +127,7 @@ t.test('can apply armor effects', (t) => {
   const creature = Creature.new();
   creature.setEquippedArmorEffects({ bodyArmor: 'breastplate', shield: 'standard shield' });
 
-  t.equal(creature.body_armor_defense, 5, 'Body armor defense');
+  t.equal(creature.body_armor_defense, 4, 'Body armor defense');
   t.equal(creature.body_armor_durability, 5, 'Body armor durability');
   t.equal(creature.body_armor_speed, -10, 'Body armor speed');
   t.equal(creature.body_armor_vital_rolls, 2, 'Body armor vital rolls');

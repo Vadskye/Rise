@@ -105,7 +105,7 @@ export function getArmorBaseDefinition(kind: ArmorKind, material?: ArmorMaterial
       return {
         accuracyModifier: 0,
         durability: calcDurability(1),
-        defense: 2,
+        defense: 1,
         dexMultiplier: 1.0,
         itemRank: 1,
         name: 'buff leather',
@@ -118,7 +118,7 @@ export function getArmorBaseDefinition(kind: ArmorKind, material?: ArmorMaterial
       return {
         accuracyModifier: 0,
         durability: calcDurability(2),
-        defense: 2,
+        defense: 1,
         dexMultiplier: 1.0,
         itemRank: 2,
         name: 'chain shirt',
@@ -131,7 +131,7 @@ export function getArmorBaseDefinition(kind: ArmorKind, material?: ArmorMaterial
       return {
         accuracyModifier: 0,
         durability: calcDurability(0),
-        defense: 2,
+        defense: 1,
         dexMultiplier: 1.0,
         itemRank: 1,
         name: 'Rawhide',
@@ -157,7 +157,7 @@ export function getArmorBaseDefinition(kind: ArmorKind, material?: ArmorMaterial
       return {
         accuracyModifier: 0,
         durability: calcDurability(2),
-        defense: 4,
+        defense: 3,
         dexMultiplier: 0.5,
         itemRank: 1,
         name: 'leather lamellar',
@@ -170,7 +170,7 @@ export function getArmorBaseDefinition(kind: ArmorKind, material?: ArmorMaterial
       return {
         accuracyModifier: 0,
         durability: calcDurability(3),
-        defense: 4,
+        defense: 3,
         dexMultiplier: 0.5,
         itemRank: 1,
         name: 'scale',
@@ -183,7 +183,7 @@ export function getArmorBaseDefinition(kind: ArmorKind, material?: ArmorMaterial
       return {
         accuracyModifier: 0,
         durability: calcDurability(4),
-        defense: 4,
+        defense: 3,
         dexMultiplier: 0.5,
         itemRank: 1,
         name: 'brigandine',
@@ -209,7 +209,7 @@ export function getArmorBaseDefinition(kind: ArmorKind, material?: ArmorMaterial
       return {
         accuracyModifier: 0,
         durability: calcDurability(5),
-        defense: 5,
+        defense: 4,
         dexMultiplier: 0.5,
         itemRank: 1,
         name: 'breastplate',
@@ -222,7 +222,7 @@ export function getArmorBaseDefinition(kind: ArmorKind, material?: ArmorMaterial
       return {
         accuracyModifier: 0,
         durability: calcDurability(7),
-        defense: 5,
+        defense: 4,
         dexMultiplier: 0.5,
         itemRank: 2,
         name: 'half plate',
@@ -235,7 +235,7 @@ export function getArmorBaseDefinition(kind: ArmorKind, material?: ArmorMaterial
       return {
         accuracyModifier: 0,
         durability: calcDurability(8),
-        defense: 5,
+        defense: 4,
         dexMultiplier: 0.5,
         itemRank: 3,
         name: 'full plate',

@@ -238,7 +238,7 @@ export function ki(): RankAbility[] {
       rank: 1,
       description: `
         While you are not wearing other body armor, you gain a ki barrier around your body.
-        This functions like body armor that provides a \\plus2 bonus to your Armor defense and a \\plus2 bonus to your \\glossterm{durability}.
+        This functions like body armor that provides a \\plus1 bonus to your Armor defense and a \\plus2 bonus to your \\glossterm{durability}.
         It does not require \\glossterm{proficiency} with armor to use.
 
         You can also use a \\glossterm{free hand} to wield the barrier as a shield.

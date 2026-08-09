@@ -522,7 +522,7 @@ export function shifter(): RankAbility[] {
         Whenever you activate a \\ability{wild aspect} that represents a specific animal, you can fully \\glossterm{shapeshift} to match that animal's shape.
         This cannot increase your \\glossterm{size category}, but you can shrink by one size category if it is appropriate for that animal.
         You may choose to reshape any body armor you wear as \\glossterm{barding} to fit the animal instead of melding it into your form.
-        This means it continues to function, but its bonus to Armor defense is reduced by 2.
+        This means it continues to function, but its bonus to Armor defense is reduced by 1.
         The armor regains its normal shape if you take it off.
         For details about shapeshifting, see \\pcref{Shapeshifting}.
       `,

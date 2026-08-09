@@ -62,7 +62,7 @@ This memory details key aspects of the Rise game system related to equipment, de
 - **Proficiency:** Non-proficient use halves defense bonus and applies `encumbrance` as an `accuracy` penalty.
 - **Donning/Removing:** Time varies by armor type; requires two hands.
 - **Weight and Size:** Body armor matches creature size; bucklers/standard shields are one size smaller; tower shields are the same size. Most are `lightweight`. Heavy body armor has higher Strength requirements.
-- **Barding:** Armor for non-humanoid shapes; reduces Armor defense bonus by 2. Must be custom-made.
+- **Barding:** Armor for non-humanoid shapes; reduces Armor defense bonus by 1. Must be custom-made.
 - **Multiple Armors:** Cannot benefit from multiple body armor sets. Multiple shields stack encumbrance but use the highest Armor bonus; all special properties apply.
 
 ### 1.3. Weapon Special Materials
