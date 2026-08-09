@@ -11,7 +11,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        \\injury If the target is not wearing metal body armor, it becomes \\dazed as a \\glossterm{condition}.
+        \\injury If the target is not wearing metal body armor, it becomes \\sickened as a \\glossterm{condition}.
       `,
       rank: 3,
       roles: ['maim'],

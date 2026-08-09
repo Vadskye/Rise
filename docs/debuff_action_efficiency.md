@@ -35,6 +35,7 @@ By EA:
   Push 15' (melee)   & 0.2          & 0.4   & N/A              & N/A       \\
   Push 30' (ranged)  & 1.3          & 2.0   & N/A              & N/A       \\
   Push 30' (melee)   & 1.0          & 1.5   & N/A              & N/A       \\
+  Sickened           & 0.9          & 1.4   & 2.0              & 4.9       \\
   Single defense     & 0.7          & 1.0   & 0.8              & 2.0       \\
   Slowed (ranged)    & 1.3          & 2.0   & 2.1              & 5.2       \\
   Slowed (melee)     & 1.0          & 1.5   & 1.5              & 3.7       \\
@@ -77,6 +78,7 @@ By rank:
   Push 15' (melee)   & 0d           & 1d    & N/A              & N/A       \\
   Push 30' (ranged)  & 1            & 4     & N/A              & N/A       \\
   Push 30' (melee)   & 4d           & 2     & N/A              & N/A       \\
+  Sickened           & 4d           & 1     & 4                & N/A       \\
   Single defense     & 3d           & 4d    & 3d               & 4         \\
   Slowed (ranged)    & 1            & 4     & 5                & inf       \\
   Slowed (melee)     & 4d           & 2     & 2                & inf       \\
@@ -291,9 +293,9 @@ Removing 0.35 monster actions is worth 1.4 effective actions.
 
 If you daze an enemy as the first action of the round, the party has 7 attacks that can take advantage of the daze debuff: your three party members during the first round, and the full party during the second round.
 
-### Sickened: 1.0
+### Sickened: 1.4
 
-Assume sickened is ~20% less damage. That's not quite as good as 20% action denial because not all attacks are damaging, so call it 15% action denial. That's 0.6 EA. Assume the party also has 2/7 attacks that can take advantage of the -2 Fortitude, so 1.0 EA total.
+Assume sickened is ~20% less damage. Like steeled, blocking explosions significantly reduces probability of death and also makes it hard to get lucky past high defenses, so it's stronger than a simple average-case math. Assume that it's overall ~35% action denial, which is maybe too high. That would make it 1.4 EA.
 
 ### Dazzled: 0.6
 
@@ -514,6 +516,10 @@ As with the brief effect, assume 37.5% action denial, so 5.25 EA.
 ### Prone: 6.1 (ranged) / 4.1 (melee)
 
 Prone as a condition is basically the same as slow, but with a slightly more punishing action denial. Vaguely assume it's 25% more effective, so +0.9 EA (ranged) or +0.4 EA (melee).
+
+### Sickened: 4.9
+
+14 actions \* 35% action denial = 4.9 EA
 
 ### Single defense: 2.0
 

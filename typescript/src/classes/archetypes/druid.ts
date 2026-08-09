@@ -418,13 +418,14 @@ export function shifter(): RankAbility[] {
           \\rankline
           You do not need to use \\glossterm{free hands} to climb.
           In addition, you gain a bite \\glossterm{natural weapon} (see \\tref{Natural Weapons}).
-          When a creature takes damage from your bite \\glossterm{natural weapon}, it is \\glossterm{poisoned} (see \\pcref{Poison}).
-          Its stage 1 effect makes the target \\glossterm{briefly} \\dazed.
-          Its stage 3 effect makes the target dazed while the poison lasts.
+          Whenever a creature is \\glossterm{injured} by your bite, make a \\glossterm{reactive attack} vs. Fortitude against that creature.
+          On a hit, the creature is \\glossterm{poisoned} by viper venom (see \\pcref{Poison}).
+          The poisoned creature is \\sickened while the poison lasts.
 
           \\rankline
           \\rank{4} You gain a \\plus1 accuracy bonus with all poisons.
           \\rank{7} The accuracy bonus increases to \\plus2.
+          In addition, your viper venom also deals \\damageranknine on the second escalation.
         \\end{magicalactiveability}
 
         \\begin{magicalactiveability}{Form of the Wolf}{Standard action}

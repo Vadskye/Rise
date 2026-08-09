@@ -12,8 +12,8 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a strike using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
-        \\hit The target is \\briefly \\dazed.
-        \\injury The target is dazed as a \\glossterm{condition}.
+        \\hit The target is \\briefly \\sickened.
+        \\injury The target is sickened as a \\glossterm{condition}.
       `,
       rank: 3,
       roles: ['softener', 'maim'],
@@ -552,8 +552,8 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        \\hit If your attack result hits the target's Fortitude defense, it is \\briefly \\dazed.
-        \\injury If your attack result hits the target's Fortitude defense, it is dazed as a \\glossterm{condition}.
+        \\hit If your attack result hits the target's Fortitude defense, it is \\briefly \\sickened.
+        \\injury If your attack result hits the target's Fortitude defense, it is sickened as a \\glossterm{condition}.
       `,
       rank: 3,
       roles: ['maim'],

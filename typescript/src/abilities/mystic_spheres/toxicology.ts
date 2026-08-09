@@ -77,7 +77,7 @@ export const toxicology: MysticSphere = {
         hit: `
           If the target is \\glossterm{injured}, it becomes \\glossterm{poisoned} by asp venom (see \\pcref{Poison}).
           The poison's accuracy is equal to your accuracy with this spell.
-          It makes the target \\dazed while the poison lasts.
+          It makes the target \\sickened while the poison lasts.
           The second escalation also deals \\damageranktwolow.
         `,
         targeting: `
@@ -724,8 +724,8 @@ export const toxicology: MysticSphere = {
       effect: `
         You create a potion in an empty vial or similar container within \\shortrange.
         A creature can drink the potion as a \\glossterm{minor action} using a \\glossterm{free hand}.
-        When a creature drinks the potion, it becomes \\maximized and \\dazed until its next turn.
-        When that effect ends, it takes \\damagerankfivelow.
+        When a creature drinks the potion, it becomes \\maximized until its next turn.
+        When that effect ends, it takes \\damagerankfivelow and is \\briefly \\sickened.
       `,
       rank: 5,
       roles: ['boon'],
@@ -740,8 +740,8 @@ export const toxicology: MysticSphere = {
       effect: `
         You create a potion in an empty vial or similar container within \\shortrange.
         A creature can drink the potion as a \\glossterm{minor action} using a \\glossterm{free hand}.
-        When a creature drinks the potion, it becomes \\primed and \\dazed until its next turn.
-        When that effect ends, it takes \\damageranksevenlow.
+        When a creature drinks the potion, it becomes \\primed until its next turn.
+        When that effect ends, it takes \\damageranksevenlow and is \\briefly \\sickened.
       `,
       rank: 7,
       roles: ['boon'],

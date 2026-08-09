@@ -181,13 +181,13 @@ function injuryPoisons(): Tool[] {
       name: 'Poison, Asp Venom',
       rank: 1,
       attunement: 'Unrestricted',
-      short_description: 'Stuns',
+      short_description: 'Sickens',
       description: getPoisonDescription(
         'injury',
         'liquid',
         `
           The poison's accuracy is $consumableaccuracy.
-          A poisoned creature is \\dazed while the poison lasts.
+          A poisoned creature is \\sickened while the poison lasts.
           The second escalation also inflicts $dr2l damage.
         `,
       ),
