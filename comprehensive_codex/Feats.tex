@@ -28,7 +28,7 @@ They allow more distinct and unique character customization, but also increase g
 
     \parhead{Dwarf} Any from the following list: \featref*{Battle Armory}, \featref*{Blindfighter}, \featref*{Craft Specialization} and \featref*{Endurance Specialization}, \featref*{Iron Will}, \featref*{Martial Training}, or \featref*{Toughness}.
 
-    \parhead{Elf} Any Casting feat (see \pcref{Casting Feats}), or any from the following list: \featref*{Awareness Specialization} and \featref*{Balance Specialization}, \featref*{Sniper}, or \featref*{Rapid Reaction}.
+    \parhead{Elf} Any Casting feat (see \pcref{Casting Feats}), or any from the following list: \featref*{Awareness Specialization} and \featref*{Poise Specialization}, \featref*{Sniper}, or \featref*{Rapid Reaction}.
 
     \parhead{Halfling} Any feat with a Dexterity or Willpower prerequisite, or any skill feat for a Dexterity-based skill.
 
@@ -56,7 +56,7 @@ They allow more distinct and unique character customization, but also increase g
 
       \parhead{Eladrin} Boongiver, Chameleon, Deception Specialization and Persuasion Specialization, Maneuverist, or Spellwarped.
 
-      \parhead{Kit} Balance Specialization and Stealth Specialization, Deception Specialization and Social Insight Specialization, or Swiftrunner.
+      \parhead{Kit} Poise Specialization and Stealth Specialization, Deception Specialization and Social Insight Specialization, or Swiftrunner.
 
       \parhead{Naiadi} Boongiver, Leadership, Mental Magic, Persuasion Specialization and Social Insight Specialization, or Sphere Focus: Aquamancy.
 
@@ -136,7 +136,6 @@ They allow more distinct and unique character customization, but also increase g
           \tb{Skill Feats}\label{Skill Feats}             & \tb{Prerequisites}               & \tb{Benefits}                              & \tb{Feat Types}   & \tb{Page}                                   \\
           \featref{Athletics Specialization}              & Trained Athletics                & Improve use of chosen skill                & \tdash            & \featpref{Athletics Specialization}             \\
           \featref{Awareness Specialization}              & Trained Awareness                & Improve use of chosen skill                & \tdash            & \featpref{Awareness Specialization}         \\
-          \featref{Balance Specialization}                & Trained Balance                  & Improve use of chosen skill                & \tdash            & \featpref{Balance Specialization}           \\
           \featref{Craft Specialization}                  & Trained Craft                    & Improve use of chosen skill                & \tdash            & \featpref{Craft Specialization}             \\
           \featref{Creature Handling Specialization}      & Trained Creature Handling        & Improve use of chosen skill                & \tdash            & \featpref{Creature Handling Specialization} \\
           \featref{Deception Specialization}              & Trained Deception                & Improve use of chosen skill                & \tdash            & \featpref{Deception Specialization}         \\
@@ -147,10 +146,10 @@ They allow more distinct and unique character customization, but also increase g
           \featref{Intimidate Specialization}             & Trained Intimidate               & Improve use of chosen skill                & \tdash            & \featpref{Intimidate Specialization}        \\
           \featref{Knowledge Specialization}              & Trained Knowledge                & Improve use of chosen skill                & \tdash            & \featpref{Knowledge Specialization}         \\
           \featref{Medicine Specialization}               & Trained Medicine                 & Improve use of chosen skill                & \tdash            & \featpref{Medicine Specialization}          \\
-          \featref{Might Specialization}                  & Trained Might                & Improve use of chosen skill                & \tdash            & \featpref{Might Specialization}         \\
+          \featref{Might Specialization}                  & Trained Might                    & Improve use of chosen skill                & \tdash            & \featpref{Might Specialization}         \\
           \featref{Perform Specialization}                & Trained Perform                  & Improve use of chosen skill                & \tdash            & \featpref{Perform Specialization}           \\
           \featref{Persuasion Specialization}             & Trained Persuasion               & Improve use of chosen skill                & \tdash            & \featpref{Persuasion Specialization}        \\
-          \featref{Ride Specialization}                   & Trained Ride                     & Improve use of chosen skill                & \tdash            & \featpref{Ride Specialization}              \\
+          \featref{Poise Specialization}                  & Trained Poise                    & Improve use of chosen skill                & \tdash            & \featpref{Poise Specialization}             \\
           \featref{Sleight of Hand Specialization}        & Trained Sleight of Hand          & Improve use of chosen skill                & \tdash            & \featpref{Sleight of Hand Specialization}   \\
           \featref{Social Insight Specialization}         & Trained Social Insight           & Improve use of chosen skill                & \tdash            & \featpref{Social Insight Specialization}    \\
           \featref{Stealth Specialization}                & Trained Stealth                  & Improve use of chosen skill                & \tdash            & \featpref{Stealth Specialization}           \\
@@ -309,29 +308,6 @@ They allow more distinct and unique character customization, but also increase g
     \ff[18]{Extraordinary Senses\plus} You can choose an additional sense from the list given in your \textit{extraordinary senses} ability, except that the range is doubled.
     You cannot choose the same sense that you chose with your \textit{extraordinary senses} ability.
     However, you can also change the sense you chose with that ability.
-  \end{feat}
-
-  \begin{feat}{Balance Specialization}{Skill}
-    \featpre Balance as a trained skill.
-
-    \ff[1]{Specialization} You gain a \plus2 bonus to the Balance skill.
-
-    \ff[6]{Precise Step} You are unaffected by \glossterm{difficult terrain} from mundane natural sources, such as \glossterm{heavy undergrowth}.
-
-    \ff[12]{Specialization\plus} The bonus from your \textit{specialization} ability increases to \plus4.
-
-    % Modifier at 18: 3 dex + 6 spec + 9 level + 3 train = 21.
-    \magicalff[18]{Air Dancer} You can attempt to move on surfaces that cannot support your weight, as described below.
-    \begin{raggeditemize}
-      \item Surfaces that can support at least a quarter of your weight, such as thin tree branches and dense liquids, are \glossterm{difficulty value} 15.
-      \item Surfaces that can support at least a tenth of your weight, such as water, are \glossterm{difficulty value} 20.
-      \item Surfaces that can support at least a hundredth of your weight, such as tree leaves, are \glossterm{difficulty value} 25.
-      \item Surfaces that cannot support your weight at all, such as air, are \glossterm{difficulty value} 30.
-    \end{raggeditemize}
-
-    Success means you move along the surface.
-    Failure means you fall through the surface, and you can't use this ability again this turn.
-    The \glossterm{difficulty value} increases by 5 for each consecutive turn that you spend moving in this way.
   \end{feat}
 
   \begin{feat}{Barbaric Ancestry}{Ancestry}
@@ -1533,6 +1509,32 @@ They allow more distinct and unique character customization, but also increase g
     \end{sustainability}
   \end{feat}
 
+  \begin{feat}{Poise Specialization}{Skill}
+    \featpre Poise as a trained skill.
+
+    \ff[1]{Specialization} You gain a \plus2 bonus to the Poise skill.
+
+    \ff[6]{Mounted Defense} Your mount gains a \plus3 bonus to all defenses, up to a maximum of your own corresponding defense.
+
+    \ff[6]{Precise Step} You are unaffected by \glossterm{difficult terrain} from mundane natural sources, such as \glossterm{heavy undergrowth}.
+
+    \ff[12]{Specialization\plus} The bonus from your \textit{specialization} ability increases to \plus4.
+
+    \magicalff[18]{Air Dancer} You can attempt to move on surfaces that cannot support your weight, as described below.
+    \begin{raggeditemize}
+      \item Surfaces that can support at least a quarter of your weight, such as thin tree branches and dense liquids, are \glossterm{difficulty value} 15.
+      \item Surfaces that can support at least a tenth of your weight, such as water, are \glossterm{difficulty value} 20.
+      \item Surfaces that can support at least a hundredth of your weight, such as tree leaves, are \glossterm{difficulty value} 25.
+      \item Surfaces that cannot support your weight at all, such as air, are \glossterm{difficulty value} 30.
+    \end{raggeditemize}
+
+    Success means you move along the surface.
+    Failure means you fall through the surface, and you can't use this ability again this turn.
+    The \glossterm{difficulty value} increases by 5 for each consecutive turn that you spend moving in this way.
+
+    \ff[18]{Mounted Defense\plus} The defense bonus from your \textit{mounted defense} ability increases to \plus5.
+  \end{feat}
+
   \begin{feat}{Precognition}{General}
     \featpre Intelligence 3.
 
@@ -1625,23 +1627,6 @@ They allow more distinct and unique character customization, but also increase g
     If you do, you reduce your stamina by one.
 
     \ff[18]{Regenerative Rest\plus} You only reduce your stamina by two per vital wound.
-  \end{feat}
-
-  \begin{feat}{Ride Specialization}{Skill}
-    \featpre Ride as a trained skill.
-
-    \ff[1]{Specialization} You gain a \plus2 bonus to the Ride skill.
-
-    \ff[6]{Mounted Defense} Your mount gains a \plus3 bonus to all defenses, up to a maximum of your own corresponding defense.
-
-    \ff[6]{Mounted Warrior} The penalty you take for making \glossterm{strikes} with \weapontag{Projectile} weapons while riding a moving mount is reduced by 2.
-
-    \ff[12]{Specialization\plus} The bonus from your \textit{specialization} ability increases to \plus4.
-
-    \ff[18]{Mounted Defense\plus} The defense bonus from your \textit{mounted defense} ability increases to \plus5.
-
-    \ff[18]{Mounted Warrior\plus} The penalty reduction from your \textit{mounted warrior} ability increases to 4.
-    In addition, while you are mounted, you gain a \plus1 \glossterm{accuracy} bonus with \weapontag{Mounted} weapons (see \pcref{Weapon Tags}).
   \end{feat}
 
   \begin{feat}{Shieldbearer}{Combat}

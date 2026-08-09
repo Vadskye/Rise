@@ -1471,7 +1471,7 @@
       },
       "trainedSkills": [
         "awareness",
-        "balance",
+        "poise",
         "stealth"
       ],
       "baseAttributes": [
@@ -1607,7 +1607,7 @@
             -2
           ],
           "trainedSkills": [
-            "ride"
+            "poise"
           ],
           "equippedArmor": "buff leather",
           "freeformCode": "",
@@ -6587,8 +6587,8 @@
           ],
           "trainedSkills": [
             "awareness",
-            "balance",
             "flexibility",
+            "poise",
             "stealth"
           ],
           "traits": [

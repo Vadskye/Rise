@@ -26,10 +26,9 @@ This chapter describes each skill, including common uses for those skills.
         \tb{Skill}        & \tb{Bbn} & \tb{Clr} & \tb{Drd} & \tb{Ftr} & \tb{Mnk} & \tb{Pal} & \tb{Rgr} & \tb{Rog} & \tb{Sor} & \tb{Vot} & \tb{Wiz} & \tb{Key Ability} \tableheaderrule
         Athletics         & C        & \tdash   & C        & C        & C        & \tdash   & C        & C        & \tdash   & \tdash   & \tdash   & Str          \\
         Might             & C        & \tdash   & \tdash   & C        & C        & C        & C        & \tdash   & \tdash   & \tdash   & \tdash   & Str          \\
-        Balance           & C        & \tdash   & C        & C        & C        & \tdash   & C        & C        & \tdash   & \tdash   & \tdash   & Dex          \\
         Flexibility       & C        & \tdash   & \tdash   & C        & C        & \tdash   & \tdash   & C        & \tdash   & \tdash   & \tdash   & Dex          \\
         Perform           & \tdash   & \tdash   & \tdash   & \tdash   & C        & \tdash   & \tdash   & C        & \tdash   & \tdash   & \tdash   & Dex          \\
-        Ride              & C        & \tdash   & \tdash   & C        & \tdash   & C        & \tdash   & \tdash   & \tdash   & C        & \tdash   & Dex          \\
+        Poise             & C        & \tdash   & C        & C        & C        & C        & C        & C        & \tdash   & C        & \tdash   & Dex          \\
         Sleight of Hand   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & C        & \tdash   & \tdash   & \tdash   & Dex          \\
         Stealth           & \tdash   & \tdash   & \tdash   & \tdash   & C        & \tdash   & C        & C        & \tdash   & \tdash   & \tdash   & Dex          \\
         Endurance         & C        & \tdash   & C        & C        & C        & C        & C        & \tdash   & \tdash   & \tdash   & \tdash   & Con          \\
@@ -212,71 +211,6 @@ This chapter describes each skill, including common uses for those skills.
     The difficulty value increases by 5 for each size category larger than Medium, and decreases by 5 for each size category smaller than Medium.
     Multiple sensations of the same type can also be treated as a single larger sensation, which makes them easier to detect.
     Non-visual sensations may not have a literal size category to rely on, so the GM can decide how this modifier applies.
-
-\newpage
-\skill{Balance}{Dex}
-  % TODO: should "unsteady terrain" be a standard glossterm?
-  The Balance skill represents your ability to maintain your balance and poise on unsteady terrain.
-  It also represents your ability to precisely position your movements, such as to avoid touching traps that you are aware of.
-  Generally, creatures only have to roll Balance checks if the terrain is unsteady for some reason.
-
-  \subsection{Common Balance Tasks}
-    \parhead{Creature Balance}\nonsectionlabel{Creature Balance} As part of movement, you can make a Balance vs. Reflex attack against a creature you touch.
-    The target must be two or more size categories larger than you.
-    On a hit, you can balance on the target's body, allowing you to walk on or jump from its body.
-    You must repeat this attack at the end of each of your subsequent turns to stay balancing on the creature.
-    For each consecutive turn that you balance on a non-ally in this way, you take a cumulative \minus2 penalty to this attack.
-    \parhead{Maintain Balance} If you take damage while on an unsteady surface, you must make a Balance \glossterm{reactive check} based on the surface.
-    Failure means that you fall \prone.
-    You only need to make this check once between your turns, even if you take damage from more than one source.
-    \parhead{Rapid Stand}\nonsectionlabel{Rapid Stand} You make a \glossterm{difficulty value} 15 Balance check as a \glossterm{move action} to stand up from a prone position.
-    Success means that you stand up so quickly that you can immediately take another move action.
-    Failure simply means that you stand up.
-    \parhead{Walk While Balancing} When you move using your \glossterm{walk speed} on an unsteady surface, you must make an Balance check based on the surface.
-    If you choose to move at half speed, you gain a \plus5 bonus to the check.
-    Success means you move along the surface.
-    Failure means you stop moving and the rest of your movement is wasted.
-
-  \subsection{Common Balance Modifiers}
-
-    The base \glossterm{difficulty value} to balance on a normal terrain is 0.
-    There are four common circumstances that make Balance checks more difficult: slippery, mobile, narrow, and uneven surfaces.
-    Slightly impaired surfaces increase the \glossterm{difficulty value} by 2.
-    Significantly impaired surfaces increase the DV by 5 or more.
-    If a surface is impaired for multiple reasons, add all relevant modifiers.
-    Some specific examples are listed below.
-
-    \begin{columntable}
-      \begin{dtabularx}{\columnwidth}{l X}
-        \tb{Ice}                                  & \tb{DV} \tableheaderrule
-        Rough, hardpacked ice, like a frozen lake & \plus2  \\
-        Typical ice                               & \plus5  \\
-        Recently frozen or ultra-smooth ice       & \plus10 \\
-        \tb{Liquid}                               & \tb{DV} \tableheaderrule
-        Water-covered ground, such as from rain   & \plus2  \\
-        Ankle-deep moving stream                  & \plus5  \\
-        Knee-deep static water                    & \plus5  \\
-        Oil-coated ground                         & \plus5  \\
-        Knee-deep moving stream                   & \plus10 \\
-        \tb{Narrow Surface}                       & \tb{DV} \tableheaderrule
-        About two feet wide                       & \plus2  \\
-        About one foot wide                       & \plus5  \\
-        About six inches wide                     & \plus10 \\
-        About two inches wide                     & \plus15 \\
-        Less than than two inches wide            & \plus20 \\
-        \tb{Sand}                                 & \tb{DV} \tableheaderrule
-        Water-logged beach sand                   & \plus2  \\
-        Hard-packed desert sand                   & \plus2  \\
-        Typical beach or desert sand              & \plus5  \\
-        Quicksand                                 & \plus10 \\
-        Unusually smooth, wind-tossed desert sand & \plus10 \\
-        \tb{Uneven Ground}                        & \tb{DV} \tableheaderrule
-        Infrequent ankle-high bumps and dips      & \plus2  \\
-        Constant ankle-high bumps and dips        & \plus5  \\
-        Infrequent knee-high bumps and dips       & \plus5  \\
-        Constant knee-high bumps and dips         & \plus10 \\
-      \end{dtabularx}
-    \end{columntable}
 
 \newpage
 \skill{Craft}{Int}
@@ -908,6 +842,100 @@ This chapter describes each skill, including common uses for those skills.
       \end{columntable}
 
 \newpage
+\skill{Poise}{Dex}
+  The Poise skill represents your ability to maintain stability and control over your movements in difficult circumstances.
+  This includes wet or unsteady terrain, riding a mount, or precisely positioning your body to avoid triggering traps.
+
+  Unless an ability says otherwise, you can only use this skill to ride \glossterm{allies} that are exactly one size category larger than you.
+
+  \subsection{Common Poise Tasks}
+    \parhead{Creature Balance}\nonsectionlabel{Creature Balance} As part of movement, you can make a Poise vs. Reflex attack against a creature you touch.
+    The target must be two or more size categories larger than you.
+    On a hit, you can balance on the target's body, allowing you to walk on or jump from its body.
+    You must repeat this attack at the end of each of your subsequent turns to stay balancing on the creature.
+    For each consecutive turn that you balance on a non-ally in this way, you take a cumulative \minus2 penalty to this attack.
+
+    \parhead{Guide Mount} When riding on a creature, you can make a Poise check to direct your mount's movement.
+    While travelling, this check is only necessary when giving the mount directions.
+    In battle, this check must be repeated at the start of your turn.
+    If the mount is trained for battle, the \glossterm{difficulty value} of this check is 0.
+    Otherwise, the DV is 5.
+    Success means the mount understands your direction, and will obey if it is willing and able.
+    Failure means the mount does not understand your direction, and acts of its own volition.
+
+    If you can communicate with your mount in other ways, such as by speaking with it, this check may be unnecessary.
+
+    \parhead{Maintain Balance} If you take damage while on an unsteady surface, you must make a Poise \glossterm{reactive check} based on the surface.
+    Failure means that you fall \prone.
+    You only need to make this check once between your turns, even if you take damage from more than one source.
+
+    \parhead{Maintain Ride} Whenever you take damage or your mount makes a sudden motion, you must make a DV 5 Poise check to continue riding the creature.
+    Sudden motions include jumping, attacking, and moving at more than half speed.
+    Failure means you fall off of your mount.
+
+    \parhead{Rapid Stand}\nonsectionlabel{Rapid Stand} You make a \glossterm{difficulty value} 15 Poise check as a \glossterm{move action} to stand up from a prone position.
+    Success means that you stand up so quickly that you can immediately take another move action.
+    Failure simply means that you stand up.
+
+    \parhead{Take Cover} You can make a DV 15 Poise check as a \glossterm{move action} to drop low and take \glossterm{cover} behind your mount.
+    This requires the use of a \glossterm{free hand}.
+    Failure means you can't get low enough and gain no benefit from the action.
+
+    \parhead{Walk While Balancing} When you move using your \glossterm{walk speed} on an unsteady surface, you must make a Poise check based on the surface.
+    If you choose to move at half speed, you gain a \plus5 bonus to the check.
+    Success means you move along the surface.
+    Failure means you stop moving and the rest of your movement is wasted.
+
+  \subsection{Common Poise Modifiers}
+    The base \glossterm{difficulty value} to balance on normal terrain is 0.
+    Four common circumstances make balancing checks more difficult: slippery, mobile, narrow, and uneven surfaces.
+    Slightly impaired surfaces increase the \glossterm{difficulty value} by 2.
+    Significantly impaired surfaces increase the DV by 5 or more.
+    If a surface is impaired for multiple reasons, add all relevant modifiers.
+    Some specific terrain examples are listed below.
+
+    \begin{columntable}
+      \begin{dtabularx}{\columnwidth}{l X}
+        \tb{Ice}                                  & \tb{DV} \tableheaderrule
+        Rough, hardpacked ice, like a frozen lake & \plus2  \\
+        Typical ice                               & \plus5  \\
+        Recently frozen or ultra-smooth ice       & \plus10 \\
+        \tb{Liquid}                               & \tb{DV} \tableheaderrule
+        Water-covered ground, such as from rain   & \plus2  \\
+        Ankle-deep moving stream                  & \plus5  \\
+        Knee-deep static water                    & \plus5  \\
+        Oil-coated ground                         & \plus5  \\
+        Knee-deep moving stream                   & \plus10 \\
+        \tb{Narrow Surface}                       & \tb{DV} \tableheaderrule
+        About two feet wide                       & \plus2  \\
+        About one foot wide                       & \plus5  \\
+        About six inches wide                     & \plus10 \\
+        About two inches wide                     & \plus15 \\
+        Less than than two inches wide            & \plus20 \\
+        \tb{Sand}                                 & \tb{DV} \tableheaderrule
+        Water-logged beach sand                   & \plus2  \\
+        Hard-packed desert sand                   & \plus2  \\
+        Typical beach or desert sand              & \plus5  \\
+        Quicksand                                 & \plus10 \\
+        Unusually smooth, wind-tossed desert sand & \plus10 \\
+        \tb{Uneven Ground}                        & \tb{DV} \tableheaderrule
+        Infrequent ankle-high bumps and dips      & \plus2  \\
+        Constant ankle-high bumps and dips        & \plus5  \\
+        Infrequent knee-high bumps and dips       & \plus5  \\
+        Constant knee-high bumps and dips         & \plus10 \\
+      \end{dtabularx}
+    \end{columntable}
+
+    When riding a mount, the following circumstances modify Poise checks:
+    \begin{raggeditemize}
+      \item If a creature is not trained as a mount, the DV to ride it increases by 5.
+      \item If it lacks a saddle and other riding gear, the DV to ride it increases by 5.
+      \item If it takes a standard action other than movement, such as attacking, the DV to ride it that turn increases by 5.
+      \item If it uses a \glossterm{movement mode} other than a walk speed, the DV to ride it that turn increases by 10.
+    \end{raggeditemize}
+
+
+\newpage
 \skill{Profession}{Varies}
   The Profession skills represent your practical understanding of a particular profession.
   Like Craft, Knowledge, and Perform, Profession is actually a number of separate skills.
@@ -936,36 +964,6 @@ This chapter describes each skill, including common uses for those skills.
     This allows you to use Profession in place of other skills when it is appropriate.
     For example, a sailor could use Profession to tie common knots in place of Devices or Survival, or a farmer could use Profession to identify common animals and plants in place of Knowledge (nature).
     The \glossterm{difficulty value} when using Profession may be higher than it would be to use the normal skill for the task, depending on the relevance of the Profession skill.
-
-\newpage
-\skill{Ride}{Dex}
-  The Ride skill represents your ability to ride and control horses and other mounts.
-  Typical riding actions don't require checks. You can saddle, mount, ride, and dismount from a mount without a problem. However, some special actions require Ride checks.
-
-  Unless an ability says otherwise, you can only use this skill to ride \glossterm{allies} that are exactly one size category larger than you.
-
-  \subsection{Common Ride Modifiers}
-    If a creature is not trained as a mount, the DV to ride it increases by 5.
-    If it lacks a saddle and other riding gear, the DV to ride it increases by 5.
-    If it takes a standard action other than movement, such as attacking, the DV to ride it that turn increases by 5.
-    If it uses a \glossterm{movement mode} other than a walk speed, the DV to ride it that turn increases by 10.
-
-  \subsection{Common Ride Tasks}
-    \parhead{Guide Mount} When riding on a creature, you can make a Ride check to direct your mount's movement.
-    While travelling, this check is only necessary when giving the mount directions.
-    In battle, this check must be repeated at the start of your turn.
-    If the mount is trained for battle, the \glossterm{difficulty value} of this check is 0.
-    Otherwise, the DV is 5.
-    Success means the mount understands your direction, and will obey if it is willing and able.
-    Failure means the mount does not understand your direction, and acts of its own volition.
-
-    If you can communicate with your mount in other ways, such as by speaking with it, this check may be unnecessary.
-    \parhead{Maintain Ride} Whenever you take damage or your mount makes a sudden motion, you must make a DV 5 Ride check to continue riding the creature.
-    Sudden motions include jumping, attacking, and moving at more than half speed.
-    Failure means you fall off of your mount.
-    \parhead{Take Cover} You can make a DV 15 Ride check as a \glossterm{move action} to drop low and take \glossterm{cover} behind your mount.
-    This requires the use of a \glossterm{free hand}.
-    Failure means you can't get low enough and gain no benefit from the action.
 
 \newpage
 \skill{Sleight of Hand}{Dex}

@@ -328,7 +328,6 @@ def custom_statistic(i: str) -> str:
                     option({"value": "athletics"}, "Athletics"),
                     option({"value": "attunement_points"}, "Attunement points"),
                     option({"value": "awareness"}, "Awareness"),
-                    option({"value": "balance"}, "Balance"),
                     option(
                         {"value": "bardic_performances_known"}, "Bardic performances"
                     ),
@@ -392,11 +391,11 @@ def custom_statistic(i: str) -> str:
                     option({"value": "perception"}, "Perception"),
                     option({"value": "perform"}, "Perform"),
                     option({"value": "persuasion"}, "Persuasion"),
+                    option({"value": "poise"}, "Poise"),
                     option({"value": "mundane_power"}, "Mundane power"),
                     option({"value": "magical_power"}, "Magical power"),
                     option({"value": "profession"}, "Profession"),
                     option({"value": "reflex"}, "Reflex defense"),
-                    option({"value": "ride"}, "Ride"),
                     option({"value": "nonclass_skill_count"}, "Skills trained"),
                     option({"value": "sleight_of_hand"}, "Sleight of Hand"),
                     option({"value": "social_insight"}, "Social Insight"),

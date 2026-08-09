@@ -340,7 +340,7 @@ export function ki(): RankAbility[] {
 
         \\begin{magicalactiveability}{Rest Atop the Precipice}{Free action}
           \\rankline
-          You gain a \\plus4 bonus to the Balance skill this turn (see \\pcref{Balance}).
+          You gain a \\plus4 bonus to the Poise skill this turn (see \\pcref{Poise}).
 
           \\rankline
           \\rank{5} The bonus increases to \\plus6.

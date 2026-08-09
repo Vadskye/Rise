@@ -14,10 +14,9 @@ ATTRIBUTE_SHORTHAND = {
 ATTRIBUTE_SKILLS = {
     "strength": ["Athletics", "Might"],
     "dexterity": [
-        "Balance",
         "Flexibility",
         "Perform",
-        "Ride",
+        "Poise",
         "Sleight of Hand",
         "Stealth",
     ],
