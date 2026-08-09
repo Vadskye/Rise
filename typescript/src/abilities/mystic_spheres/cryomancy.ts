@@ -1,11 +1,6 @@
 import { MysticSphere } from '.';
 import { add_tag_to_sphere } from './add_tag';
-import {
-  BARRIER_COOLDOWN,
-  CRIT_BECOMES_CONDITION,
-  DAMAGING_INJURY_CRIT,
-  INJURY_CRIT,
-} from '../constants';
+import { CRIT_BECOMES_CONDITION, DAMAGING_INJURY_CRIT, INJURY_CRIT } from '../constants';
 
 const OPTIONAL_ICE_CRYSTAL = 'One optional \\glossterm{ice crystal}.';
 const ICE_CRYSTAL_AND_BARRIER = `

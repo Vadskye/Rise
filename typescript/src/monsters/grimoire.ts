@@ -1,5 +1,4 @@
 import { Creature, KnowledgeResultsConfig } from '@src/character_sheet/creature';
-import { ValidationIssue } from '@src/character_sheet/validation';
 import { handleEverything } from '@src/character_sheet/sheet_worker';
 import {
   characterSheetExists,

@@ -1,6 +1,5 @@
 import { Grimoire } from '@src/monsters/grimoire';
 import { Creature } from '@src/character_sheet/creature';
-import { BRIEF_COOLDOWN } from '@src/abilities/constants';
 
 export function addBeasts(grimoire: Grimoire) {
   addIchorTainted(grimoire);

@@ -1,4 +1,3 @@
 import { Grimoire } from '@src/monsters/grimoire';
-import { Creature } from '@src/character_sheet/creature';
 
-export function addSoulforged(grimoire: Grimoire) {}
+export function addSoulforged(_grimoire: Grimoire) {}
