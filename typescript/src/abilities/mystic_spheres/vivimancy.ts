@@ -385,10 +385,10 @@ export const vivimancy: MysticSphere = {
     },
 
     {
-      name: 'Lifetap',
+      name: 'Bloodfuel',
 
       effect: `
-        You must be alive to cast this spell.
+        You must be \\trait{blooded} to cast this spell.
 
         Whenever you cast a non-attunable spell, you can activate this effect as a \\glossterm{minor action}.
         If you do, the spell deals 1d8 \\glossterm{extra damage} when it deals damage for the first time.
@@ -412,7 +412,7 @@ export const vivimancy: MysticSphere = {
     },
 
     {
-      name: 'Lifetap Slash',
+      name: 'Bloodfuel Slash',
 
       // Rank 2 Spell
       // Range: Medium (0)
@@ -421,7 +421,7 @@ export const vivimancy: MysticSphere = {
       attack: {
         hit: `\\damagerankthree.`,
         targeting: `
-          You must be alive to cast this spell.
+          You must be \\trait{blooded} to cast this spell.
 
           Make an attack vs. Armor against something within \\medrange.
           Whether the attack hits or misses, you lose \\glossterm{hit points} equal to half your \\glossterm{power}.
@@ -432,10 +432,11 @@ export const vivimancy: MysticSphere = {
       rank: 2,
       roles: ['burst'],
       scaling: 'damage',
+      tags: ['Manifestation', 'Physical'],
     },
 
     {
-      name: 'Mighty Lifetap Slash',
+      name: 'Mighty Bloodfuel Slash',
 
       // Rank 5 Spell
       // Range: Medium (0)
@@ -444,7 +445,7 @@ export const vivimancy: MysticSphere = {
       attack: {
         hit: `\\damageranksix, and any \\glossterm{extra damage} is doubled.`,
         targeting: `
-          You must be alive to cast this spell.
+          You must be \\trait{blooded} to cast this spell.
 
           Make an attack vs. Armor against something within \\medrange.
           Whether the attack hits or misses, you lose \\glossterm{hit points} equal to your \\glossterm{power}.
@@ -455,10 +456,11 @@ export const vivimancy: MysticSphere = {
       rank: 5,
       roles: ['burst'],
       scaling: 'damage',
+      tags: ['Manifestation', 'Physical'],
     },
 
     {
-      name: 'Lifetap Blast',
+      name: 'Bloodfuel Blast',
 
       // Rank 3 Spell
       // Area: Med cone from self (R2, mod -1)
@@ -468,7 +470,7 @@ export const vivimancy: MysticSphere = {
         hit: `\\damagerankthree.`,
         halfOnMiss: true,
         targeting: `
-          You must be alive to cast this spell.
+          You must be \\trait{blooded} to cast this spell.
 
           Make an attack vs. Reflex against everything within a \\medarea cone from you.
           Whether the attack hits or misses, you lose \\glossterm{hit points} equal to half your \\glossterm{power}.
@@ -479,16 +481,17 @@ export const vivimancy: MysticSphere = {
       rank: 3,
       roles: ['clear'],
       scaling: 'damage',
+      tags: ['Manifestation', 'Physical'],
     },
 
     {
-      name: 'Mighty Lifetap Blast',
+      name: 'Mighty Bloodfuel Blast',
 
       attack: {
         hit: `\\damageranksix.`,
         halfOnMiss: true,
         targeting: `
-          You must be alive to cast this spell.
+          You must be \\trait{blooded} to cast this spell.
 
           Make an attack vs. Reflex against everything within a \\medarea cone from you.
           Whether the attack hits or misses, you lose \\glossterm{hit points} equal to your \\glossterm{power}.
@@ -499,6 +502,7 @@ export const vivimancy: MysticSphere = {
       rank: 6,
       roles: ['clear'],
       scaling: 'damage',
+      tags: ['Manifestation', 'Physical'],
     },
 
     {
