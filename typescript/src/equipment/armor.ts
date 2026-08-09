@@ -164,7 +164,7 @@ export function getArmorBaseDefinition(kind: ArmorKind, material?: ArmorMaterial
         speedModifier: 0,
         usageClass: 'medium',
         vitalRolls: 1,
-        dexSkillModifier: -2,
+        dexSkillModifier: -1,
       };
     case 'Scale':
       return {
@@ -177,7 +177,7 @@ export function getArmorBaseDefinition(kind: ArmorKind, material?: ArmorMaterial
         speedModifier: 0,
         usageClass: 'medium',
         vitalRolls: 1,
-        dexSkillModifier: -3,
+        dexSkillModifier: -2,
       };
     case 'Brigandine':
       return {
@@ -190,7 +190,7 @@ export function getArmorBaseDefinition(kind: ArmorKind, material?: ArmorMaterial
         speedModifier: 0,
         usageClass: 'medium',
         vitalRolls: 1,
-        dexSkillModifier: -3,
+        dexSkillModifier: -2,
       };
     case 'StandardShield':
       return {
@@ -216,7 +216,7 @@ export function getArmorBaseDefinition(kind: ArmorKind, material?: ArmorMaterial
         speedModifier: -10,
         usageClass: 'heavy',
         vitalRolls: 2,
-        dexSkillModifier: -4,
+        dexSkillModifier: -3,
       };
     case 'HalfPlate':
       return {
@@ -229,7 +229,7 @@ export function getArmorBaseDefinition(kind: ArmorKind, material?: ArmorMaterial
         speedModifier: -10,
         usageClass: 'heavy',
         vitalRolls: 2,
-        dexSkillModifier: -5,
+        dexSkillModifier: -4,
       };
     case 'FullPlate':
       return {
@@ -242,7 +242,7 @@ export function getArmorBaseDefinition(kind: ArmorKind, material?: ArmorMaterial
         speedModifier: -10,
         usageClass: 'heavy',
         vitalRolls: 2,
-        dexSkillModifier: -5,
+        dexSkillModifier: -4,
       };
     case 'TowerShield':
       return {

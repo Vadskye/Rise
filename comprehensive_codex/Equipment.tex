@@ -883,7 +883,7 @@ This chapter defines the items and equipment that exist in the universe of Rise,
 
     \parhead{Dex Skills} This modifier applies to your Dexterity-based skills.
     If you use multiple armor pieces that modify this bonus, add the modifiers together.
-    For example, a creature using full plate and a tower shield would have a \minus6 penalty to Dexterity-based skills.
+    For example, a creature using full plate and a tower shield would have a \minus5 penalty to Dexterity-based skills.
 
     \parhead{Item Rank (Cost)} The first value indicates the \glossterm{item rank} of the item (see \pcref{Item Ranks}).
     The second value in parentheses indicates the average cost to buy the item.
@@ -908,21 +908,21 @@ This chapter defines the items and equipment that exist in the universe of Rise,
         \tind Rawhide          & \plus1       & \tdash          & \plus1           & \tdash       & \tdash         & \minus1         & Leather       & 1 (4 gp)   \\
         \tind Buckler          & \plus1       & \tdash          & \tdash           & \tdash       & \tdash         & \tdash          & Metal or wood & 0 (1 gp)   \\
         Medium armor           &              &                 &                  &              &                &                 &               &            \\
-        % 12 Armor + 2 dur + 2 vit - 2 dex = 14 points                                                                                              
-        \tind Leather lamellar & \plus3       & \plus1          & \plus1           & \tdash       & \mult1/2       & \minus2         & Leather       & 1 (4 gp)   \\
-        % 12 Armor + 3 dur + 2 vit - 3 dex = 14 points                                                                                              
-        \tind Scale            & \plus3       & \plus2          & \plus1           & \tdash       & \mult1/2       & \minus3         & Metal         & 1 (4 gp)   \\
-        % 12 Armor + 4 dur + 2 vit - 3 dex - 1 rank = 14 points                                                                                     
-        \tind Brigandine       & \plus3       & \plus3          & \plus1           & \tdash       & \mult1/2       & \minus3         & Metal         & 2 (20 gp)  \\
+        % 12 Armor + 2 dur + 2 vit - 1 dex - 1 rank = 14 points                                                                                     
+        \tind Leather lamellar & \plus3       & \plus1          & \plus1           & \tdash       & \mult1/2       & \minus1         & Leather       & 1 (4 gp)   \\
+        % 12 Armor + 3 dur + 2 vit - 2 dex - 1 rank = 14 points                                                                                     
+        \tind Scale            & \plus3       & \plus2          & \plus1           & \tdash       & \mult1/2       & \minus2         & Metal         & 1 (4 gp)   \\
+        % 12 Armor + 4 dur + 2 vit - 2 dex - 2 rank = 14 points                                                                                     
+        \tind Brigandine       & \plus3       & \plus3          & \plus1           & \tdash       & \mult1/2       & \minus2         & Metal         & 2 (20 gp)  \\
         \tind Standard shield  & \plus2       & \tdash          & \tdash           & \tdash       & \mult1/2       & \tdash          & Metal or wood & 0 (1 gp)   \\
         Heavy armor            &              &                 &                  &              &                &                 &               &            \\
-        % 15 Armor + 5 dur + 4 vit - 4 dex = 20 points                                                                                              
-        \tind Breastplate      & \plus4       & \plus4          & \plus2           & \minus10 ft. & \mult1/2       & \minus4         & Metal         & 1 (4 gp)   \\
-        % 15 Armor + 7 dur + 4 vit - 5 dex - 1 rank = 20 points                                                                                     
-        \tind Half plate       & \plus4       & \plus6          & \plus2           & \minus10 ft. & \mult1/2       & \minus5         & Metal         & 2 (20 gp)  \\
-        % 15 Armor + 8 dur + 4 vit - 5 dex - 2 rank = 20 points                                                                                     
-        \tind Full plate       & \plus4       & \plus7          & \plus2           & \minus10 ft. & \mult1/2       & \minus5         & Metal         & 3 (100 gp) \\
-        \tind Tower shield     & \plus3\fn{2} & \tdash          & \tdash           & \tdash       & \mult1/2       & \minus1         & Metal or wood & 1 (4 gp)   \\
+        % 15 Armor + 5 dur + 4 vit - 3 dex - 1 rank = 20 points                                                                                     
+        \tind Breastplate      & \plus4       & \plus4          & \plus2           & \minus10 ft. & \mult1/2       & \minus3         & Metal         & 1 (4 gp)   \\
+        % 15 Armor + 7 dur + 4 vit - 4 dex - 2 rank = 20 points                                                                                     
+        \tind Half plate       & \plus4       & \plus6          & \plus2           & \minus10 ft. & \mult1/2       & \minus4         & Metal         & 2 (20 gp)  \\
+        % 15 Armor + 8 dur + 4 vit - 4 dex - 3 rank = 20 points                                                                                     
+        \tind Full plate       & \plus4       & \plus7          & \plus2           & \minus10 ft. & \mult1/2       & \minus4         & Metal         & 3 (100 gp) \\
+        \tind Tower shield     & \plus2\fn{2} & \tdash          & \tdash           & \tdash       & \mult1/2       & \minus1         & Metal or wood & 1 (4 gp)   \\
         Extras                 &              &                 &                  &              &                &                 &               &            \\
         \tind Shield spikes    & \tdash       & \tdash          & \tdash           & \tdash       & \tdash         & \minus1         & Metal         & 1 (4 gp)   \\
       \end{dtabularx}
@@ -947,7 +947,8 @@ This chapter defines the items and equipment that exist in the universe of Rise,
     You can use a tower shield as an \glossterm{exotic weapon} (see \tref{Exotic Weapons}).
     However, you cannot make \glossterm{dual strikes} with a shield.
 
-    While wielding a tower shield, you take a \minus1 penalty to \glossterm{accuracy} because of the shield's unwieldy nature.
+    While wielding a tower shield, you can take cover behind it as a \glossterm{standard action}.
+    When you do, you \briefly have \glossterm{cover} against all attacks that you are aware of.
     \parhead{Shield Spikes} These spikes improve the effectiveness of a standard shield or tower shield when used as a weapon.
     For details, see \tref{Weapons}.
     You can't put spikes on a buckler.

@@ -132,7 +132,7 @@ t.test('can apply armor effects', (t) => {
   t.equal(creature.body_armor_speed, -10, 'Body armor speed');
   t.equal(creature.body_armor_vital_rolls, 2, 'Body armor vital rolls');
   t.equal(creature.body_armor_usage_class, 'heavy', 'Body armor usage class');
-  t.equal(creature.body_armor_dex_skill_modifier, -4, 'Body armor dex skill modifier');
+  t.equal(creature.body_armor_dex_skill_modifier, -3, 'Body armor dex skill modifier');
 
   t.equal(creature.shield_defense, 2, 'Shield defense');
   t.equal(creature.shield_accuracy, 0, 'Shield accuracy');
