@@ -1379,7 +1379,8 @@ body {
   transition: all 0.12s ease;
   font-family: inherit;
 
-  &:hover, &.highlighted {
+  &:hover,
+  &.highlighted {
     background-color: var(--bg-tertiary);
     color: var(--text-primary);
     border-color: var(--text-secondary);
@@ -1621,6 +1622,7 @@ body {
     cursor: pointer;
     color: var(--text-secondary);
     transition: color 0.15s ease;
+    text-transform: capitalize;
 
     &.checked {
       color: var(--text-primary);

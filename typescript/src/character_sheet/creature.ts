@@ -951,7 +951,7 @@ export class Creature implements CreaturePropertyMap {
       modifier.immune = '\\atCompulsion, \\atEmotion';
     } else if (traitName === 'multipedal') {
       modifier.numericEffects = [
-        { modifier: 5, statistic: 'balance' },
+        { modifier: 5, statistic: 'poise' },
         { modifier: 10, statistic: 'speed' },
       ];
       modifier.immune = 'Trip';
@@ -1320,8 +1320,8 @@ export class Creature implements CreaturePropertyMap {
     return this.getPropertyValue('might');
   }
 
-  public get balance() {
-    return this.getPropertyValue('balance');
+  public get poise() {
+    return this.getPropertyValue('poise');
   }
 
   public get flexibility() {
@@ -1330,10 +1330,6 @@ export class Creature implements CreaturePropertyMap {
 
   public get perform() {
     return this.getPropertyValue('perform');
-  }
-
-  public get ride() {
-    return this.getPropertyValue('ride');
   }
 
   public get sleight_of_hand() {

@@ -370,7 +370,7 @@ describe('Monster UI Integration Tests (Full Server)', () => {
     });
     expect(res1.status).toBe(200);
     const result1 = await res1.json();
-    expect(result1.warnings).toContain(formatMissingWeaponWarning('Basic Strike'));
+    expect(result1.requirements).toContain(formatMissingWeaponWarning('Basic Strike'));
 
     const monsterWithStrikeOk = {
       name: `StrikeOkMonster_${Date.now()}`,
@@ -402,7 +402,7 @@ describe('Monster UI Integration Tests (Full Server)', () => {
     });
     expect(res2.status).toBe(200);
     const result2 = await res2.json();
-    expect(result2.warnings).not.toContain(formatMissingWeaponWarning('Basic Strike'));
+    expect(result2.requirements).not.toContain(formatMissingWeaponWarning('Basic Strike'));
 
     const monsterWithDisplayNameStrikeNonWarn = {
       name: `DisplayNameStrikeNonWarn_${Date.now()}`,
@@ -434,7 +434,7 @@ describe('Monster UI Integration Tests (Full Server)', () => {
     });
     expect(res3.status).toBe(200);
     const result3 = await res3.json();
-    expect(result3.warnings).not.toContain(formatMissingWeaponWarning('Make Strike'));
+    expect(result3.requirements).not.toContain(formatMissingWeaponWarning('Make Strike'));
   });
 
   test('POST /api/preview validates "Throw Item" missing item warning and compiles with item', async () => {
@@ -465,7 +465,7 @@ describe('Monster UI Integration Tests (Full Server)', () => {
     });
     expect(res1.status).toBe(200);
     const result1 = await res1.json();
-    expect(result1.warnings).toContain(formatMissingWeaponWarning('Throw Item', true));
+    expect(result1.requirements).toContain(formatMissingWeaponWarning('Throw Item', true));
 
     const monsterWithThrowItemOk = {
       name: `ThrowItemOkMonster_${Date.now()}`,
@@ -497,7 +497,7 @@ describe('Monster UI Integration Tests (Full Server)', () => {
     });
     expect(res2.status).toBe(200);
     const result2 = await res2.json();
-    expect(result2.warnings).not.toContain(formatMissingWeaponWarning('Throw Item', true));
+    expect(result2.requirements).not.toContain(formatMissingWeaponWarning('Throw Item', true));
     expect(result2.computedStats.activeAbilities.some((a: any) => a.name === 'Acid Flask')).toBe(
       true,
     );
@@ -531,8 +531,8 @@ describe('Monster UI Integration Tests (Full Server)', () => {
     });
     expect(res1.status).toBe(200);
     const result1 = await res1.json();
-    expect(result1.warnings).toContain(formatMissingWeaponWarning('Poisonous Strike'));
-    expect(result1.warnings).toContain(formatMissingPoisonWarning('Poisonous Strike'));
+    expect(result1.requirements).toContain(formatMissingWeaponWarning('Poisonous Strike'));
+    expect(result1.requirements).toContain(formatMissingPoisonWarning('Poisonous Strike'));
 
     const monsterWithPoisonOk = {
       name: `PoisonOkMonster_${Date.now()}`,
@@ -566,8 +566,8 @@ describe('Monster UI Integration Tests (Full Server)', () => {
     });
     expect(res2.status).toBe(200);
     const result2 = await res2.json();
-    expect(result2.warnings).not.toContain(formatMissingWeaponWarning('Poisonous Strike'));
-    expect(result2.warnings).not.toContain(formatMissingPoisonWarning('Poisonous Strike'));
+    expect(result2.requirements).not.toContain(formatMissingWeaponWarning('Poisonous Strike'));
+    expect(result2.requirements).not.toContain(formatMissingPoisonWarning('Poisonous Strike'));
     expect(result2.computedStats.activeAbilities.some((a: any) => a.name === 'Asp Venom')).toBe(
       true,
     );
@@ -596,7 +596,7 @@ describe('Monster UI Integration Tests (Full Server)', () => {
     });
     expect(res1.status).toBe(200);
     const result1 = await res1.json();
-    expect(result1.warnings).toContain(formatFreeformCodeWarning(monsterWithFreeform.name));
+    expect(result1.guidelines).toContain(formatFreeformCodeWarning(monsterWithFreeform.name));
 
     const monsterWithSharedFreeform = {
       name: `SharedFreeformMonster_${Date.now()}`,
@@ -623,7 +623,7 @@ describe('Monster UI Integration Tests (Full Server)', () => {
     });
     expect(res2.status).toBe(200);
     const result2 = await res2.json();
-    expect(result2.warnings).toContain(
+    expect(result2.guidelines).toContain(
       formatSharedFreeformCodeWarning(monsterWithSharedFreeform.name),
     );
   });
@@ -666,7 +666,7 @@ describe('Monster UI Integration Tests (Full Server)', () => {
     expect(res1.status).toBe(200);
     const result1 = await res1.json();
     expect(result1.success).toBe(true);
-    expect(result1.warnings).not.toContain(formatNoStandardActionWarning(monsterWithNoError.name));
+    expect(result1.guidelines).not.toContain(formatNoStandardActionWarning(monsterWithNoError.name));
 
     const monsterWithError = {
       name: `ErrorMonster_${Date.now()}`,
@@ -690,7 +690,7 @@ describe('Monster UI Integration Tests (Full Server)', () => {
     expect(res2.status).toBe(200);
     const result2 = await res2.json();
     expect(result2.success).toBe(true);
-    expect(result2.warnings).toContain(formatNoStandardActionWarning(monsterWithError.name));
+    expect(result2.requirements).toContain(formatNoStandardActionWarning(monsterWithError.name));
   });
 
   test('GET /api/settings returns empty object when no settings file exists', async () => {
@@ -757,7 +757,7 @@ describe('Monster UI Integration Tests (Full Server)', () => {
     });
     expect(res1.status).toBe(200);
     const result1 = await res1.json();
-    expect(result1.warnings).toContain(formatMissingWeaponWarning('Custom Strike'));
+    expect(result1.requirements).toContain(formatMissingWeaponWarning('Custom Strike'));
 
     const monsterWithCustomManeuverOk = {
       name: `CustomOkMonster_${Date.now()}`,
@@ -788,7 +788,7 @@ describe('Monster UI Integration Tests (Full Server)', () => {
     });
     expect(res2.status).toBe(200);
     const result2 = await res2.json();
-    expect(result2.warnings).not.toContain(formatMissingWeaponWarning('Custom Strike'));
+    expect(result2.requirements).not.toContain(formatMissingWeaponWarning('Custom Strike'));
     
     expect(result2.computedStats).toBeDefined();
     const customStrike = result2.computedStats.activeAbilities.find((a: any) => a.name === 'Custom Strike');

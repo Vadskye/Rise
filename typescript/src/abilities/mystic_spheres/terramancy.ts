@@ -746,7 +746,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         When you do, gravity pulls you towards that object instead of in the normal direction.
         This allows you to walk normally on walls or even ceilings.
 
-        Whenever you change the direction that gravity pulls you, you must make a \\glossterm{difficulty value} 10 Balance check to keep your feet.
+        Whenever you change the direction that gravity pulls you, you must make a \\glossterm{difficulty value} 10 Poise check to keep your feet.
         Failure means you fall \\prone and your movement ends.
       `,
       rank: 2,

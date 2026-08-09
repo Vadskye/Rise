@@ -9,9 +9,8 @@ export enum SkillCategory {
 
 export const RISE_MOVEMENT_SKILLS = [
   'athletics',
-  'balance',
   'flexibility',
-  'ride',
+  'poise',
   'stealth',
 ] as const;
 export type RiseMovementSkill = (typeof RISE_MOVEMENT_SKILLS)[number];
@@ -98,7 +97,6 @@ export const SKILL_METADATA: Record<Skill, SkillMetadata> = {
   analysis: { attribute: 'intelligence', category: SkillCategory.Senses },
   athletics: { attribute: 'strength', category: SkillCategory.Movement },
   awareness: { attribute: 'perception', category: SkillCategory.Senses },
-  balance: { attribute: 'dexterity', category: SkillCategory.Movement },
   craft_alchemy: { attribute: 'intelligence', category: SkillCategory.Other },
   craft_bone: { attribute: 'intelligence', category: SkillCategory.Other },
   craft_ceramics: { attribute: 'intelligence', category: SkillCategory.Other },
@@ -131,8 +129,8 @@ export const SKILL_METADATA: Record<Skill, SkillMetadata> = {
   might: { attribute: 'strength', category: SkillCategory.Other },
   perform: { attribute: 'dexterity', category: SkillCategory.Social },
   persuasion: { attribute: 'perception', category: SkillCategory.Social },
+  poise: { attribute: 'dexterity', category: SkillCategory.Movement },
   profession: { attribute: null, category: SkillCategory.Other },
-  ride: { attribute: 'dexterity', category: SkillCategory.Movement },
   sleight_of_hand: { attribute: 'dexterity', category: SkillCategory.Other },
   social_insight: { attribute: 'perception', category: SkillCategory.Social },
   stealth: { attribute: 'dexterity', category: SkillCategory.Movement },

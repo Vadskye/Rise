@@ -60,7 +60,7 @@ export function harpy(): RankAbility[] {
       isMagical: false,
       rank: 3,
       description: `
-        The Armor defense bonus increases to \\plus3, and the Balance bonus increases to \\plus8.
+        The Armor defense bonus increases to \\plus3, and the Poise bonus increases to \\plus8.
       `,
     },
     {

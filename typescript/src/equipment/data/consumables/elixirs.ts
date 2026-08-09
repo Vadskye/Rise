@@ -62,15 +62,15 @@ export function elixirs(): Tool[] {
       name: 'Elixir of Grace',
       rank: 2,
       attunement: 'Attune',
-      short_description: 'Grants +2 to Balance, Flexibility, and Stealth',
+      short_description: 'Grants +2 to Flexibility, Poise, and Stealth',
       description: `
-        When you drink this \\glossterm{potion}, if you \\glossterm{attune} to its effects, you gain a +2 \\glossterm{enhancement bonus} to your Balance, Flexibility, and Stealth skills.
+        When you drink this \\glossterm{potion}, if you \\glossterm{attune} to its effects, you gain a +2 \\glossterm{enhancement bonus} to your Flexibility, Poise, and Stealth skills.
         This effect expires after 10 minutes.
       `,
       upgrades: [
         {
           rank: 5,
-          short_description: 'Grants +4 to Balance, Flexibility, and Stealth',
+          short_description: 'Grants +4 to Flexibility, Poise, and Stealth',
           description: `
             The bonus increases to +4.
           `,

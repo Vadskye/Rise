@@ -10,19 +10,18 @@ export function getClassSkills(cls: Class): RiseSkill[] {
         'analysis',
         'athletics',
         'awareness',
-        'balance',
         'craft_untrained',
         'devices',
         'disguise',
         'endurance',
         'knowledge_engineering',
         'knowledge_items',
+        'poise',
       ];
     case 'Barbarian':
       return [
         'athletics',
         'awareness',
-        'balance',
         'creature_handling',
         'deception',
         'endurance',
@@ -31,7 +30,7 @@ export function getClassSkills(cls: Class): RiseSkill[] {
         'medicine',
         'might',
         'persuasion',
-        'ride',
+        'poise',
         'survival',
       ];
     case 'Cleric':
@@ -55,7 +54,6 @@ export function getClassSkills(cls: Class): RiseSkill[] {
         'analysis',
         'athletics',
         'awareness',
-        'balance',
         'craft_untrained',
         'creature_handling',
         'deception',
@@ -66,6 +64,7 @@ export function getClassSkills(cls: Class): RiseSkill[] {
         'knowledge_items',
         'medicine',
         'persuasion',
+        'poise',
         'social_insight',
         'stealth',
         'survival',
@@ -75,7 +74,6 @@ export function getClassSkills(cls: Class): RiseSkill[] {
         'analysis',
         'athletics',
         'awareness',
-        'balance',
         'craft_untrained',
         'creature_handling',
         'deception',
@@ -86,7 +84,7 @@ export function getClassSkills(cls: Class): RiseSkill[] {
         'knowledge_items',
         'knowledge_nature',
         'persuasion',
-        'ride',
+        'poise',
         'stealth',
         'survival',
       ];
@@ -94,7 +92,6 @@ export function getClassSkills(cls: Class): RiseSkill[] {
       return [
         'athletics',
         'awareness',
-        'balance',
         'craft_untrained',
         'creature_handling',
         'deception',
@@ -106,6 +103,7 @@ export function getClassSkills(cls: Class): RiseSkill[] {
         'medicine',
         'perform',
         'persuasion',
+        'poise',
         'social_insight',
         'stealth',
         'survival',
@@ -114,7 +112,6 @@ export function getClassSkills(cls: Class): RiseSkill[] {
       return [
         'athletics',
         'awareness',
-        'balance',
         'craft_untrained',
         'deception',
         'endurance',
@@ -124,19 +121,19 @@ export function getClassSkills(cls: Class): RiseSkill[] {
         'knowledge_items',
         'medicine',
         'persuasion',
-        'ride',
+        'poise',
       ];
     case 'Harpy':
       return [
         'athletics',
         'awareness',
-        'balance',
         'creature_handling',
         'deception',
         'flexibility',
         'intimidate',
         'perform',
         'persuasion',
+        'poise',
         'social_insight',
         'stealth',
         'survival',
@@ -145,7 +142,6 @@ export function getClassSkills(cls: Class): RiseSkill[] {
       return [
         'athletics',
         'craft_untrained',
-        'balance',
         'flexibility',
         'endurance',
         'knowledge_arcana',
@@ -153,13 +149,13 @@ export function getClassSkills(cls: Class): RiseSkill[] {
         'knowledge_planes',
         'awareness',
         'intimidate',
+        'poise',
       ];
     case 'Monk':
       return [
         'analysis',
         'athletics',
         'awareness',
-        'balance',
         'craft_untrained',
         'creature_handling',
         'deception',
@@ -170,7 +166,7 @@ export function getClassSkills(cls: Class): RiseSkill[] {
         'might',
         'perform',
         'persuasion',
-        'ride',
+        'poise',
         'social_insight',
         'stealth',
         'survival',
@@ -179,7 +175,6 @@ export function getClassSkills(cls: Class): RiseSkill[] {
       return [
         'analysis',
         'awareness',
-        'balance',
         'craft_untrained',
         'creature_handling',
         'deception',
@@ -189,6 +184,7 @@ export function getClassSkills(cls: Class): RiseSkill[] {
         'medicine',
         'perform',
         'persuasion',
+        'poise',
         'sleight_of_hand',
         'social_insight',
         'stealth',
@@ -198,11 +194,11 @@ export function getClassSkills(cls: Class): RiseSkill[] {
       return [
         'athletics',
         'awareness',
-        'balance',
         'endurance',
         'flexibility',
         'intimidate',
         'knowledge_dungeoneering',
+        'poise',
         'sleight_of_hand',
         'stealth',
         'survival',
@@ -220,7 +216,7 @@ export function getClassSkills(cls: Class): RiseSkill[] {
         'medicine',
         'might',
         'persuasion',
-        'ride',
+        'poise',
         'social_insight',
       ];
     case 'Ranger':
@@ -228,7 +224,6 @@ export function getClassSkills(cls: Class): RiseSkill[] {
         'analysis',
         'athletics',
         'awareness',
-        'balance',
         'craft_untrained',
         'creature_handling',
         'deception',
@@ -246,7 +241,7 @@ export function getClassSkills(cls: Class): RiseSkill[] {
         'medicine',
         'might',
         'persuasion',
-        'ride',
+        'poise',
         'stealth',
         'survival',
       ];
@@ -255,7 +250,6 @@ export function getClassSkills(cls: Class): RiseSkill[] {
         'analysis',
         'athletics',
         'awareness',
-        'balance',
         'craft_untrained',
         'deception',
         'devices',
@@ -268,7 +262,7 @@ export function getClassSkills(cls: Class): RiseSkill[] {
         'knowledge_local',
         'perform',
         'persuasion',
-        'ride',
+        'poise',
         'sleight_of_hand',
         'social_insight',
         'stealth',
@@ -289,13 +283,13 @@ export function getClassSkills(cls: Class): RiseSkill[] {
     case 'Treant':
       return [
         'awareness',
-        'balance',
         'craft_untrained',
         'creature_handling',
         'endurance',
         'intimidate',
         'knowledge_nature',
         'might',
+        'poise',
         'survival',
       ];
     case 'Troll':
@@ -305,7 +299,6 @@ export function getClassSkills(cls: Class): RiseSkill[] {
         'analysis',
         'athletics',
         'awareness',
-        'balance',
         'creature_handling',
         'deception',
         'disguise',
@@ -313,6 +306,7 @@ export function getClassSkills(cls: Class): RiseSkill[] {
         'knowledge_dungeoneering',
         'knowledge_souls',
         'persuasion',
+        'poise',
         'social_insight',
         'stealth',
       ];
@@ -329,7 +323,7 @@ export function getClassSkills(cls: Class): RiseSkill[] {
         'knowledge_planes',
         'knowledge_souls',
         'persuasion',
-        'ride',
+        'poise',
         'social_insight',
       ];
     case 'Wizard':
