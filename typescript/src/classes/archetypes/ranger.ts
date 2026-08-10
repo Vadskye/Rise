@@ -347,7 +347,7 @@ export function huntmaster(): RankAbility[] {
           \\rank{4} The strike deals double \\glossterm{weapon damage}.
           \\rank{5} The extra damage increases to 1d6 \\add half \\glossterm{power}.
           \\rank{6} The strike deals triple \\glossterm{weapon damage}.
-          \\rank{7} The extra damage increases to 2d6 \\add power.
+          \\rank{7} The extra damage increases to 1d6 per 2 power.
         \\end{activeability}
       `,
     },
