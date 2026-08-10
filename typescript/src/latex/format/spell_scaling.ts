@@ -96,7 +96,7 @@ function calculateDieScaling(
       five: '2d8',
       six: '3d8',
       seven: '3d10',
-      eight: '4d10',
+      eight: '5d10',
       nine: '6d10',
       ten: '8d10',
     }[drLowMatches[1]];

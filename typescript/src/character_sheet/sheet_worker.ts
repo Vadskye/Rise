@@ -2009,7 +2009,7 @@ function calcTargetedText(targeting: MonsterAttackTargeting) {
   }
 }
 
-function createDamagingMonsterAttack({
+export function createDamagingMonsterAttack({
   accuracyModifier,
   areaShape,
   isMagical,

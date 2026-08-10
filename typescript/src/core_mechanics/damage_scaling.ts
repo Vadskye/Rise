@@ -115,9 +115,9 @@ export class DamageScaling {
       case 7:
         return new DamageScaling(DicePool.xdy(8, 10), [], { dicePerRank: DicePool.xdy(3, 10) });
       case 8:
-        return new DamageScaling(DicePool.xdy(11, 10), [], { dicePerRank: DicePool.xdy(5, 10) });
+        return new DamageScaling(DicePool.xdy(12, 10), [], { dicePerRank: DicePool.xdy(5, 10) });
       case 9:
-        return new DamageScaling(DicePool.xdy(16, 10), [], { dicePerRank: DicePool.xdy(6, 10) });
+        return new DamageScaling(DicePool.xdy(17, 10), [], { dicePerRank: DicePool.xdy(6, 10) });
       case 10:
         return new DamageScaling(DicePool.xdy(22, 10), [], { dicePerRank: DicePool.xdy(8, 10) });
       default:
