@@ -56,11 +56,13 @@ export function pactboundWarrior(): RankAbility[] {
         Whenever you increase your rank in this archetype, you can change your augments.
         However, you must still apply them to rank 1 pact maneuvers.
         {
+        \\parhead{Debilitating Maneuver} You gain an accuracy bonus equal to twice your excess rank.
+        However, the maneuver deals half damage.
+        You can only apply this augment to maneuvers that can deal damage.
+
         \\parhead{Finishing Maneuver} You gain an accuracy bonus equal to twice your excess rank against creatures who are \\glossterm{injured}.
 
         \\parhead{Mighty Maneuver} You deal \\glossterm{extra damage} equal to twice your excess rank.
-
-        \\parhead{Precise Maneuver} You gain an accuracy bonus equal to your excess rank.
 
         \\parhead{Reckless Maneuver} You gain an accuracy bonus equal to twice your excess rank.
         However, you \\glossterm{briefly} take a \\minus2 penalty to your defenses after you use the maneuver.
