@@ -725,10 +725,10 @@ export const telekinesis: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankeight, and any \\glossterm{extra damage} is doubled.
+          \\damagerankseven, and any \\glossterm{extra damage} is doubled.
         `,
         targeting: `
-          Make an attack vs. Brawn with a -4 accuracy penalty against something within \\shortrange.
+          Make an attack vs. Brawn with a -4 accuracy penalty against something within \\medrange.
         `,
       },
       rank: 5,

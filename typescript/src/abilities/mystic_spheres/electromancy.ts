@@ -524,14 +524,14 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
 
       attack: {
         hit: `
-          \\damagerankseven, and any \\glossterm{extra damage} is doubled.
+          \\damageranksix, and any \\glossterm{extra damage} is doubled.
         `,
         injury: `
           The target is \\briefly \\dazed.
           If takes a \\glossterm{vital wound} from this damage that leaves it unconscious, it immediately dies.
         `,
         targeting: `
-          Make an attack vs. Fortitude with a -4 \\glossterm{accuracy} penalty against something within \\shortrange.
+          Make an attack vs. Fortitude with a -4 \\glossterm{accuracy} penalty against something within \\medrange.
         `,
       },
 
@@ -545,7 +545,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
 
       functionsLike: {
         name: 'electrocute',
-        exceptThat: 'the damage increases to \\damagerankten, and any extra damage is tripled.',
+        exceptThat: 'the damage increases to \\damageranknine.',
       },
       rank: 7,
       roles: ['burst'],

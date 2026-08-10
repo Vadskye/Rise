@@ -71,9 +71,9 @@ export const universal: MysticSphere = {
       name: 'Chaotic Bolt',
 
       attack: {
-        hit: `\\damagerankfive, and any \\glossterm{extra damage} is doubled.`,
+        hit: `\\damagerankfour.`,
         targeting: `
-          Make an attack with a -4 accuracy penalty against something within \\medrange.
+          Make an attack with a -2 accuracy penalty against something within \\medrange.
           The valid targets for this spell, and the defense you attack, depend on the mystic sphere you learn this spell with (see \\tref{Universal Mystic Spheres}).
         `,
       },

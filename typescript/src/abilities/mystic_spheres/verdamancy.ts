@@ -818,12 +818,12 @@ export const verdamancy: MysticSphere = {
     {
       name: 'Treeclub',
 
-      // Melee range is +2dr, -4 accuracy is +2dr, -1dr for Impact tag.
+      // Melee range is +1dr, -2 accuracy is +1dr, -1dr for Impact tag.
       attack: {
-        hit: `\\damagerankfive, and any \\glossterm{extra damage} is doubled.`,
+        hit: `\\damagerankfour.`,
         targeting: `
-          Make an attack vs. Armor with a \\minus4 accuracy penalty against anything adjacent to you.
-          You gain a +2 accuracy bonus if you or the target is adjacent to a Huge or larger tree.
+          Make an attack vs. Armor with a \\minus2 accuracy penalty against anything adjacent to you.
+          You gain a +2 accuracy bonus if you or the target are adjacent to a Huge or larger tree.
         `,
       },
       rank: 2,
@@ -834,12 +834,12 @@ export const verdamancy: MysticSphere = {
     {
       name: 'Mighty Treeclub',
 
-      // Melee range is +2dr, -4 accuracy is +2dr, -1dr for Impact tag.
+      // Melee range is +2dr, -2 accuracy is +1dr, -1dr for Impact tag.
       attack: {
-        hit: `\\damagerankeight, and any \\glossterm{extra damage} is doubled.`,
+        hit: `\\damagerankseven, and any \\glossterm{extra damage} is doubled.`,
         targeting: `
-          Make an attack vs. Armor with a \\minus4 accuracy penalty against anything adjacent to you.
-          You gain a +2 accuracy bonus if you or the target is adjacent to a Huge or larger tree.
+          Make an attack vs. Armor with a \\minus2 accuracy penalty against anything adjacent to you.
+          You gain a +2 accuracy bonus if you or the target are adjacent to a Huge or larger tree.
         `,
       },
       rank: 5,

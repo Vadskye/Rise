@@ -229,14 +229,14 @@ export const polymorph: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankseven, and any \\glossterm{extra damage} is doubled.
+          \\damageranksix, and any \\glossterm{extra damage} is doubled.
           This damage is \\maximized if the target is an object or \\trait{static} creature.
           If this damage reduces an object to zero hit points, or gives a creature a vital wound that knocks it unconscious, the target is completely disintegrated.
           Only a fine dust remains.
           A disintegrated creature's equipment is unaffected.
         `,
         targeting: `
-          Make an attack vs. Fortitude with a \\minus4 accuracy penalty against something within \\shortrange.
+          Make an attack vs. Fortitude with a \\minus4 accuracy penalty against something within \\medrange.
         `,
       },
 
@@ -252,7 +252,7 @@ export const polymorph: MysticSphere = {
       functionsLike: {
         name: 'disintegrate',
         exceptThat:
-          'the damage increases to \\damagerankten, and any \\glossterm{extra damage} is tripled.',
+          'the damage increases to \\damageranknine.',
       },
       rank: 7,
       roles: ['burst'],
@@ -456,7 +456,7 @@ export const polymorph: MysticSphere = {
           While it is \\glossterm{injured}, it is \\slowed.
         `,
         targeting: `
-          When you cast this spell, the flesh on your body writhes.
+          When you cast this spell, the flesh on your body visibly ripples and writhes.
           During your next turn, you can spend a \\glossterm{standard action} to make an attack vs. Fortitude against a creature within \\shortrange.
         `,
       },
@@ -478,7 +478,7 @@ export const polymorph: MysticSphere = {
           While it is \\glossterm{injured}, it is \\slowed and \\dazed.
         `,
         targeting: `
-          When you cast this spell, the flesh on your body writhes.
+          When you cast this spell, the flesh on your body visibly ripples and writhes.
           During your next turn, you can spend a \\glossterm{standard action} to make an attack vs. Fortitude against a creature within \\shortrange.
         `,
       },

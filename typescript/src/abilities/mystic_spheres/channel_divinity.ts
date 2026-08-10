@@ -587,8 +587,8 @@ export const channelDivinity: MysticSphere = {
       name: 'Touch of God',
 
       // Dazed as a condition is 3 EA, or 4 EA with damage, so 2 EA as a double action.
-      // Expected damage for two debuff + damage spells would be 2x dr4. dr6 seems like a
-      // reasonable approximation.
+      // Expected damage for two debuff + damage spells would be 2x dr4 = 31.
+      // dr6 is 25, which is a bit low, but closer than dr7. 
       attack: {
         crit: 'Double damage, and the target is also \\briefly \\blinded.',
         hit: `
@@ -610,8 +610,10 @@ export const channelDivinity: MysticSphere = {
 
       // We have an extra 0.8 EA available. Without doing proper math, that seems like we
       // can increase the damage by +1dr.
-      // Expected damage for two debuff + damage spells would be 2x dr7. dr10 is almost
-      // exactly the same.
+      // Expected damage for two debuff + damage spells would be 2x dr7 = 94.
+      // dr10 is 6d8 + 15d8 = 94.5, which is basically perfect.
+      // Assuming a low power character, 2x dr7 = 67, dr10 = 6d8 + 9d8 = 67.5, so the
+      // relationship holds at various power levels.
       attack: {
         crit: 'Double damage, and the target is also \\briefly \\blinded.',
         hit: `

@@ -359,11 +359,26 @@ export const vivimancy: MysticSphere = {
           Any \\glossterm{extra damage} is not limited by your hit points.
         `,
         targeting: `
+          You must be \\trait{blooded} to cast this spell.
+
           Make an attack vs. Fortitude against one creature within \\medrange.
         `,
       },
       roles: ['execute'],
       rank: 3,
+      scaling: 'damage',
+      tags: ['Blood'],
+    },
+
+    {
+      name: 'Mighty Blood Calls to Blood',
+
+      functionsLike: {
+        name: 'blood calls to blood',
+        exceptThat: 'the damage increases to \\damageranknine.',
+      },
+      roles: ['execute'],
+      rank: 6,
       scaling: 'damage',
       tags: ['Blood'],
     },
