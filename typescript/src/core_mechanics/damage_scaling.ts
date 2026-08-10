@@ -48,8 +48,8 @@ export class DamageScaling {
         });
       case 4:
         return new DamageScaling(
-          DicePool.empty(),
-          [{ dice: DicePool.d6(), powerPerDice: 2, powerPerPlus1Modifier: 0 }],
+          DicePool.xdy(2, 6),
+          [{ powerPerDice: 0, powerPerPlus1Modifier: 1 }],
           { dicePerRank: DicePool.d6() },
         );
       case 5:
@@ -60,33 +60,33 @@ export class DamageScaling {
         );
       case 6:
         return new DamageScaling(
-          DicePool.d8(),
-          [{ dice: DicePool.d8(), powerPerDice: 2, powerPerPlus1Modifier: 0 }],
-          { dicePerRank: DicePool.xdy(2, 8) },
+          DicePool.xdy(3, 6),
+          [{ dice: DicePool.d6(), powerPerDice: 2, powerPerPlus1Modifier: 0 }],
+          { dicePerRank: DicePool.xdy(2, 6) },
         );
       case 7:
         return new DamageScaling(
-          DicePool.d10(),
-          [{ dice: DicePool.d10(), powerPerDice: 2, powerPerPlus1Modifier: 0 }],
-          { dicePerRank: DicePool.xdy(2, 10) },
+          DicePool.xdy(3, 8),
+          [{ dice: DicePool.d8(), powerPerDice: 2, powerPerPlus1Modifier: 0 }],
+          { dicePerRank: DicePool.xdy(2, 8) },
         );
       case 8:
         return new DamageScaling(
-          DicePool.d6(),
-          [{ dice: DicePool.d6(), powerPerDice: 1, powerPerPlus1Modifier: 0 }],
-          { dicePerRank: DicePool.xdy(4, 6) },
+          DicePool.xdy(3, 10),
+          [{ dice: DicePool.d10(), powerPerDice: 2, powerPerPlus1Modifier: 0 }],
+          { dicePerRank: DicePool.xdy(2, 10) },
         );
       case 9:
         return new DamageScaling(
-          DicePool.xdy(2, 8),
-          [{ dice: DicePool.d8(), powerPerDice: 1, powerPerPlus1Modifier: 0 }],
-          { dicePerRank: DicePool.xdy(4, 8) },
+          DicePool.xdy(6, 6),
+          [{ dice: DicePool.d6(), powerPerDice: 1, powerPerPlus1Modifier: 0 }],
+          { dicePerRank: DicePool.xdy(4, 6) },
         );
       case 10:
         return new DamageScaling(
-          DicePool.xdy(2, 10),
-          [{ dice: DicePool.d10(), powerPerDice: 1, powerPerPlus1Modifier: 0 }],
-          { dicePerRank: DicePool.xdy(4, 10) },
+          DicePool.xdy(6, 8),
+          [{ dice: DicePool.d8(), powerPerDice: 1, powerPerPlus1Modifier: 0 }],
+          { dicePerRank: DicePool.xdy(4, 8) },
         );
       default:
         throw new Error(`Unsupported DR rank: ${rank}`);

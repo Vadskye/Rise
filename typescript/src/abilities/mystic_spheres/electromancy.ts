@@ -231,7 +231,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       // dr4 from short range, +1dr for healing buff
       effect: `
         Chose yourself or one \\glossterm{ally} within \\shortrange.
-        The target regains 1d6 \\glossterm{hit points} plus 1d6 per 2 power.
+        The target regains \\hprankfive.
         In addition, it is \\briefly \\resistant to \\atElectricity attacks.
       `,
       rank: 3,

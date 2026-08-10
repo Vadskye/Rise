@@ -692,7 +692,7 @@ export const enchantment: MysticSphere = {
       // dr7
       effect: `
         Chose yourself or one \\glossterm{ally} within \\medrange.
-        The target regains \\glossterm{hit points} equal to 1d10 plus 1d10 per 2 power.
+        The target regains \\hprankseven.
         In addition, it \\briefly gains a +4 bonus to its Mental defense.
       `,
       rank: 6,
