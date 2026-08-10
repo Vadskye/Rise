@@ -251,8 +251,7 @@ export const polymorph: MysticSphere = {
 
       functionsLike: {
         name: 'disintegrate',
-        exceptThat:
-          'the damage increases to \\damageranknine.',
+        exceptThat: 'the damage increases to \\damageranknine.',
       },
       rank: 7,
       roles: ['burst'],

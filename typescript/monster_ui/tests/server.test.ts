@@ -196,8 +196,8 @@ describe('Monster UI Integration Tests (Full Server)', () => {
           },
           weapons: [{ name: 'spear' }],
           freeformCode: '// incremental save test',
-        }
-      }
+        },
+      },
     };
 
     const res = await fetch(`${baseUrl}/api/save`, {
@@ -225,7 +225,7 @@ describe('Monster UI Integration Tests (Full Server)', () => {
           name: renamedMonsterName,
         },
         oldName: testMonsterName,
-      }
+      },
     };
 
     const resRename = await fetch(`${baseUrl}/api/save`, {
@@ -666,7 +666,9 @@ describe('Monster UI Integration Tests (Full Server)', () => {
     expect(res1.status).toBe(200);
     const result1 = await res1.json();
     expect(result1.success).toBe(true);
-    expect(result1.guidelines).not.toContain(formatNoStandardActionWarning(monsterWithNoError.name));
+    expect(result1.guidelines).not.toContain(
+      formatNoStandardActionWarning(monsterWithNoError.name),
+    );
 
     const monsterWithError = {
       name: `ErrorMonster_${Date.now()}`,
@@ -789,9 +791,11 @@ describe('Monster UI Integration Tests (Full Server)', () => {
     expect(res2.status).toBe(200);
     const result2 = await res2.json();
     expect(result2.requirements).not.toContain(formatMissingWeaponWarning('Custom Strike'));
-    
+
     expect(result2.computedStats).toBeDefined();
-    const customStrike = result2.computedStats.activeAbilities.find((a: any) => a.name === 'Custom Strike');
+    const customStrike = result2.computedStats.activeAbilities.find(
+      (a: any) => a.name === 'Custom Strike',
+    );
     expect(customStrike).toBeDefined();
     expect(customStrike.weapon).toBe('broadsword');
   });

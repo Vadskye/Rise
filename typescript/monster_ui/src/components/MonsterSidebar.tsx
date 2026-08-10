@@ -421,7 +421,7 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
               </button>
             </div>
           ))}
-           {folderlessMonsters.length === 0 && (
+          {folderlessMonsters.length === 0 && (
             <div style={{ padding: '2px 4px', fontSize: '0.85rem', color: 'var(--text-muted)' }}>
               No individual monsters.
             </div>
@@ -536,7 +536,7 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
               </div>
             );
           })}
-           {folderlessGroups.length === 0 && (
+          {folderlessGroups.length === 0 && (
             <div style={{ padding: '4px 8px', fontSize: '0.85rem', color: 'var(--text-muted)' }}>
               No monster groups.
             </div>

@@ -143,23 +143,19 @@ export const CustomAbilitiesSection: React.FC<CustomAbilitiesSectionProps> = ({
                           }
                         />
                         {warnings.some((w) =>
-                          isMissingWeaponWarning(
-                            w,
-                            ability.name,
-                            ability.name === 'Throw Item',
-                          ),
+                          isMissingWeaponWarning(w, ability.name, ability.name === 'Throw Item'),
                         ) && (
-                            <span
-                              className="quick-weapon-warning"
-                              title={
-                                ability.name === 'Throw Item'
-                                  ? 'Maneuver requires an alchemical item.'
-                                  : "Maneuver makes a strike and doesn't have a weapon."
-                              }
-                            >
-                              ⚠️
-                            </span>
-                          )}
+                          <span
+                            className="quick-weapon-warning"
+                            title={
+                              ability.name === 'Throw Item'
+                                ? 'Maneuver requires an alchemical item.'
+                                : "Maneuver makes a strike and doesn't have a weapon."
+                            }
+                          >
+                            ⚠️
+                          </span>
+                        )}
                       </div>
                     )}
                     <span className="expand-chevron" onClick={() => onToggleExpand(cardId)}>

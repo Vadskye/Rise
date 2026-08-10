@@ -186,16 +186,24 @@ app.post('/api/save', (req, res) => {
       if (payload.renameFolder) {
         const { oldName, newName } = payload.renameFolder;
         db.folders = (db.folders || []).map((f) => (f === oldName ? newName : f));
-        db.monsters = (db.monsters || []).map((m) => (m.folder === oldName ? { ...m, folder: newName } : m));
-        db.monsterGroups = (db.monsterGroups || []).map((g) => (g.folder === oldName ? { ...g, folder: newName } : g));
+        db.monsters = (db.monsters || []).map((m) =>
+          m.folder === oldName ? { ...m, folder: newName } : m,
+        );
+        db.monsterGroups = (db.monsterGroups || []).map((g) =>
+          g.folder === oldName ? { ...g, folder: newName } : g,
+        );
       }
 
       // 7. Delete Folder
       if (payload.deleteFolder) {
         const folderName = payload.deleteFolder;
         db.folders = (db.folders || []).filter((f) => f !== folderName);
-        db.monsters = (db.monsters || []).map((m) => (m.folder === folderName ? { ...m, folder: undefined } : m));
-        db.monsterGroups = (db.monsterGroups || []).map((g) => (g.folder === folderName ? { ...g, folder: undefined } : g));
+        db.monsters = (db.monsters || []).map((m) =>
+          m.folder === folderName ? { ...m, folder: undefined } : m,
+        );
+        db.monsterGroups = (db.monsterGroups || []).map((g) =>
+          g.folder === folderName ? { ...g, folder: undefined } : g,
+        );
       }
     }
 

@@ -30,7 +30,7 @@ export function formatStructuredMovementSpeed(speed: StructuredMovementSpeed): s
 function formatValueToTSSingleLine(value: any): string {
   if (typeof value === 'string') {
     if (value.includes('\n')) {
-      throw new Error("Cannot format multiline string as single line.");
+      throw new Error('Cannot format multiline string as single line.');
     }
     return `'${value.replace(/\\/g, '\\\\').replace(/'/g, "\\'")}'`;
   }
@@ -234,13 +234,13 @@ export function toCustomMonsterAbility(ability: CustomAbilityConfig): CustomMons
         : undefined,
     attack: ability.attack
       ? {
-        targeting: ability.attack.targeting,
-        hit: ability.attack.hit,
-        crit: ability.attack.crit || undefined,
-        miss: ability.attack.miss || undefined,
-        injury: ability.attack.injury || undefined,
-        halfOnMiss: ability.attack.halfOnMiss,
-      }
+          targeting: ability.attack.targeting,
+          hit: ability.attack.hit,
+          crit: ability.attack.crit || undefined,
+          miss: ability.attack.miss || undefined,
+          injury: ability.attack.injury || undefined,
+          halfOnMiss: ability.attack.halfOnMiss,
+        }
       : undefined,
   };
 }
@@ -322,16 +322,16 @@ function generateSharedPropertiesCode(
     for (const ability of data.standardAbilities) {
       const cleanOptions = ability.options
         ? {
-          displayName: ability.options.displayName || undefined,
-          usageTime: ability.options.usageTime || undefined,
-          isMagical: ability.options.isMagical,
-          weapon: ability.options.weapon || undefined,
-          poison: ability.options.poison || undefined,
-          tags:
-            ability.options.tags && ability.options.tags.length > 0
-              ? ability.options.tags
-              : undefined,
-        }
+            displayName: ability.options.displayName || undefined,
+            usageTime: ability.options.usageTime || undefined,
+            isMagical: ability.options.isMagical,
+            weapon: ability.options.weapon || undefined,
+            poison: ability.options.poison || undefined,
+            tags:
+              ability.options.tags && ability.options.tags.length > 0
+                ? ability.options.tags
+                : undefined,
+          }
         : undefined;
 
       const hasOptions = cleanOptions && Object.values(cleanOptions).some((v) => v !== undefined);
@@ -346,14 +346,14 @@ function generateSharedPropertiesCode(
         const poison = ability.options?.poison;
         const cleanSpecialOptions = ability.options
           ? {
-            displayName: ability.options.displayName || undefined,
-            usageTime: ability.options.usageTime || undefined,
-            isMagical: ability.options.isMagical,
-            tags:
-              ability.options.tags && ability.options.tags.length > 0
-                ? ability.options.tags
-                : undefined,
-          }
+              displayName: ability.options.displayName || undefined,
+              usageTime: ability.options.usageTime || undefined,
+              isMagical: ability.options.isMagical,
+              tags:
+                ability.options.tags && ability.options.tags.length > 0
+                  ? ability.options.tags
+                  : undefined,
+            }
           : undefined;
         const hasSpecialOptions =
           cleanSpecialOptions && Object.values(cleanSpecialOptions).some((v) => v !== undefined);

@@ -153,7 +153,10 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
                     onClick={(e) => e.stopPropagation()}
                   >
                     {ability.type === 'maneuver' && (
-                      <div className="quick-weapon-select-container" style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                      <div
+                        className="quick-weapon-select-container"
+                        style={{ display: 'flex', gap: '8px', alignItems: 'center' }}
+                      >
                         <WeaponCombobox
                           selectedWeapon={ability.options?.weapon}
                           weapons={
@@ -195,17 +198,17 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
                             ability.name === 'Throw Item',
                           ),
                         ) && (
-                            <span
-                              className="quick-weapon-warning"
-                              title={
-                                ability.name === 'Throw Item'
-                                  ? 'Maneuver requires an alchemical item.'
-                                  : "Maneuver makes a strike and doesn't have a weapon."
-                              }
-                            >
-                              ⚠️
-                            </span>
-                          )}
+                          <span
+                            className="quick-weapon-warning"
+                            title={
+                              ability.name === 'Throw Item'
+                                ? 'Maneuver requires an alchemical item.'
+                                : "Maneuver makes a strike and doesn't have a weapon."
+                            }
+                          >
+                            ⚠️
+                          </span>
+                        )}
 
                         {ability.name === 'Poisonous Strike' && (
                           <>
@@ -338,9 +341,7 @@ export const StandardAbilitiesSection: React.FC<StandardAbilitiesSectionProps> =
                             options: {
                               ...(ability.options || {}),
                               tags: e.target.value
-                                ? e.target.value
-                                  .split(',')
-                                  .filter(Boolean)
+                                ? e.target.value.split(',').filter(Boolean)
                                 : undefined,
                             },
                           })

@@ -55,7 +55,13 @@ export function generatePreview(
   const cacheDuration = performance.now() - cacheStart;
 
   const buildStart = performance.now();
-  const { creature, sheet, errors, requirements: initialRequirements, guidelines } = buildCreature(monster, group);
+  const {
+    creature,
+    sheet,
+    errors,
+    requirements: initialRequirements,
+    guidelines,
+  } = buildCreature(monster, group);
   const requirements = [...initialRequirements];
   const buildDuration = performance.now() - buildStart;
 

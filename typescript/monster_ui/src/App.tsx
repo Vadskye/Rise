@@ -1,5 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { DatabaseData, MonsterData, MonsterGroupData, ComputedStats, SaveRequestPayload } from './types/monster';
+import {
+  DatabaseData,
+  MonsterData,
+  MonsterGroupData,
+  ComputedStats,
+  SaveRequestPayload,
+} from './types/monster';
 import { MonsterSidebar, SidebarSelection } from './components/MonsterSidebar';
 import { MonsterForm } from './components/MonsterForm';
 import { BookPreview } from './components/BookPreview';
@@ -130,7 +136,10 @@ export const App: React.FC = () => {
   const [errors, setErrors] = useState<string[]>([]);
   const [requirements, setRequirements] = useState<string[]>([]);
   const [guidelines, setGuidelines] = useState<string[]>([]);
-  const warnings = React.useMemo(() => [...requirements, ...guidelines], [requirements, guidelines]);
+  const warnings = React.useMemo(
+    () => [...requirements, ...guidelines],
+    [requirements, guidelines],
+  );
   const [loading, setLoading] = useState<boolean>(false);
   const [isSaving, setIsSaving] = useState<boolean>(false);
   const [toast, setToast] = useState<{
@@ -434,7 +443,10 @@ export const App: React.FC = () => {
         setActiveSelection({ type: 'monster', name: updated.name });
       }
       setDb(updatedDb);
-      handleSaveDb({ monster: { data: monsterWithSortedTypes, oldName: activeSelection.name } }, false);
+      handleSaveDb(
+        { monster: { data: monsterWithSortedTypes, oldName: activeSelection.name } },
+        false,
+      );
     } else if (activeSelection?.type === 'group-monster') {
       updatedDb = {
         ...db,
@@ -457,7 +469,9 @@ export const App: React.FC = () => {
         });
       }
       setDb(updatedDb);
-      const updatedGroup = updatedDb.monsterGroups.find((g) => g.name === activeSelection.groupName);
+      const updatedGroup = updatedDb.monsterGroups.find(
+        (g) => g.name === activeSelection.groupName,
+      );
       if (updatedGroup) {
         handleSaveDb({ group: { data: updatedGroup, oldName: activeSelection.groupName } }, false);
       }

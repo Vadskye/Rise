@@ -7,12 +7,7 @@ export enum SkillCategory {
   Social = 'social',
 }
 
-export const RISE_MOVEMENT_SKILLS = [
-  'athletics',
-  'flexibility',
-  'poise',
-  'stealth',
-] as const;
+export const RISE_MOVEMENT_SKILLS = ['athletics', 'flexibility', 'poise', 'stealth'] as const;
 export type RiseMovementSkill = (typeof RISE_MOVEMENT_SKILLS)[number];
 
 export const RISE_SENSE_SKILLS = ['analysis', 'awareness'] as const;

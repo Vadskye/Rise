@@ -6,7 +6,11 @@ interface ValidationBoxProps {
   guidelines: string[];
 }
 
-export const ValidationBox: React.FC<ValidationBoxProps> = ({ errors, requirements, guidelines }) => {
+export const ValidationBox: React.FC<ValidationBoxProps> = ({
+  errors,
+  requirements,
+  guidelines,
+}) => {
   // If there are no errors, requirements, or guidelines, show a clean compiling state
   const hasErrors = errors.length > 0;
   const hasRequirements = requirements.length > 0;

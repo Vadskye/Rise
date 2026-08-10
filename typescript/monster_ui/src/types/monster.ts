@@ -198,4 +198,3 @@ export interface SaveRequestPayload {
   };
   deleteFolder?: string;
 }
-

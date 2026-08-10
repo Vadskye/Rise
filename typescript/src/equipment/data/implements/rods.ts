@@ -49,8 +49,7 @@ export const rods = (): Implement[] => [
       {
         rank: 4,
         short_description: 'Deals 7d6 burning damage in a cone',
-        description:
-          'The minimum accuracy increases to $accuracy and the damage increases to 7d6.',
+        description: 'The minimum accuracy increases to $accuracy and the damage increases to 7d6.',
       },
       // Normal spell is dr6 + dr6 = 38 + 38 = 76 damage.
       // We want +46% damage, so ~111 damage.

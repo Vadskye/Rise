@@ -588,7 +588,7 @@ export const channelDivinity: MysticSphere = {
 
       // Dazed as a condition is 3 EA, or 4 EA with damage, so 2 EA as a double action.
       // Expected damage for two debuff + damage spells would be 2x dr4 = 31.
-      // dr6 is 25, which is a bit low, but closer than dr7. 
+      // dr6 is 25, which is a bit low, but closer than dr7.
       attack: {
         crit: 'Double damage, and the target is also \\briefly \\blinded.',
         hit: `

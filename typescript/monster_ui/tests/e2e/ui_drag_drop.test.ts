@@ -211,11 +211,8 @@ describe('Monster UI Drag and Drop E2E Tests', () => {
     );
 
     // Click folder to expand it
-    const folderToggle = await page.$(
-      '[data-testid="folder-container-Drag Folder"] .folder-arrow',
-    );
+    const folderToggle = await page.$('[data-testid="folder-container-Drag Folder"] .folder-arrow');
     await folderToggle!.click();
-
 
     // Verify UI updated: group is now inside "Drag Folder"
     await page.waitForSelector(
