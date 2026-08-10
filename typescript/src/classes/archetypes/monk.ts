@@ -666,7 +666,7 @@ export function kiModifiers(creature: Creature, rank: number) {
     creature.addCustomModifier({
       name: 'Ki Barrier',
       numericEffects: [
-        { statistic: 'armor_defense', modifier: 2 },
+        { statistic: 'armor_defense', modifier: 1 },
         { statistic: 'durability', modifier: 2 },
       ],
     });
