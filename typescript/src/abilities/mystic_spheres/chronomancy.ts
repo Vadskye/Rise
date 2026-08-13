@@ -283,26 +283,6 @@ export const chronomancy: MysticSphere = {
       type: 'Sustain (minor)',
     },
 
-    // Treat this as 60% of the effectiveness of a regular slow. Normal HP slow is 2.1 EA,
-    // 2.5 EA with preapply, so this would be 1.5 EA.
-    {
-      name: 'Stutterstop',
-
-      attack: {
-        crit: 'The target always has a chance to be slowed, even while it is not injured.',
-        hit: `
-          As a \\glossterm{condition}, the target randomly slows down.
-          At the start of its turn, if the target is \\glossterm{injured}, it has a 50\\% chance to be \\slowed until its next turn.
-        `,
-        targeting: `
-          Make an attack vs. Mental against up to two creatures in \\shortrange.
-        `,
-      },
-      rank: 2,
-      roles: ['maim'],
-      scaling: 'accuracy',
-    },
-
     {
       name: 'Haste',
 
@@ -664,42 +644,34 @@ export const chronomancy: MysticSphere = {
     {
       name: 'Unstable Aging',
 
-      // Rank 1 Spell
-      // Range: Medium (mod 0)
-      // Bonus: Accuracy Penalty (-4) (mod +2)
-      // Limitation: Mortal creatures only (mod 0 - too common to affect damage)
-      // Result: 1 + 0 + 2 = dr3
+      // Briefly dazzled and deafened is 0.9 EA. They're not as useful combined, and this
+      // is single-target, so 0.6 EA -> 1.6 EA with damage, so rank 2.
+      // Delayed damage gets +1dr, so we can get dr2 on a delay.
       attack: {
+        crit: "Double damage, and the brief effect becomes a \\glossterm{condition}.",
         hit: `
-          \\damagerankthree.
+          The target is \\briefly \\dazzled and \\deafened.
+          At the end of its next turn, it takes \\damageranktwo.
         `,
         targeting: `
-          Make an attack vs. Fortitude with a -4 accuracy penalty against one \\trait{mortal} creature within \\medrange.
+          Make an attack vs. Fortitude against one \\trait{mortal} creature within \\medrange.
           You gain a +2 accuracy bonus against creatures that are too young or too old to be ordinary adults.
         `,
       },
-      rank: 1,
-      roles: ['burst'],
+      rank: 2,
+      roles: ['burn', 'softener'],
       scaling: 'damage',
     },
     {
       name: 'Mighty Unstable Aging',
 
-      // Rank 4 Spell
-      // Range: Medium (mod 0)
-      // Bonus: Accuracy Penalty (-4) (mod +2)
-      // Limitation: Mortal creatures only (mod 0 - too common to affect damage)
-      // Result: 4 + 0 + 2 = dr6
-      attack: {
-        hit: `
-          \\damageranksix, and any \\glossterm{extra damage} is doubled.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude with a -4 accuracy penalty against one \\trait{mortal} creature within \\medrange.
-          You gain a +2 accuracy bonus against creatures that are too young or too old to be ordinary adults.
-        `,
+      // No room to upgrade the initial brief condition, but we can increase the
+      // conditional accuracy.
+      functionsLike: {
+        name: 'unstable aging',
+        exceptThat: "the damage increases to \\damagerankfive, and any \\glossterm{extra damage} is doubled. In addition, the accuracy bonus increases to \\plus4.",
       },
-      rank: 4,
+      rank: 5,
       roles: ['burst'],
       scaling: 'damage',
     },
@@ -714,7 +686,7 @@ export const chronomancy: MysticSphere = {
         You are \\briefly locked in \\stasis.
         During your next turn after the stasis ends, you can take an extra \\glossterm{minor action} during your turn, and you add your \\glossterm{speed} to your \\glossterm{available movement}.
       `,
-      rank: 2,
+      rank: 1,
       roles: ['focus'],
     },
 
@@ -746,10 +718,10 @@ export const chronomancy: MysticSphere = {
         After it returns to normal, it becomes immune to this effect until it finishes a \\glossterm{short rest}.
       `,
       roles: ['boon'],
-      rank: 2,
+      rank: 3,
       scaling: {
-        4: 'The maximum size increases to Large.',
-        6: 'The maximum size increases to Huge.',
+        5: 'The maximum size increases to Large.',
+        7: 'The maximum size increases to Huge.',
       },
     },
 

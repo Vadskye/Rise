@@ -930,7 +930,7 @@ export const fabrication: MysticSphere = {
       rank: 2,
       roles: ['clear'],
       scaling: 'damage',
-      tags: ['Manifestation'],
+      tags: ['Manifestation', 'Physical'],
     },
     {
       name: 'Mighty Shrapnel Grenade',
@@ -947,7 +947,7 @@ export const fabrication: MysticSphere = {
       rank: 5,
       roles: ['clear'],
       scaling: 'damage',
-      tags: ['Manifestation'],
+      tags: ['Manifestation', 'Physical'],
     },
     // TODO: may not be within sphere's narrative scope
     // r3 area is drX-2. Add +1dr for double defense and +1dr for combo delay trigger.
