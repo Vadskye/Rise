@@ -115,6 +115,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       `,
       rank: 1,
       roles: ['mobility'],
+      tags: ['Physical'],
     },
     {
       name: 'Intense Propulsion',
@@ -125,6 +126,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       },
       rank: 4,
       roles: ['mobility'],
+      tags: ['Physical'],
     },
     // Braced is 3.2 EA. Assume that ranged strikes are about 25% of all attacks, so this
     // is 0.8 EA. They aren't actually 25% of attacks, but it's dangerous to undervalue
@@ -172,6 +174,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       rank: 3,
       roles: ['clear', 'snipe'],
       scaling: 'damage',
+      tags: ['Physical'],
     },
     {
       name: 'Mighty Windslash',
@@ -192,6 +195,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       rank: 6,
       roles: ['clear', 'snipe'],
       scaling: 'damage',
+      tags: ['Physical'],
     },
     {
       name: 'Windsnipe',
@@ -209,6 +213,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       rank: 4,
       roles: ['snipe'],
       scaling: 'damage',
+      tags: ['Physical'],
     },
     {
       name: 'Mighty Windsnipe',
@@ -226,6 +231,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       rank: 7,
       roles: ['snipe'],
       scaling: 'damage',
+      tags: ['Physical'],
     },
     {
       name: 'Windseal',
@@ -243,6 +249,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       rank: 4,
       roles: ['flash'],
       scaling: 'accuracy',
+      tags: ['Physical'],
     },
     // -4 Armor/Brawn/Reflex will probably apply to 6 of the 7 attacks, so it's worth 2.4
     // EA, which is R6. Adding the grounded requirement means this can't be chained
@@ -266,6 +273,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       rank: 6,
       roles: ['flash'],
       scaling: 'accuracy',
+      tags: ['Physical'],
     },
     // Alternate design: push, or fling if no remaining DR. More useful, but would
     // have to be higher rank and have more complicated text.
@@ -291,6 +299,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       rank: 2,
       roles: ['maim'],
       scaling: 'accuracy',
+      tags: ['Physical'],
     },
     {
       name: 'Intense Buffet',
@@ -315,6 +324,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       rank: 6,
       roles: ['maim'],
       scaling: 'accuracy',
+      tags: ['Physical'],
     },
     {
       name: 'Flight',
@@ -374,6 +384,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       roles: ['hazard'],
       scaling: 'accuracy',
       type: 'Sustain (minor)',
+      tags: ['Physical'],
     },
     // 30' push is 2.0 at range, then 3.0 from sustain (minor). Drop to limited scope is
     // -1r, and also gets us closer to "melee" range push, so say we can get away with
@@ -389,6 +400,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       rank: 7,
       roles: ['hazard'],
       type: 'Sustain (minor)',
+      tags: ['Physical'],
     },
     {
       name: 'Windblade',
@@ -426,6 +438,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       roles: ['attune'],
       scaling: 'damage',
       type: 'Attune (deep)',
+      tags: ['Physical'],
     },
     {
       name: 'Call Dust Devil',
@@ -454,6 +467,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       rank: 3,
       roles: ['clear'],
       scaling: 'damage',
+      tags: ['Physical'],
     },
 
     {
@@ -483,6 +497,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       rank: 5,
       roles: ['clear'],
       scaling: 'damage',
+      tags: ['Physical'],
     },
     {
       name: 'Call Massive Tornado',
@@ -510,6 +525,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       rank: 7,
       roles: ['clear'],
       scaling: 'accuracy',
+      tags: ['Physical'],
     },
     // A standard debuff + damage r4 spell would deal dr1 with a r4 area. Increase to dr2
     // for double defense.
@@ -539,6 +555,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       rank: 4,
       roles: ['clear'],
       scaling: 'damage',
+      tags: ['Physical'],
     },
     {
       name: 'Massive Hurricane',
@@ -564,6 +581,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       rank: 6,
       roles: ['clear'],
       scaling: 'damage',
+      tags: ['Physical'],
     },
     {
       name: 'Windtheft',
@@ -584,6 +602,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       rank: 5,
       roles: ['softener'],
       scaling: 'accuracy',
+      tags: ['Physical'],
     },
     // Dazzle is 1.8 EA, so r3.
     {
@@ -659,7 +678,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       `,
       rank: 1,
       roles: ['barrier'],
-      tags: ['Barrier'],
+      tags: ['Barrier', 'Physical'],
       type: 'Sustain (attunable, minor)',
     },
     {
@@ -694,6 +713,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       rank: 1,
       roles: ['clear'],
       scaling: 'damage',
+      tags: ['Physical'],
     },
     {
       name: 'Mighty Windblast',
@@ -715,6 +735,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       rank: 4,
       roles: ['clear'],
       scaling: 'damage',
+      tags: ['Physical'],
     },
 
     {
@@ -737,6 +758,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       rank: 6,
       roles: ['clear'],
       scaling: 'damage',
+      tags: ['Physical'],
     },
 
     {
@@ -778,6 +800,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       rank: 2,
       roles: ['clear', 'turtle'],
       scaling: 'damage',
+      tags: ['Physical'],
     },
 
     {
@@ -802,6 +825,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       rank: 5,
       roles: ['clear', 'turtle'],
       scaling: 'damage',
+      tags: ['Physical'],
     },
 
     // Shield on other is 0.6 EA, shield on self is 0.4 EA
@@ -838,6 +862,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       rank: 2,
       roles: ['burst'],
       scaling: 'damage',
+      tags: ['Physical'],
     },
 
     {
@@ -860,6 +885,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       rank: 5,
       roles: ['burst'],
       scaling: 'damage',
+      tags: ['Physical'],
     },
 
     // This is too weak as +1 and too strong as +2? Ranged strikes are probably weak
