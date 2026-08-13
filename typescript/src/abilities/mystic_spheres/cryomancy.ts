@@ -397,7 +397,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       tags: ['Manifestation'],
     },
 
-    // A medium cone is somewhere between ranged and melee slow - call it 1.8 EA, so r3.
+    // A medium line is somewhere between ranged and melee slow - call it 1.8 EA, so r3.
     {
       name: 'Freezing Wind',
 
@@ -407,7 +407,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
           The target becomes \\briefly \\slowed.
         `,
         targeting: `
-          Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\medarea cone from you.
+          Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\medarealong, 10 ft.\\ wide line from you.
 
           If any Medium or larger creatures are slowed by this spell, you gain a \\glossterm{ice crystal}.
         `,
@@ -428,7 +428,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
           If it is \\glossterm{injured}, it is also slowed as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\largearea cone from you.
+          Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\largearealong, 15 ft.\\ wide line from you.
 
           If any Medium or larger creatures are slowed by this spell, you gain a \\glossterm{ice crystal}.
         `,

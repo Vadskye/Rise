@@ -129,25 +129,6 @@ export const thaumaturgy: MysticSphere = {
     },
 
     {
-      name: 'Dismissal',
-
-      attack: {
-        crit: null,
-        hit: `The target is treated as if the ability that created it was \\glossterm{dismissed}.
-        This usually causes the target to disappear.`,
-        targeting: `
-        Make an attack against something within \\medrange.
-        If the target is an effect of an ongoing \\magical ability, such as a summoned monster or created object, its defense against this attack is equal to 5 + twice the \\glossterm{rank} of the effect.
-        Otherwise, this spell has no effect.
-        `,
-      },
-
-      rank: 2,
-      roles: ['softener'],
-      scaling: 'accuracy',
-    },
-
-    {
       name: 'Suppress Magic',
 
       attack: {

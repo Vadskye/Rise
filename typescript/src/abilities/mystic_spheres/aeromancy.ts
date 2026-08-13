@@ -846,12 +846,16 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
 
       // Rank 2 Spell
       // Range: Medium (mod 0)
-      // Bonus: Accuracy Penalty (-42) (mod +1)
+      // Bonus: Accuracy Penalty (-2) (mod +1)
       // Limitation: Breathers only (mod 0 - too common to affect damage)
       // Result: 2 + 1 = dr3
       attack: {
         hit: `
           \\damagerankthree.
+        `,
+        injury: `
+          As a \\glossterm{condition}, the target is unable to breathe without effort.
+          It can only breathe if it makes a DV 5 Might check as a \\glossterm{standard action}.
         `,
         targeting: `
           Make an attack vs. Fortitude with a \\minus2 accuracy penalty against one creature within \\medrange.
@@ -868,18 +872,9 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
     {
       name: 'Mighty Asphyxiate',
 
-      // Rank 5 Spell
-      // Bonus: Accuracy Penalty (-4) (mod +2)
-      // Limitation: Breathers only (mod 0 - too common to affect damage)
-      // Result: 5 + 2 = dr7
-      attack: {
-        hit: `
-          \\damagerankseven, and any \\glossterm{extra damage} is doubled.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude with a \\minus4 accuracy penalty against one creature within \\medrange.
-          If the target does not need to breathe air, this attack has no effect.
-        `,
+      functionsLike: {
+        name: "asphyxiate",
+        exceptThat: "the damage increases to \\damageranksix, and any \\glossterm{extra damage} is doubled. In addition, the DV of the Might check increases to 8.",
       },
       // narrative: '',
       rank: 5,
