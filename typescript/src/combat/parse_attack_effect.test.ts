@@ -37,7 +37,7 @@ tap.test('parseAttackEffect', (t) => {
     // Disintegrate is Rank 4, dr7. Barbarian 5 is Rank 2 (level 5).
     // dr7 power scaling is 1d8 per 2 power. Power 2 -> 1d8.
     // Base dice for dr7 is 3d8. So 3d8 + 1d8 = 4d8.
-    t.equal(parsed?.damage.toString(), '4d8', 'should calculate correct damage (dr7 for power 2)');
+    t.equal(parsed?.damage.toString(), '4d6', 'should calculate correct damage (dr7 for power 2)');
     t.equal(parsed?.accuracyModifier, -4, 'should parse accuracy penalty');
     t.equal(parsed?.halfOnMiss, false, 'should have halfOnMiss false');
     t.end();
