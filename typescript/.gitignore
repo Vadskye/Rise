@@ -6,3 +6,13 @@ tsconfig.tsbuildinfo
 src/**/*.js
 src/**/*.js.map
 dist-test
+
+src/**/*.js
+src/**/*.js.map
+dist/
+src/monsters/individual_monsters/monsters_from_ui.ts
+monster_ui/monsters_from_ui.test.*.json
+src/monsters/individual_monsters/monsters_from_ui.test.*.ts
+monster_ui/app_settings.json
+monster_ui/app_settings.test.*.json
+tsconfig.test.tsbuildinfo
