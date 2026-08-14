@@ -917,14 +917,16 @@ export const fabrication: MysticSphere = {
     {
       name: 'Shrapnel Grenade',
 
-      // r2 area is drX-1. Add +1dr for double defense.
+      // Normal damage for a single action would be dr3.
       attack: {
         hit: `
-          \\damageranktwo.
+          \\damagerankthree.
+          In addition, the target \\briefly is \\deafened and \\glossterm{bleeds} for \\damagerankthree.
         `,
         halfOnMiss: true,
         targeting: `
-          Make an attack vs. Armor and Reflex against everything within a \\tinyarea radius in \\shortrange.
+          When you cast this spell, you create an explosive sphere in your hand that lasts \\briefly.
+          As a standard action, you can throw the sphere to make an attack vs. Armor and Reflex against everything within a \\tinyarea radius in \\shortrange.
         `,
       },
       rank: 2,
@@ -935,14 +937,9 @@ export const fabrication: MysticSphere = {
     {
       name: 'Mighty Shrapnel Grenade',
 
-      attack: {
-        hit: `
-          \\damagerankfive.
-        `,
-        halfOnMiss: true,
-        targeting: `
-          Make an attack vs. Armor and Reflex against everything within a \\tinyarea radius in \\shortrange.
-        `,
+      functionsLike: {
+        name: "shrapnel grenade",
+        exceptThat: "the damage increases to \\damageranksix.",
       },
       rank: 5,
       roles: ['clear'],
@@ -1004,13 +1001,13 @@ export const fabrication: MysticSphere = {
       // -1dr for extremely avoidable dot
       attack: {
         hit: `
-          \\damagerankone.
+          \\damageranktwo.
         `,
         halfOnMiss: true,
         targeting: `
           You create a sawblade in a \\tinyarea radius \\glossterm{zone} within \\shortrange.
           Make an attack vs. Armor against everything in the area.
-          At the start of your next turn, this effect \\glossterm{repeats} in the same area.
+          At the end of your next turn, this effect \\glossterm{repeats} in the same area.
         `,
       },
       roles: ['clear'],
@@ -1025,13 +1022,13 @@ export const fabrication: MysticSphere = {
       // -1dr for extremely avoidable dot
       attack: {
         hit: `
-          \\damagerankfour.
+          \\damagerankfive.
         `,
         halfOnMiss: true,
         targeting: `
           You create a sawblade in a \\tinyarea radius \\glossterm{zone} within \\shortrange.
           Make an attack vs. Armor against everything in the area.
-          At the start of your next turn, this effect \\glossterm{repeats} in the same area.
+          At the end of your next turn, this effect \\glossterm{repeats} in the same area.
         `,
       },
       roles: ['clear'],

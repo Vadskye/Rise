@@ -891,6 +891,8 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
           \\damagerankthree.
         `,
         targeting: `
+          You must have a \\glossterm{free hand} to cast this spell.
+
           Make an attack vs. Fortitude against something adjacent to you.
         `,
       },
@@ -907,6 +909,8 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
           \\damageranksix, and any \\glossterm{extra damage} is doubled.
         `,
         targeting: `
+          You must have a \\glossterm{free hand} to cast this spell.
+
           Make an attack vs. Fortitude against something adjacent to you.
         `,
       },
@@ -918,19 +922,17 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Immolate',
 
-      // Baseline for melee range is dr9.
-      // With -4 accuracy, dr11, which is undefined.
-      // Spontaneous Combustion and Mighty Spontaneous Combustion would end up at drX+1 as DoT,
-      // so this can probably do the same.
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankeight.
-          The target also \\briefly \\debuff{burns} for \\damagerankeight.
+          \\damagerankseven.
+          The target also \\briefly \\debuff{burns} for \\damagerankseven.
           Any \\glossterm{extra damage} applies to both the initial damage and the burn.
         `,
         targeting: `
-          Make an attack vs. Fortitude with a -4 accuracy penalty against something adjacent to you.
+          You must have a \\glossterm{free hand} to cast this spell.
+
+          Make an attack vs. Fortitude with a -2 accuracy penalty against something adjacent to you.
         `,
       },
       rank: 7,
