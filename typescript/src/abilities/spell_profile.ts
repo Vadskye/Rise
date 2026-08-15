@@ -1,4 +1,4 @@
-import { SpellDefinition, CantripDefinition } from './active_abilities';
+import { SpellDefinition, CantripDefinition, ActiveAbilityAttack } from './active_abilities';
 import { getSpellByName } from './mystic_spheres';
 
 export interface SpellProfile {
@@ -460,71 +460,114 @@ export function parseMaxTargets(text: string): number {
   return 1;
 }
 
+export function resolveSpell<T extends SpellDefinition | CantripDefinition>(
+  spell: T,
+  visited: Set<string> = new Set(),
+): T {
+  if (!spell.functionsLike) {
+    return spell;
+  }
+
+  const spellKey = spell.name?.toLowerCase() || '';
+  if (visited.has(spellKey)) {
+    return spell;
+  }
+  visited.add(spellKey);
+
+  let base: SpellDefinition | CantripDefinition | undefined;
+  try {
+    base = getSpellByName(spell.functionsLike.name);
+  } catch {
+    return spell;
+  }
+
+  const resolvedBase = resolveSpell(base, visited);
+
+  let attack: ActiveAbilityAttack | undefined;
+  if (spell.attack) {
+    attack = { ...spell.attack };
+  } else if (resolvedBase.attack) {
+    attack = { ...resolvedBase.attack };
+  }
+
+  let effect: string | undefined = spell.effect ?? resolvedBase.effect;
+
+  const exceptThat = spell.functionsLike.exceptThat || '';
+  const isMass = spell.functionsLike.mass === true;
+  const isOneYear = spell.functionsLike.oneYear === true;
+
+  const massText = isMass
+    ? 'it affects up to five creatures of your choice from among yourself and your \\glossterm{allies} within \\medrange.'
+    : '';
+  const oneYearText = isOneYear ? 'the effect lasts for one year.' : '';
+
+  if (attack) {
+    let hit = attack.hit;
+    let targeting = attack.targeting;
+    if (massText) {
+      targeting = targeting ? `${targeting} ${massText}` : massText;
+    }
+    if (oneYearText) {
+      hit = hit ? `${hit} ${oneYearText}` : oneYearText;
+    }
+    if (exceptThat) {
+      const exceptDr = parseDamageRank(exceptThat);
+      if (exceptDr !== null) {
+        hit = `${exceptThat} ${hit}`;
+      } else {
+        hit = `${hit} ${exceptThat}`;
+      }
+    }
+    attack = {
+      ...attack,
+      hit,
+      targeting,
+    };
+  } else if (effect !== undefined) {
+    let newEffect = effect;
+    if (massText) {
+      newEffect = `${massText} ${newEffect}`;
+    }
+    if (oneYearText) {
+      newEffect = `${newEffect} ${oneYearText}`;
+    }
+    if (exceptThat) {
+      newEffect = `${newEffect} ${exceptThat}`;
+    }
+    effect = newEffect;
+  }
+
+  return {
+    ...resolvedBase,
+    ...spell,
+    attack,
+    effect,
+    roles: spell.roles ?? resolvedBase.roles,
+    type: spell.type ?? resolvedBase.type,
+    tags: spell.tags ?? resolvedBase.tags,
+    cost: spell.cost ?? resolvedBase.cost,
+    staminaCost: spell.staminaCost ?? resolvedBase.staminaCost,
+    materialCost: spell.materialCost ?? resolvedBase.materialCost,
+    usageTime: spell.usageTime ?? resolvedBase.usageTime,
+    scaling: spell.scaling ?? resolvedBase.scaling,
+  } as T;
+}
+
 export function buildSpellProfile(
-  spell: SpellDefinition | CantripDefinition,
+  rawSpell: SpellDefinition | CantripDefinition,
   sphereName: string,
 ): SpellProfile {
-  let hit = spell.attack?.hit || '';
-  let targeting = spell.attack?.targeting || '';
-  let injury = spell.attack?.injury || '';
-  let effect = spell.effect || '';
-  let type = spell.type;
-  let cost = spell.cost;
-  let staminaCost = spell.staminaCost;
-  let materialCost = spell.materialCost;
-  let halfOnMiss = spell.attack?.halfOnMiss === true;
+  const spell = resolveSpell(rawSpell);
 
-  if (spell.functionsLike) {
-    try {
-      const base = getSpellByName(spell.functionsLike.name);
-      if (base) {
-        if (!hit && base.attack?.hit) {
-          hit = base.attack.hit;
-        }
-        if (!targeting && base.attack?.targeting) {
-          targeting = base.attack.targeting;
-        }
-        if (!injury && base.attack?.injury) {
-          injury = base.attack.injury;
-        }
-        if (!effect && base.effect) {
-          effect = base.effect;
-        }
-        if (!type && base.type) {
-          type = base.type;
-        }
-        if (!cost && base.cost) {
-          cost = base.cost;
-        }
-        if (staminaCost === undefined && base.staminaCost !== undefined) {
-          staminaCost = base.staminaCost;
-        }
-        if (materialCost === undefined && base.materialCost !== undefined) {
-          materialCost = base.materialCost;
-        }
-        if (!halfOnMiss && base.attack?.halfOnMiss === true) {
-          halfOnMiss = true;
-        }
-      }
-      let except = spell.functionsLike.exceptThat || '';
-      if (spell.functionsLike.mass) {
-        except = `it affects up to five creatures of your choice from among yourself and your \\glossterm{allies} within \\medrange. ${except}`;
-      }
-      if (spell.functionsLike.oneYear) {
-        except = `the effect lasts for one year. ${except}`;
-      }
-      if (except) {
-        const exceptDr = parseDamageRank(except);
-        if (exceptDr !== null) {
-          hit = `${except} ${hit}`;
-        } else {
-          hit = `${hit} ${except}`;
-        }
-      }
-    } catch {
-      // If base lookup fails, proceed with raw spell definition
-    }
-  }
+  const hit = spell.attack?.hit || '';
+  const targeting = spell.attack?.targeting || '';
+  const injury = spell.attack?.injury || '';
+  const effect = spell.effect || '';
+  const type = spell.type;
+  const cost = spell.cost;
+  const staminaCost = spell.staminaCost;
+  const materialCost = spell.materialCost;
+  const halfOnMiss = spell.attack?.halfOnMiss === true;
 
   const fullText = `${hit} ${targeting} ${injury} ${effect}`;
   const lowercase = fullText.toLowerCase();
@@ -652,7 +695,7 @@ export function buildSpellProfile(
     isDelayed,
     hasCost,
     roles,
-    hasAttack: !!spell.attack || !!spell.functionsLike,
+    hasAttack: !!spell.attack,
     type,
     healingRank,
     areaGrows,

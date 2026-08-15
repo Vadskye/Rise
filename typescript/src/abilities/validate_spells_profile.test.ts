@@ -77,6 +77,69 @@ t.test('buildSpellProfile', (t) => {
     },
   );
 
+  t.test('should resolve functionsLike spells recursively and set hasAttack accurately', (t) => {
+    // Utility / non-attack spells
+    const fabricateTrinket = buildSpellProfile(
+      {
+        name: 'Greater Fabricate Trinket',
+        rank: 4,
+        roles: ['narrative'],
+        functionsLike: {
+          name: 'fabricate trinket',
+          exceptThat: 'the maximum size of the object increases to Small.',
+        },
+      },
+      'Fabrication',
+    );
+    t.equal(
+      fabricateTrinket.hasAttack,
+      false,
+      'Non-attack functionsLike spell should have hasAttack = false',
+    );
+
+    const restorativeWater = buildSpellProfile(
+      {
+        name: 'Greater Restorative Water',
+        rank: 4,
+        roles: ['healing'],
+        functionsLike: {
+          name: 'restorative water',
+          exceptThat: 'the healing increases to 7d8.',
+        },
+      },
+      'Aquamancy',
+    );
+    t.equal(
+      restorativeWater.hasAttack,
+      false,
+      'Greater Restorative Water should have hasAttack = false',
+    );
+
+    // Attack spell with functionsLike
+    const mightyElectrocute = buildSpellProfile(
+      {
+        name: 'Mighty Electrocute',
+        rank: 7,
+        roles: ['burst'],
+        functionsLike: {
+          name: 'electrocute',
+          exceptThat: 'the damage increases to \\damageranknine.',
+        },
+      },
+      'Electromancy',
+    );
+    t.equal(
+      mightyElectrocute.hasAttack,
+      true,
+      'Attack functionsLike spell should have hasAttack = true',
+    );
+    t.equal(mightyElectrocute.damageRank, 9, 'Damage rank should be updated from exceptThat');
+    t.same(mightyElectrocute.defenses, ['fortitude'], 'Defenses should be inherited from base');
+    t.equal(mightyElectrocute.range, 'medium', 'Range should be inherited from base');
+
+    t.end();
+  });
+
   t.end();
 });
 
