@@ -3,7 +3,7 @@ import { Creature } from '../creature';
 import { getArchetypeRanks } from '@src/classes/archetypes/apply_archetypes';
 import {
   arcaneMagicModifiers,
-  draconicMagicModifiers,
+  arcaneSpellMasteryModifiers,
   innateArcanistModifiers,
 } from '@src/classes/archetypes/sorcerer';
 
@@ -38,6 +38,6 @@ function applySorcererBase(c: Creature, level: number) {
   const [rank1, rank2, rank3] = getArchetypeRanks(level);
 
   arcaneMagicModifiers(c, rank1);
-  draconicMagicModifiers(c, rank2);
+  arcaneSpellMasteryModifiers(c, rank2);
   innateArcanistModifiers(c, rank3);
 }
