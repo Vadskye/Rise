@@ -50,7 +50,7 @@ export class DamageScaling {
         return new DamageScaling(
           DicePool.xdy(2, 6),
           [{ powerPerDice: 0, powerPerPlus1Modifier: 1 }],
-          { dicePerRank: DicePool.d6() },
+          { dicePerRank: DicePool.xdy(2, 6) },
         );
       case 5:
         return new DamageScaling(
