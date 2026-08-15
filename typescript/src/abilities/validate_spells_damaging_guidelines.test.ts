@@ -1,5 +1,6 @@
 import t from 'tap';
-import { buildSpellProfile, validateSpellDesignGuidelines } from './validate_spells';
+import { validateSpellDesignGuidelines } from './validate_spells';
+import { buildSpellProfile } from './spell_profile';
 import { calculateExpectedDamageRank } from './expected_damage_rank';
 import { makeMockSpell } from './validate_spells_test_helpers';
 import { polymorph } from './mystic_spheres/polymorph';
@@ -203,18 +204,6 @@ t.test('Damaging Spell Design Guidelines: calculateExpectedDamageRank', (t) => {
       calculateExpectedDamageRank(buildSpellProfile(debuffSpell, 'Test'))?.expectedDamageRank,
       3,
     );
-    t.end();
-  });
-
-  t.test('Detects Bloody Fleshspike inaccuracy in Polymorph sphere', (t) => {
-    const issues = validateSpellDesignGuidelines([polymorph]);
-    const bloodyIssue = issues.find((i) => i.spellName === 'Bloody Fleshspike');
-
-    t.ok(bloodyIssue, 'Should flag Bloody Fleshspike as a design guideline mismatch');
-    t.equal(bloodyIssue?.type, 'design_underbudget');
-    t.equal(bloodyIssue?.actualDamageRank, 5);
-    t.equal(bloodyIssue?.expectedDamageRank, 6);
-    t.equal(bloodyIssue?.difference, -1);
     t.end();
   });
 

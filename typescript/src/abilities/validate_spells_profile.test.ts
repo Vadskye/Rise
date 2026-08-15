@@ -1,5 +1,5 @@
 import t from 'tap';
-import { buildSpellProfile, parseMaxTargets } from './validate_spells';
+import { buildSpellProfile, parseMaxTargets } from './spell_profile';
 import { SpellDefinition } from './active_abilities';
 
 t.test('buildSpellProfile', (t) => {

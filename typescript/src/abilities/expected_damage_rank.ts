@@ -1,4 +1,4 @@
-import { SpellProfile } from './validate_spells';
+import { SpellProfile } from './spell_profile';
 
 export interface DamageCalculationBreakdown {
   baseRank: number;
@@ -13,121 +13,131 @@ export interface DamageCalculationBreakdown {
   expectedDamageRank: number;
 }
 
+const CONE_AREA_SIZE_RANK: Record<string, number> = {
+  tiny: 0,
+  small: 0,
+  medium: 2,
+  large: 4,
+  huge: 6,
+  gargantuan: 8,
+};
+
+const RADIUS_AREA_SIZE_RANK: Record<string, number> = {
+  tiny: -1,
+  small: 0,
+  medium: 2,
+  large: 4,
+  huge: 6,
+  gargantuan: 8,
+};
+
+const RADIUS_RANGE_RANK: Record<string, number> = {
+  short: 3,
+  medium: 5,
+  long: 7,
+  distant: 9,
+};
+
+const LINE_AREA_SIZE_RANK: Record<string, number> = {
+  tiny: -1,
+  small: 0,
+  medium: 1,
+  large: 3,
+  huge: 4,
+  gargantuan: 5,
+};
+
+const WALL_AREA_SIZE_RANK: Record<string, number> = {
+  small: 0,
+  medium: 0,
+  large: 1,
+  huge: 2,
+  gargantuan: 3,
+};
+
+const WALL_RANGE_RANK: Record<string, number> = {
+  short: 0,
+  medium: 1,
+  long: 3,
+  distant: 5,
+};
+
+const MULTI_RANGE_RANK: Record<string, number> = {
+  short: 1,
+  medium: 3,
+  long: 5,
+  distant: 7,
+};
+
+const MULTI_TARGET_RANK: Record<number, number> = {
+  2: 0,
+  3: 1,
+  4: 2,
+  5: 3,
+};
+
+const CHAIN_RANGE_RANK: Record<string, number> = {
+  melee: 0,
+  short: 1,
+  medium: 3,
+  long: 5,
+  distant: 7,
+};
+
+const CHAIN_TARGET_RANK: Record<number, number> = {
+  2: 0,
+  3: 1,
+  4: 2,
+  5: 3,
+  6: 4,
+};
+
+const SINGLE_RANGE_MOD: Record<string, number> = {
+  melee: 2,
+  short: 1,
+  medium: 0,
+  long: -1,
+  distant: -2,
+};
+
 export function calculateAreaRank(profile: SpellProfile): number {
   let areaRank = profile.enemiesOnly ? 1 : 0;
   if (profile.area === 'cone') {
-    areaRank +=
-      {
-        tiny: 0,
-        small: 0,
-        medium: 2,
-        large: 4,
-        huge: 6,
-        gargantuan: 8,
-      }[profile.areaSize] || 0;
+    areaRank += CONE_AREA_SIZE_RANK[profile.areaSize] || 0;
   } else if (profile.area === 'radius') {
-    areaRank +=
-      {
-        tiny: -1,
-        small: 0,
-        medium: 2,
-        large: 4,
-        huge: 6,
-        gargantuan: 8,
-      }[profile.areaSize] || 0;
+    areaRank += RADIUS_AREA_SIZE_RANK[profile.areaSize] || 0;
     // Enemies-only personal radius counts as an extra area rank
     if (profile.range === 'self' && profile.enemiesOnly) {
       areaRank += 1;
     }
     // Radius areas can have range.
-    areaRank +=
-      {
-        short: 3,
-        medium: 5,
-        long: 7,
-        distant: 9,
-      }[profile.range] || 0;
+    areaRank += RADIUS_RANGE_RANK[profile.range] || 0;
     return areaRank;
   } else if (profile.area === 'line') {
-    areaRank +=
-      {
-        tiny: -1,
-        small: 0,
-        medium: 1,
-        large: 3,
-        huge: 4,
-        gargantuan: 5,
-      }[profile.areaSize] || 0;
+    areaRank += LINE_AREA_SIZE_RANK[profile.areaSize] || 0;
   } else if (profile.area === 'wall') {
     // These are the values for *damaging* walls that don't block passage.
     // Full blockage walls would use a different area scaling.
-    areaRank +=
-      {
-        small: 0,
-        medium: 0,
-        large: 1,
-        huge: 2,
-        gargantuan: 3,
-      }[profile.areaSize] || 0;
+    areaRank += WALL_AREA_SIZE_RANK[profile.areaSize] || 0;
     // Walls basically always have a range
-    areaRank +=
-      {
-        short: 0,
-        medium: 1,
-        long: 3,
-        distant: 5,
-      }[profile.range] || 0;
+    areaRank += WALL_RANGE_RANK[profile.range] || 0;
   } else if (['multi'].includes(profile.area)) {
-    areaRank +=
-      {
-        short: 1,
-        medium: 3,
-        long: 5,
-        distant: 7,
-      }[profile.range] || 0;
-    areaRank +=
-      {
-        2: 0,
-        3: 1,
-        4: 2,
-        5: 3,
-      }[profile.maxTargets] || 0;
+    areaRank += MULTI_RANGE_RANK[profile.range] || 0;
+    areaRank += MULTI_TARGET_RANK[profile.maxTargets] || 0;
   } else if (['chain'].includes(profile.area)) {
     if (profile.maxTargets < 2) {
       console.warn('Confusing chain max target count');
     }
-    areaRank +=
-      {
-        melee: 0,
-        short: 1,
-        medium: 3,
-        long: 5,
-        distant: 7,
-      }[profile.range] || 0;
-    areaRank +=
-      {
-        2: 0,
-        3: 1,
-        4: 2,
-        5: 3,
-        6: 4,
-      }[profile.maxTargets] || 0;
+    areaRank += CHAIN_RANGE_RANK[profile.range] || 0;
+    areaRank += CHAIN_TARGET_RANK[profile.maxTargets] || 0;
   }
 
   return areaRank;
 }
 
-function calculateRangeModifier(profile: SpellProfile) {
+function calculateRangeModifier(profile: SpellProfile): number {
   if (['single', 'vertical-line'].includes(profile.area)) {
-    return (
-      {
-        melee: 2,
-        short: 1,
-        medium: 0,
-        long: -1,
-        distant: -2,
-      }[profile.range] || 0
-    );
+    return SINGLE_RANGE_MOD[profile.range] || 0;
   } else {
     return 0;
   }
@@ -243,7 +253,7 @@ export function calculateExpectedDamageRank(
 
   // DoT / Recurring damage (burn/bleed/corrode)
   const hasDoT = profile.appliedEffects.some(
-    (e) =>
+    (e: string) =>
       e.includes('burn') || e.includes('bleed') || e.includes('corrode') || e.includes('poison'),
   );
   // Injury-only double damage
@@ -282,7 +292,9 @@ export function calculateExpectedDamageRank(
   ];
   const hasDebuff =
     !profile.isInjuryDoubleDamage &&
-    profile.appliedEffects.some((e) => DEBUFF_NAMES.some((d) => e === d || e === `briefly:${d}`));
+    profile.appliedEffects.some((e: string) =>
+      DEBUFF_NAMES.some((d) => e === d || e === `briefly:${d}`),
+    );
   if (hasDebuff) {
     effectMod -= 1;
     effectReasons.push('Debuff effect (-1)');

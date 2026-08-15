@@ -1,5 +1,6 @@
 import t from 'tap';
-import { validateSpells, buildSpellProfile } from './validate_spells';
+import { validateSpells } from './validate_spells';
+import { buildSpellProfile } from './spell_profile';
 import { makeMockSpell, makeMockSphere } from './validate_spells_test_helpers';
 import { SpellDefinition } from './active_abilities';
 

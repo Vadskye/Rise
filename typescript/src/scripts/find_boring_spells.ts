@@ -1,5 +1,6 @@
 import { mysticSpheres, allMysticSpheres, rituals } from '@src/abilities/mystic_spheres';
-import { validateSpells, buildSpellProfile } from '@src/abilities/validate_spells';
+import { validateSpells } from '@src/abilities/validate_spells';
+import { buildSpellProfile } from '@src/abilities/spell_profile';
 import {
   CantripDefinition,
   SpellDefinition,
