@@ -33,7 +33,6 @@ Single-target attacks against Reflex defense incur a -1 modifier (-1 dr) because
 | -1              | Debuff                    | If the spell includes a debuff (drX-1)                    |
 | +2              | Injury-only               | Spell only affects injured targets                        |
 | -1              | Injury-only double damage | Immediate for most areas, delayed if targeting cost is -1 |
-| -2              | Injury-only double damage | Only for touch range                                      |
 
 Reasoning: A typical sustain (minor) radius will hit the same target about twice, which makes -2dr a reasonable penalty, though it has significant possible upside for long fights.
 
