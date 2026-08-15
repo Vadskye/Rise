@@ -39,8 +39,6 @@ import { MysticSphere } from './mystic_spheres';
 import { calculateExpectedDamageRank, DamageCalculationBreakdown } from './expected_damage_rank';
 import { buildSpellProfile, SpellProfile, RANGE_ORDER, AREA_SIZE_ORDER } from './spell_profile';
 
-export * from './spell_profile';
-
 export interface ValidationIssue {
   type:
     | 'redundancy'
