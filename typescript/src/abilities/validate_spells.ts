@@ -36,7 +36,8 @@
  */
 
 import { SpellDefinition, CantripDefinition } from './active_abilities';
-import { MysticSphere } from './mystic_spheres';
+import { MysticSphere, getSpellByName } from './mystic_spheres';
+import { calculateExpectedDamageRank, DamageCalculationBreakdown } from './expected_damage_rank';
 
 export interface SpellProfile {
   name: SpellDefinition['name'];
@@ -69,6 +70,13 @@ export interface SpellProfile {
   enemiesOnly: boolean;
   isRepeating: boolean;
   providesCover: boolean;
+  hasSelfHitPenalty: boolean;
+  isInjuryDoubleDamage: boolean;
+  isInjuryOnly: boolean;
+  hasAttuneStandardAttack: boolean;
+  hasEscapableRepeat: boolean;
+  isSelfEmpowered: boolean;
+  isSelfMaximized: boolean;
 }
 
 export interface ValidationIssue {
@@ -115,6 +123,7 @@ function parseDamageRank(text: string): number | null {
     const lowercase = text.toLowerCase();
     if (
       lowercase.includes('burn') ||
+      lowercase.includes('bleed') ||
       lowercase.includes('corrode') ||
       lowercase.includes('poison') ||
       lowercase.includes('next turn') ||
@@ -160,9 +169,9 @@ function parseRange(text: string): string {
   if (
     lowercase.includes('touch') ||
     lowercase.includes('\\glossterm{touch}') ||
-    /against\s+(?:something|anything|one|a|the|target|creature)\b.*adjacent\s+to\s+you/i.test(
-      lowercase,
-    )
+    lowercase.includes('adjacent creature') ||
+    lowercase.includes('adjacent target') ||
+    /against\s+(?:something|anything|one|a|the|target|creature|an)\b.*adjacent/i.test(lowercase)
   ) {
     return 'melee';
   }
@@ -201,7 +210,8 @@ function parseArea(text: string): string {
   if (
     lowercase.includes('radius') ||
     lowercase.includes('emanation') ||
-    lowercase.includes('zone')
+    lowercase.includes('zone') ||
+    lowercase.includes('adjacent to you')
   ) {
     return 'radius';
   }
@@ -223,9 +233,12 @@ function parseArea(text: string): string {
   return 'single';
 }
 
+// Return from smallest to largest.
+// This gives slightly better results for spells that grow in area,
+// though we should really handle that explicitly.
 function parseAreaSize(text: string): string {
   const lowercase = text.toLowerCase();
-  if (lowercase.includes('\\tinyarea')) {
+  if (lowercase.includes('\\tinyarea') || lowercase.includes('adjacent to you')) {
     return 'tiny';
   }
   if (lowercase.includes('\\smallarea')) {
@@ -390,16 +403,17 @@ function parseSpecialRequirements(text: string): string[] {
   return requirements.sort();
 }
 
-function parseDelayed(text: string): boolean {
-  const lowercase = text.toLowerCase();
-  if (lowercase.includes('returns to normal') || lowercase.includes('return to normal')) {
+function parseIsDelayed(hit: string, targeting: string): boolean {
+  const text = `${hit} ${targeting}`.toLowerCase();
+  if (text.includes('returns to normal') || text.includes('return to normal')) {
     return false;
   }
   return (
-    (lowercase.includes('next turn') ||
-      lowercase.includes('next round') ||
-      lowercase.includes('delayed')) &&
-    !lowercase.includes('until your next turn')
+    (text.includes('next turn') ||
+      text.includes('next round') ||
+      text.includes('delayed') ||
+      text.includes('when it returns')) &&
+    !text.includes('until your next turn')
   );
 }
 
@@ -490,11 +504,70 @@ export function buildSpellProfile(
   spell: SpellDefinition | CantripDefinition,
   sphereName: string,
 ): SpellProfile {
-  const hit = spell.attack?.hit || '';
-  const targeting = spell.attack?.targeting || '';
-  const injury = spell.attack?.injury || '';
-  const effect = spell.effect || '';
+  let hit = spell.attack?.hit || '';
+  let targeting = spell.attack?.targeting || '';
+  let injury = spell.attack?.injury || '';
+  let effect = spell.effect || '';
+  let type = spell.type;
+  let cost = spell.cost;
+  let staminaCost = spell.staminaCost;
+  let materialCost = spell.materialCost;
+  let halfOnMiss = spell.attack?.halfOnMiss === true;
+
+  if (spell.functionsLike) {
+    try {
+      const base = getSpellByName(spell.functionsLike.name);
+      if (base) {
+        if (!hit && base.attack?.hit) {
+          hit = base.attack.hit;
+        }
+        if (!targeting && base.attack?.targeting) {
+          targeting = base.attack.targeting;
+        }
+        if (!injury && base.attack?.injury) {
+          injury = base.attack.injury;
+        }
+        if (!effect && base.effect) {
+          effect = base.effect;
+        }
+        if (!type && base.type) {
+          type = base.type;
+        }
+        if (!cost && base.cost) {
+          cost = base.cost;
+        }
+        if (staminaCost === undefined && base.staminaCost !== undefined) {
+          staminaCost = base.staminaCost;
+        }
+        if (materialCost === undefined && base.materialCost !== undefined) {
+          materialCost = base.materialCost;
+        }
+        if (!halfOnMiss && base.attack?.halfOnMiss === true) {
+          halfOnMiss = true;
+        }
+      }
+      let except = spell.functionsLike.exceptThat || '';
+      if (spell.functionsLike.mass) {
+        except = `it affects up to five creatures of your choice from among yourself and your \\glossterm{allies} within \\medrange. ${except}`;
+      }
+      if (spell.functionsLike.oneYear) {
+        except = `the effect lasts for one year. ${except}`;
+      }
+      if (except) {
+        const exceptDr = parseDamageRank(except);
+        if (exceptDr !== null) {
+          hit = `${except} ${hit}`;
+        } else {
+          hit = `${hit} ${except}`;
+        }
+      }
+    } catch {
+      // If base lookup fails, proceed with raw spell definition
+    }
+  }
+
   const fullText = `${hit} ${targeting} ${injury} ${effect}`;
+  const lowercase = fullText.toLowerCase();
 
   const isDoubleAction =
     /spend a (\\glossterm{)?standard action(})? to make an attack/i.test(fullText) ||
@@ -520,45 +593,44 @@ export function buildSpellProfile(
   const accuracyCondition = parseAccuracyCondition(fullText);
   const specialRequirements = parseSpecialRequirements(fullText);
 
-  const rawDelayed = parseDelayed(fullText);
-  const isRepeating = parseIsRepeating(fullText, rawDelayed);
-  const isDelayed = rawDelayed && !isRepeating;
+  const rawIsDelayed = parseIsDelayed(hit, targeting);
+  const isRepeating = parseIsRepeating(fullText, rawIsDelayed);
+  const isDelayed = rawIsDelayed && !isRepeating;
 
   const providesCover = parseProvidesCover(fullText);
 
   const isSustained =
-    (spell.type || '').toLowerCase().includes('sustain') ||
+    (type || '').toLowerCase().includes('sustain') ||
     (spell.tags || []).some((tag) => tag.toLowerCase().includes('sustain')) ||
-    fullText.toLowerCase().includes('sustain');
+    lowercase.includes('sustain');
 
   const isSustainedMinor =
     isSustained &&
-    ((spell.type || '').toLowerCase().includes('minor') ||
+    ((type || '').toLowerCase().includes('minor') ||
       (spell.tags || []).some((tag) => tag.toLowerCase().includes('minor')) ||
       /sustain\s*\([^)]*minor[^)]*\)/i.test(fullText));
 
-  const isAttunable = (spell.type || '').includes('ttun');
+  const isAttunable = (type || '').toLowerCase().includes('ttun') || lowercase.includes('attune');
 
   const hasCost =
-    !!spell.cost ||
-    spell.staminaCost === true ||
-    spell.materialCost === true ||
-    (spell.type || '').toLowerCase().startsWith('attune') ||
-    fullText.toLowerCase().includes('cooldown');
+    !!cost ||
+    staminaCost === true ||
+    materialCost === true ||
+    (type || '').toLowerCase().startsWith('attune') ||
+    lowercase.includes('cooldown');
   const roles = (spell.roles || [])
     .map((r) => r.toLowerCase() as SpellDefinition['roles'][number])
     .sort();
 
   const healingRank = parseHealingRank(fullText);
-  const areaGrows = fullText.toLowerCase().includes('increases over time');
+  const areaGrows = lowercase.includes('increases over time');
 
   const isNonAction =
     targeting.toLowerCase().includes('reactive attack') ||
     targeting.toLowerCase().includes('\\reactiveattack') ||
     targeting.toLowerCase().includes('whenever') ||
-    fullText.toLowerCase().includes('minor action');
+    lowercase.includes('minor action');
 
-  const halfOnMiss = spell.attack?.halfOnMiss === true;
   const maxTargets = parseMaxTargets(fullText);
 
   if (maxTargets > 1 && area === 'single') {
@@ -568,9 +640,38 @@ export function buildSpellProfile(
   const hasInjuryDamage =
     injury.toLowerCase().includes('\\damagerank') ||
     injury.toLowerCase().includes('damage') ||
-    fullText.toLowerCase().includes('extra damage');
+    lowercase.includes('extra damage');
 
   const enemiesOnly = /enem(y|ies)/i.test(targeting);
+
+  const hasSelfHitPenalty =
+    lowercase.includes('include yourself as a target') || lowercase.includes('yourself and all');
+
+  const isInjuryDoubleDamage =
+    !!injury &&
+    (/\\damagerank/i.test(injury) ||
+      /takes \\damagerank/i.test(injury) ||
+      /burns? for \\damagerank/i.test(injury) ||
+      /bleeds? for \\damagerank/i.test(injury));
+
+  const isInjuryOnly = specialRequirements.includes('injured') && !/\\damagerank/i.test(hit);
+
+  const hasAttuneStandardAttack =
+    isAttunable &&
+    (/as a (?:\\glossterm{)?standard action(?:})?/i.test(fullText) ||
+      /spend a (?:\\glossterm{)?standard action(?:})?/i.test(fullText));
+
+  const hasEscapableRepeat =
+    lowercase.includes('repeats in the same area') ||
+    (lowercase.includes('escapable') && lowercase.includes('repeat'));
+
+  const isSelfEmpowered =
+    /you (?:are|become)\s+(?:\\briefly\s+)?\\empowered/i.test(fullText) ||
+    /the target is \\empowered/i.test(fullText);
+
+  const isSelfMaximized =
+    /you (?:are|become)\s+(?:\\briefly\s+)?\\maximized/i.test(fullText) ||
+    /the target is \\maximized/i.test(fullText);
 
   return {
     name: spell.name,
@@ -591,8 +692,8 @@ export function buildSpellProfile(
     isDelayed,
     hasCost,
     roles,
-    hasAttack: !!spell.attack,
-    type: spell.type,
+    hasAttack: !!spell.attack || !!spell.functionsLike,
+    type,
     healingRank,
     areaGrows,
     halfOnMiss,
@@ -603,6 +704,13 @@ export function buildSpellProfile(
     enemiesOnly,
     isRepeating,
     providesCover,
+    hasSelfHitPenalty,
+    isInjuryDoubleDamage,
+    isInjuryOnly,
+    hasAttuneStandardAttack,
+    hasEscapableRepeat,
+    isSelfEmpowered,
+    isSelfMaximized,
   };
 }
 
@@ -1127,6 +1235,60 @@ export function validateSpells(
   for (let i = 0; i < profiles.length; i++) {
     for (let j = i + 1; j < profiles.length; j++) {
       issues.push(...checkSpellPair(profiles[i], profiles[j], options));
+    }
+  }
+
+  return issues;
+}
+
+export interface DamagingSpellDesignIssue {
+  type: 'design_underbudget' | 'design_overbudget';
+  severity: 'warning';
+  spellName: string;
+  sphereName: string;
+  spellRank: number;
+  actualDamageRank: number;
+  expectedDamageRank: number;
+  difference: number;
+  message: string;
+  breakdown: DamageCalculationBreakdown;
+}
+
+export function validateSpellDesignGuidelines(spheres: MysticSphere[]): DamagingSpellDesignIssue[] {
+  const issues: DamagingSpellDesignIssue[] = [];
+
+  for (const sphere of spheres) {
+    const spells = sphere.spells || [];
+    for (const spell of spells) {
+      const profile = buildSpellProfile(spell, sphere.name);
+      if (profile.damageRank === null) {
+        continue;
+      }
+
+      const breakdown = calculateExpectedDamageRank(profile);
+      if (!breakdown) {
+        continue;
+      }
+
+      if (profile.damageRank !== breakdown.expectedDamageRank) {
+        const diff = profile.damageRank - breakdown.expectedDamageRank;
+        const type = diff < 0 ? 'design_underbudget' : 'design_overbudget';
+        const diffStr = diff > 0 ? `+${diff}` : `${diff}`;
+        const message = `Spell "${profile.name}" (${profile.sphereName}, Rank ${profile.rank}) deals Rank ${profile.damageRank} damage, but design guidelines expect Rank ${breakdown.expectedDamageRank} (${diffStr} discrepancy). [Base ${breakdown.baseRank} + Targeting (${breakdown.targetingMod}) + Defense (${breakdown.defenseMod}) + Effect (${breakdown.effectMod}) + Bonus (${breakdown.bonusMod})]`;
+
+        issues.push({
+          type,
+          severity: 'warning',
+          spellName: profile.name,
+          sphereName: profile.sphereName,
+          spellRank: profile.rank,
+          actualDamageRank: profile.damageRank,
+          expectedDamageRank: breakdown.expectedDamageRank,
+          difference: diff,
+          message,
+          breakdown,
+        });
+      }
     }
   }
 

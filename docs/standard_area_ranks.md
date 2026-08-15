@@ -77,7 +77,6 @@ Rank 4 areas [Damage Mod -2]:
   - Any number of creatures in Short range (equivalent to enemies-only Medium radius)
   - Up to three creatures in Medium range
   - Medium range, chain twice
-  - Short range, chain five times
 
 Rank 5 areas [Damage Mod -2]:
 
@@ -88,6 +87,7 @@ Rank 5 areas [Damage Mod -2]:
   - Two Tiny radii in Med range
 - Targets:
   - Any number of creatures in Medium range (equivalent to enemies-only Large radius)
+  - Short range, chain five times (30 -> 45 -> 60 -> 75 -> 90 -> 105 ft.)
 
 ## Extended Area Scaling
 

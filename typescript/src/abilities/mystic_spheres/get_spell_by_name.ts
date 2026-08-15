@@ -8,12 +8,17 @@ export function getSpellByName(spellName: string) {
     allSpells = {};
     for (const mysticSphere of allMysticSpheres) {
       for (const spell of mysticSphere.spells) {
-        allSpells[spell.name] = spell;
+        allSpells[spell.name.toLowerCase()] = spell;
+      }
+      if (mysticSphere.cantrips) {
+        for (const cantrip of mysticSphere.cantrips) {
+          allSpells[cantrip.name.toLowerCase()] = cantrip as any;
+        }
       }
     }
   }
 
-  const spell = allSpells[spellName];
+  const spell = allSpells[spellName.toLowerCase()];
   if (spell) {
     // Callers could modify the spell, so we need to give them a copy
     return structuredClone(spell);

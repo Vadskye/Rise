@@ -576,15 +576,15 @@ export const polymorph: MysticSphere = {
     {
       name: 'Bloody Fleshspike',
 
-      // Normal would be dr5. Drop by -2dr for the injury effect.
+      // Normal would be dr5. Injury-only double damage is -1dr.
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankthree.
+          \\damagerankfour.
         `,
         injury: `
-          The target takes \\damagerankthree at the end of its next turn.
-          Any \\glossterm{extra damage} also applies to this delayed damage.
+          The target \\briefly \\glossterm{bleeds} for \\damagerankfour.
+          Any \\glossterm{extra damage} also applies to this bleeding damage.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
