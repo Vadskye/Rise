@@ -873,8 +873,9 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       name: 'Mighty Asphyxiate',
 
       functionsLike: {
-        name: "asphyxiate",
-        exceptThat: "the damage increases to \\damageranksix, and any \\glossterm{extra damage} is doubled. In addition, the DV of the Might check increases to 8.",
+        name: 'asphyxiate',
+        exceptThat:
+          'the damage increases to \\damageranksix, and any \\glossterm{extra damage} is doubled. In addition, the DV of the Might check increases to 8.',
       },
       // narrative: '',
       rank: 5,

@@ -648,7 +648,7 @@ export const chronomancy: MysticSphere = {
       // is single-target, so 0.6 EA -> 1.6 EA with damage, so rank 2.
       // Delayed damage gets +1dr, so we can get dr2 on a delay.
       attack: {
-        crit: "Double damage, and the brief effect becomes a \\glossterm{condition}.",
+        crit: 'Double damage, and the brief effect becomes a \\glossterm{condition}.',
         hit: `
           The target is \\briefly \\dazzled and \\deafened.
           At the end of its next turn, it takes \\damageranktwo.
@@ -669,7 +669,8 @@ export const chronomancy: MysticSphere = {
       // conditional accuracy.
       functionsLike: {
         name: 'unstable aging',
-        exceptThat: "the damage increases to \\damagerankfive, and any \\glossterm{extra damage} is doubled. In addition, the accuracy bonus increases to \\plus4.",
+        exceptThat:
+          'the damage increases to \\damagerankfive, and any \\glossterm{extra damage} is doubled. In addition, the accuracy bonus increases to \\plus4.',
       },
       rank: 5,
       roles: ['burst'],

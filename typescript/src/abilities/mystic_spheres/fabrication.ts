@@ -938,8 +938,8 @@ export const fabrication: MysticSphere = {
       name: 'Mighty Shrapnel Grenade',
 
       functionsLike: {
-        name: "shrapnel grenade",
-        exceptThat: "the damage increases to \\damageranksix.",
+        name: 'shrapnel grenade',
+        exceptThat: 'the damage increases to \\damageranksix.',
       },
       rank: 5,
       roles: ['clear'],
