@@ -563,10 +563,6 @@ export function buildSpellProfile(
   const targeting = spell.attack?.targeting || '';
   const injury = spell.attack?.injury || '';
   const effect = spell.effect || '';
-  const type = spell.type;
-  const cost = spell.cost;
-  const staminaCost = spell.staminaCost;
-  const materialCost = spell.materialCost;
   const halfOnMiss = spell.attack?.halfOnMiss === true;
 
   const fullText = `${hit} ${targeting} ${injury} ${effect}`;
@@ -603,23 +599,24 @@ export function buildSpellProfile(
   const providesCover = parseProvidesCover(fullText);
 
   const isSustained =
-    (type || '').toLowerCase().includes('sustain') ||
+    (spell.type || '').toLowerCase().includes('sustain') ||
     (spell.tags || []).some((tag) => tag.toLowerCase().includes('sustain')) ||
     lowercase.includes('sustain');
 
   const isSustainedMinor =
     isSustained &&
-    ((type || '').toLowerCase().includes('minor') ||
+    ((spell.type || '').toLowerCase().includes('minor') ||
       (spell.tags || []).some((tag) => tag.toLowerCase().includes('minor')) ||
       /sustain\s*\([^)]*minor[^)]*\)/i.test(fullText));
 
-  const isAttunable = (type || '').toLowerCase().includes('ttun') || lowercase.includes('attune');
+  const isAttunable =
+    (spell.type || '').toLowerCase().includes('ttun') || lowercase.includes('attune');
 
   const hasCost =
-    !!cost ||
-    staminaCost === true ||
-    materialCost === true ||
-    (type || '').toLowerCase().startsWith('attune') ||
+    !!spell.cost ||
+    spell.staminaCost === true ||
+    spell.materialCost === true ||
+    (spell.type || '').toLowerCase().startsWith('attune') ||
     lowercase.includes('cooldown');
   const roles = (spell.roles || [])
     .map((r) => r.toLowerCase() as SpellDefinition['roles'][number])
@@ -696,7 +693,7 @@ export function buildSpellProfile(
     hasCost,
     roles,
     hasAttack: !!spell.attack,
-    type,
+    type: spell.type,
     healingRank,
     areaGrows,
     halfOnMiss,
