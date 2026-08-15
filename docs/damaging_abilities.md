@@ -23,16 +23,16 @@ Single-target attacks against Reflex defense incur a -1 modifier (-1 dr) because
 
 ### Effect Modifiers
 
-| Damage Modifier | Effect Category           | Specifics                                                 |
-| :-------------- | :------------------------ | :-------------------------------------------------------- |
-| -2              | Sustain (minor) zone      | Full size radius or emanation                             |
-| -1              | Sustain (minor) zone      | Wall or limited scope (half area level)                   |
-| -2              | Damage over time          | "Immediately and next round" (drX-2)                      |
-| -2              | DoT condition (Move)      | "As a condition" with Move action removal (drX-2)         |
-| -3              | DoT condition (Standard)  | "As a condition" with Standard action removal (drX-3)     |
-| -1              | Debuff                    | If the spell includes a debuff (drX-1)                    |
-| +2              | Injury-only               | Spell only affects injured targets                        |
-| -1              | Injury-only double damage | Immediate for most areas, delayed if targeting cost is -1 |
+| Damage Modifier | Effect Category           | Specifics                                                       |
+| :-------------- | :------------------------ | :-------------------------------------------------------------- |
+| -2              | Sustain (minor) zone      | Full size radius or emanation                                   |
+| -1              | Sustain (minor) zone      | Wall or limited scope (half area level)                         |
+| -2              | Damage over time          | "Immediately and next round" (drX-2)                            |
+| -2              | DoT condition (Move)      | "As a condition" with Move action removal (drX-2)               |
+| -3              | DoT condition (Standard)  | "As a condition" with Standard action removal (drX-3)           |
+| -1              | Debuff                    | If the spell includes a debuff (drX-1)                          |
+| +2              | Injury-only               | Spell only affects injured targets                              |
+| -1              | Injury-only double damage | Immediate for most areas, delayed if targeting cost is negative |
 
 Reasoning: A typical sustain (minor) radius will hit the same target about twice, which makes -2dr a reasonable penalty, though it has significant possible upside for long fights.
 
