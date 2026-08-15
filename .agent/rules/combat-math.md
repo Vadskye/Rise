@@ -13,7 +13,13 @@ Use this document to resolve any mathematical discrepancies when calculating cha
 - **Negative Numbers:** Round **away from 0**.
   - Example: `floor(-2.5) = -3`.
 
-## 2. Accuracy Formulas
+## 2. Rank Formula
+
+`ActiveAbilityRank = min(7, floor((Level + 2) / 3))`
+
+Rank determines the power level of abilities a creature can use (rank 1 at level 1, rank 2 at level 4, etc., up to rank 7 at level 19+).
+
+## 3. Accuracy Formulas
 
 | Attack Type           | Formula                           |
 | :-------------------- | :-------------------------------- |
@@ -23,7 +29,7 @@ Use this document to resolve any mathematical discrepancies when calculating cha
 > [!TIP]
 > **Weapon Bonuses:** Accuracy bonuses from items (like the Smallsword's +1) are added **last** to the base result.
 
-## 3. Defense Formulas
+## 4. Defense Formulas
 
 Most classes provide a +3 bonus to non-Armor defenses, and a +0 bonus to Armor defense. This makes each defense generally similar in value.
 
@@ -35,14 +41,14 @@ Most classes provide a +3 bonus to non-Armor defenses, and a +0 bonus to Armor d
 | **Reflex**     | `floor(Level / 2) + Dexterity + ClassBonus`                  |
 | **Fortitude**  | `floor(Level / 2) + Constitution + ClassBonus`                             |
 
-## 4. Power Formulas
+## 5. Power Formulas
 
 | Type              | Formula                        |
 | :---------------- | :----------------------------- |
 | **Mundane Power** | `floor(Level / 2) + Strength`  |
 | **Magical Power** | `floor(Level / 2) + Willpower` |
 
-## 5. Hit Points & Injury
+## 6. Hit Points & Injury
 
 | Statistic      | Formula Component                            |
 | :------------- | :------------------------------------------- |

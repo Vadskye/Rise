@@ -30,6 +30,7 @@ These scripts are configured to use `npx tap --node-arg=--import=tsx`, which cor
 
 - **Use Real Implementations**: Unless it's completely infeasible, use real implementations for everything in tests. Mocks and `any` casts should be avoided.
 - **Imports**: Use `import t from 'tap';` for the test harness.
+- **Stock Character Test Isolation**: Tests that instantiate `StockCharacters` across multiple subtests must call `clearAllCharacterSheets()` (from `@src/character_sheet/current_character_sheet`) in a `t.beforeEach()` hook. Without it, subsequent subtests will throw `Can't add a duplicate character sheet named '...'` errors because the global character sheet registry persists between tests.
 
 ## TypeScript Development & Test Execution
 
