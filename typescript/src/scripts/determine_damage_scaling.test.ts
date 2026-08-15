@@ -1,6 +1,5 @@
 import t from 'tap';
 import {
-  getTargetRange,
   evaluateComparison,
   evaluateCreatureDamageScaling,
   runDamageScalingAnalysis,
@@ -52,6 +51,34 @@ t.test('runDamageScalingAnalysis', (t) => {
 
     const comparisons = runDamageScalingAnalysis(stock, { className: 'sorcerer', drl: true });
     t.ok(comparisons.length > 0);
+    t.end();
+  });
+
+  t.test('should sort comparisons by Alt Rank when sortByAltRank is true', (t) => {
+    const stock = new StockCharacters();
+    stock.addAllCharacters();
+
+    const comparisons = runDamageScalingAnalysis(stock, {
+      className: 'sorcerer',
+      sortByAltRank: true,
+    });
+    t.ok(comparisons.length > 0);
+
+    for (let i = 1; i < comparisons.length; i++) {
+      const prev = comparisons[i - 1];
+      const curr = comparisons[i];
+      if (prev.rankY === curr.rankY) {
+        t.ok(
+          prev.level <= curr.level,
+          `Expected prev level (${prev.level}) <= curr level (${curr.level}) when rankY matches`,
+        );
+      } else {
+        t.ok(
+          prev.rankY < curr.rankY,
+          `Expected prev rankY (${prev.rankY}) < curr rankY (${curr.rankY})`,
+        );
+      }
+    }
     t.end();
   });
 

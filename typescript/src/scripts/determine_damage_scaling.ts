@@ -35,6 +35,7 @@ export interface DamageScalingOptions {
   drl?: boolean;
   json?: boolean;
   level?: number;
+  sortByAltRank?: boolean;
 }
 
 /**
@@ -200,6 +201,10 @@ export function runDamageScalingAnalysis(
     results.push(...charComparisons);
   }
 
+  if (options.sortByAltRank) {
+    results.sort((a, b) => a.rankY - b.rankY || a.level - b.level || a.y - b.y);
+  }
+
   return results;
 }
 
@@ -329,6 +334,7 @@ if (require.main === module) {
     )
     .option('-l, --level <number>', 'Filter to a specific level', (val) => parseInt(val, 10))
     .option('-o, --only-outliers', 'Only show outlier comparisons')
+    .option('--sort-by-alt-rank', 'Sort the output table by Alt Rank instead of Lvl')
     .option('--drl', 'Evaluate Low-Power scaling (DamageScaling.drl) instead of standard DR')
     .option('--json', 'Output results in JSON format')
     .parse(process.argv);
@@ -337,6 +343,7 @@ if (require.main === module) {
     className: cli.class,
     level: cli.level,
     onlyOutliers: Boolean(cli.onlyOutliers),
+    sortByAltRank: Boolean(cli.sortByAltRank),
     drl: Boolean(cli.drl),
     json: Boolean(cli.json),
   }).catch((err) => {
