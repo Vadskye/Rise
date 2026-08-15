@@ -26,6 +26,18 @@ To ensure tests run correctly on both Windows and Unix-like systems, always use 
 
 These scripts are configured to use `npx tap --node-arg=--import=tsx`, which correctly sets up the TypeScript loader without requiring shell-specific environment variable syntax.
 
+### Running a Single Test File (PowerShell)
+
+When running a single test file directly (without the helper script), follow these rules:
+
+1. **Build first, then run** — use `;` (not `&&`) to chain commands in PowerShell:
+   ```powershell
+   npm run build:test; npx tap dist-test/scripts/foo.test.js
+   ```
+2. **The `src/` prefix is stripped in the output path.** `tsconfig.test.json` sets `outDir` to `dist-test`, and the `src/` segment is not preserved:
+   - Source: `src/scripts/foo.test.ts`
+   - Compiled: `dist-test/scripts/foo.test.js`
+
 ## Writing Tests
 
 - **Use Real Implementations**: Unless it's completely infeasible, use real implementations for everything in tests. Mocks and `any` casts should be avoided.
