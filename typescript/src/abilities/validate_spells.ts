@@ -185,13 +185,6 @@ function getSpellDifferences(p1: SpellProfile, p2: SpellProfile): Difference[] {
       p2Value: p2.isRepeating ? 'repeating' : 'single application',
     });
   }
-  if (p1.providesCover !== p2.providesCover) {
-    diffs.push({
-      field: 'provides cover',
-      p1Value: p1.providesCover ? 'provides cover' : 'no cover',
-      p2Value: p2.providesCover ? 'provides cover' : 'no cover',
-    });
-  }
 
   if (p1.hasInjuryDamage !== p2.hasInjuryDamage) {
     diffs.push({
@@ -424,15 +417,6 @@ function compareSpellProfiles(p1: SpellProfile, p2: SpellProfile): ComparisonRes
       betterFields.push('repeating behavior');
     } else {
       worseFields.push('repeating behavior');
-    }
-  }
-
-  // 17. Cover Provision (providing cover is better)
-  if (p1.providesCover !== p2.providesCover) {
-    if (p1.providesCover) {
-      betterFields.push('cover provision');
-    } else {
-      worseFields.push('cover provision');
     }
   }
 
