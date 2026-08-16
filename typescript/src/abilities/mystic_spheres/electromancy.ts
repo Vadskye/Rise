@@ -555,11 +555,11 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
     {
       name: 'Thunderdash',
 
-      // Two tiny radii is kind of like a small radius in short range, but worse.
-      // Keep it as -1dr, but add deafened.
+      // Two arbitrarily chosen tiny radii is rank 3 / -1dr.
+      // This is a worse area than that, so add the brief deafen.
       attack: {
-        hit: `\\damageranktwo.`,
-        injury: 'The target is \\deafened as a \\glossterm{condition}.',
+        hit: `\\damageranktwo, and the target is \\briefly \\deafened.`,
+        injury: 'The target is deafened as a \\glossterm{condition}.',
         halfOnMiss: true,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\shortrange.

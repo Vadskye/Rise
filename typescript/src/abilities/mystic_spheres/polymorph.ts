@@ -510,11 +510,11 @@ export const polymorph: MysticSphere = {
 
       // Rank 7 Spell
       // Area: Small radius in Medium range (R4, mod -2)
-      // Mod: Double Defense (+1), Debuff (-1)
-      // Result: 7 - 2 + 1 - 1 = dr5
+      // Mod: Double Defense (+1)
+      // Result: 7 - 2 + 1 = dr6
       attack: {
         hit: `
-          \\damagerankfive, and any \\glossterm{extra damage} is doubled.
+          \\damageranksix.
         `,
         injury: `
           The target becomes \\vulnerable to all damage as a \\glossterm{condition}.
@@ -601,7 +601,7 @@ export const polymorph: MysticSphere = {
 
       attack: {
         hit: `
-          \\damageranksix, and any \\glossterm{extra damage} is doubled.
+          \\damagerankseven, and any \\glossterm{extra damage} is doubled.
         `,
         injury: `
           The target becomes \\slowed as a \\glossterm{condition}.

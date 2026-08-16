@@ -307,9 +307,9 @@ export const photomancy: MysticSphere = {
       scaling: 'damage',
     },
 
-      // Enemies in medium radius from self is r4 area, which would have base dr4.
-      // Repeating in the same area is an additional -2dr since this isn't very escapable, so dr2.
-      // Since we're using flat damage, -4dr is dr4l.
+    // Enemies in medium radius from self is r4 area, which would have base dr4.
+    // Repeating in the same area is an additional -2dr since this isn't very escapable, so dr2.
+    // Since we're using flat damage, -4dr is dr4l.
     {
       name: 'Massive Radiant Field',
 

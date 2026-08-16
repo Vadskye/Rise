@@ -757,8 +757,7 @@ export const enchantment: MysticSphere = {
       type: 'Attune',
     },
 
-    // Injury daze is 1.2 EA. We compensate for the low debuff EA with the Intelligence
-    // accuracy?
+    // -1dr for Int-based accuracy
     {
       name: 'Psionic Blast',
 
@@ -776,7 +775,7 @@ export const enchantment: MysticSphere = {
         `,
       },
       rank: 4,
-      roles: ['clear', 'flash'],
+      roles: ['clear', 'maim'],
       scaling: 'damage',
       tags: ['Compulsion', 'Subdual'],
     },
@@ -784,22 +783,13 @@ export const enchantment: MysticSphere = {
     {
       name: 'Mighty Psionic Blast',
 
-      attack: {
-        crit: 'Double damage, and the target is dazed as a condition.',
-        hit: `
-          \\damagerankfive, and the target is \\briefly \\dazed.
-        `,
-        injury: `
-          The target is dazed as a \\glossterm{condition}.
-        `,
-        halfOnMiss: true,
-        targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea cone from you.
-          You gain a +4 accuracy bonus against each target with an Intelligence of 1 or less.
-        `,
+      functionsLike: {
+        name: 'psionic blast',
+        exceptThat:
+          "the damage increases to \\damagerankfive, and the accuracy bonus applies if the target's Intelligence is 2 or less.",
       },
       rank: 7,
-      roles: ['clear', 'flash'],
+      roles: ['clear', 'maim'],
       scaling: 'damage',
       tags: ['Compulsion', 'Subdual'],
     },

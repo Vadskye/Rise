@@ -229,11 +229,11 @@ export const telekinesis: MysticSphere = {
 
       // Rank 2 Spell
       // Area: Small cone from self (R0, mod +1)
-      // Effect: Debuff (-1), Double defense (+1)
-      // Result: 2 + 1 - 1 + 1 = dr3
+      // Effect: Double defense (+1)
+      // Result: 2 + 1 + 1 = dr4
       attack: {
         hit: `
-          \\damagerankthree.
+          \\damagerankfour.
         `,
         injury: `
           If the target is Large or smaller, you \\glossterm{fling} it up to 15 feet away from you.
@@ -254,12 +254,12 @@ export const telekinesis: MysticSphere = {
       // Rank 4 Spell
       // Area: Small cone from self (R0, mod +1)
       // Effect: Debuff (-1), Double defense (+1)
-      // Result: 4 + 1 - 1 + 1 = dr5
+      // Result: 4 + 1 + 1 = dr6
       // (We don't calculate the size limitation into fling officially, but removing
       // the limitation here has some value added.)
       attack: {
         hit: `
-          \\damagerankfive.
+          \\damageranksix.
         `,
         injury: `
           You \\glossterm{fling} the target up to 15 feet away from you.
@@ -279,13 +279,13 @@ export const telekinesis: MysticSphere = {
 
       // Rank 6 Spell
       // Area: Large cone from self (R4, mod -2)
-      // Effect: Debuff (-1), Double defense (+1)
-      // Result: 6 - 2 - 1 + 1 = dr4
+      // Effect: Double defense (+1)
+      // Result: 6 - 2 + 1 = dr5
       // (Correct debuff tier here would be 1.6 EA, so we're missing 0.7 EA of debuff value
       // with just a 15' fling. Add the size-based doubling to compensate.)
       attack: {
         hit: `
-          \\damagerankfour.
+          \\damagerankfive.
         `,
         injury: `
           You \\glossterm{fling} the target up to 15 feet away from you.
@@ -788,12 +788,10 @@ export const telekinesis: MysticSphere = {
 
       // Rank 3 Spell
       // Range: Short (+1)
-      // Effect: Debuff (-1)
-      // Result: 3 + 1 - 1 = dr3
-      // (Original design: brief injury daze is 4d. Limited scope drops to rank 3.)
+      // Result: 3 + 1 = dr4
       attack: {
-        hit: `\\damagerankthree.`,
-        injury: 'The target is \\briefly \\dazed.',
+        hit: `\\damagerankfour.`,
+        injury: 'The target is \\briefly \\sickened.',
         targeting: `
           Make an attack vs. Brawn against something within \\shortrange.
         `,
@@ -810,15 +808,12 @@ export const telekinesis: MysticSphere = {
 
       // Rank 7 Spell
       // Range: Short (+1)
-      // Effect: Debuff (-1)
-      // Result: 7 + 1 - 1 = dr7
+      // Result: 7 + 1 = dr8
       attack: {
-        crit: 'Double damage, and the target is also \\briefly \\slowed.',
         hit: `
-          \\damagerankseven, and any \\glossterm{extra damage} is doubled.
-          The target is also \\briefly \\dazed.
+          \\damagerankeight, and any \\glossterm{extra damage} is doubled.
         `,
-        injury: 'The target is \\dazed as a \\glossterm{condition}.',
+        injury: 'The target is \\sickened as a \\glossterm{condition}.',
         targeting: `
           Make an attack vs. Brawn against something within \\shortrange.
         `,
