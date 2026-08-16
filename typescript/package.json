@@ -58,6 +58,7 @@
     "damage_scaling": "tsx src/scripts/determine_damage_scaling.ts",
     "power_scaling": "tsx src/scripts/determine_power_scaling.ts",
     "explain_stock_character": "tsx src/scripts/explain_stock_character.ts",
-    "find_damage_and_injury": "tsx src/scripts/investigation/find_damage_and_injury_abilities.ts"
+    "find_damage_and_injury": "tsx src/scripts/investigation/find_damage_and_injury_abilities.ts",
+    "find_boring_spells": "tsx src/scripts/find_boring_spells.ts"
   }
 }
