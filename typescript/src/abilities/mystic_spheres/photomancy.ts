@@ -286,8 +286,9 @@ export const photomancy: MysticSphere = {
     {
       name: 'Radiant Field',
 
-      // Enemies in medium radius from self is r3 area, which would have base dr2.
-      // Damage each turn is -1dr. But since we're using flat damage, -2dr is -1dr flat.
+      // Enemies in small radius from self is r2 area, which would have base dr2.
+      // Repeating in the same area is an additional -1dr, so dr1.
+      // Since we're using flat damage, -2dr is dr2l.
       attack: {
         hit: `
           \\damageranktwolow.
@@ -295,7 +296,7 @@ export const photomancy: MysticSphere = {
         injury: `The target is \\briefly \\dazzled.`,
         halfOnMiss: true,
         targeting: `
-          You create a field of light in a \\medarea radius \\glossterm{zone} from your location.
+          You create a field of light in a \\smallarea radius \\glossterm{zone} from your location.
           \\glossterm{Brilliant illumination} \\briefly fills a 60 foot radius from the area.
           Make an attack vs. Fortitude against all \\glossterm{enemies} in the area.
           At the start of your next turn, this effect \\glossterm{repeats} in the same area.
@@ -306,13 +307,16 @@ export const photomancy: MysticSphere = {
       scaling: 'damage',
     },
 
+      // Enemies in medium radius from self is r4 area, which would have base dr4.
+      // Repeating in the same area is an additional -2dr since this isn't very escapable, so dr2.
+      // Since we're using flat damage, -4dr is dr4l.
     {
       name: 'Massive Radiant Field',
 
       functionsLike: {
         name: 'radiant field',
         exceptThat:
-          'the area increases to a \\largearea radius \\glossterm{zone}, and the damage increases to \\damagerankfourlow.',
+          'the area increases to a \\medarea radius \\glossterm{zone}, and the damage increases to \\damagerankfourlow.',
       },
       rank: 6,
       roles: ['wildfire'],
