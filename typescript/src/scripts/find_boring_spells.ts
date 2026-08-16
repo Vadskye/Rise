@@ -115,6 +115,7 @@ export function findBoringSpells(
       !profile.hasDoT &&
       hasNoConditions &&
       hasNoSpecialReqs &&
+      profile.accuracyModifier === null &&
       hasNoAccCondition &&
       isNotDelayedOrRepeating &&
       !hasMovementOrTerrain &&

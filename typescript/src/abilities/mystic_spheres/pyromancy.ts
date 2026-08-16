@@ -38,14 +38,14 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       attack: {
         hit: `
-          \\damagerankzero.
+          \\damageranktwo.
         `,
         targeting: `
           Whenever you hit a creature with a \\atBrawling attack or a creature hits you with a \\atBrawling attack, make an attack vs. Fortitude against that creature.
           After you make this attack, this ability is \\glossterm{dismissed}.
         `,
       },
-      rank: 1,
+      rank: 2,
       roles: ['attune'],
       scaling: 'damage',
       type: 'Attune',
@@ -55,9 +55,9 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       functionsLike: {
         name: 'unstable heat',
-        exceptThat: 'the damage increases to \\damagerankfour.',
+        exceptThat: 'the damage increases to \\damagerankfive.',
       },
-      rank: 4,
+      rank: 5,
       roles: ['attune'],
       scaling: 'damage',
       type: 'Attune',
@@ -601,27 +601,14 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       // One rank behind weapon / ahead of apparel?
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each target's \\glossterm{manufactured weapons} shed light like a torch.
-        Their strikes with those weapons gain the \\atFire tag and deal 1 \\glossterm{extra damage}.
+        Each target's \\glossterm{manufactured weapons} shed light like a torch, and strikes with those weapons gain the \\atFire tag.
+        Whenever a target hits a creature with a \\glossterm{strike} using a manufactured weapon, the struck creature \\briefly \\debuff{burns} for 1d4 damage.
       `,
-      rank: 3,
+      rank: 4,
       roles: ['attune'],
       scaling: {
-        special: 'The extra damage increases by 1 for each rank beyond 3.',
+        special: 'The burning damage increases by 1 for each rank beyond 4.',
       },
-      type: 'Attune (target)',
-    },
-
-    {
-      name: 'Greater Flame Blade',
-
-      // One rank behind weapon / ahead of apparel?
-      functionsLike: {
-        name: 'flame blade',
-        exceptThat: 'the extra damage increases to 1d6.',
-      },
-      rank: 6,
-      roles: ['attune'],
       type: 'Attune (target)',
     },
 
@@ -800,13 +787,13 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Flame Dash',
 
-      // A Medium line is about r1 normally, which would be dr3. Drop to dr2 for the
-      // teleportation.
+      // A Medium line is about r1 normally, which would be +1dr = dr5 single target, so
+      // dr3 burning damage.
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damageranktwo.
-          The target also \\briefly \\debuff{burns} for \\damageranktwo.
+          \\damagerankthree.
+          The target also \\briefly \\debuff{burns} for \\damagerankthree.
         `,
         halfOnMiss: true,
         targeting: `
@@ -814,7 +801,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
           In addition, make an attack vs. Armor and Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.
         `,
       },
-      rank: 3,
+      rank: 4,
       roles: ['clear', 'dive'],
       scaling: 'damage',
     },
@@ -822,12 +809,14 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Distant Flame Dash',
 
-      // A Large line is -1dr.
+      // A Large line is -1dr = dr6 single target. Bump this up by +1dr because the
+      // teleport is often going to be less effective for damage targeting than a line
+      // would be.
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankfour.
-          The target also \\briefly \\debuff{burns} for \\damagerankfour.
+          \\damagerankfive.
+          The target also \\briefly \\debuff{burns} for \\damagerankfive.
         `,
         halfOnMiss: true,
         targeting: `
@@ -835,7 +824,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
           In addition, make an attack vs. Armor and Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.
         `,
       },
-      rank: 6,
+      rank: 7,
       roles: ['clear', 'dive'],
       scaling: 'damage',
     },

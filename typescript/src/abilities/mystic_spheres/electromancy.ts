@@ -533,18 +533,18 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
 
       attack: {
         hit: `
-          \\damageranksix, and any \\glossterm{extra damage} is doubled.
+          \\damagerankfive.
         `,
         injury: `
           The target is \\briefly \\dazed.
           If takes a \\glossterm{vital wound} from this damage that leaves it unconscious, it immediately dies.
         `,
         targeting: `
-          Make an attack vs. Fortitude with a -4 \\glossterm{accuracy} penalty against something within \\medrange.
+          Make an attack vs. Fortitude with a -2 \\glossterm{accuracy} penalty against something within \\shortrange.
         `,
       },
 
-      rank: 4,
+      rank: 3,
       roles: ['burst'],
       scaling: 'damage',
     },
@@ -554,9 +554,9 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
 
       functionsLike: {
         name: 'electrocute',
-        exceptThat: 'the damage increases to \\damageranknine.',
+        exceptThat: 'the damage increases to \\damagerankeight, and any \\glossterm{extra damage} is doubled.',
       },
-      rank: 7,
+      rank: 6,
       roles: ['burst'],
       scaling: 'damage',
     },
@@ -649,20 +649,20 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
         The strike \\glossterm{chains} once.
       `,
-      rank: 3,
-      roles: ['clear'],
+      rank: 2,
+      roles: ['burst'],
       scaling: 'accuracy',
     },
 
-    // TODO: too weak?
+    // TODO: too strong?
     {
       name: 'Mighty Arcing Blow',
       functionsLike: {
         name: 'arcing blow',
         exceptThat: 'the strike deals double damage.',
       },
-      rank: 6,
-      roles: ['clear'],
+      rank: 5,
+      roles: ['burst'],
       scaling: 'accuracy',
     },
 
