@@ -13,6 +13,7 @@ export type BoringCategory =
   | 'vanilla_damage'
   | 'redundant_design'
   | 'strictly_outclassed'
+  | 'insufficient_role'
   | 'role_saturation';
 
 export interface BoringFinding {
@@ -259,10 +260,27 @@ export function detectRoleSaturation(items: SpellItem[]): BoringFinding[] {
     }
 
     for (const [key, roleItems] of roleMap.entries()) {
-      if (roleItems.length >= 3) {
-        const [role, rankStr] = key.split(':');
-        const rank = parseInt(rankStr, 10);
-        const spellNames = roleItems.map((i) => i.spell.name).join(', ');
+      const [role, rankStr] = key.split(':');
+      const rank = parseInt(rankStr, 10);
+      const spellNames = roleItems.map((i) => i.spell.name).join(', ');
+      // Rank 1 attunements are a special case. We actually want a *minimum* value rather
+      // than a maximum.
+      if (role === 'attune' && rank === 1) {
+        if (roleItems.length <= 1) {
+          findings.push({
+            sphere: sphereName,
+            name: spellNames,
+            rank,
+            kind: 'spell',
+            category: 'insufficient_role',
+            score: 8,
+            reason: `Insufficient role "${role}" in ${sphereName} at Rank ${rankStr} (${roleItems.length} spells: ${spellNames})`,
+            details: "Not enough spells in the same sphere of the given role.",
+            recommendation: "Add more spells of the given role.",
+            spells: roleItems.map((i) => i.spell.name),
+          });
+        }
+      } else if (roleItems.length >= 3) {
         findings.push({
           sphere: sphereName,
           name: spellNames,
