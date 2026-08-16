@@ -221,7 +221,7 @@ export const photomancy: MysticSphere = {
       // All of that is a complicated way to say that this gets a trivial debuff for free.
       attack: {
         hit: `
-          \\damagerankfivelow, and any \\glossterm{extra damage} is doubled.
+          \\damagerankfivelow.
         `,
         injury: `
           The target is \\glossterm{briefly} \\dazzled, and it suffers consequences as if it had been struck by a beam of natural sunlight.
@@ -244,7 +244,7 @@ export const photomancy: MysticSphere = {
       // dr8l is 66, which is much lower, so this gets a major debuff.
       attack: {
         hit: `
-          \\damagerankeightlow, and any \\glossterm{extra damage} is tripled.
+          \\damagerankeightlow, and any \\glossterm{extra damage} is doubled.
         `,
         injury: `
           The target is \\glossterm{briefly} \\blinded, and it suffers consequences as if it had been struck by a beam of natural sunlight.

@@ -612,7 +612,7 @@ export const umbramancy: MysticSphere = {
       attack: {
         crit: 'Double damage, and the brief effect becomes a \\glossterm{condition}.',
         hit: `
-          \\damagerankfive, and any \\glossterm{extra damage} is doubled.
+          \\damagerankfive.
           In addition, the target is \\briefly \\frightened of you.
         `,
         targeting: `
@@ -631,7 +631,8 @@ export const umbramancy: MysticSphere = {
       name: 'Mighty Devouring Shadow',
       functionsLike: {
         name: 'devouring shadow',
-        exceptThat: 'the damage increases to \\damagerankeight.',
+        exceptThat:
+          'the damage increases to \\damagerankeight, and any \\glossterm{extra damage} is doubled.',
       },
       rank: 7,
       roles: ['burst'],

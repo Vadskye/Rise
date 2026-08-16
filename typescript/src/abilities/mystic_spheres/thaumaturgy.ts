@@ -69,11 +69,9 @@ export const thaumaturgy: MysticSphere = {
       name: 'Mighty Magic Missile',
 
       // -1dr for miss effect and cover/concealment effect.
-      // We cheat a bit to get this to have double extra damage; a normal rank 4 short
-      // range damage spell would have double extra damage.
       attack: {
         hit: `
-          \\damagerankfourlow, and any \\glossterm{extra damage} is doubled.
+          \\damagerankfourlow.
         `,
         halfOnMiss: true,
         targeting: `

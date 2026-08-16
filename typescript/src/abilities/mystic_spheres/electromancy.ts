@@ -174,7 +174,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       // Rank 0 area (mod +1)
       // Result: 4 + 1 = dr5
       attack: {
-        hit: `\\damagerankfive, and any \\glossterm{extra damage} is doubled.`,
+        hit: `\\damagerankfive.`,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 

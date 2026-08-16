@@ -246,7 +246,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
 
       attack: {
         hit: `
-          \\damagerankfive, and any \\glossterm{extra damage} is doubled.
+          \\damagerankfive.
         `,
         injury: `
           The target falls \\prone.

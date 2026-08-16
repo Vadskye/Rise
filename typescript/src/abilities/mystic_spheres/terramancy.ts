@@ -275,7 +275,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       // Result: 3 + 1 + 1 = dr5
       attack: {
         hit: `
-          \\damagerankfive, and any \\glossterm{extra damage} is doubled.
+          \\damagerankfive.
         `,
         targeting: `
           Make an attack vs. Armor and Reflex against one creature in \\shortrange.

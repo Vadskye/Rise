@@ -60,8 +60,7 @@ export const vivimancy: MysticSphere = {
       functionsLike: {
         name: 'lifesteal grasp',
         exceptThat: `
-          the damage increases to \\damagerankfive, and any \\glossterm{extra damage} is doubled.
-          In addition, the healing increases to \\hprankseven.
+          the damage increases to \\damagerankfive, and the healing increases to \\hprankseven.
         `,
       },
       rank: 4,

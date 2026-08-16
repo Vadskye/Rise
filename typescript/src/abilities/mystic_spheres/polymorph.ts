@@ -411,7 +411,7 @@ export const polymorph: MysticSphere = {
       functionsLike: {
         name: 'bleed',
         exceptThat:
-          'both damage instances increase to \\damagerankfive, and \\glossterm{extra damage} on the initial hit is doubled.',
+          'both damage instances increase to \\damagerankfive.',
       },
       rank: 4,
       roles: ['burn', 'execute'],
