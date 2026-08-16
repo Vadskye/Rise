@@ -298,27 +298,6 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     },
 
     {
-      name: 'Split Fireball',
-
-      // Rank 5 Spell
-      // Area: Two Tiny radii in Short range (R3, mod -1)
-      // Double defense is +1dr
-      // Result: 5 - 1 + 1 = dr4
-      attack: {
-        hit: `\\damagerankfive.`,
-        halfOnMiss: true,
-        targeting: `
-          Make an attack vs. Armor and Reflex against everything in each of two separate \\tinyarea radius areas within \\shortrange.
-          If the areas overlap, you still only make one attack against creatures in the overlapping area.
-        `,
-      },
-
-      rank: 5,
-      roles: ['clear'],
-      scaling: 'damage',
-    },
-
-    {
       name: 'Delayed Fireball',
 
       // +2dr for delay

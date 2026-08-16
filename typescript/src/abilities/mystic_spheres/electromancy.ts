@@ -369,17 +369,15 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
     {
       name: 'Chain Lightning',
 
-      // Rank 4 Spell
-      // Area: Short range, chain five times (R4, mod -2)
-      // Result: 4 - 2 = dr2
+      // -2dr for rank 5 area
       attack: {
-        hit: `\\damageranktwo.`,
+        hit: `\\damagerankthree.`,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
           This attack can \\glossterm{chain} five times.
         `,
       },
-      rank: 4,
+      rank: 5,
       roles: ['clear'],
       scaling: 'damage',
     },

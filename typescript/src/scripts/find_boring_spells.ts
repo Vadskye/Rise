@@ -131,6 +131,8 @@ export function findBoringSpells(
     if (
       isDamageAttack &&
       isSingleTarget &&
+      !profile.isAttunable &&
+      !profile.hasDoT &&
       hasNoConditions &&
       hasNoSpecialReqs &&
       hasNoAccCondition &&

@@ -5,11 +5,7 @@ export const toxicology: MysticSphere = {
   name: 'Toxicology',
   shortDescription: 'Create and manipulate poisons, acids, and fungi.',
   sources: ['arcane', 'nature'],
-  // The baseline for an injury poison is one rank higher than a standard "if no dr"
-  // spell, because you can keep attacking until they are eventually affectd.
-
   cantrips: [
-    // TODO: convert this to a ritual and replace it with a different cantrip
     {
       name: 'Intensify Poison',
 
@@ -143,7 +139,7 @@ export const toxicology: MysticSphere = {
         hit: `
           If the target is \\glossterm{injured}, it becomes \\glossterm{poisoned} by wyvern venom (see \\pcref{Poison}).
           The poison's accuracy is equal to your accuracy with this spell.
-          It deals \\damagerankthreelow immediately and with each escalation.
+          It deals \\damagerankfourlow immediately and with each escalation.
         `,
         targeting: `
           Make an attack vs. Fortitude with a \\plus1 accuracy bonus against one creature within \\medrange.

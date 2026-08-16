@@ -225,13 +225,13 @@ function injuryPoisons(): Tool[] {
       name: 'Poison, Wyvern Venom',
       rank: 3,
       attunement: 'Unrestricted',
-      short_description: 'Repeatedly deals $dr3l damage',
+      short_description: 'Repeatedly deals $dr4l damage',
       description: getPoisonDescription(
         'injury',
         'liquid',
         `
           The poison's accuracy is $consumableaccuracy+1.
-          It inflicts $dr3l damage immediately and with each escalation.
+          It inflicts $dr4l damage immediately and with each escalation.
         `,
       ),
     }),
