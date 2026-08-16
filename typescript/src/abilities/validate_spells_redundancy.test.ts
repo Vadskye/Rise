@@ -282,7 +282,7 @@ t.test('validateSpells: Redundancy & Inconsistency Checks', (t) => {
   });
 
   t.test(
-    'should count attunement as a balancing cost factor and not flag inconsistent damage',
+    'should not flag attunement spells vs standard spells as redundant',
     (t) => {
       const sphere1 = makeMockSphere('Electromancy', [
         makeMockSpell({
@@ -308,12 +308,9 @@ t.test('validateSpells: Redundancy & Inconsistency Checks', (t) => {
 
       const issues = validateSpells([sphere1]);
       const redundancy = issues.find((issue) => issue.type === 'redundancy');
-      t.ok(redundancy, 'Should find redundancy (duplicate designs)');
-
-      const inconsistency = issues.find((issue) => issue.type === 'inconsistent_damage');
       t.notOk(
-        inconsistency,
-        'Should not report inconsistent damage since Lightning Breath is an Attune spell',
+        redundancy,
+        'Should not report redundancy between attunement and standard spells',
       );
       t.end();
     },
@@ -497,6 +494,46 @@ t.test('validateSpells: Redundancy & Inconsistency Checks', (t) => {
     t.notOk(
       redundancy,
       'Enduring Fearful Awe and Intense Fearsome Aura should not be redundant due to condition differences (frightened vs panicked)',
+    );
+    t.end();
+  });
+
+  t.test('should not flag Kinetic Rebound (attunement) and Thorns (standard) as redundant', (t) => {
+    const telekinesis = makeMockSphere('Telekinesis', [
+      makeMockSpell({
+        name: 'Kinetic Rebound',
+        rank: 2,
+        roles: ['attune'],
+        type: 'Attune (deep)',
+        attack: {
+          hit: '\\damagerankone.',
+          targeting:
+            'Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-\\weapontag{Long} weapon, make a \\glossterm{reactive attack} vs. Brawn against them.',
+        },
+      }),
+    ]);
+
+    const verdamancy = makeMockSphere('Verdamancy', [
+      makeMockSpell({
+        name: 'Thorns',
+        rank: 2,
+        roles: ['focus'],
+        attack: {
+          hit: '\\damageranktwo.',
+          targeting: `
+            You are \\briefly covered in thorns.
+            The thorns grant you \\glossterm{cover} from all attacks.
+            In addition, whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-\\weapontag{Long} weapon, make a \\glossterm{reactive attack} vs. Armor against them.
+          `,
+        },
+      }),
+    ]);
+
+    const issues = validateSpells([telekinesis, verdamancy]);
+    const redundancy = issues.find((issue) => issue.type === 'redundancy');
+    t.notOk(
+      redundancy,
+      'Kinetic Rebound and Thorns should not be redundant due to attunement vs standard duration',
     );
     t.end();
   });

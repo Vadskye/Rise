@@ -78,6 +78,20 @@ function getSpellDifferences(p1: SpellProfile, p2: SpellProfile): Difference[] {
       p2Value: p2.isNonAction ? 'non-action' : 'standard action',
     });
   }
+  if (p1.isAttunable !== p2.isAttunable) {
+    diffs.push({
+      field: 'attunement',
+      p1Value: p1.isAttunable ? 'attunement' : 'standard',
+      p2Value: p2.isAttunable ? 'attunement' : 'standard',
+    });
+  }
+  if (p1.isSustainedMinor !== p2.isSustainedMinor) {
+    diffs.push({
+      field: 'minor sustain',
+      p1Value: p1.isSustainedMinor ? 'minor sustain' : 'standard',
+      p2Value: p2.isSustainedMinor ? 'minor sustain' : 'standard',
+    });
+  }
   if (p1.range !== p2.range) {
     diffs.push({ field: 'range', p1Value: p1.range, p2Value: p2.range });
   }
@@ -466,11 +480,6 @@ function checkSpellPair(
       message: `Spells "${p1.name}" (${p1.sphereName}) and "${p2.name}" (${p2.sphereName}) are virtually identical: both are Rank ${p1.rank}, range: ${p1.range}, defense count: ${p1.defenses.length}, double action: ${p1.isDoubleAction}, applying conditions: [${p1.appliedEffects.join(', ')}].`,
       spells: [p1.name, p2.name],
     });
-
-    // We want to flag attunement and non-attunement spells as redundant above, but they are significantly different in other ways, so we don't need the subsequent checks.
-    if (p1.type !== p2.type) {
-      return issues;
-    }
 
     // Now check for damage vs cost inconsistencies:
     if (
