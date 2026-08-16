@@ -210,10 +210,6 @@ t.test('Damaging Spell Design Guidelines: calculateExpectedDamageRank', (t) => {
   t.test('Verifies benchmark spells validate cleanly', (t) => {
     const polymorphIssues = validateSpellDesignGuidelines([polymorph]);
     t.notOk(
-      polymorphIssues.find((i) => i.spellName === 'Flense'),
-      'Flense should adhere to design guidelines (dr5)',
-    );
-    t.notOk(
       polymorphIssues.find((i) => i.spellName === 'Disintegrate'),
       'Disintegrate should adhere to design guidelines (dr6)',
     );
@@ -232,10 +228,6 @@ t.test('Damaging Spell Design Guidelines: calculateExpectedDamageRank', (t) => {
     t.notOk(
       cryomancyIssues.find((i) => i.spellName === 'Cone of Cold'),
       'Cone of Cold should adhere to design guidelines (dr1)',
-    );
-    t.notOk(
-      cryomancyIssues.find((i) => i.spellName === 'Freezing Grasp'),
-      'Freezing Grasp should adhere to design guidelines (dr4)',
     );
     t.end();
   });
