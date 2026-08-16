@@ -32,6 +32,7 @@ function applyRogueBase(c: Creature, level: number) {
     strength_at_creation: 0,
     willpower_at_creation: 0,
   });
+  c.setCharacterAttributeScaling('dexterity', 'perception');
   c.setEquippedArmorName({ bodyArmor: 'buff leather' });
   c.setEquippedArmorEffects({ bodyArmor: 'buff leather' });
   c.addWeapon('smallswords');

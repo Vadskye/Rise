@@ -25,13 +25,14 @@ function applyDruidBase(c: Creature, level: number) {
     size: 'medium',
   });
   c.setProperties({
-    willpower_at_creation: 3,
-    perception_at_creation: 2,
+    perception_at_creation: 3,
+    willpower_at_creation: 2,
     constitution_at_creation: 2,
-    strength_at_creation: 1,
-    dexterity_at_creation: 0,
+    dexterity_at_creation: 1,
+    strength_at_creation: 0,
     intelligence_at_creation: 0,
   });
+  c.setCharacterAttributeScaling('perception', 'willpower');
   c.setEquippedArmorName({ bodyArmor: 'buff leather', shield: 'standard shield' });
   c.setEquippedArmorEffects({ bodyArmor: 'buff leather', shield: 'standard shield' });
   c.addWeapon('sickle');

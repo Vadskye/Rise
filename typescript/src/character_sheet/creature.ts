@@ -1034,6 +1034,17 @@ export class Creature implements CreaturePropertyMap {
     });
   }
 
+  setCharacterAttributeScaling(attribute1: RiseAttribute, attribute2: RiseAttribute) {
+    const bonus = Math.floor((this.level + 3) / 6);
+
+    if (bonus) {
+      this.setProperties({
+        [`${attribute1}_level_scaling`]: bonus,
+        [`${attribute2}_level_scaling`]: bonus,
+      });
+    }
+  }
+
   // These are the results of a Knowledge check about the creature, not the creature's own
   // trained knowledges.
   setKnowledgeResults(knowledgeResults: KnowledgeResultsConfig) {

@@ -32,6 +32,7 @@ function applyBarbarianBase(c: Creature, level: number) {
     intelligence_at_creation: 0,
     willpower_at_creation: 0,
   });
+  c.setCharacterAttributeScaling('strength', 'constitution');
   c.setEquippedArmorName({ bodyArmor: 'scale' });
   c.setEquippedArmorEffects({ bodyArmor: 'scale' });
   c.addWeapon('greataxe');

@@ -26,12 +26,13 @@ function applyFighterBase(c: Creature, level: number) {
   });
   c.setProperties({
     strength_at_creation: 3,
-    dexterity_at_creation: 2,
     constitution_at_creation: 2,
+    dexterity_at_creation: 2,
     perception_at_creation: 1,
     intelligence_at_creation: 0,
     willpower_at_creation: 0,
   });
+  c.setCharacterAttributeScaling('strength', 'constitution');
   c.setEquippedArmorName({ bodyArmor: 'breastplate', shield: 'standard shield' });
   c.setEquippedArmorEffects({ bodyArmor: 'breastplate', shield: 'standard shield' });
   c.addWeapon('broadsword');

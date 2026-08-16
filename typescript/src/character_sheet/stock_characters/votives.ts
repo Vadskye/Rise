@@ -25,13 +25,14 @@ function applyVotiveBase(c: Creature, level: number) {
     size: 'medium',
   });
   c.setProperties({
-    strength_at_creation: 3,
-    willpower_at_creation: 2,
+    willpower_at_creation: 3,
+    dexterity_at_creation: 2,
     perception_at_creation: 2,
     constitution_at_creation: 1,
-    dexterity_at_creation: 0,
+    strength_at_creation: 0,
     intelligence_at_creation: 0,
   });
+  c.setCharacterAttributeScaling('willpower', 'dexterity');
   c.setEquippedArmorName({ bodyArmor: 'scale', shield: 'standard shield' });
   c.setEquippedArmorEffects({ bodyArmor: 'scale', shield: 'standard shield' });
   c.addWeapon('broadsword');

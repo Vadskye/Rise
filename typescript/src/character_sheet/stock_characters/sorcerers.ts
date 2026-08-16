@@ -32,6 +32,7 @@ function applySorcererBase(c: Creature, level: number) {
     strength_at_creation: 0,
     intelligence_at_creation: 0,
   });
+  c.setCharacterAttributeScaling('willpower', 'constitution');
   c.setEquippedArmorName({ bodyArmor: 'mage armor' });
   c.setEquippedArmorEffects({ bodyArmor: 'mage armor' });
 

@@ -32,6 +32,7 @@ function applyClericBase(c: Creature, level: number) {
     dexterity_at_creation: 0,
     intelligence_at_creation: 0,
   });
+  c.setCharacterAttributeScaling('willpower', 'perception');
   c.setEquippedArmorName({ bodyArmor: 'scale', shield: 'standard shield' });
   c.setEquippedArmorEffects({ bodyArmor: 'scale', shield: 'standard shield' });
   c.addWeapon('battleaxe');

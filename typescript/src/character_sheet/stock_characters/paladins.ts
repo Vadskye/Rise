@@ -32,6 +32,7 @@ function applyPaladinBase(c: Creature, level: number) {
     dexterity_at_creation: 0,
     intelligence_at_creation: 0,
   });
+  c.setCharacterAttributeScaling('strength', 'willpower');
   // TODO: add smite
   c.setEquippedArmorName({ bodyArmor: 'breastplate' });
   c.setEquippedArmorEffects({ bodyArmor: 'breastplate' });

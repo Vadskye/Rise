@@ -26,12 +26,13 @@ function applyMonkBase(c: Creature, level: number) {
   });
   c.setProperties({
     dexterity_at_creation: 3,
-    strength_at_creation: 2,
     willpower_at_creation: 2,
+    perception_at_creation: 2,
     constitution_at_creation: 1,
     intelligence_at_creation: 0,
-    perception_at_creation: 0,
+    strength_at_creation: 0,
   });
+  c.setCharacterAttributeScaling('dexterity', 'willpower');
   c.setEquippedArmorName({ bodyArmor: 'ki barrier' });
   c.setEquippedArmorEffects({ bodyArmor: 'ki barrier' });
   c.addWeaponMult('fists');
