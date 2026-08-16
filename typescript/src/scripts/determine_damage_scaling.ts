@@ -203,6 +203,8 @@ export function runDamageScalingAnalysis(
 
   if (options.sortByAltRank) {
     results.sort((a, b) => a.rankY - b.rankY || a.level - b.level || a.y - b.y);
+  } else {
+    results.sort((a, b) => a.level - b.level || a.rankY - b.rankY);
   }
 
   return results;
