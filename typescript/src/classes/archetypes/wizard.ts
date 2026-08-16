@@ -467,7 +467,7 @@ export function schoolSpecialist(): RankAbility[] {
         If you specialize in this school, you gain a \\plus2 bonus to your \\glossterm{magical power}.
 
         \\subcf{Illusion} The \\sphere{enchantment}, \\sphere{photomancy}, and \\sphere{umbramancy} mystic spheres.
-        If you specialize in this school, you gain a \\plus1 \\glossterm{accuracy} bonus.
+        If you specialize in this school, you gain a \\plus1 \\glossterm{accuracy} bonus, and you can add half your Perception to your \\glossterm{magical power}.
 
         \\subcf{Necromancy} The \\sphere{revelation} and \\sphere{vivimancy} mystic spheres.
         If you specialize in this school, you gain a \\plus3 bonus to your \\glossterm{durability}.
@@ -502,9 +502,9 @@ export function schoolSpecialist(): RankAbility[] {
 
         \\subcf{Illusion} You are immune to being \\dazzled and \\blinded.
 
-        \\subcf{Transmutation} You gain a \\plus1 bonus to \\glossterm{vital rolls}.
-
         \\subcf{Necromancy} Whenever you \\glossterm{injure} a creature, you \\glossterm{briefly} become \\resistant to their attacks.
+
+        \\subcf{Transmutation} You gain a \\plus1 bonus to \\glossterm{vital rolls}.
         }
       `,
     },
