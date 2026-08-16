@@ -236,11 +236,11 @@ export const telekinesis: MysticSphere = {
           \\damagerankfour.
         `,
         injury: `
-          If the target is Large or smaller, you \\glossterm{fling} it up to 15 feet away from you.
+          If the target is Large or smaller, you \\glossterm{fling} it 5 feet away from you.
         `,
         halfOnMiss: true,
         targeting: `
-          Make an attack vs. Reflex and Brawn against everything in a \\smallarea cone from you.
+          Make an attack vs. Brawn and Reflex against everything in a \\smallarea cone from you.
         `,
       },
       rank: 2,
@@ -251,25 +251,19 @@ export const telekinesis: MysticSphere = {
     {
       name: 'Mighty Blastwave',
 
-      // Rank 4 Spell
-      // Area: Small cone from self (R0, mod +1)
-      // Effect: Debuff (-1), Double defense (+1)
-      // Result: 4 + 1 + 1 = dr6
-      // (We don't calculate the size limitation into fling officially, but removing
-      // the limitation here has some value added.)
       attack: {
         hit: `
-          \\damageranksix.
+          \\damagerankseven.
         `,
         injury: `
-          You \\glossterm{fling} the target up to 15 feet away from you.
+          If the target is Huge or smaller, you \\glossterm{fling} it 15 feet away from you.
         `,
         halfOnMiss: true,
         targeting: `
-          Make an attack vs. Reflex and Brawn against everything in a \\smallarea cone from you.
+          Make an attack vs. Brawn and Reflex against everything in a \\smallarea cone from you.
         `,
       },
-      rank: 4,
+      rank: 5,
       roles: ['clear', 'kite'],
       scaling: 'damage',
     },
@@ -288,12 +282,12 @@ export const telekinesis: MysticSphere = {
           \\damagerankfive.
         `,
         injury: `
-          You \\glossterm{fling} the target up to 15 feet away from you.
+          You \\glossterm{fling} the target 15 feet away from you.
           This fling distance is doubled if the target is Medium or smaller.
         `,
         halfOnMiss: true,
         targeting: `
-          Make an attack vs. Reflex and Brawn against everything in a \\largearea cone from you.
+          Make an attack vs. Brawn and Reflex against everything in a \\largearea cone from you.
         `,
       },
       rank: 6,

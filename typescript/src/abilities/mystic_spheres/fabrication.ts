@@ -1045,7 +1045,7 @@ export const fabrication: MysticSphere = {
           \\damageranksix, and any \\glossterm{extra damage} is doubled.
         `,
         targeting: `
-          Make an attack vs. Reflex and Brawn against one creature within \\shortrange.
+          Make an attack vs. Brawn and Reflex against one creature within \\shortrange.
         `,
       },
       roles: ['burst'],
@@ -1063,7 +1063,7 @@ export const fabrication: MysticSphere = {
           \\damageranknine, and any \\glossterm{extra damage} is doubled.
         `,
         targeting: `
-          Make an attack vs. Reflex and Brawn against one creature within \\shortrange.
+          Make an attack vs. Brawn and Reflex against one creature within \\shortrange.
         `,
       },
       roles: ['burst'],

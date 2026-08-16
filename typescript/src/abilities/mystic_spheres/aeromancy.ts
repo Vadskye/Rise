@@ -697,7 +697,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       name: 'Windblast',
 
       // Rank 1 Spell
-      // Area: Medium cone from self (R2, mod -1)
+      // Area: R2 (-1dr)
       // Bonus: Double defense (mod +1)
       // Result: 1 - 1 + 1 = dr1
       attack: {
@@ -705,8 +705,11 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
           \\damagerankone.
         `,
         halfOnMiss: true,
+        injury: `
+          If the target is Large or smaller, you \\glossterm{fling} it 5 feet away from you.
+        `,
         targeting: `
-          Make an attack vs. Brawn and Reflex against everything in a \\medarea cone from you.
+          Make an attack vs. Brawn and Reflex against everything in a \\largearealong, 5 ft.\\ wide line from you.
         `,
       },
       // narrative: '',
@@ -719,7 +722,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       name: 'Mighty Windblast',
 
       // Rank 4 Spell
-      // Area: Medium cone from self (R2, mod -1)
+      // Area: R2 (-1dr)
       // Bonus: Double defense (mod +1)
       // Result: 4 - 1 + 1 = dr4
       attack: {
@@ -728,7 +731,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         `,
         halfOnMiss: true,
         targeting: `
-          Make an attack vs. Brawn and Reflex against everything in a \\medarea cone from you.
+          Make an attack vs. Brawn and Reflex against everything in a \\largearealong, 5 ft.\\ wide line from you.
         `,
       },
       // narrative: '',
@@ -742,7 +745,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       name: 'Massive Windblast',
 
       // Rank 6 Spell
-      // Area: Large cone from self (R4, mod -2)
+      // Area: Huge line (R4, mod -2)
       // Bonus: Double defense (mod +1)
       // Result: 6 - 2 + 1 = dr5
       attack: {
@@ -750,8 +753,13 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
           \\damagerankfive.
         `,
         halfOnMiss: true,
+        // Unlike Massive Blastwave, no size-based doubling because this goes beyond 60',
+        // which reduces debuff power
+        injury: `
+          You \\glossterm{fling} the target 15 feet away from you.
+        `,
         targeting: `
-          Make an attack vs. Brawn and Reflex against everything in a \\largearea cone from you.
+          Make an attack vs. Brawn and Reflex against everything in a \\hugearealong, 10 ft.\\ wide line from you.
         `,
       },
       // narrative: '',

@@ -413,7 +413,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         halfOnMiss: true,
         targeting: `
           The earth shakes in a \\medarea radius \\glossterm{zone} from your location.
-          Make an attack vs. Reflex and Brawn against everything in the area that is \\glossterm{grounded}.
+          Make an attack vs. Brawn and Reflex against everything in the area that is \\glossterm{grounded}.
           At the start of your next turn, this effect \\glossterm{repeats} in the same area.
         `,
       },
@@ -437,7 +437,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         halfOnMiss: true,
         targeting: `
           The earth shakes in a \\largearea radius \\glossterm{zone} from your location.
-          Make an attack vs. Reflex and Brawn against everything in the area that is \\glossterm{grounded}.
+          Make an attack vs. Brawn and Reflex against everything in the area that is \\glossterm{grounded}.
           At the start of your next turn, this effect \\glossterm{repeats} in the same area.
         `,
       },
@@ -472,7 +472,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         `,
         halfOnMiss: true,
         targeting: `
-          Make an attack vs. Reflex and Brawn against all Large or smaller \\glossterm{grounded} \\glossterm{enemies} in a \\smallarea radius in \\shortrange.
+          Make an attack vs. Brawn and Reflex against all Large or smaller \\glossterm{grounded} \\glossterm{enemies} in a \\smallarea radius in \\shortrange.
         `,
       },
       roles: ['maim', 'burst'],

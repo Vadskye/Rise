@@ -332,7 +332,7 @@ export const toxicology: MysticSphere = {
           Both damage instances are doubled if the target is an object that is not \\glossterm{metallic}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against something within \\shortrange.
+          Make an attack vs. Fortitude and Reflex against something within \\medrange.
         `,
       },
       rank: 2,
@@ -353,7 +353,7 @@ export const toxicology: MysticSphere = {
           Any \\glossterm{extra damage} applies to both the initial damage and the corrosion.
         `,
         targeting: `
-          Make an attack vs. Fortitude against something within \\shortrange.
+          Make an attack vs. Fortitude and Reflex against something within \\medrange.
         `,
       },
       rank: 5,

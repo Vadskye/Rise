@@ -175,7 +175,7 @@ t.test('validateSpells: Strictly Superior Spells', (t) => {
           attack: {
             hit: '\\damageranksix.',
             targeting:
-              'Make an attack vs. Reflex and Brawn against one creature within \\shortrange.',
+              'Make an attack vs. Brawn and Reflex against one creature within \\shortrange.',
           },
         }),
       ]);
@@ -471,10 +471,10 @@ t.test('validateSpells: Strictly Superior Spells', (t) => {
           attack: {
             hit: '\\damagerankfour.',
             injury:
-              'You \\glossterm{fling} the target up to 15 feet away from you. This fling distance is doubled if the target is Medium or smaller.',
+              'You \\glossterm{fling} the target 15 feet away from you. This fling distance is doubled if the target is Medium or smaller.',
             halfOnMiss: true,
             targeting:
-              'Make an attack vs. Reflex and Brawn against everything in a \\largearea cone from you.',
+              'Make an attack vs. Brawn and Reflex against everything in a \\largearea cone from you.',
           },
         }),
       ]);
