@@ -317,11 +317,11 @@ export const enchantment: MysticSphere = {
           After it makes this attack against itself, it becomes \\buff{immune} to this effect until it finishes a \\glossterm{short rest}.
         `,
         targeting: `
-          Make an attack vs. Mental against up to three creatures within \\medrange.
+          Make an attack vs. Mental against up to three creatures within \\shortrange.
         `,
       },
       roles: ['maim', 'stasis'],
-      rank: 7,
+      rank: 6,
       scaling: 'accuracy',
       tags: ['Compulsion'],
     },

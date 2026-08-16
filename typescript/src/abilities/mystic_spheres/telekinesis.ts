@@ -626,71 +626,56 @@ export const telekinesis: MysticSphere = {
     {
       name: 'Compression',
 
-      // Rank 2 Spell
-      // Range: Short (mod +1)
-      // Effect: DoT (-2)
-      // Result: 2 + 1 - 2 = dr1
       attack: {
-        crit: MULTIHIT_CRIT,
-        hit: `
-          \\damagerankone.
-          The target takes \\damagerankone again at the end of its next turn.
+        hit: `\\damagerankthree.`,
+        injury: `
+          The target is \\briefly \\sickened.
         `,
         targeting: `
           Make an attack vs. Brawn against something within \\shortrange.
         `,
       },
       rank: 2,
-      roles: ['burn'],
+      roles: ['burst', 'maim'],
       scaling: 'damage',
     },
 
     {
       name: 'Mighty Compression',
 
-      // Rank 5 Spell
-      // Range: Short (mod +1)
-      // Effect: DoT (-2)
-      // Result: 5 + 1 - 2 = dr4
       attack: {
-        crit: MULTIHIT_CRIT,
-        hit: `
-          \\damagerankfour.
-          The target takes \\damagerankfour again at the end of its next turn.
-          Any \\glossterm{extra damage} also applies to this delayed damage.
+        hit: `\\damageranksix, and any \\glossterm{extra damage} is doubled.`,
+        injury: `
+          The target is \\briefly \\sickened.
         `,
         targeting: `
           Make an attack vs. Brawn against something within \\shortrange.
         `,
       },
       rank: 5,
-      roles: ['burn'],
+      roles: ['burst', 'maim'],
       scaling: 'damage',
     },
 
     {
       name: 'Implosion',
 
-      // Rank 7 Spell
-      // Range: Short (mod +1)
-      // Effect: DoT (-2)
-      // Result: 7 + 1 - 2 = dr6
       attack: {
-        crit: MULTIHIT_CRIT,
         hit: `
-          \\damageranksix.
-          The target takes \\damageranksix again at the end of its next turn.
-          Any \\glossterm{extra damage} also applies to this delayed damage.
+          \\damagerankeight, and any \\glossterm{extra damage} is doubled.
 
           If the target takes a \\glossterm{vital wound} from either instance of damage that leaves it unconscious, it is crushed into a small sphere and immediately dies.
           The sphere left behind is three size categories smaller than the original creature.
+        `,
+        injury: `
+          The target is \\sickened as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Brawn against something within \\shortrange.
         `,
       },
       rank: 7,
-      roles: ['burn'],
+      roles: ['burst', 'maim'],
       scaling: 'damage',
     },
 
@@ -774,47 +759,6 @@ export const telekinesis: MysticSphere = {
       rank: 4,
       roles: ['attune'],
       type: 'Attune',
-    },
-
-    // brief injury daze is 4d. Limited scope drops to rank 3.
-    {
-      name: 'Kinetic Cudgel',
-
-      // Rank 3 Spell
-      // Range: Short (+1)
-      // Result: 3 + 1 = dr4
-      attack: {
-        hit: `\\damagerankfour.`,
-        injury: 'The target is \\briefly \\sickened.',
-        targeting: `
-          Make an attack vs. Brawn against something within \\shortrange.
-        `,
-      },
-      rank: 3,
-      roles: ['burst', 'maim'],
-      scaling: 'damage',
-    },
-
-    // Brief daze or daze as a condition is 1.8 EA, so rank 8 normally.
-    // Limited scope drops to rank 7.
-    {
-      name: 'Mighty Kinetic Cudgel',
-
-      // Rank 7 Spell
-      // Range: Short (+1)
-      // Result: 7 + 1 = dr8
-      attack: {
-        hit: `
-          \\damagerankeight, and any \\glossterm{extra damage} is doubled.
-        `,
-        injury: 'The target is \\sickened as a \\glossterm{condition}.',
-        targeting: `
-          Make an attack vs. Brawn against something within \\shortrange.
-        `,
-      },
-      rank: 7,
-      roles: ['burst', 'maim'],
-      scaling: 'damage',
     },
   ],
 };

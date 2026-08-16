@@ -5,11 +5,7 @@ export const toxicology: MysticSphere = {
   name: 'Toxicology',
   shortDescription: 'Create and manipulate poisons, acids, and fungi.',
   sources: ['arcane', 'nature'],
-  // The baseline for an injury poison is one rank higher than a standard "if no dr"
-  // spell, because you can keep attacking until they are eventually affectd.
-
   cantrips: [
-    // TODO: convert this to a ritual and replace it with a different cantrip
     {
       name: 'Intensify Poison',
 
@@ -143,7 +139,7 @@ export const toxicology: MysticSphere = {
         hit: `
           If the target is \\glossterm{injured}, it becomes \\glossterm{poisoned} by wyvern venom (see \\pcref{Poison}).
           The poison's accuracy is equal to your accuracy with this spell.
-          It deals \\damagerankthreelow immediately and with each escalation.
+          It deals \\damagerankfourlow immediately and with each escalation.
         `,
         targeting: `
           Make an attack vs. Fortitude with a \\plus1 accuracy bonus against one creature within \\medrange.
@@ -451,10 +447,14 @@ export const toxicology: MysticSphere = {
     {
       name: 'Massive Acid Breath',
 
+      // Target is +46% damage from a rank 6 attunement.
+      // Normal large cone would be r4 damage = 26. With +20% from delayed, 31 damage.
+      // Total target is 45 damage.
+      // Double dr4 is 22 * 2 = 44.
       functionsLike: {
         name: 'acid breath',
         exceptThat: `
-          the damage increases to \\damagerankfive, and the area increases to a \\largearea cone from you.
+          both damage values increase to \\damagerankfour, and the area increases to a \\largearea cone from you.
         `,
       },
       rank: 6,
