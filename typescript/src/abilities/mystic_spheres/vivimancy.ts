@@ -743,8 +743,9 @@ export const vivimancy: MysticSphere = {
 
       cost: BARRIER_COOLDOWN,
       attack: {
-        hit: `\\damageranktwo.`,
+        hit: `\\damagerankthree.`,
         halfOnMiss: true,
+        injury: 'The target is \\briefly \\sickened.',
         targeting: `
           You create a \\medarealong \\glossterm{wall} within \\medrange.
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Fortitude against any creature sharing space with it.
@@ -753,7 +754,7 @@ export const vivimancy: MysticSphere = {
           You can only attack a given target with this spell once per turn.
         `,
       },
-      rank: 2,
+      rank: 3,
       roles: ['hazard'],
       scaling: 'damage',
       tags: ['Barrier', 'Life'],
@@ -766,12 +767,12 @@ export const vivimancy: MysticSphere = {
       cost: BARRIER_COOLDOWN,
       functionsLike: {
         exceptThat: `
-          the damage increases to \\damagerankfive.
+          the damage increases to \\damageranksix.
           In addition, the area increases to a \\largearealong \\glossterm{wall}.
         `,
         name: 'enervating wall',
       },
-      rank: 5,
+      rank: 6,
       roles: ['hazard'],
       scaling: 'damage',
       tags: ['Barrier'],
