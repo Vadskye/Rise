@@ -1,12 +1,6 @@
 import { MysticSphere } from '.';
 import { add_tag_to_sphere } from './add_tag';
-import {
-  BARRIER_COOLDOWN,
-  BRIEF_PRONE,
-  CRIT_BECOMES_CONDITION,
-  DAMAGING_INJURY_CRIT,
-  INJURY_CRIT,
-} from '../constants';
+import { BARRIER_COOLDOWN, BRIEF_PRONE, CRIT_BECOMES_CONDITION, INJURY_CRIT } from '../constants';
 
 const WATER_ACCURACY_BONUS =
   'You gain a +2 accuracy bonus with the attack if there is a Large or larger body of water within \\shortrange.';
@@ -672,12 +666,10 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
 
       // Rank 2 Spell
       // Range: Melee (mod +2)
-      // Effect: Debuff (Fling 15') (mod -1)
-      // Result: 2 + 2 - 1 = dr3
+      // Result: 2 + 2 = dr4
       attack: {
-        crit: DAMAGING_INJURY_CRIT,
         hit: `
-          \\damagerankthree.
+          \\damagerankfour.
         `,
         injury: `
           If the target is Large or smaller, you \\glossterm{fling} it up to 15 feet horizontally (see \\pcref{Fling Effects}).
@@ -700,12 +692,11 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
 
       // Rank 6 Spell
       // Range: Melee (mod +2)
-      // Effect: Debuff (Fling 30') (mod -1)
-      // Result: 6 + 2 - 1 = dr7
+      // Result: 6 + 2 = dr8
       functionsLike: {
         name: 'aquajet grasp',
         exceptThat:
-          'the damage increases to \\damagerankseven, and the fling distance increases to 30 feet.',
+          'the damage increases to \\damagerankeight, and the fling distance increases to 30 feet.',
       },
       // narrative: '',
       rank: 6,

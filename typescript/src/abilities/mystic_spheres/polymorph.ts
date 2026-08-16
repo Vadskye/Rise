@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { DAMAGING_INJURY_CRIT, INJURY_CRIT, MULTIHIT_CRIT } from '../constants';
+import { INJURY_CRIT, MULTIHIT_CRIT } from '../constants';
 
 // This is a very broad sphere, but it is relatively weak with AOE.
 export const polymorph: MysticSphere = {
@@ -449,7 +449,6 @@ export const polymorph: MysticSphere = {
       // Ranged precast slow is 2.5 EA, or 3.5 EA with damage, or 1.7 EA with
       // damage, which is r3, or r2 at close range.
       attack: {
-        crit: DAMAGING_INJURY_CRIT,
         hit: `
           \\damagerankfour, and the target's body deteriorates as a \\glossterm{condition}.
           While it is \\glossterm{injured}, it is \\slowed.
@@ -470,7 +469,6 @@ export const polymorph: MysticSphere = {
 
       // This can get +1.1 EA over regular cripple, which we fudge to get dazed
       attack: {
-        crit: DAMAGING_INJURY_CRIT,
         hit: `
           \\damageranknine, and any \\glossterm{extra damage} is doubled.
           In addition, the target's body deteriorates as a \\glossterm{condition}.

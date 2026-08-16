@@ -1,6 +1,6 @@
 import { MysticSphere } from '.';
 import { add_tag_to_sphere } from './add_tag';
-import { CRIT_BECOMES_CONDITION, DAMAGING_INJURY_CRIT, INJURY_CRIT } from '../constants';
+import { CRIT_BECOMES_CONDITION, INJURY_CRIT } from '../constants';
 
 const OPTIONAL_ICE_CRYSTAL = 'One optional \\glossterm{ice crystal}.';
 const ICE_CRYSTAL_AND_BARRIER = `
@@ -46,12 +46,10 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       // EA, so rank 4, or rank 2 in melee.
       // Rank 3 Spell
       // Range: Melee (mod +2)
-      // Mod: Debuff (-1)
-      // Result: 3 + 2 - 1 = dr4
+      // Result: 3 + 2 = dr5
       attack: {
-        crit: DAMAGING_INJURY_CRIT,
         hit: `
-          \\damagerankfour, and you gain an \\glossterm{ice crystal}.
+          \\damagerankfive, and you gain an \\glossterm{ice crystal}.
         `,
         injury: `
           The target slowly begins freezing as a \\glossterm{condition}.
@@ -73,12 +71,10 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
 
       // Rank 6 Spell
       // Range: Melee (mod +2)
-      // Mod: Debuff (-1)
-      // Result: 6 + 2 - 1 = dr7
+      // Result: 6 + 2 = dr8
       attack: {
-        crit: DAMAGING_INJURY_CRIT,
         hit: `
-          \\damagerankseven, and any \\glossterm{extra damage} is doubled.
+          \\damagerankeight, and any \\glossterm{extra damage} is doubled.
           You gain an \\glossterm{ice crystal}.
         `,
         injury: `
@@ -374,20 +370,22 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
     {
       name: 'Frozen Lattice',
 
-      // -1dr for area, +1dr for double defense.
-      // Some combination of the injury effect and the strong ice crystal spender makes this r5?
+      // -1dr for area, +1dr for double defense, -2dr for difficult terrain + cover + repeat effect.
       cost: OPTIONAL_ICE_CRYSTAL,
       attack: {
         hit: `
-          \\damagerankfour.
+          \\damagerankthree.
         `,
         halfOnMiss: true,
         injury: `
           The target is \\briefly \\slowed.
         `,
         targeting: `
-          Choose a \\smallarea radius within \\shortrange.
-          Make an attack vs. Reflex and Fortitude against everything in the area.
+          You \\briefly create a \\smallarea radius \\glossterm{zone} within \\shortrange.
+          A thin lattice of ice fills the area, providing \\glossterm{cover} to everything in the area and making it \\glossterm{difficult terrain}.
+          You immediately make an attack vs. Reflex and Fortitude against everything in the area.
+          This attack ignores the cover provided by this spell.
+
           If you spent an \\glossterm{ice crystal}, this effect \\glossterm{repeats} in the same area at the start of your next turn.
         `,
       },
@@ -716,7 +714,6 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       name: 'Bonechill',
 
       attack: {
-        crit: DAMAGING_INJURY_CRIT,
         hit: `
           \\damagerankfour.
           In addition, the target is \\briefly \\slowed, and you gain an \\glossterm{ice crystal}.
@@ -871,8 +868,8 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
     {
       name: 'Freezing Pulse',
 
+      // -1dr for on-hit debuff
       attack: {
-        crit: DAMAGING_INJURY_CRIT,
         hit: `
           \\damagerankfour, and the target is \\briefly \\slowed.
         `,

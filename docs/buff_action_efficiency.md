@@ -13,8 +13,8 @@ By EA:
   Accuracy (+4)  & 0.6  & 0.9  & 1.5     & 2.1 \\
   Braced         & 0.5  & 0.8  & 1.2     & 1.6 \\
   Cover          & 0.5  & 0.8  & 1.2     & 1.6 \\
-  Empowered      & 0.4  & 0.6  & 1.0     & 1.4 \\
-  Extra damage   & 0.4  & 0.6  & 1.0     & 1.4 \\
+  Empowered      & 0.3  & 0.5  & 0.7     & 1.0 \\
+  Extra damage   & 0.3  & 0.5  & 0.7     & 1.0 \\
   Focused        & 0.4  & 0.6  & 1.0     & 1.4 \\
   Fortified      & 0.3  & 0.5  & 0.7     & 1.0 \\
   Resistant     & 1.3  & no   & inf     & inf \\
@@ -90,13 +90,13 @@ Applies 75% of the time
 
 Applies 100% of the time
 
-### Empowered: 0.4
+### Empowered: 0.3
 
-At rank 3+, Empowered is roughly 40% more damage, averaging arbitrarily between strikes and spells, which have different dice scaling. However, it is not very effective at ranks 1 or 2. In general, abilities that apply empowered as a buff should be rank 3 or higher, or at least have strong scaling so they remain relevant at higher ranks.
+At rank 3+, Empowered is roughly 30% more damage, averaging arbitrarily between strikes and spells, which have different dice scaling. However, it is not very effective at ranks 1 or 2. In general, abilities that apply empowered as a buff should be rank 3 or higher, or at least have strong scaling so they remain relevant at higher ranks.
 
 ### Enraged: -0.2
 
-### Extra damage: 0.4
+### Extra damage: 0.3
 
 Extra damage has to be scaled assuming roughly double damage at r5 and triple damage at r7.
 That makes a smooth curve quite difficult, but these values should generally provided about 25% more damage, with high variance:

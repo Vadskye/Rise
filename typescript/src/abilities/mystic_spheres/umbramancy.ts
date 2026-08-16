@@ -1,11 +1,5 @@
 import { MysticSphere } from '.';
-import {
-  BARRIER_COOLDOWN,
-  CRIT_BECOMES_CONDITION,
-  DAMAGING_INJURY_CRIT,
-  INJURY_CRIT,
-  MULTIHIT_CRIT,
-} from '../constants';
+import { BARRIER_COOLDOWN, CRIT_BECOMES_CONDITION, INJURY_CRIT, MULTIHIT_CRIT } from '../constants';
 
 export const umbramancy: MysticSphere = {
   name: 'Umbramancy',
@@ -157,12 +151,10 @@ export const umbramancy: MysticSphere = {
       name: 'Dark Grasp',
 
       attack: {
-        crit: DAMAGING_INJURY_CRIT,
         // Assume this is 50% action denial in 25% of fights, which would be 0.6 EA as a
         // condition. You can get 0.6 EA on a melee debuff at r1.
-        // Melee range is drX+2, and debuff is drX+1, so shadowed lets us keep drX+1.
         hit: `
-          \\damageranktwo.
+          \\damagerankthree.
         `,
         injury: `
           As a \\glossterm{condition}, the target treats all areas of \\glossterm{dim illumination} as \\glossterm{difficult terrain}.
@@ -181,14 +173,30 @@ export const umbramancy: MysticSphere = {
     },
 
     {
+      name: 'Mighty Dark Grasp',
+
+      functionsLike: {
+        name: 'dark grasp',
+        exceptThat:
+          'the damage increases to \\damageranksix, and any \\glossterm{extra damage} is doubled.',
+      },
+      rank: 4,
+      roles: ['burst', 'maim'],
+      scaling: 'damage',
+    },
+
+    {
       name: 'Efficient Dark Grasp',
 
       attack: {
-        crit: 'Double damage, and the target is also \\briefly \\slowed.',
         // 1.5 EA for the condition, so we need a rank 5 effect to apply it as a regular
         // condition.
         hit: `
-          \\damageranksix, and the target treats all areas of \\glossterm{dim illumination} as \\glossterm{difficult terrain} as a \\glossterm{condition}.
+          \\damagerankseven, and any \\glossterm{extra damage} is doubled.
+          In addition, the target treats all areas of \\glossterm{dim illumination} as \\glossterm{difficult terrain} as a \\glossterm{condition}.
+        `,
+        injury: `
+          The condition also applies to areas of \\glossterm{bright illumination}.
         `,
         targeting: `
           You must be \\glossterm{shadowed} to cast this spell.
@@ -196,8 +204,8 @@ export const umbramancy: MysticSphere = {
           Make an attack vs. Brawn against something adjacent to you.
         `,
       },
-      rank: 5,
-      roles: ['burst', 'maim'],
+      rank: 6,
+      roles: ['burst', 'maim', 'softener'],
       scaling: 'damage',
     },
 
