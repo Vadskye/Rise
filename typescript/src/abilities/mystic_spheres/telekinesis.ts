@@ -296,7 +296,7 @@ export const telekinesis: MysticSphere = {
     },
 
     // Baseline for 15' ranged push is 0.9 EA, or R-1. Increase to R0 for distance
-    // extension and spend 2 ranks on pure area increase to get a R6 area.
+    // extension and spend 1 rank on pure area increase to get a R5 area.
     {
       name: 'Mind Shove',
       attack: {
@@ -306,10 +306,10 @@ export const telekinesis: MysticSphere = {
           Each target of this spell must be pushed in the same direction.
         `,
         targeting: `
-          Make an attack vs. Brawn against everything that is Large or smaller in a \\medarea radius within \\longrange.
+          Make an attack vs. Brawn against everything that is Large or smaller in a \\medarea radius within \\medrange.
         `,
       },
-      rank: 2,
+      rank: 1,
       roles: ['kite'],
       scaling: 'accuracy',
     },
@@ -704,14 +704,36 @@ export const telekinesis: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankseven, and any \\glossterm{extra damage} is doubled.
+          \\damageranksix, and any \\glossterm{extra damage} is doubled.
+        `,
+        injury: `
+          The target is \\briefly \\sickened.
         `,
         targeting: `
-          Make an attack vs. Brawn with a -4 accuracy penalty against something within \\medrange.
+          Make an attack vs. Brawn with a -2 accuracy penalty against something within \\shortrange.
         `,
       },
-      rank: 5,
-      roles: ['burst'],
+      rank: 4,
+      roles: ['burst', 'maim'],
+      scaling: 'damage',
+    },
+
+    {
+      name: 'Mighty Neck Snap',
+
+      attack: {
+        hit: `
+          \\damageranknine, and any \\glossterm{extra damage} is doubled.
+        `,
+        injury: `
+          The target is \\sickened as a \\glossterm{condition}.
+        `,
+        targeting: `
+          Make an attack vs. Brawn with a -2 accuracy penalty against something within \\shortrange.
+        `,
+      },
+      rank: 7,
+      roles: ['burst', 'maim'],
       scaling: 'damage',
     },
 
