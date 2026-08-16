@@ -447,7 +447,7 @@ export function printDetailedReport(findings: BoringFinding[]): void {
   console.log(`Found ${findings.length} candidate spells across Mystic Spheres:\n`);
 
   const grouped = _.groupBy(findings, (f) => f.sphere);
-  const sphereNames = _.sortBy(Object.keys(grouped), (name) => name.localeCompare(name));
+  const sphereNames = _.sortBy(Object.keys(grouped));
 
   for (const sphereName of sphereNames) {
     const sphereFindings = grouped[sphereName];
