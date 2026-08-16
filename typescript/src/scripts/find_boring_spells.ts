@@ -26,6 +26,7 @@ export interface BoringFinding {
   reason: string;
   details?: string;
   recommendation: string;
+  spells?: string[];
 }
 
 export interface SpellItem {
@@ -269,20 +270,20 @@ export function findBoringSpells(
     for (const [key, items] of roleMap.entries()) {
       if (items.length >= 3) {
         const [role, rankStr] = key.split(':');
+        const rank = parseInt(rankStr, 10);
         const spellNames = items.map((i) => i.spell.name).join(', ');
-        for (const item of items) {
-          findings.push({
-            sphere: sphereName,
-            name: item.spell.name,
-            rank: item.rank,
-            kind: item.kind,
-            category: 'role_saturation',
-            score: 5,
-            reason: `Role "${role}" is saturated in ${sphereName} at Rank ${rankStr} (${items.length} spells: ${spellNames})`,
-            details: `Multiple spells in the same sphere compete for the exact same role and rank.`,
-            recommendation: `Prune or differentiate the competing spells to give each spell a unique combat niche within the sphere.`,
-          });
-        }
+        findings.push({
+          sphere: sphereName,
+          name: spellNames,
+          rank,
+          kind: rank === 0 ? 'cantrip' : 'spell',
+          category: 'role_saturation',
+          score: 5,
+          reason: `Role "${role}" is saturated in ${sphereName} at Rank ${rankStr} (${items.length} spells: ${spellNames})`,
+          details: `Multiple spells in the same sphere compete for the exact same role and rank.`,
+          recommendation: `Prune or differentiate the competing spells to give each spell a unique combat niche within the sphere.`,
+          spells: items.map((i) => i.spell.name),
+        });
       }
     }
   }
