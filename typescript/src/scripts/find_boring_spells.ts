@@ -44,18 +44,7 @@ export function getAllSpells(): SpellItem[] {
   const items: SpellItem[] = [];
 
   for (const sphere of allMysticSpheres) {
-    if (sphere.cantrips) {
-      for (const c of sphere.cantrips) {
-        items.push({
-          sphere: sphere.name,
-          name: c.name,
-          spell: c,
-          kind: 'cantrip',
-          rank: 0,
-        });
-      }
-    }
-    if (sphere.spells) {
+    if (sphere.name !== 'Universal' && sphere.spells) {
       for (const s of sphere.spells) {
         items.push({
           sphere: sphere.name,
@@ -66,16 +55,6 @@ export function getAllSpells(): SpellItem[] {
         });
       }
     }
-  }
-
-  for (const r of rituals) {
-    items.push({
-      sphere: 'Rituals',
-      name: r.name,
-      spell: r,
-      kind: 'ritual',
-      rank: r.rank,
-    });
   }
 
   return items;
