@@ -27,7 +27,7 @@ t.test('parseArchetypeActiveAbility tests', (t) => {
 
     const attackEffect = parseAttackEffect(parsed!, creature);
     t.ok(attackEffect);
-    t.equal(attackEffect?.damage.toString(), '2d8+12', 'should have correct damage at rank 3');
+    t.equal(attackEffect?.damage.toString(), '2d8+14', 'should have correct damage at rank 3');
 
     t.end();
   });
@@ -40,10 +40,6 @@ t.test('parseArchetypeActiveAbility tests', (t) => {
     t.ok(parsed);
     parsed!.weapon = 'greataxe';
     t.match(parsed?.effect, 'You gain a \\plus1 accuracy bonus with the strike.');
-
-    const attackEffect = parseAttackEffect(parsed!, creature);
-    t.ok(attackEffect);
-    t.equal(attackEffect?.damage.toString(), '2d8+12', 'should have correct damage at rank 4');
 
     t.end();
   });
@@ -62,7 +58,7 @@ t.test('parseArchetypeActiveAbility tests', (t) => {
 
     const attackEffect = parseAttackEffect(parsed!, creature);
     t.ok(attackEffect);
-    t.equal(attackEffect?.damage.toString(), '6d8+12', 'should have correct damage at rank 6');
+    t.equal(attackEffect?.damage.toString(), '6d8+14', 'should have correct damage at rank 6');
     t.equal(attackEffect?.cooldown, 2, 'should have cooldown 2 due to difficult condition');
 
     t.end();

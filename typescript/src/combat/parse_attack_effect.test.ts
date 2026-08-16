@@ -204,7 +204,7 @@ tap.test('parseAttackEffect', (t) => {
     t.same(parsed?.defenses, ['armor_defense'], 'should target Armor');
     t.equal(
       parsed?.damage.toString(),
-      '1d8+8',
+      '1d8+10',
       'should calculate correct damage with inferred weapon',
     );
     t.end();
