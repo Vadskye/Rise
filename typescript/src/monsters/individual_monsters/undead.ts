@@ -10,7 +10,7 @@ export function addUndead(grimoire: Grimoire) {
       base_class: 'warrior',
       elite: true,
       creature_origin: 'undead',
-      creature_type: 'plant',
+      creature_types: ['plant'],
       level: 8,
       size: 'huge',
     });
@@ -36,7 +36,7 @@ export function addUndead(grimoire: Grimoire) {
       base_class: 'brute',
       elite: true,
       creature_origin: 'undead',
-      creature_type: 'humanoid',
+      creature_types: ['humanoid'],
       level: 8,
       size: 'large',
     });
@@ -109,7 +109,7 @@ function addFleshwrought(grimoire: Grimoire) {
             base_class: 'brute',
             elite: true,
             creature_origin: 'undead',
-            creature_type: 'construct',
+            creature_types: ['construct'],
             level: 16,
             size: 'large',
           });
@@ -146,7 +146,7 @@ function addFleshwrought(grimoire: Grimoire) {
             base_class: 'warrior',
             elite: false,
             creature_origin: 'undead',
-            creature_type: 'construct',
+            creature_types: ['construct'],
             level: 8,
             size: 'medium',
           });
@@ -189,7 +189,7 @@ function addGhosts(grimoire: Grimoire) {
             base_class: 'skirmisher',
             elite: false,
             creature_origin: 'undead',
-            creature_type: 'ghost',
+            creature_types: ['ghost'],
             level: 4,
             size: 'medium',
           });
@@ -223,7 +223,7 @@ function addGhosts(grimoire: Grimoire) {
             base_class: 'skirmisher',
             elite: true,
             creature_origin: 'undead',
-            creature_type: 'ghost',
+            creature_types: ['ghost'],
             level: 5,
             size: 'large',
           });
@@ -272,7 +272,7 @@ function addGhosts(grimoire: Grimoire) {
             base_class: 'skirmisher',
             elite: false,
             creature_origin: 'undead',
-            creature_type: 'ghost',
+            creature_types: ['ghost'],
             level: 14,
             size: 'medium',
           });
@@ -339,7 +339,7 @@ function addGhouls(grimoire: Grimoire) {
             base_class: 'skirmisher',
             elite: false,
             creature_origin: 'undead',
-            creature_type: 'humanoid',
+            creature_types: ['humanoid'],
             level: 3,
             size: 'medium',
           });
@@ -362,7 +362,7 @@ function addGhouls(grimoire: Grimoire) {
             base_class: 'skirmisher',
             elite: false,
             creature_origin: 'undead',
-            creature_type: 'humanoid',
+            creature_types: ['humanoid'],
             level: 6,
             size: 'medium',
           });
@@ -408,7 +408,7 @@ function addHalfsouls(grimoire: Grimoire) {
             base_class: 'sniper',
             elite: true,
             creature_origin: 'undead',
-            creature_type: 'humanoid',
+            creature_types: ['humanoid'],
             level: 15,
             size: 'medium',
           });
@@ -493,7 +493,7 @@ function addLiches(grimoire: Grimoire) {
             base_class: 'sniper',
             elite: true,
             creature_origin: 'undead',
-            creature_type: 'humanoid',
+            creature_types: ['humanoid'],
             level: 17,
             size: 'medium',
           });
@@ -526,11 +526,11 @@ function addLiches(grimoire: Grimoire) {
 
 function addSkeletons(grimoire: Grimoire) {
   const requiredProperties = {
-    alignment: 'neutral evil',
+    alignment: 'neutral evil' as const,
     elite: false,
-    creature_origin: 'undead',
-    creature_type: 'humanoid',
-  } as const;
+    creature_origin: 'undead' as const,
+    creature_types: ['humanoid' as const],
+  };
   grimoire.addMonsterGroup(
     {
       name: 'Skeletons',
@@ -805,7 +805,7 @@ function addVampires(grimoire: Grimoire) {
             base_class: 'skirmisher',
             elite: true,
             creature_origin: 'undead',
-            creature_type: 'humanoid',
+            creature_types: ['humanoid'],
             level: 10,
             size: 'medium',
           });
@@ -827,7 +827,7 @@ function addVampires(grimoire: Grimoire) {
             base_class: 'skirmisher',
             elite: true,
             creature_origin: 'undead',
-            creature_type: 'humanoid',
+            creature_types: ['humanoid'],
             level: 16,
             size: 'medium',
           });
@@ -867,12 +867,12 @@ function addVampires(grimoire: Grimoire) {
 
 function addZombies(grimoire: Grimoire) {
   const requiredProperties = {
-    alignment: 'neutral evil',
-    base_class: 'brute',
+    alignment: 'neutral evil' as const,
+    base_class: 'brute' as const,
     elite: false,
-    creature_origin: 'undead',
-    creature_type: 'humanoid',
-  } as const;
+    creature_origin: 'undead' as const,
+    creature_types: ['humanoid' as const],
+  };
 
   grimoire.addMonsterGroup(
     {

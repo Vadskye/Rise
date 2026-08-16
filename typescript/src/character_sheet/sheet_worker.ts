@@ -3354,7 +3354,7 @@ function handleTypescriptMonsterCreation() {
             alignment: '${v.alignment}',
             base_class: '${v.base_class}',
             elite: ${isElite},
-            creature_type: 'TODO',
+            creature_types: ['TODO'],
             level: ${v.level},
             size: '${v.size || 'TODO'}',
           });

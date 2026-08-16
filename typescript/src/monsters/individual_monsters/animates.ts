@@ -24,7 +24,7 @@ function addGolems(grimoire: Grimoire) {
             base_class: 'brute',
             elite: false,
             creature_origin: 'artificial',
-            creature_type: 'construct',
+            creature_types: ['construct'],
             level: 5,
             size: 'medium',
           });
@@ -42,7 +42,7 @@ function addGolems(grimoire: Grimoire) {
             base_class: 'skirmisher',
             elite: true,
             creature_origin: 'artificial',
-            creature_type: 'construct',
+            creature_types: ['construct'],
             level: 14,
             size: 'medium',
           });
@@ -80,7 +80,7 @@ function addGolems(grimoire: Grimoire) {
             base_class: 'warrior',
             elite: true,
             creature_origin: 'artificial',
-            creature_type: 'construct',
+            creature_types: ['construct'],
             level: 17,
             size: 'medium',
           });
@@ -121,7 +121,7 @@ function addGolems(grimoire: Grimoire) {
             base_class: 'warrior',
             elite: true,
             creature_origin: 'artificial',
-            creature_type: 'construct',
+            creature_types: ['construct'],
             level: 20,
             size: 'medium',
           });
@@ -193,7 +193,7 @@ function addTreants(grimoire: Grimoire) {
             base_class: 'warrior',
             elite: true,
             creature_origin: 'natural',
-            creature_type: 'plant',
+            creature_types: ['plant'],
             level: 5,
             size: 'large',
           });
@@ -217,7 +217,7 @@ function addTreants(grimoire: Grimoire) {
             base_class: 'warrior',
             elite: true,
             creature_origin: 'natural',
-            creature_type: 'plant',
+            creature_types: ['plant'],
             level: 6,
             size: 'large',
           });
@@ -243,7 +243,7 @@ function addTreants(grimoire: Grimoire) {
             base_class: 'warrior',
             elite: false,
             creature_origin: 'natural',
-            creature_type: 'plant',
+            creature_types: ['plant'],
             level: 7,
             size: 'large',
           });
@@ -270,7 +270,7 @@ function addTreants(grimoire: Grimoire) {
             base_class: 'warrior',
             elite: false,
             creature_origin: 'natural',
-            creature_type: 'plant',
+            creature_types: ['plant'],
             level: 8,
             size: 'large',
           });
@@ -306,7 +306,7 @@ function addTreants(grimoire: Grimoire) {
             base_class: 'warrior',
             elite: false,
             creature_origin: 'natural',
-            creature_type: 'plant',
+            creature_types: ['plant'],
             level: 9,
             size: 'huge',
           });
@@ -338,7 +338,7 @@ function addTreants(grimoire: Grimoire) {
             base_class: 'warrior',
             elite: false,
             creature_origin: 'natural',
-            creature_type: 'plant',
+            creature_types: ['plant'],
             level: 10,
             size: 'huge',
           });
@@ -369,7 +369,7 @@ function addTreants(grimoire: Grimoire) {
             base_class: 'warrior',
             elite: false,
             creature_origin: 'natural',
-            creature_type: 'plant',
+            creature_types: ['plant'],
             level: 11,
             size: 'huge',
           });

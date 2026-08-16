@@ -72,7 +72,7 @@ function addFormians(grimoire: Grimoire) {
             base_class: 'skirmisher',
             elite: false,
             creature_origin: 'natural',
-            creature_type: 'insect',
+            creature_types: ['insect'],
             level: 1,
             size: 'medium',
           });
@@ -102,7 +102,7 @@ function addFormians(grimoire: Grimoire) {
             base_class: 'warrior',
             elite: false,
             creature_origin: 'natural',
-            creature_type: 'insect',
+            creature_types: ['insect'],
             level: 5,
             size: 'medium',
           });
@@ -136,7 +136,7 @@ function addFormians(grimoire: Grimoire) {
             base_class: 'warrior',
             elite: false,
             creature_origin: 'natural',
-            creature_type: 'insect',
+            creature_types: ['insect'],
             level: 9,
             size: 'medium',
           });

@@ -20,7 +20,7 @@ function applyMonkBase(c: Creature, level: number) {
     base_class: 'monk',
     elite: false,
     creature_origin: 'natural',
-    creature_type: 'humanoid',
+    creature_types: ['humanoid'],
     level: level,
     size: 'medium',
   });

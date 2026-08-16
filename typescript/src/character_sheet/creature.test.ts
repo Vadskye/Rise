@@ -156,7 +156,7 @@ t.test('addThrowItem dynamically generates correct maneuvers', (t) => {
     base_class: 'skirmisher',
     elite: false,
     creature_origin: 'natural',
-    creature_type: 'humanoid',
+    creature_types: ['humanoid'],
     level: 6,
     size: 'medium',
   });
@@ -198,7 +198,7 @@ t.test(
       base_class: 'skirmisher',
       elite: false,
       creature_origin: 'natural',
-      creature_type: 'humanoid',
+      creature_types: ['humanoid'],
       level: 6,
       size: 'medium',
     });

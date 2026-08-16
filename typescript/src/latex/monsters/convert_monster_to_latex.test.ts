@@ -9,7 +9,7 @@ t.test('convertMonsterToLatex', (t) => {
     creature.setProperties({
       base_class: 'warrior',
       creature_origin: 'natural',
-      creature_type: 'humanoid',
+      creature_types: ['humanoid'],
       level: 1,
       name: 'Test Monster',
       size: 'medium',
@@ -28,7 +28,7 @@ t.test('convertMonsterToLatex', (t) => {
 t.test('genKnowledgeText', (t) => {
   t.test('can generate empty knowledge', (t) => {
     const creature = Creature.new();
-    creature.setProperties({ creature_type: 'humanoid' });
+    creature.setProperties({ creature_types: ['humanoid'] });
     t.equal(genKnowledgeText(creature.getKnowledgeResultConfig()), '');
     t.end();
   });
@@ -36,7 +36,7 @@ t.test('genKnowledgeText', (t) => {
   t.test('Can generate meaningful knowledge', (t) => {
     const creature = Creature.new();
     creature.setProperties({
-      creature_type: 'humanoid',
+      creature_types: ['humanoid'],
       knowledge_result_easy: 'Easy result',
       level: 20,
       name: 'Test Monster',
@@ -62,7 +62,7 @@ t.test('convertMonsterGroupToLatex error accumulation', (t) => {
     validCreature.setProperties({
       base_class: 'warrior',
       creature_origin: 'natural',
-      creature_type: 'humanoid',
+      creature_types: ['humanoid'],
       level: 1,
       name: 'Valid Monster',
       size: 'medium',

@@ -67,7 +67,7 @@ export function getItemCreature(rank: number): Creature {
     base_class: 'hybrid',
     elite: false,
     creature_origin: 'natural',
-    creature_type: 'humanoid',
+    creature_types: ['humanoid'],
     size: 'medium',
     level: level,
   });

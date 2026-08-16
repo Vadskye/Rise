@@ -140,7 +140,7 @@ export function addMonstersFromUi(grimoire: Grimoire) {
       base_class: 'warrior',
       elite: true,
       creature_origin: 'undead',
-      creature_type: 'plant',
+      creature_types: ['plant'],
       level: 8,
       size: 'huge',
     });
@@ -190,7 +190,7 @@ export function addMonstersFromUi(grimoire: Grimoire) {
             base_class: 'skirmisher',
             elite: false,
             creature_origin: 'undead',
-            creature_type: 'ghost',
+            creature_types: ['ghost'],
             level: 4,
             size: 'medium',
           });

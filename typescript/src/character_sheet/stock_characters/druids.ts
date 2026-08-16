@@ -20,7 +20,7 @@ function applyDruidBase(c: Creature, level: number) {
     base_class: 'druid',
     elite: false,
     creature_origin: 'natural',
-    creature_type: 'humanoid',
+    creature_types: ['humanoid'],
     level: level,
     size: 'medium',
   });
