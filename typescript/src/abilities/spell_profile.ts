@@ -45,7 +45,6 @@ export interface SpellProfile {
   isAttunable: boolean;
   enemiesOnly: boolean;
   isRepeating: boolean;
-  providesCover: boolean;
   hasSelfHitPenalty: boolean;
   isInjuryDoubleDamage: boolean;
   isInjuryOnly: boolean;
@@ -419,10 +418,6 @@ export function parseIsRepeating(text: string, isDelayed: boolean): boolean {
   );
 }
 
-export function parseProvidesCover(text: string): boolean {
-  return text.toLowerCase().includes('cover');
-}
-
 export function parseNumAreas(text: string): number {
   const lowercase = text.toLowerCase();
   const match = lowercase.match(
@@ -605,8 +600,6 @@ export function buildSpellProfile(
   const isRepeating = parseIsRepeating(fullText, rawIsDelayed);
   const isDelayed = rawIsDelayed && !isRepeating;
 
-  const providesCover = parseProvidesCover(fullText);
-
   const isSustained =
     (spell.type || '').toLowerCase().includes('sustain') ||
     (spell.tags || []).some((tag) => tag.toLowerCase().includes('sustain')) ||
@@ -730,7 +723,6 @@ export function buildSpellProfile(
     isAttunable,
     enemiesOnly,
     isRepeating,
-    providesCover,
     hasSelfHitPenalty,
     isInjuryDoubleDamage,
     isInjuryOnly,
