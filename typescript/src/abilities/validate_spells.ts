@@ -179,6 +179,21 @@ function getSpellDifferences(p1: SpellProfile, p2: SpellProfile): Difference[] {
     });
   }
 
+  if (p1.hasInjuryDamage !== p2.hasInjuryDamage) {
+    diffs.push({
+      field: 'injury damage',
+      p1Value: p1.hasInjuryDamage ? 'injury damage' : 'no injury damage',
+      p2Value: p2.hasInjuryDamage ? 'injury damage' : 'no injury damage',
+    });
+  }
+  if (p1.hasDoT !== p2.hasDoT) {
+    diffs.push({
+      field: 'damage over time',
+      p1Value: p1.hasDoT ? 'DoT' : 'direct',
+      p2Value: p2.hasDoT ? 'DoT' : 'direct',
+    });
+  }
+
   return diffs;
 }
 
@@ -235,13 +250,28 @@ function compareSpellProfiles(p1: SpellProfile, p2: SpellProfile): ComparisonRes
   const betterFields: string[] = [];
   const worseFields: string[] = [];
 
-  // 1. Damage Rank
-  const d1 = p1.damageRank ?? 0;
-  const d2 = p2.damageRank ?? 0;
-  if (d1 > d2) {
+  // 1. Damage Rank (comparing unconditional base damage and conditional max damage)
+  const unconditional1 = p1.unconditionalDamageRank ?? 0;
+  const unconditional2 = p2.unconditionalDamageRank ?? 0;
+  const max1 = p1.maxDamageRank ?? 0;
+  const max2 = p2.maxDamageRank ?? 0;
+
+  if (
+    (unconditional1 > unconditional2 && max1 >= max2) ||
+    (max1 > max2 && unconditional1 >= unconditional2)
+  ) {
     betterFields.push('damage rank');
-  } else if (d1 < d2) {
+  } else if (
+    (unconditional1 < unconditional2 && max1 <= max2) ||
+    (max1 < max2 && unconditional1 <= unconditional2)
+  ) {
     worseFields.push('damage rank');
+  } else if (unconditional1 > unconditional2 && max1 < max2) {
+    betterFields.push('unconditional damage rank');
+    worseFields.push('max damage rank');
+  } else if (unconditional1 < unconditional2 && max1 > max2) {
+    worseFields.push('unconditional damage rank');
+    betterFields.push('max damage rank');
   }
 
   // Low Power flag (standard power scaling is better than low power)
@@ -365,16 +395,7 @@ function compareSpellProfiles(p1: SpellProfile, p2: SpellProfile): ComparisonRes
     worseFields.push('accuracy condition');
   }
 
-  // 14. Injury Damage (having extra injury damage is better)
-  if (p1.hasInjuryDamage !== p2.hasInjuryDamage) {
-    if (p1.hasInjuryDamage) {
-      betterFields.push('injury damage');
-    } else {
-      worseFields.push('injury damage');
-    }
-  }
-
-  // 15. Enemies Only (targeting enemies only is better than targeting everything/creatures in an area)
+  // 14. Enemies Only (targeting enemies only is better than targeting everything/creatures in an area)
   if (p1.enemiesOnly !== p2.enemiesOnly) {
     if (p1.enemiesOnly) {
       betterFields.push('enemies only targeting');
@@ -420,7 +441,7 @@ function checkSpellPair(
   }
 
   // Hard constraint: The spells must still either both deal damage or both not deal damage
-  if ((p1.damageRank === null) !== (p2.damageRank === null)) {
+  if ((p1.maxDamageRank === null) !== (p2.maxDamageRank === null)) {
     return [];
   }
 
@@ -452,16 +473,20 @@ function checkSpellPair(
     }
 
     // Now check for damage vs cost inconsistencies:
-    if (p1.damageRank !== null && p2.damageRank !== null && p1.damageRank !== p2.damageRank) {
-      const higher = p1.damageRank > p2.damageRank ? p1 : p2;
-      const lower = p1.damageRank > p2.damageRank ? p2 : p1;
+    if (
+      p1.maxDamageRank !== null &&
+      p2.maxDamageRank !== null &&
+      p1.maxDamageRank !== p2.maxDamageRank
+    ) {
+      const higher = p1.maxDamageRank > p2.maxDamageRank ? p1 : p2;
+      const lower = p1.maxDamageRank > p2.maxDamageRank ? p2 : p1;
 
       // If the higher damage one has no cost, but the lower damage one does, or both have no cost, it's inconsistent!
       if (!higher.hasCost || (!higher.hasCost && !lower.hasCost)) {
         issues.push({
           type: 'inconsistent_damage',
           severity: 'warning',
-          message: `Spell "${higher.name}" (${higher.sphereName}) deals more damage (Rank ${higher.damageRank}) than "${lower.name}" (${lower.sphereName}, Rank ${lower.damageRank}) despite being equivalent, with no balancing cost factor.`,
+          message: `Spell "${higher.name}" (${higher.sphereName}) deals more damage (Rank ${higher.maxDamageRank}) than "${lower.name}" (${lower.sphereName}, Rank ${lower.maxDamageRank}) despite being equivalent, with no balancing cost factor.`,
           spells: [p1.name, p2.name],
         });
       }
@@ -505,8 +530,8 @@ function checkSpellPair(
       // For utility/debuff spells (no damage and no healing), they must share at least one parsed condition AND share at least one role
       let isComparable = true;
       if (
-        p1.damageRank === null &&
-        p2.damageRank === null &&
+        p1.maxDamageRank === null &&
+        p2.maxDamageRank === null &&
         p1.healingRank === null &&
         p2.healingRank === null
       ) {
@@ -596,7 +621,7 @@ export function validateSpellDesignGuidelines(spheres: MysticSphere[]): Damaging
     const spells = sphere.spells || [];
     for (const spell of spells) {
       const profile = buildSpellProfile(spell, sphere.name);
-      if (profile.damageRank === null) {
+      if (profile.maxDamageRank === null) {
         continue;
       }
 
@@ -605,11 +630,11 @@ export function validateSpellDesignGuidelines(spheres: MysticSphere[]): Damaging
         continue;
       }
 
-      if (profile.damageRank !== breakdown.expectedDamageRank) {
-        const diff = profile.damageRank - breakdown.expectedDamageRank;
+      if (profile.maxDamageRank !== breakdown.expectedDamageRank) {
+        const diff = profile.maxDamageRank - breakdown.expectedDamageRank;
         const type = diff < 0 ? 'design_underbudget' : 'design_overbudget';
         const diffStr = diff > 0 ? `+${diff}` : `${diff}`;
-        const message = `Spell "${profile.name}" (${profile.sphereName}, Rank ${profile.rank}) deals Rank ${profile.damageRank} damage, but design guidelines expect Rank ${breakdown.expectedDamageRank} (${diffStr} discrepancy). [Base ${breakdown.baseRank} + Targeting (${breakdown.targetingMod}) + Defense (${breakdown.defenseMod}) + Effect (${breakdown.effectMod}) + Bonus (${breakdown.bonusMod})]`;
+        const message = `Spell "${profile.name}" (${profile.sphereName}, Rank ${profile.rank}) deals Rank ${profile.maxDamageRank} damage, but design guidelines expect Rank ${breakdown.expectedDamageRank} (${diffStr} discrepancy). [Base ${breakdown.baseRank} + Targeting (${breakdown.targetingMod}) + Defense (${breakdown.defenseMod}) + Effect (${breakdown.effectMod}) + Bonus (${breakdown.bonusMod})]`;
 
         issues.push({
           type,
@@ -617,7 +642,7 @@ export function validateSpellDesignGuidelines(spheres: MysticSphere[]): Damaging
           spellName: profile.name,
           sphereName: profile.sphereName,
           spellRank: profile.rank,
-          actualDamageRank: profile.damageRank,
+          actualDamageRank: profile.maxDamageRank,
           expectedDamageRank: breakdown.expectedDamageRank,
           difference: diff,
           message,

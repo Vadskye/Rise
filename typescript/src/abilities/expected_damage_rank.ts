@@ -165,7 +165,7 @@ function calculateAreaDamageModifier(profile: SpellProfile): number {
 export function calculateExpectedDamageRank(
   profile: SpellProfile,
 ): DamageCalculationBreakdown | null {
-  if (profile.damageRank === null) {
+  if (profile.maxDamageRank === null) {
     return null;
   }
 
@@ -251,11 +251,8 @@ export function calculateExpectedDamageRank(
     }
   }
 
-  // DoT / Recurring damage (burn/bleed/corrode)
-  const hasDoT = profile.appliedEffects.some(
-    (e: string) =>
-      e.includes('burn') || e.includes('bleed') || e.includes('corrode') || e.includes('poison'),
-  );
+  // DoT / Recurring damage (burn/bleed/corrode/poison)
+  const hasDoT = profile.hasDoT;
   // Injury-only double damage
   if (profile.isInjuryDoubleDamage) {
     // If the injury-only damage is a DoT, it will be parsed in the expected damage rank, so this modifier needs to be positive.

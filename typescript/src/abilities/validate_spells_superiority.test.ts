@@ -745,6 +745,74 @@ t.test('validateSpells: Strictly Superior Spells', (t) => {
       t.end();
     });
 
+    t.test('17. Bleed vs Fleshspike (conditional injury execute vs flat burst)', (t) => {
+      const polymorph = makeMockSphere('Polymorph', [
+        makeMockSpell({
+          name: 'Bleed',
+          rank: 1,
+          roles: ['burn', 'execute'] as const,
+          attack: {
+            hit: '\\damagerankone.',
+            injury: 'The target \\briefly \\debuff{bleeds} for \\damagerankone.',
+            targeting: 'Make an attack vs. Fortitude against one creature within \\shortrange.',
+          },
+        }),
+        makeMockSpell({
+          name: 'Fleshspike',
+          rank: 1,
+          roles: ['burst'] as const,
+          attack: {
+            hit: '\\damagerankthree.',
+            targeting: `
+              You must have a \\glossterm{free hand} to cast this spell.
+              Make an attack vs. Armor against an adjacent creature.
+            `,
+          },
+        }),
+      ]);
+      const issues = validateSpells([polymorph]);
+      t.notOk(
+        issues.find((i) => i.type === 'strictly_superior'),
+        'Should not flag Bleed vs Fleshspike as strictly superior',
+      );
+      t.end();
+    });
+
+    t.test('18. Caustic Grasp vs Fleshspike (DoT burn vs direct burst)', (t) => {
+      const sphere = makeMockSphere('TestSphere', [
+        makeMockSpell({
+          name: 'Caustic Grasp',
+          rank: 1,
+          roles: ['burn'] as const,
+          attack: {
+            hit: '\\damagerankone. The target also \\briefly \\debuff{corrodes} for \\damagerankone.',
+            targeting: `
+              You must have a \\glossterm{free hand} to cast this spell.
+              Make an attack vs. Fortitude against something you touch.
+            `,
+          },
+        }),
+        makeMockSpell({
+          name: 'Fleshspike',
+          rank: 1,
+          roles: ['burst'] as const,
+          attack: {
+            hit: '\\damagerankthree.',
+            targeting: `
+              You must have a \\glossterm{free hand} to cast this spell.
+              Make an attack vs. Armor against an adjacent creature.
+            `,
+          },
+        }),
+      ]);
+      const issues = validateSpells([sphere]);
+      t.notOk(
+        issues.find((i) => i.type === 'strictly_superior'),
+        'Should not flag Caustic Grasp vs Fleshspike as strictly superior',
+      );
+      t.end();
+    });
+
     t.end();
   });
 

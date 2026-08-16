@@ -11,7 +11,21 @@ export interface SpellProfile {
   defenses: string[];
   area: string;
   areaSize: string;
-  damageRank: number | null;
+  /**
+   * Maximum effective damage rank achieved when all conditional triggers (such as injury bonus
+   * damage, execution clauses, or full damage-over-time ticks) are satisfied.
+   * This represents the spell's full damage budget checked against damaging ability guidelines.
+   */
+  maxDamageRank: number | null;
+  /**
+   * Unconditional damage rank dealt on initial hit against an uninjured / healthy target.
+   * For spells with conditional injury damage (e.g. Bleed dealing dr1 on hit + dr1 bleed if injured),
+   * unconditionalDamageRank is 1 while maxDamageRank is 3. For flat burst spells (e.g. Fleshspike),
+   * unconditionalDamageRank and maxDamageRank are both 3. For injury-only attacks, this is 0.
+   */
+  unconditionalDamageRank: number | null;
+  // Inflicts damage over time (burn, bleed, etc.)
+  hasDoT: boolean;
   isLowPower: boolean;
   appliedEffects: string[];
   accuracyModifier: number;
@@ -268,10 +282,6 @@ export function parseAppliedEffects(text: string): string[] {
     'fling',
     'push',
     'teleport',
-    'burn',
-    'corrode',
-    'bleed',
-    'poison',
     'frozen',
     'stasis',
     'cannot act',
@@ -585,7 +595,6 @@ export function buildSpellProfile(
     }
   }
 
-  const damageRank = parseDamageRank(fullText);
   const isLowPower = /\\damagerank\w+low/i.test(fullText);
   const appliedEffects = parseAppliedEffects(fullText);
   const accuracyModifier = parseAccuracyModifier(fullText);
@@ -673,6 +682,22 @@ export function buildSpellProfile(
     /you (?:are|become)\s+(?:\\briefly\s+)?\\maximized/i.test(fullText) ||
     /the target is \\maximized/i.test(fullText);
 
+  const hasDoT =
+    lowercase.includes('burn') ||
+    lowercase.includes('bleed') ||
+    lowercase.includes('corrode') ||
+    lowercase.includes('poison');
+
+  const maxDamageRank = parseDamageRank(fullText);
+  let unconditionalDamageRank: number | null = null;
+  if (maxDamageRank !== null) {
+    if (isInjuryOnly) {
+      unconditionalDamageRank = 0;
+    } else {
+      unconditionalDamageRank = parseDamageRank(hit) ?? parseDamageRank(effect);
+    }
+  }
+
   return {
     name: spell.name,
     sphereName,
@@ -683,7 +708,9 @@ export function buildSpellProfile(
     defenses,
     area,
     areaSize,
-    damageRank,
+    maxDamageRank,
+    unconditionalDamageRank,
+    hasDoT,
     isLowPower,
     appliedEffects,
     accuracyModifier,

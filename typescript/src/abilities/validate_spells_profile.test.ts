@@ -26,7 +26,8 @@ t.test('buildSpellProfile', (t) => {
     t.same(profile.defenses, ['fortitude']);
     t.equal(profile.area, 'single');
     t.equal(profile.areaSize, 'none');
-    t.equal(profile.damageRank, 5);
+    t.equal(profile.maxDamageRank, 5);
+    t.equal(profile.unconditionalDamageRank, 5);
     t.equal(profile.isLowPower, false);
     t.same(profile.appliedEffects, ['slowed']);
     t.equal(profile.accuracyModifier, 0);
@@ -133,12 +134,82 @@ t.test('buildSpellProfile', (t) => {
       true,
       'Attack functionsLike spell should have hasAttack = true',
     );
-    t.equal(mightyElectrocute.damageRank, 9, 'Damage rank should be updated from exceptThat');
+    t.equal(
+      mightyElectrocute.maxDamageRank,
+      9,
+      'Max damage rank should be updated from exceptThat',
+    );
+    t.equal(
+      mightyElectrocute.unconditionalDamageRank,
+      9,
+      'Unconditional damage rank should be updated from exceptThat',
+    );
     t.same(mightyElectrocute.defenses, ['fortitude'], 'Defenses should be inherited from base');
     t.equal(mightyElectrocute.range, 'medium', 'Range should be inherited from base');
 
     t.end();
   });
+
+  t.test(
+    'should parse unconditionalDamageRank, maxDamageRank, and hasDoT accurately',
+    (t) => {
+      // Unconditional burst attack
+      const fleshspike = buildSpellProfile(
+        {
+          name: 'Fleshspike',
+          rank: 1,
+          roles: ['burst'],
+          attack: {
+            hit: '\\damagerankthree.',
+            targeting: 'Make an attack vs. Armor against an adjacent creature.',
+          },
+        },
+        'Polymorph',
+      );
+      t.equal(fleshspike.unconditionalDamageRank, 3);
+      t.equal(fleshspike.maxDamageRank, 3);
+      t.equal(fleshspike.hasDoT, false);
+
+      // Conditional injury execute attack
+      const bleed = buildSpellProfile(
+        {
+          name: 'Bleed',
+          rank: 1,
+          roles: ['burn', 'execute'],
+          attack: {
+            hit: '\\damagerankone.',
+            injury: 'The target \\briefly \\debuff{bleeds} for \\damagerankone.',
+            targeting: 'Make an attack vs. Fortitude against one creature within \\shortrange.',
+          },
+        },
+        'Polymorph',
+      );
+      t.equal(bleed.unconditionalDamageRank, 1);
+      t.equal(bleed.maxDamageRank, 3);
+      t.equal(bleed.hasDoT, true);
+      t.same(bleed.appliedEffects, []);
+
+      // Split hit + DoT attack
+      const causticGrasp = buildSpellProfile(
+        {
+          name: 'Caustic Grasp',
+          rank: 1,
+          roles: ['burn'],
+          attack: {
+            hit: '\\damagerankone. The target also \\briefly \\debuff{corrodes} for \\damagerankone.',
+            targeting: 'Make an attack vs. Fortitude against something you touch.',
+          },
+        },
+        'Toxicology',
+      );
+      t.equal(causticGrasp.unconditionalDamageRank, 3);
+      t.equal(causticGrasp.maxDamageRank, 3);
+      t.equal(causticGrasp.hasDoT, true);
+      t.same(causticGrasp.appliedEffects, []);
+
+      t.end();
+    },
+  );
 
   t.end();
 });

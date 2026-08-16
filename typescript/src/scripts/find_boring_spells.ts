@@ -111,7 +111,7 @@ export function findBoringSpells(
     const fullText = getFullText(s).toLowerCase();
 
     const isDamageAttack =
-      profile.hasAttack && (profile.damageRank !== null || fullText.includes('damagerank'));
+      profile.hasAttack && (profile.maxDamageRank !== null || fullText.includes('damagerank'));
     const isSingleTarget = profile.area === 'single' && profile.maxTargets <= 1;
     const hasNoConditions = profile.appliedEffects.length === 0;
     const hasNoSpecialReqs = profile.specialRequirements.length === 0;
