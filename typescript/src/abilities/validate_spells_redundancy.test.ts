@@ -281,40 +281,34 @@ t.test('validateSpells: Redundancy & Inconsistency Checks', (t) => {
     t.end();
   });
 
-  t.test(
-    'should not flag attunement spells vs standard spells as redundant',
-    (t) => {
-      const sphere1 = makeMockSphere('Electromancy', [
-        makeMockSpell({
-          name: 'Lightning Breath',
-          rank: 3,
-          roles: ['clear'],
-          type: 'Attune',
-          attack: {
-            hit: '\\damagerankthree.',
-            targeting: 'Make an attack vs. Reflex against everything in a line from you.',
-          },
-        }),
-        makeMockSpell({
-          name: 'Lightning Bolt',
-          rank: 3,
-          roles: ['clear'],
-          attack: {
-            hit: '\\damageranktwo.',
-            targeting: 'Make an attack vs. Reflex against everything in a line from you.',
-          },
-        }),
-      ]);
+  t.test('should not flag attunement spells vs standard spells as redundant', (t) => {
+    const sphere1 = makeMockSphere('Electromancy', [
+      makeMockSpell({
+        name: 'Lightning Breath',
+        rank: 3,
+        roles: ['clear'],
+        type: 'Attune',
+        attack: {
+          hit: '\\damagerankthree.',
+          targeting: 'Make an attack vs. Reflex against everything in a line from you.',
+        },
+      }),
+      makeMockSpell({
+        name: 'Lightning Bolt',
+        rank: 3,
+        roles: ['clear'],
+        attack: {
+          hit: '\\damageranktwo.',
+          targeting: 'Make an attack vs. Reflex against everything in a line from you.',
+        },
+      }),
+    ]);
 
-      const issues = validateSpells([sphere1]);
-      const redundancy = issues.find((issue) => issue.type === 'redundancy');
-      t.notOk(
-        redundancy,
-        'Should not report redundancy between attunement and standard spells',
-      );
-      t.end();
-    },
-  );
+    const issues = validateSpells([sphere1]);
+    const redundancy = issues.find((issue) => issue.type === 'redundancy');
+    t.notOk(redundancy, 'Should not report redundancy between attunement and standard spells');
+    t.end();
+  });
 
   t.test('should not flag damaging vs non-damaging spells as redundant', (t) => {
     const sphere1 = makeMockSphere('Channel Divinity', [

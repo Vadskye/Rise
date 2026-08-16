@@ -36,7 +36,11 @@
  */
 
 import { MysticSphere } from './mystic_spheres';
-import { calculateExpectedDamageRank, DamageCalculationBreakdown } from './expected_damage_rank';
+import {
+  calculateDefenseModifier,
+  calculateExpectedDamageRank,
+  DamageCalculationBreakdown,
+} from './expected_damage_rank';
 import { buildSpellProfile, SpellProfile, RANGE_ORDER, AREA_SIZE_ORDER } from './spell_profile';
 
 export interface ValidationIssue {
@@ -100,6 +104,15 @@ function getSpellDifferences(p1: SpellProfile, p2: SpellProfile): Difference[] {
       field: 'defense count',
       p1Value: `${p1.defenses.length}`,
       p2Value: `${p2.defenses.length}`,
+    });
+  }
+  const defMod1 = calculateDefenseModifier(p1);
+  const defMod2 = calculateDefenseModifier(p2);
+  if (defMod1 !== defMod2) {
+    diffs.push({
+      field: 'defense modifier',
+      p1Value: `${defMod1 >= 0 ? '+' : ''}${defMod1}`,
+      p2Value: `${defMod2 >= 0 ? '+' : ''}${defMod2}`,
     });
   }
   if (p1.area !== p2.area) {
@@ -417,6 +430,17 @@ function compareSpellProfiles(p1: SpellProfile, p2: SpellProfile): ComparisonRes
       betterFields.push('repeating behavior');
     } else {
       worseFields.push('repeating behavior');
+    }
+  }
+
+  // 17. Defense Modifier (single-target Reflex attack targets an easier defense, corresponding to a -1dr damage modifier)
+  const defMod1 = calculateDefenseModifier(p1);
+  const defMod2 = calculateDefenseModifier(p2);
+  if (defMod1 !== defMod2) {
+    if (defMod1 < defMod2) {
+      betterFields.push('defense modifier');
+    } else {
+      worseFields.push('defense modifier');
     }
   }
 

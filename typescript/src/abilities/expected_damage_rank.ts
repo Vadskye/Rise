@@ -162,6 +162,17 @@ function calculateAreaDamageModifier(profile: SpellProfile): number {
   }
 }
 
+export function calculateDefenseModifier(profile: SpellProfile): number {
+  if (
+    profile.area === 'single' &&
+    profile.defenses.length === 1 &&
+    profile.defenses[0] === 'reflex'
+  ) {
+    return -1;
+  }
+  return 0;
+}
+
 export function calculateExpectedDamageRank(
   profile: SpellProfile,
 ): DamageCalculationBreakdown | null {
@@ -174,16 +185,8 @@ export function calculateExpectedDamageRank(
   const areaModifier = calculateAreaDamageModifier(profile);
 
   // Single-target vs Reflex Defense Penalty
-  let defenseMod = 0;
-  let defenseReason = '';
-  if (
-    profile.area === 'single' &&
-    profile.defenses.length === 1 &&
-    profile.defenses[0] === 'reflex'
-  ) {
-    defenseMod = -1;
-    defenseReason = 'Single-target vs Reflex (-1)';
-  }
+  const defenseMod = calculateDefenseModifier(profile);
+  const defenseReason = defenseMod !== 0 ? 'Single-target vs Reflex (-1)' : '';
 
   // Bonus Modifiers
   let bonusMod = 0;

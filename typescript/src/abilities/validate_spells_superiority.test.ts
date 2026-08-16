@@ -813,6 +813,49 @@ t.test('validateSpells: Strictly Superior Spells', (t) => {
       t.end();
     });
 
+    t.test('19. Ignition vs Burning Grasp (single-target Reflex attack has -1dr modifier)', (t) => {
+      const pyromancy = makeMockSphere('Pyromancy', [
+        makeMockSpell({
+          name: 'Burning Grasp',
+          rank: 2,
+          roles: ['burn'],
+          scaling: 'damage',
+          attack: {
+            hit: `
+                \\damagerankone.
+                The target also \\briefly \\debuff{burns} for \\damagerankone.
+              `,
+            targeting: `
+                You must have a \\glossterm{free hand} to cast this spell.
+                Make an attack vs. Reflex against something you \\glossterm{touch}.
+              `,
+          },
+        }),
+        makeMockSpell({
+          name: 'Ignition',
+          rank: 2,
+          roles: ['burn'],
+          scaling: 'damage',
+          attack: {
+            hit: `
+                \\damagerankone.
+                The target also \\debuff{burns} for \\damagerankone as a \\glossterm{condition}.
+              `,
+            targeting: `
+                Make an attack vs. Fortitude against one creature within \\shortrange.
+              `,
+          },
+        }),
+      ]);
+
+      const issues = validateSpells([pyromancy]);
+      t.notOk(
+        issues.find((i) => i.type === 'strictly_superior'),
+        'Should not flag Ignition vs Burning Grasp as strictly superior due to single-target Reflex modifier',
+      );
+      t.end();
+    });
+
     t.end();
   });
 
