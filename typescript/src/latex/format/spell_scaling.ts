@@ -1,4 +1,6 @@
 import { ActiveAbility } from '@src/abilities';
+import { parseDamageRank } from '@src/core_mechanics/damage_calculation';
+import { DamageScaling } from '@src/core_mechanics/damage_scaling';
 
 const damageRankPattern = /damagerank(\w+)\b/;
 const damageRankLowPattern = /damagerank(\w+)low\b/;
@@ -79,6 +81,20 @@ function containsDamageValue(
   );
 }
 
+function getExcessRankScalingString(scaling: DamageScaling): string | undefined {
+  const excess = scaling.excessRankScaling;
+  if (!excess) {
+    return undefined;
+  }
+  if (excess.dicePerRank) {
+    return excess.dicePerRank.toString();
+  }
+  if (excess.flatDamagePerRank !== undefined) {
+    return excess.flatDamagePerRank.toString();
+  }
+  return undefined;
+}
+
 function calculateDieScaling(
   effect: string | undefined,
   damageOrHealing: 'damage' | 'healing',
@@ -87,40 +103,24 @@ function calculateDieScaling(
   // First, check for damageranklow, which uses different scaling.
   const drLowMatches = effect?.match(lowPattern);
   if (drLowMatches && drLowMatches[1]) {
-    const damageBonusByRank = {
-      zero: '2',
-      one: '3',
-      two: '1d8',
-      three: '1d8',
-      four: '2d6',
-      five: '3d6',
-      six: '3d10',
-      seven: '4d10',
-      eight: '5d10',
-      nine: '6d10',
-      ten: '8d10',
-    }[drLowMatches[1]];
-
-    return damageBonusByRank;
+    try {
+      const rank = parseDamageRank(drLowMatches[1]);
+      const scaling = DamageScaling.drl(rank);
+      return getExcessRankScalingString(scaling);
+    } catch {
+      return undefined;
+    }
   }
 
   const normalPattern = damageOrHealing === 'damage' ? damageRankPattern : healingRankPattern;
   const drMatches = effect?.match(normalPattern);
   if (drMatches && drMatches[1]) {
-    const damageBonusByRank = {
-      zero: '1',
-      one: '2',
-      two: '1d6',
-      three: '1d6',
-      four: '2d6',
-      five: '2d6',
-      six: '2d6',
-      seven: '2d8',
-      eight: '2d10',
-      nine: '4d6',
-      ten: '4d8',
-    }[drMatches[1]];
-
-    return damageBonusByRank;
+    try {
+      const rank = parseDamageRank(drMatches[1]);
+      const scaling = DamageScaling.dr(rank);
+      return getExcessRankScalingString(scaling);
+    } catch {
+      return undefined;
+    }
   }
 }

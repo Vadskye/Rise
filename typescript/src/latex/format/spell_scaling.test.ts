@@ -164,32 +164,62 @@ t.test('spellScaling', (t) => {
   });
 
   t.test('damage scaling', (t) => {
-    t.test('should work with damagerankone', (t) => {
-      const spell: Partial<ActiveAbility> = {
-        name: 'Test Spell',
-        scaling: 'damage',
-        rank: 1,
-        effect: 'damagerankone',
-      };
-      t.equal(
-        spellScaling(spell as ActiveAbility),
-        'The damage increases by 2 for each rank beyond 1.',
-      );
+    t.test('should work with damagerankzero through ten', (t) => {
+      const ranks = [
+        ['damagerankzero', '1'],
+        ['damagerankone', '2'],
+        ['damageranktwo', '1d6'],
+        ['damagerankthree', '1d6'],
+        ['damagerankfour', '2d6'],
+        ['damagerankfive', '2d6'],
+        ['damageranksix', '2d6'],
+        ['damagerankseven', '2d8'],
+        ['damagerankeight', '2d10'],
+        ['damageranknine', '4d6'],
+        ['damagerankten', '4d8'],
+      ];
+      for (const [rankStr, expectedVal] of ranks) {
+        const spell: Partial<ActiveAbility> = {
+          name: 'Test Spell',
+          scaling: 'damage',
+          rank: 1,
+          effect: rankStr,
+        };
+        t.equal(
+          spellScaling(spell as ActiveAbility),
+          `The damage increases by ${expectedVal} for each rank beyond 1.`,
+        );
+      }
       t.matchOnlyStrict(capturedWarnings, []);
       t.end();
     });
 
-    t.test('should work with damageranktwolow', (t) => {
-      const spell: Partial<ActiveAbility> = {
-        name: 'Test Spell',
-        scaling: 'damage',
-        rank: 1,
-        effect: 'damageranktwolow',
-      };
-      t.equal(
-        spellScaling(spell as ActiveAbility),
-        'The damage increases by 1d8 for each rank beyond 1.',
-      );
+    t.test('should work with damagerankzerolow through tenlow', (t) => {
+      const ranks = [
+        ['damagerankzerolow', '2'],
+        ['damagerankonelow', '3'],
+        ['damageranktwolow', '1d8'],
+        ['damagerankthreelow', '1d8'],
+        ['damagerankfourlow', '2d6'],
+        ['damagerankfivelow', '3d6'],
+        ['damageranksixlow', '3d10'],
+        ['damageranksevenlow', '4d10'],
+        ['damagerankeightlow', '5d10'],
+        ['damagerankninelow', '6d10'],
+        ['damageranktenlow', '8d10'],
+      ];
+      for (const [rankStr, expectedVal] of ranks) {
+        const spell: Partial<ActiveAbility> = {
+          name: 'Test Spell',
+          scaling: 'damage',
+          rank: 1,
+          effect: rankStr,
+        };
+        t.equal(
+          spellScaling(spell as ActiveAbility),
+          `The damage increases by ${expectedVal} for each rank beyond 1.`,
+        );
+      }
       t.matchOnlyStrict(capturedWarnings, []);
       t.end();
     });
@@ -213,31 +243,61 @@ t.test('spellScaling', (t) => {
   });
 
   t.test('healing scaling', (t) => {
-    t.test('should work with hprankone', (t) => {
-      const spell: Partial<ActiveAbility> = {
-        name: 'Test Spell',
-        scaling: 'healing',
-        rank: 1,
-        effect: 'hprankone',
-      };
-      t.equal(
-        spellScaling(spell as ActiveAbility),
-        'The healing increases by 2 for each rank beyond 1.',
-      );
+    t.test('should work with hprankzero through ten', (t) => {
+      const ranks = [
+        ['hprankzero', '1'],
+        ['hprankone', '2'],
+        ['hpranktwo', '1d6'],
+        ['hprankthree', '1d6'],
+        ['hprankfour', '2d6'],
+        ['hprankfive', '2d6'],
+        ['hpranksix', '2d6'],
+        ['hprankseven', '2d8'],
+        ['hprankeight', '2d10'],
+        ['hpranknine', '4d6'],
+        ['hprankten', '4d8'],
+      ];
+      for (const [rankStr, expectedVal] of ranks) {
+        const spell: Partial<ActiveAbility> = {
+          name: 'Test Spell',
+          scaling: 'healing',
+          rank: 1,
+          effect: rankStr,
+        };
+        t.equal(
+          spellScaling(spell as ActiveAbility),
+          `The healing increases by ${expectedVal} for each rank beyond 1.`,
+        );
+      }
       t.end();
     });
 
-    t.test('should work with hpranktwolow', (t) => {
-      const spell: Partial<ActiveAbility> = {
-        name: 'Test Spell',
-        scaling: 'healing',
-        rank: 1,
-        effect: 'hpranktwolow',
-      };
-      t.equal(
-        spellScaling(spell as ActiveAbility),
-        'The healing increases by 1d8 for each rank beyond 1.',
-      );
+    t.test('should work with hprankzerolow through tenlow', (t) => {
+      const ranks = [
+        ['hprankzerolow', '2'],
+        ['hprankonelow', '3'],
+        ['hpranktwolow', '1d8'],
+        ['hprankthreelow', '1d8'],
+        ['hprankfourlow', '2d6'],
+        ['hprankfivelow', '3d6'],
+        ['hpranksixlow', '3d10'],
+        ['hpranksevenlow', '4d10'],
+        ['hprankeightlow', '5d10'],
+        ['hprankninelow', '6d10'],
+        ['hpranktenlow', '8d10'],
+      ];
+      for (const [rankStr, expectedVal] of ranks) {
+        const spell: Partial<ActiveAbility> = {
+          name: 'Test Spell',
+          scaling: 'healing',
+          rank: 1,
+          effect: rankStr,
+        };
+        t.equal(
+          spellScaling(spell as ActiveAbility),
+          `The healing increases by ${expectedVal} for each rank beyond 1.`,
+        );
+      }
       t.end();
     });
 
