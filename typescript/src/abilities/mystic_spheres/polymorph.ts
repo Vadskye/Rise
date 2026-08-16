@@ -387,6 +387,7 @@ export const polymorph: MysticSphere = {
     {
       name: 'Bleed',
 
+      // +1dr for short range, -1dr for injury-only double damage
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
@@ -410,8 +411,7 @@ export const polymorph: MysticSphere = {
 
       functionsLike: {
         name: 'bleed',
-        exceptThat:
-          'both damage instances increase to \\damagerankfive.',
+        exceptThat: 'both damage instances increase to \\damagerankfour.',
       },
       rank: 4,
       roles: ['burn', 'execute'],
