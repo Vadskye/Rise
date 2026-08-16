@@ -142,30 +142,33 @@ export function findBoringSpells(
       const itemA = allItems.find((i) => i.name === spellA);
       const itemB = allItems.find((i) => i.name === spellB);
 
-      if (itemA) {
+      if (itemA || itemB) {
+        const nameA = itemA?.name || spellA;
+        const nameB = itemB?.name || spellB;
+        const sphereA = itemA?.sphere || 'other sphere';
+        const sphereB = itemB?.sphere || 'other sphere';
+        const sphere =
+          itemA && itemB && itemA.sphere === itemB.sphere
+            ? itemA.sphere
+            : `${sphereA} / ${sphereB}`;
+        const rank = itemA?.rank ?? itemB?.rank ?? 0;
+        const kind = itemA?.kind ?? itemB?.kind ?? 'spell';
+        const sortedNames = [nameA, nameB].sort();
+
         findings.push({
-          sphere: itemA.sphere,
-          name: itemA.name,
-          rank: itemA.rank,
-          kind: itemA.kind,
+          sphere,
+          name: sortedNames.join(', '),
+          rank,
+          kind,
           category: 'redundant_design',
           score: 8,
-          reason: `Mechanically redundant with "${spellB}" (${itemB?.sphere || 'other sphere'})`,
+          reason:
+            sphereA === sphereB
+              ? `Mechanically redundant designs in ${sphere}: "${nameA}" and "${nameB}"`
+              : `Mechanically redundant designs: "${nameA}" (${sphereA}) and "${nameB}" (${sphereB})`,
           details: issue.message,
           recommendation: `Differentiate the mechanics (e.g. range, defense targeted, action cost, secondary condition) or remove/combine one of the spells.`,
-        });
-      }
-      if (itemB) {
-        findings.push({
-          sphere: itemB.sphere,
-          name: itemB.name,
-          rank: itemB.rank,
-          kind: itemB.kind,
-          category: 'redundant_design',
-          score: 8,
-          reason: `Mechanically redundant with "${spellA}" (${itemA?.sphere || 'other sphere'})`,
-          details: issue.message,
-          recommendation: `Differentiate the mechanics (e.g. range, defense targeted, action cost, secondary condition) or remove/combine one of the spells.`,
+          spells: sortedNames,
         });
       }
     } else if (issue.type === 'strictly_superior') {
