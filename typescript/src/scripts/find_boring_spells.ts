@@ -13,9 +13,7 @@ export type BoringCategory =
   | 'vanilla_damage'
   | 'redundant_design'
   | 'strictly_outclassed'
-  | 'passive_stat_buff'
-  | 'role_saturation'
-  | 'low_complexity';
+  | 'role_saturation';
 
 export interface BoringFinding {
   sphere: string;
@@ -234,55 +232,6 @@ export function detectValidationIssues(items: SpellItem[]): BoringFinding[] {
 }
 
 /**
- * Detects passive stat buffs (attune/focus spells with only flat numerical bonuses).
- */
-export function detectPassiveStatBuffs(items: SpellItem[]): BoringFinding[] {
-  const findings: BoringFinding[] = [];
-
-  for (const item of items) {
-    const s = item.spell;
-    const roles = s.roles || [];
-    const isBuffRole = roles.some((r) =>
-      ['attune', 'focus', 'turtle', 'ramp'].includes(r.toLowerCase()),
-    );
-    const fullText = getSpellFullText(s);
-
-    if (isBuffRole && !s.attack) {
-      const isOnlyFlatStats =
-        /^\s*(?:you gain|grants?|targets? gain|allies gain)?\s*(?:a\s+)?(?:\+\d+|-\d+)?\s*(?:bonus|penalty)?\s*to\s*(?:accuracy|defense|armor|saving throws|fortitude|reflex|mental|brawn)\b[^.]*\.\s*$/i.test(
-          fullText,
-        );
-      const hasActiveGrantedAction =
-        /standard action|minor action|reaction|whenever|can spend|can use|allows you to/i.test(
-          fullText,
-        );
-
-      if (
-        isOnlyFlatStats ||
-        (!hasActiveGrantedAction &&
-          /gain a \+\d+ bonus to/i.test(fullText) &&
-          fullText.length < 120)
-      ) {
-        findings.push({
-          sphere: item.sphere,
-          name: s.name,
-          rank: item.rank,
-          kind: item.kind,
-          category: 'passive_stat_buff',
-          score: 6,
-          reason: 'Flat numerical stat buff with no active actions or interactive mechanics',
-          details: `Effect description: "${fullText}"`,
-          recommendation:
-            'Replace simple passive stat bonuses with an active granted capability, situational trigger, or dynamic choice.',
-        });
-      }
-    }
-  }
-
-  return findings;
-}
-
-/**
  * Detects role saturation within a single sphere (3+ spells competing for the exact same role and rank).
  */
 export function detectRoleSaturation(items: SpellItem[]): BoringFinding[] {
@@ -331,34 +280,6 @@ export function detectRoleSaturation(items: SpellItem[]): BoringFinding[] {
 }
 
 /**
- * Detects spells with very brief descriptions that may lack tactical depth or clear sphere identity.
- */
-export function detectLowComplexitySpells(items: SpellItem[]): BoringFinding[] {
-  const findings: BoringFinding[] = [];
-
-  for (const item of items) {
-    const s = item.spell;
-    const fullText = getSpellFullText(s);
-    if (fullText.length > 0 && fullText.length < 50 && !s.functionsLike) {
-      findings.push({
-        sphere: item.sphere,
-        name: s.name,
-        rank: item.rank,
-        kind: item.kind,
-        category: 'low_complexity',
-        score: 4,
-        reason: `Very brief spell description (${fullText.length} characters)`,
-        details: `Text: "${fullText}"`,
-        recommendation:
-          'Expand text to clarify interactions, tactical choices, or unique sphere identity, or combine into another spell.',
-      });
-    }
-  }
-
-  return findings;
-}
-
-/**
  * Deduplicates findings by (sphere, name, category), preserving the entry with the highest score.
  */
 export function deduplicateFindings(findings: BoringFinding[]): BoringFinding[] {
@@ -382,9 +303,7 @@ export function findBoringSpells(options: FindBoringSpellsOptions = {}): BoringF
   const rawFindings: BoringFinding[] = [
     ...detectVanillaDamageSpells(items),
     ...detectValidationIssues(items),
-    ...detectPassiveStatBuffs(items),
     ...detectRoleSaturation(items),
-    ...detectLowComplexitySpells(items),
   ];
 
   let result = deduplicateFindings(rawFindings);
@@ -502,7 +421,7 @@ if (require.main === module) {
     .option('-s, --sphere <name>', 'Filter findings by sphere name (e.g. Pyromancy, Aeromancy)')
     .option(
       '-c, --category <category>',
-      'Filter by category (vanilla_damage, redundant_design, strictly_outclassed, passive_stat_buff, role_saturation, low_complexity)',
+      'Filter by category (vanilla_damage, redundant_design, strictly_outclassed, role_saturation)',
     )
     .option('-m, --min-score <number>', 'Filter by minimum severity score (1-10)', (val) =>
       parseInt(val, 10),
