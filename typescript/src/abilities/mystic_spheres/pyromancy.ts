@@ -453,8 +453,9 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Flame Breath',
 
-      // Target is +33% damage from a rank 3 attunement.
-      // Normal medarea cone would be r2 damage = 10, r3 would be 13, perfect.
+      // Target is +33% damage from a rank 3 normal spell.
+      // Normal medarea cone would be r3 damage = 13, so +33% is 17.
+      // dr4 = 15.5, dr5 = 22. dr4 is closer, though not ideal.
       attack: {
         hit: `\\damagerankfour.`,
         halfOnMiss: true,

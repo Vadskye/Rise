@@ -488,7 +488,7 @@ export const telekinesis: MysticSphere = {
           'the area increases to a \\medarealong wall, and its hit points increase to four times your \\glossterm{power}.',
       },
       rank: 3,
-      roles: ['hazard'],
+      roles: ['barrier'],
       scaling: {
         5: "The wall's hit points increase to five times your power.",
         7: "The wall's hit points increase to six times your power.",

@@ -425,11 +425,14 @@ export const toxicology: MysticSphere = {
     {
       name: 'Acid Breath',
 
+      // Target is +33% damage from a rank 3 normal spell.
+      // Normal medarea cone would be r3 damage = 13, so +33% is 17.
+      // Double dr2 is 20, which is 18% over target, which is reasonable given the delay.
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankthree.
-          The target also \\briefly \\debuff{corrodes} for \\damagerankthree.
+          \\damageranktwo.
+          The target also \\briefly \\debuff{corrodes} for \\damageranktwo.
         `,
         halfOnMiss: true,
         targeting: `
@@ -451,7 +454,7 @@ export const toxicology: MysticSphere = {
       functionsLike: {
         name: 'acid breath',
         exceptThat: `
-          the damage increases to \\damageranksix, and the area increases to a \\largearea cone from you.
+          the damage increases to \\damagerankfive, and the area increases to a \\largearea cone from you.
         `,
       },
       rank: 6,
