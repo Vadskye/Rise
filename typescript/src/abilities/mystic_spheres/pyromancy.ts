@@ -367,15 +367,15 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damageranktwo.
-          The target also \\briefly \\debuff{burns} for \\damageranktwo.
+          \\damagerankone.
+          The target also \\briefly \\debuff{burns} for \\damagerankone.
         `,
         miss: BURNING_HALF,
         targeting: `
           Make an attack vs. Armor and Reflex against everything in a \\smallarea cone from you.
         `,
       },
-      rank: 2,
+      rank: 1,
       roles: ['wildfire'],
       scaling: 'damage',
     },
@@ -383,22 +383,18 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Mighty Fan of Flames',
 
-      // Rank 5 Spell
-      // Area: Small cone from you (R0, mod +1)
-      // Mod: DoT (-2)
-      // Result: 5 + 1 - 2 = dr4 (twice)
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankfive.
-          The target also \\briefly \\debuff{burns} for \\damagerankfive.
+          \\damagerankfour.
+          The target also \\briefly \\debuff{burns} for \\damagerankfour.
         `,
         miss: BURNING_HALF,
         targeting: `
           Make an attack vs. Armor and Reflex against everything in a \\smallarea cone from you.
         `,
       },
-      rank: 5,
+      rank: 4,
       roles: ['wildfire'],
       scaling: 'damage',
     },
