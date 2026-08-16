@@ -20,6 +20,7 @@ import {
   isTrait,
   RiseAbilityDefinitionTag,
   RISE_DEFAULT_TRAITS,
+  isMonsterRole,
 } from '@src/character_sheet/rise_data';
 import {
   RiseCraftSkill,
@@ -155,7 +156,6 @@ export type CreaturePropertyMap = {
   base_class: RiseBaseClass;
   creature_origin: RiseCreatureOrigin;
   creature_types: RiseCreatureType[];
-  creature_type?: RiseCreatureType;
   role: RiseRole;
   size: RiseSize;
 } & Record<NumericCreatureProperty, number> &
@@ -167,13 +167,11 @@ export type CreatureRequiredProperties =
   | 'base_class'
   | 'elite'
   | 'creature_origin'
+  | 'creature_types'
   | 'size'
   | 'level';
 
-export type CreatureRequiredPropertyMap = Pick<CreaturePropertyMap, CreatureRequiredProperties> & {
-  creature_types?: RiseCreatureType[];
-  creature_type?: RiseCreatureType;
-};
+export type CreatureRequiredPropertyMap = Pick<CreaturePropertyMap, CreatureRequiredProperties>;
 
 type CreatureProperty =
   | CustomCreatureProperty
@@ -981,8 +979,14 @@ export class Creature implements CreaturePropertyMap {
   }
 
   setRequiredProperties(properties: CreatureRequiredPropertyMap) {
+    let monster_type: string | undefined;
+    if (properties.elite) {
+      monster_type = 'elite';
+    } else if (isMonsterRole(properties.base_class)) {
+      monster_type = 'normal';
+    }
     this.setProperties({
-      monster_type: properties.elite ? 'elite' : 'normal',
+      monster_type,
       ...properties,
     });
 

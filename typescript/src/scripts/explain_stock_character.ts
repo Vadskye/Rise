@@ -21,6 +21,11 @@ export function explainStockCharacter(creature: Creature) {
   );
   console.log('='.repeat(80));
 
+  console.log('\n--- Core ---');
+  console.log(`  Monster: ${creature.is_monster}`);
+  console.log(`  Elite: ${creature.elite}`);
+  console.log(`  Monster Type: ${creature.monster_type}`);
+
   // Attributes
   console.log('\n--- Attributes ---');
   for (const attr of ATTRIBUTE_NAMES) {
@@ -113,33 +118,11 @@ export function explainStockCharacter(creature: Creature) {
   console.log('='.repeat(80) + '\n');
 }
 
-/**
- * Triggers recalculation on repeating custom modifiers by re-dispatching property updates
- * to each modifier row.
- */
-export function forceRecalculateCustomModifiers(creature: Creature) {
-  const sheet = creature['sheet'];
-  setCurrentCharacterSheet(sheet.characterName);
-  for (const modType of ['permanent', 'attuned', 'legacy', 'temporary'] as const) {
-    const sectionName = `${modType}modifiers` as const;
-    const repSection = sheet.getRepeatingSection(`repeating_${sectionName}`);
-    const rowIds = repSection.getRowIds();
-    for (const rowId of rowIds) {
-      const name = repSection.getRowValue(rowId, 'name');
-      sheet.setProperties({
-        [`repeating_${sectionName}_${rowId}_name`]: name,
-      });
-    }
-  }
-  creature.setProperties({});
-}
-
 async function main() {
   cli
     .option('-c, --character <name>', 'Character name (e.g. "Sorcerer 4" or "Fighter 1")')
     .option('--class <string>', 'Filter by class (e.g. "sorcerer")', 'sorcerer')
     .option('-l, --level <number>', 'Filter by level (e.g. 4)', (val) => parseInt(val, 10))
-    .option('--recalc', 'Simulate triggering custom modifier recalculation')
     .parse(process.argv);
 
   const stock = new StockCharacters();
@@ -152,8 +135,7 @@ async function main() {
     const className = cli.class.charAt(0).toUpperCase() + cli.class.slice(1).toLowerCase();
     targetName = `${className} ${cli.level}`;
   } else {
-    // Default to Sorcerer 4
-    targetName = 'Sorcerer 4';
+    cli.help();
   }
 
   const creature = stock.getCharacter(targetName);
@@ -163,13 +145,6 @@ async function main() {
   }
 
   explainStockCharacter(creature);
-
-  if (cli.recalc) {
-    console.log(`>>> Triggering custom modifier recalculation via repeating section update...`);
-    forceRecalculateCustomModifiers(creature);
-    console.log(`>>> Re-evaluating ${creature.name}:\n`);
-    explainStockCharacter(creature);
-  }
 }
 
 if (require.main === module) {

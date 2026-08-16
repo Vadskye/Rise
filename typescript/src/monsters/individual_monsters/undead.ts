@@ -778,7 +778,7 @@ function addVampires(grimoire: Grimoire) {
             base_class: 'skirmisher',
             elite: true,
             creature_origin: 'undead',
-            creature_type: 'humanoid',
+            creature_types: ['humanoid'],
             level: 5,
             size: 'medium',
           });

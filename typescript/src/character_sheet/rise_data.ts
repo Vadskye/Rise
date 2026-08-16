@@ -25,7 +25,7 @@ export type RiseCreatureType =
   | 'plant'
   | 'soulforged';
 export type RiseRole = 'Brute' | 'Skirmisher' | 'Warrior' | 'Sniper' | 'Leader';
-export type RiseBaseClass =
+export type RiseCharacterClass =
   | 'barbarian'
   | 'cleric'
   | 'druid'
@@ -54,12 +54,25 @@ export type RiseBaseClass =
   | 'tiefling'
   | 'treant'
   | 'troll'
-  | 'vampire'
-  | 'brute'
-  | 'leader'
-  | 'skirmisher'
-  | 'sniper'
-  | 'warrior';
+  | 'vampire';
+
+export type RiseMonsterRole = 'brute' | 'leader' | 'skirmisher' | 'sniper' | 'warrior';
+
+export type RiseBaseClass = RiseCharacterClass | RiseMonsterRole;
+
+export function isMonsterRole(baseClass: RiseBaseClass): baseClass is RiseMonsterRole {
+  return (
+    baseClass === 'brute' ||
+    baseClass === 'leader' ||
+    baseClass === 'skirmisher' ||
+    baseClass === 'sniper' ||
+    baseClass === 'warrior'
+  );
+}
+
+export function isCharacterClass(baseClass: RiseBaseClass): baseClass is RiseCharacterClass {
+  return !isMonsterRole(baseClass);
+}
 
 // All lowercase to match the values in creation_page.py
 export type RiseSize =
