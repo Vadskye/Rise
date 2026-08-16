@@ -39,6 +39,7 @@ export interface SpellItem {
 export interface FindBoringSpellsOptions {
   sphereFilter?: string;
   categoryFilter?: BoringCategory;
+  maxRank?: number;
   minScore?: number;
   includeRituals?: boolean;
 }
@@ -46,6 +47,7 @@ export interface FindBoringSpellsOptions {
 export interface CliOptions {
   sphere?: string;
   category?: BoringCategory;
+  maxRank?: number;
   minScore?: number;
   includeRituals?: boolean;
   summary?: boolean;
@@ -67,19 +69,21 @@ export function getSpellFullText(
 /**
  * Collects all spells, cantrips, and optionally rituals from mystic spheres.
  */
-export function getAllSpells(options: { includeRituals?: boolean } = {}): SpellItem[] {
+export function getAllSpells(options: { includeRituals?: boolean; maxRank?: number } = {}): SpellItem[] {
   const items: SpellItem[] = [];
 
   for (const sphere of allMysticSpheres) {
     if (sphere.name !== 'Universal' && sphere.spells) {
       for (const s of sphere.spells) {
-        items.push({
-          sphere: sphere.name,
-          name: s.name,
-          spell: s,
-          kind: 'spell',
-          rank: s.rank,
-        });
+        if (!options.maxRank || s.rank <= options.maxRank) {
+          items.push({
+            sphere: sphere.name,
+            name: s.name,
+            spell: s,
+            kind: 'spell',
+            rank: s.rank,
+          });
+        }
       }
     }
   }
@@ -298,7 +302,7 @@ export function deduplicateFindings(findings: BoringFinding[]): BoringFinding[] 
  * Evaluates all spells across all spheres to find boring, redundant, or uninteresting spell designs.
  */
 export function findBoringSpells(options: FindBoringSpellsOptions = {}): BoringFinding[] {
-  const items = getAllSpells({ includeRituals: options.includeRituals });
+  const items = getAllSpells({ includeRituals: options.includeRituals, maxRank: options.maxRank });
 
   const rawFindings: BoringFinding[] = [
     ...detectVanillaDamageSpells(items),
@@ -395,6 +399,7 @@ export async function runCli(opts: CliOptions): Promise<void> {
   const findings = findBoringSpells({
     sphereFilter: opts.sphere,
     categoryFilter: opts.category,
+    maxRank: opts.maxRank,
     minScore: opts.minScore,
     includeRituals: opts.includeRituals,
   });
@@ -423,6 +428,7 @@ if (require.main === module) {
       '-c, --category <category>',
       'Filter by category (vanilla_damage, redundant_design, strictly_outclassed, role_saturation)',
     )
+    .option('--max-rank <max_rank>', 'Filter by max spell rank', (val) => parseInt(val, 10))
     .option('-m, --min-score <number>', 'Filter by minimum severity score (1-10)', (val) =>
       parseInt(val, 10),
     )
@@ -434,6 +440,7 @@ if (require.main === module) {
   runCli({
     sphere: cli.sphere,
     category: cli.category,
+    maxRank: cli.maxRank,
     minScore: cli.minScore,
     includeRituals: Boolean(cli.includeRituals),
     summary: Boolean(cli.summary),
