@@ -249,7 +249,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         `,
       },
       rank: 3,
-      roles: ['wildfire'],
+      roles: ['clear'],
       scaling: 'damage',
     },
 
@@ -273,7 +273,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         `,
       },
       rank: 6,
-      roles: ['wildfire'],
+      roles: ['clear'],
       scaling: 'damage',
     },
 
@@ -355,7 +355,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         `,
       },
       rank: 1,
-      roles: ['wildfire'],
+      roles: ['clear'],
       scaling: 'damage',
     },
 
@@ -374,7 +374,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         `,
       },
       rank: 4,
-      roles: ['wildfire'],
+      roles: ['clear'],
       scaling: 'damage',
     },
 
@@ -515,7 +515,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         `,
       },
       rank: 5,
-      roles: ['wildfire'],
+      roles: ['clear'],
       scaling: 'damage',
       type: 'Sustain (minor)',
     },
@@ -674,7 +674,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         `,
       },
       rank: 1,
-      roles: ['wildfire'],
+      roles: ['clear'],
       scaling: 'damage',
     },
 
@@ -694,7 +694,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         `,
       },
       rank: 4,
-      roles: ['wildfire'],
+      roles: ['clear'],
       scaling: 'damage',
     },
 
@@ -707,7 +707,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
           'the damage of both the initial hit and the burn increases to \\damageranksix, and the area increases to a \\largearea cone.',
       },
       rank: 7,
-      roles: ['wildfire'],
+      roles: ['clear'],
       scaling: 'damage',
     },
 

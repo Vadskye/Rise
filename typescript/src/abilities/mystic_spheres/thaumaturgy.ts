@@ -616,7 +616,7 @@ export const thaumaturgy: MysticSphere = {
         `,
       },
       rank: 3,
-      roles: ['wildfire', 'boon'],
+      roles: ['clear', 'boon'],
       scaling: 'damage',
     },
 
@@ -628,7 +628,7 @@ export const thaumaturgy: MysticSphere = {
         exceptThat: 'the damage increases to \\damageranksixlow.',
       },
       rank: 6,
-      roles: ['wildfire', 'boon'],
+      roles: ['clear', 'boon'],
       scaling: 'damage',
     },
   ],

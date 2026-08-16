@@ -354,7 +354,7 @@ export const astromancy: MysticSphere = {
         `,
       },
       rank: 5,
-      roles: ['wildfire'],
+      roles: ['clear'],
       scaling: 'damage',
       type: 'Sustain (attunable, minor)',
     },
@@ -377,7 +377,7 @@ export const astromancy: MysticSphere = {
         `,
       },
       rank: 7,
-      roles: ['wildfire'],
+      roles: ['clear'],
       type: 'Sustain (standard)',
     },
     {

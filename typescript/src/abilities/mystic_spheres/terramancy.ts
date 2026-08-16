@@ -396,7 +396,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         You crack the earth around you, shaking everyone violently.
       `,
       rank: 2,
-      roles: ['wildfire'],
+      roles: ['clear'],
       scaling: 'damage',
     },
 
@@ -421,7 +421,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         You crack the earth around you, shaking everyone violently.
       `,
       rank: 5,
-      roles: ['wildfire'],
+      roles: ['clear'],
       scaling: 'damage',
     },
 
@@ -445,7 +445,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         You crack the earth around you, shaking everyone violently.
       `,
       rank: 7,
-      roles: ['wildfire'],
+      roles: ['clear'],
       scaling: 'accuracy',
     },
 
@@ -731,7 +731,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       `,
       rank: 6,
       scaling: 'damage',
-      roles: ['wildfire'],
+      roles: ['clear'],
       tags: ['Manifestation'],
       type: 'Sustain (minor)',
     },

@@ -178,7 +178,7 @@ export const ripAndTear: CombatStyle = {
         \\crit ${MULTIHIT_CRIT}
       `,
       rank: 1,
-      roles: ['wildfire'],
+      roles: ['clear'],
       tags: ['Blood'],
     },
 
@@ -194,7 +194,7 @@ export const ripAndTear: CombatStyle = {
         \\crit ${MULTIHIT_CRIT}
       `,
       rank: 5,
-      roles: ['wildfire'],
+      roles: ['clear'],
       tags: ['Blood'],
     },
 

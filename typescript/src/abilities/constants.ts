@@ -42,6 +42,5 @@ export const ABILITY_ROLES = [
   'stasis', // Single-target brief or one-turn debuff that prevents enemy action
   'trip', // Single-target brief or one-turn debuff. Does not require injury.
   'turtle', // Brief or one-turn defensive buff or protection effect on yourself
-  'wildfire', // Damage over time against multiple targets, typically in an area
 ] as const;
 export type AbilityRole = (typeof ABILITY_ROLES)[number];

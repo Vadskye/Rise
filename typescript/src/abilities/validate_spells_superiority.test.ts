@@ -715,7 +715,7 @@ t.test('validateSpells: Strictly Superior Spells', (t) => {
         makeMockSpell({
           name: 'Frost Breath',
           rank: 3,
-          roles: ['wildfire'] as const,
+          roles: ['clear'] as const,
           type: 'Attune',
           attack: {
             hit: 'The target feels a growing chill. At the end of its next turn, it takes \\damagerankfour.',

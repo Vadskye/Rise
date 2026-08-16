@@ -303,7 +303,7 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 3,
-      roles: ['wildfire'],
+      roles: ['clear'],
       scaling: 'damage',
     },
 
@@ -319,7 +319,7 @@ export const photomancy: MysticSphere = {
           'the area increases to a \\medarea radius \\glossterm{zone}, and the damage increases to \\damagerankfourlow.',
       },
       rank: 6,
-      roles: ['wildfire'],
+      roles: ['clear'],
     },
 
     {

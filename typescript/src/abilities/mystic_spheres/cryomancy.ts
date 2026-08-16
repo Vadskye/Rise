@@ -338,7 +338,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         `,
       },
       rank: 4,
-      roles: ['wildfire'],
+      roles: ['clear'],
       scaling: 'damage',
       tags: ['Manifestation', 'Physical'],
     },
@@ -362,7 +362,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
           At the start of your next turn, this effect \\glossterm{repeats} in the same area.
         `,
       },
-      roles: ['wildfire'],
+      roles: ['clear'],
       rank: 7,
       tags: ['Manifestation', 'Physical'],
       // scaling: 'accuracy',
@@ -391,7 +391,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         `,
       },
       rank: 5,
-      roles: ['wildfire'],
+      roles: ['clear'],
       scaling: 'damage',
       tags: ['Manifestation'],
     },
@@ -474,14 +474,13 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
     {
       name: 'Frost Breath',
 
-      // Rank 3 Spell
-      // Area: Medium cone from self (R2, mod -1)
-      // Mod: Inescapably Delayed (+1), Attune (R1-4) (+1)
-      // Result: 3 - 1 + 1 + 1 = dr4
+      // Target is +33% damage from a rank 3 normal spell.
+      // Normal medarea cone would be r3 damage = 13. +33% is 17, +20% for delay is 20.
+      // dr4 = 15.5, dr5 = 22. dr5 is closer, though not ideal.
       attack: {
         hit: `
           The target feels a growing chill.
-          At the end of its next turn, it takes \\damagerankfour.
+          At the end of its next turn, it takes \\damagerankfive.
         `,
         halfOnMiss: true,
         targeting: `
@@ -489,11 +488,11 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
           When you do, make an attack vs. Fortitude against everything in a \\medarea cone from you.
           You \\briefly can't use this ability again.
 
-          If any Medium or larger creatures lose \\glossterm{hit points} from this spell, you gain an \\glossterm{ice crystal}.
+          When you use this ability, if any Medium or larger creatures take damage from it, you gain an \\glossterm{ice crystal}.
         `,
       },
       rank: 3,
-      roles: ['wildfire', 'generator'],
+      roles: ['clear', 'generator'],
       scaling: 'damage',
       type: 'Attune',
     },
@@ -501,18 +500,17 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
     {
       name: 'Mighty Frost Breath',
 
-      // Rank 6 Spell
-      // Area: Medium cone from self (R2, mod -1)
-      // Mod: Inescapably Delayed (+1), Attune (R5+) (+2), Generator (-1)
-      // Result: 6 - 1 + 1 + 2 - 1 = dr7
+      // Target is +46% damage from a rank 6 attunement.
+      // Normal medium cone would be r5 damage = 30. +46% is 44, +20% is 53.
+      // dr8 is 58, which is close enough.
       functionsLike: {
         name: 'frost breath',
         exceptThat: `
-          the damage increases to \\damagerankseven.
+          the damage increases to \\damagerankeight.
         `,
       },
       rank: 6,
-      roles: ['wildfire', 'generator'],
+      roles: ['clear', 'generator'],
       scaling: 'damage',
       type: 'Attune',
     },

@@ -45,17 +45,6 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       roles: ['attune'],
       type: 'Attune',
     },
-    {
-      name: 'Cushion of Air',
-
-      effect: `
-        You gain an average \\glossterm{glide speed}.
-        In addition, you become immune to \\glossterm{falling damage}.
-      `,
-      rank: 3,
-      roles: ['attune'],
-      type: 'Attune',
-    },
     // Of the 7 possible attacks against the target, assume that 4 can benefit, so this is
     // 0.8 EA. That allows room to increase to distrange.
     {
@@ -547,6 +536,9 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
           Its final position should be the same distance from you as its starting position.
         `,
         halfOnMiss: true,
+        injury: `
+          You also \\glossterm{fling} the target 15 feet upwards.
+        `,
         targeting: `
           Make an attack vs. Brawn and Reflex against all \\glossterm{enemies} in a \\medarea radius from you.
         `,
@@ -560,25 +552,22 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
     {
       name: 'Massive Hurricane',
 
-      // Rank 6 Spell
-      // Area: Large radius from self (R4)
-      // Bonus: Enemies only (radius from self, +2 Area Rank) -> R6 area (mod -3)
-      // Bonus: Double defense (mod +1)
-      // Effect: Debuff (Push 15' clockwise) (mod 0 - unusually weak)
-      // Result: 6 - 3 + 1 - 0 = dr4
       attack: {
         hit: `
-          \\damagerankfour.
+          \\damagerankfive.
           In addition, the target is \\glossterm{pushed} 15 feet clockwise around you.
           Its final position should be the same distance from you as its starting position.
         `,
         halfOnMiss: true,
+        injury: `
+          You also \\glossterm{fling} the target 30 feet upwards.
+        `,
         targeting: `
           Make an attack vs. Brawn and Reflex against all \\glossterm{enemies} in a \\largearea radius from you.
         `,
       },
       // narrative: '',
-      rank: 6,
+      rank: 7,
       roles: ['clear'],
       scaling: 'damage',
       tags: ['Physical'],
@@ -662,7 +651,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         Your body is partially transformed into mist.
         This allows you to drift through enemies and even the air with ease.
       `,
-      rank: 4,
+      rank: 3,
       roles: ['attune'],
       type: 'Attune',
     },
