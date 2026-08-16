@@ -470,7 +470,7 @@ export function schoolSpecialist(): RankAbility[] {
         If you specialize in this school, you gain a \\plus1 \\glossterm{accuracy} bonus, and you can add half your Perception to your \\glossterm{magical power}.
 
         \\subcf{Necromancy} The \\sphere{revelation} and \\sphere{vivimancy} mystic spheres.
-        If you specialize in this school, you gain a \\plus3 bonus to your \\glossterm{durability}.
+        If you specialize in this school, you gain a \\plus2 accuracy bonus against \\trait{living} creatures with less than their maximum hit points, and against all \\creatureorigin{undead} creatures. 
 
         \\subcf{Transmutation} The \\sphere{chronomancy}, \\sphere{polymorph}, and \\sphere{terramancy} mystic spheres.
         If you specialize in this school, you gain a \\plus2 bonus to your Brawn, Fortitude, Reflex, or Mental defense.
@@ -494,7 +494,7 @@ export function schoolSpecialist(): RankAbility[] {
       description: `
         You gain a defensive ability based on your chosen school.
         {
-        \\subcf{Abjuration} You are immune to \\glossterm{push} and \\glossterm{fling} effects unless you choose to be affected.
+        \\subcf{Abjuration} You are immune to \\glossterm{push}, \\glossterm{fling}, and \\glossterm{teleport} effects unless you choose to be affected.
 
         \\subcf{Conjuration} You passively flicker into the Astral Expanse, causing all \\glossterm{targeted} attacks against you to have a 10\\% \\glossterm{failure chance}.
 
@@ -502,7 +502,7 @@ export function schoolSpecialist(): RankAbility[] {
 
         \\subcf{Illusion} You are immune to being \\dazzled and \\blinded.
 
-        \\subcf{Necromancy} Whenever you \\glossterm{injure} a creature, you \\glossterm{briefly} become \\resistant to their attacks.
+        \\subcf{Necromancy} You gain a \\plus3 bonus to your \\glossterm{durability}.
 
         \\subcf{Transmutation} You gain a \\plus1 bonus to \\glossterm{vital rolls}.
         }
@@ -524,7 +524,7 @@ export function schoolSpecialist(): RankAbility[] {
 
         \\subcf{Illusion} You gain a \\plus2 \\glossterm{enhancement bonus} to the Disguise, Stealth, and Sleight of Hand skills.
 
-        \\subcf{Necromancy} The durability bonus increases to \\plus5.
+        \\subcf{Necromancy} Whenever you \\glossterm{injure} a creature, you \\glossterm{briefly} become \\resistant to their attacks. 
 
         \\subcf{Transmutation} The defense bonus increases to \\plus3.
         }
@@ -557,9 +557,9 @@ export function schoolSpecialist(): RankAbility[] {
 
         \\subcf{Illusion} You are immune to \\abilitytag{Emotion} and \\abilitytag{Visual} attacks.
 
-        \\subcf{Transmutation} The vital roll bonus increases to \\plus2.
+        \\subcf{Necromancy} The durability bonus increases to \\plus5.
 
-        \\subcf{Necromancy} You are \\resistant to attacks from \\glossterm{injured} creatures and undead creatures.
+        \\subcf{Transmutation} The vital roll bonus increases to \\plus2.
         }
       `,
     },
@@ -579,7 +579,7 @@ export function schoolSpecialist(): RankAbility[] {
 
         \\subcf{Illusion} The accuracy bonus increases to \\plus2.
 
-        \\subcf{Necromancy} The durability bonus increases to \\plus7.
+        \\subcf{Necromancy} The accuracy bonus increases to \\plus4.
 
         \\subcf{Transmutation} The defense bonus increases to \\plus4.
         }
