@@ -706,8 +706,8 @@ t.test('calculateDamage', (t) => {
 
   t.test('dr4 as a rank 6 creature', (t) => {
     const ability = { rank: 4, isMagical: false } as any;
-    // +4d6 from scaling
-    t.equal(calculateDamage(rank6Creature, ability, 4, false).toString(), '4d6+10');
+    // +6d6 from scaling
+    t.equal(calculateDamage(rank6Creature, ability, 4, false).toString(), '6d6+10');
     t.end();
   });
 
