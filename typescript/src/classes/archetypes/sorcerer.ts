@@ -467,11 +467,11 @@ export function arcaneMagicModifiers(creature: Creature, rank: number) {
 export function arcaneSpellMasteryModifiers(creature: Creature, rank: number) {
   applyArchetypeActiveAbilities(creature, arcaneSpellMastery(), rank);
   if (rank >= 1) {
-    // Assuming Con requirement is met for simplicity
     creature.addSimpleModifier({
       name: 'Arcane Dynamo',
       statistic: 'magical_power',
-      value: 2,
+      // Assume you hit the Con requirement at level 3
+      value: creature.level >= 3 ? 2 : 1,
     });
   }
 
