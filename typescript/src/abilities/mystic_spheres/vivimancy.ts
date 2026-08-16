@@ -60,7 +60,7 @@ export const vivimancy: MysticSphere = {
       functionsLike: {
         name: 'lifesteal grasp',
         exceptThat: `
-          the damage increases to \\damagerankfive, and the healing increases to \\hprankseven.
+          the damage increases to \\damagerankfive, any \\glossterm{extra damage} is doubled, and the healing increases to \\hprankseven.
         `,
       },
       rank: 4,
@@ -549,7 +549,8 @@ export const vivimancy: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damageranksix, and the target's blood becomes linked to yours as a \\glossterm{condition}.
+          \\damageranksix, and any \\glossterm{extra damage} is doubled.
+          The target's blood becomes linked to yours as a \\glossterm{condition}.
           At the end of each of your subsequent turns, if you lost hit points since your last turn, the target takes \\damageranksix.
         `,
         targeting: `

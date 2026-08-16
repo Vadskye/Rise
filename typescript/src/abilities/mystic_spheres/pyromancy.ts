@@ -418,7 +418,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       functionsLike: {
         name: 'ignition',
         exceptThat:
-          'the damage increases to \\damagerankfive, and the difficulty value of the Dexterity check to stop burning increases to 10.',
+          'the damage increases to \\damagerankfive, and any \\glossterm{extra damage} is doubled. In addition, the difficulty value of the Dexterity check to stop burning increases to 10.',
       },
       rank: 6,
       roles: ['burn'],
@@ -977,7 +977,8 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       functionsLike: {
         name: 'fire shield',
-        exceptThat: 'the damage increases to \\damagerankfive.',
+        exceptThat:
+          'the damage increases to \\damagerankfive, and any \\glossterm{extra damage} is doubled.',
       },
       roles: ['generator', 'retaliate'],
       rank: 5,

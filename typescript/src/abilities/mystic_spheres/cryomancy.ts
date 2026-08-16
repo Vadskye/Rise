@@ -49,7 +49,8 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       // Result: 3 + 2 = dr5
       attack: {
         hit: `
-          \\damagerankfive, and you gain an \\glossterm{ice crystal}.
+          \\damagerankfive, and any \\glossterm{extra damage} is doubled.
+          You gain an \\glossterm{ice crystal}.
         `,
         injury: `
           The target slowly begins freezing as a \\glossterm{condition}.
@@ -537,7 +538,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       name: 'Mighty Icicle Carapace',
 
       attack: {
-        hit: `\\damagerankseven.`,
+        hit: `\\damagerankseven, and any \\glossterm{extra damage} is doubled.`,
         targeting: `
           Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-\\weapontag{Long} weapon, make a \\glossterm{reactive attack} vs. Armor and Fortitude against them.
         `,

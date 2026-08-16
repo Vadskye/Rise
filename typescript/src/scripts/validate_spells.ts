@@ -2,7 +2,9 @@ import { mysticSpheres } from '@src/abilities/mystic_spheres';
 import {
   validateSpells,
   validateSpellDesignGuidelines,
+  validateDoubleExtraDamage,
   DamagingSpellDesignIssue,
+  ExtraDamageValidationIssue,
   ValidationIssue,
 } from '@src/abilities/validate_spells';
 import { DamageCalculationBreakdown } from '@src/abilities/expected_damage_rank';
@@ -11,22 +13,24 @@ import _ from 'lodash';
 interface ValidationOptions {
   runDesign: boolean;
   runComparative: boolean;
+  runExtraDamage: boolean;
   showApproximate: boolean;
 }
 
 function parseCommandLineArgs(): ValidationOptions {
   const runComparative = process.argv.includes('--comparative');
   const runDesign = process.argv.includes('--design');
+  const runExtraDamage = process.argv.includes('--extra-damage');
   const showApproximate = process.argv.includes('--show-approximate');
 
-  if (!runComparative && !runDesign) {
+  if (!runComparative && !runDesign && !runExtraDamage) {
     console.error(
-      'Error: At least one validation flag must be provided: --design or --comparative.',
+      'Error: At least one validation flag must be provided: --design, --comparative, or --extra-damage.',
     );
     process.exit(1);
   }
 
-  return { runDesign, runComparative, showApproximate };
+  return { runDesign, runComparative, runExtraDamage, showApproximate };
 }
 
 function printDamageBreakdown(breakdown: DamageCalculationBreakdown): void {
@@ -139,6 +143,45 @@ function runComparativeValidation(options: { showApproximate: boolean }): void {
   printAlmostEquivalentIssues(almostEquivalent);
 }
 
+function printExtraDamageIssuesGroup(title: string, issues: ExtraDamageValidationIssue[]): void {
+  if (issues.length === 0) {
+    return;
+  }
+
+  console.log(`=== ${title} (${issues.length}) ===`);
+  for (const issue of issues) {
+    console.log(`- ${issue.message}`);
+  }
+  console.log();
+}
+
+function runExtraDamageValidation(): void {
+  console.log('========================================================================');
+  console.log('PART 3: DOUBLE EXTRA DAMAGE GUIDELINE VALIDATION');
+  console.log('========================================================================\n');
+
+  const issues = validateDoubleExtraDamage(mysticSpheres);
+
+  if (issues.length === 0) {
+    console.log('All spells adhere to double extra damage guidelines!\n');
+    return;
+  }
+
+  console.log(`Found ${issues.length} extra damage guideline mismatches:\n`);
+
+  const missing = issues.filter((i) => i.type === 'missing_double_extra_damage');
+  const unexpected = issues.filter((i) => i.type === 'unexpected_double_extra_damage');
+
+  printExtraDamageIssuesGroup(
+    'Missing Double Extra Damage (Single-target / <=2-target spells with damage rank >= 5)',
+    missing,
+  );
+  printExtraDamageIssuesGroup(
+    'Unexpected Double Extra Damage (Area spells, >2-target spells, or spells with damage rank < 5)',
+    unexpected,
+  );
+}
+
 function main(): void {
   const options = parseCommandLineArgs();
 
@@ -146,6 +189,9 @@ function main(): void {
 
   if (options.runDesign) {
     runDesignValidation();
+    runExtraDamageValidation();
+  } else if (options.runExtraDamage) {
+    runExtraDamageValidation();
   }
 
   if (options.runComparative) {
@@ -154,3 +200,4 @@ function main(): void {
 }
 
 main();
+

@@ -174,7 +174,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       // Rank 0 area (mod +1)
       // Result: 4 + 1 = dr5
       attack: {
-        hit: `\\damagerankfive.`,
+        hit: `\\damagerankfive, and any \\glossterm{extra damage} is doubled.`,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
@@ -347,8 +347,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       // Result: 7 - 1 = dr6
       functionsLike: {
         name: 'electromagnetic arc',
-        exceptThat:
-          'the damage increases to \\damageranksix, and any \\glossterm{extra damage} is doubled.',
+        exceptThat: 'the damage increases to \\damageranksix.',
       },
       rank: 7,
       roles: ['clear'],
@@ -521,7 +520,8 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       // Result: dr5
       functionsLike: {
         name: 'personal conduction',
-        exceptThat: 'the damage increases to \\damagerankfive.',
+        exceptThat:
+          'the damage increases to \\damagerankfive, and any \\glossterm{extra damage} is doubled.',
       },
       rank: 5,
       roles: ['attune'],
@@ -748,7 +748,8 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       // Result: 5 + 2 - 2 = dr5
       functionsLike: {
         name: 'static shock',
-        exceptThat: 'the damage increases to \\damagerankfive.',
+        exceptThat:
+          'the damage increases to \\damagerankfive, and any \\glossterm{extra damage} is doubled.',
       },
       roles: ['turtle', 'retaliate'],
       rank: 5,

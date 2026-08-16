@@ -7,10 +7,11 @@ import { ActiveAbilityRank } from '..';
 const rankWords = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight'];
 
 function createSingleTargetSpell(rank: ActiveAbilityRank, defense: string) {
+  const extraDamage = rank >= 5 ? ', and any \\glossterm{extra damage} is doubled.' : '.';
   return {
     name: `${defense} Bolt Rank ${rank}`,
     attack: {
-      hit: `\\damagerank${rankWords[rank]}.`,
+      hit: `\\damagerank${rankWords[rank]}${extraDamage}`,
       targeting: `Make an attack vs. ${defense} against a creature within \\medrange.`,
     },
     rank: rank,

@@ -102,7 +102,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       // Result: 5 + 1 = dr6
       attack: {
         hit: `
-          \\damageranksix.
+          \\damageranksix, and any \\glossterm{extra damage} is doubled.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
@@ -228,7 +228,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       cost: "You are \\briefly dazed and can't use this ability again.",
       attack: {
         hit: `
-          \\damageranksix.
+          \\damageranksix, and any \\glossterm{extra damage} is doubled.
         `,
         targeting: `
           Make an attack vs. Fortitude with a \\plus2 accuracy bonus against something within \\medrange.
@@ -696,7 +696,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       functionsLike: {
         name: 'aquajet grasp',
         exceptThat:
-          'the damage increases to \\damagerankeight, and the fling distance increases to 30 feet.',
+          'the damage increases to \\damagerankeight, any \\glossterm{extra damage} is doubled, and the fling distance increases to 30 feet.',
       },
       // narrative: '',
       rank: 6,
@@ -862,7 +862,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
 
       attack: {
         hit: `
-          \\damageranksix.
+          \\damageranksix, and any \\glossterm{extra damage} is doubled.
         `,
         injury: `
           If the target loses hit points, it becomes unable to breathe air as a \\glossterm{condition}.

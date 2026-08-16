@@ -93,7 +93,7 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankfive.
+          \\damagerankfive, and any \\glossterm{extra damage} is doubled.
           If the target is Huge or smaller, you may \\glossterm{teleport} it up to 15 feet.
         `,
         targeting: `
@@ -114,7 +114,7 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankseven.
+          \\damagerankseven, and any \\glossterm{extra damage} is doubled.
           If the target is Huge or smaller, you \\glossterm{teleport} it up to 30 feet.
         `,
         targeting: `
@@ -433,7 +433,7 @@ export const astromancy: MysticSphere = {
         crit: 'Double damage, and the target is dazed as a \\glossterm{condition}.',
         hit: `
           The target \\sphereterm{flickers} to a nearby safe location in the Astral Expanse.
-          When it returns, it takes \\damageranksix, and it is \\briefly \\dazed.
+          When it returns, it takes \\damageranksix, and any \\glossterm{extra damage} is doubled. In addition, it is \\briefly \\dazed.
         `,
         targeting: `
           Make an attack vs. Mental against something within \\medrange.
@@ -502,7 +502,7 @@ export const astromancy: MysticSphere = {
       // Water requirement allows the accuracy and weird debuff
       attack: {
         hit: `
-          \\damagerankfive.
+          \\damagerankfive, and any \\glossterm{extra damage} is doubled.
         `,
         injury: `
           The target becomes unable to breathe air as a \\glossterm{condition}.

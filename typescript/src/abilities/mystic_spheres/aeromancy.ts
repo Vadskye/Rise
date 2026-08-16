@@ -184,7 +184,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       // Result: 6 - 1 = dr5
       attack: {
         hit: `
-          \\damagerankfive.
+          \\damagerankfive, and any \\glossterm{extra damage} is doubled.
         `,
         targeting: `
           Make an attack vs. Armor against up to two targets within \\longrange.
@@ -223,7 +223,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       // Result: 7 - 2 = dr5
       attack: {
         hit: `
-          \\damagerankfive.
+          \\damagerankfive, and any \\glossterm{extra damage} is doubled.
         `,
         targeting: 'Make an attack vs. Armor against something within \\distrange.',
       },

@@ -228,7 +228,8 @@ export const fabrication: MysticSphere = {
       // Result: 4 - 1 + 1 + 1 = dr5
       functionsLike: {
         name: 'mystic artillery',
-        exceptThat: 'the damage increases to \\damagerankfive.',
+        exceptThat:
+          'the damage increases to \\damagerankfive, and any \\glossterm{extra damage} is doubled.',
       },
       rank: 4,
       roles: ['snipe'],

@@ -221,7 +221,7 @@ export const photomancy: MysticSphere = {
       // All of that is a complicated way to say that this gets a trivial debuff for free.
       attack: {
         hit: `
-          \\damagerankfivelow.
+          \\damagerankfivelow, and any \\glossterm{extra damage} is doubled.
         `,
         injury: `
           The target is \\glossterm{briefly} \\dazzled, and it suffers consequences as if it had been struck by a beam of natural sunlight.

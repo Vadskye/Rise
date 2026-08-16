@@ -734,7 +734,7 @@ export const telekinesis: MysticSphere = {
       name: 'Mighty Kinetic Rebound',
 
       attack: {
-        hit: `\\damagerankfive.`,
+        hit: `\\damagerankfive, and any \\glossterm{extra damage} is doubled.`,
         targeting: `
           Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-\\weapontag{Long} weapon, make a \\glossterm{reactive attack} vs. Brawn against them.
         `,

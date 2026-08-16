@@ -113,7 +113,7 @@ export const verdamancy: MysticSphere = {
       // 2.4 EA for damage, so r6.
       attack: {
         hit: `
-          \\damageranksix, and the target falls \\prone.
+          \\damageranksix, and any \\glossterm{extra damage} is doubled, and the target falls \\prone.
         `,
         targeting: `
           Make an attack vs. Brawn against one \\glossterm{grounded} creature within \\shortrange.
@@ -438,7 +438,8 @@ export const verdamancy: MysticSphere = {
 
       functionsLike: {
         name: 'embedded growth',
-        exceptThat: 'the damage increases to \\damagerankfive.',
+        exceptThat:
+          'the damage increases to \\damagerankfive, and any \\glossterm{extra damage} is doubled.',
       },
       narrative: `
         You throw a seed that embeds itself in a foe and grows painfully.
@@ -776,7 +777,8 @@ export const verdamancy: MysticSphere = {
 
       functionsLike: {
         name: 'thorns',
-        exceptThat: 'the damage increases to \\damagerankfive.',
+        exceptThat:
+          'the damage increases to \\damagerankfive, and any \\glossterm{extra damage} is doubled.',
       },
       rank: 5,
       roles: ['focus'],

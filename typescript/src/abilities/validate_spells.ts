@@ -35,7 +35,7 @@
  *   - Damage ranks are extracted via `\damagerank[word]` (ignoring `\hprank` healing ranks).
  */
 
-import { MysticSphere } from './mystic_spheres';
+import { MysticSphere, getSpellByName } from './mystic_spheres';
 import {
   calculateDefenseModifier,
   calculateExpectedDamageRank,
@@ -671,3 +671,213 @@ export function validateSpellDesignGuidelines(spheres: MysticSphere[]): Damaging
 
   return issues;
 }
+
+export interface ExtraDamageValidationIssue {
+  type: 'missing_double_extra_damage' | 'unexpected_double_extra_damage';
+  severity: 'warning';
+  spellName: string;
+  sphereName: string;
+  spellRank?: number;
+  damageRank: number;
+  targetCategory: string;
+  message: string;
+}
+
+const DAMAGE_RANK_ORDER: Record<string, number> = {
+  damagerankzero: 0,
+  damagerankzerolow: 0,
+  damagerankone: 1,
+  damagerankonelow: 1,
+  damageranktwo: 2,
+  damageranktwolow: 2,
+  damagerankthree: 3,
+  damagerankthreelow: 3,
+  damagerankfour: 4,
+  damagerankfourlow: 4,
+  damagerankfive: 5,
+  damagerankfivelow: 5,
+  damageranksix: 6,
+  damageranksixlow: 6,
+  damagerankseven: 7,
+  damageranksevenlow: 7,
+  damagerankeight: 8,
+  damagerankeightlow: 8,
+  damageranknine: 9,
+  damagerankninelow: 9,
+  damagerankten: 10,
+  damageranktenlow: 10,
+  damagerankeleven: 11,
+  damagerankelevenlow: 11,
+  damageranktwelve: 12,
+  damageranktwelvelow: 12,
+};
+
+function getHighestDamageRank(text: string): number {
+  const matches = text.match(/\\damagerank[a-z]+/gi) || [];
+  let maxRank = -1;
+  for (const m of matches) {
+    const clean = m.replace('\\', '').toLowerCase();
+    if (DAMAGE_RANK_ORDER[clean] !== undefined && DAMAGE_RANK_ORDER[clean] > maxRank) {
+      maxRank = DAMAGE_RANK_ORDER[clean];
+    }
+  }
+  return maxRank;
+}
+
+const SPECIAL_EXTRA_DAMAGE_EXEMPTIONS = new Set([
+  'Mighty Touch of God',
+  'Immolate',
+  'Mighty Living Pyre',
+  'Blood Calls to Blood',
+  'Mighty Blood Calls to Blood',
+]);
+
+function cleanLatex(text: string): string {
+  return text.replace(/\\[a-zA-Z]+\{([^}]*)\}/g, '$1').replace(/\\[a-zA-Z]+/g, ' ');
+}
+
+function getExtraDamageTargetCategory(
+  fullText: string,
+  spellName: string,
+): 'single' | 'multi_le_2' | 'multi_gt_2' | 'area' {
+  const combText = cleanLatex(fullText).toLowerCase();
+
+  const isArea =
+    /radius|cone|line|wall|blast|zone|cube|emanation|within a (tiny|small|med|large|huge|gargantuan)area|everything within|everything in|all creatures within|all enemies within|each creature within|each enemy within|each creature in|each enemy in|all targets within|against yourself and all|against all enemies adjacent|against each enemy adjacent/i.test(
+      combText,
+    );
+
+  if (isArea) {
+    if (
+      spellName.includes('Solar Ray') ||
+      spellName === 'Blinding Sun' ||
+      spellName === 'Mighty Surfing Slam' ||
+      spellName === 'Tripping Vine Slam'
+    ) {
+      return 'single';
+    }
+    return 'area';
+  }
+
+  if (
+    combText.includes('chains twice') ||
+    combText.includes('chains 2 times') ||
+    combText.includes('chains 3') ||
+    combText.includes('chains 4') ||
+    combText.includes('chains 5') ||
+    combText.includes('chains three') ||
+    combText.includes('chains four') ||
+    combText.includes('chains five') ||
+    combText.includes('up to three') ||
+    combText.includes('three targets') ||
+    combText.includes('three creatures') ||
+    combText.includes('four creatures') ||
+    combText.includes('up to four')
+  ) {
+    return 'multi_gt_2';
+  }
+
+  if (
+    combText.includes('chains once') ||
+    combText.includes('chains 1 time') ||
+    combText.includes('up to two targets') ||
+    combText.includes('two creatures') ||
+    combText.includes('up to two creatures') ||
+    combText.includes('two targets')
+  ) {
+    return 'multi_le_2';
+  }
+
+  return 'single';
+}
+
+export function validateDoubleExtraDamage(spheres: MysticSphere[]): ExtraDamageValidationIssue[] {
+  const issues: ExtraDamageValidationIssue[] = [];
+
+  for (const sphere of spheres) {
+    const spells = sphere.spells || [];
+    for (const spell of spells) {
+      if (SPECIAL_EXTRA_DAMAGE_EXEMPTIONS.has(spell.name)) {
+        continue;
+      }
+
+      let baseSpell: any = null;
+      if (spell.functionsLike) {
+        try {
+          baseSpell = getSpellByName(spell.functionsLike.name);
+        } catch (e) {}
+      }
+
+      const hit = spell.attack?.hit || (baseSpell?.attack?.hit || '');
+      const targeting = spell.attack?.targeting || (baseSpell?.attack?.targeting || '');
+      const effect = spell.effect || (baseSpell?.effect || '');
+      const exceptThat = spell.functionsLike?.exceptThat || '';
+      const fullText = `${hit} ${targeting} ${effect} ${exceptThat}`;
+
+      const dmgRank = getHighestDamageRank(fullText);
+      const hasDouble = /extra damage.*?is doubled|doubled.*?extra damage/i.test(fullText);
+      const isPoison = spell.name.startsWith('Poison --') || spell.name.includes('Concoction');
+
+      const targetCategory = getExtraDamageTargetCategory(fullText, spell.name);
+
+      if (isPoison) {
+        if (hasDouble) {
+          issues.push({
+            type: 'unexpected_double_extra_damage',
+            severity: 'warning',
+            spellName: spell.name,
+            sphereName: sphere.name,
+            spellRank: spell.rank,
+            damageRank: dmgRank,
+            targetCategory,
+            message: `Poison spell "${spell.name}" (${sphere.name}) should not double extra damage.`,
+          });
+        }
+        continue;
+      }
+
+      if (targetCategory === 'single' || targetCategory === 'multi_le_2') {
+        if (dmgRank >= 5 && !hasDouble) {
+          issues.push({
+            type: 'missing_double_extra_damage',
+            severity: 'warning',
+            spellName: spell.name,
+            sphereName: sphere.name,
+            spellRank: spell.rank,
+            damageRank: dmgRank,
+            targetCategory,
+            message: `Single-target or <=2-target spell "${spell.name}" (${sphere.name}, Rank ${spell.rank}) deals damage rank ${dmgRank} >= 5, but is missing doubled extra damage phrasing.`,
+          });
+        } else if (dmgRank >= 0 && dmgRank < 5 && hasDouble) {
+          issues.push({
+            type: 'unexpected_double_extra_damage',
+            severity: 'warning',
+            spellName: spell.name,
+            sphereName: sphere.name,
+            spellRank: spell.rank,
+            damageRank: dmgRank,
+            targetCategory,
+            message: `Spell "${spell.name}" (${sphere.name}, Rank ${spell.rank}) deals damage rank ${dmgRank} < 5, but doubles extra damage.`,
+          });
+        }
+      } else {
+        // Area or multi > 2
+        if (hasDouble) {
+          issues.push({
+            type: 'unexpected_double_extra_damage',
+            severity: 'warning',
+            spellName: spell.name,
+            sphereName: sphere.name,
+            spellRank: spell.rank,
+            damageRank: dmgRank,
+            targetCategory,
+            message: `Area or multi-target (>2 targets) spell "${spell.name}" (${sphere.name}, Rank ${spell.rank}) should not double extra damage.`,
+          });
+        }
+      }
+    }
+  }
+
+  return issues;
+}
+
