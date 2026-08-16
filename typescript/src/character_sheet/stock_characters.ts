@@ -62,9 +62,11 @@ export class StockCharacters {
       sheet.setProperties({ name });
       const creature = new Creature(sheet);
       this.characters[name] = creature;
+      // We have to enable listeners before running the initializer to ensure that
+      // some listeners, like for repeating section, are active.
+      handleEverything();
       initializer(creature);
 
-      handleEverything();
       sheet.triggerRecalculation();
     }
 

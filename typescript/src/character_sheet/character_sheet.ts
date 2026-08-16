@@ -118,6 +118,9 @@ export class CharacterSheet {
     };
   }
 
+  // In general, it's better to call `handleEverything()` early in the process
+  // and don't assume that this fixes everything. Not every part of the
+  // sheet worker listens for 'sheet:opened'.
   public triggerRecalculation() {
     this.clickButton('sheet:opened');
     this.setProperties({ level: this.getPropertyValue('level') });
