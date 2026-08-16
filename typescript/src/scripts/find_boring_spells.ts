@@ -6,6 +6,7 @@ import {
   SpellDefinition,
   RitualDefinition,
 } from '@src/abilities/active_abilities';
+import cli from 'commander';
 import _ from 'lodash';
 
 export type BoringCategory =
@@ -37,10 +38,38 @@ export interface SpellItem {
   rank: number;
 }
 
+export interface FindBoringSpellsOptions {
+  sphereFilter?: string;
+  categoryFilter?: BoringCategory;
+  minScore?: number;
+  includeRituals?: boolean;
+}
+
+export interface CliOptions {
+  sphere?: string;
+  category?: BoringCategory;
+  minScore?: number;
+  includeRituals?: boolean;
+  summary?: boolean;
+  json?: boolean;
+}
+
 /**
- * Collects all spells, cantrips, and rituals from all mystic spheres.
+ * Extracts the full combined text (attack, effect, narrative) from a spell definition.
  */
-export function getAllSpells(): SpellItem[] {
+export function getSpellFullText(
+  spell: CantripDefinition | SpellDefinition | RitualDefinition,
+): string {
+  const attackText = spell.attack
+    ? `${spell.attack.hit} ${spell.attack.targeting || ''} ${spell.attack.injury || ''}`
+    : '';
+  return `${attackText} ${spell.effect || ''} ${spell.narrative || ''}`.trim();
+}
+
+/**
+ * Collects all spells, cantrips, and optionally rituals from mystic spheres.
+ */
+export function getAllSpells(options: { includeRituals?: boolean } = {}): SpellItem[] {
   const items: SpellItem[] = [];
 
   for (const sphere of allMysticSpheres) {
@@ -57,38 +86,35 @@ export function getAllSpells(): SpellItem[] {
     }
   }
 
+  if (options.includeRituals) {
+    for (const r of rituals) {
+      items.push({
+        sphere: r.spheres && r.spheres.length > 0 ? r.spheres.join(', ') : 'Rituals',
+        name: r.name,
+        spell: r,
+        kind: 'ritual',
+        rank: r.rank,
+      });
+    }
+  }
+
   return items;
 }
 
 /**
- * Evaluates all spells across all spheres to find boring, redundant, or uninteresting spell designs.
+ * Detects vanilla single-target damage attacks that lack status conditions, movement, or tactical choices.
  */
-export function findBoringSpells(
-  options: {
-    sphereFilter?: string;
-    categoryFilter?: BoringCategory;
-    minScore?: number;
-    includeRituals?: boolean;
-  } = {},
-): BoringFinding[] {
-  const allItems = getAllSpells().filter(
-    (item) => options.includeRituals || item.kind !== 'ritual',
-  );
+export function detectVanillaDamageSpells(items: SpellItem[]): BoringFinding[] {
   const findings: BoringFinding[] = [];
 
-  // Helper to extract full text of a spell
-  function getFullText(spell: CantripDefinition | SpellDefinition | RitualDefinition): string {
-    const attackText = spell.attack
-      ? `${spell.attack.hit} ${spell.attack.targeting || ''} ${spell.attack.injury || ''}`
-      : '';
-    return `${attackText} ${spell.effect || ''} ${spell.narrative || ''}`.trim();
-  }
+  for (const item of items) {
+    if (item.kind === 'ritual') {
+      continue;
+    }
 
-  // 2. Check for Vanilla Damage attacks (pure single-target damage, no status/terrain/tactics)
-  for (const item of allItems) {
     const s = item.spell;
     const profile = buildSpellProfile(s as SpellDefinition, item.sphere);
-    const fullText = getFullText(s).toLowerCase();
+    const fullText = getSpellFullText(s).toLowerCase();
 
     const isDamageAttack =
       profile.hasAttack && (profile.maxDamageRank !== null || fullText.includes('damagerank'));
@@ -115,7 +141,6 @@ export function findBoringSpells(
       !profile.hasDoT &&
       hasNoConditions &&
       hasNoSpecialReqs &&
-      profile.accuracyModifier === null &&
       hasNoAccCondition &&
       isNotDelayedOrRepeating &&
       !hasMovementOrTerrain &&
@@ -128,20 +153,30 @@ export function findBoringSpells(
         kind: item.kind,
         category: 'vanilla_damage',
         score: 8,
-        reason: `Pure single-target damage attack with no status conditions, movement, or tactical choices`,
+        reason:
+          'Pure single-target damage attack with no status conditions, movement, or tactical choices',
         details: `Attack targets ${profile.defenses.join('/') || 'defense'} at range ${profile.range}, dealing damage without secondary effects or condition interaction.`,
-        recommendation: `Add a secondary condition (e.g. slowed, dazed, prone), tactical trigger (e.g. bonus vs injured/grappled targets), or positional effect to make combat choices more dynamic.`,
+        recommendation:
+          'Add a secondary condition (e.g. slowed, dazed, prone), tactical trigger (e.g. bonus vs injured/grappled targets), or positional effect to make combat choices more dynamic.',
       });
     }
   }
 
-  // 3. Run validation engine for mechanical redundancies and strictly superior/outclassed spells
+  return findings;
+}
+
+/**
+ * Runs the spell validation engine to find mechanical redundancies and strictly outclassed spells.
+ */
+export function detectValidationIssues(items: SpellItem[]): BoringFinding[] {
+  const findings: BoringFinding[] = [];
   const validationIssues = validateSpells(mysticSpheres, { showApproximate: true });
+
   for (const issue of validationIssues) {
     if (issue.type === 'redundancy' || issue.type === 'almost_equivalent') {
       const [spellA, spellB] = issue.spells;
-      const itemA = allItems.find((i) => i.name === spellA);
-      const itemB = allItems.find((i) => i.name === spellB);
+      const itemA = items.find((i) => i.name === spellA);
+      const itemB = items.find((i) => i.name === spellB);
 
       if (itemA || itemB) {
         const nameA = itemA?.name || spellA;
@@ -168,15 +203,16 @@ export function findBoringSpells(
               ? `Mechanically redundant designs in ${sphere}: "${nameA}" and "${nameB}"`
               : `Mechanically redundant designs: "${nameA}" (${sphereA}) and "${nameB}" (${sphereB})`,
           details: issue.message,
-          recommendation: `Differentiate the mechanics (e.g. range, defense targeted, action cost, secondary condition) or remove/combine one of the spells.`,
+          recommendation:
+            'Differentiate the mechanics (e.g. range, defense targeted, action cost, secondary condition) or remove/combine one of the spells.',
           spells: sortedNames,
         });
       }
     } else if (issue.type === 'strictly_superior') {
       // In validateSpells, issue.spells is [inferiorSpellName, superiorSpellName]
       const [inferiorName, superiorName] = issue.spells;
-      const itemInferior = allItems.find((i) => i.name === inferiorName);
-      const itemSuperior = allItems.find((i) => i.name === superiorName);
+      const itemInferior = items.find((i) => i.name === inferiorName);
+      const itemSuperior = items.find((i) => i.name === superiorName);
 
       if (itemInferior) {
         findings.push({
@@ -194,18 +230,26 @@ export function findBoringSpells(
     }
   }
 
-  // 4. Check for Passive Stat Buffs (attune/focus spells with only flat numerical bonuses)
-  for (const item of allItems) {
+  return findings;
+}
+
+/**
+ * Detects passive stat buffs (attune/focus spells with only flat numerical bonuses).
+ */
+export function detectPassiveStatBuffs(items: SpellItem[]): BoringFinding[] {
+  const findings: BoringFinding[] = [];
+
+  for (const item of items) {
     const s = item.spell;
     const roles = s.roles || [];
     const isBuffRole = roles.some((r) =>
       ['attune', 'focus', 'turtle', 'ramp'].includes(r.toLowerCase()),
     );
-    const fullText = getFullText(s);
+    const fullText = getSpellFullText(s);
 
     if (isBuffRole && !s.attack) {
       const isOnlyFlatStats =
-        /^\s*(?:you gain|grants?|targets? gain|allies gain)?\s*(?:a\s+)?(?:\+\d+|\-\d+)?\s*(?:bonus|penalty)?\s*to\s*(?:accuracy|defense|armor|saving throws|fortitude|reflex|mental|brawn)\b[^.]*\.\s*$/i.test(
+        /^\s*(?:you gain|grants?|targets? gain|allies gain)?\s*(?:a\s+)?(?:\+\d+|-\d+)?\s*(?:bonus|penalty)?\s*to\s*(?:accuracy|defense|armor|saving throws|fortitude|reflex|mental|brawn)\b[^.]*\.\s*$/i.test(
           fullText,
         );
       const hasActiveGrantedAction =
@@ -226,16 +270,25 @@ export function findBoringSpells(
           kind: item.kind,
           category: 'passive_stat_buff',
           score: 6,
-          reason: `Flat numerical stat buff with no active actions or interactive mechanics`,
+          reason: 'Flat numerical stat buff with no active actions or interactive mechanics',
           details: `Effect description: "${fullText}"`,
-          recommendation: `Replace simple passive stat bonuses with an active granted capability, situational trigger, or dynamic choice.`,
+          recommendation:
+            'Replace simple passive stat bonuses with an active granted capability, situational trigger, or dynamic choice.',
         });
       }
     }
   }
 
-  // 5. Check for Role Saturation within a single sphere
-  const sphereGroups = _.groupBy(allItems, (i) => i.sphere);
+  return findings;
+}
+
+/**
+ * Detects role saturation within a single sphere (3+ spells competing for the exact same role and rank).
+ */
+export function detectRoleSaturation(items: SpellItem[]): BoringFinding[] {
+  const findings: BoringFinding[] = [];
+  const sphereGroups = _.groupBy(items, (i) => i.sphere);
+
   for (const [sphereName, sphereSpells] of Object.entries(sphereGroups)) {
     if (sphereName === 'Non-Sphere Spells' || sphereName === 'Rituals') {
       continue;
@@ -252,11 +305,11 @@ export function findBoringSpells(
       }
     }
 
-    for (const [key, items] of roleMap.entries()) {
-      if (items.length >= 3) {
+    for (const [key, roleItems] of roleMap.entries()) {
+      if (roleItems.length >= 3) {
         const [role, rankStr] = key.split(':');
         const rank = parseInt(rankStr, 10);
-        const spellNames = items.map((i) => i.spell.name).join(', ');
+        const spellNames = roleItems.map((i) => i.spell.name).join(', ');
         findings.push({
           sphere: sphereName,
           name: spellNames,
@@ -264,19 +317,28 @@ export function findBoringSpells(
           kind: rank === 0 ? 'cantrip' : 'spell',
           category: 'role_saturation',
           score: 5,
-          reason: `Role "${role}" is saturated in ${sphereName} at Rank ${rankStr} (${items.length} spells: ${spellNames})`,
-          details: `Multiple spells in the same sphere compete for the exact same role and rank.`,
-          recommendation: `Prune or differentiate the competing spells to give each spell a unique combat niche within the sphere.`,
-          spells: items.map((i) => i.spell.name),
+          reason: `Role "${role}" is saturated in ${sphereName} at Rank ${rankStr} (${roleItems.length} spells: ${spellNames})`,
+          details: 'Multiple spells in the same sphere compete for the exact same role and rank.',
+          recommendation:
+            'Prune or differentiate the competing spells to give each spell a unique combat niche within the sphere.',
+          spells: roleItems.map((i) => i.spell.name),
         });
       }
     }
   }
 
-  // 6. Check for Low Complexity / Extremely Brief descriptions
-  for (const item of allItems) {
+  return findings;
+}
+
+/**
+ * Detects spells with very brief descriptions that may lack tactical depth or clear sphere identity.
+ */
+export function detectLowComplexitySpells(items: SpellItem[]): BoringFinding[] {
+  const findings: BoringFinding[] = [];
+
+  for (const item of items) {
     const s = item.spell;
-    const fullText = getFullText(s);
+    const fullText = getSpellFullText(s);
     if (fullText.length > 0 && fullText.length < 50 && !s.functionsLike) {
       findings.push({
         sphere: item.sphere,
@@ -287,24 +349,46 @@ export function findBoringSpells(
         score: 4,
         reason: `Very brief spell description (${fullText.length} characters)`,
         details: `Text: "${fullText}"`,
-        recommendation: `Expand text to clarify interactions, tactical choices, or unique sphere identity, or combine into another spell.`,
+        recommendation:
+          'Expand text to clarify interactions, tactical choices, or unique sphere identity, or combine into another spell.',
       });
     }
   }
 
-  // Deduplicate findings by (sphere, name, category) keeping highest score
-  const uniqueFindingsMap = new Map<string, BoringFinding>();
+  return findings;
+}
+
+/**
+ * Deduplicates findings by (sphere, name, category), preserving the entry with the highest score.
+ */
+export function deduplicateFindings(findings: BoringFinding[]): BoringFinding[] {
+  const uniqueMap = new Map<string, BoringFinding>();
   for (const f of findings) {
     const key = `${f.sphere}:${f.name}:${f.category}`;
-    const existing = uniqueFindingsMap.get(key);
+    const existing = uniqueMap.get(key);
     if (!existing || f.score > existing.score) {
-      uniqueFindingsMap.set(key, f);
+      uniqueMap.set(key, f);
     }
   }
+  return Array.from(uniqueMap.values());
+}
 
-  let result = Array.from(uniqueFindingsMap.values());
+/**
+ * Evaluates all spells across all spheres to find boring, redundant, or uninteresting spell designs.
+ */
+export function findBoringSpells(options: FindBoringSpellsOptions = {}): BoringFinding[] {
+  const items = getAllSpells({ includeRituals: options.includeRituals });
 
-  // Filter options
+  const rawFindings: BoringFinding[] = [
+    ...detectVanillaDamageSpells(items),
+    ...detectValidationIssues(items),
+    ...detectPassiveStatBuffs(items),
+    ...detectRoleSaturation(items),
+    ...detectLowComplexitySpells(items),
+  ];
+
+  let result = deduplicateFindings(rawFindings);
+
   if (options.sphereFilter) {
     const filterLower = options.sphereFilter.toLowerCase();
     result = result.filter((f) => f.sphere.toLowerCase().includes(filterLower));
@@ -316,7 +400,6 @@ export function findBoringSpells(
     result = result.filter((f) => f.score >= options.minScore!);
   }
 
-  // Sort by score descending, then sphere, rank, name
   return result.sort((a, b) => {
     if (b.score !== a.score) {
       return b.score - a.score;
@@ -332,90 +415,43 @@ export function findBoringSpells(
 }
 
 /**
- * CLI Runner
+ * Prints high-level summary breakdown of findings.
  */
-if (require.main === module) {
-  const args = process.argv.slice(2);
+export function printSummaryReport(findings: BoringFinding[]): void {
+  console.log('\n========================================');
+  console.log(' SUMMARY: BORING / REDUNDANT SPELL CANDIDATES');
+  console.log('========================================\n');
+  console.log(`Total Candidate Issues Flagged: ${findings.length}\n`);
 
-  let sphereFilter: string | undefined;
-  let categoryFilter: BoringCategory | undefined;
-  let minScore: number | undefined;
-  let includeRituals = false;
-  let showJson = false;
-  let showSummary = false;
-
-  for (let i = 0; i < args.length; i++) {
-    const arg = args[i];
-    if (arg === '--sphere' && i + 1 < args.length) {
-      sphereFilter = args[++i];
-    } else if (arg === '--category' && i + 1 < args.length) {
-      categoryFilter = args[++i] as BoringCategory;
-    } else if (arg === '--min-score' && i + 1 < args.length) {
-      minScore = parseInt(args[++i], 10);
-    } else if (arg === '--include-rituals') {
-      includeRituals = true;
-    } else if (arg === '--json') {
-      showJson = true;
-    } else if (arg === '--summary') {
-      showSummary = true;
-    } else if (arg === '--help' || arg === '-h') {
-      console.log(`
-Rise Spell Quality Audit - Find Boring / Redundant Spells
-
-Usage: npx tsx src/scripts/find_boring_spells.ts [options]
-
-Options:
-  --sphere <name>       Filter findings by sphere name (e.g. Pyromancy, Aeromancy)
-  --category <category> Filter by category (vanilla_damage, functions_like_clone, redundant_design, strictly_outclassed, passive_stat_buff, role_saturation, low_complexity)
-  --min-score <number>  Filter by minimum severity score (1-10)
-  --include-rituals     Include rituals in the audit (excluded by default)
-  --summary             Output high-level summary by category and sphere
-  --json                Output raw JSON results
-  --help, -h            Show this help menu
-`);
-      process.exit(0);
-    }
+  const byCategory = _.groupBy(findings, (f) => f.category);
+  console.log('--- Breakdown by Category ---');
+  for (const [cat, items] of Object.entries(byCategory)) {
+    console.log(`  - ${cat}: ${items.length} spell(s)`);
   }
 
-  const findings = findBoringSpells({ sphereFilter, categoryFilter, minScore, includeRituals });
-
-  if (showJson) {
-    console.log(JSON.stringify(findings, null, 2));
-    process.exit(0);
+  const bySphere = _.groupBy(findings, (f) => f.sphere);
+  console.log('\n--- Breakdown by Sphere ---');
+  for (const [sph, items] of Object.entries(bySphere)) {
+    console.log(`  - ${sph}: ${items.length} candidate issue(s)`);
   }
+  console.log();
+}
 
-  if (showSummary) {
-    console.log(`\n========================================`);
-    console.log(` SUMMARY: BORING / REDUNDANT SPELL CANDIDATES`);
-    console.log(`========================================\n`);
-    console.log(`Total Candidate Issues Flagged: ${findings.length}\n`);
-
-    const byCategory = _.groupBy(findings, (f) => f.category);
-    console.log(`--- Breakdown by Category ---`);
-    for (const [cat, items] of Object.entries(byCategory)) {
-      console.log(`  - ${cat}: ${items.length} spell(s)`);
-    }
-
-    const bySphere = _.groupBy(findings, (f) => f.sphere);
-    console.log(`\n--- Breakdown by Sphere ---`);
-    for (const [sph, items] of Object.entries(bySphere)) {
-      console.log(`  - ${sph}: ${items.length} candidate issue(s)`);
-    }
-    console.log();
-    process.exit(0);
-  }
-
-  console.log(`\n=============================================================`);
-  console.log(` RISE SPELL AUDIT: CANDIDATES FOR REMOVAL OR IMPROVEMENT`);
-  console.log(`=============================================================\n`);
+/**
+ * Prints detailed human-readable findings grouped by sphere.
+ */
+export function printDetailedReport(findings: BoringFinding[]): void {
+  console.log('\n=============================================================');
+  console.log(' RISE SPELL AUDIT: CANDIDATES FOR REMOVAL OR IMPROVEMENT');
+  console.log('=============================================================\n');
   console.log(`Found ${findings.length} candidate spells across Mystic Spheres:\n`);
 
   const grouped = _.groupBy(findings, (f) => f.sphere);
 
   for (const [sphereName, sphereFindings] of Object.entries(grouped)) {
-    console.log(`=============================================================`);
+    console.log('=============================================================');
     console.log(` SPHERE: ${sphereName.toUpperCase()} (${sphereFindings.length} candidate issues)`);
-    console.log(`=============================================================`);
+    console.log('=============================================================');
 
     for (const f of sphereFindings) {
       console.log(
@@ -429,4 +465,60 @@ Options:
     }
     console.log();
   }
+}
+
+/**
+ * Runs the CLI command with parsed options.
+ */
+export async function runCli(opts: CliOptions): Promise<void> {
+  const findings = findBoringSpells({
+    sphereFilter: opts.sphere,
+    categoryFilter: opts.category,
+    minScore: opts.minScore,
+    includeRituals: opts.includeRituals,
+  });
+
+  if (opts.json) {
+    console.log(JSON.stringify(findings, null, 2));
+    return;
+  }
+
+  if (opts.summary) {
+    printSummaryReport(findings);
+    return;
+  }
+
+  printDetailedReport(findings);
+}
+
+if (require.main === module) {
+  cli
+    .name('find_boring_spells')
+    .description(
+      'Rise Spell Quality Audit - Find boring, redundant, or uninteresting spell designs',
+    )
+    .option('-s, --sphere <name>', 'Filter findings by sphere name (e.g. Pyromancy, Aeromancy)')
+    .option(
+      '-c, --category <category>',
+      'Filter by category (vanilla_damage, redundant_design, strictly_outclassed, passive_stat_buff, role_saturation, low_complexity)',
+    )
+    .option('-m, --min-score <number>', 'Filter by minimum severity score (1-10)', (val) =>
+      parseInt(val, 10),
+    )
+    .option('-r, --include-rituals', 'Include rituals in the audit (excluded by default)')
+    .option('--summary', 'Output high-level summary by category and sphere')
+    .option('--json', 'Output raw JSON results')
+    .parse(process.argv);
+
+  runCli({
+    sphere: cli.sphere,
+    category: cli.category,
+    minScore: cli.minScore,
+    includeRituals: Boolean(cli.includeRituals),
+    summary: Boolean(cli.summary),
+    json: Boolean(cli.json),
+  }).catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
 }
