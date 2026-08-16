@@ -451,10 +451,14 @@ export const toxicology: MysticSphere = {
     {
       name: 'Massive Acid Breath',
 
+      // Target is +46% damage from a rank 6 attunement.
+      // Normal large cone would be r4 damage = 26. With +20% from delayed, 31 damage.
+      // Total target is 45 damage.
+      // Double dr4 is 22 * 2 = 44.
       functionsLike: {
         name: 'acid breath',
         exceptThat: `
-          the damage increases to \\damagerankfive, and the area increases to a \\largearea cone from you.
+          both damage values increase to \\damagerankfour, and the area increases to a \\largearea cone from you.
         `,
       },
       rank: 6,

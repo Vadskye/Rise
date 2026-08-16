@@ -556,7 +556,7 @@ export const thaumaturgy: MysticSphere = {
           Once this effect ends, the target becomes \\glossterm{immune} to it until it takes a \\glossterm{short rest}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against a creature within \\shortrange.
+          Make an attack vs. Fortitude against a creature within \\medrange.
           This attack automatically fails if the target does not have any \\magical abilities.
         `,
       },
