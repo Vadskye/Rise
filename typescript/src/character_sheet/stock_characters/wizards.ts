@@ -24,17 +24,17 @@ function applyWizardBase(c: Creature, level: number) {
     level: level,
     size: 'medium',
   });
-  // Wizards might actually want Int, but stock characters really can't effectively spend
-  // Int, so go with something that helps their statistics
+  // Since stock characters don't get a lot of benefit from Intelligence, wizards will look weaker than other stock characters.
+  // That can still make them useful for some kinds of tests and comparisons.
   c.setProperties({
-    willpower_at_creation: 3,
+    intelligence_at_creation: 3,
     perception_at_creation: 2,
-    intelligence_at_creation: 2,
+    willpower_at_creation: 2,
     constitution_at_creation: 1,
     strength_at_creation: 0,
     dexterity_at_creation: 0,
   });
-  c.setCharacterAttributeScaling('willpower', 'perception');
+  c.setCharacterAttributeScaling('intelligence', 'perception');
   c.setEquippedArmorName({ bodyArmor: 'mage armor' });
   c.setEquippedArmorEffects({ bodyArmor: 'mage armor' });
   c.addSpell('Fireball');

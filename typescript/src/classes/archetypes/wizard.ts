@@ -659,12 +659,12 @@ export function arcaneSpellMasteryModifiers(creature: Creature, rank: number) {
 
 export function schoolSpecialistModifiers(creature: Creature, rank: number) {
   applyArchetypeActiveAbilities(creature, schoolSpecialist(), rank);
-  // Assuming Evocation for simplicity
+  // Assuming Illusion for simplicity
   if (rank >= 1) {
     creature.addSimpleModifier({
-      name: 'School Specialization (Evocation)',
-      statistic: 'magical_power',
-      value: rank >= 7 ? 4 : rank >= 4 ? 3 : 2,
+      name: 'School Specialization (Illusion)',
+      statistic: 'accuracy',
+      value: rank >= 7 ? 2 : 1,
     });
   }
 }

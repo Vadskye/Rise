@@ -3,25 +3,23 @@ import { Creature } from '@src/character_sheet/creature';
 import { DamageScaling } from '@src/core_mechanics/damage_scaling';
 import cli from 'commander';
 
-export type OutlierStatus = '---' | 'Excessive rank scaling' | 'Insufficient rank scaling';
+export type OutlierStatus = '---' | 'Excessive power scaling' | 'Insufficient power scaling';
 
 export interface TargetDamageRange {
   minPct: number;
   maxPct: number;
 }
 
-export interface DamageScalingComparison {
+export interface PowerScalingComparison {
   level: number;
   characterName: string;
   className: string;
-  rankX: number;
-  rankY: number;
-  y: number;
+  rank: number;
   power: number;
-  poolXText: string;
-  avgX: number;
-  poolXYText: string;
-  avgXY: number;
+  drPoolText: string;
+  avgDR: number;
+  drlPoolText: string;
+  avgDRL: number;
   diff: number;
   pctDiff: number;
   targetRange: TargetDamageRange;
@@ -29,94 +27,69 @@ export interface DamageScalingComparison {
   status: OutlierStatus;
 }
 
-export interface DamageScalingOptions {
+export interface PowerScalingOptions {
   className?: string;
   onlyOutliers?: boolean;
-  drl?: boolean;
   json?: boolean;
   level?: number;
-  sortByAltRank?: boolean;
 }
 
 /**
- * Returns the target percentage difference range [minPct, maxPct] for a given excess rank Y.
- * The percentage difference is defined as: ((avg(drX) - avg(dr(X-Y)+Y)) / avg(drX)) * 100.
+ * Returns the target percentage difference range [minPct, maxPct] between
+ * power-scaling damage (DR) and non-power-scaling damage (DRL).
  *
- * Design Goals:
- * - Y = 1: Both spells within 5% damage of each other ([-5%, +5%]).
- * - Y = 2: drX spell deals 0-10% more damage ([0%, +10%]).
- * - Y = 3: drX spell deals 5-20% more damage ([+5%, +20%]).
+ * Design Goal:
+ * Power-scaling damage should consistently be between 10% and 30% stronger
+ * than non-power-scaled damage ([+10%, +30%]).
  */
-export function getTargetRange(y: number): TargetDamageRange | null {
-  switch (y) {
-    case 1:
-      return { minPct: -5, maxPct: 10 };
-    case 2:
-      return { minPct: 0, maxPct: 10 };
-    case 3:
-      return { minPct: 5.0, maxPct: 15.0 };
-    default:
-      return null;
-  }
+export function getTargetRange(): TargetDamageRange {
+  return { minPct: 10.0, maxPct: 30.0 };
 }
 
 /**
- * Evaluates whether a comparison is an outlier against the design goals.
+ * Evaluates whether power scaling vs non-power scaling is an outlier against the design goals.
  */
-export function evaluateComparison(
+export function evaluatePowerComparison(
   level: number,
   characterName: string,
   className: string,
-  rankX: number,
-  y: number,
+  rank: number,
   power: number,
-  lowPowerScaling: boolean = false,
-): DamageScalingComparison | null {
-  const rankY = rankX - y;
-  if (rankY <= 0) {
-    return null;
-  }
+  targetRange: TargetDamageRange = getTargetRange(),
+): PowerScalingComparison {
+  const drScaling = DamageScaling.dr(rank);
+  const drlScaling = DamageScaling.drl(rank);
 
-  const targetRange = getTargetRange(y);
-  if (!targetRange) {
-    return null;
-  }
+  const drPool = drScaling.scaledPool(power, 0);
+  const avgDR = drPool.averageDamage();
 
-  const scalingX = lowPowerScaling ? DamageScaling.drl(rankX) : DamageScaling.dr(rankX);
-  const scalingXY = lowPowerScaling ? DamageScaling.drl(rankY) : DamageScaling.dr(rankY);
+  const drlPool = drlScaling.scaledPool(power, 0);
+  const avgDRL = drlPool.averageDamage();
 
-  const poolX = scalingX.scaledPool(power, 0);
-  const avgX = poolX.averageDamage();
-
-  const poolXY = scalingXY.scaledPool(power, y);
-  const avgXY = poolXY.averageDamage();
-
-  const diff = avgX - avgXY;
-  const pctDiff = avgX !== 0 ? (diff / avgX) * 100 : 0;
+  const diff = avgDR - avgDRL;
+  const pctDiff = avgDRL !== 0 ? (diff / avgDRL) * 100 : 0;
 
   let status: OutlierStatus = '---';
   let isOutlier = false;
 
   if (pctDiff < targetRange.minPct) {
     isOutlier = true;
-    status = 'Excessive rank scaling';
+    status = 'Insufficient power scaling';
   } else if (pctDiff > targetRange.maxPct) {
     isOutlier = true;
-    status = 'Insufficient rank scaling';
+    status = 'Excessive power scaling';
   }
 
   return {
     level,
     characterName,
     className,
-    rankX,
-    rankY,
-    y,
+    rank,
     power,
-    poolXText: poolX.toString(),
-    avgX,
-    poolXYText: poolXY.toString(),
-    avgXY,
+    drPoolText: drPool.toString(),
+    avgDR,
+    drlPoolText: drlPool.toString(),
+    avgDRL,
     diff,
     pctDiff,
     targetRange,
@@ -126,45 +99,35 @@ export function evaluateComparison(
 }
 
 /**
- * Evaluates damage scaling comparisons for a specific creature.
+ * Evaluates power scaling comparison for a specific creature at its active rank.
  */
-export function evaluateCreatureDamageScaling(
+export function evaluateCreaturePowerScaling(
   creature: Creature,
-  lowPowerScaling: boolean = false,
-): DamageScalingComparison[] {
-  const rankX = creature.calculateRank();
+  targetRange: TargetDamageRange = getTargetRange(),
+): PowerScalingComparison {
+  const rank = creature.calculateRank();
   const power = creature.getRelevantPower(true);
   const className = creature.base_class || creature.name;
-  const comparisons: DamageScalingComparison[] = [];
 
-  for (let y = 1; y <= 3; y++) {
-    const comparison = evaluateComparison(
-      creature.level,
-      creature.name,
-      className,
-      rankX,
-      y,
-      power,
-      lowPowerScaling,
-    );
-    if (comparison) {
-      comparisons.push(comparison);
-    }
-  }
-
-  return comparisons;
+  return evaluatePowerComparison(
+    creature.level,
+    creature.name,
+    className,
+    rank,
+    power,
+    targetRange,
+  );
 }
 
 /**
- * Runs damage scaling analysis across all levels (1..21) of a stock character class.
+ * Runs power scaling analysis across all levels (1..21) of a stock character class.
  */
-export function runDamageScalingAnalysis(
+export function runPowerScalingAnalysis(
   stock: StockCharacters,
-  options: DamageScalingOptions = {},
-): DamageScalingComparison[] {
+  options: PowerScalingOptions = {},
+): PowerScalingComparison[] {
   const targetClass = (options.className || 'sorcerer').trim().toLowerCase();
-  const lowPower = options.drl ?? false;
-  const results: DamageScalingComparison[] = [];
+  const results: PowerScalingComparison[] = [];
 
   const characterNames = stock.getCharacterNames();
   const matchingCharacters: Creature[] = [];
@@ -197,33 +160,28 @@ export function runDamageScalingAnalysis(
   }
 
   for (const char of matchingCharacters) {
-    const charComparisons = evaluateCreatureDamageScaling(char, lowPower);
-    results.push(...charComparisons);
-  }
-
-  if (options.sortByAltRank) {
-    results.sort((a, b) => a.rankY - b.rankY || a.level - b.level || a.y - b.y);
+    const comparison = evaluateCreaturePowerScaling(char);
+    results.push(comparison);
   }
 
   return results;
 }
 
 /**
- * Format and print the comparison results table and summary.
+ * Format and print the power scaling comparison table and summary report.
  */
 export function printReport(
-  comparisons: DamageScalingComparison[],
-  options: DamageScalingOptions = {},
+  comparisons: PowerScalingComparison[],
+  options: PowerScalingOptions = {},
 ) {
   const targetClass = options.className || 'sorcerer';
-  const scalingType = options.drl ? 'DRL (Low Power)' : 'DR (Standard)';
   const displayRows = options.onlyOutliers ? comparisons.filter((c) => c.isOutlier) : comparisons;
 
   console.log(
     `\n========================================================================================================`,
   );
   console.log(
-    ` Spell Damage Excess Rank Scaling Report: ${targetClass.toUpperCase()} [${scalingType}]`,
+    ` Power Scaling (DR) vs Non-Power Scaling (DRL) Report: ${targetClass.toUpperCase()}`,
   );
   console.log(
     `========================================================================================================`,
@@ -241,11 +199,10 @@ export function printReport(
       'Lvl'.padEnd(4),
       'Rank'.padEnd(5),
       'Pwr'.padEnd(4),
-      'DR(X) Pool'.padEnd(10),
+      'DR(X) Pool'.padEnd(12),
       'DR(X) Avg'.padEnd(10),
-      'Alt Rank'.padEnd(8),
-      'Alt Pool'.padEnd(12),
-      'Alt Avg'.padEnd(8),
+      'DRL(X) Pool'.padEnd(12),
+      'DRL(X) Avg'.padEnd(10),
       'Diff'.padEnd(7),
       '% Diff'.padEnd(9),
       'Target %'.padEnd(13),
@@ -267,13 +224,12 @@ export function printReport(
 
       const line = [
         row.level.toString().padEnd(4),
-        `R${row.rankX}`.padEnd(5),
+        `R${row.rank}`.padEnd(5),
         row.power.toString().padEnd(4),
-        row.poolXText.padEnd(10),
-        row.avgX.toFixed(2).padEnd(10),
-        `${row.rankX - row.y}`.padEnd(8),
-        row.poolXYText.padEnd(12),
-        row.avgXY.toFixed(2).padEnd(8),
+        row.drPoolText.padEnd(12),
+        row.avgDR.toFixed(2).padEnd(10),
+        row.drlPoolText.padEnd(12),
+        row.avgDRL.toFixed(2).padEnd(10),
         diffStr.padEnd(7),
         pctStr.padEnd(9),
         targetStr.padEnd(13),
@@ -288,14 +244,14 @@ export function printReport(
   const totalCount = comparisons.length;
   const outlierCount = comparisons.filter((c) => c.isOutlier).length;
   const passedCount = totalCount - outlierCount;
-  const tooWeakCount = comparisons.filter((c) => c.status === 'Insufficient rank scaling').length;
-  const tooStrongCount = comparisons.filter((c) => c.status === 'Excessive rank scaling').length;
+  const tooWeakCount = comparisons.filter((c) => c.status === 'Insufficient power scaling').length;
+  const tooStrongCount = comparisons.filter((c) => c.status === 'Excessive power scaling').length;
 
   console.log(
     `\n--------------------------------------------------------------------------------------------------------`,
   );
   console.log(` Summary:`);
-  console.log(`   Total Comparisons Evaluated: ${totalCount}`);
+  console.log(`   Total Levels Evaluated:      ${totalCount}`);
   console.log(
     `   Passed Design Goals:         ${passedCount} (${((passedCount / totalCount) * 100).toFixed(1)}%)`,
   );
@@ -303,19 +259,19 @@ export function printReport(
     `   Outliers:                    ${outlierCount} (${((outlierCount / totalCount) * 100).toFixed(1)}%)`,
   );
   if (outlierCount > 0) {
-    console.log(`     - Lower Rank Too Weak (Exceeds Max Diff):    ${tooWeakCount}`);
-    console.log(`     - Lower Rank Too Strong (Below Min Diff):    ${tooStrongCount}`);
+    console.log(`     - Power Scaling Too Weak (< +10%):           ${tooWeakCount}`);
+    console.log(`     - Power Scaling Too Strong (> +30%):         ${tooStrongCount}`);
   }
   console.log(
     `--------------------------------------------------------------------------------------------------------\n`,
   );
 }
 
-export async function main(options: DamageScalingOptions = {}) {
+export async function main(options: PowerScalingOptions = {}) {
   const stock = new StockCharacters();
   stock.addAllCharacters();
 
-  const comparisons = runDamageScalingAnalysis(stock, options);
+  const comparisons = runPowerScalingAnalysis(stock, options);
 
   if (options.json) {
     console.log(JSON.stringify(comparisons, null, 2));
@@ -334,8 +290,6 @@ if (require.main === module) {
     )
     .option('-l, --level <number>', 'Filter to a specific level', (val) => parseInt(val, 10))
     .option('-o, --only-outliers', 'Only show outlier comparisons')
-    .option('--sort-by-level', 'Sort the output table by Lvl instead of Alt Rank')
-    .option('--drl', 'Evaluate Low-Power scaling (DamageScaling.drl) instead of standard DR')
     .option('--json', 'Output results in JSON format')
     .parse(process.argv);
 
@@ -343,8 +297,6 @@ if (require.main === module) {
     className: cli.class,
     level: cli.level,
     onlyOutliers: Boolean(cli.onlyOutliers),
-    sortByAltRank: !cli.sortByLevel,
-    drl: Boolean(cli.drl),
     json: Boolean(cli.json),
   }).catch((err) => {
     console.error(err);

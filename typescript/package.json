@@ -56,6 +56,7 @@
     "validate_monsters": "tsx src/scripts/validate_monsters.ts",
     "player_self_hit_rate": "tsx src/scripts/player_self_hit_rate.ts",
     "damage_scaling": "tsx src/scripts/determine_damage_scaling.ts",
+    "power_scaling": "tsx src/scripts/determine_power_scaling.ts",
     "explain_stock_character": "tsx src/scripts/explain_stock_character.ts"
   }
 }
