@@ -50,7 +50,7 @@ export interface DamageScalingOptions {
 export function getTargetRange(y: number): TargetDamageRange | null {
   switch (y) {
     case 1:
-      return { minPct: -10, maxPct: 10 };
+      return { minPct: -5, maxPct: 10 };
     case 2:
       return { minPct: 0, maxPct: 10 };
     case 3:
