@@ -51,10 +51,10 @@ tap.test('parseAttackEffect', (t) => {
     // parseDefenses order is fortitude then reflex
     t.same(parsed?.defenses, ['fortitude', 'reflex'], 'should target Fortitude and Reflex');
     // drl(2) is 1d8+1d6. Barbarian 4 is Rank 2. Searing Light is Rank 1.
-    // Excess 1 -> add 1d6 -> 2d6+1d8.
+    // Excess 1 -> add 1d8 -> 1d6+2d8.
     t.equal(
       parsed?.damage.toString(),
-      '2d6+1d8',
+      '1d6+2d8',
       'should calculate correct damage (dr2low + excess 1)',
     );
     t.end();
@@ -133,7 +133,7 @@ tap.test('parseAttackEffect', (t) => {
     const parsed = parseAttackEffect(ability, creature);
     t.ok(parsed, 'should parse Giant Wasp Venom');
     t.equal(parsed?.accuracyModifier, 2, 'should parse accuracy bonus');
-    t.equal(parsed?.damage.toString(), '2d10', 'should calculate correct damage');
+    t.equal(parsed?.damage.toString(), '3d8', 'should calculate correct damage');
     t.end();
   });
 

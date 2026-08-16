@@ -88,14 +88,14 @@ function calculateDieScaling(
   const drLowMatches = effect?.match(lowPattern);
   if (drLowMatches && drLowMatches[1]) {
     const damageBonusByRank = {
-      zero: '1',
-      one: '2',
-      two: '1d6',
-      three: '1d10',
-      four: '1d10',
-      five: '2d8',
-      six: '3d8',
-      seven: '3d10',
+      zero: '2',
+      one: '3',
+      two: '1d8',
+      three: '1d8',
+      four: '2d6',
+      five: '3d6',
+      six: '3d10',
+      seven: '4d10',
       eight: '5d10',
       nine: '6d10',
       ten: '8d10',
@@ -112,13 +112,13 @@ function calculateDieScaling(
       one: '2',
       two: '1d6',
       three: '1d6',
-      four: '1d6',
+      four: '2d6',
       five: '2d6',
-      six: '2d8',
-      seven: '2d10',
-      eight: '4d6',
-      nine: '4d8',
-      ten: '4d10',
+      six: '2d6',
+      seven: '2d8',
+      eight: '2d10',
+      nine: '4d6',
+      ten: '4d8',
     }[drMatches[1]];
 
     return damageBonusByRank;

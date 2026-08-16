@@ -97,23 +97,23 @@ export class DamageScaling {
     // Low power variants (mostly flat dice, no scaling)
     switch (rank) {
       case 0:
-        return new DamageScaling(DicePool.d6(), [], { flatDamagePerRank: 1 });
+        return new DamageScaling(DicePool.d6(), [], { flatDamagePerRank: 2 });
       case 1:
-        return new DamageScaling(DicePool.d10(), [], { flatDamagePerRank: 2 });
+        return new DamageScaling(DicePool.d10(), [], { flatDamagePerRank: 3 });
       case 2:
         return new DamageScaling(DicePool.d8().addDice([{ size: 6 }]), [], {
-          dicePerRank: DicePool.d6(),
+          dicePerRank: DicePool.d8(),
         });
       case 3:
-        return new DamageScaling(DicePool.xdy(2, 10), [], { dicePerRank: DicePool.d10() });
+        return new DamageScaling(DicePool.xdy(3, 8), [], { dicePerRank: DicePool.d8() });
       case 4:
-        return new DamageScaling(DicePool.xdy(3, 10), [], { dicePerRank: DicePool.d10() });
+        return new DamageScaling(DicePool.xdy(5, 6), [], { dicePerRank: DicePool.xdy(2, 6) });
       case 5:
-        return new DamageScaling(DicePool.xdy(5, 8), [], { dicePerRank: DicePool.xdy(2, 8) });
+        return new DamageScaling(DicePool.xdy(7, 6), [], { dicePerRank: DicePool.xdy(3, 6) });
       case 6:
-        return new DamageScaling(DicePool.xdy(7, 8), [], { dicePerRank: DicePool.xdy(3, 8) });
+        return new DamageScaling(DicePool.xdy(6, 10), [], { dicePerRank: DicePool.xdy(3, 10) });
       case 7:
-        return new DamageScaling(DicePool.xdy(8, 10), [], { dicePerRank: DicePool.xdy(3, 10) });
+        return new DamageScaling(DicePool.xdy(9, 10), [], { dicePerRank: DicePool.xdy(4, 10) });
       case 8:
         return new DamageScaling(DicePool.xdy(12, 10), [], { dicePerRank: DicePool.xdy(5, 10) });
       case 9:

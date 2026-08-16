@@ -615,7 +615,7 @@ t.test('reformatAttackConsequences', (t) => {
       },
     } as any;
     reformatAttackConsequences(simpleCreature, ability);
-    t.equal(ability.attack.hit, '2d10 damage.');
+    t.equal(ability.attack.hit, '3d8 damage.');
     t.end();
   });
 
@@ -628,8 +628,8 @@ t.test('reformatAttackConsequences', (t) => {
       },
     } as any;
     reformatAttackConsequences(simpleCreature, ability);
-    // +4d8 from excess rank
-    t.equal(ability.attack.hit, '9d8 damage.');
+    // +6d6 from excess rank
+    t.equal(ability.attack.hit, '13d6 damage.');
     t.end();
   });
 

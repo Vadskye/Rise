@@ -201,8 +201,8 @@ function thrownAttacks(): Tool[] {
     }),
     // A rank 2 short range double defense spell would deal dr4 damage.
     // That becomes dr3l with low damage.
-    // dr4 at rank 2: 12
-    // dr3l: 11
+    // dr4 at rank 2: 11 damage
+    // dr3l: 13.5 damage
     createAlchemicalItem({
       name: "Alchemist's Fire",
       rank: 0,
@@ -217,9 +217,9 @@ function thrownAttacks(): Tool[] {
       upgrades: [
         // A rank 4 short range double defense spell would deal dr6 damage.
         // That becomes dr5l with low damage scaling?
-        // dr6 at rank 4: 29 damage
-        // dr5l: 22.5 damage.
-        // dr6l: 31.5 damage.
+        // dr6 at rank 4: 29.75 damage
+        // dr5l: 24.5 damage.
+        // dr6l: 33 damage.
         {
           rank: 2,
           short_description: 'Throw to deal $dr5l damage',
@@ -236,7 +236,7 @@ function thrownAttacks(): Tool[] {
       // a burn. That stays as double dr6l.
       // dr8 at rank 6: 56 damage
       // Double dr6: 76 damage (+35%)
-      // Double dr6l: 63 damage
+      // Double dr6l: 66 damage
       description: `
         You can throw this item as a standard action.
         When you do, make an attack vs. Armor and Reflex against something within \\shortrange.
@@ -259,7 +259,7 @@ function thrownAttacks(): Tool[] {
       short_description: 'Throw to deal $dr3l damage over time',
       // A rank 3 short range double defense spell would deal dr5.
       // dr5 at rank 3: 18
-      // Double dr3l: 22 (+22%)
+      // Double dr3l: 27 (+50%)
       description: `
         You can throw this item as a standard action.
         When you do, make an attack vs. Reflex and Fortitude against something within \\shortrange.
@@ -326,7 +326,7 @@ function thrownAttacks(): Tool[] {
       ],
     }),
     // Rank 7 spell would be dr7 = 51 damage.
-    // Double dr6l is 63 damage (+23%)
+    // Double dr6l is 66 damage (+29%)
     createAlchemicalItem({
       name: 'Lavabomb',
       rank: 5,

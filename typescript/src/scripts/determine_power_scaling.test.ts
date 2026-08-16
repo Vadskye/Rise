@@ -9,16 +9,16 @@ import { clearAllCharacterSheets } from '@src/character_sheet/current_character_
 
 t.test('evaluatePowerComparison', (t) => {
   t.test('should calculate diff and pctDiff correctly for rank 3 sorcerer', (t) => {
-    // Rank 3: DR = 1d8 + 7 = 4.5 + 7 = 11.5, DRL = 2d10 = 11.0
-    // diff = 11.5 - 11.0 = 0.5, pctDiff = (0.5 / 11.0) * 100 = 4.545% (< +10% target min => Insufficient power scaling)
+    // Rank 3: DR = 1d8 + 7 = 4.5 + 7 = 11.5, DRL = 3d8 = 13.5
+    // diff = 11.5 - 13.5 = -2.0, pctDiff = (-2.0 / 13.5) * 100 = -14.81% (< +10% target min => Insufficient power scaling)
     const result = evaluatePowerComparison(7, 'Sorcerer 7', 'sorcerer', 3, 7);
     t.equal(result.level, 7);
     t.equal(result.rank, 3);
     t.equal(result.power, 7);
     t.equal(result.avgDR, 11.5);
-    t.equal(result.avgDRL, 11);
-    t.equal(result.diff, 0.5);
-    t.equal(result.pctDiff.toFixed(2), '4.55');
+    t.equal(result.avgDRL, 13.5);
+    t.equal(result.diff, -2);
+    t.equal(result.pctDiff.toFixed(2), '-14.81');
     t.equal(result.isOutlier, true);
     t.equal(result.status, 'Insufficient power scaling');
     t.end();

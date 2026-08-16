@@ -188,7 +188,7 @@ t.test('spellScaling', (t) => {
       };
       t.equal(
         spellScaling(spell as ActiveAbility),
-        'The damage increases by 1d6 for each rank beyond 1.',
+        'The damage increases by 1d8 for each rank beyond 1.',
       );
       t.matchOnlyStrict(capturedWarnings, []);
       t.end();
@@ -236,7 +236,7 @@ t.test('spellScaling', (t) => {
       };
       t.equal(
         spellScaling(spell as ActiveAbility),
-        'The healing increases by 1d6 for each rank beyond 1.',
+        'The healing increases by 1d8 for each rank beyond 1.',
       );
       t.end();
     });
