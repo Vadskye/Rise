@@ -389,7 +389,7 @@ export const channelDivinity: MysticSphere = {
       effect: `
         You are \\shielded.
       `,
-      rank: 3,
+      rank: 4,
       roles: ['attune'],
       type: 'Attune (deep)',
     },
@@ -400,7 +400,7 @@ export const channelDivinity: MysticSphere = {
       effect: `
         You are \\braced.
       `,
-      rank: 6,
+      rank: 7,
       roles: ['attune'],
       type: 'Attune (deep)',
     },
