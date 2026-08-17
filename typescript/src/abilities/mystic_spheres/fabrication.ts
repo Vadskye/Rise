@@ -426,7 +426,7 @@ export const fabrication: MysticSphere = {
       // Result: 3 - 1 - 1 + 1 = dr2
       functionsLike: {
         exceptThat: `
-          the area changes to a \\medarea radius \\glossterm{wall}.
+          the area changes your choice of a \\smallarea or \\medarea radius \\glossterm{wall}.
           In addition, the damage increases to \\damageranktwo.
         `,
         name: 'blade barrier',
