@@ -947,13 +947,13 @@ export const fabrication: MysticSphere = {
       tags: ['Manifestation', 'Physical'],
     },
     // TODO: may not be within sphere's narrative scope
-    // r3 area is drX-2. Add +1dr for double defense and +1dr for combo delay trigger.
+    // r3 area is drX-1. Add +1dr for double defense and +1dr for combo delay trigger.
     {
       name: 'Powderkeg',
 
       attack: {
         hit: `
-          \\damagerankthree.
+          \\damagerankfour.
         `,
         halfOnMiss: true,
         targeting: `
@@ -961,6 +961,8 @@ export const fabrication: MysticSphere = {
           The powderkeg has 10 hit points, and it automatically takes 5 damage whenever you sustain this spell.
           It explodes when it reaches 0 hit points, or when it takes any damage from a \\atFire attack.
           When it explodes, make an attack vs. Armor and Reflex against everything within a \\smallarea radius of it.
+
+          When you cast this spell, any other powderkegs you have created with it are immediately \\glossterm{dismissed}.
         `,
       },
       rank: 3,
@@ -973,7 +975,6 @@ export const fabrication: MysticSphere = {
     {
       name: 'Mighty Powderkeg',
 
-      // Now has limited scope area, so +1dr extra
       functionsLike: {
         name: 'powderkeg',
         exceptThat: 'the damage increases to \\damagerankseven.',
