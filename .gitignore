@@ -241,6 +241,5 @@ typescript/monster_ui/app_settings.json
 typescript/monster_ui/app_settings.test.*.json
 typescript/tsconfig.test.tsbuildinfo
 
-#Rust
-rust/target/*
-rust/target/.*
+# Ignore PDFs
+*.pdf
