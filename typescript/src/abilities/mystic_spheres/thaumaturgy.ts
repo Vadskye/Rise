@@ -455,6 +455,18 @@ export const thaumaturgy: MysticSphere = {
     },
 
     {
+      name: 'Mighty Negate',
+
+      functionsLike: {
+        name: 'negate',
+        exceptThat: 'the damage increases to \\damagerankfivelow.',
+      },
+      rank: 4,
+      roles: ['burst'],
+      scaling: 'damage',
+    },
+
+    {
       name: 'Arcane Surge',
 
       effect: `
