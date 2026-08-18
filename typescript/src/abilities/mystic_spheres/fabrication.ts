@@ -957,7 +957,7 @@ export const fabrication: MysticSphere = {
         `,
         halfOnMiss: true,
         targeting: `
-          You create a powderkeg on the ground within \\shortrange.
+          You create a Small powderkeg on the ground within \\shortrange.
           The powderkeg has 10 hit points, and it automatically takes 5 damage whenever you sustain this spell.
           It explodes when it reaches 0 hit points, or when it takes any damage from a \\atFire attack.
           When it explodes, make an attack vs. Armor and Reflex against everything within a \\smallarea radius of it.
