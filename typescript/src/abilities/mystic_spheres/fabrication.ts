@@ -390,7 +390,7 @@ export const fabrication: MysticSphere = {
       rank: 2,
       roles: ['barrier', 'hazard'],
       scaling: 'damage',
-      tags: ['Barrier', 'Manifestation'],
+      tags: ['Barrier', 'Manifestation', 'Physical'],
       type: 'Sustain (attunable, minor)',
     },
 
@@ -412,7 +412,7 @@ export const fabrication: MysticSphere = {
       rank: 5,
       roles: ['barrier', 'hazard'],
       scaling: 'damage',
-      tags: ['Barrier', 'Manifestation'],
+      tags: ['Barrier', 'Manifestation', 'Physical'],
       type: 'Sustain (attunable, minor)',
     },
 
@@ -434,7 +434,7 @@ export const fabrication: MysticSphere = {
       rank: 3,
       roles: ['barrier', 'hazard'],
       scaling: 'damage',
-      tags: ['Barrier', 'Manifestation'],
+      tags: ['Barrier', 'Manifestation', 'Physical'],
       type: 'Sustain (attunable, minor)',
     },
 
