@@ -164,7 +164,7 @@ export const fabrication: MysticSphere = {
       // Result: 2 - 1 + 1 = dr2
       attack: {
         hit: `
-          \\damageranktwo.
+          \\damageranktwolow.
         `,
         targeting: `
           Make an attack vs. Armor and Brawn against something within \\longrange.
@@ -184,7 +184,7 @@ export const fabrication: MysticSphere = {
       // Result: 5 - 1 + 1 = dr5
       attack: {
         hit: `
-          \\damagerankfive, and any \\glossterm{extra damage} is doubled.
+          \\damagerankfivelow, and any \\glossterm{extra damage} is doubled.
         `,
         targeting: `
           Make an attack vs. Armor and Brawn against something within \\longrange.
@@ -199,56 +199,47 @@ export const fabrication: MysticSphere = {
     {
       name: 'Mystic Artillery',
 
-      // Rank 1 Spell
-      // Range: Long (mod -1)
-      // Mod: Inescapably Delayed (+1), -2 Accuracy Penalty (+1)
-      // Result: 1 - 1 + 1 + 1 = dr2
+      // -1dr for long, +1dr for delay.
+      // The delay is weird enough to get +2dr with only -3 accuracy instead of -4.
       attack: {
         hit: `
-          \\damageranktwo.
+          \\damageranktwolow.
         `,
         targeting: `
           When you cast this spell, you create a ballista bolt in midair within your space and choose a target within \\longrange.
-          At the start of your next turn, if that target is still within \\longrange, make a \\glossterm{reactive attack} vs. Armor with a -2 accuracy penalty against it.
+          At the start of your next turn, if that target is still within \\longrange, make a \\glossterm{reactive attack} vs. Armor with a -3 accuracy penalty against it.
           Otherwise, the bolt disappears and this spell is wasted.
         `,
       },
       roles: ['snipe'],
       rank: 1,
       scaling: 'damage',
-      tags: ['Manifestation'],
+      tags: ['Manifestation', 'Physical'],
     },
 
     {
       name: 'Mighty Mystic Artillery',
 
-      // Rank 4 Spell
-      // Range: Long (mod -1)
-      // Mod: Inescapably Delayed (+1), -2 Accuracy Penalty (+1)
-      // Result: 4 - 1 + 1 + 1 = dr5
       functionsLike: {
         name: 'mystic artillery',
         exceptThat:
-          'the damage increases to \\damagerankfive, and any \\glossterm{extra damage} is doubled.',
+          'the damage increases to \\damagerankfivelow, and any \\glossterm{extra damage} is doubled.',
       },
       rank: 4,
       roles: ['snipe'],
       scaling: 'damage',
-      tags: ['Manifestation'],
+      tags: ['Manifestation', 'Physical'],
     },
 
     {
       name: "Executioner's Axe",
 
-      // Rank 1 Spell
-      // Area: Multi-target (max 2) (mod 0)
-      // Mod: Cleave Bonus (+1), Inescapably Delayed (+1)
-      // Result: 1 + 0 + 1 + 1 = dr3
-      // Keen for only two targets.
-      // Since dr4 has such strong power scaling, this would really rather be dr3 or dr5.
+      // +1dr from delay.
+      // This is r0, which would normally be a Tiny radius from self, for +1dr.
+      // Drop to only two targets and lose half damage on miss to gain the Keen tag.
       attack: {
         hit: `
-          \\damagerankthree.
+          \\damageranktwolow.
         `,
         halfOnMiss: false,
         targeting: `
@@ -259,81 +250,66 @@ export const fabrication: MysticSphere = {
       rank: 1,
       roles: ['burst'],
       scaling: 'damage',
-      tags: ['Keen', 'Manifestation'],
+      tags: ['Keen', 'Manifestation', 'Physical'],
     },
 
     {
       name: "Mighty Executioner's Axe",
 
-      // Rank 4 Spell
-      // Area: Multi-target (max 2) (mod 0)
-      // Mod: Cleave Bonus (+1), Inescapably Delayed (+1)
-      // Result: 4 + 0 + 1 + 1 = dr6
       functionsLike: {
         name: "executioner's axe",
         exceptThat:
-          'the damage increases to \\damageranksix, and any \\glossterm{extra damage} is doubled.',
+          'the damage increases to \\damagerankfivelow, and any \\glossterm{extra damage} is doubled.',
       },
       rank: 4,
       roles: ['burst'],
       scaling: 'damage',
-      tags: ['Keen', 'Manifestation'],
+      tags: ['Keen', 'Manifestation', 'Physical'],
     },
 
     {
-      name: 'Whirlwind of Blades',
+      name: 'Bladestorm',
 
-      // Rank 4 Spell
-      // Area: Small area radius from self (R0, mod +1)
-      // Result: 4 + 1 = dr5
-      // This needs to be sufficiently different from executioner's axe, so it affects a
-      // larger area.
+      // -2dr for r4 area
       attack: {
-        hit: `\\damagerankfive.`,
+        hit: `\\damageranktwolow.`,
         halfOnMiss: true,
         targeting: `
-          Make an attack vs. Armor against everything in a \\smallarea radius from you.
+          Make an attack vs. Armor against all \\glossterm{enemies} in a \\medarea radius from you.
         `,
       },
-      rank: 4,
+      rank: 3,
       roles: ['clear'],
       scaling: 'damage',
-      tags: ['Manifestation'],
+      tags: ['Manifestation', 'Physical'],
     },
 
     {
-      name: 'Mighty Whirlwind of Blades',
+      name: 'Mighty Bladestorm',
 
-      // Rank 7 Spell
-      // Area: Small area radius from self (R0, mod +1)
-      // Result: 7 + 1 = dr8
-      attack: {
-        hit: `\\damagerankeight.`,
-        halfOnMiss: true,
-        targeting: `
-          Make an attack vs. Armor against everything in a \\smallarea radius from you.
-        `,
+      functionsLike: {
+        name: 'bladestorm',
+        exceptThat: 'the damage increases to \\damagerankfivelow.',
       },
-      rank: 7,
+      rank: 6,
       roles: ['clear'],
       scaling: 'damage',
-      tags: ['Manifestation'],
+      tags: ['Manifestation', 'Physical'],
     },
 
     {
       name: 'Rain of Arrows',
 
-      // Rank 4 Spell
       // Area: Small radius in Medium range (R4, mod -2)
       // Mod: Avoidable Delay (+1)
-      // Result: 4 - 2 + 1 = dr3
+      // Cheat in +1dr because the spell is so weird and has so many restrictions.
       attack: {
         hit: `
-          \\damagerankthree.
+          \\damagerankfourlow.
         `,
         halfOnMiss: true,
         targeting: `
-          When you cast this spell, you choose a \\smallarea radius, 60 foot tall cylinder-shaped \\glossterm{zone} within \\medrange.
+          When you cast this spell, you choose a \\smallarea radius, 30 foot tall cylinder-shaped \\glossterm{zone} within \\medrange.
           You must have \\glossterm{line of sight} and \\glossterm{line of effect} to both the top and bottom of the area.
           This means you cannot cast this spell in tight tunnels.
 
@@ -347,20 +323,16 @@ export const fabrication: MysticSphere = {
       rank: 4,
       roles: ['clear'],
       scaling: 'damage',
-      tags: ['Manifestation'],
+      tags: ['Manifestation', 'Physical'],
     },
 
     {
-      name: 'Massive Rain of Arrows',
+      name: 'Mighty Rain of Arrows',
 
-      // Rank 7 Spell
-      // Area: Medium radius in Distant range (R5, mod -2)
-      // Mod: Avoidable Delay (+1)
-      // Result: 7 - 2 + 1 = dr6
       functionsLike: {
         name: 'rain of arrows',
         exceptThat:
-          'the area increases to a \\medarea radius, 60 foot tall cylinder-shaped \\glossterm{zone} within \\distrange. In addition, the damage increases to \\damageranksix.',
+          'the damage increases to \\damageranksevenlow.',
       },
       rank: 7,
       roles: ['clear'],
@@ -371,12 +343,8 @@ export const fabrication: MysticSphere = {
       name: 'Blade Barrier',
 
       cost: BARRIER_COOLDOWN,
-      // Rank 2 Spell
-      // Area: Medium wall (R2, mod -1)
-      // Mod: Sustain Wall (-1), Reactive (+1)
-      // Result: 2 - 1 - 1 + 1 = dr1
       attack: {
-        hit: `\\damagerankone.`,
+        hit: `\\damageranktwolow.`,
         halfOnMiss: true,
         targeting: `
           You create a \\medarealong \\glossterm{wall} of whirling blades within \\medrange.
@@ -398,13 +366,9 @@ export const fabrication: MysticSphere = {
       name: 'Mighty Blade Barrier',
 
       cost: BARRIER_COOLDOWN,
-      // Rank 5 Spell
-      // Area: Large wall (R3, mod -1)
-      // Mod: Sustain Wall (-1), Reactive (+2)
-      // Result: 5 - 1 - 1 + 2 = dr5
       functionsLike: {
         exceptThat: `
-          the damage increases to \\damagerankfive.
+          the damage increases to \\damagerankfivelow.
           In addition, the area increases to a \\largearealong \\glossterm{wall}.
         `,
         name: 'blade barrier',
@@ -427,7 +391,7 @@ export const fabrication: MysticSphere = {
       functionsLike: {
         exceptThat: `
           the area changes your choice of a \\smallarea or \\medarea radius \\glossterm{wall}.
-          In addition, the damage increases to \\damageranktwo.
+          In addition, the damage increases to \\damagerankthreelow.
         `,
         name: 'blade barrier',
       },
@@ -477,13 +441,12 @@ export const fabrication: MysticSphere = {
     {
       name: 'Caltrops',
 
-      // TODO: correct damage is hard to calculate. This is above rate if it triggers
-      // twice, but it could easily trigger never.
+      // TODO: correct damage is hard to calculate.
       attack: {
-        hit: `\\damagerankone.`,
+        hit: `\\damageranktwolow.`,
         targeting: `
           You create exceptionally sharp caltrops in up to three unoccupied squares on solid ground within \\medrange.
-          They can generally be noticed with a \\glossterm{difficulty value} 8 Awareness check.
+          They can generally be noticed with a \\glossterm{difficulty value} 10 Awareness check.
 
           Whenever a \\glossterm{grounded} creature moves into any of the squares, unless the creature moves at half speed to avoid the danger, you make a \\glossterm{reactive attack} vs. Armor against them.
           You can only attack a given target with this spell once per turn.
@@ -505,7 +468,7 @@ export const fabrication: MysticSphere = {
       // Result: 5 - 1 = dr4
       functionsLike: {
         name: 'caltrops',
-        exceptThat: 'the damage increases to \\damagerankfour.',
+        exceptThat: 'the damage increases to \\damagerankfivelow, and the DV to notice the caltrops increases to 13.',
       },
       rank: 5,
       roles: ['hazard'],
@@ -538,53 +501,41 @@ export const fabrication: MysticSphere = {
     {
       name: 'Dagger Cloud',
 
-      // Rank 3 Spell
-      // Area: Tiny area in Short range (R2, mod -1)
-      // Mod: Sustain (minor) zone (limited scope) (-1)
-      // Result: 3 - 1 - 1 = dr1
+      // Tiny radius in short range is +0dr.
+      // -2dr for sustain (minor)
       attack: {
-        hit: `\\damagerankone.`,
+        hit: `\\damageranktwolow.`,
         targeting: `
           When you cast this spell, a cloud of flying daggers appears in a \\tinyarea radius \\glossterm{zone} within \\shortrange.
-          Make an attack vs. Armor against each creature in the area.
-          Whenever a creature enters the area, you make a \\glossterm{reactive attack} vs. Armor against it.
-          Finally, during each of your subsequent actions, you make a \\glossterm{reactive attack} vs. Armor against each creature in the area.
-          You can only attack a given target with this spell once per turn.
+          When you cast this spell, and at the end of each of your subsequent turns, make an attack vs. Armor against each creature in the area.
         `,
       },
       rank: 3,
-      roles: ['hazard'],
+      roles: ['clear', 'hazard'],
       scaling: 'damage',
       type: 'Sustain (minor)',
-      tags: ['Manifestation'],
+      tags: ['Manifestation', 'Physical'],
     },
     {
-      name: 'Blade Cloud',
+      name: 'Mighty Dagger Cloud',
 
-      // Rank 6 Spell
-      // Area: Small area in Short range (R3, mod -1)
-      // Mod: Sustain (minor) zone (limited scope) (-1)
-      // Result: 6 - 1 - 1 = dr4
       functionsLike: {
         name: 'dagger cloud',
         exceptThat:
-          'the area increases to a \\smallarea radius, and the damage increases to \\damagerankfour.',
+          'the damage increases to \\damagerankfourlow.',
       },
       rank: 6,
-      roles: ['hazard'],
+      roles: ['clear', 'hazard'],
       scaling: 'damage',
       type: 'Sustain (minor)',
-      tags: ['Manifestation'],
+      tags: ['Manifestation', 'Physical'],
     },
     {
       name: 'Daggerswarm',
 
-      // Rank 5 Spell
-      // Range: Short (mod +1)
-      // Mod: Sustain single target (-2), -2 Accuracy Penalty (+1), No extra damage (-2)
-      // Result: 5 + 1 - 2 + 1 - 2 = dr3
+      // TODO: give a brief cooldown
       attack: {
-        hit: `\\damagerankthree. All sources of \\glossterm{extra damage} do not apply to this attack.`,
+        hit: `\\damagerankthreelow. All sources of \\glossterm{extra damage} do not apply to this attack.`,
         targeting: `
           When you cast this spell, a small swarm of daggers appears floating over your head.
           As a \\glossterm{minor action}, you can fling one dagger at a creature or object within \\shortrange.
@@ -596,6 +547,7 @@ export const fabrication: MysticSphere = {
       roles: ['attune'],
       scaling: 'damage',
       type: 'Attune (deep)',
+      tags: ['Manifestation', 'Physical'],
     },
 
     // Ranged prone is 1.6 EA, so r2. It can go up +1 area tier for grounded + size limit
@@ -999,20 +951,21 @@ export const fabrication: MysticSphere = {
     {
       name: 'Buzzsaw',
 
+      // +1dr for -2a
       // -1dr for extremely avoidable dot
       attack: {
         hit: `
-          \\damageranktwo.
+          \\damageranktwolow.
         `,
         halfOnMiss: true,
         targeting: `
           You create a sawblade in a \\tinyarea radius \\glossterm{zone} within \\shortrange.
-          Make an attack vs. Armor against everything in the area.
+          Make an attack vs. Armor with a -2 accuracy penalty against everything in the area.
           At the end of your next turn, this effect \\glossterm{repeats} in the same area.
         `,
       },
-      roles: ['clear'],
-      rank: 3,
+      roles: ['clear', 'hazard'],
+      rank: 2,
       scaling: 'damage',
       tags: ['Manifestation'],
     },
@@ -1020,20 +973,12 @@ export const fabrication: MysticSphere = {
     {
       name: 'Mighty Buzzsaw',
 
-      // -1dr for extremely avoidable dot
-      attack: {
-        hit: `
-          \\damagerankfive.
-        `,
-        halfOnMiss: true,
-        targeting: `
-          You create a sawblade in a \\tinyarea radius \\glossterm{zone} within \\shortrange.
-          Make an attack vs. Armor against everything in the area.
-          At the end of your next turn, this effect \\glossterm{repeats} in the same area.
-        `,
+      functionsLike: {
+        name: 'buzzsaw',
+        exceptThat: 'the damage increases to \\damagerankfivelow.',
       },
-      roles: ['clear'],
-      rank: 6,
+      roles: ['clear', 'hazard'],
+      rank: 5,
       scaling: 'damage',
       tags: ['Manifestation'],
     },

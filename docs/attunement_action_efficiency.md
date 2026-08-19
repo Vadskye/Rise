@@ -195,6 +195,12 @@ Translating that into usable scaling, assuming medium range:
   * dr4, 2d6 + power (56%)
   * double damage strike (50%) - note that extra damage doesn't apply anyway
 
+### Minor action attack with cooldown: ???
+
+A minor action attack with a cooldown makes 3 attacks per combat, so the correct damage multiplier is ???
+
+TODO
+
 ### Honed: 2.0
 
 0.4 EA * 5 actions = 2 EA
