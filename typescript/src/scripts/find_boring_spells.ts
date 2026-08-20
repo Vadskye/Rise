@@ -21,25 +21,37 @@ export type BoringCategory =
   | 'insufficient_role'
   | 'role_saturation';
 
-export interface BoringFinding {
+export type SpellItemKind = 'cantrip' | 'spell' | 'ritual';
+
+export interface StandardSpellItem {
+  sphere: SphereName;
+  name: string;
+  spell: CantripDefinition | SpellDefinition;
+  kind: 'cantrip' | 'spell';
+  rank: number;
+}
+
+export interface RitualSpellItem {
   sphere: string;
   name: string;
+  spell: RitualDefinition;
+  kind: 'ritual';
   rank: number;
-  kind: 'cantrip' | 'spell' | 'ritual';
+}
+
+export type SpellItem = StandardSpellItem | RitualSpellItem;
+
+export interface BoringFinding {
+  sphere: SphereName | string;
+  name: string;
+  rank: number;
+  kind: SpellItemKind;
   category: BoringCategory;
   score: number; // 1-10 severity score (10 = highest candidate for removal/improvement)
   reason: string;
   details?: string;
   recommendation: string;
   spells?: string[];
-}
-
-export interface SpellItem {
-  sphere: string;
-  name: string;
-  spell: CantripDefinition | SpellDefinition | RitualDefinition;
-  kind: 'cantrip' | 'spell' | 'ritual';
-  rank: number;
 }
 
 export interface FindBoringSpellsOptions {
@@ -81,16 +93,31 @@ export function getAllSpells(
   const items: SpellItem[] = [];
 
   for (const sphere of allMysticSpheres) {
-    if (sphere.name !== 'Universal' && sphere.spells) {
-      for (const s of sphere.spells) {
-        if (!options.maxRank || s.rank <= options.maxRank) {
-          items.push({
-            sphere: sphere.name,
-            name: s.name,
-            spell: s,
-            kind: 'spell',
-            rank: s.rank,
-          });
+    if (sphere.name !== 'Universal') {
+      if (sphere.cantrips) {
+        for (const c of sphere.cantrips) {
+          if (!options.maxRank || (c.rank || 0) <= options.maxRank) {
+            items.push({
+              sphere: sphere.name,
+              name: c.name,
+              spell: c,
+              kind: 'cantrip',
+              rank: c.rank || 0,
+            });
+          }
+        }
+      }
+      if (sphere.spells) {
+        for (const s of sphere.spells) {
+          if (!options.maxRank || s.rank <= options.maxRank) {
+            items.push({
+              sphere: sphere.name,
+              name: s.name,
+              spell: s,
+              kind: 'spell',
+              rank: s.rank,
+            });
+          }
         }
       }
     }
@@ -123,7 +150,7 @@ export function detectVanillaDamageSpells(items: SpellItem[]): BoringFinding[] {
     }
 
     const s = item.spell;
-    const profile = buildSpellProfile(s as SpellDefinition, item.sphere as SphereName);
+    const profile = buildSpellProfile(s, item.sphere);
     const fullText = getSpellFullText(s).toLowerCase();
 
     const isDamageAttack =

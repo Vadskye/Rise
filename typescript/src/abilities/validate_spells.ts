@@ -35,13 +35,39 @@
  *   - Damage ranks are extracted via `\damagerank[word]` (ignoring `\hprank` healing ranks).
  */
 
-import { MysticSphere, getSpellByName } from './mystic_spheres';
+import { CantripDefinition, SpellDefinition } from './active_abilities';
+import { MysticSphere, getSpellByName, SphereName } from './mystic_spheres';
 import {
   calculateDefenseModifier,
   calculateExpectedDamageRank,
   DamageCalculationBreakdown,
 } from './expected_damage_rank';
-import { buildSpellProfile, SpellProfile, RANGE_ORDER, AREA_SIZE_ORDER } from './spell_profile';
+import { buildSpellProfile, SpellProfile, RANGE_ORDER, AREA_SIZE_ORDER, AppliedEffect } from './spell_profile';
+
+export type DifferenceField =
+  | 'rank'
+  | 'action economy'
+  | 'standard action requirement'
+  | 'attunement'
+  | 'minor sustain'
+  | 'range'
+  | 'defense count'
+  | 'defense modifier'
+  | 'area type'
+  | 'area size'
+  | 'area growth'
+  | 'accuracy modifier'
+  | 'accuracy condition'
+  | 'special requirements'
+  | 'low power flag'
+  | 'delayed behavior'
+  | 'applied conditions'
+  | 'half damage on miss'
+  | 'maximum targets'
+  | 'enemies only targeting'
+  | 'repeating behavior'
+  | 'injury damage'
+  | 'damage over time';
 
 export interface ValidationIssue {
   type:
@@ -53,11 +79,11 @@ export interface ValidationIssue {
   severity: 'warning';
   message: string;
   spells: [string, string];
-  differenceField?: string;
+  differenceField?: DifferenceField;
 }
 
 interface Difference {
-  field: string;
+  field: DifferenceField;
   p1Value: string;
   p2Value: string;
 }
@@ -225,8 +251,8 @@ interface ComparisonResult {
 }
 
 function compareAppliedEffects(
-  effects1: string[],
-  effects2: string[],
+  effects1: AppliedEffect[],
+  effects2: AppliedEffect[],
 ): { isBetter: boolean; isWorse: boolean } {
   let isBetter = false;
   let isWorse = false;
@@ -622,7 +648,7 @@ export interface DamagingSpellDesignIssue {
   type: 'design_underbudget' | 'design_overbudget';
   severity: 'warning';
   spellName: string;
-  sphereName: string;
+  sphereName: SphereName;
   spellRank: number;
   actualDamageRank: number;
   expectedDamageRank: number;
@@ -672,14 +698,16 @@ export function validateSpellDesignGuidelines(spheres: MysticSphere[]): Damaging
   return issues;
 }
 
+export type ExtraDamageTargetCategory = 'single' | 'multi_le_2' | 'multi_gt_2' | 'area';
+
 export interface ExtraDamageValidationIssue {
   type: 'missing_double_extra_damage' | 'unexpected_double_extra_damage';
   severity: 'warning';
   spellName: string;
-  sphereName: string;
+  sphereName: SphereName;
   spellRank?: number;
   damageRank: number;
-  targetCategory: string;
+  targetCategory: ExtraDamageTargetCategory;
   message: string;
 }
 
@@ -801,11 +829,13 @@ export function validateDoubleExtraDamage(spheres: MysticSphere[]): ExtraDamageV
         continue;
       }
 
-      let baseSpell: any = null;
+      let baseSpell: SpellDefinition | CantripDefinition | undefined;
       if (spell.functionsLike) {
         try {
           baseSpell = getSpellByName(spell.functionsLike.name);
-        } catch (e) {}
+        } catch {
+          // Ignored if spell is not found
+        }
       }
 
       const hit = spell.attack?.hit || (baseSpell?.attack?.hit || '');
