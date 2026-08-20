@@ -1,4 +1,4 @@
-import { mysticSpheres } from '@src/abilities/mystic_spheres';
+import { mysticSpheres, MysticSphere } from '@src/abilities/mystic_spheres';
 import {
   validateSpells,
   validateSpellDesignGuidelines,
@@ -19,6 +19,7 @@ export interface ValidationOptions {
   runExtraDamage?: boolean;
   runRoles?: boolean;
   showApproximate?: boolean;
+  sphere?: string;
 }
 
 function printDamageBreakdown(breakdown: DamageCalculationBreakdown): void {
@@ -51,12 +52,12 @@ function printDesignIssuesGroup(title: string, issues: DamagingSpellDesignIssue[
   console.log();
 }
 
-function runDesignValidation(): void {
+function runDesignValidation(spheres: MysticSphere[]): void {
   console.log('========================================================================');
   console.log('PART 1: SPELL DESIGN GUIDELINE VALIDATION (docs/damaging_abilities.md)');
   console.log('========================================================================\n');
 
-  const designIssues = validateSpellDesignGuidelines(mysticSpheres);
+  const designIssues = validateSpellDesignGuidelines(spheres);
 
   if (designIssues.length === 0) {
     console.log('All damaging spells adhere to design doc formulas!\n');
@@ -104,12 +105,15 @@ function printAlmostEquivalentIssues(issues: ValidationIssue[]): void {
   }
 }
 
-function runComparativeValidation(options: { showApproximate: boolean }): void {
+function runComparativeValidation(options: {
+  showApproximate: boolean;
+  spheres: MysticSphere[];
+}): void {
   console.log('========================================================================');
   console.log('PART 2: CROSS-SPELL COMPARATIVE VALIDATION');
   console.log('========================================================================\n');
 
-  const issues = validateSpells(mysticSpheres, { showApproximate: options.showApproximate });
+  const issues = validateSpells(options.spheres, { showApproximate: options.showApproximate });
 
   if (issues.length === 0) {
     console.log('No spell design redundancies or damage inconsistencies found!');
@@ -143,12 +147,12 @@ function printExtraDamageIssuesGroup(title: string, issues: ExtraDamageValidatio
   console.log();
 }
 
-function runExtraDamageValidation(): void {
+function runExtraDamageValidation(spheres: MysticSphere[]): void {
   console.log('========================================================================');
   console.log('PART 3: DOUBLE EXTRA DAMAGE GUIDELINE VALIDATION');
   console.log('========================================================================\n');
 
-  const issues = validateDoubleExtraDamage(mysticSpheres);
+  const issues = validateDoubleExtraDamage(spheres);
 
   if (issues.length === 0) {
     console.log('All spells adhere to double extra damage guidelines!\n');
@@ -182,12 +186,12 @@ function printRoleIssuesGroup(title: string, issues: RoleValidationIssue[]): voi
   console.log();
 }
 
-function runRoleValidation(): void {
+function runRoleValidation(spheres: MysticSphere[]): void {
   console.log('========================================================================');
   console.log('PART 4: SPELL ROLE VALIDATION (constants.ts)');
   console.log('========================================================================\n');
 
-  const issues = validateSpellRoles(mysticSpheres);
+  const issues = validateSpellRoles(spheres);
 
   if (issues.length === 0) {
     console.log('All spells have valid and complete roles!\n');
@@ -212,22 +216,38 @@ function runRoleValidation(): void {
 }
 
 export function main(options: ValidationOptions): void {
-  console.log('Running Spell Validation on all Mystic Spheres...\n');
+  let targetSpheres = mysticSpheres;
+
+  if (options.sphere) {
+    const sphereQuery = options.sphere.trim().toLowerCase();
+    targetSpheres = mysticSpheres.filter((s) => s.name.toLowerCase() === sphereQuery);
+    if (targetSpheres.length === 0) {
+      throw new Error(
+        `Unknown mystic sphere "${options.sphere}". Available spheres: ${mysticSpheres.map((s) => s.name).join(', ')}`,
+      );
+    }
+    console.log(`Running Spell Validation on Mystic Sphere: ${targetSpheres[0].name}...\n`);
+  } else {
+    console.log('Running Spell Validation on all Mystic Spheres...\n');
+  }
 
   if (options.runDesign) {
-    runDesignValidation();
+    runDesignValidation(targetSpheres);
   }
 
   if (options.runExtraDamage) {
-    runExtraDamageValidation();
+    runExtraDamageValidation(targetSpheres);
   }
 
   if (options.runComparative) {
-    runComparativeValidation({ showApproximate: Boolean(options.showApproximate) });
+    runComparativeValidation({
+      showApproximate: Boolean(options.showApproximate),
+      spheres: targetSpheres,
+    });
   }
 
   if (options.runRoles) {
-    runRoleValidation();
+    runRoleValidation(targetSpheres);
   }
 }
 
@@ -240,6 +260,7 @@ if (require.main === module) {
     .option('-e, --extra-damage', 'Validate double extra damage guidelines')
     .option('-r, --roles', 'Validate spell roles')
     .option('-a, --show-approximate', 'Show approximate matches in comparative validation')
+    .option('-s, --sphere <name>', 'Filter validation to a specific mystic sphere')
     .option('--all', 'Run all validations')
     .parse(process.argv);
 
@@ -250,6 +271,7 @@ if (require.main === module) {
   const runExtraDamage = runAll || Boolean(opts.extraDamage);
   const runRoles = runAll || Boolean(opts.roles);
   const showApproximate = Boolean(opts.showApproximate);
+  const sphere = typeof opts.sphere === 'string' ? opts.sphere : undefined;
 
   if (!runDesign && !runComparative && !runExtraDamage && !runRoles) {
     console.error(
@@ -265,5 +287,6 @@ if (require.main === module) {
     runExtraDamage,
     runRoles,
     showApproximate,
+    sphere,
   });
 }
