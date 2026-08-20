@@ -394,7 +394,7 @@ export const chronomancy: MysticSphere = {
         In addition, the creature reduces its \\glossterm{stamina} by one.
       `,
       rank: 4,
-      roles: ['cleanse', 'exertion'],
+      roles: ['cleanse', 'exertion', 'boon'],
       type: 'Sustain (minor)',
     },
 
@@ -412,7 +412,7 @@ export const chronomancy: MysticSphere = {
         When the time lock is unsealed, this effect ends.
       `,
       rank: 1,
-      roles: ['mobility'],
+      roles: ['boon', 'mobility'],
       type: 'Sustain (minor)',
     },
 
@@ -428,7 +428,7 @@ export const chronomancy: MysticSphere = {
         In addition, the creature reduces its \\glossterm{stamina} by one.
       `,
       rank: 6,
-      roles: ['healing', 'exertion'],
+      roles: ['boon', 'healing', 'exertion'],
       type: 'Sustain (minor)',
     },
 
@@ -445,7 +445,7 @@ export const chronomancy: MysticSphere = {
         The creature reduces its \\glossterm{stamina} by three for each vital wound removed in this way.
       `,
       rank: 7,
-      roles: ['healing', 'exertion'],
+      roles: ['boon', 'healing', 'exertion'],
       type: 'Sustain (minor)',
     },
 

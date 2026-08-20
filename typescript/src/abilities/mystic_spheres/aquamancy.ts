@@ -36,7 +36,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       `,
       rank: 1,
       scaling: { special: 'The healing increases by 1d10 for each rank beyond 1.' },
-      roles: ['healing', 'exertion'],
+      roles: ['boon', 'healing', 'exertion'],
     },
     {
       name: 'Greater Restorative Water',
@@ -48,7 +48,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       },
       rank: 4,
       scaling: { special: 'The healing increases by 3d8 for each rank beyond 4.' },
-      roles: ['healing', 'exertion'],
+      roles: ['boon', 'healing', 'exertion'],
     },
     {
       name: 'Cleansing Water',
@@ -136,7 +136,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         `,
       },
       rank: 6,
-      roles: ['softener'],
+      roles: ['flash'],
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },
@@ -935,7 +935,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       name: 'Protective Bubble Dash',
 
       functionsLike: {
-        name: 'waterward',
+        name: 'protective bubble',
         exceptThat: 'you also add your \\glossterm{speed} to your \\glossterm{available movement}.',
       },
       rank: 5,

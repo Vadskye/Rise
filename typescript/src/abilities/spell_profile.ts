@@ -157,16 +157,16 @@ export function parseRange(text: string): string {
   ) {
     return 'self';
   }
-  if (lowercase.includes('\\distrange')) {
+  if (lowercase.includes('\\distrange') && !/distrange of you.*disappears/.test(lowercase)) {
     return 'distant';
   }
-  if (lowercase.includes('\\longrange')) {
+  if (lowercase.includes('\\longrange') && !/longrange of you.*disappears/.test(lowercase)) {
     return 'long';
   }
-  if (lowercase.includes('\\medrange')) {
+  if (lowercase.includes('\\medrange') && !/medrange of you.*disappears/.test(lowercase)) {
     return 'medium';
   }
-  if (lowercase.includes('\\shortrange')) {
+  if (lowercase.includes('\\shortrange') && !/shortrange of you.*disappears/.test(lowercase)) {
     return 'short';
   }
   return 'none';
@@ -198,8 +198,7 @@ export function parseArea(text: string): string {
     return 'chain';
   }
   if (
-    lowercase.includes('up to') &&
-    (lowercase.includes('targets') || lowercase.includes('creatures'))
+    /up to.*(targets|creatures)/.test(lowercase)
   ) {
     return 'multi';
   }
@@ -438,11 +437,11 @@ export function parseNumAreas(text: string): number {
 
 export function parseMaxTargets(text: string): number {
   const lowercase = text.toLowerCase();
-  const match = lowercase.match(
+  const targetCountMatch = lowercase.match(
     /(?:against\s+up\s+to|up\s+to|against)\s+(\w+|\d+)(?:\s+[\w-]+){0,4}?\s+(?:creatures?|targets?|enem(?:y|ies)|all(?:y|ies))/i,
   );
-  if (match) {
-    const val = match[1];
+  if (targetCountMatch) {
+    const val = targetCountMatch[1];
     if (/\d+/.test(val)) {
       return parseInt(val, 10);
     }

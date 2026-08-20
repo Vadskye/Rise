@@ -85,7 +85,7 @@ function isInjuryDebuff(hit: string, injury: string, effect: string): boolean {
     return true;
   }
   const combined = `${hit} ${effect}`.toLowerCase();
-  return /if the target is (?:\\glossterm{)?injured(?:})?/i.test(combined);
+  return /if (it|the target) (is|was) (?:\\glossterm{)?injured(?:})?/i.test(combined);
 }
 
 /**
@@ -150,19 +150,12 @@ function hasBriefDebuff(hit: string, effect: string): boolean {
 function attunementGrantsActiveAction(hit: string, targeting: string, effect: string): boolean {
   const combined = `${hit} ${targeting} ${effect}`.toLowerCase();
   return (
-    combined.includes('reactive attack') ||
-    combined.includes('\\reactiveattack') ||
     combined.includes('as a \\glossterm{standard action}') ||
     combined.includes('as a standard action') ||
     combined.includes('as a \\glossterm{minor action}') ||
     combined.includes('as a minor action') ||
-    combined.includes('as a \\glossterm{move action}') ||
-    combined.includes('as a move action') ||
     combined.includes('spend a standard action') ||
-    combined.includes('spend a minor action') ||
-    combined.includes('whenever a creature') ||
-    combined.includes('whenever you are attacked') ||
-    combined.includes('whenever an ally')
+    combined.includes('spend a minor action')
   );
 }
 
@@ -177,18 +170,22 @@ export function inferExpectedRoles(
   const { hit, targeting, injury, effect, fullText } = getNormalSpellText(rawSpell);
   const textLower = fullText.toLowerCase();
 
-  const isAttuneType = profile.isAttunable;
+  const dealsDamage = profile.maxDamageRank !== null;
+  const requiresAttunement = profile.type && profile.type.includes('Attune');
 
   // 1. Attunement
-  if (isAttuneType) {
+  if (requiresAttunement) {
     expected.add('attune');
+    if (!attunementGrantsActiveAction(hit, targeting, effect)) {
+      return expected;
+    }
   }
 
   // 2. Barrier
   const isBarrier =
     (rawSpell.tags || []).includes('Barrier') ||
-    (profile.area === 'wall' && profile.maxDamageRank === null) ||
-    (/\\glossterm{wall}|wall of/i.test(textLower) && profile.maxDamageRank === null);
+    (profile.area === 'wall' && dealsDamage) ||
+    (/\\glossterm{wall}|wall of/i.test(textLower) && dealsDamage);
   if (isBarrier) {
     expected.add('barrier');
   }
@@ -252,8 +249,6 @@ export function inferExpectedRoles(
 
   // 7. Retaliate
   if (
-    textLower.includes('reactive attack') ||
-    textLower.includes('\\reactiveattack') ||
     /whenever a creature.*?attacks you/i.test(textLower) ||
     /attacks you or your allies/i.test(textLower) ||
     /deal.*extra damage to creatures that attacked/i.test(textLower)
@@ -262,7 +257,6 @@ export function inferExpectedRoles(
   }
 
   // 8. Damage Roles (Snipe, Burst, Clear, Burn, Execute)
-  const dealsDamage = profile.maxDamageRank !== null && profile.maxDamageRank >= 0;
   const isSingleTarget = profile.area === 'single' && profile.maxTargets <= 1;
   const isMultiTarget = !isSingleTarget;
   const isLongOrDistantRange = profile.range === 'long' || profile.range === 'distant';
@@ -303,14 +297,14 @@ export function inferExpectedRoles(
   const isInjuryDebuffEffect = isInjuryDebuff(hit, injury, effect);
   const isStasis = isStasisDebuff(hit, effect);
   const isCondition = hasPersistentCondition(hit, effect);
-  const hasDebuff = hasBriefDebuff(hit, effect) || isCondition || isStasis || isInjuryDebuffEffect;
+  // The spell must actually have a hit effect to inflict debuffs. Otherwise, it might be
+  // an ally-only boon.
+  const hasDebuff = hit && (hasBriefDebuff(hit, effect) || isCondition || isStasis || isInjuryDebuffEffect);
 
   if (hasDebuff) {
-    if (isInjuryDebuffEffect) {
-      expected.add('maim');
-    } else if (isStasis && isSingleTarget) {
+    if (isStasis && isSingleTarget) {
       expected.add('stasis');
-    } else if (isCondition) {
+    } else if (isCondition && !isInjuryDebuffEffect) {
       // Any persistent condition on non-injured targets is softener
       expected.add('softener');
     } else if (isMultiTarget) {
@@ -321,6 +315,8 @@ export function inferExpectedRoles(
       expected.add('trip');
     } else if (isSingleTarget && hasBriefDebuff(hit, effect) && !isCondition) {
       expected.add('trip');
+    } else if (isInjuryDebuffEffect && !dealsDamage) {
+      expected.add('maim');
     }
   }
 
@@ -331,7 +327,7 @@ export function inferExpectedRoles(
     ) ||
     /gain\s+(?:a\s+)?\+\d+\s+bonus to (?:your\s+)?defenses/i.test(textLower) ||
     /takes?\s+half\s+damage/i.test(textLower);
-  if (isTurtle && !isAttuneType) {
+  if (isTurtle && !requiresAttunement) {
     expected.add('turtle');
   }
 
@@ -341,7 +337,7 @@ export function inferExpectedRoles(
       textLower,
     ) || /your next\s+(?:attack|strike|spell)/i.test(textLower);
 
-  if (isOffensiveBuffOnSelf && !isAttuneType) {
+  if (isOffensiveBuffOnSelf) {
     if (profile.hasAttack) {
       expected.add('generator');
     } else {
@@ -355,7 +351,6 @@ export function inferExpectedRoles(
     (/\b(?:allies|ally)\b/i.test(targeting) ||
       /choose (?:yourself or )?(?:an? )?\\glossterm{ally}/i.test(effect) ||
       /\b(?:allies|ally)\b/i.test(effect)) &&
-    !isAttuneType &&
     !expected.has('healing') &&
     !expected.has('cleanse') &&
     !expected.has('mobility');
@@ -366,7 +361,7 @@ export function inferExpectedRoles(
   // 13. Mobility (Movement/repositioning without attack)
   const isMobility =
     !profile.hasAttack &&
-    !isAttuneType &&
+    !/one of your items/.test(textLower) &&
     (/\\glossterm{fling}/i.test(textLower) ||
       /\\glossterm{push}/i.test(textLower) ||
       /teleport/i.test(textLower) ||
@@ -381,9 +376,10 @@ export function inferExpectedRoles(
   // 14. Dive & Kite
   if (profile.hasAttack) {
     if (
+      !/move the ball/.test(textLower) && (
       /move (?:towards|adjacent|through)/i.test(textLower) ||
       /leap.*attack/i.test(textLower) ||
-      /charge/i.test(textLower)
+      /charge/i.test(textLower))
     ) {
       expected.add('dive');
     }
@@ -394,7 +390,6 @@ export function inferExpectedRoles(
 
   // 15. Ramp
   if (
-    !isAttuneType &&
     (textLower.includes('for the rest of combat') ||
       textLower.includes('until combat ends') ||
       textLower.includes('for the rest of the fight'))
@@ -432,27 +427,8 @@ export function validateSpellRoles(spheres: MysticSphere[]): RoleValidationIssue
       const actualSet = new Set(spell.roles || []);
       const { hit, targeting, effect } = getNormalSpellText(spell);
 
-      const isAttuneType =
-        (spell.type || '').toLowerCase().startsWith('attune') ||
-        (spell.type || '').toLowerCase().includes('attun') ||
-        profile.isAttunable;
-
       // Check Attunement rules
-      if (isAttuneType) {
-        if (!actualSet.has('attune')) {
-          issues.push({
-            type: 'missing_role',
-            severity: 'warning',
-            spellName: spell.name,
-            sphereName: sphere.name,
-            spellRank: spell.rank ?? 0,
-            role: 'attune',
-            message: `Attunement spell "${spell.name}" (${sphere.name}, Rank ${spell.rank}) is missing the 'attune' role.`,
-            actualRoles: spell.roles || [],
-            expectedRoles: Array.from(expectedSet),
-          });
-        }
-
+      if (profile.type === 'Attune') {
         const grantsAction = attunementGrantsActiveAction(hit, targeting, effect);
         if (!grantsAction) {
           for (const actualRole of actualSet) {
@@ -477,7 +453,6 @@ export function validateSpellRoles(spheres: MysticSphere[]): RoleValidationIssue
       for (const expRole of expectedSet) {
         // If it's an attunement spell without granted actions, only 'attune' (or barrier) is expected
         if (
-          isAttuneType &&
           !attunementGrantsActiveAction(hit, targeting, effect) &&
           expRole !== 'attune' &&
           expRole !== 'barrier'

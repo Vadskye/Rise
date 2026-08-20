@@ -801,7 +801,7 @@ export const vivimancy: MysticSphere = {
         At the end of your turn, you regain hit points equal to half your \\glossterm{power}.
       `,
       rank: 3,
-      roles: ['healing'],
+      roles: ['attune'],
       scaling: { special: 'The healing increases by 2 for each rank beyond 3.' },
       type: 'Attune (deep)',
     },
@@ -813,7 +813,7 @@ export const vivimancy: MysticSphere = {
         At the end of your turn, you regain \\hpranktwo.
       `,
       rank: 5,
-      roles: ['healing'],
+      roles: ['attune'],
       scaling: 'healing',
       type: 'Attune (deep)',
     },
@@ -825,7 +825,7 @@ export const vivimancy: MysticSphere = {
         At the end of your turn, you regain \\hprankfive.
       `,
       rank: 7,
-      roles: ['healing'],
+      roles: ['attune'],
       type: 'Attune (deep)',
     },
 
