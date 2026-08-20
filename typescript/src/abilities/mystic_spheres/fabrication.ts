@@ -331,8 +331,7 @@ export const fabrication: MysticSphere = {
 
       functionsLike: {
         name: 'rain of arrows',
-        exceptThat:
-          'the damage increases to \\damageranksevenlow.',
+        exceptThat: 'the damage increases to \\damageranksevenlow.',
       },
       rank: 7,
       roles: ['clear'],
@@ -468,7 +467,8 @@ export const fabrication: MysticSphere = {
       // Result: 5 - 1 = dr4
       functionsLike: {
         name: 'caltrops',
-        exceptThat: 'the damage increases to \\damagerankfivelow, and the DV to notice the caltrops increases to 13.',
+        exceptThat:
+          'the damage increases to \\damagerankfivelow, and the DV to notice the caltrops increases to 13.',
       },
       rank: 5,
       roles: ['hazard'],
@@ -521,8 +521,7 @@ export const fabrication: MysticSphere = {
 
       functionsLike: {
         name: 'dagger cloud',
-        exceptThat:
-          'the damage increases to \\damagerankfourlow.',
+        exceptThat: 'the damage increases to \\damagerankfourlow.',
       },
       rank: 6,
       roles: ['clear', 'hazard'],
@@ -555,7 +554,8 @@ export const fabrication: MysticSphere = {
 
       functionsLike: {
         name: 'daggerswarm',
-        exceptThat: 'the damage increases to \\damageranksevenlow, but the accuracy bonus is removed.',
+        exceptThat:
+          'the damage increases to \\damageranksevenlow, but the accuracy bonus is removed.',
       },
       rank: 7,
       roles: ['attune', 'burst'],
@@ -909,7 +909,8 @@ export const fabrication: MysticSphere = {
 
       functionsLike: {
         name: 'shrapnel grenade',
-        exceptThat: 'the damage increases to \\damagerankfivelow, and the target is deafened as a \\glossterm{condition} instead of briefly.',
+        exceptThat:
+          'the damage increases to \\damagerankfivelow, and the target is deafened as a \\glossterm{condition} instead of briefly.',
       },
       rank: 5,
       roles: ['clear', 'softener'],

@@ -273,9 +273,7 @@ export function parseArea(text: string): SpellArea {
   if (lowercase.includes('chain')) {
     return 'chain';
   }
-  if (
-    /up to.*(targets|creatures)/.test(lowercase)
-  ) {
+  if (/up to.*(targets|creatures)/.test(lowercase)) {
     return 'multi';
   }
   return 'single';
@@ -647,8 +645,10 @@ export function buildSpellProfile(
       /sustain\s*\([^)]*minor[^)]*\)/i.test(fullText));
 
   const isAttunable =
-    (spell.type || '').toLowerCase().includes('ttun') || lowercase.includes('attune')
-  const requiresAttunement = Boolean(spell.type && (spell.type.includes('Attune') || spell.type === 'Sustain (attunable, standard)'));
+    (spell.type || '').toLowerCase().includes('ttun') || lowercase.includes('attune');
+  const requiresAttunement = Boolean(
+    spell.type && (spell.type.includes('Attune') || spell.type === 'Sustain (attunable, standard)'),
+  );
 
   const hasCost =
     !!spell.cost ||

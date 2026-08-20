@@ -459,7 +459,8 @@ export const thaumaturgy: MysticSphere = {
 
       functionsLike: {
         name: 'negate',
-        exceptThat: 'the damage increases to \\damageranksix, and any \\glossterm{extra damage} is doubled.',
+        exceptThat:
+          'the damage increases to \\damageranksix, and any \\glossterm{extra damage} is doubled.',
       },
       rank: 4,
       roles: ['burst'],

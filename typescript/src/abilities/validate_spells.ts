@@ -42,7 +42,13 @@ import {
   calculateExpectedDamageRank,
   DamageCalculationBreakdown,
 } from './expected_damage_rank';
-import { buildSpellProfile, SpellProfile, RANGE_ORDER, AREA_SIZE_ORDER, AppliedEffect } from './spell_profile';
+import {
+  buildSpellProfile,
+  SpellProfile,
+  RANGE_ORDER,
+  AREA_SIZE_ORDER,
+  AppliedEffect,
+} from './spell_profile';
 
 export type DifferenceField =
   | 'rank'
@@ -838,9 +844,9 @@ export function validateDoubleExtraDamage(spheres: MysticSphere[]): ExtraDamageV
         }
       }
 
-      const hit = spell.attack?.hit || (baseSpell?.attack?.hit || '');
-      const targeting = spell.attack?.targeting || (baseSpell?.attack?.targeting || '');
-      const effect = spell.effect || (baseSpell?.effect || '');
+      const hit = spell.attack?.hit || baseSpell?.attack?.hit || '';
+      const targeting = spell.attack?.targeting || baseSpell?.attack?.targeting || '';
+      const effect = spell.effect || baseSpell?.effect || '';
       const exceptThat = spell.functionsLike?.exceptThat || '';
       const fullText = `${hit} ${targeting} ${effect} ${exceptThat}`;
 
@@ -911,8 +917,4 @@ export function validateDoubleExtraDamage(spheres: MysticSphere[]): ExtraDamageV
   return issues;
 }
 
-export {
-  validateSpellRoles,
-  inferExpectedRoles,
-  RoleValidationIssue,
-} from './validate_roles';
+export { validateSpellRoles, inferExpectedRoles, RoleValidationIssue } from './validate_roles';

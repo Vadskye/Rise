@@ -566,7 +566,8 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
 
       functionsLike: {
         name: 'electrocute',
-        exceptThat: 'the damage increases to \\damagerankeight, and any \\glossterm{extra damage} is doubled.',
+        exceptThat:
+          'the damage increases to \\damagerankeight, and any \\glossterm{extra damage} is doubled.',
       },
       rank: 6,
       roles: ['burst'],

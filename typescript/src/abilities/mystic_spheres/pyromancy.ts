@@ -561,7 +561,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     },
 
     // Small radius from self is +1dr, which means we get the normal damage scaling for
-    // minor action attunements. 
+    // minor action attunements.
     {
       name: 'Flame Aura',
 
@@ -586,7 +586,8 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       functionsLike: {
         name: 'flame aura',
-        exceptThat: 'the damage increases to \\damagerankseven, and the accuracy penalty is removed.',
+        exceptThat:
+          'the damage increases to \\damagerankseven, and the accuracy penalty is removed.',
       },
       rank: 7,
       roles: ['attune', 'clear'],

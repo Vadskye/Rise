@@ -134,7 +134,10 @@ t.test('Damaging Spell Design Guidelines: calculateExpectedDamageRank', (t) => {
       calculateExpectedDamageRank(buildSpellProfile(smallCone, 'Pyromancy'))?.expectedDamageRank,
       4,
     );
-    t.equal(calculateExpectedDamageRank(buildSpellProfile(medCone, 'Pyromancy'))?.expectedDamageRank, 2);
+    t.equal(
+      calculateExpectedDamageRank(buildSpellProfile(medCone, 'Pyromancy'))?.expectedDamageRank,
+      2,
+    );
     t.equal(
       calculateExpectedDamageRank(buildSpellProfile(largeCone, 'Pyromancy'))?.expectedDamageRank,
       1,

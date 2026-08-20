@@ -292,9 +292,7 @@ export function calculateExpectedDamageRank(
   ];
   const hasDebuff =
     !profile.isInjuryDoubleDamage &&
-    profile.appliedEffects.some((e) =>
-      DEBUFF_NAMES.some((d) => e === d || e === `briefly:${d}`),
-    );
+    profile.appliedEffects.some((e) => DEBUFF_NAMES.some((d) => e === d || e === `briefly:${d}`));
   if (hasDebuff) {
     effectMod -= 1;
     effectReasons.push('Debuff effect (-1)');
