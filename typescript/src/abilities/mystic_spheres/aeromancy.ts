@@ -545,7 +545,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       },
       // narrative: '',
       rank: 4,
-      roles: ['clear', 'flash'],
+      roles: ['clear', 'flash', 'maim'],
       scaling: 'damage',
       tags: ['Physical'],
     },
@@ -568,7 +568,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       },
       // narrative: '',
       rank: 7,
-      roles: ['clear', 'flash'],
+      roles: ['clear', 'flash', 'maim'],
       scaling: 'damage',
       tags: ['Physical'],
     },
@@ -703,7 +703,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       },
       // narrative: '',
       rank: 1,
-      roles: ['clear'],
+      roles: ['clear', 'maim'],
       scaling: 'damage',
       tags: ['Physical'],
     },
@@ -719,13 +719,16 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
           \\damagerankfour.
         `,
         halfOnMiss: true,
+        injury: `
+          If the target is Large or smaller, you \\glossterm{fling} it 10 feet away from you.
+        `,
         targeting: `
           Make an attack vs. Brawn and Reflex against everything in a \\largearealong, 5 ft.\\ wide line from you.
         `,
       },
       // narrative: '',
       rank: 4,
-      roles: ['clear'],
+      roles: ['clear', 'maim'],
       scaling: 'damage',
       tags: ['Physical'],
     },
@@ -753,7 +756,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       },
       // narrative: '',
       rank: 6,
-      roles: ['clear'],
+      roles: ['clear', 'maim'],
       scaling: 'damage',
       tags: ['Physical'],
     },
@@ -911,7 +914,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       `,
       // narrative: '',
       rank: 3,
-      roles: ['focus'],
+      roles: ['focus', 'turtle'],
       type: 'Sustain (minor)',
     },
 

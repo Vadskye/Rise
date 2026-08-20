@@ -715,7 +715,8 @@ export function buildSpellProfile(
     lowercase.includes('burn') ||
     lowercase.includes('bleed') ||
     lowercase.includes('corrode') ||
-    lowercase.includes('poison');
+    lowercase.includes('poison') ||
+    /subsequent turns.*take.*damage/.test(lowercase);
 
   const maxDamageRank = parseDamageRank(fullText);
   let unconditionalDamageRank: number | null = null;

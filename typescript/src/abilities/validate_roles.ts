@@ -181,7 +181,8 @@ function isHazardEffect(
   // are not persistent battlefield hazards.
   if (
     fullTextLowercase.includes('briefly fills') ||
-    fullTextLowercase.includes('\\briefly fills')
+    fullTextLowercase.includes('\\briefly fills') ||
+    fullTextLowercase.includes('at the start of your next turn')
   ) {
     return false;
   }

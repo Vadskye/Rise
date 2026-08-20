@@ -257,7 +257,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         `,
       },
       rank: 3,
-      roles: ['dive', 'burst'],
+      roles: ['dive', 'burst', 'maim'],
       scaling: 'damage',
       tags: ['Manifestation'],
     },
@@ -277,7 +277,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         `,
       },
       rank: 6,
-      roles: ['dive', 'burst'],
+      roles: ['dive', 'burst', 'maim'],
       scaling: 'damage',
       tags: ['Manifestation'],
     },
@@ -419,7 +419,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         `,
       },
       rank: 2,
-      roles: ['burst', 'hazard'],
+      roles: ['burst', 'hazard', 'maim'],
       scaling: 'damage',
       tags: ['Manifestation'],
       type: 'Sustain (minor)',
@@ -445,7 +445,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         `,
       },
       rank: 5,
-      roles: ['burst', 'hazard'],
+      roles: ['burst', 'hazard', 'maim', 'trip'],
       scaling: 'damage',
       tags: ['Manifestation'],
       type: 'Sustain (minor)',
@@ -791,7 +791,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
           This has the following effects:
           \\begin{mdframeditemize}
             \\item It has no functioning legs, causing it to be permanently \\prone. It can still slosh across the ground, but at half speed, as normal for being prone.
-            \\item During each of your subsequent actions, if it is immersed in liquid or not \\glossterm{grounded}, it takes \\damagerankfour as its body melts away.
+            \\item During each of your subsequent turns, if it is immersed in liquid or not \\glossterm{grounded}, it takes \\damagerankfour as its body melts away.
           \\end{mdframeditemize}
         `,
         targeting: `
