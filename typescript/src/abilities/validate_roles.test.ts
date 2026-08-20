@@ -31,7 +31,8 @@ t.test('validate_roles', (t) => {
         roles: ['clear'],
         attack: {
           hit: '\\damagerankthree.',
-          targeting: 'Make an attack vs. Reflex against all creatures in a \\medarea radius within \\medrange.',
+          targeting:
+            'Make an attack vs. Reflex against all creatures in a \\medarea radius within \\medrange.',
         },
       };
       const profile = buildSpellProfile(spell, 'Aeromancy');
@@ -71,26 +72,29 @@ t.test('validate_roles', (t) => {
       t.end();
     });
 
-    t.test('should infer softener for persistent conditions across areas (like Dust Storm)', (t) => {
-      const spell: SpellDefinition = {
-        name: 'Dust Storm',
-        rank: 5,
-        roles: ['softener'],
-        type: 'Sustain (standard)',
-        attack: {
-          crit: 'The target is also \\briefly \\blinded.',
-          hit: 'The target is \\dazzled as a \\glossterm{condition}.',
-          targeting:
-            'You create a dust storm in a \\glossterm{zone} around you. When you cast this spell, and during each of your subsequent actions, make an attack vs. Reflex against all \\glossterm{enemies} in the area.',
-        },
-      };
-      const profile = buildSpellProfile(spell, 'Aeromancy');
-      const roles = inferExpectedRoles(spell, profile);
-      t.ok(roles.has('softener'), 'Should infer softener for area persistent condition');
-      t.notOk(roles.has('flash'), 'Should not infer flash for persistent condition');
-      t.notOk(roles.has('hazard'), 'Should not infer hazard for sustain (standard)');
-      t.end();
-    });
+    t.test(
+      'should infer softener for persistent conditions across areas (like Dust Storm)',
+      (t) => {
+        const spell: SpellDefinition = {
+          name: 'Dust Storm',
+          rank: 5,
+          roles: ['softener'],
+          type: 'Sustain (standard)',
+          attack: {
+            crit: 'The target is also \\briefly \\blinded.',
+            hit: 'The target is \\dazzled as a \\glossterm{condition}.',
+            targeting:
+              'You create a dust storm in a \\glossterm{zone} around you. When you cast this spell, and during each of your subsequent actions, make an attack vs. Reflex against all \\glossterm{enemies} in the area.',
+          },
+        };
+        const profile = buildSpellProfile(spell, 'Aeromancy');
+        const roles = inferExpectedRoles(spell, profile);
+        t.ok(roles.has('softener'), 'Should infer softener for area persistent condition');
+        t.notOk(roles.has('flash'), 'Should not infer flash for persistent condition');
+        t.notOk(roles.has('hazard'), 'Should not infer hazard for sustain (standard)');
+        t.end();
+      },
+    );
 
     t.test('should infer hazard for sustain (minor) persistent zone', (t) => {
       const spell: SpellDefinition = {
@@ -107,6 +111,38 @@ t.test('validate_roles', (t) => {
       const profile = buildSpellProfile(spell, 'Aeromancy');
       const roles = inferExpectedRoles(spell, profile);
       t.ok(roles.has('hazard'), 'Should infer hazard for sustain (minor) zone');
+      t.end();
+    });
+
+    t.test('should infer hazard for attunable zone effects (like Fog Cloud)', (t) => {
+      const fogCloud: SpellDefinition = {
+        name: 'Fog Cloud',
+        rank: 3,
+        roles: ['attune', 'flash', 'hazard'],
+        type: 'Sustain (attunable, standard)',
+        effect: `
+          A cloud of fog appears in a \\smallarea radius \\glossterm{zone} within \\medrange.
+          The fog provides \\glossterm{concealment} for anything within or seen through the area.
+        `,
+      };
+      const profile = buildSpellProfile(fogCloud, 'Aquamancy');
+      const roles = inferExpectedRoles(fogCloud, profile);
+      t.ok(roles.has('attune'), 'Should infer attune for attunable sustain spell');
+      t.ok(roles.has('hazard'), 'Should infer hazard for attunable zone spell');
+
+      const persistentFog: SpellDefinition = {
+        name: 'Persistent Fog Cloud',
+        rank: 6,
+        roles: ['flash', 'hazard'],
+        type: 'Sustain (attunable, minor)',
+        effect: `
+          A cloud of fog appears in a \\medarea radius \\glossterm{zone} within \\medrange.
+          The fog provides \\glossterm{concealment} for anything within or seen through the area.
+        `,
+      };
+      const profilePersistent = buildSpellProfile(persistentFog, 'Aquamancy');
+      const rolesPersistent = inferExpectedRoles(persistentFog, profilePersistent);
+      t.ok(rolesPersistent.has('hazard'), 'Should infer hazard for minor sustain attunable zone');
       t.end();
     });
 
@@ -258,6 +294,34 @@ t.test('validate_roles', (t) => {
             i.role === 'turtle',
         ),
         'Should flag missing turtle on Incomplete Shield Blast',
+      );
+      t.end();
+    });
+
+    t.test('should accept hazard role on attunable zone spells like Fog Cloud', (t) => {
+      const mockSphere: MysticSphere = {
+        name: 'Aquamancy',
+        shortDescription: 'Test',
+        sources: ['nature'],
+        spells: [
+          {
+            name: 'Fog Cloud',
+            rank: 3,
+            roles: ['attune', 'hazard'],
+            tags: ['Manifestation'],
+            type: 'Sustain (attunable, standard)',
+            effect: `
+              A cloud of fog appears in a \\smallarea radius \\glossterm{zone} within \\medrange.
+              The fog provides \\glossterm{concealment} for anything within or seen through the area.
+            `,
+          },
+        ],
+      };
+
+      const issues = validateSpellRoles([mockSphere]);
+      t.notOk(
+        issues.some((i) => i.spellName === 'Fog Cloud' && i.role === 'hazard'),
+        'Should not flag hazard as unexpected or invalid on Fog Cloud',
       );
       t.end();
     });

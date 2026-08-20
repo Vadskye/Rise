@@ -158,6 +158,92 @@ function attunementGrantsActiveAction(hit: string, targeting: string, effect: st
 }
 
 /**
+   * Determines whether a spell creates a persistent battlefield hazard,
+   * repeating zone, or attunable environmental zone.
+   */
+function isHazardEffect(
+  rawSpell: SpellDefinition,
+  profile: SpellProfile,
+  fullTextLowercase: string,
+): boolean {
+  const typeLower = (rawSpell.type || '').toLowerCase();
+
+  // 1. Spells that require a standard action to sustain and are not attunable
+  // (e.g. Dust Storm) are active channeled standard-action attacks/debuffs, not hazards.
+  const isPureStandardSustain =
+    typeLower === 'sustain (standard)' ||
+    (!profile.isAttunable &&
+      (typeLower.includes('standard') ||
+        fullTextLowercase.includes('spend a standard action to sustain') ||
+        fullTextLowercase.includes('sustain (standard)')));
+  if (isPureStandardSustain) {
+    return false;
+  }
+
+  // 2. Pure defensive walls without damaging/debuff hazard mechanics are 'barrier', not 'hazard'.
+  const isPureBarrier =
+    (rawSpell.tags || []).includes('Barrier') &&
+    !rawSpell.name?.toLowerCase().includes('blade') &&
+    !rawSpell.name?.toLowerCase().includes('caltrops');
+  if (isPureBarrier) {
+    return false;
+  }
+
+  // Brief transient effects (e.g. Misty Shroud briefly filling an area at end of turn)
+  // are not persistent battlefield hazards.
+  if (
+    fullTextLowercase.includes('briefly fills') ||
+    fullTextLowercase.includes('\\briefly fills')
+  ) {
+    return false;
+  }
+
+  const hasZoneOrBattlefieldFeature =
+    profile.area === 'radius' ||
+    profile.area === 'line' ||
+    profile.area === 'vertical-line' ||
+    profile.area === 'cone' ||
+    fullTextLowercase.includes('zone') ||
+    fullTextLowercase.includes('undergrowth') ||
+    fullTextLowercase.includes('caltrops') ||
+    fullTextLowercase.includes('fortification');
+
+  // 3. Attunable or sustained zone / environmental effect (e.g. Fog Cloud, Solid Fog Cloud, Bramblepatch)
+  const isSustainedOrAttuned =
+    typeLower.includes('sustain') || profile.isAttunable || profile.requiresAttunement;
+  if (isSustainedOrAttuned && hasZoneOrBattlefieldFeature) {
+    return true;
+  }
+
+  // 4. Repeating or delayed zone effects for non-sustained abilities (e.g. Buzzsaw, Erupting Spikefruit)
+  const isRepeatingOrTriggeredZone =
+    hasZoneOrBattlefieldFeature &&
+    (profile.isRepeating ||
+      fullTextLowercase.includes('repeats') ||
+      fullTextLowercase.includes('start of your next turn') ||
+      fullTextLowercase.includes('end of each') ||
+      fullTextLowercase.includes('each of your subsequent') ||
+      fullTextLowercase.includes('each round') ||
+      fullTextLowercase.includes('each turn') ||
+      fullTextLowercase.includes('moves into') ||
+      fullTextLowercase.includes('makes physical contact'));
+  if (isRepeatingOrTriggeredZone) {
+    return true;
+  }
+
+  // 5. Explicit hazard keywords
+  if (
+    fullTextLowercase.includes('battlefield hazard') ||
+    fullTextLowercase.includes('environmental hazard') ||
+    fullTextLowercase.includes('hazard')
+  ) {
+    return true;
+  }
+
+  return false;
+}
+
+/**
  * Infers expected roles from a spell's mechanical definition and profile.
  */
 export function inferExpectedRoles(
@@ -201,7 +287,9 @@ export function inferExpectedRoles(
     /removes?\s+(?:all|a|one|\d+)?\s*(?:\\glossterm{)?(?:condition|curse|poison)/i.test(
       fullTextLowercase,
     ) ||
-    /ends?\s+(?:all|a|one|\d+)?\s*(?:\\glossterm{)?(?:condition|curse|poison)/i.test(fullTextLowercase) ||
+    /ends?\s+(?:all|a|one|\d+)?\s*(?:\\glossterm{)?(?:condition|curse|poison)/i.test(
+      fullTextLowercase,
+    ) ||
     /cures?\s+(?:a|one|\d+)?\s*(?:\\glossterm{)?poison/i.test(fullTextLowercase) ||
     /\bcleanse\b/i.test(fullTextLowercase)
   ) {
@@ -218,28 +306,7 @@ export function inferExpectedRoles(
   }
 
   // 6. Hazard
-  const requiresStandardActionToSustain = !profile.isAttunable && (
-    (rawSpell.type || '').toLowerCase().includes('standard') ||
-    fullTextLowercase.includes('spend a standard action to sustain') ||
-    fullTextLowercase.includes('sustain (standard)'));
-
-  const isHazard =
-    !requiresStandardActionToSustain &&
-    (((rawSpell.type || '').toLowerCase().includes('sustain') &&
-      (profile.area === 'radius' ||
-        profile.area === 'line' ||
-        fullTextLowercase.includes('zone')) &&
-      (profile.isRepeating ||
-        fullTextLowercase.includes('each of your subsequent actions') ||
-        fullTextLowercase.includes('each round') ||
-        fullTextLowercase.includes('each turn') ||
-        fullTextLowercase.includes('hazard'))) ||
-      (!rawSpell.type &&
-        (fullTextLowercase.includes('creates a zone') || fullTextLowercase.includes('hazard')) &&
-        (fullTextLowercase.includes('each turn') ||
-          fullTextLowercase.includes('each round') ||
-          fullTextLowercase.includes('subsequent round'))));
-  if (isHazard) {
+  if (isHazardEffect(rawSpell, profile, fullTextLowercase)) {
     expected.add('hazard');
   }
 
@@ -283,7 +350,13 @@ export function inferExpectedRoles(
     }
 
     // Burst (Single-target immediate damage, not purely DoT, not injury-only, not long/distant snipe)
-    if (profile.isSingleTarget && hit && !profile.isInjuryOnly && !profile.hasDoT && !isLongOrDistantRange) {
+    if (
+      profile.isSingleTarget &&
+      hit &&
+      !profile.isInjuryOnly &&
+      !profile.hasDoT &&
+      !isLongOrDistantRange
+    ) {
       expected.add('burst');
     }
   }
@@ -295,7 +368,9 @@ export function inferExpectedRoles(
   const isCondition = hasPersistentCondition(hit, effect);
   // The spell must actually have a hit effect to inflict debuffs. Otherwise, it might be
   // an ally-only boon.
-  const hasDebuff = !affectsAlly && (hasDebuffWords(hit, effect) || isCondition || isStasis || isInjuryDebuffEffect);
+  const hasDebuff =
+    !affectsAlly &&
+    (hasDebuffWords(hit, effect) || isCondition || isStasis || isInjuryDebuffEffect);
 
   if (hasDebuff) {
     if (isStasis && profile.isSingleTarget) {
@@ -372,24 +447,27 @@ export function inferExpectedRoles(
   // 14. Dive & Kite
   if (profile.hasAttack) {
     if (
-      !/move the ball/.test(fullTextLowercase) && (
-        /move (?:towards|adjacent|through)/i.test(fullTextLowercase) ||
+      !/move the ball/.test(fullTextLowercase) &&
+      (/move (?:towards|adjacent|through)/i.test(fullTextLowercase) ||
         /leap.*attack/i.test(fullTextLowercase) ||
         /move in a straight line/i.test(fullTextLowercase) ||
         /charge/i.test(fullTextLowercase))
     ) {
       expected.add('dive');
     }
-    if (/move away.*attack/i.test(fullTextLowercase) || /push.*prevent.*approach/i.test(fullTextLowercase)) {
+    if (
+      /move away.*attack/i.test(fullTextLowercase) ||
+      /push.*prevent.*approach/i.test(fullTextLowercase)
+    ) {
       expected.add('kite');
     }
   }
 
   // 15. Ramp
   if (
-    (fullTextLowercase.includes('for the rest of combat') ||
-      fullTextLowercase.includes('until combat ends') ||
-      fullTextLowercase.includes('for the rest of the fight'))
+    fullTextLowercase.includes('for the rest of combat') ||
+    fullTextLowercase.includes('until combat ends') ||
+    fullTextLowercase.includes('for the rest of the fight')
   ) {
     expected.add('ramp');
   }
@@ -400,9 +478,7 @@ export function inferExpectedRoles(
     fullTextLowercase.includes('for one day') ||
     fullTextLowercase.includes('for one year') ||
     fullTextLowercase.includes('for 24 hours') ||
-    (rawSpell.usageTime &&
-      rawSpell.usageTime !== 'standard' &&
-      rawSpell.usageTime !== 'minor')
+    (rawSpell.usageTime && rawSpell.usageTime !== 'standard' && rawSpell.usageTime !== 'minor')
   ) {
     expected.add('narrative');
   }
@@ -434,7 +510,7 @@ export function validateSpellRoles(spheres: MysticSphere[]): RoleValidationIssue
         const grantsAction = attunementGrantsActiveAction(hit, targeting, effect);
         if (!grantsAction) {
           for (const actualRole of actualSet) {
-            if (actualRole !== 'attune' && actualRole !== 'barrier') {
+            if (actualRole !== 'attune' && actualRole !== 'barrier' && actualRole !== 'hazard') {
               issues.push({
                 type: 'invalid_attunement_role',
                 severity: 'warning',
@@ -453,11 +529,13 @@ export function validateSpellRoles(spheres: MysticSphere[]): RoleValidationIssue
 
       // Check missing roles
       for (const expRole of expectedSet) {
-        // If it's an attunement spell without granted actions, only 'attune' (or barrier) is expected
+        // If it's an attunement spell without granted actions, only 'attune', 'barrier', or 'hazard' is expected
         if (
+          profile.requiresAttunement &&
           !attunementGrantsActiveAction(hit, targeting, effect) &&
           expRole !== 'attune' &&
-          expRole !== 'barrier'
+          expRole !== 'barrier' &&
+          expRole !== 'hazard'
         ) {
           continue;
         }
