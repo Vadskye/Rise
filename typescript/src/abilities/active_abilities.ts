@@ -88,7 +88,7 @@ export type ActiveAbilityScaling =
   | 'double_accuracy'
   | 'damage'
   | 'healing'
-  | Record<string, string>;
+  | ({ special?: string } & Record<string, string>);
 
 export type ActiveAbilityDurationType =
   | 'Attune'

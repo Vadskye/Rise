@@ -1,4 +1,4 @@
-import t from 'tap';
+import t, { Test } from 'tap';
 import { StockCharacters } from '@src/character_sheet/stock_characters';
 import {
   loadAllMonsters,
@@ -12,7 +12,7 @@ import {
 } from '@src/combat/combat_scenario';
 
 function assertExpectedWinRate(
-  tap: any,
+  tap: Test,
   result: CombatSimulationResult,
   teamName: string,
   expected: number,
@@ -24,7 +24,7 @@ function assertExpectedWinRate(
   );
 }
 
-function assertExpectedTurnsCount(tap: any, result: CombatSimulationResult, expected: number) {
+function assertExpectedTurnsCount(tap: Test, result: CombatSimulationResult, expected: number) {
   const actual = result.averageTurns;
   const tolerance = Math.max(expected * 0.2, 1.0);
   tap.ok(

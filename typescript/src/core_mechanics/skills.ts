@@ -136,6 +136,14 @@ export function isSkill(text: string): text is RiseSkill {
   return (RISE_SKILLS as readonly string[]).includes(text);
 }
 
+export function isCraftSkill(text: string): text is RiseCraftSkill {
+  return (RISE_CRAFT_SKILLS as readonly string[]).includes(text);
+}
+
+export function isKnowledgeSkill(text: string): text is RiseKnowledgeSkill {
+  return (RISE_KNOWLEDGE_SKILLS as readonly string[]).includes(text);
+}
+
 export function getSkillAttribute(skill: RiseSkill): Attribute | null {
   return SKILL_METADATA[skill].attribute;
 }

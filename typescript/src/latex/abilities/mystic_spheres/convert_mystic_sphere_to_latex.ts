@@ -76,8 +76,8 @@ export function convertMysticSphereToLatex(sphere: MysticSphere): string {
 }
 
 function getSpecialScaling(spell: Pick<SpellDefinition, 'scaling'>): string | null {
-  if (spell.scaling && typeof spell.scaling === 'object' && (spell.scaling as any)['special']) {
-    return (spell.scaling as any)['special'];
+  if (spell.scaling && typeof spell.scaling === 'object' && spell.scaling.special) {
+    return spell.scaling.special;
   } else {
     return null;
   }

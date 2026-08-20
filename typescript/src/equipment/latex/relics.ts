@@ -3,6 +3,7 @@ import { allMagicWeapons } from '../data/magic_weapons';
 import { allImplements } from '../data/implements';
 import { allApparel, apparelLatex } from '../apparel';
 import { allTools } from '../data/all_tools';
+import { Tool } from '../types';
 import { itemLatex } from './item_latex';
 import * as table from './latex_table';
 import { getToolCategoryName, getToolCraftingLatex } from './tools';
@@ -47,7 +48,6 @@ export function generateRelicDescriptions(): string {
 export function generateRelicsTable(): string {
   const rows: table.TableRow[] = [];
 
-  rows.push(...allApparel('Relic').flatMap((a) => table.fromItem(a.item, false, a.kind)));
   rows.push(
     ...allMagicArmor()
       .filter((m) => m.item.rarity === 'Relic')
@@ -63,6 +63,7 @@ export function generateRelicsTable(): string {
       .filter((m) => m.item.rarity === 'Relic')
       .flatMap((m) => table.fromItem(m.item, false, m.kind)),
   );
+  rows.push(...allApparel('Relic').flatMap((a) => table.fromItem(a.item, false, a.kind)));
   rows.push(
     ...allTools({ rarity: 'Relic' }).flatMap((t) =>
       table.fromItem(t.item, isConsumable(t), getToolCategoryName(t.category)),
@@ -77,7 +78,7 @@ export function generateRelicsTable(): string {
   });
 }
 
-function isConsumable(tool: any): boolean {
+function isConsumable(tool: Tool): boolean {
   if (typeof tool.category === 'string') {
     return (
       tool.category === 'Alchemical' || tool.category === 'Poison' || tool.category === 'Potion'

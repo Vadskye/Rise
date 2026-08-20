@@ -4,6 +4,7 @@ import { allImplements } from '../data/implements';
 import { allApparel } from '../apparel';
 import { allTools } from '../data/all_tools';
 import * as table from './latex_table';
+import { Tool } from '../types';
 import { getToolCategoryName } from './tools';
 
 export function generateEverythingTable(): string {
@@ -31,7 +32,7 @@ export function generateEverythingTable(): string {
   });
 }
 
-function isConsumable(tool: any): boolean {
+function isConsumable(tool: Tool): boolean {
   if (typeof tool.category === 'string') {
     return (
       tool.category === 'Alchemical' || tool.category === 'Poison' || tool.category === 'Potion'

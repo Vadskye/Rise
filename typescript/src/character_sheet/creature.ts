@@ -24,11 +24,11 @@ import {
 } from '@src/character_sheet/rise_data';
 import {
   RiseCraftSkill,
-  RISE_CRAFT_SKILLS,
   RiseJumpDistance,
   RiseKnowledgeSkill,
-  RISE_KNOWLEDGE_SKILLS,
   RiseSkill,
+  isCraftSkill,
+  isKnowledgeSkill,
 } from '@src/core_mechanics/skills';
 import { RiseAttribute, RiseAttributeModifier, RiseDefense } from '@src/core_mechanics/attributes';
 import { getManeuverByName, getWeaponMultByRank } from '@src/abilities/combat_styles';
@@ -345,19 +345,11 @@ export class Creature implements CreaturePropertyMap {
   }
 
   getTrainedCraftSkillNames(): RiseCraftSkill[] {
-    // We have to use these `as` casts because Typescript can't figure out that this is
-    // safe. Unless I just can't figure out why this is unsafe.
-    return this.getTrainedSkillNames().filter((skillName) =>
-      RISE_CRAFT_SKILLS.includes(skillName as any),
-    ) as RiseCraftSkill[];
+    return this.getTrainedSkillNames().filter(isCraftSkill);
   }
 
   getTrainedKnowledgeSkillNames(): RiseKnowledgeSkill[] {
-    // We have to use these `as` casts because Typescript can't figure out that this is
-    // safe. Unless I just can't figure out why this is unsafe.
-    return this.getTrainedSkillNames().filter((skillName) =>
-      RISE_KNOWLEDGE_SKILLS.includes(skillName as any),
-    ) as RiseKnowledgeSkill[];
+    return this.getTrainedSkillNames().filter(isKnowledgeSkill);
   }
 
   hasTrainedSkill(skillName: RiseSkill): boolean {
@@ -678,10 +670,12 @@ export class Creature implements CreaturePropertyMap {
     spellName: string,
     { displayName, isMagical, tags, usageTime, weapon }: MonsterAbilityOptions = {},
   ) {
+    const spell = getSpellByName(spellName);
     this.addActiveAbility({
       kind: 'spell',
       tags,
-      ...getSpellByName(spellName),
+      ...spell,
+      rank: spell.rank ?? 0,
       name: displayName || spellName,
       isMagical: isMagical === undefined ? true : isMagical,
       weapon,

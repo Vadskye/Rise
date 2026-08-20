@@ -495,7 +495,7 @@ export const TraitsTab = <T extends SharedEditableProperties>({
             </label>
             <select
               value={speedCategory}
-              onChange={(e) => setSpeedCategory(e.target.value as any)}
+              onChange={(e) => setSpeedCategory(e.target.value as 'slow' | 'average' | 'fast')}
               style={{ width: '100%', padding: '6px 10px' }}
             >
               <option value="slow">slow</option>
@@ -514,7 +514,9 @@ export const TraitsTab = <T extends SharedEditableProperties>({
                 </label>
                 <select
                   value={speedLimitType}
-                  onChange={(e) => setSpeedLimitType(e.target.value as any)}
+                  onChange={(e) =>
+                    setSpeedLimitType(e.target.value as 'none' | 'limitless' | 'limit')
+                  }
                   style={{ width: '100%', padding: '6px 10px' }}
                 >
                   <option value="none">No Limit Specified</option>

@@ -1,9 +1,9 @@
 import { allMysticSpheres } from '.';
-import type { SpellDefinition } from '@src/abilities';
+import type { CantripDefinition, SpellDefinition } from '@src/abilities';
 
-let allSpells: Record<string, SpellDefinition> | null = null;
+let allSpells: Record<string, SpellDefinition | CantripDefinition> | null = null;
 
-export function getSpellByName(spellName: string) {
+export function getSpellByName(spellName: string): SpellDefinition | CantripDefinition {
   if (!allSpells) {
     allSpells = {};
     for (const mysticSphere of allMysticSpheres) {
@@ -12,7 +12,7 @@ export function getSpellByName(spellName: string) {
       }
       if (mysticSphere.cantrips) {
         for (const cantrip of mysticSphere.cantrips) {
-          allSpells[cantrip.name.toLowerCase()] = cantrip as any;
+          allSpells[cantrip.name.toLowerCase()] = cantrip;
         }
       }
     }
