@@ -166,7 +166,7 @@ export function inferExpectedRoles(
 ): Set<AbilityRole> {
   const expected = new Set<AbilityRole>();
   const { hit, targeting, injury, effect, fullText } = getNormalSpellText(rawSpell);
-  const textLower = fullText.toLowerCase();
+  const fullTextLowercase = fullText.toLowerCase();
 
   const dealsDamage = profile.maxDamageRank !== null;
 
@@ -182,7 +182,7 @@ export function inferExpectedRoles(
   const isBarrier =
     (rawSpell.tags || []).includes('Barrier') ||
     (profile.area === 'wall' && dealsDamage) ||
-    (/\\glossterm{wall}|wall of/i.test(textLower) && dealsDamage);
+    (/\\glossterm{wall}|wall of/i.test(fullTextLowercase) && dealsDamage);
   if (isBarrier) {
     expected.add('barrier');
   }
@@ -190,8 +190,8 @@ export function inferExpectedRoles(
   // 3. Healing
   if (
     profile.healingRank !== null ||
-    /regains?\s+(?:\d+\s+)?(?:\\glossterm{)?hit points/i.test(textLower) ||
-    /\bregains? hit points\b/i.test(textLower)
+    /regains?\s+(?:\d+\s+)?(?:\\glossterm{)?hit points/i.test(fullTextLowercase) ||
+    /\bregains? hit points\b/i.test(fullTextLowercase)
   ) {
     expected.add('healing');
   }
@@ -199,11 +199,11 @@ export function inferExpectedRoles(
   // 4. Cleanse
   if (
     /removes?\s+(?:all|a|one|\d+)?\s*(?:\\glossterm{)?(?:condition|curse|poison)/i.test(
-      textLower,
+      fullTextLowercase,
     ) ||
-    /ends?\s+(?:all|a|one|\d+)?\s*(?:\\glossterm{)?(?:condition|curse|poison)/i.test(textLower) ||
-    /cures?\s+(?:a|one|\d+)?\s*(?:\\glossterm{)?poison/i.test(textLower) ||
-    /\bcleanse\b/i.test(textLower)
+    /ends?\s+(?:all|a|one|\d+)?\s*(?:\\glossterm{)?(?:condition|curse|poison)/i.test(fullTextLowercase) ||
+    /cures?\s+(?:a|one|\d+)?\s*(?:\\glossterm{)?poison/i.test(fullTextLowercase) ||
+    /\bcleanse\b/i.test(fullTextLowercase)
   ) {
     expected.add('cleanse');
   }
@@ -211,8 +211,8 @@ export function inferExpectedRoles(
   // 5. Exertion
   if (
     rawSpell.staminaCost === true ||
-    /spends?\s+(?:one|\d+)?\s*\\glossterm{stamina}/i.test(textLower) ||
-    /spends?\s+(?:a|\d+)?\s*vital wound/i.test(textLower)
+    /spends?\s+(?:one|\d+)?\s*\\glossterm{stamina}/i.test(fullTextLowercase) ||
+    /spends?\s+(?:a|\d+)?\s*vital wound/i.test(fullTextLowercase)
   ) {
     expected.add('exertion');
   }
@@ -220,34 +220,34 @@ export function inferExpectedRoles(
   // 6. Hazard
   const requiresStandardActionToSustain = !profile.isAttunable && (
     (rawSpell.type || '').toLowerCase().includes('standard') ||
-    textLower.includes('spend a standard action to sustain') ||
-    textLower.includes('sustain (standard)'));
+    fullTextLowercase.includes('spend a standard action to sustain') ||
+    fullTextLowercase.includes('sustain (standard)'));
 
   const isHazard =
     !requiresStandardActionToSustain &&
     (((rawSpell.type || '').toLowerCase().includes('sustain') &&
       (profile.area === 'radius' ||
         profile.area === 'line' ||
-        textLower.includes('zone')) &&
+        fullTextLowercase.includes('zone')) &&
       (profile.isRepeating ||
-        textLower.includes('each of your subsequent actions') ||
-        textLower.includes('each round') ||
-        textLower.includes('each turn') ||
-        textLower.includes('hazard'))) ||
+        fullTextLowercase.includes('each of your subsequent actions') ||
+        fullTextLowercase.includes('each round') ||
+        fullTextLowercase.includes('each turn') ||
+        fullTextLowercase.includes('hazard'))) ||
       (!rawSpell.type &&
-        (textLower.includes('creates a zone') || textLower.includes('hazard')) &&
-        (textLower.includes('each turn') ||
-          textLower.includes('each round') ||
-          textLower.includes('subsequent round'))));
+        (fullTextLowercase.includes('creates a zone') || fullTextLowercase.includes('hazard')) &&
+        (fullTextLowercase.includes('each turn') ||
+          fullTextLowercase.includes('each round') ||
+          fullTextLowercase.includes('subsequent round'))));
   if (isHazard) {
     expected.add('hazard');
   }
 
   // 7. Retaliate
   if (
-    /whenever a creature.*?attacks you/i.test(textLower) ||
-    /attacks you or your allies/i.test(textLower) ||
-    /deal.*extra damage to creatures that attacked/i.test(textLower)
+    /whenever a creature.*?attacks you/i.test(fullTextLowercase) ||
+    /attacks you or your allies/i.test(fullTextLowercase) ||
+    /deal.*extra damage to creatures that attacked/i.test(fullTextLowercase)
   ) {
     expected.add('retaliate');
   }
@@ -272,7 +272,7 @@ export function inferExpectedRoles(
       profile.isSingleTarget &&
       (profile.isInjuryOnly ||
         (injury && /\\damagerank/i.test(injury)) ||
-        textLower.includes('if the target is injured, it takes'))
+        fullTextLowercase.includes('if the target is injured, it takes'))
     ) {
       expected.add('execute');
     }
@@ -289,12 +289,13 @@ export function inferExpectedRoles(
   }
 
   // 9. Debuff Roles (Softener, Flash, Trip, Stasis, Maim)
+  const affectsAlly = !hit && /choose.*ally/.test(fullTextLowercase);
   const isInjuryDebuffEffect = isInjuryDebuff(hit, injury, effect);
   const isStasis = isStasisDebuff(hit, effect);
   const isCondition = hasPersistentCondition(hit, effect);
   // The spell must actually have a hit effect to inflict debuffs. Otherwise, it might be
   // an ally-only boon.
-  const hasDebuff = hit && (hasDebuffWords(hit, effect) || isCondition || isStasis || isInjuryDebuffEffect);
+  const hasDebuff = !affectsAlly && (hasDebuffWords(hit, effect) || isCondition || isStasis || isInjuryDebuffEffect);
 
   if (hasDebuff) {
     if (isStasis && profile.isSingleTarget) {
@@ -318,10 +319,10 @@ export function inferExpectedRoles(
   // 10. Turtle (Brief defensive buff on self)
   const isTurtle =
     /you (?:are|become)\s+(?:\\briefly\s+)?\\(shielded|fortified|steeled|braced)/i.test(
-      textLower,
+      fullTextLowercase,
     ) ||
-    /gain\s+(?:a\s+)?\+\d+\s+bonus to (?:your\s+)?defenses/i.test(textLower) ||
-    /takes?\s+half\s+damage/i.test(textLower);
+    /gain\s+(?:a\s+)?\+\d+\s+bonus to (?:your\s+)?defenses/i.test(fullTextLowercase) ||
+    /takes?\s+half\s+damage/i.test(fullTextLowercase);
   if (isTurtle && !profile.requiresAttunement) {
     expected.add('turtle');
   }
@@ -329,8 +330,8 @@ export function inferExpectedRoles(
   // 11. Focus & Generator
   const isOffensiveBuffOnSelf =
     /you (?:are|become)\s+(?:\\briefly\s+)?\\(?:primed|empowered|maximized|focused|honed)/i.test(
-      textLower,
-    ) || /your next\s+(?:attack|strike|spell)/i.test(textLower);
+      fullTextLowercase,
+    ) || /your next\s+(?:attack|strike|spell)/i.test(fullTextLowercase);
 
   if (isOffensiveBuffOnSelf) {
     if (profile.hasAttack) {
@@ -356,14 +357,14 @@ export function inferExpectedRoles(
   // 13. Mobility (Movement/repositioning without attack)
   const isMobility =
     !profile.hasAttack &&
-    !/one of your items/.test(textLower) &&
-    (/\\glossterm{fling}/i.test(textLower) ||
-      /\\glossterm{push}/i.test(textLower) ||
-      /teleport/i.test(textLower) ||
-      /glide speed/i.test(textLower) ||
-      /fly speed/i.test(textLower) ||
-      /walk speed/i.test(textLower) ||
-      /move up to/i.test(textLower));
+    !/one of your items/.test(fullTextLowercase) &&
+    (/\\glossterm{fling}/i.test(fullTextLowercase) ||
+      /\\glossterm{push}/i.test(fullTextLowercase) ||
+      /teleport/i.test(fullTextLowercase) ||
+      /glide speed/i.test(fullTextLowercase) ||
+      /fly speed/i.test(fullTextLowercase) ||
+      /walk speed/i.test(fullTextLowercase) ||
+      /move up to/i.test(fullTextLowercase));
   if (isMobility) {
     expected.add('mobility');
   }
@@ -371,34 +372,34 @@ export function inferExpectedRoles(
   // 14. Dive & Kite
   if (profile.hasAttack) {
     if (
-      !/move the ball/.test(textLower) && (
-        /move (?:towards|adjacent|through)/i.test(textLower) ||
-        /leap.*attack/i.test(textLower) ||
-        /move in a straight line/i.test(textLower) ||
-        /charge/i.test(textLower))
+      !/move the ball/.test(fullTextLowercase) && (
+        /move (?:towards|adjacent|through)/i.test(fullTextLowercase) ||
+        /leap.*attack/i.test(fullTextLowercase) ||
+        /move in a straight line/i.test(fullTextLowercase) ||
+        /charge/i.test(fullTextLowercase))
     ) {
       expected.add('dive');
     }
-    if (/move away.*attack/i.test(textLower) || /push.*prevent.*approach/i.test(textLower)) {
+    if (/move away.*attack/i.test(fullTextLowercase) || /push.*prevent.*approach/i.test(fullTextLowercase)) {
       expected.add('kite');
     }
   }
 
   // 15. Ramp
   if (
-    (textLower.includes('for the rest of combat') ||
-      textLower.includes('until combat ends') ||
-      textLower.includes('for the rest of the fight'))
+    (fullTextLowercase.includes('for the rest of combat') ||
+      fullTextLowercase.includes('until combat ends') ||
+      fullTextLowercase.includes('for the rest of the fight'))
   ) {
     expected.add('ramp');
   }
 
   // 16. Narrative
   if (
-    textLower.includes('outside of combat') ||
-    textLower.includes('for one day') ||
-    textLower.includes('for one year') ||
-    textLower.includes('for 24 hours') ||
+    fullTextLowercase.includes('outside of combat') ||
+    fullTextLowercase.includes('for one day') ||
+    fullTextLowercase.includes('for one year') ||
+    fullTextLowercase.includes('for 24 hours') ||
     (rawSpell.usageTime &&
       rawSpell.usageTime !== 'standard' &&
       rawSpell.usageTime !== 'minor')
@@ -407,7 +408,7 @@ export function inferExpectedRoles(
   }
 
   // 17. Payoff
-  if (textLower.includes('during your last turn')) {
+  if (fullTextLowercase.includes('during your last turn')) {
     expected.add('payoff');
   }
 

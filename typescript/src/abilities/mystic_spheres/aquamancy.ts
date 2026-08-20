@@ -601,7 +601,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
 
       // r2 base, +1r for +1 area rank
       effect: `
-        A cloud of fog appears in a \\smallarea radius within \\medrange.
+        A cloud of fog appears in a \\smallarea radius \\glossterm{zone} within \\medrange.
         The fog provides \\glossterm{concealment} for anything within or seen through the area.
       `,
       rank: 3,
@@ -617,7 +617,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       name: 'Persistent Fog Cloud',
 
       effect: `
-        A cloud of fog appears in a \\medarea radius within \\medrange.
+        A cloud of fog appears in a \\medarea radius \\glossterm{zone} within \\medrange.
         The fog provides \\glossterm{concealment} for anything within or seen through the area.
       `,
       rank: 6,
@@ -629,7 +629,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       name: 'Solid Fog Cloud',
 
       effect: `
-        A cloud of fog appears in a \\smallarea radius within \\medrange.
+        A cloud of fog appears in a \\smallarea radius \\glossterm{zone} within \\medrange.
         The fog provides \\glossterm{concealment} for anything within or seen through the area.
         In addition, the fog's area is \\glossterm{difficult terrain}.
       `,
