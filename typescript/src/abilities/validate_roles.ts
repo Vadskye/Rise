@@ -146,9 +146,9 @@ function attunementGrantsActiveAction(hit: string, targeting: string, effect: st
 }
 
 /**
-   * Determines whether a spell creates a persistent battlefield hazard,
-   * repeating zone, or attunable environmental zone.
-   */
+ * Determines whether a spell creates a persistent battlefield hazard,
+ * repeating zone, or attunable environmental zone.
+ */
 function isHazardEffect(
   rawSpell: SpellDefinition,
   profile: SpellProfile,
@@ -364,7 +364,12 @@ export function inferExpectedRoles(
     } else if (isCondition && !isInjuryDebuffEffect) {
       // Any persistent condition on non-injured targets is softener
       expected.add('softener');
-    } else if (profile.isSingleTarget && hasDebuffWords(hit) && !isCondition && !/injur/.test(hit)) {
+    } else if (
+      profile.isSingleTarget &&
+      hasDebuffWords(hit) &&
+      !isCondition &&
+      !/injur/.test(hit)
+    ) {
       expected.add('trip');
     } else if (isMultiTarget && hasDebuffWords(hit) && !/injur/.test(hit)) {
       // Brief multi-target debuff is flash
