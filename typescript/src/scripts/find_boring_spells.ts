@@ -1,4 +1,9 @@
-import { mysticSpheres, allMysticSpheres, rituals } from '@src/abilities/mystic_spheres';
+import {
+  mysticSpheres,
+  allMysticSpheres,
+  rituals,
+  SphereName,
+} from '@src/abilities/mystic_spheres';
 import { validateSpells } from '@src/abilities/validate_spells';
 import { buildSpellProfile } from '@src/abilities/spell_profile';
 import {
@@ -70,7 +75,9 @@ export function getSpellFullText(
 /**
  * Collects all spells, cantrips, and optionally rituals from mystic spheres.
  */
-export function getAllSpells(options: { includeRituals?: boolean; maxRank?: number } = {}): SpellItem[] {
+export function getAllSpells(
+  options: { includeRituals?: boolean; maxRank?: number } = {},
+): SpellItem[] {
   const items: SpellItem[] = [];
 
   for (const sphere of allMysticSpheres) {
@@ -116,7 +123,7 @@ export function detectVanillaDamageSpells(items: SpellItem[]): BoringFinding[] {
     }
 
     const s = item.spell;
-    const profile = buildSpellProfile(s as SpellDefinition, item.sphere);
+    const profile = buildSpellProfile(s as SpellDefinition, item.sphere as SphereName);
     const fullText = getSpellFullText(s).toLowerCase();
 
     const isDamageAttack =
@@ -275,8 +282,8 @@ export function detectRoleSaturation(items: SpellItem[]): BoringFinding[] {
             category: 'insufficient_role',
             score: 8,
             reason: `Insufficient role "${role}" in ${sphereName} at Rank ${rankStr} (${roleItems.length} spells: ${spellNames})`,
-            details: "Not enough spells in the same sphere of the given role.",
-            recommendation: "Add more spells of the given role.",
+            details: 'Not enough spells in the same sphere of the given role.',
+            recommendation: 'Add more spells of the given role.',
             spells: roleItems.map((i) => i.spell.name),
           });
         }

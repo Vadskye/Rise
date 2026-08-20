@@ -16,7 +16,7 @@ t.test('validate_roles', (t) => {
           targeting: 'Make an attack vs. Armor against one creature within \\shortrange.',
         },
       };
-      const profile = buildSpellProfile(spell, 'TestSphere');
+      const profile = buildSpellProfile(spell, 'Aeromancy');
       const roles = inferExpectedRoles(spell, profile);
       t.ok(roles.has('burst'), 'Should infer burst');
       t.notOk(roles.has('snipe'), 'Should not infer snipe');
@@ -34,7 +34,7 @@ t.test('validate_roles', (t) => {
           targeting: 'Make an attack vs. Reflex against all creatures in a \\medarea radius within \\medrange.',
         },
       };
-      const profile = buildSpellProfile(spell, 'TestSphere');
+      const profile = buildSpellProfile(spell, 'Aeromancy');
       const roles = inferExpectedRoles(spell, profile);
       t.ok(roles.has('clear'), 'Should infer clear');
       t.notOk(roles.has('burst'), 'Should not infer burst');
@@ -51,7 +51,7 @@ t.test('validate_roles', (t) => {
           targeting: 'Make an attack vs. Armor against up to two targets within \\longrange.',
         },
       };
-      const profileLong = buildSpellProfile(spellLong, 'TestSphere');
+      const profileLong = buildSpellProfile(spellLong, 'Aeromancy');
       const rolesLong = inferExpectedRoles(spellLong, profileLong);
       t.ok(rolesLong.has('snipe'), 'Should infer snipe for long range');
       t.ok(rolesLong.has('clear'), 'Should infer clear for multi-target');
@@ -65,7 +65,7 @@ t.test('validate_roles', (t) => {
           targeting: 'Make an attack vs. Armor against something within \\distrange.',
         },
       };
-      const profileDist = buildSpellProfile(spellDist, 'TestSphere');
+      const profileDist = buildSpellProfile(spellDist, 'Aeromancy');
       const rolesDist = inferExpectedRoles(spellDist, profileDist);
       t.ok(rolesDist.has('snipe'), 'Should infer snipe for distant range');
       t.end();
@@ -84,7 +84,7 @@ t.test('validate_roles', (t) => {
             'You create a dust storm in a \\glossterm{zone} around you. When you cast this spell, and during each of your subsequent actions, make an attack vs. Reflex against all \\glossterm{enemies} in the area.',
         },
       };
-      const profile = buildSpellProfile(spell, 'TestSphere');
+      const profile = buildSpellProfile(spell, 'Aeromancy');
       const roles = inferExpectedRoles(spell, profile);
       t.ok(roles.has('softener'), 'Should infer softener for area persistent condition');
       t.notOk(roles.has('flash'), 'Should not infer flash for persistent condition');
@@ -104,7 +104,7 @@ t.test('validate_roles', (t) => {
             'You create a continuous blast of wind in a \\largearealong line-shaped \\glossterm{zone} from you. When you cast this spell, and during each of your subsequent actions, make an attack vs. Brawn against everything in the area.',
         },
       };
-      const profile = buildSpellProfile(spell, 'TestSphere');
+      const profile = buildSpellProfile(spell, 'Aeromancy');
       const roles = inferExpectedRoles(spell, profile);
       t.ok(roles.has('hazard'), 'Should infer hazard for sustain (minor) zone');
       t.end();
@@ -120,7 +120,7 @@ t.test('validate_roles', (t) => {
           targeting: 'Make an attack vs. Brawn against up to three creatures within \\medrange.',
         },
       };
-      const profile = buildSpellProfile(spell, 'TestSphere');
+      const profile = buildSpellProfile(spell, 'Aeromancy');
       const roles = inferExpectedRoles(spell, profile);
       t.ok(roles.has('flash'), 'Should infer flash for brief multi-target debuff');
       t.notOk(roles.has('softener'), 'Should not infer softener for brief debuff');
@@ -137,7 +137,7 @@ t.test('validate_roles', (t) => {
           targeting: 'Make an attack vs. Reflex against one creature within \\shortrange.',
         },
       };
-      const profile = buildSpellProfile(spell, 'TestSphere');
+      const profile = buildSpellProfile(spell, 'Aeromancy');
       const roles = inferExpectedRoles(spell, profile);
       t.ok(roles.has('trip'), 'Should infer trip');
       t.notOk(roles.has('flash'), 'Should not infer flash');
@@ -154,7 +154,7 @@ t.test('validate_roles', (t) => {
           targeting: 'Make an attack vs. Brawn against one creature within \\medrange.',
         },
       };
-      const profile = buildSpellProfile(spell, 'TestSphere');
+      const profile = buildSpellProfile(spell, 'Aeromancy');
       const roles = inferExpectedRoles(spell, profile);
       t.ok(roles.has('maim'), 'Should infer maim');
       t.notOk(roles.has('trip'), 'Should not infer trip');
@@ -172,7 +172,7 @@ t.test('validate_roles', (t) => {
             'Make an attack vs. Brawn and Reflex against all \\glossterm{enemies} adjacent to you. Then, you are \\briefly \\shielded.',
         },
       };
-      const profile = buildSpellProfile(spell, 'TestSphere');
+      const profile = buildSpellProfile(spell, 'Aeromancy');
       const roles = inferExpectedRoles(spell, profile);
       t.ok(roles.has('clear'), 'Should infer clear');
       t.ok(roles.has('turtle'), 'Should infer turtle');
@@ -190,7 +190,7 @@ t.test('validate_roles', (t) => {
           targeting: 'Make an attack vs. Armor against one creature within \\shortrange.',
         },
       };
-      const profile = buildSpellProfile(spell, 'TestSphere');
+      const profile = buildSpellProfile(spell, 'Aeromancy');
       const roles = inferExpectedRoles(spell, profile);
       t.ok(roles.has('burst'), 'Should infer burst');
       t.notOk(roles.has('softener'), 'Should not infer softener from crit text');

@@ -1,4 +1,4 @@
-import { SpellProfile } from './spell_profile';
+import { AreaSize, SpellProfile, SpellRange } from './spell_profile';
 
 export interface DamageCalculationBreakdown {
   baseRank: number;
@@ -13,7 +13,7 @@ export interface DamageCalculationBreakdown {
   expectedDamageRank: number;
 }
 
-const CONE_AREA_SIZE_RANK: Record<string, number> = {
+const CONE_AREA_SIZE_RANK: Partial<Record<AreaSize, number>> = {
   tiny: 0,
   small: 0,
   medium: 2,
@@ -22,7 +22,7 @@ const CONE_AREA_SIZE_RANK: Record<string, number> = {
   gargantuan: 8,
 };
 
-const RADIUS_AREA_SIZE_RANK: Record<string, number> = {
+const RADIUS_AREA_SIZE_RANK: Partial<Record<AreaSize, number>> = {
   tiny: -1,
   small: 0,
   medium: 2,
@@ -31,14 +31,14 @@ const RADIUS_AREA_SIZE_RANK: Record<string, number> = {
   gargantuan: 8,
 };
 
-const RADIUS_RANGE_RANK: Record<string, number> = {
+const RADIUS_RANGE_RANK: Partial<Record<SpellRange, number>> = {
   short: 3,
   medium: 5,
   long: 7,
   distant: 9,
 };
 
-const LINE_AREA_SIZE_RANK: Record<string, number> = {
+const LINE_AREA_SIZE_RANK: Partial<Record<AreaSize, number>> = {
   tiny: -1,
   small: 0,
   medium: 1,
@@ -47,7 +47,7 @@ const LINE_AREA_SIZE_RANK: Record<string, number> = {
   gargantuan: 5,
 };
 
-const WALL_AREA_SIZE_RANK: Record<string, number> = {
+const WALL_AREA_SIZE_RANK: Partial<Record<AreaSize, number>> = {
   small: 0,
   medium: 0,
   large: 1,
@@ -55,14 +55,14 @@ const WALL_AREA_SIZE_RANK: Record<string, number> = {
   gargantuan: 3,
 };
 
-const WALL_RANGE_RANK: Record<string, number> = {
+const WALL_RANGE_RANK: Partial<Record<SpellRange, number>> = {
   short: 0,
   medium: 1,
   long: 3,
   distant: 5,
 };
 
-const MULTI_RANGE_RANK: Record<string, number> = {
+const MULTI_RANGE_RANK: Partial<Record<SpellRange, number>> = {
   short: 1,
   medium: 3,
   long: 5,
@@ -76,7 +76,7 @@ const MULTI_TARGET_RANK: Record<number, number> = {
   5: 3,
 };
 
-const CHAIN_RANGE_RANK: Record<string, number> = {
+const CHAIN_RANGE_RANK: Partial<Record<SpellRange, number>> = {
   melee: 0,
   short: 1,
   medium: 3,
@@ -92,7 +92,7 @@ const CHAIN_TARGET_RANK: Record<number, number> = {
   6: 4,
 };
 
-const SINGLE_RANGE_MOD: Record<string, number> = {
+const SINGLE_RANGE_MOD: Partial<Record<SpellRange, number>> = {
   melee: 2,
   short: 1,
   medium: 0,
@@ -292,7 +292,7 @@ export function calculateExpectedDamageRank(
   ];
   const hasDebuff =
     !profile.isInjuryDoubleDamage &&
-    profile.appliedEffects.some((e: string) =>
+    profile.appliedEffects.some((e) =>
       DEBUFF_NAMES.some((d) => e === d || e === `briefly:${d}`),
     );
   if (hasDebuff) {

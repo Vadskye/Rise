@@ -16,9 +16,9 @@ t.test('buildSpellProfile', (t) => {
       },
     };
 
-    const profile = buildSpellProfile(mockSpell, 'TestSphere');
+    const profile = buildSpellProfile(mockSpell, 'Cryomancy');
     t.equal(profile.name, 'Test Spell');
-    t.equal(profile.sphereName, 'TestSphere');
+    t.equal(profile.sphereName, 'Cryomancy');
     t.equal(profile.rank, 2);
     t.equal(profile.isDoubleAction, true);
     t.equal(profile.isNonAction, false);
@@ -71,9 +71,9 @@ t.test('buildSpellProfile', (t) => {
         },
       };
 
-      t.equal(buildSpellProfile(standardSpell, 'TestSphere').isNonAction, false);
-      t.equal(buildSpellProfile(reactiveSpell, 'TestSphere').isNonAction, true);
-      t.equal(buildSpellProfile(minorActionSpell, 'TestSphere').isNonAction, true);
+      t.equal(buildSpellProfile(standardSpell, 'Cryomancy').isNonAction, false);
+      t.equal(buildSpellProfile(reactiveSpell, 'Cryomancy').isNonAction, true);
+      t.equal(buildSpellProfile(minorActionSpell, 'Cryomancy').isNonAction, true);
       t.end();
     },
   );

@@ -51,23 +51,23 @@ t.test('Damaging Spell Design Guidelines: calculateExpectedDamageRank', (t) => {
     });
 
     t.equal(
-      calculateExpectedDamageRank(buildSpellProfile(meleeSpell, 'Test'))?.expectedDamageRank,
+      calculateExpectedDamageRank(buildSpellProfile(meleeSpell, 'Pyromancy'))?.expectedDamageRank,
       4,
     );
     t.equal(
-      calculateExpectedDamageRank(buildSpellProfile(shortSpell, 'Test'))?.expectedDamageRank,
+      calculateExpectedDamageRank(buildSpellProfile(shortSpell, 'Pyromancy'))?.expectedDamageRank,
       3,
     );
     t.equal(
-      calculateExpectedDamageRank(buildSpellProfile(medSpell, 'Test'))?.expectedDamageRank,
+      calculateExpectedDamageRank(buildSpellProfile(medSpell, 'Pyromancy'))?.expectedDamageRank,
       2,
     );
     t.equal(
-      calculateExpectedDamageRank(buildSpellProfile(longSpell, 'Test'))?.expectedDamageRank,
+      calculateExpectedDamageRank(buildSpellProfile(longSpell, 'Pyromancy'))?.expectedDamageRank,
       1,
     );
     t.equal(
-      calculateExpectedDamageRank(buildSpellProfile(distSpell, 'Test'))?.expectedDamageRank,
+      calculateExpectedDamageRank(buildSpellProfile(distSpell, 'Pyromancy'))?.expectedDamageRank,
       0,
     );
     t.end();
@@ -92,11 +92,11 @@ t.test('Damaging Spell Design Guidelines: calculateExpectedDamageRank', (t) => {
     });
 
     t.equal(
-      calculateExpectedDamageRank(buildSpellProfile(fortSpell, 'Test'))?.expectedDamageRank,
+      calculateExpectedDamageRank(buildSpellProfile(fortSpell, 'Pyromancy'))?.expectedDamageRank,
       4,
     );
     t.equal(
-      calculateExpectedDamageRank(buildSpellProfile(reflexSpell, 'Test'))?.expectedDamageRank,
+      calculateExpectedDamageRank(buildSpellProfile(reflexSpell, 'Pyromancy'))?.expectedDamageRank,
       3,
     );
     t.end();
@@ -131,12 +131,12 @@ t.test('Damaging Spell Design Guidelines: calculateExpectedDamageRank', (t) => {
     });
 
     t.equal(
-      calculateExpectedDamageRank(buildSpellProfile(smallCone, 'Test'))?.expectedDamageRank,
+      calculateExpectedDamageRank(buildSpellProfile(smallCone, 'Pyromancy'))?.expectedDamageRank,
       4,
     );
-    t.equal(calculateExpectedDamageRank(buildSpellProfile(medCone, 'Test'))?.expectedDamageRank, 2);
+    t.equal(calculateExpectedDamageRank(buildSpellProfile(medCone, 'Pyromancy'))?.expectedDamageRank, 2);
     t.equal(
-      calculateExpectedDamageRank(buildSpellProfile(largeCone, 'Test'))?.expectedDamageRank,
+      calculateExpectedDamageRank(buildSpellProfile(largeCone, 'Pyromancy'))?.expectedDamageRank,
       1,
     );
     t.end();
@@ -162,12 +162,12 @@ t.test('Damaging Spell Design Guidelines: calculateExpectedDamageRank', (t) => {
     });
 
     t.equal(
-      calculateExpectedDamageRank(buildSpellProfile(doubleDefenseSpell, 'Test'))
+      calculateExpectedDamageRank(buildSpellProfile(doubleDefenseSpell, 'Pyromancy'))
         ?.expectedDamageRank,
       4,
     );
     t.equal(
-      calculateExpectedDamageRank(buildSpellProfile(minus4AccuracySpell, 'Test'))
+      calculateExpectedDamageRank(buildSpellProfile(minus4AccuracySpell, 'Pyromancy'))
         ?.expectedDamageRank,
       6,
     );
@@ -195,13 +195,13 @@ t.test('Damaging Spell Design Guidelines: calculateExpectedDamageRank', (t) => {
 
     // Melee (+2) - InjuryDoubleDamage (-1) = +1 -> 3 + 1 = 4
     t.equal(
-      calculateExpectedDamageRank(buildSpellProfile(injuryDoubleDamageSpell, 'Test'))
+      calculateExpectedDamageRank(buildSpellProfile(injuryDoubleDamageSpell, 'Pyromancy'))
         ?.expectedDamageRank,
       4,
     );
     // Short (+1) - Debuff (-1) = 0 -> 3 + 0 = 3 (if hit is dr4, expected is dr3)
     t.equal(
-      calculateExpectedDamageRank(buildSpellProfile(debuffSpell, 'Test'))?.expectedDamageRank,
+      calculateExpectedDamageRank(buildSpellProfile(debuffSpell, 'Pyromancy'))?.expectedDamageRank,
       3,
     );
     t.end();

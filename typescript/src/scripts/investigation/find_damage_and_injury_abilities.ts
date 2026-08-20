@@ -1,4 +1,4 @@
-import { allMysticSpheres } from '@src/abilities/mystic_spheres';
+import { allMysticSpheres, SphereName } from '@src/abilities/mystic_spheres';
 import { buildSpellProfile, resolveSpell, parseDamageRank } from '@src/abilities/spell_profile';
 import {
   calculateExpectedDamageRank,
@@ -9,7 +9,7 @@ import { CantripDefinition, SpellDefinition } from '@src/abilities/active_abilit
 export type InjuryCategory = 'free' | 'reduced' | 'heavy_reduction';
 
 export interface InjuryRiderItem {
-  sphereName: string;
+  sphereName: SphereName;
   name: string;
   rank: number;
   actualDamageRank: number;

@@ -15,14 +15,14 @@
 
 import { AbilityRole } from './constants';
 import { SpellDefinition } from './active_abilities';
-import { MysticSphere } from './mystic_spheres';
+import { MysticSphere, SphereName } from './mystic_spheres';
 import { buildSpellProfile, resolveSpell, SpellProfile } from './spell_profile';
 
 export interface RoleValidationIssue {
   type: 'missing_role' | 'unexpected_role' | 'invalid_attunement_role';
   severity: 'warning';
   spellName: string;
-  sphereName: string;
+  sphereName: SphereName;
   spellRank: number;
   role: AbilityRole;
   message: string;
@@ -228,7 +228,6 @@ export function inferExpectedRoles(
     (((rawSpell.type || '').toLowerCase().includes('sustain') &&
       (profile.area === 'radius' ||
         profile.area === 'line' ||
-        profile.area === 'zone' ||
         textLower.includes('zone')) &&
       (profile.isRepeating ||
         textLower.includes('each of your subsequent actions') ||
@@ -401,8 +400,8 @@ export function inferExpectedRoles(
     textLower.includes('for one year') ||
     textLower.includes('for 24 hours') ||
     (rawSpell.usageTime &&
-      rawSpell.usageTime !== ('standard' as any) &&
-      rawSpell.usageTime !== ('minor' as any))
+      rawSpell.usageTime !== 'standard' &&
+      rawSpell.usageTime !== 'minor')
   ) {
     expected.add('narrative');
   }

@@ -1,16 +1,101 @@
 import { SpellDefinition, CantripDefinition, ActiveAbilityAttack } from './active_abilities';
-import { getSpellByName } from './mystic_spheres';
+import { getSpellByName, SphereName } from './mystic_spheres';
+
+export const RANGE_ORDER = ['none', 'self', 'melee', 'short', 'medium', 'long', 'distant'] as const;
+export type SpellRange = (typeof RANGE_ORDER)[number];
+
+export const AREA_SIZE_ORDER = [
+  'none',
+  'tiny',
+  'small',
+  'medium',
+  'large',
+  'huge',
+  'gargantuan',
+] as const;
+export type AreaSize = (typeof AREA_SIZE_ORDER)[number];
+
+export const SPELL_AREAS = [
+  'single',
+  'radius',
+  'cone',
+  'line',
+  'wall',
+  'vertical-line',
+  'chain',
+  'multi',
+] as const;
+export type SpellArea = (typeof SPELL_AREAS)[number];
+
+export const DEFENSE_TYPES = ['armor', 'brawn', 'fortitude', 'mental', 'reflex'] as const;
+export type DefenseType = (typeof DEFENSE_TYPES)[number];
+
+export const BASE_APPLIED_EFFECTS = [
+  'blinded',
+  'braced',
+  'cannot act',
+  'charmed',
+  'confused',
+  'dazed',
+  'dazzled',
+  'deafened',
+  'difficult terrain',
+  'dread',
+  'empowered',
+  'exposed',
+  'failure chance',
+  'fling',
+  'focused',
+  'fortified',
+  'frightened',
+  'frozen',
+  'goaded',
+  'grappled',
+  'honed',
+  'immobilized',
+  'invisible',
+  'liquify',
+  'maximized',
+  'panicked',
+  'poisoned',
+  'primed',
+  'prone',
+  'push',
+  'resistant',
+  'shaken',
+  'shielded',
+  'slowed',
+  'stasis',
+  'steeled',
+  'teleport',
+  'unable to breathe',
+  'unsteady',
+  'vulnerable',
+  'weakened',
+] as const;
+export type BaseAppliedEffect = (typeof BASE_APPLIED_EFFECTS)[number];
+export type AppliedEffect = BaseAppliedEffect | `briefly:${BaseAppliedEffect}`;
+
+export const SPECIAL_REQUIREMENTS = [
+  'corpse',
+  'fails',
+  'free hand',
+  'injured',
+  'removable',
+  'shadowed',
+] as const;
+export type SpecialRequirement = (typeof SPECIAL_REQUIREMENTS)[number];
 
 export interface SpellProfile {
   name: SpellDefinition['name'];
-  sphereName: string;
+  sphereName: SphereName;
   rank: SpellDefinition['rank'];
   isDoubleAction: boolean;
   isNonAction: boolean;
-  range: string;
-  defenses: string[];
-  area: string;
-  areaSize: string;
+  range: SpellRange;
+  defenses: DefenseType[];
+  area: SpellArea;
+  areaSize: AreaSize;
   /**
    * Maximum effective damage rank achieved when all conditional triggers (such as injury bonus
    * damage, execution clauses, or full damage-over-time ticks) are satisfied.
@@ -27,10 +112,10 @@ export interface SpellProfile {
   // Inflicts damage over time (burn, bleed, etc.)
   hasDoT: boolean;
   isLowPower: boolean;
-  appliedEffects: string[];
+  appliedEffects: AppliedEffect[];
   accuracyModifier: number;
   accuracyCondition: string | null;
-  specialRequirements: string[];
+  specialRequirements: SpecialRequirement[];
   isDelayed: boolean;
   hasCost: boolean;
   roles: SpellDefinition['roles'];
@@ -69,17 +154,6 @@ export const RANK_WORDS: Record<string, number> = {
   nine: 9,
   ten: 10,
 };
-
-export const RANGE_ORDER = ['none', 'self', 'melee', 'short', 'medium', 'long', 'distant'] as const;
-export const AREA_SIZE_ORDER = [
-  'none',
-  'tiny',
-  'small',
-  'medium',
-  'large',
-  'huge',
-  'gargantuan',
-] as const;
 
 export function parseDamageRank(text: string): number | null {
   const matches = [...text.matchAll(/\\damagerank(\w+)/gi)];
@@ -123,10 +197,10 @@ export function parseHealingRank(text: string): number | null {
   return RANK_WORDS[word] !== undefined ? RANK_WORDS[word] : null;
 }
 
-export function parseDefenses(text: string): string[] {
+export function parseDefenses(text: string): DefenseType[] {
   const lowercase = text.toLowerCase();
-  const defenses = ['fortitude', 'reflex', 'mental', 'brawn', 'armor'];
-  const matched: string[] = [];
+  const defenses: readonly DefenseType[] = ['fortitude', 'reflex', 'mental', 'brawn', 'armor'];
+  const matched: DefenseType[] = [];
   for (const def of defenses) {
     const regex = new RegExp(`(vs\\.|against|and)\\s+(\\\\glossterm{)?${def}`, 'i');
     if (regex.test(lowercase)) {
@@ -139,7 +213,7 @@ export function parseDefenses(text: string): string[] {
   return matched.sort();
 }
 
-export function parseRange(text: string): string {
+export function parseRange(text: string): SpellRange {
   const lowercase = text.toLowerCase();
   if (
     lowercase.includes('touch') ||
@@ -174,7 +248,7 @@ export function parseRange(text: string): string {
   return 'none';
 }
 
-export function parseArea(text: string): string {
+export function parseArea(text: string): SpellArea {
   const lowercase = text.toLowerCase();
   if (lowercase.includes('vertical line')) {
     return 'vertical-line';
@@ -210,7 +284,7 @@ export function parseArea(text: string): string {
 // Return from smallest to largest.
 // This gives slightly better results for spells that grow in area,
 // though we should really handle that explicitly.
-export function parseAreaSize(text: string): string {
+export function parseAreaSize(text: string): AreaSize {
   const lowercase = text.toLowerCase();
   if (lowercase.includes('\\tinyarea') || lowercase.includes('adjacent to you')) {
     return 'tiny';
@@ -242,52 +316,10 @@ export function parseAreaSize(text: string): string {
  * This allows the validator to compare spell similarity and strict superiority
  * regardless of whether the effect is a formal Rise "condition" or a brief status effect.
  */
-export function parseAppliedEffects(text: string): string[] {
+export function parseAppliedEffects(text: string): AppliedEffect[] {
   const lowercase = text.toLowerCase();
-  const effects = [
-    'slowed',
-    'dazed',
-    'blinded',
-    'prone',
-    'confused',
-    'dazzled',
-    'goaded',
-    'unsteady',
-    'grappled',
-    'weakened',
-    'vulnerable',
-    'exposed',
-    'dread',
-    'shaken',
-    'poisoned',
-    'frightened',
-    'panicked',
-    'immobilized',
-    'charmed',
-    'deafened',
-    'shielded',
-    'focused',
-    'braced',
-    'empowered',
-    'fortified',
-    'honed',
-    'maximized',
-    'primed',
-    'steeled',
-    'resistant',
-    'unable to breathe',
-    'difficult terrain',
-    'liquify',
-    'failure chance',
-    'fling',
-    'push',
-    'teleport',
-    'frozen',
-    'stasis',
-    'cannot act',
-    'invisible',
-  ];
-  const result: string[] = [];
+  const effects: readonly BaseAppliedEffect[] = BASE_APPLIED_EFFECTS;
+  const result: AppliedEffect[] = [];
   for (const e of effects) {
     let index = lowercase.indexOf(e);
     if (index === -1) {
@@ -344,9 +376,9 @@ export function parseAccuracyCondition(text: string): string | null {
   return match ? match[1].trim() : 'conditional';
 }
 
-export function parseSpecialRequirements(text: string): string[] {
+export function parseSpecialRequirements(text: string): SpecialRequirement[] {
   const lowercase = text.toLowerCase();
-  const requirements: string[] = [];
+  const requirements: SpecialRequirement[] = [];
   if (lowercase.includes('corpse')) {
     requirements.push('corpse');
   }
@@ -561,7 +593,7 @@ export function resolveSpell<T extends SpellDefinition | CantripDefinition>(
 
 export function buildSpellProfile(
   rawSpell: SpellDefinition | CantripDefinition,
-  sphereName: string,
+  sphereName: SphereName,
 ): SpellProfile {
   const spell = resolveSpell(rawSpell);
 
