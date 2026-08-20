@@ -533,17 +533,31 @@ export const fabrication: MysticSphere = {
     {
       name: 'Daggerswarm',
 
-      // TODO: give a brief cooldown
       attack: {
-        hit: `\\damagerankthreelow. All sources of \\glossterm{extra damage} do not apply to this attack.`,
+        hit: `\\damageranktwolow. Any \\glossterm{extra damage} does not apply to this attack.`,
         targeting: `
           When you cast this spell, a small swarm of daggers appears floating over your head.
           As a \\glossterm{minor action}, you can fling one dagger at a creature or object within \\shortrange.
-          When you do, make an attack vs. Armor with a -2 accuracy penalty against that target.
-          After the dagger deals damage, it disappears and another dagger appears in the swarm.
+          When you do, make an attack vs. Armor against that target with a \\plus1 accuracy bonus.
+          After you use this ability, you \\briefly can't use it again.
+          The dagger disappears after the attack and another dagger appears in the swarm.
         `,
       },
-      rank: 5,
+      rank: 4,
+      roles: ['attune'],
+      scaling: 'damage',
+      type: 'Attune (deep)',
+      tags: ['Manifestation', 'Physical'],
+    },
+
+    {
+      name: 'Bladeswarm',
+
+      functionsLike: {
+        name: 'daggerswarm',
+        exceptThat: 'the damage increases to \\damageranksevenlow, but the accuracy bonus is removed.',
+      },
+      rank: 7,
       roles: ['attune'],
       scaling: 'damage',
       type: 'Attune (deep)',

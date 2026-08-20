@@ -560,18 +560,19 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       type: 'Attune (deep)',
     },
 
-    // Minor action attack should deal 40% damage at r4.
-    // Normal damage for r1 area would be dr4 (107%), so we want 43% damage.
-    // dr0 is 45% damage at rank 4.
+    // Small radius from self is +1dr, which means we get the normal damage scaling for
+    // minor action attunements. 
     {
       name: 'Flame Aura',
 
       attack: {
-        hit: `\\damagerankzero, and all \\glossterm{extra damage} does not apply.`,
+        hit: `\\damagerankthree. Any \\glossterm{extra damage} does not apply to this attack.`,
         halfOnMiss: true,
         targeting: `
           Heat constantly radiates in a \\smallarea radius emanation from you.
-          As a \\glossterm{minor action}, you can intensify the flames to make an attack vs. Fortitude against everything in the area.
+          As a \\glossterm{minor action}, you can intensify the flames.
+          When you do, make an attack vs. Fortitude with a \\minus1 accuracy penalty against everything in the area.
+          After you use this ability, you \\briefly can't use it again.
         `,
       },
       rank: 4,
@@ -580,14 +581,12 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       type: 'Attune (deep)',
     },
 
-    // Minor action attack should deal 60% damage at r7.
-    // Normal damage for r1 area would be r7 (99%), so we want dr5 (63%)
     {
       name: 'Mighty Flame Aura',
 
       functionsLike: {
         name: 'flame aura',
-        exceptThat: 'the damage increases to \\damagerankfive.',
+        exceptThat: 'the damage increases to \\damagerankseven, and the accuracy penalty is removed.',
       },
       rank: 7,
       roles: ['attune'],

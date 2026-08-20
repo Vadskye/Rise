@@ -195,11 +195,28 @@ Translating that into usable scaling, assuming medium range:
   * dr4, 2d6 + power (56%)
   * double damage strike (50%) - note that extra damage doesn't apply anyway
 
-### Minor action attack with cooldown: ???
+### Minor action attack with cooldown: Varies
 
-A minor action attack with a cooldown makes 3 attacks per combat, so the correct damage multiplier is ???
+A minor action attack with a cooldown makes 3 attacks per combat, so the correct damage multiplier is (rank EA) / 3. It's dangerous to make abilities that make extra attacks too strong, so assume that minor action attacks are always close range, or equivalently, they have -1dr relative to a "normal" ability. That's about x0.8 damage.
 
-TODO
+* Rank 2: 1.7 EA / 3 * 0.8 = 57% damage close / 45% med
+* Rank 3: 2 EA / 3 = 66% damage close / 53% med
+* Rank 4: 2.2 EA / 3 = 73% damage close / 59% med
+* Rank 5: 2.5 EA / 3 = 83% damage close / 66% med
+* Rank 6: 2.7 EA / 3 = 90% damage close / 72% med
+* Rank 7: 3 EA / 3 = 100% damage close / 80% med
+
+Translating that into usable scaling, assuming close range:
+* Rank 2: dr0 with double defense / -2a
+* Rank 3: dr1
+* Rank 4:
+  * dr2 with +1a
+  * dr3 with -1a
+* Rank 5: dr4
+* Rank 6:
+  * dr5 with +1a
+  * dr6 with -1a
+* Rank 7: dr7
 
 ### Honed: 2.0
 

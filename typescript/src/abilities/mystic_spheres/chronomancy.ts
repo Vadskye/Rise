@@ -310,10 +310,11 @@ export const chronomancy: MysticSphere = {
       name: 'Weapon Haste',
 
       effect: `
-        As a \\glossterm{minor action}, you can make a \\glossterm{mundane} \\glossterm{strike} with a \\minus2 accuracy penalty.
-        All \\glossterm{extra damage} does not apply to this strike.
+        As a \\glossterm{minor action}, you can make a \\glossterm{mundane} \\glossterm{strike}.
+        Any \\glossterm{extra damage} does not apply to this strike.
+        After you use this ability, you \\briefly can't do so again.
       `,
-      rank: 4,
+      rank: 3,
       roles: ['attune'],
       scaling: 'accuracy',
       type: 'Attune (deep)',
@@ -322,11 +323,12 @@ export const chronomancy: MysticSphere = {
     {
       name: 'Mighty Weapon Haste',
 
-      effect: `
-        As a \\glossterm{minor action}, you can make a \\glossterm{mundane} \\glossterm{strike} that deals double damage.
-        All \\glossterm{extra damage} does not apply to this strike.
-      `,
-      rank: 7,
+      // TODO: full damage math
+      functionsLike: {
+        name: 'weapon haste',
+        exceptThat: 'the strike deals double damage.',
+      },
+      rank: 6,
       roles: ['attune'],
       scaling: 'accuracy',
       type: 'Attune (deep)',
