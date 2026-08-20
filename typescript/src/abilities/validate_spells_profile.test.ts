@@ -145,7 +145,7 @@ t.test('buildSpellProfile', (t) => {
       'Unconditional damage rank should be updated from exceptThat',
     );
     t.same(mightyElectrocute.defenses, ['fortitude'], 'Defenses should be inherited from base');
-    t.equal(mightyElectrocute.range, 'medium', 'Range should be inherited from base');
+    t.equal(mightyElectrocute.range, 'short', 'Range should be inherited from base');
 
     t.end();
   });

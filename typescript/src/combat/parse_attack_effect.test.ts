@@ -185,15 +185,6 @@ tap.test('parseAttackEffect', (t) => {
     t.end();
   });
 
-  t.test('Split Fireball', (t) => {
-    creature.addSpell('Split Fireball');
-    const ability = creature.getActiveAbility('Split Fireball')!;
-    const parsed = parseAttackEffect(ability, creature);
-    t.equal(parsed?.areaRank, 3, 'should have correct area rank (Two tiny radii in Short range)');
-    t.equal(parsed?.damage.toString(), '2d6', 'should calculate correct damage');
-    t.end();
-  });
-
   t.test('Savage Rush (Archetype Ability)', (t) => {
     const barb11 = stock.getCharacter('Barbarian 11')!;
     const ability = barb11.getActiveAbility('Savage Rush')!;

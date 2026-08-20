@@ -364,7 +364,7 @@ export function inferExpectedRoles(
     } else if (isCondition && !isInjuryDebuffEffect) {
       // Any persistent condition on non-injured targets is softener
       expected.add('softener');
-    } else if (profile.isSingleTarget && hasDebuffWords(hit) && !isCondition) {
+    } else if (profile.isSingleTarget && hasDebuffWords(hit) && !isCondition && !/injur/.test(hit)) {
       expected.add('trip');
     } else if (isMultiTarget && hasDebuffWords(hit) && !/injur/.test(hit)) {
       // Brief multi-target debuff is flash
