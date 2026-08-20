@@ -537,7 +537,7 @@ export const fabrication: MysticSphere = {
         hit: `\\damageranktwolow. Any \\glossterm{extra damage} does not apply to this attack.`,
         targeting: `
           When you cast this spell, a small swarm of daggers appears floating over your head.
-          As a \\glossterm{minor action}, you can fling one dagger at a creature or object within \\shortrange.
+          As a \\glossterm{minor action}, you can throw one dagger at a creature or object within \\shortrange.
           When you do, make an attack vs. Armor against that target with a \\plus1 accuracy bonus.
           After you use this ability, you \\briefly can't use it again.
           The dagger disappears after the attack and another dagger appears in the swarm.

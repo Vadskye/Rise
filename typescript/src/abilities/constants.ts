@@ -32,7 +32,7 @@ export const ABILITY_ROLES = [
   'hazard', // Create a persistent battlefield hazard, such as a zone that deals damage each turn
   'healing', // Regain hit points
   'kite', // Move away from enemies and make a ranged attack, or prevent enemies from moving closer
-  'maim', // Non-damaging debuff that requires the target to be injured and has no effect on uninjured targets.
+  'maim', // Debuff that requires the target to be injured and has no debuff on uninjured targets. Can deal damage to uninjured targets.
   'mobility', // Move yourself or allies without making an attack
   'narrative', // Non-combat effects
   'payoff', // Ability with unusual prerequisites that generally require at least a turn of prep

@@ -71,21 +71,9 @@ function hasPersistentCondition(hit: string, effect: string): boolean {
 /**
  * Determines whether a debuff requires the target to be injured.
  */
-function isInjuryDebuff(hit: string, injury: string, effect: string): boolean {
-  if (
-    injury &&
-    (injury.toLowerCase().includes('is \\') ||
-      injury.toLowerCase().includes('takes a -') ||
-      injury.toLowerCase().includes('fling') ||
-      injury.toLowerCase().includes('push') ||
-      injury.toLowerCase().includes('slowed') ||
-      injury.toLowerCase().includes('prone') ||
-      injury.toLowerCase().includes('dazed'))
-  ) {
-    return true;
-  }
-  const combined = `${hit} ${effect}`.toLowerCase();
-  return /if (it|the target) (is|was) (?:\\glossterm{)?injured(?:})?/i.test(combined);
+function isInjuryDebuff(injury: string, fullTextLowercase: string): boolean {
+  const hasInjury = Boolean(injury) || /if (it|the target) (is|was) (?:\\glossterm{)?injured(?:})?/i.test(fullTextLowercase);
+  return hasInjury && hasDebuffWords(fullTextLowercase);
 }
 
 /**
@@ -104,42 +92,40 @@ function isStasisDebuff(hit: string, effect: string): boolean {
   );
 }
 
-function hasDebuffWords(hit: string, effect: string): boolean {
-  const combined = `${hit} ${effect}`.toLowerCase();
+function hasDebuffWords(fullTextLowercase: string): boolean {
   const debuffKeywords = [
-    'slowed',
-    'dazed',
-    'blinded',
-    'prone',
-    'confused',
-    'dazzled',
-    'goaded',
-    'unsteady',
-    'grappled',
-    'weakened',
-    'vulnerable',
-    'concealment',
-    'exposed',
-    'dread',
-    'shaken',
-    'frightened',
-    'panicked',
-    'immobilized',
-    'deafened',
-    'penalty to defenses',
-    'penalty to accuracy',
+    '-1 penalty',
     '-2 penalty',
     '-4 penalty',
-    '-1 penalty',
-    'cannot stand',
-    "can't stand",
+    'blinded',
     'cannot move',
+    'cannot stand',
     "can't move",
+    "can't stand",
+    'concealment',
+    'confused',
+    'dazed',
+    'dazzled',
+    'deafened',
+    'exposed',
     'fling',
+    'frightened',
+    'goaded',
+    'grappled',
+    'immobilized',
+    'panicked',
+    'penalty to accuracy',
+    'penalty to defenses',
+    'prone',
     'push',
+    'shaken',
+    'slowed',
+    'unsteady',
+    'vulnerable',
+    'weakened',
   ];
 
-  return debuffKeywords.some((kw) => combined.includes(kw));
+  return debuffKeywords.some((kw) => fullTextLowercase.includes(kw));
 }
 
 /**
@@ -363,14 +349,12 @@ export function inferExpectedRoles(
 
   // 9. Debuff Roles (Softener, Flash, Trip, Stasis, Maim)
   const affectsAlly = !hit && /choose.*ally/.test(fullTextLowercase);
-  const isInjuryDebuffEffect = isInjuryDebuff(hit, injury, effect);
+  const isInjuryDebuffEffect = isInjuryDebuff(injury, fullTextLowercase);
   const isStasis = isStasisDebuff(hit, effect);
   const isCondition = hasPersistentCondition(hit, effect);
   // The spell must actually have a hit effect to inflict debuffs. Otherwise, it might be
   // an ally-only boon.
-  const hasDebuff =
-    !affectsAlly &&
-    (hasDebuffWords(hit, effect) || isCondition || isStasis || isInjuryDebuffEffect);
+  const hasDebuff = !affectsAlly && (hasDebuffWords(fullTextLowercase) || isCondition || isStasis);
 
   if (hasDebuff) {
     if (isStasis && profile.isSingleTarget) {
@@ -378,16 +362,15 @@ export function inferExpectedRoles(
     } else if (isCondition && !isInjuryDebuffEffect) {
       // Any persistent condition on non-injured targets is softener
       expected.add('softener');
-    } else if (profile.isSingleTarget && !isLongOrDistantRange && !dealsDamage) {
-      // Brief single-target debuff is trip
+    } else if (profile.isSingleTarget && hasDebuffWords(hit) && !isCondition) {
       expected.add('trip');
-    } else if (profile.isSingleTarget && hasDebuffWords(hit, effect) && !isCondition) {
-      expected.add('trip');
-    } else if (isInjuryDebuffEffect && !dealsDamage) {
-      expected.add('maim');
-    } else if (isMultiTarget) {
+    } else if (isMultiTarget && hasDebuffWords(hit) && !/injur/.test(hit)) {
       // Brief multi-target debuff is flash
       expected.add('flash');
+    }
+
+    if (isInjuryDebuffEffect) {
+      expected.add('maim');
     }
   }
 
