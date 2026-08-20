@@ -468,26 +468,38 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
     {
       name: 'Ball Lightning',
 
-      // Rank 4 Spell
-      // Area: Medium size space in Medium range (R0, mod +1)
-      // Result: 4 + 1 = dr5
-      // As a minor action attack, this deals ~40% damage, so we use dr0
-      // TODO: clean up wording
+      // Treat this as medium range, so standard damage scaling with the double defense.
+      // Since it starts at short range, it can skip the normal -1a to get dr3 damage.
       attack: {
-        hit: `\\damagerankzero.`,
+        hit: `\\damagerankthree. Any \\glossterm{extra damage} does not apply to this attack.`,
         halfOnMiss: true,
         targeting: `
-          You create a Medium size ball of lightning in one space within \\medrange.
+          You create a Small ball of lightning in one space within \\shortrange.
           The ball of lightning does not occupy space or block movement, and can move through creatures (but not solid objects) freely.
           You can move the ball up to 30 feet in any direction, even vertically, as a \\glossterm{minor action}.
-          When you create the ball, and once during each of your actions, make an attack vs. Reflex against everything in its space.
+          You can also dismiss it or recreate it in anywhere within \\shortrange as a minor action.
+          After you use either of these abilities, you \\briefly can't use either ability again.
 
-          At the end of your turn, if the ball is more than 120 feet from you, it disappears.
-          You can recreate it in an unoccupied space within \\medrange as a minor action.
+          At the end of each of your turns, make an attack vs. Reflex and Fortitude against everything in the ball's space.
+          Then, if it is not within \\distrange of you, it disappears.
+
         `,
         // halfOnMiss: true,
       },
       rank: 4,
+      roles: ['attune'],
+      scaling: 'damage',
+      type: 'Attune (deep)',
+    },
+
+    {
+      name: 'Mighty Ball Lightning',
+
+      functionsLike: {
+        name: 'ball lightning',
+        exceptThat: 'the damage increases to \\damagerankseven.',
+      },
+      rank: 7,
       roles: ['attune'],
       scaling: 'damage',
       type: 'Attune (deep)',

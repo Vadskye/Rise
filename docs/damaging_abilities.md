@@ -25,8 +25,8 @@ Single-target attacks against Reflex defense incur a -1 modifier (-1 dr) because
 
 | Damage Modifier | Effect Category           | Specifics                                                       |
 | :-------------- | :------------------------ | :-------------------------------------------------------------- |
-| -2              | Sustain (minor) zone      | Full size radius or emanation                                   |
-| -1              | Sustain (minor) zone      | Wall or limited scope (half area level)                         |
+| -3              | Sustain (minor) zone      | Repeats and reactively attacks creatures as they enter                          |
+| -2              | Sustain (minor) zone      | Repeats in the same area each turn                                   |
 | -2              | Damage over time          | "Immediately and next round" (drX-2)                            |
 | -1              | Escapable damage over time| Repeats in the same smallish area next turn (drX-1)             |
 | -2              | DoT condition (Move)      | "As a condition" with Move action removal (drX-2)               |

@@ -122,15 +122,15 @@ export function traps(): Tool[] {
       {
         name: 'Caltrops',
         rank: 2,
-        short_description: 'Deals $dr1l damage when stepped on',
+        short_description: 'Deals $dr2l damage when stepped on',
         description: `
           A caltrop is a four-pronged iron spike crafted so that one prong faces up no matter how the caltrop comes to rest.
           As a standard action, you can scatter caltrops on the ground in the hope that your enemies step on them or are at least forced to slow down to avoid them.
           One 2-pound bag of caltrops covers a 5-foot square.
-          They can generally be noticed with a \\glossterm{difficulty value} 8 Awareness check.
+          They can generally be noticed with a \\glossterm{difficulty value} 10 Awareness check.
 
           Whenever a creature moves into the area, unless the creature moves at half speed to avoid the danger, the caltrops make a $accuracy \\glossterm{reactive attack} vs. Armor against the creature.
-          \\hit $dr1l piercing damage.
+          \\hit $dr2l piercing damage.
 
           Caltrops may not be effective against creatures with an unusual anatomy.
           Multiple applications of caltrops in the same area have no additional effect.
@@ -138,16 +138,18 @@ export function traps(): Tool[] {
         upgrades: [
           {
             rank: 4,
-            short_description: 'Deals $dr3l damage when stepped on',
+            short_description: 'Deals $dr4l damage when stepped on',
             description: `
-              The accuracy increases to $accuracy, and the damage increases to $dr3l.
+              The accuracy increases to $accuracy, and the damage increases to $dr4l.
+              The DV to notice the caltrops also increases to 12.
             `,
           },
           {
             rank: 6,
-            short_description: 'Deals $dr5l damage when stepped on',
+            short_description: 'Deals $dr6l damage when stepped on',
             description: `
-              The accuracy increases to $accuracy, and the damage increases to $dr5l.
+              The accuracy increases to $accuracy, and the damage increases to $dr6l.
+              The DV to notice the caltrops also increases to 14.
             `,
           },
         ],

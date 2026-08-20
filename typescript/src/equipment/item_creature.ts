@@ -30,8 +30,8 @@ export function calculateMinimumLevel(rank: number): number {
 export function getItemCreature(rank: number): Creature {
   const level = calculateMinimumLevel(rank);
 
-  // Start with a 2 perception and increase it at each attribute scaling level.
-  const perception = 2 + Math.floor((level + 3) / 6);
+  // Start with a 4 perception and increase it at each attribute scaling level.
+  const perception = 4 + Math.floor((level + 3) / 6);
 
   let powerAttribute: number;
   switch (rank) {

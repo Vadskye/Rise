@@ -27,7 +27,7 @@ export const thaumaturgy: MysticSphere = {
       // -1dr in exchange for miss + cover/concealment
       attack: {
         hit: `
-          \\damagerankonelow.
+          \\damagerankone.
         `,
         halfOnMiss: true,
         targeting: `
@@ -49,7 +49,7 @@ export const thaumaturgy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damageranksixlow, and any \\glossterm{extra damage} is doubled.
+          \\damagerankfive, and any \\glossterm{extra damage} is doubled.
         `,
         halfOnMiss: true,
         targeting: `
@@ -71,7 +71,7 @@ export const thaumaturgy: MysticSphere = {
       // -1dr for miss effect and cover/concealment effect.
       attack: {
         hit: `
-          \\damagerankfourlow.
+          \\damagerankfour.
         `,
         halfOnMiss: true,
         targeting: `
@@ -93,7 +93,7 @@ export const thaumaturgy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankfivelow.
+          \\damagerankfour.
         `,
         halfOnMiss: true,
         targeting: `
@@ -442,7 +442,7 @@ export const thaumaturgy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damageranktwolow.
+          \\damagerankthree.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
@@ -459,7 +459,7 @@ export const thaumaturgy: MysticSphere = {
 
       functionsLike: {
         name: 'negate',
-        exceptThat: 'the damage increases to \\damagerankfivelow.',
+        exceptThat: 'the damage increases to \\damageranksix, and any \\glossterm{extra damage} is doubled.',
       },
       rank: 4,
       roles: ['burst'],
@@ -521,7 +521,7 @@ export const thaumaturgy: MysticSphere = {
       attack: {
         crit: null,
         hit: `
-          \\damagerankthreelow.
+          \\damagerankthree.
           You are also \\briefly \\empowered.
         `,
         targeting: `
@@ -540,7 +540,7 @@ export const thaumaturgy: MysticSphere = {
       attack: {
         crit: null,
         hit: `
-          \\damageranksixlow, and any \\glossterm{extra damage} is doubled.
+          \\damageranksix, and any \\glossterm{extra damage} is doubled.
           You are also \\briefly \\empowered.
         `,
         targeting: `
@@ -560,7 +560,7 @@ export const thaumaturgy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damageranksevenlow, and any \\glossterm{extra damage} is doubled.
+          \\damageranksix, and any \\glossterm{extra damage} is doubled.
         `,
         injury: `
           The target is \\briefly unable to use any \\magical active abilities.
@@ -576,14 +576,15 @@ export const thaumaturgy: MysticSphere = {
       roles: ['maim'],
     },
 
-    // +2dr for condition and delay. This uses a weird bonus scaling because it can fail.
+    // +2dr for condition and delay. Instead of +1dr, it deals extra damage based on the
+    // target's magical power just to make it more interesting.
     {
       name: 'Mystic Backlash',
 
       attack: {
         hit: `
           You weave a trap into the target's magic.
-          If it uses a \\magical ability as a standard action or \\glossterm{elite action}, it takes \\damagerankthreelow, plus \\glossterm{extra damage} equal to half the target's \\glossterm{magical power}.
+          If it uses a \\magical ability as a standard action or \\glossterm{elite action}, it takes \\damagerankthree, plus \\glossterm{extra damage} equal to half the target's \\glossterm{magical power}.
           After it takes damage in this way, this effect ends.
         `,
         targeting: `
@@ -603,7 +604,7 @@ export const thaumaturgy: MysticSphere = {
       functionsLike: {
         name: 'mystic backlash',
         exceptThat:
-          'the damage increases to \\damageranksixlow, and any \\glossterm{extra damage} is doubled.',
+          'the damage increases to \\damagerankssix, and any \\glossterm{extra damage} is doubled.',
       },
       rank: 5,
       roles: ['burn'],
@@ -619,7 +620,7 @@ export const thaumaturgy: MysticSphere = {
       // the delay.
       attack: {
         hit: `
-          \\damagerankthreelow.
+          \\damageranktwo.
         `,
         targeting: `
           When you cast this spell, magical energy visibly coalesces around you, causing you to radiate multicolored light as a torch.
@@ -637,7 +638,7 @@ export const thaumaturgy: MysticSphere = {
 
       functionsLike: {
         name: 'mystic convergence',
-        exceptThat: 'the damage increases to \\damageranksixlow.',
+        exceptThat: 'the damage increases to \\damageranksix.',
       },
       rank: 6,
       roles: ['clear', 'boon'],
