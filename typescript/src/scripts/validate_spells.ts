@@ -216,8 +216,9 @@ export function main(options: ValidationOptions): void {
 
   if (options.runDesign) {
     runDesignValidation();
-    runExtraDamageValidation();
-  } else if (options.runExtraDamage) {
+  }
+
+  if (options.runExtraDamage) {
     runExtraDamageValidation();
   }
 
