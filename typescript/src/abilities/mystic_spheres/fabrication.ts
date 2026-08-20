@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { BARRIER_COOLDOWN, BRIEF_PRONE } from '../constants';
+import { BARRIER_COOLDOWN, BRIEF_PRONE, BLEEDING_HALF } from '../constants';
 
 export const fabrication: MysticSphere = {
   name: 'Fabrication',
@@ -883,16 +883,20 @@ export const fabrication: MysticSphere = {
     {
       name: 'Shrapnel Grenade',
 
-      // Normal damage for a single action would be dr3.
+      // Normal damage for a single action would be dr3 = 11.5 damage.
+      // With initial + delayed damage it would be dr1, so 7 * 2 = 14 damage.
+      // Double dr2l is 8 * 2 = 16 damage, which is fine for the double delay of standard
+      // action + delayed damage.
       attack: {
         hit: `
-          \\damagerankthree.
-          In addition, the target \\briefly is \\deafened and \\glossterm{bleeds} for \\damagerankthree.
+          \\damageranktwolow.
+          In addition, the target \\briefly is \\deafened and \\glossterm{bleeds} for \\damageranktwolow.
         `,
-        halfOnMiss: true,
+        miss: BLEEDING_HALF,
         targeting: `
           When you cast this spell, you create an explosive sphere in your hand that lasts \\briefly.
           As a standard action, you can throw the sphere to make an attack vs. Armor and Reflex against everything within a \\tinyarea radius in \\shortrange.
+          If you do not throw the sphere, it disappears with no effect.
         `,
       },
       rank: 2,
@@ -905,28 +909,27 @@ export const fabrication: MysticSphere = {
 
       functionsLike: {
         name: 'shrapnel grenade',
-        exceptThat: 'the damage increases to \\damageranksix.',
+        exceptThat: 'the damage increases to \\damagerankfivelow.',
       },
       rank: 5,
       roles: ['clear'],
       scaling: 'damage',
       tags: ['Manifestation', 'Physical'],
     },
-    // TODO: may not be within sphere's narrative scope
-    // r3 area is drX-1. Add +1dr for double defense and +1dr for combo delay trigger.
+    // r3 area is drX-2. Add +1dr for double defense and +1dr for combo delay trigger.
     {
       name: 'Powderkeg',
 
       attack: {
         hit: `
-          \\damagerankfour.
+          \\damagerankthreelow.
         `,
         halfOnMiss: true,
         targeting: `
           You create a Small powderkeg on the ground within \\shortrange.
           The powderkeg has 10 hit points, and it automatically takes 5 damage whenever you sustain this spell.
           It explodes when it reaches 0 hit points, or when it takes any damage from a \\atFire attack.
-          When it explodes, make an attack vs. Armor and Reflex against everything within a \\smallarea radius of it.
+          When it explodes, make an attack vs. Armor and Reflex against everything within a \\medarea radius of it.
 
           When you cast this spell, any other powderkegs you have created with it are immediately \\glossterm{dismissed}.
         `,
@@ -943,7 +946,7 @@ export const fabrication: MysticSphere = {
 
       functionsLike: {
         name: 'powderkeg',
-        exceptThat: 'the damage increases to \\damagerankseven.',
+        exceptThat: 'the damage increases to \\damageranksixlow.',
       },
       rank: 6,
       roles: ['clear', 'hazard'],
@@ -1003,7 +1006,7 @@ export const fabrication: MysticSphere = {
       // +1dr for double defense, +1dr for short range
       attack: {
         hit: `
-          \\damageranksix, and any \\glossterm{extra damage} is doubled.
+          \\damagerankfivelow, and any \\glossterm{extra damage} is doubled.
         `,
         targeting: `
           Make an attack vs. Brawn and Reflex against one creature within \\shortrange.
@@ -1021,7 +1024,7 @@ export const fabrication: MysticSphere = {
       // +1dr for double defense, +1dr for short range
       attack: {
         hit: `
-          \\damageranknine, and any \\glossterm{extra damage} is doubled.
+          \\damagerankeightlow, and any \\glossterm{extra damage} is doubled.
         `,
         targeting: `
           Make an attack vs. Brawn and Reflex against one creature within \\shortrange.
