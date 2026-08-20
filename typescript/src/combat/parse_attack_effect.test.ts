@@ -1,16 +1,21 @@
 import tap from 'tap';
 import { StockCharacters } from '@src/character_sheet/stock_characters';
 import { parseAttackEffect } from './parse_attack_effect';
-import { getSpellByName } from '@src/abilities/mystic_spheres';
+import { Creature } from '@src/character_sheet/creature';
+import { clearAllCharacterSheets } from '@src/character_sheet/current_character_sheet';
 
 tap.test('parseAttackEffect', (t) => {
-  const stock = new StockCharacters();
-  stock.addAllCharacters();
-  // Magical power is 3
-  const creature = stock.getCharacter('Barbarian 5')!;
-  creature.setProperties({ is_monster: true });
-  // Trigger recalculation to ensure derived attributes are updated.
-  creature.getSheetForTesting().triggerRecalculation();
+  let creature: Creature;
+  let stock: StockCharacters;
+
+  t.beforeEach(() => {
+    clearAllCharacterSheets();
+    stock = new StockCharacters();
+    stock.addAllCharacters();
+    creature = stock.getCharacter('Barbarian 5')!;
+    creature.setProperties({ is_monster: true });
+    creature.getSheetForTesting().triggerRecalculation();
+  });
 
   t.test('Fireball', (t) => {
     creature.addSpell('Fireball');
@@ -202,7 +207,6 @@ tap.test('parseAttackEffect', (t) => {
   });
 
   t.test('Steady Slam (Maneuver)', (t) => {
-    creature.addManeuver('Steady Slam');
     const ability = creature.getActiveAbility('Steady Slam')!;
     const parsed = parseAttackEffect(ability, creature);
     t.ok(parsed, 'should parse Steady Slam');
