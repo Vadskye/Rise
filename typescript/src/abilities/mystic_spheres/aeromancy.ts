@@ -286,7 +286,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       },
       // narrative: '',
       rank: 2,
-      roles: ['flash'],
+      roles: ['maim'],
       scaling: 'accuracy',
       tags: ['Physical'],
     },
@@ -311,7 +311,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       },
       // narrative: '',
       rank: 6,
-      roles: ['flash'],
+      roles: ['maim'],
       scaling: 'accuracy',
       tags: ['Physical'],
     },
@@ -835,7 +835,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       `,
       // narrative: '',
       rank: 2,
-      roles: ['turtle'],
+      roles: ['boon'],
     },
 
     {

@@ -325,7 +325,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         When you are forcibly expelled from the stone, you take 4d8 bludgeoning damage and become \\dazed as a \\glossterm{condition}.
       `,
       rank: 3,
-      roles: ['narrative'],
+      roles: ['attune', 'narrative'],
       type: 'Sustain (attunable, standard)',
     },
 
@@ -603,7 +603,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         This does not allow you to breathe while inside the earth, so your ability to traverse long distances may be limited.
       `,
       rank: 3,
-      roles: ['narrative'],
+      roles: ['attune', 'narrative'],
       type: 'Sustain (attunable, standard)',
     },
 
@@ -615,7 +615,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         This does not allow you to breathe while inside the earth, so your ability to traverse long distances may be limited.
       `,
       rank: 6,
-      roles: ['attune'],
+      roles: ['attune', 'narrative'],
       type: 'Sustain (attunable, standard)',
     },
 
@@ -628,7 +628,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         This does not allow you to breathe while inside the earth or stone, so your ability to traverse long distances may be limited.
       `,
       rank: 5,
-      roles: ['narrative'],
+      roles: ['attune', 'narrative'],
       type: 'Sustain (attunable, standard)',
     },
 
@@ -823,7 +823,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         If the entire wall is directly supported by stone, its hit points are doubled.
       `,
       rank: 2,
-      roles: ['hazard'],
+      roles: ['barrier'],
       scaling: {
         4: "The wall's hit points increase to four times your power.",
         6: "The wall's hit points increase to five times your power.",
@@ -843,7 +843,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
           'the area increases to a \\largearealong wall within \\medrange, and its hit points increase to five times your \\glossterm{power}.',
       },
       rank: 6,
-      roles: ['hazard'],
+      roles: ['barrier'],
       tags: ['Barrier', 'Manifestation', 'Physical'],
       type: 'Sustain (attunable, minor)',
     },

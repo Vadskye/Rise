@@ -432,7 +432,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       rank: 3,
       // Although this technically affects an area, it will typically only hit one person,
       // so we classify it as burst instead of clear.
-      roles: ['attune', 'clear'],
+      roles: ['attune', 'burst'],
       scaling: 'damage',
       type: 'Attune',
     },
@@ -447,7 +447,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
           'the damage increases to \\damagerankeight in a storm, or \\damagerankseven normally. In addition, any \\glossterm{extra damage} is doubled.',
       },
       rank: 6,
-      roles: ['attune', 'clear'],
+      roles: ['attune', 'burst'],
       scaling: 'damage',
       type: 'Attune',
     },

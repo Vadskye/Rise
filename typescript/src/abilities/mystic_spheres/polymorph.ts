@@ -274,7 +274,7 @@ export const polymorph: MysticSphere = {
         \\end{raggeditemize}
       `,
       rank: 4,
-      roles: ['mobility'],
+      roles: ['attune', 'mobility'],
       tags: ['Physical'],
       type: 'Attune',
     },

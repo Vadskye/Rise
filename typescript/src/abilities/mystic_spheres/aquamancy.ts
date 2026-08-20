@@ -32,11 +32,11 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         The target is \\briefly healed by water.
         During this effect, the target can draw restorative power from water by drinking at least one ounce of clean water as a standard action.
         % dr3l
-        When it does, it regains 2d10 hit points and reduces its \\glossterm{stamina} by one.
+        When it does, it regains \\hprankthreelow and spends one \\glossterm{stamina}.
       `,
       rank: 1,
-      scaling: { special: 'The healing increases by 1d10 for each rank beyond 1.' },
-      roles: ['boon', 'healing', 'exertion'],
+      scaling: 'healing',
+      roles: ['healing', 'exertion'],
     },
     {
       name: 'Greater Restorative Water',
@@ -44,11 +44,11 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       usageTime: 'minor',
       functionsLike: {
         name: 'restorative water',
-        exceptThat: 'the healing increases to 7d8.',
+        exceptThat: 'the healing increases to \\hpranksixlow.',
       },
       rank: 4,
-      scaling: { special: 'The healing increases by 3d8 for each rank beyond 4.' },
-      roles: ['boon', 'healing', 'exertion'],
+      scaling: 'healing',
+      roles: ['healing', 'exertion'],
     },
     {
       name: 'Cleansing Water',
@@ -395,7 +395,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         `,
       },
       rank: 4,
-      roles: ['flash', 'hazard'],
+      roles: ['attune', 'flash', 'hazard'],
       scaling: 'damage',
       tags: ['Manifestation'],
       type: 'Sustain (attunable, standard)',
@@ -548,7 +548,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         `,
       },
       rank: 1,
-      roles: ['burst', 'softener'],
+      roles: ['burst', 'trip'],
       scaling: 'damage',
       tags: ['Manifestation'],
     },
@@ -571,7 +571,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         `,
       },
       rank: 4,
-      roles: ['burst', 'softener'],
+      roles: ['burst', 'trip'],
       scaling: 'damage',
       tags: ['Manifestation'],
     },
@@ -609,7 +609,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         5: 'You can choose to create a \\medarea radius instead.',
         7: 'You can choose to create a \\largearea radius instead.',
       },
-      roles: ['flash', 'hazard'],
+      roles: ['attune', 'flash', 'hazard'],
       tags: ['Manifestation'],
       type: 'Sustain (attunable, standard)',
     },
@@ -634,7 +634,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         In addition, the fog's area is \\glossterm{difficult terrain}.
       `,
       rank: 7,
-      roles: ['flash', 'hazard'],
+      roles: ['attune', 'flash', 'hazard'],
       tags: ['Manifestation'],
       type: 'Sustain (attunable, standard)',
     },

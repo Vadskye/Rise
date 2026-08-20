@@ -17,7 +17,7 @@ export const BRIEF_PRONE = 'The target \\briefly cannot stand up from prone.';
 
 export const ABILITY_ROLES = [
   'attune', // Buff that lasts as long as you stay attuned.
-  'barrier', // Non-damaging walls to limit mobility and set up choke points
+  'barrier', // Walls that deal damage on passage or fully block passage
   'boon', // Brief or one-turn combat-relevant effects on one or more allies, possibly including you. If the effect is not combat relevant, it should be 'narrative' instead.
   'burn', // Single-target damage over time
   'burst', // Single-target immediate damage

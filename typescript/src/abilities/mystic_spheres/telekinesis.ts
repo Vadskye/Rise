@@ -461,7 +461,7 @@ export const telekinesis: MysticSphere = {
         It has \\glossterm{hit points} equal to twice your \\glossterm{power}, and is destroyed when its hit points become negative.
       `,
       rank: 1,
-      roles: ['hazard'],
+      roles: ['barrier'],
       scaling: {
         3: "The wall's hit points increase to three times your power.",
         5: "The wall's hit points increase to four times your power.",
@@ -502,7 +502,7 @@ export const telekinesis: MysticSphere = {
           'the area increases to a \\largearealong wall within \\longrange, and its hit points increase to four times your \\glossterm{power}.',
       },
       rank: 6,
-      roles: ['hazard'],
+      roles: ['barrier'],
       tags: ['Barrier', 'Manifestation'],
       type: 'Sustain (attunable, minor)',
     },

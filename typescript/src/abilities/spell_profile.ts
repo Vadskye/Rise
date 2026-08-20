@@ -39,10 +39,12 @@ export interface SpellProfile {
   healingRank: number | null;
   areaGrows: boolean;
   halfOnMiss: boolean;
+  isSingleTarget: boolean;
   maxTargets: number;
   hasInjuryDamage: boolean;
   isSustainedMinor: boolean;
   isAttunable: boolean;
+  requiresAttunement: boolean;
   enemiesOnly: boolean;
   isRepeating: boolean;
   hasSelfHitPenalty: boolean;
@@ -188,7 +190,7 @@ export function parseArea(text: string): string {
   ) {
     return 'radius';
   }
-  if (lowercase.includes('line')) {
+  if (lowercase.includes('line') && !lowercase.includes('move in a straight line')) {
     return 'line';
   }
   if (lowercase.includes('wall')) {
@@ -589,6 +591,8 @@ export function buildSpellProfile(
     }
   }
 
+  const isSingleTarget = area === 'single' || area === 'vertical-line';
+
   const isLowPower = /\\damagerank\w+low/i.test(fullText);
   const appliedEffects = parseAppliedEffects(fullText);
   const accuracyModifier = parseAccuracyModifier(fullText);
@@ -611,7 +615,8 @@ export function buildSpellProfile(
       /sustain\s*\([^)]*minor[^)]*\)/i.test(fullText));
 
   const isAttunable =
-    (spell.type || '').toLowerCase().includes('ttun') || lowercase.includes('attune');
+    (spell.type || '').toLowerCase().includes('ttun') || lowercase.includes('attune')
+  const requiresAttunement = Boolean(spell.type && (spell.type.includes('Attune') || spell.type === 'Sustain (attunable, standard)'));
 
   const hasCost =
     !!spell.cost ||
@@ -720,6 +725,7 @@ export function buildSpellProfile(
     hasInjuryDamage,
     isSustainedMinor,
     isAttunable,
+    requiresAttunement,
     enemiesOnly,
     isRepeating,
     hasSelfHitPenalty,
@@ -729,5 +735,6 @@ export function buildSpellProfile(
     hasEscapableRepeat,
     isSelfEmpowered,
     isSelfMaximized,
+    isSingleTarget,
   };
 }

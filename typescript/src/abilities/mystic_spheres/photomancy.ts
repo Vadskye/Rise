@@ -101,7 +101,7 @@ export const photomancy: MysticSphere = {
         It does not inhibit the passage of objects or creatures.
       `,
       rank: 1,
-      roles: ['hazard'],
+      roles: ['barrier'],
       tags: ['Barrier', 'Visual'],
       type: 'Sustain (attunable, minor)',
     },
@@ -115,7 +115,7 @@ export const photomancy: MysticSphere = {
         exceptThat: 'it creates a \\largearealong wall of light within \\longrange.',
       },
       rank: 5,
-      roles: ['hazard'],
+      roles: ['barrier'],
       tags: ['Barrier', 'Visual'],
       type: 'Sustain (attunable, minor)',
     },

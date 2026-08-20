@@ -149,7 +149,7 @@ export const prayer: MysticSphere = {
         Each target \\briefly takes half damage from all sources.
       `,
       rank: 6,
-      roles: ['boon'],
+      roles: ['boon', 'turtle'],
     },
 
     // Any two maximized is 1.8 EA

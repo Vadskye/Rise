@@ -362,10 +362,10 @@ export const verdamancy: MysticSphere = {
         If it does, it regains \\hprankthreelow and reduces its \\glossterm{stamina} by one.
       `,
       rank: 1,
-      roles: ['attune'],
+      roles: ['attune', 'exertion', 'healing'],
       scaling: 'healing',
       tags: ['Manifestation'],
-      type: 'Attune',
+      type: 'Sustain (attunable, standard)',
     },
 
     {
@@ -377,10 +377,10 @@ export const verdamancy: MysticSphere = {
         If it does, it regains \\hpranksevenlow and reduces its \\glossterm{stamina} by one.
       `,
       rank: 4,
-      roles: ['attune'],
+      roles: ['attune', 'exertion', 'healing'],
       scaling: 'healing',
       tags: ['Manifestation'],
-      type: 'Attune',
+      type: 'Sustain (attunable, standard)',
     },
 
     {
@@ -509,7 +509,7 @@ export const verdamancy: MysticSphere = {
       },
 
       rank: 1,
-      roles: ['clear', 'hazard'],
+      roles: ['barrier'],
       scaling: 'damage',
       tags: ['Barrier', 'Manifestation', 'Physical'],
       type: 'Sustain (attunable, minor)',
@@ -527,7 +527,7 @@ export const verdamancy: MysticSphere = {
         `,
       },
       rank: 4,
-      roles: ['hazard'],
+      roles: ['barrier'],
       scaling: 'damage',
       tags: ['Barrier', 'Manifestation', 'Physical'],
       type: 'Sustain (attunable, minor)',

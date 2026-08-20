@@ -104,10 +104,7 @@ function isStasisDebuff(hit: string, effect: string): boolean {
   );
 }
 
-/**
- * Checks if the spell provides brief/1-turn debuffs.
- */
-function hasBriefDebuff(hit: string, effect: string): boolean {
+function hasDebuffWords(hit: string, effect: string): boolean {
   const combined = `${hit} ${effect}`.toLowerCase();
   const debuffKeywords = [
     'slowed',
@@ -121,6 +118,7 @@ function hasBriefDebuff(hit: string, effect: string): boolean {
     'grappled',
     'weakened',
     'vulnerable',
+    'concealment',
     'exposed',
     'dread',
     'shaken',
@@ -138,7 +136,7 @@ function hasBriefDebuff(hit: string, effect: string): boolean {
     'cannot move',
     "can't move",
     'fling',
-    'pushed',
+    'push',
   ];
 
   return debuffKeywords.some((kw) => combined.includes(kw));
@@ -171,12 +169,11 @@ export function inferExpectedRoles(
   const textLower = fullText.toLowerCase();
 
   const dealsDamage = profile.maxDamageRank !== null;
-  const requiresAttunement = profile.type && profile.type.includes('Attune');
 
   // 1. Attunement
-  if (requiresAttunement) {
+  if (profile.requiresAttunement) {
     expected.add('attune');
-    if (!attunementGrantsActiveAction(hit, targeting, effect)) {
+    if (!(attunementGrantsActiveAction(hit, targeting, effect) || profile.area)) {
       return expected;
     }
   }
@@ -221,10 +218,10 @@ export function inferExpectedRoles(
   }
 
   // 6. Hazard
-  const requiresStandardActionToSustain =
+  const requiresStandardActionToSustain = !profile.isAttunable && (
     (rawSpell.type || '').toLowerCase().includes('standard') ||
     textLower.includes('spend a standard action to sustain') ||
-    textLower.includes('sustain (standard)');
+    textLower.includes('sustain (standard)'));
 
   const isHazard =
     !requiresStandardActionToSustain &&
@@ -257,8 +254,7 @@ export function inferExpectedRoles(
   }
 
   // 8. Damage Roles (Snipe, Burst, Clear, Burn, Execute)
-  const isSingleTarget = profile.area === 'single' && profile.maxTargets <= 1;
-  const isMultiTarget = !isSingleTarget;
+  const isMultiTarget = !profile.isSingleTarget;
   const isLongOrDistantRange = profile.range === 'long' || profile.range === 'distant';
 
   if (dealsDamage) {
@@ -268,13 +264,13 @@ export function inferExpectedRoles(
     }
 
     // Burn (Single-target DoT)
-    if (isSingleTarget && profile.hasDoT) {
+    if (profile.isSingleTarget && profile.hasDoT) {
       expected.add('burn');
     }
 
     // Execute (Single-target injury damage)
     if (
-      isSingleTarget &&
+      profile.isSingleTarget &&
       (profile.isInjuryOnly ||
         (injury && /\\damagerank/i.test(injury)) ||
         textLower.includes('if the target is injured, it takes'))
@@ -288,7 +284,7 @@ export function inferExpectedRoles(
     }
 
     // Burst (Single-target immediate damage, not purely DoT, not injury-only, not long/distant snipe)
-    if (isSingleTarget && !profile.isInjuryOnly && !profile.hasDoT && !isLongOrDistantRange) {
+    if (profile.isSingleTarget && hit && !profile.isInjuryOnly && !profile.hasDoT && !isLongOrDistantRange) {
       expected.add('burst');
     }
   }
@@ -299,24 +295,24 @@ export function inferExpectedRoles(
   const isCondition = hasPersistentCondition(hit, effect);
   // The spell must actually have a hit effect to inflict debuffs. Otherwise, it might be
   // an ally-only boon.
-  const hasDebuff = hit && (hasBriefDebuff(hit, effect) || isCondition || isStasis || isInjuryDebuffEffect);
+  const hasDebuff = hit && (hasDebuffWords(hit, effect) || isCondition || isStasis || isInjuryDebuffEffect);
 
   if (hasDebuff) {
-    if (isStasis && isSingleTarget) {
+    if (isStasis && profile.isSingleTarget) {
       expected.add('stasis');
     } else if (isCondition && !isInjuryDebuffEffect) {
       // Any persistent condition on non-injured targets is softener
       expected.add('softener');
-    } else if (isMultiTarget) {
-      // Brief multi-target debuff is flash
-      expected.add('flash');
-    } else if (isSingleTarget && !isLongOrDistantRange && !dealsDamage) {
+    } else if (profile.isSingleTarget && !isLongOrDistantRange && !dealsDamage) {
       // Brief single-target debuff is trip
       expected.add('trip');
-    } else if (isSingleTarget && hasBriefDebuff(hit, effect) && !isCondition) {
+    } else if (profile.isSingleTarget && hasDebuffWords(hit, effect) && !isCondition) {
       expected.add('trip');
     } else if (isInjuryDebuffEffect && !dealsDamage) {
       expected.add('maim');
+    } else if (isMultiTarget) {
+      // Brief multi-target debuff is flash
+      expected.add('flash');
     }
   }
 
@@ -327,7 +323,7 @@ export function inferExpectedRoles(
     ) ||
     /gain\s+(?:a\s+)?\+\d+\s+bonus to (?:your\s+)?defenses/i.test(textLower) ||
     /takes?\s+half\s+damage/i.test(textLower);
-  if (isTurtle && !requiresAttunement) {
+  if (isTurtle && !profile.requiresAttunement) {
     expected.add('turtle');
   }
 
@@ -377,9 +373,10 @@ export function inferExpectedRoles(
   if (profile.hasAttack) {
     if (
       !/move the ball/.test(textLower) && (
-      /move (?:towards|adjacent|through)/i.test(textLower) ||
-      /leap.*attack/i.test(textLower) ||
-      /charge/i.test(textLower))
+        /move (?:towards|adjacent|through)/i.test(textLower) ||
+        /leap.*attack/i.test(textLower) ||
+        /move in a straight line/i.test(textLower) ||
+        /charge/i.test(textLower))
     ) {
       expected.add('dive');
     }
@@ -410,6 +407,11 @@ export function inferExpectedRoles(
     expected.add('narrative');
   }
 
+  // 17. Payoff
+  if (textLower.includes('during your last turn')) {
+    expected.add('payoff');
+  }
+
   return expected;
 }
 
@@ -428,7 +430,7 @@ export function validateSpellRoles(spheres: MysticSphere[]): RoleValidationIssue
       const { hit, targeting, effect } = getNormalSpellText(spell);
 
       // Check Attunement rules
-      if (profile.type === 'Attune') {
+      if (profile.requiresAttunement) {
         const grantsAction = attunementGrantsActiveAction(hit, targeting, effect);
         if (!grantsAction) {
           for (const actualRole of actualSet) {

@@ -464,7 +464,7 @@ export const umbramancy: MysticSphere = {
         It does not inhibit the passage of objects or creatures.
       `,
       rank: 2,
-      roles: ['hazard'],
+      roles: ['barrier'],
       scaling: {
         4: 'You can choose to create a \\medarealong wall instead.',
         6: 'You can choose to create a \\largearealong wall instead.',
@@ -661,7 +661,6 @@ export const umbramancy: MysticSphere = {
       `,
       rank: 4,
       roles: ['boon'],
-      type: 'Attune',
     },
 
     // All focused is 1.4 EA. Since it doesn't affect you, call it 1.2 EA.
@@ -672,7 +671,6 @@ export const umbramancy: MysticSphere = {
       `,
       rank: 7,
       roles: ['boon'],
-      type: 'Attune',
     },
 
     {

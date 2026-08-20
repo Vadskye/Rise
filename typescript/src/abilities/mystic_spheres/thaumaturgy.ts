@@ -237,7 +237,7 @@ export const thaumaturgy: MysticSphere = {
         After you enhance a spell in this way, this ability is \\glossterm{dismissed}.
       `,
       rank: 1,
-      roles: ['attune'],
+      roles: ['attune', 'focus'],
       type: 'Attune',
     },
 
@@ -387,7 +387,7 @@ export const thaumaturgy: MysticSphere = {
         An observer who gets a \\glossterm{critical success} to identify the spell's effects can identify the true spell that you are casting (see \\pcref{Identify Magical Effect}).
       `,
       rank: 3,
-      roles: ['narrative'],
+      roles: ['attune', 'narrative'],
       type: 'Attune',
     },
 
@@ -428,7 +428,7 @@ export const thaumaturgy: MysticSphere = {
         Objects, creatures, and \\glossterm{mundane} abilities can pass through the wall freely, but any \\magical ability treats the wall as an impassable barrier.
       `,
       rank: 5,
-      roles: ['hazard'],
+      roles: ['barrier'],
       scaling: {
         7: "The wall's hit points increase to four times your power.",
       },
@@ -592,7 +592,7 @@ export const thaumaturgy: MysticSphere = {
         `,
       },
       rank: 2,
-      roles: ['burn'],
+      roles: ['burst'],
       scaling: 'damage',
       tags: ['Subtle'],
       type: 'Sustain (minor)',
@@ -607,7 +607,7 @@ export const thaumaturgy: MysticSphere = {
           'the damage increases to \\damagerankssix, and any \\glossterm{extra damage} is doubled.',
       },
       rank: 5,
-      roles: ['burn'],
+      roles: ['burst'],
       tags: ['Subtle'],
       type: 'Sustain (minor)',
     },
