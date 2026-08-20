@@ -2454,7 +2454,6 @@ function handleTrainedSkills() {
           let untrainedFromRootSkill = null;
           for (const skillWithSubskill of SKILLS_WITH_SUBSKILLS) {
             if (trainedSkill && trainedSkill.startsWith(skillWithSubskill)) {
-              console.log('trainedSkill', trainedSkill);
               const modifierAttrName = trainedSkill.startsWith('profession')
                 ? 'subskill_modifier'
                 : trainedSkill;

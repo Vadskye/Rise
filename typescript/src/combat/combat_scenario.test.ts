@@ -208,7 +208,7 @@ t.test('Elite monsters hit multiple targets with area attack', (t) => {
 
   // If no area attack, it takes 3 turns to kill 3 targets (1 target/turn).
   // With area attack, it kills them all in one turn.
-  const result = scenario.simulate(1, true);
+  const result = scenario.simulate(1);
   assertExpectedTurnsCount(t, result, 1.0);
   assertExpectedWinRate(t, result, 'Elite Team', 100);
   t.end();
