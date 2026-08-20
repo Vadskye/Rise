@@ -881,3 +881,8 @@ export function validateDoubleExtraDamage(spheres: MysticSphere[]): ExtraDamageV
   return issues;
 }
 
+export {
+  validateSpellRoles,
+  inferExpectedRoles,
+  RoleValidationIssue,
+} from './validate_roles';

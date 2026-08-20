@@ -3,8 +3,10 @@ import {
   validateSpells,
   validateSpellDesignGuidelines,
   validateDoubleExtraDamage,
+  validateSpellRoles,
   DamagingSpellDesignIssue,
   ExtraDamageValidationIssue,
+  RoleValidationIssue,
   ValidationIssue,
 } from '@src/abilities/validate_spells';
 import { DamageCalculationBreakdown } from '@src/abilities/expected_damage_rank';
@@ -14,6 +16,7 @@ interface ValidationOptions {
   runDesign: boolean;
   runComparative: boolean;
   runExtraDamage: boolean;
+  runRoles: boolean;
   showApproximate: boolean;
 }
 
@@ -21,16 +24,17 @@ function parseCommandLineArgs(): ValidationOptions {
   const runComparative = process.argv.includes('--comparative');
   const runDesign = process.argv.includes('--design');
   const runExtraDamage = process.argv.includes('--extra-damage');
+  const runRoles = process.argv.includes('--roles');
   const showApproximate = process.argv.includes('--show-approximate');
 
-  if (!runComparative && !runDesign && !runExtraDamage) {
+  if (!runComparative && !runDesign && !runExtraDamage && !runRoles) {
     console.error(
-      'Error: At least one validation flag must be provided: --design, --comparative, or --extra-damage.',
+      'Error: At least one validation flag must be provided: --design, --comparative, --extra-damage, or --roles.',
     );
     process.exit(1);
   }
 
-  return { runDesign, runComparative, runExtraDamage, showApproximate };
+  return { runDesign, runComparative, runExtraDamage, runRoles, showApproximate };
 }
 
 function printDamageBreakdown(breakdown: DamageCalculationBreakdown): void {
@@ -182,6 +186,44 @@ function runExtraDamageValidation(): void {
   );
 }
 
+function printRoleIssuesGroup(title: string, issues: RoleValidationIssue[]): void {
+  if (issues.length === 0) {
+    return;
+  }
+
+  console.log(`=== ${title} (${issues.length}) ===`);
+  for (const issue of issues) {
+    console.log(`- ${issue.message}`);
+  }
+  console.log();
+}
+
+function runRoleValidation(): void {
+  console.log('========================================================================');
+  console.log('PART 4: SPELL ROLE VALIDATION (constants.ts)');
+  console.log('========================================================================\n');
+
+  const issues = validateSpellRoles(mysticSpheres);
+
+  if (issues.length === 0) {
+    console.log('All spells have valid and complete roles!\n');
+    return;
+  }
+
+  console.log(`Found ${issues.length} role validation issues:\n`);
+
+  const missing = issues.filter((i) => i.type === 'missing_role');
+  const unexpected = issues.filter((i) => i.type === 'unexpected_role');
+  const invalidAttunement = issues.filter((i) => i.type === 'invalid_attunement_role');
+
+  printRoleIssuesGroup('Missing Roles (Spells missing expected roles based on mechanics)', missing);
+  printRoleIssuesGroup('Unexpected Roles (Spells with roles not supported by mechanics)', unexpected);
+  printRoleIssuesGroup(
+    'Invalid Attunement Roles (Attunements with secondary roles without active actions)',
+    invalidAttunement,
+  );
+}
+
 function main(): void {
   const options = parseCommandLineArgs();
 
@@ -196,6 +238,10 @@ function main(): void {
 
   if (options.runComparative) {
     runComparativeValidation({ showApproximate: options.showApproximate });
+  }
+
+  if (options.runRoles) {
+    runRoleValidation();
   }
 }
 
