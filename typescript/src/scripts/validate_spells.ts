@@ -10,31 +10,15 @@ import {
   ValidationIssue,
 } from '@src/abilities/validate_spells';
 import { DamageCalculationBreakdown } from '@src/abilities/expected_damage_rank';
+import cli from 'commander';
 import _ from 'lodash';
 
-interface ValidationOptions {
-  runDesign: boolean;
-  runComparative: boolean;
-  runExtraDamage: boolean;
-  runRoles: boolean;
-  showApproximate: boolean;
-}
-
-function parseCommandLineArgs(): ValidationOptions {
-  const runComparative = process.argv.includes('--comparative');
-  const runDesign = process.argv.includes('--design');
-  const runExtraDamage = process.argv.includes('--extra-damage');
-  const runRoles = process.argv.includes('--roles');
-  const showApproximate = process.argv.includes('--show-approximate');
-
-  if (!runComparative && !runDesign && !runExtraDamage && !runRoles) {
-    console.error(
-      'Error: At least one validation flag must be provided: --design, --comparative, --extra-damage, or --roles.',
-    );
-    process.exit(1);
-  }
-
-  return { runDesign, runComparative, runExtraDamage, runRoles, showApproximate };
+export interface ValidationOptions {
+  runDesign?: boolean;
+  runComparative?: boolean;
+  runExtraDamage?: boolean;
+  runRoles?: boolean;
+  showApproximate?: boolean;
 }
 
 function printDamageBreakdown(breakdown: DamageCalculationBreakdown): void {
@@ -217,16 +201,17 @@ function runRoleValidation(): void {
   const invalidAttunement = issues.filter((i) => i.type === 'invalid_attunement_role');
 
   printRoleIssuesGroup('Missing Roles (Spells missing expected roles based on mechanics)', missing);
-  printRoleIssuesGroup('Unexpected Roles (Spells with roles not supported by mechanics)', unexpected);
+  printRoleIssuesGroup(
+    'Unexpected Roles (Spells with roles not supported by mechanics)',
+    unexpected,
+  );
   printRoleIssuesGroup(
     'Invalid Attunement Roles (Attunements with secondary roles without active actions)',
     invalidAttunement,
   );
 }
 
-function main(): void {
-  const options = parseCommandLineArgs();
-
+export function main(options: ValidationOptions): void {
   console.log('Running Spell Validation on all Mystic Spheres...\n');
 
   if (options.runDesign) {
@@ -237,7 +222,7 @@ function main(): void {
   }
 
   if (options.runComparative) {
-    runComparativeValidation({ showApproximate: options.showApproximate });
+    runComparativeValidation({ showApproximate: Boolean(options.showApproximate) });
   }
 
   if (options.runRoles) {
@@ -245,5 +230,39 @@ function main(): void {
   }
 }
 
-main();
+if (require.main === module) {
+  cli
+    .name('validate_spells')
+    .description('Validate spells across mystic spheres')
+    .option('-d, --design', 'Validate spell design guidelines (expected damage vs formulas)')
+    .option('-c, --comparative', 'Validate cross-spell comparative balance and redundancies')
+    .option('-e, --extra-damage', 'Validate double extra damage guidelines')
+    .option('-r, --roles', 'Validate spell roles')
+    .option('-a, --show-approximate', 'Show approximate matches in comparative validation')
+    .option('--all', 'Run all validations')
+    .parse(process.argv);
 
+  const opts = cli.opts();
+  const runAll = Boolean(opts.all);
+  const runDesign = runAll || Boolean(opts.design);
+  const runComparative = runAll || Boolean(opts.comparative);
+  const runExtraDamage = runAll || Boolean(opts.extraDamage);
+  const runRoles = runAll || Boolean(opts.roles);
+  const showApproximate = Boolean(opts.showApproximate);
+
+  if (!runDesign && !runComparative && !runExtraDamage && !runRoles) {
+    console.error(
+      'Error: At least one validation flag must be provided: --design, --comparative, --extra-damage, --roles, or --all.\n',
+    );
+    cli.outputHelp();
+    process.exit(1);
+  }
+
+  main({
+    runDesign,
+    runComparative,
+    runExtraDamage,
+    runRoles,
+    showApproximate,
+  });
+}
