@@ -9,7 +9,8 @@ dist-test
 
 src/**/*.js
 src/**/*.js.map
-dist/
+dist/**/*.js
+dist-test/**/*.js
 src/monsters/individual_monsters/monsters_from_ui.ts
 monster_ui/monsters_from_ui.test.*.json
 src/monsters/individual_monsters/monsters_from_ui.test.*.ts

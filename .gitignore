@@ -234,6 +234,7 @@ html_book/generated
 typescript/src/**/*.js
 typescript/src/**/*.js.map
 typescript/dist/
+typescript/dist-test/
 typescript/src/monsters/individual_monsters/monsters_from_ui.ts
 typescript/monster_ui/monsters_from_ui.test.*.json
 typescript/src/monsters/individual_monsters/monsters_from_ui.test.*.ts
