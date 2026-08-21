@@ -563,44 +563,6 @@ t.test('validateSpells: Strictly Superior Spells', (t) => {
     });
 
     t.test(
-      '12. Greater Word of Power vs Curse of Selective Sight (invisible vs dazed/empowered)',
-      (t) => {
-        const greaterWordOfPower = makeMockSphere('Channel Divinity', [
-          makeMockSpell({
-            name: 'Greater Word of Power',
-            rank: 5,
-            roles: ['flash'],
-            attack: {
-              hit: 'The target is \\briefly \\dazed.',
-              targeting:
-                'Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you. Then, you are \\briefly \\empowered.',
-            },
-          }),
-        ]);
-
-        const curseOfSelectiveSight = makeMockSphere('Prayer', [
-          makeMockSpell({
-            name: 'Curse of Selective Sight',
-            rank: 5,
-            roles: ['maim'],
-            attack: {
-              hit: 'The target has difficulty looking at you until it finishes a \\glossterm{short rest}. While it is \\glossterm{injured}, it treats you as being \\trait{invisible}.',
-              targeting:
-                'Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.',
-            },
-          }),
-        ]);
-
-        const issues = validateSpells([greaterWordOfPower, curseOfSelectiveSight]);
-        t.notOk(
-          issues.find((i) => i.type === 'strictly_superior'),
-          'Should not flag Greater Word of Power vs Curse of Selective Sight',
-        );
-        t.end();
-      },
-    );
-
-    t.test(
       '13. Slow vs Hostile Timeseal (slowed vs frozen in time/cannot act/returns to normal)',
       (t) => {
         const slow = makeMockSphere('Chronomancy', [

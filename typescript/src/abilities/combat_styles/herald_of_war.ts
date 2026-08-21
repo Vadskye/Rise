@@ -25,10 +25,12 @@ export const heraldOfWar: CombatStyle = {
     {
       name: 'Cry of Rage+',
 
+      // Primed + empowered is 1 EA. Drop a rank for enrage, which is a little silly but
+      // whatever.
       effect: `
         Whenever you use or sustain this maneuver, you are \\briefly \\primed, \\empowered, and \\enraged.
       `,
-      rank: 5,
+      rank: 3,
       roles: ['focus'],
       tags: ['Auditory'],
       type: 'Sustain (standard)',

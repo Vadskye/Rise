@@ -13,7 +13,7 @@ By EA:
   Accuracy (+4)  & 0.6  & 0.9  & 1.5     & 2.1 \\
   Braced         & 0.5  & 0.8  & 1.2     & 1.6 \\
   Cover          & 0.5  & 0.8  & 1.2     & 1.6 \\
-  Empowered      & 0.3  & 0.5  & 0.7     & 1.0 \\
+  Empowered      & 0.2  & 0.3  & 0.5     & 0.7 \\
   Extra damage   & 0.3  & 0.5  & 0.7     & 1.0 \\
   Focused        & 0.4  & 0.6  & 1.0     & 1.4 \\
   Fortified      & 0.3  & 0.5  & 0.7     & 1.0 \\
@@ -53,6 +53,12 @@ In short, that means:
 - Single ally is 1.5x EA
 - "Any two" is 2.5x EA
 - "Everyone" is 3.5x EA
+
+### Calculating Defensive Buffs
+
+Assume that you're targeted 33% of the time normally. Effects that only protect against targeted attacks are assumed to work 25% of the time. 
+
+## Specific Buffs
 
 ### 20% failure chance:
 

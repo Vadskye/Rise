@@ -238,7 +238,7 @@ export function covenantKeeper(): RankAbility[] {
           \\abilitytags \\atSoul
           \\abilitycost See text.
           \\rankline
-          You are \\glossterm{briefly} \\empowered.
+          You are \\glossterm{briefly} \\empowered and \\fortified.
           Then, you may remove one of your \\glossterm{vital wounds}.
           If you remove a vital wound in this way, you reduce your \\glossterm{stamina} by two.
           This effect \\glossterm{repeats} at the end of your next turn.

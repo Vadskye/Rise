@@ -189,9 +189,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
     {
       name: 'Windsnipe',
 
-      // Rank 4 Spell
-      // Range: Distant (mod -2)
-      // Result: 4 - 2 = dr2
+      // This gets a free Keen because it's so lame to do low damage, even at very long range.
       attack: {
         hit: `
           \\damageranktwo.
@@ -202,14 +200,11 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       rank: 4,
       roles: ['snipe'],
       scaling: 'damage',
-      tags: ['Physical'],
+      tags: ['Keen', 'Physical'],
     },
     {
       name: 'Mighty Windsnipe',
 
-      // Rank 7 Spell
-      // Range: Distant (mod -2)
-      // Result: 7 - 2 = dr5
       attack: {
         hit: `
           \\damagerankfive, and any \\glossterm{extra damage} is doubled.
@@ -220,7 +215,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       rank: 7,
       roles: ['snipe'],
       scaling: 'damage',
-      tags: ['Physical'],
+      tags: ['Keen', 'Physical'],
     },
     {
       name: 'Windseal',

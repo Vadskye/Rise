@@ -587,7 +587,7 @@ export const telekinesis: MysticSphere = {
       type: 'Attune (deep)',
     },
 
-    // Ally shielded is 0.6 EA. Ally empowered is 0.6 EA. The damage requirement means we
+    // Ally shielded is 0.6 EA. Ally empowered is 0.2 EA. The damage requirement means we
     // can try it at rank 5.
     {
       name: 'Kinetic Shield',
@@ -597,7 +597,20 @@ export const telekinesis: MysticSphere = {
         The target is \\briefly \\shielded.
         During the effect, if the target takes damage, it is \\briefly \\empowered.
       `,
-      rank: 5,
+      rank: 2,
+      roles: ['boon'],
+    },
+
+    // 0.9 + 0.2 EA
+    {
+      name: 'Shared Kinetic Shield',
+
+      effect: `
+        Choose up to one \\glossterm{ally} within \\medrange.
+        You and the target are both \\briefly \\shielded
+        During the effect, if you or the target takes damage, you are \\briefly \\empowered.
+      `,
+      rank: 2,
       roles: ['boon'],
     },
 

@@ -103,6 +103,7 @@ export function potions(): Tool[] {
       rank: 0,
       attunement: 'Unrestricted',
       short_description: 'Grants power and fortification',
+      // 0.2 + 0.4 EA
       description: `
         When you drink this \\glossterm{potion}, you are \\glossterm{briefly} \\empowered and \\fortified.
       `,
@@ -112,6 +113,7 @@ export function potions(): Tool[] {
       rank: 0,
       attunement: 'Unrestricted',
       short_description: 'Grants focus',
+      // 0.2 + 0.4 EA
       description: `
         When you drink this \\glossterm{potion}, you are \\glossterm{briefly} \\empowered and \\focused.
       `,
@@ -145,9 +147,11 @@ export function potions(): Tool[] {
     }),
     createPotion({
       name: 'Potion of Pure Power',
-      rank: 5,
+      // Rank is a bit too high, but want to differentiate from the lesser empower potions
+      rank: 2,
       attunement: 'Unrestricted',
       short_description: 'Grants power and maximum damage',
+      // 0.7 + 0.2 EA
       description: `
         When you drink this \\glossterm{potion}, you are \\glossterm{briefly} \\empowered and \\maximized.
       `,
