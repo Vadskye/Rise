@@ -905,7 +905,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         Pushing the target down a steep slope or through water costs half the normal movement cost, but pushing it up a steep slope costs twice the normal movement cost.
       `,
       rank: 1,
-      roles: ['mobility'],
+      roles: ['mobility', 'narrative'],
       tags: ['Manifestation'],
     },
     {
@@ -916,7 +916,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         exceptThat: 'the maximum push distance increases to 60 feet.',
       },
       rank: 4,
-      roles: ['mobility'],
+      roles: ['mobility', 'narrative'],
       tags: ['Manifestation'],
     },
     {
