@@ -139,6 +139,7 @@ export interface SpellProfile {
   hasEscapableRepeat: boolean;
   isSelfEmpowered: boolean;
   isSelfMaximized: boolean;
+  isStrike: boolean;
 }
 
 export const RANK_WORDS: Record<string, number> = {
@@ -213,14 +214,55 @@ export function parseDefenses(text: string): DefenseType[] {
   return matched.sort();
 }
 
-export function parseRange(text: string): SpellRange {
+/**
+ * Detects whether an ability involves making a strike.
+ */
+export function isStrikeSpell(text: string): boolean {
+  return (
+    /make a (?:melee\s+|ranged\s+)?(?:\\glossterm\{)?strike/i.test(text) &&
+    !/whenever you make a/i.test(text)
+  );
+}
+
+/**
+ * Detects whether an ability targets all adjacent creatures / area around the user.
+ */
+export function isAdjacentArea(text: string): boolean {
   const lowercase = text.toLowerCase();
+  return (
+    lowercase.includes('adjacent to you') ||
+    /(?:all|each|everything|enemies|creatures)\s+adjacent\s+to\s+you/.test(lowercase) ||
+    /(?:yourself\s+and\s+all)\s+.*?adjacent/.test(lowercase) ||
+    /against\s+all\s+.*?adjacent/.test(lowercase)
+  );
+}
+
+/**
+ * Strips burning condition and debuff clauses from text.
+ */
+export function stripBurnClauses(text: string): string {
+  return text
+    .replace(
+      /(?:\\debuff\{)?burns?\}?\s+(?:for\s+[^.]*?)?as\s+a\s+(?:\\glossterm\{)?conditions?\}?/gi,
+      '',
+    )
+    .replace(/\\debuff\{burns?\}/gi, '');
+}
+
+/**
+ * Regex for detecting delayed damage applied at the end of a next turn.
+ */
+export const DELAYED_DAMAGE_REGEX =
+  /at the end of (?:its|your|each) next turn.*?(?:takes?|takes \\damagerank|\d+d\d+ damage)/i;
+
+export function parseRange(text: string): SpellRange {
+  const lowercase = text.toLowerCase().replaceAll('\n', ' ');
   if (
     lowercase.includes('touch') ||
     lowercase.includes('\\glossterm{touch}') ||
     lowercase.includes('adjacent creature') ||
     lowercase.includes('adjacent target') ||
-    /against\s+(?:something|anything|one|a|the|target|creature|an)\b.*adjacent/i.test(lowercase)
+    /against\s+(?:something|anything|one|a|the|target|creature|an)\b.*?adjacent/i.test(lowercase)
   ) {
     return 'melee';
   }
@@ -233,16 +275,28 @@ export function parseRange(text: string): SpellRange {
   ) {
     return 'self';
   }
-  if (lowercase.includes('\\distrange') && !/distrange of you.*disappears/.test(lowercase)) {
+  if (
+    lowercase.includes('\\distrange') &&
+    !/\\?distrange(?:\s+of\s+you)?.*?disappears/i.test(lowercase)
+  ) {
     return 'distant';
   }
-  if (lowercase.includes('\\longrange') && !/longrange of you.*disappears/.test(lowercase)) {
+  if (
+    lowercase.includes('\\longrange') &&
+    !/\\?longrange(?:\s+of\s+you)?.*?disappears/i.test(lowercase)
+  ) {
     return 'long';
   }
-  if (lowercase.includes('\\medrange') && !/medrange of you.*disappears/.test(lowercase)) {
+  if (
+    lowercase.includes('\\medrange') &&
+    !/\\?medrange(?:\s+of\s+you)?.*?disappears/i.test(lowercase)
+  ) {
     return 'medium';
   }
-  if (lowercase.includes('\\shortrange') && !/shortrange of you.*disappears/.test(lowercase)) {
+  if (
+    lowercase.includes('\\shortrange') &&
+    !/\\?shortrange(?:\s+of\s+you)?.*?disappears/i.test(lowercase)
+  ) {
     return 'short';
   }
   return 'none';
@@ -260,7 +314,7 @@ export function parseArea(text: string): SpellArea {
     lowercase.includes('radius') ||
     lowercase.includes('emanation') ||
     lowercase.includes('zone') ||
-    lowercase.includes('adjacent to you')
+    isAdjacentArea(text)
   ) {
     return 'radius';
   }
@@ -284,7 +338,7 @@ export function parseArea(text: string): SpellArea {
 // though we should really handle that explicitly.
 export function parseAreaSize(text: string): AreaSize {
   const lowercase = text.toLowerCase();
-  if (lowercase.includes('\\tinyarea') || lowercase.includes('adjacent to you')) {
+  if (lowercase.includes('\\tinyarea') || isAdjacentArea(text)) {
     return 'tiny';
   }
   if (lowercase.includes('\\smallarea')) {
@@ -528,7 +582,6 @@ export function resolveSpell<T extends SpellDefinition | CantripDefinition>(
 
   let effect: string | undefined = spell.effect ?? resolvedBase.effect;
 
-  const exceptThat = spell.functionsLike.exceptThat || '';
   const isMass = spell.functionsLike.mass === true;
   const isOneYear = spell.functionsLike.oneYear === true;
 
@@ -701,12 +754,20 @@ export function buildSpellProfile(
     /you (?:are|become)\s+(?:\\briefly\s+)?\\maximized/i.test(fullText) ||
     /the target is \\maximized/i.test(fullText);
 
+  const isStrike = isStrikeSpell(fullText);
+  const isDelayedStrike = isStrike && DELAYED_DAMAGE_REGEX.test(fullText);
+  const textBeforeDelayed = hit.split(/at the end of (?:its|your|each) next turn/i)[0];
+  const hasImmediateDamage =
+    /\\damagerank\w+/i.test(textBeforeDelayed) || (isStrike && !isDelayedStrike);
+  const isDelayedDamage = DELAYED_DAMAGE_REGEX.test(fullText) && !hasImmediateDamage;
+
   const hasDoT =
     lowercase.includes('burn') ||
     lowercase.includes('bleed') ||
     lowercase.includes('corrode') ||
     lowercase.includes('poison') ||
-    /subsequent turns.*take.*damage/.test(lowercase);
+    /subsequent turns.*take.*damage/.test(lowercase) ||
+    isDelayedDamage;
 
   const exceptDr = exceptThat ? parseDamageRank(exceptThat) : null;
   const maxDamageRank = exceptDr ?? parseDamageRank(fullText);
@@ -741,7 +802,8 @@ export function buildSpellProfile(
     isDelayed,
     hasCost,
     roles,
-    hasAttack: !!spell.attack,
+    hasAttack: Boolean(spell.attack || isStrike),
+    isStrike,
     type: spell.type,
     healingRank,
     areaGrows,

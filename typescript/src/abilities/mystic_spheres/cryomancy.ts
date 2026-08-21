@@ -631,7 +631,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         \\injury The target is \\briefly \\slowed.
       `,
       rank: 5,
-      roles: ['burst'],
+      roles: ['burst', 'maim'],
       scaling: 'accuracy',
       tags: [],
     },
@@ -701,7 +701,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         \\hit The target is \\briefly \\slowed.
       `,
       rank: 7,
-      roles: ['burst', 'maim', 'trip'],
+      roles: ['burst', 'trip'],
       scaling: 'accuracy',
       tags: [],
     },

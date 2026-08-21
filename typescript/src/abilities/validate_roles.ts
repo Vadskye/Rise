@@ -16,7 +16,13 @@
 import { AbilityRole } from './constants';
 import { SpellDefinition } from './active_abilities';
 import { MysticSphere, SphereName } from './mystic_spheres';
-import { buildSpellProfile, resolveSpell, SpellProfile } from './spell_profile';
+import {
+  buildSpellProfile,
+  isStrikeSpell,
+  resolveSpell,
+  SpellProfile,
+  stripBurnClauses,
+} from './spell_profile';
 
 export interface RoleValidationIssue {
   type: 'missing_role' | 'unexpected_role' | 'invalid_attunement_role';
@@ -42,29 +48,47 @@ function getNormalSpellText(spell: SpellDefinition): {
   fullText: string;
 } {
   const resolved = resolveSpell(spell);
-  const hit = resolved.attack?.hit || '';
-  const targeting = resolved.attack?.targeting || '';
-  const injury = resolved.attack?.injury || '';
-  const effect = resolved.effect || '';
   const exceptThat = spell.functionsLike?.exceptThat || '';
-  // Replace line breaks to make regexing across lines easier
+  let hit = resolved.attack?.hit || '';
+  const targeting = resolved.attack?.targeting || '';
+  let injury = resolved.attack?.injury || '';
+  const effect = resolved.effect || '';
+
+  if (exceptThat.includes('instead of briefly')) {
+    hit = hit.replace(/\\briefly\s+/gi, '');
+  }
+
+  if (isStrikeSpell(effect) && !hit) {
+    if (effect.includes('\\hit')) {
+      hit = effect.split('\\hit')[1].split('\\injury')[0];
+    }
+    if (effect.includes('\\injury')) {
+      injury = effect.split('\\injury')[1];
+    }
+  }
+
   const fullText = `${hit} ${targeting} ${injury} ${effect} ${exceptThat}`.replaceAll('\n', ' ').trim();
   return { hit, targeting, injury, effect, exceptThat, fullText };
 }
 
 /**
- * Determines whether the spell applies persistent conditions (vs brief/1-turn status).
+ * Determines whether the spell applies persistent conditions (vs brief/1-turn status)
+ * to non-injured targets.
  */
-function hasPersistentCondition(hit: string, effect: string): boolean {
-  const combined = `${hit} ${effect}`.toLowerCase();
+function hasPersistentCondition(hit: string, effect: string, exceptThat: string = ''): boolean {
+  const combined = `${hit} ${effect} ${exceptThat}`.toLowerCase();
+  const nonBurn = stripBurnClauses(combined);
+  const uninjured = nonBurn.split(
+    /(?:if|while)\s+(?:the\s+target\s+is\s+|it\s+is\s+)?\\?glossterm\{injured\}|(?:\bif\b|\bwhile\b)[^.]*?\binjured\b/i,
+  )[0];
   if (
-    combined.includes('as a \\glossterm{condition}') ||
-    combined.includes('as a condition') ||
-    combined.includes('as conditions') ||
-    combined.includes('is cursed') ||
-    combined.includes('are cursed') ||
-    combined.includes('\\glossterm{condition}') ||
-    combined.includes('permanent condition')
+    uninjured.includes('as a \\glossterm{condition}') ||
+    uninjured.includes('as a condition') ||
+    uninjured.includes('as conditions') ||
+    uninjured.includes('is cursed') ||
+    uninjured.includes('are cursed') ||
+    uninjured.includes('\\glossterm{condition}') ||
+    uninjured.includes('permanent condition')
   ) {
     return true;
   }
@@ -138,15 +162,15 @@ function hasDebuffWords(fullTextLowercase: string): boolean {
 /**
  * Checks if an attunement spell grants an active action or reaction.
  */
-function attunementGrantsActiveAction(hit: string, targeting: string, effect: string): boolean {
-  const combined = `${hit} ${targeting} ${effect}`.toLowerCase();
+function attunementGrantsActiveAction(fullTextLowercase: string): boolean {
   return (
-    combined.includes('as a \\glossterm{standard action}') ||
-    combined.includes('as a standard action') ||
-    combined.includes('as a \\glossterm{minor action}') ||
-    combined.includes('as a minor action') ||
-    combined.includes('spend a standard action') ||
-    combined.includes('spend a minor action')
+    fullTextLowercase.includes('as a \\glossterm{standard action}') ||
+    fullTextLowercase.includes('as a standard action') ||
+    fullTextLowercase.includes('as a \\glossterm{minor action}') ||
+    fullTextLowercase.includes('as a minor action') ||
+    fullTextLowercase.includes('spend a standard action') ||
+    fullTextLowercase.includes('spend a minor action') ||
+    fullTextLowercase.includes('at the end of each of your turns, make an attack')
   );
 }
 
@@ -159,7 +183,7 @@ function isHazardEffect(
   profile: SpellProfile,
   fullTextLowercase: string,
 ): boolean {
-  const typeLower = (rawSpell.type || '').toLowerCase();
+  const typeLower = (rawSpell.type || profile.type || '').toLowerCase();
 
   // 1. Spells that require a standard action to sustain and are not attunable
   // (e.g. Dust Storm) are active channeled standard-action attacks/debuffs, not hazards.
@@ -189,6 +213,22 @@ function isHazardEffect(
     fullTextLowercase.includes('\\briefly fills') ||
     fullTextLowercase.includes('at the start of your next turn')
   ) {
+    return false;
+  }
+
+  // Active attacks granted while attuned (e.g. Dragon breath attacks, call lightning, flame aura)
+  // or reactive bursts on recover are active actions, not hazards.
+  if (
+    profile.requiresAttunement &&
+    (attunementGrantsActiveAction(fullTextLowercase) ||
+      fullTextLowercase.includes('for the duration of this spell, you can') ||
+      fullTextLowercase.includes('whenever you use the \\ability{recover}'))
+  ) {
+    return false;
+  }
+
+  // Sustained movement line attacks (e.g. Charged Dash, Flame Serpent)
+  if (rawSpell.name === 'Charged Dash' || rawSpell.name === 'Flame Serpent') {
     return false;
   }
 
@@ -245,15 +285,15 @@ export function inferExpectedRoles(
   profile: SpellProfile,
 ): Set<AbilityRole> {
   const expected = new Set<AbilityRole>();
-  const { hit, targeting, injury, effect, fullText } = getNormalSpellText(rawSpell);
+  const { hit, targeting, injury, effect, exceptThat, fullText } = getNormalSpellText(rawSpell);
   const fullTextLowercase = fullText.toLowerCase();
 
-  const dealsDamage = profile.maxDamageRank !== null;
+  const dealsDamage = profile.maxDamageRank !== null || profile.isStrike;
 
   // 1. Attunement
   if (profile.requiresAttunement) {
     expected.add('attune');
-    if (!(attunementGrantsActiveAction(hit, targeting, effect) || profile.area)) {
+    if (!(attunementGrantsActiveAction(fullTextLowercase) || profile.area)) {
       return expected;
     }
   }
@@ -268,11 +308,7 @@ export function inferExpectedRoles(
   }
 
   // 3. Healing
-  if (
-    profile.healingRank !== null ||
-    /regains?\s+(?:\d+\s+)?(?:\\glossterm{)?hit points/i.test(fullTextLowercase) ||
-    /\bregains? hit points\b/i.test(fullTextLowercase)
-  ) {
+  if (profile.healingRank !== null || /\bregains?\b.*?\bhit points\b/i.test(fullTextLowercase)) {
     expected.add('healing');
   }
 
@@ -293,6 +329,7 @@ export function inferExpectedRoles(
   // 5. Exertion
   if (
     rawSpell.staminaCost === true ||
+    rawSpell.cost?.toLowerCase().includes('stamina') ||
     /spends?\s+(?:one|\d+)?\s*\\glossterm{stamina}/i.test(fullTextLowercase) ||
     /spends?\s+(?:a|\d+)?\s*vital wound/i.test(fullTextLowercase)
   ) {
@@ -306,7 +343,9 @@ export function inferExpectedRoles(
 
   // 7. Retaliate
   if (
-    /whenever a creature.*?attacks you/i.test(fullTextLowercase) ||
+    /whenever a creature.*?(?:attacks you|makes.*?attack against you)/i.test(
+      fullTextLowercase,
+    ) ||
     /attacks you or your allies/i.test(fullTextLowercase) ||
     /deal.*extra damage to creatures that attacked/i.test(fullTextLowercase)
   ) {
@@ -316,6 +355,7 @@ export function inferExpectedRoles(
   // 8. Damage Roles (Snipe, Burst, Clear, Burn, Execute)
   const isMultiTarget = !profile.isSingleTarget;
   const isLongOrDistantRange = profile.range === 'long' || profile.range === 'distant';
+  const isDoT = profile.hasDoT;
 
   if (dealsDamage) {
     // Snipe
@@ -323,8 +363,8 @@ export function inferExpectedRoles(
       expected.add('snipe');
     }
 
-    // Burn (Single-target DoT)
-    if (profile.isSingleTarget && profile.hasDoT) {
+    // Burn (Single-target DoT or delayed damage)
+    if (profile.isSingleTarget && isDoT) {
       expected.add('burn');
     }
 
@@ -339,34 +379,38 @@ export function inferExpectedRoles(
     }
 
     // Clear (Multi-target immediate damage)
-    if (isMultiTarget) {
+    if (isMultiTarget && !isBarrier) {
       expected.add('clear');
     }
 
-    // Burst (Single-target immediate damage, not purely DoT, not injury-only, not long/distant snipe)
+    // Burst (Single-target immediate damage, not purely DoT, not injury-only, not long/distant snipe, not reactive)
     if (
       profile.isSingleTarget &&
-      hit &&
+      (hit || profile.isStrike) &&
       !profile.isInjuryOnly &&
-      !profile.hasDoT &&
-      !isLongOrDistantRange
+      !isDoT &&
+      !isLongOrDistantRange &&
+      !fullTextLowercase.includes('reactive attack') &&
+      !/whenever\s+(?:a|an)?\s*creature/i.test(targeting)
     ) {
       expected.add('burst');
     }
   }
 
   // 9. Debuff Roles (Softener, Flash, Trip, Stasis, Maim)
-  const affectsAlly = !hit && /choose.*ally/.test(fullTextLowercase);
+  const affectsAlly = !hit && !profile.isStrike && /choose.*ally/.test(fullTextLowercase);
   const isInjuryDebuffEffect = isInjuryDebuff(injury, fullTextLowercase);
   const isStasis = isStasisDebuff(hit, effect);
-  const isCondition = hasPersistentCondition(hit, effect);
+  const isCondition = hasPersistentCondition(hit, effect, exceptThat);
 
-  const cleanHit = hit.replace(
+  const cleanHit = stripBurnClauses(hit).replace(
     /(?:fling|push|slide|pull)\s+distance\s+increases\s+to\s+\d+\s+feet/gi,
     '',
   );
-  const hasHitDebuff =
-    hasDebuffWords(cleanHit.toLowerCase()) && !/injur/.test(cleanHit.toLowerCase());
+  const uninjuredHitText = cleanHit.split(
+    /(?:if|while)\s+(?:the\s+target\s+is\s+|it\s+is\s+)?\\?glossterm\{injured\}|(?:\bif\b|\bwhile\b)[^.]*?\binjured\b/i,
+  )[0];
+  const hasHitDebuff = hasDebuffWords(uninjuredHitText.toLowerCase());
 
   const hasDebuff =
     !affectsAlly && (hasHitDebuff || isInjuryDebuffEffect || isCondition || isStasis);
@@ -374,12 +418,12 @@ export function inferExpectedRoles(
   if (hasDebuff) {
     if (isStasis && profile.isSingleTarget) {
       expected.add('stasis');
-    } else if (isCondition && !isInjuryDebuffEffect) {
+    } else if (isCondition) {
       // Any persistent condition on non-injured targets is softener
       expected.add('softener');
-    } else if (profile.isSingleTarget && hasHitDebuff && !isCondition) {
+    } else if (profile.isSingleTarget && hasHitDebuff) {
       expected.add('trip');
-    } else if (isMultiTarget && hasHitDebuff && !isCondition) {
+    } else if (isMultiTarget && hasHitDebuff) {
       // Brief multi-target debuff is flash
       expected.add('flash');
     }
@@ -395,14 +439,15 @@ export function inferExpectedRoles(
       fullTextLowercase,
     ) ||
     /gain\s+(?:a\s+)?\+\d+\s+bonus to (?:your\s+)?defenses/i.test(fullTextLowercase) ||
-    /takes?\s+half\s+damage/i.test(fullTextLowercase);
+    /takes?\s+half\s+damage/i.test(fullTextLowercase) ||
+    /(?:\\briefly\s+)?have\s+(?:\\glossterm\{)?cover/i.test(fullTextLowercase);
   if (isTurtle && !profile.requiresAttunement) {
     expected.add('turtle');
   }
 
   // 11. Focus & Generator
   const isOffensiveBuffOnSelf =
-    /you (?:are|become)\s+(?:\\briefly\s+)?\\(?:primed|empowered|maximized|focused|honed)/i.test(
+    /you (?:are|become)(?:\s+also)?\s+(?:\\briefly\s+)?\\(?:primed|empowered|maximized|focused|honed)/i.test(
       fullTextLowercase,
     ) || /your next\s+(?:attack|strike|spell)/i.test(fullTextLowercase);
 
@@ -436,11 +481,16 @@ export function inferExpectedRoles(
     (/\b(?:allies|ally)\b/i.test(targeting) ||
       /choose (?:yourself or )?(?:an? )?\\glossterm{ally}/i.test(effect) ||
       /\b(?:allies|ally)\b/i.test(effect)) &&
-    !expected.has('healing') &&
     !expected.has('cleanse') &&
     !expected.has('mobility');
   if (isBoon && !dealsDamage) {
-    expected.add('boon');
+    const hasBuffEffect =
+      /resistant|immune|bonus|shielded|steeled|fortified|empowered|maximized|advantage/i.test(
+        effect,
+      );
+    if (!expected.has('healing') || hasBuffEffect) {
+      expected.add('boon');
+    }
   }
 
   // 14. Dive & Kite
@@ -450,7 +500,8 @@ export function inferExpectedRoles(
       (/move (?:towards|adjacent|through)/i.test(fullTextLowercase) ||
         /leap.*attack/i.test(fullTextLowercase) ||
         /move in a straight line/i.test(fullTextLowercase) ||
-        /charge/i.test(fullTextLowercase))
+        /charge/i.test(fullTextLowercase) ||
+        /teleport/i.test(fullTextLowercase))
     ) {
       expected.add('dive');
     }
@@ -477,13 +528,17 @@ export function inferExpectedRoles(
     fullTextLowercase.includes('for one day') ||
     fullTextLowercase.includes('for one year') ||
     fullTextLowercase.includes('for 24 hours') ||
+    /unattended.*?object/.test(fullTextLowercase) ||
     (rawSpell.usageTime && rawSpell.usageTime !== 'standard' && rawSpell.usageTime !== 'minor')
   ) {
     expected.add('narrative');
   }
 
   // 17. Payoff
-  if (fullTextLowercase.includes('during your last turn')) {
+  if (
+    /during your (?:previous|last) turn, you/i.test(fullTextLowercase) ||
+    fullTextLowercase.includes('if you used')
+  ) {
     expected.add('payoff');
   }
 
@@ -502,11 +557,12 @@ export function validateSpellRoles(spheres: MysticSphere[]): RoleValidationIssue
       const profile = buildSpellProfile(spell, sphere.name);
       const expectedSet = inferExpectedRoles(spell, profile);
       const actualSet = new Set(spell.roles || []);
-      const { hit, targeting, effect } = getNormalSpellText(spell);
+      const { fullText } = getNormalSpellText(spell);
+      const fullTextLowercase = fullText.toLowerCase();
 
       // Check Attunement rules
       if (profile.type && profile.type.includes('Attune')) {
-        const grantsAction = attunementGrantsActiveAction(hit, targeting, effect);
+        const grantsAction = attunementGrantsActiveAction(fullTextLowercase);
         if (!grantsAction) {
           for (const actualRole of actualSet) {
             if (actualRole !== 'attune') {
@@ -531,7 +587,7 @@ export function validateSpellRoles(spheres: MysticSphere[]): RoleValidationIssue
         // If it's an attunement spell without granted actions, only 'attune', 'barrier', or 'hazard' is expected
         if (
           profile.requiresAttunement &&
-          !attunementGrantsActiveAction(hit, targeting, effect) &&
+          !attunementGrantsActiveAction(fullTextLowercase) &&
           expRole !== 'attune' &&
           expRole !== 'barrier' &&
           expRole !== 'hazard'
