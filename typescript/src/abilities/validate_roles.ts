@@ -106,22 +106,6 @@ function isInjuryDebuff(injury: string, fullTextLowercase: string): boolean {
   return Boolean(match && hasDebuffWords(match[0]));
 }
 
-/**
- * Determines whether a debuff is incapacitating (stasis).
- */
-function isStasisDebuff(hit: string, effect: string): boolean {
-  const combined = `${hit} ${effect}`.toLowerCase();
-  return (
-    combined.includes('cannot act') ||
-    combined.includes("can't act") ||
-    combined.includes('frozen in time') ||
-    combined.includes('\\stasis') ||
-    combined.includes('in stasis') ||
-    combined.includes('petrified') ||
-    combined.includes('incapacitated')
-  );
-}
-
 function hasDebuffWords(fullTextLowercase: string): boolean {
   const debuffKeywords = [
     '-1 penalty',
@@ -397,10 +381,9 @@ export function inferExpectedRoles(
     }
   }
 
-  // 9. Debuff Roles (Softener, Flash, Trip, Stasis, Maim)
+  // 9. Debuff Roles (Softener, Flash, Trip, Maim)
   const affectsAlly = !hit && !profile.isStrike && /choose.*ally/.test(fullTextLowercase);
   const isInjuryDebuffEffect = isInjuryDebuff(injury, fullTextLowercase);
-  const isStasis = isStasisDebuff(hit, effect);
   const isCondition = hasPersistentCondition(hit, effect, exceptThat);
 
   const cleanHit = stripBurnClauses(hit).replace(
@@ -413,12 +396,10 @@ export function inferExpectedRoles(
   const hasHitDebuff = hasDebuffWords(uninjuredHitText.toLowerCase());
 
   const hasDebuff =
-    !affectsAlly && (hasHitDebuff || isInjuryDebuffEffect || isCondition || isStasis);
+    !affectsAlly && (hasHitDebuff || isInjuryDebuffEffect || isCondition);
 
   if (hasDebuff) {
-    if (isStasis && profile.isSingleTarget) {
-      expected.add('stasis');
-    } else if (isCondition) {
+    if (isCondition) {
       // Any persistent condition on non-injured targets is softener
       expected.add('softener');
     } else if (profile.isSingleTarget && hasHitDebuff) {

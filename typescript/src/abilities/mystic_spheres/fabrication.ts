@@ -870,7 +870,7 @@ export const fabrication: MysticSphere = {
         `,
       },
       rank: 7,
-      roles: ['barrier', 'stasis'],
+      roles: ['barrier', 'softener'],
       scaling: 'accuracy',
       tags: ['Barrier', 'Manifestation'],
       type: 'Sustain (minor)',

@@ -180,7 +180,7 @@ export const chronomancy: MysticSphere = {
         `,
       },
       rank: 4,
-      roles: ['maim', 'stasis'],
+      roles: ['maim'],
       scaling: 'accuracy',
       tags: [],
     },

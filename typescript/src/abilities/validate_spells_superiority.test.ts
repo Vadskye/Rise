@@ -582,7 +582,7 @@ t.test('validateSpells: Strictly Superior Spells', (t) => {
           makeMockSpell({
             name: 'Hostile Timeseal',
             rank: 4,
-            roles: ['maim', 'stasis'],
+            roles: ['maim'],
             attack: {
               hit: 'If the target is \\glossterm{injured}, it becomes \\briefly frozen in time. It becomes completely immune to all damage, attacks, and effects of any kind. In addition, it cannot act in any way, and the duration of other effects on it does not expire. At the end of your next turn, it returns to normal...',
               targeting:

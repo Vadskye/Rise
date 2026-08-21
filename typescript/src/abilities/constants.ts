@@ -40,7 +40,6 @@ export const ABILITY_ROLES = [
   'retaliate', // Attack that is stronger against creatures that attack you or your allies
   'snipe', // Long-range damage
   'softener', // Debuff condition or curse that affects one or more non-injured targets
-  'stasis', // Single-target brief or one-turn debuff that prevents enemy action
   'trip', // Single-target brief or one-turn debuff. Does not require injury.
   'turtle', // Brief or one-turn defensive buff or protection effect on yourself
 ] as const;

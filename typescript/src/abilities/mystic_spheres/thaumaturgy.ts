@@ -367,7 +367,7 @@ export const thaumaturgy: MysticSphere = {
         `,
       },
       rank: 1,
-      roles: ['stasis'],
+      roles: ['trip'],
       scaling: 'accuracy',
     },
 
@@ -382,7 +382,7 @@ export const thaumaturgy: MysticSphere = {
       },
       // TODO: calculate real EA
       rank: 6,
-      roles: ['stasis'],
+      roles: ['trip'],
       scaling: 'accuracy',
     },
 

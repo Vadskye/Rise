@@ -148,7 +148,7 @@ export const astromancy: MysticSphere = {
         If they run quickly, they can escape before it returns.
       `,
       rank: 4,
-      roles: ['stasis'],
+      roles: ['maim'],
       scaling: 'accuracy',
     },
 
@@ -171,7 +171,7 @@ export const astromancy: MysticSphere = {
         `,
       },
       rank: 7,
-      roles: ['stasis'],
+      roles: ['maim'],
       scaling: 'accuracy',
     },
 

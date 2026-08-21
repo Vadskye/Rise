@@ -525,7 +525,7 @@ export const channelDivinity: MysticSphere = {
         `,
       },
       rank: 3,
-      roles: ['stasis'],
+      roles: ['maim'],
       scaling: 'accuracy',
     },
 
