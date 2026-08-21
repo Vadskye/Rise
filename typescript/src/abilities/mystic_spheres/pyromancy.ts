@@ -101,7 +101,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         `,
       },
       rank: 3,
-      roles: ['generator'],
+      roles: ['clear', 'generator'],
       scaling: 'damage',
     },
 
@@ -124,7 +124,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         `,
       },
       rank: 6,
-      roles: ['generator'],
+      roles: ['clear', 'generator'],
       scaling: 'damage',
     },
 
@@ -151,7 +151,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         `,
       },
       rank: 4,
-      roles: ['exertion', 'generator'],
+      roles: ['clear', 'exertion', 'generator'],
       scaling: 'damage',
     },
 
@@ -178,7 +178,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         `,
       },
       rank: 7,
-      roles: ['exertion', 'generator'],
+      roles: ['clear', 'exertion', 'generator'],
       scaling: 'damage',
     },
 
@@ -729,7 +729,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         A small source of fire, such as a torch, erupts into a much larger burst of flame.
       `,
       rank: 2,
-      roles: ['burst'],
+      roles: ['clear'],
       scaling: 'damage',
     },
 
@@ -745,7 +745,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         A small source of fire, such as a torch, erupts into a much larger burst of flame.
       `,
       rank: 5,
-      roles: ['burst'],
+      roles: ['clear'],
       scaling: 'damage',
     },
 
@@ -780,7 +780,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         After you are restored to life in this way, this ability is \\glossterm{dismissed}.
       `,
       rank: 7,
-      roles: ['attune', 'exertion'],
+      roles: ['attune'],
       type: 'Attune (deep)',
     },
 
