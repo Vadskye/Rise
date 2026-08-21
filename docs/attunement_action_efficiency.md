@@ -74,7 +74,7 @@ Assume that 75% of abilities attack Armor and Reflex, 50% of abilities that targ
 
 0.4 EA * 5 actions = 2 EA
 
-### Shielded: 2.4
+### Shielded: 3.0
 
 40% action denial that applies 75% of the time you are attacked is 20 * 0.4 * .5 * 0.75 = 3 EA
 
@@ -316,13 +316,21 @@ Just +1 durability behind the spell version:
 
 Assuming that 2/3 of enemy attacks target Armor, +1 Armor is 20% action denial that works 2/3 of the time and you are attacked 50% the time, so 20 * .2 * 2 / 3 * 0.5 = 1.3 EA, so rank 5.
 
+### +1 non-Armor defenses: 1.3
+
+Same as Armor defense
+
 ### +2 Armor defense: 2.6
 
 Twice as good as +1 Armor
 
 ### +2 Brawn/Fort/Ref/Ment: 1.3
 
-Assuming that 33% of enemy attacks target the defense, +2 is 40% action denial that works 1/3 of the time and you are attacked 50% of the time, so 20 * 0.4 * 0.5 / 3 = 1.1 EA, so rank 3.
+Assuming that 33% of enemy attacks target the defense, +2 is 40% action denial that works 1/3 of the time and you are attacked 50% of the time, so 20 * 0.4 * 0.5 / 3 = 1.3 EA.
+
+### +2 to two non-Armor: 
+
+Assume that 50% of enemy attacks target one of the two defenses. 20 * 0.4 * 0.5 * 0.5 = 2 EA.
 
 ### 20% miss chance: 1.6
 

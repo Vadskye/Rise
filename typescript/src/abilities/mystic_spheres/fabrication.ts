@@ -61,16 +61,31 @@ export const fabrication: MysticSphere = {
       tags: ['Manifestation'],
       type: 'Sustain (attunable, minor)',
     },
-    // Shielded is 0.4, cover is 0.5, so 0.9 total?
+    // 40% action denial for one round against 75% of attacks, applying only to you:
+    // 4 * 0.4 * 0.75 * 0.5 = 0.6 EA. 
     {
       name: 'Desperate Shieldwall',
 
       effect: `
         You can activate this effect as a \\glossterm{minor action}.
         When you do, your attunement to this effect ends and you \\briefly create a wall of indestructible shields around you.
-        The shields make you \\shielded and give you \\glossterm{cover} from all attacks.
+        The shields give you \\glossterm{cover} against all attacks.
       `,
       rank: 1,
+      roles: ['attune'],
+      tags: ['Manifestation'],
+      type: 'Attune',
+    },
+    // 80% action denial for one round against 75% of attacks, applying only to you:
+    // 4 * 0.8 * 0.75 * 0.5 = 1.2 EA. 
+    {
+      name: 'Greater Desperate Shieldwall',
+
+      functionsLike: {
+        name: 'desperate shieldwall',
+        exceptThat: 'you are also \\briefly \\shielded.',
+      },
+      rank: 6,
       roles: ['attune'],
       tags: ['Manifestation'],
       type: 'Attune',

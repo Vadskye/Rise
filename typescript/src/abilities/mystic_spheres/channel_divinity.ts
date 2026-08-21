@@ -378,18 +378,31 @@ export const channelDivinity: MysticSphere = {
       effect: `
         You are \\empowered.
       `,
-      rank: 3,
+      rank: 1,
       roles: ['attune'],
       type: 'Attune (deep)',
     },
 
+    {
+      name: 'Efficient Power of Belief',
+
+      effect: `
+        You are \\empowered.
+      `,
+      rank: 7,
+      roles: ['attune'],
+      type: 'Attune',
+    },
+
+    // Should really be rank 7, but drop to 6 to avoid conflicting with Greater Divine
+    // Mantle.
     {
       name: 'Shield of Faith',
 
       effect: `
         You are \\shielded.
       `,
-      rank: 4,
+      rank: 6,
       roles: ['attune'],
       type: 'Attune (deep)',
     },
@@ -398,7 +411,18 @@ export const channelDivinity: MysticSphere = {
       name: 'Divine Mantle',
 
       effect: `
-        You are \\braced.
+        You gain a \\plus1 \\glossterm{enhancement bonus} to all defenses.
+      `,
+      rank: 2,
+      roles: ['attune'],
+      type: 'Attune (deep)',
+    },
+
+    {
+      name: 'Greater Divine Mantle',
+
+      effect: `
+        You gain a \\plus2 \\glossterm{enhancement bonus} to all defenses.
       `,
       rank: 7,
       roles: ['attune'],

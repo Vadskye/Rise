@@ -139,9 +139,11 @@ export const bodyArmor = (): MagicArmor[] => [
       },
     ],
   }),
+  // -10 speed is a pretty big downside. Say that it's -1 EA. That drops the total from
+  // 2 EA to 1 EA.
   body({
     name: 'Stonebody Armor',
-    rank: 2,
+    rank: 3,
     short_description: 'Grants +2 Brawn and Fortitude, but slower and heavier',
     description: `
       You gain a +2 \\glossterm{enhancement bonus} to your Brawn and Fortitude defenses.
@@ -149,7 +151,9 @@ export const bodyArmor = (): MagicArmor[] => [
     `,
     upgrades: [
       {
-        rank: 5,
+        // This should be 3 EA - 1 EA = 2 EA total, which is beyond rank 7.
+        // But that seems wrong for some reason, so say that this is fine at rank 7.
+        rank: 7,
         short_description: 'Grants +3 Brawn and Fortitude, but slower and heavier',
         description: 'The defense bonuses increase to +3.',
       },
@@ -157,44 +161,36 @@ export const bodyArmor = (): MagicArmor[] => [
   }),
   body({
     name: 'Lithe Armor',
-    rank: 1,
+    rank: 5,
     short_description: 'Grants +1 Armor if you have 3 Dex',
     description:
       'If your Dexterity is at least 3, you gain a +1 \\glossterm{enhancement bonus} to your Armor defense.',
-    upgrades: [
-      {
-        rank: 6,
-        short_description: 'Grants +2 Armor if you have 5 Dex',
-        description: 'The bonus increases to +2 if your Dexterity is at least 5.',
-      },
-    ],
   }),
   body({
     name: 'Hefty Armor',
     rank: 1,
-    short_description: 'Grants +2 Brawn',
-    description: 'You gain a +2 \\glossterm{enhancement bonus} to your Brawn defense.',
+    short_description: 'Grants +1 Brawn',
+    description: 'You gain a +1 \\glossterm{enhancement bonus} to your Brawn defense.',
     upgrades: [
-      { rank: 4, short_description: 'Grants +3 Brawn', description: 'The bonus increases to +3.' },
-      { rank: 7, short_description: 'Grants +4 Brawn', description: 'The bonus increases to +4.' },
+      { rank: 5, short_description: 'Grants +2 Brawn', description: 'The bonus increases to +2.' },
     ],
   }),
   body({
     name: 'Evasive Armor',
     rank: 1,
-    short_description: 'Grants +2 Reflex',
-    description: 'You gain a +2 \\glossterm{enhancement bonus} to your Reflex defense.',
+    short_description: 'Grants +1 Reflex',
+    description: 'You gain a +1 \\glossterm{enhancement bonus} to your Reflex defense.',
     upgrades: [
-      { rank: 4, short_description: 'Grants +3 Reflex', description: 'The bonus increases to +3.' },
-      { rank: 7, short_description: 'Grants +4 Reflex', description: 'The bonus increases to +4.' },
+      { rank: 5, short_description: 'Grants +2 Reflex', description: 'The bonus increases to +2.' },
     ],
   }),
+  // -2r due to requirement
   body({
     name: 'Trimmed Armor',
-    rank: 5,
+    rank: 3,
     short_description: 'Reduces Dex penalty from non-light armor',
     description: `
-      If your Dexterity bonus to your Armor is reduced by at least 2 due to your armor, you gain a \\plus2 \\glossterm{enhancement bonus} to your Armor defense.
+      If your Dexterity bonus to your Armor is reduced by at least 2 due to your armor, you gain a \\plus1 \\glossterm{enhancement bonus} to your Armor defense.
       This typically requires a Dexterity of 4.
     `,
   }),

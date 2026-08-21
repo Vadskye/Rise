@@ -151,32 +151,20 @@ export const shields = (): MagicArmor[] => [
   }),
   shield({
     name: "Defender's Shield",
-    rank: 1,
+    rank: 4,
     short_description: 'Grants +1 Armor defense',
     description: 'You gain a +1 \\glossterm{enhancement bonus} to your Armor defense.',
-    upgrades: [
-      {
-        rank: 7,
-        short_description: 'Grants +2 Armor defense',
-        description: 'The bonus increases to +2.',
-      },
-    ],
   }),
   shield({
     name: 'Psychic Shield',
     rank: 1,
-    short_description: 'Grants +2 Mental defense',
-    description: 'You gain a +2 \\glossterm{enhancement bonus} to your Mental defense.',
+    short_description: 'Grants +1 Mental defense',
+    description: 'You gain a +1 \\glossterm{enhancement bonus} to your Mental defense.',
     upgrades: [
       {
-        rank: 4,
-        short_description: 'Grants +3 Mental defense',
-        description: 'The bonus increases to +3.',
-      },
-      {
-        rank: 7,
-        short_description: 'Grants +4 Mental defense',
-        description: 'The bonus increases to +4.',
+        rank: 5,
+        short_description: 'Grants +2 Mental defense',
+        description: 'The bonus increases to +2.',
       },
     ],
   }),
@@ -233,17 +221,9 @@ export const shields = (): MagicArmor[] => [
   }),
   shield({
     name: 'Shield of Shielding',
-    rank: 4,
+    rank: 7,
     short_description: 'Shields you',
     description: 'You are \\shielded.',
-    attunement: 'Attune (deep)',
-    tags: [],
-  }),
-  shield({
-    name: 'Covering Shield',
-    rank: 7,
-    short_description: 'Grants you cover',
-    description: 'You have \\glossterm{cover} from all attacks.',
     attunement: 'Attune (deep)',
     tags: [],
   }),
