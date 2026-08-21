@@ -412,20 +412,7 @@ export function inferExpectedRoles(
     }
   }
 
-  // 12. Boon (Brief combat buff on allies)
-  const isBoon =
-    !profile.hasAttack &&
-    (/\b(?:allies|ally)\b/i.test(targeting) ||
-      /choose (?:yourself or )?(?:an? )?\\glossterm{ally}/i.test(effect) ||
-      /\b(?:allies|ally)\b/i.test(effect)) &&
-    !expected.has('healing') &&
-    !expected.has('cleanse') &&
-    !expected.has('mobility');
-  if (isBoon && !dealsDamage) {
-    expected.add('boon');
-  }
-
-  // 13. Mobility (Movement/repositioning without attack)
+  // 12. Mobility (Movement/repositioning without attack)
   const isMobility =
     !profile.hasAttack &&
     !/one of your items/.test(fullTextLowercase) &&
@@ -438,6 +425,19 @@ export function inferExpectedRoles(
       /move up to/i.test(fullTextLowercase));
   if (isMobility) {
     expected.add('mobility');
+  }
+
+  // 13. Boon (Brief combat buff on allies)
+  const isBoon =
+    !profile.hasAttack &&
+    (/\b(?:allies|ally)\b/i.test(targeting) ||
+      /choose (?:yourself or )?(?:an? )?\\glossterm{ally}/i.test(effect) ||
+      /\b(?:allies|ally)\b/i.test(effect)) &&
+    !expected.has('healing') &&
+    !expected.has('cleanse') &&
+    !expected.has('mobility');
+  if (isBoon && !dealsDamage) {
+    expected.add('boon');
   }
 
   // 14. Dive & Kite

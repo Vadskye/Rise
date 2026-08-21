@@ -609,7 +609,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         5: 'You can choose to create a \\medarea radius instead.',
         7: 'You can choose to create a \\largearea radius instead.',
       },
-      roles: ['attune', 'flash', 'hazard'],
+      roles: ['attune', 'hazard'],
       tags: ['Manifestation'],
       type: 'Sustain (attunable, standard)',
     },
@@ -621,7 +621,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         The fog provides \\glossterm{concealment} for anything within or seen through the area.
       `,
       rank: 6,
-      roles: ['flash', 'hazard'],
+      roles: ['hazard'],
       tags: ['Manifestation'],
       type: 'Sustain (attunable, minor)',
     },
@@ -634,7 +634,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         In addition, the fog's area is \\glossterm{difficult terrain}.
       `,
       rank: 7,
-      roles: ['attune', 'flash', 'hazard'],
+      roles: ['attune', 'hazard'],
       tags: ['Manifestation'],
       type: 'Sustain (attunable, standard)',
     },
@@ -814,7 +814,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
           'it does not require a \\glossterm{free hand}, and it targets one creature within \\medrange.',
       },
       rank: 5,
-      roles: ['maim'],
+      roles: ['maim', 'burn'],
     },
     {
       name: 'Slippery Puddle',
@@ -839,7 +839,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       // Drop to dr3 for accuracy and rarely relevant condition.
       attack: {
         hit: `
-          \\damageranktwo.
+          \\damagerankthree.
         `,
         injury: `
           The target becomes unable to breathe air as a \\glossterm{condition}.
@@ -866,7 +866,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         `,
         injury: `
           If the target loses hit points, it becomes unable to breathe air as a \\glossterm{condition}.
-          It can remove this condition by making a \\glossterm{difficulty value} 10 Constitution check as a \\glossterm{standard action}.
+          It can remove this condition by making a \\glossterm{difficulty value} 10 Endurance check as a \\glossterm{standard action}.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
