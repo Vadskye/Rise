@@ -509,7 +509,7 @@ export function validateSpellRoles(spheres: MysticSphere[]): RoleValidationIssue
         const grantsAction = attunementGrantsActiveAction(hit, targeting, effect);
         if (!grantsAction) {
           for (const actualRole of actualSet) {
-            if (actualRole !== 'attune' && actualRole !== 'barrier' && actualRole !== 'hazard') {
+            if (actualRole !== 'attune') {
               issues.push({
                 type: 'invalid_attunement_role',
                 severity: 'warning',

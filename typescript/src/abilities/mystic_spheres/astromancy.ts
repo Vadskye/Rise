@@ -315,7 +315,7 @@ export const astromancy: MysticSphere = {
         Your foes are caught by a sudden rift that shunts them painfully through dimensions.
       `,
       rank: 3,
-      roles: ['clear'],
+      roles: ['clear', 'hazard'],
       scaling: 'damage',
     },
     {
@@ -328,13 +328,16 @@ export const astromancy: MysticSphere = {
         halfOnMiss: true,
         targeting: `
           Make an attack vs. Reflex and Mental against all \\glossterm{enemies} within a \\medarea radius from you.
+          In addition, you create a \\glossterm{zone} of astral disruption in a \\gargarea radius around you that \\briefly persists.
+          While the zone is active, whenever an enemy teleports into or out of the area, you repeat this attack against them.
+          You can only attack any individual creature once per turn in this way.
         `,
       },
       narrative: `
         Your foes are caught by a sudden massive rift that shunts them painfully through dimensions.
       `,
       rank: 6,
-      roles: ['clear'],
+      roles: ['clear', 'hazard'],
       scaling: 'damage',
     },
     {
@@ -351,10 +354,12 @@ export const astromancy: MysticSphere = {
         targeting: `
           You create a chaotic planar rupture in a \\smallarea radius \\glossterm{zone} within \\shortrange.
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Mental against all creatures in the area.
+          While the zone is active, whenever an enemy teleports into or out of the area, you repeat this attack against them.
+          You can only attack any individual creature once per turn in this way.
         `,
       },
       rank: 5,
-      roles: ['clear'],
+      roles: ['clear', 'hazard'],
       scaling: 'damage',
       type: 'Sustain (attunable, minor)',
     },
