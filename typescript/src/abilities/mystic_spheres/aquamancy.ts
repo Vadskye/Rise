@@ -959,7 +959,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         \\end{mdframedraggeditemize}
       `,
       rank: 1,
-      roles: ['focus'],
+      roles: ['focus', 'turtle'],
       type: 'Sustain (minor)',
     },
     {
@@ -977,7 +977,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         \\end{mdframedraggeditemize}
       `,
       rank: 6,
-      roles: ['focus'],
+      roles: ['focus', 'turtle'],
     },
   ],
 });
