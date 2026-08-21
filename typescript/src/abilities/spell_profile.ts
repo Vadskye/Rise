@@ -546,14 +546,6 @@ export function resolveSpell<T extends SpellDefinition | CantripDefinition>(
     if (oneYearText) {
       hit = hit ? `${hit} ${oneYearText}` : oneYearText;
     }
-    if (exceptThat) {
-      const exceptDr = parseDamageRank(exceptThat);
-      if (exceptDr !== null) {
-        hit = `${exceptThat} ${hit}`;
-      } else {
-        hit = `${hit} ${exceptThat}`;
-      }
-    }
     attack = {
       ...attack,
       hit,
@@ -566,9 +558,6 @@ export function resolveSpell<T extends SpellDefinition | CantripDefinition>(
     }
     if (oneYearText) {
       newEffect = `${newEffect} ${oneYearText}`;
-    }
-    if (exceptThat) {
-      newEffect = `${newEffect} ${exceptThat}`;
     }
     effect = newEffect;
   }
@@ -599,9 +588,10 @@ export function buildSpellProfile(
   const targeting = spell.attack?.targeting || '';
   const injury = spell.attack?.injury || '';
   const effect = spell.effect || '';
+  const exceptThat = rawSpell.functionsLike?.exceptThat || '';
   const halfOnMiss = spell.attack?.halfOnMiss === true;
 
-  const fullText = `${hit} ${targeting} ${injury} ${effect}`;
+  const fullText = `${hit} ${targeting} ${injury} ${effect} ${exceptThat}`.trim();
   const lowercase = fullText.toLowerCase();
 
   const isDoubleAction =
@@ -718,13 +708,15 @@ export function buildSpellProfile(
     lowercase.includes('poison') ||
     /subsequent turns.*take.*damage/.test(lowercase);
 
-  const maxDamageRank = parseDamageRank(fullText);
+  const exceptDr = exceptThat ? parseDamageRank(exceptThat) : null;
+  const maxDamageRank = exceptDr ?? parseDamageRank(fullText);
   let unconditionalDamageRank: number | null = null;
   if (maxDamageRank !== null) {
     if (isInjuryOnly) {
       unconditionalDamageRank = 0;
     } else {
-      unconditionalDamageRank = parseDamageRank(hit) ?? parseDamageRank(effect);
+      unconditionalDamageRank =
+        exceptDr ?? parseDamageRank(hit) ?? parseDamageRank(effect);
     }
   }
 

@@ -197,6 +197,29 @@ t.test('validate_roles', (t) => {
       t.end();
     });
 
+    t.test(
+      'should infer maim and burst (not trip) for functionsLike spell scaling injury debuff (like Intense Aquajet Grasp)',
+      (t) => {
+        const intenseAquajet: SpellDefinition = {
+          name: 'Intense Aquajet Grasp',
+          rank: 6,
+          roles: ['burst', 'maim'],
+          scaling: 'damage',
+          functionsLike: {
+            name: 'aquajet grasp',
+            exceptThat:
+              'the damage increases to \\damagerankeight, any \\glossterm{extra damage} is doubled, and the fling distance increases to 30 feet.',
+          },
+        };
+        const profile = buildSpellProfile(intenseAquajet, 'Aquamancy');
+        const roles = inferExpectedRoles(intenseAquajet, profile);
+        t.ok(roles.has('burst'), 'Should infer burst');
+        t.ok(roles.has('maim'), 'Should infer maim');
+        t.notOk(roles.has('trip'), 'Should not infer trip for injury-only fling');
+        t.end();
+      },
+    );
+
     t.test('should infer clear and turtle for multi-role attack + shield spell', (t) => {
       const spell: SpellDefinition = {
         name: 'Shielding Windblast',

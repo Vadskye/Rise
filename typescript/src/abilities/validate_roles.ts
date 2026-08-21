@@ -38,6 +38,7 @@ function getNormalSpellText(spell: SpellDefinition): {
   targeting: string;
   injury: string;
   effect: string;
+  exceptThat: string;
   fullText: string;
 } {
   const resolved = resolveSpell(spell);
@@ -45,8 +46,9 @@ function getNormalSpellText(spell: SpellDefinition): {
   const targeting = resolved.attack?.targeting || '';
   const injury = resolved.attack?.injury || '';
   const effect = resolved.effect || '';
-  const fullText = `${hit} ${targeting} ${injury} ${effect}`;
-  return { hit, targeting, injury, effect, fullText };
+  const exceptThat = spell.functionsLike?.exceptThat || '';
+  const fullText = `${hit} ${targeting} ${injury} ${effect} ${exceptThat}`.trim();
+  return { hit, targeting, injury, effect, exceptThat, fullText };
 }
 
 /**
@@ -72,10 +74,12 @@ function hasPersistentCondition(hit: string, effect: string): boolean {
  * Determines whether a debuff requires the target to be injured.
  */
 function isInjuryDebuff(injury: string, fullTextLowercase: string): boolean {
-  const hasInjury =
-    Boolean(injury) ||
-    /if (it|the target) (is|was) (?:\\glossterm{)?injured(?:})?/i.test(fullTextLowercase);
-  return hasInjury && hasDebuffWords(fullTextLowercase);
+  const hasInjuryInText =
+    hasDebuffWords(injury.toLowerCase()) ||
+    /if (?:the target|it) (?:is|was) (?:\\glossterm{)?injured(?:})?[^.]*(?:fling|push|slow|daze|blind|deaf|unsteady|prone|vulnerable|weaken|immobil|shaken|panic|fright|confus|grapp|goad|penalty|cannot|can't)/i.test(
+      fullTextLowercase,
+    );
+  return hasInjuryInText;
 }
 
 /**
@@ -355,9 +359,16 @@ export function inferExpectedRoles(
   const isInjuryDebuffEffect = isInjuryDebuff(injury, fullTextLowercase);
   const isStasis = isStasisDebuff(hit, effect);
   const isCondition = hasPersistentCondition(hit, effect);
-  // The spell must actually have a hit effect to inflict debuffs. Otherwise, it might be
-  // an ally-only boon.
-  const hasDebuff = !affectsAlly && (hasDebuffWords(fullTextLowercase) || isCondition || isStasis);
+
+  const cleanHit = hit.replace(
+    /(?:fling|push|slide|pull)\s+distance\s+increases\s+to\s+\d+\s+feet/gi,
+    '',
+  );
+  const hasHitDebuff =
+    hasDebuffWords(cleanHit.toLowerCase()) && !/injur/.test(cleanHit.toLowerCase());
+
+  const hasDebuff =
+    !affectsAlly && (hasHitDebuff || isInjuryDebuffEffect || isCondition || isStasis);
 
   if (hasDebuff) {
     if (isStasis && profile.isSingleTarget) {
@@ -365,14 +376,9 @@ export function inferExpectedRoles(
     } else if (isCondition && !isInjuryDebuffEffect) {
       // Any persistent condition on non-injured targets is softener
       expected.add('softener');
-    } else if (
-      profile.isSingleTarget &&
-      hasDebuffWords(hit) &&
-      !isCondition &&
-      !/injur/.test(hit)
-    ) {
+    } else if (profile.isSingleTarget && hasHitDebuff && !isCondition) {
       expected.add('trip');
-    } else if (isMultiTarget && hasDebuffWords(hit) && !/injur/.test(hit)) {
+    } else if (isMultiTarget && hasHitDebuff && !isCondition) {
       // Brief multi-target debuff is flash
       expected.add('flash');
     }
