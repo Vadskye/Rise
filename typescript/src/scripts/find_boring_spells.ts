@@ -297,8 +297,8 @@ export function detectRoleSaturation(items: SpellItem[]): BoringFinding[] {
       const [role, rankStr] = key.split(':');
       const rank = parseInt(rankStr, 10);
       const spellNames = roleItems.map((i) => i.spell.name).join(', ');
-      // Rank 1 attunements are a special case. We actually want a *minimum* value rather
-      // than a maximum.
+      // Rank 1 attunements are a special case. We actually want a *minimum* value in
+      // addition to a maximum.
       if (role === 'attune' && rank === 1) {
         if (roleItems.length <= 1) {
           findings.push({
@@ -314,7 +314,8 @@ export function detectRoleSaturation(items: SpellItem[]): BoringFinding[] {
             spells: roleItems.map((i) => i.spell.name),
           });
         }
-      } else if (roleItems.length >= 3) {
+      }
+      if (roleItems.length >= 4) {
         findings.push({
           sphere: sphereName,
           name: spellNames,
