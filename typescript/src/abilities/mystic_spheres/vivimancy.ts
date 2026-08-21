@@ -331,14 +331,13 @@ export const vivimancy: MysticSphere = {
       name: 'Lifegift',
 
       effect: `
-        You gain a +2 \\glossterm{enhancement bonus} to your \\glossterm{durability}.
+        You gain a +1 \\glossterm{enhancement bonus} to your \\glossterm{durability}.
       `,
       rank: 1,
       roles: ['attune'],
       scaling: {
-        3: 'The bonus increases to +3.',
-        5: 'The bonus increases to +4.',
-        7: 'The bonus increases to +5.',
+        4: 'The bonus increases to +2.',
+        7: 'The bonus increases to +3.',
       },
       type: 'Attune',
     },

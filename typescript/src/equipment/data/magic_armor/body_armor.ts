@@ -96,23 +96,18 @@ export const bodyArmor = (): MagicArmor[] => [
   body({
     name: 'Armor of Life',
     rank: 1,
-    short_description: 'Grants +2 durability',
-    description: 'You gain a +2 \\glossterm{enhancement bonus} to your \\glossterm{durability}.',
+    short_description: 'Grants +1 durability',
+    description: 'You gain a +1 \\glossterm{enhancement bonus} to your \\glossterm{durability}.',
     upgrades: [
       {
-        rank: 3,
-        short_description: 'Grants +3 durability',
-        description: 'The bonus increases to +3.',
-      },
-      {
-        rank: 5,
-        short_description: 'Grants +4 durability',
-        description: 'The bonus increases to +4.',
+        rank: 4,
+        short_description: 'Grants +2 durability',
+        description: 'The bonus increases to +2.',
       },
       {
         rank: 7,
-        short_description: 'Grants +5 durability',
-        description: 'The bonus increases to +5.',
+        short_description: 'Grants +3 durability',
+        description: 'The bonus increases to +3.',
       },
     ],
   }),
@@ -194,46 +189,50 @@ export const bodyArmor = (): MagicArmor[] => [
       This typically requires a Dexterity of 4.
     `,
   }),
+  // -1 vital rolls is scary. Say that it's worth about 0.75 EA, or 6 ranks, or about +3
+  // durability over normal.
   body({
     name: 'Lifeweave Armor',
-    rank: 3,
-    short_description: 'Grants +5 durability, but -1 vital rolls',
+    rank: 2,
+    short_description: 'Grants +4 durability, but -1 vital rolls',
     description: `
-      You gain a +5 \\glossterm{enhancement bonus} to your \\glossterm{durability}.
+      You gain a +4 \\glossterm{enhancement bonus} to your \\glossterm{durability}.
       However, you also take a \\minus1 penalty to your \\glossterm{vital rolls}.
     `,
     upgrades: [
       {
-        rank: 5,
+        rank: 4,
+        short_description: 'Grants +5 durability, but -1 vital rolls',
+        description: 'The bonus increases to +5.',
+      },
+      {
+        rank: 6,
         short_description: 'Grants +6 durability, but -1 vital rolls',
         description: 'The bonus increases to +6.',
       },
-      {
-        rank: 7,
-        short_description: 'Grants +8 durability, but -1 vital rolls',
-        description: 'The bonus increases to +8.',
-      },
     ],
   }),
+  // -2 power is not a crippling penalty. That allows +1 durability over normal plus a
+  // single rank drop.
   body({
     name: 'Soulweave Armor',
     rank: 3,
-    short_description: 'Grants +5 durability, but -2 power',
+    short_description: 'Grants +3 durability, but -2 power',
     description: `
-      You gain a +5 \\glossterm{enhancement bonus} to your \\glossterm{durability}.
+      You gain a +3 \\glossterm{enhancement bonus} to your \\glossterm{durability}.
       However, you take a -2 penalty to your \\glossterm{power} with all abilities.
       You must be \\trait{ensouled} to attune to this item.
     `,
     upgrades: [
       {
         rank: 5,
-        short_description: 'Grants +6 durability, but -3 power',
-        description: 'The durability bonus increases to +6, but the power penalty increases to -3.',
+        short_description: 'Grants +4 durability, but -3 power',
+        description: 'The durability bonus increases to +4, but the power penalty increases to -3.',
       },
       {
         rank: 7,
-        short_description: 'Grants +8 durability, but -4 power',
-        description: 'The durability bonus increases to +8, but the power penalty increases to -4.',
+        short_description: 'Grants +6 durability, but -4 power',
+        description: 'The durability bonus increases to +6, but the power penalty increases to -4.',
       },
     ],
   }),
@@ -259,22 +258,16 @@ export const bodyArmor = (): MagicArmor[] => [
   body({
     name: 'Grafted Armor',
     rank: 2,
-    short_description: 'Grants Fortitude instead of Armor defense and +3 durability',
+    short_description: 'Grants Fortitude, durability, and vital rolls instead of Armor defense',
     description: `
       This armor does not increase your Armor defense.
-      Instead, you gain an \\glossterm{enhancement bonus} to your Fortitude defense equal to the Armor defense bonus the armor would normally provide.
-      In addition, the armor grants you a +3 \\glossterm{enhancement bonus} to your \\glossterm{durability}.
+      Instead, you gain an \\glossterm{enhancement bonus} to your Fortitude defense, \\glossterm{durability}, and \\glossterm{vital rolls} equal to the Armor defense bonus the armor would normally provide.
     `,
     upgrades: [
       {
-        rank: 4,
-        short_description: 'Grants Fortitude instead of Armor defense and +4 durability',
-        description: 'The durability bonus increases to +4.',
-      },
-      {
         rank: 6,
-        short_description: 'Grants Fortitude instead of Armor defense and +5 durability',
-        description: 'The durability bonus increases to +5.',
+        short_description: 'Grants Fortitude instead of Armor defense and +4 durability',
+        description: 'The bonus increases by 1.',
       },
     ],
   }),
@@ -300,17 +293,18 @@ export const bodyArmor = (): MagicArmor[] => [
   }),
   body({
     name: 'Fortifying Armor',
-    rank: 2,
+    rank: 3,
     short_description: 'Fortifies you if you have 3 Con',
     description: 'If your Constitution is at least 3, you are \\fortified.',
     attunement: 'Attune (deep)',
     tags: [],
     upgrades: [
+      // There are 4 attribute increases between level 1 and level 21
       {
-        rank: 7,
-        short_description: 'Fortifies you if you have 6 Con',
+        rank: 8,
+        short_description: 'Fortifies you if you have 7 Con',
         description:
-          'This item does not require \\glossterm{deep attunement}, but it requires 6 Constitution.',
+          'This item does not require \\glossterm{deep attunement}, but it requires 7 Constitution.',
       },
     ],
   }),

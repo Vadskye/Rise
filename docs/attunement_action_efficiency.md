@@ -62,7 +62,7 @@ Empowered is counted as 0.2 EA for active buffs, but as an attunement, you can b
 
 Assume that 75% of abilities attack Armor and Reflex, 50% of abilities that target you are area attacks, 50% of area attacks that target you miss, and this protects you from the 50% damage that you would take from the miss. That's 20 * 0.4 * 0.75 * 0.5 * 0.5 * 0.5 = 0.75 EA. That's a lot of assumptions, so call it rank 2 to match rogue, but it's definitely not a deep attunement.
 
-### Fortified: 1.6
+### Fortified: 2.0
 
 40% action denial that applies 50% of the time you are attacked is 20 * 0.4 * 0.5 * 0.5 = 2 EA.
 
@@ -235,82 +235,65 @@ Translating that into usable scaling, assuming close range:
 
 ### Spell/armor HP: Invalid
 
-Math!
-20 / 3 * (1 - 1/(HP mult)) = (EA)
-6.67 * (1 - 1/h) = a
-1 - 1/h = a/6.67
--1/h = a/6.67 - 1
-1/h = 1 - a/6.67
-1 = h * (1 - a/6.67)
-1/(1 - a/6.67) = h
-6.67 / (6.67 - a) = h
+Assume you had 100% more HP. That would be 50% action denial that only works against you, so 20 * 0.5 * 0.5 = 5 EA. Why is it 50% action denial? because 1 / (1 + 1) = 0.5.
 
-* Rank 1: +13% HP = 6.67 / (6.67 - 0.75)
-* Rank 3: +18% HP = 6.67 / (6.67 - 1)
-* Rank 5: +23% HP = 6.67 / (6.67 - 1.25)
-* Rank 7: +29% HP = 6.67 / (6.67 - 1.5)
+Assume you had 20% more HP. 1 / (1 + 0.2) = 0.83, so that's 17% action denial that only works against you. That means 20 * 0.17 * 0.5 = 1.7 EA.
+
+Math!
+20 * 0.5 * (1 - 1/(HP mult)) = (EA)
+10 * (1 - 1/h) = a
+1 - 1/h = a/10
+-1/h = a/10 - 1
+1/h = 1 - a/10
+1 = h * (1 - a/10)
+1/(1 - a/10) = h
+10 / (10 - a) = h
+
+* Rank 1: +8% HP = 10 / (10 - 0.75)
+* Rank 3: +11% HP = 10 / (10 - 1)
+* Rank 5: +14% HP = 10 / (10 - 1.25)
+* Rank 7: +18% HP = 10 / (10 - 1.5)
 
 Using a Med HP progression as a baseline:
 
-* Rank 1: 2 HP
-* Rank 2: 4 HP
-* Rank 3: 8 HP
-* Rank 4: 15 HP
-* Rank 5: 25 HP
-* Rank 6: 40 HP
-* Rank 7: 60 HP
+* Rank 1: 16 * 0.08 = 1 HP
+* Rank 2: 27 * 0.09 = 2.5 HP
+* Rank 3: 41 * 0.11 = 4.5 HP
+* Rank 4: 62 * 0.12 = 7.5 HP
+* Rank 5: 87 * 0.14 = 12 HP
+* Rank 6: 118 * 0.16 = 19 HP
+* Rank 7: 150 * 0.18 = 27 HP
 
 Or, for spells that want more infrequent HP progression:
-* Rank 1: 4 HP
-* Rank 3: 10 HP
-* Rank 5: 25 HP
-* Rank 7: 60 HP
+* Rank 1: 2 HP
+* Rank 3: 5 HP
+* Rank 5: 14 HP
+* Rank 7: 27 HP
 
 These jumps are insane. It seems like it would be a lot easier to boost durability instead of HP. Therefore, enhancement bonuses to HP *do not exist*.
-
-### Apparel HP: Invalid
-
-Using the same math as above:
-
-* Rank 1: +8% HP
-* Rank 3: +13% HP
-* Rank 5: +18% HP
-* Rank 7: +23% HP
-
-Using Med HP as a baseline:
-* Rank 2: 3 HP
-* Rank 3: 6 HP
-* Rank 4: 12 HP
-* Rank 5: 20 HP
-* Rank 6: 30 HP
-* Rank 7: 45 HP
 
 ### Spell/Armor Durability: Varies
 
 Translating the raw HP values from above into durability bonuses:
-* Rank 1: +2
-* Rank 2: +2
-* Rank 3: +3
-* Rank 4: +3
-* Rank 5: +4
-* Rank 6: +4
-* Rank 7: +5 (technically a little too low, but eh)
+* Rank 1: +1
+* Rank 2: +1
+* Rank 3: +1.5 (difficult)
+* Rank 4: +2
+* Rank 5: +2
+* Rank 6: +3
+* Rank 7: +3 (should be +4 but scaling in general drops off here)
 
 ### Apparel Durability: Varies
 
-Just +1 durability behind the spell version:
+Estimate 2 ranks behind the spell version:
 
-* Rank 1: +1
-* Rank 2: +1
-* Rank 3: +2
-* Rank 4: +2
-* Rank 5: +3
-* Rank 6: +3
-* Rank 7: +4
-
-### +64 HP: 1.9 EA (at rank 7)
-
-40% more HP, so 71% action efficiency, or 29% action denial, so 20 * 0.29 / 3 = 1.9 EA at rank 7, which would require 0.4 EA of detriment to be balanced.
+* Rank 1: N/A
+* Rank 2: N/A
+* Rank 3: +1
+* Rank 4: +1
+* Rank 5: +2
+* Rank 6: +2
+* Rank 7: +2
 
 ### +1 Armor defense: 1.3
 
