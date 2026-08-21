@@ -47,7 +47,8 @@ function getNormalSpellText(spell: SpellDefinition): {
   const injury = resolved.attack?.injury || '';
   const effect = resolved.effect || '';
   const exceptThat = spell.functionsLike?.exceptThat || '';
-  const fullText = `${hit} ${targeting} ${injury} ${effect} ${exceptThat}`.trim();
+  // Replace line breaks to make regexing across lines easier
+  const fullText = `${hit} ${targeting} ${injury} ${effect} ${exceptThat}`.replaceAll('\n', ' ').trim();
   return { hit, targeting, injury, effect, exceptThat, fullText };
 }
 
@@ -77,7 +78,7 @@ function isInjuryDebuff(injury: string, fullTextLowercase: string): boolean {
   if (hasDebuffWords(injury.toLowerCase())) {
     return true;
   }
-  const match = fullTextLowercase.match(/(?:if|while)[^.]*?\binjured\b(?:\})?[^.]*/i);
+  const match = fullTextLowercase.match(/(?:if|while)[^.]*?\binjured\b(?:\})?.*/i);
   return Boolean(match && hasDebuffWords(match[0]));
 }
 
@@ -108,6 +109,7 @@ function hasDebuffWords(fullTextLowercase: string): boolean {
     "can't move",
     "can't stand",
     'concealment',
+    'condition',
     'confused',
     'dazed',
     'dazzled',
@@ -389,7 +391,7 @@ export function inferExpectedRoles(
 
   // 10. Turtle (Brief defensive buff on self)
   const isTurtle =
-    /you (?:are|become)\s+(?:\\briefly\s+)?\\(shielded|fortified|steeled|braced)/i.test(
+    /you (?:are|become)\s+(?:\\briefly\s+).*(shielded|fortified|steeled|braced|resistant)/i.test(
       fullTextLowercase,
     ) ||
     /gain\s+(?:a\s+)?\+\d+\s+bonus to (?:your\s+)?defenses/i.test(fullTextLowercase) ||
@@ -422,6 +424,7 @@ export function inferExpectedRoles(
       /glide speed/i.test(fullTextLowercase) ||
       /fly speed/i.test(fullTextLowercase) ||
       /walk speed/i.test(fullTextLowercase) ||
+      /add.*speed.*available movement/i.test(fullTextLowercase) ||
       /move up to/i.test(fullTextLowercase));
   if (isMobility) {
     expected.add('mobility');
@@ -502,7 +505,7 @@ export function validateSpellRoles(spheres: MysticSphere[]): RoleValidationIssue
       const { hit, targeting, effect } = getNormalSpellText(spell);
 
       // Check Attunement rules
-      if (profile.requiresAttunement) {
+      if (profile.type && profile.type.includes('Attune')) {
         const grantsAction = attunementGrantsActiveAction(hit, targeting, effect);
         if (!grantsAction) {
           for (const actualRole of actualSet) {
