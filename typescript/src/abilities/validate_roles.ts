@@ -74,12 +74,11 @@ function hasPersistentCondition(hit: string, effect: string): boolean {
  * Determines whether a debuff requires the target to be injured.
  */
 function isInjuryDebuff(injury: string, fullTextLowercase: string): boolean {
-  const hasInjuryInText =
-    hasDebuffWords(injury.toLowerCase()) ||
-    /if (?:the target|it) (?:is|was) (?:\\glossterm{)?injured(?:})?[^.]*(?:fling|push|slow|daze|blind|deaf|unsteady|prone|vulnerable|weaken|immobil|shaken|panic|fright|confus|grapp|goad|penalty|cannot|can't)/i.test(
-      fullTextLowercase,
-    );
-  return hasInjuryInText;
+  if (hasDebuffWords(injury.toLowerCase())) {
+    return true;
+  }
+  const match = fullTextLowercase.match(/(?:if|while)[^.]*?\binjured\b(?:\})?[^.]*/i);
+  return Boolean(match && hasDebuffWords(match[0]));
 }
 
 /**
