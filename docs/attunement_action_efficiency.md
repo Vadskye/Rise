@@ -40,6 +40,14 @@ As with weapons, we treat +2 accuracy as 0.3 EA per hit, so 1.5 EA.
 
 ### Singleton +5 accuracy: 0.7
 
+### +1 to all defenses: 1.6 EA
+
+Half of braced.
+
+### +1 to all defenses vs magical attacks: 1.2 EA
+
+Assume that 75% of attacks are magical, so 1.6 * 0.75 = 1.2.
+
 ### Braced: 3.2
 
 If you could be braced as an attunement, it would be 40% action denial that works 50% of the time, so 20 * 0.4 * 0.5 = 4 EA. That's too powerful for even a deep attunement.
@@ -304,11 +312,11 @@ Just +1 durability behind the spell version:
 
 40% more HP, so 71% action efficiency, or 29% action denial, so 20 * 0.29 / 3 = 1.9 EA at rank 7, which would require 0.4 EA of detriment to be balanced.
 
-### +1 Armor: 1.3
+### +1 Armor defense: 1.3
 
 Assuming that 2/3 of enemy attacks target Armor, +1 Armor is 20% action denial that works 2/3 of the time and you are attacked 50% the time, so 20 * .2 * 2 / 3 * 0.5 = 1.3 EA, so rank 5.
 
-### +2 Armor: 2.6
+### +2 Armor defense: 2.6
 
 Twice as good as +1 Armor
 

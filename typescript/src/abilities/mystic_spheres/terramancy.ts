@@ -632,8 +632,8 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       type: 'Sustain (attunable, standard)',
     },
 
-    // +1 Armor is 1.1 EA, which is normally rank 4.
-    // -1r for Reflex defense penalty.
+    // +1 Armor is 1.1 EA, which is normally rank 5.
+    // -2r for Reflex defense penalty.
     {
       name: 'Stoneskin',
 
@@ -647,7 +647,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       type: 'Attune',
     },
 
-    // +2 armor is 2.2 EA. +2 vital is about 1 EA. That's about rank 7 deep, -1r for
+    // +2 armor is 2.6 EA. +2 vital is about 1 EA. That's about rank 9 deep, -2r for
     // Reflex defense.
     {
       name: 'Greater Stoneskin',
@@ -656,7 +656,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         You gain a +2 \\glossterm{enhancement bonus} to your Armor defense and your \\glossterm{vital rolls}.
         However, you also take a \\minus1 penalty to your Reflex defense.
       `,
-      rank: 6,
+      rank: 7,
       roles: ['attune'],
       tags: ['Manifestation'],
       type: 'Attune (deep)',

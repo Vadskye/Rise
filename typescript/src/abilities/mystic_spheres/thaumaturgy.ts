@@ -287,17 +287,48 @@ export const thaumaturgy: MysticSphere = {
       type: 'Sustain (attunable, minor)',
     },
 
+    // Assume this negates two enemy attacks on you. That negates 2/10 enemy attacks, so 20%
+    // action denial, plus the usual 50% for only affecting you, so 20 * 0.2 * 0.5 = 2 EA.
+    // Drop by a rank since it only protects from magic.
     {
       name: 'Absorb Magic',
+
+      effect: `
+        The next time you are the target of a \\magical attack, it has no effect on you.
+        After you negate two attacks in this way, this spell's effect ends.
+      `,
+      rank: 2,
+      roles: ['attune'],
+      type: 'Attune (deep)',
+    },
+    // Negating only attacks that would have hit you is strong; we normally treat action
+    // denial as ignoring whether it would have hit or missed. Arbitrarily give this +25%
+    // EA, so 2.5 EA total.
+    // It also provides +1 to all defenses, which is normally 1.6 EA. But that ends when
+    // two attacks have been absorbed. Say that it's 0.8 EA from the defenses, so 3.3 EA
+    // total. That's allowed at rank 7 with the magical-only rank drop.
+    {
+      name: 'Greater Absorb Magic',
 
       effect: `
         You gain a +1 \\glossterm{enhancement bonus} to your defenses against \\magical effects.
         In addition, the next time a \\magical attack beats your defenses, it has no effect on you.
         After you negate two attacks in this way, this spell's effect ends.
       `,
-      rank: 6,
+      rank: 7,
       roles: ['attune'],
       type: 'Attune (deep)',
+    },
+
+    {
+      name: 'Resist Magic',
+
+      effect: `
+        You gain a +1 \\glossterm{enhancement bonus} to your defenses against \\magical effects.
+      `,
+      rank: 5,
+      roles: ['attune'],
+      type: 'Attune',
     },
 
     {

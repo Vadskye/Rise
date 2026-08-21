@@ -358,11 +358,12 @@ export const toxicology: MysticSphere = {
       tags: ['Acid', 'Manifestation'],
     },
 
+    // -2r for vital roll penalty
     {
       name: 'Fungal Armor',
 
       effect: `
-        You gain a +1 \\glossterm{enhancement bonus} to your Armor and Fortitude defenses.
+        You gain a +1 \\glossterm{enhancement bonus} to your Armor defense.
         However, you also take a -1 penalty to your \\glossterm{vital rolls}.
       `,
       rank: 3,
@@ -373,9 +374,9 @@ export const toxicology: MysticSphere = {
     {
       name: 'Greater Fungal Armor',
 
+      // Resistance is unclear
       effect: `
-        You gain a +2 \\glossterm{enhancement bonus} to your Armor and Fortitude defenses.
-        However, you also take a -1 penalty to your \\glossterm{vital rolls}.
+        You gain a +2 \\glossterm{enhancement bonus} to your Armor and Fortitude defenses, and you are \\resistant to \\atPoison attacks.
       `,
       rank: 6,
       roles: ['attune'],

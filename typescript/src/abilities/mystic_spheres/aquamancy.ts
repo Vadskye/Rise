@@ -739,6 +739,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       roles: ['attune'],
       type: 'Attune (deep)',
     },
+    // -1r for rare vulnerablity
     {
       name: 'Waterward',
 
@@ -746,18 +747,20 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         You gain a +1 \\glossterm{enhancement bonus} to your Armor defense.
         However, you are \\vulnerable to \\atElectricity abilities.
       `,
-      rank: 3,
+      rank: 4,
       roles: ['attune'],
       type: 'Attune',
     },
+    // All defenses would be a bit over r7. Only armor and brawn is closer to r6?
+    // Resistance is unclear.
     {
       name: 'Greater Waterward',
 
       effect: `
-        You gain a +1 \\glossterm{enhancement bonus} to your Armor and Brawn defenses.
+        You gain a +1 \\glossterm{enhancement bonus} to your Armor and Brawn defenses, and you are \\resistant to \\atFire abilities.
         However, you are \\vulnerable to \\atElectricity abilities.
       `,
-      rank: 5,
+      rank: 7,
       roles: ['attune'],
       type: 'Attune',
     },

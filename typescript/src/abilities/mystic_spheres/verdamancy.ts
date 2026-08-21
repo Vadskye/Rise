@@ -383,6 +383,7 @@ export const verdamancy: MysticSphere = {
       type: 'Sustain (attunable, standard)',
     },
 
+    // -1r for rare vulnerability
     {
       name: 'Barkskin',
 
@@ -390,7 +391,7 @@ export const verdamancy: MysticSphere = {
         You gain a +1 \\glossterm{enhancement bonus} to your Armor defense.
         However, you are also \\vulnerable to \\atFire abilities.
       `,
-      rank: 3,
+      rank: 4,
       roles: ['attune'],
       type: 'Attune',
       tags: ['Manifestation', 'Physical'],
@@ -400,10 +401,10 @@ export const verdamancy: MysticSphere = {
       name: 'Greater Barkskin',
 
       effect: `
-        You gain a +1 \\glossterm{enhancement bonus} to your Armor and Fortitude defenses. 
+        You gain a +1 \\glossterm{enhancement bonus} to your Armor defense and \\glossterm{vital rolls}. 
         However, you are also \\vulnerable to \\atFire abilities.
       `,
-      rank: 5,
+      rank: 7,
       roles: ['attune'],
       type: 'Attune',
       tags: ['Manifestation', 'Physical'],

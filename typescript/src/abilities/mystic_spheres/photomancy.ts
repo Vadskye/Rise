@@ -428,6 +428,7 @@ export const photomancy: MysticSphere = {
 
     // Assume this negates two enemy attacks on you. That negates 2/10 enemy attacks, so 20%
     // action denial, plus the usual 50% for only affecting you, so 20 * 0.2 * 0.5 = 2 EA.
+    // This is slightly weaker than that because you might be more worried about area
     {
       name: 'Mirror Image',
 
