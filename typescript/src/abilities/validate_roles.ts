@@ -435,7 +435,7 @@ export function inferExpectedRoles(
 
   // 10. Turtle (Brief defensive buff on self)
   const isTurtle =
-    /you (?:are|become)\s+(?:\\briefly\s+).*(shielded|fortified|steeled|braced|resistant)/i.test(
+    /you (?:are|become).*(?:\\briefly\s+).*(shielded|fortified|steeled|braced|resistant)/i.test(
       fullTextLowercase,
     ) ||
     /gain\s+(?:a\s+)?\+\d+\s+bonus to (?:your\s+)?defenses/i.test(fullTextLowercase) ||
@@ -528,7 +528,7 @@ export function inferExpectedRoles(
     fullTextLowercase.includes('for one day') ||
     fullTextLowercase.includes('for one year') ||
     fullTextLowercase.includes('for 24 hours') ||
-    /unattended.*?object/.test(fullTextLowercase) ||
+    /choose.*unattended.*object/.test(fullTextLowercase) ||
     (rawSpell.usageTime && rawSpell.usageTime !== 'standard' && rawSpell.usageTime !== 'minor')
   ) {
     expected.add('narrative');
@@ -536,7 +536,7 @@ export function inferExpectedRoles(
 
   // 17. Payoff
   if (
-    /during your (?:previous|last) turn, you/i.test(fullTextLowercase) ||
+    /unless.*during your (?:previous|last) turn/i.test(fullTextLowercase) ||
     fullTextLowercase.includes('if you used')
   ) {
     expected.add('payoff');

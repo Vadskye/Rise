@@ -804,7 +804,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         `,
       },
       rank: 3,
-      roles: ['maim', 'burn'],
+      roles: ['maim', 'burn', 'softener'],
       scaling: 'damage',
     },
     {
@@ -816,7 +816,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
           'it does not require a \\glossterm{free hand}, and it targets one creature within \\medrange.',
       },
       rank: 5,
-      roles: ['maim', 'burn'],
+      roles: ['maim', 'burn', 'softener'],
     },
     {
       name: 'Slippery Puddle',

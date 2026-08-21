@@ -83,7 +83,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     },
 
     {
-      name: 'Stoke the Fires',
+      name: 'Stoke the Flames',
 
       // Rank 3 Spell
       // Area: Enemies in Tiny radius from self (R0, mod +1)
@@ -106,7 +106,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     },
 
     {
-      name: 'Mighty Stoke the Fire',
+      name: 'Mighty Stoke the Flames',
 
       functionsLike: {
         name: 'stoke the flames',

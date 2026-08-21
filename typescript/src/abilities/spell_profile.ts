@@ -230,7 +230,7 @@ export function isStrikeSpell(text: string): boolean {
 export function isAdjacentArea(text: string): boolean {
   const lowercase = text.toLowerCase();
   return (
-    lowercase.includes('adjacent to you') ||
+    /(each|everything).*adjacent to you/.test(lowercase) ||
     /(?:all|each|everything|enemies|creatures)\s+adjacent\s+to\s+you/.test(lowercase) ||
     /(?:yourself\s+and\s+all)\s+.*?adjacent/.test(lowercase) ||
     /against\s+all\s+.*?adjacent/.test(lowercase)
