@@ -377,7 +377,7 @@ export const photomancy: MysticSphere = {
         This ability provides no defensive benefit against creatures immune to \\abilitytag{Visual} abilities.
       `,
       narrative: `Your physical outline is distorted so it appears blurred, shifting, and wavering.`,
-      rank: 5,
+      rank: 7,
       roles: ['attune'],
       tags: ['Visual'],
       type: 'Attune',
@@ -386,7 +386,7 @@ export const photomancy: MysticSphere = {
     {
       name: 'Sudden Mirrorswarm',
 
-      // 50% miss chance for 2 turns of attacks is 8 * 0.5 * 0.3 = 1.2 EA.
+      // 50% miss chance for 2 turns of attacks is 8 * 0.5 * 0.4 = 1.6 EA.
       effect: `
         You can activate this spell as a \\glossterm{minor action}.
         When you do, a burst of illusory duplicates appear from your body, each appearing to performing a different action.
@@ -395,10 +395,10 @@ export const photomancy: MysticSphere = {
 
         This ability provides no defensive benefit against creatures immune to \\abilitytag{Visual} abilities.
       `,
-      rank: 4,
+      rank: 1,
       roles: ['attune'],
       tags: ['Visual'],
-      type: 'Attune',
+      type: 'Attune (deep)',
     },
 
     {
@@ -426,8 +426,8 @@ export const photomancy: MysticSphere = {
       type: 'Sustain (attunable, minor)',
     },
 
-    // Rank 7 version is unlimited. It's not obvious how to downscale that correctly to
-    // rank 1.
+    // Assume this negates two enemy attacks on you. That negates 2/10 enemy attacks, so 20%
+    // action denial, plus the usual 50% for only affecting you, so 20 * 0.2 * 0.5 = 2 EA.
     {
       name: 'Mirror Image',
 
@@ -441,13 +441,8 @@ export const photomancy: MysticSphere = {
         When the last image is destroyed, this ability provides no further benefit.
         This ability provides no defensive benefit against creatures immune to \\abilitytag{Visual} abilities.
       `,
-      rank: 1,
+      rank: 3,
       roles: ['attune'],
-      scaling: {
-        3: 'The number of illusory duplicates increases to three.',
-        5: 'The number of illusory duplicates increases to four.',
-        7: 'The number of illusory duplicates increases to five.',
-      },
       tags: ['Visual'],
       type: 'Attune (deep)',
     },
@@ -455,10 +450,11 @@ export const photomancy: MysticSphere = {
     {
       name: 'Greater Mirror Image',
 
+      // 3 attacks instead of 2 means 3 EA. 
       functionsLike: {
         name: 'mirror image',
         exceptThat:
-          'the images are recreated immediately after being destroyed, so they never run out.',
+          'the number of illusory duplicates increases to three.',
       },
       rank: 7,
       roles: ['attune'],

@@ -259,19 +259,9 @@ export const umbramancy: MysticSphere = {
         Your physical form becomes blurred and shifts in and out of existence.
         This is not a mere trick of the light, but an alteration of reality to make your existence more ambiguous.
       `,
-      rank: 2,
+      rank: 3,
       roles: ['attune'],
       type: 'Attune (deep)',
-    },
-    {
-      name: 'Efficient Shadow Mantle',
-
-      effect: `
-        While you are \\glossterm{shadowed}, attacks against you have a 20\\% \\glossterm{failure chance}.
-      `,
-      rank: 7,
-      roles: ['attune'],
-      type: 'Attune',
     },
 
     {

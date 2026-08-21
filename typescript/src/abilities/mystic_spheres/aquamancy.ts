@@ -450,9 +450,8 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       tags: ['Manifestation'],
       type: 'Sustain (minor)',
     },
-    // 20% miss chance is about rank 3. But globally providing concealment that could
-    // affect you and your allies seems stronger than that, even with the risk of
-    // protecting your enemies, so call this a deep attunement but drop it by a rank.
+    // 20% personal miss chance is 1.6 EA. AOE is hard to define, so arbitrarily give it
+    // +50% to 2.4. That allows rank 4 deep.
     {
       name: 'Misty Shroud',
 
@@ -461,7 +460,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         This fog does not fully block sight, but it provides \\glossterm{concealment}.
         There is no time gap between the disappearance of the old fog and the appearance of the new fog, so you can keep continuous fog cover by staying in the same place or moving slowly.
       `,
-      rank: 2,
+      rank: 4,
       roles: ['attune'],
       type: 'Attune (deep)',
     },

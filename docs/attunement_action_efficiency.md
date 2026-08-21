@@ -324,7 +324,11 @@ Assuming that 33% of enemy attacks target the defense, +2 is 40% action denial t
 
 20% failure chance is 20% action denial that works 50% of the time, so 20 * 0.5 * 0.2 = 2 EA.
 
-### 50% miss chance: 5
+### 50% miss chance: 4
+
+50% miss chance is 50% action denial that works 40% of the time, so 20 * 0.5 * 0.4 = 4 EA
+
+### 50% failure chance: 5
 
 50% miss chance is 50% action denial that works 50% of the time, so 20 * 0.5 * 0.5 = 5 EA
 
