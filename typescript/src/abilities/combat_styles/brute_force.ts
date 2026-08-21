@@ -97,9 +97,9 @@ export const bruteForce: CombatStyle = {
     {
       name: 'Mighty Stomp',
 
-      // -2dr for 0.4 EA buff.
+      // -1dr for 0.2 EA buff.
       attack: {
-        hit: `\\damageranktwo.`,
+        hit: `\\damagerankthree.`,
         halfOnMiss: true,
         targeting: `
           Make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you that are \\glossterm{grounded} on the same stable surface as you.
@@ -195,7 +195,7 @@ export const bruteForce: CombatStyle = {
       roles: ['trip'],
     },
 
-    // Brief empower costs 0.7 EA, and brief goad costs 1.0 EA. Total is 1.7 EA, or r3.
+    // Brief empower costs 0.3 EA, and brief goad costs 1.0 EA. Total is 1.3 EA, or r1.
     {
       name: 'Ostentatious Flex',
 
@@ -207,7 +207,7 @@ export const bruteForce: CombatStyle = {
           Then, you are \\briefly \\empowered.
         `,
       },
-      rank: 3,
+      rank: 1,
       roles: ['generator'],
     },
 
@@ -238,8 +238,7 @@ export const bruteForce: CombatStyle = {
     {
       name: 'Muscle Burst',
 
-      // Standard effect for r3 would be brief empower -> dr1, which is basically what
-      // this is.
+      // May be too weak?
       effect: `
         You are \\briefly \\empowered.
         Then, make a \\glossterm{strike}.

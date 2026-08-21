@@ -793,13 +793,16 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
     {
       name: 'Ice Shield',
 
-      // Cover is 0.5 EA. Adding empowered is +0.4 EA, so 0.9 EA, which
-      // is fine for an optional ice crystal.
+      // Single target melee damage would normally be dr3, or dr2 vs all adjacent.
+      // Use dr3 as a baseline, +1dr for double defense, -1dr for crystal-only shielded. 
       cost: OPTIONAL_ICE_CRYSTAL,
-      effect: `
-        Whenever you cast or sustain this spell, you \\briefly have \\glossterm{cover} from all attacks.
-        If you spent an ice crystal when you cast this spell, you are also \\briefly \\empowered.
-      `,
+      attack: {
+        hit: `\\damagerankthree.`,
+        targeting: `
+          As a \\brief effect, whenever a creature makes a \\glossterm{melee} attack against you, make a \\glossterm{reactive attack} vs. Armor and Fortitude against them.
+          If you spent an ice crystal when you cast this spell, you are also \\briefly \\shielded.
+        `,
+      },
       rank: 1,
       roles: ['focus', 'turtle'],
       type: 'Sustain (standard)',
@@ -807,16 +810,14 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
     },
 
     {
-      name: 'Greater Ice Shield',
+      name: 'Mighty Ice Shield',
 
-      // Cover is 0.5 EA. Adding a turn of maximized is +0.7 EA, so 1.2 EA, which
-      // is fine for an optional ice crystal.
-      cost: OPTIONAL_ICE_CRYSTAL,
-      effect: `
-        Whenever you cast or sustain this spell, you \\briefly have \\glossterm{cover} from all attacks.
-        If you spent an ice crystal when you cast this spell, you are also \\briefly \\maximized.
-      `,
-      rank: 6,
+      functionsLike: {
+        name: 'ice shield',
+        exceptThat:
+          'the damage increases to \\damageranksix, and any \\glossterm{extra damage} is doubled.',
+      },
+      rank: 4,
       roles: ['focus', 'turtle'],
       type: 'Sustain (standard)',
       tags: ['Manifestation', 'Physical'],

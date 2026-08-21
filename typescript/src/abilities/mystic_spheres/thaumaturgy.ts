@@ -482,23 +482,23 @@ export const thaumaturgy: MysticSphere = {
       name: 'Greater Arcane Surge',
 
       effect: `
-        Whenever you cast or sustain this spell, you are \\briefly \\maximized and \\empowered.
+        Whenever you cast or sustain this spell, you are \\briefly \\maximized and \\honed.
       `,
       rank: 6,
       roles: ['focus'],
       type: 'Sustain (standard)',
     },
 
-    // Half damage is 0.7 EA, empower is 0.4 EA. We can combine them with these
+    // Half damage is 0.7 EA, empower is 0.2 EA. We can combine them with these
     // conditions.
     {
       name: 'Arcane Fuel',
 
       effect: `
         Whenever you cast or sustain this spell, you \\briefly take half damage from \\magical effects.
-        When you take damage from a magical ability during this effect, you become \\briefly \\empowered.
+        Whenever you take damage from a magical ability during this effect, you become \\briefly \\empowered.
       `,
-      rank: 3,
+      rank: 2,
       roles: ['focus', 'turtle'],
       type: 'Sustain (standard)',
     },

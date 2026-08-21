@@ -87,12 +87,12 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       // Rank 3 Spell
       // Area: Enemies in Tiny radius from self (R0, mod +1)
-      // Buff: Briefly Empowered (0.4 EA guaranteed, mod -2)
+      // Buff: Briefly Empowered (0.2 EA guaranteed, mod -1)
       // Double defense is +1dr
-      // Result: 3 + 1 - 2 + 1 = dr3
+      // Result: 3 + 1 - 1 + 1 = dr3
       attack: {
         hit: `
-          \\damagerankthree.
+          \\damagerankfour.
         `,
         halfOnMiss: true,
         targeting: `
@@ -106,22 +106,11 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     },
 
     {
-      name: 'Stoke the Bonfire',
+      name: 'Mighty Stoke the Fire',
 
-      // Rank 6 Spell
-      // Area: Enemies in Tiny radius from self (R0, mod +1)
-      // Buff: Briefly Empowered (0.4 EA guaranteed, mod -2)
-      // Double defense is +1dr
-      // Result: 6 + 1 - 2 + 1 = dr6
-      attack: {
-        hit: `
-          \\damageranksix.
-        `,
-        halfOnMiss: true,
-        targeting: `
-          You are \\briefly \\empowered.
-          Then, make an attack vs. Armor and Reflex against all \\glossterm{enemies} adjacent to you.
-        `,
+      functionsLike: {
+        name: 'stoke the flames',
+        exceptThat: 'the damage increases to \\damagerankseven.',
       },
       rank: 6,
       roles: ['clear', 'generator'],
@@ -948,9 +937,10 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       name: 'Fire Shield',
 
       // Single target melee damage would normally be dr3, or dr2 vs all adjacent.
-      // It's not clear exactly how much empowered is worth vs guaranteed damage.
+      // Use dr3 as a baseline, +1dr for double defense, -1dr for empower. 
+      // Empowered is worth -1dr - remember that it doesn't improve reactive attacks.
       attack: {
-        hit: `\\damageranktwo.`,
+        hit: `\\damagerankthree.`,
         targeting: `
           You are \\briefly \\empowered.
           As a \\brief effect, whenever a creature makes a \\glossterm{melee} attack against you, make a \\glossterm{reactive attack} vs. Armor and Reflex against them.
@@ -967,10 +957,10 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       functionsLike: {
         name: 'fire shield',
         exceptThat:
-          'the damage increases to \\damagerankfive, and any \\glossterm{extra damage} is doubled.',
+          'the damage increases to \\damageranksix, and any \\glossterm{extra damage} is doubled.',
       },
       roles: ['generator', 'retaliate'],
-      rank: 5,
+      rank: 4,
       scaling: 'damage',
     },
   ],

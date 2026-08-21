@@ -445,7 +445,7 @@ export const channelDivinity: MysticSphere = {
       scaling: 'damage',
     },
 
-    // Brief daze is 1.4 EA, so 2.1 EA with empower.
+    // Brief daze is 1.4 EA, so 1.7 EA with empower. Spend a rank for area.
     {
       name: 'Greater Word of Power',
 
@@ -459,13 +459,13 @@ export const channelDivinity: MysticSphere = {
           Then, you are \\briefly \\empowered.
         `,
       },
-      rank: 5,
+      rank: 4,
       roles: ['flash', 'generator'],
       scaling: 'accuracy',
     },
 
-    // Brief + HP deafen is normally ~0.9 EA, so 1.6 EA with empower. Call that rank 1,
-    // because even the fancy version of deafen is still pretty weak.
+    // Brief + HP deafen is normally ~0.9 EA, so ~1.2 EA with empower. That allows a
+    // relatively large area.
     {
       name: 'Word of Power',
 
@@ -476,7 +476,7 @@ export const channelDivinity: MysticSphere = {
           If it is \\glossterm{injured}, it is also deafened as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
           Then, you are \\briefly \\empowered.
         `,
       },

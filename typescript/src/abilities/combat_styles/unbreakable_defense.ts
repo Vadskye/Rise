@@ -183,21 +183,22 @@ export const unbreakableDefense: CombatStyle = {
     {
       name: 'Sinews of Steel',
 
-      // 0.4 + 0.4 EA
+      // Maximized is typically 0.7 EA, but martials don't get that much value out of it.
+      // Treat maximized as 0.5 EA + 0.4 EA from steeled.
       effect: `
-        Whenever you use or sustain this maneuver, you are \\briefly \\steeled and \\empowered.
+        Whenever you use or sustain this maneuver, you are \\briefly \\maximized and \\steeled.
       `,
       rank: 1,
-      roles: ['turtle'],
+      roles: ['focus', 'turtle'],
       type: 'Sustain (standard)',
     },
 
     {
       name: 'Sinews of Steel+',
 
-      // 0.4 + 0.7 EA
+      // 0.7 + 0.5 EA
       effect: `
-        Whenever you use or sustain this maneuver, you are \\briefly \\steeled and \\maximized.
+        Whenever you use or sustain this maneuver, you \\briefly are \\maximized and take half damage from all sources.
       `,
       rank: 7,
       roles: ['focus'],
@@ -264,11 +265,12 @@ export const unbreakableDefense: CombatStyle = {
     {
       name: 'Invigoration',
 
-      // Pure healing would be dr3, so dr2 for empower
+      // Healing another person with Restoration is dr3. For being personal only, this
+      // gets empowered.
       cost: 'One \\glossterm{stamina}.',
       effect: `
         Whenever you use or sustain this maneuver, you are \\briefly empowered.
-        In addition, you regain \\hpranktwo.
+        In addition, you regain \\hprankthreelow.
       `,
       rank: 1,
       roles: ['focus', 'healing'],
@@ -279,11 +281,10 @@ export const unbreakableDefense: CombatStyle = {
     {
       name: 'Greater Invigoration',
 
-      // Pure healing would be dr3, so dr2 for empower
       cost: 'One \\glossterm{stamina}.',
       effect: `
         Whenever you use or sustain this maneuver, you are \\briefly empowered.
-        In addition, you regain \\hpranksix.
+        In addition, you regain \\hpranksevenlow.
       `,
       rank: 5,
       roles: ['focus', 'healing'],
