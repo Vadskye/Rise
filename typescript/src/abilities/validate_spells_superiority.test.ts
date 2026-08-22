@@ -467,7 +467,7 @@ t.test('validateSpells: Strictly Superior Spells', (t) => {
         makeMockSpell({
           name: 'Massive Blastwave',
           rank: 6,
-          roles: ['clear', 'kite'],
+          roles: ['clear', 'maim'],
           attack: {
             hit: '\\damagerankfour.',
             injury:

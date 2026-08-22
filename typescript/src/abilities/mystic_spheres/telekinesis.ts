@@ -71,7 +71,7 @@ export const telekinesis: MysticSphere = {
         `,
       },
       rank: 2,
-      roles: ['kite'],
+      roles: ['trip'],
       scaling: 'accuracy',
     },
 
@@ -86,7 +86,7 @@ export const telekinesis: MysticSphere = {
           'the \\glossterm{difficulty value} of the Might check increases to 10, or to 15 on a critical hit.',
       },
       rank: 5,
-      roles: ['kite'],
+      roles: ['trip'],
       scaling: 'accuracy',
     },
 
@@ -244,7 +244,7 @@ export const telekinesis: MysticSphere = {
         `,
       },
       rank: 2,
-      roles: ['clear', 'kite'],
+      roles: ['clear', 'maim'],
       scaling: 'damage',
     },
 
@@ -264,7 +264,7 @@ export const telekinesis: MysticSphere = {
         `,
       },
       rank: 5,
-      roles: ['clear', 'kite'],
+      roles: ['clear', 'maim'],
       scaling: 'damage',
     },
 
@@ -291,7 +291,7 @@ export const telekinesis: MysticSphere = {
         `,
       },
       rank: 6,
-      roles: ['clear', 'kite'],
+      roles: ['clear', 'maim'],
       scaling: 'damage',
     },
 
@@ -310,7 +310,7 @@ export const telekinesis: MysticSphere = {
         `,
       },
       rank: 1,
-      roles: ['kite'],
+      roles: ['trip'],
       scaling: 'accuracy',
     },
 
@@ -328,7 +328,7 @@ export const telekinesis: MysticSphere = {
         `,
       },
       rank: 5,
-      roles: ['kite'],
+      roles: ['trip'],
       scaling: 'accuracy',
     },
 
@@ -345,7 +345,7 @@ export const telekinesis: MysticSphere = {
         `,
       },
       rank: 6,
-      roles: ['kite'],
+      roles: ['trip'],
       scaling: 'accuracy',
     },
 
@@ -365,7 +365,7 @@ export const telekinesis: MysticSphere = {
         `,
       },
       rank: 1,
-      roles: ['kite'],
+      roles: ['maim'],
       scaling: 'accuracy',
     },
 
@@ -384,7 +384,7 @@ export const telekinesis: MysticSphere = {
         `,
       },
       rank: 4,
-      roles: ['kite'],
+      roles: ['maim'],
       scaling: 'accuracy',
     },
     {

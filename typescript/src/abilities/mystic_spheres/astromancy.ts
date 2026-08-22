@@ -83,7 +83,7 @@ export const astromancy: MysticSphere = {
         Your touch makes your foe disappear.
         Most of it reappears intact elsewhere, but something important - and painful - was lost in transit.
       `,
-      roles: ['burst', 'kite'],
+      roles: ['burst', 'trip'],
       rank: 1,
       scaling: 'damage',
     },
@@ -102,7 +102,7 @@ export const astromancy: MysticSphere = {
           Make an attack vs. Mental against a creature you \\glossterm{touch}.
         `,
       },
-      roles: ['burst', 'kite'],
+      roles: ['burst', 'trip'],
       rank: 4,
       scaling: 'damage',
     },
@@ -123,7 +123,7 @@ export const astromancy: MysticSphere = {
           Make an attack vs. Mental against a creature you \\glossterm{touch}.
         `,
       },
-      roles: ['burst', 'kite'],
+      roles: ['burst', 'trip'],
       rank: 6,
       scaling: 'damage',
     },
@@ -239,7 +239,7 @@ export const astromancy: MysticSphere = {
         You teleport your foe across the chasm.
         The orc will never be able to reach you now.
       `,
-      roles: ['kite'],
+      roles: ['trip'],
       scaling: 'accuracy',
     },
     // 60' teleport is at least as strong as an action skip. It's hard to calculate this
@@ -257,7 +257,7 @@ export const astromancy: MysticSphere = {
         `,
       },
       rank: 7,
-      roles: ['kite', 'maim'],
+      roles: ['maim'],
       narrative: `
         You teleport your foe across the chasm.
         The ogre will never be able to reach you now.
