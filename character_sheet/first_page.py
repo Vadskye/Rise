@@ -303,7 +303,7 @@ def untrained_subskill_box(display_name: str, parseable_name: str) -> str:
             subtlebutton(
                 {
                     "class": "skill-button",
-                    "name": f"roll_subskill",
+                    "name": f"roll_skill_{parseable_name}_untrained",
                     "type": "roll",
                     "value": "@{character_name} uses "
                     + display_name
