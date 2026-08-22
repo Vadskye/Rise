@@ -134,7 +134,7 @@ export const enchantment: MysticSphere = {
       },
 
       rank: 6,
-      roles: ['flash'],
+      roles: ['softener'],
       scaling: 'accuracy',
       tags: ['Compulsion'],
     },
@@ -340,7 +340,7 @@ export const enchantment: MysticSphere = {
         `,
       },
       rank: 5,
-      roles: ['flash'],
+      roles: ['softener'],
       scaling: 'accuracy',
       tags: ['Emotion'],
     },

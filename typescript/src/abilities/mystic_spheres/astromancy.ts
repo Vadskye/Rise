@@ -444,7 +444,7 @@ export const astromancy: MysticSphere = {
           Make an attack vs. Mental against something within \\medrange.
         `,
       },
-      roles: ['burst', 'maim'],
+      roles: ['burst', 'trip'],
       rank: 7,
     },
     {
@@ -474,7 +474,7 @@ export const astromancy: MysticSphere = {
       `,
       // narrative: '',
       rank: 3,
-      roles: ['snipe', 'maim'],
+      roles: ['clear', 'snipe', 'maim'],
       scaling: 'damage',
       tags: ['Air'],
     },

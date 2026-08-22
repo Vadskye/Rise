@@ -202,7 +202,7 @@ export const chronomancy: MysticSphere = {
         `,
       },
       rank: 2,
-      roles: ['softener', 'maim'],
+      roles: ['trip', 'maim'],
       scaling: 'accuracy',
     },
 
@@ -264,7 +264,7 @@ export const chronomancy: MysticSphere = {
         In addition, you add twice your \\glossterm{speed} to your \\glossterm{available movement}.
       `,
       rank: 5,
-      roles: ['turtle'],
+      roles: ['turtle', 'mobility'],
       type: 'Sustain (standard)',
     },
 
@@ -639,7 +639,7 @@ export const chronomancy: MysticSphere = {
         `,
       },
       rank: 7,
-      roles: ['flash'],
+      roles: ['softener'],
       scaling: 'accuracy',
       tags: ['Auditory', 'Visual'],
     },
@@ -661,7 +661,7 @@ export const chronomancy: MysticSphere = {
         `,
       },
       rank: 2,
-      roles: ['burn', 'softener'],
+      roles: ['burn', 'trip'],
       scaling: 'damage',
     },
     {
@@ -675,7 +675,7 @@ export const chronomancy: MysticSphere = {
           'the damage increases to \\damagerankfive, and any \\glossterm{extra damage} is doubled. In addition, the accuracy bonus increases to \\plus4.',
       },
       rank: 5,
-      roles: ['burst'],
+      roles: ['burn', 'trip'],
       scaling: 'damage',
     },
 
@@ -720,7 +720,7 @@ export const chronomancy: MysticSphere = {
         At the end of your next turn, the target returns to normal, with no awareness of the intervening time.
         After it returns to normal, it becomes immune to this effect until it finishes a \\glossterm{short rest}.
       `,
-      roles: ['boon'],
+      roles: ['boon', 'exertion'],
       rank: 3,
       scaling: {
         5: 'The maximum size increases to Large.',
