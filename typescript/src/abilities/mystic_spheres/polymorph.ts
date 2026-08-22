@@ -672,7 +672,7 @@ export const polymorph: MysticSphere = {
         You are also unable to take any standard action other than \\glossterm{movement}.
       `,
       rank: 5,
-      roles: ['attune'],
+      roles: ['mobility'],
       tags: ['Physical'],
       type: 'Sustain (attunable, minor)',
     },

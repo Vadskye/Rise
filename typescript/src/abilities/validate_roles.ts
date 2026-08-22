@@ -392,7 +392,7 @@ export function inferExpectedRoles(
   const isBarrier =
     (rawSpell.tags || []).includes('Barrier') ||
     (profile.area === 'wall' && dealsDamage) ||
-    (/\bwall\b|wall of/i.test(fullTextLowercase) && dealsDamage);
+    (/\bwall\b/i.test(fullTextLowercase) && dealsDamage);
   if (isBarrier) {
     expected.add('barrier');
   }
