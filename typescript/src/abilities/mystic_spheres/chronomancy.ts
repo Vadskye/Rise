@@ -279,7 +279,7 @@ export const chronomancy: MysticSphere = {
         All \\glossterm{injured} creatures are \\slowed while they are in the area.
       `,
       rank: 6,
-      roles: ['flash', 'hazard'],
+      roles: ['hazard'],
       type: 'Sustain (minor)',
     },
 
@@ -509,7 +509,7 @@ export const chronomancy: MysticSphere = {
         After casting this spell, you cannot cast it again until you finish a \\glossterm{short rest}.
       `,
       rank: 3,
-      roles: ['focus'],
+      roles: ['narrative'],
     },
 
     {
@@ -690,7 +690,7 @@ export const chronomancy: MysticSphere = {
         During your next turn after the stasis ends, you can take an extra \\glossterm{minor action} during your turn, and you add your \\glossterm{speed} to your \\glossterm{available movement}.
       `,
       rank: 1,
-      roles: ['focus'],
+      roles: ['focus', 'mobility'],
     },
 
     // This spends two move actions to relocate a standard action.

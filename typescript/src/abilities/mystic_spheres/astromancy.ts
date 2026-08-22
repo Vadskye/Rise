@@ -171,7 +171,7 @@ export const astromancy: MysticSphere = {
         `,
       },
       rank: 7,
-      roles: ['maim'],
+      roles: ['trip'],
       scaling: 'accuracy',
     },
 
@@ -596,7 +596,7 @@ export const astromancy: MysticSphere = {
         When one of their number was unexpectedly replaced by a raging barbarian, they discovered how wrong they were.
       `,
       rank: 4,
-      roles: ['mobility'],
+      roles: ['trip'],
       scaling: 'accuracy',
     },
     // Hard to calculate EA, assume it's the same as Translocation
