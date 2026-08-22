@@ -50,7 +50,7 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 1,
-      roles: ['flash'],
+      roles: ['softener'],
       scaling: 'accuracy',
       tags: ['Visual'],
     },
@@ -135,7 +135,7 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 2,
-      roles: ['flash'],
+      roles: ['softener'],
       scaling: 'accuracy',
       tags: ['Visual'],
     },
@@ -155,7 +155,7 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 4,
-      roles: ['flash'],
+      roles: ['softener'],
       scaling: 'accuracy',
       tags: ['Visual'],
     },
@@ -233,7 +233,7 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 4,
-      roles: ['burst'],
+      roles: ['burst', 'maim'],
       scaling: 'damage',
     },
 
@@ -256,7 +256,7 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 7,
-      roles: ['burst'],
+      roles: ['burst', 'maim'],
     },
 
     {
@@ -279,7 +279,7 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 5,
-      roles: ['clear'],
+      roles: ['clear', 'maim'],
       scaling: 'damage',
     },
 
@@ -303,7 +303,7 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 3,
-      roles: ['clear'],
+      roles: ['clear', 'maim'],
       scaling: 'damage',
     },
 
@@ -319,7 +319,7 @@ export const photomancy: MysticSphere = {
           'the area increases to a \\medarea radius \\glossterm{zone}, and the damage increases to \\damagerankfourlow.',
       },
       rank: 6,
-      roles: ['clear'],
+      roles: ['clear', 'maim'],
     },
 
     {
@@ -363,7 +363,7 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 5,
-      roles: ['softener'],
+      roles: ['hazard', 'flash'],
       scaling: 'accuracy',
       tags: ['Compulsion', 'Visual'],
       type: 'Sustain (minor)',

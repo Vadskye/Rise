@@ -126,7 +126,7 @@ export const polymorph: MysticSphere = {
         `,
       },
       rank: 7,
-      roles: ['maim'],
+      roles: ['flash', 'maim'],
       scaling: 'accuracy',
       tags: ['Physical'],
     },
