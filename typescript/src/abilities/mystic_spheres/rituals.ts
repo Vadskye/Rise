@@ -812,7 +812,7 @@ export const rituals: RitualDefinition[] = [
 
     usageTime: 'one minute',
     functionsLike: {
-      name: 'gentle repose',
+      name: 'preservation',
       exceptThat: 'the effect lasts for one year.',
     },
     materialCost: true,
