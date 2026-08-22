@@ -148,7 +148,7 @@ export const fabrication: MysticSphere = {
           'the copy can appear in your backpack, or some other small personal storage you are touching.',
       },
       rank: 5,
-      roles: ['attune'],
+      roles: ['narrative'],
       tags: ['Manifestation'],
       type: 'Sustain (attunable, minor)',
     },
@@ -732,7 +732,7 @@ export const fabrication: MysticSphere = {
       // Area: Small area cone from self (R0, mod +1)
       // Result: Multi-target melee strike
       functionsLike: {
-        name: 'blade barrage',
+        name: 'bladeshard blast',
         exceptThat: 'the strike deals double damage.',
       },
       rank: 5,
