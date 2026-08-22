@@ -15,37 +15,37 @@ Each spell has a role defining its primary function in combat. A spell's role re
 
 ### List of Roles
 
-The list of roles is defined in `typescript/src/abilities/mystic_spheres/index.ts`. A summary of the roles is given below:
+The list of roles is defined in `typescript/src/abilities/constants.ts`. A summary of the roles is given below:
 
-- `attune`: A buff that lasts as long as you stay attuned. (Primary role for persistent effects).
-- `boon`: Brief or one-round combat-relevant effects on one or more allies (including self).
+- `attune`: Buff that lasts as long as you stay attuned.
+- `barrier`: Walls that deal damage on passage or fully block passage.
+- `boon`: Brief or one-turn combat-relevant effects on one or more allies, possibly including you. If the effect is not combat relevant, it should be 'narrative' instead.
 - `burn`: Single-target damage over time.
 - `burst`: Single-target immediate damage.
-- `cleanse`: Remove conditions (or, more rarely, poisons).
-- `clear`: Immediate damage to multiple targets, typically in an area (AOE).
-- `combo`: Has an effect that requires other abilities to be useful.
+- `cleanse`: Remove conditions or, more rarely, poisons.
+- `clear`: Immediate damage to multiple targets, typically in an area.
 - `dive`: Move towards or through enemies and attack at short range.
-- `execute`: Single-target immediate damage that requires the target to be injured or causes immediate death.
-- `exertion`: Spend fatigue (or other resources) for more powerful effects.
-- `flash`: Brief or one-round debuff that affects multiple targets, typically in an area (AOE).
-- `focus`: Brief offensive buff on yourself. (Not an attack ability).
-- `generator`: Attack and gain a brief offensive buff on yourself. The buff typically lasts after the attack.
-- `hazard`: Create a persistent battlefield hazard, such as a zone that deals damage each round.
+- `execute`: Single-target immediate damage that requires the target to be injured.
+- `exertion`: Spend stamina for more powerful effects (or, rarely, spend other resources like vital wounds).
+- `flash`: Brief or one-turn debuff that affects multiple targets, typically in an area. Does not require injury.
+- `focus`: Brief offensive buff on yourself. If an ability makes an attack, it is not a focus ability, though it may be a generator.
+- `generator`: Attack and gain a brief buff on yourself that is typically offensive. The buff must last after the effect of the attack, typically for its next turn.
+- `hazard`: Create a persistent battlefield hazard, such as a zone that deals damage each turn.
 - `healing`: Regain hit points.
-- `kite`: Move away from enemies and make a ranged attack, or prevent enemies from moving closer.
-- `maim`: Single-target debuff that requires the target to be injured.
-- `mobility`: Move yourself or allies without making an attack. (Generally not applied to `attune` spells unless they grant a new standard action for movement).
+- `maim`: Debuff that requires the target to be injured and has no debuff on uninjured targets. Can deal damage to uninjured targets.
+- `mobility`: Move yourself or allies without making an attack.
 - `narrative`: Non-combat effects.
-- `payoff`: Ability with unusual prerequisites that generally require at least a round of prep.
+- `payoff`: Ability with unusual prerequisites that generally require at least a turn of prep.
 - `ramp`: Self-buff for the rest of the fight that does not require attunement.
-- `retaliate`: Attack that is stronger against creatures that attack you or your allies. (Generally not applied to `attune` spells unless they grant a new standard action for retaliation).
-- `retreat`: Make a short range attack and move away from enemies.
-- `snipe`: Long-range single-target damage.
-- `softener`: Debuff that affects a single non-injured target.
-- `stasis`: Single-target brief or one-round debuff that prevents enemy action.
-- `trip`: Single-target brief or one-round debuff that penalizes defenses.
-- `turtle`: Brief or one-round defensive buff or protection effect on yourself.
-- `wildfire`: Damage over time against multiple targets, typically in an area (AOE).
+- `retaliate`: Attack that is stronger against creatures that attack you or your allies.
+- `snipe`: Long-range damage.
+- `softener`: Debuff condition or curse that affects one or more non-injured targets.
+- `trip`: Single-target brief or one-turn debuff, or similarly short-term detrimental effect like fling/teleport/prone. Does not require injury.
+- `turtle`: Brief or one-turn defensive buff or protection effect on yourself.
+
+### Attuned Effects
+
+Roles are defined in terms of how characters spend standard actions. Long duration buff spells are generally not cast in the middle of combat, so their specific effects generally don't change a character's standard actions. For that reason, spells that require attunement will generally _only_ have the 'attune' role, rather than any more specific roles based on their effects (e.g., a spell that grants a persistent bonus is just an 'attune' spell, not a 'boon attune' spell).
 
 ## Magic Sources
 
@@ -78,12 +78,3 @@ The TypeScript project generates LaTeX for spells and rituals.
 - **Standard Prefix (`spellTypePrefix`):** Handles tags, ranks, and costs. It is idiomatic to use the `cost` field of an `ActiveAbility` for any associated costs, which renders using the `\abilitycost` command.
 - **Ritual Fatigue:** For rituals, the fatigue and material costs are automatically calculated and rendered as an `\abilitycost` prefix if `fatigueCost` is true and no explicit `cost` is provided. This logic resides in `spellTypePrefix.ts`.
 - **Effect Description (`spellEffect`):** Should strictly contain the ability's effects and should not include cost-related suffixes or prefixes, as these are handled by the standard prefix.
-
-
-Note: Attuned effects generally only have the 'attune' role, even if they would otherwise fit other roles (e.g., a spell that grants a persistent bonus is just an 'attune' spell, not a 'boon attune' spell).
-
-- `wildfire`: Damage over time against multiple targets, typically in an area (AOE).
-
-### Attuned Effects
-
-Roles are defined in terms of how characters spend standard actions. Long duration buff spells are generally not cast in the middle of combat, so their specific effects generally don't change a character's standard actions. For that reason, spells that require attunement will generally _only_ have the 'attune' role, rather than any more specific roles based on their effects.

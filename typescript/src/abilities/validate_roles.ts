@@ -574,7 +574,8 @@ export function inferExpectedRoles(
       /resistant|immune|bonus|shielded|steeled|fortified|empowered|maximized|advantage/i.test(
         effect,
       );
-    if (!expected.has('healing') || hasBuffEffect || fullTextLowercase.includes('time lock')) {
+    const nonBoonRole = expected.has('healing') || expected.has('cleanse');
+    if (!nonBoonRole && (hasBuffEffect || fullTextLowercase.includes('time lock'))) {
       expected.add('boon');
     }
   }

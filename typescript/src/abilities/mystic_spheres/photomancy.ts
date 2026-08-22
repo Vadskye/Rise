@@ -519,7 +519,7 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 2,
-      roles: ['flash'],
+      roles: ['burst', 'trip'],
       scaling: 'damage',
       tags: ['Visual'],
       // Should this have the Emotion tag?
@@ -539,7 +539,7 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 5,
-      roles: ['flash'],
+      roles: ['clear', 'flash'],
       scaling: 'damage',
       tags: ['Visual'],
     },
