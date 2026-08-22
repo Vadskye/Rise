@@ -31,7 +31,6 @@ export const ABILITY_ROLES = [
   'generator', // Attack and gain a brief buff on yourself that is typically offensive. The buff must last after the effect of the attack, typically for its next turn.
   'hazard', // Create a persistent battlefield hazard, such as a zone that deals damage each turn
   'healing', // Regain hit points
-  'kite', // Move away from enemies and make a ranged attack, or prevent enemies from moving closer
   'maim', // Debuff that requires the target to be injured and has no debuff on uninjured targets. Can deal damage to uninjured targets.
   'mobility', // Move yourself or allies without making an attack
   'narrative', // Non-combat effects
@@ -40,7 +39,7 @@ export const ABILITY_ROLES = [
   'retaliate', // Attack that is stronger against creatures that attack you or your allies
   'snipe', // Long-range damage
   'softener', // Debuff condition or curse that affects one or more non-injured targets
-  'trip', // Single-target brief or one-turn debuff. Does not require injury.
+  'trip', // Single-target brief or one-turn debuff, or similarly short-term detrimental effect like fling/teleport/prone. Does not require injury.
   'turtle', // Brief or one-turn defensive buff or protection effect on yourself
 ] as const;
 export type AbilityRole = (typeof ABILITY_ROLES)[number];

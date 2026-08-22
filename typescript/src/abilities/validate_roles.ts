@@ -474,7 +474,7 @@ export function inferExpectedRoles(
     }
   }
 
-  // 14. Dive & Kite
+  // 14. Dive
   if (profile.hasAttack) {
     if (
       !/move the ball/.test(fullTextLowercase) &&
@@ -485,12 +485,6 @@ export function inferExpectedRoles(
         /teleport/i.test(fullTextLowercase))
     ) {
       expected.add('dive');
-    }
-    if (
-      /move away.*attack/i.test(fullTextLowercase) ||
-      /push.*prevent.*approach/i.test(fullTextLowercase)
-    ) {
-      expected.add('kite');
     }
   }
 
