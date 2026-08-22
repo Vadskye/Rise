@@ -4,6 +4,7 @@ import {
   rituals,
   SphereName,
 } from '@src/abilities/mystic_spheres';
+import { AbilityRole, isAbilityRole } from '@src/abilities/constants';
 import { validateSpells } from '@src/abilities/validate_spells';
 import { buildSpellProfile } from '@src/abilities/spell_profile';
 import {
@@ -295,6 +296,9 @@ export function detectRoleSaturation(items: SpellItem[]): BoringFinding[] {
 
     for (const [key, roleItems] of roleMap.entries()) {
       const [role, rankStr] = key.split(':');
+      if (!isAbilityRole(role)) {
+        throw new Error(`Unable to parse role "${role}"`);
+      }
       const rank = parseInt(rankStr, 10);
       const spellNames = roleItems.map((i) => i.spell.name).join(', ');
       // Rank 1 attunements are a special case. We actually want a *minimum* value in
@@ -315,7 +319,7 @@ export function detectRoleSaturation(items: SpellItem[]): BoringFinding[] {
           });
         }
       }
-      if (roleItems.length >= 4) {
+      if (roleItems.length >= expectedRoleLimit(role, rank)) {
         findings.push({
           sphere: sphereName,
           name: spellNames,
@@ -334,6 +338,19 @@ export function detectRoleSaturation(items: SpellItem[]): BoringFinding[] {
   }
 
   return findings;
+}
+
+function expectedRoleLimit(role: AbilityRole, rank: number) {
+  const commonRoles = ['attune', 'burst', 'clear', 'maim'];
+  let limit = 3;
+  if (commonRoles.includes(role)) {
+    limit += 1;
+  }
+  if (rank <= 4) {
+    limit += 1;
+  }
+
+  return limit;
 }
 
 /**
@@ -370,6 +387,7 @@ export function findBoringSpells(options: FindBoringSpellsOptions = {}): BoringF
     result = result.filter((f) => f.sphere.toLowerCase().includes(filterLower));
   }
   if (options.categoryFilter) {
+    console.log('options.categoryFilter', options.categoryFilter);
     result = result.filter((f) => f.category === options.categoryFilter);
   }
   if (options.minScore !== undefined) {

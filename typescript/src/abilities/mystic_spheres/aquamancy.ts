@@ -660,48 +660,6 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       roles: ['attune'],
       type: 'Attune',
     },
-    {
-      name: 'Aquajet Grasp',
-
-      // Rank 2 Spell
-      // Range: Melee (mod +2)
-      // Result: 2 + 2 = dr4
-      attack: {
-        hit: `
-          \\damagerankfour.
-        `,
-        injury: `
-          If the target is Large or smaller, you \\glossterm{fling} it up to 15 feet horizontally (see \\pcref{Fling Effects}).
-          If the target is immersed in water, this distance is doubled and you can also move it vertically.
-        `,
-        targeting: `
-          You must have a \\glossterm{free hand} to cast this spell.
-
-          Make an attack vs. Brawn against something you \\glossterm{touch}.
-          ${WATER_ACCURACY_BONUS}
-        `,
-      },
-      // narrative: '',
-      rank: 2,
-      roles: ['burst', 'maim'],
-      scaling: 'damage',
-    },
-    {
-      name: 'Intense Aquajet Grasp',
-
-      // Rank 6 Spell
-      // Range: Melee (mod +2)
-      // Result: 6 + 2 = dr8
-      functionsLike: {
-        name: 'aquajet grasp',
-        exceptThat:
-          'the damage increases to \\damagerankeight, any \\glossterm{extra damage} is doubled, and the fling distance increases to 30 feet.',
-      },
-      // narrative: '',
-      rank: 6,
-      roles: ['burst', 'maim'],
-      scaling: 'damage',
-    },
     // TODO: proper EA math
     {
       name: 'Personal Aquarium',

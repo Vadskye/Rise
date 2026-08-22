@@ -146,7 +146,7 @@ export const chronomancy: MysticSphere = {
         From an observer's perspective, the movement and the strike happen simultaneously in a blur of motion.
       `,
       rank: 3,
-      roles: ['dive'],
+      roles: ['dive', 'burst'],
       scaling: 'accuracy',
     },
     {
@@ -156,7 +156,7 @@ export const chronomancy: MysticSphere = {
         name: 'quicksilver ambush',
         exceptThat: 'the strike deals double damage.',
       },
-      roles: ['dive'],
+      roles: ['dive', 'burst'],
       rank: 6,
     },
 

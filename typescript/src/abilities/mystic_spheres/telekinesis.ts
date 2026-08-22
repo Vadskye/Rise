@@ -310,7 +310,7 @@ export const telekinesis: MysticSphere = {
         `,
       },
       rank: 1,
-      roles: ['trip'],
+      roles: ['flash'],
       scaling: 'accuracy',
     },
 
@@ -328,7 +328,7 @@ export const telekinesis: MysticSphere = {
         `,
       },
       rank: 5,
-      roles: ['trip'],
+      roles: ['flash'],
       scaling: 'accuracy',
     },
 
@@ -345,7 +345,7 @@ export const telekinesis: MysticSphere = {
         `,
       },
       rank: 6,
-      roles: ['trip'],
+      roles: ['flash'],
       scaling: 'accuracy',
     },
 
@@ -611,7 +611,7 @@ export const telekinesis: MysticSphere = {
         During the effect, if you or the target takes damage, you are \\briefly \\empowered.
       `,
       rank: 2,
-      roles: ['boon'],
+      roles: ['boon', 'focus'],
     },
 
     {

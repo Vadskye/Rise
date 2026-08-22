@@ -453,23 +453,27 @@ export function inferExpectedRoles(
     expected.add('retaliate');
   }
 
+  const isDefinitelyNotDive =
+    !/move the ball/.test(fullTextLowercase) ||
+    !/unable to move closer to you/.test(fullTextLowercase) ||
+    !/you\s+teleport\s+the\s+target/i.test(fullTextLowercase) ||
+    !/teleport\s+it/i.test(fullTextLowercase) ||
+    !/they each\s+teleport/i.test(fullTextLowercase) ||
+    !/whenever an enemy teleports/i.test(fullTextLowercase) ||
+    /move up to.*without reducing.*available movement/i.test(fullTextLowercase)
+
   // 8. Dive
   if (profile.hasAttack) {
     if (
-      !/move the ball/.test(fullTextLowercase) &&
+      !isDefinitelyNotDive &&
       (/move (?:towards|adjacent|through)/i.test(fullTextLowercase) ||
         /leap.*attack/i.test(fullTextLowercase) ||
         /move in a straight line/i.test(fullTextLowercase) ||
         /charge/i.test(fullTextLowercase) ||
         /(?:you\s+(?:first\s+)?teleport|teleport\s+up\s+to\s+\d+\s+feet\s+to\s+a\s+location\s+adjacent|teleport\s+to\s+an?\s+unoccupied)/i.test(
           fullTextLowercase,
-        ) ||
-        /move up to.*without reducing.*available movement.*strike/i.test(fullTextLowercase)) &&
-      !/you\s+teleport\s+the\s+target/i.test(fullTextLowercase) &&
-      !/teleport\s+it/i.test(fullTextLowercase) &&
-      !/they each\s+teleport/i.test(fullTextLowercase) &&
-      !/whenever an enemy teleports/i.test(fullTextLowercase)
-    ) {
+        )
+      )) {
       expected.add('dive');
     }
   }
@@ -610,6 +614,7 @@ export function inferExpectedRoles(
   const isMobility =
     !profile.hasAttack &&
     !profile.requiresAttunement &&
+    !/choose.*unattended object within/.test(fullTextLowercase) &&
     !/one of your items/.test(fullTextLowercase) &&
     (/\bfling\b/i.test(fullTextLowercase) ||
       /\bpush\b/i.test(fullTextLowercase) ||
@@ -655,7 +660,7 @@ export function inferExpectedRoles(
   }
 
   // 16. Narrative
-  if (isNarrativeSpell(rawSpell, fullTextLowercase)) {
+  if (!hit && isNarrativeSpell(rawSpell, fullTextLowercase)) {
     expected.add('narrative');
   }
 

@@ -43,3 +43,7 @@ export const ABILITY_ROLES = [
   'turtle', // Brief or one-turn defensive buff or protection effect on yourself
 ] as const;
 export type AbilityRole = (typeof ABILITY_ROLES)[number];
+
+export function isAbilityRole(role: string): role is AbilityRole {
+  return ABILITY_ROLES.includes(role as AbilityRole);
+}
