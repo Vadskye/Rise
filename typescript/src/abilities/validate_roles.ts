@@ -41,6 +41,7 @@ export interface RoleValidationIssue {
  * Strips crit text and normalizes text for role parsing.
  */
 function getNormalSpellText(spell: SpellDefinition): {
+  cost: string;
   hit: string;
   targeting: string;
   injury: string;
@@ -72,6 +73,7 @@ function getNormalSpellText(spell: SpellDefinition): {
     .replaceAll('\n', ' ')
     .trim();
   return {
+    cost: stripGlossterm((resolved.cost || '').toLowerCase()),
     hit: stripGlossterm(hit),
     targeting: stripGlossterm(targeting),
     injury: stripGlossterm(injury),
@@ -118,16 +120,16 @@ function hasPersistentCondition(hit: string, effect: string, exceptThat: string 
     return false;
   }
 
+  const untilShortRest = /until.*finish.*short rest/.test(uninjured) && !/immune.*until.*finish.*short rest/.test(uninjured)
+
   if (
+    untilShortRest ||
     uninjured.includes('as a condition') ||
+    uninjured.includes('as a single condition') ||
     uninjured.includes('as conditions') ||
     uninjured.includes('is cursed') ||
     uninjured.includes('are cursed') ||
-    uninjured.includes('permanent condition') ||
-    uninjured.includes('\\charmed') ||
-    uninjured.includes('is charmed') ||
-    uninjured.includes('emotions calmed') ||
-    uninjured.includes('cannot take violent actions')
+    uninjured.includes('permanent condition')
   ) {
     return true;
   }
@@ -229,6 +231,8 @@ function isNarrativeSpell(rawSpell: SpellDefinition, fullTextLowercase: string):
     (/choose.*unattended.*object/.test(fullTextLowercase) &&
       !/yourself|ally|allies/i.test(fullTextLowercase)) ||
     /observe your surroundings/.test(fullTextLowercase) ||
+    /charmed/.test(fullTextLowercase) ||
+    /see and hear out of/.test(fullTextLowercase) ||
     /change your appearance or equipment/.test(fullTextLowercase) ||
     /disguise check/.test(fullTextLowercase) ||
     /see out of the target's eyes/.test(fullTextLowercase) ||
@@ -374,7 +378,7 @@ export function inferExpectedRoles(
 ): Set<AbilityRole> {
   const expected = new Set<AbilityRole>();
   const resolved = resolveSpell(rawSpell);
-  const { hit, targeting, injury, effect, exceptThat, fullText } = getNormalSpellText(rawSpell);
+  const { cost, hit, targeting, injury, effect, exceptThat, fullText } = getNormalSpellText(rawSpell);
   const fullTextLowercase = fullText.toLowerCase();
 
   const dealsDamage = profile.maxDamageRank !== null || profile.isStrike;
@@ -422,12 +426,12 @@ export function inferExpectedRoles(
     expected.add('cleanse');
   }
 
+  const costRequiresStamina = cost.toLowerCase().includes('stamina') && !/you can spend one stamina/.test(cost);
+
   // 5. Exertion
   if (
     resolved.staminaCost === true ||
-    resolved.cost?.toLowerCase().includes('stamina') ||
-    rawSpell.staminaCost === true ||
-    rawSpell.cost?.toLowerCase().includes('stamina') ||
+    costRequiresStamina ||
     /spends?\s+(?:one|\d+)?\s*stamina/i.test(fullTextLowercase) ||
     /reduces its stamina/i.test(fullTextLowercase) ||
     /spends?\s+(?:a|\d+)?\s*vital wound/i.test(fullTextLowercase)
@@ -545,7 +549,8 @@ export function inferExpectedRoles(
     !isReactiveRetaliateOnly &&
     (hasHitDebuff || isInjuryDebuffEffect || isCondition);
 
-  if (hasDebuff) {
+  // All of the debuff roles can only apply to spells that make attacks
+  if (hit && hasDebuff) {
     if (isCondition) {
       // Persistent condition on non-injured targets is softener
       expected.add('softener');
@@ -561,8 +566,11 @@ export function inferExpectedRoles(
     }
   }
 
+  const onlyAffectsAllies = /all allies within.*radius.*you/.test(fullTextLowercase) && !/you and all allies/.test(fullTextLowercase);
+
   // 11. Turtle (Brief defensive buff on self)
   const isTurtle =
+    !onlyAffectsAllies &&
     !/creatures.*may have.*cover/.test(fullTextLowercase) && (
       /you (?:are|become).*(?:\\briefly\s+|briefly\s+).*(shielded|fortified|steeled|braced|resistant)/i.test(
         fullTextLowercase,
@@ -577,13 +585,14 @@ export function inferExpectedRoles(
 
   // 12. Focus & Generator
   const isOffensiveBuffOnSelf =
-    /you (?:are|become)(?:\s+also)?\s+(?:\\briefly\s+)?\\(?:primed|empowered|maximized|focused|honed)/i.test(
-      fullTextLowercase,
-    ) ||
-    /your next\s+(?:attack|strike|spell)/i.test(fullTextLowercase) ||
-    /take (?:two turns of actions|an extra\s+(?:standard|minor) action)/i.test(
-      fullTextLowercase,
-    );
+    !onlyAffectsAllies && (
+      /you (?:are|become)(?:\s+also)?\s+(?:\\briefly\s+)?\\(?:primed|empowered|maximized|focused|honed)/i.test(
+        fullTextLowercase,
+      ) ||
+      /your next\s+(?:attack|strike|spell)/i.test(fullTextLowercase) ||
+      /take (?:two turns of actions|an extra\s+(?:standard|minor) action)/i.test(
+        fullTextLowercase,
+      ));
 
   if (isOffensiveBuffOnSelf) {
     const isEmpoweredThisTurn =
@@ -675,37 +684,6 @@ export function validateSpellRoles(spheres: MysticSphere[]): RoleValidationIssue
       const actualSet = new Set(spell.roles || []);
       const { fullText } = getNormalSpellText(spell);
       const fullTextLowercase = fullText.toLowerCase();
-
-      // Check Attunement rules
-      if (
-        profile.type &&
-        (profile.type.toLowerCase().includes('attune') ||
-          profile.type.toLowerCase().includes('sustain (attunable'))
-      ) {
-        const grantsAction = attunementGrantsActiveAction(fullTextLowercase);
-        if (!grantsAction) {
-          for (const actualRole of actualSet) {
-            if (
-              actualRole !== 'attune' &&
-              actualRole !== 'narrative' &&
-              !(actualRole === 'hazard' && expectedSet.has('hazard')) &&
-              !(actualRole === 'barrier' && (spell.tags || []).includes('Barrier'))
-            ) {
-              issues.push({
-                type: 'invalid_attunement_role',
-                severity: 'warning',
-                spellName: spell.name,
-                sphereName: sphere.name,
-                spellRank: spell.rank ?? 0,
-                role: actualRole,
-                message: `Attunement spell "${spell.name}" (${sphere.name}, Rank ${spell.rank}) has secondary role '${actualRole}', but does not grant an active action or reaction. Persistent attunements should only have ['attune'].`,
-                actualRoles: spell.roles || [],
-                expectedRoles: ['attune'],
-              });
-            }
-          }
-        }
-      }
 
       // Check missing roles
       for (const expRole of expectedSet) {
