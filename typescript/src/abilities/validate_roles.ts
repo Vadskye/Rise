@@ -67,7 +67,9 @@ function getNormalSpellText(spell: SpellDefinition): {
     }
   }
 
-  const fullText = `${hit} ${targeting} ${injury} ${effect} ${exceptThat}`.replaceAll('\n', ' ').trim();
+  const fullText = `${hit} ${targeting} ${injury} ${effect} ${exceptThat}`
+    .replaceAll('\n', ' ')
+    .trim();
   return { hit, targeting, injury, effect, exceptThat, fullText };
 }
 
@@ -77,6 +79,15 @@ function getNormalSpellText(spell: SpellDefinition): {
  */
 function hasPersistentCondition(hit: string, effect: string, exceptThat: string = ''): boolean {
   const combined = `${hit} ${effect} ${exceptThat}`.toLowerCase();
+  // Don't count cleanse effects (removing conditions) as enemy softener
+  if (
+    /removes?\s+(?:all|a|one|\d+|any)?\s*(?:excess\s+)?(?:\\glossterm{)?(?:condition|curse|poison)/i.test(
+      combined,
+    ) &&
+    !hit
+  ) {
+    return false;
+  }
   // Don't count self-inflicted conditions as enemy softener
   const nonSelf = combined.replace(
     /you (?:are|become) (?:\\briefly\s+)?(?:\\dazed|dazed)\s+as\s+a\s+(?:\\glossterm\{)?conditions?\}?/gi,
@@ -86,6 +97,19 @@ function hasPersistentCondition(hit: string, effect: string, exceptThat: string 
   const uninjured = nonBurn.split(
     /(?:if|while)\s+(?:the\s+target\s+is\s+|it\s+is\s+)?\\?glossterm\{injured\}|(?:\bif\b|\bwhile\b)[^.]*?\binjured\b/i,
   )[0];
+
+  // If the uninjured part only mentions "deteriorates as a condition" and the actual debuff is inside "while injured", ignore it
+  if (
+    /while (?:the target is|it is|they are)?\s*(?:\\glossterm\{)?injured\}?,?\s*(?:the target|it|they)?\s*(?:is|are)/i.test(
+      combined,
+    ) &&
+    !/as a \\?glossterm\{condition\}[^.]*(?:blinded|dazed|dazzled|deafened|frightened|immobilized|slowed|vulnerable|weakened)/i.test(
+      uninjured,
+    )
+  ) {
+    return false;
+  }
+
   if (
     uninjured.includes('as a \\glossterm{condition}') ||
     uninjured.includes('as a condition') ||
@@ -116,6 +140,10 @@ function isInjuryDebuff(injury: string, fullTextLowercase: string): boolean {
 }
 
 function hasDebuffWords(fullTextLowercase: string): boolean {
+  const sanitized = fullTextLowercase
+    .replace(/you are \\?(?:blinded|dazed|slowed)/g, '')
+    .replace(/you take a (?:-\d+|\\?minus\d+)\s+penalty/g, '');
+
   const debuffKeywords = [
     '-1 penalty',
     '-2 penalty',
@@ -136,7 +164,6 @@ function hasDebuffWords(fullTextLowercase: string): boolean {
     "can't stand",
     'charmed',
     'concealment',
-    'condition',
     'confused',
     'dazed',
     'dazzled',
@@ -172,20 +199,41 @@ function hasDebuffWords(fullTextLowercase: string): boolean {
     'weakened',
   ];
 
-  if (debuffKeywords.some((kw) => fullTextLowercase.includes(kw))) {
+  if (debuffKeywords.some((kw) => sanitized.includes(kw))) {
     return true;
   }
 
   if (
-    /flicker/.test(fullTextLowercase) &&
+    /flicker/.test(sanitized) &&
     /does not return until|until the end of your next turn|for a number of turns|until your next turn/.test(
-      fullTextLowercase,
+      sanitized,
     )
   ) {
     return true;
   }
 
   return false;
+}
+
+function isNarrativeSpell(rawSpell: SpellDefinition, fullTextLowercase: string): boolean {
+  return Boolean(
+    fullTextLowercase.includes('outside of combat') ||
+    fullTextLowercase.includes('for one day') ||
+    fullTextLowercase.includes('for one year') ||
+    fullTextLowercase.includes('for 24 hours') ||
+    (/choose.*unattended.*object/.test(fullTextLowercase) &&
+      !/yourself|ally|allies/i.test(fullTextLowercase)) ||
+    /observe your surroundings/.test(fullTextLowercase) ||
+    /change your appearance or equipment/.test(fullTextLowercase) ||
+    /disguise check/.test(fullTextLowercase) ||
+    /see out of the target's eyes/.test(fullTextLowercase) ||
+    /creates? (?:\\glossterm\{)?bright illumination\}? in a radius/.test(fullTextLowercase) ||
+    /duplicate copy of that organ/.test(fullTextLowercase) ||
+    /absorb a .*?object into your body/.test(fullTextLowercase) ||
+    /forced to speak out loud constantly/.test(fullTextLowercase) ||
+    /unable to say things it knows to be untrue/.test(fullTextLowercase) ||
+    (rawSpell.usageTime && rawSpell.usageTime !== 'standard' && rawSpell.usageTime !== 'minor'),
+  );
 }
 
 /**
@@ -391,9 +439,7 @@ export function inferExpectedRoles(
 
   // 7. Retaliate
   if (
-    /whenever a creature.*?(?:attacks you|makes.*?attack against you)/i.test(
-      fullTextLowercase,
-    ) ||
+    /whenever a creature.*?(?:attacks you|makes.*?attack against you)/i.test(fullTextLowercase) ||
     /attacks you or your allies/i.test(fullTextLowercase) ||
     /deal.*extra damage to creatures that attacked/i.test(fullTextLowercase)
   ) {
@@ -427,12 +473,12 @@ export function inferExpectedRoles(
   const isDoT = profile.hasDoT;
 
   if (dealsDamage) {
-    // Snipe (Targeted long/distant range damage)
+    // Snipe (Targeted long/distant range damage, not area or dive)
     if (
       isLongOrDistantRange &&
       !isDoT &&
-      profile.area !== 'radius' &&
-      profile.area !== 'cone'
+      (profile.area === 'single' || profile.area === 'multi') &&
+      !expected.has('dive')
     ) {
       expected.add('snipe');
     }
@@ -486,13 +532,14 @@ export function inferExpectedRoles(
   )[0];
   const hasHitDebuff = hasDebuffWords(uninjuredHitText.toLowerCase());
 
-  const isNarrativeOnly =
-    fullTextLowercase.includes('forced to speak out loud') ||
-    fullTextLowercase.includes('unable to say things');
+  const isNarrativeOnly = isNarrativeSpell(rawSpell, fullTextLowercase);
+
+  const isReactiveRetaliateOnly = expected.has('retaliate') && !profile.type?.includes('Sustain');
 
   const hasDebuff =
     !affectsAlly &&
     !isNarrativeOnly &&
+    !isReactiveRetaliateOnly &&
     (hasHitDebuff || isInjuryDebuffEffect || isCondition);
 
   if (hasDebuff) {
@@ -535,9 +582,13 @@ export function inferExpectedRoles(
     );
 
   if (isOffensiveBuffOnSelf) {
-    if (profile.hasAttack) {
+    const isEmpoweredThisTurn =
+      profile.isStrike &&
+      /you (?:are|become)\s+\\(?:empowered|maximized)\s+this turn/i.test(fullTextLowercase);
+
+    if (profile.hasAttack && !isEmpoweredThisTurn) {
       expected.add('generator');
-    } else {
+    } else if (!profile.hasAttack) {
       expected.add('focus');
     }
   }
@@ -545,6 +596,7 @@ export function inferExpectedRoles(
   // 13. Mobility (Movement/repositioning without attack)
   const isMobility =
     !profile.hasAttack &&
+    !profile.requiresAttunement &&
     !/one of your items/.test(fullTextLowercase) &&
     (/\\glossterm{fling}/i.test(fullTextLowercase) ||
       /\\glossterm{push}/i.test(fullTextLowercase) ||
@@ -564,6 +616,7 @@ export function inferExpectedRoles(
   // 14. Boon (Brief combat buff on allies)
   const isBoon =
     !profile.hasAttack &&
+    !expected.has('narrative') &&
     (/\b(?:allies|ally)\b/i.test(targeting) ||
       /choose (?:yourself or )?(?:an? )?\\glossterm{ally}/i.test(effect) ||
       /\b(?:allies|ally)\b/i.test(effect) ||
@@ -590,19 +643,7 @@ export function inferExpectedRoles(
   }
 
   // 16. Narrative
-  if (
-    fullTextLowercase.includes('outside of combat') ||
-    fullTextLowercase.includes('for one day') ||
-    fullTextLowercase.includes('for one year') ||
-    fullTextLowercase.includes('for 24 hours') ||
-    (/choose.*unattended.*object/.test(fullTextLowercase) &&
-      !/yourself|ally|allies/i.test(fullTextLowercase)) ||
-    /observe your surroundings/.test(fullTextLowercase) ||
-    /change your appearance or equipment/.test(fullTextLowercase) ||
-    /forced to speak out loud constantly/.test(fullTextLowercase) ||
-    /unable to say things it knows to be untrue/.test(fullTextLowercase) ||
-    (rawSpell.usageTime && rawSpell.usageTime !== 'standard' && rawSpell.usageTime !== 'minor')
-  ) {
+  if (isNarrativeSpell(rawSpell, fullTextLowercase)) {
     expected.add('narrative');
   }
 
@@ -633,7 +674,11 @@ export function validateSpellRoles(spheres: MysticSphere[]): RoleValidationIssue
       const fullTextLowercase = fullText.toLowerCase();
 
       // Check Attunement rules
-      if (profile.type && profile.type.includes('Attune')) {
+      if (
+        profile.type &&
+        (profile.type.toLowerCase().includes('attune') ||
+          profile.type.toLowerCase().includes('sustain (attunable'))
+      ) {
         const grantsAction = attunementGrantsActiveAction(fullTextLowercase);
         if (!grantsAction) {
           for (const actualRole of actualSet) {
@@ -721,10 +766,31 @@ export function validateSpellRoles(spheres: MysticSphere[]): RoleValidationIssue
             (fullTextLowercase.includes('social') ||
               fullTextLowercase.includes('observe') ||
               fullTextLowercase.includes('appearance') ||
+              fullTextLowercase.includes('disguise') ||
               fullTextLowercase.includes('speak') ||
               fullTextLowercase.includes('charmed') ||
               fullTextLowercase.includes('truth') ||
-              fullTextLowercase.includes('mood'))
+              fullTextLowercase.includes('mood') ||
+              fullTextLowercase.includes('eyes') ||
+              isNarrativeSpell(spell, fullTextLowercase))
+          ) {
+            continue;
+          }
+
+          // Special exception: decoy/sustain attune
+          if (
+            actRole === 'attune' &&
+            (profile.isAttunable ||
+              profile.isSustainedMinor ||
+              fullTextLowercase.includes('duplicate'))
+          ) {
+            continue;
+          }
+
+          // Special exception: retaliate spells having trip, softener, or flash
+          if (
+            (actRole === 'trip' || actRole === 'softener' || actRole === 'flash') &&
+            actualSet.has('retaliate')
           ) {
             continue;
           }

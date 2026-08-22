@@ -653,7 +653,15 @@ export function buildSpellProfile(
 
   const defenses = parseDefenses(fullText);
   const range = parseRange(fullText);
-  let area = parseArea(fullText);
+
+  // Strip purely lighting/illumination phrases before checking attack area
+  const targetingWithoutLighting = targeting.replace(
+    /(?:whether you hit or miss,?\s*)?(?:when you cast this spell,?\s*)?(?:in addition,?\s*)?(?:\\glossterm\{)?(?:brilliant|bright|dim)\s+illumination\}?\s*(?:\\(?:glossterm\{)?briefly\}?\s+)?fills\s+a\s+\d+\s+foot\s+radius\s+around\s+(?:a\s+\d+\s+ft\.?\s+wide\s+straight\s+line|both\s+your|the\s+area|each\s+area|you\b)(?!\s*(?:\\glossterm\{)?emanation)/gi,
+    '',
+  );
+  const fullTextForArea =
+    `${hit} ${targetingWithoutLighting} ${injury} ${effect} ${exceptThat}`.trim();
+  let area = parseArea(fullTextForArea);
 
   let areaSize = parseAreaSize(fullText);
   const numAreas = parseNumAreas(fullText);
@@ -689,6 +697,8 @@ export function buildSpellProfile(
 
   const isAttunable =
     (spell.type || '').toLowerCase().includes('ttun') || lowercase.includes('attune');
+  // Sustain (standard, attunable) spells are considered to "require" attunement, since that's the only way to use them effectively in combat.
+  // Sustain (minor, attunable) spells do not require attunement to make them useful in combat.
   const requiresAttunement = Boolean(
     spell.type && (spell.type.includes('Attune') || spell.type === 'Sustain (attunable, standard)'),
   );
@@ -777,8 +787,7 @@ export function buildSpellProfile(
     if (isInjuryOnly) {
       unconditionalDamageRank = 0;
     } else {
-      unconditionalDamageRank =
-        exceptDr ?? parseDamageRank(hit) ?? parseDamageRank(effect);
+      unconditionalDamageRank = exceptDr ?? parseDamageRank(hit) ?? parseDamageRank(effect);
     }
   }
 
