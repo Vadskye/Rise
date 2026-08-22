@@ -37,6 +37,16 @@ export interface RoleValidationIssue {
 }
 
 /**
+ * Strips all \glossterm{...} wrappers from the given text, replacing them with their inner content.
+ */
+export function stripGlossterm(text: string): string {
+  if (!text) {
+    return text;
+  }
+  return text.replace(/\\glossterm\{([^}]+)\}/gi, '$1');
+}
+
+/**
  * Strips crit text and normalizes text for role parsing.
  */
 function getNormalSpellText(spell: SpellDefinition): {
@@ -70,7 +80,14 @@ function getNormalSpellText(spell: SpellDefinition): {
   const fullText = `${hit} ${targeting} ${injury} ${effect} ${exceptThat}`
     .replaceAll('\n', ' ')
     .trim();
-  return { hit, targeting, injury, effect, exceptThat, fullText };
+  return {
+    hit: stripGlossterm(hit),
+    targeting: stripGlossterm(targeting),
+    injury: stripGlossterm(injury),
+    effect: stripGlossterm(effect),
+    exceptThat: stripGlossterm(exceptThat),
+    fullText: stripGlossterm(fullText),
+  };
 }
 
 /**
@@ -81,7 +98,7 @@ function hasPersistentCondition(hit: string, effect: string, exceptThat: string 
   const combined = `${hit} ${effect} ${exceptThat}`.toLowerCase();
   // Don't count cleanse effects (removing conditions) as enemy softener
   if (
-    /removes?\s+(?:all|a|one|\d+|any)?\s*(?:excess\s+)?(?:\\glossterm{)?(?:condition|curse|poison)/i.test(
+    /removes?\s+(?:all|a|one|\d+|any)?\s*(?:excess\s+)?(?:condition|curse|poison)/i.test(
       combined,
     ) &&
     !hit
@@ -90,20 +107,20 @@ function hasPersistentCondition(hit: string, effect: string, exceptThat: string 
   }
   // Don't count self-inflicted conditions as enemy softener
   const nonSelf = combined.replace(
-    /you (?:are|become) (?:\\briefly\s+)?(?:\\dazed|dazed)\s+as\s+a\s+(?:\\glossterm\{)?conditions?\}?/gi,
+    /you (?:are|become) (?:\\briefly\s+)?(?:\\dazed|dazed)\s+as\s+a\s+conditions?/gi,
     '',
   );
   const nonBurn = stripBurnClauses(nonSelf);
   const uninjured = nonBurn.split(
-    /(?:if|while)\s+(?:the\s+target\s+is\s+|it\s+is\s+)?\\?glossterm\{injured\}|(?:\bif\b|\bwhile\b)[^.]*?\binjured\b/i,
+    /(?:if|while)\s+(?:the\s+target\s+is\s+|it\s+is\s+)?injured|(?:\bif\b|\bwhile\b)[^.]*?\binjured\b/i,
   )[0];
 
   // If the uninjured part only mentions "deteriorates as a condition" and the actual debuff is inside "while injured", ignore it
   if (
-    /while (?:the target is|it is|they are)?\s*(?:\\glossterm\{)?injured\}?,?\s*(?:the target|it|they)?\s*(?:is|are)/i.test(
+    /while (?:the target is|it is|they are)?\s*injured,?\s*(?:the target|it|they)?\s*(?:is|are)/i.test(
       combined,
     ) &&
-    !/as a \\?glossterm\{condition\}[^.]*(?:blinded|dazed|dazzled|deafened|frightened|immobilized|slowed|vulnerable|weakened)/i.test(
+    !/as a condition[^.]*(?:blinded|dazed|dazzled|deafened|frightened|immobilized|slowed|vulnerable|weakened)/i.test(
       uninjured,
     )
   ) {
@@ -111,12 +128,10 @@ function hasPersistentCondition(hit: string, effect: string, exceptThat: string 
   }
 
   if (
-    uninjured.includes('as a \\glossterm{condition}') ||
     uninjured.includes('as a condition') ||
     uninjured.includes('as conditions') ||
     uninjured.includes('is cursed') ||
     uninjured.includes('are cursed') ||
-    uninjured.includes('\\glossterm{condition}') ||
     uninjured.includes('permanent condition') ||
     uninjured.includes('\\charmed') ||
     uninjured.includes('is charmed') ||
@@ -187,9 +202,8 @@ function hasDebuffWords(fullTextLowercase: string): boolean {
     'repeat the same standard action',
     'shaken',
     'slowed',
-    'spend its next \\glossterm{standard action} doing nothing',
+    'spend its next standard action doing nothing',
     'strike against itself',
-    'strike} against itself',
     'compelled to make a',
     'teleport',
     'unable to breathe',
@@ -227,7 +241,7 @@ function isNarrativeSpell(rawSpell: SpellDefinition, fullTextLowercase: string):
     /change your appearance or equipment/.test(fullTextLowercase) ||
     /disguise check/.test(fullTextLowercase) ||
     /see out of the target's eyes/.test(fullTextLowercase) ||
-    /creates? (?:\\glossterm\{)?bright illumination\}? in a radius/.test(fullTextLowercase) ||
+    /creates? bright illumination in a radius/.test(fullTextLowercase) ||
     /duplicate copy of that organ/.test(fullTextLowercase) ||
     /absorb a .*?object into your body/.test(fullTextLowercase) ||
     /forced to speak out loud constantly/.test(fullTextLowercase) ||
@@ -241,9 +255,7 @@ function isNarrativeSpell(rawSpell: SpellDefinition, fullTextLowercase: string):
  */
 function attunementGrantsActiveAction(fullTextLowercase: string): boolean {
   return (
-    fullTextLowercase.includes('as a \\glossterm{standard action}') ||
     fullTextLowercase.includes('as a standard action') ||
-    fullTextLowercase.includes('as a \\glossterm{minor action}') ||
     fullTextLowercase.includes('as a minor action') ||
     fullTextLowercase.includes('spend a standard action') ||
     fullTextLowercase.includes('spend a minor action') ||
@@ -389,7 +401,7 @@ export function inferExpectedRoles(
   const isBarrier =
     (rawSpell.tags || []).includes('Barrier') ||
     (profile.area === 'wall' && dealsDamage) ||
-    (/\\glossterm{wall}|wall of/i.test(fullTextLowercase) && dealsDamage);
+    (/\bwall\b|wall of/i.test(fullTextLowercase) && dealsDamage);
   if (isBarrier) {
     expected.add('barrier');
   }
@@ -406,13 +418,13 @@ export function inferExpectedRoles(
 
   // 4. Cleanse
   if (
-    /removes?\s+(?:all|a|one|\d+|any)?\s*(?:excess\s+)?(?:\\glossterm{)?(?:condition|curse|poison)/i.test(
+    /removes?\s+(?:all|a|one|\d+|any)?\s*(?:excess\s+)?(?:condition|curse|poison)/i.test(
       fullTextLowercase,
     ) ||
-    /ends?\s+(?:all|a|one|\d+)?\s*(?:\\glossterm{)?(?:condition|curse|poison)/i.test(
+    /ends?\s+(?:all|a|one|\d+)?\s*(?:condition|curse|poison)/i.test(
       fullTextLowercase,
     ) ||
-    /cures?\s+(?:a|one|\d+)?\s*(?:\\glossterm{)?poison/i.test(fullTextLowercase) ||
+    /cures?\s+(?:a|one|\d+)?\s*poison/i.test(fullTextLowercase) ||
     /\bcleanse\b/i.test(fullTextLowercase) ||
     /effects of all other.*?suppressed/i.test(fullTextLowercase)
   ) {
@@ -425,8 +437,8 @@ export function inferExpectedRoles(
     resolved.cost?.toLowerCase().includes('stamina') ||
     rawSpell.staminaCost === true ||
     rawSpell.cost?.toLowerCase().includes('stamina') ||
-    /spends?\s+(?:one|\d+)?\s*\\glossterm{stamina}/i.test(fullTextLowercase) ||
-    /reduces its \\glossterm{stamina}/i.test(fullTextLowercase) ||
+    /spends?\s+(?:one|\d+)?\s*stamina/i.test(fullTextLowercase) ||
+    /reduces its stamina/i.test(fullTextLowercase) ||
     /spends?\s+(?:a|\d+)?\s*vital wound/i.test(fullTextLowercase)
   ) {
     expected.add('exertion');
@@ -460,7 +472,7 @@ export function inferExpectedRoles(
         /move up to.*without reducing.*available movement.*strike/i.test(fullTextLowercase)) &&
       !/you\s+teleport\s+the\s+target/i.test(fullTextLowercase) &&
       !/teleport\s+it/i.test(fullTextLowercase) &&
-      !/they each\s+\\glossterm\{teleport\}/i.test(fullTextLowercase) &&
+      !/they each\s+teleport/i.test(fullTextLowercase) &&
       !/whenever an enemy teleports/i.test(fullTextLowercase)
     ) {
       expected.add('dive');
@@ -528,7 +540,7 @@ export function inferExpectedRoles(
     '',
   );
   const uninjuredHitText = cleanHit.split(
-    /(?:if|while)\s+(?:the\s+target\s+is\s+|it\s+is\s+)?\\?glossterm\{injured\}|(?:\bif\b|\bwhile\b)[^.]*?\binjured\b/i,
+    /(?:if|while)\s+(?:the\s+target\s+is\s+|it\s+is\s+)?injured|(?:\bif\b|\bwhile\b)[^.]*?\binjured\b/i,
   )[0];
   const hasHitDebuff = hasDebuffWords(uninjuredHitText.toLowerCase());
 
@@ -560,12 +572,12 @@ export function inferExpectedRoles(
 
   // 11. Turtle (Brief defensive buff on self)
   const isTurtle =
-    /you (?:are|become).*(?:\\(?:glossterm\{)?briefly\}?\s+).*(shielded|fortified|steeled|braced|resistant)/i.test(
+    /you (?:are|become).*(?:\\briefly\s+|briefly\s+).*(shielded|fortified|steeled|braced|resistant)/i.test(
       fullTextLowercase,
     ) ||
     /gain\s+(?:a\s+)?\+\d+\s+bonus to (?:your\s+)?defenses/i.test(fullTextLowercase) ||
     /takes?\s+half\s+damage/i.test(fullTextLowercase) ||
-    /(?:\\briefly\s+)?have\s+(?:\\glossterm\{)?cover/i.test(fullTextLowercase) ||
+    /(?:\\briefly\s+)?have\s+cover/i.test(fullTextLowercase) ||
     /failure chance/i.test(fullTextLowercase);
   if (isTurtle && !profile.requiresAttunement) {
     expected.add('turtle');
@@ -577,7 +589,7 @@ export function inferExpectedRoles(
       fullTextLowercase,
     ) ||
     /your next\s+(?:attack|strike|spell)/i.test(fullTextLowercase) ||
-    /take (?:two turns of actions|an extra\s+(?:\\glossterm\{)?(?:standard|minor) action)/i.test(
+    /take (?:two turns of actions|an extra\s+(?:standard|minor) action)/i.test(
       fullTextLowercase,
     );
 
@@ -598,8 +610,8 @@ export function inferExpectedRoles(
     !profile.hasAttack &&
     !profile.requiresAttunement &&
     !/one of your items/.test(fullTextLowercase) &&
-    (/\\glossterm{fling}/i.test(fullTextLowercase) ||
-      /\\glossterm{push}/i.test(fullTextLowercase) ||
+    (/\bfling\b/i.test(fullTextLowercase) ||
+      /\bpush\b/i.test(fullTextLowercase) ||
       /teleport/i.test(fullTextLowercase) ||
       /glide speed/i.test(fullTextLowercase) ||
       /fly speed/i.test(fullTextLowercase) ||
@@ -618,7 +630,6 @@ export function inferExpectedRoles(
     !profile.hasAttack &&
     !expected.has('narrative') &&
     (/\b(?:allies|ally)\b/i.test(targeting) ||
-      /choose (?:yourself or )?(?:an? )?\\glossterm{ally}/i.test(effect) ||
       /\b(?:allies|ally)\b/i.test(effect) ||
       /time lock/i.test(effect)) &&
     (!expected.has('mobility') || fullTextLowercase.includes('time lock'));
@@ -682,7 +693,12 @@ export function validateSpellRoles(spheres: MysticSphere[]): RoleValidationIssue
         const grantsAction = attunementGrantsActiveAction(fullTextLowercase);
         if (!grantsAction) {
           for (const actualRole of actualSet) {
-            if (actualRole !== 'attune' && actualRole !== 'narrative') {
+            if (
+              actualRole !== 'attune' &&
+              actualRole !== 'narrative' &&
+              !(actualRole === 'hazard' && expectedSet.has('hazard')) &&
+              !(actualRole === 'barrier' && (spell.tags || []).includes('Barrier'))
+            ) {
               issues.push({
                 type: 'invalid_attunement_role',
                 severity: 'warning',

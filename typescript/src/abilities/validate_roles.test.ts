@@ -1,10 +1,30 @@
 import t from 'tap';
-import { inferExpectedRoles, validateSpellRoles } from './validate_roles';
+import { inferExpectedRoles, stripGlossterm, validateSpellRoles } from './validate_roles';
 import { buildSpellProfile } from './spell_profile';
 import { SpellDefinition } from './active_abilities';
 import { MysticSphere } from './mystic_spheres';
 
 t.test('validate_roles', (t) => {
+  t.test('stripGlossterm', (t) => {
+    t.equal(
+      stripGlossterm('The target is \\dazed as a \\glossterm{condition}.'),
+      'The target is \\dazed as a condition.',
+      'should strip single glossterm',
+    );
+    t.equal(
+      stripGlossterm('\\glossterm{allies} and \\glossterm{enemies} in the \\glossterm{zone}'),
+      'allies and enemies in the zone',
+      'should strip multiple glossterms',
+    );
+    t.equal(
+      stripGlossterm('plain text without wrappers'),
+      'plain text without wrappers',
+      'should leave plain text unchanged',
+    );
+    t.equal(stripGlossterm(''), '', 'should handle empty string');
+    t.end();
+  });
+
   t.test('inferExpectedRoles', (t) => {
     t.test('should infer burst for short-range single-target damage', (t) => {
       const spell: SpellDefinition = {
