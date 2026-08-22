@@ -517,7 +517,7 @@ export const channelDivinity: MysticSphere = {
         crit: INJURY_CRIT,
         hit: `
           If the target is \\glossterm{injured}, an interdiction \\briefly divides it from everything outside itself.
-          No ability can have \\glossterm{line of effect} to or from it, even abilities that can pass pass through solid objects.
+          No ability can have \\glossterm{line of effect} to or from it, even abilities that can pass through solid objects.
           After the interdiction ends, the target becomes immune to this effect until it finishes a \\glossterm{short rest}.
         `,
         targeting: `

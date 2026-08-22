@@ -337,16 +337,17 @@ export const chronomancy: MysticSphere = {
     {
       name: 'Temporal Stasis',
 
-      usageTime: 'minor',
+      cost: MINOR_STAMINA,
       effect: `
         Choose either yourself or one Medium or smaller \\glossterm{ally} or \\glossterm{unattended} object within \\medrange.
         The target is locked in \\stasis.
 
         This effect normally lasts as long as you \\glossterm{sustain} it.
         If you use this ability on yourself, it instead lasts for a number of turns you choose when you cast the spell, up to a maximum of five turns.
+        After the target returns to normal, it becomes immune to this effect until it finishes a \\glossterm{short rest}.
       `,
       rank: 3,
-      roles: ['boon'],
+      roles: ['boon', 'turtle'],
       scaling: {
         5: `The maximum size of the target increases to Large.`,
         7: `The maximum size of the target increases to Huge.`,
@@ -367,7 +368,7 @@ export const chronomancy: MysticSphere = {
         In addition, the creature reduces its \\glossterm{stamina} by one.
       `,
       rank: 4,
-      roles: ['cleanse', 'exertion', 'boon'],
+      roles: ['cleanse', 'exertion'],
       type: 'Sustain (minor)',
     },
 
@@ -401,7 +402,7 @@ export const chronomancy: MysticSphere = {
         In addition, the creature reduces its \\glossterm{stamina} by one.
       `,
       rank: 6,
-      roles: ['boon', 'healing', 'exertion'],
+      roles: ['healing', 'exertion'],
       type: 'Sustain (minor)',
     },
 
@@ -646,7 +647,7 @@ export const chronomancy: MysticSphere = {
         During your next turn after the stasis ends, you can take an extra \\glossterm{minor action} during your turn, and you add your \\glossterm{speed} to your \\glossterm{available movement}.
       `,
       rank: 1,
-      roles: ['focus', 'mobility'],
+      roles: ['focus', 'mobility', 'turtle'],
     },
 
     // This spends two move actions to relocate a standard action.
@@ -659,29 +660,7 @@ export const chronomancy: MysticSphere = {
         However, you can take an extra standard action that turn.
       `,
       rank: 6,
-      roles: ['focus'],
-    },
-
-    {
-      name: 'Timeseal',
-
-      cost: MINOR_STAMINA,
-      effect: `
-        Choose yourself or one Medium or smaller \\glossterm{ally} within \\medrange.
-        The target becomes \\briefly frozen in time.
-        It becomes completely immune to all damage, attacks, and effects of any kind.
-        In addition, it cannot act in any way, and the duration of other effects on it does not expire.
-        If you choose yourself, you still track your turn in combat.
-
-        At the end of your next turn, the target returns to normal, with no awareness of the intervening time.
-        After it returns to normal, it becomes immune to this effect until it finishes a \\glossterm{short rest}.
-      `,
-      roles: ['boon', 'exertion'],
-      rank: 3,
-      scaling: {
-        5: 'The maximum size increases to Large.',
-        7: 'The maximum size increases to Huge.',
-      },
+      roles: ['focus', 'turtle'],
     },
 
     // 0.5 + 0.4 EA

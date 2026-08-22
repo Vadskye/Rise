@@ -225,11 +225,12 @@ export function parseDefenses(text: string): DefenseType[] {
 }
 
 export function isStrikeSpell(text: string): boolean {
-  const clean = stripGlossterm(text);
+  const clean = stripGlossterm(text).toLowerCase();
+  const mentionsStrikesWithoutMakingOne =
+    /whenever you make a/i.test(clean) ||
+    /strike\s+against itself/i.test(clean);
   return (
-    /make (?:a|two|three|\d+)?\s*(?:(?:mundane|melee|ranged)\s+)*strikes?/i.test(clean) &&
-    !/whenever you make a/i.test(clean) &&
-    !/strike\s+against itself/i.test(clean)
+    /make [^.]+strike/.test(clean) && !mentionsStrikesWithoutMakingOne
   );
 }
 
@@ -282,25 +283,25 @@ export function parseRange(text: string): SpellRange {
   }
   if (
     lowercase.includes('\\distrange') &&
-    !/\\?distrange(?:\s+of\s+you)?.*?disappears/i.test(lowercase)
+    !/\\?distrange(?:\s+of\s+you)?[^.]*?disappears/i.test(lowercase)
   ) {
     return 'distant';
   }
   if (
     lowercase.includes('\\longrange') &&
-    !/\\?longrange(?:\s+of\s+you)?.*?disappears/i.test(lowercase)
+    !/\\?longrange(?:\s+of\s+you)?[^.]*?disappears/i.test(lowercase)
   ) {
     return 'long';
   }
   if (
     lowercase.includes('\\medrange') &&
-    !/\\?medrange(?:\s+of\s+you)?.*?disappears/i.test(lowercase)
+    !/\\?medrange(?:\s+of\s+you)?[^.]*?disappears/i.test(lowercase)
   ) {
     return 'medium';
   }
   if (
     lowercase.includes('\\shortrange') &&
-    !/\\?shortrange(?:\s+of\s+you)?.*?disappears/i.test(lowercase)
+    !/\\?shortrange(?:\s+of\s+you)?[^.]*?disappears/i.test(lowercase)
   ) {
     return 'short';
   }
@@ -323,7 +324,7 @@ export function parseArea(text: string): SpellArea {
   ) {
     return 'radius';
   }
-  if (lowercase.includes('line') && !lowercase.includes('move in a straight line')) {
+  if (/ft\.[^.]+line/.test(lowercase) || /attack.*in the path/.test(lowercase)) {
     return 'line';
   }
   if (lowercase.includes('wall')) {

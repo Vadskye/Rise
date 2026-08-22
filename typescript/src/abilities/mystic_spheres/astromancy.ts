@@ -711,7 +711,7 @@ export const astromancy: MysticSphere = {
         It returns at the end of the last turn.
       `,
       rank: 2,
-      roles: ['boon'],
+      roles: ['boon', 'turtle'],
     },
     {
       name: 'Blink',

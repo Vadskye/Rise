@@ -131,7 +131,8 @@ export const prayer: MysticSphere = {
       // Honed + steeled is theoretically 1.2 EA, but it's rare that you'll actually
       // benefit from both, so this can be r5.
       effect: `
-        One \\glossterm{ally} within \\medrange is \\honed and \\steeled until your next turn.
+        Choose one \\glossterm{ally} within \\medrange.
+        The target is \\honed and \\steeled until your next turn.
       `,
       rank: 5,
       roles: ['boon'],

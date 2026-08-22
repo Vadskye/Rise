@@ -598,7 +598,7 @@ export const telekinesis: MysticSphere = {
         During the effect, if the target takes damage, it is \\briefly \\empowered.
       `,
       rank: 2,
-      roles: ['boon'],
+      roles: ['boon', 'focus', 'turtle'],
     },
 
     // 0.9 + 0.2 EA
@@ -607,11 +607,11 @@ export const telekinesis: MysticSphere = {
 
       effect: `
         Choose up to one \\glossterm{ally} within \\medrange.
-        You and the target are both \\briefly \\shielded
+        You and the target are both \\briefly \\shielded.
         During the effect, if you or the target takes damage, you are \\briefly \\empowered.
       `,
       rank: 2,
-      roles: ['boon', 'focus'],
+      roles: ['boon', 'focus', 'turtle'],
     },
 
     {

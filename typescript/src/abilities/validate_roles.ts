@@ -74,12 +74,12 @@ function getNormalSpellText(spell: SpellDefinition): {
     .trim();
   return {
     cost: stripGlossterm((resolved.cost || '').toLowerCase()),
-    hit: stripGlossterm(hit),
-    targeting: stripGlossterm(targeting),
-    injury: stripGlossterm(injury),
-    effect: stripGlossterm(effect),
-    exceptThat: stripGlossterm(exceptThat),
-    fullText: stripGlossterm(fullText),
+    hit: stripGlossterm(hit).toLowerCase(),
+    targeting: stripGlossterm(targeting).toLowerCase(),
+    injury: stripGlossterm(injury).toLowerCase(),
+    effect: stripGlossterm(effect).toLowerCase(),
+    exceptThat: stripGlossterm(exceptThat).toLowerCase(),
+    fullText: stripGlossterm(fullText).toLowerCase(),
   };
 }
 
@@ -113,9 +113,7 @@ function hasPersistentCondition(hit: string, effect: string, exceptThat: string 
     /while (?:the target is|it is|they are)?\s*injured,?\s*(?:the target|it|they)?\s*(?:is|are)/i.test(
       combined,
     ) &&
-    !/as a condition[^.]*(?:blinded|dazed|dazzled|deafened|frightened|immobilized|slowed|vulnerable|weakened)/i.test(
-      uninjured,
-    )
+    !hasDebuffWords(uninjured)
   ) {
     return false;
   }
@@ -156,6 +154,7 @@ function hasDebuffWords(fullTextLowercase: string): boolean {
     '-1 penalty',
     '-2 penalty',
     '-4 penalty',
+    'an extra 30 feet to affect it',
     'attack the creature closest',
     'blinded',
     'cannot act',
@@ -175,6 +174,7 @@ function hasDebuffWords(fullTextLowercase: string): boolean {
     'doing nothing at all',
     'emotions calmed',
     'everything outside itself',
+    'nothing can pass through',
     'exposed',
     'fling',
     'frightened',
@@ -192,10 +192,12 @@ function hasDebuffWords(fullTextLowercase: string): boolean {
     'penalty to accuracy',
     'penalty to defenses',
     'penalty to its',
+    'prevents the target from having',
     'prone',
     'push',
     'repeat the same standard action',
     'shaken',
+    'sleepy',
     'slowed',
     'spend its next standard action doing nothing',
     'strike against itself',
@@ -234,6 +236,7 @@ function isNarrativeSpell(rawSpell: SpellDefinition, fullTextLowercase: string):
     /observe your surroundings/.test(fullTextLowercase) ||
     /charmed/.test(fullTextLowercase) ||
     /see and hear out of/.test(fullTextLowercase) ||
+    /craft check to create/.test(fullTextLowercase) ||
     /change your appearance or equipment/.test(fullTextLowercase) ||
     /disguise check/.test(fullTextLowercase) ||
     /see out of the target's eyes/.test(fullTextLowercase) ||
@@ -339,6 +342,7 @@ function isHazardEffect(
     fullTextLowercase.includes('zone') ||
     fullTextLowercase.includes('undergrowth') ||
     fullTextLowercase.includes('caltrops') ||
+    /you create.*attack.*of it/.test(fullTextLowercase) ||
     fullTextLowercase.includes('fortification');
 
   // 3. Attunable or sustained zone / environmental effect (e.g. Fog Cloud, Solid Fog Cloud, Bramblepatch, Slowtime Field)
@@ -385,17 +389,16 @@ export function inferExpectedRoles(
   const expected = new Set<AbilityRole>();
   const resolved = resolveSpell(rawSpell);
   const { cost, hit, targeting, injury, effect, exceptThat, fullText } = getNormalSpellText(rawSpell);
-  const fullTextLowercase = fullText.toLowerCase();
 
   const dealsDamage = profile.maxDamageRank !== null || profile.isStrike;
 
   // 1. Attunement
   if (profile.requiresAttunement) {
     expected.add('attune');
-    if (isHazardEffect(rawSpell, profile, fullTextLowercase)) {
+    if (isHazardEffect(rawSpell, profile, fullText)) {
       expected.add('hazard');
     }
-    if (!attunementGrantsActiveAbility(fullTextLowercase)) {
+    if (!attunementGrantsActiveAbility(fullText)) {
       return expected;
     }
   }
@@ -404,7 +407,7 @@ export function inferExpectedRoles(
   const isBarrier =
     (rawSpell.tags || []).includes('Barrier') ||
     (profile.area === 'wall' && dealsDamage) ||
-    (/\bwall\b/i.test(fullTextLowercase) && dealsDamage);
+    (/\bwall\b/i.test(fullText) && dealsDamage);
   if (isBarrier) {
     expected.add('barrier');
   }
@@ -412,9 +415,9 @@ export function inferExpectedRoles(
   // 3. Healing
   if (
     profile.healingRank !== null ||
-    /\bregains?\b.*?\bhit points\b/i.test(fullTextLowercase) ||
-    /hit points to become identical to the locked hit points/i.test(fullTextLowercase) ||
-    /removes? any excess vital wounds/i.test(fullTextLowercase)
+    /\bregains?\b.*?\bhit points\b/i.test(fullText) ||
+    /hit points to become identical to the locked hit points/i.test(fullText) ||
+    /removes? any excess vital wounds/i.test(fullText)
   ) {
     expected.add('healing');
   }
@@ -422,14 +425,14 @@ export function inferExpectedRoles(
   // 4. Cleanse
   if (
     /removes?\s+(?:all|a|one|\d+|any)?\s*(?:excess\s+)?(?:condition|curse|poison)/i.test(
-      fullTextLowercase,
+      fullText,
     ) ||
     /ends?\s+(?:all|a|one|\d+)?\s*(?:condition|curse|poison)/i.test(
-      fullTextLowercase,
+      fullText,
     ) ||
-    /cures?\s+(?:a|one|\d+)?\s*poison/i.test(fullTextLowercase) ||
-    /\bcleanse\b/i.test(fullTextLowercase) ||
-    /effects of all other.*?suppressed/i.test(fullTextLowercase)
+    /cures?\s+(?:a|one|\d+)?\s*poison/i.test(fullText) ||
+    /\bcleanse\b/i.test(fullText) ||
+    /effects of all other.*?suppressed/i.test(fullText)
   ) {
     expected.add('cleanse');
   }
@@ -441,50 +444,46 @@ export function inferExpectedRoles(
     resolved.staminaCost === true ||
     costRequiresStamina ||
     /vital wound/.test(cost) ||
-    /spends?\s+(?:one|\d+)?\s*stamina/i.test(fullTextLowercase) ||
-    /reduces its stamina/i.test(fullTextLowercase) ||
-    /spends?\s+(?:a|\d+)?\s*vital wound/i.test(fullTextLowercase)
+    /spends?\s+(?:one|\d+)?\s*stamina/i.test(fullText) ||
+    /reduces its stamina/i.test(fullText) ||
+    /spends?\s+(?:a|\d+)?\s*vital wound/i.test(fullText)
   ) {
     expected.add('exertion');
   }
 
   // 6. Hazard
-  if (isHazardEffect(rawSpell, profile, fullTextLowercase)) {
+  if (isHazardEffect(rawSpell, profile, fullText)) {
     expected.add('hazard');
   }
 
   // 7. Retaliate
   if (
-    /whenever a creature.*?(?:attacks you|makes.*?attack against you)/i.test(fullTextLowercase) ||
-    /if[^.]+attack(s|ed)[^.]+you or (one of )?your allies/i.test(fullTextLowercase) ||
-    /if[^.]+injure[^.]+during this effect/.test(fullTextLowercase) ||
-    /deal.*extra damage to creatures that attacked/i.test(fullTextLowercase)
+    /whenever a creature.*?(?:attacks you|makes.*?attack against you)/i.test(fullText) ||
+    /if[^.]+attack(s|ed)[^.]+you or (one of )?your allies/i.test(fullText) ||
+    /if[^.]+injure[^.]+during this effect/.test(fullText) ||
+    /deal.*extra damage to creatures that attacked/i.test(fullText)
   ) {
     expected.add('retaliate');
   }
 
   const isDefinitelyNotDive =
-    /move the ball/.test(fullTextLowercase) ||
-    /unable to move closer to you/.test(fullTextLowercase) ||
-    /you\s+teleport\s+the\s+target/i.test(fullTextLowercase) ||
-    /teleport\s+it/i.test(fullTextLowercase) ||
-    /they each\s+teleport/i.test(fullTextLowercase) ||
-    /whenever an enemy teleports/i.test(fullTextLowercase);
+    /move the ball/.test(fullText) ||
+    /unable to move closer to you/.test(fullText) ||
+    /you\s+teleport\s+the\s+target/i.test(fullText) ||
+    /teleport\s+it/i.test(fullText) ||
+    /they each\s+teleport/i.test(fullText) ||
+    /whenever an enemy teleports/i.test(fullText);
 
-  const allowsFreeMovement = /move (?:towards|adjacent|through)/i.test(fullTextLowercase) ||
-    /move[^.]+without reducing[^.]+available movement/.test(fullTextLowercase);
+  const allowsFreeMovement = /move (?:towards|adjacent|through)/i.test(fullText) ||
+    /move[^.]+without reducing[^.]+available movement/.test(fullText);
 
-  const makesMeleeAttack = /make a[^.]+melee strike/.test(fullTextLowercase);
+  const makesMeleeAttack = /make a[^.]+melee strike/.test(fullText);
 
-  const onlyMovesTowardsTarget = /leap.*attack/i.test(fullTextLowercase) ||
-    /move in a straight line/i.test(fullTextLowercase) ||
+  const onlyMovesTowardsTarget = /leap.*attack/i.test(fullText) ||
+    /move in a straight line/i.test(fullText) ||
     /(?:you\s+(?:first\s+)?teleport|teleport\s+up\s+to\s+\d+\s+feet\s+to\s+a\s+location\s+adjacent|teleport\s+to\s+an?\s+unoccupied)/i.test(
-      fullTextLowercase,
+      fullText,
     )
-
-  if (profile.name === 'Quicksilver Ambush') {
-    console.log('fullTextLowercase', fullTextLowercase);
-  }
 
   // 8. Dive
   if (profile.hasAttack) {
@@ -521,7 +520,7 @@ export function inferExpectedRoles(
       profile.isSingleTarget &&
       (profile.isInjuryOnly ||
         (injury && /\\damagerank/i.test(injury)) ||
-        fullTextLowercase.includes('if the target is injured, it takes'))
+        fullText.includes('if the target is injured, it takes'))
     ) {
       expected.add('execute');
     }
@@ -538,7 +537,7 @@ export function inferExpectedRoles(
       !profile.isInjuryOnly &&
       !isDoT &&
       !isLongOrDistantRange &&
-      !fullTextLowercase.includes('reactive attack') &&
+      !fullText.includes('reactive attack') &&
       !/whenever\s+(?:a|an)?\s*creature/i.test(targeting)
     ) {
       expected.add('burst');
@@ -546,8 +545,8 @@ export function inferExpectedRoles(
   }
 
   // 10. Debuff Roles (Softener, Flash, Trip, Maim)
-  const affectsAlly = !hit && !profile.isStrike && /choose.*ally/.test(fullTextLowercase);
-  const isInjuryDebuffEffect = isInjuryDebuff(injury, fullTextLowercase);
+  const affectsAlly = !hit && !profile.isStrike && /choose.*ally/.test(fullText);
+  const isInjuryDebuffEffect = isInjuryDebuff(injury, fullText);
   const isCondition = hasPersistentCondition(hit, effect, exceptThat);
 
   const cleanHit = stripBurnClauses(hit).replace(
@@ -559,11 +558,11 @@ export function inferExpectedRoles(
   )[0];
   const hasHitDebuff = hasDebuffWords(uninjuredHitText.toLowerCase());
 
-  const isNarrativeOnly = isNarrativeSpell(rawSpell, fullTextLowercase);
+  const isNarrativeOnly = isNarrativeSpell(rawSpell, fullText);
 
   const isReactiveRetaliateOnly = expected.has('retaliate') && !profile.type?.includes('Sustain');
 
-  const hasShortTermEffect = /\bbriefly/.test(uninjuredHitText) || /\b(flicker|push|fling|flung|teleport|prone)/.test(uninjuredHitText);
+  const hasShortTermEffect = /\bbriefly/.test(uninjuredHitText) || /\b(flicker|repeat the same|push|fling|flung|teleport|prone)/.test(uninjuredHitText);
 
   const hasDebuff =
     !affectsAlly &&
@@ -571,9 +570,11 @@ export function inferExpectedRoles(
     !isReactiveRetaliateOnly &&
     (hasHitDebuff || isInjuryDebuffEffect || isCondition);
 
+  const isNonAreaSustain = ['single', 'multi'].includes(profile.area) && profile.type?.includes('Sustain');
+
   // All of the debuff roles can only apply to spells that make attacks
-  if (hit && hasDebuff) {
-    if (isCondition) {
+  if (profile.hasAttack && hasDebuff) {
+    if (isCondition || isNonAreaSustain) {
       // Persistent condition on non-injured targets is softener
       expected.add('softener');
     } else if (profile.isSingleTarget && hasHitDebuff && hasShortTermEffect) {
@@ -588,38 +589,51 @@ export function inferExpectedRoles(
     }
   }
 
-  const onlyAffectsAllies = (/all allies within.*radius.*you/.test(fullTextLowercase) && !/you and all allies/.test(fullTextLowercase)) || (/choose up to[^.]+allies within/.test(fullTextLowercase));
+  const onlyAffectsAllies = (/all allies within.*radius.*you/.test(fullText) && !/you and all allies/.test(fullText)) || /choose one ally/.test(fullText) || /choose (up to )?two allies/.test(fullText);
+  const affectsYou = /\b(you|yourself)\b/.test(fullText);
+
+  // TODO: Make this less repetitive.
+  const providesDefensiveBuff = (
+    /(shielded|fortified|steeled|braced|resistant|safe location|stasis)/i.test(
+      effect,
+    ) ||
+    /(shielded|fortified|steeled|braced|resistant|safe location|stasis)/i.test(
+      targeting,
+    ) ||
+    /gain[^.]+bonus to[^.]+defense/i.test(fullText) ||
+    /takes?\s+half\s+damage/i.test(fullText) ||
+    /(?:\\briefly\s+)?have\s+(?:\\glossterm\{)?cover/i.test(fullText) ||
+    /failure chance/i.test(fullText));
 
   // 11. Turtle (Brief defensive buff on self)
   const isTurtle =
+    affectsYou &&
     !onlyAffectsAllies &&
-    !/creatures.*may have.*cover/.test(fullTextLowercase) && (
-      /you (?:are|become).*(?:\\briefly\s+|briefly\s+).*(shielded|fortified|steeled|braced|resistant)/i.test(
-        fullTextLowercase,
-      ) ||
-      /gain[^.]+bonus to[^.]+defense/i.test(fullTextLowercase) ||
-      /takes?\s+half\s+damage/i.test(fullTextLowercase) ||
-      /(?:\\briefly\s+)?have\s+(?:\\glossterm\{)?cover/i.test(fullTextLowercase) ||
-      /failure chance/i.test(fullTextLowercase));
+    !/creatures.*may have.*cover/.test(fullText) && providesDefensiveBuff;
+
   if (isTurtle && !profile.requiresAttunement) {
     expected.add('turtle');
   }
 
+  const providesOffensiveBuff =
+    /(primed|empowered|maximized|focused|honed)/i.test(
+      fullText,
+    ) ||
+    /persists until the end of your turn/.test(fullText) ||
+    /your next\s+(?:attack|strike|spell)/i.test(fullText) ||
+    /take (?:two turns of actions|an extra\s+(?:standard|minor) action)/i.test(
+      fullText,
+    );
+
   // 12. Focus & Generator
   const isOffensiveBuffOnSelf =
-    !onlyAffectsAllies && (
-      /\byou[^.]+(primed|empowered|maximized|focused|honed)/i.test(
-        fullTextLowercase,
-      ) ||
-      /your next\s+(?:attack|strike|spell)/i.test(fullTextLowercase) ||
-      /take (?:two turns of actions|an extra\s+(?:standard|minor) action)/i.test(
-        fullTextLowercase,
-      ));
+    affectsYou &&
+    !onlyAffectsAllies && providesOffensiveBuff;
 
   if (isOffensiveBuffOnSelf) {
     const isEmpoweredThisTurn =
       profile.isStrike &&
-      /you (?:are|become)\s+\\(?:empowered|maximized)\s+this turn/i.test(fullTextLowercase);
+      /you (?:are|become)\s+\\(?:empowered|maximized)\s+this turn/i.test(fullText);
 
     if (profile.hasAttack && !isEmpoweredThisTurn) {
       expected.add('generator');
@@ -632,60 +646,56 @@ export function inferExpectedRoles(
   const isMobility =
     !profile.hasAttack &&
     !profile.requiresAttunement &&
-    !/choose.*unattended object within/.test(fullTextLowercase) &&
-    !/one of your items/.test(fullTextLowercase) &&
-    (/\bfling\b/i.test(fullTextLowercase) ||
-      /\bpush/i.test(fullTextLowercase) ||
-      /teleport/i.test(fullTextLowercase) ||
-      /glide speed/i.test(fullTextLowercase) ||
-      /fly speed/i.test(fullTextLowercase) ||
-      /walk speed/i.test(fullTextLowercase) ||
-      /add.*speed.*available movement/i.test(fullTextLowercase) ||
-      /move up to/i.test(fullTextLowercase) ||
+    !/choose.*unattended object within/.test(fullText) &&
+    !/one of your items/.test(fullText) &&
+    (/\bfling\b/i.test(fullText) ||
+      /\bpush/i.test(fullText) ||
+      /teleport/i.test(fullText) ||
+      /glide speed/i.test(fullText) ||
+      /fly speed/i.test(fullText) ||
+      /walk speed/i.test(fullText) ||
+      /add.*speed.*available movement/i.test(fullText) ||
+      /move up to/i.test(fullText) ||
       /causes the creature to disappear from its current location and reappear in the locked location/i.test(
-        fullTextLowercase,
+        fullText,
       ));
   if (isMobility) {
     expected.add('mobility');
   }
 
+  const canAffectAllies = /\b(ally|allies)\b/.test(fullText);
+
   // 14. Boon (Brief combat buff on allies)
   const isBoon =
     !profile.hasAttack &&
     !expected.has('narrative') &&
-    (/\b(?:allies|ally)\b/i.test(targeting) ||
-      /\b(?:allies|ally)\b/i.test(effect) ||
-      /time lock/i.test(effect)) &&
-    (!expected.has('mobility') || fullTextLowercase.includes('time lock'));
+    canAffectAllies &&
+    (providesDefensiveBuff || providesOffensiveBuff || /time lock/.test(fullText));
   if (isBoon && !dealsDamage) {
-    const hasBuffEffect =
-      /safe location|resistant|immune|bonus|shielded|steeled|fortified|empowered|maximized|advantage/i.test(
-        effect,
-      );
     const nonBoonRole = expected.has('healing') || expected.has('cleanse');
-    if (!nonBoonRole && (hasBuffEffect || fullTextLowercase.includes('time lock'))) {
+    if (!nonBoonRole) {
       expected.add('boon');
     }
   }
 
   // 15. Ramp
   if (
-    fullTextLowercase.includes('for the rest of combat') ||
-    fullTextLowercase.includes('until combat ends') ||
-    fullTextLowercase.includes('for the rest of the fight')
+    fullText.includes('for the rest of combat') ||
+    fullText.includes('until combat ends') ||
+    fullText.includes('for the rest of the fight')
   ) {
     expected.add('ramp');
   }
 
   // 16. Narrative
-  if (!hit && isNarrativeSpell(rawSpell, fullTextLowercase)) {
+  if (!hit && isNarrativeSpell(rawSpell, fullText)) {
     expected.add('narrative');
   }
 
   // 17. Payoff
   if (
-    /unless.*during your (?:previous|last) turn/i.test(fullTextLowercase) ||
-    fullTextLowercase.includes('if you used')
+    /unless.*during your (?:previous|last) turn/i.test(fullText) ||
+    fullText.includes('if you used')
   ) {
     expected.add('payoff');
   }
@@ -706,14 +716,13 @@ export function validateSpellRoles(spheres: MysticSphere[]): RoleValidationIssue
       const expectedSet = inferExpectedRoles(spell, profile);
       const actualSet = new Set(spell.roles || []);
       const { fullText } = getNormalSpellText(spell);
-      const fullTextLowercase = fullText.toLowerCase();
 
       // Check missing roles
       for (const expRole of expectedSet) {
         // If it's an attunement spell without granted actions, only 'attune', 'barrier', 'hazard', or 'narrative' is expected
         if (
           profile.requiresAttunement &&
-          !attunementGrantsActiveAbility(fullTextLowercase) &&
+          !attunementGrantsActiveAbility(fullText) &&
           expRole !== 'attune' &&
           expRole !== 'barrier' &&
           expRole !== 'hazard' &&
@@ -772,16 +781,16 @@ export function validateSpellRoles(spheres: MysticSphere[]): RoleValidationIssue
           // Special exception: social/narrative spells
           if (
             actRole === 'narrative' &&
-            (fullTextLowercase.includes('social') ||
-              fullTextLowercase.includes('observe') ||
-              fullTextLowercase.includes('appearance') ||
-              fullTextLowercase.includes('disguise') ||
-              fullTextLowercase.includes('speak') ||
-              fullTextLowercase.includes('charmed') ||
-              fullTextLowercase.includes('truth') ||
-              fullTextLowercase.includes('mood') ||
-              fullTextLowercase.includes('eyes') ||
-              isNarrativeSpell(spell, fullTextLowercase))
+            (fullText.includes('social') ||
+              fullText.includes('observe') ||
+              fullText.includes('appearance') ||
+              fullText.includes('disguise') ||
+              fullText.includes('speak') ||
+              fullText.includes('charmed') ||
+              fullText.includes('truth') ||
+              fullText.includes('mood') ||
+              fullText.includes('eyes') ||
+              isNarrativeSpell(spell, fullText))
           ) {
             continue;
           }
@@ -791,7 +800,7 @@ export function validateSpellRoles(spheres: MysticSphere[]): RoleValidationIssue
             actRole === 'attune' &&
             (profile.isAttunable ||
               profile.isSustainedMinor ||
-              fullTextLowercase.includes('duplicate'))
+              fullText.includes('duplicate'))
           ) {
             continue;
           }
@@ -807,9 +816,9 @@ export function validateSpellRoles(spheres: MysticSphere[]): RoleValidationIssue
           // Special exception: softener for sustained conditions/pacification
           if (
             actRole === 'softener' &&
-            (fullTextLowercase.includes('charmed') ||
-              fullTextLowercase.includes('emotions calmed') ||
-              fullTextLowercase.includes('cannot take violent actions') ||
+            (fullText.includes('charmed') ||
+              fullText.includes('emotions calmed') ||
+              fullText.includes('cannot take violent actions') ||
               hasPersistentCondition('', fullText))
           ) {
             continue;

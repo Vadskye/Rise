@@ -584,7 +584,7 @@ export const enchantment: MysticSphere = {
         `,
       },
       rank: 2,
-      roles: ['maim', 'softener'],
+      roles: ['maim'],
       scaling: 'accuracy',
       tags: ['Emotion'],
     },
@@ -677,7 +677,7 @@ export const enchantment: MysticSphere = {
         In addition, it \\briefly gains a +2 bonus to its Mental defense.
       `,
       rank: 2,
-      roles: ['healing', 'boon', 'exertion', 'turtle'],
+      roles: ['healing', 'exertion', 'turtle'],
       // Flat would be 1d10, but power scaling means we shouldn't scale too much. TODO:
       // math.
       scaling: { special: 'The recovery increases by 2 for each rank beyond 2.' },
@@ -695,7 +695,7 @@ export const enchantment: MysticSphere = {
         In addition, it \\briefly gains a +4 bonus to its Mental defense.
       `,
       rank: 6,
-      roles: ['healing', 'boon', 'exertion', 'turtle'],
+      roles: ['healing', 'exertion', 'turtle'],
       // Flat would be 3d10, but power scaling means we shouldn't scale too much. TODO:
       // math.
       scaling: { special: 'The recovery increases by 1d10 for each rank beyond 6.' },
