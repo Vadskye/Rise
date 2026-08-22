@@ -1,6 +1,6 @@
 import t from 'tap';
-import { inferExpectedRoles, stripGlossterm, validateSpellRoles } from './validate_roles';
-import { buildSpellProfile } from './spell_profile';
+import { inferExpectedRoles, validateSpellRoles } from './validate_roles';
+import { buildSpellProfile, stripGlossterm } from './spell_profile';
 import { SpellDefinition } from './active_abilities';
 import { MysticSphere } from './mystic_spheres';
 

@@ -22,6 +22,7 @@ import {
   resolveSpell,
   SpellProfile,
   stripBurnClauses,
+  stripGlossterm,
 } from './spell_profile';
 
 export interface RoleValidationIssue {
@@ -34,16 +35,6 @@ export interface RoleValidationIssue {
   message: string;
   actualRoles: AbilityRole[];
   expectedRoles: AbilityRole[];
-}
-
-/**
- * Strips all \glossterm{...} wrappers from the given text, replacing them with their inner content.
- */
-export function stripGlossterm(text: string): string {
-  if (!text) {
-    return text;
-  }
-  return text.replace(/\\glossterm\{([^}]+)\}/gi, '$1');
 }
 
 /**

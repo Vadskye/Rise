@@ -198,12 +198,22 @@ export function parseHealingRank(text: string): number | null {
   return RANK_WORDS[word] !== undefined ? RANK_WORDS[word] : null;
 }
 
+/**
+ * Strips all \glossterm{...} wrappers from the given text, replacing them with their inner content.
+ */
+export function stripGlossterm(text: string): string {
+  if (!text) {
+    return text;
+  }
+  return text.replace(/\\glossterm\{([^}]+)\}/gi, '$1');
+}
+
 export function parseDefenses(text: string): DefenseType[] {
-  const lowercase = text.toLowerCase();
+  const lowercase = stripGlossterm(text).toLowerCase();
   const defenses: readonly DefenseType[] = ['fortitude', 'reflex', 'mental', 'brawn', 'armor'];
   const matched: DefenseType[] = [];
   for (const def of defenses) {
-    const regex = new RegExp(`(vs\\.|against|and)\\s+(\\\\glossterm{)?${def}`, 'i');
+    const regex = new RegExp(`(vs\\.|against|and)\\s+${def}`, 'i');
     if (regex.test(lowercase)) {
       matched.push(def);
     }
@@ -215,12 +225,11 @@ export function parseDefenses(text: string): DefenseType[] {
 }
 
 export function isStrikeSpell(text: string): boolean {
+  const clean = stripGlossterm(text);
   return (
-    /make (?:a|two|three|\d+)?\s*(?:(?:mundane|melee|ranged|\\glossterm\{mundane\}|\\glossterm\{melee\}|\\glossterm\{ranged\})\s+)*(?:\\glossterm\{)?strikes?/i.test(
-      text,
-    ) &&
-    !/whenever you make a/i.test(text) &&
-    !/strike\}?\s+against itself/i.test(text)
+    /make (?:a|two|three|\d+)?\s*(?:(?:mundane|melee|ranged)\s+)*strikes?/i.test(clean) &&
+    !/whenever you make a/i.test(clean) &&
+    !/strike\s+against itself/i.test(clean)
   );
 }
 
@@ -241,11 +250,8 @@ export function isAdjacentArea(text: string): boolean {
  * Strips burning condition and debuff clauses from text.
  */
 export function stripBurnClauses(text: string): string {
-  return text
-    .replace(
-      /(?:\\debuff\{)?burns?\}?\s+(?:for\s+[^.]*?)?as\s+a\s+(?:\\glossterm\{)?conditions?\}?/gi,
-      '',
-    )
+  return stripGlossterm(text)
+    .replace(/(?:\\debuff\{)?burns?\}?\s+(?:for\s+[^.]*?)?as\s+a\s+conditions?/gi, '')
     .replace(/\\debuff\{burns?\}/gi, '');
 }
 
@@ -256,10 +262,9 @@ export const DELAYED_DAMAGE_REGEX =
   /at the end of (?:its|your|each) next turn.*?(?:takes?|takes \\damagerank|\d+d\d+ damage)/i;
 
 export function parseRange(text: string): SpellRange {
-  const lowercase = text.toLowerCase().replaceAll('\n', ' ');
+  const lowercase = stripGlossterm(text).toLowerCase().replaceAll('\n', ' ');
   if (
     lowercase.includes('touch') ||
-    lowercase.includes('\\glossterm{touch}') ||
     lowercase.includes('adjacent creature') ||
     lowercase.includes('adjacent target') ||
     /against\s+(?:something|anything|one|a|the|target|creature|an)\b.*?adjacent/i.test(lowercase)
@@ -399,8 +404,8 @@ export function parseAppliedEffects(text: string): AppliedEffect[] {
 }
 
 export function parseAccuracyModifier(text: string): number {
-  const lowercase = text.toLowerCase();
-  const match = lowercase.match(/with a\s+(\\plus|\\minus|\+|-)(\d+)\s+(?:\\glossterm{)?accuracy/i);
+  const lowercase = stripGlossterm(text).toLowerCase();
+  const match = lowercase.match(/with a\s+(\\plus|\\minus|\+|-)(\d+)\s+accuracy/i);
   if (match) {
     const sign = match[1].toLowerCase() === '\\minus' || match[1] === '-' ? -1 : 1;
     return sign * Number(match[2]);
@@ -409,13 +414,13 @@ export function parseAccuracyModifier(text: string): number {
 }
 
 export function parseAccuracyCondition(text: string): string | null {
-  const lowercase = text.toLowerCase();
-  const hasAny = /(\\plus|\\minus|\+|-)\d+\s+(?:\\glossterm{)?accuracy/i.test(lowercase);
+  const lowercase = stripGlossterm(text).toLowerCase();
+  const hasAny = /(\\plus|\\minus|\+|-)\d+\s+accuracy/i.test(lowercase);
   if (!hasAny) {
     return null;
   }
 
-  const hasUnconditional = /with a\s+(\\plus|\\minus|\+|-)\d+\s+(?:\\glossterm{)?accuracy/i.test(
+  const hasUnconditional = /with a\s+(\\plus|\\minus|\+|-)\d+\s+accuracy/i.test(
     lowercase,
   );
   if (hasUnconditional) {
@@ -637,18 +642,18 @@ export function buildSpellProfile(
 ): SpellProfile {
   const spell = resolveSpell(rawSpell);
 
-  const hit = spell.attack?.hit || '';
-  const targeting = spell.attack?.targeting || '';
-  const injury = spell.attack?.injury || '';
-  const effect = spell.effect || '';
-  const exceptThat = rawSpell.functionsLike?.exceptThat || '';
+  const hit = stripGlossterm(spell.attack?.hit || '');
+  const targeting = stripGlossterm(spell.attack?.targeting || '');
+  const injury = stripGlossterm(spell.attack?.injury || '');
+  const effect = stripGlossterm(spell.effect || '');
+  const exceptThat = stripGlossterm(rawSpell.functionsLike?.exceptThat || '');
   const halfOnMiss = spell.attack?.halfOnMiss === true;
 
   const fullText = `${hit} ${targeting} ${injury} ${effect} ${exceptThat}`.trim();
   const lowercase = fullText.toLowerCase();
 
   const isDoubleAction =
-    /spend a (\\glossterm{)?standard action(})? to make an attack/i.test(fullText) ||
+    /spend a standard action to make an attack/i.test(fullText) ||
     /during your next turn, you can spend a/i.test(fullText);
 
   const defenses = parseDefenses(fullText);
@@ -656,7 +661,7 @@ export function buildSpellProfile(
 
   // Strip purely lighting/illumination phrases before checking attack area
   const targetingWithoutLighting = targeting.replace(
-    /(?:whether you hit or miss,?\s*)?(?:when you cast this spell,?\s*)?(?:in addition,?\s*)?(?:\\glossterm\{)?(?:brilliant|bright|dim)\s+illumination\}?\s*(?:\\(?:glossterm\{)?briefly\}?\s+)?fills\s+a\s+\d+\s+foot\s+radius\s+around\s+(?:a\s+\d+\s+ft\.?\s+wide\s+straight\s+line|both\s+your|the\s+area|each\s+area|you\b)(?!\s*(?:\\glossterm\{)?emanation)/gi,
+    /(?:whether you hit or miss,?\s*)?(?:when you cast this spell,?\s*)?(?:in addition,?\s*)?(?:brilliant|bright|dim)\s+illumination\s*(?:\\briefly\s+|briefly\s+)?fills\s+a\s+\d+\s+foot\s+radius\s+around\s+(?:a\s+\d+\s+ft\.?\s+wide\s+straight\s+line|both\s+your|the\s+area|each\s+area|you\b)(?!\s*emanation)/gi,
     '',
   );
   const fullTextForArea =
@@ -749,8 +754,8 @@ export function buildSpellProfile(
 
   const hasAttuneStandardAttack =
     isAttunable &&
-    (/as a (?:\\glossterm{)?standard action(?:})?/i.test(fullText) ||
-      /spend a (?:\\glossterm{)?standard action(?:})?/i.test(fullText));
+    (/as a standard action/i.test(fullText) ||
+      /spend a standard action/i.test(fullText));
 
   const hasEscapableRepeat =
     lowercase.includes('repeats in the same area') ||
