@@ -263,7 +263,7 @@ export const fabrication: MysticSphere = {
         `,
       },
       rank: 1,
-      roles: ['burst'],
+      roles: ['clear'],
       scaling: 'damage',
       tags: ['Keen', 'Manifestation', 'Physical'],
     },
@@ -277,7 +277,7 @@ export const fabrication: MysticSphere = {
           'the damage increases to \\damagerankfivelow, and any \\glossterm{extra damage} is doubled.',
       },
       rank: 4,
-      roles: ['burst'],
+      roles: ['clear'],
       scaling: 'damage',
       tags: ['Keen', 'Manifestation', 'Physical'],
     },
@@ -427,7 +427,7 @@ export const fabrication: MysticSphere = {
         If it takes damage from a \\atFire ability, it is immediately destroyed.
       `,
       rank: 3,
-      roles: ['barrier'],
+      roles: ['hazard'],
       scaling: {
         5: 'The hit points increase to four times your power.',
         7: 'The hit points increase to five times your power.',
@@ -447,7 +447,7 @@ export const fabrication: MysticSphere = {
         If it takes damage from a \\atFire ability, it is immediately destroyed.
       `,
       rank: 6,
-      roles: ['barrier'],
+      roles: ['hazard'],
       tags: ['Manifestation'],
       type: 'Sustain (attunable, minor)',
     },

@@ -563,13 +563,14 @@ export function inferExpectedRoles(
 
   // 11. Turtle (Brief defensive buff on self)
   const isTurtle =
-    /you (?:are|become).*(?:\\briefly\s+|briefly\s+).*(shielded|fortified|steeled|braced|resistant)/i.test(
-      fullTextLowercase,
-    ) ||
-    /gain\s+(?:a\s+)?\+\d+\s+bonus to (?:your\s+)?defenses/i.test(fullTextLowercase) ||
-    /takes?\s+half\s+damage/i.test(fullTextLowercase) ||
-    /(?:\\briefly\s+)?have\s+cover/i.test(fullTextLowercase) ||
-    /failure chance/i.test(fullTextLowercase);
+    !/creatures.*may have.*cover/.test(fullTextLowercase) && (
+      /you (?:are|become).*(?:\\briefly\s+|briefly\s+).*(shielded|fortified|steeled|braced|resistant)/i.test(
+        fullTextLowercase,
+      ) ||
+      /gain\s+(?:a\s+)?\+\d+\s+bonus to (?:your\s+)?defenses/i.test(fullTextLowercase) ||
+      /takes?\s+half\s+damage/i.test(fullTextLowercase) ||
+      /(?:\\briefly\s+)?have\s+(?:\\glossterm\{)?cover/i.test(fullTextLowercase) ||
+      /failure chance/i.test(fullTextLowercase));
   if (isTurtle && !profile.requiresAttunement) {
     expected.add('turtle');
   }
