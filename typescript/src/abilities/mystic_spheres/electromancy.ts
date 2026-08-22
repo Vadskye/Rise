@@ -304,14 +304,14 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       // Area: Short range, chain once (R1, mod -0)
       // Result: 5 - 0 = dr5
       attack: {
-        hit: `\\damagerankfive, and any \\glossterm{extra damage} is doubled.`,
+        hit: `\\damagerankfour.`,
         halfOnMiss: false,
         targeting: `
           Make an attack vs. Fortitude against something within \\shortrange.
           This attack \\glossterm{chains} once.
         `,
       },
-      rank: 5,
+      rank: 4,
       roles: ['clear'],
       scaling: 'damage',
     },

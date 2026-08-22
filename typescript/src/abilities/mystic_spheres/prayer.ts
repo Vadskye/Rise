@@ -370,7 +370,7 @@ export const prayer: MysticSphere = {
         Then, you \\briefly gain a +2 bonus to your Mental defense.
       `,
       rank: 1,
-      roles: ['burst'],
+      roles: ['burst', 'turtle'],
       scaling: 'accuracy',
     },
 
@@ -382,7 +382,7 @@ export const prayer: MysticSphere = {
         Then, you \\briefly gain a +2 bonus to your Mental defense.
       `,
       rank: 5,
-      roles: ['burst'],
+      roles: ['burst', 'turtle'],
       scaling: 'accuracy',
     },
 

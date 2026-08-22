@@ -370,7 +370,7 @@ export const fabrication: MysticSphere = {
         `,
       },
       rank: 2,
-      roles: ['barrier', 'hazard'],
+      roles: ['barrier'],
       scaling: 'damage',
       tags: ['Barrier', 'Manifestation', 'Physical'],
       type: 'Sustain (attunable, minor)',
@@ -388,7 +388,7 @@ export const fabrication: MysticSphere = {
         name: 'blade barrier',
       },
       rank: 5,
-      roles: ['barrier', 'hazard'],
+      roles: ['barrier'],
       scaling: 'damage',
       tags: ['Barrier', 'Manifestation', 'Physical'],
       type: 'Sustain (attunable, minor)',
@@ -410,7 +410,7 @@ export const fabrication: MysticSphere = {
         name: 'blade barrier',
       },
       rank: 3,
-      roles: ['barrier', 'hazard'],
+      roles: ['barrier'],
       scaling: 'damage',
       tags: ['Barrier', 'Manifestation', 'Physical'],
       type: 'Sustain (attunable, minor)',
@@ -426,11 +426,10 @@ export const fabrication: MysticSphere = {
         It has \\glossterm{hit points} equal to three times your \\glossterm{power}, and it is destroyed when its hit points become negative.
         If it takes damage from a \\atFire ability, it is immediately destroyed.
       `,
-      rank: 3,
+      rank: 4,
       roles: ['hazard'],
       scaling: {
-        5: 'The hit points increase to four times your power.',
-        7: 'The hit points increase to five times your power.',
+        6: 'The hit points increase to four times your power.',
       },
       tags: ['Manifestation'],
       type: 'Sustain (attunable, minor)',
@@ -446,7 +445,7 @@ export const fabrication: MysticSphere = {
         It has \\glossterm{hit points} equal to four times your \\glossterm{power}, and it is destroyed when its hit points become negative.
         If it takes damage from a \\atFire ability, it is immediately destroyed.
       `,
-      rank: 6,
+      rank: 7,
       roles: ['hazard'],
       tags: ['Manifestation'],
       type: 'Sustain (attunable, minor)',
@@ -743,46 +742,6 @@ export const fabrication: MysticSphere = {
         special: 'The strike deals \\plus1d6 \\glossterm{extra damage} for each rank beyond 5.',
       },
       tags: ['Manifestation'],
-    },
-
-    {
-      name: 'Mirror Barrier',
-
-      cost: BARRIER_COOLDOWN,
-      functionsLike: {
-        exceptThat: `
-          it reflects \\glossterm{mundane} attacks against it.
-            The barrier's defenses become equal to 6 \\add half your level, and its hit points increase to three times your \\glossterm{power}.
-            Whenever a creature misses the barrier with a \\glossterm{mundane} attack, it hits itself with that attack.
-        `,
-        name: 'mystic barrier',
-      },
-      rank: 3,
-      roles: ['barrier'],
-      scaling: {
-        5: `The barrier's hit points increase to four times your power.`,
-        7: `The barrier's hit points increase to five times your power.`,
-      },
-      tags: ['Barrier', 'Manifestation'],
-      type: 'Sustain (attunable, minor)',
-    },
-
-    {
-      name: 'Greater Mirror Barrier',
-
-      cost: BARRIER_COOLDOWN,
-      functionsLike: {
-        exceptThat: `
-          it reflects \\glossterm{mundane} attacks against it.
-            The barrier's defenses become equal to 10 \\add half your level, and its hit poinst increase to four times your \\glossterm{power}.
-            Whenever a creature misses the barrier with a \\glossterm{mundane} attack, it hits itself with that attack.
-        `,
-        name: 'mystic barrier',
-      },
-      roles: ['barrier'],
-      rank: 7,
-      tags: ['Barrier', 'Manifestation'],
-      type: 'Sustain (attunable, minor)',
     },
 
     {

@@ -83,14 +83,14 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       // Result: 2 + 1 = dr3
       attack: {
         hit: `
-          \\damagerankthree.
+          \\damageranktwo.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
           You gain a +2 accuracy bonus if the target is native to water, which is typically true for creatures with a swim speed and no walk speed.
         `,
       },
-      rank: 2,
+      rank: 1,
       roles: ['burst'],
       scaling: 'damage',
     },
@@ -102,14 +102,14 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       // Result: 5 + 1 = dr6
       attack: {
         hit: `
-          \\damageranksix, and any \\glossterm{extra damage} is doubled.
+          \\damagerankfive, and any \\glossterm{extra damage} is doubled.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
           You gain a +4 accuracy bonus if the target is native to water, which is typically true for creatures with a swim speed and no walk speed.
         `,
       },
-      rank: 5,
+      rank: 4,
       roles: ['burst'],
       scaling: 'damage',
     },
@@ -395,7 +395,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         `,
       },
       rank: 4,
-      roles: ['attune', 'flash', 'hazard'],
+      roles: ['attune', 'hazard'],
       scaling: 'damage',
       tags: ['Manifestation'],
       type: 'Sustain (attunable, standard)',
@@ -450,20 +450,6 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       tags: ['Manifestation'],
       type: 'Sustain (minor)',
     },
-    // 20% personal miss chance is 1.6 EA. AOE is hard to define, so arbitrarily give it
-    // +50% to 2.4. That allows rank 4 deep.
-    {
-      name: 'Misty Shroud',
-
-      effect: `
-        At the end of your turn, fog \\briefly fills a \\smallarea radius \\glossterm{zone} from you.
-        This fog does not fully block sight, but it provides \\glossterm{concealment}.
-        There is no time gap between the disappearance of the old fog and the appearance of the new fog, so you can keep continuous fog cover by staying in the same place or moving slowly.
-      `,
-      rank: 4,
-      roles: ['attune'],
-      type: 'Attune (deep)',
-    },
     {
       name: 'Aqueous Tentacle',
 
@@ -489,7 +475,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
           it affects up to five creatures of your choice from among yourself and your allies within \\medrange.
         `,
       },
-      rank: 4,
+      rank: 3,
       roles: ['attune'],
       tags: ['Manifestation'],
       type: 'Attune (target)',
@@ -516,15 +502,16 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
 
       effect: `
         You gain eight aqueous \\glossterm{natural weapons} that resemble tentacles extending from your torso.
-        Each natural weapon deals 1d6 damage and has the \\atWater, \\weapontag{Long}, and \\weapontag{Light} tags (see \\pcref{Weapon Tags}).
+        Each natural weapon deals 1d8 damage and has the \\atWater, \\weapontag{Long}, and \\weapontag{Light} tags (see \\pcref{Weapon Tags}).
         The tentacles are not dextrous enough to function as free hands.
 
         Whenever you make a \\glossterm{strike} with the tentacles, you can attack with all of the tentacles at once, with each tentacle attacking a different target.
-        This functions as if your attacks had the \\weapontag{Sweeping} (7) tag, with no limit on how far each secondary target must be from the primary target.
+        This functions as if your attacks had the \\weapontag{Sweeping} (7) tag.
         Alternately, you can make \\glossterm{dual strikes} with the tentacles.
         If you do, your attacks have \\weapontag{Sweeping} (3) instead of \\weapontag{Sweeping} (7).
+        You cannot make dual strikes by combining the tentacles with any other weapon.
       `,
-      rank: 4,
+      rank: 5,
       roles: ['attune'],
       type: 'Attune',
     },
@@ -687,10 +674,10 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: 'Sturdy Personal Aquarium',
 
-      // Permanent cover is 3.2 EA, which is just out of range for a rank 7.
+      // Permanent shielded is 3.2 EA, which is just out of range for a rank 7.
       functionsLike: {
         name: 'personal aquarium',
-        exceptThat: 'you also have \\glossterm{cover} from all attacks.',
+        exceptThat: 'you are also \\shielded from all attacks.',
       },
       // narrative: '',
       rank: 7,
@@ -863,7 +850,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         Pushing the target down a steep slope or through water costs half the normal movement cost, but pushing it up a steep slope costs twice the normal movement cost.
       `,
       rank: 1,
-      roles: ['mobility', 'narrative'],
+      roles: ['mobility'],
       tags: ['Manifestation'],
     },
     {
@@ -874,7 +861,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         exceptThat: 'the maximum push distance increases to 60 feet.',
       },
       rank: 4,
-      roles: ['mobility', 'narrative'],
+      roles: ['mobility'],
       tags: ['Manifestation'],
     },
     {

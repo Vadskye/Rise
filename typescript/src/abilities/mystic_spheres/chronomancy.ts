@@ -130,7 +130,7 @@ export const chronomancy: MysticSphere = {
         Each strike deals double damage.
         You can reroll the attack roll for the strike up to four times, keeping the highest result.
       `,
-      rank: 7,
+      rank: 6,
       roles: ['burst', 'exertion'],
       scaling: 'accuracy',
     },
@@ -154,10 +154,10 @@ export const chronomancy: MysticSphere = {
 
       functionsLike: {
         name: 'quicksilver ambush',
-        exceptThat: 'the strike deals double damage.',
+        exceptThat: 'the strike deals triple damage.',
       },
       roles: ['dive', 'burst'],
-      rank: 6,
+      rank: 7,
     },
 
     // TODO: greater version
@@ -335,33 +335,6 @@ export const chronomancy: MysticSphere = {
     },
 
     {
-      name: 'Temporal Duplicate',
-
-      // TODO: EA math
-      usageTime: 'minor',
-      cost: "One \\glossterm{stamina}, and you \\briefly can't use this ability again.",
-      effect: `
-        Choose one \\glossterm{ally} within \\medrange.
-        You reach into a possible future and create a duplicate of the target.
-        The duplicate is identical in all ways to the target when the spell resolves.
-
-        Until your next turn, the duplicate can act during the target's turn.
-        At the start of your next turn, the target and its duplicate \\briefly cease to exist.
-        During that time, time does not pass for the target.
-        It reappears in the closest unoccupied space to the location where it disappeared.
-        The target's condition is unchanged from when it left.
-        Its \\glossterm{hit points}, conditions, and all other statistics are unaffected, regardless of any damage or other negative effects suffered by the duplicate.
-
-        The duplicate is fragile, and its actions are limited.
-        It cannot use abilities that have additional costs or limitations on their usage, such as only being usable once per short rest.
-        It cannot use abilities that would reduce its \\glossterm{stamina}, cause it to lose hit points, or otherwise directly suffer negative consequences as a cost of the action.
-        If it loses any \\glossterm{hit points}, it ceases to exist.
-      `,
-      rank: 7,
-      roles: ['boon', 'exertion'],
-    },
-
-    {
       name: 'Temporal Stasis',
 
       usageTime: 'minor',
@@ -428,23 +401,6 @@ export const chronomancy: MysticSphere = {
         In addition, the creature reduces its \\glossterm{stamina} by one.
       `,
       rank: 6,
-      roles: ['boon', 'healing', 'exertion'],
-      type: 'Sustain (minor)',
-    },
-
-    {
-      name: 'Time Lock -- Vitality',
-
-      effect: `
-        Choose yourself or an \\glossterm{ally} within \\medrange.
-        You create a \\sphereterm{time lock} for the target's current \\glossterm{vital wounds}.
-        You can unseal the time lock as a standard action.
-
-        Unsealing the time lock causes the creature's vital wounds to become identical to the locked vital wounds.
-        This removes any excess vital wounds and reapplies any missing vital wounds.
-        The creature reduces its \\glossterm{stamina} by three for each vital wound removed in this way.
-      `,
-      rank: 7,
       roles: ['boon', 'healing', 'exertion'],
       type: 'Sustain (minor)',
     },

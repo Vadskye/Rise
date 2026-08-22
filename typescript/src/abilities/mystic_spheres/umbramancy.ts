@@ -786,5 +786,19 @@ export const umbramancy: MysticSphere = {
       scaling: 'damage',
       type: 'Sustain (standard)',
     },
+    // 20% personal miss chance is 1.6 EA. AOE is hard to define, so arbitrarily give it
+    // +50% to 2.4. That allows rank 4 deep.
+    {
+      name: 'The Shadows Dance Around Me',
+
+      effect: `
+        At the end of your turn, a field of dancing shadows \\briefly fills a \\smallarea radius \\glossterm{zone} from you.
+        The shadows do not fully block sight, but they provide \\glossterm{concealment}.
+        There is no time gap between the disappearance of the old field and the appearance of the new field, so you can keep continuous shadow cover by staying in the same place or moving slowly.
+      `,
+      rank: 4,
+      roles: ['attune'],
+      type: 'Attune (deep)',
+    },
   ],
 };

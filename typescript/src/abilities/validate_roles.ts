@@ -156,12 +156,6 @@ function hasDebuffWords(fullTextLowercase: string): boolean {
     '-1 penalty',
     '-2 penalty',
     '-4 penalty',
-    '\\minus1 penalty',
-    '\\minus2 penalty',
-    '\\minus4 penalty',
-    'minus1 penalty',
-    'minus2 penalty',
-    'minus4 penalty',
     'attack the creature closest',
     'blinded',
     'cannot act',
@@ -171,6 +165,7 @@ function hasDebuffWords(fullTextLowercase: string): boolean {
     "can't move",
     "can't stand",
     'charmed',
+    'compelled to make a',
     'concealment',
     'confused',
     'dazed',
@@ -179,6 +174,7 @@ function hasDebuffWords(fullTextLowercase: string): boolean {
     'deluded',
     'doing nothing at all',
     'emotions calmed',
+    'everything outside itself',
     'exposed',
     'fling',
     'frightened',
@@ -186,6 +182,12 @@ function hasDebuffWords(fullTextLowercase: string): boolean {
     'goaded',
     'grappled',
     'immobilized',
+    '\\minus1 penalty',
+    'minus1 penalty',
+    '\\minus2 penalty',
+    'minus2 penalty',
+    '\\minus4 penalty',
+    'minus4 penalty',
     'panicked',
     'penalty to accuracy',
     'penalty to defenses',
@@ -197,7 +199,6 @@ function hasDebuffWords(fullTextLowercase: string): boolean {
     'slowed',
     'spend its next standard action doing nothing',
     'strike against itself',
-    'compelled to make a',
     'teleport',
     'unable to breathe',
     'unable to say things',
@@ -248,14 +249,14 @@ function isNarrativeSpell(rawSpell: SpellDefinition, fullTextLowercase: string):
 /**
  * Checks if an attunement spell grants an active action or reaction.
  */
-function attunementGrantsActiveAction(fullTextLowercase: string): boolean {
-  return (
+function attunementGrantsActiveAbility(fullTextLowercase: string): boolean {
+  const requiresStandardAction = (
     fullTextLowercase.includes('as a standard action') ||
-    fullTextLowercase.includes('as a minor action') ||
-    fullTextLowercase.includes('spend a standard action') ||
-    fullTextLowercase.includes('spend a minor action') ||
-    fullTextLowercase.includes('at the end of each of your turns, make an attack')
+    fullTextLowercase.includes('spend a standard action')
   );
+  const oneTimeMinorAction = (
+    fullTextLowercase.includes('minor action') && /after you[^.]+dismissed/.test(fullTextLowercase));
+  return requiresStandardAction || oneTimeMinorAction;
 }
 
 /**
@@ -271,6 +272,11 @@ function isHazardEffect(
 
   // Portals are mobility infrastructure, not hazards
   if (rawSpell.name?.toLowerCase().includes('portal')) {
+    return false;
+  }
+
+  // Walls are barriers, not hazards
+  if (/create.*wall/.test(fullTextLowercase)) {
     return false;
   }
 
@@ -317,7 +323,7 @@ function isHazardEffect(
   // or reactive bursts on recover are active actions, not hazards.
   if (
     profile.requiresAttunement &&
-    (attunementGrantsActiveAction(fullTextLowercase) ||
+    (attunementGrantsActiveAbility(fullTextLowercase) ||
       fullTextLowercase.includes('for the duration of this spell, you can') ||
       fullTextLowercase.includes('whenever you use the \\ability{recover}'))
   ) {
@@ -389,7 +395,9 @@ export function inferExpectedRoles(
     if (isHazardEffect(rawSpell, profile, fullTextLowercase)) {
       expected.add('hazard');
     }
-    return expected;
+    if (!attunementGrantsActiveAbility(fullTextLowercase)) {
+      return expected;
+    }
   }
 
   // 2. Barrier
@@ -432,6 +440,7 @@ export function inferExpectedRoles(
   if (
     resolved.staminaCost === true ||
     costRequiresStamina ||
+    /vital wound/.test(cost) ||
     /spends?\s+(?:one|\d+)?\s*stamina/i.test(fullTextLowercase) ||
     /reduces its stamina/i.test(fullTextLowercase) ||
     /spends?\s+(?:a|\d+)?\s*vital wound/i.test(fullTextLowercase)
@@ -447,33 +456,41 @@ export function inferExpectedRoles(
   // 7. Retaliate
   if (
     /whenever a creature.*?(?:attacks you|makes.*?attack against you)/i.test(fullTextLowercase) ||
-    /attacks you or your allies/i.test(fullTextLowercase) ||
+    /if[^.]+attack(s|ed)[^.]+you or (one of )?your allies/i.test(fullTextLowercase) ||
+    /if[^.]+injure[^.]+during this effect/.test(fullTextLowercase) ||
     /deal.*extra damage to creatures that attacked/i.test(fullTextLowercase)
   ) {
     expected.add('retaliate');
   }
 
   const isDefinitelyNotDive =
-    !/move the ball/.test(fullTextLowercase) ||
-    !/unable to move closer to you/.test(fullTextLowercase) ||
-    !/you\s+teleport\s+the\s+target/i.test(fullTextLowercase) ||
-    !/teleport\s+it/i.test(fullTextLowercase) ||
-    !/they each\s+teleport/i.test(fullTextLowercase) ||
-    !/whenever an enemy teleports/i.test(fullTextLowercase) ||
-    /move up to.*without reducing.*available movement/i.test(fullTextLowercase)
+    /move the ball/.test(fullTextLowercase) ||
+    /unable to move closer to you/.test(fullTextLowercase) ||
+    /you\s+teleport\s+the\s+target/i.test(fullTextLowercase) ||
+    /teleport\s+it/i.test(fullTextLowercase) ||
+    /they each\s+teleport/i.test(fullTextLowercase) ||
+    /whenever an enemy teleports/i.test(fullTextLowercase);
+
+  const allowsFreeMovement = /move (?:towards|adjacent|through)/i.test(fullTextLowercase) ||
+    /move[^.]+without reducing[^.]+available movement/.test(fullTextLowercase);
+
+  const makesMeleeAttack = /make a[^.]+melee strike/.test(fullTextLowercase);
+
+  const onlyMovesTowardsTarget = /leap.*attack/i.test(fullTextLowercase) ||
+    /move in a straight line/i.test(fullTextLowercase) ||
+    /(?:you\s+(?:first\s+)?teleport|teleport\s+up\s+to\s+\d+\s+feet\s+to\s+a\s+location\s+adjacent|teleport\s+to\s+an?\s+unoccupied)/i.test(
+      fullTextLowercase,
+    )
+
+  if (profile.name === 'Quicksilver Ambush') {
+    console.log('fullTextLowercase', fullTextLowercase);
+  }
 
   // 8. Dive
   if (profile.hasAttack) {
     if (
-      !isDefinitelyNotDive &&
-      (/move (?:towards|adjacent|through)/i.test(fullTextLowercase) ||
-        /leap.*attack/i.test(fullTextLowercase) ||
-        /move in a straight line/i.test(fullTextLowercase) ||
-        /charge/i.test(fullTextLowercase) ||
-        /(?:you\s+(?:first\s+)?teleport|teleport\s+up\s+to\s+\d+\s+feet\s+to\s+a\s+location\s+adjacent|teleport\s+to\s+an?\s+unoccupied)/i.test(
-          fullTextLowercase,
-        )
-      )) {
+      !isDefinitelyNotDive && (
+        onlyMovesTowardsTarget || (allowsFreeMovement && makesMeleeAttack))) {
       expected.add('dive');
     }
   }
@@ -514,14 +531,13 @@ export function inferExpectedRoles(
       expected.add('clear');
     }
 
-    // Burst (Single-target immediate damage, not purely DoT, not injury-only, not long/distant snipe, not reactive, not dive)
+    // Burst (Single-target immediate damage, not purely DoT, not injury-only, not long/distant snipe, not reactive)
     if (
       profile.isSingleTarget &&
       (hit || profile.isStrike) &&
       !profile.isInjuryOnly &&
       !isDoT &&
       !isLongOrDistantRange &&
-      !expected.has('dive') &&
       !fullTextLowercase.includes('reactive attack') &&
       !/whenever\s+(?:a|an)?\s*creature/i.test(targeting)
     ) {
@@ -547,6 +563,8 @@ export function inferExpectedRoles(
 
   const isReactiveRetaliateOnly = expected.has('retaliate') && !profile.type?.includes('Sustain');
 
+  const hasShortTermEffect = /\bbriefly/.test(uninjuredHitText) || /\b(flicker|push|fling|flung|teleport|prone)/.test(uninjuredHitText);
+
   const hasDebuff =
     !affectsAlly &&
     !isNarrativeOnly &&
@@ -558,9 +576,9 @@ export function inferExpectedRoles(
     if (isCondition) {
       // Persistent condition on non-injured targets is softener
       expected.add('softener');
-    } else if (profile.isSingleTarget && hasHitDebuff) {
+    } else if (profile.isSingleTarget && hasHitDebuff && hasShortTermEffect) {
       expected.add('trip');
-    } else if (isMultiTarget && hasHitDebuff && !profile.type?.includes('Sustain')) {
+    } else if (isMultiTarget && hasHitDebuff && hasShortTermEffect) {
       // Brief multi-target debuff is flash
       expected.add('flash');
     }
@@ -570,7 +588,7 @@ export function inferExpectedRoles(
     }
   }
 
-  const onlyAffectsAllies = /all allies within.*radius.*you/.test(fullTextLowercase) && !/you and all allies/.test(fullTextLowercase);
+  const onlyAffectsAllies = (/all allies within.*radius.*you/.test(fullTextLowercase) && !/you and all allies/.test(fullTextLowercase)) || (/choose up to[^.]+allies within/.test(fullTextLowercase));
 
   // 11. Turtle (Brief defensive buff on self)
   const isTurtle =
@@ -579,7 +597,7 @@ export function inferExpectedRoles(
       /you (?:are|become).*(?:\\briefly\s+|briefly\s+).*(shielded|fortified|steeled|braced|resistant)/i.test(
         fullTextLowercase,
       ) ||
-      /gain\s+(?:a\s+)?\+\d+\s+bonus to (?:your\s+)?defenses/i.test(fullTextLowercase) ||
+      /gain[^.]+bonus to[^.]+defense/i.test(fullTextLowercase) ||
       /takes?\s+half\s+damage/i.test(fullTextLowercase) ||
       /(?:\\briefly\s+)?have\s+(?:\\glossterm\{)?cover/i.test(fullTextLowercase) ||
       /failure chance/i.test(fullTextLowercase));
@@ -590,7 +608,7 @@ export function inferExpectedRoles(
   // 12. Focus & Generator
   const isOffensiveBuffOnSelf =
     !onlyAffectsAllies && (
-      /you (?:are|become)(?:\s+also)?\s+(?:\\briefly\s+)?\\(?:primed|empowered|maximized|focused|honed)/i.test(
+      /\byou[^.]+(primed|empowered|maximized|focused|honed)/i.test(
         fullTextLowercase,
       ) ||
       /your next\s+(?:attack|strike|spell)/i.test(fullTextLowercase) ||
@@ -617,7 +635,7 @@ export function inferExpectedRoles(
     !/choose.*unattended object within/.test(fullTextLowercase) &&
     !/one of your items/.test(fullTextLowercase) &&
     (/\bfling\b/i.test(fullTextLowercase) ||
-      /\bpush\b/i.test(fullTextLowercase) ||
+      /\bpush/i.test(fullTextLowercase) ||
       /teleport/i.test(fullTextLowercase) ||
       /glide speed/i.test(fullTextLowercase) ||
       /fly speed/i.test(fullTextLowercase) ||
@@ -641,7 +659,7 @@ export function inferExpectedRoles(
     (!expected.has('mobility') || fullTextLowercase.includes('time lock'));
   if (isBoon && !dealsDamage) {
     const hasBuffEffect =
-      /resistant|immune|bonus|shielded|steeled|fortified|empowered|maximized|advantage/i.test(
+      /safe location|resistant|immune|bonus|shielded|steeled|fortified|empowered|maximized|advantage/i.test(
         effect,
       );
     const nonBoonRole = expected.has('healing') || expected.has('cleanse');
@@ -695,7 +713,7 @@ export function validateSpellRoles(spheres: MysticSphere[]): RoleValidationIssue
         // If it's an attunement spell without granted actions, only 'attune', 'barrier', 'hazard', or 'narrative' is expected
         if (
           profile.requiresAttunement &&
-          !attunementGrantsActiveAction(fullTextLowercase) &&
+          !attunementGrantsActiveAbility(fullTextLowercase) &&
           expRole !== 'attune' &&
           expRole !== 'barrier' &&
           expRole !== 'hazard' &&

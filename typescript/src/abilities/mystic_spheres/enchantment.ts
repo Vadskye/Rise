@@ -81,7 +81,7 @@ export const enchantment: MysticSphere = {
           After you attack a creature this way, it becomes immune to this attack from you until it finishes a \\glossterm{short rest}.
         `,
       },
-      rank: 1,
+      rank: 2,
       scaling: 'accuracy',
       roles: ['attune'],
       tags: ['Emotion', 'Subtle'],
@@ -239,8 +239,7 @@ export const enchantment: MysticSphere = {
     {
       name: 'Sleep',
 
-      // prebuff ranged slow is 2.5 EA, and add 0.2 EA for the narrative effect. With
-      // limited scope, we can get away with r6.
+      // prebuff ranged slow is 2.5 EA, and add 0.2 EA for the narrative effect.
       attack: {
         crit: INJURY_CRIT,
         hit: `
@@ -254,11 +253,11 @@ export const enchantment: MysticSphere = {
         targeting: `
           This spell has no \\glossterm{verbal components}.
 
-          Make an attack vs. Mental against up to three creatures within \\medrange.
+          Make an attack vs. Mental against all creatures in a \\medarea radius within \\longrange.
         `,
       },
 
-      rank: 6,
+      rank: 7,
       roles: ['maim', 'softener'],
       scaling: 'accuracy',
       tags: ['Emotion'],
@@ -678,7 +677,7 @@ export const enchantment: MysticSphere = {
         In addition, it \\briefly gains a +2 bonus to its Mental defense.
       `,
       rank: 2,
-      roles: ['healing', 'boon', 'exertion'],
+      roles: ['healing', 'boon', 'exertion', 'turtle'],
       // Flat would be 1d10, but power scaling means we shouldn't scale too much. TODO:
       // math.
       scaling: { special: 'The recovery increases by 2 for each rank beyond 2.' },
@@ -696,7 +695,7 @@ export const enchantment: MysticSphere = {
         In addition, it \\briefly gains a +4 bonus to its Mental defense.
       `,
       rank: 6,
-      roles: ['healing', 'boon', 'exertion'],
+      roles: ['healing', 'boon', 'exertion', 'turtle'],
       // Flat would be 3d10, but power scaling means we shouldn't scale too much. TODO:
       // math.
       scaling: { special: 'The recovery increases by 1d10 for each rank beyond 6.' },

@@ -341,10 +341,24 @@ export function detectRoleSaturation(items: SpellItem[]): BoringFinding[] {
 }
 
 function expectedRoleLimit(role: AbilityRole, rank: number) {
-  const commonRoles = ['attune', 'burst', 'clear', 'maim'];
+  // This is basically always a rider on some other effect, so it's safe to have any
+  // number of maiming effects.
+  // In the future, it might be useful to differentiate spells that *only* affect injured
+  // targets, which should be rare, but that's not worth worrying about for now.
+  const limitlessRoles = ['maim'];
+
+  if (limitlessRoles.includes(role)) {
+    return 99;
+  }
+
+  const commonRoles = ['attune', 'burst', 'clear', 'maim', 'softener'];
+  const rareRoles = ['exertion', 'payoff', 'cleanse', 'barrier', 'healing'];
   let limit = 3;
   if (commonRoles.includes(role)) {
     limit += 1;
+  }
+  if (rareRoles.includes(role)) {
+    limit -= 1;
   }
   if (rank <= 4) {
     limit += 1;

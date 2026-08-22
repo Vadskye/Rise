@@ -103,7 +103,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         It normally falls at the end of its turn, causing it to take \\glossterm{falling damage} (see \\pcref{Falling Damage}).
       `,
       rank: 1,
-      roles: ['mobility', 'narrative'],
+      roles: ['mobility'],
       tags: ['Physical'],
     },
     {
@@ -114,7 +114,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         exceptThat: 'the maximum fling distance increases to 60 feet.',
       },
       rank: 4,
-      roles: ['mobility', 'narrative'],
+      roles: ['mobility'],
       tags: ['Physical'],
     },
     // Braced is 3.2 EA. Assume that ranged strikes are about 25% of all attacks, so this
@@ -833,7 +833,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       `,
       // narrative: '',
       rank: 2,
-      roles: ['boon'],
+      roles: ['boon', 'turtle'],
     },
 
     {
@@ -891,7 +891,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       `,
       // narrative: '',
       rank: 2,
-      roles: ['boon'],
+      roles: ['boon', 'focus'],
     },
 
     {

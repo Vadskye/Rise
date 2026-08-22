@@ -714,7 +714,7 @@ export const polymorph: MysticSphere = {
         If you choose yourself, the effect lasts \\briefly.
       `,
       rank: 2,
-      roles: ['boon'],
+      roles: ['boon', 'focus'],
       tags: ['Physical'],
     },
 
@@ -728,7 +728,7 @@ export const polymorph: MysticSphere = {
           'you can choose up to two targets from among yourself and your \\glossterm{allies} within \\medrange.',
       },
       rank: 7,
-      roles: ['boon'],
+      roles: ['boon', 'focus'],
       tags: ['Physical'],
     },
 
