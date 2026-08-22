@@ -214,13 +214,13 @@ export function parseDefenses(text: string): DefenseType[] {
   return matched.sort();
 }
 
-/**
- * Detects whether an ability involves making a strike.
- */
 export function isStrikeSpell(text: string): boolean {
   return (
-    /make a (?:melee\s+|ranged\s+)?(?:\\glossterm\{)?strike/i.test(text) &&
-    !/whenever you make a/i.test(text)
+    /make (?:a|two|three|\d+)?\s*(?:(?:mundane|melee|ranged|\\glossterm\{mundane\}|\\glossterm\{melee\}|\\glossterm\{ranged\})\s+)*(?:\\glossterm\{)?strikes?/i.test(
+      text,
+    ) &&
+    !/whenever you make a/i.test(text) &&
+    !/strike\}?\s+against itself/i.test(text)
   );
 }
 
@@ -767,6 +767,7 @@ export function buildSpellProfile(
     lowercase.includes('corrode') ||
     lowercase.includes('poison') ||
     /subsequent turns.*take.*damage/.test(lowercase) ||
+    /takes?\s+\\damagerank\w+\s+again/i.test(lowercase) ||
     isDelayedDamage;
 
   const exceptDr = exceptThat ? parseDamageRank(exceptThat) : null;
