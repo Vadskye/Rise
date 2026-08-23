@@ -298,7 +298,7 @@ export const prayer: MysticSphere = {
         Whenever it does, it reduces its \\glossterm{stamina} by one.
       `,
       rank: 7,
-      roles: ['attune', 'exertion'],
+      roles: ['attune'],
       type: 'Attune (target)',
     },
 
@@ -329,7 +329,7 @@ export const prayer: MysticSphere = {
         The target regains \\hpranktwo and is \\briefly \\shielded.
       `,
       rank: 1,
-      roles: ['healing', 'boon', 'exertion'],
+      roles: ['healing', 'exertion'],
       scaling: 'healing',
     },
 
@@ -341,7 +341,7 @@ export const prayer: MysticSphere = {
         exceptThat: 'the recovery increases to \\hprankfive.',
       },
       rank: 4,
-      roles: ['healing', 'boon', 'exertion'],
+      roles: ['healing', 'exertion'],
       scaling: 'healing',
     },
 
@@ -442,7 +442,7 @@ export const prayer: MysticSphere = {
         `,
       },
       rank: 1,
-      roles: ['softener', 'maim'],
+      roles: ['maim'],
       scaling: 'accuracy',
       tags: ['Curse', 'Visual'],
     },
@@ -461,7 +461,7 @@ export const prayer: MysticSphere = {
         `,
       },
       rank: 4,
-      roles: ['softener', 'maim'],
+      roles: ['softener'],
       scaling: 'accuracy',
       tags: ['Curse', 'Visual'],
     },
@@ -482,7 +482,7 @@ export const prayer: MysticSphere = {
         `,
       },
       rank: 6,
-      roles: ['maim', 'softener'],
+      roles: ['maim'],
       scaling: 'accuracy',
       tags: ['Curse'],
     },
@@ -518,7 +518,7 @@ export const prayer: MysticSphere = {
         crit: `The effect lasts until the curse is removed.`,
         hit: `
           The target becomes anxious until it finishes a \\glossterm{short rest}.
-          Whenever a creature causes the target to lose \\glossterm{hit points}, it becomes \\frightened by that creature until this effect ends.
+          Whenever a creature \\glossterm{injures} the target, it becomes \\frightened by that creature until this effect ends.
           As normal, the target stops being frightened if the source of its fear is \\glossterm{defeated}, but this does not remove the anxiety.
         `,
         targeting: `
@@ -545,7 +545,7 @@ export const prayer: MysticSphere = {
         `,
       },
       rank: 5,
-      roles: ['maim', 'softener'],
+      roles: ['maim'],
       scaling: 'accuracy',
       tags: ['Curse', 'Visual'],
     },

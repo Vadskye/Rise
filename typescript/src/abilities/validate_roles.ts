@@ -108,17 +108,14 @@ function hasPersistentCondition(hit: string, effect: string, exceptThat: string 
     /(?:if|while)\s+(?:the\s+target\s+is\s+|it\s+is\s+)?injured|(?:\bif\b|\bwhile\b)[^.]*?\binjured\b/i,
   )[0];
 
-  // If the uninjured part only mentions "deteriorates as a condition" and the actual debuff is inside "while injured", ignore it
-  if (
-    /while (?:the target is|it is|they are)?\s*injured,?\s*(?:the target|it|they)?\s*(?:is|are)/i.test(
-      combined,
-    ) &&
-    !hasDebuffWords(uninjured)
-  ) {
+  // If the uninjured part only mentions duration/flavor and the actual debuff is inside "while injured", ignore it
+  if (!hasDebuffWords(uninjured)) {
     return false;
   }
 
-  const untilShortRest = /until.*finish.*short rest/.test(uninjured) && !/immune.*until.*finish.*short rest/.test(uninjured)
+  const untilShortRest =
+    /until.*finish.*short rest/.test(uninjured) &&
+    !/immune.*until.*finish.*short rest/.test(uninjured);
 
   if (
     untilShortRest ||
@@ -182,6 +179,7 @@ function hasDebuffWords(fullTextLowercase: string): boolean {
     'goaded',
     'grappled',
     'immobilized',
+    'invisible',
     '\\minus1 penalty',
     'minus1 penalty',
     '\\minus2 penalty',
@@ -235,7 +233,8 @@ function isNarrativeSpell(rawSpell: SpellDefinition, fullTextLowercase: string):
       !/yourself|ally|allies/i.test(fullTextLowercase)) ||
     /observe your surroundings/.test(fullTextLowercase) ||
     /charmed/.test(fullTextLowercase) ||
-    /see and hear out of/.test(fullTextLowercase) ||
+    /see and hear (?:out of|from)/.test(fullTextLowercase) ||
+    /scrying sensor/.test(fullTextLowercase) ||
     /craft check to create/.test(fullTextLowercase) ||
     /change your appearance or equipment/.test(fullTextLowercase) ||
     /disguise check/.test(fullTextLowercase) ||
