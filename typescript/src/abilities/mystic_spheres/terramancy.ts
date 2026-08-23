@@ -43,7 +43,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
           You gain a +2 \\glossterm{accuracy} bonus if you are \\glossterm{grounded} on stone.
         `,
       },
-      roles: ['burst'],
+      roles: ['burst', 'maim'],
       rank: 1,
       scaling: 'damage',
       tags: ['Manifestation'],
@@ -65,7 +65,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         `,
       },
       rank: 4,
-      roles: ['burst'],
+      roles: ['burst', 'maim'],
       scaling: 'damage',
       tags: ['Manifestation'],
     },
@@ -371,7 +371,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         However, your \\glossterm{speed} is also briefly halved.
       `,
       rank: 5,
-      roles: ['focus'],
+      roles: ['focus', 'turtle'],
       type: 'Sustain (standard)',
     },
 
@@ -421,7 +421,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         You crack the earth around you, shaking everyone violently.
       `,
       rank: 5,
-      roles: ['clear'],
+      roles: ['clear', 'flash'],
       scaling: 'damage',
     },
 
@@ -445,7 +445,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         You crack the earth around you, shaking everyone violently.
       `,
       rank: 7,
-      roles: ['clear'],
+      roles: ['clear', 'flash'],
       scaling: 'accuracy',
     },
 
@@ -475,7 +475,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
           Make an attack vs. Brawn and Reflex against all Large or smaller \\glossterm{grounded} \\glossterm{enemies} in a \\smallarea radius in \\shortrange.
         `,
       },
-      roles: ['maim', 'burst'],
+      roles: ['clear', 'flash', 'maim'],
       narrative: `
         You open up a rift in the ground that swallows and traps a foe.
       `,
@@ -710,7 +710,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       `,
       rank: 3,
       scaling: 'damage',
-      roles: ['clear'],
+      roles: ['clear', 'hazard'],
       tags: ['Manifestation'],
       type: 'Sustain (minor)',
     },
@@ -731,7 +731,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       `,
       rank: 6,
       scaling: 'damage',
-      roles: ['clear'],
+      roles: ['clear', 'hazard'],
       tags: ['Manifestation'],
       type: 'Sustain (minor)',
     },
@@ -904,7 +904,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         If a target moves from its location or stops being grounded, this effect immediately ends on it.
       `,
       rank: 1,
-      roles: ['boon'],
+      roles: ['boon', 'turtle'],
     },
 
     {
@@ -916,7 +916,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         If a target moves from its location or stops being grounded, this effect immediately ends on it.
       `,
       rank: 5,
-      roles: ['boon'],
+      roles: ['boon', 'turtle'],
     },
   ],
 });
