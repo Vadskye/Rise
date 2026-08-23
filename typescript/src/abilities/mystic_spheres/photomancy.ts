@@ -451,11 +451,10 @@ export const photomancy: MysticSphere = {
     {
       name: 'Greater Mirror Image',
 
-      // 3 attacks instead of 2 means 3 EA. 
+      // 3 attacks instead of 2 means 3 EA.
       functionsLike: {
         name: 'mirror image',
-        exceptThat:
-          'the number of illusory duplicates increases to three.',
+        exceptThat: 'the number of illusory duplicates increases to three.',
       },
       rank: 7,
       roles: ['attune'],

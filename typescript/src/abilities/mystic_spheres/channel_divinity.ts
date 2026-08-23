@@ -351,7 +351,7 @@ export const channelDivinity: MysticSphere = {
       name: 'Divine Offering',
 
       usageTime: 'minor',
-      cost: "You gain a \\glossterm{vital wound} that has no vital wound effect.",
+      cost: 'You gain a \\glossterm{vital wound} that has no vital wound effect.',
       effect: `
         You gain a +2 \\glossterm{enhancement bonus} to \\glossterm{vital rolls} and are \\glossterm{unaffected} by \\glossterm{conditions}.
       `,

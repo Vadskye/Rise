@@ -794,7 +794,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       name: 'Ice Shield',
 
       // Single target melee damage would normally be dr3, or dr2 vs all adjacent.
-      // Use dr3 as a baseline, +1dr for double defense, -1dr for crystal-only shielded. 
+      // Use dr3 as a baseline, +1dr for double defense, -1dr for crystal-only shielded.
       cost: OPTIONAL_ICE_CRYSTAL,
       attack: {
         hit: `\\damagerankthree.`,

@@ -937,7 +937,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       name: 'Fire Shield',
 
       // Single target melee damage would normally be dr3, or dr2 vs all adjacent.
-      // Use dr3 as a baseline, +1dr for double defense, -1dr for empower. 
+      // Use dr3 as a baseline, +1dr for double defense, -1dr for empower.
       // Empowered is worth -1dr - remember that it doesn't improve reactive attacks.
       attack: {
         hit: `\\damagerankthree.`,

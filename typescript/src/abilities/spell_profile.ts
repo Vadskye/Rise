@@ -227,11 +227,8 @@ export function parseDefenses(text: string): DefenseType[] {
 export function isStrikeSpell(text: string): boolean {
   const clean = stripGlossterm(text).toLowerCase();
   const mentionsStrikesWithoutMakingOne =
-    /whenever you make a/i.test(clean) ||
-    /strike\s+against itself/i.test(clean);
-  return (
-    /make [^.]+strike/.test(clean) && !mentionsStrikesWithoutMakingOne
-  );
+    /whenever you make a/i.test(clean) || /strike\s+against itself/i.test(clean);
+  return /make [^.]+strike/.test(clean) && !mentionsStrikesWithoutMakingOne;
 }
 
 /**
@@ -421,9 +418,7 @@ export function parseAccuracyCondition(text: string): string | null {
     return null;
   }
 
-  const hasUnconditional = /with a\s+(\\plus|\\minus|\+|-)\d+\s+accuracy/i.test(
-    lowercase,
-  );
+  const hasUnconditional = /with a\s+(\\plus|\\minus|\+|-)\d+\s+accuracy/i.test(lowercase);
   if (hasUnconditional) {
     return null;
   }
@@ -755,8 +750,7 @@ export function buildSpellProfile(
 
   const hasAttuneStandardAttack =
     isAttunable &&
-    (/as a standard action/i.test(fullText) ||
-      /spend a standard action/i.test(fullText));
+    (/as a standard action/i.test(fullText) || /spend a standard action/i.test(fullText));
 
   const hasEscapableRepeat =
     lowercase.includes('repeats in the same area') ||

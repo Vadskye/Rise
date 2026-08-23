@@ -252,12 +252,11 @@ function isNarrativeSpell(rawSpell: SpellDefinition, fullTextLowercase: string):
  * Checks if an attunement spell grants an active action or reaction.
  */
 function attunementGrantsActiveAbility(fullTextLowercase: string): boolean {
-  const requiresStandardAction = (
+  const requiresStandardAction =
     fullTextLowercase.includes('as a standard action') ||
-    fullTextLowercase.includes('spend a standard action')
-  );
-  const oneTimeMinorAction = (
-    fullTextLowercase.includes('minor action') && /after you[^.]+dismissed/.test(fullTextLowercase));
+    fullTextLowercase.includes('spend a standard action');
+  const oneTimeMinorAction =
+    fullTextLowercase.includes('minor action') && /after you[^.]+dismissed/.test(fullTextLowercase);
   return requiresStandardAction || oneTimeMinorAction;
 }
 
@@ -387,7 +386,8 @@ export function inferExpectedRoles(
 ): Set<AbilityRole> {
   const expected = new Set<AbilityRole>();
   const resolved = resolveSpell(rawSpell);
-  const { cost, hit, targeting, injury, effect, exceptThat, fullText } = getNormalSpellText(rawSpell);
+  const { cost, hit, targeting, injury, effect, exceptThat, fullText } =
+    getNormalSpellText(rawSpell);
 
   const dealsDamage = profile.maxDamageRank !== null || profile.isStrike;
 
@@ -426,9 +426,7 @@ export function inferExpectedRoles(
     /removes?\s+(?:all|a|one|\d+|any)?\s*(?:excess\s+)?(?:condition|curse|poison)/i.test(
       fullText,
     ) ||
-    /ends?\s+(?:all|a|one|\d+)?\s*(?:condition|curse|poison)/i.test(
-      fullText,
-    ) ||
+    /ends?\s+(?:all|a|one|\d+)?\s*(?:condition|curse|poison)/i.test(fullText) ||
     /cures?\s+(?:a|one|\d+)?\s*poison/i.test(fullText) ||
     /\bcleanse\b/i.test(fullText) ||
     /effects of all other.*?suppressed/i.test(fullText)
@@ -436,7 +434,8 @@ export function inferExpectedRoles(
     expected.add('cleanse');
   }
 
-  const costRequiresStamina = cost.toLowerCase().includes('stamina') && !/you can spend one stamina/.test(cost);
+  const costRequiresStamina =
+    cost.toLowerCase().includes('stamina') && !/you can spend one stamina/.test(cost);
 
   // 5. Exertion
   if (
@@ -473,22 +472,25 @@ export function inferExpectedRoles(
     /they each\s+teleport/i.test(fullText) ||
     /whenever an enemy teleports/i.test(fullText);
 
-  const allowsFreeMovement = /move (?:towards|adjacent|through)/i.test(fullText) ||
+  const allowsFreeMovement =
+    /move (?:towards|adjacent|through)/i.test(fullText) ||
     /move[^.]+without reducing[^.]+available movement/.test(fullText);
 
   const makesMeleeAttack = /make a[^.]+melee strike/.test(fullText);
 
-  const onlyMovesTowardsTarget = /leap.*attack/i.test(fullText) ||
+  const onlyMovesTowardsTarget =
+    /leap.*attack/i.test(fullText) ||
     /move in a straight line/i.test(fullText) ||
     /(?:you\s+(?:first\s+)?teleport|teleport\s+up\s+to\s+\d+\s+feet\s+to\s+a\s+location\s+adjacent|teleport\s+to\s+an?\s+unoccupied)/i.test(
       fullText,
-    )
+    );
 
   // 8. Dive
   if (profile.hasAttack) {
     if (
-      !isDefinitelyNotDive && (
-        onlyMovesTowardsTarget || (allowsFreeMovement && makesMeleeAttack))) {
+      !isDefinitelyNotDive &&
+      (onlyMovesTowardsTarget || (allowsFreeMovement && makesMeleeAttack))
+    ) {
       expected.add('dive');
     }
   }
@@ -560,7 +562,9 @@ export function inferExpectedRoles(
 
   const isReactiveRetaliateOnly = expected.has('retaliate') && !profile.type?.includes('Sustain');
 
-  const hasShortTermEffect = /\bbriefly/.test(uninjuredHitText) || /\b(flicker|repeat the same|push|fling|flung|teleport|prone)/.test(uninjuredHitText);
+  const hasShortTermEffect =
+    /\bbriefly/.test(uninjuredHitText) ||
+    /\b(flicker|repeat the same|push|fling|flung|teleport|prone)/.test(uninjuredHitText);
 
   const hasDebuff =
     !affectsAlly &&
@@ -568,7 +572,8 @@ export function inferExpectedRoles(
     !isReactiveRetaliateOnly &&
     (hasHitDebuff || isInjuryDebuffEffect || isCondition);
 
-  const isNonAreaSustain = ['single', 'multi'].includes(profile.area) && profile.type?.includes('Sustain');
+  const isNonAreaSustain =
+    ['single', 'multi'].includes(profile.area) && profile.type?.includes('Sustain');
 
   // All of the debuff roles can only apply to spells that make attacks
   if (profile.hasAttack && hasDebuff) {
@@ -587,7 +592,10 @@ export function inferExpectedRoles(
     }
   }
 
-  const onlyAffectsAllies = (/all allies within.*radius.*you/.test(fullText) && !/you and all allies/.test(fullText)) || /choose one ally/.test(fullText) || /choose (up to )?two allies/.test(fullText);
+  const onlyAffectsAllies =
+    (/all allies within.*radius.*you/.test(fullText) && !/you and all allies/.test(fullText)) ||
+    /choose one ally/.test(fullText) ||
+    /choose (up to )?two allies/.test(fullText);
   const affectsYou = /\b(you|yourself)\b/.test(fullText);
 
   const providesDefensiveBuff = hasDefensiveText(targeting) || hasDefensiveText(effect);
@@ -597,26 +605,21 @@ export function inferExpectedRoles(
     affectsYou &&
     !/\b(wall|zone)\b/.test(fullText) &&
     !onlyAffectsAllies &&
-    !/creatures.*may have.*cover/.test(fullText) && providesDefensiveBuff;
+    !/creatures.*may have.*cover/.test(fullText) &&
+    providesDefensiveBuff;
 
   if (isTurtle && !profile.requiresAttunement) {
     expected.add('turtle');
   }
 
   const providesOffensiveBuff =
-    /(primed|empowered|maximized|focused|honed)/i.test(
-      fullText,
-    ) ||
+    /(primed|empowered|maximized|focused|honed)/i.test(fullText) ||
     /persists until the end of your turn/.test(fullText) ||
     /your next\s+(?:attack|strike|spell)/i.test(fullText) ||
-    /take (?:two turns of actions|an extra\s+(?:standard|minor) action)/i.test(
-      fullText,
-    );
+    /take (?:two turns of actions|an extra\s+(?:standard|minor) action)/i.test(fullText);
 
   // 12. Focus & Generator
-  const isOffensiveBuffOnSelf =
-    affectsYou &&
-    !onlyAffectsAllies && providesOffensiveBuff;
+  const isOffensiveBuffOnSelf = affectsYou && !onlyAffectsAllies && providesOffensiveBuff;
 
   if (isOffensiveBuffOnSelf) {
     const isEmpoweredThisTurn =
@@ -692,14 +695,14 @@ export function inferExpectedRoles(
 }
 
 function hasDefensiveText(text: string) {
-  return /(shielded|fortified|steeled|braced|resistant|safe location|stasis)/i.test(
-    text,
-  ) ||
+  return (
+    /(shielded|fortified|steeled|braced|resistant|safe location|stasis)/i.test(text) ||
     /gain[^.]+bonus to[^.]+defense/i.test(text) ||
     /provide[^.]+cover/.test(text) ||
     /takes?\s+half\s+damage/i.test(text) ||
     /(?:\\briefly\s+)?have\s+(?:\\glossterm\{)?cover/i.test(text) ||
-    /failure chance/i.test(text);
+    /failure chance/i.test(text)
+  );
 }
 
 /**
@@ -797,9 +800,7 @@ export function validateSpellRoles(spheres: MysticSphere[]): RoleValidationIssue
           // Special exception: decoy/sustain attune
           if (
             actRole === 'attune' &&
-            (profile.isAttunable ||
-              profile.isSustainedMinor ||
-              fullText.includes('duplicate'))
+            (profile.isAttunable || profile.isSustainedMinor || fullText.includes('duplicate'))
           ) {
             continue;
           }

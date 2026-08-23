@@ -62,7 +62,7 @@ export const fabrication: MysticSphere = {
       type: 'Sustain (attunable, minor)',
     },
     // 40% action denial for one round against 75% of attacks, applying only to you:
-    // 4 * 0.4 * 0.75 * 0.5 = 0.6 EA. 
+    // 4 * 0.4 * 0.75 * 0.5 = 0.6 EA.
     {
       name: 'Desperate Shieldwall',
 
@@ -77,7 +77,7 @@ export const fabrication: MysticSphere = {
       type: 'Attune',
     },
     // 80% action denial for one round against 75% of attacks, applying only to you:
-    // 4 * 0.8 * 0.75 * 0.5 = 1.2 EA. 
+    // 4 * 0.8 * 0.75 * 0.5 = 1.2 EA.
     {
       name: 'Greater Desperate Shieldwall',
 
