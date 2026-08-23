@@ -502,7 +502,6 @@ export function inferExpectedRoles(
     // Snipe (Targeted long/distant range damage, not area or dive)
     if (
       isLongOrDistantRange &&
-      !isDoT &&
       (profile.area === 'single' || profile.area === 'multi') &&
       !expected.has('dive')
     ) {
@@ -510,7 +509,7 @@ export function inferExpectedRoles(
     }
 
     // Burn (Single-target DoT or delayed damage)
-    if (profile.isSingleTarget && isDoT) {
+    if (profile.isSingleTarget && isDoT && !isLongOrDistantRange) {
       expected.add('burn');
     }
 

@@ -92,6 +92,28 @@ t.test('validate_roles', (t) => {
       t.end();
     });
 
+    t.test('should infer burn for single-target delayed attacks (like Boulder Heave)', (t) => {
+      const boulderHeave: SpellDefinition = {
+        name: 'Boulder Heave',
+        rank: 2,
+        roles: ['burn'],
+        attack: {
+          hit: '\\damagerankthree.',
+          targeting: `
+            When you cast this spell, you create a boulder in midair above your space and choose a target within \\medrange.
+            If the area above you is occupied, this spell fails without effect.
+            At the start of your next turn, if that target is still within \\medrange, make a \\glossterm{reactive attack} vs. Armor against it.
+            Otherwise, the boulder disappears and this spell is wasted.
+          `,
+        },
+      };
+      const profile = buildSpellProfile(boulderHeave, 'Terramancy');
+      const roles = inferExpectedRoles(boulderHeave, profile);
+      t.ok(roles.has('burn'), 'Should infer burn for delayed single-target reactive attack');
+      t.notOk(roles.has('burst'), 'Should not infer burst for delayed attack');
+      t.end();
+    });
+
     t.test(
       'should infer softener for persistent conditions across areas (like Dust Storm)',
       (t) => {

@@ -88,7 +88,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         `,
       },
       rank: 2,
-      roles: ['burst'],
+      roles: ['burn'],
       scaling: 'damage',
       tags: ['Manifestation'],
     },
@@ -562,7 +562,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         `,
       },
       rank: 7,
-      roles: ['hazard', 'softener'],
+      roles: ['hazard', 'flash'],
       scaling: 'accuracy',
       type: 'Sustain (attunable, minor)',
     },
@@ -603,7 +603,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         This does not allow you to breathe while inside the earth, so your ability to traverse long distances may be limited.
       `,
       rank: 3,
-      roles: ['attune', 'narrative'],
+      roles: ['attune'],
       type: 'Sustain (attunable, standard)',
     },
 
@@ -615,7 +615,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         This does not allow you to breathe while inside the earth, so your ability to traverse long distances may be limited.
       `,
       rank: 6,
-      roles: ['attune', 'narrative'],
+      roles: ['attune'],
       type: 'Sustain (attunable, standard)',
     },
 
@@ -628,7 +628,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         This does not allow you to breathe while inside the earth or stone, so your ability to traverse long distances may be limited.
       `,
       rank: 5,
-      roles: ['attune', 'narrative'],
+      roles: ['attune'],
       type: 'Sustain (attunable, standard)',
     },
 

@@ -19,7 +19,7 @@ export const ABILITY_ROLES = [
   'attune', // Buff that lasts as long as you stay attuned.
   'barrier', // Walls that deal damage on passage or fully block passage
   'boon', // Brief or one-turn combat-relevant effects on one or more allies, possibly including you. If the effect is not combat relevant, it should be 'narrative' instead.
-  'burn', // Single-target damage over time
+  'burn', // Single-target damage over time or delayed damage
   'burst', // Single-target immediate damage
   'cleanse', // Remove conditions or, more rarely, poisons
   'clear', // Immediate damage to multiple targets, typically in an area

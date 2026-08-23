@@ -257,10 +257,10 @@ export function stripBurnClauses(text: string): string {
 }
 
 /**
- * Regex for detecting delayed damage applied at the end of a next turn.
+ * Regex for detecting delayed damage applied at the end or start of a next turn.
  */
 export const DELAYED_DAMAGE_REGEX =
-  /at the end of (?:its|your|each) next turn.*?(?:takes?|takes \\damagerank|\d+d\d+ damage)/i;
+  /(?:at the end of (?:its|your|each) next turn.*?(?:takes?|takes \\damagerank|\d+d\d+ damage)|at the start of (?:its|your|each) next (?:turn|round).*?(?:make a (?:\\glossterm\{)?reactive attack\}?|make an? attack|takes?|takes \\damagerank|\d+d\d+ damage))/i;
 
 export function parseRange(text: string): SpellRange {
   const lowercase = stripGlossterm(text).toLowerCase().replaceAll('\n', ' ');
@@ -772,9 +772,14 @@ export function buildSpellProfile(
 
   const isStrike = isStrikeSpell(fullText);
   const isDelayedStrike = isStrike && DELAYED_DAMAGE_REGEX.test(fullText);
+  const isDelayedAttack =
+    /at the start of (?:your|its|each) next (?:turn|round).*?(?:make a (?:\\glossterm\{)?reactive attack\}?|make an? attack)/i.test(
+      fullText,
+    );
   const textBeforeDelayed = hit.split(/at the end of (?:its|your|each) next turn/i)[0];
   const hasImmediateDamage =
-    /\\damagerank\w+/i.test(textBeforeDelayed) || (isStrike && !isDelayedStrike);
+    !isDelayedAttack &&
+    (/\\damagerank\w+/i.test(textBeforeDelayed) || (isStrike && !isDelayedStrike));
   const isDelayedDamage = DELAYED_DAMAGE_REGEX.test(fullText) && !hasImmediateDamage;
 
   const hasDoT =
