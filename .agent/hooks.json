@@ -1,0 +1,16 @@
+{
+  "safety-gate": {
+    "PreToolUse": [
+      {
+        "matcher": "run_command",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "safe-command-hook",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}
