@@ -85,7 +85,7 @@ export const photomancy: MysticSphere = {
         You gain a +4 bonus on the check, and you can freely alter the visual appearance of each target's clothes and equipment, regardless of their original form.
       `,
       rank: 3,
-      roles: ['boon', 'narrative'],
+      roles: ['narrative'],
       tags: ['Visual'],
       type: 'Sustain (attunable, minor)',
     },

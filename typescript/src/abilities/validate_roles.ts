@@ -592,22 +592,12 @@ export function inferExpectedRoles(
   const onlyAffectsAllies = (/all allies within.*radius.*you/.test(fullText) && !/you and all allies/.test(fullText)) || /choose one ally/.test(fullText) || /choose (up to )?two allies/.test(fullText);
   const affectsYou = /\b(you|yourself)\b/.test(fullText);
 
-  // TODO: Make this less repetitive.
-  const providesDefensiveBuff = (
-    /(shielded|fortified|steeled|braced|resistant|safe location|stasis)/i.test(
-      effect,
-    ) ||
-    /(shielded|fortified|steeled|braced|resistant|safe location|stasis)/i.test(
-      targeting,
-    ) ||
-    /gain[^.]+bonus to[^.]+defense/i.test(fullText) ||
-    /takes?\s+half\s+damage/i.test(fullText) ||
-    /(?:\\briefly\s+)?have\s+(?:\\glossterm\{)?cover/i.test(fullText) ||
-    /failure chance/i.test(fullText));
+  const providesDefensiveBuff = hasDefensiveText(targeting) || hasDefensiveText(effect);
 
   // 11. Turtle (Brief defensive buff on self)
   const isTurtle =
     affectsYou &&
+    !/\b(wall|zone)\b/.test(fullText) &&
     !onlyAffectsAllies &&
     !/creatures.*may have.*cover/.test(fullText) && providesDefensiveBuff;
 
@@ -701,6 +691,17 @@ export function inferExpectedRoles(
   }
 
   return expected;
+}
+
+function hasDefensiveText(text: string) {
+  return /(shielded|fortified|steeled|braced|resistant|safe location|stasis)/i.test(
+    text,
+  ) ||
+    /gain[^.]+bonus to[^.]+defense/i.test(text) ||
+    /provide[^.]+cover/.test(text) ||
+    /takes?\s+half\s+damage/i.test(text) ||
+    /(?:\\briefly\s+)?have\s+(?:\\glossterm\{)?cover/i.test(text) ||
+    /failure chance/i.test(text);
 }
 
 /**

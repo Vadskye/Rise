@@ -652,7 +652,7 @@ export const fabrication: MysticSphere = {
         The cage has \\glossterm{hit points} equal to three times your \\glossterm{power}, and is destroyed when its hit points become negative.
       `,
       rank: 3,
-      roles: ['barrier', 'boon'],
+      roles: ['barrier', 'boon', 'turtle'],
       scaling: {
         5: `The cage's \\glossterm{hit points} increase to four times your power.`,
         7: `The cage's \\glossterm{hit points} increase to five times your power.`,
