@@ -61,7 +61,7 @@ export const thaumaturgy: MysticSphere = {
         An unerring projectile made of pure magical energy streaks towards your foe, inflicting severe damage unavoidably.
       `,
       rank: 7,
-      roles: ['burst'],
+      roles: ['snipe'],
       scaling: 'damage',
     },
 
@@ -269,7 +269,7 @@ export const thaumaturgy: MysticSphere = {
         `,
       },
       rank: 2,
-      roles: ['narrative'],
+      roles: ['softener'],
       scaling: 'accuracy',
       type: 'Sustain (attunable, minor)',
     },
@@ -283,7 +283,7 @@ export const thaumaturgy: MysticSphere = {
         This prevents all \\abilitytag{Manifestation} effects and effects teleport targets or move them between planes.
       `,
       rank: 4,
-      roles: ['narrative'],
+      roles: ['hazard'],
       type: 'Sustain (attunable, minor)',
     },
 
@@ -382,7 +382,7 @@ export const thaumaturgy: MysticSphere = {
       },
       // TODO: calculate real EA
       rank: 6,
-      roles: ['trip'],
+      roles: ['softener'],
       scaling: 'accuracy',
     },
 
@@ -605,7 +605,7 @@ export const thaumaturgy: MysticSphere = {
         `,
       },
       rank: 7,
-      roles: ['maim'],
+      roles: ['burst', 'maim'],
     },
 
     // +2dr for condition and delay. Instead of +1dr, it deals extra damage based on the
