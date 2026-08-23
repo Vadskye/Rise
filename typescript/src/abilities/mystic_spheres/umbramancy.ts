@@ -61,7 +61,7 @@ export const umbramancy: MysticSphere = {
         Any object or effect which blocks light also blocks this spell's effect.
       `,
       rank: 4,
-      roles: ['flash', 'hazard'],
+      roles: ['hazard'],
       scaling: {
         6: `The maximum area increases to a \\medarea radius.`,
       },
@@ -81,7 +81,7 @@ export const umbramancy: MysticSphere = {
           Make an attack vs. Fortitude against all \\glossterm{shadowed} creatures in a \\smallarea cone from you.
         `,
       },
-      roles: ['clear'],
+      roles: ['clear', 'maim'],
       rank: 1,
       scaling: 'damage',
     },
@@ -98,7 +98,7 @@ export const umbramancy: MysticSphere = {
           Make an attack vs. Fortitude against all \\glossterm{shadowed} creatures in a \\smallarea cone from you.
         `,
       },
-      roles: ['clear'],
+      roles: ['clear', 'maim'],
       rank: 4,
       scaling: 'damage',
     },
@@ -121,7 +121,7 @@ export const umbramancy: MysticSphere = {
         `,
       },
       rank: 3,
-      roles: ['clear'],
+      roles: ['clear', 'maim'],
       scaling: 'damage',
     },
 
@@ -142,7 +142,7 @@ export const umbramancy: MysticSphere = {
         `,
       },
       rank: 6,
-      roles: ['clear'],
+      roles: ['clear', 'maim'],
       scaling: 'damage',
       type: 'Sustain (standard)',
     },
@@ -223,7 +223,7 @@ export const umbramancy: MysticSphere = {
         `,
       },
       rank: 3,
-      roles: ['maim'],
+      roles: ['flash'],
       scaling: 'accuracy',
       tags: [],
     },
@@ -279,7 +279,7 @@ export const umbramancy: MysticSphere = {
         `,
       },
       rank: 4,
-      roles: ['flash'],
+      roles: ['softener'],
       scaling: 'accuracy',
       tags: ['Visual'],
     },
@@ -348,7 +348,7 @@ export const umbramancy: MysticSphere = {
         Unlike most teleportation effects, both your departure and arrival with this spell are silent.
       `,
       rank: 1,
-      roles: ['dive'],
+      roles: ['mobility'],
       scaling: {
         3: `The teleportation range increases to \\medrange.`,
         5: `The teleportation range increases to \\longrange.`,
@@ -367,7 +367,7 @@ export const umbramancy: MysticSphere = {
         `,
         name: 'shadowstep',
       },
-      roles: ['dive'],
+      roles: ['dive', 'burst'],
       rank: 3,
       scaling: 'accuracy',
     },
@@ -385,7 +385,7 @@ export const umbramancy: MysticSphere = {
         `,
         name: 'shadowstep',
       },
-      roles: ['dive'],
+      roles: ['dive', 'burst'],
       rank: 6,
     },
     // Controlling movement is roughly 100% action denial for the turn, so 4 EA. Double
@@ -501,7 +501,7 @@ export const umbramancy: MysticSphere = {
         If you are currently \\glossterm{shadowed}, you are also \\briefly \\empowered.
       `,
       rank: 6,
-      roles: ['focus'],
+      roles: ['focus', 'turtle'],
       type: 'Sustain (standard)',
     },
 
@@ -519,7 +519,7 @@ export const umbramancy: MysticSphere = {
         `,
       },
       rank: 2,
-      roles: ['generator'],
+      roles: ['flash', 'turtle'],
       scaling: 'accuracy',
     },
     {
@@ -528,7 +528,7 @@ export const umbramancy: MysticSphere = {
         At the end of your turn, if you are \\glossterm{shadowed}, you regain \\hprankzero.
       `,
       rank: 4,
-      roles: ['attune', 'healing'],
+      roles: ['attune'],
       scaling: 'healing',
       type: 'Attune (deep)',
     },
@@ -539,7 +539,7 @@ export const umbramancy: MysticSphere = {
         At the end of your turn, if you are \\glossterm{shadowed}, you regain \\hprankthree.
       `,
       rank: 6,
-      roles: ['attune', 'healing'],
+      roles: ['attune'],
       scaling: 'healing',
       type: 'Attune (deep)',
     },
@@ -557,7 +557,7 @@ export const umbramancy: MysticSphere = {
         `,
       },
       rank: 2,
-      roles: ['softener'],
+      roles: ['flash'],
       scaling: 'accuracy',
       tags: ['Emotion', 'Auditory'],
     },
@@ -613,7 +613,7 @@ export const umbramancy: MysticSphere = {
         `,
       },
       rank: 4,
-      roles: ['burst'],
+      roles: ['burst', 'trip'],
       scaling: 'damage',
     },
 
@@ -624,7 +624,7 @@ export const umbramancy: MysticSphere = {
         exceptThat: 'the damage increases to \\damagerankeight.',
       },
       rank: 7,
-      roles: ['burst'],
+      roles: ['burst', 'trip'],
     },
 
     {
@@ -685,7 +685,7 @@ export const umbramancy: MysticSphere = {
         When an attack against you fails in this way, you become \\briefly \\empowered.
       `,
       rank: 5,
-      roles: ['generator', 'turtle'],
+      roles: ['focus', 'turtle'],
       type: 'Sustain (standard)',
     },
 
@@ -711,7 +711,7 @@ export const umbramancy: MysticSphere = {
       },
 
       rank: 2,
-      roles: ['clear', 'turtle'],
+      roles: ['clear', 'maim', 'turtle'],
       scaling: 'damage',
     },
 
@@ -724,7 +724,7 @@ export const umbramancy: MysticSphere = {
           'the damage increases to \\damagerankfive, and the teleportation range increases to \\medrange.',
       },
       rank: 5,
-      roles: ['clear', 'turtle'],
+      roles: ['clear', 'maim', 'turtle'],
       scaling: 'damage',
     },
 
@@ -740,7 +740,7 @@ export const umbramancy: MysticSphere = {
         `,
       },
       rank: 1,
-      roles: ['burst'],
+      roles: ['burn'],
       scaling: 'damage',
     },
 
@@ -752,7 +752,7 @@ export const umbramancy: MysticSphere = {
         exceptThat: 'the damage increases to \\damagerankfour.',
       },
       rank: 4,
-      roles: ['burst'],
+      roles: ['burn'],
       scaling: 'damage',
     },
 
@@ -769,7 +769,7 @@ export const umbramancy: MysticSphere = {
         `,
       },
       rank: 3,
-      roles: ['burst'],
+      roles: ['clear'],
       scaling: 'damage',
       type: 'Sustain (standard)',
     },
@@ -782,7 +782,7 @@ export const umbramancy: MysticSphere = {
         exceptThat: 'the damage increases to \\damagerankfive.',
       },
       rank: 6,
-      roles: ['burst'],
+      roles: ['clear'],
       scaling: 'damage',
       type: 'Sustain (standard)',
     },

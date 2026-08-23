@@ -42,7 +42,7 @@ export const vivimancy: MysticSphere = {
         `,
       },
       rank: 1,
-      roles: ['burst', 'healing'],
+      roles: ['burst', 'exertion', 'healing'],
       scaling: {
         special:
           'For each rank beyond 1, the damage increases by 1d6 and the healing increases by 1d10.',
@@ -64,7 +64,7 @@ export const vivimancy: MysticSphere = {
         `,
       },
       rank: 4,
-      roles: ['burst', 'healing'],
+      roles: ['burst', 'exertion', 'healing'],
       scaling: {
         special:
           'For each rank beyond 4, the damage increases by 2d6 and the healing increases by 3d10.',
@@ -89,7 +89,7 @@ export const vivimancy: MysticSphere = {
         `,
       },
       rank: 2,
-      roles: ['burst', 'healing'],
+      roles: ['burst', 'exertion', 'healing'],
       scaling: {
         special:
           'For each rank beyond 2, the damage increases by 2 and the healing increases by 2d8.',
@@ -111,7 +111,7 @@ export const vivimancy: MysticSphere = {
           In addition, the healing increases to \\hpranknine.
         `,
       },
-      roles: ['burst', 'healing'],
+      roles: ['burst', 'exertion', 'healing'],
       rank: 6,
       scaling: {
         special:
@@ -233,7 +233,7 @@ export const vivimancy: MysticSphere = {
         `,
       },
       rank: 2,
-      roles: ['execute'],
+      roles: ['burst', 'execute'],
       scaling: 'damage',
       tags: ['Life'],
     },
@@ -250,7 +250,7 @@ export const vivimancy: MysticSphere = {
         exceptThat: 'both damage instances increase to \\damagerankfour.',
       },
       rank: 5,
-      roles: ['execute'],
+      roles: ['burst', 'execute'],
       scaling: 'damage',
     },
 
@@ -294,7 +294,7 @@ export const vivimancy: MysticSphere = {
         `,
       },
       rank: 3,
-      roles: ['clear', 'execute'],
+      roles: ['clear'],
       scaling: 'damage',
       tags: ['Life'],
     },
@@ -322,7 +322,7 @@ export const vivimancy: MysticSphere = {
         `,
       },
       rank: 6,
-      roles: ['clear', 'execute'],
+      roles: ['clear'],
       scaling: 'damage',
       tags: ['Life'],
     },
@@ -755,7 +755,7 @@ export const vivimancy: MysticSphere = {
         `,
       },
       rank: 3,
-      roles: ['barrier'],
+      roles: ['barrier', 'maim'],
       scaling: 'damage',
       tags: ['Barrier', 'Life'],
       type: 'Sustain (attunable, minor)',
@@ -773,7 +773,7 @@ export const vivimancy: MysticSphere = {
         name: 'enervating wall',
       },
       rank: 6,
-      roles: ['barrier'],
+      roles: ['barrier', 'maim'],
       scaling: 'damage',
       tags: ['Barrier'],
       type: 'Sustain (attunable, minor)',
@@ -789,7 +789,7 @@ export const vivimancy: MysticSphere = {
         For each vital wound removed in this way, it reduces its \\glossterm{stamina} by three.
       `,
       rank: 6,
-      roles: ['attune', 'exertion'],
+      roles: ['attune'],
       type: 'Attune (target)',
     },
 
@@ -911,7 +911,7 @@ export const vivimancy: MysticSphere = {
         `,
       },
       rank: 1,
-      roles: ['generator', 'softener'],
+      roles: ['flash', 'turtle'],
       scaling: 'accuracy',
     },
 
@@ -931,7 +931,7 @@ export const vivimancy: MysticSphere = {
         `,
       },
       rank: 4,
-      roles: ['generator', 'softener'],
+      roles: ['flash', 'turtle'],
       scaling: 'accuracy',
     },
   ],
