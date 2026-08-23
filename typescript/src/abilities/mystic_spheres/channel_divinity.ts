@@ -116,7 +116,7 @@ export const channelDivinity: MysticSphere = {
         If an enemy attack \\glossterm{injures} you during this effect, you become \\briefly \\primed.
       `,
       rank: 6,
-      roles: ['turtle', 'focus', 'retaliate'],
+      roles: ['turtle', 'focus'],
       type: 'Sustain (standard)',
     },
 

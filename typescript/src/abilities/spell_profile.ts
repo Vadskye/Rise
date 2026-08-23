@@ -782,6 +782,7 @@ export function buildSpellProfile(
     lowercase.includes('corrode') ||
     lowercase.includes('poison') ||
     /subsequent turns.*take.*damage/.test(lowercase) ||
+    /during each of your subsequent actions/.test(lowercase) ||
     /takes?\s+\\damagerank\w+\s+again/i.test(lowercase) ||
     isDelayedDamage;
 

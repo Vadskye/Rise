@@ -113,6 +113,15 @@ function hasPersistentCondition(hit: string, effect: string, exceptThat: string 
     return false;
   }
 
+  // If the condition is dismissed on its first trigger (like Spellseal) and not overridden with a condition in exceptThat, it is a brief 1-time denial, not persistent softener
+  if (
+    !exceptThat.includes('as a condition') &&
+    (/(?:the first time|when the target fails)[\s\S]*?dismissed/i.test(uninjured) ||
+      /after[\s\S]*?dismissed/i.test(uninjured))
+  ) {
+    return false;
+  }
+
   const untilShortRest =
     /until.*finish.*short rest/.test(uninjured) &&
     !/immune.*until.*finish.*short rest/.test(uninjured);
@@ -138,14 +147,17 @@ function isInjuryDebuff(injury: string, fullTextLowercase: string): boolean {
   if (hasDebuffWords(injury.toLowerCase())) {
     return true;
   }
-  const match = fullTextLowercase.match(/(?:if|while)[^.]*?\binjured\b(?:\})?.*/i);
+  const match = fullTextLowercase.match(
+    /(?:if|while|whenever)[^.]*?\b(?:injured|injures)\b(?:\})?.*/i,
+  );
   return Boolean(match && hasDebuffWords(match[0]));
 }
 
 function hasDebuffWords(fullTextLowercase: string): boolean {
   const sanitized = fullTextLowercase
     .replace(/you are \\?(?:blinded|dazed|slowed)/g, '')
-    .replace(/you take a (?:-\d+|\\?minus\d+)\s+penalty/g, '');
+    .replace(/you take a (?:-\d+|\\?minus\d+)\s+penalty/g, '')
+    .replace(/dropping\s+\\?prone\s+as\s+part\s+of\s+this\s+action/g, '');
 
   const debuffKeywords = [
     '-1 penalty',
@@ -153,8 +165,10 @@ function hasDebuffWords(fullTextLowercase: string): boolean {
     '-4 penalty',
     'an extra 30 feet to affect it',
     'attack the creature closest',
+    'automatically fails',
     'blinded',
     'cannot act',
+    'cannot be teleported',
     'cannot move',
     'cannot stand',
     'cannot take violent actions',
@@ -169,6 +183,7 @@ function hasDebuffWords(fullTextLowercase: string): boolean {
     'deafened',
     'deluded',
     'doing nothing at all',
+    'effect ends completely',
     'emotions calmed',
     'everything outside itself',
     'nothing can pass through',
@@ -180,6 +195,7 @@ function hasDebuffWords(fullTextLowercase: string): boolean {
     'grappled',
     'immobilized',
     'invisible',
+    'magic is partially sealed',
     '\\minus1 penalty',
     'minus1 penalty',
     '\\minus2 penalty',
@@ -195,13 +211,16 @@ function hasDebuffWords(fullTextLowercase: string): boolean {
     'push',
     'repeat the same standard action',
     'shaken',
+    'sickened',
     'sleepy',
     'slowed',
     'spend its next standard action doing nothing',
     'strike against itself',
+    'suppressed',
     'teleport',
     'unable to breathe',
     'unable to say things',
+    'unable to use',
     'unsteady',
     'vulnerable',
     'weakened',
@@ -416,7 +435,7 @@ export function inferExpectedRoles(
     profile.healingRank !== null ||
     /\bregains?\b.*?\bhit points\b/i.test(fullText) ||
     /hit points to become identical to the locked hit points/i.test(fullText) ||
-    /removes? any excess vital wounds/i.test(fullText)
+    /remove[^.]+ vital wounds/i.test(fullText)
   ) {
     expected.add('healing');
   }
@@ -456,10 +475,11 @@ export function inferExpectedRoles(
 
   // 7. Retaliate
   if (
-    /whenever a creature.*?(?:attacks you|makes.*?attack against you)/i.test(fullText) ||
-    /if[^.]+attack(s|ed)[^.]+you or (one of )?your allies/i.test(fullText) ||
-    /if[^.]+injure[^.]+during this effect/.test(fullText) ||
-    /deal.*extra damage to creatures that attacked/i.test(fullText)
+    (profile.hasAttack || dealsDamage) &&
+    (/whenever a creature.*?(?:attacks you|makes.*?attack against you)/i.test(fullText) ||
+      /if[^.]+attack(s|ed)[^.]+you or (one of )?your allies/i.test(fullText) ||
+      /if[^.]+injure[^.]+during this effect/.test(fullText) ||
+      /deal.*extra damage to creatures that attacked/i.test(fullText))
   ) {
     expected.add('retaliate');
   }
@@ -520,13 +540,18 @@ export function inferExpectedRoles(
       profile.isSingleTarget &&
       (profile.isInjuryOnly ||
         (injury && /\\damagerank/i.test(injury)) ||
-        fullText.includes('if the target is injured, it takes'))
+        fullText.includes('if the target is injured, it takes') ||
+        /if (?:the target is )?injured.*?(?:takes?|deals?|becomes (?:\\glossterm\{)?poisoned)/i.test(
+          fullText,
+        ))
     ) {
       expected.add('execute');
     }
 
     // Clear (Multi-target immediate damage)
-    if (isMultiTarget && !isBarrier) {
+    const isPoisonEscalationOnlyDamage =
+      /escalation also deals/i.test(fullText) && !/immediately/i.test(fullText);
+    if (isMultiTarget && !isBarrier && !isPoisonEscalationOnlyDamage) {
       expected.add('clear');
     }
 
@@ -564,7 +589,10 @@ export function inferExpectedRoles(
 
   const hasShortTermEffect =
     /\bbriefly/.test(uninjuredHitText) ||
-    /\b(flicker|repeat the same|push|fling|flung|teleport|prone)/.test(uninjuredHitText);
+    /\b(flicker|repeat the same|push|fling|flung|teleport|prone|automatically fails)/.test(
+      uninjuredHitText,
+    ) ||
+    /first time/i.test(uninjuredHitText);
 
   const hasDebuff =
     !affectsAlly &&
@@ -592,11 +620,13 @@ export function inferExpectedRoles(
     }
   }
 
+  const isPotionConcoction = /create a potion in an empty vial/i.test(fullText);
   const onlyAffectsAllies =
-    (/all allies within.*radius.*you/.test(fullText) && !/you and all allies/.test(fullText)) ||
-    /choose one ally/.test(fullText) ||
-    /choose (up to )?two allies/.test(fullText);
-  const affectsYou = /\b(you|yourself)\b/.test(fullText);
+    ((/all allies within.*radius.*you/.test(fullText) && !/you and all allies/.test(fullText)) ||
+      /choose one ally/.test(fullText) ||
+      /choose (up to )?two allies/.test(fullText)) &&
+    !isPotionConcoction;
+  const affectsYou = /\b(you|yourself)\b/.test(fullText) || isPotionConcoction;
 
   const providesDefensiveBuff = hasDefensiveText(targeting) || hasDefensiveText(effect);
 
@@ -619,7 +649,11 @@ export function inferExpectedRoles(
     /take (?:two turns of actions|an extra\s+(?:standard|minor) action)/i.test(fullText);
 
   // 12. Focus & Generator
-  const isOffensiveBuffOnSelf = affectsYou && !onlyAffectsAllies && providesOffensiveBuff;
+  const isOffensiveBuffOnSelf =
+    affectsYou &&
+    !onlyAffectsAllies &&
+    !/each of your (?:\\glossterm\{)?allies/i.test(fullText) &&
+    providesOffensiveBuff;
 
   if (isOffensiveBuffOnSelf) {
     const isEmpoweredThisTurn =
@@ -628,7 +662,7 @@ export function inferExpectedRoles(
 
     if (profile.hasAttack && !isEmpoweredThisTurn) {
       expected.add('generator');
-    } else if (!profile.hasAttack) {
+    } else if (!profile.hasAttack || isPotionConcoction) {
       expected.add('focus');
     }
   }
@@ -637,6 +671,9 @@ export function inferExpectedRoles(
   const isMobility =
     !profile.hasAttack &&
     !profile.requiresAttunement &&
+    !isHazardEffect(rawSpell, profile, fullText) &&
+    !/extraplanar travel into or out of the area is impossible/i.test(fullText) &&
+    !/prevents? all (?:\\abilitytag\{)?manifestation/i.test(fullText) &&
     !/choose.*unattended object within/.test(fullText) &&
     !/one of your items/.test(fullText) &&
     (/\bfling\b/i.test(fullText) ||
@@ -654,15 +691,14 @@ export function inferExpectedRoles(
     expected.add('mobility');
   }
 
-  const canAffectAllies = /\b(ally|allies)\b/.test(fullText);
+  const canAffectAllies = /\b(ally|allies)\b/.test(fullText) || isPotionConcoction;
 
   // 14. Boon (Brief combat buff on allies)
   const isBoon =
-    !profile.hasAttack &&
     !expected.has('narrative') &&
     canAffectAllies &&
     (providesDefensiveBuff || providesOffensiveBuff || /time lock/.test(fullText));
-  if (isBoon && !dealsDamage) {
+  if (isBoon && (!dealsDamage || profile.hasAttack || isPotionConcoction)) {
     const nonBoonRole = expected.has('healing') || expected.has('cleanse');
     if (!nonBoonRole) {
       expected.add('boon');
