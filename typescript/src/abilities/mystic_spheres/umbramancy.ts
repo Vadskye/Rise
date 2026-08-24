@@ -205,7 +205,7 @@ export const umbramancy: MysticSphere = {
         `,
       },
       rank: 6,
-      roles: ['burst', 'maim', 'softener'],
+      roles: ['burst', 'softener'],
       scaling: 'damage',
     },
 
@@ -748,7 +748,7 @@ export const umbramancy: MysticSphere = {
       name: 'The Mighty Shadows Cut Deep',
 
       functionsLike: {
-        name: 'the mighty shadows cut deep',
+        name: 'the shadows cut deep',
         exceptThat: 'the damage increases to \\damagerankfour.',
       },
       rank: 4,

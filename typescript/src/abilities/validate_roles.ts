@@ -182,6 +182,7 @@ function hasDebuffWords(fullTextLowercase: string): boolean {
     'dazzled',
     'deafened',
     'deluded',
+    'difficult terrain',
     'doing nothing at all',
     'effect ends completely',
     'emotions calmed',
@@ -219,6 +220,7 @@ function hasDebuffWords(fullTextLowercase: string): boolean {
     'suppressed',
     'teleport',
     'unable to breathe',
+    'unable to move',
     'unable to say things',
     'unable to use',
     'unsteady',
@@ -248,6 +250,7 @@ function isNarrativeSpell(rawSpell: SpellDefinition, fullTextLowercase: string):
     fullTextLowercase.includes('for one day') ||
     fullTextLowercase.includes('for one year') ||
     fullTextLowercase.includes('for 24 hours') ||
+    fullTextLowercase.includes('weight is reduced') ||
     (/choose.*unattended.*object/.test(fullTextLowercase) &&
       !/yourself|ally|allies/i.test(fullTextLowercase)) ||
     /observe your surroundings/.test(fullTextLowercase) ||
@@ -263,6 +266,9 @@ function isNarrativeSpell(rawSpell: SpellDefinition, fullTextLowercase: string):
     /absorb a .*?object into your body/.test(fullTextLowercase) ||
     /forced to speak out loud constantly/.test(fullTextLowercase) ||
     /unable to say things it knows to be untrue/.test(fullTextLowercase) ||
+    /separate your shadow|viewing through your shadow|see from your shadow/.test(
+      fullTextLowercase,
+    ) ||
     (rawSpell.usageTime && rawSpell.usageTime !== 'standard' && rawSpell.usageTime !== 'minor'),
   );
 }
@@ -408,7 +414,10 @@ export function inferExpectedRoles(
   const { cost, hit, targeting, injury, effect, exceptThat, fullText } =
     getNormalSpellText(rawSpell);
 
-  const dealsDamage = profile.maxDamageRank !== null || profile.isStrike;
+  const dealsDamage =
+    profile.maxDamageRank !== null ||
+    profile.isStrike ||
+    /takes?\s+damage\s+equal\s+to/i.test(fullText);
 
   // 1. Attunement
   if (profile.requiresAttunement) {
@@ -536,8 +545,10 @@ export function inferExpectedRoles(
     }
 
     // Execute (Single-target injury damage)
+    const isInjuryBleedOrBurn = injury && /bleeds?|burns?/i.test(injury);
     if (
       profile.isSingleTarget &&
+      !isInjuryBleedOrBurn &&
       (profile.isInjuryOnly ||
         (injury && /\\damagerank/i.test(injury)) ||
         fullText.includes('if the target is injured, it takes') ||
@@ -556,10 +567,15 @@ export function inferExpectedRoles(
     }
 
     // Burst (Single-target immediate damage, not purely DoT, not injury-only, not long/distant snipe, not reactive)
+    const isInjuryOnlyDamage =
+      profile.isInjuryOnly ||
+      /^(?:if\s+(?:the\s+target\s+is\s+|it\s+is\s+)?(?:\\glossterm\{)?injured|while\s+(?:\\glossterm\{)?injured)/i.test(
+        hit.trim(),
+      );
     if (
       profile.isSingleTarget &&
       (hit || profile.isStrike) &&
-      !profile.isInjuryOnly &&
+      !isInjuryOnlyDamage &&
       !isDoT &&
       !isLongOrDistantRange &&
       !fullText.includes('reactive attack') &&
@@ -622,9 +638,9 @@ export function inferExpectedRoles(
 
   const isPotionConcoction = /create a potion in an empty vial/i.test(fullText);
   const onlyAffectsAllies =
-    ((/all allies within.*radius.*you/.test(fullText) && !/you and all allies/.test(fullText)) ||
-      /choose one ally/.test(fullText) ||
-      /choose (up to )?two allies/.test(fullText)) &&
+    ((/all (?:[a-z\\]+\s+)*allies within.*radius.*you/i.test(fullText) &&
+      !/you and all (?:[a-z\\]+\s+)*allies/i.test(fullText)) ||
+      /choose (?:up to )?(?:one|two|\d+) allies/i.test(fullText)) &&
     !isPotionConcoction;
   const affectsYou = /\b(you|yourself)\b/.test(fullText) || isPotionConcoction;
 
@@ -672,6 +688,7 @@ export function inferExpectedRoles(
     !profile.hasAttack &&
     !profile.requiresAttunement &&
     !isHazardEffect(rawSpell, profile, fullText) &&
+    (!/move your shadow/i.test(fullText) || /teleport/i.test(fullText)) &&
     !/extraplanar travel into or out of the area is impossible/i.test(fullText) &&
     !/prevents? all (?:\\abilitytag\{)?manifestation/i.test(fullText) &&
     !/choose.*unattended object within/.test(fullText) &&
@@ -722,7 +739,8 @@ export function inferExpectedRoles(
   // 17. Payoff
   if (
     /unless.*during your (?:previous|last) turn/i.test(fullText) ||
-    fullText.includes('if you used')
+    fullText.includes('if you used') ||
+    /choose.*(?:\\glossterm\{)?corpse/i.test(fullText)
   ) {
     expected.add('payoff');
   }

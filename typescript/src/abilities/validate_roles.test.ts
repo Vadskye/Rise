@@ -3,6 +3,9 @@ import { inferExpectedRoles, validateSpellRoles } from './validate_roles';
 import { buildSpellProfile, stripGlossterm } from './spell_profile';
 import { SpellDefinition } from './active_abilities';
 import { MysticSphere } from './mystic_spheres';
+import { telekinesis } from './mystic_spheres/telekinesis';
+import { umbramancy } from './mystic_spheres/umbramancy';
+import { vivimancy } from './mystic_spheres/vivimancy';
 
 t.test('validate_roles', (t) => {
   t.test('stripGlossterm', (t) => {
@@ -298,6 +301,173 @@ t.test('validate_roles', (t) => {
       t.end();
     });
 
+    t.test('should infer trip for movement-impeding debuffs (like Interposing Force)', (t) => {
+      const spell: SpellDefinition = {
+        name: 'Interposing Force',
+        rank: 2,
+        roles: ['trip'],
+        attack: {
+          hit: 'The target is \\briefly unable to move closer to you without effort.',
+          targeting: 'Make an attack vs. Brawn against one creature within \\medrange.',
+        },
+      };
+      const profile = buildSpellProfile(spell, 'Telekinesis');
+      const roles = inferExpectedRoles(spell, profile);
+      t.ok(roles.has('trip'), 'Should infer trip for unable to move closer');
+      t.end();
+    });
+
+    t.test(
+      'should infer narrative for object manipulation and weight reduction (like Distant Hand and Telekinetic Lift)',
+      (t) => {
+        const distantHand: SpellDefinition = {
+          name: 'Distant Hand',
+          rank: 1,
+          roles: ['narrative'],
+          effect: `
+            Choose one Medium or smaller \\glossterm{unattended} object within \\medrange.
+            You can telekinetically control the target object.
+            You can carry a small object normally or push a medium object at half speed.
+          `,
+        };
+        const profileHand = buildSpellProfile(distantHand, 'Telekinesis');
+        const rolesHand = inferExpectedRoles(distantHand, profileHand);
+        t.ok(rolesHand.has('narrative'), 'Should infer narrative for object manipulation');
+
+        const teleLift: SpellDefinition = {
+          name: 'Telekinetic Lift',
+          rank: 1,
+          roles: ['narrative'],
+          effect: `
+            Choose yourself or one Medium or smaller \\glossterm{unattended} object within \\medrange.
+            The target's weight is reduced by one \\glossterm{weight category}.
+          `,
+        };
+        const profileLift = buildSpellProfile(teleLift, 'Telekinesis');
+        const rolesLift = inferExpectedRoles(teleLift, profileLift);
+        t.ok(rolesLift.has('narrative'), 'Should infer narrative for weight reduction');
+        t.end();
+      },
+    );
+
+    t.test('should infer maim and softener for difficult terrain debuffs', (t) => {
+      const darkGrasp: SpellDefinition = {
+        name: 'Dark Grasp',
+        rank: 1,
+        roles: ['burst', 'maim'],
+        attack: {
+          hit: '\\damagerankthree.',
+          injury:
+            'As a \\glossterm{condition}, the target treats all areas of \\glossterm{dim illumination} as \\glossterm{difficult terrain}.',
+          targeting: 'Make an attack vs. Brawn against something adjacent to you.',
+        },
+      };
+      const profileGrasp = buildSpellProfile(darkGrasp, 'Umbramancy');
+      const rolesGrasp = inferExpectedRoles(darkGrasp, profileGrasp);
+      t.ok(rolesGrasp.has('burst'), 'Should infer burst for damage');
+      t.ok(rolesGrasp.has('maim'), 'Should infer maim for difficult terrain on injury');
+
+      const effGrasp: SpellDefinition = {
+        name: 'Efficient Dark Grasp',
+        rank: 6,
+        roles: ['burst', 'softener'],
+        attack: {
+          hit: '\\damagerankseven. In addition, the target treats all areas of \\glossterm{dim illumination} as \\glossterm{difficult terrain} as a \\glossterm{condition}.',
+          targeting: 'Make an attack vs. Brawn against something adjacent to you.',
+        },
+      };
+      const profileEff = buildSpellProfile(effGrasp, 'Umbramancy');
+      const rolesEff = inferExpectedRoles(effGrasp, profileEff);
+      t.ok(rolesEff.has('burst'), 'Should infer burst');
+      t.ok(rolesEff.has('softener'), 'Should infer softener for uninjured difficult terrain');
+      t.end();
+    });
+
+    t.test('should infer burn for injury damage over time without expecting execute', (t) => {
+      const spell: SpellDefinition = {
+        name: 'The Shadows Cut Deep',
+        rank: 1,
+        roles: ['burn'],
+        attack: {
+          hit: '\\damagerankone.',
+          injury: 'The target \\briefly \\glossterm{bleeds} for \\damagerankone.',
+          targeting:
+            'Make an attack vs. Armor and Mental against a \\glossterm{shadowed} creature within \\medrange.',
+        },
+      };
+      const profile = buildSpellProfile(spell, 'Umbramancy');
+      const roles = inferExpectedRoles(spell, profile);
+      t.ok(roles.has('burn'), 'Should infer burn for bleed');
+      t.notOk(roles.has('execute'), 'Should not infer execute for bleed DoT');
+      t.end();
+    });
+
+    t.test('should infer execute (and not burst) for injury-only damage', (t) => {
+      const bloodCalls: SpellDefinition = {
+        name: 'Blood Calls to Blood',
+        rank: 3,
+        roles: ['execute'],
+        attack: {
+          hit: 'If the target is \\glossterm{injured}, it takes \\damageranksix.',
+          targeting: 'Make an attack vs. Fortitude against one creature within \\medrange.',
+        },
+      };
+      const profile = buildSpellProfile(bloodCalls, 'Vivimancy');
+      const roles = inferExpectedRoles(bloodCalls, profile);
+      t.ok(roles.has('execute'), 'Should infer execute');
+      t.notOk(roles.has('burst'), 'Should not infer burst for injury-only damage');
+
+      const exsanguinate: SpellDefinition = {
+        name: 'Exsanguinate',
+        rank: 7,
+        roles: ['execute'],
+        attack: {
+          hit: 'If the target is \\glossterm{injured}, it takes damage equal to half your maximum hit points.',
+          targeting: 'Make an attack vs. Fortitude against one creature within \\medrange.',
+        },
+      };
+      const profileEx = buildSpellProfile(exsanguinate, 'Vivimancy');
+      const rolesEx = inferExpectedRoles(exsanguinate, profileEx);
+      t.ok(rolesEx.has('execute'), 'Should infer execute for HP-based injury damage');
+      t.end();
+    });
+
+    t.test('should infer payoff for corpse requirement', (t) => {
+      const corpseExplosion: SpellDefinition = {
+        name: 'Corpse Explosion',
+        rank: 3,
+        roles: ['clear', 'payoff'],
+        attack: {
+          hit: '\\damagerankfive.',
+          targeting:
+            'Choose one Small or larger \\glossterm{unattended} \\glossterm{corpse} within \\shortrange. Make an attack vs. Armor and Reflex against everything within a \\tinyarea radius from the corpse.',
+        },
+      };
+      const profile = buildSpellProfile(corpseExplosion, 'Vivimancy');
+      const roles = inferExpectedRoles(corpseExplosion, profile);
+      t.ok(roles.has('clear'), 'Should infer clear');
+      t.ok(roles.has('payoff'), 'Should infer payoff for corpse requirement');
+      t.end();
+    });
+
+    t.test('should infer turtle for defensive buffs in hit block', (t) => {
+      const intenseSiphon: SpellDefinition = {
+        name: 'Intense Siphon Protection',
+        rank: 4,
+        roles: ['flash', 'turtle'],
+        attack: {
+          hit: 'The target is \\briefly \\dazed. Then, you are \\briefly \\braced.',
+          targeting:
+            'Make an attack vs. Fortitude against up to two creatures within \\shortrange.',
+        },
+      };
+      const profile = buildSpellProfile(intenseSiphon, 'Vivimancy');
+      const roles = inferExpectedRoles(intenseSiphon, profile);
+      t.ok(roles.has('flash'), 'Should infer flash for dazed');
+      t.ok(roles.has('turtle'), 'Should infer turtle for braced');
+      t.end();
+    });
+
     t.end();
   });
 
@@ -388,6 +558,12 @@ t.test('validate_roles', (t) => {
         issues.some((i) => i.spellName === 'Fog Cloud' && i.role === 'hazard'),
         'Should not flag hazard as unexpected or invalid on Fog Cloud',
       );
+      t.end();
+    });
+
+    t.test('should validate Telekinesis, Umbramancy, and Vivimancy with zero role issues', (t) => {
+      const issues = validateSpellRoles([telekinesis, umbramancy, vivimancy]);
+      t.equal(issues.length, 0, `Expected 0 role issues, but found: ${JSON.stringify(issues, null, 2)}`);
       t.end();
     });
 
