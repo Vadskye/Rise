@@ -251,6 +251,7 @@ function isNarrativeSpell(rawSpell: SpellDefinition, fullTextLowercase: string):
     fullTextLowercase.includes('for one year') ||
     fullTextLowercase.includes('for 24 hours') ||
     fullTextLowercase.includes('weight is reduced') ||
+    /telekinetically control[^.]+object/.test(fullTextLowercase) ||
     (/choose.*unattended.*object/.test(fullTextLowercase) &&
       !/yourself|ally|allies/i.test(fullTextLowercase)) ||
     /observe your surroundings/.test(fullTextLowercase) ||

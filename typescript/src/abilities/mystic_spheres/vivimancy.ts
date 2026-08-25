@@ -931,7 +931,7 @@ export const vivimancy: MysticSphere = {
         `,
       },
       rank: 4,
-      roles: ['flash', 'turtle'],
+      roles: ['flash'],
       scaling: 'accuracy',
     },
   ],

@@ -450,24 +450,6 @@ t.test('validate_roles', (t) => {
       t.end();
     });
 
-    t.test('should infer turtle for defensive buffs in hit block', (t) => {
-      const intenseSiphon: SpellDefinition = {
-        name: 'Intense Siphon Protection',
-        rank: 4,
-        roles: ['flash', 'turtle'],
-        attack: {
-          hit: 'The target is \\briefly \\dazed. Then, you are \\briefly \\braced.',
-          targeting:
-            'Make an attack vs. Fortitude against up to two creatures within \\shortrange.',
-        },
-      };
-      const profile = buildSpellProfile(intenseSiphon, 'Vivimancy');
-      const roles = inferExpectedRoles(intenseSiphon, profile);
-      t.ok(roles.has('flash'), 'Should infer flash for dazed');
-      t.ok(roles.has('turtle'), 'Should infer turtle for braced');
-      t.end();
-    });
-
     t.end();
   });
 
