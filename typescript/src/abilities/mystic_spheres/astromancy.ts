@@ -48,7 +48,7 @@ export const astromancy: MysticSphere = {
         This can teleport items from your backpack, or other storage devices worn closely on your body such as weapon sheathes, as long as you are touching the outside of that storage (including though clothing or armor).
         Conjuring a shield in this way does not automatically strap it to your arm, so you must still spend the normal action to don it (see \\tref{Donning Armor}).
       `,
-      rank: 2,
+      rank: 1,
       roles: ['attune'],
       type: 'Attune',
     },
@@ -306,7 +306,7 @@ export const astromancy: MysticSphere = {
         halfOnMiss: true,
         targeting: `
           Make an attack vs. Reflex and Mental against all \\glossterm{enemies} within a \\smallarea radius from you.
-          In addition, you create a \\glossterm{zone} of astral disruption in a \\largearea radius around you that \\briefly persists.
+          In addition, you create a \\glossterm{zone} of astral disruption in a \\largearea radius around you that persists \\briefly.
           While the zone is active, whenever an enemy teleports into or out of the area, you repeat this attack against them.
           You can only attack any individual creature once per turn in this way.
         `,
@@ -328,7 +328,7 @@ export const astromancy: MysticSphere = {
         halfOnMiss: true,
         targeting: `
           Make an attack vs. Reflex and Mental against all \\glossterm{enemies} within a \\medarea radius from you.
-          In addition, you create a \\glossterm{zone} of astral disruption in a \\gargarea radius around you that \\briefly persists.
+          In addition, you create a \\glossterm{zone} of astral disruption in a \\gargarea radius around you that persists \\briefly.
           While the zone is active, whenever an enemy teleports into or out of the area, you repeat this attack against them.
           You can only attack any individual creature once per turn in this way.
         `,
@@ -353,7 +353,7 @@ export const astromancy: MysticSphere = {
         halfOnMiss: true,
         targeting: `
           You create a chaotic planar rupture in a \\smallarea radius \\glossterm{zone} within \\shortrange.
-          When you cast this spell, and during each of your subsequent actions, make an attack vs. Mental against all creatures in the area.
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Mental against all \\glossterm{enemies} in the area.
           While the zone is active, whenever an enemy teleports into or out of the area, you repeat this attack against them.
           You can only attack any individual creature once per turn in this way.
         `,
@@ -378,7 +378,7 @@ export const astromancy: MysticSphere = {
           Its area increases over time.
           It affects a \\medarea radius \\glossterm{zone} in the first turn, a \\largearea radius in the second turn, and a \\hugearea radius in all subsequent turns.
           Any effect which increases or changes this spell's area affects all of its areas equally, not just the area in the first turn.
-          When you cast this spell, and during each of your subsequent actions, make an attack vs. Mental against all creatures in the area.
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Mental against all \\glossterm{enemies} in the area.
         `,
       },
       rank: 7,
@@ -395,7 +395,7 @@ export const astromancy: MysticSphere = {
         crit: MULTIHIT_CRIT,
         hit: `
           \\damagerankzero.
-          The target takes \\damagerankzero again at the end of its next turn.
+          The target also \\briefly \\debuff{burns} for \\damagerankzero.
         `,
         targeting: `
           Make an attack vs. Mental against something within \\medrange.
@@ -454,7 +454,7 @@ export const astromancy: MysticSphere = {
       // Midair cost allows damage as a bonus?
       attack: {
         hit: `
-          \\damagerankone.
+          \\damageranktwo.
         `,
         injury: `
           You \\glossterm{fling} the target up to 15 feet vertically or horizontally (see \\pcref{Fling Effects}).

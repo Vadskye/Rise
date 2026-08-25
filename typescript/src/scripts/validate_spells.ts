@@ -1,6 +1,6 @@
 import { mysticSpheres, MysticSphere } from '@src/abilities/mystic_spheres';
 import {
-  validateSpells,
+  validateSpellsPairwise,
   validateSpellDesignGuidelines,
   validateDoubleExtraDamage,
   validateSpellRoles,
@@ -113,7 +113,7 @@ function runComparativeValidation(options: {
   console.log('PART 2: CROSS-SPELL COMPARATIVE VALIDATION');
   console.log('========================================================================\n');
 
-  const issues = validateSpells(options.spheres, { showApproximate: options.showApproximate });
+  const issues = validateSpellsPairwise(options.spheres, { showApproximate: options.showApproximate });
 
   if (issues.length === 0) {
     console.log('No spell design redundancies or damage inconsistencies found!');

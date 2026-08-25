@@ -12,7 +12,7 @@
  * HOW IT WORKS:
  * 1. buildSpellProfile() parses each spell's text fields (hit, targeting, injury, effect) into
  *    a structured "SpellProfile" using Regex and string checks (in spell_profile.ts).
- * 2. validateSpells() executes a pairwise comparison across all standard spells.
+ * 2. validateSpellsPairwise() executes a pairwise comparison across all standard spells.
  * 3. Spells are flagged as "redundant" if they match on key mechanical properties:
  *    - Same Spell Rank
  *    - Same Action Economy (double action/precast vs. standard action)
@@ -626,7 +626,7 @@ function checkSpellPair(
   return issues;
 }
 
-export function validateSpells(
+export function validateSpellsPairwise(
   spheres: MysticSphere[],
   options?: { showApproximate?: boolean },
 ): ValidationIssue[] {

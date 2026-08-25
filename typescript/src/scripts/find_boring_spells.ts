@@ -5,7 +5,7 @@ import {
   SphereName,
 } from '@src/abilities/mystic_spheres';
 import { AbilityRole, isAbilityRole } from '@src/abilities/constants';
-import { validateSpells } from '@src/abilities/validate_spells';
+import { validateSpellsPairwise } from '@src/abilities/validate_spells';
 import { buildSpellProfile } from '@src/abilities/spell_profile';
 import {
   CantripDefinition,
@@ -208,7 +208,7 @@ export function detectVanillaDamageSpells(items: SpellItem[]): BoringFinding[] {
  */
 export function detectValidationIssues(items: SpellItem[]): BoringFinding[] {
   const findings: BoringFinding[] = [];
-  const validationIssues = validateSpells(mysticSpheres, { showApproximate: true });
+  const validationIssues = validateSpellsPairwise(mysticSpheres, { showApproximate: true });
 
   for (const issue of validationIssues) {
     if (issue.type === 'redundancy' || issue.type === 'almost_equivalent') {
