@@ -15,7 +15,6 @@ ATTRIBUTE_SKILLS = {
     "strength": ["Athletics", "Might"],
     "dexterity": [
         "Flexibility",
-        "Perform",
         "Poise",
         "Sleight of Hand",
         "Stealth",
@@ -40,6 +39,7 @@ ATTRIBUTE_SKILLS = {
     "willpower": [],
     "other": [
         "Intimidate",
+        "Perform",
         "Profession",
     ],
 }

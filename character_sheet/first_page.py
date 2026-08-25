@@ -187,7 +187,7 @@ def skill_box(name: str, destination: str) -> str:
     if name in SUBSKILLS:
         return subskill_section(name, destination)
 
-    manualAttributeReminder = ' + a relevant attribute' if name == 'Intimidate' else ''
+    manualAttributeReminder = ' + a relevant attribute' if name in ATTRIBUTE_SKILLS['other'] else ''
     modifier_key = get_modifier_key(name)
     return flex_row(
         {"class": "skill-box"},

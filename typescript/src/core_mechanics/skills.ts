@@ -122,7 +122,7 @@ export const SKILL_METADATA: Record<Skill, SkillMetadata> = {
   knowledge_untrained: { attribute: 'intelligence', category: SkillCategory.Other },
   medicine: { attribute: 'intelligence', category: SkillCategory.Other },
   might: { attribute: 'strength', category: SkillCategory.Other },
-  perform: { attribute: 'dexterity', category: SkillCategory.Social },
+  perform: { attribute: null, category: SkillCategory.Social },
   persuasion: { attribute: 'perception', category: SkillCategory.Social },
   poise: { attribute: 'dexterity', category: SkillCategory.Movement },
   profession: { attribute: null, category: SkillCategory.Other },

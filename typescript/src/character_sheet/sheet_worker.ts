@@ -555,7 +555,7 @@ function boolifySheetValue(val: string | number | boolean | undefined): boolean 
 
 const SKILLS_BY_ATTRIBUTE: Record<string, string[]> = {
   strength: ['athletics', 'might'],
-  dexterity: ['flexibility', 'perform', 'poise', 'sleight_of_hand', 'stealth'],
+  dexterity: ['flexibility', 'poise', 'sleight_of_hand', 'stealth'],
   constitution: ['endurance'],
   intelligence: [
     'analysis',
@@ -593,7 +593,7 @@ const SKILLS_BY_ATTRIBUTE: Record<string, string[]> = {
     'survival',
   ],
   willpower: [],
-  other: ['intimidate', 'profession', 'profession_untrained'],
+  other: ['intimidate', 'perform', 'profession', 'profession_untrained'],
 };
 
 const ALL_SKILLS = Object.values(SKILLS_BY_ATTRIBUTE).flat();
