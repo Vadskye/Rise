@@ -616,9 +616,8 @@ export const verdamancy: MysticSphere = {
       rank: 1,
       roles: ['attune'],
       scaling: {
-        3: `The bonus increases to +4.`,
-        5: `The bonus increases to +5.`,
-        7: `The bonus increases to +6.`,
+        4: `The bonus increases to +4.`,
+        7: `The bonus increases to +5.`,
       },
       type: 'Attune',
     },
