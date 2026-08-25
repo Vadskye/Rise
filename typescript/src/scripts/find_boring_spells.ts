@@ -94,7 +94,7 @@ export function getAllSpells(
   const items: SpellItem[] = [];
 
   for (const sphere of allMysticSpheres) {
-    if (sphere.name !== 'Universal') {
+    if (sphere.name !== 'Universal' && sphere.name !== 'Non-Sphere Spells') {
       if (sphere.cantrips) {
         for (const c of sphere.cantrips) {
           if (!options.maxRank || (c.rank || 0) <= options.maxRank) {
@@ -279,7 +279,7 @@ export function detectRoleSaturation(items: SpellItem[]): BoringFinding[] {
   const sphereGroups = _.groupBy(items, (i) => i.sphere);
 
   for (const [sphereName, sphereSpells] of Object.entries(sphereGroups)) {
-    if (sphereName === 'Non-Sphere Spells' || sphereName === 'Rituals') {
+    if (sphereName === 'Rituals') {
       continue;
     }
 
