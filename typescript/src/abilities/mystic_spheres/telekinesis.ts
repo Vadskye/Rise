@@ -587,8 +587,7 @@ export const telekinesis: MysticSphere = {
       type: 'Attune (deep)',
     },
 
-    // Ally shielded is 0.6 EA. Ally empowered is 0.2 EA. The damage requirement means we
-    // can try it at rank 5.
+    // Ally shielded is 0.6 EA. Ally empowered is 0.3 EA.
     {
       name: 'Kinetic Shield',
 
