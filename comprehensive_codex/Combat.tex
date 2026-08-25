@@ -696,6 +696,10 @@
     % TODO: you can become immune to reactions if you ready *all* of your actions
     You cannot react to the readied reaction of another creature.
     If your reaction becomes possible only as a result of the readied reaction of another creature, you do nothing.
+
+    If multiple creatures ready reactions in response to the same trigger, all of those readied reactions occur.
+    They resolve in the order that the creatures readied their reactions, so the creature that readied its reaction first goes first.
+    This can mean that the readied reaction of the last creature is wasted, such as if the previously resolved readied reactions already killed the triggering creature.
   \end{activeability}
 
   \begin{activeability}{Recover}{Standard action}
