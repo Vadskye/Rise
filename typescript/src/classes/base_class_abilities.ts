@@ -168,11 +168,11 @@ export function getClassInsightPoints(cls: Class): number {
     case 'Dryad':
     case 'Rogue':
     case 'Wizard':
-      return 3;
-    case 'Sorcerer':
-      return 1;
-    default:
       return 2;
+    case 'Sorcerer':
+      return 0;
+    default:
+      return 1;
   }
 }
 
