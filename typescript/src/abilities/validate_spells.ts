@@ -20,7 +20,7 @@
  *    - Same Targeted Defense (fortitude, reflex, mental, brawn, armor)
  *    - Same Target Area (single, cone, radius, multi)
  *    - Same set of primary applied conditions (e.g., slowed, dazed)
- *    - Share at least one core role, and match exactly on support roles (healing, cleanse, focus, etc.)
+ *    - Same set of roles (burst, maim, clear, dive, etc.)
  * 4. If they are redundant, the engine checks for "inconsistent damage" if their parsed damage ranks
  *    differ without a cost difference (e.g., one deals higher damage but neither has a cost/stamina).
  *
@@ -73,7 +73,8 @@ export type DifferenceField =
   | 'enemies only targeting'
   | 'repeating behavior'
   | 'injury damage'
-  | 'damage over time';
+  | 'damage over time'
+  | 'roles';
 
 export interface ValidationIssue {
   type:
@@ -243,6 +244,13 @@ function getSpellDifferences(p1: SpellProfile, p2: SpellProfile): Difference[] {
       field: 'damage over time',
       p1Value: p1.hasDoT ? 'DoT' : 'direct',
       p2Value: p2.hasDoT ? 'DoT' : 'direct',
+    });
+  }
+  if ([...p1.roles].sort().join(',') !== [...p2.roles].sort().join(',')) {
+    diffs.push({
+      field: 'roles',
+      p1Value: `[${[...p1.roles].sort().join(', ')}]`,
+      p2Value: `[${[...p2.roles].sort().join(', ')}]`,
     });
   }
 
@@ -554,16 +562,6 @@ function checkSpellPair(
           spells: [p1.name, p2.name],
         });
       }
-    }
-
-    // Also check for role inconsistencies:
-    if (p1.roles.join(',') !== p2.roles.join(',')) {
-      issues.push({
-        type: 'inconsistent_roles',
-        severity: 'warning',
-        message: `Spell "${p1.name}" (${p1.sphereName}) has different roles (${p1.roles.join(', ')}) than "${p2.name}" (${p2.sphereName}, ${p2.roles.join(', ')}) despite being equivalent.`,
-        spells: [p1.name, p2.name],
-      });
     }
   } else {
     // Dominance / Strictly Superior check

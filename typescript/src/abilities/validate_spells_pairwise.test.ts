@@ -87,7 +87,7 @@ t.test('validateSpellsPairwise', (t) => {
         makeMockSpell({
           name: 'Freezing Touch',
           rank: 2,
-          roles: ['burst'],
+          roles: ['softener'],
           attack: {
             hit: 'The target is frozen.', // No damagerank
             targeting: 'Make an attack vs. Fortitude against something within \\shortrange.',
@@ -101,6 +101,38 @@ t.test('validateSpellsPairwise', (t) => {
         almost,
         'Should not flag spells as almost equivalent if one is damaging and the other is not',
       );
+      t.end();
+    });
+
+    t.test('should flag spells that differ only by roles as almost equivalent', (t) => {
+      const sphere1 = makeMockSphere('Aeromancy', [
+        makeMockSpell({
+          name: 'Wind Slash',
+          rank: 2,
+          roles: ['burst'],
+          attack: {
+            hit: '\\damagerankfour.',
+            targeting: 'Make an attack vs. Armor against one creature within \\shortrange.',
+          },
+        }),
+        makeMockSpell({
+          name: 'Charged Wind Slash',
+          rank: 2,
+          roles: ['burst', 'exertion'],
+          attack: {
+            hit: '\\damagerankfour.',
+            targeting: 'Make an attack vs. Armor against one creature within \\shortrange.',
+          },
+        }),
+      ]);
+
+      const issues = validateSpellsPairwise([sphere1], { showApproximate: true });
+      const almost = issues.find(
+        (issue) => issue.type === 'almost_equivalent' && issue.differenceField === 'roles',
+      );
+      t.ok(almost, 'Should find almost equivalent differing only by roles');
+      t.equal(almost?.differenceField, 'roles');
+      t.match(almost?.message || '', /differ only by roles/);
       t.end();
     });
 
@@ -186,6 +218,40 @@ t.test('validateSpellsPairwise', (t) => {
       t.notOk(
         redundancy,
         'Disintegrate and Devouring Shadow should not be redundant due to accuracy penalty differences',
+      );
+      t.end();
+    });
+
+    t.test('should not flag spells with different roles as redundant', (t) => {
+      const sphere1 = makeMockSphere('Aeromancy', [
+        makeMockSpell({
+          name: 'Wind Slash',
+          rank: 2,
+          roles: ['burst'],
+          attack: {
+            hit: '\\damagerankfour.',
+            targeting: 'Make an attack vs. Armor against one creature within \\shortrange.',
+          },
+        }),
+      ]);
+
+      const sphere2 = makeMockSphere('Pyromancy', [
+        makeMockSpell({
+          name: 'Flame Dagger',
+          rank: 2,
+          roles: ['burst', 'dive'],
+          attack: {
+            hit: '\\damagerankfour.',
+            targeting: 'Make an attack vs. Armor against one creature within \\shortrange.',
+          },
+        }),
+      ]);
+
+      const issues = validateSpellsPairwise([sphere1, sphere2]);
+      const redundancy = issues.find((issue) => issue.type === 'redundancy');
+      t.notOk(
+        redundancy,
+        'Wind Slash and Flame Dagger should not be redundant due to different roles',
       );
       t.end();
     });
