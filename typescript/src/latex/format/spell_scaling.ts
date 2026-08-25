@@ -1,4 +1,5 @@
 import { ActiveAbility } from '@src/abilities';
+import { getSpellByName } from '@src/abilities/mystic_spheres';
 import { parseDamageRank } from '@src/core_mechanics/damage_calculation';
 import { DamageScaling } from '@src/core_mechanics/damage_scaling';
 
@@ -46,6 +47,18 @@ export function spellScaling(
     }
     return `The attack's \\glossterm{accuracy} increases by +2 for each rank beyond ${rank}.`;
   } else if (spell.scaling === 'damage') {
+    let effectText = spell.effect || spell.functionsLike?.exceptThat || '';
+    if (spell.functionsLike && !/\bstrikes?\b/i.test(effectText)) {
+      const base = getSpellByName(spell.functionsLike.name);
+      if (base?.effect) {
+        effectText = effectText + ' ' + base.effect;
+      }
+    }
+    if (/\bmake[^.]+strikes\b/i.test(effectText) || /\btwo [^.]*strikes\b/i.test(effectText)) {
+      return `Each strike deals 2 \\glossterm{extra damage} for each rank beyond ${rank}.`;
+    } else if (/\bstrikes?\b/i.test(effectText)) {
+      return `The strike deals 2 \\glossterm{extra damage} for each rank beyond ${rank}.`;
+    }
     const scaling = calculateDieScaling(
       spell.attack?.hit || spell.functionsLike?.exceptThat || spell.effect,
       'damage',

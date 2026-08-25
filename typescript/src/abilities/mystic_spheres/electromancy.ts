@@ -650,7 +650,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       `,
       rank: 4,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -664,7 +664,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       `,
       rank: 2,
       roles: ['clear'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     // TODO: too strong?
@@ -676,7 +676,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       },
       rank: 5,
       roles: ['clear'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {

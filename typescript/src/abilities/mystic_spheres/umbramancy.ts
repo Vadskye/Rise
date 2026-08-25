@@ -298,7 +298,7 @@ export const umbramancy: MysticSphere = {
       `,
       rank: 2,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -315,7 +315,7 @@ export const umbramancy: MysticSphere = {
       `,
       rank: 5,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -368,7 +368,7 @@ export const umbramancy: MysticSphere = {
       },
       roles: ['dive', 'burst'],
       rank: 3,
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {

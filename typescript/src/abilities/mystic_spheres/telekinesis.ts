@@ -519,7 +519,7 @@ export const telekinesis: MysticSphere = {
       `,
       rank: 1,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -537,7 +537,7 @@ export const telekinesis: MysticSphere = {
       `,
       rank: 2,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     // dr4 is 1.75dpp.
@@ -553,7 +553,7 @@ export const telekinesis: MysticSphere = {
       },
       rank: 5,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     // Assume that you are using a Heavy weapon, and this gives you a shield.

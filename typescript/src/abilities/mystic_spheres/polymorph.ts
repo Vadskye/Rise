@@ -36,7 +36,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 3,
       roles: ['burn'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -49,7 +49,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 3,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -62,7 +62,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 1,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -76,7 +76,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 5,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -89,7 +89,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 2,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -103,7 +103,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 6,
       roles: ['clear'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {

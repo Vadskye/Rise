@@ -372,7 +372,7 @@ export const prayer: MysticSphere = {
       `,
       rank: 1,
       roles: ['burst', 'turtle'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -384,7 +384,7 @@ export const prayer: MysticSphere = {
       `,
       rank: 5,
       roles: ['burst', 'turtle'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -396,7 +396,7 @@ export const prayer: MysticSphere = {
       `,
       rank: 3,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -409,7 +409,7 @@ export const prayer: MysticSphere = {
       `,
       rank: 2,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     // May be too weak? Don't want to move to r5 since that conflicts with mighty
@@ -422,7 +422,7 @@ export const prayer: MysticSphere = {
       },
       rank: 7,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     // dazzled hp condition is 0.7 EA. +0.2 EA for curse, +0.4 EA for prebuff = 1.3 EA.

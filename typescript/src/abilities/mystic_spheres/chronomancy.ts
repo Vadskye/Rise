@@ -78,7 +78,7 @@ export const chronomancy: MysticSphere = {
       `,
       rank: 5,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
     {
       name: 'Quicksilver Sweep',
@@ -91,7 +91,7 @@ export const chronomancy: MysticSphere = {
       `,
       rank: 2,
       roles: ['clear'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
     {
       name: 'Quicksilver Perfection',
@@ -110,7 +110,7 @@ export const chronomancy: MysticSphere = {
       `,
       rank: 4,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
     {
       name: 'Quicksilver Infinity',
@@ -132,7 +132,7 @@ export const chronomancy: MysticSphere = {
       `,
       rank: 6,
       roles: ['burst', 'exertion'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
     {
       name: 'Quicksilver Ambush',
@@ -147,7 +147,7 @@ export const chronomancy: MysticSphere = {
       `,
       rank: 3,
       roles: ['dive', 'burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
     {
       name: 'Quicksilver Assassination',
@@ -483,7 +483,7 @@ export const chronomancy: MysticSphere = {
       `,
       rank: 1,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {

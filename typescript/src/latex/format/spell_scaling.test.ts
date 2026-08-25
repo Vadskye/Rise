@@ -224,6 +224,32 @@ t.test('spellScaling', (t) => {
       t.end();
     });
 
+    t.test('should handle strike damage scaling', (t) => {
+      const singleStrikeSpell: Partial<ActiveAbility> = {
+        name: 'Single Strike Spell',
+        scaling: 'damage',
+        rank: 2,
+        effect: 'Make a \\glossterm{mundane} melee \\glossterm{strike}.',
+      };
+      t.equal(
+        spellScaling(singleStrikeSpell as ActiveAbility),
+        'The strike deals 2 \\glossterm{extra damage} for each rank beyond 2.',
+      );
+
+      const multiStrikeSpell: Partial<ActiveAbility> = {
+        name: 'Multi Strike Spell',
+        scaling: 'damage',
+        rank: 5,
+        effect: 'Make two \\glossterm{mundane} \\glossterm{strikes}.',
+      };
+      t.equal(
+        spellScaling(multiStrikeSpell as ActiveAbility),
+        'Each strike deals 2 \\glossterm{extra damage} for each rank beyond 5.',
+      );
+      t.matchOnlyStrict(capturedWarnings, []);
+      t.end();
+    });
+
     t.test('should warn if unable to calculate damage scaling', (t) => {
       const spell: Partial<ActiveAbility> = {
         name: 'Test Spell',
