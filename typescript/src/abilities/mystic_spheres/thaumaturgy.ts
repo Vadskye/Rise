@@ -636,7 +636,7 @@ export const thaumaturgy: MysticSphere = {
       functionsLike: {
         name: 'mystic backlash',
         exceptThat:
-          'the damage increases to \\damagerankssix, and any \\glossterm{extra damage} is doubled.',
+          'the damage increases to \\damageranksix, and any \\glossterm{extra damage} is doubled.',
       },
       rank: 5,
       roles: ['burst'],
