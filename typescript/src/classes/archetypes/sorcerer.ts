@@ -44,7 +44,7 @@ export function arcaneMagic(): RankAbility[] {
           It does not require \\glossterm{proficiency} with armor to use.
 
           You can also use a \\glossterm{free hand} to wield the barrier as a shield.
-          This functions like a buckler, granting you a \\plus1 bonus to your Armor and Reflex defenses, except that you do not need to be proficient with light armor.
+          This functions like a buckler, granting you a \\plus1 bonus to your Armor defense, except that you do not need to be proficient with light armor.
           Since this bonus comes from a shield, it does not stack with the benefits of using any other shield.
 
           This ability lasts until you \\glossterm{dismiss} it or until you use it again.
