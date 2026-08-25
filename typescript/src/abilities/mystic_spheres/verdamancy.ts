@@ -113,7 +113,8 @@ export const verdamancy: MysticSphere = {
       // 2.4 EA for damage, so r6.
       attack: {
         hit: `
-          \\damageranksix, and any \\glossterm{extra damage} is doubled, and the target falls \\prone.
+          \\damageranksix, and any \\glossterm{extra damage} is doubled.
+          In addition, the target falls \\prone.
         `,
         targeting: `
           Make an attack vs. Brawn against one \\glossterm{grounded} creature within \\shortrange.
