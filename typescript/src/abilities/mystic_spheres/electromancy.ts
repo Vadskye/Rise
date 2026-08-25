@@ -545,7 +545,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
 
       attack: {
         hit: `
-          \\damagerankfive.
+          \\damagerankfive, and any \\glossterm{extra damage} is doubled.
         `,
         injury: `
           The target is \\briefly \\dazed.
@@ -567,7 +567,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       functionsLike: {
         name: 'electrocute',
         exceptThat:
-          'the damage increases to \\damagerankeight, and any \\glossterm{extra damage} is doubled.',
+          'the damage increases to \\damagerankeight.',
       },
       rank: 6,
       roles: ['burst', 'maim'],
