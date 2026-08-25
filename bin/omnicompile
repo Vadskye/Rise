@@ -2,6 +2,7 @@
 rcompile
 g rise
 cd html_book
+latexrun --clean-all
 latexrun Omnibook.tex
 cp Omnibook.pdf (p utransfer)
 rhtml
