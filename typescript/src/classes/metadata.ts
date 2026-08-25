@@ -455,7 +455,7 @@ export function calculateClassPointTotal(cls: Class): number {
 }
 
 export function validateClassPoints() {
-  const expectedPoints = 71;
+  const expectedPoints = 74;
   for (const cls of getAllClasses()) {
     const actualPoints = calculateClassPointTotal(cls);
     const classExpectedPoints = expectedPoints + (isUncommonClass(cls) ? 2 : 0);
