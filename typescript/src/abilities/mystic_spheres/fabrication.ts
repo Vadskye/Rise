@@ -202,6 +202,7 @@ export const fabrication: MysticSphere = {
         hit: `
           \\damagerankfivelow, and any \\glossterm{extra damage} is doubled.
         `,
+        injury: 'The target falls \\prone.',
         targeting: `
           Make an attack vs. Armor and Brawn against something within \\longrange.
         `,
