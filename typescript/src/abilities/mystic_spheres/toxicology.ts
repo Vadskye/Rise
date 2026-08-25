@@ -374,9 +374,9 @@ export const toxicology: MysticSphere = {
     {
       name: 'Greater Fungal Armor',
 
-      // Resistance is unclear
+      // Resistance is unclear EA
       effect: `
-        You gain a +2 \\glossterm{enhancement bonus} to your Armor and Fortitude defenses, and you are \\resistant to \\atPoison attacks.
+        You gain a +2 \\glossterm{enhancement bonus} to your Armor defense, and you are \\resistant to \\atPoison attacks.
       `,
       rank: 6,
       roles: ['attune'],
