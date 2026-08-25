@@ -4648,7 +4648,7 @@
             },
             {
               "type": "spell",
-              "name": "Stoke the Fires",
+              "name": "Stoke the Flames",
               "options": {
                 "isMagical": true,
                 "usageTime": "elite"
@@ -4866,7 +4866,7 @@
             },
             {
               "type": "spell",
-              "name": "Split Fireball",
+              "name": "Fireball",
               "options": {
                 "isMagical": true
               }

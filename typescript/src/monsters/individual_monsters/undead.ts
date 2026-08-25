@@ -418,10 +418,10 @@ function addHalfsouls(grimoire: Grimoire) {
           creature.addCustomSense('Blindsense (60 ft.)');
           creature.addCustomSense('Blindsight (15 ft.)');
 
-          // Damaging effects are standard action, debuffs are elite
+          // Single target is standard action, AOE is elite
           creature.addSpell('Neck Snap');
           creature.addSpell('Mighty Compression');
-          creature.addSpell('Kinetic Cudgel', { usageTime: 'elite' });
+          creature.addSpell('Intense Mind Shove', { usageTime: 'elite' });
           creature.addSpell('Mighty Blastwave', { usageTime: 'elite' });
           // Annoying to automate the conversion for this spell.
           // TODO: make this automatic if we want to give other creatures Wall of Force.
