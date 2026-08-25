@@ -451,7 +451,7 @@ export const staffs = (): Implement[] => [
   }),
   staff({
     name: 'Staff of Power',
-    rank: 4,
+    rank: 3,
     short_description: 'Empowers you',
     description: 'You are \\empowered.',
     attunement: 'Attune (deep)',
