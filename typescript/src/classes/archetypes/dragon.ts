@@ -72,14 +72,14 @@ export function dragon(): RankAbility[] {
           \\rankline
           You consume a mineral-based wealth item that is at least one size category smaller than you.
           For the next ten minutes, your minimum draconic wealth rank is equal to the rank of the consumed item plus two.
-          In addition, you \\briefly regain hit points based on the item's rank at the end of your turn:
+          In addition, you \\briefly regain hit points at the end of each of your turns based on the item's rank:
           \\begin{itemize}
-            \\item Rank 0: \\hpranktwolow. 
-            \\item Rank 1: \\hprankthreelow. 
+            \\item Rank 0: \\hpranktwolow.
+            \\item Rank 1: \\hprankthreelow.
             \\item Rank 2: \\hprankfourlow. 
             \\item Rank 3: \\hprankfivelow. 
-            \\item Rank 3: \\hpranksixlow. 
-            \\item Rank 4: \\hpranksevenlow. 
+            \\item Rank 4: \\hpranksixlow. 
+            \\item Rank 5: \\hpranksevenlow. 
             \\item Rank 6: \\hprankeightlow. 
             \\item Rank 7: \\hprankninelow. 
             \\item Rank 8: \\hpranktenlow. 
