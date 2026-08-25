@@ -3045,13 +3045,6 @@
             },
             {
               "type": "spell",
-              "name": "Stutterstop",
-              "options": {
-                "isMagical": true
-              }
-            },
-            {
-              "type": "spell",
               "name": "Wave of Senescence",
               "options": {
                 "isMagical": true
@@ -4889,7 +4882,7 @@
             },
             {
               "type": "spell",
-              "name": "Stoke the Fires",
+              "name": "Stoke the Flames",
               "options": {
                 "isMagical": true,
                 "usageTime": "elite"
@@ -4937,14 +4930,6 @@
             {
               "type": "spell",
               "name": "Wave of Senescence",
-              "options": {
-                "isMagical": true,
-                "usageTime": "elite"
-              }
-            },
-            {
-              "type": "spell",
-              "name": "Stutterstop",
               "options": {
                 "isMagical": true,
                 "usageTime": "elite"
