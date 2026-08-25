@@ -275,7 +275,6 @@ export const polymorph: MysticSphere = {
       `,
       rank: 4,
       roles: ['attune'],
-      tags: ['Physical'],
       type: 'Attune',
     },
 
@@ -307,16 +306,15 @@ export const polymorph: MysticSphere = {
       name: 'Minor Bodymorph',
 
       effect: `
-        If you have Flexibility as a \\glossterm{trained skill}, you gain a +3 \\glossterm{enhancement bonus} to it.
-        Otherwise, you are treated as being trained in that skill.
+        When you cast this spell, choose a skill based on Strength, Dexterity, or Constitution.
+        You gain a \\plus2 \\glossterm{enhancement bonus} to that skill.
       `,
       rank: 1,
       roles: ['attune'],
       scaling: {
-        4: `The bonus increases to +4.`,
-        7: `The bonus increases to +5.`,
+        3: `The bonus increases to +3.`,
+        6: `The bonus increases to +4.`,
       },
-      tags: ['Physical'],
       type: 'Attune',
     },
 
@@ -772,14 +770,14 @@ export const polymorph: MysticSphere = {
       name: "Artisan's Touch",
 
       effect: `
-        You gain a \\plus3 \\glossterm{enhancement bonus} to all Craft skills.
+        You gain a \\plus2 \\glossterm{enhancement bonus} to all Craft skills.
       `,
       rank: 1,
       roles: ['attune'],
       type: 'Attune',
       scaling: {
-        4: `The bonus increases to +4.`,
-        7: `The bonus increases to +5.`,
+        4: `The bonus increases to +3.`,
+        7: `The bonus increases to +4.`,
       },
     },
   ],
