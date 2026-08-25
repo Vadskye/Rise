@@ -29,7 +29,6 @@ function assertHasCorrectCrit(attack: ActiveAbilityAttack, effectName: string): 
   const inflictsDebuff = /(briefly|condition)/.test(attack.hit);
   const dealsDamage = /(\\damage|damage equal to)/.test(attack.hit);
   const grantsImmunity = /immun.*short rest/.test(attack.hit);
-  const inflictsCritCondition = attack.crit && /condition/.test(attack.crit);
   if (attack.crit === undefined) {
     if (!dealsDamage) {
       const requiresInjury = /[iI]f.*injured/.test(attack.hit);
