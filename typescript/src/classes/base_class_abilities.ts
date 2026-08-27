@@ -612,11 +612,11 @@ export function latexStartingItems(cls: Class): string {
     rank1ItemText = `\\item ${armorOptions[0]}`;
   } else if (armorOptions.length > 0) {
     rank1ItemText = `
-                \\item Any one of the following: ${joinStringList(armorOptions, 'or').toLowerCase()}
+                \\item Any one of the following: ${joinStringList(armorOptions, 'or').toLowerCase()} (see \\tref{Armor}).
             `;
   } else {
     rank1ItemText =
-      '\\item A \\magicitem{spell wand, 1st} with a rank 1 spell from one \\glossterm{mystic sphere} that you have access to';
+      '\\item A \\magicitem{spell wand, 1st} with a rank 1 spell from one \\glossterm{mystic sphere} that you have access to (see \\tref{Implements}).';
   }
 
   const weaponOptions: string[] = [];
@@ -635,23 +635,22 @@ export function latexStartingItems(cls: Class): string {
 
   let weaponText = '';
   if (weaponOptions.length === 0) {
-    weaponText = '\\item Two \\magicitem{potions of healing}';
+    weaponText = '\\item Two \\magicitem{potions of healing} (see \\tref{Consumables}).';
   } else if (weaponOptions.length === 1) {
-    weaponText = `\\item Any one of the following: ${joinStringList(weaponOptions)}`;
+    weaponText = `\\item Any one of the following: ${joinStringList(weaponOptions, 'or')} (see \\tref{Weapons}).`;
   } else if (weaponOptions.length === 2) {
-    weaponText = `\\item A ${joinStringList(weaponOptions)}`;
+    weaponText = `\\item A ${joinStringList(weaponOptions, 'or')} (see \\tref{Weapons}).`;
   } else {
-    weaponText = `\\item Any two of the following: ${joinStringList(weaponOptions)}`;
+    weaponText = `\\item Any two of the following: ${joinStringList(weaponOptions, 'or')} (see \\tref{Weapons}).`;
   }
-  weaponText = weaponText.replace(/ and /g, ' or ');
 
   let shieldText = '';
   if (armorProf.usage_classes.includes('medium')) {
-    shieldText = '\\item A buckler or standard shield';
+    shieldText = '\\item A buckler or standard shield.';
   } else if (armorProf.usage_classes.includes('light') && weaponProf.simple_weapons) {
-    shieldText = '\\item A buckler';
+    shieldText = '\\item A buckler.';
   } else {
-    shieldText = "\\item A vial of \\magicitem{alchemist's fire}";
+    shieldText = "\\item A vial of \\magicitem{alchemist's fire}.";
   }
 
   return `
@@ -663,7 +662,7 @@ export function latexStartingItems(cls: Class): string {
             ${weaponText}
             ${shieldText}
             \\item A standard adventuring kit (see \\pcref{Standard Adventuring Kit}).
-            \\item A rank 0 wealth item (1 gp)
+            \\item A rank 0 wealth item (1 gp).
         \\end{raggeditemize}
     `;
 }
