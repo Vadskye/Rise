@@ -83,7 +83,7 @@ def base_class(nth: int) -> str:
         nth,
         "Base Class",
         """
-            Record your base class, and any equipment proficiencies it gives you, on Page 2. Then, fill in all numeric effects of your base class in the "Resources" section on Page 2 and the "Defensive Statistics" section on Page 4. You don't need to record your skills yet.
+            Record your base class, and any equipment proficiencies it gives you, on Page 2. Then, fill in all numeric effects of your base class in the "Resources" section on Page 2 and the "Defensive Statistics" section on Page 3. You don't need to record your skills yet.
         """,
         """
             If your base class has any special class abilities, such as a votive's soul pact, record their name and effects now in the "Abilities" section.
