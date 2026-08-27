@@ -106,8 +106,11 @@ export function getClassDefenseBonus(cls: Class, defense: RiseDefense): number {
 
   switch (cls) {
     case 'Barbarian':
+      if (defense === 'brawn') {
+        classBonus = 1;
+      }
       if (defense === 'fortitude') {
-        classBonus = 2;
+        classBonus = 1;
       }
       break;
     case 'Fighter':
