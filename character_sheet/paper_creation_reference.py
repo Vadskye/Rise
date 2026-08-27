@@ -114,9 +114,9 @@ def combat(nth: int) -> str:
         nth,
         "Statistics and Resources",
         """
-            Finish the calculations in the "Offensive Statistics" and "Defensive Statistics" sections on Page 4.
+            Finish the calculations in the "Offensive Statistics" and "Defensive Statistics" sections on Page 3.
+            Then, finish the calculation for all of your resources in the "Resources" section on Page 2, taking into account any resources granted by your class archetype.
             Once that is done, fill in the "Core Statistics" and "Defenses" sections on Page 1.
-            Then, finish the calculation for all of your resources in the "Resources" section, taking into account any resources granted by your class archetype.
             Spending your insight points can wait.
         """,
     )
