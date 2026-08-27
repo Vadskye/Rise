@@ -104,8 +104,8 @@ def items(nth: int) -> str:
         nth,
         "Items and Equipment",
         """
-            Choose from among the equipment offered to you by your base class.
-            Record your items on Page 3.
+            Choose from among the items offered to you by your base class.
+            Record your equipment on Page 3, and any other items in your inventory on Page 4.
         """,
     )
 
