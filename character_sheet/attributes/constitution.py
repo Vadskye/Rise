@@ -163,7 +163,7 @@ def calc_hit_points():
                 },
                 [
                     underlabel(
-                        "Rank mult",
+                        "Rank",
                         number_input(
                             {
                                 "name": "hit_points_rank_multiplier",
@@ -203,7 +203,7 @@ def calc_injury_point():
                 },
                 [
                     underlabel(
-                        "Rank mult",
+                        "Rank",
                         number_input(
                             {
                                 "disabled": True,
