@@ -619,18 +619,30 @@ export function latexStartingItems(cls: Class): string {
       '\\item A \\magicitem{spell wand, 1st} with a rank 1 spell from one \\glossterm{mystic sphere} that you have access to (see \\tref{Implements}).';
   }
 
-  const weaponOptions: string[] = [];
-  if (weaponProf.custom_weapons) {
-    weaponOptions.push(weaponProf.custom_weapons.replace(/ and /g, ' '));
-  }
-  if (weaponProf.simple_weapons) {
-    weaponOptions.push('club');
-    weaponOptions.push('dagger');
-  }
-  if (weaponProf.non_exotic_weapons) {
-    weaponOptions.push('broadsword');
-    weaponOptions.push('two handaxes');
-    weaponOptions.push('spear');
+  let weaponOptions: string[] = [];
+
+  // Give some classes custom starting items to make them feel different.
+  // Note that these should be sorted, since weapons aren't automatically sorted.
+  if (cls === 'Barbarian') {
+    weaponOptions = ['battleaxe', 'greataxe', 'greatsword', 'two handaxes', 'throwing axe'];
+  } else if (cls === 'Druid') {
+    weaponOptions = ['club', 'dagger', 'quarterstaff', 'scythe', "shepherd's axe"];
+  } else if (cls === 'Fighter') {
+    weaponOptions = ['broadsword', 'greatsword', 'two handaxes', 'halberd', 'spear'];
+  } else if (cls === 'Monk') {
+    weaponOptions = ['two kama', 'two kunai', 'twenty shuriken', 'spear', 'two-section staff'];
+  } else if (cls === 'Paladin') {
+    weaponOptions = ['broadsword', 'greatsword', 'greatmace', 'warhammer'];
+  } else {
+    if (weaponProf.simple_weapons) {
+      weaponOptions.push('club');
+      weaponOptions.push('dagger');
+    }
+    if (weaponProf.non_exotic_weapons) {
+      weaponOptions.push('broadsword');
+      weaponOptions.push('two handaxes');
+      weaponOptions.push('spear');
+    }
   }
 
   let weaponText = '';
