@@ -453,7 +453,7 @@ def wealth_items() -> str:
         [
             calc_weight_limits(),
             span({"class": "wealth-items-label"}, "Wealth items"),
-            *[wealth_item_of_rank(i) for i in range(1, 8)],
+            *[wealth_item_of_rank(i) for i in range(0, 8)],
             labeled_text_input(
                 "Currency",
                 {"class": "currency"},
