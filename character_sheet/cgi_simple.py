@@ -666,3 +666,14 @@ def text_reminder(name: str) -> str:
     return span(
         {"class": "reminder", "name": name}
     )
+
+
+def fractional_value_box(label_text: str) -> str:
+    return underlabel(
+        label_text,
+        div({"class": "flex-row fractional-value-box"}, [
+            equation_fraction(1, 2),
+            "=",
+        ]),
+        {"class": "calc-fractional-value"},
+    )

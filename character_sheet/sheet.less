@@ -119,26 +119,34 @@ div.full-sheet {
   }
 
   .equation {
-    > .calc-fraction {
-      display: flex;
-      font-size: 75%;
-      flex-direction: column;
-      width: 10px;
+    .calc-fractional-value {
+        // seems to line up the fractional value with two regular width
+        // inputs
+        width: 75px !important;
 
-      .calc-numerator {
-        border-bottom: 1px solid black;
-        width: 0.6em;
-      }
-    }
+        .fractional-value-box {
+            border: 1px solid black;
+            height: 24px;
+            padding-left: 2px;
+            padding-right: 1em;
+            width: 100%;
+            justify-content: space-between;
 
-    > .flex-col.calc-fractional-value {
-      // seems to line up the fractional value with two regular width
-      // inputs
-      width: 65px;
+            .calc-fraction {
+              display: flex;
+              font-size: 50%;
+              flex-direction: column;
+              width: 8px;
 
-      input {
-        width: 100%;
-      }
+              .calc-numerator {
+                border-bottom: 1px solid black;
+                width: 0.6em;
+              }
+            }
+
+            > div:nth-child(2) {
+            }
+        }
     }
 
     > .flex-col.calc-double-wide-value {

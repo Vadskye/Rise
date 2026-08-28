@@ -24,8 +24,6 @@ from cgi_simple import (
     underlabeled_checkbox,
 )
 from status_page import custom_modifier
-from paper.calculation_blocks import calc_offense, calc_defense
-
 
 def create_page(destination: str) -> str:
     if destination == "roll20":

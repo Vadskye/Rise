@@ -9,6 +9,7 @@ from cgi_simple import (
     flex_col,
     flex_row,
     flex_wrapper,
+    fractional_value_box,
     labeled_text_input,
     minus,
     number_input,
@@ -32,18 +33,7 @@ def calc_brawling_accuracy():
             div({"class": "calc-header"}, "Brawl accuracy"),
             equation(
                 [
-                    equation_fraction(1, 2),
-                    underlabel(
-                        "Lvl+Str",
-                        number_input(
-                            {
-                                "disabled": True,
-                                "name": "brawling_accuracy_level_plus_strength",
-                                "value": "(@{level}+@{strength})",
-                            }
-                        ),
-                        {"class": "calc-fractional-value"},
-                    ),
+                    fractional_value_box("Half (level+Str)"),
                     plus(),
                     equation_misc_repeat("accuracy", 3),
                 ],

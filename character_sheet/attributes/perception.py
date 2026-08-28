@@ -9,6 +9,7 @@ from cgi_simple import (
     flex_col,
     flex_row,
     flex_wrapper,
+    fractional_value_box,
     labeled_text_input,
     minus,
     number_input,
@@ -32,18 +33,7 @@ def calc_accuracy():
             div({"class": "calc-header"}, "Accuracy"),
             equation(
                 [
-                    equation_fraction(1, 2),
-                    underlabel(
-                        "Lvl+Per",
-                        number_input(
-                            {
-                                "disabled": True,
-                                "name": "accuracy_level_plus_perception",
-                                "value": "(@{level}+@{perception})",
-                            }
-                        ),
-                        {"class": "calc-fractional-value"},
-                    ),
+                    fractional_value_box("Half (level+Per)"),
                     plus(),
                     equation_misc_repeat("accuracy", 3),
                 ],
