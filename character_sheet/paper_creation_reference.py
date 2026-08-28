@@ -63,7 +63,7 @@ def species(nth: int) -> str:
     return creation_step(
         nth,
         "Species",
-        """Record your character's species on Page 2. Record any numeric modifiers it gives you on Page 4 and any other abilities, such as language proficiencies, on Page 2.""",
+        """Record your character's species on Page 2. Record any modifiers from the species on Page 4. Most other numeric modifiers and proficiencies from that species should be recorded on Page 2. If it gives you any special traits, record them on Page 3.""",
     )
 
 def attributes(nth: int) -> str:
@@ -83,7 +83,7 @@ def base_class(nth: int) -> str:
         nth,
         "Base Class",
         """
-            Record your base class, and any equipment proficiencies it gives you, on Page 2. Then, fill in all numeric effects of your base class in the "Resources" section on Page 2 and the "Defensive Statistics" section on Page 3. You don't need to record your skills yet.
+            Record your base class, and any equipment proficiencies it gives you, on Page 2. Then, fill in all numeric effects of your base class in the "Resources" and "Defensive Statistics" sections on the same page. You don't need to record your skills yet.
         """,
         """
             If your base class has any special class abilities, such as a votive's soul pact, record their name and effects now in the "Abilities" section.
@@ -95,7 +95,7 @@ def class_archetype(nth: int) -> str:
         nth,
         "Class Archetype",
         """
-            Record your first class archetype on Page 2. Note that it is currently rank 1. If it modifies your statistics, record those modifiers in the appropriate boxes on the third and fourth pages. Recording more complicated abilities that you have to make decisions for, such as spells and maneuvers, can wait.
+            Record your first class archetype on Page 2. Note that it is currently rank 1. As with your species, record any numeric modifiers on Page 2, and any special traits on Page 3. Abilities that you have to actively use can go on Page 1. Recording more complicated abilities that you have to make decisions for, such as spells and maneuvers, can wait.
         """,
     )
 
@@ -153,7 +153,7 @@ def background(nth: int) -> str:
         nth,
         "Background",
         """
-            Decide your character's general background. Optionally, you can choose a specific character background benefit and background flaw. Record what you decide on Page 2.
+            Decide your character's general background, if you haven't already. Optionally, you can choose a specific character background benefit and background flaw. If you do, record those on Page 3.
         """,
         """
             The character sheet does not have room to hold a detailed background. However, don't let that restrict your ideas for your character! You can share your background with your GM separately.
@@ -168,7 +168,7 @@ def description(nth: int) -> str:
             Decide additional details for your character. What is their general personality? What do they look like? Record a brief summary on Page 2.
         """,
         """
-            As with your background, the character sheet doesn't have room for a detailed description, but you should still feel free to create one elsewhere.
+            As with your background, the character sheet doesn't have room for a comprehensive description, but you should still feel free to create one elsewhere.
         """,
     )
 
