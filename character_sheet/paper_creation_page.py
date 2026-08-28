@@ -5,11 +5,7 @@ from cgi_simple import (
     labeled_textarea,
     labeled_text_input,
 )
-
-
-from attribute_page import (
-    calc_resources
-)
+from paper.calc_resources import calc_resources
 
 
 
