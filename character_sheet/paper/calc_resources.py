@@ -37,11 +37,11 @@ def calc_resources() -> str:
             calc_insight_points(),
             calc_maximum_stamina(),
             calc_trained_skills(),
+            div({"class": "mini-divider"}),
             calc_combat_styles(),
             calc_maneuvers(),
             calc_mystic_spheres(),
             calc_spells(),
-            calc_blank_resource(),
             calc_blank_resource(),
         ],
     )

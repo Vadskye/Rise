@@ -6,6 +6,7 @@ from cgi_simple import (
     labeled_text_input,
 )
 from paper.calc_resources import calc_resources
+from paper.calculation_blocks import calc_offense, calc_defense
 
 
 
@@ -14,7 +15,7 @@ def create_page(_destination: str) -> str:
         {"class": "page creation-page"},
         flex_row([
             creation_guidance(),
-            abilities(),
+            calculations(),
             div({"class": "page-number"}, "Page 2"),
         ]),
     )
@@ -34,9 +35,8 @@ def creation_guidance():
             labeled_text_input("Base class"),
             self_class_textarea("Proficiencies"),
             self_class_textarea("Archetypes"),
-            self_class_textarea("Combat styles and mystic spheres"),
-            self_class_textarea("Background"),
-            self_class_textarea("Description"),
+            self_class_textarea("Abilities chosen"),
+            self_class_textarea("Character description"),
             labeled_text_input("Alignment"),
             self_class_textarea("Feats"),
         ],
@@ -50,30 +50,15 @@ def self_class_textarea(name: str) -> str:
         input_attributes={"class": parseable_name}
     )
 
-def abilities():
+def calculations():
     return div(
-        {"class": "abilities"},
+        {"class": "calculations"},
         [
-            div({"class": "section-header"}, "Passive Abilities and Traits"),
-            *[passive_ability() for _ in range(14)],
+            calc_offense(),
+            calc_defense(),
             div({"class": "section-header"}, "Resources"),
             flex_row({"class": "resources"}, [
                 calc_resources(),
-                self_class_textarea("Abilities chosen"),
             ]),
         ],
-    )
-
-def passive_ability():
-    return flex_row(
-        [
-            labeled_text_input(
-                "Name",
-                {"class": "ability-name"},
-            ),
-            labeled_text_input(
-                "Effect",
-                {"class": "ability-effects"},
-            ),
-        ]
     )

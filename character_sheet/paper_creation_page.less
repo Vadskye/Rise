@@ -1,14 +1,10 @@
 // Need this extra layer of precision to override settings in sheet.less
 div.full-sheet {
   .creation-guidance {
-    width: 16em;
+    width: 23em;
 
     > div {
       padding-right: 0.2em;
-    }
-
-    textarea {
-      width: 17.2em;
     }
 
     .species-and-size {
@@ -20,26 +16,24 @@ div.full-sheet {
       }
     }
 
-    .description,
-    .equipment-proficiencies,
+    .abilities-chosen {
+        height: 18em;
+    }
+
+    .proficiencies,
+    .character-description,
     .archetypes,
-    .combat-styles-and-mystic-spheres,
-    .background,
     .other-ability-groups,
     .feats {
-      height: 7em;
+      height: 7.5em;
     }
   }
-  .abilities {
-    margin-left: 0.25em;
+  .calculations {
+    margin-left: 0.5em;
     flex-grow: 1;
 
-    .ability-name {
-      width: 10em;
-    }
-    .ability-effects {
-      margin-left: 0.25em;
-      flex-grow: 1;
+    .equation {
+        margin-bottom: 1px;
     }
   }
 
@@ -61,4 +55,13 @@ div.full-sheet {
     border-bottom: 1px solid black;
   }
 
+
+    .calc-header {
+      font-weight: normal;
+    }
+
+    .mini-divider {
+        margin-top: 4px;
+        margin-bottom: 4px;
+    }
 }

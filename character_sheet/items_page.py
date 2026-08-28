@@ -59,11 +59,6 @@ def roll20_items_page(destination: str) -> str:
             div({"class": "section-header"}, "Legacy Item (Deprecated)"),
             legacy_item(destination),
             div({"class": "section-header"}, "Attuned Abilities and Equipment"),
-            # Maximum number of attunement points:
-            # 4 from class
-            # 2 from two archetypes that each grant an attunement point
-            # Anyone with six attunement points would almost certainly have at
-            # least one deep attunements, right? Hopefully?
             div(
                 {"class": "attunement-abilities"},
                 [
@@ -90,16 +85,16 @@ def paper_items_page(destination: str) -> str:
             weapons(destination),
             div({"class": "section-header"}, "Attuned Abilities and Equipment"),
             # Maximum number of attunement points:
-            # 5 from class
+            # 4 from class
             # 2 from two archetypes that each grant an attunement point
             # Anyone with six attunement points would almost certainly have at
             # least one deep attunement, right? Hopefully?
             div(
-                {"class": "attunement-abilities"}, [attunement() for _ in range(6)]
+                {"class": "attunement-abilities"}, [attunement() for _ in range(5)]
             ),
-            flex_row({"class": "calcs"}, [
-                calc_offense(),
-                calc_defense(),
+            div({"class": "passive-abilities"}, [
+                div({"class": "section-header"}, "Passive Abilities and Traits"),
+                *[passive_ability() for _ in range(10)],
             ]),
             div({"class": "page-number"}, "Page 3"),
         ],
@@ -495,4 +490,19 @@ def calc_weight_limits() -> str:
                 },
             ),
         ],
+    )
+
+
+def passive_ability():
+    return flex_row(
+        [
+            labeled_text_input(
+                "Name",
+                {"class": "ability-name"},
+            ),
+            labeled_text_input(
+                "Effect",
+                {"class": "ability-effects"},
+            ),
+        ]
     )
