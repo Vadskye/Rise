@@ -286,26 +286,16 @@ def creation_guidance() -> str:
                 ),
                 visibility="player only",
             ),
-            insight_points_step(),
-            skills_step(),
-            creation_step(
-                "Equipment Proficiencies",
-                """
-                    Record the weapon and armor groups your character can use in the <b>Items</b> tab.
-                    It automatically calculates proficiencies from your base class.
-                """,
-                "",
-                visibility="player only",
-            ),
             creation_step(
                 "Items",
                 """
-                    Choose your character's starting items.
-                    Over time, you'll find many more items, so you should go to the <b>Items</b> tab to record your choices.
+                    Choose from among the items offered to you by your base class. Record your choices on the <b>Items</b> tab.
                 """,
                 "",
                 visibility="player only",
             ),
+            insight_points_step(),
+            skills_step(),
             creation_step(
                 "Personality",
                 """

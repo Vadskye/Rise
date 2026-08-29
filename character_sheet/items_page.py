@@ -201,14 +201,11 @@ def proficiencies() -> list[str]:
                                 "name": "base_class_proficiencies",
                             },
                         ),
-                        labeled_text_input(
-                            "Weapons", input_attributes={"name": "weapon_groups"}
-                        ),
                     ],
                 ),
                 labeled_textarea(
                     "Other proficiencies",
-                    input_attributes={"name": "other_proficiencies"},
+                    input_attributes={"class": "other-proficiencies", "name": "other_proficiencies"},
                 ),
             ],
         ),

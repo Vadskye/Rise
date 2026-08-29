@@ -65,7 +65,12 @@ def main(destination: Literal["paper", "roll20"] = "paper") -> None:
             _ = fh.write(sheet_worker.generate_script())
             _ = fh.write(
                 cgi.div(
-                    {"class": "full-sheet"},
+                    # Although the sheet does have the .roll20 class, we can't use
+                    # .roll20 within any page-specific CSS because the page CSS
+                    # is scoped to the individual page, which is at a lower
+                    # level than this .roll20 class. Any page-specific CSS that
+                    # cares about roll20 vs paper has to be in `sheet.less`.
+                    {"class": "roll20 full-sheet"},
                     [
                         "".join(header_bar.nav_row()),
                         first_page.create_page(cgi.DESTINATION),
