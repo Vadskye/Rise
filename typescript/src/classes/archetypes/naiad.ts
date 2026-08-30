@@ -37,7 +37,6 @@ export function naiad(): RankAbility[] {
       rank: 2,
       description: `
         You do not have to spend stamina to perform the \\ritual{create water} ritual.
-        In addition, you do not consider that ritual to be strenuous activity, so you can cast it continuously for longer than five minutes (see \\pcref{Maintain Exertion}).
       `,
     },
     {
