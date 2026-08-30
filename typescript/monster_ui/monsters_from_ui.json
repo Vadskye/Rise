@@ -1529,20 +1529,6 @@
       ]
     },
     {
-      "name": "New Monster 21",
-      "folder": "Beasts",
-      "requiredProperties": {
-        "alignment": "",
-        "base_class": "",
-        "elite": false,
-        "creature_origin": "",
-        "creature_types": [],
-        "size": "",
-        "level": 0
-      },
-      "freeformCode": ""
-    },
-    {
       "name": "Shimmercat",
       "folder": "Beasts",
       "requiredProperties": {
