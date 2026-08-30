@@ -62,9 +62,9 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     mental: 3,
     maximum_stamina: 0,
   },
-  // Well rounded; +1 to all defenses, +2 durability.
+  // Well rounded; +1 to non-Armor defenses, +2 durability.
   leader: {
-    armor_defense: 4,
+    armor_defense: 3,
     durability: 4,
     injury_point_multiplier: 0.5,
     brawn: 4,
@@ -73,15 +73,15 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     mental: 4,
     maximum_stamina: 0,
   },
-  // Agile; +1 Armor and Reflex.
+  // Agile; +2 Armor and Reflex, +1 to other defenses, -2 durability
   skirmisher: {
-    armor_defense: 4,
-    durability: 2,
+    armor_defense: 5,
+    durability: 0,
     injury_point_multiplier: 0.5,
-    brawn: 3,
-    fortitude: 3,
-    reflex: 4,
-    mental: 3,
+    brawn: 4,
+    fortitude: 4,
+    reflex: 5,
+    mental: 4,
     maximum_stamina: 0,
   },
   // Fragile; baseline statistics.
