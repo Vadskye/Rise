@@ -1543,34 +1543,6 @@
       "freeformCode": ""
     },
     {
-      "name": "Mirrorweave ",
-      "folder": "Beasts",
-      "requiredProperties": {
-        "alignment": "",
-        "base_class": "",
-        "elite": false,
-        "creature_origin": "",
-        "creature_types": [],
-        "size": "",
-        "level": 0
-      },
-      "freeformCode": ""
-    },
-    {
-      "name": "M",
-      "folder": "Beasts",
-      "requiredProperties": {
-        "alignment": "chaotic neutral",
-        "base_class": "skirmisher",
-        "elite": false,
-        "creature_origin": "",
-        "creature_types": [],
-        "size": "",
-        "level": 0
-      },
-      "freeformCode": ""
-    },
-    {
       "name": "Shimmercat",
       "folder": "Beasts",
       "requiredProperties": {
