@@ -50,6 +50,18 @@ function generateSpellsSummary(
     .join(', ')}`;
 }
 
+function generateRitualsSummary(
+  category: string,
+  ritualsList: any[],
+): string {
+  if (!(ritualsList?.length > 0)) {
+    return '';
+  }
+  return `\\par\\noindent ${category}: ${ritualsList
+    .map((r) => `\\ritual{${r.name.toLowerCase()}}`)
+    .join(', ')}`;
+}
+
 export function generateMysticSphereRitualSummaries(): string {
   return mysticSpheres.map(generateMysticSphereRitualSummary).join('\n');
 }
@@ -65,7 +77,7 @@ function generateMysticSphereRitualSummary(sphere: MysticSphere): string {
 
       ${ranks
         .map((rank) =>
-          generateSpellsSummary(`Rank ${rank}`, sortByRankAndLevel(ritualsByRank[rank])),
+          generateRitualsSummary(`Rank ${rank}`, sortByRankAndLevel(ritualsByRank[rank])),
         )
         .filter(Boolean)
         .join('\n')}

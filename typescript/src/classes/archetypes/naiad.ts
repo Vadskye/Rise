@@ -36,9 +36,8 @@ export function naiad(): RankAbility[] {
       isMagical: true,
       rank: 2,
       description: `
-        The volume of water you can create with the \\spell{create water} cantrip is doubled.
-        This generally means that you can create a Small body of water with half a minute of work.
-        In addition, you do not consider casting that cantrip to be strenuous activity, so you can cast it continuously for longer than five minutes (see \\pcref{Maintain Exertion}).
+        You do not have to spend stamina to perform the \\ritual{create water} ritual.
+        In addition, you do not consider that ritual to be strenuous activity, so you can cast it continuously for longer than five minutes (see \\pcref{Maintain Exertion}).
       `,
     },
     {
@@ -116,7 +115,7 @@ export function naiad(): RankAbility[] {
       description: `
         The bonuses from your \\textit{water bond} ability increase to \\plus3.
         In addition, your bonded body of water becomes effectively impossible to contaminate.
-        The entire body of water is continuously purified, as if by the \\spell{purify water} ability, with contaminants shunted to the outside.
+        The entire body of water is continuously purified, as if by the \\ritual{purify water} ability, with contaminants shunted to the outside.
         It can still be physically destroyed with sufficient effort.
       `,
     },
