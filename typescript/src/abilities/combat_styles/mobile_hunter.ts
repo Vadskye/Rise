@@ -172,7 +172,7 @@ export const mobileHunter: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        If you are \\glossterm{midair} due to an intentional jump, you gain a \\plus1 accuracy bonus with the strike (see \\pcref{Jumping}).
+        If you are \\glossterm{midair}, you gain a \\plus1 accuracy bonus with the strike (see \\pcref{Jumping}).
         This bonus increases to \\plus2 against each target of the strike that is also midair.
       `,
       rank: 1,
@@ -184,7 +184,7 @@ export const mobileHunter: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} that deals double damage.
-        If you are \\glossterm{midair} due to an intentional jump, you gain a \\plus1 accuracy bonus with the strike (see \\pcref{Jumping}).
+        If you are \\glossterm{midair}, you gain a \\plus1 accuracy bonus with the strike (see \\pcref{Jumping}).
         This bonus increases to \\plus2 against each target of the strike that is also midair.
       `,
       rank: 5,
