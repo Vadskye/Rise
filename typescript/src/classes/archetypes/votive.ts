@@ -75,6 +75,7 @@ export function pactboundWarrior(): RankAbility[] {
         Your attack with the spell is a \\glossterm{reactive attack}.
         You do not spend time casting the spell, but each target must still meet any targeting requirements for the spell, such as being a living creature.
         You treat your rank with that spell as being equal to your excess rank, which limits the bonuses it gains from rank scaling.
+        Whenever you increase your spellcasting rank, you can change which spell you know with this maneuver.
 
         You can only apply this augment to maneuvers which cause you to make a melee \\glossterm{strike}, and you must choose a different spell each time you apply this augment to a maneuver.
         After you use this maneuver, you \\briefly can't use any spellfused maneuvers.
