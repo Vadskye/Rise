@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { BARRIER_COOLDOWN, BRIEF_PRONE, BLEEDING_HALF } from '../constants';
+import { BARRIER_COOLDOWN, BRIEF_PRONE, BLEEDING_HALF, MULTIHIT_CRIT, BURNING_HALF } from '../constants';
 
 export const fabrication: MysticSphere = {
   name: 'Fabrication',
@@ -893,20 +893,25 @@ export const fabrication: MysticSphere = {
       scaling: 'damage',
       tags: ['Manifestation', 'Physical'],
     },
-    // r3 area is drX-2. Add +1dr for double defense and +1dr for combo delay trigger.
+    // r3 area is drX-1. Add +1dr for double defense and +1dr for combo delay trigger,
+    // then -1dr for strong injury effect.
     {
       name: 'Powderkeg',
 
       attack: {
+        crit: MULTIHIT_CRIT,
         hit: `
           \\damagerankthreelow.
         `,
-        halfOnMiss: true,
+        miss: BURNING_HALF,
+        injury: `
+          The target \\glossterm{briefly} \\glossterm{burns} for \\damagerankthreelow.
+        `,
         targeting: `
           You create a Small powderkeg on the ground within \\shortrange.
           The powderkeg has 10 hit points, and it automatically takes 5 damage whenever you sustain this spell.
           It explodes when it reaches 0 hit points, or when it takes any damage from a \\atFire attack.
-          When it explodes, make an attack vs. Armor and Reflex against everything within a \\medarea radius of it.
+          When it explodes, make an attack vs. Armor and Reflex against everything within a \\smallarea radius of it.
 
           When you cast this spell, any other powderkegs you have created with it are immediately \\glossterm{dismissed}.
         `,
