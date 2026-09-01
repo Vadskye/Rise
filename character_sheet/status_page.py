@@ -406,7 +406,6 @@ def custom_statistic(i: str) -> str:
                     option({"value": "maximum_stamina"}, "Stamina maximum"),
                     option({"value": "stealth"}, "Stealth"),
                     option({"value": "strength"}, "Strength"),
-                    option({"value": "weapon_damage_dice"}, "Strike +d damage"),
                     option({"value": "survival"}, "Survival"),
                     option({"value": "vital_rolls"}, "Vital rolls"),
                     option({"value": "weight_limits"}, "Weight limits"),
