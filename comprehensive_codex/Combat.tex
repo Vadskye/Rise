@@ -840,9 +840,10 @@
     For area attacks, the point of origin depends on the shape of the area and whether it has a defined \glossterm{range}.
 
     If an area attack has a defined range, the point of origin is a single grid intersection of your choice within that range.
-    Otherwise, non-\glossterm{emanation} abilities use a grid intersection of your choice that is touching your space, just like targeted attacks.
-    Emanations are unusual, since they radiate from your whole body instead of a single point.
-    When determining their total size, treat every grid intersection touching your space as a point of origin.
+    Cones, lines, and walls without a range use a grid intersection of your choice that is touching your space, just like targeted attacks.
+    % This has to not just be emanations; consider effects like Powderkeg, which shouldn't be forced to choose a single point of origin.
+    Cylinders without a range are unusual, since they radiate from your whole body instead of a single point.
+    When determining their total size, treat every grid intersection touching the source creature or object's space as a point of origin.
     When determining cover and similar effects, only use the grid intersection that is closest to the target.
 
   \subsection{Cover}\label{Cover}
