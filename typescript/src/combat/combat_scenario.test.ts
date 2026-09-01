@@ -82,7 +82,7 @@ t.test('CombatScenario can simulate 1 Ankheg vs 10 Carrion Crows', (t) => {
   const scenario = createScenario([crowTeam, ankhegTeam]);
   const result = scenario.simulate(50);
 
-  assertExpectedTurnsCount(t, result, 3.2);
+  assertExpectedTurnsCount(t, result, 2);
   assertExpectedWinRate(t, result, 'Ankheg', 5);
   assertExpectedWinRate(t, result, 'Crows', 95);
   t.end();
@@ -102,7 +102,7 @@ t.test('CombatScenario can simulate 1 Ankheg vs 1 Ankheg', (t) => {
   const scenario = createScenario([ankhegTeam, ankhegTeam2]);
   const result = scenario.simulate(50);
 
-  assertExpectedTurnsCount(t, result, 5.9);
+  assertExpectedTurnsCount(t, result, 4.28);
   assertExpectedWinRate(t, result, 'Ankheg Team 1', 50.0);
   assertExpectedWinRate(t, result, 'Ankheg Team 2', 50.0);
   t.end();
@@ -234,7 +234,7 @@ t.test('One elite Ankheg is equivalent to four non-elite Ankhegs', (t) => {
   // This scenario is particularly flaky due to its complexity
   const result = scenario.simulate(100);
 
-  assertExpectedTurnsCount(t, result, 4.0);
+  assertExpectedTurnsCount(t, result, 2.85);
   assertExpectedWinRate(t, result, 'Elite Ankheg', 60);
   assertExpectedWinRate(t, result, 'Normal Ankhegs', 40);
   t.end();
@@ -258,7 +258,7 @@ t.test('One elite frostweb spider is equivalent to four non-elite frostweb spide
   const scenario = createScenario([eliteTeam, normalTeam]);
   const result = scenario.simulate(50);
 
-  assertExpectedTurnsCount(t, result, 6.9);
+  assertExpectedTurnsCount(t, result, 9);
   assertExpectedWinRate(t, result, 'Elite Frostweb Spider', 62);
   assertExpectedWinRate(t, result, 'Normal Frostweb Spiders', 38);
   t.end();
