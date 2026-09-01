@@ -415,12 +415,12 @@ export function arcaneSpellMastery(): RankAbility[] {
     },
     {
       complexity: 1,
-      name: 'Supreme Metamage',
+      name: 'Expert Metamage+',
       isMagical: true,
       rank: 5,
       description: `
         You can apply two metamagic effects to your spells, rather than the normal limit of one.
-        If a spell has two metamagic effects on it, you take a \minus1 accuracy penalty with it.
+        If a spell has two metamagic effects on it, you take a \\minus1 accuracy penalty with it.
       `,
     },
     {
