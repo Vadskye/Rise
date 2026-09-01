@@ -68,7 +68,7 @@ export function pactboundWarrior(): RankAbility[] {
         However, you \\glossterm{briefly} take a \\minus2 penalty to your defenses after you use the maneuver.
         You can only apply this augment to maneuvers which cause you to make a melee \\glossterm{strike} or \\glossterm{brawling attack}.
 
-        \\parhead{Spellfused Maneuver\\sparkle} Choose a \\glossterm{ranged} pact spell you know that does not have the \\atAttune or \\atSustain tags.
+        \\parhead{Spellfused Maneuver\\sparkle} Choose a \\glossterm{targeted} \\glossterm{ranged} pact spell you know that does not have the \\atAttune or \\atSustain tags.
         Its rank must not exceed your excess rank with the maneuver.
         Each target of the maneuver is also affected by that spell, using separate attack rolls for the spell and maneuver.
         Your attack with the spell is a \\glossterm{reactive attack}.
