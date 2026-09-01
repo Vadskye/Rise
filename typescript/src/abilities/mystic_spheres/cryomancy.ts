@@ -589,14 +589,14 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
 
       cost: ICE_CRYSTAL_AND_BARRIER,
       effect: `
-        You create a sphere of ice in a \\smallarea sphere within \\medrange.
-        The sphere fails to form in any occupied space, but its walls fill in the space as much as possible.
+        You create a cylinder of ice in a \\smallarea radius cylinder-shaped \\glossterm{zone} within \\medrange.
+        The cylinder fails to form in any occupied space, but its walls fill in the space as much as possible.
         It is visible as smooth, clear ice that does not block sight.
-        Nothing can pass through the sphere until it is destroyed.
+        Nothing can pass through the cylinder until it is destroyed.
 
-        The sphere as a whole has \\glossterm{hit points} equal to your \\glossterm{power}.
+        The cylinder as a whole has \\glossterm{hit points} equal to your \\glossterm{power}.
         If you spent an \\glossterm{ice crystal}, the wall has hit points equal to twice your power instead.
-        When the sphere is destroyed, it automatically reforms at the end of your next turn, ignoring any occupied spaces that would block it from reforming.
+        When the cylinder is destroyed, it automatically reforms at the end of your next turn, ignoring any occupied spaces that would block it from reforming.
       `,
       rank: 4,
       roles: ['barrier'],

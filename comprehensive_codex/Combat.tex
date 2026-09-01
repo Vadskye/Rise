@@ -310,9 +310,9 @@
       You travel that path, up to the limit of your available movement.
     \end{activeability}
 
-  \subsection{Measuring Movement}
+  \subsection{Measuring Distance}
 
-    For simplicity, all movement in combat is measured in five-foot increments.
+    For simplicity, all distances in combat are measured in five-foot increments.
     While it is possible to be more precise than that, it's generally not worth the complexity.
 
     \parhead{Squares}\nonsectionlabel{Squares} Area is commonly measured in 5-ft.\ by 5-ft.\ spaces called \glossterm{squares}.
@@ -323,6 +323,17 @@
     \parhead{Diagonals}\nonsectionlabel{Diagonals} When measuring distance, the first diagonal counts as five feet of movement, and the second counts as ten feet of movement.
     The third costs five feet, the fourth costs ten feet, and so on.
     You can move diagonally past corners and enemies.
+
+    \subsubsection{Vertical Distance}
+      Vertical distance is measured differently from horizontal distance.
+      When measuring distance between two points, use the maximum of the vertical distance and the horizontal distance.
+      Don't calculate an appropriate diagonal distance, like you would in real life.
+      This is unrealistic, but it's a useful simplification.
+
+      For example, a spell with 30 foot range can target something that is 30 feet away horizontally \textit{and} 30 feet away vertically.
+      However, it could not target something that is 35 feet away horizontally or 35 feet away vertically.
+      Similarly, moving in three dimensions (such as flying or jumping) consumes \glossterm{available movement} equal to the maximum of the horizontal distance and vertical distance moved.
+      Abilities that affect an area are generally shaped to affect vertical and horizontal dimensions similarly (see \pcref{Area Shapes}).
 
   \subsection{Movement Impediments}
 
@@ -438,9 +449,9 @@
     \subsubsection{Jumping Speed Limits}
       Movement while jumping subtracts from your \glossterm{available movement} just like any other movement.
       This distance is measured only for the farthest extent that you travel from your starting location, not for a round trip or for the entire distance travelled along the arc of your jump.
-      This limits both your maximum horizontal distance and your maximum vertical height.
-      For example, if your speed is thirty feet and you start by walking ten feet, you can jump no more than twenty feet forward, or fifteen feet forward and five feet vertically, and so on.
-      If your jump distance is extremely high and your speed is low, you may need to use the \ability{sprint} ability to make use of your full jumping potential (see \pcref{Sprint}).
+      This limits both your maximum horizontal distance and your maximum vertical height, using the maximum of the horizontal and vertical distance jumped.
+      For example, if your speed is thirty feet and you start by walking ten feet, you have twenty feet of available movement left, allowing you to jump up to twenty feet horizontally and vertically.
+      If your jump distance is extremely high and your speed is low, you may need to use the \ability{run} or \ability{sprint} abilities to make use of your full jumping potential (see \pcref{Sprint}).
 
   \subsection{Squeezing}\label{Squeezing}
     In some cases, you may have to squeeze into or through an area that isn't as wide as the space you take up.
@@ -514,6 +525,7 @@
 
   \subsection{Flight}\label{Flight}
     A creature with a fly speed can move both horizontally and vertically in midair using normal movement abilities.
+    Moving in three dimensions consumes \glossterm{available movement} equal to the maximum of the vertical distance and horizontal distance moved (see \pcref{Vertical Distance}).
 
     \parhead{Height Limit}\nonsectionlabel{Height Limit} Most abilities that grant a fly speed also have a height limit for the maximum height you can easily reach with that fly speed.
     This height measures your maximum distance above a supporting object.
@@ -828,9 +840,8 @@
     For area attacks, the point of origin depends on the shape of the area and whether it has a defined \glossterm{range}.
 
     If an area attack has a defined range, the point of origin is a single grid intersection of your choice within that range.
-    Cones, lines, and walls without a range use a grid intersection of your choice that is touching your space, just like targeted attacks.
-    % TODO: this should probably be unique to emanations, not just rangeless
-    Cylinders and spheres without a range are unusual, since they radiate from your whole body instead of a single point.
+    Otherwise, non-\glossterm{emanation} abilities use a grid intersection of your choice that is touching your space, just like targeted attacks.
+    Emanations are unusual, since they radiate from your whole body instead of a single point.
     When determining their total size, treat every grid intersection touching your space as a point of origin.
     When determining cover and similar effects, only use the grid intersection that is closest to the target.
 
@@ -1103,12 +1114,16 @@
 
   \subsection{Area Shapes}\label{Area Shapes}
 
-    \parhead{Cone} A cone extends from the point of origin in a quarter-hemisphere, up to the given length.
+    \parhead{Cone} A cone extends from the point of origin in a quarter-cylinder, up to the given length.
+    Unless otherwise specified, a cone's height is equal to its length, and the cone extends upwards from the point of origin.
     A square is affected by a cone if it is within the cone's 90 degree arc and all of the square's points of intersection are no more than the cone's length away from the cone's point of origin.
 
-    \parhead{Cylinder} A cylinder extends out from the point of origin in a circle, up to the given radius.
+    \parhead{Cylinder} A cylinder extends out from the point of origin horizontally in a circle, up to the given radius.
     Cylinders also have a specific height.
     Unless otherwise specified, a cylinder's height is the same as its radius.
+    Bursts and zones extend upwards from the point of origin.
+    Emanations extend both upwards and downwards from each point of origin.
+    Any ability which only specifies a radius for its area is cylinder-shaped.
 
     \parhead{Line} A line extends from the point of origin in a straight line, up to the given length and width.
     Unless otherwise specified, the height of a line-shaped ability is equal to its width.
@@ -1119,14 +1134,10 @@
     Its width and height are not affected.
     Vertical lines use ``length'' to refer to the vertical dimension, and ``width'' and ``height'' to refer to the two horizontal dimensions.
 
-    \parhead{Sphere} A sphere extends from the point of origin in all directions.
-    Any ability which only specifies a radius for its area is sphere-shaped.
-
     \parhead{Wall} A wall extends out from the point of origin in two dimensions equally, up to the given total length and height.
-    A wall's height is equal to half its length, to a minimum of 5 feet high.
+    A wall's height is equal to its length, to a minimum of 5 feet high.
     Narratively, all walls have a nonzero width.
     Mechanically, walls are considered to have no width and simply occupy the boundary between squares.
-
     All squares affected by a wall must be contiguous, so every square is adjacent to another affected square, treating diagonals as adjacent.
 
     The entire wall is considered to be a single object, and is attacked and destroyed as a single unit.
@@ -1137,35 +1148,37 @@
     If you create a wall within a space too small to hold it, it fills as much of the space as possible, starting from the middle of the chosen space.
     This can allow you to completely block off small tunnels.
 
+    Many walls have effects on things that pass through them.
+    Creatures pass through a wall when moving through it and when making melee \glossterm{strikes} through it using non-\weapontag{Long} weapons.
+
     Walls can normally be created within or adjacent to occupied squares, but not within solid objects.
     If a wall has hit points, it cannot be created inside the space of a single creature, but it can be created between two adjacent creatures.
     Walls without hit points can be created within the space occupied by a single creature, since they do not have physical substance.
 
-    \subsubsection{Area Types}\label{Area Types}
-      There are three common area types.
-      If an area's type is not mentioned, it is a burst.
-      \begin{raggeditemize}
-        \item Burst: Has an immediate effect and then ends.
-        \item Emanation: Has a duration based on a specific creature or object. If the source of the area moves, the area's effect moves with it.
-        \item Zone: Has a duration based on a location. Some zones can be moved after being created, but that movement is not tied to a specific creature or object.
-      \end{raggeditemize}
+  \subsection{Area Types}\label{Area Types}
+    There are three common area types.
+    If an area's type is not mentioned, it is a burst.
+    \begin{raggeditemize}
+      \item Burst: Has an immediate effect and then ends.
+      \item Emanation: Has a duration based on a specific creature or object. If the source of the area moves, the area's effect moves with it.
+      \item Zone: Has a duration based on a location. Some zones can be moved after being created, but that movement is not tied to a specific creature or object.
+    \end{raggeditemize}
 
-      If a burst or emanation is centered on a creature, it normally includes that creature.
-      However, if it is centered on the creature using the ability, that creature can choose whether they are included when they use the ability.
+    If a burst or emanation is centered on a creature, it normally includes that creature.
+    However, if it is centered on the creature using the ability, that creature can choose whether they are included when they use the ability.
 
-    \subsubsection{Shapeable Areas}\label{Shapeable Areas}
-      Some areas are shapeable, which means that you can change their shape within some constraints.
-      What exactly it means for an area to be shapeable depends on the area's original shape.
-      In all cases, a shapeable area must still be a single contiguous shape that includes the area's \glossterm{point of origin}.
-      \begin{raggeditemize}
-        \item Cone: You can exclude any number of squares within the area.
-        \item Cylinder: You can exclude any number of squares within the area.
-        \item Line: The line can bend at 45 degree or 90 degree angles at any number of point during its path.
-        \item Sphere: You can exclude any number of squares within the area.
-        \item Walla: The wall can bend at 45 degree or 90 degree angles at any number of points during its path.
-      \end{raggeditemize}
+  \subsection{Shapeable Areas}\label{Shapeable Areas}
+    Some areas are shapeable, which means that you can change their shape within some constraints.
+    What exactly it means for an area to be shapeable depends on the area's original shape.
+    In all cases, a shapeable area must still be a single contiguous shape that includes the area's \glossterm{point of origin}.
+    \begin{raggeditemize}
+      \item Cone: You can exclude any number of squares within the area.
+      \item Cylinder: You can exclude any number of squares within the area.
+      \item Line: The line can bend at 45 degree or 90 degree angles at any number of point during its path.
+      \item Wall: The wall can bend at 45 degree or 90 degree angles at any number of points during its path.
+    \end{raggeditemize}
 
-      For example, you could convert a shapeable sphere into a cube or square, as long as the cube or square would fit entirely within the original area affected by the sphere.
+    For example, you could convert a shapeable cylinder into a cube or square, as long as the cube or square would fit entirely within the original area affected by the cylinder.
 
   \subsection{Impossible Abilities}
     When you try to use an ability in an impossible way, it simply fails with no effect.

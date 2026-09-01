@@ -57,3 +57,12 @@ Most classes provide a +3 bonus to non-Armor defenses, and a +0 bonus to Armor d
 
 > [!IMPORTANT]
 > **Helper Columns:** Many class tables include a **Bonus** column equal to `floor(Level / 2)`. Do **not** add this value on top of the formulas above; it is a reference for the `half-level` component already included in Accuracy, Power, and Defenses.
+
+## 7. 3D Distance & Movement
+
+`Distance = max(HorizontalDistance, VerticalDistance)`
+
+- Used for both 3D range and 3D movement costs (flight, jumping).
+- Never calculate Euclidean hypotenuse for vertical distance.
+- Horizontal diagonals still use alternating 5-10-5.
+

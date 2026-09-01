@@ -74,6 +74,7 @@ The combat rules also generally cover situations where time and precise position
 
   You might be playing with a gridded battlemap with figures for each character, or you might be just imagining the world.
   Movement on a grid or hex map is typically more precise and tactical, while purely mental scenes tend to be more loose about exact distances and positioning.
+  When moving or measuring distance in three dimensions (such as jumping or flying), distance is measured using the maximum of the horizontal distance and vertical distance moved.
   As usual, talk to your GM about what you each want from the game.
 
 \section{Universal Combat Abilities}
@@ -162,15 +163,14 @@ The combat rules also generally cover situations where time and precise position
 
       There are six common area sizes: \tinyarea, \smallarea, \medarea, \largearea, \hugearea, and \gargarea.
 
-      There are five common area shapes.
-      If an area's shape is not mentioned, it is a sphere.
+      There are four common area shapes.
+      Any ability which only specifies a radius for its area is cylinder-shaped.
       \begin{raggeditemize}
         % TODO: cones don't make sense with a single point of origin. Add pictures?
-        \item Cone: A 90 degree arc, measured by length. A cone's height is normally 5 feet.
-        \item Cylinder: A circle with a height, measured by radius. A cylinder's height is normally equal to its radius.
+        \item Cone: A 90 degree arc, measured by length. A cone's height is normally equal to its length, and it extends upwards from the point of origin.
+        \item Cylinder: A circle with a height, measured by radius. A cylinder's height is normally equal to its radius. Bursts and zones extend upwards, while emanations extend both upwards and downwards.
         \item Line: A straight line, measured by length. A line is normally 5 feet wide and 5 feet high.
-        \item Sphere: A sphere, measured by radius.
-        \item Wall: A straight line, measured by length. A wall's height is normally equal to half its length, and its width is essentially zero. A wall is always a \glossterm{zone}, not a \glossterm{burst} or an \glossterm{emanation}.
+        \item Wall: A straight line, measured by length. A wall's height is normally equal to its length, and its width is essentially zero. A wall is always a \glossterm{zone}, not a \glossterm{burst} or an \glossterm{emanation}.
       \end{raggeditemize}
 
   \subsection{Dismissal}\label{Dismissal}

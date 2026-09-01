@@ -19,7 +19,7 @@ This is a Gemini-generated summary of the Rise combat rules defined in `comprehe
 
 **Movement & Positioning:**
 *   Jumping distances are determined by Strength and the Athletics skill.
-*   Movement is measured in 5-foot increments, with specific rules for diagonals.
+*   Movement is measured in 5-foot increments, with specific rules for horizontal diagonals (5-10-5). Distance and movement in 3D (jumping, flight) are measured using Chebyshev distance: max(horizontal, vertical).
 *   Impediments include Difficult Terrain, Obstacles, and Undergrowth (Light/Heavy).
 *   Squeezing rules apply for tight spaces or shared spaces.
 *   Forced Movement comes in two types: Push (constant force, ends at obstacles, allows reactive Athletics checks) and Fling (single impact, damages on collision, no support needed).
@@ -43,7 +43,7 @@ This is a Gemini-generated summary of the Rise combat rules defined in `comprehe
 *   Usage Components (Verbal, Somatic) are necessary for some abilities.
 *   "Functioning Like Other Abilities" means inheriting effects and bonuses but not rank upgrades.
 *   Rules for Touch Range, Noticing Abilities, and various Ability Targeting scenarios (Primary/Secondary, Invalid, Unknown Locations, Targeting Proxies).
-*   Understanding of Area Shapes (Cone, Cylinder, Line, Sphere, Wall) and Area Types (Burst, Emanation, Zone).
+*   Understanding of Area Shapes (Cone, Cylinder, Line, Wall) and Area Types (Burst, Emanation, Zone). Any ability specifying only a radius is a Cylinder extending upwards (or both up and down for emanations).
 *   Impossible Abilities simply fail.
 *   Ability Durations include Attuned (single/deep/targeted attunement points), Conditions (last until removed), Sustained (action to sustain, can be attuned), and Permanent.
 *   Rules for Combining Effects (conflicting effects, precedence) and Suppressing Abilities.
