@@ -381,21 +381,21 @@ export function pactSpellMastery(): RankAbility[] {
       `,
     },
     {
-      complexity: 0,
-      name: 'Spell-Trained Mind',
-      isMagical: true,
-      rank: 3,
-      description: `
-        You gain a \\plus1 bonus to your Willpower.
-      `,
-    },
-    {
       complexity: 2,
       name: 'Spell Knowledge',
       isMagical: true,
-      rank: 4,
+      rank: 3,
       description: `
         You learn an additional pact spell.
+      `,
+    },
+    {
+      complexity: 0,
+      name: 'Spell-Trained Mind',
+      isMagical: true,
+      rank: 4,
+      description: `
+        You gain a \\plus1 bonus to your Willpower.
       `,
     },
     {
@@ -404,7 +404,7 @@ export function pactSpellMastery(): RankAbility[] {
       isMagical: true,
       rank: 5,
       description: `
-        You gain an additional metamagic ability.
+        You gain two additional metamagic abilities.
       `,
     },
     {
@@ -636,7 +636,7 @@ export function pactMagicModifiers(creature: Creature, rank: number) {
 
 export function pactSpellMasteryModifiers(creature: Creature, rank: number) {
   applyArchetypeActiveAbilities(creature, pactSpellMastery(), rank);
-  if (rank >= 3) {
+  if (rank >= 4) {
     creature.addSimpleModifier({
       name: 'Spell-Trained Mind',
       statistic: 'willpower',

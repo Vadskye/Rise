@@ -176,9 +176,19 @@ export function divineSpellExpertise(): RankAbility[] {
     },
     {
       complexity: 0,
-      name: 'Spell-Trained Mind',
+      name: 'Mystic Power',
       isMagical: true,
       rank: 3,
+      description: `
+        You gain a \\plus1 bonus to your \\glossterm{magical power}.
+        If your Strength is 4 or higher, you gain an additional \\plus1 bonus.
+      `,
+    },
+    {
+      complexity: 0,
+      name: 'Spell-Trained Mind',
+      isMagical: true,
+      rank: 4,
       description: `
         You gain a \\plus1 bonus to your Willpower.
       `,
@@ -187,18 +197,9 @@ export function divineSpellExpertise(): RankAbility[] {
       complexity: 1,
       name: 'Attunement Point',
       isMagical: true,
-      rank: 4,
-      description: `
-        You gain an additional \\glossterm{attunement point}.
-      `,
-    },
-    {
-      complexity: 1,
-      name: 'Divine Spell Versatility+',
-      isMagical: true,
       rank: 5,
       description: `
-        You learn an additional spell with this ability.
+        You gain an additional \\glossterm{attunement point}.
       `,
     },
     {

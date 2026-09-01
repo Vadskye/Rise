@@ -392,34 +392,35 @@ export function arcaneSpellMastery(): RankAbility[] {
       isMagical: true,
       rank: 2,
       description: `
-        You can spend \\glossterm{insight points} to learn one additional metamagic ability per insight point.
-      `,
-    },
-    {
-      complexity: 0,
-      name: 'Spell-Trained Understanding',
-      isMagical: true,
-      rank: 3,
-      description: `
-        You gain a \\plus1 bonus to your Intelligence.
+        You can spend \\glossterm{insight points} to learn two additional metamagic abilities per insight point.
       `,
     },
     {
       complexity: 2,
       name: 'Spell Knowledge',
       isMagical: true,
-      rank: 4,
+      rank: 3,
       description: `
         You learn an additional arcane spell.
       `,
     },
     {
+      complexity: 0,
+      name: 'Spell-Trained Understanding',
+      isMagical: true,
+      rank: 4,
+      description: `
+        You gain a \\plus1 bonus to your Intelligence.
+      `,
+    },
+    {
       complexity: 1,
-      name: 'Metamagic+',
+      name: 'Expert Metamage',
       isMagical: true,
       rank: 5,
       description: `
-        You gain an additional metamagic ability.
+        You can apply two metamagic effects to your spells, rather than the normal limit of one.
+        If a spell has two metamagic effects on it, you take a \minus1 accuracy penalty with it.
       `,
     },
     {
@@ -638,7 +639,7 @@ export function arcaneScholarModifiers(creature: Creature, rank: number) {
 
 export function arcaneSpellMasteryModifiers(creature: Creature, rank: number) {
   applyArchetypeActiveAbilities(creature, arcaneSpellMastery(), rank);
-  if (rank >= 3) {
+  if (rank >= 4) {
     creature.addSimpleModifier({
       name: 'Spell-Trained Understanding',
       statistic: 'intelligence',
