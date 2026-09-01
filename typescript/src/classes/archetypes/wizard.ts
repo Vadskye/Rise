@@ -415,7 +415,7 @@ export function arcaneSpellMastery(): RankAbility[] {
     },
     {
       complexity: 1,
-      name: 'Expert Metamage',
+      name: 'Supreme Metamage',
       isMagical: true,
       rank: 5,
       description: `
