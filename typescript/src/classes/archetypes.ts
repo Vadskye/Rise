@@ -87,7 +87,7 @@ export function getArchetypeClass(archetype: ClassArchetype): Class {
       return 'Rogue';
     // Sorcerer
     case 'SorcererArcaneMagic':
-    case 'SorcererArcaneSpellMastery':
+    case 'ArcaneSpellIntuition':
     case 'DraconicMagic':
     case 'InnateArcanist':
     case 'WildMagic':
@@ -102,7 +102,7 @@ export function getArchetypeClass(archetype: ClassArchetype): Class {
     // Wizard
     case 'Alchemist':
     case 'WizardArcaneMagic':
-    case 'WizardArcaneSpellMastery':
+    case 'ArcaneSpellMastery':
     case 'ArcaneScholar':
     case 'SchoolSpecialist':
       return 'Wizard';
@@ -216,8 +216,8 @@ export function getArchetypeName(archetype: ClassArchetype): string {
       return 'Suave Scoundrel';
     case 'SorcererArcaneMagic':
       return 'Arcane Magic';
-    case 'SorcererArcaneSpellMastery':
-      return 'Arcane Spell Mastery';
+    case 'ArcaneSpellIntuition':
+      return 'Arcane Spell Intuition';
     case 'DraconicMagic':
       return 'Draconic Magic';
     case 'InnateArcanist':
@@ -238,7 +238,7 @@ export function getArchetypeName(archetype: ClassArchetype): string {
       return 'Alchemist';
     case 'WizardArcaneMagic':
       return 'Arcane Magic';
-    case 'WizardArcaneSpellMastery':
+    case 'ArcaneSpellMastery':
       return 'Arcane Spell Mastery';
     case 'ArcaneScholar':
       return 'Arcane Scholar';
@@ -420,7 +420,7 @@ export function getArchetypeShortDescription(archetype: ClassArchetype): string 
     case 'SorcererArcaneMagic':
       description = 'This archetype grants you the ability to cast arcane spells.';
       break;
-    case 'SorcererArcaneSpellMastery':
+    case 'ArcaneSpellIntuition':
       description =
         'You must have the Arcane Magic archetype from the sorcerer class to gain the abilities from this archetype.';
       break;
@@ -465,7 +465,7 @@ export function getArchetypeShortDescription(archetype: ClassArchetype): string 
       description =
         'This archetype deepens your study of arcane magic. You must have the Arcane Magic archetype from the wizard class to gain the abilities from this archetype.';
       break;
-    case 'WizardArcaneSpellMastery':
+    case 'ArcaneSpellMastery':
       description =
         'You must have the Arcane Magic archetype from the wizard class to gain the abilities from this archetype.';
       break;
@@ -589,8 +589,8 @@ export function getArchetypeRankAbilities(archetype: ClassArchetype): RankAbilit
     // Sorcerer
     case 'SorcererArcaneMagic':
       return sorcerer.arcaneMagic();
-    case 'SorcererArcaneSpellMastery':
-      return sorcerer.arcaneSpellMastery();
+    case 'ArcaneSpellIntuition':
+      return sorcerer.arcaneSpellIntuition();
     case 'DraconicMagic':
       return sorcerer.draconicMagic();
     case 'InnateArcanist':
@@ -615,7 +615,7 @@ export function getArchetypeRankAbilities(archetype: ClassArchetype): RankAbilit
       return wizard.alchemist();
     case 'WizardArcaneMagic':
       return wizard.arcaneMagic();
-    case 'WizardArcaneSpellMastery':
+    case 'ArcaneSpellMastery':
       return wizard.arcaneSpellMastery();
     case 'ArcaneScholar':
       return wizard.arcaneScholar();
@@ -761,7 +761,7 @@ export function getArchetypesForClass(cls: Class): ClassArchetype[] {
     case 'Sorcerer':
       return [
         'SorcererArcaneMagic',
-        'SorcererArcaneSpellMastery',
+        'ArcaneSpellIntuition',
         'DraconicMagic',
         'InnateArcanist',
         'WildMagic',
@@ -771,7 +771,7 @@ export function getArchetypesForClass(cls: Class): ClassArchetype[] {
     case 'Wizard':
       return [
         'WizardArcaneMagic',
-        'WizardArcaneSpellMastery',
+        'ArcaneSpellMastery',
         'Alchemist',
         'ArcaneScholar',
         'SchoolSpecialist',

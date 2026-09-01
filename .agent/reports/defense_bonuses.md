@@ -52,7 +52,7 @@ This report lists and analyzes all class abilities, species features, cleric dom
 
 ### 9. Sorcerer
 
-- **Experienced Spellcaster** (_SorcererArcaneSpellMastery, Rank 7_): Grants a **`\plus1` bonus to Fortitude defense**.
+- **Experienced Spellcaster** (_ArcaneSpellIntuition, Rank 7_): Grants a **`\plus1` bonus to Fortitude defense**.
 - **Mystic Supremacy** (_InnateArcanist, Rank 7_): Grants a **`\plus2` bonus to defenses against magical attacks**.
 
 ### 10. Votive
@@ -62,7 +62,7 @@ This report lists and analyzes all class abilities, species features, cleric dom
 
 ### 11. Wizard
 
-- **Experienced Spellcaster** (_WizardArcaneSpellMastery, Rank 7_): Grants a **`\plus1` bonus to Mental defense**.
+- **Experienced Spellcaster** (_ArcaneSpellMastery, Rank 7_): Grants a **`\plus1` bonus to Mental defense**.
 - **Alchemical Tolerance** (_Alchemist, Rank 3_): Grants a **`\plus1` bonus to Fortitude defense**.
 - **School Specialization+** (_SchoolSpecialist, Rank 4_): Under Transmutation school, increases the defense bonus to **`\plus3`** (base version is Rank 1, providing `\plus2` to a chosen defense).
 - **School Specialization++** (_SchoolSpecialist, Rank 7_):

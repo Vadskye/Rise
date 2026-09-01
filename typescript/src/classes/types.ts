@@ -73,7 +73,7 @@ export type ClassArchetype =
   | 'SuaveScoundrel'
   // Sorcerer
   | 'SorcererArcaneMagic'
-  | 'SorcererArcaneSpellMastery'
+  | 'ArcaneSpellIntuition'
   | 'DraconicMagic'
   | 'InnateArcanist'
   | 'WildMagic'
@@ -86,7 +86,7 @@ export type ClassArchetype =
   // Wizard
   | 'Alchemist'
   | 'WizardArcaneMagic'
-  | 'WizardArcaneSpellMastery'
+  | 'ArcaneSpellMastery'
   | 'ArcaneScholar'
   | 'SchoolSpecialist'
   // Uncommon species

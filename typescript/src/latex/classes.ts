@@ -75,7 +75,7 @@ export function generateArchetypeDescriptions(): string {
     'SuaveScoundrel',
     // Sorcerer
     'SorcererArcaneMagic',
-    'SorcererArcaneSpellMastery',
+    'ArcaneSpellIntuition',
     'DraconicMagic',
     'InnateArcanist',
     'WildMagic',
@@ -87,7 +87,7 @@ export function generateArchetypeDescriptions(): string {
     'Soulforged',
     // Wizard
     'WizardArcaneMagic',
-    'WizardArcaneSpellMastery',
+    'ArcaneSpellMastery',
     'Alchemist',
     'ArcaneScholar',
     'SchoolSpecialist',

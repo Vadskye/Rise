@@ -65,7 +65,7 @@ export function arcaneMagic(): RankAbility[] {
   return abilities;
 }
 
-export function arcaneSpellMastery(): RankAbility[] {
+export function arcaneSpellIntuition(): RankAbility[] {
   return [
     {
       complexity: 1,
@@ -464,8 +464,8 @@ export function arcaneMagicModifiers(creature: Creature, rank: number) {
   }
 }
 
-export function arcaneSpellMasteryModifiers(creature: Creature, rank: number) {
-  applyArchetypeActiveAbilities(creature, arcaneSpellMastery(), rank);
+export function arcaneSpellIntuitionModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, arcaneSpellIntuition(), rank);
   if (rank >= 1) {
     creature.addSimpleModifier({
       name: 'Arcane Dynamo',
