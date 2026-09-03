@@ -1,7 +1,8 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
-import { saveTypeScriptFile, DatabaseData } from './codegen';
+import { saveTypeScriptFile } from './codegen';
+import { DatabaseData, MonsterGroupData } from '../src/types/monster';
 import { validateMonster } from './validate';
 import { keepOnlyCharacterSheets } from '@src/character_sheet/current_character_sheet';
 import { showDetailedTiming } from './timing';
@@ -68,7 +69,7 @@ export function saveDb(db: DatabaseData) {
  * except the individual monsters array), used to detect whether the group-level
  * settings changed between saves.
  */
-function groupSharedFingerprint(group: import('./codegen').MonsterGroupData): string {
+function groupSharedFingerprint(group: MonsterGroupData): string {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { monsters: _monsters, ...shared } = group;
   return JSON.stringify(shared);

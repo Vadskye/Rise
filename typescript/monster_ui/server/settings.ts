@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { paths } from './paths';
-import { SidebarSelection } from '../src/components/MonsterSidebar';
+import { SidebarSelection } from '../src/types/monster';
 
 export interface AppSettings {
   lastActiveSelection?: SidebarSelection;

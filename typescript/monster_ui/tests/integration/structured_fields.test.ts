@@ -53,7 +53,7 @@ describe('Monster UI Integration Tests - Structured Fields', () => {
           traits: ['quadrupedal'],
           customSenses: [{ type: 'Darkvision', range: 60 }],
           customMovementSpeeds: [
-            { mode: 'Fly', category: 'average', limitType: 'limit', limitValue: 40 },
+            { mode: 'Fly', category: 'average' as const, limitType: 'limit' as const, limitValue: 40 },
           ],
           immunities: ['Fire'],
           resistances: ['Cold'],

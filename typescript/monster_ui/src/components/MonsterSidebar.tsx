@@ -1,11 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { DatabaseData } from '../types/monster';
-
-export type SidebarSelection =
-  | { type: 'monster'; name: string }
-  | { type: 'group'; name: string }
-  | { type: 'group-monster'; groupName: string; name: string }
-  | null;
+import { DatabaseData, SidebarSelection } from '../types/monster';
 
 interface MonsterSidebarProps {
   db: DatabaseData;

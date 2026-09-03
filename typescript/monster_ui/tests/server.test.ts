@@ -169,7 +169,7 @@ describe('Monster UI Integration Tests (Full Server)', () => {
     const finalDb = getDb();
     const savedGroup = finalDb.monsterGroups.find((g: any) => g.name === testGroupName);
     expect(savedGroup).toBeDefined();
-    const savedMonster = savedGroup.monsters.find((m: any) => m.name === testGroupMonsterName);
+    const savedMonster = savedGroup!.monsters.find((m: any) => m.name === testGroupMonsterName);
     expect(savedMonster).toBeDefined();
 
     // Verify generated TS

@@ -1,6 +1,5 @@
 import { Creature } from '@src/character_sheet/creature';
 import { RISE_ATTRIBUTES } from '@src/core_mechanics/attributes';
-import { MonsterGroup } from '@src/monsters/grimoire';
 
 /**
  * Shared validation logic and warning message generation for the Monster Creator.
@@ -80,9 +79,18 @@ export function formatNoStandardActionWarning(name: string): string {
   return `Monster "${name}" must have at least one standard action ability.`;
 }
 
+export interface MonsterGroupLike {
+  knowledge?: {
+    easy?: string;
+    normal?: string;
+    hard?: string;
+    legendary?: string;
+  };
+}
+
 export function checkValidMonster(
   creature: Creature,
-  parentGroup?: MonsterGroup,
+  parentGroup?: MonsterGroupLike,
 ): { requirements: string[]; guidelines: string[] } {
   const requirements: string[] = [];
   const guidelines: string[] = [];

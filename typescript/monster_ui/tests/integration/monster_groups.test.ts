@@ -82,7 +82,7 @@ describe('Monster UI Integration Tests - Monster Groups', () => {
     const targetMonster = targetGroup.monsters[0];
     const previewResult = generatePreview(
       targetMonster,
-      targetGroup.sharedFreeformCode,
+      targetGroup,
       targetGroup.name,
     );
     expect(previewResult.success).toBe(true);
@@ -95,7 +95,7 @@ describe('Monster UI Integration Tests - Monster Groups', () => {
     const savedGroup = finalDb.monsterGroups.find((g: any) => g.name === testGroupName);
     expect(savedGroup).toBeDefined();
     expect(savedGroup!.sharedFreeformCode).toBe('// shared group code test');
-    const savedMonster = savedGroup.monsters.find((m: any) => m.name === testGroupMonsterName);
+    const savedMonster = savedGroup!.monsters.find((m: any) => m.name === testGroupMonsterName);
     expect(savedMonster).toBeDefined();
     expect(savedMonster!.freeformCode).toBe('// group monster specific test');
 

@@ -1,4 +1,4 @@
-import { MonsterData, MonsterGroupData } from './codegen';
+import { MonsterData, MonsterGroupData } from '../src/types/monster';
 import { generatePreview } from './preview';
 
 /**

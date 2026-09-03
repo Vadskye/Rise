@@ -7,12 +7,11 @@ import {
 } from '@src/character_sheet/current_character_sheet';
 import { handleEverything, MonsterAttackUsageTime } from '@src/character_sheet/sheet_worker';
 import {
-  MonsterData,
-  MonsterGroupData,
   toCustomMonsterAbility,
   formatStructuredSense,
   formatStructuredMovementSpeed,
 } from './codegen';
+import { MonsterData, MonsterGroupData } from '../src/types/monster';
 import { RiseSkill } from '@src/core_mechanics/skills';
 import {
   RiseTrait,
@@ -355,7 +354,7 @@ export function buildCreature(monster: MonsterData, group?: MonsterGroupData): B
 
     const calcDuration = performance.now() - calcStart;
 
-    const validation = checkValidMonster(creature, monster, group);
+    const validation = checkValidMonster(creature, group);
     requirements.push(...validation.requirements);
     guidelines.push(...validation.guidelines);
 

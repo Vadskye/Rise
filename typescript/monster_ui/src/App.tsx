@@ -5,8 +5,9 @@ import {
   MonsterGroupData,
   ComputedStats,
   SaveRequestPayload,
+  SidebarSelection,
 } from './types/monster';
-import { MonsterSidebar, SidebarSelection } from './components/MonsterSidebar';
+import { MonsterSidebar } from './components/MonsterSidebar';
 import { MonsterForm } from './components/MonsterForm';
 import { BookPreview } from './components/BookPreview';
 import { ValidationBox } from './components/ValidationBox';

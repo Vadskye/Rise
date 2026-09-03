@@ -9,7 +9,7 @@ import {
   getSocialComponents,
   getOtherSkillsComponents,
 } from '@src/latex/monsters/convert_monster_to_latex';
-import { MonsterData, MonsterGroupData } from './codegen';
+import { MonsterData, MonsterGroupData } from '../src/types/monster';
 import { convertLatexToWebText } from '@src/latex/monsters/player_abilities';
 import { buildCreature } from './creature_builder';
 import { showDetailedTiming } from './timing';

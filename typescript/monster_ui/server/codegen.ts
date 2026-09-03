@@ -5,7 +5,20 @@ import { paths } from './paths';
 import { CustomMonsterAbility } from '@src/character_sheet/creature';
 import { MonsterAttackUsageTime } from '@src/character_sheet/sheet_worker';
 import { RiseAbilityDefinitionTag } from '@src/character_sheet/rise_data';
-import { StructuredSense, StructuredMovementSpeed } from '../src/types/monster';
+import {
+  MonsterRequiredProperties,
+  StandardAbilityConfig,
+  CustomAbilityAttackConfig,
+  CustomAbilityConfig,
+  PassiveAbilityConfig,
+  WeaponConfig,
+  StructuredSense,
+  StructuredMovementSpeed,
+  MonsterData,
+  MonsterGroupKnowledge,
+  MonsterGroupData,
+  DatabaseData,
+} from '../src/types/monster';
 
 export function formatStructuredSense(sense: StructuredSense): string {
   const name = sense.type === 'Other' ? sense.customName || 'Custom' : sense.type;
@@ -95,129 +108,6 @@ function formatValueToTS(value: any, indent = ''): string {
     return `{\n${lines.join(',\n')}\n${indent}}`;
   }
   return String(value);
-}
-
-export interface MonsterRequiredProperties {
-  alignment: string;
-  base_class: string;
-  elite: boolean;
-  creature_origin: string;
-  creature_types: string[];
-  size: string;
-  level: number;
-}
-
-export interface StandardAbilityConfig {
-  type: 'spell' | 'maneuver';
-  name: string;
-  options?: {
-    displayName?: string;
-    usageTime?: string;
-    isMagical?: boolean;
-    weapon?: string;
-    tags?: string[];
-  };
-}
-
-export interface CustomAbilityAttackConfig {
-  targeting: string;
-  hit: string;
-  crit?: string | null;
-  miss?: string;
-  injury?: string;
-  halfOnMiss?: boolean;
-}
-
-export interface CustomAbilityConfig {
-  type: 'spell' | 'maneuver';
-  name: string;
-  usageTime?: string;
-  cost?: string;
-  effect?: string;
-  isMagical?: boolean;
-  tags?: string[];
-  attack?: CustomAbilityAttackConfig;
-  weapon?: string;
-}
-
-export interface PassiveAbilityConfig {
-  name: string;
-  effect: string;
-  isMagical: boolean;
-}
-
-export interface WeaponConfig {
-  name: string;
-  options?: {
-    displayName?: string;
-    isMagical?: boolean;
-  };
-}
-
-export interface MonsterData {
-  name: string;
-  folder?: string;
-  requiredProperties: MonsterRequiredProperties;
-  freeformCode: string;
-  baseAttributes?: [number, number, number, number, number, number];
-  trainedSkills?: string[];
-  knowledge?: {
-    easy?: string;
-    normal?: string;
-    hard?: string;
-    legendary?: string;
-  };
-  traits?: string[];
-  customSenses?: StructuredSense[];
-  customMovementSpeeds?: StructuredMovementSpeed[];
-  immunities?: string[];
-  resistances?: string[];
-  vulnerabilities?: string[];
-  equippedArmor?: string;
-  equippedShield?: string;
-  properties?: Record<string, string | number | boolean>;
-  standardAbilities?: StandardAbilityConfig[];
-  customAbilities?: CustomAbilityConfig[];
-  passiveAbilities?: PassiveAbilityConfig[];
-  weapons?: WeaponConfig[];
-  rituals?: string[];
-}
-
-export interface MonsterGroupKnowledge {
-  easy?: string;
-  normal?: string;
-  hard?: string;
-  legendary?: string;
-}
-
-export interface MonsterGroupData {
-  name: string;
-  folder?: string;
-  knowledge?: MonsterGroupKnowledge;
-  description?: string;
-  hasArt: boolean;
-  sharedFreeformCode: string;
-  monsters: MonsterData[];
-  traits?: string[];
-  customSenses?: StructuredSense[];
-  customMovementSpeeds?: StructuredMovementSpeed[];
-  immunities?: string[];
-  resistances?: string[];
-  vulnerabilities?: string[];
-  equippedArmor?: string;
-  equippedShield?: string;
-  properties?: Record<string, string | number | boolean>;
-  standardAbilities?: StandardAbilityConfig[];
-  customAbilities?: CustomAbilityConfig[];
-  passiveAbilities?: PassiveAbilityConfig[];
-  weapons?: WeaponConfig[];
-  rituals?: string[];
-}
-
-export interface DatabaseData {
-  monsters: MonsterData[];
-  monsterGroups: MonsterGroupData[];
-  folders?: string[];
 }
 
 export function toCustomMonsterAbility(ability: CustomAbilityConfig): CustomMonsterAbility {

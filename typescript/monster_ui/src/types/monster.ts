@@ -198,3 +198,9 @@ export interface SaveRequestPayload {
   };
   deleteFolder?: string;
 }
+
+export type SidebarSelection =
+  | { type: 'monster'; name: string }
+  | { type: 'group'; name: string }
+  | { type: 'group-monster'; groupName: string; name: string }
+  | null;

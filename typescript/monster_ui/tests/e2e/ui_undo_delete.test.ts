@@ -143,7 +143,7 @@ describe('Monster UI Delete Undo Integration Tests', () => {
     expect(toast).toBeDefined();
 
     // Verify message content
-    const toastText = await page.evaluate((el) => el.textContent, toast);
+    const toastText = await page.evaluate((el) => el?.textContent, toast!);
     expect(toastText).toContain('Deleted individual monster "New Monster 1"');
 
     // Verify monster is removed from sidebar
@@ -236,7 +236,7 @@ describe('Monster UI Delete Undo Integration Tests', () => {
 
     // Verify toast shows delete of member
     let toast = await page.waitForSelector('[data-testid="undo-toast"]', { timeout: 2000 });
-    let toastText = await page.evaluate((el) => el.textContent, toast);
+    let toastText = await page.evaluate((el) => el?.textContent, toast!);
     expect(toastText).toContain('Deleted monster "New Member 1" from group "New Group 1"');
 
     // Verify member is gone from sidebar
@@ -247,7 +247,7 @@ describe('Monster UI Delete Undo Integration Tests', () => {
 
     // Click Undo
     const undoMemberBtn = await page.waitForSelector('[data-testid="undo-btn"]', { timeout: 2000 });
-    await undoMemberBtn.click();
+    await undoMemberBtn!.click();
 
     // Verify member is back
     groupMonsterItem = await page.waitForSelector(
@@ -267,7 +267,7 @@ describe('Monster UI Delete Undo Integration Tests', () => {
 
     // Verify toast shows delete of group
     toast = await page.waitForSelector('[data-testid="undo-toast"]', { timeout: 2000 });
-    toastText = await page.evaluate((el) => el.textContent, toast);
+    toastText = await page.evaluate((el) => el?.textContent, toast!);
     expect(toastText).toContain('Deleted group "New Group 1" and all its monsters');
 
     // Verify group is gone from sidebar
@@ -276,7 +276,7 @@ describe('Monster UI Delete Undo Integration Tests', () => {
 
     // Click Undo
     const undoGroupBtn = await page.waitForSelector('[data-testid="undo-btn"]', { timeout: 2000 });
-    await undoGroupBtn.click();
+    await undoGroupBtn!.click();
 
     // Verify group is back
     groupHeader = await page.waitForSelector('[data-testid="group-item-New Group 1"]', {

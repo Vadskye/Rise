@@ -1,6 +1,6 @@
 import express from 'express';
 import { generatePreview } from './preview';
-import { DatabaseData, MonsterData, MonsterGroupData } from './codegen';
+import { DatabaseData, MonsterData, MonsterGroupData } from '../src/types/monster';
 import { getDb, saveAndValidateAll } from './db';
 import { allMysticSpheres } from '@src/abilities/mystic_spheres';
 import { allCombatStyles } from '@src/abilities/combat_styles';
