@@ -902,7 +902,7 @@
       "freeformCode": "",
       "baseAttributes": [
         -2,
-        2,
+        5,
         -2,
         -8,
         2,
@@ -912,7 +912,7 @@
         "awareness"
       ],
       "knowledge": {
-        "normal": "Grumblegrubs are a Tiny worms that can eat almost anything.\n        They are particularly drawn to the smell of corpses. \n        Their name comes from the noise they make while eating, which sounds like someone grumbling grumpily.",
+        "normal": "Grumblegrubs are Tiny worms that can eat almost anything. They are particularly drawn to the smell of corpses. Their name comes from the noise they make while eating, which sounds like someone grumbling grumpily.",
         "hard": "Grumblegrubs fear fire, which quickly burns away their greasy bodies."
       },
       "traits": [
@@ -959,8 +959,8 @@
       },
       "freeformCode": "",
       "baseAttributes": [
-        -1,
-        4,
+        2,
+        6,
         -1,
         -8,
         2,
@@ -970,9 +970,9 @@
         "awareness"
       ],
       "traits": [
-        "swarm",
         "sightless",
-        "legless"
+        "legless",
+        "swarm"
       ],
       "customSenses": [
         {
@@ -996,7 +996,11 @@
             "weapon": "bite"
           }
         }
-      ]
+      ],
+      "knowledge": {
+        "normal": "When a group of grumblegrubs find a particularly large and enticing corpse, they can swarm around it in a frenzy. These swarms can then travel together as a group, searching for more food. They don't tend to stay together long, so if you see a grumblegrub swarm, it means there must have been a large corpse nearby recently."
+      },
+      "passiveAbilities": []
     },
     {
       "name": "Darkmantle",
@@ -1565,7 +1569,7 @@
         }
       ],
       "traits": [
-        "multipedal"
+        "quadrupedal"
       ],
       "knowledge": {
         "normal": "A shimmercat is a magical cat-like creature that generates a visual distortion field which conceals its true location. The illusory effect can be recognized by its distinctive shimmer, though that doesn't reveal the shimmercat's true location."

@@ -122,12 +122,13 @@ export function checkValidMonster(
   if (creature.isExactlyCreatureType('humanoid') && creature.body_armor_name) {
     guidelines.push('Humanoids should usually have body armor');
   }
-  if (
-    creature.isExactlyCreatureType('beast') &&
-    !creature.hasTrait('multipedal') &&
-    !creature.hasTrait('legless')
-  ) {
-    guidelines.push('Beasts should usually be multipedal.');
+
+  const mentionsLegCount =
+    creature.hasTrait('quadrupedal') ||
+    creature.hasTrait('multipedal') ||
+    creature.hasTrait('legless');
+  if (creature.isExactlyCreatureType('beast') && !mentionsLegCount) {
+    guidelines.push('Beasts should usually be quadrupedal.');
   }
 
   const standardAbilities = creature
@@ -181,9 +182,19 @@ function checkValidAttributes(creature: Creature, guidelines: string[]) {
   const level0MaxAttributes = creature.elite ? 15 : 9;
   const maxAttributes = level0MaxAttributes + creature.level;
   const minAttributes = Math.floor(maxAttributes / 2);
-  // Values of -10 generally mean the monster doesn't *have* the relevant attribute,
-  // which is different than a crippling penalty.
-  const pointsFromAttribute = (val: number) => (val === -10 ? 0 : val);
+  const pointsFromAttribute = (val: number) => {
+    // Values of -10 generally mean the monster doesn't *have* the relevant attribute,
+    // which is different than a crippling penalty.
+    if (val === -10) {
+      return 0;
+    }
+    // Negative values are not as important as positive values; you can't offset extremely
+    // high attributes with penalties elsewhere.
+    if (val < 0) {
+      return val / 2;
+    }
+    return val;
+  };
   const attributeSum =
     pointsFromAttribute(creature.strength) +
     pointsFromAttribute(creature.constitution) +

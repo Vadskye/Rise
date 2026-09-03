@@ -958,6 +958,17 @@ export class Creature implements CreaturePropertyMap {
         modifier.numericEffects = [{ modifier: 10, statistic: 'speed' }];
         modifier.resistant = 'Trip';
         break;
+      case 'swarm':
+        // Swarm effects are too complicated to just use a modifier; we need a whole passive ability.
+        this.addPassiveAbility({
+          name: 'Swarm',
+          isMagical: false,
+          effect: `
+            The ${this.name.toLowerCase()} can freely share space with non-swarm creatures.
+            It gains a +4 bonus to defenses against targeted abilities that only target it once.
+            However, it takes a -4 penalty to defenses against area abilities.
+          `,
+        });
     }
     this.addCustomModifier(modifier);
   }
