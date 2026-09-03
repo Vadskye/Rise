@@ -10,7 +10,6 @@
     "pretest": "tsx server/paths.ts",
     "dev": "concurrently \"vite\" \"tsx watch --ignore ../src/monsters/individual_monsters/monsters_from_ui.ts --tsconfig tsconfig.server.json server/index.ts\"",
     "dev:timing": "concurrently \"vite\" \"tsx watch --ignore ../src/monsters/individual_monsters/monsters_from_ui.ts --tsconfig tsconfig.server.json server/index.ts --timing\"",
-    "build": "tsc && vite build",
     "lint": "eslint \"**/*.{ts,tsx}\"",
     "prettier": "prettier --write \"**/*.{ts,tsx}\"",
     "preview": "vite preview",
@@ -21,7 +20,12 @@
     "test:timing": "node --eval \"process.env.TIMING='true'; import('child_process').then(cp => cp.execSync('vitest run', {stdio: 'inherit'}))\"",
     "premonster_ts": "tsx server/paths.ts",
     "monster_ts": "tsx --tsconfig tsconfig.server.json scripts/regenerate_monster_typescript.ts",
-    "unused": "npx knip"
+    "typecheck:client": "tsc -p tsconfig.json --incremental --noEmit",
+    "typecheck:server": "tsc -p tsconfig.server.json --incremental --noEmit",
+    "typecheck": "npm run typecheck:client && npm run typecheck:server",
+    "build": "npm run typecheck && vite build",
+    "pretest": "npm run typecheck",
+    "find_unused": "npx knip"
   },
   "dependencies": {
     "express": "^4.19.2",
