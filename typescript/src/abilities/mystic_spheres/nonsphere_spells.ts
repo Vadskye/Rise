@@ -59,9 +59,21 @@ export const nonsphereSpells: MysticSphere = {
       // Ally focused is 0.6 EA, which is a bit below rate.
       effect: `
         Choose one \\glossterm{ally} within \\medrange.
-        The target becomes \\briefly \\focused.
+        The target becomes \\glossterm{briefly} \\focused.
       `,
       rank: 1,
+      roles: ['boon'],
+      tags: [],
+    },
+    {
+      name: 'Empowered True Strike',
+
+      // Ally focused + honed is 1.2 EA
+      effect: `
+        Choose one \\glossterm{ally} within \\medrange.
+        The target becomes \\glossterm{briefly} \\focused and \\honed.
+      `,
+      rank: 7,
       roles: ['boon'],
       tags: [],
     },
