@@ -122,7 +122,11 @@ export function checkValidMonster(
   if (creature.isExactlyCreatureType('humanoid') && creature.body_armor_name) {
     guidelines.push('Humanoids should usually have body armor');
   }
-  if (creature.isExactlyCreatureType('beast') && !creature.hasTrait('multipedal')) {
+  if (
+    creature.isExactlyCreatureType('beast') &&
+    !creature.hasTrait('multipedal') &&
+    !creature.hasTrait('legless')
+  ) {
     guidelines.push('Beasts should usually be multipedal.');
   }
 
