@@ -50,5 +50,20 @@ export const nonsphereSpells: MysticSphere = {
   shortDescription:
     'Standard spells outside of defined mystic spheres. Should not appear in the book text directly.',
   sources: ['arcane', 'divine', 'nature', 'pact'],
-  spells: generatedSpells,
+  spells: [
+    ...generatedSpells,
+
+    {
+      name: 'True Strike',
+
+      // Ally focused is 0.6 EA, which is a bit below rate.
+      effect: `
+        Choose one \\glossterm{ally} within \\medrange.
+        The target becomes \\briefly \\focused.
+      `,
+      rank: 1,
+      roles: ['boon'],
+      tags: [],
+    },
+  ],
 };
