@@ -6,39 +6,6 @@ import {
 } from '../types/monster';
 import { RISE_TRAITS } from '@src/character_sheet/rise_data';
 
-// Note: Standard traits in original code were:
-// 'amphibious', 'blooded', 'bloodless', 'corporeal', 'dynamic', 'ensouled', 'floating',
-// 'immortal', 'incorporeal', 'invisible', 'legless', 'living', 'mindless', 'mortal',
-// 'quadrupedal', 'multipedal', 'nonliving', 'scent', 'sighted', 'sightless', 'simple-minded',
-// 'soulless', 'static', 'swarm', 'telepathy'
-// Let's copy it exactly to be completely safe.
-// Original list:
-//     'amphibious',
-//     'blooded',
-//     'bloodless',
-//     'corporeal',
-//     'dynamic',
-//     'ensouled',
-//     'floating',
-//     'immortal',
-//     'incorporeal',
-//     'invisible',
-//     'legless',
-//     'living',
-//     'mindless',
-//     'mortal',
-//     'quadrupedal',
-//     'multipedal',
-//     'nonliving',
-//     'scent',
-//     'sighted',
-//     'sightless',
-//     'simple-minded',
-//     'soulless',
-//     'static',
-//     'swarm',
-//     'telepathy',
-
 const STANDARD_SENSES = [
   { name: 'Blindsense', hasRange: true, defaultRange: 30 },
   { name: 'Blindsight', hasRange: true, defaultRange: 60 },
