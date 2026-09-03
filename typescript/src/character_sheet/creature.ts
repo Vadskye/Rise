@@ -931,26 +931,33 @@ export class Creature implements CreaturePropertyMap {
       return;
     }
 
-    if (traitName === 'incorporeal') {
-      this.addTrait('floating');
-      modifier.immune = '\\atCreation, \\atManifestation, \\glossterm{mundane}';
-      modifier.numericEffects = [{ modifier: 5, statistic: 'stealth' }];
-    } else if (traitName === 'mindless') {
-      modifier.immune = '\\atCompulsion, \\atEmotion';
-    } else if (traitName === 'multipedal') {
-      modifier.numericEffects = [
-        { modifier: 5, statistic: 'poise' },
-        { modifier: 10, statistic: 'speed' },
-      ];
-      modifier.immune = 'Trip';
-    } else if (traitName === 'legless') {
-      // `getMovementComponents` also prevents jump distance from showing up.
-      modifier.immune = 'Prone';
-    } else if (traitName === 'nonliving') {
-      modifier.immune = 'Life, Poison';
-    } else if (traitName === 'quadrupedal') {
-      modifier.numericEffects = [{ modifier: 10, statistic: 'speed' }];
-      modifier.resistant = 'Trip';
+    switch (traitName) {
+      case 'incorporeal':
+        this.addTrait('floating');
+        modifier.immune = '\\atCreation, \\atManifestation, \\glossterm{mundane}';
+        modifier.numericEffects = [{ modifier: 5, statistic: 'stealth' }];
+        break;
+      case 'mindless':
+        modifier.immune = '\\atCompulsion, \\atEmotion';
+        break;
+      case 'multipedal':
+        modifier.numericEffects = [
+          { modifier: 5, statistic: 'poise' },
+          { modifier: 10, statistic: 'speed' },
+        ];
+        modifier.immune = 'Trip';
+        break;
+      case 'legless':
+        // `getMovementComponents` also prevents jump distance from showing up.
+        modifier.immune = 'Prone';
+        break;
+      case 'nonliving':
+        modifier.immune = 'Life, Poison';
+        break;
+      case 'quadrupedal':
+        modifier.numericEffects = [{ modifier: 10, statistic: 'speed' }];
+        modifier.resistant = 'Trip';
+        break;
     }
     this.addCustomModifier(modifier);
   }
