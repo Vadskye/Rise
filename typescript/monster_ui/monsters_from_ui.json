@@ -1599,6 +1599,149 @@
           }
         }
       ]
+    },
+    {
+      "name": "Corpsetree",
+      "folder": "Undead",
+      "requiredProperties": {
+        "alignment": "neutral evil",
+        "base_class": "warrior",
+        "elite": true,
+        "creature_origin": "undead",
+        "creature_types": [
+          "plant"
+        ],
+        "size": "huge",
+        "level": 8
+      },
+      "freeformCode": "",
+      "knowledge": {
+        "normal": "A corpsetree's body is a mixture of rotting flesh and wood.\nWhen fresh corpses are left to rot near a dying tree, their lingering soul energy can merge with the tree to create a corpsetree."
+      },
+      "trainedSkills": [
+        "awareness"
+      ],
+      "baseAttributes": [
+        7,
+        -2,
+        5,
+        -5,
+        2,
+        2
+      ],
+      "standardAbilities": [
+        {
+          "type": "maneuver",
+          "name": "Weapon Multiplier",
+          "options": {
+            "isMagical": false,
+            "weapon": "fists"
+          }
+        },
+        {
+          "type": "maneuver",
+          "name": "Grappling Strike",
+          "options": {
+            "isMagical": false,
+            "weapon": "fists"
+          }
+        },
+        {
+          "type": "spell",
+          "name": "Circle of Death",
+          "options": {
+            "isMagical": true,
+            "usageTime": "elite"
+          }
+        },
+        {
+          "type": "spell",
+          "name": "Embedded Growth",
+          "options": {
+            "isMagical": true,
+            "usageTime": "elite"
+          }
+        },
+        {
+          "type": "spell",
+          "name": "Corpse Explosion",
+          "options": {
+            "isMagical": true,
+            "usageTime": "elite"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Corpsemound",
+      "folder": "Undead",
+      "requiredProperties": {
+        "alignment": "neutral evil",
+        "base_class": "brute",
+        "elite": true,
+        "creature_origin": "undead",
+        "creature_types": [
+          "humanoid"
+        ],
+        "size": "large",
+        "level": 8
+      },
+      "freeformCode": "",
+      "traits": [
+        "mindless"
+      ],
+      "baseAttributes": [
+        6,
+        -2,
+        6,
+        -5,
+        2,
+        2
+      ],
+      "knowledge": {
+        "normal": "A corpsemound is a Large undead amalgation of many corpses.\nIt resembles a pile of bodies.\nThe bodies push, drag, and roll the mound towards anything living."
+      },
+      "customAbilities": [
+        {
+          "type": "maneuver",
+          "name": "Trample",
+          "attack": {
+            "hit": "\\damagerankthree.",
+            "halfOnMiss": true,
+            "targeting": "Move up to your speed in a straight line.\nThen, make a \\glossterm{brawling attack} vs. Brawn against each creature whose space you moved through in this way."
+          },
+          "tags": [
+            "Brawling",
+            "Size-Based"
+          ]
+        },
+        {
+          "type": "maneuver",
+          "name": "Fling Corpse",
+          "attack": {
+            "hit": "\\damagerankthree.",
+            "targeting": "The $name throws a zombie mauler from its body.\nMake an attack vs. Armor against something within \\shortrange.\nWhether the attack hits or misses, the mauler takes damage as if it was hit by the attack, and then acts independently afterwards."
+          }
+        }
+      ],
+      "standardAbilities": [
+        {
+          "type": "maneuver",
+          "name": "Weapon Multiplier",
+          "options": {
+            "isMagical": false,
+            "weapon": "fists"
+          }
+        },
+        {
+          "type": "maneuver",
+          "name": "Mighty Stomp",
+          "options": {
+            "isMagical": false,
+            "usageTime": "elite"
+          }
+        }
+      ]
     }
   ],
   "monsterGroups": [
@@ -7010,6 +7153,944 @@
       "knowledge": {
         "normal": "Dire animals are monstrous variants of ordinary animals.\n          They are larger, stronger, and more aggressive.\n          Like animals, they are more susceptible to the Creature Handling skill, though their aggression makes any lapse in control more dangerous."
       }
+    },
+    {
+      "name": "Fleshwrought",
+      "folder": "Undead",
+      "hasArt": false,
+      "sharedFreeformCode": "",
+      "knowledge": {
+        "normal": "Some necromancers use mechanical augmentations to compensate for the weaknesses of the flesh.\nThe creatures resulting from these twisted experiments are called fleshwrought.\nThey are undead, but they have inorganic matter incorporated directly into their body."
+      },
+      "monsters": [
+        {
+          "name": "Fleshwrought Spiker",
+          "folder": "Undead",
+          "requiredProperties": {
+            "alignment": "neutral evil",
+            "base_class": "brute",
+            "elite": true,
+            "creature_origin": "undead",
+            "creature_types": [
+              "construct"
+            ],
+            "size": "large",
+            "level": 16
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            8,
+            4,
+            6,
+            -4,
+            2,
+            0
+          ],
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "spike"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Grappling Strike",
+              "options": {
+                "isMagical": false,
+                "weapon": "spike"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Piledriver+",
+              "options": {
+                "isMagical": false,
+                "displayName": "Impale"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Anklebreaker",
+              "options": {
+                "isMagical": false,
+                "weapon": "spike"
+              }
+            }
+          ],
+          "customAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Rotting Stench",
+              "attack": {
+                "crit": null,
+                "hit": "The target feels sick as a \\glossterm{condition}.\nThe next time it becomes \\glossterm{injured}, it must spend a standard action vomiting.\nAfter it does, it removes all instances of this condition.",
+                "targeting": "Make an attack vs. Fortitude against all adjacent creatures."
+              },
+              "tags": [
+                "Life"
+              ],
+              "usageTime": "elite"
+            }
+          ]
+        },
+        {
+          "name": "Fleshwrought Slicer",
+          "folder": "Undead",
+          "requiredProperties": {
+            "alignment": "neutral evil",
+            "base_class": "warrior",
+            "elite": false,
+            "creature_origin": "undead",
+            "creature_types": [
+              "construct"
+            ],
+            "size": "medium",
+            "level": 8
+          },
+          "freeformCode": "",
+          "trainedSkills": [],
+          "baseAttributes": [
+            4,
+            5,
+            0,
+            -4,
+            1,
+            0
+          ],
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Spinning Steel",
+              "options": {
+                "isMagical": false,
+                "weapon": "claws"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Strip the Flesh",
+              "options": {
+                "isMagical": false,
+                "weapon": "claws"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Rend the Hide",
+              "options": {
+                "isMagical": false,
+                "weapon": "claws"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ghosts",
+      "folder": "Undead",
+      "hasArt": false,
+      "sharedFreeformCode": "",
+      "knowledge": {
+        "normal": "Ghosts are the souls of deceased creatures that linger after death instead of proceeding to their proper afterlife.",
+        "hard": "Some ghosts can be appeased peacefully if the reason they refused to pass on is addressed.\nOthers can only be banished by force.\nAlthough ghosts do not fear cold, they are strongly affected by fire."
+      },
+      "customSenses": [
+        {
+          "type": "Darkvision",
+          "range": 90
+        }
+      ],
+      "customMovementSpeeds": [
+        {
+          "mode": "Fly",
+          "category": "average",
+          "limitType": "limit",
+          "limitValue": 30
+        }
+      ],
+      "monsters": [
+        {
+          "name": "Allip",
+          "folder": "Undead",
+          "requiredProperties": {
+            "alignment": "neutral evil",
+            "base_class": "skirmisher",
+            "elite": false,
+            "creature_origin": "undead",
+            "creature_types": [
+              "ghost"
+            ],
+            "size": "medium",
+            "level": 4
+          },
+          "properties": {
+            "has_art": true
+          },
+          "knowledge": {
+            "normal": "Allips are incorporeal ghost-like creatures.\nThey cannot speak intelligibly, but they are known for their propensity for babbling incoherently as they attack.",
+            "hard": "An allip is the spectral remains of someone driven to suicide by madness.\nIt craves only revenge and unrelentingly pursues those that it believes tormented it in life.\nThis belief may or may not have any basis in reality."
+          },
+          "freeformCode": "",
+          "trainedSkills": [
+            "awareness",
+            "stealth"
+          ],
+          "baseAttributes": [
+            -9,
+            3,
+            0,
+            -2,
+            -2,
+            6
+          ],
+          "customSenses": [
+            {
+              "type": "Darkvision",
+              "range": 60
+            },
+            {
+              "type": "Lifesense",
+              "range": 120
+            }
+          ],
+          "standardAbilities": [
+            {
+              "type": "spell",
+              "name": "Inflict Wound",
+              "options": {
+                "isMagical": true
+              }
+            }
+          ]
+        },
+        {
+          "name": "Macabre Mourner",
+          "folder": "Undead",
+          "requiredProperties": {
+            "alignment": "neutral evil",
+            "base_class": "skirmisher",
+            "elite": true,
+            "creature_origin": "undead",
+            "creature_types": [
+              "ghost"
+            ],
+            "size": "large",
+            "level": 5
+          },
+          "freeformCode": "",
+          "knowledge": {
+            "normal": "A macabre mourner is a Large ghost.\nWhen a great many people mourn at once, and the creature they mourn was not buried properly, the strength of their feeling can trap the soul of the creature they mourn."
+          },
+          "trainedSkills": [
+            "awareness",
+            "intimidate"
+          ],
+          "vulnerabilities": [
+            "Auditory",
+            "Emotion"
+          ],
+          "baseAttributes": [
+            0,
+            0,
+            -2,
+            -4,
+            2,
+            4
+          ],
+          "customAbilities": [
+            {
+              "type": "spell",
+              "name": "Mournful Howl",
+              "attack": {
+                "hit": "\\damagerankone.",
+                "targeting": "Make an attack vs. Mental against all creatures within a \\medarea radius from you.\nYou gain a \\plus4 accuracy bonus if you or any creature in the area suffered an \\glossterm{injury} since your last turn."
+              },
+              "tags": [
+                "Auditory"
+              ],
+              "usageTime": "elite"
+            },
+            {
+              "type": "spell",
+              "name": "Toll the Dead",
+              "attack": {
+                "hit": "As a \\glossterm{condition}, the target takes \\damagerankone whenever it deals damage.",
+                "targeting": "Make an attack vs. Mental against one creature within \\medrange.\nYou gain a \\plus4 accuracy bonus if the target has killed a living creature within the last 24 hours."
+              }
+            }
+          ]
+        },
+        {
+          "name": "Tetherghast",
+          "folder": "Undead",
+          "requiredProperties": {
+            "alignment": "neutral evil",
+            "base_class": "skirmisher",
+            "elite": false,
+            "creature_origin": "undead",
+            "creature_types": [
+              "ghost"
+            ],
+            "size": "medium",
+            "level": 14
+          },
+          "freeformCode": "",
+          "knowledge": {
+            "normal": "A tetherghast is a ghost formed by a creature who died while bound and trying desperately to escape."
+          },
+          "baseAttributes": [
+            0,
+            8,
+            -2,
+            -4,
+            2,
+            6
+          ],
+          "customAbilities": [
+            {
+              "type": "spell",
+              "name": "Entangling Cords",
+              "attack": {
+                "hit": "\\damagerankfour, and the target is \\briefly \\slowed.",
+                "targeting": "Make an attack vs. Brawn against one creature within \\medrange."
+              },
+              "tags": [
+                "Manifestation"
+              ]
+            }
+          ],
+          "standardAbilities": [
+            {
+              "type": "spell",
+              "name": "Garotte",
+              "options": {
+                "isMagical": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ghouls",
+      "folder": "Undead",
+      "hasArt": true,
+      "sharedFreeformCode": "",
+      "knowledge": {
+        "normal": "Ghouls are undead creatures that hunger for the flesh of the living.\nTheir bodies are emaciated and desiccated, with no blood or fluids remaining.\nAlthough they are sometimes confused with zombies, ghouls are faster and smarter than their lesser kin.",
+        "hard": "Ghouls can lay simple ambushes, but lack the capacity for complex traps or schemes.\nThey are commmonly found in the service of vampires.\nAs natural servants, ghouls are weak-willed despite their combat acumen.",
+        "legendary": "Vampires can create new ghouls by fully draining a creature's blood shortly after death.\nNecromancers can achieve the same ends with a ritual.\nIn either case, the newly created ghoul owes its creator no allegiance unless compelled to do so, making the process dangerous for the unprepared."
+      },
+      "vulnerabilities": [
+        "Compulsion",
+        "Emotion"
+      ],
+      "customSenses": [
+        {
+          "type": "Darkvision",
+          "range": 60
+        }
+      ],
+      "monsters": [
+        {
+          "name": "Drudge Ghoul",
+          "folder": "Undead",
+          "requiredProperties": {
+            "alignment": "neutral evil",
+            "base_class": "skirmisher",
+            "elite": false,
+            "creature_origin": "undead",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 3
+          },
+          "freeformCode": "",
+          "knowledge": {
+            "normal": "Drudge ghouls are the weakest form of ghoul.\nThey are typically made from incomplete corpses or partially botched rituals that failed to create a true ghoul."
+          },
+          "baseAttributes": [
+            4,
+            4,
+            0,
+            -4,
+            1,
+            -2
+          ],
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Strip the Flesh",
+              "options": {
+                "isMagical": false,
+                "weapon": "bite"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "bite"
+              }
+            }
+          ]
+        },
+        {
+          "name": "True Ghoul",
+          "folder": "Undead",
+          "requiredProperties": {
+            "alignment": "neutral evil",
+            "base_class": "skirmisher",
+            "elite": false,
+            "creature_origin": "undead",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 6
+          },
+          "freeformCode": "",
+          "knowledge": {
+            "normal": "True ghouls are the most common form of ghoul."
+          },
+          "baseAttributes": [
+            5,
+            5,
+            1,
+            -3,
+            1,
+            0
+          ],
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Strip the Flesh",
+              "options": {
+                "isMagical": false,
+                "weapon": "bite"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "bite"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Liches",
+      "folder": "Undead",
+      "hasArt": false,
+      "sharedFreeformCode": "",
+      "description": "\\parhead{Phylactery \\sparkle} Every lich contains their soul in their phylactery.\nMost phylacteries are valuable gems, but other objects are possible.\nA phylactery must be at least Tiny in size.\n\nLiches can commune with their phylacteries to allow their souls to temporarily inhabit their bodies.\nThis allows their soul to process the memories stored in their body, allowing the lich to improve its skills and change its mind.\nA lich that never communes with its phylactery suffers no direct consequences, but is also incapable of increasing its personal power.\n\nWhen a lich dies, the phylactery creates a new body for the lich after 24 hours.\nThe new body has no memory of what happened to the original body since the last time the lich communed with its phylactery.",
+      "knowledge": {
+        "normal": "A lich is an undead creature that intentionally severed its soul from its body and placed the soul in a vessel called a phylactery.\nAs long as its phylactery survives, a lich cannot be fully destroyed.\nBecoming a lich requires horrific acts of violence, and even researching the process is generally illegal.",
+        "hard": "Because the normal body of a lich is soulless, it is incapable of growing or changing its mind.\nLiches must commune with their phylactery to truly learn and develop their skills.\nHowever, they must also keep their phylactery safely protected, since keeping it on their body means it could easily be destroyed if they die.\nEach lich must resolve this dangerous contradiction in their own way.",
+        "legendary": "The body of a lich is not completely soulless.\nA tiny soul splinter inhabits the body, binding it to the phylactery.\nIt provides the body no animating force, but the soul splinter returns to the phylactery when the lich's body is destroyed.\nThe return of that soul splinter prompts the phylactery to inhabit a new body."
+      },
+      "traits": [
+        "soulless"
+      ],
+      "monsters": [
+        {
+          "name": "Okonlok, Astral Lich",
+          "folder": "Undead",
+          "requiredProperties": {
+            "alignment": "chaotic evil",
+            "base_class": "sniper",
+            "elite": true,
+            "creature_origin": "undead",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 17
+          },
+          "freeformCode": "",
+          "trainedSkills": [
+            "analysis",
+            "awareness",
+            "craft_bone",
+            "knowledge_arcana",
+            "knowledge_souls"
+          ],
+          "baseAttributes": [
+            -2,
+            5,
+            2,
+            5,
+            8,
+            10
+          ],
+          "knowledge": {
+            "hard": "Okonlok learned how to become a lich on a long interplanar quest for power."
+          },
+          "standardAbilities": [
+            {
+              "type": "spell",
+              "name": "Empowered Astral Jaunt",
+              "options": {
+                "isMagical": true
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Massive Astral Rupture",
+              "options": {
+                "isMagical": true
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Distant Splicing Grasp",
+              "options": {
+                "isMagical": true
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Giant Twinned Portals",
+              "options": {
+                "isMagical": true,
+                "usageTime": "elite"
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Dimension Door",
+              "options": {
+                "isMagical": true,
+                "usageTime": "elite"
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Banishment",
+              "options": {
+                "isMagical": true,
+                "usageTime": "elite"
+              }
+            },
+            {
+              "type": "spell",
+              "name": "Hostile Transposition",
+              "options": {
+                "isMagical": true,
+                "usageTime": "elite"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Skeletons",
+      "folder": "Undead",
+      "hasArt": true,
+      "sharedFreeformCode": "",
+      "knowledge": {
+        "easy": "Skeletons are the reanimated corpses of once-living creatures.\nThey are the most basic form of animated undead, since they can be created from corpses that have been reduced to mere bones.\nCreating a skeleton is generally regarded as an evil act.",
+        "normal": "Skeletons retain none of the specific physical or magical abilities of the original creature.\nThey are capable of using armor and weapons, and have a minimal degree of self-preservation, but they lack any understanding of tactics.\n\nSkeletons are sometimes created naturally near areas of recent mass death, such as battlefields where the corpses were not removed.",
+        "legendary": "Creating a skeleton from a corpse requires splintering the soul of the creature the corpse belonged to.\nThe soul splinter created this way is used to give the skeleton its agency.\nThis is painful for the dead creature in its afterlife.\nThe more powerful the soul, the more powerful the corresponding skeleton.\n\nCreating a skeleton requires a larger soul splinter than creating a zombie.\nThis larger splinter compensates for the greater decay of the corpse and grants skeletons a slightly greater effective intelligence.\nHowever, skeletons still retain none of the original creature's personality."
+      },
+      "traits": [
+        "simple-minded"
+      ],
+      "monsters": [
+        {
+          "name": "Bones",
+          "folder": "Undead",
+          "requiredProperties": {
+            "alignment": "neutral evil",
+            "base_class": "skirmisher",
+            "elite": false,
+            "creature_origin": "undead",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 1
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            3,
+            3,
+            0,
+            -8,
+            0,
+            0
+          ],
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "claws"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Fallen Soldier",
+          "folder": "Undead",
+          "requiredProperties": {
+            "alignment": "neutral evil",
+            "base_class": "warrior",
+            "elite": false,
+            "creature_origin": "undead",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 2
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            3,
+            3,
+            0,
+            -8,
+            0,
+            0
+          ],
+          "equippedArmor": "leather lamellar",
+          "equippedShield": "standard shield",
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "spear"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Skeleton Archer",
+          "folder": "Undead",
+          "requiredProperties": {
+            "alignment": "neutral evil",
+            "base_class": "sniper",
+            "elite": false,
+            "creature_origin": "undead",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 3
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            3,
+            3,
+            0,
+            -7,
+            2,
+            0
+          ],
+          "equippedArmor": "leather lamellar",
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "longbow"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Bone Knight",
+          "folder": "Undead",
+          "requiredProperties": {
+            "alignment": "neutral evil",
+            "base_class": "warrior",
+            "elite": false,
+            "creature_origin": "undead",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "large",
+            "level": 5
+          },
+          "freeformCode": "",
+          "knowledge": {
+            "normal": "A bone knight is a fusion of horse and rider, reanimated as a single skeleton.\nThe rider wields its lance as if mounted, but the two cannot be separated without death."
+          },
+          "baseAttributes": [
+            4,
+            4,
+            0,
+            -7,
+            2,
+            0
+          ],
+          "equippedArmor": "scale",
+          "equippedShield": "standard shield",
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "lance"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Charge",
+              "options": {
+                "isMagical": false,
+                "weapon": "lance"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Fallen Hero",
+          "folder": "Undead",
+          "requiredProperties": {
+            "alignment": "neutral evil",
+            "base_class": "warrior",
+            "elite": false,
+            "creature_origin": "undead",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 7
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            5,
+            5,
+            0,
+            -7,
+            2,
+            0
+          ],
+          "equippedArmor": "scale",
+          "equippedShield": "standard shield",
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "battleaxe"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "javelin"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Skeleton Sniper",
+          "folder": "Undead",
+          "requiredProperties": {
+            "alignment": "neutral evil",
+            "base_class": "sniper",
+            "elite": false,
+            "creature_origin": "undead",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 10
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            4,
+            5,
+            0,
+            -7,
+            5,
+            0
+          ],
+          "equippedArmor": "leather lamellar",
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Weapon Multiplier",
+              "options": {
+                "isMagical": false,
+                "weapon": "longbow"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Distant Shot",
+              "options": {
+                "isMagical": false,
+                "weapon": "longbow"
+              }
+            },
+            {
+              "type": "maneuver",
+              "name": "Armorpiercer",
+              "options": {
+                "isMagical": false,
+                "weapon": "longbow"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Zombies",
+      "folder": "Undead",
+      "hasArt": false,
+      "sharedFreeformCode": "",
+      "knowledge": {
+        "easy": "Zombies are the reanimated corpses of once-living creatures.\nThey must be created from corpses that still retain most of their organs and internal structure.\nCreating a zombie is generally regarded as an evil act.",
+        "normal": "Zombies retain the raw strength of the original creature, but lose all special abilities.\nThey are mindless, relentless, and incapable of tactics or tool usage.\nInstead of using weapons, they try to grab and bite their enemies.\nThey have a relentless hunger for flesh, though consuming it brings them no relief.\n\nZombies are sometimes created naturally near areas of recent mass death, such as battlefields where the corpses were not removed.",
+        "legendary": "Creating a zombie from a corpse requires splintering the soul of the creature the corpse belonged to.\nThe soul splinter created this way is used to give the zombie its limited agency.\nThis is painful for the dead creature in its afterlife.\nThe more powerful the soul, the more powerful the corresponding zombie."
+      },
+      "customSenses": [
+        {
+          "type": "Darkvision",
+          "range": 60
+        }
+      ],
+      "traits": [
+        "mindless"
+      ],
+      "standardAbilities": [
+        {
+          "type": "maneuver",
+          "name": "Grapple",
+          "options": {
+            "isMagical": false
+          }
+        },
+        {
+          "type": "maneuver",
+          "name": "Weapon Multiplier",
+          "options": {
+            "isMagical": false,
+            "weapon": "bite"
+          }
+        }
+      ],
+      "monsters": [
+        {
+          "name": "Shambler",
+          "folder": "Undead",
+          "requiredProperties": {
+            "alignment": "neutral evil",
+            "base_class": "brute",
+            "elite": false,
+            "creature_origin": "undead",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 1
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            4,
+            -2,
+            5,
+            0,
+            -2,
+            0
+          ]
+        },
+        {
+          "name": "Walker",
+          "folder": "Undead",
+          "requiredProperties": {
+            "alignment": "neutral evil",
+            "base_class": "brute",
+            "elite": false,
+            "creature_origin": "undead",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 3
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            5,
+            -2,
+            6,
+            0,
+            -2,
+            0
+          ]
+        },
+        {
+          "name": "Mauler",
+          "folder": "Undead",
+          "requiredProperties": {
+            "alignment": "neutral evil",
+            "base_class": "brute",
+            "elite": false,
+            "creature_origin": "undead",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 6
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            6,
+            -2,
+            7,
+            0,
+            -2,
+            0
+          ]
+        },
+        {
+          "name": "Hulk",
+          "folder": "Undead",
+          "requiredProperties": {
+            "alignment": "neutral evil",
+            "base_class": "brute",
+            "elite": false,
+            "creature_origin": "undead",
+            "creature_types": [
+              "humanoid"
+            ],
+            "size": "medium",
+            "level": 9
+          },
+          "freeformCode": "",
+          "baseAttributes": [
+            7,
+            -2,
+            8,
+            0,
+            -2,
+            0
+          ]
+        }
+      ]
     }
   ],
   "folders": []
