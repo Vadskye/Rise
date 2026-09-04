@@ -159,7 +159,11 @@ export const RANK_WORDS: Record<string, number> = {
 export function parseDamageRank(text: string): number | null {
   const matches = [...text.matchAll(/\\damagerank(\w+)/gi)];
   if (matches.length === 0) {
-    return null;
+    const drMatches = [...text.matchAll(/\$dr(\d+)l?/gi)];
+    if (drMatches.length === 0) {
+      return null;
+    }
+    return parseInt(drMatches[0][1], 10);
   }
 
   const firstWord = matches[0][1].toLowerCase().replace('low', '');
@@ -403,6 +407,10 @@ export function parseAppliedEffects(text: string): AppliedEffect[] {
 
 export function parseAccuracyModifier(text: string): number {
   const lowercase = stripGlossterm(text).toLowerCase();
+  const consumableMatch = lowercase.match(/\$consumableaccuracy([+-]\d+)?/i);
+  if (consumableMatch) {
+    return consumableMatch[1] ? parseInt(consumableMatch[1], 10) : 0;
+  }
   const match = lowercase.match(/with a\s+(\\plus|\\minus|\+|-)(\d+)\s+accuracy/i);
   if (match) {
     const sign = match[1].toLowerCase() === '\\minus' || match[1] === '-' ? -1 : 1;
