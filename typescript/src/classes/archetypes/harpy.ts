@@ -51,7 +51,7 @@ export function harpy(): RankAbility[] {
       isMagical: false,
       rank: 3,
       description: `
-        Your talons deal 1d6 damage and gain the \\abilitytag{Keen} \\glossterm{ability tag}.
+        Your talons gain the \\abilitytag{Keen} \\glossterm{ability tag} and gain a \\plus1 bonus to their \\glossterm{weapon dice increment}.
       `,
     },
     {
