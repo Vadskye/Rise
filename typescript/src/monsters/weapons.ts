@@ -2,23 +2,12 @@ import {
   StandardWeapon,
   STANDARD_WEAPONS,
   SimpleDicePool,
-  DICE_INCREMENT_ORDER,
   addDiceIncrement,
-  addDiceIncrementString,
-  addDiceIncrementToPool,
 } from '@src/equipment/weapons';
 import { WeaponTag } from '@src/equipment/types';
 import { RiseWeaponTag } from '@src/character_sheet/rise_data';
 
 export type MonsterWeapon = string;
-
-export {
-  SimpleDicePool,
-  DICE_INCREMENT_ORDER,
-  addDiceIncrement,
-  addDiceIncrementString,
-  addDiceIncrementToPool,
-};
 
 // Build case-insensitive standard weapons mapping
 const LOWERCASE_STANDARD_WEAPONS: Record<string, StandardWeapon> = {};
