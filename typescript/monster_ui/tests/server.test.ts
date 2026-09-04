@@ -213,7 +213,7 @@ describe('Monster UI Integration Tests (Full Server)', () => {
 
     // Verify database file has new monster
     let db = getDb();
-    let savedMonster = db.monsters.find((m: any) => m.name === testMonsterName);
+    const savedMonster = db.monsters.find((m: any) => m.name === testMonsterName);
     expect(savedMonster).toBeDefined();
 
     // Now modify the monster name (rename)
@@ -256,6 +256,164 @@ describe('Monster UI Integration Tests (Full Server)', () => {
 
     db = getDb();
     expect(db.monsters.find((m: any) => m.name === renamedMonsterName)).toBeUndefined();
+  });
+
+  test('POST /api/save renames a monster using id without creating extraneous monsters', async () => {
+    const testMonsterId = `id_${Date.now()}_${Math.random().toString(36).substring(2, 7)}`;
+    const initialName = `New Monster ${Date.now()}`;
+
+    // 1. Initial creation (like handleAddMonster)
+    const createPayload = {
+      monster: {
+        data: {
+          id: testMonsterId,
+          name: initialName,
+          requiredProperties: {
+            alignment: 'neutral',
+            base_class: 'warrior',
+            elite: false,
+            creature_origin: 'natural',
+            creature_types: ['beast'],
+            size: 'medium',
+            level: 1,
+          },
+          freeformCode: '',
+        },
+      },
+    };
+
+    const resCreate = await fetch(`${baseUrl}/api/save`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(createPayload),
+    });
+    expect(resCreate.status).toBe(200);
+
+    let db = getDb();
+    const createdMonster = db.monsters.find((m: any) => m.id === testMonsterId);
+    expect(createdMonster).toBeDefined();
+    expect(createdMonster!.name).toBe(initialName);
+    const initialCount = db.monsters.length;
+
+    // 2. User types new name: "Skeleton" (simulating debounced save where name changed)
+    const finalName = `Skeleton_${Date.now()}`;
+    const renamePayload = {
+      monster: {
+        data: {
+          ...createdMonster!,
+          name: finalName,
+        },
+        oldName: 'Skeleto', // intermediate keystroke name that doesn't exist on server
+      },
+    };
+
+    const resRename = await fetch(`${baseUrl}/api/save`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(renamePayload),
+    });
+    expect(resRename.status).toBe(200);
+
+    db = getDb();
+    // Must NOT have created an extra monster
+    expect(db.monsters.length).toBe(initialCount);
+    // Old default name must no longer exist
+    expect(db.monsters.find((m: any) => m.name === initialName)).toBeUndefined();
+    // Renamed monster must exist with the same id
+    const renamed = db.monsters.find((m: any) => m.id === testMonsterId);
+    expect(renamed).toBeDefined();
+    expect(renamed!.name).toBe(finalName);
+
+    // 3. Delete by id
+    const deletePayload = {
+      deleteMonster: testMonsterId,
+    };
+    const resDelete = await fetch(`${baseUrl}/api/save`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(deletePayload),
+    });
+    expect(resDelete.status).toBe(200);
+
+    db = getDb();
+    expect(db.monsters.find((m: any) => m.id === testMonsterId)).toBeUndefined();
+  });
+
+  test('POST /api/save renames a monster by ID without creating a duplicate', async () => {
+    const monsterId = `test_monster_rename_${Date.now()}`;
+    const initialName = `OriginalMonster_${Date.now()}`;
+    // 1. Create a monster with id
+    const createPayload = {
+      monster: {
+        data: {
+          id: monsterId,
+          name: initialName,
+          requiredProperties: {
+            alignment: 'neutral',
+            base_class: 'warrior',
+            elite: false,
+            creature_origin: 'natural',
+            creature_types: ['beast'],
+            size: 'medium',
+            level: 1,
+          },
+          freeformCode: '',
+        },
+      },
+    };
+
+    const resCreate = await fetch(`${baseUrl}/api/save`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(createPayload),
+    });
+    expect(resCreate.status).toBe(200);
+
+    let db = getDb();
+    const countBefore = db.monsters.length;
+
+    // 2. Update the monster's name using its ID
+    const updatedName = `${initialName}_Updated`;
+    const updatePayload = {
+      monster: {
+        data: {
+          id: monsterId,
+          name: updatedName,
+          requiredProperties: {
+            alignment: 'chaotic',
+            base_class: 'warrior',
+            elite: false,
+            creature_origin: 'natural',
+            creature_types: ['beast'],
+            size: 'medium',
+            level: 2,
+          },
+          freeformCode: '',
+        },
+      },
+    };
+
+    const resUpdate = await fetch(`${baseUrl}/api/save`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(updatePayload),
+    });
+    expect(resUpdate.status).toBe(200);
+
+    db = getDb();
+    expect(db.monsters.length).toBe(countBefore);
+    expect(db.monsters.find((m: any) => m.name === initialName)).toBeUndefined();
+    const updated = db.monsters.find((m: any) => m.id === monsterId);
+    expect(updated).toBeDefined();
+    expect(updated!.name).toBe(updatedName);
+    expect(updated!.requiredProperties.alignment).toBe('chaotic');
+
+    // 3. Clean up
+    await fetch(`${baseUrl}/api/save`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ deleteMonster: monsterId }),
+    });
   });
 
   test('POST /api/preview cache hits under concurrent/rapid switching requests', async () => {

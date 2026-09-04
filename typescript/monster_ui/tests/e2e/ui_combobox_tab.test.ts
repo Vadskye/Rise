@@ -27,6 +27,7 @@ describe('Combobox Tab Navigation Tests', () => {
     saveDb({
       monsters: [
         {
+          id: 'seed_monster',
           name: 'Seed Monster',
           requiredProperties: {
             alignment: 'neutral',
@@ -218,6 +219,7 @@ describe('Combobox Tab Navigation Tests', () => {
     // Focus alignment trigger to open dropdown and focus its search
     await alignmentTrigger.asElement()!.focus();
     await page.waitForSelector('[data-testid="alignment-combobox-search"]', { timeout: 2000 });
+    await page.waitForSelector('.combobox-option-btn.highlighted', { timeout: 2000 });
 
     // Let's get the list of options inside the dropdown
     const getOptionsState = async () => {

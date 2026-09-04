@@ -90,6 +90,7 @@ export interface SharedEditableProperties {
 }
 
 export interface MonsterData extends SharedEditableProperties {
+  id: string;
   name: string;
   folder?: string;
   requiredProperties: MonsterRequiredProperties;
@@ -112,6 +113,7 @@ export interface MonsterGroupKnowledge {
 }
 
 export interface MonsterGroupData extends SharedEditableProperties {
+  id: string;
   name: string;
   folder?: string;
   knowledge?: MonsterGroupKnowledge;
@@ -183,11 +185,9 @@ export interface ValidationResult {
 export interface SaveRequestPayload {
   monster?: {
     data: MonsterData;
-    oldName?: string;
   };
   group?: {
     data: MonsterGroupData;
-    oldName?: string;
   };
   deleteMonster?: string;
   deleteGroup?: string;
@@ -200,7 +200,7 @@ export interface SaveRequestPayload {
 }
 
 export type SidebarSelection =
-  | { type: 'monster'; name: string }
-  | { type: 'group'; name: string }
-  | { type: 'group-monster'; groupName: string; name: string }
+  | { type: 'monster'; id: string }
+  | { type: 'group'; id: string }
+  | { type: 'group-monster'; groupId: string; id: string }
   | null;

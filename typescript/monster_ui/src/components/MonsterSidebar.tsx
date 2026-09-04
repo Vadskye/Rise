@@ -7,11 +7,11 @@ interface MonsterSidebarProps {
   onSelect: (selection: SidebarSelection) => void;
   onAddMonster: (folder?: string) => void;
   onAddGroup: (folder?: string) => void;
-  onAddMonsterToGroup: (groupName: string) => void;
-  onDeleteMonster: (name: string) => void;
-  onDeleteGroup: (name: string) => void;
-  onDeleteMonsterFromGroup: (groupName: string, name: string) => void;
-  onMoveToFolder: (type: 'monster' | 'group', name: string, targetFolder?: string) => void;
+  onAddMonsterToGroup: (groupId: string) => void;
+  onDeleteMonster: (id: string) => void;
+  onDeleteGroup: (id: string) => void;
+  onDeleteMonsterFromGroup: (groupId: string, id: string) => void;
+  onMoveToFolder: (type: 'monster' | 'group', id: string, targetFolder?: string) => void;
   onCreateFolder: (name: string) => void;
   onRenameFolder: (oldName: string, newName: string) => void;
   onDeleteFolder: (name: string) => void;
@@ -48,31 +48,28 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
 
     // Determine which group (if any) should be expanded
     if (activeSelection.type === 'group') {
-      setExpandedGroups({ [activeSelection.name]: true });
+      setExpandedGroups({ [activeSelection.id]: true });
     } else if (activeSelection.type === 'group-monster') {
-      setExpandedGroups({ [activeSelection.groupName]: true });
+      setExpandedGroups({ [activeSelection.groupId]: true });
     }
 
     // Determine which folder (if any) should be expanded
-    const activeItemName =
-      activeSelection.type === 'group-monster'
-        ? activeSelection.groupName
-        : activeSelection.type === 'group'
-          ? activeSelection.name
-          : activeSelection.name; // 'monster'
-    const allItems = [
-      ...(db.monsters || []).map((m) => ({ name: m.name, folder: m.folder })),
-      ...(db.monsterGroups || []).map((g) => ({ name: g.name, folder: g.folder })),
-    ];
-    const matchingFolder = allItems.find((item) => item.name === activeItemName)?.folder;
-    if (matchingFolder) {
-      setExpandedFolders({ [matchingFolder]: true });
+    let activeFolder: string | undefined;
+    if (activeSelection.type === 'monster') {
+      activeFolder = (db.monsters || []).find((m) => m.id === activeSelection.id)?.folder;
+    } else if (activeSelection.type === 'group') {
+      activeFolder = (db.monsterGroups || []).find((g) => g.id === activeSelection.id)?.folder;
+    } else if (activeSelection.type === 'group-monster') {
+      activeFolder = (db.monsterGroups || []).find((g) => g.id === activeSelection.groupId)?.folder;
+    }
+    if (activeFolder) {
+      setExpandedFolders({ [activeFolder]: true });
     }
   }, [activeSelection, db]);
   const [dragOverFolder, setDragOverFolder] = useState<string | null>(null);
 
-  const handleDragStart = (e: React.DragEvent, type: 'monster' | 'group', name: string) => {
-    e.dataTransfer.setData('application/json', JSON.stringify({ type, name }));
+  const handleDragStart = (e: React.DragEvent, type: 'monster' | 'group', id: string) => {
+    e.dataTransfer.setData('application/json', JSON.stringify({ type, id }));
     e.dataTransfer.effectAllowed = 'move';
   };
 
@@ -96,9 +93,9 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
       if (!dataStr) {
         return;
       }
-      const { type, name } = JSON.parse(dataStr);
-      if (type && name) {
-        onMoveToFolder(type, name, targetFolder || undefined);
+      const { type, id } = JSON.parse(dataStr);
+      if (type && id) {
+        onMoveToFolder(type, id, targetFolder || undefined);
       }
     } catch (err) {
       console.error('Failed to parse drag and drop data:', err);
@@ -106,24 +103,16 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
   };
 
   const isSelected = (selection: SidebarSelection) => {
-    if (!activeSelection || !selection) {
+    if (!activeSelection || !selection || activeSelection.type !== selection.type) {
       return false;
-    }
-    if (activeSelection.type !== selection.type) {
-      return false;
-    }
-    if (activeSelection.type === 'monster' && selection.type === 'monster') {
-      return activeSelection.name === selection.name;
-    }
-    if (activeSelection.type === 'group' && selection.type === 'group') {
-      return activeSelection.name === selection.name;
     }
     if (activeSelection.type === 'group-monster' && selection.type === 'group-monster') {
       return (
-        activeSelection.groupName === selection.groupName && activeSelection.name === selection.name
+        activeSelection.groupId === selection.groupId &&
+        activeSelection.id === selection.id
       );
     }
-    return false;
+    return activeSelection.id === selection.id;
   };
 
   const toggleFolder = (folderName: string) => {
@@ -133,18 +122,18 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
     }));
   };
 
-  const toggleGroup = (groupName: string) => {
+  const toggleGroup = (groupId: string) => {
     setExpandedGroups((prev) => ({
       ...prev,
-      [groupName]: prev[groupName] !== true,
+      [groupId]: prev[groupId] !== true,
     }));
   };
 
-  const handleGroupClick = (groupName: string) => {
-    const isGroupSelected = isSelected({ type: 'group', name: groupName });
-    onSelect({ type: 'group', name: groupName });
+  const handleGroupClick = (group: { id: string }) => {
+    const isGroupSelected = isSelected({ type: 'group', id: group.id });
+    onSelect({ type: 'group', id: group.id });
     if (isGroupSelected) {
-      toggleGroup(groupName);
+      toggleGroup(group.id);
     }
   };
 
@@ -254,20 +243,20 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
                       const monster = child.data;
                       return (
                         <div
-                          key={monster.name}
+                          key={monster.id}
                           data-testid={`monster-item-${monster.name}`}
-                          className={`list-item ${isSelected({ type: 'monster', name: monster.name }) ? 'active' : ''}`}
-                          onClick={() => onSelect({ type: 'monster', name: monster.name })}
+                          className={`list-item ${isSelected({ type: 'monster', id: monster.id }) ? 'active' : ''}`}
+                          onClick={() => onSelect({ type: 'monster', id: monster.id })}
                           style={{ paddingLeft: '16px' }}
                           draggable
-                          onDragStart={(e) => handleDragStart(e, 'monster', monster.name)}
+                          onDragStart={(e) => handleDragStart(e, 'monster', monster.id)}
                         >
                           <span className="item-name">👤 {monster.name}</span>
                           <button
                             className="delete-btn"
                             onClick={(e) => {
                               e.stopPropagation();
-                              onDeleteMonster(monster.name);
+                              onDeleteMonster(monster.id);
                             }}
                           >
                             ❌
@@ -276,27 +265,27 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
                       );
                     } else {
                       const group = child.data;
-                      const isGroupSelected = isSelected({ type: 'group', name: group.name });
-                      const isGroupExpanded = expandedGroups[group.name] === true;
+                      const isGroupSelected = isSelected({ type: 'group', id: group.id });
+                      const isGroupExpanded = expandedGroups[group.id] === true;
                       return (
                         <div
-                          key={group.name}
+                          key={group.id}
                           className="group-container"
                           style={{ paddingLeft: '8px' }}
                         >
                           <div
                             className={`group-header ${isGroupSelected ? 'active' : ''}`}
                             data-testid={`group-item-${group.name}`}
-                            onClick={() => handleGroupClick(group.name)}
+                            onClick={() => handleGroupClick(group)}
                             draggable
-                            onDragStart={(e) => handleDragStart(e, 'group', group.name)}
+                            onDragStart={(e) => handleDragStart(e, 'group', group.id)}
                           >
                             <span className="group-title">
                               <span
                                 className={`folder-arrow ${isGroupExpanded ? 'expanded' : ''}`}
                                 onClick={(e) => {
                                   e.stopPropagation();
-                                  toggleGroup(group.name);
+                                  toggleGroup(group.id);
                                 }}
                                 data-testid={`group-arrow-${group.name}`}
                               >
@@ -309,7 +298,7 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
                                 title="Add monster to group"
                                 onClick={(e) => {
                                   e.stopPropagation();
-                                  onAddMonsterToGroup(group.name);
+                                  onAddMonsterToGroup(group.id);
                                 }}
                               >
                                 ➕
@@ -319,7 +308,7 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
                                 title="Delete group"
                                 onClick={(e) => {
                                   e.stopPropagation();
-                                  onDeleteGroup(group.name);
+                                  onDeleteGroup(group.id);
                                 }}
                               >
                                 ❌
@@ -331,13 +320,13 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
                             <div className="group-children" style={{ paddingLeft: '8px' }}>
                               {group.monsters.map((groupChild) => (
                                 <div
-                                  key={`${group.name}.${groupChild.name}`}
+                                  key={groupChild.id}
                                   data-testid={`group-monster-item-${group.name}-${groupChild.name}`}
                                   className={`list-item ${
                                     isSelected({
                                       type: 'group-monster',
-                                      groupName: group.name,
-                                      name: groupChild.name,
+                                      groupId: group.id,
+                                      id: groupChild.id,
                                     })
                                       ? 'active'
                                       : ''
@@ -345,8 +334,8 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
                                   onClick={() =>
                                     onSelect({
                                       type: 'group-monster',
-                                      groupName: group.name,
-                                      name: groupChild.name,
+                                      groupId: group.id,
+                                      id: groupChild.id,
                                     })
                                   }
                                 >
@@ -355,7 +344,7 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
                                     className="delete-btn"
                                     onClick={(e) => {
                                       e.stopPropagation();
-                                      onDeleteMonsterFromGroup(group.name, groupChild.name);
+                                      onDeleteMonsterFromGroup(group.id, groupChild.id);
                                     }}
                                   >
                                     ❌
@@ -396,19 +385,19 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
           <div className="section-title">Individual Monsters</div>
           {folderlessMonsters.map((monster) => (
             <div
-              key={monster.name}
+              key={monster.id}
               data-testid={`monster-item-${monster.name}`}
-              className={`list-item ${isSelected({ type: 'monster', name: monster.name }) ? 'active' : ''}`}
-              onClick={() => onSelect({ type: 'monster', name: monster.name })}
+              className={`list-item ${isSelected({ type: 'monster', id: monster.id }) ? 'active' : ''}`}
+              onClick={() => onSelect({ type: 'monster', id: monster.id })}
               draggable
-              onDragStart={(e) => handleDragStart(e, 'monster', monster.name)}
+              onDragStart={(e) => handleDragStart(e, 'monster', monster.id)}
             >
               <span className="item-name">👤 {monster.name}</span>
               <button
                 className="delete-btn"
                 onClick={(e) => {
                   e.stopPropagation();
-                  onDeleteMonster(monster.name);
+                  onDeleteMonster(monster.id);
                 }}
               >
                 ❌
@@ -432,23 +421,23 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
         >
           <div className="section-title">Monster Groups</div>
           {folderlessGroups.map((group) => {
-            const isGroupSelected = isSelected({ type: 'group', name: group.name });
-            const isGroupExpanded = expandedGroups[group.name] === true;
+            const isGroupSelected = isSelected({ type: 'group', id: group.id });
+            const isGroupExpanded = expandedGroups[group.id] === true;
             return (
-              <div key={group.name} className="group-container">
+              <div key={group.id} className="group-container">
                 <div
                   className={`group-header ${isGroupSelected ? 'active' : ''}`}
                   data-testid={`group-item-${group.name}`}
-                  onClick={() => handleGroupClick(group.name)}
+                  onClick={() => handleGroupClick(group)}
                   draggable
-                  onDragStart={(e) => handleDragStart(e, 'group', group.name)}
+                  onDragStart={(e) => handleDragStart(e, 'group', group.id)}
                 >
                   <span className="group-title">
                     <span
                       className={`folder-arrow ${isGroupExpanded ? 'expanded' : ''}`}
                       onClick={(e) => {
                         e.stopPropagation();
-                        toggleGroup(group.name);
+                        toggleGroup(group.id);
                       }}
                       data-testid={`group-arrow-${group.name}`}
                     >
@@ -461,7 +450,7 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
                       title="Add monster to group"
                       onClick={(e) => {
                         e.stopPropagation();
-                        onAddMonsterToGroup(group.name);
+                        onAddMonsterToGroup(group.id);
                       }}
                     >
                       ➕
@@ -471,7 +460,7 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
                       title="Delete group"
                       onClick={(e) => {
                         e.stopPropagation();
-                        onDeleteGroup(group.name);
+                        onDeleteGroup(group.id);
                       }}
                     >
                       ❌
@@ -483,13 +472,13 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
                   <div className="group-children">
                     {group.monsters.map((child) => (
                       <div
-                        key={`${group.name}.${child.name}`}
+                        key={child.id}
                         data-testid={`group-monster-item-${group.name}-${child.name}`}
                         className={`list-item ${
                           isSelected({
                             type: 'group-monster',
-                            groupName: group.name,
-                            name: child.name,
+                            groupId: group.id,
+                            id: child.id,
                           })
                             ? 'active'
                             : ''
@@ -497,8 +486,8 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
                         onClick={() =>
                           onSelect({
                             type: 'group-monster',
-                            groupName: group.name,
-                            name: child.name,
+                            groupId: group.id,
+                            id: child.id,
                           })
                         }
                       >
@@ -507,7 +496,7 @@ export const MonsterSidebar: React.FC<MonsterSidebarProps> = ({
                           className="delete-btn"
                           onClick={(e) => {
                             e.stopPropagation();
-                            onDeleteMonsterFromGroup(group.name, child.name);
+                            onDeleteMonsterFromGroup(group.id, child.id);
                           }}
                         >
                           ❌

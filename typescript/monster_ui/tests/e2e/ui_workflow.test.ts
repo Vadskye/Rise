@@ -199,6 +199,10 @@ describe('Monster UI Full Workflow E2E Integration Tests', () => {
     // Verify JSON database contains the new monster with the custom freeform code
     const dbRaw = fs.readFileSync(paths.dbPath, 'utf8');
     const dbJson = JSON.parse(dbRaw);
+    // Verify that renaming did not leave behind an extraneous empty "New Monster X"
+    expect(dbJson.monsters.length).toBe(1);
+    expect(dbJson.monsters.find((m: any) => m.name.startsWith('New Monster'))).toBeUndefined();
+
     const savedMonster = dbJson.monsters.find((m: any) => m.name === 'Integration Gargoyle');
     expect(savedMonster).toBeDefined();
     expect(savedMonster.requiredProperties.alignment).toBe('neutral');

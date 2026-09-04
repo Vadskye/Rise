@@ -34,11 +34,13 @@ describe('Monster UI Integration Tests - Monster Groups', () => {
       monsterGroups: [
         ...initialDb.monsterGroups,
         {
+          id: 'group_test_1',
           name: testGroupName,
           hasArt: false,
           sharedFreeformCode: '// shared group code test',
           monsters: [
             {
+              id: 'group_monster_test_1',
               name: testGroupMonsterName,
               requiredProperties: {
                 alignment: 'neutral',
@@ -117,6 +119,7 @@ describe('Monster UI Integration Tests - Monster Groups', () => {
       monsterGroups: [
         ...initialDb.monsterGroups,
         {
+          id: 'group_test_2',
           name: testGroupName,
           hasArt: false,
           sharedFreeformCode: '// group shared code',
@@ -132,6 +135,7 @@ describe('Monster UI Integration Tests - Monster Groups', () => {
           ],
           monsters: [
             {
+              id: 'group_monster_test_2',
               name: m1Name,
               requiredProperties: {
                 alignment: 'neutral',
@@ -150,6 +154,7 @@ describe('Monster UI Integration Tests - Monster Groups', () => {
               freeformCode: '// member one specific',
             },
             {
+              id: 'group_monster_test_3',
               name: m2Name,
               requiredProperties: {
                 alignment: 'neutral',

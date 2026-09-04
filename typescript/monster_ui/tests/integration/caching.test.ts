@@ -24,6 +24,7 @@ describe('Monster UI Integration Tests - Caching', () => {
   test('validateMonster caches character sheets and reuse them on unchanged stats, invalidating them on changes', () => {
     const monsterName = `CacheTestMonster_${Date.now()}`;
     const monsterData1 = {
+      id: 'cache_test_monster_1',
       name: monsterName,
       requiredProperties: {
         alignment: 'neutral',

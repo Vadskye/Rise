@@ -29,6 +29,7 @@ describe('Monster UI Tab Layout Tests', () => {
     saveDb({
       monsters: [
         {
+          id: 'seed_monster',
           name: 'Seed Monster',
           requiredProperties: {
             alignment: 'neutral',

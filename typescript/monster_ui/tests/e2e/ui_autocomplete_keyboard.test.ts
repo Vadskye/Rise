@@ -28,6 +28,7 @@ describe('Autocomplete Keyboard Navigation Tests', () => {
     saveDb({
       monsters: [
         {
+          id: 'seed_monster',
           name: 'Seed Monster',
           requiredProperties: {
             alignment: 'neutral',

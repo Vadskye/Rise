@@ -124,8 +124,13 @@ interface SaveRequestPayload {
   deleteFolder?: string;
 }
 
-const isFullDb = (body: any): body is DatabaseData => {
-  return body && (Array.isArray(body.monsters) || Array.isArray(body.monsterGroups));
+const isFullDb = (body: unknown): body is DatabaseData => {
+  return (
+    typeof body === 'object' &&
+    body !== null &&
+    (Array.isArray((body as DatabaseData).monsters) ||
+      Array.isArray((body as DatabaseData).monsterGroups))
+  );
 };
 
 // Save the database (supporting full or incremental updates), trigger codegen, and run validation
@@ -134,7 +139,7 @@ app.post('/api/save', (req, res) => {
   console.log('[API] POST /api/save - Saving database');
   try {
     let db = getDb();
-    const payload = req.body;
+    const payload = req.body as SaveRequestPayload | DatabaseData;
 
     if (isFullDb(payload)) {
       console.log(`[API] Saving database with full DB format.`);
@@ -143,10 +148,9 @@ app.post('/api/save', (req, res) => {
       console.log(`[API] Processing incremental save.`);
       // 1. Monster Upsert
       if (payload.monster) {
-        const { data, oldName } = payload.monster;
-        const targetName = oldName || data.name;
+        const { data } = payload.monster;
         db.monsters = db.monsters || [];
-        const index = db.monsters.findIndex((m) => m.name === targetName);
+        const index = db.monsters.findIndex((m) => m.id === data.id);
         if (index !== -1) {
           db.monsters[index] = data;
         } else {
@@ -156,15 +160,16 @@ app.post('/api/save', (req, res) => {
 
       // 2. Monster Delete
       if (payload.deleteMonster) {
-        db.monsters = (db.monsters || []).filter((m) => m.name !== payload.deleteMonster);
+        db.monsters = (db.monsters || []).filter(
+          (m) => m.id !== payload.deleteMonster && m.name !== payload.deleteMonster,
+        );
       }
 
       // 3. Group Upsert
       if (payload.group) {
-        const { data, oldName } = payload.group;
-        const targetName = oldName || data.name;
+        const { data } = payload.group;
         db.monsterGroups = db.monsterGroups || [];
-        const index = db.monsterGroups.findIndex((g) => g.name === targetName);
+        const index = db.monsterGroups.findIndex((g) => g.id === data.id);
         if (index !== -1) {
           db.monsterGroups[index] = data;
         } else {
@@ -174,7 +179,9 @@ app.post('/api/save', (req, res) => {
 
       // 4. Group Delete
       if (payload.deleteGroup) {
-        db.monsterGroups = (db.monsterGroups || []).filter((g) => g.name !== payload.deleteGroup);
+        db.monsterGroups = (db.monsterGroups || []).filter(
+          (g) => g.id !== payload.deleteGroup && g.name !== payload.deleteGroup,
+        );
       }
 
       // 5. Folders List Update

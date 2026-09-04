@@ -36,6 +36,29 @@ export function getDb(): DatabaseData {
   }
   const raw = fs.readFileSync(dbPath, 'utf8');
   const parsed = JSON.parse(raw);
+  let hasMissingId = false;
+  for (const m of parsed.monsters || []) {
+    if (!m.id) {
+      m.id = crypto.randomUUID();
+      hasMissingId = true;
+    }
+  }
+  for (const g of parsed.monsterGroups || []) {
+    if (!g.id) {
+      g.id = crypto.randomUUID();
+      hasMissingId = true;
+    }
+    for (const gm of g.monsters || []) {
+      if (!gm.id) {
+        gm.id = crypto.randomUUID();
+        hasMissingId = true;
+      }
+    }
+  }
+  if (hasMissingId) {
+    fs.writeFileSync(dbPath, JSON.stringify(parsed, null, 2), 'utf8');
+  }
+
   if (showDetailedTiming) {
     console.log(
       `[Timing] [DB] Loaded and parsed database in ${(performance.now() - start).toFixed(2)}ms`,
@@ -47,6 +70,23 @@ export function getDb(): DatabaseData {
 export function saveDb(db: DatabaseData) {
   const start = performance.now();
   const dbPath = paths.dbPath;
+
+  for (const m of db.monsters || []) {
+    if (!m.id) {
+      m.id = crypto.randomUUID();
+    }
+  }
+  for (const g of db.monsterGroups || []) {
+    if (!g.id) {
+      g.id = crypto.randomUUID();
+    }
+    for (const gm of g.monsters || []) {
+      if (!gm.id) {
+        gm.id = crypto.randomUUID();
+      }
+    }
+  }
+
   console.log(`[DB] Writing database JSON to: ${dbPath}`);
   fs.writeFileSync(dbPath, JSON.stringify(db, null, 2), 'utf8');
   const writeJsonDuration = performance.now() - start;

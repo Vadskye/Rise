@@ -28,6 +28,7 @@ describe('Monster UI Integration Tests - Structured Fields', () => {
       monsters: [
         ...initialDb.monsters,
         {
+          id: 'struct_test_monster_1',
           name: newMonsterName,
           requiredProperties: {
             alignment: 'lawful evil',
@@ -107,6 +108,7 @@ describe('Monster UI Integration Tests - Structured Fields', () => {
     const initialDb = getDb();
 
     const complexMonster = {
+      id: 'struct_test_monster_2',
       name: testMonsterName,
       requiredProperties: {
         alignment: 'neutral',

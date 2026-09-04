@@ -33,6 +33,7 @@ describe('Monster UI Integration Tests - Save and Validate', () => {
       monsters: [
         ...initialDb.monsters,
         {
+          id: 'test_monster_save_and_validate',
           name: newMonsterName,
           requiredProperties: {
             alignment: 'neutral',

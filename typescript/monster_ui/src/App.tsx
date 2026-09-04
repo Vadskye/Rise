@@ -23,6 +23,11 @@ const defaultRequiredProperties = {
   level: 0,
 };
 
+const generateId = () =>
+  typeof crypto !== 'undefined' && crypto.randomUUID
+    ? crypto.randomUUID()
+    : 'm_' + Date.now() + '_' + Math.random().toString(36).substring(2, 9);
+
 interface AppSettings {
   lastActiveSelection?: SidebarSelection;
 }
@@ -32,14 +37,14 @@ function isValidSelection(selection: SidebarSelection, dbData: DatabaseData): bo
     return false;
   }
   if (selection.type === 'monster') {
-    return dbData.monsters.some((m) => m.name === selection.name);
+    return dbData.monsters.some((m) => m.id === selection.id);
   }
   if (selection.type === 'group') {
-    return dbData.monsterGroups.some((g) => g.name === selection.name);
+    return dbData.monsterGroups.some((g) => g.id === selection.id);
   }
   if (selection.type === 'group-monster') {
-    const group = dbData.monsterGroups.find((g) => g.name === selection.groupName);
-    return !!group && group.monsters.some((m) => m.name === selection.name);
+    const group = dbData.monsterGroups.find((g) => g.id === selection.groupId);
+    return !!group && group.monsters.some((m) => m.id === selection.id);
   }
   return false;
 }
@@ -187,9 +192,15 @@ export const App: React.FC = () => {
         ) {
           initialSelection = settingsData.lastActiveSelection;
         } else if (dbData.monsters.length > 0) {
-          initialSelection = { type: 'monster', name: dbData.monsters[0].name };
+          initialSelection = {
+            type: 'monster',
+            id: dbData.monsters[0].id,
+          };
         } else if (dbData.monsterGroups.length > 0) {
-          initialSelection = { type: 'group', name: dbData.monsterGroups[0].name };
+          initialSelection = {
+            type: 'group',
+            id: dbData.monsterGroups[0].id,
+          };
         }
 
         setActiveSelection(initialSelection);
@@ -252,10 +263,10 @@ export const App: React.FC = () => {
     let groupObj: MonsterGroupData | undefined;
 
     if (activeSelection.type === 'monster') {
-      monsterData = db.monsters.find((m) => m.name === activeSelection.name);
+      monsterData = db.monsters.find((m) => m.id === activeSelection.id);
     } else if (activeSelection.type === 'group-monster') {
-      const group = db.monsterGroups.find((g) => g.name === activeSelection.groupName);
-      monsterData = group?.monsters.find((m) => m.name === activeSelection.name);
+      const group = db.monsterGroups.find((g) => g.id === activeSelection.groupId);
+      monsterData = group?.monsters.find((m) => m.id === activeSelection.id);
       sharedFreeformCode = group?.sharedFreeformCode;
       groupObj = group;
     }
@@ -267,13 +278,15 @@ export const App: React.FC = () => {
     }
 
     // Check if user switched to a completely different monster
-    const selectionChanged =
-      !lastSelectionRef.current ||
-      lastSelectionRef.current.type !== activeSelection.type ||
-      lastSelectionRef.current.name !== activeSelection.name ||
-      (activeSelection.type === 'group-monster' &&
-        lastSelectionRef.current.type === 'group-monster' &&
-        lastSelectionRef.current.groupName !== activeSelection.groupName);
+    const isSameMonster =
+      lastSelectionRef.current &&
+      lastSelectionRef.current.type === activeSelection.type &&
+      lastSelectionRef.current.id === activeSelection.id &&
+      (activeSelection.type !== 'group-monster' ||
+        (lastSelectionRef.current.type === 'group-monster' &&
+          lastSelectionRef.current.groupId === activeSelection.groupId));
+
+    const selectionChanged = !isSameMonster;
 
     lastSelectionRef.current = activeSelection;
 
@@ -287,7 +300,7 @@ export const App: React.FC = () => {
           monster: monsterData,
           sharedFreeformCode,
           groupName:
-            activeSelection.type === 'group-monster' ? activeSelection.groupName : undefined,
+            activeSelection.type === 'group-monster' ? groupObj?.name : undefined,
           group: groupObj ? { ...groupObj, monsters: [] } : undefined,
         }),
       })
@@ -404,6 +417,27 @@ export const App: React.FC = () => {
       setIsSaving(true);
       enqueueSave(payload);
     } else {
+      if (pendingSavePayloadRef.current) {
+        // Monster update chaining
+        if (payload.monster && pendingSavePayloadRef.current.monster) {
+          const prevMonster = pendingSavePayloadRef.current.monster;
+          if (payload.monster.data.id !== prevMonster.data.id) {
+            // Flush pending save for previous monster
+            enqueueSave(pendingSavePayloadRef.current);
+            pendingSavePayloadRef.current = null;
+          }
+        }
+        // Group update chaining
+        if (payload.group && pendingSavePayloadRef.current?.group) {
+          const prevGroup = pendingSavePayloadRef.current.group;
+          if (payload.group.data.id !== prevGroup.data.id) {
+            // Flush pending save for previous group
+            enqueueSave(pendingSavePayloadRef.current);
+            pendingSavePayloadRef.current = null;
+          }
+        }
+      }
+
       pendingSavePayloadRef.current = payload;
       if (saveTimeoutRef.current) {
         clearTimeout(saveTimeoutRef.current);
@@ -417,6 +451,16 @@ export const App: React.FC = () => {
         }
       }, 1000);
     }
+  };
+
+  const handleSelect = (selection: SidebarSelection) => {
+    if (saveTimeoutRef.current && pendingSavePayloadRef.current) {
+      clearTimeout(saveTimeoutRef.current);
+      saveTimeoutRef.current = null;
+      enqueueSave(pendingSavePayloadRef.current);
+      pendingSavePayloadRef.current = null;
+    }
+    setActiveSelection(selection);
   };
 
   const handleUpdateMonster = (updated: MonsterData) => {
@@ -433,48 +477,40 @@ export const App: React.FC = () => {
 
     let updatedDb: DatabaseData;
     if (activeSelection?.type === 'monster') {
+      const activeMonsterId = activeSelection.id;
       updatedDb = {
         ...db,
         monsters: db.monsters.map((m) =>
-          m.name === activeSelection.name ? monsterWithSortedTypes : m,
+          m.id === activeMonsterId ? monsterWithSortedTypes : m,
         ),
       };
-      // If name changed, update the active selection pointer as well
-      if (updated.name !== activeSelection.name) {
-        setActiveSelection({ type: 'monster', name: updated.name });
-      }
       setDb(updatedDb);
       handleSaveDb(
-        { monster: { data: monsterWithSortedTypes, oldName: activeSelection.name } },
+        { monster: { data: monsterWithSortedTypes } },
         false,
       );
     } else if (activeSelection?.type === 'group-monster') {
+      const activeMonsterId = activeSelection.id;
+      const activeGroupId = activeSelection.groupId;
       updatedDb = {
         ...db,
         monsterGroups: db.monsterGroups.map((g) =>
-          g.name === activeSelection.groupName
+          g.id === activeGroupId
             ? {
                 ...g,
                 monsters: g.monsters.map((m) =>
-                  m.name === activeSelection.name ? monsterWithSortedTypes : m,
+                  m.id === activeMonsterId ? monsterWithSortedTypes : m,
                 ),
               }
             : g,
         ),
       };
-      if (updated.name !== activeSelection.name) {
-        setActiveSelection({
-          type: 'group-monster',
-          groupName: activeSelection.groupName,
-          name: updated.name,
-        });
-      }
       setDb(updatedDb);
       const updatedGroup = updatedDb.monsterGroups.find(
-        (g) => g.name === activeSelection.groupName,
+        (g) => g.id === activeGroupId,
       );
       if (updatedGroup) {
-        handleSaveDb({ group: { data: updatedGroup, oldName: activeSelection.groupName } }, false);
+        handleSaveDb({ group: { data: updatedGroup } }, false);
       }
     }
   };
@@ -486,19 +522,24 @@ export const App: React.FC = () => {
     const newName = getUniqueMonsterName(activeMonster.name, db);
     const duplicatedMonster: MonsterData = JSON.parse(JSON.stringify(activeMonster));
     duplicatedMonster.name = newName;
+    duplicatedMonster.id = generateId();
 
     let updatedDb: DatabaseData;
     if (activeSelection?.type === 'group-monster') {
-      const groupName = activeSelection.groupName;
+      const groupId = activeSelection.groupId;
       updatedDb = {
         ...db,
         monsterGroups: db.monsterGroups.map((g) =>
-          g.name === groupName ? { ...g, monsters: [...g.monsters, duplicatedMonster] } : g,
+          g.id === groupId ? { ...g, monsters: [...g.monsters, duplicatedMonster] } : g,
         ),
       };
       setDb(updatedDb);
-      setActiveSelection({ type: 'group-monster', groupName, name: newName });
-      const updatedGroup = updatedDb.monsterGroups.find((g) => g.name === groupName);
+      setActiveSelection({
+        type: 'group-monster',
+        groupId,
+        id: duplicatedMonster.id,
+      });
+      const updatedGroup = updatedDb.monsterGroups.find((g) => g.id === groupId);
       if (updatedGroup) {
         handleSaveDb({ group: { data: updatedGroup } }, true);
       }
@@ -508,7 +549,7 @@ export const App: React.FC = () => {
         monsters: [...db.monsters, duplicatedMonster],
       };
       setDb(updatedDb);
-      setActiveSelection({ type: 'monster', name: newName });
+      setActiveSelection({ type: 'monster', id: duplicatedMonster.id });
       handleSaveDb({ monster: { data: duplicatedMonster } }, true);
     }
   };
@@ -517,22 +558,22 @@ export const App: React.FC = () => {
     if (activeSelection?.type !== 'group') {
       return;
     }
+    const activeGroupId = activeSelection.id;
     const updatedDb = {
       ...db,
-      monsterGroups: db.monsterGroups.map((g) => (g.name === activeSelection.name ? updated : g)),
+      monsterGroups: db.monsterGroups.map((g) =>
+        g.id === activeGroupId ? updated : g,
+      ),
     };
     setDb(updatedDb);
-    const oldGroupName = activeSelection.name;
-    if (updated.name !== activeSelection.name) {
-      setActiveSelection({ type: 'group', name: updated.name });
-    }
-    handleSaveDb({ group: { data: updated, oldName: oldGroupName } }, false);
+    handleSaveDb({ group: { data: updated } }, false);
   };
 
   const handleAddMonster = (folder?: unknown) => {
     const name = `New Monster ${db.monsters.length + 1}`;
     const folderStr = typeof folder === 'string' ? folder : undefined;
     const newMonster: MonsterData = {
+      id: generateId(),
       name,
       folder: folderStr,
       requiredProperties: { ...defaultRequiredProperties },
@@ -543,7 +584,7 @@ export const App: React.FC = () => {
       monsters: [...db.monsters, newMonster],
     };
     setDb(updatedDb);
-    setActiveSelection({ type: 'monster', name });
+    setActiveSelection({ type: 'monster', id: newMonster.id });
     handleSaveDb({ monster: { data: newMonster } }, true);
   };
 
@@ -551,6 +592,7 @@ export const App: React.FC = () => {
     const name = `New Group ${db.monsterGroups.length + 1}`;
     const folderStr = typeof folder === 'string' ? folder : undefined;
     const newGroup: MonsterGroupData = {
+      id: generateId(),
       name,
       folder: folderStr,
       hasArt: false,
@@ -562,17 +604,18 @@ export const App: React.FC = () => {
       monsterGroups: [...db.monsterGroups, newGroup],
     };
     setDb(updatedDb);
-    setActiveSelection({ type: 'group', name });
+    setActiveSelection({ type: 'group', id: newGroup.id });
     handleSaveDb({ group: { data: newGroup } }, true);
   };
 
-  const handleAddMonsterToGroup = (groupName: string) => {
-    const group = db.monsterGroups.find((g) => g.name === groupName);
+  const handleAddMonsterToGroup = (groupId: string) => {
+    const group = db.monsterGroups.find((g) => g.id === groupId);
     if (!group) {
       return;
     }
     const name = `New Member ${group.monsters.length + 1}`;
     const newMonster: MonsterData = {
+      id: generateId(),
       name,
       requiredProperties: { ...defaultRequiredProperties },
       freeformCode: '',
@@ -580,36 +623,37 @@ export const App: React.FC = () => {
     const updatedDb = {
       ...db,
       monsterGroups: db.monsterGroups.map((g) =>
-        g.name === groupName ? { ...g, monsters: [...g.monsters, newMonster] } : g,
+        g.id === groupId ? { ...g, monsters: [...g.monsters, newMonster] } : g,
       ),
     };
     setDb(updatedDb);
-    setActiveSelection({ type: 'group-monster', groupName, name });
-    const updatedGroup = updatedDb.monsterGroups.find((g) => g.name === groupName);
+    setActiveSelection({ type: 'group-monster', groupId, id: newMonster.id });
+    const updatedGroup = updatedDb.monsterGroups.find((g) => g.id === groupId);
     if (updatedGroup) {
       handleSaveDb({ group: { data: updatedGroup } }, true);
     }
   };
 
-  const handleDeleteMonster = (name: string) => {
-    const monsterToDelete = db.monsters.find((m) => m.name === name);
+
+  const handleDeleteMonster = (id: string) => {
+    const monsterToDelete = db.monsters.find((m) => m.id === id);
     if (!monsterToDelete) {
       return;
     }
-    const originalIndex = db.monsters.findIndex((m) => m.name === name);
+    const originalIndex = db.monsters.findIndex((m) => m.id === id);
 
     const updatedDb = {
       ...db,
-      monsters: db.monsters.filter((m) => m.name !== name),
+      monsters: db.monsters.filter((m) => m.id !== id),
     };
     setDb(updatedDb);
-    if (activeSelection?.type === 'monster' && activeSelection.name === name) {
+    if (activeSelection?.type === 'monster' && activeSelection.id === id) {
       setActiveSelection(null);
     }
-    handleSaveDb({ deleteMonster: name }, true);
+    handleSaveDb({ deleteMonster: id }, true);
 
     setToast({
-      message: `Deleted individual monster "${name}"`,
+      message: `Deleted individual monster "${monsterToDelete.name}"`,
       onUndo: () => {
         setDb((prevDb) => {
           const newMonsters = [...prevDb.monsters];
@@ -618,34 +662,34 @@ export const App: React.FC = () => {
           handleSaveDb({ monster: { data: monsterToDelete } }, true);
           return restoredDb;
         });
-        setActiveSelection({ type: 'monster', name });
+        setActiveSelection({ type: 'monster', id: monsterToDelete.id });
         setToast(null);
       },
     });
   };
 
-  const handleDeleteGroup = (name: string) => {
-    const groupToDelete = db.monsterGroups.find((g) => g.name === name);
+  const handleDeleteGroup = (id: string) => {
+    const groupToDelete = db.monsterGroups.find((g) => g.id === id);
     if (!groupToDelete) {
       return;
     }
-    const originalIndex = db.monsterGroups.findIndex((g) => g.name === name);
+    const originalIndex = db.monsterGroups.findIndex((g) => g.id === id);
 
     const updatedDb = {
       ...db,
-      monsterGroups: db.monsterGroups.filter((g) => g.name !== name),
+      monsterGroups: db.monsterGroups.filter((g) => g.id !== id),
     };
     setDb(updatedDb);
     if (
-      (activeSelection?.type === 'group' && activeSelection.name === name) ||
-      (activeSelection?.type === 'group-monster' && activeSelection.groupName === name)
+      (activeSelection?.type === 'group' && activeSelection.id === id) ||
+      (activeSelection?.type === 'group-monster' && activeSelection.groupId === id)
     ) {
       setActiveSelection(null);
     }
-    handleSaveDb({ deleteGroup: name }, true);
+    handleSaveDb({ deleteGroup: id }, true);
 
     setToast({
-      message: `Deleted group "${name}" and all its monsters`,
+      message: `Deleted group "${groupToDelete.name}" and all its monsters`,
       onUndo: () => {
         setDb((prevDb) => {
           const newGroups = [...prevDb.monsterGroups];
@@ -654,49 +698,49 @@ export const App: React.FC = () => {
           handleSaveDb({ group: { data: groupToDelete } }, true);
           return restoredDb;
         });
-        setActiveSelection({ type: 'group', name });
+        setActiveSelection({ type: 'group', id: groupToDelete.id });
         setToast(null);
       },
     });
   };
 
-  const handleDeleteMonsterFromGroup = (groupName: string, name: string) => {
-    const group = db.monsterGroups.find((g) => g.name === groupName);
+  const handleDeleteMonsterFromGroup = (groupId: string, id: string) => {
+    const group = db.monsterGroups.find((g) => g.id === groupId);
     if (!group) {
       return;
     }
-    const monsterToDelete = group.monsters.find((m) => m.name === name);
+    const monsterToDelete = group.monsters.find((m) => m.id === id);
     if (!monsterToDelete) {
       return;
     }
-    const originalIndex = group.monsters.findIndex((m) => m.name === name);
+    const originalIndex = group.monsters.findIndex((m) => m.id === id);
 
     const updatedDb = {
       ...db,
       monsterGroups: db.monsterGroups.map((g) =>
-        g.name === groupName ? { ...g, monsters: g.monsters.filter((m) => m.name !== name) } : g,
+        g.id === groupId ? { ...g, monsters: g.monsters.filter((m) => m.id !== id) } : g,
       ),
     };
     setDb(updatedDb);
     if (
       activeSelection?.type === 'group-monster' &&
-      activeSelection.groupName === groupName &&
-      activeSelection.name === name
+      activeSelection.groupId === groupId &&
+      activeSelection.id === id
     ) {
       setActiveSelection(null);
     }
-    const updatedGroup = updatedDb.monsterGroups.find((g) => g.name === groupName);
+    const updatedGroup = updatedDb.monsterGroups.find((g) => g.id === groupId);
     if (updatedGroup) {
       handleSaveDb({ group: { data: updatedGroup } }, true);
     }
 
     setToast({
-      message: `Deleted monster "${name}" from group "${groupName}"`,
+      message: `Deleted monster "${monsterToDelete.name}" from group "${group.name}"`,
       onUndo: () => {
         setDb((prevDb) => {
           let restoredGroup: MonsterGroupData | undefined;
           const restoredGroups = prevDb.monsterGroups.map((g) => {
-            if (g.name === groupName) {
+            if (g.id === groupId) {
               const newMonsters = [...g.monsters];
               newMonsters.splice(originalIndex, 0, monsterToDelete);
               restoredGroup = { ...g, monsters: newMonsters };
@@ -710,23 +754,23 @@ export const App: React.FC = () => {
           }
           return restoredDb;
         });
-        setActiveSelection({ type: 'group-monster', groupName, name });
+        setActiveSelection({ type: 'group-monster', groupId, id: monsterToDelete.id });
         setToast(null);
       },
     });
   };
 
-  const handleMoveToFolder = (type: 'monster' | 'group', name: string, targetFolder?: string) => {
+  const handleMoveToFolder = (type: 'monster' | 'group', id: string, targetFolder?: string) => {
     let updatedDb: DatabaseData;
     if (type === 'monster') {
       updatedDb = {
         ...db,
         monsters: db.monsters.map((m) =>
-          m.name === name ? { ...m, folder: targetFolder || undefined } : m,
+          m.id === id ? { ...m, folder: targetFolder || undefined } : m,
         ),
       };
       setDb(updatedDb);
-      const updatedMonster = updatedDb.monsters.find((m) => m.name === name);
+      const updatedMonster = updatedDb.monsters.find((m) => m.id === id);
       if (updatedMonster) {
         handleSaveDb({ monster: { data: updatedMonster } }, true);
       }
@@ -734,11 +778,11 @@ export const App: React.FC = () => {
       updatedDb = {
         ...db,
         monsterGroups: db.monsterGroups.map((g) =>
-          g.name === name ? { ...g, folder: targetFolder || undefined } : g,
+          g.id === id ? { ...g, folder: targetFolder || undefined } : g,
         ),
       };
       setDb(updatedDb);
-      const updatedGroup = updatedDb.monsterGroups.find((g) => g.name === name);
+      const updatedGroup = updatedDb.monsterGroups.find((g) => g.id === id);
       if (updatedGroup) {
         handleSaveDb({ group: { data: updatedGroup } }, true);
       }
@@ -806,16 +850,16 @@ export const App: React.FC = () => {
   // Find active editor content
   const activeMonster =
     activeSelection?.type === 'monster'
-      ? db.monsters.find((m) => m.name === activeSelection.name)
+      ? db.monsters.find((m) => m.id === activeSelection.id)
       : activeSelection?.type === 'group-monster'
         ? db.monsterGroups
-            .find((g) => g.name === activeSelection.groupName)
-            ?.monsters.find((m) => m.name === activeSelection.name)
+            .find((g) => g.id === activeSelection.groupId)
+            ?.monsters.find((m) => m.id === activeSelection.id)
         : undefined;
 
   const activeGroup =
     activeSelection?.type === 'group'
-      ? db.monsterGroups.find((g) => g.name === activeSelection.name)
+      ? db.monsterGroups.find((g) => g.id === activeSelection.id)
       : undefined;
 
   // Filter global warnings/errors (not displayed inline on structured fields)
@@ -842,7 +886,7 @@ export const App: React.FC = () => {
       <MonsterSidebar
         db={db}
         activeSelection={activeSelection}
-        onSelect={setActiveSelection}
+        onSelect={handleSelect}
         onAddMonster={handleAddMonster}
         onAddGroup={handleAddGroup}
         onAddMonsterToGroup={handleAddMonsterToGroup}
@@ -863,8 +907,8 @@ export const App: React.FC = () => {
             <h3>
               {activeSelection
                 ? activeSelection.type === 'group'
-                  ? `Group Settings: ${activeSelection.name}`
-                  : `Editing Monster: ${activeSelection.name}`
+                  ? `Group Settings: ${activeGroup?.name || ''}`
+                  : `Editing Monster: ${activeMonster?.name || ''}`
                 : 'Select or Create a Monster'}
             </h3>
             {loading && (

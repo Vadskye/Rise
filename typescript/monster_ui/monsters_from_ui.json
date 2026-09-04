@@ -65,7 +65,8 @@
           "category": "slow"
         }
       ],
-      "customAbilities": []
+      "customAbilities": [],
+      "id": "336a90a2-c530-4ab2-a341-ab5b18b98e40"
     },
     {
       "name": "Minotaur",
@@ -148,7 +149,8 @@
             "isMagical": false
           }
         }
-      ]
+      ],
+      "id": "79579c4a-3922-4b64-8a1e-99718d91fea8"
     },
     {
       "name": "Aboleth",
@@ -273,7 +275,8 @@
           ],
           "usageTime": "triggered"
         }
-      ]
+      ],
+      "id": "cc336940-ac05-4f68-92e2-342246c31897"
     },
     {
       "name": "Darkwraith",
@@ -356,7 +359,8 @@
             "isMagical": true
           }
         }
-      ]
+      ],
+      "id": "0fc13bc8-5752-4311-8bf7-1f53bf0214ae"
     },
     {
       "name": "Gelatinous Cube",
@@ -448,7 +452,8 @@
           "effect": "\n        Anything that is \\grappled by the $name while sharing space with it is suspended within its body.\n        Whenever it moves, all suspended creatures and objects automatically move with it.\n      ",
           "isMagical": false
         }
-      ]
+      ],
+      "id": "8ba7769e-8cd7-46a2-8ae9-dbfc20547ab1"
     },
     {
       "name": "Fusion Elemental",
@@ -556,7 +561,8 @@
             "usageTime": "elite"
           }
         }
-      ]
+      ],
+      "id": "80189d42-095c-40ae-be94-b6e5fcff2b3b"
     },
     {
       "name": "Ankheg",
@@ -637,7 +643,8 @@
             "Acid"
           ]
         }
-      ]
+      ],
+      "id": "4d487998-78a3-4df7-a180-708441f17eb6"
     },
     {
       "name": "Carrion Crow",
@@ -686,7 +693,8 @@
             "weapon": "beak"
           }
         }
-      ]
+      ],
+      "id": "3e4413b9-5a25-4307-9785-bfd01839d5be"
     },
     {
       "name": "Warg",
@@ -732,7 +740,8 @@
             "weapon": "bite"
           }
         }
-      ]
+      ],
+      "id": "57eeab22-e73c-470e-81de-d0097f0e5303"
     },
     {
       "name": "Nightcrawler",
@@ -809,7 +818,8 @@
             "displayName": "Crawling Darkness"
           }
         }
-      ]
+      ],
+      "id": "e44a37f4-9ccc-406c-b405-026675ae9944"
     },
     {
       "name": "Hydra Maggot",
@@ -883,7 +893,8 @@
           }
         }
       ],
-      "customAbilities": []
+      "customAbilities": [],
+      "id": "b8c49968-9fe0-440c-8562-db9a0b248e1b"
     },
     {
       "name": "Grumblegrub",
@@ -941,7 +952,8 @@
             "weapon": "bite"
           }
         }
-      ]
+      ],
+      "id": "148f8a25-32f6-4720-912c-8424274af66f"
     },
     {
       "name": "Grumblegrub Swarm",
@@ -1000,7 +1012,8 @@
       "knowledge": {
         "normal": "When a group of grumblegrubs find a particularly large and enticing corpse, they can swarm around it in a frenzy. These swarms can then travel together as a group, searching for more food. They don't tend to stay together long, so if you see a grumblegrub swarm, it means there must have been a large corpse nearby recently."
       },
-      "passiveAbilities": []
+      "passiveAbilities": [],
+      "id": "b53b7023-3336-44a5-b569-115382b1815e"
     },
     {
       "name": "Darkmantle",
@@ -1062,7 +1075,8 @@
             "weapon": "tentacle"
           }
         }
-      ]
+      ],
+      "id": "c5cb917f-4ee4-4c7e-93f8-1919fcb46f13"
     },
     {
       "name": "Griffon",
@@ -1150,7 +1164,8 @@
           "name": "Eagle Eye",
           "usageTime": "elite"
         }
-      ]
+      ],
+      "id": "50392b2c-e2f8-4f9f-a410-cd933d550ba4"
     },
     {
       "name": "Yrthak",
@@ -1234,7 +1249,8 @@
           "effect": "\n        The $name uses its hearing to \"see\".\n        While it is \\deafened, it loses its natural blindsight and blindsense abilities, making it \\blinded.\n      ",
           "isMagical": false
         }
-      ]
+      ],
+      "id": "433209e0-137b-493a-9b67-a62031878c06"
     },
     {
       "name": "Stygian Leech",
@@ -1300,7 +1316,8 @@
           ],
           "weapon": "bite"
         }
-      ]
+      ],
+      "id": "e415dc34-624b-4f2d-8288-36946f21dc82"
     },
     {
       "name": "Quadrilla",
@@ -1392,7 +1409,8 @@
           "effect": "\n        The $name has four arms.\n        When it initiates a grapple while not already grappling a creature, it automatically controls the grapple.\n      ",
           "isMagical": false
         }
-      ]
+      ],
+      "id": "9749bbb4-2afd-4490-afcc-e2c4e854010d"
     },
     {
       "name": "Giant Wasp",
@@ -1453,7 +1471,8 @@
             "poison": "Giant Wasp Venom"
           }
         }
-      ]
+      ],
+      "id": "2fb2dd55-4edb-41f6-8720-3894eb6ca802"
     },
     {
       "name": "Frostweb Spider",
@@ -1530,7 +1549,8 @@
           "type": "Tremorsense",
           "range": 90
         }
-      ]
+      ],
+      "id": "82c263da-18b8-4f28-a2e8-ad42dbf8d636"
     },
     {
       "name": "Shimmercat",
@@ -1598,7 +1618,8 @@
             "weapon": "claws"
           }
         }
-      ]
+      ],
+      "id": "f1e3053a-c3a0-405d-85c8-c4c0ab97a428"
     },
     {
       "name": "Corpsetree",
@@ -1670,7 +1691,8 @@
             "usageTime": "elite"
           }
         }
-      ]
+      ],
+      "id": "a52eecfd-a9ef-4074-8b26-e7bca4e927b6"
     },
     {
       "name": "Corpsemound",
@@ -1741,7 +1763,8 @@
             "usageTime": "elite"
           }
         }
-      ]
+      ],
+      "id": "9b45898a-c518-4d4a-9c76-f96af26ac500"
     }
   ],
   "monsterGroups": [
@@ -1795,7 +1818,8 @@
               }
             }
           ],
-          "equippedShield": "buckler"
+          "equippedShield": "buckler",
+          "id": "10ddd1ca-a3ea-49a6-a29f-33d075147bbc"
         },
         {
           "name": "Wolf Rider",
@@ -1845,7 +1869,8 @@
                 "weapon": "spear"
               }
             }
-          ]
+          ],
+          "id": "d151972f-d029-439a-9d25-8100491ad6dc"
         },
         {
           "name": "Goblin Shaman",
@@ -1894,7 +1919,8 @@
                 "displayName": "Consecrated Strike"
               }
             }
-          ]
+          ],
+          "id": "f075f873-737c-4a9a-aee2-f0a26bdab314"
         },
         {
           "name": "Goblin Chief",
@@ -1943,7 +1969,8 @@
             }
           ],
           "equippedArmor": "buff leather",
-          "equippedShield": "buckler"
+          "equippedShield": "buckler",
+          "id": "678ebea9-1df3-400d-8dae-36c5e2f00d35"
         }
       ],
       "knowledge": {
@@ -1955,7 +1982,8 @@
           "type": "Low-light Vision"
         }
       ],
-      "folder": "Uncivilized Humanoids"
+      "folder": "Uncivilized Humanoids",
+      "id": "190caf87-531b-4fee-ae79-79dc6077ba2c"
     },
     {
       "name": "Orcs",
@@ -2004,7 +2032,8 @@
                 "weapon": "greataxe"
               }
             }
-          ]
+          ],
+          "id": "2d65e0bc-d6ae-4c0c-bf2b-04645ed668f3"
         },
         {
           "name": "Orc Grunt",
@@ -2052,7 +2081,8 @@
                 "weapon": "greataxe"
               }
             }
-          ]
+          ],
+          "id": "76605199-6c32-4d33-ab48-b139ace52eb7"
         },
         {
           "name": "Orc Butcher",
@@ -2103,7 +2133,8 @@
               ],
               "weapon": "greataxe"
             }
-          ]
+          ],
+          "id": "140ee7a1-2ed1-49b7-b935-31b7149c69b4"
         },
         {
           "name": "Orc Veteran",
@@ -2159,7 +2190,8 @@
                 "weapon": "heavy crossbow"
               }
             }
-          ]
+          ],
+          "id": "f097ef7d-387f-4a70-bac7-48cc7bc7544f"
         },
         {
           "name": "Orc Clan Chief",
@@ -2223,7 +2255,8 @@
                 "usageTime": "elite"
               }
             }
-          ]
+          ],
+          "id": "75d36441-9606-42a4-99e2-6a02a1daeb83"
         },
         {
           "name": "Orc Shaman",
@@ -2288,7 +2321,8 @@
                 "weapon": "greataxe"
               }
             }
-          ]
+          ],
+          "id": "7c2b0d26-2324-4668-ab76-eb9bc44b4c7a"
         }
       ],
       "knowledge": {
@@ -2301,7 +2335,8 @@
           "type": "Darkvision",
           "range": 60
         }
-      ]
+      ],
+      "id": "7f80eeb2-78db-4c31-9797-56d63996858f"
     },
     {
       "name": "Bandits",
@@ -2358,7 +2393,8 @@
           ],
           "trainedSkills": [
             "endurance"
-          ]
+          ],
+          "id": "1294ac8e-9430-4f28-b1da-2cd90b25b77a"
         },
         {
           "name": "Veteran Archer",
@@ -2406,7 +2442,8 @@
           ],
           "properties": {
             "has_art": false
-          }
+          },
+          "id": "bde6ca7f-a56b-4422-a686-58177cf45087"
         },
         {
           "name": "Renegade Bolter",
@@ -2454,13 +2491,15 @@
                 "isMagical": true
               }
             }
-          ]
+          ],
+          "id": "8c3a236d-5209-4ccf-b27e-215f873779ee"
         }
       ],
       "folder": "Civilized Humanoids",
       "knowledge": {
         "normal": ""
-      }
+      },
+      "id": "45d25e09-a7e8-4967-8c93-869caad045f7"
     },
     {
       "name": "Bugbears",
@@ -2516,7 +2555,8 @@
             -2,
             0,
             2
-          ]
+          ],
+          "id": "256d1492-ff6f-4c7e-be3a-d2c017137b41"
         },
         {
           "name": "Bugbear Shaman",
@@ -2588,7 +2628,8 @@
             -2,
             2,
             4
-          ]
+          ],
+          "id": "24539379-0411-4c2e-9f7a-004ed3cdd989"
         },
         {
           "name": "Bugbear Growl",
@@ -2640,7 +2681,8 @@
                 "weapon": "flail"
               }
             }
-          ]
+          ],
+          "id": "f0cf4b78-45ab-431a-bbe0-0c1d5f1c5e6b"
         },
         {
           "name": "Bugbear Chief",
@@ -2702,7 +2744,8 @@
           "trainedSkills": [
             "endurance",
             "intimidate"
-          ]
+          ],
+          "id": "ae43743b-2954-4b97-8da4-892969bf9879"
         }
       ],
       "folder": "Uncivilized Humanoids",
@@ -2710,7 +2753,8 @@
         "normal": "Bugbears are Medium humanoid creatures with burly, hairy bodies and ugly goblin faces. They are brutish and chaotic, and enjoy bullying their goblin kin.",
         "hard": "Although bugbears have only ordinary physical strength, they are remarkably durable. Their name comes from their hirstute nature and inexhaustible endurance, both of which are reminiscent of bears. They enjoy wrestling, and tend to grapple their foes in combat, even when doing so is not tactically advantageous.",
         "legendary": "Bugbears are typically found in small packs that rarely have more than a dozen members. However, sometimes they will congregate around a powerful leader for a time. These groupings are not hierarchical or well organized, and are typically based around some discovery of wealth that a chief can ration out to their followers."
-      }
+      },
+      "id": "899addfe-7576-4e19-bed9-79355a2e0b7a"
     },
     {
       "name": "Cultists",
@@ -2760,7 +2804,8 @@
             1,
             1,
             4
-          ]
+          ],
+          "id": "1b55e68b-7d49-42dc-a46f-6d7bfd3dd5fc"
         },
         {
           "name": "Pyromaniac",
@@ -2817,7 +2862,8 @@
                 "weapon": "club"
               }
             }
-          ]
+          ],
+          "id": "e1b7bcea-0b98-4983-8a69-ae506ab5f4d5"
         },
         {
           "name": "Arsonist",
@@ -2850,9 +2896,11 @@
                 "weapon": "Alchemist's Fire"
               }
             }
-          ]
+          ],
+          "id": "d6ae9891-ac4a-4281-acc0-af7a50c3cef1"
         }
-      ]
+      ],
+      "id": "f14e72f7-adcc-4850-b75f-f647f90070ca"
     },
     {
       "name": "Giants",
@@ -2920,7 +2968,8 @@
             "might",
             "awareness"
           ],
-          "equippedArmor": "rawhide"
+          "equippedArmor": "rawhide",
+          "id": "fdbcea1c-4d0c-45bc-b39d-f33ba33593b9"
         },
         {
           "name": "Stone Giant",
@@ -3008,7 +3057,8 @@
               }
             }
           ],
-          "equippedArmor": "rawhide"
+          "equippedArmor": "rawhide",
+          "id": "456a1248-ec6c-46ea-a716-dc22f392258b"
         },
         {
           "name": "Stone Giant Elder",
@@ -3088,7 +3138,8 @@
               }
             }
           ],
-          "equippedArmor": "leather lamellar"
+          "equippedArmor": "leather lamellar",
+          "id": "238996e0-ef8c-4c04-907a-c0ccdfcfe36c"
         }
       ],
       "knowledge": {
@@ -3097,7 +3148,8 @@
         "hard": ""
       },
       "passiveAbilities": [],
-      "description": "Giants can throw objects no larger than two size categories smaller than themselves with ease. Their descriptions list their statistics when throwing boulders. A giant's \\glossterm{range limits} with an improvised object other than a boulder are generally half its range limit with a boulder. The object may also deal less damage than a boulder depending on its construction."
+      "description": "Giants can throw objects no larger than two size categories smaller than themselves with ease. Their descriptions list their statistics when throwing boulders. A giant's \\glossterm{range limits} with an improvised object other than a boulder are generally half its range limit with a boulder. The object may also deal less damage than a boulder depending on its construction.",
+      "id": "ff3afb00-4cfa-46e9-887b-88f2b70b5f4b"
     },
     {
       "name": "Lizardfolk",
@@ -3144,7 +3196,8 @@
                 "weapon": "spear"
               }
             }
-          ]
+          ],
+          "id": "9672179a-fd90-4566-af0a-bbc5abdeadab"
         },
         {
           "name": "Lizardfolk Champion",
@@ -3193,7 +3246,8 @@
                 "weapon": "bite"
               }
             }
-          ]
+          ],
+          "id": "bb8fdeee-7a93-4fb5-93a5-325830bc743b"
         }
       ],
       "knowledge": {
@@ -3210,7 +3264,8 @@
         }
       ],
       "equippedArmor": "scale",
-      "equippedShield": "standard shield"
+      "equippedShield": "standard shield",
+      "id": "66a54109-41c5-4a56-ac32-0660b8be9445"
     },
     {
       "name": "Kobolds",
@@ -3264,7 +3319,8 @@
                 "displayName": "Sneaky Darts"
               }
             }
-          ]
+          ],
+          "id": "e2bc634b-fb81-4dc5-b535-87b7e3be6163"
         },
         {
           "name": "Snipper",
@@ -3310,7 +3366,8 @@
                 "weapon": "longbow"
               }
             }
-          ]
+          ],
+          "id": "0b93e4e9-1fd1-4778-8319-d7b1715e2c35"
         },
         {
           "name": "Yipper",
@@ -3363,7 +3420,8 @@
                 "isMagical": false
               }
             }
-          ]
+          ],
+          "id": "1e74fe83-2288-493a-abca-f1f71f16fd78"
         },
         {
           "name": "Dragonsworn Nipper",
@@ -3421,7 +3479,8 @@
               "effect": "\n      The $name is \\resistant to the tag associated with the dragon it swore to serve.\n    ",
               "isMagical": false
             }
-          ]
+          ],
+          "id": "c07f7233-60c1-419a-a43f-1082f40dcbe1"
         },
         {
           "name": "Dragonsworn Snipper",
@@ -3485,7 +3544,8 @@
               "effect": "\n      The $name is \\resistant to the tag associated with the dragon it swore to serve.\n    ",
               "isMagical": false
             }
-          ]
+          ],
+          "id": "572b7842-a969-4acc-a30f-072f0c1fc655"
         },
         {
           "name": "Dragonsworn Yipper",
@@ -3548,13 +3608,15 @@
               "effect": "\n      The $name is \\resistant to the tag associated with the dragon it swore to serve.\n    ",
               "isMagical": false
             }
-          ]
+          ],
+          "id": "fb0419df-7128-4066-a62c-b8ac57f5fe5f"
         }
       ],
       "knowledge": {
         "normal": "Although kobolds can be found in civilization, many kobolds live out in the wilds.\nThey are coordinated and brave fighters as long as they have a leader present to guide them.\nIf their leader falls, they will generally try to flee and regroup.",
         "hard": "Kobolds must respect their leader for more than brute strength.\nThey always prefer to serve dragons if possible, but cunning and charismatic creatures can convince kobolds to form temporary alliances out of mutual interest."
-      }
+      },
+      "id": "26706d4e-3492-4a78-b31b-a422a953c823"
     },
     {
       "name": "Necromancers",
@@ -3628,7 +3690,8 @@
                 "usageTime": "elite"
               }
             }
-          ]
+          ],
+          "id": "861449ba-f601-408a-b15d-507d2c4d4f21"
         },
         {
           "name": "Lichbound",
@@ -3742,7 +3805,8 @@
               "effect": "\n              The $name is immune to \\atLife attacks.\n            ",
               "isMagical": false
             }
-          ]
+          ],
+          "id": "86534325-471b-49c6-a62b-311659deeffd"
         },
         {
           "name": "Idoris, Queen of the Dead",
@@ -3833,12 +3897,14 @@
           "rituals": [
             "Channel Divinity",
             "Vivimancy"
-          ]
+          ],
+          "id": "3688b48d-6ac7-4d07-aa55-1a776b4356d7"
         }
       ],
       "knowledge": {
         "normal": "Necromancers revive and manipulate undead.\n          Some even attempt to emulate the strength of undead in their own bodies.\n          They are reviled in most societies, both for their desecration of the dead and for the harm their magic can do to souls."
-      }
+      },
+      "id": "0daa7b38-281b-4f0a-924a-1c9182085e67"
     },
     {
       "name": "Ogres",
@@ -3900,7 +3966,8 @@
                 "weapon": "greatclub"
               }
             }
-          ]
+          ],
+          "id": "59f15658-fc19-441e-9652-0d271bf9a039"
         },
         {
           "name": "Ogre Menace",
@@ -3967,7 +4034,8 @@
                 "weapon": "greatclub"
               }
             }
-          ]
+          ],
+          "id": "ca6c39c7-e431-4924-82ed-cc63655e0ddc"
         },
         {
           "name": "Ogre Mage",
@@ -4031,7 +4099,8 @@
                 "isMagical": true
               }
             }
-          ]
+          ],
+          "id": "e18899dd-94b9-4fcf-a035-97b6b69d48ae"
         },
         {
           "name": "Ogre Skullclaimer",
@@ -4111,13 +4180,15 @@
                 "usageTime": "elite"
               }
             }
-          ]
+          ],
+          "id": "042232c6-cb39-4c3a-912c-f23f61b9301a"
         }
       ],
       "knowledge": {
         "normal": "Ogres are Large, hideous humanoid creatures with a taste for human flesh.\n          If that is unavailable, they also enjoy the flesh of other humanoid creatures.\n          They lack the intelligence for complex plans, but they like lying in wait to ambush helpless travelers.",
         "hard": "Ogre skin color ranges from dull yellow to dull brown.\n          Their clothing consists of poorly cured furs and hides, which add to their naturally repellent odor.\n\n          They are intelligent enough to throw their javelins first to soften up their foes before closing into melee, but ogre gangs and bands fight as disorganized individuals.\n          Ogres use massive clubs in battle to tenderize their meat instead of wastefully hacking off bits."
-      }
+      },
+      "id": "b817612e-0ba4-4e04-87d4-a82e8d092ce0"
     },
     {
       "name": "Townsfolk",
@@ -4164,7 +4235,8 @@
                 "weapon": "spear"
               }
             }
-          ]
+          ],
+          "id": "a0bf43c1-1f70-4be0-9bf1-055d1cd18dbd"
         },
         {
           "name": "Town Healer",
@@ -4215,12 +4287,14 @@
                 "weapon": "club"
               }
             }
-          ]
+          ],
+          "id": "53ef8ba7-8ed5-45b3-9484-56652c7cea96"
         }
       ],
       "knowledge": {
         "normal": "Townsfolk are common throughout civilization.\n          They are typically found in small groups, preying on travelers or isolated settlements."
-      }
+      },
+      "id": "55e0e7de-8d9a-40aa-a514-71c2612ad264"
     },
     {
       "name": "Formians",
@@ -4280,7 +4354,8 @@
                 "weapon": "bite"
               }
             }
-          ]
+          ],
+          "id": "d49be8a7-a372-4367-9b96-d4d5dc4b530b"
         },
         {
           "name": "Drone",
@@ -4336,7 +4411,8 @@
                 "displayName": "Venomous Stinger"
               }
             }
-          ]
+          ],
+          "id": "ac758848-b45c-477d-bb6a-633ae89b6211"
         },
         {
           "name": "Myrmarch",
@@ -4404,7 +4480,8 @@
                 "weapon": "greatsword"
               }
             }
-          ]
+          ],
+          "id": "d62b9234-ac7d-4ab6-a666-5f4ca83a51dd"
         }
       ],
       "knowledge": {
@@ -4424,7 +4501,8 @@
           "effect": "\n        All formians within 50 miles of their queen are in constant telepathic communication with her, regardless of any intervening physical obstacles.\n        They instantaneously share information about threats and discoveries.\n        This allows formians to usually respond to new information intelligently and in perfect unison, regardless of each formian's individual intelligence.\n      ",
           "isMagical": true
         }
-      ]
+      ],
+      "id": "4ec95451-d1bf-43c6-8a7c-3e4b36b71f6a"
     },
     {
       "name": "Animated Objects",
@@ -4463,7 +4541,8 @@
                 "weapon": "ram"
               }
             }
-          ]
+          ],
+          "id": "64b1539e-82dc-40d2-aa5c-21a7241d4bb4"
         },
         {
           "name": "Small Object",
@@ -4496,7 +4575,8 @@
                 "weapon": "ram"
               }
             }
-          ]
+          ],
+          "id": "ed5ec58c-ba06-4498-b29d-c7825b789377"
         },
         {
           "name": "Medium Object",
@@ -4529,7 +4609,8 @@
                 "weapon": "ram"
               }
             }
-          ]
+          ],
+          "id": "a2c05f7d-575b-4c1d-9b87-3ab3a0d6e216"
         },
         {
           "name": "Large Object",
@@ -4562,7 +4643,8 @@
                 "weapon": "ram"
               }
             }
-          ]
+          ],
+          "id": "63510dcd-20cf-4195-aa79-775b98692a23"
         },
         {
           "name": "Huge Object",
@@ -4595,7 +4677,8 @@
                 "weapon": "ram"
               }
             }
-          ]
+          ],
+          "id": "df435c8d-8452-43bb-a173-aa464b5f83d4"
         },
         {
           "name": "Gargantuan Object",
@@ -4628,7 +4711,8 @@
                 "weapon": "ram"
               }
             }
-          ]
+          ],
+          "id": "fffc5c39-abbd-4c98-a240-c13dcd7e84f1"
         },
         {
           "name": "Colossal Object",
@@ -4661,7 +4745,8 @@
                 "weapon": "ram"
               }
             }
-          ]
+          ],
+          "id": "31c08282-f919-4922-bb82-8a798d6e1b9e"
         }
       ],
       "traits": [
@@ -4672,7 +4757,8 @@
           "type": "Darkvision",
           "range": 60
         }
-      ]
+      ],
+      "id": "80908674-6306-477d-b4eb-b2674cb6ca44"
     },
     {
       "name": "Golems",
@@ -4719,7 +4805,8 @@
                 "weapon": "pick"
               }
             }
-          ]
+          ],
+          "id": "ed59425f-49e9-4211-8338-646ea48c268e"
         },
         {
           "name": "Mithral Golem",
@@ -4787,7 +4874,8 @@
                 "targeting": "\n              The $name makes two melee \\glossterm{strikes}.\n              If either strike hits and its attack result also hits the target's Reflex defense, the target \\briefly treats the $name as \\glossterm{invisible}.\n            "
               }
             }
-          ]
+          ],
+          "id": "1ade0f5d-8e6c-477f-905b-bd59e0c8d426"
         },
         {
           "name": "Adamantine Golem",
@@ -4874,7 +4962,8 @@
               "effect": "\n            The $name is unaffected by \\glossterm{difficult terrain} and is immune to being \\slowed.\n          ",
               "isMagical": false
             }
-          ]
+          ],
+          "id": "d2bd6791-4375-46f9-9ed5-16f271579c93"
         },
         {
           "name": "Voidstar Golem",
@@ -4981,9 +5070,11 @@
               "effect": "\n            The $name can use its burrow ability to pass through solid metal and stone without reducing its speed.\n          ",
               "isMagical": false
             }
-          ]
+          ],
+          "id": "72adee32-975a-4ddb-bb94-86ff5ed22fe3"
         }
-      ]
+      ],
+      "id": "c925a0a3-ff3d-4abf-b307-67787fefe50c"
     },
     {
       "name": "Treants",
@@ -5044,7 +5135,8 @@
                 "usageTime": "elite"
               }
             }
-          ]
+          ],
+          "id": "09262a82-c873-4ac7-a912-93ff82853fb3"
         },
         {
           "name": "Chestnut Treant",
@@ -5107,7 +5199,8 @@
                 "usageTime": "elite"
               }
             }
-          ]
+          ],
+          "id": "e1f1e995-ff9f-4685-9176-4d102e0355c7"
         },
         {
           "name": "Willow Treant",
@@ -5170,7 +5263,8 @@
                 "usageTime": "elite"
               }
             }
-          ]
+          ],
+          "id": "6ecb4108-2eb3-41fe-b011-5e3b13a4f734"
         },
         {
           "name": "Darkroot Treant",
@@ -5233,7 +5327,8 @@
               "weapon": "greatclub",
               "effect": "\n              Make a \\glossterm{strike} with a \\minus1 accuracy penalty.\n              \\hit If your attack result hits the target's Fortitude defense, the target festers.\n              A festering creature takes \\damagerankone at the end of its next turn.\n            "
             }
-          ]
+          ],
+          "id": "75a2e4f8-5c68-4107-b963-b0dcad524ba4"
         },
         {
           "name": "Pine Treant",
@@ -5304,7 +5399,8 @@
                 "usageTime": "elite"
               }
             }
-          ]
+          ],
+          "id": "b7c5a7e0-5e63-48b9-9778-ff0dc0be24ad"
         },
         {
           "name": "Oak Treant",
@@ -5375,7 +5471,8 @@
                 "usageTime": "elite"
               }
             }
-          ]
+          ],
+          "id": "b55ce16c-a9e5-417d-8963-31bddfacf644"
         },
         {
           "name": "Cyprus Treant",
@@ -5446,7 +5543,8 @@
                 "usageTime": "elite"
               }
             }
-          ]
+          ],
+          "id": "95b47242-c994-4c41-8da0-14d2b666ef3a"
         }
       ],
       "description": "\n        All treants have the \\ability{animate tree} ability.\n        \\begin{eliteability}{Animate Tree}{Elite action}\n          \\rankline\n          The treant animates a tree to fight by its side.\n          The tree must be no larger than the treant, and it must be the same type of tree as the treant.\n\n          The tree's combat statistics are the same as the treant's, except that the tree's \\glossterm{hit points} and \\glossterm{injury point} are halved and it cannot use \\glossterm{elite actions}.\n          This ability lasts until the treant \\glossterm{dismisses} it or uses it again.\n          When this ability ends, the tree sets down roots in its new location if possible.\n          Treants avoid stranding trees in unsustainable locations except in desperate circumstances.\n        \\end{eliteability}\n      ",
@@ -5458,7 +5556,8 @@
       ],
       "vulnerabilities": [
         "Fire"
-      ]
+      ],
+      "id": "514e38b7-8451-4c4e-9382-90a5e0de0a00"
     },
     {
       "name": "Air Elementals",
@@ -5487,7 +5586,8 @@
             -3,
             2,
             0
-          ]
+          ],
+          "id": "8657ac07-23f7-4d6d-9b5d-bb99ca97de0e"
         },
         {
           "name": "Gale",
@@ -5510,7 +5610,8 @@
             -2,
             3,
             0
-          ]
+          ],
+          "id": "11d5fa9f-5d4a-4d67-8f47-10fb71dd6a2e"
         },
         {
           "name": "Tempest",
@@ -5533,7 +5634,8 @@
             -2,
             4,
             0
-          ]
+          ],
+          "id": "9a89489c-083d-41bc-a808-6874d158154d"
         },
         {
           "name": "Tornado",
@@ -5556,7 +5658,8 @@
             -2,
             4,
             0
-          ]
+          ],
+          "id": "ad275cd9-c4e6-4e0e-93b6-9ce8461f2105"
         },
         {
           "name": "Elder",
@@ -5579,7 +5682,8 @@
             -2,
             4,
             0
-          ]
+          ],
+          "id": "d05ecf98-cb60-498a-b56f-f39d61c6e5a0"
         }
       ],
       "knowledge": {
@@ -5635,7 +5739,8 @@
           "effect": "\n        The $name gains a +2 bonus to its defenses against ranged strikes.\n      ",
           "isMagical": true
         }
-      ]
+      ],
+      "id": "1e056dfd-5cf7-4d28-8304-dcd4b22120e1"
     },
     {
       "name": "Fire Elementals",
@@ -5664,7 +5769,8 @@
             -3,
             0,
             2
-          ]
+          ],
+          "id": "7399ce2b-8886-4110-bd1b-b8f542d2039d"
         },
         {
           "name": "Kindled",
@@ -5687,7 +5793,8 @@
             -2,
             0,
             2
-          ]
+          ],
+          "id": "1c418e2e-c11e-449f-8565-bf8b785ce90e"
         },
         {
           "name": "Bonfire",
@@ -5710,7 +5817,8 @@
             -2,
             0,
             3
-          ]
+          ],
+          "id": "5d2ce5e1-d20d-4c87-918b-c17b4a816960"
         },
         {
           "name": "Inferno",
@@ -5733,7 +5841,8 @@
             1,
             2,
             3
-          ]
+          ],
+          "id": "4d8fd8a5-bd0b-4067-ade5-1a831668945d"
         },
         {
           "name": "Elder",
@@ -5756,7 +5865,8 @@
             2,
             2,
             4
-          ]
+          ],
+          "id": "34ad3644-3c23-417e-b635-2e7c41f84cfc"
         }
       ],
       "knowledge": {
@@ -5783,7 +5893,8 @@
             "isMagical": true
           }
         }
-      ]
+      ],
+      "id": "45bd0171-773f-45b4-8025-33dde38c1b8b"
     },
     {
       "name": "Magma Elementals",
@@ -5812,7 +5923,8 @@
             -4,
             0,
             0
-          ]
+          ],
+          "id": "1ff9ba57-900f-4ab3-9099-3440249f0ad6"
         },
         {
           "name": "Volcano",
@@ -5835,7 +5947,8 @@
             -3,
             0,
             1
-          ]
+          ],
+          "id": "c1bdbac9-25e9-4cdb-8299-77c9766ff954"
         },
         {
           "name": "Volcanic Titan",
@@ -5858,7 +5971,8 @@
             -3,
             0,
             2
-          ]
+          ],
+          "id": "9655bb7e-0b01-4c61-92c9-966d166a8b79"
         }
       ],
       "knowledge": {
@@ -5906,7 +6020,8 @@
             "weapon": "fists"
           }
         }
-      ]
+      ],
+      "id": "9642e1c3-9d21-4186-9333-acf7d30c9d27"
     },
     {
       "name": "Angels",
@@ -5979,7 +6094,8 @@
           "rituals": [
             "Channel Divinity",
             "Prayer"
-          ]
+          ],
+          "id": "b5dc10d8-06b6-470e-b416-c8873b27b757"
         },
         {
           "name": "Justicar",
@@ -6055,7 +6171,8 @@
           "rituals": [
             "Channel Divinity",
             "Revelation"
-          ]
+          ],
+          "id": "d88a49ee-0475-442c-9570-18b57b970df5"
         },
         {
           "name": "Ophan",
@@ -6122,7 +6239,8 @@
                 "weapon": "ram"
               }
             }
-          ]
+          ],
+          "id": "9abaf149-0e15-4c34-9d9b-c9984001f089"
         }
       ],
       "knowledge": {
@@ -6162,7 +6280,8 @@
           "effect": "\n        The $name constantly radiates \\glossterm{bright illumination} in a \\largearea radius.\n      ",
           "isMagical": false
         }
-      ]
+      ],
+      "id": "19fc3ba9-ff41-479e-a35d-2770fb31bb98"
     },
     {
       "name": "Demonspawn",
@@ -6241,7 +6360,8 @@
                 "weapon": "fists"
               }
             }
-          ]
+          ],
+          "id": "7aec7bea-9d50-4047-8456-e4f49dee40c2"
         },
         {
           "name": "Painborn Demon",
@@ -6327,7 +6447,8 @@
               },
               "usageTime": "triggered"
             }
-          ]
+          ],
+          "id": "f3a0ab7a-d46d-4262-a733-9b2503636467"
         },
         {
           "name": "Soulfire Demon",
@@ -6407,7 +6528,8 @@
               "effect": "\n              Whenever the $name \\glossterm{injures} an \\glossterm{ensouled} creature, that creature is \\briefly unable to regain \\glossterm{hit points}.\n            ",
               "isMagical": true
             }
-          ]
+          ],
+          "id": "675cee67-f9b2-4f45-8487-8e540c5e3238"
         },
         {
           "name": "Atrophic Demon",
@@ -6471,7 +6593,8 @@
               "effect": "\n              Whenever the $name \\glossterm{injures} a creature, that creature suffers a \\minus1 penalty to all defenses as a \\glossterm{condition}.\n              This condition stacks with itself, up to a maximum penalty of \\minus5.\n            ",
               "isMagical": true
             }
-          ]
+          ],
+          "id": "be194ac6-fb85-4713-ad20-d0750e3e2251"
         }
       ],
       "knowledge": {
@@ -6489,7 +6612,8 @@
       ],
       "vulnerabilities": [
         "Cold iron weapons"
-      ]
+      ],
+      "id": "990e2f96-149d-48ba-91d9-4a247174dd9f"
     },
     {
       "name": "Imps",
@@ -6537,9 +6661,11 @@
                 ]
               }
             }
-          ]
+          ],
+          "id": "85782ce9-a60e-448f-add1-2cea7113a8ff"
         }
-      ]
+      ],
+      "id": "5f18798e-f2e0-4bdd-a817-79d1cd6204c4"
     },
     {
       "name": "Animals",
@@ -6591,7 +6717,8 @@
                 "weapon": "claws"
               }
             }
-          ]
+          ],
+          "id": "4cfdff16-cd66-4bb3-b5d6-c98158f7906d"
         },
         {
           "name": "Badger",
@@ -6639,7 +6766,8 @@
                 "weapon": "claws"
               }
             }
-          ]
+          ],
+          "id": "19d2cf7a-9fb5-4f53-8bb9-0547dcaf576b"
         },
         {
           "name": "Black Bear",
@@ -6698,7 +6826,8 @@
                 "weapon": "claws"
               }
             }
-          ]
+          ],
+          "id": "03bf5c04-73df-4e67-98b2-3edcb3d3a584"
         },
         {
           "name": "Brown Bear",
@@ -6760,7 +6889,8 @@
                 "weapon": "claws"
               }
             }
-          ]
+          ],
+          "id": "0217fd43-2277-4f9b-990f-d8d5d7233288"
         },
         {
           "name": "Camel",
@@ -6802,7 +6932,8 @@
                 "weapon": "bite"
               }
             }
-          ]
+          ],
+          "id": "552c3225-8355-4810-a755-591fa0170387"
         },
         {
           "name": "Cat",
@@ -6849,7 +6980,8 @@
                 "weapon": "bite"
               }
             }
-          ]
+          ],
+          "id": "4a25c296-9d52-48dd-b255-e4d465014782"
         },
         {
           "name": "Dog",
@@ -6900,7 +7032,8 @@
                 "weapon": "bite"
               }
             }
-          ]
+          ],
+          "id": "9a2dd255-5eca-43c5-a879-c705f23fb733"
         },
         {
           "name": "Draft Horse",
@@ -6945,7 +7078,8 @@
                 "weapon": "bite"
               }
             }
-          ]
+          ],
+          "id": "a979a0d4-eaf7-4859-a5e0-4050d9ef9d8b"
         },
         {
           "name": "Light Horse",
@@ -6981,7 +7115,8 @@
                 "weapon": "bite"
               }
             }
-          ]
+          ],
+          "id": "230a2f9f-7776-4511-a008-a9c7c3126f37"
         },
         {
           "name": "Pony",
@@ -7020,7 +7155,8 @@
                 "weapon": "bite"
               }
             }
-          ]
+          ],
+          "id": "f1f497de-cbcc-41dd-9b35-c59c24ed6fe1"
         },
         {
           "name": "Warhorse",
@@ -7056,12 +7192,14 @@
                 "weapon": "bite"
               }
             }
-          ]
+          ],
+          "id": "fcc0f443-fc5d-481d-bc53-3d4eed449805"
         }
       ],
       "knowledge": {
         "easy": "All animals are \\glossterm{mundane} and cannot speak.\n          They are easier to influence with the Creature Handling skill than other creatures."
-      }
+      },
+      "id": "53c25e66-e59d-49f2-b1ee-7ada941f9c7f"
     },
     {
       "name": "Dire Animals",
@@ -7121,7 +7259,8 @@
                 "weapon": "bite"
               }
             }
-          ]
+          ],
+          "id": "45792fe2-c6ed-4905-a3f5-a34098535b87"
         },
         {
           "name": "Dire Wolf",
@@ -7179,12 +7318,14 @@
                 "weapon": "bite"
               }
             }
-          ]
+          ],
+          "id": "2002d736-ad46-4e05-8a29-e420530ac69f"
         }
       ],
       "knowledge": {
         "normal": "Dire animals are monstrous variants of ordinary animals.\n          They are larger, stronger, and more aggressive.\n          Like animals, they are more susceptible to the Creature Handling skill, though their aggression makes any lapse in control more dangerous."
-      }
+      },
+      "id": "d2df3409-17a2-4769-b586-36984871b4f7"
     },
     {
       "name": "Fleshwrought",
@@ -7266,7 +7407,8 @@
               ],
               "usageTime": "elite"
             }
-          ]
+          ],
+          "id": "a5c9c7a0-62e1-4996-bb3d-07f8943f5e2e"
         },
         {
           "name": "Fleshwrought Slicer",
@@ -7317,9 +7459,11 @@
                 "weapon": "claws"
               }
             }
-          ]
+          ],
+          "id": "ce0f0484-5be7-4b1c-ae2a-760a830cd67a"
         }
-      ]
+      ],
+      "id": "b927183e-404c-4bc3-ba21-b7592126fbf2"
     },
     {
       "name": "Ghosts",
@@ -7397,7 +7541,8 @@
                 "isMagical": true
               }
             }
-          ]
+          ],
+          "id": "58aa1ae7-e9b3-4c2a-a502-1005ae756bcb"
         },
         {
           "name": "Macabre Mourner",
@@ -7454,7 +7599,8 @@
                 "targeting": "Make an attack vs. Mental against one creature within \\medrange.\nYou gain a \\plus4 accuracy bonus if the target has killed a living creature within the last 24 hours."
               }
             }
-          ]
+          ],
+          "id": "34c7cbb9-b9d8-4fb8-9d98-43f0aaa3cb45"
         },
         {
           "name": "Tetherghast",
@@ -7503,9 +7649,11 @@
                 "isMagical": true
               }
             }
-          ]
+          ],
+          "id": "fa7c12c3-08a0-400a-8a19-4de8673b16db"
         }
-      ]
+      ],
+      "id": "5c67d2cd-daa3-43aa-9c3c-a5a186595842"
     },
     {
       "name": "Ghouls",
@@ -7571,7 +7719,8 @@
                 "weapon": "bite"
               }
             }
-          ]
+          ],
+          "id": "943eed3f-0d52-4a4d-98dc-9ad15a06c82d"
         },
         {
           "name": "True Ghoul",
@@ -7616,9 +7765,11 @@
                 "weapon": "bite"
               }
             }
-          ]
+          ],
+          "id": "efc8e532-759b-472f-8d8b-85d3c7889587"
         }
-      ]
+      ],
+      "id": "00c239ca-18e9-4347-b985-8eb67b03fe65"
     },
     {
       "name": "Liches",
@@ -7722,9 +7873,11 @@
                 "usageTime": "elite"
               }
             }
-          ]
+          ],
+          "id": "2a54aabe-7529-4cea-a021-55abbd1e7cf6"
         }
-      ]
+      ],
+      "id": "d450b805-1161-4259-ac6d-7c90a9f91b1c"
     },
     {
       "name": "Skeletons",
@@ -7772,7 +7925,8 @@
                 "weapon": "claws"
               }
             }
-          ]
+          ],
+          "id": "98ef90c8-5368-435b-9e62-8ed13250519b"
         },
         {
           "name": "Fallen Soldier",
@@ -7808,7 +7962,8 @@
                 "weapon": "spear"
               }
             }
-          ]
+          ],
+          "id": "7ec6b57c-d448-4e26-8b28-60e62802eaea"
         },
         {
           "name": "Skeleton Archer",
@@ -7843,7 +7998,8 @@
                 "weapon": "longbow"
               }
             }
-          ]
+          ],
+          "id": "9818f929-5aa6-474b-8f16-ccb3fd7f107f"
         },
         {
           "name": "Bone Knight",
@@ -7890,7 +8046,8 @@
                 "weapon": "lance"
               }
             }
-          ]
+          ],
+          "id": "b167a374-bff9-4132-93bc-21e97bd75855"
         },
         {
           "name": "Fallen Hero",
@@ -7934,7 +8091,8 @@
                 "weapon": "javelin"
               }
             }
-          ]
+          ],
+          "id": "959fa675-fea9-4a3d-87b4-38fc80f1e1a1"
         },
         {
           "name": "Skeleton Sniper",
@@ -7985,9 +8143,11 @@
                 "weapon": "longbow"
               }
             }
-          ]
+          ],
+          "id": "217e7723-2de8-4246-a511-2948c75d3692"
         }
-      ]
+      ],
+      "id": "f5ba83e0-01e1-4977-8082-8a783a69367b"
     },
     {
       "name": "Zombies",
@@ -8048,7 +8208,8 @@
             0,
             -2,
             0
-          ]
+          ],
+          "id": "3a9db176-1f34-4249-abe5-574e7bb04022"
         },
         {
           "name": "Walker",
@@ -8072,7 +8233,8 @@
             0,
             -2,
             0
-          ]
+          ],
+          "id": "aa22bb84-a702-4481-810a-b42fd0b9b9c6"
         },
         {
           "name": "Mauler",
@@ -8096,7 +8258,8 @@
             0,
             -2,
             0
-          ]
+          ],
+          "id": "c705ca13-c8df-4bf3-a52d-212359c810c3"
         },
         {
           "name": "Hulk",
@@ -8120,9 +8283,11 @@
             0,
             -2,
             0
-          ]
+          ],
+          "id": "3fc65e90-1ffa-4da6-b0d8-94fae778763f"
         }
-      ]
+      ],
+      "id": "3f08b1ab-9afb-46e8-bfc9-b847464375a2"
     }
   ],
   "folders": []
