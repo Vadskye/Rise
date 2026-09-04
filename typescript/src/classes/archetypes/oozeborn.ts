@@ -71,7 +71,7 @@ export function oozeborn(): RankAbility[] {
       isMagical: false,
       rank: 4,
       description: `
-        The damage dealt by your pseudopod increases to 1d10.
+        Your pseudopod gains a \\plus1 bonus to its \\glossterm{weapon dice increment}.
       `,
     },
     {

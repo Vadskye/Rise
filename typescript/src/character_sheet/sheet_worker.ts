@@ -643,6 +643,7 @@ const VARIABLES_WITH_CUSTOM_MODIFIERS = new Set(
     'speed',
     'strength',
     'vital_rolls',
+    'weapon_dice_increment',
     'weight_limits',
     'willpower',
   ]
@@ -784,6 +785,7 @@ function handleCoreStatistics() {
   handleUniversalAbilities();
   handleUnknownStatistic();
   handleVitalRolls();
+  handleWeaponDiceIncrement();
   handleWeaponDamageDice();
   handleWeightLimits();
 }
@@ -2811,6 +2813,7 @@ function handleStrikeAttacks() {
     const damage_multiplier_key = `repeating_strikeattacks_${sectionId}damage_multiplier`;
     const weapon_keys = [];
     for (let i = 0; i < supportedWeaponCount; i++) {
+      weapon_keys.push(`weapon_${i}_effective_damage_dice`);
       weapon_keys.push(`weapon_${i}_damage_dice`);
       weapon_keys.push(`weapon_${i}_extra_damage`);
       weapon_keys.push(`weapon_${i}_exists`);
@@ -2836,7 +2839,7 @@ function handleStrikeAttacks() {
         const weaponPowerDamage: number[] = [];
         const weaponExtraDamage: string[] = [];
         for (let i = 0; i < supportedWeaponCount; i++) {
-          weaponDice.push(v[`weapon_${i}_damage_dice`]);
+          weaponDice.push(v[`weapon_${i}_effective_damage_dice`] || v[`weapon_${i}_damage_dice`]);
           weaponPowerDamage.push(Number(v[`weapon_${i}_${dice_type}_power_damage`] || 0));
           weaponExtraDamage.push(v[`weapon_${i}_extra_damage`]);
           weaponExistence[`repeating_strikeattacks_${sectionId}weapon_${i}_exists_local`] = Boolean(
@@ -2903,7 +2906,8 @@ function handleStrikeAttacks() {
 
   // Global strike attack change
   on(
-    weaponChangeKeys.join(' ') + ' change:level change:magical_power change:mundane_power',
+    weaponChangeKeys.join(' ') +
+      ' change:level change:magical_power change:mundane_power change:weapon_dice_increment',
     function () {
       getSectionIDs('repeating_strikeattacks', (repeatingSectionIds) => {
         for (const sectionId of repeatingSectionIds) {
@@ -3120,11 +3124,90 @@ function handleVitalWounds() {
   );
 }
 
+const DICE_INCREMENT_ORDER = [
+  '1d2',
+  '1d3',
+  '1d4',
+  '1d6',
+  '1d8',
+  '1d10',
+  '2d6',
+  '2d8',
+  '2d10',
+  '4d6',
+  '4d8',
+  '4d10',
+];
+
+function addDiceIncrementString(diceStr: string, increments: number): string {
+  if (increments === 0 || !diceStr) {
+    return diceStr;
+  }
+  const match = diceStr.trim().match(/^(\d+)d(\d+)(.*)$/);
+  if (!match) {
+    return diceStr;
+  }
+  const count = Number(match[1]);
+  const size = Number(match[2]);
+  const rest = match[3] || '';
+  const key = `${count}d${size}`;
+  const currentIndex = DICE_INCREMENT_ORDER.indexOf(key);
+  if (currentIndex === -1) {
+    return diceStr;
+  }
+  let targetIndex = currentIndex + increments;
+  if (targetIndex < 0) {
+    targetIndex = 0;
+  } else if (targetIndex >= DICE_INCREMENT_ORDER.length) {
+    targetIndex = DICE_INCREMENT_ORDER.length - 1;
+  }
+  return `${DICE_INCREMENT_ORDER[targetIndex]}${rest}`;
+}
+
+function calcMonsterWeaponDiceIncrementBonus(level: number): number {
+  if (level >= 19) {
+    return 3;
+  } else if (level >= 13) {
+    return 2;
+  } else if (level >= 7) {
+    return 1;
+  }
+  return 0;
+}
+
+function handleWeaponDiceIncrement() {
+  onGet({
+    variables: {
+      miscName: 'weapon_dice_increment',
+      numeric: ['level'],
+      boolean: ['is_monster'],
+    },
+    callback: (v) => {
+      const monsterBonus = v.is_monster ? calcMonsterWeaponDiceIncrementBonus(v.level) : 0;
+      const totalValue = v.misc + monsterBonus;
+
+      const explanations = [];
+      if (monsterBonus > 0) {
+        explanations.push({ name: 'monster level', value: monsterBonus });
+      }
+
+      setAttrs({
+        weapon_dice_increment: totalValue,
+        weapon_dice_increment_explanation: formatCombinedExplanation(
+          v.miscExplanation,
+          explanations,
+        ),
+      });
+    },
+  });
+}
+
 function handleWeaponDamageDice() {
   for (const weaponIndex of Array(supportedWeaponCount).keys()) {
     const heavyKey = `weapon_${weaponIndex}_heavy`;
     const ignorePowerKey = `weapon_${weaponIndex}_ignore_power`;
     const damageDiceKey = `weapon_${weaponIndex}_damage_dice`;
+    const effectiveDamageDiceKey = `weapon_${weaponIndex}_effective_damage_dice`;
     const nameKey = `weapon_${weaponIndex}_name`;
     const magicalTotalKey = `weapon_${weaponIndex}_magical_damage_total`;
     const magicalPowerDamageKey = `weapon_${weaponIndex}_magical_power_damage`;
@@ -3135,12 +3218,19 @@ function handleWeaponDamageDice() {
     onGet({
       variables: {
         boolean: [heavyKey, ignorePowerKey],
-        numeric: ['strength', 'willpower', 'mundane_power', 'magical_power'],
+        numeric: [
+          'strength',
+          'willpower',
+          'mundane_power',
+          'magical_power',
+          'weapon_dice_increment',
+        ],
         string: [damageDiceKey, nameKey],
       },
       callback: (v) => {
         if (!v[nameKey]) {
           setAttrs({
+            [effectiveDamageDiceKey]: '',
             [magicalTotalKey]: '',
             [mundaneTotalKey]: '',
             [magicalPowerDamageKey]: '',
@@ -3154,8 +3244,12 @@ function handleWeaponDamageDice() {
         let magicalPowerBonus = v[heavyKey] ? v.magical_power : Math.floor(v.magical_power / 2);
         let mundanePowerBonus = v[heavyKey] ? v.mundane_power : Math.floor(v.mundane_power / 2);
 
-        let magicalTotal = v[damageDiceKey];
-        let mundaneTotal = v[damageDiceKey];
+        const effectiveDice = addDiceIncrementString(
+          v[damageDiceKey],
+          v.weapon_dice_increment || 0,
+        );
+        let magicalTotal = effectiveDice;
+        let mundaneTotal = effectiveDice;
         if (v[ignorePowerKey]) {
           magicalPowerBonus = 0;
           mundanePowerBonus = 0;
@@ -3173,6 +3267,7 @@ function handleWeaponDamageDice() {
         }
 
         setAttrs({
+          [effectiveDamageDiceKey]: effectiveDice,
           [magicalPowerDamageKey]: magicalPowerBonus,
           [magicalTotalKey]: magicalTotal,
           [mundanePowerDamageKey]: mundanePowerBonus,

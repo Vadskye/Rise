@@ -426,3 +426,84 @@ export function getWeaponMaterialName(material: WeaponMaterial): string {
     }
   }
 }
+
+export interface SimpleDicePool {
+  count: number;
+  size: number;
+}
+
+export const DICE_INCREMENT_ORDER = [
+  '1d2',
+  '1d3',
+  '1d4',
+  '1d6',
+  '1d8',
+  '1d10',
+  '2d6',
+  '2d8',
+  '2d10',
+  '4d6',
+  '4d8',
+  '4d10',
+] as const;
+
+export function addDiceIncrement(dicePool: SimpleDicePool, increments: number): SimpleDicePool {
+  if (increments === 0) {
+    return { count: dicePool.count, size: dicePool.size };
+  }
+  const key = `${dicePool.count}d${dicePool.size}`;
+  const currentIncrementIndex = (DICE_INCREMENT_ORDER as readonly string[]).indexOf(key);
+  if (currentIncrementIndex === -1) {
+    throw new Error(`Can't add increments to ${key}: Match not found in progression.`);
+  }
+  const targetIndex = currentIncrementIndex + increments;
+  let revisedIndex = targetIndex;
+  if (targetIndex < 0) {
+    console.warn(`Dice increment for ${key} with ${increments} steps is below minimum (1d2). Clamping.`);
+    revisedIndex = 0;
+  } else if (targetIndex >= DICE_INCREMENT_ORDER.length) {
+    console.warn(`Dice increment for ${key} with ${increments} steps is above maximum (4d10). Clamping.`);
+    revisedIndex = DICE_INCREMENT_ORDER.length - 1;
+  }
+  const match = DICE_INCREMENT_ORDER[revisedIndex].match(/(\d+)d(\d+)/);
+  if (!match) {
+    throw new Error(`Invalid dice string in progression: ${DICE_INCREMENT_ORDER[revisedIndex]}`);
+  }
+  return {
+    count: Number(match[1]),
+    size: Number(match[2]),
+  };
+}
+
+export function addDiceIncrementString(diceStr: string, increments: number): string {
+  if (increments === 0 || !diceStr) {
+    return diceStr;
+  }
+  const match = diceStr.trim().match(/^(\d+)d(\d+)(.*)$/);
+  if (!match) {
+    return diceStr;
+  }
+  const pool = addDiceIncrement(
+    { count: Number(match[1]), size: Number(match[2]) },
+    increments,
+  );
+  return `${pool.count}d${pool.size}${match[3]}`;
+}
+
+export function addDiceIncrementToPool(pool: DicePool, increments: number): DicePool {
+  if (increments === 0 || pool.dice.length === 0) {
+    return pool;
+  }
+  const firstSize = pool.dice[0].size;
+  const allSame = pool.dice.every((d) => d.size === firstSize);
+  if (!allSame) {
+    throw new Error(`Can't add increments to mixed dice pool: ${pool.toString()}`);
+  }
+  const updated = addDiceIncrement({ count: pool.dice.length, size: firstSize }, increments);
+  const newDice = [];
+  for (let i = 0; i < updated.count; i++) {
+    newDice.push({ size: updated.size });
+  }
+  return new DicePool(newDice, pool.flatModifier, pool.maximized, pool.multiplier, pool.weak);
+}
+

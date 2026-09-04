@@ -473,7 +473,7 @@ export function perfectedForm(): RankAbility[] {
       isMagical: false,
       rank: 4,
       description: `
-        Your punch/kick natural weapon deals 1d6 damage.
+        Your punch/kick \\glossterm{natural weapon} gains a \\plus1 bonus to its \\glossterm{weapon dice increment}.
       `,
     },
     {

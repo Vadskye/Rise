@@ -66,3 +66,32 @@ Most classes provide a +3 bonus to non-Armor defenses, and a +0 bonus to Armor d
 - Never calculate Euclidean hypotenuse for vertical distance.
 - Horizontal diagonals still use alternating 5-10-5.
 
+## 8. Weapon Dice Increment Progression
+
+A bonus or penalty to weapon dice increment increases or reduces the base weapon damage dice along a fixed 12-step progression ladder:
+
+```
+1d2 -> 1d3 -> 1d4 -> 1d6 -> 1d8 -> 1d10 -> 2d6 -> 2d8 -> 2d10 -> 4d6 -> 4d8 -> 4d10
+```
+
+| Step | Dice Pool | Notes |
+| :--- | :-------- | :---- |
+| 1    | `1d2`     | Minimum boundary |
+| 2    | `1d3`     | |
+| 3    | `1d4`     | |
+| 4    | `1d6`     | |
+| 5    | `1d8`     | |
+| 6    | `1d10`    | |
+| 7    | `2d6`     | |
+| 8    | `2d8`     | |
+| 9    | `2d10`    | |
+| 10   | `4d6`     | |
+| 11   | `4d8`     | |
+| 12   | `4d10`    | Maximum boundary |
+
+- **Step Application:** Each +1 bonus increases weapon damage dice by one step to the right. Each -1 penalty reduces weapon damage dice by one step to the left.
+- **Timing:** Weapon dice increment adjusts the base weapon damage dice *before* any damage multipliers or power modifiers are applied.
+- **Monster Advancement:** Monsters automatically gain a +1 bonus to their weapon dice increment at 7th level, 13th level, and 19th level (+1 at level 7–12, +2 at level 13–18, +3 at level 19+).
+- **Boundaries:** Progressions beyond 4d10 or below 1d2 clamp to the respective boundary with a warning.
+
+

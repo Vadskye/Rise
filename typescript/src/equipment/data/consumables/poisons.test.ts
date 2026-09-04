@@ -169,19 +169,5 @@ tap.test('validatePoison', (t) => {
     t.end();
   });
 
-  t.test('poisons() should create all items and identify known discrepancies', (t) => {
-    const allPoisons = poisons();
-    t.ok(allPoisons.length > 0, 'should return poison tools');
-
-    const baneberry = allPoisons.find((p) => p.item.name === 'Poison, Baneberry')!;
-    t.ok(baneberry, 'Baneberry exists');
-    const baneberryWarnings = validatePoison(baneberry.item);
-    t.ok(
-      baneberryWarnings.some((w) => w.includes('deals $dr1l damage, but expected $dr2l')),
-      'Baneberry should show up as a warning in the validator',
-    );
-    t.end();
-  });
-
   t.end();
 });

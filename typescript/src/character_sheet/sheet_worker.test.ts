@@ -703,3 +703,103 @@ t.test('can handle strike attacks', (t) => {
 
   t.end();
 });
+
+t.test('can calculate weapon dice increment and update weapon damage', (t) => {
+  t.test('with custom modifier on weapon dice increment', (t) => {
+    setAttrs({
+      weapon_0_name: 'Longsword',
+      weapon_0_damage_dice: '1d8',
+      weapon_0_heavy: false,
+      mundane_power: 4,
+      weapon_dice_increment_permanent_modifier: 1,
+      weapon_dice_increment_permanent_explanation: 'Mighty Weapon',
+    });
+
+    getAttrs(
+      [
+        'weapon_dice_increment',
+        'weapon_0_effective_damage_dice',
+        'weapon_0_mundane_damage_total',
+      ],
+      (attrs) => {
+        t.match(attrs, {
+          weapon_dice_increment: 1,
+          weapon_0_effective_damage_dice: '1d10',
+          weapon_0_mundane_damage_total: '1d10+2',
+        });
+        t.end();
+      },
+    );
+  });
+
+  t.test('monster advancement gains weapon dice increment', (t) => {
+    setAttrs({
+      is_monster: true,
+      level: 7,
+      weapon_0_name: 'Claw',
+      weapon_0_damage_dice: '1d8',
+      weapon_0_heavy: false,
+      mundane_power: 0,
+      weapon_dice_increment_permanent_modifier: 0,
+    });
+
+    getAttrs(['weapon_dice_increment', 'weapon_0_mundane_damage_total'], (attrs) => {
+      t.match(attrs, {
+        weapon_dice_increment: 1,
+        weapon_0_mundane_damage_total: '1d10',
+      });
+      t.end();
+    });
+  });
+
+  t.test('monster at level 13 gains +2 weapon dice increment', (t) => {
+    setAttrs({
+      is_monster: true,
+      level: 13,
+      weapon_0_name: 'Claw',
+      weapon_0_damage_dice: '1d8',
+      weapon_0_heavy: false,
+      mundane_power: 0,
+      weapon_dice_increment_permanent_modifier: 0,
+    });
+
+    getAttrs(['weapon_dice_increment', 'weapon_0_mundane_damage_total'], (attrs) => {
+      t.match(attrs, {
+        weapon_dice_increment: 2,
+        weapon_0_mundane_damage_total: '2d6',
+      });
+      t.end();
+    });
+  });
+
+  t.test('strike attacks use effective incremented damage dice', (t) => {
+    setAttrs({
+      weapon_0_name: 'Greatsword',
+      weapon_0_damage_dice: '2d6',
+      weapon_0_extra_damage: '',
+      weapon_0_heavy: true,
+      mundane_power: 6,
+      weapon_dice_increment_permanent_modifier: 1,
+      repeating_strikeattacks_0_attack_name: 'Heavy Strike',
+      repeating_strikeattacks_0_is_magical: false,
+      repeating_strikeattacks_0_attack_extra_damage: '',
+      repeating_strikeattacks_0_weapon_damage_multiplier: '1',
+      repeating_strikeattacks_0_damage_multiplier: '1',
+    });
+
+    // Trigger update
+    setAttrs({
+      level: 5,
+    });
+
+    getAttrs(['repeating_strikeattacks_0_weapon_0_total_damage'], (attrs) => {
+      t.match(attrs, {
+        repeating_strikeattacks_0_weapon_0_total_damage: '2d8+2',
+      });
+      t.end();
+    });
+  });
+
+  t.end();
+});
+

@@ -91,6 +91,7 @@ type NumericCreatureProperty =
   | 'magical_power'
   | 'speed'
   | 'vital_rolls'
+  | 'weapon_dice_increment'
   | 'maximum_stamina'
   | 'initiative'
   | 'all_defenses'
@@ -1657,6 +1658,10 @@ export class Creature implements CreaturePropertyMap {
 
   public get vital_rolls() {
     return this.getPropertyValue('vital_rolls');
+  }
+
+  public get weapon_dice_increment() {
+    return this.getPropertyValue('weapon_dice_increment');
   }
 
   public get character_rank() {

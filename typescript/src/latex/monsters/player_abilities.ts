@@ -14,6 +14,7 @@ import {
   getWeaponAccuracy,
   getWeaponPowerMultiplier,
   MonsterWeapon,
+  addDiceIncrement,
 } from '@src/monsters/weapons';
 import {
   addAccuracyToEffect,
@@ -826,10 +827,11 @@ export function calculateStrikeDamage(
     }
   }
 
-  const damageDice = getWeaponDamageDice(weapon);
-  if (!damageDice) {
+  const rawDamageDice = getWeaponDamageDice(weapon);
+  if (!rawDamageDice) {
     throw new Error(`Ability ${monster.id}.${ability.name}: Invalid weapon '${weapon}'`);
   }
+  const damageDice = addDiceIncrement(rawDamageDice, monster.weapon_dice_increment || 0);
   damageDice.count = damageDice.count * weaponDamageMultiplier;
 
   const powerMultiplier = getWeaponPowerMultiplier(weapon);

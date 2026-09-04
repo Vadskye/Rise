@@ -97,6 +97,7 @@ def non_attribute() -> str:
             stat_row("Initiative"),
             stat_row("Speed"),
             stat_row("Vital rolls"),
+            stat_row("Weapon dice increment"),
         ]
     )
 

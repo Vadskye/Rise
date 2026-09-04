@@ -327,5 +327,29 @@ t.test('Integration / Unified Engine', (t) => {
     t.end();
   });
 
+  t.test('applies weapon_dice_increment to weapon damage', (t) => {
+    const creatureWithIncrement = {
+      name: 'Dragon',
+      accuracy: 0,
+      mundane_power: 4,
+      magical_power: 0,
+      weapon_dice_increment: 1,
+      getRelevantPower: () => 4,
+    } as any;
+
+    // Claw is 1d4 base with 1.0 power multiplier. With +1 increment, it becomes 1d6+4.
+    t.equal(
+      replacePlaceholders(creatureWithIncrement, '$damage', { weapon: 'claw', isMagical: false }),
+      '1d6+4',
+    );
+    // Bite is 1d8 base with 1.0 power multiplier. With +1 increment, it becomes 1d10+4.
+    t.equal(
+      replacePlaceholders(creatureWithIncrement, '$damage', { weapon: 'bite', isMagical: false }),
+      '1d10+4',
+    );
+    t.end();
+  });
+
   t.end();
 });
+

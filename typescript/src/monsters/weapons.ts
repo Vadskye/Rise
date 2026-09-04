@@ -1,50 +1,24 @@
-import { StandardWeapon, STANDARD_WEAPONS } from '@src/equipment/weapons';
+import {
+  StandardWeapon,
+  STANDARD_WEAPONS,
+  SimpleDicePool,
+  DICE_INCREMENT_ORDER,
+  addDiceIncrement,
+  addDiceIncrementString,
+  addDiceIncrementToPool,
+} from '@src/equipment/weapons';
 import { WeaponTag } from '@src/equipment/types';
 import { RiseWeaponTag } from '@src/character_sheet/rise_data';
 
 export type MonsterWeapon = string;
 
-export interface SimpleDicePool {
-  count: number;
-  size: number;
-}
-
-const DICE_INCREMENT_ORDER = [
-  '1d2',
-  '1d3',
-  '1d4',
-  '1d6',
-  '1d8',
-  '1d10',
-  '2d6',
-  '2d8',
-  '2d10',
-  '4d6',
-  '4d8',
-  '4d10',
-];
-
-export function addDiceIncrement(dicePool: SimpleDicePool, increments: number): SimpleDicePool {
-  const currentIncrementIndex = DICE_INCREMENT_ORDER.indexOf(`${dicePool.count}d${dicePool.size}`);
-  if (currentIncrementIndex === undefined) {
-    throw new Error(`Can't add increments to ${dicePool}: Match not found.`);
-  }
-  const revisedIndex = currentIncrementIndex + increments;
-  if (revisedIndex < 0) {
-    throw new Error(`Can't add increments to ${dicePool}: Result is too small.`);
-  } else if (revisedIndex > DICE_INCREMENT_ORDER.length) {
-    throw new Error(`Can't add increments to ${dicePool}: Result is too large.`);
-  } else {
-    // Parsing the dice pool out of the string is a little dumb, but it's easy for me to
-    // reason about.
-    const [, count, size] = DICE_INCREMENT_ORDER[revisedIndex].match(/(\d)d(\d+)/) || [];
-    return {
-      count: Number(count),
-      size: Number(count),
-    };
-  }
-
-}
+export {
+  SimpleDicePool,
+  DICE_INCREMENT_ORDER,
+  addDiceIncrement,
+  addDiceIncrementString,
+  addDiceIncrementToPool,
+};
 
 // Build case-insensitive standard weapons mapping
 const LOWERCASE_STANDARD_WEAPONS: Record<string, StandardWeapon> = {};
@@ -133,7 +107,10 @@ export function getWeaponDamageDice(weaponName: MonsterWeapon): SimpleDicePool {
       size: base.damage_dice.size,
     };
   }
-  return base.damage_dice;
+  return {
+    count: base.damage_dice.count,
+    size: base.damage_dice.size,
+  };
 }
 
 export function getWeaponAccuracy(weaponName: MonsterWeapon): number {

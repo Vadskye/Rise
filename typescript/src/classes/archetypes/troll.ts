@@ -53,7 +53,7 @@ export function troll(): RankAbility[] {
       isMagical: false,
       rank: 3,
       description: `
-        Your bite natural weapon deals 1d10 damage instead of the normal 1d8.
+        Your bite \\glossterm{natural weapon} gains a \\plus1 bonus to its \\glossterm{weapon dice increment}.
       `,
     },
     {
@@ -99,7 +99,7 @@ export function troll(): RankAbility[] {
       isMagical: false,
       rank: 6,
       description: `
-        Your bite natural weapon deals 2d6 damage instead of the normal 1d8.
+        The bonus to \\glossterm{weapon dice increment} increases to \\plus2.
       `,
     },
     {
