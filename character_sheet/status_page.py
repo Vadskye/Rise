@@ -408,6 +408,7 @@ def custom_statistic(i: str) -> str:
                     option({"value": "strength"}, "Strength"),
                     option({"value": "survival"}, "Survival"),
                     option({"value": "vital_rolls"}, "Vital rolls"),
+                    option({"value": "weapon_dice_increment"}, "Weapon dice increment"),
                     option({"value": "weight_limits"}, "Weight limits"),
                     option({"value": "wild_aspects_known"}, "Wild aspects"),
                     option({"value": "willpower"}, "Willpower"),
