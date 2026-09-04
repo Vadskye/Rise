@@ -4261,6 +4261,16 @@
           "traits": [
             "simple-minded"
           ],
+          "customSenses": [
+            {
+              "type": "Tremorsense",
+              "range": 60
+            },
+            {
+              "type": "Tremorsight",
+              "range": 15
+            }
+          ],
           "standardAbilities": [
             {
               "type": "maneuver",
@@ -4304,6 +4314,28 @@
           },
           "traits": [
             "simple-minded"
+          ],
+          "customSenses": [
+            {
+              "type": "Tremorsense",
+              "range": 120
+            },
+            {
+              "type": "Tremorsight",
+              "range": 30
+            }
+          ],
+          "standardAbilities": [
+            {
+              "type": "maneuver",
+              "name": "Poisonous Strike",
+              "options": {
+                "isMagical": false,
+                "weapon": "stinger",
+                "poison": "Formian Drone Venom",
+                "displayName": "Venomous Stinger"
+              }
+            }
           ]
         },
         {
@@ -4338,6 +4370,16 @@
           "properties": {
             "has_art": true
           },
+          "customSenses": [
+            {
+              "type": "Tremorsense",
+              "range": 240
+            },
+            {
+              "type": "Tremorsight",
+              "range": 60
+            }
+          ],
           "standardAbilities": [
             {
               "type": "maneuver",
@@ -4372,16 +4414,6 @@
       },
       "traits": [
         "multipedal"
-      ],
-      "customSenses": [
-        {
-          "type": "Tremorsense",
-          "range": 60
-        },
-        {
-          "type": "Tremorsight",
-          "range": 15
-        }
       ],
       "resistances": [
         "Earth"

@@ -14,6 +14,43 @@ function createPoison(data: RawConsumable): Tool {
   };
 }
 
+// The baseline for a consumable item of rank X is a spell of rank X+2.
+//
+// Normally, a "this turn and next turn" spell at Medium range is drX-2.
+// "Every poison stage" is worse than "this turn and next turn" because it isn't
+// guaranteed to deal damage next turn, but it's better because it can deal damage more often
+// total, so call it equivalent. This is a bit generous, but eh.
+// Since poison deals flat damage, that translates to drX-1 by default.
+//
+// Injury-only damage is normally +2 ranks. That translates to drX by default.
+// Injury-only poisons are worse than normal poisons because most of the power of a poison is its potential to last for a long time.
+// Therefore, injury-only poisons get an extra +1 accuracy.
+//
+// Pure debuff "debuff while poisoned" poisons are equivalent to a condition.
+// The successes to resist a poison are similar enough to the automatic elite condition removal.
+// Poisons cost +1 rank if their stage 3 escalates the debuff, since that's more likely to work
+// than stronger debuffs on crits, which is the default.
+
+// A powder poison typically requires a standard action to apply to an adjacent creature.
+// Its effective spell rank is X+4 for contact/ingestion, never injury (including the +2 rank
+// modifier for adjacent range).
+// As a reminder, that means drX+1 is the standard damage value (dr5 -> dr3 from double hit -> dr2
+// from flat)
+//
+// A liquid contact poison typically requires a non-action to apply with a weapon.
+// Apply a -2 rank penalty for the non-action combat application, and ignore range modifier.
+// A liquid poison's effective spell rank is X for contact or injury, or X+2 for ingestion??
+// As a reminder, that means drX is the standard damage value for contact, drX+1 for injury, and drX+2 for ingestion.
+//
+// A gas poison typically requires a standard action to apply to a Tiny radius zone within Short range.
+// Its effective spell rank is X+1 for contact and ingestion (which can be blocked by holding
+// breath, which is sometimes beneficial to make them asymmetric).
+//
+// Applying a debuff only on the second escalation is not quite as big of a penalty as injured-only,
+// but it's significant. Injured is 0.4x, say that second escalation is x0.67 EA.
+// It could possibly be lower, but this gives room to include damage so the poison does something
+// before the second escalation debuff?
+// So dazed is 2 EA or rank 4.
 export function poisons(): Tool[] {
   return [
     createPoison({
@@ -175,6 +212,9 @@ export function poisons(): Tool[] {
   ];
 }
 
+// These are stored in a separate function since they have different scaling.
+// As noted above, the baseline damage over time for a liquid injury poison is
+// drX+1 flat damage, with +1 accuracy.
 function injuryPoisons(): Tool[] {
   return [
     createPoison({
@@ -189,6 +229,21 @@ function injuryPoisons(): Tool[] {
           The poison's accuracy is $consumableaccuracy.
           A poisoned creature is \\sickened while the poison lasts.
           The second escalation also inflicts $dr2l damage.
+        `,
+      ),
+    }),
+    createPoison({
+      name: 'Poison, Formian Drone Venom',
+      rank: 1,
+      attunement: 'Unrestricted',
+      short_description: 'Repeatedly deals $dr2l damage',
+      description: getPoisonDescription(
+        'injury',
+        'liquid',
+        `
+          The poison's accuracy is $consumableaccuracy+1.
+          It inflicts $dr2l damage immediately and with each escalation.
+          The second escalation also ends the poison.
         `,
       ),
     }),
