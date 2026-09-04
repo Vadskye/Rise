@@ -96,7 +96,7 @@ export function dragon(): RankAbility[] {
         Your size category increases to Medium.
         This increases your \\glossterm{base speed} to 30 feet.
         You reduce your Dexterity by 1 and increase your Strength and Constitution by 1.
-        In addition, you gain a \\plus1 bonus to your Armor defense.
+        In addition, you gain a \\plus1 bonus to your \\glossterm{weapon dice increment} with your bite and claws.
       `,
     },
     {
@@ -127,9 +127,8 @@ export function dragon(): RankAbility[] {
       description: `
         Your size category increases to Large.
         This increases your \\glossterm{base speed} to 40 feet.
-        Your Dexterity penalty increases to \\minus2, and your bonus to Strength and Constitution increases to \\plus2.
-        You also gain a tail slam \\glossterm{natural weapon}.
-        It deals 1d8 damage and has the \\abilitytag{Impact} weapon tag (see \\pcref{Weapon Tags}).
+        Your Dexterity penalty increases to \\minus2, and your bonus to Strength increases to \\plus2.
+        You also gain a \\plus1 bonus to your Armor defense, and the \\glossterm{weapon dice increment} bonus increases to \\plus2.
       `,
     },
     {
