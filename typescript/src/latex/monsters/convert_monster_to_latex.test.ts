@@ -22,6 +22,58 @@ t.test('convertMonsterToLatex', (t) => {
     t.match(latexOutput, '\\monsterabilitiesheader{Test Monster}');
     t.end();
   });
+
+  t.test('scales weapon dice increment at level 7, 13, and 19 in generated latex', (t) => {
+    // Level 7 brute with bite (1d8 base -> 1d10 with +1 increment, rank 3 = 2x weapon damage -> 2d10)
+    const monster7 = Creature.new();
+    monster7.setRequiredProperties({
+      base_class: 'brute',
+      elite: false,
+      level: 7,
+      alignment: 'neutral',
+      creature_origin: 'natural',
+      creature_types: ['beast'],
+      size: 'medium',
+    });
+    monster7.setProperties({ name: 'Dire Beast' });
+    monster7.addWeaponMult('bite');
+    const latex7 = convertMonsterToLatex(monster7);
+    t.match(latex7, '2d10', 'Level 7 monster scales bite to 2d10');
+
+    // Level 13 brute with bite (1d8 base -> 2d6 with +2 increment, rank 5 = 3x weapon damage -> 6d6)
+    const monster13 = Creature.new();
+    monster13.setRequiredProperties({
+      base_class: 'brute',
+      elite: false,
+      level: 13,
+      alignment: 'neutral',
+      creature_origin: 'natural',
+      creature_types: ['beast'],
+      size: 'medium',
+    });
+    monster13.setProperties({ name: 'Apex Beast' });
+    monster13.addWeaponMult('bite');
+    const latex13 = convertMonsterToLatex(monster13);
+    t.match(latex13, '6d6', 'Level 13 monster scales bite to 6d6');
+
+    // Level 19 brute with bite (1d8 base -> 2d8 with +3 increment, rank 7 = 6x weapon damage -> 12d8)
+    const monster19 = Creature.new();
+    monster19.setRequiredProperties({
+      base_class: 'brute',
+      elite: false,
+      level: 19,
+      alignment: 'neutral',
+      creature_origin: 'natural',
+      creature_types: ['beast'],
+      size: 'medium',
+    });
+    monster19.setProperties({ name: 'Mythic Beast' });
+    monster19.addWeaponMult('bite');
+    const latex19 = convertMonsterToLatex(monster19);
+    t.match(latex19, '12d8', 'Level 19 monster scales bite to 12d8');
+
+    t.end();
+  });
   t.end();
 });
 

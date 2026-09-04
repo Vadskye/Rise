@@ -249,12 +249,87 @@ t.test('calculateStrikeDamage', (t) => {
     t.end();
   });
 
-  t.test('with extra damage equal to half your power', (t) => {
+  t.test('with weapon dice increments for singular weapons', (t) => {
+    const creatureInc1 = {
+      getRelevantPower: () => 10,
+      weapon_dice_increment: 1,
+    } as any;
+    const creatureInc2 = {
+      getRelevantPower: () => 10,
+      weapon_dice_increment: 2,
+    } as any;
+    const creatureInc3 = {
+      getRelevantPower: () => 10,
+      weapon_dice_increment: 3,
+    } as any;
+
     const ability = {
       weapon: 'bite',
-      effect: 'Make a strike that deals extra damage equal to half your power.',
+      effect: 'Make a strike.',
     } as any;
-    t.equal(calculateStrikeDamage(mockCreature, ability, false).toString(), '1d8+15');
+
+    // Bite is 1d8 base. Inc 1 -> 1d10, Inc 2 -> 2d6, Inc 3 -> 2d8
+    t.equal(calculateStrikeDamage(creatureInc1, ability, false).toString(), '1d10+10');
+    t.equal(calculateStrikeDamage(creatureInc2, ability, false).toString(), '2d6+10');
+    t.equal(calculateStrikeDamage(creatureInc3, ability, false).toString(), '2d8+10');
+    t.end();
+  });
+
+  t.test('with weapon dice increments for plural weapons', (t) => {
+    const creatureInc1 = {
+      getRelevantPower: () => 10,
+      weapon_dice_increment: 1,
+    } as any;
+    const creatureInc2 = {
+      getRelevantPower: () => 10,
+      weapon_dice_increment: 2,
+    } as any;
+    const creatureInc3 = {
+      getRelevantPower: () => 10,
+      weapon_dice_increment: 3,
+    } as any;
+
+    const ability = {
+      weapon: 'claws',
+      effect: 'Make a strike.',
+    } as any;
+
+    // Claws is 2d4 base (two 1d4 claws). Power mult is 0.5 -> +5
+    // Inc 1: 1d4 -> 1d6, plural 2d6+5
+    // Inc 2: 1d4 -> 1d8, plural 2d8+5
+    // Inc 3: 1d4 -> 1d10, plural 2d10+5
+    t.equal(calculateStrikeDamage(creatureInc1, ability, false).toString(), '2d6+5');
+    t.equal(calculateStrikeDamage(creatureInc2, ability, false).toString(), '2d8+5');
+    t.equal(calculateStrikeDamage(creatureInc3, ability, false).toString(), '2d10+5');
+    t.end();
+  });
+
+  t.test('monster Creature instance automatically scales weapon dice increment by level', (t) => {
+    for (const { level, expectedDice } of [
+      { level: 6, expectedDice: '1d8+4' }, // rank 2 (no mult), bite 1d8
+      { level: 7, expectedDice: '2d10+4' }, // rank 3 = double weapon damage, bite 1d8->1d10 (+1 inc), 2*1d10 = 2d10
+      { level: 13, expectedDice: '6d6+12' }, // rank 5 = triple weapon damage, bite 1d8->2d6 (+2 inc), 3*2d6 = 6d6
+      { level: 19, expectedDice: '12d8+24' }, // rank 7 = six times weapon damage, bite 1d8->2d8 (+3 inc), 6*2d8 = 12d8
+    ]) {
+      const monster = Creature.new();
+      monster.setRequiredProperties({
+        base_class: 'brute',
+        elite: false,
+        level,
+        alignment: 'neutral',
+        creature_origin: 'natural',
+        creature_types: ['beast'],
+        size: 'medium',
+      });
+      monster.setProperties({ name: 'Test Beast' });
+      monster.addWeaponMult('bite');
+      const strikeAbility = monster.getActiveAbilities()[0];
+      t.equal(
+        calculateStrikeDamage(monster, strikeAbility, false).toString(),
+        expectedDice,
+        `Level ${level} monster has expected damage`,
+      );
+    }
     t.end();
   });
 

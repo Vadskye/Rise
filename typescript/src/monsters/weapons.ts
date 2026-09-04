@@ -99,18 +99,22 @@ export function isManufactured(weaponName: MonsterWeapon): boolean {
   return !base.isNatural;
 }
 
-export function getWeaponDamageDice(weaponName: MonsterWeapon): SimpleDicePool {
+export function getWeaponDamageDice(
+  weaponName: MonsterWeapon,
+  increment: number = 0,
+): SimpleDicePool {
   const base = resolveBaseWeapon(weaponName);
+  const baseDice = addDiceIncrement(
+    { count: base.damage_dice.count, size: base.damage_dice.size },
+    increment,
+  );
   if (base.isPlural) {
     return {
-      count: base.damage_dice.count * 2,
-      size: base.damage_dice.size,
+      count: baseDice.count * 2,
+      size: baseDice.size,
     };
   }
-  return {
-    count: base.damage_dice.count,
-    size: base.damage_dice.size,
-  };
+  return baseDice;
 }
 
 export function getWeaponAccuracy(weaponName: MonsterWeapon): number {

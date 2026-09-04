@@ -4,7 +4,6 @@ import {
   getWeaponDamageDice,
   getWeaponPowerMultiplier,
   getWeaponAccuracy as getWeaponAccuracyFromWeapons,
-  addDiceIncrement,
 } from '@src/monsters/weapons';
 import { DamageScaling } from '@src/core_mechanics/damage_scaling';
 import { DicePool } from '@src/core_mechanics/dice_pool';
@@ -129,8 +128,7 @@ export function replaceDamageTerms(
     }
     const multiplier = multiplierStr ? Number(multiplierStr.substring(1)) : 1;
 
-    const baseDice = getWeaponDamageDice(weapon);
-    const effectiveDice = addDiceIncrement(baseDice, creature.weapon_dice_increment || 0);
+    const effectiveDice = getWeaponDamageDice(weapon, creature.weapon_dice_increment || 0);
     const powerMultiplier = getWeaponPowerMultiplier(weapon);
     const relevantPower = creature.getRelevantPower(isMagical);
 

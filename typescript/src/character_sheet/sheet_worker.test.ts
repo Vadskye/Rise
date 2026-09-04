@@ -772,6 +772,26 @@ t.test('can calculate weapon dice increment and update weapon damage', (t) => {
     });
   });
 
+  t.test('monster at level 19 gains +3 weapon dice increment', (t) => {
+    setAttrs({
+      is_monster: true,
+      level: 19,
+      weapon_0_name: 'Claw',
+      weapon_0_damage_dice: '1d8',
+      weapon_0_heavy: false,
+      mundane_power: 0,
+      weapon_dice_increment_permanent_modifier: 0,
+    });
+
+    getAttrs(['weapon_dice_increment', 'weapon_0_mundane_damage_total'], (attrs) => {
+      t.match(attrs, {
+        weapon_dice_increment: 3,
+        weapon_0_mundane_damage_total: '2d8',
+      });
+      t.end();
+    });
+  });
+
   t.test('strike attacks use effective incremented damage dice', (t) => {
     setAttrs({
       weapon_0_name: 'Greatsword',
