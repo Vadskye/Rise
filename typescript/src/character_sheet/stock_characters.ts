@@ -1,5 +1,4 @@
 import { Creature } from '@src/character_sheet/creature';
-import { handleEverything } from '@src/character_sheet/sheet_worker';
 import {
   characterSheetExists,
   createCharacterSheet,
@@ -62,9 +61,8 @@ export class StockCharacters {
       sheet.setProperties({ name });
       const creature = new Creature(sheet);
       this.characters[name] = creature;
-      // We have to enable listeners before running the initializer to ensure that
-      // some listeners, like for repeating section, are active.
-      handleEverything();
+      // createCharacterSheet enables listeners before running the initializer,
+      // ensuring that repeating section and other listeners are active.
       initializer(creature);
 
       sheet.triggerRecalculation();

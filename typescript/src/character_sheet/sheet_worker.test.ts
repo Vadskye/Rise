@@ -1,11 +1,9 @@
 import t from 'tap';
 import { getAttrs, setAttrs } from './roll20_shim';
 import { resetDefaultCharacterSheet } from './current_character_sheet';
-import { handleEverything } from './sheet_worker';
 
 t.beforeEach(() => {
   resetDefaultCharacterSheet();
-  handleEverything();
 });
 
 // Full plate and tower shield
@@ -716,11 +714,7 @@ t.test('can calculate weapon dice increment and update weapon damage', (t) => {
     });
 
     getAttrs(
-      [
-        'weapon_dice_increment',
-        'weapon_0_effective_damage_dice',
-        'weapon_0_mundane_damage_total',
-      ],
+      ['weapon_dice_increment', 'weapon_0_effective_damage_dice', 'weapon_0_mundane_damage_total'],
       (attrs) => {
         t.match(attrs, {
           weapon_dice_increment: 1,
@@ -822,4 +816,3 @@ t.test('can calculate weapon dice increment and update weapon damage', (t) => {
 
   t.end();
 });
-

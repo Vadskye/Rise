@@ -1,8 +1,16 @@
 import { CharacterSheet } from './character_sheet';
-// import { handleEverything } from './sheet_worker';
 
 const characters: Record<string, CharacterSheet> = {};
 let currentCharacterName: string;
+
+let handleEverythingFn: (() => void) | null = null;
+function runHandleEverything() {
+  if (!handleEverythingFn) {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    handleEverythingFn = require('./sheet_worker').handleEverything;
+  }
+  handleEverythingFn!();
+}
 
 export function getCurrentCharacterSheet(): CharacterSheet {
   if (currentCharacterName === undefined) {
@@ -10,6 +18,7 @@ export function getCurrentCharacterSheet(): CharacterSheet {
   }
   if (!characters[currentCharacterName]) {
     characters[currentCharacterName] = new CharacterSheet(currentCharacterName);
+    runHandleEverything();
   }
   return characters[currentCharacterName];
 }
@@ -20,6 +29,7 @@ export function createCharacterSheet(characterName: string): CharacterSheet {
   }
   characters[characterName] = new CharacterSheet(characterName);
   setCurrentCharacterSheet(characterName);
+  runHandleEverything();
 
   return characters[characterName];
 }
@@ -35,6 +45,7 @@ export function setCurrentCharacterSheet(characterName: string) {
 export function resetDefaultCharacterSheet(): CharacterSheet {
   currentCharacterName = 'default';
   characters[currentCharacterName] = new CharacterSheet(currentCharacterName);
+  runHandleEverything();
   return characters[currentCharacterName];
 }
 
@@ -61,9 +72,3 @@ export function keepOnlyCharacterSheets(names: string[]): void {
     }
   }
 }
-
-// export function calculateCurrentCharacterSheet() {
-//   // We need to make sure that a character sheet exists to configure.
-//   getCurrentCharacterSheet();
-//   handleEverything();
-// }

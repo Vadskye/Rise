@@ -1,5 +1,4 @@
 import t from 'tap';
-import { handleEverything } from '@src/character_sheet/sheet_worker';
 import { CharacterSheet } from '@src/character_sheet/character_sheet';
 import {
   getCurrentCharacterSheet,
@@ -32,7 +31,6 @@ t.test('can access one sheet while a different sheet is active', (t) => {
 t.test('triggers work for inactive sheets', (t) => {
   clearAllCharacterSheets();
   setCurrentCharacterSheet('apple');
-  handleEverything();
   const appleSheet: CharacterSheet = getCurrentCharacterSheet();
   appleSheet.setProperties({
     level: 1,

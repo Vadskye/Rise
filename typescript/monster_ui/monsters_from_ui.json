@@ -1765,6 +1765,31 @@
         }
       ],
       "id": "9b45898a-c518-4d4a-9c76-f96af26ac500"
+    },
+    {
+      "id": "496a997e-46db-43df-89dd-caff4ac41e7c",
+      "name": "Death Knight",
+      "folder": "Undead",
+      "requiredProperties": {
+        "alignment": "lawful evil",
+        "base_class": "brute",
+        "elite": false,
+        "creature_origin": "undead",
+        "creature_types": [
+          "beast",
+          "humanoid"
+        ],
+        "size": "large",
+        "level": 5
+      },
+      "freeformCode": "",
+      "knowledge": {
+        "normal": "A death knight is an undead monstrosity made from the fusion of a fallen horse and its rider. It charges ferociously into combat with the mindless aggression of a zombie and the mobility of a horse, making it a dangerous foe.",
+        "hard": "If a horse and rider die together and are left unburied on a battlefield, they can return as a death knight. Even if a proper burial is impossible, corpses of such bonded creatures should not be allowed to fester together."
+      },
+      "traits": [
+        "quadrupedal"
+      ]
     }
   ],
   "monsterGroups": [

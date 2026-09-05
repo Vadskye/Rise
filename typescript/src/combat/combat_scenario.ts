@@ -1,10 +1,6 @@
 import { Creature } from '@src/character_sheet/creature';
 import { Grimoire } from '@src/monsters/grimoire';
-import { handleEverything } from '@src/character_sheet/sheet_worker';
-import {
-  setCurrentCharacterSheet,
-  getCurrentCharacterSheet,
-} from '@src/character_sheet/current_character_sheet';
+import { createCharacterSheet } from '@src/character_sheet/current_character_sheet';
 import { RiseBaseClass } from '@src/character_sheet/rise_data';
 import {
   CombatStepStatus,
@@ -332,12 +328,10 @@ export function createCreature(name: string, initializer?: (creature: Creature) 
   const uniqueId = Math.random().toString(36).substring(7);
   const uniqueSheetName = `${name}_${uniqueId}`;
 
-  setCurrentCharacterSheet(uniqueSheetName);
-  const sheet = getCurrentCharacterSheet();
+  const sheet = createCharacterSheet(uniqueSheetName);
   sheet.setProperties({ name });
 
   const creature = new Creature(sheet);
-  handleEverything();
 
   if (initializer) {
     initializer(creature);

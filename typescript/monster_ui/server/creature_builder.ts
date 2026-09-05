@@ -5,7 +5,7 @@ import {
   characterSheetExists,
   deleteCharacterSheet,
 } from '@src/character_sheet/current_character_sheet';
-import { handleEverything, MonsterAttackUsageTime } from '@src/character_sheet/sheet_worker';
+import { MonsterAttackUsageTime } from '@src/character_sheet/sheet_worker';
 import {
   toCustomMonsterAbility,
   formatStructuredSense,
@@ -349,7 +349,6 @@ export function buildCreature(monster: MonsterData, group?: MonsterGroupData): B
     // Run game engine calculations
     const calcStart = performance.now();
     creature.setProperties({ monster_type: creature.elite ? 'elite' : 'normal' });
-    handleEverything();
     sheet.triggerRecalculation();
 
     const calcDuration = performance.now() - calcStart;

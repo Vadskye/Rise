@@ -5,7 +5,7 @@ import {
   resetDefaultCharacterSheet,
   createCharacterSheet,
 } from '@src/character_sheet/current_character_sheet';
-import { handleEverything, MonsterAttackUsageTime } from '@src/character_sheet/sheet_worker';
+import { MonsterAttackUsageTime } from '@src/character_sheet/sheet_worker';
 import {
   RiseAlignment,
   RiseBaseClass,
@@ -129,7 +129,8 @@ type CalcExplanation =
   | 'brawn_explanation'
   | 'fortitude_explanation'
   | 'mental_explanation'
-  | 'reflex_explanation';
+  | 'reflex_explanation'
+  | 'speed_explanation';
 
 // TODO: this is poorly organized in the sheet. Senses and speeds are both
 // grouped under the `movement_speed_i_name` bucket.
@@ -286,7 +287,6 @@ export class Creature implements CreaturePropertyMap {
   public clone(newName: string): Creature {
     const newSheet = createCharacterSheet(newName);
     newSheet.setProperties(this.sheet.getAllProperties());
-    handleEverything();
     const newCreature = new Creature(newSheet);
     newCreature.activeAbilities = { ...this.activeAbilities };
     newCreature.targetPreference = this.targetPreference;
@@ -299,7 +299,6 @@ export class Creature implements CreaturePropertyMap {
 
   static new() {
     const sheet = resetDefaultCharacterSheet();
-    handleEverything();
     return new this(sheet);
   }
 
@@ -308,7 +307,6 @@ export class Creature implements CreaturePropertyMap {
   static fromName(name: string): Creature {
     setCurrentCharacterSheet(name);
     const sheet = getCurrentCharacterSheet();
-    handleEverything();
     return new this(sheet);
   }
 
@@ -478,6 +476,7 @@ export class Creature implements CreaturePropertyMap {
       fortitude: this.fortitude_explanation,
       mental: this.mental_explanation,
       reflex: this.reflex_explanation,
+      speed: this.speed_explanation,
     };
   }
 
@@ -1614,6 +1613,10 @@ export class Creature implements CreaturePropertyMap {
 
   public get reflex_explanation() {
     return this.getPropertyValue('reflex_explanation');
+  }
+
+  public get speed_explanation() {
+    return this.getPropertyValue('speed_explanation');
   }
 
   public get monster_type() {

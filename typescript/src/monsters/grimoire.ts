@@ -1,5 +1,4 @@
 import { Creature, KnowledgeResultsConfig } from '@src/character_sheet/creature';
-import { handleEverything } from '@src/character_sheet/sheet_worker';
 import {
   characterSheetExists,
   createCharacterSheet,
@@ -108,7 +107,6 @@ export class Grimoire {
       sharedInitializer(creature);
     }
     creature.setProperties({ monster_type: creature.elite ? 'elite' : 'normal' });
-    handleEverything();
     sheet.triggerRecalculation();
     return creature;
   }

@@ -1,11 +1,9 @@
 import t from 'tap';
 import { getAttrs, setAttrs } from './roll20_shim';
 import { resetDefaultCharacterSheet } from './current_character_sheet';
-import { handleEverything } from './sheet_worker';
 
 t.beforeEach(() => {
   resetDefaultCharacterSheet();
-  handleEverything();
 });
 
 t.test('midair debuff', (t) => {

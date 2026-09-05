@@ -1,5 +1,4 @@
 import t from 'tap';
-import { handleEverything } from './sheet_worker';
 import { clearAllCharacterSheets, createCharacterSheet } from './current_character_sheet';
 
 t.beforeEach(() => {
@@ -9,7 +8,6 @@ t.beforeEach(() => {
 t.test('recalculation on sheet:opened', (t) => {
   t.test('recalculates trained skills', (t) => {
     const sheet = createCharacterSheet('test_char');
-    handleEverything();
 
     sheet.setProperties({
       repeating_trainedskills_0_trained_skill: 'awareness',
@@ -38,7 +36,6 @@ t.test('recalculation on sheet:opened', (t) => {
 
   t.test('recalculates attuned effects', (t) => {
     const sheet = createCharacterSheet('test_char_attuned');
-    handleEverything();
 
     sheet.setProperties({
       repeating_attunedmodifiers_0_is_active: '1',
@@ -67,7 +64,6 @@ t.test('recalculation on sheet:opened', (t) => {
 
   t.test('recalculates vital wounds', (t) => {
     const sheet = createCharacterSheet('test_char_vital');
-    handleEverything();
 
     sheet.setProperties({
       repeating_vitalwounds_0_vital_wound_roll: 5,
