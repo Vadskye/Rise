@@ -469,14 +469,34 @@ export class Creature implements CreaturePropertyMap {
     return keys.map((key) => equippedItemMap[key]).filter(Boolean);
   }
 
+  explainProperty(propertyName: keyof CreaturePropertyMap) {
+    const propertyValue = this.getPropertyValue(propertyName);
+    if (propertyValue === undefined) {
+      throw new Error(`Cannot explain nonexistant property: ${propertyName}`);
+    }
+
+    const explanationName: any =
+      {
+        armor: 'armor_defense_explanation',
+      }[propertyName as string] || `${propertyName}_explanation`;
+    const explanationValue = this.getPropertyValue(explanationName);
+    if (explanationValue === undefined) {
+      throw new Error(
+        `Cannot explain nonexistant property or explanation: ${propertyName} ${explanationName}`,
+      );
+    }
+
+    return `${propertyValue} =  ${explanationValue}`;
+  }
+
   getCommonExplanations() {
     return {
-      armor: this.armor_defense_explanation,
-      brawn: this.brawn_explanation,
-      fortitude: this.fortitude_explanation,
-      mental: this.mental_explanation,
-      reflex: this.reflex_explanation,
-      speed: this.speed_explanation,
+      armor: this.explainProperty('armor_defense'),
+      brawn: this.explainProperty('brawn'),
+      fortitude: this.explainProperty('fortitude'),
+      mental: this.explainProperty('mental'),
+      reflex: this.explainProperty('reflex'),
+      speed: this.explainProperty('speed'),
     };
   }
 
