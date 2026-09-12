@@ -40,12 +40,8 @@ export function incarnation(): RankAbility[] {
       isMagical: true,
       rank: 2,
       description: `
-        \\begin{magicalactiveability}{Essence Flare}{Standard action}
-          \\rankline
-          You are \\glossterm{briefly} \\focused.
-          At the end of your next turn, if you hit with an attack that has your \\textit{essence infusion} tag during that turn, you repeat the full effect of this ability.
-          Otherwise, you are \\glossterm{briefly} \\maximized.
-        \\end{magicalactiveability}
+        Once per \\glossterm{long rest}, you can use the \\ability{desperate exertion} ability without spending \\glossterm{stamina}.
+        You can only use this to reroll an attack roll for an ability with your \\ability{essence infusion} tag. 
       `,
     },
     {
@@ -60,7 +56,8 @@ export function incarnation(): RankAbility[] {
           The spell must have your \\textit{essence infusion} tag, and it must not be a \\glossterm{deep attunement}.
           You gain the effect of that spell on you permanently.
           If the spell disables itself, you gain its benefit again after 10 minutes.
-          \\item Untethered: The height limit of your fly speed increases to 15 feet.
+          \\item Untethered: The height limit of your fly speed increases to 10 feet.
+          In addition, you gain a \\plus1 bonus to your \\glossterm{mundane power} and \\glossterm{magical power}.
         \\end{raggeditemize}
       `,
     },
@@ -91,32 +88,22 @@ export function incarnation(): RankAbility[] {
       description: `
         You gain a special ability depending on whether you are tethered or untethered.
         \\begin{raggeditemize}
-          \\item Tethered: You can choose up to two spells with a combined rank of 4 or less.
-          \\item Untethered: The height limit of your fly speed increases to 30 feet.
-          In addition, you gain a \\plus1 bonus to your \\glossterm{mundane power} and \\glossterm{magical power}.
+          \\item Tethered: You can use your \\ability{essence flare} ability once per \\glossterm{short rest} instead of once per long rest.
+          \\item Untethered: The height limit of your fly speed increases to 20 feet.
+          In addition, the power bonus increases to \\plus2.
         \\end{raggeditemize}
       `,
     },
     {
       complexity: 3,
-      name: 'Essence Incarnate',
+      name: 'Intrinsic Essence',
       isMagical: true,
       rank: 7,
       description: `
-        \\begin{magicalactiveability}{Essence Incarnate}{Standard action}
-          \\abilitycost One \\glossterm{stamina}, and you \\briefly can't use this ability.
-          \\rankline
-          You gain a benefit depending on whether you are tethered or untethered:
-          \\begin{raggeditemize}
-            \\item Tethered: You are \\glossterm{briefly} \\primed.
-            During your next turn, if you hit with an attack that has your \\ability{essence infusion} tag, you are \\glossterm{briefly} primed again.
-            \\item Untethered: You \\glossterm{briefly} become \\trait{incorporeal}.
-            This makes you immune to \\glossterm{mundane}, \\atCreation, and \\atManifestation abilities, among other effects (see \\pref{Incorporeal}).
-            If this effect ends while you are inside of a solid object, you are pushed back in the direction from which you entered that object until you emerge.
-            You take 5d10 damage for every 5 feet that you are pushed in this way.
-          \\end{raggeditemize}
-          {}
-        \\end{magicalactiveability}
+          Choose an \\atAttune spell from any \\glossterm{mystic sphere}.
+          The spell must have your \\textit{essence infusion} tag, and it must not be a \\glossterm{deep attunement}.
+          You gain the effect of that spell on you permanently.
+          If the spell disables itself, you gain its benefit again after 10 minutes.
       `,
     },
   ];
