@@ -17,7 +17,7 @@ const config: BreakdownConfig<MysticSphere, SpellDefinition, AbilityRole> = {
     }
     return groups;
   },
-  tableOrientation: 'rowsAsGroups',
+  tableOrientation: 'columnsAsGroups',
 };
 
 export function main(showChart: boolean, selectedSphereNames: string[]): void {
