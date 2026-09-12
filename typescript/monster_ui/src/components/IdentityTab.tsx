@@ -1,5 +1,5 @@
 import React from 'react';
-import { MonsterData } from '../types/monster';
+import { MonsterData, MonsterGroupData } from '../types/monster';
 import { isFreeformCodeWarning } from '@src/monsters/monster_validation';
 import { Combobox } from './Combobox';
 
@@ -11,6 +11,8 @@ interface IdentityTabProps {
   warnings: string[];
   folders?: string[];
   isGroupMonster?: boolean;
+  monsterGroups?: MonsterGroupData[];
+  onMoveMonsterToGroup?: (targetGroupId: string) => void;
 }
 
 export const IdentityTab: React.FC<IdentityTabProps> = ({
@@ -21,11 +23,18 @@ export const IdentityTab: React.FC<IdentityTabProps> = ({
   warnings,
   folders = [],
   isGroupMonster = false,
+  monsterGroups = [],
+  onMoveMonsterToGroup,
 }) => {
   const { requiredProperties } = monsterData;
 
   const [isCreatingNew, setIsCreatingNew] = React.useState<boolean>(false);
   const [prevMonsterName, setPrevMonsterName] = React.useState<string>(monsterData.name);
+  const [selectedGroupId, setSelectedGroupId] = React.useState<string>('');
+
+  React.useEffect(() => {
+    setSelectedGroupId('');
+  }, [monsterData.id]);
 
   if (monsterData.name !== prevMonsterName) {
     setPrevMonsterName(monsterData.name);
@@ -101,44 +110,111 @@ export const IdentityTab: React.FC<IdentityTabProps> = ({
       </div>
 
       {!isGroupMonster && (
-        <div className="form-group">
-          <label htmlFor="folder-select">Folder Name</label>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-            <select
-              id="folder-select"
-              data-testid="folder-select"
-              value={isNewFolder ? '__new_folder__' : monsterData.folder || ''}
-              onChange={(e) => {
-                const val = e.target.value;
-                if (val === '__new_folder__') {
-                  setIsCreatingNew(true);
-                  onChangeMonster({ ...monsterData, folder: '' });
-                } else {
-                  setIsCreatingNew(false);
-                  onChangeMonster({ ...monsterData, folder: val });
-                }
-              }}
-            >
-              <option value="">-- No Folder --</option>
-              {folders.map((f) => (
-                <option key={f} value={f}>
-                  {f}
-                </option>
-              ))}
-              <option value="__new_folder__">+ Create New Folder...</option>
-            </select>
+        <div
+          className="form-row-grid"
+          style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))' }}
+        >
+          <div className="form-group">
+            <label htmlFor="folder-select">Folder Name</label>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              <select
+                id="folder-select"
+                data-testid="folder-select"
+                value={isNewFolder ? '__new_folder__' : monsterData.folder || ''}
+                onChange={(e) => {
+                  const val = e.target.value;
+                  if (val === '__new_folder__') {
+                    setIsCreatingNew(true);
+                    onChangeMonster({ ...monsterData, folder: '' });
+                  } else {
+                    setIsCreatingNew(false);
+                    onChangeMonster({ ...monsterData, folder: val });
+                  }
+                }}
+              >
+                <option value="">-- No Folder --</option>
+                {folders.map((f) => (
+                  <option key={f} value={f}>
+                    {f}
+                  </option>
+                ))}
+                <option value="__new_folder__">+ Create New Folder...</option>
+              </select>
 
-            {isNewFolder && (
-              <input
-                id="folder"
-                data-testid="folder-input"
-                type="text"
-                value={monsterData.folder || ''}
-                onChange={(e) => onChangeMonster({ ...monsterData, folder: e.target.value })}
-                placeholder="Enter new folder name"
-                autoFocus
-              />
-            )}
+              {isNewFolder && (
+                <input
+                  id="folder"
+                  data-testid="folder-input"
+                  type="text"
+                  value={monsterData.folder || ''}
+                  onChange={(e) => onChangeMonster({ ...monsterData, folder: e.target.value })}
+                  placeholder="Enter new folder name"
+                  autoFocus
+                />
+              )}
+            </div>
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="monster-group-select">Monster Group</label>
+            <div style={{ display: 'flex', gap: '8px', alignItems: 'flex-start' }}>
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <Combobox
+                  id="monster-group-select"
+                  data-testid="monster-group-combobox"
+                  value={selectedGroupId}
+                  onChange={(val) => setSelectedGroupId(val)}
+                  options={(monsterGroups || []).map((g) => ({
+                    value: g.id,
+                    label: g.name,
+                  }))}
+                  placeholder="Select a monster group..."
+                  searchPlaceholder="Search monster groups..."
+                  emptyMessage="No monster groups found"
+                />
+              </div>
+              <button
+                type="button"
+                className="btn-add"
+                data-testid="add-to-group-btn"
+                disabled={!selectedGroupId}
+                onClick={() => {
+                  if (!selectedGroupId) {
+                    return;
+                  }
+                  const targetGroup = monsterGroups?.find((g) => g.id === selectedGroupId);
+                  if (
+                    targetGroup &&
+                    targetGroup.monsters.some(
+                      (m) => m.name.toLowerCase() === monsterData.name.toLowerCase(),
+                    )
+                  ) {
+                    alert(
+                      `Cannot move "${monsterData.name}": A monster with this name already exists in group "${targetGroup.name}".`,
+                    );
+                    return;
+                  }
+                  onMoveMonsterToGroup?.(selectedGroupId);
+                  setSelectedGroupId('');
+                }}
+                style={{
+                  backgroundColor: selectedGroupId
+                    ? 'var(--accent-color)'
+                    : 'var(--bg-tertiary)',
+                  border: '1px solid var(--border-color)',
+                  color: selectedGroupId ? '#fff' : 'var(--text-muted)',
+                  padding: '8px 12px',
+                  borderRadius: '6px',
+                  cursor: selectedGroupId ? 'pointer' : 'not-allowed',
+                  fontWeight: 600,
+                  fontSize: '0.85rem',
+                  whiteSpace: 'nowrap',
+                  height: '38px',
+                }}
+              >
+                Add to monster group
+              </button>
+            </div>
           </div>
         </div>
       )}

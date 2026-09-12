@@ -6,6 +6,7 @@ import {
   deleteCharacterSheet,
 } from '@src/character_sheet/current_character_sheet';
 import { MonsterAttackUsageTime } from '@src/character_sheet/sheet_worker';
+import '@src/character_sheet/sheet_worker';
 import {
   toCustomMonsterAbility,
   formatStructuredSense,

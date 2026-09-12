@@ -789,6 +789,105 @@ export const App: React.FC = () => {
     }
   };
 
+  const handleMoveMonsterToGroup = (monsterId: string, targetGroupId: string) => {
+    const monsterToMove = db.monsters.find((m) => m.id === monsterId);
+    const targetGroup = db.monsterGroups.find((g) => g.id === targetGroupId);
+    if (!monsterToMove || !targetGroup) {
+      return;
+    }
+
+    if (
+      targetGroup.monsters.some(
+        (m) => m.name.toLowerCase() === monsterToMove.name.toLowerCase(),
+      )
+    ) {
+      alert(
+        `Cannot move "${monsterToMove.name}": A monster with this name already exists in group "${targetGroup.name}".`,
+      );
+      return;
+    }
+
+    const originalMonsterIndex = db.monsters.findIndex((m) => m.id === monsterId);
+    const updatedMonster: MonsterData = {
+      ...monsterToMove,
+      folder: targetGroup.folder || undefined,
+    };
+
+    let updatedTargetGroup: MonsterGroupData | undefined;
+    const updatedGroups = db.monsterGroups.map((g) => {
+      if (g.id === targetGroupId) {
+        updatedTargetGroup = {
+          ...g,
+          monsters: [...g.monsters, updatedMonster],
+        };
+        return updatedTargetGroup;
+      }
+      return g;
+    });
+
+    const updatedMonsters = db.monsters.filter((m) => m.id !== monsterId);
+    const updatedDb: DatabaseData = {
+      ...db,
+      monsters: updatedMonsters,
+      monsterGroups: updatedGroups,
+    };
+
+    setDb(updatedDb);
+    setActiveSelection({
+      type: 'group-monster',
+      groupId: targetGroupId,
+      id: monsterToMove.id,
+    });
+
+    if (updatedTargetGroup) {
+      handleSaveDb(
+        {
+          deleteMonster: monsterId,
+          group: { data: updatedTargetGroup },
+        },
+        true,
+      );
+    }
+
+    setToast({
+      message: `Moved "${monsterToMove.name}" to group "${targetGroup.name}"`,
+      onUndo: () => {
+        setDb((prevDb) => {
+          let undoGroup: MonsterGroupData | undefined;
+          const undoGroups = prevDb.monsterGroups.map((g) => {
+            if (g.id === targetGroupId) {
+              undoGroup = {
+                ...g,
+                monsters: g.monsters.filter((m) => m.id !== monsterId),
+              };
+              return undoGroup;
+            }
+            return g;
+          });
+          const undoMonsters = [...prevDb.monsters];
+          undoMonsters.splice(originalMonsterIndex, 0, monsterToMove);
+          const restoredDb: DatabaseData = {
+            ...prevDb,
+            monsters: undoMonsters,
+            monsterGroups: undoGroups,
+          };
+          if (undoGroup) {
+            handleSaveDb(
+              {
+                monster: { data: monsterToMove },
+                group: { data: undoGroup },
+              },
+              true,
+            );
+          }
+          return restoredDb;
+        });
+        setActiveSelection({ type: 'monster', id: monsterToMove.id });
+        setToast(null);
+      },
+    });
+  };
+
   const handleCreateFolder = (name: string) => {
     const trimmed = name.trim();
     if (!trimmed) {
@@ -932,6 +1031,8 @@ export const App: React.FC = () => {
                 warnings={warnings}
                 referenceData={referenceData}
                 folders={existingFolders}
+                monsterGroups={db.monsterGroups}
+                onMoveMonsterToGroup={handleMoveMonsterToGroup}
               />
               {activeSelection.type !== 'group' && (
                 <div

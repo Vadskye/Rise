@@ -219,4 +219,82 @@ describe('Monster UI Integration Tests - Monster Groups', () => {
       `creature.setEquippedArmorName({ bodyArmor: 'breastplate' })`,
     );
   });
+
+  test('moving standalone monster to an existing group moves the monster and updates its folder', () => {
+    const initialDb = getDb();
+    const groupName = `MoveTestGroup_${Date.now()}`;
+    const monsterToMoveName = `MoveTestMonster_${Date.now()}`;
+    const monsterId = `move_m_${Date.now()}`;
+    const groupId = `move_g_${Date.now()}`;
+
+    // Create a standalone monster and an empty group
+    const standaloneMonster = {
+      id: monsterId,
+      name: monsterToMoveName,
+      folder: 'Old Folder',
+      requiredProperties: {
+        alignment: 'neutral',
+        base_class: 'warrior',
+        elite: false,
+        creature_origin: 'natural',
+        creature_types: ['beast'],
+        size: 'medium',
+        level: 1,
+      },
+      weapons: [{ name: 'fists' }],
+      freeformCode: '',
+    };
+
+    const targetGroup = {
+      id: groupId,
+      name: groupName,
+      folder: 'Undead',
+      hasArt: false,
+      sharedFreeformCode: '',
+      monsters: [],
+    };
+
+    let db = {
+      ...initialDb,
+      monsters: [...initialDb.monsters, standaloneMonster],
+      monsterGroups: [...initialDb.monsterGroups, targetGroup],
+    };
+
+    saveAndValidateAll(db);
+
+    // Verify initial state
+    let loadedDb = getDb();
+    expect(loadedDb.monsters.some((m) => m.id === monsterId)).toBe(true);
+    let loadedGroup = loadedDb.monsterGroups.find((g) => g.id === groupId);
+    expect(loadedGroup!.monsters.length).toBe(0);
+
+    // Simulate moving the monster to the group
+    const movedMonster = {
+      ...standaloneMonster,
+      folder: targetGroup.folder || undefined,
+    };
+    const updatedGroup = {
+      ...targetGroup,
+      monsters: [...targetGroup.monsters, movedMonster],
+    };
+
+    db = {
+      ...db,
+      monsters: db.monsters.filter((m) => m.id !== monsterId),
+      monsterGroups: db.monsterGroups.map((g) => (g.id === groupId ? updatedGroup : g)),
+    };
+
+    const result = saveAndValidateAll(db);
+    expect(result.success).toBe(true);
+
+    // Verify loaded DB has monster inside group and NOT in standalone list
+    loadedDb = getDb();
+    expect(loadedDb.monsters.some((m) => m.id === monsterId)).toBe(false);
+    loadedGroup = loadedDb.monsterGroups.find((g) => g.id === groupId);
+    expect(loadedGroup!.monsters.length).toBe(1);
+    expect(loadedGroup!.monsters[0].id).toBe(monsterId);
+    expect(loadedGroup!.monsters[0].name).toBe(monsterToMoveName);
+    expect(loadedGroup!.monsters[0].folder).toBe('Undead');
+  });
 });
+

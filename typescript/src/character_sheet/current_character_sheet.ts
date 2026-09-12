@@ -4,12 +4,20 @@ const characters: Record<string, CharacterSheet> = {};
 let currentCharacterName: string;
 
 let handleEverythingFn: (() => void) | null = null;
+export function setHandleEverything(fn: () => void) {
+  handleEverythingFn = fn;
+}
+
 function runHandleEverything() {
   if (!handleEverythingFn) {
-    // eslint-disable-next-line @typescript-eslint/no-require-imports
-    handleEverythingFn = require('./sheet_worker').handleEverything;
+    try {
+      // eslint-disable-next-line @typescript-eslint/no-require-imports
+      handleEverythingFn = require('./sheet_worker').handleEverything;
+    } catch {
+      // In bundler/ESM environments
+    }
   }
-  handleEverythingFn!();
+  handleEverythingFn?.();
 }
 
 export function getCurrentCharacterSheet(): CharacterSheet {

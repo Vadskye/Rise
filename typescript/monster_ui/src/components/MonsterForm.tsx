@@ -26,6 +26,8 @@ interface MonsterFormProps {
     poisons: string[];
   };
   folders?: string[];
+  monsterGroups?: MonsterGroupData[];
+  onMoveMonsterToGroup?: (monsterId: string, targetGroupId: string) => void;
 }
 
 export const MonsterForm: React.FC<MonsterFormProps> = ({
@@ -47,6 +49,8 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
     poisons: [],
   },
   folders = [],
+  monsterGroups = [],
+  onMoveMonsterToGroup,
 }) => {
   // Design Decisions:
   // 1. Tabbed Layout: Rather than presenting a giant list of inputs that is overwhelming and hard
@@ -140,6 +144,8 @@ export const MonsterForm: React.FC<MonsterFormProps> = ({
             warnings={warnings}
             folders={folders}
             isGroupMonster={isGroupMonster}
+            monsterGroups={monsterGroups}
+            onMoveMonsterToGroup={(groupId) => onMoveMonsterToGroup?.(monsterData.id, groupId)}
           />
         ) : null)}
 

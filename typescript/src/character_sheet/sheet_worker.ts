@@ -1,4 +1,5 @@
 import roll20shim from './roll20_shim';
+import { setHandleEverything } from './current_character_sheet';
 const { on, getAttrs, setAttrs, getSectionIDs, generateRowID, removeRepeatingRow } = roll20shim;
 
 // This file has to be a massive monolith to ensure compatibility with Roll20, which
@@ -762,6 +763,7 @@ export function handleEverything() {
   handleSpecialDefenses();
   handleVitalWounds();
 }
+setHandleEverything(handleEverything);
 
 function handleCoreStatistics() {
   handleAccuracy();
