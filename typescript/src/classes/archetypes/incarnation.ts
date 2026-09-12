@@ -17,11 +17,10 @@ export function incarnation(): RankAbility[] {
           You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with this attack (see \\pcref{Power}).
           The defense against this attack depends on your \\textit{essence infusion}.
           \\begin{raggeditemize}
-            \\item Armor defense: \\atWater.
+            \\item Armor defense: \\atFire, \\atWater.
             \\item Brawn defense: \\atAir, \\atEarth.
-            \\item Fortitude defense: \\atAcid, \\atAuditory, \\atCold.
-            \\item Reflex defense: \\atElectricity, \\atFire, \\atVisual.
-            \\item Mental defense: \\atCompulsion, \\atEmotion.
+            \\item Fortitude defense: \\atAcid, \\atAuditory, \\atCold, \\atElectricity.
+            \\item Mental defense: \\atCompulsion, \\atEmotion, \\atVisual.
           \\end{raggeditemize}
           \\hit \\damageranktwo.
 
