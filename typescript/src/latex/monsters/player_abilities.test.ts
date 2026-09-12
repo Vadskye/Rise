@@ -524,7 +524,7 @@ t.test('restructureStrikeAbility', (t) => {
       t.matchStrict(ability.attack, {
         hit: '2d4+5 damage.',
         targeting:
-          'The $name makes a $accuracy+3 melee strike vs. Armor with its talons. Then, it is \\briefly \\buff{empowered} \\reminder{\\plus3 damage}. At the end of its next turn, it is \\briefly \\braced.',
+          'The $name makes a $accuracy+1 melee strike vs. Armor with its talons. Then, it is \\briefly \\buff{empowered} \\reminder{\\plus3 damage}. At the end of its next turn, it is \\briefly \\braced.',
       });
       t.end();
     });
@@ -538,7 +538,7 @@ t.test('restructureStrikeAbility', (t) => {
       restructureStrikeAbility(mockCreature, ability);
       t.matchStrict(ability.attack, {
         hit: '2d4+5 damage.',
-        targeting: 'The $name makes a $accuracy+6 melee strike vs. Armor with its claws.',
+        targeting: 'The $name makes a $accuracy+4 melee strike vs. Armor with its claws.',
       });
       t.end();
     });
@@ -567,7 +567,7 @@ t.test('restructureStrikeAbility', (t) => {
       restructureStrikeAbility(mockCreature, ability);
       t.matchStrict(ability.attack, {
         hit: '1d6+10 damage.',
-        targeting: 'The $name makes a $accuracy-1 melee strike vs. Armor with its stinger.',
+        targeting: 'The $name makes a $accuracy-2 melee strike vs. Armor with its stinger.',
       });
       t.end();
     });
@@ -830,5 +830,19 @@ t.test('prepareActiveAbilitiesForPreview', (t) => {
     'The goblin skirmisher makes a +0 strike vs. Armor with its spear.',
   );
   t.equal(ability.attack?.hit, '1d6 damage.');
+
+  const rawAbilityWithBonus: any = {
+    name: 'Talon Strike',
+    kind: 'maneuver',
+    isMagical: false,
+    weapon: 'talons',
+    effect: 'Make a strike with a +1 accuracy bonus.',
+  };
+  const preparedWithBonus = prepareActiveAbilitiesForWebPreview(creature, [rawAbilityWithBonus]);
+  // Base creature accuracy (0) + weapon accuracy (2) + strike bonus (1) = +3
+  t.equal(
+    preparedWithBonus[0].attack?.targeting,
+    'The goblin skirmisher makes a +3 melee strike vs. Armor with its talons.',
+  );
   t.end();
 });

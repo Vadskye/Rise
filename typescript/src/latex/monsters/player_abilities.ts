@@ -11,7 +11,6 @@ import {
 import {
   getWeaponDamageDice,
   getWeaponTags,
-  getWeaponAccuracy,
   getWeaponPowerMultiplier,
   MonsterWeapon,
 } from '@src/monsters/weapons';
@@ -593,7 +592,7 @@ function calculateStrikeAccuracyText(
     return '';
   }
 
-  let accuracyModifier = getWeaponAccuracy(ability.weapon);
+  let accuracyModifier = 0;
   if (accuracyMatch) {
     const modifierSign = standardizeModifierSign(accuracyMatch[1]);
     if (!accuracyMatch[2]) {
