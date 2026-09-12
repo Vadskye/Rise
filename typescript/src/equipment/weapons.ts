@@ -248,7 +248,8 @@ export const STANDARD_WEAPONS: Record<StandardWeapon, Weapon> = {
     tags: ['Keen', 'Light'],
   },
   [StandardWeapon.Lance]: {
-    accuracy: 0,
+    // Assume always used while mounted
+    accuracy: 2,
     damage_dice: DicePool.d6(),
     name: 'Lance',
     tags: ['Mounted'],
@@ -459,10 +460,14 @@ export function addDiceIncrement(dicePool: SimpleDicePool, increments: number): 
   const targetIndex = currentIncrementIndex + increments;
   let revisedIndex = targetIndex;
   if (targetIndex < 0) {
-    console.warn(`Dice increment for ${key} with ${increments} steps is below minimum (1d2). Clamping.`);
+    console.warn(
+      `Dice increment for ${key} with ${increments} steps is below minimum (1d2). Clamping.`,
+    );
     revisedIndex = 0;
   } else if (targetIndex >= DICE_INCREMENT_ORDER.length) {
-    console.warn(`Dice increment for ${key} with ${increments} steps is above maximum (4d10). Clamping.`);
+    console.warn(
+      `Dice increment for ${key} with ${increments} steps is above maximum (4d10). Clamping.`,
+    );
     revisedIndex = DICE_INCREMENT_ORDER.length - 1;
   }
   const match = DICE_INCREMENT_ORDER[revisedIndex].match(/(\d+)d(\d+)/);
@@ -483,10 +488,7 @@ export function addDiceIncrementString(diceStr: string, increments: number): str
   if (!match) {
     return diceStr;
   }
-  const pool = addDiceIncrement(
-    { count: Number(match[1]), size: Number(match[2]) },
-    increments,
-  );
+  const pool = addDiceIncrement({ count: Number(match[1]), size: Number(match[2]) }, increments);
   return `${pool.count}d${pool.size}${match[3]}`;
 }
 
@@ -506,4 +508,3 @@ export function addDiceIncrementToPool(pool: DicePool, increments: number): Dice
   }
   return new DicePool(newDice, pool.flatModifier, pool.maximized, pool.multiplier, pool.weak);
 }
-
