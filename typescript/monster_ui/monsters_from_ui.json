@@ -1817,14 +1817,6 @@
         },
         {
           "type": "spell",
-          "name": "Inflict Wound",
-          "options": {
-            "isMagical": true,
-            "usageTime": "elite"
-          }
-        },
-        {
-          "type": "spell",
           "name": "Putrefying Blast",
           "options": {
             "isMagical": true,
@@ -1837,6 +1829,14 @@
           "options": {
             "isMagical": false,
             "weapon": "lance"
+          }
+        },
+        {
+          "type": "spell",
+          "name": "Siphon Protection",
+          "options": {
+            "isMagical": true,
+            "usageTime": "elite"
           }
         }
       ]
