@@ -1,5 +1,6 @@
 import { Creature } from '@src/character_sheet/creature';
 import { RISE_ATTRIBUTES } from '@src/core_mechanics/attributes';
+import { isHeavyWeapon } from './weapons';
 
 /**
  * Shared validation logic and warning message generation for the Monster Creator.
@@ -79,6 +80,23 @@ export function formatNoStandardActionWarning(name: string): string {
   return `Monster "${name}" must have at least one standard action ability.`;
 }
 
+/**
+ * Formats the warning message for a monster using a shield while also using a Heavy weapon.
+ */
+export function formatShieldWithHeavyWeaponWarning(weaponName: string): string {
+  return `Monster using a shield is also using a Heavy weapon (${weaponName})`;
+}
+
+/**
+ * Checks if a given warning string matches the shield with heavy weapon warning.
+ */
+export function isShieldWithHeavyWeaponWarning(warning: string, weaponName?: string): boolean {
+  if (weaponName) {
+    return warning === formatShieldWithHeavyWeaponWarning(weaponName);
+  }
+  return warning.startsWith('Monster using a shield is also using a Heavy weapon');
+}
+
 export interface MonsterGroupLike {
   knowledge?: {
     easy?: string;
@@ -141,6 +159,31 @@ export function checkValidMonster(
     creature.hasTrait('legless');
   if (creature.isExactlyCreatureType('beast') && !mentionsLegCount) {
     guidelines.push('Beasts should usually be quadrupedal.');
+  }
+
+  if (creature.shield_name) {
+    const weaponsUsed = new Set<string>();
+    const equippedWeapons = [
+      creature.weapon_0_name,
+      creature.weapon_1_name,
+      creature.weapon_2_name,
+      creature.weapon_3_name,
+    ];
+    for (const weapon of equippedWeapons) {
+      if (weapon) {
+        weaponsUsed.add(weapon);
+      }
+    }
+    for (const ability of creature.getActiveAbilities()) {
+      if (ability.weapon) {
+        weaponsUsed.add(ability.weapon);
+      }
+    }
+    for (const weapon of weaponsUsed) {
+      if (isHeavyWeapon(weapon)) {
+        guidelines.push(formatShieldWithHeavyWeaponWarning(weapon));
+      }
+    }
   }
 
   const standardAbilities = creature

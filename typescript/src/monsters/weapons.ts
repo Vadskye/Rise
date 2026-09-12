@@ -152,3 +152,12 @@ export function getWeaponTags(weaponName: MonsterWeapon): readonly RiseWeaponTag
 
   return tags;
 }
+
+export function isHeavyWeapon(weaponName: MonsterWeapon): boolean {
+  try {
+    const base = resolveBaseWeapon(weaponName);
+    return base.tags.includes('Heavy');
+  } catch {
+    return false;
+  }
+}

@@ -139,12 +139,57 @@ t.test('can apply armor effects', (t) => {
   t.end();
 });
 
-t.test('calling only setEquippedArmorName does not affect numeric stats', (t) => {
+t.test(
+  'setEquippedArmorName ignores body armor numeric effects but applies shield defense',
+  (t) => {
+    const creature = Creature.new();
+    creature.setEquippedArmorName({ bodyArmor: 'breastplate', shield: 'standard shield' });
+
+    t.notOk(creature.body_armor_defense, 'Body armor defense should be falsy');
+    t.notOk(creature.body_armor_durability, 'Body armor durability should be falsy');
+    t.notOk(creature.body_armor_speed, 'Body armor speed penalty should be falsy');
+    t.equal(creature.shield_defense, 2, 'Shield defense should be 2 for standard shield');
+    t.equal(creature.armor_defense, 2, 'Armor defense includes shield bonus');
+
+    t.end();
+  },
+);
+
+t.test('setEquipment applies shield defense and ignores body armor', (t) => {
   const creature = Creature.new();
-  creature.setEquippedArmorName({ bodyArmor: 'breastplate', shield: 'standard shield' });
+  creature.setEquipment(['breastplate', 'buckler', 'broadsword']);
 
   t.notOk(creature.body_armor_defense, 'Body armor defense should be falsy');
-  t.notOk(creature.shield_defense, 'Shield defense should be falsy');
+  t.equal(creature.shield_defense, 1, 'Shield defense should be 1 for buckler');
+  t.equal(creature.armor_defense, 1, 'Armor defense includes buckler bonus');
+
+  t.end();
+});
+
+t.test('shield defense adds to base creature armor defense', (t) => {
+  const creature = Creature.new();
+  creature.setRequiredProperties({
+    alignment: 'neutral',
+    base_class: 'warrior',
+    creature_origin: 'natural',
+    creature_types: ['humanoid'],
+    elite: false,
+    level: 4,
+    size: 'medium',
+  });
+  creature.setBaseAttributes([2, 2, 2, 0, 0, 0]);
+  const baseArmorDefense = creature.armor_defense;
+  t.ok(
+    typeof baseArmorDefense === 'number' && baseArmorDefense > 0,
+    'Base armor defense should be positive number',
+  );
+
+  creature.setEquippedArmorName({ bodyArmor: 'full plate', shield: 'standard shield' });
+  t.equal(
+    creature.armor_defense,
+    baseArmorDefense + 2,
+    'Armor defense increases by shield defense',
+  );
 
   t.end();
 });

@@ -44,7 +44,14 @@ import {
 import { DamageScaling } from '@src/core_mechanics/damage_scaling';
 import { DicePool } from '@src/core_mechanics/dice_pool';
 import * as format from '@src/latex/format';
-import { EquippedItem, isBodyArmor, isShield, BodyArmor, Shield } from '@src/monsters/equipment';
+import {
+  EquippedItem,
+  isBodyArmor,
+  isShield,
+  BodyArmor,
+  Shield,
+  generateShieldProperties,
+} from '@src/monsters/equipment';
 import { KNOWLEDGE_BY_ORIGIN, KNOWLEDGE_BY_TYPE } from './knowledge';
 import { getArmorBaseDefinition, ArmorKind } from '@src/equipment/armor';
 import { alchemicalItems } from '@src/equipment/data/consumables/alchemical_items';
@@ -385,16 +392,25 @@ export class Creature implements CreaturePropertyMap {
   // doesn't match their maneuvers for some weird reason.
   setEquipment(items: EquippedItem[]) {
     let weaponIndex = 0;
+    let foundShield = false;
     for (const item of items) {
       if (isBodyArmor(item)) {
         this.setProperties({ body_armor_name: item });
       } else if (isShield(item)) {
-        this.setProperties({ shield_name: item });
+        foundShield = true;
+        const shieldProps = generateShieldProperties(item);
+        this.setProperties({
+          shield_name: item,
+          shield_defense: shieldProps?.shield_defense || 0,
+        });
       } else {
         const key = `weapon_${weaponIndex}_name`;
         this.setProperties({ [key]: item });
         weaponIndex += 1;
       }
+    }
+    if (!foundShield) {
+      this.setProperties({ shield_name: '', shield_defense: 0 });
     }
     // Clear any remaining weapons
     while (weaponIndex <= 3) {
@@ -408,7 +424,11 @@ export class Creature implements CreaturePropertyMap {
       this.setProperties({ body_armor_name: bodyArmor });
     }
     if (shield) {
-      this.setProperties({ shield_name: shield });
+      const shieldProps = generateShieldProperties(shield);
+      this.setProperties({
+        shield_name: shield,
+        shield_defense: shieldProps?.shield_defense || 0,
+      });
     }
   }
 

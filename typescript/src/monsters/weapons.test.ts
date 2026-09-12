@@ -1,5 +1,5 @@
 import { test } from 'tap';
-import { getWeaponDamageDice } from './weapons';
+import { getWeaponDamageDice, isHeavyWeapon } from './weapons';
 
 test('getWeaponDamageDice', (t) => {
   t.test('returns base damage dice without increments', (t) => {
@@ -36,6 +36,22 @@ test('getWeaponDamageDice', (t) => {
     t.same(getWeaponDamageDice('claws', 2), { count: 2, size: 8 });
     // +3 -> 1d10, plural -> 2d10
     t.same(getWeaponDamageDice('claws', 3), { count: 2, size: 10 });
+    t.end();
+  });
+
+  t.test('isHeavyWeapon correctly identifies heavy and non-heavy weapons', (t) => {
+    t.ok(isHeavyWeapon('greatsword'), 'greatsword is heavy');
+    t.ok(isHeavyWeapon('greataxe'), 'greataxe is heavy');
+    t.ok(isHeavyWeapon('greatclub'), 'greatclub is heavy');
+    t.ok(isHeavyWeapon('greatmace'), 'greatmace is heavy');
+    t.ok(isHeavyWeapon('heavy crossbow'), 'heavy crossbow is heavy');
+    t.ok(isHeavyWeapon('heavy flail'), 'heavy flail is heavy');
+
+    t.notOk(isHeavyWeapon('broadsword'), 'broadsword is not heavy');
+    t.notOk(isHeavyWeapon('spear'), 'spear is not heavy');
+    t.notOk(isHeavyWeapon('dagger'), 'dagger is not heavy');
+    t.notOk(isHeavyWeapon('claw'), 'claw is not heavy');
+    t.notOk(isHeavyWeapon('unknown_weapon_xyz'), 'unknown weapon is not heavy');
     t.end();
   });
 
