@@ -1772,7 +1772,7 @@
       "folder": "Undead",
       "requiredProperties": {
         "alignment": "lawful evil",
-        "base_class": "brute",
+        "base_class": "warrior",
         "elite": true,
         "creature_origin": "undead",
         "creature_types": [
@@ -1805,7 +1805,41 @@
         "has_art": false
       },
       "equippedArmor": "breastplate",
-      "equippedShield": "standard shield"
+      "equippedShield": "standard shield",
+      "standardAbilities": [
+        {
+          "type": "maneuver",
+          "name": "Weapon Multiplier",
+          "options": {
+            "isMagical": false,
+            "weapon": "lance"
+          }
+        },
+        {
+          "type": "spell",
+          "name": "Inflict Wound",
+          "options": {
+            "isMagical": true,
+            "usageTime": "elite"
+          }
+        },
+        {
+          "type": "spell",
+          "name": "Putrefying Blast",
+          "options": {
+            "isMagical": true,
+            "usageTime": "elite"
+          }
+        },
+        {
+          "type": "maneuver",
+          "name": "Push Through",
+          "options": {
+            "isMagical": false,
+            "weapon": "lance"
+          }
+        }
+      ]
     }
   ],
   "monsterGroups": [
