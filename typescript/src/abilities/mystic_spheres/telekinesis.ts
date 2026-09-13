@@ -359,6 +359,9 @@ export const telekinesis: MysticSphere = {
         hit: `
           If the target is \\glossterm{injured}, you \\glossterm{fling} it up to 15 feet upwards or horizontally.
           Moving it upwards costs twice the normal movement cost.
+
+          If you leave the target \\glossterm{midair}, it is normally \\unsteady until it lands.
+          It normally falls at the end of its turn.
         `,
         targeting: `
           Make an attack vs. Brawn against up to two Large or smaller creatures within \\medrange.
@@ -378,6 +381,9 @@ export const telekinesis: MysticSphere = {
         hit: `
           If the target is \\glossterm{injured}, you \\glossterm{fling} it up to 30 feet upwards or horizontally.
           Moving it upwards costs twice the normal movement cost.
+
+          If you leave the target \\glossterm{midair}, it is normally \\unsteady until it lands.
+          It normally falls at the end of its turn, potentially causing it to take \\glossterm{falling damage} (see \\pcref{Falling Damage}).
         `,
         targeting: `
           Make an attack vs. Brawn against up to three Huge or smaller creatures within \\medrange.

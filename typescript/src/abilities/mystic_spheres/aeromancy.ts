@@ -100,7 +100,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         Moving the target upwards costs twice the normal movement cost.
 
         If you leave the target \\glossterm{midair}, it is normally \\unsteady until it lands.
-        It normally falls at the end of its turn, causing it to take \\glossterm{falling damage} (see \\pcref{Falling Damage}).
+        It normally falls at the end of its turn, potentially causing it to take \\glossterm{falling damage} (see \\pcref{Falling Damage}).
       `,
       rank: 1,
       roles: ['mobility'],
