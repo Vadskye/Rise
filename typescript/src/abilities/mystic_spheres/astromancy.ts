@@ -44,7 +44,8 @@ export const astromancy: MysticSphere = {
       name: 'Instant Retrieval',
 
       effect: `
-        As a \\glossterm{minor action}, you can teleport one of your items into your \\glossterm{free hand}.
+        As a \\glossterm{minor action}, you can teleport an item carried on your body into your \\glossterm{free hand}.
+        The item must not be \\glossterm{attended} by any creature other than you.
         This can teleport items from your backpack, or other storage devices worn closely on your body such as weapon sheathes, as long as you are touching the outside of that storage (including though clothing or armor).
         Conjuring a shield in this way does not automatically strap it to your arm, so you must still spend the normal action to don it (see \\tref{Donning Armor}).
       `,
