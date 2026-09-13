@@ -50,7 +50,7 @@ export function naiad(): RankAbility[] {
         \\begin{raggeditemize}
           \\itemhead{Geyser or spring} You gain a \\plus2 accuracy bonus against creatures that are at \\unaware or \\partiallyunaware of your attacks.
           In addition, when you use the \\ability{desperate exertion} ability to affect an attack, the target is considered \\partiallyunaware of that attack.
-          \\itemhead{Lake} You gain a \\plus3 bonus to your \\glossterm{durability}.
+          \\itemhead{Lake} You gain a \\plus2 bonus to your \\glossterm{durability}.
           \\itemhead{River or stream} You gain a \\plus2 bonus to your Reflex defense.
           In addition, when you \\ability{run} or \\ability{sprint} downhill, you gain a \\plus10 foot bonus to your \\glossterm{speed}.
           This bonus is multiplied as normal by those abilities.
@@ -99,7 +99,7 @@ export function naiad(): RankAbility[] {
         The benefit from your bonded body of water improves.
         \\begin{raggeditemize}
           \\itemhead{Geyser or spring} The accuracy bonus increases to \\plus4.
-          \\itemhead{Lake} The hit point bonus increases to five times your rank in this archetype.
+          \\itemhead{Lake} The durability bonus increases to \\plus4.
           \\itemhead{River or stream} You gain a \\plus10 foot \\glossterm{enhancement bonus} to your \\glossterm{speed}.
           \\itemhead{Underground reservoir} The range of your \\sense{darkvision} increases by 60 feet.
           In addition, the skill bonuses increase to \\plus4.
