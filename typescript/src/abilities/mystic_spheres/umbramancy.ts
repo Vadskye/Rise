@@ -705,7 +705,7 @@ export const umbramancy: MysticSphere = {
           When you cast this spell, you wrap yourself in shadow.
           All attacks against you \\briefly have a 50\\% \\glossterm{failure chance}.
           During your next turn, you can spend a \\glossterm{standard action} to \\glossterm{teleport} to a location within \\shortrange.
-          If you do, make an attack vs. Fortitude against each \\glossterm{enemy} adjacent to you.
+          If you do, make an attack vs. Fortitude against each \\glossterm{enemy} adjacent to you when you arrive.
         `,
       },
 
