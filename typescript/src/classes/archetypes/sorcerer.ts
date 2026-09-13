@@ -265,6 +265,7 @@ export function innateArcanist(): RankAbility[] {
       rank: 1,
       description: `
         None of your arcane spells have \\glossterm{somatic components} or \\glossterm{verbal components}.
+        They still have their normal visual and auditory effects (see \\pcref{Awareness}).
       `,
     },
     {
