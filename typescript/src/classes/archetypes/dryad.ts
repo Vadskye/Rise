@@ -19,16 +19,20 @@ export function dryad(): RankAbility[] {
       `,
     },
     {
-      complexity: 1,
-      name: 'Natural Speech',
+      complexity: 2,
+      name: 'Bonded Boon',
       isMagical: true,
       rank: 2,
       description: `
-        You can speak with plants and animals as if they were capable of ordinary speech.
-        This ability does not make them any more friendly or cooperative than normal.
-        Wary and cunning animals are likely to be terse and evasive, while stupid ones tend to make inane comments and are unlikely to say or understand anything of use.
-        Plants do not have complex thought processes, but can provide information about events that have happened near them.
-        In general, plants can remember events that happened within the most recent quarter of their lifespan.
+        While your \\textit{tree bond} is active, you gain a benefit based on the type of tree you bonded.
+        If it's ambiguous how to categorize your type of tree, you can choose any one applicable category when you gain this ability and when you form any future bonds.
+        \\begin{raggeditemize}
+          \\itemhead{Birch} You gain a \\plus2 bonus to the Deception, Stealth, and Survival skills.
+          \\itemhead{Cypress} You gain a \\plus1 bonus to your Brawn and Fortitude defenses, and you gain a \\plus1 bonus to your \\glossterm{mundane power}.
+          \\itemhead{Pine} You gain a \\plus1 bonus to your Armor defense.
+          \\itemhead{Oak} You gain a \\plus1 bonus to your \\glossterm{durability} and a \\plus2 bonus to your Mental defense.
+          \\itemhead{Willow} You gain a \\plus2 bonus to the Flexibility skill and to your Reflex defense.
+        \\end{raggeditemize}
       `,
     },
     {
@@ -37,9 +41,23 @@ export function dryad(): RankAbility[] {
       isMagical: true,
       rank: 3,
       description: `
-        You can \\glossterm{teleport} between living trees instead of moving using your \\glossterm{walk speed}.
-        Teleporting a given distance costs movement equal to half that distance.
+        You can \\glossterm{teleport} between living plants instead of moving using your \\glossterm{walk speed}.
+        Both plants must be at least your size category or larger.
+        Teleporting a given distance costs movement equal to half that distance when moving between trees, or equal to the full distance when moving between other plants.
         If this teleportation fails for any reason, you still expend that movement.
+      `,
+    },
+    {
+      complexity: 1,
+      name: 'Natural Speech',
+      isMagical: true,
+      rank: 4,
+      description: `
+        You can speak with plants and animals as if they were capable of ordinary speech.
+        This ability does not make them any more friendly or cooperative than normal.
+        Wary and cunning animals are likely to be terse and evasive, while stupid ones tend to make inane comments and are unlikely to say or understand anything of use.
+        Plants do not have complex thought processes, but can provide information about events that have happened near them.
+        In general, plants can remember events that happened within the most recent quarter of their lifespan.
       `,
     },
     {
@@ -77,14 +95,18 @@ export function dryad(): RankAbility[] {
     },
     {
       complexity: 2,
-      name: 'Tree Union',
+      name: 'Bonded Boon+',
       isMagical: true,
       rank: 6,
       description: `
-        When you meld with a tree using your \\textit{tree stride} ability, you can fully unite with it.
-        When you do, you have \\glossterm{line of sight} and \\glossterm{line of effect} from all areas of the tree simultaneously, as if you were everywhere in the tree's body.
-        Attacks against the tree simultaneously affect both you and the tree.
-        You and the tree are both \\resistant to damaging attacks, but \\vulnerable to \\atFire attacks and cold iron weapons.
+        The benefit from your bonded tree improves.
+        \\begin{raggeditemize}
+          \\itemhead{Birch} The bonuses increase to \\plus4.
+          \\itemhead{Cypress} The bonuses increase to \\plus2.
+          \\itemhead{Pine} The bonus increases to \\plus2.
+          \\itemhead{Oak} The durability bonus increases to \\plus2, and the Mental defense bonus increases to \\plus3.
+          \\itemhead{Willow} The bonuses increase to \\plus4.
+        \\end{raggeditemize}
       `,
     },
     {
