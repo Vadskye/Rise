@@ -182,9 +182,9 @@ export function clericDomains(): string {
         If you choose this domain, you add the \\sphere{electromancy} \\glossterm{mystic sphere} to your list of divine mystic spheres (see \\pcref{Spell Lists}).
 
         \\magicaldomainability{Gift} You are \\resistant to \\atElectricity attacks.
-        \\magicaldomainability{Essence} Whenever you use a damaging \\atElectricity ability that affects an area, you \\glossterm{repeat} that ability at the start of your next turn.
+        \\magicaldomainability{Aspect} Whenever you use a damaging \\atElectricity ability that affects an area, you \\glossterm{repeat} that ability at the start of your next turn.
         The repeat has the \\atAuditory tag instead of the \\atElectricity tag, deals half damage, and affects each \\glossterm{enemy} adjacent to you instead of its normal targets.
-        \\magicaldomainability{Aspect} The repeat from this domain's essence also triggers when you \\glossterm{chain} to yourself with a damaging \\atElectricity ability.
+        \\magicaldomainability{Essence} The repeat from this domain's essence also triggers when you \\glossterm{chain} to yourself with a damaging \\atElectricity ability.
         \\magicaldomainability{Mastery} The repeat from this domain's essence instead affects all \\glossterm{enemies} within a \\smallarea radius from you.
 
         \\subsubsection{Sun Domain}
