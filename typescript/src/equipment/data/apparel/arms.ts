@@ -9,15 +9,15 @@ function bracers(): RawApparel[] {
   return [
     {
       kind: 'Bracers',
+      // Basically non-enhancement +1 durability, but doesn't work with fancy armor.
       item: {
         name: 'Bracers of Armor',
         rank: 1,
         short_description: 'Surrounds you in armor',
         description: `
             You have a translucent suit of magical armor on your body and over your hands.
-            This functions like body armor that provides a +2 bonus to Armor defense, a +3 bonus to your \\glossterm{durability}, and a +1 bonus to your \\glossterm{vital rolls}.
-            You must be proficient with medium armor to use this armor effectively.
-            Unlike normal medium body armor, it does not reduce your Armor defense bonus from Dexterity.
+            This functions like light body armor that provides a +1 bonus to Armor defense and a +2 bonus to your \\glossterm{durability}.
+            You must be proficient with light armor to use this armor effectively.
 
             The armor provided by this effect is dismissed if you have other body armor of any kind.
         `,
@@ -26,7 +26,7 @@ function bracers(): RawApparel[] {
           {
             rank: 4,
             short_description: 'Surrounds you in armor',
-            description: 'The durability bonus increases to +5.',
+            description: 'The durability bonus increases to +2.',
           },
           {
             rank: 7,
