@@ -196,7 +196,7 @@ export function elixirs(): Tool[] {
     }),
     createElixir({
       name: 'Shadowsoul Elixir',
-      rank: 6,
+      rank: 8,
       attunement: 'Attune',
       short_description: 'Gives attacks a 20\\% failure chance',
       description: `
@@ -207,7 +207,7 @@ export function elixirs(): Tool[] {
     }),
     createElixir({
       name: 'Blurring Elixir',
-      rank: 3,
+      rank: 5,
       attunement: 'Attune',
       short_description: 'Gives targeted attacks a 20\\% miss chance chance',
       description: `
