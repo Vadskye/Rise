@@ -196,7 +196,7 @@ export function elixirs(): Tool[] {
     }),
     createElixir({
       name: 'Shadowsoul Elixir',
-      rank: 8,
+      rank: 7,
       attunement: 'Attune',
       short_description: 'Gives attacks a 20\\% failure chance',
       description: `
