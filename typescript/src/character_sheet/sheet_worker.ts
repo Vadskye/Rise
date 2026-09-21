@@ -1,5 +1,4 @@
 import roll20shim from './roll20_shim';
-import { setHandleEverything } from './current_character_sheet';
 const { on, getAttrs, setAttrs, getSectionIDs, generateRowID, removeRepeatingRow } = roll20shim;
 
 // This file has to be a massive monolith to ensure compatibility with Roll20, which
@@ -763,7 +762,6 @@ export function handleEverything() {
   handleSpecialDefenses();
   handleVitalWounds();
 }
-setHandleEverything(handleEverything);
 
 function handleCoreStatistics() {
   handleAccuracy();
@@ -1937,14 +1935,14 @@ function handleJumpDistance() {
   onGet({
     variables: {
       miscName: 'horizontal_jump_distance',
-      numeric: ['base_speed', 'strength', 'jump_level'],
+      numeric: ['speed', 'strength', 'athletics_is_trained'],
     },
     callback: (v) => {
       // In case people don't bother to set their size to Medium explicitly
-      const base_speed = v.base_speed || 30;
-      const base_speed_modifier = roundToFiveFootIncrements(base_speed / 4);
+      const speed = v.speed || 30;
+      const base_speed_modifier = roundToFiveFootIncrements(speed / 4);
       const strength_modifier =
-        v.jump_level > 0
+        v.athletics_is_trained > 0
           ? Math.max(5, v.strength * 5)
           : Math.max(0, Math.floor(v.strength / 2) * 5);
       const horizontalDistance = Math.max(0, base_speed_modifier + strength_modifier + v.misc);
