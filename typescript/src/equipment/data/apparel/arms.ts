@@ -15,7 +15,8 @@ function bracers(): RawApparel[] {
         short_description: 'Surrounds you in armor',
         description: `
             You have a translucent suit of magical armor on your body and over your hands.
-            This functions like medium body armor that provides a +2 bonus to Armor defense, a +3 bonus to your \\glossterm{durability}, and a +1 bonus to your \\glossterm{vital rolls}.
+            This functions like body armor that provides a +2 bonus to Armor defense, a +3 bonus to your \\glossterm{durability}, and a +1 bonus to your \\glossterm{vital rolls}.
+            You must be proficient with medium armor to use this armor effectively.
             Unlike normal medium body armor, it does not reduce your Armor defense bonus from Dexterity.
 
             The armor provided by this effect is dismissed if you have other body armor of any kind.
