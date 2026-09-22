@@ -143,7 +143,11 @@ export function covenantKeeper(): RankAbility[] {
         Each covenant grants great power at a cost.
         {
         \\subcf{Covenant of Bloodforging} While you are not wearing other body armor, your blood flows to the surface of your skin, manifesting a carapace around you.
-        This functions like light body armor that provides the following benefits:
+        This functions like either light or medium body armor, as you choose.
+        In exchange, the \\ability{recover} ability no longer causes you to recover hit points (see \\pcref{Recover}).
+        You must be \\trait{blooded} to choose this covenant.
+
+        If you choose light armor, it provides the following benefits:
         % Relative to mail shirt: +1 Armor, +1 Fort, +2 durability, +1 vital rolls
         % Relative to brigandine: +1 Fort, full dex to Armor
         \\begin{raggeditemize}
@@ -153,8 +157,18 @@ export function covenantKeeper(): RankAbility[] {
           \\item A \\plus1 bonus to your \\glossterm{vital rolls}.
           \\item You are immune to \\debuff{bleed} effects.
         \\end{raggeditemize}
-        In exchange, the \\ability{recover} ability no longer causes you to recover hit points (see \\pcref{Recover}).
-        You must be \\trait{blooded} to choose this covenant.
+        If you choose medium armor, it provides the following benefits:
+        % Relative to brigandine: +1 Armor, +1 Fort, +2 durability, +1 vital rolls, +2 dex
+        % skills
+        % Relative to full plate: +1 Fort, -2 durability, +10 speed
+        \\begin{raggeditemize}
+          \\item A \\plus4 bonus to your Armor defense.
+          \\item A \\plus1 bonus to your Fortitude defense.
+          \\item A \\plus5 bonus to your \\glossterm{durability}.
+          \\item A \\plus2 bonus to your \\glossterm{vital rolls}.
+          \\item You are immune to \\debuff{bleed} effects.
+          \\item Your Dexterity bonus to Armor defense is halved, as normal for other medium armor.
+        \\end{raggeditemize}
 
         \\subcf{Covenant of Bloodsharing} Once per turn, when you cause a \\trait{blooded} creature other than yourself to lose \\glossterm{hit points}, you can regain \\glossterm{hit points} equal to half your \\glossterm{power} (minimum 1).
         In exchange, you are \\glossterm{injured} whenever you are below your maximum hit points, regardless of your normal \\glossterm{injury point}.
