@@ -468,7 +468,8 @@ export function schoolSpecialist(): RankAbility[] {
         If you specialize in this school, you gain a \\plus2 bonus to your \\glossterm{magical power}.
 
         \\subcf{Illusion} The \\sphere{enchantment}, \\sphere{photomancy}, and \\sphere{umbramancy} mystic spheres.
-        If you specialize in this school, you gain a \\plus1 \\glossterm{accuracy} bonus, and you can add half your Perception to your \\glossterm{magical power}.
+        If you specialize in this school, you gain a \\plus1 \\glossterm{accuracy} bonus and a \\plus1 bonus to your \\magical \\glossterm{power}.
+        If your Perception is 4 or higher, this power bonus increases to \\plus2.
 
         \\subcf{Necromancy} The \\sphere{revelation} and \\sphere{vivimancy} mystic spheres.
         If you specialize in this school, you gain a \\plus2 accuracy bonus against \\trait{living} creatures with less than their maximum hit points, and against all \\creatureorigin{undead} creatures. 
