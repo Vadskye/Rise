@@ -296,15 +296,16 @@ export const flurryOfBlows: CombatStyle = {
       rank: 1,
       roles: ['flash', 'generator'],
     },
-{
+    {
       name: 'Flashy Flourish',
 
       effect: `
         Make a \\glossterm{strike}.
         \\hit If your attack hits the target's Reflex defense, it is \\briefly \\dazzled.
-      `,
+        `,
       rank: 1,
       roles: ['softener'],
+    },
     
 
     {
