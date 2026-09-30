@@ -837,9 +837,10 @@ They allow more distinct and unique character customization, but also increase g
   \begin{feat}{Fateweaver}{General, Magical}
     \featpre Perception 2.
 
+    % 10% +4, 10% +3, 10% +2, 10+% +1, total +1a.
     \magicalff[1]{Inevitable Attack} Whenever you make an attack roll, your minimum attack result is equal to 5 \add your \glossterm{accuracy} with the attack, as if you had rolled a 5 on the die.
     % TODO: worth the effort to explain here? Is there an easier way to say this?
-    If the attack roll is already affected by the Inevitable Spell ability from a moirai votive, the minimum attack result increases by 2.
+    If the attack roll is already affected another ability that sets a minimum attack result, such as the \ability{fateseal} ability, that minimum attack result increases by 2.
 
     % Assume a 70% base hit rate, so 0.7x dpr.
     % A -2 defenses debuff increases damage to 0.9x dpr.
@@ -850,7 +851,7 @@ They allow more distinct and unique character customization, but also increase g
       Make an attack vs. Mental against one creature within \medrange.
       \hit The target is fatesealed as a \glossterm{condition}.
       Whenever a creature makes an attack roll against it, their minimum attack result is equal to 5 \add their \glossterm{accuracy} with the attack, as if they had rolled a 5 on the die.
-      \crit This condition must be removed an additional time before the effect ends.
+      \crit The minimum attack result increases to 7 \add accuracy.
 
       \rankline
       You gain a \plus2 accuracy bonus for every 3 levels beyond 6.
