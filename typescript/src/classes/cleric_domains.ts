@@ -5,13 +5,14 @@ export function clericDomains(): string {
         These domain abilities can be granted by the \\textit{domain influence} cleric archetype.
 
         \\subsubsection{Chaos Domain}
-        \\domainability{Gift} You are \\resistant to \\atCompulsion attacks.
+        \\domainability{Gift} You gain a \\plus2 bonus to your Mental defense, and you are \\resistant to \\atCompulsion attacks.
+        % +5.5 20% of the time, so about +1 to all skills
         \\magicaldomainability{Aspect} Your skill checks can explode, like attacks (see \\pcref{Exploding Attacks}).
-        Unlike attacks, your skill checks can only explode once.
+        Unlike attacks, your skill checks can only explode once, but they explode on both a 1 and a 10.
         This only applies the first time you attempt a task.
         If you retry the same task, your checks do not explode.
-        \\magicaldomainability{Essence} You gain the \\ability{twist of fate} ability.
-        \\begin{magicalactiveability}{Twist of Fate}{Standard action}
+        \\magicaldomainability{Mastery} You gain the \\ability{twist of fate} ability.
+        \\begin{magicalactiveability}{Twist of Fate}{\\glossterm{Minor action}}
           \\abilitytags \\abilitytag{Subtle}
           \\abilitycost You cannot use this ability again until you finish a \\glossterm{long rest}.
           \\rankline
@@ -19,70 +20,68 @@ export function clericDomains(): string {
           You can specify in general terms what you want to happen, such as \`\`Make the bartender leave the bar''.
           You cannot control the exact nature of the event, though it always beneficial for you in some way.
         \\end{magicalactiveability}
-        \\magicaldomainability{Mastery} Your skill checks explode on a 9 or 10, not just a 10.
 
         \\subsubsection{Death Domain}
-        \\magicaldomainability{Gift} When you get a critical hit with a damaging ability, it deals \\glossterm{extra damage} equal to your rank in the Domain Influence archetype.
-        This extra damage is multiplied as normal by the critical hit.
-        \\domainability{Aspect} You gain a \\plus1 accuracy bonus for the purpose of determining whether your attacks get a critical hit.
-        \\magicaldomainability{Essence} Whenever you kill a Small or larger living creature, you are \\briefly \\honed.
-        \\domainability{Mastery} The accuracy bonus with critical hits increases to \\plus3.
+        \\magicaldomainability{Gift} You gain a \\plus2 bonus to your Fortitude defense, and you are \\resistant to \\atLife attacks.
+        \\domainability{Aspect} You gain a \\plus2 accuracy bonus against \\glossterm{injured} living creatures.
+        In addition, whenever you kill a Small or larger living creature, you are \\briefly \\honed.
+        \\domainability{Mastery} You gain a \\plus2 accuracy bonus for the purpose of determining whether your attacks get a critical hit.
 
         \\subsubsection{Destiny Domain}
-        \\domainability{Gift} You are immune to being \\partiallyunaware.
-        \\domainability{Aspect} When you use the \\ability{desperate exertion} ability, if your attack result still does not hit, the ability \\glossterm{repeats} at the start of your next turn on each target that it did not hit.
-        \\domainability{Essence} Your \\glossterm{allies} within a \\largearea radius \\glossterm{emanation} from you also gain the benefit of this domain's aspect.
-        \\domainability{Mastery} You gain a \\plus1 bonus to your \\glossterm{accuracy}.
+        \\domainability{Gift} You are immune to being \\unaware and \\partiallyunaware.
+        \\domainability{Aspect} You gain a \\plus1 bonus to \\glossterm{initiative}.
+        \\domainability{Mastery} Using the \\ability{desperate exertion} ability only costs one stamina.
 
         \\subsubsection{Destruction Domain}
-        \\magicaldomainability{Gift} Your damaging attacks deal double damage to objects.
+        \\magicaldomainability{Gift} You deal double damage to objects and \\trait{static} creatures.
         \\domainability{Aspect} You gain a \\plus1 bonus to your \\glossterm{magical power} and \\glossterm{mundane power}.
-        \\magicaldomainability{Essence} You gain the \\ability{lay waste} ability.
+        % Enemies-only medium radius is -2dr. +1dr for class ability, +1dr for cooldown.
+        % Assume you get access to this at rank 6.
+        \\magicaldomainability{Mastery} You gain the \\ability{lay waste} ability.
         \\begin{magicalactiveability}{Lay Waste}{Standard action}
+          \\abilitycost You \\briefly can't use this ability again.
+          \\abilitytags \\atPhysical
           \\rankline
-          Make an attack vs. Fortitude against all \\glossterm{unattended} \\glossterm{mundane} objects in a \\areamed radius.
+          Make an attack vs. Fortitude against everything in a \\areamed radius from you.
           You may freely exclude any number of 5-ft. cubes from the area, as long as the resulting area is still contiguous.
-          \\hit If the target's \\glossterm{hardness} is lower than your \\glossterm{power}, it crumbles into a fine power and is irreparably \\glossterm{destroyed}.
+          \\hit \\damageranksix.
+          If the target is an \\glossterm{unattended} object with a \\glossterm{hardness} is lower than your \\glossterm{power}, it crumbles into a fine power and is irreparably \\glossterm{destroyed}, regardless of its remaining hit points.
 
           \\rankline
-          \\rank{6} The area increases to a \\arealarge radius.
+          \\rank{7} The damage increases to \\damagerankseven.
         \\end{magicalactiveability}
-        \\domainability{Mastery} The power bonuses increase to \\plus2.
-        In addition, your damaging attacks now deal triple damage to objects.
 
         \\subsubsection{Earth Domain}
         If you choose this domain, you add the \\sphere{terramancy} \\glossterm{mystic sphere} to your list of divine mystic spheres (see \\pcref{Spell Lists}).
 
-        \\domainability{Gift} You are \\resistant to Earth attacks.
-        \\domainability{Aspect} You gain a \\plus1 bonus to your Brawn and Fortitude defenses.
-        \\domainability{Essence} While you are \\glossterm{grounded}, you are immune to \\glossterm{push}, \\glossterm{fling}, and \\glossterm{teleport} effects from attacks, and you are immune to being \\slowed.
-        \\domainability{Mastery} While you are \\glossterm{grounded}, you gain a \\plus1 accuracy bonus.
+        \\domainability{Gift} You gain a \\plus2 bonus to your Fortitude defense, and you are \\resistant to Earth attacks.
+        \\domainability{Aspect} While you are \\glossterm{grounded}, you are immune to \\glossterm{push}, \\glossterm{fling}, and \\glossterm{teleport} effects from attacks, and grounded \\glossterm{enemies} treat all spaces adjacent to you as \\glossterm{difficult terrain}.
+        \\domainability{Mastery} While you are \\glossterm{grounded}, you gain a \\plus1 accuracy bonus. In addition, the area affected by this domain's aspect increases to a \\smallarea radius from you.
 
         \\subsubsection{Evil Domain}
-        \\domainability{Gift} You are immune to being \\charmed and \\goaded.
-        \\domainability{Aspect} You gain a \\plus1 accuracy bonus with abilities that inflict \\glossterm{conditions}.
-        \\magicaldomainability{Essence} You gain the \\ability{blood sacrifice} ability.
+        \\domainability{Gift} You gain a \\plus2 bonus to your Mental defense, and you are immune to being \\charmed and \\goaded.
+        \\magicaldomainability{Aspect} You gain the \\ability{blood sacrifice} ability.
         \\begin{magicalactiveability}{Blood Sacrifice}{Standard action}
           \\abilitytags \\atBlood
           \\rankline
-          Choose an \\glossterm{ally} you \\glossterm{touch}.
+          Choose a \\trait{blooded} \\glossterm{ally} you \\glossterm{touch}.
           Whenever you would lose \\glossterm{hit points} while you are adjacent to that ally, it loses half of those hit points in place of you.
-          You are both considered to have lost hit points from the attack for the purpose of any special effects from the attack.
+          The ally does not suffer any other effects of the attack besides the hit point loss.
           This ability lasts until you \\glossterm{dismiss} it or until you use it again.
         \\end{magicalactiveability}
         \\magicaldomainability{Mastery} Whenever you inflict a \\glossterm{condition} on a creature, that condition must be removed an additional time before the effect ends.
 
         \\subsubsection{Forge Domain}
-        \\domainability{Gift} You gain a \\plus2 bonus to all Craft skills.
-        \\domainability{Aspect} You are proficient with all non-exotic weapons.
+        \\domainability{Gift} You are proficient with all non-exotic weapons.
         In addition, you become proficient with an additional \\glossterm{usage class} of armor (light, medium, or heavy).
         You must be proficient with light armor to become proficient with medium armor, and you must be proficient with medium armor to become proficient with heavy armor.
-        \\magicaldomainability{Essence} Crafting items takes you half the normal amount of time, and you do not require appropriate tools to craft items.
+        \\domainability{Gift} You gain a \\plus2 bonus to all Craft skills.
+        In addition, crafting items takes you half the normal amount of time, and you do not require appropriate tools to craft items.
         \\domainability{Mastery} The Craft skill bonus increases to \\plus4.
         In addition, you gain a \\plus1 bonus to your Armor defense.
 
         \\subsubsection{Good Domain}
-        \\domainability{Gift} You are immune to \\atCurse attacks and being \\dominated.
+        \\domainability{Gift} You gain a \\plus2 bonus to your Mental defense, and you are immune to \\atCurse attacks and being \\dominated.
         \\magicaldomainability{Aspect} You gain the \\ability{sacrificial bond} ability.
         \\begin{magicalactiveability}{Sacrificial Bond}{Standard action}
           \\rankline
@@ -91,24 +90,22 @@ export function clericDomains(): string {
           You gain a \\plus2 bonus to the \\glossterm{vital roll} of each \\glossterm{vital wound} you gain this way.
           This ability lasts until you \\glossterm{dismiss} it.
           You can use it multiple times on different allies to redirect all of their vital wounds to you.
-        \\end{magicalactiveability}
-        \\magicaldomainability{Essence} You suffer no penalty for being \\glossterm{resurrected}, and any rituals to resurrect you do not require material components.
-        \\magicaldomainability{Mastery} When you use your \\ability{sacrifical bond} ability, you can choose whether it also redirects all \\glossterm{hit point} loss from the target to you.
+        \\end{magicalactiveability} When you use your \\ability{sacrifical bond} ability, you can choose whether it also redirects all \\glossterm{hit point} loss from the target to you.
+        In addition, you can use that ability as a \\glossterm{minor action}.
 
         \\subsubsection{Knowledge Domain}
         If you choose this domain, you add all Knowledge skills to your cleric \\glossterm{class skill} list.
 
-        \\domainability{Gift} You gain an additional \\glossterm{trained skill} (see \\pcref{Trained Skills}).
+        \\domainability{Gift} You gain an additional \\glossterm{insight point} and \\glossterm{trained skill}. 
         \\magicaldomainability{Aspect} You are proficient with any tool or weapon you are currently touching.
         This includes \\glossterm{exotic weapons} and improvised weapons.
-        \\domainability{Essence} You gain an additional \\glossterm{insight point}.
-        \\domainability{Mastery} You gain a \\plus1 bonus to your Brawn, Fortitude, Mental, and Reflex defenses.
+        You can also use wands as if you had access to all \\glossterm{magic sources}, and you can use your rank in this archetype in place of your spellcasting rank for wands (see \\pcref{Magic Implements}).
+        \\domainability{Mastery} You gain an additional \\glossterm{insight point} and a \\plus1 bonus to all skills.
 
         \\subsubsection{Law Domain}
-        \\domainability{Gift} You are \\resistant to \\atEmotion attacks.
-        \\magicaldomainability{Aspect} When you roll a 1 on an \\glossterm{attack roll}, it is treated as if you had rolled a 6.
-        This does not affect bonus dice rolled for exploding attacks (see \\pcref{Exploding Attacks}).
-        \\magicaldomainability{Essence} You gain the \\ability{compel law} ability.
+        \\domainability{Gift} You gain a \\plus2 bonus to your Mental defense and are \\resistant to \\atEmotion attacks.
+        \\magicaldomainability{Aspect} Whenever you make an attack roll, your minimum attack result is equal to 5 \add your \glossterm{accuracy} with the attack, as if you had rolled a 5 on the die.
+        \\magicaldomainability{Mastery} You gain the \\ability{compel law} ability.
         \\begin{magicalactiveability}{Compel Law}{Standard action}
           \\abilitytags \\abilitytag{Compulsion}
           \\abilitycost One \\glossterm{stamina}.
@@ -121,40 +118,36 @@ export function clericDomains(): string {
           In areas under ambiguous or nonexistent government, this ability may have unexpected effects, or it may have no effect at all.
 
           \\rankline
-          You gain a \\plus1 \\glossterm{accuracy} bonus with the attack for each rank beyond 4.
+          You gain a \\plus2 \\glossterm{accuracy} bonus with the attack for each rank beyond 6.
         \\end{magicalactiveability}
-        \\magicaldomainability{Mastery} When you roll a 1 or a 2 on an \\glossterm{attack roll} or \\glossterm{check}, it is treated as if you had rolled a 6.
 
         \\subsubsection{Life Domain}
-        \\magicaldomainability{Gift} Whenever you cause a creature to regain hit points, they regain additional hit points equal to your rank in the Domain Influence archetype.
-        This additional healing applies once per ability.
-        \\domainability{Aspect} You gain a bonus to your maximum \\glossterm{hit points} equal to your \\glossterm{durability}.
-        \\magicaldomainability{Essence} The additional healing increases to twice your rank in the Domain Influence archetype.
+        \\domainability{Gift} You gain a bonus to your maximum \\glossterm{hit points} equal to your \\glossterm{durability}.
+        \\magicaldomainability{Aspect} You suffer no penalty for being \\glossterm{resurrected}, and any rituals to resurrect you do not require material components.
+        In addition, you gain a \\plus2 bonus to your \\glossterm{vital rolls}.
         \\domainability{Mastery} The hit point bonus increases to three times your durability.
 
         \\subsubsection{Magic Domain}
         If you choose this domain, you add the \\sphere{thaumaturgy} \\glossterm{mystic sphere} to your list of divine mystic spheres (see \\pcref{Spell Lists}).
 
-        \\domainability{Gift} You gain a \\plus2 bonus to the Knowledge (arcana) skill (see \\pcref{Knowledge}).
-        \\magicaldomainability{Aspect} You learn an additional divine \\glossterm{spell} from a \\glossterm{mystic sphere} you have access to.
-        \\magicaldomainability{Essence} You gain a \\plus1 bonus to your \\glossterm{magical power}.
-        \\magicaldomainability{Mastery} The power bonus increases to \\plus2, and the skill bonus increases to \\plus4.
+        \\magicaldomainability{Gift} You gain a \\plus1 bonus to your \\glossterm{magical power}.
+        \\magicaldomainability{Aspect} You gain access to an additional divine \\glossterm{mystic sphere}.
+        \\magicaldomainability{Mastery} The power bonus increases to \\plus2, and you learn an additional divine \\glossterm{spell}.
 
         \\subsubsection{Ocean Domain}
         If you choose this domain, you add the \\sphere{aquamancy} \\glossterm{mystic sphere} to your list of divine mystic spheres (see \\pcref{Spell Lists}).
         In addition, you add the Athletics and Flexibility skills to your cleric \\glossterm{class skill} list.
 
-        \\domainability{Gift} You gain a \\plus1 bonus to the Athletics and Flexibility skills.
-        \\magicaldomainability{Aspect} You increase the distance of your \\glossterm{push} and \\glossterm{fling} abilities by 10 feet.
-        This does not allow you to push creatures out of your reach with abilities that would not normally allow that, such as the \\ability{shove} ability.
-        \\magicaldomainability{Essence} You gain a slow \\glossterm{swim speed} (see \\pcref{Swimming}).
+        \\magicaldomainability{Gift} You are \\resistant to \\atWater attacks, and you gain a slow \\glossterm{swim speed} (see \\pcref{Swimming}).
         If you already have a slow swim speed, your swim speed becomes average instead.
-        \\magicaldomainability{Mastery} The skill bonuses increase to \\plus2.
-        In addition, the push and fling distance bonus increases to 20 feet.
+        \\magicaldomainability{Aspect} You increase the maximum distance of your \\glossterm{push} and \\glossterm{fling} abilities by 10 feet.
+        This does not allow you to push creatures out of your reach with abilities that would not normally allow that, such as the \\ability{shove} ability.
+        In addition, you are immune to being \\glossterm{grappled}. 
+        \\magicaldomainability{Mastery} The push and fling distance bonus increases to 20 feet.
+        In addition, you gain a \\plus2 accuracy bonus while you are within \\medrange of a body of water of your size category or larger.
 
         \\subsubsection{Protection Domain}
-        \\domainability{Gift} You become proficient with an additional \\glossterm{usage class} of armor (light, medium, or heavy).
-        You must be proficient with light armor to become proficient with medium armor, and you must be proficient with medium armor to become proficient with heavy armor.
+        \\domainability{Gift} You gain a \\plus1 bonus to your Armor defense.
         \\magicaldomainability{Aspect} You gain the \\ability{divine protection} ability.
         \\begin{magicalactiveability}{Divine Protection}{Standard action}
           \\rankline
@@ -165,15 +158,13 @@ export function clericDomains(): string {
           A creature that sees an attack against an ally protected in this way can observe that you are the cause of the protection with a \\glossterm{difficulty value} 5 Awareness check.
           While this ability is active, you cannot be affected by other creatures using this ability on you.
         \\end{magicalactiveability}
-        \\magicaldomainability{Essence} You gain a \\plus1 bonus to your Armor defense.
         \\domainability{Mastery} The defense bonus from your \\textit{divine protection} ability increases to \\plus2.
 
         \\subsubsection{Sky Domain}
         If you choose this domain, you add the \\sphere{aeromancy} \\glossterm{mystic sphere} to your list of divine mystic spheres (see \\pcref{Spell Lists}).
         In addition, you add the Athletics skill to your list of class skills.
 
-        \\magicaldomainability{Gift} You gain a \\plus10 foot bonus to your maximum horizontal jump distance (see \\pcref{Jumping}).
-        \\magicaldomainability{Aspect} You gain an average \\glossterm{glide speed} (see \\pcref{Gliding}).
+        \\magicaldomainability{Gift} You gain an average \\glossterm{glide speed} (see \\pcref{Gliding}).
         In addition, you take half damage from \\glossterm{falling damage}.
         \\magicaldomainability{Essence} You gain a slow \\glossterm{fly speed} with a maximum height of 15 feet (see \\pcref{Flight}).
         \\magicaldomainability{Mastery} Your fly speed improves to average speed, with a maximum height of 30 feet.
@@ -181,72 +172,61 @@ export function clericDomains(): string {
         \\subsubsection{Storm Domain}
         If you choose this domain, you add the \\sphere{electromancy} \\glossterm{mystic sphere} to your list of divine mystic spheres (see \\pcref{Spell Lists}).
 
-        \\magicaldomainability{Gift} You are \\resistant to \\atElectricity attacks.
-        \\magicaldomainability{Aspect} Whenever you use a damaging \\atElectricity ability that affects an area, you can choose to \\glossterm{repeat} that ability at the start of your next turn.
+        \\magicaldomainability{Gift} You gain a \\plus2 bonus to your Reflex defense, and you are \\resistant to \\atElectricity attacks.
+        \\magicaldomainability{Aspect} Whenever you use a damaging \\atElectricity ability that affects an area or \\glossterm{chains} to yourself, you can choose to \\glossterm{repeat} that ability at the start of your next turn.
         The repeat has the \\atAuditory tag instead of the \\atElectricity tag, deals half damage, and affects each \\glossterm{enemy} adjacent to you instead of its normal targets.
         After you use this ability, you \\glossterm{briefly} cannot use it again.
-        \\magicaldomainability{Essence} The repeat from this domain's essence can also trigger when you \\glossterm{chain} to yourself with a damaging \\atElectricity ability.
-        In addition, you become immune to \\atElectricity attacks.
         \\magicaldomainability{Mastery} The repeat from this domain's essence instead affects all \\glossterm{enemies} within a \\smallarea radius from you.
 
         \\subsubsection{Sun Domain}
         If you choose this domain, you add the \\sphere{pyromancy} \\glossterm{mystic sphere} to your list of divine mystic spheres (see \\pcref{Spell Lists}).
 
-        \\domainability{Gift} You radiate \\glossterm{bright illumination} in a \\medarea radius.
+        \\domainability{Gift} You radiate \\glossterm{bright illumination} in a \\largearea radius.
         You can suppress or resume this illumination as a \\glossterm{free action} once per turn.
         \\magicaldomainability{Aspect} Whenever you use an ability that creates illumination, you can give it the \\atFire \\glossterm{ability tag}.
         In addition, your \\glossterm{allies} are immune to damage from your \\atFire abilities.
-        \\magicaldomainability{Essence} You gain a \\plus1 bonus to your \\glossterm{magical power}.
-        \\magicaldomainability{Mastery} The power bonus increases to \\plus2, and you radiate \\glossterm{brilliant illumination} instead of bright illumination.
+        \\magicaldomainability{Mastery} You gain a \\plus2 bonus to your \\glossterm{magical power}.
+        In addition, you can radiate \\glossterm{brilliant illumination} instead of bright illumination.
 
         \\subsubsection{Travel Domain}
         If you choose this domain, you add the \\sphere{astromancy} \\glossterm{mystic sphere} to your list of divine mystic spheres (see \\pcref{Spell Lists}).
         In addition, you add the Knowledge (nature) and Survival skills to your cleric \\glossterm{class skill} list.
 
-        \\domainability{Gift} You gain a \\plus1 bonus to the Knowledge (nature) and Survival skills.
-        \\magicaldomainability{Aspect} You can ignore \\glossterm{difficult terrain} from inanimate natural sources, such as \\glossterm{heavy undergrowth}.
+        \\domainability{Gift} You can ignore \\glossterm{difficult terrain} from inanimate natural sources, such as \\glossterm{heavy undergrowth}.
         \\magicaldomainability{Essence} Once during your turn, you can teleport horizontally instead of moving using your \\glossterm{walk speed}.
-        Teleporting a given distance costs movement equal to twice that distance.
+        Teleporting a given distance costs movement equal to that distance.
         If this teleportation fails for any reason, you still expend that movement.
-        \\magicaldomainability{Mastery} Teleporting a given distance only costs movement equal to that distance.
+        \\magicaldomainability{Mastery} You gain a \\plus10 bonus to your \\glossterm{speed}, and you can teleport using this domain's essence twice per turn.
 
         \\subsubsection{Trickery Domain}
         If you choose this domain, you add the Deception, Disguise, and Stealth skills to your cleric \\glossterm{class skill} list.
 
-        \\domainability{Gift} You gain a \\plus1 bonus to the Deception, Disguise, and Stealth skills.
-        \\magicaldomainability{Aspect} Whenever a \\atCompulsion or \\atEmotion attack misses you, you learn the effect it would have had if it had succeeded.
+        \\magicaldomainability{Gift} You gain a \\plus2 bonus to your Mental defense.
+        In addition, whenever a \\atCompulsion or \\atEmotion attack misses you, you learn the effect it would have had if it had succeeded.
         Creatures that miss you in this way believe that their attack hit, though they may realize the truth if you do not act appropriately.
-        \\magicaldomainability{Essence} You are \\resistant to \\atCompulsion and \\atEmotion attacks.
-        If you would already be resistant to either tag, you become immune to attacks with that tag instead.
-        \\magicaldomainability{Mastery} The skill bonuses increase to \\plus2.
-        In addition, you are undetectable to all \\magical abilities.
+        \\magicaldomainability{Aspect} You gain a \\plus3 \\glossterm{enhancement bonus} to the Deception, Disguise, Social Insight, and Stealth skills.
+        \\magicaldomainability{Mastery} You are undetectable to all \\magical abilities.
         They cannot detect your presence, sounds you make, or any actions you take.
         For example, a scrying sensor created by a \\abilitytag{Scrying} effect would be unable to detect your presence, and a creature with magical \\sense{darkvision} would not be able to see you without light.
 
         \\subsubsection{War Domain}
-        \\domainability{Gift} You gain proficiency with all non-exotic weapons.
-        \\domainability{Aspect} You learn one \\glossterm{maneuver} from any \\glossterm{combat style} (see \\pcref{Maneuver Lists}).
+        \\domainability{Gift} You learn one \\glossterm{maneuver} from any \\glossterm{combat style} (see \\pcref{Maneuver Lists}).
         Its rank must not exceed your rank in the Domain Influence archetype.
-        You gain an accuracy bonus with that maneuver equal to the amount by which your rank in the Domain Influence archetype exceeds the maneuver's rank.
+        You deal \\glossterm{extra damage} with that maneuver equal to twice your excess rank in that archetype compared to the maneuver's rank.
         When you gain access to a new \\glossterm{rank} in the Domain Influence archetype,
-        you can exchange that maneuver for another maneuver with a rank that does not exceed your rank in the Domain Influence archetype.
-        \\domainability{Essence} You gain a \\plus1 bonus to your \\glossterm{magical power} and \\glossterm{mundane power}.
-        \\domainability{Mastery} You gain a +1 \\glossterm{accuracy} bonus with \\glossterm{strikes}.
+        you can exchange that maneuver for another maneuver.
+        \\domainability{Aspect} You learn an additional \\glossterm{maneuver} from any combat style, and you gain a \\plus1 bonus to your \\glossterm{mundane power} and \\glossterm{magical power}. 
+        \\domainability{Mastery} You gain a +2 \\glossterm{enhancement bonus} to accuracy with \\glossterm{strikes}.
 
         \\subsubsection{Wild Domain}
         If you choose this domain, you add the \\sphere{verdamancy} \\glossterm{mystic sphere} to your list of divine mystic spheres (see \\pcref{Spell Lists}).
         In addition, you add the Creature Handling, Knowledge (nature), and Survival skills to your cleric \\glossterm{class skill} list.
 
-        \\domainability{Gift} You gain a \\plus1 bonus to the Creature Handling, Knowledge (nature), and Survival skills.
-        \\magicaldomainability{Aspect} You gain one \\textit{wild aspect}, as the druid ability from the Shifter archetype (see \\pcref{Shifter}).
+        \\magicaldomainability{Gift} You gain one \\textit{wild aspect}, as the druid ability from the Shifter archetype (see \\pcref{Shifter}).
         You cannot spend \\glossterm{insight points} to learn additional wild aspects.
         The aspect's effect improves based on your rank in the Domain Influence archetype.
         If you already have that ability, you simply learn an additional wild aspect, and the aspect's effect continues to scale with your Shifter archetype rank.
-        \\magicaldomainability{Essence} The skill bonuses increase to \\plus2.
-        \\magicaldomainability{Mastery} You learn an additional \\textit{wild aspect}.
-
-        \\subsection{Ex-Clerics}
-        If you grossly violate the code of conduct required by your deity, you lose all spells and magical cleric class abilities.
-        You cannot regain those abilities until you atone for your transgressions to your deity.
+        \\magicaldomainability{Aspect} You learn an additional \\textit{wild aspect}.
+        \\magicaldomainability{Mastery} You gain a \\plus2 \\glossterm{enhancement bonus} to a physical attribute of your choice: Strength, Dexterity, or Constitution. 
   `;
 }

@@ -138,7 +138,7 @@ export function domainInfluence(): RankAbility[] {
   return [
     {
       complexity: 2,
-      name: 'Domain Gifts',
+      name: 'Domain Gift',
       isMagical: false,
       rank: 1,
       description: `
@@ -148,7 +148,7 @@ export function domainInfluence(): RankAbility[] {
 
         Each domain has a corresponding domain gift.
         A domain gift is a passive ability that reinforces your ability to embody your domain.
-        You gain the domain gift for both of your domains (see \\pcref{Cleric Domain Abilities}).
+        You gain the domain gift for one of your domains (see \\pcref{Cleric Domain Abilities}).
 
         \\begin{raggeditemize}
           \\item{Chaos}
@@ -177,9 +177,18 @@ export function domainInfluence(): RankAbility[] {
     },
     {
       complexity: 1,
-      name: 'Domain Aspect',
+      name: 'Domain Gift+',
       isMagical: false,
       rank: 2,
+      description: `
+        You gain the domain gift for another one of your domains.
+      `,
+    },
+    {
+      complexity: 1,
+      name: 'Domain Aspect',
+      isMagical: false,
+      rank: 3,
       description: `
         Each domain has a corresponding domain aspect.
         You gain the domain aspect ability for one of your domains (see \\pcref{Cleric Domain Abilities}).
@@ -189,43 +198,23 @@ export function domainInfluence(): RankAbility[] {
       complexity: 1,
       name: 'Domain Aspect+',
       isMagical: false,
-      rank: 3,
+      rank: 4,
       description: `
         You gain the domain aspect for another one of your domains.
       `,
     },
     {
       complexity: 2,
-      name: 'Domain Essence',
-      isMagical: false,
-      rank: 4,
-      description: `
-        Each domain has a corresponding domain essence.
-        You gain the domain essence for one of your domains (see \\pcref{Cleric Domain Abilities}).
-      `,
-    },
-    {
-      complexity: 1,
-      name: 'Domain Essence+',
-      isMagical: false,
-      rank: 5,
-      description: `
-        You gain the domain essence for another one of your domains.
-      `,
-    },
-    {
-      complexity: 2,
       name: 'Miracle',
       isMagical: true,
-      rank: 6,
+      rank: 5,
       description: `
         You can request a \\ability{miracle} as a standard action.
         \\begin{magicalactiveability}{Miracle}{Standard action}
-          \\abilitycost Two \\glossterm{stamina}, and you cannot use it again for a week.
+          \\abilitycost Three \\glossterm{stamina}, and you cannot use it again for a week.
           You mentally specify a request to your deity, and your deity fulfills that request in the manner it sees fit.
-          At your deity's discretion, this can emulate the effects of any non-attunable divine spell, or have any other effect of a similar power level.
-          A miracle can also mimic the effects of many non-attunable rituals.
-          However, rituals that require expensive material components or 24 hours to perform may require a similar investment of time or materials from you for the miracle to succeed.
+          At your deity's discretion, this can emulate the effects of any non-attunable divine spell or ritual with a maximum rank equal to your rank in this archetype, or have any other effect of a similar power level.
+          Rituals that require expensive material components or 24 hours to perform may require a similar investment of time or materials from you for the miracle to succeed.
 
           Miracles are most effective when your request is directly related to your domains, and more generally your deity's domains and purview.
           Requesting a miracle outside that scope may limit its power.
@@ -239,12 +228,30 @@ export function domainInfluence(): RankAbility[] {
     },
     {
       complexity: 1,
-      name: 'Domain Masteries',
+      name: 'Domain Mastery',
+      isMagical: false,
+      rank: 6,
+      description: `
+        Each domain has a corresponding \\ability{domain mastery}.
+        You gain the domain mastery for one of your domains (see \\pcref{Cleric Domain Abilities}).
+      `,
+    },
+    {
+      complexity: 1,
+      name: 'Domain Mastery+',
       isMagical: false,
       rank: 7,
       description: `
-        Each domain has a corresponding \\ability{domain mastery}.
-        You gain the domain mastery for both of your domains (see \\pcref{Cleric Domain Abilities}).
+        You gain the domain mastery for another one of your domains.
+      `,
+    },
+    {
+      complexity: 1,
+      name: 'Miracle+',
+      isMagical: false,
+      rank: 7,
+      description: `
+        Requesting a miracle does not cost stamina.
       `,
     },
   ];
