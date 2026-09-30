@@ -506,7 +506,7 @@ export function tactician(): RankAbility[] {
       isMagical: false,
       rank: 2,
       description: `
-        You gain a \\plus1 bonus to \\glossterm{inititive}.
+        You gain a \\plus1 bonus to \\glossterm{initiative}.
       `,
     },
     {
