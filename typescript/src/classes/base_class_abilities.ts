@@ -404,7 +404,13 @@ export function getClassSpecialAbilities(cls: Class): string {
 export function getClassSuffix(cls: Class): string {
   switch (cls) {
     case 'Cleric':
-      return clericDomains();
+      return `
+        \\subsection{Ex-Clerics}
+        If you grossly violate the code of conduct required by your deity, you lose all spells and magical cleric class abilities.
+        You cannot regain those abilities until you atone for your transgressions to your deity.
+
+        ${clericDomains()}
+      `;
     case 'Druid':
       return `
         \\subsection{Ex-Druids}
