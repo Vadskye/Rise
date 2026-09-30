@@ -186,6 +186,7 @@ export function clericDomains(): string {
         The repeat has the \\atAuditory tag instead of the \\atElectricity tag, deals half damage, and affects each \\glossterm{enemy} adjacent to you instead of its normal targets.
         After you use this ability, you \\glossterm{briefly} cannot use it again.
         \\magicaldomainability{Essence} The repeat from this domain's essence can also trigger when you \\glossterm{chain} to yourself with a damaging \\atElectricity ability.
+        In addition, you become immune to \\atElectricity attacks.
         \\magicaldomainability{Mastery} The repeat from this domain's essence instead affects all \\glossterm{enemies} within a \\smallarea radius from you.
 
         \\subsubsection{Sun Domain}
