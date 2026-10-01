@@ -2,6 +2,7 @@ import { StockCharacters } from '@src/character_sheet/stock_characters';
 import { Grimoire } from '@src/monsters/grimoire';
 import {
   CombatScenario,
+  CombatTeam,
   createStandardAdventuringParty,
   createTeam,
 } from '@src/combat/combat_scenario';
@@ -47,6 +48,16 @@ async function main({ verbose = false }: { verbose?: boolean } = {}) {
         break;
       }
     }
+
+    // Run self-combat
+    console.log(`\n--- Group Combat: Party vs Self ---`);
+    const enemyTeam: CombatTeam = {
+      name: "Evil Twins",
+      members: partyTeam.members.map((m) => m.autoClone()),
+    };
+    const scenario = new CombatScenario([partyTeam, enemyTeam]);
+    const results = scenario.simulate(200, verbose);
+    logResults(results);
 
     // Run Non-Elite Combat
     if (nonEliteMonsterName) {
