@@ -63,7 +63,13 @@ export interface FightState {
  * Manages a combat encounter between multiple creatures.
  */
 export class CombatScenario {
-  constructor(public teams: CombatTeam[]) {}
+  constructor(public teams: CombatTeam[]) {
+    // The names of all teams must be unique.
+    const allNames = new Set(teams.map((t) => t.name));
+    if (allNames.size !== teams.length) {
+      throw new Error("All teams must have unique names");
+    }
+  }
 
   /**
    * Simulates the combat until a victor is determined.
@@ -281,6 +287,9 @@ export class CombatScenario {
       team,
       initiative: rollD10(false),
     }));
+    // Randomize initial order to lazily simulate tie resolution.
+    // TODO: tied initiatives should roll off against each other
+    teamInitiatives.sort((a, b) => Math.random() - Math.random());
     teamInitiatives.sort((a, b) => b.initiative - a.initiative);
     return teamInitiatives;
   }

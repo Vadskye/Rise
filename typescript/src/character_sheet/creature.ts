@@ -300,6 +300,10 @@ export class Creature implements CreaturePropertyMap {
     return newCreature;
   }
 
+  public autoClone(): Creature {
+      return this.clone(`${this.name}_clone_${Math.random().toString(36).substring(7)}`);
+  }
+
   get id(): string {
     return this.sheet.characterName;
   }

@@ -1,6 +1,6 @@
 import { Creature } from '@src/character_sheet/creature';
 import {
-  characterSheetExists,
+  getCharacterSheet,
   createCharacterSheet,
 } from '@src/character_sheet/current_character_sheet';
 import { addBarbarians } from '@src/character_sheet/stock_characters/barbarians';
@@ -50,29 +50,29 @@ export class StockCharacters {
   }
 
   getCharacter(name: string): Creature | null {
-    if (this.pending[name]) {
+    const sheet = getCharacterSheet(name);
+    // This assumes that any existing creature with the same name will have the same
+    // statistics as a stock character of the same name.
+    if (sheet) {
+      this.characters[name] = new Creature(sheet).autoClone();
+    } else {
       const initializer = this.pending[name];
+      if (!initializer) {
+        throw new Error(`No existing sheet or pending initializer for ${name}`);
+      }
       delete this.pending[name];
 
-      if (characterSheetExists(name)) {
-        throw new Error(`Can't add a duplicate character sheet named '${name}'.`);
-      }
       const sheet = createCharacterSheet(name);
       sheet.setProperties({ name });
-      const creature = new Creature(sheet);
-      this.characters[name] = creature;
+      this.characters[name] = new Creature(sheet).autoClone(); 
       // createCharacterSheet enables listeners before running the initializer,
       // ensuring that repeating section and other listeners are active.
-      initializer(creature);
+      initializer(this.characters[name]);
 
       sheet.triggerRecalculation();
     }
 
-    const char = this.characters[name];
-    if (char) {
-      return char.clone(`${name}_clone_${Math.random().toString(36).substring(7)}`);
-    }
-    return null;
+    return this.characters[name];
   }
 
   getCharacterNames(): string[] {
