@@ -409,7 +409,7 @@ t.test('can calculate jump distance', (t) => {
     });
   });
 
-  t.test('does not increase when speed increases (but not size)', (t) => {
+  t.test('increases when speed increases', (t) => {
     setAttrs({
       base_speed: 30,
       size: 'medium',
@@ -421,8 +421,8 @@ t.test('can calculate jump distance', (t) => {
       (attrs) => {
         t.match(attrs, {
           speed: 40,
-          horizontal_jump_distance: 5,
-          horizontal_jump_distance_explanation: '+5 (base speed / 4)',
+          horizontal_jump_distance: 10,
+          horizontal_jump_distance_explanation: '+10 (base speed / 4)',
         });
         t.end();
       },
