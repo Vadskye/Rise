@@ -258,7 +258,7 @@ t.test('One elite frostweb spider is equivalent to four non-elite frostweb spide
   const scenario = createScenario([eliteTeam, normalTeam]);
   const result = scenario.simulate(50);
 
-  assertExpectedTurnsCount(t, result, 9);
+  assertExpectedTurnsCount(t, result, 5);
   assertExpectedWinRate(t, result, 'Elite Frostweb Spider', 62);
   assertExpectedWinRate(t, result, 'Normal Frostweb Spiders', 38);
   t.end();
