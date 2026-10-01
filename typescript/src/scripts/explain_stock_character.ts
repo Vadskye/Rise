@@ -1,6 +1,6 @@
 import { StockCharacters } from '@src/character_sheet/stock_characters';
 import { Creature } from '@src/character_sheet/creature';
-import { setCurrentCharacterSheet } from '@src/character_sheet/current_character_sheet';
+import { explainCreatureAttacks } from '@src/scripts/explain_monster';
 import cli from 'commander';
 
 const ATTRIBUTE_NAMES = [
@@ -71,6 +71,16 @@ export function explainStockCharacter(creature: Creature) {
   console.log(`  Fortitude      : ${creature.fortitude} [${creature.fortitude_explanation}]`);
   console.log(`  Mental Defense : ${creature.mental} [${creature.mental_explanation}]`);
   console.log(`  Reflex Defense : ${creature.reflex} [${creature.reflex_explanation}]`);
+
+  // Accuracy & Rank
+  console.log('\n--- Core Accuracy & Rank ---');
+  console.log(`  Base Accuracy      : ${creature.explainProperty('accuracy')}`);
+  console.log(`  Brawling Accuracy  : ${creature.explainProperty('brawling_accuracy')}`);
+  console.log(`  Character Rank     : ${creature.calculateRank()}`);
+
+  // Attack Accuracy & Damage
+  console.log('\n--- Attack Accuracy & Damage ---');
+  explainCreatureAttacks(creature);
 
   // Repeating Custom Modifiers
   console.log('\n--- Repeating Modifier Rows Registered On Sheet ---');

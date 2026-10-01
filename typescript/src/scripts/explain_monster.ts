@@ -12,16 +12,36 @@ import {
   getWeaponDamageDice,
   getWeaponPowerMultiplier,
 } from '@src/monsters/weapons';
+import { isWeapon } from '@src/monsters/equipment';
 import { parseDamageRank, DamageRank } from '@src/core_mechanics/damage_calculation';
 import { DamageScaling } from '@src/core_mechanics/damage_scaling';
 
 export function explainMonsterAttacks(monster: Creature) {
-  for (const ability of monster.getActiveAbilities()) {
+  const abilities = monster.getActiveAbilities();
+  let attackCount = 0;
+
+  for (const ability of abilities) {
     const clone: ActiveAbility = {
       ...ability,
       tags: ability.tags ? [...ability.tags] : undefined,
       attack: ability.attack ? { ...ability.attack } : undefined,
     };
+
+    if (
+      !clone.weapon &&
+      clone.effect &&
+      /\b[mM]ake a.*(strike\b|\\glossterm{strike})/.test(clone.effect)
+    ) {
+      const weapons = monster.getEquipment().filter(isWeapon);
+      if (weapons.length > 0) {
+        clone.weapon = weapons[0];
+      } else {
+        const abilityWithWeapon = monster.getActiveAbilities().find((a) => a.weapon);
+        if (abilityWithWeapon?.weapon) {
+          clone.weapon = abilityWithWeapon.weapon;
+        }
+      }
+    }
 
     try {
       reformatAsMonsterAbility(monster, clone);
@@ -33,6 +53,8 @@ export function explainMonsterAttacks(monster: Creature) {
     if (!/\$(?:brawling)?(?:consumable)?accuracy/.test(rawTargeting)) {
       continue;
     }
+
+    attackCount++;
 
     const replaced = replaceNames(
       replaceAbilityPlaceholders(monster, rawTargeting, {
@@ -59,8 +81,9 @@ export function explainMonsterAttacks(monster: Creature) {
       `\n  * ${ability.name} (${ability.kind || 'ability'}, rank ${ability.rank ?? 'none'})`,
     );
     if (ability.scaling) {
+      const rankLabel = monster.is_monster ? 'monster rank' : 'character rank';
       console.log(
-        `    Scaling       : ${ability.scaling} (monster rank: ${monster.calculateRank()})`,
+        `    Scaling       : ${ability.scaling} (${rankLabel}: ${monster.calculateRank()})`,
       );
     }
     if (clone.weapon) {
@@ -88,7 +111,17 @@ export function explainMonsterAttacks(monster: Creature) {
       explainAbilityDamage(monster, ability, clone, damageMatch[0]);
     }
   }
+
+  if (attackCount === 0) {
+    if (abilities.length === 0) {
+      console.log('  (No active abilities)');
+    } else {
+      console.log('  (No attack abilities)');
+    }
+  }
 }
+
+export const explainCreatureAttacks = explainMonsterAttacks;
 
 export function explainAbilityDamage(
   monster: Creature,
