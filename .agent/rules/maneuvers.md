@@ -16,7 +16,7 @@ Maneuvers must be distinct and uniquely useful in particular combat circumstance
 
 ## Examples of Good Design
 
-_(Reference: `typescript/src/abilities/combat_styles/brute_force.ts`)_
+_(Reference: [`typescript/src/abilities/combat_styles/brute_force.ts`](../../typescript/src/abilities/combat_styles/brute_force.ts); see also combat styles directory [`typescript/src/abilities/combat_styles/`](../../typescript/src/abilities/combat_styles/))_
 
 - **Ground Slam:**
   - _Good:_ When fighting multiple enemies clustered near you.
@@ -27,5 +27,11 @@ _(Reference: `typescript/src/abilities/combat_styles/brute_force.ts`)_
 - **Concussion:**
   - _Good:_ When targeting an enemy whose hit points are low enough that they are injured.
   - _Bad:_ When targeting an enemy whose hit points remain high.
+
+## Implementation Details
+
+- **Maneuver Structure:** Maneuvers are defined as [`ActiveAbility`](../../typescript/src/abilities/active_abilities.ts) objects with `kind: 'maneuver'`.
+- **Strike Damage Calculation:** See [`combat-math.md#7-strike-damage-calculation-weapons`](./combat-math.md#7-strike-damage-calculation-weapons) and [`calculateStrikeDamage()`](../../typescript/src/latex/monsters/player_abilities.ts).
+- **Weapon Association:** Player maneuvers decouple the weapon (`weapon: undefined`) so characters can wield any equipped weapon; when evaluating damage, infer the weapon from equipped weapons via [`isWeapon()`](../../typescript/src/monsters/equipment.ts).
 
 **Agent Directive:** When creating or evaluating a new maneuver, explicitly ensure there are combat circumstances where it shines and where it falls short.

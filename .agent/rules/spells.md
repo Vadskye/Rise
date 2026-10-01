@@ -7,7 +7,9 @@ description: When interacting with spells, rituals, spellcasting, or mystic sphe
 
 ## Rule Locations
 
-Spells and spellcasting are generally defined in `comprehensive_codex/MysticSpheres.tex`. Individual spells and rituals are defined in `typescript/src/abilities/mystic_spheres/`. Rules for how abilities are used are generally found in `comprehensive_codex/Combat.tex`.
+Spells and spellcasting are generally defined in `comprehensive_codex/MysticSpheres.tex`. Individual spells and rituals are defined in [`typescript/src/abilities/mystic_spheres/`](../../typescript/src/abilities/mystic_spheres/). Rules for how abilities are used are generally found in `comprehensive_codex/Combat.tex`.
+
+For damage calculations, damage rank scaling, and dice formulas, see [`combat-math.md`](./combat-math.md), [`calculateDamage()`](../../typescript/src/core_mechanics/damage_calculation.ts), and [`DamageScaling`](../../typescript/src/core_mechanics/damage_scaling.ts).
 
 ## Spell Roles
 
@@ -15,7 +17,7 @@ Each spell has a role defining its primary function in combat. A spell's role re
 
 ### List of Roles
 
-The list of roles is defined in `typescript/src/abilities/constants.ts`. A summary of the roles is given below:
+The list of roles is defined in [`typescript/src/abilities/constants.ts`](../../typescript/src/abilities/constants.ts). A summary of the roles is given below:
 
 - `attune`: Buff that lasts as long as you stay attuned.
 - `barrier`: Walls that deal damage on passage or fully block passage.
@@ -74,7 +76,8 @@ Rituals are powerful magical effects that take time and fatigue to perform.
 ## LaTeX Rendering & Ability Formatting
 
 The TypeScript project generates LaTeX for spells and rituals.
+- Conversion functions: [`convertAbilityToLatex()`](../../typescript/src/latex/convert_ability_to_latex.ts) and [`convertSpellToLatex()`](../../typescript/src/latex/spells/convert_spell_to_latex.ts).
 
 - **Standard Prefix (`spellTypePrefix`):** Handles tags, ranks, and costs. It is idiomatic to use the `cost` field of an `ActiveAbility` for any associated costs, which renders using the `\abilitycost` command.
-- **Ritual Fatigue:** For rituals, the fatigue and material costs are automatically calculated and rendered as an `\abilitycost` prefix if `fatigueCost` is true and no explicit `cost` is provided. This logic resides in `spellTypePrefix.ts`.
+- **Ritual Fatigue:** For rituals, the fatigue and material costs are automatically calculated and rendered as an `\abilitycost` prefix if `fatigueCost` is true and no explicit `cost` is provided. This logic resides in [`typescript/src/latex/spells/spell_type_prefix.ts`](../../typescript/src/latex/spells/spell_type_prefix.ts).
 - **Effect Description (`spellEffect`):** Should strictly contain the ability's effects and should not include cost-related suffixes or prefixes, as these are handled by the standard prefix.

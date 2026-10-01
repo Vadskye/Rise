@@ -66,9 +66,9 @@ Certain Origins and Types automatically grant standard traits to a creature. The
 
 ## 3. Implementation Details
 
-- **Knowledge Skill Lookup:** When determining the knowledge skill for a creature, the system checks `KNOWLEDGE_BY_TYPE` first. If the creature's type is not found (or is empty), it falls back to `KNOWLEDGE_BY_ORIGIN`.
-- **`applyStandardTraits()`:** This method in `Creature.ts` is responsible for applying the traits listed above based on the creature's `creature_type`. It is called automatically during initialization.
-- **Required Properties:** Every monster must specify `creature_origin` and `creature_type` via `setRequiredProperties()`.
+- **Knowledge Skill Lookup:** When determining the knowledge skill for a creature, the system checks [`KNOWLEDGE_BY_TYPE`](../../typescript/src/character_sheet/knowledge.ts) first in `typescript/src/character_sheet/knowledge.ts`. If the creature's type is not found (or is empty), it falls back to [`KNOWLEDGE_BY_ORIGIN`](../../typescript/src/character_sheet/knowledge.ts).
+- **[`applyStandardTraits()`](../../typescript/src/character_sheet/creature.ts):** This method in [`typescript/src/character_sheet/creature.ts`](../../typescript/src/character_sheet/creature.ts) applies the inherent traits listed above based on the creature's `creature_type`. It is called automatically during initialization.
+- **Required Properties:** Every creature must specify `creature_origin` and `creature_type` via [`Creature.setRequiredProperties()`](../../typescript/src/character_sheet/creature.ts). Standard traits from origins and types are registered as permanent modifiers on the sheet.
 
 ## 4. Update Instructions
 

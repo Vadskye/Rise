@@ -40,6 +40,7 @@ Character creation blends thematic and mechanical decisions, typically following
     *   **Brawling Accuracy:** Used for \glossterm{brawling attacks}.
     *   **Brawling Formula:** `floor((Level + Strength) / 2)`
     *   **Note:** General accuracy modifiers (like weapon bonuses) apply on top of this base.
+    *   **Code Implementation:** [`Creature.accuracy`](../../typescript/src/character_sheet/creature.ts) and [`Creature.brawling_accuracy`](../../typescript/src/character_sheet/creature.ts), calculated dynamically in [`sheet_worker.ts`](../../typescript/src/character_sheet/sheet_worker.ts).
 *   **Defenses (AD, Brawn, Reflex, Fortitude, Mental):** Value needed to hit.
     *   **Calculation:** `floor(Level / 2) + primary attribute + class/equipment bonuses`
     *   **Armor Defense (AD):** Physical attacks (e.g., sword). Most common.
@@ -47,6 +48,7 @@ Character creation blends thematic and mechanical decisions, typically following
     *   **Reflex Defense:** Dodging/evading (e.g., area attacks).
     *   **Fortitude Defense:** Attacks against body/life (e.g., poisons).
     *   **Mental Defense:** Attacks against mind (e.g., mind manipulation).
+    *   **Code Implementation:** [`Creature.armor_defense`](../../typescript/src/character_sheet/creature.ts), `brawn`, `fortitude`, `mental`, `reflex`, and [`getCommonExplanations()`](../../typescript/src/character_sheet/creature.ts).
 *   **Encumbrance:** Penalty from armor to Dexterity-based checks.
 *   **Hit Points:** Measures how much damage a character can take before dying. Defined by class, increase with level and Constitution. Cannot be less than 1. Represent resilience, luck, and determination, not literal injury.
 *   **Injury Point:** 
@@ -54,6 +56,12 @@ Character creation blends thematic and mechanical decisions, typically following
     *   **Mundane Power:** Strength + half level. Affects mundane abilities.
     *   **Magical Power:** Willpower + half level. Affects magical abilities.
     *   Unspecified "power" bonuses affect both.
+    *   **Code Implementation:** [`Creature.mundane_power`](../../typescript/src/character_sheet/creature.ts) and [`Creature.magical_power`](../../typescript/src/character_sheet/creature.ts), with [`Creature.getRelevantPower(isMagical)`](../../typescript/src/character_sheet/creature.ts) selecting between them.
+    *   **Attribute Scaling:** Primary attributes scale at Level 3, 9, 15, 21 via [`setCharacterAttributeScaling()`](../../typescript/src/character_sheet/creature.ts).
+
+> [!NOTE]
+> For definitive mathematical formulas, strike damage calculations, and rounding rules, see [`combat-math.md`](./combat-math.md).
+> To inspect instantiated stock characters and their computed stats in the CLI, use [`typescript/src/scripts/explain_stock_character.ts`](../../typescript/src/scripts/explain_stock_character.ts). Stock character builds are defined in [`typescript/src/character_sheet/stock_characters/`](../../typescript/src/character_sheet/stock_characters/).
 
 ## 3. Resources
 
