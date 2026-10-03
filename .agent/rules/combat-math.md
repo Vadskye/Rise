@@ -128,10 +128,16 @@ $$\text{TotalDamage} = \text{Dice} + \text{FlatModifier}$$
    - **`WeaponMult`**: Parsed from `"deals [double|triple|...] weapon damage"` (multiplies dice count only; default `1`).
    - **`GlobalMult`**: Parsed from `"deals [double|triple|...] damage"` without the word "weapon" (multiplies *both* dice count and flat modifier; default `1`).
 3. **Power Multiplier (`PowerMultiplier`):**
-   - Natural weapon: `1.0` (unarmed, bite, horn, claws)
-   - Manufactured weapon: `0.5` (exceptions: `giant boulder` = `1.0`, `pick` = `1.0`, `heavy crossbow` = `0.5`)
-   - Plural weapon: `0.5`
-   - *Note on Manufactured Weapons:* Because manufactured weapons use `0.5`, characters only add half of their Mundane Power to weapon strike flat damage (`floor(RelevantPower * 0.5)`).
+   - **Ground Truth Rules** ([Combat.tex](file:///home/vadskye/github/Rise/comprehensive_codex/Combat.tex#L48-L55) and [Equipment.tex](file:///home/vadskye/github/Rise/comprehensive_codex/Equipment.tex#L324-L369)):
+     - *Base Rule:* Strikes deal weapon damage dice plus **half** relevant Power ($\lfloor\text{Power} / 2\rfloor$, multiplier `0.5`).
+     - *Heavy Tag:* Wielded in two hands adds **full** Power (multiplier `1.0`).
+     - *Versatile Grip Tag:* Wielded in two hands adds **full** Power (multiplier `1.0`); in one hand adds **half** Power (`0.5`).
+     - *Versatile Stance Tag:* Quadrupedal, multipedal, or flying/gliding (for Beak) adds **full** Power (multiplier `1.0`); bipedal adds **half** Power (`0.5`).
+   - **Code Simplifying Assumptions** ([`getWeaponPowerMultiplier(weapon)`](file:///home/vadskye/github/Rise/typescript/src/monsters/weapons.ts)):
+     - *Quadrupedal Assumption:* All creatures are assumed quadrupedal/multipedal, so weapons with `Versatile Stance` (`bite`, `horn`/`horns`, `ram`, `stinger`, `beak`) grant **full Power** (`1.0`). Natural weapons **without** `Versatile Stance` (`claw`, `punch/kick`, `fist`, `slam`, `talon`, `tentacle`) receive standard **half Power** (`0.5`).
+     - *Two-Handed Heavy Assumption:* All weapons with the `Heavy` tag (`greatsword`, `greataxe`, `greatclub`, `greatmace`, `heavy flail`, `heavy crossbow`, `giant boulder`, etc.) are assumed wielded in two hands and grant **full Power** (`1.0`).
+     - *One-Handed Versatile Grip Assumption:* All weapons with `Versatile Grip` (`broadsword`, `battleaxe`, `pick`, `warhammer`, `spear`, `morning star`, etc.) are assumed held in one hand, receiving standard **half Power** (`0.5`).
+     - *Default:* All other weapons default to standard **half Power** (`0.5`).
 4. **Relevant Power:**
    - Mundane strike: `MundanePower`
    - Magical strike: `MagicalPower`

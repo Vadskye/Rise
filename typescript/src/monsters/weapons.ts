@@ -114,22 +114,29 @@ export function getWeaponAccuracy(weaponName: MonsterWeapon): number {
   return base.accuracy;
 }
 
+/**
+ * Calculates the power multiplier (0.5 for half power, 1.0 for full power) for a weapon strike.
+ *
+ * Ground truth rules (comprehensive_codex/Combat.tex and Equipment.tex):
+ * - Base strike damage adds half relevant power (multiplier 0.5).
+ * - Heavy: adding full power (multiplier 1.0) requires holding in two hands.
+ * - Versatile Grip: adding full power (multiplier 1.0) requires holding in two hands (otherwise half power).
+ * - Versatile Stance: adding full power (multiplier 1.0) requires being quadrupedal, multipedal, or flying/gliding for Beak.
+ *
+ * Simplifying assumptions:
+ * 1. Assume that all creatures are quadrupedal: weapons with the 'Versatile Stance' tag grant full power (1.0).
+ * 2. Assume that all Heavy weapons are held in two hands: weapons with the 'Heavy' tag grant full power (1.0).
+ * 3. Assume that all Versatile Grip weapons are held in one hand: weapons with 'Versatile Grip' do not grant full power (remain 0.5).
+ */
 export function getWeaponPowerMultiplier(weaponName: MonsterWeapon): 0.5 | 1 {
   const base = resolveBaseWeapon(weaponName);
-  if (base.isPlural) {
-    return 0.5;
-  }
-  if (base.isNatural) {
+  if (base.tags.includes('Heavy')) {
     return 1.0;
   }
-  if (weaponName === 'heavy crossbow') {
-    return 0.5;
-  }
-  if (weaponName === 'giant boulder' || weaponName === 'pick') {
+  if (base.tags.includes('Versatile Stance')) {
     return 1.0;
   }
-  const hasHeavy = base.tags.includes('Heavy');
-  return hasHeavy ? 1.0 : 0.5;
+  return 0.5;
 }
 
 export function getWeaponTags(weaponName: MonsterWeapon): readonly RiseWeaponTag[] {

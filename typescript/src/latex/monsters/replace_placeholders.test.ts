@@ -337,10 +337,10 @@ t.test('Integration / Unified Engine', (t) => {
       getRelevantPower: () => 4,
     } as any;
 
-    // Claw is 1d4 base with 1.0 power multiplier. With +1 increment, it becomes 1d6+4.
+    // Claw is 1d4 base with 0.5 power multiplier. With +1 increment, it becomes 1d6+2.
     t.equal(
       replacePlaceholders(creatureWithIncrement, '$damage', { weapon: 'claw', isMagical: false }),
-      '1d6+4',
+      '1d6+2',
     );
     // Bite is 1d8 base with 1.0 power multiplier. With +1 increment, it becomes 1d10+4.
     t.equal(

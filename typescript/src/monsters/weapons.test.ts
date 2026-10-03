@@ -1,5 +1,5 @@
 import { test } from 'tap';
-import { getWeaponDamageDice, isHeavyWeapon } from './weapons';
+import { getWeaponDamageDice, isHeavyWeapon, getWeaponPowerMultiplier } from './weapons';
 
 test('getWeaponDamageDice', (t) => {
   t.test('returns base damage dice without increments', (t) => {
@@ -46,12 +46,69 @@ test('getWeaponDamageDice', (t) => {
     t.ok(isHeavyWeapon('greatmace'), 'greatmace is heavy');
     t.ok(isHeavyWeapon('heavy crossbow'), 'heavy crossbow is heavy');
     t.ok(isHeavyWeapon('heavy flail'), 'heavy flail is heavy');
+    t.ok(isHeavyWeapon('giant boulder'), 'giant boulder is heavy');
 
     t.notOk(isHeavyWeapon('broadsword'), 'broadsword is not heavy');
     t.notOk(isHeavyWeapon('spear'), 'spear is not heavy');
     t.notOk(isHeavyWeapon('dagger'), 'dagger is not heavy');
     t.notOk(isHeavyWeapon('claw'), 'claw is not heavy');
     t.notOk(isHeavyWeapon('unknown_weapon_xyz'), 'unknown weapon is not heavy');
+    t.end();
+  });
+
+  t.end();
+});
+
+test('getWeaponPowerMultiplier', (t) => {
+  t.test('returns 1.0 for Heavy weapons', (t) => {
+    t.equal(getWeaponPowerMultiplier('greatsword'), 1.0);
+    t.equal(getWeaponPowerMultiplier('greataxe'), 1.0);
+    t.equal(getWeaponPowerMultiplier('greatclub'), 1.0);
+    t.equal(getWeaponPowerMultiplier('greatmace'), 1.0);
+    t.equal(getWeaponPowerMultiplier('heavy flail'), 1.0);
+    t.equal(getWeaponPowerMultiplier('heavy crossbow'), 1.0);
+    t.equal(getWeaponPowerMultiplier('giant boulder'), 1.0);
+    t.end();
+  });
+
+  t.test('returns 1.0 for natural weapons with Versatile Stance', (t) => {
+    t.equal(getWeaponPowerMultiplier('bite'), 1.0);
+    t.equal(getWeaponPowerMultiplier('horn'), 1.0);
+    t.equal(getWeaponPowerMultiplier('horns'), 1.0);
+    t.equal(getWeaponPowerMultiplier('ram'), 1.0);
+    t.equal(getWeaponPowerMultiplier('stinger'), 1.0);
+    t.equal(getWeaponPowerMultiplier('beak'), 1.0);
+    t.end();
+  });
+
+  t.test('returns 0.5 for natural weapons without Versatile Stance', (t) => {
+    t.equal(getWeaponPowerMultiplier('claw'), 0.5);
+    t.equal(getWeaponPowerMultiplier('claws'), 0.5);
+    t.equal(getWeaponPowerMultiplier('slam'), 0.5);
+    t.equal(getWeaponPowerMultiplier('tentacle'), 0.5);
+    t.equal(getWeaponPowerMultiplier('fist'), 0.5);
+    t.equal(getWeaponPowerMultiplier('fists'), 0.5);
+    t.equal(getWeaponPowerMultiplier('punch/kick'), 0.5);
+    t.equal(getWeaponPowerMultiplier('talon'), 0.5);
+    t.equal(getWeaponPowerMultiplier('talons'), 0.5);
+    t.end();
+  });
+
+  t.test('returns 0.5 for Versatile Grip weapons (assumed 1-handed)', (t) => {
+    t.equal(getWeaponPowerMultiplier('broadsword'), 0.5);
+    t.equal(getWeaponPowerMultiplier('battleaxe'), 0.5);
+    t.equal(getWeaponPowerMultiplier('pick'), 0.5);
+    t.equal(getWeaponPowerMultiplier('warhammer'), 0.5);
+    t.equal(getWeaponPowerMultiplier('spear'), 0.5);
+    t.equal(getWeaponPowerMultiplier('club'), 0.5);
+    t.equal(getWeaponPowerMultiplier('morning star'), 0.5);
+    t.end();
+  });
+
+  t.test('returns 0.5 for standard light/other weapons', (t) => {
+    t.equal(getWeaponPowerMultiplier('dart'), 0.5);
+    t.equal(getWeaponPowerMultiplier('javelin'), 0.5);
+    t.equal(getWeaponPowerMultiplier('smallsword'), 0.5);
     t.end();
   });
 

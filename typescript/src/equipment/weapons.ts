@@ -191,7 +191,7 @@ export const STANDARD_WEAPONS: Record<StandardWeapon, Weapon> = {
     accuracy: 0,
     damage_dice: DicePool.d8(),
     name: 'Boulder',
-    tags: ['Impact', { kind: 'Thrown', close: 90, long: 180 }],
+    tags: ['Heavy', 'Impact', { kind: 'Thrown', close: 90, long: 180 }],
   },
   [StandardWeapon.Greataxe]: {
     accuracy: 0,

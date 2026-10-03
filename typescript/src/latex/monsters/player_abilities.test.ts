@@ -175,8 +175,8 @@ t.test('calculateStrikeDamage', (t) => {
       weapon: 'tentacle',
       effect: 'Make a \\glossterm{strike} that deals triple damage.',
     } as any;
-    // Lower because this is a magical strike
-    t.equal(calculateStrikeDamage(mockCreature, ability, true).toString(), '3d6+12');
+    // Lower because this is a magical strike and tentacle has 0.5 power multiplier
+    t.equal(calculateStrikeDamage(mockCreature, ability, true).toString(), '3d6+6');
     t.end();
   });
 
