@@ -578,21 +578,21 @@ export function transcendentSage(): RankAbility[] {
     },
     {
       complexity: 1,
-      name: 'Transcend Emotion',
+      name: 'Transcend Exertion',
       isMagical: false,
       rank: 3,
       description: `
-        You are immune to \\abilitytag{Emotion} attacks.
-        In addition, you are immune to being \\frightened, \\panicked, and \\goaded.
+        You gain a bonus to your \\glossterm{maximum stamina} equal to your rank in this archetype.
       `,
     },
     {
       complexity: 1,
-      name: 'Transcend Exertion',
+      name: 'Transcend Emotion',
       isMagical: false,
       rank: 4,
       description: `
-        You gain a bonus to your \\glossterm{maximum stamina} equal to your rank in this archetype.
+        You are immune to \\abilitytag{Emotion} attacks.
+        In addition, you are immune to being \\frightened, \\panicked, and \\goaded.
       `,
     },
     {
