@@ -25,9 +25,7 @@ This plan aligns the codebase with the rulebook using three explicit simplifying
    - Any weapon with the `Heavy` tag grants **full Power** (`1.0`).
 3. **Assume all Versatile Grip weapons are held in one hand:**
    - Any weapon with `Versatile Grip` (and lacking `Heavy`) receives standard **half Power** (`0.5`).
-4. **Plural Weapons:**
-   - Plural weapons (e.g. Claws, Smallswords, Talons, Darts, Fists) represent paired/dual weapons and receive **half Power** (`0.5`).
-5. **Default:**
+4. **Default:**
    - All other weapons default to standard **half Power** (`0.5`).
 
 ---
@@ -56,13 +54,9 @@ Refactor `getWeaponPowerMultiplier()` with thorough JSDoc documentation:
  * 1. Assume that all creatures are quadrupedal: weapons with the 'Versatile Stance' tag grant full power (1.0).
  * 2. Assume that all Heavy weapons are held in two hands: weapons with the 'Heavy' tag grant full power (1.0).
  * 3. Assume that all Versatile Grip weapons are held in one hand: weapons with 'Versatile Grip' do not grant full power (remain 0.5).
- * 4. Plural weapons (e.g. claws, talons) represent paired/dual weapons and use half power (0.5).
  */
 export function getWeaponPowerMultiplier(weaponName: MonsterWeapon): 0.5 | 1 {
   const base = resolveBaseWeapon(weaponName);
-  if (base.isPlural) {
-    return 0.5;
-  }
   if (base.tags.includes('Heavy')) {
     return 1.0;
   }
@@ -88,7 +82,6 @@ Update Section 7 (Strike Damage Calculation):
      - Versatile Stance natural weapons (`bite`, `horn`, `ram`, `stinger`, `beak`) -> `1.0`
      - Natural weapons without Versatile Stance (`claw`, `slam`, `tentacle`, `fist`) -> `0.5`
      - Versatile Grip weapons (`broadsword`, `battleaxe`, `pick`, `warhammer`, `spear`) -> `0.5`
-     - Plural weapons (`claws`, `talons`, `fists`, `smallswords`) -> `0.5`
 2. **[`typescript/src/latex/monsters/replace_placeholders.test.ts`](file:///home/vadskye/github/Rise/typescript/src/latex/monsters/replace_placeholders.test.ts):**
    - Update line 340 test: `claw` now receives `0.5` power multiplier instead of `1.0` (Power 4 * 0.5 = 2 -> `1d6+2`).
    - Add or retain a test for `bite` (Versatile Stance -> Power 4 * 1.0 = 4 -> `1d10+4`).
