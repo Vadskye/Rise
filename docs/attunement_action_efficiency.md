@@ -160,17 +160,32 @@ Note that this assumes single-target damage. AOE damage would be lower as normal
 
 ### Singleton extra damage:
 
-Extra damage is tricky because it can be attached to any spell, including AOE spells, spells with unusually high accuracy, or spells that double extra damage multipliers. At low ranks, none of those shenanigans are possible, so it should have a greater discount at higher ranks. Calculate damage relative to singleton reactive damage, except that it doesn't power scale.
+Extra damage requires a minor action to activate to avoid stacking multiple attunements on the same attack. Assume that most characters can get access to double damage / double extra damage at about rank 4. It's trivial to do that by rank 5. 
 
-Note that this requires a minor action to activate to avoid stacking multiple attunements on the same attack.
+The baseline for singleton extra damage would be EA as a percentage of drX damage, taking into account the doubling of extra damage at rank 4. That would mean:
+* Rank 1: 75% of dr1
+* Rank 3: 100% of dr3
+* Rank 4: 55% of dr4
+* Rank 5: 63% of dr5
+* Rank 7: 75% of dr7
 
-* Rank 1: 1d6 (78% of dr0)
-* Rank 2: 1d10 (69% of 1d8 + half power)
-* Rank 3: 2d6 (54% of dr3)
-* Rank 4: 2d8 (50% of dr4)
-* Rank 5: 2d10 (44% of dr6)
-* Rank 6: 4d6 (40% of dr6)
-* Rank 7: 4d10 (43% of dr7)
+However, frontloading damage is more powerful than adding an extra turn to the end of a fight. As an estimate, say that adding extra damage to your first round of combat is 50% better than expected. So divide each by 1.5:
+
+* Rank 1: 50% of dr1 (6) = 3
+* Rank 2: 57% of dr2 (9) = 5
+* Rank 3: 67% of dr3 (13) = 9
+* Rank 4: 37% of dr4 (18) = 7
+* Rank 5: 42% of dr5 (25) = 10.5
+* Rank 6: 45% of dr6 (37) = 17
+* Rank 7: 50% of dr7 (51) = 25.5
+
+Smoothing that out and filling in the gaps:
+* Rank 1: 1d6
+* Rank 2: 1d8
+* Rank 3: 2d6
+* Rank 5: 2d10
+* Rank 6: 4d6
+* Rank 7: 4d10
 
 ### Singleton reactive debuff: ???
 
