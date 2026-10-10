@@ -4,9 +4,11 @@ import {
   validateSpellDesignGuidelines,
   validateDoubleExtraDamage,
   validateSpellRoles,
+  validateSpellScaling,
   DamagingSpellDesignIssue,
   ExtraDamageValidationIssue,
   RoleValidationIssue,
+  SpellScalingValidationIssue,
   ValidationIssue,
 } from '@src/abilities/validate_spells';
 import { DamageCalculationBreakdown } from '@src/abilities/expected_damage_rank';
@@ -18,6 +20,7 @@ export interface ValidationOptions {
   runComparative?: boolean;
   runExtraDamage?: boolean;
   runRoles?: boolean;
+  runScaling?: boolean;
   showApproximate?: boolean;
   sphere?: string;
 }
@@ -215,6 +218,52 @@ function runRoleValidation(spheres: MysticSphere[]): void {
   );
 }
 
+function printScalingIssuesGroup(title: string, issues: SpellScalingValidationIssue[]): void {
+  if (issues.length === 0) {
+    return;
+  }
+
+  console.log(`=== ${title} (${issues.length}) ===`);
+  for (const issue of issues) {
+    console.log(`- ${issue.message}`);
+  }
+  console.log();
+}
+
+function runScalingValidation(spheres: MysticSphere[]): void {
+  console.log('========================================================================');
+  console.log('PART 5: SPELL SCALING VALIDATION');
+  console.log('========================================================================\n');
+
+  const issues = validateSpellScaling(spheres);
+
+  if (issues.length === 0) {
+    console.log('All spells have valid scaling!\n');
+    return;
+  }
+
+  console.log(`Found ${issues.length} spell scaling validation issues:\n`);
+
+  const missingDamage = issues.filter((i) => i.type === 'missing_damage_scaling');
+  const missingAccuracy = issues.filter((i) => i.type === 'missing_accuracy_scaling');
+  const missingHealing = issues.filter((i) => i.type === 'missing_healing_scaling');
+  const inconsistent = issues.filter((i) => i.type === 'inconsistent_scaling');
+
+  printScalingIssuesGroup(
+    'Missing Damage Scaling (Damaging spells missing "scaling": "damage")',
+    missingDamage,
+  );
+  printScalingIssuesGroup(
+    'Missing Accuracy Scaling (Non-damaging attack spells missing "scaling": "accuracy")',
+    missingAccuracy,
+  );
+  printScalingIssuesGroup(
+    'Missing Healing Scaling (Healing spells missing "scaling": "healing")',
+    missingHealing,
+  );
+  printScalingIssuesGroup('Inconsistent Scaling (Scaling type mismatch)', inconsistent);
+}
+
 export function main(options: ValidationOptions): void {
   let targetSpheres = mysticSpheres;
 
@@ -249,6 +298,10 @@ export function main(options: ValidationOptions): void {
   if (options.runRoles) {
     runRoleValidation(targetSpheres);
   }
+
+  if (options.runScaling) {
+    runScalingValidation(targetSpheres);
+  }
 }
 
 if (require.main === module) {
@@ -259,6 +312,7 @@ if (require.main === module) {
     .option('-c, --comparative', 'Validate cross-spell comparative balance and redundancies')
     .option('-e, --extra-damage', 'Validate double extra damage guidelines')
     .option('-r, --roles', 'Validate spell roles')
+    .option('-k, --scaling', 'Validate spell scaling')
     .option('-a, --show-approximate', 'Show approximate matches in comparative validation')
     .option('-s, --sphere <name>', 'Filter validation to a specific mystic sphere')
     .option('--all', 'Run all validations')
@@ -270,12 +324,13 @@ if (require.main === module) {
   const runComparative = runAll || Boolean(opts.comparative);
   const runExtraDamage = runAll || Boolean(opts.extraDamage);
   const runRoles = runAll || Boolean(opts.roles);
+  const runScaling = runAll || Boolean(opts.scaling);
   const showApproximate = Boolean(opts.showApproximate);
   const sphere = typeof opts.sphere === 'string' ? opts.sphere : undefined;
 
-  if (!runDesign && !runComparative && !runExtraDamage && !runRoles) {
+  if (!runDesign && !runComparative && !runExtraDamage && !runRoles && !runScaling) {
     console.error(
-      'Error: At least one validation flag must be provided: --design, --comparative, --extra-damage, --roles, or --all.\n',
+      'Error: At least one validation flag must be provided: --design, --comparative, --extra-damage, --roles, --scaling, or --all.\n',
     );
     cli.outputHelp();
     process.exit(1);
@@ -286,6 +341,7 @@ if (require.main === module) {
     runComparative,
     runExtraDamage,
     runRoles,
+    runScaling,
     showApproximate,
     sphere,
   });

@@ -21,6 +21,36 @@ t.test('spellScaling', (t) => {
       scaling: undefined,
     };
     t.equal(spellScaling(spell as ActiveAbility), null);
+    t.matchOnlyStrict(capturedWarnings, []);
+    t.end();
+  });
+
+  t.test('should warn if spell contains damage value but is missing scaling', (t) => {
+    const spell: Partial<ActiveAbility> = {
+      name: 'Unscaled Firebolt',
+      rank: 1,
+      effect: '\\damagerankone',
+    };
+    t.equal(spellScaling(spell as ActiveAbility), null);
+    t.matchOnlyStrict(capturedWarnings, [
+      ['Spell Unscaled Firebolt deals damage, but is missing scaling.'],
+    ]);
+    t.end();
+  });
+
+  t.test('should warn if functionsLike spell contains damage value but is missing scaling', (t) => {
+    const spell: Partial<ActiveAbility> = {
+      name: 'Mighty Mystic Backlash',
+      rank: 5,
+      functionsLike: {
+        name: 'mystic backlash',
+        exceptThat: 'the damage increases to \\damageranksix.',
+      },
+    };
+    t.equal(spellScaling(spell as ActiveAbility), null);
+    t.matchOnlyStrict(capturedWarnings, [
+      ['Spell Mighty Mystic Backlash deals damage, but is missing scaling.'],
+    ]);
     t.end();
   });
 

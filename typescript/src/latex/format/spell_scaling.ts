@@ -12,14 +12,17 @@ const strikePattern = /\b[mM]ake.*\bstrike/;
 export function spellScaling(
   spell: Pick<ActiveAbility, 'attack' | 'effect' | 'functionsLike' | 'name' | 'scaling' | 'rank'>,
 ): string | null {
-  if (!spell.scaling) {
-    return null;
-  }
-
   // Cantrips have no rank listed. They start their scaling from rank 1.
   const rank = spell.rank || 1;
 
   if (rank >= 7) {
+    return null;
+  }
+
+  if (!spell.scaling) {
+    if (containsDamageValue(spell)) {
+      console.warn(`Spell ${spell.name} deals damage, but is missing scaling.`);
+    }
     return null;
   }
 

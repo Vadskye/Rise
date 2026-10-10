@@ -48,6 +48,7 @@ import {
   RANGE_ORDER,
   AREA_SIZE_ORDER,
   AppliedEffect,
+  stripGlossterm,
 } from './spell_profile';
 
 export type DifferenceField =
@@ -915,4 +916,140 @@ export function validateDoubleExtraDamage(spheres: MysticSphere[]): ExtraDamageV
   return issues;
 }
 
+export interface SpellScalingValidationIssue {
+  type:
+    | 'missing_damage_scaling'
+    | 'missing_accuracy_scaling'
+    | 'missing_healing_scaling'
+    | 'inconsistent_scaling';
+  severity: 'warning';
+  spellName: string;
+  sphereName: string;
+  spellRank: number;
+  expectedScaling: string;
+  actualScaling?: string;
+  message: string;
+}
+
+const scalingDamageRankPattern = /damagerank(\w+)\b/i;
+const scalingDamageRankLowPattern = /damagerank(\w+)low\b/i;
+const scalingHealingRankPattern = /hprank(\w+)\b/i;
+const scalingHealingRankLowPattern = /hprank(\w+)low\b/i;
+const scalingStrikeAttackPattern =
+  /\bmake(s)?\s+(an?\s+)?(\w+\s+)*(melee\s+|ranged\s+)?strikes?\b/i;
+
+export function validateSpellScaling(spheres: MysticSphere[]): SpellScalingValidationIssue[] {
+  const issues: SpellScalingValidationIssue[] = [];
+
+  for (const sphere of spheres) {
+    const allAbilities: Array<SpellDefinition | CantripDefinition> = [
+      ...(sphere.cantrips || []),
+      ...sphere.spells,
+    ];
+
+    for (const spell of allAbilities) {
+      const rank = spell.rank ?? 0;
+
+      // Rank 7 spells do not scale by rank.
+      if (rank >= 7) {
+        continue;
+      }
+
+      let baseSpell: SpellDefinition | CantripDefinition | undefined;
+      if (spell.functionsLike) {
+        try {
+          baseSpell = getSpellByName(spell.functionsLike.name);
+        } catch {
+          // Ignored if spell is not found
+        }
+      }
+
+      const hit = spell.attack?.hit || baseSpell?.attack?.hit || '';
+      const effect = spell.effect || baseSpell?.effect || '';
+      const exceptThat = spell.functionsLike?.exceptThat || '';
+      const rawFullText = `${hit} ${effect} ${exceptThat}`;
+      const cleanFullText = stripGlossterm(rawFullText);
+
+      const hasDamageRank =
+        scalingDamageRankPattern.test(rawFullText) || scalingDamageRankLowPattern.test(rawFullText);
+      const hasHealingRank =
+        scalingHealingRankPattern.test(rawFullText) ||
+        scalingHealingRankLowPattern.test(rawFullText);
+      const hasStrikeDamage =
+        scalingStrikeAttackPattern.test(cleanFullText) &&
+        (spell.roles.includes('burst') ||
+          spell.roles.includes('clear') ||
+          spell.roles.includes('burn') ||
+          spell.roles.includes('dive'));
+      const baseHasDamageScaling = baseSpell?.scaling === 'damage';
+
+      const isDamaging = hasDamageRank || hasStrikeDamage || baseHasDamageScaling;
+      const hasAttack = !!spell.attack || !!baseSpell?.attack;
+
+      if (isDamaging) {
+        if (!spell.scaling) {
+          issues.push({
+            type: 'missing_damage_scaling',
+            severity: 'warning',
+            spellName: spell.name,
+            sphereName: sphere.name,
+            spellRank: rank,
+            expectedScaling: 'damage',
+            message: `Damaging spell "${spell.name}" (${sphere.name}, Rank ${rank}) is missing damage scaling ("scaling": "damage").`,
+          });
+        } else if (spell.scaling === 'accuracy' || spell.scaling === 'double_accuracy') {
+          issues.push({
+            type: 'inconsistent_scaling',
+            severity: 'warning',
+            spellName: spell.name,
+            sphereName: sphere.name,
+            spellRank: rank,
+            expectedScaling: 'damage',
+            actualScaling: spell.scaling,
+            message: `Damaging spell "${spell.name}" (${sphere.name}, Rank ${rank}) has accuracy scaling, but deals damage and should have damage scaling.`,
+          });
+        }
+      } else if (hasHealingRank) {
+        if (!spell.scaling) {
+          issues.push({
+            type: 'missing_healing_scaling',
+            severity: 'warning',
+            spellName: spell.name,
+            sphereName: sphere.name,
+            spellRank: rank,
+            expectedScaling: 'healing',
+            message: `Healing spell "${spell.name}" (${sphere.name}, Rank ${rank}) is missing healing scaling ("scaling": "healing").`,
+          });
+        } else if (spell.scaling === 'accuracy' || spell.scaling === 'double_accuracy') {
+          issues.push({
+            type: 'inconsistent_scaling',
+            severity: 'warning',
+            spellName: spell.name,
+            sphereName: sphere.name,
+            spellRank: rank,
+            expectedScaling: 'healing',
+            actualScaling: spell.scaling,
+            message: `Healing spell "${spell.name}" (${sphere.name}, Rank ${rank}) has accuracy scaling, but provides healing and should have healing scaling.`,
+          });
+        }
+      } else if (hasAttack) {
+        if (!spell.scaling) {
+          issues.push({
+            type: 'missing_accuracy_scaling',
+            severity: 'warning',
+            spellName: spell.name,
+            sphereName: sphere.name,
+            spellRank: rank,
+            expectedScaling: 'accuracy',
+            message: `Attack spell "${spell.name}" (${sphere.name}, Rank ${rank}) is missing accuracy scaling ("scaling": "accuracy").`,
+          });
+        }
+      }
+    }
+  }
+
+  return issues;
+}
+
 export { validateSpellRoles, inferExpectedRoles, RoleValidationIssue } from './validate_roles';
+
