@@ -24,15 +24,15 @@ export const channelDivinity: MysticSphere = {
   ],
   spells: [
     {
-      name: 'Deliverance of the Faithful',
+      name: 'Vengeance of the Faithful',
 
       // Focused is 0.6 EA, healing is less than a normal heal. Combining healing with an
       // offensive buff means it's hard to take full advantage of its theoretical power
       // when used as a pre-combat buff.
       cost: 'One \\glossterm{stamina}.',
       effect: `
-        At the end of your next turn, you become infused with divine power.
-        This causes you to regain \\hprankfour, and you become \\briefly \\focused.
+        At the end of your next turn, your faith is rewarded.
+        This causes you to regain \\hprankfive, and you become \\briefly \\focused.
       `,
       roles: ['focus', 'healing', 'exertion'],
       rank: 4,
@@ -41,10 +41,10 @@ export const channelDivinity: MysticSphere = {
     },
 
     {
-      name: 'Triumph of the Faithful',
+      name: 'Serenity of the Faithful',
 
       effect: `
-        At the end of your next turn, you become infused with divine power.
+        At the end of your next turn, your faith is rewarded.
         This causes you to \\briefly gain a \\plus2 bonus to your Mental defense and become \\focused.
       `,
       rank: 1,
@@ -59,7 +59,7 @@ export const channelDivinity: MysticSphere = {
       // healing
       cost: 'One \\glossterm{stamina}.',
       effect: `
-        At the end of your next turn, you become infused with divine power.
+        At the end of your next turn, your faith is rewarded.
         This causes you to regain \\hprankfour.
       `,
       roles: ['healing', 'exertion'],
@@ -69,10 +69,10 @@ export const channelDivinity: MysticSphere = {
     },
 
     {
-      name: 'Vengeance of the Faithful',
+      name: 'Triumph of the Faithful',
 
       effect: `
-        At the end of your next turn, you become infused with divine power.
+        At the end of your next turn, your faith is rewarded.
         This causes you to to be \\briefly \\primed.
       `,
       rank: 7,
@@ -330,9 +330,9 @@ export const channelDivinity: MysticSphere = {
       name: 'Divine Power',
 
       effect: `
-        Whenever you make a damaging attack, you can infuse that attack with divine power as a \\glossterm{minor action}.
-        If you do, the attack deals 1d6 \\glossterm{extra damage} when it deals damage for the first time.
-        After you enhance an attack in this way, this ability is \\glossterm{dismissed}.
+        You can become infused with divine power as a \\glossterm{minor action}.
+        When you do, you deal 1d6 \\glossterm{extra damage} this turn.
+        At the end of that turn, this ability is \\glossterm{dismissed}.
       `,
       rank: 1,
       roles: ['attune'],
@@ -528,26 +528,6 @@ export const channelDivinity: MysticSphere = {
       scaling: 'accuracy',
     },
 
-    {
-      name: 'Sanctified Blade',
-
-      effect: `
-        Whenever you make a \\glossterm{strike}, you can activate this effect as a \\glossterm{minor action}.
-        If you do, the strike deals 1d6 \\glossterm{extra damage}.
-        After you enhance a strike in this way, this ability is \\glossterm{dismissed}.
-      `,
-      rank: 1,
-      roles: ['attune'],
-      // Weaker scaling than Enhance Magic -- Might because strikes double more quickly.
-      // TODO: actual scaling math
-      scaling: {
-        3: `The extra damage increases to 1d10.`,
-        5: `The extra damage increases to 2d8.`,
-        7: `The extra damage increases to 4d6.`,
-      },
-      type: 'Attune',
-    },
-
     // Injury goad is 1.2 EA. This is probably too generous to also bundle brief dazzle?
     {
       name: "Champion's Blade",
@@ -619,7 +599,7 @@ export const channelDivinity: MysticSphere = {
           In addition, the target is \\dazed as a \\glossterm{condition}.
         `,
         targeting: `
-          When you cast this spell, you begin visibly glowing with divine power.
+          When you cast this spell, you begin visibly glowing with power, creating \\glossterm{bright illumination} in a \\smallarea radius.
           During your next turn, you can spend a \\glossterm{standard action} to \\glossterm{touch} a creature with a \\glossterm{free hand}.
           When you do, make an attack vs. Mental against that creature.
         `,
