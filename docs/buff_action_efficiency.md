@@ -24,7 +24,7 @@ By EA:
   Primed         & 0.8  & no   & 2.0     & 3.2 \\
   Shielded       & 0.4  & 0.6  & 0.9     & 1.2 \\
   +4 defenses    & 1.1  & 1.6  & inf     & inf \\
-  Single defense & 0.4  & 0.6  & 0.9     & 1.2 \\
+  Single defense & 0.3  & 0.5  & 0.7     & 1.0 \\
   Steeled        & 0.4  & 0.6  & 1.0     & 1.4 \\
 ```
 
