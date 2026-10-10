@@ -405,8 +405,7 @@ export function wildMagic(): RankAbility[] {
       description: `
         You learn an additional arcane spell.
         The spell's rank can be up to your rank in this archetype, even if you do not have access to spells of that rank.
-        That spell is always affected twice by your \\ability{wildspell} ability.
-        This means that you roll twice and keep both results.
+        That spell is always affected by your \\ability{wildspell} ability.
 
         Whenever you increase your rank in this archetype, you can change which spell you know with this ability.
       `,
