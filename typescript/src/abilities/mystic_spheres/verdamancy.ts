@@ -626,36 +626,39 @@ export const verdamancy: MysticSphere = {
     {
       name: 'Flourishing Grass',
 
+      // Basically 20% miss chance. Has a downside that you can't move, but can also
+      // protect allies.
       effect: `
-        At the end of your turn, you may choose to cause grass to extend out onto the ground in a \\smallarea radius around you.
+        At the start of your turn, you may choose to cause grass to extend out onto the ground in your space.
         When you do, that area becomes covered in \\glossterm{light undergrowth}.
-        Whenever your location changes by any means, the grass retreats back to your body.
+        Whenever your location changes by any means, the grass disappears.
       `,
       narrative: `
         Long, thin grass continuously grows and writhes on your body.
         You can extend the grass to surround you at a whim.
       `,
-      rank: 2,
+      rank: 3,
       roles: ['attune'],
       tags: ['Manifestation'],
-      type: 'Attune',
+      type: 'Attune (deep)',
     },
 
+    // More reliably protect your allies
     {
       name: 'Massive Flourishing Grass',
 
       functionsLike: {
         name: 'flourishing grass',
-        exceptThat: 'the area of undergrowth increases to a \\largearea radius.',
+        exceptThat: 'the area of undergrowth increases to a \\medarea radius.',
       },
       narrative: `
         Long, thin grass continuously grows and writhes on your body.
         You can extend the grass to surround you at a whim.
       `,
-      rank: 5,
+      rank: 7,
       roles: ['attune'],
       tags: ['Manifestation'],
-      type: 'Attune',
+      type: 'Attune (deep)',
     },
 
     {
@@ -665,14 +668,14 @@ export const verdamancy: MysticSphere = {
         name: 'Flourishing Grass',
         exceptThat: `
           the area becomes \\glossterm{heavy undergrowth} instead of light undergrowth.
-          Since the grass retreats whenever you move, it does not impede your movement, though it does impede the movement of any other creatures that move simultaneously.
+          Since the grass retreats whenever you move, it does not impede your movement.
         `,
       },
       narrative: `
         A great mass of long, thin grass continuously grows and writhes on your body.
         You can extend the grass to surround you at a whim.
       `,
-      rank: 7,
+      rank: 5,
       roles: ['attune'],
       tags: ['Manifestation'],
       type: 'Attune',
