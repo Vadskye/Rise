@@ -17,7 +17,8 @@ export function arcaneMagic(): RankAbility[] {
 
         You automatically learn all \\glossterm{cantrips} from each of your mystic spheres.
         In addition, you learn two arcane \\glossterm{spells}.
-        You can also permanently reduce your \\glossterm{maximum stamina} to learn one additional spell per stamina lost.
+        You can permanently reduce your \\glossterm{maximum stamina} to learn one additional spell per stamina lost.
+        You cannot reduce your maximum stamina below 1 in this way.
 
         Arcane spells require both \\glossterm{verbal components} and \\glossterm{somatic components} to cast (see \\pcref{Ability Usage Components}).
         For details about mystic spheres and casting spells, see \\pcref{Spell and Ritual Mechanics}.
