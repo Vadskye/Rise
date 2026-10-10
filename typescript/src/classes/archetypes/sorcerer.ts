@@ -172,30 +172,34 @@ export function draconicMagic(): RankAbility[] {
         You are \\resistant to attacks with that dragon's associated ability tag.
 
         \\begin{columntable}
+          % This omits the source, breath weapon, and defense columns found elsewhere
           \\columncaption{Draconic Bloodline Types}
           \\begin{dtabularx}{\\columnwidth}{l >{\\lcol}X >{\\lcol}X}
-            \\tb{Dragon} & \\tb{Tag} & \\tb{Mystic Sphere} \\tableheaderrule
-            Black       & \\atAcid             & Vivimancy    \\\\
-            Blue        & \\atElectricity      & Electromancy \\\\
-            Brass       & \\atFire             & Enchantment  \\\\
-            Bronze      & \\atElectricity      & Revelation   \\\\
-            Copper      & \\atAcid             & Terramancy   \\\\
-            Gold        & \\atFire             & Photomancy   \\\\
-            Green       & \\atAcid             & Compulsion   \\\\
-            Red         & \\atFire             & Pyromancy    \\\\
-            Silver      & \\atCold             & Telekinesis  \\\\
-            White       & \\atCold             & Cryomancy    \\\\
+            \\tb{Dragon} & \\tb{Tag}       & \\tb{Mystic Sphere} \\tableheaderrule
+            Black        & \\atAcid        & \\sphere{toxicology}     \\\
+            Blue         & \\atElectricity & \\sphere{electromancy}     \\\
+            Crystal      & \\atVisual      & \\sphere{photomancy}     \\\
+            Dream        & \\atEmotion     & \\sphere{enchantment}     \\\
+            Gold         & \\atFire        & \\sphere{pyromancy}     \\\
+            Gore         & \\atBlood       & \\sphere{vivimancy}     \\\
+            Obsidian     & \\atEarth       & \\sphere{terramancy}     \\\
+            Pearl        & \\atWater       & \\sphere{aquamancy}     \\\
+            Red          & \\atFire        & \\sphere{pyromancy}     \\\
+            White        & \\atCold        & \\sphere{cryomancy}     \\\
+            Wraith       & \\atSoul        & \\sphere{astromancy}     \\\
+            Zephyr       & \\atAir         & \\sphere{aeromancy}     \\\
           \\end{dtabularx}
         \\end{columntable}
       `,
     },
     {
       complexity: 2,
-      name: 'Draconic Spell',
+      name: 'Draconic Sphere',
       isMagical: true,
       rank: 1,
       description: `
-        You learn a spell from your dragon's \\glossterm{mystic sphere}, even if you do not have access to that mystic sphere.
+        You gain access to your dragon's \\glossterm{mystic sphere}.
+        If you already had access to that mystic sphere, you instead gain a \\plus1 accuracy bonus and power bonus with all spells from that mystic sphere.
       `,
     },
     {
