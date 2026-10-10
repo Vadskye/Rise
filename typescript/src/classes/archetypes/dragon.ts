@@ -146,7 +146,7 @@ export function dragon(): RankAbility[] {
       isMagical: true,
       rank: 7,
       description: `
-        Your \ability{draconic wealth} ability draws power from a hoard you maintain, not merely items you carry with you.
+        Your \\ability{draconic wealth} ability draws power from a hoard you maintain, not merely items you carry with you.
         Your hoard must be owned exclusively by you, and you must know its location at all times.
         Only draconic wealth items contribute to your hoard's effects, though you may have other items in your hoard.
         If a draconic wealth item disappears from your hoard, you know immediately.
