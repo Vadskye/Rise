@@ -670,22 +670,22 @@ They allow more distinct and unique character customization, but also increase g
     You are \resistant to attacks with that dragon's associated tag.
 
     \begin{columntable}
+      % This is the same as the Dragon Species Types table in the Uncommon Species chapter, but it has a different name to avoid label nonsense
       \columncaption{Dragon Types}
-      \begin{dtabularx}{\columnwidth}{l >{\lcol}X >{\lcol}X >{\lcol}X}
-      \tb{Dragon} & \tb{Tag}       & \tb{Source} & \tb{Breath Weapon}        \tableheaderrule
-        Black     & \atAcid        & Mundane     & \areamed, 5 ft. wide line \\
-        Blue      & \atElectricity & Mundane     & \areamed, 5 ft. wide line \\
-        Crystal   & \atVisual      & Magical     & \areamed, 5 ft. wide line \\
-        Dream     & \atEmotion     & Magical     & \areamed, 5 ft. wide line \\
-        Gold      & \atFire        & Magical     & \areamed, 5 ft. wide line \\
-        Gore      & \atBlood       & Magical     & \areasmall cone           \\
-        Hex       & \atCurse       & Magical     & \areasmall cone           \\
-        Obsidian  & \atEarth       & Mundane     & \areasmall cone           \\
-        Pearl     & \atWater       & Magical     & \areamed, 5 ft. wide line \\
-        Red       & \atFire        & Mundane     & \areasmall cone           \\
-        White     & \atCold        & Mundane     & \areasmall cone           \\
-        Wraith    & \atSoul        & Magical     & \areamed, 5 ft. wide line \\
-        Zephyr    & \atAir         & Mundane     & \areasmall cone           \\
+      \begin{dtabularx}{\columnwidth}{l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
+        \tb{Dragon} & \tb{Tag}       & \tb{Source} & \tb{Breath Weapon}        & \tb{Defense} \tableheaderrule
+        Black       & \atAcid        & Mundane     & \areamed, 5 ft. wide line & Fortitude \\
+        Blue        & \atElectricity & Mundane     & \areamed, 5 ft. wide line & Fortitude \\
+        Crystal     & \atVisual      & Magical     & \areamed, 5 ft. wide line & Mental    \\
+        Dream       & \atEmotion     & Magical     & \areamed, 5 ft. wide line & Mental    \\
+        Gold        & \atFire        & Magical     & \areamed, 5 ft. wide line & Armor     \\
+        Gore        & \atBlood       & Magical     & \areasmall cone           & Fortitude \\
+        Obsidian    & \atEarth       & Mundane     & \areasmall cone           & Armor     \\
+        Pearl       & \atWater       & Magical     & \areamed, 5 ft. wide line & Brawn     \\
+        Red         & \atFire        & Mundane     & \areasmall cone           & Armor     \\
+        White       & \atCold        & Mundane     & \areasmall cone           & Fortitude \\
+        Wraith      & \atSoul        & Magical     & \areasmall cone           & Mental    \\
+        Zephyr      & \atAir         & Mundane     & \areasmall cone           & Brawn     \\
       \end{dtabularx}
     \end{columntable}
 
@@ -694,27 +694,26 @@ They allow more distinct and unique character customization, but also increase g
     \begin{activeability}{Draconic Breath}{Standard action}
       \abilitycost You \briefly can't use this ability again.
       \rankline
-      This ability's tag matches your dragon's associated tag.
+      This ability gains your dragon type's tag (see \pcref{Dragon Types}).
       If your dragon's source is \magical, this ability is also magical, which means you use your \glossterm{magical power} for damage instead of your mundane power.
-      Make an attack vs. Reflex against everything in the area defined by the type of dragon from your \textit{draconic ancestry} ability (see \trefnp{Dragon Types}).
-      \hit \damageranktwo.
+      Make an attack vs. Reflex and one other defense against everything in the area defined by your dragon type.
+      The additional defense depends on your dragon type.
+      \hit \damagerankthree.
       \miss Half damage.
 
       \rankline
-      \featlevel{3} The damage increases to \damagerankthree.
-      \featlevel{6} The area increases.
+      \rank{2} The damage increases to \damagerankfour.
+      \rank{3} The area increases.
       A line breath weapon becomes a \arealarge, 10 ft.\ wide line.
       A cone breath weapon becomes a \areamed cone.
-      \featlevel{9} The damage increases to \damagerankfour.
-      \featlevel{12} The damage increases to \damagerankfive.
-      \featlevel{15} The damage increases to \damageranksix.
-      \featlevel{18} The damage increases to \damagerankseven, and the area increases.
+      \rank{4} The damage increases to \damagerankfive.
+      \rank{5} The damage increases to \damageranksix.
+      \rank{6} The damage increases to \damagerankseven.
+      \rank{7} The damage increases to \damagerankeight, and the area increases.
       A line breath weapon becomes a \areagarg, 15 ft.\ wide line.
       A cone breath weapon becomes a \arealarge cone.
+      \rank{8} The damage increases to \damageranknine.
     \end{activeability}
-
-    \ff[1]{Draconic Weapons} You gain a bite natural weapon and two claw natural weapons, one on each arm.
-    For details, see \tref{Natural Weapons}.
 
     \ff[6]{Wealth is Power} You gain a \plus1 bonus to your \glossterm{power}.
     While you have a wealth item with an item rank at least as high as your \glossterm{character rank}, this bonus increases to \plus2.
