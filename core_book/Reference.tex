@@ -79,10 +79,13 @@
   When something created by a Manifestation ability is destroyed or killed, or when the duration of the ability that created it ends, it disappears without a trace.
 
   % Abilities are tagged as Physical if it seems like they shouldn't have any effect on incorporeal creatures.
-  % Note that abilities that make strike are *not* generally tagged as physical.
+  % Note that abilities that make a strike are *not* generally tagged as physical.
   % Strikes are normally tagged as Physical themselves, but some special abilities make strike not be Physical, so we rely on the strike itself to be tagged.
   \abilitytagdef{Physical} Physical abilities affect physical objects and creatures.
   They do not affect and cannot be used by \trait{incorporeal} creatures.
+
+  \abilitytagdef{Poison} Poisons are dangerous substances which harm the bodies of living creatures.
+  All Poison abilities also have the \atLife and \atPhysical tags.
 
   \abilitytagdef{Ritual} Ritual abilities have a number of shared properties.
   For details, see \pcref{Spell and Ritual Mechanics}.
