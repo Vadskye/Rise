@@ -361,6 +361,8 @@ export function pactSpellMastery(): RankAbility[] {
         The maximum \\glossterm{rank} of pact ritual you can learn or perform is equal to your rank in this archetype.
         In addition, you automatically learn two free pact rituals, plus one more whenever you increase your rank in this archetype.
         You cannot choose this ability multiple times.
+        % TODO: figure out wording to clarify that it affects all areas for a spell with
+        % multiple areas
         \\parhead{Widened Spell} Choose a pact \\glossterm{spell} you know with a standard \\glossterm{area}: \\tinyarea, \\smallarea, \\medarea, \\largearea, \\hugearea, or \\gargarea.
         You increase that spell's area to the next standard area category, to a maximum of a Gargantuan area.
         You can choose this ability multiple times, choosing a different spell each time.
