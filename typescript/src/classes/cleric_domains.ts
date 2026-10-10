@@ -104,7 +104,7 @@ export function clericDomains(): string {
 
         \\subsubsection{Law Domain}
         \\domainability{Gift} You gain a \\plus2 bonus to your Mental defense and are \\resistant to \\atEmotion attacks.
-        \\magicaldomainability{Aspect} Whenever you make an attack roll, your minimum attack result is equal to 5 \add your \glossterm{accuracy} with the attack, as if you had rolled a 5 on the die.
+        \\magicaldomainability{Aspect} Whenever you make an attack roll, your minimum attack result is equal to 5 \\add your \\glossterm{accuracy} with the attack, as if you had rolled a 5 on the die.
         \\magicaldomainability{Mastery} You gain the \\ability{compel law} ability.
         \\begin{magicalactiveability}{Compel Law}{Standard action}
           \\abilitytags \\abilitytag{Compulsion}
