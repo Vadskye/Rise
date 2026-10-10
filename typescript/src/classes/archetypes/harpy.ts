@@ -109,7 +109,7 @@ export function harpy(): RankAbility[] {
       isMagical: false,
       rank: 7,
       description: `
-        Your talons deal 1d8 damage.
+        The bonus to \\glossterm{weapon dice increment} increases to \\plus2.
       `,
     },
     {
