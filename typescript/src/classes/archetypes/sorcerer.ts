@@ -198,30 +198,31 @@ export function draconicMagic(): RankAbility[] {
       isMagical: true,
       rank: 1,
       description: `
-        You gain access to your dragon's \\glossterm{mystic sphere}.
-        If you already had access to that mystic sphere, you instead gain a \\plus1 accuracy bonus and power bonus with all spells from that mystic sphere.
+        You gain access to your dragon type's \\glossterm{mystic sphere}.
+        If you already have access to that mystic sphere, you instead gain a \\plus1 accuracy bonus and power bonus with all spells from that mystic sphere.
       `,
     },
     {
       complexity: 1,
-      name: 'Draconic Hide',
-      isMagical: false,
+      name: 'Draconic Scales',
+      isMagical: true,
       rank: 2,
       description: `
-        You gain a +3 bonus to your \\glossterm{durability}.
+        You gain a \\plus1 bonus to your Armor defense and \\glossterm{durability}.
+      `,
+    },
+    {
+      complexity: 2,
+      name: 'Draconic Flight',
+      isMagical: false,
+      rank: 3,
+      description: `
+        You gain an average \\glossterm{glide speed} (see \\pcref{Aerial Movement}).
+        Whenever you cast a spell from your dragon type's \\glossterm{mystic sphere}, you \\glossterm{briefly} gain an average \\glossterm{fly speed} with a \\glossterm{height limit} of 15 feet.
       `,
     },
     {
       complexity: 1,
-      name: 'Draconic Precision',
-      isMagical: true,
-      rank: 3,
-      description: `
-        You gain a \\plus1 accuracy bonus with any ability that has your dragon's associated ability tag.
-      `,
-    },
-    {
-      complexity: 0,
       name: 'Draconic Body',
       isMagical: false,
       rank: 4,
@@ -231,20 +232,29 @@ export function draconicMagic(): RankAbility[] {
     },
     {
       complexity: 0,
-      name: 'Energy Immunity',
+      name: 'Spell Knowledge',
       isMagical: false,
       rank: 5,
       description: `
-        You become immune to attacks that have your dragon's associated ability tag.
+        You learn an additional arcane spell.
       `,
     },
     {
       complexity: 0,
-      name: 'Draconic Hide+',
+      name: 'Draconic Immunity',
+      isMagical: false,
+      rank: 5,
+      description: `
+        You become immune to attacks that have your dragon type's ability tag.
+      `,
+    },
+    {
+      complexity: 0,
+      name: 'Draconic Scales+',
       isMagical: false,
       rank: 6,
       description: `
-        The durability bonus increases to +5.
+        The bonuses increase to \\plus2.
       `,
     },
     {
