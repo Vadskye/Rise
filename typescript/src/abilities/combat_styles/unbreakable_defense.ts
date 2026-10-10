@@ -24,7 +24,7 @@ export const unbreakableDefense: CombatStyle = {
         abilityType: 'ability',
         exceptThat: `
           when you use this ability, choose a creature you can see.
-          Until your next turn, whenever that creature misses you with a melee \\glossterm{strike}, it becomes \\dazzled as a \\glossterm{condition}.
+          Until your next turn, whenever that creature misses you with a melee \\glossterm{strike}, it becomes \\distracted as a \\glossterm{condition}.
         `,
         name: 'parry',
       },

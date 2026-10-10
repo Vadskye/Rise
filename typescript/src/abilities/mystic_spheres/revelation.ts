@@ -354,7 +354,7 @@ export const revelation: MysticSphere = {
       attack: {
         crit: 'The target is also \\briefly \\confused.',
         hit: `
-          The target is \\dazzled as a \\glossterm{condition}.
+          The target is \\briefly \\distracted.
         `,
         targeting: `
           Make an attack vs. Mental against up to two creatures within \\medrange.

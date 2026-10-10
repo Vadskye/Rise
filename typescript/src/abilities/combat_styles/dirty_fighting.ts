@@ -613,5 +613,17 @@ export const dirtyFighting: CombatStyle = {
       rank: 5,
       roles: ['maim'],
     },
+
+    {
+      name: 'Feint',
+
+      effect: `
+        Make an attack vs. Reflex against a creature adjacent to you.
+        \\hit The target is \\briefly \\distracted.
+        \\crit The target is also \\briefly \\dazed.
+      `,
+      rank: 3,
+      roles: ['trip'],
+    },
   ],
 };
