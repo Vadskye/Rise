@@ -830,7 +830,7 @@ export const rituals: RitualDefinition[] = [
       When you perform this ritual, you specify a course of action that you could hypothetically take during the next hour.
       At the end of the ritual, a version of yourself from an hour into the future appears.
       That person is a version of yourself who took your described course of action.
-      You can visibly observe any changes in their appearance, and they have a few seconds to gesture to indicate whether they recommend following that action, but no words can be exchanged.
+      You can visibly observe any changes in their appearance, and they have a few seconds to gesture to indicate whether they recommend following that action, but they cannot observe you and no words can be exchanged.
 
       If no version of yourself appears, it is likely that you would not survive taking your proposed course of action.
       The future is variable and chaotic, so making the same decisions does not guarantee the same results as your future self, but it should be likely to have a similar outcome.
@@ -839,6 +839,7 @@ export const rituals: RitualDefinition[] = [
     roles: ['narrative'],
     materialCost: true,
     spheres: ['Chronomancy'],
+    tags: ['Divination'],
   },
   {
     staminaCost: true,
@@ -853,6 +854,7 @@ export const rituals: RitualDefinition[] = [
     roles: ['narrative'],
     materialCost: true,
     spheres: ['Chronomancy'],
+    tags: ['Divination'],
   },
   {
     staminaCost: false,
@@ -1714,7 +1716,9 @@ export const rituals: RitualDefinition[] = [
     `,
     rank: 2,
     roles: ['narrative'],
+    materialCost: true,
     spheres: ['Revelation'],
+    tags: ['Divination'],
   },
 
   {
@@ -1731,7 +1735,9 @@ export const rituals: RitualDefinition[] = [
     },
     rank: 4,
     roles: ['narrative'],
+    materialCost: true,
     spheres: ['Revelation'],
+    tags: ['Divination'],
   },
 
   {
@@ -1748,7 +1754,9 @@ export const rituals: RitualDefinition[] = [
     },
     rank: 6,
     roles: ['narrative'],
+    materialCost: true,
     spheres: ['Revelation'],
+    tags: ['Divination'],
   },
 
   {
@@ -2001,14 +2009,15 @@ export const rituals: RitualDefinition[] = [
     effect: `
       The next time you fall asleep, you have a dream that foreshadows some important event or decision in your future.
       The dream may be vague or even self-contradictory, since the future is never certain, but its contents always provide some hint about what may lie ahead of you.
+      It may show you a nightmare of what will happen if you make a poor choice, a warning of unavoidable danger, or a grand vision of tantalizing success if you make the right choices.
       Generally, a prophetic dream concerns events no more than a month before they occur, though staggeringly important events can be prophesied years in advance.
 
       Once you have performed this ritual, performing it again always yields the same dream until the prophesied event has happened or is no longer a relevant or likely future.
-      This can happen as if your actions prevent the event from coming to pass.
+      This can happen if your actions prevent the event from coming to pass.
     `,
     rank: 4,
     roles: ['narrative'],
-    tags: ['Scrying'],
+    tags: ['Divination'],
     spheres: ['Revelation', 'Umbramancy'],
   },
   {
@@ -3031,23 +3040,6 @@ export const rituals: RitualDefinition[] = [
       `,
     },
     rank: 6,
-    roles: ['narrative'],
-    spheres: ['Chronomancy', 'Revelation'],
-  },
-  {
-    staminaCost: true,
-    name: 'Prophetic Dream',
-    usageTime: 'one hour',
-    effect: `
-      When you next fall asleep, you have a vivid dream.
-      The dream is relevant to your future within the next week.
-      It may show you a nightmare of what will happen if you make a poor choice, a warning of unavoidable danger, or a grand vision of tantalizing success if you make the right choices.
-      If any powerful entities such as deities have a particular interest in you, they may also influence the dream to communicate with you.
-      Your dream generally does not literally come true, especially if you change your actions based on the dream, but its general guidance is true.
-
-      After you perform this ritual, it has no effect until the circumstances foretold by your dream come to pass.
-    `,
-    rank: 4,
     roles: ['narrative'],
     spheres: ['Chronomancy', 'Revelation'],
   },

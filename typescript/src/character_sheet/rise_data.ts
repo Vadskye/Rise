@@ -113,6 +113,7 @@ export type RiseEffectTag =
   | 'Creation'
   | 'Curse'
   | 'Detection'
+  | 'Divination'
   | 'Earth'
   | 'Electricity'
   | 'Emotion'
