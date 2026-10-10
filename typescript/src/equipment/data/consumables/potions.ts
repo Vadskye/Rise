@@ -15,6 +15,15 @@ function createPotion(data: RawConsumable): Tool {
 
 export function potions(): Tool[] {
   return [
+    ...healingPotions(),
+    ...buffPotions(),
+    ...utilityPotions(),
+  ];
+
+}
+
+function healingPotions(): Tool[] {
+  return [
     createPotion({
       name: 'Cleansing Potion',
       rank: 2,
@@ -98,6 +107,14 @@ export function potions(): Tool[] {
         },
       ],
     }),
+  ];
+}
+
+// Use the same EA scaling as self-buff abilities. Buff potions are risky to make too
+// strong because they are so good as a pre-combat buff; they don't get the same rank
+// benefit as standard action attack consumables.
+function buffPotions(): Tool[] {
+  return [
     createPotion({
       name: 'Invigorating Potion',
       rank: 0,
@@ -120,7 +137,7 @@ export function potions(): Tool[] {
     }),
     createPotion({
       name: 'Potion of Impending Violence',
-      rank: 1,
+      rank: 2,
       attunement: 'Unrestricted',
       short_description: 'Primes and enrages you',
       description: `
@@ -132,6 +149,7 @@ export function potions(): Tool[] {
       rank: 1,
       attunement: 'Unrestricted',
       short_description: 'Grants critical benefits',
+      // 0.4 + 0.4
       description: `
         When you drink this \\glossterm{potion}, you are \\glossterm{briefly} \\honed and \\steeled.
       `,
@@ -147,8 +165,7 @@ export function potions(): Tool[] {
     }),
     createPotion({
       name: 'Potion of Pure Power',
-      // Rank is a bit too high, but want to differentiate from the lesser empower potions
-      rank: 2,
+      rank: 4,
       attunement: 'Unrestricted',
       short_description: 'Grants power and maximum damage',
       // 0.7 + 0.2 EA
@@ -156,6 +173,11 @@ export function potions(): Tool[] {
         When you drink this \\glossterm{potion}, you are \\glossterm{briefly} \\empowered and \\maximized.
       `,
     }),
+  ];
+}
+
+function utilityPotions(): Tool[] {
+  return [
     createPotion({
       name: 'Potion of Desperate Breath',
       rank: 1,
