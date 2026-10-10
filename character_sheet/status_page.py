@@ -175,17 +175,18 @@ def debuffs():
             flex_col(
                 [
                     debuff("blinded"),
-                    debuff("confused"),
                     debuff("dazed"),
-                    debuff("dazzled"),
-                    debuff("frightened"),
+                    debuff("distracted"),
+                    debuff("goaded"),
+                    debuff("sickened"),
                 ]
             ),
             flex_col(
                 [
-                    debuff("goaded"),
+                    debuff("confused"),
+                    debuff("dazzled"),
+                    debuff("frightened"),
                     debuff("panicked"),
-                    debuff("sickened"),
                     debuff("slowed"),
                 ]
             ),
@@ -217,6 +218,7 @@ def debuff_explanation(debuff: str) -> str:
         "dazed": "-2 defenses",
         "dazzled": "20% miss chance, no special vision",
         "deafened": "20% verbal spell failure",
+        "distracted": "roll attacks twice, keeping lower",
         "dominated": "must obey commands",
         "frightened": "-2 Mental, -2 accuracy vs. source",
         "goaded": "-2 accuracy vs. other creatures",

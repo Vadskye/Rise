@@ -88,11 +88,11 @@ Braced is 40% action denial from the accuracy calculations and applies 1/3 of th
 
 Applies 50% of the time instead of 33% of the time, since you can choose the best target.
 
-### Braced (any two): 1.0
+### Braced (any two): 1.2
 
 Applies 75% of the time
 
-### Braced (all): 1.3
+### Braced (all): 1.6
 
 Applies 100% of the time
 

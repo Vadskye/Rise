@@ -15,6 +15,7 @@ By EA:
   Dazed              & 0.9          & 1.4   & 1.2              & 3.0       \\
   Dazzled            & 0.4          & 0.6   & 0.8              & 2.1       \\
   Deafened           & 0.2          & 0.3   & 0.6              & 1.4       \\
+  Distracted         & 1.2          & 2.0   & 2.8              & 7.0       \\
   Exposed            & 0.4          & 0.6   & N/A              & N/A       \\
   Fling 15' (ranged) & 1.0          & N/A   & N/A              & N/A       \\
   Fling 15' (melee)  & 0.8          & N/A   & N/A              & N/A       \\
@@ -307,6 +308,16 @@ In practice, it's a little lower than this, because dazzled doesn't affect AOE a
 
 Deafened is basically the same as dazzled, except that the restriction is "spell with verbal components" rather than "targeted ability". That's less than half as common, so call it 0.3 EA.
 
+### Distracted: 2.0
+
+Assume 30% base hit chance. That becomes a 9% hit rate, or 70% action denial.
+
+Assume 50% base hit chance. That becomes a 25% hit rate, or 50% action denial.
+
+Assume 80% base hit chance. That becomes a 64% hit rate, or 20% action denial.
+
+Overall, distracted is better than -2 accuracy. It's slightly more effective at preventing hits at low accuracy values, and more effective at preventing lucky crits at all accuracy values. Braced (all) is -2 accuracy, which is 1.6 EA from 40% action denial. Say that distracted is 50% action denial, so 2 EA. 
+
 ### Exposed: 0.6 EA
 
 -4 defenses against _one_ attack is 0.4 EA using our normal calculation. Assume that this is used on an usually effective attack by an ally, so increase to 0.6 EA. Intuitively, exposed seems less dangerous than briefly dazed, but not _drastically_ less dangerous, so 0.6 feels low or about right.
@@ -484,6 +495,10 @@ Partially unaware is worth 3 effective actions using the same logic as being daz
 ### Deafened: 1.4
 
 Assume this is 10% action denial.
+
+### Distracted: 7
+
+Assume this is 50% action denial.
 
 ### Frightened by you: 2.1
 
