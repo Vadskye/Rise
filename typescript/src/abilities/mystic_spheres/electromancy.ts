@@ -537,6 +537,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       },
       rank: 5,
       roles: ['attune'],
+      scaling: 'damage',
       type: 'Attune (deep)',
     },
 

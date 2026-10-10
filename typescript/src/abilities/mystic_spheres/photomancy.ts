@@ -320,6 +320,7 @@ export const photomancy: MysticSphere = {
       },
       rank: 6,
       roles: ['clear', 'maim'],
+      scaling: 'damage',
     },
 
     {

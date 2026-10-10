@@ -198,27 +198,13 @@ t.test('validateSpellScaling', (t) => {
     t.end();
   });
 
-  t.test('validating live mystic spheres catches known unscaled spells', (t) => {
+  t.test('all live mystic spheres have valid scaling with 0 issues', (t) => {
     const issues = validateSpellScaling(allMysticSpheres);
-
-    // Verify Mighty Mystic Backlash is detected
-    const backlashIssue = issues.find(
-      (i) => i.spellName === 'Mighty Mystic Backlash' && i.sphereName === 'Thaumaturgy',
+    t.equal(
+      issues.length,
+      0,
+      `Expected 0 scaling issues, but found: ${JSON.stringify(issues, null, 2)}`,
     );
-    t.ok(backlashIssue, 'Should catch Mighty Mystic Backlash');
-    t.equal(backlashIssue?.type, 'missing_damage_scaling');
-    t.equal(backlashIssue?.expectedScaling, 'damage');
-
-    // Verify other known unscaled spells are caught
-    const caughtNames = issues.map((i) => i.spellName);
-    t.ok(caughtNames.includes('Liquify'), 'Should catch Liquify');
-    t.ok(caughtNames.includes('Mighty Creeping Frost'), 'Should catch Mighty Creeping Frost');
-    t.ok(caughtNames.includes('Ice Shield'), 'Should catch Ice Shield');
-    t.ok(caughtNames.includes('Mighty Ice Shield'), 'Should catch Mighty Ice Shield');
-    t.ok(caughtNames.includes('Mighty Personal Conduction'), 'Should catch Mighty Personal Conduction');
-    t.ok(caughtNames.includes('Massive Radiant Field'), 'Should catch Massive Radiant Field');
-    t.ok(caughtNames.includes('Shadowstep Flurry'), 'Should catch Shadowstep Flurry');
-
     t.end();
   });
 

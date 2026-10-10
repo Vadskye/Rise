@@ -386,6 +386,7 @@ export const umbramancy: MysticSphere = {
       },
       roles: ['dive', 'burst'],
       rank: 6,
+      scaling: 'damage',
     },
     // Controlling movement is roughly 100% action denial for the turn, so 4 EA. Double
     // application is -2 EA??, so 2 EA. Damage is 3 EA, or r9, which drops to r7 with melee

@@ -761,6 +761,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       },
       rank: 5,
       roles: ['maim', 'burn'],
+      scaling: 'damage',
     },
     {
       name: 'Slippery Puddle',

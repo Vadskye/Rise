@@ -625,6 +625,7 @@ export const thaumaturgy: MysticSphere = {
       },
       rank: 5,
       roles: ['burst'],
+      scaling: 'damage',
       tags: ['Subtle'],
       type: 'Sustain (minor)',
     },
