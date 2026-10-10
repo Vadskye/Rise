@@ -63,7 +63,7 @@ export function explainMonsterAttacks(monster: Creature) {
       }),
       monster.name,
     );
-    const rendered = convertLatexToWebText(replaced).trim().replace(/\s+/g, ' ');
+    const attackText = convertLatexToWebText(replaced).trim().replace(/\s+/g, ' ');
 
     let weaponAccuracy: number | undefined;
     if (clone.weapon) {
@@ -90,8 +90,7 @@ export function explainMonsterAttacks(monster: Creature) {
       console.log(`    Weapon        : ${clone.weapon} (weapon accuracy: ${weaponAccuracy})`);
     }
     console.log(`    Base Accuracy : ${baseAccuracy} (${isBrawling ? 'brawling' : 'standard'})`);
-    console.log(`    Raw Template  : ${rawTargeting.trim().replace(/\s+/g, ' ')}`);
-    console.log(`    Rendered      : ${rendered}`);
+    console.log(`    Attack text   : ${attackText}`);
 
     // --- Damage Explanation ---
     const rawHit = clone.attack?.hit || '';
