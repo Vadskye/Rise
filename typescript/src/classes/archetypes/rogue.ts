@@ -137,8 +137,8 @@ export function bardicMusic(): RankAbility[] {
         You can only learn bardic spells from bardic mystic spheres that you have access to.
 
         You automatically learn all \\glossterm{cantrips} from each of your mystic spheres.
-        In addition, you learn two rank 1 bardic \\glossterm{spells}.
-        You can also spend \\glossterm{insight points} to learn one additional rank 1 spell per insight point.
+        In addition, you learn two bardic \\glossterm{spells}.
+        You can also spend \\glossterm{insight points} to learn one additional spell per insight point.
 
         Bardic spells require you to use a Perform skill that you are trained with.
         There are four types of performances: dance, instrumental, manipulation, and vocal.
@@ -154,8 +154,7 @@ export function bardicMusic(): RankAbility[] {
         In addition, if a target of a sustained bardic spell stops being able to see or hear you, depending on the nature of your performance, the effect ends for them as if you had stopped sustaining the performance.
 
         When you gain access to a new \\glossterm{mystic sphere} or spell \\glossterm{rank},
-        you can forget any number of spells you know to learn that many new spells in exchange,
-        including spells of the higher rank.
+        you can forget any number of spells you know to learn that many new spells in exchange.
 
         \\advancement The maximum rank of bardic spells that you can learn is equal to your rank in this archetype.
         Bardic spells also increase in power in unique ways based on your rank in this archetype, as indicated in their descriptions.

@@ -16,15 +16,14 @@ export function arcaneMagic(): RankAbility[] {
         You can only learn arcane spells from arcane mystic spheres that you have access to.
 
         You automatically learn all \\glossterm{cantrips} from each of your mystic spheres.
-        In addition, you learn two rank 1 arcane \\glossterm{spells}.
-        You can also permanently reduce your \\glossterm{maximum stamina} to learn one additional rank 1 spell per stamina lost.
+        In addition, you learn two arcane \\glossterm{spells}.
+        You can also permanently reduce your \\glossterm{maximum stamina} to learn one additional spell per stamina lost.
 
         Arcane spells require both \\glossterm{verbal components} and \\glossterm{somatic components} to cast (see \\pcref{Ability Usage Components}).
         For details about mystic spheres and casting spells, see \\pcref{Spell and Ritual Mechanics}.
 
         When you gain access to a new \\glossterm{mystic sphere} or spell \\glossterm{rank},
-        you can forget any number of spells you know to learn that many new spells in exchange,
-        including spells of the higher rank.
+        you can forget any number of spells you know to learn that many new spells in exchange.
 
         \\advancement The maximum rank of arcane spells that you can learn is equal to your rank in this archetype.
         Arcane spells also increase in power in unique ways based on your rank in this archetype, as indicated in their descriptions.

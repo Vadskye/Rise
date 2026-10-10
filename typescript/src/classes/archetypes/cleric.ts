@@ -16,15 +16,14 @@ export function divineMagic(): RankAbility[] {
         You can only learn divine spells from divine mystic spheres that you have access to.
 
         You automatically learn all \\glossterm{cantrips} from each of your mystic spheres.
-        In addition, you learn two rank 1 divine \\glossterm{spells}.
-        You can also spend \\glossterm{insight points} to learn one additional rank 1 spell per insight point.
+        In addition, you learn two divine \\glossterm{spells}.
+        You can also spend \\glossterm{insight points} to learn one additional spell per insight point.
 
         Divine spells require \\glossterm{verbal components} to cast (see \\pcref{Ability Usage Components}).
         For details about mystic spheres and casting spells, see \\pcref{Spell and Ritual Mechanics}.
 
         When you gain access to a new \\glossterm{mystic sphere} or spell \\glossterm{rank},
-        you can forget any number of spells you know to learn that many new spells in exchange,
-        including spells of the higher rank.
+        you can forget any number of spells you know to learn that many new spells in exchange.
 
         \\advancement The maximum rank of divine spells that you can learn is equal to your rank in this archetype.
         Divine spells also increase in power in unique ways based on your rank in this archetype, as indicated in their descriptions.
@@ -73,8 +72,8 @@ export function divineSpellMastery(): RankAbility[] {
         You gain a \\plus1 accuracy bonus with that spell.
         You can choose this ability multiple times, choosing a different spell each time.
         \\parhead{Rituals} You gain the ability to perform divine rituals to create unique magical effects (see \\pcref{Spell and Ritual Mechanics}).
-        The maximum \\glossterm{rank} of divine ritual you can learn or perform is equal to the maximum \\glossterm{rank} of divine spell that you can cast.
-        In addition, you automatically learn one free divine ritual of each rank you have access to, including new ranks as you gain access to them.
+        The maximum \\glossterm{rank} of divine ritual you can learn or perform is equal to your rank in this archetype.
+        In addition, you automatically learn two free divine rituals, plus one more whenever you increase your rank in this archetype.
         You cannot choose this ability multiple times.
         \\parhead{Smiting Spell} Choose a damaging divine \\glossterm{spell} you know.
         It deals \\glossterm{extra damage} equal to your rank in this archetype.
