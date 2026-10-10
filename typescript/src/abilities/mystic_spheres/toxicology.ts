@@ -509,33 +509,32 @@ export const toxicology: MysticSphere = {
     },
 
     {
-      name: 'Healing Salve',
+      name: 'Healing Concoction',
 
-      cost: 'One \\glossterm{stamina} from the target.',
       // +1dr for short range, +1dr for healing bonus, so dr3.
       effect: `
-        Choose yourself or an \\glossterm{ally} within \\shortrange.
-        The target regains \\hprankthree.
+        You create a potion in an empty vial or similar container within \\medrange.
+        A creature can drink the potion as a \\glossterm{standard action} using a \\glossterm{free hand}.
+        When a creature drinks the potion, it regains \\hprankthree and spends one \\glossterm{stamina}.
         In addition, it removes all \\glossterm{poisons} affecting it and becomes \\briefly \\glossterm{immune} to poisons.
       `,
       rank: 1,
       roles: ['healing', 'cleanse', 'exertion'],
       scaling: 'healing',
-      tags: ['Life'],
+      tags: ['Life', 'Manifestation', 'Physical'],
     },
 
     {
-      name: 'Greater Healing Salve',
+      name: 'Greater Healing Concoction',
 
-      cost: 'One \\glossterm{stamina} from the target.',
       functionsLike: {
-        name: 'healing salve',
+        name: 'healing concoction',
         exceptThat: 'the healing increases to \\hpranksix.',
       },
       rank: 4,
       scaling: 'healing',
       roles: ['healing', 'cleanse', 'exertion'],
-      tags: ['Life'],
+      tags: ['Life', 'Manifestation', 'Physical'],
     },
 
     {
@@ -557,13 +556,13 @@ export const toxicology: MysticSphere = {
     {
       name: 'Efficient Bitter Remedy',
 
-      cost: 'Two \\glossterm{stamina} from the target.',
+      cost: 'One \\glossterm{stamina} from the target.',
       functionsLike: {
         name: 'bitter remedy',
-        exceptThat: `the vital wound created by this spell was no vital wound effect.`,
+        exceptThat: `the target only spends one stamina.`,
       },
       // narrative: '',
-      rank: 3,
+      rank: 4,
       roles: ['healing', 'exertion'],
       tags: ['Poison'],
     },
@@ -573,11 +572,14 @@ export const toxicology: MysticSphere = {
 
       cost: 'One \\glossterm{stamina} from the target.',
       effect: `
-        You or an \\glossterm{ally} you \\glossterm{touch} can remove a \\glossterm{condition}.
+        You create a potion in an empty vial or similar container within \\medrange.
+        A creature can drink the potion as a \\glossterm{standard action} using a \\glossterm{free hand}.
+        When a creature drinks the potion, it spends one \\glossterm{stamina} and can remove a \\glossterm{condition} affecting it.
       `,
-      rank: 3,
+      rank: 2,
       roles: ['cleanse', 'exertion'],
-      tags: ['Life'],
+      type: 'Sustain (attunable, minor)',
+      tags: ['Manifestation', 'Physical'],
     },
 
     // Frightened by you is 2.1 EA, or 1.4 EA with move action removal, which is r1.
@@ -674,67 +676,48 @@ export const toxicology: MysticSphere = {
       tags: ['Life', 'Manifestation'],
     },
 
-    // Self-only brace is 0.5 EA.
-    // Minor action activation doubles the EA?
+    // 0.5 + 0.4 EA.
     {
       name: 'Bracing Concoction',
 
       effect: `
-        You create a potion in an empty vial or similar container within \\shortrange.
-        A creature can drink the potion as a \\glossterm{minor action} using a \\glossterm{free hand}.
-        When a creature drinks the potion, it becomes \\briefly \\braced.
-      `,
-      rank: 4,
-      roles: ['boon', 'turtle'],
-      type: 'Sustain (attunable, minor)',
-      tags: ['Manifestation'],
-    },
-
-    // Self-only minor action empower is 0.8 EA?
-    {
-      name: 'Empowering Concoction',
-
-      effect: `
-        You create a potion in an empty vial or similar container within \\shortrange.
-        A creature can drink the potion as a \\glossterm{minor action} using a \\glossterm{free hand}.
-        When a creature drinks the potion, it becomes \\empowered that turn.
-      `,
-      rank: 1,
-      roles: ['boon', 'focus'],
-      type: 'Sustain (attunable, minor)',
-      tags: ['Manifestation'],
-    },
-
-    // Self-only minor action focus is 0.8 EA. Arbitrarily kick this up from empowering
-    // concoction since it's more versatile and we want a decent rank spread.
-    {
-      name: 'Focusing Concoction',
-
-      effect: `
-        You create a potion in an empty vial or similar container within \\shortrange.
-        A creature can drink the potion as a \\glossterm{minor action} action using a \\glossterm{free hand}.
-        When a creature drinks the potion, it becomes \\focused that turn.
+        You create a potion in an empty vial or similar container within \\medrange.
+        A creature can drink the potion as a \\glossterm{standard action} using a \\glossterm{free hand}.
+        When a creature drinks the potion, it becomes \\briefly \\braced and \\focused.
       `,
       rank: 2,
-      roles: ['boon', 'focus'],
+      roles: ['boon', 'turtle'],
       type: 'Sustain (attunable, minor)',
-      tags: ['Manifestation'],
+      tags: ['Manifestation', 'Physical'],
     },
 
-    // Self-only minor action maximize is 1.4 EA, so this needs downsides to function
+    // 0.7 + 0.3 EA.
+    {
+      name: 'Concoction of Power',
+
+      effect: `
+        You create a potion in an empty vial or similar container within \\medrange.
+        A creature can drink the potion as a \\glossterm{standard action} using a \\glossterm{free hand}.
+        When a creature drinks the potion, it becomes \\briefly \\empowered and \\maximized.
+      `,
+      rank: 4,
+      roles: ['boon', 'focus'],
+      type: 'Sustain (attunable, minor)',
+      tags: ['Manifestation', 'Physical'],
+    },
+
     {
       name: 'Maximal Concoction',
 
       effect: `
         You create a potion in an empty vial or similar container within \\shortrange.
-        A creature can drink the potion as a \\glossterm{minor action} using a \\glossterm{free hand}.
-        When a creature drinks the potion, it becomes \\maximized until its next turn.
-        When that effect ends, it takes \\damagerankfivelow and is \\briefly \\sickened.
+        A creature can drink the potion as a \\glossterm{standard action} using a \\glossterm{free hand}.
+        When a creature drinks the potion, it becomes \\briefly \\maximized until its next turn.
       `,
-      rank: 5,
+      rank: 1,
       roles: ['boon', 'focus'],
       type: 'Sustain (attunable, minor)',
-      tags: ['Manifestation'],
+      tags: ['Manifestation', 'Physical'],
     },
 
     // Self-only double prime is 1.6 EA
@@ -743,14 +726,13 @@ export const toxicology: MysticSphere = {
 
       effect: `
         You create a potion in an empty vial or similar container within \\shortrange.
-        A creature can drink the potion as a \\glossterm{minor action} using a \\glossterm{free hand}.
-        When a creature drinks the potion, it becomes \\primed until its next turn.
-        When that effect ends, it takes \\damageranksevenlow and is \\briefly \\sickened.
+        A creature can drink the potion as a \\glossterm{standard action} using a \\glossterm{free hand}.
+        When a creature drinks the potion, it becomes \\briefly \\primed.
       `,
-      rank: 7,
+      rank: 3,
       roles: ['boon', 'focus'],
       type: 'Sustain (attunable, minor)',
-      tags: ['Manifestation'],
+      tags: ['Manifestation', 'Physical'],
     },
 
     // Briefly dazzled with damage is 1.6 EA, so r2. Spend +1r for more area and +1r for
