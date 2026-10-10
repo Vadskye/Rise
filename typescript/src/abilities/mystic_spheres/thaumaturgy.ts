@@ -196,21 +196,6 @@ export const thaumaturgy: MysticSphere = {
     },
 
     {
-      name: 'Spellvoid',
-
-      effect: `
-        Whenever you are targeted by a spell cast by another creature, before determining if it hits you, you absorb the spell.
-        It has no effect on you.
-        This does not prevent the spell from affecting other creatures.
-        You cannot voluntarily allow spells cast by other creatures to affect you while this effect lasts.
-        After you absorb three spells in this way, this ability is \\glossterm{dismissed}.
-      `,
-      rank: 7,
-      roles: ['attune'],
-      type: 'Attune (deep)',
-    },
-
-    {
       name: 'Enhance Magic -- Might',
 
       effect: `
