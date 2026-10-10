@@ -501,15 +501,20 @@ export function shifter(): RankAbility[] {
       description: `
         \\begin{magicalactiveability}{Shifting Claw}{Standard action}
           \\rankline
-          Choose Armor, Reflex, or Fortitude defense, or all three defenses.
-          Make a \\glossterm{strike} against your chosen defenses with a \\glossterm{natural weapon}.
-          If you chose all three defenses, the strike deals double damage.
+          Make a \\glossterm{strike} that deals double \\glossterm{weapon damage} using \\glossterm{natural weapons}.
+          In addition, you choose one of the following benefits for the strike:
+          \\begin{itemize}
+            \\item Constricting: If the target is \\grappled or \\prone, you can use your \\glossterm{brawling accuracy} with the strike instead of your normal accuracy. 
+            \\item Enlarged: You become one \\glossterm{size category} larger, and the strike gains the \\weapontag{Sweeping} (1) \\glossterm{weapon tag}. You return to your normal size at the end of your turn.
+            \\item Flurry: You roll the attack roll twice and keep the higher result. In exchange, you are \\briefly \\distracted after making the strike.
+            \\item Rending: Each target \\glossterm{injured} by the strike \\glossterm{briefly} \\bleeds for half the damage dealt by the strike.   
+          \\end{itemize}
 
           \\rankline
-          \\rank{4} You gain a \\plus1 accuracy bonus with the strike.
-          \\rank{5} The strike deals 1d6 \\glossterm{extra damage}.
-          \\rank{6} The extra damage increases to 2d6.
-          \\rank{7} You deal double damage by default, or triple damage if you attack three defenses.
+          \\rank{4} The strike deals \\glossterm{extra damage} equal to half your \\glossterm{power}.
+          \\rank{5} The strike deals triple \\glossterm{weapon damage}.
+          \\rank{6} The extra damage increases to be equal to your power.
+          \\rank{7} The strike deals double damage, but the extra damage is reduced to half your power.
         \\end{magicalactiveability}
       `,
     },
