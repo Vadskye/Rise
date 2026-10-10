@@ -960,6 +960,7 @@ export const rituals: RitualDefinition[] = [
     rank: 6,
     roles: ['narrative'],
     spheres: ['Chronomancy'],
+    tags: ['Soul'],
   },
   {
     staminaCost: false,

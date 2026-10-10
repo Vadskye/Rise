@@ -6600,7 +6600,7 @@
           "passiveAbilities": [
             {
               "name": "Soulfire",
-              "effect": "\n              Whenever the $name \\glossterm{injures} an \\glossterm{ensouled} creature, that creature is \\briefly unable to regain \\glossterm{hit points}.\n            ",
+              "effect": "\n              Whenever the $name \\glossterm{injures} an \\glossterm{ensouled} creature, that creature is \\briefly unable to regain \\glossterm{hit points}. This ability has the \\atSoul tag.\n            ",
               "isMagical": true
             }
           ],
@@ -7672,7 +7672,10 @@
               "attack": {
                 "hit": "As a \\glossterm{condition}, the target takes \\damagerankone whenever it deals damage.",
                 "targeting": "Make an attack vs. Mental against one creature within \\medrange.\nYou gain a \\plus4 accuracy bonus if the target has killed a living creature within the last 24 hours."
-              }
+              },
+              "tags": [
+                "Soul"
+              ]
             }
           ],
           "id": "34c7cbb9-b9d8-4fb8-9d98-43f0aaa3cb45"

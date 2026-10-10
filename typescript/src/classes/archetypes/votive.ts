@@ -147,9 +147,10 @@ export function covenantKeeper(): RankAbility[] {
         In exchange, you are \\glossterm{injured} whenever you are below your maximum hit points, regardless of your normal \\glossterm{injury point}.
         You must be \\trait{blooded} to choose this covenant.
 
-        \\subcf{Covenant of Soulcursing} Whenever you would inflict a \\glossterm{condition} on an \\trait{ensouled} creature that is not already under the effects of a Curse, that effect becomes a Curse on it instead of a condition.
+        \\subcf{Covenant of Soulcursing} Whenever you would inflict a \\glossterm{condition} on a creature that is not already under the effects of a Curse, that effect becomes a Curse on it instead of a condition.
         It is removed when the creature finishes a \\glossterm{short rest}.
         If the condition would normally have a special way to remove it, such as the \\spell{ignition} spell, that also removes the curse.
+        This ability has the \\atSoul tag.
 
         In exchange, whenever you would gain a \\glossterm{condition} that you are not \\buff{immune} to, that effect becomes a \\atCurse on you instead of a condition.
         If you were already affected by a Curse from this ability, the old Curse becomes a condition instead.
