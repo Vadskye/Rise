@@ -21,14 +21,14 @@ export function pactboundWarrior(): RankAbility[] {
         You may spend \\glossterm{insight points} to gain access to one additional combat style per insight point, including combat styles other than those from your soulkeeper.
         You can only learn pact \\glossterm{maneuvers} from pact combat styles that you have access to.
 
-        You learn two rank 1 pact \\glossterm{maneuvers}.
+        You learn two pact \\glossterm{maneuvers}.
         You may spend \\glossterm{insight points} to learn one additional maneuver per insight point.
 
         When you gain access to a new \\glossterm{rank} in this archetype,
-        you can exchange any number of maneuvers you know for other maneuvers,
-        including maneuvers of a higher rank.
+        you can exchange any number of maneuvers you know for other maneuvers.
 
-        \\advancement Some pact maneuvers also increase in power in unique ways based on your rank in this archetype, as indicated in their descriptions.
+        \\advancement The maximum rank of pact maneuvers that you can learn is equal to your rank in this archetype.
+        Some pact maneuvers also increase in power in unique ways based on your rank in this archetype, as indicated in their descriptions.
       `,
     },
     {
@@ -83,15 +83,6 @@ export function pactboundWarrior(): RankAbility[] {
       `,
     },
     {
-      complexity: 1,
-      name: 'Pact Maneuvers+',
-      isMagical: false,
-      rank: 3,
-      description: `
-        You gain access to rank 3 pact maneuvers.
-      `,
-    },
-    {
       complexity: 0,
       name: 'Augmented Maneuvers+',
       isMagical: false,
@@ -102,29 +93,11 @@ export function pactboundWarrior(): RankAbility[] {
     },
     {
       complexity: 0,
-      name: 'Pact Maneuvers+',
-      isMagical: false,
-      rank: 5,
-      description: `
-        You gain access to rank 5 pact maneuvers.
-      `,
-    },
-    {
-      complexity: 0,
       name: 'Augmented Maneuvers+',
       isMagical: false,
       rank: 6,
       description: `
         You can also choose an augment for each of your rank 5 pact maneuvers.
-      `,
-    },
-    {
-      complexity: 0,
-      name: 'Pact Maneuvers+',
-      isMagical: false,
-      rank: 7,
-      description: `
-        You gain access to rank 7 pact maneuvers.
       `,
     },
   ];

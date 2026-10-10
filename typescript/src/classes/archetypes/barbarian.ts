@@ -307,41 +307,14 @@ export function primalWarrior(): RankAbility[] {
         You may spend \\glossterm{insight points} to gain access to one additional combat style per insight point, including combat styles other than those three.
         You can only learn primal \\glossterm{maneuvers} from primal combat styles that you have access to.
 
-        You learn two rank 1 primal \\glossterm{maneuvers}.
+        You learn two primal \\glossterm{maneuvers}.
         You may spend \\glossterm{insight points} to learn one additional maneuver per insight point.
 
         When you gain access to a new \\glossterm{rank} in this archetype,
-        you can exchange any number of maneuvers you know for other maneuvers,
-        including maneuvers of a higher rank.
+        you can exchange any number of maneuvers you know for other maneuvers.
 
-        \\advancement Some primal maneuvers also increase in power in unique ways based on your rank in this archetype, as indicated in their descriptions.
-      `,
-    },
-    {
-      complexity: 0,
-      name: 'Primal Maneuvers+',
-      isMagical: false,
-      rank: 3,
-      description: `
-        You gain access to rank 3 primal maneuvers.
-      `,
-    },
-    {
-      complexity: 0,
-      name: 'Primal Maneuvers+',
-      isMagical: false,
-      rank: 5,
-      description: `
-        You gain access to rank 5 primal maneuvers.
-      `,
-    },
-    {
-      complexity: 0,
-      name: 'Primal Maneuvers+',
-      isMagical: false,
-      rank: 7,
-      description: `
-        You gain access to rank 7 primal maneuvers.
+        \\advancement The maximum rank of primal maneuvers that you can learn is equal to your rank in this archetype.
+        Some primal maneuvers also increase in power in unique ways based on your rank in this archetype, as indicated in their descriptions.
       `,
     },
     {
