@@ -59,6 +59,7 @@ By rank:
   Dazed              & 4d           & 1     & 0                & 9         \\
   Dazzled            & 1d           & 2d    & 3d               & 3         \\
   Deafened           & 0d           & 1d    & 2d               & 0         \\
+  Distracted         & 1            & 6     & 7                & 7         \\
   Exposed            & 1d           & 2d    & N/A              & N/A       \\
   Fling 15' (ranged) & 4d           & N/A   & N/A              & N/A       \\
   Fling 15' (melee)  & 3d           & N/A   & N/A              & N/A       \\
