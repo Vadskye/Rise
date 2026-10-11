@@ -120,6 +120,79 @@ export const channelDivinity: MysticSphere = {
     },
 
     {
+      name: 'Light of Divinity',
+
+      // Rank 1 Spell
+      // Range: Short (mod +1)
+      // Debuff: Dazzled (mod -1)
+      // Result: 1 + 1 - 1 = dr1
+      attack: {
+        hit: `
+          \\damagerankone, and the target is \\briefly \\dazzled.
+        `,
+        targeting: `
+          Make an attack vs. Mental against one creature within \\shortrange.
+        `,
+      },
+      rank: 1,
+      roles: ['burst', 'trip'],
+      scaling: 'damage',
+      tags: ['Visual'],
+    },
+
+    {
+      name: 'Mighty Light of Divinity',
+
+      functionsLike: {
+        name: 'Light of Divinity',
+        exceptThat:
+          'the damage increases to \\damagerankfour. On injury, the target also becomes dazzled as a \\glossterm{condition}.',
+      },
+      rank: 4,
+      roles: ['burst', 'trip'],
+      scaling: 'damage',
+      tags: ['Visual'],
+    },
+
+    {
+      name: 'Frightening Condemnation',
+
+      // Rank 3 Spell
+      // Range: Short (mod +1)
+      // Debuff: Frightened (mod -1)
+      // Result: 3 + 1 - 1 = dr3
+      attack: {
+        hit: `
+          \\damagerankthree, and the target is \\briefly \\frightened by you.
+        `,
+        injury: `
+          The target is also frightened by you as a \\glossterm{condition}.
+        `,
+        targeting: `
+          Make an attack vs. Mental against one creature within \\shortrange.
+        `,
+      },
+      rank: 3,
+      roles: ['burst', 'trip', 'maim'],
+      scaling: 'damage',
+      tags: ['Emotion'],
+    },
+
+    {
+      name: 'Mighty Frightening Condemnation',
+
+      functionsLike: {
+        name: 'Frightening Condemnation',
+        exceptThat:
+          'the damage increases to \\damageranksix. On injury, the target is also \\briefly \\panicked by you.',
+      },
+      rank: 6,
+      roles: ['burst', 'trip', 'maim'],
+      scaling: 'damage',
+      tags: ['Emotion'],
+    },
+
+    {
       name: 'Retributive Judgment',
 
       // Rank 2 Spell
