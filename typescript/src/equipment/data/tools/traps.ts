@@ -72,7 +72,7 @@ export function traps(): Tool[] {
           After the trap triggers, it must be manually deployed again.
           \\hit $dr4l piercing damage.
           If the target takes damage, it is \\slowed until it breaks free of the trap.
-          Breaking free of the trap requires making a DV 10 Strength or Devices check as a standard action.
+          Breaking free of the trap requires making a DV 10 Might or Devices check as a standard action.
         `,
         upgrades: [
           {
@@ -80,6 +80,13 @@ export function traps(): Tool[] {
             short_description: 'Deals $dr6l damage and immobilizes',
             description: `
               The accuracy increases to $accuracy, the Awareness DV increases to ${awareness_dv(4)}, and the damage increases to $dr6l.
+            `,
+          },
+          {
+            rank: 6,
+            short_description: 'Deals $dr8l damage and immobilizes',
+            description: `
+              The accuracy increases to $accuracy, the Awareness DV increases to ${awareness_dv(6)}, and the damage increases to $dr8l.
             `,
           },
         ],
