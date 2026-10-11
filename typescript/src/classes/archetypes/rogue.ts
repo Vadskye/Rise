@@ -123,7 +123,7 @@ export function assassin(): RankAbility[] {
   ];
 }
 
-export function bardicMusic(): RankAbility[] {
+export function bard(): RankAbility[] {
   return [
     {
       complexity: 3,
@@ -472,8 +472,8 @@ export function assassinModifiers(creature: Creature, rank: number) {
   }
 }
 
-export function bardicMusicModifiers(creature: Creature, rank: number) {
-  applyArchetypeActiveAbilities(creature, bardicMusic(), rank);
+export function bardModifiers(creature: Creature, rank: number) {
+  applyArchetypeActiveAbilities(creature, bard(), rank);
   if (rank >= 4) {
     creature.addCustomModifier({
       name: 'Rhythm of War',

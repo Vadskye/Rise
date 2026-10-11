@@ -80,7 +80,7 @@ export function getArchetypeClass(archetype: ClassArchetype): Class {
       return 'Ranger';
     // Rogue
     case 'Assassin':
-    case 'BardicMusic':
+    case 'Bard':
     case 'CombatTrickster':
     case 'JackOfAllTrades':
     case 'SuaveScoundrel':
@@ -206,8 +206,8 @@ export function getArchetypeName(archetype: ClassArchetype): string {
       return 'Wilderness Warrior';
     case 'Assassin':
       return 'Assassin';
-    case 'BardicMusic':
-      return 'Bardic Music';
+    case 'Bard':
+      return 'Bard';
     case 'CombatTrickster':
       return 'Combat Trickster';
     case 'JackOfAllTrades':
@@ -403,7 +403,7 @@ export function getArchetypeShortDescription(archetype: ClassArchetype): string 
       description =
         'This archetype improves your agility, stealth, and combat prowess against unaware targets.';
       break;
-    case 'BardicMusic':
+    case 'Bard':
       description =
         'This archetype grants you the ability to inspire your allies and impair your foes with musical performances.';
       break;
@@ -541,8 +541,8 @@ export function getArchetypeRankAbilities(archetype: ClassArchetype): RankAbilit
     // Rogue
     case 'Assassin':
       return rogue.assassin();
-    case 'BardicMusic':
-      return rogue.bardicMusic();
+    case 'Bard':
+      return rogue.bard();
     case 'CombatTrickster':
       return rogue.combatTrickster();
     case 'JackOfAllTrades':
@@ -757,7 +757,7 @@ export function getArchetypesForClass(cls: Class): ClassArchetype[] {
     case 'Ranger':
       return ['Beastmaster', 'BoundaryWarden', 'Huntmaster', 'Scout', 'WildernessWarrior'];
     case 'Rogue':
-      return ['Assassin', 'BardicMusic', 'CombatTrickster', 'JackOfAllTrades', 'SuaveScoundrel'];
+      return ['Assassin', 'Bard', 'CombatTrickster', 'JackOfAllTrades', 'SuaveScoundrel'];
     case 'Sorcerer':
       return [
         'SorcererArcaneMagic',

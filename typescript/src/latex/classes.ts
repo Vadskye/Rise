@@ -69,7 +69,7 @@ export function generateArchetypeDescriptions(): string {
     'WildernessWarrior',
     // Rogue
     'Assassin',
-    'BardicMusic',
+    'Bard',
     'CombatTrickster',
     'JackOfAllTrades',
     'SuaveScoundrel',

@@ -67,7 +67,7 @@ export type ClassArchetype =
   | 'WildernessWarrior'
   // Rogue
   | 'Assassin'
-  | 'BardicMusic'
+  | 'Bard'
   | 'CombatTrickster'
   | 'JackOfAllTrades'
   | 'SuaveScoundrel'
