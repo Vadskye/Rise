@@ -463,7 +463,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       roles: ['attune'],
       scaling: {
         2: `
-          If you create body armor or a weapon, it can be created from any metallic special material other than cold iron and dragonscale.
+          If you create body armor or a weapon, it can be created from any metallic special material other than cold iron and draconic materials (see \\pcref{Armor Special Materials}, and \\pcref{Weapon Special Materials}).
           Its rank cannot exceed your spellcasting rank with this spell.
         `,
       },

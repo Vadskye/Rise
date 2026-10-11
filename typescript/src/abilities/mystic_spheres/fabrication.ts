@@ -54,7 +54,7 @@ export const fabrication: MysticSphere = {
       roles: ['attune'],
       scaling: {
         2: `
-          If you create body armor or a weapon, it can be created from any special material other than cold iron, dragonscale, and dragonhide (see \\pcref{Armor Special Materials}, and \\pcref{Weapon Special Materials}).
+          If you create body armor or a weapon, it can be created from any special material other than cold iron and draconic materials (see \\pcref{Armor Special Materials}, and \\pcref{Weapon Special Materials}).
           Its rank cannot exceed your spellcasting rank with this spell.
         `,
       },
