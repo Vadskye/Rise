@@ -199,9 +199,9 @@ export const thaumaturgy: MysticSphere = {
       name: 'Enhance Magic -- Might',
 
       effect: `
-        Whenever you cast a non-attunable spell, you can activate this effect as a \\glossterm{minor action}.
-        If you do, the spell deals 1d6 \\glossterm{extra damage} this turn.
-        After you enhance a spell in this way, this ability is \\glossterm{dismissed}.
+        You can enhance your magic as a \\glossterm{minor action}.
+        When you do, you deal 1d6 \\glossterm{extra damage} with \\magical abilities this turn.
+        At the end of that turn, this ability is \\glossterm{dismissed}.
       `,
       rank: 1,
       roles: ['attune'],
