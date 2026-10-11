@@ -92,10 +92,10 @@ t.test(
     t.match(output, /Base Dice\s+:\s+1d6/);
     t.match(output, /Power Added\s+:\s+\+8d6 \(magical power 16, 1d6 per 2 power\)/);
 
-    // Cause Fear: Non-damaging attack, should have Rendered but no Damage line
+    // Cause Fear: Non-damaging attack, should have Attack text but no Damage line
     const causeFearSection = output.slice(output.indexOf('Cause Fear'));
     const nextSection = causeFearSection.slice(0, causeFearSection.indexOf('* Tentacle Slam'));
-    t.match(nextSection, /Rendered\s+:/);
+    t.match(nextSection, /Attack text\s+:/);
     t.notMatch(nextSection, /Damage\s+:/);
   },
 );
