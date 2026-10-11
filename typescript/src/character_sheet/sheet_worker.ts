@@ -1766,7 +1766,7 @@ function handleDurability() {
       string: ['base_class'],
     },
     callback: (v) => {
-      const durabilityFromLevel = Math.floor(v.level / 2);
+      const durabilityFromLevel = v.level - calculateStandardRank(v.level);
       const durabilityFromClass = BASE_CLASS_MODIFIERS[v.base_class]?.durability || 0;
       const durability =
         durabilityFromLevel +
@@ -1839,7 +1839,7 @@ function handleHitPoints() {
     },
     callback: (v) => {
       const rank = calculateStandardRank(v.level);
-      const hpFromDurability = v.durability * rank * 2;
+      const hpFromDurability = v.durability * rank;
 
       const crMultiplier = v.elite ? 3 : 1;
 
@@ -1851,7 +1851,7 @@ function handleHitPoints() {
         hit_points: undefined,
         hit_points_explanation: formatCombinedExplanation(v.miscExplanation, [
           { name: 'base', value: flatHp },
-          { name: rank + ' * durability * 2', value: hpFromDurability },
+          { name: rank + ' * durability', value: hpFromDurability },
           { name: 'CR', value: monsterTotalHp - playerTotalHp },
         ]),
         hit_points_max: monsterTotalHp,
@@ -1883,14 +1883,14 @@ function handleInjuryPoint() {
       }
       const rank = calculateStandardRank(v.level);
       const flatIp = 5;
-      const ipFromLevel = (rank * v.level);
+      const ipFromLevel = Math.floor((rank * v.level) / 2);
       const injury_point = flatIp + ipFromLevel + v.misc;
 
       setAttrs({
         injury_point: injury_point,
         injury_point_explanation: formatCombinedExplanation(v.miscExplanation, [
           { name: 'base', value: flatIp },
-          { name: `${rank} * level`, value: ipFromLevel },
+          { name: `half (${rank} * level)`, value: ipFromLevel },
         ]),
       });
     },
