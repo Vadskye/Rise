@@ -496,27 +496,26 @@ export const staffs = (): Implement[] => [
   }),
   staff({
     name: 'Arcing Staff',
-    rank: 4,
-    short_description: 'Is charged and chains',
+    rank: 3,
+    short_description: 'Is charged and can chain',
     description: `
       This staff constantly crackles with electricity.
       You can suppress or resume this charge as a \\glossterm{free action}.
       While the staff is charged:
       \\begin{raggeditemize}
           \\item All \\magical abilities you use have the \\atElectricity tag.
-          \\item All \\glossterm{targeted} damaging \\magical abilities you use \\glossterm{chain} once.
-              % TODO: wording?
-              This does not affect magical abilities that do not deal damage, even if they increase the damage dealt by the target.
           \\item It sheds light in a 5 foot radius of \\glossterm{bright illumination}.
+          \\item Whenever you use a \\glossterm{targeted} damaging \\magical ability, you can spend one \\glossterm{stamina} to make it \\glossterm{chain} once.
       \\end{raggeditemize}
     `,
-    tags: ['Fire'],
+    tags: ['Electricity'],
     upgrades: [
       {
         rank: 7,
-        short_description: '+1d4 damage, is charged and chains',
+        short_description: 'Is charged and chains',
+        // TODO: calculate EA
         description:
-          'While the staff is charged, your damaging \\magical abilities also deal 1d4 \\glossterm{extra damage}.',
+          'You do not have to spend stamina to make your abilities chain.',
       },
     ],
   }),
