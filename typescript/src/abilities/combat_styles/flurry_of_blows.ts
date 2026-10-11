@@ -177,7 +177,7 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         You can sheathe any non-\\weapontag{Heavy} weapons you wield, then draw one or two non-\\weapontag{Heavy} weapons into your \\glossterm{free hands}.
-        Then, you can make a \\glossterm{strike} with a -1 accuracy penalty.
+        Then, you can make a \\glossterm{strike}.
       `,
       rank: 1,
       roles: ['generator'],
