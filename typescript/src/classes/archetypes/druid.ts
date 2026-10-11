@@ -507,7 +507,7 @@ export function shifter(): RankAbility[] {
             \\item Constricting: If the target is \\grappled or \\prone, you can use your \\glossterm{brawling accuracy} with the strike instead of your normal accuracy. 
             \\item Enlarged: You become one \\glossterm{size category} larger, and the strike gains the \\weapontag{Sweeping} (1) \\glossterm{weapon tag}. You return to your normal size at the end of your turn.
             \\item Flurry: You roll the attack roll twice and keep the higher result. In exchange, you are \\briefly \\distracted after making the strike.
-            \\item Rending: Each target \\glossterm{injured} by the strike \\glossterm{briefly} \\bleeds for half the damage dealt by the strike.   
+            \\item Rending: Each target \\glossterm{injured} by the strike \\glossterm{briefly} \\glossterm{bleeds} for half the damage dealt by the strike.   
           \\end{itemize}
 
           \\rankline
