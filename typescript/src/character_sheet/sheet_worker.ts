@@ -1882,7 +1882,7 @@ function handleInjuryPoint() {
         return;
       }
       const rank = calculateStandardRank(v.level);
-      const flatIp = 10;
+      const flatIp = 5;
       const ipFromLevel = Math.floor((rank * v.level) / 2);
       const injury_point = flatIp + ipFromLevel + v.misc;
 
