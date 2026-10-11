@@ -50,3 +50,8 @@
   \subsection{Rounding}
     In general, if you encounter a fractional number, you round it down.
     For negative numbers, this means rounding it away from 0, not towards 0.
+
+    \subsubsection{Avoiding Rounding}
+      If you are adding two halves of the same value together, avoid rounding either half individually.
+      For example, if a rank 2 dragon druid with 5 Strength had the \ability{draconic power} ability and used \ability{elemental infusion}, it would add half its Strength twice to its power with the ability.
+      In that case, it would add its full 5 Strength to its power, rather than adding 2 from \ability{draconic power} and 2 from \ability{elemental infusion}.
