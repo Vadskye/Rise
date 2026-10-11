@@ -1813,16 +1813,17 @@ export const rituals: RitualDefinition[] = [
 
   {
     staminaCost: true,
-    name: 'Locate Creature',
+    name: 'Locate Entity',
 
     usageTime: 'one hour',
     effect: `
-      When you perform this ritual, choose a creature.
-      You must have seen the chosen creature in person and either be able to clearly visualize its appearance or know its proper name to find it with this ritual.
-      A creature without a proper name cannot be identified by name in this way.
-      If you specify the chosen creature's appearance incorrectly, or if it has significantly changed its appearance, you may accidentally affect a different creature, or the ritual may simply fail.
+      When you perform this ritual, describe a creature or \\glossterm{unattended} object.
+      You must have seen the chosen creature or object in person and either be able to clearly visualize its appearance or know its proper name to find it with this ritual.
+      A creature or object without a proper name cannot be identified by name in this way.
+      If you specify the target's appearance incorrectly, or if it has significantly changed its appearance, you may accidentally affect a different creature or object, or the ritual may simply fail.
 
-      If the creature is within 500 miles of your location, you unerringly learn the relative direction from your location to the location it was in when you started performing this ritual.
+      If a matching creature or object is within 500 miles of your location, you unerringly learn the relative direction from the ritual's location to its location at the moment when the ritual ends.
+      If more than one creature or object matches your description, you find the closest match.
     `,
 
     rank: 3,
@@ -1832,16 +1833,32 @@ export const rituals: RitualDefinition[] = [
 
   {
     staminaCost: true,
-    name: 'Locate Object',
+    name: 'Precise Locate Entity',
 
     usageTime: 'one hour',
     functionsLike: {
       exceptThat: `
-        it locates \\glossterm{unattended} objects instead of creatures.
+        you also learn the exact distance to the creature or object.
       `,
-      name: 'locate creature',
+      name: 'locate entity',
     },
-    rank: 3,
+    rank: 5,
+    roles: ['narrative'],
+    spheres: ['Revelation'],
+  },
+
+  {
+    staminaCost: true,
+    name: 'Locate Entities',
+
+    usageTime: 'one hour',
+    functionsLike: {
+      exceptThat: `
+        you learn the direction to up to ten matching creatures or objects. 
+      `,
+      name: 'locate entity',
+    },
+    rank: 6,
     roles: ['narrative'],
     spheres: ['Revelation'],
   },
