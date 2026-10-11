@@ -481,6 +481,18 @@ t.test('can calculate mundane power', (t) => {
     });
   });
 
+  t.test('for wizard with Precognitive Offense (intelligence for mundane power)', (t) => {
+    setStandardWizard();
+    setAttrs({ mundane_power_attribute: 'intelligence' });
+    getAttrs(['mundane_power', 'mundane_power_explanation'], (attrs) => {
+      t.match(attrs, {
+        mundane_power: 8,
+        mundane_power_explanation: '+5 (half level)  +3 (Int)',
+      });
+      t.end();
+    });
+  });
+
   t.end();
 });
 
@@ -528,6 +540,18 @@ t.test('can calculate accuracy', (t) => {
       t.match(attrs, {
         accuracy: 6,
         accuracy_explanation: '+5 (level)  +1 (Per)',
+      });
+      t.end();
+    });
+  });
+
+  t.test('for wizard using intelligence for accuracy', (t) => {
+    setStandardWizard();
+    setAttrs({ accuracy_attribute: 'intelligence' });
+    getAttrs(['accuracy', 'accuracy_explanation'], (attrs) => {
+      t.match(attrs, {
+        accuracy: 6,
+        accuracy_explanation: '+5 (level)  +1.5 (Int)',
       });
       t.end();
     });

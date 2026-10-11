@@ -575,6 +575,37 @@ def special_rules_step() -> str:
                     ],
                 ),
             ),
+            underlabel(
+                "Accuracy attribute",
+                select(
+                    {"class": "accuracy-attribute", "name": "accuracy_attribute"},
+                    [
+                        option({"value": "perception"}, "Perception (default)"),
+                        option({"value": "strength"}, "Strength"),
+                        option({"value": "dexterity"}, "Dexterity"),
+                        option({"value": "constitution"}, "Constitution"),
+                        option({"value": "intelligence"}, "Intelligence"),
+                        option({"value": "willpower"}, "Willpower"),
+                    ],
+                ),
+            ),
+            underlabel(
+                "Mundane power attribute",
+                select(
+                    {
+                        "class": "mundane-power-attribute",
+                        "name": "mundane_power_attribute",
+                    },
+                    [
+                        option({"value": "strength"}, "Strength (default)"),
+                        option({"value": "dexterity"}, "Dexterity"),
+                        option({"value": "constitution"}, "Constitution"),
+                        option({"value": "intelligence"}, "Intelligence"),
+                        option({"value": "perception"}, "Perception"),
+                        option({"value": "willpower"}, "Willpower"),
+                    ],
+                ),
+            ),
         ],
         visibility="player only",
     )

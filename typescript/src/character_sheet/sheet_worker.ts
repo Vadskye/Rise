@@ -855,20 +855,32 @@ function handleAccuracy() {
   onGet({
     variables: {
       miscName: 'accuracy',
-      numeric: ['level', 'perception', 'stamina_penalty'],
+      numeric: [
+        'level',
+        'stamina_penalty',
+        'perception',
+        'strength',
+        'dexterity',
+        'constitution',
+        'intelligence',
+        'willpower',
+      ],
+      string: ['accuracy_attribute'],
       boolean: ['elite', 'is_monster'],
     },
     callback: (v) => {
+      const attribute = v.accuracy_attribute || 'perception';
+      const attributeVal = v[attribute] || 0;
       const levelModifier = v.level / 2;
-      const perceptionModifier = v.perception / 2;
-      const levelishModifier = Math.floor(levelModifier + perceptionModifier);
+      const attributeModifier = attributeVal / 2;
+      const levelishModifier = Math.floor(levelModifier + attributeModifier);
       const crModifier = v.is_monster ? calcAccuracyCrScaling(v.level, v.elite) : 0;
       const accuracy = v.misc + levelishModifier + crModifier - v.stamina_penalty;
       setAttrs({
         accuracy,
         accuracy_explanation: formatCombinedExplanation(v.miscExplanation, [
           { name: 'level', value: levelModifier },
-          { name: 'Per', value: perceptionModifier },
+          { name: ATTRIBUTE_SHORTHAND[attribute] || attribute, value: attributeModifier },
           { name: 'stamina penalty', value: -v.stamina_penalty },
           { name: 'Monster', value: crModifier },
         ]),
@@ -2291,15 +2303,26 @@ function handleMundanePower() {
   onGet({
     variables: {
       miscName: 'mundane_power',
-      numeric: ['level', 'strength'],
+      numeric: [
+        'level',
+        'strength',
+        'dexterity',
+        'constitution',
+        'intelligence',
+        'perception',
+        'willpower',
+      ],
+      string: ['mundane_power_attribute'],
       boolean: ['elite', 'is_monster'],
     },
     callback: (v) => {
+      const attribute = v.mundane_power_attribute || 'strength';
+      const attributeVal = v[attribute] || 0;
       const monsterBonus = v.is_monster ? calcMonsterPowerBonus(v.level) : 0;
       const eliteModifier = v.elite ? 2 : 0;
       const totalValue = Math.max(
         0,
-        Math.floor(v.level / 2) + v.strength + monsterBonus + v.misc + eliteModifier,
+        Math.floor(v.level / 2) + attributeVal + monsterBonus + v.misc + eliteModifier,
       );
 
       setAttrs({
@@ -2310,8 +2333,8 @@ function handleMundanePower() {
             value: Math.floor(v.level / 2),
           },
           {
-            name: `Str`,
-            value: v.strength,
+            name: ATTRIBUTE_SHORTHAND[attribute] || attribute,
+            value: attributeVal,
           },
           {
             name: `Monster`,
