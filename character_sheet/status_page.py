@@ -383,7 +383,6 @@ def custom_statistic(i: str) -> str:
                     option({"value": "knowledge_items"}, "Knowledge (items)"),
                     option({"value": "knowledge_local"}, "Knowledge (local)"),
                     option({"value": "knowledge_nature"}, "Knowledge (nature)"),
-                    option({"value": "knowledge_planes"}, "Knowledge (planes)"),
                     option({"value": "knowledge_souls"}, "Knowledge (souls)"),
                     option({"value": "knowledge_untrained"}, "Knowledge (untrained)"),
                     option({"value": "maneuvers_known"}, "Maneuvers"),

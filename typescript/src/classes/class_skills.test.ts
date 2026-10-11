@@ -25,5 +25,20 @@ t.test('Class Skills Logic', (t) => {
     t.end();
   });
 
+  t.test('Knowledge skills use souls and not planes', (t) => {
+    const clericSkills = getClassSkills('Cleric');
+    t.ok(clericSkills.includes('knowledge_souls'));
+    t.notOk(clericSkills.includes('knowledge_planes' as any));
+
+    const sorcererSkills = getClassSkills('Sorcerer');
+    t.ok(sorcererSkills.includes('knowledge_souls'));
+    t.notOk(sorcererSkills.includes('knowledge_planes' as any));
+
+    const wizardOutput = latexClassSkills('Wizard', 'Wiz');
+    t.match(wizardOutput, 'Knowledge (all kinds, taken individually)');
+    t.notMatch(wizardOutput, 'planes');
+    t.end();
+  });
+
   t.end();
 });

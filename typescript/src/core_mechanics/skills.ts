@@ -47,7 +47,6 @@ export const RISE_KNOWLEDGE_SKILLS = [
   'knowledge_items',
   'knowledge_local',
   'knowledge_nature',
-  'knowledge_planes',
   'knowledge_souls',
   'knowledge_untrained',
 ] as const;
@@ -117,7 +116,6 @@ export const SKILL_METADATA: Record<Skill, SkillMetadata> = {
   knowledge_items: { attribute: 'intelligence', category: SkillCategory.Other },
   knowledge_local: { attribute: 'intelligence', category: SkillCategory.Other },
   knowledge_nature: { attribute: 'intelligence', category: SkillCategory.Other },
-  knowledge_planes: { attribute: 'intelligence', category: SkillCategory.Other },
   knowledge_souls: { attribute: 'intelligence', category: SkillCategory.Other },
   knowledge_untrained: { attribute: 'intelligence', category: SkillCategory.Other },
   medicine: { attribute: 'intelligence', category: SkillCategory.Other },

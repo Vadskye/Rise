@@ -43,7 +43,6 @@ export function getClassSkills(cls: Class): RiseSkill[] {
         'knowledge_arcana',
         'knowledge_items',
         'knowledge_local',
-        'knowledge_planes',
         'knowledge_souls',
         'medicine',
         'persuasion',
@@ -146,7 +145,7 @@ export function getClassSkills(cls: Class): RiseSkill[] {
         'endurance',
         'knowledge_arcana',
         'knowledge_nature',
-        'knowledge_planes',
+        'knowledge_souls',
         'awareness',
         'intimidate',
         'poise',
@@ -236,7 +235,6 @@ export function getClassSkills(cls: Class): RiseSkill[] {
         'knowledge_items',
         'knowledge_local',
         'knowledge_nature',
-        'knowledge_planes',
         'knowledge_souls',
         'medicine',
         'might',
@@ -277,7 +275,7 @@ export function getClassSkills(cls: Class): RiseSkill[] {
         'intimidate',
         'knowledge_arcana',
         'knowledge_items',
-        'knowledge_planes',
+        'knowledge_souls',
         'persuasion',
       ];
     case 'Treant':
@@ -320,7 +318,6 @@ export function getClassSkills(cls: Class): RiseSkill[] {
         'intimidate',
         'knowledge_arcana',
         'knowledge_items',
-        'knowledge_planes',
         'knowledge_souls',
         'persuasion',
         'poise',
@@ -340,7 +337,6 @@ export function getClassSkills(cls: Class): RiseSkill[] {
         'knowledge_items',
         'knowledge_local',
         'knowledge_nature',
-        'knowledge_planes',
         'knowledge_souls',
         'persuasion',
       ];
@@ -427,7 +423,6 @@ function formatSkillList(skills: RiseSkill[]): string {
       'items',
       'local',
       'nature',
-      'planes',
       'souls',
     ];
     const isRustAll =

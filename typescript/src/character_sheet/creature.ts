@@ -301,7 +301,7 @@ export class Creature implements CreaturePropertyMap {
   }
 
   public autoClone(): Creature {
-      return this.clone(`${this.name}_clone_${Math.random().toString(36).substring(7)}`);
+    return this.clone(`${this.name}_clone_${Math.random().toString(36).substring(7)}`);
   }
 
   get id(): string {
@@ -1493,10 +1493,6 @@ export class Creature implements CreaturePropertyMap {
 
   public get knowledge_nature() {
     return this.getPropertyValue('knowledge_nature');
-  }
-
-  public get knowledge_planes() {
-    return this.getPropertyValue('knowledge_planes');
   }
 
   public get knowledge_souls() {

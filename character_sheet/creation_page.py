@@ -471,7 +471,6 @@ def trained_skill() -> str:
                     option({"value": "Knowledge (items)"}, "Knowledge (items)"),
                     option({"value": "Knowledge (local)"}, "Knowledge (local)"),
                     option({"value": "Knowledge (nature)"}, "Knowledge (nature)"),
-                    option({"value": "Knowledge (planes)"}, "Knowledge (planes)"),
                     option({"value": "Knowledge (souls)"}, "Knowledge (souls)"),
                     option({"value": "Medicine"}, "Medicine"),
                     option({"value": "Might"}, "Might"),
@@ -789,7 +788,6 @@ def subskill_rowids() -> str:
             text_input({"name": "knowledge_items_subskill_rowid", "readonly": True}),
             text_input({"name": "knowledge_local_subskill_rowid", "readonly": True}),
             text_input({"name": "knowledge_nature_subskill_rowid", "readonly": True}),
-            text_input({"name": "knowledge_planes_subskill_rowid", "readonly": True}),
             text_input({"name": "knowledge_souls_subskill_rowid", "readonly": True}),
             text_input(
                 {"name": "knowledge_untrained_subskill_rowid", "readonly": True}
