@@ -37,7 +37,7 @@ export const toxicology: MysticSphere = {
         hit: `
           \\damagerankone.
           The target also \\briefly \\debuff{corrodes} for \\damagerankone.
-          This damage is doubled if the target is an object that is not \\glossterm{metallic}.
+          Both damage instances are doubled if the target is an object or \\trait{static} creature that is not \\glossterm{metallic}.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -325,7 +325,7 @@ export const toxicology: MysticSphere = {
         hit: `
           \\damagerankone.
           The target also \\briefly \\debuff{corrodes} for \\damagerankone.
-          Both damage instances are doubled if the target is an object that is not \\glossterm{metallic}.
+          Both damage instances are doubled if the target is an object or \\trait{static} creature that is not \\glossterm{metallic}.
         `,
         targeting: `
           Make an attack vs. Fortitude and Reflex against something within \\medrange.
@@ -345,7 +345,7 @@ export const toxicology: MysticSphere = {
         hit: `
           \\damagerankfour.
           The target also \\briefly \\debuff{corrodes} for \\damagerankone.
-          Both damage instances are doubled if the target is an object that is not \\glossterm{metallic}.
+          Both damage instances are doubled if the target is an object or \\trait{static} creature that is not \\glossterm{metallic}.
           Any \\glossterm{extra damage} applies to both the initial damage and the corrosion.
         `,
         targeting: `
