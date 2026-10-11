@@ -81,18 +81,23 @@ function addVampires(grimoire: Grimoire) {
     \\begin{magicalattuneability}{Creature of the Night}{Standard action}
       \\abilitytags \\abilitytag{Attune}
       \\rankline
-      The vampire \\glossterm{shapeshifts} into the form of a Tiny bat, a Medium cloud of mist, or its normal humanoid form.
+      The vampire \\glossterm{shapeshifts} into the form of a Tiny bat, a Tiny rat, a Medium wolf, or its normal humanoid form.
       \\begin{raggeditemize}
         \\item Bat: While in its bat form, the vampire gains \\sense{blindsense} (120 ft.) and \\sense{blindsight} (30 ft.).
           It cannot speak and has no \\glossterm{free hands}.
           All of its normal movement modes are replaced with an average fly speed with a 60 ft. height limit.
+          Since the vampire is Tiny, its base speed is reduced to 20 feet.
         \\item Rat: While in its rat form, the vampire gains \\trait{scent} and \\trait{low-light vision}.
+          It cannot speak and has no \\glossterm{free hands}, but it has four legs, making it \\trait{quadrupedal}.
+          Since the vampire is Tiny, its base speed is reduced to 20 feet, for a total speed of 30 feet.
+        \\item Wolf: While in its wolf form, the vampire gains \\trait{scent} and \\trait{low-light vision}.
           It cannot speak and has no \\glossterm{free hands}, but it has four legs, making it \\trait{quadrupedal}.
       \\end{raggeditemize}
  
-      In either non-humanoid form, the vampire is unable to take any standard actions, but it can still take \\glossterm{move actions} in place of standard actions.
-      Since it has no \\glossterm{walk speed} in those forms, flying does not make it \\unsteady.
       The vampire cannot use this ability while \\helpless.
+      As a bat or rat, the vampire is unable to take any standard actions, but it can still take \\glossterm{move actions} in place of standard actions.
+      Since it has no \\glossterm{walk speed} as a bat, flying does not make it \\unsteady.
+      It can act normally as a wolf.
       When this ability ends, the vampire does not regain its normal humanoid form until the start of its next turn.
     \\end{magicalattuneability}
  

@@ -66,7 +66,7 @@ export function vampire(): RankAbility[] {
         \\begin{magicalattuneability}{Creature of the Night}{Standard action}
           \\abilitytags \\abilitytag{Attune}
           \\rankline
-          You \\glossterm{shapeshift} into the form of a Tiny bat, a Tiny rat, or your normal humanoid form.
+          You \\glossterm{shapeshift} into the form of a Tiny bat, a Tiny rat, a Medium wolf, or your normal humanoid form.
           \\begin{raggeditemize}
             \\item Bat: While in your bat form, you gain \\sense{blindsense} (120 ft.) and \\sense{blindsight} (30 ft.).
               You cannot speak and have no \\glossterm{free hands}.
@@ -75,11 +75,14 @@ export function vampire(): RankAbility[] {
             \\item Rat: While in your rat form, you gain \\trait{scent} and \\trait{low-light vision}.
               You cannot speak and have no \\glossterm{free hands}, but you have four legs, making you \\trait{quadrupedal}.
               Since you are Tiny, your base speed is reduced to 20 feet, for a total speed of 30 feet.
+            \\item Wolf: While in your wolf form, you gain \\trait{scent} and \\trait{low-light vision}.
+              You cannot speak and has no \\glossterm{free hands}, but it has four legs, making it \\trait{quadrupedal}.
           \\end{raggeditemize}
 
-          In either non-humanoid form, you are unable to take any standard actions, but you can still take \\glossterm{move actions} in place of standard actions.
-          Since you have no walk speed in those forms, flying does not make you \\unsteady.
           You cannot use this ability while \\helpless.
+          As a bat or rat, you are unable to take any standard actions, but you can still take \\glossterm{move actions} in place of standard actions.
+          Since you have no \\glossterm{walk speed} as a bat, flying does not make you \\unsteady.
+          You can act normally as a wolf.
           When this ability ends, you do not regain your normal humanoid form until the start of your next turn.
         \\end{magicalattuneability}
       `,
