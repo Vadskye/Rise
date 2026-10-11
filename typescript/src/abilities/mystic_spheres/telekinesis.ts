@@ -563,9 +563,9 @@ export const telekinesis: MysticSphere = {
     },
 
     // Assume that you are using a Heavy weapon, and this gives you a shield.
-    // That's +2 Armor and +2 Ref, which is the same as shielded. However, it doesn't
-    // stack with actually using a shield, so it's a little weaker. Rank 1 is probably
-    // okay.
+    // That's +2 Armor, which is the same as shielded. However, it doesn't
+    // stack with actually using a shield, so it's a little weaker. Shielded is 3 EA, so
+    // call this 2.4 EA.
     {
       name: 'Floating Armament',
 
@@ -574,7 +574,7 @@ export const telekinesis: MysticSphere = {
         It functions as if you were holding it in a single hand.
         You still suffer the normal penalties if you are not proficient with it, or if it is not sized appropriately for you.
       `,
-      rank: 1,
+      rank: 4,
       roles: ['attune'],
       type: 'Attune (deep)',
     },
@@ -587,7 +587,7 @@ export const telekinesis: MysticSphere = {
         It functions as if you were holding it in two hands if possible, or one hand otherwise.
         You still suffer the normal penalties if you are not proficient with it, or if it is not sized appropriately for you.
       `,
-      rank: 3,
+      rank: 7,
       roles: ['attune'],
       tags: [],
       type: 'Attune (deep)',
