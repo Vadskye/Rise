@@ -21,6 +21,7 @@ export function alchemist(): RankAbility[] {
         When you gain this ability, you learn four workshop recipes for alchemical items.
         You can only use this ability to create alchemical items that you know the workshop recipe for.
         Whenever your rank in this archetype increases, you can change which alchemical items you know the workshop recipe for.
+        Upgraded versions of an item, such as \\item{firebomb\\plus}, require a separate recipe from their base versions.
 
         You can use this ability to create alchemical items with a rank lower than your rank in this archetype (see \\pcref{Item Ranks}).
         Creating an item in this way functions in the same way as crafting items normally (see \\pcref{Crafting Items}), with the following exceptions:
