@@ -119,6 +119,7 @@ export function covenantKeeper(): RankAbility[] {
         This functions like either light or medium body armor, as you choose.
         In exchange, the \\ability{recover} ability no longer causes you to recover hit points (see \\pcref{Recover}).
         You must be \\trait{blooded} to choose this covenant.
+        You can change your armor type, dismiss the armor, or recreate the armor as a \\glossterm{standard action}.
 
         If you choose light armor, it provides the following benefits:
         % Relative to mail shirt: +1 Armor, +1 Fort, +2 durability, +1 vital rolls
