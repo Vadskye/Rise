@@ -297,7 +297,7 @@ export const flurryOfBlows: CombatStyle = {
       roles: ['flash', 'generator'],
     },
     {
-      name: 'Flashy Flourish',
+      name: 'Dazzling Speed',
 
       effect: `
         Make a \\glossterm{strike}.
@@ -307,26 +307,12 @@ export const flurryOfBlows: CombatStyle = {
       roles: ['softener'],
     },
     
-
-    {
-      name: 'Dazzling Speed',
-
-
-      effect: `
-        Make a \\glossterm{strike}.
-        \\hit If your attack hits the target's Reflex defense, it is \\briefly \\dazzled.
-      `,
-      rank: 3,
-      roles: ['softener'],
-    },
-
     {
       name: 'Dazzling Speed+',
 
-      // Should be r8, but eh
       effect: `
         Make a \\glossterm{strike} that deals triple damage.
-        \\hit The target is \\dazzled as a \\glossterm{condition}.
+        \\hit If your attack hits the target's Reflex defense, it is \\dazzled as a \\glossterm{condition}.
       `,
       rank: 7,
       roles: ['softener'],
@@ -442,6 +428,49 @@ export const flurryOfBlows: CombatStyle = {
       `,
       rank: 7,
       roles: ['burst'],
+    },
+
+    {
+      name: 'Twinblade Exposure',
+
+      effect: `
+        Make a \\glossterm{dual strike}.
+        \\injury The target is \\briefly \\exposed.  
+      `,
+      rank: 1,
+      roles: ['maim'],
+    },
+
+    {
+      name: 'Twinblade Carver',
+
+      effect: `
+        Make a \\glossterm{dual strike} that deals double \\glossterm{weapon damage}.
+      `,
+      rank: 3,
+      roles: ['execute'],
+    },
+
+    {
+      name: 'Twinblade Distraction',
+
+      effect: `
+        Make a \\glossterm{dual strike} that deals double damage.
+        \\injury The target is \\briefly \\distracted. On a critical hit, the target is distracted as a \\glossterm{condition}.  
+      `,
+      rank: 5,
+      roles: ['maim'],
+    },
+
+    {
+      name: 'Twinblade Delusion',
+
+      effect: `
+        Make a \\glossterm{dual strike} that deals triple damage.
+        \\injury The target is \\briefly \\confused. On a critical hit, the target is confused as a \\glossterm{condition}.  
+      `,
+      rank: 7,
+      roles: ['maim'],
     },
   ],
 };
