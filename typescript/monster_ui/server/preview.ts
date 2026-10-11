@@ -110,6 +110,7 @@ export function generatePreview(
             hard: creature.knowledge_result_hard,
             legendary: creature.knowledge_result_legendary,
             monsterLevel: creature.level,
+            monsterRank: creature.calculateRank(),
             monsterName: creature.name,
             relevantKnowledges: [],
           };

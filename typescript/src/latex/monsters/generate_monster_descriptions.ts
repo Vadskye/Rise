@@ -139,6 +139,7 @@ function genGroupKnowledgeText(group: MonsterGroup): string {
   return genKnowledgeText({
     ...group.knowledge,
     monsterLevel: exampleMonster.level,
+    monsterRank: exampleMonster.calculateRank(),
     monsterName: group.name,
     relevantKnowledges: [exampleMonster.getRelevantKnowledge()],
   });

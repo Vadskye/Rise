@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { calculateRank } from '@src/character_sheet/creature';
 import { ComputedStats } from '../types/monster';
 
 interface BookPreviewProps {
@@ -74,8 +75,8 @@ export const BookPreview: React.FC<BookPreviewProps> = ({ stats, loading }) => {
 
   // Knowledge DVs
   const knowledge = displayStats.knowledge;
-  const baseDifficulty =
-    displayStats.level !== undefined ? Math.floor(displayStats.level / 2) + 5 : 5;
+  const rank = displayStats.level !== undefined ? calculateRank(displayStats.level) : 0;
+  const baseDifficulty = 5 + 2 * rank;
   const showKnowledge =
     knowledge && (knowledge.easy || knowledge.normal || knowledge.hard || knowledge.legendary);
   const relevantKnowledge = knowledge.relevantKnowledges?.[0] || 'nature';

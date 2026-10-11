@@ -5,7 +5,11 @@ import {
   RISE_SOCIAL_SKILLS,
   RISE_OTHER_SKILLS,
 } from '@src/core_mechanics/skills';
-import { Creature, KnowledgeResultConfig } from '@src/character_sheet/creature';
+import {
+  calculateRank,
+  Creature,
+  KnowledgeResultConfig,
+} from '@src/character_sheet/creature';
 import * as format from '@src/latex/format';
 import { caseInsensitiveSort } from '@src/util/sort';
 import { RISE_DEFAULT_TRAITS } from '@src/character_sheet/rise_data';
@@ -59,7 +63,8 @@ function genArtText(monster: Creature, parentGroupName?: string): string {
 
 export function genKnowledgeText(config: KnowledgeResultConfig): string {
   const difficultyMap: Record<string, string> = {};
-  const baseDifficulty = Math.floor(config.monsterLevel / 2) + 5;
+  const monsterRank = config.monsterRank ?? calculateRank(config.monsterLevel);
+  const baseDifficulty = 5 + 2 * monsterRank;
   if (config.easy) {
     difficultyMap[baseDifficulty - 5] = config.easy;
   }

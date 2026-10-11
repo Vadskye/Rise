@@ -71,6 +71,7 @@ export interface KnowledgeResultConfig {
   hard?: string;
   legendary?: string;
   monsterLevel: number;
+  monsterRank?: number;
   monsterName: string;
   relevantKnowledges: RiseSkill[];
 }
@@ -952,6 +953,7 @@ export class Creature implements CreaturePropertyMap {
       hard: this.knowledge_result_hard,
       legendary: this.knowledge_result_legendary,
       monsterLevel: this.level,
+      monsterRank: this.calculateRank(),
       monsterName: this.name,
       // TODO: calculate multiple relevant knowledges based on traits
       relevantKnowledges: [this.getRelevantKnowledge()],
@@ -1147,10 +1149,12 @@ export class Creature implements CreaturePropertyMap {
     console.warn(`Monster ${this.name}: ${message}`);
   }
 
+  static calculateRank(level: number): ActiveAbilityRank {
+    return calculateRank(level);
+  }
+
   calculateRank(): ActiveAbilityRank {
-    // TODO: should level 22+ creatures be capped at 7?
-    const rank = Math.max(0, Math.min(7, Math.floor((this.level + 2) / 3)));
-    return rank as ActiveAbilityRank;
+    return calculateRank(this.level);
   }
 
   // Getters
@@ -1838,4 +1842,10 @@ function formatNumericModifier(modifier?: number): string {
   } else {
     return '';
   }
+}
+
+export function calculateRank(level: number): ActiveAbilityRank {
+  // TODO: should level 22+ creatures be capped at 7?
+  const rank = Math.max(0, Math.min(7, Math.floor((level + 2) / 3)));
+  return rank as ActiveAbilityRank;
 }

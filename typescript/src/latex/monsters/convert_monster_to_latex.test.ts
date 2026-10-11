@@ -99,8 +99,35 @@ t.test('genKnowledgeText', (t) => {
       genKnowledgeText(creature.getKnowledgeResultConfig()),
       `
       \\monsterknowledgeheader{Test Monster}
-      \\par Local DV 10: Easy result
-\\par Local DV 20: Hard result
+      \\par Local DV 14: Easy result
+\\par Local DV 24: Hard result
+    `,
+    );
+    t.end();
+  });
+
+  t.test('Generates correct difficulty for rank 1 monster', (t) => {
+    const creature = Creature.new();
+    creature.setProperties({
+      creature_types: ['humanoid'],
+      knowledge_result_easy: 'Easy info',
+      knowledge_result_normal: 'Normal info',
+      knowledge_result_hard: 'Hard info',
+      knowledge_result_legendary: 'Legendary info',
+      level: 1,
+      name: 'Goblin Scout',
+    });
+
+    // Level 1 -> Rank 1 -> Base DV = 5 + 2*1 = 7
+    // Easy = 2, Normal = 7, Hard = 12, Legendary = 17
+    t.equal(
+      genKnowledgeText(creature.getKnowledgeResultConfig()),
+      `
+      \\monsterknowledgeheader{Goblin Scout}
+      \\par Local DV 2: Easy info
+\\par Local DV 7: Normal info
+\\par Local DV 12: Hard info
+\\par Local DV 17: Legendary info
     `,
     );
     t.end();
