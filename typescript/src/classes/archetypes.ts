@@ -47,8 +47,8 @@ export function getArchetypeClass(archetype: ClassArchetype): Class {
     case 'Elementalist':
     case 'NatureMagic':
     case 'NatureSpellMastery':
+    case 'Oakheart':
     case 'Shifter':
-    case 'Wildspeaker':
       return 'Druid';
     // Fighter
     case 'CombatDiscipline':
@@ -160,10 +160,10 @@ export function getArchetypeName(archetype: ClassArchetype): string {
       return 'Nature Magic';
     case 'NatureSpellMastery':
       return 'Nature Spell Mastery';
+    case 'Oakheart':
+      return 'Oakheart';
     case 'Shifter':
       return 'Shifter';
-    case 'Wildspeaker':
-      return 'Wildspeaker';
     case 'CombatDiscipline':
       return 'Combat Discipline';
     case 'EquipmentTraining':
@@ -318,13 +318,13 @@ export function getArchetypeShortDescription(archetype: ClassArchetype): string 
       description =
         'You must have the Nature Magic archetype from the druid class to gain the abilities from this archetype.';
       break;
+    case 'Oakheart':
+      description =
+        "This archetype deepens your physical connection to nature, granting you the durability of the mighty oak.";
+      break;
     case 'Shifter':
       description =
         'This archetype grants you the ability to embody aspects of the natural world in your own form.';
-      break;
-    case 'Wildspeaker':
-      description =
-        'This archetypes deepens your connection to animals and plants, and allows you to call animals to aid you in combat.';
       break;
     case 'CombatDiscipline':
       description = 'This archetype allows you to improve your defenses and resist conditions.';
@@ -569,10 +569,10 @@ export function getArchetypeRankAbilities(archetype: ClassArchetype): RankAbilit
       return druid.natureMagic();
     case 'NatureSpellMastery':
       return druid.natureSpellMastery();
+    case 'Oakheart':
+      return druid.oakheart();
     case 'Shifter':
       return druid.shifter();
-    case 'Wildspeaker':
-      return druid.wildspeaker();
 
     // Paladin
     case 'DevotedParagon':
@@ -741,7 +741,7 @@ export function getArchetypesForClass(cls: Class): ClassArchetype[] {
     case 'Cleric':
       return ['ClericDivineMagic', 'DivineSpellMastery', 'DomainInfluence', 'Healer', 'Preacher'];
     case 'Druid':
-      return ['Elementalist', 'NatureMagic', 'NatureSpellMastery', 'Shifter', 'Wildspeaker'];
+      return ['Elementalist', 'NatureMagic', 'NatureSpellMastery', 'Oakheart', 'Shifter'];
     case 'Fighter':
       return ['CombatDiscipline', 'EquipmentTraining', 'MartialMastery', 'Sentinel', 'Tactician'];
     case 'Monk':

@@ -41,8 +41,8 @@ export function generateArchetypeDescriptions(): string {
     'Elementalist',
     'NatureMagic',
     'NatureSpellMastery',
+    'Oakheart',
     'Shifter',
-    'Wildspeaker',
     // Fighter
     'CombatDiscipline',
     'EquipmentTraining',
