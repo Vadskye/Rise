@@ -459,56 +459,56 @@ export function perfectedForm(): RankAbility[] {
       `,
     },
     {
-      complexity: 1,
-      name: 'Unhindered Agility',
+      complexity: 2,
+      name: 'Unhindered Speed',
       isMagical: false,
       rank: 1,
       description: `
-        You gain a \\plus1 bonus to your Armor and Reflex defenses while you are not wearing medium or heavy body armor.
-      `,
-    },
-    {
-      complexity: 1,
-      name: 'Unhindered Freedom',
-      isMagical: false,
-      rank: 4,
-      description: `
-        While you are not wearing medium or heavy body armor, you are immune to being \\slowed, and your movement is not slowed by \\glossterm{difficult terrain}.
+        While you are not wearing medium or heavy body armor and not carrying any items of your size category or larger, you gain a \\plus10 bonus to your \\glossterm{speed}.
       `,
     },
     {
       complexity: 0,
-      name: 'Unhindered Agility+',
+      name: 'Unhindered Speed+',
       isMagical: false,
       rank: 7,
       description: `
-        The defense bonus increases to \\plus2.
+        The speed bonus increases to \\plus20.
       `,
     },
     {
       complexity: 1,
-      name: 'Perfected Power',
+      name: 'Unhindered Agility',
       isMagical: false,
       rank: 2,
       description: `
-        You gain a \\plus1 bonus to your \\glossterm{mundane power} and \\glossterm{magical power}.
-        If each of your Strength, Dexterity, and Constitution are 3 or higher, this bonus increases to \\plus2.
+        While you are not wearing medium or heavy body armor and not carrying any items of your size category or larger, you gain a \\plus1 bonus to your Armor and Reflex defenses.
       `,
     },
     {
-      complexity: 1,
-      name: 'Perfected Power+',
+      complexity: 2,
+      name: 'Perfect Blow',
       isMagical: false,
-      rank: 5,
+      rank: 3,
       description: `
-        The bonus increases to \\plus2, or to \\plus3 if you meet the attribute requirement.
+        \\begin{activeability}{Perfect Blow}{Standard action}
+          \\rankline
+          Make a melee \\glossterm{strike} that deals double \\glossterm{weapon damage}.
+          Your minimum attack result on the attack roll is 5 \\add your accuracy with the attack, as if you had rolled a 5 on the die.
+
+          \\rankline
+          \\rank{4} The strike deals triple weapon damage.
+          \\rank{5} The strike deals \\glossterm{extra damage} equal to half your power.
+          \\rank{6} The strike deals five times weapon damage.
+          \\rank{7} The strike deals eight times weapon damage.
+        \\end{activeability}
       `,
     },
     {
       complexity: 0,
       name: 'Perfect Body',
       isMagical: false,
-      rank: 3,
+      rank: 4,
       description: `
         Choose a physical \\glossterm{attribute}: Strength, Dexterity, or Constitution (see \\pcref{Attributes}).
         You gain a \\plus1 bonus to that attribute.

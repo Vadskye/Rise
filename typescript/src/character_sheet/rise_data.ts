@@ -139,7 +139,6 @@ export type RiseEffectTag =
   | 'Sweeping (5)'
   | 'Sweeping (6)'
   | 'Sweeping (7)'
-  | 'Trap'
   | 'Visual'
   | 'Water';
 

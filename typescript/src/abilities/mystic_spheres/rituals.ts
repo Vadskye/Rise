@@ -1674,7 +1674,6 @@ export const rituals: RitualDefinition[] = [
         \\rank{7} The damage increases to \\damagerankseven.
       `,
     },
-    tags: ['Trap'],
     type: 'Attune',
     spheres: ['Fabrication', 'Thaumaturgy'],
   },

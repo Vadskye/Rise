@@ -43,7 +43,7 @@ export function combatDiscipline(): RankAbility[] {
         \\begin{activeability}{Disciplined Blow}{Standard action}
           \\rankline
           Make a \\glossterm{strike} that deals \\glossterm{extra damage} equal to half your \\glossterm{power}.
-          You cannot get a \\glossterm{critical hit} with this strike.
+          The attack roll for the strike cannot \\glossterm{explode}.
           \\miss Half damage.
 
           \\rankline
