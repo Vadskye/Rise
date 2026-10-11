@@ -1,6 +1,6 @@
 import { Grimoire } from '@src/monsters/grimoire';
 import { Creature } from '@src/character_sheet/creature';
-import { ActiveAbility } from '@src/abilities';
+import { ActiveAbility, isStrikeAbility } from '@src/abilities';
 import {
   convertLatexToWebText,
   reformatAsMonsterAbility,
@@ -27,11 +27,7 @@ export function explainMonsterAttacks(monster: Creature) {
       attack: ability.attack ? { ...ability.attack } : undefined,
     };
 
-    if (
-      !clone.weapon &&
-      clone.effect &&
-      /\b[mM]ake a.*(strike\b|\\glossterm{strike})/.test(clone.effect)
-    ) {
+    if (!clone.weapon && clone.effect && isStrikeAbility({ effect: clone.effect })) {
       const weapons = monster.getEquipment().filter(isWeapon);
       if (weapons.length > 0) {
         clone.weapon = weapons[0];
@@ -131,7 +127,7 @@ export function explainAbilityDamage(
   console.log(`    Damage        : ${damageStr}`);
 
   const isStrike = Boolean(
-    (ability.effect && /\b[mM]ake a.*(strike\b|\\glossterm{strike})/.test(ability.effect)) ||
+    (ability.effect && isStrikeAbility({ effect: ability.effect })) ||
     (ability.weapon && !ability.attack),
   );
 
@@ -212,15 +208,25 @@ function explainStrikeDamage(monster: Creature, ability: ActiveAbility, clone: A
     relevantPower = Math.max(monster.getRelevantPower(true), monster.getRelevantPower(false));
   }
 
-  let extraFlatDamage = 0;
+  let extraFlatDamageFromEffect = 0;
   const normalizedEffect = replacePowerScalingDamage(monster, ability, ability.effect || '');
   const extraFlatDamageMatch = normalizedEffect.match(
     / (\d+) (extra damage|\\glossterm{extra damage})/,
   );
   if (extraFlatDamageMatch) {
-    extraFlatDamage = Number(extraFlatDamageMatch[1]);
+    extraFlatDamageFromEffect = Number(extraFlatDamageMatch[1]);
   }
 
+  let scalingFlatDamage = 0;
+  let excessRank = 0;
+  if (ability.scaling === 'damage') {
+    const monsterRank = typeof monster.calculateRank === 'function' ? monster.calculateRank() : 1;
+    const abilityRank = ability.rank ?? 1;
+    excessRank = Math.max(0, monsterRank - abilityRank);
+    scalingFlatDamage = 2 * excessRank;
+  }
+
+  const extraFlatDamage = extraFlatDamageFromEffect + scalingFlatDamage;
   const powerBonus = Math.floor(relevantPower * powerMultiplier);
   const totalFlat = globalMult * (powerBonus + extraFlatDamage);
 
@@ -248,8 +254,11 @@ function explainStrikeDamage(monster: Creature, ability: ActiveAbility, clone: A
   console.log(`      Dice        : ${diceParts.join(', ')}`);
 
   const powerCalcParts = [`${powerType} power ${relevantPower} * ${powerMultiplier} power mult`];
-  if (extraFlatDamage > 0) {
-    powerCalcParts.push(`+ ${extraFlatDamage} extra flat`);
+  if (scalingFlatDamage > 0) {
+    powerCalcParts.push(`+ ${scalingFlatDamage} scaling (+2 * ${excessRank} excess rank)`);
+  }
+  if (extraFlatDamageFromEffect > 0) {
+    powerCalcParts.push(`+ ${extraFlatDamageFromEffect} extra flat`);
   }
   if (globalMult > 1) {
     powerCalcParts.push(`* ${globalMult} global mult`);

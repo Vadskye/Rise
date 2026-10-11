@@ -177,3 +177,13 @@ export function standardizeRitual(ritual: RitualDefinition): Ritual {
     kind: 'ritual',
   };
 }
+
+export function isStrikeAbility(ability: Pick<ActiveAbility, 'effect' | 'weapon'>): boolean {
+  if (ability.weapon) {
+    return true;
+  }
+  if (!ability.effect) {
+    return false;
+  }
+  return /\b[mM]ake (?:a|two|three|\d+)?.*(strike\b|\\glossterm{strike})/.test(ability.effect);
+}

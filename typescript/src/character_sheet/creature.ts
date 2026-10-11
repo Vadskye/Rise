@@ -40,6 +40,7 @@ import {
   PassiveAbility,
   ActiveAbilityScaling,
   SimulatorReadyAttack,
+  isStrikeAbility,
 } from '@src/abilities';
 import { DamageScaling } from '@src/core_mechanics/damage_scaling';
 import { DicePool } from '@src/core_mechanics/dice_pool';
@@ -550,15 +551,19 @@ export class Creature implements CreaturePropertyMap {
   ) {
     const baseManeuver = getManeuverByName(maneuverName);
 
-    // Maneuvers almost never have defined scaling.
-    let scaling: ActiveAbilityScaling | null = null;
-    if (weapon) {
-      // If the maneuver uses a weapon and does not already have a defined scaling,
-      // we should scale damage with rank.
-      scaling = 'damage';
-    } else if (/damagerank/.test(baseManeuver.effect || '')) {
-      // Maneuvers that deal fixed damage should scale that.
-      scaling = 'damage';
+    // Maneuvers almost never have defined scaling in their base definitions.
+    // In the character calculation engine, we assume strike maneuvers scale with rank
+    // (+2 extra damage per excess rank). This is equivalent to assuming every maneuver
+    // uses the Mighty Maneuver augment, because choosing specific archetype augments
+    // is outside the scope of the calculation engine.
+    let scaling: ActiveAbilityScaling | null = baseManeuver.scaling ?? null;
+    if (!scaling) {
+      if (isStrikeAbility({ weapon, effect: baseManeuver.effect })) {
+        scaling = 'damage';
+      } else if (/damagerank/.test(baseManeuver.effect || '')) {
+        // Maneuvers that deal fixed damage should scale that.
+        scaling = 'damage';
+      }
     }
     this.addActiveAbility({
       kind: 'maneuver',

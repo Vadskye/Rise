@@ -79,10 +79,10 @@ t.test('explainStockCharacter outputs damage rank details for spellcasters', asy
   // Verify spell attacks explain damage
   t.match(output, /\* Armor Bolt Rank 2 \(spell, rank 2\)/);
   t.match(output, /Scaling\s+:\s+damage \(character rank: 2\)/);
-  t.match(output, /Damage\s+:\s+1d10\+4 damage/);
-  t.match(output, /Damage Details: Damage Rank 2/);
-  t.match(output, /Base Dice\s+:\s+1d10/);
-  t.match(output, /Power Added\s+:\s+\+4 \(magical power 8, \+1 per 2 power\)/);
+  t.match(output, /Damage\s+:\s+1d8\+8 damage/);
+  t.match(output, /Damage Details: Damage Rank 3/);
+  t.match(output, /Base Dice\s+:\s+1d8/);
+  t.match(output, /Power Added\s+:\s+\+8 \(magical power 8, \+1 per 1 power\)/);
 });
 
 t.test('explainStockCharacter handles characters without active abilities', async (t) => {
@@ -108,3 +108,30 @@ t.test('explainStockCharacter handles characters without active abilities', asyn
   t.match(output, /--- Attack Accuracy & Damage ---/);
   t.match(output, /\(No active abilities\)/);
 });
+
+t.test('explainStockCharacter outputs scaling strike damage for Barbarian 21', async (t) => {
+  const stock = new StockCharacters();
+  stock.addAllCharacters();
+
+  const barbarian = stock.getCharacter('Barbarian 21')!;
+  t.ok(barbarian, 'Barbarian 21 exists');
+
+  const logs: string[] = [];
+  const originalLog = console.log;
+  console.log = (...args: any[]) => {
+    logs.push(args.join(' '));
+  };
+
+  try {
+    explainStockCharacter(barbarian);
+  } finally {
+    console.log = originalLog;
+  }
+
+  const output = logs.join('\n');
+  t.match(output, /\* Ground Slam \(maneuver, rank 1\)/);
+  t.match(output, /Scaling\s+:\s+damage \(character rank: 7\)/);
+  t.match(output, /Damage\s+:\s+1d8\+29 damage/);
+  t.match(output, /\+\s*12 scaling \(\+2 \* 6 excess rank\)/);
+});
+

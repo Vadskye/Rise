@@ -249,6 +249,38 @@ t.test('calculateStrikeDamage', (t) => {
     t.end();
   });
 
+  t.test('with damage scaling and excess rank', (t) => {
+    const rank4Creature = {
+      getRelevantPower: () => 10,
+      calculateRank: () => 4,
+    } as any;
+    const ability = {
+      rank: 1,
+      scaling: 'damage',
+      weapon: 'bite',
+      effect: 'Make a strike.',
+    } as any;
+    // bite base 1d8 + 10 power + 2 * (4 - 1) scaling = +16 flat
+    t.equal(calculateStrikeDamage(rank4Creature, ability, false).toString(), '1d8+16');
+    t.end();
+  });
+
+  t.test('with damage scaling and global damage multiplier', (t) => {
+    const rank3Creature = {
+      getRelevantPower: () => 10,
+      calculateRank: () => 3,
+    } as any;
+    const ability = {
+      rank: 1,
+      scaling: 'damage',
+      weapon: 'bite',
+      effect: 'Make a strike that deals double damage.',
+    } as any;
+    // (10 power + 2 * (3 - 1)) * 2 = 14 * 2 = +28 flat, 2d8 dice
+    t.equal(calculateStrikeDamage(rank3Creature, ability, false).toString(), '2d8+28');
+    t.end();
+  });
+
   t.test('with weapon dice increments for singular weapons', (t) => {
     const creatureInc1 = {
       getRelevantPower: () => 10,
@@ -419,14 +451,14 @@ t.test('convertAbilityToMonsterLatex', (t) => {
   t.test('Steady Slam (Mundane)', (t) => {
     simpleCreature.addManeuver('Steady Slam', { weapon: 'bite' });
     const ability = simpleCreature.getActiveAbilities()[0];
-    t.match(convertAbilityToMonsterLatex(simpleCreature, ability), /\\hit 1d8\+10 damage\./);
+    t.match(convertAbilityToMonsterLatex(simpleCreature, ability), /\\hit 1d8\+16 damage\./);
     t.end();
   });
 
   t.test('Steady Slam (Magical Maneuver)', (t) => {
     simpleCreature.addManeuver('Steady Slam', { weapon: 'bite', isMagical: true });
     const ability = simpleCreature.getActiveAbilities()[0];
-    t.match(convertAbilityToMonsterLatex(simpleCreature, ability), /\\hit 1d8\+5 damage\./);
+    t.match(convertAbilityToMonsterLatex(simpleCreature, ability), /\\hit 1d8\+11 damage\./);
     t.end();
   });
 

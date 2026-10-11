@@ -7,6 +7,7 @@ import {
   SpellDefinition,
   standardizeManeuver,
   standardizeSpell,
+  isStrikeAbility,
 } from '@src/abilities';
 import {
   getWeaponDamageDice,
@@ -389,7 +390,7 @@ export function reformatAsMonsterAbility(monster: Creature, ability: ActiveAbili
     delete ability.type;
   }
 
-  if (ability.effect && /\b[mM]ake a.*(strike\b|\\glossterm{strike})/.test(ability.effect)) {
+  if (ability.effect && isStrikeAbility({ effect: ability.effect })) {
     if (!ability.weapon) {
       throw new Error(
         `Monster ability ${monster.name}.${ability.name}: Strike ability has no weapon`,
@@ -857,6 +858,13 @@ export function calculateStrikeDamage(
   );
   if (extraFlatDamageMatch) {
     extraFlatDamage = Number(extraFlatDamageMatch[1]);
+  }
+
+  if (ability.scaling === 'damage') {
+    const monsterRank = typeof monster.calculateRank === 'function' ? monster.calculateRank() : 1;
+    const abilityRank = ability.rank ?? 1;
+    const excessRank = Math.max(0, monsterRank - abilityRank);
+    extraFlatDamage += 2 * excessRank;
   }
 
   let relevantPower = monster.getRelevantPower(isMagical);

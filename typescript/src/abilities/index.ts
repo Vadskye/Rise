@@ -15,5 +15,6 @@ export {
   standardizeRitual,
   standardizeCantrip,
   standardizeManeuver,
+  isStrikeAbility,
 } from './active_abilities';
 export type { PassiveAbility } from './passive_abilities';
