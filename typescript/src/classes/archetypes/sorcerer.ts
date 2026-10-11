@@ -404,7 +404,8 @@ export function wildMagic(): RankAbility[] {
       rank: 2,
       description: `
         You learn an additional arcane spell.
-        The spell's rank can be up to your rank in this archetype, even if you do not have access to spells of that rank.
+        Your spellcasting rank with that spell is equal to your rank in this archetype rather than the Arcane Magic archetype.
+        This affects the maximum spell rank you can learn, and any scaling the spell gains from your excess rank.
         That spell is always affected by your \\ability{wildspell} ability.
 
         Whenever you increase your rank in this archetype, you can change which spell you know with this ability.
