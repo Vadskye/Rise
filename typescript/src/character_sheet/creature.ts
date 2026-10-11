@@ -554,8 +554,8 @@ export class Creature implements CreaturePropertyMap {
     let scaling: ActiveAbilityScaling | null = null;
     if (weapon) {
       // If the maneuver uses a weapon and does not already have a defined scaling,
-      // we should scale accuracy with rank.
-      scaling = 'accuracy';
+      // we should scale damage with rank.
+      scaling = 'damage';
     } else if (/damagerank/.test(baseManeuver.effect || '')) {
       // Maneuvers that deal fixed damage should scale that.
       scaling = 'damage';

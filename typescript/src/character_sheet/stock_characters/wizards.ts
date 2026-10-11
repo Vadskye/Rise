@@ -37,7 +37,6 @@ function applyWizardBase(c: Creature, level: number) {
   c.setCharacterAttributeScaling('intelligence', 'perception');
   c.setEquippedArmorName({ bodyArmor: 'mage armor' });
   c.setEquippedArmorEffects({ bodyArmor: 'mage armor' });
-  c.addSpell('Fireball');
 
   const [rank1, rank2, rank3] = getArchetypeRanks(level);
 

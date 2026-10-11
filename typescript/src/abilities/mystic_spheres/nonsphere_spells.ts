@@ -7,12 +7,14 @@ import { ActiveAbilityRank } from '..';
 const rankWords = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight'];
 
 function createSingleTargetSpell(rank: ActiveAbilityRank, defense: string) {
-  const extraDamage = rank >= 5 ? ', and any \\glossterm{extra damage} is doubled.' : '.';
+  // Short range
+  const damageRank = rank + 1;
+  const extraDamage = damageRank >= 5 ? ', and any \\glossterm{extra damage} is doubled.' : '.';
   return {
     name: `${defense} Bolt Rank ${rank}`,
     attack: {
-      hit: `\\damagerank${rankWords[rank]}${extraDamage}`,
-      targeting: `Make an attack vs. ${defense} against a creature within \\medrange.`,
+      hit: `\\damagerank${rankWords[damageRank]}${extraDamage}`,
+      targeting: `Make an attack vs. ${defense} against a creature within \\shortrange.`,
     },
     rank: rank,
     roles: ['burst' as const],
@@ -36,7 +38,7 @@ function createAreaSpell(rank: ActiveAbilityRank) {
 }
 
 const generatedSpells = [];
-for (let r = 1; r <= 7; r++) {
+for (let r = 1; r <= 9; r++) {
   const rank = r as ActiveAbilityRank;
   generatedSpells.push(createSingleTargetSpell(rank, 'Armor'));
   generatedSpells.push(createSingleTargetSpell(rank, 'Brawn'));
