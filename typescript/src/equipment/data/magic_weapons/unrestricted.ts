@@ -351,19 +351,21 @@ export const magicUnrestrictedWeapons = (): MagicWeapon[] => [
       },
     ],
   }),
+  // 20% chance of +5.5a = +1.1a
   unrestricted({
     name: 'Lucky',
-    rank: 2,
+    rank: 3,
     short_description: 'Attack rolls explode on 8+',
     description: `
       When you roll an 8 or 9 on your first die for an attack roll, the attack roll \\glossterm{explodes} (see \\pcref{Exploding Attacks}).
       This does not affect bonus dice from explosions.
     `,
+    // +1.65a
     upgrades: [
       {
-        rank: 5,
-        short_description: 'Attack rolls explode on 5+',
-        description: 'The die also explodes if you roll an 5, 6, or 7.',
+        rank: 6,
+        short_description: 'Attack rolls explode on 7+',
+        description: 'The die also explodes if you roll a 7.',
       },
     ],
   }),
