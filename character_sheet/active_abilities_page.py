@@ -43,7 +43,7 @@ def create_page(_destination: str) -> str:
                     """
                         This tab is used to track the abilities that you can use.
                         Each ability you add here will appear as a button on the Core page.
-                        You can reference character statistics in abilities by embedding inline dice rolls, like: <code>[[d8+@{magical_power}]]</code>.
+                        You can reference character statistics in abilities by embedding inline dice rolls, like: <code>[[d8+@{half_magical_power}]]</code>.
                         <br>
                         Weapon-based strikes will automatically use accuracy and damage values from the weapons you listed in the Items tab.
                     """,

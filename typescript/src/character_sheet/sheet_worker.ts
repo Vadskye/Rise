@@ -2274,6 +2274,7 @@ function handleMagicalPower() {
       );
 
       setAttrs({
+        half_magical_power: Math.floor(totalValue / 2),
         magical_power: totalValue,
         magical_power_explanation: formatCombinedExplanation(v.miscExplanation, [
           {
@@ -2325,6 +2326,7 @@ function handleMundanePower() {
       );
 
       setAttrs({
+        half_mundane_power: Math.floor(totalValue / 2),
         mundane_power: totalValue,
         mundane_power_explanation: formatCombinedExplanation(v.miscExplanation, [
           {
