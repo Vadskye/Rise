@@ -195,6 +195,7 @@ export const perfectPrecision: CombatStyle = {
     {
       name: 'Chargebreaker',
 
+      cost: `You can't move for the rest of your turn.`,
       effect: `
         You ready a reactive melee strike (see \\pcref{Ready Reaction}).
         The strike triggers against any \\glossterm{enemy} that you couldn't already hit with a melee strike when you used this ability, such as enemies already adjacent to you.

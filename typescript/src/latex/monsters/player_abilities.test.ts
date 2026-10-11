@@ -670,7 +670,7 @@ t.test('restructureStrikeAbility', (t) => {
           targeting:
             'The $name can move up to its \\glossterm{speed} without reducing its available movement. Then, it can make a $accuracy-2 melee strike vs. Armor with its bite.',
         },
-        cost: 'Your available movement, if any, is reduced to zero.',
+        cost: "You can't move for the rest of your turn.",
         isMagical: false,
         kind: 'maneuver',
         name: 'Mighty Charge',

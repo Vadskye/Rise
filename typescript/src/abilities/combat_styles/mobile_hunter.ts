@@ -69,7 +69,7 @@ export const mobileHunter: CombatStyle = {
     {
       name: 'Mighty Charge',
 
-      cost: `Your available movement, if any, is reduced to zero.`,
+      cost: `You can't move for the rest of your turn.`,
       effect: `
         You can move up to your speed without reducing your \\glossterm{available movement}.
         Then, you can make a melee \\glossterm{strike} with a \\minus2 accuracy penalty that deals double \\glossterm{weapon damage}.
@@ -94,7 +94,7 @@ export const mobileHunter: CombatStyle = {
       name: 'Charge',
 
       // Mostly irrelevant for intended usage, but makes it hard to yoyo
-      cost: `Your available movement, if any, is reduced to zero.`,
+      cost: `You can't move for the rest of your turn.`,
       effect: `
         Move up to your speed in a single straight line without reducing your \\glossterm{available movement}.
         At the end of this movement, you can make a melee \\glossterm{strike}.
@@ -210,7 +210,7 @@ export const mobileHunter: CombatStyle = {
     {
       name: 'Fearsome Charge',
 
-      cost: `Your available movement, if any, is reduced to zero.`,
+      cost: `You can't move for the rest of your turn.`,
       effect: `
         Move up to half your \\glossterm{speed} without reducing your \\glossterm{available movement}.
         Then, make a melee \\glossterm{strike} that deals double damage.
@@ -225,7 +225,7 @@ export const mobileHunter: CombatStyle = {
       name: 'Eyeflash Charge',
 
       // assume movement is worth 0.6 EA or so
-      cost: `Your available movement, if any, is reduced to zero.`,
+      cost: `You can't move for the rest of your turn.`,
       effect: `
         Move up to half your movement speed without reducing your \\glossterm{available movement}.
         Then, make a \\glossterm{strike} that deals triple damage.
@@ -239,7 +239,7 @@ export const mobileHunter: CombatStyle = {
     {
       name: 'Frenzied Charge',
 
-      cost: `Your available movement, if any, is reduced to zero.`,
+      cost: `You can't move for the rest of your turn.`,
       effect: `
         After using this ability, you \\briefly take a \\minus4 penalty to all defenses.
 

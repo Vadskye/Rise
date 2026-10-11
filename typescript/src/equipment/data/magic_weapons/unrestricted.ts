@@ -574,7 +574,7 @@ export const magicUnrestrictedWeapons = (): MagicWeapon[] => [
     short_description: 'Grants +1 accuracy while stationary',
     description: `
       Whenever you make a \\glossterm{strike}, if you have not changed location since the start of your turn, you can activate this weapon.
-      If you do, you gain a \\plus1 \\glossterm{enhancement bonus} to \\glossterm{accuracy} with the strike, and your \\glossterm{available movement} is reduced to 0.
+      If you do, you gain a \\plus1 \\glossterm{enhancement bonus} to \\glossterm{accuracy} with the strike, and you can't move for the rest of your turn.
     `,
     upgrades: [
       {
