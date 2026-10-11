@@ -167,7 +167,6 @@ export const fabrication: MysticSphere = {
       },
       rank: 4,
       roles: ['attune'],
-      scaling: 'accuracy',
       type: 'Attune',
     },
     {
