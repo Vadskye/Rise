@@ -177,7 +177,7 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         You can sheathe any non-\\weapontag{Heavy} weapons you wield, then draw one or two non-\\weapontag{Heavy} weapons into your \\glossterm{free hands}.
-        Then, you can make a \\glossterm{strike} with a -1 accuracy penalty.
+        Then, you can make a \\glossterm{strike}.
       `,
       rank: 1,
       roles: ['generator'],
@@ -380,23 +380,22 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Building Storm',
 
       effect: `
-        Whenever you use or sustain this maneuver, if you hit with a strike during your last turn, you are \\briefly \\primed.
+        If you hit with a strike during your last turn, you are \\briefly \\primed.
+        Otherwise, you are \\briefly \\focused.
       `,
       rank: 1,
       roles: ['focus'],
-      type: 'Sustain (standard)',
     },
 
     {
       name: 'Building Storm+',
 
       effect: `
-        Whenever you use or sustain this maneuver, you are \\briefly \\primed.
+        You are \\briefly \\primed.
         If you hit with at least two strikes during your last turn, you are also briefly \\focused.
       `,
       rank: 5,
       roles: ['focus'],
-      type: 'Sustain (standard)',
     },
 
     // Brief invis is 1.2 EA. Melee extra defense allows 1.8 EA. That's probably enough to

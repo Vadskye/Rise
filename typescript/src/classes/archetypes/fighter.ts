@@ -298,7 +298,7 @@ export function sentinel(): RankAbility[] {
       isMagical: false,
       rank: 2,
       description: `
-        Your Huge or smaller \\glossterm{grounded} \\glossterm{enemies} move at half speed while within a \\smallarea radius \\glossterm{emanation} from you.
+        \\glossterm{Grounded} \\glossterm{enemies} that are no more than two size categories larger than you move at half speed while within a \\smallarea radius \\glossterm{emanation} from you.
         This does not affect creatures who are moving in a straight line directly towards you.
       `,
     },
@@ -308,7 +308,7 @@ export function sentinel(): RankAbility[] {
       isMagical: false,
       rank: 6,
       description: `
-        The area affected by this ability increases to a \\medarea radius \\glossterm{emanation} from you, and the maximum size category increases to Gargantuan.
+        The area affected by this ability increases to a \\medarea radius \\glossterm{emanation} from you, and the maximum size category increases to three size categories larger than you.
       `,
     },
     {

@@ -2418,7 +2418,7 @@ They allow more distinct and unique character customization, but also increase g
       \rankline
       You can only use this ability if you have two \glossterm{free hands} and are not using a magic implement.
 
-      Choose two spells that you know.
+      Choose two different spells that you know.
       You cast both spells simultaneously, one with each hand.
       This gives the spells \glossterm{somatic components}, regardless of any other effects which would would normally prevent you from requiring somatic components.
       Both spells must affect completely different targets, with no overlap between their targets or areas (if any).
@@ -2506,27 +2506,32 @@ They allow more distinct and unique character customization, but also increase g
   \begin{feat}{Whirlwind Warrior}{Combat}
     \featpre Dexterity 2.
 
-    \ff[1]{Unfettered Movement} You can move through spaces occupied by enemies as if they were unoccupied.
+    \ff[1]{Unstoppable Storm} You can move through spaces occupied by enemies as if they were unoccupied.
     In addition, if you share space with exactly one other creature within one \glossterm{size category} of you, you and that creature are not \squeezing.
     While using this ability to move through enemies, you can only end your movement in occupied space if you would not be considered squeezing by doing so.
 
     \ff[6]{Cyclone}
-    \begin{activeability}{Cyclone}{Standard action}
+    \begin{sustainability}{Cyclone}{Standard action}
+      \abilitytags \abilitytag{Sustain} (standard)
       \rankline
-      When you use this ability, make a melee \glossterm{strike} with 1d4 \glossterm{extra damage}.
-      The strike targets all \glossterm{enemies} adjacent to you.
+      Whenever you use or sustain this ability, make a melee \glossterm{strike} that deals 1d4 \glossterm{extra damage}.
+      % TODO: wording
+      The strike targets all \glossterm{enemies} that you can reach with your weapon.
+      When you sustain this ability, your \glossterm{speed} is halved for the turn, which also reduces the \glossterm{available movement} you gain at the start of your turn.
+      In exchange, you gain a \plus3 accuracy bonus with this ability.
 
       \rankline
       \featlevel{9} The extra damage increases to be equal to half your power.
       \featlevel{12} The strike deals double \glossterm{weapon damage}.
-      \featlevel{15} The strike deals quadruple \glossterm{weapon damage}.
-      \featlevel{18} The extra damage increases to be equal to your power.
-      In addition, the strike targets all enemies within a \smallarea radius of you.
+      \featlevel{15} The strike deals quadruple weapon damage.
+      \featlevel{18} The strike deals five times weapon damage, and the extra damage increases to be equal to your power.
     \end{activeability}
 
-    \ff[12]{Eye of the Storm} You gain a \plus1 bonus to your Armor and Reflex defenses against creatures that you are sharing space with.
+    \ff[12]{Eye of the Storm} You gain a \plus1 bonus to your Armor and Reflex defenses against creatures in your space or adjacent to you.
 
     \ff[18]{Eye of the Storm\plus} The bonus increases to \plus2.
+
+    \ff[18]{Rapid Cyclone} Sustaining your \ability{cyclone} does not reduce your speed or available movement.
   \end{feat}
 
 \section{Other Feat Rules}
