@@ -35,6 +35,9 @@ t.test(
     t.match(output, /--- Attributes ---/);
     t.match(output, /--- Power ---/);
     t.match(output, /--- Defenses ---/);
+    t.match(output, /--- Hit Points & Injury Point ---/);
+    t.match(output, /Hit Points\s+:\s+24/);
+    t.match(output, /Injury Point\s+:\s+6/);
     t.match(output, /--- Core Accuracy & Rank ---/);
     t.match(output, /Base Accuracy\s+:\s+1/);
     t.match(output, /Character Rank\s+:\s+1/);

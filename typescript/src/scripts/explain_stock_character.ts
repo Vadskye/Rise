@@ -72,6 +72,11 @@ export function explainStockCharacter(creature: Creature) {
   console.log(`  Mental Defense : ${creature.mental} [${creature.mental_explanation}]`);
   console.log(`  Reflex Defense : ${creature.reflex} [${creature.reflex_explanation}]`);
 
+  // Hit Points & Injury Point
+  console.log('\n--- Hit Points & Injury Point ---');
+  console.log(`  Hit Points     : ${creature.explainProperty('hit_points')}`);
+  console.log(`  Injury Point   : ${creature.explainProperty('injury_point')}`);
+
   // Accuracy & Rank
   console.log('\n--- Core Accuracy & Rank ---');
   console.log(`  Base Accuracy      : ${creature.explainProperty('accuracy')}`);
