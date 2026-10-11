@@ -718,13 +718,17 @@
 
   \begin{activeability}{Ready Reaction}{Standard action}
     \rankline
-    When you use this ability, you declare another standard action that you intend to take as soon as it becomes possible.
-    For example, you could declare your intent to make a melee strike against a creature that is not close to you, or cast a targeted spell on an enemy that you can't see behind a wall.
+    When you use this ability, you declare another standard action that you intend to take in response to something you expect to observe.
+    For example, you could ready ``I will use \ability{smite} on the first enemy that moves adjacent to me'', or ``I will cast \ability{fireball} on the first enemy that comes out from that door.''.
+    You can ready in response to anything you can observe, with two restrictions.
+    First, you must ready in response to a single observation without using ``or'', so ``an enemy moves adjacent to me or adjacent to one of my allies'' is too complex of a trigger.
+    Second, you can't make any decisions when your chosen action triggers, so you must unambiguously specify all intended targets and make all other decisions up front.
 
     If your intended action ever becomes possible, between the end of your current turn and the start of your next turn, it happens immediately.
     Any attacks you make in this way are \glossterm{reactive attacks}, so you can't use the \ability{desperate exertion} ability or similar effects.
     Your reaction resolves as soon as it becomes possible, interrupting other actions partway through their execution.
     This means that if you ready to hit an enemy as soon as it runs up to you, and it moves up to attack you, you will attack before it does.
+    If you never observe your intended trigger, your readied reaction is wasted.
 
     % TODO: you can become immune to reactions if you ready *all* of your actions
     You cannot react to the readied reaction of another creature.
