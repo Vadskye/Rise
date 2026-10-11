@@ -5,12 +5,12 @@ export function treant(): RankAbility[] {
   return [
     {
       complexity: 1,
-      name: 'Nourishing Ingrain',
+      name: 'Ingrained Healing',
       isMagical: false,
       rank: 1,
       description: `
-        At the end of your turn while you are \\ability{ingrained}, you regain hit points equal to your rank in this archetype, and you may choose to remove a \\glossterm{condition}.
-        If you remove a condition, you reduce your \\glossterm{stamina} by one.
+        At the end of your turn, if you are \\ability{grounded}, you regain hit points equal to your rank in this archetype.
+        If you are ingrained, this healing is doubled, and you may also spend one \\glossterm{stamina} to remove a \\glossterm{condition}.
       `,
     },
     {
@@ -19,7 +19,7 @@ export function treant(): RankAbility[] {
       isMagical: false,
       rank: 2,
       description: `
-        You gain a \\plus1 bonus to your Brawn defense and a \\plus2 bonus to your Fortitude defense.
+        You gain a \\plus2 bonus to your Fortitude defense and \\glossterm{durability}.
       `,
     },
     {
@@ -65,12 +65,12 @@ export function treant(): RankAbility[] {
     },
     {
       complexity: 1,
-      name: 'Nourishing Ingrain+',
+      name: 'Ingrained Healing+',
       isMagical: false,
       rank: 5,
       description: `
-        The healing from your \\textit{nourishing ingrain} ability increases to three times your rank in this archetype.
-        In addition, removing a condition with that ability no longer reduces your stamina.
+        The healing increases to twice your rank in this archetype.
+        In addition, removing a condition no longer costs stamina.
       `,
     },
     {
@@ -79,7 +79,16 @@ export function treant(): RankAbility[] {
       isMagical: false,
       rank: 6,
       description: `
-        The durability bonus increases to \\plus5.
+        The bonuses increase to \\plus4.
+      `,
+    },
+    {
+      complexity: 1,
+      name: 'Ingrained Healing++',
+      isMagical: false,
+      rank: 7,
+      description: `
+        The healing increases to three times your rank in this archetype.
       `,
     },
     {

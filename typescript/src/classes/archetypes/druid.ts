@@ -567,6 +567,91 @@ export function shifter(): RankAbility[] {
 
 export function oakheart(): RankAbility[] {
   return [
+    {
+      complexity: 2,
+      name: 'Draw Upon the Healing Land',
+      isMagical: false,
+      rank: 1,
+      description: `
+        At the end of your turn, if you are \\ability{grounded}, you regain hit points equal to your rank in this archetype.
+        If you did not change location or attack during that turn, this healing is doubled.
+      `,
+    },
+    {
+      complexity: 0,
+      name: 'Protective Bark',
+      isMagical: false,
+      rank: 2,
+      description: `
+        You gain a \\plus1 bonus to your Armor defense and \\glossterm{durability}.
+      `,
+    },
+    {
+      complexity: 2,
+      name: 'Ensnaring Earth',
+      isMagical: false,
+      rank: 3,
+      description: `
+        While you are \\glossterm{grounded}, the ground in a \\tinyarea radius \\glossterm{emanation} from you is \\glossterm{difficult terrain} for your \\glossterm{enemies}.
+        If you are in \\glossterm{undergrowth}, this increases to a \\smallarea radius.
+      `,
+    },
+    {
+      complexity: 1,
+      name: "Oak's Endurance",
+      isMagical: false,
+      rank: 4,
+      description: `
+        You gain a \\plus1 bonus to your Constitution.
+      `,
+    },
+    {
+      complexity: 0,
+      name: 'Draw Upon the Healing Land+',
+      isMagical: false,
+      rank: 5,
+      description: `
+        The healing increases to twice your rank in this archetype.
+      `,
+    },
+    {
+      complexity: 1,
+      name: "Natural Health",
+      isMagical: false,
+      rank: 5,
+      description: `
+        You are \\resistant to \\atPoison attacks and immune to being \\sickened.
+      `,
+    },
+    {
+      complexity: 0,
+      name: 'Protective Bark+',
+      isMagical: false,
+      rank: 6,
+      description: `
+        The bonuses to Armor defense and durability increase to \\plus2.
+      `,
+    },
+    {
+      complexity: 0,
+      name: 'Draw Upon the Healing Land++',
+      isMagical: false,
+      rank: 7,
+      description: `
+        The healing increases to three times your rank in this archetype.
+      `,
+    },
+    {
+      complexity: 0,
+      name: 'Ancient of the Grove',
+      isMagical: false,
+      rank: 7,
+      description: `
+        Each of your \\glossterm{vital wounds} only gives you a \\minus1 penalty to your \\glossterm{vital rolls}, rather than the normal \\minus2.
+        When you heal with your \\ability{draw upon the healing land} ability, if you did not change location or attack that turn, you can spend three stamina to remove a vital wound of your choice.
+        In addition, your natural lifespan is doubled.
+      `,
+    },
   ];
 }
 
