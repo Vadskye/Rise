@@ -102,6 +102,7 @@ type NumericCreatureProperty =
   | 'weapon_dice_increment'
   | 'maximum_stamina'
   | 'initiative'
+  | 'all_checks'
   | 'all_defenses'
   | 'all_skills'
   | 'body_armor_defense'
@@ -1251,6 +1252,10 @@ export class Creature implements CreaturePropertyMap {
 
   public get initiative() {
     return this.getPropertyValue('initiative');
+  }
+
+  public get all_checks() {
+    return this.getPropertyValue('all_checks');
   }
 
   public get all_defenses() {

@@ -69,6 +69,39 @@ t.test('can increase a skill with a custom modifier', (t) => {
   t.end();
 });
 
+t.test('can increase all skills with all_checks custom modifier', (t) => {
+  const creature = Creature.new();
+  creature.addCustomModifier({
+    name: 'Autumn',
+    numericEffects: [
+      {
+        modifier: 2,
+        statistic: 'all_checks',
+      },
+    ],
+  });
+  t.equal(creature.athletics, 2, 'Athletics gets all_checks bonus');
+  t.equal(creature.stealth, 2, 'Stealth gets all_checks bonus');
+  t.equal(creature.awareness, 2, 'Awareness gets all_checks bonus');
+  t.equal(creature.strength, 0, 'Strength attribute is unchanged');
+  t.equal(creature.accuracy, 0, 'Accuracy is unchanged');
+
+  // Stacks with all_skills
+  creature.addCustomModifier({
+    name: 'Skilled',
+    numericEffects: [
+      {
+        modifier: 3,
+        statistic: 'all_skills',
+      },
+    ],
+  });
+  t.equal(creature.athletics, 5, 'Athletics stacks all_checks and all_skills');
+  t.equal(creature.stealth, 5, 'Stealth stacks all_checks and all_skills');
+  t.equal(creature.awareness, 5, 'Awareness stacks all_checks and all_skills');
+  t.end();
+});
+
 t.test('can add immunity modifiers', (t) => {
   const creature = Creature.new();
   creature.addCustomModifier({

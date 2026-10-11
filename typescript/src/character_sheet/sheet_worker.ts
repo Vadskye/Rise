@@ -616,6 +616,7 @@ const VARIABLES_WITH_CUSTOM_MODIFIERS = new Set(
   [
     'accuracy',
     'accuracy_with_strikes',
+    'all_checks',
     'all_defenses',
     'all_skills',
     'armor_defense',
@@ -2619,6 +2620,7 @@ function handleSkills() {
         'level',
         'size_stealth_modifier',
         ...customModifierNames('all_skills'),
+        ...customModifierNames('all_checks'),
       ];
       const shouldAddAttribute = attribute !== 'other';
       const shouldApplyArmorDexModifier = attribute === 'dexterity';
@@ -2644,7 +2646,8 @@ function handleSkills() {
             fromTraining +
             attributeModifier +
             v.misc +
-            sumCustomModifiers(v, 'all_skills') -
+            sumCustomModifiers(v, 'all_skills') +
+            sumCustomModifiers(v, 'all_checks') -
             v.stamina_penalty +
             armorModifier;
 
@@ -2679,7 +2682,12 @@ function handleSkills() {
 }
 
 function handleSubskillValue(section: string, attribute: string) {
-  const numeric = ['level', 'stamina_penalty', ...customModifierNames('all_skills')];
+  const numeric = [
+    'level',
+    'stamina_penalty',
+    ...customModifierNames('all_skills'),
+    ...customModifierNames('all_checks'),
+  ];
   if (attribute !== 'other') {
     numeric.push(attribute);
   }
@@ -2703,7 +2711,8 @@ function handleSubskillValue(section: string, attribute: string) {
           fromTraining +
           attributeModifier +
           v.misc +
-          sumCustomModifiers(v, 'all_skills') -
+          sumCustomModifiers(v, 'all_skills') +
+          sumCustomModifiers(v, 'all_checks') -
           v.stamina_penalty +
           armorModifier;
 

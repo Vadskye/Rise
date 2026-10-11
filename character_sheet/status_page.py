@@ -325,6 +325,7 @@ def custom_statistic(i: str) -> str:
                     option({"value": "none"}, ""),
                     option({"value": "accuracy"}, "Accuracy"),
                     option({"value": "accuracy_with_strikes"}, "Accuracy with strikes"),
+                    option({"value": "all_checks"}, "All checks"),
                     option({"value": "all_defenses"}, "All defenses"),
                     option({"value": "all_skills"}, "All skills"),
                     option({"value": "analysis"}, "Analysis"),
