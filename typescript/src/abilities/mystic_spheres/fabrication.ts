@@ -94,7 +94,7 @@ export const fabrication: MysticSphere = {
       name: 'Instant Shield',
 
       effect: `
-        At the start of your turn, you can choose to activate this spell.
+        At the start of your turn, you can choose to activate this spell as a \\glossterm{free action}.
         When you do, you create a shield that you are proficient with in one \\glossterm{free hand}.
         The shield can be a standard shield or tower shield, and you can choose whether it is spiked.
         It is automatically strapped to your arm and cannot be detached.

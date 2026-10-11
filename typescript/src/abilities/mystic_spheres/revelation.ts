@@ -187,7 +187,7 @@ export const revelation: MysticSphere = {
       // 0.8 EA in theory, but focused and honed aren't optimal together since focused is
       // better on low accuracy and honed is better on high accuracy
       effect: `
-        At the start of your turn, you can choose to become \\focused and \\honed during that turn.
+        At the start of your turn, you can choose to become \\focused and \\honed during that turn as a \\glossterm{free action}.
         Then, this ability is \\glossterm{dismissed}.
       `,
       narrative: `
@@ -393,7 +393,7 @@ export const revelation: MysticSphere = {
 
       effect: `
         A \\glossterm{scrying sensor} appears floating in the air in any unoccupied square within \\medrange.
-        At the start of your turn, you choose whether you see and hear from this sensor or from your body.
+        At the start of your turn, you choose whether you see and hear from this sensor or from your body as a \\glossterm{free action}.
 
         While viewing through the sensor, your observation ability is the same as your normal body, except that the sensor does not share the benefits of any \\magical effects that improve your vision.
         You otherwise act normally, though you may have difficulty moving or taking actions if the sensor cannot see your body or your intended targets, effectively making you \\blinded.
@@ -418,7 +418,7 @@ export const revelation: MysticSphere = {
         You must specify a distance and direction to target a location you cannot see.
         This can allow you to cast the spell beyond walls and similar obstacles.
 
-        At the start of your turn, you choose whether you see and hear from this sensor or from your body.
+        At the start of your turn, you choose whether you see and hear from this sensor or from your body as a \\glossterm{free action}.
         While viewing through the sensor, your observation ability is the same as your normal body, except that it does not share the benefits of any \\magical effects that improve your vision.
         You otherwise act normally, though you may have difficulty moving or taking actions if the sensor cannot see your body or your intended targets, effectively making you \\blinded.
 
@@ -436,7 +436,7 @@ export const revelation: MysticSphere = {
       effect: `
         Choose one magical sensor within \\medrange.
         A \\glossterm{scrying sensor} appears at the location of the source of the ability that created the chosen sensor.
-        At the start of your turn, you choose whether you see and hear from this sensor or from your body.
+        At the start of your turn, you choose whether you see and hear from this sensor or from your body as a \\glossterm{free action}.
         While viewing through the sensor, your observation ability is the same as your normal body, except that it does not share the benefits of any \\magical effects that improve your vision.
         You otherwise act normally, though you may have difficulty moving or taking actions if the sensor cannot see your body or your intended targets, effectively making you \\blinded.
 

@@ -629,7 +629,7 @@ export const verdamancy: MysticSphere = {
       // Basically 20% miss chance. Has a downside that you can't move, but can also
       // protect allies.
       effect: `
-        At the start of your turn, you may choose to cause grass to extend out onto the ground in your space.
+        At the start of your turn, you may choose to cause grass to extend out onto the ground in your space as a \\glossterm{free action}.
         When you do, that area becomes covered in \\glossterm{light undergrowth}.
         Whenever your location changes by any means, the grass disappears.
       `,
