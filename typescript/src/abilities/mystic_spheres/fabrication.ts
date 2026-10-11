@@ -109,18 +109,6 @@ export const fabrication: MysticSphere = {
     },
 
     {
-      name: 'Greater Instant Shield',
-
-      functionsLike: {
-        name: 'instant shield',
-        exceptThat: 'you can activate the effect as a \\glossterm{free action}.',
-      },
-      rank: 6,
-      roles: ['attune'],
-      tags: ['Manifestation'],
-      type: 'Attune',
-    },
-    {
       name: 'Instant Copy',
 
       effect: `
