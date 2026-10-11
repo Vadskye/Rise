@@ -347,6 +347,9 @@ export function getClassSkills(cls: Class): RiseSkill[] {
 
 export function getClassTrainedSkills(cls: Class): number {
   switch (cls) {
+    case 'Barbarian':
+    case 'Fighter':
+    case 'Troll':
     case 'Automaton':
     case 'Dragon':
     case 'Druid':
@@ -355,13 +358,10 @@ export function getClassTrainedSkills(cls: Class): number {
     case 'Oozeborn':
     case 'Vampire':
       return 4;
-    case 'Barbarian':
     case 'Cleric':
-    case 'Fighter':
     case 'Paladin':
     case 'Sorcerer':
     case 'Treant':
-    case 'Troll':
     case 'Votive':
     case 'Wizard':
       return 3;
