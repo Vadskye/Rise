@@ -117,7 +117,18 @@ export function assassin(): RankAbility[] {
           You study a creature within \\rngmed range, finding weak points you can take advantage of.
           As a \\brief effect, whenever you make a \\glossterm{strike} against the target while it is adjacent to you and \\unaware of the attack, the strike deals double damage.
           This is multiplicative with the doubling from \\ability{sneak attack}, for a total of four times normal damage.
+
+          \\rank{7} The multiplier increases to triple damage.
         \\end{activeability}
+      `,
+    },
+    {
+      complexity: 2,
+      name: 'Uncanny Dodge',
+      isMagical: false,
+      rank: 5,
+      description: `
+        You gain a \\plus1 bonus to your Armor and Reflex defenses.
       `,
     },
   ];
@@ -391,11 +402,31 @@ export function suaveScoundrel(): RankAbility[] {
     },
     {
       complexity: 0,
+      name: "Lucky Scoundrel",
+      isMagical: false,
+      rank: 2,
+      description: `
+        Your attack rolls also \\glossterm{explode} on a 1 (see \\pcref{Exploding Attacks}).
+        This does not affect bonus dice from explosions.
+      `,
+    },
+    {
+      complexity: 0,
       name: 'Silver Tongue',
       isMagical: false,
       rank: 2,
       description: `
         You gain a \\plus2 bonus to your Deception, Persuasion, and Social Insight skills.
+      `,
+    },
+    {
+      complexity: 0,
+      name: "Lucky Scoundrel+",
+      isMagical: false,
+      rank: 6,
+      description: `
+        Your attack rolls also \\glossterm{explode} on a 2.
+        This does not affect bonus dice from explosions.
       `,
     },
     {
