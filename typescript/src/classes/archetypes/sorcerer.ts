@@ -177,18 +177,18 @@ export function draconicMagic(): RankAbility[] {
           \\columncaption{Draconic Bloodline Types}
           \\begin{dtabularx}{\\columnwidth}{l >{\\lcol}X >{\\lcol}X}
             \\tb{Dragon} & \\tb{Tag}       & \\tb{Mystic Sphere} \\tableheaderrule
-            Black        & \\atAcid        & \\sphere{toxicology}     \\\
-            Blue         & \\atElectricity & \\sphere{electromancy}     \\\
-            Crystal      & \\atVisual      & \\sphere{photomancy}     \\\
-            Dream        & \\atEmotion     & \\sphere{enchantment}     \\\
-            Gold         & \\atFire        & \\sphere{pyromancy}     \\\
-            Gore         & \\atBlood       & \\sphere{vivimancy}     \\\
-            Obsidian     & \\atEarth       & \\sphere{terramancy}     \\\
-            Pearl        & \\atWater       & \\sphere{aquamancy}     \\\
-            Red          & \\atFire        & \\sphere{pyromancy}     \\\
-            White        & \\atCold        & \\sphere{cryomancy}     \\\
-            Wraith       & \\atSoul        & \\sphere{astromancy}     \\\
-            Zephyr       & \\atAir         & \\sphere{aeromancy}     \\\
+            Black        & \\atAcid        & \\sphere{toxicology}     \\\\
+            Blue         & \\atElectricity & \\sphere{electromancy}     \\\\
+            Crystal      & \\atVisual      & \\sphere{photomancy}     \\\\
+            Dream        & \\atEmotion     & \\sphere{enchantment}     \\\\
+            Gold         & \\atFire        & \\sphere{pyromancy}     \\\\
+            Gore         & \\atBlood       & \\sphere{vivimancy}     \\\\
+            Obsidian     & \\atEarth       & \\sphere{terramancy}     \\\\
+            Pearl        & \\atWater       & \\sphere{aquamancy}     \\\\
+            Red          & \\atFire        & \\sphere{pyromancy}     \\\\
+            White        & \\atCold        & \\sphere{cryomancy}     \\\\
+            Wraith       & \\atSoul        & \\sphere{astromancy}     \\\\
+            Zephyr       & \\atAir         & \\sphere{aeromancy}     \\\\
           \\end{dtabularx}
         \\end{columntable}
       `,
@@ -406,7 +406,7 @@ export function wildMagic(): RankAbility[] {
         You learn an additional arcane spell.
         Your spellcasting rank with that spell is equal to your rank in this archetype rather than the Arcane Magic archetype.
         This affects the maximum spell rank you can learn, and any scaling the spell gains from your excess rank.
-        That spell is always affected by your \\ability{wildspell} ability.
+        That spell is always affected by your \\ability{wildspell} ability, and you gain a \\plus1 bonus with wild magic rolls for that spell.
 
         Whenever you increase your rank in this archetype, you can change which spell you know with this ability.
       `,
