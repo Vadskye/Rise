@@ -45,6 +45,23 @@ export const umbramancy: MysticSphere = {
   ],
   spells: [
     {
+      name: 'Darkfriend',
+
+      effect: `
+        You gain \\glossterm{darkvision} with a range of 60 feet.
+        If you already have darkvision from another source, you instead increase the range of your darkvision by 60 feet.
+        In addition, \\glossterm{bright illumination} reaching you is dimmed to be no brighter than \\glossterm{dim illumination}.
+        This means your darkvision is never disabled by bright illumination, and you are never considered to be in natural sunlight.
+        However, can only see dimly beyond the range of your darkvision.
+
+        The dimming effect from this spell makes you appear less colorful to observers, but it is insufficient to grant you \\glossterm{concealment}.
+      `,
+      rank: 1,
+      roles: ['narrative'],
+      type: 'Attune',
+    },
+
+    {
       name: 'Suppress Light',
 
       // Treat this as an AOE brief dazzle with Sustain (minor). That's 1.6 EA. But how do

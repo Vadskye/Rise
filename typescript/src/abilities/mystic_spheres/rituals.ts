@@ -2885,7 +2885,7 @@ export const rituals: RitualDefinition[] = [
   },
   {
     staminaCost: false,
-    name: 'Darklantern',
+    name: 'Moonlight Lantern',
 
     usageTime: 'one minute',
     effect: `
@@ -2902,16 +2902,16 @@ export const rituals: RitualDefinition[] = [
       7: `You can increase the radius to a \\hugearea radius.`,
     },
     type: 'Sustain (attunable, minor)',
-    spheres: ['Umbramancy'],
+    spheres: ['Photomancy', 'Umbramancy'],
   },
 
   {
     staminaCost: false,
-    name: 'Beacon of Darkness',
+    name: 'Moonlight Beacon',
 
     usageTime: 'one minute',
     effect: `
-      You constantly emit \\glossterm{dim illumination} in a \\medarea radius.
+      You constantly emit \\glossterm{dim illumination} in a \\largearea radius.
       This illuminates dark areas, but does not suppress brighter light.
       Unlike normal light, this light is completely invisible outside of the radius that it illuminates.
 
@@ -2920,18 +2920,17 @@ export const rituals: RitualDefinition[] = [
       \\begin{raggeditemize}
         \\item Suppress the light
         \\item Resume the light
-        \\item Change the area to a \\smallarea radius
-        \\item Change the area to a \\medarea radius
+        \\item Change the area to a \\smallarea, \\medarea, or \\largearea radius
       \\end{raggeditemize}
     `,
-    rank: 2,
+    rank: 3,
     roles: ['narrative'],
     scaling: {
-      4: `You can also change the area to a \\largearea radius.`,
-      6: `You can also change the area to a \\hugearea radius.`,
+      5: `You can also change the area to a \\hugearea radius.`,
+      7: `You can also change the area to a \\gargarea radius.`,
     },
     type: 'Sustain (attunable, minor)',
-    spheres: ['Umbramancy'],
+    spheres: ['Photomancy', 'Umbramancy'],
   },
   {
     staminaCost: false,

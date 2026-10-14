@@ -73,8 +73,8 @@ export function alchemicalItems(): Tool[] {
       ],
     }),
     createAlchemicalItem({
-      name: 'Moonrod',
-      rank: 0,
+      name: 'Sunrod',
+      rank: 1,
       attunement: 'Unrestricted',
       short_description: 'Emits bright illumination',
       description: `
@@ -84,7 +84,7 @@ export function alchemicalItems(): Tool[] {
       tags: ['Visual'],
       upgrades: [
         {
-          rank: 2,
+          rank: 3,
           short_description: 'Emits bright illumination for 8 hours',
           description: `
             The effect lasts for 8 hours.
@@ -93,13 +93,33 @@ export function alchemicalItems(): Tool[] {
       ],
     }),
     createAlchemicalItem({
-      name: 'Sunrod',
+      name: 'Moonrod',
+      rank: 0,
+      attunement: 'Unrestricted',
+      short_description: 'Emits dim illumination',
+      description: `
+        You can activate this item as a standard action.
+        When you do, it creates \\glossterm{dim illumination} in a 60 foot radius for 10 minutes.
+      `,
+      tags: ['Visual'],
+      upgrades: [
+        {
+          rank: 2,
+          short_description: 'Emits dim illumination for 8 hours',
+          description: `
+            The effect lasts for 8 hours.
+          `,
+        },
+      ],
+    }),
+    createAlchemicalItem({
+      name: 'Incandescent Flare',
       rank: 2,
       attunement: 'Unrestricted',
       short_description: 'Emits brilliant illumination',
       description: `
         You can activate this item as a standard action.
-        When you do, it creates \\glossterm{brilliant illumination} in a 60 foot radius for 10 minutes.
+        When you do, it creates \\glossterm{brilliant illumination} in a 30 foot radius for 10 minutes.
       `,
       tags: ['Visual'],
       upgrades: [
