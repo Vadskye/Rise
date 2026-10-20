@@ -132,8 +132,7 @@ export function covenantKeeper(): RankAbility[] {
           \\item You are immune to \\debuff{bleed} effects.
         \\end{raggeditemize}
         If you choose medium armor, it provides the following benefits:
-        % Relative to brigandine: +1 Armor, +1 Fort, +2 durability, +1 vital rolls, +2 dex
-        % skills
+        % Relative to brigandine: +1 Armor, +1 Fort, +2 durability, +1 vital rolls, +2 dex skills
         % Relative to full plate: +1 Fort, -2 durability, +10 speed
         \\begin{raggeditemize}
           \\item A \\plus4 bonus to your Armor defense.
