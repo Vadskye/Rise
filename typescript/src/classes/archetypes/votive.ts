@@ -141,7 +141,7 @@ export function covenantKeeper(): RankAbility[] {
           \\item A \\plus5 bonus to your \\glossterm{durability}.
           \\item A \\plus2 bonus to your \\glossterm{vital rolls}.
           \\item You are immune to \\debuff{bleed} effects.
-          \\item Your Dexterity bonus to Armor defense is halved, as normal for other medium armor.
+          \\item Your Dexterity bonus to Armor defense is halved, as normal for medium armor.
         \\end{raggeditemize}
 
         \\subcf{Covenant of Bloodsharing} Once per turn, when you cause a \\trait{blooded} creature other than yourself to lose \\glossterm{hit points}, you can regain \\glossterm{hit points} equal to half your \\glossterm{power} (minimum 1).
