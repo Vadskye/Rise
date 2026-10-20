@@ -226,7 +226,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       // Assume that you have DR for ~3/4 of turns, so this is worth 1.8 EA.
       effect: `
         You are \\shielded.
-        At the end of your turn, if you took damage since your last turn, this effect is \\glossterm{dismissed} unless you spend an \\glossterm{ice crystal}.
+        At the end of your turn, if you are \\glossterm{injured}, this effect is \\glossterm{dismissed} unless you spend an \\glossterm{ice crystal}.
       `,
       narrative: 'Ice forms around you, shielding you from attacks until it is destroyed.',
       rank: 2,
