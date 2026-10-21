@@ -124,7 +124,7 @@ export function getClassNarrativeText(cls: Class): string {
             Camilla, tiefling god of fire         & Chaotic good    & Chaos, Good, Magic, Sun            \\\\
             Chavi, wandering god of stories       & Chaotic good    & Chaos, Good, Knowledge, Trickery   \\\\
             Chort, dwarf god of optimism          & Chaotic good    & Chaos, Good, Life, Travel, Wild    \\\\
-            Ivan Ivanovitch, bear god of strength & Chaotic good    & Chaos, Good, War, Wild             \\\\
+            Ivan Ivanovich, bear god of strength & Chaotic good    & Chaos, Good, War, Wild             \\\\
             Krunch, barbarian god of destruction  & Chaotic good    & Chaos, Destruction, Good, War      \\\\
             Sir Cakes, dwarf god of freedom       & Chaotic good    & Chaos, Good, Earth, Forge          \\\\
             Mikolash, scholar god of knowledge    & Lawful neutral  & Knowledge, Law, Magic, Protection  \\\\
