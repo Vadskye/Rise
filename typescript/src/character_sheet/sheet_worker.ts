@@ -1875,10 +1875,10 @@ function handleInjuryPoint() {
     variables: {
       miscName: 'injury_point',
       numeric: ['level', 'constitution'],
-      boolean: ['elite'],
+      boolean: ['is_monster'],
     },
     callback: (v) => {
-      if (v.elite) {
+      if (v.is_monster) {
         return;
       }
       const rank = calculateStandardRank(v.level);
@@ -1902,10 +1902,10 @@ function handleInjuryPoint() {
       miscName: 'injury_point',
       numeric: ['hit_points_maximum'],
       string: ['base_class'],
-      boolean: ['elite'],
+      boolean: ['is_monster'],
     },
     callback: (v) => {
-      if (!v.elite) {
+      if (!v.is_monster) {
         return;
       }
       const classMultiplier = BASE_CLASS_MODIFIERS[v.base_class]?.injury_point_multiplier || 0;
