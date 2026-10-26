@@ -11,7 +11,7 @@ Core standards, ability budgets, and implementation requirements for Rise class 
 
 - **Structure**: Every base class provides 5 archetypes; characters choose exactly 3 (multiclassing allows substituting from another class).
 - **Progression**: Archetypes span Ranks 1–7. Ranks advance evenly across all 3 chosen archetypes (Rank 1 at L1, Rank 2 at L2, Rank 3 at L3; Rank 7 in all three at L21). Formula: $\text{Rank}_i = \lceil (\text{level} - i)/3 \rceil$ for $i \in \{0, 1, 2\}$.
-- **Combinatorial Cohesion ($\binom{5}{3} = 10$)**: Every archetype must function cohesively across all 10 combinations within its class without assuming sibling archetypes (unless explicitly designed as dependent mastery).
+- **Combinatorial Cohesion**: Every archetype must function cohesively across all 10 combinations within its class without assuming sibling archetypes (unless explicitly designed as dependent mastery).
 - **Caster/Martial Flexibility**: Hybrid classes must support both spellcaster and non-caster paths. Archetype features must be universal (functioning identically with weapons, unarmed strikes, and spells) or provide explicit branching clauses (_"If you can cast spells... / Otherwise..."_).
 
 ## 2. Ability Budget & Rank Template
